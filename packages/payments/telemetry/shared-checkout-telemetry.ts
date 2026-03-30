@@ -49,6 +49,7 @@ function getMapping(suffix: string): Record<PaymentTelemetryContext, string> {
         'ctx-signup-generic': `ctx_signup_generic_${suffix}`,
         'ctx-signup-greenland': `ctx_signup_greenland_${suffix}`,
         'ctx-signup-meet': `ctx_signup_meet_${suffix}`,
+        'ctx-signup-meet-b2c-plan': `ctx_signup_meet_b2c_plan_${suffix}`,
         'ctx-signup-referral': `ctx_signup_referral_${suffix}`,
         'ctx-email-reservation': `ctx_email_reservation_${suffix}`,
         'subscription-modification': `subscription_modification_${suffix}`,

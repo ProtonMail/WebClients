@@ -413,6 +413,7 @@ export const SSO_PATHS = {
     LUMO_SIGN_IN: '/lumo',
     DESKTOP_SIGN_IN: '/desktop/login',
     MEET_SIGNUP: '/meet/signup',
+    MEET_SIGNUP_B2C: '/meet/signup/plan',
     MEET_SIGNUP_B2B: '/meet/signup/business',
     MEET_SIGN_IN: '/meet',
     SIGNUP: '/signup',

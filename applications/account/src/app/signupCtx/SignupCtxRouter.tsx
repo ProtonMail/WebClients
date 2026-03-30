@@ -11,6 +11,7 @@ import DriveSignup from './flows/drive/DriveSignup';
 import GenericStartSignup from './flows/genericStart/GenericStartSignup';
 import GreenlandSignup from './flows/greenland/GreenlandSignup';
 import MeetB2CSignup from './flows/meet/MeetB2CSignup';
+import MeetB2CPlanSignup from './flows/meetB2CPlan/MeetB2CPlanSignup';
 import PassSignup from './flows/pass/PassSignup';
 import ReferralSignup from './flows/referral/ReferralSignup';
 
@@ -56,6 +57,9 @@ const SignupCtxRouter = (props: BaseSignupContextProps) => {
                 </Route>
                 <Route path={SSO_PATHS.PASS_SIGNUP}>
                     <PassSignup {...props} />
+                </Route>
+                <Route path={SSO_PATHS.MEET_SIGNUP_B2C}>
+                    <MeetB2CPlanSignup {...props} />
                 </Route>
                 <Route path={SSO_PATHS.MEET_SIGNUP}>
                     <MeetB2CSignup {...props} />
