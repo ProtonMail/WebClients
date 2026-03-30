@@ -25,22 +25,6 @@ export const ParticipantsButton = ({
 
     const sideBarState = useMeetSelector(selectSideBarState);
 
-    const getParticipantsCount = () => {
-        if (hasAdminPermission || (isGuest && instantMeeting)) {
-            if (maxParticipants && maxParticipants < 10) {
-                return (
-                    <div>
-                        <span>{totalParticipantCount}</span>
-                        <span className="color-weak">/{maxParticipants}</span>
-                    </div>
-                );
-            } else {
-                return totalParticipantCount.toString();
-            }
-        }
-        return undefined;
-    };
-
     const getParticipantCountIndicatorVariant = () => {
         if (!hasAdminPermission && !(isGuest && instantMeeting)) {
             return 'default';
@@ -69,12 +53,12 @@ export const ParticipantsButton = ({
         if (isPaid) {
             return totalParticipantCount >= maxParticipants
                 ? c('Info').t`Meeting full (${maxParticipants} participants)`
-                : c('Info').t`${totalParticipantCount} of ${maxParticipants} participants`;
+                : c('Info').t`${totalParticipantCount} of up to ${maxParticipants} participants`;
         }
 
         return totalParticipantCount >= maxParticipants
             ? c('Info').t`${maxParticipants} participant limit reached`
-            : c('Info').t`${totalParticipantCount} of ${maxParticipants} participants`;
+            : c('Info').t`${totalParticipantCount} of up to ${maxParticipants} participants`;
     };
 
     return (
@@ -84,7 +68,7 @@ export const ParticipantsButton = ({
             onClick={() => {
                 dispatch(toggleSideBarState(MeetingSideBars.Participants));
             }}
-            indicatorContent={getParticipantsCount()}
+            indicatorContent={totalParticipantCount.toString()}
             indicatorStatus={getParticipantCountIndicatorVariant()}
             ariaLabel={c('Alt').t`Toggle participants`}
             tooltipTitle={getParticipantButtonTooltipTitle()}
