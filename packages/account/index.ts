@@ -27,6 +27,7 @@ export * from './organizationKey';
 export * from './organizationKey/listener';
 export * from './organizationKey/actions';
 export * from './organizationKey/convertAddressesListener';
+export * from './organizationRoles';
 export * from './member';
 export * from './members';
 export * from './members/actions';
