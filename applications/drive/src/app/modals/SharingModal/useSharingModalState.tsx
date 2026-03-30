@@ -5,9 +5,10 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import type { ModalStateProps } from '@proton/components';
 import { useNotifications } from '@proton/components';
-import type { ProtonDriveClient } from '@proton/drive';
+import type { DegradedNode, ProtonDriveClient, ProtonDrivePhotosClient } from '@proton/drive';
 import {
     MemberRole,
+    type NodeEntity,
     NodeType,
     type ShareNodeSettings,
     type ShareResult,
@@ -24,17 +25,19 @@ import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import { useFlagsDriveDocsPublicSharing } from '../../flags/useFlagsDriveDocsPublicSharing';
+import { useFlagsDriveSharingAdminPermissions } from '../../flags/useFlagsDriveSharingAdminPermissions';
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
+import { getNodeAncestry } from '../../utils/sdk/getNodeAncestry';
 import { getNodeEffectiveRole } from '../../utils/sdk/getNodeEffectiveRole';
+import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { getNodeName } from '../../utils/sdk/getNodeName';
-import { getContactNameAndEmail } from './DirectSharing/helpers/getContactNameAndEmail';
+import { getDisplayName } from './DirectSharing/helpers/userNames';
 import type { SharingModalViewProps } from './SharingModalView';
 import { type DirectMember, MemberType } from './interfaces';
 
 export type SharingModalInnerProps = {
     nodeUid: string;
-    drive?: Pick<ProtonDriveClient, 'getSharingInfo' | 'getNode' | 'unshareNode' | 'shareNode' | 'resendInvitation'>;
-    isResharing?: boolean; // Sharing from "shared with me" section
+    drive?: ProtonDriveClient | ProtonDrivePhotosClient;
 };
 
 export type UseSharingModalProps = ModalStateProps & SharingModalInnerProps;
@@ -59,14 +62,13 @@ const getIsShared = (shareResult: ShareResult) => {
 export const useSharingModalState = ({
     nodeUid,
     drive = getDrive(),
-    isResharing,
     onClose,
     open,
     onExit,
 }: UseSharingModalProps): SharingModalViewProps => {
     const [contactEmails] = useContactEmails();
 
-    const { isDocsPublicSharingEnabled } = useFlagsDriveDocsPublicSharing();
+    const adminRoleEnabled = useFlagsDriveSharingAdminPermissions();
 
     const { createNotification } = useNotifications();
 
@@ -74,33 +76,24 @@ export const useSharingModalState = ({
 
     const [isLoading, withLoading] = useLoading();
 
+    const [nodeInfo, setNodeInfo] = useState<NodeEntity | DegradedNode>();
+
     const [sharingInfo, setSharingInfo] = useState<ShareResult>(defaultSharingInfo);
 
-    const [ownerEmail, setOwnerEmail] = useState('');
-    const [ownerDisplayName, setOwnerDisplayName] = useState<string | undefined>();
+    const ownerEmail = nodeInfo?.ownedBy.email;
+    const ownerDisplayName = getDisplayName({ ownerEmail, contactEmails, user });
 
     const [fileName, setFileName] = useState('');
 
-    const [parentUid, setParentUid] = useState<string | undefined>(undefined);
+    const mediaType = getMediaType(nodeInfo);
+    const isAlbum = nodeInfo?.type === NodeType.Album;
+    const isPhoto = nodeInfo?.type === NodeType.Photo;
+    const notPhotoOrAlbum = !(isPhoto || isAlbum);
+    const [isResharing, setIsResharing] = useState(false);
+    const isPublicLinkEnabled = usePublicLinkEnabled({ isResharing, mediaType, isAlbum });
+
     const [roleOnParentNode, setRoleOnParentNode] = useState<MemberRole>();
-
-    const [canChangePermissions, setCanChangePermissions] = useState(false);
-
-    const [mediaType, setMediaType] = useState<string | undefined>();
-    const [isAlbum, setIsAlbum] = useState<boolean | undefined>();
-
-    const getIsPublicLinkEnabled = () => {
-        if (isResharing) {
-            return false;
-        }
-
-        if (mediaType && isProtonDocsDocument(mediaType)) {
-            return isDocsPublicSharingEnabled;
-        }
-
-        return !isAlbum;
-    };
-    const isPublicLinkEnabled = getIsPublicLinkEnabled();
+    const canChangePermissions = roleOnParentNode === MemberRole.Admin;
 
     const updateSharingState = async (updatedShareResult: ShareResult | undefined) => {
         const shareResult = updatedShareResult || defaultSharingInfo;
@@ -110,7 +103,7 @@ export const useSharingModalState = ({
                 items: [
                     {
                         uid: nodeUid,
-                        parentUid,
+                        parentUid: nodeInfo?.parentUid,
                         isShared: getIsShared(shareResult),
                     },
                 ],
@@ -188,7 +181,7 @@ export const useSharingModalState = ({
     }) => {
         try {
             // For safety if one of the value is not passed, we used the actual one
-            // If it is passed but explicitely as "undefined" we assume that it's to disable it
+            // If it is passed but explicitly as "undefined" we assume that it's to disable it
             const updatedRole = 'role' in publicLinkSettings ? publicLinkSettings.role : sharingInfo.publicLink?.role;
             const updatedExpiration =
                 'expiration' in publicLinkSettings
@@ -285,30 +278,18 @@ export const useSharingModalState = ({
                 const nodeInfo = node.ok ? node.value : node.error;
 
                 setFileName(getNodeName(node));
-                setParentUid(nodeInfo.parentUid);
-                setMediaType(nodeInfo.type === NodeType.Folder ? 'Folder' : nodeInfo.mediaType);
-                setIsAlbum(nodeInfo.type === NodeType.Album);
+                setNodeInfo(nodeInfo);
 
                 if (nodeInfo.parentUid) {
                     const parent = await drive.getNode(nodeInfo.parentUid);
                     const parentNodeInfo = parent.ok ? parent.value : parent.error;
                     const effectiveRoleOnParent = await getNodeEffectiveRole(parentNodeInfo, drive);
                     setRoleOnParentNode(effectiveRoleOnParent);
-                    setCanChangePermissions(effectiveRoleOnParent === MemberRole.Admin);
                 }
 
-                const ownerEmail = nodeInfo.ownedBy.email;
-                if (ownerEmail) {
-                    setOwnerEmail(ownerEmail);
-                }
-
-                if (ownerEmail === user.Email) {
-                    setOwnerDisplayName(user.DisplayName);
-                } else if (ownerEmail) {
-                    const { contactName } = getContactNameAndEmail(ownerEmail, contactEmails);
-                    if (contactName.length) {
-                        setOwnerDisplayName(contactName);
-                    }
+                if (nodeInfo?.type !== NodeType.Album && nodeInfo?.type !== NodeType.Photo) {
+                    const isMyFile = await isShareInMyFiles(nodeUid, drive as ProtonDriveClient);
+                    setIsResharing(!isMyFile);
                 }
             } catch (e) {
                 handleSdkError(e, { fallbackMessage: c('Error').t`Failed to fetch node`, extra: { nodeUid } });
@@ -356,10 +337,13 @@ export const useSharingModalState = ({
         [sharingInfo, ownerEmail]
     );
 
-    const existingEmails = useMemo(
-        () => [ownerEmail, ...directMembers.map((member) => member.inviteeEmail)],
-        [ownerEmail, directMembers]
-    );
+    const existingEmails = useMemo(() => {
+        const directMembersMails = directMembers.map((member) => member.inviteeEmail);
+        if (ownerEmail) {
+            directMembersMails.push(ownerEmail);
+        }
+        return directMembersMails;
+    }, [ownerEmail, directMembers]);
 
     return {
         open,
@@ -369,8 +353,8 @@ export const useSharingModalState = ({
         nodeUid,
         roleOnParentNode,
         fileName,
-        mediaType: isAlbum ? 'Album' : mediaType,
-        canChangePermissions,
+        mediaType,
+        showPermissionsCheckbox: adminRoleEnabled && canChangePermissions && notPhotoOrAlbum,
         ownerDisplayName,
         ownerEmail,
         isLoading,
@@ -398,3 +382,49 @@ export const useSharingModalState = ({
         },
     };
 };
+
+function usePublicLinkEnabled({
+    isResharing,
+    mediaType,
+    isAlbum,
+}: {
+    isResharing?: boolean;
+    mediaType?: string;
+    isAlbum: boolean;
+}) {
+    const { isDocsPublicSharingEnabled } = useFlagsDriveDocsPublicSharing();
+
+    if (isResharing) {
+        return false;
+    }
+
+    if (mediaType && isProtonDocsDocument(mediaType)) {
+        return isDocsPublicSharingEnabled;
+    }
+
+    return !isAlbum;
+}
+
+function getMediaType(nodeInfo?: NodeEntity | DegradedNode): string | undefined {
+    if (nodeInfo?.type) {
+        if (nodeInfo.type === NodeType.Folder) {
+            return 'Folder';
+        }
+        if (nodeInfo.type === NodeType.Album) {
+            return 'Album';
+        }
+    }
+    return nodeInfo?.mediaType;
+}
+
+async function isShareInMyFiles(nodeUid: string, drive: ProtonDriveClient): Promise<boolean> {
+    const ancestors = await getNodeAncestry(nodeUid, drive);
+    const firstAncestor = ancestors.ok && ancestors.value.at(0);
+    if (!firstAncestor) {
+        // Impossible, because getNodeAncestry will always at least return self
+        return false;
+    }
+    // If node has "membership" it means it is a direct share
+    const { node: shareTopmostParent } = getNodeEntity(firstAncestor);
+    return !Boolean(shareTopmostParent.membership);
+}
