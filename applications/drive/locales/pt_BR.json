@@ -1344,6 +1344,10 @@
       ],
       "Writing assistant seats": [
         "Licenças de assistente de escrita"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } licença",
+        "${ seats } ${ MEET_APP_NAME } licenças"
       ]
     },
     "Alert": {
@@ -6940,6 +6944,24 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Você ainda poderá visualizar os dados da sua própria conta, mas todas as contas de usuário serão removidas da sua organização."
+      ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "O ${ MEET_APP_NAME } é uma solução de videoconferência com criptografia de ponta a ponta. Adicione-a ao seu plano para realizar reuniões seguras."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } licenças"
+      ],
+      "${ MEET_APP_NAME } video conferencing": [
+        "Videoconferência do ${ MEET_APP_NAME }"
+      ],
+      "Add ${ MEET_APP_NAME }": [
+        "Adicionar ${ MEET_APP_NAME }"
+      ],
+      "for ${ price }": [
+        "por ${ price }"
+      ],
+      "Search enabled. You may now close this dialogue and search for files and folders.": [
+        "Pesquisa ativada. Agora você pode fechar esta caixa de diálogo e procurar arquivos e pastas."
       ]
     },
     "info": {
@@ -9559,6 +9581,12 @@
       ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" compartilhado"
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "Configuração atualizada. Editores podem alterar permissões e compartilhar."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Configuração atualizada. Editores não podem alterar permissões ou compartilhar."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13505,6 +13533,27 @@
       ],
       "Yahoo": [
         "Yahoo"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } licença"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } licenças"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } licença do ${ MEET_APP_NAME }",
+        "${ seats } licenças do ${ MEET_APP_NAME }"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } licença incluída",
+        "${ seats } licenças incluídas"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Você pode ter até ${ TRIAL_MAX_MEET_SEATS } licenças do ${ MEET_SHORT_APP_NAME } durante o período de avaliação."
       ]
     }
   }

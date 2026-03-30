@@ -1338,6 +1338,10 @@
       ],
       "Writing assistant seats": [
         "Lizenzen für Schreibassistenten"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } Lizenz",
+        "${ seats } ${ MEET_APP_NAME } Lizenzen"
       ]
     },
     "Alert": {
@@ -6967,6 +6971,21 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Du kannst weiterhin deine eigenen Kontodaten ansehen, aber alle Benutzerkonten werden aus deiner Organisation entfernt."
+      ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } ist eine Ende-zu-Ende-verschlüsselte Videokonferenzlösung. Deinem Abonnement hinzufügen, um sichere Meetings abzuhalten."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } Lizenzen"
+      ],
+      "${ MEET_APP_NAME } video conferencing": [
+        "${ MEET_APP_NAME }-Videokonferenz"
+      ],
+      "Add ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME } hinzufügen"
+      ],
+      "for ${ price }": [
+        "für ${ price }"
       ]
     },
     "info": {
@@ -13553,6 +13572,27 @@
       ],
       "Yahoo": [
         "Yahoo"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } Lizenz"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } Lizenzen"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME } Lizenz",
+        "${ seats } ${ MEET_APP_NAME } Lizenzen"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } Lizenz enthalten",
+        "${ seats } Lizenzen enthalten"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Du kannst während der Testphase bis zu ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME }-Lizenzen haben."
       ]
     }
   }
