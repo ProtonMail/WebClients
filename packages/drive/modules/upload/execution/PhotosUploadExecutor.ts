@@ -36,18 +36,31 @@ export class PhotosUploadExecutor extends TaskExecutor<PhotosUploadTask> {
 
         try {
             const drivePhotos = UploadDriveClientRegistry.getDrivePhotosClient();
-            const duplicateUids = await drivePhotos.findPhotoDuplicates(
-                task.file.name,
-                async () => {
-                    const fileStream = createFileStream(task.file);
-                    const hashResult = await CryptoProxy.computeHashStream({
-                        algorithm: 'unsafeSHA1',
-                        dataStream: fileStream,
-                    });
-                    return hashResult.toHex();
-                },
-                abortController.signal
-            );
+
+            let duplicateUids: string[] = [];
+            try {
+                duplicateUids = await drivePhotos.findPhotoDuplicates(
+                    task.file.name,
+                    async () => {
+                        const fileStream = createFileStream(task.file);
+                        const hashResult = await CryptoProxy.computeHashStream({
+                            algorithm: 'unsafeSHA1',
+                            dataStream: fileStream,
+                        });
+                        return hashResult.toHex();
+                    },
+                    abortController.signal
+                );
+            } catch (error) {
+                if (abortController.signal.aborted) {
+                    return;
+                }
+                uploadLogError('Photo duplicate detection failed', error, {
+                    uploadId: task.uploadId,
+                    fileName: task.file.name,
+                });
+            }
+
             if (duplicateUids.length > 0) {
                 void this.eventCallback?.({
                     type: 'photo:exist',

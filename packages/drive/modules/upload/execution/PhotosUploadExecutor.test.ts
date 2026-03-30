@@ -583,6 +583,22 @@ describe('PhotosUploadExecutor', () => {
             expect(typeof uploadArgs[2]).toBe('function');
         });
 
+        it('should proceed with upload when duplicate check throws (e.g. crypto worker error)', async () => {
+            const driveForPhotos = jest.mocked(UploadDriveClientRegistry.getDrivePhotosClient)();
+            jest.mocked(driveForPhotos.findPhotoDuplicates).mockRejectedValue(
+                new DOMException('A network error occurred.', 'NetworkError')
+            );
+            const task = createFileTask();
+
+            await executor.execute(task);
+
+            expect(mockEventCallback).not.toHaveBeenCalledWith(expect.objectContaining({ type: 'file:error' }));
+            expect(mockGetFileUploader).toHaveBeenCalled();
+            expect(mockEventCallback).toHaveBeenCalledWith(
+                expect.objectContaining({ type: 'file:complete', uploadId: 'task123' })
+            );
+        });
+
         it('should compute SHA1 hash for duplicate detection', async () => {
             const task = createFileTask();
             const driveForPhotos = jest.mocked(UploadDriveClientRegistry.getDrivePhotosClient)();
