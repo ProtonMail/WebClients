@@ -1,0 +1,233 @@
+import { useRef } from 'react';
+
+import { c } from 'ttag';
+
+import { Button } from '@proton/atoms/Button/Button';
+import { Alert3ds } from '@proton/components';
+import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
+import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/containers/payments/planCustomizer';
+import { usePaymentFacade } from '@proton/components/payments/client-extensions';
+import useLoading from '@proton/hooks/useLoading';
+import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
+import {
+    PAYMENT_METHOD_TYPES,
+    type PaymentProcessorHook,
+    getBillingAddressFromPaymentStatus,
+    getPaymentsVersion,
+    getPlanFromPlanIDs,
+} from '@proton/payments';
+import { PayButton, usePaymentOptimistic } from '@proton/payments/ui';
+import { useBillingAddress } from '@proton/payments/ui/billing-address/hooks/useBillingAddress';
+import { APPS } from '@proton/shared/lib/constants';
+import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import { Audience } from '@proton/shared/lib/interfaces';
+import { getSentryError } from '@proton/shared/lib/keys';
+import noop from '@proton/utils/noop';
+
+import { useSignup } from '../../../context/SignupContext';
+import { Aside } from '../components/Layout/Aside';
+import { Footer } from '../components/Layout/Footer';
+import Header from '../components/Layout/Header';
+import Layout from '../components/Layout/Layout';
+import { Main } from '../components/Layout/Main';
+import { Wrapper } from '../components/Layout/Wrapper';
+import { PricingCard } from '../components/PricingCard/PricingCard';
+
+interface Props {
+    onPaymentTokenProcessed: () => Promise<void>;
+    onBack: () => void;
+}
+
+/**
+ * This contains alot of payments boilerplate that should/will be removed
+ */
+const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
+    const signup = useSignup();
+    const payments = usePaymentOptimistic();
+    const formRef = useRef<HTMLFormElement>(null);
+
+    const [submitting, withSubmitting] = useLoading();
+
+    const { options } = payments;
+
+    const paymentFacade = usePaymentFacade({
+        checkResult: options.checkResult,
+        amount: options.checkResult.AmountDue,
+        currency: options.currency,
+        selectedPlanName: getPlanFromPlanIDs(payments.plansMap, options.planIDs)?.Name,
+        billingAddress: options.billingAddress,
+        onChargeable: async (_, data) => {
+            signup.submitPaymentData(options, data);
+            return onPaymentTokenProcessed();
+        },
+        paymentStatus: payments.paymentStatus,
+        flow: 'signup',
+        product: APPS.PROTONMEET,
+        telemetryContext: payments.telemetryContext,
+    });
+
+    const validatePayment = () => {
+        if (submitting || !payments.initializationStatus.pricingInitialized || payments.loadingPaymentDetails) {
+            return false;
+        }
+        return true;
+    };
+
+    const billingAddressHook = useBillingAddress({
+        onBillingAddressChange: payments.selectFullBillingAddress,
+        initialBillingAddress: payments.paymentStatus
+            ? getBillingAddressFromPaymentStatus(payments.paymentStatus)
+            : undefined,
+        paymentFacade,
+        telemetryContext: payments.telemetryContext,
+        selectedPlanName: payments.selectedPlan.getPlanName(),
+        onVatChange: payments.setVatNumber,
+        disableVat: true,
+    });
+
+    const process = (processor: PaymentProcessorHook | undefined) => {
+        if (!validatePayment()) {
+            return;
+        }
+
+        async function run() {
+            if (!processor) {
+                return;
+            }
+            try {
+                await processor.processPaymentToken();
+            } catch (error) {
+                const sentryError = getSentryError(error);
+                if (sentryError) {
+                    const context = {
+                        currency: payments.options.currency,
+                        amount: payments.checkResult.AmountDue,
+                        processorType: processor.meta.type,
+                        paymentMethod: paymentFacade.selectedMethodType,
+                        paymentMethodValue: paymentFacade.selectedMethodValue,
+                        cycle: payments.options.cycle,
+                        plan: payments.selectedPlan,
+                        planName: payments.selectedPlan.getPlanName(),
+                        paymentsVersion: getPaymentsVersion(),
+                    };
+
+                    captureMessage(`Payments: Failed to handle ${signup.flowId}`, {
+                        level: 'error',
+                        extra: { error: sentryError, context },
+                    });
+                }
+            }
+        }
+
+        withSubmitting(run()).catch(noop);
+    };
+
+    const handleProcess = () => {
+        return process(paymentFacade.selectedProcessor);
+    };
+
+    const selectedMethodCard =
+        paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CARD ||
+        paymentFacade.selectedMethodType === PAYMENT_METHOD_TYPES.CHARGEBEE_CARD;
+
+    const showAlert3ds = selectedMethodCard;
+
+    const paymentsForm = (
+        <>
+            <form
+                ref={formRef}
+                name="payment-form"
+                onSubmit={(event) => {
+                    event.preventDefault();
+                    handleProcess();
+                }}
+                method="post"
+                className="w-full"
+            >
+                <h1 className="font-arizona lh120 text-5xl lg:text-7xl text-semibold mb-2">
+                    {c('Signup').t`Confirm payment`}
+                </h1>
+
+                {(() => {
+                    const planIDs = payments.options.planIDs;
+
+                    if (!getHasPlanCustomizer(planIDs)) {
+                        return null;
+                    }
+                    return (
+                        <ProtonPlanCustomizer
+                            separator
+                            mode="signup"
+                            loading={false}
+                            currency={payments.options.currency}
+                            cycle={payments.options.cycle}
+                            plansMap={payments.plansMap}
+                            selectedPlanIDs={planIDs}
+                            onChangePlanIDs={(planIDs) => payments.selectPlanIDs(planIDs)}
+                            audience={Audience.B2B}
+                            scribeAddonEnabled
+                            showUsersTooltip
+                            telemetryContext={payments.telemetryContext}
+                        />
+                    );
+                })()}
+
+                <PaymentWrapper
+                    {...paymentFacade}
+                    noMaxWidth
+                    hideFirstLabel
+                    onCurrencyChange={payments.selectCurrency}
+                    taxCountry={billingAddressHook.taxCountry}
+                />
+
+                <PayButton
+                    size="large"
+                    color="norm"
+                    fullWidth
+                    pill
+                    taxCountry={billingAddressHook.taxCountry}
+                    paymentFacade={paymentFacade}
+                    loading={submitting}
+                    data-testid="pay"
+                    className="py-4 text-semibold"
+                    paypalClassName=""
+                    product={APPS.PROTONMEET}
+                    telemetryContext={payments.telemetryContext}
+                >
+                    {c('Action').t`Confirm purchase`}
+                </PayButton>
+                {showAlert3ds && <Alert3ds />}
+            </form>
+        </>
+    );
+
+    return (
+        <Layout>
+            <Header />
+
+            <Wrapper minHeight="calc(100vh - 4.25rem - 3.85rem)">
+                <Main>
+                    <Button
+                        onClick={onBack}
+                        shape="ghost"
+                        size="small"
+                        className="inline-flex gap-1 items-center self-start ml-custom"
+                        style={{ '--ml-custom': 'calc(var(--padding-inline) * -1)' }}
+                        data-testid="back-button"
+                    >
+                        <IcArrowLeft className="shrink-0" />
+                        {c('Action').t`Go back`}
+                    </Button>
+
+                    {paymentsForm}
+                </Main>
+                <Aside>
+                    <PricingCard step="payment" />
+                </Aside>
+            </Wrapper>
+            <Footer />
+        </Layout>
+    );
+};
+
+export default PaymentStep;
