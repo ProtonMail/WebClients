@@ -173,7 +173,7 @@ export class MetricHandler {
             }
 
             if (metric.error === 'unknown' || metric.error === 'integrity_error') {
-                captureMessage('Metric event details: upload unknown error', {
+                captureMessage('Metric event details: upload error', {
                     level: 'debug', // Debug as we need it only when we investigate metric reports.
                     tags: {
                         driveSdkMetricEvent: 'uploadError',
@@ -230,8 +230,8 @@ export class MetricHandler {
                 this.lastDownloadError = new Date();
             }
 
-            if (metric.error === 'unknown') {
-                captureMessage('Metric event details: download unknown error', {
+            if (metric.error === 'unknown' || metric.error === 'integrity_error') {
+                captureMessage('Metric event details: download error', {
                     level: 'debug', // Debug as we need it only when we investigate metric reports.
                     tags: {
                         driveSdkMetricEvent: 'downloadError',
