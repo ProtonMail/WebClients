@@ -1344,6 +1344,10 @@
       ],
       "Writing assistant seats": [
         "Yazma asistanı koltuk sayısı"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } lisansı",
+        "${ seats } ${ MEET_APP_NAME } lisansı"
       ]
     },
     "Alert": {
@@ -6973,6 +6977,21 @@
       ],
       "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
         "Erişme iznini görüntüleyebilir olarak değiştirdikten sonra \"${ fileName }\" dosyasını paylaşamazsınız. Erişim izninizi yalnızca sahibi yeniden değiştirebilir."
+      ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } uçtan uca şifrelenmiş bir görüntülü görüşme çözümüdür. Güvenli görüşmeler düzenlemek için bunu tarifenize ekleyin."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } koltukları"
+      ],
+      "${ MEET_APP_NAME } video conferencing": [
+        "${ MEET_APP_NAME } görüntülü görüşme"
+      ],
+      "Add ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME } ekle"
+      ],
+      "for ${ price }": [
+        "${ price } karşılığında"
       ]
     },
     "info": {
@@ -13502,6 +13521,27 @@
       ],
       "Yahoo": [
         "Yahoo"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } lisansı"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } koltukları"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME } koltuğu",
+        "${ seats } ${ MEET_APP_NAME } koltuğu"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } koltuk ile",
+        "${ seats } koltuk ile"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_MEET_SEATS } tane ${ MEET_SHORT_APP_NAME } koltuğunuz olabilir."
       ]
     }
   }

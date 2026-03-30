@@ -1235,6 +1235,15 @@
       ],
       "Zoom out": [
         "축소"
+      ],
+      "Change my access": [
+        "내 접근 권한 변경"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "${ planOrAppName }(으)로 계속하기"
+      ],
+      "Remove my access": [
+        "내 접근 권한 제거"
       ]
     },
     "Action: Docs": {
@@ -3021,6 +3030,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "이미 10개 별칭을 생성했습니다. ${ BRAND_NAME } Unlimited로 무제한 별칭과 500 GB 스토리지를 받아보세요."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "떠나시는 모습을 보니 아쉽네요. 잠시 시간을 내어주셔서 취소하시려는 이유에 대해 알려주시면 정말 감사하겠습니다. 회원님의 소중한 의견은 ${ BRAND_NAME }을 모든 사용자에게 더 나은 서비스로 만드는 데 있어서 큰 도움이 됩니다."
       ]
     },
     "description": {
@@ -4778,7 +4790,7 @@
     },
     "Import provider": {
       "Advanced import": [
-        "고급 가져오기"
+        "고급 불러오기 설정"
       ]
     },
     "Import warning": {
@@ -6856,6 +6868,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "자신의 계정 데이터는 여전히 볼 수 있지만 모든 사용자 계정이 조직에서 제거됩니다."
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "만약 나 자신을 제거하는 경우, \"${ fileName }\"에 대한 접근 권한을 잃게 되며, 소유자가 다시 공유하지 않는 한 다시 열 수 없게 됩니다."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "접근 권한을 뷰어로 변경하면 \"${ fileName }\"을(를) 공유할 수 없게 됩니다. 소유자만 사용자의 접근 범위를 다시 변경할 수 있습니다."
       ]
     },
     "info": {
@@ -7604,6 +7622,18 @@
       ],
       "ZIP code": [
         "우편번호"
+      ],
+      "Additional comments": [
+        "추가 의견"
+      ],
+      "Continue cancelling": [
+        "취소 계속하기"
+      ],
+      "Main reason for cancelling": [
+        "취소의 주된 이유"
+      ],
+      "Skip feedback": [
+        "피드백 건너뛰기"
       ]
     },
     "Label for contact group color": {
@@ -9345,6 +9375,9 @@
       ],
       "Your settings have been changed successfully": [
         "설정을 저장했습니다"
+      ],
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\"이(가) 공유됨"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10264,6 +10297,15 @@
       ],
       "ZIP code": [
         "우편 번호"
+      ],
+      "Anything you'd like us to know": [
+        "알려주셨으면 하는 사항이 있으신가요?"
+      ],
+      "Enter a name": [
+        "이름 입력"
+      ],
+      "Select a provider": [
+        "제공자 선택"
       ]
     },
     "Placeholder for contact group name": {
@@ -11074,6 +11116,9 @@
       ],
       "pending": [
         "대기 중"
+      ],
+      "user joined": [
+        "명 사용자 참여함"
       ]
     },
     "Storage": {
@@ -12321,7 +12366,7 @@
         "그룹 가져오기"
       ],
       "Import your data to ${ BRAND_NAME }": [
-        "${ BRAND_NAME }로 데이터 불러오기"
+        "${ BRAND_NAME }으로 데이터 불러오기"
       ],
       "Information exposed in breach": [
         "유출 시 노출된 정보"
@@ -12883,6 +12928,15 @@
       ],
       "You’ve got 5 GB of storage": [
         "5GB의 저장공간을 얻으셨습니다"
+      ],
+      "Change access to viewer?": [
+        "뷰어에게 접근 권한을 변경하시겠습니까?"
+      ],
+      "Remove your access?": [
+        "내 접근 권한을 제거하시겠습니까?"
+      ],
+      "Share \"${ fileName }\"": [
+        "\"${ fileName }\" 공유"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -12977,6 +13031,12 @@
       ],
       "We have sent them an invite to access the item.": [
         "이 항목에 대한 접근을 초대하도록 초대장을 전송했습니다."
+      ],
+      "Change shared item settings": [
+        "공유된 항목 설정 변경"
+      ],
+      "New!": [
+        "신규"
       ]
     },
     "tooltip": {
@@ -13175,6 +13235,26 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "무료 체험이 ${ textDate }에 종료됩니다. ${ textDate } 이전에 취소시 요금이 청구되지 않습니다. ${ action }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "기타"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }
