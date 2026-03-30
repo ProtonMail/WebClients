@@ -8,6 +8,7 @@ import {
 } from '@proton/components/containers/payments/features/calendar';
 import {
     getCloudStorageAndSharingFeature,
+    getDocumentEditor,
     getFreeMailStorageFeature,
     getShortStorageFeatureB2B,
     getStorageFeature,
@@ -19,14 +20,26 @@ import {
     getSupport,
     getUsersFeature,
 } from '@proton/components/containers/payments/features/highlights';
+import { getPrivateAIChatFeature } from '@proton/components/containers/payments/features/lumo';
 import {
+    getDataRetentionPoliciesFeature,
     getFoldersAndLabelsFeature,
     getNAddressesFeature,
     getNDomainsFeature,
     getNMessagesFeature,
+    getProtonScribe,
 } from '@proton/components/containers/payments/features/mail';
+import {
+    PAID_MAX_PARTICIPANTS,
+    PAID_PREMIUM_MAX_PARTICIPANTS,
+    getMeetAppointmentScheduling,
+    getVideoMeetingsFeature,
+} from '@proton/components/containers/payments/features/meet';
 import { getPasswordManagerToSecureCredentialsFeature } from '@proton/components/containers/payments/features/pass';
-import { getB2BVPNConnectionsPerUserFeature } from '@proton/components/containers/payments/features/vpn';
+import {
+    getB2BVPNConnectionsPerUserFeature,
+    getVPNWithNetShieldFeature,
+} from '@proton/components/containers/payments/features/vpn';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import { CYCLE, type FreePlanDefault, PLANS, type Plan, type PlansMap } from '@proton/payments';
 import {
@@ -37,6 +50,7 @@ import {
     MAIL_SHORT_APP_NAME,
     SSO_PATHS,
 } from '@proton/shared/lib/constants';
+import { everythingInPlanOrAppNamePlusText } from '@proton/shared/lib/i18n/ttag';
 import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { Audience } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
@@ -136,14 +150,55 @@ export const getCustomMailFeatures = (plan: Plan | undefined, freePlan: FreePlan
             family: plan.Name === PLANS.FAMILY,
             duo: plan.Name === PLANS.DUO,
         }),
+        getNDomainsFeature({ n: plan.MaxDomains }),
         plan.Name === PLANS.FAMILY && getUsersFeature(FAMILY_MAX_USERS),
         (plan.Name === PLANS.BUNDLE || plan.Name === PLANS.FAMILY) && getAllPremiumServices(),
         getNAddressesFeature({ n: plan.MaxAddresses }),
         getFoldersAndLabelsFeature('unlimited'),
         getNMessagesFeature('unlimited'),
-        getNDomainsFeature({ n: plan.MaxDomains }),
         getSupport('priority'),
         plan.Name === PLANS.MAIL && getCalendarAppFeature(),
+    ].filter(isTruthy);
+};
+
+export const getMailEssentialsFeatures = (plan: Plan | undefined, freePlan: FreePlanDefault) => {
+    if (!plan) {
+        return [];
+    }
+    return [
+        getStorageFeature(plan.MaxSpace, { freePlan }),
+        getNDomainsFeature({ n: plan.MaxDomains }),
+        getSecurePersonalAndSharedCalendarFeature(),
+        getMeetAppointmentScheduling(true),
+        getCloudStorageAndSharingFeature(),
+        getDocumentEditor(),
+    ].filter(isTruthy);
+};
+
+export const getWorkspaceStandardFeatures = (plan: Plan | undefined, freePlan: FreePlanDefault) => {
+    if (!plan) {
+        return [];
+    }
+    return [
+        getStorageFeature(plan.MaxSpace, { freePlan }),
+        getNDomainsFeature({ n: plan.MaxDomains }),
+        getVideoMeetingsFeature(PAID_MAX_PARTICIPANTS),
+        getVPNWithNetShieldFeature(),
+        getPasswordManagerToSecureCredentialsFeature(),
+    ].filter(isTruthy);
+};
+
+export const getWorkspacePremiumFeatures = (plan: Plan | undefined, freePlan: FreePlanDefault) => {
+    if (!plan) {
+        return [];
+    }
+    return [
+        getStorageFeature(plan.MaxSpace, { freePlan }),
+        getNDomainsFeature({ n: plan.MaxDomains }),
+        getVideoMeetingsFeature(PAID_PREMIUM_MAX_PARTICIPANTS),
+        getPrivateAIChatFeature(),
+        getProtonScribe(true),
+        getDataRetentionPoliciesFeature(true),
     ].filter(isTruthy);
 };
 
@@ -266,7 +321,7 @@ export const getMailConfiguration = ({
                         features={
                             <PlanCardFeatureList
                                 {...planCardFeatureProps}
-                                features={getCustomMailFeatures(plansMap?.[PLANS.MAIL_PRO], freePlan)}
+                                features={getMailEssentialsFeatures(plansMap?.[PLANS.MAIL_PRO], freePlan)}
                             />
                         }
                     />
@@ -282,7 +337,7 @@ export const getMailConfiguration = ({
                         features={
                             <PlanCardFeatureList
                                 {...planCardFeatureProps}
-                                features={getCustomMailFeatures(plansMap?.[PLANS.MAIL_BUSINESS], freePlan)}
+                                features={getMailEssentialsFeatures(plansMap?.[PLANS.MAIL_BUSINESS], freePlan)}
                             />
                         }
                     />
@@ -294,12 +349,11 @@ export const getMailConfiguration = ({
                 plan: PLANS.BUNDLE_PRO_2024,
                 subsection: (
                     <FeatureListPlanCardSubSection
-                        description={c('mail_signup_2024: Info')
-                            .t`All ${BRAND_NAME} for Business apps and premium features to protect your entire business`}
+                        description={everythingInPlanOrAppNamePlusText(plansMap?.[PLANS.MAIL_PRO]?.Title ?? '')}
                         features={
                             <PlanCardFeatureList
                                 {...planCardFeatureProps}
-                                features={getCustomMailFeatures(plansMap?.[PLANS.BUNDLE_PRO_2024], freePlan)}
+                                features={getWorkspaceStandardFeatures(plansMap?.[PLANS.BUNDLE_PRO_2024], freePlan)}
                             />
                         }
                     />
@@ -311,12 +365,11 @@ export const getMailConfiguration = ({
                 plan: PLANS.BUNDLE_BIZ_2025,
                 subsection: (
                     <FeatureListPlanCardSubSection
-                        description={c('mail_signup_2025: Info')
-                            .t`All ${BRAND_NAME} for Business apps and premium features to protect your entire business`}
+                        description={everythingInPlanOrAppNamePlusText(plansMap?.[PLANS.BUNDLE_PRO_2024]?.Title ?? '')}
                         features={
                             <PlanCardFeatureList
                                 {...planCardFeatureProps}
-                                features={getCustomMailFeatures(plansMap?.[PLANS.BUNDLE_BIZ_2025], freePlan)}
+                                features={getWorkspacePremiumFeatures(plansMap?.[PLANS.BUNDLE_BIZ_2025], freePlan)}
                             />
                         }
                     />
