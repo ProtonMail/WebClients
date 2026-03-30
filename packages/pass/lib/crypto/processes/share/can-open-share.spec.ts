@@ -19,6 +19,7 @@ describe('canOpenShare', () => {
     const groupId = 'groupId';
 
     const mockKey = {} as AddressKey;
+    const mockGroupPublicKey = '';
     const encryptedShare = { AddressID: addressId } as ShareGetResponse;
     const encryptedGroupShare = { AddressID: addressId, GroupID: groupId } as ShareGetResponse;
     const shareKey: ShareKeyResponse = { KeyRotation: 0, Key: 'key', UserKeyID: userKeyId, CreateTime: 0 };
@@ -59,7 +60,7 @@ describe('canOpenShare', () => {
 
     test('group share with address and group keys should be true', async () => {
         mockCryptContext({ addresses: [{ ID: addressId, Keys: [mockKey] } as Address] });
-        expect(canOpenShare(encryptedGroupShare, [shareKey], undefined, [mockKey])).toBe(true);
+        expect(canOpenShare(encryptedGroupShare, [shareKey], undefined, [mockGroupPublicKey])).toBe(true);
     });
 
     test('share with no matching user keys should be false', async () => {

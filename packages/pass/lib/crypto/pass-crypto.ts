@@ -2,6 +2,7 @@ import type { Store } from 'redux';
 
 import { CryptoProxy } from '@proton/crypto';
 import { FILE_PENDING_SHARE, FILE_PUBLIC_SHARE } from '@proton/pass/constants';
+import { getPublicKeysForEmail } from '@proton/pass/lib/auth/address';
 import { authStore } from '@proton/pass/lib/auth/store';
 import type { PassCoreProxy } from '@proton/pass/lib/core/core.types';
 import { encryptData } from '@proton/pass/lib/crypto/utils/crypto-helpers';
@@ -79,7 +80,7 @@ export const createPassCrypto = (core?: PassCoreProxy, store?: Store<State>): Pa
         primaryAddress: undefined,
         shareManagers: new Map(),
         fileKeys: new Map(),
-        groupKeys: new Map(),
+        groups: new Map(),
     };
 
     const hasShareManager = (shareId: string): boolean => context.shareManagers.has(shareId);
@@ -115,34 +116,47 @@ export const createPassCrypto = (core?: PassCoreProxy, store?: Store<State>): Pa
     };
 
     /** When user is hydrated, its groups are loaded and their keys stored in context */
-    const setGroupKeys = (group: Group) => {
+    const setGroup = (group: Group) => {
         assertHydrated(context);
-        context.groupKeys.set(group.groupId, group.keys);
+        const existing = context.groups.get(group.groupId);
+        // If already exists, just update email else, create with no public keys
+        if (existing) existing.group = group;
+        else context.groups.set(group.groupId, { group, publicKeys: null });
     };
 
     /** When asking for a group keys, first check the context
      * There are some race conditions where the user groups are not loaded yet
      * In these cases, trigger fetch intent and retry */
-    const getGroupKeys = async (groupId: string) => {
-        let groupKeys = context.groupKeys.get(groupId);
+    const getGroupOrFetch = async (groupId: string) => {
+        let group = context.groups.get(groupId);
 
-        if (groupKeys === undefined && store) {
+        if (group === undefined && store) {
             /** There's many cache layer but if we truly miss keys because they are not loaded
              * This will trigger the request and update the group keys on success. NOTE: on
              * success `getOrganizationGroup` will hydrate the crypto `groupKeys` accordingly.
              * see: `packages/pass/store/sagas/organization/organization.group.saga.ts` */
             const asyncDispatch = asyncRequestDispatcherFactory(store.dispatch);
             await asyncDispatch(getGroup, groupId);
-            groupKeys = context.groupKeys.get(groupId);
+            group = context.groups.get(groupId);
         }
 
-        if (groupKeys === undefined) throw new Error(`No groups keys for group id ${groupId}`);
-        return groupKeys;
+        if (group === undefined) throw new Error(`No groups keys for group id ${groupId}`);
+
+        return group;
+    };
+
+    const getGroupAddressKeys = async (groupId: string) => (await getGroupOrFetch(groupId)).group.keys;
+
+    const getGroupPublicKeys = async (groupId: string) => {
+        const group = await getGroupOrFetch(groupId);
+        if (group.publicKeys !== null) return group.publicKeys;
+        group.publicKeys = await getPublicKeysForEmail(group.group.email);
+        return group.publicKeys;
     };
 
     const getDecryptedGroupKey = async (organizationKey: MaybeNull<OrganizationKey>, groupId: string) => {
         assertHydrated(context);
-        const groupKeys = await getGroupKeys(groupId);
+        const groupKeys = await getGroupAddressKeys(groupId);
 
         if (organizationKey) {
             const decryptedOrganizationKey = await getDecryptedOrganizationKeyHelper({
@@ -165,8 +179,8 @@ export const createPassCrypto = (core?: PassCoreProxy, store?: Store<State>): Pa
 
         if (groupId) {
             const addressKeys = await getDecryptedAddressKeys(addressId);
-            const groupKeys = await getGroupKeys(groupId);
-            return processes.openGroupShareKey({ shareKey, addressKeys, groupKeys });
+            const groupPublicKeys = await getGroupPublicKeys(groupId);
+            return processes.openGroupShareKey({ shareKey, addressKeys, groupPublicKeys });
         }
         return processes.openShareKey({ shareKey, userKeys: context.userKeys });
     };
@@ -208,7 +222,7 @@ export const createPassCrypto = (core?: PassCoreProxy, store?: Store<State>): Pa
                     logger.info('[PassCrypto] Hydrated from local snapshot');
                 }
 
-                if (groups) groups.forEach(setGroupKeys);
+                if (groups) groups.forEach(setGroup);
             } catch (err) {
                 logger.warn('[PassCrypto] Hydration failed', err);
                 const message = err instanceof Error ? err.message : 'unknown error';
@@ -227,10 +241,10 @@ export const createPassCrypto = (core?: PassCoreProxy, store?: Store<State>): Pa
             context.primaryUserKey = undefined;
             context.shareManagers = new Map();
             context.fileKeys = new Map();
-            context.groupKeys = new Map();
+            context.groups = new Map();
         },
 
-        setGroupKeys,
+        setGroup,
 
         getShareManager,
 
@@ -298,7 +312,7 @@ export const createPassCrypto = (core?: PassCoreProxy, store?: Store<State>): Pa
                 const { encryptedShare, encryptedShareKeys } = data;
                 const { ShareID: shareId, GroupID: groupId } = encryptedShare;
                 const shareManager = hasShareManager(shareId) ? getShareManager(shareId) : undefined;
-                const groupKeys = groupId ? await getGroupKeys(groupId) : undefined;
+                const groupKeys = groupId ? await getGroupPublicKeys(groupId) : undefined;
                 const canOpenShare = processes.canOpenShare(
                     encryptedShare,
                     encryptedShareKeys,
