@@ -15,8 +15,7 @@ const createGroupVault = async (content: Uint8Array<ArrayBuffer>) => {
     const addressKey = await createRandomKey();
     const addressKeys = [addressKey];
 
-    const { group, groupKey } = await createRandomGroupKey('groupId');
-    const groupKeys = group.Address.Keys;
+    const { groupKey, groupPublicKey } = await createRandomGroupKey('groupId');
 
     const vault = await createVault({
         content,
@@ -25,7 +24,7 @@ const createGroupVault = async (content: Uint8Array<ArrayBuffer>) => {
         addressId: randomAddress().ID,
     });
 
-    return { addressKeys, groupKeys, vault };
+    return { addressKeys, groupPublicKey, vault };
 };
 
 describe('openGroupShareKey crypto process', () => {
@@ -34,7 +33,7 @@ describe('openGroupShareKey crypto process', () => {
 
     test('should decrypt vault key using private user keys', async () => {
         const content = randomContents();
-        const { addressKeys, groupKeys, vault } = await createGroupVault(content);
+        const { addressKeys, groupPublicKey, vault } = await createGroupVault(content);
 
         const vaultKey = await openGroupShareKey({
             shareKey: {
@@ -44,7 +43,7 @@ describe('openGroupShareKey crypto process', () => {
                 UserKeyID: 'test_user_key_id',
             },
             addressKeys,
-            groupKeys,
+            groupPublicKeys: [groupPublicKey],
         });
 
         const decryptedContent = await decryptData(
