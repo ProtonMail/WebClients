@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectIsRecordingInProgress } from '@proton/meet/store/slices/meetingInfo';
-import scheduleIcon from '@proton/styles/assets/img/meet/schedule-icon.png';
+import IcCircleRadioFilled from '@proton/styles/assets/img/meet/ic-circle-radio-filled.svg';
 
 import { useMeetContext } from '../../contexts/MeetContext';
 import { ConfirmationModal } from '../ConfirmationModal/ConfirmationModal';
@@ -33,10 +33,10 @@ export const RecordingInProgressModal = () => {
         <ConfirmationModal
             icon={
                 <img
-                    src={scheduleIcon}
+                    src={IcCircleRadioFilled}
                     alt=""
-                    className="w-custom h-custom mb-2"
-                    style={{ '--w-custom': '4rem', '--h-custom': '4rem' }}
+                    className="w-custom h-custom"
+                    style={{ '--w-custom': '4.5em', '--h-custom': '4.5em' }}
                 />
             }
             title={c('Info').t`This meeting is being recorded`}
