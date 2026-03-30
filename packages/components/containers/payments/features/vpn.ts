@@ -202,6 +202,14 @@ export const getNetShield = (included: boolean, highlight?: boolean): PlanCardFe
         icon: 'shield',
     };
 };
+export const getVPNWithNetShieldFeature = (): PlanCardFeatureDefinition => {
+    return {
+        text: c('new_plans: feature').t`VPN with ad-blocker and malware protection`,
+        included: true,
+        icon: 'brand-proton-vpn',
+    };
+};
+
 export const getSecureCore = (included: boolean, highlight?: boolean): PlanCardFeatureDefinition => {
     return {
         text: c('new_plans: feature').t`Secure Core servers`,
