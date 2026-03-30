@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { addMonths, differenceInCalendarMonths, endOfMonth, startOfMonth, startOfToday } from 'date-fns';
+import { differenceInCalendarMonths, fromUnixTime, isBefore, startOfMonth, startOfToday } from 'date-fns';
 
 import Loader from '@proton/components/components/loader/Loader';
 import LocalizedMiniCalendar from '@proton/components/components/miniCalendar/LocalizedMiniCalendar';
@@ -20,6 +20,7 @@ interface BookingMiniCalendarProps {
 export const BookingMiniCalendar = ({ selectedDate, onSelectDate }: BookingMiniCalendarProps) => {
     const isLoading = useBookingStore((state) => state.isLoading);
     const getDateKeySet = useBookingStore((state) => state.getDateKeySet);
+    const latestAvailableSlot = useBookingStore((state) => state.latestAvailableSlot);
     const [displayedMonth, setDisplayedMonth] = useState(selectedDate);
 
     const { loadPublicBooking } = useExternalBookingLoader();
@@ -42,13 +43,13 @@ export const BookingMiniCalendar = ({ selectedDate, onSelectDate }: BookingMiniC
     const handleMonthChange = async (date: Date) => {
         setDisplayedMonth(startOfMonth(date));
         const monthDiff = differenceInCalendarMonths(date, displayedMonth);
-        if (monthDiff <= 0) {
+        const latestSlotDate = latestAvailableSlot?.startTime ? fromUnixTime(latestAvailableSlot.startTime) : null;
+        if (monthDiff <= 0 || isBefore(date, latestSlotDate || new Date())) {
             return;
         }
 
-        const newRangeStart = startOfMonth(addMonths(date, 1));
-        const newRangeEnd = endOfMonth(addMonths(date, 1));
-        await loadPublicBooking(newRangeStart, newRangeEnd);
+        const newRangeStart = startOfMonth(date);
+        await loadPublicBooking(newRangeStart);
     };
 
     const today = new Date();
