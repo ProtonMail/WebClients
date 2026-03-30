@@ -561,7 +561,7 @@ describe('useSharingModalState', () => {
         const { result } = renderHook(() => useSharingModalState(mockProps));
 
         await waitFor(() => {
-            expect(result.current.ownerEmail).toBe('');
+            expect(result.current.ownerEmail).toBe(undefined);
         });
     });
 

@@ -15,7 +15,7 @@ jest.mock('@proton/account/addresses/hooks', () => ({
     useAddresses: jest.fn(() => [[{ Email: 'owner@example.com' }]]),
 }));
 
-jest.mock('./helpers/getContactNameAndEmail', () => ({
+jest.mock('./helpers/userNames', () => ({
     getContactNameAndEmail: jest.fn((email) => {
         let contactName = '';
         if (email === 'john@example.com') {

@@ -8,29 +8,26 @@ import { Checkbox, ModalTwo, ModalTwoContent, useConfirmActionModal, useModalTwo
 import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 
-import { useFlagsDriveSharingAdminPermissions } from '../../flags/useFlagsDriveSharingAdminPermissions';
 import { useEditorsManageAccessContext } from './useEditorsManageAccess';
 
 export interface SharingSettingsModalProps {
     sharedFileName: string;
     stopSharing: () => Promise<void>;
-    canChangePermissions: boolean;
+    showPermissionsCheckbox: boolean;
 }
 
 const SharingSettingsModal = ({
     sharedFileName,
     stopSharing,
-    canChangePermissions,
+    showPermissionsCheckbox,
     onClose,
     onExit,
     open,
 }: SharingSettingsModalProps & ModalProps) => {
     const [confirmActionModal, showConfirmActionModal] = useConfirmActionModal();
 
-    const adminRoleEnabled = useFlagsDriveSharingAdminPermissions();
     const [isLoading, setIsLoading] = useState(false);
     const { editorsManageAccess, changeManageAccess } = useEditorsManageAccessContext();
-    const showPermissionsCheckbox = adminRoleEnabled && canChangePermissions;
     const toggleCheckbox = async (event: ChangeEvent<HTMLInputElement>) => {
         setIsLoading(true);
         try {

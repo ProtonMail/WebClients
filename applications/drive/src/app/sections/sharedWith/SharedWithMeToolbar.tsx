@@ -8,11 +8,11 @@ import { LayoutButton } from '../../components/sections/ToolbarButtons';
 import { useCopyItemsModal } from '../../modals/CopyItemsModal';
 import { useDetailsModal } from '../../modals/DetailsModal';
 import { useFilesDetailsModal } from '../../modals/FilesDetailsModal';
+import { useSharingModal } from '../../modals/SharingModal/SharingModal';
 import { useDrivePreviewModal } from '../../modals/preview';
 import { useSelectionStore } from '../../modules/selection';
 import { SharedWithMeActions } from './actions/SharedWithMeActions';
 import type { DirectShareItem } from './types';
-import { useResharingModal } from './useResharingModal';
 import { useSharedWithMeStore } from './useSharedWithMe.store';
 
 interface SharedWithMeToolbarProps {
@@ -38,7 +38,7 @@ const SharedWithMeToolbar = ({ uids }: SharedWithMeToolbarProps) => {
     const { previewModal, showPreviewModal } = useDrivePreviewModal();
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
     const { detailsModal, showDetailsModal } = useDetailsModal();
-    const { sharingModal, showSharingModal } = useResharingModal(selectedItems);
+    const { sharingModal, showSharingModal } = useSharingModal();
     const { filesDetailsModal, showFilesDetailsModal } = useFilesDetailsModal();
 
     const { copyModal, showCopyItemsModal } = useCopyItemsModal();
