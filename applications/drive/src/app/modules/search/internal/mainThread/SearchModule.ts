@@ -91,6 +91,11 @@ export class SearchModule {
         return instance;
     }
 
+    /** Register with the worker and begin indexing. */
+    start(): void {
+        this.workerClient.start();
+    }
+
     getState(): SearchModuleState {
         return this.state;
     }
