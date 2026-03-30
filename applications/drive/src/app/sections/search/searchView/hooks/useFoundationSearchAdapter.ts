@@ -84,6 +84,14 @@ export const useFoundationSearchAdapter = (): SearchViewModelAdapter => {
         // TODO: Revisit this search triggering logic inherited from legacy search.
     }, [doSearch, refreshMarker]);
 
+    // If the user previously opted in, start the search module when the browser is idle.
+    useEffect(() => {
+        if (!searchModule.isAvailable || !searchModule.isUserOptIn) {
+            return;
+        }
+        return searchModule.startWhenIdle();
+    }, [searchModule]);
+
     const refresh = useCallback(() => {
         setRefreshMarker((prev) => prev + 1);
     }, []);
@@ -94,13 +102,15 @@ export const useFoundationSearchAdapter = (): SearchViewModelAdapter => {
             return;
         }
 
-        void searchModule.optIn();
+        // User did some action that requires the search module to start now, like focusing the
+        // search field. We consider it as an implicit opt-in to the search feature.
+        searchModule.optIn();
     }, [searchModule]);
 
     return {
         isSearchAvailable: searchModule.isAvailable,
         isSearchEnabled: searchModule.isAvailable ? searchModule.isUserOptIn : false,
-        isComputingSearchIndex: searchModule.isAvailable ? searchModule.isInitialIndexing : false,
+        isSearchable: searchModule.isAvailable ? searchModule.isSearchable : false,
         startIndexing,
         isSearching,
         resultUids: currentResultUids,

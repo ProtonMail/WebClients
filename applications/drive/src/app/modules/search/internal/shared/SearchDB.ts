@@ -32,6 +32,10 @@ interface SearchDBSchema extends DBSchema {
         key: string;
         value: IndexPopulatorState;
     };
+    userPreferences: {
+        key: string;
+        value: boolean;
+    };
 }
 
 type RawSearchDB = IDBPDatabase<SearchDBSchema>;
@@ -51,6 +55,7 @@ export class SearchDB {
                     database.createObjectStore('indexBlobs');
                     database.createObjectStore('treeEventScopeSubscriptions');
                     database.createObjectStore('indexPopulatorStates');
+                    database.createObjectStore('userPreferences');
                 }
             },
         });
@@ -109,5 +114,16 @@ export class SearchDB {
 
     deletePopulatorState(uid: string): Promise<void> {
         return this.db.delete('indexPopulatorStates', uid);
+    }
+
+    // --- User preferences ---
+
+    async isOptedIn(): Promise<boolean> {
+        const value = await this.db.get('userPreferences', 'optIn');
+        return value === true;
+    }
+
+    setOptedIn(): Promise<string> {
+        return this.db.put('userPreferences', true, 'optIn');
     }
 }

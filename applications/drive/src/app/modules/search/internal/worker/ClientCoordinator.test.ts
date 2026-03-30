@@ -49,6 +49,17 @@ describe('ClientCoordinator', () => {
             expect(listener).toHaveBeenCalledTimes(1);
             expect(listener).toHaveBeenCalledWith(expect.objectContaining({ clientId: CLIENT_1 }));
         });
+
+        it('re-registering the same clientId does not notify subscribers again', () => {
+            const listener = jest.fn();
+            coordinator.subscribeClientChanged(listener);
+            coordinator.register(USER_1, CLIENT_1, BRIDGE);
+            expect(listener).toHaveBeenCalledTimes(1);
+
+            coordinator.register(USER_1, CLIENT_1, BRIDGE);
+            coordinator.register(USER_1, CLIENT_1, BRIDGE);
+            expect(listener).toHaveBeenCalledTimes(1);
+        });
     });
 
     describe('heartbeat', () => {
