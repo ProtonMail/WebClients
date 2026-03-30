@@ -26,7 +26,7 @@ export const PersonalMeetingRowUpsell = () => {
             >
                 <div className="flex flex-column md:flex-row items-start md:items-center shrink-0 gap-6">
                     <div
-                        className="flex flex-column items-center justify-center w-custom h-custom meet-room-background-1 profile-radius color-white"
+                        className="flex flex-column items-center justify-center w-custom h-custom meet-room-background-purple profile-radius color-white"
                         style={{ '--w-custom': '3.75rem', '--h-custom': '3.75rem' }}
                     >
                         <IcMeetUsers size={6} />
