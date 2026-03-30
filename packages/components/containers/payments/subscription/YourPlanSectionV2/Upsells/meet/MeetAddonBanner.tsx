@@ -8,7 +8,17 @@ import NewBadge from '@proton/components/components/newBadge/NewBadge';
 import { getSimplePriceString } from '@proton/components/components/price/helper';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
-import { PLANS, PLAN_NAMES, SelectedPlan, getMeetAddonNameByPlan, getPlanName, getPlansMap } from '@proton/payments';
+import {
+    PLANS,
+    PLAN_NAMES,
+    SelectedPlan,
+    getMeetAddonNameByPlan,
+    getPlanIDs,
+    getPlanName,
+    getPlansMap,
+    hasMeetAddonFromPlanIDs,
+} from '@proton/payments';
+import { getHasMeetIncludedInPlan } from '@proton/payments/core/subscription/helpers';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { useSubscriptionModal } from '../../../SubscriptionModalProvider';
@@ -37,6 +47,8 @@ const MeetAddonBanner = ({ app }: UpsellSectionBaseProps) => {
     const monthlyPrice = meetAddon && cycle ? (meetAddon.Pricing[cycle] ?? 0) / cycle : 0;
     const priceString = preferredCurrency ? getSimplePriceString(preferredCurrency, monthlyPrice) : '';
 
+    const hasMeetAddon = hasMeetAddonFromPlanIDs(getPlanIDs(subscription));
+
     const handleGetPlan = () => {
         if (!subscription || !plansMap) {
             return;
@@ -54,7 +66,7 @@ const MeetAddonBanner = ({ app }: UpsellSectionBaseProps) => {
         });
     };
 
-    if (!meetAddonUpsellsEnabled || !meetAddon) {
+    if (!meetAddonUpsellsEnabled || !meetAddon || hasMeetAddon || getHasMeetIncludedInPlan(subscription)) {
         return null;
     }
 
