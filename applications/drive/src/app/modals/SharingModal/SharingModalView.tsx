@@ -43,7 +43,7 @@ export interface SharingModalViewProps extends ModalStateProps {
     nodeUid: string;
     roleOnParentNode?: MemberRole;
     fileName: string;
-    canChangePermissions: boolean;
+    showPermissionsCheckbox: boolean;
     mediaType?: string;
     ownerEmail?: string;
     ownerDisplayName?: string;
@@ -89,7 +89,7 @@ export const SharingModalView = ({
     nodeUid,
     roleOnParentNode,
     fileName,
-    canChangePermissions,
+    showPermissionsCheckbox,
     mediaType,
     ownerEmail,
     ownerDisplayName,
@@ -259,7 +259,7 @@ export const SharingModalView = ({
                                                 await actions.stopSharing();
                                                 onClose();
                                             },
-                                            canChangePermissions,
+                                            showPermissionsCheckbox,
                                         })
                                     }
                                     data-testid="share-modal-settings"
