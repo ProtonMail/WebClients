@@ -99,6 +99,7 @@ export const SharedWithMe = () => {
             return true;
         },
     };
+
     return (
         <ContactEmailsProvider>
             <SharedWithMeContextMenu
