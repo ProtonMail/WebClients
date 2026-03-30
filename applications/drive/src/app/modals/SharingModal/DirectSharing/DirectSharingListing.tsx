@@ -12,7 +12,7 @@ import { findUserAddress } from '@proton/shared/lib/helpers/address';
 import type { DirectSharingRole } from '../interfaces';
 import { type DirectMember, MemberType } from '../interfaces';
 import { DirectSharingMemberMenu } from './DirectSharingMemberMenu';
-import { getContactNameAndEmail } from './helpers/getContactNameAndEmail';
+import { getContactNameAndEmail } from './helpers/userNames';
 
 interface Props {
     ownerEmail?: string;

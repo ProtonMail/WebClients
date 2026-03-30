@@ -5,9 +5,9 @@ import { ItemContextMenu } from '../../components/sections/ContextMenu/ItemConte
 import { useCopyItemsModal } from '../../modals/CopyItemsModal';
 import { useDetailsModal } from '../../modals/DetailsModal';
 import { useFilesDetailsModal } from '../../modals/FilesDetailsModal';
+import { useSharingModal } from '../../modals/SharingModal/SharingModal';
 import { useDrivePreviewModal } from '../../modals/preview';
 import { SharedWithMeActions } from './actions/SharedWithMeActions';
-import { useResharingModal } from './useResharingModal';
 import type { DirectShareItem, SharedWithMeItem } from './useSharedWithMe.store';
 
 export function SharedWithMeContextMenu({
@@ -24,7 +24,7 @@ export function SharedWithMeContextMenu({
     const { previewModal, showPreviewModal } = useDrivePreviewModal();
     const { filesDetailsModal, showFilesDetailsModal } = useFilesDetailsModal();
     const { copyModal, showCopyItemsModal } = useCopyItemsModal();
-    const { sharingModal, showSharingModal } = useResharingModal(selectedBrowserItems);
+    const { sharingModal, showSharingModal } = useSharingModal();
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
     function convertDataShowModal(items: DirectShareItem[]) {
         showCopyItemsModal(items.map((item) => ({ uid: item.nodeUid, name: item.name })));

@@ -1,7 +1,9 @@
+import { useEffect, useState } from 'react';
+
 import { Vr } from '@proton/atoms/Vr/Vr';
 import { ContextSeparator } from '@proton/components';
 import type { useConfirmActionModal } from '@proton/components';
-import { splitNodeUid } from '@proton/drive';
+import { MemberRole, getDrivePerNodeType, splitNodeUid } from '@proton/drive';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import {
@@ -18,8 +20,11 @@ import {
 } from '../../../components/sections/ToolbarButtons';
 import type { useDetailsModal } from '../../../modals/DetailsModal';
 import type { useFilesDetailsModal } from '../../../modals/FilesDetailsModal';
+import type { useSharingModal } from '../../../modals/SharingModal/SharingModal';
 import type { useDrivePreviewModal } from '../../../modals/preview';
 import { useOpenInDocs } from '../../../store/_documents';
+import { getNodeEffectiveRole } from '../../../utils/sdk/getNodeEffectiveRole';
+import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
 import { CopyButton } from '../../folders/buttons/CopyButton';
 import { ShareLinkButton } from '../../folders/buttons/ShareLinkButton';
 import { RemoveMeButton } from '../buttons/RemoveMeButton';
@@ -33,7 +38,7 @@ interface BaseDirectShareActionsProps {
     showDetailsModal: ReturnType<typeof useDetailsModal>['showDetailsModal'];
     showFilesDetailsModal: ReturnType<typeof useFilesDetailsModal>['showFilesDetailsModal'];
     showCopyModal: (items: DirectShareItem[]) => void;
-    showSharingModal?: () => void;
+    showSharingModal: ReturnType<typeof useSharingModal>['showSharingModal'];
 }
 
 interface ContextMenuDirectShareActionsProps extends BaseDirectShareActionsProps {
@@ -75,6 +80,26 @@ export const DirectShareActions = ({
             : undefined
     );
 
+    // Items in "shared with me" section can only be re-shared if the user has admin rights
+    const [hasAdminRole, setHasAdminRole] = useState(false);
+    useEffect(() => {
+        if (selectedItems.length !== 1) {
+            return;
+        }
+
+        async function isCurrentUserAdmin() {
+            if (!singleItem) {
+                return;
+            }
+
+            const drive = getDrivePerNodeType(singleItem.type);
+            const { node } = await drive.getNode(singleItem.nodeUid).then(getNodeEntity);
+            const role = await getNodeEffectiveRole(node, drive);
+            setHasAdminRole(role === MemberRole.Admin);
+        }
+        void isCurrentUserAdmin();
+    }, [selectedItems, singleItem]);
+
     if (!singleItem) {
         return null;
     }
@@ -89,11 +114,15 @@ export const DirectShareActions = ({
                 <ToolbarOpenInDocsButton selectedBrowserItems={legacyItems} />
                 {itemChecker.canDownload && <ToolbarDownloadButton selectedBrowserItems={legacyItems} />}
                 {itemChecker.canCopy && <CopyButton type="toolbar" close={close} onClick={copyAction} />}
-                {itemChecker.isOnlyOneItem && showSharingModal && (
-                    <ShareLinkButton type="toolbar" onClick={showSharingModal} close={close} />
+                {itemChecker.isOnlyOneItem && hasAdminRole && (
+                    <ShareLinkButton
+                        type="toolbar"
+                        onClick={() => showSharingModal({ nodeUid: singleItem.nodeUid })}
+                        close={close}
+                    />
                 )}
                 <ToolbarDetailsButton selectedBrowserItems={legacyItems} />
-                {itemChecker.isOnlyOneItem && (
+                {itemChecker.isOnlyOneItem && hasAdminRole && (
                     <>
                         <Vr />
                         <RemoveMeButton
@@ -135,8 +164,12 @@ export const DirectShareActions = ({
                 close={close}
             />
 
-            {itemChecker.isOnlyOneItem && showSharingModal && (
-                <ShareLinkButton type="context" onClick={showSharingModal} close={close} />
+            {itemChecker.isOnlyOneItem && hasAdminRole && (
+                <ShareLinkButton
+                    type="context"
+                    onClick={() => showSharingModal({ nodeUid: singleItem.nodeUid })}
+                    close={close}
+                />
             )}
 
             {itemChecker.isOnlyOneItem && (

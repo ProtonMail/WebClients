@@ -44,7 +44,7 @@ export async function getNodeLocation(
     const nodes = nodesResult.value;
     const rootNodeEntity = getNodeEntity(nodes[0]).node;
     // If node have a membership it means it is a direct share
-    // We also check the getMyFilesRootFolder precense to exclude public page
+    // We also check the getMyFilesRootFolder presence to exclude public page
     if (Boolean(rootNodeEntity.membership && drive.getMyFilesRootFolder)) {
         return {
             ok: true,
