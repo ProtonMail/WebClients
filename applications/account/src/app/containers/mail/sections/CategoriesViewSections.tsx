@@ -37,7 +37,7 @@ export const CategoriesViewSections = () => {
         }
 
         const isLastEnabledCategory =
-            activeCategoriesTabs.filter((cat) => cat.id === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT).length === 1 &&
+            activeCategoriesTabs.filter((cat) => cat.id !== MAILBOX_LABEL_IDS.CATEGORY_DEFAULT).length === 1 &&
             !category.display;
 
         if (isLastEnabledCategory) {
