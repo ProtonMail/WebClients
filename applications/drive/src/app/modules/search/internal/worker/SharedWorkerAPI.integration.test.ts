@@ -271,6 +271,7 @@ describe('SharedWorkerAPI integration', () => {
     let state: SearchModuleStateStream;
 
     beforeEach(() => {
+        jest.restoreAllMocks();
         jest.useFakeTimers({
             doNotFake: [
                 'setImmediate', // fake-indexeddb uses setImmediate to resolve IDB operations

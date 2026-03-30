@@ -51,8 +51,7 @@ const SearchFieldInner = ({ searchModule }: SearchFieldInnerProps) => {
             return;
         }
 
-        // Focusing the search field is considered an opt-in to bootstrap search.
-        void searchModule.optIn();
+        searchModule.optIn();
     };
 
     const handleClosedDropdown = (e?: Event) => {
