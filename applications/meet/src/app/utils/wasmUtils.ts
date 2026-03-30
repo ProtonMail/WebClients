@@ -50,7 +50,7 @@ export const setupWasmDependencies = ({ getGroupKeyInfo, onNewGroupKeyInfo }: Se
         new_group_key_for: async function () {
             const groupKeyInfo = await getGroupKeyInfo();
 
-            if (groupKeyInfo) {
+            if (groupKeyInfo && groupKeyInfo.epoch !== lastEpoch) {
                 lastEpoch = groupKeyInfo.epoch;
                 await onNewGroupKeyInfo(groupKeyInfo.key, groupKeyInfo.epoch);
             }
