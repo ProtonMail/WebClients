@@ -100,6 +100,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
         MaxMembers = 1,
         MaxAI = 0,
         MaxLumo = 0,
+        MaxMeet = 0,
     } = organization || {};
 
     if (!user.canPay) {
@@ -164,6 +165,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
         maxVPNDevicesText,
         writingAssistantText,
         lumoText,
+        meetText,
     } = getSubscriptionPanelText(user, organization, addresses);
 
     const getVpnPlusItems = (): Item[] => {
@@ -264,7 +266,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
         if (MaxLumo <= 0 || !lumoText) {
             return false;
         }
-        const showGetMoreButton = MaxLumo !== MaxMembers;
+        const showGetMoreButton = MaxLumo < MaxMembers;
         const actionElement = showGetMoreButton ? <GetMoreButton metricsSource="upsells" /> : null;
 
         return {
@@ -274,12 +276,26 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
         };
     })();
 
+    const meetItem: Item | false = (() => {
+        if (MaxMeet <= 0 || !meetText) {
+            return false;
+        }
+        const showGetMoreButton = MaxMeet < MaxMembers;
+        const actionElement = showGetMoreButton ? <GetMoreButton metricsSource="upsells" /> : null;
+
+        return {
+            icon: 'meet-camera' as const,
+            text: meetText,
+            actionElement,
+        };
+    })();
+
     const scribeItem: Item | false = (() => {
         if (MaxAI <= 0 || !writingAssistantText) {
             return false;
         }
 
-        const showGetMoreButton = MaxAI !== MaxMembers && getIsB2BAudienceFromSubscription(subscription);
+        const showGetMoreButton = MaxAI < MaxMembers && getIsB2BAudienceFromSubscription(subscription);
         const actionElement = showGetMoreButton ? <GetMoreButton metricsSource="upsells" /> : null;
 
         return {
@@ -458,6 +474,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
             getIsSentinelPlan(organization?.PlanName) ? getSentinel(true) : false,
             scribeItem,
             lumoItem,
+            meetItem,
         ];
 
         return (
