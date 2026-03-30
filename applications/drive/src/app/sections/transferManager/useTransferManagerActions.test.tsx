@@ -46,6 +46,20 @@ jest.mock('../../modals/SharingModal/SharingModal', () => {
     };
 });
 
+jest.mock('../../components/modals/DownloadContainsDocumentsModal', () => {
+    return {
+        useDownloadContainsDocumentsModal: jest.fn().mockReturnValue([null, jest.fn()]),
+    };
+});
+
+jest.mock('../../modals/SignatureIssueModal', () => {
+    return {
+        useSignatureIssueModal: jest
+            .fn()
+            .mockReturnValue({ signatureIssueModal: null, showSignatureIssueModal: jest.fn() }),
+    };
+});
+
 jest.mock('../../zustand/download/downloadManager.store', () => {
     return {
         ...jest.requireActual('../../zustand/download/downloadManager.store'),

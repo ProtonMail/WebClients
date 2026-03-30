@@ -8,9 +8,9 @@ import clsx from '@proton/utils/clsx';
 
 import { ProgressBarStatus } from '../../../components/TransferManager/ProgressBar';
 import { BaseTransferStatus } from '../../../zustand/download/downloadManager.store';
-import { CloseButton } from '../buttons/closeButton';
-import { MinimizeButton } from '../buttons/minimizeButton';
-import { useTransferManagerActions } from '../useTransferManagerActions';
+import { CloseButton } from '../statelessComponents/CloseButton';
+import { MinimizeButton } from '../statelessComponents/MinimizeButton';
+import type { TransferManagerEntry } from '../useTransferManagerState';
 import { TransferManagerStatus, useTransferManagerState } from '../useTransferManagerState';
 
 const PROGRESS_STATUS_BY_TRANSFER: Record<TransferManagerStatus, ProgressBarStatus> = {
@@ -28,6 +28,8 @@ type Props = {
     isMinimized: boolean;
     toggleMinimize: () => void;
     onClose: () => void;
+    cancelAll: (entries: TransferManagerEntry[]) => void;
+    retryFailedTransfers: (entries: TransferManagerEntry[]) => void;
 };
 
 const getHeaderTextFromStatus = (status: TransferManagerStatus): string => {
@@ -41,9 +43,14 @@ const getHeaderTextFromStatus = (status: TransferManagerStatus): string => {
     }
 };
 
-export const TransferManagerHeader = ({ isMinimized, toggleMinimize, onClose }: Props) => {
+export const TransferManagerHeader = ({
+    isMinimized,
+    toggleMinimize,
+    onClose,
+    cancelAll,
+    retryFailedTransfers,
+}: Props) => {
     const { progressPercentage, status, items } = useTransferManagerState();
-    const { cancelAll, confirmModal, retryFailedTransfers } = useTransferManagerActions();
     const headerText = getHeaderTextFromStatus(status);
     const normalizedProgress = Math.min(100, Math.max(0, Math.round(progressPercentage)));
     const progressText = c('Info').t`${normalizedProgress}% completed`;
@@ -111,7 +118,6 @@ export const TransferManagerHeader = ({ isMinimized, toggleMinimize, onClose }: 
                     max={100}
                 />
             </div>
-            {confirmModal}
         </div>
     );
 };
