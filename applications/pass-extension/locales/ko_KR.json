@@ -786,6 +786,9 @@
       ],
       "Settings": [
         "설정"
+      ],
+      "Configure": [
+        "구성"
       ]
     },
     "Browser": {
@@ -2026,7 +2029,7 @@
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동시 안전한 링크가 삭제됩니다."
+        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
@@ -2768,6 +2771,15 @@
       ],
       "You now have access to \"Vault ${ vaultName }\" because your group ${ groupName } has been granted access.": [
         "사용자의 그룹 ${ groupName }에 접근 권한이 부여되었기 때문에 \"${ vaultName }\" 금고에 접근할 수 있습니다."
+      ],
+      "Not configured": [
+        "구성되지 않음"
+      ],
+      "Open ${ PASS_APP_NAME } in a larger window": [
+        "더 큰 창에서 ${ PASS_APP_NAME } 열기"
+      ],
+      "Open the ${ PASS_APP_NAME } popup": [
+        "${ PASS_APP_NAME } 팝업 열기"
       ]
     },
     "Keyboard key": {
