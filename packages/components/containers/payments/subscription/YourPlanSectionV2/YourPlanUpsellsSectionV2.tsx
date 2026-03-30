@@ -467,8 +467,8 @@ const useUpsellSection = ({ subscription, app, user, serversCount, plansMap, fre
             upsells: passFamilyBannerExtendSubscriptionUpsells.upsells,
             element: (
                 <>
-                    <FamilyUpgradeBanner app={app} subscription={subscription as Subscription} />
                     <MeetAddonBanner app={app} />
+                    <FamilyUpgradeBanner app={app} subscription={subscription as Subscription} />
                 </>
             ),
         },
