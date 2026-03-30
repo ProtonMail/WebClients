@@ -27,8 +27,8 @@ const addFolderItemToStore = async (uid: string, folder: FolderViewData, folderS
     }
 };
 
-export const subscribeToFolderEvents = () => {
-    void getBusDriver().subscribeSdkEventsMyUpdates('folders');
+export const subscribeToFolderEvents = (treeEventScopeId: string) => {
+    getBusDriver().subscribeSdkEventsScope(treeEventScopeId, 'folders');
 
     const unsubscribeFromEvents = getBusDriver().subscribe(BusDriverEventName.ALL, async (event) => {
         const store = useFolderStore.getState();
@@ -96,6 +96,6 @@ export const subscribeToFolderEvents = () => {
 
     return () => {
         unsubscribeFromEvents();
-        void getBusDriver().unsubscribeSdkEventsMyUpdates('folders');
+        void getBusDriver().unsubscribeSdkEventsScope(treeEventScopeId, 'folders');
     };
 };
