@@ -410,6 +410,10 @@ export const getHasDriveB2BPlan = (subscription: MaybeFreeSubscription) => {
     return hasDrivePro(subscription) || hasDriveBusiness(subscription);
 };
 
+export const getHasMeetIncludedInPlan = (subscription: MaybeFreeSubscription) => {
+    return hasMeet(subscription) || hasMeetBusiness(subscription) || hasBundleBiz2025(subscription);
+};
+
 const externalMemberB2BPlans: Set<PLANS | ADDON_NAMES> = new Set([
     PLANS.VPN_PRO,
     PLANS.VPN_BUSINESS,
