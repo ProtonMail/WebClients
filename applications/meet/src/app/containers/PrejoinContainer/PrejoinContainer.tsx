@@ -1,8 +1,13 @@
 import { useEffect, useRef } from 'react';
 
+import { c } from 'ttag';
+
+import { Href } from '@proton/atoms/Href/Href';
 import { useMeetDispatch } from '@proton/meet/store/hooks';
 import { setLocalParticipantColorIndex } from '@proton/meet/store/slices/sortedParticipantsSlice';
+import { APPS } from '@proton/shared/lib/constants';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
+import { getPrivacyPolicyURL, getTermsURL } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';
 
 import { DeviceSettings } from '../../components/DeviceSettings/DeviceSettings';
@@ -184,6 +189,21 @@ export const PrejoinContainer = ({
                         />
                     )}
                 </div>
+            </div>
+            <div className="prejoin-footer text-sm color-hint text-center py-3 px-4">
+                {(() => {
+                    const termsLink = (
+                        <Href className="color-hint" key="terms" href={getTermsURL(APPS.PROTONMEET)}>
+                            {c('Link').t`terms and conditions`}
+                        </Href>
+                    );
+                    const privacyLink = (
+                        <Href className="color-hint" key="privacy" href={getPrivacyPolicyURL(APPS.PROTONMEET)}>
+                            {c('Link').t`privacy policy`}
+                        </Href>
+                    );
+                    return c('Info').jt`By joining, you agree to our ${termsLink} and ${privacyLink}.`;
+                })()}
             </div>
         </div>
     );
