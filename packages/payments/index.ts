@@ -319,8 +319,6 @@ export { getIsPlanTransitionForbidden, isForbiddenLumoPlus } from './core/subscr
 export { FREE_PLAN, getFreeCheckResult, getFreeTitle } from './core/subscription/freePlans';
 export {
     allCycles,
-    canCheckItemGetStarted,
-    canCheckItemPaidChecklist,
     canModify,
     customCycles,
     getAddons,
