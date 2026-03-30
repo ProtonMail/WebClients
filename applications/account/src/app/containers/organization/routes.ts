@@ -18,6 +18,7 @@ import {
     planSupportsSSO,
     upsellPlanSSO,
 } from '@proton/payments';
+import { hasMeet, hasMeetBusiness } from '@proton/payments/core/subscription/helpers';
 import { appSupportsSSO } from '@proton/shared/lib/apps/apps';
 import {
     APPS,
@@ -135,11 +136,14 @@ export const getOrganizationAppRoutes = ({
         // The org must be setup to allow users to access this page
         isOrgConfigured;
 
+    const hasMeetPlan = hasMeetBusiness(subscription) || hasMeet(subscription);
+
     const canShowDomainNamesSection =
         // user.hasPaidMail is needed, because for example VPN B2B doesn't need domains by design
         // NOTE: This configuration is tied with the mail/routes.tsx domains availability
         (hasOrganizationKey && user.hasPaidMail) ||
-        (hasOrganizationKey && user.hasPaidMeet) ||
+        // Don't use user.hasPaidMeet otherwise we will show domain names section to every user with Meet addon
+        (hasOrganizationKey && hasMeetPlan) ||
         // If the organization is not active (end of subscription without renewal), we allow users to access this page to delete domains
         (!isOrgActive && (organization?.UsedDomains ?? 0) > 0);
 
