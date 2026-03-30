@@ -11,6 +11,7 @@ export const mockUseConfig = (value?: Partial<ProtonConfig>) => {
         APP_NAME: APPS.PROTONMAIL,
         API_URL: '',
         LOCALES: {},
+        LOCALES_DATE_FNS: [],
         DATE_VERSION: '',
         COMMIT: '',
         BRANCH: '',

@@ -1,20 +1,16 @@
-import { getLocalesFromRequireContext } from '@proton/shared/lib/i18n/locales';
+import { createLocaleMap } from '@proton/shared/lib/i18n/locales';
+import { getProtonConfig } from '@proton/shared/lib/interfaces/config';
 
 import { getLocaleMap } from '../static/localeMapping';
 
-const requireContext = import.meta.webpackContext!('../../locales', {
-    recursive: false,
-    regExp: /\.json$/,
-    mode: 'lazy',
-    chunkName: 'locales/[request]',
-});
-
-const locales = getLocalesFromRequireContext(requireContext);
+const locales = createLocaleMap(
+    (locale) => import(/* webpackChunkName: "locales/[request]" */ `../../locales/${locale}.json`)
+);
 
 export const localeRegex = /^\/([a-z]{2,3}(-[a-z]{2})?)\/?/;
 
 export const localeMap = Object.fromEntries(
-    Object.entries(getLocaleMap(requireContext.keys().map((locale) => locale.replace('./', '')))).map(
+    Object.entries(getLocaleMap(Object.keys(getProtonConfig().LOCALES).map((locale) => `${locale}.json`))).map(
         ([key, value]) => [value, key]
     )
 );

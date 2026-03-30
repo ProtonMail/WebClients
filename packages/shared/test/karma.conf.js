@@ -3,8 +3,25 @@ import karmaJasmine from 'karma-jasmine';
 import karmaJunitReporter from 'karma-junit-reporter';
 import karmaSpecReporter from 'karma-spec-reporter';
 import karmaWebpack from 'karma-webpack';
-import { existsSync } from 'node:fs';
+import { existsSync, readdirSync } from 'node:fs';
+import { createRequire } from 'node:module';
+import { dirname, join } from 'node:path';
 import { chromium } from 'playwright';
+import webpack from 'webpack';
+
+const require = createRequire(import.meta.url);
+
+const getDateFnsLocales = () => {
+    const localeDir = join(dirname(require.resolve('date-fns/package.json')), 'locale');
+    const localeRegex = /^[a-z]{2}(-[A-Z]{2})?$/;
+    return existsSync(localeDir)
+        ? readdirSync(localeDir, { withFileTypes: true })
+              .filter(
+                  (d) => d.isDirectory() && localeRegex.test(d.name) && existsSync(join(localeDir, d.name, 'index.js'))
+              )
+              .map((d) => d.name)
+        : [];
+};
 
 process.env.CHROME_BIN = chromium.executablePath();
 
@@ -62,6 +79,9 @@ export default (config) => {
                     },
                 ],
             },
+            plugins: [
+                new webpack.DefinePlugin({ 'process.env': JSON.stringify({ LOCALES_DATE_FNS: getDateFnsLocales() }) }),
+            ],
             devtool: 'inline-source-map',
         },
         mime: {

@@ -1,18 +1,20 @@
-import type { LocaleData } from 'ttag';
-
 import type { TtagLocaleMap } from '../interfaces/Locale';
+import { getProtonConfig } from '../interfaces/config';
 
 export let locales: TtagLocaleMap = {};
-
-type LocaleRequireContext = { keys: () => string[]; (id: string): Promise<LocaleData> };
-
-export const getLocalesFromRequireContext = (locales: LocaleRequireContext) => {
-    return locales.keys().reduce<TtagLocaleMap>((acc, key) => {
-        acc[key.slice(2, key.length - 5)] = () => locales(key);
-        return acc;
-    }, {});
-};
 
 export const setTtagLocales = (newLocales: TtagLocaleMap) => {
     locales = newLocales;
 };
+
+/** The loader must be defined at the application call site (not inlined here) because bundlers
+ * (webpack, vite) resolve dynamic import paths statically at build time. The path prefix in
+ * `import(\`../../locales/${locale}.json\`)` must be relative to the application source so the
+ * bundler can discover the correct locale files and emit the right chunks. */
+export const createLocaleMap = (loader: (locale: string) => Promise<any>): TtagLocaleMap =>
+    Object.fromEntries(
+        Object.keys(getProtonConfig().LOCALES).map((locale) => [
+            locale,
+            () => loader(locale).then((m) => m.default ?? m),
+        ])
+    );
