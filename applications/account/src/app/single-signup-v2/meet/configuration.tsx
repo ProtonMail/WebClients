@@ -3,12 +3,16 @@ import { c } from 'ttag';
 import MeetLogo from '@proton/components/components/logo/MeetLogo';
 import { getNUsersText } from '@proton/components/containers/payments/features/highlights';
 import type { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
-import { getNDomainsFeatureText } from '@proton/components/containers/payments/features/mail';
+import { getPrivateAIChatFeature } from '@proton/components/containers/payments/features/lumo';
+import {
+    getDataRetentionPoliciesFeature,
+    getNDomainsFeatureText,
+} from '@proton/components/containers/payments/features/mail';
 import {
     FREE_MAX_ACTIVE_MEETINGS,
     FREE_MAX_PARTICIPANTS,
-    PAID_MAX_ACTIVE_MEETINGS,
     PAID_MAX_PARTICIPANTS,
+    PAID_PREMIUM_MAX_PARTICIPANTS,
     getMaxMeetingsPerDayText,
     getMaxMeetingsText,
     getMaxParticipantsText,
@@ -18,7 +22,9 @@ import {
     getMeetMeetingRecordingText,
     getMeetScreenSharingText,
     getMeetingMaxLengthText,
+    getVideoMeetingsFeature,
 } from '@proton/components/containers/payments/features/meet';
+import { getVPNWithNetShieldFeature } from '@proton/components/containers/payments/features/vpn';
 import { VISIONARY_WALLETS, getWallets } from '@proton/components/containers/payments/features/wallet';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import type { Plan } from '@proton/payments';
@@ -34,6 +40,7 @@ import {
     VISIONARY_MAX_USERS,
 } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
+import { everythingInPlanOrAppNamePlusText } from '@proton/shared/lib/i18n/ttag';
 import { Audience } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
@@ -139,13 +146,6 @@ const getDocumentAndSpreadsheetEditorFeature = (): PlanCardFeatureDefinition => 
     };
 };
 
-const getVpnWithAdBlockerFeature = (): PlanCardFeatureDefinition => {
-    return {
-        text: c('meet_2025: Info').t`VPN with ad-blocker and malware protection`,
-        included: true,
-    };
-};
-
 const getPasswordManagerWithTeamVaultsFeature = (): PlanCardFeatureDefinition => {
     return {
         text: c('meet_2025: Info').t`Password manager with team vaults`,
@@ -153,30 +153,9 @@ const getPasswordManagerWithTeamVaultsFeature = (): PlanCardFeatureDefinition =>
     };
 };
 
-const getVideoMeetingsWithParticipantsFeature = (): PlanCardFeatureDefinition => {
-    return {
-        text: c('meet_2025: Info').t`Video meetings, ${PAID_MAX_PARTICIPANTS} participants`,
-        included: true,
-    };
-};
-
-const getPrivateAIChatFeature = (): PlanCardFeatureDefinition => {
-    return {
-        text: c('meet_2025: Info').t`Private AI Chat (${LUMO_SHORT_APP_NAME})`,
-        included: true,
-    };
-};
-
 const getEmailWritingAssistantFeature = (): PlanCardFeatureDefinition => {
     return {
         text: c('meet_2025: Info').t`Email writing assistant`,
-        included: true,
-    };
-};
-
-const getDataRetentionPoliciesFeature = (): PlanCardFeatureDefinition => {
-    return {
-        text: c('meet_2025: Info').t`Data retention policies`,
         included: true,
     };
 };
@@ -210,13 +189,19 @@ const getFreeMeetFeatures = () => {
     ];
 };
 
-export const getVisionaryFeatures = ({ plan }: { plan: Plan | undefined }) => {
+export const getVisionaryFeatures = ({
+    plan,
+    previousPlanTitle,
+}: {
+    plan: Plan | undefined;
+    previousPlanTitle: string;
+}) => {
     if (!plan) {
         return [];
     }
     return [
         {
-            text: c('meet_2025: Info').t`Everything in Meet Professional, plus:`,
+            text: everythingInPlanOrAppNamePlusText(previousPlanTitle),
             included: true,
         },
         {
@@ -243,44 +228,16 @@ export const getVisionaryFeatures = ({ plan }: { plan: Plan | undefined }) => {
     ];
 };
 
-const getMeetBusinessFeatures = () => {
+const getMeetBusinessFeatures = (): PlanCardFeatureDefinition[] => {
     return [
-        {
-            text: getMeetingMaxLengthText('paid'),
-            included: true,
-        },
-        {
-            text: getMaxParticipantsText(FREE_MAX_PARTICIPANTS),
-            included: true,
-        },
-        {
-            text: getMaxMeetingsText(PAID_MAX_ACTIVE_MEETINGS),
-            included: true,
-        },
-        {
-            text: getMaxMeetingsPerDayText('unlimited'),
-            included: true,
-        },
-        {
-            text: getMeetAppsText(),
-            included: true,
-        },
-        {
-            text: getMeetScreenSharingText(),
-            included: true,
-        },
-        {
-            text: getMeetBuiltInChatText(),
-            included: true,
-        },
-        {
-            text: getMeetAppointmentSchedulingText(),
-            included: true,
-        },
-        {
-            text: getMeetMeetingRecordingText(),
-            included: true,
-        },
+        { text: getMeetingMaxLengthText('paid'), included: true },
+        { text: getMaxParticipantsText(PAID_MAX_PARTICIPANTS), included: true },
+        { text: getMaxMeetingsPerDayText('unlimited'), included: true },
+        { text: getMeetAppsText(), included: true },
+        { text: getMeetScreenSharingText(), included: true },
+        { text: getMeetBuiltInChatText(), included: true },
+        { text: getMeetAppointmentSchedulingText(), included: true },
+        { text: getMeetMeetingRecordingText(), included: true },
     ];
 };
 
@@ -297,7 +254,7 @@ const getMeetBundleProFeatures = (plan?: Plan) => {
         getSecureCalendarFeature(),
         getCloudStorageAndFileSharingFeature(),
         getDocumentAndSpreadsheetEditorFeature(),
-        getVpnWithAdBlockerFeature(),
+        getVPNWithNetShieldFeature(),
         getPasswordManagerWithTeamVaultsFeature(),
     ];
 };
@@ -312,10 +269,10 @@ const getMeetBundleBizFeatures = (plan?: Plan) => {
             text: getNDomainsFeatureText(plan.MaxDomains),
             included: true,
         },
-        getVideoMeetingsWithParticipantsFeature(),
+        getVideoMeetingsFeature(PAID_PREMIUM_MAX_PARTICIPANTS),
         getPrivateAIChatFeature(),
         getEmailWritingAssistantFeature(),
-        getDataRetentionPoliciesFeature(),
+        getDataRetentionPoliciesFeature(true),
     ];
 };
 
@@ -346,14 +303,16 @@ export const getMeetConfiguration = ({
 
     const CustomizeFeatureSubSection = ({
         title,
+        description,
         features,
     }: {
         title?: string;
+        description?: string;
         features: PlanCardFeatureDefinition[];
     }) => (
         <div>
             <div className={clsx(planCardFeatureProps.className, planCardFeatureProps.itemClassName, 'text-left')}>
-                {c('meet_2025: Info').t`Everything from ${title}, plus...`}
+                {description ?? everythingInPlanOrAppNamePlusText(title ?? '')}
             </div>
             <PlanCardFeatureList {...planCardFeatureProps} features={features} />
         </div>
@@ -362,7 +321,12 @@ export const getMeetConfiguration = ({
         [Audience.B2B]: [
             isMeetPlansEnabled && {
                 plan: PLANS.MEET_BUSINESS,
-                subsection: <PlanCardFeatureList {...planCardFeatureProps} features={getMeetBusinessFeatures()} />, // TODO: Check features
+                subsection: (
+                    <CustomizeFeatureSubSection
+                        description={c('meet_2025: Info').t`Includes these features:`}
+                        features={getMeetBusinessFeatures()}
+                    />
+                ),
                 type: 'standard' as const,
                 guarantee: true,
             },
