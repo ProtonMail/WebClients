@@ -31,6 +31,7 @@ export interface Organization {
     MaxAI: number;
     MaxVPN: number;
     MaxLumo: number;
+    MaxMeet: number;
     MaxWallets: number;
     MaxSubWallets: number;
     MaxDedicatedIPs: number;
@@ -42,6 +43,7 @@ export interface Organization {
     UsedMembers: number;
     UsedAI: number;
     UsedLumo: number;
+    UsedMeet: number;
     UsedVPN: number;
 
     IsScimEnabled: boolean;
