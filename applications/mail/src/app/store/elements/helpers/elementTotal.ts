@@ -17,6 +17,7 @@ export const getTotal = ({ counts, labelID, categoryIDs, filter, bypassFilterCou
             if (!count.LabelID || !isCategoryLabel(count.LabelID)) {
                 return false;
             }
+            // The default category count includes the disabled categories count
             if (categoryIDs.includes(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT)) {
                 return count.LabelID === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT;
             }

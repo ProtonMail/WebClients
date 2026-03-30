@@ -11,6 +11,10 @@ export interface ElementsStateParams {
     labelID: string;
     elementID?: string;
     messageID?: string;
+    /**
+     * List of categories that are displayed, acts as a filter like `sort` or `filter`
+     * Only set when `labelID` is Inbox, set to empty array elsewhere.
+     */
     categoryIDs: CategoryLabelID[];
     conversationMode: boolean;
     sort: Sort;
