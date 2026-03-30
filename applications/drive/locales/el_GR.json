@@ -1344,6 +1344,10 @@
       ],
       "Writing assistant seats": [
         "Άδειες βοηθού γραφής"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } άδεια χρήσης",
+        "${ seats } ${ MEET_APP_NAME } άδειες χρήσης"
       ]
     },
     "Alert": {
@@ -6973,6 +6977,21 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Θα εξακολουθείτε να μπορείτε να βλέπετε τα δικά σας δεδομένα λογαριασμού, αλλά όλοι οι λογαριασμοί χρηστών θα καταργηθούν από τον οργανισμό σας."
+      ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } είναι μια λύση βιντεοδιάσκεψης με πλήρη διατερματική κρυπτογράφηση. Προσθέστε τη στο πλάνο σας για να φιλοξενείτε ασφαλείς συσκέψεις."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } θέσεις"
+      ],
+      "${ MEET_APP_NAME } video conferencing": [
+        "Τηλεδιάσκεψη ${ MEET_APP_NAME }"
+      ],
+      "Add ${ MEET_APP_NAME }": [
+        "Προσθήκη ${ MEET_APP_NAME }"
+      ],
+      "for ${ price }": [
+        "για ${ price }"
       ]
     },
     "info": {
@@ -13406,6 +13425,27 @@
       ],
       "Yahoo": [
         "Yahoo"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } άδεια χρήσης"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } θέσεις"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME } θέση",
+        "${ seats } ${ MEET_APP_NAME } θέσεις"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } θέση περιλαμβάνεται",
+        "${ seats } θέσεις περιλαμβάνονται"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Μπορείτε να έχετε έως και ${ TRIAL_MAX_MEET_SEATS } θέσεις ${ MEET_SHORT_APP_NAME } κατά τη διάρκεια της δοκιμαστικής περιόδου."
       ]
     }
   }

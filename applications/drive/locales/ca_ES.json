@@ -1344,6 +1344,10 @@
       ],
       "Writing assistant seats": [
         "Llicències de l'assistent d'escriptura"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } llicència de ${ MEET_APP_NAME }",
+        "${ seats } llicències de ${ MEET_APP_NAME }"
       ]
     },
     "Alert": {
@@ -6973,6 +6977,21 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Encara podreu veure les dades del vostre compte, però tots els comptes d'usuari s'eliminaran de la vostra organització."
+      ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } és una solució de videoconferència xifrada d’extrem a extrem. Afegeix-la al teu pla per allotjar reunions segures."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Llicències de ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } video conferencing": [
+        "Videoconferència de ${ MEET_APP_NAME }"
+      ],
+      "Add ${ MEET_APP_NAME }": [
+        "Afegeix ${ MEET_APP_NAME }"
+      ],
+      "for ${ price }": [
+        "per ${ price }"
       ]
     },
     "info": {
@@ -13466,6 +13485,27 @@
       ],
       "Yahoo": [
         "Yahoo"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "Llicència de ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Llicències de ${ MEET_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } llicència ${ MEET_APP_NAME }",
+        "${ seats } llicències de ${ MEET_APP_NAME }"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } llicència inclosa",
+        "${ seats } llicències incloses"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Podeu tenir fins a ${ TRIAL_MAX_MEET_SEATS } llicències de ${ MEET_SHORT_APP_NAME } durant el període de prova."
       ]
     }
   }
