@@ -65,13 +65,16 @@ export function useFolder() {
                 const isRoot = !node.parentUid;
                 const isAdmin = role === MemberRole.Admin;
 
-                setFolder({
-                    uid: node.uid,
-                    name: node.name,
-                    parentUid: node.parentUid,
-                    isRoot: !node.parentUid,
-                    shareId: folderShareId,
-                });
+                setFolder(
+                    {
+                        uid: node.uid,
+                        name: node.name,
+                        parentUid: node.parentUid,
+                        isRoot: !node.parentUid,
+                        shareId: folderShareId,
+                    },
+                    node.treeEventScopeId
+                );
                 setRole(role);
                 setPermissions({
                     canEdit,

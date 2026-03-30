@@ -64,6 +64,7 @@ type FolderState = {
     sortField: SortField;
     sortDirection: SORT_DIRECTION;
     folder?: FolderViewData;
+    treeEventScopeId?: string;
     error: EnrichedError | null;
     role: MemberRole;
     permissions: FolderPermissions;
@@ -71,7 +72,7 @@ type FolderState = {
 
 type FolderActions = {
     setIsLoading: (isLoading: boolean) => void;
-    setFolder: (folderData: FolderViewData) => void;
+    setFolder: (folderData: FolderViewData, treeEventScopeId: string) => void;
     setPermissions: (perms: FolderPermissions) => void;
     setError: (error: EnrichedError | null) => void;
     setRole: (role: MemberRole) => void;
@@ -178,7 +179,7 @@ export const useFolderStore = create<FolderStore>()(
             set({ sortField, sortDirection: direction, sortedItemUids });
         },
         setPermissions: (permissions) => set({ permissions }),
-        setFolder: (folder) => set({ folder }),
+        setFolder: (folder, treeEventScopeId) => set({ folder, treeEventScopeId }),
         setError: (error) => set({ error }),
         setRole: (role) => set({ role }),
         reset: () => set(initialState),
