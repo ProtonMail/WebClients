@@ -132,8 +132,8 @@ export const hostSockLoop: HostSockLoop = ({ sockLocation, onMessage }) => {
     return async () => {
         shuttingDown = true;
         log('shutting down...');
-        await serverHandle?.close();
         sockets.forEach((sock) => sock.end(() => sock.destroy()));
         sockets.clear();
+        await serverHandle?.close();
     };
 };
