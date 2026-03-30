@@ -287,27 +287,6 @@ export const getUpgradedPlan = (subscription: Subscription | undefined, app: Pro
     return PLANS.BUNDLE;
 };
 
-const canCheckItemPaidChecklistCondition: Set<PLANS | ADDON_NAMES> = new Set([
-    PLANS.MAIL,
-    PLANS.DRIVE,
-    PLANS.FAMILY,
-    PLANS.DUO,
-    PLANS.BUNDLE,
-]);
-export const canCheckItemPaidChecklist = (subscription: Subscription | undefined) => {
-    return subscription?.Plans?.some(({ Name }) => canCheckItemPaidChecklistCondition.has(Name));
-};
-
-const canCheckItemGetStartedCondition: Set<PLANS | ADDON_NAMES> = new Set([
-    PLANS.VPN,
-    PLANS.VPN2024,
-    PLANS.PASS,
-    PLANS.VPN_PASS_BUNDLE,
-]);
-export const canCheckItemGetStarted = (subscription: Subscription | undefined) => {
-    return subscription?.Plans?.some(({ Name }) => canCheckItemGetStartedCondition.has(Name));
-};
-
 export const hasLumoMobileSubscription = (subscription?: MaybeFreeSubscription) => {
     if (!subscription || isFreeSubscription(subscription)) {
         return false;

@@ -17,7 +17,6 @@ import {
     ChecklistType,
 } from '@proton/shared/lib/interfaces';
 
-import useCanCheckItem from '../hooks/useCanCheckItem';
 import type { GetStartedChecklistApiResponse } from '../hooks/useChecklist';
 import useChecklist from '../hooks/useChecklist';
 
@@ -71,7 +70,6 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
     const { call } = useEventManager();
     const [user] = useUser();
     const [submitting, withSubmitting] = useLoading();
-    const { canMarkItemsAsDone } = useCanCheckItem();
 
     // This is used in the checklist to make optimistic UI updates. It marks the checklist item as done or store the display state
     const [doneItems, setDoneItems] = useState<ChecklistKeyType[]>([]);
@@ -105,7 +103,7 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
 
     const markItemsAsDone = async (item: ChecklistKeyType) => {
         setDoneItems((state) => [...state, item]);
-        if (canMarkItemsAsDone && checklistType) {
+        if (checklistType) {
             await silentApi(updateChecklistItem(item, checklistType));
             await call();
         }
@@ -137,7 +135,7 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
                 const items = checklist.Items;
                 if (!items.includes(ChecklistKey.ProtectInbox)) {
                     setDoneItems((items) => [...items, ChecklistKey.ProtectInbox]);
-                    if (canMarkItemsAsDone && checklistType) {
+                    if (checklistType) {
                         await silentApi(updateChecklistItem('ProtectInbox', checklistType));
                         await call();
                     }
@@ -148,15 +146,12 @@ const GetStartedChecklistProvider = ({ children }: { children: ReactNode }) => {
                 isChecklistFinished &&
                 (newState === CHECKLIST_DISPLAY_TYPE.REDUCED || newState === CHECKLIST_DISPLAY_TYPE.HIDDEN)
             ) {
-                if (canMarkItemsAsDone && checklistType) {
+                if (checklistType) {
                     await silentApi(seenCompletedChecklist(checklistType));
                 }
             }
 
-            if (
-                (canMarkItemsAsDone || (newState === CHECKLIST_DISPLAY_TYPE.HIDDEN && user.hasPaidMail)) &&
-                checklistType
-            ) {
+            if (checklistType) {
                 await api(updateChecklistDisplay(newState, checklistType));
                 await call();
             }
