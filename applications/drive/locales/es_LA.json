@@ -3973,6 +3973,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nombre indescifrable"
+      ],
+      "Unable to start the search": [
+        "No se pudo iniciar la búsqueda"
+      ],
+      "Unable to start the search: not enough storage space": [
+        "No se pudo iniciar la búsqueda: no hay suficiente espacio de almacenamiento"
       ]
     },
     "error": {
@@ -6992,6 +6998,9 @@
       ],
       "for ${ price }": [
         "por ${ price }"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Todo lo incluido en ${ planOrAppName } y además:"
       ]
     },
     "info": {
@@ -8075,6 +8084,13 @@
       "Up to ${ n } participant": [
         "Hasta ${ n } participante",
         "Hasta ${ n } participantes"
+      ],
+      "Hosts can record meetings locally on their computers": [
+        "Los anfitriones pueden grabar reuniones localmente en sus computadoras"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videollamadas, ${ n } participante",
+        "Videollamadas, ${ n } participantes"
       ]
     },
     "Message": {
@@ -8867,6 +8883,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la dark web para verificar si sus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarle de inmediato si encontramos algo."
+      ],
+      "Data retention policies": [
+        "Políticas de retención de datos"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Chat de IA privado (${ LUMO_APP_NAME })"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN con bloqueador de publicidad y protección contra malware"
       ]
     },
     "new_plans: feature highlight": {

@@ -3973,6 +3973,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Μη αποκρυπτογραφήσιμο όνομα"
+      ],
+      "Unable to start the search": [
+        "Αδυναμία εκκίνησης της αναζήτησης"
+      ],
+      "Unable to start the search: not enough storage space": [
+        "Αδυναμία εκκίνησης της αναζήτησης: δεν υπάρχει αρκετός χώρος αποθήκευσης"
       ]
     },
     "error": {
@@ -6992,6 +6998,9 @@
       ],
       "for ${ price }": [
         "για ${ price }"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Τα πάντα από ${ planOrAppName }, συν:"
       ]
     },
     "info": {
@@ -8072,6 +8081,13 @@
       "Up to ${ n } participant": [
         "Έως ${ n } συμμετέχων",
         "Έως ${ n } συμμετέχοντες"
+      ],
+      "Hosts can record meetings locally on their computers": [
+        "Οι οικοδεσπότες μπορούν να καταγράφουν τις συσκέψεις τοπικά στους υπολογιστές τους"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Βιντεοκλήσεις, ${ n } συμμετέχων",
+        "Βιντεοκλήσεις, ${ n } συμμετέχοντες"
       ]
     },
     "Message": {
@@ -8807,6 +8823,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Σαρώνουμε τον σκοτεινό ιστό για να ελέγξουμε εάν οι διευθύνσεις ή τα ψευδώνυμά σας ${ BRAND_NAME } έχουν διαρρεύσει και σας ειδοποιούμε αμέσως αν βρούμε κάτι."
+      ],
+      "Data retention policies": [
+        "Πολιτικές διατήρησης δεδομένων"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Ιδιωτική συνομιλία με τεχνητή νοημοσύνη (${ LUMO_APP_NAME })"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN με αποκλεισμός διαφημίσεων και προστασία από κακόβουλο λογισμικό"
       ]
     },
     "new_plans: feature highlight": {

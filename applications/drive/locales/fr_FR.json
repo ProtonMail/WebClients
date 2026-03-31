@@ -1344,6 +1344,10 @@
       ],
       "Writing assistant seats": [
         "Accès à l'assistant d'écriture"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } licence ${ MEET_APP_NAME }",
+        "${ seats } licences ${ MEET_APP_NAME }"
       ]
     },
     "Alert": {
@@ -3963,6 +3967,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nom indéchiffrable"
+      ],
+      "Unable to start the search": [
+        "Impossible de lancer la recherche"
+      ],
+      "Unable to start the search: not enough storage space": [
+        "Impossible de démarrer la recherche : l'espace de stockage est insuffisant"
       ]
     },
     "error": {
@@ -6947,6 +6957,21 @@
       ],
       "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
         "Vous ne pourrez plus partager « ${ fileName } » après avoir modifié les droits d'accès en lecture seule. Seul le propriétaire pourra à nouveau modifier votre accès."
+      ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } est une solution de visioconférence chiffrée de bout en bout. Ajoutez-la à votre abonnement pour organiser des réunions sécurisées."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "accès ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } video conferencing": [
+        "Vidéoconférence ${ MEET_APP_NAME }"
+      ],
+      "Add ${ MEET_APP_NAME }": [
+        "Ajouter ${ MEET_APP_NAME }"
+      ],
+      "for ${ price }": [
+        "pour ${ price }"
       ]
     },
     "info": {
@@ -13517,6 +13542,27 @@
       ],
       "Yahoo": [
         "Yahoo"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "licence ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "accès ${ MEET_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } accès ${ MEET_APP_NAME }",
+        "${ seats } accès ${ MEET_APP_NAME }"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } accès inclus",
+        "${ seats } accès incluses"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Vous pouvez bénéficier de jusqu’à ${ TRIAL_MAX_MEET_SEATS } accès à ${ MEET_SHORT_APP_NAME } pendant la période d’essai."
       ]
     }
   }
