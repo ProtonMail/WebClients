@@ -1,10 +1,11 @@
 import type { CSSProperties, ReactNode, RefObject } from 'react';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { IconProps } from '@proton/components/components/icon/Icon';
 import type { IconSize } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
+
+import { ConditionalTooltip } from '../../components/ConditionalTooltip/ConditionalTooltip';
 
 import './CircleButton.scss';
 
@@ -25,6 +26,7 @@ interface CircleButtonProps {
     anchorRef?: RefObject<HTMLButtonElement>;
     size?: IconSize;
     buttonStyle?: CSSProperties;
+    disabled?: boolean;
 }
 
 export const CircleButton = ({
@@ -41,9 +43,10 @@ export const CircleButton = ({
     anchorRef,
     size = 6,
     buttonStyle,
+    disabled = false,
 }: CircleButtonProps) => {
     return (
-        <Tooltip
+        <ConditionalTooltip
             title={tooltipTitle}
             tooltipClassName="meet-tooltip bg-strong color-norm"
             tooltipStyle={{ '--meet-tooltip-bg': 'var(--background-strong)' }}
@@ -63,6 +66,7 @@ export const CircleButton = ({
                 aria-label={ariaLabel}
                 ref={anchorRef}
                 style={buttonStyle}
+                disabled={disabled}
             >
                 <IconComponent viewBox={iconViewPort} size={size} />
                 {indicatorContent && (
@@ -83,6 +87,6 @@ export const CircleButton = ({
                     </div>
                 )}
             </Button>
-        </Tooltip>
+        </ConditionalTooltip>
     );
 };
