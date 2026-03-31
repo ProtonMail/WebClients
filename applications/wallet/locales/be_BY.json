@@ -94,6 +94,9 @@
       "Continue": [
         "Працягнуць"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Працягнуць у ${ planOrAppName }"
+      ],
       "Copy address": [
         "Скапіяваць адрас"
       ],
@@ -270,6 +273,9 @@
       ],
       "Refresh the page": [
         "Абнавіць старонку"
+      ],
+      "Remove": [
+        "Выдаліць"
       ],
       "Remove bonuses": [
         "Выдаліць бонусы"
@@ -467,6 +473,12 @@
         "${ seats } ліцэнзіі ${ LUMO_APP_NAME }",
         "${ seats } ліцэнзій ${ LUMO_APP_NAME }",
         "${ seats } ліцэнзій ${ LUMO_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ліцэнзія ${ MEET_APP_NAME }",
+        "${ seats } ліцэнзіі ${ MEET_APP_NAME }",
+        "${ seats } ліцэнзій ${ MEET_APP_NAME }",
+        "${ seats } ліцэнзій ${ MEET_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } ліцэнзія памочніка ў напісанні",
@@ -2170,6 +2182,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Выкарыстоўвайце гэты дапаможнік, каб ваша арганізацыя хутка змагла атрымаць перавагі ад ${ BRAND_NAME }. Дадзеная экасістэма з'яўляецца адной з лепшых у галіне шыфравання і прыватнасці."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Нам шкада, што вы пакідаеце нас. Мы будзем вам вельмі ўдзячныя, калі вы знойдзеце крыху часу паведаміць аб прычынах скасавання сваёй падпіскі. Вашы водгукі дапамагаюць зрабіць ${ BRAND_NAME } яшчэ лепш для кожнага карыстальніка."
       ]
     },
     "Discover": {
@@ -2734,6 +2749,15 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } уключае памочнік у напісанні ${ BRAND_NAME } Scribe"
       ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } — гэта зашыфраванае скразным метадам рашэнне для відэаканферэнцый. Дадайце яго ў свой тарыфны план, каб праводзіць бяспечныя сустрэчы."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Ліцэнзіі ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } video conferencing": [
+        "Відэаканферэнцыя ${ MEET_APP_NAME }"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. Робіцца аднаразовая плата за пажыццёвы доступ да ${ PASS_SHORT_APP_NAME }."
       ],
@@ -2778,6 +2802,9 @@
       ],
       "Account successfully updated": [
         "Уліковы запіс паспяхова абноўлены"
+      ],
+      "Add ${ MEET_APP_NAME }": [
+        "Дадаць ${ MEET_APP_NAME }"
       ],
       "Address copied to clipboard": [
         "Адрас скапіяваны ў буфер абмену"
@@ -2907,6 +2934,9 @@
       ],
       "Expired": [
         "Пратэрмінавана"
+      ],
+      "for ${ price }": [
+        "за ${ price }"
       ],
       "Google Pay mark": [
         "Пазнака Google Pay"
@@ -3273,6 +3303,9 @@
       "Account holder": [
         "Трымальнік уліковага запісу"
       ],
+      "Additional comments": [
+        "Дадатковыя каментарыі"
+      ],
       "Address": [
         "Адрас"
       ],
@@ -3333,6 +3366,9 @@
       "Company name": [
         "Назва кампаніі"
       ],
+      "Continue cancelling": [
+        "Працягнуць скасаванне"
+      ],
       "Copy": [
         "Капіяваць"
       ],
@@ -3359,9 +3395,6 @@
       ],
       "Delete recovery-related information.": [
         "Выдаліць інфармацыю звязаную з аднаўленнем."
-      ],
-      "Do you have any suggestions for our team?": [
-        "Ці ёсць у вас нейкія прапановы для нашай каманды?"
       ],
       "Email address": [
         "Адрас электроннай пошты"
@@ -3395,6 +3428,9 @@
       ],
       "Main": [
         "Галоўная"
+      ],
+      "Main reason for cancelling": [
+        "Галоўная прычына скасавання"
       ],
       "Navigation": [
         "Навігацыя"
@@ -3444,6 +3480,9 @@
       "Sign message": [
         "Падпісаць паведамленне"
       ],
+      "Skip feedback": [
+        "Прапусціць водгук"
+      ],
       "Start date": [
         "Дата пачатку"
       ],
@@ -3467,9 +3506,6 @@
       ],
       "What happened?": [
         "Што здарылася?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Якая ваша асноўная прычына скасавання або паніжэння тарыфнага плана?"
       ],
       "Your password (admin)": [
         "Ваш пароль (admin)"
@@ -3618,6 +3654,20 @@
         "за ${ price }"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "Ліцэнзія ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Ліцэнзіі ${ MEET_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ліцэнзія ${ MEET_APP_NAME }",
+        "${ seats } ліцэнзіі ${ MEET_APP_NAME }",
+        "${ seats } ліцэнзій ${ MEET_APP_NAME }",
+        "${ seats } ліцэнзій ${ MEET_APP_NAME }"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: канфідэнцыйныя відэаканферэнцыі для важных размоў"
@@ -3678,6 +3728,17 @@
         "Да ${ n } удзельнікаў",
         "Да ${ n } удзельнікаў",
         "Да ${ n } удзельнікаў"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } ліцэнзія ўключана",
+        "${ seats } ліцэнзіі ўключана",
+        "${ seats } ліцэнзій уключана",
+        "${ seats } ліцэнзій уключана"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "У вас можа быць да ${ TRIAL_MAX_MEET_SEATS } ліцэнзій ${ MEET_SHORT_APP_NAME } на працягу пробнага перыяду."
       ]
     },
     "New Label form": {
@@ -4998,6 +5059,9 @@
       "Anderson": [
         "Маўр"
       ],
+      "Anything you'd like us to know": [
+        "Магчыма, што вы б хацелі нам яшчэ нешта паведаміць"
+      ],
       "Anytown": [
         "Полацк"
       ],
@@ -5012,6 +5076,9 @@
       ],
       "E.g., ": [
         "Напрыклад, "
+      ],
+      "Enter a name": [
+        "Увядзіце назву"
       ],
       "Enter a passphrase or leave empty": [
         "Увядзіце парольную фразу або пакіньце поле пустым"
@@ -5049,6 +5116,9 @@
       "Select": [
         "Выбраць"
       ],
+      "Select a provider": [
+        "Выбраць пастаўшчыка"
+      ],
       "Select a reason": [
         "Выберыце прычыну"
       ],
@@ -5057,9 +5127,6 @@
       ],
       "Select state": [
         "Выбраць штат"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Падзяліцеся сваімі думкамі, як зрабіць ${ BRAND_NAME } лепш"
       ],
       "Thomas": [
         "Янка"
@@ -5104,6 +5171,26 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Палепшыць да ${ upsellPlanTitle }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Іншы"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "QRCode Reader": {

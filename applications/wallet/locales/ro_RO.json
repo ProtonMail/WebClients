@@ -94,6 +94,9 @@
       "Continue": [
         "Continuare"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Continuare cu ${ planOrAppName }"
+      ],
       "Copy address": [
         "Copiere adresă"
       ],
@@ -270,6 +273,9 @@
       ],
       "Refresh the page": [
         "Împrospătare pagină"
+      ],
+      "Remove": [
+        "Eliminare"
       ],
       "Remove bonuses": [
         "Anulare bonusuri"
@@ -463,6 +469,11 @@
         "Licențe ${ LUMO_APP_NAME }: ${ seats }",
         "Licențe ${ LUMO_APP_NAME }: ${ seats }",
         "Licențe ${ LUMO_APP_NAME }: ${ seats }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "Licențe ${ MEET_APP_NAME } incluse: ${ seats }",
+        "Licențe ${ MEET_APP_NAME } incluse: ${ seats }",
+        "Licențe ${ MEET_APP_NAME } incluse: ${ seats }"
       ],
       "${ seats } writing assistant seat": [
         "Licențe asistent de scriere: ${ seats }",
@@ -2158,6 +2169,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Utilizați acest ghid pentru ca organizația să beneficieze imediat de criptarea și ecosistemul de confidențialitate maximă oferite de ${ BRAND_NAME } ."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Ne pare rău să vă vedem plecând. Dacă aveți un moment, am aprecia foarte mult să aflăm de ce doriți să anulați. Feedback-ul dvs. ne ajută să facem ${ BRAND_NAME } mai bun pentru toată lumea."
       ]
     },
     "Discover": {
@@ -2716,6 +2730,15 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } include asistentul de scriere ${ BRAND_NAME } Scribe"
       ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } este o soluție de videoconferință criptată bilateral. Adăugați-o la planul personal pentru a găzdui conferințe securizate."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Licențe ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } video conferencing": [
+        "Conferințe video ${ MEET_APP_NAME }"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Oferta pe viață ${ PASS_SHORT_APP_NAME } nu are preț de reînnoire, este o plată unică pentru acces pe viață la ${ PASS_SHORT_APP_NAME }."
       ],
@@ -2758,6 +2781,9 @@
       ],
       "Account successfully updated": [
         "Cont actualizat cu succes"
+      ],
+      "Add ${ MEET_APP_NAME }": [
+        "Adăugare ${ MEET_APP_NAME }"
       ],
       "Address copied to clipboard": [
         "Adresa a fost copiată în memorie."
@@ -2886,6 +2912,9 @@
       ],
       "Expired": [
         "Expirat"
+      ],
+      "for ${ price }": [
+        "cu ${ price }"
       ],
       "Google Pay mark": [
         "Marcare Google Pay"
@@ -3246,6 +3275,9 @@
       "Account holder": [
         "Titular cont"
       ],
+      "Additional comments": [
+        "Comentarii adiționale"
+      ],
       "Address": [
         "Adresa"
       ],
@@ -3306,6 +3338,9 @@
       "Company name": [
         "Nume companie"
       ],
+      "Continue cancelling": [
+        "Continuare anulare"
+      ],
       "Copy": [
         "Copiere"
       ],
@@ -3332,9 +3367,6 @@
       ],
       "Delete recovery-related information.": [
         "Ștergere informații privind recuperarea."
-      ],
-      "Do you have any suggestions for our team?": [
-        "Aveți sugestii pentru echipa noastră?"
       ],
       "Email address": [
         "Adresă e-mail"
@@ -3368,6 +3400,9 @@
       ],
       "Main": [
         "Principală"
+      ],
+      "Main reason for cancelling": [
+        "Motiv principal pentru anulare"
       ],
       "Navigation": [
         "Navigare"
@@ -3417,6 +3452,9 @@
       "Sign message": [
         "Semnare mesaj"
       ],
+      "Skip feedback": [
+        "Omitere feedback"
+      ],
       "Start date": [
         "Dată început"
       ],
@@ -3440,9 +3478,6 @@
       ],
       "What happened?": [
         "Ce s-a întâmplat?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Care este motivul principal pentru anulare sau retrogradare?"
       ],
       "Your password (admin)": [
         "Parola dvs. (administrator)"
@@ -3591,6 +3626,19 @@
         "cu ${ price }"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } licență"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Licențe ${ MEET_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "Licențe ${ MEET_APP_NAME }: ${ seats }",
+        "Licențe ${ MEET_APP_NAME }: ${ seats }",
+        "Licențe ${ MEET_APP_NAME }: ${ seats }"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: conferințe video confidențiale pentru conversațiile importante"
@@ -3647,6 +3695,16 @@
         "Maxim participanți: ${ n }",
         "Maxim participanți: ${ n }",
         "Maxim participanți: ${ n }"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "Licențe incluse: ${ seats }",
+        "Licențe incluse: ${ seats }",
+        "Licențe incluse: ${ seats }"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } licențe în perioada de probare."
       ]
     },
     "New Label form": {
@@ -4933,6 +4991,9 @@
       "Anderson": [
         "Andrei"
       ],
+      "Anything you'd like us to know": [
+        "Orice ați dori să știm"
+      ],
       "Anytown": [
         "București"
       ],
@@ -4947,6 +5008,9 @@
       ],
       "E.g., ": [
         "Ex.: "
+      ],
+      "Enter a name": [
+        "Introduceți un nume"
       ],
       "Enter a passphrase or leave empty": [
         "Introduceți o frază de acces sau lăsați necompletat"
@@ -4984,6 +5048,9 @@
       "Select": [
         "Selectare"
       ],
+      "Select a provider": [
+        "Selectați un furnizor"
+      ],
       "Select a reason": [
         "Selectați un motiv"
       ],
@@ -4992,9 +5059,6 @@
       ],
       "Select state": [
         "Selectare țară"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Spuneți-ne ce credeți că ar face să fie mai bun ${ BRAND_NAME }"
       ],
       "Thomas": [
         "Toma"
@@ -5038,6 +5102,26 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Trecere la ${ upsellPlanTitle }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Altul"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "QRCode Reader": {
