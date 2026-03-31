@@ -218,8 +218,8 @@
       "Continue import": [
         "Працягнуць імпартаванне"
       ],
-      "Continue to ${ calendarAppBareName }": [
-        "Працягнуць працу з ${ calendarAppBareName }"
+      "Continue to ${ planOrAppName }": [
+        "Працягнуць у ${ planOrAppName }"
       ],
       "Continue with Google": [
         "Працягнуць з Google"
@@ -1115,6 +1115,12 @@
         "${ seats } ліцэнзіі ${ LUMO_APP_NAME }",
         "${ seats } ліцэнзій ${ LUMO_APP_NAME }",
         "${ seats } ліцэнзій ${ LUMO_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ліцэнзія ${ MEET_APP_NAME }",
+        "${ seats } ліцэнзіі ${ MEET_APP_NAME }",
+        "${ seats } ліцэнзій ${ MEET_APP_NAME }",
+        "${ seats } ліцэнзій ${ MEET_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } ліцэнзія памочніка ў напісанні",
@@ -3221,6 +3227,9 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Выкарыстоўвайце гэты дапаможнік, каб ваша арганізацыя хутка змагла атрымаць перавагі ад ${ BRAND_NAME }. Дадзеная экасістэма з'яўляецца адной з лепшых у галіне шыфравання і прыватнасці."
       ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Нам шкада, што вы пакідаеце нас. Мы будзем вам вельмі ўдзячныя, калі вы знойдзеце крыху часу паведаміць аб прычынах скасавання сваёй падпіскі. Вашы водгукі дапамагаюць зрабіць ${ BRAND_NAME } яшчэ лепш для кожнага карыстальніка."
+      ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Вы зможаце адпраўляць лісты кожнаму ўдзельніку ў групе адным націскам з дапамогай груп кантактаў."
       ],
@@ -5198,8 +5207,17 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } уключае памочнік у напісанні ${ BRAND_NAME } Scribe"
       ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } — гэта зашыфраванае скразным метадам рашэнне для відэаканферэнцый. Дадайце яго ў свой тарыфны план, каб праводзіць бяспечныя сустрэчы."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Ліцэнзіі ${ MEET_APP_NAME }"
+      ],
       "${ MEET_APP_NAME } video call": [
         "Відэазванок ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } video conferencing": [
+        "Відэаканферэнцыя ${ MEET_APP_NAME }"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. Робіцца аднаразовая плата за пажыццёвы доступ да ${ PASS_SHORT_APP_NAME }."
@@ -5344,6 +5362,9 @@
       ],
       "Ad targeting": [
         "Мэтавая рэклама"
+      ],
+      "Add ${ MEET_APP_NAME }": [
+        "Дадаць ${ MEET_APP_NAME }"
       ],
       "Added and removed participants will be notified about all the events in this series.": [
         "Дададзеныя і выдаленыя ўдзельнікі атрымаюць апавяшчэнне аб усіх падзеях у гэтай серыі."
@@ -5722,6 +5743,9 @@
       ],
       "finance": [
         "фінансы"
+      ],
+      "for ${ price }": [
+        "за ${ price }"
       ],
       "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
         "Для дадатковай бяспекі вы можаце задаць парольную фразу. Не забудзьце абагуліць яе з гасцямі асобна, бо яна не будзе ўключана ў запрашэнне календара."
@@ -6921,6 +6945,9 @@
       "Add Zoom meeting": [
         "Дадаць сустрэчу ў Zoom"
       ],
+      "Additional comments": [
+        "Дадатковыя каментарыі"
+      ],
       "Address": [
         "Адрас"
       ],
@@ -7011,6 +7038,9 @@
       "Contacts": [
         "Кантакты"
       ],
+      "Continue cancelling": [
+        "Працягнуць скасаванне"
+      ],
       "Copy": [
         "Капіяваць"
       ],
@@ -7049,9 +7079,6 @@
       ],
       "Description": [
         "Апісанне"
-      ],
-      "Do you have any suggestions for our team?": [
-        "Ці ёсць у вас нейкія прапановы для нашай каманды?"
       ],
       "Don't ask again": [
         "Больш не пытаць"
@@ -7197,6 +7224,9 @@
       "Main": [
         "Галоўная"
       ],
+      "Main reason for cancelling": [
+        "Галоўная прычына скасавання"
+      ],
       "Manage categories": [
         "Кіраванне катэгорыямі"
       ],
@@ -7335,6 +7365,9 @@
       "Sign emails": [
         "Падпісваць лісты"
       ],
+      "Skip feedback": [
+        "Прапусціць водгук"
+      ],
       "Start date": [
         "Дата пачатку"
       ],
@@ -7415,9 +7448,6 @@
       ],
       "What happened?": [
         "Што здарылася?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Якая ваша асноўная прычына скасавання або паніжэння тарыфнага плана?"
       ],
       "Your alias": [
         "Ваш псеўданім"
@@ -7744,6 +7774,20 @@
         "за ${ price }"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "Ліцэнзія ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Ліцэнзіі ${ MEET_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ліцэнзія ${ MEET_APP_NAME }",
+        "${ seats } ліцэнзіі ${ MEET_APP_NAME }",
+        "${ seats } ліцэнзій ${ MEET_APP_NAME }",
+        "${ seats } ліцэнзій ${ MEET_APP_NAME }"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: канфідэнцыйныя відэаканферэнцыі для важных размоў"
@@ -7804,6 +7848,17 @@
         "Да ${ n } удзельнікаў",
         "Да ${ n } удзельнікаў",
         "Да ${ n } удзельнікаў"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } ліцэнзія ўключана",
+        "${ seats } ліцэнзіі ўключана",
+        "${ seats } ліцэнзій уключана",
+        "${ seats } ліцэнзій уключана"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "У вас можа быць да ${ TRIAL_MAX_MEET_SEATS } ліцэнзій ${ MEET_SHORT_APP_NAME } на працягу пробнага перыяду."
       ]
     },
     "Message": {
@@ -9997,6 +10052,9 @@
       "Anderson": [
         "Маўр"
       ],
+      "Anything you'd like us to know": [
+        "Магчыма, што вы б хацелі нам яшчэ нешта паведаміць"
+      ],
       "Anytown": [
         "Полацк"
       ],
@@ -10011,6 +10069,9 @@
       ],
       "Email for booking confirmation": [
         "Электронная пошта для пацвярджэння браніравання"
+      ],
+      "Enter a name": [
+        "Увядзіце назву"
       ],
       "Enter a short description or additional info": [
         "Увядзіце кароткае апісанне або дадатковую інфармацыю"
@@ -10093,6 +10154,9 @@
       "Select": [
         "Выбраць"
       ],
+      "Select a provider": [
+        "Выбраць пастаўшчыка"
+      ],
       "Select a reason": [
         "Выберыце прычыну"
       ],
@@ -10101,9 +10165,6 @@
       ],
       "Select state": [
         "Выбраць штат"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Падзяліцеся сваімі думкамі, як зрабіць ${ BRAND_NAME } лепш"
       ],
       "Start typing an email address": [
         "Пачніце ўводзіць адрас электроннай пошты"
@@ -10230,6 +10291,26 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Афіцыйныя лісты ад ${ BRAND_NAME }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Іншы"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Referral": {
