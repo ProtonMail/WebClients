@@ -1,6 +1,6 @@
 {
     "name": "proton-inbox-desktop",
-    "version": "1.12.1",
+    "version": "1.13.0",
     "description": "Proton official desktop application for Proton Mail and Proton Calendar",
     "license": "GPL-3.0",
     "author": {
@@ -90,9 +90,9 @@
         "typescript-eslint": "^8.57.2"
     },
     "icon": "assets/icons/icon.png",
-    "minimumAppVersion": "1.0.0",
+    "minimumAppVersion": "1.12.0",
     "minimumOsVersionLinux": "",
-    "minimumOsVersionMacos": "11.0.0",
+    "minimumOsVersionMacos": "12.0.0",
     "minimumOsVersionWindows": "",
     "productName": "Proton Mail"
 }
