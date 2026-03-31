@@ -11,6 +11,7 @@ export enum SortOption {
     Upcoming = 'upcoming',
     Past = 'past',
     LastUsed = 'lastUsed',
+    Alphabetical = 'alphabetical',
 }
 
 export interface SortOptionObject {
