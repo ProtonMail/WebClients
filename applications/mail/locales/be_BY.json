@@ -1694,6 +1694,9 @@
       ],
       "Use recovery code": [
         "Выкарыстаць код аднаўлення"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "Працягнуць у ${ planOrAppName }"
       ]
     },
     "action": {
@@ -1811,6 +1814,12 @@
       ],
       "Writing assistant seats": [
         "Ліцэнзій памочніка ў напісанні"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ліцэнзія ${ MEET_APP_NAME }",
+        "${ seats } ліцэнзіі ${ MEET_APP_NAME }",
+        "${ seats } ліцэнзій ${ MEET_APP_NAME }",
+        "${ seats } ліцэнзій ${ MEET_APP_NAME }"
       ]
     },
     "Alert": {
@@ -4245,6 +4254,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы ўжо стварылі 10 псеўданімаў. Атрымайце неабмежаваную колькасць псеўданімаў і 500 ГБ сховішча з ${ BRAND_NAME } Unlimited."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Нам шкада, што вы пакідаеце нас. Мы будзем вам вельмі ўдзячныя, калі вы знойдзеце крыху часу паведаміць аб прычынах скасавання сваёй падпіскі. Вашы водгукі дапамагаюць зрабіць ${ BRAND_NAME } яшчэ лепш для кожнага карыстальніка."
       ]
     },
     "description": {
@@ -7658,10 +7670,7 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс",
-        "Уставіць відарысы",
-        "Уставіць відарысы",
-        "Уставіць відарысы"
+        "Уставіць відарыс"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -9171,6 +9180,21 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Пры наладжванні двухфактарнай аўтэнтыфікацыі, вы будзеце забяспечаны кодамі аднаўлення, якія зможаце выкарыстаць для ўваходу пры страце доступу да праграмы аўтэнтыфікацыі."
+      ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } — гэта зашыфраванае скразным метадам рашэнне для відэаканферэнцый. Дадайце яго ў свой тарыфны план, каб праводзіць бяспечныя сустрэчы."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Ліцэнзіі ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } video conferencing": [
+        "Відэаканферэнцыя ${ MEET_APP_NAME }"
+      ],
+      "Add ${ MEET_APP_NAME }": [
+        "Дадаць ${ MEET_APP_NAME }"
+      ],
+      "for ${ price }": [
+        "за ${ price }"
       ]
     },
     "info": {
@@ -10267,6 +10291,21 @@
       ],
       "Your password (trusted contact)": [
         "Ваш пароль (давераны кантакт)"
+      ],
+      "Additional comments": [
+        "Дадатковыя каментарыі"
+      ],
+      "Continue cancelling": [
+        "Працягнуць скасаванне"
+      ],
+      "Main reason for cancelling": [
+        "Галоўная прычына скасавання"
+      ],
+      "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
+        "Абагуляйце сваю даступнасць з дапамогай старонак браніравання ў ${ CALENDAR_APP_NAME } і праводзьце бяспечныя сустрэчы з ${ MEET_APP_NAME }."
+      ],
+      "Skip feedback": [
+        "Прапусціць водгук"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -13046,6 +13085,15 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Anything you'd like us to know": [
+        "Магчыма, што вы б хацелі нам яшчэ нешта паведаміць"
+      ],
+      "Enter a name": [
+        "Увядзіце назву"
+      ],
+      "Select a provider": [
+        "Выбраць пастаўшчыка"
       ]
     },
     "Placeholder for contact group name": {
@@ -17009,6 +17057,51 @@
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "Вы будзеце перанакіраваны ў вашага старонняга пастаўшчыка SSO."
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "Ліцэнзія ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Ліцэнзіі ${ MEET_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ліцэнзія ${ MEET_APP_NAME }",
+        "${ seats } ліцэнзіі ${ MEET_APP_NAME }",
+        "${ seats } ліцэнзій ${ MEET_APP_NAME }",
+        "${ seats } ліцэнзій ${ MEET_APP_NAME }"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } ліцэнзія ўключана",
+        "${ seats } ліцэнзіі ўключана",
+        "${ seats } ліцэнзій уключана",
+        "${ seats } ліцэнзій уключана"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "У вас можа быць да ${ TRIAL_MAX_MEET_SEATS } ліцэнзій ${ MEET_SHORT_APP_NAME } на працягу пробнага перыяду."
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Іншы"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }

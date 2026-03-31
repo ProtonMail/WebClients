@@ -1789,6 +1789,10 @@
       ],
       "Writing assistant": [
         "Skrivassistent"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME }-licens",
+        "${ seats } ${ MEET_APP_NAME }-licenser"
       ]
     },
     "Alert": {
@@ -7389,8 +7393,7 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -8826,6 +8829,12 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "När du ställer in tvåfaktorsautentisering tillhandahåller vi återställningskoder som du kan använda för att logga in om du förlorar åtkomsten till din autentiseringsapp."
+      ],
+      "Add ${ MEET_APP_NAME }": [
+        "Lägg till ${ MEET_APP_NAME }"
+      ],
+      "for ${ price }": [
+        "för ${ price }"
       ]
     },
     "info": {
@@ -9912,6 +9921,9 @@
       ],
       "Skip feedback": [
         "Hoppa över feedback"
+      ],
+      "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
+        "Dela din tillgänglighet med bokningssidor i ${ CALENDAR_APP_NAME } och håll säkra möten med ${ MEET_APP_NAME }."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16399,6 +16411,11 @@
       ],
       "Yahoo": [
         "Yahoo"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME }-licens"
       ]
     }
   }

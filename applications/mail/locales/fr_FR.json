@@ -1792,6 +1792,10 @@
       ],
       "Writing assistant seats": [
         "Accès à l'assistant d'écriture"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } licence ${ MEET_APP_NAME }",
+        "${ seats } licences ${ MEET_APP_NAME }"
       ]
     },
     "Alert": {
@@ -7410,8 +7414,7 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image",
-        "Insérer des images"
+        "Insérer une image"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -8861,6 +8864,21 @@
       ],
       "Enter your own password (as trusted contact).": [
         "Saisissez votre propre mot de passe (en tant que contacts de confiance)."
+      ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } est une solution de visioconférence chiffrée de bout en bout. Ajoutez-la à votre abonnement pour organiser des réunions sécurisées."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "accès ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } video conferencing": [
+        "Vidéoconférence ${ MEET_APP_NAME }"
+      ],
+      "Add ${ MEET_APP_NAME }": [
+        "Ajouter ${ MEET_APP_NAME }"
+      ],
+      "for ${ price }": [
+        "pour ${ price }"
       ]
     },
     "info": {
@@ -9953,6 +9971,9 @@
       ],
       "Skip feedback": [
         "Ignorer les commentaires"
+      ],
+      "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
+        "Partagez vos disponibilités via les pages de réservation de ${ CALENDAR_APP_NAME } et organisez des réunions sécurisées avec ${ MEET_APP_NAME }."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12641,7 +12662,7 @@
         "Y a-t-il autre chose que vous aimeriez nous faire savoir"
       ],
       "Enter a name": [
-        "Entrez un nom"
+        "Saisissez un nom"
       ],
       "Select a provider": [
         "Sélectionnez un fournisseur"
@@ -16425,6 +16446,27 @@
       ],
       "Yahoo": [
         "Yahoo"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "licence ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "accès ${ MEET_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } accès ${ MEET_APP_NAME }",
+        "${ seats } accès ${ MEET_APP_NAME }"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } accès inclus",
+        "${ seats } accès incluses"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Vous pouvez bénéficier de jusqu’à ${ TRIAL_MAX_MEET_SEATS } accès à ${ MEET_SHORT_APP_NAME } pendant la période d’essai."
       ]
     }
   }

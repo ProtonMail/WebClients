@@ -1691,6 +1691,9 @@
       ],
       "Use recovery code": [
         "Folosire cod de recuperare"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "Continuare cu ${ planOrAppName }"
       ]
     },
     "action": {
@@ -1802,6 +1805,11 @@
       ],
       "Writing assistant seats": [
         "Licențe asistent de scriere"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "Licențe ${ MEET_APP_NAME } incluse: ${ seats }",
+        "Licențe ${ MEET_APP_NAME } incluse: ${ seats }",
+        "Licențe ${ MEET_APP_NAME } incluse: ${ seats }"
       ]
     },
     "Alert": {
@@ -4222,6 +4230,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ați creat deja 10 aliasuri. Obțineți aliasuri nelimitate și 500 GiB de spațiu de stocare cu ${ BRAND_NAME } Unlimited."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Ne pare rău să vă vedem plecând. Dacă aveți un moment, am aprecia foarte mult să aflăm de ce doriți să anulați. Feedback-ul dvs. ne ajută să facem ${ BRAND_NAME } mai bun pentru toată lumea."
       ]
     },
     "description": {
@@ -7536,9 +7547,7 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine",
-        "Inserare imagini",
-        "Inserare imagini"
+        "Inserare imagine"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -7634,7 +7643,7 @@
         "Prioritate scăzută"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Setare ${ MAIL_APP_NAME } ca aplicație implicită de e-mail."
+        "Setați ${ MAIL_APP_NAME } ca aplicație implicită de e-mail."
       ],
       "Manage your folders": [
         "Gestionare foldere"
@@ -9024,6 +9033,21 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Când configurați autentificarea cu doi factori, vă furnizăm coduri de recuperare pe care le puteți folosi pentru a vă conecta dacă vă pierdeți accesul la aplicația de autentificare."
+      ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } este o soluție de videoconferință criptată bilateral. Adăugați-o la planul personal pentru a găzdui conferințe securizate."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Licențe ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } video conferencing": [
+        "Conferințe video ${ MEET_APP_NAME }"
+      ],
+      "Add ${ MEET_APP_NAME }": [
+        "Adăugare ${ MEET_APP_NAME }"
+      ],
+      "for ${ price }": [
+        "cu ${ price }"
       ]
     },
     "info": {
@@ -10112,6 +10136,21 @@
       ],
       "Your password (trusted contact)": [
         "Parola dvs. (contact aprobat)"
+      ],
+      "Additional comments": [
+        "Comentarii adiționale"
+      ],
+      "Continue cancelling": [
+        "Continuare anulare"
+      ],
+      "Main reason for cancelling": [
+        "Motiv principal pentru anulare"
+      ],
+      "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
+        "Partajați-vă disponibilitatea prin paginile de rezervare în ${ CALENDAR_APP_NAME } și găzduiți conferințe securizate cu ${ MEET_APP_NAME }."
+      ],
+      "Skip feedback": [
+        "Omitere feedback"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -12845,6 +12884,15 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Anything you'd like us to know": [
+        "Orice ați dori să știm"
+      ],
+      "Enter a name": [
+        "Introduceți un nume"
+      ],
+      "Select a provider": [
+        "Selectați un furnizor"
       ]
     },
     "Placeholder for contact group name": {
@@ -16766,6 +16814,49 @@
       ],
       "You'll be redirected to your third-party SSO provider.": [
         "Pagina va fi redirecționată spre furnizorul autentificării unice (SSO)."
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } licență"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Licențe ${ MEET_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "Licențe ${ MEET_APP_NAME }: ${ seats }",
+        "Licențe ${ MEET_APP_NAME }: ${ seats }",
+        "Licențe ${ MEET_APP_NAME }: ${ seats }"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "Licențe incluse: ${ seats }",
+        "Licențe incluse: ${ seats }",
+        "Licențe incluse: ${ seats }"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } licențe în perioada de probare."
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Altul"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }

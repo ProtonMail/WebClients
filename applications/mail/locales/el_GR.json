@@ -1792,6 +1792,10 @@
       ],
       "Writing assistant seats": [
         "Άδειες βοηθού γραφής"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } άδεια χρήσης",
+        "${ seats } ${ MEET_APP_NAME } άδειες χρήσης"
       ]
     },
     "Alert": {
@@ -7416,8 +7420,7 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας",
-        "Εισαγωγή εικόνων"
+        "Εισαγωγή εικόνας"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -8879,6 +8882,24 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Όταν ρυθμίσετε τον έλεγχο ταυτοποίησης δύο παραγόντων, σας παρέχουμε κωδικούς ανάκτησης τους οποίους μπορείτε να χρησιμοποιήσετε για να συνδεθείτε σε περίπτωση που χάσετε την πρόσβαση στην εφαρμογή ταυτοποίησης σας."
+      ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } είναι μια λύση βιντεοδιάσκεψης με πλήρη διατερματική κρυπτογράφηση. Προσθέστε τη στο πλάνο σας για να φιλοξενείτε ασφαλείς συσκέψεις."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } θέσεις"
+      ],
+      "${ MEET_APP_NAME } video conferencing": [
+        "Τηλεδιάσκεψη ${ MEET_APP_NAME }"
+      ],
+      "Add ${ MEET_APP_NAME }": [
+        "Προσθήκη ${ MEET_APP_NAME }"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Τα πάντα από ${ planOrAppName }, συν:"
+      ],
+      "for ${ price }": [
+        "για ${ price }"
       ]
     },
     "info": {
@@ -9971,6 +9992,9 @@
       ],
       "Skip feedback": [
         "Παράλειψη σχολίων"
+      ],
+      "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
+        "Μοιραστείτε τη διαθεσιμότητά σας με σελίδες κράτησης στο ${ CALENDAR_APP_NAME }, και φιλοξενήστε ασφαλείς συσκέψεις με το ${ MEET_APP_NAME }."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10480,6 +10504,13 @@
       "Up to ${ n } participant": [
         "Έως ${ n } συμμετέχων",
         "Έως ${ n } συμμετέχοντες"
+      ],
+      "Hosts can record meetings locally on their computers": [
+        "Οι οικοδεσπότες μπορούν να καταγράφουν τις συσκέψεις τοπικά στους υπολογιστές τους"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Βιντεοκλήσεις, ${ n } συμμετέχων",
+        "Βιντεοκλήσεις, ${ n } συμμετέχοντες"
       ]
     },
     "Message": {
@@ -11192,6 +11223,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Σαρώνουμε τον σκοτεινό ιστό για να ελέγξουμε εάν οι διευθύνσεις ή τα ψευδώνυμά σας ${ BRAND_NAME } έχουν διαρρεύσει και σας ειδοποιούμε αμέσως αν βρούμε κάτι."
+      ],
+      "Data retention policies": [
+        "Πολιτικές διατήρησης δεδομένων"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Ιδιωτική συνομιλία με τεχνητή νοημοσύνη (${ LUMO_APP_NAME })"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN με αποκλεισμός διαφημίσεων και προστασία από κακόβουλο λογισμικό"
       ]
     },
     "new_plans: feature highlight": {
@@ -16374,6 +16414,27 @@
       ],
       "Yahoo": [
         "Yahoo"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } άδεια χρήσης"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } θέσεις"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME } θέση",
+        "${ seats } ${ MEET_APP_NAME } θέσεις"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } θέση περιλαμβάνεται",
+        "${ seats } θέσεις περιλαμβάνονται"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Μπορείτε να έχετε έως και ${ TRIAL_MAX_MEET_SEATS } θέσεις ${ MEET_SHORT_APP_NAME } κατά τη διάρκεια της δοκιμαστικής περιόδου."
       ]
     }
   }
