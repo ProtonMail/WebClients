@@ -3973,6 +3973,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ No es pot desxifrar aquest nom"
+      ],
+      "Unable to start the search": [
+        "No s'ha pogut iniciar la cerca"
+      ],
+      "Unable to start the search: not enough storage space": [
+        "No s'ha pogut iniciar la cerca: no hi ha prou espai d'emmagatzematge"
       ]
     },
     "error": {
@@ -6979,7 +6985,7 @@
         "Encara podreu veure les dades del vostre compte, però tots els comptes d'usuari s'eliminaran de la vostra organització."
       ],
       "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
-        "${ MEET_APP_NAME } és una solució de videoconferència xifrada d’extrem a extrem. Afegeix-la al teu pla per allotjar reunions segures."
+        "${ MEET_APP_NAME } és una aplicació de videoconferència amb xifratge d'extrem a extrem. Afegiu-la al vostre pla per allotjar reunions segures."
       ],
       "${ MEET_APP_NAME } seats": [
         "Llicències de ${ MEET_APP_NAME }"
@@ -6988,10 +6994,13 @@
         "Videoconferència de ${ MEET_APP_NAME }"
       ],
       "Add ${ MEET_APP_NAME }": [
-        "Afegeix ${ MEET_APP_NAME }"
+        "Afegiu-hi ${ MEET_APP_NAME }"
       ],
       "for ${ price }": [
         "per ${ price }"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Tot el que inclou ${ planOrAppName }, i a més:"
       ]
     },
     "info": {
@@ -8075,6 +8084,13 @@
       "Up to ${ n } participant": [
         "Fins a ${ n } participant",
         "Fins a ${ n } participants"
+      ],
+      "Hosts can record meetings locally on their computers": [
+        "Els amfitrions poden gravar reunions localment als seus ordinadors"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videoconferències, ${ n } participant",
+        "Videoconferències, ${ n } participants"
       ]
     },
     "Message": {
@@ -8867,6 +8883,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escanegem el web fosc per a comprovar si les vostres adreces o àlies de ${ BRAND_NAME } s'han filtrat i us avisem immediatament si trobem alguna cosa."
+      ],
+      "Data retention policies": [
+        "Polítiques de conservació de dades"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Xat d'IA privat (${ LUMO_APP_NAME })"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN amb bloqueig d’anuncis i protecció contra programari maliciós"
       ]
     },
     "new_plans: feature highlight": {
@@ -13495,7 +13520,7 @@
         "Llicències de ${ MEET_APP_NAME }"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
-        "${ seats } llicència ${ MEET_APP_NAME }",
+        "${ seats } llicència de ${ MEET_APP_NAME }",
         "${ seats } llicències de ${ MEET_APP_NAME }"
       ]
     },
