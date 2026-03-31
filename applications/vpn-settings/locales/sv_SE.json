@@ -224,6 +224,9 @@
       "Continue import": [
         "Fortsätt import"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Fortsätt till ${ planOrAppName }"
+      ],
       "Continue with this password": [
         "Fortsätt med detta lösenord"
       ],
@@ -1235,6 +1238,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME }-licens",
         "${ seats } ${ LUMO_APP_NAME }-licenser"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME }-licens",
+        "${ seats } ${ MEET_APP_NAME }-licenser"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } skrivassistentplats",
@@ -4347,6 +4354,9 @@
       "Primary address key is not decrypted.": [
         "Primär adressnyckel är inte avkrypterad."
       ],
+      "Private users can be added to group once they've signed in for the first time: ${ displayedNames }": [
+        "Privata användare kan läggas till i en grupp när de har loggat in för första gången: ${ displayedNames }"
+      ],
       "Process aborted": [
         "Process avbruten"
       ],
@@ -6171,6 +6181,9 @@
       "Activity Monitor": [
         "Aktivitetsövervakare"
       ],
+      "Add ${ MEET_APP_NAME }": [
+        "Lägg till ${ MEET_APP_NAME }"
+      ],
       "add a recovery method": [
         "lägg till en återställningsmetod"
       ],
@@ -6761,6 +6774,9 @@
       ],
       "finance": [
         "finans"
+      ],
+      "for ${ price }": [
+        "för ${ price }"
       ],
       "for choosing ${ product }": [
         "för att välja ${ product }"
@@ -7637,6 +7653,9 @@
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Prenumeration slutar: För att behålla dina ${ planName }-förmåner, starta om din prenumeration i Google Play Butik senast ${ byDate }. ${ reactivateLink }"
       ],
+      "Subscription starts on ${ startsOnTime }": [
+        "Prenumeration startar den ${ startsOnTime }"
+      ],
       "Summary": [
         "Sammanfattning"
       ],
@@ -7894,6 +7913,9 @@
       ],
       "Total VPN connections": [
         "Totalt antal VPN-anslutningar"
+      ],
+      "Trial ends on ${ formattedPeriodEndDate }": [
+        "Provperiod slutar den ${ formattedPeriodEndDate }"
       ],
       "trusted device": [
         "betrodd enhet"
@@ -8667,6 +8689,9 @@
       "Add group member": [
         "Lägg till gruppmedlem"
       ],
+      "Additional comments": [
+        "Ytterligare kommentarer"
+      ],
       "Address": [
         "Adress"
       ],
@@ -8829,6 +8854,9 @@
       "Contacts": [
         "Kontakter"
       ],
+      "Continue cancelling": [
+        "Fortsätt avbryta"
+      ],
       "Copy": [
         "Kopiera"
       ],
@@ -8885,9 +8913,6 @@
       ],
       "Display name": [
         "Visningsnamn"
-      ],
-      "Do you have any suggestions for our team?": [
-        "Har du några förslag till vårt team?"
       ],
       "Domain": [
         "Domän"
@@ -9307,6 +9332,9 @@
       "Single sign-on URL": [
         "URL för enkel inloggning"
       ],
+      "Skip feedback": [
+        "Hoppa över feedback"
+      ],
       "Spam": [
         "Skräppost"
       ],
@@ -9402,9 +9430,6 @@
       ],
       "What is the main reason you are deleting your account?": [
         "Vad är den främsta anledningen till att du tar bort ditt konto?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Vad är din främsta anledning till att du avbryter eller nedgraderar?"
       ],
       "Who can send to this group address?": [
         "Vem kan skicka till denna gruppadress?"
@@ -9914,6 +9939,15 @@
         "Ställ in ditt konto med din Porkbun-domän."
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (för ${ quantity } användare)",
+        "${ MEET_APP_NAME } (för ${ quantity } användare)"
+      ],
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME }-licens"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: Konfidentiella videokonferenser för de konversationer som är viktiga"
@@ -9963,6 +9997,14 @@
       "Up to ${ n } participant": [
         "Upp till ${ n } deltagare",
         "Upp till ${ n } deltagare"
+      ]
+    },
+    "Meet_launch": {
+      "Add ${ planName }": [
+        "Lägg till ${ planName }"
+      ],
+      "Talk privately with ${ planName }": [
+        "Prata privat med ${ planName }"
       ]
     },
     "Member action": {
@@ -11195,9 +11237,6 @@
       "Daily email notifications": [
         "Dagliga e-postaviseringar"
       ],
-      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
-        "Inaktivering av detta kommer att ta bort möjligheten att ta emot aviseringar i ${ BRAND_NAME }-applikationer"
-      ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Under din första månad med användning av en ${ BRAND_NAME }-produkt"
       ],
@@ -12268,6 +12307,9 @@
       "Anderson": [
         "Andersson"
       ],
+      "Anything you'd like us to know": [
+        "Något du vill att vi ska veta"
+      ],
       "Anytown": [
         "Alingsås"
       ],
@@ -12306,6 +12348,9 @@
       ],
       "End date": [
         "Slutdatum"
+      ],
+      "Enter a name": [
+        "Ange ett namn"
       ],
       "Enter name": [
         "Ange namn"
@@ -12370,6 +12415,9 @@
       "Select": [
         "Välj"
       ],
+      "Select a provider": [
+        "Välj en leverantör"
+      ],
       "Select a reason": [
         "Välj en anledning"
       ],
@@ -12378,9 +12426,6 @@
       ],
       "Select state": [
         "Välj delstat"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Dela vad du tror som skulle göra ${ BRAND_NAME } bättre"
       ],
       "Start date": [
         "Startdatum"
@@ -12519,6 +12564,26 @@
       ],
       "Unknown": [
         "Okänd"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Annat"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {
@@ -14207,10 +14272,6 @@
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } dedikerad server",
         "${ ipAddresses } dedikerade servrar"
-      ],
-      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
-        "${ LUMO_APP_NAME } för ${ maxLumo } användare",
-        "${ LUMO_APP_NAME } för ${ maxLumo } användare"
       ],
       "${ n } calendar per user": [
         "${ n } kalender per användare",
