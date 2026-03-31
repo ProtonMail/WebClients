@@ -6,7 +6,15 @@ import { c } from 'ttag';
 import BYOESignupButton from '@proton/activation/src/components/Signup/BYOESignupButton';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import { Challenge, DropdownSizeUnit, Info, InputFieldTwo, Option, PasswordInputTwo } from '@proton/components';
+import {
+    Challenge,
+    DropdownSizeUnit,
+    Info,
+    InputFieldTwo,
+    Option,
+    PasswordInputTwo,
+    useRightToLeft,
+} from '@proton/components';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle';
 import { PLANS } from '@proton/payments';
@@ -90,6 +98,7 @@ const AccountStepDetails = ({
     const signupV2Theme = useSignupV2Theme();
     const [, setRerender] = useState<any>();
     const [loadingChallenge, setLoadingChallenge] = useState(true);
+    const [isRTL] = useRightToLeft();
 
     const variant = useVariant('InboxBringYourOwnEmailSignup');
     const hasAccessToBYOE =
@@ -164,7 +173,7 @@ const AccountStepDetails = ({
                 }}
             >
                 {/*This is attempting to position at the same place as the select since it's in the challenge iframe*/}
-                <div className="relative">
+                <div className="relative" dir="ltr">
                     <div
                         ref={anchorRef as any}
                         className="absolute top-custom right-custom"
@@ -256,6 +265,7 @@ const AccountStepDetails = ({
                                     id="username"
                                     label={c('Signup label').t`Username`}
                                     error={errors.username}
+                                    direction="ltr"
                                     inputClassName="email-input-field"
                                     suffix={(() => {
                                         const asyncState = (() => {
@@ -303,7 +313,7 @@ const AccountStepDetails = ({
                                             <>
                                                 <SelectTwo
                                                     id="select-domain"
-                                                    originalPlacement="bottom-end"
+                                                    originalPlacement={isRTL ? 'bottom-start' : 'bottom-end'}
                                                     anchorRef={anchorRef}
                                                     size={{ width: DropdownSizeUnit.Static }}
                                                     unstyled
@@ -320,6 +330,7 @@ const AccountStepDetails = ({
                                                             key={option.value}
                                                             value={option.value}
                                                             title={option.text}
+                                                            dir="ltr"
                                                         >
                                                             @{option.text}
                                                         </Option>
