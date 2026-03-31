@@ -261,7 +261,7 @@ describe('forbidden plan transitions', () => {
         expect(result).toEqual(null);
     });
 
-    it('should be forbidden to go from meet plus to another plus without meet addon', () => {
+    it('should auto-add meet addon when going from Meet Plus to VPN plus plan', () => {
         const subscription = buildSubscription(PLANS.MEET);
         expect(
             getIsPlanTransitionForbidden({
@@ -269,7 +269,56 @@ describe('forbidden plan transitions', () => {
                 planIDs: { [PLANS.VPN2024]: 1 },
                 plansMap,
             })
-        ).toEqual({ type: 'plus-to-plus', newPlanName: PLANS.VPN2024 });
+        ).toEqual({
+            type: 'meet-plus',
+            newPlanName: PLANS.VPN2024,
+            newPlanIDs: { [PLANS.VPN2024]: 1, [ADDON_NAMES.MEET_VPN2024]: 1 },
+        });
+    });
+
+    it('should auto-add meet addon when going from Meet Plus to Mail plus plan', () => {
+        const subscription = buildSubscription(PLANS.MEET);
+        expect(
+            getIsPlanTransitionForbidden({
+                subscription,
+                planIDs: { [PLANS.MAIL]: 1 },
+                plansMap,
+            })
+        ).toEqual({
+            type: 'meet-plus',
+            newPlanName: PLANS.MAIL,
+            newPlanIDs: { [PLANS.MAIL]: 1, [ADDON_NAMES.MEET_MAIL]: 1 },
+        });
+    });
+
+    it('should auto-add meet addon when going from Meet Plus to Drive plus plan', () => {
+        const subscription = buildSubscription(PLANS.MEET);
+        expect(
+            getIsPlanTransitionForbidden({
+                subscription,
+                planIDs: { [PLANS.DRIVE]: 1 },
+                plansMap,
+            })
+        ).toEqual({
+            type: 'meet-plus',
+            newPlanName: PLANS.DRIVE,
+            newPlanIDs: { [PLANS.DRIVE]: 1, [ADDON_NAMES.MEET_DRIVE]: 1 },
+        });
+    });
+
+    it('should auto-add meet addon when going from Meet Plus to Pass plus plan', () => {
+        const subscription = buildSubscription(PLANS.MEET);
+        expect(
+            getIsPlanTransitionForbidden({
+                subscription,
+                planIDs: { [PLANS.PASS]: 1 },
+                plansMap,
+            })
+        ).toEqual({
+            type: 'meet-plus',
+            newPlanName: PLANS.PASS,
+            newPlanIDs: { [PLANS.PASS]: 1, [ADDON_NAMES.MEET_PASS]: 1 },
+        });
     });
 
     it('should be allowed to go from Meet Plus on iOS to other Plus subscription on web (multi-subs)', () => {
