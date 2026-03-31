@@ -159,6 +159,9 @@
       "Change": [
         "Skift"
       ],
+      "Change my access": [
+        "Ændr min adgang"
+      ],
       "Change password": [
         "Skift adgangskode"
       ],
@@ -245,6 +248,9 @@
       ],
       "Continue on web": [
         "Fortsæt på nettet"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "Fortsæt til ${ planOrAppName }"
       ],
       "Continue transfers": [
         "Fortsæt overførsler"
@@ -551,6 +557,9 @@
       "Go to settings": [
         "Gå til indstillinger"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Forstået"
       ],
@@ -562,6 +571,9 @@
       ],
       "Help and resources": [
         "Hjælp og ressourcer"
+      ],
+      "Hide": [
+        "Skjul"
       ],
       "Hide advanced PGP settings": [
         "Skjul avancerede PGP-indstillinger"
@@ -838,6 +850,9 @@
       ],
       "Remove me": [
         "Fjern mig"
+      ],
+      "Remove my access": [
+        "Fjern min adgang"
       ],
       "Remove without saving": [
         "Fjern uden at gemme"
@@ -1303,6 +1318,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME }-licens",
         "${ seats } ${ LUMO_APP_NAME }-licenser"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } licens",
+        "${ seats } ${ MEET_APP_NAME } licenser"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } skriveassistentplads",
@@ -2578,6 +2597,9 @@
       "North Korea": [
         "Nordkorea"
       ],
+      "North Macedonia": [
+        "Nordmakedonien"
+      ],
       "Northern Mariana Islands": [
         "Nordmarianerne"
       ],
@@ -3016,6 +3038,9 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Brug denne vejledning for hurtigt at lade din organisation drage fordel af ${ BRAND_NAME }'s branchens førende kryptering og privatlivsøkosystem."
       ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Vi er kede af at du forlader os. Hvis du har et øjeblik, så ville vi sætte stor pris på at høre hvorfor du annullerer. Din feedback hjælper os med at gøre ${ BRAND_NAME } bedre for alle."
+      ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Med kontaktgrupper kan du sende e-mails til alle i gruppen med et enkelt klik."
       ],
@@ -3341,6 +3366,9 @@
       "Can't find any secure link": [
         "Kan ikke finde noget sikkert link"
       ],
+      "Can't retrieve device name": [
+        "Kan ikke hente enhedsnavn"
+      ],
       "Cannot export this contact": [
         "Kan ikke eksportere denne kontakt"
       ],
@@ -3349,6 +3377,9 @@
       ],
       "Checkout expired, please try again": [
         "Betalingen er udløbet, prøv venligst igen"
+      ],
+      "Company name or personal name is required": [
+        "Virksomhedsnavn eller personnavn er påkrævet"
       ],
       "Contact could not be saved": [
         "Kontakt kunne ikke gemmes"
@@ -3376,6 +3407,9 @@
       ],
       "Could not remove from favorites": [
         "Kunne ikke fjernes fra favoritter"
+      ],
+      "Data integrity check failed": [
+        "Dataintegritetskontrol mislykkedes"
       ],
       "Deselect at least ${ calendarsToFixCount } calendar": [
         "Fravælg mindst ${ calendarsToFixCount } kalender",
@@ -3552,6 +3586,9 @@
       ],
       "Invalid public key file": [
         "Ugyldig offentlig nøglefil"
+      ],
+      "Invalid VAT number": [
+        "Ugyldigt VAT-/momsnummer"
       ],
       "Invalid verification code": [
         "Ugyldig verifikationskode"
@@ -3774,6 +3811,9 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Det mindste kreditstørrelse, der kan tilføjes, er ${ price }"
       ],
+      "The minimum donation amount is ${ price }": [
+        "Det mindste donationsbeløb er ${ price }"
+      ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "Den nye version af den oprindelige fil er ikke uploadet endnu, prøv igen senere"
       ],
@@ -3830,6 +3870,12 @@
       ],
       "Unable to set photo as cover": [
         "Kan ikke indstille foto som cover"
+      ],
+      "Unable to start the search": [
+        "Kan ikke starte søgningen"
+      ],
+      "Unable to start the search: not enough storage space": [
+        "Kan ikke starte søgningen: ikke nok lagerplads"
       ],
       "Unexpected error, we can't import the contacts": [
         "Uventet fejl, vi kan ikke importere kontakterne"
@@ -3891,11 +3937,17 @@
       "We were not able to load some search results": [
         "Vi kunne ikke indlæse nogle søgeresultater"
       ],
+      "We were not able to load the file history": [
+        "Vi kunne ikke indlæse filhistorikken"
+      ],
       "We were not able to load the folder contents": [
         "Vi kunne ikke indlæse indholdet af mappen"
       ],
       "We're sorry, but free upload is not available right now.": [
         "Vi beklager, men gratis upload er ikke tilgængelig lige nu."
+      ],
+      "Wrong billing address": [
+        "Forkert faktureringsadresse"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Du kan ikke sende en e-mail til flere end ${ maxContacts } modtager",
@@ -4322,7 +4374,15 @@
         "Lynhurtige hastigheder"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Noget gik galt ved godkendelsen med din sikkerhedsnøgle. Prøv venligst igen."
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Indsæt en sikkerhedsnøgle, der er knyttet til din ${ BRAND_NAME }-konto."
+      ],
       "Security key": [
         "Sikkerhedsnøgle"
       ]
@@ -4779,6 +4839,11 @@
         "Vælg ${ boldExport } for at eksportere kalenderen som en ICS-fil."
       ]
     },
+    "Import provider": {
+      "Advanced import": [
+        "Avanceret import"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } ud af ${ totalContacts } kontakter vil ikke blive importeret. Klik for detaljer"
@@ -4910,6 +4975,15 @@
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } inkluderer ${ BRAND_NAME } Scribe skriveassistent"
+      ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } er et end-to-end krypteret system til videomøder. Tilføj det til dit abonnement for at afholde sikre møder."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } pladser"
+      ],
+      "${ MEET_APP_NAME } video conferencing": [
+        "${ MEET_APP_NAME } videomøder"
       ],
       "${ normalizedProgress }% completed": [
         "${ normalizedProgress }% fuldført"
@@ -5064,6 +5138,9 @@
       "Ad targeting": [
         "Annoncemålretning"
       ],
+      "Add ${ MEET_APP_NAME }": [
+        "Tilføj ${ MEET_APP_NAME }"
+      ],
       "Address copied to clipboard": [
         "Adresse kopieret til udklipsholder"
       ],
@@ -5208,6 +5285,9 @@
       "Can't move a folder into itself": [
         "Kan ikke flytte en mappe ind i sig selv"
       ],
+      "Can't rename to same name": [
+        "Kan ikke omdøbe til samme navn"
+      ],
       "Can't write into folder": [
         "Kan ikke skrive i mappen"
       ],
@@ -5238,6 +5318,12 @@
       "Choose a plan that works best for you.": [
         "Vælg et abonnement, der passer bedst til dig."
       ],
+      "Choose your service to connect with": [
+        "Vælg tjenesten du vil forbinde til"
+      ],
+      "Clear all search data": [
+        "Ryd alt søgedata"
+      ],
       "Clear data": [
         "Ryd data"
       ],
@@ -5249,6 +5335,9 @@
       ],
       "Clears browser data related to the encrypted search.": [
         "Rydder browserdata relateret til den krypterede søgning."
+      ],
+      "Clears browser data related to the search.": [
+        "Rydder browserdata relateret til søgningen."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik på \"Anmod om ny kode\" for at få en ny bekræftelseskode sendt til ${ strong }. Hvis dette telefonnummer er forkert, skal du klikke på \"Redigér\" for at rette det."
@@ -5418,6 +5507,9 @@
       "Duplicate key updated": [
         "Duplikeret nøgle opdateret"
       ],
+      "Each code can only be used once": [
+        "Hver kode kan kun bruges én gang"
+      ],
       "Edit email address": [
         "Rediger e-mailadresse"
       ],
@@ -5488,6 +5580,9 @@
       "Everything in ${ planOrAppName }": [
         "Alt i ${ planOrAppName }"
       ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Alt fra ${ planOrAppName }, plus:"
+      ],
       "Expired": [
         "Udløbet"
       ],
@@ -5535,6 +5630,9 @@
       ],
       "Folders you sync from your computer will appear here.": [
         "De mapper, du synkroniserer fra din computer, vises her."
+      ],
+      "for ${ price }": [
+        "til ${ price }"
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "For de bedste resultater bør du undgå streaming og hukommelsesintensive aktiviteter eller dele dit upload op i mindre bidder."
@@ -5601,6 +5699,9 @@
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Hvis du fortsætter med nedgraderingen, vil du miste adgang til betalte funktioner i ${ VPN_APP_NAME }."
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Hvis du fjerner dig selv, mister du adgang til \"${ fileName }\" og du vil ikke kunne åbne den igen, medmindre ejeren deler den med dig."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importer ${ calendarCount } af ${ totalCalendarsCount } kalender",
@@ -6108,6 +6209,9 @@
       ],
       "Search Enabled": [
         "Søgning aktiveret"
+      ],
+      "Search enabled. You may now close this dialogue and search for files and folders.": [
+        "Søgning aktiveret. Du kan nu lukke dialogen og søge efter filer og mapper."
       ],
       "Select a destination folder": [
         "Vælg en destinationsmappe"
@@ -6630,6 +6734,9 @@
       "When you remove ${ deviceName } as a synced device, all folders added to My Computers from this device will be permanently deleted from ${ DRIVE_APP_NAME }.": [
         "Når du fjerner ${ deviceName } som en synkroniseret enhed, slettes alle mapper tilføjet til Mine Computere fra denne enhed permanent fra ${ DRIVE_APP_NAME }."
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Når du indstiller to-faktor-godkendelse, giver vi dig gendannelseskoder, som du kan bruge til at logge på, hvis du mister adgangen til din godkendelsesapp."
+      ],
       "who": [
         "hvem"
       ],
@@ -6757,6 +6864,12 @@
       ],
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Der bliver ikke trukket noget hvis du annullerer inden ${ trialEndsOnFormatted }."
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Du vil ikke kunne dele \"${ fileName }\" efter du har ændret adgangen til seer. Kun ejeren kan ændre din adgang igen."
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Du vil modtage kreditten 1 måned efter at din ven abonnerer på et årligt abonnement, og 2 måneder efter de abonnerer på et månedligt abonnement."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Du vil derefter blive faktureret hver ${ renewCycle } måned med ${ renewAmountStr }. Du kan til enhver tid annullere.",
@@ -7021,6 +7134,9 @@
       "Add to group": [
         "Føj til gruppe"
       ],
+      "Additional comments": [
+        "Yderligere kommentarer"
+      ],
       "Address": [
         "Adresse"
       ],
@@ -7138,6 +7254,9 @@
       "Contacts": [
         "Kontakter"
       ],
+      "Continue cancelling": [
+        "Fortsæt annullering"
+      ],
       "Copy": [
         "Kopiér"
       ],
@@ -7190,9 +7309,6 @@
       "Disable this link on a specific date": [
         "Deaktiver dette link på en bestemt dato"
       ],
-      "Do you have any suggestions for our team?": [
-        "Har du forslag til vores team?"
-      ],
       "Don't ask again": [
         "Spørg ikke igen"
       ],
@@ -7228,6 +7344,9 @@
       ],
       "Emails (last 3 months)": [
         "E-mails (seneste 3 måneder)"
+      ],
+      "Emails (last 6 months)": [
+        "E-mails (seneste 6 måneder)"
       ],
       "Emails (last month)": [
         "E-mails (seneste måned)"
@@ -7328,6 +7447,9 @@
       "Last 3 months only": [
         "Kun seneste 3 måneder"
       ],
+      "Last 6 months only": [
+        "Kun de seneste 6 måneder"
+      ],
       "Last month only": [
         "Kun seneste måned"
       ],
@@ -7345,6 +7467,9 @@
       ],
       "Main": [
         "Hjem"
+      ],
+      "Main reason for cancelling": [
+        "Hovedårsag til at annullere"
       ],
       "Malware": [
         "Malware"
@@ -7502,6 +7627,9 @@
       "Size": [
         "Størrelse"
       ],
+      "Skip feedback": [
+        "Spring feedback over"
+      ],
       "Skip file": [
         "Spring fil over"
       ],
@@ -7600,9 +7728,6 @@
       ],
       "What happened?": [
         "Hvad skete der?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Hvad er årsagen til, at du har opsagt eller nedgraderet?"
       ],
       "Yes, I want to permanently delete my old files": [
         "Ja, jeg vil slette mine gamle filer permanent"
@@ -7892,6 +8017,18 @@
         "til ${ price }"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } licens"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } pladser"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME }-plads",
+        "${ seats } ${ MEET_APP_NAME }-pladser"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: Fortrolige videomøder til de samtaler, der betyder noget"
@@ -7925,6 +8062,9 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "End-to-end-krypteret skærmdeling og midlertidig chat under opkald"
       ],
+      "Hosts can record meetings locally on their computers": [
+        "Mødeværter kan optage møder lokalt på deres computere"
+      ],
       "Meeting recording": [
         "Møde-optagelse"
       ],
@@ -7944,6 +8084,19 @@
       "Up to ${ n } participant": [
         "Op til ${ n } deltager",
         "Op til ${ n } deltagere"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videomøder, ${ n } deltager",
+        "Videomøde, ${ n } deltagere"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "Inklusiv ${ seats } plads",
+        "Inklusiv ${ seats } pladser"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Du kan have op til ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME }-pladser i prøveperioden."
       ]
     },
     "Message": {
@@ -8294,6 +8447,10 @@
         "${ n } VPN-forbindelse",
         "${ n } VPN-forbindelser"
       ],
+      "${ options }-day file version history": [
+        "${ options } dags filversionshistorik",
+        "${ options } dages filversionshistorik"
+      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin livstid"
       ],
@@ -8418,6 +8575,9 @@
       "Data breach monitoring": [
         "Overvågning af databrud"
       ],
+      "Data retention policies": [
+        "Databevaringspolitikker"
+      ],
       "Dedicated servers optimized for streaming": [
         "Dedikerede servere optimeret til streaming"
       ],
@@ -8526,6 +8686,9 @@
       ],
       "Priority support & live chat": [
         "Prioriteret support & live chat"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Privat AI-chat (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "Privat sikkerhedskopiering af fotos"
@@ -8672,6 +8835,9 @@
       "Vault sharing with up to ${ n } person": [
         "Deling af boks med op til ${ n } person",
         "Deling af boks med op til ${ n } personer"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN med annonceblokering og beskyttelse mod malware"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi scanner det mørke web for at tjekke, om dine ${ BRAND_NAME }-adresser eller aliasser er blevet lækket, og giver dig straks besked, hvis vi finder noget."
@@ -9092,6 +9258,9 @@
       ]
     },
     "Notification": {
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" delt"
+      ],
       "\"${ name }\" created successfully": [
         "\"${ name }\" oprettet"
       ],
@@ -10068,6 +10237,9 @@
       "VAT number": [
         "Momsnummer"
       ],
+      "VAT reverse charge mechanism applies.": [
+        "Omvendt betalingspligt gælder."
+      ],
       "You already have a subscription to this plan.": [
         "Du har allerede dette abonnement."
       ],
@@ -10146,8 +10318,17 @@
       ]
     },
     "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Fornyelsesprisen afhænger af faktureringsregionen og ABN."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "Fornyelsesprisen afhænger af faktureringsregionen og virksomhedsnummeret."
+      ],
       "Renewal price is dependent on the billing region and EIN.": [
         "Fornyelsesprisen afhænger af faktureringsregionen og EIN."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "Fornyelsesprisen afhænger af faktureringsregionen og momsnummeret."
       ]
     },
     "Payments.Saved payment method details": {
@@ -10232,6 +10413,9 @@
       "Anderson": [
         "Andersen"
       ],
+      "Anything you'd like us to know": [
+        "Noget du gerne vil have vi ved"
+      ],
       "Anytown": [
         "Skovhavn"
       ],
@@ -10241,11 +10425,17 @@
       "Company name": [
         "Firmanavn"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "E.g., ": [
         "F.eks., "
       ],
       "Email": [
         "E-mail"
+      ],
+      "Enter a name": [
+        "Indtast et navn"
       ],
       "Enter a new file name": [
         "Indtast et nyt filnavn"
@@ -10304,6 +10494,9 @@
       "Postal code": [
         "Postnummer"
       ],
+      "San Francisco": [
+        "San Francisco"
+      ],
       "Search for group name": [
         "Søg efter gruppenavn"
       ],
@@ -10316,6 +10509,9 @@
       "Select": [
         "Vælg"
       ],
+      "Select a provider": [
+        "Vælg en udbyder"
+      ],
       "Select a reason": [
         "Vælg en årsag"
       ],
@@ -10324,9 +10520,6 @@
       ],
       "Select state": [
         "Vælg stat"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Fortæl, hvordan du tror, ${ BRAND_NAME } kan blive bedre"
       ],
       "Start typing an email address": [
         "Begynd at indtaste en e-mailadresse"
@@ -10440,6 +10633,26 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Officiel e-mail fra ${ BRAND_NAME }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Andet"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {
@@ -10750,6 +10963,18 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Du har ${ timeRemaining.inDays } dag til at nulstille din adgangskode.",
         "Du har ${ timeRemaining.inDays } dage til at nulstille din adgangskode."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Du har ${ timeRemaining.inHours } time til at nulstille din adgangskode.",
+        "Du har ${ timeRemaining.inHours } timer til at nulstille din adgangskode."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Du har ${ timeRemaining.inMinutes } minut til at nulstille din adgangskode.",
+        "Du har ${ timeRemaining.inMinutes } minutter til at nulstille din adgangskode."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Du har ${ timeRemaining.inSeconds } sekund til at nulstille din adgangskode.",
+        "Du har ${ timeRemaining.inSeconds } sekunder til at nulstille din adgangskode."
       ]
     },
     "session_recovery:available:link": {
@@ -12094,6 +12319,9 @@
       "Card verification": [
         "Kortbekræftelse"
       ],
+      "Change access to viewer?": [
+        "Skift adgang til seer?"
+      ],
       "Change layout": [
         "Skift layout"
       ],
@@ -12676,6 +12904,9 @@
         "Fjern elementet?",
         "Fjern elementerne?"
       ],
+      "Remove your access?": [
+        "Fjern din adgang?"
+      ],
       "Rename a file": [
         "Omdøb en fil"
       ],
@@ -12744,6 +12975,9 @@
       ],
       "SHA1": [
         "SHA1"
+      ],
+      "Share \"${ fileName }\"": [
+        "Del \"${ fileName }\""
       ],
       "Share your calendar with your team": [
         "Del din kalender med dit team"
@@ -13019,6 +13253,9 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Skift automatisk mellem dine foretrukne temaer for dag og nat synkront med dit systems dag- og nattilstande"
       ],
+      "Change shared item settings": [
+        "Skift indstillinger for delte elementer"
+      ],
       "Customize import to reduce the number of folders": [
         "Tilpas import for at reducere antallet af mapper"
       ],
@@ -13060,6 +13297,9 @@
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "Besked og filnavn gemmes med nul-adgangskryptering, når de er medtaget i e-mailen"
+      ],
+      "New!": [
+        "Nyt!"
       ],
       "Not all information listed here was exposed for all users.": [
         "Ikke alle oplysninger på listen blev afsløret for alle brugere"
