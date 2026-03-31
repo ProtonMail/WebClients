@@ -4371,6 +4371,9 @@
       "Primary address key is not decrypted.": [
         "Primaire adressleutel is niet ontsleuteld."
       ],
+      "Private users can be added to group once they've signed in for the first time: ${ displayedNames }": [
+        "Privégebruikers kunnen aan een groep worden toegevoegd zodra ze voor het eerst zijn ingelogd: ${ displayedNames }"
+      ],
       "Process aborted": [
         "Proces afgebroken"
       ],
@@ -8723,6 +8726,9 @@
       "Add group member": [
         "Groepslid toevoegen"
       ],
+      "Additional comments": [
+        "Aanvullende opmerkingen"
+      ],
       "Address": [
         "Adres"
       ],
@@ -8941,9 +8947,6 @@
       ],
       "Display name": [
         "Weergavenaam"
-      ],
-      "Do you have any suggestions for our team?": [
-        "Heeft u suggesties voor ons team?"
       ],
       "Domain": [
         "Domeinnaam"
@@ -9458,9 +9461,6 @@
       ],
       "What is the main reason you are deleting your account?": [
         "Wat is de voornaamste reden dat u uw account verwijdert?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Wat is uw belangrijkste reden om te annuleren of te downgraden?"
       ],
       "Who can send to this group address?": [
         "Wie kan verzenden naar dit groepsadres?"
@@ -11259,9 +11259,6 @@
       "Daily email notifications": [
         "Dagelijkse e-mailmeldingen"
       ],
-      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
-        "Dit uitschakelen zal de mogelijkheid om meldingen in ${ BRAND_NAME } applicaties te ontvangen verwijderen"
-      ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Gedurende de eerste maand gebruik van een ${ BRAND_NAME } product"
       ],
@@ -12374,6 +12371,9 @@
       "End date": [
         "Eind datum"
       ],
+      "Enter a name": [
+        "Voer een naam in"
+      ],
       "Enter name": [
         "Voer naam in"
       ],
@@ -12437,6 +12437,9 @@
       "Select": [
         "Selecteer"
       ],
+      "Select a provider": [
+        "Kies een aanbieder"
+      ],
       "Select a reason": [
         "Selecteer een reden"
       ],
@@ -12445,9 +12448,6 @@
       ],
       "Select state": [
         "Selecteer provincie"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Deel wat volgens u ${ BRAND_NAME } beter zou kunnen maken"
       ],
       "Start date": [
         "Begindatum"
@@ -12589,6 +12589,14 @@
       ],
       "Unknown": [
         "Onbekend"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
       ]
     },
     "q1campaign: Action": {
@@ -14286,10 +14294,6 @@
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } toegewijde server",
         "${ ipAddresses } toegewijde servers"
-      ],
-      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
-        "${ LUMO_APP_NAME } voor ${ maxLumo } gebruiker",
-        "${ LUMO_APP_NAME } voor ${ maxLumo } gebruikers"
       ],
       "${ n } calendar per user": [
         "${ n } agenda per gebruiker",

@@ -224,6 +224,9 @@
       "Continue import": [
         "继续导入"
       ],
+      "Continue to ${ planOrAppName }": [
+        "继续使用 ${ planOrAppName }"
+      ],
       "Continue with this password": [
         "使用此密码继续"
       ],
@@ -3482,6 +3485,9 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "使用本指南，让您的组织迅速受益于 ${ BRAND_NAME } 行业领先的加密和隐私生态系统。"
       ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "很遗憾看到您离开。如果您有时间，我们希望了解您取消的原因。您的反馈有助于我们改进 ${ BRAND_NAME }，让产品变得更好。"
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "您可以导入 iCal 格式（. ics 文件）的日程。文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且日程总数上限为 ${ MAX_IMPORT_EVENTS_STRING }。若您的文件超出限制，请先拆分成较小的文件。"
       ]
@@ -4340,6 +4346,9 @@
       ],
       "Primary address key is not decrypted.": [
         "主密钥尚未解密。"
+      ],
+      "Private users can be added to group once they've signed in for the first time: ${ displayedNames }": [
+        "私有用户首次登录后即可添加到群组：${ displayedNames }"
       ],
       "Process aborted": [
         "操作已中止"
@@ -7571,6 +7580,9 @@
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "订阅即将结束：为保留您的 ${ planName } 权益，请在 ${ byDate } 前通过 Google Play 商店重新开启您的订阅。${ reactivateLink }"
       ],
+      "Subscription starts on ${ startsOnTime }": [
+        "订阅从 ${ startsOnTime } 开始"
+      ],
       "Summary": [
         "概览"
       ],
@@ -7828,6 +7840,9 @@
       ],
       "Total VPN connections": [
         "VPN 同时在线设备总数"
+      ],
+      "Trial ends on ${ formattedPeriodEndDate }": [
+        "试用期于 ${ formattedPeriodEndDate } 结束"
       ],
       "trusted device": [
         "可信设备"
@@ -8606,6 +8621,9 @@
       "Add group member": [
         "添加群组成员"
       ],
+      "Additional comments": [
+        "附加备注"
+      ],
       "Address": [
         "地址"
       ],
@@ -8768,6 +8786,9 @@
       "Contacts": [
         "通讯录"
       ],
+      "Continue cancelling": [
+        "继续取消"
+      ],
       "Copy": [
         "复制"
       ],
@@ -8824,9 +8845,6 @@
       ],
       "Display name": [
         "称呼"
-      ],
-      "Do you have any suggestions for our team?": [
-        "您对我们的团队有什么建议吗？"
       ],
       "Domain": [
         "域名"
@@ -9007,6 +9025,9 @@
       ],
       "Main": [
         "主要"
+      ],
+      "Main reason for cancelling": [
+        "取消的主要原因"
       ],
       "Manage categories": [
         "管理分类"
@@ -9245,6 +9266,9 @@
       "Single sign-on URL": [
         "单点登录网址"
       ],
+      "Skip feedback": [
+        "跳过反馈"
+      ],
       "Spam": [
         "垃圾邮件"
       ],
@@ -9340,9 +9364,6 @@
       ],
       "What is the main reason you are deleting your account?": [
         "您删除账户的主要原因是？"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "您取消或降级订阅的主要原因是什么？"
       ],
       "Who can send to this group address?": [
         "谁可以向该群组地址发送邮件？"
@@ -11103,9 +11124,6 @@
       "Daily email notifications": [
         "每日邮件提醒"
       ],
-      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
-        "关闭后将无法在 ${ BRAND_NAME } 应用内收取通知信息"
-      ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "在您使用 ${ BRAND_NAME } 产品的第一个月里"
       ],
@@ -12169,6 +12187,9 @@
       "Anderson": [
         "Anderson"
       ],
+      "Anything you'd like us to know": [
+        "您有任何想要告诉我们的吗？"
+      ],
       "Anytown": [
         "任何城镇"
       ],
@@ -12207,6 +12228,9 @@
       ],
       "End date": [
         "结束日期"
+      ],
+      "Enter a name": [
+        "请输入名称"
       ],
       "Enter name": [
         "输入名称"
@@ -12271,6 +12295,9 @@
       "Select": [
         "选择"
       ],
+      "Select a provider": [
+        "请选择提供商"
+      ],
       "Select a reason": [
         "请选择原因"
       ],
@@ -12279,9 +12306,6 @@
       ],
       "Select state": [
         "请选择省份"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "分享你认为可以使 ${ BRAND_NAME } 变得更好的内容"
       ],
       "Start date": [
         "起始日期"
@@ -12421,6 +12445,26 @@
       ],
       "Unknown": [
         "未知"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "其他"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Recovery Email": {
@@ -13987,9 +14031,6 @@
       ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } 台专用服务器"
-      ],
-      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
-        "${ LUMO_APP_NAME } 适用于 ${ maxLumo } 用户"
       ],
       "${ n } calendar per user": [
         "每位用户 ${ n } 份日历"

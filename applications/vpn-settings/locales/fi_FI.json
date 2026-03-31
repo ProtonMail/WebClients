@@ -8388,9 +8388,6 @@
       "Display name": [
         "Näyttönimi"
       ],
-      "Do you have any suggestions for our team?": [
-        "Onko sinulla ehdotuksia tiimillemme?"
-      ],
       "Domain": [
         "Verkkotunnus"
       ],
@@ -8889,9 +8886,6 @@
       ],
       "What is the main reason you are deleting your account?": [
         "Mikä on pääasiallinen syy tilisi poistoon?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Mikä on suurin syy tilauksen lopetukseen tai alennukseen?"
       ],
       "Who can send to this group address?": [
         "Kuka voi lähettää tähän ryhmäosoitteeseen?"
@@ -10586,8 +10580,8 @@
       "Daily email notifications": [
         "Päivittäiset sähköposti-ilmoitukset"
       ],
-      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
-        "Tämän käytöstä poistaminen estää ilmoitusten vastaanottamisen ${ BRAND_NAME } -sovelluksissa"
+      "Disabling this means you won't get in-app notifications about promotions, new features, new ${ BRAND_NAME } services, and reminders.": [
+        "Tämän poistaminen käytöstä tarkoittaa, ettet saa sovelluksen sisäisiä ilmoituksia kampanjoista, uusista ominaisuuksista, uusista ${ BRAND_NAME }-palveluista ja muistutuksista."
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Ensimmäisen ${ BRAND_NAME } -tuotteen käyttökuukautesi aikana"
@@ -11677,9 +11671,6 @@
       ],
       "Select state": [
         "Valitse osavaltio"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Kerro mikä voisi mielestäsi parantaa ${ BRAND_NAME }ia"
       ],
       "Start date": [
         "Alkupäivä"
@@ -13366,10 +13357,6 @@
         "${ ipAddresses } oma palvelin",
         "${ ipAddresses } omaa palvelinta"
       ],
-      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
-        "${ LUMO_APP_NAME } ${ maxLumo } käyttäjälle",
-        "${ LUMO_APP_NAME } ${ maxLumo } käyttäjille"
-      ],
       "${ n } calendar per user": [
         "${ n } kalenteri/käyttäjä",
         "${ n } kalenteria/käyttäjä"
@@ -13393,6 +13380,10 @@
       "${ n } VPN connection per user": [
         "${ n } VPN-yhteys/käyttäjä",
         "${ n } VPN-yhteyttä/käyttäjä"
+      ],
+      "${ productName } for ${ count } user": [
+        "${ productName } ${ count } käyttäjälle",
+        "${ productName } ${ count } käyttäjälle"
       ],
       "${ UsedAddresses } address": [
         "${ UsedAddresses } osoite",

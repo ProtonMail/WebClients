@@ -215,6 +215,9 @@
       "Continue import": [
         "繼續匯入"
       ],
+      "Continue to ${ planOrAppName }": [
+        "繼續使用 ${ planOrAppName }"
+      ],
       "Continue with this password": [
         "繼續使用此密碼"
       ],
@@ -1148,6 +1151,9 @@
       ],
       "Writing assistant": [
         "撰寫助手"
+      ],
+      "Writing assistant seats": [
+        "撰寫幫手就位"
       ]
     },
     "Address action": {
@@ -1466,6 +1472,9 @@
       "2 TB data storage": [
         "2 TB 的總儲存空間"
       ],
+      "3 TB data storage": [
+        "3 TB 的總儲存空間"
+      ],
       "Access 15,000+ servers in 120+ countries": [
         "存取 15,000+ 臺伺服器，分布於 120+ 個國家"
       ],
@@ -1516,6 +1525,9 @@
       ],
       "Lifetime": [
         "終身"
+      ],
+      "Lifetime access": [
+        "終身存取權"
       ],
       "Monthly": [
         "每月"
@@ -1774,6 +1786,9 @@
       ],
       "Upload and query multiple large files": [
         "上載及查詢多個大型檔案"
+      ],
+      "Upload and query small files": [
+        "上載及查詢小型檔案"
       ],
       "Web search access": [
         "網頁搜尋存取"
@@ -2962,6 +2977,9 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "透過共享行事曆以簡化同步和排程"
       ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "匯入 CSV 或 VCF 檔，請確保檔案大小不超過 ${ MAX_IMPORT_FILE_SIZE_STRING }，或聯絡人數不超過 ${ maxContactString }。如果檔案超過此限制，請將其分成比較小的檔案。 ${ learnMoreLink }"
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "從 Google 或 Outlook, ${ easySwitchLink } 來匯入你的聯絡人"
       ],
@@ -3714,6 +3732,9 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "每次儲值的最低金額為 ${ price }"
       ],
+      "The minimum donation amount is ${ price }": [
+        "最低捐款金額為 ${ price }"
+      ],
       "The policy name must be between 3 and 40 characters.": [
         "政策名稱長度必須介乎 3 至 40 個字元。"
       ],
@@ -3779,6 +3800,9 @@
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "我們停止了 DKIM 簽章，因為您的 DNS 配置發生問題。請遵從下列指示以恢復簽章。"
+      ],
+      "Wrong billing address": [
+        "錯誤帳單地址"
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "錯誤的恢復短語。重試或使用其它復原方法。"
@@ -4139,6 +4163,9 @@
       ],
       "Pending": [
         "佇候中"
+      ],
+      "Pending invitation": [
+        "待處理的邀請"
       ],
       "Sorry, you can't switch plans at this time.": [
         "抱歉，目前無法切換方案。"
@@ -5072,6 +5099,9 @@
       ],
       "${ calendarsToBeMergedCount } merged calendar": [
         "${ calendarsToBeMergedCount } 個合併行事曆"
+      ],
+      "${ countriesCount } country enabled": [
+        "${ countriesCount } 個國家/地區已啟用"
       ],
       "${ discountPercent }% discount": [
         "${ discountPercent }%折扣"
@@ -7080,6 +7110,9 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "您將再也不能使用您先前下載的帳號救援檔案恢復被鎖定的資料。此操作將一併停用基於裝置的復原方法。"
       ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "若您的朋友訂閱年費方案，您將在 1 個月後獲得點數獎勵；若他們訂閱月費方案，則會在 2 個月後獲得。"
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "屆時我們將於每 ${ renewCycle } 個月，收取 ${ renewAmountStr } 的訂閱費用。 您可隨時取消。"
       ],
@@ -7127,6 +7160,9 @@
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
         "您的付款日是 ${ renewalTime }。您可隨時取消。"
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "您下一個收費日為${ renewalTime }。您可隨時取消。若您需要立即變更方案請聯繫客服。"
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "您的組織機構使用單一登入(SSO)。按「登入」以 SSO 登入。"
@@ -7471,6 +7507,9 @@
       "Colors": [
         "色彩"
       ],
+      "Command line interface (CLI)": [
+        "指令介面 (CLI)"
+      ],
       "Common passwords": [
         "常見密碼"
       ],
@@ -7557,9 +7596,6 @@
       ],
       "Display name": [
         "顯示名稱"
-      ],
-      "Do you have any suggestions for our team?": [
-        "您對我們的團隊有什麼建議嗎？"
       ],
       "Domain": [
         "網域"
@@ -7728,6 +7764,9 @@
       ],
       "Main": [
         "主要"
+      ],
+      "Main reason for cancelling": [
+        "取消的主要原因"
       ],
       "Manage categories": [
         "管理分類"
@@ -7945,6 +7984,9 @@
       "Single sign-on URL": [
         "單一登入網址"
       ],
+      "Skip feedback": [
+        "略過意見回饋"
+      ],
       "Spam": [
         "垃圾郵件"
       ],
@@ -8031,9 +8073,6 @@
       ],
       "What is the main reason you are deleting your account?": [
         "請您告訴我們，是什麼原因讓您決定刪除帳號？"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "請問退訂或降級的主要理由?"
       ],
       "Who can send to this group address?": [
         "誰可傳送至此群組地址?"
@@ -8502,6 +8541,9 @@
       ],
       "Built-in chat": [
         "內建聊天"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "端對端加密的螢幕共享和臨時通話內聊天"
       ],
       "Meeting recording": [
         "會議錄影"
@@ -10255,6 +10297,9 @@
       ]
     },
     "Payments": {
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% 稅金：${ taxAmountElement }"
+      ],
       "${ rate }% taxes: ${ taxAmountElement }": [
         "${ rate }% 稅金：${ taxAmountElement }"
       ],
@@ -10431,6 +10476,14 @@
         "免費"
       ]
     },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "續訂價格取決於計費區域和 EIN。"
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "續訂價格取決於計費區域和 EIN。"
+      ]
+    },
     "Payments.Saved payment method details": {
       "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "APPle Pay - 卡片於 ${ paymentMethod.Details.Last4 } 結束"
@@ -10506,6 +10559,9 @@
       "Anderson": [
         "安德松"
       ],
+      "Anything you'd like us to know": [
+        "您有沒有什麼想讓我們知道的？"
+      ],
       "Choose a name": [
         "請選定一個名稱"
       ],
@@ -10569,6 +10625,9 @@
       "Postal code": [
         "郵遞區號"
       ],
+      "San Francisco": [
+        "舊金山"
+      ],
       "Search": [
         "搜尋"
       ],
@@ -10595,9 +10654,6 @@
       ],
       "Select state": [
         "請選州"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "分享您認為可以讓 ${ BRAND_NAME } 更好的方法"
       ],
       "Start date": [
         "開始日期"
@@ -10644,6 +10700,9 @@
     "Plans": {
       "${ cycle } month": [
         "${ cycle }個月"
+      ],
+      "${ months } month plan": [
+        "${ months } 個月方案"
       ],
       "Enjoying ${ planName }?": [
         "享受 ${ planName }?"
@@ -10701,6 +10760,23 @@
       ],
       "Unknown": [
         "未知"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "其它"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {
@@ -10866,8 +10942,14 @@
       "${ referrerRewardAmount } per referral": [
         "每個推薦 ${ referrerRewardAmount }"
       ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "於那日之後，您的帳號將被降級至 **${ BRAND_NAME } 免費 **。若您改變主意，您可 ** 重建訂閱 ** 以存取至頂級質子版的功能。"
+      ],
       "Invite friends. Get credits.": [
         "邀請朋友，獲得獎勵額度。"
+      ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "一旦您的完整訂閱開始，您仍可在 30 天內取消並獲得按比例退款。"
       ],
       "Refer friends": [
         "推薦朋友"
@@ -12809,6 +12891,9 @@
       ],
       "${ feature } is now active": [
         "${ feature }現在為起用狀態"
+      ],
+      "${ friendsInvited } Friend invited": [
+        "${ friendsInvited } 位朋友受邀"
       ],
       "(active)": [
         "(啟用的)"
