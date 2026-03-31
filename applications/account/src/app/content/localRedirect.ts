@@ -87,6 +87,7 @@ export const getLocalRedirect = (location: H.Location, productParams: ProductPar
     if (!cleanUrl || cleanUrl.pathname === '/') {
         return undefined;
     }
+
     let toApp = getAppFromPathname(cleanUrl.pathname);
     // Special case to not add the app slug and skip the app switcher for these routes
     const routesWithoutSlug = Object.values(getRoutesWithoutSlug());
