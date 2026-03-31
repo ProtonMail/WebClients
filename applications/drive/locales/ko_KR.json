@@ -156,6 +156,9 @@
       "Change": [
         "변경"
       ],
+      "Change my access": [
+        "내 접근 권한 변경"
+      ],
       "Change password": [
         "비밀번호 변경"
       ],
@@ -242,6 +245,9 @@
       ],
       "Continue on web": [
         "웹에서 계속"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "${ planOrAppName }(으)로 계속하기"
       ],
       "Continue transfers": [
         "이동 계속"
@@ -839,6 +845,9 @@
       ],
       "Remove me": [
         "나 제거하기"
+      ],
+      "Remove my access": [
+        "내 접근 권한 제거"
       ],
       "Remove without saving": [
         "저장 없이 삭제"
@@ -3004,6 +3013,9 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "이 가이드를 통해 조직이 ${ BRAND_NAME }의 업계 최고의 암호화 및 개인정보 보호 생태계로부터 즉시 혜택을 받을 수 있습니다."
       ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "떠나시는 모습을 보니 아쉽네요. 잠시 시간을 내어주셔서 취소하시려는 이유에 대해 알려주시면 정말 감사하겠습니다. 회원님의 소중한 의견은 ${ BRAND_NAME }을 모든 사용자에게 더 나은 서비스로 만드는 데 있어서 큰 도움이 됩니다."
+      ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "연락처 그룹으로, 한 번의 클릭으로 그룹 내 모든 사람들로 일괄 이메일 전송이 가능합니다."
       ],
@@ -4772,7 +4784,7 @@
     },
     "Import provider": {
       "Advanced import": [
-        "고급 가져오기"
+        "고급 불러오기 설정"
       ]
     },
     "Import warning": {
@@ -5572,6 +5584,9 @@
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "다운그레이드를 진행하면 ${ VPN_APP_NAME } 유료 기능을 사용할 수 없습니다."
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "만약 나 자신을 제거하는 경우, \"${ fileName }\"에 대한 접근 권한을 잃게 되며, 소유자가 다시 공유하지 않는 한 다시 열 수 없게 됩니다."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "${ totalCalendarsCount }개 중 ${ calendarCount }개 캘린더가 불러오기됩니다"
@@ -6725,6 +6740,9 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "${ trialEndsOnFormatted } 전까지 취소하는 경우 결제되지 않습니다."
       ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "접근 권한을 뷰어로 변경하면 \"${ fileName }\"을(를) 공유할 수 없게 됩니다. 소유자만 사용자의 접근 범위를 다시 변경할 수 있습니다."
+      ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "친구가 연간 플랜을 구독하고 1개월 후, 월간 요금제에 구독하고 2개월 후에 크레딧 보상을 받게 됩니다."
       ],
@@ -6984,6 +7002,9 @@
       "Add to group": [
         "그룹에 추가"
       ],
+      "Additional comments": [
+        "추가 의견"
+      ],
       "Address": [
         "주소"
       ],
@@ -7101,6 +7122,9 @@
       "Contacts": [
         "연락처"
       ],
+      "Continue cancelling": [
+        "취소 계속하기"
+      ],
       "Copy": [
         "복사"
       ],
@@ -7151,9 +7175,6 @@
       ],
       "Disable this link on a specific date": [
         "특정 날짜에 이 링크 비활성화"
-      ],
-      "Do you have any suggestions for our team?": [
-        "저희 팀에 질문이 있으신가요?"
       ],
       "Don't ask again": [
         "다시 묻지 않기"
@@ -7314,6 +7335,9 @@
       "Main": [
         "메인"
       ],
+      "Main reason for cancelling": [
+        "취소의 주된 이유"
+      ],
       "Malware": [
         "멀웨어"
       ],
@@ -7470,6 +7494,9 @@
       "Size": [
         "크기"
       ],
+      "Skip feedback": [
+        "피드백 건너뛰기"
+      ],
       "Skip file": [
         "파일 건너뛰기"
       ],
@@ -7568,9 +7595,6 @@
       ],
       "What happened?": [
         "무슨 일인가요?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "취소하거나 다운그레이드 하는 주요한 이유가 무엇이신가요?"
       ],
       "Yes, I want to permanently delete my old files": [
         "네, 저는 이전 파일을 완전히 삭제하고 싶습니다"
@@ -9028,6 +9052,9 @@
       ]
     },
     "Notification": {
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\"이(가) 공유됨"
+      ],
       "\"${ name }\" created successfully": [
         "\"${ name }\"이(가) 성공적으로 생성되었습니다"
       ],
@@ -10145,6 +10172,9 @@
       "Anderson": [
         "길동"
       ],
+      "Anything you'd like us to know": [
+        "알려주셨으면 하는 사항이 있으신가요?"
+      ],
       "Anytown": [
         "서울특별시 낙원구"
       ],
@@ -10162,6 +10192,9 @@
       ],
       "Email": [
         "이메일"
+      ],
+      "Enter a name": [
+        "이름 입력"
       ],
       "Enter a new file name": [
         "새 파일 이름을 입력하세요"
@@ -10235,6 +10268,9 @@
       "Select": [
         "선택"
       ],
+      "Select a provider": [
+        "제공자 선택"
+      ],
       "Select a reason": [
         "사유 선택"
       ],
@@ -10243,9 +10279,6 @@
       ],
       "Select state": [
         "시・도 선택"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "무엇이 ${ BRAND_NAME }을 더 좋게 만들 수 있을지 공유해주세요"
       ],
       "Start typing an email address": [
         "이메일 주소 입력을 시작하세요"
@@ -10355,6 +10388,26 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "${ BRAND_NAME } 의 공식 이메일"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "기타"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {
@@ -11065,6 +11118,9 @@
     "Status": {
       "pending": [
         "대기 중"
+      ],
+      "user joined": [
+        "명 사용자 참여함"
       ]
     },
     "Storage": {
@@ -11972,6 +12028,9 @@
       "Card verification": [
         "카드 확인"
       ],
+      "Change access to viewer?": [
+        "뷰어에게 접근 권한을 변경하시겠습니까?"
+      ],
       "Change layout": [
         "레이아웃 변경"
       ],
@@ -12312,7 +12371,7 @@
         "그룹 가져오기"
       ],
       "Import your data to ${ BRAND_NAME }": [
-        "${ BRAND_NAME }로 데이터 불러오기"
+        "${ BRAND_NAME }으로 데이터 불러오기"
       ],
       "Information exposed in breach": [
         "유출 시 노출된 정보"
@@ -12548,6 +12607,9 @@
       "Remove item?": [
         "항목을 제거하시겠어요?"
       ],
+      "Remove your access?": [
+        "내 접근 권한을 제거하시겠습니까?"
+      ],
       "Rename a file": [
         "파일 이름 변경"
       ],
@@ -12616,6 +12678,9 @@
       ],
       "SHA1": [
         "SHA1"
+      ],
+      "Share \"${ fileName }\"": [
+        "\"${ fileName }\" 공유"
       ],
       "Share your calendar with your team": [
         "팀과 캘린더를 공유하세요"
@@ -12891,6 +12956,9 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "시스템의 주/야간 모드와 동기화하여 선호하는 테마를 주/야간에 맞춰 자동으로 전환합니다"
       ],
+      "Change shared item settings": [
+        "공유된 항목 설정 변경"
+      ],
       "Customize import to reduce the number of folders": [
         "폴더 수를 줄이기 위해 가져오기를 사용자 정의하세요"
       ],
@@ -12932,6 +13000,9 @@
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "메시지와 파일 이름은 이메일에 포함될 때 제로 액세스 암호화로 저장됩니다."
+      ],
+      "New!": [
+        "신규"
       ],
       "Not all information listed here was exposed for all users.": [
         "여기에 나열된 모든 정보가 모든 사용자에게 공개된 것은 아닙니다."

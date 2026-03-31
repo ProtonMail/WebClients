@@ -156,6 +156,9 @@
       "Change": [
         "更改"
       ],
+      "Change my access": [
+        "更改我的访问权限"
+      ],
       "Change password": [
         "更改密码"
       ],
@@ -242,6 +245,9 @@
       ],
       "Continue on web": [
         "在网页版继续"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "继续使用 ${ planOrAppName }"
       ],
       "Continue transfers": [
         "继续传输"
@@ -839,6 +845,9 @@
       ],
       "Remove me": [
         "删除我"
+      ],
+      "Remove my access": [
+        "移除我的访问权限"
       ],
       "Remove without saving": [
         "不保存且删除"
@@ -3003,6 +3012,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "使用本指南，让您的组织迅速受益于 ${ BRAND_NAME } 行业领先的加密和隐私生态系统。"
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "很遗憾看到您离开。如果您有时间，我们希望了解您取消的原因。您的反馈有助于我们改进 ${ BRAND_NAME }，让产品变得更好。"
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "有了联系人群组，只需点击一下，就可以向群组中的每个人发送电子邮件。"
@@ -5573,6 +5585,9 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "降级账户后您将不能再使用 ${ VPN_APP_NAME } 的收费功能。"
       ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "如果移除您自己，您将失去对“${ fileName }”的访问权限，除非所有者与您再次分享，否则您将无法再次打开它。"
+      ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "导入 ${ calendarCount } / ${ totalCalendarsCount } 份日历"
       ],
@@ -6725,6 +6740,9 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "如果您在 ${ trialEndsOnFormatted } 之前取消，将不会被收取费用。"
       ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "更改为查看者权限后，您将无法再分享“${ fileName }”。只有所有者才能再次更改您的访问权限。"
+      ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "您将在好友订阅年度套餐 1 个月后获得推荐奖励，若好友订阅月度套餐则在 2 个月后获得。"
       ],
@@ -6984,6 +7002,9 @@
       "Add to group": [
         "添加至群组"
       ],
+      "Additional comments": [
+        "附加备注"
+      ],
       "Address": [
         "地址"
       ],
@@ -7101,6 +7122,9 @@
       "Contacts": [
         "通讯录"
       ],
+      "Continue cancelling": [
+        "继续取消"
+      ],
       "Copy": [
         "复制"
       ],
@@ -7151,9 +7175,6 @@
       ],
       "Disable this link on a specific date": [
         "在特定日期禁用此链接"
-      ],
-      "Do you have any suggestions for our team?": [
-        "您对我们的团队有什么建议吗？"
       ],
       "Don't ask again": [
         "不再询问"
@@ -7314,6 +7335,9 @@
       "Main": [
         "主要"
       ],
+      "Main reason for cancelling": [
+        "取消的主要原因"
+      ],
       "Malware": [
         "恶意软件"
       ],
@@ -7470,6 +7494,9 @@
       "Size": [
         "大小"
       ],
+      "Skip feedback": [
+        "跳过反馈"
+      ],
       "Skip file": [
         "跳过文件"
       ],
@@ -7568,9 +7595,6 @@
       ],
       "What happened?": [
         "发生了什么？"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "您取消或降级订阅的主要原因是什么？"
       ],
       "Yes, I want to permanently delete my old files": [
         "是的，我想永久删除我的旧文件"
@@ -9028,6 +9052,9 @@
       ]
     },
     "Notification": {
+      "\"${ fileName }\" shared": [
+        "“${ fileName }”已共享"
+      ],
       "\"${ name }\" created successfully": [
         "“${ name }”创建成功"
       ],
@@ -10145,6 +10172,9 @@
       "Anderson": [
         "Anderson"
       ],
+      "Anything you'd like us to know": [
+        "您有任何想要告诉我们的吗？"
+      ],
       "Anytown": [
         "任何城镇"
       ],
@@ -10162,6 +10192,9 @@
       ],
       "Email": [
         "邮箱"
+      ],
+      "Enter a name": [
+        "请输入名称"
       ],
       "Enter a new file name": [
         "输入新文件名称"
@@ -10235,6 +10268,9 @@
       "Select": [
         "选择"
       ],
+      "Select a provider": [
+        "请选择提供商"
+      ],
       "Select a reason": [
         "请选择原因"
       ],
@@ -10243,9 +10279,6 @@
       ],
       "Select state": [
         "请选择省份"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "分享你认为可以使 ${ BRAND_NAME } 变得更好的内容"
       ],
       "Start typing an email address": [
         "请输入邮箱地址"
@@ -10355,6 +10388,26 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "${ BRAND_NAME } 官方邮件"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "其他"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Referral": {
@@ -10969,6 +11022,9 @@
     "Status": {
       "pending": [
         "待处理"
+      ],
+      "user joined": [
+        "用户已加入"
       ]
     },
     "Storage": {
@@ -11876,6 +11932,9 @@
       "Card verification": [
         "银行卡验证"
       ],
+      "Change access to viewer?": [
+        "将访问权限更改为查看者？"
+      ],
       "Change layout": [
         "调整布局"
       ],
@@ -12452,6 +12511,9 @@
       "Remove item?": [
         "删除项目？"
       ],
+      "Remove your access?": [
+        "移除您的访问权限？"
+      ],
       "Rename a file": [
         "重命名文件"
       ],
@@ -12520,6 +12582,9 @@
       ],
       "SHA1": [
         "SHA1"
+      ],
+      "Share \"${ fileName }\"": [
+        "分享“${ fileName }”"
       ],
       "Share your calendar with your team": [
         "与团队共享日历"
@@ -12795,6 +12860,9 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "根据系统设置自动调整日间或夜间模式。"
       ],
+      "Change shared item settings": [
+        "更改共享项目设置"
+      ],
       "Customize import to reduce the number of folders": [
         "自定义导入，减少文件夹数量。"
       ],
@@ -12836,6 +12904,9 @@
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "消息和文件名包含在电子邮件中时，将以零访问加密存储"
+      ],
+      "New!": [
+        "新！"
       ],
       "Not all information listed here was exposed for all users.": [
         "并非所有用户都能查看此处列出的全部信息。"
