@@ -1,6 +1,5 @@
-import React, { useMemo, useRef } from 'react';
+import React, { useMemo } from 'react';
 import Markdown from 'react-markdown';
-import { oneDark, oneLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 import rehypeKatex from 'rehype-katex';
 import remarkGfm from 'remark-gfm';
@@ -9,17 +8,12 @@ import { visit } from 'unist-util-visit';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { isIos, isIpad, isSafari } from '@proton/shared/lib/helpers/browser';
-import { ThemeTypes } from '@proton/shared/lib/themes/constants';
-
-import { useCopyNotification } from '../../hooks/useCopyNotification';
 import type { SearchItem } from '../../lib/toolCall/types';
-import { useLumoTheme } from '../../providers';
 import { parseInteger } from '../../util/number';
 import { convertRefTokensToSpans, normalizeBrTags, processForLatexMarkdown } from '../../util/tokens';
-import LumoCopyButton from '../Conversation/messageChain/message/actionToolbar/LumoCopyButton';
 import { getDomain } from '../Conversation/messageChain/message/toolCall/helpers';
 import { InlineImageComponent } from './InlineImageComponent';
-import { SyntaxHighlighter } from './syntaxHighlighterConfig';
+import { LumoMarkdownCodeBlock } from './LumoMarkdownCodeBlock';
 
 import './LumoMarkdown.scss';
 
@@ -169,13 +163,12 @@ interface ProgressiveMarkdownProps {
  */
 const MarkdownBlock: React.FC<{
     content: string;
-    theme: ThemeTypes;
     handleLinkClick?: (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void;
     toolCallResults?: SearchItem[] | null;
     sourcesContainerRef?: React.RefObject<HTMLDivElement>;
     message: any;
 }> = React.memo(
-    ({ content, theme, handleLinkClick, toolCallResults, sourcesContainerRef }) => {
+    ({ content, handleLinkClick, toolCallResults, sourcesContainerRef }) => {
         // RefLink component for source references
         const RefLink = useMemo(
             () =>
@@ -250,7 +243,7 @@ const MarkdownBlock: React.FC<{
                 const value = String(children).replace(/\n$/, '');
 
                 if (!inline && language) {
-                    return <CodeBlockWrapper language={language} value={value} theme={theme} />;
+                    return <LumoMarkdownCodeBlock language={language} code={value} />;
                 }
 
                 return (
@@ -259,7 +252,7 @@ const MarkdownBlock: React.FC<{
                     </code>
                 );
             };
-        }, [theme]);
+        }, []);
 
         // Custom components for markdown rendering
         const components = useMemo(
@@ -333,52 +326,20 @@ const MarkdownBlock: React.FC<{
         // Returns FALSE if props changed (do re-render)
 
         const contentEqual = prev.content === next.content;
-        const themeEqual = prev.theme === next.theme;
 
         // For incomplete (streaming) blocks:
         // - content changes on every update → contentEqual = false → shouldSkipRender = false → re-renders ✅
         // For complete blocks:
         // - content stays same → contentEqual = true → shouldSkipRender = true → skips re-render ✅
 
-        return contentEqual && themeEqual;
+        return contentEqual;
     }
 );
-
-// Component for code blocks that can use hooks
-const CodeBlockWrapper: React.FC<{
-    language: string;
-    value: string;
-    theme: ThemeTypes;
-}> = ({ language, value, theme }) => {
-    const codeBlockRef = useRef<HTMLDivElement>(null);
-    const { showCopyNotification } = useCopyNotification();
-    return (
-        <div ref={codeBlockRef} className="message-container code-container relative">
-            <div className="flex flex-row flex-nowrap">
-                <div className="flex-auto">
-                    <SyntaxHighlighter
-                        language={language}
-                        style={theme === ThemeTypes.LumoDark ? oneDark : oneLight}
-                        wrapLongLines={true}
-                        PreTag="div"
-                    >
-                        {value}
-                    </SyntaxHighlighter>
-                </div>
-            </div>
-            <div className="lumo-no-copy absolute top-0 right-0 z-10" style={{ transform: 'translate(4px, -4px)' }}>
-                <LumoCopyButton containerRef={codeBlockRef} onSuccess={showCopyNotification} />
-            </div>
-        </div>
-    );
-};
 
 MarkdownBlock.displayName = 'MarkdownBlock';
 
 export const ProgressiveMarkdownRenderer: React.FC<ProgressiveMarkdownProps> = React.memo(
     ({ content, isStreaming, handleLinkClick, toolCallResults, sourcesContainerRef, message }) => {
-        const { theme } = useLumoTheme();
-
         // Process REF tokens and convert to markdown links
         const processedContent = useMemo(() => {
             if (!isStreaming) {
@@ -405,7 +366,6 @@ export const ProgressiveMarkdownRenderer: React.FC<ProgressiveMarkdownProps> = R
                     <div key={block.key} className={className}>
                         <MarkdownBlock
                             content={block.content}
-                            theme={theme}
                             handleLinkClick={handleLinkClick}
                             toolCallResults={toolCallResults}
                             sourcesContainerRef={sourcesContainerRef}
