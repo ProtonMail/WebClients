@@ -342,8 +342,8 @@
       "Continue import": [
         "Importvorgang fortsetzen"
       ],
-      "Continue to ${ name }": [
-        "Weiter zu ${ name }"
+      "Continue to ${ planOrAppName }": [
+        "Weiter zu ${ planOrAppName }"
       ],
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "Weiter mit ${ nameToDisplay } ${ maybeEmailInBrackets }"
@@ -1818,6 +1818,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } Benutzerlizenz",
         "${ seats } ${ LUMO_APP_NAME } Benutzerlizenzen"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } Lizenz",
+        "${ seats } ${ MEET_APP_NAME } Lizenzen"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } Lizenz für den Schreibassistenten",
@@ -4924,6 +4928,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Nutze diese Anleitung, damit deine Organisation unverzüglich von der branchenführenden Verschlüsselung und dem Privatsphäre-Ökosystem von ${ BRAND_NAME } profitiert."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Wir bedauern, dass du gehst. Wenn du einen Moment Zeit hast, würden wir uns sehr freuen zu erfahren, warum du kündigen möchtest. Dein Feedback hilft uns, ${ BRAND_NAME } für alle besser zu machen."
       ],
       "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
         "Du kannst die Liste der Domains anpassen, in denen bestimmte automatische Funktionen in der ${ PASS_APP_NAME }-Browser-Erweiterung (automatisches Ausfüllen, automatisches Vervollständigen, automatisches Speichern) nicht ausgeführt werden sollen."
@@ -9004,6 +9011,15 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } kann auch mit einem einzigen Passwort verwendet werden, das sowohl das Anmelde- als auch das zweite Passwort ersetzt. Um in den Einzelpasswortmodus zu wechseln, gib das gewünschte Einzelpasswort ein und klicke auf Speichern."
       ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } ist eine Ende-zu-Ende-verschlüsselte Videokonferenzlösung. Deinem Abonnement hinzufügen, um sichere Meetings abzuhalten."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } Lizenzen"
+      ],
+      "${ MEET_APP_NAME } video conferencing": [
+        "${ MEET_APP_NAME }-Videokonferenz"
+      ],
       "${ n } address": [
         "${ n } Adresse",
         "${ n } Adressen"
@@ -9290,6 +9306,9 @@
       ],
       "Activity Monitor": [
         "Aktivitätsüberwachung"
+      ],
+      "Add ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME } hinzufügen"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Füge deinem Konto eine @pm.me-E-Mail-Adresse hinzu. Diese einfache, kürzere Domain steht für „${ MAIL_APP_NAME } me” oder „Private Message me”."
@@ -9655,6 +9674,9 @@
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "CNET Editors Choice Award mit einer Bewertung von 8,4 von 10"
       ],
+      "Code expired": [
+        "Code abgelaufen"
+      ],
       "Coming soon": [
         "Demnächst verfügbar"
       ],
@@ -9721,6 +9743,9 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Erstelle eine Kategorie für die importierten Nachrichten, einen Zeitbereich für diesen Import und die Kategorien (Labels), die du importieren möchtest."
+      ],
+      "Create a new code on your TV and try again.": [
+        "Erstelle einen neuen Code auf deinem TV und versuche es erneut."
       ],
       "Create a secure cloud for ${ value } member": [
         "Erstelle eine sichere Cloud für ${ value } Mitglied",
@@ -9890,6 +9915,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Das Downgraden beendet alle Verbindungen zu kostenpflichtigen ${ VPN_APP_NAME }-Servern."
+      ],
+      "Download ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME } herunterladen"
       ],
       "Download current logs": [
         "Aktuelle Protokolle herunterladen"
@@ -10080,6 +10108,9 @@
       "Everything in ${ planOrAppName }": [
         "Alles in ${ planOrAppName }"
       ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Alles in ${ planOrAppName }, zusätzlich:"
+      ],
       "Example: ${ spfExample }": [
         "Beispiel: ${ spfExample }"
       ],
@@ -10130,6 +10161,9 @@
       ],
       "finance": [
         "Finanzen"
+      ],
+      "for ${ price }": [
+        "für ${ price }"
       ],
       "For a 10-year version history, please contact our sales team.": [
         "Für einen 10-jährigen Versionsverlauf wende dich bitte an unser Vertriebsteam."
@@ -11005,6 +11039,9 @@
       "Product reviews, rankings, or guides": [
         "Produktbewertungen, Ranglisten oder Leitfäden"
       ],
+      "Protect this device too?": [
+        "Dieses Gerät auch schützen?"
+      ],
       "Protect your account from quantum computing threats with quantum-resistant cryptographic keys.": [
         "Schütze dein Konto vor Quantencomputer-Bedrohungen mit quantenresistenten kryptografischen Schlüsseln."
       ],
@@ -11234,6 +11271,9 @@
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Melde dich bei ${ MAIL_APP_NAME } an, um deine Adresse zu aktivieren"
       ],
+      "Sign-in complete": [
+        "Anmeldung abgeschlossen"
+      ],
       "Signed up": [
         "Registriert"
       ],
@@ -11433,6 +11473,9 @@
       ],
       "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "Der Link zur Meldung, dass du kein ${ BRAND_NAME }-Konto eingerichtet hast, ist abgelaufen. Bitte setze dich mit unserem Support-Team in Verbindung, um dieses Problem zu lösen."
+      ],
+      "The maximum donation amount is ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }": [
+        "Der maximale Spendenbetrag ist ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }"
       ],
       "The most recent data update, excluding breaches.": [
         "Die jüngste Datenaktualisierung, mit Ausnahme von Datenlecks."
@@ -12266,6 +12309,9 @@
         "Du erhältst dann aller ${ renewCycle } Monat eine Rechnung über ${ renewAmountStr }. Eine Kündigung ist jederzeit möglich.",
         "Du erhältst dann aller ${ renewCycle } Monate eine Rechnung über ${ renewAmountStr }. Eine Kündigung ist jederzeit möglich."
       ],
+      "You're now signed in on your TV.": [
+        "Du bist jetzt auf deinem TV angemeldet."
+      ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "Du hast die Weiterleitung für ${ MAX_SYNC_PAID_USER } Gmail-Adresse aktiviert. Um eine weitere hinzuzufügen, deaktiviere sie zuerst.",
         "Du hast die Weiterleitung für ${ MAX_SYNC_PAID_USER } Gmail-Adressen aktiviert. Um eine weitere hinzuzufügen, deaktiviere zuerst eine davon."
@@ -13077,6 +13123,9 @@
       "Add group member": [
         "Gruppenmitglied hinzufügen"
       ],
+      "Additional comments": [
+        "Zusätzliche Kommentare"
+      ],
       "Address": [
         "Anschrift"
       ],
@@ -13386,6 +13435,9 @@
       "Contacts": [
         "Kontakte"
       ],
+      "Continue cancelling": [
+        "Kündigung fortsetzen"
+      ],
       "Conversation grouping": [
         "Unterhaltungen gruppieren"
       ],
@@ -13490,9 +13542,6 @@
       ],
       "Display name": [
         "Anzeigename"
-      ],
-      "Do you have any suggestions for our team?": [
-        "Hast du irgendwelche Vorschläge für unser Team?"
       ],
       "Domain": [
         "Domain"
@@ -13796,6 +13845,9 @@
       ],
       "Main": [
         "Hauptebene"
+      ],
+      "Main reason for cancelling": [
+        "Hauptgrund für die Kündigung"
       ],
       "Manage categories": [
         "Kategorien verwalten"
@@ -14179,6 +14231,9 @@
       "Single sign-on URL": [
         "Single Sign-on-URL"
       ],
+      "Skip feedback": [
+        "Rückmeldung überspringen"
+      ],
       "SMTP port": [
         "SMTP-Port"
       ],
@@ -14385,9 +14440,6 @@
       ],
       "What is the main reason you are deleting your account?": [
         "Was ist der Hauptgrund für die Löschung deines Kontos?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Was ist der Hauptgrund für deine Kündigung oder das Downgrade?"
       ],
       "Who can send to this group address?": [
         "Wer kann an diese Gruppenadresse senden?"
@@ -15115,6 +15167,22 @@
         "Die maximale Anzahl von ${ MAX_CALENDAR_MEMBERS } Mitgliedern wurde erreicht."
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (für ${ quantity } Benutzer)",
+        "${ MEET_APP_NAME } (für ${ quantity } Benutzer)"
+      ],
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } Lizenz"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } Lizenzen"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME } Lizenz",
+        "${ seats } ${ MEET_APP_NAME } Lizenzen"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: Vertrauliche Videokonferenzen für die Unterhaltungen, die wichtig sind"
@@ -15148,6 +15216,9 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Ende-zu-Ende-verschlüsselte Bildschirmfreigabe und temporärer Chat während des Anrufs"
       ],
+      "Hosts can record meetings locally on their computers": [
+        "Organisatoren können Besprechungen lokal auf ihren Computern aufzeichnen"
+      ],
       "Meeting recording": [
         "Meeting wird aufgezeichnet"
       ],
@@ -15167,9 +15238,17 @@
       "Up to ${ n } participant": [
         "Bis zu ${ n } Teilnehmer",
         "Bis zu ${ n } Teilnehmer"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Video-Meetings, ${ n } Teilnehmer",
+        "Video-Meetings, ${ n } Teilnehmer"
       ]
     },
     "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } Lizenz enthalten",
+        "${ seats } Lizenzen enthalten"
+      ],
       "100 ${ BRAND_NAME } email addresses": [
         "100 ${ BRAND_NAME } E-Mail-Adressen"
       ],
@@ -15179,29 +15258,20 @@
       "Data never used for AI training": [
         "Deine Daten werden niemals für KI-Training verwendet"
       ],
-      "Data retention policies": [
-        "Datenspeicherungsrichtlinien"
-      ],
       "Document & spreadsheet editor": [
         "Dokumenten- und Tabellenkalkulationseditor"
       ],
       "Email writing assistant": [
         "E-Mail-Schreibassistent"
       ],
-      "Everything from ${ title }, plus...": [
-        "Alles aus ${ title }, plus..."
-      ],
-      "Everything in Meet Professional, plus:": [
-        "Alles in Meet Professional, plus:"
+      "Includes these features:": [
+        "Enthält folgende Funktionen:"
       ],
       "Open source": [
         "Open Source"
       ],
       "Password manager with team vaults": [
         "Passwort-Manager mit Team-Tresoren"
-      ],
-      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
-        "Privater KI-Chat (${ LUMO_SHORT_APP_NAME })"
       ],
       "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
         "Privater und unbegrenzter Ki-Chat (${ LUMO_SHORT_APP_NAME })"
@@ -15215,11 +15285,19 @@
       "Strict no-logs policy": [
         "Strenge \"No Logs\"-Richtlinie"
       ],
-      "Video meetings, ${ PAID_MAX_PARTICIPANTS } participants": [
-        "Video-Meetings, ${ PAID_MAX_PARTICIPANTS } Teilnehmer"
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Du kannst während der Testphase bis zu ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME }-Lizenzen haben."
+      ]
+    },
+    "Meet_launch": {
+      "Add ${ planName }": [
+        "${ planName } hinzufügen"
       ],
-      "VPN with ad-blocker and malware protection": [
-        "VPN mit Werbeblocker und Malware-Schutz"
+      "Confidential video conferencing for the conversations that matter. Only ${ priceString } more each month.": [
+        "Vertrauliche Videokonferenzen für die Gespräche, die wichtig sind. Nur ${ priceString } mehr pro Monat."
+      ],
+      "Talk privately with ${ planName }": [
+        "Privat mit ${ planName } sprechen"
       ]
     },
     "meet_signup_2025: title": {
@@ -15888,6 +15966,9 @@
       "Data breach monitoring": [
         "Überwachung von Datenlecks"
       ],
+      "Data retention policies": [
+        "Aufbewahrungsrichtlinien für Daten"
+      ],
       "Dedicated account manager": [
         "Dedizierter Account Manager"
       ],
@@ -16005,6 +16086,9 @@
       ],
       "Priority support & live chat": [
         "Priorisierter Support & Live-Chat"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Privater KI-Chat (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "Private Fotosicherung"
@@ -16167,6 +16251,9 @@
       "Vault sharing with up to ${ n } person": [
         "Tresor mit bis zu ${ n } Person teilen",
         "Tresor mit bis zu ${ n } Personen teilen"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN mit Werbeblocker und Malware-Schutz"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Wir scannen das Dark Web, um zu überprüfen, ob deine ${ BRAND_NAME }-Adressen oder Aliasse veröffentlicht wurden, und benachrichtigen dich sofort, wenn wir etwas finden."
@@ -16713,8 +16800,8 @@
       "Daily email notifications": [
         "Tägliche E-Mail-Benachrichtigungen"
       ],
-      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
-        "Wenn du diese Option deaktivierst, kannst du keine Benachrichtigungen mehr in ${ BRAND_NAME }-Anwendungen empfangen"
+      "Disabling this means you won't get in-app notifications about promotions, new features, new ${ BRAND_NAME } services, and reminders.": [
+        "Wenn du dies deaktivierst, erhältst du keine In-App-Benachrichtigungen mehr über Aktionen, neue Funktionen, neue ${ BRAND_NAME }-Dienste und Erinnerungen."
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Während des ersten Monats, in dem das Produkt ${ BRAND_NAME } verwendet wird"
@@ -18421,6 +18508,9 @@
       "Anderson": [
         "Mustermann"
       ],
+      "Anything you'd like us to know": [
+        "Haben Sie etwas, das Sie uns mitteilen möchten?"
+      ],
       "Anytown": [
         "Berlin"
       ],
@@ -18462,6 +18552,9 @@
       ],
       "End date": [
         "Enddatum"
+      ],
+      "Enter a name": [
+        "Name eingeben"
       ],
       "Enter name": [
         "Name eingeben"
@@ -18541,6 +18634,9 @@
       "Select": [
         "Auswählen"
       ],
+      "Select a provider": [
+        "Anbieter auswählen"
+      ],
       "Select a reason": [
         "Grund auswählen"
       ],
@@ -18549,9 +18645,6 @@
       ],
       "Select state": [
         "Bundesland wählen"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Teile uns mit, was deiner Meinung nach ${ BRAND_NAME } besser machen könnte"
       ],
       "Start date": [
         "Anfangsdatum"
@@ -18813,6 +18906,26 @@
       ],
       "Unknown": [
         "Unbekannt"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Sonstiges"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {
@@ -20470,6 +20583,9 @@
       "Compare plans": [
         "Abonnemente vergleichen"
       ],
+      "Confirm payment": [
+        "Zahlung bestätigen"
+      ],
       "Confirm payment, access your Drive": [
         "Zahlung bestätigen, Zugriff auf deinen Drive erhalten"
       ],
@@ -20597,6 +20713,9 @@
       "Share and collaborate of files": [
         "Dateien gemeinsam nutzen und zusammenarbeiten"
       ],
+      "Sign up to ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }": [
+        "Registriere dich bei ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }"
+      ],
       "Sign up to get everything ${ BRAND_NAME } has to offer": [
         "Registriere dich, um alles zu bekommen, was ${ BRAND_NAME } zu bieten hat."
       ],
@@ -20691,6 +20810,9 @@
       "Yearly": [
         "Jährlich"
       ],
+      "You are all set": [
+        "Du bist startklar"
+      ],
       "Your plan": [
         "Dein Abonnement"
       ],
@@ -20714,6 +20836,9 @@
       "Email address": [
         "E‐Mail‐Adresse"
       ],
+      "Name shown in meetings": [
+        "Name in Besprechungen"
+      ],
       "Organization name": [
         "Name der Organisation"
       ],
@@ -20722,6 +20847,12 @@
       ],
       "Username": [
         "Benutzername"
+      ],
+      "Your email": [
+        "Deine E-Mail-Adresse"
+      ],
+      "Your password": [
+        "Dein Passwort"
       ]
     },
     "signup: Action": {
@@ -20824,23 +20955,23 @@
       ]
     },
     "Signup: Meet": {
-      "**Trusted by over 100 million** users and organizations": [
-        "**Vertrauenswürdig für über 100 Millionen** Benutzer und Organisationen"
+      "Choose your display name to continue": [
+        "Gib deinen Anzeigenamen ein, um fortzufahren"
       ],
-      "Get ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
-        "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } holen"
+      "Choose your display name to continue scheduling your meeting": [
+        "Wähle deinen Anzeigenamen, um mit der Planung deines Meetings fortzufahren"
       ],
-      "Own a business?": [
-        "Besitzt du ein Unternehmen?"
+      "Create a ${ BRAND_NAME } account": [
+        "Ein ${ BRAND_NAME }-Konto erstellen"
       ],
-      "Sign up, meet privately": [
-        "Anmelden, privat treffen"
+      "Create your ${ BRAND_NAME } account to create rooms": [
+        "Erstelle dein ${ BRAND_NAME }-Konto, um Räume zu erstellen"
       ],
-      "Start using ${ MEET_APP_NAME } now": [
-        "\"${ MEET_APP_NAME }\" jetzt nutzen"
+      "Create your ${ BRAND_NAME } account to schedule a meeting": [
+        "Erstelle dein ${ BRAND_NAME }-Konto, um ein Meeting zu planen"
       ],
-      "Your account also includes access to ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME } free features.": [
-        "Dein Account beinhaltet auch Zugriff auf die kostenlosen Funktionen von ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } und ${ PASS_SHORT_APP_NAME }."
+      "Create your ${ BRAND_NAME } account to use your personal room": [
+        "Erstelle dein ${ BRAND_NAME }-Konto, um deinen persönlichen Raum zu nutzen"
       ]
     },
     "signup_2024: Feature": {
@@ -21563,10 +21694,6 @@
         "${ ipAddresses } dedizierter Server",
         "${ ipAddresses } dedizierte Server"
       ],
-      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
-        "${ LUMO_APP_NAME } für ${ maxLumo } Benutzer",
-        "${ LUMO_APP_NAME } für ${ maxLumo } Benutzer"
-      ],
       "${ n } calendar per user": [
         "${ n } Kalender je Nutzer",
         "${ n } Kalender je Nutzer"
@@ -21590,6 +21717,10 @@
       "${ n } VPN connection per user": [
         "${ n } VPN-Verbindung pro Benutzer",
         "${ n } VPN-Verbindungen pro Benutzer"
+      ],
+      "${ productName } for ${ count } user": [
+        "${ productName } für ${ count } Benutzer",
+        "${ productName } für ${ count } Benutzer"
       ],
       "${ UsedAddresses } address": [
         "${ UsedAddresses } Adresse",

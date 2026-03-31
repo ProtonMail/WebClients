@@ -336,9 +336,6 @@
       "Continue import": [
         "インポートを続行"
       ],
-      "Continue to ${ name }": [
-        "${ name } で続行"
-      ],
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "${ nameToDisplay } ${ maybeEmailInBrackets } で続行"
       ],
@@ -10913,6 +10910,9 @@
       "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "有効期限が切れたため、${ BRAND_NAME }アカウントを設定しなかったことを報告するリンクは使用できません。この問題を解決するために、サポートチームにご連絡ください。"
       ],
+      "The maximum donation amount is ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }": [
+        "寄付の上限額は ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] } です。"
+      ],
       "The most recent data update, excluding breaches.": [
         "侵害を除く最新のデータ更新。"
       ],
@@ -12894,9 +12894,6 @@
       "Display name": [
         "表示名"
       ],
-      "Do you have any suggestions for our team?": [
-        "私たちのチームに対する提案はありますか?"
-      ],
       "Domain": [
         "ドメイン"
       ],
@@ -13779,9 +13776,6 @@
       "What is the main reason you are deleting your account?": [
         "アカウントを削除する主な理由は何ですか?"
       ],
-      "What is your main reason for canceling or downgrading?": [
-        "キャンセルまたはダウングレードの主な理由は何ですか？"
-      ],
       "Who can send to this group address?": [
         "誰がこのグループのアドレスに送信できますか？"
       ],
@@ -14554,29 +14548,17 @@
       "Data never used for AI training": [
         "データはAI学習には決して使用されません"
       ],
-      "Data retention policies": [
-        "データ保持ポリシー"
-      ],
       "Document & spreadsheet editor": [
         "ドキュメント & スプレッドシートエディター"
       ],
       "Email writing assistant": [
         "メール作成アシスタント"
       ],
-      "Everything from ${ title }, plus...": [
-        "${ title } のすべてに加えて..."
-      ],
-      "Everything in Meet Professional, plus:": [
-        "Meet Professional の全機能に加え、さらに以下の機能をご利用いただけます:"
-      ],
       "Open source": [
         "オープンソース"
       ],
       "Password manager with team vaults": [
         "チーム保管庫を備えたパスワードマネージャー"
-      ],
-      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
-        "プライベートAIチャット（${ LUMO_SHORT_APP_NAME }）"
       ],
       "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
         "プライベートかつ無制限のAIチャット（${ LUMO_SHORT_APP_NAME }）"
@@ -14589,12 +14571,6 @@
       ],
       "Strict no-logs policy": [
         "厳格なノーログポリシー"
-      ],
-      "Video meetings, ${ PAID_MAX_PARTICIPANTS } participants": [
-        "ビデオ会議、${ PAID_MAX_PARTICIPANTS }名まで参加可能"
-      ],
-      "VPN with ad-blocker and malware protection": [
-        "広告ブロックとマルウェア保護機能を備えたVPN"
       ]
     },
     "meet_signup_2025: title": {
@@ -16023,9 +15999,6 @@
       ],
       "Daily email notifications": [
         "毎日のメール通知"
-      ],
-      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
-        "これを無効化すると${ BRAND_NAME }アプリケーションで通知を受け取る機能が削除されます"
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "${ BRAND_NAME } 製品を使用している最初の1ヶ月間に"
@@ -17832,9 +17805,6 @@
       ],
       "Select state": [
         "州を選択"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "${ BRAND_NAME }をより良くするためには何が必要だと思うか共有してください。"
       ],
       "Start date": [
         "開始日"
@@ -20048,26 +20018,6 @@
         "全てのデバイスで動作"
       ]
     },
-    "Signup: Meet": {
-      "**Trusted by over 100 million** users and organizations": [
-        "**1億人以上**のユーザーと組織から信頼されています"
-      ],
-      "Get ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
-        "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } を入手"
-      ],
-      "Own a business?": [
-        "ビジネスを経営されていますか？"
-      ],
-      "Sign up, meet privately": [
-        "サインアップして、プライベートにお会いしましょう"
-      ],
-      "Start using ${ MEET_APP_NAME } now": [
-        "今すぐ ${ MEET_APP_NAME } を使い始める"
-      ],
-      "Your account also includes access to ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME } free features.": [
-        "お客様のアカウントには、${ MAIL_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }が含まれ、${ PASS_SHORT_APP_NAME } の無料機能へのアクセスも含まれています。"
-      ]
-    },
     "signup_2024: Feature": {
       "GDPR and HIPAA compliant": [
         "GDPRとHIPAA準拠"
@@ -20756,9 +20706,6 @@
       ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } の専用サーバー"
-      ],
-      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
-        "${ LUMO_APP_NAME } は ${ maxLumo } ユーザーに対応"
       ],
       "${ n } calendar per user": [
         "1 ユーザーあたり ${ n } 件のカレンダー"

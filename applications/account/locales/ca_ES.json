@@ -342,8 +342,8 @@
       "Continue import": [
         "Continuar importació"
       ],
-      "Continue to ${ name }": [
-        "Continua amb ${ name }"
+      "Continue to ${ planOrAppName }": [
+        "Continuar amb ${ planOrAppName }"
       ],
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "Continua amb ${ nameToDisplay } ${ maybeEmailInBrackets }"
@@ -1818,6 +1818,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } llicència ${ LUMO_APP_NAME }",
         "${ seats } llicències ${ LUMO_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } llicència de ${ MEET_APP_NAME }",
+        "${ seats } llicències de ${ MEET_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } llicència de l'assistent d'escriptura",
@@ -4924,6 +4928,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Utilitzeu aquesta guia per aconseguir que la vostra organització es beneficiï ràpidament de l'ecosistema d'encriptació i privadesa líder del sector del ${ BRAND_NAME }."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Ens sap greu que marxeu. Si teniu un moment, us agrairíem molt que ens diguéssiu per què voleu cancel·lar la subscripció. Els vostres comentaris ens ajuden a fer que ${ BRAND_NAME } sigui millor per a tothom."
       ],
       "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
         "Podeu personalitzar la llista de dominis on no s'han d'executar certes funcions automàtiques de l'extensió del navegador de ${ PASS_APP_NAME } (emplenament, suggeriment i desat automàtics)."
@@ -9004,6 +9011,15 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } també es pot usar amb una sola contrasenya que reemplaça tant la contrasenya d'inici de sessió com la segona contrasenya. Per a canviar al mode de contrasenya única, introduïu la contrasenya que voleu utilitzar i feu clic a Desa."
       ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } és una aplicació de videoconferència amb xifratge d'extrem a extrem. Afegiu-la al vostre pla per allotjar reunions segures."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Llicències de ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } video conferencing": [
+        "Videoconferència de ${ MEET_APP_NAME }"
+      ],
       "${ n } address": [
         "${ n } adreça",
         "${ n } adreces"
@@ -9290,6 +9306,9 @@
       ],
       "Activity Monitor": [
         "Monitor d'activitats"
+      ],
+      "Add ${ MEET_APP_NAME }": [
+        "Afegiu-hi ${ MEET_APP_NAME }"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Afegiu una adreça electrònica @pm.me al vostre compte. Aquest domini senzill i més curt significa \"Envieu-me un ${ MAIL_APP_NAME }\" o \"Envieu-me un missatge privat\"."
@@ -9655,6 +9674,9 @@
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Premi Editors' Choice de CNET amb una puntuació de 8,4 sobre 10"
       ],
+      "Code expired": [
+        "El codi ha caducat"
+      ],
       "Coming soon": [
         "Pròximament"
       ],
@@ -9721,6 +9743,9 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Creeu una etiqueta per als missatges importats, un interval de temps per a aquesta importació, i les etiquetes que vulgueu importar."
+      ],
+      "Create a new code on your TV and try again.": [
+        "Creeu un codi nou al vostre televisor i torneu-ho a provar."
       ],
       "Create a secure cloud for ${ value } member": [
         "Crea un núvol segur per a ${ value } membre",
@@ -9890,6 +9915,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Passar a un pla inferior finalitzarà qualsevol connexió als servidors de pagament de ${ VPN_APP_NAME }."
+      ],
+      "Download ${ VPN_APP_NAME }": [
+        "Descarregueu ${ VPN_APP_NAME }"
       ],
       "Download current logs": [
         "Descarrega els registres actuals"
@@ -10080,6 +10108,9 @@
       "Everything in ${ planOrAppName }": [
         "Tot a ${ planOrAppName }"
       ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Tot el que inclou ${ planOrAppName }, i a més:"
+      ],
       "Example: ${ spfExample }": [
         "Exemple: ${ spfExample }"
       ],
@@ -10130,6 +10161,9 @@
       ],
       "finance": [
         "finances"
+      ],
+      "for ${ price }": [
+        "per ${ price }"
       ],
       "For a 10-year version history, please contact our sales team.": [
         "Per obtenir un historial de versions de 10 anys, contacteu amb el nostre equip de vendes."
@@ -11005,6 +11039,9 @@
       "Product reviews, rankings, or guides": [
         "Ressenyes de productes, rànquings o guies"
       ],
+      "Protect this device too?": [
+        "Voleu protegir també aquest dispositiu?"
+      ],
       "Protect your account from quantum computing threats with quantum-resistant cryptographic keys.": [
         "Protegiu el vostre compte de les amenaces de la computació quàntica amb claus criptogràfiques quàntic-resistents."
       ],
@@ -11234,6 +11271,9 @@
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Inicieu la sessió a ${ MAIL_APP_NAME } per activar la vostra adreça"
       ],
+      "Sign-in complete": [
+        "S’ha completat l'inici de sessió"
+      ],
       "Signed up": [
         "Registat"
       ],
@@ -11433,6 +11473,9 @@
       ],
       "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "L'enllaç per a notificar que no heu configurat un compte ${ BRAND_NAME } ha caducat. Contacteu amb el nostre equip de suport per a resoldre aquest problema."
+      ],
+      "The maximum donation amount is ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }": [
+        "L'import màxim de donació és ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }"
       ],
       "The most recent data update, excluding breaches.": [
         "L'actualització de dades més recent, excloses les filtracions."
@@ -12266,6 +12309,9 @@
         "Se us facturarà cada ${ renewCycle } mes a ${ renewAmountStr }. Podeu cancel·lar-ho en qualsevol moment.",
         "Llavors se us facturarà cada ${ renewCycle } mesos a ${ renewAmountStr }. Podeu cancel·lar-ho en qualsevol moment."
       ],
+      "You're now signed in on your TV.": [
+        "Ja heu iniciat la sessió al vostre televisor."
+      ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "Heu habilitat el reenviament en ${ MAX_SYNC_PAID_USER } adreça del Gmail. Per afegir-ne una altra, primer desactiveu-ne una.",
         "Heu habilitat el reenviament en ${ MAX_SYNC_PAID_USER } adreces del Gmail. Per afegir-ne una altra, primer desactiveu-ne una."
@@ -13077,6 +13123,9 @@
       "Add group member": [
         "Afegeix el membre al grup"
       ],
+      "Additional comments": [
+        "Comentaris addicionals"
+      ],
       "Address": [
         "Adreça"
       ],
@@ -13386,6 +13435,9 @@
       "Contacts": [
         "Contactes"
       ],
+      "Continue cancelling": [
+        "Continueu amb la cancel·lació"
+      ],
       "Conversation grouping": [
         "Agrupació de conversa"
       ],
@@ -13490,9 +13542,6 @@
       ],
       "Display name": [
         "Nom per a mostrar"
-      ],
-      "Do you have any suggestions for our team?": [
-        "Teniu algun suggeriment pel nostre equip?"
       ],
       "Domain": [
         "Domini"
@@ -13796,6 +13845,9 @@
       ],
       "Main": [
         "Principal"
+      ],
+      "Main reason for cancelling": [
+        "Motiu principal de la cancel·lació"
       ],
       "Manage categories": [
         "Gestiona les categories"
@@ -14179,6 +14231,9 @@
       "Single sign-on URL": [
         "URL d'inici de sessió únic"
       ],
+      "Skip feedback": [
+        "Ometre els comentaris"
+      ],
       "SMTP port": [
         "Port SMTP"
       ],
@@ -14385,9 +14440,6 @@
       ],
       "What is the main reason you are deleting your account?": [
         "Quin és el motiu principal per suprimir el teu compte?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Quin és el vostre principal motiu per cancel·lar o reduir la subscripció?"
       ],
       "Who can send to this group address?": [
         "Qui pot enviar missatges a aquesta adreça de grup?"
@@ -15115,6 +15167,22 @@
         "Heu assolit el màxim de ${ MAX_CALENDAR_MEMBERS } membres."
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (per ${ quantity } usuari)",
+        "${ MEET_APP_NAME } (per ${ quantity } usuaris)"
+      ],
+      "${ MEET_APP_NAME } license": [
+        "Llicència de ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Llicències de ${ MEET_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } llicència de ${ MEET_APP_NAME }",
+        "${ seats } llicències de ${ MEET_APP_NAME }"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: Videoconferències confidencials per les converses importants"
@@ -15148,6 +15216,9 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Compartició de pantalla xifrada d’extrem a extrem i xat efímer durant la trucada"
       ],
+      "Hosts can record meetings locally on their computers": [
+        "Els amfitrions poden gravar reunions localment als seus ordinadors"
+      ],
       "Meeting recording": [
         "Enregistrament de la reunió"
       ],
@@ -15167,9 +15238,17 @@
       "Up to ${ n } participant": [
         "Fins a ${ n } participant",
         "Fins a ${ n } participants"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videoconferències, ${ n } participant",
+        "Videoconferències, ${ n } participants"
       ]
     },
     "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } llicència inclosa",
+        "${ seats } llicències incloses"
+      ],
       "100 ${ BRAND_NAME } email addresses": [
         "100 adreces de correu electrònic de ${ BRAND_NAME }"
       ],
@@ -15179,29 +15258,20 @@
       "Data never used for AI training": [
         "Les dades no s'utilitzaran mai per entrenament d'IA"
       ],
-      "Data retention policies": [
-        "Polítiques de conservació de dades"
-      ],
       "Document & spreadsheet editor": [
         "Editor de documents i fulls de càlcul"
       ],
       "Email writing assistant": [
         "Assistent d'escriptura de correus electrònics"
       ],
-      "Everything from ${ title }, plus...": [
-        "Tot el que inclou ${ title }, i a més..."
-      ],
-      "Everything in Meet Professional, plus:": [
-        "Tot el contingut de Meet Professional, i a més:"
+      "Includes these features:": [
+        "Inclou aquestes característiques:"
       ],
       "Open source": [
         "Codi obert"
       ],
       "Password manager with team vaults": [
         "Gestor de contrasenyes amb caixes fortes d'equip"
-      ],
-      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
-        "Xat d'IA privat (${ LUMO_SHORT_APP_NAME })"
       ],
       "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
         "Xat d'IA privat i il·limitat (${ LUMO_SHORT_APP_NAME })"
@@ -15215,11 +15285,19 @@
       "Strict no-logs policy": [
         "Política estricta de no guardar dades"
       ],
-      "Video meetings, ${ PAID_MAX_PARTICIPANTS } participants": [
-        "Videoconferències, ${ PAID_MAX_PARTICIPANTS } participants"
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Podeu tenir fins a ${ TRIAL_MAX_MEET_SEATS } llicències de ${ MEET_SHORT_APP_NAME } durant el període de prova."
+      ]
+    },
+    "Meet_launch": {
+      "Add ${ planName }": [
+        "Afegiu-hi ${ planName }"
       ],
-      "VPN with ad-blocker and malware protection": [
-        "VPN amb bloquejador de publicitat i protecció contra programari maliciós"
+      "Confidential video conferencing for the conversations that matter. Only ${ priceString } more each month.": [
+        "Videoconferències confidencials per les converses importants. Només ${ priceString } més cada mes."
+      ],
+      "Talk privately with ${ planName }": [
+        "Parleu en privat amb ${ planName }"
       ]
     },
     "meet_signup_2025: title": {
@@ -15888,6 +15966,9 @@
       "Data breach monitoring": [
         "Monitoratge de filtracions de dades"
       ],
+      "Data retention policies": [
+        "Polítiques de conservació de dades"
+      ],
       "Dedicated account manager": [
         "Gestor de comptes dedicat"
       ],
@@ -16005,6 +16086,9 @@
       ],
       "Priority support & live chat": [
         "Suport prioritari i xat en directe"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Xat d'IA privat (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "Còpia de seguretat de fotos privada"
@@ -16167,6 +16251,9 @@
       "Vault sharing with up to ${ n } person": [
         "Ús compartit de la caixa forta amb fins a ${ n } persona",
         "Ús compartit de la caixa forta amb fins a ${ n } persones"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN amb bloqueig d’anuncis i protecció contra programari maliciós"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escanegem el web fosc per a comprovar si les vostres adreces o àlies de ${ BRAND_NAME } s'han filtrat i us avisem immediatament si trobem alguna cosa."
@@ -16713,8 +16800,8 @@
       "Daily email notifications": [
         "Notificacions diàries per correu electrònic"
       ],
-      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
-        "En desactivar-ho, s'eliminarà la possibilitat de rebre notificacions a les aplicacions de ${ BRAND_NAME }."
+      "Disabling this means you won't get in-app notifications about promotions, new features, new ${ BRAND_NAME } services, and reminders.": [
+        "Si desactiveu aquesta opció, no rebreu notificacions a l'aplicació sobre promocions, noves funcions, nous serveis de ${ BRAND_NAME } ni recordatoris."
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Durant el primer mes d'ús d'un producte de ${ BRAND_NAME }"
@@ -18421,6 +18508,9 @@
       "Anderson": [
         "Pujol"
       ],
+      "Anything you'd like us to know": [
+        "Qualsevol cosa que vulgueu que sapiguem"
+      ],
       "Anytown": [
         "Castellvent"
       ],
@@ -18462,6 +18552,9 @@
       ],
       "End date": [
         "Data de fi"
+      ],
+      "Enter a name": [
+        "Introduïu un nom"
       ],
       "Enter name": [
         "Introduïu un nom"
@@ -18541,6 +18634,9 @@
       "Select": [
         "Seleccionar"
       ],
+      "Select a provider": [
+        "Seleccioneu un proveïdor"
+      ],
       "Select a reason": [
         "Seleccioneu un motiu"
       ],
@@ -18549,9 +18645,6 @@
       ],
       "Select state": [
         "Seleccioneu l'estat"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Compartiu el que penseu que podria millorar ${ BRAND_NAME }"
       ],
       "Start date": [
         "Data d'inici"
@@ -18813,6 +18906,26 @@
       ],
       "Unknown": [
         "Desconegut"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Altres"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Recovery Email": {
@@ -20377,6 +20490,9 @@
       "Compare plans": [
         "Compara els plans"
       ],
+      "Confirm payment": [
+        "Confirmar el pagament"
+      ],
       "Confirm payment, access your Drive": [
         "Confirmeu el pagament i accediu al vostre Drive"
       ],
@@ -20504,6 +20620,9 @@
       "Share and collaborate of files": [
         "Compartició de fitxers i col·laboració"
       ],
+      "Sign up to ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }": [
+        "Creeu un compte de ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }"
+      ],
       "Sign up to get everything ${ BRAND_NAME } has to offer": [
         "Creeu un compte per obtenir tot el que ${ BRAND_NAME } ofereix"
       ],
@@ -20598,6 +20717,9 @@
       "Yearly": [
         "Anual"
       ],
+      "You are all set": [
+        "Ja està tot a punt"
+      ],
       "Your plan": [
         "El vostre pla"
       ],
@@ -20621,6 +20743,9 @@
       "Email address": [
         "Adreça de correu electrònic"
       ],
+      "Name shown in meetings": [
+        "Nom que es mostra a les reunions"
+      ],
       "Organization name": [
         "Nom de l'organització"
       ],
@@ -20629,6 +20754,12 @@
       ],
       "Username": [
         "Nom d'usuari"
+      ],
+      "Your email": [
+        "El vostre correu electrònic"
+      ],
+      "Your password": [
+        "La vostra contrasenya"
       ]
     },
     "signup: Action": {
@@ -20731,23 +20862,23 @@
       ]
     },
     "Signup: Meet": {
-      "**Trusted by over 100 million** users and organizations": [
-        "**Amb la confiança de més de 100 milions** d'usuaris i organitzacions"
+      "Choose your display name to continue": [
+        "Trieu un nom de visualització per continuar"
       ],
-      "Get ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
-        "Obtingueu ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      "Choose your display name to continue scheduling your meeting": [
+        "Trieu el nom a mostrar per continuar programant la reunió"
       ],
-      "Own a business?": [
-        "Teniu un negoci?"
+      "Create a ${ BRAND_NAME } account": [
+        "Crear un compte de ${ BRAND_NAME }"
       ],
-      "Sign up, meet privately": [
-        "Registreu-vos, feu reunions privades"
+      "Create your ${ BRAND_NAME } account to create rooms": [
+        "Creeu el vostre compte de ${ BRAND_NAME } per crear sales"
       ],
-      "Start using ${ MEET_APP_NAME } now": [
-        "Comenceu a utilitzar ${ MEET_APP_NAME } ara"
+      "Create your ${ BRAND_NAME } account to schedule a meeting": [
+        "Creeu el vostre compte de ${ BRAND_NAME } per programar una reunió"
       ],
-      "Your account also includes access to ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME } free features.": [
-        "El vostre compte també inclou accés gratuït a les funcions de ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ PASS_SHORT_APP_NAME }."
+      "Create your ${ BRAND_NAME } account to use your personal room": [
+        "Creeu el vostre compte de ${ BRAND_NAME } per utilitzar la sala personal"
       ]
     },
     "signup_2024: Feature": {
@@ -21470,10 +21601,6 @@
         "${ ipAddresses } servidor dedicat",
         "${ ipAddresses } servidors dedicats"
       ],
-      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
-        "${ LUMO_APP_NAME } per a ${ maxLumo } usuari",
-        "${ LUMO_APP_NAME } per a ${ maxLumo } usuaris"
-      ],
       "${ n } calendar per user": [
         "${ n } calendari per usuari",
         "${ n } calendaris per usuari"
@@ -21497,6 +21624,10 @@
       "${ n } VPN connection per user": [
         "${ n } connexió VPN per usuari",
         "${ n } connexions VPN per usuari"
+      ],
+      "${ productName } for ${ count } user": [
+        "${ productName } per a ${ count } usuari",
+        "${ productName } per a ${ count } usuaris"
       ],
       "${ UsedAddresses } address": [
         "${ UsedAddresses } adreça",

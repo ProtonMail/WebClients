@@ -284,9 +284,6 @@
       "Continue import": [
         "Continuar a importação"
       ],
-      "Continue to ${ name }": [
-        "Continuar para ${ name }"
-      ],
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "Continuar com ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
@@ -8411,6 +8408,9 @@
       "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "A ligação para comunicar que não configurou uma conta da ${ BRAND_NAME } expirou. Entre em contacto com a nossa equipa de apoio ao cliente para resolver este problema."
       ],
+      "The maximum donation amount is ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }": [
+        "O valor máximo da doação é ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }"
+      ],
       "The name will be visible to your users while they are signed in.": [
         "O nome será visível para os seus utilizadores enquanto estes tiverem sessão iniciada."
       ],
@@ -9972,9 +9972,6 @@
       "Display name": [
         "Nome a mostrar"
       ],
-      "Do you have any suggestions for our team?": [
-        "Tem algumas sugestões para a nossa equipa?"
-      ],
       "Domain": [
         "Domínio"
       ],
@@ -10617,9 +10614,6 @@
       ],
       "What is the main reason you are deleting your account?": [
         "Qual o principal motivo pelo qual está a eliminar a conta?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Qual o principal motivo para cancelar ou reverter para um plano inferior?"
       ],
       "Who can send to this group address?": [
         "Quem pode enviar mensagens para este endereço de grupo?"
@@ -12581,9 +12575,6 @@
       "Daily email notifications": [
         "Notificações diárias por e-mail"
       ],
-      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
-        "Desativar esta opção removerá a capacidade de receber notificações nas aplicações da ${ BRAND_NAME }."
-      ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Durante o seu primeiro mês de utilização de um produto da ${ BRAND_NAME }"
       ],
@@ -13927,9 +13918,6 @@
       ],
       "Select state": [
         "Selecionar estado"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Partilhe o que pensa que poderia tornar a ${ BRAND_NAME } melhor"
       ],
       "Start date": [
         "Data inicial"
@@ -16305,10 +16293,6 @@
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } servidor dedicado",
         "${ ipAddresses } servidores dedicados"
-      ],
-      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
-        "${ LUMO_APP_NAME } para ${ maxLumo } utilizador",
-        "${ LUMO_APP_NAME } para ${ maxLumo } utilizadores"
       ],
       "${ n } calendar per user": [
         "${ n } calendário por utilizador",
