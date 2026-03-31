@@ -1,0 +1,87 @@
+.workflow-graph-view {
+    max-width: 100%;
+}
+
+.workflow-graph-view-empty {
+    padding: 1rem 1.25rem;
+}
+
+.workflow-graph-view-flow {
+    .react-flow {
+        background: var(--background-norm);
+    }
+
+    /* Stronger contrast than xyflow’s .react-flow.dark defaults (#141414 vs #2b2b2b) on Lumo dark surfaces */
+    .react-flow.dark {
+        --xy-minimap-background-color: var(--background-strong);
+        --xy-minimap-node-background-color: var(--primary);
+        --xy-minimap-node-stroke-color: var(--text-norm);
+        --xy-minimap-node-stroke-width: 1px;
+        --xy-minimap-mask-background-color: rgb(0 0 0 / 0.55);
+        --xy-minimap-mask-stroke-color: var(--border-norm);
+        --xy-minimap-mask-stroke-width: 1px;
+    }
+
+    .react-flow__attribution {
+        display: none;
+    }
+}
+
+.workflow-graph-view-minimap {
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--border-weak);
+    background-color: var(--background-norm);
+}
+
+.workflow-graph-view-handle {
+    width: 8px;
+    height: 8px;
+    border: 2px solid var(--background-norm);
+    background: var(--interaction-norm);
+}
+
+.workflow-graph-view-node {
+    padding: 0.75rem 0.9rem;
+    box-sizing: border-box;
+    min-height: 5.5rem;
+    border: 3px solid var(--border-weak);
+    // border-inline-start-width: 3px;
+    border-color: var(--border-norm);
+    
+    &[data-node-type='file_upload'] {
+        border-color: #8b5cf6;
+    }
+
+    &[data-node-type='prompt'] {
+        border-color: var(--primary);
+    }
+
+    &[data-node-type='conditional'] {
+        border-color: var(--signal-warning);
+    }
+
+    &[data-node-type='response'] {
+        border-color: var(--signal-success);
+    }
+
+    &[data-node-type='loop'] {
+        border-color: var(--signal-danger);
+    }
+
+    &[data-node-type='merge'] {
+        border-color: var(--signal-info);
+    }
+
+    &[data-node-type='other'] {
+        border-color: var(--interaction-norm);
+    }
+}
+
+.workflow-graph-view-node-kind {
+    color: var(--text-hint);
+    letter-spacing: 0.06em;
+}
+
+.workflow-graph-view-node-conditional {
+    box-shadow: 0 2px 10px rgb(0 0 0 / 0.08);
+}

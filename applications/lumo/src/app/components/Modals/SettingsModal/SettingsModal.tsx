@@ -37,7 +37,6 @@ import CreateFreeAccountLink from '../../CreateFreeAccountLink/CreateFreeAccount
 import { IndexingStatusBanner } from '../../Files/DriveBrowser/IndexingStatusBanner';
 import { LumoLogoThemeAware } from '../../Icons/LumoLogoThemeAware';
 import { SignInLinkButton } from '../../Links/SignInLink';
-import ApiKeysPanel from './ApiKeysPanel';
 import DeleteAllButton from './DeleteAllButton';
 import { PaidSubscriptionPanel } from './PaidSubscriptionPanel';
 import PersonalizationPanel from './PersonalizationPanel';
@@ -118,12 +117,6 @@ const BASE_SETTINGS_ITEMS: SettingsItem[] = [
     { id: 'general', icon: 'cog-wheel', getText: () => c('collider_2025: Settings Item').t`General`, guest: true },
 ];
 
-const API_KEYS_SETTINGS_ITEM: SettingsItem = {
-    id: 'api-keys',
-    icon: 'key',
-    getText: () => c('collider_2025: Settings Item').t`API keys`,
-    guest: false,
-};
 const LumoSettingsSidebar = ({
     activePanel,
     onPanelChange,
@@ -451,11 +444,7 @@ const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModa
     const [activePanel, setActivePanel] = useState(initialPanel);
     const isGuest = useIsGuest();
     const closeModal = modalProps.onClose;
-    const { apiKeyManagement } = useLumoFlags();
-
-    const SettingsItems = apiKeyManagement
-        ? [...BASE_SETTINGS_ITEMS, API_KEYS_SETTINGS_ITEM]
-        : BASE_SETTINGS_ITEMS;
+    const SettingsItems = BASE_SETTINGS_ITEMS;
 
     return (
         <ModalTwo size="xlarge" enableCloseWhenClickOutside className="lumo-settings-modal" {...modalProps}>
@@ -476,7 +465,7 @@ const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModa
                     {/*
                      * Single unified layout — sidebar (desktop) and tabs (mobile) are toggled with
                      * CSS, but the panel content is rendered exactly ONCE to avoid duplicate API
-                     * calls from components that fetch data on mount (e.g. ApiKeysPanel).
+                     * calls from components that fetch data on mount.
                      */}
                     <div className="flex md:flex-row flex-column flex-nowrap flex-1">
                         {/* Sidebar — desktop only */}
@@ -538,7 +527,6 @@ const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModa
                                     ) : (
                                         <GeneralSettingsPanelAuth onClose={closeModal} />
                                     ))}
-                                {activePanel === 'api-keys' && !isGuest && apiKeyManagement && <ApiKeysPanel />}
                             </div>
                         </div>
                     </div>
