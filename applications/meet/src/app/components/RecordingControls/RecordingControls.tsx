@@ -8,6 +8,8 @@ import { useNotifications, useSettingsLink } from '@proton/components';
 import { IcArrowDownCircle } from '@proton/icons/icons/IcArrowDownCircle';
 import { IcMeetRecord } from '@proton/icons/icons/IcMeetRecord';
 import { IcMeetRecordStop } from '@proton/icons/icons/IcMeetRecordStop';
+import { useMeetSelector } from '@proton/meet/store/hooks';
+import { selectIsGuestAdmin } from '@proton/meet/store/slices';
 import { PLANS } from '@proton/payments/core/constants';
 import { isFirefox, isMobile } from '@proton/shared/lib/helpers/browser';
 import { dateLocale } from '@proton/shared/lib/i18n';
@@ -27,6 +29,50 @@ import { ConfirmationModal } from '../ConfirmationModal/ConfirmationModal';
 
 import './RecordingControls.scss';
 
+const RecordingUpsellButton = ({ isSubUser }: { isSubUser?: boolean }) => {
+    const [showRecordingUpsellModal, setShowRecordingUpsellModal] = useState(false);
+    const [showSubUserRecordingUpsellModal, setShowSubUserRecordingUpsellModal] = useState(false);
+    const goToSettings = useSettingsLink();
+
+    const handleStartRecordingUpsell = () => {
+        // Sub users can't upgrade, so we show a modal instead.
+        if (isSubUser) {
+            setShowSubUserRecordingUpsellModal(true);
+            return;
+        }
+
+        setShowRecordingUpsellModal(true);
+    };
+
+    return (
+        <>
+            <CircleButton
+                IconComponent={IcMeetRecord}
+                onClick={handleStartRecordingUpsell}
+                ariaLabel={c('Action').t`Start recording`}
+                size={6}
+                tooltipTitle={c('Info').t`Start recording`}
+            />
+            {showRecordingUpsellModal && (
+                <ScreenRecordingUpsell
+                    open={showRecordingUpsellModal}
+                    onClose={() => setShowRecordingUpsellModal(false)}
+                    action={() => {
+                        goToSettings(`/dashboard?plan=${PLANS.MEET_BUSINESS}`, undefined, true);
+                    }}
+                />
+            )}
+            {showSubUserRecordingUpsellModal && (
+                <SubUserScreenRecordingUpsell
+                    open={showSubUserRecordingUpsellModal}
+                    onClose={() => setShowSubUserRecordingUpsellModal(false)}
+                    action={() => setShowSubUserRecordingUpsellModal(false)}
+                />
+            )}
+        </>
+    );
+};
+
 const RecordingControlsInternal = () => {
     const isMeetingRecordingEnabled = useFlag('MeetingRecording');
     const { startRecording, downloadRecording, recordingState } = useMeetingRecorderContext();
@@ -37,10 +83,7 @@ const RecordingControlsInternal = () => {
 
     const [duration, setDuration] = useState(0);
 
-    const goToSettings = useSettingsLink();
     const [showStartRecordingConfirmation, setShowStartRecordingConfirmation] = useState(false);
-    const [showRecordingUpsellModal, setShowRecordingUpsellModal] = useState(false);
-    const [showSubUserRecordingUpsellModal, setShowSubUserRecordingUpsellModal] = useState(false);
     const [showStopRecordingConfirmation, setShowStopRecordingConfirmation] = useState(false);
 
     const { isLocalParticipantAdmin, isLocalParticipantHost } = useIsLocalParticipantAdmin();
@@ -72,13 +115,6 @@ const RecordingControlsInternal = () => {
             setShowStartRecordingConfirmation(true);
             return;
         }
-
-        if (isSubUser) {
-            setShowSubUserRecordingUpsellModal(true);
-            return;
-        }
-
-        setShowRecordingUpsellModal(true);
     };
 
     const handleStopAndDownload = async () => {
@@ -108,8 +144,28 @@ const RecordingControlsInternal = () => {
         return format(addSeconds(startOfDay(new Date()), seconds), pattern, { locale: dateLocale });
     };
 
-    if (!shouldDisplayRecordingControls || recordingNotSupported) {
+    if (!shouldDisplayRecordingControls) {
         return null;
+    }
+
+    if (recordingNotSupported) {
+        if (isFirefox()) {
+            return (
+                <CircleButton
+                    IconComponent={IcMeetRecord}
+                    ariaLabel={c('Action').t`Start recording`}
+                    size={6}
+                    tooltipTitle={c('Info').t`Meeting recordings aren’t supported in Firefox.`}
+                    disabled
+                />
+            );
+        }
+
+        return null;
+    }
+
+    if (!isPaid) {
+        return <RecordingUpsellButton isSubUser={isSubUser} />;
     }
 
     return (
@@ -179,28 +235,18 @@ const RecordingControlsInternal = () => {
                     onClose={() => setShowStopRecordingConfirmation(false)}
                 />
             )}
-            {showRecordingUpsellModal && (
-                <ScreenRecordingUpsell
-                    open={showRecordingUpsellModal}
-                    onClose={() => setShowRecordingUpsellModal(false)}
-                    action={() => {
-                        goToSettings(`/dashboard?plan=${PLANS.MEET_BUSINESS}`, undefined, true);
-                    }}
-                />
-            )}
-            {showSubUserRecordingUpsellModal && (
-                <SubUserScreenRecordingUpsell
-                    open={showSubUserRecordingUpsellModal}
-                    onClose={() => setShowSubUserRecordingUpsellModal(false)}
-                    action={() => setShowSubUserRecordingUpsellModal(false)}
-                />
-            )}
         </>
     );
 };
 
 export const RecordingControls = () => {
     const isGuest = useGuestContext();
+    const isGuestAdmin = useMeetSelector(selectIsGuestAdmin);
+
+    // Show recording upsell button for guest admins.
+    if (isGuestAdmin) {
+        return <RecordingUpsellButton />;
+    }
 
     // Don't show recording controls for guests users.
     if (isGuest) {
