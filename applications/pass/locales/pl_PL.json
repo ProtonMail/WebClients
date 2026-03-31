@@ -571,6 +571,9 @@
       "Set extra password": [
         "Ustaw dodatkowe hasło"
       ],
+      "Settings": [
+        "Ustawienia"
+      ],
       "Setup 2FA": [
         "Skonfiguruj uwierzytelnianie dwustopniowe"
       ],
@@ -1871,7 +1874,10 @@
         "Przenoszenie wszystkich elementów z sejfu \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków."
+        "Przeniesienie elementu do innego sejfu spowoduje usunięcie jego linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków.",
+        "Przeniesienie elementów do innego sejfu spowoduje usunięcie ich linków."
       ],
       "Moving items": [
         "Przenoszenie elementów"
