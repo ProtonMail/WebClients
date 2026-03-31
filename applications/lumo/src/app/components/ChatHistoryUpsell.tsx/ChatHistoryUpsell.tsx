@@ -23,11 +23,11 @@ export const ChatHistoryGuestUserUpsell = () => {
                         .t`Sign in to save your conversations and access them from anywhere.`}
                 </p>
 
-                <SettingsLink path="signup" className="w-full mb-1 shrink-0">
+                <SettingsLink path="signup" className="w-full mb-1 shrink-0 lumo-mobile-signup-button">
                     <p className="m-0">{c('collider_2025: Link').t`Create a free account`}</p>
                 </SettingsLink>
 
-                <SettingsLink path="" className="w-full mb-1 shrink-0">
+                <SettingsLink path="" className="w-full mb-1 shrink-0 lumo-mobile-signin-button">
                     <p className="m-0">{c('collider_2025: Link').t`Sign in`}</p>
                 </SettingsLink>
             </div>
