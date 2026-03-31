@@ -90,9 +90,6 @@
       "Apply": [
         "Použít"
       ],
-      "Ask me next time": [
-        "Zeptejte se mě příště"
-      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Na jednu skupinu kontaktů je povolen maximálně ${ maxContacts } kontakt",
         "Na jednu skupinu kontaktů jsou povoleny maximálně ${ maxContacts } kontakty",
@@ -674,9 +671,6 @@
       ],
       "Save changes": [
         "Uložit změny"
-      ],
-      "Save preferences": [
-        "Uložit předvolby"
       ],
       "Search": [
         "Vyhledat"
@@ -4443,9 +4437,6 @@
       "Continue": [
         "Pokračovat"
       ],
-      "Converting document...": [
-        "Převádění dokumentu..."
-      ],
       "Copied to clipboard": [
         "Zkopírováno do schránky"
       ],
@@ -4496,9 +4487,6 @@
       ],
       "Creating link to folder": [
         "Vytváření odkazu na složku"
-      ],
-      "Creating new document...": [
-        "Vytváření nového dokumentu..."
       ],
       "Current plan": [
         "Aktuální tarif"
@@ -4593,12 +4581,6 @@
       "Enter your own password (as trusted contact).": [
         "Zadejte vlastní heslo (jako důvěryhodný kontakt)."
       ],
-      "Error converting document: ${ errorMessage }": [
-        "Chyba při převodu dokumentu: ${ errorMessage }"
-      ],
-      "Error loading document: ${ errorDetail }": [
-        "Chyba při načítání dokumentu: ${ errorDetail }"
-      ],
       "Error Syncing": [
         "Chyba při synchronizaci"
       ],
@@ -4658,12 +4640,6 @@
       ],
       "Geoblocking": [
         "Zeměpisné blokování"
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "Získejte e-mailová upozornění na komentáře a návrhy přidané k vašim dokumentům."
-      ],
-      "Get Notified About Comments": [
-        "Dostávat upozornění na komentáře"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Vlády a poskytovatelé internetových služeb mohou sledovat vaši online aktivitu. Skrytím vaší skutečné IP adresy a šifrováním vaší aktivity se vaše prohlížení stane soukromým."
@@ -4806,9 +4782,6 @@
       "Low Priority": [
         "Nízká priorita"
       ],
-      "Making a copy...": [
-        "Vytváření kopie..."
-      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Max. ${ MAX_SHARED_URL_PASSWORD_LENGTH } písmeno",
         "Max. ${ MAX_SHARED_URL_PASSWORD_LENGTH } písmena",
@@ -4841,9 +4814,6 @@
       ],
       "No contacts added yet": [
         "Doposud nebyly přidány žádné kontakty"
-      ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "URL neobsahuje žádný dokument. Vraťte se do ${ DRIVE_APP_NAME } a vyberte dokument."
       ],
       "No email address": [
         "Žádná e-mailová adresa"
@@ -5129,9 +5099,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Vlastník této adresy deaktivoval koncové šifrování. Aby bylo možné na tuto adresu odesílat šifrované e-maily, musí vlastník znovu povolit koncové šifrování."
-      ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "Zadaná adresa URL byla zřejmě nesprávně zkopírována ze služby Slack. Při kopírování dlouhých odkazů ze služby Slack klikněte na odkaz pravým tlačítkem myši a vyberte možnost \"Kopírovat odkaz\" namísto přímého kopírování zkráceného textu URL."
       ],
       "There are no documents in the trash.": [
         "V koši nejsou žádné dokumenty."
@@ -5714,9 +5681,6 @@
       "Delete recovery-related information.": [
         "Odstranit informace související s obnovením."
       ],
-      "Do you have any suggestions for our team?": [
-        "Máte pro náš tým nějaké návrhy?"
-      ],
       "Don't ask again": [
         "Příště se neptat"
       ],
@@ -5755,9 +5719,6 @@
       ],
       "Emails (last month)": [
         "E-maily (poslední měsíc)"
-      ],
-      "Enable email notifications": [
-        "Povolit e-mailová upozornění"
       ],
       "Encrypt emails": [
         "Šifrovat e-maily"
@@ -5806,9 +5767,6 @@
       ],
       "Include application logs in bug report": [
         "Zahrnout logy aplikace do chybového hlášení"
-      ],
-      "Include document name in notification": [
-        "Zahrnout název dokumentu do upozornění"
       ],
       "Include message and file name in invite email": [
         "Zahrnout zprávu a název souboru v e-mailu s pozvánkou"
@@ -6011,9 +5969,6 @@
       "What happened?": [
         "Co se stalo?"
       ],
-      "What is your main reason for canceling or downgrading?": [
-        "Jaký je váš hlavní důvod pro zrušení nebo snížení vašeho předplatného?"
-      ],
       "Your alias": [
         "Váš alias"
       ],
@@ -6030,7 +5985,7 @@
         "Vaše poloha"
       ],
       "Your password (admin)": [
-        "Vaše heslo (admin)"
+        "Vaše heslo (správce)"
       ],
       "Your password (trusted contact)": [
         "Vaše heslo (důvěryhodný kontakt)"
@@ -8264,9 +8219,6 @@
       "Set date": [
         "Nastavte datum"
       ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Dejte nám vědět, co si myslíte, že by mohlo vylepšit ${ BRAND_NAME }"
-      ],
       "Start typing an email address": [
         "Začněte psát e-mailovou adresu"
       ],
@@ -8885,9 +8837,6 @@
       ]
     },
     "sheets_2025:Info": {
-      "Creating new spreadsheet...": [
-        "Vytváření nové tabulky..."
-      ],
       "Detect automatically": [
         "Automaticky rozpoznat"
       ],
@@ -9925,7 +9874,7 @@
         "Zvýšení zabezpečení pomocí 2FA"
       ],
       "Enter your password": [
-        "Zadejte Vaše heslo"
+        "Zadejte své heslo"
       ],
       "Error Syncing": [
         "Chyba při synchronizaci"

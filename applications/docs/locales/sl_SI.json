@@ -90,9 +90,6 @@
       "Apply": [
         "Potrdi"
       ],
-      "Ask me next time": [
-        "Vprašaj me naslednjič"
-      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Največ ${ maxContacts } stik je dovoljen na skupino stikov.",
         "Največ ${ maxContacts } stika sta dovoljena na skupino stikov.",
@@ -662,9 +659,6 @@
       ],
       "Save changes": [
         "Shrani spremembe"
-      ],
-      "Save preferences": [
-        "Shrani nastavitve"
       ],
       "Search": [
         "Iskanje"
@@ -4306,9 +4300,6 @@
       "Continue": [
         "Nadaljuj"
       ],
-      "Converting document...": [
-        "Pretvarjanje dokumenta ..."
-      ],
       "Copied to clipboard": [
         "Kopirano v odložišče"
       ],
@@ -4359,9 +4350,6 @@
       ],
       "Creating link to folder": [
         "Ustvarjanje povezave do mape"
-      ],
-      "Creating new document...": [
-        "Ustvarjanje novega dokumenta ..."
       ],
       "Current plan": [
         "Trenutni paket"
@@ -4444,12 +4432,6 @@
       "Enter your own password (as organization admin).": [
         "Vpišite vaše lastno geslo (kot skrbnik organizacije)."
       ],
-      "Error converting document: ${ errorMessage }": [
-        "Napaka pri pretvorbi dokumenta: ${ errorMessage }"
-      ],
-      "Error loading document: ${ errorDetail }": [
-        "Napaka pri nalaganju dokumenta: ${ errorDetail }"
-      ],
       "Error Syncing": [
         "Napaka pri sinhronizaciji"
       ],
@@ -4509,12 +4491,6 @@
       ],
       "Geoblocking": [
         "Geoblokiranje"
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "Prejemajte e-poštna obvestila o komentarjih in predlogih, dodanih v vaše dokumente."
-      ],
-      "Get Notified About Comments": [
-        "Prejemajte obvestila o komentarjih"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Vlade in ponudniki internetnih storitev lahko spremljajo vašo spletno dejavnost. S skrivanjem vašega resničnega IP-ja in šifriranjem vaše dejavnosti postane vaše brskanje zasebno."
@@ -4657,9 +4633,6 @@
       "Low Priority": [
         "Nizka pomembnost"
       ],
-      "Making a copy...": [
-        "Ustvarjanje kopije ..."
-      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Največ ${ MAX_SHARED_URL_PASSWORD_LENGTH } znak",
         "Največ ${ MAX_SHARED_URL_PASSWORD_LENGTH } znaka",
@@ -4692,9 +4665,6 @@
       ],
       "No contacts added yet": [
         "Ni stikov"
-      ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "V danem URL ni dokumenta. Vrnite se v ${ DRIVE_APP_NAME } in izberite dokument."
       ],
       "No email address": [
         "Ni e-poštnih naslovov"
@@ -4980,9 +4950,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Lastnik tega naslova je onemogočil šifriranje od konca do konca. Šifrirana sporočila boste na ta naslov lahko pošiljali, če bo lastnik znova omogočil šifriranje od konca do konca."
-      ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "Vnešeni URL je skrajšan in nepravilno kopiran iz Slacka. Za kopiranje dolgih povezav iz Slacka klikni z desnim gumbom miške na povezavo in izberi možnost \"Kopiraj povezavo\"."
       ],
       "There are no documents in the trash.": [
         "V smeteh ni nobenih dokumentov."
@@ -5535,9 +5502,6 @@
       "Delete recovery-related information.": [
         "Izbriši podatke, povezane z obnovitvijo."
       ],
-      "Do you have any suggestions for our team?": [
-        "Imate kak predlog za našo ekipo?"
-      ],
       "Don't ask again": [
         "Ne sprašuj več"
       ],
@@ -5579,9 +5543,6 @@
       ],
       "Emails (last month)": [
         "E-pošto (zadnji mesec)"
-      ],
-      "Enable email notifications": [
-        "Omogoči e-poštna obvestila"
       ],
       "Encrypt emails": [
         "Šifriraj sporočila"
@@ -5627,9 +5588,6 @@
       ],
       "Import to:": [
         "Uvozi v:"
-      ],
-      "Include document name in notification": [
-        "Ime dokumenta vključi v obvestilo"
       ],
       "Include message and file name in invite email": [
         "Vključi sporočilo in ime datoteke v vabilo"
@@ -5831,9 +5789,6 @@
       ],
       "What happened?": [
         "Kaj se je zgodilo?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Kaj je vaš glavni razlog za preklic naročnine ali menjavo za nižji paket?"
       ],
       "Your alias": [
         "Vaš vzdevek"
@@ -7977,9 +7932,6 @@
       "Set date": [
         "Nastavite datum"
       ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Delite, kaj bi po vašem mnenju lahko izboljšalo ${ BRAND_NAME }"
-      ],
       "Start typing an email address": [
         "Začnite pisati e-poštni naslov"
       ],
@@ -8432,9 +8384,6 @@
       ]
     },
     "sheets_2025:Info": {
-      "Creating new spreadsheet...": [
-        "Ustvarjanje nove preglednice..."
-      ],
       "Detect automatically": [
         "Samodejno zaznaj"
       ],
@@ -9439,7 +9388,7 @@
         "Celovito šifrirano"
       ],
       "Enter your password": [
-        "Vnesite geslo"
+        "Vnesite svoje geslo"
       ],
       "Error Syncing": [
         "Napaka pri sinhronizaciji"

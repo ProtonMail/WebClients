@@ -208,6 +208,9 @@
       "Continue import": [
         "Fortsett importen"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Fortsett til ${ planOrAppName }"
+      ],
       "Continue with Google": [
         "Fortsett med Google"
       ],
@@ -2521,6 +2524,9 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Bruk denne veiledningen for å hjelpe organisasjonen din med å dra nytte av ${ BRAND_NAME }s bransjeledende kryptering og personvernøkosystem."
       ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Vi beklager at du forlater oss. Hvis du har et øyeblikk, setter vi stor pris på å høre hvorfor du ønsker å avbryte abonnementet. Tilbakemeldingen din hjelper oss med å gjøre ${ BRAND_NAME } bedre for alle."
+      ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Med kontaktgrupper kan du sende e-post til alle i gruppen med ett klikk."
       ],
@@ -4400,6 +4406,9 @@
       "Current version": [
         "Gjeldende versjon"
       ],
+      "Decrypting your document": [
+        "Dekrypterer dokumentet ditt"
+      ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Digital signatur bekreftet. Denne filen ble sikkert lastet opp av ${ emailAddress }."
       ],
@@ -4733,7 +4742,7 @@
         "Ingen kontakter er lagt til enda"
       ],
       "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "Intet dokument oppgitt i URL-en. Gå tilbake til ${ DRIVE_APP_NAME } og velg et dokument."
+        "Ingen dokument oppgitt i URL-en. Gå tilbake til ${ DRIVE_APP_NAME } og velg et dokument."
       ],
       "No email address": [
         "Ingen e-postadresse"
@@ -5504,6 +5513,9 @@
       "Add to group": [
         "Legg til gruppe"
       ],
+      "Additional comments": [
+        "Ytterligere kommentarer"
+      ],
       "Alias title": [
         "Aliastittel"
       ],
@@ -5570,6 +5582,9 @@
       "Contacts": [
         "Kontakter"
       ],
+      "Continue cancelling": [
+        "Fortsett avbestillingen"
+      ],
       "Copy": [
         "Kopier"
       ],
@@ -5590,9 +5605,6 @@
       ],
       "Delete recovery-related information.": [
         "Slett gjenopprettingsrelatert informasjon."
-      ],
-      "Do you have any suggestions for our team?": [
-        "Har du noen forslag til teamet vårt?"
       ],
       "Don't ask again": [
         "Ikke spør igjen"
@@ -5729,6 +5741,9 @@
       "Main": [
         "Hjem"
       ],
+      "Main reason for cancelling": [
+        "Hovedårsaken til kanselleringen"
+      ],
       "Make editor": [
         "Gjør til redaktør"
       ],
@@ -5834,6 +5849,9 @@
       "Sign emails": [
         "Signer e-poster"
       ],
+      "Skip feedback": [
+        "Hopp over tilbakemelding"
+      ],
       "Skip file": [
         "Hopp over fil"
       ],
@@ -5893,9 +5911,6 @@
       ],
       "What happened?": [
         "Hva skjedde?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Hva er hovedgrunnen til å kansellere eller nedgradere?"
       ],
       "Your alias": [
         "Aliaset ditt"
@@ -7019,7 +7034,7 @@
         "200 GB med skylagring som lar deg lagre, synkronisere og dele filer lett. Sikret med ende-til-ende-kryptering."
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
-        "Avansert nettverkssikkerhet og tilgangsadministrasjon med dedikerte sikre porttjenere"
+        "Avansert nettverkssikkerhet og tilgangsadministrasjon med dedikerte sikre gateway-tjenere"
       ],
       "Advanced protection for teams that goes beyond industry standards.": [
         "Avansert beskyttelse for team som går utover industristandarder."
@@ -7212,7 +7227,7 @@
         "På samme måte som en mappe, er et hvelv en praktisk måte å organisere elementene dine på."
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
-        "Lås bedriftens ressurser fra det offentlige internett og gjør dem bare tilgjengelige via dine private porttjenere."
+        "Lås bedriftens ressurser fra det offentlige internett og gjør dem bare tilgjengelige via dine private gatewayer."
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Behandle abonnementet ditt, inkludert tilpasning av planen din. Betalingsmåter akseptert er kredittkort, PayPal, kryptovaluta og bankoverføring."
@@ -7380,7 +7395,7 @@
         "Støtte for mange plattformer"
       ],
       "Private gateways": [
-        "Private porttjenere"
+        "Private gateway-servere"
       ],
       "Support for ${ n } custom email domain": [
         "Støtte for ${ n } egendefinert e-postdomene",
@@ -8023,6 +8038,9 @@
       "A way to contact you": [
         "En måte å kontakte deg på"
       ],
+      "Anything you'd like us to know": [
+        "Er det noe mer du vil at vi skal vite om"
+      ],
       "Choose password": [
         "Velg passord"
       ],
@@ -8031,6 +8049,9 @@
       ],
       "Email": [
         "E-post"
+      ],
+      "Enter a name": [
+        "Skriv inn et navn"
       ],
       "Enter a new folder name": [
         "Angi et nytt mappenavn"
@@ -8080,14 +8101,14 @@
       "Select": [
         "Velg"
       ],
+      "Select a provider": [
+        "Velg en leverandør"
+      ],
       "Select a reason": [
         "Velg en årsak"
       ],
       "Set date": [
         "Angi dato"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Del det du tror kan gjøre ${ BRAND_NAME } bedre"
       ],
       "Start typing an email address": [
         "Begynn å skrive inn en e-postadresse"
@@ -8170,6 +8191,26 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Offisiell e-post fra ${ BRAND_NAME }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Annen"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {
@@ -9657,7 +9698,7 @@
         "Forbedre sikkerheten med 2FA"
       ],
       "Enter your password": [
-        "Skriv inn passord"
+        "Skriv inn passordet"
       ],
       "Error Syncing": [
         "Feil ved synkronisering"
