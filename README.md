@@ -10,6 +10,7 @@ This project is a monorepo hosting the Proton web clients. It includes the web a
 - <img src="./applications/pass/src/favicon.svg" style="vertical-align: middle" height="20" width="20" /> <span style="vertical-align: middle; display: inline-block">Proton Pass</span>
 - <img src="./applications/wallet/src/favicon.svg" style="vertical-align: middle" height="20" width="20" /> <span style="vertical-align: middle; display: inline-block">Proton Wallet</span>
 - <img src="./applications/lumo/src/favicon.svg" style="vertical-align: middle" height="20" width="20" /> <span style="vertical-align: middle; display: inline-block">Proton Lumo</span>
+- <img src="./applications/meet/src/favicon.svg" style="vertical-align: middle" height="20" width="20" /> <span style="vertical-align: middle; display: inline-block">Proton Meet</span>
 
 Technically, this monorepo is based on Yarn & Yarn Workspaces, with unified versioning for all packages inside.
 
