@@ -11,6 +11,7 @@ export interface InputProps extends Omit<ComponentPropsWithRef<'input'>, 'prefix
     unstyled?: boolean;
     prefix?: ReactNode;
     suffix?: ReactNode;
+    direction?: 'ltr' | 'rtl' | 'auto' | undefined;
     containerRef?: Ref<HTMLDivElement>;
     containerProps?: ComponentPropsWithRef<'div'>;
     inputContainerClassName?: string;
@@ -27,6 +28,7 @@ const InputBase = (props: InputProps, ref: Ref<HTMLInputElement>) => {
         unstyled,
         prefix,
         suffix,
+        direction,
         containerProps,
         containerRef,
         inputClassName,
@@ -45,6 +47,7 @@ const InputBase = (props: InputProps, ref: Ref<HTMLInputElement>) => {
                 unstyled && 'unstyled',
                 classNameProp
             )}
+            dir={direction}
             ref={containerRef}
             data-testid="input-root"
             {...containerProps}
