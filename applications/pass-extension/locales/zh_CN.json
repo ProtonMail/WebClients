@@ -157,6 +157,9 @@
       "Close navigation": [
         "关闭导航栏"
       ],
+      "Configure": [
+        "配置"
+      ],
       "Confirm": [
         "确定"
       ],
@@ -2023,7 +2026,7 @@
         "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "将项目移至其他保险库会清除其安全链接。"
+        "将项目移动到另一个保险库会删除其安全链接。"
       ],
       "Moving items": [
         "正在移动"
@@ -2064,6 +2067,9 @@
       "None": [
         "无"
       ],
+      "Not configured": [
+        "未配置"
+      ],
       "Not recommended": [
         "不推荐"
       ],
@@ -2075,6 +2081,12 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "在线访问 ${ PASS_APP_NAME } 将需要 PIN 码。您将在 3 次尝试失败后注销。"
+      ],
+      "Open ${ PASS_APP_NAME } in a larger window": [
+        "在更大窗口中打开 ${ PASS_APP_NAME }"
+      ],
+      "Open the ${ PASS_APP_NAME } popup": [
+        "打开 ${ PASS_APP_NAME } 弹窗"
       ],
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "打开 Safari 设置，找到 ${ PASS_APP_NAME }，进入“权限”并启用网站权限"

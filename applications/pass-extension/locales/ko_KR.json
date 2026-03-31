@@ -157,6 +157,9 @@
       "Close navigation": [
         "탐색 종료"
       ],
+      "Configure": [
+        "구성"
+      ],
       "Confirm": [
         "확인"
       ],
@@ -2023,7 +2026,7 @@
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동시 안전한 링크가 삭제됩니다."
+        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
@@ -2064,6 +2067,9 @@
       "None": [
         "없음"
       ],
+      "Not configured": [
+        "구성되지 않음"
+      ],
       "Not recommended": [
         "추천하지 않음"
       ],
@@ -2075,6 +2081,12 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "${ PASS_APP_NAME }이 온라인에 접근하려면 PIN 코드가 필요합니다. 3번의 시도가 실패하면 로그아웃됩니다."
+      ],
+      "Open ${ PASS_APP_NAME } in a larger window": [
+        "더 큰 창에서 ${ PASS_APP_NAME } 열기"
+      ],
+      "Open the ${ PASS_APP_NAME } popup": [
+        "${ PASS_APP_NAME } 팝업 열기"
       ],
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Safari 설정을 열고, ${ PASS_APP_NAME }를 찾아서, \"권한\"으로 이동한 다음, 사이트 권한을 활성화하세요."

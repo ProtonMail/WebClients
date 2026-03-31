@@ -157,6 +157,9 @@
       "Close navigation": [
         "Zavrieť menu"
       ],
+      "Configure": [
+        "Nastaviť"
+      ],
       "Confirm": [
         "Potvrdiť"
       ],
@@ -2103,6 +2106,12 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Presúvanie všetkých položiek z \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Presunutím položky do iného trezora sa vymažú jej bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy.",
+        "Presunutím položiek do iného trezora sa vymažú ich bezpečné odkazy."
+      ],
       "Moving items": [
         "Presúvanie položiek"
       ],
@@ -2142,6 +2151,9 @@
       "None": [
         "Nezamykať"
       ],
+      "Not configured": [
+        "Nenastavené"
+      ],
       "Not recommended": [
         "Neodporúčané"
       ],
@@ -2156,6 +2168,9 @@
       ],
       "Open ${ PASS_APP_NAME } in a larger window": [
         "Otvorte ${ PASS_APP_NAME } vo väčšom okne"
+      ],
+      "Open the ${ PASS_APP_NAME } popup": [
+        "Otvoriť kontextové okno ${ PASS_APP_NAME }"
       ],
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Otvorte nastavenia Safari, nájdite ${ PASS_APP_NAME }, prejdite do časti „Oprávnenia“ a povolte oprávnenia pre webové stránky."
