@@ -4,6 +4,7 @@ import { CERT_PROTON_ME } from "../constants";
 import { isProdEnv } from "./isProdEnv";
 import { isHostAllowed } from "./urls/urlTests";
 import { networkLogger } from "./log";
+import { sentryReport } from "./sentryReport";
 
 export const checkKeys = (request: Request) => {
     if (isHostAllowed(request.hostname)) {
@@ -15,6 +16,10 @@ export const checkKeys = (request: Request) => {
         if (hasProtonMeCert(request)) return 0;
 
         networkLogger.error("Certificate Pinning failed for host", request.hostname);
+        sentryReport.reportMessage("certificate pinning failed", {
+            level: "fatal",
+            tags: { hostname: request.hostname, context: "app-session" },
+        });
         return -2;
     }
 
@@ -49,6 +54,11 @@ export function verifyDownloadCertificate(request: Request, callback: (code: Ver
         }
 
         if (!hasProtonMeCert(request)) {
+            networkLogger.error("Certificate Pinning failed for download host", request.hostname);
+            sentryReport.reportMessage("certificate pinning failed", {
+                level: "fatal",
+                tags: { hostname: request.hostname, context: "download-session" },
+            });
             return VerificationResult.Reject;
         }
 

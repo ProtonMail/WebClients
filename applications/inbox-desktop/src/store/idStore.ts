@@ -40,3 +40,5 @@ export const getAppID = async () => {
     await saveAppID();
     return store.get("appID");
 };
+
+export const getAppIDSync = (): AppID => store.get("appID") ?? { id: "not-set", hash: "not-set", distribution: -1 };

@@ -13,6 +13,7 @@ import { c } from "ttag";
 import { getFeatureFlagManager } from "../utils/flags/manager";
 import { FeatureFlag } from "../utils/flags/flags";
 import { quitTracker } from "../utils/log/quitTracker";
+import { sentryReport } from "../utils/sentryReport";
 
 export type LocalDesktopVersion = {
     Version: DesktopVersion["Version"];
@@ -35,9 +36,31 @@ export function initializeUpdateChecks() {
     }
 
     updateLogger.info("Initialization of update checks.");
-    autoUpdater.on("error", (error) => updateLogger.error("autoUpdater error:", error));
+
+    // Report after 3 consecutive errors to avoid spam on persistent network issues.
+    // Resets on successful download or when no update is available (updater is healthy).
+    const AUTO_UPDATER_ERROR_THRESHOLD = 3;
+    let consecutiveAutoUpdaterErrors = 0;
+
+    autoUpdater.on("error", (error) => {
+        consecutiveAutoUpdaterErrors++;
+        updateLogger.error("autoUpdater error:", error);
+
+        if (consecutiveAutoUpdaterErrors === AUTO_UPDATER_ERROR_THRESHOLD) {
+            sentryReport.reportMessage("autoUpdater error repeated", {
+                error: error,
+                level: "error",
+                extras: { consecutiveErrors: consecutiveAutoUpdaterErrors },
+            });
+        }
+    });
+
+    autoUpdater.on("update-not-available", () => {
+        consecutiveAutoUpdaterErrors = 0;
+    });
 
     autoUpdater.on("update-downloaded", async () => {
+        consecutiveAutoUpdaterErrors = 0;
         updateDownloaded = true;
         updateLogger.info("Update downloaded, showing prompt.");
 
@@ -225,13 +248,28 @@ function isANewerOrEqualToB(a: string, b: string) {
     return semver(a) >= semver(b);
 }
 
+// Update checks occur every hour, this is a pessimistic case to avoid spamming sentry.
+const VERSION_FETCH_FAILURE_THRESHOLD = 5;
+let totalVersionFetchFailures = 0;
+
 async function getAvailableVersions(platform: DESKTOP_PLATFORMS): Promise<VersionFile | undefined> {
     try {
         const response = await updateSession().fetch(getVersionURL(platform), { cache: "no-cache" });
         const json = await response.json();
-        return VersionFileSchema.parse(json);
+        const result = VersionFileSchema.parse(json);
+        return result;
     } catch (error) {
+        totalVersionFetchFailures++;
         updateLogger.warn("Check update: failed to get available versions:", error);
+
+        if (totalVersionFetchFailures === VERSION_FETCH_FAILURE_THRESHOLD) {
+            sentryReport.reportMessage("version fetch failed repeatedly", {
+                level: "warning",
+                error: error instanceof Error ? error : undefined,
+                extras: { totalFailures: totalVersionFetchFailures },
+            });
+        }
+
         return undefined;
     }
 }
@@ -242,3 +280,7 @@ function logUpdateCase(localVersion: LocalDesktopVersion, remoteVersion: Desktop
 
 export const getNewUpdateTestOnly = getNewUpdate;
 export const releaseListSchemaTestOnly = VersionFileSchema;
+export const getAvailableVersionsTestOnly = getAvailableVersions;
+export const resetVersionFetchCounterTestOnly = () => {
+    totalVersionFetchFailures = 0;
+};
