@@ -7547,7 +7547,9 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine"
+        "Inserare imagine",
+        "Inserare imagini",
+        "Inserare imagini"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -9048,6 +9050,12 @@
       ],
       "for ${ price }": [
         "cu ${ price }"
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Adăugare ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Totul din ${ planOrAppName }, plus:"
       ]
     },
     "info": {
@@ -10669,6 +10677,14 @@
         "Maxim participanți: ${ n }",
         "Maxim participanți: ${ n }",
         "Maxim participanți: ${ n }"
+      ],
+      "Hosts can record meetings locally on their computers": [
+        "Gazdele pot înregistra întâlnirile local pe computerele lor"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Conferințe video, ${ n } participant",
+        "Conferințe video, ${ n } participanți",
+        "Conferințe video, ${ n } de participanți"
       ]
     },
     "Message": {
@@ -11406,6 +11422,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Scanăm internetul ascuns pentru a verifica dacă adresele sau aliasurile ${ BRAND_NAME } v-au fost divulgate și vă avertizăm imediat dacă găsim ceva."
+      ],
+      "Data retention policies": [
+        "Politici de păstrare a datelor"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Conversații private cu IA (${ LUMO_APP_NAME })"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN cu protecție împotriva programelor malware și blocare reclame"
       ]
     },
     "new_plans: feature highlight": {
