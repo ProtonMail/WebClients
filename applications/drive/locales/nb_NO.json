@@ -159,6 +159,9 @@
       "Change": [
         "Endre"
       ],
+      "Change my access": [
+        "Endre tilgangen min"
+      ],
       "Change password": [
         "Endre passord"
       ],
@@ -245,6 +248,9 @@
       ],
       "Continue on web": [
         "Fortsett på nettet"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "Fortsett til ${ planOrAppName }"
       ],
       "Continue transfers": [
         "Fortsett overføringer"
@@ -844,6 +850,9 @@
       ],
       "Remove me": [
         "Fjern meg"
+      ],
+      "Remove my access": [
+        "Fjern tilgangen min"
       ],
       "Remove without saving": [
         "Fjern uten å lagre"
@@ -3024,6 +3033,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Bruk denne veiledningen for å hjelpe organisasjonen din med å dra nytte av ${ BRAND_NAME }s bransjeledende kryptering og personvernøkosystem."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Vi beklager at du forlater oss. Hvis du har et øyeblikk, setter vi stor pris på å høre hvorfor du ønsker å avbryte abonnementet. Tilbakemeldingen din hjelper oss med å gjøre ${ BRAND_NAME } bedre for alle."
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Med kontaktgrupper kan du sende e-post til alle i gruppen med ett klikk."
@@ -5660,6 +5672,9 @@
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Hvis du fortsetter med nedgraderingen, vil du miste tilgang til de betalte funksjonene til ${ VPN_APP_NAME }."
       ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Hvis du fjerner deg selv, mister du tilgangen til \"${ fileName }\" og kan ikke åpne den igjen med mindre eieren deler den med deg på nytt."
+      ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importer ${ calendarCount } av ${ totalCalendarsCount } kalender",
         "Importer ${ calendarCount } av ${ totalCalendarsCount } kalendere"
@@ -6822,6 +6837,9 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Du blir ikke belastet hvis du avbryter før ${ trialEndsOnFormatted }."
       ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Du vil ikke kunne dele \"${ fileName }\" etter at tilgangen din endres til kun visning. Bare eieren kan endre tilgangen din igjen."
+      ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Du mottar kredittbelønningen én måned etter at vennen din abonnerer på en årsplan, og to måneder etter at de abonnerer på en månedlig plan."
       ],
@@ -7088,6 +7106,9 @@
       "Add to group": [
         "Legg til gruppe"
       ],
+      "Additional comments": [
+        "Ytterligere kommentarer"
+      ],
       "Address": [
         "Adresse"
       ],
@@ -7205,6 +7226,9 @@
       "Contacts": [
         "Kontakter"
       ],
+      "Continue cancelling": [
+        "Fortsett avbestillingen"
+      ],
       "Copy": [
         "Kopier"
       ],
@@ -7256,9 +7280,6 @@
       ],
       "Disable this link on a specific date": [
         "Deaktiver denne koblingen på en bestemt dato"
-      ],
-      "Do you have any suggestions for our team?": [
-        "Har du noen forslag til teamet vårt?"
       ],
       "Don't ask again": [
         "Ikke spør igjen"
@@ -7419,6 +7440,9 @@
       "Main": [
         "Hjem"
       ],
+      "Main reason for cancelling": [
+        "Hovedårsaken til kanselleringen"
+      ],
       "Malware": [
         "Skadelig programvare"
       ],
@@ -7575,6 +7599,9 @@
       "Size": [
         "Størrelse"
       ],
+      "Skip feedback": [
+        "Hopp over tilbakemelding"
+      ],
       "Skip file": [
         "Hopp over fil"
       ],
@@ -7673,9 +7700,6 @@
       ],
       "What happened?": [
         "Hva skjedde?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Hva er hovedgrunnen til å kansellere eller nedgradere?"
       ],
       "Yes, I want to permanently delete my old files": [
         "Ja, jeg ønsker å slette alle mine gamle filer permanent."
@@ -8851,7 +8875,7 @@
         "200 GB med skylagring som lar deg lagre, synkronisere og dele filer lett. Sikret med ende-til-ende-kryptering."
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
-        "Avansert nettverkssikkerhet og tilgangsadministrasjon med dedikerte sikre porttjenere"
+        "Avansert nettverkssikkerhet og tilgangsadministrasjon med dedikerte sikre gateway-tjenere"
       ],
       "Advanced protection for teams that goes beyond industry standards.": [
         "Avansert beskyttelse for team som går utover industristandarder."
@@ -9050,7 +9074,7 @@
         "På samme måte som en mappe, er et hvelv en praktisk måte å organisere elementene dine på."
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
-        "Lås bedriftens ressurser fra det offentlige internett og gjør dem bare tilgjengelige via dine private porttjenere."
+        "Lås bedriftens ressurser fra det offentlige internett og gjør dem bare tilgjengelige via dine private gatewayer."
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Behandle abonnementet ditt, inkludert tilpasning av planen din. Betalingsmåter akseptert er kredittkort, PayPal, kryptovaluta og bankoverføring."
@@ -9218,7 +9242,7 @@
         "Støtte for mange plattformer"
       ],
       "Private gateways": [
-        "Private porttjenere"
+        "Private gateway-servere"
       ],
       "Support for ${ n } custom email domain": [
         "Støtte for ${ n } egendefinert e-postdomene",
@@ -9226,6 +9250,9 @@
       ]
     },
     "Notification": {
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }}\" delt"
+      ],
       "\"${ name }\" created successfully": [
         "\"${ name }\" opprettet"
       ],
@@ -10378,6 +10405,9 @@
       "Anderson": [
         "Andersen"
       ],
+      "Anything you'd like us to know": [
+        "Er det noe mer du vil at vi skal vite om"
+      ],
       "Anytown": [
         "By"
       ],
@@ -10395,6 +10425,9 @@
       ],
       "Email": [
         "E-post"
+      ],
+      "Enter a name": [
+        "Skriv inn et navn"
       ],
       "Enter a new file name": [
         "Angi et nytt filnavn"
@@ -10468,6 +10501,9 @@
       "Select": [
         "Velg"
       ],
+      "Select a provider": [
+        "Velg en leverandør"
+      ],
       "Select a reason": [
         "Velg en årsak"
       ],
@@ -10476,9 +10512,6 @@
       ],
       "Select state": [
         "Velg stat"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Del det du tror kan gjøre ${ BRAND_NAME } bedre"
       ],
       "Start typing an email address": [
         "Begynn å skrive inn en e-postadresse"
@@ -10592,6 +10625,26 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Offisiell e-post fra ${ BRAND_NAME }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Annen"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {
@@ -11321,6 +11374,9 @@
     "Status": {
       "pending": [
         "ventende"
+      ],
+      "user joined": [
+        "bruker koblet til"
       ]
     },
     "Storage": {
@@ -12255,6 +12311,9 @@
       "Card verification": [
         "Verifisering av kort"
       ],
+      "Change access to viewer?": [
+        "Endre tilgang til kun visning?"
+      ],
       "Change layout": [
         "Endre oppsett"
       ],
@@ -12837,6 +12896,9 @@
         "Fjerne elementet?",
         "Fjerne elementene?"
       ],
+      "Remove your access?": [
+        "Fjerne tilgangen din?"
+      ],
       "Rename a file": [
         "Gi en fil nytt navn"
       ],
@@ -12905,6 +12967,9 @@
       ],
       "SHA1": [
         "SHA1"
+      ],
+      "Share \"${ fileName }\"": [
+        "Del \"${ fileName }}\""
       ],
       "Share your calendar with your team": [
         "Del kalenderen din med teamet ditt"
@@ -13180,6 +13245,9 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Bytt automatisk mellom foretrukket tema for dag og natt synkronisert med systemets dag- og nattmodus."
       ],
+      "Change shared item settings": [
+        "Endre innstillinger for delt element"
+      ],
       "Customize import to reduce the number of folders": [
         "Tilpass import for å redusere antall mapper"
       ],
@@ -13221,6 +13289,9 @@
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "Meldings- og filnavn lagres med nulltilgangskryptering når det er inkludert i e-posten"
+      ],
+      "New!": [
+        "Ny!"
       ],
       "Not all information listed here was exposed for all users.": [
         "Ikke all informasjon som er oppført her ble eksponert for alle brukere."

@@ -237,6 +237,9 @@
       "Continue import": [
         "繼續匯入"
       ],
+      "Continue to ${ planOrAppName }": [
+        "繼續使用 ${ planOrAppName }"
+      ],
       "Continue transfers": [
         "繼續傳輸"
       ],
@@ -1204,6 +1207,9 @@
       ],
       "Writing assistant": [
         "撰寫助手"
+      ],
+      "Writing assistant seats": [
+        "撰寫幫手就位"
       ]
     },
     "Alert": {
@@ -1390,6 +1396,9 @@
       "2 TB data storage": [
         "2 TB 的總儲存空間"
       ],
+      "3 TB data storage": [
+        "3 TB 的總儲存空間"
+      ],
       "Access 15,000+ servers in 120+ countries": [
         "存取 15,000+ 臺伺服器，分布於 120+ 個國家"
       ],
@@ -1435,6 +1444,9 @@
       ],
       "Lifetime": [
         "終身"
+      ],
+      "Lifetime access": [
+        "終身存取權"
       ],
       "Monthly": [
         "每月"
@@ -1685,6 +1697,9 @@
       ],
       "Upload and query multiple large files": [
         "上載及查詢多個大型檔案"
+      ],
+      "Upload and query small files": [
+        "上載及查詢小型檔案"
       ],
       "Web search access": [
         "網頁搜尋存取"
@@ -2798,6 +2813,9 @@
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "以確保您帳戶的最高可能的安全，設置復原詞句。"
       ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "匯入 CSV 或 VCF 檔，請確保檔案大小不超過 ${ MAX_IMPORT_FILE_SIZE_STRING }，或聯絡人數不超過 ${ maxContactString }。如果檔案超過此限制，請將其分成比較小的檔案。 ${ learnMoreLink }"
+      ],
       "To import your contacts from Google or Outlook, ${ easySwitchLink }.": [
         "從 Google 或 Outlook, ${ easySwitchLink } 來匯入你的聯絡人"
       ],
@@ -3466,6 +3484,9 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "每次儲值的最低金額為 ${ price }"
       ],
+      "The minimum donation amount is ${ price }": [
+        "最低捐款金額為 ${ price }"
+      ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "原始檔案的新修訂版本尚未上載，請稍後再試"
       ],
@@ -3549,6 +3570,9 @@
       ],
       "We're sorry, but free upload is not available right now.": [
         "抱歉，目前無法提供免費上載。"
+      ],
+      "Wrong billing address": [
+        "錯誤帳單地址"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "您無法將郵件傳送給超過 ${ maxContacts } 位收件人"
@@ -6075,6 +6099,9 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "在截止日 ${ trialEndsOnFormatted } 到期之前取消，便不會向您收取任何費用。"
       ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "若您的朋友訂閱年費方案，您將在 1 個月後獲得點數獎勵；若他們訂閱月費方案，則會在 2 個月後獲得。"
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "屆時我們將於每 ${ renewCycle } 個月，收取 ${ renewAmountStr } 的訂閱費用。 您可隨時取消。"
       ],
@@ -6134,6 +6161,9 @@
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
         "您的付款日是 ${ renewalTime }。您可隨時取消。"
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "您下一個收費日為${ renewalTime }。您可隨時取消。若您需要立即變更方案請聯繫客服。"
       ],
       "Your online activity is protected": [
         "你的線上活動受到保護"
@@ -6385,6 +6415,9 @@
       "Colors": [
         "色彩"
       ],
+      "Command line interface (CLI)": [
+        "指令介面 (CLI)"
+      ],
       "Comment": [
         "評論"
       ],
@@ -6444,9 +6477,6 @@
       ],
       "Device name": [
         "裝置名稱"
-      ],
-      "Do you have any suggestions for our team?": [
-        "您對我們的團隊有什麼建議嗎？"
       ],
       "Don't ask again": [
         "不要再次詢問"
@@ -6601,6 +6631,9 @@
       "Main": [
         "主要"
       ],
+      "Main reason for cancelling": [
+        "取消的主要原因"
+      ],
       "Malware": [
         "惡意軟體"
       ],
@@ -6745,6 +6778,9 @@
       "Size": [
         "大小"
       ],
+      "Skip feedback": [
+        "略過意見回饋"
+      ],
       "Skip file": [
         "略過檔案"
       ],
@@ -6843,9 +6879,6 @@
       ],
       "What happened?": [
         "發生了甚麼問題？"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "請問退訂或降級的主要理由?"
       ],
       "Yes, I want to permanently delete my old files": [
         "是的，我想要永久刪除我的舊檔案"
@@ -7154,6 +7187,9 @@
       ],
       "Built-in chat": [
         "內建聊天"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "端對端加密的螢幕共享和臨時通話內聊天"
       ],
       "Meeting recording": [
         "會議錄影"
@@ -9010,6 +9046,9 @@
       ]
     },
     "Payments": {
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% 稅金：${ taxAmountElement }"
+      ],
       "${ rate }% taxes: ${ taxAmountElement }": [
         "${ rate }% 稅金：${ taxAmountElement }"
       ],
@@ -9180,6 +9219,14 @@
         "免費"
       ]
     },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "續訂價格取決於計費區域和 EIN。"
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "續訂價格取決於計費區域和 EIN。"
+      ]
+    },
     "Payments.Saved payment method details": {
       "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "APPle Pay - 卡片於 ${ paymentMethod.Details.Last4 } 結束"
@@ -9262,6 +9309,9 @@
       "Anderson": [
         "安德松"
       ],
+      "Anything you'd like us to know": [
+        "您有沒有什麼想讓我們知道的？"
+      ],
       "Choose password": [
         "設定密碼"
       ],
@@ -9328,6 +9378,9 @@
       "Postal code": [
         "郵遞區號"
       ],
+      "San Francisco": [
+        "舊金山"
+      ],
       "Search for group name": [
         "搜尋群組名稱"
       ],
@@ -9348,9 +9401,6 @@
       ],
       "Select state": [
         "請選州"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "分享您認為可以讓 ${ BRAND_NAME } 更好的方法"
       ],
       "Start typing an email address": [
         "在此輸入一個電郵位址"
@@ -9453,6 +9503,23 @@
         "來自 ${ BRAND_NAME } 的官方電子郵件"
       ]
     },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "其它"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
+      ]
+    },
     "q1campaign: Action": {
       "Get the deal": [
         "取得優惠"
@@ -9553,6 +9620,9 @@
       "${ referrerRewardAmount } per referral": [
         "每個推薦 ${ referrerRewardAmount }"
       ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "於那日之後，您的帳號將被降級至 **${ BRAND_NAME } 免費 **。若您改變主意，您可 ** 重建訂閱 ** 以存取至頂級質子版的功能。"
+      ],
       "Earn up to ${ maxRewardAmount } in credit. You’ll get ${ referrerRewardAmount } when the person you invite subscribes to a ${ BRAND_NAME } plan.": [
         "賺取至多 ${ maxRewardAmount } 額度。您將於邀請者訂閱至 ${ BRAND_NAME } 方案獲得 ${ referrerRewardAmount }。"
       ],
@@ -9570,6 +9640,9 @@
       ],
       "More sharing options": [
         "更多分享選項"
+      ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "一旦您的完整訂閱開始，您仍可在 30 天內取消並獲得按比例退款。"
       ],
       "Refer friends": [
         "推薦朋友"
