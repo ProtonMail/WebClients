@@ -3973,6 +3973,12 @@
       ],
       "Wrong billing address": [
         "Forkert faktureringsadresse"
+      ],
+      "Unable to start the search": [
+        "Kan ikke starte søgningen"
+      ],
+      "Unable to start the search: not enough storage space": [
+        "Kan ikke starte søgningen: ikke nok lagerplads"
       ]
     },
     "error": {
@@ -6982,6 +6988,9 @@
       ],
       "for ${ price }": [
         "til ${ price }"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Alt fra ${ planOrAppName }, plus:"
       ]
     },
     "info": {
@@ -8062,6 +8071,13 @@
       "Up to ${ n } participant": [
         "Op til ${ n } deltager",
         "Op til ${ n } deltagere"
+      ],
+      "Hosts can record meetings locally on their computers": [
+        "Mødeværter kan optage møder lokalt på deres computere"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videomøder, ${ n } deltager",
+        "Videomøde, ${ n } deltagere"
       ]
     },
     "Message": {
@@ -8797,6 +8813,15 @@
       "${ options }-day file version history": [
         "${ options } dags filversionshistorik",
         "${ options } dages filversionshistorik"
+      ],
+      "Data retention policies": [
+        "Databevaringspolitikker"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Privat AI-chat (${ LUMO_APP_NAME })"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN med annonceblokering og beskyttelse mod malware"
       ]
     },
     "new_plans: feature highlight": {

@@ -3973,6 +3973,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Şifresi çözülemeyen ad"
+      ],
+      "Unable to start the search": [
+        "Arama başlatılamıyor"
+      ],
+      "Unable to start the search: not enough storage space": [
+        "Arama başlatılamıyor: yeterli depolama alanı yok"
       ]
     },
     "error": {
@@ -6992,6 +6998,9 @@
       ],
       "for ${ price }": [
         "${ price } karşılığında"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "${ planOrAppName } kapsamındaki tüm özelliklerin yanı sıra:"
       ]
     },
     "info": {
@@ -8072,6 +8081,13 @@
       "Up to ${ n } participant": [
         "${ n } katılımcı",
         "${ n } katılımcı"
+      ],
+      "Hosts can record meetings locally on their computers": [
+        "Oturum sahipleri toplantıları kendi bilgisayarlarına yerel olarak kaydedebilirler"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Görüntülü toplantılar, ${ n } katılımcı",
+        "Görüntülü toplantılar, ${ n } katılımcı"
       ]
     },
     "Message": {
@@ -8807,6 +8823,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } adreslerinizin veya takma adlarınızın sızıp sızmadığını denetlemek için karanlık ağı tararız ve herhangi bir şey bulursak sizi hemen uyarırız."
+      ],
+      "Data retention policies": [
+        "Veri saklama ilkeleri"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Gizli Yapay Zeka Sohbeti (${ LUMO_APP_NAME })"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "Reklam engelleyici ve kötü amaçlı yazılım koruması içeren VPN"
       ]
     },
     "new_plans: feature highlight": {
