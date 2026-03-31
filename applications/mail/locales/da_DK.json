@@ -1792,6 +1792,10 @@
       ],
       "Writing assistant seats": [
         "Skriveassistentpladser"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } licens",
+        "${ seats } ${ MEET_APP_NAME } licenser"
       ]
     },
     "Alert": {
@@ -7428,8 +7432,7 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede",
-        "Indsæt billeder"
+        "Indsæt billede"
       ],
       "Insert link": [
         "Indsæt link"
@@ -8876,6 +8879,24 @@
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "Du vil modtage kreditten 1 måned efter at din ven abonnerer på et årligt abonnement, og 2 måneder efter de abonnerer på et månedligt abonnement."
+      ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } er et end-to-end krypteret system til videomøder. Tilføj det til dit abonnement for at afholde sikre møder."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } pladser"
+      ],
+      "${ MEET_APP_NAME } video conferencing": [
+        "${ MEET_APP_NAME } videomøder"
+      ],
+      "Add ${ MEET_APP_NAME }": [
+        "Tilføj ${ MEET_APP_NAME }"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Alt fra ${ planOrAppName }, plus:"
+      ],
+      "for ${ price }": [
+        "til ${ price }"
       ]
     },
     "info": {
@@ -9959,6 +9980,9 @@
       ],
       "Skip feedback": [
         "Spring feedback over"
+      ],
+      "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
+        "Del de tidspunkter hvor du er tilgængelig med bookingsider i ${ CALENDAR_APP_NAME }, og afhold sikre møder med ${ MEET_APP_NAME }."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10468,6 +10492,13 @@
       "Up to ${ n } participant": [
         "Op til ${ n } deltager",
         "Op til ${ n } deltagere"
+      ],
+      "Hosts can record meetings locally on their computers": [
+        "Mødeværter kan optage møder lokalt på deres computere"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videomøder, ${ n } deltager",
+        "Videomøde, ${ n } deltagere"
       ]
     },
     "Message": {
@@ -11176,6 +11207,19 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi scanner det mørke web for at tjekke, om dine ${ BRAND_NAME }-adresser eller aliasser er blevet lækket, og giver dig straks besked, hvis vi finder noget."
+      ],
+      "${ options }-day file version history": [
+        "${ options } dags filversionshistorik",
+        "${ options } dages filversionshistorik"
+      ],
+      "Data retention policies": [
+        "Databevaringspolitikker"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Privat AI-chat (${ LUMO_APP_NAME })"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN med annonceblokering og beskyttelse mod malware"
       ]
     },
     "new_plans: feature highlight": {
@@ -15272,7 +15316,7 @@
         "Ugyldig bekræftelseskode"
       ],
       "Keep this banner hidden?": [
-        "Vil du beholde denne fane skjult?"
+        "Skal denne fane fortsat holdes skjult?"
       ],
       "Label as": [
         "Mærk som"
@@ -16441,6 +16485,27 @@
       ],
       "Yahoo": [
         "Yahoo"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } licens"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } pladser"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME }-plads",
+        "${ seats } ${ MEET_APP_NAME }-pladser"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "Inklusiv ${ seats } plads",
+        "Inklusiv ${ seats } pladser"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Du kan have op til ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME }-pladser i prøveperioden."
       ]
     }
   }

@@ -1789,6 +1789,10 @@
       ],
       "Writing assistant": [
         "Skrivassistent"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME }-licens",
+        "${ seats } ${ MEET_APP_NAME }-licenser"
       ]
     },
     "Alert": {
@@ -7412,8 +7416,7 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -8828,6 +8831,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Du är bara några klick bort från en skräpfri inkorg"
+      ],
+      "Add ${ MEET_APP_NAME }": [
+        "Lägg till ${ MEET_APP_NAME }"
+      ],
+      "for ${ price }": [
+        "för ${ price }"
       ]
     },
     "info": {
@@ -9908,6 +9917,9 @@
       ],
       "Skip feedback": [
         "Hoppa över feedback"
+      ],
+      "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
+        "Dela din tillgänglighet med bokningssidor i ${ CALENDAR_APP_NAME } och håll säkra möten med ${ MEET_APP_NAME }."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -16377,6 +16389,11 @@
       ],
       "Yahoo": [
         "Yahoo"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME }-licens"
       ]
     }
   }
