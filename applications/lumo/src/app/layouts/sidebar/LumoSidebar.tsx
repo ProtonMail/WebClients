@@ -29,6 +29,7 @@ import { FavoritesSidebarSection } from './FavoritesSidebarSection';
 import ForBusinessSidebarButton from './ForBusinessSidebarButton';
 
 import './LumoSidebar.scss';
+import {useLumoFlags} from "../../hooks/useLumoFlags";
 
 const ProjectsSidebarSection = lazy(() =>
     import('./ProjectsSidebarSection').then((m) => ({ default: m.ProjectsSidebarSection }))
@@ -236,6 +237,7 @@ const SearchSection = ({
 };
 
 const LumoSidebarContent = () => {
+    const history = useHistory();
     const { isVisible, isSmallScreen, isCollapsed, toggle, closeOnItemClick } = useSidebar();
     const isGuest = useIsGuest();
     const showText = useTextVisibility(isCollapsed);
@@ -244,6 +246,8 @@ const LumoSidebarContent = () => {
     const { registerOpenFunction } = useSearchModal();
     const [searchValue, setSearchValue] = useState('');
     const { APP_NAME } = useConfig();
+
+    const { apiKeyManagement } = useLumoFlags();
 
     // Register search modal open function with context
     React.useEffect(() => {
@@ -311,6 +315,18 @@ const LumoSidebarContent = () => {
                         onClick={() => window.open(getKnowledgeBaseUrl('/lumo'), '_blank')}
                         showText={showText}
                     />
+
+                    { apiKeyManagement &&
+                        <SidebarItem
+                            icon="code"
+                            label={c('collider_2025:Button').t`API`}
+                            onClick={() => {
+                                history.push('/docs/api');
+                                closeOnItemClick?.();
+                            }}
+                            showText={showText}
+                        />
+                    }
 
                     <SidebarItem
                         icon="cog-wheel"
