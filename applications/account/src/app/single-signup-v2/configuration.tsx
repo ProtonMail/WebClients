@@ -42,7 +42,7 @@ import {
 import { getWalletAppFeature } from '@proton/components/containers/payments/features/wallet';
 import type { IconSize } from '@proton/icons/types';
 import { type FreePlanDefault, PLANS, type Plan } from '@proton/payments';
-import { APPS, DUO_MAX_USERS, FAMILY_MAX_USERS } from '@proton/shared/lib/constants';
+import { APPS, type APP_NAMES, DUO_MAX_USERS, FAMILY_MAX_USERS } from '@proton/shared/lib/constants';
 import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
 import { CSS_BASE_UNIT_SIZE } from '@proton/styles';
 
@@ -61,11 +61,13 @@ export type SummaryPlan =
     | undefined;
 
 export const getSummaryPlan = ({
+    app,
     plan,
     vpnServersCountData,
     freePlan,
     existingUser,
 }: {
+    app: APP_NAMES;
     plan: Plan | undefined;
     vpnServersCountData: VPNServersCountData;
     freePlan: FreePlanDefault;
@@ -73,6 +75,7 @@ export const getSummaryPlan = ({
 }): SummaryPlan => {
     const iconSize: IconSize = 6;
     const iconImgSize = iconSize * CSS_BASE_UNIT_SIZE;
+    const isMeetApp = app === APPS.PROTONMEET;
 
     if (plan && plan.Name === PLANS.VPN2024) {
         const shortPlan = getVPNPlan(plan, vpnServersCountData);
@@ -277,7 +280,7 @@ export const getSummaryPlan = ({
     }
 
     if (plan?.Name === PLANS.BUNDLE_PRO_2024) {
-        const shortPlan = getBundleProPlan(plan);
+        const shortPlan = getBundleProPlan({ plan, prioritizeMeetFeatures: isMeetApp });
         return {
             logo: (
                 <div>
@@ -291,7 +294,7 @@ export const getSummaryPlan = ({
     }
 
     if (plan?.Name === PLANS.BUNDLE_BIZ_2025) {
-        const shortPlan = getBundlePremiumPlan(plan);
+        const shortPlan = getBundlePremiumPlan({ plan, prioritizeMeetFeatures: isMeetApp });
         return {
             logo: (
                 <div>

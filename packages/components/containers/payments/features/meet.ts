@@ -10,6 +10,7 @@ export const PAID_MAX_ACTIVE_MEETINGS = 2;
 
 export const FREE_MAX_PARTICIPANTS = 50;
 export const PAID_MAX_PARTICIPANTS = 100;
+export const PAID_STANDARD_MAX_PARTICIPANTS = 150;
 export const PAID_PREMIUM_MAX_PARTICIPANTS = 250;
 
 export const FREE_MAX_MEETINGS_PER_DAY = 5;
@@ -19,6 +20,7 @@ export const getMeetAppFeature = (): PlanCardFeatureDefinition => {
     return {
         text: MEET_APP_NAME,
         included: true,
+        icon: 'meet-camera',
         tooltip: c('meet_2025: Feature')
             .t`${MEET_APP_NAME}: Confidential video conferencing for the conversations that matter`,
     };
@@ -169,12 +171,13 @@ export const getMeetFreeFeatures = () => {
     return items;
 };
 
-export const getMeetBusinessFeatures = () => {
+export const getMeetBusinessFeatures = ({ maxParticipants }: { maxParticipants: number }) => {
     const items: PlanCardFeatureDefinition[] = [
         getMeetingMaxLength('paid'),
-        getMaxParticipants(PAID_MAX_PARTICIPANTS),
+        getMaxParticipants(maxParticipants),
         getMaxActiveMeetings(PAID_MAX_ACTIVE_MEETINGS),
         getMaxMeetingsPerDay('unlimited'),
+        getMeetMeetingRecording(true),
     ];
 
     return items;
