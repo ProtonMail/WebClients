@@ -83,6 +83,9 @@
       "Continue": [
         "Weiter"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Weiter zu ${ planOrAppName }"
+      ],
       "Copy address": [
         "Adresse kopieren"
       ],
@@ -262,6 +265,9 @@
       ],
       "Refresh the page": [
         "Seite aktualisieren"
+      ],
+      "Remove": [
+        "Entfernen"
       ],
       "Remove bonuses": [
         "Prämien entfernen"
@@ -445,6 +451,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } Benutzerlizenz",
         "${ seats } ${ LUMO_APP_NAME } Benutzerlizenzen"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } Lizenz",
+        "${ seats } ${ MEET_APP_NAME } Lizenzen"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } Lizenz für den Schreibassistenten",
@@ -3955,6 +3965,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Nutze diese Anleitung, damit deine Organisation unverzüglich von der branchenführenden Verschlüsselung und dem Privatsphäre-Ökosystem von ${ BRAND_NAME } profitiert."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Wir bedauern, dass du gehst. Wenn du einen Moment Zeit hast, würden wir uns sehr freuen zu erfahren, warum du kündigen möchtest. Dein Feedback hilft uns, ${ BRAND_NAME } für alle besser zu machen."
       ]
     },
     "Downgrade account reason": {
@@ -4445,6 +4458,15 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } beinhaltet ${ BRAND_NAME } Scribe Schreibassistent"
       ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } ist eine Ende-zu-Ende-verschlüsselte Videokonferenzlösung. Deinem Abonnement hinzufügen, um sichere Meetings abzuhalten."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } Lizenzen"
+      ],
+      "${ MEET_APP_NAME } video conferencing": [
+        "${ MEET_APP_NAME }-Videokonferenz"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Beim lebenslangen ${ PASS_SHORT_APP_NAME }-Angebot gibt es keinen Verlängerungspreis. Es ist eine einmalige Zahlung für lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }"
       ],
@@ -4484,6 +4506,9 @@
       ],
       "Account successfully updated": [
         "Konto erfolgreich aktualisiert"
+      ],
+      "Add ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME } hinzufügen"
       ],
       "Address copied to clipboard": [
         "Adresse in die Zwischenablage kopiert"
@@ -4618,11 +4643,17 @@
       "Everything in ${ planOrAppName }": [
         "Alles in ${ planOrAppName }"
       ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Alles in ${ planOrAppName }, zusätzlich:"
+      ],
       "Expired": [
         "Abgelaufen"
       ],
       "Folder:": [
         "Ordner:"
+      ],
+      "for ${ price }": [
+        "für ${ price }"
       ],
       "Google Pay mark": [
         "Google Pay markieren"
@@ -5025,6 +5056,9 @@
       "Account holder": [
         "Kontoinhaber"
       ],
+      "Additional comments": [
+        "Zusätzliche Kommentare"
+      ],
       "Address": [
         "Anschrift"
       ],
@@ -5088,6 +5122,9 @@
       "Company name": [
         "Firmenname"
       ],
+      "Continue cancelling": [
+        "Kündigung fortsetzen"
+      ],
       "Copy": [
         "Kopieren"
       ],
@@ -5111,9 +5148,6 @@
       ],
       "Delete recovery-related information.": [
         "Wiederherstellungsbezogene Informationen löschen."
-      ],
-      "Do you have any suggestions for our team?": [
-        "Hast du irgendwelche Vorschläge für unser Team?"
       ],
       "Email address": [
         "E-Mail-Adresse"
@@ -5160,6 +5194,9 @@
       "Last name": [
         "Nachname"
       ],
+      "Main reason for cancelling": [
+        "Hauptgrund für die Kündigung"
+      ],
       "Notification": [
         "Benachrichtigung"
       ],
@@ -5199,6 +5236,9 @@
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32,\n1228 Plan-les-Ouates\nGenf, Schweiz"
       ],
+      "Skip feedback": [
+        "Rückmeldung überspringen"
+      ],
       "Start date": [
         "Anfangsdatum"
       ],
@@ -5225,9 +5265,6 @@
       ],
       "What happened?": [
         "Problembeschreibung"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Was ist der Hauptgrund für deine Kündigung oder das Downgrade?"
       ],
       "What should ${ LUMO_SHORT_APP_NAME } call you?": [
         "Wie soll ${ LUMO_SHORT_APP_NAME } dich nennen?"
@@ -5471,6 +5508,18 @@
         "für ${ price }"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } Lizenz"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } Lizenzen"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME } Lizenz",
+        "${ seats } ${ MEET_APP_NAME } Lizenzen"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: Vertrauliche Videokonferenzen für die Unterhaltungen, die wichtig sind"
@@ -5504,6 +5553,9 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Ende-zu-Ende-verschlüsselte Bildschirmfreigabe und temporärer Chat während des Anrufs"
       ],
+      "Hosts can record meetings locally on their computers": [
+        "Organisatoren können Besprechungen lokal auf ihren Computern aufzeichnen"
+      ],
       "Meeting recording": [
         "Meeting wird aufgezeichnet"
       ],
@@ -5523,6 +5575,19 @@
       "Up to ${ n } participant": [
         "Bis zu ${ n } Teilnehmer",
         "Bis zu ${ n } Teilnehmer"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Video-Meetings, ${ n } Teilnehmer",
+        "Video-Meetings, ${ n } Teilnehmer"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } Lizenz enthalten",
+        "${ seats } Lizenzen enthalten"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Du kannst während der Testphase bis zu ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME }-Lizenzen haben."
       ]
     },
     "New Label form": {
@@ -5745,6 +5810,9 @@
       "Data breach monitoring": [
         "Überwachung von Datenlecks"
       ],
+      "Data retention policies": [
+        "Aufbewahrungsrichtlinien für Daten"
+      ],
       "Dedicated servers optimized for streaming": [
         "Für Streaming optimierte dedizierte Server"
       ],
@@ -5850,6 +5918,9 @@
       ],
       "Priority support & live chat": [
         "Priorisierter Support & Live-Chat"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Privater KI-Chat (${ LUMO_APP_NAME })"
       ],
       "Recover previous file versions": [
         "Vorherige Dateiversionen wiederherstellen"
@@ -5978,6 +6049,9 @@
       "Vault sharing with up to ${ n } person": [
         "Tresor mit bis zu ${ n } Person teilen",
         "Tresor mit bis zu ${ n } Personen teilen"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN mit Werbeblocker und Malware-Schutz"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Wir scannen das Dark Web, um zu überprüfen, ob deine ${ BRAND_NAME }-Adressen oder Aliasse veröffentlicht wurden, und benachrichtigen dich sofort, wenn wir etwas finden."
@@ -6804,6 +6878,9 @@
       "Anderson": [
         "Mustermann"
       ],
+      "Anything you'd like us to know": [
+        "Haben Sie etwas, das Sie uns mitteilen möchten?"
+      ],
       "Anytown": [
         "Berlin"
       ],
@@ -6812,6 +6889,12 @@
       ],
       "Cortex Inc.": [
         "Cortex Inc."
+      ],
+      "e.g. My automation script": [
+        "z. B. Mein Automatisierungsskript"
+      ],
+      "Enter a name": [
+        "Name eingeben"
       ],
       "Enter a new folder name": [
         "Neuen Ordnernamen eingeben"
@@ -6846,6 +6929,9 @@
       "Select": [
         "Auswählen"
       ],
+      "Select a provider": [
+        "Anbieter auswählen"
+      ],
       "Select a reason": [
         "Grund auswählen"
       ],
@@ -6857,9 +6943,6 @@
       ],
       "Selected traits will appear here automatically": [
         "Ausgewählte Merkmale werden hier automatisch angezeigt"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Teile uns mit, was deiner Meinung nach ${ BRAND_NAME } besser machen könnte"
       ],
       "Thomas": [
         "Max"
@@ -6902,6 +6985,26 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Auf ${ upsellPlanTitle } upgraden"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Sonstiges"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {
