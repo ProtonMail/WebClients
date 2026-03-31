@@ -402,6 +402,7 @@ const externalMemberB2BPlans: Set<PLANS | ADDON_NAMES> = new Set([
     PLANS.PASS_BUSINESS,
     PLANS.LUMO_BUSINESS,
     PLANS.VPN_PASS_BUNDLE_BUSINESS,
+    PLANS.MEET,
     PLANS.MEET_BUSINESS,
 ]);
 export const getHasExternalMemberCapableB2BPlan = (subscription: MaybeFreeSubscription) => {
