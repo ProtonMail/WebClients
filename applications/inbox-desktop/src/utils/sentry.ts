@@ -1,7 +1,5 @@
 import {
     addBreadcrumb,
-    anrIntegration,
-    captureMessage,
     childProcessIntegration,
     electronMinidumpIntegration,
     init,
@@ -10,6 +8,7 @@ import {
     setUser,
     SeverityLevel,
 } from "@sentry/electron/main";
+
 import { appSession, updateSession } from "./session";
 import pkg from "../../package.json";
 import { app } from "electron";
@@ -18,14 +17,10 @@ import { DESKTOP_FEATURES } from "../ipc/ipcConstants";
 import { isLinux, isMac, isWindows } from "./helpers";
 import Logger, { LogMessage, Transport } from "electron-log";
 import { getAppURL } from "../store/urlStore";
-import { getSettings } from "../store/settingsStore";
-import { getWindowBounds } from "../store/boundsStore";
-import { getAccountView, getCalendarView, getCurrentViewID, getMailView, getMainWindow } from "./view/viewManagement";
-import { NET_LOGGER_VIEW_PREFIX, sentryLogger } from "./log";
+import { sentryLogger } from "./log";
 import { isProdEnv } from "./isProdEnv";
-import { getOSInfo } from "./log/getOSInfo";
 
-const MAX_TAG_LENGTH = 32;
+const MAX_TAG_KEY_LENGTH = 32;
 
 const LOG_LEVEL_TO_SEVERITY: Record<LogMessage["level"], SeverityLevel> = {
     error: "error",
@@ -44,45 +39,74 @@ export async function initializeSentry() {
 
     const appID = await getAppID();
     const mailURL = new URL(getAppURL().mail);
-    const environment = mailURL.hostname.replace(/^mail./i, "");
+    const environment = mailURL.hostname.replace(/^mail\./i, "");
     const release = `${pkg.name}@${pkg.version}+${app.isPackaged ? "packaged" : "unpackaged"}`;
-    const dsn = process.env.DESKTOP_SENTRY_DSN.replace("sentry", `${mailURL.host}/api/core/v4/reports/sentry`);
+    const dsn = process.env.DESKTOP_SENTRY_DSN.replace("sentry", `mail-api.proton.me/core/v4/reports/sentry`);
 
     const debug = !isProdEnv();
 
     init({
         debug,
         beforeSend: (event) => {
-            if (debug) {
-                sentryLogger.silly(
-                    "beforeSend",
-                    JSON.stringify({
-                        level: event.level,
-                        type: event.type,
-                        message: event.message,
-                        tags: event.tags,
-                        user: event.user,
-                        extra: event.extra,
-                    }),
-                );
-            }
+            sentryLogger.info(
+                "beforeSend",
+                JSON.stringify({
+                    level: event.level,
+                    type: event.type,
+                    message: event.message,
+                    tags: event.tags,
+                    user: event.user,
+                    extra: event.extra,
+                }),
+            );
 
             return event;
         },
         enabled: true,
         dsn,
+        // NOTE: Main process session is disabled so this is a no-op. Re-enable MainProcessSession to activate.
         getSessions: () => [appSession(), updateSession()],
         maxBreadcrumbs: 100,
         attachStacktrace: true,
-        autoSessionTracking: true,
+        // Fraction of events sent to sentry (0.0 - 1.0). Set to 1.0 since the desktop app uses explicit
+        // opt-in reporting, so volume is already controlled at call sites. If we hit Sentry rate limits we should consider toggling this.
+        sampleRate: 1.0,
         environment,
         release,
-        integrations: (defaultIntegrations) => [
-            ...defaultIntegrations,
-            electronMinidumpIntegration(),
-            childProcessIntegration(),
-            anrIntegration({ captureStackTrace: true }),
-        ],
+        integrations: (defaultIntegrations) => {
+            const disabledIntegrations = new Set([
+                // Intercepts will-quit to send session-end envelope, delaying app exit.
+                // Re-enable when release health metrics are needed.
+                "MainProcessSession",
+                // We handle uncaught exceptions in captureUncaughtErrors.ts with explicit reporting.
+                // This integration would cause double-reporting. Therefore disabled.
+                "OnUncaughtException",
+                // Disable injecting Sentry preload into renderer sessions. Our renderers load Proton
+                // web apps that already have their own Sentry setup, and point to the Desktop app DSN.
+                "PreloadInjection",
+            ]);
+
+            return [
+                ...defaultIntegrations.filter((i) => !disabledIntegrations.has(i.name)),
+                // Captures native crashes that never reach the JS runtime (segfault, OOM kill).
+                electronMinidumpIntegration(),
+                // Adds breadcrumbs for all child/renderer process exits so they appear as context on subsequent events.
+                // events is set to false such that it disables auto-captureMessage as we report child-process-gone
+                // and render-process-gone explicitly in quitTracker.ts.
+                childProcessIntegration({
+                    events: false,
+                    breadcrumbs: [
+                        "clean-exit",
+                        "abnormal-exit",
+                        "killed",
+                        "crashed",
+                        "oom",
+                        "launch-failed",
+                        "integrity-failure",
+                    ],
+                }),
+            ];
+        },
     });
 
     setUser({
@@ -90,6 +114,7 @@ export async function initializeSentry() {
     });
 
     setTags({
+        "app.version": app.getVersion(),
         "appID.distribution": appID.distribution,
         "appID.hash": appID.hash,
         "os.isMac": isMac,
@@ -98,7 +123,7 @@ export async function initializeSentry() {
     });
 
     for (const [feature, enabled] of Object.entries(DESKTOP_FEATURES)) {
-        const tagName = `flag.${feature}`.substring(0, MAX_TAG_LENGTH);
+        const tagName = `flag.${feature}`.substring(0, MAX_TAG_KEY_LENGTH);
         setTag(tagName, enabled);
     }
 
@@ -111,35 +136,8 @@ export async function initializeSentry() {
             category: scope,
             level: LOG_LEVEL_TO_SEVERITY[level],
             message: serialize(data),
-            timestamp: date.getTime(),
+            timestamp: date.getTime() / 1000,
         });
-
-        if (level === "error" || level === "warn") {
-            // We want to skip reporting network logs that are related to a browser view.
-            // These should not be related with electron.
-            if (scope?.startsWith(NET_LOGGER_VIEW_PREFIX)) {
-                return;
-            }
-
-            captureMessage(serialize(data), {
-                level: LOG_LEVEL_TO_SEVERITY[level],
-                tags: { logScope: scope },
-                extra: {
-                    appID: getAppID(),
-                    settings: getSettings(),
-                    windowBounds: getWindowBounds(),
-                    mainWindow: {
-                        isMinimized: getMainWindow().isMinimized(),
-                        currentView: getCurrentViewID(),
-                        mailViewURL: getMailView()?.webContents.getURL(),
-                        calendarViewURL: getCalendarView()?.webContents.getURL(),
-                        accountViewURL: getAccountView()?.webContents.getURL(),
-                    },
-                    osInfo: getOSInfo(),
-                    appURL: getAppURL(),
-                },
-            });
-        }
     };
     sentryTransport.level = "silly";
     sentryTransport.transforms = [];

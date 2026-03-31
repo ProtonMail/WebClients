@@ -2,6 +2,7 @@ import { appendFileSync } from "node:fs";
 import { mainLogger } from ".";
 import Logger from "electron-log";
 import { app, powerMonitor, WebContents } from "electron";
+import { sentryReport } from "../sentryReport";
 
 class QuitTracker {
     private reason = "unknown";
@@ -74,6 +75,19 @@ class QuitTracker {
             } catch {
                 /* WebContents may be destroyed */
             }
+            // Skip clean-exit (normal shutdown) and killed (fires during update restarts
+            // and force-quit, too noisy to be actionable).
+            if (details.reason !== "clean-exit" && details.reason !== "killed") {
+                sentryReport.reportMessage("render-process-gone", {
+                    level: "error",
+                    tags: {
+                        reason: details.reason,
+                        exitCode: String(details.exitCode),
+                        view: getViewName(wc) ?? "",
+                    },
+                    extras: { url },
+                });
+            }
             mainLogger.error("render-process-gone", {
                 reason: details.reason,
                 exitCode: details.exitCode,
@@ -84,6 +98,19 @@ class QuitTracker {
         });
 
         app.on("child-process-gone", (_e, details) => {
+            // Skip clean-exit (normal shutdown) and killed (fires during update restarts
+            // and force-quit, too noisy to be actionable).
+            if (details.reason !== "clean-exit" && details.reason !== "killed") {
+                sentryReport.reportMessage("child-process-gone", {
+                    level: "error",
+                    tags: {
+                        processType: details.type,
+                        reason: details.reason,
+                        exitCode: String(details.exitCode),
+                        name: details.name ?? "",
+                    },
+                });
+            }
             mainLogger.error("child-process-gone", {
                 type: details.type,
                 reason: details.reason,
