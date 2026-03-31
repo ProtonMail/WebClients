@@ -1,4 +1,5 @@
 import { Suspense, lazy, memo, useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import { clsx } from 'clsx';
 import { c } from 'ttag';
@@ -9,6 +10,7 @@ import lumoCatIcon from '@proton/styles/assets/img/lumo/lumo-cat-icon.svg';
 
 import { SearchModal } from '../../components/Modals/SearchModal/SearchModal';
 import SettingsModal from '../../components/Modals/SettingsModal/SettingsModal';
+import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useSearchModal } from '../../providers/SearchModalProvider';
 import { useSidebar } from '../../providers/SidebarProvider';
@@ -28,22 +30,20 @@ import { useSidebarVisibility } from './hooks/useSidebarVisibility';
 import { useTextVisibility } from './hooks/useTextVisibility';
 
 import './LumoSidebar.scss';
-import {useLumoFlags} from "../../hooks/useLumoFlags";
 
 const ProjectsSidebarSection = lazy(() =>
     import('./ProjectsSidebarSection').then((m) => ({ default: m.ProjectsSidebarSection }))
 );
 
 const LumoSidebarContent = () => {
-    const history = useHistory();
     const { isVisible, isSmallScreen, isCollapsed, toggle, closeOnItemClick } = useSidebar();
+    const history = useHistory();
     const { showMobileHeader, showSearch, showGallery } = useSidebarVisibility();
     const showText = useTextVisibility(isCollapsed);
     const settingsModal = useModalStateObject();
     const searchModal = useModalStateObject();
     const { registerOpenFunction } = useSearchModal();
     const [searchValue, setSearchValue] = useState('');
-    const {APP_NAME} = useConfig();
 
     const { apiKeyManagement } = useLumoFlags();
 
@@ -129,7 +129,7 @@ const LumoSidebarContent = () => {
                         showText={showText}
                     />
 
-                    { apiKeyManagement &&
+                    {apiKeyManagement && (
                         <SidebarItem
                             icon="code"
                             label={c('collider_2025:Button').t`API`}
@@ -139,7 +139,7 @@ const LumoSidebarContent = () => {
                             }}
                             showText={showText}
                         />
-                    }
+                    )}
 
                     <SidebarItem
                         icon="cog-wheel"

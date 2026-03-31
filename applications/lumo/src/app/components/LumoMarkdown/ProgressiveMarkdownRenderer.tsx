@@ -6,24 +6,15 @@ import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
 import { visit } from 'unist-util-visit';
 
-import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { IcEye } from '@proton/icons/icons/IcEye';
 import { isIos, isIpad, isSafari } from '@proton/shared/lib/helpers/browser';
-import { ThemeTypes } from '@proton/shared/lib/themes/constants';
 
-import { useHtmlPreview } from '../../contexts/HtmlPreviewContext';
-import { useCopyNotification } from '../../hooks/useCopyNotification';
 import type { SearchItem } from '../../lib/toolCall/types';
 import { parseInteger } from '../../util/number';
 import { convertRefTokensToSpans, normalizeBrTags, processForLatexMarkdown } from '../../util/tokens';
-import LumoCopyButton from '../Conversation/messageChain/message/actionToolbar/LumoCopyButton';
-import {getDomain} from '../Conversation/messageChain/message/toolCall/helpers';
-import {InlineImageComponent} from './InlineImageComponent';
-import {SyntaxHighlighter} from './syntaxHighlighterConfig';
-import {useHtmlPreview} from '../../contexts/HtmlPreviewContext';
-import {LumoMarkdownCodeBlock} from './LumoMarkdownCodeBlock';
+import { getDomain } from '../Conversation/messageChain/message/toolCall/helpers';
+import { InlineImageComponent } from './InlineImageComponent';
+import { LumoMarkdownCodeBlock } from './LumoMarkdownCodeBlock';
 
 import './LumoMarkdown.scss';
 
@@ -345,47 +336,6 @@ const MarkdownBlock: React.FC<{
         return contentEqual;
     }
 );
-
-// Component for code blocks that can use hooks
-const CodeBlockWrapper: React.FC<{
-    language: string;
-    value: string;
-    theme: ThemeTypes;
-}> = ({ language, value, theme }) => {
-    const codeBlockRef = useRef<HTMLDivElement>(null);
-    const { showCopyNotification } = useCopyNotification();
-    const { onPreviewHtml } = useHtmlPreview();
-    const isHtml = language === 'html';
-    return (
-        <div ref={codeBlockRef} className="message-container code-container relative">
-            <div className="flex flex-row flex-nowrap">
-                <div className="flex-auto">
-                    <SyntaxHighlighter
-                        language={language}
-                        style={theme === ThemeTypes.LumoDark ? oneDark : oneLight}
-                        wrapLongLines={true}
-                        PreTag="div"
-                    >
-                        {value}
-                    </SyntaxHighlighter>
-                </div>
-            </div>
-            <div
-                className="lumo-no-copy absolute top-0 right-0 z-10 flex gap-1"
-                style={{ transform: 'translate(4px, -4px)' }}
-            >
-                {isHtml && (
-                    <Tooltip title="Preview HTML">
-                        <Button icon color="weak" shape="ghost" size="small" onClick={() => onPreviewHtml(value)}>
-                            <IcEye />
-                        </Button>
-                    </Tooltip>
-                )}
-                <LumoCopyButton containerRef={codeBlockRef} onSuccess={showCopyNotification} />
-            </div>
-        </div>
-    );
-};
 
 MarkdownBlock.displayName = 'MarkdownBlock';
 
