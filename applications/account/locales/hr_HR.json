@@ -209,9 +209,6 @@
       "Continue import": [
         "Nastavi uvoz"
       ],
-      "Continue to ${ name }": [
-        "Nastavite na ${ name }"
-      ],
       "Continue with Google": [
         "Nastavi s Googleom"
       ],
@@ -5977,6 +5974,9 @@
       "The groups feature is not supported on your current subscription. Previously created groups are disabled and can only be deleted.": [
         "Značajka grupa nije podržana na Vašoj trenutnoj pretplati. Prethodno stvorene grupe su onemogućene i mogu se samo izbrisati."
       ],
+      "The maximum donation amount is ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }": [
+        "Maksimalni iznos donacije je ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }"
+      ],
       "The name will be visible to your users while they are signed in.": [
         "Naziv će biti vidljiv vašim korisnicima dok su prijavljeni."
       ],
@@ -7074,9 +7074,6 @@
       ],
       "Display name": [
         "Zaslonski naziv"
-      ],
-      "Do you have any suggestions for our team?": [
-        "Imate li prijedloga za naš tim?"
       ],
       "Domain": [
         "Domena"
@@ -8838,9 +8835,6 @@
       ],
       "Daily email notifications": [
         "Dnevne obavijesti e-pošte"
-      ],
-      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
-        "Onemogućavanjem ove opcije izgubit ćete mogućnost primanja obavijesti u ${ BRAND_NAME } aplikacijama."
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Tijekom prvog mjeseca korištenja ${ BRAND_NAME } proizvoda"

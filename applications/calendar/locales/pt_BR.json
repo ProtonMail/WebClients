@@ -216,8 +216,8 @@
       "Continue import": [
         "Continuar importação"
       ],
-      "Continue to ${ calendarAppBareName }": [
-        "Continuar para ${ calendarAppBareName }"
+      "Continue to ${ planOrAppName }": [
+        "Continuar com ${ planOrAppName }"
       ],
       "Continue with Google": [
         "Continuar com o Google"
@@ -1099,6 +1099,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } licença do ${ LUMO_APP_NAME }",
         "${ seats } licenças do ${ LUMO_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } licença",
+        "${ seats } ${ MEET_APP_NAME } licenças"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } licença de assistente de escrita",
@@ -5062,8 +5066,17 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } inclui ${ BRAND_NAME } assistente de escrita Scribe"
       ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "O ${ MEET_APP_NAME } é uma solução de videoconferência com criptografia de ponta a ponta. Adicione-a ao seu plano para realizar reuniões seguras."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } licenças"
+      ],
       "${ MEET_APP_NAME } video call": [
         "Chamada de vídeo com ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } video conferencing": [
+        "Videoconferência do ${ MEET_APP_NAME }"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "A oferta vitalícia do ${ PASS_SHORT_APP_NAME } não tem preço de renovação, é um pagamento único para acesso vitalício ao ${ PASS_SHORT_APP_NAME }."
@@ -5188,6 +5201,9 @@
       ],
       "Ad targeting": [
         "Segmentação de anúncios"
+      ],
+      "Add ${ MEET_APP_NAME }": [
+        "Adicionar ${ MEET_APP_NAME }"
       ],
       "Added and removed participants will be notified about all the events in this series.": [
         "Os participantes adicionados e removidos serão notificados sobre todos os eventos desta série."
@@ -5552,6 +5568,9 @@
       ],
       "finance": [
         "finança"
+      ],
+      "for ${ price }": [
+        "por ${ price }"
       ],
       "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
         "Para segurança extra, você pode definir uma frase secreta. Ela não será incluída no convite do calendário. Lembre-se de compartilhá-la com seus convidados separadamente."
@@ -6719,6 +6738,9 @@
       "Add Zoom meeting": [
         "Adicionar uma reunião do Zoom"
       ],
+      "Additional comments": [
+        "Comentários adicionais"
+      ],
       "Address": [
         "Endereço"
       ],
@@ -6809,6 +6831,9 @@
       "Contacts": [
         "Contatos"
       ],
+      "Continue cancelling": [
+        "Continuar cancelamento"
+      ],
       "Copy": [
         "Copiar"
       ],
@@ -6847,9 +6872,6 @@
       ],
       "Description": [
         "Descrição"
-      ],
-      "Do you have any suggestions for our team?": [
-        "Você tem alguma sugestão para nossa equipe?"
       ],
       "Don't ask again": [
         "Não perguntar novamente"
@@ -7131,6 +7153,9 @@
       "Sign emails": [
         "Assinar e-mails"
       ],
+      "Skip feedback": [
+        "Pular feedback"
+      ],
       "Start date": [
         "Data de início"
       ],
@@ -7211,9 +7236,6 @@
       ],
       "What happened?": [
         "O que aconteceu?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Qual é o seu motivo principal do cancelamento ou downgrade?"
       ],
       "Your alias": [
         "Seu alias"
@@ -7530,6 +7552,18 @@
         "por ${ price }"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } licença"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } licenças"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } licença do ${ MEET_APP_NAME }",
+        "${ seats } licenças do ${ MEET_APP_NAME }"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: Videoconferência confidencial para as conversas importantes"
@@ -7582,6 +7616,15 @@
       "Up to ${ n } participant": [
         "Até ${ n } participante",
         "Até ${ n } participantes"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } licença incluída",
+        "${ seats } licenças incluídas"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Você pode ter até ${ TRIAL_MAX_MEET_SEATS } licenças do ${ MEET_SHORT_APP_NAME } durante o período de avaliação."
       ]
     },
     "Message": {
@@ -9669,6 +9712,9 @@
       "Email for booking confirmation": [
         "E-mail para confirmação de agendamento"
       ],
+      "Enter a name": [
+        "Insira um nome"
+      ],
       "Enter a short description or additional info": [
         "Inserir uma breve descrição ou informações adicionais"
       ],
@@ -9750,6 +9796,9 @@
       "Select": [
         "Selecionar"
       ],
+      "Select a provider": [
+        "Selecione um provedor"
+      ],
       "Select a reason": [
         "Selecione um motivo"
       ],
@@ -9758,9 +9807,6 @@
       ],
       "Select state": [
         "Selecionar estado"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Compartilhe o que você acha que poderia melhorar na ${ BRAND_NAME }"
       ],
       "Start typing an email address": [
         "Comece a digitar um endereço de e-mail"
@@ -9879,6 +9925,26 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "E-mail oficial da ${ BRAND_NAME }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Outros"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {

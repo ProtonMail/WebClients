@@ -342,8 +342,8 @@
       "Continue import": [
         "Pokračovať v importe"
       ],
-      "Continue to ${ name }": [
-        "Pokračovať na ${ name }"
+      "Continue to ${ planOrAppName }": [
+        "Pokračovať do ${ planOrAppName }"
       ],
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "Pokračovať s ${ nameToDisplay } ${ maybeEmailInBrackets }"
@@ -4985,6 +4985,9 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Použite tohto sprievodcu, aby vaša organizácia mohla okamžite využívať výhody špičkového ekosystému šifrovania a ochrany osobných údajov od spoločnosti ${ BRAND_NAME }."
       ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Je nám ľúto, že odchádzate. Ak máte chvíľku, veľmi by sme ocenili, keby ste nám povedali, prečo chcete zrušiť odber. Vaša spätná väzba nám pomáha vylepšovať ${ BRAND_NAME } pre všetkých."
+      ],
       "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
         "Môžete prispôsobiť zoznam domén, na ktorých by sa nemali spúšťať určité automatické funkcie v rozšírení prehliadača ${ PASS_APP_NAME } (automatické vypĺňanie, automatické navrhovanie, automatické ukladanie)."
       ],
@@ -6938,6 +6941,9 @@
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "Primárny kľúč pre používateľov ${ BRAND_NAME } nie je možné použiť na odosielanie"
+      ],
+      "Private users can be added to group once they've signed in for the first time: ${ displayedNames }": [
+        "Súkromní používatelia môžu byť pridaní do skupiny hneď po prvom prihlásení: ${ displayedNames }"
       ],
       "Process aborted": [
         "Proces prerušený"
@@ -9862,6 +9868,9 @@
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Ocenenie CNET editors choice s hodnotením 8,4 z 10"
       ],
+      "Code expired": [
+        "Kód vypršal"
+      ],
       "Coming soon": [
         "Už čoskoro"
       ],
@@ -9930,6 +9939,9 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Vytvorte štítok pre importované správy, časový rozsah pre tento import a štítky, ktoré chcete importovať."
+      ],
+      "Create a new code on your TV and try again.": [
+        "Vytvorte nový kód na televízore a skúste to znova."
       ],
       "Create a secure cloud for ${ value } member": [
         "Vytvoriť bezpečný cloud pre ${ value } člena",
@@ -10107,6 +10119,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Prechod na nižšiu verziu ukončí všetky pripojenia k plateným serverom ${ VPN_APP_NAME }."
+      ],
+      "Download ${ VPN_APP_NAME }": [
+        "Stiahnuť ${ VPN_APP_NAME }"
       ],
       "Download current logs": [
         "Stiahnuť aktuálne záznamy"
@@ -11236,6 +11251,9 @@
       "Product reviews, rankings, or guides": [
         "Recenzie produktov, hodnotenia alebo sprievodcovia"
       ],
+      "Protect this device too?": [
+        "Chrániť aj toto zariadenie?"
+      ],
       "Protect your account from quantum computing threats with quantum-resistant cryptographic keys.": [
         "Chráňte svoj účet pred hrozbami kvantového výpočtového výkonu pomocou kvantovo odolných kryptografických kľúčov."
       ],
@@ -11467,6 +11485,9 @@
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Prihláste sa do ${ MAIL_APP_NAME } pre aktivovanie vašej adresy"
       ],
+      "Sign-in complete": [
+        "Prihlásenie dokončené"
+      ],
       "Signed up": [
         "Prihlásený"
       ],
@@ -11676,6 +11697,9 @@
       ],
       "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "Vypršal odkaz na hlásenie, že ste nenastavili ${ BRAND_NAME } účet. Kontaktujte prosím náš tím podpory pre vyriešenie tohto problému."
+      ],
+      "The maximum donation amount is ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }": [
+        "Maximálna výška daru je ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }"
       ],
       "The most recent data update, excluding breaches.": [
         "Najnovšia aktualizácia údajov s výnimkou prípadov úniku."
@@ -11922,6 +11946,9 @@
       ],
       "Total: ${ totalPrice }": [
         "Celkom: ${ totalPrice }"
+      ],
+      "Trial ends on ${ formattedPeriodEndDate }": [
+        "Skúšobná doba skončí ${ formattedPeriodEndDate }"
       ],
       "trusted device": [
         "dôveryhodné zariadenie"
@@ -12525,6 +12552,9 @@
         "Potom vám bude každé ${ renewCycle } mesiace fakturovaná suma ${ renewAmountStr }. Zrušiť môžete kedykoľvek.",
         "Potom vám bude každých ${ renewCycle } mesiacov fakturovaná suma ${ renewAmountStr }. Zrušiť môžete kedykoľvek.",
         "Potom vám bude každých ${ renewCycle } mesiacov fakturovaná suma ${ renewAmountStr }. Zrušiť môžete kedykoľvek."
+      ],
+      "You're now signed in on your TV.": [
+        "Teraz ste prihlásený/-á v televízii."
       ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "Povolili ste preposielanie na ${ MAX_SYNC_PAID_USER } adrese Gmail. Ak chcete pridať ďalšiu, najprv jednu z nich deaktivujte.",
@@ -13355,6 +13385,9 @@
       "Add group member": [
         "Pridať člena skupiny"
       ],
+      "Additional comments": [
+        "Doplňujúce poznámky"
+      ],
       "Address": [
         "Adresa"
       ],
@@ -13664,6 +13697,9 @@
       "Contacts": [
         "Kontakty"
       ],
+      "Continue cancelling": [
+        "Pokračovať v zrušení"
+      ],
       "Conversation grouping": [
         "Zoskupovanie konverzácií"
       ],
@@ -13769,9 +13805,6 @@
       "Display name": [
         "Zobrazované meno"
       ],
-      "Do you have any suggestions for our team?": [
-        "Máte nejaké návrhy pre náš tím?"
-      ],
       "Domain": [
         "Doména"
       ],
@@ -13789,6 +13822,9 @@
       ],
       "Don't show this again": [
         "Nabudúce nezobrazovať"
+      ],
+      "Donate ${ minimumDonation } or more to the ${ BRAND_NAME } Foundation": [
+        "Prispejte ${ minimumDonation } alebo viac nadácii ${ BRAND_NAME }"
       ],
       "Donation amount": [
         "Výška daru"
@@ -14071,6 +14107,9 @@
       ],
       "Main": [
         "Hlavné"
+      ],
+      "Main reason for cancelling": [
+        "Hlavný dôvod zrušenia"
       ],
       "Manage categories": [
         "Spravovať kategórie"
@@ -14456,6 +14495,9 @@
       "Single sign-on URL": [
         "URL adresa jednotného prihlásenia"
       ],
+      "Skip feedback": [
+        "Preskočiť spätnú väzbu"
+      ],
       "SMTP port": [
         "SMTP port"
       ],
@@ -14662,9 +14704,6 @@
       ],
       "What is the main reason you are deleting your account?": [
         "Aký je hlavný dôvod, prečo mažete svoj účet?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Aký je váš hlavný dôvod na zrušenie alebo zníženie predplatného?"
       ],
       "Who can send to this group address?": [
         "Kto môže posielať na túto skupinovú adresu?"
@@ -15480,29 +15519,17 @@
       "Data never used for AI training": [
         "Údaje nikdy nevyužívané na trénovanie AI"
       ],
-      "Data retention policies": [
-        "Zásady uchovávania údajov"
-      ],
       "Document & spreadsheet editor": [
         "Editor dokumentov a tabuliek"
       ],
       "Email writing assistant": [
         "Asistent písania emailov"
       ],
-      "Everything from ${ title }, plus...": [
-        "Všetko z ${ title }, navyše..."
-      ],
-      "Everything in Meet Professional, plus:": [
-        "Všetko z Meet Professional, navyše:"
-      ],
       "Open source": [
         "Open source"
       ],
       "Password manager with team vaults": [
         "Správca hesiel s tímovými trezormi"
-      ],
-      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
-        "Súkromný AI chat (${ LUMO_SHORT_APP_NAME })"
       ],
       "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
         "Súkromný a neobmedzený AI chat (${ LUMO_SHORT_APP_NAME })"
@@ -15515,12 +15542,6 @@
       ],
       "Strict no-logs policy": [
         "Prísna zásada neuchovávania záznamov"
-      ],
-      "Video meetings, ${ PAID_MAX_PARTICIPANTS } participants": [
-        "Videoschôzky, ${ PAID_MAX_PARTICIPANTS } účastníkov"
-      ],
-      "VPN with ad-blocker and malware protection": [
-        "VPN s blokovaním reklám a ochranou pred malvérom"
       ]
     },
     "meet_signup_2025: title": {
@@ -17076,8 +17097,8 @@
       "Daily email notifications": [
         "Denné emailové notifikácie"
       ],
-      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
-        "Deaktiváciou tejto funkcie odstránite možnosť prijímať notifikácie v aplikáciách ${ BRAND_NAME }"
+      "Disabling this means you won't get in-app notifications about promotions, new features, new ${ BRAND_NAME } services, and reminders.": [
+        "Deaktivovaním tejto možnosti nebudete dostávať upozornenia v aplikácii o akciách, nových funkciách, nových službách ${ BRAND_NAME } a pripomienkach."
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Počas prvého mesiaca používania produktu ${ BRAND_NAME }"
@@ -18816,6 +18837,9 @@
       "Anderson": [
         "Anderson"
       ],
+      "Anything you'd like us to know": [
+        "Máte niečo, čo by sme mali vedieť"
+      ],
       "Anytown": [
         "Niekdetam"
       ],
@@ -18857,6 +18881,9 @@
       ],
       "End date": [
         "Dátum ukončenia"
+      ],
+      "Enter a name": [
+        "Zadajte meno"
       ],
       "Enter name": [
         "Zadajte názov"
@@ -18936,6 +18963,9 @@
       "Select": [
         "Vybrať"
       ],
+      "Select a provider": [
+        "Vyberte poskytovateľa"
+      ],
       "Select a reason": [
         "Vyberte dôvod"
       ],
@@ -18944,9 +18974,6 @@
       ],
       "Select state": [
         "Vyberte stav"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Dajte nám vedieť, čo by podľa vás mohlo vylepšiť ${ BRAND_NAME }"
       ],
       "Start date": [
         "Dátum začiatku"
@@ -19212,6 +19239,26 @@
       ],
       "Unknown": [
         "Neznáme"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Iné"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Recovery Email": {
@@ -21064,6 +21111,9 @@
       "Yearly": [
         "Ročne"
       ],
+      "You are all set": [
+        "Všetko je nastavené"
+      ],
       "Your plan": [
         "Váš plán"
       ],
@@ -21087,6 +21137,9 @@
       "Email address": [
         "Emailová adresa"
       ],
+      "Name shown in meetings": [
+        "Meno zobrazené v schôdzkach"
+      ],
       "Organization name": [
         "Názov organizácie"
       ],
@@ -21095,6 +21148,12 @@
       ],
       "Username": [
         "Používateľské meno"
+      ],
+      "Your email": [
+        "Váš email"
+      ],
+      "Your password": [
+        "Vaše heslo"
       ]
     },
     "signup: Action": {
@@ -21197,23 +21256,23 @@
       ]
     },
     "Signup: Meet": {
-      "**Trusted by over 100 million** users and organizations": [
-        "**Dôvera viac ako 100 miliónov** používateľov a organizácií"
+      "Choose your display name to continue": [
+        "Pre pokračovanie zadajte meno, ktoré bude zobrazené"
       ],
-      "Get ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
-        "Získajte ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      "Choose your display name to continue scheduling your meeting": [
+        "Pre pokračovanie v plánovaní schôdzky si vyberte svoje zobrazené meno"
       ],
-      "Own a business?": [
-        "Vlastníte firmu?"
+      "Create a ${ BRAND_NAME } account": [
+        "Vytvoriť účet ${ BRAND_NAME }"
       ],
-      "Sign up, meet privately": [
-        "Zaregistrujte sa, stretnite sa súkromne"
+      "Create your ${ BRAND_NAME } account to create rooms": [
+        "Vytvorte si účet ${ BRAND_NAME } na vytváranie miestností"
       ],
-      "Start using ${ MEET_APP_NAME } now": [
-        "Začnite používať ${ MEET_APP_NAME } teraz"
+      "Create your ${ BRAND_NAME } account to schedule a meeting": [
+        "Vytvorte si účet ${ BRAND_NAME }, aby ste si mohli naplánovať schôdzku"
       ],
-      "Your account also includes access to ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME } free features.": [
-        "Váš účet tiež zahŕňa bezplatný prístup k funkciám aplikácií ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ PASS_SHORT_APP_NAME }."
+      "Create your ${ BRAND_NAME } account to use your personal room": [
+        "Vytvorte si svoj účet ${ BRAND_NAME }, aby ste mohli používať svoju osobnú miestnosť"
       ]
     },
     "signup_2024: Feature": {
@@ -21967,12 +22026,6 @@
         "${ ipAddresses } dedikované servery",
         "${ ipAddresses } dedikovaných serverov",
         "${ ipAddresses } dedikovaných serverov"
-      ],
-      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
-        "${ LUMO_APP_NAME } pre ${ maxLumo } používateľa",
-        "${ LUMO_APP_NAME } pre ${ maxLumo } používateľov",
-        "${ LUMO_APP_NAME } pre ${ maxLumo } používateľov",
-        "${ LUMO_APP_NAME } pre ${ maxLumo } používateľov"
       ],
       "${ n } calendar per user": [
         "${ n } kalendár na používateľa",

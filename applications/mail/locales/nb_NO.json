@@ -301,6 +301,9 @@
       "Continue import": [
         "Fortsett importen"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Fortsett til ${ planOrAppName }"
+      ],
       "Continue with categories": [
         "Fortsett med kategorier"
       ],
@@ -4169,6 +4172,9 @@
       "We didn't find any known trackers and tracking URLs in this email.": [
         "Vi fant ingen kjente sporere og sporingsnettadresser i denne e-posten."
       ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Vi beklager at du forlater oss. Hvis du har et øyeblikk, setter vi stor pris på å høre hvorfor du ønsker å avbryte abonnementet. Tilbakemeldingen din hjelper oss med å gjøre ${ BRAND_NAME } bedre for alle."
+      ],
       "When do you want your message to be sent?": [
         "Når vil du at meldingen skal sendes?"
       ],
@@ -7430,8 +7436,7 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde",
-        "Sett inn bilder"
+        "Sett inn bilde"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -7525,9 +7530,6 @@
       ],
       "Low Priority": [
         "Lav prioritet"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Gjør ${ MAIL_APP_NAME } til standard e-postapplikasjon."
       ],
       "Manage your folders": [
         "Administrer mappene dine"
@@ -9200,6 +9202,9 @@
       "Add to group": [
         "Legg til gruppe"
       ],
+      "Additional comments": [
+        "Ytterligere kommentarer"
+      ],
       "Address": [
         "Adresse"
       ],
@@ -9344,6 +9349,9 @@
       "Contacts": [
         "Kontakter"
       ],
+      "Continue cancelling": [
+        "Fortsett avbestillingen"
+      ],
       "Copy": [
         "Kopier"
       ],
@@ -9382,9 +9390,6 @@
       ],
       "Did not follow instructions": [
         "Fulgte ikke instruksjoner"
-      ],
-      "Do you have any suggestions for our team?": [
-        "Har du noen forslag til teamet vårt?"
       ],
       "Don't ask again": [
         "Ikke spør igjen"
@@ -9584,6 +9589,9 @@
       "Main": [
         "Hjem"
       ],
+      "Main reason for cancelling": [
+        "Hovedårsaken til kanselleringen"
+      ],
       "Manage categories": [
         "Administrer kategorier"
       ],
@@ -9779,11 +9787,17 @@
       "Sender": [
         "Avsender"
       ],
+      "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
+        "Del tilgjengeligheten din med bestillingssider i ${ CALENDAR_APP_NAME }, og arranger sikre møter med ${ MEET_APP_NAME }."
+      ],
       "Sign emails": [
         "Signer e-poster"
       ],
       "Size:": [
         "Størrelse:"
+      ],
+      "Skip feedback": [
+        "Hopp over tilbakemelding"
       ],
       "Social": [
         "Sosiale medier"
@@ -9901,9 +9915,6 @@
       ],
       "What happened?": [
         "Hva skjedde?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Hva er hovedgrunnen til å kansellere eller nedgradere?"
       ],
       "Which category should this be recategorized under?": [
         "Hvilken kategori skal dette omkategoriseres under?"
@@ -11206,7 +11217,7 @@
         "200 GB med skylagring som lar deg lagre, synkronisere og dele filer lett. Sikret med ende-til-ende-kryptering."
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
-        "Avansert nettverkssikkerhet og tilgangsadministrasjon med dedikerte sikre porttjenere"
+        "Avansert nettverkssikkerhet og tilgangsadministrasjon med dedikerte sikre gateway-tjenere"
       ],
       "Advanced protection for teams that goes beyond industry standards.": [
         "Avansert beskyttelse for team som går utover industristandarder."
@@ -11410,7 +11421,7 @@
         "På samme måte som en mappe, er et hvelv en praktisk måte å organisere elementene dine på."
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
-        "Lås bedriftens ressurser fra det offentlige internett og gjør dem bare tilgjengelige via dine private porttjenere."
+        "Lås bedriftens ressurser fra det offentlige internett og gjør dem bare tilgjengelige via dine private gatewayer."
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Behandle abonnementet ditt, inkludert tilpasning av planen din. Betalingsmåter akseptert er kredittkort, PayPal, kryptovaluta og bankoverføring."
@@ -11578,7 +11589,7 @@
         "Støtte for mange plattformer"
       ],
       "Private gateways": [
-        "Private porttjenere"
+        "Private gateway-servere"
       ],
       "Support for ${ n } custom email domain": [
         "Støtte for ${ n } egendefinert e-postdomene",
@@ -12020,12 +12031,6 @@
       ],
       "No parent folder": [
         "Ingen overordnet mappe"
-      ],
-      "Remind me later": [
-        "Påminn meg senere"
-      ],
-      "Yes, don't show again": [
-        "Ja, ikke vis igjen"
       ]
     },
     "Option group": {
@@ -12457,6 +12462,9 @@
       "Anderson": [
         "Andersen"
       ],
+      "Anything you'd like us to know": [
+        "Er det noe mer du vil at vi skal vite om"
+      ],
       "Anytown": [
         "By"
       ],
@@ -12477,6 +12485,9 @@
       ],
       "End date": [
         "Sluttdato"
+      ],
+      "Enter a name": [
+        "Skriv inn et navn"
       ],
       "Enter passphrase": [
         "Skriv inn passfrase"
@@ -12574,6 +12585,9 @@
       "Select": [
         "Velg"
       ],
+      "Select a provider": [
+        "Velg en leverandør"
+      ],
       "Select a reason": [
         "Velg en årsak"
       ],
@@ -12582,9 +12596,6 @@
       ],
       "Select state": [
         "Velg stat"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Del det du tror kan gjøre ${ BRAND_NAME } bedre"
       ],
       "Start date": [
         "Startdato"
@@ -12731,6 +12742,26 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Offisiell e-post fra ${ BRAND_NAME }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Annen"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {
@@ -15249,9 +15280,6 @@
       ],
       "Invalid verification code": [
         "Ugyldig verifiseringskode"
-      ],
-      "Keep this banner hidden?": [
-        "Holde dette banneret skjult?"
       ],
       "Label as": [
         "Merk som"

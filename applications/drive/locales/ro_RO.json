@@ -252,6 +252,9 @@
       "Continue on web": [
         "Continuare pe web"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Continuare cu ${ planOrAppName }"
+      ],
       "Continue transfers": [
         "Continuare transferuri"
       ],
@@ -1325,6 +1328,11 @@
         "Licențe ${ LUMO_APP_NAME }: ${ seats }",
         "Licențe ${ LUMO_APP_NAME }: ${ seats }",
         "Licențe ${ LUMO_APP_NAME }: ${ seats }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "Licențe ${ MEET_APP_NAME } incluse: ${ seats }",
+        "Licențe ${ MEET_APP_NAME } incluse: ${ seats }",
+        "Licențe ${ MEET_APP_NAME } incluse: ${ seats }"
       ],
       "${ seats } writing assistant seat": [
         "Licențe asistent de scriere: ${ seats }",
@@ -3052,6 +3060,9 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Utilizați acest ghid pentru ca organizația să beneficieze imediat de criptarea și ecosistemul de confidențialitate maximă oferite de ${ BRAND_NAME } ."
       ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Ne pare rău să vă vedem plecând. Dacă aveți un moment, am aprecia foarte mult să aflăm de ce doriți să anulați. Feedback-ul dvs. ne ajută să facem ${ BRAND_NAME } mai bun pentru toată lumea."
+      ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Cu grupurile de contacte, puteți trimite mesaje tuturor celor din grup cu un singur clic."
       ],
@@ -3888,6 +3899,12 @@
       ],
       "Unable to set photo as cover": [
         "Fotografia nu poate fi stabilită ca și copertă."
+      ],
+      "Unable to start the search": [
+        "Nu se poate iniția căutarea"
+      ],
+      "Unable to start the search: not enough storage space": [
+        "Nu se poate iniția căutarea: spațiu de stocare insuficient"
       ],
       "Unexpected error, we can't import the contacts": [
         "Eroare neașteptată. Nu se pot importa contactele."
@@ -5025,6 +5042,15 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } include asistentul de scriere ${ BRAND_NAME } Scribe"
       ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } este o soluție de videoconferință criptată bilateral. Adăugați-o la planul personal pentru a găzdui conferințe securizate."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Licențe ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } video conferencing": [
+        "Conferințe video ${ MEET_APP_NAME }"
+      ],
       "${ normalizedProgress }% completed": [
         "${ normalizedProgress }% finalizat"
       ],
@@ -5192,6 +5218,9 @@
       ],
       "Ad targeting": [
         "Publicitate țintită"
+      ],
+      "Add ${ MEET_APP_NAME }": [
+        "Adăugare ${ MEET_APP_NAME }"
       ],
       "Address copied to clipboard": [
         "Adresa a fost copiată în memorie."
@@ -5686,6 +5715,9 @@
       ],
       "Folders you sync from your computer will appear here.": [
         "Folderele sincronizate de pe calculator vor apărea aici."
+      ],
+      "for ${ price }": [
+        "cu ${ price }"
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Pentru cele mai bune rezultate, evitați activitățile de redare în flux și cele care necesită multă memorie sau împărțiți încărcarea în mai puține fișiere."
@@ -7204,6 +7236,9 @@
       "Add to group": [
         "Adăugare la grup"
       ],
+      "Additional comments": [
+        "Comentarii adiționale"
+      ],
       "Address": [
         "Adresa"
       ],
@@ -7321,6 +7356,9 @@
       "Contacts": [
         "Contacte"
       ],
+      "Continue cancelling": [
+        "Continuare anulare"
+      ],
       "Copy": [
         "Copiere"
       ],
@@ -7373,9 +7411,6 @@
       ],
       "Disable this link on a specific date": [
         "Dezactivare această legătură web la o dată specifică"
-      ],
-      "Do you have any suggestions for our team?": [
-        "Aveți sugestii pentru echipa noastră?"
       ],
       "Don't ask again": [
         "Nu mă mai întreba"
@@ -7536,6 +7571,9 @@
       "Main": [
         "Principală"
       ],
+      "Main reason for cancelling": [
+        "Motiv principal pentru anulare"
+      ],
       "Malware": [
         "Malware"
       ],
@@ -7692,6 +7730,9 @@
       "Size": [
         "Mărime"
       ],
+      "Skip feedback": [
+        "Omitere feedback"
+      ],
       "Skip file": [
         "Omitere fișier"
       ],
@@ -7790,9 +7831,6 @@
       ],
       "What happened?": [
         "Ce s-a întâmplat?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Care este motivul principal pentru anulare sau retrogradare?"
       ],
       "Yes, I want to permanently delete my old files": [
         "Da, vreau să șterg definitiv fișierele mele vechi."
@@ -8087,6 +8125,19 @@
         "cu ${ price }"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } licență"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Licențe ${ MEET_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "Licențe ${ MEET_APP_NAME }: ${ seats }",
+        "Licențe ${ MEET_APP_NAME }: ${ seats }",
+        "Licențe ${ MEET_APP_NAME }: ${ seats }"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: conferințe video confidențiale pentru conversațiile importante"
@@ -8143,6 +8194,16 @@
         "Maxim participanți: ${ n }",
         "Maxim participanți: ${ n }",
         "Maxim participanți: ${ n }"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "Licențe incluse: ${ seats }",
+        "Licențe incluse: ${ seats }",
+        "Licențe incluse: ${ seats }"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } licențe în perioada de probare."
       ]
     },
     "Message": {
@@ -10512,6 +10573,9 @@
       "Anderson": [
         "Andrei"
       ],
+      "Anything you'd like us to know": [
+        "Orice ați dori să știm"
+      ],
       "Anytown": [
         "București"
       ],
@@ -10529,6 +10593,9 @@
       ],
       "Email": [
         "E-mail"
+      ],
+      "Enter a name": [
+        "Introduceți un nume"
       ],
       "Enter a new file name": [
         "Introducere nume fișier"
@@ -10602,6 +10669,9 @@
       "Select": [
         "Selectare"
       ],
+      "Select a provider": [
+        "Selectați un furnizor"
+      ],
       "Select a reason": [
         "Selectați un motiv"
       ],
@@ -10610,9 +10680,6 @@
       ],
       "Select state": [
         "Selectare țară"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Spuneți-ne ce credeți că ar face să fie mai bun ${ BRAND_NAME }"
       ],
       "Start typing an email address": [
         "Introduceți o adresă de e-mail"
@@ -10730,6 +10797,26 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Mesaj oficial de la ${ BRAND_NAME }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Altul"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {

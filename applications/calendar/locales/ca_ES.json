@@ -216,8 +216,8 @@
       "Continue import": [
         "Continuar importació"
       ],
-      "Continue to ${ calendarAppBareName }": [
-        "Continua amb ${ calendarAppBareName }"
+      "Continue to ${ planOrAppName }": [
+        "Continuar amb ${ planOrAppName }"
       ],
       "Continue with Google": [
         "Continua amb Google"
@@ -1099,6 +1099,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } llicència ${ LUMO_APP_NAME }",
         "${ seats } llicències ${ LUMO_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } llicència de ${ MEET_APP_NAME }",
+        "${ seats } llicències de ${ MEET_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } llicència de l'assistent d'escriptura",
@@ -3167,6 +3171,9 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Utilitzeu aquesta guia per aconseguir que la vostra organització es beneficiï ràpidament de l'ecosistema d'encriptació i privadesa líder del sector del ${ BRAND_NAME }."
       ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Ens sap greu que marxeu. Si teniu un moment, us agrairíem molt que ens diguéssiu per què voleu cancel·lar la subscripció. Els vostres comentaris ens ajuden a fer que ${ BRAND_NAME } sigui millor per a tothom."
+      ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Amb els grups de contactes, podeu enviar correus electrònics a tots els membres del grup amb un sol clic."
       ],
@@ -5068,8 +5075,17 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } inclou l'assistent d'escriptura ${ BRAND_NAME } Scribe."
       ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } és una aplicació de videoconferència amb xifratge d'extrem a extrem. Afegiu-la al vostre pla per allotjar reunions segures."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Llicències de ${ MEET_APP_NAME }"
+      ],
       "${ MEET_APP_NAME } video call": [
         "${ MEET_APP_NAME } videotrucada"
+      ],
+      "${ MEET_APP_NAME } video conferencing": [
+        "Videoconferència de ${ MEET_APP_NAME }"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "L'oferta permanent del ${ PASS_SHORT_APP_NAME } no té preu de renovació, és un pagament únic per a l'accés permanent al ${ PASS_SHORT_APP_NAME }."
@@ -5194,6 +5210,9 @@
       ],
       "Ad targeting": [
         "Orientació d'anuncis"
+      ],
+      "Add ${ MEET_APP_NAME }": [
+        "Afegiu-hi ${ MEET_APP_NAME }"
       ],
       "Added and removed participants will be notified about all the events in this series.": [
         "Els participants afegits i els esborrats seran notificats de tots els esdeveniments d'aquesta sèrie."
@@ -5535,6 +5554,9 @@
       "Everything in ${ planOrAppName }": [
         "Tot a ${ planOrAppName }"
       ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Tot el que inclou ${ planOrAppName }, i a més:"
+      ],
       "Existent and added participants will be notified.": [
         "Els participants existents i els afegits seran notificats."
       ],
@@ -5558,6 +5580,9 @@
       ],
       "finance": [
         "finances"
+      ],
+      "for ${ price }": [
+        "per ${ price }"
       ],
       "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
         "Per a més seguretat, podeu establir una frase de contrasenya. No s'inclourà a la invitació del calendari; recordeu de compartir-la amb els vostres convidats per separat."
@@ -6731,6 +6756,9 @@
       "Add Zoom meeting": [
         "Afegiu-hi una reunió per Zoom"
       ],
+      "Additional comments": [
+        "Comentaris addicionals"
+      ],
       "Address": [
         "Adreça"
       ],
@@ -6821,6 +6849,9 @@
       "Contacts": [
         "Contactes"
       ],
+      "Continue cancelling": [
+        "Continueu amb la cancel·lació"
+      ],
       "Copy": [
         "Copia"
       ],
@@ -6859,9 +6890,6 @@
       ],
       "Description": [
         "Descripció"
-      ],
-      "Do you have any suggestions for our team?": [
-        "Teniu algun suggeriment pel nostre equip?"
       ],
       "Don't ask again": [
         "No tornis a preguntar"
@@ -7007,6 +7035,9 @@
       "Main": [
         "Principal"
       ],
+      "Main reason for cancelling": [
+        "Motiu principal de la cancel·lació"
+      ],
       "Manage categories": [
         "Gestiona les categories"
       ],
@@ -7143,6 +7174,9 @@
       "Sign emails": [
         "Signar correu electrònics"
       ],
+      "Skip feedback": [
+        "Ometre els comentaris"
+      ],
       "Start date": [
         "Data d'inici"
       ],
@@ -7223,9 +7257,6 @@
       ],
       "What happened?": [
         "Què ha passat?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Quin és el vostre principal motiu per cancel·lar o reduir la subscripció?"
       ],
       "Your alias": [
         "El vostre àlies"
@@ -7542,6 +7573,18 @@
         "per ${ price }"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "Llicència de ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Llicències de ${ MEET_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } llicència de ${ MEET_APP_NAME }",
+        "${ seats } llicències de ${ MEET_APP_NAME }"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: Videoconferències confidencials per les converses importants"
@@ -7575,6 +7618,9 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Compartició de pantalla xifrada d’extrem a extrem i xat efímer durant la trucada"
       ],
+      "Hosts can record meetings locally on their computers": [
+        "Els amfitrions poden gravar reunions localment als seus ordinadors"
+      ],
       "Meeting recording": [
         "Enregistrament de la reunió"
       ],
@@ -7594,6 +7640,19 @@
       "Up to ${ n } participant": [
         "Fins a ${ n } participant",
         "Fins a ${ n } participants"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videoconferències, ${ n } participant",
+        "Videoconferències, ${ n } participants"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } llicència inclosa",
+        "${ seats } llicències incloses"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Podeu tenir fins a ${ TRIAL_MAX_MEET_SEATS } llicències de ${ MEET_SHORT_APP_NAME } durant el període de prova."
       ]
     },
     "Message": {
@@ -8068,6 +8127,9 @@
       "Data breach monitoring": [
         "Monitoratge de filtracions de dades"
       ],
+      "Data retention policies": [
+        "Polítiques de conservació de dades"
+      ],
       "Dedicated servers optimized for streaming": [
         "Servidors dedicats optimitzats per a estríming"
       ],
@@ -8176,6 +8238,9 @@
       ],
       "Priority support & live chat": [
         "Suport prioritari i xat en directe"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Xat d'IA privat (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "Còpia de seguretat de fotos privada"
@@ -8322,6 +8387,9 @@
       "Vault sharing with up to ${ n } person": [
         "Ús compartit de la caixa forta amb fins a ${ n } persona",
         "Ús compartit de la caixa forta amb fins a ${ n } persones"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN amb bloqueig d’anuncis i protecció contra programari maliciós"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escanegem el web fosc per a comprovar si les vostres adreces o àlies de ${ BRAND_NAME } s'han filtrat i us avisem immediatament si trobem alguna cosa."
@@ -9663,6 +9731,9 @@
       "Anderson": [
         "Pujol"
       ],
+      "Anything you'd like us to know": [
+        "Qualsevol cosa que vulgueu que sapiguem"
+      ],
       "Anytown": [
         "Castellvent"
       ],
@@ -9677,6 +9748,9 @@
       ],
       "Email for booking confirmation": [
         "Correu electrònic per la confirmació de la reserva"
+      ],
+      "Enter a name": [
+        "Introduïu un nom"
       ],
       "Enter a short description or additional info": [
         "Introduïu una descripció breu o informació addicional"
@@ -9759,6 +9833,9 @@
       "Select": [
         "Seleccionar"
       ],
+      "Select a provider": [
+        "Seleccioneu un proveïdor"
+      ],
       "Select a reason": [
         "Seleccioneu un motiu"
       ],
@@ -9767,9 +9844,6 @@
       ],
       "Select state": [
         "Seleccioneu l'estat"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Compartiu el que penseu que podria millorar ${ BRAND_NAME }"
       ],
       "Start typing an email address": [
         "Comenceu a escriure una adreça de correu electrònic"
@@ -9888,6 +9962,26 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Missatge oficial de ${ BRAND_NAME }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Altres"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Referral": {

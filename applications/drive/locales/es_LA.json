@@ -249,6 +249,9 @@
       "Continue on web": [
         "Continuar en la web"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Continuar con ${ planOrAppName }"
+      ],
       "Continue transfers": [
         "Continuar transferencias"
       ],
@@ -1315,6 +1318,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } licencia de ${ LUMO_APP_NAME }",
         "${ seats } licencias de ${ LUMO_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } licencia de ${ MEET_APP_NAME }",
+        "${ seats } licencias de ${ MEET_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } licencia del asistente de escritura",
@@ -3031,6 +3038,9 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Use esta guía para que su organización se beneficie inmediatamente del cifrado y ecosistema de privacidad líderes en la industria de ${ BRAND_NAME }."
       ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Lamentamos que se vaya. Si tiene un momento, agradeceríamos mucho saber por qué desea cancelar. Sus comentarios nos ayudan a mejorar ${ BRAND_NAME } para todos."
+      ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Con los grupos de contactos, puede enviar correos electrónicos a todos los miembros del grupo con un clic."
       ],
@@ -3860,6 +3870,12 @@
       ],
       "Unable to set photo as cover": [
         "No se puede establecer la foto como portada."
+      ],
+      "Unable to start the search": [
+        "No se pudo iniciar la búsqueda"
+      ],
+      "Unable to start the search: not enough storage space": [
+        "No se pudo iniciar la búsqueda: no hay suficiente espacio de almacenamiento"
       ],
       "Unexpected error, we can't import the contacts": [
         "Error inesperado, no podemos importar los contactos"
@@ -4960,6 +4976,15 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } incluye el asistente de escritura ${ BRAND_NAME } Scribe"
       ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } es una solución de videoconferencia cifrada de extremo a extremo. Agréguela a su plan para organizar reuniones seguras."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Licencias de ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } video conferencing": [
+        "Videoconferencia de ${ MEET_APP_NAME }"
+      ],
       "${ normalizedProgress }% completed": [
         "${ normalizedProgress }% completado"
       ],
@@ -5112,6 +5137,9 @@
       ],
       "Ad targeting": [
         "Orientación de anuncios"
+      ],
+      "Add ${ MEET_APP_NAME }": [
+        "Agregar ${ MEET_APP_NAME }"
       ],
       "Address copied to clipboard": [
         "Se copió la dirección al portapapeles."
@@ -5552,6 +5580,9 @@
       "Everything in ${ planOrAppName }": [
         "Todo en ${ planOrAppName }"
       ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Todo lo incluido en ${ planOrAppName } y además:"
+      ],
       "Expired": [
         "Expirado"
       ],
@@ -5599,6 +5630,9 @@
       ],
       "Folders you sync from your computer will appear here.": [
         "Las carpetas que sincronice de su computadora aparecerán aquí."
+      ],
+      "for ${ price }": [
+        "por ${ price }"
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Para mejores resultados, evite las actividades de streaming o demandantes de memoria, o divida la carga de archivos en lotes más pequeños."
@@ -7100,6 +7134,9 @@
       "Add to group": [
         "Agregar al grupo"
       ],
+      "Additional comments": [
+        "Comentarios adicionales"
+      ],
       "Address": [
         "Dirección"
       ],
@@ -7220,6 +7257,9 @@
       "Contacts": [
         "Contactos"
       ],
+      "Continue cancelling": [
+        "Continuar cancelación"
+      ],
       "Copy": [
         "Copiar"
       ],
@@ -7271,9 +7311,6 @@
       ],
       "Disable this link on a specific date": [
         "Desactive este enlace en una fecha específica"
-      ],
-      "Do you have any suggestions for our team?": [
-        "¿Tiene alguna sugerencia para nuestro equipo?"
       ],
       "Don't ask again": [
         "No volver a preguntar"
@@ -7434,6 +7471,9 @@
       "Main": [
         "Principal"
       ],
+      "Main reason for cancelling": [
+        "Razón principal de cancelación"
+      ],
       "Malware": [
         "Malware"
       ],
@@ -7590,6 +7630,9 @@
       "Size": [
         "Tamaño"
       ],
+      "Skip feedback": [
+        "Omitir comentarios"
+      ],
       "Skip file": [
         "Omitir archivo"
       ],
@@ -7688,9 +7731,6 @@
       ],
       "What happened?": [
         "¿Qué ha ocurrido?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "¿Cuál es su motivo principal por el que cancela o baja de plan?"
       ],
       "Yes, I want to permanently delete my old files": [
         "Sí, quiero borrar permanentemente mis archivos antiguos."
@@ -7980,6 +8020,18 @@
         "por ${ price }"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "Licencia de ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Licencias de ${ MEET_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } licencia de ${ MEET_APP_NAME }",
+        "${ seats } licencias de ${ MEET_APP_NAME }"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: videollamadas privadas para lo que realmente importa"
@@ -8013,6 +8065,9 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Pantalla compartida con cifrado de extremo a extremo y chat efímero en la llamada"
       ],
+      "Hosts can record meetings locally on their computers": [
+        "Los anfitriones pueden grabar reuniones localmente en sus computadoras"
+      ],
       "Meeting recording": [
         "Grabación de la reunión"
       ],
@@ -8032,6 +8087,19 @@
       "Up to ${ n } participant": [
         "Hasta ${ n } participante",
         "Hasta ${ n } participantes"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videollamadas, ${ n } participante",
+        "Videollamadas, ${ n } participantes"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } licencia incluida",
+        "${ seats } licencias incluidas"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Puede tener hasta ${ TRIAL_MAX_MEET_SEATS } licencias de ${ MEET_SHORT_APP_NAME } durante el período de prueba."
       ]
     },
     "Message": {
@@ -8567,6 +8635,9 @@
       "Data breach monitoring": [
         "Monitoreo de vulneración de datos"
       ],
+      "Data retention policies": [
+        "Políticas de retención de datos"
+      ],
       "Dedicated servers optimized for streaming": [
         "Servidores dedicados optimizados para streaming"
       ],
@@ -8675,6 +8746,9 @@
       ],
       "Priority support & live chat": [
         "Soporte prioritario y chat en vivo"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Chat de IA privado (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "Copia de seguridad de fotos privada"
@@ -8821,6 +8895,9 @@
       "Vault sharing with up to ${ n } person": [
         "Compartir bóveda con hasta ${ n } persona",
         "Compartir bóveda con hasta ${ n } personas"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN con bloqueador de publicidad y protección contra malware"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la dark web para verificar si sus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarle de inmediato si encontramos algo."
@@ -10396,6 +10473,9 @@
       "Anderson": [
         "García"
       ],
+      "Anything you'd like us to know": [
+        "¿Algo que le gustaría que supiéramos?"
+      ],
       "Anytown": [
         "Puertoalto"
       ],
@@ -10413,6 +10493,9 @@
       ],
       "Email": [
         "Correo electrónico"
+      ],
+      "Enter a name": [
+        "Ingrese un nombre"
       ],
       "Enter a new file name": [
         "Ingrese un nombre de archivo nuevo"
@@ -10486,6 +10569,9 @@
       "Select": [
         "Seleccionar"
       ],
+      "Select a provider": [
+        "Seleccione un proveedor"
+      ],
       "Select a reason": [
         "Seleccione un motivo"
       ],
@@ -10494,9 +10580,6 @@
       ],
       "Select state": [
         "Seleccionar estado"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Comparta lo que cree que podría mejorar ${ BRAND_NAME }"
       ],
       "Start typing an email address": [
         "Comience a escribir una dirección de correo"
@@ -10610,6 +10693,26 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Correo oficial de ${ BRAND_NAME }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Otro"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {

@@ -224,6 +224,9 @@
       "Continue import": [
         "Continuar importação"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Continuar com ${ planOrAppName }"
+      ],
       "Continue with this password": [
         "Continuar com essa senha"
       ],
@@ -1235,6 +1238,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } licença do ${ LUMO_APP_NAME }",
         "${ seats } licenças do ${ LUMO_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } licença",
+        "${ seats } ${ MEET_APP_NAME } licenças"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } licença de assistente de escrita",
@@ -5956,6 +5963,15 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "O ${ MAIL_APP_NAME } também pode ser usado com uma senha única que substitui as senhas de início de sessão e de segunda senha. Para ativar o modo de senha única, digite a senha única que deseja usar e clique em Salvar."
       ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "O ${ MEET_APP_NAME } é uma solução de videoconferência com criptografia de ponta a ponta. Adicione-a ao seu plano para realizar reuniões seguras."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } licenças"
+      ],
+      "${ MEET_APP_NAME } video conferencing": [
+        "Videoconferência do ${ MEET_APP_NAME }"
+      ],
       "${ n } address": [
         "${ n } endereço",
         "${ n } endereços"
@@ -6185,6 +6201,9 @@
       ],
       "Activity Monitor": [
         "Monitor de atividades"
+      ],
+      "Add ${ MEET_APP_NAME }": [
+        "Adicionar ${ MEET_APP_NAME }"
       ],
       "add a recovery method": [
         "adicionar um método de recuperação"
@@ -6776,6 +6795,9 @@
       ],
       "finance": [
         "finança"
+      ],
+      "for ${ price }": [
+        "por ${ price }"
       ],
       "for choosing ${ product }": [
         "por escolher ${ product }"
@@ -7658,6 +7680,9 @@
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Fim da assinatura: Para manter os benefícios do seu ${ planName }, reinicie sua assinatura na Google Play Store até ${ byDate }. ${ reactivateLink }"
       ],
+      "Subscription starts on ${ startsOnTime }": [
+        "Sua assinatura começa em ${ startsOnTime }"
+      ],
       "Summary": [
         "Resumo"
       ],
@@ -7915,6 +7940,9 @@
       ],
       "Total VPN connections": [
         "Conexões VPN adicionais"
+      ],
+      "Trial ends on ${ formattedPeriodEndDate }": [
+        "A avaliação termina em ${ formattedPeriodEndDate }"
       ],
       "trusted device": [
         "Dispositivo confiável"
@@ -8699,6 +8727,9 @@
       "Add group member": [
         "Adicionar um membro ao grupo"
       ],
+      "Additional comments": [
+        "Comentários adicionais"
+      ],
       "Address": [
         "Endereço"
       ],
@@ -8861,6 +8892,9 @@
       "Contacts": [
         "Contatos"
       ],
+      "Continue cancelling": [
+        "Continuar cancelamento"
+      ],
       "Copy": [
         "Copiar"
       ],
@@ -8917,9 +8951,6 @@
       ],
       "Display name": [
         "Nome de exibição"
-      ],
-      "Do you have any suggestions for our team?": [
-        "Você tem alguma sugestão para nossa equipe?"
       ],
       "Domain": [
         "Domínio"
@@ -9339,6 +9370,9 @@
       "Single sign-on URL": [
         "URL de autenticação única"
       ],
+      "Skip feedback": [
+        "Pular feedback"
+      ],
       "Spam": [
         "Spam"
       ],
@@ -9434,9 +9468,6 @@
       ],
       "What is the main reason you are deleting your account?": [
         "Qual é a principal razão pela qual você está excluindo sua conta?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Qual é o seu motivo principal do cancelamento ou downgrade?"
       ],
       "Who can send to this group address?": [
         "Quem pode enviar para esse endereço de grupo?"
@@ -9951,6 +9982,22 @@
         "Configure sua conta com seu domínio Porkbun."
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (para ${ quantity } usuário)",
+        "${ MEET_APP_NAME } (para ${ quantity } usuários)"
+      ],
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } licença"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } licenças"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } licença do ${ MEET_APP_NAME }",
+        "${ seats } licenças do ${ MEET_APP_NAME }"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: Videoconferência confidencial para as conversas importantes"
@@ -10003,6 +10050,23 @@
       "Up to ${ n } participant": [
         "Até ${ n } participante",
         "Até ${ n } participantes"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } licença incluída",
+        "${ seats } licenças incluídas"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Você pode ter até ${ TRIAL_MAX_MEET_SEATS } licenças do ${ MEET_SHORT_APP_NAME } durante o período de avaliação."
+      ]
+    },
+    "Meet_launch": {
+      "Add ${ planName }": [
+        "Adicionar ${ planName }"
+      ],
+      "Talk privately with ${ planName }": [
+        "Converse privadamente com ${ planName }"
       ]
     },
     "Member action": {
@@ -11235,8 +11299,8 @@
       "Daily email notifications": [
         "Notificações diárias por e-mail"
       ],
-      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
-        "Desabilitar isso removerá a capacidade de receber notificações nos aplicativos ${ BRAND_NAME }"
+      "Disabling this means you won't get in-app notifications about promotions, new features, new ${ BRAND_NAME } services, and reminders.": [
+        "Desativar isso significa que você não receberá notificações no aplicativo sobre promoções, novos recursos, novos serviços da ${ BRAND_NAME } e lembretes."
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Durante o seu primeiro mês de uso de um produto da ${ BRAND_NAME }"
@@ -12353,6 +12417,9 @@
       "End date": [
         "Data final"
       ],
+      "Enter a name": [
+        "Insira um nome"
+      ],
       "Enter name": [
         "Inserir nome"
       ],
@@ -12416,6 +12483,9 @@
       "Select": [
         "Selecionar"
       ],
+      "Select a provider": [
+        "Selecione um provedor"
+      ],
       "Select a reason": [
         "Selecione um motivo"
       ],
@@ -12424,9 +12494,6 @@
       ],
       "Select state": [
         "Selecionar estado"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Compartilhe o que você acha que poderia melhorar na ${ BRAND_NAME }"
       ],
       "Start date": [
         "Data de início"
@@ -12568,6 +12635,26 @@
       ],
       "Unknown": [
         "Desconhecido"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Outros"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {
@@ -14265,10 +14352,6 @@
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } servidor dedicado",
         "${ ipAddresses } servidores dedicados"
-      ],
-      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
-        "${ LUMO_APP_NAME } para ${ maxLumo } usuário",
-        "${ LUMO_APP_NAME } para ${ maxLumo } usuários"
       ],
       "${ n } calendar per user": [
         "${ n } calendário por usuario",

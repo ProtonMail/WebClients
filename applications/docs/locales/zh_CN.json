@@ -207,6 +207,9 @@
       "Continue import": [
         "继续导入"
       ],
+      "Continue to ${ planOrAppName }": [
+        "继续使用 ${ planOrAppName }"
+      ],
       "Continue with Google": [
         "使用 Google 账号继续"
       ],
@@ -367,7 +370,7 @@
         "导出此版本 (xlsx 格式)"
       ],
       "Forgot password?": [
-        "忘记密码?"
+        "忘记密码？"
       ],
       "Forward as attachment": [
         "作为附件转发"
@@ -2505,6 +2508,9 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "使用本指南，让您的组织迅速受益于 ${ BRAND_NAME } 行业领先的加密和隐私生态系统。"
       ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "很遗憾看到您离开。如果您有时间，我们希望了解您取消的原因。您的反馈有助于我们改进 ${ BRAND_NAME }，让产品变得更好。"
+      ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "有了联系人群组，只需点击一下，就可以向群组中的每个人发送电子邮件。"
       ],
@@ -4419,7 +4425,7 @@
         "输入验证码，第 ${ digit } 位。"
       ],
       "Enter your own password (as organization admin).": [
-        "请输入你的密码（作为组织管理员）。"
+        "请输入您自己的密码（作为组织管理员）。"
       ],
       "Enter your own password (as trusted contact).": [
         "输入您自己的密码（作为可信联系人）"
@@ -4494,7 +4500,7 @@
         "获取添加到您文档中的评论和建议的邮件更新"
       ],
       "Get Notified About Comments": [
-        "获取评论通知"
+        "接收评论通知"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "政府和网络供应商可以监视您的在线活动。Proton 通过隐藏您的真实 IP 地址并加密网络活动，让您的浏览私密无忧。"
@@ -5431,6 +5437,9 @@
       "Add to group": [
         "添加至群组"
       ],
+      "Additional comments": [
+        "附加备注"
+      ],
       "Alias title": [
         "别名标题"
       ],
@@ -5497,6 +5506,9 @@
       "Contacts": [
         "通讯录"
       ],
+      "Continue cancelling": [
+        "继续取消"
+      ],
       "Copy": [
         "复制"
       ],
@@ -5517,9 +5529,6 @@
       ],
       "Delete recovery-related information.": [
         "删除恢复相关的数据"
-      ],
-      "Do you have any suggestions for our team?": [
-        "您对我们的团队有什么建议吗？"
       ],
       "Don't ask again": [
         "不再询问"
@@ -5656,6 +5665,9 @@
       "Main": [
         "主要"
       ],
+      "Main reason for cancelling": [
+        "取消的主要原因"
+      ],
       "Make editor": [
         "成为编辑者"
       ],
@@ -5761,6 +5773,9 @@
       "Sign emails": [
         "签名电子邮件"
       ],
+      "Skip feedback": [
+        "跳过反馈"
+      ],
       "Skip file": [
         "跳过文件"
       ],
@@ -5820,9 +5835,6 @@
       ],
       "What happened?": [
         "发生了什么？"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "您取消或降级订阅的主要原因是什么？"
       ],
       "Your alias": [
         "您的别名"
@@ -7834,6 +7846,9 @@
       "A way to contact you": [
         "您的联系方式"
       ],
+      "Anything you'd like us to know": [
+        "您有任何想要告诉我们的吗？"
+      ],
       "Choose password": [
         "输入密码"
       ],
@@ -7842,6 +7857,9 @@
       ],
       "Email": [
         "邮箱"
+      ],
+      "Enter a name": [
+        "请输入名称"
       ],
       "Enter a new folder name": [
         "输入新文件夹名称"
@@ -7891,14 +7909,14 @@
       "Select": [
         "选择"
       ],
+      "Select a provider": [
+        "请选择提供商"
+      ],
       "Select a reason": [
         "请选择原因"
       ],
       "Set date": [
         "设置日期"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "分享你认为可以使 ${ BRAND_NAME } 变得更好的内容"
       ],
       "Start typing an email address": [
         "请输入邮箱地址"
@@ -7978,6 +7996,26 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "${ BRAND_NAME } 官方邮件"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "其他"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Recent documents table header": {
@@ -9324,7 +9362,7 @@
         "通过 2FA 增强安全性"
       ],
       "Enter your password": [
-        "输入密码"
+        "请输入您的密码"
       ],
       "Error Syncing": [
         "同步出错"

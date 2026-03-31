@@ -83,6 +83,9 @@
       "Continue": [
         "Continuar"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Continuar com ${ planOrAppName }"
+      ],
       "Copy address": [
         "Copiar o endereço"
       ],
@@ -262,6 +265,9 @@
       ],
       "Refresh the page": [
         "Atualizar a página"
+      ],
+      "Remove": [
+        "Remover"
       ],
       "Remove bonuses": [
         "Remover bônus"
@@ -445,6 +451,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } licença do ${ LUMO_APP_NAME }",
         "${ seats } licenças do ${ LUMO_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } licença",
+        "${ seats } ${ MEET_APP_NAME } licenças"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } licença de assistente de escrita",
@@ -4421,6 +4431,15 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } inclui ${ BRAND_NAME } assistente de escrita Scribe"
       ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "O ${ MEET_APP_NAME } é uma solução de videoconferência com criptografia de ponta a ponta. Adicione-a ao seu plano para realizar reuniões seguras."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } licenças"
+      ],
+      "${ MEET_APP_NAME } video conferencing": [
+        "Videoconferência do ${ MEET_APP_NAME }"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "A oferta vitalícia do ${ PASS_SHORT_APP_NAME } não tem preço de renovação, é um pagamento único para acesso vitalício ao ${ PASS_SHORT_APP_NAME }."
       ],
@@ -4460,6 +4479,9 @@
       ],
       "Account successfully updated": [
         "Conta atualizada"
+      ],
+      "Add ${ MEET_APP_NAME }": [
+        "Adicionar ${ MEET_APP_NAME }"
       ],
       "Address copied to clipboard": [
         "O endereço foi copiado para a área de transferência"
@@ -4599,6 +4621,9 @@
       ],
       "Folder:": [
         "Pasta:"
+      ],
+      "for ${ price }": [
+        "por ${ price }"
       ],
       "Google Pay mark": [
         "Marca Google Pay"
@@ -4998,6 +5023,9 @@
       "Account holder": [
         "Titular da conta"
       ],
+      "Additional comments": [
+        "Comentários adicionais"
+      ],
       "Address": [
         "Endereço"
       ],
@@ -5061,6 +5089,9 @@
       "Company name": [
         "Nome da empresa"
       ],
+      "Continue cancelling": [
+        "Continuar cancelamento"
+      ],
       "Copy": [
         "Copiar"
       ],
@@ -5084,9 +5115,6 @@
       ],
       "Delete recovery-related information.": [
         "Excluir a informação de recuperação."
-      ],
-      "Do you have any suggestions for our team?": [
-        "Você tem alguma sugestão para nossa equipe?"
       ],
       "Email address": [
         "Endereço de e-mail"
@@ -5172,6 +5200,9 @@
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
       ],
+      "Skip feedback": [
+        "Pular feedback"
+      ],
       "Start date": [
         "Data de início"
       ],
@@ -5198,9 +5229,6 @@
       ],
       "What happened?": [
         "O que aconteceu?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Qual é o seu motivo principal do cancelamento ou downgrade?"
       ],
       "What should ${ LUMO_SHORT_APP_NAME } call you?": [
         "Como o ${ LUMO_SHORT_APP_NAME } deve chamar você?"
@@ -5444,6 +5472,18 @@
         "por ${ price }"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } licença"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } licenças"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } licença do ${ MEET_APP_NAME }",
+        "${ seats } licenças do ${ MEET_APP_NAME }"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: Videoconferência confidencial para as conversas importantes"
@@ -5496,6 +5536,15 @@
       "Up to ${ n } participant": [
         "Até ${ n } participante",
         "Até ${ n } participantes"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } licença incluída",
+        "${ seats } licenças incluídas"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Você pode ter até ${ TRIAL_MAX_MEET_SEATS } licenças do ${ MEET_SHORT_APP_NAME } durante o período de avaliação."
       ]
     },
     "New Label form": {
@@ -6789,6 +6838,9 @@
       "Cortex Inc.": [
         "Cortex Inc."
       ],
+      "Enter a name": [
+        "Insira um nome"
+      ],
       "Enter a new folder name": [
         "Digite o nome para nova pasta"
       ],
@@ -6822,6 +6874,9 @@
       "Select": [
         "Selecionar"
       ],
+      "Select a provider": [
+        "Selecione um provedor"
+      ],
       "Select a reason": [
         "Selecione um motivo"
       ],
@@ -6833,9 +6888,6 @@
       ],
       "Selected traits will appear here automatically": [
         "Características selecionadas aparecerão aqui automaticamente"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Compartilhe o que você acha que poderia melhorar na ${ BRAND_NAME }"
       ],
       "Thomas": [
         "Andrea"
@@ -6878,6 +6930,26 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Faça upgrade para ${ upsellPlanTitle }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Outros"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {

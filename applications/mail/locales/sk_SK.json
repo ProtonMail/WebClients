@@ -303,6 +303,9 @@
       "Continue import": [
         "Pokračovať v importe"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Pokračovať do ${ planOrAppName }"
+      ],
       "Continue with categories": [
         "Pokračovať s kategóriami"
       ],
@@ -4222,6 +4225,9 @@
       "We didn't find any known trackers and tracking URLs in this email.": [
         "V tomto emaily sme nenašli žiadne známe sledovače ani sledovacie URL adresy."
       ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Je nám ľúto, že odchádzate. Ak máte chvíľku, veľmi by sme ocenili, keby ste nám povedali, prečo chcete zrušiť odber. Vaša spätná väzba nám pomáha vylepšovať ${ BRAND_NAME } pre všetkých."
+      ],
       "When do you want your message to be sent?": [
         "Kedy si prajete odoslať vašu správu?"
       ],
@@ -7679,10 +7685,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -7776,9 +7779,6 @@
       ],
       "Low Priority": [
         "Nízka priorita"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Nastavte ${ MAIL_APP_NAME } ako vašu predvolenú emailovú aplikáciu."
       ],
       "Manage your folders": [
         "Spravovať priečinky"
@@ -9515,6 +9515,9 @@
       "Add to group": [
         "Pridať do skupiny"
       ],
+      "Additional comments": [
+        "Doplňujúce poznámky"
+      ],
       "Address": [
         "Adresa"
       ],
@@ -9659,6 +9662,9 @@
       "Contacts": [
         "Kontakty"
       ],
+      "Continue cancelling": [
+        "Pokračovať v zrušení"
+      ],
       "Copy": [
         "Kopírovať"
       ],
@@ -9697,9 +9703,6 @@
       ],
       "Did not follow instructions": [
         "Nezodpovedalo inštrukciám"
-      ],
-      "Do you have any suggestions for our team?": [
-        "Máte nejaké návrhy pre náš tím?"
       ],
       "Don't ask again": [
         "Viac sa nepýtať"
@@ -9899,6 +9902,9 @@
       "Main": [
         "Hlavné"
       ],
+      "Main reason for cancelling": [
+        "Hlavný dôvod zrušenia"
+      ],
       "Manage categories": [
         "Spravovať kategórie"
       ],
@@ -10094,11 +10100,17 @@
       "Sender": [
         "Odosielateľ"
       ],
+      "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
+        "Zdieľajte svoju dostupnosť prostredníctvom stránok na rezerváciu v aplikácii ${ CALENDAR_APP_NAME } a organizujte zabezpečené schôdzky s aplikáciou ${ MEET_APP_NAME }."
+      ],
       "Sign emails": [
         "Podpísať emaily"
       ],
       "Size:": [
         "Veľkosť:"
+      ],
+      "Skip feedback": [
+        "Preskočiť spätnú väzbu"
       ],
       "Social": [
         "Sociálne siete"
@@ -10216,9 +10228,6 @@
       ],
       "What happened?": [
         "Čo sa stalo?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Aký je váš hlavný dôvod na zrušenie alebo zníženie predplatného?"
       ],
       "Which category should this be recategorized under?": [
         "Do ktorej kategórie by sa to malo zaradiť?"
@@ -12413,12 +12422,6 @@
       ],
       "No parent folder": [
         "Žiadny nadradený priečinok"
-      ],
-      "Remind me later": [
-        "Pripomenúť neskôr"
-      ],
-      "Yes, don't show again": [
-        "Áno, viac nezobrazovať"
       ]
     },
     "Option group": {
@@ -12864,6 +12867,9 @@
       "Anderson": [
         "Anderson"
       ],
+      "Anything you'd like us to know": [
+        "Máte niečo, čo by sme mali vedieť"
+      ],
       "Anytown": [
         "Niekdetam"
       ],
@@ -12884,6 +12890,9 @@
       ],
       "End date": [
         "Dátum ukončenia"
+      ],
+      "Enter a name": [
+        "Zadajte meno"
       ],
       "Enter passphrase": [
         "Zadajte prístupovú frázu"
@@ -12981,6 +12990,9 @@
       "Select": [
         "Vybrať"
       ],
+      "Select a provider": [
+        "Vyberte poskytovateľa"
+      ],
       "Select a reason": [
         "Vyberte dôvod"
       ],
@@ -12989,9 +13001,6 @@
       ],
       "Select state": [
         "Vyberte stav"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Dajte nám vedieť, čo by podľa vás mohlo vylepšiť ${ BRAND_NAME }"
       ],
       "Start date": [
         "Dátum začiatku"
@@ -13146,6 +13155,26 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Oficiálny email od ${ BRAND_NAME }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Iné"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Received email icon": {
@@ -15742,9 +15771,6 @@
       ],
       "Invalid verification code": [
         "Nesprávny overovací kód"
-      ],
-      "Keep this banner hidden?": [
-        "Ponechať túto reklamu skrytú?"
       ],
       "Label as": [
         "Označiť ako"

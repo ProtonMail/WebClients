@@ -209,6 +209,9 @@
       "Continue import": [
         "Continuare importare"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Continuare cu ${ planOrAppName }"
+      ],
       "Continue with Google": [
         "Continuare cu Google"
       ],
@@ -939,6 +942,11 @@
         "Licențe ${ LUMO_APP_NAME }: ${ seats }",
         "Licențe ${ LUMO_APP_NAME }: ${ seats }",
         "Licențe ${ LUMO_APP_NAME }: ${ seats }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "Licențe ${ MEET_APP_NAME } incluse: ${ seats }",
+        "Licențe ${ MEET_APP_NAME } incluse: ${ seats }",
+        "Licențe ${ MEET_APP_NAME } incluse: ${ seats }"
       ],
       "${ seats } writing assistant seat": [
         "Licențe asistent de scriere: ${ seats }",
@@ -2536,6 +2544,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Utilizați acest ghid pentru ca organizația să beneficieze imediat de criptarea și ecosistemul de confidențialitate maximă oferite de ${ BRAND_NAME } ."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Ne pare rău să vă vedem plecând. Dacă aveți un moment, am aprecia foarte mult să aflăm de ce doriți să anulați. Feedback-ul dvs. ne ajută să facem ${ BRAND_NAME } mai bun pentru toată lumea."
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Cu grupurile de contacte, puteți trimite mesaje tuturor celor din grup cu un singur clic."
@@ -4455,13 +4466,16 @@
         "Se creează legătura către folder"
       ],
       "Creating new document...": [
-        "Se creează un document..."
+        "Se creează noul document..."
       ],
       "Current plan": [
         "Plan actual"
       ],
       "Current version": [
         "Versiune curentă"
+      ],
+      "Decrypting your document": [
+        "Se decriptează documentul"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Semnătură digitală verificată. Acest fișier a fost încărcat în siguranță de către ${ emailAddress }."
@@ -4620,7 +4634,7 @@
         "Primiți actualizări prin e-mail pentru comentariile și sugestiile adăugate la documentele personale."
       ],
       "Get Notified About Comments": [
-        "Primi notificări despre comentarii"
+        "Primire notificări despre comentarii"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Guvernele și ISP-urile vă pot monitoriza activitatea online. Ascunzându-vă adresa IP reală și criptându-vă activitatea, navigarea devine privată."
@@ -5577,6 +5591,9 @@
       "Add to group": [
         "Adăugare la grup"
       ],
+      "Additional comments": [
+        "Comentarii adiționale"
+      ],
       "Alias title": [
         "Titlu alias"
       ],
@@ -5643,6 +5660,9 @@
       "Contacts": [
         "Contacte"
       ],
+      "Continue cancelling": [
+        "Continuare anulare"
+      ],
       "Copy": [
         "Copiere"
       ],
@@ -5663,9 +5683,6 @@
       ],
       "Delete recovery-related information.": [
         "Ștergere informații privind recuperarea."
-      ],
-      "Do you have any suggestions for our team?": [
-        "Aveți sugestii pentru echipa noastră?"
       ],
       "Don't ask again": [
         "Nu mă mai întreba"
@@ -5802,6 +5819,9 @@
       "Main": [
         "Principală"
       ],
+      "Main reason for cancelling": [
+        "Motiv principal pentru anulare"
+      ],
       "Make editor": [
         "Stabilire ca editor"
       ],
@@ -5907,6 +5927,9 @@
       "Sign emails": [
         "Semnare mesaje"
       ],
+      "Skip feedback": [
+        "Omitere feedback"
+      ],
       "Skip file": [
         "Omitere fișier"
       ],
@@ -5966,9 +5989,6 @@
       ],
       "What happened?": [
         "Ce s-a întâmplat?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Care este motivul principal pentru anulare sau retrogradare?"
       ],
       "Your alias": [
         "Aliasuri personale"
@@ -6212,6 +6232,19 @@
       ],
       "Add-on with free trial": [
         "Modul cu încercare gratuită"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } licență"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Licențe ${ MEET_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "Licențe ${ MEET_APP_NAME }: ${ seats }",
+        "Licențe ${ MEET_APP_NAME }: ${ seats }",
+        "Licențe ${ MEET_APP_NAME }: ${ seats }"
       ]
     },
     "meet_2025: Feature": {
@@ -8098,6 +8131,9 @@
       "A way to contact you": [
         "Modalitate de contactare"
       ],
+      "Anything you'd like us to know": [
+        "Orice ați dori să știm"
+      ],
       "Choose password": [
         "Alegere parolă"
       ],
@@ -8106,6 +8142,9 @@
       ],
       "Email": [
         "E-mail"
+      ],
+      "Enter a name": [
+        "Introduceți un nume"
       ],
       "Enter a new folder name": [
         "Introducere nume folder nou"
@@ -8155,14 +8194,14 @@
       "Select": [
         "Selectare"
       ],
+      "Select a provider": [
+        "Selectați un furnizor"
+      ],
       "Select a reason": [
         "Selectați un motiv"
       ],
       "Set date": [
         "Setare dată"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Spuneți-ne ce credeți că ar face să fie mai bun ${ BRAND_NAME }"
       ],
       "Start typing an email address": [
         "Introduceți o adresă de e-mail"
@@ -8248,6 +8287,26 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Mesaj oficial de la ${ BRAND_NAME }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Altul"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {
@@ -9780,7 +9839,7 @@
         "Îmbunătățiți securitatea cu A2F"
       ],
       "Enter your password": [
-        "Introduceţi parola"
+        "Introduceți parola"
       ],
       "Error Syncing": [
         "Eroare la sincronizare"

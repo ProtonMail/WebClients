@@ -249,6 +249,9 @@
       "Continue on web": [
         "Continuer sur le web"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Continuer vers ${ planOrAppName }"
+      ],
       "Continue transfers": [
         "Continuer les transferts"
       ],
@@ -1315,6 +1318,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } accès ${ LUMO_APP_NAME }",
         "${ seats } accès à ${ LUMO_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } licence ${ MEET_APP_NAME }",
+        "${ seats } licences ${ MEET_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } accès à l'assistant d'écriture",
@@ -3028,6 +3035,9 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Utilisez ce guide pour que votre organisation bénéficie rapidement du chiffrement et de l’écosystème de respect de la vie privée de pointe de ${ BRAND_NAME }."
       ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Nous regrettons de vous voir partir. Si vous avez un moment, nous aimerions beaucoup savoir pourquoi vous souhaitez résilier votre abonnement. Vos commentaires nous aident à améliorer ${ BRAND_NAME } pour le bénéfice de tous."
+      ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Grâce aux groupes de contacts, vous pouvez envoyer des e-mails à toutes les personnes du groupe en un seul clic."
       ],
@@ -3854,6 +3864,12 @@
       ],
       "Unable to set photo as cover": [
         "La photo n'a pas pu être définie comme couverture."
+      ],
+      "Unable to start the search": [
+        "Impossible de lancer la recherche"
+      ],
+      "Unable to start the search: not enough storage space": [
+        "Impossible de démarrer la recherche : l'espace de stockage est insuffisant"
       ],
       "Unexpected error, we can't import the contacts": [
         "Une erreur inattendue s'est produite. Les contacts n'ont pas pu être importés."
@@ -4946,6 +4962,15 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } inclut l'assistant d'écriture ${ BRAND_NAME } Scribe."
       ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } est une solution de visioconférence chiffrée de bout en bout. Ajoutez-la à votre abonnement pour organiser des réunions sécurisées."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "accès ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } video conferencing": [
+        "Vidéoconférence ${ MEET_APP_NAME }"
+      ],
       "${ normalizedProgress }% completed": [
         "${ normalizedProgress } % complété"
       ],
@@ -5098,6 +5123,9 @@
       ],
       "Ad targeting": [
         "Ciblage publicitaire"
+      ],
+      "Add ${ MEET_APP_NAME }": [
+        "Ajouter ${ MEET_APP_NAME }"
       ],
       "Address copied to clipboard": [
         "L'adresse a été copiée dans le presse-papiers."
@@ -5579,6 +5607,9 @@
       ],
       "Folders you sync from your computer will appear here.": [
         "Les dossiers que vous synchronisez depuis votre ordinateur apparaissent ici."
+      ],
+      "for ${ price }": [
+        "pour ${ price }"
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Pour de meilleurs résultats, évitez les activités de streaming et gourmandes en mémoire ou réduisez la taille de votre envoi."
@@ -7074,6 +7105,9 @@
       "Add to group": [
         "Ajouter au groupe"
       ],
+      "Additional comments": [
+        "Commentaires supplémentaires"
+      ],
       "Address": [
         "Adresse"
       ],
@@ -7194,6 +7228,9 @@
       "Contacts": [
         "Contacts"
       ],
+      "Continue cancelling": [
+        "Continuer l'annulation"
+      ],
       "Copy": [
         "Copier"
       ],
@@ -7245,9 +7282,6 @@
       ],
       "Disable this link on a specific date": [
         "Désactiver ce lien à une date spécifique"
-      ],
-      "Do you have any suggestions for our team?": [
-        "Avez-vous des suggestions pour notre équipe ?"
       ],
       "Don't ask again": [
         "Ne plus demander"
@@ -7408,6 +7442,9 @@
       "Main": [
         "Principale"
       ],
+      "Main reason for cancelling": [
+        "Raison principale de l'annulation"
+      ],
       "Malware": [
         "Logiciel malveillant"
       ],
@@ -7564,6 +7601,9 @@
       "Size": [
         "Taille"
       ],
+      "Skip feedback": [
+        "Ignorer les commentaires"
+      ],
       "Skip file": [
         "Ignorer le fichier"
       ],
@@ -7662,9 +7702,6 @@
       ],
       "What happened?": [
         "Que s'est-il passé ?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Quelle est la principale raison pour laquelle vous annulez votre abonnement ou passez à un abonnement inférieur ?"
       ],
       "Yes, I want to permanently delete my old files": [
         "Oui, je veux supprimer définitivement mes anciens fichiers."
@@ -7954,6 +7991,18 @@
         "pour ${ price }"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "licence ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "accès ${ MEET_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } accès ${ MEET_APP_NAME }",
+        "${ seats } accès ${ MEET_APP_NAME }"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME } : Conférence vidéo confidentielle pour les conversations qui comptent"
@@ -8006,6 +8055,15 @@
       "Up to ${ n } participant": [
         "Jusqu'à ${ n } participant",
         "Jusqu'à ${ n } participants"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } accès inclus",
+        "${ seats } accès incluses"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Vous pouvez bénéficier de jusqu’à ${ TRIAL_MAX_MEET_SEATS } accès à ${ MEET_SHORT_APP_NAME } pendant la période d’essai."
       ]
     },
     "Message": {
@@ -10366,6 +10424,9 @@
       "Anderson": [
         "Durant"
       ],
+      "Anything you'd like us to know": [
+        "Y a-t-il autre chose que vous aimeriez nous faire savoir"
+      ],
       "Anytown": [
         "Boisclair"
       ],
@@ -10383,6 +10444,9 @@
       ],
       "Email": [
         "Adresse e-mail"
+      ],
+      "Enter a name": [
+        "Saisissez un nom"
       ],
       "Enter a new file name": [
         "Saisissez un nouveau nom de fichier."
@@ -10456,6 +10520,9 @@
       "Select": [
         "Sélectionnez"
       ],
+      "Select a provider": [
+        "Sélectionnez un fournisseur"
+      ],
       "Select a reason": [
         "Sélectionnez une raison."
       ],
@@ -10464,9 +10531,6 @@
       ],
       "Select state": [
         "Sélectionner l'état"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Dites-nous ce qui, selon vous, pourrait améliorer ${ BRAND_NAME }."
       ],
       "Start typing an email address": [
         "Commencez à saisir une adresse e-mail."
@@ -10580,6 +10644,26 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Message officiel de ${ BRAND_NAME }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Autre"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {

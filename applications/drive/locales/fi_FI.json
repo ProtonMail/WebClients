@@ -3703,6 +3703,12 @@
       "Unable to set photo as cover": [
         "Kuvaa ei voitu asettaa kansikuvaksi"
       ],
+      "Unable to start the search": [
+        "Hakua ei voitu käynnistää"
+      ],
+      "Unable to start the search: not enough storage space": [
+        "Hakua ei voida käynnistää: tallennustilaa ei ole tarpeeksi"
+      ],
       "Unexpected error, we can't import the contacts": [
         "Odottamaton virhe, yhteystietojen tuonti ei onnistu"
       ],
@@ -6986,9 +6992,6 @@
       "Disable this link on a specific date": [
         "Poista tämä linkki käytöstä tiettynä päivänä"
       ],
-      "Do you have any suggestions for our team?": [
-        "Onko sinulla ehdotuksia tiimillemme?"
-      ],
       "Don't ask again": [
         "Älä kysy uudelleen"
       ],
@@ -7396,9 +7399,6 @@
       ],
       "What happened?": [
         "Mitä tapahtui?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Mikä on suurin syy tilauksen lopetukseen tai alennukseen?"
       ],
       "Yes, I want to permanently delete my old files": [
         "Kyllä, haluan poistaa vanhat tiedostoni pysyvästi"
@@ -9996,9 +9996,6 @@
       ],
       "Select state": [
         "Valitse osavaltio"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Kerro mikä voisi mielestäsi parantaa ${ BRAND_NAME }ia"
       ],
       "Start typing an email address": [
         "Aloita sähköpostiosoitteen kirjoitus"

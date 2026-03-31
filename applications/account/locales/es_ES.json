@@ -328,9 +328,6 @@
       "Continue import": [
         "Continuar la importación"
       ],
-      "Continue to ${ name }": [
-        "Continuar con ${ name }"
-      ],
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "Continuar con ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
@@ -10971,6 +10968,9 @@
       "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "El enlace para notificar que no has configurado una cuenta de ${ BRAND_NAME } ha expirado. Ponte en contacto con nuestro equipo de soporte para resolver este problema."
       ],
+      "The maximum donation amount is ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }": [
+        "El importe máximo de la donación es de ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }"
+      ],
       "The most recent data update, excluding breaches.": [
         "La actualización de datos más reciente, excluyendo las vulneraciones."
       ],
@@ -12902,9 +12902,6 @@
       "Display name": [
         "Nombre a mostrar"
       ],
-      "Do you have any suggestions for our team?": [
-        "¿Tienes alguna sugerencia para nuestro equipo?"
-      ],
       "Domain": [
         "Dominio"
       ],
@@ -13749,9 +13746,6 @@
       "What is the main reason you are deleting your account?": [
         "¿Cuál es el motivo principal por el que eliminas tu cuenta?"
       ],
-      "What is your main reason for canceling or downgrading?": [
-        "¿Cuál es tu motivo principal por el que cancelas o bajas de plan?"
-      ],
       "Who can send to this group address?": [
         "¿Quién puede enviar a la dirección del grupo?"
       ],
@@ -14530,29 +14524,17 @@
       "Data never used for AI training": [
         "Tus datos nunca se usan para entrenar la IA"
       ],
-      "Data retention policies": [
-        "Políticas de retención de datos"
-      ],
       "Document & spreadsheet editor": [
         "Editor de documentos y hojas de cálculo"
       ],
       "Email writing assistant": [
         "Asistente de redacción de correos"
       ],
-      "Everything from ${ title }, plus...": [
-        "Todo lo incluido en ${ title }, y además..."
-      ],
-      "Everything in Meet Professional, plus:": [
-        "Todo lo incluido en Meet Professional, y además:"
-      ],
       "Open source": [
         "Código abierto"
       ],
       "Password manager with team vaults": [
         "Gestor de contraseñas con cajas fuertes compartidas"
-      ],
-      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
-        "Chat de IA privado (${ LUMO_SHORT_APP_NAME })"
       ],
       "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
         "Chat de IA privado e ilimitado (${ LUMO_SHORT_APP_NAME })"
@@ -14565,12 +14547,6 @@
       ],
       "Strict no-logs policy": [
         "Política estricta de no registros"
-      ],
-      "Video meetings, ${ PAID_MAX_PARTICIPANTS } participants": [
-        "Videollamadas de hasta ${ PAID_MAX_PARTICIPANTS } participantes"
-      ],
-      "VPN with ad-blocker and malware protection": [
-        "VPN con bloqueador de publicidad y protección contra malware"
       ]
     },
     "meet_signup_2025: title": {
@@ -16044,9 +16020,6 @@
       ],
       "Daily email notifications": [
         "Notificaciones diarias por correo electrónico"
-      ],
-      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
-        "Desactivarlo impedirá que recibas notificaciones de las aplicaciones de ${ BRAND_NAME }"
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Durante el primer mes de uso de un producto de ${ BRAND_NAME }"
@@ -17782,9 +17755,6 @@
       ],
       "Select state": [
         "Seleccionar el estado"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Comparte lo que crees que podría mejorar ${ BRAND_NAME }"
       ],
       "Start date": [
         "Fecha de inicio"
@@ -20027,26 +19997,6 @@
         "Funciona en todos los dispositivos"
       ]
     },
-    "Signup: Meet": {
-      "**Trusted by over 100 million** users and organizations": [
-        "**Más de 100 millones** de usuarios y organizaciones confían en nosotros"
-      ],
-      "Get ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
-        "Contratar ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
-      ],
-      "Own a business?": [
-        "¿Tienes una empresa?"
-      ],
-      "Sign up, meet privately": [
-        "Regístrate y reúnete de forma privada"
-      ],
-      "Start using ${ MEET_APP_NAME } now": [
-        "Empieza a usar ${ MEET_APP_NAME } ahora"
-      ],
-      "Your account also includes access to ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME } free features.": [
-        "Tu cuenta también incluye acceso a las funciones gratuitas de ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ PASS_SHORT_APP_NAME }."
-      ]
-    },
     "signup_2024: Feature": {
       "GDPR and HIPAA compliant": [
         "Cumplimiento con el RGPD y la HIPAA"
@@ -20766,10 +20716,6 @@
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } servidor dedicado",
         "${ ipAddresses } servidores dedicados"
-      ],
-      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
-        "${ LUMO_APP_NAME } para ${ maxLumo } usuario",
-        "${ LUMO_APP_NAME } para ${ maxLumo } usuarios"
       ],
       "${ n } calendar per user": [
         "${ n } calendario por usuario",

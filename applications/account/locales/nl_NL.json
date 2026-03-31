@@ -342,9 +342,6 @@
       "Continue import": [
         "Doorgaan met importeren"
       ],
-      "Continue to ${ name }": [
-        "Doorgaan naar ${ name }"
-      ],
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "Doorgaan met ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
@@ -6851,6 +6848,9 @@
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "Primaire sleutel opgehaald voor ${ BRAND_NAME } gebruiker is niet geldig voor verzenden"
       ],
+      "Private users can be added to group once they've signed in for the first time: ${ displayedNames }": [
+        "Privégebruikers kunnen aan een groep worden toegevoegd zodra ze voor het eerst zijn ingelogd: ${ displayedNames }"
+      ],
       "Process aborted": [
         "Proces afgebroken"
       ],
@@ -11422,6 +11422,9 @@
       "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "De link om te melden dat u geen ${ BRAND_NAME }-account hebt ingesteld, is verlopen. Neem contact op met ons ondersteuningsteam om dit probleem op te lossen."
       ],
+      "The maximum donation amount is ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }": [
+        "Het maximale donatiebedrag is ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }"
+      ],
       "The most recent data update, excluding breaches.": [
         "De meest recente data-update, met uitzondering van schendingen."
       ],
@@ -13062,6 +13065,9 @@
       "Add group member": [
         "Groepslid toevoegen"
       ],
+      "Additional comments": [
+        "Aanvullende opmerkingen"
+      ],
       "Address": [
         "Adres"
       ],
@@ -13475,9 +13481,6 @@
       ],
       "Display name": [
         "Weergavenaam"
-      ],
-      "Do you have any suggestions for our team?": [
-        "Heeft u suggesties voor ons team?"
       ],
       "Domain": [
         "Domeinnaam"
@@ -14368,9 +14371,6 @@
       "What is the main reason you are deleting your account?": [
         "Wat is de voornaamste reden dat u uw account verwijdert?"
       ],
-      "What is your main reason for canceling or downgrading?": [
-        "Wat is uw belangrijkste reden om te annuleren of te downgraden?"
-      ],
       "Who can send to this group address?": [
         "Wie kan verzenden naar dit groepsadres?"
       ],
@@ -15161,29 +15161,17 @@
       "Data never used for AI training": [
         "Gegevens worden nooit gebruikt voor AI-training"
       ],
-      "Data retention policies": [
-        "Dataretentiebeleid"
-      ],
       "Document & spreadsheet editor": [
         "Document & rekenblad editor"
       ],
       "Email writing assistant": [
         "Schrijfassistent voor e-mail"
       ],
-      "Everything from ${ title }, plus...": [
-        "Alles van ${ title }, plus..."
-      ],
-      "Everything in Meet Professional, plus:": [
-        "Alles in Meet Professional, plus:"
-      ],
       "Open source": [
         "Open source"
       ],
       "Password manager with team vaults": [
         "Wachtwoordbeheerder met teamkluizen"
-      ],
-      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
-        "Privé AI-chat (${ LUMO_SHORT_APP_NAME })"
       ],
       "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
         "Privé en onbeperkte AI-chat (${ LUMO_SHORT_APP_NAME })"
@@ -15196,12 +15184,6 @@
       ],
       "Strict no-logs policy": [
         "Strikt beleid zonder logboeken"
-      ],
-      "Video meetings, ${ PAID_MAX_PARTICIPANTS } participants": [
-        "Videovergaderingen, ${ PAID_MAX_PARTICIPANTS } deelnemers"
-      ],
-      "VPN with ad-blocker and malware protection": [
-        "VPN met advertentieblokkering en bescherming tegen malware"
       ]
     },
     "meet_signup_2025: title": {
@@ -16694,9 +16676,6 @@
       ],
       "Daily email notifications": [
         "Dagelijkse e-mailmeldingen"
-      ],
-      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
-        "Dit uitschakelen zal de mogelijkheid om meldingen in ${ BRAND_NAME } applicaties te ontvangen verwijderen"
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Gedurende de eerste maand gebruik van een ${ BRAND_NAME } product"
@@ -18445,6 +18424,9 @@
       "End date": [
         "Eind datum"
       ],
+      "Enter a name": [
+        "Voer een naam in"
+      ],
       "Enter name": [
         "Voer naam in"
       ],
@@ -18523,6 +18505,9 @@
       "Select": [
         "Selecteer"
       ],
+      "Select a provider": [
+        "Kies een aanbieder"
+      ],
       "Select a reason": [
         "Selecteer een reden"
       ],
@@ -18531,9 +18516,6 @@
       ],
       "Select state": [
         "Selecteer provincie"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Deel wat volgens u ${ BRAND_NAME } beter zou kunnen maken"
       ],
       "Start date": [
         "Begindatum"
@@ -18795,6 +18777,14 @@
       ],
       "Unknown": [
         "Onbekend"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
       ]
     },
     "q1campaign: Action": {
@@ -20673,6 +20663,9 @@
       "Yearly": [
         "Jaarlijks"
       ],
+      "You are all set": [
+        "Je bent helemaal klaar"
+      ],
       "Your plan": [
         "Uw abonnement"
       ],
@@ -20696,6 +20689,9 @@
       "Email address": [
         "E-mailadres"
       ],
+      "Name shown in meetings": [
+        "Naam zoals getoond in vergaderingen"
+      ],
       "Organization name": [
         "Organisatienaam"
       ],
@@ -20704,6 +20700,12 @@
       ],
       "Username": [
         "Gebruikersnaam"
+      ],
+      "Your email": [
+        "Je e-mailadres"
+      ],
+      "Your password": [
+        "Je wachtwoord"
       ]
     },
     "signup: Action": {
@@ -20803,26 +20805,6 @@
       ],
       "Works on all devices": [
         "Werkt op alle apparaten"
-      ]
-    },
-    "Signup: Meet": {
-      "**Trusted by over 100 million** users and organizations": [
-        "**Vertrouwd door meer dan 100 miljoen** gebruikers en organisaties"
-      ],
-      "Get ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
-        "Neem ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
-      ],
-      "Own a business?": [
-        "Heeft u een eigen bedrijf?"
-      ],
-      "Sign up, meet privately": [
-        "Meld u aan, ontmoet privé"
-      ],
-      "Start using ${ MEET_APP_NAME } now": [
-        "Begin nu met het gebruik van ${ MEET_APP_NAME }"
-      ],
-      "Your account also includes access to ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME } free features.": [
-        "Uw account bevat ook gratis functies voor ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } en ${ PASS_SHORT_APP_NAME }."
       ]
     },
     "signup_2024: Feature": {
@@ -21544,10 +21526,6 @@
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } toegewijde server",
         "${ ipAddresses } toegewijde servers"
-      ],
-      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
-        "${ LUMO_APP_NAME } voor ${ maxLumo } gebruiker",
-        "${ LUMO_APP_NAME } voor ${ maxLumo } gebruikers"
       ],
       "${ n } calendar per user": [
         "${ n } agenda per gebruiker",

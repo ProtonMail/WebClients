@@ -83,6 +83,9 @@
       "Continue": [
         "İlerle"
       ],
+      "Continue to ${ planOrAppName }": [
+        "${ planOrAppName } ile ilerle"
+      ],
       "Copy address": [
         "Adresi kopyala"
       ],
@@ -262,6 +265,9 @@
       ],
       "Refresh the page": [
         "Sayfayı yenile"
+      ],
+      "Remove": [
+        "Kaldır"
       ],
       "Remove bonuses": [
         "Hediyeleri kaldır"
@@ -445,6 +451,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } koltuk",
         "${ seats } ${ LUMO_APP_NAME } koltuk"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } lisansı",
+        "${ seats } ${ MEET_APP_NAME } lisansı"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } yazma yardımcısı koltuğu",
@@ -3955,6 +3965,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Kuruluşunuzun, ${ BRAND_NAME } sektör lideri şifreleme ve gizlilik ekosisteminden hemen yararlanmasını sağlamak için bu rehberi kullanın."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Aramızdan ayrıldığınız için üzgünüz. Vakit ayırıp iptal etme nedeninizi paylaşırsanız çok seviniriz. Geri bildiriminiz ${ BRAND_NAME } hizmetlerini herkes için daha iyi yapmamıza yardımcı olur."
       ]
     },
     "Downgrade account reason": {
@@ -4445,6 +4458,15 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } içinde ${ BRAND_NAME } Scribe yazma yardımcısı bulunur"
       ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } uçtan uca şifrelenmiş bir görüntülü görüşme çözümüdür. Güvenli görüşmeler düzenlemek için bunu tarifenize ekleyin."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } koltukları"
+      ],
+      "${ MEET_APP_NAME } video conferencing": [
+        "${ MEET_APP_NAME } görüntülü görüşme"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } Lifetime fırsatının yenileme ücreti yoktur. ${ PASS_SHORT_APP_NAME } hizmetine ömür boyu erişim için tek seferlik ödeme yapılır."
       ],
@@ -4484,6 +4506,9 @@
       ],
       "Account successfully updated": [
         "Hesap güncellendi"
+      ],
+      "Add ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME } ekle"
       ],
       "Address copied to clipboard": [
         "Adres panoya kopyalandı"
@@ -4618,11 +4643,17 @@
       "Everything in ${ planOrAppName }": [
         "${ planOrAppName } özelliklerinin tümü"
       ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "${ planOrAppName } kapsamındaki tüm özelliklerin yanı sıra:"
+      ],
       "Expired": [
         "Geçerlilik süresi dolmuş"
       ],
       "Folder:": [
         "Klasör:"
+      ],
+      "for ${ price }": [
+        "${ price } karşılığında"
       ],
       "Google Pay mark": [
         "Google Pay işareti"
@@ -5025,6 +5056,9 @@
       "Account holder": [
         "Hesap sahibi"
       ],
+      "Additional comments": [
+        "Ek açıklamalar"
+      ],
       "Address": [
         "Adres"
       ],
@@ -5088,6 +5122,9 @@
       "Company name": [
         "Kuruluş adı"
       ],
+      "Continue cancelling": [
+        "İptal etmeye geç"
+      ],
       "Copy": [
         "Kopyala"
       ],
@@ -5111,9 +5148,6 @@
       ],
       "Delete recovery-related information.": [
         "Kurtarma ile ilgili bilgileri sil."
-      ],
-      "Do you have any suggestions for our team?": [
-        "Ekibimizden herhangi bir öneri aldınız mı?"
       ],
       "Email address": [
         "E-posta adresi"
@@ -5160,6 +5194,9 @@
       "Last name": [
         "Soyad"
       ],
+      "Main reason for cancelling": [
+        "Temel iptal etme nedeni"
+      ],
       "Notification": [
         "Bildirim"
       ],
@@ -5199,6 +5236,9 @@
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
       ],
+      "Skip feedback": [
+        "Geri bildirimi atla"
+      ],
       "Start date": [
         "Başlangıç tarihi"
       ],
@@ -5225,9 +5265,6 @@
       ],
       "What happened?": [
         "Ne oldu?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "İptal etmenizin ya da tarifenizi düşürmenizin temel nedeni nedir?"
       ],
       "What should ${ LUMO_SHORT_APP_NAME } call you?": [
         "${ LUMO_SHORT_APP_NAME } size nasıl hitap etsin?"
@@ -5471,6 +5508,18 @@
         "${ price }"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } lisansı"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } koltukları"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME } koltuğu",
+        "${ seats } ${ MEET_APP_NAME } koltuğu"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: Önemli görüşmeler için gizliliği koruyan görüntülü toplantı"
@@ -5504,6 +5553,9 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Uçtan uca şifrelenmiş ekran paylaşımı ve geçici çağrı içi sohbet"
       ],
+      "Hosts can record meetings locally on their computers": [
+        "Oturum sahipleri toplantıları kendi bilgisayarlarına yerel olarak kaydedebilirler"
+      ],
       "Meeting recording": [
         "Görüşme kaydı"
       ],
@@ -5523,6 +5575,19 @@
       "Up to ${ n } participant": [
         "${ n } katılımcı",
         "${ n } katılımcı"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Görüntülü toplantılar, ${ n } katılımcı",
+        "Görüntülü toplantılar, ${ n } katılımcı"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } koltuk ile",
+        "${ seats } koltuk ile"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_MEET_SEATS } tane ${ MEET_SHORT_APP_NAME } koltuğunuz olabilir."
       ]
     },
     "New Label form": {
@@ -5745,6 +5810,9 @@
       "Data breach monitoring": [
         "Veri sızıntılarını izleme"
       ],
+      "Data retention policies": [
+        "Veri saklama ilkeleri"
+      ],
       "Dedicated servers optimized for streaming": [
         "Yayın akışı izlemek için ayarlanmış özel sunucular"
       ],
@@ -5850,6 +5918,9 @@
       ],
       "Priority support & live chat": [
         "Öncelikli destek ve canlı sohbet"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Gizli Yapay Zeka Sohbeti (${ LUMO_APP_NAME })"
       ],
       "Recover previous file versions": [
         "Önceki dosya sürümlerini geri yükleyin"
@@ -5978,6 +6049,9 @@
       "Vault sharing with up to ${ n } person": [
         "${ n } kişiye kadar kasa paylaşımı",
         "${ n } kişiye kadar kasa paylaşımı"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "Reklam engelleyici ve kötü amaçlı yazılım koruması içeren VPN"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } adreslerinizin veya takma adlarınızın sızıp sızmadığını denetlemek için karanlık ağı tararız ve herhangi bir şey bulursak sizi hemen uyarırız."
@@ -6804,6 +6878,9 @@
       "Anderson": [
         "Kaya"
       ],
+      "Anything you'd like us to know": [
+        "Bizimle paylaşmak istediğiniz bir şey var mı?"
+      ],
       "Anytown": [
         "İl"
       ],
@@ -6815,6 +6892,9 @@
       ],
       "e.g. My automation script": [
         "Örnek: Otomasyon betiğim"
+      ],
+      "Enter a name": [
+        "Bir ad yazın"
       ],
       "Enter a new folder name": [
         "Yeni bir klasör adı yazın"
@@ -6849,6 +6929,9 @@
       "Select": [
         "Seçin"
       ],
+      "Select a provider": [
+        "Bir hizmet sağlayıcı seçin"
+      ],
       "Select a reason": [
         "Bir neden seçin"
       ],
@@ -6860,9 +6943,6 @@
       ],
       "Selected traits will appear here automatically": [
         "Seçilmiş karakter özellikleri otomatik olarak burada görüntülenir"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "${ BRAND_NAME } uygulamasını iyileştirmek için bir düşünceniz varsa paylaşın"
       ],
       "Thomas": [
         "Ali"
@@ -6905,6 +6985,26 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "${ upsellPlanTitle } tarifesine yükselt"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Diğer"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {

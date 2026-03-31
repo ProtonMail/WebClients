@@ -342,8 +342,8 @@
       "Continue import": [
         "继续导入"
       ],
-      "Continue to ${ name }": [
-        "继续使用 ${ name }"
+      "Continue to ${ planOrAppName }": [
+        "继续使用 ${ planOrAppName }"
       ],
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "继续使用 ${ nameToDisplay } ${ maybeEmailInBrackets }"
@@ -4895,6 +4895,9 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "使用本指南，让您的组织迅速受益于 ${ BRAND_NAME } 行业领先的加密和隐私生态系统。"
       ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "很遗憾看到您离开。如果您有时间，我们希望了解您取消的原因。您的反馈有助于我们改进 ${ BRAND_NAME }，让产品变得更好。"
+      ],
       "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
         "您可以自定义一个域名列表，${ PASS_APP_NAME } 浏览器扩展程序（自动填充、自动建议、自动保存）的特定自动功能不应在这些域名上运行。"
       ],
@@ -6806,6 +6809,9 @@
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "已获取的 ${ BRAND_NAME } 用户主密钥无效，无法发送邮件"
+      ],
+      "Private users can be added to group once they've signed in for the first time: ${ displayedNames }": [
+        "私有用户首次登录后即可添加到群组：${ displayedNames }"
       ],
       "Process aborted": [
         "操作已中止"
@@ -11200,6 +11206,9 @@
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "订阅即将结束：为保留您的 ${ planName } 权益，请在 ${ byDate } 前通过 Google Play 商店重新开启您的订阅。${ reactivateLink }"
       ],
+      "Subscription starts on ${ startsOnTime }": [
+        "订阅从 ${ startsOnTime } 开始"
+      ],
       "Summary": [
         "概览"
       ],
@@ -11304,6 +11313,9 @@
       ],
       "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "用于报告您未设置 ${ BRAND_NAME } 账户的链接已过期。请联系我们的支持团队来解决此问题。"
+      ],
+      "The maximum donation amount is ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }": [
+        "最高捐赠金额为 ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }"
       ],
       "The most recent data update, excluding breaches.": [
         "最近的数据更新（数据泄露除外）"
@@ -11550,6 +11562,9 @@
       ],
       "Total: ${ totalPrice }": [
         "总计：${ totalPrice }"
+      ],
+      "Trial ends on ${ formattedPeriodEndDate }": [
+        "试用期于 ${ formattedPeriodEndDate } 结束"
       ],
       "trusted device": [
         "可信设备"
@@ -12926,6 +12941,9 @@
       "Add group member": [
         "添加群组成员"
       ],
+      "Additional comments": [
+        "附加备注"
+      ],
       "Address": [
         "地址"
       ],
@@ -13235,6 +13253,9 @@
       "Contacts": [
         "通讯录"
       ],
+      "Continue cancelling": [
+        "继续取消"
+      ],
       "Conversation grouping": [
         "会话分组"
       ],
@@ -13340,9 +13361,6 @@
       "Display name": [
         "称呼"
       ],
-      "Do you have any suggestions for our team?": [
-        "您对我们的团队有什么建议吗？"
-      ],
       "Domain": [
         "域名"
       ],
@@ -13360,6 +13378,9 @@
       ],
       "Don't show this again": [
         "不再显示此内容"
+      ],
+      "Donate ${ minimumDonation } or more to the ${ BRAND_NAME } Foundation": [
+        "向 ${ BRAND_NAME } 基金会捐赠 ${ minimumDonation } 或更多"
       ],
       "Donation amount": [
         "捐赠金额"
@@ -13642,6 +13663,9 @@
       ],
       "Main": [
         "主要"
+      ],
+      "Main reason for cancelling": [
+        "取消的主要原因"
       ],
       "Manage categories": [
         "管理分类"
@@ -14024,6 +14048,9 @@
       "Single sign-on URL": [
         "单点登录网址"
       ],
+      "Skip feedback": [
+        "跳过反馈"
+      ],
       "SMTP port": [
         "SMTP 端口"
       ],
@@ -14230,9 +14257,6 @@
       ],
       "What is the main reason you are deleting your account?": [
         "您删除账户的主要原因是？"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "您取消或降级订阅的主要原因是什么？"
       ],
       "Who can send to this group address?": [
         "谁可以向该群组地址发送邮件？"
@@ -15012,29 +15036,17 @@
       "Data never used for AI training": [
         "数据绝不用于 AI 训练"
       ],
-      "Data retention policies": [
-        "数据保留策略"
-      ],
       "Document & spreadsheet editor": [
         "文档和电子表格编辑器"
       ],
       "Email writing assistant": [
         "电子邮件写作助手"
       ],
-      "Everything from ${ title }, plus...": [
-        "包含 ${ title } 所有功能，外加..."
-      ],
-      "Everything in Meet Professional, plus:": [
-        "包含 Meet 专业版的所有功能，并额外享有："
-      ],
       "Open source": [
         "开源"
       ],
       "Password manager with team vaults": [
         "具备团队保险库的密码管理器"
-      ],
-      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
-        "私人 AI 聊天 (${ LUMO_SHORT_APP_NAME })"
       ],
       "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
         "私密且无限制的 AI 聊天 (${ LUMO_SHORT_APP_NAME })"
@@ -15047,12 +15059,6 @@
       ],
       "Strict no-logs policy": [
         "严格的零日志政策"
-      ],
-      "Video meetings, ${ PAID_MAX_PARTICIPANTS } participants": [
-        "视频会议，${ PAID_MAX_PARTICIPANTS } 名参会者"
-      ],
-      "VPN with ad-blocker and malware protection": [
-        "具备广告拦截器和恶意软件防护功能的 VPN"
       ]
     },
     "meet_signup_2025: title": {
@@ -16514,9 +16520,6 @@
       ],
       "Daily email notifications": [
         "每日邮件提醒"
-      ],
-      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
-        "关闭后将无法在 ${ BRAND_NAME } 应用内收取通知信息"
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "在您使用 ${ BRAND_NAME } 产品的第一个月里"
@@ -18207,6 +18210,9 @@
       "Anderson": [
         "Anderson"
       ],
+      "Anything you'd like us to know": [
+        "您有任何想要告诉我们的吗？"
+      ],
       "Anytown": [
         "任何城镇"
       ],
@@ -18248,6 +18254,9 @@
       ],
       "End date": [
         "结束日期"
+      ],
+      "Enter a name": [
+        "请输入名称"
       ],
       "Enter name": [
         "输入名称"
@@ -18327,6 +18336,9 @@
       "Select": [
         "选择"
       ],
+      "Select a provider": [
+        "请选择提供商"
+      ],
       "Select a reason": [
         "请选择原因"
       ],
@@ -18335,9 +18347,6 @@
       ],
       "Select state": [
         "请选择省份"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "分享你认为可以使 ${ BRAND_NAME } 变得更好的内容"
       ],
       "Start date": [
         "起始日期"
@@ -18597,6 +18606,26 @@
       ],
       "Unknown": [
         "未知"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "其他"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Recovery Email": {
@@ -20344,6 +20373,9 @@
       "Yearly": [
         "每年"
       ],
+      "You are all set": [
+        "一切就绪"
+      ],
       "Your plan": [
         "您的套餐"
       ],
@@ -20367,6 +20399,9 @@
       "Email address": [
         "邮箱地址"
       ],
+      "Name shown in meetings": [
+        "会议中显示的昵称"
+      ],
       "Organization name": [
         "组织名称"
       ],
@@ -20375,6 +20410,12 @@
       ],
       "Username": [
         "用户名"
+      ],
+      "Your email": [
+        "您的邮箱"
+      ],
+      "Your password": [
+        "您的密码"
       ]
     },
     "signup: Action": {
@@ -20477,23 +20518,23 @@
       ]
     },
     "Signup: Meet": {
-      "**Trusted by over 100 million** users and organizations": [
-        "**受到超过 1 亿** 用户和组织的信赖"
+      "Choose your display name to continue": [
+        "请选择您的显示名称以继续"
       ],
-      "Get ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
-        "获取 ${ PLAN_NAMES[PLANS.MEET_BUSINESS] } 套餐"
+      "Choose your display name to continue scheduling your meeting": [
+        "选择您的显示名称以继续安排会议"
       ],
-      "Own a business?": [
-        "拥有企业？"
+      "Create a ${ BRAND_NAME } account": [
+        "创建 ${ BRAND_NAME } 账户"
       ],
-      "Sign up, meet privately": [
-        "注册，私密会面"
+      "Create your ${ BRAND_NAME } account to create rooms": [
+        "创建您的 ${ BRAND_NAME } 账户以创建会议室"
       ],
-      "Start using ${ MEET_APP_NAME } now": [
-        "立即开始使用 ${ MEET_APP_NAME }"
+      "Create your ${ BRAND_NAME } account to schedule a meeting": [
+        "创建您的 ${ BRAND_NAME } 账户以安排会议"
       ],
-      "Your account also includes access to ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME } free features.": [
-        "您的账户还包含 ${ MAIL_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } 和 ${ PASS_SHORT_APP_NAME } 免费功能的访问权限。"
+      "Create your ${ BRAND_NAME } account to use your personal room": [
+        "创建您的 ${ BRAND_NAME } 账户以使用您的个人会议室"
       ]
     },
     "signup_2024: Feature": {
@@ -21199,9 +21240,6 @@
       ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } 台专用服务器"
-      ],
-      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
-        "${ LUMO_APP_NAME } 适用于 ${ maxLumo } 用户"
       ],
       "${ n } calendar per user": [
         "每位用户 ${ n } 份日历"

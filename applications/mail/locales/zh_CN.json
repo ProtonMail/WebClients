@@ -300,6 +300,9 @@
       "Continue import": [
         "继续导入"
       ],
+      "Continue to ${ planOrAppName }": [
+        "继续使用 ${ planOrAppName }"
+      ],
       "Continue with categories": [
         "继续使用分类"
       ],
@@ -4147,6 +4150,9 @@
       "We didn't find any known trackers and tracking URLs in this email.": [
         "我们未在此邮件中发现任何跟踪器与跟踪链接。"
       ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "很遗憾看到您离开。如果您有时间，我们希望了解您取消的原因。您的反馈有助于我们改进 ${ BRAND_NAME }，让产品变得更好。"
+      ],
       "When do you want your message to be sent?": [
         "您想何时发送邮件？"
       ],
@@ -7310,7 +7316,7 @@
         "初始化中..."
       ],
       "Insert image": [
-        "插入图像"
+        "插入图片"
       ],
       "Insert link": [
         "插入链接"
@@ -7404,9 +7410,6 @@
       ],
       "Low Priority": [
         "较低优先顺序"
-      ],
-      "Make ${ MAIL_APP_NAME } your default email application.": [
-        "将 ${ MAIL_APP_NAME } 设为默认邮箱应用。"
       ],
       "Manage your folders": [
         "管理文件夹"
@@ -9047,6 +9050,9 @@
       "Add to group": [
         "添加至群组"
       ],
+      "Additional comments": [
+        "附加备注"
+      ],
       "Address": [
         "地址"
       ],
@@ -9191,6 +9197,9 @@
       "Contacts": [
         "通讯录"
       ],
+      "Continue cancelling": [
+        "继续取消"
+      ],
       "Copy": [
         "复制"
       ],
@@ -9229,9 +9238,6 @@
       ],
       "Did not follow instructions": [
         "未遵循指令"
-      ],
-      "Do you have any suggestions for our team?": [
-        "您对我们的团队有什么建议吗？"
       ],
       "Don't ask again": [
         "不再询问"
@@ -9430,6 +9436,9 @@
       ],
       "Main": [
         "主要"
+      ],
+      "Main reason for cancelling": [
+        "取消的主要原因"
       ],
       "Manage categories": [
         "管理分类"
@@ -9632,6 +9641,9 @@
       "Size:": [
         "大小："
       ],
+      "Skip feedback": [
+        "跳过反馈"
+      ],
       "Social": [
         "社交媒体"
       ],
@@ -9748,9 +9760,6 @@
       ],
       "What happened?": [
         "发生了什么？"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "您取消或降级订阅的主要原因是什么？"
       ],
       "Which category should this be recategorized under?": [
         "此邮件应重新归类到哪个分类？"
@@ -11828,12 +11837,6 @@
       ],
       "No parent folder": [
         "无上层文件夹"
-      ],
-      "Remind me later": [
-        "稍后提醒我"
-      ],
-      "Yes, don't show again": [
-        "是的，不再显示"
       ]
     },
     "Option group": {
@@ -12258,6 +12261,9 @@
       "Anderson": [
         "Anderson"
       ],
+      "Anything you'd like us to know": [
+        "您有任何想要告诉我们的吗？"
+      ],
       "Anytown": [
         "任何城镇"
       ],
@@ -12278,6 +12284,9 @@
       ],
       "End date": [
         "结束日期"
+      ],
+      "Enter a name": [
+        "请输入名称"
       ],
       "Enter passphrase": [
         "输入密码短语"
@@ -12375,6 +12384,9 @@
       "Select": [
         "选择"
       ],
+      "Select a provider": [
+        "请选择提供商"
+      ],
       "Select a reason": [
         "请选择原因"
       ],
@@ -12383,9 +12395,6 @@
       ],
       "Select state": [
         "请选择省份"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "分享你认为可以使 ${ BRAND_NAME } 变得更好的内容"
       ],
       "Start date": [
         "起始日期"
@@ -12528,6 +12537,26 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "${ BRAND_NAME } 官方邮件"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "其他"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Received email icon": {
@@ -14863,9 +14892,6 @@
       ],
       "Invalid verification code": [
         "验证码无效"
-      ],
-      "Keep this banner hidden?": [
-        "始终隐藏此横幅？"
       ],
       "Label as": [
         "加标签"
