@@ -1,6 +1,7 @@
 import { formatInTimeZone } from 'date-fns-tz';
 import { c } from 'ttag';
 
+import { IcArrowDownArrowUp } from '@proton/icons/icons/IcArrowDownArrowUp';
 import { IcCalendarCheckmark } from '@proton/icons/icons/IcCalendarCheckmark';
 import { IcCalendarToday } from '@proton/icons/icons/IcCalendarToday';
 import { IcClock } from '@proton/icons/icons/IcClock';
@@ -32,6 +33,17 @@ export const getSortOptions = (
         groupBy: 'CreateTime',
         getSubtitle: getCreatedOnSubtitle,
     },
+    ...(activeTab === DashboardMeetingListTab.MeetingRooms
+        ? [
+              {
+                  value: SortOption.Alphabetical,
+                  label: c('Sort option').t`Alphabetical (A–Z)`,
+                  icon: <IcArrowDownArrowUp className="shrink-0 mr-2" />,
+                  groupBy: 'CreateTime',
+                  getSubtitle: getCreatedOnSubtitle,
+              } as SortOptionObject,
+          ]
+        : []),
     ...(activeTab === DashboardMeetingListTab.TimeBased
         ? [
               {

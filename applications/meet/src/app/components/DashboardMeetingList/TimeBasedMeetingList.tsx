@@ -34,6 +34,7 @@ export const TimeBasedMeetingList = ({
             [SortOption.LastUsed]: c('Label').t`Last used`,
             [SortOption.Past]: c('Label').t`Ended`,
             [SortOption.Upcoming]: '',
+            [SortOption.Alphabetical]: '',
         };
 
         return prefixes[sortBy] ? `${prefixes[sortBy]} ${date}` : date;
