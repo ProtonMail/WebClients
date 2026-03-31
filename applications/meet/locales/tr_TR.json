@@ -68,6 +68,9 @@
       "Copy meeting link": [
         "Görüşme bağlantısını kopyala"
       ],
+      "Copy room link": [
+        "Oda bağlantısını kopyala"
+      ],
       "Create a free account": [
         "Ücretsiz hesap açın"
       ],
@@ -82,9 +85,6 @@
       ],
       "Delete": [
         "Sil"
-      ],
-      "Delete meeting": [
-        "Görüşmeyi sil"
       ],
       "Disable ${ participantName }'s video": [
         "${ participantName } kişisinin görüntüsünü kapat"
@@ -119,9 +119,6 @@
       "Edit email address": [
         "E-posta adresini düzenle"
       ],
-      "Edit meeting": [
-        "Görüşmeyi düzenle"
-      ],
       "Edit phone number": [
         "Telefon numarasını düzenle"
       ],
@@ -142,6 +139,9 @@
       ],
       "Forgot password?": [
         "Parolamı unuttum"
+      ],
+      "Generate a new meeting link.": [
+        "Yeni görüşme bağlantısı oluştur."
       ],
       "Get Meet Professional": [
         "Meet Professional sürümüne geç"
@@ -173,7 +173,7 @@
       "Join meeting": [
         "Görüşmeye katıl"
       ],
-      "Join via link": [
+      "Join with a link": [
         "Bağlantı ile katıl"
       ],
       "Kick out": [
@@ -291,7 +291,7 @@
         "Ayarlar"
       ],
       "Show floating thumbnail during screensharing": [
-        "Ekran paylaşımı sırasında kayan küçük görseli göster"
+        "Ekran paylaşımı yaparken kayan küçük görsel görüntülensin"
       ],
       "Show participants": [
         "Katılımcıları görüntüle"
@@ -338,6 +338,9 @@
       "Stop recording": [
         "Görüşme kaydını durdur"
       ],
+      "Stop recording and download video": [
+        "Kaydı durdur ve videoyu indir"
+      ],
       "Stop Recording Track Stats": [
         "Kayıt izleme istatistiklerini durdur"
       ],
@@ -349,6 +352,9 @@
       ],
       "Tap to unblock audio playback": [
         "Ses oynatma engellemesini kaldırmak için dokunun"
+      ],
+      "The current link will stop working.": [
+        "Geçerli bağlantı artık çalışmayacak."
       ],
       "Try again": [
         "Yeniden dene"
@@ -435,9 +441,6 @@
       ],
       "Rotate camera": [
         "Kamerayı döndür"
-      ],
-      "Rotate personal meeting link": [
-        "Kişisel görüşme bağlantısını değiştir"
       ],
       "Screen share": [
         "Ekran paylaşımı"
@@ -1431,11 +1434,11 @@
       ]
     },
     "Description": {
+      "Encrypting with Messaging Layer Security (MLS)": [
+        "İleti katmanı güvenliği (MLS) ile şifreleme"
+      ],
       "Rotating group encryption key for best security": [
         "En iyi güvenliği sağlamak için grup şifreleme anahtarı değiştiriliyor"
-      ],
-      "Setting up group end-to-end encryption with advanced Messaging Layer Security (MLS)": [
-        "Gelişmiş ileti katmanı güvenliği (MLS) ile grup uçtan uca şifrelemesi ayarlanıyor"
       ]
     },
     "emergency_access": {
@@ -1680,8 +1683,8 @@
       ]
     },
     "Header": {
-      "Speak freely again - every call is end-to-end encrypted": [
-        "Yeniden özgürce konuşun. Tüm aramalar uçtan uca şifrelenir"
+      "Protect your conversations with end-to-end encryption": [
+        "Sohbetlerinizi uçtan uca şifrelemeyle koruyun"
       ]
     },
     "Headline": {
@@ -1691,8 +1694,8 @@
       "${ createAnActionAction } or ${ signInAction } to schedule meetings": [
         "Görüşme zamanlamak için ${ createAnActionAction } ya da ${ signInAction }"
       ],
-      "Your conversations ${ matterWord }": [
-        "Yazışmalarınız ${ matterWord }"
+      "Talk in total ${ privacyWord }": [
+        "Tam bir ${ privacyWord } içinde konuşun"
       ]
     },
     "Human verification method": {
@@ -1734,8 +1737,8 @@
       "${ reactorNames } reacted with ${ emoji }": [
         "${ reactorNames }, ${ emoji } ile tepki verdi"
       ],
-      "${ totalParticipantCount } of ${ maxParticipants } participants": [
-        "${ totalParticipantCount } / ${ maxParticipants } katılımcı"
+      "${ totalParticipantCount } of up to ${ maxParticipants } participants": [
+        "En fazla ${ maxParticipants } katılımcıdan ${ totalParticipantCount } tanesi"
       ],
       "${ totalParticipantCount } participant": [
         "${ totalParticipantCount } katılımcı",
@@ -1756,6 +1759,9 @@
       "Are you sure you want to leave?": [
         "Ayrılmak istediğinize emin misiniz?"
       ],
+      "Are you sure you want to stop recording?": [
+        "Kaydı durdurmak istediğinize emin misiniz?"
+      ],
       "Attention required": [
         "İlgilenmeniz gerekiyor"
       ],
@@ -1764,6 +1770,9 @@
       ],
       "By continuing in the meeting, you acknowledge and consent to being recorded.": [
         "Görüşmeye katılarak kayıt yapılacağını kabul etmiş ve onaylamış olursunuz."
+      ],
+      "By joining, you agree to our ${ termsLink } and ${ privacyLink }.": [
+        "Katılarak ${ termsLink } ve ${ privacyLink } koşullarımızı kabul etmiş olursunuz."
       ],
       "camera": [
         "kamera"
@@ -1942,9 +1951,6 @@
       "Loading...": [
         "Yükleniyor..."
       ],
-      "matter": [
-        "konu"
-      ],
       "Meet without restrictions": [
         "Kısıtlama olmadan görüşme yapın"
       ],
@@ -2062,6 +2068,9 @@
       "Premium meeting": [
         "Ücretli görüşme"
       ],
+      "privacy": [
+        "gizlilik"
+      ],
       "Reconnected successfully": [
         "Yeniden bağlandı"
       ],
@@ -2069,7 +2078,7 @@
         "Görüşmeye yeniden bağlanıyor..."
       ],
       "Record your meetings": [
-        "Toplantılarınızı kaydedin"
+        "Görüşmelerinizi kaydedin"
       ],
       "Recording saved": [
         "Görüşme kaydedildi"
@@ -2125,6 +2134,9 @@
       "Sort by": [
         "Sıralama"
       ],
+      "Speaker selection isn’t available in this browser. Use your system settings to choose a different speaker.": [
+        "Bu tarayıcıda hoparlör seçimi özelliği yok. Farklı bir hoparlör seçmek için sistem ayarlarınızı kullanın."
+      ],
       "Start recording": [
         "Kaydı başlat"
       ],
@@ -2149,8 +2161,8 @@
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
         "Görüşme sahibi sizi bu görüşmeden çıkardı. Bir yanlışlık olduğunu düşünüyorsanız görüşme sahibinden sizi yeniden davet etmesini isteyin."
       ],
-      "This is an end-to-end encrypted chat with ephemeral messages. After you leave the call, you will not be able to access this chat.": [
-        "Bu sohbet uçtan uca şifrelenmiştir ve iletiler geçicidir. Görüşmeden ayrıldıktan sonra bu sohbete yeniden erişemezsiniz."
+      "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
+        "Bu şifrelenmiş sohbette, çağrı sonunda kaybolacak olan süreli iletiler kullanılıyor."
       ],
       "This meeting is being recorded": [
         "Bu görüşme kaydediliyor"
@@ -2160,9 +2172,6 @@
       ],
       "This meeting is password protected": [
         "Bu görüşme parola ile korunuyor"
-      ],
-      "This meeting is protected by end-to-end encryption with Messaging Layer Security (MLS).": [
-        "Bu görüşme ileti katmanı güvenliği (MLS) kullanan uçtan uca şifrelemeyle korunuyor."
       ],
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
         "Bu görüşme ${ MEET_APP_NAME } bilgisayar uygulamasında açıldı."
@@ -2176,14 +2185,23 @@
       "To create a room, **create a free ${ BRAND_NAME } account**. You will return to ${ MEET_APP_NAME } automatically.": [
         "Bir oda oluşturmak için **ücretsiz bir ${ BRAND_NAME } hesabı açın**. Otomatik olarak ${ MEET_APP_NAME } uygulamasına döneceksiniz."
       ],
+      "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
+        "Bir oda oluştururken oda bilgilerini kaydedebilmemiz için **bir ücretsiz ${ BRAND_NAME } hesabı** açmalısınız. Bu işlem yalnızca birkaç saniye sürer."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
       ],
       "To schedule a meeting, **create a free ${ BRAND_NAME } account**. You will return to ${ MEET_APP_NAME } automatically.": [
         "Bir toplantı zamanlamak için **ücretsiz bir ${ BRAND_NAME } hesabı açın**. Otomatik olarak ${ MEET_APP_NAME } uygulamasına döneceksiniz."
       ],
+      "To schedule an event, you'll need **a free ${ BRAND_NAME } Account** so we can save the event. This only takes a few seconds.": [
+        "Bir etkinlik zamanlarken, etkinlik bilgilerini kaydedebilmemiz için **bir ücretsiz ${ BRAND_NAME } hesabı** açmalısınız. Bu işlem yalnızca birkaç saniye sürer."
+      ],
       "To use your personal meeting room, **create a free ${ BRAND_NAME } account**. You will return to ${ MEET_APP_NAME } automatically.": [
         "Kişisel görüşme odanızı kullanmak için **ücretsiz bir ${ BRAND_NAME } hesabı açın**. Otomatik olarak ${ MEET_APP_NAME } uygulamasına döneceksiniz."
+      ],
+      "To use your personal meeting room, you'll need **a free ${ BRAND_NAME } Account**. This only takes a few seconds.": [
+        "Kişisel toplantı odanızı kullanmak için **bir ücretsiz ${ BRAND_NAME } hesabı** açmalısınız. Bu işlem yalnızca birkaç saniye sürer."
       ],
       "Today — ${ absoluteDate }": [
         "Bugün — ${ absoluteDate }"
@@ -2210,7 +2228,7 @@
         "${ unlimitedMeeting } ve ücretli özelliklere erişin"
       ],
       "Upgrade to record your meetings locally.": [
-        "Toplantılarınızı yerel olarak kaydetmek için yükseltin."
+        "Görüşmelerinizi yerel olarak kaydetmek için tarifenizi yükseltin."
       ],
       "Upgrade to remove the 1-hour limit and skip the countdown. Enjoy meetings up to 24 hours.": [
         "Tarifenizi yükselterek 1 saat sınırını kaldırın ve geri sayımı atlayın. 24 saatlik görüşmelerin tadını çıkarın."
@@ -2258,7 +2276,7 @@
         "Toplantınızdan ayrıldınız"
       ],
       "You need a paid ${ MEET_SHORT_APP_NAME } or Workspace plan for this feature. Contact your organization admin to upgrade.": [
-        "Bu özelliği kullanmak için ücretli bir ${ MEET_SHORT_APP_NAME } veya Workspace tarifesine ihtiyacınız var. Yükseltme işlemi için kuruluş yöneticinizle iletişime geçin."
+        "Bu özelliği kullanmak için ücretli bir ${ MEET_SHORT_APP_NAME } ya da Workspace tarifesinde olmalısınız. Tarifenizi yükseltmesi için kuruluş yöneticinizle görüşün."
       ],
       "You were removed from the meeting": [
         "Görüşmeden çıkarıldınız"
@@ -2481,11 +2499,17 @@
       "Learn more": [
         "Ayrıntılı bilgi alın"
       ],
+      "privacy policy": [
+        "gizlilik ilkesi"
+      ],
       "Request an invite": [
         "Davet iste"
       ],
       "Sign in": [
         "Oturum aç"
+      ],
+      "terms and conditions": [
+        "hüküm ve koşullar"
       ],
       "What’s this?": [
         "Bu nedir?"
@@ -2592,12 +2616,6 @@
       "E.g., ": [
         "Örneğin, "
       ],
-      "e.g., Daily room, project hub": [
-        "ör. Günlük oda, proje merkezi"
-      ],
-      "e.g., Team sync, project update": [
-        "ör. ekip senkronizasyonu, proje güncellemesi"
-      ],
       "Enter passphrase": [
         "Parola ifadesini yazın"
       ],
@@ -2613,11 +2631,17 @@
       "Loading...": [
         "Yükleniyor..."
       ],
+      "Meeting name, e.g. team sync, project update, etc": [
+        "Görüşme adı. Ekip koordinasyonu, proje güncellemesi gibi"
+      ],
       "Password": [
         "Parola"
       ],
       "Please describe the problem and include any error messages": [
         "Lütfen sorunu açıklayın ve varsa hata iletisini ekleyin"
+      ],
+      "Room name, e.g. team sync, project update, etc": [
+        "Oda adı. Ekip koordinasyonu, proje güncellemesi gibi"
       ],
       "Schedule in ${ CALENDAR_APP_NAME }": [
         "${ CALENDAR_APP_NAME } uygulamasında zamanla"
@@ -2824,8 +2848,14 @@
         "${ participantCount } diğer katılımcıyla görüşmeye katılınıyor…",
         "${ participantCount } diğer katılımcıyla görüşmeye katılınıyor…"
       ],
+      "Launching Meeting...": [
+        "Görüşme başlatılıyor..."
+      ],
       "Local Participant": [
         "Yerel katılımcı"
+      ],
+      "Meeting": [
+        "Görüşme"
       ],
       "Meeting created": [
         "Görüşme oluşturuldu"
@@ -2856,9 +2886,6 @@
       ],
       "Personal meeting room": [
         "Kişisel görüşme odası"
-      ],
-      "Protecting meeting with end-to-end encryption...": [
-        "Görüşme uçtan uca şifrelemeyle korunuyor..."
       ],
       "Publications": [
         "Yayınlar"
@@ -2898,6 +2925,9 @@
       ],
       "Starting meeting as the first participant…": [
         "Görüşme ilk katılımcı olarak başlatılıyor…"
+      ],
+      "Stop recording": [
+        "Kaydı durdur"
       ],
       "Talk confidentially": [
         "Gizliliğinizi koruyarak konuşun"

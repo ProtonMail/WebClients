@@ -77,9 +77,6 @@
       "Delete": [
         "Usuń"
       ],
-      "Delete meeting": [
-        "Usuń spotkanie"
-      ],
       "Disable ${ participantName }'s video": [
         "Wyłącz wideo użytkownika ${ participantName }"
       ],
@@ -112,9 +109,6 @@
       ],
       "Edit email address": [
         "Edytuj adres e-mail"
-      ],
-      "Edit meeting": [
-        "Edytuj spotkanie"
       ],
       "Edit phone number": [
         "Edytuj numer telefonu"
@@ -166,9 +160,6 @@
       ],
       "Join meeting": [
         "Dołącz do spotkania"
-      ],
-      "Join via link": [
-        "Dołącz przez link"
       ],
       "Kick out": [
         "Wyrzuć"
@@ -423,9 +414,6 @@
       ],
       "Rotate camera": [
         "Obróć kamerę"
-      ],
-      "Rotate personal meeting link": [
-        "Zmień osobisty link do spotkania"
       ],
       "Screen share": [
         "Udostępnianie ekranu"
@@ -1409,9 +1397,6 @@
     "Description": {
       "Rotating group encryption key for best security": [
         "Rotacja grupowego klucza szyfrowania dla najlepszego bezpieczeństwa"
-      ],
-      "Setting up group end-to-end encryption with advanced Messaging Layer Security (MLS)": [
-        "Konfigurowanie grupowego szyfrowania end-to-end z zaawansowanym MLS (Messaging Layer Security)"
       ]
     },
     "emergency_access": {
@@ -1652,20 +1637,12 @@
         "Usługi"
       ]
     },
-    "Header": {
-      "Speak freely again - every call is end-to-end encrypted": [
-        "Znów rozmawiaj swobodnie – każde połączenie jest zaszyfrowane end-to-end"
-      ]
-    },
     "Headline": {
       "${ createAnActionAction } or ${ signInAction } to access your personal room and create new rooms": [
         "${ createAnActionAction } lub ${ signInAction }, aby uzyskać dostęp do swojego prywatnego pokoju i tworzyć nowe pokoje"
       ],
       "${ createAnActionAction } or ${ signInAction } to schedule meetings": [
         "${ createAnActionAction } lub ${ signInAction }, aby zaplanować spotkania"
-      ],
-      "Your conversations ${ matterWord }": [
-        "Twoje wątki ${ matterWord }"
       ]
     },
     "Human verification method": {
@@ -1890,9 +1867,6 @@
       "Loading...": [
         "Ładowanie..."
       ],
-      "matter": [
-        "mają znaczenie"
-      ],
       "Meet without restrictions": [
         "Spotykaj się bez ograniczeń"
       ],
@@ -2085,9 +2059,6 @@
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
         "Właściciel spotkania usunął Cię z tego spotkania. Jeśli to pomyłka, poproś właściciela o ponowne zaproszenie."
       ],
-      "This is an end-to-end encrypted chat with ephemeral messages. After you leave the call, you will not be able to access this chat.": [
-        "To jest zaszyfrowany end-to-end czat ze znikającymi wiadomościami. Po opuszczeniu połączenia nie będziesz mieć dostępu do tego czatu."
-      ],
       "This meeting is being recorded": [
         "To spotkanie jest nagrywane"
       ],
@@ -2096,9 +2067,6 @@
       ],
       "This meeting is password protected": [
         "To spotkanie jest chronione hasłem"
-      ],
-      "This meeting is protected by end-to-end encryption with Messaging Layer Security (MLS).": [
-        "To spotkanie jest chronione szyfrowaniem end-to-end z MLS (Messaging Layer Security)."
       ],
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
         "To spotkanie zostało otwarte w aplikacji komputerowej ${ MEET_APP_NAME }."
@@ -2400,6 +2368,9 @@
       ],
       "Learn more": [
         "Dowiedz się więcej"
+      ],
+      "privacy policy": [
+        "politykę prywatności"
       ],
       "Request an invite": [
         "Poproś o zaproszenie"
@@ -2768,9 +2739,6 @@
       ],
       "Personal meeting room": [
         "Osobisty pokój spotkań"
-      ],
-      "Protecting meeting with end-to-end encryption...": [
-        "Zabezpieczanie spotkania szyfrowaniem end-to-end…"
       ],
       "Publications": [
         "Publikacje"

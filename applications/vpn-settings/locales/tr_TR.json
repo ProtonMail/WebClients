@@ -224,6 +224,9 @@
       "Continue import": [
         "İçe aktarmayı sürdür"
       ],
+      "Continue to ${ planOrAppName }": [
+        "${ planOrAppName } ile ilerle"
+      ],
       "Continue with this password": [
         "Bu parolayı kullanmayı sürdür"
       ],
@@ -1235,6 +1238,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } koltuk",
         "${ seats } ${ LUMO_APP_NAME } koltuk"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } lisansı",
+        "${ seats } ${ MEET_APP_NAME } lisansı"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } yazma yardımcısı koltuğu",
@@ -3504,6 +3511,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Kuruluşunuzun, ${ BRAND_NAME } sektör lideri şifreleme ve gizlilik ekosisteminden hemen yararlanmasını sağlamak için bu rehberi kullanın."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Aramızdan ayrıldığınız için üzgünüz. Vakit ayırıp iptal etme nedeninizi paylaşırsanız çok seviniriz. Geri bildiriminiz ${ BRAND_NAME } hizmetlerini herkes için daha iyi yapmamıza yardımcı olur."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Etkinlikleri iCal biçiminde içe aktarabilirsiniz (ICS dosyası).\nDosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_EVENTS_STRING } etkinlik kaydı içermelidir.\nDosyanız daha büyükse, daha küçük dosyalara bölün."
@@ -5974,6 +5984,15 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME }, kullanıcı adı ve ikinci parola yerine tek bir parola ile de kullanılabilir. Tek parola kipine geçmek için kullanmak istediğiniz tek parolayı yazın ve Kaydet üzerine tıklayın."
       ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } uçtan uca şifrelenmiş bir görüntülü görüşme çözümüdür. Güvenli görüşmeler düzenlemek için bunu tarifenize ekleyin."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } koltukları"
+      ],
+      "${ MEET_APP_NAME } video conferencing": [
+        "${ MEET_APP_NAME } görüntülü görüşme"
+      ],
       "${ n } address": [
         "${ n } adres",
         "${ n } adres"
@@ -6203,6 +6222,9 @@
       ],
       "Activity Monitor": [
         "Etkinlik izleyici"
+      ],
+      "Add ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME } ekle"
       ],
       "add a recovery method": [
         "bir kurtarma yöntemi ekleyin"
@@ -6774,6 +6796,9 @@
       "Everything in ${ planOrAppName }": [
         "${ planOrAppName } özelliklerinin tümü"
       ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "${ planOrAppName } kapsamındaki tüm özelliklerin yanı sıra:"
+      ],
       "Example: ${ spfExample }": [
         "Örnek: ${ spfExample }"
       ],
@@ -6794,6 +6819,9 @@
       ],
       "finance": [
         "finans"
+      ],
+      "for ${ price }": [
+        "${ price } karşılığında"
       ],
       "for choosing ${ product }": [
         "${ product } seçtiğiniz için"
@@ -8738,6 +8766,9 @@
       "Add group member": [
         "Grup üyesi ekle"
       ],
+      "Additional comments": [
+        "Ek açıklamalar"
+      ],
       "Address": [
         "Adres"
       ],
@@ -8900,6 +8931,9 @@
       "Contacts": [
         "Kişiler"
       ],
+      "Continue cancelling": [
+        "İptal etmeye geç"
+      ],
       "Copy": [
         "Kopyala"
       ],
@@ -8956,9 +8990,6 @@
       ],
       "Display name": [
         "Görüntülenecek ad"
-      ],
-      "Do you have any suggestions for our team?": [
-        "Ekibimizden herhangi bir öneri aldınız mı?"
       ],
       "Domain": [
         "Etki alanı"
@@ -9139,6 +9170,9 @@
       ],
       "Main": [
         "Ana"
+      ],
+      "Main reason for cancelling": [
+        "Temel iptal etme nedeni"
       ],
       "Manage categories": [
         "Kategori yönetimi"
@@ -9378,6 +9412,9 @@
       "Single sign-on URL": [
         "Tek oturum açma adresi"
       ],
+      "Skip feedback": [
+        "Geri bildirimi atla"
+      ],
       "Spam": [
         "İstenmeyen e-posta"
       ],
@@ -9473,9 +9510,6 @@
       ],
       "What is the main reason you are deleting your account?": [
         "Hesabınızı silmenizin ana nedeni nedir?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "İptal etmenizin ya da tarifenizi düşürmenizin temel nedeni nedir?"
       ],
       "Who can send to this group address?": [
         "Bu grup adresine kimler gönderebilir?"
@@ -9990,6 +10024,22 @@
         "Hesabınızı Porkbun etki alanınızla kurun."
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } ( ${ quantity } kullanıcı için)",
+        "${ MEET_APP_NAME } ( ${ quantity } kullanıcı için)"
+      ],
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } lisansı"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } koltukları"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME } koltuğu",
+        "${ seats } ${ MEET_APP_NAME } koltuğu"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: Önemli görüşmeler için gizliliği koruyan görüntülü toplantı"
@@ -10023,6 +10073,9 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Uçtan uca şifrelenmiş ekran paylaşımı ve geçici çağrı içi sohbet"
       ],
+      "Hosts can record meetings locally on their computers": [
+        "Oturum sahipleri toplantıları kendi bilgisayarlarına yerel olarak kaydedebilirler"
+      ],
       "Meeting recording": [
         "Görüşme kaydı"
       ],
@@ -10042,6 +10095,30 @@
       "Up to ${ n } participant": [
         "${ n } katılımcı",
         "${ n } katılımcı"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Görüntülü toplantılar, ${ n } katılımcı",
+        "Görüntülü toplantılar, ${ n } katılımcı"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } koltuk ile",
+        "${ seats } koltuk ile"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_MEET_SEATS } tane ${ MEET_SHORT_APP_NAME } koltuğunuz olabilir."
+      ]
+    },
+    "Meet_launch": {
+      "Add ${ planName }": [
+        "${ planName } tarifesini ekle"
+      ],
+      "Confidential video conferencing for the conversations that matter. Only ${ priceString } more each month.": [
+        "Önemli görüşmeleriniz için gizlilik garantili görüntülü görüşme. Ayda yalnızca ${ priceString } farkla."
+      ],
+      "Talk privately with ${ planName }": [
+        "${ planName } ile gizliliğinizi koruyarak görüşün"
       ]
     },
     "Member action": {
@@ -10479,6 +10556,9 @@
       "Data breach monitoring": [
         "Veri sızıntılarını izleme"
       ],
+      "Data retention policies": [
+        "Veri saklama ilkeleri"
+      ],
       "Dedicated servers and IP": [
         "Size ayrılmış sunucular ve IP adresleri"
       ],
@@ -10593,6 +10673,9 @@
       ],
       "Priority support & live chat": [
         "Öncelikli destek ve canlı sohbet"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Gizli Yapay Zeka Sohbeti (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "Gizli fotoğraf yedekleme"
@@ -10752,6 +10835,9 @@
       "Vault sharing with up to ${ n } person": [
         "${ n } kişiye kadar kasa paylaşımı",
         "${ n } kişiye kadar kasa paylaşımı"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "Reklam engelleyici ve kötü amaçlı yazılım koruması içeren VPN"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } adreslerinizin veya takma adlarınızın sızıp sızmadığını denetlemek için karanlık ağı tararız ve herhangi bir şey bulursak sizi hemen uyarırız."
@@ -11274,8 +11360,8 @@
       "Daily email notifications": [
         "Günlük e-posta bildirimleri"
       ],
-      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
-        "Bu seçenek kapatıldığında, ${ BRAND_NAME } uygulamalarının bildirim alma yeteneği kaldırılır"
+      "Disabling this means you won't get in-app notifications about promotions, new features, new ${ BRAND_NAME } services, and reminders.": [
+        "Bu seçeneği kapatırsanız fırsatlar, yeni özellikler, yeni ${ BRAND_NAME } hizmetleri ve hatırlatıcılar ile ilgili uygulama içi bildirimleri almayacaksınız."
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Bir ${ BRAND_NAME } ürünü kullandığınız ilk ay boyunca"
@@ -12350,6 +12436,9 @@
       "Anderson": [
         "Kaya"
       ],
+      "Anything you'd like us to know": [
+        "Bizimle paylaşmak istediğiniz bir şey var mı?"
+      ],
       "Anytown": [
         "İl"
       ],
@@ -12388,6 +12477,9 @@
       ],
       "End date": [
         "Bitiş tarihi"
+      ],
+      "Enter a name": [
+        "Bir ad yazın"
       ],
       "Enter name": [
         "Adı yazın"
@@ -12452,6 +12544,9 @@
       "Select": [
         "Seçin"
       ],
+      "Select a provider": [
+        "Bir hizmet sağlayıcı seçin"
+      ],
       "Select a reason": [
         "Bir neden seçin"
       ],
@@ -12460,9 +12555,6 @@
       ],
       "Select state": [
         "İl seçin"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "${ BRAND_NAME } uygulamasını iyileştirmek için bir düşünceniz varsa paylaşın"
       ],
       "Start date": [
         "Başlangıç tarihi"
@@ -12604,6 +12696,26 @@
       ],
       "Unknown": [
         "Bilinmiyor"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Diğer"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {
@@ -14302,10 +14414,6 @@
         "${ ipAddresses } size ayrılmış sunucu",
         "${ ipAddresses } size ayrılmış sunucu"
       ],
-      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
-        "En fazla ${ maxLumo } kullanıcı için ${ LUMO_APP_NAME }",
-        "En fazla ${ maxLumo } kullanıcı için ${ LUMO_APP_NAME }"
-      ],
       "${ n } calendar per user": [
         "Her kullanıcı için ${ n } takvim",
         "Her kullanıcı için ${ n } takvim"
@@ -14329,6 +14437,10 @@
       "${ n } VPN connection per user": [
         "${ n } VPN bağlantısı / kullanıcı",
         "${ n } VPN bağlantısı / kullanıcı"
+      ],
+      "${ productName } for ${ count } user": [
+        "${ count } kullanıcı için ${ productName }",
+        "${ count } kullanıcı için ${ productName }"
       ],
       "${ UsedAddresses } address": [
         "${ UsedAddresses } adres",

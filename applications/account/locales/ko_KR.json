@@ -342,8 +342,8 @@
       "Continue import": [
         "사용자 지정 설정값으로 계속하기"
       ],
-      "Continue to ${ name }": [
-        "${ name }(으)로 계속하기"
+      "Continue to ${ planOrAppName }": [
+        "${ planOrAppName }(으)로 계속하기"
       ],
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "${ nameToDisplay } ${ maybeEmailInBrackets }으로 계속하기"
@@ -4895,6 +4895,9 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "이 가이드를 통해 조직이 ${ BRAND_NAME }의 업계 최고의 암호화 및 개인정보 보호 생태계로부터 즉시 혜택을 받을 수 있습니다."
       ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "떠나시는 모습을 보니 아쉽네요. 잠시 시간을 내어주셔서 취소하시려는 이유에 대해 알려주시면 정말 감사하겠습니다. 회원님의 소중한 의견은 ${ BRAND_NAME }을 모든 사용자에게 더 나은 서비스로 만드는 데 있어서 큰 도움이 됩니다."
+      ],
       "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
         "${ PASS_APP_NAME } 브라우저 확장 프로그램에서 특정 자동 기능(자동 완성, 자동 제안, 자동 저장)이 실행되지 않아야 하는 도메인 목록을 사용자 지정할 수 있습니다."
       ],
@@ -6806,6 +6809,9 @@
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "${ BRAND_NAME } 사용자를 불러오기 위한 기본 키가 전송에 유효하지 않습니다"
+      ],
+      "Private users can be added to group once they've signed in for the first time: ${ displayedNames }": [
+        "개인 사용자는 처음 로그인하면 그룹에 추가할 수 있습니다: ${ displayedNames }"
       ],
       "Process aborted": [
         "과정 중단됨"
@@ -8773,7 +8779,7 @@
     },
     "Import provider": {
       "Advanced import": [
-        "고급 가져오기"
+        "고급 불러오기 설정"
       ],
       "Import from ${ providerName }": [
         "${ providerName }(에)서 불러오기"
@@ -9547,6 +9553,9 @@
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "10점 중 8.4점 평가의 CNET 에디터 초이스 어워드"
       ],
+      "Code expired": [
+        "코드가 만료됨"
+      ],
       "Coming soon": [
         "곧 찾아옵니다"
       ],
@@ -9612,6 +9621,9 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "가져온 메시지의 라벨, 이 가져오기의 시간 범위, 그리고 가져오고자 하는 라벨을 생성하세요."
+      ],
+      "Create a new code on your TV and try again.": [
+        "TV에서 새로운 코드를 생성한 뒤 다시 시도하세요."
       ],
       "Create a secure cloud for ${ value } member": [
         "${ value }명의 구성원을 위한 보안 클라우드 만들기"
@@ -9777,6 +9789,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "다운그레이드하면 유료 ${ VPN_APP_NAME } 서버에 대한 모든 연결이 종료됩니다."
+      ],
+      "Download ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME } 다운로드"
       ],
       "Download current logs": [
         "현재 로그 다운로드"
@@ -10885,6 +10900,9 @@
       "Product reviews, rankings, or guides": [
         "제품 리뷰, 순위 또는 가이드"
       ],
+      "Protect this device too?": [
+        "이 기기도 보호하시겠어요?"
+      ],
       "Protect your account from quantum computing threats with quantum-resistant cryptographic keys.": [
         "양자 내성 암호화 키로 양자 컴퓨팅 위협으로부터 회원님의 계정을 보호하세요."
       ],
@@ -11113,6 +11131,9 @@
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "주소를 활성화 하려면 ${ MAIL_APP_NAME }에 로그인하십시오"
       ],
+      "Sign-in complete": [
+        "로그인 완료"
+      ],
       "Signed up": [
         "가입 완료"
       ],
@@ -11199,6 +11220,9 @@
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "구독 종료: ${ planName } 혜택을 유지하려면, ${ byDate }까지 Google Play Store에서 구독을 갱신하십시오. ${ reactivateLink }"
+      ],
+      "Subscription starts on ${ startsOnTime }": [
+        "구독이 ${ startsOnTime }에 시작됩니다"
       ],
       "Summary": [
         "주문 요약"
@@ -11304,6 +11328,9 @@
       ],
       "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "설정하지 않은 ${ BRAND_NAME } 계정의 보고서에 대한 주소가 만료되었습니다. 문제 해결을 위해 지원팀에 연락해주세요."
+      ],
+      "The maximum donation amount is ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }": [
+        "최대 기부 금액은 ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }입니다."
       ],
       "The most recent data update, excluding breaches.": [
         "침해 사례를 제외한 가장 최근의 데이터 업데이트입니다."
@@ -11550,6 +11577,9 @@
       ],
       "Total: ${ totalPrice }": [
         "합계: ${ totalPrice }"
+      ],
+      "Trial ends on ${ formattedPeriodEndDate }": [
+        "무료 체험이 ${ formattedPeriodEndDate }에 종료됨"
       ],
       "trusted device": [
         "신뢰할 수 있는 장치"
@@ -12123,6 +12153,9 @@
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "매 ${ renewCycle }개월마다 ${ renewAmountStr }(으)로 청구됩니다. 언제든지 취소할 수 있습니다."
+      ],
+      "You're now signed in on your TV.": [
+        "사용자의 TV에서 로그인되었습니다."
       ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "${ MAX_SYNC_PAID_USER } Gmail 주소에 대한 전달이 활성화됨. 다른 전달을 추가하려면 먼저 그 중 하나를 비활성화하십시오."
@@ -12926,6 +12959,9 @@
       "Add group member": [
         "그룹 구성원 추가"
       ],
+      "Additional comments": [
+        "추가 의견"
+      ],
       "Address": [
         "주소"
       ],
@@ -13235,6 +13271,9 @@
       "Contacts": [
         "연락처"
       ],
+      "Continue cancelling": [
+        "취소 계속하기"
+      ],
       "Conversation grouping": [
         "대화 그룹"
       ],
@@ -13340,9 +13379,6 @@
       "Display name": [
         "표시되는 이름"
       ],
-      "Do you have any suggestions for our team?": [
-        "저희 팀에 질문이 있으신가요?"
-      ],
       "Domain": [
         "도메인"
       ],
@@ -13360,6 +13396,9 @@
       ],
       "Don't show this again": [
         "다시 보지 않기"
+      ],
+      "Donate ${ minimumDonation } or more to the ${ BRAND_NAME } Foundation": [
+        "${ BRAND_NAME } 재단에 ${ minimumDonation } 이상을 기부하세요"
       ],
       "Donation amount": [
         "기부 금액"
@@ -13642,6 +13681,9 @@
       ],
       "Main": [
         "메인"
+      ],
+      "Main reason for cancelling": [
+        "취소의 주된 이유"
       ],
       "Manage categories": [
         "카테고리 관리"
@@ -14024,6 +14066,9 @@
       "Single sign-on URL": [
         "싱글 사인 온 URL"
       ],
+      "Skip feedback": [
+        "피드백 건너뛰기"
+      ],
       "SMTP port": [
         "SMTP 포트"
       ],
@@ -14230,9 +14275,6 @@
       ],
       "What is the main reason you are deleting your account?": [
         "계정을 지우시는 사유가 무엇인가요?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "취소하거나 다운그레이드 하는 주요한 이유가 무엇이신가요?"
       ],
       "Who can send to this group address?": [
         "누가 이 그룹의 주소에 전송 가능한가요?"
@@ -15012,29 +15054,17 @@
       "Data never used for AI training": [
         "데이터가 AI 훈련에 절대 사용되지 않음"
       ],
-      "Data retention policies": [
-        "데이터 보존 정책"
-      ],
       "Document & spreadsheet editor": [
         "문서 및 스프레드시트 편집기"
       ],
       "Email writing assistant": [
         "이메일 글쓰기 도우미"
       ],
-      "Everything from ${ title }, plus...": [
-        "${ title }(에)서의 모든 것, 게다가..."
-      ],
-      "Everything in Meet Professional, plus:": [
-        "Meet Professional에 포함된 기능, 그 외:"
-      ],
       "Open source": [
         "오픈소스"
       ],
       "Password manager with team vaults": [
         "팀 금고를 지원하는 비밀번호 관리자"
-      ],
-      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
-        "개인 정보 보호 AI 채팅 (${ LUMO_SHORT_APP_NAME })"
       ],
       "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
         "개인 정보 보호 및 무제한 AI 채팅 (${ LUMO_SHORT_APP_NAME })"
@@ -15047,12 +15077,6 @@
       ],
       "Strict no-logs policy": [
         "엄격한 무로그 정책"
-      ],
-      "Video meetings, ${ PAID_MAX_PARTICIPANTS } participants": [
-        "${ PAID_MAX_PARTICIPANTS }명 참가자의 화상 회의"
-      ],
-      "VPN with ad-blocker and malware protection": [
-        "광고 차단기 및 멀웨어 보호 기능이 포함된 VPN"
       ]
     },
     "meet_signup_2025: title": {
@@ -16515,8 +16539,8 @@
       "Daily email notifications": [
         "일일 이메일 알림"
       ],
-      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
-        "비활성화하면 ${ BRAND_NAME } 애플리케이션 내의 알림 수신 기능이 제거됩니다."
+      "Disabling this means you won't get in-app notifications about promotions, new features, new ${ BRAND_NAME } services, and reminders.": [
+        "비활성화하면 프로모션, 새로운 기능, 새로운 ${ BRAND_NAME } 서비스 및 미리 알림에 대한 인앱 알림을 받을 수 없게 됩니다."
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "${ BRAND_NAME } 제품의 첫 달 사용 중"
@@ -18207,6 +18231,9 @@
       "Anderson": [
         "길동"
       ],
+      "Anything you'd like us to know": [
+        "알려주셨으면 하는 사항이 있으신가요?"
+      ],
       "Anytown": [
         "서울특별시 낙원구"
       ],
@@ -18248,6 +18275,9 @@
       ],
       "End date": [
         "종료일"
+      ],
+      "Enter a name": [
+        "이름 입력"
       ],
       "Enter name": [
         "이름 입력"
@@ -18327,6 +18357,9 @@
       "Select": [
         "선택"
       ],
+      "Select a provider": [
+        "제공자 선택"
+      ],
       "Select a reason": [
         "사유 선택"
       ],
@@ -18335,9 +18368,6 @@
       ],
       "Select state": [
         "시・도 선택"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "무엇이 ${ BRAND_NAME }을 더 좋게 만들 수 있을지 공유해주세요"
       ],
       "Start date": [
         "시작일"
@@ -18599,6 +18629,26 @@
         "알 수 없음"
       ]
     },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "기타"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
+      ]
+    },
     "q1campaign: Action": {
       "Get the deal": [
         "할인 받기"
@@ -18783,7 +18833,7 @@
     },
     "RecoveryPhrase: Info": {
       "copy recovery phrase": [
-        "복구 키 복사"
+        "복구 키를 복사"
       ],
       "Download PDF": [
         "PDF 다운로드"
@@ -18795,10 +18845,10 @@
         "만일 복구 구문을 잃어버리면 계정에 영구적으로 접근할 수 없음을 확인합니다."
       ],
       "It’s the only way to recover everything—store it safely.": [
-        "모든 데이터를 복구할 수 있는 유일한 방법입니다. 안전하게 저장하십시오."
+        "복구 키트는 모든 데이터를 복구할 수 있는 유일한 방법입니다. 안전한 곳에 보관하세요."
       ],
       "Or ${ copyRecoverySwitchButton } as text.": [
-        "또는 텍스트로 ${ copyRecoverySwitchButton }."
+        "또는 텍스트로 ${ copyRecoverySwitchButton }할 수 있습니다."
       ],
       "Or ${ downloadRecoveryKitSwitchButton } instead.": [
         "또는 대신 ${ downloadRecoveryKitSwitchButton }."
@@ -20437,6 +20487,9 @@
       "Yearly": [
         "연간"
       ],
+      "You are all set": [
+        "모든 준비가 완료되었어요"
+      ],
       "Your plan": [
         "내 플랜"
       ],
@@ -20460,6 +20513,9 @@
       "Email address": [
         "이메일 주소"
       ],
+      "Name shown in meetings": [
+        "회의에서 보여지는 이름"
+      ],
       "Organization name": [
         "조직명"
       ],
@@ -20468,6 +20524,12 @@
       ],
       "Username": [
         "사용자 이름"
+      ],
+      "Your email": [
+        "내 이메일"
+      ],
+      "Your password": [
+        "나의 비밀번호"
       ]
     },
     "signup: Action": {
@@ -20567,23 +20629,23 @@
       ]
     },
     "Signup: Meet": {
-      "**Trusted by over 100 million** users and organizations": [
-        "**1억 명 이상의** 사용자 및 조직에 의해 신뢰됨"
+      "Choose your display name to continue": [
+        "계속하려면 표시되는 이름을 선택하세요"
       ],
-      "Get ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
-        "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } 구독"
+      "Choose your display name to continue scheduling your meeting": [
+        "회의 일정을 계속하려면 표시되는 이름을 선택하세요."
       ],
-      "Own a business?": [
-        "사업체를 운영하시나요?"
+      "Create a ${ BRAND_NAME } account": [
+        "${ BRAND_NAME } 계정 생성"
       ],
-      "Sign up, meet privately": [
-        "회원 가입하고 비공개로 회의하세요"
+      "Create your ${ BRAND_NAME } account to create rooms": [
+        "회으실을 생성하려면 ${ BRAND_NAME } 계정을 생성하세요"
       ],
-      "Start using ${ MEET_APP_NAME } now": [
-        "${ MEET_APP_NAME } 사용 시작"
+      "Create your ${ BRAND_NAME } account to schedule a meeting": [
+        "회의를 예약하려면 ${ BRAND_NAME } 계정을 생성하세요"
       ],
-      "Your account also includes access to ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME } free features.": [
-        "회원님의 계정에 ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, 및 ${ PASS_SHORT_APP_NAME }의 무료 기능에 대한 접근 권한도 포함됩니다."
+      "Create your ${ BRAND_NAME } account to use your personal room": [
+        "개인 회의실을 사용하려면 ${ BRAND_NAME } 계정을 생성하세요"
       ]
     },
     "signup_2024: Feature": {
@@ -21289,9 +21351,6 @@
       ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses }개 전용 서버"
-      ],
-      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
-        "${ maxLumo }명의 사용자를 위한 ${ LUMO_APP_NAME }"
       ],
       "${ n } calendar per user": [
         "사용자 당 ${ n }개 캘린더"
@@ -23169,7 +23228,7 @@
         "${ PRODUCT_NAMES.EASY_SWITCH }로 불러오기"
       ],
       "Import your data to ${ BRAND_NAME }": [
-        "${ BRAND_NAME }로 데이터 불러오기"
+        "${ BRAND_NAME }으로 데이터 불러오기"
       ],
       "Imports": [
         "불러오기"

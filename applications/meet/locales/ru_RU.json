@@ -77,9 +77,6 @@
       "Delete": [
         "Удалить"
       ],
-      "Delete meeting": [
-        "Удалить встречу"
-      ],
       "Disable ${ participantName }'s video": [
         "Отключить видео ${ participantName }"
       ],
@@ -109,9 +106,6 @@
       ],
       "Edit email address": [
         "Изменить адрес эл. почты"
-      ],
-      "Edit meeting": [
-        "Изменить встречу"
       ],
       "Edit phone number": [
         "Изменить номер телефона"
@@ -163,9 +157,6 @@
       ],
       "Join meeting": [
         "Присоединиться к встрече"
-      ],
-      "Join via link": [
-        "Подключиться по ссылке"
       ],
       "Kick out": [
         "Удалить"
@@ -420,9 +411,6 @@
       ],
       "Rotate camera": [
         "Повернуть камеру"
-      ],
-      "Rotate personal meeting link": [
-        "Обновить ссылку на личную встречу"
       ],
       "Screen share": [
         "Поделиться экраном"
@@ -1403,9 +1391,6 @@
     "Description": {
       "Rotating group encryption key for best security": [
         "Обновление группового ключа шифрования для максимальной безопасности"
-      ],
-      "Setting up group end-to-end encryption with advanced Messaging Layer Security (MLS)": [
-        "Настройка сквозного шифрования для группы с использованием передовой технологии безопасности обмена сообщениями (MLS)"
       ]
     },
     "Error": {
@@ -1633,20 +1618,12 @@
         "Службы"
       ]
     },
-    "Header": {
-      "Speak freely again - every call is end-to-end encrypted": [
-        "Общайтесь свободно — каждый звонок зашифрован сквозным методом"
-      ]
-    },
     "Headline": {
       "${ createAnActionAction } or ${ signInAction } to access your personal room and create new rooms": [
         "${ createAnActionAction } или ${ signInAction }, чтобы получить доступ к своей личной комнате и создавать новые комнаты"
       ],
       "${ createAnActionAction } or ${ signInAction } to schedule meetings": [
         "${ createAnActionAction } или ${ signInAction }, чтобы планировать встречи"
-      ],
-      "Your conversations ${ matterWord }": [
-        "Ваши цепочки писем ${ matterWord }"
       ]
     },
     "Human verification method": {
@@ -1865,9 +1842,6 @@
       "Loading...": [
         "Загрузка..."
       ],
-      "matter": [
-        "важны"
-      ],
       "Meet without restrictions": [
         "Общайтесь без ограничений"
       ],
@@ -2057,9 +2031,6 @@
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
         "Организатор удалил вас из этой встречи. Если это произошло по ошибке, попросите организатора пригласить вас снова."
       ],
-      "This is an end-to-end encrypted chat with ephemeral messages. After you leave the call, you will not be able to access this chat.": [
-        "Это чат с исчезающими сообщениями, защищённый сквозным шифрованием. После выхода из звонка вы не сможете получить к нему доступ."
-      ],
       "This meeting is being recorded": [
         "Эта встреча записывается"
       ],
@@ -2068,9 +2039,6 @@
       ],
       "This meeting is password protected": [
         "Эта встреча защищена паролем"
-      ],
-      "This meeting is protected by end-to-end encryption with Messaging Layer Security (MLS).": [
-        "Эта встреча защищена сквозным шифрованием с использованием Messaging Layer Security (MLS)."
       ],
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
         "Эта встреча была открыта в приложении ${ MEET_APP_NAME } для ПК."
@@ -2366,6 +2334,9 @@
       ],
       "Learn more": [
         "Подробнее"
+      ],
+      "privacy policy": [
+        "политика конфиденциальности"
       ],
       "Request an invite": [
         "Запросить приглашение"
@@ -2734,9 +2705,6 @@
       ],
       "Personal meeting room": [
         "Личная комната для встреч"
-      ],
-      "Protecting meeting with end-to-end encryption...": [
-        "Защита встречи сквозным шифрованием..."
       ],
       "Publications": [
         "Публикации"

@@ -83,9 +83,6 @@
       "Delete": [
         "Elimina"
       ],
-      "Delete meeting": [
-        "Annulla la riunione"
-      ],
       "Disable ${ participantName }'s video": [
         "Disattiva il video di ${ participantName }"
       ],
@@ -118,9 +115,6 @@
       ],
       "Edit email address": [
         "Modifica l'indirizzo email"
-      ],
-      "Edit meeting": [
-        "Modifica riunione"
       ],
       "Edit phone number": [
         "Modifica il numero di telefono"
@@ -172,9 +166,6 @@
       ],
       "Join meeting": [
         "Unisciti alla riunione"
-      ],
-      "Join via link": [
-        "Partecipa tramite link"
       ],
       "Kick out": [
         "Espelli"
@@ -429,9 +420,6 @@
       ],
       "Rotate camera": [
         "Ruota la webcam"
-      ],
-      "Rotate personal meeting link": [
-        "Reimposta link della riunione personale"
       ],
       "Screen share": [
         "Condivisione schermo"
@@ -1421,9 +1409,6 @@
     "Description": {
       "Rotating group encryption key for best security": [
         "Rotazione della chiave crittografica del gruppo per la massima sicurezza"
-      ],
-      "Setting up group end-to-end encryption with advanced Messaging Layer Security (MLS)": [
-        "Configurazione della crittografia end-to-end di gruppo con Messaging Layer Security (MLS) avanzata"
       ]
     },
     "emergency_access": {
@@ -1659,20 +1644,12 @@
         "Servizi"
       ]
     },
-    "Header": {
-      "Speak freely again - every call is end-to-end encrypted": [
-        "Di nuovo parla liberamente - ogni chiamata è crittografata end-to-end"
-      ]
-    },
     "Headline": {
       "${ createAnActionAction } or ${ signInAction } to access your personal room and create new rooms": [
         "${ createAnActionAction } o ${ signInAction } per accedere alla tua stanza personale e crearne di nuove"
       ],
       "${ createAnActionAction } or ${ signInAction } to schedule meetings": [
         "${ createAnActionAction } o ${ signInAction } per pianificare riunioni"
-      ],
-      "Your conversations ${ matterWord }": [
-        "Le tue conversazioni contano${ matterWord }"
       ]
     },
     "Human verification method": {
@@ -1903,9 +1880,6 @@
       "Loading...": [
         "Caricamento in corso..."
       ],
-      "matter": [
-        "importa"
-      ],
       "Meet without restrictions": [
         "Incontra senza restrizioni"
       ],
@@ -2098,9 +2072,6 @@
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
         "L'organizzatore ti ha rimosso da questa riunione. Se si è trattato di un errore, chiedi all'organizzatore di invitarti di nuovo."
       ],
-      "This is an end-to-end encrypted chat with ephemeral messages. After you leave the call, you will not be able to access this chat.": [
-        "Questa è una chat crittografata end-to-end con messaggi effimeri. Dopo che lasci la chiamata, non potrai accedere a questa chat."
-      ],
       "This meeting is being recorded": [
         "Questa sessione è in fase di registrazione"
       ],
@@ -2109,9 +2080,6 @@
       ],
       "This meeting is password protected": [
         "Questa riunione è protetta da password"
-      ],
-      "This meeting is protected by end-to-end encryption with Messaging Layer Security (MLS).": [
-        "Questa riunione è protetta da crittografia end-to-end con Messaging Layer Security (MLS)."
       ],
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
         "Questa riunione è stata aperta nell'app desktop ${ MEET_APP_NAME }."
@@ -2411,6 +2379,9 @@
       ],
       "Learn more": [
         "Scopri di più"
+      ],
+      "privacy policy": [
+        "informativa sulla privacy"
       ],
       "Request an invite": [
         "Richiedi un invito"
@@ -2781,9 +2752,6 @@
       ],
       "Personal meeting room": [
         "Riunione personale"
-      ],
-      "Protecting meeting with end-to-end encryption...": [
-        "Proteggendo la riunione con crittografia end-to-end..."
       ],
       "Publications": [
         "Pubblicazioni"

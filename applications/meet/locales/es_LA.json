@@ -68,6 +68,9 @@
       "Copy meeting link": [
         "Copiar enlace de la reunión"
       ],
+      "Copy room link": [
+        "Copiar enlace de sala"
+      ],
       "Create a free account": [
         "Crear una cuenta gratuita"
       ],
@@ -82,9 +85,6 @@
       ],
       "Delete": [
         "Eliminar"
-      ],
-      "Delete meeting": [
-        "Eliminar reunión"
       ],
       "Disable ${ participantName }'s video": [
         "Desactivar el vídeo de ${ participantName }"
@@ -119,9 +119,6 @@
       "Edit email address": [
         "Editar dirección de correo"
       ],
-      "Edit meeting": [
-        "Editar reunión"
-      ],
       "Edit phone number": [
         "Editar número de teléfono"
       ],
@@ -142,6 +139,9 @@
       ],
       "Forgot password?": [
         "¿Olvidó su contraseña?"
+      ],
+      "Generate a new meeting link.": [
+        "Generar un enlace de reunión."
       ],
       "Get Meet Professional": [
         "Obtenga Meet Profesional"
@@ -173,7 +173,7 @@
       "Join meeting": [
         "Unirse a la reunión"
       ],
-      "Join via link": [
+      "Join with a link": [
         "Unirse con un enlace"
       ],
       "Kick out": [
@@ -338,6 +338,9 @@
       "Stop recording": [
         "Detener grabación"
       ],
+      "Stop recording and download video": [
+        "Detener la grabación y descargar video."
+      ],
       "Stop Recording Track Stats": [
         "Detener estadísticas de grabación"
       ],
@@ -349,6 +352,9 @@
       ],
       "Tap to unblock audio playback": [
         "Pulsar para reproducir audio"
+      ],
+      "The current link will stop working.": [
+        "El enlace actual dejará de funcionar."
       ],
       "Try again": [
         "Volver a intentar"
@@ -435,9 +441,6 @@
       ],
       "Rotate camera": [
         "Rotar cámara"
-      ],
-      "Rotate personal meeting link": [
-        "Rotar enlace de reunión personal"
       ],
       "Screen share": [
         "Compartir pantalla"
@@ -1431,11 +1434,11 @@
       ]
     },
     "Description": {
+      "Encrypting with Messaging Layer Security (MLS)": [
+        "Cifrando con Messaging Layer Security (MLS)"
+      ],
       "Rotating group encryption key for best security": [
         "Rotando la clave de cifrado del grupo para mejor seguridad"
-      ],
-      "Setting up group end-to-end encryption with advanced Messaging Layer Security (MLS)": [
-        "Configurando el cifrado de extremo a extremo del grupo con seguridad de capa de mensajería (MLS) avanzada"
       ]
     },
     "emergency_access": {
@@ -1680,8 +1683,8 @@
       ]
     },
     "Header": {
-      "Speak freely again - every call is end-to-end encrypted": [
-        "Hable con libertad de nuevo, cada llamada está cifrada de extremo a extremo"
+      "Protect your conversations with end-to-end encryption": [
+        "Proteja sus conversaciones con cifrado de extremo a extremo"
       ]
     },
     "Headline": {
@@ -1691,8 +1694,8 @@
       "${ createAnActionAction } or ${ signInAction } to schedule meetings": [
         "${ createAnActionAction } o ${ signInAction } para programar reuniones"
       ],
-      "Your conversations ${ matterWord }": [
-        "Sus conversaciones ${ matterWord }"
+      "Talk in total ${ privacyWord }": [
+        "Hable en total ${ privacyWord }"
       ]
     },
     "Human verification method": {
@@ -1734,8 +1737,8 @@
       "${ reactorNames } reacted with ${ emoji }": [
         "${ reactorNames } reaccionó con ${ emoji }"
       ],
-      "${ totalParticipantCount } of ${ maxParticipants } participants": [
-        "${ totalParticipantCount } de ${ maxParticipants } participantes"
+      "${ totalParticipantCount } of up to ${ maxParticipants } participants": [
+        "${ totalParticipantCount } de un máximo de ${ maxParticipants } participantes"
       ],
       "${ totalParticipantCount } participant": [
         "${ totalParticipantCount } participante",
@@ -1756,6 +1759,9 @@
       "Are you sure you want to leave?": [
         "¿En verdad desea salir?"
       ],
+      "Are you sure you want to stop recording?": [
+        "¿En verdad desea detener la grabación?"
+      ],
       "Attention required": [
         "Atención requerida"
       ],
@@ -1764,6 +1770,9 @@
       ],
       "By continuing in the meeting, you acknowledge and consent to being recorded.": [
         "Al continuar en la reunión, usted reconoce y consiente que se le grabe."
+      ],
+      "By joining, you agree to our ${ termsLink } and ${ privacyLink }.": [
+        "Al unirse, acepta nuestros ${ termsLink } y ${ privacyLink }."
       ],
       "camera": [
         "cámara"
@@ -1942,9 +1951,6 @@
       "Loading...": [
         "Cargando..."
       ],
-      "matter": [
-        "asunto"
-      ],
       "Meet without restrictions": [
         "Reúnase sin restricciones"
       ],
@@ -2062,6 +2068,9 @@
       "Premium meeting": [
         "Reunión premium"
       ],
+      "privacy": [
+        "privacidad"
+      ],
       "Reconnected successfully": [
         "Reconectada con éxito"
       ],
@@ -2125,6 +2134,9 @@
       "Sort by": [
         "Ordenar por"
       ],
+      "Speaker selection isn’t available in this browser. Use your system settings to choose a different speaker.": [
+        "La selección de altavoz no está disponible en este navegador. Use los ajustes de su sistema para elegir un altavoz diferente."
+      ],
       "Start recording": [
         "Iniciar grabación"
       ],
@@ -2149,8 +2161,8 @@
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
         "El anfitrión le ha retirado de esta reunión. Si fue un error, solicite que vuelva a invitarle."
       ],
-      "This is an end-to-end encrypted chat with ephemeral messages. After you leave the call, you will not be able to access this chat.": [
-        "Este es un chat cifrado de extremo a extremo con mensajes efímeros. Después de abandonar la llamada, no podrá acceder a este chat."
+      "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
+        "Este es un chat cifrado de extremo a extremo con mensajes efímeros, que desaparecen al final de la llamada."
       ],
       "This meeting is being recorded": [
         "Esta reunión está siendo grabada"
@@ -2160,9 +2172,6 @@
       ],
       "This meeting is password protected": [
         "Esta reunión está protegida con contraseña"
-      ],
-      "This meeting is protected by end-to-end encryption with Messaging Layer Security (MLS).": [
-        "Esta reunión está protegida con cifrado de extremo a extremo con Seguridad de Capa de Mensajería (MLS)."
       ],
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
         "Esta reunión fue abierta en la aplicación de escritorio de ${ MEET_APP_NAME }."
@@ -2176,14 +2185,23 @@
       "To create a room, **create a free ${ BRAND_NAME } account**. You will return to ${ MEET_APP_NAME } automatically.": [
         "Para crear una sala, **cree una cuenta gratuita de ${ BRAND_NAME }**. Volverá a ${ MEET_APP_NAME } automáticamente."
       ],
+      "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
+        "Para crear una sala, necesitará **una Cuenta ${ BRAND_NAME } gratuita** para que podamos guardar la sala. Esto solo toma unos segundos."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, verifique que es humano."
       ],
       "To schedule a meeting, **create a free ${ BRAND_NAME } account**. You will return to ${ MEET_APP_NAME } automatically.": [
         "Para programar una reunión, **cree una cuenta gratuita de ${ BRAND_NAME }**. Volverá a ${ MEET_APP_NAME } automáticamente."
       ],
+      "To schedule an event, you'll need **a free ${ BRAND_NAME } Account** so we can save the event. This only takes a few seconds.": [
+        "Para programar un evento, necesitará **una cuenta gratuita de ${ BRAND_NAME }** para que podamos guardar el evento. Esto solo toma unos segundos."
+      ],
       "To use your personal meeting room, **create a free ${ BRAND_NAME } account**. You will return to ${ MEET_APP_NAME } automatically.": [
         "Para usar su sala de reuniones personal, **cree una cuenta gratuita de ${ BRAND_NAME }**. Volverá a ${ MEET_APP_NAME } automáticamente."
+      ],
+      "To use your personal meeting room, you'll need **a free ${ BRAND_NAME } Account**. This only takes a few seconds.": [
+        "Para usar su sala de reuniones personal, necesitará **una cuenta gratuita de ${ BRAND_NAME }**. Esto solo toma unos segundos."
       ],
       "Today — ${ absoluteDate }": [
         "Hoy — ${ absoluteDate }"
@@ -2481,11 +2499,17 @@
       "Learn more": [
         "Más información"
       ],
+      "privacy policy": [
+        "política de privacidad"
+      ],
       "Request an invite": [
         "Solicitar una invitación"
       ],
       "Sign in": [
         "Iniciar sesión"
+      ],
+      "terms and conditions": [
+        "términos y condiciones"
       ],
       "What’s this?": [
         "¿Qué es esto?"
@@ -2592,12 +2616,6 @@
       "E.g., ": [
         "Ej., "
       ],
-      "e.g., Daily room, project hub": [
-        "Ej.: Sala diaria, centro de proyectos"
-      ],
-      "e.g., Team sync, project update": [
-        "Ej.: Actualización del equipo, estado del proyecto"
-      ],
       "Enter passphrase": [
         "Ingresar la frase de contraseña"
       ],
@@ -2613,11 +2631,17 @@
       "Loading...": [
         "Cargando..."
       ],
+      "Meeting name, e.g. team sync, project update, etc": [
+        "Nombre de la reunión, ej. sincronización de equipo, actualización de proyecto, etc."
+      ],
       "Password": [
         "Contraseña"
       ],
       "Please describe the problem and include any error messages": [
         "Describa el problema e incluya cualquier mensaje de error"
+      ],
+      "Room name, e.g. team sync, project update, etc": [
+        "Nombre de la sala, por ejemplo, sincronización de equipo, actualización de proyecto, etc."
       ],
       "Schedule in ${ CALENDAR_APP_NAME }": [
         "Programar en ${ CALENDAR_APP_NAME }"
@@ -2824,8 +2848,14 @@
         "Uniéndose a la reunión con ${ participantCount } participante más…",
         "Uniéndose a la reunión con ${ participantCount } participantes más…"
       ],
+      "Launching Meeting...": [
+        "Iniciando reunión..."
+      ],
       "Local Participant": [
         "Participante local"
+      ],
+      "Meeting": [
+        "Reunión"
       ],
       "Meeting created": [
         "Reunión creada"
@@ -2856,9 +2886,6 @@
       ],
       "Personal meeting room": [
         "Sala de reuniones personal"
-      ],
-      "Protecting meeting with end-to-end encryption...": [
-        "Protegiendo la reunión con cifrado de extremo a extremo..."
       ],
       "Publications": [
         "Publicaciones"
@@ -2898,6 +2925,9 @@
       ],
       "Starting meeting as the first participant…": [
         "Iniciando la reunión como primer participante…"
+      ],
+      "Stop recording": [
+        "Detener grabación"
       ],
       "Talk confidentially": [
         "Hable con confidencialidad"

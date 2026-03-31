@@ -249,6 +249,9 @@
       "Continue on web": [
         "Continuar na web"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Continuar com ${ planOrAppName }"
+      ],
       "Continue transfers": [
         "Continuar transferência"
       ],
@@ -1315,6 +1318,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } licença do ${ LUMO_APP_NAME }",
         "${ seats } licenças do ${ LUMO_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } licença",
+        "${ seats } ${ MEET_APP_NAME } licenças"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } licença de assistente de escrita",
@@ -4948,6 +4955,15 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } inclui ${ BRAND_NAME } assistente de escrita Scribe"
       ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "O ${ MEET_APP_NAME } é uma solução de videoconferência com criptografia de ponta a ponta. Adicione-a ao seu plano para realizar reuniões seguras."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } licenças"
+      ],
+      "${ MEET_APP_NAME } video conferencing": [
+        "Videoconferência do ${ MEET_APP_NAME }"
+      ],
       "${ normalizedProgress }% completed": [
         "${ normalizedProgress }% concluído"
       ],
@@ -5100,6 +5116,9 @@
       ],
       "Ad targeting": [
         "Segmentação de anúncios"
+      ],
+      "Add ${ MEET_APP_NAME }": [
+        "Adicionar ${ MEET_APP_NAME }"
       ],
       "Address copied to clipboard": [
         "O endereço foi copiado para a área de transferência"
@@ -5587,6 +5606,9 @@
       ],
       "Folders you sync from your computer will appear here.": [
         "As pastas do seu computador que você sincronizar aparecerão aqui."
+      ],
+      "for ${ price }": [
+        "por ${ price }"
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Para obter melhores resultados, evite streaming e atividades que consomem muita memória ou divida seu carregamento em lotes menores."
@@ -6160,6 +6182,9 @@
       ],
       "Search Enabled": [
         "Busca habilitada"
+      ],
+      "Search enabled. You may now close this dialogue and search for files and folders.": [
+        "Pesquisa ativada. Agora você pode fechar esta caixa de diálogo e procurar arquivos e pastas."
       ],
       "Select a destination folder": [
         "Selecione uma pasta de destino"
@@ -7070,6 +7095,9 @@
       "Add to group": [
         "Adicionar ao grupo"
       ],
+      "Additional comments": [
+        "Comentários adicionais"
+      ],
       "Address": [
         "Endereço"
       ],
@@ -7190,6 +7218,9 @@
       "Contacts": [
         "Contatos"
       ],
+      "Continue cancelling": [
+        "Continuar cancelamento"
+      ],
       "Copy": [
         "Copiar"
       ],
@@ -7241,9 +7272,6 @@
       ],
       "Disable this link on a specific date": [
         "Desativar este link em uma data específica"
-      ],
-      "Do you have any suggestions for our team?": [
-        "Você tem alguma sugestão para nossa equipe?"
       ],
       "Don't ask again": [
         "Não perguntar novamente"
@@ -7560,6 +7588,9 @@
       "Size": [
         "Tamanho"
       ],
+      "Skip feedback": [
+        "Pular feedback"
+      ],
       "Skip file": [
         "Ignorar arquivo"
       ],
@@ -7658,9 +7689,6 @@
       ],
       "What happened?": [
         "O que aconteceu?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Qual é o seu motivo principal do cancelamento ou downgrade?"
       ],
       "Yes, I want to permanently delete my old files": [
         "Sim, quero excluir permanentemente meus arquivos antigos"
@@ -7950,6 +7978,18 @@
         "por ${ price }"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } licença"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } licenças"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } licença do ${ MEET_APP_NAME }",
+        "${ seats } licenças do ${ MEET_APP_NAME }"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: Videoconferência confidencial para as conversas importantes"
@@ -8002,6 +8042,15 @@
       "Up to ${ n } participant": [
         "Até ${ n } participante",
         "Até ${ n } participantes"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } licença incluída",
+        "${ seats } licenças incluídas"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Você pode ter até ${ TRIAL_MAX_MEET_SEATS } licenças do ${ MEET_SHORT_APP_NAME } durante o período de avaliação."
       ]
     },
     "Message": {
@@ -9496,6 +9545,12 @@
       "Selected photo(s) already in \"${ albumName }\"": [
         "As fotos selecionadas já estão em «${ albumName }»."
       ],
+      "Setting updated. Editors can change permissions and share.": [
+        "Configuração atualizada. Editores podem alterar permissões e compartilhar."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Configuração atualizada. Editores não podem alterar permissões ou compartilhar."
+      ],
       "Share invitation accepted successfully": [
         "Convite para compartilhamento aceito com sucesso"
       ],
@@ -10375,6 +10430,9 @@
       "Email": [
         "E-mail"
       ],
+      "Enter a name": [
+        "Insira um nome"
+      ],
       "Enter a new file name": [
         "Digite um nome para o novo arquivo"
       ],
@@ -10447,6 +10505,9 @@
       "Select": [
         "Selecionar"
       ],
+      "Select a provider": [
+        "Selecione um provedor"
+      ],
       "Select a reason": [
         "Selecione um motivo"
       ],
@@ -10455,9 +10516,6 @@
       ],
       "Select state": [
         "Selecionar estado"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Compartilhe o que você acha que poderia melhorar na ${ BRAND_NAME }"
       ],
       "Start typing an email address": [
         "Comece a digitar um endereço de e-mail"
@@ -10571,6 +10629,26 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "E-mail oficial da ${ BRAND_NAME }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Outros"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {
@@ -13164,6 +13242,9 @@
       ],
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Troque automaticamente entre seus temas preferidos para dia e noite em sincronia com os modos dia e noite do seu sistema"
+      ],
+      "Change shared item settings": [
+        "Alterar configurações de itens compartilhados"
       ],
       "Customize import to reduce the number of folders": [
         "Personalize importação para reduzir o número de pastas"

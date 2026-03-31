@@ -224,6 +224,9 @@
       "Continue import": [
         "Pokračovať v importe"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Pokračovať do ${ planOrAppName }"
+      ],
       "Continue with this password": [
         "Pokračovať s týmto heslom"
       ],
@@ -3551,6 +3554,9 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Použite tohto sprievodcu, aby vaša organizácia mohla okamžite využívať výhody špičkového ekosystému šifrovania a ochrany osobných údajov od spoločnosti ${ BRAND_NAME }."
       ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Je nám ľúto, že odchádzate. Ak máte chvíľku, veľmi by sme ocenili, keby ste nám povedali, prečo chcete zrušiť odber. Vaša spätná väzba nám pomáha vylepšovať ${ BRAND_NAME } pre všetkých."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Môžete importovať udalosti vo formáte iCal (ICS súbor). Tento súbor by mal mať maximálnu veľkosť ${ MAX_IMPORT_FILE_SIZE_STRING } a maximálne ${ MAX_IMPORT_EVENTS_STRING } udalostí. Ak je váš súbor väčší, prosím rozdeľte ho na menšie súbory."
       ]
@@ -4430,6 +4436,9 @@
       ],
       "Primary address key is not decrypted.": [
         "Kľúč primárnej adresy nie je dešifrovaný."
+      ],
+      "Private users can be added to group once they've signed in for the first time: ${ displayedNames }": [
+        "Súkromní používatelia môžu byť pridaní do skupiny hneď po prvom prihlásení: ${ displayedNames }"
       ],
       "Process aborted": [
         "Proces prerušený"
@@ -8147,6 +8156,9 @@
       "Total VPN connections": [
         "Celkom VPN pripojení"
       ],
+      "Trial ends on ${ formattedPeriodEndDate }": [
+        "Skúšobná doba skončí ${ formattedPeriodEndDate }"
+      ],
       "trusted device": [
         "dôveryhodné zariadenie"
       ],
@@ -8978,6 +8990,9 @@
       "Add group member": [
         "Pridať člena skupiny"
       ],
+      "Additional comments": [
+        "Doplňujúce poznámky"
+      ],
       "Address": [
         "Adresa"
       ],
@@ -9140,6 +9155,9 @@
       "Contacts": [
         "Kontakty"
       ],
+      "Continue cancelling": [
+        "Pokračovať v zrušení"
+      ],
       "Copy": [
         "Kopírovať"
       ],
@@ -9196,9 +9214,6 @@
       ],
       "Display name": [
         "Zobrazované meno"
-      ],
-      "Do you have any suggestions for our team?": [
-        "Máte nejaké návrhy pre náš tím?"
       ],
       "Domain": [
         "Doména"
@@ -9379,6 +9394,9 @@
       ],
       "Main": [
         "Hlavné"
+      ],
+      "Main reason for cancelling": [
+        "Hlavný dôvod zrušenia"
       ],
       "Manage categories": [
         "Spravovať kategórie"
@@ -9620,6 +9638,9 @@
       "Single sign-on URL": [
         "URL adresa jednotného prihlásenia"
       ],
+      "Skip feedback": [
+        "Preskočiť spätnú väzbu"
+      ],
       "Spam": [
         "Spam"
       ],
@@ -9715,9 +9736,6 @@
       ],
       "What is the main reason you are deleting your account?": [
         "Aký je hlavný dôvod, prečo mažete svoj účet?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Aký je váš hlavný dôvod na zrušenie alebo zníženie predplatného?"
       ],
       "Who can send to this group address?": [
         "Kto môže posielať na túto skupinovú adresu?"
@@ -11592,8 +11610,8 @@
       "Daily email notifications": [
         "Denné emailové notifikácie"
       ],
-      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
-        "Deaktiváciou tejto funkcie odstránite možnosť prijímať notifikácie v aplikáciách ${ BRAND_NAME }"
+      "Disabling this means you won't get in-app notifications about promotions, new features, new ${ BRAND_NAME } services, and reminders.": [
+        "Deaktivovaním tejto možnosti nebudete dostávať upozornenia v aplikácii o akciách, nových funkciách, nových službách ${ BRAND_NAME } a pripomienkach."
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Počas prvého mesiaca používania produktu ${ BRAND_NAME }"
@@ -12688,6 +12706,9 @@
       "Anderson": [
         "Anderson"
       ],
+      "Anything you'd like us to know": [
+        "Máte niečo, čo by sme mali vedieť"
+      ],
       "Anytown": [
         "Niekdetam"
       ],
@@ -12726,6 +12747,9 @@
       ],
       "End date": [
         "Dátum ukončenia"
+      ],
+      "Enter a name": [
+        "Zadajte meno"
       ],
       "Enter name": [
         "Zadajte názov"
@@ -12790,6 +12814,9 @@
       "Select": [
         "Vybrať"
       ],
+      "Select a provider": [
+        "Vyberte poskytovateľa"
+      ],
       "Select a reason": [
         "Vyberte dôvod"
       ],
@@ -12798,9 +12825,6 @@
       ],
       "Select state": [
         "Vyberte stav"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Dajte nám vedieť, čo by podľa vás mohlo vylepšiť ${ BRAND_NAME }"
       ],
       "Start date": [
         "Dátum začiatku"
@@ -12946,6 +12970,26 @@
       ],
       "Unknown": [
         "Neznáme"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Iné"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Recovery Email": {
@@ -14617,12 +14661,6 @@
         "${ ipAddresses } dedikované servery",
         "${ ipAddresses } dedikovaných serverov",
         "${ ipAddresses } dedikovaných serverov"
-      ],
-      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
-        "${ LUMO_APP_NAME } pre ${ maxLumo } používateľa",
-        "${ LUMO_APP_NAME } pre ${ maxLumo } používateľov",
-        "${ LUMO_APP_NAME } pre ${ maxLumo } používateľov",
-        "${ LUMO_APP_NAME } pre ${ maxLumo } používateľov"
       ],
       "${ n } calendar per user": [
         "${ n } kalendár na používateľa",

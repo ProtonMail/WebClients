@@ -249,6 +249,9 @@
       "Continue on web": [
         "Fortsätt på webb"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Fortsätt till ${ planOrAppName }"
+      ],
       "Continue transfers": [
         "Fortsätt överföringar"
       ],
@@ -1315,6 +1318,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME }-licens",
         "${ seats } ${ LUMO_APP_NAME }-licenser"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME }-licens",
+        "${ seats } ${ MEET_APP_NAME }-licenser"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } skrivassistentplats",
@@ -5086,6 +5093,9 @@
       "Ad targeting": [
         "Målgruppsanpassning av annonser"
       ],
+      "Add ${ MEET_APP_NAME }": [
+        "Lägg till ${ MEET_APP_NAME }"
+      ],
       "Address copied to clipboard": [
         "Adress kopierad till urklipp"
       ],
@@ -5569,6 +5579,9 @@
       ],
       "Folders you sync from your computer will appear here.": [
         "Mappar du synkroniserar från din dator kommer visas här."
+      ],
+      "for ${ price }": [
+        "för ${ price }"
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "För bästa resultat bör du undvika streaming och minneskrävande aktiviteter eller dela upp din uppladdning i mindre partier."
@@ -7042,6 +7055,9 @@
       "Add to group": [
         "Lägg till i grupp"
       ],
+      "Additional comments": [
+        "Ytterligare kommentarer"
+      ],
       "Address": [
         "Adress"
       ],
@@ -7156,6 +7172,9 @@
       "Contacts": [
         "Kontakter"
       ],
+      "Continue cancelling": [
+        "Fortsätt avbryta"
+      ],
       "Copy": [
         "Kopiera"
       ],
@@ -7207,9 +7226,6 @@
       ],
       "Disable this link on a specific date": [
         "Inaktivera denna länk på ett specifikt datum"
-      ],
-      "Do you have any suggestions for our team?": [
-        "Har du några förslag till vårt team?"
       ],
       "Don't ask again": [
         "Fråga inte igen"
@@ -7526,6 +7542,9 @@
       "Size": [
         "Storlek"
       ],
+      "Skip feedback": [
+        "Hoppa över feedback"
+      ],
       "Skip file": [
         "Hoppa över fil"
       ],
@@ -7624,9 +7643,6 @@
       ],
       "What happened?": [
         "Vad hände?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Vad är din främsta anledning till att du avbryter eller nedgraderar?"
       ],
       "Yes, I want to permanently delete my old files": [
         "Ja, jag vill ta bort mina gamla filer permanent"
@@ -7914,6 +7930,11 @@
       ],
       "for ${ price }": [
         "för ${ price }"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME }-licens"
       ]
     },
     "meet_2025: Feature": {
@@ -10320,6 +10341,9 @@
       "Anderson": [
         "Andersson"
       ],
+      "Anything you'd like us to know": [
+        "Något du vill att vi ska veta"
+      ],
       "Anytown": [
         "Alingsås"
       ],
@@ -10337,6 +10361,9 @@
       ],
       "Email": [
         "E-post"
+      ],
+      "Enter a name": [
+        "Ange ett namn"
       ],
       "Enter a new file name": [
         "Ange ett nytt filnamn"
@@ -10410,6 +10437,9 @@
       "Select": [
         "Välj"
       ],
+      "Select a provider": [
+        "Välj en leverantör"
+      ],
       "Select a reason": [
         "Välj en anledning"
       ],
@@ -10418,9 +10448,6 @@
       ],
       "Select state": [
         "Välj delstat"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Dela vad du tror som skulle göra ${ BRAND_NAME } bättre"
       ],
       "Start typing an email address": [
         "Börja skriva en e-postadress"
@@ -10534,6 +10561,26 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Officiell e-post från ${ BRAND_NAME }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Annat"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {

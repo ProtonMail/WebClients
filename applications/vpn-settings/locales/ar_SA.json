@@ -221,6 +221,9 @@
       "Continue import": [
         "مواصلة الاستيراد"
       ],
+      "Continue to ${ planOrAppName }": [
+        "المتابعة إلى ${ planOrAppName }"
+      ],
       "Continue with this password": [
         "المتابعة باستخدام كلمة المرور هذه"
       ],
@@ -3372,6 +3375,9 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "استخدم هذا الدليل لتجعل مؤسستك تستفيد على الفور من نظام ${ BRAND_NAME } البيئي الرائد في مجال التشفير والخصوصية."
       ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "نأسف لرؤيتك تغادر. إذا كان لديك بعض الوقت، سنكون ممتنين لمعرفة سبب رغبتك في الإلغاء. تساعدنا ملاحظاتك على جعل ${ BRAND_NAME } أفضل للجميع."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "يمكنك استيراد الأحداث بتنسيق iCal (ملف ICS). يجب أن يكون حجم الملف الأقصى ${ MAX_IMPORT_FILE_SIZE_STRING } ويحتوي على ما يصل إلى ${ MAX_IMPORT_EVENTS_STRING } حدثًا. إذا كان ملفك أكبر، فيرجى تقسيمه إلى ملفات أصغر."
       ]
@@ -5936,6 +5942,15 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "يمكن أيضًا استخدام ${ MAIL_APP_NAME } بكلمة مرور واحدة تحل محل كل من كلمة مرور تسجيل الدخول وكلمة المرور الثانية. للتبديل إلى وضع كلمة المرور الواحدة، أدخل كلمة المرور الواحدة التي ترغب في استخدامها وانقر على حفظ."
       ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } هو حل لمؤتمرات الفيديو مشفّر من طرف إلى طرف. أضِفه إلى خطتك لاستضافة اجتماعات آمنة."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "مقاعد ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } video conferencing": [
+        "مؤتمرات الفيديو عبر ${ MEET_APP_NAME }"
+      ],
       "${ n } addresses": [
         "${ n } العنوان",
         "${ n } العنوان",
@@ -6219,6 +6234,9 @@
       ],
       "Activity Monitor": [
         "مراقب النشاط"
+      ],
+      "Add ${ MEET_APP_NAME }": [
+        "أضِف ${ MEET_APP_NAME }"
       ],
       "add a recovery method": [
         "إضافة طريقة استرداد"
@@ -6823,6 +6841,9 @@
       "Everything in ${ planOrAppName }": [
         "كل شيء في ${ planOrAppName }"
       ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "كل ما يتضمنه ${ planOrAppName }، بالإضافة إلى:"
+      ],
       "Example: ${ spfExample }": [
         "مثال: ${ spfExample }"
       ],
@@ -6840,6 +6861,9 @@
       ],
       "finance": [
         "مالية"
+      ],
+      "for ${ price }": [
+        "مقابل ${ price }"
       ],
       "for choosing ${ product }": [
         "لاختيارك ${ product }"
@@ -8818,6 +8842,9 @@
       "Add group member": [
         "إضافة عضو في المجموعة"
       ],
+      "Additional comments": [
+        "تعليقات إضافية"
+      ],
       "Address": [
         "العنوان"
       ],
@@ -8980,6 +9007,9 @@
       "Contacts": [
         "جهة الإتصال"
       ],
+      "Continue cancelling": [
+        "استمر في الإلغاء"
+      ],
       "Copy": [
         "نسخ"
       ],
@@ -9036,9 +9066,6 @@
       ],
       "Display name": [
         "الاسم المعروض"
-      ],
-      "Do you have any suggestions for our team?": [
-        "هل لديك أي اقتراحات لفريقنا؟"
       ],
       "Domain": [
         "النطاق"
@@ -9219,6 +9246,9 @@
       ],
       "Main": [
         "الرئيسي"
+      ],
+      "Main reason for cancelling": [
+        "السبب الرئيسي للإلغاء"
       ],
       "Manage categories": [
         "إدارة الفئات"
@@ -9462,6 +9492,9 @@
       "Single sign-on URL": [
         "رابط تسجيل الدخول الفردي (SSO)"
       ],
+      "Skip feedback": [
+        "تخطي الملاحظات"
+      ],
       "Spam": [
         "البريد العشوائي"
       ],
@@ -9554,9 +9587,6 @@
       ],
       "What is the main reason you are deleting your account?": [
         "ما هو السبب الرئيسي وراء حذف حسابك؟"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "ما هو السبب الرئيسي لإلغاء أو تخفيض الخطة؟"
       ],
       "Who can send to this group address?": [
         "من يمكنه الإرسال إلى عنوان هذه المجموعة؟"
@@ -10090,6 +10120,14 @@
         "أعِدّ حسابك باستخدام نطاق Porkbun الخاص بك."
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "ترخيص ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "مقاعد ${ MEET_APP_NAME }"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: مؤتمرات فيديو سرية للمحادثات التي تهمك"
@@ -10114,6 +10152,9 @@
       ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "مشاركة شاشة مشفّرة من الطرف إلى الطرف ودردشة مؤقتة أثناء المكالمة"
+      ],
+      "Hosts can record meetings locally on their computers": [
+        "يمكن للمضيفين تسجيل الاجتماعات محليا على أجهزة الكمبيوتر الخاصة بهم"
       ],
       "Meeting recording": [
         "تسجيل الاجتماع"
@@ -10142,6 +10183,11 @@
         "ما يصل إلى ${ n } مشارك",
         "ما يصل إلى ${ n } مشارك",
         "ما يصل إلى ${ n } مشارك"
+      ]
+    },
+    "meet_2025: Info": {
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "يمكنك الحصول على ما يصل إلى ${ TRIAL_MAX_MEET_SEATS } من مقاعد ${ MEET_SHORT_APP_NAME } خلال فترة التجربة."
       ]
     },
     "Member action": {
@@ -10617,6 +10663,9 @@
       "Data breach monitoring": [
         "مراقبة خرق البيانات"
       ],
+      "Data retention policies": [
+        "سياسات الاحتفاظ بالبيانات"
+      ],
       "Dedicated servers and IP": [
         "خوادم وعنوان IP مخصص"
       ],
@@ -10735,6 +10784,9 @@
       ],
       "Priority support & live chat": [
         "أولوية في الدعم والدردشة المباشرة"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "دردشة ذكاء اصطناعي خاصة (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "نسخ احتياطي خاص للصور"
@@ -10915,6 +10967,9 @@
         "مشاركة الخزنة مع ما يصل إلى ${ n } شخص",
         "مشاركة الخزنة مع ما يصل إلى ${ n } شخص",
         "مشاركة الخزنة مع ما يصل إلى ${ n } شخص"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN مع مانع إعلانات وحماية من البرمجيات الخبيثة"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "نمسح الويب المظلم للتحقق مما إذا كانت عناوين ${ BRAND_NAME } أو أسماؤك المستعارة قد سُرّبت وننبهك فورًا إذا وجدنا أي شيء."
@@ -11457,8 +11512,8 @@
       "Daily email notifications": [
         "إشعارات البريد الإلكتروني اليومية"
       ],
-      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
-        "إيقاف هذا الخيار سيمنع تلقي الإشعارات في تطبيقات ${ BRAND_NAME }"
+      "Disabling this means you won't get in-app notifications about promotions, new features, new ${ BRAND_NAME } services, and reminders.": [
+        "سيؤدي تعطيل هذا الخيار إلى عدم تلقي إشعارات داخل التطبيق حول العروض الترويجية، والميزات الجديدة، وخدمات ${ BRAND_NAME } الجديدة، والتذكيرات."
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "خلال شهرك الأول من استخدام منتج ${ BRAND_NAME }"
@@ -12552,6 +12607,9 @@
       "Anderson": [
         "Anderson"
       ],
+      "Anything you'd like us to know": [
+        "أي شيء تريدنا أن نعرفه"
+      ],
       "Anytown": [
         "Anytown"
       ],
@@ -12590,6 +12648,9 @@
       ],
       "End date": [
         "وقت الانتهاء"
+      ],
+      "Enter a name": [
+        "أدخل اسما"
       ],
       "Enter name": [
         "أدخل الاسم"
@@ -12654,6 +12715,9 @@
       "Select": [
         "تحديد"
       ],
+      "Select a provider": [
+        "اختر مزودا"
+      ],
       "Select a reason": [
         "حدد سببًا"
       ],
@@ -12662,9 +12726,6 @@
       ],
       "Select state": [
         "اختر الولاية"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "شاركنا رأيك حول ما يمكن أن يجعل ${ BRAND_NAME } أفضل"
       ],
       "Start date": [
         "تاريخ البدء"
@@ -12814,6 +12875,26 @@
       ],
       "Unknown": [
         "مجهول"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "مايكروسوفت 365"
+      ],
+      "Other": [
+        "غير"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "ياهو"
       ]
     },
     "Recovery Email": {
@@ -14510,14 +14591,6 @@
         "${ ipAddresses } خوادم مخصصة",
         "${ ipAddresses } خادمًا مخصصًا",
         "${ ipAddresses } خادمًا مخصصًا"
-      ],
-      "${ LUMO_APP_NAME } for ${ maxLumo } users": [
-        "${ LUMO_APP_NAME } لـ ${ maxLumo } مستخدم",
-        "${ LUMO_APP_NAME } لمستخدم واحد (${ maxLumo })",
-        "${ LUMO_APP_NAME } لمستخدمين اثنين (${ maxLumo })",
-        "${ LUMO_APP_NAME } لـ ${ maxLumo } مستخدمين",
-        "${ LUMO_APP_NAME } لـ ${ maxLumo } مستخدمًا",
-        "${ LUMO_APP_NAME } لـ ${ maxLumo } مستخدم"
       ],
       "${ n } calendars per user": [
         "${ n } التقويم لكل مستخدم",

@@ -90,9 +90,6 @@
       "Apply": [
         "Toteuta"
       ],
-      "Ask me next time": [
-        "Kysy seuraavalla kerralla"
-      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Yhdessä yhteystietoryhmässä sallitaan enintään ${ maxContacts } yhteystieto",
         "Yhdessä yhteystietoryhmässä sallitaan enintään ${ maxContacts } yhteystietoa"
@@ -668,9 +665,6 @@
       ],
       "Save changes": [
         "Tallenna muutokset"
-      ],
-      "Save preferences": [
-        "Tallenna asetukset"
       ],
       "Search": [
         "Hae"
@@ -4209,9 +4203,6 @@
       "Continue": [
         "Jatka"
       ],
-      "Converting document...": [
-        "Muunnetaan dokumenttia..."
-      ],
       "Copied to clipboard": [
         "Kopioitu leikepöydälle"
       ],
@@ -4261,14 +4252,14 @@
       "Creating link to folder": [
         "Luodaan linkkiä kansioon"
       ],
-      "Creating new document...": [
-        "Luodaan uutta dokumenttia..."
-      ],
       "Current plan": [
         "Nykyinen tilaus"
       ],
       "Current version": [
         "Nykyinen versio"
+      ],
+      "Decrypting your document": [
+        "Asiakirjasi salausta puretaan"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Tiedoston sähköinen allekirjoitus vahvistettiin ja sen tallensi turvallisesti ${ emailAddress }."
@@ -4348,12 +4339,6 @@
       "Enter your own password (as organization admin).": [
         "Syötä oma salasanasi (organisaation ylläpitäjänä)."
       ],
-      "Error converting document: ${ errorMessage }": [
-        "Virhe muunnettaessa dokumenttia: ${ errorMessage }"
-      ],
-      "Error loading document: ${ errorDetail }": [
-        "Virhe ladattaessa dokumenttia: ${ errorDetail }"
-      ],
       "Error Syncing": [
         "Synkronointivirhe"
       ],
@@ -4413,12 +4398,6 @@
       ],
       "Geoblocking": [
         "Geoblokkaus"
-      ],
-      "Get email updates for comments and suggestions added to your documents.": [
-        "Saat sähköpostipäivityksiä dokumentteihisi lisätyistä kommenteista ja ehdotuksista."
-      ],
-      "Get Notified About Comments": [
-        "Saa ilmoituksia kommenteista"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Hallitukset ja Internet-palveluntarjoajat voivat valvoa verkkotoimintaasi. Piilottamalla oikean IP-osoitteensi ja salaamalla toimintasi, selaamisesi muuttuu yksityiseksi."
@@ -4559,9 +4538,6 @@
       "Low Priority": [
         "Alhainen tärkeys"
       ],
-      "Making a copy...": [
-        "Luodaan kopiota..."
-      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Enintään ${ MAX_SHARED_URL_PASSWORD_LENGTH } merkki",
         "Enintään ${ MAX_SHARED_URL_PASSWORD_LENGTH } merkkiä"
@@ -4592,9 +4568,6 @@
       ],
       "No contacts added yet": [
         "Yhteystietoja ei ole vielä lisätty"
-      ],
-      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
-        "Annetusta URL-osoitteesta ei löytynyt dokumenttia. Palaa ${ DRIVE_APP_NAME }en ja valitse dokumentti."
       ],
       "No email address": [
         "Ei sähköpostiosoitetta"
@@ -4867,9 +4840,6 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Osoitteen omistaja on poistanut päästä päähän -salauksen käytöstä. Jotta osoitteeseen voidaan lähettää salattuja viestejä, on omistajan palautettava päähän -salaus käyttöön."
-      ],
-      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
-        "Syöttämäsi URL-osoite on ilmeisesti kopioitu Slackista virheellisesti. Kun kopioit pitkiä linkkejä Slackista, napsauta linkkiä hiiren kakkospainikkeella ja valitse sitten \"Kopioi linkki\" sen sijaan että kopioisit typistetyn URL-tekstin suoraan."
       ],
       "There are no documents in the trash.": [
         "Roskakorissa ei ole dokumentteja."
@@ -5416,9 +5386,6 @@
       "Delete recovery-related information.": [
         "Poista palautukseen liittyvät tiedot."
       ],
-      "Do you have any suggestions for our team?": [
-        "Onko sinulla ehdotuksia tiimillemme?"
-      ],
       "Don't ask again": [
         "Älä kysy uudelleen"
       ],
@@ -5460,9 +5427,6 @@
       ],
       "Emails (last month)": [
         "Viestit (viime kuukausi)"
-      ],
-      "Enable email notifications": [
-        "Ota sähköposti-ilmoitukset käyttöön"
       ],
       "Encrypt emails": [
         "Salaa viestit"
@@ -5508,9 +5472,6 @@
       ],
       "Import to:": [
         "Tuo kohteeseen:"
-      ],
-      "Include document name in notification": [
-        "Sisällytä dokumentin nimi ilmoitukseen"
       ],
       "Include message and file name in invite email": [
         "Sisällytä viestin teksti ja tiedoston nimi kutsuviestiin"
@@ -5715,9 +5676,6 @@
       ],
       "What happened?": [
         "Mitä tapahtui?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Mikä on suurin syy tilauksen lopetukseen tai alennukseen?"
       ],
       "Your alias": [
         "Sinun aliaksesi"
@@ -7756,9 +7714,6 @@
       ],
       "Set date": [
         "Valitse päivämäärä"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Kerro mikä voisi mielestäsi parantaa ${ BRAND_NAME }ia"
       ],
       "Start typing an email address": [
         "Aloita sähköpostiosoitteen kirjoitus"

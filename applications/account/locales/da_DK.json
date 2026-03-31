@@ -207,6 +207,9 @@
       "Back": [
         "Tilbage"
       ],
+      "Back to sign in": [
+        "Tilbage til login"
+      ],
       "Block": [
         "Blokér"
       ],
@@ -339,8 +342,8 @@
       "Continue import": [
         "Fortsæt import"
       ],
-      "Continue to ${ name }": [
-        "Fortsæt til ${ name }"
+      "Continue to ${ planOrAppName }": [
+        "Fortsæt til ${ planOrAppName }"
       ],
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "Fortsæt med ${ nameToDisplay } ${ maybeEmailInBrackets }"
@@ -459,7 +462,13 @@
       "Delete filter “${ Name }”": [
         "Slet filteret “${ Name }”"
       ],
+      "Delete forward": [
+        "Slet videresendelse"
+      ],
       "Delete Gateway": [
+        "Slet gateway"
+      ],
+      "Delete gateway": [
         "Slet gateway"
       ],
       "Delete group": [
@@ -485,6 +494,9 @@
       ],
       "Delete record": [
         "Slet post"
+      ],
+      "Delete token ${ token.Account }": [
+        "Slet token ${ token.Account }"
       ],
       "Delete token “${ token.Name }”": [
         "Slet token “${ token.Name }”"
@@ -843,6 +855,9 @@
       "Go to settings": [
         "Gå til indstillinger"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Forstået"
       ],
@@ -854,6 +869,9 @@
       ],
       "Help and resources": [
         "Hjælp og ressourcer"
+      ],
+      "Hide": [
+        "Skjul"
       ],
       "Hide more benefits": [
         "Skjul flere fordele"
@@ -1149,6 +1167,9 @@
       "Reload": [
         "Genindlæs"
       ],
+      "Reload page": [
+        "Genindlæs side"
+      ],
       "Remove": [
         "Fjern"
       ],
@@ -1169,6 +1190,9 @@
       ],
       "Remove domain": [
         "Fjern domæne"
+      ],
+      "Remove forward": [
+        "Fjern videresendelse"
       ],
       "Remove from favorites": [
         "Fjern fra favoritter"
@@ -1794,6 +1818,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME }-licens",
         "${ seats } ${ LUMO_APP_NAME }-licenser"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } licens",
+        "${ seats } ${ MEET_APP_NAME } licenser"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } skriveassistentplads",
@@ -4244,6 +4272,9 @@
       "North Korea": [
         "Nordkorea"
       ],
+      "North Macedonia": [
+        "Nordmakedonien"
+      ],
       "Northern Mariana Islands": [
         "Nordmarianerne"
       ],
@@ -4808,6 +4839,9 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Synkroniser nemt filer til skyen fra din computer og få adgang til dem fra din mobilenhed."
       ],
+      "Easily transfer emails, calendar events, and contacts from your previous provider. Choose a one-time import or automatic ongoing sync.": [
+        "Overfør nemt e-mails, kalenderbegivenheder og kontakter fra din tidligere udbyder. Vælg mellem et engangsimport eller løbende, automatisk synkronisering."
+      ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Aktiver ${ PROTON_SENTINEL_NAME } for at få adgang til disse funktioner"
       ],
@@ -4894,6 +4928,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Brug denne vejledning for hurtigt at lade din organisation drage fordel af ${ BRAND_NAME }'s branchens førende kryptering og privatlivsøkosystem."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Vi er kede af at du forlader os. Hvis du har et øjeblik, så ville vi sætte stor pris på at høre hvorfor du annullerer. Din feedback hjælper os med at gøre ${ BRAND_NAME } bedre for alle."
       ],
       "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
         "Du kan tilpasse listen over domæner, hvor visse automatiske funktioner i ${ PASS_APP_NAME }-browserudvidelsen (autofyld, autoforslag, automatisk lagring) ikke bør køres."
@@ -6323,6 +6360,9 @@
       "You will be notified when someone requests emergency access.": [
         "Du bliver adviseret, når nogen anmoder om nødadgang."
       ],
+      "You will no longer be able to help ${ user } recover their data after they reset their password.": [
+        "Du vil ikke længere kunne hjælpe ${ user } med at gendanne deres data, efter de har nulstillet deres adgangskode."
+      ],
       "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
         "I en nødsituation vil du ikke længere kunne anmode om adgang til kontoen for ${ user }."
       ],
@@ -6429,6 +6469,9 @@
       ],
       "Code is incorrect or not valid anymore": [
         "Koden er forkert eller ikke længere gyldig"
+      ],
+      "Company name or personal name is required": [
+        "Virksomhedsnavn eller personnavn er påkrævet"
       ],
       "Condition incomplete": [
         "Betingelse mangelfuld"
@@ -6620,6 +6663,9 @@
       ],
       "Invalid URL": [
         "Ugyldig URL"
+      ],
+      "Invalid VAT number": [
+        "Ugyldigt VAT-/momsnummer"
       ],
       "Invalid verification code": [
         "Ugyldig verifikationskode"
@@ -6909,6 +6955,9 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Det mindste kreditstørrelse, der kan tilføjes, er ${ price }"
       ],
+      "The minimum donation amount is ${ price }": [
+        "Det mindste donationsbeløb er ${ price }"
+      ],
       "The policy name must be between 3 and 40 characters.": [
         "Politiknavnet skal være mellem 3 og 40 tegn lang."
       ],
@@ -6998,6 +7047,9 @@
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "Vi stoppede DKIM-signering grundet problemer med din DNS-konfiguration. Følg instruktionerne nedenfor for at genoptage signeringen."
+      ],
+      "Wrong billing address": [
+        "Forkert faktureringsadresse"
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "Forkert gendannelsessætning. Prøv igen eller brug en anden gendannelsesmetode."
@@ -7593,6 +7645,9 @@
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "Efter at have forladt dit abonnement, vil denne bruger blive flyttet til et ${ BRAND_NAME } Unlimited-abonnement med en 30-dages gratis prøveperiode.*"
       ],
+      "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
+        "Tildel lagerplads til administratorkontoen. Du kan fordele lagerplads til yderligere brugere senere."
+      ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "Opret og administrer familiemedlemmer, og tildel dem lagerplads, der deles mellem ${ DRIVE_APP_NAME } og ${ MAIL_APP_NAME }."
       ],
@@ -7824,6 +7879,9 @@
       ]
     },
     "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Noget gik galt ved godkendelsen med din sikkerhedsnøgle. Prøv venligst igen."
+      ],
       "Something went wrong registering your security key. Please try again.": [
         "Noget gik galt med registreringen af din sikkerhedsnøgle. Prøv venligst igen."
       ]
@@ -7843,6 +7901,9 @@
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "Er du sikker på du vil slette sikkerhedsnøgle ${ name }?"
+      ],
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Indsæt en sikkerhedsnøgle, der er knyttet til din ${ BRAND_NAME }-konto."
       ],
       "Insert your security key into your device's USB port.": [
         "Indsæt din sikkerhedsnøgle i din enheds USB-port."
@@ -8794,6 +8855,9 @@
       ]
     },
     "Import provider": {
+      "Advanced import": [
+        "Avanceret import"
+      ],
       "Import from ${ providerName }": [
         "Importér fra ${ providerName }"
       ]
@@ -8805,14 +8869,32 @@
       "Canceled": [
         "Annulleret"
       ],
+      "Canceling...": [
+        "Annullerer..."
+      ],
       "Delayed": [
         "Forsinket"
+      ],
+      "Disabled": [
+        "Slået fra"
       ],
       "Failed": [
         "Mislykkedes"
       ],
+      "Imported": [
+        "Importeret"
+      ],
+      "In progress...": [
+        "I gang..."
+      ],
       "Paused": [
         "Sat på pause"
+      ],
+      "Undo finished": [
+        "Fortrydelse afsluttet"
+      ],
+      "Undo in progress": [
+        "Fortrydelse i gang"
       ]
     },
     "Import type": {
@@ -8931,6 +9013,15 @@
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } kan også bruges med en enkelt adgangskode, som erstatter både login og den anden adgangskode. Skift til enkeltadgangskode ved at indtaste den enkeltadgangskode, du vil bruge, og klik på Gem."
+      ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } er et end-to-end krypteret system til videomøder. Tilføj det til dit abonnement for at afholde sikre møder."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } pladser"
+      ],
+      "${ MEET_APP_NAME } video conferencing": [
+        "${ MEET_APP_NAME } videomøder"
       ],
       "${ n } address": [
         "${ n } adresse",
@@ -9091,11 +9182,26 @@
       "(default)": [
         "(standard)"
       ],
+      "(eg. ChatGPT, Gemini, Perplexity)": [
+        "(f.eks. ChatGPT, Gemini, Perplexity)"
+      ],
+      "(eg. New York Times, BBC)": [
+        "(f.eks. New York Times, BBC)"
+      ],
+      "(eg. PCMag, TechRadar)": [
+        "(f.eks. PCMag, TechRadar)"
+      ],
+      "(eg. The Vergecast, Big Technology Podcast)": [
+        "(f.eks. The Vergecast, Big Technology Podcast)"
+      ],
       "(Filter if ALL of the following conditions are met)": [
         "(Filtrer hvis ALLE af følgende betingelser er opfyldt)"
       ],
       "(Filter if ANY of the following conditions are met)": [
         "(Filtrer hvis NOGEN af følgende betingelser er opfyldt)"
+      ],
+      "(formerly Twitter)": [
+        "(tidligere Twitter)"
       ],
       "**${ appName }** is not supported in your organization **${ organizationName }**.": [
         "**${ appName }** understøttes ikke i din organisation **${ organizationName }**"
@@ -9204,6 +9310,9 @@
       "Activity Monitor": [
         "Aktivitetsovervågning"
       ],
+      "Add ${ MEET_APP_NAME }": [
+        "Tilføj ${ MEET_APP_NAME }"
+      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Tilføj en @pm.me e-mailadresse til din konto. Dette enkle, kortere domæne står for \"${ MAIL_APP_NAME } me\" eller \"Private Message me\"."
       ],
@@ -9255,6 +9364,9 @@
       "Affected user is on row": [
         "Berørt bruger er på række",
         "Berørte brugere er på rækkerne"
+      ],
+      "AI chatbot": [
+        "AI-chatbot"
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI-drevet assistent hjælper dig med at udarbejde bedre e-mails, hurtigt og ubesværet."
@@ -9330,6 +9442,12 @@
       ],
       "An error occurred while communicating with the extension": [
         "En fejl opstod under kommunikationen med udvidelsen"
+      ],
+      "An import is paused because the connection to your email provider was lost.": [
+        "En import er sat på pause fordi forbindelsen til din mailudbyder blev afbrudt."
+      ],
+      "An import is paused because your storage is almost full.": [
+        "En import er sat på pause, fordi der næsten ikke er mere lagerplads."
       ],
       "and": [
         "og"
@@ -9514,6 +9632,9 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Ved at dele alle detaljer om begivenheden i denne kalender, accepterer du at give ${ BRAND_NAME } adgang til denne kalenders krypterede oplysninger."
       ],
+      "Cancel": [
+        "Annuller"
+      ],
       "Cancel anytime": [
         "Opsig når som helst"
       ],
@@ -9538,6 +9659,9 @@
       "Choose an Entity ID to continue.": [
         "Vælg et entitets-ID for at fortsætte."
       ],
+      "Choose your service to connect with": [
+        "Vælg tjenesten du vil forbinde til"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik på \"Anmod om ny kode\" for at få en ny bekræftelseskode sendt til ${ strong }. Hvis dette telefonnummer er forkert, skal du klikke på \"Redigér\" for at rette det."
       ],
@@ -9552,6 +9676,9 @@
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "CNET editors choice award med en bedømmelse på 8,4 ud af 10"
+      ],
+      "Code expired": [
+        "Koden er udløbet"
       ],
       "Coming soon": [
         "Kommer snart"
@@ -9619,6 +9746,9 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Opret en etikette til de importerede beskeder, et tidsinterval for denne import og de etiketter, du gerne vil importere."
+      ],
+      "Create a new code on your TV and try again.": [
+        "Opret en ny kode på dit tv, og prøv igen."
       ],
       "Create a secure cloud for ${ value } member": [
         "Opret en sikker sky til ${ value } medlem",
@@ -9789,6 +9919,9 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Nedgradering vil afslutte alle forbindelser til betalte ${ VPN_APP_NAME }-servere."
       ],
+      "Download ${ VPN_APP_NAME }": [
+        "Download ${ VPN_APP_NAME }"
+      ],
       "Download current logs": [
         "Download aktuelle logs"
       ],
@@ -9812,6 +9945,9 @@
       ],
       "Drop to import": [
         "Slip for at importere"
+      ],
+      "Each code can only be used once": [
+        "Hver kode kan kun bruges én gang"
       ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Hvert domæne kan kun have en SPF (TXT)-post. Hvis du vil beholde den nuværende SPF (TXT)-post, kan du tilføje ${ spf } til din nuværende post (put det efter ${ spfValue })."
@@ -9975,6 +10111,9 @@
       "Everything in ${ planOrAppName }": [
         "Alt i ${ planOrAppName }"
       ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Alt fra ${ planOrAppName }, plus:"
+      ],
       "Example: ${ spfExample }": [
         "Eksempel: ${ spfExample }"
       ],
@@ -9989,6 +10128,9 @@
       ],
       "Expires on ${ ExpMonth }/${ ExpYear }": [
         "Udløber den ${ ExpMonth }/${ ExpYear }"
+      ],
+      "Facebook": [
+        "Facebook"
       ],
       "Failed to fetch logs.": [
         "Kunne ikke hente logger."
@@ -10023,6 +10165,9 @@
       "finance": [
         "finans"
       ],
+      "for ${ price }": [
+        "til ${ price }"
+      ],
       "For a 10-year version history, please contact our sales team.": [
         "Kontakt vores salgsteam for at få en versionhistorik for de sidste 10 år."
       ],
@@ -10038,11 +10183,26 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "For brugere, som skifter til ${ MAIL_APP_NAME } fra en anden e-mailtjeneste, skal du vælge fanen ${ boldAddresses } og tilføje alle aktive e-mailadresser, før du ændrer MX-posten for at sikre en problemfri overgang."
       ],
+      "Forwarding automatically sends new incoming emails to your Inbox.": [
+        "Videresendelse sender automatisk nye indgående e-mails til din Indbakke."
+      ],
       "Free forever": [
         "Gratis for evigt"
       ],
       "Free trial": [
         "Gratis prøveperiode"
+      ],
+      "Free up space or upgrade your storage to continue.": [
+        "Frigør plads eller opgrader din lagerplads for at fortsætte."
+      ],
+      "Friends and family": [
+        "Venner og familie"
+      ],
+      "Gateway couldn't be deleted. Please try again": [
+        "Gateway kunne ikke slettes. Prøv igen"
+      ],
+      "Gateway deleted": [
+        "Gateway slettet"
       ],
       "Gateway monitor": [
         "Gateway Monitor"
@@ -10082,6 +10242,9 @@
       ],
       "Go to your identity provider, get the SAML metadata for ${ appName } and import it here.": [
         "Gå til din identitetsudbyder, hent SAML-metadataene for ${ appName }, og importér dem her."
+      ],
+      "Google or other search engine": [
+        "Google eller anden søgemaskine"
       ],
       "Google Pay mark": [
         "Google Pay-mærke"
@@ -10127,6 +10290,12 @@
       ],
       "If disabled, organization members will only be able to share vaults or items within the organization.": [
         "Hvis deaktiveret, vil organisationsmedlemmer kun kunne dele bokse eller elementer internt i organisationen."
+      ],
+      "If disabled, organization members won't be able to create new aliases. Existing aliases will remain active.": [
+        "Hvis deaktiveret kan medlemmer ikke kunne oprette nye aliaser. Eksisterende aliaser forbliver aktive."
+      ],
+      "If disabled, organization members won't be able to create secure links. Previously active secure links remain valid until their expiration.": [
+        "Hvis deaktiveret kan medlemmer ikke oprette sikre links. Tidligere aktive sikre links forbliver gyldige indtil de udløber."
       ],
       "If enabled, organization members will be able to share individual items in addition to vaults.": [
         "Hvis aktiveret, vil organisationsmedlemmer være i stand til at dele individuelle elementer ud over hele bokse."
@@ -10210,11 +10379,18 @@
       "Import from": [
         "Importer fra"
       ],
+      "Import from ${ accounts } is temporarily delayed due to a bandwidth limit.": [
+        "Import fra ${ accounts } er midlertidigt forsinket på grund af en båndbreddebegrænsning.",
+        "Importer fra ${ accounts } er midlertidigt forsinket på grund af en båndbreddebegrænsning."
+      ],
       "Import in progress": [
         "Import i gang"
       ],
       "Import mailbox": [
         "Importér postkasse"
+      ],
+      "Import show one-time transfers of email, calendars, or contacts into your ${ BRAND_NAME } account.": [
+        "Importér engangsoverførelser af e-mails, kalendere eller kontakter til din ${ BRAND_NAME }-konto."
       ],
       "IMPORTANT: If your DNS console does not allow CNAME values to end with a dot, you can remove the last dot in the CNAME values.": [
         "VIGTIGT: Hvis din DNS-konsol forbyder, at CNAME-værdier slutter med et punktum, kan du fjerne det sidste punktum i CNAME-værdien."
@@ -10248,6 +10424,9 @@
       ],
       "Insert link": [
         "Indsæt link"
+      ],
+      "Instagram": [
+        "Instagram"
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Installér en landekonfigurationsfil for at oprette forbindelse til en tilfældig server i et land efter eget valg."
@@ -10553,6 +10732,9 @@
       "New VPN connection data will stop being collected and shown.": [
         "Nye VPN-forbindelsesdata vil ophøre med at blive indsamlet og vist."
       ],
+      "News or media article": [
+        "Nyheds- eller medieartikel"
+      ],
       "Next billing date": [
         "Næste faktureringsdato"
       ],
@@ -10675,6 +10857,9 @@
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
         "Organiser dine dedikerede servere i gateways, og bestem, hvilke medlemmer der kan få adgang til dem."
       ],
+      "Other": [
+        "Andet"
+      ],
       "Other accounts": [
         "Andre konti"
       ],
@@ -10791,11 +10976,20 @@
       "Please open the document to view it.": [
         "Åbn venligst dokumentet for at se det."
       ],
+      "Please open your browser extension settings and allow ${ PASS_APP_NAME } extension to access website data. Then, reload this page.": [
+        "Åbn venligst dine indstillinger for browserudvidelser og giv ${ PASS_APP_NAME }-udvidelsen adgang til webstedsdata. Genindlæs derefter denne side."
+      ],
+      "Please reconnect to continue.": [
+        "Forbind venligst igen for at fortsætte."
+      ],
       "Please select the folders you would like to import:": [
         "Vælg venligst de mapper, du ønsker at importere:"
       ],
       "Please select the type of link you want to insert and fill in all the fields.": [
         "Vælg den type link du ønsker at indsætte og udfyld alle felterne."
+      ],
+      "Please specify...": [
+        "Angiv venligst..."
       ],
       "Please try again using a different payment method, or contact your bank.": [
         "Prøv igen med en anden betalingsmetode, eller kontakt din bank."
@@ -10814,6 +11008,9 @@
       ],
       "Plus or Visionary subscription required": [
         "Plus- eller Visionary abonnement påkrævet"
+      ],
+      "Podcast": [
+        "Podcast"
       ],
       "Preference saved": [
         "Præference gemt"
@@ -10841,6 +11038,12 @@
       ],
       "Private AI assistant": [
         "Privat AI-assistent"
+      ],
+      "Product reviews, rankings, or guides": [
+        "Produktanmeldelser, rangeringer eller vejledninger"
+      ],
+      "Protect this device too?": [
+        "Beskyt også denne enhed?"
       ],
       "Protect your account from quantum computing threats with quantum-resistant cryptographic keys.": [
         "Beskyt din konto mod trusler fra kvantecomputere med kryptografiske nøgler, der er modstandsdygtige."
@@ -10895,6 +11098,9 @@
       ],
       "Recovery phrase is not associated with any outdated keys.": [
         "Gendannelsessætning er ikke tilknyttet nogen forældede nøgler."
+      ],
+      "Reddit": [
+        "Reddit"
       ],
       "Referral link copied to your clipboard": [
         "Henvisningslink kopieret til din udklipsholder"
@@ -11068,6 +11274,9 @@
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Log ind på ${ MAIL_APP_NAME } for at aktivere din adresse"
       ],
+      "Sign-in complete": [
+        "Login fuldført"
+      ],
       "Signed up": [
         "Tilmelde sig"
       ],
@@ -11114,6 +11323,12 @@
       "Step ${ step }/${ totalSteps }": [
         "Trin ${ step }/${ totalSteps }"
       ],
+      "Step 1 of 2": [
+        "Trin 1 af 2"
+      ],
+      "Step 2 of 2": [
+        "Trin 2 af 2"
+      ],
       "Storage allocated to other users in this organisation": [
         "Lagerplads tildelt andre brugere i denne organisation"
       ],
@@ -11128,6 +11343,9 @@
       ],
       "Store this password and file in a safe place. You’ll need them again to import your key.": [
         "Gem denne adgangskode og fil på et sikkert sted. Du skal bruge dem igen for at importere din nøgle."
+      ],
+      "Submit": [
+        "Indsend"
       ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "Indsend et depositum ved hjælp af følgende adresse eller scan QR-koden. Din indbetaling vil blive afspejlet på din konto efter bekræftelse."
@@ -11147,6 +11365,9 @@
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Abonnement udløber: For at beholde dine ${ planName } fordele, skal du fornye din abonnement i Apple App Store inden ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription starts on ${ startsOnTime }": [
+        "Abonnementet starter den ${ startsOnTime }"
       ],
       "Summary": [
         "Sammenfatning"
@@ -11199,6 +11420,12 @@
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Tak fordi du støtter vores mission om at opbygge et bedre internet, hvor privatliv og frihed kommer i første række."
       ],
+      "Thanks for the feedback!": [
+        "Tak for din feedback!"
+      ],
+      "The ${ bandwidthLimitLink } was reached. We'll automatically resume it once it resets.": [
+        "Dit ${ bandwidthLimitLink } er nået. Vi genoptager den automatisk når den nulstilles."
+      ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "Den ${ boldDataLocked } besked vil ikke længere blive vist, men du kan stadig låse dine data op under ${ encryptionAndKeysLink }."
       ],
@@ -11250,6 +11477,9 @@
       "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "Linket til rapportering, om at du ikke oprettede en ${ BRAND_NAME }-konto, er udløbet. Kontakt vores supportteam for at få løst dette problem."
       ],
+      "The maximum donation amount is ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }": [
+        "Det maksimale donationsbeløb er ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }"
+      ],
       "The most recent data update, excluding breaches.": [
         "Den seneste dataopdatering, eksklusive databrud."
       ],
@@ -11258,6 +11488,9 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "Navnet vil være synligt for dine brugere, mens de er logget ind."
+      ],
+      "The referral credit can be awarded up to 2 months after your friend's trial ended, and if your friend subscribed to a plan.": [
+        "Kreditten for en henvisning kan tildeles op til 2 måneder efter din vens prøveperiode udløb, og hvis din ven abonnerede på en plan."
       ],
       "The securest way to browse, stream, and be online.": [
         "Den sikreste måde at surfe, streame og være online på."
@@ -11409,6 +11642,9 @@
       "This will wipe all logs for your organization members.": [
         "Dette vil slette alle logs for din organisations medlemmer."
       ],
+      "TikTok": [
+        "TikTok"
+      ],
       "to ${ product } Business": [
         "til ${ product } Business"
       ],
@@ -11426,6 +11662,9 @@
       ],
       "To confirm, please enter the name of the user you wish to delete.": [
         "For at bekræfte, skal du indtaste navnet på den bruger, du ønsker at slette."
+      ],
+      "To continue to ${ product }": [
+        "For at fortsætte til ${ product }"
       ],
       "To continuously improve our services, we sometimes collect data to monitor the proper functioning of our applications. This information is not shared with any 3rd-party services.": [
         "For løbende at forbedre vores tjenester indsamler vi nogle gange data for at kontrollere, at vores applikationer fungerer korrekt. Disse oplysninger deles ikke med nogen tredjepartstjenester."
@@ -11486,6 +11725,9 @@
       ],
       "Total: ${ totalPrice }": [
         "I alt: ${ totalPrice }"
+      ],
+      "Trial ends on ${ formattedPeriodEndDate }": [
+        "Prøveperioden slutter ${ formattedPeriodEndDate }"
       ],
       "trusted device": [
         "betroet enhed"
@@ -11637,6 +11879,9 @@
       "Verify your identity with a time-based one-time password from an authenticator app": [
         "Bekræft din identitet med en tidsbaseret engangsadgangskode fra en godkendelsesapp"
       ],
+      "Verifying ${ PASS_APP_NAME } browser extension...": [
+        "Verificerer ${ PASS_APP_NAME } browserudvidelsen..."
+      ],
       "Verifying your payment": [
         "Bekræfter din betaling"
       ],
@@ -11787,6 +12032,9 @@
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Når du fjerner en server fra en gateway, indledes en deaktiveringsperiode på 10 dage. Denne server kan føjes til en ny gateway, men dens land kan ikke ændres."
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "Når du indstiller to-faktor-godkendelse, giver vi dig gendannelseskoder, som du kan bruge til at logge på, hvis du mister adgangen til din godkendelsesapp."
+      ],
       "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
         "Når du er klar til at aktivere adressen, skal du scanne QR-koden eller bruge linket i værdikuponen."
       ],
@@ -11831,6 +12079,9 @@
       ],
       "Writing assistant": [
         "Skriveassistent"
+      ],
+      "X": [
+        "X"
       ],
       "Yearly": [
         "Årlig"
@@ -12048,9 +12299,21 @@
       "You won’t be able to recover locked data using your downloaded recovery files. This will also disable device-based recovery.": [
         "Det er ikke muligt at gendanne låste data ved hjælp af dine downloadede gendannelsesfiler. Dette deaktiverer også enhedsbaseret gendannelse."
       ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Du vil modtage kreditten 1 måned efter at din ven abonnerer på et årligt abonnement, og 2 måneder efter de abonnerer på et månedligt abonnement."
+      ],
+      "You'll receive the credit reward 1 month after your friend's trial ended.": [
+        "Du modtager kreditten 1 måned efter din vens prøveperiode er udløbet."
+      ],
+      "You'll receive the credit reward 2 months after your friend's trial ended.": [
+        "Du modtager kreditten 2 måneder efter din vens prøveperiode er udløbet."
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Du vil derefter blive faktureret hver ${ renewCycle } måned med ${ renewAmountStr }. Du kan til enhver tid annullere.",
         "Du vil derefter blive faktureret hver ${ renewCycle } måned til ${ renewAmountStr }. Du kan annullere når som helst."
+      ],
+      "You're now signed in on your TV.": [
+        "Du er nu logget ind på dit TV."
       ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "Du har aktiveret videresendelse på ${ MAX_SYNC_PAID_USER } Gmail-adresse. For at tilføje endnu en skal du først deaktivere en af dem.",
@@ -12170,6 +12433,9 @@
       ],
       "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
         "Din værdikupon til din reserverede ${ BRAND_NAME }-e-mailadresse: ${ reservedEmail }"
+      ],
+      "YouTube": [
+        "YouTube"
       ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Du vil også miste adgang til ${ boldPlanTitle }-funktioner:"
@@ -12860,6 +13126,9 @@
       "Add group member": [
         "Tilføj gruppemedlem"
       ],
+      "Additional comments": [
+        "Yderligere kommentarer"
+      ],
       "Address": [
         "Adresse"
       ],
@@ -12883,6 +13152,9 @@
       ],
       "Allow": [
         "Tillad"
+      ],
+      "Allow alias creation": [
+        "Tillad oprettelse af alias"
       ],
       "Allow all users to create vaults": [
         "Tillad alle brugere at oprette bokse"
@@ -13166,6 +13438,9 @@
       "Contacts": [
         "Kontakter"
       ],
+      "Continue cancelling": [
+        "Fortsæt annullering"
+      ],
       "Conversation grouping": [
         "Samtalegruppering"
       ],
@@ -13271,9 +13546,6 @@
       "Display name": [
         "Visningsnavn"
       ],
-      "Do you have any suggestions for our team?": [
-        "Har du forslag til vores team?"
-      ],
       "Domain": [
         "Domæne"
       ],
@@ -13291,6 +13563,9 @@
       ],
       "Don't show this again": [
         "Vis ikke dette igen"
+      ],
+      "Donate ${ minimumDonation } or more to the ${ BRAND_NAME } Foundation": [
+        "Donér ${ minimumDonation } eller mere til ${ BRAND_NAME }-fonden"
       ],
       "Donation amount": [
         "Donationsbeløb"
@@ -13318,6 +13593,9 @@
       ],
       "Emails (last 3 months)": [
         "E-mails (seneste 3 måneder)"
+      ],
+      "Emails (last 6 months)": [
+        "E-mails (seneste 6 måneder)"
       ],
       "Emails (last month)": [
         "E-mails (seneste måned)"
@@ -13478,6 +13756,9 @@
       "Import interval": [
         "Importinterval"
       ],
+      "Import recent mails": [
+        "Importér seneste mails"
+      ],
       "Import to email address": [
         "Importer til e-mailadresse"
       ],
@@ -13541,6 +13822,9 @@
       "Last 3 months only": [
         "Kun seneste 3 måneder"
       ],
+      "Last 6 months only": [
+        "Kun de seneste 6 måneder"
+      ],
       "Last month only": [
         "Kun seneste måned"
       ],
@@ -13564,6 +13848,9 @@
       ],
       "Main": [
         "Hjem"
+      ],
+      "Main reason for cancelling": [
+        "Hovedårsag til at annullere"
       ],
       "Manage categories": [
         "Administrer kategorier"
@@ -13947,6 +14234,9 @@
       "Single sign-on URL": [
         "Enkeltlogon-URL"
       ],
+      "Skip feedback": [
+        "Spring feedback over"
+      ],
       "SMTP port": [
         "SMTP-port"
       ],
@@ -14153,9 +14443,6 @@
       ],
       "What is the main reason you are deleting your account?": [
         "Hvad er hovedårsagen til, at du sletter din konto?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Hvad er årsagen til, at du har opsagt eller nedgraderet?"
       ],
       "Who can send to this group address?": [
         "Hvem kan sende til denne gruppeadresse?"
@@ -14411,6 +14698,9 @@
       ],
       "Create an alias": [
         "Opret et alias."
+      ],
+      "Don't have access to your 2FA?": [
+        "Har du ikke adgang til din 2FA?"
       ],
       "Downloads": [
         "Downloads"
@@ -14880,6 +15170,22 @@
         "Du har nået maksimum på ${ MAX_CALENDAR_MEMBERS } medlemmer."
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (til ${ quantity } bruger)",
+        "${ MEET_APP_NAME } (til ${ quantity } brugere)"
+      ],
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } licens"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } pladser"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME }-plads",
+        "${ seats } ${ MEET_APP_NAME }-pladser"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: Fortrolige videomøder til de samtaler, der betyder noget"
@@ -14913,6 +15219,9 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "End-to-end-krypteret skærmdeling og midlertidig chat under opkald"
       ],
+      "Hosts can record meetings locally on their computers": [
+        "Mødeværter kan optage møder lokalt på deres computere"
+      ],
       "Meeting recording": [
         "Møde-optagelse"
       ],
@@ -14932,9 +15241,17 @@
       "Up to ${ n } participant": [
         "Op til ${ n } deltager",
         "Op til ${ n } deltagere"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videomøder, ${ n } deltager",
+        "Videomøde, ${ n } deltagere"
       ]
     },
     "meet_2025: Info": {
+      "${ seats } seat included": [
+        "Inklusiv ${ seats } plads",
+        "Inklusiv ${ seats } pladser"
+      ],
       "100 ${ BRAND_NAME } email addresses": [
         "100 ${ BRAND_NAME } e-mailadresser"
       ],
@@ -14944,29 +15261,20 @@
       "Data never used for AI training": [
         "Data bruges aldrig til AI-træning"
       ],
-      "Data retention policies": [
-        "Databevaringspolitikker"
-      ],
       "Document & spreadsheet editor": [
         "Dokument- og regnearkseditor"
       ],
       "Email writing assistant": [
         "E-mail skriveassistent"
       ],
-      "Everything from ${ title }, plus...": [
-        "Alt fra ${ title }, plus..."
-      ],
-      "Everything in Meet Professional, plus:": [
-        "Alt i Meet Professional, plus:"
+      "Includes these features:": [
+        "Indeholder disse funktioner:"
       ],
       "Open source": [
         "Open-source"
       ],
       "Password manager with team vaults": [
         "Adgangskodeadministrator med team-bokse"
-      ],
-      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
-        "Privat AI-chat (${ LUMO_SHORT_APP_NAME })"
       ],
       "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
         "Privat og ubegrænset AI-chat (${ LUMO_SHORT_APP_NAME })"
@@ -14980,11 +15288,19 @@
       "Strict no-logs policy": [
         "Streng nul-logningspolitik"
       ],
-      "Video meetings, ${ PAID_MAX_PARTICIPANTS } participants": [
-        "Videomøder, ${ PAID_MAX_PARTICIPANTS } deltagere"
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Du kan have op til ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME }-pladser i prøveperioden."
+      ]
+    },
+    "Meet_launch": {
+      "Add ${ planName }": [
+        "Tilføj ${ planName }"
       ],
-      "VPN with ad-blocker and malware protection": [
-        "VPN med annonceblokering og beskyttelse mod malware"
+      "Confidential video conferencing for the conversations that matter. Only ${ priceString } more each month.": [
+        "Fortrolige videomøder til de samtaler der betyder noget. Til kun ${ priceString } mere om måneden."
+      ],
+      "Talk privately with ${ planName }": [
+        "Hav private samtaler med ${ planName }"
       ]
     },
     "meet_signup_2025: title": {
@@ -15068,17 +15384,32 @@
       ]
     },
     "Metadata title": {
+      "${ appName }: Sign-in": [
+        "${ appName }: Log ind"
+      ],
+      "${ appName }: Sign-up": [
+        "${ appName }: Tilmelding"
+      ],
       "${ BRAND_NAME } Account": [
         "${ BRAND_NAME }-konto"
       ],
       "A simple step today to ensure your child's digital safety tomorrow. Reserve a private ${ BRAND_NAME } email address for your child.": [
         "Et enkelt skridt i dag for at beskytte dit barn digital sikkerhed i morgen. Reservér en privat ${ BRAND_NAME } e-mailadresse til dit barn."
       ],
+      "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
+        "Aktivér den private ${ BRAND_NAME } e-mailadresse der er reserveret til dit barn, og konfigurér deres konto."
+      ],
+      "Activate your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "Aktivér dit barns ${ BRAND_NAME }-konto | ${ BRAND_NAME }"
+      ],
       "Create a ${ BRAND_NAME } Account to use all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more, with just one login. Get a Free ${ BRAND_NAME } Account.": [
         "Opret en ${ BRAND_NAME }-konto for at bruge alle krypterede ${ BRAND_NAME }-tjenester som ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } og mere, med blot et login. Få en gratis ${ BRAND_NAME }-konto."
       ],
       "Create a ${ BRAND_NAME } Account | Take back your privacy": [
         "Opret en ${ BRAND_NAME }-konto | Få dit privatliv tilbage"
+      ],
+      "Create a new ${ appName } account": [
+        "Opret en ny ${ appName }-konto"
       ],
       "Enjoy two weeks of ${ BRAND_NAME } for free": [
         "Nyd to uger med ${ BRAND_NAME } gratis"
@@ -15089,8 +15420,26 @@
       "Find your ${ BRAND_NAME } Account username": [
         "Find dit brugernavn til ${ BRAND_NAME }-konto"
       ],
+      "Forgot your ${ BRAND_NAME } Account password? Reset it here using a recovery code, email, or SMS and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Har du glemt adgangskoden til din ${ BRAND_NAME }-konto? Nulstil den her ved hjælp af en gendannelseskode, e-mail, eller SMS, og få adgangen tilbage til din ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } og mere."
+      ],
+      "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
+        "Har du glemt brugernavnet til ${ BRAND_NAME }-kontoen? Find det ved hjælp af din e-mail eller dit telefonnummer til gendannelse, og få adgang til din ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } og mere."
+      ],
+      "Recover access to the private ${ BRAND_NAME } email address reserved for your child.": [
+        "Gendan adgangen til den private ${ BRAND_NAME } e-mailadresse, der er reserveret til dit barn."
+      ],
+      "Recover your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "Gendan dit barns ${ BRAND_NAME }-konto | ${ BRAND_NAME }"
+      ],
       "Reserve your child's private email | ${ BRAND_NAME }": [
         "Reservér dit barns private e-mail | ${ BRAND_NAME }"
+      ],
+      "Reset your ${ BRAND_NAME } Account password": [
+        "Nulstil adgangskoden til din ${ BRAND_NAME }-konto"
+      ],
+      "Sign in to access your ${ appName } account": [
+        "Log ind for at få adgang til din ${ appName }-konto"
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Log ind på din ${ BRAND_NAME }-konto for at få adgang til alle krypterede ${ BRAND_NAME }-tjenester som ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } og meget mere. Har du ikke en konto? Opret en helt GRATIS."
@@ -15474,6 +15823,10 @@
         "${ n } VPN-forbindelse",
         "${ n } VPN-forbindelser"
       ],
+      "${ options }-day file version history": [
+        "${ options } dags filversionshistorik",
+        "${ options } dages filversionshistorik"
+      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "${ PASS_APP_NAME } + SimpleLogin livstid"
       ],
@@ -15616,6 +15969,9 @@
       "Data breach monitoring": [
         "Overvågning af databrud"
       ],
+      "Data retention policies": [
+        "Databevaringspolitikker"
+      ],
       "Dedicated account manager": [
         "Dedikeret kontoadministrator"
       ],
@@ -15733,6 +16089,9 @@
       ],
       "Priority support & live chat": [
         "Prioriteret support & live chat"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Privat AI-chat (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "Privat sikkerhedskopiering af fotos"
@@ -15895,6 +16254,9 @@
       "Vault sharing with up to ${ n } person": [
         "Deling af boks med op til ${ n } person",
         "Deling af boks med op til ${ n } personer"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN med annonceblokering og beskyttelse mod malware"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi scanner det mørke web for at tjekke, om dine ${ BRAND_NAME }-adresser eller aliasser er blevet lækket, og giver dig straks besked, hvis vi finder noget."
@@ -16441,8 +16803,8 @@
       "Daily email notifications": [
         "Daglige e-mailnotifikationer"
       ],
-      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
-        "Hvis du deaktiverer dette, fjerner du muligheden for at modtage notifikationer i ${ BRAND_NAME }-applikationer"
+      "Disabling this means you won't get in-app notifications about promotions, new features, new ${ BRAND_NAME } services, and reminders.": [
+        "Hvis du slår dette fra, vil du ikke modtage notifikationer i appen om kampagner, nye funktioner, nye ${ BRAND_NAME }-tjenester og påmindelser."
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "I løbet af din første måned med et ${ BRAND_NAME }-produkt"
@@ -17945,6 +18307,9 @@
       "VAT number": [
         "Momsnummer"
       ],
+      "VAT reverse charge mechanism applies.": [
+        "Omvendt betalingspligt gælder."
+      ],
       "You already have a subscription to this plan.": [
         "Du har allerede dette abonnement."
       ],
@@ -18039,8 +18404,17 @@
       ]
     },
     "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "Fornyelsesprisen afhænger af faktureringsregionen og ABN."
+      ],
+      "Renewal price is dependent on the billing region and Business Number.": [
+        "Fornyelsesprisen afhænger af faktureringsregionen og virksomhedsnummeret."
+      ],
       "Renewal price is dependent on the billing region and EIN.": [
         "Fornyelsesprisen afhænger af faktureringsregionen og EIN."
+      ],
+      "Renewal price is dependent on the billing region and VAT number.": [
+        "Fornyelsesprisen afhænger af faktureringsregionen og momsnummeret."
       ]
     },
     "Payments.Saved payment method details": {
@@ -18137,6 +18511,9 @@
       "Anderson": [
         "Andersen"
       ],
+      "Anything you'd like us to know": [
+        "Noget du gerne vil have vi ved"
+      ],
       "Anytown": [
         "Skovhavn"
       ],
@@ -18151,6 +18528,9 @@
       ],
       "Confirm": [
         "Bekræft"
+      ],
+      "Cortex Inc.": [
+        "Cortex Inc."
       ],
       "domain.com": [
         "domæne.dk"
@@ -18175,6 +18555,9 @@
       ],
       "End date": [
         "Slutdato"
+      ],
+      "Enter a name": [
+        "Indtast et navn"
       ],
       "Enter name": [
         "Indtast navn"
@@ -18230,6 +18613,9 @@
       "Printer": [
         "Printer"
       ],
+      "San Francisco": [
+        "San Francisco"
+      ],
       "Search": [
         "Søg"
       ],
@@ -18251,6 +18637,9 @@
       "Select": [
         "Vælg"
       ],
+      "Select a provider": [
+        "Vælg en udbyder"
+      ],
       "Select a reason": [
         "Vælg en årsag"
       ],
@@ -18259,9 +18648,6 @@
       ],
       "Select state": [
         "Vælg stat"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Fortæl, hvordan du tror, ${ BRAND_NAME } kan blive bedre"
       ],
       "Start date": [
         "Startdato"
@@ -18523,6 +18909,26 @@
       ],
       "Unknown": [
         "Ukendt"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Andet"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {
@@ -19700,6 +20106,18 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Du har ${ timeRemaining.inDays } dag til at nulstille din adgangskode.",
         "Du har ${ timeRemaining.inDays } dage til at nulstille din adgangskode."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Du har ${ timeRemaining.inHours } time til at nulstille din adgangskode.",
+        "Du har ${ timeRemaining.inHours } timer til at nulstille din adgangskode."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Du har ${ timeRemaining.inMinutes } minut til at nulstille din adgangskode.",
+        "Du har ${ timeRemaining.inMinutes } minutter til at nulstille din adgangskode."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Du har ${ timeRemaining.inSeconds } sekund til at nulstille din adgangskode.",
+        "Du har ${ timeRemaining.inSeconds } sekunder til at nulstille din adgangskode."
       ]
     },
     "session_recovery:available:link": {
@@ -20168,6 +20586,9 @@
       "Compare plans": [
         "Sammenlign abonnementer"
       ],
+      "Confirm payment": [
+        "Bekræft betaling"
+      ],
       "Confirm payment, access your Drive": [
         "Bekræft betaling, få adgang til dit drev"
       ],
@@ -20295,6 +20716,9 @@
       "Share and collaborate of files": [
         "Del og samarbejd om filer"
       ],
+      "Sign up to ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }": [
+        "Tilmeld dig ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }"
+      ],
       "Sign up to get everything ${ BRAND_NAME } has to offer": [
         "Tilmeld dig for at få alt det ${ BRAND_NAME } tilbyder"
       ],
@@ -20389,6 +20813,9 @@
       "Yearly": [
         "Årligt"
       ],
+      "You are all set": [
+        "Så er du klar"
+      ],
       "Your plan": [
         "Dit abonnement"
       ],
@@ -20412,6 +20839,9 @@
       "Email address": [
         "E-mailadresse"
       ],
+      "Name shown in meetings": [
+        "Navn vist i møder"
+      ],
       "Organization name": [
         "Organisationsnavn"
       ],
@@ -20420,6 +20850,12 @@
       ],
       "Username": [
         "Brugernavn"
+      ],
+      "Your email": [
+        "Din e-mail"
+      ],
+      "Your password": [
+        "Din adgangskode"
       ]
     },
     "signup: Action": {
@@ -20522,23 +20958,23 @@
       ]
     },
     "Signup: Meet": {
-      "**Trusted by over 100 million** users and organizations": [
-        "**Brugt med tillid af mere end 100 millioner** brugere og organisationer"
+      "Choose your display name to continue": [
+        "Vælg dit visningsnavn for at forsætte"
       ],
-      "Get ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
-        "Få ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      "Choose your display name to continue scheduling your meeting": [
+        "Vælg dit visningsnavn for at fortsætte med at planlægge dit møde"
       ],
-      "Own a business?": [
-        "Ejer du en virksomhed?"
+      "Create a ${ BRAND_NAME } account": [
+        "Opret en ${ BRAND_NAME }-konto"
       ],
-      "Sign up, meet privately": [
-        "Tilmeld dig, mød privat"
+      "Create your ${ BRAND_NAME } account to create rooms": [
+        "Opret din ${ BRAND_NAME }-konto for at oprette møderum"
       ],
-      "Start using ${ MEET_APP_NAME } now": [
-        "Begynd at bruge ${ MEET_APP_NAME } nu"
+      "Create your ${ BRAND_NAME } account to schedule a meeting": [
+        "Opret din ${ BRAND_NAME }-konto for at planlægge et møde"
       ],
-      "Your account also includes access to ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME } free features.": [
-        "Din konto inkluderer også gratis adgang til funktionerne i ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ PASS_SHORT_APP_NAME }."
+      "Create your ${ BRAND_NAME } account to use your personal room": [
+        "Opret din ${ BRAND_NAME }-konto for at bruge dit personlige møderum"
       ]
     },
     "signup_2024: Feature": {
@@ -21261,10 +21697,6 @@
         "${ ipAddresses } dedikeret server",
         "${ ipAddresses } dedikerede servere"
       ],
-      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
-        "${ LUMO_APP_NAME } til ${ maxLumo } bruger",
-        "${ LUMO_APP_NAME } for ${ maxLumo } brugere"
-      ],
       "${ n } calendar per user": [
         "${ n } kalender pr. bruger",
         "${ n } kalendere pr. bruger"
@@ -21288,6 +21720,10 @@
       "${ n } VPN connection per user": [
         "${ n } VPN-forbindelse pr. bruger",
         "${ n } VPN-forbindelser pr. bruger"
+      ],
+      "${ productName } for ${ count } user": [
+        "${ productName } til ${ count } bruger",
+        "${ productName } for ${ count } brugere"
       ],
       "${ UsedAddresses } address": [
         "${ UsedAddresses } adresse",
@@ -22295,6 +22731,9 @@
       "${ MAIL_APP_NAME } Export Tool": [
         "Eksportværktøj til ${ MAIL_APP_NAME }"
       ],
+      "${ PASS_APP_NAME } is missing permissions": [
+        "${ PASS_APP_NAME } mangler tilladelser"
+      ],
       "${ PASS_SHORT_APP_NAME } Monitor Report": [
         "${ PASS_SHORT_APP_NAME } Monitor-rapport"
       ],
@@ -23034,6 +23473,9 @@
       "Forward emails": [
         "Videresend e-mails"
       ],
+      "Forwardings": [
+        "Videresendelser"
+      ],
       "Free": [
         "Gratis"
       ],
@@ -23124,6 +23566,9 @@
       "Home": [
         "Hjem"
       ],
+      "How did you find out about us?": [
+        "Hvordan fandt du os?"
+      ],
       "How to choose a good logo": [
         "Sådan vælger man et godt logo"
       ],
@@ -23169,6 +23614,9 @@
       ],
       "Import your data to ${ BRAND_NAME }": [
         "Importér dine data til ${ BRAND_NAME }"
+      ],
+      "Imports": [
+        "Importer"
       ],
       "Inactive 2FA": [
         "Inaktiv 2FA"
@@ -25029,6 +25477,12 @@
       "By deleting this phone number, you will no longer be able to recover your account.": [
         "Ved at slette dette telefonnummer vil du ikke længere være i stand til at gendanne din konto."
       ],
+      "Could not login. Please open ${ PASS_APP_NAME } browser extension and login from there.": [
+        "Kunne ikke logge ind. Åbn venligst ${ PASS_APP_NAME } browserudvidelsen og log ind derfra."
+      ],
+      "Could not sign up. Please open ${ PASS_APP_NAME } browser extension and sign up from there.": [
+        "Du kunne ikke tilmeldes. Åbn venligst ${ PASS_APP_NAME } browserudvidelsen og tilmeld dig derfra."
+      ],
       "If you cancel this import, you won't be able to resume it. ${ BRAND_NAME } saved all progress in your account. Cancel anyway?": [
         "Hvis du annullerer denne import, vil du ikke kunne genoptage den. ${ BRAND_NAME } gemte alle fremskridt på din konto. Annuller alligevel?"
       ],
@@ -25055,6 +25509,9 @@
       ],
       "Reports are not end-to-end encrypted, please do not send any sensitive information.": [
         "Fejlrapporter er ikke end-to-end krypterede. Send derfor ikke følsomme oplysninger."
+      ],
+      "Servers in this gateway will enter a 10-day deactivation period. These servers can be added to a new Gateway, but their country cannot be changed.": [
+        "Servere i denne gateway går ind i en 10-dages deaktiveringsperiode. Disse servere kan tilføjes til en ny gateway, men deres land kan ikke ændres."
       ],
       "Skip verification?": [
         "Spring e-mail-verifikation over?"
@@ -25085,6 +25542,9 @@
       ],
       "You will lose any customization you made so far.": [
         "Du vil miste enhver tilpasning, du har foretaget indtil videre."
+      ],
+      "You will not see this import record in the list anymore.": [
+        "Du vil ikke længere se denne importpost på listen."
       ],
       "Your free trial ends on ${ textDate }. ${ action }": [
         "Din gratis prøveperiode udløber den ${ textDate }. ${ action }"

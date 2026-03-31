@@ -336,9 +336,6 @@
       "Continue import": [
         "Pokračovat v importu"
       ],
-      "Continue to ${ name }": [
-        "Pokračovat na ${ name }"
-      ],
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "Pokračovat s ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
@@ -11423,6 +11420,9 @@
       "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "Vypršel odkaz na hlášení, že jste nenastavili ${ BRAND_NAME } účet. Kontaktujte prosím náš tým podpory pro vyřešení tohoto problému."
       ],
+      "The maximum donation amount is ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }": [
+        "Maximální výše daru je ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }"
+      ],
       "The most recent data update, excluding breaches.": [
         "Nejnovější aktualizace dat s výjimkou úniků informací."
       ],
@@ -13479,9 +13479,6 @@
       "Display name": [
         "Zobrazované jméno"
       ],
-      "Do you have any suggestions for our team?": [
-        "Máte pro náš tým nějaké návrhy?"
-      ],
       "Domain": [
         "Doména"
       ],
@@ -14361,9 +14358,6 @@
       "What is the main reason you are deleting your account?": [
         "Jaký je hlavní důvod, proč mažete svůj účet?"
       ],
-      "What is your main reason for canceling or downgrading?": [
-        "Jaký je váš hlavní důvod pro zrušení nebo snížení vašeho předplatného?"
-      ],
       "Who can send to this group address?": [
         "Kdo může odesílat na tuto adresu skupiny?"
       ],
@@ -15175,29 +15169,17 @@
       "Data never used for AI training": [
         "Data nejsou nikdy použita pro trénování AI"
       ],
-      "Data retention policies": [
-        "Zásady uchovávání dat"
-      ],
       "Document & spreadsheet editor": [
         "Editor dokumentů a tabulek"
       ],
       "Email writing assistant": [
         "Asistent psaní e-mailů"
       ],
-      "Everything from ${ title }, plus...": [
-        "Vše z ${ title } plus..."
-      ],
-      "Everything in Meet Professional, plus:": [
-        "Vše z Meet Professional plus:"
-      ],
       "Open source": [
         "Otevřený zdrojový kód"
       ],
       "Password manager with team vaults": [
         "Správce hesel s týmovými trezory"
-      ],
-      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
-        "Soukromý chat s AI (${ LUMO_SHORT_APP_NAME })"
       ],
       "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
         "Soukromý a neomezený chat s AI (${ LUMO_SHORT_APP_NAME })"
@@ -15210,12 +15192,6 @@
       ],
       "Strict no-logs policy": [
         "Přísné zásady neukládání logů"
-      ],
-      "Video meetings, ${ PAID_MAX_PARTICIPANTS } participants": [
-        "Videokonference, ${ PAID_MAX_PARTICIPANTS } účastníků"
-      ],
-      "VPN with ad-blocker and malware protection": [
-        "VPN s blokováním reklam a ochranou proti malware"
       ]
     },
     "meet_signup_2025: title": {
@@ -16752,9 +16728,6 @@
       ],
       "Daily email notifications": [
         "Denní e-mailová upozornění"
-      ],
-      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
-        "Deaktivací této funkce se zruší možnost přijímat upozornění v aplikacích ${ BRAND_NAME }."
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Během prvního měsíce používání produktu ${ BRAND_NAME }"
@@ -18615,9 +18588,6 @@
       ],
       "Select state": [
         "Vyberte stav"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Dejte nám vědět, co si myslíte, že by mohlo vylepšit ${ BRAND_NAME }"
       ],
       "Start date": [
         "Datum zahájení"
@@ -20960,26 +20930,6 @@
         "Funguje na všech zařízeních"
       ]
     },
-    "Signup: Meet": {
-      "**Trusted by over 100 million** users and organizations": [
-        "**Důvěra více než 100 milionů** uživatelů a organizací"
-      ],
-      "Get ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
-        "Získejte ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
-      ],
-      "Own a business?": [
-        "Vlastníte firmu?"
-      ],
-      "Sign up, meet privately": [
-        "Zaregistrujte se, komunikujte soukromě"
-      ],
-      "Start using ${ MEET_APP_NAME } now": [
-        "Začněte nyní používat ${ MEET_APP_NAME }"
-      ],
-      "Your account also includes access to ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME } free features.": [
-        "Váš účet zahrnuje také přístup k bezplatným funkcím ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ PASS_SHORT_APP_NAME }."
-      ]
-    },
     "signup_2024: Feature": {
       "GDPR and HIPAA compliant": [
         "V souladu s GDPR a HIPAA"
@@ -21731,12 +21681,6 @@
         "${ ipAddresses } dedikované servery",
         "${ ipAddresses } dedikovaných serverů",
         "${ ipAddresses } dedikovaných serverů"
-      ],
-      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
-        "${ LUMO_APP_NAME } pro ${ maxLumo } uživatele",
-        "${ LUMO_APP_NAME } pro ${ maxLumo } uživatele",
-        "${ LUMO_APP_NAME } pro ${ maxLumo } uživatelů",
-        "${ LUMO_APP_NAME } pro ${ maxLumo } uživatelů"
       ],
       "${ n } calendar per user": [
         "${ n } kalendář na uživatele",

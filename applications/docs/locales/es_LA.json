@@ -208,6 +208,9 @@
       "Continue import": [
         "Continuar importación"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Continuar con ${ planOrAppName }"
+      ],
       "Continue with Google": [
         "Continuar con Google"
       ],
@@ -370,7 +373,7 @@
         "Exportar esta versión (como xlsx)"
       ],
       "Forgot password?": [
-        "¿Contraseña olvidada?"
+        "¿Olvidó su contraseña?"
       ],
       "Forward as attachment": [
         "Reenviar como adjunto"
@@ -676,7 +679,7 @@
         "Guardar los cambios"
       ],
       "Save preferences": [
-        "Guardar las preferencias"
+        "Guardar preferencias"
       ],
       "Search": [
         "Buscar"
@@ -933,6 +936,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } licencia de ${ LUMO_APP_NAME }",
         "${ seats } licencias de ${ LUMO_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } licencia de ${ MEET_APP_NAME }",
+        "${ seats } licencias de ${ MEET_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } licencia del asistente de escritura",
@@ -2523,6 +2530,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Use esta guía para que su organización se beneficie inmediatamente del cifrado y ecosistema de privacidad líderes en la industria de ${ BRAND_NAME }."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Lamentamos que se vaya. Si tiene un momento, agradeceríamos mucho saber por qué desea cancelar. Sus comentarios nos ayudan a mejorar ${ BRAND_NAME } para todos."
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Con los grupos de contactos, puede enviar correos electrónicos a todos los miembros del grupo con un clic."
@@ -4403,6 +4413,9 @@
       "Current version": [
         "Versión actual"
       ],
+      "Decrypting your document": [
+        "Descifrando su documento"
+      ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Firma digital verificada. Este archivo fue cargado de forma segura por ${ emailAddress }."
       ],
@@ -4504,6 +4517,9 @@
       ],
       "Everything in ${ planOrAppName }": [
         "Todo en ${ planOrAppName }"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Todo lo incluido en ${ planOrAppName } y además:"
       ],
       "Failed to generate a secure link. The reason is: ${ error }": [
         "Error al generar un enlace seguro. Motivo: ${ error }"
@@ -5507,6 +5523,9 @@
       "Add to group": [
         "Agregar al grupo"
       ],
+      "Additional comments": [
+        "Comentarios adicionales"
+      ],
       "Alias title": [
         "Título del alias"
       ],
@@ -5573,6 +5592,9 @@
       "Contacts": [
         "Contactos"
       ],
+      "Continue cancelling": [
+        "Continuar cancelación"
+      ],
       "Copy": [
         "Copiar"
       ],
@@ -5593,9 +5615,6 @@
       ],
       "Delete recovery-related information.": [
         "Eliminar información de recuperación relacionada."
-      ],
-      "Do you have any suggestions for our team?": [
-        "¿Tiene alguna sugerencia para nuestro equipo?"
       ],
       "Don't ask again": [
         "No volver a preguntar"
@@ -5732,6 +5751,9 @@
       "Main": [
         "Principal"
       ],
+      "Main reason for cancelling": [
+        "Razón principal de cancelación"
+      ],
       "Make editor": [
         "Dar permisos para editar"
       ],
@@ -5837,6 +5859,9 @@
       "Sign emails": [
         "Firmar correos electrónicos"
       ],
+      "Skip feedback": [
+        "Omitir comentarios"
+      ],
       "Skip file": [
         "Omitir archivo"
       ],
@@ -5897,9 +5922,6 @@
       "What happened?": [
         "¿Qué ha ocurrido?"
       ],
-      "What is your main reason for canceling or downgrading?": [
-        "¿Cuál es su motivo principal por el que cancela o baja de plan?"
-      ],
       "Your alias": [
         "Su alias"
       ],
@@ -5916,7 +5938,7 @@
         "Su ubicación"
       ],
       "Your password (admin)": [
-        "La contraseña (admin)"
+        "Su contraseña (admin)"
       ],
       "Your password (trusted contact)": [
         "Su contraseña (contacto de confianza)"
@@ -6139,6 +6161,18 @@
         "Complemento con prueba gratuita"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "Licencia de ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Licencias de ${ MEET_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } licencia de ${ MEET_APP_NAME }",
+        "${ seats } licencias de ${ MEET_APP_NAME }"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: videollamadas privadas para lo que realmente importa"
@@ -6172,6 +6206,9 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Pantalla compartida con cifrado de extremo a extremo y chat efímero en la llamada"
       ],
+      "Hosts can record meetings locally on their computers": [
+        "Los anfitriones pueden grabar reuniones localmente en sus computadoras"
+      ],
       "Meeting recording": [
         "Grabación de la reunión"
       ],
@@ -6191,6 +6228,10 @@
       "Up to ${ n } participant": [
         "Hasta ${ n } participante",
         "Hasta ${ n } participantes"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videollamadas, ${ n } participante",
+        "Videollamadas, ${ n } participantes"
       ]
     },
     "Message": {
@@ -6726,6 +6767,9 @@
       "Data breach monitoring": [
         "Monitoreo de vulneración de datos"
       ],
+      "Data retention policies": [
+        "Políticas de retención de datos"
+      ],
       "Dedicated servers optimized for streaming": [
         "Servidores dedicados optimizados para streaming"
       ],
@@ -6834,6 +6878,9 @@
       ],
       "Priority support & live chat": [
         "Soporte prioritario y chat en vivo"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Chat de IA privado (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "Copia de seguridad de fotos privada"
@@ -6980,6 +7027,9 @@
       "Vault sharing with up to ${ n } person": [
         "Compartir bóveda con hasta ${ n } persona",
         "Compartir bóveda con hasta ${ n } personas"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN con bloqueador de publicidad y protección contra malware"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la dark web para verificar si sus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarle de inmediato si encontramos algo."
@@ -8026,6 +8076,9 @@
       "A way to contact you": [
         "Una forma de contactarle"
       ],
+      "Anything you'd like us to know": [
+        "¿Algo que le gustaría que supiéramos?"
+      ],
       "Choose password": [
         "Elegir una contraseña"
       ],
@@ -8034,6 +8087,9 @@
       ],
       "Email": [
         "Correo electrónico"
+      ],
+      "Enter a name": [
+        "Ingrese un nombre"
       ],
       "Enter a new folder name": [
         "Ingrese un nombre nuevo para la carpeta"
@@ -8083,14 +8139,14 @@
       "Select": [
         "Seleccionar"
       ],
+      "Select a provider": [
+        "Seleccione un proveedor"
+      ],
       "Select a reason": [
         "Seleccione un motivo"
       ],
       "Set date": [
         "Establecer fecha"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Comparta lo que cree que podría mejorar ${ BRAND_NAME }"
       ],
       "Start typing an email address": [
         "Comience a escribir una dirección de correo"
@@ -8173,6 +8229,26 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Correo oficial de ${ BRAND_NAME }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Otro"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {
@@ -9660,7 +9736,7 @@
         "Mejore la seguridad con 2FA"
       ],
       "Enter your password": [
-        "Ingrese la contraseña"
+        "Ingrese su contraseña"
       ],
       "Error Syncing": [
         "Error al sincronizar"

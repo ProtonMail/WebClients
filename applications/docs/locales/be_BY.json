@@ -210,6 +210,9 @@
       "Continue import": [
         "Працягнуць імпартаванне"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Працягнуць у ${ planOrAppName }"
+      ],
       "Continue with Google": [
         "Працягнуць з Google"
       ],
@@ -951,6 +954,12 @@
         "${ seats } ліцэнзіі ${ LUMO_APP_NAME }",
         "${ seats } ліцэнзій ${ LUMO_APP_NAME }",
         "${ seats } ліцэнзій ${ LUMO_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ліцэнзія ${ MEET_APP_NAME }",
+        "${ seats } ліцэнзіі ${ MEET_APP_NAME }",
+        "${ seats } ліцэнзій ${ MEET_APP_NAME }",
+        "${ seats } ліцэнзій ${ MEET_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } ліцэнзія памочніка ў напісанні",
@@ -2555,6 +2564,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Выкарыстоўвайце гэты дапаможнік, каб ваша арганізацыя хутка змагла атрымаць перавагі ад ${ BRAND_NAME }. Дадзеная экасістэма з'яўляецца адной з лепшых у галіне шыфравання і прыватнасці."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Нам шкада, што вы пакідаеце нас. Мы будзем вам вельмі ўдзячныя, калі вы знойдзеце крыху часу паведаміць аб прычынах скасавання сваёй падпіскі. Вашы водгукі дапамагаюць зрабіць ${ BRAND_NAME } яшчэ лепш для кожнага карыстальніка."
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Вы зможаце адпраўляць лісты кожнаму ўдзельніку ў групе адным націскам з дапамогай груп кантактаў."
@@ -4529,6 +4541,9 @@
       "Current version": [
         "Бягучая версія"
       ],
+      "Decrypting your document": [
+        "Расшыфроўка ваша дакумента"
+      ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Лічбавы подпіс правераны. Гэты файл бяспечна запампаваны ${ emailAddress }."
       ],
@@ -5653,6 +5668,9 @@
       "Add to group": [
         "Дадаць у групу"
       ],
+      "Additional comments": [
+        "Дадатковыя каментарыі"
+      ],
       "Alias title": [
         "Загаловак псеўданіма"
       ],
@@ -5719,6 +5737,9 @@
       "Contacts": [
         "Кантакты"
       ],
+      "Continue cancelling": [
+        "Працягнуць скасаванне"
+      ],
       "Copy": [
         "Капіяваць"
       ],
@@ -5739,9 +5760,6 @@
       ],
       "Delete recovery-related information.": [
         "Выдаліць інфармацыю звязаную з аднаўленнем."
-      ],
-      "Do you have any suggestions for our team?": [
-        "Ці ёсць у вас нейкія прапановы для нашай каманды?"
       ],
       "Don't ask again": [
         "Больш не пытаць"
@@ -5878,6 +5896,9 @@
       "Main": [
         "Галоўная"
       ],
+      "Main reason for cancelling": [
+        "Галоўная прычына скасавання"
+      ],
       "Make editor": [
         "Можа рэдагаваць"
       ],
@@ -5983,6 +6004,9 @@
       "Sign emails": [
         "Падпісваць лісты"
       ],
+      "Skip feedback": [
+        "Прапусціць водгук"
+      ],
       "Skip file": [
         "Прапусціць файл"
       ],
@@ -6042,9 +6066,6 @@
       ],
       "What happened?": [
         "Што здарылася?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Якая ваша асноўная прычына скасавання або паніжэння тарыфнага плана?"
       ],
       "Your alias": [
         "Ваш псеўданім"
@@ -6293,6 +6314,20 @@
       ],
       "Add-on with free trial": [
         "Дадатак з бясплатным пробным перыядам"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "Ліцэнзія ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Ліцэнзіі ${ MEET_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ліцэнзія ${ MEET_APP_NAME }",
+        "${ seats } ліцэнзіі ${ MEET_APP_NAME }",
+        "${ seats } ліцэнзій ${ MEET_APP_NAME }",
+        "${ seats } ліцэнзій ${ MEET_APP_NAME }"
       ]
     },
     "meet_2025: Feature": {
@@ -8284,6 +8319,9 @@
       "A way to contact you": [
         "Спосаб сувязі з вамі"
       ],
+      "Anything you'd like us to know": [
+        "Магчыма, што вы б хацелі нам яшчэ нешта паведаміць"
+      ],
       "Choose password": [
         "Выберыце пароль"
       ],
@@ -8292,6 +8330,9 @@
       ],
       "Email": [
         "Электронная пошта"
+      ],
+      "Enter a name": [
+        "Увядзіце назву"
       ],
       "Enter a new folder name": [
         "Увядзіце новую назву папкі"
@@ -8341,14 +8382,14 @@
       "Select": [
         "Выбраць"
       ],
+      "Select a provider": [
+        "Выбраць пастаўшчыка"
+      ],
       "Select a reason": [
         "Выберыце прычыну"
       ],
       "Set date": [
         "Задаць дату"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Падзяліцеся сваімі думкамі, як зрабіць ${ BRAND_NAME } лепш"
       ],
       "Start typing an email address": [
         "Пачніце ўводзіць адрас электроннай пошты"
@@ -8437,6 +8478,26 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Афіцыйныя лісты ад ${ BRAND_NAME }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Іншы"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Recent documents table header": {
@@ -8873,7 +8934,7 @@
     },
     "sheets_2025:Info": {
       "Creating new spreadsheet...": [
-        "Стварэнне новай табліцы..."
+        "Стварэнне новай электроннай табліцы..."
       ],
       "Detect automatically": [
         "Вызначаць аўтаматычна"
@@ -9918,7 +9979,7 @@
         "Паляпшэнне бяспекі з дапамогай 2ФА"
       ],
       "Enter your password": [
-        "Увядзіце пароль"
+        "Увядзіце свой пароль"
       ],
       "Error Syncing": [
         "Памылка сінхранізацыі"

@@ -224,6 +224,9 @@
       "Continue import": [
         "Συνεχίστε την εισαγωγή"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Συνέχεια στο ${ planOrAppName }"
+      ],
       "Continue with this password": [
         "Συνεχίστε με αυτόν τον κωδικό πρόσβασης"
       ],
@@ -1235,6 +1238,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } θέση",
         "${ seats } ${ LUMO_APP_NAME } θέσεις"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } άδεια χρήσης",
+        "${ seats } ${ MEET_APP_NAME } άδειες χρήσης"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } άδεια βοηθού γραφής",
@@ -3504,6 +3511,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Χρησιμοποιήστε αυτόν τον οδηγό για να επωφεληθεί άμεσα ο οργανισμός σας από το κορυφαίο οικοσύστημα κρυπτογράφησης και προστασίας προσωπικών δεδομένων του ${ BRAND_NAME }."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Λυπόμαστε που φεύγετε. Αν έχετε λίγο χρόνο, θα εκτιμούσαμε πραγματικά να μας πείτε γιατί θέλετε να ακυρώσετε. Τα σχόλιά σας μας βοηθούν να κάνουμε το ${ BRAND_NAME } καλύτερο για όλους."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Μπορείτε να εισάγετε εκδηλώσεις σε μορφή iCal (ICS αρχείο).\nΤο αρχείο θα πρέπει να έχει μέγιστο μέγεθος ${ MAX_IMPORT_FILE_SIZE_STRING } και να έχει μέχρι και ${ MAX_IMPORT_EVENTS_STRING } εκδηλώσεις.\nΑν το αρχείο σας είναι μεγαλύτερο, παρακαλούμε να το χωρίσετε σε μικρότερα αρχεία."
@@ -5974,6 +5984,15 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "Το ${ MAIL_APP_NAME } μπορεί επίσης να χρησιμοποιηθεί με έναν μόνο κωδικό πρόσβασης που αντικαθιστά τόσο τον κωδικό σύνδεσης όσο και τον δεύτερο κωδικό πρόσβασης. Για να μεταβείτε στη λειτουργία ενός κωδικού πρόσβασης, πληκτρολογήστε τον μοναδικό κωδικό πρόσβασης που θέλετε να χρησιμοποιήσετε και κάντε κλικ στην επιλογή Αποθήκευση."
       ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } είναι μια λύση βιντεοδιάσκεψης με πλήρη διατερματική κρυπτογράφηση. Προσθέστε τη στο πλάνο σας για να φιλοξενείτε ασφαλείς συσκέψεις."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } θέσεις"
+      ],
+      "${ MEET_APP_NAME } video conferencing": [
+        "Τηλεδιάσκεψη ${ MEET_APP_NAME }"
+      ],
       "${ n } address": [
         "${ n } διεύθυνση",
         "${ n } διευθύνσεις"
@@ -6203,6 +6222,9 @@
       ],
       "Activity Monitor": [
         "Παρακολούθηση Δραστηριότητας"
+      ],
+      "Add ${ MEET_APP_NAME }": [
+        "Προσθήκη ${ MEET_APP_NAME }"
       ],
       "add a recovery method": [
         "προσθήκη μεθόδου ανάκτησης"
@@ -6774,6 +6796,9 @@
       "Everything in ${ planOrAppName }": [
         "Όλα στο ${ planOrAppName }"
       ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Τα πάντα από ${ planOrAppName }, συν:"
+      ],
       "Example: ${ spfExample }": [
         "Παράδειγμα: ${ spfExample }"
       ],
@@ -6794,6 +6819,9 @@
       ],
       "finance": [
         "οικονομικά"
+      ],
+      "for ${ price }": [
+        "για ${ price }"
       ],
       "for choosing ${ product }": [
         "για την επιλογή ${ product }"
@@ -8738,6 +8766,9 @@
       "Add group member": [
         "Προσθήκη μέλους ομάδας"
       ],
+      "Additional comments": [
+        "Επιπλέον σχόλια"
+      ],
       "Address": [
         "Διεύθυνση"
       ],
@@ -8900,6 +8931,9 @@
       "Contacts": [
         "Επαφές"
       ],
+      "Continue cancelling": [
+        "Συνέχεια ακύρωσης"
+      ],
       "Copy": [
         "Αντιγραφή"
       ],
@@ -8956,9 +8990,6 @@
       ],
       "Display name": [
         "Εμφανιζόμενο Όνομα"
-      ],
-      "Do you have any suggestions for our team?": [
-        "Έχετε να προτείνετε κάτι στην ομάδα μας;"
       ],
       "Domain": [
         "Τομέας (Domain)"
@@ -9139,6 +9170,9 @@
       ],
       "Main": [
         "Κύριο"
+      ],
+      "Main reason for cancelling": [
+        "Κύριος λόγος ακύρωσης"
       ],
       "Manage categories": [
         "Διαχείριση κατηγοριών"
@@ -9378,6 +9412,9 @@
       "Single sign-on URL": [
         "URL καθολικής σύνδεσης"
       ],
+      "Skip feedback": [
+        "Παράλειψη σχολίων"
+      ],
       "Spam": [
         "Ενοχλητικό"
       ],
@@ -9473,9 +9510,6 @@
       ],
       "What is the main reason you are deleting your account?": [
         "Ποιος είναι ο κύριος λόγος που διαγράφετε τον λογαριασμό σας;"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Ποιος είναι ο κύριος λόγος ακύρωσης ή υποβάθμισης;"
       ],
       "Who can send to this group address?": [
         "Ποιος μπορεί να στείλει σε αυτήν τη διεύθυνση ομάδας;"
@@ -9990,6 +10024,22 @@
         "Ρυθμίστε τον λογαριασμό σας με τον τομέα Porkbun σας."
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (για ${ quantity } χρήστη)",
+        "${ MEET_APP_NAME } (για ${ quantity } χρήστες)"
+      ],
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } άδεια χρήσης"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } θέσεις"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME } θέση",
+        "${ seats } ${ MEET_APP_NAME } θέσεις"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: Εμπιστευτικές βιντεοδιασκέψεις για τις σημαντικές συνομιλίες σας"
@@ -10023,6 +10073,9 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Κρυπτογραφημένη κοινή χρήση οθόνης διατερματικά και εφήμερη συνομιλία κατά τη διάρκεια της κλήσης"
       ],
+      "Hosts can record meetings locally on their computers": [
+        "Οι οικοδεσπότες μπορούν να καταγράφουν τις συσκέψεις τοπικά στους υπολογιστές τους"
+      ],
       "Meeting recording": [
         "Ηχογράφηση σύσκεψης"
       ],
@@ -10042,6 +10095,30 @@
       "Up to ${ n } participant": [
         "Έως ${ n } συμμετέχων",
         "Έως ${ n } συμμετέχοντες"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Βιντεοκλήσεις, ${ n } συμμετέχων",
+        "Βιντεοκλήσεις, ${ n } συμμετέχοντες"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } θέση περιλαμβάνεται",
+        "${ seats } θέσεις περιλαμβάνονται"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Μπορείτε να έχετε έως και ${ TRIAL_MAX_MEET_SEATS } θέσεις ${ MEET_SHORT_APP_NAME } κατά τη διάρκεια της δοκιμαστικής περιόδου."
+      ]
+    },
+    "Meet_launch": {
+      "Add ${ planName }": [
+        "Προσθήκη ${ planName }"
+      ],
+      "Confidential video conferencing for the conversations that matter. Only ${ priceString } more each month.": [
+        "Απόρρητη βιντεοδιάσκεψη για τις συνομιλίες που έχουν σημασία. Μόνο ${ priceString } περισσότερα κάθε μήνα."
+      ],
+      "Talk privately with ${ planName }": [
+        "Συνομιλήστε ιδιωτικά με το ${ planName }"
       ]
     },
     "Member action": {
@@ -10479,6 +10556,9 @@
       "Data breach monitoring": [
         "Παρακολούθηση παραβίασης δεδομένων"
       ],
+      "Data retention policies": [
+        "Πολιτικές διατήρησης δεδομένων"
+      ],
       "Dedicated servers and IP": [
         "Αποκλειστικοί διακομιστές και IP"
       ],
@@ -10593,6 +10673,9 @@
       ],
       "Priority support & live chat": [
         "Υποστήριξη προτεραιότητας & ζωντανή συνομιλία"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Ιδιωτική συνομιλία με τεχνητή νοημοσύνη (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "Ιδιωτικό αντίγραφο ασφαλείας φωτογραφιών"
@@ -10752,6 +10835,9 @@
       "Vault sharing with up to ${ n } person": [
         "Κοινή χρήση κρύπτης έως ${ n } άτομο",
         "Κοινή χρήση κρύπτης έως ${ n } άτομα"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN με αποκλεισμός διαφημίσεων και προστασία από κακόβουλο λογισμικό"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Σαρώνουμε τον σκοτεινό ιστό για να ελέγξουμε εάν οι διευθύνσεις ή τα ψευδώνυμά σας ${ BRAND_NAME } έχουν διαρρεύσει και σας ειδοποιούμε αμέσως αν βρούμε κάτι."
@@ -11274,8 +11360,8 @@
       "Daily email notifications": [
         "Καθημερινές ειδοποιήσεις ηλεκτρονικού ταχυδρομείου"
       ],
-      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
-        "Η απενεργοποίηση αυτού θα καταργήσει τη δυνατότητα λήψης ειδοποιήσεων σε ${ BRAND_NAME } εφαρμογές"
+      "Disabling this means you won't get in-app notifications about promotions, new features, new ${ BRAND_NAME } services, and reminders.": [
+        "Η απενεργοποίηση αυτού σημαίνει ότι δε θα λαμβάνετε ειδοποιήσεις εντός εφαρμογής για προσφορές, νέες λειτουργίες, νέες υπηρεσίες ${ BRAND_NAME } και υπενθυμίσεις."
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Κατά τη διάρκεια του πρώτου μήνα χρήσης ενός προϊόντος ${ BRAND_NAME }"
@@ -12350,6 +12436,9 @@
       "Anderson": [
         "Καρανικολής"
       ],
+      "Anything you'd like us to know": [
+        "Οτιδήποτε θα θέλατε να ξέρουμε"
+      ],
       "Anytown": [
         "Αθήνα"
       ],
@@ -12388,6 +12477,9 @@
       ],
       "End date": [
         "Ημερομηνία Λήξης"
+      ],
+      "Enter a name": [
+        "Πληκτρολογήστε ένα όνομα"
       ],
       "Enter name": [
         "Εισάγετε όνομα"
@@ -12452,6 +12544,9 @@
       "Select": [
         "Επιλογή"
       ],
+      "Select a provider": [
+        "Επιλέξτε έναν πάροχο"
+      ],
       "Select a reason": [
         "Επιλογή αιτιολογίας"
       ],
@@ -12460,9 +12555,6 @@
       ],
       "Select state": [
         "Επιλέξτε νομό/περιοχή"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Μοιραστείτε αυτό που πιστεύετε ότι θα μπορούσε να κάνει το ${ BRAND_NAME } καλύτερο"
       ],
       "Start date": [
         "Ημερομηνία Έναρξης"
@@ -12604,6 +12696,26 @@
       ],
       "Unknown": [
         "Άγνωστο"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Άλλο"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Recovery Email": {
@@ -14206,10 +14318,6 @@
         "${ ipAddresses } αποκλειστικός διακομιστής",
         "${ ipAddresses } αποκλειστικοί διακομιστές"
       ],
-      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
-        "${ LUMO_APP_NAME } για ${ maxLumo } χρήστη",
-        "${ LUMO_APP_NAME } για ${ maxLumo } χρήστες"
-      ],
       "${ n } calendar per user": [
         "${ n } ημερολόγιο ανά χρήστη",
         "${ n } ημερολόγια ανά χρήστη"
@@ -14233,6 +14341,10 @@
       "${ n } VPN connection per user": [
         "${ n } σύνδεση VPN ανά χρήστη",
         "${ n } συνδέσεις VPN ανά χρήστη"
+      ],
+      "${ productName } for ${ count } user": [
+        "${ productName } για ${ count } χρήστη",
+        "${ productName } για ${ count } χρήστες"
       ],
       "${ UsedAddresses } address": [
         "${ UsedAddresses } διεύθυνση",

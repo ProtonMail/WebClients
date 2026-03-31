@@ -215,8 +215,8 @@
       "Continue import": [
         "사용자 지정 설정값으로 계속하기"
       ],
-      "Continue to ${ calendarAppBareName }": [
-        "${ calendarAppBareName } 로 계속하기"
+      "Continue to ${ planOrAppName }": [
+        "${ planOrAppName }(으)로 계속하기"
       ],
       "Continue with Google": [
         "Google 계정으로 로그인"
@@ -3140,6 +3140,9 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "이 가이드를 통해 조직이 ${ BRAND_NAME }의 업계 최고의 암호화 및 개인정보 보호 생태계로부터 즉시 혜택을 받을 수 있습니다."
       ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "떠나시는 모습을 보니 아쉽네요. 잠시 시간을 내어주셔서 취소하시려는 이유에 대해 알려주시면 정말 감사하겠습니다. 회원님의 소중한 의견은 ${ BRAND_NAME }을 모든 사용자에게 더 나은 서비스로 만드는 데 있어서 큰 도움이 됩니다."
+      ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "연락처 그룹으로, 한 번의 클릭으로 그룹 내 모든 사람들로 일괄 이메일 전송이 가능합니다."
       ],
@@ -4934,7 +4937,7 @@
     },
     "Import provider": {
       "Advanced import": [
-        "고급 가져오기"
+        "고급 불러오기 설정"
       ]
     },
     "Import warning": {
@@ -6636,6 +6639,9 @@
       "Add Zoom meeting": [
         "Zoom 화상 회의 추가"
       ],
+      "Additional comments": [
+        "추가 의견"
+      ],
       "Address": [
         "주소"
       ],
@@ -6726,6 +6732,9 @@
       "Contacts": [
         "연락처"
       ],
+      "Continue cancelling": [
+        "취소 계속하기"
+      ],
       "Copy": [
         "복사"
       ],
@@ -6764,9 +6773,6 @@
       ],
       "Description": [
         "설명"
-      ],
-      "Do you have any suggestions for our team?": [
-        "저희 팀에 질문이 있으신가요?"
       ],
       "Don't ask again": [
         "다시 묻지 않기"
@@ -6912,6 +6918,9 @@
       "Main": [
         "메인"
       ],
+      "Main reason for cancelling": [
+        "취소의 주된 이유"
+      ],
       "Manage categories": [
         "카테고리 관리"
       ],
@@ -7047,6 +7056,9 @@
       "Sign emails": [
         "이메일 서명"
       ],
+      "Skip feedback": [
+        "피드백 건너뛰기"
+      ],
       "Start date": [
         "시작일"
       ],
@@ -7127,9 +7139,6 @@
       ],
       "What happened?": [
         "무슨 일인가요?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "취소하거나 다운그레이드 하는 주요한 이유가 무엇이신가요?"
       ],
       "Your alias": [
         "내 별칭"
@@ -9496,6 +9505,9 @@
       "Anderson": [
         "길동"
       ],
+      "Anything you'd like us to know": [
+        "알려주셨으면 하는 사항이 있으신가요?"
+      ],
       "Anytown": [
         "서울특별시 낙원구"
       ],
@@ -9510,6 +9522,9 @@
       ],
       "Email for booking confirmation": [
         "예약 확인 이메일"
+      ],
+      "Enter a name": [
+        "이름 입력"
       ],
       "Enter a short description or additional info": [
         "간략한 설명 또는 추가 정보를 입력하세요"
@@ -9592,6 +9607,9 @@
       "Select": [
         "선택"
       ],
+      "Select a provider": [
+        "제공자 선택"
+      ],
       "Select a reason": [
         "사유 선택"
       ],
@@ -9600,9 +9618,6 @@
       ],
       "Select state": [
         "시・도 선택"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "무엇이 ${ BRAND_NAME }을 더 좋게 만들 수 있을지 공유해주세요"
       ],
       "Start typing an email address": [
         "이메일 주소 입력을 시작하세요"
@@ -9717,6 +9732,26 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "${ BRAND_NAME } 의 공식 이메일"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "기타"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {
@@ -11713,7 +11748,7 @@
         "그룹 가져오기"
       ],
       "Import your data to ${ BRAND_NAME }": [
-        "${ BRAND_NAME }로 데이터 불러오기"
+        "${ BRAND_NAME }으로 데이터 불러오기"
       ],
       "Information exposed in breach": [
         "유출 시 노출된 정보"

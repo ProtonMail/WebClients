@@ -301,6 +301,9 @@
       "Continue import": [
         "Importvorgang fortsetzen"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Weiter zu ${ planOrAppName }"
+      ],
       "Continue with categories": [
         "Mit Kategorien fortfahren"
       ],
@@ -1763,6 +1766,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } Benutzerlizenz",
         "${ seats } ${ LUMO_APP_NAME } Benutzerlizenzen"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } Lizenz",
+        "${ seats } ${ MEET_APP_NAME } Lizenzen"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } Lizenz für den Schreibassistenten",
@@ -4172,6 +4179,9 @@
       "We didn't find any known trackers and tracking URLs in this email.": [
         "Wir haben in dieser E-Mail keine bekannten Tracker und Tracking-URLs gefunden."
       ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Wir bedauern, dass du gehst. Wenn du einen Moment Zeit hast, würden wir uns sehr freuen zu erfahren, warum du kündigen möchtest. Dein Feedback hilft uns, ${ BRAND_NAME } für alle besser zu machen."
+      ],
       "When do you want your message to be sent?": [
         "Wann soll diese Nachricht gesendet werden?"
       ],
@@ -6505,6 +6515,15 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } kann auch dein Unternehmen schützen."
       ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } ist eine Ende-zu-Ende-verschlüsselte Videokonferenzlösung. Deinem Abonnement hinzufügen, um sichere Meetings abzuhalten."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } Lizenzen"
+      ],
+      "${ MEET_APP_NAME } video conferencing": [
+        "${ MEET_APP_NAME }-Videokonferenz"
+      ],
       "${ n } unread conversation": [
         "${ n } ungelesene Unterhaltung",
         "${ n } ungelesene Unterhaltungen"
@@ -6706,6 +6725,9 @@
       ],
       "Ad targeting": [
         "Zielgruppenorientierte Werbung"
+      ],
+      "Add ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME } hinzufügen"
       ],
       "Add image URL": [
         "Bild-URL hinzufügen"
@@ -7237,6 +7259,9 @@
       "Everything in ${ planOrAppName }": [
         "Alles in ${ planOrAppName }"
       ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Alles in ${ planOrAppName }, zusätzlich:"
+      ],
       "Expand selection": [
         "Auswahl erweitern"
       ],
@@ -7272,6 +7297,9 @@
       ],
       "Folder": [
         "Ordner"
+      ],
+      "for ${ price }": [
+        "für ${ price }"
       ],
       "For additional information and to remove restrictions, please login at ${ mailLink }.": [
         "Für weitere Informationen und zur Aufhebung von Einschränkungen melde dich bitte unter ${ mailLink } an."
@@ -7433,8 +7461,7 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen",
-        "Bilder einfügen"
+        "Bild einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -9203,6 +9230,9 @@
       "Add to group": [
         "Zu Gruppe hinzufügen"
       ],
+      "Additional comments": [
+        "Zusätzliche Kommentare"
+      ],
       "Address": [
         "Anschrift"
       ],
@@ -9347,6 +9377,9 @@
       "Contacts": [
         "Kontakte"
       ],
+      "Continue cancelling": [
+        "Kündigung fortsetzen"
+      ],
       "Copy": [
         "Kopieren"
       ],
@@ -9385,9 +9418,6 @@
       ],
       "Did not follow instructions": [
         "Hat die Anweisungen nicht befolgt"
-      ],
-      "Do you have any suggestions for our team?": [
-        "Hast du irgendwelche Vorschläge für unser Team?"
       ],
       "Don't ask again": [
         "Nicht erneut fragen"
@@ -9587,6 +9617,9 @@
       "Main": [
         "Hauptebene"
       ],
+      "Main reason for cancelling": [
+        "Hauptgrund für die Kündigung"
+      ],
       "Manage categories": [
         "Kategorien verwalten"
       ],
@@ -9782,11 +9815,17 @@
       "Sender": [
         "Absender"
       ],
+      "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
+        "Teile deine Verfügbarkeit mit Buchungsseiten in ${ CALENDAR_APP_NAME } und veranstalte sichere Meetings mit ${ MEET_APP_NAME }."
+      ],
       "Sign emails": [
         "E-Mails signieren"
       ],
       "Size:": [
         "Größe:"
+      ],
+      "Skip feedback": [
+        "Rückmeldung überspringen"
       ],
       "Social": [
         "Soziale Medien"
@@ -9904,9 +9943,6 @@
       ],
       "What happened?": [
         "Problembeschreibung"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Was ist der Hauptgrund für deine Kündigung oder das Downgrade?"
       ],
       "Which category should this be recategorized under?": [
         "Welcher Kategorie soll dies neu zugeordnet werden?"
@@ -10403,6 +10439,18 @@
         "In Papierkorb verschieben"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } Lizenz"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } Lizenzen"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME } Lizenz",
+        "${ seats } ${ MEET_APP_NAME } Lizenzen"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: Vertrauliche Videokonferenzen für die Unterhaltungen, die wichtig sind"
@@ -10436,6 +10484,9 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Ende-zu-Ende-verschlüsselte Bildschirmfreigabe und temporärer Chat während des Anrufs"
       ],
+      "Hosts can record meetings locally on their computers": [
+        "Organisatoren können Besprechungen lokal auf ihren Computern aufzeichnen"
+      ],
       "Meeting recording": [
         "Meeting wird aufgezeichnet"
       ],
@@ -10455,6 +10506,19 @@
       "Up to ${ n } participant": [
         "Bis zu ${ n } Teilnehmer",
         "Bis zu ${ n } Teilnehmer"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Video-Meetings, ${ n } Teilnehmer",
+        "Video-Meetings, ${ n } Teilnehmer"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } Lizenz enthalten",
+        "${ seats } Lizenzen enthalten"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Du kannst während der Testphase bis zu ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME }-Lizenzen haben."
       ]
     },
     "Message": {
@@ -10910,6 +10974,9 @@
       "Data breach monitoring": [
         "Überwachung von Datenlecks"
       ],
+      "Data retention policies": [
+        "Aufbewahrungsrichtlinien für Daten"
+      ],
       "Dedicated servers optimized for streaming": [
         "Für Streaming optimierte dedizierte Server"
       ],
@@ -11018,6 +11085,9 @@
       ],
       "Priority support & live chat": [
         "Priorisierter Support & Live-Chat"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Privater KI-Chat (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "Private Fotosicherung"
@@ -11164,6 +11234,9 @@
       "Vault sharing with up to ${ n } person": [
         "Tresor mit bis zu ${ n } Person teilen",
         "Tresor mit bis zu ${ n } Personen teilen"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN mit Werbeblocker und Malware-Schutz"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Wir scannen das Dark Web, um zu überprüfen, ob deine ${ BRAND_NAME }-Adressen oder Aliasse veröffentlicht wurden, und benachrichtigen dich sofort, wenn wir etwas finden."
@@ -12460,6 +12533,9 @@
       "Anderson": [
         "Mustermann"
       ],
+      "Anything you'd like us to know": [
+        "Haben Sie etwas, das Sie uns mitteilen möchten?"
+      ],
       "Anytown": [
         "Berlin"
       ],
@@ -12480,6 +12556,9 @@
       ],
       "End date": [
         "Enddatum"
+      ],
+      "Enter a name": [
+        "Name eingeben"
       ],
       "Enter passphrase": [
         "Passphrase eingeben"
@@ -12577,6 +12656,9 @@
       "Select": [
         "Auswählen"
       ],
+      "Select a provider": [
+        "Anbieter auswählen"
+      ],
       "Select a reason": [
         "Grund auswählen"
       ],
@@ -12585,9 +12667,6 @@
       ],
       "Select state": [
         "Bundesland wählen"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Teile uns mit, was deiner Meinung nach ${ BRAND_NAME } besser machen könnte"
       ],
       "Start date": [
         "Anfangsdatum"
@@ -12734,6 +12813,26 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Offizielle E-Mail von ${ BRAND_NAME }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Sonstiges"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {
