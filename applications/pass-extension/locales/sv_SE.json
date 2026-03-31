@@ -157,6 +157,9 @@
       "Close navigation": [
         "Stäng navigering"
       ],
+      "Configure": [
+        "Konfigurera"
+      ],
       "Confirm": [
         "Bekräfta"
       ],
@@ -2037,6 +2040,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
+        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
+      ],
       "Moving items": [
         "Flyttar objekt"
       ],
@@ -2073,6 +2080,9 @@
       "None": [
         "Ingen"
       ],
+      "Not configured": [
+        "Inte konfigurerad"
+      ],
       "Not recommended": [
         "Rekommenderas inte"
       ],
@@ -2084,6 +2094,12 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Onlineåtkomst till ${ PASS_APP_NAME } kommer kräva en PIN-kod. Du kommer att loggas ut efter 3 misslyckade försök."
+      ],
+      "Open ${ PASS_APP_NAME } in a larger window": [
+        "Öppna ${ PASS_APP_NAME } i ett större fönster"
+      ],
+      "Open the ${ PASS_APP_NAME } popup": [
+        "Öppna popup för ${ PASS_APP_NAME }"
       ],
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Öppna Safaris inställningar, hitta ${ PASS_APP_NAME }, gå till “Behörigheter“och aktivera webbplatsbehörigheter."
