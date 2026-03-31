@@ -45,7 +45,7 @@ import percentage from '@proton/utils/percentage';
 import { getBasicFeatures, getVersionHistory } from '../../../features/drive';
 import { getSentinel, getSupport } from '../../../features/highlights';
 import { getLumoFreeFeatures, getLumoPlusFeatures } from '../../../features/lumo';
-import { getMeetBusinessFeatures, getMeetFreeFeatures } from '../../../features/meet';
+import { PAID_MAX_PARTICIPANTS, getMeetBusinessFeatures, getMeetFreeFeatures } from '../../../features/meet';
 import {
     FREE_PASS_ALIASES,
     FREE_VAULTS,
@@ -376,7 +376,10 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
     const getMeetBusiness = () => {
         return (
             <StripedList alternate={alternate}>
-                <SubscriptionItems user={user} items={getMeetBusinessFeatures()} />
+                <SubscriptionItems
+                    user={user}
+                    items={getMeetBusinessFeatures({ maxParticipants: PAID_MAX_PARTICIPANTS })}
+                />
             </StripedList>
         );
     };
