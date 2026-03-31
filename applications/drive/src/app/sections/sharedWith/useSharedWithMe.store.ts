@@ -1,7 +1,6 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
-import { getDrive } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
@@ -411,10 +410,9 @@ export const useSharedWithMeStore = create<SharedWithMeStore>()(
 
                 const acceptInvitationsSubscription = eventManager.subscribe(
                     BusDriverEventName.ACCEPT_INVITATIONS,
-                    async (event) => {
+                    async (event, drive) => {
                         const store = get();
                         for (const uid of event.uids) {
-                            const drive = getDrive();
                             const maybeNode = await drive.getNode(uid);
                             const { node } = getNodeEntity(maybeNode);
                             const signatureResult = getSignatureIssues(maybeNode);
@@ -465,6 +463,36 @@ export const useSharedWithMeStore = create<SharedWithMeStore>()(
                     }
                 );
 
+                const updatedNodesSubscription = eventManager.subscribe(
+                    BusDriverEventName.UPDATED_NODES,
+                    async (event, drive) => {
+                        const store = get();
+                        for (const item of event.items) {
+                            const storeItem = store.getSharedWithMeItem(item.uid);
+                            if (!storeItem || storeItem.itemType !== ItemType.DIRECT_SHARE) {
+                                continue;
+                            }
+                            if (item.isTrashed) {
+                                store.removeSharedWithMeItem(item.uid);
+                                continue;
+                            }
+                            const maybeNode = await drive.getNode(item.uid);
+                            const { node } = getNodeEntity(maybeNode);
+                            const signatureResult = getSignatureIssues(maybeNode);
+                            store.setSharedWithMeItem({
+                                ...storeItem,
+                                name: node.name,
+                                type: node.type,
+                                mediaType: node.mediaType,
+                                activeRevisionUid: node.activeRevision?.uid,
+                                size: node.totalStorageSize,
+                                role: node.directRole,
+                                haveSignatureIssues: !signatureResult.ok,
+                            });
+                        }
+                    }
+                );
+
                 set({
                     eventSubscriptions: [
                         deleteBookmarksSubscription,
@@ -472,6 +500,7 @@ export const useSharedWithMeStore = create<SharedWithMeStore>()(
                         acceptInvitationsSubscription,
                         refreshSharedWithMeSubscription,
                         removeMeSubscription,
+                        updatedNodesSubscription,
                     ],
                 });
             },
