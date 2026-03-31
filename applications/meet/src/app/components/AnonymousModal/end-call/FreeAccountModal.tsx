@@ -23,7 +23,7 @@ export const FreeAccountModal = ({ open, onClose, action, rejoin }: CTAModalBase
             </Button>
         }
         rejoin={rejoin}
-        title={c('Info').t`You left your meeting`}
+        title={c('Info').t`You left the meeting`}
         subtitle={c('Info')
             .t`Host your own secure meeting. Start a call in ${MEET_APP_NAME} and share the link to invite anyone to join. Simple, secure, and free.`}
     />
