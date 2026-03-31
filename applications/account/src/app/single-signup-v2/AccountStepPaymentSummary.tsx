@@ -102,6 +102,7 @@ const AccountStepPaymentSummary = ({
     couponConfig,
 }: Props) => {
     const summaryPlan = getSummaryPlan({
+        app,
         plan: selectedPlan,
         vpnServersCountData,
         freePlan: model.freePlan,
@@ -203,9 +204,9 @@ const AccountStepPaymentSummary = ({
                             </>
                         ) : (
                             <>
-                                {/* Even though this section isn't called "Amount Due", we still must show amountDue 
-                                    here. This is because if we don't show the dedicated "Amount Due" line then 
-                                    this is the final amount that user will see before paying. 
+                                {/* Even though this section isn't called "Amount Due", we still must show amountDue
+                                    here. This is because if we don't show the dedicated "Amount Due" line then
+                                    this is the final amount that user will see before paying.
                                     It is **critical** to show the amountDue to the user. */}
                                 {showAmountDue ? getPrice(regularAmountPerCycle) : getPrice(currentCheckout.amountDue)}
                                 {!showAmountDue && showRenewalNotice && asteriskPosition === 'final-amount' && '*'}
