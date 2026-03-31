@@ -38,6 +38,7 @@ interface Props {
     sortedList: FolderViewItem[];
     breadcrumbs?: ReactNode;
     showToolbarOptionsForNoSelection?: boolean;
+    onSortChange: (sortField: SortField, direction: SORT_DIRECTION) => Promise<void>;
 }
 
 export function FolderBrowser({
@@ -46,6 +47,7 @@ export function FolderBrowser({
     sortedList,
     breadcrumbs,
     showToolbarOptionsForNoSelection,
+    onSortChange,
 }: Props) {
     const { shareId, linkId, volumeId } = activeFolder;
     const contextMenuAnchorRef = useRef<HTMLDivElement>(null);
@@ -132,8 +134,9 @@ export function FolderBrowser({
             sortConfig: SortConfig;
         }) => {
             useFolderStore.getState().setSorting({ sortField, direction, sortConfig });
+            void onSortChange(sortField, direction);
         },
-        []
+        [onSortChange]
     );
 
     const toolbar = (
