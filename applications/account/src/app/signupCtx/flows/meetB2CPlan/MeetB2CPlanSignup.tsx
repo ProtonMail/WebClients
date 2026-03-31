@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { LoaderPage } from '@proton/components';
 import { useNotifyErrorHandler } from '@proton/components/hooks/useErrorHandler';
 import type { PlanIDs } from '@proton/payments';
-import { CYCLE, PLANS, hasFreePlanIDs } from '@proton/payments';
+import { CYCLE, DEFAULT_CYCLE, PLANS, hasFreePlanIDs } from '@proton/payments';
 import { usePaymentOptimistic } from '@proton/payments/ui';
 import { APPS } from '@proton/shared/lib/constants';
 
@@ -132,7 +132,7 @@ const MeetB2CPlanSignup = (props: BaseSignupContextProps) => {
                         [PLANS.MEET]: 1,
                     },
                     currency: signupSearchParams.getCurrency(searchParams),
-                    cycle: signupSearchParams.getCycle(searchParams) || CYCLE.MONTHLY,
+                    cycle: signupSearchParams.getCycle(searchParams) || DEFAULT_CYCLE,
                     coupon: signupSearchParams.getCoupon(searchParams),
                 },
                 telemetryContext: 'ctx-signup-meet-b2c-plan',
