@@ -535,7 +535,7 @@ const PlanSelection = (props: Props) => {
             B2BPlans.length > 0 && Audience.B2B,
         ].filter(isTruthy);
         // Attempt to normalize the audience to what is actually available
-        if (availableAudiences.length > 0 && availableAudiences.some((audience) => maybeAudience !== audience)) {
+        if (availableAudiences.length > 0 && !availableAudiences.includes(maybeAudience)) {
             return availableAudiences[0];
         }
         // Otherwise just accept it
