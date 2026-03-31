@@ -278,9 +278,6 @@
       "Continue import": [
         "Продолжить импорт"
       ],
-      "Continue to ${ name }": [
-        "Продолжить с ${ name }"
-      ],
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "Продолжить с ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
@@ -8616,6 +8613,9 @@
       "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "Ссылка для сообщения о том, что вы не создали аккаунт ${ BRAND_NAME } истекла. Свяжитесь с нашей службой поддержки, чтобы решить эту проблему."
       ],
+      "The maximum donation amount is ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }": [
+        "Максимальная сумма пожертвования составляет ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }"
+      ],
       "The name will be visible to your users while they are signed in.": [
         "Имя будет видно вашим пользователям, когда они войдут в систему."
       ],
@@ -10175,9 +10175,6 @@
       "Display name": [
         "Отображаемое имя"
       ],
-      "Do you have any suggestions for our team?": [
-        "Есть ли у вас какие-либо предложения для нашей команды?"
-      ],
       "Domain": [
         "Домен"
       ],
@@ -10813,9 +10810,6 @@
       ],
       "What is the main reason you are deleting your account?": [
         "Какова основная причина, по которой вы удаляете свой аккаунт?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Какова ваша основная причина отказа от или перехода на более дешевую версию?"
       ],
       "Who can send to this group address?": [
         "Кто может отправлять на этот адрес группы?"
@@ -12806,9 +12800,6 @@
       "Daily email notifications": [
         "Ежедневные уведомления по электронной почте"
       ],
-      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
-        "Отключение этого удалит возможность получать уведомления в приложениях ${ BRAND_NAME }"
-      ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "В течение первого месяца использования продукта ${ BRAND_NAME }"
       ],
@@ -14085,9 +14076,6 @@
       ],
       "Select state": [
         "Выберите область"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Поделитесь тем, что, по вашему мнению, могло бы сделать ${ BRAND_NAME } лучше."
       ],
       "Start date": [
         "Дата начала"

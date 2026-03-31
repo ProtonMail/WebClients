@@ -342,8 +342,8 @@
       "Continue import": [
         "Fortsätt import"
       ],
-      "Continue to ${ name }": [
-        "Fortsätt till ${ name }"
+      "Continue to ${ planOrAppName }": [
+        "Fortsätt till ${ planOrAppName }"
       ],
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "Fortsätt med ${ nameToDisplay } ${ maybeEmailInBrackets }"
@@ -1818,6 +1818,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME }-licens",
         "${ seats } ${ LUMO_APP_NAME }-licenser"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME }-licens",
+        "${ seats } ${ MEET_APP_NAME }-licenser"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } skrivassistentplats",
@@ -6787,6 +6791,9 @@
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "Den primära nyckeln för ${ BRAND_NAME } användare är inte giltig för att skicka"
       ],
+      "Private users can be added to group once they've signed in for the first time: ${ displayedNames }": [
+        "Privata användare kan läggas till i en grupp när de har loggat in för första gången: ${ displayedNames }"
+      ],
       "Process aborted": [
         "Process avbruten"
       ],
@@ -9221,6 +9228,9 @@
       "Activity Monitor": [
         "Aktivitetsövervakare"
       ],
+      "Add ${ MEET_APP_NAME }": [
+        "Lägg till ${ MEET_APP_NAME }"
+      ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Lägg till e-postadressen ”@pm.me” till ditt konto. Denna enkla, kortare domän står för “${ MAIL_APP_NAME } me“ eller “Private Message me“."
       ],
@@ -9585,6 +9595,9 @@
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "CNET-redaktionens valpris med ett betyg på 8,4 av 10"
       ],
+      "Code expired": [
+        "Kod löpt ut"
+      ],
       "Coming soon": [
         "Kommer snart"
       ],
@@ -9648,6 +9661,9 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Skapa en etikett för de importerade meddelandena, ett tidsintervall för den här importeringen och etiketterna som du skulle vilja importera."
+      ],
+      "Create a new code on your TV and try again.": [
+        "Skapa en ny kod på din TV och försök igen."
       ],
       "Create a secure cloud for ${ value } member": [
         "Skapa ett säkert moln för ${ value } medlem",
@@ -9817,6 +9833,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Nedgradering kommer att avsluta alla anslutningar till betalda ${ VPN_APP_NAME }-servrar."
+      ],
+      "Download ${ VPN_APP_NAME }": [
+        "Ladda ner ${ VPN_APP_NAME }"
       ],
       "Download current logs": [
         "Ladda ner nuvarande loggar"
@@ -10057,6 +10076,9 @@
       ],
       "finance": [
         "finans"
+      ],
+      "for ${ price }": [
+        "för ${ price }"
       ],
       "For a 10-year version history, please contact our sales team.": [
         "För en 10-årig versionshistorik, kontakta vårt säljteam."
@@ -10920,6 +10942,9 @@
       "Product reviews, rankings, or guides": [
         "Produktrecensioner, rankingar eller guider"
       ],
+      "Protect this device too?": [
+        "Skydda denna enhet också?"
+      ],
       "Protected by Swiss privacy laws": [
         "Skyddad av schweiziska integritetslagar"
       ],
@@ -11146,6 +11171,9 @@
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Logga in på ${ MAIL_APP_NAME } för att aktivera din adress"
       ],
+      "Sign-in complete": [
+        "Inloggning slutförd"
+      ],
       "Signed up": [
         "Registrerade sig"
       ],
@@ -11231,6 +11259,9 @@
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Prenumeration slutar: För att behålla dina ${ planName }-förmåner, starta om din prenumeration i Google Play Butik senast ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription starts on ${ startsOnTime }": [
+        "Prenumeration startar den ${ startsOnTime }"
       ],
       "Summary": [
         "Sammanfattning"
@@ -11336,6 +11367,9 @@
       ],
       "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "Länken att rapportera att du inte har ställt in ett ${ BRAND_NAME }-konto har löpt ut. Kontakta vårt supportteam för att lösa detta problem."
+      ],
+      "The maximum donation amount is ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }": [
+        "Det maximala donationsbeloppet är ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }"
       ],
       "The most recent data update, excluding breaches.": [
         "Den senaste datauppdateringen, exklusive intrång."
@@ -11579,6 +11613,9 @@
       ],
       "Total: ${ totalPrice }": [
         "Totalt: ${ totalPrice }"
+      ],
+      "Trial ends on ${ formattedPeriodEndDate }": [
+        "Provperiod slutar den ${ formattedPeriodEndDate }"
       ],
       "trusted device": [
         "betrodd enhet"
@@ -12149,6 +12186,9 @@
       ],
       "You'll receive the credit reward 2 months after your friend's trial ended.": [
         "Du får kreditbelöningen 2 månader efter att din väns provperiod avslutades."
+      ],
+      "You're now signed in on your TV.": [
+        "Du är nu inloggad på din TV."
       ],
       "You've reached the limit of 50 users for this filter. Remove one to add another.": [
         "Du har nått gränsen på 50 användare för detta filter. Ta bort ett för att lägga till ett annat."
@@ -12945,6 +12985,9 @@
       "Add group member": [
         "Lägg till gruppmedlem"
       ],
+      "Additional comments": [
+        "Ytterligare kommentarer"
+      ],
       "Address": [
         "Adress"
       ],
@@ -13254,6 +13297,9 @@
       "Contacts": [
         "Kontakter"
       ],
+      "Continue cancelling": [
+        "Fortsätt avbryta"
+      ],
       "Conversation grouping": [
         "Gruppering av konversationer"
       ],
@@ -13359,9 +13405,6 @@
       "Display name": [
         "Visningsnamn"
       ],
-      "Do you have any suggestions for our team?": [
-        "Har du några förslag till vårt team?"
-      ],
       "Domain": [
         "Domän"
       ],
@@ -13379,6 +13422,9 @@
       ],
       "Don't show this again": [
         "Visa inte detta igen"
+      ],
+      "Donate ${ minimumDonation } or more to the ${ BRAND_NAME } Foundation": [
+        "Donera ${ minimumDonation } eller mer till stiftelsen ${ BRAND_NAME }"
       ],
       "Donation amount": [
         "Donationsbelopp"
@@ -14044,6 +14090,9 @@
       "Single sign-on URL": [
         "URL för enkel inloggning"
       ],
+      "Skip feedback": [
+        "Hoppa över feedback"
+      ],
       "SMTP port": [
         "SMTP-port"
       ],
@@ -14250,9 +14299,6 @@
       ],
       "What is the main reason you are deleting your account?": [
         "Vad är den främsta anledningen till att du tar bort ditt konto?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Vad är din främsta anledning till att du avbryter eller nedgraderar?"
       ],
       "Who can send to this group address?": [
         "Vem kan skicka till denna gruppadress?"
@@ -14975,6 +15021,15 @@
         "Du har nått det maximala antalet av ${ MAX_CALENDAR_MEMBERS } medlemmar."
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (för ${ quantity } användare)",
+        "${ MEET_APP_NAME } (för ${ quantity } användare)"
+      ],
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME }-licens"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: Konfidentiella videokonferenser för de konversationer som är viktiga"
@@ -15042,20 +15097,14 @@
       "Email writing assistant": [
         "Skrivassistent för e-post"
       ],
-      "Everything from ${ title }, plus...": [
-        "Allt från ${ title }, plus …"
-      ],
-      "Everything in Meet Professional, plus:": [
-        "Allt i Meet Professional, plus:"
+      "Includes these features:": [
+        "Inkluderar dessa funktioner:"
       ],
       "Open source": [
         "Öppen källkod"
       ],
       "Password manager with team vaults": [
         "Lösenordshanterare med valv för team"
-      ],
-      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
-        "Privat AI-chatt (${ LUMO_SHORT_APP_NAME })"
       ],
       "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
         "Privat och obegränsat AI-chatt (${ LUMO_SHORT_APP_NAME })"
@@ -15068,12 +15117,14 @@
       ],
       "Strict no-logs policy": [
         "Strikt policy att inte logga"
+      ]
+    },
+    "Meet_launch": {
+      "Add ${ planName }": [
+        "Lägg till ${ planName }"
       ],
-      "Video meetings, ${ PAID_MAX_PARTICIPANTS } participants": [
-        "Videomöten, ${ PAID_MAX_PARTICIPANTS } deltagare"
-      ],
-      "VPN with ad-blocker and malware protection": [
-        "VPN med annonsblockerare och skydd mot skadlig kod"
+      "Talk privately with ${ planName }": [
+        "Prata privat med ${ planName }"
       ]
     },
     "meet_signup_2025: title": {
@@ -16569,9 +16620,6 @@
       ],
       "Daily email notifications": [
         "Dagliga e-postaviseringar"
-      ],
-      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
-        "Inaktivering av detta kommer att ta bort möjligheten att ta emot aviseringar i ${ BRAND_NAME }-applikationer"
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Under din första månad med användning av en ${ BRAND_NAME }-produkt"
@@ -18272,6 +18320,9 @@
       "Anderson": [
         "Andersson"
       ],
+      "Anything you'd like us to know": [
+        "Något du vill att vi ska veta"
+      ],
       "Anytown": [
         "Alingsås"
       ],
@@ -18313,6 +18364,9 @@
       ],
       "End date": [
         "Slutdatum"
+      ],
+      "Enter a name": [
+        "Ange ett namn"
       ],
       "Enter name": [
         "Ange namn"
@@ -18392,6 +18446,9 @@
       "Select": [
         "Välj"
       ],
+      "Select a provider": [
+        "Välj en leverantör"
+      ],
       "Select a reason": [
         "Välj en anledning"
       ],
@@ -18400,9 +18457,6 @@
       ],
       "Select state": [
         "Välj delstat"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Dela vad du tror som skulle göra ${ BRAND_NAME } bättre"
       ],
       "Start date": [
         "Startdatum"
@@ -18480,6 +18534,9 @@
       ],
       "Cloud storage and file sharing, secured by end-to-end encryption.": [
         "Molnlagringsutrymme och fildelning, skyddat med end-to-end-kryptering."
+      ],
+      "Comprehensive privacy and security suite.": [
+        "Omfattande svit för integritet och säkerhet."
       ],
       "Defeat spam, tracking, and ads with encrypted email and a secure calendar.": [
         "Besegra skräppost, spårning och annonser med krypterad e-post och en säker kalender."
@@ -18640,6 +18697,26 @@
       ],
       "Unknown": [
         "Okänd"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Annat"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {
@@ -20291,6 +20368,9 @@
       "Compare plans": [
         "Jämför paket"
       ],
+      "Confirm payment": [
+        "Bekräfta betalning"
+      ],
       "Confirm payment, access your Drive": [
         "Bekräfta betalning, kom åt din Drive"
       ],
@@ -20512,6 +20592,9 @@
       "Yearly": [
         "Årsvis"
       ],
+      "You are all set": [
+        "Du är klar"
+      ],
       "Your plan": [
         "Ditt paket"
       ],
@@ -20540,6 +20623,12 @@
       ],
       "Username": [
         "Användarnamn"
+      ],
+      "Your email": [
+        "Din e-post"
+      ],
+      "Your password": [
+        "Ditt lösenord"
       ]
     },
     "signup: Action": {
@@ -20642,20 +20731,23 @@
       ]
     },
     "Signup: Meet": {
-      "**Trusted by over 100 million** users and organizations": [
-        "**Betrodd av över 100 miljoner** användare och organisationer"
+      "Choose your display name to continue": [
+        "Välj ditt visningsnamn för att fortsätta"
       ],
-      "Get ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
-        "Skaffa ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      "Choose your display name to continue scheduling your meeting": [
+        "Välj ditt visningsnamn för att fortsätta schemalägga ditt möte"
       ],
-      "Own a business?": [
-        "Äger du ett företag?"
+      "Create a ${ BRAND_NAME } account": [
+        "Skapa ett ${ BRAND_NAME }-konto"
       ],
-      "Sign up, meet privately": [
-        "Registrera dig, träffas privat"
+      "Create your ${ BRAND_NAME } account to create rooms": [
+        "Skapa ditt ${ BRAND_NAME }-konto för att skapa rum"
       ],
-      "Start using ${ MEET_APP_NAME } now": [
-        "Börja använda ${ MEET_APP_NAME } nu"
+      "Create your ${ BRAND_NAME } account to schedule a meeting": [
+        "Skapa ditt ${ BRAND_NAME }-konto för att schemalägga ett möte"
+      ],
+      "Create your ${ BRAND_NAME } account to use your personal room": [
+        "Skapa ditt ${ BRAND_NAME }-konto för att använda ditt personliga rum"
       ]
     },
     "signup_2024: Feature": {
@@ -21374,10 +21466,6 @@
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } dedikerad server",
         "${ ipAddresses } dedikerade servrar"
-      ],
-      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
-        "${ LUMO_APP_NAME } för ${ maxLumo } användare",
-        "${ LUMO_APP_NAME } för ${ maxLumo } användare"
       ],
       "${ n } calendar per user": [
         "${ n } kalender per användare",
