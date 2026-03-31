@@ -76,7 +76,9 @@ export const DashboardMeetingList = ({
                 return aIsPersonal ? -1 : 1;
             }
 
-            return (a.MeetingName ?? '').localeCompare(b.MeetingName ?? '');
+            return sortBy === SortOption.Alphabetical
+                ? (a.MeetingName ?? '').localeCompare(b.MeetingName ?? '')
+                : b.CreateTime - a.CreateTime;
         });
 
     const meetingsObject = {
