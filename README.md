@@ -43,6 +43,22 @@ yarn workspace proton-mail start
 
 For additional details on how to interact with the monorepo, see the [yarn docs](https://yarnpkg.com/) for reference.
 
+## How VPN app differs from the rest
+
+VPN is present in both proton.me and protonvpn.com. However, they are served differently. Some parts of VPN are shared, hosted within `@proton/components` or `@proton/shared`, however, the entry points to them are different.
+
+For protonvpn.com, the entry point comes from `applications/vpn-settings` and for account.proton.me/u/{X}/vpn, the entry point is `applications/account`.
+
+Since both domains are separate, we don't share a local SSO between them. Therefore, we need to serve both applications separately:
+
+```shell
+# To serve VPN through vpn-settings
+yarn workspace --port 8050 proton-vpn-settings start
+
+# To serve VPN through account
+yarn start-all --applications "proton-account"
+```
+
 ## How to version an application manually
 
 While being on the `main` branch for a clean release.
