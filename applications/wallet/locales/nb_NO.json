@@ -94,6 +94,9 @@
       "Continue": [
         "Fortsett"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Fortsett til ${ planOrAppName }"
+      ],
       "Copy address": [
         "Kopier adresse"
       ],
@@ -270,6 +273,9 @@
       ],
       "Refresh the page": [
         "Oppdater siden"
+      ],
+      "Remove": [
+        "Fjern"
       ],
       "Remove bonuses": [
         "Fjern bonuser"
@@ -2146,6 +2152,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Bruk denne veiledningen for å hjelpe organisasjonen din med å dra nytte av ${ BRAND_NAME }s bransjeledende kryptering og personvernøkosystem."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Vi beklager at du forlater oss. Hvis du har et øyeblikk, setter vi stor pris på å høre hvorfor du ønsker å avbryte abonnementet. Tilbakemeldingen din hjelper oss med å gjøre ${ BRAND_NAME } bedre for alle."
       ]
     },
     "Discover": {
@@ -3219,6 +3228,9 @@
       "Account holder": [
         "Kontoinnehaver"
       ],
+      "Additional comments": [
+        "Ytterligere kommentarer"
+      ],
       "Address": [
         "Adresse"
       ],
@@ -3279,6 +3291,9 @@
       "Company name": [
         "Foretaksnavn"
       ],
+      "Continue cancelling": [
+        "Fortsett avbestillingen"
+      ],
       "Copy": [
         "Kopier"
       ],
@@ -3305,9 +3320,6 @@
       ],
       "Delete recovery-related information.": [
         "Slett gjenopprettingsrelatert informasjon."
-      ],
-      "Do you have any suggestions for our team?": [
-        "Har du noen forslag til teamet vårt?"
       ],
       "Email address": [
         "E-postadresse"
@@ -3341,6 +3353,9 @@
       ],
       "Main": [
         "Hjem"
+      ],
+      "Main reason for cancelling": [
+        "Hovedårsaken til kanselleringen"
       ],
       "Navigation": [
         "Navigasjon"
@@ -3390,6 +3405,9 @@
       "Sign message": [
         "Signer melding"
       ],
+      "Skip feedback": [
+        "Hopp over tilbakemelding"
+      ],
       "Start date": [
         "Startdato"
       ],
@@ -3413,9 +3431,6 @@
       ],
       "What happened?": [
         "Hva skjedde?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Hva er hovedgrunnen til å kansellere eller nedgradere?"
       ],
       "Your password (admin)": [
         "Ditt passord (admin)"
@@ -4105,7 +4120,7 @@
         "200 GB med skylagring som lar deg lagre, synkronisere og dele filer lett. Sikret med ende-til-ende-kryptering."
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
-        "Avansert nettverkssikkerhet og tilgangsadministrasjon med dedikerte sikre porttjenere"
+        "Avansert nettverkssikkerhet og tilgangsadministrasjon med dedikerte sikre gateway-tjenere"
       ],
       "Advanced protection for teams that goes beyond industry standards.": [
         "Avansert beskyttelse for team som går utover industristandarder."
@@ -4293,7 +4308,7 @@
         "På samme måte som en mappe, er et hvelv en praktisk måte å organisere elementene dine på."
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
-        "Lås bedriftens ressurser fra det offentlige internett og gjør dem bare tilgjengelige via dine private porttjenere."
+        "Lås bedriftens ressurser fra det offentlige internett og gjør dem bare tilgjengelige via dine private gatewayer."
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Behandle abonnementet ditt, inkludert tilpasning av planen din. Betalingsmåter akseptert er kredittkort, PayPal, kryptovaluta og bankoverføring."
@@ -4461,7 +4476,7 @@
         "Støtte for mange plattformer"
       ],
       "Private gateways": [
-        "Private porttjenere"
+        "Private gateway-servere"
       ],
       "Support for ${ n } custom email domain": [
         "Støtte for ${ n } egendefinert e-postdomene",
@@ -4868,6 +4883,9 @@
       "Anderson": [
         "Andersen"
       ],
+      "Anything you'd like us to know": [
+        "Er det noe mer du vil at vi skal vite om"
+      ],
       "Anytown": [
         "By"
       ],
@@ -4882,6 +4900,9 @@
       ],
       "E.g., ": [
         "F.eks. "
+      ],
+      "Enter a name": [
+        "Skriv inn et navn"
       ],
       "Enter a passphrase or leave empty": [
         "Angi en passfrase eller la stå tom"
@@ -4919,6 +4940,9 @@
       "Select": [
         "Velg"
       ],
+      "Select a provider": [
+        "Velg en leverandør"
+      ],
       "Select a reason": [
         "Velg en årsak"
       ],
@@ -4927,9 +4951,6 @@
       ],
       "Select state": [
         "Velg stat"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Del det du tror kan gjøre ${ BRAND_NAME } bedre"
       ],
       "Thomas": [
         "Thomas"
@@ -4972,6 +4993,26 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Oppgrader til ${ upsellPlanTitle }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Annen"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "QRCode Reader": {

@@ -94,6 +94,9 @@
       "Continue": [
         "Fortsätt"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Fortsätt till ${ planOrAppName }"
+      ],
       "Copy address": [
         "Kopiera adress"
       ],
@@ -270,6 +273,9 @@
       ],
       "Refresh the page": [
         "Uppdatera sidan"
+      ],
+      "Remove": [
+        "Ta bort"
       ],
       "Remove bonuses": [
         "Ta bort bonusar"
@@ -459,6 +465,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME }-licens",
         "${ seats } ${ LUMO_APP_NAME }-licenser"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME }-licens",
+        "${ seats } ${ MEET_APP_NAME }-licenser"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } skrivassistentplats",
@@ -2718,6 +2728,9 @@
       "Account successfully updated": [
         "Kontot har uppdaterats"
       ],
+      "Add ${ MEET_APP_NAME }": [
+        "Lägg till ${ MEET_APP_NAME }"
+      ],
       "Address copied to clipboard": [
         "Adress kopierad till urklipp"
       ],
@@ -2844,6 +2857,9 @@
       ],
       "Expired": [
         "Löpt ut"
+      ],
+      "for ${ price }": [
+        "för ${ price }"
       ],
       "Google Pay mark": [
         "Google Pay-märke"
@@ -3188,6 +3204,9 @@
       "Account holder": [
         "Kontoinnehavare"
       ],
+      "Additional comments": [
+        "Ytterligare kommentarer"
+      ],
       "Address": [
         "Adress"
       ],
@@ -3248,6 +3267,9 @@
       "Company name": [
         "Företagsnamn"
       ],
+      "Continue cancelling": [
+        "Fortsätt avbryta"
+      ],
       "Copy": [
         "Kopiera"
       ],
@@ -3274,9 +3296,6 @@
       ],
       "Delete recovery-related information.": [
         "Ta bort återställningsrelaterad information."
-      ],
-      "Do you have any suggestions for our team?": [
-        "Har du några förslag till vårt team?"
       ],
       "Email address": [
         "E-postadress"
@@ -3359,6 +3378,9 @@
       "Sign message": [
         "Signera meddelande"
       ],
+      "Skip feedback": [
+        "Hoppa över feedback"
+      ],
       "Start date": [
         "Startdatum"
       ],
@@ -3382,9 +3404,6 @@
       ],
       "What happened?": [
         "Vad hände?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Vad är din främsta anledning till att du avbryter eller nedgraderar?"
       ],
       "Your password (admin)": [
         "Ditt lösenord (admin)"
@@ -3531,6 +3550,11 @@
       ],
       "for ${ price }": [
         "för ${ price }"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME }-licens"
       ]
     },
     "meet_2025: Feature": {
@@ -4831,6 +4855,9 @@
       "Anderson": [
         "Andersson"
       ],
+      "Anything you'd like us to know": [
+        "Något du vill att vi ska veta"
+      ],
       "Anytown": [
         "Alingsås"
       ],
@@ -4845,6 +4872,9 @@
       ],
       "E.g., ": [
         "T.ex., "
+      ],
+      "Enter a name": [
+        "Ange ett namn"
       ],
       "Enter a passphrase or leave empty": [
         "Ange en lösenfras eller lämna tomt"
@@ -4882,6 +4912,9 @@
       "Select": [
         "Välj"
       ],
+      "Select a provider": [
+        "Välj en leverantör"
+      ],
       "Select a reason": [
         "Välj en anledning"
       ],
@@ -4890,9 +4923,6 @@
       ],
       "Select state": [
         "Välj delstat"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Dela vad du tror som skulle göra ${ BRAND_NAME } bättre"
       ],
       "Thomas": [
         "Tomas"
@@ -4935,6 +4965,26 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Uppgradera till ${ upsellPlanTitle }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Annat"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "QRCode Reader": {
