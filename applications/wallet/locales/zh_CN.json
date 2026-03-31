@@ -94,6 +94,9 @@
       "Continue": [
         "继续"
       ],
+      "Continue to ${ planOrAppName }": [
+        "继续使用 ${ planOrAppName }"
+      ],
       "Copy address": [
         "复制邮箱地址"
       ],
@@ -270,6 +273,9 @@
       ],
       "Refresh the page": [
         "刷新页面"
+      ],
+      "Remove": [
+        "移除"
       ],
       "Remove bonuses": [
         "放弃特权"
@@ -2134,6 +2140,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "使用本指南，让您的组织迅速受益于 ${ BRAND_NAME } 行业领先的加密和隐私生态系统。"
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "很遗憾看到您离开。如果您有时间，我们希望了解您取消的原因。您的反馈有助于我们改进 ${ BRAND_NAME }，让产品变得更好。"
       ]
     },
     "Discover": {
@@ -3192,6 +3201,9 @@
       "Account holder": [
         "账户持有人"
       ],
+      "Additional comments": [
+        "附加备注"
+      ],
       "Address": [
         "地址"
       ],
@@ -3252,6 +3264,9 @@
       "Company name": [
         "公司名称"
       ],
+      "Continue cancelling": [
+        "继续取消"
+      ],
       "Copy": [
         "复制"
       ],
@@ -3278,9 +3293,6 @@
       ],
       "Delete recovery-related information.": [
         "删除恢复相关的数据"
-      ],
-      "Do you have any suggestions for our team?": [
-        "您对我们的团队有什么建议吗？"
       ],
       "Email address": [
         "邮箱地址"
@@ -3314,6 +3326,9 @@
       ],
       "Main": [
         "主要"
+      ],
+      "Main reason for cancelling": [
+        "取消的主要原因"
       ],
       "Navigation": [
         "导航栏"
@@ -3363,6 +3378,9 @@
       "Sign message": [
         "签名消息"
       ],
+      "Skip feedback": [
+        "跳过反馈"
+      ],
       "Start date": [
         "起始日期"
       ],
@@ -3386,9 +3404,6 @@
       ],
       "What happened?": [
         "发生了什么？"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "您取消或降级订阅的主要原因是什么？"
       ],
       "Your password (admin)": [
         "您的密码（管理员）"
@@ -4803,6 +4818,9 @@
       "Anderson": [
         "Anderson"
       ],
+      "Anything you'd like us to know": [
+        "您有任何想要告诉我们的吗？"
+      ],
       "Anytown": [
         "任何城镇"
       ],
@@ -4817,6 +4835,9 @@
       ],
       "E.g., ": [
         "例如："
+      ],
+      "Enter a name": [
+        "请输入名称"
       ],
       "Enter a passphrase or leave empty": [
         "输入密码或留空"
@@ -4854,6 +4875,9 @@
       "Select": [
         "选择"
       ],
+      "Select a provider": [
+        "请选择提供商"
+      ],
       "Select a reason": [
         "请选择原因"
       ],
@@ -4862,9 +4886,6 @@
       ],
       "Select state": [
         "请选择省份"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "分享你认为可以使 ${ BRAND_NAME } 变得更好的内容"
       ],
       "Thomas": [
         "Thomas"
@@ -4906,6 +4927,26 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "升级至 ${ upsellPlanTitle }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "其他"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "QRCode Reader": {

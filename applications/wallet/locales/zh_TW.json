@@ -82,6 +82,9 @@
       "Continue": [
         "繼續"
       ],
+      "Continue to ${ planOrAppName }": [
+        "繼續使用 ${ planOrAppName }"
+      ],
       "Copy address": [
         "複製電子郵件地址"
       ],
@@ -243,6 +246,9 @@
       ],
       "Refresh the page": [
         "重新整理此頁面"
+      ],
+      "Remove": [
+        "移除"
       ],
       "Remove bonuses": [
         "移除贈品"
@@ -437,6 +443,9 @@
       ],
       "Writing assistant": [
         "撰寫助手"
+      ],
+      "Writing assistant seats": [
+        "撰寫幫手就位"
       ]
     },
     "Address list": {
@@ -534,6 +543,9 @@
       ],
       "Lifetime": [
         "終身"
+      ],
+      "Lifetime access": [
+        "終身存取權"
       ],
       "Monthly": [
         "每月"
@@ -889,6 +901,9 @@
       ],
       "Upload and query multiple large files": [
         "上載及查詢多個大型檔案"
+      ],
+      "Upload and query small files": [
+        "上載及查詢小型檔案"
       ],
       "Web search access": [
         "網頁搜尋存取"
@@ -2089,6 +2104,9 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "每次儲值的最低金額為 ${ price }"
       ],
+      "The minimum donation amount is ${ price }": [
+        "最低捐款金額為 ${ price }"
+      ],
       "The passphrases do not match": [
         "密碼片語不符"
       ],
@@ -2121,6 +2139,9 @@
       ],
       "Username must end with a letter or digit": [
         "使用者名稱的結尾必須為字母或數字"
+      ],
+      "Wrong billing address": [
+        "錯誤帳單地址"
       ]
     },
     "Error message": {
@@ -2758,6 +2779,9 @@
       "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
         "您的付款日是 ${ renewalTime }。您可隨時取消。"
       ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "您下一個收費日為${ renewalTime }。您可隨時取消。若您需要立即變更方案請聯繫客服。"
+      ],
       "Your phone number will only be used for this one-time verification.": [
         "您的手機號碼只會用於此一次性驗證。"
       ],
@@ -2859,6 +2883,9 @@
       "Colors": [
         "色彩"
       ],
+      "Command line interface (CLI)": [
+        "指令介面 (CLI)"
+      ],
       "Company": [
         "公司"
       ],
@@ -2892,9 +2919,6 @@
       "Delete recovery-related information.": [
         "刪除復原相關的資料。"
       ],
-      "Do you have any suggestions for our team?": [
-        "您對我們的團隊有什麼建議嗎？"
-      ],
       "Email address": [
         "電郵位址"
       ],
@@ -2927,6 +2951,9 @@
       ],
       "Main": [
         "主要"
+      ],
+      "Main reason for cancelling": [
+        "取消的主要原因"
       ],
       "Navigation": [
         "巡覽"
@@ -2973,6 +3000,9 @@
       "Sign message": [
         "簽署訊息"
       ],
+      "Skip feedback": [
+        "略過意見回饋"
+      ],
       "Start date": [
         "開始日期"
       ],
@@ -2996,9 +3026,6 @@
       ],
       "What happened?": [
         "發生了甚麼問題？"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "請問退訂或降級的主要理由?"
       ],
       "Your password (admin)": [
         "您的密碼（管理員）"
@@ -3162,6 +3189,9 @@
       ],
       "Built-in chat": [
         "內建聊天"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "端對端加密的螢幕共享和臨時通話內聊天"
       ],
       "Meeting recording": [
         "會議錄影"
@@ -4111,6 +4141,9 @@
       ]
     },
     "Payments": {
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% 稅金：${ taxAmountElement }"
+      ],
       "${ rate }% taxes: ${ taxAmountElement }": [
         "${ rate }% 稅金：${ taxAmountElement }"
       ],
@@ -4281,6 +4314,14 @@
         "免費"
       ]
     },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "續訂價格取決於計費區域和 EIN。"
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "續訂價格取決於計費區域和 EIN。"
+      ]
+    },
     "Payments.Saved payment method details": {
       "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "APPle Pay - 卡片於 ${ paymentMethod.Details.Last4 } 結束"
@@ -4333,6 +4374,9 @@
       "Anderson": [
         "安德松"
       ],
+      "Anything you'd like us to know": [
+        "您有沒有什麼想讓我們知道的？"
+      ],
       "Company name": [
         "公司名稱"
       ],
@@ -4363,6 +4407,9 @@
       "Postal code": [
         "郵遞區號"
       ],
+      "San Francisco": [
+        "舊金山"
+      ],
       "Search": [
         "搜尋"
       ],
@@ -4380,9 +4427,6 @@
       ],
       "Select state": [
         "請選州"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "分享您認為可以讓 ${ BRAND_NAME } 更好的方法"
       ],
       "Thomas": [
         "湯姆斯"
@@ -4415,6 +4459,23 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "升級至${ upsellPlanTitle }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "其它"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Recipient details": {
