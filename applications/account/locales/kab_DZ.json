@@ -198,9 +198,6 @@
       "Continue import": [
         "Kemmel akter"
       ],
-      "Continue to ${ name }": [
-        "Kemmel ɣer ${ name }"
-      ],
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "Kemmel s ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
@@ -5254,6 +5251,9 @@
         "Tansa-a tettwarna.",
         "Tansiwin-a ttwarnant."
       ],
+      "The maximum donation amount is ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }": [
+        "Azal afellay n ukci d ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }"
+      ],
       "The name will be visible to your users while they are signed in.": [
         "Isem ad d-yettban i yiseqdacen-ik•im mi ara qqnen."
       ],
@@ -6176,9 +6176,6 @@
       ],
       "Display name": [
         "Isem ara d-yettwaskanen"
-      ],
-      "Do you have any suggestions for our team?": [
-        "Tesɛiḍ kra n yisumar i terbaɛt-nneɣ ?"
       ],
       "Domain": [
         "Taɣult"

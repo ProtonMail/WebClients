@@ -208,6 +208,9 @@
       "Continue import": [
         "Continuar importação"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Continuar com ${ planOrAppName }"
+      ],
       "Continue with Google": [
         "Continuar com o Google"
       ],
@@ -676,7 +679,7 @@
         "Salvar alterações"
       ],
       "Save preferences": [
-        "Salvar as preferências"
+        "Salvar preferências"
       ],
       "Search": [
         "Pesquisar"
@@ -933,6 +936,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } licença do ${ LUMO_APP_NAME }",
         "${ seats } licenças do ${ LUMO_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } licença",
+        "${ seats } ${ MEET_APP_NAME } licenças"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } licença de assistente de escrita",
@@ -4400,6 +4407,9 @@
       "Current version": [
         "Versão atual"
       ],
+      "Decrypting your document": [
+        "Descriptografando seu documento"
+      ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Assinatura digital verificada. Esse arquivo foi enviado seguramente por ${ emailAddress }."
       ],
@@ -5501,6 +5511,9 @@
       "Add to group": [
         "Adicionar ao grupo"
       ],
+      "Additional comments": [
+        "Comentários adicionais"
+      ],
       "Alias title": [
         "Título do alias"
       ],
@@ -5567,6 +5580,9 @@
       "Contacts": [
         "Contatos"
       ],
+      "Continue cancelling": [
+        "Continuar cancelamento"
+      ],
       "Copy": [
         "Copiar"
       ],
@@ -5587,9 +5603,6 @@
       ],
       "Delete recovery-related information.": [
         "Excluir a informação de recuperação."
-      ],
-      "Do you have any suggestions for our team?": [
-        "Você tem alguma sugestão para nossa equipe?"
       ],
       "Don't ask again": [
         "Não perguntar novamente"
@@ -5831,6 +5844,9 @@
       "Sign emails": [
         "Assinar e-mails"
       ],
+      "Skip feedback": [
+        "Pular feedback"
+      ],
       "Skip file": [
         "Ignorar arquivo"
       ],
@@ -5890,9 +5906,6 @@
       ],
       "What happened?": [
         "O que aconteceu?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Qual é o seu motivo principal do cancelamento ou downgrade?"
       ],
       "Your alias": [
         "Seu alias"
@@ -6131,6 +6144,18 @@
       ],
       "Add-on with free trial": [
         "Extensão com avaliação gratuita"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } licença"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } licenças"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } licença do ${ MEET_APP_NAME }",
+        "${ seats } licenças do ${ MEET_APP_NAME }"
       ]
     },
     "meet_2025: Feature": {
@@ -8023,6 +8048,9 @@
       "Email": [
         "E-mail"
       ],
+      "Enter a name": [
+        "Insira um nome"
+      ],
       "Enter a new folder name": [
         "Digite o nome para nova pasta"
       ],
@@ -8071,14 +8099,14 @@
       "Select": [
         "Selecionar"
       ],
+      "Select a provider": [
+        "Selecione um provedor"
+      ],
       "Select a reason": [
         "Selecione um motivo"
       ],
       "Set date": [
         "Definir data"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Compartilhe o que você acha que poderia melhorar na ${ BRAND_NAME }"
       ],
       "Start typing an email address": [
         "Comece a digitar um endereço de e-mail"
@@ -8161,6 +8189,26 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "E-mail oficial da ${ BRAND_NAME }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Outros"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {

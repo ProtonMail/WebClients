@@ -373,6 +373,9 @@
       "Get Started": [
         "Kom i gang"
       ],
+      "Hide": [
+        "Skjul"
+      ],
       "How do I export my data from ${ PROVIDER_INFO_MAP[form.values.provider].title }?": [
         "Hvordan eksporterer jeg mine data fra ${ PROVIDER_INFO_MAP[form.values.provider].title }?"
       ],
@@ -2050,7 +2053,8 @@
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Flyttes et element til en anden boks, slettes dets sikre links."
+        "Flyttes et element til en anden boks, slettes dets sikre links.",
+        "Flyttes elementer til en anden boks, slettes deres sikre links."
       ],
       "Moving items": [
         "Flytter elementer"

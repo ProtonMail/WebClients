@@ -91,7 +91,7 @@
         "Übernehmen"
       ],
       "Ask me next time": [
-        "Frag mich beim nächsten Mal"
+        "Frag mich nächstes Mal"
       ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Pro Kontaktgruppe ist maximal ${ maxContacts } Kontakt erlaubt.",
@@ -207,6 +207,9 @@
       ],
       "Continue import": [
         "Importvorgang fortsetzen"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "Weiter zu ${ planOrAppName }"
       ],
       "Continue with Google": [
         "Mit Google anmelden"
@@ -930,6 +933,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } Benutzerlizenz",
         "${ seats } ${ LUMO_APP_NAME } Benutzerlizenzen"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } Lizenz",
+        "${ seats } ${ MEET_APP_NAME } Lizenzen"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } Lizenz für den Schreibassistenten",
@@ -2520,6 +2527,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Nutze diese Anleitung, damit deine Organisation unverzüglich von der branchenführenden Verschlüsselung und dem Privatsphäre-Ökosystem von ${ BRAND_NAME } profitiert."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Wir bedauern, dass du gehst. Wenn du einen Moment Zeit hast, würden wir uns sehr freuen zu erfahren, warum du kündigen möchtest. Dein Feedback hilft uns, ${ BRAND_NAME } für alle besser zu machen."
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Mit Kontaktgruppen kannst du mit einem Klick E-Mails an alle Mitglieder der Gruppe senden."
@@ -4400,6 +4410,9 @@
       "Current version": [
         "Aktuelle Version"
       ],
+      "Decrypting your document": [
+        "Dein Dokument wird entschlüsselt"
+      ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Digitale Signatur verifiziert. Diese Datei wurde von ${ emailAddress } sicher hochgeladen."
       ],
@@ -4482,7 +4495,7 @@
         "Bestätigungscode eingeben. ${ digit } Ziffern."
       ],
       "Enter your own password (as organization admin).": [
-        "Gib dein eigenes Passwort ein (als Organisationsadministrator)."
+        "Eigenes Passwort (als Organisationsadministrator) eingeben."
       ],
       "Enter your own password (as trusted contact).": [
         "Gib dein eigenes Passwort ein (als vertrauenswürdiger Kontakt)."
@@ -4501,6 +4514,9 @@
       ],
       "Everything in ${ planOrAppName }": [
         "Alles in ${ planOrAppName }"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Alles in ${ planOrAppName }, zusätzlich:"
       ],
       "Failed to generate a secure link. The reason is: ${ error }": [
         "Sicherer Link konnte nicht generiert werden. Grund: ${ error }"
@@ -4554,10 +4570,10 @@
         "Geoblockierung"
       ],
       "Get email updates for comments and suggestions added to your documents.": [
-        "E-Mail-Updates für Kommentare und Vorschläge erhalten, die zu deinen Dokumenten hinzugefügt wurden."
+        "E-Mail-Benachrichtigungen für Kommentare und Vorschläge erhalten, die zu deinen Dokumenten hinzugefügt wurden."
       ],
       "Get Notified About Comments": [
-        "Über Kommentare benachrichtigt werden"
+        "Benachrichtigungen über Kommentare erhalten"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Regierungen und Internetdienstanbieter können deine Online-Aktivitäten überwachen. Indem du deine echte IP-Adresse verbirgst und deine Aktivitäten verschlüsselst, wird dein Surfverhalten privat."
@@ -5504,6 +5520,9 @@
       "Add to group": [
         "Zu Gruppe hinzufügen"
       ],
+      "Additional comments": [
+        "Zusätzliche Kommentare"
+      ],
       "Alias title": [
         "Aliasbezeichnung"
       ],
@@ -5570,6 +5589,9 @@
       "Contacts": [
         "Kontakte"
       ],
+      "Continue cancelling": [
+        "Kündigung fortsetzen"
+      ],
       "Copy": [
         "Kopieren"
       ],
@@ -5590,9 +5612,6 @@
       ],
       "Delete recovery-related information.": [
         "Wiederherstellungsbezogene Informationen löschen."
-      ],
-      "Do you have any suggestions for our team?": [
-        "Hast du irgendwelche Vorschläge für unser Team?"
       ],
       "Don't ask again": [
         "Nicht erneut fragen"
@@ -5729,6 +5748,9 @@
       "Main": [
         "Hauptebene"
       ],
+      "Main reason for cancelling": [
+        "Hauptgrund für die Kündigung"
+      ],
       "Make editor": [
         "Zum Bearbeiter ändern"
       ],
@@ -5834,6 +5856,9 @@
       "Sign emails": [
         "E-Mails signieren"
       ],
+      "Skip feedback": [
+        "Rückmeldung überspringen"
+      ],
       "Skip file": [
         "Datei überspringen"
       ],
@@ -5893,9 +5918,6 @@
       ],
       "What happened?": [
         "Problembeschreibung"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Was ist der Hauptgrund für deine Kündigung oder das Downgrade?"
       ],
       "Your alias": [
         "Dein Alias"
@@ -6136,6 +6158,18 @@
         "Add-on mit kostenloser Testversion"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } Lizenz"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } Lizenzen"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME } Lizenz",
+        "${ seats } ${ MEET_APP_NAME } Lizenzen"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: Vertrauliche Videokonferenzen für die Unterhaltungen, die wichtig sind"
@@ -6169,6 +6203,9 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Ende-zu-Ende-verschlüsselte Bildschirmfreigabe und temporärer Chat während des Anrufs"
       ],
+      "Hosts can record meetings locally on their computers": [
+        "Organisatoren können Besprechungen lokal auf ihren Computern aufzeichnen"
+      ],
       "Meeting recording": [
         "Meeting wird aufgezeichnet"
       ],
@@ -6188,6 +6225,10 @@
       "Up to ${ n } participant": [
         "Bis zu ${ n } Teilnehmer",
         "Bis zu ${ n } Teilnehmer"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Video-Meetings, ${ n } Teilnehmer",
+        "Video-Meetings, ${ n } Teilnehmer"
       ]
     },
     "Message": {
@@ -6723,6 +6764,9 @@
       "Data breach monitoring": [
         "Überwachung von Datenlecks"
       ],
+      "Data retention policies": [
+        "Aufbewahrungsrichtlinien für Daten"
+      ],
       "Dedicated servers optimized for streaming": [
         "Für Streaming optimierte dedizierte Server"
       ],
@@ -6831,6 +6875,9 @@
       ],
       "Priority support & live chat": [
         "Priorisierter Support & Live-Chat"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Privater KI-Chat (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "Private Fotosicherung"
@@ -6977,6 +7024,9 @@
       "Vault sharing with up to ${ n } person": [
         "Tresor mit bis zu ${ n } Person teilen",
         "Tresor mit bis zu ${ n } Personen teilen"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN mit Werbeblocker und Malware-Schutz"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Wir scannen das Dark Web, um zu überprüfen, ob deine ${ BRAND_NAME }-Adressen oder Aliasse veröffentlicht wurden, und benachrichtigen dich sofort, wenn wir etwas finden."
@@ -8023,6 +8073,9 @@
       "A way to contact you": [
         "Eine Möglichkeit, dich zu kontaktieren"
       ],
+      "Anything you'd like us to know": [
+        "Haben Sie etwas, das Sie uns mitteilen möchten?"
+      ],
       "Choose password": [
         "Passwort wählen"
       ],
@@ -8031,6 +8084,9 @@
       ],
       "Email": [
         "E‐Mail‐Adresse"
+      ],
+      "Enter a name": [
+        "Name eingeben"
       ],
       "Enter a new folder name": [
         "Neuen Ordnernamen eingeben"
@@ -8080,14 +8136,14 @@
       "Select": [
         "Auswählen"
       ],
+      "Select a provider": [
+        "Anbieter auswählen"
+      ],
       "Select a reason": [
         "Grund auswählen"
       ],
       "Set date": [
         "Datum festlegen"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Teile uns mit, was deiner Meinung nach ${ BRAND_NAME } besser machen könnte"
       ],
       "Start typing an email address": [
         "E-Mail-Adresse eingeben"
@@ -8170,6 +8226,26 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Offizielle E-Mail von ${ BRAND_NAME }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Sonstiges"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {

@@ -342,8 +342,8 @@
       "Continue import": [
         "Continuare importare"
       ],
-      "Continue to ${ name }": [
-        "Continuare cu ${ name }"
+      "Continue to ${ planOrAppName }": [
+        "Continuare cu ${ planOrAppName }"
       ],
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "Continuare cu ${ nameToDisplay } ${ maybeEmailInBrackets }"
@@ -1825,6 +1825,11 @@
         "Licențe ${ LUMO_APP_NAME }: ${ seats }",
         "Licențe ${ LUMO_APP_NAME }: ${ seats }",
         "Licențe ${ LUMO_APP_NAME }: ${ seats }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "Licențe ${ MEET_APP_NAME } incluse: ${ seats }",
+        "Licențe ${ MEET_APP_NAME } incluse: ${ seats }",
+        "Licențe ${ MEET_APP_NAME } incluse: ${ seats }"
       ],
       "${ seats } writing assistant seat": [
         "Licențe asistent de scriere: ${ seats }",
@@ -4954,6 +4959,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Utilizați acest ghid pentru ca organizația să beneficieze imediat de criptarea și ecosistemul de confidențialitate maximă oferite de ${ BRAND_NAME } ."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Ne pare rău să vă vedem plecând. Dacă aveți un moment, am aprecia foarte mult să aflăm de ce doriți să anulați. Feedback-ul dvs. ne ajută să facem ${ BRAND_NAME } mai bun pentru toată lumea."
       ],
       "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
         "Vă puteți personaliza lista de domenii în care anumite funcții automate din extensia de navigator web ${ PASS_APP_NAME } (autocompletare, autosugerare, autosalvare) nu ar trebui să fie executate."
@@ -9082,6 +9090,15 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } poate fi utilizat și cu o singură parolă care va înlocui atât parola contului cât și parola secundară. Pentru a comuta la modul cu parolă unică, introduceți parola dorită și apăsați pe «Salvare»."
       ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } este o soluție de videoconferință criptată bilateral. Adăugați-o la planul personal pentru a găzdui conferințe securizate."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Licențe ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } video conferencing": [
+        "Conferințe video ${ MEET_APP_NAME }"
+      ],
       "${ n } address": [
         "${ n } adresă",
         "${ n } adrese",
@@ -9388,6 +9405,9 @@
       ],
       "Activity Monitor": [
         "Monitorizare activitate"
+      ],
+      "Add ${ MEET_APP_NAME }": [
+        "Adăugare ${ MEET_APP_NAME }"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Adăugați-vă o adresă de e-mail @pm.me în cont. Acest domeniu simplu, mai scurt, înseamnă „${ MAIL_APP_NAME }-ul meu” sau „Mesaj privat mie”."
@@ -9760,6 +9780,9 @@
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Premiul pentru alegerea editorilor CNET cu o evaluare de 8,4 din 10"
       ],
+      "Code expired": [
+        "Codul a expirat"
+      ],
       "Coming soon": [
         "În curând"
       ],
@@ -9827,6 +9850,9 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Creați o etichetă pentru mesajele importate, intervalul de timp de importat și etichetele care trebuie importate."
+      ],
+      "Create a new code on your TV and try again.": [
+        "Creați un cod nou pe televizorul și reîncercați."
       ],
       "Create a secure cloud for ${ value } member": [
         "Creați un cont în cloud securizat pentru ${ value } membru",
@@ -10000,6 +10026,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Retrogradarea va încheia orice conexiune la serverele ${ VPN_APP_NAME } cu plată."
+      ],
+      "Download ${ VPN_APP_NAME }": [
+        "Descărcare ${ VPN_APP_NAME }"
       ],
       "Download current logs": [
         "Descărcare jurnale actuale"
@@ -10240,6 +10269,9 @@
       ],
       "finance": [
         "finanțe"
+      ],
+      "for ${ price }": [
+        "cu ${ price }"
       ],
       "For a 10-year version history, please contact our sales team.": [
         "Pentru un istoric de 10 ani al versiunilor, contactați echipa noastră de vânzări."
@@ -11122,6 +11154,9 @@
       "Product reviews, rankings, or guides": [
         "Recenzii de produse, clasamente sau ghiduri"
       ],
+      "Protect this device too?": [
+        "Protejați și acest dispozitiv?"
+      ],
       "Protect your account from quantum computing threats with quantum-resistant cryptographic keys.": [
         "Protejați-vă contul de amenințările prin calcul cuantic cu chei criptografice rezistente la atacurile cuantice."
       ],
@@ -11352,6 +11387,9 @@
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Conectați-vă la ${ MAIL_APP_NAME } pentru a vă activa adresa."
       ],
+      "Sign-in complete": [
+        "Autentificare finalizată"
+      ],
       "Signed up": [
         "Înscris"
       ],
@@ -11556,6 +11594,9 @@
       ],
       "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "Legătura web spre raportul privind faptul că nu ați setat un cont ${ BRAND_NAME } a expirat. Contactați echipa noastră de asistență pentru a rezolva această problemă."
+      ],
+      "The maximum donation amount is ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }": [
+        "Suma maximă a donației este ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }"
       ],
       "The most recent data update, excluding breaches.": [
         "Cele mai recente actualizări, exclusiv breșele."
@@ -12399,6 +12440,9 @@
         "Se va factura apoi la fiecare ${ renewCycle } luni cu ${ renewAmountStr }. Puteți anula oricând.",
         "Se va factura apoi la fiecare ${ renewCycle } de luni cu ${ renewAmountStr }. Puteți anula oricând."
       ],
+      "You're now signed in on your TV.": [
+        "V-ați autentificat pe televizor."
+      ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "Ați activat transferarea mesajelor pentru ${ MAX_SYNC_PAID_USER } adresă de Gmail. Pentru a adăuga alta, mai întâi dezactivați una.",
         "Ați activat transferarea mesajelor pentru ${ MAX_SYNC_PAID_USER } adrese de Gmail. Pentru a adăuga alta, mai întâi dezactivați una.",
@@ -13219,6 +13263,9 @@
       "Add group member": [
         "Adăugare membru în grup"
       ],
+      "Additional comments": [
+        "Comentarii adiționale"
+      ],
       "Address": [
         "Adresa"
       ],
@@ -13528,6 +13575,9 @@
       "Contacts": [
         "Contacte"
       ],
+      "Continue cancelling": [
+        "Continuare anulare"
+      ],
       "Conversation grouping": [
         "Grupare conversații"
       ],
@@ -13632,9 +13682,6 @@
       ],
       "Display name": [
         "Nume afișat"
-      ],
-      "Do you have any suggestions for our team?": [
-        "Aveți sugestii pentru echipa noastră?"
       ],
       "Domain": [
         "Domeniu"
@@ -13938,6 +13985,9 @@
       ],
       "Main": [
         "Principală"
+      ],
+      "Main reason for cancelling": [
+        "Motiv principal pentru anulare"
       ],
       "Manage categories": [
         "Gestionare categorii"
@@ -14322,6 +14372,9 @@
       "Single sign-on URL": [
         "URL SSO (autentificare unică)"
       ],
+      "Skip feedback": [
+        "Omitere feedback"
+      ],
       "SMTP port": [
         "Port SMTP"
       ],
@@ -14528,9 +14581,6 @@
       ],
       "What is the main reason you are deleting your account?": [
         "Care este principalul motiv pentru care vă ștergeți contul?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Care este motivul principal pentru anulare sau retrogradare?"
       ],
       "Who can send to this group address?": [
         "Cine poate trimite mesaje la această adresă de grup?"
@@ -15266,6 +15316,24 @@
         "Ați atins numărul maxim de ${ MAX_CALENDAR_MEMBERS } de membri."
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (pentru ${ quantity } utilizator)",
+        "${ MEET_APP_NAME } (pentru ${ quantity } utilizatori)",
+        "${ MEET_APP_NAME } (pentru ${ quantity } de utilizatori)"
+      ],
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } licență"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Licențe ${ MEET_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "Licențe ${ MEET_APP_NAME }: ${ seats }",
+        "Licențe ${ MEET_APP_NAME }: ${ seats }",
+        "Licențe ${ MEET_APP_NAME }: ${ seats }"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: conferințe video confidențiale pentru conversațiile importante"
@@ -15325,6 +15393,11 @@
       ]
     },
     "meet_2025: Info": {
+      "${ seats } seat included": [
+        "Licențe incluse: ${ seats }",
+        "Licențe incluse: ${ seats }",
+        "Licențe incluse: ${ seats }"
+      ],
       "100 ${ BRAND_NAME } email addresses": [
         "100 de adrese de e-mail ${ BRAND_NAME }"
       ],
@@ -15334,29 +15407,17 @@
       "Data never used for AI training": [
         "Datele nu sunt utilizate niciodată pentru antrenarea IA"
       ],
-      "Data retention policies": [
-        "Politici de păstrare a datelor"
-      ],
       "Document & spreadsheet editor": [
         "Editor de documente și registre de lucru"
       ],
       "Email writing assistant": [
         "Asistent de scriere pentru e-mail"
       ],
-      "Everything from ${ title }, plus...": [
-        "Totul din ${ title }, plus..."
-      ],
-      "Everything in Meet Professional, plus:": [
-        "Totul din Meet Professional, plus:"
-      ],
       "Open source": [
         "Cod sursă public"
       ],
       "Password manager with team vaults": [
         "Manager de parole cu seifuri pentru echipe"
-      ],
-      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
-        "Conversații private cu IA (${ LUMO_SHORT_APP_NAME })"
       ],
       "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
         "Conversații private și nelimitate cu IA (${ LUMO_SHORT_APP_NAME })"
@@ -15370,11 +15431,19 @@
       "Strict no-logs policy": [
         "Politică strictă fără înregistrări"
       ],
-      "Video meetings, ${ PAID_MAX_PARTICIPANTS } participants": [
-        "Conferințe video, ${ PAID_MAX_PARTICIPANTS } participanți"
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } licențe în perioada de probare."
+      ]
+    },
+    "Meet_launch": {
+      "Add ${ planName }": [
+        "Adăugare ${ planName }"
       ],
-      "VPN with ad-blocker and malware protection": [
-        "VPN cu protecție împotriva programelor malware și blocare reclame"
+      "Confidential video conferencing for the conversations that matter. Only ${ priceString } more each month.": [
+        "Videoconferințe confidențiale pentru conversațiile importante. Doar ${ priceString } în plus pe lună."
+      ],
+      "Talk privately with ${ planName }": [
+        "Discutați în privat cu ${ planName }"
       ]
     },
     "meet_signup_2025: title": {
@@ -16899,8 +16968,8 @@
       "Daily email notifications": [
         "Notificări zilnice pe e-mail"
       ],
-      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
-        "Dezactivarea acestei opțiuni va elimina posibilitatea de a primi notificări în aplicațiile ${ BRAND_NAME }."
+      "Disabling this means you won't get in-app notifications about promotions, new features, new ${ BRAND_NAME } services, and reminders.": [
+        "Dezactivarea acestei opțiuni înseamnă că nu veți primi notificări în aplicație despre promoții, funcționalități noi, servicii noi ${ BRAND_NAME } și mementouri."
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Pe durata primei luni de utilizare a produsului ${ BRAND_NAME }"
@@ -18623,6 +18692,9 @@
       "Anderson": [
         "Andrei"
       ],
+      "Anything you'd like us to know": [
+        "Orice ați dori să știm"
+      ],
       "Anytown": [
         "București"
       ],
@@ -18664,6 +18736,9 @@
       ],
       "End date": [
         "Data de sfârșit"
+      ],
+      "Enter a name": [
+        "Introduceți un nume"
       ],
       "Enter name": [
         "Introduceți numele"
@@ -18743,6 +18818,9 @@
       "Select": [
         "Selectare"
       ],
+      "Select a provider": [
+        "Selectați un furnizor"
+      ],
       "Select a reason": [
         "Selectați un motiv"
       ],
@@ -18751,9 +18829,6 @@
       ],
       "Select state": [
         "Selectare țară"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Spuneți-ne ce credeți că ar face să fie mai bun ${ BRAND_NAME }"
       ],
       "Start date": [
         "Dată început"
@@ -19017,6 +19092,26 @@
       ],
       "Unknown": [
         "Necunoscută."
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Altul"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {
@@ -20930,6 +21025,9 @@
       "Yearly": [
         "Anual"
       ],
+      "You are all set": [
+        "Totul este pregătit"
+      ],
       "Your plan": [
         "Planul actual"
       ],
@@ -20953,6 +21051,9 @@
       "Email address": [
         "Adresa de e-mail"
       ],
+      "Name shown in meetings": [
+        "Nume afișat în conferințe"
+      ],
       "Organization name": [
         "Nume organizație"
       ],
@@ -20961,6 +21062,12 @@
       ],
       "Username": [
         "Utilizator"
+      ],
+      "Your email": [
+        "Adresa de e-mail"
+      ],
+      "Your password": [
+        "Parola"
       ]
     },
     "signup: Action": {
@@ -21063,23 +21170,23 @@
       ]
     },
     "Signup: Meet": {
-      "**Trusted by over 100 million** users and organizations": [
-        "**Aprobat de peste 100 de milioane** de utilizatori și organizații"
+      "Choose your display name to continue": [
+        "Alegeți numele de afișare pentru a continua"
       ],
-      "Get ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
-        "Luați ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      "Choose your display name to continue scheduling your meeting": [
+        "Alegeți numele de afișare pentru a continua planificarea conferinței"
       ],
-      "Own a business?": [
-        "Dețineți o afacere?"
+      "Create a ${ BRAND_NAME } account": [
+        "Creare cont ${ BRAND_NAME }"
       ],
-      "Sign up, meet privately": [
-        "Înregistrați-vă, întâlniți-vă în privat"
+      "Create your ${ BRAND_NAME } account to create rooms": [
+        "Creați-vă contul ${ BRAND_NAME } pentru a crea camere"
       ],
-      "Start using ${ MEET_APP_NAME } now": [
-        "Începeți să utilizați ${ MEET_APP_NAME } acum"
+      "Create your ${ BRAND_NAME } account to schedule a meeting": [
+        "Creați-vă contul ${ BRAND_NAME } pentru a planifica o întâlnire"
       ],
-      "Your account also includes access to ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME } free features.": [
-        "Contul actual include și acces gratuit la funcțiile de bază ale ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } și ${ PASS_SHORT_APP_NAME }."
+      "Create your ${ BRAND_NAME } account to use your personal room": [
+        "Creați-vă contul ${ BRAND_NAME } pentru a utiliza camera personală"
       ]
     },
     "signup_2024: Feature": {
@@ -21818,11 +21925,6 @@
         "Servere dedicate: ${ ipAddresses }",
         "Servere dedicate: ${ ipAddresses }"
       ],
-      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
-        "Utilizatori ${ LUMO_APP_NAME }: ${ maxLumo }",
-        "Utilizatori ${ LUMO_APP_NAME }: ${ maxLumo }",
-        "Utilizatori ${ LUMO_APP_NAME }: ${ maxLumo }"
-      ],
       "${ n } calendar per user": [
         "Un calendar per utilizator",
         "${ n } calendare per utilizator",
@@ -21852,6 +21954,11 @@
         "O conexiune VPN per utilizator",
         "${ n } conexiuni VPN per utilizator",
         "${ n } de conexiuni VPN per utilizator"
+      ],
+      "${ productName } for ${ count } user": [
+        "${ productName } pentru ${ count } utilizator",
+        "${ productName } pentru ${ count } utilizatori",
+        "${ productName } pentru ${ count } de utilizatori"
       ],
       "${ UsedAddresses } address": [
         "o adresă",

@@ -325,9 +325,6 @@
       "Continue import": [
         "Jatka tuontia"
       ],
-      "Continue to ${ name }": [
-        "Jatka palveluun ${ name }"
-      ],
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "Jatka tilillä ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
@@ -9987,6 +9984,9 @@
       "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "Linkki, jolla ilmoitetaan, ettet määrittänyt ${ BRAND_NAME }-tiliä on vanhentunut. Ota yhteyttä asiakastukeen ongelman ratkaisemiseksi."
       ],
+      "The maximum donation amount is ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }": [
+        "Lahjoituksen enimmäismäärä on ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }"
+      ],
       "The name will be visible to your users while they are signed in.": [
         "Nimi näkyy käyttäjillesi, kun he ovat kirjautuneena."
       ],
@@ -11774,9 +11774,6 @@
       "Display name": [
         "Näyttönimi"
       ],
-      "Do you have any suggestions for our team?": [
-        "Onko sinulla ehdotuksia tiimillemme?"
-      ],
       "Domain": [
         "Verkkotunnus"
       ],
@@ -12597,9 +12594,6 @@
       "What is the main reason you are deleting your account?": [
         "Mikä on pääasiallinen syy tilisi poistoon?"
       ],
-      "What is your main reason for canceling or downgrading?": [
-        "Mikä on suurin syy tilauksen lopetukseen tai alennukseen?"
-      ],
       "Who can send to this group address?": [
         "Kuka voi lähettää tähän ryhmäosoitteeseen?"
       ],
@@ -13333,9 +13327,6 @@
       ],
       "Email writing assistant": [
         "Sähköpostin kirjoitusavustaja"
-      ],
-      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
-        "Yksityinen (${ LUMO_SHORT_APP_NAME }) –tekoälykeskustelu"
       ],
       "Secure calendar": [
         "Suojattu kalenteri"
@@ -14771,8 +14762,8 @@
       "Daily email notifications": [
         "Päivittäiset sähköposti-ilmoitukset"
       ],
-      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
-        "Tämän käytöstä poistaminen estää ilmoitusten vastaanottamisen ${ BRAND_NAME } -sovelluksissa"
+      "Disabling this means you won't get in-app notifications about promotions, new features, new ${ BRAND_NAME } services, and reminders.": [
+        "Tämän poistaminen käytöstä tarkoittaa, ettet saa sovelluksen sisäisiä ilmoituksia kampanjoista, uusista ominaisuuksista, uusista ${ BRAND_NAME }-palveluista ja muistutuksista."
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Ensimmäisen ${ BRAND_NAME } -tuotteen käyttökuukautesi aikana"
@@ -16443,9 +16434,6 @@
       ],
       "Select state": [
         "Valitse osavaltio"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Kerro mikä voisi mielestäsi parantaa ${ BRAND_NAME }ia"
       ],
       "Start date": [
         "Alkupäivä"
@@ -19025,10 +19013,6 @@
         "${ ipAddresses } oma palvelin",
         "${ ipAddresses } omaa palvelinta"
       ],
-      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
-        "${ LUMO_APP_NAME } ${ maxLumo } käyttäjälle",
-        "${ LUMO_APP_NAME } ${ maxLumo } käyttäjille"
-      ],
       "${ n } calendar per user": [
         "${ n } kalenteri/käyttäjä",
         "${ n } kalenteria/käyttäjä"
@@ -19052,6 +19036,10 @@
       "${ n } VPN connection per user": [
         "${ n } VPN-yhteys/käyttäjä",
         "${ n } VPN-yhteyttä/käyttäjä"
+      ],
+      "${ productName } for ${ count } user": [
+        "${ productName } ${ count } käyttäjälle",
+        "${ productName } ${ count } käyttäjälle"
       ],
       "${ UsedAddresses } address": [
         "${ UsedAddresses } osoite",

@@ -94,6 +94,9 @@
       "Continue": [
         "Pokračovať"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Pokračovať do ${ planOrAppName }"
+      ],
       "Copy address": [
         "Kopírovať adresu"
       ],
@@ -270,6 +273,9 @@
       ],
       "Refresh the page": [
         "Obnoviť stránku"
+      ],
+      "Remove": [
+        "Vymazať"
       ],
       "Remove bonuses": [
         "Odstrániť bonusy"
@@ -2170,6 +2176,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Použite tohto sprievodcu, aby vaša organizácia mohla okamžite využívať výhody špičkového ekosystému šifrovania a ochrany osobných údajov od spoločnosti ${ BRAND_NAME }."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Je nám ľúto, že odchádzate. Ak máte chvíľku, veľmi by sme ocenili, keby ste nám povedali, prečo chcete zrušiť odber. Vaša spätná väzba nám pomáha vylepšovať ${ BRAND_NAME } pre všetkých."
       ]
     },
     "Discover": {
@@ -3273,6 +3282,9 @@
       "Account holder": [
         "Vlastník účtu"
       ],
+      "Additional comments": [
+        "Doplňujúce poznámky"
+      ],
       "Address": [
         "Adresa"
       ],
@@ -3333,6 +3345,9 @@
       "Company name": [
         "Názov spoločnosti"
       ],
+      "Continue cancelling": [
+        "Pokračovať v zrušení"
+      ],
       "Copy": [
         "Kopírovať"
       ],
@@ -3359,9 +3374,6 @@
       ],
       "Delete recovery-related information.": [
         "Odstrániť informácie súvisiace s obnovením."
-      ],
-      "Do you have any suggestions for our team?": [
-        "Máte nejaké návrhy pre náš tím?"
       ],
       "Email address": [
         "Emailová adresa"
@@ -3395,6 +3407,9 @@
       ],
       "Main": [
         "Hlavné"
+      ],
+      "Main reason for cancelling": [
+        "Hlavný dôvod zrušenia"
       ],
       "Navigation": [
         "Navigácia"
@@ -3444,6 +3459,9 @@
       "Sign message": [
         "Podpísať správu"
       ],
+      "Skip feedback": [
+        "Preskočiť spätnú väzbu"
+      ],
       "Start date": [
         "Dátum začiatku"
       ],
@@ -3467,9 +3485,6 @@
       ],
       "What happened?": [
         "Čo sa stalo?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Aký je váš hlavný dôvod na zrušenie alebo zníženie predplatného?"
       ],
       "Your password (admin)": [
         "Vaše heslo (správca)"
@@ -4998,6 +5013,9 @@
       "Anderson": [
         "Anderson"
       ],
+      "Anything you'd like us to know": [
+        "Máte niečo, čo by sme mali vedieť"
+      ],
       "Anytown": [
         "Niekdetam"
       ],
@@ -5012,6 +5030,9 @@
       ],
       "E.g., ": [
         "Napr., "
+      ],
+      "Enter a name": [
+        "Zadajte meno"
       ],
       "Enter a passphrase or leave empty": [
         "Zadajte heslo alebo nechajte prázdne"
@@ -5049,6 +5070,9 @@
       "Select": [
         "Vybrať"
       ],
+      "Select a provider": [
+        "Vyberte poskytovateľa"
+      ],
       "Select a reason": [
         "Vyberte dôvod"
       ],
@@ -5057,9 +5081,6 @@
       ],
       "Select state": [
         "Vyberte stav"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Dajte nám vedieť, čo by podľa vás mohlo vylepšiť ${ BRAND_NAME }"
       ],
       "Thomas": [
         "Tomáš"
@@ -5104,6 +5125,26 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Navýšiť na ${ upsellPlanTitle }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Iné"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "QRCode Reader": {

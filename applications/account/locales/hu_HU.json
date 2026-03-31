@@ -287,9 +287,6 @@
       "Continue import": [
         "Importálás folytatása"
       ],
-      "Continue to ${ name }": [
-        "Folytatás itt: ${ name }"
-      ],
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "Folytatás mint ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
@@ -8533,6 +8530,9 @@
       "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "A hivatkozás annak jelentésére, hogy nem hozott létre egy ${ BRAND_NAME } fiókot, lejárt. Lépjen kapcsolatba támogatási csoportunkkal a probléma megoldásához."
       ],
+      "The maximum donation amount is ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }": [
+        "A maximális adomány összege: ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }"
+      ],
       "The name will be visible to your users while they are signed in.": [
         "A név látható lesz a bejelentkezett felhasználóinak."
       ],
@@ -10103,9 +10103,6 @@
       "Display name": [
         "Megjelenített név"
       ],
-      "Do you have any suggestions for our team?": [
-        "Lenne valamilyen javaslata a csapatunk számára?"
-      ],
       "Domain": [
         "Domain név"
       ],
@@ -10772,9 +10769,6 @@
       ],
       "What is the main reason you are deleting your account?": [
         "Miért törli a fiókját?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Mi a lemondás vagy a visszaminősítés fő oka?"
       ],
       "Who can send to this group address?": [
         "Ki küldhet erre a csoport címre?"
@@ -12752,9 +12746,6 @@
       "Daily email notifications": [
         "Napi e-mail értesítések"
       ],
-      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
-        "Ennek letiltása eltávolítja a lehetőséget, hogy értesítéseket kapj a ${ BRAND_NAME } alkalmazásokban."
-      ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "A ${ BRAND_NAME } termék használatának első hónapjában"
       ],
@@ -14158,9 +14149,6 @@
       ],
       "Select state": [
         "Állam kiválasztása"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Ossza meg velünk, hogy Ön szerint mitől lenne jobb ${ BRAND_NAME }"
       ],
       "Start date": [
         "Kezdő dátum"

@@ -263,9 +263,6 @@
       "Continue import": [
         "आयात जारी रखें"
       ],
-      "Continue to ${ name }": [
-        "${ name } पर जारी रहें"
-      ],
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "${ nameToDisplay } ${ maybeEmailInBrackets } के साथ जारी रहें"
       ],
@@ -7343,6 +7340,9 @@
       "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "यह रिपोर्ट करने वाला लिंक कि आपने ${ BRAND_NAME } खाता सेट नहीं किया है, समाप्त हो गया है। कृपया इस समस्या के समाधान के लिए हमारी सहायता टीम से संपर्क करें।"
       ],
+      "The maximum donation amount is ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }": [
+        "दान की अधिकतम राशि ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] } है"
+      ],
       "The name will be visible to your users while they are signed in.": [
         "नाम आपके साइनइन किए यूज़र को दिखाई देगा।"
       ],
@@ -8770,9 +8770,6 @@
       ],
       "Display name": [
         "डिस्प्ले नाम"
-      ],
-      "Do you have any suggestions for our team?": [
-        "क्या आपके पास हमारी टीम के लिए कोई सुझाव है?"
       ],
       "Domain": [
         "डोमेन"
@@ -11016,9 +11013,6 @@
       ],
       "Daily email notifications": [
         "दैनिक ईमेल सूचनाएं"
-      ],
-      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
-        "इसे अक्षम करने से ${ BRAND_NAME } एप्लीकेशनों में सूचनाएँ प्राप्त करने की क्षमता हटा दी जाएगी।"
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "आपके ${ BRAND_NAME } उत्पाद के उपयोग के पहले महीने के दौरान"

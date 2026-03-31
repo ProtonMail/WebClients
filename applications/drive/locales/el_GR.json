@@ -249,6 +249,9 @@
       "Continue on web": [
         "Συνέχεια στο διαδίκτυο"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Συνέχεια στο ${ planOrAppName }"
+      ],
       "Continue transfers": [
         "Συνέχιση μεταφορών"
       ],
@@ -1315,6 +1318,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } θέση",
         "${ seats } ${ LUMO_APP_NAME } θέσεις"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } άδεια χρήσης",
+        "${ seats } ${ MEET_APP_NAME } άδειες χρήσης"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } άδεια βοηθού γραφής",
@@ -3031,6 +3038,9 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Χρησιμοποιήστε αυτόν τον οδηγό για να επωφεληθεί άμεσα ο οργανισμός σας από το κορυφαίο οικοσύστημα κρυπτογράφησης και προστασίας προσωπικών δεδομένων του ${ BRAND_NAME }."
       ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Λυπόμαστε που φεύγετε. Αν έχετε λίγο χρόνο, θα εκτιμούσαμε πραγματικά να μας πείτε γιατί θέλετε να ακυρώσετε. Τα σχόλιά σας μας βοηθούν να κάνουμε το ${ BRAND_NAME } καλύτερο για όλους."
+      ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Με τις ομάδες επαφών, μπορείτε να στείλετε μηνύματα ηλεκτρονικού ταχυδρομείου σε όλα τα μέλη της ομάδας με ένα κλικ."
       ],
@@ -3860,6 +3870,12 @@
       ],
       "Unable to set photo as cover": [
         "Δεν είναι δυνατός ο ορισμός αυτής της φωτογραφίας ως εξωφύλλου"
+      ],
+      "Unable to start the search": [
+        "Αδυναμία εκκίνησης της αναζήτησης"
+      ],
+      "Unable to start the search: not enough storage space": [
+        "Αδυναμία εκκίνησης της αναζήτησης: δεν υπάρχει αρκετός χώρος αποθήκευσης"
       ],
       "Unexpected error, we can't import the contacts": [
         "Μη αναμενόμενο σφάλμα, δεν είναι δυνατή η εισαγωγή των επαφών"
@@ -4960,6 +4976,15 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } περιλαμβάνει τον ${ BRAND_NAME } Scribe βοηθό γραφής"
       ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } είναι μια λύση βιντεοδιάσκεψης με πλήρη διατερματική κρυπτογράφηση. Προσθέστε τη στο πλάνο σας για να φιλοξενείτε ασφαλείς συσκέψεις."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } θέσεις"
+      ],
+      "${ MEET_APP_NAME } video conferencing": [
+        "Τηλεδιάσκεψη ${ MEET_APP_NAME }"
+      ],
       "${ normalizedProgress }% completed": [
         "${ normalizedProgress }% ολοκληρώθηκε"
       ],
@@ -5112,6 +5137,9 @@
       ],
       "Ad targeting": [
         "Στόχευση διαφημίσεων"
+      ],
+      "Add ${ MEET_APP_NAME }": [
+        "Προσθήκη ${ MEET_APP_NAME }"
       ],
       "Address copied to clipboard": [
         "Η διεύθυνση αντιγράφηκε στο πρόχειρο"
@@ -5552,6 +5580,9 @@
       "Everything in ${ planOrAppName }": [
         "Όλα στο ${ planOrAppName }"
       ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Τα πάντα από ${ planOrAppName }, συν:"
+      ],
       "Expired": [
         "Ληγμένο"
       ],
@@ -5599,6 +5630,9 @@
       ],
       "Folders you sync from your computer will appear here.": [
         "Οι φάκελοι που συγχρονίζετε από τον υπολογιστή σας θα εμφανιστούν εδώ."
+      ],
+      "for ${ price }": [
+        "για ${ price }"
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Για καλύτερα αποτελέσματα, αποφύγετε ροή ή απαιτητικές σε μνήμη δραστηριότητες ή χωρίστε τη μεταφόρτωση σε μικρότερες παρτίδες."
@@ -7100,6 +7134,9 @@
       "Add to group": [
         "Προσθήκη στην ομάδα"
       ],
+      "Additional comments": [
+        "Επιπλέον σχόλια"
+      ],
       "Address": [
         "Διεύθυνση"
       ],
@@ -7217,6 +7254,9 @@
       "Contacts": [
         "Επαφές"
       ],
+      "Continue cancelling": [
+        "Συνέχεια ακύρωσης"
+      ],
       "Copy": [
         "Αντιγραφή"
       ],
@@ -7268,9 +7308,6 @@
       ],
       "Disable this link on a specific date": [
         "Απενεργοποιήστε αυτόν τον σύνδεσμο σε μια συγκεκριμένη ημερομηνία"
-      ],
-      "Do you have any suggestions for our team?": [
-        "Έχετε να προτείνετε κάτι στην ομάδα μας;"
       ],
       "Don't ask again": [
         "Να μην ερωτηθώ ξανά"
@@ -7431,6 +7468,9 @@
       "Main": [
         "Κύριο"
       ],
+      "Main reason for cancelling": [
+        "Κύριος λόγος ακύρωσης"
+      ],
       "Malware": [
         "Κακόβουλο λογισμικό"
       ],
@@ -7587,6 +7627,9 @@
       "Size": [
         "Μέγεθος"
       ],
+      "Skip feedback": [
+        "Παράλειψη σχολίων"
+      ],
       "Skip file": [
         "Παράλειψη αρχείου"
       ],
@@ -7685,9 +7728,6 @@
       ],
       "What happened?": [
         "Τι συνέβη;"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Ποιος είναι ο κύριος λόγος ακύρωσης ή υποβάθμισης;"
       ],
       "Yes, I want to permanently delete my old files": [
         "Ναι, επιθυμώ την οριστική διαγραφή των παλαιών αρχείων μου"
@@ -7977,6 +8017,18 @@
         "για ${ price }"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } άδεια χρήσης"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } θέσεις"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME } θέση",
+        "${ seats } ${ MEET_APP_NAME } θέσεις"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: Εμπιστευτικές βιντεοδιασκέψεις για τις σημαντικές συνομιλίες σας"
@@ -8010,6 +8062,9 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Κρυπτογραφημένη κοινή χρήση οθόνης διατερματικά και εφήμερη συνομιλία κατά τη διάρκεια της κλήσης"
       ],
+      "Hosts can record meetings locally on their computers": [
+        "Οι οικοδεσπότες μπορούν να καταγράφουν τις συσκέψεις τοπικά στους υπολογιστές τους"
+      ],
       "Meeting recording": [
         "Ηχογράφηση σύσκεψης"
       ],
@@ -8029,6 +8084,19 @@
       "Up to ${ n } participant": [
         "Έως ${ n } συμμετέχων",
         "Έως ${ n } συμμετέχοντες"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Βιντεοκλήσεις, ${ n } συμμετέχων",
+        "Βιντεοκλήσεις, ${ n } συμμετέχοντες"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } θέση περιλαμβάνεται",
+        "${ seats } θέσεις περιλαμβάνονται"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Μπορείτε να έχετε έως και ${ TRIAL_MAX_MEET_SEATS } θέσεις ${ MEET_SHORT_APP_NAME } κατά τη διάρκεια της δοκιμαστικής περιόδου."
       ]
     },
     "Message": {
@@ -8507,6 +8575,9 @@
       "Data breach monitoring": [
         "Παρακολούθηση παραβίασης δεδομένων"
       ],
+      "Data retention policies": [
+        "Πολιτικές διατήρησης δεδομένων"
+      ],
       "Dedicated servers optimized for streaming": [
         "Αποκλειστικοί διακομιστές βελτιστοποιημένοι για ροή"
       ],
@@ -8615,6 +8686,9 @@
       ],
       "Priority support & live chat": [
         "Υποστήριξη προτεραιότητας & ζωντανή συνομιλία"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Ιδιωτική συνομιλία με τεχνητή νοημοσύνη (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "Ιδιωτικό αντίγραφο ασφαλείας φωτογραφιών"
@@ -8761,6 +8835,9 @@
       "Vault sharing with up to ${ n } person": [
         "Κοινή χρήση κρύπτης έως ${ n } άτομο",
         "Κοινή χρήση κρύπτης έως ${ n } άτομα"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN με αποκλεισμός διαφημίσεων και προστασία από κακόβουλο λογισμικό"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Σαρώνουμε τον σκοτεινό ιστό για να ελέγξουμε εάν οι διευθύνσεις ή τα ψευδώνυμά σας ${ BRAND_NAME } έχουν διαρρεύσει και σας ειδοποιούμε αμέσως αν βρούμε κάτι."
@@ -10336,6 +10413,9 @@
       "Anderson": [
         "Καρανικολής"
       ],
+      "Anything you'd like us to know": [
+        "Οτιδήποτε θα θέλατε να ξέρουμε"
+      ],
       "Anytown": [
         "Αθήνα"
       ],
@@ -10353,6 +10433,9 @@
       ],
       "Email": [
         "Ηλεκτρονικό ταχυδρομείο"
+      ],
+      "Enter a name": [
+        "Πληκτρολογήστε ένα όνομα"
       ],
       "Enter a new file name": [
         "Εισάγετε ένα νέο όνομα αρχείου"
@@ -10426,6 +10509,9 @@
       "Select": [
         "Επιλογή"
       ],
+      "Select a provider": [
+        "Επιλέξτε έναν πάροχο"
+      ],
       "Select a reason": [
         "Επιλογή αιτιολογίας"
       ],
@@ -10434,9 +10520,6 @@
       ],
       "Select state": [
         "Επιλέξτε νομό/περιοχή"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Μοιραστείτε αυτό που πιστεύετε ότι θα μπορούσε να κάνει το ${ BRAND_NAME } καλύτερο"
       ],
       "Start typing an email address": [
         "Έναρξη πληκτρολόγησης διεύθυνσης ηλεκτρονικού ταχυδρομείου"
@@ -10550,6 +10633,26 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Επίσημο email από ${ BRAND_NAME }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Άλλο"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Referral": {

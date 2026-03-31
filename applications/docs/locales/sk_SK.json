@@ -210,6 +210,9 @@
       "Continue import": [
         "Pokračovať v importe"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Pokračovať do ${ planOrAppName }"
+      ],
       "Continue with Google": [
         "Pokračovať cez Google"
       ],
@@ -376,7 +379,7 @@
         "Exportovať túto verziu (ako xlsx)"
       ],
       "Forgot password?": [
-        "Zabudnuté heslo?"
+        "Zabudli ste heslo?"
       ],
       "Forward as attachment": [
         "Preposlať ako prílohu"
@@ -2553,6 +2556,9 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Použite tohto sprievodcu, aby vaša organizácia mohla okamžite využívať výhody špičkového ekosystému šifrovania a ochrany osobných údajov od spoločnosti ${ BRAND_NAME }."
       ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Je nám ľúto, že odchádzate. Ak máte chvíľku, veľmi by sme ocenili, keby ste nám povedali, prečo chcete zrušiť odber. Vaša spätná väzba nám pomáha vylepšovať ${ BRAND_NAME } pre všetkých."
+      ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Pomocou skupín kontaktov môžete posielať emaily všetkým členom skupiny jedným kliknutím."
       ],
@@ -4526,6 +4532,9 @@
       "Current version": [
         "Súčasná verzia"
       ],
+      "Decrypting your document": [
+        "Dešifrujeme váš dokument"
+      ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Digitálny podpis overený. Tento súbor bol bezpečne nahraný prostredníctvom ${ emailAddress }."
       ],
@@ -5650,6 +5659,9 @@
       "Add to group": [
         "Pridať do skupiny"
       ],
+      "Additional comments": [
+        "Doplňujúce poznámky"
+      ],
       "Alias title": [
         "Názov aliasu"
       ],
@@ -5716,6 +5728,9 @@
       "Contacts": [
         "Kontakty"
       ],
+      "Continue cancelling": [
+        "Pokračovať v zrušení"
+      ],
       "Copy": [
         "Kopírovať"
       ],
@@ -5736,9 +5751,6 @@
       ],
       "Delete recovery-related information.": [
         "Odstrániť informácie súvisiace s obnovením."
-      ],
-      "Do you have any suggestions for our team?": [
-        "Máte nejaké návrhy pre náš tím?"
       ],
       "Don't ask again": [
         "Viac sa nepýtať"
@@ -5875,6 +5887,9 @@
       "Main": [
         "Hlavné"
       ],
+      "Main reason for cancelling": [
+        "Hlavný dôvod zrušenia"
+      ],
       "Make editor": [
         "Urobiť editorom"
       ],
@@ -5980,6 +5995,9 @@
       "Sign emails": [
         "Podpísať emaily"
       ],
+      "Skip feedback": [
+        "Preskočiť spätnú väzbu"
+      ],
       "Skip file": [
         "Preskočiť súbor"
       ],
@@ -6040,9 +6058,6 @@
       "What happened?": [
         "Čo sa stalo?"
       ],
-      "What is your main reason for canceling or downgrading?": [
-        "Aký je váš hlavný dôvod na zrušenie alebo zníženie predplatného?"
-      ],
       "Your alias": [
         "Váš alias"
       ],
@@ -6059,7 +6074,7 @@
         "Vaša poloha"
       ],
       "Your password (admin)": [
-        "Vaše heslo (admin)"
+        "Vaše heslo (správca)"
       ],
       "Your password (trusted contact)": [
         "Vaše heslo (dôveryhodný kontakt)"
@@ -8230,6 +8245,9 @@
       "A way to contact you": [
         "Spôsob, ako vás kontaktovať"
       ],
+      "Anything you'd like us to know": [
+        "Máte niečo, čo by sme mali vedieť"
+      ],
       "Choose password": [
         "Zvoľte si heslo"
       ],
@@ -8238,6 +8256,9 @@
       ],
       "Email": [
         "Email"
+      ],
+      "Enter a name": [
+        "Zadajte meno"
       ],
       "Enter a new folder name": [
         "Zadajte nový názov priečinka"
@@ -8287,14 +8308,14 @@
       "Select": [
         "Vybrať"
       ],
+      "Select a provider": [
+        "Vyberte poskytovateľa"
+      ],
       "Select a reason": [
         "Vyberte dôvod"
       ],
       "Set date": [
         "Nastaviť dátum"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Dajte nám vedieť, čo by podľa vás mohlo vylepšiť ${ BRAND_NAME }"
       ],
       "Start typing an email address": [
         "Začnite písať emailovú adresu"
@@ -8383,6 +8404,26 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Oficiálny email od ${ BRAND_NAME }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Iné"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Recent documents table header": {
@@ -9864,7 +9905,7 @@
         "Zvýšte zabezpečenie pomocou 2FA"
       ],
       "Enter your password": [
-        "Zadajte Vaše heslo"
+        "Zadajte svoje heslo"
       ],
       "Error Syncing": [
         "Chyba synchronizácie"

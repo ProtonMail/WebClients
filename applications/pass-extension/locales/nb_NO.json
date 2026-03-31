@@ -157,6 +157,9 @@
       "Close navigation": [
         "Lukk navigasjonsmeny"
       ],
+      "Configure": [
+        "Konfigurer"
+      ],
       "Confirm": [
         "Bekreft"
       ],
@@ -2049,6 +2052,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
+        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
+      ],
       "Moving items": [
         "Flytter elementer"
       ],
@@ -2088,6 +2095,9 @@
       "None": [
         "Ingen"
       ],
+      "Not configured": [
+        "Ikke konfigurert"
+      ],
       "Not recommended": [
         "Ikke anbefalt"
       ],
@@ -2099,6 +2109,12 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Nettilgang til ${ PASS_APP_NAME } krever en PIN-kode. Du blir logget ut etter 3 mislykkede forsøk."
+      ],
+      "Open ${ PASS_APP_NAME } in a larger window": [
+        "Åpne ${ PASS_APP_NAME } i et større vindu"
+      ],
+      "Open the ${ PASS_APP_NAME } popup": [
+        "Åpne sprettoppvinduet for ${ PASS_APP_NAME }"
       ],
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Åpne Safari-innstillingene, finn ${ PASS_APP_NAME }, gå til \"Tillatelser\" og aktiver nettstedstillatelser."

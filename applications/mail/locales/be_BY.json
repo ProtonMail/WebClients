@@ -303,6 +303,9 @@
       "Continue import": [
         "Працягнуць імпартаванне"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Працягнуць у ${ planOrAppName }"
+      ],
       "Continue with categories": [
         "Працягнуць з катэгорыямі"
       ],
@@ -1781,6 +1784,12 @@
         "${ seats } ліцэнзіі ${ LUMO_APP_NAME }",
         "${ seats } ліцэнзій ${ LUMO_APP_NAME }",
         "${ seats } ліцэнзій ${ LUMO_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ліцэнзія ${ MEET_APP_NAME }",
+        "${ seats } ліцэнзіі ${ MEET_APP_NAME }",
+        "${ seats } ліцэнзій ${ MEET_APP_NAME }",
+        "${ seats } ліцэнзій ${ MEET_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } ліцэнзія памочніка ў напісанні",
@@ -4221,6 +4230,9 @@
       ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "Не знойдзена ніякіх вядомых праграм сачэння і URL-адрасоў з элементамі сачэння ў гэтым лісце."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Нам шкада, што вы пакідаеце нас. Мы будзем вам вельмі ўдзячныя, калі вы знойдзеце крыху часу паведаміць аб прычынах скасавання сваёй падпіскі. Вашы водгукі дапамагаюць зрабіць ${ BRAND_NAME } яшчэ лепш для кожнага карыстальніка."
       ],
       "When do you want your message to be sent?": [
         "Калі вы хочаце, каб ваша паведамленне было адпраўлена?"
@@ -6667,6 +6679,15 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } можа абараніць і ваш бізнес."
       ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } — гэта зашыфраванае скразным метадам рашэнне для відэаканферэнцый. Дадайце яго ў свой тарыфны план, каб праводзіць бяспечныя сустрэчы."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Ліцэнзіі ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } video conferencing": [
+        "Відэаканферэнцыя ${ MEET_APP_NAME }"
+      ],
       "${ n } unread conversation": [
         "${ n } непрачытаная размова",
         "${ n } непрачытаныя размовы",
@@ -6918,6 +6939,9 @@
       ],
       "Ad targeting": [
         "Мэтавая рэклама"
+      ],
+      "Add ${ MEET_APP_NAME }": [
+        "Дадаць ${ MEET_APP_NAME }"
       ],
       "Add image URL": [
         "Дадаць URL-адрас відарыса"
@@ -7513,6 +7537,9 @@
       "Folder": [
         "Папка"
       ],
+      "for ${ price }": [
+        "за ${ price }"
+      ],
       "For additional information and to remove restrictions, please login at ${ mailLink }.": [
         "Увайдзіце ў ${ mailLink } для дадавання дадатковых звестак і выдалення абмежаванняў."
       ],
@@ -7679,10 +7706,7 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс",
-        "Уставіць відарысы",
-        "Уставіць відарысы",
-        "Уставіць відарысы"
+        "Уставіць відарыс"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -9515,6 +9539,9 @@
       "Add to group": [
         "Дадаць у групу"
       ],
+      "Additional comments": [
+        "Дадатковыя каментарыі"
+      ],
       "Address": [
         "Адрас"
       ],
@@ -9659,6 +9686,9 @@
       "Contacts": [
         "Кантакты"
       ],
+      "Continue cancelling": [
+        "Працягнуць скасаванне"
+      ],
       "Copy": [
         "Капіяваць"
       ],
@@ -9697,9 +9727,6 @@
       ],
       "Did not follow instructions": [
         "Не прытрымліваецца інструкцый"
-      ],
-      "Do you have any suggestions for our team?": [
-        "Ці ёсць у вас нейкія прапановы для нашай каманды?"
       ],
       "Don't ask again": [
         "Больш не пытаць"
@@ -9899,6 +9926,9 @@
       "Main": [
         "Галоўная"
       ],
+      "Main reason for cancelling": [
+        "Галоўная прычына скасавання"
+      ],
       "Manage categories": [
         "Кіраванне катэгорыямі"
       ],
@@ -10094,11 +10124,17 @@
       "Sender": [
         "Адпраўнік"
       ],
+      "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
+        "Абагуляйце сваю даступнасць з дапамогай старонак браніравання ў ${ CALENDAR_APP_NAME } і праводзьце бяспечныя сустрэчы з ${ MEET_APP_NAME }."
+      ],
       "Sign emails": [
         "Падпісваць лісты"
       ],
       "Size:": [
         "Памер:"
+      ],
+      "Skip feedback": [
+        "Прапусціць водгук"
       ],
       "Social": [
         "Сацыяльныя сеткі"
@@ -10216,9 +10252,6 @@
       ],
       "What happened?": [
         "Што здарылася?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Якая ваша асноўная прычына скасавання або паніжэння тарыфнага плана?"
       ],
       "Which category should this be recategorized under?": [
         "Пад якую катэгорыю гэта трэба перакласіфікаваць?"
@@ -10725,6 +10758,20 @@
         "Сметніца"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "Ліцэнзія ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Ліцэнзіі ${ MEET_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ліцэнзія ${ MEET_APP_NAME }",
+        "${ seats } ліцэнзіі ${ MEET_APP_NAME }",
+        "${ seats } ліцэнзій ${ MEET_APP_NAME }",
+        "${ seats } ліцэнзій ${ MEET_APP_NAME }"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: канфідэнцыйныя відэаканферэнцыі для важных размоў"
@@ -10785,6 +10832,17 @@
         "Да ${ n } удзельнікаў",
         "Да ${ n } удзельнікаў",
         "Да ${ n } удзельнікаў"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } ліцэнзія ўключана",
+        "${ seats } ліцэнзіі ўключана",
+        "${ seats } ліцэнзій уключана",
+        "${ seats } ліцэнзій уключана"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "У вас можа быць да ${ TRIAL_MAX_MEET_SEATS } ліцэнзій ${ MEET_SHORT_APP_NAME } на працягу пробнага перыяду."
       ]
     },
     "Message": {
@@ -12864,6 +12922,9 @@
       "Anderson": [
         "Маўр"
       ],
+      "Anything you'd like us to know": [
+        "Магчыма, што вы б хацелі нам яшчэ нешта паведаміць"
+      ],
       "Anytown": [
         "Полацк"
       ],
@@ -12884,6 +12945,9 @@
       ],
       "End date": [
         "Дата завяршэння"
+      ],
+      "Enter a name": [
+        "Увядзіце назву"
       ],
       "Enter passphrase": [
         "Увядзіце парольную фразу"
@@ -12981,6 +13045,9 @@
       "Select": [
         "Выбраць"
       ],
+      "Select a provider": [
+        "Выбраць пастаўшчыка"
+      ],
       "Select a reason": [
         "Выберыце прычыну"
       ],
@@ -12989,9 +13056,6 @@
       ],
       "Select state": [
         "Выбраць штат"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Падзяліцеся сваімі думкамі, як зрабіць ${ BRAND_NAME } лепш"
       ],
       "Start date": [
         "Дата пачатку"
@@ -13146,6 +13210,26 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Афіцыйныя лісты ад ${ BRAND_NAME }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Іншы"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Received email icon": {

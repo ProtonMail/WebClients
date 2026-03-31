@@ -83,9 +83,6 @@
       "Delete": [
         "Eliminar"
       ],
-      "Delete meeting": [
-        "Eliminar reunión"
-      ],
       "Disable ${ participantName }'s video": [
         "Desactivar el vídeo de ${ participantName }"
       ],
@@ -118,9 +115,6 @@
       ],
       "Edit email address": [
         "Editar dirección de correo electrónico"
-      ],
-      "Edit meeting": [
-        "Editar reunión"
       ],
       "Edit phone number": [
         "Editar número de teléfono"
@@ -172,9 +166,6 @@
       ],
       "Join meeting": [
         "Unirse a la reunión"
-      ],
-      "Join via link": [
-        "Unirse con enlace"
       ],
       "Kick out": [
         "Expulsar"
@@ -435,9 +426,6 @@
       ],
       "Rotate camera": [
         "Rotar la cámara"
-      ],
-      "Rotate personal meeting link": [
-        "Rotar enlace de reunión personal"
       ],
       "Screen share": [
         "Comparte pantalla"
@@ -1433,9 +1421,6 @@
     "Description": {
       "Rotating group encryption key for best security": [
         "Renovando la clave de cifrado de grupo para una seguridad óptima"
-      ],
-      "Setting up group end-to-end encryption with advanced Messaging Layer Security (MLS)": [
-        "Configurando el cifrado de extremo a extremo de grupo con Seguridad de capa de mensajería (MLS) avanzada"
       ]
     },
     "emergency_access": {
@@ -1671,20 +1656,12 @@
         "Servicios"
       ]
     },
-    "Header": {
-      "Speak freely again - every call is end-to-end encrypted": [
-        "Vuelve a hablar con total libertad: todas las llamadas tienen cifrado de extremo a extremo"
-      ]
-    },
     "Headline": {
       "${ createAnActionAction } or ${ signInAction } to access your personal room and create new rooms": [
         "${ createAnActionAction } o ${ signInAction } para acceder a tu sala personal y crear nuevas salas"
       ],
       "${ createAnActionAction } or ${ signInAction } to schedule meetings": [
         "${ createAnActionAction } o ${ signInAction } para programar reuniones"
-      ],
-      "Your conversations ${ matterWord }": [
-        "Tus conversaciones ${ matterWord }"
       ]
     },
     "Human verification method": {
@@ -1725,9 +1702,6 @@
       ],
       "${ reactorNames } reacted with ${ emoji }": [
         "${ reactorNames } ha reaccionado con ${ emoji }"
-      ],
-      "${ totalParticipantCount } of ${ maxParticipants } participants": [
-        "${ totalParticipantCount } de ${ maxParticipants } participantes"
       ],
       "${ totalParticipantCount } participant": [
         "${ totalParticipantCount } participante",
@@ -1930,9 +1904,6 @@
       ],
       "Loading...": [
         "Cargando..."
-      ],
-      "matter": [
-        "importan"
       ],
       "Meet without restrictions": [
         "Reúnete sin restricciones"
@@ -2138,9 +2109,6 @@
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
         "El anfitrión te ha retirado de esta reunión. Si ha sido un error, pídele que vuelva a invitarte."
       ],
-      "This is an end-to-end encrypted chat with ephemeral messages. After you leave the call, you will not be able to access this chat.": [
-        "Esto es un chat cifrado de extremo a extremo con mensajes efímeros. Después de que salgas de la llamada, no podrás acceder a este chat."
-      ],
       "This meeting is being recorded": [
         "Esta reunión se está grabando"
       ],
@@ -2149,9 +2117,6 @@
       ],
       "This meeting is password protected": [
         "Esta reunión está protegida con contraseña"
-      ],
-      "This meeting is protected by end-to-end encryption with Messaging Layer Security (MLS).": [
-        "Esta reunión está protegida por cifrado de extremo a extremo con Seguridad de capa de mensajería (MLS)."
       ],
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
         "Esta reunión se ha abierto en la aplicación de escritorio de ${ MEET_APP_NAME }."
@@ -2464,6 +2429,9 @@
       "Learn more": [
         "Más información"
       ],
+      "privacy policy": [
+        "política de privacidad"
+      ],
       "Request an invite": [
         "Solicitar una invitación"
       ],
@@ -2574,12 +2542,6 @@
       ],
       "E.g., ": [
         "P. ej., "
-      ],
-      "e.g., Daily room, project hub": [
-        "Ej.: Sala diaria, centro de proyectos"
-      ],
-      "e.g., Team sync, project update": [
-        "Ej.: Sincro de equipo, estado del proyecto"
       ],
       "Enter passphrase": [
         "Introducir la frase de contraseña"
@@ -2839,9 +2801,6 @@
       ],
       "Personal meeting room": [
         "Sala de reuniones personal"
-      ],
-      "Protecting meeting with end-to-end encryption...": [
-        "Protegiendo la videollamada con cifrado de extremo a extremo..."
       ],
       "Publications": [
         "Publicaciones"
