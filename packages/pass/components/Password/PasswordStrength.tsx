@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import type { WasmPasswordScore } from '@protontech/pass-rust-core/worker';
+import type { PasswordScore } from '@protontech/pass-rust-core/worker';
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
@@ -11,26 +11,26 @@ import clsx from '@proton/utils/clsx';
 import './PasswordStrength.scss';
 
 // translator: refers to password strengths (eg. Strong password, Weak password)
-export const translateStrengths: () => Record<WasmPasswordScore, string> = () => ({
+export const translateStrengths: () => Record<PasswordScore, string> = () => ({
     Vulnerable: c('Label').t`Vulnerable`,
     Weak: c('Label').t`Weak`,
     Strong: c('Label').t`Strong`,
 });
 
-export const strengthClassNames: Record<WasmPasswordScore, string> = {
+export const strengthClassNames: Record<PasswordScore, string> = {
     Vulnerable: 'pass-password-strength pass-password-strength--vulnerable',
     Weak: 'pass-password-strength pass-password-strength--weak',
     Strong: 'pass-password-strength pass-password-strength--strong',
 };
 
-export const strenghtIconNames: Record<WasmPasswordScore, IconName> = {
+export const strenghtIconNames: Record<PasswordScore, IconName> = {
     Vulnerable: 'pass-shield-fill-danger',
     Weak: 'pass-shield-fill-warning',
     Strong: 'pass-shield-fill-success',
 };
 
 export const PasswordStrength: FC<{
-    strength: WasmPasswordScore;
+    strength: PasswordScore;
     className?: string;
     inline?: boolean;
 }> = (props) => {

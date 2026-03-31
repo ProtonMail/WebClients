@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import type { WasmPasswordScore } from '@protontech/pass-rust-core/worker';
+import type { PasswordScore } from '@protontech/pass-rust-core/worker';
 
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import type { MaybeNull } from '@proton/pass/types';
@@ -8,7 +8,7 @@ import noop from '@proton/utils/noop';
 
 export const usePasswordStrength = (password: string) => {
     const { core } = usePassCore();
-    const [strength, setStrength] = useState<MaybeNull<WasmPasswordScore>>(null);
+    const [strength, setStrength] = useState<MaybeNull<PasswordScore>>(null);
 
     useEffect(() => {
         (async () => {
