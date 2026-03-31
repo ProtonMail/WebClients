@@ -266,6 +266,16 @@ describe('getSupportedAddons', () => {
             };
             expect(result).toEqual(expected);
         });
+
+        it('should return correct addons for PLANS.MEET', () => {
+            const planIDs: PlanIDs = { [PLANS.MEET]: 1 };
+            const result = getSupportedAddons(planIDs);
+            const expected: SupportedAddons = {
+                [ADDON_NAMES.MEMBER_MEET]: true,
+                [ADDON_NAMES.LUMO_MEET]: true,
+            };
+            expect(result).toEqual(expected);
+        });
     });
 
     describe('Plans without supported addons', () => {
@@ -345,6 +355,7 @@ describe('getSupportedAddons', () => {
                 PLANS.FAMILY,
                 PLANS.LUMO,
                 PLANS.DUO,
+                PLANS.MEET,
                 // B2B plans
                 PLANS.MAIL_PRO,
                 PLANS.MAIL_BUSINESS,
