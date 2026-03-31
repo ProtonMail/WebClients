@@ -31,23 +31,27 @@ export const PasswordForm: FC<Props> = ({
     const isDisabled = Boolean(!state.touched || state.error || disabled || loading);
 
     return (
-        <Form id={id} onSubmit={onFormSubmit} {...(autosavable ? {} : { 'data-protonpass-autosave-ignore': true })}>
-            <div className="flex flex-nowrap items-end w-full" style={{ '--border-radius-xl': '2em' }}>
-                <InputFieldTwo
-                    as={PasswordInputTwo}
-                    autoComplete="current-password"
-                    autoFocus={!disabled}
-                    className="flex-1 rounded-xl overflow-hidden"
-                    dense
-                    disabled={disabled || loading}
-                    error={state.touched ? state.error : undefined}
-                    inputClassName="text-rg rounded-none"
-                    name="password"
-                    required
-                    rootClassName="flex-1"
-                    onValue={onValue}
-                />
-            </div>
+        <Form
+            id={id}
+            onSubmit={onFormSubmit}
+            {...(autosavable ? {} : { 'data-protonpass-autosave-ignore': true })}
+            className="flex gap-2"
+            style={{ '--border-radius-xl': '2em' }}
+        >
+            <InputFieldTwo
+                as={PasswordInputTwo}
+                autoComplete="current-password"
+                autoFocus={!disabled}
+                className="flex-1 rounded-xl overflow-hidden"
+                dense
+                disabled={disabled || loading}
+                error={state.touched ? state.error : undefined}
+                inputClassName="text-rg rounded-none"
+                name="password"
+                required
+                rootClassName="flex-1"
+                onValue={onValue}
+            />
             <Button
                 pill
                 shape="solid"
