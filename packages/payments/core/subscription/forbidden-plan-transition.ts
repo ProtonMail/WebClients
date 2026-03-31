@@ -66,46 +66,84 @@ export function isForbiddenLumoPlus({
 export function isForbiddenMeetPlus({
     subscription,
     newPlanName,
+    newPlanIDs,
     plansMap,
 }: {
     subscription: Subscription | FreeSubscription | null | undefined;
     newPlanName: PLANS | ADDON_NAMES | undefined;
+    newPlanIDs?: PlanIDs;
     plansMap: PlansMap;
 }) {
-    if (!subscription || isFreeSubscription(subscription) || newPlanName !== PLANS.MEET) {
+    if (!subscription || isFreeSubscription(subscription)) {
         return false;
     }
-    const currentPlanIDs = getPlanIDs(subscription);
-    // If the current plan is legacy VPN, we delete it and move to vpn 2024 since it has the meet addon.
-    if (currentPlanIDs[PLANS.VPN]) {
-        delete currentPlanIDs[PLANS.VPN];
-        currentPlanIDs[PLANS.VPN2024] = 1;
-    }
-    const currentPlanSupportedAddons = getSupportedAddons(currentPlanIDs);
 
-    const currentPlanKey = getPlanNameFromIDs(currentPlanIDs);
-    const currentPlan = currentPlanKey ? plansMap[currentPlanKey] : undefined;
-    const meetAddonForCurrentPlan = (Object.keys(currentPlanSupportedAddons) as ADDON_NAMES[]).find((key) =>
-        isMeetAddon(key)
-    );
-    const meetAddon = meetAddonForCurrentPlan ? plansMap[meetAddonForCurrentPlan as keyof typeof plansMap] : undefined;
-    if (currentPlan && meetAddon) {
-        const newPlanIDs = {
-            ...currentPlanIDs,
-            [meetAddon.Name]: currentPlanIDs[meetAddon.Name] || 1,
-        };
-        const currentPlanSelected = SelectedPlan.createNormalized(
-            newPlanIDs,
-            plansMap,
-            subscription.Cycle,
-            subscription.Currency
+    // Case 1: user picks Meet plan → stay on current plan and add the meet addon
+    if (newPlanName === PLANS.MEET) {
+        const currentPlanIDs = getPlanIDs(subscription);
+        // If the current plan is legacy VPN, we delete it and move to vpn 2024 since it has the meet addon.
+        if (currentPlanIDs[PLANS.VPN]) {
+            delete currentPlanIDs[PLANS.VPN];
+            currentPlanIDs[PLANS.VPN2024] = 1;
+        }
+        const currentPlanSupportedAddons = getSupportedAddons(currentPlanIDs);
+        const currentPlanKey = getPlanNameFromIDs(currentPlanIDs);
+        const currentPlan = currentPlanKey ? plansMap[currentPlanKey] : undefined;
+        const meetAddonForCurrentPlan = (Object.keys(currentPlanSupportedAddons) as ADDON_NAMES[]).find((key) =>
+            isMeetAddon(key)
         );
-
-        return {
-            planName: currentPlanSelected.getPlanName(),
-            planIDs: currentPlanSelected.planIDs,
-        };
+        const meetAddon = meetAddonForCurrentPlan
+            ? plansMap[meetAddonForCurrentPlan as keyof typeof plansMap]
+            : undefined;
+        if (currentPlan && meetAddon) {
+            const updatedPlanIDs = {
+                ...currentPlanIDs,
+                [meetAddon.Name]: currentPlanIDs[meetAddon.Name] || 1,
+            };
+            const currentPlanSelected = SelectedPlan.createNormalized(
+                updatedPlanIDs,
+                plansMap,
+                subscription.Cycle,
+                subscription.Currency
+            );
+            return {
+                planName: currentPlanSelected.getPlanName(),
+                planIDs: currentPlanSelected.planIDs,
+            };
+        }
+        return false;
     }
+
+    // Case 2: current plan is Meet → switch to the new plus plan and add the meet addon.
+    // Skip if mobile (multi-subs path) or if the meet addon is already present in newPlanIDs.
+    if (newPlanIDs && !isManagedExternally(subscription) && !hasMeetAddonFromPlanIDs(clearPlanIDs(newPlanIDs))) {
+        const currentPlanIDs = getPlanIDs(subscription);
+        const currentPlanName = getPlanNameFromIDs(currentPlanIDs);
+        if (currentPlanName === PLANS.MEET && getHasPlusPlan(newPlanName)) {
+            const newPlanSupportedAddons = getSupportedAddons(newPlanIDs);
+            const meetAddonForNewPlan = (Object.keys(newPlanSupportedAddons) as ADDON_NAMES[]).find((key) =>
+                isMeetAddon(key)
+            );
+            const meetAddon = meetAddonForNewPlan ? plansMap[meetAddonForNewPlan as keyof typeof plansMap] : undefined;
+            if (meetAddon) {
+                const updatedPlanIDs = {
+                    ...newPlanIDs,
+                    [meetAddon.Name]: newPlanIDs[meetAddon.Name] || 1,
+                };
+                const newPlanSelected = SelectedPlan.createNormalized(
+                    updatedPlanIDs,
+                    plansMap,
+                    subscription.Cycle,
+                    subscription.Currency
+                );
+                return {
+                    planName: newPlanSelected.getPlanName(),
+                    planIDs: newPlanSelected.planIDs,
+                };
+            }
+        }
+    }
+
     return false;
 }
 
@@ -222,7 +260,7 @@ export function getIsPlanTransitionForbidden({
         return { type: 'lumo-plus', newPlanIDs: lumoForbidden.planIDs, newPlanName: lumoForbidden.planName } as const;
     }
 
-    const meetForbidden = isForbiddenMeetPlus({ plansMap, subscription, newPlanName });
+    const meetForbidden = isForbiddenMeetPlus({ plansMap, subscription, newPlanName, newPlanIDs: planIDs });
     if (meetForbidden) {
         return { type: 'meet-plus', newPlanIDs: meetForbidden.planIDs, newPlanName: meetForbidden.planName } as const;
     }
