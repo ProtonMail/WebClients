@@ -1128,6 +1128,10 @@
       ],
       "Writing assistant seats": [
         "Llicències de l'assistent d'escriptura"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } llicència de ${ MEET_APP_NAME }",
+        "${ seats } llicències de ${ MEET_APP_NAME }"
       ]
     },
     "Alarm notification": {
@@ -6532,6 +6536,24 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Heu arribat al límit de reserves (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } és una aplicació de videoconferència amb xifratge d'extrem a extrem. Afegiu-la al vostre pla per allotjar reunions segures."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Llicències de ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } video conferencing": [
+        "Videoconferència de ${ MEET_APP_NAME }"
+      ],
+      "Add ${ MEET_APP_NAME }": [
+        "Afegiu-hi ${ MEET_APP_NAME }"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Tot el que inclou ${ planOrAppName }, i a més:"
+      ],
+      "for ${ price }": [
+        "per ${ price }"
       ]
     },
     "info": {
@@ -7612,6 +7634,13 @@
       "Up to ${ n } participant": [
         "Fins a ${ n } participant",
         "Fins a ${ n } participants"
+      ],
+      "Hosts can record meetings locally on their computers": [
+        "Els amfitrions poden gravar reunions localment als seus ordinadors"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videoconferències, ${ n } participant",
+        "Videoconferències, ${ n } participants"
       ]
     },
     "Message": {
@@ -8343,6 +8372,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escanegem el web fosc per a comprovar si les vostres adreces o àlies de ${ BRAND_NAME } s'han filtrat i us avisem immediatament si trobem alguna cosa."
+      ],
+      "Data retention policies": [
+        "Polítiques de conservació de dades"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Xat d'IA privat (${ LUMO_APP_NAME })"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN amb bloqueig d’anuncis i protecció contra programari maliciós"
       ]
     },
     "new_plans: feature highlight": {
@@ -12841,6 +12879,27 @@
       ],
       "Yahoo": [
         "Yahoo"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "Llicència de ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Llicències de ${ MEET_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } llicència de ${ MEET_APP_NAME }",
+        "${ seats } llicències de ${ MEET_APP_NAME }"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } llicència inclosa",
+        "${ seats } llicències incloses"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Podeu tenir fins a ${ TRIAL_MAX_MEET_SEATS } llicències de ${ MEET_SHORT_APP_NAME } durant el període de prova."
       ]
     }
   }

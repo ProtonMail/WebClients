@@ -988,6 +988,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "桌面應用程式免費試用期將會在${ formattedEndDate }.${ upgradeButton }完結"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "繼續使用 ${ planOrAppName }"
       ]
     },
     "action": {
@@ -1073,6 +1076,9 @@
       ],
       "Writing assistant": [
         "撰寫助手"
+      ],
+      "Writing assistant seats": [
+        "撰寫幫手就位"
       ]
     },
     "Alarm notification": {
@@ -1325,6 +1331,9 @@
       ],
       "Unlimited daily chats": [
         "無限每日聊天"
+      ],
+      "3 TB data storage": [
+        "3 TB 的總儲存空間"
       ]
     },
     "BF2025: Tooltip": {
@@ -1362,6 +1371,9 @@
       ],
       "Yearly": [
         "每年"
+      ],
+      "Lifetime access": [
+        "終身存取權"
       ]
     },
     "Browser": {
@@ -1784,6 +1796,9 @@
       ],
       "Zero-access encryption": [
         "零存取加密"
+      ],
+      "Upload and query small files": [
+        "上載及查詢小型檔案"
       ]
     },
     "collider_2025: Info": {
@@ -3040,6 +3055,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已經創建10個別名。${ BRAND_NAME }無限版可獲得無限別名和500GB的儲存容量。"
+      ],
+      "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
+        "匯入 CSV 或 VCF 檔，請確保檔案大小不超過 ${ MAX_IMPORT_FILE_SIZE_STRING }，或聯絡人數不超過 ${ maxContactString }。如果檔案超過此限制，請將其分成比較小的檔案。 ${ learnMoreLink }"
       ]
     },
     "description": {
@@ -3858,6 +3876,12 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "您 Zoom 連接階段已逾期，請重新連接以繼續。"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "最低捐款金額為 ${ price }"
+      ],
+      "Wrong billing address": [
+        "錯誤帳單地址"
       ]
     },
     "error": {
@@ -6136,6 +6160,12 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "您仍可瀏覽您的帳號資料，但所有使用者帳號將被從貴組織移除。"
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "若您的朋友訂閱年費方案，您將在 1 個月後獲得點數獎勵；若他們訂閱月費方案，則會在 2 個月後獲得。"
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
+        "您下一個收費日為${ renewalTime }。您可隨時取消。若您需要立即變更方案請聯繫客服。"
       ]
     },
     "info": {
@@ -6842,6 +6872,15 @@
       ],
       "Zoom meeting": [
         "Zoom 會議"
+      ],
+      "Command line interface (CLI)": [
+        "指令介面 (CLI)"
+      ],
+      "Main reason for cancelling": [
+        "取消的主要原因"
+      ],
+      "Skip feedback": [
+        "略過意見回饋"
       ]
     },
     "label": {
@@ -7153,6 +7192,9 @@
       ],
       "Up to ${ n } participant": [
         "至多 ${ n } 位參與者"
+      ],
+      "End-to-end encrypted screen sharing and ephemeral in-call chat": [
+        "端對端加密的螢幕共享和臨時通話內聊天"
       ]
     },
     "Message": {
@@ -8926,6 +8968,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "您的訂閱已套用現有折扣。若轉換至新的促銷方案，現有折扣將不再套用。"
+      ],
+      "${ rate }% tax: ${ taxAmountElement }": [
+        "${ rate }% 稅金：${ taxAmountElement }"
       ]
     },
     "Payments.Error": {
@@ -9184,6 +9229,12 @@
       ],
       "ZIP code": [
         "郵遞區號"
+      ],
+      "Anything you'd like us to know": [
+        "您有沒有什麼想讓我們知道的？"
+      ],
+      "San Francisco": [
+        "舊金山"
       ]
     },
     "Placeholder for contact group name": {
@@ -9405,6 +9456,12 @@
       ],
       "You can get up to **${ maxRewardAmount }** in credit.": [
         "您將取得至多 **${ maxRewardAmount }** 額度。"
+      ],
+      "After that date, your account will be downgraded to **${ BRAND_NAME } Free**. If you change your mind, you can **reactivate your subscription** to keep access to premium features.": [
+        "於那日之後，您的帳號將被降級至 **${ BRAND_NAME } 免費 **。若您改變主意，您可 ** 重建訂閱 ** 以存取至頂級質子版的功能。"
+      ],
+      "Once your full subscription starts, you can still cancel within 30 days and get a prorated refund.": [
+        "一旦您的完整訂閱開始，您仍可在 30 天內取消並獲得按比例退款。"
       ]
     },
     "Reload event button tooltip": {
@@ -12060,6 +12117,31 @@
       ],
       "Passcode:": [
         "數字密碼:"
+      ]
+    },
+    "Payments.Renewal price dependent on VAT number": {
+      "Renewal price is dependent on the billing region and ABN.": [
+        "續訂價格取決於計費區域和 EIN。"
+      ],
+      "Renewal price is dependent on the billing region and EIN.": [
+        "續訂價格取決於計費區域和 EIN。"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "其它"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }
