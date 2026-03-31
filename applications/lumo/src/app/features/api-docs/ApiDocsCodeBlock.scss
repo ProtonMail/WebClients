@@ -1,0 +1,20 @@
+.api-docs-code-block-lang-active {
+    background: var(--background-weak);
+    font-weight: 600;
+}
+
+.api-docs-code-block-pre {
+    margin: 0;
+    padding: 16px 20px;
+    overflow-x: auto;
+    font-size: 13px;
+    line-height: 1.65;
+    background: var(--background-invert);
+    color: var(--text-invert);
+    max-height: min(480px, 70vh);
+}
+
+.api-docs-code-block-copy {
+    right: 4px;
+    top: 4px;
+}
