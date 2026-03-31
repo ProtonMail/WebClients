@@ -525,6 +525,8 @@ const PlanSelection = (props: Props) => {
         user,
     });
 
+    const isMeetSettingsApp = app === APPS.PROTONMEET;
+
     const audience = (() => {
         // Some apps don't display all plans. This is a problem on for example meet, where it only displays B2B plans.
         // This is problematic for regional currencies since it only uses main currencies. If the audience is wrong (b2c by default)
@@ -636,7 +638,11 @@ const PlanSelection = (props: Props) => {
         if (isRecommended) {
             hasRecommended.add(audience);
         }
-        const shortPlan = getShortPlan(plan.Name as PLANS, plansMap, { vpnServers, freePlan });
+        const shortPlan = getShortPlan(plan.Name as PLANS, plansMap, {
+            vpnServers,
+            freePlan,
+            prioritizeMeetFeatures: isMeetSettingsApp,
+        });
 
         if (!shortPlan) {
             return null;

@@ -42,6 +42,7 @@ import { getLumoPlusFeatures, getLumoProfessionalFeatures } from './lumo';
 import {
     getContactGroupsManagement,
     getDarkWebMonitoringFeature,
+    getDataRetentionPoliciesFeature,
     getDesktopAppFeature,
     getFoldersAndLabelsFeature,
     getMailAppFeature,
@@ -53,7 +54,14 @@ import {
     getProtonScribe,
     getSMTPToken,
 } from './mail';
-import { getMeetBusinessFeatures } from './meet';
+import {
+    FREE_MAX_PARTICIPANTS,
+    PAID_MAX_PARTICIPANTS,
+    PAID_PREMIUM_MAX_PARTICIPANTS,
+    PAID_STANDARD_MAX_PARTICIPANTS,
+    getMeetAppFeature,
+    getMeetBusinessFeatures,
+} from './meet';
 import {
     FREE_PASS_ALIASES,
     FREE_VAULTS,
@@ -522,7 +530,13 @@ export const getMailBusinessPlan = (plan: Plan): ShortPlan => {
     };
 };
 
-export const getBundleProPlan = (plan: Plan): ShortPlan => {
+export const getBundleProPlan = ({
+    plan,
+    prioritizeMeetFeatures,
+}: {
+    plan: Plan;
+    prioritizeMeetFeatures?: boolean;
+}): ShortPlan => {
     return {
         plan: PLANS.BUNDLE_PRO_2024,
         title: plan.Title,
@@ -531,12 +545,16 @@ export const getBundleProPlan = (plan: Plan): ShortPlan => {
             .t`All ${BRAND_NAME} business apps and premium features to protect your entire business.`,
         cta: getCTA(plan.Title),
         features: [
+            ...(prioritizeMeetFeatures
+                ? getMeetBusinessFeatures({ maxParticipants: PAID_STANDARD_MAX_PARTICIPANTS })
+                : []),
             getStorageFeatureB2B(plan.MaxSpace, { subtext: false }),
             getNAddressesFeatureB2B({ n: plan.MaxAddresses }),
             getNDomainsFeature({ n: plan.MaxDomains }),
             getSentinel(true),
             getFoldersAndLabelsFeature('unlimited'),
             getContactGroupsManagement(),
+            getMeetAppFeature(),
             getCalendarAppFeature(),
             getDriveAppFeature(),
             getPassAppFeature(),
@@ -548,7 +566,13 @@ export const getBundleProPlan = (plan: Plan): ShortPlan => {
     };
 };
 
-export const getBundlePremiumPlan = (plan: Plan): ShortPlan => {
+export const getBundlePremiumPlan = ({
+    plan,
+    prioritizeMeetFeatures,
+}: {
+    plan: Plan;
+    prioritizeMeetFeatures?: boolean;
+}): ShortPlan => {
     return {
         plan: PLANS.BUNDLE_BIZ_2025,
         title: plan.Title,
@@ -557,12 +581,16 @@ export const getBundlePremiumPlan = (plan: Plan): ShortPlan => {
             .t`All ${BRAND_NAME} business apps and premium features to protect your entire business.`,
         cta: getCTA(plan.Title),
         features: [
+            ...(prioritizeMeetFeatures
+                ? getMeetBusinessFeatures({ maxParticipants: PAID_PREMIUM_MAX_PARTICIPANTS })
+                : []),
             getStorageFeatureB2B(plan.MaxSpace, { subtext: false }),
             getNAddressesFeatureB2B({ n: plan.MaxAddresses }),
             getNDomainsFeature({ n: plan.MaxDomains }),
             getSentinel(true),
             getFoldersAndLabelsFeature('unlimited'),
             getContactGroupsManagement(),
+            getMeetAppFeature(),
             getCalendarAppFeature(),
             getDriveAppFeature(),
             getPassAppFeature(),
@@ -570,6 +598,7 @@ export const getBundlePremiumPlan = (plan: Plan): ShortPlan => {
             getNetShield(true),
             getSecureCore(true),
             getSMTPToken(true),
+            getDataRetentionPoliciesFeature(true),
         ],
     };
 };
@@ -780,7 +809,7 @@ export const getMeetB2CPlan = (plan: Plan): ShortPlan => {
         label: '',
         description: c('collider_2025: Info').t`Private video calls for the conversations that matter.`,
         cta: getCTA(plan.Title),
-        features: getMeetBusinessFeatures(),
+        features: getMeetBusinessFeatures({ maxParticipants: FREE_MAX_PARTICIPANTS }),
     };
 };
 
@@ -791,7 +820,7 @@ export const getMeetBusinessPlan = (plan: Plan): ShortPlan => {
         label: '',
         description: c('collider_2025: Info').t`Private video calls for the conversations that matter.`,
         cta: getCTA(plan.Title),
-        features: getMeetBusinessFeatures(),
+        features: getMeetBusinessFeatures({ maxParticipants: PAID_MAX_PARTICIPANTS }),
     };
 };
 
@@ -806,6 +835,7 @@ export const getShortPlan = (
     plansMap: PlansMap,
     options: {
         boldStorageSize?: boolean;
+        prioritizeMeetFeatures?: boolean;
         vpnServers: VPNServersCountData;
         freePlan: FreePlanDefault;
     }
@@ -819,7 +849,7 @@ export const getShortPlan = (
         return null;
     }
 
-    const { vpnServers, boldStorageSize, freePlan } = options;
+    const { vpnServers, boldStorageSize, freePlan, prioritizeMeetFeatures } = options;
 
     switch (plan) {
         case PLANS.MAIL:
@@ -847,9 +877,9 @@ export const getShortPlan = (
             return getBundlePlan({ plan: planData, vpnServersCountData: vpnServers, freePlan });
         case PLANS.BUNDLE_PRO:
         case PLANS.BUNDLE_PRO_2024:
-            return getBundleProPlan(planData);
+            return getBundleProPlan({ plan: planData, prioritizeMeetFeatures });
         case PLANS.BUNDLE_BIZ_2025:
-            return getBundlePremiumPlan(planData);
+            return getBundlePremiumPlan({ plan: planData, prioritizeMeetFeatures });
         case PLANS.VISIONARY:
             return getVisionaryPlan({ serversCount: vpnServers, plan: planData, freePlan });
         case PLANS.FAMILY:
