@@ -16,7 +16,6 @@ import {
     DUO_MAX_USERS,
     FAMILY_MAX_USERS,
     MAIL_SHORT_APP_NAME,
-    MEET_APP_NAME,
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import type { Included } from '@proton/shared/lib/helpers/checkout';
@@ -28,6 +27,15 @@ import { getVpnConnections, getVpnServers } from '@proton/shared/lib/vpn/feature
 
 import { getNUsersText } from '../../../features/highlights';
 import { getAccessToAdvancedAIText, getFullChatHistoryText, getUnlimitedChatsText } from '../../../features/lumo';
+import {
+    PAID_MAX_ACTIVE_MEETINGS,
+    PAID_MAX_PARTICIPANTS,
+    getMaxMeetingsPerDayText,
+    getMaxMeetingsText,
+    getMaxParticipantsText,
+    getMeetMeetingRecordingText,
+    getMeetingMaxLengthText,
+} from '../../../features/meet';
 import {
     get2FAAuthenticatorText,
     getAdvancedAliasFeaturesText,
@@ -295,15 +303,35 @@ export const getWhatsIncluded = ({
         ];
     }
 
+    const meetPlan = planIDs[PLANS.MEET] || planIDs[PLANS.MEET_BUSINESS];
     const meetAddon = hasMeetAddonFromPlanIDs(planIDs);
-    if (meetAddon) {
-        included = [
-            ...included,
-            {
-                type: 'text',
-                text: c('Info').t`${MEET_APP_NAME} video conferencing`,
-            },
-        ];
+    const meetFeatures: Included[] = [
+        {
+            type: 'text',
+            text: getMeetingMaxLengthText('paid'),
+        },
+        {
+            type: 'text',
+            text: getMaxParticipantsText(PAID_MAX_PARTICIPANTS),
+        },
+        {
+            type: 'text',
+            text: getMaxMeetingsText(PAID_MAX_ACTIVE_MEETINGS),
+        },
+        {
+            type: 'text',
+            text: getMaxMeetingsPerDayText('unlimited'),
+        },
+        {
+            type: 'text',
+            text: getMeetMeetingRecordingText(),
+        },
+    ];
+
+    if (meetPlan !== undefined && meetPlan > 0) {
+        included = meetFeatures;
+    } else if (meetAddon) {
+        included = [...included, ...meetFeatures];
     }
 
     const lumoPlan = planIDs[PLANS.LUMO];
