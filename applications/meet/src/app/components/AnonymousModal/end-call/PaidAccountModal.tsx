@@ -8,7 +8,7 @@ export const PaidAccountModal = ({ open, onClose, rejoin }: CTAModalBaseProps) =
         open={open}
         onClose={onClose}
         rejoin={rejoin}
-        title={c('Info').t`You left your meeting`}
+        title={c('Info').t`You left the meeting`}
         subtitle={c('Info').t`Thank you for joining.`}
     />
 );
