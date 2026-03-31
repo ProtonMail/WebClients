@@ -57,7 +57,6 @@ export class PhotosUploadExecutor extends TaskExecutor<PhotosUploadTask> {
                 }
                 uploadLogError('Photo duplicate detection failed', error, {
                     uploadId: task.uploadId,
-                    fileName: task.file.name,
                 });
             }
 
