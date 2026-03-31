@@ -12,7 +12,11 @@ export const useDrivePlan = () => {
 
     // B2B plans
     const isDriveProfessional = plan === PLANS.DRIVE_BUSINESS;
-    const isProtonBusinessSuite = plan === PLANS.BUNDLE_PRO || plan === PLANS.BUNDLE_PRO_2024;
+
+    // 2026-03-31: treat bundlepro2022, bundlepro2024 and bundlebiz2025 equivalently, as the old PBS plan
+    // This should be changed later if bundlebiz2025 gets Drive-only functionality
+    const isProtonBusinessSuite =
+        plan === PLANS.BUNDLE_PRO || plan === PLANS.BUNDLE_PRO_2024 || plan === PLANS.BUNDLE_BIZ_2025;
 
     const isB2B = isDriveProfessional || isProtonBusinessSuite;
 
@@ -59,7 +63,7 @@ export const useDrivePlan = () => {
         /** `true` is plan is *Drive Professional*. */
         isDriveProfessional,
 
-        /** `true` if plan is *Workspace Standard*. */
+        /** `true` if plan is *Workspace Standard* (bundlepro2024, bundlepro2022), *Workspace Premium* (bundlebiz2025). */
         isProtonBusinessSuite,
 
         /** `true` if plan is *Drive Lite*. */
