@@ -47,7 +47,7 @@ export const GuestAccountModal = ({ open, onClose, action, rejoin }: CTAModalBas
                 </>
             }
             rejoin={rejoin}
-            title={c('Info').t`You left your meeting`}
+            title={c('Info').t`You left the meeting`}
             subtitle={subtitle}
         />
     );
