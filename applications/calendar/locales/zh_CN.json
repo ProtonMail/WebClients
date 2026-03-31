@@ -1021,6 +1021,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "您的桌面应用免费试用将在 ${ formattedEndDate }结束。 ${ upgradeButton }"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "继续使用 ${ planOrAppName }"
       ]
     },
     "action": {
@@ -3160,6 +3163,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已创建了 10 个别名。使用 ${ BRAND_NAME }  Unlimited，获得无限别名和 500 GB 的存储空间。"
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "很遗憾看到您离开。如果您有时间，我们希望了解您取消的原因。您的反馈有助于我们改进 ${ BRAND_NAME }，让产品变得更好。"
       ]
     },
     "description": {
@@ -7166,6 +7172,18 @@
       ],
       "Zoom meeting": [
         "Zoom 会议"
+      ],
+      "Additional comments": [
+        "附加备注"
+      ],
+      "Continue cancelling": [
+        "继续取消"
+      ],
+      "Main reason for cancelling": [
+        "取消的主要原因"
+      ],
+      "Skip feedback": [
+        "跳过反馈"
       ]
     },
     "label": {
@@ -9621,6 +9639,15 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "Anything you'd like us to know": [
+        "您有任何想要告诉我们的吗？"
+      ],
+      "Enter a name": [
+        "请输入名称"
+      ],
+      "Select a provider": [
+        "请选择提供商"
       ]
     },
     "Placeholder for contact group name": {
@@ -12534,6 +12561,26 @@
       ],
       "Passcode:": [
         "密码："
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "其他"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }

@@ -1021,6 +1021,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "회원님의 데스크톱 앱 무료 체험 기간이 ${ formattedEndDate }에 종료됩니다. ${ upgradeButton }"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "${ planOrAppName }(으)로 계속하기"
       ]
     },
     "action": {
@@ -3160,6 +3163,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "이미 10개 별칭을 생성했습니다. ${ BRAND_NAME } Unlimited로 무제한 별칭과 500 GB 스토리지를 받아보세요."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "떠나시는 모습을 보니 아쉽네요. 잠시 시간을 내어주셔서 취소하시려는 이유에 대해 알려주시면 정말 감사하겠습니다. 회원님의 소중한 의견은 ${ BRAND_NAME }을 모든 사용자에게 더 나은 서비스로 만드는 데 있어서 큰 도움이 됩니다."
       ]
     },
     "description": {
@@ -4940,7 +4946,7 @@
     },
     "Import provider": {
       "Advanced import": [
-        "고급 가져오기"
+        "고급 불러오기 설정"
       ]
     },
     "Import warning": {
@@ -7166,6 +7172,18 @@
       ],
       "Zoom meeting": [
         "Zoom 화상 회의"
+      ],
+      "Additional comments": [
+        "추가 의견"
+      ],
+      "Continue cancelling": [
+        "취소 계속하기"
+      ],
+      "Main reason for cancelling": [
+        "취소의 주된 이유"
+      ],
+      "Skip feedback": [
+        "피드백 건너뛰기"
       ]
     },
     "label": {
@@ -9621,6 +9639,15 @@
       ],
       "ZIP code": [
         "우편 번호"
+      ],
+      "Anything you'd like us to know": [
+        "알려주셨으면 하는 사항이 있으신가요?"
+      ],
+      "Enter a name": [
+        "이름 입력"
+      ],
+      "Select a provider": [
+        "제공자 선택"
       ]
     },
     "Placeholder for contact group name": {
@@ -11719,7 +11746,7 @@
         "그룹 가져오기"
       ],
       "Import your data to ${ BRAND_NAME }": [
-        "${ BRAND_NAME }로 데이터 불러오기"
+        "${ BRAND_NAME }으로 데이터 불러오기"
       ],
       "Information exposed in breach": [
         "유출 시 노출된 정보"
@@ -12630,6 +12657,26 @@
       ],
       "Passcode:": [
         "비밀번호:"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "기타"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }

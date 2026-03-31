@@ -1025,6 +1025,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Bilgisayar uygulamasını ücretsiz deneme süreniz ${ formattedEndDate } tarihinde sona erecek. ${ upgradeButton }"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "${ planOrAppName } ile ilerle"
       ]
     },
     "action": {
@@ -1125,6 +1128,10 @@
       ],
       "Writing assistant seats": [
         "Yazma asistanı koltuk sayısı"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } lisansı",
+        "${ seats } ${ MEET_APP_NAME } lisansı"
       ]
     },
     "Alarm notification": {
@@ -3187,6 +3194,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Aramızdan ayrıldığınız için üzgünüz. Vakit ayırıp iptal etme nedeninizi paylaşırsanız çok seviniriz. Geri bildiriminiz ${ BRAND_NAME } hizmetlerini herkes için daha iyi yapmamıza yardımcı olur."
       ]
     },
     "description": {
@@ -6532,6 +6542,24 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Rezervasyon aralığı sayısı sınırına ulaştınız (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } uçtan uca şifrelenmiş bir görüntülü görüşme çözümüdür. Güvenli görüşmeler düzenlemek için bunu tarifenize ekleyin."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } koltukları"
+      ],
+      "${ MEET_APP_NAME } video conferencing": [
+        "${ MEET_APP_NAME } görüntülü görüşme"
+      ],
+      "Add ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME } ekle"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "${ planOrAppName } tarifesindeki her şeye ek olarak:"
+      ],
+      "for ${ price }": [
+        "${ price } karşılığında"
       ]
     },
     "info": {
@@ -7262,6 +7290,18 @@
       ],
       "Zoom meeting": [
         "Zoom görüşmesi"
+      ],
+      "Additional comments": [
+        "Ek açıklamalar"
+      ],
+      "Continue cancelling": [
+        "İptal etmeye geç"
+      ],
+      "Main reason for cancelling": [
+        "Temel iptal etme nedeni"
+      ],
+      "Skip feedback": [
+        "Geri bildirimi atla"
       ]
     },
     "label": {
@@ -7600,6 +7640,13 @@
       "Up to ${ n } participant": [
         "${ n } katılımcı",
         "${ n } katılımcı"
+      ],
+      "Hosts can record meetings locally on their computers": [
+        "Oturum sahipleri görüşmeleri kendi bilgisayarlarına yerel olarak kaydedebilir"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Görüntülü görüşmeler, ${ n } katılımcı",
+        "Görüntülü görüşmeler, ${ n } katılımcı"
       ]
     },
     "Message": {
@@ -8331,6 +8378,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } adreslerinizin veya takma adlarınızın sızıp sızmadığını denetlemek için karanlık ağı tararız ve herhangi bir şey bulursak sizi hemen uyarırız."
+      ],
+      "Data retention policies": [
+        "Verileri tutma ilkeleri"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Gizli yapay zeka sohbeti (${ LUMO_APP_NAME })"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "Reklam engelleyici ve kötü amaçlı yazılım koruması ile VPN"
       ]
     },
     "new_plans: feature highlight": {
@@ -9788,6 +9844,15 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Anything you'd like us to know": [
+        "Bizimle paylaşmak istediğiniz bir şey var mı?"
+      ],
+      "Enter a name": [
+        "Bir ad yazın"
+      ],
+      "Select a provider": [
+        "Bir hizmet sağlayıcı seçin"
       ]
     },
     "Placeholder for contact group name": {
@@ -12896,6 +12961,47 @@
       ],
       "Passcode:": [
         "Parola:"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } lisansı"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } koltukları"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME } koltuğu",
+        "${ seats } ${ MEET_APP_NAME } koltuğu"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } koltuk ile",
+        "${ seats } koltuk ile"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Deneme süresi boyunca en fazla ${ TRIAL_MAX_MEET_SEATS } tane ${ MEET_SHORT_APP_NAME } koltuğunuz olabilir."
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Diğer"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }

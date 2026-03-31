@@ -1025,6 +1025,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Sua avaliação gratuita do aplicativo de computador termina em ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "Continuar com ${ planOrAppName }"
       ]
     },
     "action": {
@@ -1125,6 +1128,10 @@
       ],
       "Writing assistant seats": [
         "Licenças de assistente de escrita"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } licença",
+        "${ seats } ${ MEET_APP_NAME } licenças"
       ]
     },
     "Alarm notification": {
@@ -6520,6 +6527,21 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Você atingiu o limite de agendamentos (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "O ${ MEET_APP_NAME } é uma solução de videoconferência com criptografia de ponta a ponta. Adicione-a ao seu plano para realizar reuniões seguras."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } licenças"
+      ],
+      "${ MEET_APP_NAME } video conferencing": [
+        "Videoconferência do ${ MEET_APP_NAME }"
+      ],
+      "Add ${ MEET_APP_NAME }": [
+        "Adicionar ${ MEET_APP_NAME }"
+      ],
+      "for ${ price }": [
+        "por ${ price }"
       ]
     },
     "info": {
@@ -7250,6 +7272,15 @@
       ],
       "Zoom meeting": [
         "Reunião no Zoom"
+      ],
+      "Additional comments": [
+        "Comentários adicionais"
+      ],
+      "Continue cancelling": [
+        "Continuar cancelamento"
+      ],
+      "Skip feedback": [
+        "Pular feedback"
       ]
     },
     "label": {
@@ -9779,6 +9810,12 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Enter a name": [
+        "Insira um nome"
+      ],
+      "Select a provider": [
+        "Selecione um provedor"
       ]
     },
     "Placeholder for contact group name": {
@@ -12884,6 +12921,47 @@
       ],
       "Passcode:": [
         "Código de acesso:"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } licença"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } licenças"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } licença do ${ MEET_APP_NAME }",
+        "${ seats } licenças do ${ MEET_APP_NAME }"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } licença incluída",
+        "${ seats } licenças incluídas"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Você pode ter até ${ TRIAL_MAX_MEET_SEATS } licenças do ${ MEET_SHORT_APP_NAME } durante o período de avaliação."
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Outros"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }

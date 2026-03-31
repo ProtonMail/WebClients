@@ -1025,6 +1025,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Deine kostenlose Testversion der Desktop-App endet am ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "Weiter zu ${ planOrAppName }"
       ]
     },
     "action": {
@@ -1125,6 +1128,10 @@
       ],
       "Writing assistant seats": [
         "Lizenzen für Schreibassistenten"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } Lizenz",
+        "${ seats } ${ MEET_APP_NAME } Lizenzen"
       ]
     },
     "Alarm notification": {
@@ -3187,6 +3194,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du hast bereits 10 Aliasnamen erstellt. Erhalte unbegrenzte Aliase und 500 GB Speicherplatz mit ${ BRAND_NAME } Unlimitiert."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Wir bedauern, dass du gehst. Wenn du einen Moment Zeit hast, würden wir uns sehr freuen zu erfahren, warum du kündigen möchtest. Dein Feedback hilft uns, ${ BRAND_NAME } für alle besser zu machen."
       ]
     },
     "description": {
@@ -6532,6 +6542,24 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Du hast das Limit für Buchungsplätze erreicht (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } ist eine Ende-zu-Ende-verschlüsselte Videokonferenzlösung. Deinem Abonnement hinzufügen, um sichere Meetings abzuhalten."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } Lizenzen"
+      ],
+      "${ MEET_APP_NAME } video conferencing": [
+        "${ MEET_APP_NAME }-Videokonferenz"
+      ],
+      "Add ${ MEET_APP_NAME }": [
+        "${ MEET_APP_NAME } hinzufügen"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Alles in ${ planOrAppName }, zusätzlich:"
+      ],
+      "for ${ price }": [
+        "für ${ price }"
       ]
     },
     "info": {
@@ -7262,6 +7290,18 @@
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
+      ],
+      "Additional comments": [
+        "Zusätzliche Kommentare"
+      ],
+      "Continue cancelling": [
+        "Kündigung fortsetzen"
+      ],
+      "Main reason for cancelling": [
+        "Hauptgrund für die Kündigung"
+      ],
+      "Skip feedback": [
+        "Rückmeldung überspringen"
       ]
     },
     "label": {
@@ -7600,6 +7640,13 @@
       "Up to ${ n } participant": [
         "Bis zu ${ n } Teilnehmer",
         "Bis zu ${ n } Teilnehmer"
+      ],
+      "Hosts can record meetings locally on their computers": [
+        "Organisatoren können Besprechungen lokal auf ihren Computern aufzeichnen"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Video-Meetings, ${ n } Teilnehmer",
+        "Video-Meetings, ${ n } Teilnehmer"
       ]
     },
     "Message": {
@@ -8331,6 +8378,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Wir scannen das Dark Web, um zu überprüfen, ob deine ${ BRAND_NAME }-Adressen oder Aliasse veröffentlicht wurden, und benachrichtigen dich sofort, wenn wir etwas finden."
+      ],
+      "Data retention policies": [
+        "Aufbewahrungsrichtlinien für Daten"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Privater KI-Chat (${ LUMO_APP_NAME })"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN mit Werbeblocker und Malware-Schutz"
       ]
     },
     "new_plans: feature highlight": {
@@ -9788,6 +9844,15 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "Anything you'd like us to know": [
+        "Haben Sie etwas, das Sie uns mitteilen möchten?"
+      ],
+      "Enter a name": [
+        "Name eingeben"
+      ],
+      "Select a provider": [
+        "Anbieter auswählen"
       ]
     },
     "Placeholder for contact group name": {
@@ -12896,6 +12961,47 @@
       ],
       "Passcode:": [
         "Passcode:"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } Lizenz"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } Lizenzen"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME } Lizenz",
+        "${ seats } ${ MEET_APP_NAME } Lizenzen"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } Lizenz enthalten",
+        "${ seats } Lizenzen enthalten"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Du kannst während der Testphase bis zu ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME }-Lizenzen haben."
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Sonstiges"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }
