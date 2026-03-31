@@ -12387,6 +12387,12 @@
       ],
       "Zoom meeting": [
         "Reunião no Zoom"
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Adicionar ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Tido no ${ planOrAppName }, plus:"
       ]
     },
     "info": {
@@ -15165,6 +15171,10 @@
       "Up to ${ n } participant": [
         "Até ${ n } participante",
         "Até ${ n } participantes"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Reuniões por vídeo, ${ n } participante",
+        "Reuniões por vídeo, ${ n } participantes"
       ]
     },
     "meet_2025: Info": {
@@ -15207,6 +15217,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
         "Você pode ter até ${ TRIAL_MAX_MEET_SEATS } licenças do ${ MEET_SHORT_APP_NAME } durante o período de avaliação."
+      ],
+      "Includes these features:": [
+        "Inclui estes recursos:"
       ]
     },
     "Meet_launch": {
@@ -16153,6 +16166,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Rastreamos a dark web para verificar se seus endereços ou aliases ${ BRAND_NAME } sofreram vazamento e alertarmos você imediatamente se encontrarmos alguma coisa."
+      ],
+      "Data retention policies": [
+        "Políticas de retenção de dados"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Bate-papo de IA Privada (${ LUMO_APP_NAME })"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN com bloqueador de anúncios e proteção contra malware"
       ]
     },
     "new_plans: feature highlight": {
@@ -20711,6 +20733,9 @@
       ],
       "You’re invited to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
         "Junte-se a mais de 100 milhões de pessoas que escolheram manter o controle sobre seus dados com o ecossistema criptografado da ${ BRAND_NAME }."
+      ],
+      "Confirm payment": [
+        "Confirmar pagamento"
       ]
     },
     "Signup label": {
