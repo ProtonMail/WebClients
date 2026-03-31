@@ -68,6 +68,9 @@
       "Copy meeting link": [
         "Vergaderlink kopiëren"
       ],
+      "Copy room link": [
+        "Kopieer de link naar de ruimte"
+      ],
       "Create a free account": [
         "Maak een gratis account aan"
       ],
@@ -82,9 +85,6 @@
       ],
       "Delete": [
         "Verwijderen"
-      ],
-      "Delete meeting": [
-        "Verwijder vergadering"
       ],
       "Disable ${ participantName }'s video": [
         "Video van ${ participantName } uitschakelen"
@@ -119,9 +119,6 @@
       "Edit email address": [
         "Wijzig e-mailadres"
       ],
-      "Edit meeting": [
-        "Bewerk vergadering"
-      ],
       "Edit phone number": [
         "Wijzig telefoonnummer"
       ],
@@ -142,6 +139,9 @@
       ],
       "Forgot password?": [
         "Wachtwoord vergeten?"
+      ],
+      "Generate a new meeting link.": [
+        "Genereer een nieuwe link naar de vergadering"
       ],
       "Get Meet Professional": [
         "Krijg Meet Professional"
@@ -172,9 +172,6 @@
       ],
       "Join meeting": [
         "Deelnemen aan vergadering"
-      ],
-      "Join via link": [
-        "Deelnemen via link"
       ],
       "Kick out": [
         "Verwijderen"
@@ -344,6 +341,9 @@
       "Tap to unblock audio playback": [
         "Tik om audio te deblokkeren"
       ],
+      "The current link will stop working.": [
+        "De huidige koppeling zal stoppen met werken"
+      ],
       "Try again": [
         "Opnieuw proberen"
       ],
@@ -429,9 +429,6 @@
       ],
       "Rotate camera": [
         "Camera roteren"
-      ],
-      "Rotate personal meeting link": [
-        "Roteer persoonlijke vergadering link"
       ],
       "Screen share": [
         "Scherm delen"
@@ -1424,9 +1421,6 @@
     "Description": {
       "Rotating group encryption key for best security": [
         "Roterende groep encryptie sleutel voor optimale beveiliging"
-      ],
-      "Setting up group end-to-end encryption with advanced Messaging Layer Security (MLS)": [
-        "Instellen van groep end-to-end encryptie met geavanceerde Messaging Layer Security (MLS)"
       ]
     },
     "emergency_access": {
@@ -1662,20 +1656,12 @@
         "Diensten"
       ]
     },
-    "Header": {
-      "Speak freely again - every call is end-to-end encrypted": [
-        "Spreek weer vrijuit: elk gesprek is end-to-end versleuteld"
-      ]
-    },
     "Headline": {
       "${ createAnActionAction } or ${ signInAction } to access your personal room and create new rooms": [
         "${ createAnActionAction } of ${ signInAction } om toegang te krijgen tot uw persoonlijke ruimte en nieuwe ruimtes aan te maken"
       ],
       "${ createAnActionAction } or ${ signInAction } to schedule meetings": [
         "${ createAnActionAction } of ${ signInAction } om vergaderingen te plannen"
-      ],
-      "Your conversations ${ matterWord }": [
-        "Uw gesprekken ${ matterWord }"
       ]
     },
     "Human verification method": {
@@ -1716,9 +1702,6 @@
       ],
       "${ reactorNames } reacted with ${ emoji }": [
         "${ reactorNames } reageerde met ${ emoji }"
-      ],
-      "${ totalParticipantCount } of ${ maxParticipants } participants": [
-        "${ totalParticipantCount } van ${ maxParticipants } deelnemers"
       ],
       "${ totalParticipantCount } participant": [
         "${ totalParticipantCount } deelnemer",
@@ -1925,9 +1908,6 @@
       "Loading...": [
         "Laden..."
       ],
-      "matter": [
-        "doet ertoe"
-      ],
       "Meet without restrictions": [
         "Meet zonder beperkingen"
       ],
@@ -2120,8 +2100,8 @@
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
         "De host heeft u uit deze vergadering verwijderd. Als dit een vergissing was, vraag de host dan om u opnieuw uit te nodigen."
       ],
-      "This is an end-to-end encrypted chat with ephemeral messages. After you leave the call, you will not be able to access this chat.": [
-        "Dit is een end-to-end versleuteld gesprek met kortstondige berichten. Nadat u het gesprek verlaat, kunt u dit gesprek niet meer openen."
+      "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
+        "Dit is een begin-tot-eind versleutelde chat met vergankelijke berichten, die verdwijnen aan het einde van het gesprek."
       ],
       "This meeting is being recorded": [
         "Deze sessie wordt opgenomen"
@@ -2131,9 +2111,6 @@
       ],
       "This meeting is password protected": [
         "Deze vergadering is beveiligd met een wachtwoord"
-      ],
-      "This meeting is protected by end-to-end encryption with Messaging Layer Security (MLS).": [
-        "Deze vergadering is beveiligd met end-to-end encryptie met Messaging Layer Security (MLS)."
       ],
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
         "Deze vergadering is geopend in de desktop-app ${ MEET_APP_NAME }."
@@ -2445,6 +2422,9 @@
       ],
       "Learn more": [
         "Meer informatie"
+      ],
+      "privacy policy": [
+        "privacybeleid"
       ],
       "Request an invite": [
         "Uitnodiging aanvragen"
@@ -2815,9 +2795,6 @@
       ],
       "Personal meeting room": [
         "Persoonlijke vergaderruimte"
-      ],
-      "Protecting meeting with end-to-end encryption...": [
-        "Vergadering wordt beveiligd met end-to-end-versleuteling..."
       ],
       "Publications": [
         "Publicaties"
