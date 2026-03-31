@@ -302,6 +302,9 @@
       "Continue import": [
         "Continuare importare"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Continuare cu ${ planOrAppName }"
+      ],
       "Continue with categories": [
         "Continuare cu categorii"
       ],
@@ -1769,6 +1772,11 @@
         "Licențe ${ LUMO_APP_NAME }: ${ seats }",
         "Licențe ${ LUMO_APP_NAME }: ${ seats }",
         "Licențe ${ LUMO_APP_NAME }: ${ seats }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "Licențe ${ MEET_APP_NAME } incluse: ${ seats }",
+        "Licențe ${ MEET_APP_NAME } incluse: ${ seats }",
+        "Licențe ${ MEET_APP_NAME } incluse: ${ seats }"
       ],
       "${ seats } writing assistant seat": [
         "Licențe asistent de scriere: ${ seats }",
@@ -4194,6 +4202,9 @@
       "We didn't find any known trackers and tracking URLs in this email.": [
         "Nu am găsit instrumente de urmărire și adrese URL cunoscute în acest e-mail."
       ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Ne pare rău să vă vedem plecând. Dacă aveți un moment, am aprecia foarte mult să aflăm de ce doriți să anulați. Feedback-ul dvs. ne ajută să facem ${ BRAND_NAME } mai bun pentru toată lumea."
+      ],
       "When do you want your message to be sent?": [
         "Când doriți să fie trimis mesajul?"
       ],
@@ -6583,6 +6594,15 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } vă poate proteja și afacerea."
       ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } este o soluție de videoconferință criptată bilateral. Adăugați-o la planul personal pentru a găzdui conferințe securizate."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Licențe ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } video conferencing": [
+        "Conferințe video ${ MEET_APP_NAME }"
+      ],
       "${ n } unread conversation": [
         "Conversații necitite: ${ n }",
         "Conversații necitite: ${ n }",
@@ -6809,6 +6829,9 @@
       ],
       "Ad targeting": [
         "Publicitate țintită"
+      ],
+      "Add ${ MEET_APP_NAME }": [
+        "Adăugare ${ MEET_APP_NAME }"
       ],
       "Add image URL": [
         "Adăugare URL imagine"
@@ -7390,6 +7413,9 @@
       "Folder": [
         "Folder"
       ],
+      "for ${ price }": [
+        "cu ${ price }"
+      ],
       "For additional information and to remove restrictions, please login at ${ mailLink }.": [
         "Pentru informații suplimentare și pentru a elimina restricțiile, conectați-vă la ${ mailLink }."
       ],
@@ -7553,9 +7579,7 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine",
-        "Inserare imagini",
-        "Inserare imagini"
+        "Inserare imagine"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -7651,7 +7675,7 @@
         "Prioritate scăzută"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "Setare ${ MAIL_APP_NAME } ca aplicație implicită de e-mail."
+        "Setați ${ MAIL_APP_NAME } ca aplicație implicită de e-mail."
       ],
       "Manage your folders": [
         "Gestionare foldere"
@@ -9356,6 +9380,9 @@
       "Add to group": [
         "Adăugare la grup"
       ],
+      "Additional comments": [
+        "Comentarii adiționale"
+      ],
       "Address": [
         "Adresa"
       ],
@@ -9500,6 +9527,9 @@
       "Contacts": [
         "Contacte"
       ],
+      "Continue cancelling": [
+        "Continuare anulare"
+      ],
       "Copy": [
         "Copiere"
       ],
@@ -9538,9 +9568,6 @@
       ],
       "Did not follow instructions": [
         "Nu a urmat instrucțiunile"
-      ],
-      "Do you have any suggestions for our team?": [
-        "Aveți sugestii pentru echipa noastră?"
       ],
       "Don't ask again": [
         "Nu mă mai întreba"
@@ -9740,6 +9767,9 @@
       "Main": [
         "Principală"
       ],
+      "Main reason for cancelling": [
+        "Motiv principal pentru anulare"
+      ],
       "Manage categories": [
         "Gestionare categorii"
       ],
@@ -9935,11 +9965,17 @@
       "Sender": [
         "Expeditor"
       ],
+      "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
+        "Partajați-vă disponibilitatea prin paginile de rezervare în ${ CALENDAR_APP_NAME } și găzduiți conferințe securizate cu ${ MEET_APP_NAME }."
+      ],
       "Sign emails": [
         "Semnare mesaje"
       ],
       "Size:": [
         "Mărime:"
+      ],
+      "Skip feedback": [
+        "Omitere feedback"
       ],
       "Social": [
         "Rețele sociale"
@@ -10057,9 +10093,6 @@
       ],
       "What happened?": [
         "Ce s-a întâmplat?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Care este motivul principal pentru anulare sau retrogradare?"
       ],
       "Which category should this be recategorized under?": [
         "Sub ce categorie ar trebui să fie recategorizat?"
@@ -10561,6 +10594,19 @@
         "Gunoi"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } licență"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Licențe ${ MEET_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "Licențe ${ MEET_APP_NAME }: ${ seats }",
+        "Licențe ${ MEET_APP_NAME }: ${ seats }",
+        "Licențe ${ MEET_APP_NAME }: ${ seats }"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: conferințe video confidențiale pentru conversațiile importante"
@@ -10617,6 +10663,16 @@
         "Maxim participanți: ${ n }",
         "Maxim participanți: ${ n }",
         "Maxim participanți: ${ n }"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "Licențe incluse: ${ seats }",
+        "Licențe incluse: ${ seats }",
+        "Licențe incluse: ${ seats }"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } licențe în perioada de probare."
       ]
     },
     "Message": {
@@ -12659,6 +12715,9 @@
       "Anderson": [
         "Andrei"
       ],
+      "Anything you'd like us to know": [
+        "Orice ați dori să știm"
+      ],
       "Anytown": [
         "București"
       ],
@@ -12679,6 +12738,9 @@
       ],
       "End date": [
         "Data de sfârșit"
+      ],
+      "Enter a name": [
+        "Introduceți un nume"
       ],
       "Enter passphrase": [
         "Introduceți fraza de acces"
@@ -12776,6 +12838,9 @@
       "Select": [
         "Selectare"
       ],
+      "Select a provider": [
+        "Selectați un furnizor"
+      ],
       "Select a reason": [
         "Selectați un motiv"
       ],
@@ -12784,9 +12849,6 @@
       ],
       "Select state": [
         "Selectare țară"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Spuneți-ne ce credeți că ar face să fie mai bun ${ BRAND_NAME }"
       ],
       "Start date": [
         "Dată început"
@@ -12937,6 +12999,26 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Mesaj oficial de la ${ BRAND_NAME }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Altul"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {

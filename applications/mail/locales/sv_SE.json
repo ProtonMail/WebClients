@@ -301,6 +301,9 @@
       "Continue import": [
         "Fortsätt import"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Fortsätt till ${ planOrAppName }"
+      ],
       "Continue with categories": [
         "Fortsätt med kategorier"
       ],
@@ -1763,6 +1766,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME }-licens",
         "${ seats } ${ LUMO_APP_NAME }-licenser"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME }-licens",
+        "${ seats } ${ MEET_APP_NAME }-licenser"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } skrivassistentplats",
@@ -6686,6 +6693,9 @@
       "Ad targeting": [
         "Målgruppsanpassning av annonser"
       ],
+      "Add ${ MEET_APP_NAME }": [
+        "Lägg till ${ MEET_APP_NAME }"
+      ],
       "Add image URL": [
         "Lägga till bild-URL"
       ],
@@ -7249,6 +7259,9 @@
       "Folder": [
         "Mapp"
       ],
+      "for ${ price }": [
+        "för ${ price }"
+      ],
       "For additional information and to remove restrictions, please login at ${ mailLink }.": [
         "För ytterligare information och för att ta bort begränsningar, logga in på ${ mailLink }."
       ],
@@ -7409,8 +7422,7 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -9153,6 +9165,9 @@
       "Add to group": [
         "Lägg till i grupp"
       ],
+      "Additional comments": [
+        "Ytterligare kommentarer"
+      ],
       "Address": [
         "Adress"
       ],
@@ -9297,6 +9312,9 @@
       "Contacts": [
         "Kontakter"
       ],
+      "Continue cancelling": [
+        "Fortsätt avbryta"
+      ],
       "Copy": [
         "Kopiera"
       ],
@@ -9335,9 +9353,6 @@
       ],
       "Did not follow instructions": [
         "Följde inte instruktionerna"
-      ],
-      "Do you have any suggestions for our team?": [
-        "Har du några förslag till vårt team?"
       ],
       "Don't ask again": [
         "Fråga inte igen"
@@ -9732,11 +9747,17 @@
       "Sender": [
         "Avsändare"
       ],
+      "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
+        "Dela din tillgänglighet med bokningssidor i ${ CALENDAR_APP_NAME } och håll säkra möten med ${ MEET_APP_NAME }."
+      ],
       "Sign emails": [
         "Signera e-post"
       ],
       "Size:": [
         "Storlek:"
+      ],
+      "Skip feedback": [
+        "Hoppa över feedback"
       ],
       "Social": [
         "Socialt"
@@ -9854,9 +9875,6 @@
       ],
       "What happened?": [
         "Vad hände?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Vad är din främsta anledning till att du avbryter eller nedgraderar?"
       ],
       "Which category should this be recategorized under?": [
         "Vilken kategori ska detta omkategoriseras under?"
@@ -10351,6 +10369,11 @@
       ],
       "Trash": [
         "Papperskorg"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME }-licens"
       ]
     },
     "meet_2025: Feature": {
@@ -11744,6 +11767,12 @@
       "Switch your accounts to ${ BRAND_NAME }": [
         "Byt dina konton till ${ BRAND_NAME }"
       ],
+      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
+        "Att byta e-post är svårt. ${ BRAND_NAME } gör det enkelt. Anslut ditt gamla konto och hantera allt i en fokuserad, annonsfri arbetsyta."
+      ],
+      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
+        "Uppdatera din e-post på de tjänster du använder mest. Förhindra spårning och skydda din integritet."
+      ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "Välkommen till ${ MAIL_APP_NAME }"
       ]
@@ -12398,6 +12427,9 @@
       "Anderson": [
         "Andersson"
       ],
+      "Anything you'd like us to know": [
+        "Något du vill att vi ska veta"
+      ],
       "Anytown": [
         "Alingsås"
       ],
@@ -12418,6 +12450,9 @@
       ],
       "End date": [
         "Slutdatum"
+      ],
+      "Enter a name": [
+        "Ange ett namn"
       ],
       "Enter passphrase": [
         "Ange lösenfras"
@@ -12515,6 +12550,9 @@
       "Select": [
         "Välj"
       ],
+      "Select a provider": [
+        "Välj en leverantör"
+      ],
       "Select a reason": [
         "Välj en anledning"
       ],
@@ -12523,9 +12561,6 @@
       ],
       "Select state": [
         "Välj delstat"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Dela vad du tror som skulle göra ${ BRAND_NAME } bättre"
       ],
       "Start date": [
         "Startdatum"
@@ -12672,6 +12707,26 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Officiell e-post från ${ BRAND_NAME }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Annat"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {
