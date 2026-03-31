@@ -124,15 +124,17 @@ const getBundleTitle = (a: string, b: string) => {
 
 const getPlanTitle = (selected: string, trial?: boolean) => {
     if (trial) {
-        // translator: full sentence is, for example, "Try Proton Business Suite free for 14 days"
+        // translator: full sentence is, for example, "Try Workspace Standard free for 14 days"
         const freeForNDays = (
             <span className="color-success" key="free-for-n-days">{c('b2b_trials_2025_Info')
                 .t`free for ${TRIAL_DURATION_DAYS} days`}</span>
         );
-        // translator: ${selected} is title of a subscription plan, for example can be "Proton Business Suite",
-        // translator: then the whole is "Your Proton Business Suite plan"
+        // translator: full sentence is, for example, "Try Workspace Standard free for 14 days"
         return c('b2b_trials_2025_Info').jt`Try ${selected} ${freeForNDays}`;
     }
+
+    // translator: ${selected} is title of a subscription plan, for example can be "Workspace Standard",
+    // translator: then the whole is "Your Workspace Standard plan"
     return c('vpn_2step: info').t`Your ${selected} plan`;
 };
 
