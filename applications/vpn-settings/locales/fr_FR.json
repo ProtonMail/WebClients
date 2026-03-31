@@ -224,6 +224,9 @@
       "Continue import": [
         "Continuer l'importation"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Continuer vers ${ planOrAppName }"
+      ],
       "Continue with this password": [
         "Continuer avec ce mot de passe"
       ],
@@ -1235,6 +1238,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } accès ${ LUMO_APP_NAME }",
         "${ seats } accès à ${ LUMO_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } licence ${ MEET_APP_NAME }",
+        "${ seats } licences ${ MEET_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } accès à l'assistant d'écriture",
@@ -3501,6 +3508,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Utilisez ce guide pour que votre organisation bénéficie rapidement du chiffrement et de l’écosystème de respect de la vie privée de pointe de ${ BRAND_NAME }."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Nous regrettons de vous voir partir. Si vous avez un moment, nous aimerions beaucoup savoir pourquoi vous souhaitez résilier votre abonnement. Vos commentaires nous aident à améliorer ${ BRAND_NAME } pour le bénéfice de tous."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Vous pouvez importer des événements au format iCal (fichier ICS). Le fichier peut avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et contenir jusqu'à ${ MAX_IMPORT_EVENTS_STRING } événements. Si votre fichier est plus volumineux, nous vous invitons à le diviser en plusieurs fichiers plus petits."
@@ -5962,6 +5972,15 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } peut également être utilisé avec un mot de passe unique qui remplace le mot de passe de connexion et le second mot de passe. Pour basculer vers le mode à mot de passe unique, saisissez le mot de passe unique que vous souhaitez utiliser et cliquez sur Enregistrer."
       ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } est une solution de visioconférence chiffrée de bout en bout. Ajoutez-la à votre abonnement pour organiser des réunions sécurisées."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "accès ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } video conferencing": [
+        "Vidéoconférence ${ MEET_APP_NAME }"
+      ],
       "${ n } address": [
         "${ n } adresse",
         "${ n } adresses"
@@ -6191,6 +6210,9 @@
       ],
       "Activity Monitor": [
         "Surveillance des activités"
+      ],
+      "Add ${ MEET_APP_NAME }": [
+        "Ajouter ${ MEET_APP_NAME }"
       ],
       "add a recovery method": [
         "ajouter une méthode de récupération"
@@ -6776,6 +6798,9 @@
       ],
       "finance": [
         "finance"
+      ],
+      "for ${ price }": [
+        "pour ${ price }"
       ],
       "for choosing ${ product }": [
         "d'avoir choisi ${ product }"
@@ -8714,6 +8739,9 @@
       "Add group member": [
         "Ajouter un membre au groupe"
       ],
+      "Additional comments": [
+        "Commentaires supplémentaires"
+      ],
       "Address": [
         "Adresse"
       ],
@@ -8876,6 +8904,9 @@
       "Contacts": [
         "Contacts"
       ],
+      "Continue cancelling": [
+        "Continuer l'annulation"
+      ],
       "Copy": [
         "Copier"
       ],
@@ -8932,9 +8963,6 @@
       ],
       "Display name": [
         "Nom d'affichage"
-      ],
-      "Do you have any suggestions for our team?": [
-        "Avez-vous des suggestions pour notre équipe ?"
       ],
       "Domain": [
         "Domaine"
@@ -9115,6 +9143,9 @@
       ],
       "Main": [
         "Principale"
+      ],
+      "Main reason for cancelling": [
+        "Raison principale de l'annulation"
       ],
       "Manage categories": [
         "Gérer les catégories"
@@ -9354,6 +9385,9 @@
       "Single sign-on URL": [
         "URL d’authentification unique"
       ],
+      "Skip feedback": [
+        "Ignorer les commentaires"
+      ],
       "Spam": [
         "Indésirables/spam"
       ],
@@ -9449,9 +9483,6 @@
       ],
       "What is the main reason you are deleting your account?": [
         "Quelle est la principale raison pour laquelle vous supprimez votre compte ?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Quelle est la principale raison pour laquelle vous annulez votre abonnement ou passez à un abonnement inférieur ?"
       ],
       "Who can send to this group address?": [
         "Qui peut envoyer des messages à cette adresse de groupe ?"
@@ -9966,6 +9997,22 @@
         "Configurez votre compte avec votre domaine Porkbun."
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (pour ${ quantity } utilisateur)",
+        "${ MEET_APP_NAME } (pour ${ quantity } utilisateurs)"
+      ],
+      "${ MEET_APP_NAME } license": [
+        "licence ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "accès ${ MEET_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } accès ${ MEET_APP_NAME }",
+        "${ seats } accès ${ MEET_APP_NAME }"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME } : Conférence vidéo confidentielle pour les conversations qui comptent"
@@ -10018,6 +10065,26 @@
       "Up to ${ n } participant": [
         "Jusqu'à ${ n } participant",
         "Jusqu'à ${ n } participants"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } accès inclus",
+        "${ seats } accès incluses"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Vous pouvez bénéficier de jusqu’à ${ TRIAL_MAX_MEET_SEATS } accès à ${ MEET_SHORT_APP_NAME } pendant la période d’essai."
+      ]
+    },
+    "Meet_launch": {
+      "Add ${ planName }": [
+        "Ajouter ${ planName }"
+      ],
+      "Confidential video conferencing for the conversations that matter. Only ${ priceString } more each month.": [
+        "Vidéoconférences confidentielles pour les conversations qui comptent. Seulement ${ priceString } de plus par mois."
+      ],
+      "Talk privately with ${ planName }": [
+        "Parlez en privé avec ${ planName }"
       ]
     },
     "Member action": {
@@ -11246,8 +11313,8 @@
       "Daily email notifications": [
         "Notifications quotidiennes par e-mail"
       ],
-      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
-        "En désactivant cette option, vous ne recevrez plus de notifications dans les applications ${ BRAND_NAME }."
+      "Disabling this means you won't get in-app notifications about promotions, new features, new ${ BRAND_NAME } services, and reminders.": [
+        "Si vous désactivez cette option, vous ne recevrez plus de notifications dans l'application concernant les promotions, les nouvelles fonctionnalités, les nouveaux services de ${ BRAND_NAME } et les rappels."
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Pendant votre premier mois d'utilisation d'un produit ${ BRAND_NAME }"
@@ -12322,6 +12389,9 @@
       "Anderson": [
         "Durant"
       ],
+      "Anything you'd like us to know": [
+        "Y a-t-il autre chose que vous aimeriez nous faire savoir"
+      ],
       "Anytown": [
         "Boisclair"
       ],
@@ -12360,6 +12430,9 @@
       ],
       "End date": [
         "Date de fin"
+      ],
+      "Enter a name": [
+        "Saisissez un nom"
       ],
       "Enter name": [
         "Saisir un nom"
@@ -12424,6 +12497,9 @@
       "Select": [
         "Sélectionnez"
       ],
+      "Select a provider": [
+        "Sélectionnez un fournisseur"
+      ],
       "Select a reason": [
         "Sélectionnez une raison."
       ],
@@ -12432,9 +12508,6 @@
       ],
       "Select state": [
         "Sélectionner l'état"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Dites-nous ce qui, selon vous, pourrait améliorer ${ BRAND_NAME }."
       ],
       "Start date": [
         "Date de début"
@@ -12576,6 +12649,26 @@
       ],
       "Unknown": [
         "Inconnu"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Autre"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {
@@ -14265,10 +14358,6 @@
         "${ ipAddresses } serveur dédié",
         "${ ipAddresses } serveurs dédiés"
       ],
-      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
-        "${ LUMO_APP_NAME } pour ${ maxLumo } utilisateur.",
-        "${ LUMO_APP_NAME } pour ${ maxLumo } utilisateurs."
-      ],
       "${ n } calendar per user": [
         "${ n } calendrier par utilisateur",
         "${ n } calendriers par utilisateur"
@@ -14292,6 +14381,10 @@
       "${ n } VPN connection per user": [
         "${ n } connexion VPN par utilisateur",
         "${ n } connexions VPN par utilisateur"
+      ],
+      "${ productName } for ${ count } user": [
+        "${ productName } pour ${ count } utilisateur",
+        "${ productName } pour ${ count } utilisateurs."
       ],
       "${ UsedAddresses } address": [
         "${ UsedAddresses } adresse",

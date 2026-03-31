@@ -224,6 +224,9 @@
       "Continue import": [
         "Працягнуць імпартаванне"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Працягнуць у ${ planOrAppName }"
+      ],
       "Continue with this password": [
         "Працягнуць з гэтым паролем"
       ],
@@ -1249,6 +1252,12 @@
         "${ seats } ліцэнзіі ${ LUMO_APP_NAME }",
         "${ seats } ліцэнзій ${ LUMO_APP_NAME }",
         "${ seats } ліцэнзій ${ LUMO_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ліцэнзія ${ MEET_APP_NAME }",
+        "${ seats } ліцэнзіі ${ MEET_APP_NAME }",
+        "${ seats } ліцэнзій ${ MEET_APP_NAME }",
+        "${ seats } ліцэнзій ${ MEET_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } ліцэнзія памочніка ў напісанні",
@@ -3551,6 +3560,9 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Выкарыстоўвайце гэты дапаможнік, каб ваша арганізацыя хутка змагла атрымаць перавагі ад ${ BRAND_NAME }. Дадзеная экасістэма з'яўляецца адной з лепшых у галіне шыфравання і прыватнасці."
       ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Нам шкада, што вы пакідаеце нас. Мы будзем вам вельмі ўдзячныя, калі вы знойдзеце крыху часу паведаміць аб прычынах скасавання сваёй падпіскі. Вашы водгукі дапамагаюць зрабіць ${ BRAND_NAME } яшчэ лепш для кожнага карыстальніка."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Вы можаце імпартаваць падзеі ў фармаце iCal (файл ICS). Максімальна памер файла павінен быць ${ MAX_IMPORT_FILE_SIZE_STRING } і мець не больш за ${ MAX_IMPORT_EVENTS_STRING } падзей. Падзяліце свой файл на меншыя часткі, калі ён занадта вялікі."
       ]
@@ -4430,6 +4442,9 @@
       ],
       "Primary address key is not decrypted.": [
         "Ключ асноўнага адраса не расшыфраваны."
+      ],
+      "Private users can be added to group once they've signed in for the first time: ${ displayedNames }": [
+        "Прыватныя карыстальнікі могуць быць дададзены ў групу пасля першага ўваходу: ${ displayedNames }"
       ],
       "Process aborted": [
         "Працэс перарваны"
@@ -6095,6 +6110,15 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "Вы таксама можаце выкарыстоўваць ${ MAIL_APP_NAME } у рэжыме аднаго пароля, які замяняе сабой пароль ад уваходу і другі пароль. Для пераключэння ў рэжым аднаго пароля, увядзіце адзіны пароль, які вы хочаце выкарыстоўваць, а потым націсніце \"Захаваць\"."
       ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } — гэта зашыфраванае скразным метадам рашэнне для відэаканферэнцый. Дадайце яго ў свой тарыфны план, каб праводзіць бяспечныя сустрэчы."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Ліцэнзіі ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } video conferencing": [
+        "Відэаканферэнцыя ${ MEET_APP_NAME }"
+      ],
       "${ n } address": [
         "${ n } адрас",
         "${ n } адрасы",
@@ -6364,6 +6388,9 @@
       ],
       "Activity Monitor": [
         "Манітор актыўнасці"
+      ],
+      "Add ${ MEET_APP_NAME }": [
+        "Дадаць ${ MEET_APP_NAME }"
       ],
       "add a recovery method": [
         "дададзены спосаб аднаўлення"
@@ -6979,6 +7006,9 @@
       ],
       "finance": [
         "фінансы"
+      ],
+      "for ${ price }": [
+        "за ${ price }"
       ],
       "for choosing ${ product }": [
         "за выбар ${ product }"
@@ -7877,6 +7907,9 @@
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Завяршэнне падпіскі: перазапусціце сваю падпіску ў Google Play Store да ${ byDate }, каб далей пакінуць перавагі ${ planName }. ${ reactivateLink }"
       ],
+      "Subscription starts on ${ startsOnTime }": [
+        "Падпіска пачнецца ${ startsOnTime }"
+      ],
       "Summary": [
         "Зводка"
       ],
@@ -8143,6 +8176,9 @@
       ],
       "Total VPN connections": [
         "Колькасць падключэнняў па VPN"
+      ],
+      "Trial ends on ${ formattedPeriodEndDate }": [
+        "Пробны перыяд міне ${ formattedPeriodEndDate }"
       ],
       "trusted device": [
         "даверанай прыладзе"
@@ -8975,6 +9011,9 @@
       "Add group member": [
         "Дадаць удзельніка групы"
       ],
+      "Additional comments": [
+        "Дадатковыя каментарыі"
+      ],
       "Address": [
         "Адрас"
       ],
@@ -9137,6 +9176,9 @@
       "Contacts": [
         "Кантакты"
       ],
+      "Continue cancelling": [
+        "Працягнуць скасаванне"
+      ],
       "Copy": [
         "Капіяваць"
       ],
@@ -9193,9 +9235,6 @@
       ],
       "Display name": [
         "Бачнае імя"
-      ],
-      "Do you have any suggestions for our team?": [
-        "Ці ёсць у вас нейкія прапановы для нашай каманды?"
       ],
       "Domain": [
         "Дамен"
@@ -9376,6 +9415,9 @@
       ],
       "Main": [
         "Галоўная"
+      ],
+      "Main reason for cancelling": [
+        "Галоўная прычына скасавання"
       ],
       "Manage categories": [
         "Кіраванне катэгорыямі"
@@ -9617,6 +9659,9 @@
       "Single sign-on URL": [
         "Адзіны ўваход URL-адраса"
       ],
+      "Skip feedback": [
+        "Прапусціць водгук"
+      ],
       "Spam": [
         "Спам"
       ],
@@ -9712,9 +9757,6 @@
       ],
       "What is the main reason you are deleting your account?": [
         "Якая асноўная прычына выдалення вашага ўліковага запісу?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Якая ваша асноўная прычына скасавання або паніжэння тарыфнага плана?"
       ],
       "Who can send to this group address?": [
         "Хто можа адпраўляць лісты на гэты адрас групы?"
@@ -10241,6 +10283,26 @@
         "Наладзьце свой уліковы запіс з дапамогай дамена Porkbun."
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (за ${ quantity } карыстальніка)",
+        "${ MEET_APP_NAME } (за ${ quantity } карыстальнікаў)",
+        "${ MEET_APP_NAME } (за ${ quantity } карыстальнікаў)",
+        "${ MEET_APP_NAME } (за ${ quantity } карыстальнікаў)"
+      ],
+      "${ MEET_APP_NAME } license": [
+        "Ліцэнзія ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Ліцэнзіі ${ MEET_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ліцэнзія ${ MEET_APP_NAME }",
+        "${ seats } ліцэнзіі ${ MEET_APP_NAME }",
+        "${ seats } ліцэнзій ${ MEET_APP_NAME }",
+        "${ seats } ліцэнзій ${ MEET_APP_NAME }"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: канфідэнцыйныя відэаканферэнцыі для важных размоў"
@@ -10301,6 +10363,28 @@
         "Да ${ n } удзельнікаў",
         "Да ${ n } удзельнікаў",
         "Да ${ n } удзельнікаў"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } ліцэнзія ўключана",
+        "${ seats } ліцэнзіі ўключана",
+        "${ seats } ліцэнзій уключана",
+        "${ seats } ліцэнзій уключана"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "У вас можа быць да ${ TRIAL_MAX_MEET_SEATS } ліцэнзій ${ MEET_SHORT_APP_NAME } на працягу пробнага перыяду."
+      ]
+    },
+    "Meet_launch": {
+      "Add ${ planName }": [
+        "Дадаць ${ planName }"
+      ],
+      "Confidential video conferencing for the conversations that matter. Only ${ priceString } more each month.": [
+        "Канфідэнцыяльныя відэаканферэнцыі для важных размоў. Толькі на ${ priceString } больш кожны месяц."
+      ],
+      "Talk privately with ${ planName }": [
+        "Размаўляйце прыватна з ${ planName }"
       ]
     },
     "Member action": {
@@ -11589,8 +11673,8 @@
       "Daily email notifications": [
         "Штодзённыя апавяшчэнні па электроннай пошце"
       ],
-      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
-        "Адключэнне гэтага параметра правядзе да выдалення магчымасці атрымліваць апавяшчэнні ў праграмах ${ BRAND_NAME }"
+      "Disabling this means you won't get in-app notifications about promotions, new features, new ${ BRAND_NAME } services, and reminders.": [
+        "Адключэнне гэтай функцыі азначае, што вы не будзеце атрымліваць апавяшчэнні ў праграме аб акцыях, новых функцыях, новых сэрвісах ${ BRAND_NAME } і напамінах."
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "На працягу першага месяца выкарыстання прадукту ${ BRAND_NAME }"
@@ -12685,6 +12769,9 @@
       "Anderson": [
         "Маўр"
       ],
+      "Anything you'd like us to know": [
+        "Магчыма, што вы б хацелі нам яшчэ нешта паведаміць"
+      ],
       "Anytown": [
         "Полацк"
       ],
@@ -12723,6 +12810,9 @@
       ],
       "End date": [
         "Дата завяршэння"
+      ],
+      "Enter a name": [
+        "Увядзіце назву"
       ],
       "Enter name": [
         "Увядзіце назву"
@@ -12787,6 +12877,9 @@
       "Select": [
         "Выбраць"
       ],
+      "Select a provider": [
+        "Выбраць пастаўшчыка"
+      ],
       "Select a reason": [
         "Выберыце прычыну"
       ],
@@ -12795,9 +12888,6 @@
       ],
       "Select state": [
         "Выбраць штат"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Падзяліцеся сваімі думкамі, як зрабіць ${ BRAND_NAME } лепш"
       ],
       "Start date": [
         "Дата пачатку"
@@ -12943,6 +13033,26 @@
       ],
       "Unknown": [
         "Невядома"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Іншы"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Recovery Email": {
@@ -14615,12 +14725,6 @@
         "${ ipAddresses } вылучаных сервераў",
         "${ ipAddresses } вылучаных сервераў"
       ],
-      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
-        "${ LUMO_APP_NAME } для ${ maxLumo } карыстальніка",
-        "${ LUMO_APP_NAME } для ${ maxLumo } карыстальнікаў",
-        "${ LUMO_APP_NAME } для ${ maxLumo } карыстальнікаў",
-        "${ LUMO_APP_NAME } для ${ maxLumo } карыстальнікаў"
-      ],
       "${ n } calendar per user": [
         "${ n } каляндар на карыстальніка",
         "${ n } календары на карыстальніка",
@@ -14656,6 +14760,12 @@
         "${ n } падключэнні па VPN на карыстальніка",
         "${ n } падключэнняў па VPN на карыстальніка",
         "${ n } падключэнняў па VPN на карыстальніка"
+      ],
+      "${ productName } for ${ count } user": [
+        "${ productName } за ${ count } карыстальніка",
+        "${ productName } за ${ count } карыстальнікаў",
+        "${ productName } за ${ count } карыстальнікаў",
+        "${ productName } за ${ count } карыстальнікаў"
       ],
       "${ UsedAddresses } address": [
         "${ UsedAddresses } адрас",

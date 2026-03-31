@@ -224,6 +224,9 @@
       "Continue import": [
         "Continuare importare"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Continuare cu ${ planOrAppName }"
+      ],
       "Continue with this password": [
         "Continuare cu această parolă"
       ],
@@ -1242,6 +1245,11 @@
         "Licențe ${ LUMO_APP_NAME }: ${ seats }",
         "Licențe ${ LUMO_APP_NAME }: ${ seats }",
         "Licențe ${ LUMO_APP_NAME }: ${ seats }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "Licențe ${ MEET_APP_NAME } incluse: ${ seats }",
+        "Licențe ${ MEET_APP_NAME } incluse: ${ seats }",
+        "Licențe ${ MEET_APP_NAME } incluse: ${ seats }"
       ],
       "${ seats } writing assistant seat": [
         "Licențe asistent de scriere: ${ seats }",
@@ -3527,6 +3535,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Utilizați acest ghid pentru ca organizația să beneficieze imediat de criptarea și ecosistemul de confidențialitate maximă oferite de ${ BRAND_NAME } ."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Ne pare rău să vă vedem plecând. Dacă aveți un moment, am aprecia foarte mult să aflăm de ce doriți să anulați. Feedback-ul dvs. ne ajută să facem ${ BRAND_NAME } mai bun pentru toată lumea."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puteți importa evenimente în format iCal (fișier ICS). Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_EVENTS_STRING } evenimente. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici."
@@ -6036,6 +6047,15 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } poate fi utilizat și cu o singură parolă care va înlocui atât parola contului cât și parola secundară. Pentru a comuta la modul cu parolă unică, introduceți parola dorită și apăsați pe «Salvare»."
       ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } este o soluție de videoconferință criptată bilateral. Adăugați-o la planul personal pentru a găzdui conferințe securizate."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Licențe ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } video conferencing": [
+        "Conferințe video ${ MEET_APP_NAME }"
+      ],
       "${ n } address": [
         "${ n } adresă",
         "${ n } adrese",
@@ -6285,6 +6305,9 @@
       ],
       "Activity Monitor": [
         "Monitorizare activitate"
+      ],
+      "Add ${ MEET_APP_NAME }": [
+        "Adăugare ${ MEET_APP_NAME }"
       ],
       "add a recovery method": [
         "adăugat o metodă de recuperare"
@@ -6888,6 +6911,9 @@
       ],
       "finance": [
         "finanțe"
+      ],
+      "for ${ price }": [
+        "cu ${ price }"
       ],
       "for choosing ${ product }": [
         "pentru că ați ales ${ product }"
@@ -8861,6 +8887,9 @@
       "Add group member": [
         "Adăugare membru în grup"
       ],
+      "Additional comments": [
+        "Comentarii adiționale"
+      ],
       "Address": [
         "Adresa"
       ],
@@ -9023,6 +9052,9 @@
       "Contacts": [
         "Contacte"
       ],
+      "Continue cancelling": [
+        "Continuare anulare"
+      ],
       "Copy": [
         "Copiere"
       ],
@@ -9079,9 +9111,6 @@
       ],
       "Display name": [
         "Nume afișat"
-      ],
-      "Do you have any suggestions for our team?": [
-        "Aveți sugestii pentru echipa noastră?"
       ],
       "Domain": [
         "Domeniu"
@@ -9262,6 +9291,9 @@
       ],
       "Main": [
         "Principală"
+      ],
+      "Main reason for cancelling": [
+        "Motiv principal pentru anulare"
       ],
       "Manage categories": [
         "Gestionare categorii"
@@ -9502,6 +9534,9 @@
       "Single sign-on URL": [
         "URL SSO (autentificare unică)"
       ],
+      "Skip feedback": [
+        "Omitere feedback"
+      ],
       "Spam": [
         "Nedorite"
       ],
@@ -9597,9 +9632,6 @@
       ],
       "What is the main reason you are deleting your account?": [
         "Care este principalul motiv pentru care vă ștergeți contul?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Care este motivul principal pentru anulare sau retrogradare?"
       ],
       "Who can send to this group address?": [
         "Cine poate trimite mesaje la această adresă de grup?"
@@ -10120,6 +10152,24 @@
         "Setați-vă contul cu domeniul Porkbun."
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (pentru ${ quantity } utilizator)",
+        "${ MEET_APP_NAME } (pentru ${ quantity } utilizatori)",
+        "${ MEET_APP_NAME } (pentru ${ quantity } de utilizatori)"
+      ],
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } licență"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Licențe ${ MEET_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "Licențe ${ MEET_APP_NAME }: ${ seats }",
+        "Licențe ${ MEET_APP_NAME }: ${ seats }",
+        "Licențe ${ MEET_APP_NAME }: ${ seats }"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: conferințe video confidențiale pentru conversațiile importante"
@@ -10176,6 +10226,27 @@
         "Maxim participanți: ${ n }",
         "Maxim participanți: ${ n }",
         "Maxim participanți: ${ n }"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "Licențe incluse: ${ seats }",
+        "Licențe incluse: ${ seats }",
+        "Licențe incluse: ${ seats }"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Puteți avea până la ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } licențe în perioada de probare."
+      ]
+    },
+    "Meet_launch": {
+      "Add ${ planName }": [
+        "Adăugare ${ planName }"
+      ],
+      "Confidential video conferencing for the conversations that matter. Only ${ priceString } more each month.": [
+        "Videoconferințe confidențiale pentru conversațiile importante. Doar ${ priceString } în plus pe lună."
+      ],
+      "Talk privately with ${ planName }": [
+        "Discutați în privat cu ${ planName }"
       ]
     },
     "Member action": {
@@ -11436,8 +11507,8 @@
       "Daily email notifications": [
         "Notificări zilnice pe e-mail"
       ],
-      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
-        "Dezactivarea acestei opțiuni va elimina posibilitatea de a primi notificări în aplicațiile ${ BRAND_NAME }."
+      "Disabling this means you won't get in-app notifications about promotions, new features, new ${ BRAND_NAME } services, and reminders.": [
+        "Dezactivarea acestei opțiuni înseamnă că nu veți primi notificări în aplicație despre promoții, funcționalități noi, servicii noi ${ BRAND_NAME } și mementouri."
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Pe durata primei luni de utilizare a produsului ${ BRAND_NAME }"
@@ -12522,6 +12593,9 @@
       "Anderson": [
         "Andrei"
       ],
+      "Anything you'd like us to know": [
+        "Orice ați dori să știm"
+      ],
       "Anytown": [
         "București"
       ],
@@ -12560,6 +12634,9 @@
       ],
       "End date": [
         "Data de sfârșit"
+      ],
+      "Enter a name": [
+        "Introduceți un nume"
       ],
       "Enter name": [
         "Introduceți numele"
@@ -12624,6 +12701,9 @@
       "Select": [
         "Selectare"
       ],
+      "Select a provider": [
+        "Selectați un furnizor"
+      ],
       "Select a reason": [
         "Selectați un motiv"
       ],
@@ -12632,9 +12712,6 @@
       ],
       "Select state": [
         "Selectare țară"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Spuneți-ne ce credeți că ar face să fie mai bun ${ BRAND_NAME }"
       ],
       "Start date": [
         "Dată început"
@@ -12778,6 +12855,26 @@
       ],
       "Unknown": [
         "Necunoscută."
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Altul"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {
@@ -14511,11 +14608,6 @@
         "Servere dedicate: ${ ipAddresses }",
         "Servere dedicate: ${ ipAddresses }"
       ],
-      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
-        "Utilizatori ${ LUMO_APP_NAME }: ${ maxLumo }",
-        "Utilizatori ${ LUMO_APP_NAME }: ${ maxLumo }",
-        "Utilizatori ${ LUMO_APP_NAME }: ${ maxLumo }"
-      ],
       "${ n } calendar per user": [
         "Un calendar per utilizator",
         "${ n } calendare per utilizator",
@@ -14545,6 +14637,11 @@
         "O conexiune VPN per utilizator",
         "${ n } conexiuni VPN per utilizator",
         "${ n } de conexiuni VPN per utilizator"
+      ],
+      "${ productName } for ${ count } user": [
+        "${ productName } pentru ${ count } utilizator",
+        "${ productName } pentru ${ count } utilizatori",
+        "${ productName } pentru ${ count } de utilizatori"
       ],
       "${ UsedAddresses } address": [
         "o adresă",
