@@ -3,6 +3,7 @@ import { useRef, useState } from 'react';
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
 import randomIntFromInterval from '@proton/utils/randomIntFromInterval';
 
+import { useRightToLeft } from '../rightToLeft/useRightToLeft';
 import ChallengeError from './ChallengeError';
 import type { Props as ChallengeProps } from './ChallengeFrame';
 import ChallengeFrame from './ChallengeFrame';
@@ -30,11 +31,14 @@ const Challenge = ({
     const [error, setError] = useState(false);
     const [errorRetry, setErrorRetry] = useState(0);
     const challengeLogRef = useRef<ChallengeLog[]>([]);
+    const [isRTL] = useRightToLeft();
 
     const challengeSrc = (() => {
         const url = getApiSubdomainUrl('/challenge/v4/html', window.location.origin);
         url.searchParams.set('Type', `${type}`);
         url.searchParams.set('Name', name);
+        url.searchParams.set('Lang', document.documentElement.lang);
+        url.searchParams.set('Dir', isRTL ? 'rtl' : 'ltr');
         if (errorRetry) {
             url.searchParams.set('Retry', `${errorRetry}`);
         }
@@ -54,7 +58,7 @@ const Challenge = ({
 
     return (
         <ChallengeFrame
-            key={errorRetry}
+            key={challengeSrc}
             src={challengeSrc}
             errorTimeout={errorTimeout}
             className={iframeClassName}
