@@ -22,7 +22,7 @@ export const HostFreeAccountModal = ({ open, onClose, action, rejoin }: CTAModal
             </Button>
         }
         rejoin={rejoin}
-        title={c('Info').t`You left your meeting`}
+        title={c('Info').t`You left the meeting`}
         subtitle={c('Info')
             .t`Meet without restrictions. Upgrade to remove the 1-hour limit and host up to 100 participants.`}
     />
