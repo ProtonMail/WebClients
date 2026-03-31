@@ -167,6 +167,7 @@ export const getOrganizationAppRoutes = ({
 
     const canShowRetentionPolicies =
         isRetentionPoliciesEnabled &&
+        app !== APPS.PROTONVPN_SETTINGS &&
         // retention policies management is a B2B feature, only show if org is elligible for it
         isOrgActive &&
         isOrgConfigured &&
