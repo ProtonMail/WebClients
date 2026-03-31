@@ -342,9 +342,6 @@
       "Continue import": [
         "შემოტანის გაგრძელება"
       ],
-      "Continue to ${ name }": [
-        "${ name }-ზე გაგრძელება"
-      ],
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "გააგრძელეთ ${ nameToDisplay }-ით ${ maybeEmailInBrackets }"
       ],
@@ -10929,6 +10926,9 @@
       "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "ბმულს, რომელის გაფრთხილებდათ, რომ ${ BRAND_NAME }-ის ანგარიში არ გაგიმართავთ, ვადა ამოეწურა. პრობლემის გადასაწყვეტად დაუკავშირდით ჩვენს მხარდაჭერის გუნდს."
       ],
+      "The maximum donation amount is ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }": [
+        "შემოწირულობის მაქსიმალური თანხაა ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }"
+      ],
       "The most recent data update, excluding breaches.": [
         "უახლესი მონაცემების განახლება, გაჟონვების გამოკლებით."
       ],
@@ -12848,9 +12848,6 @@
       "Display name": [
         "საჩვენებელი სახელი"
       ],
-      "Do you have any suggestions for our team?": [
-        "გაქვთ რაიმე რჩევა ჩვენი გუნდისთვის?"
-      ],
       "Domain": [
         "დომენი"
       ],
@@ -13734,9 +13731,6 @@
       "What is the main reason you are deleting your account?": [
         "რა წარმოადგენს ანგარიშის წაშლის მთავარ მიზეზს?"
       ],
-      "What is your main reason for canceling or downgrading?": [
-        "რა არის მიზეზი სატარიფო გეგმის გაუქმების ან მისი დონის ჩამოწევის?"
-      ],
       "Who can send to this group address?": [
         "ვი შეუძლია გაგზავნა ამ ჯგუფის მისამართზე?"
       ],
@@ -14507,29 +14501,17 @@
       "Data never used for AI training": [
         "მონაცემები არასდროს იქნება გამოყენებული ხი-ის სავარჯიშოდ"
       ],
-      "Data retention policies": [
-        "მონაცემთა შენახვის პოლიტიკა"
-      ],
       "Document & spreadsheet editor": [
         "დოკუმენტებისა და ელექტრონული ცხრილების რედაქტორი"
       ],
       "Email writing assistant": [
         "ელფოსტის წერის დამხმარე"
       ],
-      "Everything from ${ title }, plus...": [
-        "${ title }-ის ყველაფერი, პლუს..."
-      ],
-      "Everything in Meet Professional, plus:": [
-        "ყველაფერი Meet Professional-ში, ასევე:"
-      ],
       "Open source": [
         "ღია კოდი"
       ],
       "Password manager with team vaults": [
         "პაროლების მმართველი გუნდური სეიფებით"
-      ],
-      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
-        "პირადი ხი ჩეთი (${ LUMO_SHORT_APP_NAME })"
       ],
       "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
         "პირადი და შეუზღუდავი AI ჩეთი (${ LUMO_SHORT_APP_NAME })"
@@ -14542,12 +14524,6 @@
       ],
       "Strict no-logs policy": [
         "ჩვენ არ ვინახავთ ჟურნალს"
-      ],
-      "Video meetings, ${ PAID_MAX_PARTICIPANTS } participants": [
-        "ვიდეოშეხვედრები, ${ PAID_MAX_PARTICIPANTS } მონაწილე"
-      ],
-      "VPN with ad-blocker and malware protection": [
-        "VPN რეკლამების ბლოკერით და მავნე პროგრამებისგან დაცვით"
       ]
     },
     "meet_signup_2025: title": {
@@ -15991,9 +15967,6 @@
       ],
       "Daily email notifications": [
         "ელფოსტის დღიური გაფრთხილებები"
-      ],
-      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
-        "ამის გათიშვა მოაცილებ შესაძლებლობას, მიიღოთ გაფრთხილებები ${ BRAND_NAME }-ის აპლიკაციებში"
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "${ BRAND_NAME }-ის პროდუქტის გამოყენების პირველი თვის განმავლობაში"
@@ -17756,9 +17729,6 @@
       ],
       "Select state": [
         "აირჩიეთ შტატი"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "გაგვიზიარეთ, როგორ შეგვიძლია, ${ BRAND_NAME } უკეთესი გავხადოთ"
       ],
       "Start date": [
         "საწყისი თარიღი"
@@ -19819,23 +19789,6 @@
         "მუშაობს ყველა მოწყობილობაზე"
       ]
     },
-    "Signup: Meet": {
-      "**Trusted by over 100 million** users and organizations": [
-        "**100 მილიონზე მეტი** მომხმარებლისა და ორგანიზაციის ნდობა"
-      ],
-      "Get ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
-        "${ PLAN_NAMES[PLANS.MEET_BUSINESS] }-ის მიღება"
-      ],
-      "Own a business?": [
-        "გაქვთ ბიზნესი?"
-      ],
-      "Sign up, meet privately": [
-        "დარეგისტრირდით, შეხვდით კონფიდენციალურად"
-      ],
-      "Start using ${ MEET_APP_NAME } now": [
-        "${ MEET_APP_NAME }-ის გამოყენების დაწყება"
-      ]
-    },
     "signup_2024: Feature": {
       "GDPR and HIPAA compliant": [
         "თავსებადი GDPR-თან და HIPAA-სთან"
@@ -20531,10 +20484,6 @@
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } გამოყოფილი სერვერი",
         "${ ipAddresses } გამოყოფილი სერვერი"
-      ],
-      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
-        "${ LUMO_APP_NAME } ${ maxLumo }-ის მომხმარებლისთვის",
-        "${ LUMO_APP_NAME } ${ maxLumo }-ის მომხმარებლისთვის"
       ],
       "${ n } calendar per user": [
         "${ n } კალენდარი თითოეული მომხმარებლისათვის",

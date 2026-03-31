@@ -333,9 +333,6 @@
       "Continue import": [
         "Ipagpatuloy ang pag-import"
       ],
-      "Continue to ${ name }": [
-        "Magpatuloy sa ${ name }"
-      ],
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "Magpatuloy gamit ang ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
@@ -10690,6 +10687,9 @@
       "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "Nag-expire na ang link para iulat na hindi ka nag-set up ng ${ BRAND_NAME } Account. Mangyaring makipag-ugnayan sa aming koponan ng suporta upang malutas ang isyung ito."
       ],
+      "The maximum donation amount is ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }": [
+        "Ang pinakamataas na halaga ng donasyon ay ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }"
+      ],
       "The most recent data update, excluding breaches.": [
         "Ang pinakabagong update ng data, hindi kasama ang mga breach."
       ],
@@ -12638,9 +12638,6 @@
       "Display name": [
         "Display name"
       ],
-      "Do you have any suggestions for our team?": [
-        "Mayroon ka bang anumang mungkahi para sa aming team?"
-      ],
       "Domain": [
         "Domain"
       ],
@@ -13500,9 +13497,6 @@
       "What is the main reason you are deleting your account?": [
         "Ano ang pangunahing dahilan kung bakit mo ide-delete ang iyong account?"
       ],
-      "What is your main reason for canceling or downgrading?": [
-        "Ano ang pangunahing dahilan sa pagkansela o pag-downgrade?"
-      ],
       "Who can send to this group address?": [
         "Sino ang pwedeng magpadala sa address ng pangkat na ito?"
       ],
@@ -14253,29 +14247,17 @@
       "Data never used for AI training": [
         "Hindi kailanman ginagamit ang data para sa AI training"
       ],
-      "Data retention policies": [
-        "Mga patakaran sa pagpapanatili ng data"
-      ],
       "Document & spreadsheet editor": [
         "Editor ng dokumento at spreadsheet"
       ],
       "Email writing assistant": [
         "Assistant sa pagsulat ng email"
       ],
-      "Everything from ${ title }, plus...": [
-        "Lahat mula sa ${ title }, plus..."
-      ],
-      "Everything in Meet Professional, plus:": [
-        "Lahat ng nasa Meet Professional, plus:"
-      ],
       "Open source": [
         "Open source"
       ],
       "Password manager with team vaults": [
         "Tagapamahala ng password na may mga team vault"
-      ],
-      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
-        "Pribadong AI Chat (${ LUMO_SHORT_APP_NAME })"
       ],
       "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
         "Pribado at unlimited na AI chat (${ LUMO_SHORT_APP_NAME })"
@@ -14288,12 +14270,6 @@
       ],
       "Strict no-logs policy": [
         "Mahigpit na patakaran ng walang pagtatala"
-      ],
-      "Video meetings, ${ PAID_MAX_PARTICIPANTS } participants": [
-        "Mga video meeting, ${ PAID_MAX_PARTICIPANTS } na kalahok"
-      ],
-      "VPN with ad-blocker and malware protection": [
-        "VPN na may ad-blocker at proteksyon sa malware"
       ]
     },
     "meet_signup_2025: title": {
@@ -15726,9 +15702,6 @@
       ],
       "Daily email notifications": [
         "Pang-araw-araw na mga abiso sa email"
-      ],
-      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
-        "Aalisin ng hindi pagpapagana nito ang kakayahang makatanggap ng mga abiso sa mga application ng ${ BRAND_NAME }"
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Sa iyong unang buwan ng paggamit ng produktong ${ BRAND_NAME }"
@@ -17486,9 +17459,6 @@
       ],
       "Select state": [
         "Piliin ang estado"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "I-share kung ano ang makakapagpahusay sa ${ BRAND_NAME }"
       ],
       "Start date": [
         "Petsa ng simula"
@@ -19563,26 +19533,6 @@
         "Gumagana sa lahat ng device"
       ]
     },
-    "Signup: Meet": {
-      "**Trusted by over 100 million** users and organizations": [
-        "**Pinagkakatiwalaan ng mahigit 100 milyong** user at organisasyon"
-      ],
-      "Get ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
-        "Kunin ang ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
-      ],
-      "Own a business?": [
-        "May negosyo?"
-      ],
-      "Sign up, meet privately": [
-        "Mag-sign up, makipagkita nang pribado"
-      ],
-      "Start using ${ MEET_APP_NAME } now": [
-        "Simulang gamitin ang ${ MEET_APP_NAME } ngayon"
-      ],
-      "Your account also includes access to ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME } free features.": [
-        "Kasama rin sa iyong account ang access sa ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, at mga libreng feature ng ${ PASS_SHORT_APP_NAME }."
-      ]
-    },
     "signup_2024: Feature": {
       "GDPR and HIPAA compliant": [
         "Sumusunod sa GDPR at HIPAA"
@@ -20249,10 +20199,6 @@
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } dedicated server",
         "${ ipAddresses } na dedicated server"
-      ],
-      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
-        "${ LUMO_APP_NAME } para sa ${ maxLumo } na user",
-        "${ LUMO_APP_NAME } para sa ${ maxLumo } na mga user"
       ],
       "${ n } calendar per user": [
         "${ n } kalendaryo bawat user",

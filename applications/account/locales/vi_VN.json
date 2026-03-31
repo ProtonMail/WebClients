@@ -333,9 +333,6 @@
       "Continue import": [
         "Tiếp tục nhập"
       ],
-      "Continue to ${ name }": [
-        "Tiếp tục đến ${ name }"
-      ],
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "Tiếp tục với ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
@@ -10800,6 +10797,9 @@
       "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "Liên kết báo cáo việc bạn chưa thiết lập tài khoản ${ BRAND_NAME } đã hết hạn. Vui lòng liên hệ đội ngũ hỗ trợ để giải quyết."
       ],
+      "The maximum donation amount is ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }": [
+        "Số tiền quyên góp tối đa là ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }"
+      ],
       "The most recent data update, excluding breaches.": [
         "Bản cập nhật dữ liệu gần nhất, không bao gồm các vi phạm."
       ],
@@ -12760,9 +12760,6 @@
       "Display name": [
         "Tên hiển thị"
       ],
-      "Do you have any suggestions for our team?": [
-        "Bạn có đề xuất nào cho đội ngũ của chúng tôi không?"
-      ],
       "Domain": [
         "miền"
       ],
@@ -13633,9 +13630,6 @@
       "What is the main reason you are deleting your account?": [
         "Lý do chính mà bạn xóa tài khoản là gì?"
       ],
-      "What is your main reason for canceling or downgrading?": [
-        "Lý do chính khiến bạn hủy hoặc hạ cấp là gì?"
-      ],
       "Who can send to this group address?": [
         "Ai có thể gửi đến địa chỉ nhóm này?"
       ],
@@ -14396,29 +14390,17 @@
       "Data never used for AI training": [
         "Dữ liệu không bao giờ được sử dụng để đào tạo AI"
       ],
-      "Data retention policies": [
-        "Chính sách lưu giữ dữ liệu"
-      ],
       "Document & spreadsheet editor": [
         "Trình chỉnh sửa tài liệu & bảng tính"
       ],
       "Email writing assistant": [
         "Trợ lý soạn thảo email"
       ],
-      "Everything from ${ title }, plus...": [
-        "Tất cả tính năng từ ${ title }, cộng thêm..."
-      ],
-      "Everything in Meet Professional, plus:": [
-        "Tất cả tính năng trong Meet Professional, cộng thêm:"
-      ],
       "Open source": [
         "Mã nguồn mở"
       ],
       "Password manager with team vaults": [
         "Trình quản lý mật khẩu với kho nhóm"
-      ],
-      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
-        "Trò chuyện AI riêng tư (${ LUMO_SHORT_APP_NAME })"
       ],
       "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
         "Trò chuyện AI riêng tư và không giới hạn (${ LUMO_SHORT_APP_NAME })"
@@ -14431,12 +14413,6 @@
       ],
       "Strict no-logs policy": [
         "Chính sách không ghi nhật ký nghiêm ngặt"
-      ],
-      "Video meetings, ${ PAID_MAX_PARTICIPANTS } participants": [
-        "Cuộc họp video, ${ PAID_MAX_PARTICIPANTS } người tham dự"
-      ],
-      "VPN with ad-blocker and malware protection": [
-        "VPN với trình chặn quảng cáo và bảo vệ khỏi phần mềm độc hại"
       ]
     },
     "meet_signup_2025: title": {
@@ -15850,9 +15826,6 @@
       ],
       "Daily email notifications": [
         "Thông báo email hàng ngày"
-      ],
-      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
-        "Vô hiệu hóa tính năng này sẽ xóa khả năng nhận thông báo trong các ứng dụng ${ BRAND_NAME }"
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Trong tháng đầu tiên sử dụng sản phẩm ${ BRAND_NAME }"
@@ -17600,9 +17573,6 @@
       ],
       "Select state": [
         "Chọn tiểu bang"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Chia sẻ ý kiến để giúp ${ BRAND_NAME } tốt hơn"
       ],
       "Start date": [
         "Ngày bắt đầu"
@@ -19679,26 +19649,6 @@
         "Hoạt động trên mọi thiết bị"
       ]
     },
-    "Signup: Meet": {
-      "**Trusted by over 100 million** users and organizations": [
-        "**Được hơn 100 triệu** người dùng và tổ chức tin cậy"
-      ],
-      "Get ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
-        "Nhận ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
-      ],
-      "Own a business?": [
-        "Sở hữu doanh nghiệp?"
-      ],
-      "Sign up, meet privately": [
-        "Đăng ký, họp riêng tư"
-      ],
-      "Start using ${ MEET_APP_NAME } now": [
-        "Bắt đầu sử dụng ${ MEET_APP_NAME } ngay"
-      ],
-      "Your account also includes access to ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME } free features.": [
-        "Tài khoản cũng bao gồm quyền truy cập vào các tính năng miễn phí của ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } và ${ PASS_SHORT_APP_NAME }."
-      ]
-    },
     "signup_2024: Feature": {
       "GDPR and HIPAA compliant": [
         "Tuân thủ GDPR và HIPAA."
@@ -20381,9 +20331,6 @@
       ],
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } máy chủ chuyên dụng"
-      ],
-      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
-        "${ LUMO_APP_NAME } cho ${ maxLumo } người dùng"
       ],
       "${ n } calendar per user": [
         "${ n } lịch cho mỗi người dùng"

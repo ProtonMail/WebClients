@@ -342,8 +342,8 @@
       "Continue import": [
         "Fortsett importen"
       ],
-      "Continue to ${ name }": [
-        "Fortsett til ${ name }"
+      "Continue to ${ planOrAppName }": [
+        "Fortsett til ${ planOrAppName }"
       ],
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "Fortsett med ${ nameToDisplay } ${ maybeEmailInBrackets }"
@@ -406,7 +406,7 @@
         "Opprett gratis konto nå"
       ],
       "Create Gateway": [
-        "Opprett porttjener"
+        "Opprett gateway"
       ],
       "Create label": [
         "Opprett etikett"
@@ -466,10 +466,10 @@
         "Slett videresending"
       ],
       "Delete Gateway": [
-        "Slett porttjener"
+        "Slett gateway"
       ],
       "Delete gateway": [
-        "Slett porttjener"
+        "Slett gateway"
       ],
       "Delete group": [
         "Slett gruppe"
@@ -631,7 +631,7 @@
         "Rediger filter “${ Name }”"
       ],
       "Edit Gateway": [
-        "Rediger porttjener"
+        "Rediger gateway"
       ],
       "Edit group": [
         "Rediger gruppe"
@@ -4925,6 +4925,9 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Bruk denne veiledningen for å hjelpe organisasjonen din med å dra nytte av ${ BRAND_NAME }s bransjeledende kryptering og personvernøkosystem."
       ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Vi beklager at du forlater oss. Hvis du har et øyeblikk, setter vi stor pris på å høre hvorfor du ønsker å avbryte abonnementet. Tilbakemeldingen din hjelper oss med å gjøre ${ BRAND_NAME } bedre for alle."
+      ],
       "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
         "Du kan tilpasse listen over domener der visse autofunksjoner i ${ PASS_APP_NAME }-nettleserutvidelse (automatisk utfylling, automatisk forslag, automatisk lagring) ikke skal kjøres."
       ],
@@ -6586,13 +6589,13 @@
         "IMAP-tjener kreves"
       ],
       "Impossible to create the gateway": [
-        "Umulig å opprette porttjeneren"
+        "Umulig å opprette gatewayen"
       ],
       "Impossible to edit the gateway": [
-        "Umulig å redigere porttjeneren"
+        "Umulig å redigere gatewayen"
       ],
       "Impossible to rename the gateway": [
-        "Umulig å gi porttjeneren nytt navn"
+        "Umulig å gi gatewayen nytt navn"
       ],
       "Incorrect backup password. Please try again.": [
         "Feil reservepassord. Forsøk igjen."
@@ -6850,6 +6853,9 @@
       ],
       "Primary key retrieved for ${ BRAND_NAME } user is not valid for sending": [
         "Hovednøkkel hentet for ${ BRAND_NAME }-bruker er ugyldig for sending"
+      ],
+      "Private users can be added to group once they've signed in for the first time: ${ displayedNames }": [
+        "Private brukere kan legges til i gruppen etter at de har logget på for første gang: ${ displayedNames }"
       ],
       "Process aborted": [
         "Prosessen ble avbrutt"
@@ -9320,8 +9326,8 @@
         "Legg til navn og logo for å opprette en mer personlig opplevelse for organisasjonen."
       ],
       "Adding ${ addedServerCount } gateway server": [
-        "Legger til ${ addedServerCount } porttjener",
-        "Legger til ${ addedServerCount } porttjenere"
+        "Legger til ${ addedServerCount } gateway-tjener",
+        "Legger til ${ addedServerCount } gateway-tjenere"
       ],
       "Adding an external email address will disable end-to-end encryption for all email communication within that group. Do you want to proceed?": [
         "Å legge til en ekstern e-postadresse vil deaktivere ende-til-ende-kryptering for all e-postkommunikasjon innenfor den gruppen. Vil du fortsette?"
@@ -9497,7 +9503,7 @@
         "Er du sikker på at du vil sortere etikettene dine alfabetisk?"
       ],
       "Ask your organization admin to setup Gateways.": [
-        "Be organisasjonsadministratoren om å konfigurere porttjenere."
+        "Be organisasjonsadministratoren om å konfigurere gateway-servere."
       ],
       "At least ${ BETTER_PASSWORD_LENGTH } characters": [
         "Minst ${ BETTER_PASSWORD_LENGTH } tegn"
@@ -9652,6 +9658,9 @@
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "CNET-redaktørens valgpris med en vurdering på 8.4 av 10"
       ],
+      "Code expired": [
+        "Kode utløpt"
+      ],
       "Coming soon": [
         "Kommer snart"
       ],
@@ -9719,6 +9728,9 @@
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Opprett en etikett for de importerte meldingene, et tidsintervall for denne importen og etikettene du vil importere."
       ],
+      "Create a new code on your TV and try again.": [
+        "Opprett en ny kode på TV-en og prøv igjen."
+      ],
       "Create a secure cloud for ${ value } member": [
         "Opprett en sikker sky for ${ value } medlem",
         "Opprett en sikker sky for ${ value } medlemmer"
@@ -9733,11 +9745,11 @@
         "Opprett i"
       ],
       "Create your first Gateway": [
-        "Opprett din første porttjener"
+        "Opprett din første gateway"
       ],
       "Creating gateway server: ${ serverNumber } / ${ total }": [
-        "Oppretter porttjener: ${ serverNumber } / ${ total }",
-        "Oppretter porttjenere: ${ serverNumber } / ${ total }"
+        "Oppretter gateway-tjener: ${ serverNumber } / ${ total }",
+        "Oppretter gateway-tjenere: ${ serverNumber } / ${ total }"
       ],
       "Creating your account": [
         "Oppretter kontoen din"
@@ -9812,8 +9824,8 @@
         "Sletter papirkurvinnhold og søppelpostmeldinger etter 30 dager. Hvis du slår på automatisk sletting, får meldinger som allerede er i papirkurven/søppelposten, en slettedato basert på datoen de ble flyttet dit."
       ],
       "Deleting ${ deletedServerCount } gateway server": [
-        "Sletter ${ deletedServerCount } porttjener",
-        "Sletter ${ deletedServerCount } porttjenere"
+        "Sletter ${ deletedServerCount } gateway-tjener",
+        "Sletter ${ deletedServerCount } gateway-tjenere"
       ],
       "Did you know?": [
         "Visste du at?"
@@ -9887,6 +9899,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Nedgradering vil terminere alle forbindelser til betalte ${ VPN_APP_NAME }-tjenere."
+      ],
+      "Download ${ VPN_APP_NAME }": [
+        "Last ned ${ VPN_APP_NAME }"
       ],
       "Download current logs": [
         "Last ned gjeldende logger"
@@ -10159,16 +10174,16 @@
         "Venner og familie"
       ],
       "Gateway couldn't be deleted. Please try again": [
-        "Porttjeneren kunne ikke slettes. Prøv igjen"
+        "Gatewayen kunne ikke slettes. Prøv igjen"
       ],
       "Gateway deleted": [
-        "Porttjener slettet"
+        "Gateway slettet"
       ],
       "Gateway monitor": [
-        "Overvåking av porttjener"
+        "Gateway-overvåking"
       ],
       "Gateways": [
-        "Porttjenere"
+        "Gateway-tjenere"
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Generering av ny gjenopprettingsfrase vil deaktivere den gamle."
@@ -10537,7 +10552,7 @@
         "Lær mer"
       ],
       "Learn more about Gateways": [
-        "Lær mer om porttjenere"
+        "Lær mer om gateway-tjenere"
       ],
       "learn more about Sieve programming language": [
         "lær mer om Sieve-programmeringsspråk"
@@ -10591,7 +10606,7 @@
         "Laster eduGAIN-data..."
       ],
       "Loading gateways monitoring current status.": [
-        "Laster porttjenere som overvåker gjeldende status."
+        "Laster gateway-tjenere som overvåker gjeldende status."
       ],
       "Loading preview": [
         "Laster forhåndsvisning"
@@ -10717,10 +10732,10 @@
         "Ingen mappe valgt"
       ],
       "No gateways": [
-        "Ingen porttjenere"
+        "Ingen gateway-tjenere"
       ],
       "No Gateways yet": [
-        "Ingen porttjenere enda"
+        "Ingen gateway-tjenere enda"
       ],
       "No label selected": [
         "Ingen etikett valgt"
@@ -10815,7 +10830,7 @@
         "Organisasjonsstørrelse"
       ],
       "Organize your dedicated servers into Gateways and decide which members can access them.": [
-        "Organiser dine dedikerte tjenere i porttjenere og bestem hvilke medlemmer som kan få tilgang til dem."
+        "Organiser dine dedikerte tjenere i gateway-tjenere og bestem hvilke medlemmer som kan få tilgang til dem."
       ],
       "Other": [
         "Annet"
@@ -11001,6 +11016,9 @@
       ],
       "Product reviews, rankings, or guides": [
         "Produktanmeldelser, rangeringer eller guider"
+      ],
+      "Protect this device too?": [
+        "Beskytte denne enheten også?"
       ],
       "Protect your account from quantum computing threats with quantum-resistant cryptographic keys.": [
         "Beskytt kontoen din mot kvantedatatrusler med kvantebestandige kryptografiske nøkler."
@@ -11231,6 +11249,9 @@
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Logg på ${ MAIL_APP_NAME } for å aktivere din adresse"
       ],
+      "Sign-in complete": [
+        "Pålogging fullført"
+      ],
       "Signed up": [
         "Registrert"
       ],
@@ -11319,6 +11340,9 @@
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Abonnementet avsluttes: For å beholde fordelene med ${ planName }, start abonnementet på nytt i Google Play Store innen ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription starts on ${ startsOnTime }": [
+        "Abonnementet starter ${ startsOnTime }"
       ],
       "Summary": [
         "Sammendrag"
@@ -11427,6 +11451,9 @@
       ],
       "The link to report that you didn't set up a ${ BRAND_NAME } Account has expired. Please get in touch with our support team to resolve this issue.": [
         "Koblingen for å rapportere at du ikke konfigurerte en ${ BRAND_NAME }-konto er utløpt. Ta kontakt med vår kundestøtte for å løse denne saken."
+      ],
+      "The maximum donation amount is ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }": [
+        "Det maksimale donasjonsbeløpet er ${ DONATION_MAX_MAJOR_UNIT } ${ CurrencySymbols[currency] }"
       ],
       "The most recent data update, excluding breaches.": [
         "Den nyeste dataoppdateringen, unntatt sikkerhetsbrudd."
@@ -11674,6 +11701,9 @@
       "Total: ${ totalPrice }": [
         "Totalt: ${ totalPrice }"
       ],
+      "Trial ends on ${ formattedPeriodEndDate }": [
+        "Prøveversjonen avsluttes ${ formattedPeriodEndDate }"
+      ],
       "trusted device": [
         "klarert enhet"
       ],
@@ -11690,7 +11720,7 @@
         "To-passord-modus gjør bruk av separate passord for innlogging og datadekryptering. Dette gir en mindre sikkerhetsfordel i noen situasjoner, men vi anbefaler en-passord-modus for fleste brukere. For å bytte til to-passord-modus, først angi et innloggingpassord og deretter angi et andre passord."
       ],
       "Unable to check gateways monitoring current status.": [
-        "Kan ikke sjekke porttjenere som overvåker gjeldende status."
+        "Kan ikke sjekke gateway-tjenerne som overvåker gjeldende status."
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Ikke i stand til å verifisere gjenopprettingsfilsignatur. Kontakt kundestøtte."
@@ -11975,7 +12005,7 @@
         "Når du klikker på en kobling, vil denne anti-nettfiskefunksjonen spørre deg om å bekrefte nettadressen til nettsiden."
       ],
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
-        "Når du fjerner en tjener fra en porttjener, går den inn i en 10-dagers deaktiveringsperiode. Denne tjeneren kan legges til en ny porttjener, men landet kan ikke endres."
+        "Når du fjerner en server fra en gateway, går den inn i en 10-dagers deaktiveringsperiode. Denne serveren kan legges til en ny gateway, men landet kan ikke endres."
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "Når du setter opp tofaktorautentisering, gir vi deg gjenopprettingskoder som du kan bruke til å logge på hvis du mister tilgangen til autentiseringsappen din."
@@ -12257,6 +12287,9 @@
         "Du vil da bli fakturert hver ${ renewCycle } måned for ${ renewAmountStr }. Du kan avbryte når som helst.",
         "Du vil da bli fakturert hver ${ renewCycle } måned for ${ renewAmountStr }. Du kan avbryte når som helst."
       ],
+      "You're now signed in on your TV.": [
+        "Du er nå logget inn på TV-en din."
+      ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "Du har aktivert videresending på ${ MAX_SYNC_PAID_USER } Gmail-adresse. For å legge til en til, må du først deaktivere en av dem.",
         "Du har aktivert videresending på ${ MAX_SYNC_PAID_USER } Gmail-adresser. Hvis du vil legge til en til, må du først deaktivere en av dem."
@@ -12383,7 +12416,7 @@
         "Du mister også tilgang til ${ boldPlanTitle }-funksjoner:"
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
-        "Du vil kunne legge til disse tjenerne i en annen porttjener umiddelbart."
+        "Du vil umiddelbart kunne legge til disse tjenerne i en annen gateway."
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "Du mister tilgang til ${ boldPlanTitle } på ${ boldEndDate }."
@@ -13068,6 +13101,9 @@
       "Add group member": [
         "Legg til gruppemedlem"
       ],
+      "Additional comments": [
+        "Ytterligere kommentarer"
+      ],
       "Address": [
         "Adresse"
       ],
@@ -13377,6 +13413,9 @@
       "Contacts": [
         "Kontakter"
       ],
+      "Continue cancelling": [
+        "Fortsett avbestillingen"
+      ],
       "Conversation grouping": [
         "Samtalegruppering"
       ],
@@ -13482,9 +13521,6 @@
       "Display name": [
         "Visningsnavn"
       ],
-      "Do you have any suggestions for our team?": [
-        "Har du noen forslag til teamet vårt?"
-      ],
       "Domain": [
         "Domene"
       ],
@@ -13502,6 +13538,9 @@
       ],
       "Don't show this again": [
         "Ikke vis dette igjen"
+      ],
+      "Donate ${ minimumDonation } or more to the ${ BRAND_NAME } Foundation": [
+        "Doner ${ minimumDonation } eller mer til ${ BRAND_NAME } Foundation"
       ],
       "Donation amount": [
         "Donasjonsbeløp"
@@ -13624,7 +13663,7 @@
         "Fra: ${ fromEmail }"
       ],
       "Gateway name": [
-        "Navn på porttjener"
+        "Navn på gateway"
       ],
       "Get everything in Free, plus:": [
         "Få alt i Free, pluss:"
@@ -13784,6 +13823,9 @@
       ],
       "Main": [
         "Hjem"
+      ],
+      "Main reason for cancelling": [
+        "Hovedårsaken til kanselleringen"
       ],
       "Manage categories": [
         "Administrer kategorier"
@@ -14167,6 +14209,9 @@
       "Single sign-on URL": [
         "URL for enkel pålogging"
       ],
+      "Skip feedback": [
+        "Hopp over tilbakemelding"
+      ],
       "SMTP port": [
         "SMTP-port"
       ],
@@ -14373,9 +14418,6 @@
       ],
       "What is the main reason you are deleting your account?": [
         "Hva er hovedårsaken til at du sletter kontoen din?"
-      ],
-      "What is your main reason for canceling or downgrading?": [
-        "Hva er hovedgrunnen til å kansellere eller nedgradere?"
       ],
       "Who can send to this group address?": [
         "Hvem kan sende til denne gruppeadressen?"
@@ -15167,29 +15209,17 @@
       "Data never used for AI training": [
         "Data blir aldri brukt til KI-trening"
       ],
-      "Data retention policies": [
-        "Retningslinjer for dataoppbevaring"
-      ],
       "Document & spreadsheet editor": [
         "Dokument- og regnearkredigering"
       ],
       "Email writing assistant": [
         "Assistent for e-postskriving"
       ],
-      "Everything from ${ title }, plus...": [
-        "Alt fra ${ title }, pluss..."
-      ],
-      "Everything in Meet Professional, plus:": [
-        "Alt i Meet Professional, pluss:"
-      ],
       "Open source": [
         "Åpen kildekode"
       ],
       "Password manager with team vaults": [
         "Passordbehandler med teamhvelv"
-      ],
-      "Private AI Chat (${ LUMO_SHORT_APP_NAME })": [
-        "Privat KI-chat (${ LUMO_SHORT_APP_NAME })"
       ],
       "Private and unlimited AI chat (${ LUMO_SHORT_APP_NAME })": [
         "Privat og ubegrenset KI-chat (${ LUMO_SHORT_APP_NAME })"
@@ -15202,12 +15232,6 @@
       ],
       "Strict no-logs policy": [
         "Strenge retningslinjer mot loggføring"
-      ],
-      "Video meetings, ${ PAID_MAX_PARTICIPANTS } participants": [
-        "Videomøter, ${ PAID_MAX_PARTICIPANTS } deltakere"
-      ],
-      "VPN with ad-blocker and malware protection": [
-        "VPN med annonseblokkering og skadevarebeskyttelse"
       ]
     },
     "meet_signup_2025: title": {
@@ -16203,7 +16227,7 @@
         "200 GB med skylagring som lar deg lagre, synkronisere og dele filer lett. Sikret med ende-til-ende-kryptering."
       ],
       "Advanced network security and access management with dedicated secure Gateways": [
-        "Avansert nettverkssikkerhet og tilgangsadministrasjon med dedikerte sikre porttjenere"
+        "Avansert nettverkssikkerhet og tilgangsadministrasjon med dedikerte sikre gateway-tjenere"
       ],
       "Advanced protection for teams that goes beyond industry standards.": [
         "Avansert beskyttelse for team som går utover industristandarder."
@@ -16460,7 +16484,7 @@
         "På samme måte som en mappe, er et hvelv en praktisk måte å organisere elementene dine på."
       ],
       "Lock down your company resources from the public internet and make them accessible only via your private gateways": [
-        "Lås bedriftens ressurser fra det offentlige internett og gjør dem bare tilgjengelige via dine private porttjenere."
+        "Lås bedriftens ressurser fra det offentlige internett og gjør dem bare tilgjengelige via dine private gatewayer."
       ],
       "Manage your subscription, including customization of your plan. Payment methods accepted are credit card, PayPal, cryptocurrency, and wire transfer.": [
         "Behandle abonnementet ditt, inkludert tilpasning av planen din. Betalingsmåter akseptert er kredittkort, PayPal, kryptovaluta og bankoverføring."
@@ -16636,7 +16660,7 @@
         "Støtte for mange plattformer"
       ],
       "Private gateways": [
-        "Private porttjenere"
+        "Private gateway-servere"
       ],
       "Support for ${ n } custom email domain": [
         "Støtte for ${ n } egendefinert e-postdomene",
@@ -16701,8 +16725,8 @@
       "Daily email notifications": [
         "Daglige e-postvarslinger"
       ],
-      "Disabling this will remove the ability to receive notifications in ${ BRAND_NAME } applications": [
-        "Deaktivering av dette vil fjerne muligheten til å motta varsler i ${ BRAND_NAME }-applikasjoner"
+      "Disabling this means you won't get in-app notifications about promotions, new features, new ${ BRAND_NAME } services, and reminders.": [
+        "Ved å deaktivere dette, vil du ikke motta varsler i appen om kampanjer, nye funksjoner, nye ${ BRAND_NAME }-tjenester og påminnelser."
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "I løpet av den første måneden du bruker et ${ BRAND_NAME }-produkt"
@@ -18409,6 +18433,9 @@
       "Anderson": [
         "Andersen"
       ],
+      "Anything you'd like us to know": [
+        "Er det noe mer du vil at vi skal vite om"
+      ],
       "Anytown": [
         "By"
       ],
@@ -18450,6 +18477,9 @@
       ],
       "End date": [
         "Sluttdato"
+      ],
+      "Enter a name": [
+        "Skriv inn et navn"
       ],
       "Enter name": [
         "Skriv inn navn"
@@ -18529,6 +18559,9 @@
       "Select": [
         "Velg"
       ],
+      "Select a provider": [
+        "Velg en leverandør"
+      ],
       "Select a reason": [
         "Velg en årsak"
       ],
@@ -18537,9 +18570,6 @@
       ],
       "Select state": [
         "Velg stat"
-      ],
-      "Share what you think could make ${ BRAND_NAME } better": [
-        "Del det du tror kan gjøre ${ BRAND_NAME } bedre"
       ],
       "Start date": [
         "Startdato"
@@ -18801,6 +18831,26 @@
       ],
       "Unknown": [
         "Ukjent"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Annen"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {
@@ -19898,7 +19948,7 @@
         "inaktiv"
       ],
       "pending": [
-        "ventende"
+        "klargjøres"
       ],
       "to be created": [
         "skal opprettes"
@@ -20679,6 +20729,9 @@
       "Yearly": [
         "Årlig"
       ],
+      "You are all set": [
+        "Du er klar"
+      ],
       "Your plan": [
         "Planen din"
       ],
@@ -20702,6 +20755,9 @@
       "Email address": [
         "E-postadresse"
       ],
+      "Name shown in meetings": [
+        "Navn vist i møter"
+      ],
       "Organization name": [
         "Organisasjonsnavn"
       ],
@@ -20710,6 +20766,12 @@
       ],
       "Username": [
         "Brukernavn"
+      ],
+      "Your email": [
+        "Din e-post"
+      ],
+      "Your password": [
+        "Ditt passord"
       ]
     },
     "signup: Action": {
@@ -20812,23 +20874,23 @@
       ]
     },
     "Signup: Meet": {
-      "**Trusted by over 100 million** users and organizations": [
-        "**Betrodd av over 100 millioner** brukere og organisasjoner"
+      "Choose your display name to continue": [
+        "Velg visningsnavnet ditt for å fortsette"
       ],
-      "Get ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
-        "Skaff deg ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      "Choose your display name to continue scheduling your meeting": [
+        "Velg visningsnavnet ditt for å fortsette å planlegge møtet"
       ],
-      "Own a business?": [
-        "Eier du en bedrift?"
+      "Create a ${ BRAND_NAME } account": [
+        "Opprett en ${ BRAND_NAME }-konto"
       ],
-      "Sign up, meet privately": [
-        "Registrer deg, møt privat"
+      "Create your ${ BRAND_NAME } account to create rooms": [
+        "Opprett din ${ BRAND_NAME }-konto for å opprette rom"
       ],
-      "Start using ${ MEET_APP_NAME } now": [
-        "Begynn å bruke ${ MEET_APP_NAME } nå"
+      "Create your ${ BRAND_NAME } account to schedule a meeting": [
+        "Opprett en ${ BRAND_NAME }-konto for å planlegge et møte"
       ],
-      "Your account also includes access to ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME } free features.": [
-        "Kontoen din inkluderer også tilgang til gratis funksjoner for ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ PASS_SHORT_APP_NAME }."
+      "Create your ${ BRAND_NAME } account to use your personal room": [
+        "Opprett din ${ BRAND_NAME }-konto for å bruke ditt personlige rom"
       ]
     },
     "signup_2024: Feature": {
@@ -21550,10 +21612,6 @@
       "${ ipAddresses } dedicated server": [
         "${ ipAddresses } dedikert tjener",
         "${ ipAddresses } dedikerte tjenere"
-      ],
-      "${ LUMO_APP_NAME } for ${ maxLumo } user": [
-        "${ LUMO_APP_NAME } for ${ maxLumo } bruker",
-        "${ LUMO_APP_NAME } for ${ maxLumo } brukere"
       ],
       "${ n } calendar per user": [
         "${ n } kalender per bruker",
@@ -22945,13 +23003,13 @@
         "Opprett ${ selectedUserIds.length } brukere"
       ],
       "Create a new Gateway": [
-        "Opprett en ny porttjener"
+        "Opprett en ny gateway"
       ],
       "Create a new gateway": [
-        "Opprett en ny porttjener"
+        "Opprett en ny gateway"
       ],
       "Create Gateway": [
-        "Opprett porttjener"
+        "Opprett gateway"
       ],
       "Create multiple user accounts": [
         "Opprett flere brukerkontoer"
@@ -23189,7 +23247,7 @@
         "Rediger filter"
       ],
       "Edit Gateway ${ currentName }": [
-        "Rediger porttjener ${ currentName }"
+        "Rediger gateway ${ currentName }"
       ],
       "Edit invoice note": [
         "Rediger fakturanota"
@@ -23207,7 +23265,7 @@
         "Rediger Sieve-filter"
       ],
       "Edit the list of servers of the gateway": [
-        "Rediger listen over tjenere for porttjeneren"
+        "Rediger listen over tjenere for gatewayen"
       ],
       "Edit user": [
         "Rediger bruker"
@@ -23216,7 +23274,7 @@
         "Rediger brukere"
       ],
       "Edit who can access the gateway": [
-        "Rediger hvem som har tilgang til porttjeneren"
+        "Rediger hvem som har tilgang til gatewayen"
       ],
       "Email": [
         "E-post"
@@ -23334,19 +23392,19 @@
         "Free"
       ],
       "Gateway": [
-        "Porttjener"
+        "Gateway"
       ],
       "Gateway monitor": [
-        "Overvåking av porttjener"
+        "Gateway-overvåking"
       ],
       "Gateway monitor disabled": [
-        "Overvåking av porttjener er deaktivert"
+        "Overvåking av gateway er deaktivert"
       ],
       "Gateway monitor enabled": [
-        "Overvåking av porttjener er aktivert"
+        "Gateway-overvåking aktivert"
       ],
       "Gateways": [
-        "Porttjenere"
+        "Gateway-tjenere"
       ],
       "General": [
         "Generelt"
@@ -23773,7 +23831,7 @@
         "Fjern bruker?"
       ],
       "Rename the gateway": [
-        "Gi porttjeneren nytt navn"
+        "Gi gatewayen nytt navn"
       ],
       "Report a problem": [
         "Rapporter et problem"
@@ -25094,7 +25152,7 @@
     },
     "VPN Gateways": {
       "VPN Gateways": [
-        "VPN-porttjenere"
+        "VPN-gatewayer"
       ]
     },
     "VPN info": {
@@ -25365,7 +25423,7 @@
         "Feilrapporter er ikke ende-til-ende-kryptert, ikke send noe sensitiv informasjon."
       ],
       "Servers in this gateway will enter a 10-day deactivation period. These servers can be added to a new Gateway, but their country cannot be changed.": [
-        "Tjenere i denne porttjeneren vil gå inn i en 10-dagers deaktiveringsperiode. Disse tjenerne kan legges til en ny porttjener, men landet deres kan ikke endres."
+        "Servere i denne gatewayen vil gå inn i en 10-dagers deaktiveringsperiode. Disse serverne kan legges til en ny gateway, men landet deres kan ikke endres."
       ],
       "Skip verification?": [
         "Hopp over bekreftelse?"
