@@ -493,7 +493,7 @@ const PlanSelection = (props: Props) => {
         onChangePlanIDs,
         onChangeCurrency,
         onChangeCycle,
-        audience,
+        audience: maybeAudience,
         onChangeAudience,
         selectedProductPlans,
         onChangeSelectedProductPlans,
@@ -524,6 +524,23 @@ const PlanSelection = (props: Props) => {
         ...props,
         user,
     });
+
+    const audience = (() => {
+        // Some apps don't display all plans. This is a problem on for example meet, where it only displays B2B plans.
+        // This is problematic for regional currencies since it only uses main currencies. If the audience is wrong (b2c by default)
+        // it would display a blank page.
+        const availableAudiences = [
+            IndividualPlans.length > 0 && Audience.B2C,
+            FamilyPlans.length > 0 && Audience.FAMILY,
+            B2BPlans.length > 0 && Audience.B2B,
+        ].filter(isTruthy);
+        // Attempt to normalize the audience to what is actually available
+        if (availableAudiences.length > 0 && availableAudiences.some((audience) => maybeAudience !== audience)) {
+            return availableAudiences[0];
+        }
+        // Otherwise just accept it
+        return maybeAudience;
+    })();
 
     const availableCurrencies = availableCurrenciesByAudience[audience];
 
@@ -980,8 +997,9 @@ const PlanSelection = (props: Props) => {
 
                         const audienceTab = tabs[tabNumber];
 
-                        const hasPlansWithSelectedCurrency =
-                            audienceTab.plans.some((it) => isPlan(it) && it.Currency === currency);
+                        const hasPlansWithSelectedCurrency = audienceTab.plans.some(
+                            (it) => isPlan(it) && it.Currency === currency
+                        );
 
                         if (!hasPlansWithSelectedCurrency && isRegionalCurrency(currency)) {
                             onChangeCurrency(getFallbackCurrency(currency));
