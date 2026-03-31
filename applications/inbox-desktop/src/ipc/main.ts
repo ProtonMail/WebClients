@@ -41,10 +41,22 @@ import { showPrintDialog } from "../utils/printing/print";
 import { handleLogoutIPC } from "../utils/logout/logout";
 import { profiler } from "../utils/profiler/profiler";
 import { startOAuthSession, clearOAuthSession } from "../utils/oauthProcess";
+import { sentryReport } from "../utils/sentryReport";
 
 function isValidClientUpdateMessage(message: unknown): message is IPCInboxClientUpdateMessage {
     return Boolean(message && typeof message === "object" && "type" in message && "payload" in message);
 }
+
+const reportIPCHandlerFailureToSentry = (ipcChannel: string, messageType: string, error?: unknown) => {
+    sentryReport.reportMessage("IPC handler threw", {
+        level: "error",
+        error: error instanceof Error ? error : undefined,
+        tags: {
+            ipcChannel: ipcChannel,
+            messageType: messageType,
+        },
+    });
+};
 
 export const handleIPCCalls = () => {
     ipcMain.on("hasFeature", (event: IpcMainEvent, message: keyof typeof DESKTOP_FEATURES) => {
@@ -65,6 +77,7 @@ export const handleIPCCalls = () => {
                     break;
             }
         } catch (error) {
+            reportIPCHandlerFailureToSentry("getUserInfo", message, error);
             ipcLogger.error(`getUserInfo handler threw for message type "${message}":`, error);
             event.returnValue = null;
         }
@@ -117,6 +130,7 @@ export const handleIPCCalls = () => {
                     break;
             }
         } catch (error) {
+            reportIPCHandlerFailureToSentry("getInfo", message, error);
             ipcLogger.error(`getInfo handler threw for message type "${message}":`, error);
             event.returnValue = null;
         }
@@ -272,6 +286,7 @@ export const handleIPCCalls = () => {
                     break;
             }
         } catch (error) {
+            reportIPCHandlerFailureToSentry("clientUpdate", type, error);
             ipcLogger.error(`clientUpdate handler threw for message type "${type}":`, error);
         }
         profiler.ipcMessage("clientUpdate", type, performance.now() - _t);
@@ -295,6 +310,7 @@ export const handleIPCCalls = () => {
                         return null;
                 }
             } catch (error) {
+                reportIPCHandlerFailureToSentry("getAsyncData", message, error);
                 ipcLogger.error(`getAsyncData handler threw for message type "${message}":`, error);
                 return null;
             }
