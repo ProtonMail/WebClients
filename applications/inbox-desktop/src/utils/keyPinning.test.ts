@@ -1,9 +1,15 @@
 import { Request } from "electron";
-import { verifyDownloadCertificate, VerificationResult } from "./keyPinning";
+import { checkKeys, verifyDownloadCertificate, VerificationResult } from "./keyPinning";
+import { sentryReport } from "./sentryReport";
 
 jest.mock("electron", () => ({
     app: { on: jest.fn(), isPackaged: true },
 }));
+
+jest.mock("./sentryReport");
+
+jest.mock("./isProdEnv", () => ({ isProdEnv: jest.fn(() => true) }));
+jest.mock("./urls/urlTests", () => ({ isHostAllowed: jest.fn(() => true) }));
 
 const CERTIFICATE_DATA_rsa4096_badssl_com = `-----BEGIN CERTIFICATE-----
 MIIF8TCCBNmgAwIBAgISA/X7F7ww9TqyWle5qFeJa4fqMA0GCSqGSIb3DQEBCwUA
@@ -90,6 +96,31 @@ function test_verifyDownloadCertificate(hostname: string, certificateData: strin
     expect(mockCallback).toHaveBeenCalledWith(wantResult);
 }
 
+describe("checkKeys", () => {
+    beforeEach(() => {
+        jest.clearAllMocks();
+    });
+
+    test("reports to Sentry with app-session context on cert pinning failure", () => {
+        const r = {
+            hostname: "proton.me",
+            validatedCertificate: {
+                data: CERTIFICATE_DATA_rsa4096_badssl_com,
+            },
+        } as Request;
+
+        checkKeys(r);
+
+        expect(sentryReport.reportMessage).toHaveBeenCalledWith(
+            "certificate pinning failed",
+            expect.objectContaining({
+                level: "fatal",
+                tags: expect.objectContaining({ context: "app-session", hostname: "proton.me" }),
+            }),
+        );
+    });
+});
+
 describe("key pinning", () => {
     test("verifyDownloadCertificate is accepted from proton.me", () => {
         test_verifyDownloadCertificate("proton.me", CERTIFICATE_DATA_proton_me, VerificationResult.Accept);
@@ -108,6 +139,18 @@ describe("key pinning", () => {
             "https://expired.badssl.com",
             CERTIFICATE_DATA_rsa4096_badssl_com,
             VerificationResult.UseVerificationFromChromium,
+        );
+    });
+
+    test("reports to Sentry with download-session context on cert pinning failure", () => {
+        test_verifyDownloadCertificate("proton.me", CERTIFICATE_DATA_rsa4096_badssl_com, VerificationResult.Reject);
+
+        expect(sentryReport.reportMessage).toHaveBeenCalledWith(
+            "certificate pinning failed",
+            expect.objectContaining({
+                level: "fatal",
+                tags: expect.objectContaining({ context: "download-session", hostname: "proton.me" }),
+            }),
         );
     });
 });
