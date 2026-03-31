@@ -39,8 +39,12 @@ import { mainLogger, rendererLogger, viewLogger } from "../log";
 import { CHANGE_VIEW_TARGET } from "@proton/shared/lib/desktop/desktopTypes";
 import { PRINT_DATA_URL_PREFIX } from "../printing/print";
 import { isDynamicOAuthURL } from "../oauthProcess";
+import { sentryReport } from "../sentryReport";
 
 const RENDERER_LOG_MAX_MESSAGE_LENGTH = 500;
+
+// Report renderer unresponsive once per session per view, as the event can fire repeatedly during a single hang episode.
+const unresponsiveReported = new Set<string>();
 
 export function handleWebContents(contents: WebContents) {
     const logger = () => {
@@ -142,9 +146,20 @@ export function handleWebContents(contents: WebContents) {
 
     contents.on("unresponsive", () => {
         logger().error("renderer unresponsive");
+        const view = getWebContentsViewName(contents);
+        if (view === null || unresponsiveReported.has(view)) {
+            return;
+        }
+        unresponsiveReported.add(view);
+        sentryReport.reportMessage("renderer unresponsive", {
+            level: "warning",
+            tags: { view },
+        });
     });
 
     contents.on("responsive", () => {
+        // IDEA: consider reporting recovery to Sentry and pairing with the unresponsive event
+        // to measure hang duration (store start time on unresponsive, diff on responsive).
         logger().info("renderer responsive again");
     });
 

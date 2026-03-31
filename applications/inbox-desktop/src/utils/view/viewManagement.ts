@@ -39,6 +39,7 @@ import { DEFAULT_ZOOM_FACTOR, ZOOM_FACTOR_LIST, ZoomFactor } from "../../constan
 import { addHashToCurrentURL } from "../urls/urlHelpers";
 import { isWindowValid } from "./windowUtils";
 import { profiler } from "../profiler/profiler";
+import { sentryReport } from "../sentryReport";
 
 type ViewID = keyof URLConfig;
 
@@ -94,6 +95,17 @@ const NET_ERROR_CODE = {
 };
 
 export const IGNORED_NET_ERROR_CODES = [NET_ERROR_CODE.ABORTED];
+
+// Report loadURL timeouts to Sentry once per session per view, after 10 total timeouts.
+const LOAD_TIMEOUT_REPORT_THRESHOLD = 10;
+const loadTimeoutCounts = new Map<string, number>();
+
+// Report did-fail-load to Sentry once per session per view, after 5 total failures.
+const LOAD_FAIL_REPORT_THRESHOLD = 5;
+const loadFailCounts = new Map<string, number>();
+
+// Report error page asset failures once per session per view.
+const errorPageFailReported = new Set<string>();
 
 export const viewCreationAppStartup = async () => {
     mainWindow = createBrowserWindow();
@@ -488,6 +500,18 @@ export async function loadURL(viewID: ViewID, url: string, { force } = { force: 
 
         const handleLoadTimeout = () => {
             viewLogger(viewID).error("loadURL timeout", url);
+
+            const count = (loadTimeoutCounts.get(viewID) ?? 0) + 1;
+            loadTimeoutCounts.set(viewID, count);
+
+            if (count === LOAD_TIMEOUT_REPORT_THRESHOLD) {
+                sentryReport.reportMessage("loadURL timeout repeated", {
+                    level: "error",
+                    tags: { viewID },
+                    extras: { url, consecutiveTimeouts: count },
+                });
+            }
+
             showNetworkErrorPage(viewID);
             cleanup();
         };
@@ -500,6 +524,17 @@ export async function loadURL(viewID: ViewID, url: string, { force } = { force: 
 
         const handleLoadError = (_event: Event, errorCode: number, errorDescription: string) => {
             if (!IGNORED_NET_ERROR_CODES.includes(errorCode)) {
+                const failCount = (loadFailCounts.get(viewID) ?? 0) + 1;
+                loadFailCounts.set(viewID, failCount);
+
+                if (failCount === LOAD_FAIL_REPORT_THRESHOLD) {
+                    sentryReport.reportMessage("did-fail-load repeated", {
+                        level: "error",
+                        tags: { viewID, errorCode: String(errorCode) },
+                        extras: { url, errorDescription, totalFailures: failCount },
+                    });
+                }
+
                 viewLogger(viewID).error("did-fail-load", url, errorCode, errorDescription);
                 metrics.recordFailToLoadView();
                 showNetworkErrorPage(viewID);
@@ -555,6 +590,17 @@ export async function showNetworkErrorPage(viewID: ViewID): Promise<void> {
     try {
         await view.webContents.loadFile(filePath, { query });
     } catch (error) {
+        if (!errorPageFailReported.has(viewID)) {
+            errorPageFailReported.add(viewID);
+            sentryReport.reportMessage("error page asset failed to load", {
+                level: "error",
+                tags: { viewID },
+                extras: {
+                    filePath,
+                    error: error instanceof Error ? { message: error.message, stack: error.stack } : String(error),
+                },
+            });
+        }
         viewLogger(viewID).error("showNetworkErrorPage failed to load error asset:", filePath, error);
     }
 }
