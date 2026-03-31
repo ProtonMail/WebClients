@@ -182,7 +182,12 @@ export const useFolderStore = create<FolderStore>()(
         setFolder: (folder, treeEventScopeId) => set({ folder, treeEventScopeId }),
         setError: (error) => set({ error }),
         setRole: (role) => set({ role }),
-        reset: () => set(initialState),
+        reset: () =>
+            set((state) => ({
+                ...initialState,
+                sortField: state.sortField,
+                sortDirection: state.sortDirection,
+            })),
         setHasEverLoaded: () => set({ hasEverLoaded: true }),
         checkAndSetHasEverLoaded: () => {
             const state = get();
