@@ -63,7 +63,7 @@ export const UpsellBanner = ({ isPaid, hasSubscriptionWithoutMeet }: UpsellBanne
                 </div>
                 <SettingsLink
                     path={
-                        hasSubscriptionWithoutMeet ? `dashboard?addon=meet` : `/dashboard?plan=${PLANS.MEET_BUSINESS}`
+                        hasSubscriptionWithoutMeet ? `/dashboard?addon=meet` : `/dashboard?plan=${PLANS.MEET_BUSINESS}`
                     }
                     className="shrink-0"
                 >
