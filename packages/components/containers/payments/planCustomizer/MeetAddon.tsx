@@ -5,7 +5,7 @@ import { c, msgid } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { IcMinus } from '@proton/icons/icons/IcMinus';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
-import type { Plan } from '@proton/payments';
+import { PLANS, PLAN_NAMES, type Plan } from '@proton/payments';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -19,7 +19,7 @@ const MeetAddonBanner = ({ onClick, price }: { onClick: () => void; price: React
     >
         <div className="w-full">
             <p className="m-0 mb-1 text-lg">
-                <strong className="block lg:inline">{c('Info').t`Add ${MEET_APP_NAME}`}</strong>{' '}
+                <strong className="block lg:inline">{c('Info').t`Add ${PLAN_NAMES[PLANS.MEET_BUSINESS]}`}</strong>{' '}
                 {c('Info').jt`for ${price}`}
             </p>
             <p className="m-0 text-sm color-weak">
