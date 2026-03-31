@@ -68,6 +68,9 @@
       "Copy meeting link": [
         "Meeting-Link kopieren"
       ],
+      "Copy room link": [
+        "Raum-Link kopieren"
+      ],
       "Create a free account": [
         "Kostenloses Konto erstellen"
       ],
@@ -82,9 +85,6 @@
       ],
       "Delete": [
         "Löschen"
-      ],
-      "Delete meeting": [
-        "Meeting löschen"
       ],
       "Disable ${ participantName }'s video": [
         "${ participantName }s Kamera deaktivieren"
@@ -119,9 +119,6 @@
       "Edit email address": [
         "E-Mail-Adresse bearbeiten"
       ],
-      "Edit meeting": [
-        "Meeting bearbeiten"
-      ],
       "Edit phone number": [
         "Telefonnummer bearbeiten"
       ],
@@ -142,6 +139,9 @@
       ],
       "Forgot password?": [
         "Passwort vergessen?"
+      ],
+      "Generate a new meeting link.": [
+        "Neuen Meeting-Link generieren."
       ],
       "Get Meet Professional": [
         "Hol dir Meet Professional"
@@ -173,8 +173,8 @@
       "Join meeting": [
         "Meeting beitreten"
       ],
-      "Join via link": [
-        "Per Link beigetreten"
+      "Join with a link": [
+        "Mit Link beitreten"
       ],
       "Kick out": [
         "Entfernen"
@@ -338,6 +338,9 @@
       "Stop recording": [
         "Aufzeichnung stoppen"
       ],
+      "Stop recording and download video": [
+        "Aufzeichnung stoppen und Video herunterladen"
+      ],
       "Stop Recording Track Stats": [
         "Aufzeichnen von Track-Statistiken stoppen"
       ],
@@ -349,6 +352,9 @@
       ],
       "Tap to unblock audio playback": [
         "Tippe, um die Audiowiedergabe zu entsperren"
+      ],
+      "The current link will stop working.": [
+        "Der aktuelle Link wird nicht mehr funktionieren."
       ],
       "Try again": [
         "Erneut versuchen"
@@ -435,9 +441,6 @@
       ],
       "Rotate camera": [
         "Kamera drehen"
-      ],
-      "Rotate personal meeting link": [
-        "Persönlichen Meeting-Link neu generieren"
       ],
       "Screen share": [
         "Bildschirmfreigabe"
@@ -1431,11 +1434,11 @@
       ]
     },
     "Description": {
+      "Encrypting with Messaging Layer Security (MLS)": [
+        "Verschlüsselung mit Messaging Layer Security (MLS)"
+      ],
       "Rotating group encryption key for best security": [
         "Rotierender Gruppen-Verschlüsselungsschlüssel für optimale Sicherheit"
-      ],
-      "Setting up group end-to-end encryption with advanced Messaging Layer Security (MLS)": [
-        "Einrichtung der Gruppen-Ende-zu-Ende-Verschlüsselung mit erweiterter Messaging Layer Security (MLS)"
       ]
     },
     "emergency_access": {
@@ -1680,8 +1683,8 @@
       ]
     },
     "Header": {
-      "Speak freely again - every call is end-to-end encrypted": [
-        "Wieder frei sprechen können – jeder Anruf wird Ende-zu-Ende verschlüsselt"
+      "Protect your conversations with end-to-end encryption": [
+        "Deine Unterhaltungen mit Ende-zu-Ende-Verschlüsselung schützen"
       ]
     },
     "Headline": {
@@ -1691,8 +1694,8 @@
       "${ createAnActionAction } or ${ signInAction } to schedule meetings": [
         "${ createAnActionAction } oder ${ signInAction } zum Planen von Meetings"
       ],
-      "Your conversations ${ matterWord }": [
-        "Deine Unterhaltungen sind ${ matterWord }"
+      "Talk in total ${ privacyWord }": [
+        "Sprich in absoluter ${ privacyWord }"
       ]
     },
     "Human verification method": {
@@ -1734,8 +1737,8 @@
       "${ reactorNames } reacted with ${ emoji }": [
         "${ reactorNames } hat mit ${ emoji } reagiert"
       ],
-      "${ totalParticipantCount } of ${ maxParticipants } participants": [
-        "${ totalParticipantCount } von ${ maxParticipants } Teilnehmern"
+      "${ totalParticipantCount } of up to ${ maxParticipants } participants": [
+        "${ totalParticipantCount } von bis zu ${ maxParticipants } Teilnehmern"
       ],
       "${ totalParticipantCount } participant": [
         "${ totalParticipantCount } Teilnehmer",
@@ -1756,6 +1759,9 @@
       "Are you sure you want to leave?": [
         "Möchtest du das Meeting wirklich verlassen?"
       ],
+      "Are you sure you want to stop recording?": [
+        "Möchtest du die Aufzeichnung wirklich beenden?"
+      ],
       "Attention required": [
         "Aufmerksamkeit erforderlich"
       ],
@@ -1764,6 +1770,9 @@
       ],
       "By continuing in the meeting, you acknowledge and consent to being recorded.": [
         "Wenn du im Meeting bleibst, erklärst du dich damit einverstanden, dass es aufgezeichnet wird."
+      ],
+      "By joining, you agree to our ${ termsLink } and ${ privacyLink }.": [
+        "Mit der Teilnahme stimmst du unseren ${ termsLink } und ${ privacyLink } zu."
       ],
       "camera": [
         "Kamera"
@@ -1942,9 +1951,6 @@
       "Loading...": [
         "Wird geladen..."
       ],
-      "matter": [
-        "wichtig"
-      ],
       "Meet without restrictions": [
         "Meetings ohne Einschränkungen"
       ],
@@ -2062,6 +2068,9 @@
       "Premium meeting": [
         "Premium-Meeting"
       ],
+      "privacy": [
+        "Privatsphäre"
+      ],
       "Reconnected successfully": [
         "Verbindung wiederhergestellt"
       ],
@@ -2125,6 +2134,9 @@
       "Sort by": [
         "Sortieren nach"
       ],
+      "Speaker selection isn’t available in this browser. Use your system settings to choose a different speaker.": [
+        "Die Lautsprecherauswahl ist in diesem Browser nicht verfügbar. Verwende deine Systemeinstellungen, um einen anderen Lautsprecher auszuwählen."
+      ],
       "Start recording": [
         "Aufzeichnung starten"
       ],
@@ -2149,8 +2161,8 @@
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
         "Der Organisator hat dich von diesem Meeting ausgeschlossen. Sollte dies ein Fehler gewesen sein, bitte den Organisator, dich erneut einzuladen."
       ],
-      "This is an end-to-end encrypted chat with ephemeral messages. After you leave the call, you will not be able to access this chat.": [
-        "Dies ist ein Ende-zu-Ende-verschlüsselter Chat mit flüchtigen Nachrichten. Nachdem du den Anruf verlassen hast, kannst du nicht mehr auf diesen Chat zugreifen."
+      "This is an end to end encrypted chat with ephemeral messages, which disappear at the end of the call.": [
+        "Dies ist ein Ende-zu-Ende-verschlüsselter Chat mit temporären Nachrichten, die am Ende des Anrufs verschwinden."
       ],
       "This meeting is being recorded": [
         "Dieses Meeting wird aufgezeichnet"
@@ -2160,9 +2172,6 @@
       ],
       "This meeting is password protected": [
         "Dieses Meeting ist passwortgeschützt"
-      ],
-      "This meeting is protected by end-to-end encryption with Messaging Layer Security (MLS).": [
-        "Dieses Meeting ist durch Ende-zu-Ende-Verschlüsselung mit Messaging Layer Security (MLS) geschützt."
       ],
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
         "Dieses Meeting wurde in der Desktop-App ${ MEET_APP_NAME } geöffnet."
@@ -2176,14 +2185,23 @@
       "To create a room, **create a free ${ BRAND_NAME } account**. You will return to ${ MEET_APP_NAME } automatically.": [
         "Um einen Raum zu erstellen, **erstelle ein kostenloses ${ BRAND_NAME }-Konto**. Du wirst automatisch zu ${ MEET_APP_NAME } weitergeleitet."
       ],
+      "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
+        "Um einen Raum zu erstellen, benötigst du **ein kostenloses ${ BRAND_NAME }-Konto**, damit wir den Raum speichern können. Das dauert nur wenige Sekunden."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Bitte beweise, dass du ein Mensch bist, um Spam und Missbrauch zu vermeiden."
       ],
       "To schedule a meeting, **create a free ${ BRAND_NAME } account**. You will return to ${ MEET_APP_NAME } automatically.": [
         "Um ein Meeting zu planen, erstelle **ein kostenloses ${ BRAND_NAME }-Konto**. Du wirst automatisch zu ${ MEET_APP_NAME } weitergeleitet."
       ],
+      "To schedule an event, you'll need **a free ${ BRAND_NAME } Account** so we can save the event. This only takes a few seconds.": [
+        "Um einen Termin zu planen, benötigst du **ein kostenloses ${ BRAND_NAME }-Konto**, damit wir den Termin speichern können. Das dauert nur wenige Sekunden."
+      ],
       "To use your personal meeting room, **create a free ${ BRAND_NAME } account**. You will return to ${ MEET_APP_NAME } automatically.": [
         "Um deinen persönlichen Meetingraum zu nutzen, erstelle **ein kostenloses ${ BRAND_NAME }-Konto**. Du wirst automatisch zu ${ MEET_APP_NAME } weitergeleitet."
+      ],
+      "To use your personal meeting room, you'll need **a free ${ BRAND_NAME } Account**. This only takes a few seconds.": [
+        "Um deinen persönlichen Besprechungsraum zu nutzen, benötigst du **ein kostenloses ${ BRAND_NAME }-Konto**. Das dauert nur wenige Sekunden."
       ],
       "Today — ${ absoluteDate }": [
         "Heute — ${ absoluteDate }"
@@ -2481,11 +2499,17 @@
       "Learn more": [
         "Mehr erfahren"
       ],
+      "privacy policy": [
+        "Datenschutzerklärung"
+      ],
       "Request an invite": [
         "Einladung anfordern"
       ],
       "Sign in": [
         "Anmelden"
+      ],
+      "terms and conditions": [
+        "Allgemeine Geschäftsbedingungen"
       ],
       "What’s this?": [
         "Was ist das?"
@@ -2592,12 +2616,6 @@
       "E.g., ": [
         "Z. B. "
       ],
-      "e.g., Daily room, project hub": [
-        "z.B. Tägliches Meeting, Projekt-Hub"
-      ],
-      "e.g., Team sync, project update": [
-        "z. B. Teamsynchronisierung, Projektaktualisierung"
-      ],
       "Enter passphrase": [
         "Passphrase eingeben"
       ],
@@ -2613,11 +2631,17 @@
       "Loading...": [
         "Wird geladen …"
       ],
+      "Meeting name, e.g. team sync, project update, etc": [
+        "Name des Meetings, z. B. Team-Synchronisierung, Projekt-Update usw."
+      ],
       "Password": [
         "Passwort"
       ],
       "Please describe the problem and include any error messages": [
         "Bitte beschreibe das Problem und füge alle Fehlermeldungen hinzu"
+      ],
+      "Room name, e.g. team sync, project update, etc": [
+        "Raumname, z. B. Team-Synchronisation, Projekt-Update usw."
       ],
       "Schedule in ${ CALENDAR_APP_NAME }": [
         "In ${ CALENDAR_APP_NAME } planen"
@@ -2824,8 +2848,14 @@
         "Teilnahme an Meeting mit ${ participantCount } weiterem Teilnehmer…",
         "Teilnahme an Meeting mit ${ participantCount } weiteren Teilnehmern …"
       ],
+      "Launching Meeting...": [
+        "Meeting wird gestartet..."
+      ],
       "Local Participant": [
         "Lokaler Teilnehmer"
+      ],
+      "Meeting": [
+        "Meeting"
       ],
       "Meeting created": [
         "Meeting erstellt"
@@ -2856,9 +2886,6 @@
       ],
       "Personal meeting room": [
         "Persönlicher Meeting-Raum"
-      ],
-      "Protecting meeting with end-to-end encryption...": [
-        "Meeting wird Ende-zu-Ende-verschlüsselt..."
       ],
       "Publications": [
         "Veröffentlichungen"
@@ -2898,6 +2925,9 @@
       ],
       "Starting meeting as the first participant…": [
         "Startet das Meeting als erster Teilnehmer …"
+      ],
+      "Stop recording": [
+        "Aufzeichnung stoppen"
       ],
       "Talk confidentially": [
         "Vertraulich sprechen"
