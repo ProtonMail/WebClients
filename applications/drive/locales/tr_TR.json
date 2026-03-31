@@ -3975,10 +3975,10 @@
         "⚠️ Şifresi çözülemeyen ad"
       ],
       "Unable to start the search": [
-        "Arama başlatılamıyor"
+        "Arama başlatılamadı"
       ],
       "Unable to start the search: not enough storage space": [
-        "Arama başlatılamıyor: yeterli depolama alanı yok"
+        "Arama başlatılamadı: Yeterli depolama alanı yok"
       ]
     },
     "error": {
@@ -7000,7 +7000,7 @@
         "${ price } karşılığında"
       ],
       "Everything in ${ planOrAppName }, plus:": [
-        "${ planOrAppName } kapsamındaki tüm özelliklerin yanı sıra:"
+        "${ planOrAppName } tarifesindeki her şeye ek olarak:"
       ]
     },
     "info": {
@@ -8083,11 +8083,11 @@
         "${ n } katılımcı"
       ],
       "Hosts can record meetings locally on their computers": [
-        "Oturum sahipleri toplantıları kendi bilgisayarlarına yerel olarak kaydedebilirler"
+        "Oturum sahipleri görüşmeleri kendi bilgisayarlarına yerel olarak kaydedebilir"
       ],
       "Video meetings, ${ n } participant": [
-        "Görüntülü toplantılar, ${ n } katılımcı",
-        "Görüntülü toplantılar, ${ n } katılımcı"
+        "Görüntülü görüşmeler, ${ n } katılımcı",
+        "Görüntülü görüşmeler, ${ n } katılımcı"
       ]
     },
     "Message": {
@@ -8825,13 +8825,13 @@
         "${ BRAND_NAME } adreslerinizin veya takma adlarınızın sızıp sızmadığını denetlemek için karanlık ağı tararız ve herhangi bir şey bulursak sizi hemen uyarırız."
       ],
       "Data retention policies": [
-        "Veri saklama ilkeleri"
+        "Verileri tutma ilkeleri"
       ],
       "Private AI Chat (${ LUMO_APP_NAME })": [
-        "Gizli Yapay Zeka Sohbeti (${ LUMO_APP_NAME })"
+        "Gizli yapay zeka sohbeti (${ LUMO_APP_NAME })"
       ],
       "VPN with ad-blocker and malware protection": [
-        "Reklam engelleyici ve kötü amaçlı yazılım koruması içeren VPN"
+        "Reklam engelleyici ve kötü amaçlı yazılım koruması ile VPN"
       ]
     },
     "new_plans: feature highlight": {
