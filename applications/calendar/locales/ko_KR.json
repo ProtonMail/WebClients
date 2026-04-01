@@ -1092,6 +1092,9 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ LUMO_APP_NAME } 시트 ${ seats }개"
       ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } 라이선스 ${ seats }개"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats }명 글쓰기 도우미 이용 권한"
       ],
@@ -5006,6 +5009,12 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME }에는 ${ BRAND_NAME } Scribe 글쓰기 도우미가 포함됩니다."
       ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME }은 종단간 암호화된 화상 회의 솔루션입니다. 안전한 회의를 개최하기 위해 플랜에 추가해 보세요."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME }개 시트"
+      ],
       "${ MEET_APP_NAME } video call": [
         "${ MEET_APP_NAME } 화상 통화"
       ],
@@ -5122,6 +5131,9 @@
       ],
       "Ad targeting": [
         "광고 트래킹"
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } 추가"
       ],
       "Added and removed participants will be notified about all the events in this series.": [
         "추가 및 제거된 참가자는 이 시리즈의 모든 이벤트에 대해 알림을 받습니다."
@@ -5455,6 +5467,9 @@
       ],
       "Everything in ${ planOrAppName }": [
         "${ planOrAppName }(에)서 하나로"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "${ planOrAppName }(에)서의 모든 것, 게다가:"
       ],
       "Existent and added participants will be notified.": [
         "존재 및 추가된 참가자들이 알수 있습니다."
@@ -7450,6 +7465,17 @@
         "${ price }"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } 라이선스"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME }개 시트"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ MEET_APP_NAME } 시트 ${ seats }개"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: 중요한 대화를 위한 안전한 영상 회의"
@@ -7481,6 +7507,9 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "종단간 암호화된 화면 공유 및 임시 통화 중 채팅"
       ],
+      "Hosts can record meetings locally on their computers": [
+        "호스트는 자신의 컴퓨터에 회의를 로컬 녹화할 수 있습니다."
+      ],
       "Meeting recording": [
         "회의 녹화"
       ],
@@ -7498,6 +7527,17 @@
       ],
       "Up to ${ n } participant": [
         "최대 ${ n }명 참가자"
+      ],
+      "Video meetings, ${ n } participant": [
+        "${ n }명 참가자의 화상 회의"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats }개 시트 포함"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "무료 체험 기간 중 최대 ${ TRIAL_MAX_MEET_SEATS }개의 ${ MEET_SHORT_APP_NAME } 시트를 포함할 수 있습니다."
       ]
     },
     "Message": {
@@ -7953,6 +7993,9 @@
       "Data breach monitoring": [
         "데이터 유출 모니터링"
       ],
+      "Data retention policies": [
+        "데이터 보존 정책"
+      ],
       "Dedicated servers optimized for streaming": [
         "스트리밍에 최적화된 전용 서버"
       ],
@@ -8060,6 +8103,9 @@
       ],
       "Priority support & live chat": [
         "우선 지원 및 라이브 채팅"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "개인 정보 보호 AI 채팅 (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "안전한 사진 백업"
@@ -8201,6 +8247,9 @@
       ],
       "Vault sharing with up to ${ n } person": [
         "최대 ${ n }명의 사용자와 금고 공유"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "광고 차단과 멀웨어 보호 기느이 포함된 VPN"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } 주소나 별칭이 유출되었는지 확인하기 위해 다크 웹을 탐색하며 발견한 것이 있다면 즉시 알려드립니다."
