@@ -10,7 +10,6 @@ import Label from '@proton/components/components/label/Label';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import PasswordInputTwo from '@proton/components/components/v2/input/PasswordInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import TotpInputs from '@proton/components/containers/account/totp/TotpInputs';
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
@@ -28,6 +27,7 @@ import noop from '@proton/utils/noop';
 
 import Tabs from '../../components/tabs/Tabs';
 import AuthSecurityKeyContent from '../account/fido/AuthSecurityKeyContent';
+import { TotpInputField, TotpRecoveryCodeInputField } from '../account/totp/TotpInputs';
 import type { OnLoginCallback } from '../app/interface';
 import Challenge from '../challenge/Challenge';
 import ChallengeError from '../challenge/ChallengeError';
@@ -140,14 +140,17 @@ const TOTPForm = ({
             }}
             method="post"
         >
-            <TotpInputs
-                type={type}
-                code={code}
-                error={validator([requiredError])}
-                loading={loading}
-                setCode={setCode}
-                bigger={true}
-            />
+            {type === 'totp' ? (
+                <TotpInputField code={code} error={validator([requiredError])} loading={loading} setCode={setCode} />
+            ) : (
+                <TotpRecoveryCodeInputField
+                    code={code}
+                    error={validator([requiredError])}
+                    loading={loading}
+                    setCode={setCode}
+                    bigger
+                />
+            )}
             <div className="flex justify-space-between">
                 <Button size="large" fullWidth color="norm" type="submit" loading={loading}>
                     {c('Action').t`Submit`}
@@ -509,6 +512,7 @@ const MinimalLoginContainer = ({
                                 persistent: false,
                                 setupVPN: false,
                                 ktActivation: KeyTransparencyActivation.DISABLED,
+                                challengeResult: payload,
                             });
                             return await handleResult(result);
                         } catch (e) {
