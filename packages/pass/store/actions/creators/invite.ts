@@ -40,6 +40,8 @@ import { prop } from '@proton/pass/utils/fp/lens';
 import { pipe } from '@proton/pass/utils/fp/pipe';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
+const INVITE_RECOMMENDATION_ERROR = 'INVITE_RECOMMENDATION_ERROR';
+
 export const syncInvites = createAction<{ type: InviteType; invites: InviteState }>('invites::sync');
 
 export const inviteBatchCreateIntent = createAction('invite::batch::create::intent', (payload: InviteFormValues) =>
@@ -262,6 +264,7 @@ export const inviteRecommendationsFailure = createAction(
             type: 'error',
             text: c('Error').t`Could not load recommendations at the moment.`,
             error,
+            key: INVITE_RECOMMENDATION_ERROR,
         })({ payload: {} })
     )
 );
@@ -284,6 +287,7 @@ export const inviteRecommendationsSuggestedFailure = createAction(
             type: 'error',
             text: c('Error').t`Could not load recommendations at the moment.`,
             error,
+            key: INVITE_RECOMMENDATION_ERROR,
         })({ payload: {} })
     )
 );
@@ -306,6 +310,7 @@ export const inviteRecommendationsOrganizationFailure = createAction(
             type: 'error',
             text: c('Error').t`Could not load recommendations at the moment.`,
             error,
+            key: INVITE_RECOMMENDATION_ERROR,
         })({ payload: {} })
     )
 );
