@@ -13,6 +13,7 @@ import {
     getGroupMembers as coreGetGroupMembers,
     getGroups as coreGetGroups,
 } from '@proton/shared/lib/api/groups';
+import { GROUP_MEMBER_STATE } from '@proton/shared/lib/interfaces';
 
 export const getGroup = async (groupID: string): Promise<Group> => {
     const response = await api<CoreGroupGetResponse>(coreGetGroup(groupID));
@@ -32,6 +33,6 @@ export const getGroupMembers = async (groupId: string): Promise<GroupMembersResp
     return {
         groupId,
         total: response.Total,
-        members: response.Members.map(parseGroupMember),
+        members: response.Members.filter((member) => member.State === GROUP_MEMBER_STATE.ACTIVE).map(parseGroupMember),
     };
 };
