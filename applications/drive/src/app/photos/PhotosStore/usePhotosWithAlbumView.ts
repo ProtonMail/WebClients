@@ -22,6 +22,7 @@ import { sendErrorReport } from '../../utils/errorHandling';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { AlbumsPageTypes, usePhotoLayoutStore } from '../../zustand/photos/layout.store';
+import { useAlbumsStore } from '../useAlbums.store';
 import { usePhotosStore } from '../usePhotos.store';
 import { getTagFilteredPhotos } from '../utils/getTagFilteredPhotos';
 import type { MappedPhotoItem } from '../utils/mapPhotoItemToLegacy';
@@ -94,7 +95,9 @@ export const usePhotosWithAlbumsView = () => {
         clearAlbumPhotos,
     } = usePhotosWithAlbums();
 
-    const albumPhotoUids = usePhotosStore(useShallow((state) => state.albumPhotoUids));
+    const albumPhotoUids = useAlbumsStore(
+        (state): Set<string> => state.currentAlbum?.photoNodeUids ?? new Set<string>()
+    );
 
     const [selectedTags, setSelectedTags] = useState([-1]);
     const processedEventIds = useRef<Set<string>>(new Set());
@@ -267,7 +270,7 @@ export const usePhotosWithAlbumsView = () => {
             albumPhotosNodeUidToIndexMap,
             albumPhotosNodeUids,
         };
-    }, [linkState, albumPhotoUids, albumShareId, albumLinkId, linkId, shareId, photos]);
+    }, [albumLinkId, albumPhotoUids, albumShareId, linkId, linkState, photos, shareId]);
 
     const albumsView = useMemo(() => {
         if (!albums || !albums.size) {
