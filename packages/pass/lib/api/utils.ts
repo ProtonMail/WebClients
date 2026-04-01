@@ -1,9 +1,39 @@
-import type { ApiOptions, Maybe, MaybeNull } from '@proton/pass/types';
+import { authStore } from '@proton/pass/lib/auth/store';
+import type { Maybe, MaybeNull } from '@proton/pass/types';
+import type { ApiAuth, ApiOptions, ApiState } from '@proton/pass/types/api';
+import { AuthMode } from '@proton/pass/types/api';
+import { objectHandler } from '@proton/pass/utils/object/handler';
 import { msToEpoch } from '@proton/pass/utils/time/epoch';
 
 import { PassErrorCode } from './errors';
 
 export const API_BODYLESS_STATUS_CODES = [101, 204, 205, 304];
+
+/** Provides dynamic API auth options based on the current session state.
+ * Supports upgrading from token-based to cookie-based authentication.
+ * This is crucial for scenarios where token-based auth is required
+ * before transitioning to cookies, enabling seamless auth upgrades. */
+export const getDynamicAuth = (): Maybe<ApiAuth> => {
+    const { cookies, UID, AccessToken, RefreshToken, RefreshTime } = authStore.getSession();
+    if (!UID) return undefined;
+
+    if (cookies) return { type: AuthMode.COOKIE, UID, RefreshTime };
+    if (AccessToken && RefreshToken) return { type: AuthMode.TOKEN, UID, AccessToken, RefreshToken, RefreshTime };
+};
+
+export const buildApiState = () =>
+    objectHandler<ApiState>({
+        appVersionBad: false,
+        online: true,
+        pendingConnectivityChange: 0,
+        pendingCount: 0,
+        queued: [],
+        refreshing: false,
+        serverTime: undefined,
+        sessionInactive: false,
+        sessionLocked: false,
+        unreachable: false,
+    });
 
 export const getSilenced = ({ silence }: ApiOptions = {}, code: string | number): boolean =>
     Array.isArray(silence) ? silence.includes(code) : !!silence;
