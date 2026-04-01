@@ -60,7 +60,6 @@ export enum CommonFeatureFlag {
     AuthenticatorSettingsEnabled = 'AuthenticatorSettingsEnabled',
     OlesM1 = 'OlesM1',
     WebNPSModal = 'WebNPSModal',
-    MeetPlans = 'MeetPlans',
     MeetAddonCustomizer = 'MeetAddonCustomizer',
     WebApiRateLimiter = 'WebApiRateLimiter',
     PassSimpleLoginLifetimeOffer = 'PassSimpleLoginLifetimeOffer',

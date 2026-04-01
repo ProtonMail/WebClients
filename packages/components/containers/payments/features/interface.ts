@@ -53,6 +53,7 @@ export interface PlanCardFeature {
         [PLANS.VISIONARY]: PlanCardFeatureDefinition | null;
         [PLANS.VPN_PASS_BUNDLE_BUSINESS]: PlanCardFeatureDefinition | null;
         [PLANS.MEET_BUSINESS]: PlanCardFeatureDefinition | null;
+        [PLANS.MEET]: PlanCardFeatureDefinition | null;
     };
 }
 
