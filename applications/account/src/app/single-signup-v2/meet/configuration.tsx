@@ -280,13 +280,11 @@ export const getMeetConfiguration = ({
     defaultPlan,
     plansMap,
     isLargeViewport,
-    isMeetPlansEnabled,
     isNewB2BPlanEnabled,
 }: {
     defaultPlan?: string;
     plansMap?: PlansMap;
     isLargeViewport: boolean;
-    isMeetPlansEnabled: boolean;
     isNewB2BPlanEnabled: boolean;
 }): SignupConfiguration => {
     const logo = <MeetLogo variant="wordmark-only" />;
@@ -319,7 +317,7 @@ export const getMeetConfiguration = ({
     );
     const planCards: SignupConfiguration['planCards'] = {
         [Audience.B2B]: [
-            isMeetPlansEnabled && {
+            {
                 plan: PLANS.MEET_BUSINESS,
                 subsection: (
                     <CustomizeFeatureSubSection
