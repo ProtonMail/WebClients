@@ -1,7 +1,6 @@
 import { create } from 'zustand';
 import { devtools } from 'zustand/middleware';
 
-import { splitNodeUid } from '@proton/drive';
 import { getBusDriver } from '@proton/drive/internal/BusDriver';
 import type { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 
@@ -32,7 +31,6 @@ export interface PhotoItem {
 
 interface PhotosStore {
     photoTimelineUids: Set<string>;
-    albumPhotoUids: Set<string>;
     photoItems: Map<string, PhotoItem>;
 
     isLoading: boolean;
@@ -48,10 +46,7 @@ interface PhotosStore {
     removePhotoItem: (uid: string) => void;
 
     setPhotoItemWithoutTimeline: (photo: PhotoItem) => void;
-    setAlbumPhotoItems: (photos: PhotoItem[]) => void;
-    addAlbumPhotoItem: (photo: PhotoItem) => void;
-    removeAlbumPhotoItemsByLinkIds: (linkIds: string[]) => void;
-    clearAlbumPhotoUids: () => void;
+    addRelatedPhotoNodeUid: (mainPhotoNodeUid: string, relatedPhotoNodeUid: string) => void;
 
     setLoading: (loading: boolean) => void;
     setHasEverLoaded: () => void;
@@ -64,7 +59,6 @@ interface PhotosStore {
 export const usePhotosStore = create<PhotosStore>()(
     devtools((set, get) => ({
         photoTimelineUids: new Set(),
-        albumPhotoUids: new Set(),
         photoItems: new Map(),
 
         isLoading: false,
@@ -130,14 +124,10 @@ export const usePhotosStore = create<PhotosStore>()(
                 const newPhotoTimelineUids = new Set(state.photoTimelineUids);
                 newPhotoTimelineUids.delete(uid);
 
-                const newAlbumPhotoUids = new Set(state.albumPhotoUids);
-                newAlbumPhotoUids.delete(uid);
-
                 return {
                     ...state,
                     photoItems: newPhotoItems,
                     photoTimelineUids: newPhotoTimelineUids,
-                    albumPhotoUids: newAlbumPhotoUids,
                 };
             });
         },
@@ -154,71 +144,18 @@ export const usePhotosStore = create<PhotosStore>()(
             });
         },
 
-        setAlbumPhotoItems: (photos: PhotoItem[]) => {
+        addRelatedPhotoNodeUid: (mainPhotoNodeUid: string, relatedPhotoNodeUid: string) => {
             set((state) => {
-                const newAlbumPhotoUids = new Set(state.albumPhotoUids);
-                const newPhotoItems = new Map(state.photoItems);
-                for (const photo of photos) {
-                    newAlbumPhotoUids.add(photo.nodeUid);
-                    const existing = newPhotoItems.get(photo.nodeUid);
-                    newPhotoItems.set(photo.nodeUid, {
-                        ...photo,
-                        additionalInfo: photo.additionalInfo ?? existing?.additionalInfo,
-                    });
+                const existing = state.photoItems.get(mainPhotoNodeUid);
+                if (!existing || existing.relatedPhotoNodeUids.includes(relatedPhotoNodeUid)) {
+                    return state;
                 }
-                return {
-                    photoItems: newPhotoItems,
-                    albumPhotoUids: newAlbumPhotoUids,
-                };
-            });
-        },
-
-        addAlbumPhotoItem: (photo: PhotoItem) => {
-            set((state) => {
-                const newAlbumPhotoUids = new Set(state.albumPhotoUids);
-                newAlbumPhotoUids.add(photo.nodeUid);
-
                 const newPhotoItems = new Map(state.photoItems);
-                const existing = newPhotoItems.get(photo.nodeUid);
-                newPhotoItems.set(photo.nodeUid, {
-                    ...photo,
-                    additionalInfo: photo.additionalInfo ?? existing?.additionalInfo,
+                newPhotoItems.set(mainPhotoNodeUid, {
+                    ...existing,
+                    relatedPhotoNodeUids: [...existing.relatedPhotoNodeUids, relatedPhotoNodeUid],
                 });
-
-                return {
-                    photoItems: newPhotoItems,
-                    albumPhotoUids: newAlbumPhotoUids,
-                };
-            });
-        },
-
-        removeAlbumPhotoItemsByLinkIds: (linkIds: string[]) => {
-            set((state) => {
-                const newAlbumPhotoUids = new Set(state.albumPhotoUids);
-                const newPhotoItems = new Map(state.photoItems);
-                const linkIdSet = new Set(linkIds);
-                for (const nodeUid of state.albumPhotoUids) {
-                    const { nodeId: linkId } = splitNodeUid(nodeUid);
-                    if (linkIdSet.has(linkId)) {
-                        newAlbumPhotoUids.delete(nodeUid);
-                        if (!state.photoTimelineUids.has(nodeUid)) {
-                            newPhotoItems.delete(nodeUid);
-                        }
-                    }
-                }
-                return { albumPhotoUids: newAlbumPhotoUids, photoItems: newPhotoItems };
-            });
-        },
-
-        clearAlbumPhotoUids: () => {
-            set((state) => {
-                const newPhotoItems = new Map(state.photoItems);
-                for (const nodeUid of state.albumPhotoUids) {
-                    if (!state.photoTimelineUids.has(nodeUid)) {
-                        newPhotoItems.delete(nodeUid);
-                    }
-                }
-                return { albumPhotoUids: new Set(), photoItems: newPhotoItems };
+                return { photoItems: newPhotoItems };
             });
         },
 

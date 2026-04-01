@@ -16,6 +16,8 @@ import useNavigate from '../../hooks/drive/useNavigate';
 import { useShiftKey } from '../../hooks/util/useShiftKey';
 import { usePhotoLayoutStore } from '../../zustand/photos/layout.store';
 import { toggleFavorite } from '../PhotosActions/Albums';
+import { loadAlbum } from '../loaders/loadAlbum';
+import { useAlbumsStore } from '../useAlbums.store';
 import { PhotosInsideAlbumsGrid } from './PhotosInsideAlbumsGrid';
 import { AlbumCoverHeader } from './components/AlbumCoverHeader';
 import { AlbumEmptyView } from './components/AlbumEmptyView';
@@ -52,6 +54,8 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
     const updateTitle = useAppTitleUpdate();
     const [searchParams, setSearchParams] = useSearchParams();
     const { albumLinkId, albumShareId } = useParams<{ albumLinkId: string; albumShareId: string }>();
+    const photoCount = useAlbumsStore((state) => state.currentAlbum?.photoCount ?? 0);
+
     const { setPreviewNodeUid, modals } = usePhotoLayoutStore(
         useShallow((state) => ({
             setPreviewNodeUid: state.setPreviewNodeUid,
@@ -140,24 +144,29 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
     }, [isAlbumsLoading, isAlbumPhotosLoading]);
 
     useEffect(() => {
-        if (!album?.volumeId || album.permissions.isOwner) {
+        if (!album?.volumeId) {
             return;
         }
-        // Subscribe to shared album volume events so we receive updates for photos in this album.
-        // For owned albums this is already covered by subscribePhotosEventsMyUpdates.
+
+        const albumNodeUid = generateNodeUid(album.volumeId, album.linkId);
+
+        const abortController = new AbortController();
+        void loadAlbum(albumNodeUid, abortController.signal);
+
         // TODO: Use proper treeEventScopeId once albums are migrated to SDK
         const treeEventScopeId = album.volumeId;
         const context = `album-photos`;
         getBusDriver().subscribePhotosEventsScope(treeEventScopeId, context);
         return () => {
+            abortController.abort();
+            useAlbumsStore.getState().clearCurrentAlbum();
             void getBusDriver().unsubscribeSdkEventsScope(treeEventScopeId, context, 'photos');
         };
-    }, [album?.volumeId, album?.linkId, album?.permissions.isOwner]);
+    }, [album?.volumeId, album?.linkId]);
 
     if (!albumShareId || !linkId || !album || !uploadLinkId || !isInitialized || !albumLinkId) {
         return <Loader />;
     }
-    const photoCount = album.photoCount;
 
     // TODO: Album not found view [DRVWEB-4615]
     return (
@@ -189,8 +198,6 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                     rootLinkId={linkId}
                 >
                     <AlbumCoverHeader
-                        shareId={albumShareId}
-                        linkId={album.linkId}
                         album={album}
                         photoCount={photoCount}
                         onShare={() => {

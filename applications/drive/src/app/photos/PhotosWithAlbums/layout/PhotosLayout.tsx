@@ -32,6 +32,7 @@ import { useRemoveAlbumPhotosModal } from '../../PhotosModals/RemoveAlbumPhotosM
 import type { DecryptedAlbum } from '../../PhotosStore/PhotosWithAlbumsProvider';
 import { useAlbumPhotoUploadSDKStore } from '../../PhotosStore/useAlbumPhotoUploadSDK.store';
 import { usePhotosWithAlbumsView } from '../../PhotosStore/usePhotosWithAlbumView';
+import { useAlbumsStore } from '../../useAlbums.store';
 import { usePhotosStore } from '../../usePhotos.store';
 import type { MappedPhotoItem } from '../../utils/mapPhotoItemToLegacy';
 import PhotosRecoveryBanner from '../components/PhotosRecoveryBanner/PhotosRecoveryBanner';
@@ -64,7 +65,6 @@ export const PhotosLayout = () => {
         photoNodeUidToIndexMap,
 
         albums,
-        albumPhotosNodeUids,
         albumPhotos,
         albumPhotosNodeUidToIndexMap,
         photoNodeUids,
@@ -178,7 +178,6 @@ export const PhotosLayout = () => {
         return isUploadDisabled || Boolean(album && album.permissions.isEditor === false);
     }, [isUploadDisabled, currentPageType, album]);
 
-    const hasPreview = !!previewItem && currentPageType !== AlbumsPageTypes.ALBUMS;
     const previewShareId = albumShareId || shareId;
     const isGalleryOrAdmin =
         currentPageType === AlbumsPageTypes.GALLERY ||
@@ -703,20 +702,23 @@ export const PhotosLayout = () => {
         if (!previewItem || !volumeId) {
             return;
         }
-        const photoItem = usePhotosStore
-            .getState()
-            .getPhotoItem(generateNodeUid(previewItem.volumeId, previewItem.linkId));
+        const albumStore = useAlbumsStore.getState();
+        const photosStore = usePhotosStore.getState();
+        const photoItem = photosStore.getPhotoItem(generateNodeUid(previewItem.volumeId, previewItem.linkId));
 
         if (!photoItem) {
             return;
         }
         const previewableNodeUids =
-            currentPageType === AlbumsPageTypes.ALBUMSGALLERY ? albumPhotosNodeUids : photoNodeUids;
+            currentPageType === AlbumsPageTypes.ALBUMSGALLERY
+                ? // TODO: Improve this condition
+                  albumStore.currentAlbum?.photoNodeUids
+                : photosStore.photoTimelineUids;
 
         showPreviewModal({
             drive: getDriveForPhotos(),
             nodeUid: photoItem.nodeUid,
-            previewableNodeUids,
+            previewableNodeUids: previewableNodeUids ? Array.from(previewableNodeUids.values()) : [],
             onNodeChange: (nodeUid: string) => setPreviewNodeUid(nodeUid),
             onClose: () => setPreviewNodeUid(undefined),
             photos: {
@@ -729,7 +731,7 @@ export const PhotosLayout = () => {
                 onSelectCover:
                     canChangeAlbumCoverInPreview &&
                     currentPageType === AlbumsPageTypes.ALBUMSGALLERY &&
-                    album?.cover?.linkId !== splitNodeUid(photoItem.nodeUid).nodeId
+                    albumStore.currentAlbum?.coverNodeUid !== photoItem.nodeUid
                         ? () => {
                               void onSelectCoverPreview();
                           }
@@ -737,18 +739,22 @@ export const PhotosLayout = () => {
             },
         });
     }, [
-        hasPreview,
-        previewItem,
-        albumPhotosNodeUids,
-        photoNodeUids,
-        volumeId,
-        currentPageType,
-        showPreviewModal,
         canChangeAlbumCoverInPreview,
-        album?.cover?.linkId,
-        setPreviewNodeUid,
+        currentPageType,
         onSelectCoverPreview,
+        previewItem,
+        setPreviewNodeUid,
+        showPreviewModal,
+        volumeId,
     ]);
+
+    useEffect(() => {
+        void usePhotosStore.getState().subscribeToEvents('photosProvider');
+
+        return () => {
+            void usePhotosStore.getState().unsubscribeFromEvents('photosProvider');
+        };
+    }, []);
 
     if (!previewShareId || !uploadLinkId || !currentPageType || !shareId || !linkId || !volumeId) {
         return <Loader />;

@@ -6,10 +6,11 @@ import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { getSignatureIssues } from '../../utils/sdk/getSignatureIssues';
 import { isMissingNode } from '../../utils/sdk/node';
 import type { PhotoItem } from '../usePhotos.store';
+import { usePhotosStore } from '../usePhotos.store';
 
 export const createPhotoItemsFromNode = async (nodeUids: string[]): Promise<PhotoItem[] | null> => {
-    const drive = await getDriveForPhotos();
-    const photoItems = [];
+    const drive = getDriveForPhotos();
+    const photoItems: PhotoItem[] = [];
     try {
         for await (const maybeMissingNode of drive.iterateNodes(nodeUids)) {
             if (isMissingNode(maybeMissingNode)) {
@@ -18,6 +19,11 @@ export const createPhotoItemsFromNode = async (nodeUids: string[]): Promise<Phot
             const maybeNode = maybeMissingNode satisfies MaybeNode;
             const { node, photoAttributes } = getNodeEntity(maybeNode);
             if (!photoAttributes) {
+                continue;
+            }
+
+            if (photoAttributes.mainPhotoNodeUid) {
+                usePhotosStore.getState().addRelatedPhotoNodeUid(photoAttributes.mainPhotoNodeUid, node.uid);
                 continue;
             }
 

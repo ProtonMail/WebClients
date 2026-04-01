@@ -1,15 +1,54 @@
+import { getDriveForPhotos } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
+import { loadAlbum, refreshAlbumMetadata } from './loaders/loadAlbum';
+import { useAlbumsStore } from './useAlbums.store';
 import { usePhotosStore } from './usePhotos.store';
 import { createPhotoItemsFromNode } from './utils/createPhotoItemsFromNode';
 
 export const subscribeToPhotosEvents = () => {
-    const handleCreatedOrRestoredNodes = async (event: { items: { uid: string }[] }) => {
-        const store = usePhotosStore.getState();
-        const nodeUids = event.items.filter((item) => !store.photoTimelineUids.has(item.uid)).map((item) => item.uid);
-        const photoItems = await createPhotoItemsFromNode(nodeUids);
-        if (photoItems) {
-            store.setPhotoItems(photoItems);
+    const handleCreatedOrRestoredNodes = async (event: { items: { uid: string; parentUid?: string }[] }) => {
+        const photosRootFolder = await getDriveForPhotos().getMyPhotosRootFolder();
+        if (!photosRootFolder.ok) {
+            return;
+        }
+        const photosRootUid = photosRootFolder.value.uid;
+
+        const photosStore = usePhotosStore.getState();
+        const albumStore = useAlbumsStore.getState();
+        const currentAlbumNodeUid = albumStore.currentAlbum?.nodeUid;
+
+        const timelineNodeUids: string[] = [];
+        const albumNodeUids: string[] = [];
+
+        for (const item of event.items) {
+            const isNewTimelinePhoto = item.parentUid === photosRootUid && !photosStore.photoTimelineUids.has(item.uid);
+            const isNewAlbumPhoto =
+                currentAlbumNodeUid &&
+                item.parentUid === currentAlbumNodeUid &&
+                !albumStore.currentAlbum?.photoNodeUids.has(item.uid);
+
+            if (isNewTimelinePhoto) {
+                timelineNodeUids.push(item.uid);
+            } else if (isNewAlbumPhoto) {
+                albumNodeUids.push(item.uid);
+            }
+        }
+
+        const [timelineItems, albumItems] = await Promise.all([
+            timelineNodeUids.length ? createPhotoItemsFromNode(timelineNodeUids) : null,
+            albumNodeUids.length ? createPhotoItemsFromNode(albumNodeUids) : null,
+        ]);
+
+        if (timelineItems) {
+            photosStore.setPhotoItems(timelineItems);
+        }
+        if (albumItems && currentAlbumNodeUid) {
+            for (const item of albumItems) {
+                photosStore.setPhotoItemWithoutTimeline(item);
+            }
+            albumStore.addPhotoNodeUids(albumNodeUids);
+            void refreshAlbumMetadata(currentAlbumNodeUid);
         }
     };
 
@@ -24,45 +63,53 @@ export const subscribeToPhotosEvents = () => {
     );
 
     const updatedSubscription = getBusDriver().subscribe(BusDriverEventName.UPDATED_NODES, async (event) => {
-        const store = usePhotosStore.getState();
+        const photosStore = usePhotosStore.getState();
+        const albumStore = useAlbumsStore.getState();
         const timelineUids: string[] = [];
         const albumOnlyUids: string[] = [];
 
         for (const item of event.items) {
-            const inTimeline = store.photoTimelineUids.has(item.uid);
-            const inAlbum = store.albumPhotoUids.has(item.uid);
-            if (!inTimeline && !inAlbum) {
+            const inTimeline = photosStore.photoTimelineUids.has(item.uid);
+            const inAlbum = albumStore.currentAlbum?.photoNodeUids.has(item.uid) ?? false;
+            const isAlbumNode = albumStore.currentAlbum?.nodeUid == item.uid;
+            if (!inTimeline && !inAlbum && !isAlbumNode) {
                 continue;
             }
             if (item.isTrashed) {
-                store.removePhotoItem(item.uid);
+                photosStore.removePhotoItem(item.uid);
                 continue;
             }
             if (inTimeline) {
                 timelineUids.push(item.uid);
-            } else {
+            } else if (inAlbum) {
                 albumOnlyUids.push(item.uid);
+            } else if (isAlbumNode) {
+                // TODO: We need to update the SDK to not have to re-iterate all photos on album update
+                void loadAlbum(item.uid);
             }
         }
 
         const [timelineItems, albumOnlyItems] = await Promise.all([
-            createPhotoItemsFromNode(timelineUids),
-            createPhotoItemsFromNode(albumOnlyUids),
+            timelineUids.length ? createPhotoItemsFromNode(timelineUids) : null,
+            albumOnlyUids.length ? createPhotoItemsFromNode(albumOnlyUids) : null,
         ]);
         if (timelineItems) {
-            store.setPhotoItems(timelineItems);
+            photosStore.setPhotoItems(timelineItems);
         }
         if (albumOnlyItems) {
             for (const item of albumOnlyItems) {
-                store.setPhotoItemWithoutTimeline(item);
+                photosStore.setPhotoItemWithoutTimeline(item);
+            }
+            if (albumStore.currentAlbum) {
+                void refreshAlbumMetadata(albumStore.currentAlbum.nodeUid);
             }
         }
     });
 
     const handleRemovedNodes = async (event: { uids: string[] }) => {
-        const store = usePhotosStore.getState();
+        const photosStore = usePhotosStore.getState();
         for (const uid of event.uids) {
-            store.removePhotoItem(uid);
+            photosStore.removePhotoItem(uid);
         }
     };
 
