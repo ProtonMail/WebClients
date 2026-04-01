@@ -1,7 +1,7 @@
 import type { Author, MaybeNode, NodeEntity, Revision } from '@proton/drive';
 import { MemberRole, NodeType, RevisionState } from '@proton/drive';
 
-import { getNodeEntity } from './getNodeEntity';
+import { getNodeEntity, isPhotoNode } from './getNodeEntity';
 
 describe('getNodeEntity', () => {
     const mockAuthor: Author = {
@@ -214,6 +214,57 @@ describe('getNodeEntity', () => {
             expect(result.node.uid).toBe('error-node-id');
             expect(result.node.name).toBe('⚠️ Undecryptable name');
             expect(result.node.activeRevision).toBe(mockNodeEntity.activeRevision);
+        });
+    });
+
+    describe('photoAttributes and albumAttributes', () => {
+        it('should return photoAttributes and albumAttributes for Photo nodes', () => {
+            const photoNode: NodeEntity = {
+                ...mockNodeEntity,
+                type: NodeType.Photo,
+                photo: { captureTime: new Date('2023-06-15'), mainPhotoHash: 'hash1' },
+                album: { nodeHashKey: 'album-hash' },
+            } as NodeEntity;
+
+            const maybeNode: MaybeNode = {
+                ok: true,
+                value: photoNode,
+            };
+
+            const result = getNodeEntity(maybeNode);
+
+            expect(result.photoAttributes).toEqual({ captureTime: new Date('2023-06-15'), mainPhotoHash: 'hash1' });
+            expect(result.albumAttributes).toEqual({ nodeHashKey: 'album-hash' });
+        });
+
+        it('should return undefined photoAttributes and albumAttributes for non-photo nodes', () => {
+            const maybeNode: MaybeNode = {
+                ok: true,
+                value: mockNodeEntity,
+            };
+
+            const result = getNodeEntity(maybeNode);
+
+            expect(result.photoAttributes).toBeUndefined();
+            expect(result.albumAttributes).toBeUndefined();
+        });
+    });
+
+    describe('isPhotoNode', () => {
+        it('should return true for Photo type nodes', () => {
+            expect(isPhotoNode({ ...mockNodeEntity, type: NodeType.Photo } as NodeEntity)).toBe(true);
+        });
+
+        it('should return false for File type nodes', () => {
+            expect(isPhotoNode({ ...mockNodeEntity, type: NodeType.File } as NodeEntity)).toBe(false);
+        });
+
+        it('should return true for Album type nodes', () => {
+            expect(isPhotoNode({ ...mockNodeEntity, type: NodeType.Album } as NodeEntity)).toBe(true);
+        });
+
+        it('should return false for Folder type nodes', () => {
+            expect(isPhotoNode({ ...mockNodeEntity, type: NodeType.Folder } as NodeEntity)).toBe(false);
         });
     });
 

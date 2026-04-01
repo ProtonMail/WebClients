@@ -35,6 +35,7 @@ import { createDebouncedBuffer } from '../../utils/createDebouncedBuffer';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { useAlbumProgressStore } from '../../zustand/photos/addToAlbumProgress.store';
+import { useAlbumsStore } from '../useAlbums.store';
 import { type PhotoItem, usePhotosStore } from '../usePhotos.store';
 import { createPhotoItemsFromNode } from '../utils/createPhotoItemsFromNode';
 
@@ -149,14 +150,6 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
         };
     }, [driveEventManager.volumes, volumeId]);
 
-    useEffect(() => {
-        void usePhotosStore.getState().subscribeToEvents('photosProvider');
-
-        return () => {
-            void usePhotosStore.getState().unsubscribeFromEvents('photosProvider');
-        };
-    }, []);
-
     const loadPhotos = useCallback(async (abortSignal: AbortSignal) => {
         setIsPhotosLoading(true);
         const { push, drain } = createDebouncedBuffer<PhotoItem>((items) =>
@@ -209,11 +202,14 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             }
             currentAlbumLinkId.current = albumLinkId;
             setIsAlbumPhotosLoading(true);
-            usePhotosStore.getState().clearAlbumPhotoUids();
 
-            const { push, drain } = createDebouncedBuffer<PhotoItem>((items) =>
-                usePhotosStore.getState().setAlbumPhotoItems(items)
-            );
+            const { push, drain } = createDebouncedBuffer<PhotoItem>((items) => {
+                const store = usePhotosStore.getState();
+                for (const item of items) {
+                    store.setPhotoItemWithoutTimeline(item);
+                }
+                useAlbumsStore.getState().addPhotoNodeUids(items.map((item) => item.nodeUid));
+            });
 
             try {
                 let albumVolumeId = volumeId;
@@ -685,12 +681,14 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             if (!photoAttributes) {
                 return;
             }
-            usePhotosStore.getState().addAlbumPhotoItem({
+            const photoItem: PhotoItem = {
                 nodeUid: node.uid,
                 captureTime: photoAttributes.captureTime,
                 tags: photoAttributes.tags,
                 relatedPhotoNodeUids: [],
-            });
+            };
+            usePhotosStore.getState().setPhotoItemWithoutTimeline(photoItem);
+            useAlbumsStore.getState().addPhotoNodeUid(node.uid);
             setAlbums((currentAlbums) => {
                 const newAlbums = new Map(currentAlbums);
                 const album = newAlbums.get(albumLinkId);
@@ -774,12 +772,13 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
             if (fromUpload) {
                 if (currentAlbumLinkId.current === albumLinkId) {
                     const store = usePhotosStore.getState();
+                    const albumStore = useAlbumsStore.getState();
                     const missingNodeUids: string[] = [];
                     for (const successLinkId of result.successes) {
                         const photoNodeUid = generateNodeUid(volumeId, successLinkId);
                         const existing = store.getPhotoItem(photoNodeUid);
                         if (existing) {
-                            store.addAlbumPhotoItem(existing);
+                            albumStore.addPhotoNodeUid(photoNodeUid);
                         } else {
                             missingNodeUids.push(photoNodeUid);
                         }
@@ -788,13 +787,11 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                         const photoItems = await createPhotoItemsFromNode(missingNodeUids);
                         if (photoItems) {
                             store.setPhotoItems(photoItems);
-                            for (const item of photoItems) {
-                                store.addAlbumPhotoItem(item);
-                            }
+                            albumStore.addPhotoNodeUids(photoItems.map((item) => item.nodeUid));
                         }
                     }
                     // Reload albums to reload cover of current album - first photo is automatically set as cover.
-                    if (store.albumPhotoUids.size === 0) {
+                    if (albumStore.currentAlbum?.photoNodeUids.size === 0) {
                         void loadAlbums(abortSignal);
                     }
                 }
@@ -802,7 +799,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 void loadAlbumPhotos(abortSignal, albumShareId, albumLinkId);
                 showNotifications(result, albumName, fromUpload, linkIds);
                 // Reload albums to reload cover of current album - first photo is automatically set as cover.
-                if (usePhotosStore.getState().albumPhotoUids.size === 0) {
+                if (useAlbumsStore.getState().currentAlbum?.photoNodeUids.size === 0) {
                     void loadAlbums(abortSignal);
                 }
             }
@@ -954,6 +951,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 }
             };
             await addPhotoAsCoverCall();
+            useAlbumsStore.getState().setCoverNodeUid(generateNodeUid(volumeId, coverLinkId));
             setAlbums((currentAlbums) => {
                 const newAlbums = new Map(currentAlbums);
                 const album = newAlbums.get(albumLinkId);
@@ -1038,7 +1036,9 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 });
             }
 
-            usePhotosStore.getState().removeAlbumPhotoItemsByLinkIds(result.successes);
+            useAlbumsStore
+                .getState()
+                .removePhotoNodeUids(result.successes.map((linkId) => generateNodeUid(albumLink.volumeId, linkId)));
             setAlbums((currentAlbums) => {
                 const newAlbums = new Map(currentAlbums);
                 const album = newAlbums.get(albumLinkId);
@@ -1056,7 +1056,7 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
     );
 
     const clearAlbumPhotos = useCallback(() => {
-        usePhotosStore.getState().clearAlbumPhotoUids();
+        useAlbumsStore.getState().clearCurrentAlbum();
     }, []);
 
     return (

@@ -7,7 +7,7 @@ import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { UserAvatar } from '@proton/atoms/UserAvatar/UserAvatar';
-import { generateNodeUid, getDriveForPhotos } from '@proton/drive';
+import { getDriveForPhotos } from '@proton/drive';
 import { loadThumbnail, useThumbnail } from '@proton/drive/modules/thumbnails';
 import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
@@ -17,6 +17,7 @@ import { useFlag } from '@proton/unleash/useFlag';
 
 import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
 import type { DecryptedAlbum } from '../../PhotosStore/PhotosWithAlbumsProvider';
+import { useAlbumsStore } from '../../useAlbums.store';
 import { usePhotosStore } from '../../usePhotos.store';
 import { getContactNameAndEmail } from '../getContactNameAndEmail';
 import { PhotosAddAlbumPhotosButton } from '../toolbar/PhotosAddAlbumPhotosButton';
@@ -25,23 +26,13 @@ import { AlbumMembers } from './AlbumMembers';
 interface AlbumCoverHeaderProps {
     album: DecryptedAlbum;
     onShare: () => void;
-    shareId: string;
-    linkId: string;
     photoCount: number;
     onAddAlbumPhotos: () => void;
 }
 
-export const AlbumCoverHeader = ({
-    album,
-    shareId,
-    linkId,
-    photoCount,
-    onShare,
-    onAddAlbumPhotos,
-}: AlbumCoverHeaderProps) => {
+export const AlbumCoverHeader = ({ album, photoCount, onShare, onAddAlbumPhotos }: AlbumCoverHeaderProps) => {
     const driveAlbumsDisabled = useFlag('DriveAlbumsDisabled');
-    const coverNodeUid =
-        album.albumProperties?.coverLinkId && generateNodeUid(album.volumeId, album.albumProperties.coverLinkId);
+    const coverNodeUid = useAlbumsStore((state) => state.currentAlbum?.coverNodeUid);
     const [coverPhoto, setCoverPhoto] = useState<{ activeRevisionUid: string; isTrashed: boolean } | undefined>();
 
     const thumbnail = useThumbnail(coverPhoto?.activeRevisionUid);
@@ -144,7 +135,7 @@ export const AlbumCoverHeader = ({
                         </Tooltip>
                     )}
 
-                    {album.permissions.isAdmin && <AlbumMembers shareId={shareId} linkId={linkId} onShare={onShare} />}
+                    {album.permissions.isAdmin && <AlbumMembers onShare={onShare} />}
 
                     {album.permissions.isAdmin && (
                         <Button

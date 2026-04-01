@@ -63,6 +63,7 @@ export type {
     NodeEntity,
     NonProtonInvitation,
     PhotoAttributes,
+    AlbumAttributes,
     PhotoNode,
     ProtonDriveClient,
     ProtonInvitation,
