@@ -212,7 +212,7 @@ const ComposerComponentInner = ({
         onPasteLargeContent: handlePasteLargeContent,
     });
 
-    const { isEmpty, clear, textareaRef, setValue, handleSubmit, focus } = composerInput;
+    const { isEmpty, clear, textareaRef, setValue, handleSubmit } = composerInput;
 
     const sendIsDisabled = !(isGenerating ?? false) && (isEmpty || isProcessingAttachment);
     const canShowSendButton = (isGenerating ?? false) || !isEmpty;
@@ -232,11 +232,6 @@ const ComposerComponentInner = ({
 
     useEditorQuery(initialQuery, textareaRef, setValue, isProcessingAttachment, handleInitialQueryReady);
     useEditorQuery(prefillQuery, textareaRef, setValue, isProcessingAttachment);
-
-    const handleCreateImage = useCallback(() => {
-        setValue(c('collider_2025: Prefill').t`Generate an image with the following characteristics: `);
-        focus();
-    }, [setValue, focus]);
 
     // Handle paste events to attach images from clipboard
     useEffect(() => {
@@ -339,7 +334,6 @@ const ComposerComponentInner = ({
                             onBrowseDrive={handleBrowseDrive}
                             onDrawSketch={handleDrawSketch}
                             fileUploadMode={fileUploadMode}
-                            onCreateImage={handleCreateImage}
                         />
                     </div>
                     {isGuest && <TermsAndConditions className="m-0 hidden md:block" />}
