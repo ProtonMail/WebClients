@@ -17,7 +17,7 @@ function* getGroupWorker({ meta, payload }: ReturnType<typeof getGroup.intent>) 
 
         yield put(getGroup.success(meta.request.id, group));
     } catch (error) {
-        yield put(getGroup.failure(meta.request.id, {}, error));
+        yield put(getGroup.failure(meta.request.id, error));
     }
 }
 
