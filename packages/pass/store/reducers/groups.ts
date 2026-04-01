@@ -7,7 +7,7 @@ export type GroupsState = Record<GroupId, Group>;
 
 const reducer: Reducer<GroupsState> = (state = {}, action) => {
     if (getGroups.success.match(action)) {
-        const newState = { ...state };
+        const newState: Record<GroupId, Group> = {};
         action.payload.groups.forEach((group) => (newState[group.groupId] = group));
         return newState;
     }
