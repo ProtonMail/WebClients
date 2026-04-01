@@ -46,7 +46,7 @@ describe('MoveDropdown', () => {
 
         const message = getMessage(labelIDs);
 
-        const view = await mailTestRender(<MoveDropdown {...props} />, {
+        const view = await mailTestRender(<></>, {
             preloadedState: {
                 categories: getModelState([
                     {
@@ -67,6 +67,7 @@ describe('MoveDropdown', () => {
             },
         });
         view.store.dispatch(initialize(message));
+        await view.rerender(<MoveDropdown {...props} />);
         return view;
     };
 
@@ -114,6 +115,42 @@ describe('MoveDropdown', () => {
         );
 
         labelMessagesSpy.mockRestore();
+    });
+
+    describe('one-click folder move', () => {
+        it('should move to a folder immediately when clicking the folder name without pressing Apply', async () => {
+            const labelMessagesSpy = jest.spyOn(mailboxActions, 'labelMessages');
+
+            await setup();
+
+            const folderName = screen.getByTestId(`folder-dropdown:folder-${folder1Name}`);
+
+            await act(async () => {
+                fireEvent.click(folderName);
+            });
+
+            expect(labelMessagesSpy).toHaveBeenCalledWith(
+                expect.objectContaining({
+                    destinationLabelID: folder1ID,
+                })
+            );
+
+            labelMessagesSpy.mockRestore();
+        });
+
+        it('should close the dropdown immediately when clicking the folder name', async () => {
+            props.onClose.mockClear();
+
+            await setup();
+
+            const folderName = screen.getByTestId(`folder-dropdown:folder-${folder1Name}`);
+
+            await act(async () => {
+                fireEvent.click(folderName);
+            });
+
+            expect(props.onClose).toHaveBeenCalled();
+        });
     });
 
     it('should create a folder from the button', async () => {
