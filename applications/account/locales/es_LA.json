@@ -9020,9 +9020,6 @@
       "${ MEET_APP_NAME } seats": [
         "Licencias de ${ MEET_APP_NAME }"
       ],
-      "${ MEET_APP_NAME } video conferencing": [
-        "Videoconferencia de ${ MEET_APP_NAME }"
-      ],
       "${ n } address": [
         "${ n } dirección",
         "${ n } direcciones"
@@ -9310,8 +9307,8 @@
       "Activity Monitor": [
         "Monitor de actividad"
       ],
-      "Add ${ MEET_APP_NAME }": [
-        "Agregar ${ MEET_APP_NAME }"
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Agregar ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Añada una dirección de correo @pm.me a la cuenta. Este dominio simple y más corto significa «${ MAIL_APP_NAME }» o «Mensaje privado» en inglés."
@@ -12049,9 +12046,6 @@
       ],
       "With ${ AUTHENTICATOR_APP_NAME }, you can:": [
         "Con ${ AUTHENTICATOR_APP_NAME } puede:"
-      ],
-      "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
-        "Con un plan Business o Enterprise, puede comprar ${ boldDedicatedServers } para la organización y configurar ${ boldGateways } para controlar cuáles usuarios pueden acceder a ellas."
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Con una dirección cifrada de ${ BRAND_NAME }, puede usar todos los servicios de ${ BRAND_NAME }"

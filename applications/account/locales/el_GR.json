@@ -9017,9 +9017,6 @@
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } θέσεις"
       ],
-      "${ MEET_APP_NAME } video conferencing": [
-        "Τηλεδιάσκεψη ${ MEET_APP_NAME }"
-      ],
       "${ n } address": [
         "${ n } διεύθυνση",
         "${ n } διευθύνσεις"
@@ -9307,8 +9304,8 @@
       "Activity Monitor": [
         "Παρακολούθηση Δραστηριότητας"
       ],
-      "Add ${ MEET_APP_NAME }": [
-        "Προσθήκη ${ MEET_APP_NAME }"
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Προσθήκη ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Προσθέστε μια @pm.me διεύθυνση ηλεκτρονικού ταχυδρομείου στον λογαριασμό σας. Αυτός ο απλός, συντομότερος τομέας ερμηνεύεται ως \"${ MAIL_APP_NAME } me\" ή \"Private Message me.\" (Στείλε μου Προσωπικό Μήνυμα)"
@@ -12046,9 +12043,6 @@
       ],
       "With ${ AUTHENTICATOR_APP_NAME }, you can:": [
         "Με το ${ AUTHENTICATOR_APP_NAME }, μπορείτε να:"
-      ],
-      "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
-        "Με ένα Business ή Enterprise πλάνο, μπορείτε να αγοράσετε ${ boldDedicatedServers } για τον οργανισμό σας και να ρυθμίσετε τις ${ boldGateways } για να ελέγχετε ποιοι χρήστες μπορούν να έχουν πρόσβαση σε αυτές."
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Με κρυπτογραφημένη διεύθυνση ${ BRAND_NAME }, μπορείτε να χρησιμοποιήσετε όλες τις ${ BRAND_NAME } υπηρεσίες"
