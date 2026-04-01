@@ -201,6 +201,31 @@ describe('IndexerTaskQueue', () => {
         expect(listener2).toHaveBeenCalled();
     });
 
+    it('starts incremental update scheduling after bootstrap so events trigger incremental updates', async () => {
+        const queue = createQueue();
+        const state = new IndexerStateStream(queue);
+        queue.start().catch(() => {});
+
+        await state.waitForSearchable();
+
+        jest.useFakeTimers();
+
+        // Registry should now be wired — emitting an event should enqueue an IncrementalUpdateTask
+        // after the 5s cooldown. Use fast_forward which just advances the cursor.
+        bridge.emitEvent(SCOPE_ID, { type: 'fast_forward', eventId: 'evt-2' } as any);
+
+        // Advance past the cooldown and flush microtasks so the task queue processes the enqueued task.
+        await jest.advanceTimersByTimeAsync(5_000);
+
+        jest.useRealTimers();
+
+        // The subscription cursor should have advanced, proving the task ran.
+        const reg = treeSubRegistry.getAllRegistrations()[0];
+        expect(reg.lastEventId).toBe('evt-2');
+
+        queue.stop();
+    });
+
     it('permanent error: sets permanentError on quota exceeded', async () => {
         bridge.setIterateFolderChildrenError(new DOMException('', 'QuotaExceededError'));
 

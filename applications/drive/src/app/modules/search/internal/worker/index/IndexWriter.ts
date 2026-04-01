@@ -2,7 +2,7 @@ import type { Engine, Execution, Write } from '@proton/proton-foundation-search'
 import { Document, Value, WriteEventKind } from '@proton/proton-foundation-search';
 
 import { Logger } from '../../shared/Logger';
-import { InvalidIndexerState, SearchLibraryError } from '../../shared/errors';
+import { InvalidIndexerState, SearchLibraryError, sendErrorReportForSearch } from '../../shared/errors';
 import type { AttributeValue, IndexEntry } from '../indexer/indexEntry';
 import type { IndexBlobStore } from './IndexBlobStore';
 
@@ -27,15 +27,15 @@ export class WriteSession {
         if (this.writer === null) {
             throw new InvalidIndexerState("WriteSession: can't insert, session already released");
         }
-        const writer = this.writer;
         try {
             const doc = new Document(entry.documentId);
             for (const attr of entry.attributes) {
                 doc.addAttribute(attr.name, toValue(attr.value));
             }
-            writer.insert(doc);
+            this.writer.insert(doc);
             return this;
         } catch (e) {
+            this.writer.free();
             this.writer = null;
             this.release();
             throw new SearchLibraryError('Search library WASM failed during insert', e);
@@ -50,6 +50,7 @@ export class WriteSession {
             this.writer.remove(documentId);
             return this;
         } catch (e) {
+            this.writer.free();
             this.writer = null;
             this.release();
             throw new SearchLibraryError('Search library WASM failed during remove', e);
@@ -69,13 +70,13 @@ export class WriteSession {
         if (this.writer === null) {
             throw new InvalidIndexerState("WriteSession: can't commit, session already released");
         }
-        const writer = this.writer;
         let execution: Execution;
         try {
-            execution = writer.commit();
+            execution = this.writer.commit();
+            // Commit consumer the writer, no need to free.
             this.writer = null;
         } catch (e) {
-            writer.free();
+            this.writer?.free();
             this.writer = null;
             this.release();
             throw new SearchLibraryError('Search library WASM failed to commit', e);
@@ -95,13 +96,16 @@ export class WriteSession {
                         event.free();
                         break;
                     default:
-                        Logger.error(`WriteSession: unexpected Write event kind <${event.kind()}>`);
+                        const error = new Error(`WriteSession: unexpected Write event kind <${event.kind()}>`);
+                        Logger.error(error.message, error);
+                        sendErrorReportForSearch(error);
+
                         event.free();
                         break;
                 }
             }
         } finally {
-            execution.free();
+            execution?.free();
             this.release();
         }
     }

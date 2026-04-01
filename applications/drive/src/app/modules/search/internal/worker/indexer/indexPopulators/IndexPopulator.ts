@@ -1,10 +1,17 @@
-import type { DriveEvent, NodeEvent } from '@protontech/drive-sdk';
+import type { DriveEvent, MaybeNode, NodeEvent } from '@protontech/drive-sdk';
 
+import { NodeType } from '@proton/drive';
+import { Expression, Func, TermValue } from '@proton/proton-foundation-search';
+
+import { getNodeEntity } from '../../../../../../utils/sdk/getNodeEntity';
 import { Logger } from '../../../shared/Logger';
 import type { SearchDB } from '../../../shared/SearchDB';
+import { SearchLibraryError } from '../../../shared/errors';
 import type { TreeEventScopeId } from '../../../shared/types';
+import type { IndexReader } from '../../index/IndexReader';
 import type { IndexKind } from '../../index/IndexRegistry';
 import type { IndexEntry } from '../indexEntry';
+import { type CoreNodeFields, createIndexEntry } from '../indexEntry';
 import type { TaskContext } from '../tasks/BaseTask';
 import { IndexPopulatorTask } from '../tasks/CoreTasks/IndexPopulatorTask';
 import { RemoveTreeEventScopeIdTask } from '../tasks/CoreTasks/RemoveTreeEventScopeIdTask';
@@ -64,14 +71,24 @@ export abstract class IndexPopulator {
 
     abstract visitAndProduceIndexEntries(ctx: TaskContext): AsyncIterableIterator<IndexEntry>;
 
-    async processIncrementalUpdates(events: DriveEvent[], ctx: TaskContext): Promise<void> {
+    /**
+     * Process incremental events. Returns the number of events successfully processed.
+     * On failure, remaining events are left unprocessed so the caller can commit only
+     * the successfully handled prefix.
+     */
+    async processIncrementalUpdates(events: DriveEvent[], ctx: TaskContext): Promise<number> {
         Logger.info(`${this.getUid()}: processing ${events.length} incremental events`);
+
+        let processed = 0;
 
         for (const event of events) {
             switch (event.type) {
                 case 'node_created':
                 case 'node_updated':
                 case 'node_deleted':
+                    // Throws on failure — remaining events (including the failing one) will be
+                    // retried in the next incremental update. The update might be stuck on this
+                    // event but we have no choice since DriveEvents must be processed in order.
                     await this.processNodeMutation(event, ctx);
                     break;
 
@@ -94,12 +111,16 @@ export abstract class IndexPopulator {
                     });
 
                     ctx.enqueueOnce(new IndexPopulatorTask(this, false /* isBootstrap */));
-                    break;
+                    // Return early to give a chance to the above task to be processed first.
+                    // Remaining events will be processed in next incremental update.
+                    return processed + 1;
 
                 case 'tree_remove':
                     Logger.info(`${this.getUid()}: TreeRemove, scope cleanup needed`);
                     ctx.enqueueOnce(new RemoveTreeEventScopeIdTask(this.treeEventScopeId));
-                    break;
+                    // Return early to give a chance to the above task to be processed first.
+                    // Remaining events will be processed in next incremental update.
+                    return processed + 1;
 
                 case 'shared_with_me_updated':
                     // TODO: Shared volumes changed — may need to add/remove scope subscriptions.
@@ -109,33 +130,294 @@ export abstract class IndexPopulator {
                     Logger.info(`${this.getUid()}: SharedWithMeUpdated`);
                     break;
             }
+
+            processed++;
+        }
+
+        return processed;
+    }
+
+    async processNodeMutation(event: NodeEvent, ctx: TaskContext): Promise<void> {
+        Logger.info(`${this.getUid()}: processNodeMutation ${event.type} for node ${event.nodeUid}`);
+
+        switch (event.type) {
+            case 'node_created':
+                await this.handleNodeCreated(event, ctx);
+                break;
+
+            case 'node_updated':
+                await this.handleNodeUpdated(event, ctx);
+                break;
+
+            case 'node_deleted':
+                await this.handleNodeDeleted(event, ctx);
+                break;
         }
     }
 
-    async processNodeMutation(event: NodeEvent, _ctx: TaskContext): Promise<void> {
-        // TODO: Handle node mutations:
-        //
-        // First: Check node uid (or parent uid for creation) and check that it belongs to the current index.
-        //
-        // NodeCreated:
-        //   - Fetch node via bridge using event.nodeUid
-        //   - Build IndexEntry with createIndexEntry()
-        //   - Insert into engine via indexWriter.startWriteSession()
-        //
-        // NodeUpdated:
-        //   - Fetch node via bridge using event.nodeUid
-        //   - Remove old entry: session.remove(event.nodeUid)
-        //   - Insert updated entry: session.insert(createIndexEntry(...))
-        //   - If parent changed (node moved): update path for all descendants too
-        //
-        // NodeDeleted:
-        //   - Remove entry: session.remove(event.nodeUid) and remove all descendants from index.
-        //
-        // isTrashed (on NodeCreated/NodeUpdated):
-        //   - If event.isTrashed: treat as delete (remove entry) and remove all descendants from index.
-        //
-        Logger.info(
-            `${this.getUid()}: processNodeMutation ${event.type} for node ${event.nodeUid} (not yet implemented)`
+    private async handleNodeCreated(
+        event: Extract<NodeEvent, { isTrashed: boolean }>,
+        ctx: TaskContext
+    ): Promise<void> {
+        if (event.isTrashed) {
+            Logger.info(`${this.getUid()}: skipping trashed node_created for ${event.nodeUid}`);
+            return;
+        }
+
+        const maybeNode = await ctx.bridge.driveSdk.getNode(event.nodeUid);
+        // getNodeEntity backfills undecryptable names with a placeholder,
+        // so the node is always indexable even if the filename couldn't be decrypted.
+        const { node } = getNodeEntity(maybeNode);
+        this.maybeWarnForUndecryptableNodeName(maybeNode, event.nodeUid);
+
+        const parentPathResult = await this.resolveParentPath(event.parentNodeUid, ctx);
+        if (!parentPathResult.ok) {
+            Logger.info(`${this.getUid()}: dropping node_created for ${event.nodeUid}, could not resolve parentPath`);
+            throw parentPathResult.error;
+        }
+
+        const entry = this.createEntryForNode(node, parentPathResult.parentPath);
+
+        const { indexWriter } = await ctx.indexRegistry.get(this.indexKind, ctx.db);
+        const session = indexWriter.startWriteSession();
+        try {
+            session.insert(entry);
+            await session.commit();
+        } catch (e) {
+            session.dispose();
+            throw new SearchLibraryError('Unable to create node', e);
+        }
+    }
+
+    private async handleNodeUpdated(
+        event: Extract<NodeEvent, { isTrashed: boolean }>,
+        ctx: TaskContext
+    ): Promise<void> {
+        // Case: event update: trashed
+        if (event.isTrashed) {
+            Logger.info(`${this.getUid()}: node_updated with isTrashed, treating as delete for ${event.nodeUid}`);
+            await this.removeNodeAndDescendants(event.nodeUid, ctx);
+            return;
+        }
+
+        const maybeNode = await ctx.bridge.driveSdk.getNode(event.nodeUid);
+        const { node } = getNodeEntity(maybeNode);
+        this.maybeWarnForUndecryptableNodeName(maybeNode, event.nodeUid);
+
+        const parentPathResult = await this.resolveParentPath(event.parentNodeUid, ctx);
+        if (!parentPathResult.ok) {
+            Logger.info(`${this.getUid()}: dropping node_updated for ${event.nodeUid}, could not resolve parentPath`);
+            throw parentPathResult.error;
+        }
+
+        const entry = this.createEntryForNode(node, parentPathResult.parentPath);
+
+        // Remove old entry + descendants, then insert the updated entry and
+        // re-index the subtree (if folder) — all in a single write session.
+        const { indexWriter, indexReader } = await ctx.indexRegistry.get(this.indexKind, ctx.db);
+
+        // TODO: This might explode for gigantic folders with 100k of items since we accumulate them
+        // in the session before commiting the whole write session. Consider adding some chunking here.
+        const session = indexWriter.startWriteSession();
+        try {
+            session.remove(event.nodeUid);
+            for await (const id of this.findIndexedDescendants(event.nodeUid, indexReader)) {
+                session.remove(id);
+            }
+            session.insert(entry);
+
+            // Re-index the entire subtree from SDK if this is a folder.
+            // This handles both moved folders (stale paths) and un-trashed folders
+            // (descendants weren't in the index at all).
+            if (node.type === NodeType.Folder) {
+                const subtreeEntries = this.walkFolderTreeFromSdk(
+                    event.nodeUid,
+                    `${parentPathResult.parentPath}/${event.nodeUid}`,
+                    ctx
+                );
+                for await (const subtreeEntry of subtreeEntries) {
+                    session.insert(subtreeEntry);
+                }
+            }
+
+            await session.commit();
+        } catch (e) {
+            session.dispose();
+            throw new SearchLibraryError('Unable to update node and descendant tree', e);
+        }
+    }
+
+    private async handleNodeDeleted(
+        event: Extract<NodeEvent, { type: 'node_deleted' }>,
+        ctx: TaskContext
+    ): Promise<void> {
+        await this.removeNodeAndDescendants(event.nodeUid, ctx);
+    }
+
+    /**
+     * Remove a node and all its descendants from the index.
+     * Descendants are found by matching entries whose path contains the nodeUid.
+     */
+    protected async removeNodeAndDescendants(nodeUid: string, ctx: TaskContext): Promise<void> {
+        const { indexWriter, indexReader } = await ctx.indexRegistry.get(this.indexKind, ctx.db);
+
+        const session = indexWriter.startWriteSession();
+        let descendantCount = 0;
+        try {
+            session.remove(nodeUid);
+            for await (const descendantId of this.findIndexedDescendants(nodeUid, indexReader)) {
+                session.remove(descendantId);
+                descendantCount++;
+            }
+            await session.commit();
+        } catch (e) {
+            session.dispose();
+            throw new SearchLibraryError('Unable to remove node and descendant tree', e);
+        }
+
+        Logger.info(`${this.getUid()}: removed node ${nodeUid} and ${descendantCount} descendants`);
+    }
+
+    protected createEntryForNode(node: CoreNodeFields, parentPath: string): IndexEntry {
+        return createIndexEntry({
+            node,
+            treeEventScopeId: this.treeEventScopeId,
+            parentPath,
+            indexPopulatorId: this.indexPopulatorId,
+            indexPopulatorVersion: this.version,
+            indexPopulatorGeneration: this.generation,
+        });
+    }
+
+    private maybeWarnForUndecryptableNodeName(maybeNode: MaybeNode, nodeUid: string): void {
+        const hasIndexableFilename = maybeNode.ok || (maybeNode.error.name && maybeNode.error.name.ok);
+        if (!hasIndexableFilename) {
+            Logger.warn(`${this.getUid()}: using fallback name for ${nodeUid}, no indexable filename`);
+            // TODO: The name was not decryptable and a fallback name (⚠️ Undecryptable name) will be used, we
+            // might want to add this node to a "repair name" service.
+        }
+    }
+
+    /**
+     * Find all descendant document IDs whose path contains /{nodeUid}.
+     */
+    private async *findIndexedDescendants(nodeUid: string, indexReader: IndexReader): AsyncIterableIterator<string> {
+        const descendantExpr = Expression.attr(
+            'path',
+            Func.Matches,
+            TermValue.wild()
+                .then('/' + nodeUid)
+                .wildcard()
         );
+        for await (const result of indexReader.execute((q) => q.withStructuredExpression(descendantExpr))) {
+            yield result.identifier;
+        }
+    }
+
+    /**
+     * BFS-walk a folder tree from the SDK, yielding an IndexEntry for each non-trashed node.
+     */
+    protected async *walkFolderTreeFromSdk(
+        rootFolderUid: string,
+        rootParentPath: string,
+        ctx: TaskContext
+    ): AsyncIterableIterator<IndexEntry> {
+        const queue: { folderUid: string; parentPath: string }[] = [
+            { folderUid: rootFolderUid, parentPath: rootParentPath },
+        ];
+
+        while (queue.length > 0) {
+            ctx.signal.throwIfAborted();
+
+            const item = queue.shift();
+            if (!item) {
+                break;
+            }
+
+            // TODO: Check for AbortError here.
+            // TODO: Catch thrown decryption errors and either:
+            //         - mark them as needing to be repaired/preprocessed (e.g. when used during initial indexing)
+            //         - (maybe) fail hard and retry all (when used during incremental update)
+            const children = await ctx.bridge.driveSdk.iterateFolderChildren(item.folderUid);
+
+            for (const child of children) {
+                const { node } = getNodeEntity(child);
+                this.maybeWarnForUndecryptableNodeName(child, node.uid);
+
+                if (node.trashTime) {
+                    // Skip trashed nodes and descendants.
+                    continue;
+                }
+
+                yield this.createEntryForNode(node, item.parentPath);
+
+                if (node.type === NodeType.Folder) {
+                    queue.push({ folderUid: node.uid, parentPath: `${item.parentPath}/${node.uid}` });
+                }
+            }
+        }
+    }
+
+    /**
+     * Resolve the parentPath for a node given its parentNodeUid.
+     * Tries the index first, then falls back to the SDK. Never throws — returns
+     * a Result so callers can decide how to handle failures.
+     */
+    protected async resolveParentPath(
+        parentNodeUid: string | undefined,
+        ctx: TaskContext
+    ): Promise<{ ok: true; parentPath: string } | { ok: false; error: unknown }> {
+        if (!parentNodeUid) {
+            return { ok: true, parentPath: '' };
+        }
+
+        try {
+            const indexResult = await this.resolveParentPathFromIndex(parentNodeUid, ctx);
+            if (indexResult.ok) {
+                return indexResult;
+            }
+
+            const parentPath = await this.resolveParentPathFromSdk(parentNodeUid, ctx);
+            return { ok: true, parentPath };
+        } catch (error) {
+            Logger.error(`${this.getUid()}: failed to resolve parentPath for parent ${parentNodeUid}`, error);
+            return { ok: false, error };
+        }
+    }
+
+    // TODO: Resolve parentPath by reading the parent's path attribute from the index.
+    // This avoids SDK round-trips when the parent is already indexed.
+    // Needs https://gitlab.protontech.ch/backend-team/foundation-team/search/-/merge_requests/364
+    // to match path from the index and use it.
+    private async resolveParentPathFromIndex(
+        _parentNodeUid: string,
+        _ctx: TaskContext
+    ): Promise<{ ok: true; parentPath: string } | { ok: false }> {
+        return { ok: false };
+    }
+
+    /**
+     * Build the full ancestor-UID path by walking up the tree via the SDK.
+     * Returns a path like "/grandparent-uid/parent-uid" for the given nodeUid,
+     * or '' if the node is a direct child of the root.
+     */
+    private async resolveParentPathFromSdk(parentNodeUid: string, ctx: TaskContext): Promise<string> {
+        const segments: string[] = [];
+        let currentUid: string | undefined = parentNodeUid;
+
+        while (currentUid) {
+            const maybeNode = await ctx.bridge.driveSdk.getNode(currentUid);
+            const { node } = getNodeEntity(maybeNode);
+
+            // If the node has no parentUid it is the root — don't include it in the path.
+            if (!node.parentUid) {
+                break;
+            }
+
+            segments.unshift(currentUid);
+            currentUid = node.parentUid;
+        }
+
+        return segments.length > 0 ? `/${segments.join('/')}` : '';
     }
 }
