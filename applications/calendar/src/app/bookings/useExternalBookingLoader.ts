@@ -9,7 +9,9 @@ import useGetVerificationPreferences from '@proton/components/hooks/useGetVerifi
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
 import { getNextAvailableSlot, queryPublicBookingPage } from '@proton/shared/lib/api/calendarBookings';
+import { getWeekStartsOn } from '@proton/shared/lib/date/date';
 import { SentryCalendarInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
+import { dateLocale } from '@proton/shared/lib/i18n';
 import type { Api, User } from '@proton/shared/lib/interfaces';
 import type {
     ExternalBookingPagePayload,
@@ -154,9 +156,8 @@ export const useExternalBookingLoader = () => {
         const bookingUidBase64Url = (await deriveBookingUid(bookingSecretBytes)).toBase64({ alphabet: 'base64url' });
 
         const rangeStart = isAfter(rangeStartDate, new Date()) ? rangeStartDate : new Date();
-        const weekRangeSimple = rangeEndDate
-            ? generateWeeklyRangeSimple(rangeStart, rangeEndDate)
-            : generateWeeklyRangeSimple(rangeStart);
+        const weekStartsOn = getWeekStartsOn(dateLocale);
+        const weekRangeSimple = generateWeeklyRangeSimple(rangeStart, rangeEndDate, weekStartsOn);
 
         try {
             setLoading(true);

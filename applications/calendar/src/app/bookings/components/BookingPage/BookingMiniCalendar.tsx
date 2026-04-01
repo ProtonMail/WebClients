@@ -1,10 +1,19 @@
 import { useEffect, useState } from 'react';
 
-import { addWeeks, differenceInCalendarMonths, fromUnixTime, isAfter, startOfMonth, startOfToday } from 'date-fns';
+import {
+    addWeeks,
+    differenceInCalendarMonths,
+    endOfWeek,
+    fromUnixTime,
+    isAfter,
+    startOfMonth,
+    startOfToday,
+    startOfWeek,
+} from 'date-fns';
 
 import Loader from '@proton/components/components/loader/Loader';
 import LocalizedMiniCalendar from '@proton/components/components/miniCalendar/LocalizedMiniCalendar';
-import { getFormattedWeekdays } from '@proton/shared/lib/date/date';
+import { getFormattedWeekdays, getWeekStartsOn } from '@proton/shared/lib/date/date';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 import { useBookingStore } from '../../booking.store';
@@ -46,7 +55,11 @@ export const BookingMiniCalendar = ({ selectedDate, onSelectDate }: BookingMiniC
         const latestSlotDate = latestAvailableSlot?.startTime ? fromUnixTime(latestAvailableSlot.startTime) : null;
 
         // Compare the end of the 6-week view (not just the month start) to determine if data is already loaded
-        const endOfCalendarView = addWeeks(startOfMonth(date), WEEKS_IN_MINI_CALENDAR);
+        const weekStartsOn = getWeekStartsOn(dateLocale);
+        const endOfCalendarView = endOfWeek(
+            addWeeks(startOfWeek(startOfMonth(date), { weekStartsOn }), WEEKS_IN_MINI_CALENDAR - 1),
+            { weekStartsOn }
+        );
         if (monthDiff <= 0 || (latestSlotDate !== null && !isAfter(endOfCalendarView, latestSlotDate))) {
             return;
         }
