@@ -1,6 +1,5 @@
 import type { ReactElement, ReactNode } from 'react';
 
-import { AuthStep } from '@proton/components/containers/login/interface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import Content from '../public/Content';
@@ -16,7 +15,7 @@ export interface RenderProps {
     content: ReactNode;
     beforeMain?: ReactNode;
     toApp?: APP_NAMES;
-    step: AuthStep;
+    hasDecoration?: boolean;
 }
 
 export type Render = (renderProps: RenderProps) => ReactNode;
@@ -39,7 +38,7 @@ export const defaultLoginRender = (data: RenderProps) => {
             toApp={data.toApp}
             hasWelcome
             onBack={data.onBack}
-            hasDecoration={data.step === AuthStep.LOGIN}
+            hasDecoration={data.hasDecoration}
             bottomRight={<PublicHelpLink />}
         >
             {data.beforeMain}
