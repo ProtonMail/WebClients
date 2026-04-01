@@ -13,9 +13,8 @@ import type { ClientId, SearchModuleState, SearchQuery, SearchResultItem, UserId
 import { AppVersionGuard } from './AppVersionGuard';
 import type { FetchLastEventIdForTreeScopeId } from './MainThreadBridge';
 import { MainThreadBridge } from './MainThreadBridge';
+import { SearchOptInManager } from './SearchOptInManager';
 import { WorkerClient } from './WorkerClient';
-
-let instance: SearchModule | null = null;
 
 // All required dependencies to initialize and run the search module.
 export type SearchModuleContext = {
@@ -28,7 +27,12 @@ export type SearchModuleContext = {
 };
 
 export class SearchModule {
+    private static instance: SearchModule | null = null;
+
+    // Guards against concurrent getOrCreate calls racing through the async init.
+    private static creating: Promise<SearchModule> | null = null;
     private state: SearchModuleState = {
+        isUserOptIn: false,
         isInitialIndexing: false,
         isIndexing: false,
         isSearchable: false,
@@ -43,13 +47,14 @@ export class SearchModule {
     // Never closed: lives for the page lifetime.
     private updateChannel: SearchModuleStateUpdateChannel;
     private workerClient: WorkerClient;
+    private optInManager: SearchOptInManager;
 
     private constructor(context: SearchModuleContext) {
         if (!SearchModule.isEnvironmentCompatible()) {
             throw new InvalidSearchModuleState('Incompatible environment for SearchModule');
         }
 
-        if (instance) {
+        if (SearchModule.instance) {
             throw new InvalidSearchModuleState('SearchModule singleton already exists');
         }
 
@@ -75,25 +80,55 @@ export class SearchModule {
             this.setState({ ...this.state, ...patch });
         };
 
+        this.optInManager = new SearchOptInManager(context.userId);
+
         Logger.listenForWorkerLogs();
     }
 
-    static getOrCreate(context: SearchModuleContext): SearchModule {
-        if (instance) {
-            return instance;
+    static getOrCreate(context: SearchModuleContext): Promise<SearchModule> {
+        if (SearchModule.instance) {
+            return Promise.resolve(SearchModule.instance);
         }
 
-        Logger.info('Creating search module v2 singleton');
-        instance = new SearchModule(context);
+        if (!SearchModule.creating) {
+            SearchModule.creating = (async () => {
+                Logger.info('Creating search module singleton');
 
-        new AppVersionGuard(context.userId, () => instance?.deactivate());
+                SearchModule.instance = new SearchModule(context);
 
-        return instance;
+                const [isUserOptIn, indexerState] = await Promise.all([
+                    SearchModule.instance.optInManager.isOptedIn(),
+                    SearchModule.instance.workerClient.queryIndexerState(),
+                ]);
+                Logger.info(isUserOptIn ? 'Search: Opt-in user detected' : 'Search: User not opted in');
+                SearchModule.instance.setState({
+                    ...SearchModule.instance.state,
+                    isUserOptIn,
+                    ...indexerState,
+                });
+
+                new AppVersionGuard(context.userId, () => SearchModule.instance?.deactivate());
+
+                return SearchModule.instance;
+            })().catch((error) => {
+                SearchModule.instance = null;
+                SearchModule.creating = null;
+                throw error;
+            });
+        }
+
+        return SearchModule.creating;
     }
 
     /** Register with the worker and begin indexing. */
     start(): void {
         this.workerClient.start();
+    }
+
+    /** Call when the user opts in to the search experience. */
+    async optIn(): Promise<void> {
+        await this.optInManager.optIn();
+        this.setState({ ...this.state, isUserOptIn: true });
     }
 
     getState(): SearchModuleState {
@@ -115,13 +150,20 @@ export class SearchModule {
     private deactivate(): void {
         this.workerClient.dispose();
         this.updateChannel.close();
+        this.optInManager.dispose();
         this.setState({
             isRunningOutdatedVersion: true,
             isInitialIndexing: false,
             isIndexing: false,
             isSearchable: false,
             permanentError: null,
+            isUserOptIn: false,
         });
+    }
+
+    /** Clear all search data and stop the search module. */
+    async reset(): Promise<void> {
+        await this.workerClient.reset();
     }
 
     async *search(query: SearchQuery): AsyncGenerator<SearchResultItem> {
@@ -167,5 +209,11 @@ export class SearchModule {
         }
 
         return true;
+    }
+
+    /** @internal Reset singleton state — only for use in tests. */
+    static resetForTesting(): void {
+        SearchModule.instance = null;
+        SearchModule.creating = null;
     }
 }

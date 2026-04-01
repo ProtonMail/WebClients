@@ -4,6 +4,7 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { QuickSettingsButton, type useConfirmActionModal } from '@proton/components';
 
 import { useSearchModule } from '../../../hooks/search/useSearchModule';
+import { tryCatchWithNotification } from '../../../modules/search';
 
 interface Props {
     showConfirmModal: ReturnType<typeof useConfirmActionModal>[1];
@@ -18,9 +19,7 @@ export const ClearSearchDataButton = ({ showConfirmModal }: Props) => {
 
     const handleDeleteClicked = () => {
         void showConfirmModal({
-            onSubmit: async () => {
-                await searchModule.reset();
-            },
+            onSubmit: tryCatchWithNotification(async () => searchModule.reset()),
             title: c('Info').t`Clear all search data`,
             submitText: c('Info').t`Clear data`,
             message: c('Info')
