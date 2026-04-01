@@ -91,7 +91,7 @@ describe('LabelDropdown', () => {
         });
         result.store.dispatch(initialize(message));
         await result.rerender(<LabelDropdown {...props} />);
-        return result;
+        return { ...result, props };
     };
 
     it("should display user's labels in the dropdown", async () => {
@@ -364,6 +364,58 @@ describe('LabelDropdown', () => {
 
         // Check the 3rd label
         expect(checkbox3.checked).toBe(false);
+    });
+
+    describe('one-click label application', () => {
+        it('should apply a label immediately when clicking the label name without pressing Apply', async () => {
+            const labelMessagesSpy = jest.spyOn(mailboxActions, 'labelMessages');
+            await setup();
+
+            const labelName = screen.getByTestId(`label-dropdown:label-${label1Name}`);
+
+            await act(async () => {
+                fireEvent.click(labelName);
+            });
+
+            expect(labelMessagesSpy).toHaveBeenCalledWith(
+                expect.objectContaining({
+                    destinationLabelID: label1ID,
+                })
+            );
+
+            labelMessagesSpy.mockRestore();
+        });
+
+        it('should close the dropdown immediately when clicking the label name', async () => {
+            const { props } = await setup();
+
+            const labelName = screen.getByTestId(`label-dropdown:label-${label1Name}`);
+
+            await act(async () => {
+                fireEvent.click(labelName);
+            });
+
+            expect(props.onClose).toHaveBeenCalled();
+        });
+
+        it('should remove a label immediately when clicking an active label name', async () => {
+            const unlabelMessagesSpy = jest.spyOn(mailboxActions, 'unlabelMessages');
+            await setup([label1ID]);
+
+            const labelName = screen.getByTestId(`label-dropdown:label-${label1Name}`);
+
+            await act(async () => {
+                fireEvent.click(labelName);
+            });
+
+            expect(unlabelMessagesSpy).toHaveBeenCalledWith(
+                expect.objectContaining({
+                    destinationLabelID: label1ID,
+                })
+            );
+
+            unlabelMessagesSpy.mockRestore();
+        });
     });
 
     describe('helper functions', () => {
