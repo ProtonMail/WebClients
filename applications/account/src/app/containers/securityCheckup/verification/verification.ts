@@ -12,7 +12,7 @@ import type { Api } from '@proton/shared/lib/interfaces';
 
 export type VerificationMethod = 'email' | 'phone';
 
-const getInitiationCall = (method: VerificationMethod) => {
+export const getInitiationCall = (method: VerificationMethod) => {
     if (method === 'email') {
         return postVerifyEmail();
     }
@@ -28,15 +28,28 @@ const getHVMethod = (method: VerificationMethod) => {
     return 'ownership-sms';
 };
 
-export const initiateVerification = async ({ api, method }: { api: Api; method: VerificationMethod }) => {
+export const initiateVerification = async ({
+    api,
+    method,
+    config,
+}: {
+    api: Api;
+    method: VerificationMethod;
+    config: {
+        url: string;
+        method: string;
+    };
+}) => {
     const hvMethod = getHVMethod(method);
 
     try {
         await api({
-            ...getInitiationCall(method),
+            ...config,
             silence: true,
             ignoreHandler: [API_CUSTOM_ERROR_CODES.HUMAN_VERIFICATION_REQUIRED],
         });
+
+        throw new Error();
     } catch (error) {
         const { code, details } = getApiError(error);
 
@@ -52,7 +65,7 @@ export const initiateVerification = async ({ api, method }: { api: Api; method: 
             throw new Error();
         }
 
-        const token = details.HumanVerificationToken;
+        const token = details.HumanVerificationToken as string;
 
         await Promise.all([
             api<VerificationDataResult>({ ...getVerificationDataRoute(token, hvMethod), silence: true }),
@@ -69,18 +82,23 @@ export const verifyCode = async ({
     code,
     api,
     method,
+    config,
 }: {
     token: string;
     code: string;
     api: Api;
     method: VerificationMethod;
+    config: {
+        url: string;
+        method: string;
+    };
 }) => {
     const hvMethod = getHVMethod(method);
 
     const silentApi = <T>(config: any) => api<T>({ ...config, silence: true });
 
     const { Token } = await silentApi<VerificationTokenResult>(verifyVerificationCode(token, hvMethod, code));
-    await api(withVerificationHeaders(Token, hvMethod, getInitiationCall(method)));
+    await api(withVerificationHeaders(Token, hvMethod, config));
 };
 
 export const sendNewCode = async ({ token, api, method }: { token: string; api: Api; method: VerificationMethod }) => {
