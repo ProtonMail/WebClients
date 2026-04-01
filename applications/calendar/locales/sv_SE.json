@@ -6481,6 +6481,12 @@
       ],
       "for ${ price }": [
         "för ${ price }"
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Lägg till ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Allt i ${ planOrAppName }, plus:"
       ]
     },
     "info": {
@@ -7549,6 +7555,13 @@
       "Up to ${ n } participant": [
         "Upp till ${ n } deltagare",
         "Upp till ${ n } deltagare"
+      ],
+      "Hosts can record meetings locally on their computers": [
+        "Värdar kan spela in möten lokalt på sina datorer"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videomöten, ${ n } deltagare",
+        "Videomöten, ${ n } deltagare"
       ]
     },
     "Message": {
@@ -8280,6 +8293,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skannar den mörka webben för att kontrollera om dina ${ BRAND_NAME }-adresser eller alias har läckt och varnar dig omedelbart om vi hittar något."
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Privat AI-chatt (${ LUMO_APP_NAME })"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN med annonsblockerare och skydd mot skadlig kod"
       ]
     },
     "new_plans: feature highlight": {

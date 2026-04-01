@@ -1021,6 +1021,9 @@
       ],
       "Google": [
         "Google"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "${ planOrAppName } に進む"
       ]
     },
     "action": {
@@ -3160,6 +3163,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "すでに 10 個のエリアスを作成しました。${ BRAND_NAME }Unlimitedで無制限のエイリアスと 500 GBのストレージを獲得しましょう。"
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "ご利用をおやめになるのは残念です。よろしければ、取消の理由をお聞かせいただけますでしょうか。お客様のご感想は、${ BRAND_NAME } を改善するのに役立ちます。"
       ]
     },
     "description": {
@@ -4010,6 +4016,12 @@
       ],
       "This field is invalid": [
         "このフィールドは無効です"
+      ],
+      "Company name or personal name is required": [
+        "会社名または個人名が必要です"
+      ],
+      "Wrong billing address": [
+        "請求先住所を変更"
       ]
     },
     "error": {
@@ -6396,6 +6408,18 @@
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "クレジット報酬は、ご友人が年額プランにご登録いただいてから1か月後、月額プランにご加入いただいてから2か月後に受け取れます。"
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } を追加"
+      ],
+      "Each code can only be used once": [
+        "各コードは使い捨てです"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "${ planOrAppName } のすべての機能――そしてさらに："
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "2要素認証を設定する際、認証アプリにアクセスできなくなった場合に使用できる回復用コードを提供します。"
       ]
     },
     "info": {
@@ -7120,6 +7144,18 @@
       ],
       "Zoom meeting": [
         "Zoom ミーティング"
+      ],
+      "Additional comments": [
+        "追加コメント"
+      ],
+      "Continue cancelling": [
+        "取消を続行"
+      ],
+      "Main reason for cancelling": [
+        "取消の主な理由"
+      ],
+      "Skip feedback": [
+        "フィードバックを飛ばす"
       ]
     },
     "label": {
@@ -8152,6 +8188,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ダークウェブをスキャンして、お客様の ${ BRAND_NAME } アドレスやエイリアスが漏洩していないかを確認し、何か見つかった場合はすぐに警告します。"
+      ],
+      "Data retention policies": [
+        "データ保持ポリシー"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "プライベート対話型AI（${ LUMO_APP_NAME }）"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "広告やウイルスから保護してくれるVPN"
       ]
     },
     "new_plans: feature highlight": {
@@ -9563,6 +9608,21 @@
       ],
       "ZIP code": [
         "郵便番号"
+      ],
+      "Anything you'd like us to know": [
+        "知らせたいことならなんでも"
+      ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
+      "Enter a name": [
+        "名前を入力"
+      ],
+      "San Francisco": [
+        "サンフランシスコ"
+      ],
+      "Select a provider": [
+        "プロバイダーを選択"
       ]
     },
     "Placeholder for contact group name": {
@@ -12037,6 +12097,12 @@
       ],
       "Spring Sale": [
         "スプリングセール"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "データを ${ BRAND_NAME } にインポート"
+      ],
+      "Select data to import": [
+        "インポートしたい情報を選択"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12571,6 +12637,41 @@
     "Import provider": {
       "Advanced import": [
         "高度なインポート"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "セキュリティキーの認証に失敗しました。もう一度お試しください。"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } ライセンス"
+      ]
+    },
+    "meet_2025: Info": {
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "トライアル期間中、${ MEET_SHORT_APP_NAME }のシートを${ TRIAL_MAX_MEET_SEATS }ヶまでをご利用いただけます。"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "その他"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }
