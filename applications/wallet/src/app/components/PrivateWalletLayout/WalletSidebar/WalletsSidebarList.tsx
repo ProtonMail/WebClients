@@ -21,7 +21,7 @@ import {
     useToggle,
 } from '@proton/components';
 import clsx from '@proton/utils/clsx';
-import type { IWasmApiWalletData } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet/types';
 
 import { CoreButton } from '../../../atoms';
 import type { SubTheme } from '../../../utils';

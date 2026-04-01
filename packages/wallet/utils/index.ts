@@ -8,3 +8,5 @@ export * from './wallet';
 export * from './account';
 export * from './wasm';
 export * from './transactions';
+export * from './theme';
+export * from './messageSigner';

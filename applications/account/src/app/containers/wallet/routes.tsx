@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import type { SidebarConfig } from '@proton/components';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
-import { WALLET_SETTINGS_ROUTES } from '@proton/wallet';
+import { WALLET_SETTINGS_ROUTES } from '@proton/wallet/constants/settings';
 
 export const getWalletAppRoutes = (): SidebarConfig => {
     return {

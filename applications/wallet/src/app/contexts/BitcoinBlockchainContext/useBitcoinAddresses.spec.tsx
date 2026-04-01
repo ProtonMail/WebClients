@@ -8,16 +8,16 @@ import { setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testin
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
 import { mockUseGetAddressKeys } from '@proton/testing/lib/vitest';
-import type { WalletWithChainData } from '@proton/wallet';
-import { extendStore, setupStore } from '@proton/wallet/store';
+import { extendStore, setupStore } from '@proton/wallet/store/store';
+import { apiWalletsData } from '@proton/wallet/tests/fixtures';
 import {
-    apiWalletsData,
-    getAddressKey,
     getMockedApi,
     mockUseBitcoinAddressUsedIndexes,
     mockUseGetBitcoinAddressPool,
     mockUseWalletApiClients,
-} from '@proton/wallet/tests';
+} from '@proton/wallet/tests/mocks';
+import { getAddressKey } from '@proton/wallet/tests/utils';
+import type { WalletWithChainData } from '@proton/wallet/types';
 
 import { mockUseBlockchainClient } from '../../tests';
 import { useBitcoinAddresses } from './useBitcoinAddresses';

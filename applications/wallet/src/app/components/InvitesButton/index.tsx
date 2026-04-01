@@ -3,7 +3,8 @@ import { c } from 'ttag';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import type { WasmApiWalletAccount } from '@proton/andromeda';
 import useModalState, { useModalStateWithData } from '@proton/components/components/modalTwo/useModalState';
-import { decrementAvailableInvites, useRemainingInvites, useWalletDispatch } from '@proton/wallet/store';
+import { useRemainingInvites, useWalletDispatch } from '@proton/wallet/store/hooks';
+import { decrementAvailableInvites } from '@proton/wallet/store/slices';
 
 import { Button } from '../../atoms';
 import { InviteModal } from '../InviteModal';

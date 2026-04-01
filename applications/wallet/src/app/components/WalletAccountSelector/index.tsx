@@ -11,9 +11,8 @@ import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import Icon from '@proton/components/components/icon/Icon';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import clsx from '@proton/utils/clsx';
-import { COMPUTE_BITCOIN_UNIT } from '@proton/wallet';
-import { useUserWalletSettings } from '@proton/wallet/store';
-import { useWalletAccountExchangeRate } from '@proton/wallet/store/hooks/useWalletAccountExchangeRate';
+import { COMPUTE_BITCOIN_UNIT } from '@proton/wallet/constants/bitcoin';
+import { useUserWalletSettings, useWalletAccountExchangeRate } from '@proton/wallet/store/hooks';
 
 import { Price } from '../../atoms/Price';
 import { Skeleton } from '../../atoms/Skeleton';

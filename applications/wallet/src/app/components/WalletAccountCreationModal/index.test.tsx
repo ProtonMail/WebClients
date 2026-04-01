@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 
 import { WasmScriptType } from '@proton/andromeda';
-import { apiWalletsData } from '@proton/wallet/tests';
+import { apiWalletsData } from '@proton/wallet/tests/fixtures';
 
 import { WalletAccountCreationModal } from '.';
 import * as useWalletAccountCreationModalModule from './useWalletAccountCreationModal';

@@ -11,7 +11,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import walletKeyDark from '@proton/styles/assets/img/wallet/wallet-key-dark.jpg';
 import walletKey from '@proton/styles/assets/img/wallet/wallet-key.jpg';
 import clsx from '@proton/utils/clsx';
-import type { IWasmApiWalletData } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet/types';
 import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
 import { Button, ButtonLike } from '../../atoms';

@@ -6,8 +6,8 @@ import type { MockedFunction } from 'vitest';
 import type { WasmApiExchangeRateData, WasmExchangeRateClient } from '@proton/andromeda';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import { SECOND } from '@proton/shared/lib/constants';
-import { getMockedApi } from '@proton/wallet/tests';
 
+import { getMockedApi } from '../../tests/mocks/useWalletApi';
 import { extendStore, setupStore } from '../store';
 import { useGetExchangeRate } from './useExchangeRate';
 

@@ -13,10 +13,12 @@ import { wait } from '@proton/shared/lib/helpers/promise';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash/useFlag';
 import generateUID from '@proton/utils/generateUID';
-import type { IWasmApiWalletData } from '@proton/wallet';
-import { SYNCING_MINIMUM_COOLDOWN_MINUTES, getYesterday, useWalletApiClients } from '@proton/wallet';
-import { useGetBitcoinNetwork } from '@proton/wallet/store';
+import { SYNCING_MINIMUM_COOLDOWN_MINUTES } from '@proton/wallet/constants/wallet';
+import { useWalletApiClients } from '@proton/wallet/contexts';
+import { useGetBitcoinNetwork } from '@proton/wallet/store/hooks';
+import type { IWasmApiWalletData } from '@proton/wallet/types';
 import { getWalletAccountMetrics, updateWalletAccountActivityMetrics } from '@proton/wallet/utils/cache';
+import { getYesterday } from '@proton/wallet/utils/date';
 
 import { useBlockchainClient } from '../../hooks/useBlockchainClient';
 import { useMirroredRef } from '../../hooks/useMirrorredRef';

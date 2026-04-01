@@ -1,7 +1,7 @@
 import { type FC, type PropsWithChildren, createContext, useContext, useLayoutEffect, useState } from 'react';
 
 import { useFlag } from '@proton/unleash/useFlag';
-import { useSettings } from '@proton/wallet/store/hooks/useLocalSettings';
+import { useSettings } from '@proton/wallet/store/hooks';
 import { WalletThemeOption, getWalletDefaultTheme } from '@proton/wallet/utils/theme';
 
 // @ts-ignore

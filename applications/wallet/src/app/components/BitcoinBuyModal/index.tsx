@@ -5,9 +5,10 @@ import { c } from 'ttag';
 
 import type { WasmApiCountry, WasmApiWallet, WasmApiWalletAccount } from '@proton/andromeda';
 import { Loader, type ModalOwnProps } from '@proton/components';
-import type { ApiWalletWithPassphraseInput, IWasmApiWalletData } from '@proton/wallet';
-import { toWalletAccountSelectorOptions } from '@proton/wallet';
-import { resetQuotesByProvider, useWalletDispatch } from '@proton/wallet/store';
+import { useWalletDispatch } from '@proton/wallet/store/hooks';
+import { resetQuotesByProvider } from '@proton/wallet/store/slices';
+import type { ApiWalletWithPassphraseInput, IWasmApiWalletData } from '@proton/wallet/types';
+import { toWalletAccountSelectorOptions } from '@proton/wallet/utils/wallet';
 
 import { FullscreenModal } from '../../atoms/FullscreenModal';
 import { AZTECO } from '../../constants/buy';
