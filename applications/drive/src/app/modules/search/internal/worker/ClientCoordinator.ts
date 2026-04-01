@@ -65,6 +65,11 @@ export class ClientCoordinator {
         return this.activeClientId;
     }
 
+    /** Clear active client so the next register call re-triggers onClientAvailable. */
+    clearActiveClient() {
+        this.activeClientId = null;
+    }
+
     private setActiveClient(newClientContext: ClientContext | null) {
         this.activeClientId = newClientContext ? newClientContext.clientId : null;
         this.subscribers.forEach((fn) => fn(newClientContext));

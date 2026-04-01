@@ -6,7 +6,7 @@ import { useNotifications } from '@proton/components';
 
 import { useSearchModule } from '../../../../hooks/search/useSearchModule';
 import { useUrlSearchParams } from '../../../../hooks/search/useUrlSearchParam';
-import type { SearchResultItem } from '../../../../modules/search';
+import { type SearchResultItem, tryCatchWithNotification } from '../../../../modules/search';
 import { sendErrorReport } from '../../../../utils/errorHandling';
 import type { SearchViewModelAdapter } from '../type';
 
@@ -84,14 +84,6 @@ export const useFoundationSearchAdapter = (): SearchViewModelAdapter => {
         // TODO: Revisit this search triggering logic inherited from legacy search.
     }, [doSearch, refreshMarker]);
 
-    // If the user previously opted in, start the search module when the browser is idle.
-    useEffect(() => {
-        if (!searchModule.isAvailable || !searchModule.isUserOptIn) {
-            return;
-        }
-        return searchModule.startWhenIdle();
-    }, [searchModule]);
-
     const refresh = useCallback(() => {
         setRefreshMarker((prev) => prev + 1);
     }, []);
@@ -102,9 +94,9 @@ export const useFoundationSearchAdapter = (): SearchViewModelAdapter => {
             return;
         }
 
-        // User did some action that requires the search module to start now, like focusing the
-        // search field. We consider it as an implicit opt-in to the search feature.
-        searchModule.optIn();
+        // User did some action that requires the search module to start now, like click on
+        // "Enable search" button.
+        void tryCatchWithNotification(() => searchModule.optIn())();
     }, [searchModule]);
 
     return {
