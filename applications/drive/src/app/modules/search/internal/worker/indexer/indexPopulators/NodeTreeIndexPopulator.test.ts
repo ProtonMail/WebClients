@@ -202,7 +202,7 @@ describe('NodeTreeIndexPopulator integration', () => {
         expect(attr?.value).toEqual({ kind: 'integer', value: BigInt(5) });
     });
 
-    it('skips nodes without indexable filenames', async () => {
+    it('indexes nodes without indexable filenames using fallback name', async () => {
         const degradedNoName: MaybeNode = {
             ok: false,
             error: {
@@ -223,7 +223,8 @@ describe('NodeTreeIndexPopulator integration', () => {
         const ctx = makeTaskContext({ bridge: bridge.asBridge() });
         const entries = await collectEntries(populator.visitAndProduceIndexEntries(ctx));
 
-        expect(entries).toHaveLength(1);
+        expect(entries).toHaveLength(2);
         expect(entries[0].documentId).toBe('file-ok');
+        expect(entries[1].documentId).toBe('bad-node');
     });
 });
