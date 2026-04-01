@@ -1,5 +1,6 @@
 import { getItemKey, getItemRevisionKey } from '@proton/pass/lib/items/item.utils';
 import { withAbortPayload } from '@proton/pass/store/actions/creators/utils';
+import { dataRequest } from '@proton/pass/store/request/configs';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
 import type {
     FileChunkUploadDTO,
@@ -48,7 +49,7 @@ export const fileLinkPending = requestActionsFactory<ItemLinkFilesIntent, ItemLi
 
 export const filesResolve = requestActionsFactory<FileResolveDTO, FilesRequestSuccess>('files::resolve')({
     key: (dto) => (dto.history ? getItemKey(dto) : getItemRevisionKey(dto)),
-    success: { config: { maxAge: UNIX_MINUTE, hot: true } },
+    success: dataRequest(UNIX_MINUTE),
 });
 
 export const fileRestore = requestActionsFactory<FileRestoreDTO, FilesRequestSuccess>('files::restore')({

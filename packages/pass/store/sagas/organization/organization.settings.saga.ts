@@ -40,7 +40,7 @@ function* getOrganizationSettingsWorker(options: RootSagaOptions, { meta }: Retu
             logger.error(`[Saga::Org] Error updating lock TTL from organization's ForceLockSeconds: ${error}`);
         }
     } catch (error) {
-        yield put(getOrganizationSettings.failure(meta.request.id, {}, error));
+        yield put(getOrganizationSettings.failure(meta.request.id, error));
     }
 }
 
