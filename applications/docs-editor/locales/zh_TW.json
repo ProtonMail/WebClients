@@ -662,7 +662,20 @@
         "文字"
       ]
     },
+    "sheets_2025:Bottom bar": {
+      "All sheets": [
+        "所有的工作表"
+      ]
+    },
+    "sheets_2025:Spreadsheet cell tooltip": {
+      "Error": [
+        "錯誤"
+      ]
+    },
     "sheets_2025:Spreadsheet context menu": {
+      "Cell value": [
+        "儲存格值"
+      ],
       "Clear": [
         "明確"
       ],
@@ -670,12 +683,28 @@
         "期間"
       ]
     },
+    "sheets_2025:Spreadsheet context menu (columns/rows)": {
+      "${ numberOfColumns } column": [
+        "${ numberOfColumns } 列"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar edit menu": {
+      "Formatting only": [
+        "僅格式設定"
+      ]
+    },
     "sheets_2025:Spreadsheet editor menubar file menu": {
+      "Comma Separated Values (.csv)": [
+        "逗號分隔值檔案 (CSV)"
+      ],
       "Toggle debug mode": [
         "切換成偵錯模式"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar format menu": {
+      "Alignment": [
+        "對齊"
+      ],
       "Font size": [
         "字型大小"
       ]
@@ -686,8 +715,22 @@
       ]
     },
     "sheets_2025:Spreadsheet editor menubar insert menu": {
+      "Dropdown": [
+        "下拉選單"
+      ],
       "Sheet": [
         "床單"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar insert menu (columns/rows submenus)": {
+      "${ numberOfColumns } column": [
+        "${ numberOfColumns } 列"
+      ],
+      "${ numberOfRows } row": [
+        "${ numberOfRows } 列"
+      ],
+      "right": [
+        "右"
       ]
     },
     "sheets_2025:Spreadsheet editor menubar view menu (freeze submenu)": {
@@ -695,9 +738,30 @@
         "高達"
       ]
     },
+    "sheets_2025:Spreadsheet editor menubar view menu (hidden sheets submenu)": {
+      "Hidden sheets": [
+        "隱藏的工作表"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor spreadsheet settings dialog": {
+      "Locale": [
+        "語系"
+      ]
+    },
     "sheets_2025:Spreadsheet editor toolbar": {
       "Fill color": [
         "填色"
+      ],
+      "Insert function": [
+        "插入函數"
+      ]
+    },
+    "sheets_2025:Spreadsheet filter menu": {
+      "Sort A → Z": [
+        "排序 Z → A"
+      ],
+      "Sort Z → A": [
+        "排序 Z → A"
       ]
     },
     "sheets_2025:Spreadsheet resize dimension dialog": {
@@ -709,6 +773,15 @@
       ]
     },
     "sheets_2025:Spreadsheet sidebar cell format editor dialog": {
+      "Decimal places": [
+        "小數位"
+      ],
+      "Font size": [
+        "字型大小"
+      ],
+      "Indent": [
+        "下一層"
+      ],
       "Merge vertically": [
         "垂直合併"
       ]
@@ -716,6 +789,9 @@
     "sheets_2025:Spreadsheet sidebar conditional format dialog": {
       "Close": [
         "關閉"
+      ],
+      "Preview": [
+        "預覽"
       ]
     },
     "sheets_2025:Spreadsheet sidebar custom currency format dialog": {
@@ -723,9 +799,19 @@
         "套用於建立自訂貨幣"
       ]
     },
+    "sheets_2025:Spreadsheet sidebar data validation dialog": {
+      "Validation rules": [
+        "驗證規則 (Validation rules)"
+      ]
+    },
     "sheets_2025:Spreadsheet sidebar dialog": {
       "Close": [
         "關閉"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar named ranges dialog": {
+      "Enter text or formula": [
+        "輸入文字或公式"
       ]
     },
     "Title": {
