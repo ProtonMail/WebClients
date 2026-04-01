@@ -4,8 +4,13 @@ import type { SdkDriveClient } from '../mainThread/MainThreadBridge';
 
 export class FakeSdkDriveClient implements SdkDriveClient {
     private rootNode: MaybeNode | undefined;
+    private nodes = new Map<string, MaybeNode>();
     private tree = new Map<string, MaybeNode[]>();
     private iterateError: Error | undefined;
+
+    setNode(nodeUid: string, node: MaybeNode): void {
+        this.nodes.set(nodeUid, node);
+    }
 
     setMyFilesRootNode(node: MaybeNode): void {
         this.rootNode = node;
@@ -17,6 +22,14 @@ export class FakeSdkDriveClient implements SdkDriveClient {
 
     setIterateFolderChildrenError(error: Error): void {
         this.iterateError = error;
+    }
+
+    async getNode(nodeUid: string): Promise<MaybeNode> {
+        const node = this.nodes.get(nodeUid);
+        if (node === undefined) {
+            throw new Error(`FakeSdkDriveClient: node "${nodeUid}" not set. Call setNode() first.`);
+        }
+        return node;
     }
 
     async getMyFilesRootFolder(): Promise<MaybeNode> {

@@ -14,6 +14,7 @@ export type FetchLastEventIdForTreeScopeId = (
 /** Subset of ProtonDriveClient used by DriveSdkBridge. */
 export interface SdkDriveClient {
     getMyFilesRootFolder(): Promise<MaybeNode>;
+    getNode(nodeUid: string): Promise<MaybeNode>;
     iterateFolderChildren(parentNodeUid: string, filterOptions?: { type?: NodeType }): AsyncIterable<MaybeNode>;
 }
 
@@ -32,6 +33,7 @@ export interface EventIdStorage {
 
 export interface DriveSdkBridgeInterface {
     getMyFilesRootFolder(): Promise<MaybeNode>;
+    getNode(nodeUid: string): Promise<MaybeNode>;
     iterateFolderChildren(parentNodeUid: string, filterOptions?: { type?: NodeType }): Promise<MaybeNode[]>;
 }
 
@@ -76,6 +78,11 @@ export class DriveSdkBridge {
     async getMyFilesRootFolder() {
         Logger.info('MainThreadBridge: getMyFilesRootFolder');
         return this.driveClient.getMyFilesRootFolder();
+    }
+
+    async getNode(nodeUid: string) {
+        Logger.info(`MainThreadBridge: getNode ${nodeUid}`);
+        return this.driveClient.getNode(nodeUid);
     }
 
     async iterateFolderChildren(parentNodeUid: string, filterOptions?: { type?: NodeType }) {

@@ -1,3 +1,5 @@
+import type { PermanentErrorKind } from './errors';
+
 export type UserId = string & { readonly __brand: 'SearchUserId' };
 export type ClientId = string & { readonly __brand: 'SearchClientId' };
 export type TreeEventScopeId = string & { readonly __brand: 'TreeEventScopeId' };
@@ -16,7 +18,7 @@ export type SearchModuleState = {
     // Whether this tab is running an outdated app version compared to another tab.
     isRunningOutdatedVersion: boolean;
     // If non-null, a permanent error has stopped the processor.
-    permanentError: 'quota_exceeded' | 'corrupted_db' | null;
+    permanentError: PermanentErrorKind | null;
 };
 
 export type AttributeFilter = string | bigint | boolean;
