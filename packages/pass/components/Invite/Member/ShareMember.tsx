@@ -92,6 +92,7 @@ export const ShareMember: FC<Props> = ({
 
     const loading = transferOwner.loading || removeAccess.loading || editRole.loading;
     const showTransfer = !isGroupShare && canTransfer && role === ShareRole.MANAGER;
+    const showRemove = !isGroupShare;
 
     return (
         <div
@@ -153,12 +154,14 @@ export const ShareMember: FC<Props> = ({
                             onClick={() => transfer.prompt({ shareId, userShareId })}
                         />
                     )}
-                    <DropdownMenuButton
-                        label={c('Action').t`Remove access`}
-                        icon="circle-slash"
-                        danger
-                        onClick={remove}
-                    />
+                    {showRemove && (
+                        <DropdownMenuButton
+                            label={c('Action').t`Remove access`}
+                            icon="circle-slash"
+                            danger
+                            onClick={remove}
+                        />
+                    )}
                 </QuickActionsDropdown>
             )}
 
