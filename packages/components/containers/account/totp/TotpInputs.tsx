@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
-import Info from '@proton/components/components/link/Info';
+import { Href } from '@proton/atoms/Href/Href';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import TotpInput from '@proton/components/components/v2/input/TotpInput';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 interface TotpInputFieldProps {
     code: string;
@@ -46,17 +47,19 @@ export const TotpRecoveryCodeInputField = ({
     loading,
     bigger,
 }: TotpRecoveryCodeInputFieldProps) => {
+    const learnMoreLink = (
+        <Href key="learn" href={getKnowledgeBaseUrl('/lost-two-factor-authentication-2fa')}>
+            {c('Link').jt`Learn more`}
+        </Href>
+    );
     return (
         <>
-            <div className="mb-6 flex items-center">
-                {c('Info').t`Each code can only be used once`}{' '}
-                <Info
-                    className="ml-2"
-                    title={c('Info')
-                        .t`When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.`}
-                />
+            <div className="mb-4">
+                {c('Info')
+                    .jt`If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${learnMoreLink}`}
             </div>
             <InputFieldTwo
+                label={c('Info').t`Enter code`}
                 type="text"
                 id="recovery-code"
                 key="recovery-code"
@@ -70,6 +73,7 @@ export const TotpRecoveryCodeInputField = ({
                 value={code}
                 onValue={setCode}
                 bigger={bigger}
+                assistiveText={c('Info').t`Each code can only be used once`}
             />
         </>
     );

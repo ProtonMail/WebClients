@@ -49,7 +49,9 @@ export const initiateVerification = async ({
             ignoreHandler: [API_CUSTOM_ERROR_CODES.HUMAN_VERIFICATION_REQUIRED],
         });
 
-        throw new Error();
+        // The API is expected to return HUMAN_VERIFICATION_REQUIRED.
+        // If it succeeds without that, something is wrong.
+        throw new Error('Expected HV challenge');
     } catch (error) {
         const { code, details } = getApiError(error);
 
