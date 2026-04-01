@@ -12,7 +12,7 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { numberValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
 import type { VerificationMethod } from './verification';
-import { initiateVerification, sendNewCode, verifyCode } from './verification';
+import { getInitiationCall, initiateVerification, sendNewCode, verifyCode } from './verification';
 
 interface Props {
     value: ReactNode;
@@ -27,7 +27,7 @@ export const CodeInput = ({ value, onSuccess, onError, method }: Props) => {
 
     const { createNotification } = useNotifications();
 
-    const [token, setToken] = useState();
+    const [token, setToken] = useState<string>();
 
     const [code, setCode] = useState('');
     const [codeError, setCodeError] = useState('');
@@ -41,7 +41,7 @@ export const CodeInput = ({ value, onSuccess, onError, method }: Props) => {
     const invalidCodeError = c('Safety review').t`Invalid code`;
 
     useEffect(() => {
-        void initiateVerification({ api, method })
+        void initiateVerification({ api, method, config: getInitiationCall(method) })
             .then((token) => setToken(token))
             .catch(() => onError());
     }, []);
@@ -59,6 +59,7 @@ export const CodeInput = ({ value, onSuccess, onError, method }: Props) => {
                 code,
                 api,
                 method,
+                config: getInitiationCall(method),
             });
             await getUserSettings({ cache: CacheType.None });
 
