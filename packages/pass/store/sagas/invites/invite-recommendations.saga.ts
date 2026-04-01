@@ -8,6 +8,7 @@ import {
 import {
     inviteRecommendationsFailure,
     inviteRecommendationsIntent,
+    inviteRecommendationsOrganizationFailure,
     inviteRecommendationsOrganizationIntent,
     inviteRecommendationsOrganizationSuccess,
     inviteRecommendationsSuccess,
@@ -103,7 +104,7 @@ function* loadRecommendationsOrganizationWorker({
             })
         );
     } catch (error) {
-        yield put(inviteRecommendationsFailure(request.id, error));
+        yield put(inviteRecommendationsOrganizationFailure(request.id, error));
     } finally {
         if (yield cancelled()) {
             ctrl.abort();
