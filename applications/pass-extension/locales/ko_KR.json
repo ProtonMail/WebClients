@@ -768,6 +768,9 @@
       ],
       "Settings": [
         "설정"
+      ],
+      "Configure": [
+        "구성"
       ]
     },
     "Browser": {
@@ -2726,6 +2729,15 @@
       ],
       "You now have access to \"Vault ${ vaultName }\" because your group ${ groupName } has been granted access.": [
         "사용자의 그룹 ${ groupName }에 접근 권한이 부여되었기 때문에 \"${ vaultName }\" 금고에 접근할 수 있습니다."
+      ],
+      "Not configured": [
+        "구성되지 않음"
+      ],
+      "Open ${ PASS_APP_NAME } in a larger window": [
+        "더 큰 창에서 ${ PASS_APP_NAME } 열기"
+      ],
+      "Open the ${ PASS_APP_NAME } popup": [
+        "${ PASS_APP_NAME } 팝업 열기"
       ]
     },
     "Keyboard key": {
