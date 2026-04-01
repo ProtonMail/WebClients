@@ -255,9 +255,9 @@ const LoginContainer = ({
         };
     })();
 
-    const sharedProps: Pick<RenderProps, 'step' | 'toApp'> = {
+    const sharedProps: Pick<RenderProps, 'toApp' | 'hasDecoration'> = {
         toApp,
-        step,
+        hasDecoration: step === AuthStep.LOGIN,
     };
     if (isElectronDisabled) {
         return <ElectronBlockedContainer />;
