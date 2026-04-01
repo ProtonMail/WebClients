@@ -28,7 +28,7 @@ function* getGroupsWorker({ meta }: ReturnType<typeof getGroups.intent>) {
 
         yield put(getGroups.success(meta.request.id, response));
     } catch (error) {
-        yield put(getGroups.failure(meta.request.id, {}, error));
+        yield put(getGroups.failure(meta.request.id, error));
     }
 }
 

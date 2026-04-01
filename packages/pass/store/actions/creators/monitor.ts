@@ -15,6 +15,7 @@ import type {
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import { selectedItemKey } from '@proton/pass/store/actions/requests';
+import { dataRequest } from '@proton/pass/store/request/configs';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
 import type { ItemRevision, SelectedItem } from '@proton/pass/types';
 import type { BreachCustomEmailGetResponse, BreachesGetResponse, UpdateUserMonitorStateRequest } from '@proton/pass/types/api/pass';
@@ -71,7 +72,7 @@ export const monitorToggle = requestActionsFactory<UpdateUserMonitorStateRequest
 });
 
 export const getBreaches = requestActionsFactory<void, BreachesGetResponse>('monitor::breaches::get')({
-    success: { config: { maxAge: UNIX_MINUTE, hot: true } },
+    success: dataRequest(UNIX_MINUTE),
 });
 
 export const getProtonBreach = requestActionsFactory<ProtonAddressID, FetchedBreaches[]>('monitor::breaches::proton::get')({
