@@ -7,6 +7,8 @@ import { InlinePortMessageType } from 'proton-pass-extension/app/content/service
 import { useIFrameAppController, useIFrameAppState } from 'proton-pass-extension/lib/components/Inline/IFrameApp';
 import { ListItem } from 'proton-pass-extension/lib/components/Inline/ListItem';
 import { PauseListDropdown } from 'proton-pass-extension/lib/components/Inline/PauseListDropdown';
+import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
+import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -21,7 +23,10 @@ import {
     isUsingRandomPassword,
     usePasswordGenerator,
 } from '@proton/pass/hooks/usePasswordGenerator';
+import type { GeneratePasswordConfig } from '@proton/pass/lib/password/types';
+import { passwordOptionsEdit } from '@proton/pass/store/actions';
 import type { Maybe } from '@proton/pass/types/utils/index';
+import { serialize } from '@proton/pass/utils/object/serialize';
 
 type Props = Extract<DropdownActions, { action: DropdownAction.AUTOSUGGEST_PASSWORD }>;
 
@@ -35,7 +40,16 @@ export const AutosuggestPassword: FC<Props> = ({ origin, config, copy, policy })
     const [advanced, setAdvanced] = useState(false);
     const [copied, setCopied] = useState(false);
 
-    const generator = usePasswordGenerator({ config, policy });
+    const onConfigChange = useCallback((next: GeneratePasswordConfig) => {
+        void sendMessage(
+            contentScriptMessage({
+                type: WorkerMessageType.STORE_DISPATCH,
+                payload: { action: serialize(passwordOptionsEdit(next)) },
+            })
+        );
+    }, []);
+
+    const generator = usePasswordGenerator({ config, policy, onConfigChange });
 
     useEffect(() => {
         setCopied(false);
