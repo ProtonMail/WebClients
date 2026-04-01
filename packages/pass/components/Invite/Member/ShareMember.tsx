@@ -9,6 +9,7 @@ import { useMaybeGroup } from '@proton/pass/components/Groups/GroupsProvider';
 import { type InviteLabels, useInviteLabels } from '@proton/pass/components/Invite/useInviteLabels';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
+import { ButtonIfNeeded } from '@proton/pass/components/Utils/ButtonIfNeeded';
 import { useConfirm } from '@proton/pass/hooks/useConfirm';
 import { useActionRequest } from '@proton/pass/hooks/useRequest';
 import type { AccessDTO } from '@proton/pass/lib/access/types';
@@ -96,16 +97,16 @@ export const ShareMember: FC<Props> = ({
         <div
             className={clsx('flex flex-nowrap items-center border border-weak rounded-xl px-4 py-3 w-full', className)}
         >
-            <button onClick={onShowMembers}>
+            <ButtonIfNeeded onClick={onShowMembers}>
                 <ShareMemberAvatar email={email} isGroup={isGroupShare} loading={loading} />
-            </button>
+            </ButtonIfNeeded>
 
             <div className="flex-1">
                 <div className="flex flex-nowrap flex-1 items-center gap-2">
                     {isGroupShare ? (
-                        <button onClick={onShowMembers} className="text-ellipsis">
+                        <ButtonIfNeeded onClick={onShowMembers} className="text-ellipsis">
                             {name}
-                        </button>
+                        </ButtonIfNeeded>
                     ) : (
                         <>
                             <Tooltip openDelay={100} originalPlacement="bottom-start" title={email}>
