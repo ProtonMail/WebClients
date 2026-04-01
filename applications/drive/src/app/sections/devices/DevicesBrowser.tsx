@@ -9,6 +9,7 @@ import EmptyDevices from '../../components/sections/Devices/EmptyDevices';
 import useDriveNavigation from '../../hooks/drive/useNavigate';
 import { useContextMenuStore } from '../../modules/contextMenu';
 import { useSelectionStore } from '../../modules/selection';
+import { SortField } from '../../modules/sorting';
 import { DriveExplorer } from '../../statelessComponents/DriveExplorer/DriveExplorer';
 import type { DriveExplorerEvents, DriveExplorerSelection } from '../../statelessComponents/DriveExplorer/types';
 import { useUserSettings } from '../../store';
@@ -38,7 +39,7 @@ export function DevicesBrowser({ onRename, onRemove }: Props) {
     const { navigateToLink } = useDriveNavigation();
 
     useEffect(() => {
-        useSelectionStore.getState().setAllItemIds(sortedItemUids);
+        useSelectionStore.getState().setAllItemIds(new Set(sortedItemUids));
     }, [sortedItemUids]);
 
     const handleClick = useCallback(
@@ -54,7 +55,7 @@ export function DevicesBrowser({ onRename, onRemove }: Props) {
         [navigateToLink]
     );
 
-    const isEmpty = hasEverLoaded && !isLoading && sortedItemUids.size === 0;
+    const isEmpty = hasEverLoaded && !isLoading && sortedItemUids.length === 0;
 
     if (isEmpty) {
         return <EmptyDevices />;
@@ -62,6 +63,7 @@ export function DevicesBrowser({ onRename, onRemove }: Props) {
 
     const cells = getDevicesCells();
     const grid = getDevicesGrid();
+    const sort = { sortBy: SortField.name };
 
     const selectionStore = useSelectionStore.getState();
     const selection: DriveExplorerSelection = {
@@ -105,9 +107,10 @@ export function DevicesBrowser({ onRename, onRemove }: Props) {
                 onRemove={onRemove}
             />
             <DriveExplorer
-                itemIds={Array.from(sortedItemUids)}
+                itemIds={sortedItemUids}
                 layout={layout}
                 cells={cells}
+                sort={sort}
                 grid={grid}
                 selection={selection}
                 events={events}
