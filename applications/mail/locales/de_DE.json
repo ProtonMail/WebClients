@@ -6521,9 +6521,6 @@
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } Lizenzen"
       ],
-      "${ MEET_APP_NAME } video conferencing": [
-        "${ MEET_APP_NAME }-Videokonferenz"
-      ],
       "${ n } unread conversation": [
         "${ n } ungelesene Unterhaltung",
         "${ n } ungelesene Unterhaltungen"
@@ -6726,8 +6723,8 @@
       "Ad targeting": [
         "Zielgruppenorientierte Werbung"
       ],
-      "Add ${ MEET_APP_NAME }": [
-        "${ MEET_APP_NAME } hinzufügen"
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } hinzufügen"
       ],
       "Add image URL": [
         "Bild-URL hinzufügen"
@@ -7461,7 +7458,8 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen"
+        "Bild einfügen",
+        "Bilder einfügen"
       ],
       "Insert link": [
         "Link einfügen"

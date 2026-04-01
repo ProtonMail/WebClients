@@ -6521,9 +6521,6 @@
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } pladser"
       ],
-      "${ MEET_APP_NAME } video conferencing": [
-        "${ MEET_APP_NAME } videomøder"
-      ],
       "${ n } unread conversation": [
         "${ n } ulæst samtale",
         "${ n } ulæste samtaler"
@@ -6726,8 +6723,8 @@
       "Ad targeting": [
         "Annoncemålretning"
       ],
-      "Add ${ MEET_APP_NAME }": [
-        "Tilføj ${ MEET_APP_NAME }"
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Tilføj ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
       "Add image URL": [
         "Tilføj billed-URL"
@@ -7461,7 +7458,8 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede"
+        "Indsæt billede",
+        "Indsæt billeder"
       ],
       "Insert link": [
         "Indsæt link"
