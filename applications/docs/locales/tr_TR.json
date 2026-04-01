@@ -4516,7 +4516,7 @@
         "${ planOrAppName } özelliklerinin tümü"
       ],
       "Everything in ${ planOrAppName }, plus:": [
-        "${ planOrAppName } kapsamındaki tüm özelliklerin yanı sıra:"
+        "${ planOrAppName } tarifesindeki her şeye ek olarak:"
       ],
       "Failed to generate a secure link. The reason is: ${ error }": [
         "Güvenli bir bağlantı oluşturulamadı. Nedeni: ${ error }"
@@ -6204,7 +6204,7 @@
         "Uçtan uca şifrelenmiş ekran paylaşımı ve geçici çağrı içi sohbet"
       ],
       "Hosts can record meetings locally on their computers": [
-        "Oturum sahipleri toplantıları kendi bilgisayarlarına yerel olarak kaydedebilirler"
+        "Oturum sahipleri görüşmeleri kendi bilgisayarlarına yerel olarak kaydedebilir"
       ],
       "Meeting recording": [
         "Görüşme kaydı"
@@ -6227,8 +6227,8 @@
         "${ n } katılımcı"
       ],
       "Video meetings, ${ n } participant": [
-        "Görüntülü toplantılar, ${ n } katılımcı",
-        "Görüntülü toplantılar, ${ n } katılımcı"
+        "Görüntülü görüşmeler, ${ n } katılımcı",
+        "Görüntülü görüşmeler, ${ n } katılımcı"
       ]
     },
     "Message": {
@@ -6708,7 +6708,7 @@
         "Veri sızıntılarını izleme"
       ],
       "Data retention policies": [
-        "Veri saklama ilkeleri"
+        "Verileri tutma ilkeleri"
       ],
       "Dedicated servers optimized for streaming": [
         "Yayın akışı izlemek için ayarlanmış özel sunucular"
@@ -6820,7 +6820,7 @@
         "Öncelikli destek ve canlı sohbet"
       ],
       "Private AI Chat (${ LUMO_APP_NAME })": [
-        "Gizli Yapay Zeka Sohbeti (${ LUMO_APP_NAME })"
+        "Gizli yapay zeka sohbeti (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "Gizli fotoğraf yedekleme"
@@ -6969,7 +6969,7 @@
         "${ n } kişiye kadar kasa paylaşımı"
       ],
       "VPN with ad-blocker and malware protection": [
-        "Reklam engelleyici ve kötü amaçlı yazılım koruması içeren VPN"
+        "Reklam engelleyici ve kötü amaçlı yazılım koruması ile VPN"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } adreslerinizin veya takma adlarınızın sızıp sızmadığını denetlemek için karanlık ağı tararız ve herhangi bir şey bulursak sizi hemen uyarırız."

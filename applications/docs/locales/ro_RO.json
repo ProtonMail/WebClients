@@ -4579,6 +4579,9 @@
       "Everything in ${ planOrAppName }": [
         "Toate din ${ planOrAppName }"
       ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Totul din ${ planOrAppName }, plus:"
+      ],
       "Failed to generate a secure link. The reason is: ${ error }": [
         "Generarea unei legături web securizate a eșuat. Motivul este: ${ error }"
       ],
@@ -6282,6 +6285,9 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Partajare ecran cu criptare bilaterală și conversații temporare pe durata apelului"
       ],
+      "Hosts can record meetings locally on their computers": [
+        "Gazdele pot înregistra întâlnirile local pe computerele lor"
+      ],
       "Meeting recording": [
         "Înregistrare conferință"
       ],
@@ -6303,6 +6309,11 @@
         "Maxim participanți: ${ n }",
         "Maxim participanți: ${ n }",
         "Maxim participanți: ${ n }"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Conferințe video, ${ n } participant",
+        "Conferințe video, ${ n } participanți",
+        "Conferințe video, ${ n } de participanți"
       ]
     },
     "Message": {
@@ -6797,6 +6808,9 @@
       "Data breach monitoring": [
         "Monitorizarea divulgării datelor"
       ],
+      "Data retention policies": [
+        "Politici de păstrare a datelor"
+      ],
       "Dedicated servers optimized for streaming": [
         "Servere dedicate optimizate pentru conținut transmis în flux"
       ],
@@ -6906,6 +6920,9 @@
       ],
       "Priority support & live chat": [
         "Asistență prioritară și conversații live"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Conversații private cu IA (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "Conservare fotografii private"
@@ -7057,6 +7074,9 @@
         "Partajare seifuri cu ${ n } persoană",
         "Partajare seifuri cu ${ n } persoane",
         "Partajare seifuri cu ${ n } de persoane"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN cu protecție împotriva programelor malware și blocare reclame"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Scanăm internetul ascuns pentru a verifica dacă adresele sau aliasurile ${ BRAND_NAME } v-au fost divulgate și vă avertizăm imediat dacă găsim ceva."

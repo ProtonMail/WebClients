@@ -4968,9 +4968,6 @@
       "${ MEET_APP_NAME } seats": [
         "accès ${ MEET_APP_NAME }"
       ],
-      "${ MEET_APP_NAME } video conferencing": [
-        "Vidéoconférence ${ MEET_APP_NAME }"
-      ],
       "${ normalizedProgress }% completed": [
         "${ normalizedProgress } % complété"
       ],
@@ -5124,8 +5121,8 @@
       "Ad targeting": [
         "Ciblage publicitaire"
       ],
-      "Add ${ MEET_APP_NAME }": [
-        "Ajouter ${ MEET_APP_NAME }"
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Ajouter ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
       "Address copied to clipboard": [
         "L'adresse a été copiée dans le presse-papiers."
@@ -5559,6 +5556,9 @@
       ],
       "Everything in ${ planOrAppName }": [
         "Tout ce qui est inclus dans ${ planOrAppName }"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Tout ce qui est inclus dans ${ planOrAppName }, et plus encore :"
       ],
       "Expired": [
         "Expiré"
@@ -8036,6 +8036,9 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Partage d'écran chiffré de bout en bout et chat éphémère pendant les appels"
       ],
+      "Hosts can record meetings locally on their computers": [
+        "Les hôtes peuvent enregistrer les réunions localement sur leur ordinateur"
+      ],
       "Meeting recording": [
         "Enregistrement de la réunion"
       ],
@@ -8055,6 +8058,10 @@
       "Up to ${ n } participant": [
         "Jusqu'à ${ n } participant",
         "Jusqu'à ${ n } participants"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Vidéoconférences, ${ n } participant",
+        "Vidéoconférences, ${ n } participants"
       ]
     },
     "meet_2025: Info": {
@@ -8471,6 +8478,10 @@
         "${ n } connexion VPN",
         "${ n } connexions VPN"
       ],
+      "${ options }-day file version history": [
+        "Historique des versions de fichiers datant de ${ options } jour",
+        "Historique des versions de fichiers datant de ${ options } jours"
+      ],
       "${ PASS_APP_NAME } + SimpleLogin lifetime": [
         "Accès à vie aux fonctions ${ PASS_APP_NAME } et SimpleLogin"
       ],
@@ -8595,6 +8606,9 @@
       "Data breach monitoring": [
         "Surveillance des fuites de données"
       ],
+      "Data retention policies": [
+        "Politiques de conservation des données"
+      ],
       "Dedicated servers optimized for streaming": [
         "Serveurs dédiés optimisés pour le streaming"
       ],
@@ -8703,6 +8717,9 @@
       ],
       "Priority support & live chat": [
         "Assistance prioritaire et chat en direct"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Chat IA privé (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "Sauvegarde de photos privée"
@@ -8849,6 +8866,9 @@
       "Vault sharing with up to ${ n } person": [
         "Partage du coffre-fort jusqu'à ${ n } personne",
         "Partage du coffre-fort avec jusqu'à ${ n } personnes"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN avec bloqueur de publicité et protection contre les logiciels malveillants"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Nous analysons le dark web et vérifions si vos adresses ou vos alias ${ BRAND_NAME } ont été divulgués et nous vous informons immédiatement des résultats."

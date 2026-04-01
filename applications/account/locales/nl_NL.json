@@ -342,6 +342,9 @@
       "Continue import": [
         "Doorgaan met importeren"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Doorgaan naar ${ planOrAppName }"
+      ],
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "Doorgaan met ${ nameToDisplay } ${ maybeEmailInBrackets }"
       ],
@@ -1815,6 +1818,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } plaats",
         "${ seats } ${ LUMO_APP_NAME } plaatsen"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } licentie",
+        "${ seats } ${ MEET_APP_NAME } licenties"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } plaats voor schrijfassistent",
@@ -4921,6 +4928,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Gebruik deze handleiding om uw organisatie snel te laten profiteren van ${ BRAND_NAME }'s toonaangevende versleuteling en privacy ecosysteem."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Het spijt ons u te moeten zien vertrekken. Als u even tijd heeft, zouden we het zeer op prijs stellen te horen waarom u wilt annuleren. Uw feedback helpt ons ${ BRAND_NAME } beter te maken voor iedereen."
       ],
       "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
         "U kunt de lijst van domeinen aanpassen waar bepaalde automatische functies in de ${ PASS_APP_NAME } browser extensie (Automatisch aanvullen, automatisch suggesties geven, automatisch opslaan) niet mogen worden uitgevoerd."
@@ -8995,6 +9005,12 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } kan ook met een enkel wachtwoord gebruikt worden dat zowel de login als het tweede wachtwoord vervangt. Om over te schakelen naar één wachtwoord modus vult u een enkel wachtwoord naar keuze in en klikt u op Opslaan."
       ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } is een end-to-end versleutelde videoconferentie oplossing. Voeg het toe aan uw abonnement om veilige vergaderingen te hosten."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } licenties"
+      ],
       "${ n } address": [
         "${ n } adres",
         "${ n } adressen"
@@ -9646,6 +9662,9 @@
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "CNET editors keuze met een beoordeling van 8,4 van de 10"
       ],
+      "Code expired": [
+        "Code verlopen"
+      ],
       "Coming soon": [
         "Binnenkort beschikbaar"
       ],
@@ -9712,6 +9731,9 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "Maak een label aan voor de geïmporteerde berichten, een tijdbereik voor deze import, en de labels die u wilt importeren."
+      ],
+      "Create a new code on your TV and try again.": [
+        "Maak een nieuwe code aan op uw tv en probeer het opnieuw."
       ],
       "Create a secure cloud for ${ value } member": [
         "Maak een beveiligde cloud voor ${ value } lid",
@@ -9881,6 +9903,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Downgraden zal alle verbindingen naar betaalde ${ VPN_APP_NAME }-servers beëindigen."
+      ],
+      "Download ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME } downloaden"
       ],
       "Download current logs": [
         "Huidige logboeken downloaden"
@@ -10071,6 +10096,9 @@
       "Everything in ${ planOrAppName }": [
         "Alles van ${ planOrAppName }"
       ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Alles in ${ planOrAppName }, plus:"
+      ],
       "Example: ${ spfExample }": [
         "Voorbeeld: ${ spfExample }"
       ],
@@ -10121,6 +10149,9 @@
       ],
       "finance": [
         "financiën"
+      ],
+      "for ${ price }": [
+        "voor ${ price }"
       ],
       "For a 10-year version history, please contact our sales team.": [
         "Voor een 10-jarige versiegeschiedenis, neem contact op met ons verkoopteam."
@@ -10996,6 +11027,9 @@
       "Product reviews, rankings, or guides": [
         "Productrecensies, ranglijsten of gidsen"
       ],
+      "Protect this device too?": [
+        "Dit apparaat ook beschermen?"
+      ],
       "Protect your account from quantum computing threats with quantum-resistant cryptographic keys.": [
         "Bescherm uw account tegen bedreigingen van kwantumcomputing met kwantumbestendige cryptografische sleutels."
       ],
@@ -11225,6 +11259,9 @@
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Meld aan bij ${ MAIL_APP_NAME } om uw adres te activeren."
       ],
+      "Sign-in complete": [
+        "Inloggen voltooid"
+      ],
       "Signed up": [
         "Geregistreerd"
       ],
@@ -11313,6 +11350,9 @@
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "Abonnement eindigt: Om uw ${ planName }-voordelen te behouden, kunt u uw abonnement herstarten in de Google Play Store vóór ${ byDate }. ${ reactivateLink }"
+      ],
+      "Subscription starts on ${ startsOnTime }": [
+        "Uw abonnement start op ${ startsOnTime }"
       ],
       "Summary": [
         "Overzicht"
@@ -11671,6 +11711,9 @@
       "Total: ${ totalPrice }": [
         "Totaal: ${ totalPrice }"
       ],
+      "Trial ends on ${ formattedPeriodEndDate }": [
+        "Proefversie eindigt op ${ formattedPeriodEndDate }"
+      ],
       "trusted device": [
         "vertrouwd apparaat"
       ],
@@ -11992,9 +12035,6 @@
       "With ${ AUTHENTICATOR_APP_NAME }, you can:": [
         "Met ${ AUTHENTICATOR_APP_NAME } kunt u:"
       ],
-      "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
-        "Met een Business- of Enterprise-abonnement kan u ${ boldDedicatedServers } kopen voor uw organisatie en ${ boldGateways } instellen om te beheren welke gebruikers er toegang tot hebben."
-      ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Met een versleuteld ${ BRAND_NAME }-adres, kan je gebruik maken van alle ${ BRAND_NAME }-diensten"
       ],
@@ -12253,6 +12293,9 @@
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "U wordt dan elke ${ renewCycle } maand voor ${ renewAmountStr } gefactureerd. U kunt op elk moment annuleren.",
         "U wordt dan elke ${ renewCycle } maanden voor ${ renewAmountStr } gefactureerd. U kunt op elk moment annuleren."
+      ],
+      "You're now signed in on your TV.": [
+        "U bent nu aangemeld op uw tv."
       ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "U heeft doorsturen ingeschakeld op ${ MAX_SYNC_PAID_USER } Gmail adres. Om een ander toe te voegen, schakel eerst een van deze uit.",
@@ -13377,6 +13420,9 @@
       "Contacts": [
         "Contacten"
       ],
+      "Continue cancelling": [
+        "Doorgaan met annuleren"
+      ],
       "Conversation grouping": [
         "Gesprek groeperen"
       ],
@@ -13499,6 +13545,9 @@
       ],
       "Don't show this again": [
         "Toon dit niet opnieuw"
+      ],
+      "Donate ${ minimumDonation } or more to the ${ BRAND_NAME } Foundation": [
+        "Doneer ${ minimumDonation } of meer aan de ${ BRAND_NAME } Foundation"
       ],
       "Donation amount": [
         "Donatiebedrag"
@@ -13781,6 +13830,9 @@
       ],
       "Main": [
         "Primair"
+      ],
+      "Main reason for cancelling": [
+        "Hoofdreden voor annulering"
       ],
       "Manage categories": [
         "Beheer categorieën"
@@ -14163,6 +14215,9 @@
       ],
       "Single sign-on URL": [
         "URL voor enkele-teken"
+      ],
+      "Skip feedback": [
+        "Feedback overslaan"
       ],
       "SMTP port": [
         "SMTP-poort."
@@ -15097,6 +15152,22 @@
         "U heeft het maximum van ${ MAX_CALENDAR_MEMBERS } leden bereikt."
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (voor ${ quantity } gebruiker)",
+        "${ MEET_APP_NAME } (voor ${ quantity } gebruikers)"
+      ],
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } licentie"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } licenties"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME } licentie",
+        "${ seats } ${ MEET_APP_NAME } licenties"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: Vertrouwelijke videogesprekken voor de gesprekken die ertoe doen"
@@ -15130,6 +15201,9 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "End-to-end versleutelde schermdeling en korte chats tijdens telefoongesprekken"
       ],
+      "Hosts can record meetings locally on their computers": [
+        "Hosts kunnen vergaderingen lokaal op hun computers opnemen"
+      ],
       "Meeting recording": [
         "Opname van vergadering"
       ],
@@ -15149,9 +15223,17 @@
       "Up to ${ n } participant": [
         "Tot ${ n } deelnemer",
         "Tot ${ n } deelnemers"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videovergaderingen, ${ n } deelnemer",
+        "Videovergaderingen, ${ n } deelnemers"
       ]
     },
     "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } licentie inbegrepen",
+        "${ seats } licenties inbegrepen"
+      ],
       "100 ${ BRAND_NAME } email addresses": [
         "100 ${ BRAND_NAME } e-mailadressen"
       ],
@@ -15166,6 +15248,9 @@
       ],
       "Email writing assistant": [
         "Schrijfassistent voor e-mail"
+      ],
+      "Includes these features:": [
+        "Bevat de volgende functies:"
       ],
       "Open source": [
         "Open source"
@@ -15184,6 +15269,20 @@
       ],
       "Strict no-logs policy": [
         "Strikt beleid zonder logboeken"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "U kunt tot ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME }-licenties hebben tijdens de proefperiode."
+      ]
+    },
+    "Meet_launch": {
+      "Add ${ planName }": [
+        "Voeg ${ planName } toe"
+      ],
+      "Confidential video conferencing for the conversations that matter. Only ${ priceString } more each month.": [
+        "Confidentiële videoconferenties voor de gesprekken die ertoe doen. Slechts ${ priceString } meer per maand."
+      ],
+      "Talk privately with ${ planName }": [
+        "Praat privé met ${ planName }"
       ]
     },
     "meet_signup_2025: title": {
@@ -15852,6 +15951,9 @@
       "Data breach monitoring": [
         "Monitoring van datalekken"
       ],
+      "Data retention policies": [
+        "Dataretentiebeleid"
+      ],
       "Dedicated account manager": [
         "Toegewezen accountmanager"
       ],
@@ -15969,6 +16071,9 @@
       ],
       "Priority support & live chat": [
         "Prioritaire ondersteuning en live chat"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Privé AI-chat (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "Privé foto back-up"
@@ -16131,6 +16236,9 @@
       "Vault sharing with up to ${ n } person": [
         "Kluis delen met tot ${ n } persoon",
         "Kluis delen tot ${ n } personen"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN met advertentieblokkering en bescherming tegen malware"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "We scannen het dark web om te controleren of uw ${ BRAND_NAME } adressen of aliassen zijn gelekt en waarschuwen u onmiddellijk wanneer we iets vinden."
@@ -16676,6 +16784,9 @@
       ],
       "Daily email notifications": [
         "Dagelijkse e-mailmeldingen"
+      ],
+      "Disabling this means you won't get in-app notifications about promotions, new features, new ${ BRAND_NAME } services, and reminders.": [
+        "Door dit uit te schakelen, ontvangt u geen in-app-meldingen meer over promoties, nieuwe functies, nieuwe ${ BRAND_NAME }-services en herinneringen."
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Gedurende de eerste maand gebruik van een ${ BRAND_NAME } product"
@@ -18382,6 +18493,9 @@
       "Anderson": [
         "Anderson"
       ],
+      "Anything you'd like us to know": [
+        "Heeft u nog iets dat u ons wilt laten weten"
+      ],
       "Anytown": [
         "Willekeurige stad"
       ],
@@ -18785,6 +18899,18 @@
       ],
       "Google Workspace": [
         "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Overige"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {
@@ -20442,6 +20568,9 @@
       "Compare plans": [
         "Vergelijk abonnementen"
       ],
+      "Confirm payment": [
+        "Betaling bevestigen"
+      ],
       "Confirm payment, access your Drive": [
         "Bevestig betaling, open uw Drive"
       ],
@@ -20568,6 +20697,9 @@
       ],
       "Share and collaborate of files": [
         "Deel en werk samen aan bestanden"
+      ],
+      "Sign up to ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }": [
+        "Schrijf u in voor ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }"
       ],
       "Sign up to get everything ${ BRAND_NAME } has to offer": [
         "Schrijf u in krijg alles wat ${ BRAND_NAME } te bieden heeft."
@@ -20805,6 +20937,26 @@
       ],
       "Works on all devices": [
         "Werkt op alle apparaten"
+      ]
+    },
+    "Signup: Meet": {
+      "Choose your display name to continue": [
+        "Kies uw weergavenaam om door te gaan"
+      ],
+      "Choose your display name to continue scheduling your meeting": [
+        "Kies uw weergavenaam om door te gaan met het plannen van uw vergadering"
+      ],
+      "Create a ${ BRAND_NAME } account": [
+        "Maak een ${ BRAND_NAME }-account aan"
+      ],
+      "Create your ${ BRAND_NAME } account to create rooms": [
+        "Maak uw ${ BRAND_NAME }-account aan om ruimtes te maken"
+      ],
+      "Create your ${ BRAND_NAME } account to schedule a meeting": [
+        "Maak uw ${ BRAND_NAME }-account aan om een vergadering in te plannen"
+      ],
+      "Create your ${ BRAND_NAME } account to use your personal room": [
+        "Maak uw ${ BRAND_NAME }-account aan om uw persoonlijke ruimte te gebruiken"
       ]
     },
     "signup_2024: Feature": {
@@ -21550,6 +21702,10 @@
       "${ n } VPN connection per user": [
         "${ n } VPN-verbinding per gebruiker",
         "${ n } VPN-verbindingen per gebruiker"
+      ],
+      "${ productName } for ${ count } user": [
+        "${ productName } voor ${ count } gebruiker",
+        "${ productName } voor ${ count } gebruikers"
       ],
       "${ UsedAddresses } address": [
         "${ UsedAddresses } adres",

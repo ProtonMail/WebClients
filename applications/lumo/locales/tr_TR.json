@@ -86,6 +86,12 @@
       "Continue to ${ planOrAppName }": [
         "${ planOrAppName } ile ilerle"
       ],
+      "Copied": [
+        "Kopyalandı"
+      ],
+      "Copy": [
+        "Kopyala"
+      ],
       "Copy address": [
         "Adresi kopyala"
       ],
@@ -955,6 +961,9 @@
       "Enable ghost mode": [
         "Hayalet kipini aç"
       ],
+      "Generate workflow": [
+        "İş akışı oluştur"
+      ],
       "Get ${ LUMO_SHORT_APP_NAME } Plus from only ${ price }": [
         "${ LUMO_SHORT_APP_NAME } Plus tarifesini yalnızca ${ price } ile edinin"
       ],
@@ -1016,6 +1025,17 @@
       ],
       "For Business": [
         "Kuruluşlar için"
+      ]
+    },
+    "collider_2025: Badge": {
+      "Beta": [
+        "Beta"
+      ],
+      "GA": [
+        "GA"
+      ],
+      "OpenAI-compatible": [
+        "OpenAI ile uyumlu"
       ]
     },
     "collider_2025: Button": {
@@ -1207,8 +1227,17 @@
       ]
     },
     "collider_2025: Error": {
+      "Could not generate a workflow. Try again.": [
+        "Bir iş akışı oluşturulamadı. Lütfen yeniden deneyin."
+      ],
+      "Could not load usage for this key.": [
+        "Bu anahtarın kullanımı yüklenemedi."
+      ],
       "Could not retrieve your encryption key": [
         "Şifreleme anahtarınız alınamadı"
+      ],
+      "Describe what you want the workflow to do.": [
+        "İş akışının ne yapmasını istediğinizi açıklayın."
       ],
       "Error processing ${ result.fileName }: ${ result.errorMessage }": [
         "${ result.fileName } işlenirken sorun çıktı: ${ result.errorMessage }"
@@ -1269,6 +1298,9 @@
       ],
       "The provided URL is invalid.": [
         "Belirtilen adres geçersiz."
+      ],
+      "The response could not be parsed. Raw output is shown below.": [
+        "Yanıt işlenemedi. Ham çıktı aşağıda görüntüleniyor."
       ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus for unlimited chats, extended history, access to advanced AI models, and more.": [
         "Sınırsız sohbet, genişletilmiş geçmiş, gelişmiş yapay zeka modellerine erişim ve diğer özellikler için ${ LUMO_SHORT_APP_NAME } Plus tarifesine yükseltin."
@@ -1418,6 +1450,9 @@
       " files are hidden (unsupported file types)": [
         " dosya gizlenmiş (dosya türü desteklenmiyor)"
       ],
+      " header. Keys are scoped to your account and can be revoked from ": [
+        " üst bilgisi. Anahtarlar hesabınıza özeldir ve şuradan geçersiz kılınabilir "
+      ],
       " talk to your admin.": [
         " yöneticiniz ile görüşün."
       ],
@@ -1430,8 +1465,23 @@
       "${ LUMO_SHORT_APP_NAME } provide access to advanced models to help with more complex queries and provide better answers": [
         "${ LUMO_SHORT_APP_NAME }, daha karmaşık sorgulara yardımcı olmak ve daha iyi yanıtlar sunmak için gelişmiş modellere erişim sağlar."
       ],
+      "${ LUMO_SHORT_APP_NAME }+ — API access and keys are included with a ${ LUMO_SHORT_APP_NAME }+ subscription (sign in to upgrade or manage keys)": [
+        "${ LUMO_SHORT_APP_NAME }+ — API erişimi ve anahtarları ${ LUMO_SHORT_APP_NAME }+ tarifesinde bulunur (yükseltmek veya anahtarları yönetmek için oturum açın)"
+      ],
+      "${ LUMO_SHORT_APP_NAME }+ — the ${ LUMO_SHORT_APP_NAME } API and API keys require an active ${ LUMO_SHORT_APP_NAME }+ subscription. ": [
+        "${ LUMO_SHORT_APP_NAME }+ — ${ LUMO_SHORT_APP_NAME } API ve API anahtarları için etkin bir ${ LUMO_SHORT_APP_NAME }+ aboneliği gerekir. "
+      ],
+      ". It follows the OpenAI API schema — drop in your existing client with a one-line change.": [
+        ". OpenAI API şemasına uyar — Var olan istemcinizi tek satırda değiştirerek kullanmaya başlayın."
+      ],
       "1 file": [
         "1 dosya"
+      ],
+      "A ${ LUMO_SHORT_APP_NAME } account": [
+        "Bir ${ LUMO_SHORT_APP_NAME } hesabı"
+      ],
+      "A workflow that uploads a folder of PDFs, extracts text, asks ${ LUMO_SHORT_APP_NAME } to summarize each file, and writes one Markdown summary per document.": [
+        "PDF dosyalarından oluşan bir klasörü yükleyen, yazıları ayıklayan, ${ LUMO_SHORT_APP_NAME } ile her dosyanın özetlenmesini isteyen ve belge başına bir Markdown özeti yazan bir iş akışı."
       ],
       "Access ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } erişimi"
@@ -1445,17 +1495,41 @@
       "Advanced account and network security in one plan": [
         "Gelişmiş hesap ve ağ güvenliği tek bir tarifede"
       ],
+      "All API requests must include your API key in the ": [
+        "Tüm API isteklerinde şuradaki API anahtarınız bulunmalıdır: "
+      ],
+      "An API key — generate one in ": [
+        "Bir API anahtarı — Şuradan bir tane oluşturun "
+      ],
+      "An HTTP client or official SDK (Python, TypeScript, Rust)": [
+        "Bir HTTP istemcisi veya resmi SDK (Python, TypeScript, Rust)"
+      ],
+      "API calls": [
+        "API çağrıları"
+      ],
+      "API key management is not available for your account at the moment.": [
+        "Hesabınızda şu anda API anahtarı yönetimi kullanılamıyor."
+      ],
       "Ask anything to ${ LUMO_SHORT_APP_NAME }": [
         "${ LUMO_SHORT_APP_NAME } yardımcısına istediğiniz her şeyi sorun"
       ],
       "Attached Files": [
         "Eklenmiş dosyalar"
       ],
+      "Authenticates the request. Never expose this in client-side code.": [
+        "İsteğin kimliğini doğrular. Bunu asla istemci tarafı koduna eklemeyin."
+      ],
       "Auto-matched": [
         "Otomatik olarak eşleştirildi"
       ],
       "Be cautious of unfamiliar domains or excessive subdomains": [
         "Tanıdık olmayan etki alanlarına veya abartılı alt etki alanlarına karşı dikkatli olun"
+      ],
+      "Build privacy-first assistants with streaming and persistent context.": [
+        "Yayın akışı ve kalıcı bağlam özellikleriyle gizlilik odaklı yardımcılar oluşturun."
+      ],
+      "Chain tool calls to orchestrate multi-step pipelines end-to-end.": [
+        "Zincir araç çağrıları, uçtan uca çok adımlı işlem hatlarını düzenlemek için."
       ],
       "characters": [
         "karakter"
@@ -1477,6 +1551,12 @@
       ],
       "columns found, no data rows": [
         "sütun bulundu, herhangi bir veri satırı yok"
+      ],
+      "Create and revoke API keys for programmatic access. Keys are shown only once when created.": [
+        "Programlama ile erişim için API anahtarları oluşturabilir ve geçersiz kılabilirsiniz. Anahtarlar oluşturulduklarında yalnızca bir kez görüntülenir."
+      ],
+      "Describe a workflow in plain language and get a graph plus runnable code. Sign in to use this feature.": [
+        "Bir iş akışını sade bir dille tarif edin ve karşılığında bir çizelge ile çalıştırılabilir bir kod alın. Bu özelliği kullanmak için oturum açın."
       ],
       "Domain name": [
         "Etki alanı adı"
@@ -1514,6 +1594,9 @@
       "Expires tomorrow": [
         "Geçerlilik süresi yarın doluyor"
       ],
+      "Extract, analyse, and summarise documents, PDFs, and images.": [
+        "Belgeleri, PDF dosyalarını ve görselleri ayıklayın, inceleyein ve özetleyin."
+      ],
       "File capacity": [
         "Dosya kapasitesi"
       ],
@@ -1544,17 +1627,44 @@
       "For each conversation, ${ LUMO_SHORT_APP_NAME } has the capacity to process a limited amount of information. The progress bar shows how much capacity your current files are using. ": [
         "${ LUMO_SHORT_APP_NAME } her sohbette sınırlı miktarda bilgiyi işleyebilir. İlerleme çubuğu, var olan dosyalarınızın ne kadar kapasite kullandığını görüntüler. "
       ],
+      "For each day, average tokens per API call (tokens ÷ calls, or 0 if no calls).": [
+        "Günlük API çağrısı başına ortalama kod sayısı (kod sayısı ÷ çağrı sayısı; çağrı yoksa 0)."
+      ],
+      "Generate a workflow graph and implementation code for the following goal. Target language for code:": [
+        "Şu hedef için bir iş akışı çizelgesi ve uygulama kodu oluştur. Kod için hedef dil:"
+      ],
+      "Generating…": [
+        "Oluşturuluyor…"
+      ],
+      "Given a topic, use ${ LUMO_SHORT_APP_NAME } to outline sub-questions, answer each in turn, and merge the answers into a single structured brief.": [
+        "Belirli bir konu verildiğinde, alt soruları ana hatlarıyla belirtmek, her birini sırayla yanıtlamak ve yanıtları tek bir yapılandırılmış özet halinde birleştirmek için ${ LUMO_SHORT_APP_NAME } kullanın."
+      ],
       "High-speed chats and advanced AI features.": [
         "Yüksek hızlı sohbetler ve gelişmiş yapay zeka özellikleri."
       ],
       "How to identify safe links:": [
         "Güvenli bağlantılar nasıl tanımlanır:"
       ],
+      "In the generated code, use Authorization: Bearer, model \"auto\", stream: true, and null-safe parsing of choices[].delta (delta may be null; only append string content).": [
+        "Oluşturulan kodda, Authorization: Bearer, model \"auto\", stream: true ve choices[].delta (delta null olabilir; yalnızca dizge içeriğini ekleyin) işlenmesinde null-safe kullanın."
+      ],
       "Include your prompt and the response to help us improve accuracy.": [
         "Doğruluğu artırmamıza yardımcı olmak için isteğinizi ve yanıtını ekleyin."
       ],
+      "Ingest a customer message, classify urgency and topic with ${ LUMO_SHORT_APP_NAME }, branch on whether it needs escalation, then draft a reply or hand off to a human.": [
+        "Bir müşteri iletisini al, ${ LUMO_SHORT_APP_NAME } ile önceliğini ve konusunu sınıflandır, bir üste çıkarmak gerekip gerekmediğine karar ver, ardından bir yanıt taslağı oluştur veya bir insana devret."
+      ],
+      "Load two versions of a policy, ask ${ LUMO_SHORT_APP_NAME } to list differences and risks, then produce a short recommendation for which version to adopt.": [
+        "Bir ilkenin iki sürümünü yükleyin, ${ LUMO_SHORT_APP_NAME } ile farklılıkların ve risklerin listelenmesini isteyin. Ardından uyulacak sürüm için kısa bir öneri hazırlayın."
+      ],
       "Loading": [
         "Yükleniyor"
+      ],
+      "Loading usage…": [
+        "Kullanım yükleniyor…"
+      ],
+      "Loading…": [
+        "Yükleniyor…"
       ],
       "Looks like your ${ DRIVE_APP_NAME } hasn't been set up yet.": [
         "${ DRIVE_APP_NAME } uygulamanız henüz ayarlanmamış gibi görünüyor."
@@ -1562,8 +1672,17 @@
       "Manage files": [
         "Dosyaları yönet"
       ],
+      "Manage keys after you sign in": [
+        "Oturum açtıktan sonra anahtarları yönetin"
+      ],
       "Maybe later": [
         "Belki sonra"
+      ],
+      "Never embed API keys in client-side bundles. Use environment variables and a server-side proxy in production.": [
+        "API anahtarlarını asla istemci tarafındaki paketlere eklemeyin. Üretim ortamında ortam değişkenlerini ve sunucu tarafındaki bir vekil sunucunu kullanın."
+      ],
+      "No calls": [
+        "Herhangi bir çağrı yok"
       ],
       "No Content Available": [
         "Kullanılabilecek bir içerik yok"
@@ -1576,6 +1695,9 @@
       ],
       "No files available": [
         "Kullanılabilecek bir dosya yok"
+      ],
+      "No nodes in this workflow.": [
+        "Bu iş akışında herhangi bir düğüm yok."
       ],
       "No supported files in this folder": [
         "Bu klasörde desteklenen bir dosya yok"
@@ -1591,6 +1713,9 @@
       ],
       "Partial content": [
         "İçeriği bir bölümü"
+      ],
+      "Pass model: \"auto\" to let ${ LUMO_SHORT_APP_NAME } route to the best available model for your task. Specify a model ID directly for predictable latency or capability targeting.": [
+        "Modeli \"auto\" olarak ayarlarsanız ${ LUMO_SHORT_APP_NAME } göreviniz için en uygun modeli seçebilir. Öngörülebilir gecikme süresi veya belirli özellikler için doğrudan bir model kimliği belirtin."
       ],
       "Please share what you expected": [
         "Lütfen ne beklediğinizi paylaşın"
@@ -1616,6 +1741,9 @@
       "Processing file contents...": [
         "Dosya içerikleri işleniyor..."
       ],
+      "Read a batch of text files, extract people, organizations, and dates with ${ LUMO_SHORT_APP_NAME }, then emit a CSV of entities per file.": [
+        "Bir grup yazı dosyasını oku, ${ LUMO_SHORT_APP_NAME } ile insanları, kuruluşları ve tarihleri çıkar, ardından her dosya varlığı için bir CSV hazırla."
+      ],
       "Relevant files will be automatically retrieved based on your questions.": [
         "İlgili dosyalar sorularınıza göre otomatik olarak alınır."
       ],
@@ -1627,6 +1755,9 @@
       ],
       "Removed from future questions": [
         "Gelecekteki sorulardan kaldırıldı"
+      ],
+      "Required on all POST requests with a JSON body.": [
+        "Tüm JSON gövdeli POST isteklerinde gereklidir."
       ],
       "Retrieved Project Knowledge": [
         "Alınan proje bilgileri"
@@ -1664,6 +1795,12 @@
       "Sign in or create an account to browse and add files from your ${ DRIVE_APP_NAME } (end-to-end encrypted cloud storage) to your chat knowledge.": [
         "Sohbet bilgi tabanınıza ${ DRIVE_APP_NAME } (uçtan uca şifrelenmiş bulut depolama alanı) hizmetinizdeki dosyalara göz atmak ve dosya eklemek için oturum açın veya bir hesap oluşturun."
       ],
+      "Sign in to create and manage API keys for ${ LUMO_SHORT_APP_NAME }.": [
+        "${ LUMO_SHORT_APP_NAME } API anahtarlarını oluşturmak ve yönetmek için oturum açın."
+      ],
+      "Sign in to generate workflows with ${ LUMO_SHORT_APP_NAME }.": [
+        "${ LUMO_SHORT_APP_NAME } ile iş akışları oluşturmak için oturum açın."
+      ],
       "Sketch added as attachment": [
         "Taslak dosya olarak eklendi"
       ],
@@ -1672,6 +1809,18 @@
       ],
       "Table view": [
         "Tablo görünümü"
+      ],
+      "The ${ LUMO_SHORT_APP_NAME } API and API keys are included with ${ LUMO_SHORT_APP_NAME }+. Ask your organization administrator to assign a ${ LUMO_SHORT_APP_NAME } seat to your account.": [
+        "${ LUMO_SHORT_APP_NAME } API uygulaması ve API anahtarları ${ LUMO_SHORT_APP_NAME }+ ile birlikte gelir. Hesabınıza bir ${ LUMO_SHORT_APP_NAME } koltuğu ataması için kuruluş yöneticinizle görüşün."
+      ],
+      "The ${ LUMO_SHORT_APP_NAME } API gives you programmatic access to language models with ${ BRAND_NAME }'s privacy architecture built in. No data training on your requests. No tracking.": [
+        "${ LUMO_SHORT_APP_NAME } API, gizlilik mimarisi ${ BRAND_NAME } tarafından hazır gelen dil modellerine programlama ile erişim sağlar. İstekleriniz ile veriler eğitilmez. İzleme yoktur."
+      ],
+      "The ${ LUMO_SHORT_APP_NAME } API is a RESTful interface at ": [
+        "${ LUMO_SHORT_APP_NAME } API, şuradaki bir RESTful arayüzüdür: "
+      ],
+      "The ${ LUMO_SHORT_APP_NAME } API is available for ${ LUMO_SHORT_APP_NAME }+ subscribers. Upgrade to create API keys and use the API programmatically.": [
+        "${ LUMO_SHORT_APP_NAME } API uygulaması, ${ LUMO_SHORT_APP_NAME }+ aboneleri tarafından kullanılabilir. API anahtarları oluşturmak ve API uygulamasını programlama ile kullanmak için tarifenizi yükseltin."
       ],
       "There was an error processing this file. The content may not be readable or the file format might not be fully supported.": [
         "Bu dosya işlenirken bir sorun çıktı. İçerik okunamayabilir veya dosya biçimi tam olarak desteklenmiyor olabilir."
@@ -1718,6 +1867,9 @@
       "Watch for misspellings (e.g., proton.me vs pr0t0n.me)": [
         "Yanlış anlaşılabilecek yazımlara dikkat edin (proton.me yerine pr0t0n.me gibi)"
       ],
+      "We can help you get started with using the ${ LUMO_SHORT_APP_NAME } API. Describe what you want to automate. ${ LUMO_SHORT_APP_NAME } returns a workflow graph and sample code that calls the ${ LUMO_SHORT_APP_NAME } API.": [
+        "${ LUMO_SHORT_APP_NAME } API uygulamasını kullanmaya başlamanıza yardımcı olabiliriz. Otomatikleştirmek istediğiniz şeyi açıklayın. ${ LUMO_SHORT_APP_NAME }, bir iş akışı çizelgesi ve ${ LUMO_SHORT_APP_NAME } API uygulamasını çağıran bir örnek kod döndürür."
+      ],
       "You are about to visit an external website:": [
         "Bir dış siteyi ziyaret etmek üzeresiniz:"
       ],
@@ -1755,17 +1907,119 @@
       ]
     },
     "collider_2025: Label": {
+      "API calls": [
+        "API çağrıları"
+      ],
+      "API calls (30d)": [
+        "API çağrıları (30 gün)"
+      ],
+      "Avg tokens / call": [
+        "Ortalama kod / çağrı"
+      ],
+      "Basic": [
+        "Temel"
+      ],
+      "Code language": [
+        "Kod dili"
+      ],
+      "Compare two drafts": [
+        "İki taslağı karşılaştır"
+      ],
+      "Conditional": [
+        "Koşullu"
+      ],
+      "Context": [
+        "Bağlam"
+      ],
+      "Default: ": [
+        "Varsayılan: "
+      ],
+      "Description": [
+        "Açıklama"
+      ],
       "Did not follow instructions": [
         "Yönergeleri izlemedi"
       ],
       "Don't like the style": [
         "Tarzını beğenmedim"
       ],
+      "Entity extraction": [
+        "Varlık ayıklama"
+      ],
+      "Example ideas": [
+        "Örnek fikirler"
+      ],
+      "File upload": [
+        "Dosya yükleme"
+      ],
+      "Loop": [
+        "Döngü"
+      ],
+      "Merge": [
+        "Birleştir"
+      ],
+      "Method": [
+        "Yöntem"
+      ],
       "Not factually correct": [
         "Aslında doğru değil"
       ],
+      "optional": [
+        "i̇steğe bağlı"
+      ],
+      "Other": [
+        "Diğer"
+      ],
+      "Output": [
+        "Çıktı"
+      ],
+      "Path": [
+        "Yol"
+      ],
+      "Prompt": [
+        "İstem"
+      ],
+      "Python": [
+        "Python"
+      ],
+      "required": [
+        "zorunlu"
+      ],
+      "Research brief": [
+        "Araştırma özeti"
+      ],
+      "Response": [
+        "Yanıt"
+      ],
+      "Rust": [
+        "Rust"
+      ],
+      "Status": [
+        "Durum"
+      ],
+      "Summarize documents": [
+        "Belgeleri özetle"
+      ],
+      "Support ticket triage": [
+        "Destek kaydı sınıflaması"
+      ],
+      "Tokens (30d)": [
+        "Kodlar (30 gün)"
+      ],
+      "Tokens generated": [
+        "Oluşturulan kodlar"
+      ],
+      "Tool calls": [
+        "Araç çağrıları"
+      ],
+      "TypeScript": [
+        "TypeScript"
+      ],
       "Unsafe or problematic": [
         "Güvenli değil ya da sorunlu"
+      ],
+      "Your workflow": [
+        "İş akışınız"
       ]
     },
     "collider_2025: Legal disclaimer": {
@@ -1797,6 +2051,9 @@
       "create a free account.": [
         "ücretsiz bir hesap açın."
       ],
+      "Manage keys": [
+        "Anahtar yönetimi"
+      ],
       "New chat": [
         "Yeni sohbet"
       ],
@@ -1808,6 +2065,23 @@
       ],
       "upgrade to ${ LUMO_SHORT_APP_NAME } Plus.": [
         "${ LUMO_SHORT_APP_NAME } Plus tarifesine yükseltin."
+      ],
+      "View plans": [
+        "Tarifeleri görüntüle"
+      ]
+    },
+    "collider_2025: Nav": {
+      "Authentication": [
+        "Kimlik doğrulama"
+      ],
+      "Endpoints": [
+        "Uç noktalar"
+      ],
+      "Models": [
+        "Modeller"
+      ],
+      "Overview": [
+        "Özet"
       ]
     },
     "collider_2025: Notification": {
@@ -1897,9 +2171,6 @@
       "Account": [
         "Hesap"
       ],
-      "API keys": [
-        "API anahtarları"
-      ],
       "General": [
         "Genel"
       ],
@@ -1950,7 +2221,21 @@
         "Geri bildiriminiz için teşekkürler!"
       ]
     },
+    "collider_2025: Tab": {
+      "API": [
+        "API"
+      ],
+      "Manage keys": [
+        "Anahtar yönetimi"
+      ],
+      "Workflow Builder": [
+        "İş akışı oluşturucu"
+      ]
+    },
     "collider_2025: Title": {
+      "${ LUMO_SHORT_APP_NAME } API · ${ spec.versionLabel }": [
+        "${ LUMO_SHORT_APP_NAME } API · ${ spec.versionLabel }"
+      ],
       "${ LUMO_SHORT_APP_NAME } Business": [
         "${ LUMO_SHORT_APP_NAME } Business"
       ],
@@ -1960,8 +2245,32 @@
       "About ${ LUMO_SHORT_APP_NAME }": [
         "${ LUMO_SHORT_APP_NAME } hakkında"
       ],
+      "API calls per day": [
+        "Günlük API çağrıları"
+      ],
+      "API docs sections": [
+        "API belgeleri bölümleri"
+      ],
+      "API documentation": [
+        "API belgeleri"
+      ],
+      "API endpoints overview": [
+        "API uç noktaları özeti"
+      ],
+      "Authentication": [
+        "Kimlik doğrulama"
+      ],
       "Automatic web search": [
         "Otomatik internet araması"
+      ],
+      "Build intelligent apps.": [
+        "Akıllı uygulamalar oluşturun."
+      ],
+      "Chat": [
+        "Sohbet"
+      ],
+      "Conversational AI": [
+        "Yazışılan yapay zeka"
       ],
       "Create new API key": [
         "Yeni API anahtarı oluştur"
@@ -1969,8 +2278,14 @@
       "Delete everything": [
         "Her şeyi sil"
       ],
+      "Document intelligence": [
+        "Belge zekası"
+      ],
       "Don't lose the thread": [
         "Konudan uzaklaşmayın"
+      ],
+      "Generated code": [
+        "Oluşturulan kod"
       ],
       "Guest": [
         "Konuk"
@@ -1978,11 +2293,32 @@
       "Invalid Link": [
         "Bağlantı geçersiz"
       ],
+      "Manage keys": [
+        "Anahtarları yönet"
+      ],
+      "Models": [
+        "Modeller"
+      ],
       "No API keys yet": [
         "Henüz API anahtarı yok"
       ],
       "Opening External Link": [
         "Dış bağlantı açılıyor"
+      ],
+      "Parameters": [
+        "Parametreler"
+      ],
+      "Prerequisites": [
+        "Ön koşullar"
+      ],
+      "Privacy included by default.": [
+        "Varsayılan olarak gizlilik odaklıdır."
+      ],
+      "Raw response": [
+        "Ham yanıt"
+      ],
+      "Required headers": [
+        "Gerekli üst bilgiler"
       ],
       "Save your favorites": [
         "Beğendiklerinizi kaydedin"
@@ -1990,17 +2326,44 @@
       "Search Index": [
         "Arama dizini"
       ],
+      "Security note:": [
+        "Güvenlik notu:"
+      ],
       "Show project chats in history": [
         "Geçmiş proje sohbetlerini görüntüle"
       ],
       "Theme": [
         "Tema"
       ],
+      "Tokens per call (daily)": [
+        "Çağrı başına kod sayısı (günlük)"
+      ],
+      "Tokens per day": [
+        "Günlük kodlar"
+      ],
       "Upload files": [
         "Dosya yükle"
       ],
+      "Usage (all keys, last 30 days)": [
+        "Kullanım (tüm anahtarlar, son 30 gün)"
+      ],
       "Visionary": [
         "Visionary"
+      ],
+      "What you can build": [
+        "Neler oluşturabilirsiniz"
+      ],
+      "Workflow automation": [
+        "İş akışı otomasyonu"
+      ],
+      "Workflow Builder": [
+        "İş akışı oluşturucu"
+      ],
+      "Workflow graph": [
+        "İş akışı çizelgesi"
+      ],
+      "Workflow output": [
+        "İş akışı çıktısı"
       ],
       "Your new API key": [
         "Yeni API anahtarınız"
@@ -2101,8 +2464,14 @@
       ]
     },
     "collider_2025: Unit": {
+      "calls": [
+        "çağrı"
+      ],
       "tokens": [
         "kodlar"
+      ],
+      "tokens/call": [
+        "kod/çağrı"
       ]
     },
     "collider_2025: Upsell": {
@@ -2302,6 +2671,9 @@
     "collider_2025:Button": {
       "Add instructions to tailor ${ LUMO_SHORT_APP_NAME }'s responses": [
         "${ LUMO_SHORT_APP_NAME } yanıtlarını özelleştirmek için yönergeler ekleyin"
+      ],
+      "API": [
+        "API"
       ],
       "Back to projects": [
         "Projelere dön"
@@ -2621,6 +2993,9 @@
       ],
       "Ask anything…": [
         "İstediğinizi sorun…"
+      ],
+      "e.g. Iterate over documents in a folder, extract people and dates from each, then build a graph of how terms relate.": [
+        "Örneğin bir klasördeki belgeleri tek tek inceletin, her birinden kişi ve tarih bilgilerini aldırın, ardından dönemler arasındaki ilişkileri gösteren bir çizelge hazırlatın."
       ],
       "Enter folder name": [
         "Klasör adını yazın"
@@ -4464,9 +4839,6 @@
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } koltukları"
       ],
-      "${ MEET_APP_NAME } video conferencing": [
-        "${ MEET_APP_NAME } görüntülü görüşme"
-      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } Lifetime fırsatının yenileme ücreti yoktur. ${ PASS_SHORT_APP_NAME } hizmetine ömür boyu erişim için tek seferlik ödeme yapılır."
       ],
@@ -4507,8 +4879,8 @@
       "Account successfully updated": [
         "Hesap güncellendi"
       ],
-      "Add ${ MEET_APP_NAME }": [
-        "${ MEET_APP_NAME } ekle"
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } ekle"
       ],
       "Address copied to clipboard": [
         "Adres panoya kopyalandı"
@@ -4644,7 +5016,7 @@
         "${ planOrAppName } özelliklerinin tümü"
       ],
       "Everything in ${ planOrAppName }, plus:": [
-        "${ planOrAppName } kapsamındaki tüm özelliklerin yanı sıra:"
+        "${ planOrAppName } tarifesindeki her şeye ek olarak:"
       ],
       "Expired": [
         "Geçerlilik süresi dolmuş"
@@ -5554,7 +5926,7 @@
         "Uçtan uca şifrelenmiş ekran paylaşımı ve geçici çağrı içi sohbet"
       ],
       "Hosts can record meetings locally on their computers": [
-        "Oturum sahipleri toplantıları kendi bilgisayarlarına yerel olarak kaydedebilirler"
+        "Oturum sahipleri görüşmeleri kendi bilgisayarlarına yerel olarak kaydedebilir"
       ],
       "Meeting recording": [
         "Görüşme kaydı"
@@ -5577,8 +5949,8 @@
         "${ n } katılımcı"
       ],
       "Video meetings, ${ n } participant": [
-        "Görüntülü toplantılar, ${ n } katılımcı",
-        "Görüntülü toplantılar, ${ n } katılımcı"
+        "Görüntülü görüşmeler, ${ n } katılımcı",
+        "Görüntülü görüşmeler, ${ n } katılımcı"
       ]
     },
     "meet_2025: Info": {
@@ -5811,7 +6183,7 @@
         "Veri sızıntılarını izleme"
       ],
       "Data retention policies": [
-        "Veri saklama ilkeleri"
+        "Verileri tutma ilkeleri"
       ],
       "Dedicated servers optimized for streaming": [
         "Yayın akışı izlemek için ayarlanmış özel sunucular"
@@ -5920,7 +6292,7 @@
         "Öncelikli destek ve canlı sohbet"
       ],
       "Private AI Chat (${ LUMO_APP_NAME })": [
-        "Gizli Yapay Zeka Sohbeti (${ LUMO_APP_NAME })"
+        "Gizli yapay zeka sohbeti (${ LUMO_APP_NAME })"
       ],
       "Recover previous file versions": [
         "Önceki dosya sürümlerini geri yükleyin"
@@ -6051,7 +6423,7 @@
         "${ n } kişiye kadar kasa paylaşımı"
       ],
       "VPN with ad-blocker and malware protection": [
-        "Reklam engelleyici ve kötü amaçlı yazılım koruması içeren VPN"
+        "Reklam engelleyici ve kötü amaçlı yazılım koruması ile VPN"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } adreslerinizin veya takma adlarınızın sızıp sızmadığını denetlemek için karanlık ağı tararız ve herhangi bir şey bulursak sizi hemen uyarırız."

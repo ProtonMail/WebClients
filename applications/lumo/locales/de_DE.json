@@ -86,6 +86,12 @@
       "Continue to ${ planOrAppName }": [
         "Weiter zu ${ planOrAppName }"
       ],
+      "Copied": [
+        "Kopiert"
+      ],
+      "Copy": [
+        "Kopieren"
+      ],
       "Copy address": [
         "Adresse kopieren"
       ],
@@ -955,6 +961,9 @@
       "Enable ghost mode": [
         "Ghost-Modus aktivieren"
       ],
+      "Generate workflow": [
+        "Workflow generieren"
+      ],
       "Get ${ LUMO_SHORT_APP_NAME } Plus from only ${ price }": [
         "Erhalte ${ LUMO_SHORT_APP_NAME } Plus schon ab ${ price }"
       ],
@@ -1016,6 +1025,17 @@
       ],
       "For Business": [
         "Für Unternehmen"
+      ]
+    },
+    "collider_2025: Badge": {
+      "Beta": [
+        "Beta"
+      ],
+      "GA": [
+        "GA"
+      ],
+      "OpenAI-compatible": [
+        "OpenAI-kompatibel"
       ]
     },
     "collider_2025: Button": {
@@ -1207,8 +1227,17 @@
       ]
     },
     "collider_2025: Error": {
+      "Could not generate a workflow. Try again.": [
+        "Workflow konnte nicht generiert werden. Versuche es erneut."
+      ],
+      "Could not load usage for this key.": [
+        "Nutzung für diesen Schlüssel konnte nicht geladen werden."
+      ],
       "Could not retrieve your encryption key": [
         "Dein Verschlüsselungsschlüssel konnte nicht abgerufen werden."
+      ],
+      "Describe what you want the workflow to do.": [
+        "Beschreibe, was der Workflow tun soll."
       ],
       "Error processing ${ result.fileName }: ${ result.errorMessage }": [
         "Fehler bei der Verarbeitung von ${ result.fileName }: ${ result.errorMessage }"
@@ -1269,6 +1298,9 @@
       ],
       "The provided URL is invalid.": [
         "Die angegebene URL ist ungültig."
+      ],
+      "The response could not be parsed. Raw output is shown below.": [
+        "Die Antwort konnte nicht analysiert werden. Die unbearbeitete Ausgabe wird unten angezeigt."
       ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus for unlimited chats, extended history, access to advanced AI models, and more.": [
         "Upgrade auf ${ LUMO_SHORT_APP_NAME } Plus für unbegrenzte Chats, erweiterten Verlauf, Zugriff auf erweiterte KI-Modelle und mehr."
@@ -1430,8 +1462,23 @@
       "${ LUMO_SHORT_APP_NAME } provide access to advanced models to help with more complex queries and provide better answers": [
         "${ LUMO_SHORT_APP_NAME } bietet Zugriff auf erweiterte Modelle, um bei komplexeren Anfragen zu helfen und bessere Antworten zu geben."
       ],
+      "${ LUMO_SHORT_APP_NAME }+ — API access and keys are included with a ${ LUMO_SHORT_APP_NAME }+ subscription (sign in to upgrade or manage keys)": [
+        "${ LUMO_SHORT_APP_NAME }+ — API-Zugriff und Schlüssel sind mit einem ${ LUMO_SHORT_APP_NAME }+ Abonnement enthalten (zum Upgraden oder Verwalten von Schlüsseln anmelden)"
+      ],
+      "${ LUMO_SHORT_APP_NAME }+ — the ${ LUMO_SHORT_APP_NAME } API and API keys require an active ${ LUMO_SHORT_APP_NAME }+ subscription. ": [
+        "${ LUMO_SHORT_APP_NAME }+ — die ${ LUMO_SHORT_APP_NAME }+ API und API-Schlüssel erfordern ein aktives ${ LUMO_SHORT_APP_NAME }+ Abonnement. "
+      ],
+      ". It follows the OpenAI API schema — drop in your existing client with a one-line change.": [
+        ". Es folgt dem OpenAI API-Schema – füge deinen bestehenden Client mit einer einzeiligen Änderung ein."
+      ],
       "1 file": [
         "1 Datei"
+      ],
+      "A ${ LUMO_SHORT_APP_NAME } account": [
+        "Ein ${ LUMO_SHORT_APP_NAME }-Konto"
+      ],
+      "A workflow that uploads a folder of PDFs, extracts text, asks ${ LUMO_SHORT_APP_NAME } to summarize each file, and writes one Markdown summary per document.": [
+        "Ein Workflow, der einen Ordner mit PDFs hochlädt, Text extrahiert, ${ LUMO_SHORT_APP_NAME } auffordert, jede Datei zusammenzufassen, und eine Markdown-Zusammenfassung pro Dokument schreibt."
       ],
       "Access ${ DRIVE_APP_NAME }": [
         "${ DRIVE_APP_NAME } öffnen"
@@ -1445,17 +1492,41 @@
       "Advanced account and network security in one plan": [
         "Erweiterte Konto- und Netzwerksicherheit in einem Abonnement"
       ],
+      "All API requests must include your API key in the ": [
+        "Alle API-Aufrufe müssen deinen API-Schlüssel enthalten im "
+      ],
+      "An API key — generate one in ": [
+        "Ein API-Schlüssel – einen generieren in "
+      ],
+      "An HTTP client or official SDK (Python, TypeScript, Rust)": [
+        "Ein HTTP-Client oder offizielles SDK (Python, TypeScript, Rust)"
+      ],
+      "API calls": [
+        "API-Aufrufe"
+      ],
+      "API key management is not available for your account at the moment.": [
+        "API-Schlüsselverwaltung ist momentan für dein Konto nicht verfügbar."
+      ],
       "Ask anything to ${ LUMO_SHORT_APP_NAME }": [
         "Frage ${ LUMO_SHORT_APP_NAME } alles"
       ],
       "Attached Files": [
         "Angehängte Dateien"
       ],
+      "Authenticates the request. Never expose this in client-side code.": [
+        "Authentifiziert die Anfrage. Niemals im clientseitigen Code preisgeben."
+      ],
       "Auto-matched": [
         "Automatisch zugeordnet"
       ],
       "Be cautious of unfamiliar domains or excessive subdomains": [
         "Sei vorsichtig bei unbekannten Domains oder übermäßigen Subdomains"
+      ],
+      "Build privacy-first assistants with streaming and persistent context.": [
+        "Datenschutzorientierte Assistenten erstellen mit Streaming und persistentem Kontext."
+      ],
+      "Chain tool calls to orchestrate multi-step pipelines end-to-end.": [
+        "Kette von Tool-Aufrufen, um mehrstufige Pipelines durchgängig zu orchestrieren."
       ],
       "characters": [
         "Zeichen"
@@ -1477,6 +1548,12 @@
       ],
       "columns found, no data rows": [
         "Spalten gefunden, keine Datenzeilen"
+      ],
+      "Create and revoke API keys for programmatic access. Keys are shown only once when created.": [
+        "Erstelle und widerrufe API-Schlüssel für programmgesteuerten Zugriff. Schlüssel werden nur einmal beim Erstellen angezeigt."
+      ],
+      "Describe a workflow in plain language and get a graph plus runnable code. Sign in to use this feature.": [
+        "Beschreibe einen Workflow in einfacher Sprache und erhalte eine Grafik plus ausführbaren Code. Melde dich an, um diese Funktion zu nutzen."
       ],
       "Domain name": [
         "Domainname"
@@ -1514,6 +1591,9 @@
       "Expires tomorrow": [
         "Läuft morgen ab"
       ],
+      "Extract, analyse, and summarise documents, PDFs, and images.": [
+        "Dokumente, PDFs und Bilder extrahieren, analysieren und zusammenfassen."
+      ],
       "File capacity": [
         "Dateikapazität"
       ],
@@ -1544,6 +1624,18 @@
       "For each conversation, ${ LUMO_SHORT_APP_NAME } has the capacity to process a limited amount of information. The progress bar shows how much capacity your current files are using. ": [
         "Für jede Unterhaltung hat ${ LUMO_SHORT_APP_NAME } die Kapazität, eine begrenzte Menge an Informationen zu verarbeiten. Der Fortschrittsbalken zeigt an, wie viel Kapazität deine aktuellen Dateien nutzen. "
       ],
+      "For each day, average tokens per API call (tokens ÷ calls, or 0 if no calls).": [
+        "Pro Tag werden die durchschnittlichen Token pro API-Aufruf berechnet (Token ÷ Aufrufe, oder 0, wenn keine Aufrufe)."
+      ],
+      "Generate a workflow graph and implementation code for the following goal. Target language for code:": [
+        "Generiere eine Workflow-Grafik und Implementierungscode für das folgende Ziel. Zielsprache für den Code:"
+      ],
+      "Generating…": [
+        "Wird erstellt…"
+      ],
+      "Given a topic, use ${ LUMO_SHORT_APP_NAME } to outline sub-questions, answer each in turn, and merge the answers into a single structured brief.": [
+        "Gib ein Thema vor, nutze ${ LUMO_SHORT_APP_NAME }, um Unterfragen zu skizzieren, beantworte jede der Reihe nach und füge die Antworten zu einer einzigen strukturierten Zusammenfassung zusammen."
+      ],
       "High-speed chats and advanced AI features.": [
         "Schnelle Chats und erweiterte KI-Funktionen."
       ],
@@ -1553,8 +1645,20 @@
       "Include your prompt and the response to help us improve accuracy.": [
         "Füge deine Eingabeaufforderung und die Antwort ein, um uns bei der Verbesserung der Genauigkeit zu unterstützen."
       ],
+      "Ingest a customer message, classify urgency and topic with ${ LUMO_SHORT_APP_NAME }, branch on whether it needs escalation, then draft a reply or hand off to a human.": [
+        "Nimm eine Kunden­nachricht entgegen, klassifiziere Dringlichkeit und Thema mit ${ LUMO_SHORT_APP_NAME }, verzweige, je nachdem, ob eine Eskalation erforderlich ist, und erstelle dann eine Antwort oder übergib sie an einen Menschen."
+      ],
+      "Load two versions of a policy, ask ${ LUMO_SHORT_APP_NAME } to list differences and risks, then produce a short recommendation for which version to adopt.": [
+        "Lade zwei Versionen einer Richtlinie, lass ${ LUMO_SHORT_APP_NAME } Unterschiede und Risiken auflisten und erstelle dann eine kurze Empfehlung, welche Version übernommen werden sollte."
+      ],
       "Loading": [
         "Laden"
+      ],
+      "Loading usage…": [
+        "Nutzung wird geladen…"
+      ],
+      "Loading…": [
+        "Wird geladen …"
       ],
       "Looks like your ${ DRIVE_APP_NAME } hasn't been set up yet.": [
         "Es sieht so aus, als ob dein ${ DRIVE_APP_NAME } noch nicht eingerichtet ist."
@@ -1562,8 +1666,17 @@
       "Manage files": [
         "Dateien verwalten"
       ],
+      "Manage keys after you sign in": [
+        "Schlüssel verwalten, nachdem du dich angemeldet hast"
+      ],
       "Maybe later": [
         "Vielleicht später"
+      ],
+      "Never embed API keys in client-side bundles. Use environment variables and a server-side proxy in production.": [
+        "Bette API-Schlüssel niemals in clientseitige Pakete ein. Verwende Umgebungsvariablen und einen serverseitigen Proxy in der Produktion."
+      ],
+      "No calls": [
+        "Keine Aufrufe"
       ],
       "No Content Available": [
         "Kein Inhalt verfügbar"
@@ -1576,6 +1689,9 @@
       ],
       "No files available": [
         "Keine Dateien verfügbar"
+      ],
+      "No nodes in this workflow.": [
+        "Keine Knoten in diesem Workflow."
       ],
       "No supported files in this folder": [
         "Keine unterstützten Dateien in diesem Ordner"
@@ -1591,6 +1707,9 @@
       ],
       "Partial content": [
         "Teilinhalt"
+      ],
+      "Pass model: \"auto\" to let ${ LUMO_SHORT_APP_NAME } route to the best available model for your task. Specify a model ID directly for predictable latency or capability targeting.": [
+        "Pass model \"auto\", damit ${ LUMO_SHORT_APP_NAME } zum besten für deine Aufgabe verfügbaren Modell weiterleitet. Gib eine Modell-ID direkt für vorhersagbare Latenz oder gezielte Funktionen an."
       ],
       "Please share what you expected": [
         "Bitte teile deine Erwartungen"
@@ -1616,6 +1735,9 @@
       "Processing file contents...": [
         "Dateiinhalt wird verarbeitet..."
       ],
+      "Read a batch of text files, extract people, organizations, and dates with ${ LUMO_SHORT_APP_NAME }, then emit a CSV of entities per file.": [
+        "Lies einen Stapel von Textdateien, extrahiere Personen, Organisationen und Termine mit ${ LUMO_SHORT_APP_NAME } und gib dann eine CSV mit Entitäten pro Datei aus."
+      ],
       "Relevant files will be automatically retrieved based on your questions.": [
         "Relevante Dateien werden automatisch basierend auf deinen Fragen abgerufen."
       ],
@@ -1627,6 +1749,9 @@
       ],
       "Removed from future questions": [
         "Aus zukünftigen Fragen entfernt"
+      ],
+      "Required on all POST requests with a JSON body.": [
+        "Erforderlich für alle POST-Anfragen mit einem JSON-Body."
       ],
       "Retrieved Project Knowledge": [
         "Abgerufenes Projektwissen"
@@ -1664,6 +1789,12 @@
       "Sign in or create an account to browse and add files from your ${ DRIVE_APP_NAME } (end-to-end encrypted cloud storage) to your chat knowledge.": [
         "Melde dich an oder erstelle ein Konto, um Dateien von deinem ${ DRIVE_APP_NAME } (Ende-zu-Ende-verschlüsselter Cloud-Speicher) zu durchsuchen und zu deinem Chat-Wissen hinzuzufügen."
       ],
+      "Sign in to create and manage API keys for ${ LUMO_SHORT_APP_NAME }.": [
+        "Melde dich an, um API-Schlüssel für ${ LUMO_SHORT_APP_NAME } zu erstellen und zu verwalten."
+      ],
+      "Sign in to generate workflows with ${ LUMO_SHORT_APP_NAME }.": [
+        "Melde dich an, um Workflows mit ${ LUMO_SHORT_APP_NAME } zu generieren."
+      ],
       "Sketch added as attachment": [
         "Skizze als Anhang hinzugefügt"
       ],
@@ -1672,6 +1803,18 @@
       ],
       "Table view": [
         "Tabellenansicht"
+      ],
+      "The ${ LUMO_SHORT_APP_NAME } API and API keys are included with ${ LUMO_SHORT_APP_NAME }+. Ask your organization administrator to assign a ${ LUMO_SHORT_APP_NAME } seat to your account.": [
+        "Die ${ LUMO_SHORT_APP_NAME }-API und API-Schlüssel sind in ${ LUMO_SHORT_APP_NAME }+ enthalten. Bitte deinen Organisationsadministrator deinem Konto eine ${ LUMO_SHORT_APP_NAME }-Lizenz zuzuweisen."
+      ],
+      "The ${ LUMO_SHORT_APP_NAME } API gives you programmatic access to language models with ${ BRAND_NAME }'s privacy architecture built in. No data training on your requests. No tracking.": [
+        "Die ${ LUMO_SHORT_APP_NAME }-API gibt dir programmgesteuerten Zugriff auf Sprachmodelle mit der integrierten Datenschutzarchitektur von ${ BRAND_NAME }. Keine Daten aus deinen Anfragen für Trainingszwecke. Kein Tracking."
+      ],
+      "The ${ LUMO_SHORT_APP_NAME } API is a RESTful interface at ": [
+        "Die ${ LUMO_SHORT_APP_NAME }-API ist eine RESTful-Schnittstelle bei "
+      ],
+      "The ${ LUMO_SHORT_APP_NAME } API is available for ${ LUMO_SHORT_APP_NAME }+ subscribers. Upgrade to create API keys and use the API programmatically.": [
+        "Die ${ LUMO_SHORT_APP_NAME }-API ist für ${ LUMO_SHORT_APP_NAME }+ Abonnenten verfügbar. Aktualisiere dein Abonnement, um API-Schlüssel zu erstellen und die API programmgesteuert zu nutzen."
       ],
       "There was an error processing this file. The content may not be readable or the file format might not be fully supported.": [
         "Bei der Verarbeitung dieser Datei ist ein Fehler aufgetreten. Der Inhalt ist möglicherweise nicht lesbar oder das Dateiformat wird nicht vollständig unterstützt."
@@ -1718,6 +1861,9 @@
       "Watch for misspellings (e.g., proton.me vs pr0t0n.me)": [
         "Achte auf Tippfehler (z. B. proton.me oder pr0t0n.me)"
       ],
+      "We can help you get started with using the ${ LUMO_SHORT_APP_NAME } API. Describe what you want to automate. ${ LUMO_SHORT_APP_NAME } returns a workflow graph and sample code that calls the ${ LUMO_SHORT_APP_NAME } API.": [
+        "Wir können dir helfen, mit der ${ LUMO_SHORT_APP_NAME }-API loszulegen. Beschreibe, was du automatisieren möchtest. ${ LUMO_SHORT_APP_NAME } gibt eine Workflow-Grafik und Beispielcode zurück, der die ${ LUMO_SHORT_APP_NAME }-API aufruft."
+      ],
       "You are about to visit an external website:": [
         "Du bist dabei, eine externe Webseite zu besuchen:"
       ],
@@ -1755,17 +1901,119 @@
       ]
     },
     "collider_2025: Label": {
+      "API calls": [
+        "API-Aufrufe"
+      ],
+      "API calls (30d)": [
+        "API-Aufrufe (30 Tage)"
+      ],
+      "Avg tokens / call": [
+        "Durchschnittliche Token pro Aufruf"
+      ],
+      "Basic": [
+        "Basis"
+      ],
+      "Code language": [
+        "Sprache für Code"
+      ],
+      "Compare two drafts": [
+        "Zwei Entwürfe vergleichen"
+      ],
+      "Conditional": [
+        "Bedingt"
+      ],
+      "Context": [
+        "Kontext"
+      ],
+      "Default: ": [
+        "Standard: "
+      ],
+      "Description": [
+        "Beschreibung"
+      ],
       "Did not follow instructions": [
         "Hat die Anweisungen nicht befolgt"
       ],
       "Don't like the style": [
         "Mir gefällt der Stil nicht"
       ],
+      "Entity extraction": [
+        "Entitätsextraktion"
+      ],
+      "Example ideas": [
+        "Beispielideen"
+      ],
+      "File upload": [
+        "Datei-Upload"
+      ],
+      "Loop": [
+        "Schleife"
+      ],
+      "Merge": [
+        "Zusammenführen"
+      ],
+      "Method": [
+        "Methode"
+      ],
       "Not factually correct": [
         "Faktisch nicht korrekt"
       ],
+      "optional": [
+        "Optional"
+      ],
+      "Other": [
+        "Sonstiges"
+      ],
+      "Output": [
+        "Ausgabe"
+      ],
+      "Path": [
+        "Pfad"
+      ],
+      "Prompt": [
+        "Eingabeaufforderung"
+      ],
+      "Python": [
+        "Python"
+      ],
+      "required": [
+        "erforderlich"
+      ],
+      "Research brief": [
+        "Kurzfassung"
+      ],
+      "Response": [
+        "Antwort"
+      ],
+      "Rust": [
+        "Rust"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Summarize documents": [
+        "Dokumente zusammenfassen"
+      ],
+      "Support ticket triage": [
+        "Support-Ticket-Triage"
+      ],
+      "Tokens (30d)": [
+        "Token (30 Tage)"
+      ],
+      "Tokens generated": [
+        "Generierte Token"
+      ],
+      "Tool calls": [
+        "Tool-Aufrufe"
+      ],
+      "TypeScript": [
+        "TypeScript"
+      ],
       "Unsafe or problematic": [
         "Unsicher oder problematisch"
+      ],
+      "Your workflow": [
+        "Dein Workflow"
       ]
     },
     "collider_2025: Legal disclaimer": {
@@ -1797,6 +2045,9 @@
       "create a free account.": [
         "kostenloses Konto erstellen."
       ],
+      "Manage keys": [
+        "Schlüssel verwalten"
+      ],
       "New chat": [
         "Neuer Chat"
       ],
@@ -1808,6 +2059,23 @@
       ],
       "upgrade to ${ LUMO_SHORT_APP_NAME } Plus.": [
         "Upgrade auf ${ LUMO_SHORT_APP_NAME } Plus."
+      ],
+      "View plans": [
+        "Abonnemente ansehen"
+      ]
+    },
+    "collider_2025: Nav": {
+      "Authentication": [
+        "Authentifizierung"
+      ],
+      "Endpoints": [
+        "Endpunkte"
+      ],
+      "Models": [
+        "Modelle"
+      ],
+      "Overview": [
+        "Übersicht"
       ]
     },
     "collider_2025: Notification": {
@@ -1897,9 +2165,6 @@
       "Account": [
         "Konto"
       ],
-      "API keys": [
-        "API-Schlüssel"
-      ],
       "General": [
         "Allgemeines"
       ],
@@ -1950,7 +2215,21 @@
         "Vielen Dank für das Feedback!"
       ]
     },
+    "collider_2025: Tab": {
+      "API": [
+        "API"
+      ],
+      "Manage keys": [
+        "Schlüssel verwalten"
+      ],
+      "Workflow Builder": [
+        "Workflow-Generator"
+      ]
+    },
     "collider_2025: Title": {
+      "${ LUMO_SHORT_APP_NAME } API · ${ spec.versionLabel }": [
+        "${ LUMO_SHORT_APP_NAME }-API · ${ spec.versionLabel }"
+      ],
       "${ LUMO_SHORT_APP_NAME } Business": [
         "${ LUMO_SHORT_APP_NAME } Business"
       ],
@@ -1960,8 +2239,32 @@
       "About ${ LUMO_SHORT_APP_NAME }": [
         "Über ${ LUMO_SHORT_APP_NAME }"
       ],
+      "API calls per day": [
+        "API-Aufrufe pro Tag"
+      ],
+      "API docs sections": [
+        "Abschnitte der API-Dokumentation"
+      ],
+      "API documentation": [
+        "API-Dokumentation"
+      ],
+      "API endpoints overview": [
+        "Übersicht der API-Endpunkte"
+      ],
+      "Authentication": [
+        "Authentifizierung"
+      ],
       "Automatic web search": [
         "Automatische Websuche"
+      ],
+      "Build intelligent apps.": [
+        "Erstelle intelligente Apps."
+      ],
+      "Chat": [
+        "Chat"
+      ],
+      "Conversational AI": [
+        "Konversationelle KI"
       ],
       "Create new API key": [
         "Neue API-Schlüssel erstellen"
@@ -1969,8 +2272,14 @@
       "Delete everything": [
         "Alles löschen"
       ],
+      "Document intelligence": [
+        "Dokumentenintelligenz"
+      ],
       "Don't lose the thread": [
         "Verliere nicht den Faden"
+      ],
+      "Generated code": [
+        "Generierter Code"
       ],
       "Guest": [
         "Gast"
@@ -1978,11 +2287,32 @@
       "Invalid Link": [
         "Ungültiger Link"
       ],
+      "Manage keys": [
+        "Schlüssel verwalten"
+      ],
+      "Models": [
+        "Modelle"
+      ],
       "No API keys yet": [
         "Noch keine API-Schlüssel"
       ],
       "Opening External Link": [
         "Externen Link öffnen"
+      ],
+      "Parameters": [
+        "Parameter"
+      ],
+      "Prerequisites": [
+        "Voraussetzungen"
+      ],
+      "Privacy included by default.": [
+        "Privatsphäre standardmäßig integriert."
+      ],
+      "Raw response": [
+        "Unbearbeitete Antwort"
+      ],
+      "Required headers": [
+        "Erforderliche Kopfzeilen"
       ],
       "Save your favorites": [
         "Deine Favoriten speichern"
@@ -1990,17 +2320,44 @@
       "Search Index": [
         "Suchindex"
       ],
+      "Security note:": [
+        "Sicherheitshinweis:"
+      ],
       "Show project chats in history": [
         "Projektchats im Verlauf anzeigen"
       ],
       "Theme": [
         "Farbschema"
       ],
+      "Tokens per call (daily)": [
+        "Token pro Aufruf (täglich)"
+      ],
+      "Tokens per day": [
+        "Token pro Tag"
+      ],
       "Upload files": [
         "Dateien hochladen"
       ],
+      "Usage (all keys, last 30 days)": [
+        "Nutzung (alle Schlüssel, letzte 30 Tage)"
+      ],
       "Visionary": [
         "Visionary"
+      ],
+      "What you can build": [
+        "Was du bauen kannst"
+      ],
+      "Workflow automation": [
+        "Workflow-Automatisierung"
+      ],
+      "Workflow Builder": [
+        "Workflow-Generator"
+      ],
+      "Workflow graph": [
+        "Workflow-Grafik"
+      ],
+      "Workflow output": [
+        "Workflow-Ausgabe"
       ],
       "Your new API key": [
         "Dein neuer API-Schlüssel"
@@ -2101,8 +2458,14 @@
       ]
     },
     "collider_2025: Unit": {
+      "calls": [
+        "Aufrufe"
+      ],
       "tokens": [
         "Token"
+      ],
+      "tokens/call": [
+        "Token/Aufruf"
       ]
     },
     "collider_2025: Upsell": {
@@ -2302,6 +2665,9 @@
     "collider_2025:Button": {
       "Add instructions to tailor ${ LUMO_SHORT_APP_NAME }'s responses": [
         "Anweisungen zum Anpassen der Antworten von ${ LUMO_SHORT_APP_NAME } hinzufügen"
+      ],
+      "API": [
+        "API"
       ],
       "Back to projects": [
         "Zurück zu Projekten"
@@ -2621,6 +2987,9 @@
       ],
       "Ask anything…": [
         "Frag alles…"
+      ],
+      "e.g. Iterate over documents in a folder, extract people and dates from each, then build a graph of how terms relate.": [
+        "Z. B. Dokumente in einem Ordner durchlaufen, Personen und Termine aus jedem extrahieren und dann eine Grafik aufbauen, wie Begriffe miteinander in Beziehung stehen."
       ],
       "Enter folder name": [
         "Ordnernamen eingeben"
@@ -4464,9 +4833,6 @@
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } Lizenzen"
       ],
-      "${ MEET_APP_NAME } video conferencing": [
-        "${ MEET_APP_NAME }-Videokonferenz"
-      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Beim lebenslangen ${ PASS_SHORT_APP_NAME }-Angebot gibt es keinen Verlängerungspreis. Es ist eine einmalige Zahlung für lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }"
       ],
@@ -4507,8 +4873,8 @@
       "Account successfully updated": [
         "Konto erfolgreich aktualisiert"
       ],
-      "Add ${ MEET_APP_NAME }": [
-        "${ MEET_APP_NAME } hinzufügen"
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } hinzufügen"
       ],
       "Address copied to clipboard": [
         "Adresse in die Zwischenablage kopiert"
