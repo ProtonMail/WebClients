@@ -21,13 +21,13 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import { useCheckAllRef } from 'proton-mail/containers/CheckAllRefProvider';
+import type { MoveParams } from 'proton-mail/hooks/actions/applyLocation/interface';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 import { params } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { shouldDisplayTotal } from '../../helpers/labels';
 import type { ApplyLabelsParams } from '../../hooks/actions/label/interface';
-import type { MoveParams } from 'proton-mail/hooks/actions/applyLocation/interface';
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
 import { useCategoriesView } from '../categoryView/useCategoriesView';
 import LocationAside from './LocationAside';
@@ -207,6 +207,14 @@ const SidebarItem = ({
                             CATEGORY_LABELS_TO_ROUTE_ARRAY.some((route) => location.pathname.startsWith(route))
                         );
                     }
+
+                    if (labelID === MAILBOX_LABEL_IDS.ALL_MAIL || labelID === MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL) {
+                        return (
+                            location.pathname.startsWith(`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALL_MAIL]}`) ||
+                            location.pathname.startsWith(`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL]}`)
+                        );
+                    }
+
                     return !!match;
                 }}
                 onClick={handleClick}
