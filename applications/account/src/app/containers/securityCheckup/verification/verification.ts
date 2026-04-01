@@ -67,13 +67,13 @@ export const initiateVerification = async ({
 
         const token = details.HumanVerificationToken as string;
 
-        await Promise.all([
+        const [verificationDataResult] = await Promise.all([
             api<VerificationDataResult>({ ...getVerificationDataRoute(token, hvMethod), silence: true }),
             // Automatically send the code the first time.
             api<null>(sendVerificationCode(token, hvMethod)),
         ]);
 
-        return token;
+        return { verificationDataResult, token };
     }
 };
 
