@@ -353,13 +353,3 @@ im.$media-expressions: $media-expressions;
 	stroke-width: 0.3px;
 	stroke: currentcolor;
 }
-
-body::before {
-	position: fixed;
-	display: flex;
-	inset-block-start: 0;
-	background-color: red;
-	color: white;
-	inset-inline-start: 0;
-	z-index: 12000;
-}
