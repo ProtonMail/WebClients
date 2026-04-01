@@ -12,10 +12,10 @@ import { MenuDropdown, type MenuDropdownProps, MenuItem } from './components/Men
 import './ToolMenuDropdown.scss';
 
 interface ToolMenuDropdownProps extends Pick<MenuDropdownProps, 'isOpen' | 'anchorRef' | 'onClose'> {
-    onCreateImage?: () => void;
+    onClickCreateImageOption: () => void;
 }
 
-export const ToolMenuDropdown = ({ isOpen, anchorRef, onClose, onCreateImage }: ToolMenuDropdownProps) => {
+export const ToolMenuDropdown = ({ isOpen, anchorRef, onClose, onClickCreateImageOption }: ToolMenuDropdownProps) => {
     const { isWebSearchButtonToggled, handleWebSearchButtonClick } = useWebSearch();
 
     const handleWebSearchToggleChange = useCallback(
@@ -30,10 +30,7 @@ export const ToolMenuDropdown = ({ isOpen, anchorRef, onClose, onCreateImage }: 
         {
             iconName: 'palette' as IconName,
             getLabel: () => c('collider_2025: Action').t`Create image`,
-            onClick: () => {
-                onCreateImage?.();
-                onClose?.();
-            },
+            onClick: onClickCreateImageOption,
             onClose: onClose,
             canShow: true,
         },
