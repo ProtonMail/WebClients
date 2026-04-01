@@ -51,6 +51,7 @@ describe('API factory', () => {
             expect(api.getState()).toEqual({
                 appVersionBad: false,
                 online: true,
+                pendingConnectivityChange: 0,
                 pendingCount: 0,
                 queued: [],
                 refreshing: false,
@@ -276,6 +277,108 @@ describe('API factory', () => {
             fetchMock.mockResolvedValueOnce(mockAPIResponse({ Code: APP_VERSION_BAD, Error: 'Bad verson' }, 500));
             await expect(api({})).rejects.toThrow('App version outdated');
             expect(api.getState().appVersionBad).toBe(true);
+        });
+    });
+
+    describe('Connectivity stabilization', () => {
+        test('defers ONLINE broadcast until all pending requests have settled', async () => {
+            const resolvers: ((res: Response) => void)[] = [];
+
+            /** 1. Simulate offline */
+            fetchMock.mockRejectedValueOnce({ ok: false });
+            await expect(api({})).rejects.toThrow();
+            expect(api.getState().online).toBe(false);
+            listener.mockClear();
+
+            /** 2. Two concurrent requests recover: both succeed but ONLINE
+             * should only fire once the last one settles */
+            fetchMock
+                .mockImplementationOnce(() => new Promise<Response>((res) => resolvers.push(res)))
+                .mockImplementationOnce(() => new Promise<Response>((res) => resolvers.push(res)));
+
+            const call1 = api({});
+            const call2 = api({});
+            await asyncNextTick();
+
+            /** 3. First request settles: countdown at 1, no ONLINE event yet */
+            resolvers[0](mockAPIResponse());
+            await call1;
+            expect(api.getState().pendingConnectivityChange).toBe(1);
+            expect(listener).not.toHaveBeenCalledWith({ type: 'connectivity', online: true, unreachable: false });
+
+            /** 4. Last request settles: countdown reaches 0, ONLINE flushed */
+            resolvers[1](mockAPIResponse());
+            await call2;
+            expect(listener).toHaveBeenCalledWith({ type: 'connectivity', online: true, unreachable: false });
+            expect(api.getState().pendingConnectivityChange).toBe(0);
+        });
+
+        test('broadcasts OFFLINE immediately without waiting for pending requests to drain', async () => {
+            /** 1. Two concurrent requests: one deferred success, one immediate failure */
+            const resolvers: ((res: Response) => void)[] = [];
+            fetchMock
+                .mockImplementationOnce(() => new Promise<Response>((res) => resolvers.push(res)))
+                .mockRejectedValueOnce({ ok: false });
+
+            const successFetch = api({});
+            const offlineFetch = api({}).catch(() => {});
+            await asyncNextTick();
+
+            /** 2. Failure resolves first: OFFLINE broadcast immediately, deferred ONLINE discarded */
+            await offlineFetch;
+            expect(listener).toHaveBeenCalledWith({ type: 'connectivity', online: false, unreachable: false });
+            expect(api.getState().pendingConnectivityChange).toBe(0);
+
+            /** 3. Deferred success resolves: back ONLINE */
+            resolvers[0](mockAPIResponse());
+            await successFetch;
+            expect(listener).toHaveBeenCalledWith({ type: 'connectivity', online: true, unreachable: false });
+            expect(api.getState().pendingConnectivityChange).toBe(0);
+        });
+
+        test('does not re-broadcast OFFLINE when already offline', async () => {
+            /** 1. Simulate offline */
+            fetchMock.mockRejectedValueOnce({ ok: false });
+            await expect(api({})).rejects.toThrow();
+            expect(api.getState().online).toBe(false);
+            listener.mockClear();
+
+            /** 2. Another failure while already offline: no duplicate connectivity event */
+            fetchMock.mockRejectedValueOnce({ ok: false });
+            await expect(api({})).rejects.toThrow();
+            expect(listener).not.toHaveBeenCalledWith({ type: 'connectivity', online: false, unreachable: false });
+        });
+
+        test('clears pending ONLINE event when a concurrent request fails', async () => {
+            const resolvers: ((res: Response) => void)[] = [];
+            const rejecters: ((err: any) => void)[] = [];
+
+            /** 1. Simulate offline */
+            fetchMock.mockRejectedValueOnce({ ok: false });
+            await expect(api({})).rejects.toThrow();
+            listener.mockClear();
+
+            /** 2. Two deferred concurrent requests */
+            fetchMock
+                .mockImplementationOnce(() => new Promise<Response>((res) => resolvers.push(res)))
+                .mockImplementationOnce(() => new Promise<Response>((_, rej) => rejecters.push(rej)));
+
+            const successFetch = api({});
+            const offlineFetch = api({}).catch(() => {});
+            await asyncNextTick();
+
+            /** 3. First request succeeds */
+            resolvers[0](mockAPIResponse());
+            await successFetch;
+            expect(api.getState().pendingConnectivityChange).toBe(1);
+            expect(listener).not.toHaveBeenCalledWith({ type: 'connectivity', online: true, unreachable: false });
+            listener.mockClear();
+
+            /** 4. Second request fails: OFFLINE broadcast immediately */
+            rejecters[0]({ ok: false });
+            await offlineFetch;
+            expect(api.getState().pendingConnectivityChange).toBe(0);
+            expect(listener).toHaveBeenCalledWith({ type: 'connectivity', online: false, unreachable: false });
         });
     });
 });
