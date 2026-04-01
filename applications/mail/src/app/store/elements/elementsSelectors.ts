@@ -3,6 +3,7 @@ import { createSelector } from '@reduxjs/toolkit';
 import { ES_EXTRA_RESULTS_LIMIT } from '@proton/encrypted-search/constants';
 import type { ESStatus, NormalizedSearchParams } from '@proton/encrypted-search/models';
 import type { MailSettingState } from '@proton/mail/store/mailSettings';
+import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { LabelCount } from '@proton/shared/lib/interfaces';
 import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
@@ -26,14 +27,10 @@ import { selectedSubscriptionSelector } from '../newsletterSubscriptions/newslet
 import type { MailState } from '../store';
 import { getTotal } from './helpers/elementTotal';
 
-export const params = (state: MailState) => {
-    const isInbox = state.elements.params.labelID === MAILBOX_LABEL_IDS.INBOX;
+// Stable reference so that selectors returning an empty array don't cause unnecessary re-renders
+const EMPTY_ARRAY: never[] = [];
 
-    return {
-        ...state.elements.params,
-        categoryIDs: isInbox ? state.elements.params.categoryIDs : [],
-    };
-};
+export const params = (state: MailState) => state.elements.params;
 
 export const selectLabelID = createSelector([params], (params) => params.labelID);
 export const selectElementID = createSelector([params], (params) => params.elementID);
@@ -45,11 +42,11 @@ export const selectSearch = createSelector([params], (params) => params.search);
 export const selectESEnabled = createSelector([params], (params) => params.esEnabled);
 export const selectisSearching = createSelector([params], (params) => params.isSearching);
 export const selectNewsletterSubscriptionID = createSelector([params], (params) => params.newsletterSubscriptionID);
-export const selectCategoryIDs = createSelector([params], (params) => {
+export const selectCategoryIDs = createSelector([params], (params): CategoryLabelID[] => {
     if (params.labelID === MAILBOX_LABEL_IDS.INBOX) {
         return params.categoryIDs;
     }
-    return [];
+    return EMPTY_ARRAY;
 });
 
 const beforeFirstLoad = (state: MailState) => state.elements.beforeFirstLoad;
