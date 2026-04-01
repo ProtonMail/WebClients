@@ -21,7 +21,6 @@ import { PLANS } from '@proton/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { APPS } from '@proton/shared/lib/constants';
 import { Audience } from '@proton/shared/lib/interfaces';
-import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import type { AllFeatures } from '../features';
@@ -215,8 +214,6 @@ interface Props {
 }
 
 const PlanCardFeatures = ({ planName, features, audience, app }: Props) => {
-    const isMeetPlansEnabled = useFlag('MeetPlans');
-
     const highlightFeatures = (
         <div data-testid={planName}>
             <PlanCardFeatureList features={getFeatureDefinitions(planName, features.highlight, audience)} />
@@ -279,15 +276,13 @@ const PlanCardFeatures = ({ planName, features, audience, app }: Props) => {
             <PlanCardFeatureList features={getFeatureDefinitions(planName, features.lumo, audience)} />
         </div>
     );
-    const meetFeatures = isMeetPlansEnabled ? (
+    const meetFeatures = (
         <div data-testid={`${planName}-meet`}>
             <h3>
                 <MeetLogo />
             </h3>
             <PlanCardFeatureList features={getFeatureDefinitions(planName, features.meet, audience)} />
         </div>
-    ) : (
-        <></>
     );
     const teamFeatures = audience === Audience.B2B && planName !== PLANS.FREE && (
         <div>
