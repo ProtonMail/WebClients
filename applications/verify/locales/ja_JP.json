@@ -921,6 +921,11 @@
         "このページを読み込めませんでした。ページを更新するか、インターネット接続を確認してください。"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "セキュリティキーの認証に失敗しました。もう一度お試しください。"
+      ]
+    },
     "fido2: Info": {
       "Security key": [
         "セキュリティキー"
@@ -1023,6 +1028,9 @@
       "Creating multiple free accounts is not permitted by our ${ termsLink }.": [
         "複数の無料アカウントの作成は${ termsLink }で禁止されています。"
       ],
+      "Each code can only be used once": [
+        "各コードは使い捨てです"
+      ],
       "Edit email address": [
         "メールアドレスを編集"
       ],
@@ -1079,6 +1087,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "新しい認証コードを ${ strong } に送信しました"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "2要素認証を設定する際、認証アプリにアクセスできなくなった場合に使用できる回復用コードを提供します。"
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "新しい認証コードを受け取るか、他の検証方法を使用しますか？"
@@ -1251,6 +1262,9 @@
       ],
       "Custom email domains": [
         "独自メールドメイン"
+      ],
+      "Data retention policies": [
+        "データ保持ポリシー"
       ],
       "Desktop app": [
         "デスクトップアプリ"
