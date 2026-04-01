@@ -29,6 +29,7 @@ import generateUID from '@proton/utils/generateUID';
 
 import { APPLY_LOCATION_TYPES } from 'proton-mail/hooks/actions/applyLocation/interface';
 import { useApplyLocation } from 'proton-mail/hooks/actions/applyLocation/useApplyLocation';
+import { useApplyLabelsToAll } from 'proton-mail/hooks/actions/label/useApplyLabelsToAll';
 
 import { getLabelIDs } from '../../helpers/elements';
 import { useCreateFilters } from '../../hooks/actions/useCreateFilters';
@@ -37,7 +38,6 @@ import { useScrollToItem } from '../../hooks/useScrollToItem';
 import type { Element } from '../../models/element';
 
 import './LabelDropdown.scss';
-import { useApplyLabelsToAll } from 'proton-mail/hooks/actions/label/useApplyLabelsToAll';
 
 export const labelDropdownContentProps = { className: 'flex flex-column flex-nowrap items-stretch' };
 
@@ -141,7 +141,7 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, selectAll, onChe
     const [alsoArchive, updateAlsoArchive] = useState(false);
     const [always, setAlways] = useState(false);
     const getElementsFromIDs = useGetElementsFromIDs();
-    const {applyLabelsToAll, applyLabelsToAllModal} = useApplyLabelsToAll(setContainFocus);
+    const { applyLabelsToAll, applyLabelsToAllModal } = useApplyLabelsToAll(setContainFocus);
     const { getSendersToFilter } = useCreateFilters();
     const { applyMultipleLocations, applyLocation } = useApplyLocation();
 
@@ -245,13 +245,15 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, selectAll, onChe
         const promises = [];
 
         try {
-            if(selectAll) {
-                promises.push(applyLabelsToAll({
-                    elements,
-                    changes,
-                    fromLabelID: labelID,
-                    onCheckAll,
-                }));
+            if (selectAll) {
+                promises.push(
+                    applyLabelsToAll({
+                        elements,
+                        changes,
+                        fromLabelID: labelID,
+                        onCheckAll,
+                    })
+                );
             } else {
                 if (Object.keys(changes).length > 0 && elements.length > 0) {
                     promises.push(applyMultipleLocations({ elements, changes, createFilters: always }));
@@ -352,6 +354,18 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, selectAll, onChe
         await withLoading(actualApplyLabels(changes));
     };
 
+    // Immediately apply the label change and close the dropdown when clicking the label name
+    const handleApplyDirectly = async (labelID: string) => {
+        onClose();
+
+        const updatedChanges = {
+            ...changes,
+            [labelID]: selectedLabelIDs[labelID] !== LabelState.On,
+        };
+
+        await actualApplyLabels(updatedChanges);
+    };
+
     return (
         <form className="flex flex-column flex-nowrap justify-start items-stretch flex-auto" onSubmit={handleSubmit}>
             <div className="flex shrink-0 justify-space-between items-center m-4 mb-0">
@@ -399,12 +413,13 @@ const LabelDropdown = ({ selectedIDs, labelID, onClose, onLock, selectAll, onChe
                                 onChange={handleCheck(ID)}
                                 data-testid={`label-dropdown:label-checkbox-${Name}`}
                             />
+                            {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/click-events-have-key-events */}
                             <label
                                 htmlFor={labelCheckID(ID)}
                                 title={Name}
                                 className="flex flex-nowrap items-center flex-1"
                                 data-testid={`label-dropdown:label-${Name}`}
-                                onClick={() => handleCheck(ID)}
+                                onClick={() => handleApplyDirectly(ID)}
                             >
                                 <Icon name="circle-filled" size={4} color={Color} className="shrink-0 relative mx-2" />
                                 <span className="text-ellipsis">
