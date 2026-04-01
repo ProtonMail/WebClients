@@ -1253,6 +1253,12 @@
         "${ seats }${ LUMO_APP_NAME } licencií",
         "${ seats }${ LUMO_APP_NAME } licencií"
       ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } licencia ${ MEET_APP_NAME }",
+        "${ seats }${ MEET_APP_NAME } licencie",
+        "${ seats }${ MEET_APP_NAME } licencií",
+        "${ seats }${ MEET_APP_NAME } licencií"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } licencia asistenta písania",
         "${ seats } licencie asistentov písania",
@@ -6104,6 +6110,12 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } je možné používať aj s jedným heslom, ktoré nahradí prihlasovacie aj druhé heslo. Ak chcete aktivovať režim jedného hesla, zadajte jediné heslo, ktoré chcete používať, a kliknite na tlačidlo Uložiť."
       ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } je riešenie pre videokonferencie s end-to-end šifrovaním. Pridajte si ho do svojho plánu a organizujte zabezpečené schôdzky."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } licencií"
+      ],
       "${ n } address": [
         "${ n } adresa",
         "${ n } adresy",
@@ -6373,6 +6385,9 @@
       ],
       "Activity Monitor": [
         "Monitor aktivity"
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Pridať ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
       "add a recovery method": [
         "pridali spôsob obnovenia"
@@ -6968,6 +6983,9 @@
       "Everything in ${ planOrAppName }": [
         "Všetko v ${ planOrAppName }"
       ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Všetko v ${ planOrAppName }, navyše:"
+      ],
       "Example: ${ spfExample }": [
         "Príklad: ${ spfExample }"
       ],
@@ -6988,6 +7006,9 @@
       ],
       "finance": [
         "financie"
+      ],
+      "for ${ price }": [
+        "za ${ price }"
       ],
       "for choosing ${ product }": [
         "za výber ${ product }"
@@ -8416,9 +8437,6 @@
       ],
       "With ${ AUTHENTICATOR_APP_NAME }, you can:": [
         "S ${ AUTHENTICATOR_APP_NAME } môžete:"
-      ],
-      "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
-        "S balíkom Business alebo Enterprise si môžete zakúpiť ${ boldDedicatedServers } pre vašu organizáciu a nastaviť ${ boldGateways }, aby ste mohli kontrolovať, ktorí používatelia k nim majú prístup."
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "So šifrovanou ${ BRAND_NAME } adresou môžete používať všetky služby ${ BRAND_NAME }"
@@ -10262,6 +10280,26 @@
         "Nastavte si účet s doménou Porkbun."
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (pre ${ quantity } používateľa)",
+        "${ MEET_APP_NAME } (pre ${ quantity } používateľov)",
+        "${ MEET_APP_NAME } (pre ${ quantity } používateľov)",
+        "${ MEET_APP_NAME } (pre ${ quantity } používateľov)"
+      ],
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } licencia"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } licencií"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats }${ MEET_APP_NAME } licencia",
+        "${ seats }${ MEET_APP_NAME } licencie",
+        "${ seats }${ MEET_APP_NAME } licencií",
+        "${ seats }${ MEET_APP_NAME } licencií"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: Dôverné videokonferencie pre rozhovory, na ktorých záleží"
@@ -10299,6 +10337,9 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "End-to-end šifrované zdieľanie obrazovky a dočasný chat počas hovoru"
       ],
+      "Hosts can record meetings locally on their computers": [
+        "Moderátori môžu nahrávať stretnutia vo svojich počítačoch"
+      ],
       "Meeting recording": [
         "Nahrávanie schôdze"
       ],
@@ -10322,6 +10363,34 @@
         "Až do ${ n } účastníkov",
         "Až do ${ n } účastníkov",
         "Až do ${ n } účastníkov"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videokonferencie, ${ n } účastník",
+        "Videokonferencie, ${ n } účastníci",
+        "Videokonferencie, ${ n } účastníkov",
+        "Videokonferencie, ${ n } účastníkov"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } licencia v cene",
+        "${ seats } licencie v cene",
+        "${ seats } licencií v cene",
+        "${ seats } licencií v cene"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Môžete mať až ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } miest počas skúšobného obdobia."
+      ]
+    },
+    "Meet_launch": {
+      "Add ${ planName }": [
+        "Pridať ${ planName }"
+      ],
+      "Confidential video conferencing for the conversations that matter. Only ${ priceString } more each month.": [
+        "Dôverné videokonferencie pre dôležité rozhovory. Len o ${ priceString } mesačne naviac."
+      ],
+      "Talk privately with ${ planName }": [
+        "Porozprávajte sa v súkromí s ${ planName }"
       ]
     },
     "Member action": {
@@ -10791,6 +10860,9 @@
       "Data breach monitoring": [
         "Monitorovanie úniku dát"
       ],
+      "Data retention policies": [
+        "Zásady uchovávania údajov"
+      ],
       "Dedicated servers and IP": [
         "Dedikované servery a IP"
       ],
@@ -10907,6 +10979,9 @@
       ],
       "Priority support & live chat": [
         "Prioritná podpora a živý chat"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Súkromný AI chat (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "Súkromná záloha fotografií"
@@ -11078,6 +11153,9 @@
         "Zdieľanie trezora až s ${ n } osobami",
         "Zdieľanie trezora až s ${ n } osobami",
         "Zdieľanie trezora až s ${ n } osobami"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN s blokovaním reklám a ochranou pred malvérom"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skenujeme dark web a kontrolujeme, či nedošlo k úniku vašich adries alebo aliasov ${ BRAND_NAME }, a ak niečo nájdeme, okamžite vás upozorníme."
@@ -14697,6 +14775,12 @@
         "${ n } VPN pripojenia na používateľa",
         "${ n } VPN pripojení na používateľa",
         "${ n } VPN pripojení na používateľa"
+      ],
+      "${ productName } for ${ count } user": [
+        "${ productName } pre ${ count } používateľa",
+        "${ productName } pre ${ count } používateľov",
+        "${ productName } pre ${ count } používateľov",
+        "${ productName } pre ${ count } používateľov"
       ],
       "${ UsedAddresses } address": [
         "${ UsedAddresses } adresa",

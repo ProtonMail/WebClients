@@ -221,6 +221,9 @@
       "Continue import": [
         "インポートを続行"
       ],
+      "Continue to ${ planOrAppName }": [
+        "${ planOrAppName } に進む"
+      ],
       "Continue with this password": [
         "このパスワードで続行する"
       ],
@@ -283,6 +286,9 @@
       ],
       "Delete Gateway": [
         "ゲートウェイ削除"
+      ],
+      "Delete gateway": [
+        "ゲートウェイを削除"
       ],
       "Delete group": [
         "グループを削除"
@@ -3399,6 +3405,9 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "このガイドを利用して、あなたの組織が${ BRAND_NAME }の業界をリードする暗号化をプライバシーのエコシステムから速やかに恩恵を受けられるようにしてください。"
       ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "ご利用をおやめになるのは残念です。よろしければ、取消の理由をお聞かせいただけますでしょうか。お客様のご感想は、${ BRAND_NAME } を改善するのに役立ちます。"
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "iCal形式(ICSファイル)でイベントをインポートできます。ファイルの最大サイズは${ MAX_IMPORT_FILE_SIZE_STRING }で、最大${ MAX_IMPORT_EVENTS_STRING }件のイベントを含むことができます。ファイルがそれより大きい場合は、小さいファイルに分割してください。"
       ]
@@ -3925,6 +3934,9 @@
       "Checkout expired, please try again": [
         "チェックアウトの有効期限が切れました。もう一度やり直してください。"
       ],
+      "Company name or personal name is required": [
+        "会社名または個人名が必要です"
+      ],
       "Couldn't load invoices. Please try again later.": [
         "請求書が読み込めませんでした。後でもう一度お試しください。"
       ],
@@ -4362,6 +4374,9 @@
       ],
       "We stopped DKIM signing due to problems with your DNS configuration. Please follow the instructions below to resume signing.": [
         "DNS設定に問題があるため、DKIMの署名を停止しました。署名を再開するには、以下の手順に従ってください。"
+      ],
+      "Wrong billing address": [
+        "請求先住所を変更"
       ],
       "Wrong recovery phrase. Try again or use another recovery method.": [
         "間違った回復用フレーズです。再度試すか他の回復手段を使用してください。"
@@ -5016,6 +5031,9 @@
       ]
     },
     "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "セキュリティキーの認証に失敗しました。もう一度お試しください。"
+      ],
       "Something went wrong registering your security key. Please try again.": [
         "セキュリティキーの登録に失敗しました。もう一度お試しください。"
       ]
@@ -5874,6 +5892,12 @@
       "(default)": [
         "（デフォルト）"
       ],
+      "(eg. ChatGPT, Gemini, Perplexity)": [
+        "(例: ChatGPT、Gemini、Perplexity)"
+      ],
+      "(eg. New York Times, BBC)": [
+        "（例: New York Times、BBC）"
+      ],
       "**Enable automatic backups** for peace of mind": [
         "安心してご利用いただくために**自動バックアップを有効にする**"
       ],
@@ -5952,6 +5976,9 @@
       "active": [
         "アクティブ"
       ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } を追加"
+      ],
       "add a recovery method": [
         "回復手段の追加"
       ],
@@ -5990,6 +6017,9 @@
       ],
       "Affected user is on row": [
         "影響を受けたユーザーは行にいます。"
+      ],
+      "AI chatbot": [
+        "対話型AI"
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI を活用したアシスタントにより、より良いメールを迅速かつ簡単に作成できるようになります。"
@@ -6140,6 +6170,9 @@
       ],
       "By leaving now, changes may not be saved": [
         "今すぐ退出すると、変更が保存されない場合があります"
+      ],
+      "Cancel": [
+        "取消"
       ],
       "Can’t access your recovery email?": [
         "回復用メールアドレスにアクセスできませんか？"
@@ -6375,6 +6408,9 @@
       "Drop to import": [
         "ドロップしてインポート"
       ],
+      "Each code can only be used once": [
+        "各コードは使い捨てです"
+      ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "各ドメインは SPF (TXT) レコードを 1 つだけ持つことができます。 既存の SPF (TXT) レコードを保持したい場合は、現在のレコードに ${ spf } を追加します (${ spfValue } の後に置きます)。"
       ],
@@ -6495,6 +6531,9 @@
       "Everything in ${ planOrAppName }": [
         "${ planOrAppName } のすべての機能を含みます"
       ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "${ planOrAppName } のすべての機能――そしてさらに："
+      ],
       "Example: ${ spfExample }": [
         "例: ${ spfExample }"
       ],
@@ -6503,6 +6542,9 @@
       ],
       "expires ${ expirationDate }": [
         "有効期限 ${ expirationDate }"
+      ],
+      "Facebook": [
+        "Facebook"
       ],
       "Failed to fetch logs.": [
         "ログの読み込みに失敗しました。"
@@ -6521,6 +6563,12 @@
       ],
       "Free trial": [
         "無料トライアル"
+      ],
+      "Friends and family": [
+        "家族・知人"
+      ],
+      "Gateway deleted": [
+        "ゲートウェイを削除しました"
       ],
       "Gateway monitor": [
         "ゲートウェイモニター"
@@ -6656,6 +6704,9 @@
       ],
       "Inherited from parent folder": [
         "親フォルダーから継承"
+      ],
+      "Instagram": [
+        "Instagram"
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "選択した国のランダムなサーバーに接続するため国の構築ファイルをインストールします。"
@@ -6905,6 +6956,9 @@
       ],
       "New VPN connection data will stop being collected and shown.": [
         "新しいVPN接続データの収集と表示が停止されます"
+      ],
+      "News or media article": [
+        "ニュース、メディアの記事など"
       ],
       "Next billing date": [
         "次回請求日"
@@ -7161,6 +7215,9 @@
       "Recovery phrase is not associated with any outdated keys.": [
         "回復用フレーズは古くなった鍵に関連付けられません。"
       ],
+      "Reddit": [
+        "Reddit"
+      ],
       "Referral link copied to your clipboard": [
         "招待リンクをクリップボードにコピーしました"
       ],
@@ -7326,6 +7383,9 @@
       "Storage used by this user": [
         "ストレージはこのユーザーによって使われています"
       ],
+      "Submit": [
+        "送信"
+      ],
       "Submit a deposit using the following address or scan the QR code. Your deposit will be reflected in your account after confirmation.": [
         "以下のアドレスを使用するか、QRコードをスキャンして入金してください。確認後、デポジットはアカウントに反映されます。"
       ],
@@ -7343,6 +7403,9 @@
       ],
       "Subscription ending: To keep your ${ planName } benefits, restart your subscription in the Google Play Store by ${ byDate }. ${ reactivateLink }": [
         "サブスクリプションの終了: ${ planName } の特典を維持するには、${ byDate } までに Google Play ストアでサブスクリプションを再開してください。${ reactivateLink }"
+      ],
+      "Subscription starts on ${ startsOnTime }": [
+        "サブスクリプションは ${ startsOnTime } に開始されます"
       ],
       "Summary": [
         "概要"
@@ -7373,6 +7436,9 @@
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "プライバシーと自由が最優先される、より良いインターネットを構築するという私たちの使命をサポートしていただきありがとうございます。"
+      ],
+      "Thanks for the feedback!": [
+        "ご意見ありがとうございます!"
       ],
       "The ${ boldDataLocked } message will no longer be shown, but you can still unlock your data under ${ encryptionAndKeysLink }.": [
         "${ boldDataLocked }メッセージは表示されませんが、${ encryptionAndKeysLink }を利用してロックを解除できます。"
@@ -7529,6 +7595,9 @@
       ],
       "This will wipe all logs for your organization members.": [
         "これにより、お客様の組織のメンバーのすべてのログが消去されます。"
+      ],
+      "TikTok": [
+        "TikTok"
       ],
       "to ${ product } Business": [
         "${ product }ビジネスへ"
@@ -7836,6 +7905,9 @@
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "ゲートウェイからサーバーを削除した時、10 日間の非アクティベーション期間に入ります。このサーバーは新しいゲートウェイに追加することができますが、国を変更することはできません。"
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "2要素認証を設定する際、認証アプリにアクセスできなくなった場合に使用できる回復用コードを提供します。"
+      ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "サブスクリプション更新時には、支払い方法よりも使用可能なクレジットが優先して使用されます。"
       ],
@@ -7847,9 +7919,6 @@
       ],
       "With ${ AUTHENTICATOR_APP_NAME }, you can:": [
         "${ AUTHENTICATOR_APP_NAME }を使用すると、以下のことができます："
-      ],
-      "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
-        "ビジネス プランまたはエンタープライズ プランでは、組織用に ${ boldDedicatedServers } を購入し、${ boldGateways } を設定してアクセスできるユーザーを制御できます。"
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "暗号化された ${ BRAND_NAME } アドレスを使用すると、すべての ${ BRAND_NAME } サービスを使用できます"
@@ -7874,6 +7943,9 @@
       ],
       "Writing assistant": [
         "執筆アシスタント"
+      ],
+      "X": [
+        "X"
       ],
       "You already have a free account": [
         "あなたはすでに無料アカウントをお持ちです"
@@ -8112,6 +8184,9 @@
       "Your trial will end in ${ timeRemaining }.": [
         "トライアルは${ timeRemaining }に終了します。"
       ],
+      "YouTube": [
+        "YouTube"
+      ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "また、${ boldPlanTitle }の機能もご利用いただけなくなります。"
       ],
@@ -8346,6 +8421,9 @@
       "Add group member": [
         "グループメンバーを追加"
       ],
+      "Additional comments": [
+        "追加コメント"
+      ],
       "Address": [
         "メールアドレス"
       ],
@@ -8507,6 +8585,9 @@
       ],
       "Contacts": [
         "連絡先"
+      ],
+      "Continue cancelling": [
+        "取消を続行"
       ],
       "Copy": [
         "コピー"
@@ -8745,6 +8826,9 @@
       "Main": [
         "メイン"
       ],
+      "Main reason for cancelling": [
+        "取消の主な理由"
+      ],
       "Manage categories": [
         "カテゴリーを管理"
       ],
@@ -8981,6 +9065,9 @@
       ],
       "Single sign-on URL": [
         "シングルサインオン URL"
+      ],
+      "Skip feedback": [
+        "フィードバックを飛ばす"
       ],
       "Spam": [
         "迷惑メール"
@@ -9571,6 +9658,11 @@
         "Porkbunドメインでアカウントを設定します。"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } ライセンス"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: 最も重要な会話のための機密性の高いビデオ会議"
@@ -9619,6 +9711,11 @@
       ],
       "Up to ${ n } participant": [
         "最大${ n }人の参加者"
+      ]
+    },
+    "meet_2025: Info": {
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "トライアル期間中、${ MEET_SHORT_APP_NAME }のシートを${ TRIAL_MAX_MEET_SEATS }ヶまでをご利用いただけます。"
       ]
     },
     "Member action": {
@@ -10025,6 +10122,9 @@
       "Data breach monitoring": [
         "情報漏洩のモニタリング"
       ],
+      "Data retention policies": [
+        "データ保持ポリシー"
+      ],
       "Dedicated servers and IP": [
         "専用サーバーとIP"
       ],
@@ -10138,6 +10238,9 @@
       ],
       "Priority support & live chat": [
         "優先サポートとライブチャット"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "プライベート対話型AI（${ LUMO_APP_NAME }）"
       ],
       "Private photo backup": [
         "プライベート写真バックアップ"
@@ -10291,6 +10394,9 @@
       ],
       "Vault sharing with up to ${ n } person": [
         "最大${ n }人までと保管庫共有"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "広告やウイルスから保護してくれるVPN"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ダークウェブをスキャンして、お客様の ${ BRAND_NAME } アドレスやエイリアスが漏洩していないかを確認し、何か見つかった場合はすぐに警告します。"
@@ -11868,6 +11974,9 @@
       "Anderson": [
         "アンダーソン"
       ],
+      "Anything you'd like us to know": [
+        "知らせたいことならなんでも"
+      ],
       "Anytown": [
         "どこにでもある都市"
       ],
@@ -11882,6 +11991,9 @@
       ],
       "Confirm": [
         "確認"
+      ],
+      "Cortex Inc.": [
+        "Cortex Inc."
       ],
       "domain.com": [
         "domain.com"
@@ -11903,6 +12015,9 @@
       ],
       "End date": [
         "終了日"
+      ],
+      "Enter a name": [
+        "名前を入力"
       ],
       "Enter name": [
         "名前を入力してください"
@@ -11943,6 +12058,9 @@
       "Postal code": [
         "郵便番号"
       ],
+      "San Francisco": [
+        "サンフランシスコ"
+      ],
       "Search": [
         "検索"
       ],
@@ -11963,6 +12081,9 @@
       ],
       "Select": [
         "選択してください"
+      ],
+      "Select a provider": [
+        "プロバイダーを選択"
       ],
       "Select a reason": [
         "理由を選択"
@@ -12111,6 +12232,26 @@
       ],
       "Unknown": [
         "不明"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "その他"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {
@@ -15204,6 +15345,9 @@
       "Import groups": [
         "グループをインポート"
       ],
+      "Import your data to ${ BRAND_NAME }": [
+        "データを ${ BRAND_NAME } にインポート"
+      ],
       "Information exposed in breach": [
         "侵害で漏洩した情報"
       ],
@@ -15428,6 +15572,9 @@
       ],
       "Select contact group": [
         "連絡先グループの選択"
+      ],
+      "Select data to import": [
+        "インポートしたい情報を選択"
       ],
       "Send email reminders?": [
         "メールでのリマインダーを送信しますか？"

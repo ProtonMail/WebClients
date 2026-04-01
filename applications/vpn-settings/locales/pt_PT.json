@@ -1580,6 +1580,9 @@
       "Close": [
         "Fechar"
       ],
+      "Configure your network": [
+        "Configure a sua rede"
+      ],
       "Continue using ${ MAIL_APP_NAME }.": [
         "Continuar a utilizar ${ MAIL_APP_NAME }."
       ],
@@ -1598,6 +1601,12 @@
       "Discover and set up features": [
         "Descubra e configure as funcionalidades"
       ],
+      "Invite your team": [
+        "Convide a sua equipa"
+      ],
+      "Manage global VPN permissions": [
+        "Gerir permissões globais da VPN"
+      ],
       "Maybe later": [
         "Talvez mais tarde"
       ],
@@ -1609,6 +1618,9 @@
       ],
       "Set up other features": [
         "Configure outras funcionalidades"
+      ],
+      "Set up SSO": [
+        "Configurar SSO"
       ],
       "Take a tour": [
         "Visita guiada"
@@ -2866,6 +2878,9 @@
       ],
       "Help your team securely store passwords to sensitive business and client information.": [
         "Ajude a sua equipa a armazenar de forma segura as palavras-passe para informações confidenciais de negócios e clientes."
+      ],
+      "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
+        "Se ainda não o fez, ative alguns métodos de recuperação para garantir que nunca perderá o acesso ao ${ VPN_APP_NAME }."
       ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que a lista de contactos que está a importar já contém grupos. Reveja como esses grupos devem ser importados."
@@ -5448,6 +5463,9 @@
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Prémio CNET Editors' Choice com classificação de 8,4 de 10"
       ],
+      "Coming soon": [
+        "Em breve"
+      ],
       "Configure SAML authentication for your organization through an identity provider (IdP). This will enable SAML for the whole organization.": [
         "Configure a autenticação SAML para a sua organização através de um fornecedor de identidade. Isto irá ativar o SAML para toda a organização."
       ],
@@ -7018,9 +7036,6 @@
       "Why?": [
         "Por quê?"
       ],
-      "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
-        "Com um plano Business ou Enterprise, pode obter ${ boldDedicatedServers } para a sua organização, e configurar ${ boldGateways } para controlar que utilizadores lhes podem aceder."
-      ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Com um endereço da ${ BRAND_NAME } encriptado, pode utilizar todos os serviços da ${ BRAND_NAME }."
       ],
@@ -8456,6 +8471,11 @@
       ],
       "What’s this?": [
         "O que é isto?"
+      ]
+    },
+    "Live Chat Modal": {
+      "Upgrade subscription": [
+        "Atualizar subscrição"
       ]
     },
     "Loading info": {
@@ -13196,6 +13216,9 @@
         "${ friendsSubscribed } Amigo inscrito",
         "${ friendsSubscribed } Amigos inscritos"
       ],
+      "${ VPN_APP_NAME } clients": [
+        "Clientes ${ VPN_APP_NAME }"
+      ],
       "(active)": [
         "(ativo)"
       ],
@@ -13789,6 +13812,9 @@
       "OpenVPN configuration files": [
         "Ficheiros de configuração OpenVPN"
       ],
+      "OpenVPN username": [
+        "Nome de utilizador OpenVPN"
+      ],
       "Org setup": [
         "Configuração da organização"
       ],
@@ -13833,6 +13859,9 @@
       ],
       "Phone": [
         "Telefone"
+      ],
+      "Plans": [
+        "Planos"
       ],
       "Preview": [
         "Pré-visualização"
@@ -14071,6 +14100,9 @@
       ],
       "Upgrade to ${ planName }": [
         "Melhorar para o plano ${ planName }"
+      ],
+      "Upgrade your network protection with dedicated servers": [
+        "Atualize a proteção da sua rede com servidores dedicados"
       ],
       "Upgrade your privacy": [
         "Melhorar a sua privacidade"
