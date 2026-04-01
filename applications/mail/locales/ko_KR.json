@@ -1781,6 +1781,9 @@
       ],
       "Writing assistant seats": [
         "글쓰기 도우미 이용 권한"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } 라이선스 ${ seats }개"
       ]
     },
     "Alert": {
@@ -8733,6 +8736,18 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "몇 번의 클릭만으로 정리된 받은 편지함을 만들어 보세요"
+      ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME }은 종단간 암호화된 화상 회의 솔루션입니다. 안전한 회의를 개최하기 위해 플랜에 추가해 보세요."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME }개 시트"
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } 추가"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "${ planOrAppName }(에)서의 모든 것, 게다가:"
       ]
     },
     "info": {
@@ -9808,6 +9823,9 @@
       ],
       "Skip feedback": [
         "피드백 건너뛰기"
+      ],
+      "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
+        "${ CALENDAR_APP_NAME }에서 예약 페이지를 통해 가능한 일정을 공유하고, ${ MEET_APP_NAME }으로 안전하게 회의를 개최하세요."
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10308,6 +10326,12 @@
       ],
       "Up to ${ n } participant": [
         "최대 ${ n }명 참가자"
+      ],
+      "Hosts can record meetings locally on their computers": [
+        "호스트는 자신의 컴퓨터에 회의를 로컬 녹화할 수 있습니다."
+      ],
+      "Video meetings, ${ n } participant": [
+        "${ n }명 참가자의 화상 회의"
       ]
     },
     "Message": {
@@ -10995,6 +11019,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } 주소나 별칭이 유출되었는지 확인하기 위해 다크 웹을 탐색하며 발견한 것이 있다면 즉시 알려드립니다."
+      ],
+      "Data retention policies": [
+        "데이터 보존 정책"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "개인 정보 보호 AI 채팅 (${ LUMO_APP_NAME })"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "광고 차단과 멀웨어 보호 기느이 포함된 VPN"
       ]
     },
     "new_plans: feature highlight": {
@@ -11851,7 +11884,7 @@
         "나중에 다시 알림"
       ],
       "Yes, don't show again": [
-        "네, 다시 보지 않을게요"
+        "네, 다시 보지 않을게요."
       ]
     },
     "Option group": {
@@ -16105,6 +16138,25 @@
       ],
       "Yahoo": [
         "Yahoo"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } 라이선스"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME }개 시트"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ MEET_APP_NAME } 시트 ${ seats }개"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats }개 시트 포함"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "무료 체험 기간 중 최대 ${ TRIAL_MAX_MEET_SEATS }개의 ${ MEET_SHORT_APP_NAME } 시트를 포함할 수 있습니다."
       ]
     }
   }

@@ -1684,6 +1684,9 @@
       ],
       "Zoom out": [
         "Zoom uit"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "Doorgaan naar ${ planOrAppName }"
       ]
     },
     "action": {
@@ -1789,6 +1792,10 @@
       ],
       "Writing assistant seats": [
         "Licenties voor schrijfassistent"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } licentie",
+        "${ seats } ${ MEET_APP_NAME } licenties"
       ]
     },
     "Alert": {
@@ -4195,6 +4202,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "U heeft al 10 aliassen aangemaakt. Krijg onbeperkte aliassen en 500 GB opslag met ${ BRAND_NAME } Unlimited."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Het spijt ons u te moeten zien vertrekken. Als u even tijd heeft, zouden we het zeer op prijs stellen te horen waarom u wilt annuleren. Uw feedback helpt ons ${ BRAND_NAME } beter te maken voor iedereen."
       ]
     },
     "description": {
@@ -5906,6 +5916,15 @@
       ],
       "You've unlocked 1 GB": [
         "U heeft 1 GB ontgrendeld"
+      ],
+      "Download apps": [
+        "Apps downloaden"
+      ],
+      "Get storage bonus": [
+        "Opslagbonus ophalen"
+      ],
+      "Review import options": [
+        "Importopties bekijken"
       ]
     },
     "Gmail forwarding": {
@@ -8858,6 +8877,18 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "U bent slechts een paar klikken verwijderd van een overzichtelijke inbox"
+      ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } is een end-to-end versleutelde videoconferentie oplossing. Voeg het toe aan uw abonnement om veilige vergaderingen te hosten."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } licenties"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Alles in ${ planOrAppName }, plus:"
+      ],
+      "for ${ price }": [
+        "voor ${ price }"
       ]
     },
     "info": {
@@ -9932,6 +9963,18 @@
       ],
       "Additional comments": [
         "Aanvullende opmerkingen"
+      ],
+      "Continue cancelling": [
+        "Doorgaan met annuleren"
+      ],
+      "Main reason for cancelling": [
+        "Hoofdreden voor annulering"
+      ],
+      "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
+        "Deel uw beschikbaarheid met boekingspagina's in ${ CALENDAR_APP_NAME } en host veilige vergaderingen met ${ MEET_APP_NAME }."
+      ],
+      "Skip feedback": [
+        "Feedback overslaan"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10441,6 +10484,13 @@
       "Up to ${ n } participant": [
         "Tot ${ n } deelnemer",
         "Tot ${ n } deelnemers"
+      ],
+      "Hosts can record meetings locally on their computers": [
+        "Hosts kunnen vergaderingen lokaal op hun computers opnemen"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videovergaderingen, ${ n } deelnemer",
+        "Videovergaderingen, ${ n } deelnemers"
       ]
     },
     "Message": {
@@ -11153,6 +11203,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "We scannen het dark web om te controleren of uw ${ BRAND_NAME } adressen of aliassen zijn gelekt en waarschuwen u onmiddellijk wanneer we iets vinden."
+      ],
+      "Data retention policies": [
+        "Dataretentiebeleid"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Privé AI-chat (${ LUMO_APP_NAME })"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN met advertentieblokkering en bescherming tegen malware"
       ]
     },
     "new_plans: feature highlight": {
@@ -11770,6 +11829,27 @@
     "Onboarding List Placeholder": {
       "Maybe later": [
         "Misschien later"
+      ],
+      "Choose your service": [
+        "Kies uw dienst"
+      ],
+      "Popular services": [
+        "Populaire Services"
+      ],
+      "Skip for now": [
+        "Sla voorlopig over"
+      ],
+      "Switch your accounts to ${ BRAND_NAME }": [
+        "Schakel uw accounts over naar ${ BRAND_NAME }"
+      ],
+      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
+        "E-mail wisselen is moeilijk. ${ BRAND_NAME } maakt het gemakkelijk. Verbind uw oude account en beheer alles in één gerichte, advertentievrije werkruimte."
+      ],
+      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
+        "Update uw e-mail op de services die u het meest gebruikt. Voorkom tracking en bescherm uw privacy."
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Welkom bij ${ MAIL_APP_NAME }"
       ]
     },
     "Onboarding modal": {
@@ -12604,6 +12684,9 @@
       ],
       "Select a provider": [
         "Kies een aanbieder"
+      ],
+      "Anything you'd like us to know": [
+        "Heeft u nog iets dat u ons wilt laten weten"
       ]
     },
     "Placeholder for contact group name": {
@@ -16377,6 +16460,39 @@
       ],
       "Google Workspace": [
         "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Overige"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } licentie"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } licenties"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME } licentie",
+        "${ seats } ${ MEET_APP_NAME } licenties"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } licentie inbegrepen",
+        "${ seats } licenties inbegrepen"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "U kunt tot ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME }-licenties hebben tijdens de proefperiode."
       ]
     }
   }
