@@ -35,7 +35,7 @@ import { getAuthentication } from '@proton/shared/lib/webauthn/get';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import TotpInputs from '../account/totp/TotpInputs';
+import { TotpInputField, TotpRecoveryCodeInputField } from '../account/totp/TotpInputs';
 import { getReAuthTwoFactorTypes } from './getReAuthTwoFactorTypes';
 import type { OwnAuthModalProps, SrpAuthModalResult } from './interface';
 
@@ -81,13 +81,17 @@ const TOTPForm = ({
                 onSubmit(safeCode);
             }}
         >
-            <TotpInputs
-                type={type}
-                code={code}
-                error={validator([requiredError])}
-                loading={loading}
-                setCode={setCode}
-            />
+            {type === 'totp' ? (
+                <TotpInputField code={code} error={validator([requiredError])} loading={loading} setCode={setCode} />
+            ) : (
+                <TotpRecoveryCodeInputField
+                    code={code}
+                    error={validator([requiredError])}
+                    loading={loading}
+                    setCode={setCode}
+                    bigger
+                />
+            )}
             <div className="mt-4">
                 <InlineLinkButton
                     type="button"
@@ -185,7 +189,8 @@ enum Step {
 }
 
 export interface SrpAuthModalProps
-    extends Omit<OwnAuthModalProps, 'onSuccess'>,
+    extends
+        Omit<OwnAuthModalProps, 'onSuccess'>,
         Omit<ModalProps<'div'>, 'as' | 'onSubmit' | 'size' | 'onSuccess' | 'onError'> {
     onSuccess?: (data: SrpAuthModalResult) => Promise<void> | void;
     info?: InfoAuthedResponse;
