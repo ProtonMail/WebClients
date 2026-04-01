@@ -42,7 +42,7 @@ export const CodeInput = ({ value, onSuccess, onError, method }: Props) => {
 
     useEffect(() => {
         void initiateVerification({ api, method, config: getInitiationCall(method) })
-            .then((token) => setToken(token))
+            .then(({ token }) => setToken(token))
             .catch(() => onError());
     }, []);
 
