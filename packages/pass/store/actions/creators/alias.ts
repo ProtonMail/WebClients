@@ -6,6 +6,7 @@ import { isDisabledAlias } from '@proton/pass/lib/items/item.predicates';
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import { aliasDetailsRequest, intKey, selectedItemKey, withKey } from '@proton/pass/store/actions/requests';
+import { sessionRequest } from '@proton/pass/store/request/configs';
 import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/request/enhancers';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
 import type {
@@ -106,8 +107,8 @@ export const aliasSyncEnable = requestActionsFactory<ShareId, ShareId>('alias::s
 
 export const aliasSyncPending = requestActionsFactory<void, { items: ItemRevision[]; shareId: string }>('alias::sync::pending')({});
 
-export const aliasSyncStatus = requestActionsFactory<void, SlSyncStatusOutput, void>('alias::sync::status')({
-    success: { config: { maxAge: UNIX_MINUTE, data: null, hot: true } },
+export const aliasSyncStatus = requestActionsFactory<void, SlSyncStatusOutput>('alias::sync::status')({
+    success: sessionRequest(UNIX_MINUTE),
 });
 
 export const aliasSyncStatusToggle = requestActionsFactory<AliasToggleStatusDTO, SelectedItem & { item: ItemRevision }>(

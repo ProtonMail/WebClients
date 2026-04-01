@@ -8,11 +8,13 @@ import { withShareDedupe } from '@proton/pass/store/actions/enhancers/dedupe';
 import { withNotification } from '@proton/pass/store/actions/enhancers/notification';
 import { shareEditMemberRoleRequest, shareLeaveRequest, shareRemoveMemberRequest } from '@proton/pass/store/actions/requests';
 import type { AccessState } from '@proton/pass/store/reducers';
+import { sessionRequest } from '@proton/pass/store/request/configs';
 import { withRequest, withRequestFailure, withRequestSuccess } from '@proton/pass/store/request/enhancers';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
 import { ShareType } from '@proton/pass/types';
 import type { ShareEditMemberAccessIntent, ShareRemoveMemberAccessIntent } from '@proton/pass/types/data/access.dto';
 import { pipe } from '@proton/pass/utils/fp/pipe';
+import { UNIX_MINUTE } from '@proton/pass/utils/time/constants';
 
 export const shareRemoveMemberAccessIntent = createAction(
     'share::member::remove-access::intent',
@@ -74,7 +76,7 @@ export const shareEditMemberAccessFailure = createAction(
 
 export const getShareAccessOptions = requestActionsFactory<AccessKeys, AccessState>('share::access-options')({
     key: toShareAccessKey,
-    success: { config: { maxAge: 15, data: null, hot: true } },
+    success: sessionRequest(UNIX_MINUTE / 4),
     failure: {
         prepare: (error: unknown, payload) =>
             withNotification({
