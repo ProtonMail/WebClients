@@ -143,6 +143,17 @@ describe('SearchDB', () => {
         });
     });
 
+    describe('userPreferences', () => {
+        it('isOptedIn returns false by default', async () => {
+            expect(await db.isOptedIn()).toBe(false);
+        });
+
+        it('isOptedIn returns true after setOptedIn', async () => {
+            await db.setOptedIn();
+            expect(await db.isOptedIn()).toBe(true);
+        });
+    });
+
     describe('isolation by userId', () => {
         it('uses separate databases per user', async () => {
             const db2 = await SearchDB.open('other-user');

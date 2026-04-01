@@ -55,4 +55,10 @@ export class IndexRegistry {
             this.instances.delete(kind);
         }
     }
+
+    disposeAll(): void {
+        for (const [kind] of this.instances) {
+            this.dispose(kind);
+        }
+    }
 }

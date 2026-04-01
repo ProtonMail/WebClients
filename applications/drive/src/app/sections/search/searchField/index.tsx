@@ -11,6 +11,7 @@ import { useSpotlight } from '../../../components/useSpotlight';
 import useDriveNavigation from '../../../hooks/drive/useNavigate';
 import { type UseSearchModuleReturn, useSearchModule } from '../../../hooks/search/useSearchModule';
 import { useUrlSearchParams } from '../../../hooks/search/useUrlSearchParam';
+import { tryCatchWithNotification } from '../../../modules/search';
 import { SearchDropdown } from './SearchDropdown';
 
 type SearchFieldInnerProps = {
@@ -51,7 +52,7 @@ const SearchFieldInner = ({ searchModule }: SearchFieldInnerProps) => {
             return;
         }
 
-        searchModule.optIn();
+        void tryCatchWithNotification(searchModule.optIn)();
     };
 
     const handleClosedDropdown = (e?: Event) => {

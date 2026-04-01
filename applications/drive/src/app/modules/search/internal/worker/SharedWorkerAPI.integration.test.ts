@@ -416,6 +416,53 @@ describe('SharedWorkerAPI integration', () => {
         });
     });
 
+    describe('Scenario: queryIndexerState', () => {
+        it('returns default state before any client registers', async () => {
+            const result = await api.queryIndexerState();
+            expect(result).toEqual({
+                isInitialIndexing: false,
+                isIndexing: false,
+                isSearchable: false,
+                permanentError: null,
+            });
+        });
+
+        it('returns searchable state after indexing completes', async () => {
+            await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
+            await state.waitForSearchable();
+
+            const result = await api.queryIndexerState();
+            expect(result.isSearchable).toBe(true);
+            expect(result.isIndexing).toBe(false);
+        });
+    });
+
+    describe('Scenario: reset (clear browser data)', () => {
+        it('clears index and resets indexer state, then re-indexes after re-register', async () => {
+            // Initial bootstrap
+            await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
+            await state.waitForSearchable();
+            await verifyThatUserCanSearchIndexProperly(api);
+
+            // Reset: clears DB and stops indexer, but does not auto-restart.
+            state.checkpoint();
+            await api.reset();
+
+            // Verify: index empty, indexer state reset
+            expect(await search(api, 'report')).toHaveLength(0);
+            const afterReset = await api.queryIndexerState();
+            expect(afterReset.isSearchable).toBe(false);
+
+            // Simulate the main thread calling start() after the user opts back in.
+            await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
+
+            await state.waitForInitialIndexingStart();
+            await state.waitForSearchable();
+
+            await verifyThatUserCanSearchIndexProperly(api);
+        });
+    });
+
     // TODO: Add version upgrade scenario
     // TODO: Add incremental update scenario
     // TODO: Add shared_with_me scenarios: tree removed, tree added

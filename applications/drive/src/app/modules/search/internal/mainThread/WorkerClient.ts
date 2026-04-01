@@ -4,6 +4,7 @@ import { createAsyncQueue } from '../../../../utils/asyncQueue';
 import { Logger } from '../shared/Logger';
 import type { ClientId, SearchQuery, SearchResultItem, UserId, WorkerSearchResultEvent } from '../shared/types';
 import type { SharedWorkerAPI } from '../worker/SharedWorkerAPI';
+import type { IndexerState } from '../worker/indexer/IndexerTaskQueue';
 import type { MainThreadBridge } from './MainThreadBridge';
 
 const HEARTBEAT_INTERVAL = 3000;
@@ -12,7 +13,7 @@ export class WorkerClient {
     private api: Comlink.Remote<SharedWorkerAPI>;
     private heartbeatInterval: ReturnType<typeof setInterval>;
     private onBeforeUnload: () => void;
-    private started = false;
+    private running = false;
 
     constructor(
         private userId: UserId,
@@ -41,12 +42,22 @@ export class WorkerClient {
 
     /** Register this client with the worker, triggering indexing. Safe to call multiple times. */
     start(): void {
-        if (this.started) {
+        if (this.running) {
             return;
         }
-        this.started = true;
+        this.running = true;
         Logger.info('Registering search worker client');
         void this.api.registerClient(this.userId, this.clientId, Comlink.proxy(this.bridge));
+    }
+
+    async queryIndexerState(): Promise<IndexerState> {
+        return this.api.queryIndexerState();
+    }
+
+    /** Clear all search data and restart indexing from scratch. */
+    async reset(): Promise<void> {
+        await this.api.reset();
+        this.running = false;
     }
 
     async *search(query: SearchQuery): AsyncGenerator<SearchResultItem> {
