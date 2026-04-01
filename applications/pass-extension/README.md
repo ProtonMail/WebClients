@@ -75,7 +75,7 @@ BUILD_TARGET=safari yarn build:extension
 cd safari && ruby ./tools/reference_dist_directory.rb
 ```
 
-> Debugging extension components in Safari is challenging due to dev-tools limitations. For troubleshooting, build your project with the `HTTP_DEBUGGER=true` flag and launch the debugger interface using `yarn start http:debugger`. This configuration will route all extension logs and error messages to stdout.
+> Debugging extension components in Safari is challenging due to dev-tools limitations. For troubleshooting, build your project with the `HTTP_DEBUGGER=true` flag and launch the debugger interface using `yarn debugger:http`. This configuration will route all extension logs and error messages to stdout.
 
 Open the `Proton Pass.xcodeproj` project and run it
 
