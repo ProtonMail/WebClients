@@ -1232,6 +1232,9 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ LUMO_APP_NAME } 시트 ${ seats }개"
       ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } 라이선스 ${ seats }개"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats }명 글쓰기 도우미 이용 권한"
       ],
@@ -5918,6 +5921,12 @@
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } 은 로그인 및 사서함 암호를 모두 대체하는 단일 암호와 함께 사용할 수도 있습니다. 단일 비밀번호 모드로 전환하려면 사용하려는 단일 비밀번호를 입력하고 저장을 클릭하십시오."
       ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME }은 종단간 암호화된 화상 회의 솔루션입니다. 안전한 회의를 개최하기 위해 플랜에 추가해 보세요."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME }개 시트"
+      ],
       "${ n } address": [
         "${ n }개 주소"
       ],
@@ -6127,6 +6136,9 @@
       ],
       "Activity Monitor": [
         "활동 모니터링"
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } 추가"
       ],
       "add a recovery method": [
         "복구 수단 추가"
@@ -6685,6 +6697,9 @@
       ],
       "Everything in ${ planOrAppName }": [
         "${ planOrAppName }(에)서 하나로"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "${ planOrAppName }(에)서의 모든 것, 게다가:"
       ],
       "Example: ${ spfExample }": [
         "예시: ${ spfExample }"
@@ -8101,9 +8116,6 @@
       ],
       "With ${ AUTHENTICATOR_APP_NAME }, you can:": [
         "${ AUTHENTICATOR_APP_NAME }로:"
-      ],
-      "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
-        "Business 및 Enterprise 플랜에서는 조직을 위한 ${ boldDedicatedServers }을(를) 구매 및 ${ boldGateways } 설정으로 조직의 사용자가 접근을 관리하도록 할 수 있습니다."
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "암호화된 ${ BRAND_NAME } 주소로, 모든 ${ BRAND_NAME } 서비스를 사용할 수 있어요."
@@ -9872,6 +9884,20 @@
         "Porkbun 도메인으로 계정을 설정하세요."
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (${ quantity }명 이용 가능)"
+      ],
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } 라이선스"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME }개 시트"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ MEET_APP_NAME } 시트 ${ seats }개"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: 중요한 대화를 위한 안전한 영상 회의"
@@ -9903,6 +9929,9 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "종단간 암호화된 화면 공유 및 임시 통화 중 채팅"
       ],
+      "Hosts can record meetings locally on their computers": [
+        "호스트는 자신의 컴퓨터에 회의를 로컬 녹화할 수 있습니다."
+      ],
       "Meeting recording": [
         "회의 녹화"
       ],
@@ -9920,6 +9949,28 @@
       ],
       "Up to ${ n } participant": [
         "최대 ${ n }명 참가자"
+      ],
+      "Video meetings, ${ n } participant": [
+        "${ n }명 참가자의 화상 회의"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats }개 시트 포함"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "무료 체험 기간 중 최대 ${ TRIAL_MAX_MEET_SEATS }개의 ${ MEET_SHORT_APP_NAME } 시트를 포함할 수 있습니다."
+      ]
+    },
+    "Meet_launch": {
+      "Add ${ planName }": [
+        "${ planName } 추가"
+      ],
+      "Confidential video conferencing for the conversations that matter. Only ${ priceString } more each month.": [
+        "중요한 대화를 위한 비공개 화상 회의. 매월 단 ${ priceString }만 더 추가하세요."
+      ],
+      "Talk privately with ${ planName }": [
+        "${ planName }(으)로 비공개로 대화하기"
       ]
     },
     "Member action": {
@@ -10341,6 +10392,9 @@
       "Data breach monitoring": [
         "데이터 유출 모니터링"
       ],
+      "Data retention policies": [
+        "데이터 보존 정책"
+      ],
       "Dedicated servers and IP": [
         "전용 서버 및 IP"
       ],
@@ -10454,6 +10508,9 @@
       ],
       "Priority support & live chat": [
         "우선 지원 및 라이브 채팅"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "개인 정보 보호 AI 채팅 (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "안전한 사진 백업"
@@ -10607,6 +10664,9 @@
       ],
       "Vault sharing with up to ${ n } person": [
         "최대 ${ n }명의 사용자와 금고 공유"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "광고 차단과 멀웨어 보호 기느이 포함된 VPN"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } 주소나 별칭이 유출되었는지 확인하기 위해 다크 웹을 탐색하며 발견한 것이 있다면 즉시 알려드립니다."
@@ -14148,6 +14208,9 @@
       ],
       "${ n } VPN connection per user": [
         "사용자 당 ${ n }개 VPN 연결"
+      ],
+      "${ productName } for ${ count } user": [
+        "${ count }명의 사용자를 위한 ${ productName }"
       ],
       "${ UsedAddresses } address": [
         "${ UsedAddresses }개 주소"
