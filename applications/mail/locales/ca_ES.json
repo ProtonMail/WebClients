@@ -6521,9 +6521,6 @@
       "${ MEET_APP_NAME } seats": [
         "Llicències de ${ MEET_APP_NAME }"
       ],
-      "${ MEET_APP_NAME } video conferencing": [
-        "Videoconferència de ${ MEET_APP_NAME }"
-      ],
       "${ n } unread conversation": [
         "Hi ha ${ n } conversa sense llegir",
         "Hi ha ${ n } converses sense llegir"
@@ -6726,8 +6723,8 @@
       "Ad targeting": [
         "Orientació d'anuncis"
       ],
-      "Add ${ MEET_APP_NAME }": [
-        "Afegiu-hi ${ MEET_APP_NAME }"
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Afegiu ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
       "Add image URL": [
         "Afegeix l'URL de la imatge"
@@ -7461,7 +7458,8 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge"
+        "Insereix una imatge",
+        "Insereix imatges"
       ],
       "Insert link": [
         "Insereix un enllaç"

@@ -6512,9 +6512,6 @@
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } licenças"
       ],
-      "${ MEET_APP_NAME } video conferencing": [
-        "Videoconferência do ${ MEET_APP_NAME }"
-      ],
       "${ n } unread conversation": [
         "${ n } conversa não lida",
         "${ n } conversas não lidas"
@@ -6717,8 +6714,8 @@
       "Ad targeting": [
         "Segmentação de anúncios"
       ],
-      "Add ${ MEET_APP_NAME }": [
-        "Adicionar ${ MEET_APP_NAME }"
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Adicionar ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
       "Add image URL": [
         "Adicionar a URL da imagem"
@@ -7250,6 +7247,9 @@
       "Everything in ${ planOrAppName }": [
         "Tudo que está incluso no ${ planOrAppName }"
       ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Tido no ${ planOrAppName }, plus:"
+      ],
       "Expand selection": [
         "Expandir seleção"
       ],
@@ -7449,7 +7449,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir link"
@@ -9794,6 +9795,9 @@
       "Sender": [
         "Remetente"
       ],
+      "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
+        "Compartilhe sua disponibilidade com as páginas de agendamento no ${ CALENDAR_APP_NAME } e organize reuniões seguras com o ${ MEET_APP_NAME }."
+      ],
       "Sign emails": [
         "Assinar e-mails"
       ],
@@ -10460,6 +10464,9 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Compartilhamento de tela com criptografia de ponta a ponta e chat efêmero durante a chamada"
       ],
+      "Hosts can record meetings locally on their computers": [
+        "Os anfitriões podem gravar reuniões localmente em seus computadores"
+      ],
       "Meeting recording": [
         "Gravação da reunião"
       ],
@@ -10479,6 +10486,10 @@
       "Up to ${ n } participant": [
         "Até ${ n } participante",
         "Até ${ n } participantes"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Reuniões por vídeo, ${ n } participante",
+        "Reuniões por vídeo, ${ n } participantes"
       ]
     },
     "meet_2025: Info": {
@@ -10943,6 +10954,9 @@
       "Data breach monitoring": [
         "Monitoramento de violação de dados"
       ],
+      "Data retention policies": [
+        "Políticas de retenção de dados"
+      ],
       "Dedicated servers optimized for streaming": [
         "Servidores dedicados otimizados para streaming"
       ],
@@ -11051,6 +11065,9 @@
       ],
       "Priority support & live chat": [
         "Suporte prioritário e chat ao-vivo"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Bate-papo de IA Privada (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "Backup de fotos privadas"
@@ -11197,6 +11214,9 @@
       "Vault sharing with up to ${ n } person": [
         "Compartilhar cofres com até ${ n } pessoa",
         "Compartilhar cofres com até ${ n } pessoas"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN com bloqueador de anúncios e proteção contra malware"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Rastreamos a dark web para verificar se seus endereços ou aliases ${ BRAND_NAME } sofreram vazamento e alertarmos você imediatamente se encontrarmos alguma coisa."
