@@ -159,6 +159,9 @@
       "Change": [
         "Wijzigen"
       ],
+      "Change my access": [
+        "Mijn toegang wijzigen"
+      ],
       "Change password": [
         "Wachtwoord wijzigen"
       ],
@@ -245,6 +248,9 @@
       ],
       "Continue on web": [
         "Ga verder op de website"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "Doorgaan naar ${ planOrAppName }"
       ],
       "Continue transfers": [
         "Overdrachten voortzetten"
@@ -845,6 +851,9 @@
       "Remove me": [
         "Verwijder mij"
       ],
+      "Remove my access": [
+        "Mijn toegang verwijderen"
+      ],
       "Remove without saving": [
         "Verwijder zonder op te slaan"
       ],
@@ -1309,6 +1318,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } plaats",
         "${ seats } ${ LUMO_APP_NAME } plaatsen"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } licentie",
+        "${ seats } ${ MEET_APP_NAME } licenties"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } plaats voor schrijfassistent",
@@ -3025,6 +3038,9 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Gebruik deze handleiding om uw organisatie snel te laten profiteren van ${ BRAND_NAME }'s toonaangevende versleuteling en privacy ecosysteem."
       ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Het spijt ons u te moeten zien vertrekken. Als u even tijd heeft, zouden we het zeer op prijs stellen te horen waarom u wilt annuleren. Uw feedback helpt ons ${ BRAND_NAME } beter te maken voor iedereen."
+      ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Met contactgroepen kunt u met één klik e-mails verzenden naar iedereen in de groep."
       ],
@@ -3854,6 +3870,12 @@
       ],
       "Unable to set photo as cover": [
         "Kan foto niet als cover instellen"
+      ],
+      "Unable to start the search": [
+        "Kan de zoekopdracht niet starten"
+      ],
+      "Unable to start the search: not enough storage space": [
+        "Kan de zoekopdracht niet starten: onvoldoende opslagruimte"
       ],
       "Unexpected error, we can't import the contacts": [
         "Onverwachte fout, we kunnen de contacten niet importeren"
@@ -4946,6 +4968,12 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } bevat ${ BRAND_NAME } Scribe schrijfassistent"
       ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } is een end-to-end versleutelde videoconferentie oplossing. Voeg het toe aan uw abonnement om veilige vergaderingen te hosten."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } licenties"
+      ],
       "${ normalizedProgress }% completed": [
         "${ normalizedProgress }% voltooid"
       ],
@@ -5538,6 +5566,9 @@
       "Everything in ${ planOrAppName }": [
         "Alles van ${ planOrAppName }"
       ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Alles in ${ planOrAppName }, plus:"
+      ],
       "Expired": [
         "Verlopen"
       ],
@@ -5585,6 +5616,9 @@
       ],
       "Folders you sync from your computer will appear here.": [
         "Mappen die u synchroniseert vanaf uw computer zullen hier verschijnen."
+      ],
+      "for ${ price }": [
+        "voor ${ price }"
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Vermijd streaming en andere geheugenintensieve activiteiten of splits je upload op in kleinere delen voor het beste resultaat."
@@ -5651,6 +5685,9 @@
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "Als u doorgaat met de downgrade, verliest u toegang tot betaalde functies van ${ VPN_APP_NAME }."
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Als u uzelf verwijdert, verliest u de toegang tot \"${ fileName }\" en kunt u deze niet meer openen, tenzij de eigenaar deze met u deelt."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importeer ${ calendarCount } van ${ totalCalendarsCount } agenda",
@@ -6814,6 +6851,9 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "U wordt niets in rekening gebracht als u annuleert voor ${ trialEndsOnFormatted }."
       ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "U kunt \"${ fileName }\" niet delen na het wijzigen van de toegang tot 'alleen-lezer'. Alleen de eigenaar kan uw toegang opnieuw wijzigen."
+      ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
         "U ontvangt het tegoed 1 maand nadat uw vriend(in) zich abonneert op een jaarlijks abonnement, en 2 maanden nadat zij zich abonneren op een maandelijks abonnement."
       ],
@@ -7200,6 +7240,9 @@
       "Contacts": [
         "Contacten"
       ],
+      "Continue cancelling": [
+        "Doorgaan met annuleren"
+      ],
       "Copy": [
         "Kopiëren"
       ],
@@ -7411,6 +7454,9 @@
       "Main": [
         "Primair"
       ],
+      "Main reason for cancelling": [
+        "Hoofdreden voor annulering"
+      ],
       "Malware": [
         "Malware"
       ],
@@ -7566,6 +7612,9 @@
       ],
       "Size": [
         "Grootte"
+      ],
+      "Skip feedback": [
+        "Feedback overslaan"
       ],
       "Skip file": [
         "Bestand overslaan"
@@ -7954,6 +8003,18 @@
         "voor ${ price }"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } licentie"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } licenties"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME } licentie",
+        "${ seats } ${ MEET_APP_NAME } licenties"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: Vertrouwelijke videogesprekken voor de gesprekken die ertoe doen"
@@ -7987,6 +8048,9 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "End-to-end versleutelde schermdeling en korte chats tijdens telefoongesprekken"
       ],
+      "Hosts can record meetings locally on their computers": [
+        "Hosts kunnen vergaderingen lokaal op hun computers opnemen"
+      ],
       "Meeting recording": [
         "Opname van vergadering"
       ],
@@ -8006,6 +8070,19 @@
       "Up to ${ n } participant": [
         "Tot ${ n } deelnemer",
         "Tot ${ n } deelnemers"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videovergaderingen, ${ n } deelnemer",
+        "Videovergaderingen, ${ n } deelnemers"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } licentie inbegrepen",
+        "${ seats } licenties inbegrepen"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "U kunt tot ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME }-licenties hebben tijdens de proefperiode."
       ]
     },
     "Message": {
@@ -8484,6 +8561,9 @@
       "Data breach monitoring": [
         "Monitoring van datalekken"
       ],
+      "Data retention policies": [
+        "Dataretentiebeleid"
+      ],
       "Dedicated servers optimized for streaming": [
         "Gereserveerde servers geoptimaliseerd voor streamen"
       ],
@@ -8592,6 +8672,9 @@
       ],
       "Priority support & live chat": [
         "Prioritaire ondersteuning en live chat"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Privé AI-chat (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "Privé foto back-up"
@@ -8738,6 +8821,9 @@
       "Vault sharing with up to ${ n } person": [
         "Kluis delen met tot ${ n } persoon",
         "Kluis delen tot ${ n } personen"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN met advertentieblokkering en bescherming tegen malware"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "We scannen het dark web om te controleren of uw ${ BRAND_NAME } adressen of aliassen zijn gelekt en waarschuwen u onmiddellijk wanneer we iets vinden."
@@ -9158,6 +9244,9 @@
       ]
     },
     "Notification": {
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" gedeeld"
+      ],
       "\"${ name }\" created successfully": [
         "\"${ name }\" succesvol aangemaakt"
       ],
@@ -10310,6 +10399,9 @@
       "Anderson": [
         "Anderson"
       ],
+      "Anything you'd like us to know": [
+        "Heeft u nog iets dat u ons wilt laten weten"
+      ],
       "Anytown": [
         "Willekeurige stad"
       ],
@@ -10535,6 +10627,18 @@
       ],
       "Google Workspace": [
         "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Overige"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {
@@ -11264,6 +11368,9 @@
     "Status": {
       "pending": [
         "in behandeling"
+      ],
+      "user joined": [
+        "gebruiker is toegetreden"
       ]
     },
     "Storage": {
@@ -12198,6 +12305,9 @@
       "Card verification": [
         "Kaartverificatie"
       ],
+      "Change access to viewer?": [
+        "Toegang wijzigen naar kijker?"
+      ],
       "Change layout": [
         "Layout aanpassen"
       ],
@@ -12780,6 +12890,9 @@
         "Item verwijderen?",
         "Items verwijderen?"
       ],
+      "Remove your access?": [
+        "Mijn toegang verwijderen?"
+      ],
       "Rename a file": [
         "Hernoem een bestand"
       ],
@@ -12848,6 +12961,9 @@
       ],
       "SHA1": [
         "SHA1"
+      ],
+      "Share \"${ fileName }\"": [
+        "Deel \"${ fileName }\""
       ],
       "Share your calendar with your team": [
         "Deel uw agenda met uw team"
@@ -13123,6 +13239,9 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "Automatisch wisselen tussen uw favoriete thema's voor dag en nacht met de dag- en nachtmodus van uw systeem"
       ],
+      "Change shared item settings": [
+        "Instellingen voor het delen van items wijzigen"
+      ],
       "Customize import to reduce the number of folders": [
         "Import aanpassen om het aantal mappen te verminderen"
       ],
@@ -13164,6 +13283,9 @@
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "Bericht- en bestandsnaam worden opgeslagen met zero access versleuteling wanneer opgenomen in de e-mail"
+      ],
+      "New!": [
+        "Nieuw!"
       ],
       "Not all information listed here was exposed for all users.": [
         "Niet alle hier vermelde informatie werd voor alle gebruikers blootgesteld."
