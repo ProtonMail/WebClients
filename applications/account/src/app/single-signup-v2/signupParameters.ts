@@ -108,7 +108,6 @@ export const getSignupParameters = ({
                 },
                 preSelectedPlan: PLANS.FREE,
                 coupon: COUPON_CODES.PORKBUN,
-                isMailVariantB: false,
             };
         }
     }
@@ -168,14 +167,11 @@ export const getSignupParameters = ({
         };
     }
 
-    const isMailVariantB = toApp === APPS.PROTONMAIL && searchParams.get('v') === 'b';
-
     return {
         ...result,
         localID: Number.isInteger(localID) ? localID : undefined,
         signIn,
         mode,
         invite,
-        isMailVariantB,
     };
 };
