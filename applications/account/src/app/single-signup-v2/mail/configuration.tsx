@@ -589,13 +589,7 @@ export const getMailConfiguration = ({
                 value: Audience.B2C,
                 locationDescriptor: {
                     pathname: SSO_PATHS.MAIL_SIGNUP,
-                    search: (() => {
-                        // temporary v=b for experiment
-                        if (signupParameters.isMailVariantB) {
-                            return 'mode=sps&v=b';
-                        }
-                        return 'mode=sps';
-                    })(),
+                    search: 'mode=sps',
                 },
                 title: c('mail_signup_2024: title').t`For individuals`,
                 defaultPlan: PLANS.BUNDLE,
@@ -604,13 +598,7 @@ export const getMailConfiguration = ({
                 value: Audience.B2B,
                 locationDescriptor: {
                     pathname: SSO_PATHS.MAIL_SIGNUP_B2B,
-                    search: (() => {
-                        // temporary v=b for experiment
-                        if (signupParameters.isMailVariantB) {
-                            return 'mode=sps&v=b';
-                        }
-                        return 'mode=sps';
-                    })(),
+                    search: 'mode=sps',
                 },
                 title: c('mail_signup_2024: title').t`For businesses`,
                 defaultPlan: PLANS.BUNDLE_PRO_2024,

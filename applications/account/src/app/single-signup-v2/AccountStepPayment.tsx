@@ -1,4 +1,4 @@
-import type { MutableRefObject, ReactElement, ReactNode } from 'react';
+import type { MutableRefObject, ReactNode } from 'react';
 import { useEffect, useImperativeHandle, useRef } from 'react';
 
 import { c } from 'ttag';
@@ -82,7 +82,6 @@ interface Props {
     setCurrencySelectorDisabled: (disabled: boolean) => void;
     paymentsApi: PaymentsApi;
     onVatNumberChange: (vatNumber: string) => void;
-    offerBanner: ReactElement | undefined | false;
     telemetryContext: PaymentTelemetryContext;
     onMethodChanged: (method: AvailablePaymentMethod) => void;
     couponConfig: CouponConfigRendered | undefined;
@@ -113,7 +112,6 @@ const AccountStepPayment = ({
     setCurrencySelectorDisabled,
     paymentsApi,
     onVatNumberChange,
-    offerBanner, // temporary for A/B test,
     telemetryContext,
     onMethodChanged,
     couponConfig,
@@ -490,7 +488,6 @@ const AccountStepPayment = ({
 
                     return (
                         <div>
-                            {offerBanner && <div className="mt-4 mb-4">{offerBanner}</div>}
                             <PayButton
                                 size="large"
                                 color="norm"
@@ -536,7 +533,6 @@ const AccountStepPayment = ({
     return (
         <div className="flex flex-column md:flex-row items-stretch md:items-start justify-space-between gap-10 lg:gap-20">
             <div className="shrink-0 md:flex-1 order-1 md:order-0">{paymentsForm}</div>
-
             <AccountStepPaymentSummary
                 model={model}
                 options={options}

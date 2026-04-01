@@ -243,8 +243,6 @@ const Step1 = ({
         metrics.core_single_signup_pageLoad_total.increment({});
     }, []);
 
-    const isMailVariantB = signupParameters.isMailVariantB;
-
     const history = useHistory();
 
     const couponConfig = useCouponConfig({
@@ -623,15 +621,6 @@ const Step1 = ({
             return c('Action').t`Try for free`;
         }
 
-        if (
-            appName === `${BRAND_NAME} Mail` &&
-            selectedPlan.Name !== PLANS.FREE &&
-            options.cycle === CYCLE.YEARLY &&
-            isMailVariantB
-        ) {
-            return c('mail_cro_experiment').t`Get Deal`;
-        }
-
         return getStartUsingAppNameText(appName);
     })();
 
@@ -885,7 +874,7 @@ const Step1 = ({
 
         const skeletonLoader = <SkeletonLoader width="36em" height="2.4rem" index={0} className="mt-4 max-w-full" />;
 
-        if (model.loadingDependencies && !isMailVariantB) {
+        if (model.loadingDependencies) {
             return skeletonLoader;
         }
 
@@ -1061,7 +1050,7 @@ const Step1 = ({
                     </div>
                 )}
 
-                {!isMailVariantB && offerBanner}
+                {offerBanner}
 
                 {hasPlanSelector && (
                     <>
@@ -1553,7 +1542,6 @@ const Step1 = ({
                                     {c('b2b_trials_2025_Info').t`During the trial period, you can have up to 10 users.`}
                                 </div>
                             )}
-
                             <AccountStepPayment
                                 selectedPlan={selectedPlan}
                                 measure={measure}
@@ -1606,7 +1594,6 @@ const Step1 = ({
                                     handleOptimistic({ vatNumber });
                                 }}
                                 paymentsApi={getPaymentsApi(normalApi)}
-                                offerBanner={isMailVariantB && offerBanner}
                                 telemetryContext={telemetryContext}
                                 onMethodChanged={(method) => {
                                     selectedMethodRef.current = method;
