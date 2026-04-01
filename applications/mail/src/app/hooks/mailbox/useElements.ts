@@ -57,6 +57,7 @@ import {
     taskRunning,
     totalReturned as totalReturnedSelector,
 } from '../../store/elements/elementsSelectors';
+import { getTotal } from '../../store/elements/helpers/elementTotal';
 import { messageByID } from '../../store/messages/messagesSelectors';
 import type { MailState } from '../../store/store';
 import { useElementsEvents } from '../events/useElementsEvents';
@@ -276,7 +277,7 @@ export const useElements: UseElements = ({
             // In some cases we cannot predict the total, for example when applying the has file filter
             const locationTotal =
                 !filterToString(filter) && !isSearching
-                    ? countValues.find((label) => label.LabelID === labelID)?.Total
+                    ? getTotal({ counts: countValues, labelID, categoryIDs, filter, bypassFilterCount: 0 }) || undefined
                     : undefined;
 
             dispatch(
