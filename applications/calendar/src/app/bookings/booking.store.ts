@@ -132,7 +132,6 @@ export const useBookingStore = create<BookingStore>((set, get) => ({
             nextAvailableSlot,
             // Recurring events have the same ID, so we need to check both id and startTime to remove duplicates
             bookingSlots: dedupedSlots,
-            latestAvailableSlot: dedupedSlots[dedupedSlots.length - 1] ?? null,
         });
     },
 
