@@ -160,15 +160,17 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
     const countryOptions = getCountryOptions(userSettings);
 
     if (!hasGatewaysAccess) {
+        // translator: Full sentence "With a Professional plan, you can purchase dedicated servers for your organization, and set up Gateways to control which users can access them"
+        const boldProfessionalPlan = <b key="bold-professional-plan">{c('Info').t`Professional`}</b>;
         const boldDedicatedServers = (
             <b key="bold-dedicated-servers">{
-                // translator: Full sentence "With a Business or Enterprise plan, you can purchase dedicated servers for your organization, and set up Gateways to control which users can access them"
+                // translator: Full sentence "With a Professional plan, you can purchase dedicated servers for your organization, and set up Gateways to control which users can access them"
                 c('Info').t`dedicated servers`
             }</b>
         );
         const boldGateways = (
             <b key="bold-gateways">{
-                // translator: Full sentence "With a Business or Enterprise plan, you can purchase dedicated servers for your organization, and set up Gateways to control which users can access them"
+                // translator: Full sentence "With a Professional plan, you can purchase dedicated servers for your organization, and set up Gateways to control which users can access them"
                 c('Info').t`Gateways`
             }</b>
         );
@@ -185,9 +187,9 @@ const GatewaysSection = ({ organization, showCancelButton = true }: Props) => {
                             <b>{c('Info').t`Enhance your network security`}</b>
                             <div>
                                 {
-                                    // translator: Full sentence "With a Business or Enterprise plan, you can purchase dedicated servers for your organization, and set up Gateways to control which users can access them"
+                                    // translator: Full sentence "With a Professional plan, you can purchase dedicated servers for your organization, and set up Gateways to control which users can access them"
                                     c('Info')
-                                        .jt`With a Business or Enterprise plan, you can purchase ${boldDedicatedServers} for your organization, and set up ${boldGateways} to control which users can access them.`
+                                        .jt`With a ${boldProfessionalPlan} plan, you can purchase ${boldDedicatedServers} for your organization, and set up ${boldGateways} to control which users can access them.`
                                 }{' '}
                                 <Href
                                     href="https://protonvpn.com/support/manage-vpn-servers-organization"
