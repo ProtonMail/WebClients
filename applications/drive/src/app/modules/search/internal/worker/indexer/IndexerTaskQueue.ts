@@ -2,7 +2,8 @@ import { getNodeEntity } from '../../../../../utils/sdk/getNodeEntity';
 import type { MainThreadBridge } from '../../mainThread/MainThreadBridge';
 import { Logger } from '../../shared/Logger';
 import type { SearchDB } from '../../shared/SearchDB';
-import { isAbortError, isPermanentError, isQuotaExceededError } from '../../shared/errors';
+import type { PermanentErrorKind } from '../../shared/errors';
+import { classifyPermanentError, isAbortError, sendErrorReportForSearch } from '../../shared/errors';
 import { brandTreeEventScopeId } from '../../shared/types';
 import type { IndexRegistry } from '../index/IndexRegistry';
 import type { TreeSubscriptionRegistry } from './TreeSubscriptionRegistry';
@@ -18,7 +19,7 @@ export type IndexerState = {
     isInitialIndexing: boolean;
     isIndexing: boolean;
     isSearchable: boolean;
-    permanentError: 'quota_exceeded' | 'corrupted_db' | null;
+    permanentError: PermanentErrorKind | null;
 };
 
 export type IndexerStateListener = (state: IndexerState) => void;
@@ -27,8 +28,8 @@ export type IndexerStateListener = (state: IndexerState) => void;
  * FIFO task queue for indexing operations.
  *
  * Runs tasks sequentially, tracks indexer state, and handles errors.
- * After bootstrap, recurring tasks (incremental updates, maintenance) self-schedule
- * via enqueueDelayed — each controls its own cadence.
+ * After bootstrap, incremental updates are driven by TreeSubscriptionRegistry
+ * (event-driven with debounce), while maintenance tasks self-schedule.
  */
 export class IndexerTaskQueue {
     private readonly treeSubscriptionRegistry: TreeSubscriptionRegistry;
@@ -121,6 +122,11 @@ export class IndexerTaskQueue {
                         this.enqueue(task);
                     }
                     this.postBootstrapTasks = [];
+
+                    // Wire registry → task queue: registry decides *when*, queue creates the task.
+                    this.treeSubscriptionRegistry.startIncrementalUpdateScheduling((registration) =>
+                        this.enqueueOnce(new IncrementalUpdateTask(registration))
+                    );
                 }
 
                 // Skip waiting if tasks were enqueued (e.g. by postBootstrapTasks).
@@ -182,10 +188,15 @@ export class IndexerTaskQueue {
 
             Logger.error(`IndexerTaskQueue: ${task.getUid()} failed`, e);
 
-            if (isPermanentError(e)) {
+            const permanentErrorKind = classifyPermanentError(e);
+            if (permanentErrorKind) {
                 // TODO: monitor in graphana
+                Logger.error(`Search permanent error ${permanentErrorKind}`, e);
+                sendErrorReportForSearch(e);
+
+                // Notify user of the search module for handling.
                 this.updateState({
-                    permanentError: isQuotaExceededError(e) ? 'quota_exceeded' : 'corrupted_db',
+                    permanentError: permanentErrorKind,
                 });
                 this.stop();
                 return;
@@ -220,8 +231,6 @@ export class IndexerTaskQueue {
             postBootstrapTasks: [
                 // Run all cleanup tasks once.
                 ...CLEANUP_TASKS.map((Task) => new Task()),
-                // One incremental update task per populator (self-schedules after first run).
-                new IncrementalUpdateTask(myFilesPopulator),
                 // Self-scheduling round-robin maintenance.
                 new RecurringMaintenanceTask(),
             ],

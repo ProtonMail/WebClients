@@ -48,6 +48,11 @@ export class FakeMainThreadBridge {
         this.fakeDriveClient.setMyFilesRootNode(node);
     }
 
+    /** Register a node returned by getNode(). */
+    setNode(nodeUid: string, node: MaybeNode): void {
+        this.fakeDriveClient.setNode(nodeUid, node);
+    }
+
     /** Set children for a given parent node UID. */
     setChildren(parentUid: string, children: MaybeNode[]): void {
         this.fakeDriveClient.setChildren(parentUid, children);

@@ -16,6 +16,8 @@ export function makeTaskContext(overrides?: Partial<TaskContext>): TaskContext {
         treeSubscriptionRegistry: {
             getAllRegistrations: jest.fn().mockReturnValue([]),
             getRegistration: jest.fn().mockReturnValue(undefined),
+            markIncrementalUpdateComplete: jest.fn(),
+            startIncrementalUpdateScheduling: jest.fn(),
         } as unknown as TreeSubscriptionRegistry,
         signal: new AbortController().signal,
         markIndexing: jest.fn(),
