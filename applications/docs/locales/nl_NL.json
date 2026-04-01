@@ -208,6 +208,9 @@
       "Continue import": [
         "Doorgaan met importeren"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Doorgaan naar ${ planOrAppName }"
+      ],
       "Continue with Google": [
         "Ga verder met Google"
       ],
@@ -930,6 +933,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } plaats",
         "${ seats } ${ LUMO_APP_NAME } plaatsen"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } licentie",
+        "${ seats } ${ MEET_APP_NAME } licenties"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } plaats voor schrijfassistent",
@@ -2520,6 +2527,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Gebruik deze handleiding om uw organisatie snel te laten profiteren van ${ BRAND_NAME }'s toonaangevende versleuteling en privacy ecosysteem."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Het spijt ons u te moeten zien vertrekken. Als u even tijd heeft, zouden we het zeer op prijs stellen te horen waarom u wilt annuleren. Uw feedback helpt ons ${ BRAND_NAME } beter te maken voor iedereen."
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Met contactgroepen kunt u met één klik e-mails verzenden naar iedereen in de groep."
@@ -4392,6 +4402,9 @@
       "Current version": [
         "Huidige versie"
       ],
+      "Decrypting your document": [
+        "Uw document ontsleutelen"
+      ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Digitale handtekening geverifieerd. Dit bestand werd veilig geüpload door ${ emailAddress }."
       ],
@@ -4493,6 +4506,9 @@
       ],
       "Everything in ${ planOrAppName }": [
         "Alles van ${ planOrAppName }"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Alles in ${ planOrAppName }, plus:"
       ],
       "Failed to generate a secure link. The reason is: ${ error }": [
         "Genereren van beveiligde koppeling mislukt. De reden is: ${ error }"
@@ -5007,6 +5023,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "De eigenaar van dit adres heeft end-to-end versleuteling uitgeschakeld. Om versleutelde berichten naar dit adres te sturen moet de eigenaar end-to-end versleuteling weer inschakelen."
+      ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "De URL die u heeft ingevoerd, lijkt onjuist uit Slack te zijn gekopieerd. Bij het kopiëren van lange koppelingen uit Slack, klik met de rechtermuisknop op de koppeling en kies vervolgens \"Koppeling kopiëren\" in plaats van de afgekorte URL-tekst rechtstreeks te kopiëren."
       ],
       "There are no documents in the trash.": [
         "Er zijn geen documenten in de prullenbak."
@@ -5562,6 +5581,9 @@
       "Contacts": [
         "Contacten"
       ],
+      "Continue cancelling": [
+        "Doorgaan met annuleren"
+      ],
       "Copy": [
         "Kopiëren"
       ],
@@ -5718,6 +5740,9 @@
       "Main": [
         "Primair"
       ],
+      "Main reason for cancelling": [
+        "Hoofdreden voor annulering"
+      ],
       "Make editor": [
         "Maak de persoon een bewerker"
       ],
@@ -5822,6 +5847,9 @@
       ],
       "Sign emails": [
         "E-mails ondertekenen"
+      ],
+      "Skip feedback": [
+        "Feedback overslaan"
       ],
       "Skip file": [
         "Bestand overslaan"
@@ -6122,6 +6150,18 @@
         "Add-on met gratis proefversie"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } licentie"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } licenties"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME } licentie",
+        "${ seats } ${ MEET_APP_NAME } licenties"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: Vertrouwelijke videogesprekken voor de gesprekken die ertoe doen"
@@ -6155,6 +6195,9 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "End-to-end versleutelde schermdeling en korte chats tijdens telefoongesprekken"
       ],
+      "Hosts can record meetings locally on their computers": [
+        "Hosts kunnen vergaderingen lokaal op hun computers opnemen"
+      ],
       "Meeting recording": [
         "Opname van vergadering"
       ],
@@ -6174,6 +6217,10 @@
       "Up to ${ n } participant": [
         "Tot ${ n } deelnemer",
         "Tot ${ n } deelnemers"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videovergaderingen, ${ n } deelnemer",
+        "Videovergaderingen, ${ n } deelnemers"
       ]
     },
     "Message": {
@@ -6652,6 +6699,9 @@
       "Data breach monitoring": [
         "Monitoring van datalekken"
       ],
+      "Data retention policies": [
+        "Dataretentiebeleid"
+      ],
       "Dedicated servers optimized for streaming": [
         "Gereserveerde servers geoptimaliseerd voor streamen"
       ],
@@ -6760,6 +6810,9 @@
       ],
       "Priority support & live chat": [
         "Prioritaire ondersteuning en live chat"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Privé AI-chat (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "Privé foto back-up"
@@ -6906,6 +6959,9 @@
       "Vault sharing with up to ${ n } person": [
         "Kluis delen met tot ${ n } persoon",
         "Kluis delen tot ${ n } personen"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN met advertentieblokkering en bescherming tegen malware"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "We scannen het dark web om te controleren of uw ${ BRAND_NAME } adressen of aliassen zijn gelekt en waarschuwen u onmiddellijk wanneer we iets vinden."
@@ -7952,6 +8008,9 @@
       "A way to contact you": [
         "Een manier om u te contacteren"
       ],
+      "Anything you'd like us to know": [
+        "Heeft u nog iets dat u ons wilt laten weten"
+      ],
       "Choose password": [
         "Kies wachtwoord"
       ],
@@ -8110,6 +8169,18 @@
       ],
       "Google Workspace": [
         "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Overige"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {

@@ -925,6 +925,9 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ LUMO_APP_NAME } 시트 ${ seats }개"
       ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } 라이선스 ${ seats }개"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats }명 글쓰기 도우미 이용 권한"
       ],
@@ -4343,6 +4346,9 @@
       "Current version": [
         "현재 버전"
       ],
+      "Decrypting your document": [
+        "문서를 복호화하는 중"
+      ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "디지털 서명이 인증되었습니다. 이 파일은 ${ emailAddress }에 의해 안전하게 업로드되었습니다."
       ],
@@ -4444,6 +4450,9 @@
       ],
       "Everything in ${ planOrAppName }": [
         "${ planOrAppName }(에)서 하나로"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "${ planOrAppName }(에)서의 모든 것, 게다가:"
       ],
       "Failed to generate a secure link. The reason is: ${ error }": [
         "보안 링크 생성 실패. 사유: ${ error }"
@@ -6070,6 +6079,17 @@
         "무료 체험 애드온"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } 라이선스"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME }개 시트"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ MEET_APP_NAME } 시트 ${ seats }개"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: 중요한 대화를 위한 안전한 영상 회의"
@@ -6101,6 +6121,9 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "종단간 암호화된 화면 공유 및 임시 통화 중 채팅"
       ],
+      "Hosts can record meetings locally on their computers": [
+        "호스트는 자신의 컴퓨터에 회의를 로컬 녹화할 수 있습니다."
+      ],
       "Meeting recording": [
         "회의 녹화"
       ],
@@ -6118,6 +6141,9 @@
       ],
       "Up to ${ n } participant": [
         "최대 ${ n }명 참가자"
+      ],
+      "Video meetings, ${ n } participant": [
+        "${ n }명 참가자의 화상 회의"
       ]
     },
     "Message": {
@@ -6580,6 +6606,9 @@
       "Data breach monitoring": [
         "데이터 유출 모니터링"
       ],
+      "Data retention policies": [
+        "데이터 보존 정책"
+      ],
       "Dedicated servers optimized for streaming": [
         "스트리밍에 최적화된 전용 서버"
       ],
@@ -6687,6 +6716,9 @@
       ],
       "Priority support & live chat": [
         "우선 지원 및 라이브 채팅"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "개인 정보 보호 AI 채팅 (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "안전한 사진 백업"
@@ -6828,6 +6860,9 @@
       ],
       "Vault sharing with up to ${ n } person": [
         "최대 ${ n }명의 사용자와 금고 공유"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "광고 차단과 멀웨어 보호 기느이 포함된 VPN"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } 주소나 별칭이 유출되었는지 확인하기 위해 다크 웹을 탐색하며 발견한 것이 있다면 즉시 알려드립니다."
