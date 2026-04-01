@@ -1197,6 +1197,10 @@
         "${ n } message par jour",
         "${ n } messages par jour"
       ],
+      "${ options }-day file version history": [
+        "Historique des versions de fichiers datant de ${ options } jour",
+        "Historique des versions de fichiers datant de ${ options } jours"
+      ],
       "${ size } attachment size": [
         "${ size } de pièces jointes"
       ],
@@ -1265,6 +1269,9 @@
       ],
       "Custom email domains": [
         "Domaines de messagerie personnalisés"
+      ],
+      "Data retention policies": [
+        "Politiques de conservation des données"
       ],
       "Desktop app": [
         "Application de bureau"
