@@ -1760,6 +1760,9 @@
       "By continuing in the meeting, you acknowledge and consent to being recorded.": [
         "En poursuivant dans la réunion, vous reconnaissez et consentez à être enregistré(e)."
       ],
+      "By joining, you agree to our ${ termsLink } and ${ privacyLink }.": [
+        "En rejoignant, vous acceptez nos ${ termsLink } et ${ privacyLink }."
+      ],
       "camera": [
         "Caméra"
       ],
@@ -1951,6 +1954,9 @@
       ],
       "Meeting locked. No new participants can join.": [
         "La réunion a été close. Aucun nouveau participant ne peut la rejoindre."
+      ],
+      "Meeting recordings aren’t supported in Firefox.": [
+        "Les enregistrements de réunions ne sont pas pris en charge dans Firefox."
       ],
       "Meeting unlocked. Participants can join again.": [
         "La réunion est déverrouillée. Les participants peuvent se reconnecter."
@@ -2202,10 +2208,10 @@
         "Activer le microphone"
       ],
       "unlimited meeting": [
-        "réunion illimitée"
+        "réunions illimitées"
       ],
       "Unlock ${ unlimitedMeeting } and premium features": [
-        "Débloquez ${ unlimitedMeeting } et les fonctionnalités premium"
+        "Débloquez les ${ unlimitedMeeting } et les fonctionnalités premium"
       ],
       "Upgrade to record your meetings locally.": [
         "Changer d'abonnement pour enregistrer vos réunions localement."
@@ -2248,6 +2254,9 @@
       ],
       "You can still turn off your microphone and camera anytime in the meeting": [
         "Vous pouvez toujours couper votre microphone et votre caméra à tout moment pendant la réunion"
+      ],
+      "You left the meeting": [
+        "Vous avez quitté la réunion."
       ],
       "You left your meeting": [
         "Vous avez quitté votre réunion"
@@ -2485,6 +2494,9 @@
       "Sign in": [
         "Se connecter"
       ],
+      "terms and conditions": [
+        "conditions générales d'utilisation"
+      ],
       "What’s this?": [
         "Qu'est-ce que c'est ?"
       ]
@@ -2685,6 +2697,9 @@
       ]
     },
     "Sort option": {
+      "Alphabetical (A–Z)": [
+        "Ordre alphabétique (A–Z)"
+      ],
       "Newly created": [
         "Créé récemment"
       ],
