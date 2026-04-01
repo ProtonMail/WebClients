@@ -181,7 +181,7 @@ export function FolderBrowser({
                     onChange={uploadFile.handleFileChange}
                 />
                 <input
-                    type="file"
+                    type="folder"
                     ref={uploadFolder.folderInputRef}
                     className="hidden"
                     onChange={uploadFolder.handleFolderChange}
