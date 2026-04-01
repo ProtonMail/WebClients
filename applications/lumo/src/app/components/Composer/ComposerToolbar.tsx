@@ -4,7 +4,9 @@ import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import { IcMicrophone } from '@proton/icons/icons/IcMicrophone';
+import { IcPalette } from '@proton/icons/icons/IcPalette';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { IcSliders } from '@proton/icons/icons/IcSliders';
 import { isIos } from '@proton/shared/lib/helpers/browser';
@@ -112,7 +114,6 @@ export interface ComposerToolbarProps {
     onBrowseDrive: () => void;
     onDrawSketch: () => void;
     fileUploadMode: FileUploadMode;
-    onCreateImage?: () => void;
 
     // From legacy composer component - can delete
     // hasAttachments: boolean;
@@ -125,11 +126,11 @@ export const ComposerToolbar = ({
     onBrowseDrive,
     onDrawSketch,
     fileUploadMode,
-    onCreateImage,
 }: ComposerToolbarProps) => {
     const toolsButtonRef = useRef<HTMLButtonElement>(null);
     const [showToolsMenu, setShowToolsMenu] = useState(false);
     const { externalTools: isLumoToolingEnabled } = useLumoFlags();
+    const [showCreateImageButton, setShowCreateImageButton] = useState(false);
 
     const handleToolsButtonClick = useCallback(() => {
         setShowToolsMenu((prev) => !prev);
@@ -149,7 +150,7 @@ export const ComposerToolbar = ({
         <div className="flex flex-row flex-nowrap items-center justify-space-between w-full mt-1">
             <div className="flex flex-row flex-nowrap items-center gap-1 pl-2">
                 <UploadMenuSection {...uploadSectionProps} />
-                {isLumoToolingEnabled && (
+                {isLumoToolingEnabled && !showCreateImageButton && (
                     <>
                         <Button
                             ref={toolsButtonRef}
@@ -168,9 +169,23 @@ export const ComposerToolbar = ({
                             isOpen={showToolsMenu}
                             anchorRef={toolsButtonRef}
                             onClose={() => setShowToolsMenu(false)}
-                            onCreateImage={onCreateImage}
+                            onClickCreateImageOption={() => setShowCreateImageButton(true)}
                         />
                     </>
+                )}
+                {showCreateImageButton && (
+                    <Button
+                        onClick={() => setShowCreateImageButton(false)}
+                        className="border-none shrink-0 flex flex-row flex-nowrap gap-2 items-center color-primary py-1.5 rounded-full group-hover-opacity-container hover:color-primary"
+                        shape="ghost"
+                        size="small"
+                        title={c('collider_2025: Button').t`Create image`}
+                        aria-label={c('collider_2025: Button').t`Create image`}
+                    >
+                        <IcPalette size={4} />
+                        <span className="text-sm hidden sm:block">{c('collider_2025: Button').t`Create image`}</span>
+                        <IcCross size={3} className="group-hover:opacity-100" />
+                    </Button>
                 )}
             </div>
             <div className="flex flex-row flex-nowrap items-center gap-2 mr-2">
