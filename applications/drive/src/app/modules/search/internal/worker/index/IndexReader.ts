@@ -42,6 +42,8 @@ export class IndexReader {
                         const found = event.found();
                         if (found) {
                             const score = found.score();
+                            // TODO: Add matches to the yield ReadResult when available from foundation team.
+                            // https://gitlab.protontech.ch/backend-team/foundation-team/search/-/merge_requests/364
                             yield { identifier: found.identifier(), score: score.value() };
                             score.free();
                             found.free();
