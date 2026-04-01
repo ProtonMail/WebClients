@@ -105,15 +105,32 @@ export function isCorruptedDBError(e: unknown): boolean {
     );
 }
 
+export type PermanentErrorKind = 'quota_exceeded' | 'corrupted_db' | 'invalid_indexer_state' | 'search_library_error';
+
 /**
  * Returns true for errors that are unrecoverable and should permanently stop the
  * task processor. These errors require user intervention (free disk space, clear DB, etc).
  */
 export function isPermanentError(e: unknown): boolean {
-    return (
-        e instanceof InvalidIndexerState ||
-        e instanceof SearchLibraryError ||
-        isQuotaExceededError(e) ||
-        isCorruptedDBError(e)
-    );
+    return classifyPermanentError(e) !== null;
+}
+
+/**
+ * Classifies a permanent error into a specific kind, or returns null if the error
+ * is not permanent.
+ */
+export function classifyPermanentError(e: unknown): PermanentErrorKind | null {
+    if (isQuotaExceededError(e)) {
+        return 'quota_exceeded';
+    }
+    if (isCorruptedDBError(e)) {
+        return 'corrupted_db';
+    }
+    if (e instanceof InvalidIndexerState) {
+        return 'invalid_indexer_state';
+    }
+    if (e instanceof SearchLibraryError) {
+        return 'search_library_error';
+    }
+    return null;
 }

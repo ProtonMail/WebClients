@@ -34,6 +34,7 @@ export class IndexRegistry {
             return existing;
         }
         await (wasmInit ??= init());
+
         const engine = SearchLibraryWasmEngine.builder().build();
         const blobStore = new IndexBlobStore(kind, db);
         const indexWriter = new IndexWriter(engine, blobStore);
