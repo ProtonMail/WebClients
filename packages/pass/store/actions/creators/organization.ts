@@ -1,12 +1,9 @@
 import { withCache } from '@proton/pass/store/actions/enhancers/cache';
+import { cachedRequest } from '@proton/pass/store/request/configs';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
 import type { OrganizationGetResponse } from '@proton/pass/types';
 import { UNIX_MINUTE } from '@proton/pass/utils/time/constants';
 
-export const getOrganizationSettings = requestActionsFactory<void, OrganizationGetResponse, unknown>('organization::settings::get')({
-    success: {
-        prepare: (payload) => withCache({ payload }),
-        config: { maxAge: 15 * UNIX_MINUTE, data: null },
-    },
-    failure: { prepare: (error, payload) => ({ payload, error }) },
+export const getOrganizationSettings = requestActionsFactory<void, OrganizationGetResponse, void>('organization::settings::get')({
+    success: { ...cachedRequest(15 * UNIX_MINUTE), prepare: (payload) => withCache({ payload }) },
 });
