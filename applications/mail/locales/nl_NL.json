@@ -301,6 +301,9 @@
       "Continue import": [
         "Doorgaan met importeren"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Doorgaan naar ${ planOrAppName }"
+      ],
       "Continue with categories": [
         "Ga verder met categorieën"
       ],
@@ -1763,6 +1766,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } plaats",
         "${ seats } ${ LUMO_APP_NAME } plaatsen"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } licentie",
+        "${ seats } ${ MEET_APP_NAME } licenties"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } plaats voor schrijfassistent",
@@ -4172,6 +4179,9 @@
       "We didn't find any known trackers and tracking URLs in this email.": [
         "We hebben geen bekende trackers en tracking URL's in deze e-mail gevonden."
       ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Het spijt ons u te moeten zien vertrekken. Als u even tijd heeft, zouden we het zeer op prijs stellen te horen waarom u wilt annuleren. Uw feedback helpt ons ${ BRAND_NAME } beter te maken voor iedereen."
+      ],
       "When do you want your message to be sent?": [
         "Wanneer wilt u dat uw bericht wordt verstuurd?"
       ],
@@ -5865,6 +5875,9 @@
       "Discover privacy features": [
         "Ontdek privacyfuncties"
       ],
+      "Download apps": [
+        "Apps downloaden"
+      ],
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "Versleuteling zo sterk dat alleen u en de beoogde ontvangers uw e-mails kunnen bekijken."
       ],
@@ -5873,6 +5886,9 @@
       ],
       "For your eyes only": [
         "Alleen voor uw ogen"
+      ],
+      "Get storage bonus": [
+        "Opslagbonus ophalen"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "Download de ${ MAIL_APP_NAME } mobiele app"
@@ -5885,6 +5901,9 @@
       ],
       "Protection from trackers": [
         "Bescherming van trackers"
+      ],
+      "Review import options": [
+        "Importopties bekijken"
       ],
       "Sign in to the mobile app to complete this step": [
         "Log in op de mobiele app om deze stap te voltooien"
@@ -6487,6 +6506,12 @@
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } kan uw bedrijf ook beschermen."
+      ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } is een end-to-end versleutelde videoconferentie oplossing. Voeg het toe aan uw abonnement om veilige vergaderingen te hosten."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } licenties"
       ],
       "${ n } unread conversation": [
         "${ n } ongelezen gesprek",
@@ -7220,6 +7245,9 @@
       "Everything in ${ planOrAppName }": [
         "Alles van ${ planOrAppName }"
       ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Alles in ${ planOrAppName }, plus:"
+      ],
       "Expand selection": [
         "Selectie uitbreiden"
       ],
@@ -7255,6 +7283,9 @@
       ],
       "Folder": [
         "Map"
+      ],
+      "for ${ price }": [
+        "voor ${ price }"
       ],
       "For additional information and to remove restrictions, please login at ${ mailLink }.": [
         "Voor meer informatie en het opheffen van beperkingen, meld u aan bij ${ mailLink }."
@@ -7416,7 +7447,8 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding invoegen"
+        "Afbeelding toevoegen",
+        "Afbeeldingen toevoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -7510,6 +7542,9 @@
       ],
       "Low Priority": [
         "Lage Prioriteit"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Maak ${ MAIL_APP_NAME } uw standaard e-mailapplicatie."
       ],
       "Manage your folders": [
         "Mappen beheren"
@@ -9329,6 +9364,9 @@
       "Contacts": [
         "Contacten"
       ],
+      "Continue cancelling": [
+        "Doorgaan met annuleren"
+      ],
       "Copy": [
         "Kopiëren"
       ],
@@ -9566,6 +9604,9 @@
       "Main": [
         "Primair"
       ],
+      "Main reason for cancelling": [
+        "Hoofdreden voor annulering"
+      ],
       "Manage categories": [
         "Beheer categorieën"
       ],
@@ -9761,11 +9802,17 @@
       "Sender": [
         "Afzender"
       ],
+      "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
+        "Deel uw beschikbaarheid met boekingspagina's in ${ CALENDAR_APP_NAME } en host veilige vergaderingen met ${ MEET_APP_NAME }."
+      ],
       "Sign emails": [
         "E-mails ondertekenen"
       ],
       "Size:": [
         "Grootte:"
+      ],
+      "Skip feedback": [
+        "Feedback overslaan"
       ],
       "Social": [
         "Sociaal"
@@ -10379,6 +10426,18 @@
         "Prullenbak"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } licentie"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } licenties"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME } licentie",
+        "${ seats } ${ MEET_APP_NAME } licenties"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: Vertrouwelijke videogesprekken voor de gesprekken die ertoe doen"
@@ -10412,6 +10471,9 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "End-to-end versleutelde schermdeling en korte chats tijdens telefoongesprekken"
       ],
+      "Hosts can record meetings locally on their computers": [
+        "Hosts kunnen vergaderingen lokaal op hun computers opnemen"
+      ],
       "Meeting recording": [
         "Opname van vergadering"
       ],
@@ -10431,6 +10493,19 @@
       "Up to ${ n } participant": [
         "Tot ${ n } deelnemer",
         "Tot ${ n } deelnemers"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videovergaderingen, ${ n } deelnemer",
+        "Videovergaderingen, ${ n } deelnemers"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } licentie inbegrepen",
+        "${ seats } licenties inbegrepen"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "U kunt tot ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME }-licenties hebben tijdens de proefperiode."
       ]
     },
     "Message": {
@@ -10886,6 +10961,9 @@
       "Data breach monitoring": [
         "Monitoring van datalekken"
       ],
+      "Data retention policies": [
+        "Dataretentiebeleid"
+      ],
       "Dedicated servers optimized for streaming": [
         "Gereserveerde servers geoptimaliseerd voor streamen"
       ],
@@ -10994,6 +11072,9 @@
       ],
       "Priority support & live chat": [
         "Prioritaire ondersteuning en live chat"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Privé AI-chat (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "Privé foto back-up"
@@ -11140,6 +11221,9 @@
       "Vault sharing with up to ${ n } person": [
         "Kluis delen met tot ${ n } persoon",
         "Kluis delen tot ${ n } personen"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN met advertentieblokkering en bescherming tegen malware"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "We scannen het dark web om te controleren of uw ${ BRAND_NAME } adressen of aliassen zijn gelekt en waarschuwen u onmiddellijk wanneer we iets vinden."
@@ -11758,8 +11842,29 @@
       ]
     },
     "Onboarding List Placeholder": {
+      "Choose your service": [
+        "Kies uw dienst"
+      ],
       "Maybe later": [
         "Misschien later"
+      ],
+      "Popular services": [
+        "Populaire Services"
+      ],
+      "Skip for now": [
+        "Sla voorlopig over"
+      ],
+      "Switch your accounts to ${ BRAND_NAME }": [
+        "Schakel uw accounts over naar ${ BRAND_NAME }"
+      ],
+      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
+        "E-mail wisselen is moeilijk. ${ BRAND_NAME } maakt het gemakkelijk. Verbind uw oude account en beheer alles in één gerichte, advertentievrije werkruimte."
+      ],
+      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
+        "Update uw e-mail op de services die u het meest gebruikt. Voorkom tracking en bescherm uw privacy."
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "Welkom bij ${ MAIL_APP_NAME }"
       ]
     },
     "Onboarding modal": {
@@ -11978,6 +12083,12 @@
       ],
       "No parent folder": [
         "Geen bovenliggende map"
+      ],
+      "Remind me later": [
+        "Herinner mij later"
+      ],
+      "Yes, don't show again": [
+        "Ja, niet meer weergeven"
       ]
     },
     "Option group": {
@@ -12409,6 +12520,9 @@
       "Anderson": [
         "Anderson"
       ],
+      "Anything you'd like us to know": [
+        "Heeft u nog iets dat u ons wilt laten weten"
+      ],
       "Anytown": [
         "Willekeurige stad"
       ],
@@ -12694,6 +12808,18 @@
       ],
       "Google Workspace": [
         "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Overige"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {
@@ -15212,6 +15338,9 @@
       ],
       "Invalid verification code": [
         "De ingevoerde code is ongeldig"
+      ],
+      "Keep this banner hidden?": [
+        "Deze banner verbergen?"
       ],
       "Label as": [
         "Labellen als"

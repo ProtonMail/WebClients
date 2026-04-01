@@ -6521,9 +6521,6 @@
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } θέσεις"
       ],
-      "${ MEET_APP_NAME } video conferencing": [
-        "Τηλεδιάσκεψη ${ MEET_APP_NAME }"
-      ],
       "${ n } unread conversation": [
         "${ n } μη διαβασμένη συνομιλία",
         "${ n } μη διαβασμένες συνομιλίες"
@@ -6726,8 +6723,8 @@
       "Ad targeting": [
         "Στόχευση διαφημίσεων"
       ],
-      "Add ${ MEET_APP_NAME }": [
-        "Προσθήκη ${ MEET_APP_NAME }"
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Προσθήκη ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
       "Add image URL": [
         "Προσθήκη εικόνας με URL"
@@ -7461,7 +7458,8 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας"
+        "Εισαγωγή εικόνας",
+        "Εισαγωγή εικόνων"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
