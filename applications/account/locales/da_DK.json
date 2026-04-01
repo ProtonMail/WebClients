@@ -9020,9 +9020,6 @@
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } pladser"
       ],
-      "${ MEET_APP_NAME } video conferencing": [
-        "${ MEET_APP_NAME } videomøder"
-      ],
       "${ n } address": [
         "${ n } adresse",
         "${ n } adresser"
@@ -9310,8 +9307,8 @@
       "Activity Monitor": [
         "Aktivitetsovervågning"
       ],
-      "Add ${ MEET_APP_NAME }": [
-        "Tilføj ${ MEET_APP_NAME }"
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Tilføj ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Tilføj en @pm.me e-mailadresse til din konto. Dette enkle, kortere domæne står for \"${ MAIL_APP_NAME } me\" eller \"Private Message me\"."
@@ -12049,9 +12046,6 @@
       ],
       "With ${ AUTHENTICATOR_APP_NAME }, you can:": [
         "Med ${ AUTHENTICATOR_APP_NAME } kan du:"
-      ],
-      "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
-        "Med et Business- eller Enterprise-abonnement kan du købe ${ boldDedicatedServers } til din organisation og indstille ${ boldGateways } for at kontrollere, hvilke brugere der har adgang til dem."
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Med en krypteret ${ BRAND_NAME }-adresse kan du bruge alle ${ BRAND_NAME }-tjenester"

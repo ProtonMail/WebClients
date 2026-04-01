@@ -6116,9 +6116,6 @@
       "${ MEET_APP_NAME } seats": [
         "Ліцэнзіі ${ MEET_APP_NAME }"
       ],
-      "${ MEET_APP_NAME } video conferencing": [
-        "Відэаканферэнцыя ${ MEET_APP_NAME }"
-      ],
       "${ n } address": [
         "${ n } адрас",
         "${ n } адрасы",
@@ -6389,8 +6386,8 @@
       "Activity Monitor": [
         "Манітор актыўнасці"
       ],
-      "Add ${ MEET_APP_NAME }": [
-        "Дадаць ${ MEET_APP_NAME }"
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Дадаць ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
       "add a recovery method": [
         "дададзены спосаб аднаўлення"
@@ -6985,6 +6982,9 @@
       ],
       "Everything in ${ planOrAppName }": [
         "Усё, што ўваходзіць у ${ planOrAppName }"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Усе функцыі тарыфнага плана ${ planOrAppName }, а яшчэ:"
       ],
       "Example: ${ spfExample }": [
         "Прыклад: ${ spfExample }"
@@ -8437,9 +8437,6 @@
       ],
       "With ${ AUTHENTICATOR_APP_NAME }, you can:": [
         "З ${ AUTHENTICATOR_APP_NAME } вы зможаце:"
-      ],
-      "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
-        "З тарыфнымі планамі Business або Enterprise, вы можаце купіць ${ boldDedicatedServers } для вашай арганізацыі і наладзіць ${ boldGateways } правы доступу карыстальнікаў да яго."
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "З зашыфраваным адрасам ${ BRAND_NAME }, вы можаце выкарыстоўваць усе сэрвісы ${ BRAND_NAME }"
@@ -10340,6 +10337,9 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Дэманстрацыя экрана са скразным шыфраваннем і эфемерны чат пры званках"
       ],
+      "Hosts can record meetings locally on their computers": [
+        "Арганізатары могуць запісваць сустрэчы лакальна на сваіх камп'ютарах"
+      ],
       "Meeting recording": [
         "Запіс сустрэчы"
       ],
@@ -10363,6 +10363,12 @@
         "Да ${ n } удзельнікаў",
         "Да ${ n } удзельнікаў",
         "Да ${ n } удзельнікаў"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Відэасустрэчы, ${ n } удзельнік",
+        "Відэасустрэчы, ${ n } удзельнікі",
+        "Відэасустрэчы, ${ n } удзельнікаў",
+        "Відэасустрэчы, ${ n } удзельнікаў"
       ]
     },
     "meet_2025: Info": {
@@ -10854,6 +10860,9 @@
       "Data breach monitoring": [
         "Назіранне за ўцечкай даных"
       ],
+      "Data retention policies": [
+        "Палітыка захоўвання даных"
+      ],
       "Dedicated servers and IP": [
         "Вылучаныя серверы і IP"
       ],
@@ -10970,6 +10979,9 @@
       ],
       "Priority support & live chat": [
         "Прыярытэтная падтрымка і чат у рэальным часе"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Прыватны чат з ШІ (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "Прыватнае рэзерваванне фатаграфій"
@@ -11141,6 +11153,9 @@
         "Абагуленае сховішча (да ${ n } асоб)",
         "Абагуленае сховішча (да ${ n } асоб)",
         "Абагуленае сховішча (да ${ n } асоб)"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN з блакіроўшчыкам рэкламы і абаронай ад шкодных праграм"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Наша сістэма сканіруе цёмную сетку для праверкі на прадмет уцечкі адрасоў і псеўданімаў ${ BRAND_NAME }. Вы неадкладна будзеце апавешчаны ў выпадку, калі нешта будзе выяўлена."

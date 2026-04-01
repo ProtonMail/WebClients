@@ -1684,7 +1684,7 @@
     },
     "Header": {
       "Protect your conversations with end-to-end encryption": [
-        "Sohbetlerinizi uçtan uca şifrelemeyle koruyun"
+        "Görüşmelerinizi uçtan uca şifreleme ile koruyun"
       ]
     },
     "Headline": {
@@ -1695,7 +1695,7 @@
         "Görüşme zamanlamak için ${ createAnActionAction } ya da ${ signInAction }"
       ],
       "Talk in total ${ privacyWord }": [
-        "Tam bir ${ privacyWord } içinde konuşun"
+        "Tam bir ${ privacyWord } ile konuşun"
       ]
     },
     "Human verification method": {
@@ -1738,7 +1738,7 @@
         "${ reactorNames }, ${ emoji } ile tepki verdi"
       ],
       "${ totalParticipantCount } of up to ${ maxParticipants } participants": [
-        "En fazla ${ maxParticipants } katılımcıdan ${ totalParticipantCount } tanesi"
+        "Toplam ${ totalParticipantCount } katılımcıdan ${ maxParticipants } katılımcıya kadar"
       ],
       "${ totalParticipantCount } participant": [
         "${ totalParticipantCount } katılımcı",
@@ -1772,7 +1772,7 @@
         "Görüşmeye katılarak kayıt yapılacağını kabul etmiş ve onaylamış olursunuz."
       ],
       "By joining, you agree to our ${ termsLink } and ${ privacyLink }.": [
-        "Katılarak ${ termsLink } ve ${ privacyLink } koşullarımızı kabul etmiş olursunuz."
+        "Katılarak ${ termsLink } ve ${ privacyLink } içeriklerini kabul etmiş olursunuz."
       ],
       "camera": [
         "kamera"
@@ -1971,6 +1971,9 @@
       ],
       "Meeting locked. No new participants can join.": [
         "Görüşme kilitlendi. Artık yeni kişiler katılamaz."
+      ],
+      "Meeting recordings aren’t supported in Firefox.": [
+        "Firefox üzerinde görüşme kaydı desteklenmiyor."
       ],
       "Meeting unlocked. Participants can join again.": [
         "Görüşmenin kilidi açıldı. Katılımcılar yine katılabilir"
@@ -2271,6 +2274,9 @@
       ],
       "You can still turn off your microphone and camera anytime in the meeting": [
         "Görüşmede mikrofonunuzu ve kameranızı istediğiniz zaman kapatabilirsiniz"
+      ],
+      "You left the meeting": [
+        "Görüşmeden ayrıldınız"
       ],
       "You left your meeting": [
         "Toplantınızdan ayrıldınız"
@@ -2711,6 +2717,9 @@
       ]
     },
     "Sort option": {
+      "Alphabetical (A–Z)": [
+        "Alfabetik (A–Z)"
+      ],
       "Newly created": [
         "Yeni oluşturulan"
       ],

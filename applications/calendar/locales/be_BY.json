@@ -5216,9 +5216,6 @@
       "${ MEET_APP_NAME } video call": [
         "Відэазванок ${ MEET_APP_NAME }"
       ],
-      "${ MEET_APP_NAME } video conferencing": [
-        "Відэаканферэнцыя ${ MEET_APP_NAME }"
-      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Пажыццёвая прапанова ${ PASS_SHORT_APP_NAME } не прадугледжвае кошту падаўжэння. Робіцца аднаразовая плата за пажыццёвы доступ да ${ PASS_SHORT_APP_NAME }."
       ],
@@ -5363,8 +5360,8 @@
       "Ad targeting": [
         "Мэтавая рэклама"
       ],
-      "Add ${ MEET_APP_NAME }": [
-        "Дадаць ${ MEET_APP_NAME }"
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Дадаць ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
       "Added and removed participants will be notified about all the events in this series.": [
         "Дададзеныя і выдаленыя ўдзельнікі атрымаюць апавяшчэнне аб усіх падзеях у гэтай серыі."
@@ -5719,6 +5716,9 @@
       ],
       "Everything in ${ planOrAppName }": [
         "Усё, што ўваходзіць у ${ planOrAppName }"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Усе функцыі тарыфнага плана ${ planOrAppName }, а яшчэ:"
       ],
       "Existent and added participants will be notified.": [
         "Існуючыя і дададзеныя ўдзельнікі атрымаюць апавяшчэнні."
@@ -7825,6 +7825,9 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Дэманстрацыя экрана са скразным шыфраваннем і эфемерны чат пры званках"
       ],
+      "Hosts can record meetings locally on their computers": [
+        "Арганізатары могуць запісваць сустрэчы лакальна на сваіх камп'ютарах"
+      ],
       "Meeting recording": [
         "Запіс сустрэчы"
       ],
@@ -7848,6 +7851,12 @@
         "Да ${ n } удзельнікаў",
         "Да ${ n } удзельнікаў",
         "Да ${ n } удзельнікаў"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Відэасустрэчы, ${ n } удзельнік",
+        "Відэасустрэчы, ${ n } удзельнікі",
+        "Відэасустрэчы, ${ n } удзельнікаў",
+        "Відэасустрэчы, ${ n } удзельнікаў"
       ]
     },
     "meet_2025: Info": {
@@ -8371,6 +8380,9 @@
       "Data breach monitoring": [
         "Назіранне за ўцечкай даных"
       ],
+      "Data retention policies": [
+        "Палітыка захоўвання даных"
+      ],
       "Dedicated servers optimized for streaming": [
         "Вылучаныя серверы аптымізаваныя для трансляцый"
       ],
@@ -8481,6 +8493,9 @@
       ],
       "Priority support & live chat": [
         "Прыярытэтная падтрымка і чат у рэальным часе"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Прыватны чат з ШІ (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "Прыватнае рэзерваванне фатаграфій"
@@ -8637,6 +8652,9 @@
         "Абагуленае сховішча (да ${ n } асоб)",
         "Абагуленае сховішча (да ${ n } асоб)",
         "Абагуленае сховішча (да ${ n } асоб)"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN з блакіроўшчыкам рэкламы і абаронай ад шкодных праграм"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Наша сістэма сканіруе цёмную сетку для праверкі на прадмет уцечкі адрасоў і псеўданімаў ${ BRAND_NAME }. Вы неадкладна будзеце апавешчаны ў выпадку, калі нешта будзе выяўлена."

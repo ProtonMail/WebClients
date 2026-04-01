@@ -4982,9 +4982,6 @@
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } pladser"
       ],
-      "${ MEET_APP_NAME } video conferencing": [
-        "${ MEET_APP_NAME } videomøder"
-      ],
       "${ normalizedProgress }% completed": [
         "${ normalizedProgress }% fuldført"
       ],
@@ -5138,8 +5135,8 @@
       "Ad targeting": [
         "Annoncemålretning"
       ],
-      "Add ${ MEET_APP_NAME }": [
-        "Tilføj ${ MEET_APP_NAME }"
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Tilføj ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
       "Address copied to clipboard": [
         "Adresse kopieret til udklipsholder"

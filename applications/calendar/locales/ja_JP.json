@@ -215,6 +215,9 @@
       "Continue import": [
         "インポートを続行"
       ],
+      "Continue to ${ planOrAppName }": [
+        "${ planOrAppName } に進む"
+      ],
       "Continue with Google": [
         "Google で続行"
       ],
@@ -3137,6 +3140,9 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "このガイドを利用して、あなたの組織が${ BRAND_NAME }の業界をリードする暗号化をプライバシーのエコシステムから速やかに恩恵を受けられるようにしてください。"
       ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "ご利用をおやめになるのは残念です。よろしければ、取消の理由をお聞かせいただけますでしょうか。お客様のご感想は、${ BRAND_NAME } を改善するのに役立ちます。"
+      ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "連絡先グループを使用することで、ワンクリックでそのグループ全員にメールを送信することができます。"
       ],
@@ -3524,6 +3530,9 @@
       ],
       "Checkout expired, please try again": [
         "チェックアウトの有効期限が切れました。もう一度やり直してください。"
+      ],
+      "Company name or personal name is required": [
+        "会社名または個人名が必要です"
       ],
       "Contact could not be saved": [
         "連絡先を保存できませんでした"
@@ -3974,6 +3983,9 @@
       ],
       "Validation error": [
         "検証エラー"
+      ],
+      "Wrong billing address": [
+        "請求先住所を変更"
       ],
       "You already added this holidays calendar": [
         "この祝日カレンダーはすでに追加されています"
@@ -4454,6 +4466,11 @@
     "Features": {
       "Lightning-fast speeds": [
         "最高速の速度"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "セキュリティキーの認証に失敗しました。もう一度お試しください。"
       ]
     },
     "fido2: Info": {
@@ -5094,6 +5111,9 @@
       "Ad targeting": [
         "広告ターゲティング"
       ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } を追加"
+      ],
       "Added and removed participants will be notified about all the events in this series.": [
         "追加や削除された参加者には、この一連のすべての予定について通知されます。"
       ],
@@ -5370,6 +5390,9 @@
       "Duplicate key updated": [
         "重複した鍵がアップデートされました"
       ],
+      "Each code can only be used once": [
+        "各コードは使い捨てです"
+      ],
       "Edit email address": [
         "メールアドレスを編集"
       ],
@@ -5417,6 +5440,9 @@
       ],
       "Everything in ${ planOrAppName }": [
         "${ planOrAppName } のすべての機能を含みます"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "${ planOrAppName } のすべての機能――そしてさらに："
       ],
       "Existent and added participants will be notified.": [
         "既存の参加者と追加した参加者には通知されます。"
@@ -6138,6 +6164,9 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "VPNに接続することで、暗号化技術により、お客様のIPアドレス(デバイス毎に割り振られる一意のコード)は秘匿されます。"
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "2要素認証を設定する際、認証アプリにアクセスできなくなった場合に使用できる回復用コードを提供します。"
+      ],
       "Where will the appointment take place?": [
         "ご予定はどこで行われますか？"
       ],
@@ -6592,6 +6621,9 @@
       "Add Zoom meeting": [
         "Zoomミーティングを追加"
       ],
+      "Additional comments": [
+        "追加コメント"
+      ],
       "Address": [
         "メールアドレス"
       ],
@@ -6681,6 +6713,9 @@
       ],
       "Contacts": [
         "連絡先"
+      ],
+      "Continue cancelling": [
+        "取消を続行"
       ],
       "Copy": [
         "コピー"
@@ -6865,6 +6900,9 @@
       "Main": [
         "メイン"
       ],
+      "Main reason for cancelling": [
+        "取消の主な理由"
+      ],
       "Manage categories": [
         "カテゴリーを管理"
       ],
@@ -6999,6 +7037,9 @@
       ],
       "Sign emails": [
         "メールに署名"
+      ],
+      "Skip feedback": [
+        "フィードバックを飛ばす"
       ],
       "Start date": [
         "開始日"
@@ -7391,6 +7432,11 @@
         "${ price } の場合"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } ライセンス"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: 最も重要な会話のための機密性の高いビデオ会議"
@@ -7439,6 +7485,11 @@
       ],
       "Up to ${ n } participant": [
         "最大${ n }人の参加者"
+      ]
+    },
+    "meet_2025: Info": {
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "トライアル期間中、${ MEET_SHORT_APP_NAME }のシートを${ TRIAL_MAX_MEET_SEATS }ヶまでをご利用いただけます。"
       ]
     },
     "Message": {
@@ -7891,6 +7942,9 @@
       "Data breach monitoring": [
         "情報漏洩のモニタリング"
       ],
+      "Data retention policies": [
+        "データ保持ポリシー"
+      ],
       "Dedicated servers optimized for streaming": [
         "ストリーミングに最適化された専用サーバー"
       ],
@@ -7998,6 +8052,9 @@
       ],
       "Priority support & live chat": [
         "優先サポートとライブチャット"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "プライベート対話型AI（${ LUMO_APP_NAME }）"
       ],
       "Private photo backup": [
         "プライベート写真バックアップ"
@@ -8139,6 +8196,9 @@
       ],
       "Vault sharing with up to ${ n } person": [
         "最大${ n }人までと保管庫共有"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "広告やウイルスから保護してくれるVPN"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ダークウェブをスキャンして、お客様の ${ BRAND_NAME } アドレスやエイリアスが漏洩していないかを確認し、何か見つかった場合はすぐに警告します。"
@@ -9440,17 +9500,26 @@
       "Anderson": [
         "アンダーソン"
       ],
+      "Anything you'd like us to know": [
+        "知らせたいことならなんでも"
+      ],
       "Anytown": [
         "どこにでもある都市"
       ],
       "Company name": [
         "会社名"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "E.g., ": [
         "例: "
       ],
       "Email for booking confirmation": [
         "予約確認メール"
+      ],
+      "Enter a name": [
+        "名前を入力"
       ],
       "Enter a short description or additional info": [
         "短い説明または追加情報を入力してください"
@@ -9515,6 +9584,9 @@
       "Postal code": [
         "郵便番号"
       ],
+      "San Francisco": [
+        "サンフランシスコ"
+      ],
       "Search events": [
         "予定を検索"
       ],
@@ -9529,6 +9601,9 @@
       ],
       "Select": [
         "選択してください"
+      ],
+      "Select a provider": [
+        "プロバイダーを選択"
       ],
       "Select a reason": [
         "理由を選択"
@@ -9652,6 +9727,26 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "${ BRAND_NAME } からの公式メール"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "その他"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {
@@ -11647,6 +11742,9 @@
       "Import groups": [
         "グループをインポート"
       ],
+      "Import your data to ${ BRAND_NAME }": [
+        "データを ${ BRAND_NAME } にインポート"
+      ],
       "Information exposed in breach": [
         "侵害で漏洩した情報"
       ],
@@ -11808,6 +11906,9 @@
       ],
       "Select contact group": [
         "連絡先グループの選択"
+      ],
+      "Select data to import": [
+        "インポートしたい情報を選択"
       ],
       "Select event end date": [
         "予定の終了日を選択"

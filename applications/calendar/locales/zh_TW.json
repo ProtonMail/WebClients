@@ -3865,6 +3865,9 @@
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "您無法將郵件傳送給超過 ${ maxContacts } 位收件人"
       ],
+      "You cannot enter the organizer's email": [
+        "您不能輸入召集人的電子郵件"
+      ],
       "You have reached the maximum number of calendars.": [
         "您已用鑿行事曆組的上限。"
       ],
@@ -5039,6 +5042,9 @@
       "Billing cycle: ${ text }": [
         "繳款單週期：${ text }"
       ],
+      "Booking contact email: ${ selectedCalendar.Email }": [
+        "預訂聯絡電子郵件：${ selectedCalendar.Email }"
+      ],
       "Booking page deleted": [
         "預定頁面已刪除"
       ],
@@ -5296,6 +5302,9 @@
       ],
       "Host": [
         "主持"
+      ],
+      "How far in advance can someone book?": [
+        "有人可以提前多久預訂？"
       ],
       "How long should an appointment last?": [
         "預約應持續多久？"
@@ -6351,6 +6360,9 @@
       "Add image URL": [
         "加入圖像路徑"
       ],
+      "Add notice period": [
+        "新增通知期"
+      ],
       "Add to group": [
         "加入至群組"
       ],
@@ -6416,6 +6428,9 @@
       ],
       "Category": [
         "類別"
+      ],
+      "Check additional calendars for availability": [
+        "檢查其他行事曆的可用性"
       ],
       "City": [
         "縣市"

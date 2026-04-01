@@ -9017,9 +9017,6 @@
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } koltukları"
       ],
-      "${ MEET_APP_NAME } video conferencing": [
-        "${ MEET_APP_NAME } görüntülü görüşme"
-      ],
       "${ n } address": [
         "${ n } adres",
         "${ n } adres"
@@ -9307,8 +9304,8 @@
       "Activity Monitor": [
         "Etkinlik izleyici"
       ],
-      "Add ${ MEET_APP_NAME }": [
-        "${ MEET_APP_NAME } ekle"
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } ekle"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Hesabınıza @pm.me e-posta adresini ekler. Bu basit ve kısa etki alanı \"Bana ${ MAIL_APP_NAME } gönder\" (ProtonMail me) veya \"Bana özel ileti gönder\" (Private Message me) şeklinde anlamlandırılabilir"
@@ -10109,7 +10106,7 @@
         "${ planOrAppName } özelliklerinin tümü"
       ],
       "Everything in ${ planOrAppName }, plus:": [
-        "${ planOrAppName } kapsamındaki tüm özelliklerin yanı sıra:"
+        "${ planOrAppName } tarifesindeki her şeye ek olarak:"
       ],
       "Example: ${ spfExample }": [
         "Örnek: ${ spfExample }"
@@ -12046,9 +12043,6 @@
       ],
       "With ${ AUTHENTICATOR_APP_NAME }, you can:": [
         "${ AUTHENTICATOR_APP_NAME } ile şunları yapabilirsiniz:"
-      ],
-      "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
-        "Bir Business ya da Enterprise tarifesi ile kuruluşunuz için ${ boldDedicatedServers } satın alabilir ve bunlara hangi kullanıcıların erişebileceğini kontrol etmek için ${ boldGateways } ayarlayabilirsiniz."
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Şifrelenmiş bir ${ BRAND_NAME } adresi ile tüm ${ BRAND_NAME } hizmetlerini kullanabilirsiniz"
@@ -15217,7 +15211,7 @@
         "Uçtan uca şifrelenmiş ekran paylaşımı ve geçici çağrı içi sohbet"
       ],
       "Hosts can record meetings locally on their computers": [
-        "Oturum sahipleri toplantıları kendi bilgisayarlarına yerel olarak kaydedebilirler"
+        "Oturum sahipleri görüşmeleri kendi bilgisayarlarına yerel olarak kaydedebilir"
       ],
       "Meeting recording": [
         "Görüşme kaydı"
@@ -15240,8 +15234,8 @@
         "${ n } katılımcı"
       ],
       "Video meetings, ${ n } participant": [
-        "Görüntülü toplantılar, ${ n } katılımcı",
-        "Görüntülü toplantılar, ${ n } katılımcı"
+        "Görüntülü görüşmeler, ${ n } katılımcı",
+        "Görüntülü görüşmeler, ${ n } katılımcı"
       ]
     },
     "meet_2025: Info": {
@@ -15265,7 +15259,7 @@
         "E-posta yazma yardımcısı"
       ],
       "Includes these features:": [
-        "Aşağıdaki özellikleri içerir:"
+        "Şu özellikleri içerir:"
       ],
       "Open source": [
         "Açık kaynaklı"
@@ -15967,7 +15961,7 @@
         "Veri sızıntılarını izleme"
       ],
       "Data retention policies": [
-        "Veri saklama ilkeleri"
+        "Verileri tutma ilkeleri"
       ],
       "Dedicated account manager": [
         "Size ayrılmış hesap yöneticisi"
@@ -16088,7 +16082,7 @@
         "Öncelikli destek ve canlı sohbet"
       ],
       "Private AI Chat (${ LUMO_APP_NAME })": [
-        "Gizli Yapay Zeka Sohbeti (${ LUMO_APP_NAME })"
+        "Gizli yapay zeka sohbeti (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "Gizli fotoğraf yedekleme"
@@ -16253,7 +16247,7 @@
         "${ n } kişiye kadar kasa paylaşımı"
       ],
       "VPN with ad-blocker and malware protection": [
-        "Reklam engelleyici ve kötü amaçlı yazılım koruması içeren VPN"
+        "Reklam engelleyici ve kötü amaçlı yazılım koruması ile VPN"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } adreslerinizin veya takma adlarınızın sızıp sızmadığını denetlemek için karanlık ağı tararız ve herhangi bir şey bulursak sizi hemen uyarırız."
@@ -20714,7 +20708,7 @@
         "Dosyaları paylaşın ve iş birliği yapın."
       ],
       "Sign up to ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }": [
-        "${ BRAND_NAME } ${ MEET_SHORT_APP_NAME } hizmetine kaydolun"
+        "${ BRAND_NAME } ${ MEET_SHORT_APP_NAME } hesabı açın"
       ],
       "Sign up to get everything ${ BRAND_NAME } has to offer": [
         "${ BRAND_NAME } tarafından sunulan her şeyi almak için hesap açın"
