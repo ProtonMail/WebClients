@@ -12430,6 +12430,12 @@
       ],
       "Zoom meeting": [
         "réunion Zoom"
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Ajouter ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Tout ce qui est inclus dans ${ planOrAppName }, et plus encore :"
       ]
     },
     "info": {
@@ -15211,6 +15217,13 @@
       "Up to ${ n } participant": [
         "Jusqu'à ${ n } participant",
         "Jusqu'à ${ n } participants"
+      ],
+      "Hosts can record meetings locally on their computers": [
+        "Les hôtes peuvent enregistrer les réunions localement sur leur ordinateur"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Vidéoconférences, ${ n } participant",
+        "Vidéoconférences, ${ n } participants"
       ]
     },
     "meet_2025: Info": {
@@ -15253,6 +15266,9 @@
       ],
       "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
         "Vous pouvez bénéficier de jusqu’à ${ TRIAL_MAX_MEET_SEATS } accès à ${ MEET_SHORT_APP_NAME } pendant la période d’essai."
+      ],
+      "Includes these features:": [
+        "Inclut ces fonctionnalités :"
       ]
     },
     "Meet_launch": {
@@ -16210,6 +16226,19 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Nous analysons le dark web et vérifions si vos adresses ou vos alias ${ BRAND_NAME } ont été divulgués et nous vous informons immédiatement des résultats."
+      ],
+      "${ options }-day file version history": [
+        "Historique des versions de fichiers datant de ${ options } jour",
+        "Historique des versions de fichiers datant de ${ options } jours"
+      ],
+      "Data retention policies": [
+        "Politiques de conservation des données"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Chat IA privé (${ LUMO_APP_NAME })"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN avec bloqueur de publicité et protection contre les logiciels malveillants"
       ]
     },
     "new_plans: feature highlight": {
@@ -20759,6 +20788,12 @@
       ],
       "You’re invited to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
         "Vous êtes invité à rejoindre plus de 100 millions de personnes qui ont choisi de garder le contrôle de leurs données grâce à l'écosystème chiffré de ${ BRAND_NAME }."
+      ],
+      "Confirm payment": [
+        "Confirmer le paiement"
+      ],
+      "Sign up to ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }": [
+        "Inscrivez-vous à ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }"
       ]
     },
     "Signup label": {

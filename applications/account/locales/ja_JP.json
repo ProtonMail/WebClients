@@ -1688,6 +1688,12 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "${ planOrAppName } に進む"
+      ],
+      "Delete gateway": [
+        "ゲートウェイを削除"
       ]
     },
     "action": {
@@ -4817,6 +4823,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "iCal形式(ICSファイル)でイベントをインポートできます。ファイルの最大サイズは${ MAX_IMPORT_FILE_SIZE_STRING }で、最大${ MAX_IMPORT_EVENTS_STRING }件のイベントを含むことができます。ファイルがそれより大きい場合は、小さいファイルに分割してください。"
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "ご利用をおやめになるのは残念です。よろしければ、取消の理由をお聞かせいただけますでしょうか。お客様のご感想は、${ BRAND_NAME } を改善するのに役立ちます。"
       ]
     },
     "description": {
@@ -6152,6 +6161,18 @@
       ],
       "Your recovery contacts": [
         "お客様の復旧連絡先"
+      ],
+      "Got it": [
+        "はい"
+      ],
+      "Recover data": [
+        "データを復元"
+      ],
+      "Recovery contacts": [
+        "復旧用連絡先"
+      ],
+      "Your recovery contacts should be people you know and can contact easily.": [
+        "復旧連絡先には、あなたが容易に連絡できる知人が望ましいです。"
       ]
     },
     "Empty group name": {
@@ -6816,6 +6837,15 @@
       ],
       "Zero keys reactivated": [
         "ゼロキーが再有効化されました"
+      ],
+      "Company name or personal name is required": [
+        "会社名または個人名が必要です"
+      ],
+      "The address is already activated": [
+        "アドレスはすでに有効化されています"
+      ],
+      "Wrong billing address": [
+        "請求先住所を変更"
       ]
     },
     "error": {
@@ -7586,6 +7616,9 @@
     "fido2: Error": {
       "Something went wrong registering your security key. Please try again.": [
         "セキュリティキーの登録に失敗しました。もう一度お試しください。"
+      ],
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "セキュリティキーの認証に失敗しました。もう一度お試しください。"
       ]
     },
     "fido2: Info": {
@@ -8541,6 +8574,9 @@
     "Import provider": {
       "Advanced import": [
         "高度なインポート"
+      ],
+      "Import from ${ providerName }": [
+        "${ providerName } からインポート"
       ]
     },
     "Import status": {
@@ -8558,6 +8594,9 @@
       ],
       "Paused": [
         "一時停止"
+      ],
+      "In progress...": [
+        "処理中..."
       ]
     },
     "Import type": {
@@ -11830,6 +11869,81 @@
       ],
       "Zoom meeting": [
         "Zoom ミーティング"
+      ],
+      "(eg. ChatGPT, Gemini, Perplexity)": [
+        "(例: ChatGPT、Gemini、Perplexity)"
+      ],
+      "(eg. New York Times, BBC)": [
+        "（例: New York Times、BBC）"
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } を追加"
+      ],
+      "AI chatbot": [
+        "対話型AI"
+      ],
+      "An import is paused because the connection to your email provider was lost.": [
+        "メールプロバイダーへの接続が切れたため、インポートが一時停止されています。"
+      ],
+      "Cancel": [
+        "取消"
+      ],
+      "Download ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME } をダウンロード"
+      ],
+      "Each code can only be used once": [
+        "各コードは使い捨てです"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "${ planOrAppName } のすべての機能――そしてさらに："
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "Free up space or upgrade your storage to continue.": [
+        "続行するには、空き容量を増やすかアップグレードしてください。"
+      ],
+      "Friends and family": [
+        "家族・知人"
+      ],
+      "Gateway deleted": [
+        "ゲートウェイを削除しました"
+      ],
+      "Instagram": [
+        "Instagram"
+      ],
+      "News or media article": [
+        "ニュース、メディアの記事など"
+      ],
+      "Please reconnect to continue.": [
+        "続行するには再接続してください。"
+      ],
+      "Reddit": [
+        "Reddit"
+      ],
+      "Sign-in complete": [
+        "サインインが完了しました"
+      ],
+      "Submit": [
+        "送信"
+      ],
+      "Subscription starts on ${ startsOnTime }": [
+        "サブスクリプションは ${ startsOnTime } に開始されます"
+      ],
+      "Thanks for the feedback!": [
+        "ご意見ありがとうございます!"
+      ],
+      "TikTok": [
+        "TikTok"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "2要素認証を設定する際、認証アプリにアクセスできなくなった場合に使用できる回復用コードを提供します。"
+      ],
+      "X": [
+        "X"
+      ],
+      "YouTube": [
+        "YouTube"
       ]
     },
     "info": {
@@ -13817,6 +13931,18 @@
       ],
       "ZIP code": [
         "郵便番号"
+      ],
+      "Additional comments": [
+        "追加コメント"
+      ],
+      "Continue cancelling": [
+        "取消を続行"
+      ],
+      "Main reason for cancelling": [
+        "取消の主な理由"
+      ],
+      "Skip feedback": [
+        "フィードバックを飛ばす"
       ]
     },
     "label": {
@@ -14571,6 +14697,9 @@
       ],
       "Strict no-logs policy": [
         "厳格なノーログポリシー"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "トライアル期間中、${ MEET_SHORT_APP_NAME }のシートを${ TRIAL_MAX_MEET_SEATS }ヶまでをご利用いただけます。"
       ]
     },
     "meet_signup_2025: title": {
@@ -15462,6 +15591,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ダークウェブをスキャンして、お客様の ${ BRAND_NAME } アドレスやエイリアスが漏洩していないかを確認し、何か見つかった場合はすぐに警告します。"
+      ],
+      "Data retention policies": [
+        "データ保持ポリシー"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "プライベート対話型AI（${ LUMO_APP_NAME }）"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "広告やウイルスから保護してくれるVPN"
       ]
     },
     "new_plans: feature highlight": {
@@ -17829,6 +17967,21 @@
       ],
       "ZIP code": [
         "郵便番号"
+      ],
+      "Anything you'd like us to know": [
+        "知らせたいことならなんでも"
+      ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
+      "Enter a name": [
+        "名前を入力"
+      ],
+      "San Francisco": [
+        "サンフランシスコ"
+      ],
+      "Select a provider": [
+        "プロバイダーを選択"
       ]
     },
     "placeholder": {
@@ -19894,6 +20047,15 @@
       ],
       "You’re invited to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
         "お客様は、${ BRAND_NAME } の暗号化済みエコシステムでデータを管理し続けることを選んだ1億人以上のユーザーに加わるよう招待されています。"
+      ],
+      "Confirm payment": [
+        "支払いを確定"
+      ],
+      "Securely share files and photos": [
+        "ファイルや写真を安心して共有"
+      ],
+      "Sign up to ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }": [
+        "${ BRAND_NAME } ${ MEET_SHORT_APP_NAME } にサインアップしましょう"
       ]
     },
     "Signup label": {
@@ -19917,6 +20079,12 @@
       ],
       "Username": [
         "ユーザー名"
+      ],
+      "Your email": [
+        "メールアドレス"
+      ],
+      "Your password": [
+        "パスワード"
       ]
     },
     "signup: Action": {
@@ -23307,6 +23475,12 @@
       ],
       "Your subscriptions": [
         "あなたのサブスクリプション"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "データを ${ BRAND_NAME } にインポート"
+      ],
+      "Select data to import": [
+        "インポートしたい情報を選択"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -24682,6 +24856,45 @@
       ],
       "Yearly, ${ untilString }": [
         "毎年、${ untilString }"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } ライセンス"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "その他"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
+      ]
+    },
+    "Signup: Meet": {
+      "Choose your display name to continue": [
+        "続行するには表示名を選んでください"
+      ],
+      "Choose your display name to continue scheduling your meeting": [
+        "続行するには、表示名を選んでください"
+      ],
+      "Create a ${ BRAND_NAME } account": [
+        "${ BRAND_NAME } アカウントを作成"
+      ],
+      "Create your ${ BRAND_NAME } account to schedule a meeting": [
+        "会議の予定を作るには、${ BRAND_NAME }アカウントを作成してください"
       ]
     }
   }
