@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { useFeatureFlag } from '@proton/pass/hooks/useFeatureFlag';
 import { isClonableItem, isItemShared, isMonitored, isPinned, isTrashed } from '@proton/pass/lib/items/item.predicates';
-import { isShareManageable, isVaultShare } from '@proton/pass/lib/shares/share.predicates';
+import { isGroupShare, isShareManageable, isVaultShare } from '@proton/pass/lib/shares/share.predicates';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import { itemPinRequest, itemUnpinRequest } from '@proton/pass/store/actions/requests';
 import type { ShareItem } from '@proton/pass/store/reducers';
@@ -63,6 +63,7 @@ export const useItemState: UseItemState = (item, share) => {
         const orgItemSharingDisabled = org?.settings.ItemShareMode === OrganizationItemShareMode.DISABLED;
         const orgPublicLinkingDisabled = org?.settings.PublicLinkMode === OrganizationPublicLinkMode.DISABLED;
         const monitored = isMonitored(item);
+        const groupShare = isGroupShare(share);
 
         const canManage = isShareManageable(share);
         const canClone = cloneFeatureFlag && canManage && isClonableItem(free)(item);
@@ -72,8 +73,8 @@ export const useItemState: UseItemState = (item, share) => {
         const canLinkShare = canShare && !orgPublicLinkingDisabled;
         const canItemShare = canShare && !orgItemSharingDisabled;
         const canManageAccess = shared && !readOnly;
-        const canLeave = !isVault && !owner;
-        const canMonitor = !trashed && data.type === 'login' && !readOnly;
+        const canLeave = !isVault && !owner && !groupShare;
+        const canMonitor = !EXTENSION_BUILD && !trashed && data.type === 'login' && !readOnly;
         const canTogglePinned = !(pinInFlight || unpinInFlight);
 
         return {
