@@ -7,7 +7,8 @@ import type { ClientId, SearchQuery, UserId, WorkerSearchResultEvent } from '../
 import type { ClientContext } from './ClientCoordinator';
 import { ClientCoordinator } from './ClientCoordinator';
 import { IndexRegistry } from './index/IndexRegistry';
-import { IndexerTaskQueue } from './indexer/IndexerTaskQueue';
+import type { IndexerState } from './indexer/IndexerTaskQueue';
+import { DEFAULT_INDEXER_STATE, IndexerTaskQueue } from './indexer/IndexerTaskQueue';
 import { TreeSubscriptionRegistry } from './indexer/TreeSubscriptionRegistry';
 import { SearchQueryExecutor } from './searcher/SearchQueryExecutor';
 
@@ -18,12 +19,20 @@ import { SearchQueryExecutor } from './searcher/SearchQueryExecutor';
 export class SharedWorkerAPI {
     private clientsCoordinator = new ClientCoordinator();
     private readonly indexRegistry = new IndexRegistry();
+    private db: SearchDB | null = null;
     private indexer: IndexerTaskQueue | null = null;
     private searcher: SearchQueryExecutor | null = null;
     private stateChannel: SearchModuleStateUpdateChannel | null = null;
 
     constructor() {
         this.clientsCoordinator.subscribeClientChanged(this.handleActiveClientChanged.bind(this));
+    }
+
+    private async getDb(userId: string) {
+        if (!this.db) {
+            this.db = await SearchDB.open(userId);
+        }
+        return this.db;
     }
 
     async registerClient(userId: UserId, clientId: ClientId, bridge: MainThreadBridge): Promise<void> {
@@ -36,6 +45,37 @@ export class SharedWorkerAPI {
 
     disconnectClient(clientId: ClientId): void {
         this.clientsCoordinator.disconnect(clientId);
+    }
+
+    /** Return the current indexer state. Can be called before any client registers. */
+    async queryIndexerState(): Promise<IndexerState> {
+        return this.indexer?.getState() ?? DEFAULT_INDEXER_STATE;
+    }
+
+    /** Clear all search data and restart indexing from scratch. */
+    async reset(): Promise<void> {
+        Logger.info('SharedWorkerAPI: resetting search data');
+        this.indexer?.stop();
+        this.indexer = null;
+        this.searcher = null;
+
+        this.indexRegistry.disposeAll();
+
+        if (this.db) {
+            await this.db.clear();
+        }
+
+        // Notify all tabs that search has been deactivated.
+        this.stateChannel?.postMessage({
+            isUserOptIn: false,
+            isInitialIndexing: false,
+            isIndexing: false,
+            isSearchable: false,
+            permanentError: null,
+        });
+
+        // Clear active client so the next start() → registerClient triggers onClientAvailable.
+        this.clientsCoordinator.clearActiveClient();
     }
 
     async search(query: SearchQuery, onEvent?: (event: WorkerSearchResultEvent) => void): Promise<void> {
@@ -61,6 +101,7 @@ export class SharedWorkerAPI {
     }
 
     private async onClientAvailable(clientContext: ClientContext): Promise<void> {
+        Logger.info(`SharedWorkerAPI: onClientAvailable <${clientContext.clientId}>`);
         // Stop existing indexer if running — bridge changed (tab swap).
         if (this.indexer) {
             this.indexer.stop();
@@ -69,13 +110,16 @@ export class SharedWorkerAPI {
         }
 
         try {
-            const db = await SearchDB.open(clientContext.userId);
+            const db = await this.getDb(clientContext.userId);
 
             const treeSubscriptionRegistry = await TreeSubscriptionRegistry.create(clientContext.bridge, db);
             this.searcher = new SearchQueryExecutor(this.indexRegistry, db);
             this.indexer = new IndexerTaskQueue(this.indexRegistry, clientContext.bridge, db, treeSubscriptionRegistry);
 
             this.stateChannel = createSearchModuleStateUpdateChannel(clientContext.userId);
+
+            // Broadcast initial indexer state so late-joining tabs don't stay at defaults.
+            this.stateChannel.postMessage(this.indexer.getState());
             this.indexer.onStateChange((state) => {
                 this.stateChannel?.postMessage({
                     isInitialIndexing: state.isInitialIndexing,

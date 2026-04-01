@@ -126,4 +126,18 @@ export class SearchDB {
     setOptedIn(): Promise<string> {
         return this.db.put('userPreferences', true, 'optIn');
     }
+
+    /**
+     * Clear all data from every object store. The DB and connections remain open.
+     *
+     * We clear stores instead of deleting the DB because deleteDB blocks indefinitely
+     * while any connection is open. Multiple connections can exist simultaneously
+     * (SharedWorker + one per open tab), and coordinating their closure is non-trivial.
+     * Clearing doesn't require closing connections and achieves the same result.
+     */
+    async clear(): Promise<void> {
+        const storeNames = [...this.db.objectStoreNames];
+        const tx = this.db.transaction(storeNames, 'readwrite');
+        await Promise.all([...storeNames.map((name) => tx.objectStore(name).clear()), tx.done]);
+    }
 }
