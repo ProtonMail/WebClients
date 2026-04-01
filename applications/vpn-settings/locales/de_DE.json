@@ -5990,9 +5990,6 @@
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } Lizenzen"
       ],
-      "${ MEET_APP_NAME } video conferencing": [
-        "${ MEET_APP_NAME }-Videokonferenz"
-      ],
       "${ n } address": [
         "${ n } Adresse",
         "${ n } Adressen"
@@ -6223,8 +6220,8 @@
       "Activity Monitor": [
         "Aktivitätsüberwachung"
       ],
-      "Add ${ MEET_APP_NAME }": [
-        "${ MEET_APP_NAME } hinzufügen"
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } hinzufügen"
       ],
       "add a recovery method": [
         "eine Wiederherstellungsmethode hinzufügst"
@@ -8228,9 +8225,6 @@
       ],
       "With ${ AUTHENTICATOR_APP_NAME }, you can:": [
         "Mit ${ AUTHENTICATOR_APP_NAME } kannst du:"
-      ],
-      "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
-        "Mit einem Business- oder Enterprise-Abonnement kannst du ${ boldDedicatedServers } für dein Unternehmen kaufen und ${ boldGateways } einrichten, um zu kontrollieren, welche Benutzer darauf zugreifen können."
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Mit einer verschlüsselten ${ BRAND_NAME }-Adresse kannst du alle ${ BRAND_NAME }-Dienste nutzen."

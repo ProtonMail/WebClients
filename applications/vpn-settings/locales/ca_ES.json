@@ -5990,9 +5990,6 @@
       "${ MEET_APP_NAME } seats": [
         "Llicències de ${ MEET_APP_NAME }"
       ],
-      "${ MEET_APP_NAME } video conferencing": [
-        "Videoconferència de ${ MEET_APP_NAME }"
-      ],
       "${ n } address": [
         "${ n } adreça",
         "${ n } adreces"
@@ -6223,8 +6220,8 @@
       "Activity Monitor": [
         "Monitor d'activitats"
       ],
-      "Add ${ MEET_APP_NAME }": [
-        "Afegiu-hi ${ MEET_APP_NAME }"
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Afegiu ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
       "add a recovery method": [
         "afegir un mètode de recuperació"
@@ -7468,6 +7465,9 @@
       "Product reviews, rankings, or guides": [
         "Ressenyes de productes, rànquings o guies"
       ],
+      "Professional": [
+        "Professional"
+      ],
       "Protected by Swiss privacy laws": [
         "Protegit per les lleis de privacitat suïsses"
       ],
@@ -8229,8 +8229,8 @@
       "With ${ AUTHENTICATOR_APP_NAME }, you can:": [
         "Amb ${ AUTHENTICATOR_APP_NAME }, podeu:"
       ],
-      "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
-        "Amb un pla Business o Enterprise, podeu comprar ${ boldDedicatedServers } per a la vostra organització i configurar ${ boldGateways } per a controlar quins usuaris poden accedir-hi."
+      "With a ${ boldProfessionalPlan } plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
+        "Amb el pla ${ boldProfessionalPlan }, podeu comprar ${ boldDedicatedServers } per a la vostra organització i configurar ${ boldGateways } per controlar quins usuaris hi poden accedir."
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Amb una adreça xifrada de ${ BRAND_NAME }, podeu utilitzar tots els serveis de ${ BRAND_NAME }"
