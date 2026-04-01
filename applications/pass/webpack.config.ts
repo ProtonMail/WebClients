@@ -1,6 +1,5 @@
 import path from 'path';
 import webpack from 'webpack';
-import { WebpackManifestPlugin } from 'webpack-manifest-plugin';
 
 import { type WebpackEnvArguments, getWebpackOptions } from '@proton/pack/lib/config';
 import { getConfig } from '@proton/pack/webpack.config';
@@ -36,7 +35,12 @@ const CRITICAL_OFFLINE_ASSETS = [
     'node_modules_openpgp_dist_lightweight_argon2id_min_mjs',
 ];
 
-const result = (opts: WebpackEnvArguments): webpack.Configuration => {
+const result = async (opts: WebpackEnvArguments): Promise<webpack.Configuration> => {
+    /* webpack-manifest-plugin is ESM-only. webpack-cli v7 tries ESM first then falls back
+     * to CJS (https://github.com/webpack/webpack-cli/blob/main/packages/webpack-cli/src/webpack-cli.ts#L1681-L1691),
+     * but the failed ESM attempt leaves the module partially registered, causing the CJS
+     * require() to fail with "not yet fully loaded". Defer to avoid the race condition. */
+    const { WebpackManifestPlugin } = await import('webpack-manifest-plugin');
     const webpackOptions = getWebpackOptions(opts, { appConfig });
     const config = getConfig(webpackOptions);
     const version = webpackOptions.buildData.version;
