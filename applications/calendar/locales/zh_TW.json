@@ -3882,6 +3882,9 @@
       ],
       "Wrong billing address": [
         "錯誤帳單地址"
+      ],
+      "You cannot enter the organizer's email": [
+        "您不能輸入召集人的電子郵件"
       ]
     },
     "error": {
@@ -6166,6 +6169,12 @@
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "您下一個收費日為${ renewalTime }。您可隨時取消。若您需要立即變更方案請聯繫客服。"
+      ],
+      "Booking contact email: ${ selectedCalendar.Email }": [
+        "預訂聯絡電子郵件：${ selectedCalendar.Email }"
+      ],
+      "How far in advance can someone book?": [
+        "有人可以提前多久預訂？"
       ]
     },
     "info": {
@@ -6881,6 +6890,12 @@
       ],
       "Skip feedback": [
         "略過意見回饋"
+      ],
+      "Add notice period": [
+        "新增通知期"
+      ],
+      "Check additional calendars for availability": [
+        "檢查其他行事曆的可用性"
       ]
     },
     "label": {
