@@ -198,7 +198,6 @@ const SingleSignupContainerV2 = ({
     const { APP_NAME } = useConfig();
     const visionarySignupEnabled = useFlag('VisionarySignup');
     const isNewB2BPlanEnabled = useFlag('NewProtonBusinessBundlePlans');
-    const isMeetPlansEnabled = useFlag('MeetPlans');
 
     const history = useHistory();
     const location = useLocationWithoutLocale<{ invite?: InviteData }>();
@@ -288,7 +287,6 @@ const SingleSignupContainerV2 = ({
             model: defaultSignupModel,
             vpnServersCountData: defaultSignupModel.vpnServersCountData,
             isNewB2BPlanEnabled,
-            isMeetPlansEnabled,
         });
 
         const planParameters = getPlanIDsFromParamsWithForcedAddons({
@@ -343,7 +341,6 @@ const SingleSignupContainerV2 = ({
         model,
         vpnServersCountData,
         isNewB2BPlanEnabled,
-        isMeetPlansEnabled,
     });
     const {
         planCards,

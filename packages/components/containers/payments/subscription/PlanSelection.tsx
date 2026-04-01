@@ -62,7 +62,7 @@ import {
     notHigherThanAvailableOnBackend,
     switchPlan,
 } from '@proton/payments';
-import { getAutoCoupon } from '@proton/payments/core/subscription/helpers';
+import { getAutoCoupon, hasMeet, hasMeetBusiness } from '@proton/payments/core/subscription/helpers';
 import { OfferPrice } from '@proton/payments/ui';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { APPS } from '@proton/shared/lib/constants';
@@ -248,7 +248,6 @@ export function useAccessiblePlans({
     const isLumoSettingsApp = app === APPS.PROTONLUMO;
     const isMeetSettingsApp = app === APPS.PROTONMEET;
     const isNewB2BPlanEnabled = useFlag('NewProtonBusinessBundlePlans');
-    const isMeetPlansEnabled = useFlag('MeetPlans');
     const isPassSimpleLoginLifetimeEnabled = useFlag('PassSimpleLoginLifetimeOffer');
 
     const plansMap = getPlansMap(plans, currency, true);
@@ -290,7 +289,10 @@ export function useAccessiblePlans({
     if (isWalletIndividualPlans) {
         IndividualPlans = walletIndividualPlans;
     } else if (isMeetSettingsApp) {
-        IndividualPlans = [];
+        IndividualPlans = filterPlans([
+            hasFreePlan ? FREE_PLAN : null,
+            hasMeetBusiness(subscription) ? null : plansMap[PLANS.MEET],
+        ]);
     } else {
         const plusPlan =
             enabledProductB2CPlans.find((plan) => plan.Name === selectedProductPlans[Audience.B2C]) ??
@@ -347,7 +349,7 @@ export function useAccessiblePlans({
     const lumoB2BPlans = filterPlans([plansMap[PLANS.LUMO_BUSINESS]]);
 
     const meetB2BPlans = filterPlans([
-        plansMap[PLANS.MEET_BUSINESS],
+        hasMeet(subscription) ? null : plansMap[PLANS.MEET_BUSINESS],
         plansMap[bundleProPlan],
         isNewB2BPlanEnabled ? plansMap[PLANS.BUNDLE_BIZ_2025] : null,
     ]);
@@ -388,7 +390,7 @@ export function useAccessiblePlans({
             return walletB2BPlans;
         } else if (isLumoB2BPlans) {
             return lumoB2BPlans;
-        } else if (isMeetB2BPlans && isMeetPlansEnabled) {
+        } else if (isMeetB2BPlans) {
             return meetB2BPlans;
         }
 
