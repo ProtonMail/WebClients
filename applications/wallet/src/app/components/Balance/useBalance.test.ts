@@ -2,7 +2,7 @@ import { renderHook } from '@testing-library/react-hooks';
 import { vi } from 'vitest';
 
 import * as getRandomAccentColorModule from '@proton/shared/lib/colors';
-import { apiWalletsData } from '@proton/wallet/tests';
+import { apiWalletsData } from '@proton/wallet/tests/fixtures';
 
 import { mockUseBitcoinBlockchainContext } from '../../tests';
 import { useBalance } from './useBalance';

@@ -5,8 +5,8 @@ import type { MockedFunction } from 'vitest';
 
 import type { WasmBitcoinAddressClient } from '@proton/andromeda';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
-import { getMockedApi } from '@proton/wallet/tests';
 
+import { getMockedApi } from '../../tests/mocks/useWalletApi';
 import { extendStore, setupStore } from '../store';
 import { useGetBitcoinAddressHighestIndex } from './useBitcoinAddressHighestIndex';
 

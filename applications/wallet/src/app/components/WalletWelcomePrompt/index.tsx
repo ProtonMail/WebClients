@@ -6,9 +6,10 @@ import useLoading from '@proton/hooks/useLoading';
 import { BRAND_NAME, WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import walletBitcoinDark from '@proton/styles/assets/img/wallet/wallet-bitcoin-dark.jpg';
 import walletBitcoin from '@proton/styles/assets/img/wallet/wallet-bitcoin.jpg';
-import { useWalletApiClients } from '@proton/wallet';
-import { acceptTermsAndConditions, useUserWalletSettings, useWalletDispatch } from '@proton/wallet/store';
 import { WalletThemeOption } from '@proton/wallet/utils/theme';
+import { useWalletApiClients } from '@proton/wallet/contexts';
+import { useUserWalletSettings, useWalletDispatch } from '@proton/wallet/store/hooks';
+import { acceptTermsAndConditions } from '@proton/wallet/store/slices';
 
 import { Button } from '../../atoms';
 import { ModalParagraph } from '../../atoms/ModalParagraph';

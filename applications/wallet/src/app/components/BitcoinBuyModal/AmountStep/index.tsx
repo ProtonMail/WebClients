@@ -22,7 +22,7 @@ import aztecoLogo from '@proton/styles/assets/img/brand/azteco.svg';
 import banxaLogo from '@proton/styles/assets/img/brand/banxa.svg';
 import moonpayLogo from '@proton/styles/assets/img/brand/moonpay.svg';
 import rampLogo from '@proton/styles/assets/img/brand/ramp.svg';
-import { useWalletApiClients } from '@proton/wallet';
+import { useWalletApiClients } from '@proton/wallet/contexts';
 
 import type { CoreSearchableSelectProps } from '../../../atoms';
 import { Button, Input, SearchableSelect, Select } from '../../../atoms';

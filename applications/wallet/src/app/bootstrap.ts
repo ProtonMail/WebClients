@@ -28,8 +28,8 @@ import { initElectronClassnames } from '@proton/shared/lib/helpers/initElectronC
 import type { ProtonConfig } from '@proton/shared/lib/interfaces';
 import { appMode } from '@proton/shared/lib/webpack.constants';
 import noop from '@proton/utils/noop';
-import { clearSettings } from '@proton/wallet';
-import { extendStore, setupStore } from '@proton/wallet/store';
+import { extendStore, setupStore } from '@proton/wallet/store/store';
+import { clearSettings } from '@proton/wallet/utils/cache';
 
 import locales from './locales';
 

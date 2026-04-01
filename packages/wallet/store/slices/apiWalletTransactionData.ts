@@ -7,15 +7,13 @@ import { dispatchGetAllAddressesKeys, getInitialModelState, userKeysThunk } from
 import { createAsyncModelThunk, handleAsyncModel } from '@proton/redux-utilities';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
-import {
-    type AccountIdByDerivationPathAndWalletId,
-    type DecryptedTransactionData,
-    type NetworkTransactionByHashedTxId,
-    createApiTransactions,
-    fetchApiTransactions,
-    hashApiTransactions,
-} from '@proton/wallet';
 
+import type {
+    AccountIdByDerivationPathAndWalletId,
+    DecryptedTransactionData,
+    NetworkTransactionByHashedTxId,
+} from '../../types';
+import { createApiTransactions, fetchApiTransactions, hashApiTransactions } from '../../utils/transactions';
 import type { WalletThunkArguments } from '../thunk';
 
 export const apiWalletTransactionDataSliceName = 'api_wallet_transaction_data' as const;

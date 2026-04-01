@@ -3,8 +3,10 @@ import { act } from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 
 import { generateKey, importKey } from '@proton/crypto/lib/subtle/aesGcm';
-import { type DecryptedApiWalletKey, type IWasmApiWalletData, decryptWalletData } from '@proton/wallet';
-import { apiWalletsData, mockUseWalletDispatch } from '@proton/wallet/tests';
+import { apiWalletsData } from '@proton/wallet/tests/fixtures';
+import { mockUseWalletDispatch } from '@proton/wallet/tests/mocks';
+import type { DecryptedApiWalletKey, IWasmApiWalletData } from '@proton/wallet/types';
+import { decryptWalletData } from '@proton/wallet/utils/crypto';
 
 import { PassphraseInputModal } from '.';
 import { mockUseBitcoinBlockchainContext } from '../../tests';

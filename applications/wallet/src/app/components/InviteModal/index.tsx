@@ -12,8 +12,8 @@ import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import walletUserDark from '@proton/styles/assets/img/wallet/wallet-user-dark.jpg';
 import walletUser from '@proton/styles/assets/img/wallet/wallet-user.jpg';
-import { useWalletApiClients } from '@proton/wallet';
 import { WalletThemeOption } from '@proton/wallet/utils/theme';
+import { useWalletApiClients } from '@proton/wallet/contexts';
 
 import { Button, Input } from '../../atoms';
 import { ModalParagraph } from '../../atoms/ModalParagraph';

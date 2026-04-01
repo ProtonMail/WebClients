@@ -20,7 +20,7 @@ import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import walletPenDark from '@proton/styles/assets/img/wallet/wallet-pen-dark.png';
 import walletPen from '@proton/styles/assets/img/wallet/wallet-pen.png';
 import clsx from '@proton/utils/clsx';
-import { SIGNING_TYPES } from '@proton/wallet';
+import { SIGNING_TYPES } from '@proton/wallet/constants/bitcoin';
 import { getWasmMessageSigner } from '@proton/wallet/utils/messageSigner';
 import { WalletThemeOption } from '@proton/wallet/utils/theme';
 

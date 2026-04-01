@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import type { ModalOwnProps } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
-import type { IWasmApiWalletData } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet/types';
 
 import { TEXT_AREA_MAX_LENGTH } from '../../constants';
 import { TextAreaModal } from '../TextAreaModal';

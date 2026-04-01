@@ -7,7 +7,8 @@ import type { PublicKeyReference } from '@proton/crypto/lib';
 import { setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testing';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import { mockUseNotifications } from '@proton/testing/lib/vitest';
-import { getAddressKey, mockUseBitcoinNetwork, mockUseWalletApiClients } from '@proton/wallet/tests';
+import { mockUseBitcoinNetwork, mockUseWalletApiClients } from '@proton/wallet/tests/mocks';
+import { getAddressKey } from '@proton/wallet/tests/utils';
 
 import type { TxBuilderHelper } from '../../../hooks/useTxBuilder';
 import { mockUseGetRecipientVerifiedAddressKey } from '../../../tests/mocks/useGetRecipientVerifiedAddressKey';

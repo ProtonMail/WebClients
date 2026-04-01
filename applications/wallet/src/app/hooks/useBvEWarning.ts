@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
-import type { IWasmApiWalletData } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet/types';
 
 import { useBitcoinBlockchainContext } from '../contexts';
 import { getAccountBalance, getAccountWithChainDataFromManyWallets } from '../utils';

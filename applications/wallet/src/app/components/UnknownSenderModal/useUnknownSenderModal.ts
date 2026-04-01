@@ -10,8 +10,11 @@ import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { addVCardProperty } from '@proton/shared/lib/contacts/properties';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import type { VCardContact, VCardProperty } from '@proton/shared/lib/interfaces/contacts/VCard';
-import { type DecryptedTransactionData, type SenderObject, encryptPgp, useWalletApi } from '@proton/wallet';
-import { updateWalletTransaction, useApiWalletTransactionData, useWalletDispatch } from '@proton/wallet/store';
+import { useWalletApi } from '@proton/wallet/contexts';
+import { useApiWalletTransactionData, useWalletDispatch } from '@proton/wallet/store/hooks';
+import { updateWalletTransaction } from '@proton/wallet/store/slices';
+import type { DecryptedTransactionData, SenderObject } from '@proton/wallet/types';
+import { encryptPgp } from '@proton/wallet/utils/crypto';
 
 const senderName = (apiData?: DecryptedTransactionData) => {
     if (typeof apiData?.Sender === 'string') {

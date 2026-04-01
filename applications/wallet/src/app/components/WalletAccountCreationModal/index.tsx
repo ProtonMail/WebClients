@@ -11,8 +11,8 @@ import Icon from '@proton/components/components/icon/Icon';
 import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
 import useLoading from '@proton/hooks/useLoading';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { IWasmApiWalletData } from '@proton/wallet';
-import { BASE_INDEX_OPTIONS, SCRIPT_TYPES } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet/types';
+import { BASE_INDEX_OPTIONS, SCRIPT_TYPES } from '@proton/wallet/constants/bitcoin';
 
 import { Button, CoreButtonLike, Input, Modal, Select } from '../../atoms';
 import { ModalParagraph } from '../../atoms/ModalParagraph';

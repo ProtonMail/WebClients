@@ -3,7 +3,7 @@ import { createContext, useContext } from 'react';
 import noop from 'lodash/noop';
 
 import type { WasmApiWalletAccount, WasmTransactionDetails } from '@proton/andromeda';
-import type { IWasmApiWalletData } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet/types';
 
 import type { SubTheme } from '../../utils';
 

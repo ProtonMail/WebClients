@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Icon from '@proton/components/components/icon/Icon';
-import { ANONYMOUS_SENDER_ADDRESS_ID } from '@proton/wallet';
+import { ANONYMOUS_SENDER_ADDRESS_ID } from '@proton/wallet/constants/wallet';
 
 import { Select } from '../../atoms';
 import { useBitcoinBlockchainContext } from '../../contexts';

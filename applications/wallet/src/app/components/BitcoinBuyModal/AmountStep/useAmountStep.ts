@@ -16,14 +16,13 @@ import type {
 import { useNotifications } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import {
-    type GetQuotesArgs,
-    resetQuotesByProvider,
     useCountriesByProvider,
     useExchangeRate,
     useFiatCurrenciesByProvider,
     useGetQuotesByProvider,
     useWalletDispatch,
-} from '@proton/wallet/store';
+} from '@proton/wallet/store/hooks';
+import { type GetQuotesArgs, resetQuotesByProvider } from '@proton/wallet/store/slices';
 
 import { BUY_BITCOIN_DEFAULT_AMOUNT } from '../../../constants/amount';
 import { useDebounceEffect } from '../../../utils/hooks/useDebouncedEffect';

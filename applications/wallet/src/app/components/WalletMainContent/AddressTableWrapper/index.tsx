@@ -6,7 +6,7 @@ import { type WasmApiWalletAccount, WasmKeychainKind } from '@proton/andromeda';
 import { Input } from '@proton/atoms/Input/Input';
 import { Icon } from '@proton/components';
 import clsx from '@proton/utils/clsx';
-import type { IWasmApiWalletData } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet/types';
 
 import { Button, CoreButton } from '../../../atoms';
 import { useResponsiveContainerContext } from '../../../contexts/ResponsiveContainerContext';
