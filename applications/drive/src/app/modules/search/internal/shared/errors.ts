@@ -1,6 +1,9 @@
 import type { ScopeContext } from '@sentry/types';
+import { c } from 'ttag';
 
 import { sendErrorReport } from '../../../../utils/errorHandling';
+import { getNotificationsManager } from '../../../notifications';
+import { Logger } from './Logger';
 
 export function sendErrorReportForSearch(error: Error | unknown, additionalContext?: Partial<ScopeContext>) {
     sendErrorReport(error, {
@@ -133,4 +136,25 @@ export function classifyPermanentError(e: unknown): PermanentErrorKind | null {
         return 'search_library_error';
     }
     return null;
+}
+
+/**
+ * Wraps an async or sync function and shows a user-facing notification.
+ * It should be used for any function that is triggered by the user.
+ */
+export function tryCatchWithNotification<T>(fn: () => T | Promise<T>): () => Promise<T | void> {
+    return async () => {
+        try {
+            return await fn();
+        } catch (error) {
+            Logger.error('Search error', error);
+            sendErrorReportForSearch(error);
+
+            // TODO: Handle more error types.
+            const text = isQuotaExceededError(error)
+                ? c('Error').t`Something went wrong with search: Not enough storage space.`
+                : c('Error').t`Something went wrong with search. Please try again later.`;
+            getNotificationsManager().createNotification({ text, type: 'error' });
+        }
+    };
 }

@@ -4,11 +4,23 @@ export type UserId = string & { readonly __brand: 'SearchUserId' };
 export type ClientId = string & { readonly __brand: 'SearchClientId' };
 export type TreeEventScopeId = string & { readonly __brand: 'TreeEventScopeId' };
 
+export const brandSearchUserId = (id: string): UserId => {
+    if (typeof id !== 'string' || id.length === 0) {
+        throw new Error('brandSearchUserId: expected a non-empty string');
+    }
+    return id as UserId;
+};
+
 export const brandTreeEventScopeId = (id: string): TreeEventScopeId => {
+    if (typeof id !== 'string') {
+        throw new Error('brandTreeEventScopeId: expected string');
+    }
     return id as TreeEventScopeId;
 };
 
 export type SearchModuleState = {
+    // Whether the user has opted in to the search experience.
+    isUserOptIn: boolean;
     // Whether the initial scan is in progress (building index from scratch).
     isInitialIndexing: boolean;
     // Whether any indexing is in progress (initial or incremental).

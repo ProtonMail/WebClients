@@ -22,6 +22,13 @@ export type IndexerState = {
     permanentError: PermanentErrorKind | null;
 };
 
+export const DEFAULT_INDEXER_STATE: IndexerState = {
+    isInitialIndexing: false,
+    isIndexing: false,
+    isSearchable: false,
+    permanentError: null,
+};
+
 export type IndexerStateListener = (state: IndexerState) => void;
 
 /**
