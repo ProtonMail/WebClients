@@ -13,8 +13,8 @@ export const hasUserReachPlanLimit = (
     pageCount: number,
     organization?: OrganizationExtended
 ): boolean => {
-    // Free mail users get no booking pages
-    if (!user.hasPaidMail) {
+    // Users not paying for Mail or Meet get no booking pages
+    if (!user.hasPaidMail && !user.hasPaidMeet) {
         return true;
     }
 
