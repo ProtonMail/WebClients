@@ -2717,9 +2717,6 @@
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } Lizenzen"
       ],
-      "${ MEET_APP_NAME } video conferencing": [
-        "${ MEET_APP_NAME }-Videokonferenz"
-      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Beim lebenslangen ${ PASS_SHORT_APP_NAME }-Angebot gibt es keinen Verlängerungspreis. Es ist eine einmalige Zahlung für lebenslangen Zugang zu ${ PASS_SHORT_APP_NAME }"
       ],
@@ -2761,8 +2758,8 @@
       "Account successfully updated": [
         "Konto erfolgreich aktualisiert"
       ],
-      "Add ${ MEET_APP_NAME }": [
-        "${ MEET_APP_NAME } hinzufügen"
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } hinzufügen"
       ],
       "Address copied to clipboard": [
         "Adresse in die Zwischenablage kopiert"
