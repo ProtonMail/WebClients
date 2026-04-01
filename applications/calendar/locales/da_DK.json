@@ -5084,9 +5084,6 @@
       "${ MEET_APP_NAME } video call": [
         "${ MEET_APP_NAME } videoopkald"
       ],
-      "${ MEET_APP_NAME } video conferencing": [
-        "${ MEET_APP_NAME } videomøder"
-      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } livstidsaftalen har ingen fornyelsespris, det er en engangsbetaling for livstidsadgang til ${ PASS_SHORT_APP_NAME }."
       ],
@@ -5211,8 +5208,8 @@
       "Ad targeting": [
         "Annoncemålretning"
       ],
-      "Add ${ MEET_APP_NAME }": [
-        "Tilføj ${ MEET_APP_NAME }"
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Tilføj ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
       "Added and removed participants will be notified about all the events in this series.": [
         "Tilføjede og fjernede deltagere vil blive underrettet om alle begivenheder i denne serie."
