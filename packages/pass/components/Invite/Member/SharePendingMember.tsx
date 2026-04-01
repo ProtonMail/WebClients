@@ -8,6 +8,7 @@ import Info from '@proton/components/components/link/Info';
 import { useMaybeGroup } from '@proton/pass/components/Groups/GroupsProvider';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
+import { ButtonIfNeeded } from '@proton/pass/components/Utils/ButtonIfNeeded';
 import { useActionRequest } from '@proton/pass/hooks/useRequest';
 import type { AccessDTO } from '@proton/pass/lib/access/types';
 import {
@@ -37,20 +38,28 @@ type SharePendingMemberProps = {
 export const SharePendingMember: FC<SharePendingMemberProps> = ({
     actions,
     email,
-    isGroup,
+    isGroup: isGroupInput,
     extra,
     loading,
     className,
 }) => {
-    const { name } = useMaybeGroup(email);
+    const { name, isGroup: isGroupComputed, onShowMembers } = useMaybeGroup(email);
+    // An invite to a group address is not known as a group invite
+    // But we may still match the group address with the user groups
+    const isGroup = isGroupInput || isGroupComputed;
 
     return (
         <div className={clsx('border border-weak rounded-xl px-4 py-3 max-w-full', className)}>
             <div className="flex flex-nowrap items-center w-full">
-                <ShareMemberAvatar email={email} isGroup={isGroup} loading={loading} />
+                <ButtonIfNeeded onClick={onShowMembers}>
+                    <ShareMemberAvatar email={email} isGroup={isGroup} loading={loading} />
+                </ButtonIfNeeded>
+
                 <div className="flex-1">
                     <Tooltip openDelay={100} originalPlacement="bottom-start" title={name}>
-                        <div className="text-ellipsis">{name}</div>
+                        <ButtonIfNeeded onClick={onShowMembers}>
+                            <div className="text-ellipsis">{name}</div>
+                        </ButtonIfNeeded>
                     </Tooltip>
                     <div className="flex items-center gap-1">
                         <span className="color-weak text-sm">{c('Info').t`Invitation sent`}</span>
