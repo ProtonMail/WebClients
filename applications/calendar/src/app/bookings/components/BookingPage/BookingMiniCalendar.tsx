@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { differenceInCalendarMonths, fromUnixTime, isBefore, startOfMonth, startOfToday } from 'date-fns';
+import { addWeeks, differenceInCalendarMonths, fromUnixTime, isAfter, startOfMonth, startOfToday } from 'date-fns';
 
 import Loader from '@proton/components/components/loader/Loader';
 import LocalizedMiniCalendar from '@proton/components/components/miniCalendar/LocalizedMiniCalendar';
@@ -44,7 +44,10 @@ export const BookingMiniCalendar = ({ selectedDate, onSelectDate }: BookingMiniC
         setDisplayedMonth(startOfMonth(date));
         const monthDiff = differenceInCalendarMonths(date, displayedMonth);
         const latestSlotDate = latestAvailableSlot?.startTime ? fromUnixTime(latestAvailableSlot.startTime) : null;
-        if (monthDiff <= 0 || isBefore(date, latestSlotDate || new Date())) {
+
+        // Compare the end of the 6-week view (not just the month start) to determine if data is already loaded
+        const endOfCalendarView = addWeeks(startOfMonth(date), WEEKS_IN_MINI_CALENDAR);
+        if (monthDiff <= 0 || (latestSlotDate !== null && !isAfter(endOfCalendarView, latestSlotDate))) {
             return;
         }
 
