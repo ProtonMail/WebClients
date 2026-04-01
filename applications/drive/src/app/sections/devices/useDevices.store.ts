@@ -4,6 +4,7 @@ import { devtools } from 'zustand/middleware';
 import type { Device } from '@proton/drive';
 
 import { getDeviceName } from '../../utils/sdk/getNodeName';
+import { sortDeviceItems } from './devices.sorting';
 
 // SDK Device has a more complex type for "name" prop than what we need
 export type StoreDevice = Omit<Device, 'name'> & {
@@ -12,7 +13,7 @@ export type StoreDevice = Omit<Device, 'name'> & {
 
 interface DeviceStore {
     items: Map<string, StoreDevice>;
-    sortedItemUids: Set<string>;
+    sortedItemUids: string[];
 
     isLoading: boolean;
     hasEverLoaded: boolean;
@@ -30,10 +31,14 @@ interface DeviceStore {
     getByRootFolderUid: (rootFolderUid: string) => StoreDevice | undefined;
 }
 
+function resort(items: Map<string, StoreDevice>): string[] {
+    return sortDeviceItems(Array.from(items.values()));
+}
+
 export const useDevicesStore = create<DeviceStore>()(
     devtools((set, get) => ({
         items: new Map(),
-        sortedItemUids: new Set(),
+        sortedItemUids: [],
 
         isLoading: true,
         hasEverLoaded: false,
@@ -43,14 +48,8 @@ export const useDevicesStore = create<DeviceStore>()(
         setItem: (device: Device) =>
             set((state) => {
                 const items = new Map(state.items);
-                const storeDevice: StoreDevice = {
-                    ...device,
-                    name: getDeviceName(device),
-                };
-                items.set(device.uid, storeDevice);
-                const sortedItemUids = new Set(state.sortedItemUids);
-                sortedItemUids.add(device.uid);
-                return { items, sortedItemUids };
+                items.set(device.uid, { ...device, name: getDeviceName(device) });
+                return { items, sortedItemUids: resort(items) };
             }),
 
         updateItem: (uid: string, updates: Partial<StoreDevice>) =>
@@ -61,28 +60,21 @@ export const useDevicesStore = create<DeviceStore>()(
                 }
                 const items = new Map(state.items);
                 items.set(uid, { ...existing, ...updates });
-                return { items };
+                return { items, sortedItemUids: resort(items) };
             }),
 
         removeItem: (uid: string) =>
             set((state) => {
                 const items = new Map(state.items);
                 items.delete(uid);
-                const sortedItemUids = new Set<string>();
-                for (const id of state.sortedItemUids) {
-                    if (id !== uid) {
-                        sortedItemUids.add(id);
-                    }
-                }
-                return { items, sortedItemUids };
+                return { items, sortedItemUids: resort(items) };
             }),
 
-        setLoading: (isLoading: boolean) => {
+        setLoading: (isLoading: boolean) =>
             set((state) => ({
                 isLoading,
                 hasEverLoaded: state.hasEverLoaded || !isLoading,
-            }));
-        },
+            })),
 
         renameDevice: (uid: string, name: string) =>
             set((state) => {
@@ -92,10 +84,10 @@ export const useDevicesStore = create<DeviceStore>()(
                 }
                 const items = new Map(state.items);
                 items.set(uid, { ...existing, name });
-                return { items };
+                return { items, sortedItemUids: resort(items) };
             }),
 
-        clearAll: () => set({ items: new Map(), sortedItemUids: new Set() }),
+        clearAll: () => set({ items: new Map(), sortedItemUids: [] }),
 
         getByRootFolderUid: (rootFolderUid: string) =>
             Array.from(get().items.values()).find((device) => device.rootFolderUid === rootFolderUid),
