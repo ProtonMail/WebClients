@@ -1282,6 +1282,12 @@
       ],
       "Writing assistant seats": [
         "Licencie pre asistenta písania"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } licencia ${ MEET_APP_NAME }",
+        "${ seats }${ MEET_APP_NAME } licencie",
+        "${ seats }${ MEET_APP_NAME } licencií",
+        "${ seats }${ MEET_APP_NAME } licencií"
       ]
     },
     "Address action": {
@@ -8752,6 +8758,21 @@
       ],
       "Zoom meeting": [
         "Zoom míting"
+      ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } je riešenie pre videokonferencie s end-to-end šifrovaním. Pridajte si ho do svojho plánu a organizujte zabezpečené schôdzky."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } licencií"
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Pridať ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Všetko v ${ planOrAppName }, navyše:"
+      ],
+      "for ${ price }": [
+        "za ${ price }"
       ]
     },
     "info": {
@@ -10322,6 +10343,15 @@
         "Až do ${ n } účastníkov",
         "Až do ${ n } účastníkov",
         "Až do ${ n } účastníkov"
+      ],
+      "Hosts can record meetings locally on their computers": [
+        "Moderátori môžu nahrávať stretnutia vo svojich počítačoch"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videokonferencie, ${ n } účastník",
+        "Videokonferencie, ${ n } účastníci",
+        "Videokonferencie, ${ n } účastníkov",
+        "Videokonferencie, ${ n } účastníkov"
       ]
     },
     "Member action": {
@@ -11081,6 +11111,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skenujeme dark web a kontrolujeme, či nedošlo k úniku vašich adries alebo aliasov ${ BRAND_NAME }, a ak niečo nájdeme, okamžite vás upozorníme."
+      ],
+      "Data retention policies": [
+        "Zásady uchovávania údajov"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Súkromný AI chat (${ LUMO_APP_NAME })"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN s blokovaním reklám a ochranou pred malvérom"
       ]
     },
     "new_plans: feature highlight": {
@@ -14754,6 +14793,12 @@
         "VPN pripojenie pre ${ n } zariadenia na používateľa",
         "VPN pripojenie pre ${ n } zariadení na používateľa",
         "VPN pripojenie pre ${ n } zariadení na používateľa"
+      ],
+      "${ productName } for ${ count } user": [
+        "${ productName } pre ${ count } používateľa",
+        "${ productName } pre ${ count } používateľov",
+        "${ productName } pre ${ count } používateľov",
+        "${ productName } pre ${ count } používateľov"
       ]
     },
     "Subscription change warning": {
@@ -17615,6 +17660,48 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Po úspešnom overení prosím neodstraňujte tento TXT záznam, je potrebný pre potvrdenie, že stále používate svoju doménu."
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (pre ${ quantity } používateľa)",
+        "${ MEET_APP_NAME } (pre ${ quantity } používateľov)",
+        "${ MEET_APP_NAME } (pre ${ quantity } používateľov)",
+        "${ MEET_APP_NAME } (pre ${ quantity } používateľov)"
+      ],
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } licencia"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } licencií"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats }${ MEET_APP_NAME } licencia",
+        "${ seats }${ MEET_APP_NAME } licencie",
+        "${ seats }${ MEET_APP_NAME } licencií",
+        "${ seats }${ MEET_APP_NAME } licencií"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } licencia v cene",
+        "${ seats } licencie v cene",
+        "${ seats } licencií v cene",
+        "${ seats } licencií v cene"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Môžete mať až ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } miest počas skúšobného obdobia."
+      ]
+    },
+    "Meet_launch": {
+      "Add ${ planName }": [
+        "Pridať ${ planName }"
+      ],
+      "Confidential video conferencing for the conversations that matter. Only ${ priceString } more each month.": [
+        "Dôverné videokonferencie pre dôležité rozhovory. Len o ${ priceString } mesačne naviac."
+      ],
+      "Talk privately with ${ planName }": [
+        "Porozprávajte sa v súkromí s ${ planName }"
       ]
     }
   }

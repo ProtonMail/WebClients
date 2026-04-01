@@ -8773,6 +8773,12 @@
       ],
       "Zoom meeting": [
         "сустрэчу па Zoom"
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Дадаць ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Усе функцыі тарыфнага плана ${ planOrAppName }, а яшчэ:"
       ]
     },
     "info": {
@@ -10363,6 +10369,15 @@
         "Да ${ n } удзельнікаў",
         "Да ${ n } удзельнікаў",
         "Да ${ n } удзельнікаў"
+      ],
+      "Hosts can record meetings locally on their computers": [
+        "Арганізатары могуць запісваць сустрэчы лакальна на сваіх камп'ютарах"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Відэасустрэчы, ${ n } удзельнік",
+        "Відэасустрэчы, ${ n } удзельнікі",
+        "Відэасустрэчы, ${ n } удзельнікаў",
+        "Відэасустрэчы, ${ n } удзельнікаў"
       ]
     },
     "meet_2025: Info": {
@@ -11144,6 +11159,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Наша сістэма сканіруе цёмную сетку для праверкі на прадмет уцечкі адрасоў і псеўданімаў ${ BRAND_NAME }. Вы неадкладна будзеце апавешчаны ў выпадку, калі нешта будзе выяўлена."
+      ],
+      "Data retention policies": [
+        "Палітыка захоўвання даных"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Прыватны чат з ШІ (${ LUMO_APP_NAME })"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN з блакіроўшчыкам рэкламы і абаронай ад шкодных праграм"
       ]
     },
     "new_plans: feature highlight": {
