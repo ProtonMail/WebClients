@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import type { WasmApiWalletAccount } from '@proton/andromeda';
 import { Dropdown, DropdownCaret, DropdownMenu, DropdownMenuButton, usePopperAnchor } from '@proton/components';
 import clsx from '@proton/utils/clsx';
-import type { IWasmApiWalletData } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet/types';
 
 import { useResponsiveContainerContext } from '../../contexts/ResponsiveContainerContext';
 import { AddressTableWrapper } from './AddressTableWrapper';

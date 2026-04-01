@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 
 import { WasmBlockchainClient } from '@proton/andromeda';
-import { useWalletApi } from '@proton/wallet/contexts/ExtendedApiContext';
+import { useWalletApi } from '@proton/wallet/contexts';
 
 export const useBlockchainClient = () => {
     const api = useWalletApi();

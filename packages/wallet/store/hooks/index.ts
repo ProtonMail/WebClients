@@ -15,5 +15,7 @@ export * from './useWalletSettings';
 export * from './useWalletAccountExchangeRate';
 export * from './useHideAmounts';
 export * from './useNetworkFees';
+export * from './useBitcoinAddressUsedIndexes';
+export * from './useLocalSettings';
 
 export * from './app';

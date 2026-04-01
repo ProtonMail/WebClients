@@ -7,7 +7,8 @@ import { useAddressesKeys } from '@proton/account/addressKeys/hooks';
 import type { WasmApiExchangeRate, WasmApiWalletAccount } from '@proton/andromeda';
 import { useNotifications } from '@proton/components';
 import type { DecryptedAddressKey, SimpleMap } from '@proton/shared/lib/interfaces';
-import { ANONYMOUS_SENDER_ADDRESS_ID, type IWasmApiWalletData } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet/types';
+import { ANONYMOUS_SENDER_ADDRESS_ID } from '@proton/wallet/constants/wallet';
 
 import { usePrimaryAddressKey } from '../../../hooks/usePrimaryAddressKey';
 import { usePsbt } from '../../../hooks/usePsbt';

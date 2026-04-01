@@ -1,6 +1,5 @@
-import { exchangeRate } from '@proton/wallet/tests';
-
 import * as useWalletAccountExchangeRateModule from '../../store/hooks/useWalletAccountExchangeRate';
+import { exchangeRate } from '../fixtures/api';
 
 export const mockUseWalletAccountExchangeRate = (
     mockedValue?: ReturnType<typeof useWalletAccountExchangeRateModule.useWalletAccountExchangeRate>[0] | null

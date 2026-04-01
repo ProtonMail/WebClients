@@ -1,5 +1,5 @@
 import { DownloadClientCard, SettingsSectionWide } from '@proton/components';
-import { WALLET_CLIENTS } from '@proton/wallet';
+import { WALLET_CLIENTS } from '@proton/wallet/constants/settings';
 
 export const WalletDownloadsSettingsPage = () => {
     return (

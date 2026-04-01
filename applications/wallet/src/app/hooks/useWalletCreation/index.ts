@@ -22,24 +22,16 @@ import useLoading from '@proton/hooks/useLoading';
 import {
     DEFAULT_FIRST_ACCOUNT_INDEX,
     DEFAULT_FIRST_BVE_ACCOUNT_INDEX,
-    DEFAULT_MAX_SUB_WALLETS,
     DEFAULT_SCRIPT_TYPE,
-    WalletType,
-    decryptWallet,
-    encryptWalletData,
-    encryptWalletDataWithWalletKey,
-    getDefaultWalletName,
-    useWalletApi,
-    useWalletApiClients,
     wordCountToNumber,
-} from '@proton/wallet';
-import {
-    acceptTermsAndConditions,
-    useFiatCurrencies,
-    useUserWalletSettings,
-    useWalletDispatch,
-    walletCreation,
-} from '@proton/wallet/store';
+} from '@proton/wallet/constants/bitcoin';
+import { DEFAULT_MAX_SUB_WALLETS } from '@proton/wallet/constants/wallet';
+import { useWalletApi, useWalletApiClients } from '@proton/wallet/contexts';
+import { useFiatCurrencies, useUserWalletSettings, useWalletDispatch } from '@proton/wallet/store/hooks';
+import { acceptTermsAndConditions, walletCreation } from '@proton/wallet/store/slices';
+import { WalletType } from '@proton/wallet/types';
+import { encryptWalletData, encryptWalletDataWithWalletKey } from '@proton/wallet/utils/crypto';
+import { decryptWallet, getDefaultWalletName } from '@proton/wallet/utils/wallet';
 
 import { useBitcoinBlockchainContext } from '../../contexts';
 import { isUndefined } from '../../utils';

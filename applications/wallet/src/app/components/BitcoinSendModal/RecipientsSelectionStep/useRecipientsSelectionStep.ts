@@ -9,8 +9,9 @@ import type { PublicKeyReference } from '@proton/crypto/lib';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import { validateEmailAddress } from '@proton/shared/lib/helpers/email';
 import type { Recipient } from '@proton/shared/lib/interfaces';
-import { MAX_RECIPIENTS_PER_TRANSACTIONS, useWalletApiClients } from '@proton/wallet';
-import { useBitcoinNetwork } from '@proton/wallet/store';
+import { MAX_RECIPIENTS_PER_TRANSACTIONS } from '@proton/wallet/constants/settings';
+import { useWalletApiClients } from '@proton/wallet/contexts';
+import { useBitcoinNetwork } from '@proton/wallet/store/hooks';
 
 import { useGetRecipientVerifiedAddressKey } from '../../../hooks/useGetRecipientVerifiedAddressKey';
 import type { TxBuilderHelper } from '../../../hooks/useTxBuilder';

@@ -1,5 +1,5 @@
 import type { WasmApiExchangeRate, WasmBitcoinUnit } from '@proton/andromeda';
-import { COMPUTE_BITCOIN_UNIT } from '@proton/wallet';
+import { COMPUTE_BITCOIN_UNIT } from '@proton/wallet/constants/bitcoin';
 
 import { Price } from '../../../atoms/Price';
 import { convertAmount, convertAmountStr, getLabelByUnit } from '../../../utils';

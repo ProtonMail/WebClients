@@ -7,8 +7,8 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Icon } from '@proton/components';
 import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
 import type { IconName } from '@proton/icons/types';
-import { COMPUTE_BITCOIN_UNIT, MIN_FEE_RATE, PriorityTargetBlock } from '@proton/wallet';
-import { useUserWalletSettings } from '@proton/wallet/store';
+import { COMPUTE_BITCOIN_UNIT, MIN_FEE_RATE, PriorityTargetBlock } from '@proton/wallet/constants/bitcoin';
+import { useUserWalletSettings } from '@proton/wallet/store/hooks';
 
 import { Modal } from '../../../../atoms';
 import { CoreButton } from '../../../../atoms/Button';

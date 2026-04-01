@@ -16,18 +16,21 @@ import {
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { SECOND } from '@proton/shared/lib/constants';
 import type { DecryptedAddressKey, SimpleMap } from '@proton/shared/lib/interfaces';
+import { useWalletApiClients } from '@proton/wallet/contexts';
 import {
-    type AccountWithChainData,
-    type ApiWalletWithPassphraseInput,
-    type IWasmApiWalletData,
-    type WalletWithChainData,
-    computeAddress,
-    generateBitcoinAddressesPayloadToFillPool,
-    useWalletApiClients,
-    verifySignedData,
-} from '@proton/wallet';
-import { useGetBitcoinAddressPool, useWalletDispatch, walletAccountUpdate } from '@proton/wallet/store';
-import { useGetBitcoinAddressUsedIndexes } from '@proton/wallet/store/hooks/useBitcoinAddressUsedIndexes';
+    useGetBitcoinAddressPool,
+    useGetBitcoinAddressUsedIndexes,
+    useWalletDispatch,
+} from '@proton/wallet/store/hooks';
+import { walletAccountUpdate } from '@proton/wallet/store/slices';
+import type {
+    AccountWithChainData,
+    ApiWalletWithPassphraseInput,
+    IWasmApiWalletData,
+    WalletWithChainData,
+} from '@proton/wallet/types';
+import { computeAddress, generateBitcoinAddressesPayloadToFillPool } from '@proton/wallet/utils/account';
+import { verifySignedData } from '@proton/wallet/utils/crypto';
 
 import { useBlockchainClient } from '../../hooks/useBlockchainClient';
 import { getAccountWithChainDataFromManyWallets, isUndefined } from '../../utils';

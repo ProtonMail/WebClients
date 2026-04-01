@@ -3,7 +3,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { add, isBefore } from 'date-fns';
 
 import { SECOND } from '@proton/shared/lib/constants';
-import { SYNCING_MINIMUM_COOLDOWN_MINUTES } from '@proton/wallet';
+import { SYNCING_MINIMUM_COOLDOWN_MINUTES } from '@proton/wallet/constants/wallet';
 
 import { useBitcoinBlockchainContext } from '../../../contexts';
 import { useResponsiveContainerContext } from '../../../contexts/ResponsiveContainerContext';

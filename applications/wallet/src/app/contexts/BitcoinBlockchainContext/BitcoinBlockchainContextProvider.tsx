@@ -1,8 +1,8 @@
 import type { ReactNode } from 'react';
 import { useContext, useMemo } from 'react';
 
-import { buildMapFromWallets } from '@proton/wallet';
-import { useApiWalletsData, useBitcoinNetwork } from '@proton/wallet/store';
+import { useApiWalletsData, useBitcoinNetwork } from '@proton/wallet/store/hooks';
+import { buildMapFromWallets } from '@proton/wallet/utils/wallet';
 
 import { BitcoinBlockchainContext } from '.';
 import type { WalletMap } from '../../types';

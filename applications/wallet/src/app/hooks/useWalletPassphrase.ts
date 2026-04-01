@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import type { IWasmApiWalletData } from '@proton/wallet';
+import type { IWasmApiWalletData } from '@proton/wallet/types';
 
 import { useBitcoinBlockchainContext } from '../contexts';
 
@@ -19,8 +19,8 @@ export const useWalletPassphrase = (wallet?: IWasmApiWalletData) => {
     );
     const wrongFingerprint = Boolean(
         !wallet?.IsNotDecryptable &&
-            wallet?.Wallet.ID &&
-            wallet?.Wallet.Fingerprint !== walletsChainData[wallet.Wallet.ID]?.wallet.getFingerprint()
+        wallet?.Wallet.ID &&
+        wallet?.Wallet.Fingerprint !== walletsChainData[wallet.Wallet.ID]?.wallet.getFingerprint()
     );
 
     const canUseWallet = !needPassphrase && !wrongFingerprint;

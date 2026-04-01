@@ -6,16 +6,11 @@ import { renderHook } from '@testing-library/react-hooks';
 import { generateKey, importKey } from '@proton/crypto/lib/subtle/aesGcm';
 import { setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testing';
 import { mockUseAddresses, mockUseNotifications, mockUseUserKeys } from '@proton/testing/lib/vitest';
-import type { DecryptedApiWalletKey, IWasmApiWalletData } from '@proton/wallet';
-import { decryptWalletData } from '@proton/wallet';
-import {
-    apiWalletsData,
-    getAddressKey,
-    getUserKeys,
-    mockUseUserWalletSettings,
-    mockUseWalletApiClients,
-    mockUseWalletDispatch,
-} from '@proton/wallet/tests';
+import { apiWalletsData } from '@proton/wallet/tests/fixtures';
+import { mockUseUserWalletSettings, mockUseWalletApiClients, mockUseWalletDispatch } from '@proton/wallet/tests/mocks';
+import { getAddressKey, getUserKeys } from '@proton/wallet/tests/utils';
+import type { DecryptedApiWalletKey, IWasmApiWalletData } from '@proton/wallet/types';
+import { decryptWalletData } from '@proton/wallet/utils/crypto';
 
 import { useWalletPreferences } from './useWalletPreferences';
 
