@@ -4500,6 +4500,9 @@
       "Everything in ${ planOrAppName }": [
         "Allt i ${ planOrAppName }"
       ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Allt i ${ planOrAppName }, plus:"
+      ],
       "Failed to generate a secure link. The reason is: ${ error }": [
         "Misslyckades att generera en säker länk. Orsaken är: ${ error }"
       ],
@@ -6159,6 +6162,9 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "End-to-end-krypterad skärmdelning och kortvarig chatt i samtal"
       ],
+      "Hosts can record meetings locally on their computers": [
+        "Värdar kan spela in möten lokalt på sina datorer"
+      ],
       "Meeting recording": [
         "Mötesinspelning"
       ],
@@ -6178,6 +6184,10 @@
       "Up to ${ n } participant": [
         "Upp till ${ n } deltagare",
         "Upp till ${ n } deltagare"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videomöten, ${ n } deltagare",
+        "Videomöten, ${ n } deltagare"
       ]
     },
     "Message": {
@@ -6822,6 +6832,9 @@
       "Priority support & live chat": [
         "Prioriterad support och livechatt"
       ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Privat AI-chatt (${ LUMO_APP_NAME })"
+      ],
       "Private photo backup": [
         "Privat säkerhetskopiering av foto"
       ],
@@ -6967,6 +6980,9 @@
       "Vault sharing with up to ${ n } person": [
         "Valvdelning med upp till ${ n } person",
         "Valvdelning med upp till ${ n } personer"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN med annonsblockerare och skydd mot skadlig kod"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skannar den mörka webben för att kontrollera om dina ${ BRAND_NAME }-adresser eller alias har läckt och varnar dig omedelbart om vi hittar något."

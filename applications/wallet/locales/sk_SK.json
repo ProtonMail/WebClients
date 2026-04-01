@@ -474,6 +474,12 @@
         "${ seats }${ LUMO_APP_NAME } licencií",
         "${ seats }${ LUMO_APP_NAME } licencií"
       ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } licencia ${ MEET_APP_NAME }",
+        "${ seats }${ MEET_APP_NAME } licencie",
+        "${ seats }${ MEET_APP_NAME } licencií",
+        "${ seats }${ MEET_APP_NAME } licencií"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } licencia asistenta písania",
         "${ seats } licencie asistentov písania",
@@ -2743,6 +2749,12 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } obsahuje ${ BRAND_NAME } asistenta písania Scribe"
       ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } je riešenie pre videokonferencie s end-to-end šifrovaním. Pridajte si ho do svojho plánu a organizujte zabezpečené schôdzky."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } licencií"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Doživotná služba ${ PASS_SHORT_APP_NAME } nemá žiadnu cenu za obnovenie, je to jednorazová platba za doživotný prístup k ${ PASS_SHORT_APP_NAME }"
       ],
@@ -2787,6 +2799,9 @@
       ],
       "Account successfully updated": [
         "Účet bol úspešne aktualizovaný"
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Pridať ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
       "Address copied to clipboard": [
         "Adresa bola skopírovaná do schránky"
@@ -2914,8 +2929,14 @@
       "Everything in ${ planOrAppName }": [
         "Všetko v ${ planOrAppName }"
       ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Všetko v ${ planOrAppName }, navyše:"
+      ],
       "Expired": [
         "Platnosť vypršala"
+      ],
+      "for ${ price }": [
+        "za ${ price }"
       ],
       "Google Pay mark": [
         "Google Pay mark"
@@ -3633,6 +3654,20 @@
         "za ${ price }"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } licencia"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } licencií"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats }${ MEET_APP_NAME } licencia",
+        "${ seats }${ MEET_APP_NAME } licencie",
+        "${ seats }${ MEET_APP_NAME } licencií",
+        "${ seats }${ MEET_APP_NAME } licencií"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: Dôverné videokonferencie pre rozhovory, na ktorých záleží"
@@ -3670,6 +3705,9 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "End-to-end šifrované zdieľanie obrazovky a dočasný chat počas hovoru"
       ],
+      "Hosts can record meetings locally on their computers": [
+        "Moderátori môžu nahrávať stretnutia vo svojich počítačoch"
+      ],
       "Meeting recording": [
         "Nahrávanie schôdze"
       ],
@@ -3693,6 +3731,23 @@
         "Až do ${ n } účastníkov",
         "Až do ${ n } účastníkov",
         "Až do ${ n } účastníkov"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videokonferencie, ${ n } účastník",
+        "Videokonferencie, ${ n } účastníci",
+        "Videokonferencie, ${ n } účastníkov",
+        "Videokonferencie, ${ n } účastníkov"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } licencia v cene",
+        "${ seats } licencie v cene",
+        "${ seats } licencií v cene",
+        "${ seats } licencií v cene"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Môžete mať až ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } miest počas skúšobného obdobia."
       ]
     },
     "New Label form": {
@@ -3947,6 +4002,9 @@
       "Data breach monitoring": [
         "Monitorovanie úniku dát"
       ],
+      "Data retention policies": [
+        "Zásady uchovávania údajov"
+      ],
       "Dedicated servers optimized for streaming": [
         "Dedikované servery optimalizované na streamovanie"
       ],
@@ -4054,6 +4112,9 @@
       ],
       "Priority support & live chat": [
         "Prioritná podpora a živý chat"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Súkromný AI chat (${ LUMO_APP_NAME })"
       ],
       "Recover previous file versions": [
         "Obnova predchádzajúcich verzií súborov"
@@ -4192,6 +4253,9 @@
         "Zdieľanie trezora až s ${ n } osobami",
         "Zdieľanie trezora až s ${ n } osobami",
         "Zdieľanie trezora až s ${ n } osobami"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN s blokovaním reklám a ochranou pred malvérom"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skenujeme dark web a kontrolujeme, či nedošlo k úniku vašich adries alebo aliasov ${ BRAND_NAME }, a ak niečo nájdeme, okamžite vás upozorníme."

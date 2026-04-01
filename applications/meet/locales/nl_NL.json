@@ -173,6 +173,9 @@
       "Join meeting": [
         "Deelnemen aan vergadering"
       ],
+      "Join with a link": [
+        "Deelnemen via link"
+      ],
       "Kick out": [
         "Verwijderen"
       ],
@@ -236,6 +239,9 @@
       "Refresh audio and video tracks": [
         "Vernieuw audio- en videotracks"
       ],
+      "Refresh screen share track": [
+        "Vernieuw de schermdeeltrack"
+      ],
       "Refresh the page": [
         "Pagina vernieuwen"
       ],
@@ -284,6 +290,9 @@
       "Settings": [
         "Instellingen"
       ],
+      "Show floating thumbnail during screensharing": [
+        "Zwevende miniatuur tonen tijdens het delen van het scherm"
+      ],
       "Show participants": [
         "Deelnemers tonen"
       ],
@@ -328,6 +337,9 @@
       ],
       "Stop recording": [
         "Stop opname"
+      ],
+      "Stop recording and download video": [
+        "Stop met opnemen en download de video"
       ],
       "Stop Recording Track Stats": [
         "Stop met het registreren van Track Statistieken"
@@ -438,6 +450,9 @@
       ],
       "Show passphrase": [
         "Toon wachtwoord"
+      ],
+      "Stop recording and download.": [
+        "Stop met opnemen en download de video."
       ],
       "Toggle camera": [
         "Camera in-/uitschakelen"
@@ -1419,6 +1434,9 @@
       ]
     },
     "Description": {
+      "Encrypting with Messaging Layer Security (MLS)": [
+        "Versleutelen met Messaging Layer Security (MLS)"
+      ],
       "Rotating group encryption key for best security": [
         "Roterende groep encryptie sleutel voor optimale beveiliging"
       ]
@@ -1656,12 +1674,20 @@
         "Diensten"
       ]
     },
+    "Header": {
+      "Protect your conversations with end-to-end encryption": [
+        "Bescherm uw gesprekken met end-to-end-versleuteling"
+      ]
+    },
     "Headline": {
       "${ createAnActionAction } or ${ signInAction } to access your personal room and create new rooms": [
         "${ createAnActionAction } of ${ signInAction } om toegang te krijgen tot uw persoonlijke ruimte en nieuwe ruimtes aan te maken"
       ],
       "${ createAnActionAction } or ${ signInAction } to schedule meetings": [
         "${ createAnActionAction } of ${ signInAction } om vergaderingen te plannen"
+      ],
+      "Talk in total ${ privacyWord }": [
+        "Praat in alle ${ privacyWord }"
       ]
     },
     "Human verification method": {
@@ -1703,6 +1729,9 @@
       "${ reactorNames } reacted with ${ emoji }": [
         "${ reactorNames } reageerde met ${ emoji }"
       ],
+      "${ totalParticipantCount } of up to ${ maxParticipants } participants": [
+        "${ totalParticipantCount } van maximaal ${ maxParticipants } deelnemers"
+      ],
       "${ totalParticipantCount } participant": [
         "${ totalParticipantCount } deelnemer",
         "${ totalParticipantCount } deelnemers"
@@ -1722,6 +1751,9 @@
       "Are you sure you want to leave?": [
         "Weet u zeker dat u wilt verlaten?"
       ],
+      "Are you sure you want to stop recording?": [
+        "Weet u zeker dat u de opname wilt stoppen?"
+      ],
       "Attention required": [
         "Aandacht vereist"
       ],
@@ -1730,6 +1762,9 @@
       ],
       "By continuing in the meeting, you acknowledge and consent to being recorded.": [
         "Vervolg met de vergadering, erkent en stemt u in met de opname."
+      ],
+      "By joining, you agree to our ${ termsLink } and ${ privacyLink }.": [
+        "Door deel te nemen, gaat u akkoord met onze ${ termsLink } en ${ privacyLink }."
       ],
       "camera": [
         "camera"
@@ -1929,6 +1964,9 @@
       "Meeting locked. No new participants can join.": [
         "Vergadering afgesloten. Geen nieuwe deelnemers toegestaan."
       ],
+      "Meeting recordings aren’t supported in Firefox.": [
+        "Video-opnames worden niet ondersteund in Firefox."
+      ],
       "Meeting unlocked. Participants can join again.": [
         "Vergadering ontgrendeld. Deelnemers kunnen opnieuw deelnemen."
       ],
@@ -2025,20 +2063,32 @@
       "Premium meeting": [
         "Premium vergadering"
       ],
+      "privacy": [
+        "privacy"
+      ],
       "Reconnected successfully": [
         "Succesvol opnieuw verbonden"
       ],
       "Reconnecting to meeting...": [
         "Opnieuw verbinden met de vergadering..."
       ],
+      "Record your meetings": [
+        "Neem uw vergaderingen op"
+      ],
       "Recording saved": [
         "Opname opgeslagen"
+      ],
+      "Recording will begin and attendees will be notified.": [
+        "Opname wordt gestart en deelnemers worden hiervan op de hoogte gesteld."
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Herstelinformatie blijft op dit toestel behalve wanneer u kiest om het te verwijderen."
       ],
       "Refresh audio and video tracks": [
         "Vernieuw audio- en videotracks"
+      ],
+      "Refresh screen share track": [
+        "Vernieuw de schermdeeltrack"
       ],
       "Refreshing the page or ${ link } will automatically resolve most issues.": [
         "De pagina vernieuwen of ${ link } zal de meeste problemen vanzelf oplossen."
@@ -2078,6 +2128,12 @@
       ],
       "Sort by": [
         "Sorteren op"
+      ],
+      "Speaker selection isn’t available in this browser. Use your system settings to choose a different speaker.": [
+        "Spreker is niet beschikbaar in deze browser. Gebruik de instellingen van uw systeem om een andere spreker te kiezen."
+      ],
+      "Start recording": [
+        "Opname starten"
       ],
       "Stop sharing your screen": [
         "Stop met het delen van uw scherm"
@@ -2124,14 +2180,23 @@
       "To create a room, **create a free ${ BRAND_NAME } account**. You will return to ${ MEET_APP_NAME } automatically.": [
         "Om een ruimte te maken, **maakt u een gratis ${ BRAND_NAME }-account aan**. U keert automatisch terug naar ${ MEET_APP_NAME }."
       ],
+      "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
+        "Om een ruimte aan te maken, hebt u **een gratis ${ BRAND_NAME } Account** nodig, zodat we de ruimte kunnen opslaan. Dit duurt slechts enkele seconden."
+      ],
       "To fight spam and abuse, please verify you are human.": [
         "Bevestig dat u een natuurlijk persoon bent, om spam en misbruik tegen te gaan."
       ],
       "To schedule a meeting, **create a free ${ BRAND_NAME } account**. You will return to ${ MEET_APP_NAME } automatically.": [
         "Om een vergadering te plannen, **maakt u een gratis ${ BRAND_NAME }-account aan**. U keert automatisch terug naar ${ MEET_APP_NAME }."
       ],
+      "To schedule an event, you'll need **a free ${ BRAND_NAME } Account** so we can save the event. This only takes a few seconds.": [
+        "Om een afspraak in te plannen, hebt u **een gratis ${ BRAND_NAME } Account** nodig, zodat we de afspraak kunnen opslaan. Dit duurt slechts enkele seconden."
+      ],
       "To use your personal meeting room, **create a free ${ BRAND_NAME } account**. You will return to ${ MEET_APP_NAME } automatically.": [
         "Om uw persoonlijke vergaderruimte te gebruiken, **maakt u een gratis ${ BRAND_NAME } -account aan**. U keert automatisch terug naar ${ MEET_APP_NAME }."
+      ],
+      "To use your personal meeting room, you'll need **a free ${ BRAND_NAME } Account**. This only takes a few seconds.": [
+        "Om uw persoonlijke vergaderruimte te gebruiken, hebt u **een gratis ${ BRAND_NAME } Account** nodig. Dit duurt slechts enkele seconden."
       ],
       "Today — ${ absoluteDate }": [
         "Vandaag — ${ absoluteDate }"
@@ -2156,6 +2221,9 @@
       ],
       "Unlock ${ unlimitedMeeting } and premium features": [
         "Ontgrendel ${ unlimitedMeeting } en premiumfuncties"
+      ],
+      "Upgrade to record your meetings locally.": [
+        "Upgrade om uw vergaderingen lokaal op te nemen."
       ],
       "Upgrade to remove the 1-hour limit and skip the countdown. Enjoy meetings up to 24 hours.": [
         "Upgrade om de limiet van 1 uur te verwijderen en het aftellen over te slaan. Geniet van vergaderingen tot 24 uur."
@@ -2201,6 +2269,9 @@
       ],
       "You left your meeting": [
         "U hebt uw vergadering verlaten"
+      ],
+      "You need a paid ${ MEET_SHORT_APP_NAME } or Workspace plan for this feature. Contact your organization admin to upgrade.": [
+        "U heeft een betaald ${ MEET_SHORT_APP_NAME } of Workspace-abonnement nodig voor deze functie. Neem contact op met uw organisatiebeheerder om te upgraden."
       ],
       "You were removed from the meeting": [
         "U bent uit de vergadering verwijderd"
@@ -2432,6 +2503,9 @@
       "Sign in": [
         "Inloggen"
       ],
+      "terms and conditions": [
+        "algemene voorwaarden"
+      ],
       "What’s this?": [
         "Wat is dit?"
       ]
@@ -2552,11 +2626,17 @@
       "Loading...": [
         "Laden..."
       ],
+      "Meeting name, e.g. team sync, project update, etc": [
+        "Naam van vergadering, bijv. team synchronisatie, project update, etc"
+      ],
       "Password": [
         "Wachtwoord"
       ],
       "Please describe the problem and include any error messages": [
         "Beschrijf het probleem alstublieft en vermeld ook eventuele foutmeldingen"
+      ],
+      "Room name, e.g. team sync, project update, etc": [
+        "Naam ruimte, bijv. teamsynchronisatie, projectupdate, etc."
       ],
       "Schedule in ${ CALENDAR_APP_NAME }": [
         "Inplannen in ${ CALENDAR_APP_NAME }"
@@ -2626,6 +2706,9 @@
       ]
     },
     "Sort option": {
+      "Alphabetical (A–Z)": [
+        "Alfabetisch (A-Z)"
+      ],
       "Newly created": [
         "Nieuw aangemaakt"
       ],
@@ -2763,8 +2846,14 @@
         "U neemt deel aan de vergadering met ${ participantCount } andere deelnemer…",
         "U neemt deel aan de vergadering met ${ participantCount } andere deelnemers…"
       ],
+      "Launching Meeting...": [
+        "Vergadering starten..."
+      ],
       "Local Participant": [
         "Lokale deelnemer"
+      ],
+      "Meeting": [
+        "Vergadering"
       ],
       "Meeting created": [
         "Vergadering aangemaakt"
@@ -2799,6 +2888,9 @@
       "Publications": [
         "Publicaties"
       ],
+      "Record this meeting": [
+        "Neem deze vergadering op"
+      ],
       "Remote Participants": [
         "Deelnemers op afstand"
       ],
@@ -2831,6 +2923,9 @@
       ],
       "Starting meeting as the first participant…": [
         "Vergadering wordt gestart als de eerste deelnemer..."
+      ],
+      "Stop recording": [
+        "Stop met opnemen"
       ],
       "Talk confidentially": [
         "Vertrouwelijk communiceren"

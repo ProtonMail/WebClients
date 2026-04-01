@@ -4976,9 +4976,6 @@
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } Lizenzen"
       ],
-      "${ MEET_APP_NAME } video conferencing": [
-        "${ MEET_APP_NAME }-Videokonferenz"
-      ],
       "${ normalizedProgress }% completed": [
         "${ normalizedProgress } % abgeschlossen"
       ],
@@ -5132,8 +5129,8 @@
       "Ad targeting": [
         "Zielgruppenorientierte Werbung"
       ],
-      "Add ${ MEET_APP_NAME }": [
-        "${ MEET_APP_NAME } hinzufügen"
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } hinzufügen"
       ],
       "Address copied to clipboard": [
         "Adresse in die Zwischenablage kopiert"

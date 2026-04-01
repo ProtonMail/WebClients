@@ -156,6 +156,9 @@
       "Change": [
         "変更"
       ],
+      "Change my access": [
+        "自分のアクセス権を変更"
+      ],
       "Change password": [
         "パスワードを変更"
       ],
@@ -242,6 +245,9 @@
       ],
       "Continue on web": [
         "ウェブで続行"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "${ planOrAppName } に進む"
       ],
       "Continue transfers": [
         "転送を続行"
@@ -839,6 +845,9 @@
       ],
       "Remove me": [
         "削除"
+      ],
+      "Remove my access": [
+        "自分のアクセス権を削除"
       ],
       "Remove without saving": [
         "保存せずに削除"
@@ -3004,6 +3013,9 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "このガイドを利用して、あなたの組織が${ BRAND_NAME }の業界をリードする暗号化をプライバシーのエコシステムから速やかに恩恵を受けられるようにしてください。"
       ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "ご利用をおやめになるのは残念です。よろしければ、取消の理由をお聞かせいただけますでしょうか。お客様のご感想は、${ BRAND_NAME } を改善するのに役立ちます。"
+      ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "連絡先グループを使用することで、ワンクリックでそのグループ全員にメールを送信することができます。"
       ],
@@ -3340,6 +3352,9 @@
       ],
       "Checkout expired, please try again": [
         "チェックアウトの有効期限が切れました。もう一度やり直してください。"
+      ],
+      "Company name or personal name is required": [
+        "会社名または個人名が必要です"
       ],
       "Contact could not be saved": [
         "連絡先を保存できませんでした"
@@ -3815,6 +3830,12 @@
       "Unable to set photo as cover": [
         "写真をカバーとして設定できません"
       ],
+      "Unable to start the search": [
+        "検索を開始できません"
+      ],
+      "Unable to start the search: not enough storage space": [
+        "検索を開始できません：ストレージ容量不足"
+      ],
       "Unexpected error, we can't import the contacts": [
         "予期しないエラーにより、連絡先をインポートできません"
       ],
@@ -3875,11 +3896,17 @@
       "We were not able to load some search results": [
         "一部の検索結果を読み込めませんでした"
       ],
+      "We were not able to load the file history": [
+        "ファイル履歴を読み込めませんでした"
+      ],
       "We were not able to load the folder contents": [
         "フォルダーの内容を読み込めませんでした"
       ],
       "We're sorry, but free upload is not available right now.": [
         "申し訳ありませんが、現在無料アップロードは利用できません。"
+      ],
+      "Wrong billing address": [
+        "請求先住所を変更"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "${ maxContacts }件以上の宛先へメールを送信することはできません"
@@ -4300,6 +4327,11 @@
     "Features": {
       "Lightning-fast speeds": [
         "最高速の速度"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "セキュリティキーの認証に失敗しました。もう一度お試しください。"
       ]
     },
     "fido2: Info": {
@@ -4968,6 +5000,9 @@
       "30-day money-back guarantee.": [
         "30日間の返金保証。"
       ],
+      "A new version of ${ DRIVE_APP_NAME } is available. Please reload to continue using search.": [
+        "${ DRIVE_APP_NAME } の新バージョンが利用可能になりました。検索を続行するには再読み込みしてください。"
+      ],
       "A number will be added to the filename": [
         "ファイル名に番号が付加されます"
       ],
@@ -4997,6 +5032,9 @@
       ],
       "Ad targeting": [
         "広告ターゲティング"
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } を追加"
       ],
       "Address copied to clipboard": [
         "アドレスをコピーしました"
@@ -5172,6 +5210,9 @@
       "Choose a plan that works best for you.": [
         "お客様に最適なプランをお選びください。"
       ],
+      "Clear all search data": [
+        "検索データを消去"
+      ],
       "Clear data": [
         "データをクリア"
       ],
@@ -5183,6 +5224,9 @@
       ],
       "Clears browser data related to the encrypted search.": [
         "暗号化検索のデータをブラウザから削除します。"
+      ],
+      "Clears browser data related to the search.": [
+        "検索に関連するブラウザのデータを消去します。"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "「新しいコードをリクエスト」をクリックすると新しい認証コードが ${ strong } に送信されます。電話番号が違う場合、「編集」をクリックして修正します。"
@@ -5349,6 +5393,9 @@
       "Duplicate key updated": [
         "重複した鍵がアップデートされました"
       ],
+      "Each code can only be used once": [
+        "各コードは使い捨てです"
+      ],
       "Edit email address": [
         "メールアドレスを編集"
       ],
@@ -5414,6 +5461,9 @@
       ],
       "Everything in ${ planOrAppName }": [
         "${ planOrAppName } のすべての機能を含みます"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "${ planOrAppName } のすべての機能――そしてさらに："
       ],
       "Expired": [
         "有効期限切れ"
@@ -5528,6 +5578,9 @@
       ],
       "If you proceed with the downgrade, you will lose access to ${ VPN_APP_NAME } paid features.": [
         "ダウングレードすると ${ VPN_APP_NAME } の有料機能が使えなくなります。"
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "自分を削除すると、「${ fileName }」へのアクセス権が失われ、所有者が再度共有しない限り、開くことはできなくなります。"
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "${ totalCalendarsCount } 件中 ${ calendarCount } 件のカレンダーをインポート"
@@ -6414,6 +6467,9 @@
       "Untitled": [
         "タイトルなし"
       ],
+      "Update required": [
+        "更新が必要です"
+      ],
       "Updating drive search...": [
         "ドライブ内検索の更新中..."
       ],
@@ -6542,6 +6598,9 @@
       ],
       "When you remove ${ deviceName } as a synced device, all folders added to My Computers from this device will be permanently deleted from ${ DRIVE_APP_NAME }.": [
         "${ deviceName } を同期されたデバイスとして削除すると、このデバイスから自分の端末に追加されたすべてのフォルダーは、${ DRIVE_APP_NAME } から完全に削除されます。"
+      ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "2要素認証を設定する際、認証アプリにアクセスできなくなった場合に使用できる回復用コードを提供します。"
       ],
       "who": [
         "誰が"
@@ -6922,6 +6981,9 @@
       "Add to group": [
         "グループに追加"
       ],
+      "Additional comments": [
+        "追加コメント"
+      ],
       "Address": [
         "メールアドレス"
       ],
@@ -7038,6 +7100,9 @@
       ],
       "Contacts": [
         "連絡先"
+      ],
+      "Continue cancelling": [
+        "取消を続行"
       ],
       "Copy": [
         "コピー"
@@ -7249,6 +7314,9 @@
       "Main": [
         "メイン"
       ],
+      "Main reason for cancelling": [
+        "取消の主な理由"
+      ],
       "Malware": [
         "マルウェア"
       ],
@@ -7404,6 +7472,9 @@
       ],
       "Size": [
         "サイズ"
+      ],
+      "Skip feedback": [
+        "フィードバックを飛ばす"
       ],
       "Skip file": [
         "ファイルをスキップ"
@@ -7787,6 +7858,11 @@
         "${ price } の場合"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } ライセンス"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: 最も重要な会話のための機密性の高いビデオ会議"
@@ -7835,6 +7911,11 @@
       ],
       "Up to ${ n } participant": [
         "最大${ n }人の参加者"
+      ]
+    },
+    "meet_2025: Info": {
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "トライアル期間中、${ MEET_SHORT_APP_NAME }のシートを${ TRIAL_MAX_MEET_SEATS }ヶまでをご利用いただけます。"
       ]
     },
     "Message": {
@@ -8294,6 +8375,9 @@
       "Data breach monitoring": [
         "情報漏洩のモニタリング"
       ],
+      "Data retention policies": [
+        "データ保持ポリシー"
+      ],
       "Dedicated servers optimized for streaming": [
         "ストリーミングに最適化された専用サーバー"
       ],
@@ -8401,6 +8485,9 @@
       ],
       "Priority support & live chat": [
         "優先サポートとライブチャット"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "プライベート対話型AI（${ LUMO_APP_NAME }）"
       ],
       "Private photo backup": [
         "プライベート写真バックアップ"
@@ -8542,6 +8629,9 @@
       ],
       "Vault sharing with up to ${ n } person": [
         "最大${ n }人までと保管庫共有"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "広告やウイルスから保護してくれるVPN"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ダークウェブをスキャンして、お客様の ${ BRAND_NAME } アドレスやエイリアスが漏洩していないかを確認し、何か見つかった場合はすぐに警告します。"
@@ -8957,6 +9047,9 @@
       ]
     },
     "Notification": {
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" を共有しました"
+      ],
       "\"${ name }\" created successfully": [
         "「${ name }」が正常に作成されました。"
       ],
@@ -10071,6 +10164,9 @@
       "Anderson": [
         "アンダーソン"
       ],
+      "Anything you'd like us to know": [
+        "知らせたいことならなんでも"
+      ],
       "Anytown": [
         "どこにでもある都市"
       ],
@@ -10080,11 +10176,17 @@
       "Company name": [
         "会社名"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "E.g., ": [
         "例: "
       ],
       "Email": [
         "メール"
+      ],
+      "Enter a name": [
+        "名前を入力"
       ],
       "Enter a new file name": [
         "新しいファイル名を入力してください"
@@ -10143,6 +10245,9 @@
       "Postal code": [
         "郵便番号"
       ],
+      "San Francisco": [
+        "サンフランシスコ"
+      ],
       "Search for group name": [
         "グループ名で検索"
       ],
@@ -10154,6 +10259,9 @@
       ],
       "Select": [
         "選択してください"
+      ],
+      "Select a provider": [
+        "プロバイダーを選択"
       ],
       "Select a reason": [
         "理由を選択"
@@ -10272,6 +10380,26 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "${ BRAND_NAME } からの公式メール"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "その他"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {
@@ -12228,6 +12356,9 @@
       "Import groups": [
         "グループをインポート"
       ],
+      "Import your data to ${ BRAND_NAME }": [
+        "データを ${ BRAND_NAME } にインポート"
+      ],
       "Information exposed in breach": [
         "侵害で漏洩した情報"
       ],
@@ -12462,6 +12593,9 @@
       "Remove item?": [
         "アイテムを削除しますか？"
       ],
+      "Remove your access?": [
+        "自分のアクセス権を削除しますか？"
+      ],
       "Rename a file": [
         "ファイル名の変更"
       ],
@@ -12504,6 +12638,9 @@
       "Select contact group": [
         "連絡先グループの選択"
       ],
+      "Select data to import": [
+        "インポートしたい情報を選択"
+      ],
       "Select link expiration date": [
         "リンクの有効期限を選択"
       ],
@@ -12527,6 +12664,9 @@
       ],
       "SHA1": [
         "SHA1"
+      ],
+      "Share \"${ fileName }\"": [
+        "\"${ fileName }\" を共有"
       ],
       "Share your calendar with your team": [
         "カレンダーをチームと共有"
@@ -12802,6 +12942,9 @@
       "Automatically switch between your preferred themes for day and night in sync with your system’s day and night modes": [
         "システムの昼夜モードに同期して、昼と夜の好みのテーマを自動的に切り替えます"
       ],
+      "Change shared item settings": [
+        "共有済みアイテムの設定を変更"
+      ],
       "Customize import to reduce the number of folders": [
         "フォルダー数を減らすためにインポートをカスタマイズします"
       ],
@@ -12843,6 +12986,9 @@
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "メッセージとファイル名は、メールに含まれる際にゼロアクセス暗号化で保存されます"
+      ],
+      "New!": [
+        "新"
       ],
       "Not all information listed here was exposed for all users.": [
         "ここに記載されているすべての情報がすべてのユーザーに公開されたわけではありません。"

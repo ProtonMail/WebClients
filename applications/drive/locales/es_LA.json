@@ -4982,9 +4982,6 @@
       "${ MEET_APP_NAME } seats": [
         "Licencias de ${ MEET_APP_NAME }"
       ],
-      "${ MEET_APP_NAME } video conferencing": [
-        "Videoconferencia de ${ MEET_APP_NAME }"
-      ],
       "${ normalizedProgress }% completed": [
         "${ normalizedProgress }% completado"
       ],
@@ -5138,8 +5135,8 @@
       "Ad targeting": [
         "Orientación de anuncios"
       ],
-      "Add ${ MEET_APP_NAME }": [
-        "Agregar ${ MEET_APP_NAME }"
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Agregar ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
       "Address copied to clipboard": [
         "Se copió la dirección al portapapeles."

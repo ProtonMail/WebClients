@@ -9017,9 +9017,6 @@
       "${ MEET_APP_NAME } seats": [
         "Llicències de ${ MEET_APP_NAME }"
       ],
-      "${ MEET_APP_NAME } video conferencing": [
-        "Videoconferència de ${ MEET_APP_NAME }"
-      ],
       "${ n } address": [
         "${ n } adreça",
         "${ n } adreces"
@@ -9307,8 +9304,8 @@
       "Activity Monitor": [
         "Monitor d'activitats"
       ],
-      "Add ${ MEET_APP_NAME }": [
-        "Afegiu-hi ${ MEET_APP_NAME }"
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Afegiu ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Afegiu una adreça electrònica @pm.me al vostre compte. Aquest domini senzill i més curt significa \"Envieu-me un ${ MAIL_APP_NAME }\" o \"Envieu-me un missatge privat\"."
@@ -11039,6 +11036,9 @@
       "Product reviews, rankings, or guides": [
         "Ressenyes de productes, rànquings o guies"
       ],
+      "Professional": [
+        "Professional"
+      ],
       "Protect this device too?": [
         "Voleu protegir també aquest dispositiu?"
       ],
@@ -12047,8 +12047,8 @@
       "With ${ AUTHENTICATOR_APP_NAME }, you can:": [
         "Amb ${ AUTHENTICATOR_APP_NAME }, podeu:"
       ],
-      "With a Business or Enterprise plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
-        "Amb un pla Business o Enterprise, podeu comprar ${ boldDedicatedServers } per a la vostra organització i configurar ${ boldGateways } per a controlar quins usuaris poden accedir-hi."
+      "With a ${ boldProfessionalPlan } plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
+        "Amb el pla ${ boldProfessionalPlan }, podeu comprar ${ boldDedicatedServers } per a la vostra organització i configurar ${ boldGateways } per controlar quins usuaris hi poden accedir."
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Amb una adreça xifrada de ${ BRAND_NAME }, podeu utilitzar tots els serveis de ${ BRAND_NAME }"

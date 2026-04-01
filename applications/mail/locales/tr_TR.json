@@ -6521,9 +6521,6 @@
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } koltukları"
       ],
-      "${ MEET_APP_NAME } video conferencing": [
-        "${ MEET_APP_NAME } görüntülü görüşme"
-      ],
       "${ n } unread conversation": [
         "${ n } okunmamış yazışma",
         "${ n } okunmamış yazışma"
@@ -6726,8 +6723,8 @@
       "Ad targeting": [
         "Hedeflenmiş reklam"
       ],
-      "Add ${ MEET_APP_NAME }": [
-        "${ MEET_APP_NAME } ekle"
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } ekle"
       ],
       "Add image URL": [
         "Görsel adresi ekleyin"
@@ -7260,7 +7257,7 @@
         "${ planOrAppName } özelliklerinin tümü"
       ],
       "Everything in ${ planOrAppName }, plus:": [
-        "${ planOrAppName } kapsamındaki tüm özelliklerin yanı sıra:"
+        "${ planOrAppName } tarifesindeki her şeye ek olarak:"
       ],
       "Expand selection": [
         "Seçimi genişlet"
@@ -7461,7 +7458,8 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle"
+        "Görsel ekle",
+        "Görseller ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -7557,7 +7555,7 @@
         "Düşük Öncelik"
       ],
       "Make ${ MAIL_APP_NAME } your default email application.": [
-        "${ MAIL_APP_NAME }'i varsayılan e-posta uygulamanız olarak ayarlayın."
+        "${ MAIL_APP_NAME } varsayılan e-posta uygulamanız olsun."
       ],
       "Manage your folders": [
         "Klasörlerinizi yönetin"
@@ -10485,7 +10483,7 @@
         "Uçtan uca şifrelenmiş ekran paylaşımı ve geçici çağrı içi sohbet"
       ],
       "Hosts can record meetings locally on their computers": [
-        "Oturum sahipleri toplantıları kendi bilgisayarlarına yerel olarak kaydedebilirler"
+        "Oturum sahipleri görüşmeleri kendi bilgisayarlarına yerel olarak kaydedebilir"
       ],
       "Meeting recording": [
         "Görüşme kaydı"
@@ -10508,8 +10506,8 @@
         "${ n } katılımcı"
       ],
       "Video meetings, ${ n } participant": [
-        "Görüntülü toplantılar, ${ n } katılımcı",
-        "Görüntülü toplantılar, ${ n } katılımcı"
+        "Görüntülü görüşmeler, ${ n } katılımcı",
+        "Görüntülü görüşmeler, ${ n } katılımcı"
       ]
     },
     "meet_2025: Info": {
@@ -10975,7 +10973,7 @@
         "Veri sızıntılarını izleme"
       ],
       "Data retention policies": [
-        "Veri saklama ilkeleri"
+        "Verileri tutma ilkeleri"
       ],
       "Dedicated servers optimized for streaming": [
         "Yayın akışı izlemek için ayarlanmış özel sunucular"
@@ -11087,7 +11085,7 @@
         "Öncelikli destek ve canlı sohbet"
       ],
       "Private AI Chat (${ LUMO_APP_NAME })": [
-        "Gizli Yapay Zeka Sohbeti (${ LUMO_APP_NAME })"
+        "Gizli yapay zeka sohbeti (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "Gizli fotoğraf yedekleme"
@@ -11236,7 +11234,7 @@
         "${ n } kişiye kadar kasa paylaşımı"
       ],
       "VPN with ad-blocker and malware protection": [
-        "Reklam engelleyici ve kötü amaçlı yazılım koruması içeren VPN"
+        "Reklam engelleyici ve kötü amaçlı yazılım koruması ile VPN"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } adreslerinizin veya takma adlarınızın sızıp sızmadığını denetlemek için karanlık ağı tararız ve herhangi bir şey bulursak sizi hemen uyarırız."
@@ -12101,7 +12099,7 @@
         "Daha sonra hatırlat"
       ],
       "Yes, don't show again": [
-        "Evet, bir daha gösterme"
+        "Evet, bir daha görüntülenmesin"
       ]
     },
     "Option group": {
@@ -15353,7 +15351,7 @@
         "Doğrulama kodu geçersiz"
       ],
       "Keep this banner hidden?": [
-        "Bu başlığı gizli tutmak ister misiniz?"
+        "Bu duyuru gizlensin mi?"
       ],
       "Label as": [
         "Etiketle"

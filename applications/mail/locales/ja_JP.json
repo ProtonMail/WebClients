@@ -300,6 +300,9 @@
       "Continue import": [
         "インポートを続行"
       ],
+      "Continue to ${ planOrAppName }": [
+        "${ planOrAppName } に進む"
+      ],
       "Continue with categories": [
         "カテゴリを続ける"
       ],
@@ -4144,6 +4147,9 @@
       "We didn't find any known trackers and tracking URLs in this email.": [
         "このメールには既知のトラッカーと追跡URLは見つかりませんでした。"
       ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "ご利用をおやめになるのは残念です。よろしければ、取消の理由をお聞かせいただけますでしょうか。お客様のご感想は、${ BRAND_NAME } を改善するのに役立ちます。"
+      ],
       "When do you want your message to be sent?": [
         "いつメッセージを送信しますか？"
       ],
@@ -4533,6 +4539,9 @@
       ],
       "Choose a date within the next ${ n } day.": [
         "次の ${ n } 日間から日付を選択してください"
+      ],
+      "Company name or personal name is required": [
+        "会社名または個人名が必要です"
       ],
       "Condition incomplete": [
         "条件が不完全です"
@@ -5047,6 +5056,9 @@
       "Username must end with a letter or digit": [
         "ユーザー名の最後は英字か数字でなければいけません"
       ],
+      "Wrong billing address": [
+        "請求先住所を変更"
+      ],
       "Wrong password": [
         "パスワードが正しくありません"
       ],
@@ -5519,6 +5531,11 @@
         "最高速の速度"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "セキュリティキーの認証に失敗しました。もう一度お試しください。"
+      ]
+    },
     "fido2: Info": {
       "Security key": [
         "セキュリティキー"
@@ -5796,6 +5813,9 @@
       "Discover privacy features": [
         "プライバシー機能を見る"
       ],
+      "Download apps": [
+        "アプリをダウンロード"
+      ],
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "強力な暗号化により、お客様と意図した宛先の受信者のみがメールを閲覧できます。"
       ],
@@ -5804,6 +5824,9 @@
       ],
       "For your eyes only": [
         "あなたの目だけに"
+      ],
+      "Get storage bonus": [
+        "容量ボーナスを獲得"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "${ MAIL_APP_NAME } のモバイルアプリを入手"
@@ -6258,6 +6281,9 @@
     "Import provider": {
       "Advanced import": [
         "高度なインポート"
+      ],
+      "Import from ${ providerName }": [
+        "${ providerName } からインポート"
       ]
     },
     "Import warning": {
@@ -6562,6 +6588,9 @@
       ],
       "Ad targeting": [
         "広告ターゲティング"
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } を追加"
       ],
       "Add image URL": [
         "画像 URL を追加"
@@ -6989,6 +7018,9 @@
       "Duplicate key updated": [
         "重複した鍵がアップデートされました"
       ],
+      "Each code can only be used once": [
+        "各コードは使い捨てです"
+      ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "ニュースレターとメーリングリストの管理と登録解除が簡単に行えます。"
       ],
@@ -7072,6 +7104,9 @@
       ],
       "Everything in ${ planOrAppName }": [
         "${ planOrAppName } のすべての機能を含みます"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "${ planOrAppName } のすべての機能――そしてさらに："
       ],
       "Expand selection": [
         "選択を展開"
@@ -7262,9 +7297,6 @@
       "Initializing…": [
         "初期化中…"
       ],
-      "Insert image": [
-        "画像の挿入"
-      ],
       "Insert link": [
         "リンクを挿入"
       ],
@@ -7357,6 +7389,9 @@
       ],
       "Low Priority": [
         "優先度：低"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "${ MAIL_APP_NAME }を規定のメールアプリにしましょう。"
       ],
       "Manage your folders": [
         "フォルダを管理"
@@ -8393,6 +8428,9 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "${ senderName } の信頼された鍵を有効にすると、公開鍵は連絡先の詳細に追加されます。"
       ],
+      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
+        "2要素認証を設定する際、認証アプリにアクセスできなくなった場合に使用できる回復用コードを提供します。"
+      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "ニュースレターを購読する際は、メールアドレスの代わりにエイリアスを使用しましょう。あなたの個人情報は秘匿され、いつでもエイリアスを無効にすることができます。"
       ],
@@ -8991,6 +9029,9 @@
       "Add to group": [
         "グループに追加"
       ],
+      "Additional comments": [
+        "追加コメント"
+      ],
       "Address": [
         "メールアドレス"
       ],
@@ -9134,6 +9175,9 @@
       ],
       "Contacts": [
         "連絡先"
+      ],
+      "Continue cancelling": [
+        "取消を続行"
       ],
       "Copy": [
         "コピー"
@@ -9372,6 +9416,9 @@
       "Main": [
         "メイン"
       ],
+      "Main reason for cancelling": [
+        "取消の主な理由"
+      ],
       "Manage categories": [
         "カテゴリーを管理"
       ],
@@ -9572,6 +9619,9 @@
       ],
       "Size:": [
         "サイズ:"
+      ],
+      "Skip feedback": [
+        "フィードバックを飛ばす"
       ],
       "Social": [
         "ソーシャル"
@@ -10180,6 +10230,11 @@
         "ごみ箱"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } ライセンス"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: 最も重要な会話のための機密性の高いビデオ会議"
@@ -10228,6 +10283,11 @@
       ],
       "Up to ${ n } participant": [
         "最大${ n }人の参加者"
+      ]
+    },
+    "meet_2025: Info": {
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "トライアル期間中、${ MEET_SHORT_APP_NAME }のシートを${ TRIAL_MAX_MEET_SEATS }ヶまでをご利用いただけます。"
       ]
     },
     "Message": {
@@ -10661,6 +10721,9 @@
       "Data breach monitoring": [
         "情報漏洩のモニタリング"
       ],
+      "Data retention policies": [
+        "データ保持ポリシー"
+      ],
       "Dedicated servers optimized for streaming": [
         "ストリーミングに最適化された専用サーバー"
       ],
@@ -10768,6 +10831,9 @@
       ],
       "Priority support & live chat": [
         "優先サポートとライブチャット"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "プライベート対話型AI（${ LUMO_APP_NAME }）"
       ],
       "Private photo backup": [
         "プライベート写真バックアップ"
@@ -10909,6 +10975,9 @@
       ],
       "Vault sharing with up to ${ n } person": [
         "最大${ n }人までと保管庫共有"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "広告やウイルスから保護してくれるVPN"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "ダークウェブをスキャンして、お客様の ${ BRAND_NAME } アドレスやエイリアスが漏洩していないかを確認し、何か見つかった場合はすぐに警告します。"
@@ -11522,6 +11591,9 @@
       ]
     },
     "Onboarding List Placeholder": {
+      "Choose your service": [
+        "サービスを選択"
+      ],
       "Maybe later": [
         "今度やる"
       ],
@@ -11530,6 +11602,12 @@
       ],
       "Switch your accounts to ${ BRAND_NAME }": [
         "アカウントを ${ BRAND_NAME } に切り替える"
+      ],
+      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
+        "よく利用するサービスで使っているメールアドレスを更新することで、トラッキングの脅威からプライバシーを保護しましょう。"
+      ],
+      "Welcome to ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } へようこそ"
       ]
     },
     "Onboarding modal": {
@@ -11748,6 +11826,12 @@
       ],
       "No parent folder": [
         "親フォルダーなし"
+      ],
+      "Remind me later": [
+        "後で通知する"
+      ],
+      "Yes, don't show again": [
+        "次回から表示しない"
       ]
     },
     "Option group": {
@@ -12169,11 +12253,17 @@
       "Anderson": [
         "アンダーソン"
       ],
+      "Anything you'd like us to know": [
+        "知らせたいことならなんでも"
+      ],
       "Anytown": [
         "どこにでもある都市"
       ],
       "Company name": [
         "会社名"
+      ],
+      "Cortex Inc.": [
+        "Cortex Inc."
       ],
       "Describe what to change": [
         "何を変更するかを説明する"
@@ -12186,6 +12276,9 @@
       ],
       "End date": [
         "終了日"
+      ],
+      "Enter a name": [
+        "名前を入力"
       ],
       "Enter passphrase": [
         "パスフレーズを入力してください"
@@ -12259,6 +12352,9 @@
       "Postal code": [
         "郵便番号"
       ],
+      "San Francisco": [
+        "サンフランシスコ"
+      ],
       "Search date, name, email address, or subject line": [
         "日付、名前、メールアドレス、件名で検索"
       ],
@@ -12279,6 +12375,9 @@
       ],
       "Select": [
         "選択してください"
+      ],
+      "Select a provider": [
+        "プロバイダーを選択"
       ],
       "Select a reason": [
         "理由を選択"
@@ -12430,6 +12529,26 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "${ BRAND_NAME } からの公式メール"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "その他"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {
@@ -14841,6 +14960,9 @@
       "Import groups": [
         "グループをインポート"
       ],
+      "Import your data to ${ BRAND_NAME }": [
+        "データを ${ BRAND_NAME } にインポート"
+      ],
       "Increase security with ${ VPN_APP_NAME }": [
         "${ VPN_APP_NAME }でセキュリティを強化"
       ],
@@ -14858,6 +14980,9 @@
       ],
       "Invalid verification code": [
         "無効な検証コードです"
+      ],
+      "Keep this banner hidden?": [
+        "このバナーを非表示にしておきますか？"
       ],
       "Label as": [
         "ラベル付け"
@@ -15170,6 +15295,9 @@
       ],
       "Select contact group": [
         "連絡先グループの選択"
+      ],
+      "Select data to import": [
+        "インポートしたい情報を選択"
       ],
       "Self-destruct message": [
         "有効期限付きメッセージ"
