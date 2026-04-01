@@ -157,6 +157,9 @@
       "Close navigation": [
         "Navigatie sluiten"
       ],
+      "Configure": [
+        "Configureren"
+      ],
       "Confirm": [
         "Bevestigen"
       ],
@@ -2050,8 +2053,7 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
-        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -2092,6 +2094,9 @@
       "None": [
         "Geen"
       ],
+      "Not configured": [
+        "Niet geconfigureerd"
+      ],
       "Not recommended": [
         "Niet aanbevolen"
       ],
@@ -2103,6 +2108,12 @@
       ],
       "Online access to ${ PASS_APP_NAME } will require a PIN code. You'll be logged out after 3 failed attempts.": [
         "Online-toegang tot ${ PASS_APP_NAME } vereist een PIN-code. U wordt uitgelogd na 3 mislukte pogingen."
+      ],
+      "Open ${ PASS_APP_NAME } in a larger window": [
+        "Open ${ PASS_APP_NAME } in een groter venster"
+      ],
+      "Open the ${ PASS_APP_NAME } popup": [
+        "Open de ${ PASS_APP_NAME } pop-up"
       ],
       "Open the Safari settings, find ${ PASS_APP_NAME }, go to \"Permissions\" and enable site permissions.": [
         "Open de Safari-instellingen, zoek ${ PASS_APP_NAME }, ga naar \"Machtigingen\" en schakel sitemachtigingen in."
