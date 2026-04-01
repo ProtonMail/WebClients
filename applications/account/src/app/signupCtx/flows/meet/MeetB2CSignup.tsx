@@ -1,13 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { LoaderPage } from '@proton/components';
 import { useNotifyErrorHandler } from '@proton/components/hooks/useErrorHandler';
 import { CYCLE } from '@proton/payments';
-import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
-import { redirectTo } from '@proton/shared/lib/helpers/browser';
-import { useFlagsStatus } from '@proton/unleash/proxy';
-import { useFlag } from '@proton/unleash/useFlag';
+import { APPS } from '@proton/shared/lib/constants';
 
 import { usePrefetchGenerateRecoveryKit } from '../../../containers/recoveryPhrase/useRecoveryKitDownload';
 import { SignupHumanVerification, SignupType } from '../../../signup/interfaces';
@@ -66,14 +63,6 @@ const MeetB2CSignupInner = () => {
 const MeetB2CSignup = (props: BaseSignupContextProps) => {
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
-
-    const { flagsReady } = useFlagsStatus();
-    const isMeetPlansEnabled = useFlag('MeetPlans');
-    useEffect(() => {
-        if (flagsReady && !isMeetPlansEnabled) {
-            redirectTo(SSO_PATHS.SIGNUP);
-        }
-    }, [flagsReady, isMeetPlansEnabled]);
 
     return (
         <SignupContextProvider

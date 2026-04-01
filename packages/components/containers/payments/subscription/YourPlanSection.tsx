@@ -49,7 +49,6 @@ const YourPlanSectionInner = ({ app }: Props) => {
     const canAccessDuoPlan = getCanSubscriptionAccessDuoPlan(subscription);
     const { plansMap, plansMapLoading } = usePreferredPlansMap();
     const isReferralExpansionEnabled = useFlag('ReferralExpansionDiscover');
-    const isMeetPlansEnabled = useFlag('MeetPlans');
     const telemetryFlow = useDashboardPaymentFlow(app);
     useLoad();
 
@@ -63,7 +62,6 @@ const YourPlanSectionInner = ({ app }: Props) => {
         canAccessDuoPlan,
         user,
         isReferralExpansionEnabled,
-        isMeetPlansEnabled,
         telemetryFlow,
         ...pick(user, ['canPay', 'isFree', 'hasPaidMail']),
     });
