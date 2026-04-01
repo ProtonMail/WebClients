@@ -17,6 +17,7 @@ import {
 } from '@proton/pass/store/actions/requests';
 import { createOptimisticAction } from '@proton/pass/store/optimistic/action/create-optimistic-action';
 import type { Draft, DraftBase } from '@proton/pass/store/reducers/drafts';
+import { sessionRequest } from '@proton/pass/store/request/configs';
 import { withRequest, withRequestFailure, withRequestProgress, withRequestSuccess } from '@proton/pass/store/request/enhancers';
 import { requestActionsFactory } from '@proton/pass/store/request/flow';
 import type {
@@ -483,7 +484,7 @@ export const itemHistoryFailure = createAction(
 );
 
 export const secureLinksGet = requestActionsFactory<void, SecureLink[]>('secure-link::get')({
-    success: { config: { maxAge: UNIX_MINUTE, data: null, hot: true } },
+    success: sessionRequest(UNIX_MINUTE),
 });
 
 export const secureLinkCreate = requestActionsFactory<SecureLinkCreationDTO, SecureLink>('secure-link::create')({
