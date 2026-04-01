@@ -248,6 +248,7 @@ const JoinMagicLinkContainer = ({
             authResponse: initialLoginResult.authResult.result,
             authVersion: initialLoginResult.authResult.authVersion,
             productParam,
+            challengeResult: undefined,
         });
         if (result.to === AuthStep.DONE) {
             const subscribedToApp = toApp || getToAppFromSubscribed(user);
