@@ -83,6 +83,12 @@
       "Continue": [
         "Doorgaan"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Doorgaan naar ${ planOrAppName }"
+      ],
+      "Copy": [
+        "Kopiëren"
+      ],
       "Copy address": [
         "Adres kopiëren"
       ],
@@ -433,6 +439,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } plaats",
         "${ seats } ${ LUMO_APP_NAME } plaatsen"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } licentie",
+        "${ seats } ${ MEET_APP_NAME } licenties"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } plaats voor schrijfassistent",
@@ -2604,6 +2614,9 @@
       "Help me understand what this code does": [
         "Help me bij het begrijpen wat deze code doet"
       ],
+      "How does the world celebrate the Spring Equinox?": [
+        "Hoe viert de wereld de lente-equinox?"
+      ],
       "Identify any unusual or potentially unfavorable terms": [
         "Identificeer ongebruikelijke of potentieel ongunstige termen"
       ],
@@ -3841,6 +3854,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Gebruik deze handleiding om uw organisatie snel te laten profiteren van ${ BRAND_NAME }'s toonaangevende versleuteling en privacy ecosysteem."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Het spijt ons u te moeten zien vertrekken. Als u even tijd heeft, zouden we het zeer op prijs stellen te horen waarom u wilt annuleren. Uw feedback helpt ons ${ BRAND_NAME } beter te maken voor iedereen."
       ]
     },
     "Downgrade account reason": {
@@ -4323,6 +4339,12 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } bevat ${ BRAND_NAME } Scribe schrijfassistent"
       ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } is een end-to-end versleutelde videoconferentie oplossing. Voeg het toe aan uw abonnement om veilige vergaderingen te hosten."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } licenties"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } levenslange deal heeft geen verlengingsprijs, het is een eenmalige betaling voor levenslang toegang tot ${ PASS_SHORT_APP_NAME }."
       ],
@@ -4496,11 +4518,17 @@
       "Everything in ${ planOrAppName }": [
         "Alles van ${ planOrAppName }"
       ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Alles in ${ planOrAppName }, plus:"
+      ],
       "Expired": [
         "Verlopen"
       ],
       "Folder:": [
         "Map:"
+      ],
+      "for ${ price }": [
+        "voor ${ price }"
       ],
       "Google Pay mark": [
         "Google Pay merk"
@@ -4969,6 +4997,9 @@
       "Company name": [
         "Bedrijfsnaam"
       ],
+      "Continue cancelling": [
+        "Doorgaan met annuleren"
+      ],
       "Copy": [
         "Kopiëren"
       ],
@@ -5032,6 +5063,9 @@
       "Last name": [
         "Achternaam"
       ],
+      "Main reason for cancelling": [
+        "Hoofdreden voor annulering"
+      ],
       "Notification": [
         "Notificatie"
       ],
@@ -5070,6 +5104,9 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Genève"
+      ],
+      "Skip feedback": [
+        "Feedback overslaan"
       ],
       "Start date": [
         "Begindatum"
@@ -5340,6 +5377,18 @@
         "voor ${ price }"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } licentie"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } licenties"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME } licentie",
+        "${ seats } ${ MEET_APP_NAME } licenties"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: Vertrouwelijke videogesprekken voor de gesprekken die ertoe doen"
@@ -5373,6 +5422,9 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "End-to-end versleutelde schermdeling en korte chats tijdens telefoongesprekken"
       ],
+      "Hosts can record meetings locally on their computers": [
+        "Hosts kunnen vergaderingen lokaal op hun computers opnemen"
+      ],
       "Meeting recording": [
         "Opname van vergadering"
       ],
@@ -5392,6 +5444,19 @@
       "Up to ${ n } participant": [
         "Tot ${ n } deelnemer",
         "Tot ${ n } deelnemers"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videovergaderingen, ${ n } deelnemer",
+        "Videovergaderingen, ${ n } deelnemers"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } licentie inbegrepen",
+        "${ seats } licenties inbegrepen"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "U kunt tot ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME }-licenties hebben tijdens de proefperiode."
       ]
     },
     "New Label form": {
@@ -5614,6 +5679,9 @@
       "Data breach monitoring": [
         "Monitoring van datalekken"
       ],
+      "Data retention policies": [
+        "Dataretentiebeleid"
+      ],
       "Dedicated servers optimized for streaming": [
         "Gereserveerde servers geoptimaliseerd voor streamen"
       ],
@@ -5719,6 +5787,9 @@
       ],
       "Priority support & live chat": [
         "Prioritaire ondersteuning en live chat"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Privé AI-chat (${ LUMO_APP_NAME })"
       ],
       "Recover previous file versions": [
         "Herstel vorige bestandsversies"
@@ -5847,6 +5918,9 @@
       "Vault sharing with up to ${ n } person": [
         "Kluis delen met tot ${ n } persoon",
         "Kluis delen tot ${ n } personen"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN met advertentieblokkering en bescherming tegen malware"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "We scannen het dark web om te controleren of uw ${ BRAND_NAME } adressen of aliassen zijn gelekt en waarschuwen u onmiddellijk wanneer we iets vinden."
@@ -6673,6 +6747,9 @@
       "Anderson": [
         "Anderson"
       ],
+      "Anything you'd like us to know": [
+        "Heeft u nog iets dat u ons wilt laten weten"
+      ],
       "Anytown": [
         "Willekeurige stad"
       ],
@@ -6782,6 +6859,18 @@
       ],
       "Google Workspace": [
         "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Overige"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {
