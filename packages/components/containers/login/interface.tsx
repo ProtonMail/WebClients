@@ -1,6 +1,7 @@
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { AuthResponse, AuthVersion, InfoResponse } from '@proton/shared/lib/authentication/interface';
 import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
+import type { TwoFactorAuthTypes } from '@proton/shared/lib/authentication/twoFactor';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type {
     Address,
@@ -15,6 +16,8 @@ import type { AddressGenerationSetup, ClaimableAddress, ParsedUnprivatizationDat
 import type { AuthDeviceOutput, DeviceData, DeviceSecretData, DeviceSecretUser } from '@proton/shared/lib/keys/device';
 import type { OrganizationData, UnprivatizationContextData } from '@proton/shared/lib/keys/unprivatization/helper';
 
+import type { ChallengeResult } from '../challenge/interface';
+
 export interface AddressGeneration {
     externalEmailAddress: Address | undefined;
     availableDomains: string[];
@@ -25,6 +28,7 @@ export interface AddressGeneration {
 export enum AuthStep {
     LOGIN,
     TWO_FA,
+    LOST_TWO_FA,
     UNLOCK,
     NEW_PASSWORD,
     SSO,
@@ -32,11 +36,7 @@ export enum AuthStep {
 }
 
 export interface AuthTypes {
-    twoFactor: {
-        totp: boolean;
-        fido2: boolean;
-        enabled: boolean;
-    };
+    twoFactor: TwoFactorAuthTypes;
     unlock: boolean;
 }
 
@@ -132,6 +132,7 @@ export interface AuthCacheResult {
     setupVPN: boolean;
     preAuthKTVerifier: PreAuthKTVerifier;
     keyMigrationKTVerifier: KeyMigrationKTVerifier;
+    challengeResult: ChallengeResult;
 }
 
 export type AuthFlows = 'signup' | 'reset' | 'switch' | 'login' | 'reauth' | undefined;
