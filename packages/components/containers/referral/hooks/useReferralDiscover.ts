@@ -6,6 +6,7 @@ import { fromUnixTime } from 'date-fns';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import useConfig from '@proton/components/hooks/useConfig';
 import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
@@ -23,9 +24,10 @@ export const useReferralDiscover = () => {
     const [subscription] = useSubscription();
     const [user] = useUser();
     const { isFree } = user;
+    const { APP_NAME } = useConfig();
 
     const app = getAppFromPathnameSafe(location.pathname);
-    const isUserEligible = getIsReferralUserEligible(userSettings, isFree, app);
+    const isUserEligible = getIsReferralUserEligible(userSettings, isFree, app, APP_NAME);
 
     const hasNotificationsEnabled = hasBit(userSettings.News, NEWSLETTER_SUBSCRIPTIONS_BITS.IN_APP_NOTIFICATIONS);
 
