@@ -26,6 +26,9 @@
       "Confirm reset": [
         "Confirmar restablecimiento"
       ],
+      "Copy ${ issuer } (${ name })": [
+        "Copiar ${ issuer } (${ name })"
+      ],
       "Create": [
         "Crear"
       ],
@@ -46,6 +49,9 @@
       ],
       "Try again": [
         "Inténtalo de nuevo"
+      ],
+      "Use this password": [
+        "Usar esta contraseña"
       ]
     },
     "authenticator-2025:Action": {
@@ -55,11 +61,20 @@
       "Clear search": [
         "Borrar búsqueda"
       ],
+      "Close": [
+        "Cerrar"
+      ],
       "Confirm": [
         "Confirmar"
       ],
       "Continue anyway": [
         "Continuar de todas formas"
+      ],
+      "Continue anyways": [
+        "Continuar de todos modos"
+      ],
+      "Create a free account": [
+        "Crea una cuenta gratuita"
       ],
       "Create a new vault": [
         "Crear una caja fuerte"
@@ -67,11 +82,17 @@
       "Create new code": [
         "Crear nuevo código"
       ],
+      "Delete": [
+        "Eliminar"
+      ],
       "Edit": [
         "Editar"
       ],
       "Got it": [
         "Entendido"
+      ],
+      "How to update ${ AUTHENTICATOR_APP_NAME } on Linux": [
+        "Cómo actualizar ${ AUTHENTICATOR_APP_NAME } en Linux"
       ],
       "How to use ${ AUTHENTICATOR_SHORT_APP_NAME }": [
         "Cómo usar ${ AUTHENTICATOR_SHORT_APP_NAME }"
@@ -85,14 +106,23 @@
       "Need more help?": [
         "¿Necesitas más ayuda?"
       ],
+      "Open settings": [
+        "Abrir ajustes"
+      ],
       "Please try again or reset to create a new one.": [
         "Inténtalo de nuevo o restablécelo para crear uno nuevo."
       ],
       "Please try again.": [
         "Vuelve a intentarlo."
       ],
+      "Remove previous backups": [
+        "Eliminar copias de seguridad anteriores"
+      ],
       "Report an issue": [
         "Notificar un problema"
+      ],
+      "Reset": [
+        "Restablecer"
       ],
       "Save code": [
         "Guardar código"
@@ -106,6 +136,12 @@
       "Sync between devices": [
         "Sincronizar entre dispositivos"
       ],
+      "Try again": [
+        "Intentar de nuevo"
+      ],
+      "Unlock": [
+        "Desbloquear"
+      ],
       "Unlock with biometrics": [
         "Desbloquear con biometría"
       ],
@@ -114,6 +150,9 @@
       ]
     },
     "authenticator-2025:Description": {
+      "You will need this password to unlock ${ AUTHENTICATOR_APP_NAME } every time it restarts.": [
+        "Necesitarás esta contraseña para desbloquear ${ AUTHENTICATOR_APP_NAME } cada vez que se reinicia."
+      ],
       "Your import file is protected by a password. Please enter the password to proceed.": [
         "El archivo importado está protegido con una contraseña. Por favor ingresa la contraseña para continuar."
       ]
@@ -134,8 +173,32 @@
       "Cannot use this folder. Please pick a folder in your user's home directory (${ home })": [
         "No se puede usar esta carpeta. Por favor selecciona una carpeta en el directorio home del usuario (${ home })"
       ],
+      "Codes from file \"${ filename }\" could not be imported": [
+        "No se pudieron importar los códigos del archivo \"${ filename }\""
+      ],
+      "Failed database migration. If the issue persists, please contact customer support.": [
+        "Error en la migración de la base de datos. Si el problema persiste, por favor comunícate con nuestro equipo de soporte."
+      ],
+      "Failed to create export": [
+        "Error al crear la exportación"
+      ],
+      "Failed to import due to wrong password. Please try again.": [
+        "Error al importar debido a una contraseña incorrecta. Por favor inténtalo de nuevo."
+      ],
+      "Failed to reorder items": [
+        "Error al reordenar los elementos"
+      ],
+      "Migration failed after updating ${ AUTHENTICATOR_APP_NAME }. You can try again, or backup your data and reset the app to continue.": [
+        "La migración falló después de actualizar ${ AUTHENTICATOR_APP_NAME }. Puedes intentarlo de nuevo, o hacer una copia de seguridad de tus datos y restablecer la aplicacióon para continuar."
+      ],
       "Passwords do not match": [
         "Las contraseñas no coinciden"
+      ],
+      "The app couldn’t access your storage key.": [
+        "La aplicación no pudo acceder a tu clave de almacenamiento."
+      ],
+      "Unable to access your secure storage key due to a system issue.": [
+        "No se pudo acceder a tu clave de almacenamiento debido a un error del sistema."
       ],
       "We couldn't create your secure storage key due to a system limitation.": [
         "No se pudo crear tu clave de almacenamiento seguro debido a una limitación del sistema."
@@ -145,6 +208,9 @@
       ],
       "Your storage key appears to be damaged and can't be read.": [
         "Tu clave de almacenamiento seguro parece estar dañada y no se puede leer."
+      ],
+      "Your storage key is missing and needs to be recreated.": [
+        "Falta tu clave de almacenamiento y es necesario crearla nuevamente."
       ]
     },
     "authenticator-2025:Import": {
@@ -163,6 +229,9 @@
       ],
       "Choose ${ plainTextBold }, this will create a txt file that you can use here.": [
         "Elige ${ plainTextBold }, esto creará un archivo txt que puedes usar aquí."
+      ],
+      "Choose ${ zipTextBold }, this will create a zip file that you can use here.": [
+        "Elige ${ zipTextBold }, esto creará un archivo zip que puedes usar aquí."
       ],
       "Code added": [
         "Código añadido"
@@ -215,6 +284,9 @@
       "One-time code copied": [
         "Se ha copiado el código de un solo uso"
       ],
+      "Only the last ${ BACKUP_MAX_AMOUNT } daily backups are kept.": [
+        "Sólo se conservan las últimas ${ BACKUP_MAX_AMOUNT } copias de seguridad diarias."
+      ],
       "Plain text": [
         "Texto plano"
       ],
@@ -227,20 +299,35 @@
       "Settings > Transfer accounts > Export accounts": [
         "Ajustes > Transferir cuentas > Exportar cuentas"
       ],
+      "Sync disabled": [
+        "Sincronización desactivada"
+      ],
       "Sync enabled": [
         "Sincronización activada"
+      ],
+      "This will create a 2fas file that you can use here.": [
+        "Esto creará un archivo 2fas que puedes usar aquí."
       ],
       "This will create a Json file that you can use here.": [
         "Esto creará un archivo JSON que puedes usar aquí."
       ],
+      "This will create one or more QR codes that you can use here.": [
+        "Esto creará uno o más códigos QR que puedes usar aquí."
+      ],
       "Unfortunately, Authy doesn’t currently support exporting data from their app. Consider contacting Authy to request this feature.": [
         "Desafortunadamente, Authy no soporta la exportación de datos desde su aplicación. Considera comunicarte con Authy para solicitar esta función."
+      ],
+      "Unfortunately, Microsoft Authenticator doesn’t currently support exporting data from their app. Consider contacting Microsoft to request this feature.": [
+        "Desafortunadamente, Microsoft Authenticator no permite la exportación de datos desde la aplicación. Considera comunicarte con Microsoft para solicitar esta característica."
       ],
       "ZIP": [
         "Código postal"
       ]
     },
     "authenticator-2025:Label": {
+      "30 seconds": [
+        "30 segundos"
+      ],
       "60 seconds": [
         "60 segundos"
       ],
@@ -265,11 +352,23 @@
       "Automatic": [
         "Automático"
       ],
+      "Backup folder": [
+        "Carpeta de copias de seguridad"
+      ],
+      "Backups": [
+        "Copias de seguridad"
+      ],
+      "Biometrics": [
+        "Biometría"
+      ],
       "Boxed": [
         "Empaquetado"
       ],
       "Dark": [
         "Oscuro"
+      ],
+      "Digit style": [
+        "Estilo de dígito"
       ],
       "Digits": [
         "Dígitos"
@@ -280,11 +379,17 @@
       "Enabled, temporarily offline": [
         "Activado, temporalmente sin conexión"
       ],
+      "Enter your password:": [
+        "Ingresa tu contraseña:"
+      ],
       "Export": [
         "Exportar"
       ],
       "Import": [
         "Importar"
+      ],
+      "Issuer": [
+        "Emisor"
       ],
       "Light": [
         "Claro"
@@ -316,6 +421,9 @@
       "Security": [
         "Seguridad"
       ],
+      "Support": [
+        "Soporte"
+      ],
       "Theme": [
         "Tema"
       ],
@@ -325,8 +433,14 @@
       "Title": [
         "Título"
       ],
+      "Title, account, or label": [
+        "Título, cuenta o etiqueta"
+      ],
       "Type": [
         "Tipo"
+      ],
+      "View logs": [
+        "Ver registros"
       ]
     },
     "authenticator-2025:Reason": {
@@ -340,6 +454,9 @@
     "authenticator-2025:Title": {
       "Confirm password": [
         "Confirmar contraseña"
+      ],
+      "Create password": [
+        "Crear contraseña"
       ],
       "Delete \"${ displayName }\"": [
         "Eliminar \"${ displayName }\""
@@ -370,14 +487,26 @@
       ],
       "Storage key issue": [
         "Problema con la clave de almacenamiento"
+      ],
+      "Unlock ${ AUTHENTICATOR_APP_NAME }": [
+        "Desbloquear ${ AUTHENTICATOR_APP_NAME }"
       ]
     },
     "authenticator-2025:Warning": {
+      "Automatic backup was disabled due to missing backup folder (${ backupDirectory })": [
+        "Las copias de seguridad automáticas se han desactivado debido a la falta de la carpeta de respaldo (${ backupDirectory })"
+      ],
       "For enhanced security, un-encrypted automatic backup has been disabled. You can re-enable it in the Settings.": [
         "Para mayor seguridad, la copia de seguridad automática no cifrada se ha desactivado. Puedes volver a activarla en los Ajustes."
       ],
+      "If you continue without setting up a secure storage key, your data will still be encrypted locally, but the key will be saved less securely.": [
+        "Si continúas sin establecer una clave de almacenamiento seguro, tus datos serán cifrados localmente, pero la clave será guardada de una forma menos segura."
+      ],
       "Nothing to import.": [
         "No hay nada que importar."
+      ],
+      "Resetting your storage key will erase any local data that hasn’t been synced.": [
+        "Restablecer tu clave de almacenamiento eliminará todos los datos locales que no se hayan sincronizado."
       ],
       "Wrong password. You have ${ remainingCount } attempt left, after that, your data will be erased.": [
         "Contraseña incorrecta. Te queda ${ remainingCount } intento, después de eso, tus datos serán borrados.",
@@ -421,6 +550,9 @@
       ]
     },
     "Info": {
+      "A ${ BRAND_NAME } account is required to enable end-to-end encrypted sync between devices.": [
+        "Una cuenta de ${ BRAND_NAME } es requerida para activar la sincronización cifrada de extremo a extremo entre dispositivos."
+      ],
       "Identity confirmed": [
         "Se ha confirmado la identidad."
       ],
@@ -482,6 +614,9 @@
       "Hide password": [
         "Ocultar contraseña"
       ],
+      "Next": [
+        "Siguiente"
+      ],
       "No entries matching your search": [
         "No hay entradas que coincidan con tu búsqueda"
       ],
@@ -517,6 +652,9 @@
     "Validation": {
       "Secret cannot be empty": [
         "El secreto no puede estar vacío."
+      ],
+      "Title cannot be empty": [
+        "El título no puede estar vacío"
       ]
     },
     "Warning": {
