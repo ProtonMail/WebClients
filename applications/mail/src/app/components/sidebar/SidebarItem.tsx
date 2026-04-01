@@ -210,8 +210,8 @@ const SidebarItem = ({
 
                     if (labelID === MAILBOX_LABEL_IDS.ALL_MAIL || labelID === MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL) {
                         return (
-                            location.pathname.includes(`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALL_MAIL]}`) ||
-                            location.pathname.includes(`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL]}`)
+                            location.pathname.startsWith(`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALL_MAIL]}`) ||
+                            location.pathname.startsWith(`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL]}`)
                         );
                     }
 
