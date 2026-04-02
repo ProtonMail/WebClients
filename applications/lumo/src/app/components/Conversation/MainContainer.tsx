@@ -88,6 +88,10 @@ const MainContainer = ({
                     <NewGhostChatButton />
                 </HeaderWrapper>
             )}
+            {/* Lumo Plus upsell button in navbar - only show for medium and larger screens */}
+            <div className="absolute top-custom w-full justify-center hidden md:flex" style={{ '--top-custom': '8px' }}>
+                <LumoNavbarUpsell feature={LUMO_UPSELL_PATHS.TOP_NAVIGATION_BAR} />
+            </div>
             <div
                 className="flex *:min-size-auto flex-column flex-nowrap flex-1 mx-auto justify-center items-center w-full md:max-w-custom lg:max-w-custom pb-8 pt-0"
                 style={{
