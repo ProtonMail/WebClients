@@ -7,7 +7,6 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { SEARCH_TYPE, useSearchTelemetry } from '@proton/encrypted-search/useSearchTelemetry';
 import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/search';
 
-import { useCategoriesView } from 'proton-mail/components/categoryView/useCategoriesView';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
@@ -25,6 +24,7 @@ import {
 import {
     isES as isESSelector,
     messagesToLoadMoreES as messagesToLoadMoreESSelector,
+    selectCategoryIDs,
     shouldLoadElements as shouldSendRequestSelector,
 } from '../../store/elements/elementsSelectors';
 import type { MailState } from '../../store/store';
@@ -58,7 +58,7 @@ export const useApplyEncryptedSearch = ({
     const { esEnabled } = esStatus;
 
     const { sendPerformSearchReport } = useSearchTelemetry();
-    const categoriesView = useCategoriesView();
+    const categoryIDs = useMailSelector(selectCategoryIDs);
 
     // Force conversation mode to false in a search context
     const params = {
@@ -82,7 +82,7 @@ export const useApplyEncryptedSearch = ({
         dispatch(
             addESResults({
                 elements,
-                page: parseSearchParams(history.location, categoriesView.disabledCategoriesIDs).page,
+                page: parseSearchParams(history.location, categoryIDs).page,
                 params: { ...params, labelID },
                 pageSize,
             })
@@ -155,7 +155,7 @@ export const useApplyEncryptedSearch = ({
             // We navigate directly to the requested page first, because it is always guaranteed
             // to contain some messages, either because it's an already full intermediate page or
             // because it's the partial last page available
-            dispatch(updatePage(parseSearchParams(history.location, categoriesView.disabledCategoriesIDs).page));
+            dispatch(updatePage(parseSearchParams(history.location, categoryIDs).page));
             void encryptedSearch(setEncryptedSearchResults, messagesToLoadMoreES);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-C75F36
