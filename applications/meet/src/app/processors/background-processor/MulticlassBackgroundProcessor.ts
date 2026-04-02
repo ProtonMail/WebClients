@@ -21,9 +21,13 @@ import {
 export interface BackgroundProcessorOptions extends ProcessorWrapperOptions {
     blurRadius?: number;
     segmenterOptions?: SegmenterOptions;
+    /** Run segmentation inference every N frames. Intermediate frames reuse the previous mask. Default: 1 (every frame). */
+    segmentEveryNFrames?: number;
     assetPaths?: {
         tasksVisionFileSet?: string;
         modelAssetPath?: string;
+        /** Model to use when falling back to CPU delegate. Defaults to modelAssetPath. */
+        cpuModelAssetPath?: string;
     };
 }
 
@@ -114,7 +118,7 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
 
     imageSegmenter?: vision.ImageSegmenter;
 
-    options: BackgroundOptions;
+    options: BackgroundProcessorOptions;
 
     isFirstFrame = true;
 
@@ -131,6 +135,8 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
     private maskOutputTextureHeight = 0;
     private lastCanvasWidth = 0;
     private lastCanvasHeight = 0;
+    private frameCount = 0;
+    activeDelegate: 'GPU' | 'CPU' | undefined;
     private fallbackConfidenceTextures: (WebGLTexture | null)[] = [];
     private useWebGLTexturePath = true;
 
@@ -168,7 +174,10 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
 
     private async initializeSegmenter(delegateOverride?: 'GPU' | 'CPU') {
         const filesetPath = this.options.assetPaths?.tasksVisionFileSet ?? DEFAULT_ASSET_PATH;
-        const modelPath = this.options.assetPaths?.modelAssetPath ?? DEFAULT_MODEL_PATH;
+        const modelPath =
+            delegateOverride === 'CPU' && this.options.assetPaths?.cpuModelAssetPath
+                ? this.options.assetPaths.cpuModelAssetPath
+                : (this.options.assetPaths?.modelAssetPath ?? DEFAULT_MODEL_PATH);
 
         // Create custom fileset that uses cached wasm files
         const wasmLoaderPath = `${filesetPath}/vision_wasm_internal.js`;
@@ -210,6 +219,9 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
                 outputCategoryMask: false,
                 outputConfidenceMasks: true,
             });
+            this.activeDelegate = desiredDelegate;
+            // eslint-disable-next-line no-console
+            console.log(`[bg-blur] delegate=${desiredDelegate} model=${modelPath.split('/').pop()}`);
         } catch (error) {
             if (!delegateOverride && !normalizedDelegate && desiredDelegate === 'GPU') {
                 await this.initializeSegmenter('CPU');
@@ -369,21 +381,24 @@ export default class MulticlassBackgroundProcessor extends VideoTransformer<Back
                 return;
             }
 
-            const segmentationPromise = this.imageSegmenter
-                ? new Promise<void>((resolve, reject) => {
-                      try {
-                          this.imageSegmenter!.segmentForVideo(frame, performance.now(), (result) => {
-                              this.updateMaskFromConfidences(result.confidenceMasks).catch(() => {
-                                  // Ignore mask update errors
+            const segmentEveryN = Math.max(1, this.options.segmentEveryNFrames ?? 1);
+            const shouldSegment = this.frameCount++ % segmentEveryN === 0;
+            const segmentationPromise =
+                this.imageSegmenter && shouldSegment
+                    ? new Promise<void>((resolve, reject) => {
+                          try {
+                              this.imageSegmenter!.segmentForVideo(frame, performance.now(), (result) => {
+                                  this.updateMaskFromConfidences(result.confidenceMasks).catch(() => {
+                                      // Ignore mask update errors
+                                  });
+                                  result.close();
+                                  resolve();
                               });
-                              result.close();
-                              resolve();
-                          });
-                      } catch (e) {
-                          reject(e);
-                      }
-                  })
-                : Promise.resolve();
+                          } catch (e) {
+                              reject(e);
+                          }
+                      })
+                    : Promise.resolve();
 
             await this.drawFrame(frame);
             const canRender = this.canvas && this.canvas.width > 0 && this.canvas.height > 0;
@@ -833,14 +848,15 @@ export type BackgroundBlurProcessor = ProcessorWrapper<BackgroundOptions> & {
     enable: () => void;
     disable: () => void;
     isEnabled: () => boolean;
+    getActiveDelegate: () => 'GPU' | 'CPU' | undefined;
 };
 
 export const BackgroundBlur = (
     blurRadius?: number,
     segmenterOptions?: SegmenterOptions,
-    processorOptions?: ProcessorWrapperOptions
+    processorOptions?: BackgroundProcessorOptions
 ) => {
-    const options: BackgroundOptions = {
+    const options: BackgroundProcessorOptions = {
         blurRadius,
         segmenterOptions,
         ...processorOptions,
@@ -855,6 +871,7 @@ export const BackgroundBlur = (
     processor.enable = () => transformer.enable();
     processor.disable = () => transformer.disable();
     processor.isEnabled = () => transformer.isEnabled();
+    processor.getActiveDelegate = () => transformer.activeDelegate;
 
     return processor;
 };
