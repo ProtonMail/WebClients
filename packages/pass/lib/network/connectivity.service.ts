@@ -73,11 +73,12 @@ export const createConnectivityService = ({ api }: ConnectivityServiceOptions): 
         }
     };
 
-    /** Performs connectivity check by pinging server and updating
-     * status. Async-locked to prevent concurrent checks with brief
-     * delay for state synchronization */
+    /** Pings server and updates connectivity status. Async-locked to prevent concurrent
+     * checks. If requests are in-flight, skips the ping and waits for them to drain instead
+     * to avoid a redundant ping race that could produce contradictory state. */
     const check = asyncLock(async (): Promise<ConnectivityStatus> => {
-        await api({ ...ping(), unauthenticated: true }).catch(noop);
+        if (api.getState().pendingCount > 0) await api.idle();
+        else await api({ ...ping(), unauthenticated: true }).catch(noop);
 
         const apiState = api.getState();
         const status = intoConnectivityStatus(apiState);
