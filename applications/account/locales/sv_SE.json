@@ -1287,6 +1287,9 @@
       "Save and continue": [
         "Spara och fortsätt"
       ],
+      "Save changes": [
+        "Spara ändringar"
+      ],
       "Save ICS file": [
         "Spara ICS-fil"
       ],
@@ -12047,6 +12050,9 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Du kan inte hänvisa ${ MAIL_APP_NAME }-användare"
       ],
+      "You cannot undo this action.": [
+        "Du kan inte ångra denna åtgärd."
+      ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Du har inte angett en återställningsmetod så kontoåterställning är omöjlig om du glömmer ditt lösenord. Fortsätt utan återställningsmetod?"
       ],
@@ -12234,6 +12240,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ditt telefonnummer kommer endast att användas för denna engångsverifiering."
+      ],
+      "Your plan is limited to 10 versions for up to 7 days": [
+        "Ditt paket är begränsat till 10 versioner i upp till 7 dagar"
       ],
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "Dina senaste ändringar har publicerats. De kommer vara synliga för användare inom de närmaste timmarna."
@@ -12860,6 +12869,10 @@
       "${ nbDay } day": [
         "${ nbDay } dag",
         "${ nbDay } dagar"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } år",
+        "${ nbYear } år"
       ],
       "${ pricePerMonthWithCurrency } / month": [
         "${ pricePerMonthWithCurrency }/månad"

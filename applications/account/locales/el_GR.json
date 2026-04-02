@@ -1287,6 +1287,9 @@
       "Save and continue": [
         "Αποθήκευση και συνέχεια"
       ],
+      "Save changes": [
+        "Αποθήκευση αλλαγών"
+      ],
       "Save ICS file": [
         "Αποθήκευση αρχείου ICS"
       ],
@@ -12162,6 +12165,9 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Δεν μπορείτε να προτείνετε χρήστες του ${ MAIL_APP_NAME }."
       ],
+      "You cannot undo this action.": [
+        "Δεν μπορείτε να αναιρέσετε αυτήν την ενέργεια."
+      ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Δεν έχετε ορίσει μία μέθοδο ανάκτησης, με αποτέλεσμα η ανάκτηση λογαριασμού να είναι αδύνατη αν ξεχάσετε τον κωδικό πρόσβασής σας. Θέλετε να συνεχίσετε χωρίς μέθοδο ανάκτησης;"
       ],
@@ -12366,6 +12372,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ο αριθμός τηλεφώνου σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
+      ],
+      "Your plan is limited to 10 versions for up to 7 days": [
+        "Το πλάνο σας περιορίζεται σε 10 εκδόσεις για έως και 7 ημέρες"
       ],
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "Οι πρόσφατες αλλαγές σας έχουν δημοσιευτεί. Θα είναι ορατές στους χρήστες μέσα στις επόμενες ώρες."
@@ -12998,6 +13007,10 @@
       "${ nbDay } day": [
         "${ nbDay } ημέρα",
         "${ nbDay } ημέρες"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } έτος",
+        "${ nbYear } έτη"
       ],
       "${ pricePerMonthWithCurrency } / month": [
         "${ pricePerMonthWithCurrency } / μήνα"

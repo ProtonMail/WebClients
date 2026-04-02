@@ -324,6 +324,9 @@
       "Connected": [
         "已连接"
       ],
+      "Contact sales": [
+        "联系销售"
+      ],
       "Contact support": [
         "联系客服"
       ],
@@ -452,6 +455,9 @@
       ],
       "Delete account": [
         "删除账号"
+      ],
+      "Delete and confirm": [
+        "删除并确认"
       ],
       "Delete filter “${ Name }”": [
         "删除筛选器 “${ Name }”"
@@ -1287,6 +1293,9 @@
       "Save and continue": [
         "保存并继续"
       ],
+      "Save changes": [
+        "保存更改"
+      ],
       "Save ICS file": [
         "保存 ICS 文件"
       ],
@@ -1802,6 +1811,9 @@
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } 席位"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } 个 ${ MEET_APP_NAME } 许可证"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } 个写作助手许可证"
@@ -8887,6 +8899,9 @@
       "${ discountPercent }% discount": [
         "${ discountPercent }% 折扣"
       ],
+      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
+        "${ DRIVE_APP_NAME } 将不再保留您文件的先前版本！"
+      ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } 无效"
       ],
@@ -8916,6 +8931,12 @@
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } 也可以使用单一密码，该密码将同时替代登录密码和二级密码。要切换至单一密码模式，请输入您想使用的单一密码，然后点击保存。"
+      ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } 是一款端到端加密的视频会议解决方案。将其添加到您的套餐中即可主持安全会议。"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } 席位"
       ],
       "${ n } address": [
         "${ n } 个地址"
@@ -9183,6 +9204,9 @@
       ],
       "Activity Monitor": [
         "活动监视器"
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "添加 ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "为您的账户添加一个 @pm.me 邮箱地址。这个简短易记的域名代表 “${ MAIL_APP_NAME } me” 或 “私信我”"
@@ -9541,6 +9565,9 @@
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "CNET 编辑选择奖，评分 8.4 分（满分 10 分）"
       ],
+      "Code expired": [
+        "代码已过期"
+      ],
       "Coming soon": [
         "即将推出"
       ],
@@ -9606,6 +9633,9 @@
       ],
       "Create a label for the imported messages, a time range for this import, and the labels you would like to import.": [
         "给导入的邮件加标签，指定导入的时间范围，并选择要导入的标签。"
+      ],
+      "Create a new code on your TV and try again.": [
+        "请在电视上创建一个新代码并重试。"
       ],
       "Create a secure cloud for ${ value } member": [
         "为 ${ value } 成员创建一个安全云端"
@@ -9771,6 +9801,9 @@
       ],
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "降级将导致与 ${ VPN_APP_NAME } 服务器的所有连接中断。"
+      ],
+      "Download ${ VPN_APP_NAME }": [
+        "下载 ${ VPN_APP_NAME }"
       ],
       "Download current logs": [
         "下载当前日志"
@@ -9961,6 +9994,9 @@
       "Everything in ${ planOrAppName }": [
         "一切尽在 ${ planOrAppName }"
       ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "包含 ${ planOrAppName } 所有功能，外加:"
+      ],
       "Example: ${ spfExample }": [
         "示例：${ spfExample }"
       ],
@@ -10011,6 +10047,9 @@
       ],
       "finance": [
         "金融"
+      ],
+      "for ${ price }": [
+        "仅需 ${ price }"
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "要随时访问电子邮件并获得优化的移动体验，请下载我们的 ${ androidAppLink } 或 ${ iosAppLink }。"
@@ -10876,6 +10915,12 @@
       "Product reviews, rankings, or guides": [
         "产品评论、排名或指南"
       ],
+      "Professional": [
+        "专业版"
+      ],
+      "Protect this device too?": [
+        "同时保护此设备？"
+      ],
       "Protect your account from quantum computing threats with quantum-resistant cryptographic keys.": [
         "用量子抵抗密码密钥保护您的账户免受量子计算威胁"
       ],
@@ -11103,6 +11148,9 @@
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "登录 ${ MAIL_APP_NAME } 以激活您的地址"
+      ],
+      "Sign-in complete": [
+        "登录完成"
       ],
       "Signed up": [
         "已注册"
@@ -11404,6 +11452,12 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "验证时间可能长达一小时。验证成功后，不要删除 TXT 记录，因为需要它来确认您继续拥有该域名。"
       ],
+      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
+        "这将删除您文件中早于 ${ rententionLabel } 的所有历史版本。"
+      ],
+      "This will delete all previous versions of your files.": [
+        "此操作将删除您文件的所有先前版本！"
+      ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "这将拒绝访问 **${ email }**，您确定要继续吗？"
       ],
@@ -11602,6 +11656,9 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "升级以保留您的 ${ planTitle } 权益。"
       ],
+      "Upgrade to unlock": [
+        "升级以解锁"
+      ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "升级以解锁 ${ monitorLink }！"
       ],
@@ -11700,6 +11757,9 @@
       ],
       "Version ${ version }": [
         "版本 ${ version }"
+      ],
+      "Version history": [
+        "版本历史"
       ],
       "Version number successfully copied to clipboard": [
         "版本号已成功复制"
@@ -11860,6 +11920,9 @@
       "With ${ AUTHENTICATOR_APP_NAME }, you can:": [
         "使用 ${ AUTHENTICATOR_APP_NAME }，您可以："
       ],
+      "With a ${ boldProfessionalPlan } plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
+        "使用 ${ boldProfessionalPlan } 套餐，您可以为组织购买 ${ boldDedicatedServers }，并设置 ${ boldGateways } 来控制哪些用户可以访问它们。"
+      ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "使用加密的 ${ BRAND_NAME } 地址，您可以使用所有 ${ BRAND_NAME } 服务"
       ],
@@ -11992,6 +12055,9 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "您不能邀请其他 ${ MAIL_APP_NAME } 用户"
       ],
+      "You cannot undo this action.": [
+        "您无法撤销此操作。"
+      ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "您没有设置任何找回账户的方式，一旦忘记密码，账户将无法找回。是否继续？"
       ],
@@ -12106,6 +12172,9 @@
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "此后每 ${ renewCycle } 个月按 ${ renewAmountStr } 收费。您可以随时取消。"
       ],
+      "You're now signed in on your TV.": [
+        "您已在电视上登录。"
+      ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "您已经在 ${ MAX_SYNC_PAID_USER } 个 Gmail 地址上启用了转发功能。若要添加另一个，请先禁用其中一个。"
       ],
@@ -12189,6 +12258,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "您的电话号码将只会用于此一次性验证。"
+      ],
+      "Your plan is limited to 10 versions for up to 7 days": [
+        "您的计划仅限 10 个版本，最长 7 天"
       ],
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "您最近的更改已发布，用户将在几小时后看到这些更新。"
@@ -12815,6 +12887,9 @@
       "${ nbDay } day": [
         "${ nbDay } 天"
       ],
+      "${ nbYear } year": [
+        "${ nbYear } 年"
+      ],
       "${ pricePerMonthWithCurrency } / month": [
         "${ pricePerMonthWithCurrency } /月"
       ],
@@ -13333,6 +13408,9 @@
       ],
       "Don't ask again": [
         "不再询问"
+      ],
+      "Don't keep versions": [
+        "不保留版本"
       ],
       "Don't show this again": [
         "不再显示此内容"
@@ -14929,6 +15007,20 @@
         "您已达到 ${ MAX_CALENDAR_MEMBERS } 位成员的上限"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (适用于 ${ quantity } 位用户)"
+      ],
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } 许可证"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } 席位"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME } 席位"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }：用于重要对话的保密视频会议"
@@ -14960,6 +15052,9 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "端到端加密的屏幕共享和临时会议内聊天"
       ],
+      "Hosts can record meetings locally on their computers": [
+        "主持人可以在本地计算机上录制会议"
+      ],
       "Meeting recording": [
         "会议录制"
       ],
@@ -14977,9 +15072,15 @@
       ],
       "Up to ${ n } participant": [
         "最多 ${ n } 位参与者"
+      ],
+      "Video meetings, ${ n } participant": [
+        "视频会议，${ n } 位参与者"
       ]
     },
     "meet_2025: Info": {
+      "${ seats } seat included": [
+        "包含 ${ seats } 个席位"
+      ],
       "100 ${ BRAND_NAME } email addresses": [
         "100 个 ${ BRAND_NAME } 邮箱地址"
       ],
@@ -14994,6 +15095,9 @@
       ],
       "Email writing assistant": [
         "电子邮件写作助手"
+      ],
+      "Includes these features:": [
+        "包含以下功能："
       ],
       "Open source": [
         "开源"
@@ -15012,6 +15116,20 @@
       ],
       "Strict no-logs policy": [
         "严格的零日志政策"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "试用期间，您最多可以拥有 ${ TRIAL_MAX_MEET_SEATS } 个 ${ MEET_SHORT_APP_NAME } 席位。"
+      ]
+    },
+    "Meet_launch": {
+      "Add ${ planName }": [
+        "添加 ${ planName }"
+      ],
+      "Confidential video conferencing for the conversations that matter. Only ${ priceString } more each month.": [
+        "为重要通话而设计的机密视频会议，每月仅需再多付 ${ priceString }。"
+      ],
+      "Talk privately with ${ planName }": [
+        "使用 ${ planName } 进行私密通话"
       ]
     },
     "meet_signup_2025: title": {
@@ -15661,6 +15779,9 @@
       "Data breach monitoring": [
         "数据泄露监控"
       ],
+      "Data retention policies": [
+        "数据保留策略"
+      ],
       "Dedicated account manager": [
         "专门的客户经理"
       ],
@@ -15777,6 +15898,9 @@
       ],
       "Priority support & live chat": [
         "优先与客服实时沟通"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "私人 AI 聊天 (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "私人照片备份"
@@ -15933,6 +16057,9 @@
       ],
       "Vault sharing with up to ${ n } person": [
         "与多至 ${ n } 个人分享保险库"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "具备广告拦截器和恶意软件防护功能的 VPN"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我们会扫描暗网，检查您的 ${ BRAND_NAME } 地址或别名是否被泄露，一旦发现任何情况，我们会立即提醒您。"
@@ -16473,6 +16600,9 @@
       ],
       "Daily email notifications": [
         "每日邮件提醒"
+      ],
+      "Disabling this means you won't get in-app notifications about promotions, new features, new ${ BRAND_NAME } services, and reminders.": [
+        "禁用后，您将不会收到关于促销、新功能、新 ${ BRAND_NAME } 服务以及提醒的应用内通知。"
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "在您使用 ${ BRAND_NAME } 产品的第一个月里"
@@ -19884,6 +20014,9 @@
       ]
     },
     "Setting": {
+      "Enable Photos section": [
+        "启用照片版块"
+      ],
       "Get updates about comments via email": [
         "通过电子邮件获取评论更新"
       ],
@@ -20104,6 +20237,9 @@
       "Compare plans": [
         "对比套餐"
       ],
+      "Confirm payment": [
+        "确认支付"
+      ],
       "Confirm payment, access your Drive": [
         "确认付款并访问您的 Proton Drive"
       ],
@@ -20229,6 +20365,9 @@
       ],
       "Share and collaborate of files": [
         "文件共享与协作"
+      ],
+      "Sign up to ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }": [
+        "注册 ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }"
       ],
       "Sign up to get everything ${ BRAND_NAME } has to offer": [
         "立即注册，即可享受 ${ BRAND_NAME } 提供的所有服务"
@@ -21208,6 +21347,9 @@
       ],
       "${ n } VPN connection per user": [
         "每位用户可通过 ${ n } 台设备同时接入 VPN"
+      ],
+      "${ productName } for ${ count } user": [
+        "适用于 ${ count } 位用户的 ${ productName }"
       ],
       "${ UsedAddresses } address": [
         "${ UsedAddresses } 个地址"
@@ -22687,6 +22829,9 @@
       ],
       "Delete user?": [
         "删除用户?"
+      ],
+      "Delete version history?": [
+        "删除版本历史？"
       ],
       "Deny access to user?": [
         "拒绝用户访问？"

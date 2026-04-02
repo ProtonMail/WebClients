@@ -1260,6 +1260,9 @@
       "Save and continue": [
         "Uložit a pokračovat"
       ],
+      "Save changes": [
+        "Uložit změny"
+      ],
       "Save ICS file": [
         "Uložit soubor ICS"
       ],
@@ -12119,6 +12122,9 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Nelze doporučovat uživatelům ${ MAIL_APP_NAME }"
       ],
+      "You cannot undo this action.": [
+        "Tuto akci nemůžete vzít zpět."
+      ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Nenastavili jste e-mail pro obnovení, takže v případě ztráty hesla nebude možné účet obnovit. Pokračovat bez sekundárního e-mailu?"
       ],
@@ -12316,6 +12322,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaše telefonní číslo bude použito pouze pro toto jednorázové ověření."
+      ],
+      "Your plan is limited to 10 versions for up to 7 days": [
+        "Váš plán je limitovaný na 10 verzí až na 7 dní"
       ],
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "Vaše nedávné změny byly publikovány. Budou viditelné pro uživatele v následujících několika hodinách."
@@ -12962,6 +12971,12 @@
         "${ nbDay } dny",
         "${ nbDay } dnů",
         "${ nbDay } dnů"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } rok",
+        "${ nbYear } roky",
+        "${ nbYear } let",
+        "${ nbYear } let"
       ],
       "${ pricePerMonthWithCurrency } / month": [
         "${ pricePerMonthWithCurrency } / měsíc"
@@ -14404,7 +14419,7 @@
     },
     "Label (end date/advanced search)": {
       "To": [
-        "Komu"
+        "Do"
       ]
     },
     "Label BYOE": {

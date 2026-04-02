@@ -1052,6 +1052,9 @@
       "Save and continue": [
         "Zapisz i kontynuuj"
       ],
+      "Save changes": [
+        "Zapisz zmiany"
+      ],
       "Save SAML configuration": [
         "Zapisz konfigurację SAML"
       ],
@@ -9760,6 +9763,9 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Nie możesz polecić użytkowników poczty ${ MAIL_APP_NAME }"
       ],
+      "You cannot undo this action.": [
+        "Tej akcji nie można cofnąć."
+      ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Nie dodano metody odzyskiwania. Jeśli zapomnisz hasła, to nie odzyskasz już swojego konta. Czy chcesz przejść dalej bez dodawania metody odzyskiwania?"
       ],
@@ -9915,6 +9921,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Numer telefonu zostanie użyty tylko do jednorazowej weryfikacji."
+      ],
+      "Your plan is limited to 10 versions for up to 7 days": [
+        "Twój plan jest ograniczony do 10 wersji z ostatnich 7 dni"
       ],
       "Your recovery phrase": [
         "Twoje hasło odzyskiwania"
@@ -10391,6 +10400,12 @@
         "${ nbDay } dni",
         "${ nbDay } dni",
         "${ nbDay } dnia"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } rok",
+        "${ nbYear } lata",
+        "${ nbYear } lat",
+        "${ nbYear } roku"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Usługa jest tymczasowo niedostępna. Spróbuj ponownie później.)"

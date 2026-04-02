@@ -1287,6 +1287,9 @@
       "Save and continue": [
         "Kaydet ve ilerle"
       ],
+      "Save changes": [
+        "Değişiklikleri kaydet"
+      ],
       "Save ICS file": [
         "ICS dosyasını kaydet"
       ],
@@ -12162,6 +12165,9 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "${ MAIL_APP_NAME } kullanıcılarını kaynak gösteremezsiniz"
       ],
+      "You cannot undo this action.": [
+        "Bu işlemi geri alamazsınız."
+      ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Bir kurtarma yöntemi belirlemediniz. Parolanızı unutursanız hesabınızı kurtaramazsınız. Kurtarma yöntemi olmadan ilerlemek istiyor musunuz?"
       ],
@@ -12366,6 +12372,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Telefon numaranız yalnızca bu tek seferlik doğrulama için kullanılacak."
+      ],
+      "Your plan is limited to 10 versions for up to 7 days": [
+        "Tarifeniz 10 sürüm ve 7 gün ile sınırlıdır"
       ],
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "Son değişiklikleriniz yayınlandı. Önümüzdeki birkaç saat içinde kullanıcılar tarafından görülebilecek."
@@ -12998,6 +13007,10 @@
       "${ nbDay } day": [
         "${ nbDay } gün",
         "${ nbDay } gün"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } yıl",
+        "${ nbYear } yıl"
       ],
       "${ pricePerMonthWithCurrency } / month": [
         "${ pricePerMonthWithCurrency } / ay"
