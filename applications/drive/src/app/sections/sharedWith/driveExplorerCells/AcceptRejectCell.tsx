@@ -1,10 +1,11 @@
 import { c } from 'ttag';
+import { useShallow } from 'zustand/react/shallow';
 
 import { Button } from '@proton/atoms/Button/Button';
-import useLoading from '@proton/hooks/useLoading';
 import clsx from '@proton/utils/clsx';
 
 import type { CellDefinition } from '../../../statelessComponents/DriveExplorer/types';
+import { ItemType, useSharedWithMeStore } from '../useSharedWithMe.store';
 import { defaultSharedOnCellConfig } from './SharedOnCell';
 
 export interface AcceptRejectCellProps {
@@ -22,13 +23,21 @@ export const AcceptRejectCell = ({
     onRejectInvitation,
     className,
 }: AcceptRejectCellProps) => {
-    const [isAccepting, withAccepting] = useLoading();
+    const isBeingAccepted = useSharedWithMeStore(
+        useShallow((state) => {
+            const item = state.getSharedWithMeItem(uid);
+            if (item?.itemType !== ItemType.INVITATION) {
+                return false;
+            }
+            return item.isBeingAccepted ?? false;
+        })
+    );
 
     return (
         <div className={clsx('flex flex-nowrap', className)}>
             <Button
-                loading={isAccepting}
-                disabled={isAccepting}
+                loading={isBeingAccepted}
+                disabled={isBeingAccepted}
                 className="text-ellipsis"
                 color="norm"
                 shape="ghost"
@@ -36,14 +45,12 @@ export const AcceptRejectCell = ({
                 data-testid="share-accept-button"
                 onClick={(e: React.MouseEvent) => {
                     e.stopPropagation();
-                    void withAccepting(async () => {
-                        await onAcceptInvitation(uid, invitationUid);
-                    });
+                    void onAcceptInvitation(uid, invitationUid);
                 }}
             >
                 <span className="file-browser-list-item--accept-decline-text">{c('Action').t`Accept`}</span>
             </Button>
-            {!isAccepting && (
+            {!isBeingAccepted && (
                 <Button
                     className="text-ellipsis file-browser-list-item--decline"
                     color="norm"

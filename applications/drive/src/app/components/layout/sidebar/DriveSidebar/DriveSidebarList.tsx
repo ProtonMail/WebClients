@@ -5,9 +5,10 @@ import { c } from 'ttag';
 import { SidebarList } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
+import { useUserSettings } from '../../../../hooks/user';
 import { DevicesSidebar } from '../../../../sections/devices/connectedComponents/DevicesSidebar';
 import { DriveSidebarSharedWithMe } from '../../../../sections/sidebar/DriveSidebarSharedWithMe/DriveSidebarSharedWithMe';
-import { type ShareWithKey, useDriveSharingFlags, useUserSettings } from '../../../../store';
+import { type ShareWithKey, useDriveSharingFlags } from '../../../../store';
 import DriveSidebarFolders from './DriveSidebarFolders/DriveSidebarFolders';
 import DriveSidebarListItem from './DriveSidebarListItem';
 

@@ -17,19 +17,17 @@ import {
 import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { ProtonStoreProvider } from '@proton/redux-shared-store';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
-import type { UserModel } from '@proton/shared/lib/interfaces';
 import { DRAWER_VISIBILITY } from '@proton/shared/lib/interfaces';
-import type { UserSettingsResponse } from '@proton/shared/lib/interfaces/drive/userSettings';
 import { FlagProvider } from '@proton/unleash/proxy';
 import noop from '@proton/utils/noop';
 
 import { bootstrapApp } from './bootstrap';
 import config from './config';
+import { useUserSettingsStore } from './hooks/user';
 import { driveMetrics } from './modules/metrics';
 import { NotificationsBridge } from './modules/notifications';
 import type { DriveStore } from './redux-store/store';
 import { extraThunkArguments } from './redux-store/thunk';
-import { UserSettingsProvider } from './store';
 import { sendErrorReport } from './utils/errorHandling';
 import { getWebpackChunkFailedToLoadError } from './utils/errorHandling/WebpackChunkFailedToLoadError';
 import { Features, measureFeaturePerformance } from './utils/telemetry';
@@ -50,14 +48,10 @@ const MainContainerLazy = lazy(() =>
 );
 
 const defaultState: {
-    initialUser?: UserModel;
-    initialDriveUserSettings?: UserSettingsResponse;
     error?: { message: string } | undefined;
     showDrawerSidebar?: boolean;
     store?: DriveStore;
 } = {
-    initialUser: undefined,
-    initialDriveUserSettings: undefined,
     error: undefined,
     showDrawerSidebar: false,
 };
@@ -75,10 +69,9 @@ const App = () => {
                 // we have to pass the new api now it's extended by the bootstrap
                 feature.end(undefined, extraThunkArguments.api);
 
+                useUserSettingsStore.getState().initialize(user, driveUserSettings);
                 setState({
                     showDrawerSidebar: userSettings.HideSidePanel === DRAWER_VISIBILITY.SHOW,
-                    initialDriveUserSettings: driveUserSettings,
-                    initialUser: user,
                     store,
                 });
 
@@ -102,7 +95,7 @@ const App = () => {
                 if (state.error) {
                     return <StandardLoadErrorPage errorMessage={state.error.message} />;
                 }
-                if (!state.store || !state.initialUser || !state.initialDriveUserSettings) {
+                if (!state.store) {
                     return <LoaderPage />;
                 }
                 return (
@@ -122,16 +115,9 @@ const App = () => {
                                                         }}
                                                     >
                                                         <StandardPrivateApp noModals>
-                                                            <UserSettingsProvider
-                                                                initialUser={state.initialUser}
-                                                                initialDriveUserSettings={
-                                                                    state.initialDriveUserSettings
-                                                                }
-                                                            >
-                                                                <Suspense fallback={<LoaderPage />}>
-                                                                    <MainContainerLazy />
-                                                                </Suspense>
-                                                            </UserSettingsProvider>
+                                                            <Suspense fallback={<LoaderPage />}>
+                                                                <MainContainerLazy />
+                                                            </Suspense>
                                                         </StandardPrivateApp>
                                                     </ErrorBoundary>
                                                 </DrawerProvider>

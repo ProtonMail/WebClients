@@ -5,7 +5,7 @@ import { c, msgid } from 'ttag';
 import clsx from '@proton/utils/clsx';
 
 import { useInvitationCountStore } from '../../../zustand/share/invitationCount.store';
-import { useInvitationsLoader } from '../../sharedWith/loaders/useInvitationsLoader';
+import { loadInvitations } from '../../sharedWith/loaders/loadInvitations';
 import { useSharedWithMeStore } from '../../sharedWith/useSharedWithMe.store';
 import { DriveSidebarListItem } from '../DriveSidebarListItem';
 
@@ -14,8 +14,6 @@ interface DriveSidebarSharedWithMeProps {
     collapsed: boolean;
 }
 export const DriveSidebarSharedWithMe = ({ shareId, collapsed }: DriveSidebarSharedWithMeProps) => {
-    const { loadInvitations } = useInvitationsLoader();
-
     const invitationsCount = useInvitationCountStore((state) => state.invitationCount);
 
     useEffect(() => {
@@ -24,7 +22,7 @@ export const DriveSidebarSharedWithMe = ({ shareId, collapsed }: DriveSidebarSha
         return () => {
             abortController.abort();
         };
-    }, [loadInvitations]);
+    }, []);
 
     useEffect(() => {
         const abortController = new AbortController();
@@ -38,7 +36,7 @@ export const DriveSidebarSharedWithMe = ({ shareId, collapsed }: DriveSidebarSha
             abortController.abort();
             void useSharedWithMeStore.getState().unsubscribeToEvents('driveSidebar');
         };
-    }, [loadInvitations]);
+    }, []);
 
     const invitationsCountTitle = c('Info').ngettext(
         msgid`${invitationsCount} pending invitation`,

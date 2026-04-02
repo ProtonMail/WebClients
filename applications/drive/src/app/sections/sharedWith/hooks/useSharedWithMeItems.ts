@@ -5,23 +5,21 @@ import { useShallow } from 'zustand/react/shallow';
 import { NodeType, getDrive, getDriveForPhotos, getDrivePerNodeType, splitNodeUid } from '@proton/drive';
 import { loadThumbnail } from '@proton/drive/modules/thumbnails';
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
-import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
+import { isNativeProtonDocsAppFile } from '@proton/shared/lib/helpers/mimetype';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { useFlagsDriveSDKPreview } from '../../../flags/useFlagsDriveSDKPreview';
 import useDriveNavigation from '../../../hooks/drive/useNavigate';
+import { useUserSettings } from '../../../hooks/user';
 import { useDrivePreviewModal } from '../../../modals/preview';
 import { useSelectionStore } from '../../../modules/selection';
 import type { SortConfig, SortField } from '../../../modules/sorting/types';
-import { useDocumentActions, useUserSettings } from '../../../store';
-import { useDriveDocsFeatureFlag } from '../../../store/_documents';
+import { getOpenInDocsInfo, openDocsOrSheetsDocument } from '../../../utils/docs/openInDocs';
 import { ItemType, useSharedWithMeStore } from '../useSharedWithMe.store';
 import { useBookmarksActions } from './useBookmarksActions';
 
 export const useSharedWithMeItems = () => {
-    const { navigateToLink, navigateToAlbum } = useDriveNavigation();
-    const { openDocument } = useDocumentActions();
-    const { isDocsEnabled } = useDriveDocsFeatureFlag();
+    const { navigateToNodeUid, navigateToAlbum } = useDriveNavigation();
     const { openBookmark } = useBookmarksActions();
     const { layout } = useUserSettings();
     const {
@@ -117,61 +115,50 @@ export const useSharedWithMeItems = () => {
         .filter(isTruthy);
 
     const handleOpenItem = useCallback(
-        (uid: string) => {
+        async (uid: string) => {
             const item = getSharedWithMeStoreItem(uid);
             if (!item || item.itemType === ItemType.INVITATION) {
                 return;
             }
             if (item.itemType === ItemType.BOOKMARK) {
-                void openBookmark(item.bookmark.url);
+                await openBookmark(item.bookmark.url);
                 return;
             }
             document.getSelection()?.removeAllRanges();
 
             const { nodeId } = splitNodeUid(item.nodeUid);
-            if (item.mediaType && isProtonDocsDocument(item.mediaType)) {
-                if (isDocsEnabled) {
-                    return openDocument({
-                        type: 'doc',
-                        linkId: nodeId,
-                        shareId: item.shareId ?? '',
+            if (item.mediaType && isNativeProtonDocsAppFile(item.mediaType)) {
+                const openInDocsInfo = getOpenInDocsInfo(item.mediaType);
+                if (openInDocsInfo) {
+                    await openDocsOrSheetsDocument({
+                        uid: item.nodeUid,
+                        type: openInDocsInfo.type,
+                        isNative: openInDocsInfo.isNative,
                         openBehavior: 'tab',
                     });
+                    return;
                 }
-                return;
-            } else if (item.mediaType && isProtonDocsSpreadsheet(item.mediaType)) {
-                if (isDocsEnabled) {
-                    return openDocument({
-                        type: 'sheet',
-                        linkId: nodeId,
-                        shareId: item.shareId ?? '',
-                        openBehavior: 'tab',
-                    });
-                }
-                return;
             }
 
             if (item.type === NodeType.Album) {
-                navigateToAlbum(item.shareId ?? '', nodeId);
+                navigateToAlbum(item.shareId, nodeId);
                 return;
             }
 
             if ((item.type === NodeType.File || item.type === NodeType.Photo) && isSDKPreviewEnabled) {
                 showPreviewModal({
                     drive: getDrivePerNodeType(item.type),
-                    deprecatedContextShareId: item.shareId ?? '',
+                    deprecatedContextShareId: '',
                     nodeUid: item.nodeUid,
                 });
                 return;
             }
 
-            navigateToLink(item.shareId ?? '', nodeId, item.type === NodeType.File || item.type === NodeType.Photo);
+            await navigateToNodeUid(item.nodeUid);
         },
         [
-            navigateToLink,
+            navigateToNodeUid,
             openBookmark,
-            isDocsEnabled,
-            openDocument,
             navigateToAlbum,
             getSharedWithMeStoreItem,
             isSDKPreviewEnabled,
