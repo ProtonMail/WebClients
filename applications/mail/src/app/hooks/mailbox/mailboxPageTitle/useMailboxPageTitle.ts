@@ -8,9 +8,14 @@ import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
-import { getCountersByLabelId } from '../../helpers/counter';
-import { getLabelName } from '../../helpers/labels';
-import { isConversationMode } from '../../helpers/mailSettings';
+import { useCategoriesView } from 'proton-mail/components/categoryView/useCategoriesView';
+import { selectCategoryIDs } from 'proton-mail/store/elements/elementsSelectors';
+import { useMailSelector } from 'proton-mail/store/hooks';
+
+import { getCountersByLabelId } from '../../../helpers/counter';
+import { getLabelName } from '../../../helpers/labels';
+import { isConversationMode } from '../../../helpers/mailSettings';
+import { getUnreadCountForLabel } from './mailboxPageTitleHelpers';
 
 export const useMailboxPageTitle = (labelID: string) => {
     const location = useLocation();
@@ -21,13 +26,16 @@ export const useMailboxPageTitle = (labelID: string) => {
     const [user] = useUser();
     const [conversationCounts] = useConversationCounts();
     const [messageCounts] = useMessageCounts();
+    const categoryIDs = useMailSelector(selectCategoryIDs);
+
+    const { categoryViewAccess } = useCategoriesView();
 
     useEffect(() => {
         const conversationMode = isConversationMode(labelID, mailSettings, location);
         const counters = conversationMode ? conversationCounts : messageCounts;
         const countersByLabelId = getCountersByLabelId(counters);
 
-        const unreadEmails = countersByLabelId[labelID]?.Unread ?? 0;
+        const unreadEmails = getUnreadCountForLabel(labelID, categoryViewAccess ? categoryIDs : [], countersByLabelId);
         const unreadString = unreadEmails > 0 ? `(${unreadEmails}) ` : '';
 
         const labelName = getLabelName(labelID, labels, folders);
@@ -35,6 +43,16 @@ export const useMailboxPageTitle = (labelID: string) => {
 
         // We show the unread count in the title if not present in the favicon
         document.title = mailSettings.UnreadFavicon ? mainTitle : `${unreadString}${mainTitle}`;
-        // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-EEF30C
-    }, [labelID, mailSettings, user.Email, labels, folders, conversationCounts, messageCounts]);
+    }, [
+        labelID,
+        mailSettings,
+        user.Email,
+        labels,
+        folders,
+        conversationCounts,
+        messageCounts,
+        categoryIDs,
+        categoryViewAccess,
+        location,
+    ]);
 };
