@@ -22,7 +22,7 @@ export function RootContainer({ documentType, systemMode }: ContainerProps) {
     <>
       <ThemeStyles />
       <ApplicationProvider application={bridgeState.application}>
-        <EditorStateProvider editorState={bridgeState.editorState}>
+        <EditorStateProvider systemMode={systemMode}>
           <NotificationsProvider>
             <App documentType={documentType} systemMode={systemMode} bridgeState={bridgeState} />
             <NotificationsChildren />

@@ -21,7 +21,7 @@ import type { EncryptComment } from '../../UseCase/EncryptComment'
 import type { GetDocumentMeta } from '../../UseCase/GetDocumentMeta'
 import type { GetNode } from './../../UseCase/GetNode'
 import type { HandleRealtimeCommentsEvent } from '../../UseCase/HandleRealtimeCommentsEvent'
-import type { InternalEventBusInterface, CommentControllerInterface } from '@proton/docs-shared'
+import type { InternalEventBusInterface, CommentControllerInterface, SyncedEditorState } from '@proton/docs-shared'
 import type { FetchDecryptedCommit } from '../../UseCase/FetchDecryptedCommit'
 import type { LoadDocument } from '../../UseCase/LoadDocument'
 import type { LoadThreads } from '../../UseCase/LoadThreads'
@@ -67,6 +67,7 @@ export class DocLoader implements DocLoaderInterface<DocumentState> {
     private logger: LoggerInterface,
     private unleashClient: UnleashClient,
     private sizeTracker: DocSizeTracker,
+    private syncedEditorState: SyncedEditorState,
   ) {}
 
   destroy(): void {
@@ -130,6 +131,7 @@ export class DocLoader implements DocLoaderInterface<DocumentState> {
       documentType,
       this.sizeTracker,
       'private',
+      this.syncedEditorState,
     )
     realtime.initializeConnection()
 

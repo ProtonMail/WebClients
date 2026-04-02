@@ -111,4 +111,6 @@ export interface EditorRequiresClientMethods {
   handleFileMenuAction(action: FileMenuAction): Promise<void>
 
   checkIfFeatureFlagIsEnabled(featureFlag: FeatureFlag): Promise<boolean>
+
+  reloadClient(): Promise<void>
 }

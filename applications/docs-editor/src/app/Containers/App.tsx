@@ -44,10 +44,8 @@ import noop from '@proton/utils/noop'
 import type { EditorState, BaseSelection, SerializedLexicalNode } from 'lexical'
 import type { useBridge } from '../Lib/useBridge'
 import useEffectOnce from '@proton/hooks/useEffectOnce'
-import { useEditorStateValues } from '../Lib/useEditorStateValues'
 import { useEditorState } from './EditorStateProvider'
 import { IS_CHROME } from '../Shared/environment'
-import { useStateRef } from '../Hooks/useStateRef'
 import type { DocumentType } from '@proton/drive-store/store/_documents'
 import { SpreadsheetProvider } from '@rowsncolumns/spreadsheet'
 import type { SpreadsheetRef } from './Spreadsheet/Spreadsheet'
@@ -58,6 +56,7 @@ import { uint8ArrayToUtf8String } from '@proton/crypto/lib/utils'
 import { ErrorBoundary } from '@proton/components'
 import type { OpenLinkEventData } from './Spreadsheet/constants'
 import { OPEN_LINK_EVENT } from './Spreadsheet/constants'
+import { useStore } from 'zustand'
 
 type AppProps = {
   documentType: DocumentType
@@ -68,20 +67,18 @@ type AppProps = {
 export function App({ documentType, systemMode, bridgeState }: AppProps) {
   const { application, bridge, docState, docMap, editorConfig, setEditorConfig, didSetInitialConfig } = bridgeState
   const { suggestionsEnabled } = useSyncedState()
-  const { editorState } = useEditorState()
-  const { userMode } = useEditorStateValues()
-  const userModeRef = useStateRef(userMode)
+  const { userMode, setUserMode, editorHidden, setEditorHidden, editingLocked, setEditingLocked } =
+    useStore(useEditorState())
 
   const [isPublicMode, setIsPublicMode] = useState(false)
   const [editorError, setEditorError] = useState<Error | undefined>(undefined)
-  const [editorHidden, setEditorHidden] = useState(true)
-  const [editingLocked, setEditingLocked] = useState(true)
 
+  const isSuggestionMode = userMode === EditorUserMode.Suggest
   useEffect(() => {
-    if (userMode === EditorUserMode.Suggest && !suggestionsEnabled) {
-      editorState.userMode = EditorUserMode.Edit
+    if (isSuggestionMode && !suggestionsEnabled) {
+      setUserMode(EditorUserMode.Edit)
     }
-  }, [userMode, suggestionsEnabled, editorState])
+  }, [isSuggestionMode, setUserMode, suggestionsEnabled])
 
   const [showTreeView, setShowTreeView] = useState(false)
 
@@ -325,7 +322,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
 
         const userCanEdit = application.getRole().canEdit()
         if (!userCanEdit) {
-          editorState.userMode = EditorUserMode.Preview
+          setUserMode(EditorUserMode.Preview)
         }
 
         if (editorInitializationConfig) {
@@ -483,15 +480,16 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
 
     notifyParentEditorIsReady()
   }, [
+    application,
+    applyBeforePrintFixesForChrome,
     bridge,
     docMap,
-    application,
     docState,
     notifyParentEditorIsReady,
+    setEditingLocked,
     setEditorConfig,
-    applyBeforePrintFixesForChrome,
-    userModeRef,
-    editorState,
+    setEditorHidden,
+    setUserMode,
   ])
 
   useEffect(() => {
@@ -514,9 +512,9 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
         return
       }
 
-      editorState.userMode = mode
+      setUserMode(mode)
     },
-    [application, editorState, suggestionsEnabled],
+    [application, setUserMode, suggestionsEnabled],
   )
 
   useEffect(() => {
@@ -631,7 +629,6 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
     )
   }
 
-  const isSuggestionMode = userMode === EditorUserMode.Suggest
   const isPreviewMode = systemMode === EditorSystemMode.Edit && userMode === EditorUserMode.Preview
 
   return (

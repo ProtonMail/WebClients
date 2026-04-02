@@ -16,7 +16,9 @@ import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
 import debounce from 'lodash/debounce'
 import { getNodeLatestSafe } from '../../Utils/getNodeLatestSafe'
 import { DELETE_TABLE_COMMAND } from './Commands'
-import { useEditorStateValues } from '../../Lib/useEditorStateValues'
+import { useStore } from 'zustand'
+import { useEditorState } from '../../Containers/EditorStateProvider'
+import { EditorUserMode } from '../../Lib/EditorUserMode'
 
 type MenuPosition = {
   x: number
@@ -28,7 +30,8 @@ export function TableMenu() {
   const isEditable = useLexicalEditable()
   const menuRef = useRef<HTMLDivElement>(null)
 
-  const { isSuggestionMode } = useEditorStateValues()
+  const userMode = useStore(useEditorState(), (state) => state.userMode)
+  const isSuggestionMode = userMode === EditorUserMode.Suggest
 
   const [tableNode, setTableNode] = useState<TableNode | null>(null)
 

@@ -130,6 +130,7 @@ export class PublicDocLoader implements DocLoaderInterface<PublicDocumentState> 
         documentType,
         this.sizeTracker,
         'public',
+        this.syncedEditorState,
       )
 
       realtime.initializeConnection()
