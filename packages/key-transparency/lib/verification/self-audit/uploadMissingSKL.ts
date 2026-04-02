@@ -3,7 +3,7 @@ import { getSignedKeyList } from '@proton/shared/lib/keys';
 import { getActiveAddressKeys, getNormalizedActiveAddressKeys } from '@proton/shared/lib/keys/getActiveKeys';
 
 import { fetchProof, updateSignedKeyList } from '../../helpers/apiHelpers';
-import { throwKTError } from '../../helpers/utils';
+import { KT_ERROR_TYPE, throwKTError } from '../../helpers/utils';
 import { saveSKLToLS } from '../../storage/saveSKLToLS';
 import { verifyProofOfAbsenceForAllRevision } from '../verifyProofs';
 
@@ -14,7 +14,7 @@ export const uploadMissingSKL: UploadMissingSKL = async ({ ktUserContext, addres
     const skl = await getSignedKeyList(activeKeys, address, async () => {});
     const { Revision, ExpectedMinEpochID } = await updateSignedKeyList(api, address.ID, skl);
     if (!ExpectedMinEpochID) {
-        return throwKTError('Returned SKL has no ExpectedMinEpochID', { addressID: address.ID });
+        return throwKTError('Returned SKL has no ExpectedMinEpochID', KT_ERROR_TYPE.LOCAL, { addressID: address.ID });
     }
     await saveSKLToLS({
         ktUserContext,

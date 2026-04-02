@@ -7,8 +7,8 @@ import { userKeysThunk } from '@proton/account/userKeys';
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
 import { CryptoProxy, serverTime } from '@proton/crypto';
-import { getKTLocalStorage } from '@proton/key-transparency/storage';
 import {
+    KT_ERROR_TYPE,
     StaleEpochError,
     getLatestEpoch,
     getSelfAuditInterval,
@@ -16,6 +16,7 @@ import {
 } from '@proton/key-transparency/helpers';
 import type { SelfAuditResult } from '@proton/key-transparency/interfaces';
 import { reportSelfAuditErrors } from '@proton/key-transparency/shared';
+import { getKTLocalStorage } from '@proton/key-transparency/storage';
 import { selfAudit } from '@proton/key-transparency/verification';
 import { useDispatch } from '@proton/redux-shared-store';
 import { CacheType } from '@proton/redux-utilities';
@@ -32,7 +33,7 @@ const ignoreError = (error: any): boolean => {
 
 const reportError = (error: any, tooManyRetries: boolean) => {
     if (tooManyRetries || !ignoreError(error)) {
-        ktSentryReportError(error, { context: 'runSelfAudit' });
+        ktSentryReportError(error, KT_ERROR_TYPE.LOCAL, { context: 'runSelfAudit' });
     }
 };
 

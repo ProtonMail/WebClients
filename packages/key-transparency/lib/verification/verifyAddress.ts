@@ -1,7 +1,7 @@
 import type { Api, FetchedSignedKeyList } from '@proton/shared/lib/interfaces';
 
 import { fetchProof } from '../helpers/apiHelpers';
-import { throwKTError } from '../helpers/utils';
+import { KT_ERROR_TYPE, throwKTError } from '../helpers/utils';
 import type { Epoch } from '../interfaces';
 import {
     verifyProofOfAbsenceForAllRevision,
@@ -23,7 +23,7 @@ export const verifyAddressIsObsolete = async (
 ) => {
     const { Revision } = signedKeyList;
     if (!Revision) {
-        return throwKTError('Obsolescence proof with incomplete information', {
+        return throwKTError('Obsolescence proof with incomplete information', KT_ERROR_TYPE.LOCAL, {
             email,
             signedKeyList,
         });

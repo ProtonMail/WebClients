@@ -2,7 +2,7 @@ import type { Certificate, GeneralName } from 'pkijs';
 
 import type { KT_CERTIFICATE_ISSUER } from '../constants/constants';
 import { SCT_THRESHOLD, epochChainVersion } from '../constants/constants';
-import { getBaseDomain, ktSentryReport, throwKTError } from '../helpers/utils';
+import { getBaseDomain, KT_ERROR_TYPE, ktSentryReport, throwKTError } from '../helpers/utils';
 
 const importCertificates = () =>
     import(
@@ -88,14 +88,14 @@ export const verifyAltName = async (
     CertificateTime: number
 ) => {
     if (!certificate.extensions) {
-        return throwKTError('Epoch certificate does not have extensions', {
+        return throwKTError('Epoch certificate does not have extensions', KT_ERROR_TYPE.SYSTEM, {
             extensions: JSON.stringify(certificate.extensions),
         });
     }
 
     const altNamesExt = certificate.extensions.find((ext) => ext.extnID === '2.5.29.17');
     if (!altNamesExt) {
-        return throwKTError('Epoch certificate does not have AltName extension', {
+        return throwKTError('Epoch certificate does not have AltName extension', KT_ERROR_TYPE.SYSTEM, {
             altNamesExt: JSON.stringify(altNamesExt),
         });
     }
@@ -118,7 +118,7 @@ export const verifyAltName = async (
             32
         )}.${CertificateTime}.${EpochID}.${epochChainVersion}.${baseDomain}` !== alternativeName
     ) {
-        return throwKTError('Epoch certificate alternative name does not match', {
+        return throwKTError('Epoch certificate alternative name does not match', KT_ERROR_TYPE.SYSTEM, {
             ChainHash,
             EpochID,
             alternativeName,
@@ -155,7 +155,7 @@ export const verifyCertChain = async (
     const list = rootCertificates.get(CertificateIssuer) || [];
     const rootCerts = await Promise.all(list.map((cert) => parseCertificate(cert)));
     if (!rootCerts?.length) {
-        return throwKTError('Unknown issuer', {
+        return throwKTError('Unknown issuer', KT_ERROR_TYPE.SYSTEM, {
             CertificateIssuer,
         });
     }
@@ -167,7 +167,7 @@ export const verifyCertChain = async (
     });
     const verificationResult = await chainEngine.verify();
     const throwError = () => {
-        return throwKTError("Epoch certificate did not pass verification against issuer's certificate chain", {
+        return throwKTError("Epoch certificate did not pass verification against issuer's certificate chain", KT_ERROR_TYPE.SYSTEM, {
             certChain: JSON.stringify(certChain.map((cert) => printCertificate(cert))),
             resultMessage: verificationResult.resultMessage,
         });
@@ -225,7 +225,7 @@ export const verifySCT = async (certificate: Certificate, issuerCert: Certificat
         const verificationResult = await verifySCTsForCertificate(certificate, issuerCert, logs, i)
             .catch((error) => {
                 certificate.extensions = originalCertificateExtensions;
-                ktSentryReport('SCT verification failed', {
+                ktSentryReport('SCT verification failed', KT_ERROR_TYPE.SYSTEM, {
                     errorMessage: error.message,
                     certificate: printCertificate(certificate),
                     issuerCert: printCertificate(issuerCert),
@@ -237,7 +237,7 @@ export const verifySCT = async (certificate: Certificate, issuerCert: Certificat
             });
 
         if (verificationResult.length !== 1) {
-            throw throwKTError('Unexpected return value from `verifySCTsForCertificate`', {
+            throw throwKTError('Unexpected return value from `verifySCTsForCertificate`', KT_ERROR_TYPE.SYSTEM, {
                 scts: JSON.stringify(scts),
                 verificationResult: JSON.stringify(verificationResult),
                 certificate: printCertificate(certificate),
@@ -263,7 +263,7 @@ export const verifySCT = async (certificate: Certificate, issuerCert: Certificat
     }
 
     if (verifiedSctsFromOperators.size < SCT_THRESHOLD) {
-        return throwKTError('The number of verified SCTs does not reach the number of operator threshold', {
+        return throwKTError('The number of verified SCTs does not reach the number of operator threshold', KT_ERROR_TYPE.SYSTEM, {
             scts: JSON.stringify(scts),
             certificate: printCertificate(certificate),
             issuerCert: printCertificate(issuerCert),
@@ -281,7 +281,7 @@ export const parseCertTime = async (cert: Certificate) => {
             returnedDate = cert.notBefore.value.getTime();
             break;
         default:
-            return throwKTError("Certificate's notBefore date is invalid", {
+            return throwKTError("Certificate's notBefore date is invalid", KT_ERROR_TYPE.SYSTEM, {
                 certType: cert.notBefore.type,
             });
     }

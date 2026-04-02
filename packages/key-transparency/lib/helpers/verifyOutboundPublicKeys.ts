@@ -2,7 +2,7 @@ import { KeyTransparencyActivation, type VerifyOutboundPublicKeys } from '@proto
 
 import { verifyPublicKeysAddressAndCatchall } from '../verification/verifyKeys';
 import { getLatestEpoch } from './getLatestEpoch';
-import { ktSentryReportError } from './utils';
+import { KT_ERROR_TYPE, ktSentryReportError } from './utils';
 
 export const verifyOutboundPublicKeys: VerifyOutboundPublicKeys = async ({
     ktUserContext,
@@ -24,7 +24,7 @@ export const verifyOutboundPublicKeys: VerifyOutboundPublicKeys = async ({
         address,
         catchAll,
     }).catch((error) => {
-        ktSentryReportError(error, { context: 'VerifyOutboundPublicKeys' });
+        ktSentryReportError(error, KT_ERROR_TYPE.LOCAL, { context: 'VerifyOutboundPublicKeys' });
         return {};
     });
 };

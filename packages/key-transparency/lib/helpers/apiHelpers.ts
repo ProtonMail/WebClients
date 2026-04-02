@@ -14,7 +14,7 @@ import { KT_VE_SIGNING_CONTEXT, KT_VE_VERIFICATION_CONTEXT } from '../constants/
 import type { Epoch, Proof, VerifiedEpoch } from '../interfaces';
 import { verifyEpoch } from '../verification/verifyEpochs';
 import { getEpochsRoute, getLatestVerifiedEpochRoute, getProofRoute, getSingleEpochRoute, uploadVerifiedEpochRoute } from './api';
-import { StaleEpochError, isTimestampOlderThanThreshold, isTimestampTooOld, throwKTError } from './utils';
+import { StaleEpochError, isTimestampOlderThanThreshold, isTimestampTooOld, throwKTError, KT_ERROR_TYPE } from './utils';
 
 /**
  * Fetch the latest issued epoch. Note that there is no guarantee that the
@@ -30,10 +30,14 @@ export const fetchLatestEpoch = async (api: Api, verify: boolean = true): Promis
     if (verify) {
         const certificateTimestamp = await verifyEpoch(lastEpoch);
         if (isTimestampTooOld(certificateTimestamp)) {
-            return throwKTError('Certificate timestamp of alleged latest epoch is older than MAX_EPOCH_INTERVAL', {
-                lastEpoch: JSON.stringify(lastEpoch),
-                certificateTimestamp,
-            });
+            return throwKTError(
+                'Certificate timestamp of alleged latest epoch is older than MAX_EPOCH_INTERVAL',
+                KT_ERROR_TYPE.SYSTEM,
+                {
+                    lastEpoch: JSON.stringify(lastEpoch),
+                    certificateTimestamp,
+                }
+            );
         }
     }
     return lastEpoch;
@@ -48,7 +52,7 @@ export const fetchLatestEpoch = async (api: Api, verify: boolean = true): Promis
 export const fetchEpochByEpochID = async (api: Api, epochID: number, verify: boolean = true): Promise<Epoch> => {
     const epoch = await api<Epoch>(getSingleEpochRoute({ EpochID: epochID }));
     if (isTimestampOlderThanThreshold(epoch.ClaimedTime)) {
-        throw throwKTError('Epoch is older than threshold time');
+        throw throwKTError('Epoch is older than threshold time', KT_ERROR_TYPE.SYSTEM);
     }
     if (verify) {
         await verifyEpoch(epoch, new Date(epoch.ClaimedTime));
