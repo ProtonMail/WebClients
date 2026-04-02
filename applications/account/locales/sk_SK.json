@@ -1287,6 +1287,9 @@
       "Save and continue": [
         "Uložiť a pokračovať"
       ],
+      "Save changes": [
+        "Uložiť zmeny"
+      ],
       "Save ICS file": [
         "Uložiť ICS súbor"
       ],
@@ -12424,6 +12427,9 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Nemôžete odporúčať používateľom ${ MAIL_APP_NAME }"
       ],
+      "You cannot undo this action.": [
+        "Túto akciu nie je možné vrátiť späť."
+      ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Nenastavili ste metódu obnovenia, takže obnovenie konta nebude možné, ak zabudnete heslo. Pokračovať bez metódy obnovy?"
       ],
@@ -12636,6 +12642,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaše telefónne číslo bude použité iba pre toto jednorazové overenie."
+      ],
+      "Your plan is limited to 10 versions for up to 7 days": [
+        "Váš plán je limitovaný na 10 verzií do 7 dní"
       ],
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "Vaše nedávne zmeny boli publikované. Budú viditeľné pre používateľov v priebehu nasledujúcich niekoľkých hodín."
@@ -13282,6 +13291,12 @@
         "${ nbDay } dni",
         "${ nbDay } dní",
         "${ nbDay } dní"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } rok",
+        "${ nbYear } roky",
+        "${ nbYear } rokov",
+        "${ nbYear } rokov"
       ],
       "${ pricePerMonthWithCurrency } / month": [
         "${ pricePerMonthWithCurrency } / mesiac"

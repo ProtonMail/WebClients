@@ -1100,6 +1100,9 @@
       "Save and continue": [
         "Shrani in nadaljuj"
       ],
+      "Save changes": [
+        "Shrani spremembe"
+      ],
       "Save ICS file": [
         "Shrani datoteko ICS"
       ],
@@ -9855,6 +9858,9 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Ne morete predlagati uporabnikov ${ MAIL_APP_NAME }"
       ],
+      "You cannot undo this action.": [
+        "Tega dejanja ne morete razveljaviti."
+      ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Niste nastavili načina za obnovitev, zato obnovitev računa ne bo mogoča, če pozabite geslo. Nadaljujte brez načina za obnovitev?"
       ],
@@ -10001,6 +10007,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaša telefonska številka bo uporabljena le za to enkratno preverjanje."
+      ],
+      "Your plan is limited to 10 versions for up to 7 days": [
+        "Vaš paket je omejen na 10 različic do 7 dni"
       ],
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "Vaše nedavne spremembe so bile objavljene. Uporabnikom bodo vidne v naslednjih nekaj urah."
@@ -10482,6 +10491,12 @@
         "${ nbDay } dnevi",
         "${ nbDay } dneva",
         "${ nbDay } dni"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } leto",
+        "${ nbYear } leti",
+        "${ nbYear } let",
+        "${ nbYear } let"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Začasno ni na voljo. Poskusite znova pozneje.)"

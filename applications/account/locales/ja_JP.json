@@ -1263,6 +1263,9 @@
       "Save and continue": [
         "保存して続ける"
       ],
+      "Save changes": [
+        "変更を保存"
+      ],
       "Save ICS file": [
         "ICSファイルを保存する"
       ],
@@ -11690,6 +11693,9 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "${ MAIL_APP_NAME } のユーザーは招待できません"
       ],
+      "You cannot undo this action.": [
+        "この操作は取り消すことができません。"
+      ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "回復手段を設定していないため、パスワードを忘れた場合にはアカウントを回復できません。回復手段を設定しないまま続行しますか？"
       ],
@@ -11872,6 +11878,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "電話番号は、この一度限りの認証にのみ使用されます。"
+      ],
+      "Your plan is limited to 10 versions for up to 7 days": [
+        "あなたのプランでは、最大 7 日間 10 バージョンに制限されています"
       ],
       "Your recovery phrase": [
         "回復用フレーズ"
@@ -12491,6 +12500,9 @@
       ],
       "${ nbDay } day": [
         "${ nbDay } 日"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } 年"
       ],
       "${ pricePerMonthWithCurrency } / month": [
         "${ pricePerMonthWithCurrency } /月"
