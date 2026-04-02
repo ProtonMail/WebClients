@@ -18,6 +18,7 @@ import {
   BroadcastSource,
   DocumentRole,
   ProcessedIncomingRealtimeEventMessage,
+  SyncedEditorState,
 } from '@proton/docs-shared'
 import type { DecryptedNode, NodeMeta } from '@proton/drive-store'
 import { MAX_DOC_SIZE, MAX_UPDATE_SIZE } from '../Models/Constants'
@@ -109,6 +110,7 @@ describe('RealtimeController', () => {
       'doc',
       new DocSizeTracker(logger, eventBus),
       'private',
+      new SyncedEditorState(),
     )
 
     documentState.setProperty('editorReady', true)
@@ -700,7 +702,7 @@ describe('RealtimeController', () => {
 
       expect(controller.initialSyncTimer).toBeDefined()
 
-      jest.advanceTimersByTime(100)
+      jest.advanceTimersByTime(1000)
 
       expect(controller.logger.warn).toHaveBeenCalledWith(
         'Client did not receive ServerHasMoreOrLessGivenTheClientEverythingItHas event in time',

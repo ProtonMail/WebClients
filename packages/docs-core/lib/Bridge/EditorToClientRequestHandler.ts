@@ -181,4 +181,8 @@ export class EditorToClientRequestHandler implements EditorRequiresClientMethods
   async checkIfFeatureFlagIsEnabled(featureFlag: FeatureFlag): Promise<boolean> {
     return this.docOrchestrator.checkIfFeatureFlagIsEnabled(featureFlag)
   }
+
+  async reloadClient(): Promise<void> {
+    window.location.reload()
+  }
 }

@@ -345,6 +345,7 @@ export class AppDependencies extends DependencyContainer {
         this.get<LoggerInterface>(App_TYPES.Logger),
         unleashClient,
         this.get<DocSizeTracker>(App_TYPES.SizeTracker),
+        syncedEditorState,
       )
     })
 

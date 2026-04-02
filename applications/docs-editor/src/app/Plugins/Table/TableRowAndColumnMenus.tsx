@@ -31,12 +31,15 @@ import {
   INSERT_TABLE_ROW_COMMAND,
 } from './Commands'
 import { useCombinedRefs } from '@proton/hooks'
-import { useEditorStateValues } from '../../Lib/useEditorStateValues'
+import { useStore } from 'zustand'
+import { useEditorState } from '../../Containers/EditorStateProvider'
+import { EditorUserMode } from '../../Lib/EditorUserMode'
 
 export function TableRowAndColumnMenus({ tableNode }: { tableNode: TableNode }) {
   const [editor] = useLexicalComposerContext()
 
-  const { isSuggestionMode } = useEditorStateValues()
+  const userMode = useStore(useEditorState(), (state) => state.userMode)
+  const isSuggestionMode = userMode === EditorUserMode.Suggest
 
   const tableRowNodeKey = useRef<NodeKey | null>(null)
   const getCurrentRow = useCallback(() => {
