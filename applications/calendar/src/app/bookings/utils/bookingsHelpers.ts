@@ -9,6 +9,7 @@ import {
     startOfDay,
     startOfWeek,
 } from 'date-fns';
+import type { Day } from 'date-fns';
 
 import { dateLocale } from '@proton/shared/lib/i18n';
 import type { ExternalBookingPagePayload } from '@proton/shared/lib/interfaces/calendar/Bookings';
@@ -51,16 +52,16 @@ export interface WeekRange {
     end: number;
 }
 
-export const generateWeeklyRangeSimple = (startDate: Date, endDate?: Date) => {
+export const generateWeeklyRangeSimple = (startDate: Date, endDate?: Date, weekStartsOn: Day = 0) => {
     const weekRangeSimple = [];
 
     const numberOfWeeks = endDate
-        ? Math.max(1, differenceInCalendarWeeks(endDate, startDate) + 1)
+        ? Math.max(1, differenceInCalendarWeeks(endDate, startDate, { weekStartsOn }) + 1)
         : WEEKS_IN_MINI_CALENDAR;
 
     for (let i = 0; i < numberOfWeeks; i++) {
-        const start = getUnixTime(startOfDay(startOfWeek(addWeeks(startDate, i))));
-        const end = getUnixTime(endOfDay(endOfWeek(addWeeks(startDate, i))));
+        const start = getUnixTime(startOfDay(startOfWeek(addWeeks(startDate, i), { weekStartsOn })));
+        const end = getUnixTime(endOfDay(endOfWeek(addWeeks(startDate, i), { weekStartsOn })));
 
         // When having DST transition happening in the range, the time frame between start and end can be bigger than
         // 7 days, leading to a backend error.
