@@ -39,6 +39,7 @@ type SharedWithMeStore = {
     refreshCallbacks: Map<string, () => Promise<void>>;
 
     setSharedWithMeItem: (item: SharedWithMeItem) => void;
+    setInvitationAccepting: (uid: string, isBeingAccepted: boolean) => void;
     removeSharedWithMeItem: (uid: string) => void;
     clearAll: () => void;
     cleanupStaleItems: (itemType: ItemType, loadedUids: Set<string>, options?: { legacyCleanup?: boolean }) => void;
@@ -134,6 +135,12 @@ export const useSharedWithMeStore = create<SharedWithMeStore>()(
                         const existingItem = state.sharedWithMeItems.get(keyUid);
                         const wasOriginallyInvitation = existingItem?.itemType === ItemType.INVITATION;
 
+                        // In case we accept the item while loading the section,
+                        // we should prevent future updates otherwise the item will disappear and appear again
+                        if (existingItem?.itemType === ItemType.DIRECT_SHARE && item.itemType === ItemType.INVITATION) {
+                            return state;
+                        }
+
                         const newSharedWithMeItems = new Map(state.sharedWithMeItems);
                         newSharedWithMeItems.set(keyUid, item);
 
@@ -173,6 +180,18 @@ export const useSharedWithMeStore = create<SharedWithMeStore>()(
                         itemsWithInvitationPosition: newItemsWithInvitationPosition,
                     };
                     return { ...nextState, sortedItemUids: computeSortedItemUids({ ...state, ...nextState }) };
+                });
+            },
+
+            setInvitationAccepting: (uid: string, isBeingAccepted: boolean) => {
+                set((state) => {
+                    const item = state.sharedWithMeItems.get(uid);
+                    if (!item || item.itemType !== ItemType.INVITATION) {
+                        return state;
+                    }
+                    const newSharedWithMeItems = new Map(state.sharedWithMeItems);
+                    newSharedWithMeItems.set(uid, { ...item, isBeingAccepted });
+                    return { sharedWithMeItems: newSharedWithMeItems };
                 });
             },
 

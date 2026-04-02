@@ -6,7 +6,8 @@ import { useShallow } from 'zustand/react/shallow';
 import { Loader, SidebarList } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
-import { type ShareWithKey, useDriveSharingFlags, useUserSettings } from '../../store';
+import { useUserSettings } from '../../hooks/user';
+import { type ShareWithKey, useDriveSharingFlags } from '../../store';
 import { DevicesSidebar } from '../devices/connectedComponents/DevicesSidebar';
 import { DriveSidebarFolders } from './DriveSidebarFolders/DriveSidebarFolders';
 import { DriveSidebarListItem } from './DriveSidebarListItem';

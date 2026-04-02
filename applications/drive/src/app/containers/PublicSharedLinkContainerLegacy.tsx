@@ -12,7 +12,6 @@ import { handleDocsCustomPassword } from '@proton/shared/lib/drive/sharing/publi
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 import { getNewWindow } from '@proton/shared/lib/helpers/window';
 import { ThemeTypes } from '@proton/shared/lib/themes/constants';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import { ErrorPage, LoadingPage, PasswordPage, SharedFilePage, SharedFolderPage } from '../components/SharedPage';
 import { useUpsellFloatingModal } from '../components/modals/UpsellFloatingModal';
@@ -82,7 +81,6 @@ function PublicShareLinkInitContainer() {
         isPasswordNeeded,
         submitPassword,
     } = usePublicAuth(token, urlPassword, 'drive');
-    const bookmarksFeatureDisabled = useFlag('DriveShareURLBookmarksDisabled');
     const isDriveWebShareUrlSignupModalEnabled = useDriveWebShareURLSignupModal();
     const [isLoadingDecrypt, withLoading, setLoading] = useLoading(true);
     const [[publicShareError, publicShareErrorMessage], setError] = useState<ErrorTuple>([, '']);
@@ -227,7 +225,7 @@ function PublicShareLinkInitContainer() {
         return <ErrorPage isPartialView={isPartialView} />;
     }
 
-    const showBookmarks = !bookmarksFeatureDisabled || bookmarksPublicView.haveBookmarks;
+    const showBookmarks = bookmarksPublicView.haveBookmarks;
     const props = {
         bookmarksPublicView,
         token,
@@ -244,7 +242,7 @@ function PublicShareLinkInitContainer() {
     return (
         <>
             {link.isFile ? <SharedFilePage {...props} /> : <SharedFolderPage {...props} />}
-            {!bookmarksFeatureDisabled && isDriveWebShareUrlSignupModalEnabled ? null : renderUpsellFloatingModal}
+            {isDriveWebShareUrlSignupModalEnabled ? null : renderUpsellFloatingModal}
         </>
     );
 }

@@ -7,12 +7,12 @@ import { splitNodeUid } from '@proton/drive/index';
 
 import EmptyDevices from '../../components/sections/Devices/EmptyDevices';
 import useDriveNavigation from '../../hooks/drive/useNavigate';
+import { useUserSettings } from '../../hooks/user';
 import { useContextMenuStore } from '../../modules/contextMenu';
 import { useSelectionStore } from '../../modules/selection';
 import { SortField } from '../../modules/sorting';
 import { DriveExplorer } from '../../statelessComponents/DriveExplorer/DriveExplorer';
 import type { DriveExplorerEvents, DriveExplorerSelection } from '../../statelessComponents/DriveExplorer/types';
-import { useUserSettings } from '../../store';
 import { getDevicesCells, getDevicesGrid } from './DevicesDriveExplorerCells';
 import { DevicesItemContextMenu } from './connectedComponents/DevicesItemContextMenu';
 import { useDevicesStore } from './useDevices.store';

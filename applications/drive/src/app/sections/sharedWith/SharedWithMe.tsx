@@ -15,6 +15,7 @@ import type {
 import EmptySharedWithMe from './EmptySharedWithMe';
 import { getSharedWithMeCells, getSharedWithMeGrid } from './SharedWithMeCells';
 import { SharedWithMeContextMenu } from './SharedWithMeItemContextMenu';
+import { useInvitationsActions } from './hooks/useInvitationsActions';
 import { useSharedWithMeItems } from './hooks/useSharedWithMeItems';
 import { ItemType, useSharedWithMeStore } from './useSharedWithMe.store';
 
@@ -23,6 +24,7 @@ export const SharedWithMe = () => {
     const contextMenuControls = useItemContextMenu();
     const contextMenuAnchorRef = useRef<HTMLDivElement>(null);
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
+    const { acceptInvitation } = useInvitationsActions();
 
     const {
         uids,
@@ -44,7 +46,14 @@ export const SharedWithMe = () => {
                 contextMenuControls.close();
             }
         },
-        onItemDoubleClick: (uid) => {
+        onItemDoubleClick: async (uid) => {
+            const item = useSharedWithMeStore.getState().getSharedWithMeItem(uid);
+            if (!item) {
+                return;
+            }
+            if (item.itemType === ItemType.INVITATION) {
+                await acceptInvitation(item.nodeUid, item.invitation.uid, item.type);
+            }
             void handleOpenItem(uid);
         },
         onItemContextMenu: (uid, event) => {
@@ -83,15 +92,8 @@ export const SharedWithMe = () => {
         selectionControls,
     });
 
-    const conditions: DriveExplorerConditions = {
+    const conditions: Partial<DriveExplorerConditions> = {
         isDraggable: (uid) => {
-            const item = useSharedWithMeStore.getState().sharedWithMeItems.get(uid);
-            if (item && item.itemType === ItemType.INVITATION) {
-                return false;
-            }
-            return true;
-        },
-        isDoubleClickable: (uid) => {
             const item = useSharedWithMeStore.getState().sharedWithMeItems.get(uid);
             if (item && item.itemType === ItemType.INVITATION) {
                 return false;

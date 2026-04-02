@@ -9,6 +9,7 @@ import { loadThumbnail } from '@proton/drive/modules/thumbnails';
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { isNativeProtonDocsAppFile } from '@proton/shared/lib/helpers/mimetype';
 
+import { useUserSettings } from '../../../hooks/user';
 import { useContextMenuStore } from '../../../modules/contextMenu';
 import { useSelectionStore } from '../../../modules/selection';
 import type { SortConfig, SortField } from '../../../modules/sorting';
@@ -18,7 +19,6 @@ import type {
     DriveExplorerSelection,
     DriveExplorerSort,
 } from '../../../statelessComponents/DriveExplorer/types';
-import { useUserSettings } from '../../../store';
 import { getTrashCells, getTrashGrid } from '../TrashDriveExplorerCells';
 import { TrashItemContextMenu } from '../menus/TrashItemContextMenu';
 import { EmptyTrash } from '../statelessComponents/EmptyTrash';

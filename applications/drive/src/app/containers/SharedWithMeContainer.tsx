@@ -2,14 +2,11 @@ import { useEffect } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom-v5-compat';
 
 import { SharedWithMeView } from '../sections/sharedWith/SharedWithMeView';
-import { useInvitationsLoader } from '../sections/sharedWith/loaders/useInvitationsLoader';
-import { useSharedWithMeNodesLoader } from '../sections/sharedWith/loaders/useSharedWithMeNodesLoader';
+import { loadInvitations } from '../sections/sharedWith/loaders/loadInvitations';
+import { loadSharedWithMeNodes } from '../sections/sharedWith/loaders/loadSharedWithMeNodes';
 import { useSharedWithMeStore } from '../sections/sharedWith/useSharedWithMe.store';
 
 const SharedWithMeContainer = () => {
-    const { loadSharedWithMeNodes } = useSharedWithMeNodesLoader();
-    const { loadInvitations } = useInvitationsLoader();
-
     useEffect(() => {
         const abortController = new AbortController();
         void useSharedWithMeStore.getState().subscribeToEvents('sharedWithMeContainer', {
@@ -24,7 +21,7 @@ const SharedWithMeContainer = () => {
             abortController.abort();
             void useSharedWithMeStore.getState().unsubscribeToEvents('sharedWithMeContainer');
         };
-    }, [loadInvitations, loadSharedWithMeNodes]);
+    }, []);
     return (
         <Routes>
             <Route path="" element={<SharedWithMeView />} />
