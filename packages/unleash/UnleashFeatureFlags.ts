@@ -311,6 +311,7 @@ enum MeetFeatureFlag {
     MeetEnableAudioMixing = 'MeetEnableAudioMixing',
     MeetEnableSpatialAudio = 'MeetEnableSpatialAudio',
     MeetPreSharedKey = 'MeetPreSharedKey',
+    MeetAdminLowerHand = 'MeetAdminLowerHand',
 }
 
 enum LumoFeatureFlag {
