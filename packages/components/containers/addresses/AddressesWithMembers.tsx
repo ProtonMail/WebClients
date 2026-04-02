@@ -22,7 +22,7 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import GenericError from '@proton/components/containers/error/GenericError';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { ALL_MEMBERS_ID, APPS, BRAND_NAME, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
+import { ALL_MEMBERS_ID, APPS, BRAND_NAME, MAIL_APP_NAME, MEMBER_PRIVATE } from '@proton/shared/lib/constants';
 import { getAvailableAddressDomains, getIsBYOEOnlyAccount } from '@proton/shared/lib/helpers/address';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Member, Organization, UserModel } from '@proton/shared/lib/interfaces';
@@ -164,7 +164,8 @@ const AddressesWithMembers = ({
             {hasDescription && (
                 <SettingsParagraph className="mt-2">
                     <span>
-                        {c('Info').t`Use the different types of email addresses and aliases offered by ${BRAND_NAME}.`}
+                        {c('Info')
+                            .t`Use multiple email addresses with ${MAIL_APP_NAME}. Add a new ${BRAND_NAME} address or connect another email account to manage everything from one inbox.`}
                     </span>
                     <br />
                     <Href href={getKnowledgeBaseUrl('/addresses-and-aliases')}>{c('Link').t`Learn more`}</Href>
