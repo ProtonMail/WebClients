@@ -1950,6 +1950,9 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Đang chuyển tất cả mục từ \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Việc chuyển một mục sang kho khác sẽ xóa các liên kết bảo mật của mục đó."
+      ],
       "Moving items": [
         "Đang chuyển mục"
       ],
