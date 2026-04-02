@@ -2,11 +2,13 @@ import { getUnixTime, subDays } from 'date-fns';
 
 import { calculateRotationUpdate } from './tipRotationLogic';
 
+const MAX_DAYS = 30;
+
 describe('calculateRotationUpdate', () => {
     const tipsLength = 2;
 
     it('should return a random tip index and current timestamp when rotationDate is 0', () => {
-        const result = calculateRotationUpdate(0, 0, tipsLength);
+        const result = calculateRotationUpdate(0, 0, tipsLength, MAX_DAYS);
 
         expect(result).not.toBeNull();
         expect(result?.tipIndex).toBeGreaterThanOrEqual(0);
@@ -16,7 +18,7 @@ describe('calculateRotationUpdate', () => {
 
     it('should return a tip index within bounds for different tip array lengths', () => {
         const tipsLength = 99;
-        const result = calculateRotationUpdate(0, 0, tipsLength);
+        const result = calculateRotationUpdate(0, 0, tipsLength, MAX_DAYS);
 
         expect(result).not.toBeNull();
         expect(result?.tipIndex).toBeGreaterThanOrEqual(0);
@@ -28,7 +30,7 @@ describe('calculateRotationUpdate', () => {
             const oldDate = subDays(new Date(), 30);
             const oldRotationDate = getUnixTime(oldDate);
 
-            const result = calculateRotationUpdate(oldRotationDate, 0, tipsLength);
+            const result = calculateRotationUpdate(oldRotationDate, 0, tipsLength, MAX_DAYS);
 
             expect(result).not.toBeNull();
             expect(result?.tipIndex).toBe(1);
@@ -39,7 +41,7 @@ describe('calculateRotationUpdate', () => {
             const oldDate = subDays(new Date(), 45);
             const oldRotationDate = getUnixTime(oldDate);
 
-            const result = calculateRotationUpdate(oldRotationDate, 0, tipsLength);
+            const result = calculateRotationUpdate(oldRotationDate, 0, tipsLength, MAX_DAYS);
 
             expect(result).not.toBeNull();
             expect(result?.tipIndex).toBe(1);
@@ -51,7 +53,7 @@ describe('calculateRotationUpdate', () => {
             const recentDate = subDays(new Date(), 1);
             const recentRotationDate = getUnixTime(recentDate);
 
-            const result = calculateRotationUpdate(recentRotationDate, 0, tipsLength);
+            const result = calculateRotationUpdate(recentRotationDate, 0, tipsLength, MAX_DAYS);
 
             expect(result).toBeNull();
         });
@@ -60,7 +62,7 @@ describe('calculateRotationUpdate', () => {
             const recentDate = subDays(new Date(), 29);
             const recentRotationDate = getUnixTime(recentDate);
 
-            const result = calculateRotationUpdate(recentRotationDate, 0, tipsLength);
+            const result = calculateRotationUpdate(recentRotationDate, 0, tipsLength, MAX_DAYS);
 
             expect(result).toBeNull();
         });
@@ -68,7 +70,7 @@ describe('calculateRotationUpdate', () => {
         it('should return null when 0 days have passed (same day)', () => {
             const todayRotationDate = getUnixTime(new Date());
 
-            const result = calculateRotationUpdate(todayRotationDate, 0, tipsLength);
+            const result = calculateRotationUpdate(todayRotationDate, 0, tipsLength, MAX_DAYS);
 
             expect(result).toBeNull();
         });
@@ -79,7 +81,7 @@ describe('calculateRotationUpdate', () => {
             const exactDate = subDays(new Date(), 30);
             const exactRotationDate = getUnixTime(exactDate);
 
-            const result = calculateRotationUpdate(exactRotationDate, 0, tipsLength);
+            const result = calculateRotationUpdate(exactRotationDate, 0, tipsLength, MAX_DAYS);
 
             expect(result).not.toBeNull();
             expect(result?.tipIndex).toBe(1);
@@ -90,7 +92,7 @@ describe('calculateRotationUpdate', () => {
             const oldRotationDate = getUnixTime(oldDate);
             const lastTipIndex = tipsLength - 1;
 
-            const result = calculateRotationUpdate(oldRotationDate, lastTipIndex, tipsLength);
+            const result = calculateRotationUpdate(oldRotationDate, lastTipIndex, tipsLength, MAX_DAYS);
 
             expect(result).not.toBeNull();
             expect(result?.tipIndex).toBe(0);
@@ -102,7 +104,7 @@ describe('calculateRotationUpdate', () => {
             const tipLength = 5;
             const lastIndex = 4;
 
-            const result = calculateRotationUpdate(oldRotationDate, lastIndex, tipLength);
+            const result = calculateRotationUpdate(oldRotationDate, lastIndex, tipLength, MAX_DAYS);
 
             expect(result).not.toBeNull();
             expect(result?.tipIndex).toBe(0);
@@ -112,10 +114,10 @@ describe('calculateRotationUpdate', () => {
             const oldDate = subDays(new Date(), 30);
             const oldRotationDate = getUnixTime(oldDate);
 
-            let result = calculateRotationUpdate(oldRotationDate, 0, tipsLength);
+            let result = calculateRotationUpdate(oldRotationDate, 0, tipsLength, MAX_DAYS);
             expect(result?.tipIndex).toBe(1);
 
-            result = calculateRotationUpdate(oldRotationDate, 1, tipsLength);
+            result = calculateRotationUpdate(oldRotationDate, 1, tipsLength, MAX_DAYS);
             expect(result?.tipIndex).toBe(0);
         });
     });
