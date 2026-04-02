@@ -289,6 +289,9 @@
       "Connected": [
         "مُتصل"
       ],
+      "Contact sales": [
+        "اتصل بالمبيعات"
+      ],
       "Contact support": [
         "التواصل مع الدعم الفني"
       ],
@@ -399,6 +402,9 @@
       ],
       "Delete account": [
         "حذف الحساب"
+      ],
+      "Delete and confirm": [
+        "حذف وتأكيد"
       ],
       "Delete Gateway": [
         "حذف البوابة"
@@ -1107,6 +1113,9 @@
       ],
       "Save and continue": [
         "حفظ ومتابعة"
+      ],
+      "Save changes": [
+        "حفظ التغييرات"
       ],
       "Save SAML configuration": [
         "حفظ إعدادات SAML"
@@ -8044,6 +8053,9 @@
       "${ discountPercent }% discount": [
         "خصم ${ discountPercent }%"
       ],
+      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
+        "لن يحتفظ ${ DRIVE_APP_NAME } بعد الآن بالإصدارات السابقة من ملفاتك."
+      ],
       "${ emailAddress } is invalid": [
         "عنوان البريد الإلكتروني ${ emailAddress } غير صالح"
       ],
@@ -9200,6 +9212,9 @@
       ],
       "for ${ price }": [
         "مقابل ${ price }"
+      ],
+      "For a 10-year version history, please contact our sales team.": [
+        "للحصول على تاريخ إصدار لمدة 10 سنوات، يرجى الاتصال بفريق المبيعات لدينا."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "للوصول إلى البريد الإلكتروني في أي وقت ولتجربة محسّنة على الجوال، نزّل ${ androidAppLink } أو ${ iosAppLink }."
@@ -10464,6 +10479,12 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "قد يستغرق هذا التحقق ما يصل إلى ساعة واحدة. بعد التحقق بنجاح، لا تقم بإزالة سجل TXT لأنه ضروري لتأكيد استمرار امتلاكك للنطاق."
       ],
+      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
+        "سيؤدي هذا إلى حذف جميع الإصدارات السابقة من ملفاتك الأقدم من ${ rententionLabel }."
+      ],
+      "This will delete all previous versions of your files.": [
+        "سيؤدي ذلك إلى حذف جميع الإصدارات السابقة من ملفاتك."
+      ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "سيؤدي هذا إلى رفض الوصول إلى **${ email }**. هل تريد بالتأكيد المتابعة؟"
       ],
@@ -10635,6 +10656,9 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "قم بالترقية للاحتفاظ بمزايا ${ planTitle } الخاصة بك."
       ],
+      "Upgrade to unlock": [
+        "قم بالترقية لفتح القفل"
+      ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "قم بالترقية لفتح ${ monitorLink }."
       ],
@@ -10724,6 +10748,9 @@
       ],
       "Version ${ version }": [
         "الإصدار ${ version }"
+      ],
+      "Version history": [
+        "تاريخ الإصدار"
       ],
       "Version number successfully copied to clipboard": [
         "تم نسخ رقم الإصدار إلى الحافظة بنجاح"
@@ -11021,6 +11048,9 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "لا يمكنك دعوة مستخدمي ${ MAIL_APP_NAME }"
       ],
+      "You cannot undo this action.": [
+        "لا يمكنك التراجع عن هذا الإجراء."
+      ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "يجب أن تعلم أنه لم يتم اعداد طريقة لاسترجاع هذا الحساب لذلك اذا نسيت كلمة المرور سوف تفقد الوصول إلى حسابك للابد. تخطي بدون اعداد طريقة استرجاع؟"
       ],
@@ -11206,6 +11236,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "سيتم استخدام رقم هاتفك فقط لهذا التحقق لمرة واحدة."
+      ],
+      "Your plan is limited to 10 versions for up to 7 days": [
+        "خطتك تقتصر على 10 إصدارات لمدة تصل إلى 7 أيام"
       ],
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "تم نشر التغييرات الأخيرة. ستظهر للمستخدمين خلال الساعات القليلة القادمة."
@@ -11725,6 +11758,14 @@
         "${ nbDay } أيام",
         "${ nbDay } أيام"
       ],
+      "${ nbYear } years": [
+        "${ nbYear } سنوات",
+        "${ nbYear } سنة",
+        "${ nbYear } سنوات",
+        "${ nbYear } سنوات",
+        "${ nbYear } سنوات",
+        "${ nbYear } سنوات"
+      ],
       "(Temporarily unavailable. Please check back later.)": [
         "(غير متاح مؤقتًا. يرجى المحاولة مرة أخرى لاحقًا.)"
       ],
@@ -12138,6 +12179,9 @@
       ],
       "Don't ask again": [
         "لا تسأل ثانيا"
+      ],
+      "Don't keep versions": [
+        "لا تحتفظ بالإصدارات"
       ],
       "Don't show this again": [
         "لا تظهر لي هذا مرة أخرى"
@@ -18352,6 +18396,11 @@
         "طلب إعادة تعيين كلمة المرور"
       ]
     },
+    "Setting": {
+      "Enable Photos section": [
+        "تمكين قسم الصور"
+      ]
+    },
     "Settings description": {
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "حافظ على تنظيم صندوق الوارد باستخدام المجلدات والتسميات. ${ learnMoreLink }"
@@ -21237,6 +21286,9 @@
       ],
       "Delete user?": [
         "حذف المستخدم؟"
+      ],
+      "Delete version history?": [
+        "هل تريد حذف سجل الإصدارات؟"
       ],
       "Deny access to user?": [
         "هل تريد رفض وصول المستخدم؟"

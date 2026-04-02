@@ -1245,6 +1245,9 @@
       "Save and continue": [
         "บันทึกและดำเนินการต่อ"
       ],
+      "Save changes": [
+        "บันทึกการเปลี่ยนแปลง"
+      ],
       "Save ICS file": [
         "บันทึกไฟล์ ICS"
       ],
@@ -11252,6 +11255,9 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "คุณไม่สามารถแนะนำผู้ใช้ ${ MAIL_APP_NAME } ได้"
       ],
+      "You cannot undo this action.": [
+        "คุณไม่สามารถเลิกทำสิ่งนี้ได้"
+      ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "คุณไม่ได้ตั้งค่าการกู้คืนบัญชี ดังนั้น จึงเป็นไปไม่ได้ที่จะกู้บัญชีของคุณคืนมาได้ หากคุณลืมรหัสผ่าน คุณต้องการดำเนินการต่อโดยละเว้นการกู้คืนบัญชีหรือไม่?"
       ],
@@ -11422,6 +11428,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "จะมีการใช้หมายเลขโทรศัพท์ของคุณในการยืนยันตัวตนเพียงหนึ่งครั้งเท่านั้น"
+      ],
+      "Your plan is limited to 10 versions for up to 7 days": [
+        "แผนของคุณจำกัดไว้ที่ 10 เวอร์ชันสูงสุด 7 วัน"
       ],
       "Your recovery phrase": [
         "วลีกู้คืนของคุณ"
@@ -12035,6 +12044,9 @@
       ],
       "${ nbDay } day": [
         "${ nbDay } วัน"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear }ปี"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(ไม่สามารถใช้งานได้ชั่วคราว โปรดกลับมาตรวจสอบในภายหลัง)"

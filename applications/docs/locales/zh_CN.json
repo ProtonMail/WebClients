@@ -925,6 +925,9 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } 席位"
       ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } 个 ${ MEET_APP_NAME } 许可证"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } 个写作助手许可证"
       ],
@@ -4445,6 +4448,9 @@
       "Everything in ${ planOrAppName }": [
         "一切尽在 ${ planOrAppName }"
       ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "包含 ${ planOrAppName } 所有功能，外加:"
+      ],
       "Failed to generate a secure link. The reason is: ${ error }": [
         "无法生成安全链接。原因是：${ error }"
       ],
@@ -6070,6 +6076,17 @@
         "免费试用附加组件"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } 许可证"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } 席位"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME } 席位"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }：用于重要对话的保密视频会议"
@@ -6101,6 +6118,9 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "端到端加密的屏幕共享和临时会议内聊天"
       ],
+      "Hosts can record meetings locally on their computers": [
+        "主持人可以在本地计算机上录制会议"
+      ],
       "Meeting recording": [
         "会议录制"
       ],
@@ -6118,6 +6138,9 @@
       ],
       "Up to ${ n } participant": [
         "最多 ${ n } 位参与者"
+      ],
+      "Video meetings, ${ n } participant": [
+        "视频会议，${ n } 位参与者"
       ]
     },
     "Message": {
@@ -6580,6 +6603,9 @@
       "Data breach monitoring": [
         "数据泄露监控"
       ],
+      "Data retention policies": [
+        "数据保留策略"
+      ],
       "Dedicated servers optimized for streaming": [
         "专为流媒体优化的专用服务器"
       ],
@@ -6687,6 +6713,9 @@
       ],
       "Priority support & live chat": [
         "优先与客服实时沟通"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "私人 AI 聊天 (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "私人照片备份"
@@ -6828,6 +6857,9 @@
       ],
       "Vault sharing with up to ${ n } person": [
         "与多至 ${ n } 个人分享保险库"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "具备广告拦截器和恶意软件防护功能的 VPN"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我们会扫描暗网，检查您的 ${ BRAND_NAME } 地址或别名是否被泄露，一旦发现任何情况，我们会立即提醒您。"

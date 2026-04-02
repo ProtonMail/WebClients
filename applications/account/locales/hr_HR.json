@@ -809,6 +809,9 @@
       "Save and continue": [
         "Spremi i nastavi"
       ],
+      "Save changes": [
+        "Spremi promjene"
+      ],
       "Search": [
         "Pretraga"
       ],
@@ -6282,6 +6285,9 @@
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Možete uključiti obavijesti da biste dobili upozorenja kada u tu mapu stignu nove poruke e-pošte."
       ],
+      "You cannot undo this action.": [
+        "Ne možete poništiti ovu radnju."
+      ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Vi niste postavili metodu za oporavak, stoga je oporavak računa nemogućen u slučaju da zaboravite lozinku. Želite nastaviti bez načina za oporavak?"
       ],
@@ -6763,6 +6769,11 @@
         "${ nbDay } dan",
         "${ nbDay } dana",
         "${ nbDay } dana"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } godina",
+        "${ nbYear } godine",
+        "${ nbYear } godina"
       ],
       "1 hour": [
         "1 sat"

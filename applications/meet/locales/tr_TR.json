@@ -2158,9 +2158,6 @@
       "The host ended this meeting.": [
         "Sahibi bu görüşmeyi sonlandırdı."
       ],
-      "The host has ended the meeting": [
-        "Görüşme, sahibi tarafından sonlandırıldı"
-      ],
       "The host has removed you from this meeting. If this was a mistake, ask the host to invite you again.": [
         "Görüşme sahibi sizi bu görüşmeden çıkardı. Bir yanlışlık olduğunu düşünüyorsanız görüşme sahibinden sizi yeniden davet etmesini isteyin."
       ],
@@ -2185,23 +2182,14 @@
       "This will sign you out of all accounts currently logged in.": [
         "Bu işlem, şu anda oturum açmış olduğunuz tüm hesap oturumlarını kapatır."
       ],
-      "To create a room, **create a free ${ BRAND_NAME } account**. You will return to ${ MEET_APP_NAME } automatically.": [
-        "Bir oda oluşturmak için **ücretsiz bir ${ BRAND_NAME } hesabı açın**. Otomatik olarak ${ MEET_APP_NAME } uygulamasına döneceksiniz."
-      ],
       "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
         "Bir oda oluştururken oda bilgilerini kaydedebilmemiz için **bir ücretsiz ${ BRAND_NAME } hesabı** açmalısınız. Bu işlem yalnızca birkaç saniye sürer."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "İstenmeyen iletilere ve kötüye kullanıma karşı lütfen insan olduğunuzu doğrulayın."
       ],
-      "To schedule a meeting, **create a free ${ BRAND_NAME } account**. You will return to ${ MEET_APP_NAME } automatically.": [
-        "Bir toplantı zamanlamak için **ücretsiz bir ${ BRAND_NAME } hesabı açın**. Otomatik olarak ${ MEET_APP_NAME } uygulamasına döneceksiniz."
-      ],
       "To schedule an event, you'll need **a free ${ BRAND_NAME } Account** so we can save the event. This only takes a few seconds.": [
         "Bir etkinlik zamanlarken, etkinlik bilgilerini kaydedebilmemiz için **bir ücretsiz ${ BRAND_NAME } hesabı** açmalısınız. Bu işlem yalnızca birkaç saniye sürer."
-      ],
-      "To use your personal meeting room, **create a free ${ BRAND_NAME } account**. You will return to ${ MEET_APP_NAME } automatically.": [
-        "Kişisel görüşme odanızı kullanmak için **ücretsiz bir ${ BRAND_NAME } hesabı açın**. Otomatik olarak ${ MEET_APP_NAME } uygulamasına döneceksiniz."
       ],
       "To use your personal meeting room, you'll need **a free ${ BRAND_NAME } Account**. This only takes a few seconds.": [
         "Kişisel toplantı odanızı kullanmak için **bir ücretsiz ${ BRAND_NAME } hesabı** açmalısınız. Bu işlem yalnızca birkaç saniye sürer."
@@ -2277,9 +2265,6 @@
       ],
       "You left the meeting": [
         "Görüşmeden ayrıldınız"
-      ],
-      "You left your meeting": [
-        "Toplantınızdan ayrıldınız"
       ],
       "You need a paid ${ MEET_SHORT_APP_NAME } or Workspace plan for this feature. Contact your organization admin to upgrade.": [
         "Bu özelliği kullanmak için ücretli bir ${ MEET_SHORT_APP_NAME } ya da Workspace tarifesinde olmalısınız. Tarifenizi yükseltmesi için kuruluş yöneticinizle görüşün."
@@ -3018,9 +3003,6 @@
       ],
       "STUN UDP connection timeout, trying with TURN relay": [
         "STUN UDP bağlantısı zaman aşımına uğradı. TURN aktarmıyla deneniyor"
-      ],
-      "The host has removed you from the meeting": [
-        "Görüşme sahibi sizi görüşmeden çıkardı"
       ],
       "Trying another route…": [
         "Başka bir yol deneniyor…"

@@ -324,6 +324,9 @@
       "Connected": [
         "Forbundet"
       ],
+      "Contact sales": [
+        "Kontakt salgsafdelingen"
+      ],
       "Contact support": [
         "Kontakt support"
       ],
@@ -452,6 +455,9 @@
       ],
       "Delete account": [
         "Slet konto"
+      ],
+      "Delete and confirm": [
+        "Slet og bekræft"
       ],
       "Delete filter “${ Name }”": [
         "Slet filteret “${ Name }”"
@@ -1286,6 +1292,9 @@
       ],
       "Save and continue": [
         "Gem og fortsæt"
+      ],
+      "Save changes": [
+        "Gem ændringer"
       ],
       "Save ICS file": [
         "Gem ICS-fil"
@@ -8969,6 +8978,9 @@
       "${ discountPercent }% discount": [
         "${ discountPercent }% rabat"
       ],
+      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
+        "${ DRIVE_APP_NAME } vil ikke længere gemme tidligere versioner af dine filer."
+      ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } er ugyldig"
       ],
@@ -10152,6 +10164,9 @@
       ],
       "for ${ price }": [
         "til ${ price }"
+      ],
+      "For a 10-year version history, please contact our sales team.": [
+        "Kontakt vores salgsteam for at få en versionhistorik for de sidste 10 år."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "For at få adgang til e-mail når som helst og en optimeret mobiloplevelse kan du downloade vores ${ androidAppLink } eller ${ iosAppLink }."
@@ -11567,6 +11582,12 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Denne bekræftelse kan tage op til en time. Efter en vellykket bekræftelse må du ikke fjerne TXT-posten, da den skal bruges til at bekræfte, at du fortsat ejer domænet."
       ],
+      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
+        "Dette vil slette alle tidligere versioner af dine filer, som er ældre end ${ rententionLabel }."
+      ],
+      "This will delete all previous versions of your files.": [
+        "Dette vil slette alle tidligere versioner af dine filer."
+      ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Dette vil afvise adgang til **${ email }**. Er du sikker på, du vil fortsætte?"
       ],
@@ -11765,6 +11786,9 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Opgradér for at beholde dine ${ planTitle }-fordele."
       ],
+      "Upgrade to unlock": [
+        "Opgrader for at låse op"
+      ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "Opgrader for at låse op for ${ monitorLink }."
       ],
@@ -11863,6 +11887,9 @@
       ],
       "Version ${ version }": [
         "Version ${ version }"
+      ],
+      "Version history": [
+        "Versionshistorik"
       ],
       "Version number successfully copied to clipboard": [
         "Versionsnummer er kopieret til udklipsholder"
@@ -12165,6 +12192,9 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Du kan ikke henvise ${ MAIL_APP_NAME }-brugere"
       ],
+      "You cannot undo this action.": [
+        "Du kan ikke fortryde denne handling."
+      ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Du har ikke angivet en metode til gendannelse, derfor er kontogendannelse umulig, hvis du glemmer din adgangskode. Fortsæt uden en metode til gendannelse?"
       ],
@@ -12369,6 +12399,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Dit telefonnummer vil kun blive anvendt til denne engangsbekræftelse."
+      ],
+      "Your plan is limited to 10 versions for up to 7 days": [
+        "Dit abonnement er begrænset til 10 versioner i op til 7 dage"
       ],
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "Dine seneste ændringer er blevet publiceret. De vil være synlige for brugerne i løbet af de næste par timer."
@@ -13002,6 +13035,10 @@
         "${ nbDay } dag",
         "${ nbDay } dage"
       ],
+      "${ nbYear } year": [
+        "${ nbYear } år",
+        "${ nbYear } år"
+      ],
       "${ pricePerMonthWithCurrency } / month": [
         "${ pricePerMonthWithCurrency } /måned"
       ],
@@ -13520,6 +13557,9 @@
       ],
       "Don't ask again": [
         "Spørg ikke igen"
+      ],
+      "Don't keep versions": [
+        "Behold ikke versioner"
       ],
       "Don't show this again": [
         "Vis ikke dette igen"
@@ -20304,6 +20344,9 @@
       ]
     },
     "Setting": {
+      "Enable Photos section": [
+        "Aktivér sektionen Fotos"
+      ],
       "Get updates about comments via email": [
         "Få opdateringer om kommentarer via e-mail"
       ],
@@ -23183,6 +23226,9 @@
       ],
       "Delete user?": [
         "Slet bruger?"
+      ],
+      "Delete version history?": [
+        "Slet versionshistorik?"
       ],
       "Deny access to user?": [
         "Nægt bruger adgang?"
