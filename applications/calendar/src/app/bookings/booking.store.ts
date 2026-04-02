@@ -53,6 +53,7 @@ interface BookingStore {
     setBookingSlots: (bookingSlots: Omit<BookingTimeslot, 'tzDate'>[]) => void;
     filterBookingSlotPerDay: (date: Date) => BookingTimeslot[];
     nextAvailableSlot: BookingTimeslot | null;
+    latestAvailableSlot: BookingTimeslot | null;
     setNextAvailableSlot: (slot: Omit<BookingTimeslot, 'tzDate'> | null) => void;
     getDateKeySet: () => Set<string>;
 
@@ -73,6 +74,7 @@ export const useBookingStore = create<BookingStore>((set, get) => ({
     bookingDetails: null,
     selectedBookingSlot: null,
     nextAvailableSlot: null,
+    latestAvailableSlot: null,
 
     loadedRanges: [],
 
@@ -102,10 +104,13 @@ export const useBookingStore = create<BookingStore>((set, get) => ({
         }));
 
         const newTimeSlots = [...get().bookingSlots, ...newSlots].sort((a, b) => a.startTime - b.startTime);
+        const dedupedSlots = uniqueBy(newTimeSlots, (slot: BookingTimeslot) => `${slot.id}-${slot.startTime}`);
 
         set({
             // Recurring events have the same ID, so we need to check both id and startTime to remove duplicates
-            bookingSlots: uniqueBy(newTimeSlots, (slot: BookingTimeslot) => `${slot.id}-${slot.startTime}`),
+            bookingSlots: dedupedSlots,
+            // We keep track of the latest available slot to prevent useless loadings
+            latestAvailableSlot: dedupedSlots[dedupedSlots.length - 1] ?? null,
         });
     },
 
@@ -120,12 +125,13 @@ export const useBookingStore = create<BookingStore>((set, get) => ({
             tzDate: fromTimestampToUTCDate(bookingSlot.startTime, get().selectedTimezone),
         };
         const updatedTimeSlots = [...get().bookingSlots, nextAvailableSlot].sort((a, b) => a.startTime - b.startTime);
+        const dedupedSlots = uniqueBy(updatedTimeSlots, (slot: BookingTimeslot) => `${slot.id}-${slot.startTime}`);
 
         // Also add the next slot in bookingSlots in case it's too far in the future and not loaded by default
         set({
             nextAvailableSlot,
             // Recurring events have the same ID, so we need to check both id and startTime to remove duplicates
-            bookingSlots: uniqueBy(updatedTimeSlots, (slot: BookingTimeslot) => `${slot.id}-${slot.startTime}`),
+            bookingSlots: dedupedSlots,
         });
     },
 
