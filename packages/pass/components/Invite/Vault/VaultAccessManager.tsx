@@ -82,6 +82,7 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
                         <AccessList
                             canManage={canManage}
                             canTransfer={canTransfer}
+                            isMine={vault.owner}
                             invites={invites}
                             onInvite={onVaultInvite}
                             shareId={shareId}
@@ -94,6 +95,7 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
                         <AccessList
                             canManage={canManage}
                             canTransfer={canTransfer}
+                            isMine={vault.owner}
                             members={members}
                             shareId={shareId}
                             title={c('Label').t`Members`}
