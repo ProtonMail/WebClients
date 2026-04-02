@@ -193,4 +193,8 @@ export class ClientInvoker implements EditorRequiresClientMethods {
   async getAppPlatform(): Promise<AppPlatform> {
     return this.invokeClientMethod('getAppPlatform', [])
   }
+
+  async reloadClient(): Promise<void> {
+    return this.invokeClientMethod('reloadClient', [])
+  }
 }

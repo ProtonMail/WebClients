@@ -25,10 +25,8 @@ import { TablePlugin } from './TablePlugin'
 import { mergedCellsHTML, TablesWithUnalignedRowsAndColumns } from './__mocks__/TestTables'
 import { $createHeadingNode, $isHeadingNode } from '@lexical/rich-text'
 import DocumentEditorTheme from '../../Theme/Theme'
-
-jest.mock('../../Lib/useEditorStateValues', () => ({
-  useEditorStateValues: () => ({ isSuggestionMode: false }),
-}))
+import { EditorStateProvider } from '../../Containers/EditorStateProvider'
+import { EditorSystemMode } from '@proton/docs-shared'
 
 describe('TablePlugin', () => {
   let container: HTMLElement
@@ -48,22 +46,24 @@ describe('TablePlugin', () => {
         return null
       }
       return (
-        <LexicalComposer
-          initialConfig={{
-            namespace: 'test',
-            nodes: AllNodes,
-            onError: console.error,
-            theme: DocumentEditorTheme,
-          }}
-        >
-          <RichTextPlugin
-            contentEditable={<ProtonContentEditable isSuggestionMode={true} />}
-            placeholder={null}
-            ErrorBoundary={LexicalErrorBoundary}
-          />
-          <TestPlugin />
-          <TablePlugin />
-        </LexicalComposer>
+        <EditorStateProvider systemMode={EditorSystemMode.Edit}>
+          <LexicalComposer
+            initialConfig={{
+              namespace: 'test',
+              nodes: AllNodes,
+              onError: console.error,
+              theme: DocumentEditorTheme,
+            }}
+          >
+            <RichTextPlugin
+              contentEditable={<ProtonContentEditable isSuggestionMode={true} />}
+              placeholder={null}
+              ErrorBoundary={LexicalErrorBoundary}
+            />
+            <TestPlugin />
+            <TablePlugin />
+          </LexicalComposer>
+        </EditorStateProvider>
       )
     }
 

@@ -30,6 +30,10 @@ export type DocumentEvent =
       payload: DecryptedMessage
     }
   | {
+      name: 'RealtimeReceivedEverythingFromRTS'
+      payload: undefined
+    }
+  | {
       name: 'RealtimeRequestingClientToBroadcastItsState'
       payload: undefined
     }

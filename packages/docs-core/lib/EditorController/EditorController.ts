@@ -106,6 +106,18 @@ export class EditorController implements EditorControllerInterface {
       }
     })
 
+    this.documentState.subscribeToEvent('RealtimeReceivedEverythingFromRTS', () => {
+      if (this.editorInvoker) {
+        void this.editorInvoker.receiveMessage({
+          type: {
+            wrapper: 'events',
+            eventType: EventType.create(EventTypeEnum.ServerHasMoreOrLessGivenTheClientEverythingItHas).value,
+          },
+          content: new Uint8Array(),
+        })
+      }
+    })
+
     this.documentState.subscribeToEvent('RealtimeRequestingClientToBroadcastItsState', () => {
       if (this.editorInvoker) {
         void this.editorInvoker.broadcastPresenceState()

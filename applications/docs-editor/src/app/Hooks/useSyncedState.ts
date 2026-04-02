@@ -8,6 +8,9 @@ export function useSyncedState() {
   const [suggestionsEnabled, setSuggestionsEnabled] = useState(
     application.syncedState.getProperty('suggestionsEnabled'),
   )
+  const [receivedEverythingFromRTS, setReceivedEverythingFromRTS] = useState(
+    application.syncedState.getProperty('receivedEverythingFromRTS'),
+  )
 
   useEffect(() => {
     return application.syncedState.subscribeToProperty('userName', (userName) => {
@@ -21,8 +24,15 @@ export function useSyncedState() {
     })
   }, [application.syncedState])
 
+  useEffect(() => {
+    return application.syncedState.subscribeToProperty('receivedEverythingFromRTS', (receivedEverythingFromRTS) => {
+      setReceivedEverythingFromRTS(receivedEverythingFromRTS)
+    })
+  }, [application.syncedState])
+
   return {
     userName,
     suggestionsEnabled,
+    receivedEverythingFromRTS,
   }
 }

@@ -162,6 +162,8 @@ export class DocState extends Observable<string> implements DocStateInterface {
     } else if (message.type.wrapper === 'events') {
       if (message.type.eventType === EventTypeEnum.ClientIsBroadcastingItsPresenceState) {
         awarenessProtocol.applyAwarenessUpdate(this.awareness, message.content, message.origin)
+      } else if (message.type.eventType === EventTypeEnum.ServerHasMoreOrLessGivenTheClientEverythingItHas) {
+        this.callbacks.handleReceivedEverythingFromRTS()
       } else {
         throw new Error(`Unable to handle message type: ${message.type}`)
       }
