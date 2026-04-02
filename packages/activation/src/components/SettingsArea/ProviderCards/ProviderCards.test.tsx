@@ -10,7 +10,7 @@ import useBYOEFeatureStatus from '@proton/activation/src/hooks/useBYOEFeatureSta
 import { ImportProvider, ImportType } from '@proton/activation/src/interface';
 import { easySwitchRender } from '@proton/activation/src/tests/render';
 import { useWriteableCalendars } from '@proton/calendar/calendars/hooks';
-import { ADDRESS_FLAGS, APPS, BRAND_NAME } from '@proton/shared/lib/constants';
+import { ADDRESS_FLAGS, APPS, BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 import ProviderCard from './ProviderCard';
 
@@ -248,7 +248,7 @@ describe('Provider cards process testing', () => {
 
         fireEvent.click(screen.getByTestId('ProviderButton:googleCardForward'));
 
-        await waitFor(() => screen.getByText(`Connect to Gmail, stay in ${BRAND_NAME}`));
+        await waitFor(() => screen.getByText(`Bring your Gmail into ${MAIL_APP_NAME}`));
     });
 
     it('Should show forwarding modal when clicking Google with BYOE feature disabled', async () => {

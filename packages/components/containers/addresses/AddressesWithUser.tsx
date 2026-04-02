@@ -35,6 +35,7 @@ import {
     APPS,
     APP_UPSELL_REF_PATH,
     BRAND_NAME,
+    MAIL_APP_NAME,
     MAIL_UPSELL_PATHS,
     UPSELL_COMPONENT,
 } from '@proton/shared/lib/constants';
@@ -255,7 +256,8 @@ const AddressesUser = ({
             {hasDescription && (
                 <SettingsParagraph className="mt-2">
                     <span>
-                        {c('Info').t`Use the different types of email addresses and aliases offered by ${BRAND_NAME}.`}
+                        {c('Info')
+                            .t`Use multiple email addresses with ${MAIL_APP_NAME}. Add a new ${BRAND_NAME} address or connect another email account to manage everything from one inbox.`}
                     </span>
                     <br />
                     <Href href={getKnowledgeBaseUrl('/addresses-and-aliases')}>{c('Link').t`Learn more`}</Href>
