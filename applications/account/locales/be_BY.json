@@ -324,9 +324,6 @@
       "Connected": [
         "Падключана"
       ],
-      "Contact sales": [
-        "Звязацца з аддзелам продажаў"
-      ],
       "Contact support": [
         "Звязацца са службай падтрымкі"
       ],
@@ -455,9 +452,6 @@
       ],
       "Delete account": [
         "Выдаліць уліковы запіс"
-      ],
-      "Delete and confirm": [
-        "Выдаліць і пацвердзіць"
       ],
       "Delete filter “${ Name }”": [
         "Выдаліць фільтр “${ Name }”"
@@ -1292,9 +1286,6 @@
       ],
       "Save and continue": [
         "Захаваць і працягнуць"
-      ],
-      "Save changes": [
-        "Захаваць змены"
       ],
       "Save ICS file": [
         "Захаваць файл ICS"
@@ -9127,9 +9118,6 @@
       "${ discountPercent }% discount": [
         "скідка ${ discountPercent }%"
       ],
-      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME } больш не будзе пакідаць папярэднія версіі вашых файлаў."
-      ],
       "${ emailAddress } is invalid": [
         "Памылковы адрас ${ emailAddress }"
       ],
@@ -10384,9 +10372,6 @@
       "for ${ price }": [
         "за ${ price }"
       ],
-      "For a 10-year version history, please contact our sales team.": [
-        "Звярніцеся ў нашу каманду па продажам, калі вам неабходна падтрымка гісторыі версій за 10 гадоў."
-      ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Для доступу да электроннай пошты ў любы час і аптымізацыі працы мабільных прылад, спампуйце ${ androidAppLink } або ${ iosAppLink }."
       ],
@@ -10424,7 +10409,7 @@
         "Назіранне за шлюзом"
       ],
       "Gateways": [
-        "Шлюзы"
+        "шлюзоў"
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Генерацыя новай фразы аднаўлення прывядзе да дэактывацыі папярэдняй."
@@ -11272,6 +11257,9 @@
       "Product reviews, rankings, or guides": [
         "Агляды прадуктаў, рэйтынгі або дапаможнікі"
       ],
+      "Professional": [
+        "Professional"
+      ],
       "Protect this device too?": [
         "Абараняць гэту прыладу таксама?"
       ],
@@ -11824,12 +11812,6 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Гэта праверка можа заняць да адной гадзіны. Пасля паспяховай праверкі не выдаляйце гэты запіс TXT, бо ён неабходны для пацвярджэння таго, што вы з'яўляецеся ўладальнікам дамена."
       ],
-      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "Гэта выдаліць усе папярэднія версіі вашых файлаў, якія старэйшыя за ${ rententionLabel }."
-      ],
-      "This will delete all previous versions of your files.": [
-        "Гэта выдаліць усе папярэднія версіі вашых файлаў."
-      ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Гэта прывядзе да забароны ў доступе да **${ email }**. Вы сапраўды хочаце працягнуць?"
       ],
@@ -12028,9 +12010,6 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Палепшыць тарыфны план, каб захаваць перавагі ${ planTitle }."
       ],
-      "Upgrade to unlock": [
-        "Палепшыць, каб разблакіраваць"
-      ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "Палепшыце свой тарыфны план, каб разблакіраваць ${ monitorLink }."
       ],
@@ -12129,9 +12108,6 @@
       ],
       "Version ${ version }": [
         "Версія ${ version }"
-      ],
-      "Version history": [
-        "Гісторыя версій"
       ],
       "Version number successfully copied to clipboard": [
         "Нумар версіі паспяхова скапіяваны ў буферу абмену"
@@ -12292,6 +12268,9 @@
       "With ${ AUTHENTICATOR_APP_NAME }, you can:": [
         "З ${ AUTHENTICATOR_APP_NAME } вы зможаце:"
       ],
+      "With a ${ boldProfessionalPlan } plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
+        "З тарыфнымі планам ${ boldProfessionalPlan }, вы можаце купіць ${ boldDedicatedServers } для сваёй арганізацыі і наладзіць правы доступу для ${ boldGateways }, каб размежаваць доступ карыстальнікаў да іх."
+      ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "З зашыфраваным адрасам ${ BRAND_NAME }, вы можаце выкарыстоўваць усе сэрвісы ${ BRAND_NAME }"
       ],
@@ -12444,9 +12423,6 @@
       ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Вы не можаце запрасіць карыстальніка ${ MAIL_APP_NAME }"
-      ],
-      "You cannot undo this action.": [
-        "Гэта дзеянне немагчыма адрабіць."
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Вы не задалі спосаб для аднаўлення доступу. Таму, калі вы забудзеце свой пароль, то аднавіць уліковы запіс будзе немагчыма. Працягнуць без спосабу аднаўлення?"
@@ -12660,9 +12636,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш нумар тэлефона будзе выкарыстаны толькі для бягучай аднаразовай праверкі."
-      ],
-      "Your plan is limited to 10 versions for up to 7 days": [
-        "Ваш тарыфны план абмежаваны 10 версіямі на тэрмін да 7 дзён"
       ],
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "Вашы нядаўнія змены былі апублікаваны. Яны будуць бачныя карыстальнікам у наступныя некалькі гадзін."
@@ -13310,12 +13283,6 @@
         "${ nbDay } дзён",
         "${ nbDay } дні"
       ],
-      "${ nbYear } year": [
-        "${ nbYear } год",
-        "${ nbYear } гады",
-        "${ nbYear } гадоў",
-        "${ nbYear } гадоў"
-      ],
       "${ pricePerMonthWithCurrency } / month": [
         "${ pricePerMonthWithCurrency }/месяц"
       ],
@@ -13834,9 +13801,6 @@
       ],
       "Don't ask again": [
         "Больш не пытаць"
-      ],
-      "Don't keep versions": [
-        "Не пакідаць версіі"
       ],
       "Don't show this again": [
         "Больш не паказваць"
@@ -15362,11 +15326,6 @@
         "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } меткі з ${ itemsToImportCount }) і пазначыць іх як",
         "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } метак з ${ itemsToImportCount }) і пазначыць іх як",
         "Імпартаваць усе паведамленні (${ selectedItemsToImportCount } метак з ${ itemsToImportCount }) і пазначыць іх як"
-      ]
-    },
-    "mail_cro_experiment": {
-      "Get Deal": [
-        "Атрымаць прапанову"
       ]
     },
     "mail_signup_2023: Info": {
@@ -20700,9 +20659,6 @@
       ]
     },
     "Setting": {
-      "Enable Photos section": [
-        "Уключыць раздзел Фатаграфіі"
-      ],
       "Get updates about comments via email": [
         "Атрымлівайце абнаўленні аб каментарыях праз электронную пошту"
       ],
@@ -23716,9 +23672,6 @@
       ],
       "Delete user?": [
         "Выдаліць карыстальніка?"
-      ],
-      "Delete version history?": [
-        "Выдаліць гісторыю версій?"
       ],
       "Deny access to user?": [
         "Забараніць доступ карыстальніку?"
