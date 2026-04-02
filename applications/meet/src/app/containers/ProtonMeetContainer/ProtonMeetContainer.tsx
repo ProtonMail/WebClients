@@ -110,7 +110,6 @@ export const ProtonMeetContainer = ({
     const showUpsellModalAfterMeeting = useFlag('MeetShowUpsellModalAfterMeeting');
     const meetUpsellEnabled = useFlag('MeetUpsell');
     const meetOpenLinksInDesktopApp = useFlag('MeetOpenLinksInDesktopApp');
-    const newCTAModal = useFlag('MeetNewCTAModal');
     const usePreSharedKey = useFlag('MeetPreSharedKey');
 
     useWakeLock();
@@ -827,30 +826,14 @@ export const ProtonMeetContainer = ({
                 cleanupWasmDependencies();
 
                 dispatch(resetChatAndReactions());
-                if (newCTAModal) {
-                    dispatch(resetUiState());
-                }
+                dispatch(resetUiState());
 
                 if (reason === DisconnectReason.ROOM_DELETED) {
-                    if (newCTAModal) {
-                        dispatch(setPreviousMeetingLink(meetingLinkRef.current));
-                        dispatch(setUpsellModalType(UpsellModalTypes.MeetingEnded));
-                    } else {
-                        createNotification({
-                            type: 'info',
-                            text: c('Info').t`The host has ended the meeting`,
-                        });
-                    }
+                    dispatch(setPreviousMeetingLink(meetingLinkRef.current));
+                    dispatch(setUpsellModalType(UpsellModalTypes.MeetingEnded));
                 } else if (reason === DisconnectReason.PARTICIPANT_REMOVED) {
-                    if (newCTAModal) {
-                        dispatch(setPreviousMeetingLink(meetingLinkRef.current));
-                        dispatch(setUpsellModalType(UpsellModalTypes.RemovedFromMeeting));
-                    } else {
-                        createNotification({
-                            type: 'warning',
-                            text: c('Warning').t`The host has removed you from the meeting`,
-                        });
-                    }
+                    dispatch(setPreviousMeetingLink(meetingLinkRef.current));
+                    dispatch(setUpsellModalType(UpsellModalTypes.RemovedFromMeeting));
                 } else if (reason !== undefined && reason !== DisconnectReason.CLIENT_INITIATED) {
                     // Log abnormal error to sentry
                     reportMeetError('Room disconnected unexpectedly', withMeetingLinkNameTag(DisconnectReason[reason]));
