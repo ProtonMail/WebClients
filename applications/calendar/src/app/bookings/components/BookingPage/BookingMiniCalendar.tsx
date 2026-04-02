@@ -1,10 +1,19 @@
 import { useEffect, useState } from 'react';
 
-import { startOfMonth, startOfToday } from 'date-fns';
+import {
+    addWeeks,
+    differenceInCalendarMonths,
+    endOfWeek,
+    fromUnixTime,
+    isAfter,
+    startOfMonth,
+    startOfToday,
+    startOfWeek,
+} from 'date-fns';
 
 import Loader from '@proton/components/components/loader/Loader';
 import LocalizedMiniCalendar from '@proton/components/components/miniCalendar/LocalizedMiniCalendar';
-import { getFormattedWeekdays } from '@proton/shared/lib/date/date';
+import { getFormattedWeekdays, getWeekStartsOn } from '@proton/shared/lib/date/date';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 import { useBookingStore } from '../../booking.store';
@@ -20,7 +29,8 @@ interface BookingMiniCalendarProps {
 export const BookingMiniCalendar = ({ selectedDate, onSelectDate }: BookingMiniCalendarProps) => {
     const isLoading = useBookingStore((state) => state.isLoading);
     const getDateKeySet = useBookingStore((state) => state.getDateKeySet);
-    const [, setDisplayedMonth] = useState(selectedDate);
+    const latestAvailableSlot = useBookingStore((state) => state.latestAvailableSlot);
+    const [displayedMonth, setDisplayedMonth] = useState(selectedDate);
 
     const { loadPublicBooking } = useExternalBookingLoader();
 
@@ -39,8 +49,23 @@ export const BookingMiniCalendar = ({ selectedDate, onSelectDate }: BookingMiniC
         void loadPublicBooking(date);
     };
 
-    const handleMonthChange = (date: Date) => {
+    const handleMonthChange = async (date: Date) => {
         setDisplayedMonth(startOfMonth(date));
+        const monthDiff = differenceInCalendarMonths(date, displayedMonth);
+        const latestSlotDate = latestAvailableSlot?.startTime ? fromUnixTime(latestAvailableSlot.startTime) : null;
+
+        // Compare the end of the 6-week view (not just the month start) to determine if data is already loaded
+        const weekStartsOn = getWeekStartsOn(dateLocale);
+        const endOfCalendarView = endOfWeek(
+            addWeeks(startOfWeek(startOfMonth(date), { weekStartsOn }), WEEKS_IN_MINI_CALENDAR - 1),
+            { weekStartsOn }
+        );
+        if (monthDiff <= 0 || (latestSlotDate !== null && !isAfter(endOfCalendarView, latestSlotDate))) {
+            return;
+        }
+
+        const newRangeStart = startOfMonth(date);
+        await loadPublicBooking(newRangeStart);
     };
 
     const today = new Date();
