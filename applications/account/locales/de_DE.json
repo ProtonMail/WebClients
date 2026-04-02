@@ -324,9 +324,6 @@
       "Connected": [
         "Verbunden"
       ],
-      "Contact sales": [
-        "Vertrieb kontaktieren"
-      ],
       "Contact support": [
         "Support kontaktieren"
       ],
@@ -455,9 +452,6 @@
       ],
       "Delete account": [
         "Konto löschen"
-      ],
-      "Delete and confirm": [
-        "Löschen und Bestätigen"
       ],
       "Delete filter “${ Name }”": [
         "Filter “${ Name }” löschen"
@@ -1292,9 +1286,6 @@
       ],
       "Save and continue": [
         "Speichern und fortfahren"
-      ],
-      "Save changes": [
-        "Änderungen speichern"
       ],
       "Save ICS file": [
         "ICS-Datei speichern"
@@ -8975,9 +8966,6 @@
       "${ discountPercent }% discount": [
         "${ discountPercent }% Rabatt"
       ],
-      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "Frühere Versionen Ihrer Dateien werden durch ${ DRIVE_APP_NAME } nicht mehr gespeichert."
-      ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } ist ungültig"
       ],
@@ -10162,9 +10150,6 @@
       "for ${ price }": [
         "für ${ price }"
       ],
-      "For a 10-year version history, please contact our sales team.": [
-        "Für einen 10-jährigen Versionsverlauf wende dich bitte an unser Vertriebsteam."
-      ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Lade unsere ${ androidAppLink } oder ${ iosAppLink } herunter, um jederzeit auf deine E-Mails zugreifen zu können und ein optimiertes mobiles Erlebnis zu haben."
       ],
@@ -11036,6 +11021,9 @@
       "Product reviews, rankings, or guides": [
         "Produktbewertungen, Ranglisten oder Leitfäden"
       ],
+      "Professional": [
+        "Professional"
+      ],
       "Protect this device too?": [
         "Dieses Gerät auch schützen?"
       ],
@@ -11576,12 +11564,6 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Diese Verifizierung kann bis zu einer Stunde dauern. Entferne keinesfalls diesen TXT-Eintrag nach der erfolgreichen Verifizierung. Dieser Eintrag wird dazu benötigt, zu bestätigen, dass du weiterhin der Eigentümer der Domain bist."
       ],
-      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "Dadurch werden alle früheren Versionen der Dateien gelöscht, die älter als ${ rententionLabel } sind."
-      ],
-      "This will delete all previous versions of your files.": [
-        "Dadurch werden alle früheren Versionen deiner Dateien gelöscht."
-      ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Dadurch wird der Zugriff auf **${ email }** verweigert. Möchtest du wirklich fortfahren?"
       ],
@@ -11780,9 +11762,6 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Upgrade, um deine ${ planTitle }-Vorteile zu behalten."
       ],
-      "Upgrade to unlock": [
-        "Zum Freischalten ein Upgrade durchführen"
-      ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "Upgrade um ${ monitorLink } freizuschalten."
       ],
@@ -11881,9 +11860,6 @@
       ],
       "Version ${ version }": [
         "Version ${ version }"
-      ],
-      "Version history": [
-        "Versionsverlauf"
       ],
       "Version number successfully copied to clipboard": [
         "Versionsnummer erfolgreich in die Zwischenablage kopiert"
@@ -12044,6 +12020,9 @@
       "With ${ AUTHENTICATOR_APP_NAME }, you can:": [
         "Mit ${ AUTHENTICATOR_APP_NAME } kannst du:"
       ],
+      "With a ${ boldProfessionalPlan } plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
+        "Mit einem ${ boldProfessionalPlan }-Abonnement kannst du ${ boldDedicatedServers } für deine Organisation kaufen und ${ boldGateways } einrichten, um zu kontrollieren, welche Benutzer darauf zugreifen können."
+      ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Mit einer verschlüsselten ${ BRAND_NAME }-Adresse kannst du alle ${ BRAND_NAME }-Dienste nutzen."
       ],
@@ -12182,9 +12161,6 @@
       ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Du kannst keine ${ MAIL_APP_NAME }-Benutzer empfehlen."
-      ],
-      "You cannot undo this action.": [
-        "Diese Aktion kann nicht widerrufen werden."
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Du hast keine Wiederherstellungs-Methode eingerichtet, sodass eine Wiederherstellung des Kontos unmöglich ist, falls du dein Passwort vergisst. Trotzdem ohne Wiederherstellungs-Methode fortfahren?"
@@ -12390,9 +12366,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Deine Telefonnummer wird nur für diese einmalige Überprüfung verwendet."
-      ],
-      "Your plan is limited to 10 versions for up to 7 days": [
-        "Dein Abonnement ist auf 10 Versionen für bis zu 7 Tage begrenzt."
       ],
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "Deine letzten Änderungen wurden veröffentlicht. Sie sind in den nächsten Stunden für Benutzer sichtbar."
@@ -13026,10 +12999,6 @@
         "${ nbDay } Tag",
         "${ nbDay } Tage"
       ],
-      "${ nbYear } year": [
-        "${ nbYear } Jahr",
-        "${ nbYear } Jahre"
-      ],
       "${ pricePerMonthWithCurrency } / month": [
         "${ pricePerMonthWithCurrency } / Monat"
       ],
@@ -13548,9 +13517,6 @@
       ],
       "Don't ask again": [
         "Nicht erneut fragen"
-      ],
-      "Don't keep versions": [
-        "Versionen nicht aufbewahren"
       ],
       "Don't show this again": [
         "Nicht erneut anzeigen"
@@ -15062,11 +15028,6 @@
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
         "Alle Nachrichten aus ${ selectedItemsToImportCount } von ${ itemsToImportCount } Kategorie importieren und hinzufügen zur Kategorie",
         "Alle Nachrichten aus ${ selectedItemsToImportCount } von ${ itemsToImportCount } Kategorien importieren und hinzufügen zur Kategorie"
-      ]
-    },
-    "mail_cro_experiment": {
-      "Get Deal": [
-        "Angebot nutzen"
       ]
     },
     "mail_signup_2023: Info": {
@@ -20340,9 +20301,6 @@
       ]
     },
     "Setting": {
-      "Enable Photos section": [
-        "Bereich „Fotos“ aktivieren"
-      ],
       "Get updates about comments via email": [
         "Erhalte Benachrichtigungen über Kommentare via E-Mail."
       ],
@@ -23222,9 +23180,6 @@
       ],
       "Delete user?": [
         "Benutzer löschen?"
-      ],
-      "Delete version history?": [
-        "Versionsverlauf löschen?"
       ],
       "Deny access to user?": [
         "Dem Benutzer den Zugriff verweigern?"
