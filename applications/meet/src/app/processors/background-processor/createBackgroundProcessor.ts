@@ -1,8 +1,4 @@
-import {
-    type BackgroundProcessorOptions,
-    supportsBackgroundProcessors,
-    supportsModernBackgroundProcessors,
-} from '@livekit/track-processors';
+import { supportsBackgroundProcessors, supportsModernBackgroundProcessors } from '@livekit/track-processors';
 import type { LocalVideoTrack } from 'livekit-client';
 
 import { isMobile } from '@proton/shared/lib/helpers/browser';
@@ -11,16 +7,23 @@ import { isLowEndDevice } from '../../utils/isLowEndDevice';
 import {
     BackgroundBlur,
     type BackgroundBlurProcessor,
+    type BackgroundProcessorOptions,
     preloadBackgroundBlurAssets,
 } from './MulticlassBackgroundProcessor';
+
+const lowEnd = isLowEndDevice();
 
 const backgroundProcessorOptions: BackgroundProcessorOptions = {
     assetPaths: {
         tasksVisionFileSet: '/assets/background-blur',
-        modelAssetPath: isLowEndDevice()
+        modelAssetPath: lowEnd
             ? '/assets/background-blur/selfie_segmenter.tflite'
             : '/assets/background-blur/selfie_multiclass_256x256.tflite',
+        // Fall back to the lightweight model when the GPU delegate is unavailable
+        cpuModelAssetPath: '/assets/background-blur/selfie_segmenter.tflite',
     },
+    // Run segmentation every other frame on low-end devices; reuse the previous mask in between
+    segmentEveryNFrames: lowEnd ? 2 : 1,
 };
 
 export const createBackgroundProcessor = (): BackgroundBlurProcessor | null => {
