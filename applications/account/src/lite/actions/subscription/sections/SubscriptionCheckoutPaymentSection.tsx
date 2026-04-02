@@ -227,6 +227,7 @@ const SubscriptionCheckoutPaymentSection = ({
                         onDone={onClose}
                         currency={currency}
                         app={appName}
+                        withLoading={withLoading}
                         loading={
                             loading ||
                             subscribing ||
