@@ -49,16 +49,15 @@ jest.mocked(useConversationCounts).mockReturnValue([
     ],
     false,
 ]);
-const mockUseMailSettings = jest.mocked(useMailSettings);
-const mockUseMailSelector = jest.mocked(useMailSelector);
-const mockUseCategoriesView = jest.mocked(useCategoriesView);
 
 const wrapper = ({ children }: { children: ReactNode }) => <MemoryRouter>{children}</MemoryRouter>;
 
 describe('useMailboxPageTitle', () => {
     beforeEach(() => {
-        mockUseMailSelector.mockReturnValue([]);
-        mockUseCategoriesView.mockReturnValue({ categoryViewAccess: false } as ReturnType<typeof useCategoriesView>);
+        jest.mocked(useMailSelector).mockReturnValue([]);
+        jest.mocked(useCategoriesView).mockReturnValue({ categoryViewAccess: false } as ReturnType<
+            typeof useCategoriesView
+        >);
     });
 
     afterEach(() => {
@@ -67,30 +66,36 @@ describe('useMailboxPageTitle', () => {
     });
 
     describe('category view tests', () => {
-        mockUseMailSettings.mockReturnValue([{ ...DEFAULT_MAIL_SETTINGS, UnreadFavicon: 0 }, false]);
+        jest.mocked(useMailSettings).mockReturnValue([{ ...DEFAULT_MAIL_SETTINGS, UnreadFavicon: 0 }, false]);
 
         it('should return the primary label count when on default category', () => {
-            mockUseMailSelector.mockReturnValue([MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]);
-            mockUseCategoriesView.mockReturnValue({ categoryViewAccess: true } as ReturnType<typeof useCategoriesView>);
+            jest.mocked(useMailSelector).mockReturnValue([MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]);
+            jest.mocked(useCategoriesView).mockReturnValue({ categoryViewAccess: true } as ReturnType<
+                typeof useCategoriesView
+            >);
 
             renderHook(() => useMailboxPageTitle(MAILBOX_LABEL_IDS.INBOX), { wrapper });
             expect(document.title).toBe(`(${CATEGORY_DEFAULT_UNREAD_COUNT}) ${LABEL_NAME} | ${EMAIL} | Proton Mail`);
         });
 
         it('should return the promotion label count when on default category', () => {
-            mockUseMailSelector.mockReturnValue([MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS]);
-            mockUseCategoriesView.mockReturnValue({ categoryViewAccess: true } as ReturnType<typeof useCategoriesView>);
+            jest.mocked(useMailSelector).mockReturnValue([MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS]);
+            jest.mocked(useCategoriesView).mockReturnValue({ categoryViewAccess: true } as ReturnType<
+                typeof useCategoriesView
+            >);
 
             renderHook(() => useMailboxPageTitle(MAILBOX_LABEL_IDS.INBOX), { wrapper });
             expect(document.title).toBe(`(${CATEGORY_PROMOTIONS_UNREAD_COUNT}) ${LABEL_NAME} | ${EMAIL} | Proton Mail`);
         });
 
         it('should return the primary count if multiple categories in the array', () => {
-            mockUseMailSelector.mockReturnValue([
+            jest.mocked(useMailSelector).mockReturnValue([
                 MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
                 MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
             ]);
-            mockUseCategoriesView.mockReturnValue({ categoryViewAccess: true } as ReturnType<typeof useCategoriesView>);
+            jest.mocked(useCategoriesView).mockReturnValue({ categoryViewAccess: true } as ReturnType<
+                typeof useCategoriesView
+            >);
 
             renderHook(() => useMailboxPageTitle(MAILBOX_LABEL_IDS.INBOX), { wrapper });
             expect(document.title).toBe(`(${CATEGORY_DEFAULT_UNREAD_COUNT}) ${LABEL_NAME} | ${EMAIL} | Proton Mail`);
@@ -98,21 +103,21 @@ describe('useMailboxPageTitle', () => {
     });
 
     it('Should display the unread count when the favicon is disabled in conversation mode', () => {
-        mockUseMailSettings.mockReturnValue([{ ...DEFAULT_MAIL_SETTINGS, UnreadFavicon: 0 }, false]);
+        jest.mocked(useMailSettings).mockReturnValue([{ ...DEFAULT_MAIL_SETTINGS, UnreadFavicon: 0 }, false]);
 
         renderHook(() => useMailboxPageTitle(MAILBOX_LABEL_IDS.INBOX), { wrapper });
         expect(document.title).toBe(`(${INBOX_UNREAD_COUNT}) ${LABEL_NAME} | ${EMAIL} | Proton Mail`);
     });
 
     it('Should not display the unread count when the favicon is enabled in conversation mode', () => {
-        mockUseMailSettings.mockReturnValue([{ ...DEFAULT_MAIL_SETTINGS, UnreadFavicon: 1 }, false]);
+        jest.mocked(useMailSettings).mockReturnValue([{ ...DEFAULT_MAIL_SETTINGS, UnreadFavicon: 1 }, false]);
 
         renderHook(() => useMailboxPageTitle(MAILBOX_LABEL_IDS.INBOX), { wrapper });
         expect(document.title).toBe(`${LABEL_NAME} | ${EMAIL} | Proton Mail`);
     });
 
     it('Should display the unread count when the favicon is disabled in message mode', () => {
-        mockUseMailSettings.mockReturnValue([
+        jest.mocked(useMailSettings).mockReturnValue([
             { ...DEFAULT_MAIL_SETTINGS, UnreadFavicon: 0, ViewMode: VIEW_MODE.SINGLE },
             false,
         ]);
@@ -122,7 +127,7 @@ describe('useMailboxPageTitle', () => {
     });
 
     it('Should not display the unread count when the favicon is enabled in message mode', () => {
-        mockUseMailSettings.mockReturnValue([
+        jest.mocked(useMailSettings).mockReturnValue([
             { ...DEFAULT_MAIL_SETTINGS, UnreadFavicon: 1, ViewMode: VIEW_MODE.SINGLE },
             false,
         ]);
