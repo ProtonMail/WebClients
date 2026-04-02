@@ -7,7 +7,7 @@ import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import { APPS, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { APPS, BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import byoeSetupSuccess from '@proton/styles/assets/img/illustrations/byoe-setup-success.svg';
 
 interface Props extends ModalProps {
@@ -25,13 +25,18 @@ export const BYOESetupSuccessModal = ({ onClose, connectedAddress, ...rest }: Pr
     return (
         <ModalTwo size="small" {...rest} onClose={onClose}>
             <ModalTwoHeader />
-            <ModalTwoContent className="flex justify-center items-center text-center">
-                <img src={byoeSetupSuccess} alt="" width={260} height={148} />
-                <div className="text-bold text-xl">{c('loc_nightly: BYOE').t`Your Gmail address is connected`}</div>
-                <div className="color-weak mt-2">
-                    {c('loc_nightly: BYOE')
-                        .jt`You can now send and receive messages from ${connectedAddressText} in ${MAIL_APP_NAME}.`}
+            <ModalTwoContent className="flex">
+                <div className="justify-center items-center text-center w-full">
+                    <img src={byoeSetupSuccess} alt="" width={260} height={148} />
+                    <div className="text-bold text-xl">{c('loc_nightly: BYOE').t`You are all set`}</div>
                 </div>
+                <ul className="color-weak mt-2">
+                    <li>{c('loc_nightly: BYOE')
+                        .jt`Emails sent to ${connectedAddressText} will now show up in ${MAIL_APP_NAME}.`}</li>
+                    <li>{c('loc_nightly: BYOE').t`You can now send emails from ${BRAND_NAME} using this address.`}</li>
+                    <li>{c('loc_nightly: BYOE')
+                        .t`We've started importing your email from Gmail. We'll let you know when it's done.`}</li>
+                </ul>
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button color="norm" className="w-full inline-flex items-center justify-center gap-2" onClick={onClose}>

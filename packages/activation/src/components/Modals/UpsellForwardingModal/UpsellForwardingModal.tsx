@@ -1,4 +1,4 @@
-import { c, msgid } from 'ttag';
+import { c } from 'ttag';
 
 import { type ModalStateProps, UpsellModal } from '@proton/components';
 import useConfig from '@proton/components/hooks/useConfig';
@@ -8,7 +8,7 @@ import { MAIL_APP_NAME, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/sh
 import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import forwardImg from '@proton/styles/assets/img/illustrations/new-upsells-img/easy-switch-forward.svg';
 
-import { MAX_SYNC_FREE_USER, MAX_SYNC_PAID_USER } from '../../../constants';
+import { MAX_SYNC_PAID_USER } from '../../../constants';
 
 interface Props {
     hasAccessToBYOE: boolean;
@@ -30,42 +30,24 @@ const UpsellForwardingModal = ({ hasAccessToBYOE, modalProps }: Props) => {
     return (
         <UpsellModal
             upsellRef={upsellRef}
-            title={
-                hasAccessToBYOE
-                    ? c('Title').t`Connect more addresses`
-                    : c('Title').t`Multiple accounts, 1 private inbox`
-            }
+            title={c('Title').t`Multiple accounts, 1 private inbox`}
             description={
                 <>
                     <span>
                         {hasAccessToBYOE
-                            ? /*translator: full sentence is "You've connected 1 Gmail address to Proton Mail."*/
-                              c('loc_nightly: BYOE').ngettext(
-                                  msgid`You've connected ${MAX_SYNC_FREE_USER} Gmail address to ${MAIL_APP_NAME}.`,
-                                  `You've connected ${MAX_SYNC_FREE_USER} Gmail addresses to ${MAIL_APP_NAME}.`,
-                                  MAX_SYNC_FREE_USER
-                              )
-                            : /*translator: full sentence is "You're forwarding emails from 1 external account to Proton Mail."*/
-                              c('Easy switch').ngettext(
-                                  msgid`You're forwarding emails from ${MAX_SYNC_FREE_USER} external account to ${MAIL_APP_NAME}.`,
-                                  `You're forwarding emails from ${MAX_SYNC_FREE_USER} external accounts to ${MAIL_APP_NAME}.`,
-                                  MAX_SYNC_FREE_USER
-                              )}
+                            ? c('loc_nightly: BYOE')
+                                  .t`You've connected one external account address to ${MAIL_APP_NAME}.`
+                            : c('Easy switch')
+                                  .t`You're forwarding emails from one external account to ${MAIL_APP_NAME}.`}
                     </span>
                     <span className="ml-1">
                         {hasAccessToBYOE
-                            ? /*translator: full sentence is "To connect more, upgrade to Mail Plus and get up to 3 Gmail accounts linked to your inbox."*/
-                              c('loc_nightly: BYOE').ngettext(
-                                  msgid`To connect up to ${MAX_SYNC_PAID_USER} Gmail address, upgrade to ${planName}.`,
-                                  `To connect up to ${MAX_SYNC_PAID_USER} Gmail addresses, upgrade to ${planName}.`,
-                                  MAX_SYNC_PAID_USER
-                              )
+                            ? /*translator: full sentence is "Upgrade to Mail Plus to connect up to 3 accounts."*/
+                              c('loc_nightly: BYOE')
+                                  .t`Upgrade to ${planName} to connect up to ${MAX_SYNC_PAID_USER} accounts`
                             : /*translator: full sentence is "To forward emails from up to 3 accounts, upgrade to Mail Plus."*/
-                              c('Easy switch').ngettext(
-                                  msgid`To forward emails from up to ${MAX_SYNC_PAID_USER} account, upgrade to ${planName}.`,
-                                  `To forward emails from up to ${MAX_SYNC_PAID_USER} accounts, upgrade to ${planName}.`,
-                                  MAX_SYNC_PAID_USER
-                              )}
+                              c('Easy switch')
+                                  .t`To forward emails from up to ${MAX_SYNC_PAID_USER} accounts, upgrade to ${planName}.`}
                     </span>
                 </>
             }
