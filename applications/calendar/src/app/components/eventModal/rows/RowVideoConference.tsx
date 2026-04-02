@@ -51,7 +51,7 @@ export const RowVideoConference = ({
     const [organization] = useOrganization();
     const hasMeetProductAccess = useHasMeetProductAccess();
 
-    const isZoomIntegrationEnabled = useFlag('ZoomIntegration');
+    const isZoomIntegrationDisabled = useFlag('ZoomIntegrationDisabled');
 
     const isMeetVideoConferenceEnabled = useFlag('NewScheduleOption') && hasMeetProductAccess;
 
@@ -105,7 +105,7 @@ export const RowVideoConference = ({
     });
 
     const zoomAccessLevel = getAccessLevel();
-    const shouldShowZoom = isZoomIntegrationEnabled && zoomAccessLevel !== 'limited-access';
+    const shouldShowZoom = !isZoomIntegrationDisabled && zoomAccessLevel !== 'limited-access';
     const zoomIntegrationLoading = zoomIntegration.loadingConfig || zoomIntegration.oauthTokenLoading;
 
     const videoConferenceProviderDetails = [
