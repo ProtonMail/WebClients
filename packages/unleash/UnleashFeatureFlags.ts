@@ -139,7 +139,7 @@ export enum CalendarFeatureFlag {
     CalendarEventsPrefetch = 'CalendarEventsPrefetch',
     EditSingleOccurrenceWeb = 'EditSingleOccurrenceWeb',
     VideoConferenceWidget = 'VideoConferenceWidget',
-    ZoomIntegration = 'ZoomIntegration',
+    ZoomIntegrationDisabled = 'ZoomIntegrationDisabled',
     CalendarMetrics = 'CalendarMetrics',
     RsvpCommentWeb = 'RsvpCommentWeb',
     CalendarBookings = 'CalendarBookings',
