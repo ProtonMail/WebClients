@@ -316,6 +316,7 @@ const SubscriptionContainerInner = ({
     const api = useApi();
     const { paymentsApi } = usePaymentsApi(api);
     const [user] = useUser();
+    const [loading, withLoading] = useLoading();
     const eventManager = useEventManager();
     const pollEventsMultipleTimes = usePollEvents();
     const [calendarDowngradeModal, showCalendarDowngradeModal] = useModalTwoPromise();
@@ -1334,7 +1335,9 @@ const SubscriptionContainerInner = ({
         <SubscriptionConfirmButton
             currency={model.currency}
             onDone={onSubscribed}
+            withLoading={withLoading}
             loading={
+                loading ||
                 subscribing ||
                 paymentFacade.bitcoinInhouse.bitcoinLoading ||
                 paymentFacade.bitcoinChargebee.bitcoinLoading
