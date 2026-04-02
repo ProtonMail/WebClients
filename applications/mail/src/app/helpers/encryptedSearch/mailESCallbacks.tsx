@@ -33,6 +33,7 @@ import type {
     RecordProgress,
 } from '@proton/encrypted-search/models';
 import { queryMessageMetadata } from '@proton/shared/lib/api/messages';
+import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS, MIME_TYPES } from '@proton/shared/lib/constants';
 import { EVENT_ERRORS } from '@proton/shared/lib/errors';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
@@ -60,7 +61,7 @@ interface Props {
     user: UserModel;
     history: History;
     numAddresses: number;
-    disabledCategoriesIDs: string[];
+    categoryIDs: CategoryLabelID[];
 }
 
 export const getItemInfo = (item: ESBaseMessage | ESMessage): ESItemInfo => ({
@@ -75,7 +76,7 @@ export const getESCallbacks = ({
     user,
     history,
     numAddresses,
-    disabledCategoriesIDs,
+    categoryIDs,
 }: Props): ESCallbacks<ESBaseMessage, NormalizedSearchParams, ESMessageContent> => {
     const { ID: userID } = user;
 
@@ -185,7 +186,7 @@ export const getESCallbacks = ({
     const getKeywords = (esSearchParams: NormalizedSearchParams) => esSearchParams.normalizedKeywords;
 
     const getSearchParams = () => {
-        const { isSearch, esSearchParams } = parseSearchParamsMail(history.location, disabledCategoriesIDs);
+        const { isSearch, esSearchParams } = parseSearchParamsMail(history.location, categoryIDs);
         return {
             isSearch,
             esSearchParams,
