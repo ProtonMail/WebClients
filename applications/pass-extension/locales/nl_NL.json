@@ -770,6 +770,9 @@
       ],
       "Your password manager is not here? Request it.": [
         "Uw wachtwoordbeheerder staat hier niet tussen? Vraag het aan."
+      ],
+      "Configure": [
+        "Configureren"
       ]
     },
     "Browser": {
@@ -2050,7 +2053,8 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
+        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -2750,6 +2754,15 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Uw organisatie vereist dat u uw toegang tot ${ PASS_APP_NAME } beveiligen"
+      ],
+      "Not configured": [
+        "Niet geconfigureerd"
+      ],
+      "Open ${ PASS_APP_NAME } in a larger window": [
+        "Open ${ PASS_APP_NAME } in een groter venster"
+      ],
+      "Open the ${ PASS_APP_NAME } popup": [
+        "Open de ${ PASS_APP_NAME } pop-up"
       ]
     },
     "Keyboard key": {
