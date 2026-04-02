@@ -1,7 +1,9 @@
 import { differenceInDays, fromUnixTime, getUnixTime } from 'date-fns';
 
-import type { UnlimitedToDuoRotationState } from './interface';
-import { MAX_DAYS_TO_SHOW_SAME_TIP } from './interface';
+export interface RotationState {
+    tipIndex: number;
+    rotationDate: number;
+}
 
 /**
  * Calculates whether the tip rotation should be updated based on the current rotation state and elapsed time.
@@ -23,8 +25,9 @@ import { MAX_DAYS_TO_SHOW_SAME_TIP } from './interface';
 export const calculateRotationUpdate = (
     currentRotationDate: number,
     currentTipIndex: number,
-    tipsLength: number
-): UnlimitedToDuoRotationState | null => {
+    tipsLength: number,
+    maxDays: number
+): RotationState | null => {
     const currentDate = new Date();
 
     if (currentRotationDate === 0) {
@@ -37,7 +40,7 @@ export const calculateRotationUpdate = (
     const lastRotationDate = fromUnixTime(currentRotationDate);
     const daysSinceLastRotation = differenceInDays(currentDate, lastRotationDate);
 
-    if (daysSinceLastRotation >= MAX_DAYS_TO_SHOW_SAME_TIP) {
+    if (daysSinceLastRotation >= maxDays) {
         return {
             tipIndex: (currentTipIndex + 1) % tipsLength,
             rotationDate: getUnixTime(currentDate),
