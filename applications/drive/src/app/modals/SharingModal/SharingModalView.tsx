@@ -232,7 +232,7 @@ export const SharingModalView = ({
         return (
             <ContactEmailsProvider>
                 <div className="flex items-center justify-space-between flex-nowrap border-bottom border-weak px-8 py-3 mb-5">
-                    <div className="modal-two-header flex items-center flex-nowrap gap-2 m-0">
+                    <div className="flex items-center flex-nowrap gap-2 m-0">
                         <FileIcon mimeType={mediaType ?? ''} />
                         <span className="modal-two-header-title h4 text-bold text-ellipsis">{c('Title')
                             .t`Share "${fileName}"`}</span>
