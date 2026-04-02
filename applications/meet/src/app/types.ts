@@ -46,6 +46,7 @@ export enum PublishableDataTypes {
     Message = 'message',
     EmojiReaction = 'emojiReaction',
     RaiseHand = 'raiseHand',
+    LowerHandAdmin = 'lowerHandAdmin',
     ChatMessageReaction = 'chatMessageReaction',
 }
 

@@ -10,6 +10,7 @@ import { getIdealSortedParticipants } from '../../utils/participants/getIdealSor
 import { getVisuallyStableSortedParticipants } from '../../utils/participants/getVisuallyStableSortedParticipants';
 import type { MeetState } from '../rootReducer';
 import { selectSelfView } from './settings';
+import { selectParticipantsMap } from './meetingInfo';
 
 export interface SortedParticipantsState {
     sortedParticipantIdentities: string[];
@@ -190,6 +191,14 @@ export const selectLocalParticipantColorIndex = (state: MeetState) => {
 
 export const selectLocalParticipantIdentity = createSelector([selectSortedParticipantIdentities], (identities) => {
     return identities[0];
+});
+
+export const selectIsLocalParticipantAdminOrHost = createSelector([
+    selectParticipantsMap,
+    selectLocalParticipantIdentity,
+], (participantsMap, localParticipantIdentity) => {
+    const participant = participantsMap[localParticipantIdentity];
+    return !!participant?.IsAdmin || !!participant?.IsHost;
 });
 
 export const {
