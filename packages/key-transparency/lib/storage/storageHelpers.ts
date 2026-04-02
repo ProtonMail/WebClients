@@ -2,7 +2,7 @@ import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import type { KTLocalStorageAPI } from '@proton/shared/lib/interfaces';
 
-import { ktSentryReportError, throwKTError } from '../helpers/utils';
+import { KT_ERROR_TYPE, ktSentryReportError, throwKTError } from '../helpers/utils';
 import type { KTBlobContent, KTBlobValuesWithInfo, SelfAuditResult } from '../interfaces';
 
 /**
@@ -38,7 +38,7 @@ export const getAllKTBlobValuesWithInfo = async (
 
         const armoredMessage = await ktLSAPI.getItem(key);
         if (!armoredMessage) {
-            return throwKTError('No value found for an existing key', {
+            return throwKTError('No value found for an existing key', KT_ERROR_TYPE.LOCAL, {
                 context: 'getAllKTBlobValuesWithInfo',
             });
         }
@@ -63,7 +63,7 @@ export const getAllKTBlobValuesWithInfo = async (
                 ktBlobsContent: newKTBlobs,
             });
         } catch (error: any) {
-            ktSentryReportError(error, { context: 'getAllKTBlobValuesWithInfo' });
+            ktSentryReportError(error, KT_ERROR_TYPE.LOCAL, { context: 'getAllKTBlobValuesWithInfo' });
         }
     }
 
@@ -132,7 +132,7 @@ export const commitSKLToLS = async (
             );
         }
     } catch (error: any) {
-        ktSentryReportError(error, { context: 'commitSKLToLS' });
+        ktSentryReportError(error, KT_ERROR_TYPE.LOCAL, { context: 'commitSKLToLS' });
     }
 };
 
@@ -156,7 +156,7 @@ export const storeAuditResult = async (
             encryptionKeys: userPrimaryKey,
         })
     ).message;
-    ktLSAPI.setItem(generateKeyAuditName(userID), ciphertext);
+    await ktLSAPI.setItem(generateKeyAuditName(userID), ciphertext);
 };
 
 /**
@@ -191,6 +191,6 @@ export const getAuditResult = async (
             return parsed;
         }
     } catch (error: any) {
-        ktSentryReportError(error, { context: 'getAuditResult' });
+        ktSentryReportError(error, KT_ERROR_TYPE.LOCAL, { context: 'getAuditResult' });
     }
 };

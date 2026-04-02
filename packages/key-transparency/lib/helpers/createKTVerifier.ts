@@ -14,7 +14,7 @@ import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 import { getKTLocalStorage } from '../storage/ktStorageAPI';
 import { commitSKLToLS } from '../storage/storageHelpers';
 import { fetchSignedKeyLists } from './apiHelpers';
-import { ktSentryReport, ktSentryReportError } from './utils';
+import { KT_ERROR_TYPE, ktSentryReport, ktSentryReportError } from './utils';
 
 interface CreatedSKL {
     address: Address;
@@ -73,7 +73,7 @@ export const createKTVerifier = ({
                 const allSKLs = await fetchSignedKeyLists(api, savedSKL?.revision ?? 0, savedSKL.address.Email);
                 const correspondingSKL = allSKLs.find((skl) => savedSKL.signedKeyList.Data == skl.Data);
                 if (!correspondingSKL || !correspondingSKL.Revision || !correspondingSKL.ExpectedMinEpochID) {
-                    ktSentryReport('Could not find new SKL revision and expectedMinEpochID', {
+                    ktSentryReport('Could not find new SKL revision and expectedMinEpochID', KT_ERROR_TYPE.LOCAL, {
                         email: savedSKL.address.Email,
                     });
                     return;
@@ -89,7 +89,7 @@ export const createKTVerifier = ({
             }
             createdSKLs.length = 0;
         } catch (error: any) {
-            ktSentryReportError(error, { context: 'KeyTransparencyCommit' });
+            ktSentryReportError(error, KT_ERROR_TYPE.LOCAL, { context: 'KeyTransparencyCommit' });
         }
     };
 

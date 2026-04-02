@@ -5,7 +5,7 @@ import type { FetchedSignedKeyList } from '@proton/shared/lib/interfaces';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import { KT_DOMAINS, KT_LEN, LEFT_N, vrfHexKeyDev, vrfHexKeyProd } from '../constants/constants';
-import { getBaseDomain, throwKTError } from '../helpers/utils';
+import { getBaseDomain, KT_ERROR_TYPE, throwKTError } from '../helpers/utils';
 import type { Proof } from '../interfaces';
 import { KTPROOF_TYPE } from '../interfaces';
 import { vrfVerify } from './vrf';
@@ -31,7 +31,7 @@ const verifyVRFProof = async (proof: Proof, email: string) => {
         if (isProxyError) {
             throw error;
         }
-        return throwKTError('VRF proof verification failed', { email, verifier: proof.Verifier, cause: error });
+        return throwKTError('VRF proof verification failed', KT_ERROR_TYPE.LOCAL, { email, verifier: proof.Verifier, cause: error });
     }
 };
 
@@ -59,7 +59,7 @@ const verifyNeighbors = async (
     incompleteHashing: boolean = true
 ) => {
     if (Neighbors.length !== KT_LEN * 8) {
-        return throwKTError('Inconsistent number of neighbors', {
+        return throwKTError('Inconsistent number of neighbors', KT_ERROR_TYPE.LOCAL, {
             neighborsLength: Neighbors.length,
         });
     }
@@ -92,7 +92,7 @@ const verifyNeighbors = async (
     }
 
     if (leafValue.toHex() !== TreeHash) {
-        return throwKTError('Hash chain does not result in TreeHash', {
+        return throwKTError('Hash chain does not result in TreeHash', KT_ERROR_TYPE.LOCAL, {
             Neighbors: JSON.stringify(Neighbors),
             TreeHash,
             vrfHash: vrfHash.toHex(),
@@ -116,7 +116,7 @@ export const verifyProofOfAbsenceForRevision = async (
     Revision: number
 ) => {
     if (proof.Type !== KTPROOF_TYPE.ABSENCE) {
-        return throwKTError('Proof type should be of absence', {
+        return throwKTError('Proof type should be of absence', KT_ERROR_TYPE.LOCAL, {
             email,
             proofType: proof.Type,
         });
@@ -134,7 +134,7 @@ export const verifyProofOfAbsenceForAllRevision = async (proof: Proof, email: st
     await verifyProofOfAbsenceForRevision(proof, email, TreeHash, 0);
     proof.Neighbors.slice(224).forEach((neighbor) => {
         if (neighbor != null) {
-            return throwKTError('Revision subtree is not empty', {
+            return throwKTError('Revision subtree is not empty', KT_ERROR_TYPE.LOCAL, {
                 Neighbors: JSON.stringify(proof.Neighbors),
             });
         }
@@ -173,20 +173,20 @@ export const verifyProofOfObsolescence = async (
 ) => {
     const { Type } = proof;
     if (Type !== KTPROOF_TYPE.OBSOLESCENCE) {
-        return throwKTError('Proof type should be of obsolescence', {
+        return throwKTError('Proof type should be of obsolescence', KT_ERROR_TYPE.LOCAL, {
             email,
             proofType: Type,
         });
     }
     const { ObsolescenceToken, MinEpochID, Revision } = signedKeyList;
     if (!ObsolescenceToken || !MinEpochID || !Revision) {
-        return throwKTError('Obsolescence proof with incomplete information', {
+        return throwKTError('Obsolescence proof with incomplete information', KT_ERROR_TYPE.LOCAL, {
             email,
             signedKeyList,
         });
     }
     if (!/^[a-f0-9]+$/.test(ObsolescenceToken)) {
-        return throwKTError('ObsolescenceToken should be an hex string', {
+        return throwKTError('ObsolescenceToken should be an hex string', KT_ERROR_TYPE.LOCAL, {
             email,
             ObsolescenceToken,
         });
@@ -208,14 +208,14 @@ export const verifyProofOfExistence = async (
 ) => {
     const { Type } = proof;
     if (Type !== KTPROOF_TYPE.EXISTENCE) {
-        return throwKTError('Proof type should be of existence', {
+        return throwKTError('Proof type should be of existence', KT_ERROR_TYPE.LOCAL, {
             email,
             proofType: Type,
         });
     }
     const { Data, MinEpochID, Revision } = signedKeyList;
     if (!Data || !MinEpochID || !Revision) {
-        return throwKTError('Existence proof with incomplete information', {
+        return throwKTError('Existence proof with incomplete information', KT_ERROR_TYPE.LOCAL, {
             email,
             signedKeyList,
         });
@@ -237,7 +237,7 @@ export const verifyProofOfExistenceOrObsolescence = async (
     } else if (proof.Type === KTPROOF_TYPE.OBSOLESCENCE) {
         await verifyProofOfObsolescence(proof, email, TreeHash, signedKeyList);
     } else {
-        return throwKTError('Proof type should be of existence or obsolescence', {
+        return throwKTError('Proof type should be of existence or obsolescence', KT_ERROR_TYPE.LOCAL, {
             email,
             proofType: proof.Type,
         });
