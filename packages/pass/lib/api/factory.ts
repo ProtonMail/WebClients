@@ -1,20 +1,9 @@
 import { updateServerTime } from '@proton/crypto/lib/serverTime';
-import { authStore } from '@proton/pass/lib/auth/store';
-import type {
-    Api,
-    ApiAuth,
-    ApiCallFn,
-    ApiOptions,
-    ApiResult,
-    ApiState,
-    ApiSubscriptionEvent,
-    Maybe,
-} from '@proton/pass/types';
-import { AuthMode } from '@proton/pass/types';
+import { API_CONCURRENCY_TRESHOLD } from '@proton/pass/constants';
+import type { Api, ApiAuth, ApiCallFn, ApiOptions, ApiResult, ApiSubscriptionEvent, Maybe } from '@proton/pass/types';
 import { awaiter } from '@proton/pass/utils/fp/promises';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { logger } from '@proton/pass/utils/logger';
-import { objectHandler } from '@proton/pass/utils/object/handler';
 import { createPubSub } from '@proton/pass/utils/pubsub/factory';
 import { configureApi } from '@proton/shared/lib/api';
 import {
@@ -35,7 +24,7 @@ import noop from '@proton/utils/noop';
 import { PassErrorCode, isAbortError } from './errors';
 import { withApiHandlers } from './handlers';
 import { refreshHandlerFactory } from './refresh';
-import { getSilenced, isAccessRestricted } from './utils';
+import { buildApiState, getDynamicAuth, getSilenced, isAccessRestricted } from './utils';
 
 export type ApiFactoryOptions = {
     config: ProtonConfig;
@@ -46,33 +35,14 @@ export type ApiFactoryOptions = {
     getAuth?: () => Maybe<ApiAuth>;
 };
 
-/** Provides dynamic API auth options based on the current session state.
- * Supports upgrading from token-based to cookie-based authentication.
- * This is crucial for scenarios where token-based auth is required
- * before transitioning to cookies, enabling seamless auth upgrades. */
-export const getDynamicAuth = (): Maybe<ApiAuth> => {
-    const { cookies, UID, AccessToken, RefreshToken, RefreshTime } = authStore.getSession();
-    if (!UID) return undefined;
-
-    if (cookies) return { type: AuthMode.COOKIE, UID, RefreshTime };
-    if (AccessToken && RefreshToken) return { type: AuthMode.TOKEN, UID, AccessToken, RefreshToken, RefreshTime };
-};
-
-export const createApi = ({ config, getAuth = getDynamicAuth, threshold }: ApiFactoryOptions): Api => {
+export const createApi = ({
+    config,
+    getAuth = getDynamicAuth,
+    threshold = API_CONCURRENCY_TRESHOLD,
+}: ApiFactoryOptions): Api => {
+    const state = buildApiState();
     const pubsub = createPubSub<ApiSubscriptionEvent>();
     const clientID = getClientID(config.APP_NAME);
-
-    const state = objectHandler<ApiState>({
-        appVersionBad: false,
-        online: true,
-        pendingCount: 0,
-        queued: [],
-        refreshing: false,
-        serverTime: undefined,
-        sessionInactive: false,
-        sessionLocked: false,
-        unreachable: false,
-    });
 
     const call = configureApi({ ...config, clientID, protonFetch } as any) as ApiCallFn;
 
@@ -100,6 +70,7 @@ export const createApi = ({ config, getAuth = getDynamicAuth, threshold }: ApiFa
 
         const { output = 'json', sideEffects = true, ...rest } = options;
         const config = getAuth() ? rest : withLocaleHeaders(localeCode, rest);
+        let aborted = false;
 
         return apiCall(config)
             .then((response) => {
@@ -116,11 +87,14 @@ export const createApi = ({ config, getAuth = getDynamicAuth, threshold }: ApiFa
                  * response. In such cases, avoid mutating API state */
                 if (sideEffects && serverTime.getTime() >= latestServerTime) {
                     const broadcast = !state.get('online') || state.get('unreachable');
+                    const pendingCount = state.get('pendingCount');
                     state.set('serverTime', updateServerTime(serverTime));
                     state.set('unreachable', false);
                     state.set('online', true);
 
-                    if (broadcast) pubsub.publish({ type: 'connectivity', online: true, unreachable: false });
+                    /** Defer ONLINE: concurrent requests may still fail. Countdown capped at
+                     * threshold (if set) so high-volume polling doesn't delay resolution. */
+                    if (broadcast) state.set('pendingConnectivityChange', Math.min(pendingCount, threshold));
                 }
 
                 return Promise.resolve(
@@ -137,7 +111,8 @@ export const createApi = ({ config, getAuth = getDynamicAuth, threshold }: ApiFa
                 );
             })
             .catch((e: any) => {
-                if (!sideEffects || isAbortError(e)) throw e;
+                if (isAbortError(e)) aborted = true;
+                if (!sideEffects || aborted) throw e;
 
                 const serverTime = e.response?.headers ? getDateHeader(e.response.headers) : undefined;
                 const { code } = getApiError(e);
@@ -160,7 +135,13 @@ export const createApi = ({ config, getAuth = getDynamicAuth, threshold }: ApiFa
                 state.set('unreachable', unreachable);
                 state.set('online', online);
 
-                if (broadcast) pubsub.publish({ type: 'connectivity', online, unreachable });
+                if (broadcast) {
+                    /** Broadcast OFFLINE/DOWNTIME immediately and discard any deferred ONLINE.
+                     * A failure supersedes a concurrent success from a healthier response. */
+                    state.set('pendingConnectivityChange', 0);
+                    pubsub.publish({ type: 'connectivity', online, unreachable });
+                }
+
                 if (sessionLocked) pubsub.publish({ type: 'session', status: 'locked' });
                 if (sessionInactive) pubsub.publish({ type: 'session', status: 'inactive', silent });
                 if (restricted) pubsub.publish({ type: 'session', status: 'restricted', error });
@@ -170,8 +151,17 @@ export const createApi = ({ config, getAuth = getDynamicAuth, threshold }: ApiFa
                 throw e;
             })
             .finally(() => {
-                state.set('pendingCount', state.get('pendingCount') - 1);
+                state.set('pendingCount', (prev) => prev - 1);
                 state.get('queued').shift()?.resolve();
+
+                if (sideEffects && !aborted) {
+                    const pending = state.get('pendingConnectivityChange');
+                    if (pending > 0) {
+                        const next = pending - 1;
+                        state.set('pendingConnectivityChange', next);
+                        if (next === 0) pubsub.publish({ type: 'connectivity', online: true, unreachable: false });
+                    }
+                }
             });
     };
 
@@ -184,7 +174,7 @@ export const createApi = ({ config, getAuth = getDynamicAuth, threshold }: ApiFa
          * before every ongoing request has terminated (possible retries or refreshes) */
         if (state.get('pendingCount') > 0) {
             logger.info(`[API] Reset deferred until API idle`);
-            await waitUntil(() => api.getState().pendingCount === 0, 50, DEFAULT_TIMEOUT).catch(noop);
+            await waitUntil(() => state.get('pendingCount') === 0, 50, DEFAULT_TIMEOUT).catch(noop);
         }
     };
 

@@ -2,16 +2,20 @@ import { CONNECTIVITY_RETRY_TIMEOUT, ConnectivityStatus } from '@proton/pass/lib
 import type { Api, ApiState, ApiSubscriptionEvent } from '@proton/pass/types';
 import { createPubSub } from '@proton/pass/utils/pubsub/factory';
 import { FIBONACCI_LIST } from '@proton/shared/lib/constants';
+import { wait } from '@proton/shared/lib/helpers/promise';
 
 import { createConnectivityService } from './connectivity.service';
 
+const TEST_IDLE_TIMEOUT = 5_000;
+
 const setupTestAPI = () => {
-    let apiState = { online: true, unreachable: false } as ApiState;
+    let apiState = { online: true, unreachable: false, pendingCount: 0 } as ApiState;
 
     const pubsub = createPubSub<ApiSubscriptionEvent>();
     const api = jest.fn(async () => {}) as unknown as Api;
     api.getState = () => apiState;
     api.subscribe = pubsub.subscribe;
+    api.idle = () => wait(TEST_IDLE_TIMEOUT);
 
     const setState = (updates: Partial<ApiState>) => (apiState = { ...apiState, ...updates });
 
@@ -130,6 +134,45 @@ test('retries with exponential backoff when unreachable', async () => {
         expect(api).toHaveBeenNthCalledWith(callCount, { method: 'get', unauthenticated: true, url: 'tests/ping' });
         await jest.runOnlyPendingTimersAsync();
     }
+
+    service.destroy();
+});
+
+test('skips `ping` when requests are pending and waits for drain', async () => {
+    setNavigatorOnline(false);
+    const { api, setState } = setupTestAPI();
+    setState({ online: false, unreachable: false, pendingCount: 2 });
+
+    const service = createConnectivityService({ api });
+    service.init();
+    expect(api).not.toHaveBeenCalled();
+
+    /** 1. `check()` is suspended by `api.idle()`. Advance below
+     * `TEST_IDLE_TIMEOUT` to simulate awaiting pending requests. */
+    await jest.advanceTimersByTimeAsync(TEST_IDLE_TIMEOUT - 1);
+    expect(api).not.toHaveBeenCalled();
+
+    /** 2. Drain: mark online and zero out pendingCount and advance
+     * above `TEST_IDLE_TIMEOUT` to simulate requests drained. Status
+     * should be derived from API state without any `ping` fired. */
+    setState({ online: true, unreachable: false, pendingCount: 0 });
+    await jest.advanceTimersByTimeAsync(1);
+    expect(api).not.toHaveBeenCalled();
+    expect(service.getStatus()).toBe(ConnectivityStatus.ONLINE);
+
+    service.destroy();
+});
+
+test('fires ping when no requests are pending', async () => {
+    setNavigatorOnline(false);
+    const { api, setState } = setupTestAPI();
+    setState({ online: false, unreachable: false, pendingCount: 0 });
+
+    const service = createConnectivityService({ api });
+    service.init();
+
+    expect(api).toHaveBeenCalledTimes(1);
+    expect(api).toHaveBeenCalledWith({ method: 'get', unauthenticated: true, url: 'tests/ping' });
 
     service.destroy();
 });
