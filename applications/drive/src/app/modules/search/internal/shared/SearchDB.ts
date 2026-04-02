@@ -32,7 +32,7 @@ interface SearchDBSchema extends DBSchema {
         key: string;
         value: IndexPopulatorState;
     };
-    userPreferences: {
+    userSettings: {
         key: string;
         value: boolean;
     };
@@ -55,7 +55,7 @@ export class SearchDB {
                     database.createObjectStore('indexBlobs');
                     database.createObjectStore('treeEventScopeSubscriptions');
                     database.createObjectStore('indexPopulatorStates');
-                    database.createObjectStore('userPreferences');
+                    database.createObjectStore('userSettings');
                 }
             },
         });
@@ -119,12 +119,12 @@ export class SearchDB {
     // --- User preferences ---
 
     async isOptedIn(): Promise<boolean> {
-        const value = await this.db.get('userPreferences', 'optIn');
+        const value = await this.db.get('userSettings', 'optIn');
         return value === true;
     }
 
     setOptedIn(): Promise<string> {
-        return this.db.put('userPreferences', true, 'optIn');
+        return this.db.put('userSettings', true, 'optIn');
     }
 
     /**
