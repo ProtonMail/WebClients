@@ -66,6 +66,37 @@ describe('useMailboxPageTitle', () => {
         document.title = '';
     });
 
+    describe('category view tests', () => {
+        mockUseMailSettings.mockReturnValue([{ ...DEFAULT_MAIL_SETTINGS, UnreadFavicon: 0 }, false]);
+
+        it('should return the primary label count when on default category', () => {
+            mockUseMailSelector.mockReturnValue([MAILBOX_LABEL_IDS.CATEGORY_DEFAULT]);
+            mockUseCategoriesView.mockReturnValue({ categoryViewAccess: true } as ReturnType<typeof useCategoriesView>);
+
+            renderHook(() => useMailboxPageTitle(MAILBOX_LABEL_IDS.INBOX), { wrapper });
+            expect(document.title).toBe(`(${CATEGORY_DEFAULT_UNREAD_COUNT}) ${LABEL_NAME} | ${EMAIL} | Proton Mail`);
+        });
+
+        it('should return the promotion label count when on default category', () => {
+            mockUseMailSelector.mockReturnValue([MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS]);
+            mockUseCategoriesView.mockReturnValue({ categoryViewAccess: true } as ReturnType<typeof useCategoriesView>);
+
+            renderHook(() => useMailboxPageTitle(MAILBOX_LABEL_IDS.INBOX), { wrapper });
+            expect(document.title).toBe(`(${CATEGORY_PROMOTIONS_UNREAD_COUNT}) ${LABEL_NAME} | ${EMAIL} | Proton Mail`);
+        });
+
+        it('should return the primary count if multiple categories in the array', () => {
+            mockUseMailSelector.mockReturnValue([
+                MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
+                MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+            ]);
+            mockUseCategoriesView.mockReturnValue({ categoryViewAccess: true } as ReturnType<typeof useCategoriesView>);
+
+            renderHook(() => useMailboxPageTitle(MAILBOX_LABEL_IDS.INBOX), { wrapper });
+            expect(document.title).toBe(`(${CATEGORY_DEFAULT_UNREAD_COUNT}) ${LABEL_NAME} | ${EMAIL} | Proton Mail`);
+        });
+    });
+
     it('Should display the unread count when the favicon is disabled in conversation mode', () => {
         mockUseMailSettings.mockReturnValue([{ ...DEFAULT_MAIL_SETTINGS, UnreadFavicon: 0 }, false]);
 
