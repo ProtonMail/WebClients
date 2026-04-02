@@ -1,21 +1,21 @@
 import { render, screen } from '@testing-library/react';
 
 import AddBYOEModal from '@proton/activation/src/components/Modals/AddBYOEModal/AddBYOEModal';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
 describe('AddBYOEModal', () => {
     it('should show the import checkbox', () => {
         render(<AddBYOEModal onSubmit={noop} isLoading={false} source="existingUser" open />);
 
-        screen.getByText(`Connect to Gmail, stay in ${BRAND_NAME}`);
+        screen.getByText(`Bring your Gmail into ${MAIL_APP_NAME}`);
         screen.queryByTestId('AddBYOEModal:importCheckbox');
     });
 
     it('should not show the import checkbox during signup', () => {
         render(<AddBYOEModal onSubmit={noop} isLoading={false} source="signup" open />);
 
-        screen.getByText(`Connect to Gmail, stay in ${BRAND_NAME}`);
+        screen.getByText(`Bring your Gmail into ${MAIL_APP_NAME}`);
         expect(screen.queryByTestId('AddBYOEModal:importCheckbox')).toBeNull();
     });
 
@@ -30,7 +30,7 @@ describe('AddBYOEModal', () => {
             />
         );
 
-        screen.getByText(`Connect to Gmail, stay in ${BRAND_NAME}`);
+        screen.getByText(`Bring your Gmail into ${MAIL_APP_NAME}`);
         expect(screen.queryByTestId('AddBYOEModal:importCheckbox')).toBeNull();
     });
 });

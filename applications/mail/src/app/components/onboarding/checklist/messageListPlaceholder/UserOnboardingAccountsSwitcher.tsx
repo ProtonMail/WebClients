@@ -49,10 +49,10 @@ const UserOnboardingAccountsSwitcher = () => {
                 <div className="text-center mb-4 mx-4">
                     <img src={checklistAccountsSwitcherImg} alt="" className="mb-4" width={80} />
                     <h1 className="text-lg text-semibold mb-3">{c('Onboarding List Placeholder')
-                        .t`Switch your accounts to ${BRAND_NAME}`}</h1>
+                        .t`Protect your accounts`}</h1>
                     <p className="color-weak m-0 mb-4">
                         {c('Onboarding List Placeholder')
-                            .t`Update your email on the services you use the most. Prevent tracking and protect your privacy.`}
+                            .t`Switch the services you use every day to your ${BRAND_NAME} address for better security and privacy.`}
                     </p>
                     {!!defaultEmailAddress && (
                         <Tooltip title={c('Action').t`Click to copy ${defaultEmailAddress} to clipboard`}>
@@ -74,7 +74,8 @@ const UserOnboardingAccountsSwitcher = () => {
                         </Tooltip>
                     )}
                 </div>
-                <p className="text-sm color-weak text-center">{c('Onboarding List Placeholder').t`Popular services`}</p>
+                <p className="text-sm color-weak text-center">{c('Onboarding List Placeholder')
+                    .t`Some popular services`}</p>
                 <div className="border-weak px-2 text-center flex gap-2 justify-center">
                     {ONLINE_SERVICES.map((service) => {
                         return (
