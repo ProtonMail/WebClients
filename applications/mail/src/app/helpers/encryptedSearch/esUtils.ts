@@ -1,5 +1,6 @@
 import type { History, Location } from 'history';
 
+import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { LabelCount } from '@proton/shared/lib/interfaces';
 import { LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
@@ -47,7 +48,7 @@ const getLabelID = (location: Location) => {
 /**
  * Parse search parameters from URL
  */
-export const parseSearchParams = (location: Location, disabledCategoriesIDs: string[]) => {
+export const parseSearchParams = (location: Location, categoryIDs: CategoryLabelID[]) => {
     const searchParameters = extractSearchParameters(location);
     const isSearch = checkIsSearch(searchParameters);
 
@@ -56,7 +57,7 @@ export const parseSearchParams = (location: Location, disabledCategoriesIDs: str
         page: pageFromUrl(location),
         esSearchParams: isSearch
             ? normaliseSearchParams({
-                  disabledCategoriesIDs,
+                  categoryIDs,
                   searchParams: searchParameters,
                   labelID: getLabelID(location),
                   filter: filterFromUrl(location),

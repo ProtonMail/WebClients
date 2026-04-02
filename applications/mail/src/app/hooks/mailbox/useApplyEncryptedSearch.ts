@@ -58,6 +58,7 @@ export const useApplyEncryptedSearch = ({
     const { esEnabled } = esStatus;
 
     const { sendPerformSearchReport } = useSearchTelemetry();
+
     const categoryIDs = useMailSelector(selectCategoryIDs);
 
     // Force conversation mode to false in a search context
@@ -68,8 +69,7 @@ export const useApplyEncryptedSearch = ({
         search,
         esEnabled,
         isSearching: isSearch(search),
-        // TODO update this when working on encrypted search adaptation (P3-268)
-        categoryIDs: [],
+        categoryIDs,
     };
 
     const isES = useMailSelector((state: MailState) => isESSelector(state, { search, esStatus }));
