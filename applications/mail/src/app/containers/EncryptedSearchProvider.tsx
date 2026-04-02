@@ -22,8 +22,9 @@ import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 
-import { useCategoriesView } from 'proton-mail/components/categoryView/useCategoriesView';
 import ESDeletedConversationsCache from 'proton-mail/helpers/encryptedSearch/ESDeletedConversationsCache';
+import { selectCategoryIDs } from 'proton-mail/store/elements/elementsSelectors';
+import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { defaultESContextMail, defaultESMailStatus } from '../constants';
 import { convertEventType, getESCallbacks, getESFreeBlobKey, parseSearchParams } from '../helpers/encryptedSearch';
@@ -53,8 +54,8 @@ const EncryptedSearchProvider = ({ children }: Props) => {
     const api = useApi();
     const { welcomeFlags } = useWelcomeFlags();
     const { isESEnabledInbox } = useISESEnabledElectron();
-    const categoriesView = useCategoriesView();
-    const { isSearch, page } = parseSearchParams(history.location, categoriesView.disabledCategoriesIDs);
+    const categoryIDs = useMailSelector(selectCategoryIDs);
+    const { isSearch, page } = parseSearchParams(history.location, categoryIDs);
     const { isSupported: isIDBSupported } = useIndexedDBSupport();
 
     const [addresses] = useAddresses();
@@ -70,7 +71,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         user,
         history,
         numAddresses: addresses?.length || 0,
-        disabledCategoriesIDs: categoriesView.disabledCategoriesIDs,
+        disabledCategoriesIDs: categoryIDs,
     });
 
     const contentIndexingSuccessMessage = c('Success').t`Message content search enabled`;
