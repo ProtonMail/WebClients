@@ -1245,6 +1245,9 @@
       "Save and continue": [
         "I-save at magpatuloy"
       ],
+      "Save changes": [
+        "I-save ang mga pagbabago"
+      ],
       "Save ICS file": [
         "I-save ang ICS file"
       ],
@@ -11351,6 +11354,9 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Hindi makakapag-refer ng mga user ng ${ MAIL_APP_NAME }"
       ],
+      "You cannot undo this action.": [
+        "Hindi ma-undo ang aksyong ito."
+      ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Hindi ka nag-set ng paraan ng pag-recover kaya imposible ang pag-recover ng account kung makalimutan mo ang password. Magpatuloy nang walang paraan ng pag-recover?"
       ],
@@ -11524,6 +11530,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Gagamitin lang ang numero ng telepono para sa one-time na pag-verify na ito."
+      ],
+      "Your plan is limited to 10 versions for up to 7 days": [
+        "Ang plano ay limitado sa 10 bersyon nang hanggang 7 araw"
       ],
       "Your recovery phrase": [
         "Ang iyong parirala ng pag-recover"
@@ -12144,6 +12153,10 @@
       "${ nbDay } day": [
         "${ nbDay } araw",
         "${ nbDay } na araw"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } taon",
+        "${ nbYear } na taon"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Pansamantalang hindi available. Pakitingnan muli mamaya.)"

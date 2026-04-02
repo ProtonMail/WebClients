@@ -1287,6 +1287,9 @@
       "Save and continue": [
         "Speichern und fortfahren"
       ],
+      "Save changes": [
+        "Änderungen speichern"
+      ],
       "Save ICS file": [
         "ICS-Datei speichern"
       ],
@@ -12162,6 +12165,9 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Du kannst keine ${ MAIL_APP_NAME }-Benutzer empfehlen."
       ],
+      "You cannot undo this action.": [
+        "Diese Aktion kann nicht widerrufen werden."
+      ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Du hast keine Wiederherstellungs-Methode eingerichtet, sodass eine Wiederherstellung des Kontos unmöglich ist, falls du dein Passwort vergisst. Trotzdem ohne Wiederherstellungs-Methode fortfahren?"
       ],
@@ -12366,6 +12372,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Deine Telefonnummer wird nur für diese einmalige Überprüfung verwendet."
+      ],
+      "Your plan is limited to 10 versions for up to 7 days": [
+        "Dein Abonnement ist auf 10 Versionen für bis zu 7 Tage begrenzt."
       ],
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "Deine letzten Änderungen wurden veröffentlicht. Sie sind in den nächsten Stunden für Benutzer sichtbar."
@@ -12998,6 +13007,10 @@
       "${ nbDay } day": [
         "${ nbDay } Tag",
         "${ nbDay } Tage"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } Jahr",
+        "${ nbYear } Jahre"
       ],
       "${ pricePerMonthWithCurrency } / month": [
         "${ pricePerMonthWithCurrency } / Monat"
