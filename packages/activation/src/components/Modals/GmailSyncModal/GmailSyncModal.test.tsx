@@ -3,7 +3,7 @@ import { fireEvent, screen, waitFor } from '@testing-library/react';
 import { GmailSyncModal } from '@proton/activation/index';
 import { EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
 import { easySwitchRender } from '@proton/activation/src/tests/render';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 jest.mock('@proton/activation/src/logic/StoreProvider', () => ({
     __esModule: true,
@@ -42,7 +42,7 @@ describe('GmailSyncModal', () => {
     it('should show the add byoe modal', () => {
         easySwitchRender(<GmailSyncModal open source={EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS} hasAccessToBYOE />);
 
-        screen.getByText(`Connect to Gmail, stay in ${BRAND_NAME}`);
+        screen.getByText(`Bring your Gmail into ${MAIL_APP_NAME}`);
     });
 
     it('should show the forwarding modal', () => {
