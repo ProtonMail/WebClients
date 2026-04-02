@@ -21,8 +21,6 @@ jest.mock('@proton/drive', () => ({
 
 jest.mock('@proton/hooks/useLoading', () => jest.fn(() => [false, jest.fn((fn: () => Promise<void>) => fn())]));
 
-jest.mock('@proton/unleash/useFlag', () => ({ useFlag: jest.fn() }));
-
 jest.mock('@proton/shared/lib/apps/helper', () => ({
     getAppHref: jest.fn(),
 }));
@@ -78,8 +76,6 @@ describe('usePublicBookmark', () => {
 
         jest.mocked(useLoading).mockReturnValue([false, mockWithLoading] as any);
 
-        jest.mocked(useFlag).mockReturnValue(false);
-
         jest.mocked(getPublicTokenAndPassword).mockReturnValue({
             token: mockToken,
             password: '',
@@ -117,24 +113,9 @@ describe('usePublicBookmark', () => {
         });
     });
 
-    describe('when feature is disabled', () => {
+    describe('when user is logged in', () => {
         beforeEach(() => {
             jest.mocked(usePublicAuthStore).mockReturnValue(true);
-            jest.mocked(useFlag).mockReturnValue(true);
-        });
-
-        it('should not check bookmarks', () => {
-            const { result } = renderHook(() => usePublicBookmark());
-
-            expect(result.current.isBookmarked).toBe(false);
-            expect(mockIterateBookmarks).not.toHaveBeenCalled();
-        });
-    });
-
-    describe('when user is logged in and feature is enabled', () => {
-        beforeEach(() => {
-            jest.mocked(usePublicAuthStore).mockReturnValue(true);
-            jest.mocked(useFlag).mockReturnValue(false);
         });
 
         it('should check if link is already bookmarked', async () => {

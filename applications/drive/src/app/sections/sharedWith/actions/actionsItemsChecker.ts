@@ -1,4 +1,4 @@
-import { NodeType, splitNodeUid } from '@proton/drive';
+import { NodeType } from '@proton/drive';
 
 import { ItemType, type SharedWithMeItem } from '../useSharedWithMe.store';
 
@@ -105,35 +105,4 @@ export const createItemChecker = (items: SharedWithMeItem[]): ItemTypeChecker =>
         canCopy: !metadata.hasAlbums && !metadata.hasPhotos,
         items,
     };
-};
-
-export const mapToLegacyFormat = (items: SharedWithMeItem[]) => {
-    return items.map((item) => {
-        if (item.itemType === ItemType.BOOKMARK) {
-            // Bookmark doesn't have any info about the node
-            return {
-                rootShareId: '',
-                mimeType: item.mediaType || '',
-                linkId: '',
-                isFile: item.type === NodeType.File || item.type === NodeType.Photo,
-                name: item.name,
-                size: item.size || 0,
-                parentLinkId: '', // No parentLinkId on shared with me items
-                volumeId: '',
-            };
-        }
-
-        const { volumeId, nodeId } = splitNodeUid(item.nodeUid);
-        return {
-            rootShareId: item.shareId ?? '',
-            mimeType: item.mediaType || '',
-            linkId: nodeId,
-            isFile: item.type === NodeType.File || item.type === NodeType.Photo,
-            name: item.name,
-            size: item.size || 0,
-            parentLinkId: '', // No parentLinkId on shared with me items
-            volumeId: volumeId,
-            nodeUid: item.nodeUid,
-        };
-    });
 };

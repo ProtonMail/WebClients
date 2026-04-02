@@ -3,15 +3,11 @@ import { verifyAllWhenMocksCalled, when } from 'jest-when';
 
 import useApi from '@proton/components/hooks/useApi';
 import useLoading from '@proton/hooks/useLoading';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import usePublicToken from '../../hooks/drive/usePublicToken';
 import { useBookmarks } from '../_bookmarks/useBookmarks';
 import { usePublicSessionUser } from '../_user';
 import { useBookmarksPublicView } from './useBookmarksPublicView';
-
-jest.mock('@proton/unleash/useFlag');
-const mockedKillSwitch = jest.mocked(useFlag).mockReturnValue(false);
 
 jest.mock('@proton/hooks/useLoading');
 const mockedWithLoading = jest.fn().mockImplementation((fn) => fn());
@@ -64,7 +60,7 @@ describe('useBookmarksPublicView', () => {
     afterAll(() => {
         verifyAllWhenMocksCalled();
     });
-    it('Should not list bookmarks if user or UID is undefined or if kill switch enable', () => {
+    it('Should not list bookmarks if user or UID is undefined', () => {
         const { rerender, result } = renderHook((props) => useBookmarksPublicView(props), {
             initialProps: defaultProps,
         });
@@ -73,13 +69,6 @@ describe('useBookmarksPublicView', () => {
         expect(mockedListBookmarks).not.toHaveBeenCalled();
         expect(result.current.isAlreadyBookmarked).toBe(false);
 
-        rerender(defaultProps);
-        expect(mockedWithLoading).not.toHaveBeenCalled();
-        expect(mockedListBookmarks).not.toHaveBeenCalled();
-        expect(result.current.isAlreadyBookmarked).toBe(false);
-
-        mockedUsePublicSessionUser.mockReturnValueOnce({ user: 'user', UID } as any);
-        mockedKillSwitch.mockReturnValueOnce(true);
         rerender(defaultProps);
         expect(mockedWithLoading).not.toHaveBeenCalled();
         expect(mockedListBookmarks).not.toHaveBeenCalled();

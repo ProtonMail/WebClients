@@ -7,7 +7,6 @@ import useLoading from '@proton/hooks/useLoading';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import { openNewTab } from '@proton/shared/lib/helpers/browser';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { needPublicRedirectSpotlight, setPublicRedirectSpotlightToPending } from '../../utils/publicRedirectSpotlight';
@@ -29,12 +28,11 @@ export const usePublicBookmark = (): UsePublicBookmarkResult => {
     const [isBookmarked, setIsBookmarked] = useState(false);
     const [showSaveForLaterSpotlight, setShowSaveFarLaterSpotlight] = useState(false);
     const [isLoading, withLoading] = useLoading(false);
-    const bookmarksFeatureDisabled = useFlag('DriveShareURLBookmarksDisabled');
     const isLoggedIn = usePublicAuthStore(useShallow((state) => state.isLoggedIn));
     const [error, setError] = useState(false);
 
     useEffect(() => {
-        if (!isLoggedIn || bookmarksFeatureDisabled) {
+        if (!isLoggedIn) {
             return;
         }
 
@@ -69,7 +67,7 @@ export const usePublicBookmark = (): UsePublicBookmarkResult => {
         return () => {
             abortController.abort();
         };
-    }, [isLoggedIn, bookmarksFeatureDisabled, withLoading]);
+    }, [isLoggedIn, withLoading]);
 
     const handleAddBookmark = async (customPassword?: string) => {
         try {

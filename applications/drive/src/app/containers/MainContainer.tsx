@@ -27,20 +27,14 @@ import { useFlagsDriveSDKTransfer } from '../flags/useFlagsDriveSDKTransfer';
 import { useRunningFreeUploadTimer } from '../hooks/drive/freeUpload/useRunningFreeUploadTimer';
 import { ActiveShareProvider } from '../hooks/drive/useActiveShare';
 import { useSearchModule } from '../hooks/search/useSearchModule';
+import { useUserSettings } from '../hooks/user';
 import { useReactRouterNavigationLog } from '../hooks/util/useReactRouterNavigationLog';
 import { useRedirectToPublicPage } from '../hooks/util/useRedirectToPublicPage';
 import { logging } from '../modules/logging';
 import { driveMetrics } from '../modules/metrics';
 import { PhotosWithAlbumsContainer } from '../photos/PhotosWithAlbumsContainer';
 import { TransferManager } from '../sections/transferManager/TransferManager';
-import {
-    DriveProvider,
-    useActivePing,
-    useBookmarksActions,
-    useDriveEventManager,
-    useSearchControl,
-    useUserSettings,
-} from '../store';
+import { DriveProvider, useActivePing, useBookmarksActions, useDriveEventManager, useSearchControl } from '../store';
 import { useSanitization } from '../store/_sanitization/useSanitization';
 import { useDriveSharingFlags, useShareActions } from '../store/_shares';
 import { useShareBackgroundActions } from '../store/_views/useShareBackgroundActions';
@@ -87,7 +81,6 @@ function InitContainer() {
     const driveEventManager = useDriveEventManager();
     const { isDirectSharingDisabled } = useDriveSharingFlags();
     const { convertExternalInvitationsFromEvents } = useShareBackgroundActions();
-    const bookmarksFeatureDisabled = useFlag('DriveShareURLBookmarksDisabled');
     const { addBookmarkFromPrivateApp } = useBookmarksActions();
     const { redirectionReason, redirectToPublicPage, cleanupUrl } = useRedirectToPublicPage();
     const { photosEnabled } = useUserSettings();
@@ -107,7 +100,7 @@ function InitContainer() {
                 // In case the user Sign-up we just let him in the App (in /shared-with-me route)
                 // So we don't even load the app.
                 // See useSharedWithMeView.tsx for Sign-up logic
-                const token = !bookmarksFeatureDisabled && getTokenFromSearchParams();
+                const token = getTokenFromSearchParams();
                 if (token && redirectionReason) {
                     // In case of account switch we need to pass by the private app to set the latest active session
                     if (redirectionReason === 'signin') {
