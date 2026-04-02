@@ -8,6 +8,7 @@ import DriveLogo from '@proton/components/components/logo/DriveLogo';
 import type { LogoProps } from '@proton/components/components/logo/Logo';
 import Logo from '@proton/components/components/logo/Logo';
 import MailLogo from '@proton/components/components/logo/MailLogo';
+import MeetLogo from '@proton/components/components/logo/MeetLogo';
 import PassLogo from '@proton/components/components/logo/PassLogo';
 import ProtonLogo from '@proton/components/components/logo/ProtonLogo';
 import VpnLogo from '@proton/components/components/logo/VpnLogo';
@@ -23,6 +24,7 @@ const appNames: Required<LogoProps>['appName'][] = [
     APPS.PROTONPASS,
     APPS.PROTONDOCS,
     APPS.PROTONWALLET,
+    APPS.PROTONMEET,
 ];
 
 const variants: Required<LogoProps>['variant'][] = ['with-wordmark', 'glyph-only', 'wordmark-only'];
@@ -112,6 +114,7 @@ export const Individual: Story = {
             <PassLogo />
             <WalletLogo />
             <VpnPassLogo />
+            <MeetLogo />
         </div>
     ),
 };
