@@ -41,7 +41,8 @@ describe('createIndexEntry', () => {
         const attr = (name: string) => entry.attributes.find((a) => a.name === name)?.value;
 
         expect(attr('nodeUid')).toEqual({ kind: 'tag', value: 'node-uid-1' });
-        expect(attr('filename')).toEqual({ kind: 'text', value: 'document.pdf' });
+        expect(attr('filename')).toEqual({ kind: 'tag', value: 'document.pdf' });
+        expect(attr('filenameText')).toEqual({ kind: 'text', value: 'document.pdf' });
         expect(attr('path')).toEqual({ kind: 'tag', value: '/parent-uid-1/parent-uid-2' });
         expect(attr('treeEventScopeId')).toEqual({ kind: 'tag', value: 'scope-1' });
         expect(attr('indexPopulatorId')).toEqual({ kind: 'tag', value: 'populator-1' });
