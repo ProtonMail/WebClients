@@ -1,5 +1,5 @@
 import { c } from 'ttag'
-import type { WebsocketConnectionInterface } from '@proton/docs-shared'
+import type { SyncedEditorState, WebsocketConnectionInterface } from '@proton/docs-shared'
 import {
   assertUnreachableAndLog,
   DecryptedMessage,
@@ -39,7 +39,7 @@ import { SquashErrorEvent } from '../UseCase/SquashDocument'
  * in a timely manner. However, due to DRVDOC-802, this event is not currently received, so we have lowered this value to something
  * nominal as a temporary workaround.
  */
-export const MAX_MS_TO_WAIT_FOR_RTS_SYNC_AFTER_CONNECT = 100
+export const MAX_MS_TO_WAIT_FOR_RTS_SYNC_AFTER_CONNECT = 1000
 
 export class RealtimeController implements InternalEventHandlerInterface, RealtimeControllerInterface {
   initialSyncTimer: ReturnType<typeof setTimeout> | null = null
@@ -61,6 +61,7 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
     readonly documentType: DocumentType,
     readonly sizeTracker: DocSizeTracker,
     readonly visibility: 'public' | 'private',
+    readonly syncedEditorState: SyncedEditorState,
   ) {
     eventBus.addEventHandler(this, WebsocketConnectionEvent.Connecting)
     eventBus.addEventHandler(this, WebsocketConnectionEvent.FailedToConnect)
@@ -453,6 +454,7 @@ export class RealtimeController implements InternalEventHandlerInterface, Realti
         }
         case EventTypeEnum.ServerHasMoreOrLessGivenTheClientEverythingItHas:
           this.handleRealtimeConnectionReady()
+          this.documentState.emitEvent({ name: 'RealtimeReceivedEverythingFromRTS', payload: undefined })
           break
         case EventTypeEnum.ServerIsPlacingEmptyActivityIndicatorInStreamToIndicateTheStreamIsStillActive:
         case EventTypeEnum.ClientIsDebugRequestingServerToPerformCommit:

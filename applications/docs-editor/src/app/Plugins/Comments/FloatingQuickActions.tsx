@@ -8,7 +8,10 @@ import SpeechBubblePenIcon from '../../Icons/SpeechBubblePenIcon'
 import { TOGGLE_SUGGESTION_MODE_COMMAND } from '../Suggestions/Commands'
 import clsx from '@proton/utils/clsx'
 import { useActiveBreakpoint } from '@proton/components'
-import { useEditorStateValues } from '../../Lib/useEditorStateValues'
+import { useEditorState } from '../../Containers/EditorStateProvider'
+import { useStore } from 'zustand'
+import { EditorUserMode } from '../../Lib/EditorUserMode'
+import { useSyncedState } from '../../Hooks/useSyncedState'
 
 export function FloatingQuickActions({
   anchorKey,
@@ -19,7 +22,9 @@ export function FloatingQuickActions({
   editor: LexicalEditor
   onAddComment: () => void
 }): JSX.Element {
-  const { isSuggestionMode, suggestionsEnabled } = useEditorStateValues()
+  const { suggestionsEnabled } = useSyncedState()
+  const userMode = useStore(useEditorState(), (state) => state.userMode)
+  const isSuggestionMode = userMode === EditorUserMode.Suggest
 
   const boxRef = useRef<HTMLDivElement>(null)
   const { viewportWidth } = useActiveBreakpoint()

@@ -6,4 +6,5 @@ export type DocStateCallbacks = {
   docStateRequestsPropagationOfUpdate: (message: RtsMessagePayload, debugSource: BroadcastSource) => void
   handleAwarenessStateUpdate: (states: SafeDocsUserState[]) => void
   handleErrorWhenReceivingDocumentUpdate: (error: unknown) => void
+  handleReceivedEverythingFromRTS: () => void
 }

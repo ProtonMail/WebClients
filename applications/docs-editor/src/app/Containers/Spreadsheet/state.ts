@@ -23,7 +23,7 @@ import { useYSpreadsheetV2 } from '@rowsncolumns/y-spreadsheet'
 import type { DocStateInterface } from '@proton/docs-shared'
 import { DocProvider, DocUpdateOrigin } from '@proton/docs-shared'
 import { useSyncedState } from '../../Hooks/useSyncedState'
-import { create } from 'zustand'
+import { create, useStore } from 'zustand'
 import { useEvent } from './components/utils'
 import { useNotifications } from '@proton/components'
 import { c } from 'ttag'
@@ -33,6 +33,9 @@ import { getAccentColorForUsername } from '@proton/atoms/UserAvatar/getAccentCol
 import type { Transaction } from 'yjs'
 import { getCurrencyFromLocale, useAccountLocale, useLocaleAuto } from './locale'
 import { CURRENCY_SYMBOL } from './constants'
+import { minutes_to_ms, seconds_to_ms } from '@proton/docs-core/lib/Util/time-utils'
+import { useEditorState } from '../EditorStateProvider'
+import { useApplication } from '../ApplicationProvider'
 
 // local state
 // -----------
@@ -184,11 +187,16 @@ function useSearchState({ localState, spreadsheetState }: SearchStateDependencie
 type KeyValueState = {
   defaultCurrency: string | undefined
   locale: string | undefined
+  version: number | undefined
+  migrationClientId: [number, number] | undefined
 }
+type KVStateValue = KeyValueState[keyof KeyValueState]
 
 const useKeyValueState = create<KeyValueState>()((set) => ({
   defaultCurrency: undefined,
   locale: undefined,
+  version: undefined,
+  migrationClientId: undefined,
 }))
 
 // Yjs state
@@ -273,7 +281,7 @@ function useYjsState({ localState, spreadsheetState, docState }: YjsStateDepende
     )
   }, [yjsState.users])
 
-  const kv = useMemo(() => yDoc.getMap<string | boolean | number | undefined>('kv'), [yDoc])
+  const kv = useMemo(() => yDoc.getMap<KVStateValue>('kv'), [yDoc])
   useEffect(() => {
     function handleKVChange(_: unknown, transaction: Transaction) {
       if (transaction.origin !== 'local') {
@@ -283,14 +291,16 @@ function useYjsState({ localState, spreadsheetState, docState }: YjsStateDepende
     kv.observeDeep(handleKVChange)
     return () => kv.unobserveDeep(handleKVChange)
   }, [kv])
-  const kvSet = useEvent((key: keyof KeyValueState, value: string | boolean | number | undefined) => {
-    useKeyValueState.setState({ [key]: value })
-    yDoc.transact(() => {
-      kv.set(key, value)
-    }, 'local')
-  })
+  const kvSet = useEvent(
+    <Key extends keyof KeyValueState, Value extends KeyValueState[Key]>(key: Key, value: Value) => {
+      useKeyValueState.setState({ [key]: value })
+      yDoc.transact(() => {
+        kv.set(key, value)
+      }, 'local')
+    },
+  ) satisfies <Key extends keyof KeyValueState, Value extends KeyValueState[Key]>(key: Key, value: Value) => void
 
-  return { ...yjsState, userName, users: usersWithCorrectColor, kvSet }
+  return { ...yjsState, userName, users: usersWithCorrectColor, kvSet, clientID: yDoc.clientID }
 }
 
 // proton sheets state
@@ -614,4 +624,168 @@ export function sortSheetsByIndex<S extends BaseSheet>(sheets: S[], includeHidde
       }
     })
     .sort((a, b) => (a.index ?? 0) - (b.index ?? 0))
+}
+
+// versioning
+// ----------
+
+const LOCK_START_THRESHOLD = seconds_to_ms(2.5)
+const MAX_LOCK_DURATION = minutes_to_ms(5)
+const CLIENT_VERSION = 1
+
+const versionToMigrationMap: Record<number, Function> = {
+  // 2: () => {},
+}
+
+export function useVersioning(
+  canRunMigration: boolean,
+  yjsState: ReturnType<typeof useYjsState>,
+  handleIncompatibleClientVersion: () => void,
+  reloadClient: () => void,
+) {
+  const { application } = useApplication()
+  const logger = application.logger
+  const editorState = useEditorState()
+  const setEditingLocked = useStore(editorState, (state) => state.setEditingLocked)
+  const setIsMigrating = useStore(editorState, (state) => state.setIsMigrating)
+  const { receivedEverythingFromRTS } = useSyncedState()
+  const version = useKeyValueState((state) => state.version)
+  const { kvSet, clientID } = yjsState
+  const startThresholdTimeout = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const lockDurationTimeout = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  const setInitialVersion = useEvent(() => {
+    if (version === undefined) {
+      logger.info('versioning: setting initial version', CLIENT_VERSION)
+      kvSet('version', CLIENT_VERSION)
+    }
+  })
+
+  const migrationEvent = useEvent(() => {
+    const existingMigrationClientId = useKeyValueState.getState().migrationClientId
+    if (existingMigrationClientId) {
+      const isStale = Date.now() - existingMigrationClientId[1] > MAX_LOCK_DURATION
+      if (!isStale) {
+        logger.warn('versioning: migration client id already set', existingMigrationClientId)
+        return
+      }
+    }
+    const migrationClientId: [number, number] = [clientID, Date.now()]
+    logger.info('versioning: requires migration, setting migration client id', migrationClientId)
+    kvSet('migrationClientId', migrationClientId)
+  })
+
+  const startThresholdReachedEvent = useEvent(() => {
+    const migrationClientId = useKeyValueState.getState().migrationClientId
+    if (!migrationClientId) {
+      logger.warn('versioning: start threshold reached, but no migration client id set')
+      return
+    }
+    if (migrationClientId[0] !== clientID) {
+      logger.warn('versioning: start threshold reached, but migration client id does not match')
+      return
+    }
+    logger.info('versioning: reached migration threshold')
+    const currentVersion = useKeyValueState.getState().version ?? 0
+    for (let i = currentVersion + 1; i <= CLIENT_VERSION; i++) {
+      const migrationFunction = versionToMigrationMap[i]
+      if (migrationFunction) {
+        migrationFunction()
+      }
+    }
+    logger.info('versioning: setting version')
+    kvSet('version', CLIENT_VERSION)
+    kvSet('migrationClientId', undefined)
+  })
+
+  const lockRequestedEvent = useEvent(() => {
+    setIsMigrating(true)
+    setEditingLocked(true)
+    if (startThresholdTimeout.current) {
+      clearTimeout(startThresholdTimeout.current)
+    }
+    if (lockDurationTimeout.current) {
+      clearTimeout(lockDurationTimeout.current)
+    }
+
+    const migrationClientId = useKeyValueState.getState().migrationClientId
+    if (!migrationClientId) {
+      logger.warn('versioning: lock requested, but no migration client id set')
+      return
+    }
+
+    startThresholdTimeout.current = setTimeout(startThresholdReachedEvent, LOCK_START_THRESHOLD)
+
+    const maxTimestamp = migrationClientId[1] + MAX_LOCK_DURATION
+    const remainingDuration = Math.max(0, maxTimestamp - Date.now())
+    lockDurationTimeout.current = setTimeout(() => {
+      logger.info('versioning: reached max lock duration, clearing migration client id')
+      kvSet('migrationClientId', undefined)
+    }, remainingDuration)
+  })
+
+  const lockClearedEvent = useEvent(() => {
+    logger.info('versioning: lock cleared, unlocking editor')
+    setIsMigrating(false)
+    setEditingLocked(false)
+
+    if (lockDurationTimeout.current) {
+      clearTimeout(lockDurationTimeout.current)
+    }
+    if (startThresholdTimeout.current) {
+      clearTimeout(startThresholdTimeout.current)
+    }
+  })
+
+  const incompatibleClientVersionEvent = useEvent(() => {
+    const versionTargetToReloadFor = localStorage.getItem('versionTargetToReloadFor')
+    if (versionTargetToReloadFor !== null) {
+      const versionTargetToReloadForNumber = Number(versionTargetToReloadFor)
+      if (version !== versionTargetToReloadForNumber) {
+        logger.error('versioning: client version is still incompatible after reload')
+        handleIncompatibleClientVersion()
+      }
+      localStorage.removeItem('versionTargetToReloadFor')
+    } else {
+      logger.info('versioning: doc version is newer than client version, reloading')
+      localStorage.setItem('versionTargetToReloadFor', CLIENT_VERSION.toString())
+      void reloadClient()
+    }
+  })
+
+  useEffect(() => {
+    if (!canRunMigration) {
+      return
+    }
+    logger.info('versioning: checking for migration', { receivedEverythingFromRTS, version })
+    if (!receivedEverythingFromRTS) {
+      return
+    }
+    const docVersion = version ?? 0
+    if (CLIENT_VERSION > docVersion) {
+      migrationEvent()
+    }
+    if (CLIENT_VERSION < docVersion) {
+      incompatibleClientVersionEvent()
+    }
+  }, [canRunMigration, incompatibleClientVersionEvent, logger, migrationEvent, receivedEverythingFromRTS, version])
+
+  const kvChangeHandler = useEvent((current, previous) => {
+    if (!canRunMigration) {
+      return
+    }
+    if (previous.migrationClientId && !current.migrationClientId) {
+      lockClearedEvent()
+      return
+    }
+    if (current.migrationClientId) {
+      logger.info('versioning: lock requested', current.migrationClientId)
+      lockRequestedEvent()
+      return
+    }
+  })
+
+  useEffect(() => useKeyValueState.subscribe(kvChangeHandler), [kvChangeHandler])
+
+  return { setInitialVersion }
 }
