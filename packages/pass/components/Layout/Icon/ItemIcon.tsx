@@ -5,9 +5,11 @@ import { useSelector } from 'react-redux';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import Icon from '@proton/components/components/icon/Icon';
 import type { IconName, IconSize } from '@proton/icons/types';
+import { useCustomIcon } from '@proton/pass/hooks/files/useCustomIcon';
 import { isDisabledAliasItem } from '@proton/pass/lib/items/item.predicates';
 import { selectCanLoadDomainImages } from '@proton/pass/store/selectors';
 import type { ItemMap, ItemRevision, Maybe, MaybeNull } from '@proton/pass/types';
+import { ItemFlag } from '@proton/pass/types';
 import { CardType } from '@proton/pass/types/protobuf/item-v1.static';
 import amex from '@proton/styles/assets/img/credit-card-icons/cc-american-express.svg';
 import masterCard from '@proton/styles/assets/img/credit-card-icons/cc-mastercard.svg';
@@ -139,7 +141,18 @@ export const SafeItemIcon: FC<ItemIconProps> = ({ className, iconClassName, item
     const loadDomainImages = useSelector(selectCanLoadDomainImages);
     const domainURL = data.type === 'login' ? data.content.urls?.[0] : null;
 
-    const customIcon = data.type === 'creditCard' ? getCreditCardIcon(data.content.cardType) : undefined;
+    const hasAttachments = Boolean(item.flags & ItemFlag.HasAttachments);
+    const { iconSrc: customIconSrc } = useCustomIcon(
+        hasAttachments
+            ? { shareId: item.shareId, itemId: item.itemId, revision: item.revision }
+            : { shareId: '', itemId: '', revision: 0 }
+    );
+
+    const customIcon = customIconSrc ? (
+        <img src={customIconSrc} alt="" className="w-full h-full object-cover" />
+    ) : data.type === 'creditCard' ? (
+        getCreditCardIcon(data.content.cardType)
+    ) : undefined;
 
     return (
         <ItemIcon
@@ -147,7 +160,7 @@ export const SafeItemIcon: FC<ItemIconProps> = ({ className, iconClassName, item
             className={className}
             icon={presentItemIcon(item)}
             iconClassName={iconClassName}
-            loadImage={loadDomainImages}
+            loadImage={loadDomainImages && !customIconSrc}
             pill={pill}
             renderIndicators={(size) => renderIndicators?.(size)}
             size={size}

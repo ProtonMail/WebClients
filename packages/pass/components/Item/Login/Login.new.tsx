@@ -7,6 +7,7 @@ import { c } from 'ttag';
 
 import { FileAttachmentsField } from '@proton/pass/components/FileAttachments/FileAttachmentsField';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
+import { CustomIconField } from '@proton/pass/components/Form/Field/CustomIconField';
 import { ExtraFieldGroup } from '@proton/pass/components/Form/Field/ExtraFieldGroup/ExtraFieldGroup';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
@@ -194,15 +195,23 @@ export const LoginNew: FC<ItemNewViewProps<'login'>> = ({ shareId, url: currentU
                                 {vaultTotalCount > 1 &&
                                     openPortal(<Field component={VaultPickerField} name="shareId" dense />)}
 
-                                <Field
-                                    name="name"
-                                    label={c('Label').t`Title`}
-                                    placeholder={c('Placeholder').t`Untitled`}
-                                    component={TitleField}
-                                    autoFocus={!draft && didEnter}
-                                    key={`login-name-${didEnter}`}
-                                    maxLength={MAX_ITEM_NAME_LENGTH}
-                                />
+                                <div className="flex items-center">
+                                    <Field
+                                        name="files"
+                                        component={CustomIconField}
+                                        icon="user"
+                                        shareId={form.values.shareId}
+                                    />
+                                    <Field
+                                        name="name"
+                                        label={c('Label').t`Title`}
+                                        placeholder={c('Placeholder').t`Untitled`}
+                                        component={TitleField}
+                                        autoFocus={!draft && didEnter}
+                                        key={`login-name-${didEnter}`}
+                                        maxLength={MAX_ITEM_NAME_LENGTH}
+                                    />
+                                </div>
                             </FieldsetCluster>
 
                             <FieldsetCluster>
