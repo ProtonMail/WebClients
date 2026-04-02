@@ -5,7 +5,7 @@ export { usePublicAuth } from './_api';
 export { useActivePing, useGetPublicKeysForEmail, usePublicSessionUser } from './_user';
 export { useDriveEventManager } from './_events';
 export { validateLinkNameField, formatLinkName, splitLinkName } from './_links';
-export { useUserSettings, UserSettingsProvider } from './_settings';
+export { useUserSettings } from './_settings';
 export {
     useDefaultShare,
     usePublicShare,

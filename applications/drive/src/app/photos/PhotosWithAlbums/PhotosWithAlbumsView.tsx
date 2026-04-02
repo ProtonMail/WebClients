@@ -10,8 +10,8 @@ import { loadThumbnail } from '@proton/drive/modules/thumbnails';
 import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import { useUserSettings } from '../../hooks/user';
 import { useShiftKey } from '../../hooks/util/useShiftKey';
-import { useUserSettings } from '../../store';
 import { AlbumsPageTypes, usePhotoLayoutStore } from '../../zustand/photos/layout.store';
 import { toggleFavorite } from '../PhotosActions/Albums';
 import { EmptyPhotos } from './EmptyPhotos';

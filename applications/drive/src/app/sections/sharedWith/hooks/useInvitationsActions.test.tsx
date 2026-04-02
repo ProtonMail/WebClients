@@ -45,8 +45,6 @@ const mockRejectInvitation = jest.fn();
 const mockGetNode = jest.fn();
 const mockEventManagerEmit = jest.fn();
 
-const mockSetVolumeShareIds = jest.fn();
-
 const mockEventManager = {
     emit: mockEventManagerEmit,
 };
@@ -96,7 +94,7 @@ describe('useInvitationsActions', () => {
 
     describe('acceptInvitation', () => {
         it('should accept invitation and emit success notification', async () => {
-            const { result } = renderHook(() => useInvitationsActions({ setVolumeShareIds: mockSetVolumeShareIds }));
+            const { result } = renderHook(() => useInvitationsActions());
             const uid = 'node-uid-1';
             const invitationUid = 'invitation-uid-1';
             const type = NodeType.Folder;
@@ -109,7 +107,6 @@ describe('useInvitationsActions', () => {
             expect(getDrivePerNodeType).toHaveBeenCalled();
             expect(mockAcceptInvitation).toHaveBeenCalledWith(invitationUid);
             expect(mockGetNode).toHaveBeenCalledWith(uid);
-            expect(mockSetVolumeShareIds).toHaveBeenCalledWith('volume-id-1', ['share-id-1']);
             expect(mockEventManagerEmit).toHaveBeenCalledWith(
                 {
                     type: BusDriverEventName.ACCEPT_INVITATIONS,
@@ -124,7 +121,7 @@ describe('useInvitationsActions', () => {
         });
 
         it('should handle missing deprecatedShareId', async () => {
-            const { result } = renderHook(() => useInvitationsActions({ setVolumeShareIds: mockSetVolumeShareIds }));
+            const { result } = renderHook(() => useInvitationsActions());
             const uid = 'node-uid-1';
             const invitationUid = 'invitation-uid-1';
             const type = NodeType.Folder;
@@ -143,7 +140,7 @@ describe('useInvitationsActions', () => {
         });
 
         it('should handle errors during invitation acceptance', async () => {
-            const { result } = renderHook(() => useInvitationsActions({ setVolumeShareIds: mockSetVolumeShareIds }));
+            const { result } = renderHook(() => useInvitationsActions());
             const uid = 'node-uid-1';
             const invitationUid = 'invitation-uid-1';
             const type = NodeType.Folder;
@@ -161,7 +158,7 @@ describe('useInvitationsActions', () => {
 
     describe('rejectInvitation', () => {
         it('should show confirmation modal for folder rejection', async () => {
-            const { result } = renderHook(() => useInvitationsActions({ setVolumeShareIds: mockSetVolumeShareIds }));
+            const { result } = renderHook(() => useInvitationsActions());
             const mockShowConfirmModal = jest.fn();
             const uid = 'node-uid-1';
             const invitationUid = 'invitation-uid-1';
@@ -188,7 +185,7 @@ describe('useInvitationsActions', () => {
         });
 
         it('should show confirmation modal for default item rejection', async () => {
-            const { result } = renderHook(() => useInvitationsActions({ setVolumeShareIds: mockSetVolumeShareIds }));
+            const { result } = renderHook(() => useInvitationsActions());
             const mockShowConfirmModal = jest.fn();
             const uid = 'node-uid-1';
             const invitationUid = 'invitation-uid-1';
@@ -213,7 +210,7 @@ describe('useInvitationsActions', () => {
         });
 
         it('should reject invitation and emit success notification on confirm', async () => {
-            const { result } = renderHook(() => useInvitationsActions({ setVolumeShareIds: mockSetVolumeShareIds }));
+            const { result } = renderHook(() => useInvitationsActions());
             const mockShowConfirmModal = jest.fn();
             const uid = 'node-uid-1';
             const invitationUid = 'invitation-uid-1';
@@ -248,7 +245,7 @@ describe('useInvitationsActions', () => {
         });
 
         it('should handle errors during invitation rejection', async () => {
-            const { result } = renderHook(() => useInvitationsActions({ setVolumeShareIds: mockSetVolumeShareIds }));
+            const { result } = renderHook(() => useInvitationsActions());
             const mockShowConfirmModal = jest.fn();
             const uid = 'node-uid-1';
             const invitationUid = 'invitation-uid-1';
@@ -274,7 +271,7 @@ describe('useInvitationsActions', () => {
         });
 
         it('should show correct message for Album type rejection', async () => {
-            const { result } = renderHook(() => useInvitationsActions({ setVolumeShareIds: mockSetVolumeShareIds }));
+            const { result } = renderHook(() => useInvitationsActions());
             const mockShowConfirmModal = jest.fn();
             const uid = 'node-uid-1';
             const invitationUid = 'invitation-uid-1';

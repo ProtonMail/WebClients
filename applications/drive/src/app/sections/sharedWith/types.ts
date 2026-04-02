@@ -39,6 +39,7 @@ export type InvitationItem = BaseSharedWithMeItem & {
     nodeUid: string;
     shareId: string;
     itemType: ItemType.INVITATION;
+    isBeingAccepted?: boolean;
     invitation: {
         uid: string;
         sharedBy: string;

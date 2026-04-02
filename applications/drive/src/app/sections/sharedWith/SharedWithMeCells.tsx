@@ -12,7 +12,6 @@ import { NameCell, defaultNameCellConfig } from '../../sections/commonDriveExplo
 import { GridItemContent } from '../../statelessComponents/DriveExplorer/cells/gridComponents/GridItemContent';
 import { GridItemName } from '../../statelessComponents/DriveExplorer/cells/gridComponents/GridItemName';
 import type { CellDefinition, GridDefinition } from '../../statelessComponents/DriveExplorer/types';
-import { useVolumesState } from '../../store/_volumes';
 import { AcceptRejectCell } from './driveExplorerCells/AcceptRejectCell';
 import { SharedByCell, defaultSharedByCellConfig } from './driveExplorerCells/SharedByCell';
 import { SharedOnCell, defaultSharedOnCellConfig } from './driveExplorerCells/SharedOnCell';
@@ -88,8 +87,7 @@ export const getSharedWithMeCells = ({
         disabled: !viewportWidth['>=large'],
         render: (uid) => {
             const RenderedSharedOnCell = () => {
-                const { setVolumeShareIds } = useVolumesState();
-                const { acceptInvitation, rejectInvitation } = useInvitationsActions({ setVolumeShareIds });
+                const { acceptInvitation, rejectInvitation } = useInvitationsActions();
                 const item = useSharedWithMeStore(useShallow((state) => state.getSharedWithMeItem(uid)));
                 if (!item) {
                     return null;

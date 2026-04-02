@@ -5,7 +5,6 @@ import type { NodeType } from '@proton/drive';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 
 import { ContextMenuButton } from '../../../components/sections/ContextMenu';
-import useVolumesState from '../../../store/_volumes/useVolumesState';
 import { useInvitationsActions } from '../hooks/useInvitationsActions';
 
 interface BaseProps {
@@ -26,9 +25,7 @@ interface ToolbarProps extends BaseProps {
 
 type Props = ContextMenuProps | ToolbarProps;
 export const AcceptButton = ({ nodeUid, invitationUid, type, close, buttonType }: Props) => {
-    // TODO: Remove that when we will have sdk for upload
-    const { setVolumeShareIds } = useVolumesState();
-    const { acceptInvitation } = useInvitationsActions({ setVolumeShareIds });
+    const { acceptInvitation } = useInvitationsActions();
 
     const handleAcceptInvitation = async () => {
         await acceptInvitation(nodeUid, invitationUid, type);

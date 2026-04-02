@@ -160,7 +160,6 @@ enum DriveFeatureFlag {
     // Download
     DriveDownloadScanDisabled = 'DriveDownloadScanDisabled',
     // Bookmarks
-    DriveShareURLBookmarksDisabled = 'DriveShareURLBookmarksDisabled',
     DriveWebShareURLSignupModal = 'DriveWebShareURLSignupModal',
     // B2B
     DriveB2BPhotosUpload = 'DriveB2BPhotosUpload',

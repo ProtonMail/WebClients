@@ -4,24 +4,22 @@ import { c } from 'ttag';
 
 import { useNotifications } from '@proton/components';
 import type { useConfirmActionModal } from '@proton/components';
-import { NodeType, getDrivePerNodeType, splitNodeUid } from '@proton/drive';
+import { NodeType, getDrivePerNodeType } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
 import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import { handleSdkError } from '../../../utils/errorHandling/handleSdkError';
 import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
+import { useSharedWithMeStore } from '../useSharedWithMe.store';
 
-interface UseInvitationsActions {
-    setVolumeShareIds?: (volumeId: string, shareIds: string[]) => void;
-}
-
-export const useInvitationsActions = ({ setVolumeShareIds }: UseInvitationsActions) => {
+export const useInvitationsActions = () => {
     const { createNotification } = useNotifications();
 
     // useCallback is needed as this can be called inside useEffect, like accepting an invite on page load
     const handleAcceptInvitation = useCallback(
         async (uid: string, invitationUid: string, type: NodeType) => {
             const drive = getDrivePerNodeType(type);
+            useSharedWithMeStore.getState().setInvitationAccepting(uid, true);
             try {
                 await drive.acceptInvitation(invitationUid);
                 const maybeNode = await drive.getNode(uid);
@@ -31,12 +29,6 @@ export const useInvitationsActions = ({ setVolumeShareIds }: UseInvitationsActio
                     throw new EnrichedError('The shared with me node entity is missing deprecatedShareId', {
                         extra: { uid: node.uid },
                     });
-                }
-                const { volumeId } = splitNodeUid(uid);
-
-                // TODO: Remove setVolumeShareIds when we will have sdk for upload
-                if (setVolumeShareIds) {
-                    setVolumeShareIds(volumeId, [shareId]);
                 }
 
                 await getBusDriver().emit(
@@ -53,9 +45,11 @@ export const useInvitationsActions = ({ setVolumeShareIds }: UseInvitationsActio
                 });
             } catch (e) {
                 handleSdkError(e, { fallbackMessage: c('Notification').t`Failed to accept share invitation` });
+            } finally {
+                useSharedWithMeStore.getState().setInvitationAccepting(uid, false);
             }
         },
-        [createNotification, setVolumeShareIds]
+        [createNotification]
     );
 
     const rejectInvitationInternal = async (uid: string, invitationUid: string, type: NodeType) => {
