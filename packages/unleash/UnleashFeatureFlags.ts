@@ -309,7 +309,6 @@ enum MeetFeatureFlag {
     MeetDisableAudioAutoHealing = 'MeetDisableAudioAutoHealing',
     MeetShowReloadTrackButton = 'MeetShowReloadTrackButton',
     MeetH264 = 'MeetH264',
-    MeetNewCTAModal = 'MeetNewCTAModal',
     MeetEnableAudioMixing = 'MeetEnableAudioMixing',
     MeetEnableSpatialAudio = 'MeetEnableSpatialAudio',
     MeetPreSharedKey = 'MeetPreSharedKey',
