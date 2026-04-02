@@ -9,10 +9,10 @@ import isTruthy from '@proton/utils/isTruthy';
 
 import { useFlagsDriveSDKPreview } from '../../../../flags/useFlagsDriveSDKPreview';
 import useDriveNavigation from '../../../../hooks/drive/useNavigate';
+import { useUserSettings } from '../../../../hooks/user';
 import { useDrivePreviewModal } from '../../../../modals/preview';
 import { useSelectionStore } from '../../../../modules/selection';
 import type { SortConfig, SortField } from '../../../../modules/sorting/types';
-import { useUserSettings } from '../../../../store';
 import { getOpenInDocsInfo, openDocsOrSheetsDocument } from '../../../../utils/docs/openInDocs';
 import { getNodeEntity } from '../../../../utils/sdk/getNodeEntity';
 import { getRootNode } from '../../../../utils/sdk/mapNodeToLegacyItem';

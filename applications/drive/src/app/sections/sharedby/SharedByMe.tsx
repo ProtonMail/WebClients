@@ -11,6 +11,7 @@ import { isNativeProtonDocsAppFile } from '@proton/shared/lib/helpers/mimetype';
 
 import { useFlagsDriveSDKPreview } from '../../flags/useFlagsDriveSDKPreview';
 import useDriveNavigation from '../../hooks/drive/useNavigate';
+import { useUserSettings } from '../../hooks/user';
 import { useDrivePreviewModal } from '../../modals/preview';
 import { useContextMenuStore } from '../../modules/contextMenu';
 import { useSelectionStore } from '../../modules/selection';
@@ -21,7 +22,6 @@ import type {
     DriveExplorerSelection,
     DriveExplorerSort,
 } from '../../statelessComponents/DriveExplorer/types';
-import { useUserSettings } from '../../store';
 import { getOpenInDocsInfo, openDocsOrSheetsDocument } from '../../utils/docs/openInDocs';
 import { EmptySharedByMe } from './EmptySharedByMe';
 import { getSharedByMeCells, getSharedByMeGrid } from './SharedByMeDriveExplorerCells';

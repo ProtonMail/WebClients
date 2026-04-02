@@ -1,7 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 
 import useLoading from '@proton/hooks/useLoading';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import usePublicToken from '../../hooks/drive/usePublicToken';
 import { Actions, countActionWithTelemetry } from '../../utils/telemetry';
@@ -15,13 +14,12 @@ interface Props {
 export const useBookmarksPublicView = ({ customPassword }: Props) => {
     const { listBookmarks, addBookmark } = useBookmarks();
     const [bookmarksTokens, setBookmarksTokens] = useState<Set<string>>(new Set());
-    const bookmarksFeatureDisabled = useFlag('DriveShareURLBookmarksDisabled');
     const [isLoading, withLoading] = useLoading(false);
     const { token, urlPassword } = usePublicToken();
     const { user, UID } = usePublicSessionUser();
 
     useEffect(() => {
-        if (!user || bookmarksFeatureDisabled || !UID) {
+        if (!user || !UID) {
             return;
         }
 
@@ -33,7 +31,7 @@ export const useBookmarksPublicView = ({ customPassword }: Props) => {
         return () => {
             abortControler.abort();
         };
-    }, [user, bookmarksFeatureDisabled, UID]);
+    }, [user, UID]);
 
     const isAlreadyBookmarked = useMemo(() => {
         return bookmarksTokens.has(token);
@@ -47,7 +45,7 @@ export const useBookmarksPublicView = ({ customPassword }: Props) => {
         const abortSignal = new AbortController().signal;
         await addBookmark(abortSignal, { token, urlPassword: urlPassword + (customPassword ?? '') });
         setBookmarksTokens((prevState) => new Set([...prevState, token]));
-        countActionWithTelemetry(Actions.AddToBookmark);
+        void countActionWithTelemetry(Actions.AddToBookmark);
     };
 
     return {
