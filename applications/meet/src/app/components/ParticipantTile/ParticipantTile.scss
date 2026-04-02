@@ -41,8 +41,13 @@
 }
 
 .participant-tile-emoji {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	font-size: 3rem;
 	line-height: 1;
+	inline-size: 3rem;
+	block-size: 3rem;
 	animation: emoji-pop 0.2s ease-out;
 
 	&--exit {

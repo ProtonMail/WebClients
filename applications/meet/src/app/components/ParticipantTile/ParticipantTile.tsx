@@ -1,4 +1,4 @@
-import { memo, useEffect, useRef, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 
 import { VideoTrack, useLocalParticipant, useParticipantTracks } from '@livekit/components-react';
 import type { Participant, RemoteTrackPublication } from 'livekit-client';
@@ -8,7 +8,6 @@ import { c } from 'ttag';
 import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
 import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
 import { useMeetSelector } from '@proton/meet/store/hooks';
-import { selectActiveReaction, selectRaisedHands } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import {
     selectDisplayName,
     selectIsScreenShare,
@@ -22,44 +21,21 @@ import clsx from '@proton/utils/clsx';
 
 import { SecurityShield } from '../../atoms/SecurityShield/SecurityShield';
 import { SpeakingIndicator } from '../../atoms/SpeakingIndicator';
-import { RAISE_HAND_EMOJI } from '../../constants';
 import { useCameraTrackSubscriptionManager } from '../../contexts/CameraTrackSubscriptionCacheProvider/CameraTrackSubscriptionManagerProvider';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useDebouncedSpeakingStatus } from '../../hooks/useDebouncedSpeakingStatus';
 import { useParticipantDisplayColors } from '../../hooks/useParticipantDisplayColors';
 import { NetworkQualityIndicator } from '../NetworkQualityIndicator/NetworkQualityIndicator';
 import { ParticipantPlaceholder } from '../ParticipantPlaceholder/ParticipantPlaceholder';
+import { AUDIO_ICON_SIZE, POSITION_BY_SIZE, INDICATOR_SIZE_BY_SIZE } from './constants';
 
 import './ParticipantTile.scss';
+import { ParticipantTileReaction } from './ParticipantTileReaction';
 
 interface ParticipantTileProps {
     participant: Participant;
     viewSize?: 'xsmall' | 'small' | 'medium' | 'large' | 'midLarge';
 }
-
-const audioIconSize = {
-    xsmall: '1.5rem',
-    small: '1.5rem',
-    medium: '1.5rem',
-    large: '2rem',
-    midLarge: '2rem',
-};
-
-const positionBySize = {
-    xsmall: 0.375,
-    small: 0.375,
-    medium: 0.5,
-    large: 1,
-    midLarge: 1,
-};
-
-const indicatorSizeBySize = {
-    xsmall: 24,
-    small: 24,
-    medium: 24,
-    large: 32,
-    midLarge: 32,
-};
 
 export const ParticipantTile = memo(({ participant, viewSize = 'large' }: ParticipantTileProps) => {
     const participantNameMap = useMeetSelector(selectParticipantNameMap);
@@ -76,30 +52,7 @@ export const ParticipantTile = memo(({ participant, viewSize = 'large' }: Partic
     const { disableVideos } = useMeetSelector(selectMeetSettings);
 
     const isSpeaking = useDebouncedSpeakingStatus(participant);
-    const activeEmoji = useMeetSelector((state) => selectActiveReaction(state, participant.identity));
-    const raisedHands = useMeetSelector(selectRaisedHands);
-    const isHandRaised = raisedHands.includes(participant.identity);
-    const displayEmoji = activeEmoji || (isHandRaised ? RAISE_HAND_EMOJI : undefined);
 
-    // Track the last visible emoji synchronously during render so the exit class
-    // is applied in the very same render where displayEmoji becomes undefined.
-    const lastEmojiRef = useRef<string | undefined>(displayEmoji);
-    if (displayEmoji) {
-        lastEmojiRef.current = displayEmoji;
-    }
-    const [, setExitTick] = useState(0);
-    const isExiting = !displayEmoji && !!lastEmojiRef.current;
-    const emojiToRender = displayEmoji ?? (isExiting ? lastEmojiRef.current : undefined);
-
-    useEffect(() => {
-        if (!displayEmoji && lastEmojiRef.current) {
-            const timer = setTimeout(() => {
-                lastEmojiRef.current = undefined;
-                setExitTick((n) => n + 1);
-            }, 200);
-            return () => clearTimeout(timer);
-        }
-    }, [displayEmoji]);
 
     // Use useParticipantTracks to get camera tracks for this specific participant
     // This properly subscribes to track state changes
@@ -219,8 +172,8 @@ export const ParticipantTile = memo(({ participant, viewSize = 'large' }: Partic
             <div
                 className="absolute top-custom right-custom flex items-center justify-center gap-2 z-up"
                 style={{
-                    '--top-custom': `${positionBySize[viewSize]}rem`,
-                    '--right-custom': `${positionBySize[viewSize]}rem`,
+                    '--top-custom': `${POSITION_BY_SIZE[viewSize]}rem`,
+                    '--right-custom': `${POSITION_BY_SIZE[viewSize]}rem`,
                 }}
             >
                 {/* Reload track button for non-local participants on top right corner when noone is screen sharing */}
@@ -231,8 +184,8 @@ export const ParticipantTile = memo(({ participant, viewSize = 'large' }: Partic
                             isRefreshing ? 'opacity-50 cursor-not-allowed' : 'opacity-80 hover:opacity-100'
                         )}
                         style={{
-                            '--w-custom': audioIconSize[viewSize],
-                            '--h-custom': audioIconSize[viewSize],
+                            '--w-custom': AUDIO_ICON_SIZE[viewSize],
+                            '--h-custom': AUDIO_ICON_SIZE[viewSize],
                         }}
                         onClick={handleRefreshTracks}
                         disabled={isRefreshing}
@@ -246,15 +199,15 @@ export const ParticipantTile = memo(({ participant, viewSize = 'large' }: Partic
                     </button>
                 )}
                 <NetworkQualityIndicator
-                    size={indicatorSizeBySize[viewSize]}
+                    size={INDICATOR_SIZE_BY_SIZE[viewSize]}
                     participant={participant}
-                    indicatorSize={(2 / 3) * indicatorSizeBySize[viewSize]}
+                    indicatorSize={(2 / 3) * INDICATOR_SIZE_BY_SIZE[viewSize]}
                 />
                 {audioIsOn && (
                     <SpeakingIndicator
-                        size={indicatorSizeBySize[viewSize]}
+                        size={INDICATOR_SIZE_BY_SIZE[viewSize]}
                         participant={participant}
-                        indicatorSize={(2 / 3) * indicatorSizeBySize[viewSize]}
+                        indicatorSize={(2 / 3) * INDICATOR_SIZE_BY_SIZE[viewSize]}
                         stopped={!isSpeaking}
                         opacity
                     />
@@ -263,8 +216,8 @@ export const ParticipantTile = memo(({ participant, viewSize = 'large' }: Partic
                     <div
                         className="user-select-none flex items-center justify-center w-custom h-custom bg-weak rounded-full"
                         style={{
-                            '--w-custom': audioIconSize[viewSize],
-                            '--h-custom': audioIconSize[viewSize],
+                            '--w-custom': AUDIO_ICON_SIZE[viewSize],
+                            '--h-custom': AUDIO_ICON_SIZE[viewSize],
                             opacity: 0.8,
                         }}
                     >
@@ -281,10 +234,10 @@ export const ParticipantTile = memo(({ participant, viewSize = 'large' }: Partic
                         isRefreshing ? 'opacity-50 cursor-not-allowed' : 'opacity-80 hover:opacity-100'
                     )}
                     style={{
-                        '--w-custom': audioIconSize[viewSize],
-                        '--h-custom': audioIconSize[viewSize],
-                        bottom: `${positionBySize[viewSize]}rem`,
-                        right: `${positionBySize[viewSize]}rem`,
+                        '--w-custom': AUDIO_ICON_SIZE[viewSize],
+                        '--h-custom': AUDIO_ICON_SIZE[viewSize],
+                        bottom: `${POSITION_BY_SIZE[viewSize]}rem`,
+                        right: `${POSITION_BY_SIZE[viewSize]}rem`,
                     }}
                     onClick={handleRefreshTracks}
                     disabled={isRefreshing}
@@ -338,28 +291,15 @@ export const ParticipantTile = memo(({ participant, viewSize = 'large' }: Partic
                     profileColor={profileColor}
                 />
             )}
-            {emojiToRender && (
-                <div
-                    className={clsx(
-                        'absolute z-up participant-tile-emoji pointer-events-none',
-                        isExiting && 'participant-tile-emoji--exit'
-                    )}
-                    style={{
-                        top: `${positionBySize[viewSize]}rem`,
-                        left: `${positionBySize[viewSize]}rem`,
-                    }}
-                >
-                    {emojiToRender}
-                </div>
-            )}
+            <ParticipantTileReaction participantIdentity={participant.identity} position={POSITION_BY_SIZE[viewSize]} />
             <div
                 className={clsx(
                     'color-norm absolute left-custom bottom-custom participant-tile-name max-w-custom flex flex-nowrap items-center',
                     viewSize !== 'large' && 'text-sm'
                 )}
                 style={{
-                    '--left-custom': `${1.25 * positionBySize[viewSize]}rem`,
-                    '--bottom-custom': `${positionBySize[viewSize]}rem`,
+                    '--left-custom': `${1.25 * POSITION_BY_SIZE[viewSize]}rem`,
+                    '--bottom-custom': `${POSITION_BY_SIZE[viewSize]}rem`,
                     '--max-w-custom': '85%',
                 }}
                 title={participantName}
