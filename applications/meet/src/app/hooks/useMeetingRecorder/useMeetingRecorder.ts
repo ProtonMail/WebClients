@@ -4,7 +4,7 @@ import { useRoomContext, useTracks } from '@livekit/components-react';
 import type { LocalParticipant, RemoteParticipant } from 'livekit-client';
 import { RemoteTrackPublication, RoomEvent, Track } from 'livekit-client';
 
-import { wait } from '@proton/shared/lib/helpers/promise';
+import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 
 import { RecordingStatus } from '../../types';
 import { calculateGridLayout } from '../../utils/calculateGridLayout';
@@ -34,6 +34,7 @@ export function useMeetingRecorder(
 ) {
     const room = useRoomContext();
     const isLargerThanMd = useIsLargerThanMd();
+    const { reportMeetError } = useMeetErrorReporting();
 
     const isNarrowHeight = useIsNarrowHeight();
 
@@ -437,6 +438,13 @@ export function useMeetingRecorder(
                 if (event.data.size > 0 && workerStorageRef.current) {
                     chunkCount++;
                     const writePromise = workerStorageRef.current.addChunk(event.data).catch((error) => {
+                        reportMeetError('Failed to store chunk in OPFS', {
+                            context: {
+                                chunkNumber: chunkCount,
+                                error: error instanceof Error ? error.message : String(error),
+                            },
+                        });
+
                         // eslint-disable-next-line no-console
                         console.error(`✗ Failed to store chunk ${chunkCount} in OPFS:`, error);
                     });
@@ -451,6 +459,14 @@ export function useMeetingRecorder(
             };
 
             mediaRecorder.onerror = (event) => {
+                const error = (event as ErrorEvent).error;
+                reportMeetError('MediaRecorder error', {
+                    context: {
+                        message: error?.message ?? 'Unknown MediaRecorder error',
+                        name: error?.name,
+                    },
+                });
+
                 // eslint-disable-next-line no-console
                 console.error('MediaRecorder error:', event);
             };
@@ -476,6 +492,12 @@ export function useMeetingRecorder(
 
             void publishRecordingStatus(RecordingStatus.Started);
         } catch (error) {
+            reportMeetError('Failed to start recording', {
+                context: {
+                    error: error instanceof Error ? error.message : String(error),
+                },
+            });
+
             // eslint-disable-next-line no-console
             console.error('Failed to start recording:', error);
             throw error;
@@ -508,6 +530,12 @@ export function useMeetingRecorder(
                             blob = file.slice(0, file.size, mimeType);
                         }
                     } catch (error) {
+                        reportMeetError('Failed to retrieve file from OPFS', {
+                            context: {
+                                error: error instanceof Error ? error.message : String(error),
+                            },
+                        });
+
                         // eslint-disable-next-line no-console
                         console.error('Failed to retrieve file from OPFS:', error);
                     }
@@ -546,6 +574,13 @@ export function useMeetingRecorder(
         const blob = await stopRecording();
 
         if (!blob || blob.size === 0) {
+            reportMeetError('Recording download failed: empty or missing blob', {
+                context: {
+                    blobExists: !!blob,
+                    blobSize: blob?.size ?? 0,
+                },
+            });
+
             return;
         }
 
@@ -559,17 +594,13 @@ export function useMeetingRecorder(
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
-
-            await wait(1000);
-            URL.revokeObjectURL(url);
-
-            // Clear OPFS storage after retrieving the file
-            if (workerStorageRef.current) {
-                await workerStorageRef.current.clear();
-                workerStorageRef.current.terminate();
-                workerStorageRef.current = null;
-            }
         } catch (error) {
+            reportMeetError('Failed to download recording', {
+                context: {
+                    error: error instanceof Error ? error.message : String(error),
+                },
+            });
+
             // eslint-disable-next-line no-console
             console.error('Failed to download recording:', error);
         }
