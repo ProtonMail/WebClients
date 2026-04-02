@@ -1,4 +1,4 @@
-import type { FC, ReactNode } from 'react';
+import type { FC, MouseEvent, ReactNode } from 'react';
 import { createContext, useCallback, useEffect, useMemo, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -21,7 +21,7 @@ type GroupsContextValue = {
     organizationGroups: Group[];
     groupsMembers: Record<GroupId, GroupMembersResponse>;
     fetchGroupMembers: (groupId: GroupId) => void;
-    onShowMembers: (groupId: GroupId) => void;
+    onShowMembers: (event: MouseEvent, groupId: GroupId) => void;
 };
 
 const initialValue: GroupsContextValue = {
@@ -64,8 +64,12 @@ export const GroupsProvider: FC<Props> = ({ children }) => {
     }, []);
 
     const onShowMembers = useCallback(
-        (groupId: GroupId) => {
-            if ((groupsMembers[groupId]?.total ?? 0) > 0) setModalOpen(groupId);
+        (event: MouseEvent, groupId: GroupId) => {
+            if ((groupsMembers[groupId]?.total ?? 0) > 0) {
+                event.stopPropagation();
+                event.preventDefault();
+                setModalOpen(groupId);
+            }
         },
         [groupsMembers]
     );
@@ -103,7 +107,7 @@ type UseMaybeGroup = {
     name: string;
     isGroup: boolean;
     groupIsLoading: boolean;
-    onShowMembers: () => void;
+    onShowMembers: (event: MouseEvent) => void;
 };
 
 /**
@@ -134,7 +138,7 @@ export const useMaybeGroup = (email: Maybe<string>, inputGroupId?: MaybeNull<str
     // If we know it's a group and the group is not loaded yet
     const groupIsLoading = isGroup && !group;
 
-    const onShowMembers = useCallback(group ? () => onShowMembersById(group?.groupId) : noop, [
+    const onShowMembers = useCallback(group ? (event: MouseEvent) => onShowMembersById(event, group?.groupId) : noop, [
         group?.groupId,
         onShowMembersById,
     ]);

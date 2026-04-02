@@ -105,6 +105,7 @@ export const ItemAccessManager: FC<SelectedItem> = ({ shareId, itemId }) => {
                         <AccessList
                             canManage={canManage}
                             canTransfer={false}
+                            isMine={share.owner}
                             invites={itemInvites}
                             itemId={itemId}
                             members={itemMembers}
@@ -123,6 +124,7 @@ export const ItemAccessManager: FC<SelectedItem> = ({ shareId, itemId }) => {
                         <AccessList
                             canManage={vaultShare && canManage}
                             canTransfer={vaultShare && canTransfer}
+                            isMine={share.owner}
                             heading={vaultShare && <VaultHeading shareId={shareId} />}
                             invites={vaultInvites}
                             itemId={itemId}
