@@ -34,7 +34,7 @@ export class SearchQueryExecutor {
 
     private async *searchEngine(kind: IndexKind, query: SearchQuery): AsyncGenerator<SearchResultItem> {
         const { indexReader } = await this.indexRegistry.get(kind, this.db);
-        for await (const result of indexReader.execute((q) => this.buildSearchQuery(query, q))) {
+        for await (const result of indexReader.execute((q) => this.buildFilenameSearchQuery(query, q))) {
             yield { nodeUid: result.identifier, score: result.score, indexKind: kind };
         }
     }
@@ -43,9 +43,14 @@ export class SearchQueryExecutor {
      * Build a wildcard match on the "filename" attribute, optionally ANDed with exact-match
      * attribute filters (e.g. nodeType, indexPopulatorGeneration).
      */
-    private buildSearchQuery(query: SearchQuery, wasmQuery: Query): Query {
-        let expr = Expression.attr('filename', Func.Matches, TermValue.text(query.filename).wildcard());
-
+    private buildFilenameSearchQuery(query: SearchQuery, wasmQuery: Query): Query {
+        // Exact substring match on the raw filename tag (*query*) — handles short tokens
+        // and special characters that the text processor would drop or stem.
+        const tagMatch = Expression.attr('filename', Func.Matches, TermValue.wild().then(query.filename).wildcard());
+        // Fuzzy match on the tokenized filename text (query*) — handles stemming and
+        // trigram matching for queries of 3+ characters.
+        const textMatch = Expression.attr('filenameText', Func.Matches, TermValue.text(query.filename).wildcard());
+        let expr = textMatch.or(tagMatch);
         if (query.filters) {
             for (const [name, attrValue] of Object.entries(query.filters)) {
                 expr = expr.and(Expression.attr(name, Func.Equals, this.toTermValue(attrValue)));
