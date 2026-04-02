@@ -1781,6 +1781,9 @@
       ],
       "Writing assistant seats": [
         "写作助手席位"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } 个 ${ MEET_APP_NAME } 许可证"
       ]
     },
     "Alert": {
@@ -8733,6 +8736,21 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "只需点击几下，您的收件箱就不会杂乱无章了"
+      ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } 是一款端到端加密的视频会议解决方案。将其添加到您的套餐中即可主持安全会议。"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } 席位"
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "添加 ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "包含 ${ planOrAppName } 所有功能，外加:"
+      ],
+      "for ${ price }": [
+        "仅需 ${ price }"
       ]
     },
     "info": {
@@ -9808,6 +9826,9 @@
       ],
       "Skip feedback": [
         "跳过反馈"
+      ],
+      "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
+        "通过 ${ CALENDAR_APP_NAME } 中的预约页面分享您的空闲时间，并使用 ${ MEET_APP_NAME } 主持安全会议。"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10308,6 +10329,12 @@
       ],
       "Up to ${ n } participant": [
         "最多 ${ n } 位参与者"
+      ],
+      "Hosts can record meetings locally on their computers": [
+        "主持人可以在本地计算机上录制会议"
+      ],
+      "Video meetings, ${ n } participant": [
+        "视频会议，${ n } 位参与者"
       ]
     },
     "Message": {
@@ -10995,6 +11022,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我们会扫描暗网，检查您的 ${ BRAND_NAME } 地址或别名是否被泄露，一旦发现任何情况，我们会立即提醒您。"
+      ],
+      "Data retention policies": [
+        "数据保留策略"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "私人 AI 聊天 (${ LUMO_APP_NAME })"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "具备广告拦截器和恶意软件防护功能的 VPN"
       ]
     },
     "new_plans: feature highlight": {
@@ -11848,7 +11884,7 @@
         "无上层文件夹"
       ],
       "Remind me later": [
-        "稍后提醒我"
+        "稍后提醒"
       ],
       "Yes, don't show again": [
         "是的，不再显示"
@@ -14892,7 +14928,7 @@
         "验证码无效"
       ],
       "Keep this banner hidden?": [
-        "始终隐藏此横幅？"
+        "隐藏此横幅？"
       ],
       "Label as": [
         "加标签"
@@ -16009,6 +16045,25 @@
       ],
       "Yahoo": [
         "Yahoo"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } 许可证"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } 席位"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME } 席位"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "包含 ${ seats } 个席位"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "试用期间，您最多可以拥有 ${ TRIAL_MAX_MEET_SEATS } 个 ${ MEET_SHORT_APP_NAME } 席位。"
       ]
     }
   }
