@@ -17,8 +17,9 @@ export const BookingPageLocationSpotlightContent = () => {
                     <img alt="" src={spotlightImg} className="w-custom" style={{ '--w-custom': '2.75rem' }} />
                 </div>
                 <div className="flex flex-column flex-nowrap items-start">
-                    <p className="text-lg text-bold m-0 mb-1">{c('Title').t`Your booking pages live here`}</p>
-                    <p className="m-0">{c('Label').t`Copy the link or manage your page from here anytime.`}</p>
+                    <p className="text-lg text-bold m-0 mb-1">{c('Title').t`Introducing booking pages`}</p>
+                    <p className="m-0">{c('Label')
+                        .t`Securely share parts of your schedule through a booking page you can send to anyone.`}</p>
                 </div>
             </div>
         </>
