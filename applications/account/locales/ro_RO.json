@@ -324,9 +324,6 @@
       "Connected": [
         "Conectat"
       ],
-      "Contact sales": [
-        "Contactare echipă vânzări"
-      ],
       "Contact support": [
         "Contactați asistența"
       ],
@@ -455,9 +452,6 @@
       ],
       "Delete account": [
         "Ștergere cont"
-      ],
-      "Delete and confirm": [
-        "Ștergere și confirmare"
       ],
       "Delete filter “${ Name }”": [
         "Ștergere filtru „${ Name }”"
@@ -1292,9 +1286,6 @@
       ],
       "Save and continue": [
         "Salvare și continuare"
-      ],
-      "Save changes": [
-        "Salvare modificări"
       ],
       "Save ICS file": [
         "Salvare fișier ICS"
@@ -9051,9 +9042,6 @@
       "${ discountPercent }% discount": [
         "Reducere ${ discountPercent }%"
       ],
-      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME } nu va mai păstra versiunile anterioare ale fișierelor."
-      ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } nu este validă"
       ],
@@ -10273,9 +10261,6 @@
       "for ${ price }": [
         "cu ${ price }"
       ],
-      "For a 10-year version history, please contact our sales team.": [
-        "Pentru un istoric de 10 ani al versiunilor, contactați echipa noastră de vânzări."
-      ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Pentru acces oricând la e-mail și experiență mobilă optimizată, descărcați aplicația ${ androidAppLink } sau ${ iosAppLink }."
       ],
@@ -11154,6 +11139,9 @@
       "Product reviews, rankings, or guides": [
         "Recenzii de produse, clasamente sau ghiduri"
       ],
+      "Professional": [
+        "Professional"
+      ],
       "Protect this device too?": [
         "Protejați și acest dispozitiv?"
       ],
@@ -11700,12 +11688,6 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Această verificare poate dura până la o oră. După confirmarea verificării, nu eliminați înregistrarea TXT, deoarece este necesară pentru a confirma că dețineți în continuare domeniul."
       ],
-      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "Aceasta va șterge toate versiunile anterioare ale fișierelor mai vechi de ${ rententionLabel }."
-      ],
-      "This will delete all previous versions of your files.": [
-        "Aceasta va șterge toate versiunile anterioare ale fișierelor."
-      ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Aceasta va refuza accesul la **${ email }**. Continuați?"
       ],
@@ -11904,9 +11886,6 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Îmbunătățiți contul pentru a vă menține beneficiile din ${ planTitle }."
       ],
-      "Upgrade to unlock": [
-        "Treceți la alt tip de cont pentru deblocare."
-      ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "Îmbunătățiți-vă planul pentru a debloca funcția ${ monitorLink }."
       ],
@@ -12005,9 +11984,6 @@
       ],
       "Version ${ version }": [
         "Versiunea ${ version }"
-      ],
-      "Version history": [
-        "Istoric versiuni"
       ],
       "Version number successfully copied to clipboard": [
         "Numărul versiunii a fost copiat în memorie."
@@ -12168,6 +12144,9 @@
       "With ${ AUTHENTICATOR_APP_NAME }, you can:": [
         "Cu ${ AUTHENTICATOR_APP_NAME }, puteți:"
       ],
+      "With a ${ boldProfessionalPlan } plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
+        "Cu un plan ${ boldProfessionalPlan }, puteți achiziționa ${ boldDedicatedServers } pentru organizația proprie și puteți configura ${ boldGateways } pentru a controla care utilizatori le pot accesa."
+      ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Cu o adresă criptată ${ BRAND_NAME }, puteți utiliza toate serviciile ${ BRAND_NAME }."
       ],
@@ -12313,9 +12292,6 @@
       ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Nu puteți recomanda utilizatori ai ${ MAIL_APP_NAME }."
-      ],
-      "You cannot undo this action.": [
-        "Nu puteți anula această acțiune."
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Nu ați setat o metodă de recuperare a contului, deci recuperea contului nu va fi posibilă dacă vă uitați parola. Continuați fără metodă de recuperare?"
@@ -12525,9 +12501,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Numărul de telefon va fi folosit doar pentru această verificare unică."
-      ],
-      "Your plan is limited to 10 versions for up to 7 days": [
-        "Planul este limitat la 10 versiuni pentru maxim 7 zile."
       ],
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "Modificările recente au fost publicate. Vor fi vizibile utilizatorilor în următoarele câteva ore."
@@ -13168,11 +13141,6 @@
         "${ nbDay } zile",
         "${ nbDay } de zile"
       ],
-      "${ nbYear } year": [
-        "${ nbYear } an",
-        "${ nbYear } ani",
-        "${ nbYear } de ani"
-      ],
       "${ pricePerMonthWithCurrency } / month": [
         "${ pricePerMonthWithCurrency }/lună"
       ],
@@ -13691,9 +13659,6 @@
       ],
       "Don't ask again": [
         "Nu mă mai întreba"
-      ],
-      "Don't keep versions": [
-        "Fără păstrare versiuni"
       ],
       "Don't show this again": [
         "Nu mai arăta asta"
@@ -15212,11 +15177,6 @@
         "Importare toate mesajele dintr-o etichetă și etichetare cu",
         "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } etichete și etichetare cu",
         "Importare toate mesajele din ${ selectedItemsToImportCount } din ${ itemsToImportCount } de etichete și etichetare cu"
-      ]
-    },
-    "mail_cro_experiment": {
-      "Get Deal": [
-        "Luați oferta"
       ]
     },
     "mail_signup_2023: Info": {
@@ -20568,9 +20528,6 @@
       ]
     },
     "Setting": {
-      "Enable Photos section": [
-        "Activare secțiune „Fotografii”"
-      ],
       "Get updates about comments via email": [
         "Obținere actualizări despre comentarii prin e-mail"
       ],
@@ -23517,9 +23474,6 @@
       ],
       "Delete user?": [
         "Ștergere utilizator?"
-      ],
-      "Delete version history?": [
-        "Ștergeți istoricul versiunilor?"
       ],
       "Deny access to user?": [
         "Refuzați accesul utilizatorului?"

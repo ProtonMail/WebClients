@@ -1219,9 +1219,6 @@
       "Save and continue": [
         "Tallenna ja jatka"
       ],
-      "Save changes": [
-        "Tallenna muutokset"
-      ],
       "Save ICS file": [
         "Tallenna ICS-tiedosto"
       ],
@@ -9597,6 +9594,9 @@
       "Private AI assistant": [
         "Yksityinen tekoälyavustaja"
       ],
+      "Professional": [
+        "Professional"
+      ],
       "Protect your account from quantum computing threats with quantum-resistant cryptographic keys.": [
         "Suojaa tiliäsi kvanttitietokoneiden uhilta kvanttikestävillä kryptografisilla avaimilla."
       ],
@@ -10485,6 +10485,9 @@
       "Why?": [
         "Miksi?"
       ],
+      "With a ${ boldProfessionalPlan } plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
+        "${ boldProfessionalPlan }-tilaajana voit ostaa organisaatiollesi ${ boldDedicatedServers } ja määrittää ${ boldGateways } hallitaksesi millä käyttäjillä on niiden käyttöoikeus."
+      ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Salatulla ${ BRAND_NAME }-osoitteella voit käyttää kaikkia ${ BRAND_NAME }-palveluita"
       ],
@@ -10602,9 +10605,6 @@
       ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Et voi suositella ${ MAIL_APP_NAME } -käyttäjälle"
-      ],
-      "You cannot undo this action.": [
-        "Et voi kumota toimintoa."
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Varoitus: Et määrittänyt palautustapaa, joten tilin palautus on mahdotonta mikäli kadotat salasanasi. Jatketaanko ilman palautustapaa?"
@@ -10768,9 +10768,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Puhelinnumeroasi käytetään vain tähän kertaluontoiseen vahvistukseen."
-      ],
-      "Your plan is limited to 10 versions for up to 7 days": [
-        "Tilauksesi on rajoitettu 10 versioon, joita säilytetään enintään 7 päivää"
       ],
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "Viimeisimmät muutoksesi on julkaistu. Ne näkyvät käyttäjille muutaman tunnin kuluessa."
@@ -11307,10 +11304,6 @@
       "${ nbDay } day": [
         "${ nbDay } päivä",
         "${ nbDay } päivää"
-      ],
-      "${ nbYear } year": [
-        "${ nbYear } vuosi",
-        "${ nbYear } vuotta"
       ],
       "${ pricePerMonthWithCurrency } / month": [
         "${ pricePerMonthWithCurrency } / kuukausi"
@@ -13189,11 +13182,6 @@
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
         "Tuo kaikki ${ selectedItemsToImportCount }/${ itemsToImportCount } tunnisteen viestit ja merkitse ne tunnisteella",
         "Tuo kaikki ${ selectedItemsToImportCount }/${ itemsToImportCount } tunnisteen viestit ja merkitse ne tunnisteella"
-      ]
-    },
-    "mail_cro_experiment": {
-      "Get Deal": [
-        "Hyödynnä tarjous"
       ]
     },
     "mail_signup_2023: Info": {

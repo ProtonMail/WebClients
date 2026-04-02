@@ -310,9 +310,6 @@
       "Connected": [
         "Conectado"
       ],
-      "Contact sales": [
-        "Contactar con ventas"
-      ],
       "Contact support": [
         "Contactar con soporte"
       ],
@@ -423,9 +420,6 @@
       ],
       "Delete account": [
         "Eliminar la cuenta"
-      ],
-      "Delete and confirm": [
-        "Eliminar y confirmar"
       ],
       "Delete filter “${ Name }”": [
         "Eliminar el filtro \"${ Name }\""
@@ -1221,9 +1215,6 @@
       ],
       "Save and continue": [
         "Guardar y continuar"
-      ],
-      "Save changes": [
-        "Guardar los cambios"
       ],
       "Save ICS file": [
         "Guardar archivo ICS"
@@ -8598,9 +8589,6 @@
       "${ discountPercent }% discount": [
         "${ discountPercent }% de descuento"
       ],
-      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME } dejará de guardar las versiones anteriores de tus archivos."
-      ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } no es válida."
       ],
@@ -9709,9 +9697,6 @@
       ],
       "finance": [
         "finanzas"
-      ],
-      "For a 10-year version history, please contact our sales team.": [
-        "Para obtener un historial de versiones de 10 años, ponte en contacto con nuestro equipo de ventas."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Para acceder a tu correo electrónico en cualquier momento y disfrutar de una experiencia móvil optimizada, descarga nuestra aplicación desde ${ androidAppLink } o ${ iosAppLink }."
@@ -11067,12 +11052,6 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Esta verificación puede tomar hasta una hora. Después de la verificación, no elimines el registro TXT, ya que se necesita para confirmar que continúas siendo el propietario del dominio."
       ],
-      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "Se eliminarán todas las versiones de tus archivos anteriores a ${ rententionLabel }."
-      ],
-      "This will delete all previous versions of your files.": [
-        "Se eliminarán todas las versiones anteriores de tus archivos."
-      ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Esto denegará el acceso a **${ email }**. ¿Estás seguro de que deseas continuar?"
       ],
@@ -11265,9 +11244,6 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Mejora para mantener tus beneficios de ${ planTitle }."
       ],
-      "Upgrade to unlock": [
-        "Pásate a un plan superior para desbloquear"
-      ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "Pásate a un plan superior para desbloquear ${ monitorLink }."
       ],
@@ -11366,9 +11342,6 @@
       ],
       "Version ${ version }": [
         "Versión ${ version }"
-      ],
-      "Version history": [
-        "Historial de versiones"
       ],
       "Version number successfully copied to clipboard": [
         "El número de versión fue copiado en el portapapeles."
@@ -11659,9 +11632,6 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "No puedes recomendar a usuarios de ${ MAIL_APP_NAME }."
       ],
-      "You cannot undo this action.": [
-        "No se puede deshacer esta acción."
-      ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "No has establecido un método de recuperación por lo que la recuperación de cuentas es imposible si olvidas tu contraseña. ¿Quieres continuar sin método de recuperación?"
       ],
@@ -11848,9 +11818,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Tu número de teléfono se utilizará solo para esta verificación única."
-      ],
-      "Your plan is limited to 10 versions for up to 7 days": [
-        "Tu plan está limitado a 10 versiones y hasta 7 días."
       ],
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "Se han publicado tus cambios recientes. Serán visibles para los usuarios en las próximas horas."
@@ -12424,10 +12391,6 @@
         "${ nbDay } día",
         "${ nbDay } días"
       ],
-      "${ nbYear } year": [
-        "${ nbYear } año",
-        "${ nbYear } años"
-      ],
       "${ pricePerMonthWithCurrency } / month": [
         "${ pricePerMonthWithCurrency } / mes"
       ],
@@ -12910,9 +12873,6 @@
       ],
       "Don't ask again": [
         "No preguntar de nuevo"
-      ],
-      "Don't keep versions": [
-        "No guardar versiones"
       ],
       "Don't show this again": [
         "No mostrar esto de nuevo"
@@ -14358,11 +14318,6 @@
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
         "Importar todos los ${ selectedItemsToImportCount } mensajes de ${ itemsToImportCount } etiqueta y etiquetarlos como",
         "Importar todos los ${ selectedItemsToImportCount } mensajes de ${ itemsToImportCount } etiquetas y etiquetarlos como"
-      ]
-    },
-    "mail_cro_experiment": {
-      "Get Deal": [
-        "Consigue la oferta"
       ]
     },
     "mail_signup_2023: Info": {
@@ -19417,11 +19372,6 @@
         "Solicitud de restablecimiento de contraseña"
       ]
     },
-    "Setting": {
-      "Enable Photos section": [
-        "Activar la sección Fotos"
-      ]
-    },
     "Settings description": {
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "Organiza tu bandeja de entrada con carpetas y etiquetas. ${ learnMoreLink }"
@@ -22200,9 +22150,6 @@
       ],
       "Delete user?": [
         "¿Eliminar usuario?"
-      ],
-      "Delete version history?": [
-        "¿Eliminar el historial de versiones?"
       ],
       "Deny access to user?": [
         "¿Denegar acceso al usuario?"

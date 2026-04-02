@@ -1010,9 +1010,6 @@
       "Save and continue": [
         "Сохранить и продолжить"
       ],
-      "Save changes": [
-        "Сохранить изменения"
-      ],
       "Save SAML configuration": [
         "Сохранить конфигурацию SAML"
       ],
@@ -9213,9 +9210,6 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Вы не можете привлекать пользователей ${ MAIL_APP_NAME }"
       ],
-      "You cannot undo this action.": [
-        "Это действие нельзя отменить."
-      ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Вы не задали способ восстановления доступа, поэтому, если вы забудете пароль, восстановление аккаунта будет невозможно. Продолжить без метода восстановления?"
       ],
@@ -9356,9 +9350,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш номер телефона будет использоваться только для этой разовой проверки."
-      ],
-      "Your plan is limited to 10 versions for up to 7 days": [
-        "Ваш план ограничен 10 версиями на срок до 7 дней"
       ],
       "Your recovery phrase": [
         "Ваша фраза для восстановления"
@@ -9820,12 +9811,6 @@
         "${ nbDay } дня",
         "${ nbDay } дней",
         "${ nbDay } дней"
-      ],
-      "${ nbYear } year": [
-        "${ nbYear } год",
-        "${ nbYear } года",
-        "${ nbYear } лет",
-        "${ nbYear } лет"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Временно недоступно. Проверьте позже.)"
