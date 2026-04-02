@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import { differenceInDays, fromUnixTime, getUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
 import { usePlans } from '@proton/account/plans/hooks';
@@ -10,6 +9,7 @@ import useFeature from '@proton/features/useFeature';
 import { CYCLE, PLANS, getPlanByName } from '@proton/payments';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
+import { calculateRotationUpdate } from '../../common/helpers/tipRotationLogic';
 import {
     featureListDrive,
     featureListGeneric,
@@ -79,42 +79,40 @@ export const useGoUnlimited2025Config = (): UnlimitedOfferConfig => {
     const unlimitedPlan = getPlanByName(plansResult?.plans ?? [], PLANS.BUNDLE, currency);
     const price = (unlimitedPlan?.Pricing?.[CYCLE.YEARLY] || 0) / CYCLE.YEARLY;
 
-    const [currentTipIndex, setCurrentTipIndex] = useState(0);
-
     const {
         feature: lastRotationDateFeature,
         update,
         loading: loadingRotationState,
     } = useFeature(FeatureCode.OfferUnlimitedRotationState);
 
+    const [currentTipIndex, setCurrentTipIndex] = useState(0);
+
     const tips = useMemo(() => getTips(), []);
 
-    const updateRotationIdNeeded = () => {
-        if (!lastRotationDateFeature?.Value.rotationDate) {
-            return false;
+    const updateRotationState = () => {
+        if (!lastRotationDateFeature?.Value) {
+            return;
         }
 
-        if (lastRotationDateFeature.Value.rotationDate === 0) {
-            void update({ rotationDate: getUnixTime(new Date()), rotationIndex: 0 });
-            return false;
-        }
-        const lastRotationDate = fromUnixTime(lastRotationDateFeature.Value.rotationDate);
-        const daysSinceLastRotationDate = differenceInDays(new Date(), lastRotationDate);
+        const result = calculateRotationUpdate(
+            lastRotationDateFeature.Value.rotationDate,
+            lastRotationDateFeature.Value.rotationIndex,
+            tips.length,
+            POST_SIGNUP_GO_UNLIMITED_DURATION
+        );
 
-        if (daysSinceLastRotationDate >= POST_SIGNUP_GO_UNLIMITED_DURATION) {
-            const storedIndex = lastRotationDateFeature.Value.rotationIndex;
-            const nextIndex = (storedIndex + 1) % tips.length;
-            setCurrentTipIndex(nextIndex);
-            void update({ rotationDate: getUnixTime(new Date()), rotationIndex: nextIndex });
-            return true;
+        if (result) {
+            const { tipIndex, rotationDate } = result;
+            setCurrentTipIndex(tipIndex);
+            void update({ rotationDate, rotationIndex: tipIndex });
+        } else {
+            setCurrentTipIndex(lastRotationDateFeature.Value.rotationIndex);
         }
-
-        return false;
     };
 
     useEffect(() => {
         if (!loadingRotationState) {
-            updateRotationIdNeeded();
+            updateRotationState();
         }
     }, [loadingRotationState]);
 
