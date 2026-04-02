@@ -324,9 +324,6 @@
       "Connected": [
         "Συνδεδεμένο"
       ],
-      "Contact sales": [
-        "Επικοινωνία με το Τμήμα Πωλήσεων"
-      ],
       "Contact support": [
         "Επικοινωνήστε με την υποστήριξη πελατών"
       ],
@@ -455,9 +452,6 @@
       ],
       "Delete account": [
         "Διαγραφή λογαριασμού"
-      ],
-      "Delete and confirm": [
-        "Διαγραφή και επιβεβαίωση"
       ],
       "Delete filter “${ Name }”": [
         "Διαγραφή φίλτρου “${ Name }”"
@@ -1292,9 +1286,6 @@
       ],
       "Save and continue": [
         "Αποθήκευση και συνέχεια"
-      ],
-      "Save changes": [
-        "Αποθήκευση αλλαγών"
       ],
       "Save ICS file": [
         "Αποθήκευση αρχείου ICS"
@@ -8975,9 +8966,6 @@
       "${ discountPercent }% discount": [
         "${ discountPercent }% έκπτωση"
       ],
-      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "Το ${ DRIVE_APP_NAME } δε θα διατηρεί πλέον προηγούμενες εκδόσεις των αρχείων σας."
-      ],
       "${ emailAddress } is invalid": [
         "Η ${ emailAddress } είναι μη έγκυρη"
       ],
@@ -10162,9 +10150,6 @@
       "for ${ price }": [
         "για ${ price }"
       ],
-      "For a 10-year version history, please contact our sales team.": [
-        "Για ιστορικό εκδόσεων 10 ετών, επικοινωνήστε με την ομάδα πωλήσεών μας."
-      ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Για πρόσβαση ανά πάσα στιγμή στο ηλεκτρονικό ταχυδρομείο και βελτιστοποιημένη εμπειρία κινητής τηλεφωνίας, κατεβάστε την εφαρμογή ${ androidAppLink } ή ${ iosAppLink }."
       ],
@@ -11036,6 +11021,9 @@
       "Product reviews, rankings, or guides": [
         "Κριτικές προϊόντων, κατατάξεις ή οδηγοί"
       ],
+      "Professional": [
+        "Επαγγελματίας"
+      ],
       "Protect this device too?": [
         "Να προστατέψουμε και αυτή τη συσκευή;"
       ],
@@ -11576,12 +11564,6 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Αυτή η επαλήθευση μπορεί να διαρκέσει έως και μία ώρα. Μετά την επιτυχή επαλήθευση, μην καταργήσετε την εγγραφή TXT, καθώς είναι απαραίτητη για να επιβεβαιώσετε ότι εξακολουθείτε να είστε κάτοχος του τομέα."
       ],
-      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "Αυτό θα διαγράψει όλες τις προηγούμενες εκδόσεις των αρχείων σας που είναι παλαιότερες από ${ rententionLabel }."
-      ],
-      "This will delete all previous versions of your files.": [
-        "Αυτό θα διαγράψει όλες τις προηγούμενες εκδόσεις των αρχείων σας."
-      ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Αυτό θα αρνηθεί την πρόσβαση στο **${ email }**. Είστε σίγουροι ότι θέλετε να συνεχίσετε;"
       ],
@@ -11780,9 +11762,6 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Αναβαθμίστε για να διατηρήσετε τα ${ planTitle } προνόμιά σας."
       ],
-      "Upgrade to unlock": [
-        "Αναβαθμίστε για να ξεκλειδώσετε"
-      ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "Αναβαθμίστε για να ξεκλειδώσετε το ${ monitorLink }."
       ],
@@ -11881,9 +11860,6 @@
       ],
       "Version ${ version }": [
         "'Εκδοση ${ version }"
-      ],
-      "Version history": [
-        "Ιστορικό εκδόσεων"
       ],
       "Version number successfully copied to clipboard": [
         "Ο αριθμός έκδοσης αντιγράφηκε με επιτυχία στο πρόχειρο"
@@ -12044,6 +12020,9 @@
       "With ${ AUTHENTICATOR_APP_NAME }, you can:": [
         "Με το ${ AUTHENTICATOR_APP_NAME }, μπορείτε να:"
       ],
+      "With a ${ boldProfessionalPlan } plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
+        "Με ένα ${ boldProfessionalPlan } πλάνο, μπορείτε να αγοράσετε ${ boldDedicatedServers } για τον οργανισμό σας και να ρυθμίσετε τις ${ boldGateways } για να ελέγχετε ποιοι χρήστες μπορούν να έχουν πρόσβαση σε αυτές."
+      ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Με κρυπτογραφημένη διεύθυνση ${ BRAND_NAME }, μπορείτε να χρησιμοποιήσετε όλες τις ${ BRAND_NAME } υπηρεσίες"
       ],
@@ -12182,9 +12161,6 @@
       ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Δεν μπορείτε να προτείνετε χρήστες του ${ MAIL_APP_NAME }."
-      ],
-      "You cannot undo this action.": [
-        "Δεν μπορείτε να αναιρέσετε αυτήν την ενέργεια."
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Δεν έχετε ορίσει μία μέθοδο ανάκτησης, με αποτέλεσμα η ανάκτηση λογαριασμού να είναι αδύνατη αν ξεχάσετε τον κωδικό πρόσβασής σας. Θέλετε να συνεχίσετε χωρίς μέθοδο ανάκτησης;"
@@ -12390,9 +12366,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ο αριθμός τηλεφώνου σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
-      ],
-      "Your plan is limited to 10 versions for up to 7 days": [
-        "Το πλάνο σας περιορίζεται σε 10 εκδόσεις για έως και 7 ημέρες"
       ],
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "Οι πρόσφατες αλλαγές σας έχουν δημοσιευτεί. Θα είναι ορατές στους χρήστες μέσα στις επόμενες ώρες."
@@ -13026,10 +12999,6 @@
         "${ nbDay } ημέρα",
         "${ nbDay } ημέρες"
       ],
-      "${ nbYear } year": [
-        "${ nbYear } έτος",
-        "${ nbYear } έτη"
-      ],
       "${ pricePerMonthWithCurrency } / month": [
         "${ pricePerMonthWithCurrency } / μήνα"
       ],
@@ -13548,9 +13517,6 @@
       ],
       "Don't ask again": [
         "Να μην ερωτηθώ ξανά"
-      ],
-      "Don't keep versions": [
-        "Μη διατηρείτε εκδόσεις"
       ],
       "Don't show this again": [
         "Να μην εμφανιστεί ξανά"
@@ -15062,11 +15028,6 @@
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
         "Εισάγετε όλα τα μηνύματα ${ selectedItemsToImportCount } από ${ itemsToImportCount } ετικέτα και επισημάνετέ τα ως",
         "Εισάγετε όλα τα μηνύματα ${ selectedItemsToImportCount } από ${ itemsToImportCount } ετικέτες και επισημάνετε τα ως"
-      ]
-    },
-    "mail_cro_experiment": {
-      "Get Deal": [
-        "Λάβετε την προσφορά"
       ]
     },
     "mail_signup_2023: Info": {
@@ -20244,9 +20205,6 @@
       ]
     },
     "Setting": {
-      "Enable Photos section": [
-        "Ενεργοποίηση ενότητας Φωτογραφίες"
-      ],
       "Get updates about comments via email": [
         "Λάβετε ενημερώσεις σχετικά με σχόλια μέσω ηλεκτρονικού ταχυδρομείου"
       ],
@@ -23126,9 +23084,6 @@
       ],
       "Delete user?": [
         "Διαγραφή χρήστη;"
-      ],
-      "Delete version history?": [
-        "Διαγραφή ιστορικού εκδόσεων;"
       ],
       "Deny access to user?": [
         "Άρνηση πρόσβασης στο χρήστη;"
