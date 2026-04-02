@@ -43,7 +43,7 @@ const MainContainer = () => {
     const calendarBootstrap = useCalendarSelector(selectCalendarsBootstrap);
 
     // Make sure we have the data when opening the popover
-    useFlag('ZoomIntegration');
+    useFlag('ZoomIntegrationDisabled');
 
     const drawerView = useInstance(() => {
         const { view } = fromUrlParams(pathname);

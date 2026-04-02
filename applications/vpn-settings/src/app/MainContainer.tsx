@@ -112,7 +112,8 @@ const MainContainer: FunctionComponent = () => {
     const [showChat, setShowChat] = useState({ autoLaunch: false, render: false });
     const isUserGroupsFeatureEnabled = useFlag('UserGroupsPermissionCheck');
     const canDisplayB2BLogsVPN = useFlag('B2BLogsVPN');
-    const isZoomIntegrationEnabled = useFlag('ZoomIntegration');
+    const isZoomIntegrationDisabled = useFlag('ZoomIntegrationDisabled');
+    const isZoomIntegrationEnabled = !isZoomIntegrationDisabled;
     const isProtonMeetIntegrationEnabled = useFlag('NewScheduleOption');
     const isSharedServerFeatureEnabled = useFlag('SharedServerFeature');
     const isSsoForPbsEnabled = useFlag('SsoForPbs');

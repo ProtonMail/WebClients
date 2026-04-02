@@ -17,13 +17,14 @@ interface Props {
 const useVideoConferenceSpotlight = ({ isEventCreation }: Props) => {
     const [user] = useUser();
     const [organization] = useOrganization();
-    const isZoomIntegrationEnabled = useFlag('ZoomIntegration');
+    const isZoomIntegrationDisabled = useFlag('ZoomIntegrationDisabled');
+
     const {
         welcomeFlags: { isDone: hasUserFinishedWelcomeFlow },
     } = useWelcomeFlags();
     const userAccountHasMoreThanTwoDays = isUserAccountOlderThanOrEqualToDays(user, 2);
     const hasAccessToZoomIntegration =
-        isZoomIntegrationEnabled && user.hasPaidMail && organization?.Settings.VideoConferencingEnabled;
+        !isZoomIntegrationDisabled && user.hasPaidMail && organization?.Settings.VideoConferencingEnabled;
 
     const {
         show: showVideoConferenceSpotlight,
