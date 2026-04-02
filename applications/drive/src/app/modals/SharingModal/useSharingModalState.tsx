@@ -296,7 +296,7 @@ export const useSharingModalState = ({
             }
         };
         void withLoading(Promise.all([fetchSharingInfo(), fetchNodeInfo()]));
-    }, [contactEmails, drive, nodeUid, user.DisplayName, user.Email, withLoading]);
+    }, [drive, nodeUid, withLoading]);
 
     const copyInvitationLink = (invitationUid: string, email: string) => {
         const { invitationId } = splitInvitationUid(invitationUid);
