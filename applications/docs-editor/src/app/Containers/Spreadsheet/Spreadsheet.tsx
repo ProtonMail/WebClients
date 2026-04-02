@@ -20,7 +20,7 @@ import { forwardRef, useCallback, useEffect, useImperativeHandle, useRef, useSta
 import { downloadLogsAsJSON } from '../../../../../docs/src/app/utils/downloadLogs'
 import type { EditorLoadResult } from '../../Lib/EditorLoadResult'
 import { useApplication } from '../ApplicationProvider'
-import { type ProtonSheetsState, useLocalState, useProtonSheetsState } from './state'
+import { type ProtonSheetsState, useLocalState, useProtonSheetsState, useVersioning } from './state'
 
 import '@rowsncolumns/spreadsheet/dist/spreadsheet.min.css'
 import { Menubar } from './components/Menubar/Menubar'
@@ -81,10 +81,28 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
 
   // TODO: Consider refactoring these into a single derived mode "state"
   const isRevisionMode = systemMode === EditorSystemMode.Revision
-  const isViewOnlyMode = !application.getRole().canEdit() || viewportWidth['<=small']
+  const canEdit = application.getRole().canEdit()
+  const isViewOnlyMode = !canEdit || viewportWidth['<=small']
   const isReadonly = editingLocked || isRevisionMode || isViewOnlyMode
 
+  const isCreationOrConversion = !!editorInitializationConfig
+  const canRunMigration = !isRevisionMode && canEdit && !isCreationOrConversion
+
   const state = useProtonSheetsState({ docState, functions, isReadonly })
+  const { setInitialVersion } = useVersioning(
+    canRunMigration,
+    state.yjsState,
+    () => {
+      void clientInvoker.reportUserInterfaceError(
+        new Error(
+          c('Error')
+            .t`This spreadsheet is incompatible with the current client version. Please try reloading the client. If the error persists, please contact support.`,
+        ),
+        { irrecoverable: false, lockEditor: true },
+      )
+    },
+    () => clientInvoker.reloadClient(),
+  )
   const { getLocalStateWithoutActions, replaceLocalSpreadsheetState } = useLocalState(state, updateLocalStateToLog)
   const focusSheet = useFocusSheet()
 
@@ -161,8 +179,11 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
     [calculateNow, docState, generateStatePatches, importExcelFile, state.yjsState],
   )
   useEffect(() => {
+    if (!editorInitializationConfig) {
+      return
+    }
+    setInitialVersion()
     const canConvertFile =
-      editorInitializationConfig &&
       editorInitializationConfig.mode === 'conversion' &&
       ['xlsx', 'csv', 'tsv', 'ods'].includes(editorInitializationConfig.type.dataType)
     if (canConvertFile && !didConvertFromFile.current) {
@@ -178,7 +199,7 @@ export const Spreadsheet = forwardRef(function Spreadsheet(
         void importCSVFile(file)
       }
     }
-  }, [editorInitializationConfig, handleExcelFileImport, importCSVFile])
+  }, [editorInitializationConfig, handleExcelFileImport, importCSVFile, setInitialVersion])
 
   // TODO: document this effect
   const { onCreateNewSheet, onRenameSheet } = state

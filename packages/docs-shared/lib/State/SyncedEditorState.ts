@@ -14,12 +14,14 @@ export interface SyncedEditorStateValues {
   userName: string
   /** Whether the suggestions feature flag is enabled and killswitch is off */
   suggestionsEnabled: boolean
+  receivedEverythingFromRTS: boolean
 }
 
 const DefaultValues: SyncedEditorStateValues = {
   contactEmails: [],
   userName: '',
   suggestionsEnabled: true,
+  receivedEverythingFromRTS: false,
 }
 
 /**
