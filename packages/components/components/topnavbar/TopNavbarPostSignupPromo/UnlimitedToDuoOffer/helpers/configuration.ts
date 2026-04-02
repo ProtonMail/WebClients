@@ -9,10 +9,10 @@ import useFeature from '@proton/features/useFeature';
 import { CYCLE, PLANS, getPlanByName } from '@proton/payments';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
+import { calculateRotationUpdate } from '../../common/helpers/tipRotationLogic';
 import { featureListAdditionalUser, featureListStorageUpgrade } from './features';
 import type { UnlimitedToDuoOfferConfig, UnlimitedToDuoRotationState, UnlimitedToDuoTipProps } from './interface';
-import { UnlimitedToDuoMessageType } from './interface';
-import { calculateRotationUpdate } from './tipRotationLogic';
+import { MAX_DAYS_TO_SHOW_SAME_TIP, UnlimitedToDuoMessageType } from './interface';
 
 const getTips = (): UnlimitedToDuoTipProps[] => [
     {
@@ -38,7 +38,7 @@ export const useUnlimitedToDuoConfig = (): UnlimitedToDuoOfferConfig => {
         loading: loadingRotationState,
     } = useFeature<UnlimitedToDuoRotationState>(FeatureCode.UnlimitedToDuoRotationState);
 
-    const [selectedTipIndex, setSelectedTipIndex] = useState(unlimitedToDuoRotationState?.Value.tipIndex ?? 0);
+    const [selectedTipIndex, setSelectedTipIndex] = useState(0);
 
     const currency = user.Currency;
     const duoPlan = getPlanByName(plansResults?.plans ?? [], PLANS.DUO, currency);
@@ -54,14 +54,16 @@ export const useUnlimitedToDuoConfig = (): UnlimitedToDuoOfferConfig => {
         const result = calculateRotationUpdate(
             unlimitedToDuoRotationState.Value.rotationDate,
             unlimitedToDuoRotationState.Value.tipIndex,
-            tips.length
+            tips.length,
+            MAX_DAYS_TO_SHOW_SAME_TIP
         );
 
         if (result) {
             setSelectedTipIndex(result.tipIndex);
             void update(result);
+        } else {
+            setSelectedTipIndex(unlimitedToDuoRotationState.Value.tipIndex);
         }
-        setSelectedTipIndex(unlimitedToDuoRotationState.Value.tipIndex);
     };
 
     useEffect(() => {
