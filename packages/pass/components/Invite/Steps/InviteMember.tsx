@@ -11,6 +11,7 @@ import { useInviteLabels } from '@proton/pass/components/Invite/useInviteLabels'
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { IconBox } from '@proton/pass/components/Layout/Icon/IconBox';
+import { ButtonIfNeeded } from '@proton/pass/components/Utils/ButtonIfNeeded';
 import type { AccessTarget } from '@proton/pass/lib/access/types';
 import type { InviteFormMemberItem } from '@proton/pass/types';
 import { ShareRole } from '@proton/pass/types';
@@ -33,23 +34,19 @@ export const InviteMember: FC<InviteMemberProps> = ({ target, value, onRemove, o
 
     return (
         <div className="flex gap-3 flex-nowrap items-center  py-3 w-full">
-            <button onClick={onShowMembers} aria-labelledby={nameId}>
+            <ButtonIfNeeded onClick={onShowMembers} aria-labelledby={nameId}>
                 <IconBox size={5} mode="icon" className="shrink-0 ui-primary flex items-center justify-center">
                     <ShareMemberAvatar email={email} isGroup={isGroup} />
                 </IconBox>
-            </button>
+            </ButtonIfNeeded>
 
             <div className="flex-1">
                 <div className="flex flex-nowrap flex-1 items-center gap-2">
-                    {isGroup ? (
-                        <button onClick={onShowMembers} className="text-ellipsis" id={nameId}>
-                            {name}
-                        </button>
-                    ) : (
-                        <Tooltip openDelay={100} originalPlacement="bottom-start" title={email} id={nameId}>
+                    <Tooltip openDelay={100} originalPlacement="bottom-start" title={name} id={nameId}>
+                        <ButtonIfNeeded onClick={onShowMembers}>
                             <div className="text-ellipsis">{name}</div>
-                        </Tooltip>
-                    )}
+                        </ButtonIfNeeded>
+                    </Tooltip>
                 </div>
                 <div className="flex items-center gap-1">
                     <span className="color-weak">{roleLabel}</span>
