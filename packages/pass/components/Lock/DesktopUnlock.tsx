@@ -8,6 +8,7 @@ import Icon from '@proton/components/components/icon/Icon';
 import { useAutoUnlock } from '@proton/pass/hooks/auth/useAutoUnlock';
 import { useDesktopUnlock } from '@proton/pass/hooks/auth/useDesktopUnlock';
 import { isMac } from '@proton/shared/lib/helpers/browser';
+import noop from '@proton/utils/noop';
 
 export const DesktopUnlock: FC = () => {
     const [loading, setLoading] = useState(false);
@@ -17,7 +18,6 @@ export const DesktopUnlock: FC = () => {
         try {
             setLoading(true);
             await desktopUnlock();
-        } catch {
         } finally {
             setLoading(false);
         }
@@ -33,7 +33,7 @@ export const DesktopUnlock: FC = () => {
             className="w-full"
             loading={loading}
             disabled={loading}
-            onClick={onUnlock}
+            onClick={() => onUnlock().catch(noop)}
         >
             <Icon name={isMac() ? 'fingerprint' : 'pass-lockmode-biometrics'} className="mr-1" />
             {c('Action').t`Unlock`}
