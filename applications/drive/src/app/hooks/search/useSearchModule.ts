@@ -117,7 +117,7 @@ export const useSearchModule = (): UseSearchModuleReturn => {
             if (!searchModule || !searchModuleState?.isUserOptIn) {
                 return;
             }
-            return scheduleWhenIdle(searchModule.start);
+            return scheduleWhenIdle(() => searchModule.start());
         },
         [searchModule, searchModuleState?.isUserOptIn]
     );
