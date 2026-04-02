@@ -74,7 +74,7 @@ export const useItemState: UseItemState = (item, share) => {
         const canItemShare = canShare && !orgItemSharingDisabled;
         const canManageAccess = shared && !readOnly;
         const canLeave = !isVault && !owner && !groupShare;
-        const canMonitor = !EXTENSION_BUILD && !trashed && data.type === 'login' && !readOnly;
+        const canMonitor = !trashed && data.type === 'login' && !readOnly;
         const canTogglePinned = !(pinInFlight || unpinInFlight);
 
         return {
