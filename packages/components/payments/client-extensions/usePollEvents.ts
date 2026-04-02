@@ -1,6 +1,8 @@
 import { useRef } from 'react';
 
+import { useEventManagerV6 } from '@proton/components/containers/eventManager/EventManagerV6Provider';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import type { ActionEventV6, CoreEventV6Response } from '@proton/shared/lib/api/events';
 import type { EVENT_ACTIONS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { EventItemUpdate } from '@proton/shared/lib/helpers/updateCollection';
@@ -9,6 +11,11 @@ import isTruthy from '@proton/utils/isTruthy';
 export type PollEventsProps = {
     subscribeToProperty: string;
     action: EVENT_ACTIONS;
+};
+
+export type PollEventsV6Props = {
+    subscribeToProperty: keyof CoreEventV6Response;
+    action: ActionEventV6;
 };
 
 export const maxPollingSteps = 5;
@@ -48,7 +55,6 @@ export const usePollEvents = (props?: PollEventsProps) => {
                     const propertyEvents: EventItemUpdate<any, any>[] | undefined = events[subscribeToProperty];
 
                     const event = propertyEvents?.find((event) => event.Action === action);
-
                     if (!!event) {
                         resolve();
                         definedUnsubscribe();
@@ -59,6 +65,61 @@ export const usePollEvents = (props?: PollEventsProps) => {
                 unsubscribe = () => {
                     resolve();
                     definedUnsubscribe();
+                };
+            });
+        }
+
+        const callPromise = callOnce(maxPollingSteps - 1, unsubscribe);
+        const promises = [subscribePromise, callPromise].filter(isTruthy);
+        return Promise.race(promises);
+    };
+
+    return pollEventsMultipleTimes;
+};
+
+/**
+ * After the Chargebee migration, certain objects aren't immediately updated.
+ * For example, it takes a few seconds for updated Subscription object to appear.
+ * This time isn't predictable due to async nature of the backend system, so we need to poll for the updated data.
+ * */
+export const usePollCoreEventsV6 = (props?: PollEventsV6Props) => {
+    const { subscribeToProperty, action } = props ?? {};
+
+    const { coreEventV6Manager } = useEventManagerV6();
+    const stoppedRef = useRef(false);
+
+    const callOnce = async (counter: number, unsubscribe?: () => void) => {
+        await wait(interval);
+        if (stoppedRef.current) {
+            return;
+        }
+
+        await coreEventV6Manager?.call();
+        if (counter > 0) {
+            await callOnce(counter - 1, unsubscribe);
+        } else {
+            unsubscribe?.();
+        }
+    };
+
+    const pollEventsMultipleTimes = async () => {
+        let unsubscribe: (() => void) | undefined;
+        let subscribePromise: Promise<void> | undefined;
+        if (!!subscribeToProperty && action !== undefined) {
+            subscribePromise = new Promise((resolve) => {
+                const definedUnsubscribe = coreEventV6Manager?.subscribe(async (events) => {
+                    const event = events[subscribeToProperty];
+
+                    if (!!event && Array.isArray(event) && event.some((e) => e.Action === action)) {
+                        resolve();
+                        definedUnsubscribe?.();
+                        stoppedRef.current = true;
+                    }
+                });
+
+                unsubscribe = () => {
+                    resolve();
+                    definedUnsubscribe?.();
                 };
             });
         }
