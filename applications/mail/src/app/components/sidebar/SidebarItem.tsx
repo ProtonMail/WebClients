@@ -15,7 +15,7 @@ import type { IconName, IconSize } from '@proton/icons/types';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { CATEGORY_LABELS_TO_ROUTE_ARRAY, CUSTOM_VIEWS, LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
+import { CUSTOM_VIEWS, LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
@@ -29,7 +29,6 @@ import { useMailSelector } from 'proton-mail/store/hooks';
 import { shouldDisplayTotal } from '../../helpers/labels';
 import type { ApplyLabelsParams } from '../../hooks/actions/label/interface';
 import { useGetElementsFromIDs } from '../../hooks/mailbox/useElements';
-import { useCategoriesView } from '../categoryView/useCategoriesView';
 import LocationAside from './LocationAside';
 
 import './SidebarItem.scss';
@@ -107,17 +106,9 @@ const SidebarItem = ({
 
     const mailParams = useMailSelector(params);
 
-    const { categoryViewAccess } = useCategoriesView();
-
     const [refreshing, withRefreshing] = useLoading(false);
 
-    // We want to redirect the inbox link to the primary category if the feature is enabled and pointing to inbox
-    const labelIDRoute =
-        categoryViewAccess && labelID === MAILBOX_LABEL_IDS.INBOX
-            ? MAILBOX_LABEL_IDS.CATEGORY_DEFAULT
-            : (labelID as MAILBOX_LABEL_IDS);
-
-    const humanID = LABEL_IDS_TO_HUMAN[labelIDRoute] ?? labelID;
+    const humanID = LABEL_IDS_TO_HUMAN[labelID as MAILBOX_LABEL_IDS] ?? labelID;
     const link = `/${humanID}`;
 
     const needsTotalDisplay = shouldDisplayTotal(labelID);
@@ -199,24 +190,6 @@ const SidebarItem = ({
             <SidebarListItemLink
                 title={tooltipText}
                 to={link}
-                isActive={(match, location) => {
-                    // The inbox button should be active if the location starts with /inbox or starts with a category from the array
-                    if (labelID === MAILBOX_LABEL_IDS.INBOX || labelID === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT) {
-                        return (
-                            location.pathname.startsWith(`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`) ||
-                            CATEGORY_LABELS_TO_ROUTE_ARRAY.some((route) => location.pathname.startsWith(route))
-                        );
-                    }
-
-                    if (labelID === MAILBOX_LABEL_IDS.ALL_MAIL || labelID === MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL) {
-                        return (
-                            location.pathname.startsWith(`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALL_MAIL]}`) ||
-                            location.pathname.startsWith(`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL]}`)
-                        );
-                    }
-
-                    return !!match;
-                }}
                 onClick={handleClick}
                 {...dragProps}
                 onDrop={handleDrop}
