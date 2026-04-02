@@ -71,7 +71,7 @@ const EncryptedSearchProvider = ({ children }: Props) => {
         user,
         history,
         numAddresses: addresses?.length || 0,
-        disabledCategoriesIDs: categoryIDs,
+        categoryIDs,
     });
 
     const contentIndexingSuccessMessage = c('Success').t`Message content search enabled`;
