@@ -34,6 +34,7 @@ export interface CoreNodeFields {
 export const CORE_ATTRIBUTE_NAMES = [
     'nodeUid',
     'filename',
+    'filenameText',
     'path',
     'treeEventScopeId',
     'indexPopulatorId',
@@ -80,7 +81,10 @@ export function createIndexEntry<N extends string>(params: CreateIndexEntryParam
         attributes: [
             { name: 'nodeUid', value: { kind: 'tag', value: node.uid } },
             { name: 'nodeType', value: { kind: 'tag', value: node.type } },
-            { name: 'filename', value: { kind: 'text', value: node.name } },
+            // Filename as tag
+            { name: 'filename', value: { kind: 'tag', value: node.name } },
+            // Filename as a fuzzy string to allow trigram matching but only for query above 3 characters
+            { name: 'filenameText', value: { kind: 'text', value: node.name } },
             { name: 'path', value: { kind: 'tag', value: parentPath } },
             { name: 'treeEventScopeId', value: { kind: 'tag', value: treeEventScopeId } },
             { name: 'indexPopulatorId', value: { kind: 'tag', value: indexPopulatorId } },
