@@ -22,6 +22,7 @@ export type InviteListItem =
 type Props = AccessDTO & {
     canManage: boolean;
     canTransfer: boolean;
+    isMine: boolean;
     className?: string;
     heading?: ReactNode;
     invites?: InviteListItem[];
@@ -33,6 +34,7 @@ type Props = AccessDTO & {
 export const AccessList: FC<Props> = ({
     canManage,
     canTransfer,
+    isMine,
     className,
     heading,
     invites,
@@ -119,6 +121,7 @@ export const AccessList: FC<Props> = ({
                         itemId={itemId}
                         me={shareId === member.shareId}
                         owner={member.owner}
+                        isMine={isMine}
                         role={member.shareRoleId}
                         shareId={shareId}
                         target={target}

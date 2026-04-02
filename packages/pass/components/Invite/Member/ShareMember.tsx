@@ -32,6 +32,7 @@ type Props = AccessDTO & {
     email: string;
     me: boolean;
     owner: boolean;
+    isMine: boolean;
     role: ShareRole;
     userShareId: string;
     isGroupShare: boolean;
@@ -56,6 +57,7 @@ export const ShareMember: FC<Props> = ({
     itemId,
     me,
     owner,
+    isMine,
     role,
     shareId,
     target,
@@ -90,7 +92,8 @@ export const ShareMember: FC<Props> = ({
             shareRoleId,
         });
 
-    const showActions = !me && canManage && !owner && !(isGroupShare && role === ShareRole.MANAGER);
+    const groupShareWithManager = !isMine && isGroupShare && role === ShareRole.MANAGER;
+    const showActions = !me && canManage && !owner && !groupShareWithManager;
     const loading = transferOwner.loading || removeAccess.loading || editRole.loading;
     const showTransfer = !isGroupShare && canTransfer && role === ShareRole.MANAGER;
 
