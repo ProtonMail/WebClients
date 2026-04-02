@@ -25,7 +25,7 @@ jest.mock('proton-mail/hooks/useInboxDesktopElementId', () => ({
 jest.mock('proton-mail/hooks/mailbox/useApplyEncryptedSearch', () => ({
     useApplyEncryptedSearch: jest.fn(),
 }));
-jest.mock('proton-mail/hooks/mailbox/useMailboxPageTitle', () => ({
+jest.mock('proton-mail/hooks/mailbox/mailboxPageTitle/useMailboxPageTitle', () => ({
     useMailboxPageTitle: jest.fn(),
 }));
 jest.mock('proton-mail/hooks/mailbox/useMailboxFavicon', () => ({
