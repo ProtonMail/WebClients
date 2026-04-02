@@ -1287,6 +1287,9 @@
       "Save and continue": [
         "저장 및 계속"
       ],
+      "Save changes": [
+        "변경 사항 저장"
+      ],
       "Save ICS file": [
         "ICS 파일 저장"
       ],
@@ -12022,6 +12025,9 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "${ MAIL_APP_NAME } 사용자를 초대할 수 없습니다"
       ],
+      "You cannot undo this action.": [
+        "이 동작은 실행취소할 수 없습니다."
+      ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "복구 방법을 설정하지 않으면 비밀번호를 잊어버렸을 때 계정을 복구할 수 없습니다. 복구 방법을 설정하지 않고 진행하시겠습니까?"
       ],
@@ -12222,6 +12228,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "회원님의 전화번호는 이번 인증에만 사용됩니다."
+      ],
+      "Your plan is limited to 10 versions for up to 7 days": [
+        "사용자의 요금제가 최대 7일의 10개 버전 제한이 있습니다"
       ],
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "최근 변경 사항이 게시되었습니다. 몇 시간 내로 다른 사용자에게 반영되어 표시됩니다."
@@ -12847,6 +12856,9 @@
       ],
       "${ nbDay } day": [
         "${ nbDay }일"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } 년"
       ],
       "${ pricePerMonthWithCurrency } / month": [
         "${ pricePerMonthWithCurrency } / 개월"

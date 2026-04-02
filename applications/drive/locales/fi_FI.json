@@ -3601,6 +3601,12 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Joidenkin tunnisteiden nimet ylittävät ${ MAIL_APP_NAME }n enimmäismerkkimäärän. Muuta nimiä muokkaamalla tuontia."
       ],
+      "Something went wrong with search. Please try again later.": [
+        "Jotain meni vikaan haussa. Yritä myöhemmin uudelleen."
+      ],
+      "Something went wrong with search: Not enough storage space.": [
+        "Jotain meni vikaan haussa: Ei tarpeeksi tallennustilaa."
+      ],
       "Something went wrong. Please try again.": [
         "Jotain meni pieleen. Yritä uudelleen."
       ],
@@ -3738,9 +3744,6 @@
       ],
       "We were not able to load some invitations": [
         "Joitain kutsuja ei voitu ladata"
-      ],
-      "We were not able to load some of your bookmarks": [
-        "Emme voineet ladata joitain kirjanmerkkejäsi"
       ],
       "We were not able to load some of your saved shared links": [
         "Joitakin tallennettuja jaettuja linkkejäsi ei voitu ladata."
