@@ -324,9 +324,6 @@
       "Connected": [
         "Connectat"
       ],
-      "Contact sales": [
-        "Contacteu amb vendes"
-      ],
       "Contact support": [
         "Contactar amb el suport"
       ],
@@ -455,9 +452,6 @@
       ],
       "Delete account": [
         "Elimina el compte"
-      ],
-      "Delete and confirm": [
-        "Elimineu-ho i confirmeu-ho"
       ],
       "Delete filter “${ Name }”": [
         "Voleu eliminar el filtre \"${ Name }\""
@@ -1292,9 +1286,6 @@
       ],
       "Save and continue": [
         "Desa i continua"
-      ],
-      "Save changes": [
-        "Desa els canvis"
       ],
       "Save ICS file": [
         "Deseu el fitxer ICS"
@@ -8975,9 +8966,6 @@
       "${ discountPercent }% discount": [
         "${ discountPercent }% de descompte"
       ],
-      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME } ja no conservarà les versions anteriors dels vostres fitxers."
-      ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } no és vàlida"
       ],
@@ -10161,9 +10149,6 @@
       ],
       "for ${ price }": [
         "per ${ price }"
-      ],
-      "For a 10-year version history, please contact our sales team.": [
-        "Per obtenir un historial de versions de 10 anys, contacteu amb el nostre equip de vendes."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Per accedir en qualsevol moment al correu electrònic i a una experiència mòbil optimitzada, descarregueu la nostra aplicació ${ androidAppLink } o ${ iosAppLink }."
@@ -11579,12 +11564,6 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Aquesta verificació pot trigar fins a una hora. Després d'una verificació correcta, no suprimiu el registre TXT, ja que és necessari per confirmar que continueu sent el propietari del domini."
       ],
-      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "Això eliminarà totes les versions dels vostres fitxers anteriors a ${ rententionLabel }."
-      ],
-      "This will delete all previous versions of your files.": [
-        "Això eliminarà totes les versions anteriors dels vostres fitxers."
-      ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Això denegarà l'accés a **${ email }**. Segur que voleu continuar?"
       ],
@@ -11783,9 +11762,6 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Actualitzeu el pla per conservar els vostres avantatges de ${ planTitle }."
       ],
-      "Upgrade to unlock": [
-        "Milloreu el pla per desbloquejar"
-      ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "Millora per activar ${ monitorLink }."
       ],
@@ -11884,9 +11860,6 @@
       ],
       "Version ${ version }": [
         "Versió ${ version }"
-      ],
-      "Version history": [
-        "Historial de versions"
       ],
       "Version number successfully copied to clipboard": [
         "El número de versió s'ha copiat al porta-retalls."
@@ -12048,7 +12021,7 @@
         "Amb ${ AUTHENTICATOR_APP_NAME }, podeu:"
       ],
       "With a ${ boldProfessionalPlan } plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
-        "Amb el pla ${ boldProfessionalPlan }, podeu comprar ${ boldDedicatedServers } per a la vostra organització i configurar ${ boldGateways } per controlar quins usuaris hi poden accedir."
+        "Amb el pla ${ boldProfessionalPlan }, podeu comprar ${ boldDedicatedServers } per la vostra organització i configurar ${ boldGateways } per controlar quins usuaris hi poden accedir."
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Amb una adreça xifrada de ${ BRAND_NAME }, podeu utilitzar tots els serveis de ${ BRAND_NAME }"
@@ -12188,9 +12161,6 @@
       ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "No podeu recomanar usuaris de ${ MAIL_APP_NAME }"
-      ],
-      "You cannot undo this action.": [
-        "No pots desfer aquesta acció."
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "No heu establert un mètode de recuperació i per tant la recuperació del compte serà impossible si oblideu la vostra contrasenya. Voleu procedir sense mètode de recuperació?"
@@ -12396,9 +12366,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "El vostre número de telèfon només s’utilitzarà per a aquesta única verificació."
-      ],
-      "Your plan is limited to 10 versions for up to 7 days": [
-        "El vostre pla està limitat a 10 versions durant un màxim de 7 dies"
       ],
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "S'han publicat els vostres canvis recents. Seran visibles per als usuaris en les hores vinents."
@@ -13032,10 +12999,6 @@
         "${ nbDay } dia",
         "${ nbDay } dies"
       ],
-      "${ nbYear } year": [
-        "${ nbYear } any",
-        "${ nbYear } anys"
-      ],
       "${ pricePerMonthWithCurrency } / month": [
         "${ pricePerMonthWithCurrency } / mes"
       ],
@@ -13554,9 +13517,6 @@
       ],
       "Don't ask again": [
         "No tornis a preguntar"
-      ],
-      "Don't keep versions": [
-        "No conserveu les versions"
       ],
       "Don't show this again": [
         "No ho tornis a mostrar"
@@ -15068,11 +15028,6 @@
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
         "Importa tots els missatges d'${ selectedItemsToImportCount } etiqueta de ${ itemsToImportCount } i etiqueta'ls com a",
         "Importa tots els missatges de ${ selectedItemsToImportCount } etiquetes de ${ itemsToImportCount } i etiqueta'ls com a"
-      ]
-    },
-    "mail_cro_experiment": {
-      "Get Deal": [
-        "Obtingueu l'oferta"
       ]
     },
     "mail_signup_2023: Info": {
@@ -20253,9 +20208,6 @@
       ]
     },
     "Setting": {
-      "Enable Photos section": [
-        "Habiliteu la secció de Fotos"
-      ],
       "Get updates about comments via email": [
         "Obtingueu actualitzacions per correu electrònic sobre els comentaris"
       ],
@@ -23135,9 +23087,6 @@
       ],
       "Delete user?": [
         "Voleu eliminar l'usuari?"
-      ],
-      "Delete version history?": [
-        "Voleu eliminar l'historial de versions?"
       ],
       "Deny access to user?": [
         "Voleu denegar l'accés a l'usuari?"

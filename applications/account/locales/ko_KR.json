@@ -324,9 +324,6 @@
       "Connected": [
         "연결됨"
       ],
-      "Contact sales": [
-        "영업팀에 문의"
-      ],
       "Contact support": [
         "문의하기"
       ],
@@ -455,9 +452,6 @@
       ],
       "Delete account": [
         "계정 삭제"
-      ],
-      "Delete and confirm": [
-        "삭제 및 확인"
       ],
       "Delete filter “${ Name }”": [
         "필터 \"${ Name }\" 삭제"
@@ -1292,9 +1286,6 @@
       ],
       "Save and continue": [
         "저장 및 계속"
-      ],
-      "Save changes": [
-        "변경 사항 저장"
       ],
       "Save ICS file": [
         "ICS 파일 저장"
@@ -8899,9 +8890,6 @@
       "${ discountPercent }% discount": [
         "${ discountPercent }% 할인"
       ],
-      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME }가 더 이상 이전 버전의 파일을 보관하지 않습니다."
-      ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } 이(가) 유효하지 않음"
       ],
@@ -10047,9 +10035,6 @@
       ],
       "finance": [
         "금융정보"
-      ],
-      "For a 10-year version history, please contact our sales team.": [
-        "10년 버전 기록은 영업팀에 문의하세요."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "언제든지 이메일에 접근하고 최적화된 모바일 경험을 위해, ${ androidAppLink } 또는 ${ iosAppLink } 을(를)다운로드하세요."
@@ -11449,12 +11434,6 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "이 인증은 최대 한 시간까지 걸릴 수 있습니다. 인증이 성공한 뒤에도 TXT 레코드는 도메인을 계속 소유하고 있음을 인증하기 위해 필요하므로 삭제하지 마십시오."
       ],
-      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "이 작업을 실행하면 ${ rententionLabel }보다 오래된 모든 이전 버전의 파일이 삭제됩니다."
-      ],
-      "This will delete all previous versions of your files.": [
-        "이 작업은 이전 버전의 모든 파일을 삭제합니다."
-      ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "이 작업은 **${ email }**의 접근을 거절합니다. 정말 계속하시겠어요?"
       ],
@@ -11653,9 +11632,6 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "${ planTitle } 플랜의 혜택을 놓치지 않기 위해 업그레이드하세요."
       ],
-      "Upgrade to unlock": [
-        "잠금 해제 하려면 업그레이드"
-      ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "${ monitorLink } 잠금 해제하려면 업그레이드"
       ],
@@ -11754,9 +11730,6 @@
       ],
       "Version ${ version }": [
         "${ version } 버전"
-      ],
-      "Version history": [
-        "버전 기록"
       ],
       "Version number successfully copied to clipboard": [
         "버전 넘버를 클립보드에 복사했습니다"
@@ -12049,9 +12022,6 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "${ MAIL_APP_NAME } 사용자를 초대할 수 없습니다"
       ],
-      "You cannot undo this action.": [
-        "이 동작은 실행취소할 수 없습니다."
-      ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "복구 방법을 설정하지 않으면 비밀번호를 잊어버렸을 때 계정을 복구할 수 없습니다. 복구 방법을 설정하지 않고 진행하시겠습니까?"
       ],
@@ -12252,9 +12222,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "회원님의 전화번호는 이번 인증에만 사용됩니다."
-      ],
-      "Your plan is limited to 10 versions for up to 7 days": [
-        "사용자의 요금제가 최대 7일의 10개 버전 제한이 있습니다"
       ],
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "최근 변경 사항이 게시되었습니다. 몇 시간 내로 다른 사용자에게 반영되어 표시됩니다."
@@ -12881,9 +12848,6 @@
       "${ nbDay } day": [
         "${ nbDay }일"
       ],
-      "${ nbYear } year": [
-        "${ nbYear } 년"
-      ],
       "${ pricePerMonthWithCurrency } / month": [
         "${ pricePerMonthWithCurrency } / 개월"
       ],
@@ -13402,9 +13366,6 @@
       ],
       "Don't ask again": [
         "다시 묻지 않기"
-      ],
-      "Don't keep versions": [
-        "버전 유지하지 않기"
       ],
       "Don't show this again": [
         "다시 보지 않기"
@@ -14909,11 +14870,6 @@
       ],
       "Import all messages from ${ selectedItemsToImportCount } out of ${ itemsToImportCount } label and label them as": [
         "${ itemsToImportCount }개 중 ${ selectedItemsToImportCount }개 라벨의 모든 메시지를 불러온 뒤 다음 이름으로 라벨이 지정됩니다:"
-      ]
-    },
-    "mail_cro_experiment": {
-      "Get Deal": [
-        "혜택 받기"
       ]
     },
     "mail_signup_2023: Info": {
@@ -20109,9 +20065,6 @@
       ]
     },
     "Setting": {
-      "Enable Photos section": [
-        "사진 섹션 활성화"
-      ],
       "Get updates about comments via email": [
         "이메일로 댓글에 대한 업데이트를 받아보세요"
       ],
@@ -22918,9 +22871,6 @@
       ],
       "Delete user?": [
         "사용자를 삭제합니까?"
-      ],
-      "Delete version history?": [
-        "버전 기록을 삭제하시겠습니까?"
       ],
       "Deny access to user?": [
         "사용자에게 접근을 거부할까요?"

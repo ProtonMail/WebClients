@@ -324,9 +324,6 @@
       "Connected": [
         "Pripojené"
       ],
-      "Contact sales": [
-        "Kontaktovať obchodný tím"
-      ],
       "Contact support": [
         "Kontaktovať podporu"
       ],
@@ -455,9 +452,6 @@
       ],
       "Delete account": [
         "Vymazať účet"
-      ],
-      "Delete and confirm": [
-        "Vymazať a potvrdiť"
       ],
       "Delete filter “${ Name }”": [
         "Vymazať filter „${ Name }”"
@@ -1292,9 +1286,6 @@
       ],
       "Save and continue": [
         "Uložiť a pokračovať"
-      ],
-      "Save changes": [
-        "Uložiť zmeny"
       ],
       "Save ICS file": [
         "Uložiť ICS súbor"
@@ -9127,9 +9118,6 @@
       "${ discountPercent }% discount": [
         "${ discountPercent }% zľava"
       ],
-      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME } už nebude uchovávať predchádzajúce verzie vašich súborov."
-      ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } je neplatná"
       ],
@@ -10384,9 +10372,6 @@
       "for ${ price }": [
         "za ${ price }"
       ],
-      "For a 10-year version history, please contact our sales team.": [
-        "Pre 10-ročnú históriu verzií prosím kontaktujte náš obchodný tím."
-      ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Ak chcete mať k emailom prístup kedykoľvek a mať optimalizované mobilné prostredie, stiahnite si našu aplikáciu ${ androidAppLink } alebo ${ iosAppLink }."
       ],
@@ -11272,6 +11257,9 @@
       "Product reviews, rankings, or guides": [
         "Recenzie produktov, hodnotenia alebo sprievodcovia"
       ],
+      "Professional": [
+        "Profesionál"
+      ],
       "Protect this device too?": [
         "Chrániť aj toto zariadenie?"
       ],
@@ -11824,12 +11812,6 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Toto overenie môže trvať až jednu hodinu. Po úspešnom overení neodstraňujte záznam TXT, pretože je potrebný na potvrdenie, že doménu naďalej vlastníte."
       ],
-      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "Toto zmaže všetky predchádzajúce verzie vašich súborov, ktoré sú staršie ako ${ rententionLabel }."
-      ],
-      "This will delete all previous versions of your files.": [
-        "Toto zmaže všetky predchádzajúce verzie vašich súborov."
-      ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Týmto bude prístup k **${ email }** zamietnutý. Skutočne chcete pokračovať?"
       ],
@@ -12028,9 +12010,6 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Zvýšte si úroveň, aby ste si zachovali svoje ${ planTitle } výhody."
       ],
-      "Upgrade to unlock": [
-        "Pre odomknutie upgradujte"
-      ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "Zvýšte úroveň pre prístup k ${ monitorLink }."
       ],
@@ -12129,9 +12108,6 @@
       ],
       "Version ${ version }": [
         "Verzia ${ version }"
-      ],
-      "Version history": [
-        "História verzií"
       ],
       "Version number successfully copied to clipboard": [
         "Číslo verzie bolo úspešne skopírované do schránky"
@@ -12292,6 +12268,9 @@
       "With ${ AUTHENTICATOR_APP_NAME }, you can:": [
         "S ${ AUTHENTICATOR_APP_NAME } môžete:"
       ],
+      "With a ${ boldProfessionalPlan } plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
+        "S plánom ${ boldProfessionalPlan } si môžete zakúpiť ${ boldDedicatedServers } pre vašu organizáciu a nastaviť ${ boldGateways }, aby ste mohli kontrolovať, ktorí používatelia k nim majú prístup."
+      ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "So šifrovanou ${ BRAND_NAME } adresou môžete používať všetky služby ${ BRAND_NAME }"
       ],
@@ -12444,9 +12423,6 @@
       ],
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Nemôžete odporúčať používateľom ${ MAIL_APP_NAME }"
-      ],
-      "You cannot undo this action.": [
-        "Túto akciu nie je možné vrátiť späť."
       ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Nenastavili ste metódu obnovenia, takže obnovenie konta nebude možné, ak zabudnete heslo. Pokračovať bez metódy obnovy?"
@@ -12660,9 +12636,6 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Vaše telefónne číslo bude použité iba pre toto jednorazové overenie."
-      ],
-      "Your plan is limited to 10 versions for up to 7 days": [
-        "Váš plán je limitovaný na 10 verzií do 7 dní"
       ],
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "Vaše nedávne zmeny boli publikované. Budú viditeľné pre používateľov v priebehu nasledujúcich niekoľkých hodín."
@@ -13310,12 +13283,6 @@
         "${ nbDay } dní",
         "${ nbDay } dní"
       ],
-      "${ nbYear } year": [
-        "${ nbYear } rok",
-        "${ nbYear } roky",
-        "${ nbYear } rokov",
-        "${ nbYear } rokov"
-      ],
       "${ pricePerMonthWithCurrency } / month": [
         "${ pricePerMonthWithCurrency } / mesiac"
       ],
@@ -13834,9 +13801,6 @@
       ],
       "Don't ask again": [
         "Viac sa nepýtať"
-      ],
-      "Don't keep versions": [
-        "Neuchovávať verzie"
       ],
       "Don't show this again": [
         "Nabudúce nezobrazovať"
@@ -15362,11 +15326,6 @@
         "Importovať všetky správy s ${ selectedItemsToImportCount } z ${ itemsToImportCount } štítkov a označiť ich štítkom",
         "Importovať všetky správy s ${ selectedItemsToImportCount } z ${ itemsToImportCount } štítkov a označiť ich štítkom",
         "Importovať všetky správy s ${ selectedItemsToImportCount } z ${ itemsToImportCount } štítkov a označiť ich štítkom"
-      ]
-    },
-    "mail_cro_experiment": {
-      "Get Deal": [
-        "Získať ponuku"
       ]
     },
     "mail_signup_2023: Info": {
@@ -20700,9 +20659,6 @@
       ]
     },
     "Setting": {
-      "Enable Photos section": [
-        "Zapnúť sekciu Fotografie"
-      ],
       "Get updates about comments via email": [
         "Dostávajte aktualizácie o komentároch prostredníctvom emailu"
       ],
@@ -23716,9 +23672,6 @@
       ],
       "Delete user?": [
         "Vymazať používateľa?"
-      ],
-      "Delete version history?": [
-        "Vymazať históriu verzií?"
       ],
       "Deny access to user?": [
         "Zamietnuť prístup užívateľovi?"
