@@ -2,10 +2,10 @@ import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/h
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 
 import useAutoOpenContactsDrawer from 'proton-mail/hooks/drawer/useAutoOpenContactsDrawer';
+import { useMailboxPageTitle } from 'proton-mail/hooks/mailbox/mailboxPageTitle/useMailboxPageTitle';
 import useNewEmailNotification from 'proton-mail/hooks/mailbox/notifications/useNewEmailNotification';
 import { type EncryptedSearchParams, useApplyEncryptedSearch } from 'proton-mail/hooks/mailbox/useApplyEncryptedSearch';
 import { useMailboxFavicon } from 'proton-mail/hooks/mailbox/useMailboxFavicon';
-import { useMailboxPageTitle } from 'proton-mail/hooks/mailbox/useMailboxPageTitle';
 import usePreLoadElements from 'proton-mail/hooks/mailbox/usePreLoadElements';
 import useInboxBadgeCount from 'proton-mail/hooks/useInboxBadgeCount';
 import useInboxDesktopElementId from 'proton-mail/hooks/useInboxDesktopElementId';
