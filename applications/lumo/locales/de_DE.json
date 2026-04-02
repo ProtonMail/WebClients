@@ -1450,6 +1450,9 @@
       " files are hidden (unsupported file types)": [
         " Dateien sind ausgeblendet (nicht unterstützte Dateitypen)"
       ],
+      " header. Keys are scoped to your account and can be revoked from ": [
+        " Kopfzeile. Schlüssel sind auf dein Konto beschränkt und können widerrufen werden von "
+      ],
       " talk to your admin.": [
         " Sprich mit deinem Administrator."
       ],
@@ -1641,6 +1644,9 @@
       ],
       "How to identify safe links:": [
         "So erkennst du sichere Links:"
+      ],
+      "In the generated code, use Authorization: Bearer, model \"auto\", stream: true, and null-safe parsing of choices[].delta (delta may be null; only append string content).": [
+        "Verwende im generierten Code „Authorization: Bearer“, das Modell „auto“, „stream: true“ und null-sicheres Parsen von Auswahlmöglichkeiten[].delta (da \"delta\" null sein kann füge nur den Zeichenfolgeeinhalt an)."
       ],
       "Include your prompt and the response to help us improve accuracy.": [
         "Füge deine Eingabeaufforderung und die Antwort ein, um uns bei der Verbesserung der Genauigkeit zu unterstützen."
