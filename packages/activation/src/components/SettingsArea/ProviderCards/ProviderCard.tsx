@@ -107,7 +107,7 @@ const ProviderCard = ({ app, header, hasBorders = true, showAdvancedImport = tru
                     data-testid="ProviderButton:advancedImport"
                     disabled={loadingCalendars}
                 >
-                    {c('Import provider').t`Advanced import`}
+                    {c('Import provider').t`More import options`}
                 </Button>
             )}
 
