@@ -12,7 +12,6 @@ import type { Doc as YDoc } from 'yjs'
 import { EditorSystemMode } from '@proton/docs-shared/lib/EditorSystemMode'
 import type { EditorInitializationConfig } from '@proton/docs-shared/lib/EditorInitializationConfig'
 import { reportErrorToSentry } from '../Utils/errorMessage'
-import { EditorState } from './EditorState'
 import { c } from 'ttag'
 
 export type EditorConfig = {
@@ -25,7 +24,6 @@ export function useBridge({ systemMode }: { systemMode: EditorSystemMode }) {
   const [application] = useState(() => new Application())
   const [bridge] = useState(() => new EditorToClientBridge(window.parent))
   const [docState, setDocState] = useState<DocState | null>(null)
-  const [editorState] = useState<EditorState>(new EditorState(systemMode))
 
   const viewOnlyDocumentId = useId()
 
@@ -128,6 +126,9 @@ export function useBridge({ systemMode }: { systemMode: EditorSystemMode }) {
               { irrecoverable: false, lockEditor: true },
             )
         },
+        handleReceivedEverythingFromRTS: () => {
+          application.syncedState.setProperty('receivedEverythingFromRTS', true)
+        },
       },
       application.logger,
     )
@@ -139,5 +140,5 @@ export function useBridge({ systemMode }: { systemMode: EditorSystemMode }) {
     }
   })
 
-  return { bridge, docState, application, docMap, editorConfig, setEditorConfig, didSetInitialConfig, editorState }
+  return { bridge, docState, application, docMap, editorConfig, setEditorConfig, didSetInitialConfig }
 }

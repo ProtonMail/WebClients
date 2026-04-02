@@ -1,5 +1,5 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import type { TableDOMCell } from '@lexical/table'
-import { TableCellNode } from '@lexical/table'
 import type { LexicalEditor } from 'lexical'
 
 import './index.css'
@@ -7,6 +7,7 @@ import './index.css'
 import { useLexicalComposerContext } from '@lexical/react/LexicalComposerContext'
 import { useLexicalEditable } from '@lexical/react/useLexicalEditable'
 import {
+  TableCellNode,
   $getTableColumnIndexFromTableCellNode,
   $getTableNodeFromLexicalNodeOrThrow,
   $getTableRowIndexFromTableCellNode,
@@ -20,7 +21,10 @@ import * as React from 'react'
 import type { MouseEventHandler, ReactPortal } from 'react'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
-import { useEditorStateValues } from '../../Lib/useEditorStateValues'
+
+import { useStore } from 'zustand'
+import { useEditorState } from '../../Containers/EditorStateProvider'
+import { EditorUserMode } from '../../Lib/EditorUserMode'
 
 type MousePosition = {
   x: number
@@ -387,7 +391,8 @@ export default function TableCellResizerPlugin(): null | ReactPortal {
   const [editor] = useLexicalComposerContext()
   const isEditable = useLexicalEditable()
 
-  const { isSuggestionMode } = useEditorStateValues()
+  const userMode = useStore(useEditorState(), (state) => state.userMode)
+  const isSuggestionMode = userMode === EditorUserMode.Suggest
 
   return useMemo(
     () => (isEditable && !isSuggestionMode ? createPortal(<TableCellResizer editor={editor} />, document.body) : null),
