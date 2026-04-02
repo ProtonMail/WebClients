@@ -1287,6 +1287,9 @@
       "Save and continue": [
         "Opslaan en doorgaan"
       ],
+      "Save changes": [
+        "Wijzigingen opslaan"
+      ],
       "Save ICS file": [
         "ICS-bestand opslaan"
       ],
@@ -12147,6 +12150,9 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "U kan geen ${ MAIL_APP_NAME }-gebruikers doorverwijzen"
       ],
+      "You cannot undo this action.": [
+        "U kunt deze actie niet ongedaan maken."
+      ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "U heeft geen herstelmethode ingesteld dus accountherstel is niet mogelijk als u uw wachtwoord vergeet. Doorgaan zonder herstelmethode?"
       ],
@@ -12351,6 +12357,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Uw telefoonnummer wordt alleen gebruikt voor deze eenmalige verificatie."
+      ],
+      "Your plan is limited to 10 versions for up to 7 days": [
+        "Uw abonnement is beperkt tot 10 versies tot 7 dagen."
       ],
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "Uw recente wijzigingen zijn gepubliceerd. Ze zijn in de komende uren zichtbaar voor gebruikers."
@@ -12983,6 +12992,10 @@
       "${ nbDay } day": [
         "${ nbDay } dag",
         "${ nbDay } dagen"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } jaar",
+        "${ nbYear } jaren"
       ],
       "${ pricePerMonthWithCurrency } / month": [
         "${ pricePerMonthWithCurrency } / maand"
@@ -15139,7 +15152,7 @@
         "24 uur per vergadering"
       ],
       "60 minutes per meeting": [
-        "60 uur per vergadering"
+        "60 minuten per vergadering"
       ],
       "Appointment scheduling": [
         "Afspraak Plannen"

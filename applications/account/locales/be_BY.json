@@ -1287,6 +1287,9 @@
       "Save and continue": [
         "Захаваць і працягнуць"
       ],
+      "Save changes": [
+        "Захаваць змены"
+      ],
       "Save ICS file": [
         "Захаваць файл ICS"
       ],
@@ -12424,6 +12427,9 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Вы не можаце запрасіць карыстальніка ${ MAIL_APP_NAME }"
       ],
+      "You cannot undo this action.": [
+        "Гэта дзеянне немагчыма адрабіць."
+      ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Вы не задалі спосаб для аднаўлення доступу. Таму, калі вы забудзеце свой пароль, то аднавіць уліковы запіс будзе немагчыма. Працягнуць без спосабу аднаўлення?"
       ],
@@ -12636,6 +12642,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Ваш нумар тэлефона будзе выкарыстаны толькі для бягучай аднаразовай праверкі."
+      ],
+      "Your plan is limited to 10 versions for up to 7 days": [
+        "Ваш тарыфны план абмежаваны 10 версіямі на тэрмін да 7 дзён"
       ],
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "Вашы нядаўнія змены былі апублікаваны. Яны будуць бачныя карыстальнікам у наступныя некалькі гадзін."
@@ -13282,6 +13291,12 @@
         "${ nbDay } дні",
         "${ nbDay } дзён",
         "${ nbDay } дні"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } год",
+        "${ nbYear } гады",
+        "${ nbYear } гадоў",
+        "${ nbYear } гадоў"
       ],
       "${ pricePerMonthWithCurrency } / month": [
         "${ pricePerMonthWithCurrency }/месяц"

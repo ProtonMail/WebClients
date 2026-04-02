@@ -744,6 +744,9 @@
       "Save address": [
         "Sekles tansa"
       ],
+      "Save changes": [
+        "Sekles ibeddilen"
+      ],
       "Search": [
         "Anadi"
       ],
@@ -5477,6 +5480,9 @@
         "Ur tezmireḍ ara ad tazneḍ ugar ${ emailSendLimitNumber } n tinubga s yimayl ɣef teɣzi n 24 yisragen i d-iteddun.",
         "Ur tezmireḍ ara ad tazneḍ ugar ${ emailSendLimitNumber } n tinubgiwin s yimayl ɣef teɣzi n 24 yisragen i d-iteddun."
       ],
+      "You cannot undo this action.": [
+        "Ur tezmireḍ ara ad tesfesxeḍ tigawt-a."
+      ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Ur tesbaduḍ ara tarayt n tririt, tiririt n umiḍan-inek•inem ur tezmir ara ad d-ḍru ma yella tettuḍ awal-ik•im uffir. Tebɣiḍ ad tkemmleḍ s war tarayt n tririt?"
       ],
@@ -5527,6 +5533,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Uṭṭun-ik n tiliɣṛi ad yettwaseqdec kan tikkelt deg usenqed-agi."
+      ],
+      "Your plan is limited to 10 versions for up to 7 days": [
+        "Tangalt n tmurt"
       ],
       "Your recovery phrase": [
         "Tafyirt-ik·im n tririt"
@@ -5875,6 +5884,10 @@
       "${ nbDay } day": [
         "${ nbDay } n wass",
         "${ nbDay } n wussan"
+      ],
+      "${ nbYear } year": [
+        "${ nbYear } n useggas",
+        "${ nbYear } yiseggasen"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Ulac-it akka tura. Ma ulac aɣilif, senqed ticki.)"

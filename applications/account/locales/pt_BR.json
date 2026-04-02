@@ -324,6 +324,9 @@
       "Connected": [
         "Conectado"
       ],
+      "Contact sales": [
+        "Entre em contato com vendas"
+      ],
       "Contact support": [
         "Contatar o suporte"
       ],
@@ -452,6 +455,9 @@
       ],
       "Delete account": [
         "Excluir conta"
+      ],
+      "Delete and confirm": [
+        "Excluir e confirmar"
       ],
       "Delete filter “${ Name }”": [
         "Eliminar o filtro «${ Name }»"
@@ -1286,6 +1292,9 @@
       ],
       "Save and continue": [
         "Salvar e continuar"
+      ],
+      "Save changes": [
+        "Salvar alterações"
       ],
       "Save ICS file": [
         "Salvar arquivo ICS"
@@ -8942,6 +8951,9 @@
       "${ discountPercent }% discount": [
         "Desconto de ${ discountPercent }%"
       ],
+      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
+        "${ DRIVE_APP_NAME } não manterá mais as versões anteriores de seus arquivos."
+      ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } não é válido."
       ],
@@ -11512,6 +11524,12 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Essa verificação pode levar até uma hora. Após uma verificação bem sucedida, não remova este registro TXT, pois ele é necessário para confirmar que você continua sendo proprietário do domínio."
       ],
+      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
+        "Isso excluirá todas as versões anteriores de seus arquivos anteriores a ${ rententionLabel }."
+      ],
+      "This will delete all previous versions of your files.": [
+        "Isto irá excluir todas as versões anteriores de seus arquivos."
+      ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Isso negará o acesso a **${ email }**. Você tem certeza de que deseja continuar?"
       ],
@@ -11710,6 +11728,9 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Faça upgrade para manter seus benefícios ${ planTitle }."
       ],
+      "Upgrade to unlock": [
+        "Faça o upgrade para desbloquear"
+      ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "Faça o upgrade para desbloquear o ${ monitorLink }."
       ],
@@ -11808,6 +11829,9 @@
       ],
       "Version ${ version }": [
         "Versão ${ version }"
+      ],
+      "Version history": [
+        "Histórico de versões"
       ],
       "Version number successfully copied to clipboard": [
         "O número da versão foi copiado para a área de transferência"
@@ -12110,6 +12134,9 @@
       "You cannot refer ${ MAIL_APP_NAME } users": [
         "Você não pode indicar usuários do ${ MAIL_APP_NAME }."
       ],
+      "You cannot undo this action.": [
+        "Você não pode desfazer está ação."
+      ],
       "You did not set a recovery method so account recovery is impossible if you forget your password. Proceed without recovery method?": [
         "Você não definiu um método de recuperação, então a recuperação de conta não será possível se você esquecer sua senha. Continuar sem definir o método de recuperação?"
       ],
@@ -12302,6 +12329,9 @@
       ],
       "Your phone number will only be used for this one-time verification.": [
         "Seu número de telefone somente será usado nessa verificação única."
+      ],
+      "Your plan is limited to 10 versions for up to 7 days": [
+        "Seu plano é limitado a 10 versões por até 7 dias"
       ],
       "Your recent changes have been published. They will be visible to users in the next few hours.": [
         "Suas alterações recentes foram publicadas. Elas ficarão visíveis para os usuários nas próximas horas."
@@ -12935,6 +12965,10 @@
         "${ nbDay } dia",
         "${ nbDay } dias"
       ],
+      "${ nbYear } year": [
+        "${ nbYear } ano",
+        "${ nbYear } anos"
+      ],
       "${ pricePerMonthWithCurrency } / month": [
         "${ pricePerMonthWithCurrency } / mês"
       ],
@@ -13453,6 +13487,9 @@
       ],
       "Don't ask again": [
         "Não perguntar novamente"
+      ],
+      "Don't keep versions": [
+        "Não manter as versões"
       ],
       "Don't show this again": [
         "Não mostrar isso novamente"
@@ -20222,6 +20259,9 @@
       ]
     },
     "Setting": {
+      "Enable Photos section": [
+        "Ativar a seção Fotos"
+      ],
       "Get updates about comments via email": [
         "Receba atualizações sobre comentários por e-mail"
       ],
@@ -23104,6 +23144,9 @@
       ],
       "Delete user?": [
         "Excluir usuário?"
+      ],
+      "Delete version history?": [
+        "Excluir histórico de versões?"
       ],
       "Deny access to user?": [
         "Negar acesso para o usuário?"
