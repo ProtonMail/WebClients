@@ -5,7 +5,6 @@ import { NodeType, generateInvitationUid, generateNodeUid } from '@proton/drive'
 import { queryUserLinkAccess } from '@proton/shared/lib/api/drive/link';
 
 import { useInvitationsActions } from '../../sections/sharedWith/hooks/useInvitationsActions';
-import { useVolumesState } from '../../store/_volumes';
 import { Actions, countActionWithTelemetry } from '../../utils/telemetry';
 import useDriveNavigation from './useNavigate';
 
@@ -15,9 +14,8 @@ import useDriveNavigation from './useNavigate';
  * @deprecated
  */
 export function useLegacyContextShareHandler() {
-    const { setVolumeShareIds } = useVolumesState();
     const { navigateToLink, navigateToNoAccess } = useDriveNavigation();
-    const { acceptInvitation } = useInvitationsActions({ setVolumeShareIds });
+    const { acceptInvitation } = useInvitationsActions();
     const api = useApi();
 
     const handleContextShare = useCallback(

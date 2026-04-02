@@ -6,7 +6,6 @@ import type { NodeType } from '@proton/drive';
 import { IcCross } from '@proton/icons/icons/IcCross';
 
 import { ContextMenuButton } from '../../../components/sections/ContextMenu';
-import useVolumesState from '../../../store/_volumes/useVolumesState';
 import { useInvitationsActions } from '../hooks/useInvitationsActions';
 
 interface BaseProps {
@@ -39,9 +38,7 @@ export const DeclineButton = ({
     close,
     buttonType,
 }: DeclineButtonProps) => {
-    // TODO: Remove that when we will have sdk for upload
-    const { setVolumeShareIds } = useVolumesState();
-    const { rejectInvitation } = useInvitationsActions({ setVolumeShareIds });
+    const { rejectInvitation } = useInvitationsActions();
 
     const handleDecline = () => {
         void rejectInvitation(showConfirmModal, { uid: nodeUid, invitationUid, name, type });

@@ -2,7 +2,6 @@ import { useCallback, useEffect, useMemo, useRef } from 'react';
 
 import { useLoading } from '@proton/hooks';
 import { EVENT_ACTIONS, SORT_DIRECTION } from '@proton/shared/lib/constants';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import type { SortParams } from '../../components/FileBrowser';
 import type { SharedWithMeItem } from '../../components/sections/SharedWithMe/SharedWithMe';
@@ -32,8 +31,7 @@ const DEFAULT_SORT = {
  */
 export default function useSharedWithMeView(shareId: string) {
     const [isLoading, withLoading] = useLoading(true);
-    const bookmarksFeatureDisabled = useFlag('DriveShareURLBookmarksDisabled');
-    const [isBookmarksLoading, withBookmarksLoading] = useLoading(!bookmarksFeatureDisabled);
+    const [isBookmarksLoading, withBookmarksLoading] = useLoading(true);
     const linksListing = useLinksListing();
     const itemsPositions = useRef<Map<string, number>>(new Map());
     const { invitationsBrowserItems, isLoading: isInvitationsLoading } = useInvitationsView();
@@ -122,23 +120,23 @@ export default function useSharedWithMeView(shareId: string) {
 
     useEffect(() => {
         const abortController = new AbortController();
-        if (!bookmarksFeatureDisabled) {
-            void withBookmarksLoading(async () => {
-                // In case the user Sign-up from public page we will add the file to bookmarks and let him on shared-with-me section
-                // For Sign-in with redirection to public page logic, check MainContainer
-                const token = getTokenFromSearchParams();
-                if (token) {
-                    await addBookmarkFromPrivateApp(abortController.signal, { token });
-                }
-                // Cleanup if there any token or redirectToPublic key in search params
-                cleanupUrl();
-                await linksListing.loadLinksBookmarks(abortController.signal, shareId);
-            }).catch(sendErrorReport);
-        }
+
+        void withBookmarksLoading(async () => {
+            // In case the user Sign-up from public page we will add the file to bookmarks and let him on shared-with-me section
+            // For Sign-in with redirection to public page logic, check MainContainer
+            const token = getTokenFromSearchParams();
+            if (token) {
+                await addBookmarkFromPrivateApp(abortController.signal, { token });
+            }
+            // Cleanup if there any token or redirectToPublic key in search params
+            cleanupUrl();
+            await linksListing.loadLinksBookmarks(abortController.signal, shareId);
+        }).catch(sendErrorReport);
+
         return () => {
             abortController.abort();
         };
-    }, [bookmarksFeatureDisabled]);
+    }, []);
 
     return {
         layout,
