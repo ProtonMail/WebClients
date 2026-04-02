@@ -15,7 +15,10 @@ export const useDesktopUnlock = () => {
     const online = useOnlineRef();
 
     return useCallback(async (): Promise<Extract<UnlockDTO, { mode: LockMode.DESKTOP }>> => {
-        const key = await getDesktopUnlockSecret?.();
+        const key = await getDesktopUnlockSecret?.().catch((err) => {
+            createNotification({ type: 'error', text: err.message });
+            throw err;
+        });
         if (!key) throw new Error();
 
         const dto: UnlockDTO = { mode: LockMode.DESKTOP, key, offline: !online.current };
