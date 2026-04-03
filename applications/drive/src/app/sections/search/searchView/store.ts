@@ -44,6 +44,7 @@ export type SearchViewStore = {
     hasEverLoaded: boolean;
 
     addSearchResultItem: (item: SearchResultItemUI) => void;
+    setSearchResultItems: (items: SearchResultItemUI[]) => void;
 
     // Remove unused nodes from the store from previous search queries.
     cleanupStaleItems: (loadedUids: Set<string>) => void;
@@ -104,6 +105,29 @@ export const useSearchViewStore = create<SearchViewStore>()(
 
                     const newSearchResultItems = new Map(state.searchResultItems);
                     newSearchResultItems.set(keyUid, item);
+
+                    return {
+                        searchResultItems: newSearchResultItems,
+                        sortedItemUids,
+                    };
+                });
+            },
+
+            setSearchResultItems: (items: SearchResultItemUI[]) => {
+                set((state) => {
+                    const newSearchResultItems = new Map(state.searchResultItems);
+                    for (const item of items) {
+                        newSearchResultItems.set(getKeyUid(item), item);
+                    }
+
+                    const allItems = Array.from(newSearchResultItems.values());
+                    const sortedItemUids = sortItems(
+                        allItems,
+                        state.sortConfig,
+                        state.direction,
+                        getSearchResultItemSortValue,
+                        getKeyUid
+                    );
 
                     return {
                         searchResultItems: newSearchResultItems,
