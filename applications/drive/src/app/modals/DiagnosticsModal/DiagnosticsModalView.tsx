@@ -15,6 +15,7 @@ import {
 import { Device } from './Device';
 import { Diagnostics } from './Diagnostics';
 import { Logs } from './Logs';
+import { Search } from './Search';
 
 export function DiagnosticsModalView({ open, onClose, onExit }: ModalStateProps) {
     const [tabIndex, setTabIndex] = useState(0);
@@ -38,6 +39,10 @@ export function DiagnosticsModalView({ open, onClose, onExit }: ModalStateProps)
                         {
                             title: c('Title').t`Diagnostics`,
                             content: <Diagnostics />,
+                        },
+                        {
+                            title: c('Title').t`Search`,
+                            content: <Search />,
                         },
                     ]}
                 />
