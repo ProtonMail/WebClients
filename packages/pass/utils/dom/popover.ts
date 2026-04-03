@@ -6,7 +6,7 @@ import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
 import lastItem from '@proton/utils/lastItem';
 
-export const POPOVER_SUPPORTED = 'popover' in HTMLElement.prototype;
+export const POPOVER_SUPPORTED = 'popover' in HTMLElement.prototype || process.env.NODE_ENV === 'test';
 
 export const safeMatch = (target: HTMLElement, selector: string): boolean =>
     safeCall(() => target.matches(selector))() ?? false;
