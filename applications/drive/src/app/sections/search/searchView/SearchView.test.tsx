@@ -1,15 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import { userEvent } from '@testing-library/user-event';
 
-import { useFoundationSearchAdapter } from './hooks/useFoundationSearchAdapter';
+import { useSearchViewModel } from './hooks/useSearchViewModel';
 import { SearchView } from './index';
 
-jest.mock('../../../flags/useFlagsDriveFoundationSearch', () => ({
-    useFlagsDriveFoundationSearch: jest.fn(() => true),
-}));
-
-jest.mock('./hooks/useFoundationSearchAdapter');
-jest.mock('./hooks/useLegacySearchAdapter');
+jest.mock('./hooks/useSearchViewModel');
 
 jest.mock('./hooks/useSearchResultItems', () => ({
     useSearchResultItems: jest.fn(() => ({
@@ -24,10 +19,8 @@ jest.mock('./hooks/useSearchResultItems', () => ({
     })),
 }));
 
-jest.mock('./hooks/useSearchViewLoader', () => ({
-    useSearchViewNodesLoader: jest.fn(() => ({
-        loadNodes: jest.fn(),
-    })),
+jest.mock('./hooks/loadNodesForSearchView', () => ({
+    loadNodesForSearchView: jest.fn(),
 }));
 
 jest.mock('./subscribeSearchStoreToEvents', () => ({
@@ -72,9 +65,9 @@ jest.mock('./SearchContextMenu', () => ({
     SearchContextMenu: () => null,
 }));
 
-const mockedUseFoundationSearchAdapter = jest.mocked(useFoundationSearchAdapter);
+const mockedUseFoundationSearchAdapter = jest.mocked(useSearchViewModel);
 
-const defaultAdapter: ReturnType<typeof useFoundationSearchAdapter> = {
+const defaultAdapter: ReturnType<typeof useSearchViewModel> = {
     isSearchAvailable: true,
     isSearchEnabled: true,
     isSearchable: true,
@@ -84,7 +77,7 @@ const defaultAdapter: ReturnType<typeof useFoundationSearchAdapter> = {
     refreshResults: jest.fn(),
 };
 
-const withAdapter = (overrides: Partial<ReturnType<typeof useFoundationSearchAdapter>>) => {
+const withAdapter = (overrides: Partial<ReturnType<typeof useSearchViewModel>>) => {
     mockedUseFoundationSearchAdapter.mockReturnValue({ ...defaultAdapter, ...overrides });
 };
 
