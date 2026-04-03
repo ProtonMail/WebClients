@@ -21,7 +21,7 @@ import { defaultSpreadsheetTheme, useSpreadsheet } from '@rowsncolumns/spreadshe
 import { useCharts } from '@rowsncolumns/charts'
 import { useYSpreadsheetV2 } from '@rowsncolumns/y-spreadsheet'
 import type { DocStateInterface } from '@proton/docs-shared'
-import { DocProvider, DocUpdateOrigin } from '@proton/docs-shared'
+import { DocProvider } from '@proton/docs-shared'
 import { useSyncedState } from '../../Hooks/useSyncedState'
 import { create, useStore } from 'zustand'
 import { useEvent } from './components/utils'
@@ -209,7 +209,7 @@ type YjsStateDependencies = {
 }
 
 function useYjsState({ localState, spreadsheetState, docState }: YjsStateDependencies) {
-  const { userName } = useSyncedState()
+  const { userName, receivedEverythingFromRTS } = useSyncedState()
   const provider = useMemo(() => {
     const provider = new DocProvider(docState)
     // useYSpreadsheet checks for either a "synced" event from the provider
@@ -220,35 +220,37 @@ function useYjsState({ localState, spreadsheetState, docState }: YjsStateDepende
   }, [docState])
   const yDoc = useMemo(() => docState.getDoc(), [docState])
 
+  const logger = useApplication().application.logger
   const ySheets = useMemo(() => yDoc.getArray<Sheet>('sheets'), [yDoc])
-  const updatedActiveSheetIdAfterInitialLoad = useRef(false)
+  const handledInitialLoad = useRef(false)
+  const { onChangeActiveSheet, calculateNow } = spreadsheetState
   useEffect(
-    function updateActiveSheetIdAfterInitialLoad() {
-      if (updatedActiveSheetIdAfterInitialLoad.current) {
+    function handleInitialLoad() {
+      if (!receivedEverythingFromRTS) {
         return
       }
-
-      const handler = (_: any, origin: any) => {
-        if (origin === DocUpdateOrigin.InitialLoad) {
-          // After receiving base commit, change the active sheet to the first sheet.
-          // RnC does try to do this, but it doesn't work with our setup as when it tries
-          // to do this, it will not have received the initial update yet.
-          const sheets = ySheets.toJSON()
-          if (sheets.length) {
-            spreadsheetState.onChangeActiveSheet(sortSheetsByIndex(sheets)[0].sheetId)
-            yDoc.off('update', handler)
-            updatedActiveSheetIdAfterInitialLoad.current = true
-          }
-        }
+      logger.info('handleInitialLoad: received everything from RTS')
+      if (handledInitialLoad.current) {
+        return
       }
-
-      yDoc.on('update', handler)
-
-      return () => {
-        yDoc.off('update', handler)
+      // After receiving base commit, change the active sheet to the first sheet.
+      // RnC does try to do this, but it doesn't work with our setup as when it tries
+      // to do this, it will not have received the initial update yet.
+      const sheets = ySheets.toJSON()
+      if (sheets.length) {
+        const firstSheetId = sortSheetsByIndex(sheets)[0].sheetId
+        logger.info(`handleInitialLoad: changing active sheet to ${firstSheetId}`)
+        onChangeActiveSheet(firstSheetId)
       }
+      requestAnimationFrame(async () => {
+        await calculateNow({
+          disableEvaluation: true,
+          shouldResetCellDependencyGraph: true,
+        })
+      })
+      handledInitialLoad.current = true
     },
-    [spreadsheetState, yDoc, ySheets],
+    [calculateNow, logger, onChangeActiveSheet, receivedEverythingFromRTS, ySheets],
   )
 
   const yjsState = useYSpreadsheetV2({
