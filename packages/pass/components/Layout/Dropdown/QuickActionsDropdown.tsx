@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import type { ButtonLikeShape, ButtonLikeSize } from '@proton/atoms/Button/ButtonLike';
 import { NotificationDot } from '@proton/atoms/NotificationDot/NotificationDot';
-import Badge from '@proton/components/components/badge/Badge';
+import { Badge } from '@proton/components/components/badge/Badge';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import type { DropdownSize } from '@proton/components/components/dropdown/utils';
@@ -80,11 +80,7 @@ export const QuickActionsDropdown: FC<QuickActionsDropdownProps> = ({
             >
                 <Icon name={icon} size={iconSize} />
                 {signaled && <NotificationDot className="absolute top-0 right-0 w-2 h-2" />}
-                {badge && (
-                    <Badge className="pass-quickactions--badge bg-primary ratio-square color-invert text-bold flex justify-center items-center lh120">
-                        {badge}
-                    </Badge>
-                )}
+                {badge && <Badge className="pass-quickactions--badge bg-primary color-invert text-bold">{badge}</Badge>}
             </Button>
 
             <Dropdown
