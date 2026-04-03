@@ -3979,6 +3979,12 @@
       ],
       "Unable to start the search: not enough storage space": [
         "Kan ikke starte søgningen: ikke nok lagerplads"
+      ],
+      "Something went wrong with search. Please try again later.": [
+        "Noget gik galt med søgningen. Prøv igen senere."
+      ],
+      "Something went wrong with search: Not enough storage space.": [
+        "Der opstod en fejl under søgningen: Ikke nok lagerplads."
       ]
     },
     "error": {
@@ -13529,6 +13535,9 @@
     "Import provider": {
       "Advanced import": [
         "Avanceret import"
+      ],
+      "More import options": [
+        "Flere importindstillinger"
       ]
     },
     "Provider option": {
