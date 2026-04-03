@@ -34,7 +34,9 @@ export type FolderCreationEvent =
     | { type: 'folder:conflict'; uploadId: string; error: NodeWithSameNameExistsValidationError }
     | { type: 'folder:cancelled'; uploadId: string };
 
-export type PhotosUploadEvent = { type: 'photo:exist'; uploadId: string; duplicateUids: string[] };
+export type PhotosUploadEvent =
+    | { type: 'photo:exist'; uploadId: string; duplicateUids: string[] }
+    | { type: 'photo:unsupported'; uploadId: string };
 
 export type UploadEvent = FileUploadEvent | FolderCreationEvent | PhotosUploadEvent;
 
@@ -124,6 +126,7 @@ export enum UploadStatus {
     ConflictFound = 'conflictFound',
     PausedServer = BaseTransferStatus.PausedServer,
     PhotosDuplicate = 'photosDuplicate',
+    NotSupportedForPhotos = 'notSupportedForPhotos',
 }
 
 export type BaseUploadItem = {
