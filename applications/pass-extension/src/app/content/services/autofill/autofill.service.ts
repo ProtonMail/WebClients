@@ -319,7 +319,25 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
         }
     );
 
+    const onAutofillTrigger = withContext((ctx) => {
+        const fields = ctx?.service.formManager.getFields();
+        const loginField = fields?.find(
+            (field) => field.action?.type === DropdownAction.AUTOFILL_LOGIN
+        );
+
+        if (loginField) {
+            ctx?.service.inline.dropdown.toggle({
+                type: 'field',
+                action: DropdownAction.AUTOFILL_LOGIN,
+                autofocused: false,
+                autofilled: loginField.autofilled !== null,
+                field: loginField,
+            });
+        }
+    });
+
     controller.channel.register(WorkerMessageType.AUTOFILL_SEQUENCE, onAutofillRequest);
+    controller.channel.register(WorkerMessageType.AUTOFILL_TRIGGER, onAutofillTrigger);
 
     return {
         get processing() {
@@ -338,6 +356,7 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
         sync,
         destroy: () => {
             controller.channel.unregister(WorkerMessageType.AUTOFILL_SEQUENCE, onAutofillRequest);
+            controller.channel.unregister(WorkerMessageType.AUTOFILL_TRIGGER, onAutofillTrigger);
         },
     };
 };
