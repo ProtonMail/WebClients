@@ -1332,6 +1332,9 @@
       ],
       "Writing assistant seats": [
         "写作助手席位"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } 个 ${ MEET_APP_NAME } 许可证"
       ]
     },
     "Alert": {
@@ -3940,6 +3943,12 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ 无法解密的名称"
+      ],
+      "Something went wrong with search. Please try again later.": [
+        "搜索时出现问题，请稍后重试。"
+      ],
+      "Something went wrong with search: Not enough storage space.": [
+        "搜索时出现问题：存储空间不足。"
       ]
     },
     "error": {
@@ -4791,6 +4800,9 @@
     "Import provider": {
       "Advanced import": [
         "高级导入"
+      ],
+      "More import options": [
+        "更多导入选项"
       ]
     },
     "Import warning": {
@@ -6874,6 +6886,21 @@
       ],
       "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
         "更改为查看者权限后，您将无法再分享“${ fileName }”。只有所有者才能再次更改您的访问权限。"
+      ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } 是一款端到端加密的视频会议解决方案。将其添加到您的套餐中即可主持安全会议。"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } 席位"
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "添加 ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "包含 ${ planOrAppName } 所有功能，外加:"
+      ],
+      "for ${ price }": [
+        "仅需 ${ price }"
       ]
     },
     "info": {
@@ -7939,6 +7966,12 @@
       ],
       "Up to ${ n } participant": [
         "最多 ${ n } 位参与者"
+      ],
+      "Hosts can record meetings locally on their computers": [
+        "主持人可以在本地计算机上录制会议"
+      ],
+      "Video meetings, ${ n } participant": [
+        "视频会议，${ n } 位参与者"
       ]
     },
     "Message": {
@@ -8652,6 +8685,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我们会扫描暗网，检查您的 ${ BRAND_NAME } 地址或别名是否被泄露，一旦发现任何情况，我们会立即提醒您。"
+      ],
+      "Data retention policies": [
+        "数据保留策略"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "私人 AI 聊天 (${ LUMO_APP_NAME })"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "具备广告拦截器和恶意软件防护功能的 VPN"
       ]
     },
     "new_plans: feature highlight": {
@@ -13159,6 +13201,25 @@
       ],
       "Yahoo": [
         "Yahoo"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } 许可证"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } 席位"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME } 席位"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "包含 ${ seats } 个席位"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "试用期间，您最多可以拥有 ${ TRIAL_MAX_MEET_SEATS } 个 ${ MEET_SHORT_APP_NAME } 席位。"
       ]
     }
   }
