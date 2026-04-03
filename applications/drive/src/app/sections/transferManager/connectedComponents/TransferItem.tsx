@@ -55,6 +55,7 @@ const getStatusLabel = (entry: TransferManagerEntry): string | undefined => {
         // TODO: Probably we do not want skipped but cancelled of the item. Makes more sense but need update on uploadManager
         [UploadStatus.Skipped]: c('Info').t`Skipped`,
         [UploadStatus.PhotosDuplicate]: c('Info').t`Already in your library`,
+        [UploadStatus.NotSupportedForPhotos]: c('Info').t`Unsupported file type for Photos`,
     };
     return labels[entry.status];
 };
@@ -75,7 +76,7 @@ const getItemIconByStatus = (entry: TransferManagerEntry) => {
     if (entry.status === UploadStatus.Skipped) {
         return <IcCrossCircle size={5} className="color-weak" />;
     }
-    if (entry.status === BaseTransferStatus.Failed) {
+    if (entry.status === BaseTransferStatus.Failed || entry.status === UploadStatus.NotSupportedForPhotos) {
         return <IcCrossCircleFilled size={5} className="color-danger" />;
     }
     if (entry.status === BaseTransferStatus.MalwareDetected) {
@@ -112,6 +113,7 @@ export const TransferItem = ({
         BaseTransferStatus.MalwareDetected,
         UploadStatus.Skipped,
         UploadStatus.PhotosDuplicate,
+        UploadStatus.NotSupportedForPhotos,
     ].includes(entry.status as BaseTransferStatus);
     const dm = DownloadManager.getInstance();
     const { item } = useDownloadManagerStore(

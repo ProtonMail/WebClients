@@ -263,6 +263,23 @@ describe('UploadEventHandler', () => {
         });
     });
 
+    describe('handleEvent - photo:unsupported', () => {
+        it('should mark photo as not supported and unsubscribe photos activity', async () => {
+            const event = {
+                type: 'photo:unsupported' as const,
+                uploadId: 'task123',
+            };
+
+            await handler.handleEvent(event);
+
+            expect(mockUpdateQueueItems).toHaveBeenCalledWith('task123', {
+                status: UploadStatus.NotSupportedForPhotos,
+            });
+            expect(mockPhotosCheckAndUnsubscribeIfQueueEmpty).toHaveBeenCalled();
+            expect(mockCheckAndUnsubscribeIfQueueEmpty).not.toHaveBeenCalled();
+        });
+    });
+
     describe('handleEvent - file:conflict', () => {
         it('should delegate to conflict manager', async () => {
             const error = new NodeWithSameNameExistsValidationError('node123', 400);

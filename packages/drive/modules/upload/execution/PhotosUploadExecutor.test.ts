@@ -18,6 +18,13 @@ jest.mock('@proton/shared/lib/helpers/sentry', () => ({
     traceError: jest.fn(),
     addSentryBreadcrumb: jest.fn(),
 }));
+jest.mock('@proton/shared/lib/helpers/mimetype', () => ({
+    isImage: jest.fn((mime: string) => mime.startsWith('image/')),
+    isVideo: jest.fn((mime: string) => mime.startsWith('video/')),
+    isRAWPhoto: jest.fn(() => false),
+    getFileExtension: jest.fn((name: string) => name.split('.').pop()),
+    isRAWExtension: jest.fn(() => false),
+}));
 jest.mock('@proton/crypto', () => {
     const actual = jest.requireActual('@proton/crypto');
     return {
@@ -581,6 +588,46 @@ describe('PhotosUploadExecutor', () => {
             expect(uploadArgs[0]).toBeInstanceOf(ReadableStream);
             expect(uploadArgs[1]).toEqual(mockThumbnails);
             expect(typeof uploadArgs[2]).toBe('function');
+        });
+
+        it('should emit photo:unsupported event when file is not a photo, video, or RAW', async () => {
+            jest.mocked(generateThumbnail).mockReturnValue({
+                thumbnailsPromise: Promise.resolve({ ok: false, error: new Error() }),
+                mimeTypePromise: Promise.resolve('application/pdf'),
+            });
+
+            const task = createFileTask({
+                file: new File(['content'], 'document.pdf', { type: 'application/pdf' }),
+                name: 'document.pdf',
+            });
+
+            await executor.execute(task);
+
+            expect(mockEventCallback).toHaveBeenCalledWith({
+                type: 'photo:unsupported',
+                uploadId: 'task123',
+            });
+            expect(mockGetFileUploader).not.toHaveBeenCalled();
+        });
+
+        it('should not emit photo:unsupported for RAW files resolved to application/octet-stream but with RAW extension', async () => {
+            const { isRAWExtension } = jest.requireMock('@proton/shared/lib/helpers/mimetype');
+            isRAWExtension.mockReturnValueOnce(true);
+
+            jest.mocked(generateThumbnail).mockReturnValue({
+                thumbnailsPromise: Promise.resolve({ ok: false, error: new Error() }),
+                mimeTypePromise: Promise.resolve('application/octet-stream'),
+            });
+
+            const task = createFileTask({
+                file: new File(['content'], 'photo.cr2', { type: '' }),
+                name: 'photo.cr2',
+            });
+
+            await executor.execute(task);
+
+            expect(mockEventCallback).not.toHaveBeenCalledWith(expect.objectContaining({ type: 'photo:unsupported' }));
+            expect(mockGetFileUploader).toHaveBeenCalled();
         });
 
         it('should proceed with upload when duplicate check throws (e.g. crypto worker error)', async () => {
