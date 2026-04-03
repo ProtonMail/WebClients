@@ -2,18 +2,14 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { useNotifications } from '@proton/components';
-
 import { useSearchModule } from '../../../../hooks/search/useSearchModule';
 import { useUrlSearchParams } from '../../../../hooks/search/useUrlSearchParam';
+import { getNotificationsManager } from '../../../../modules/notifications';
 import { type SearchResultItem, tryCatchWithNotification } from '../../../../modules/search';
 import { sendErrorReport } from '../../../../utils/errorHandling';
 import type { SearchViewModelAdapter } from '../type';
 
-// An adapter to connect the search libray from foundation to the search ui.
-export const useFoundationSearchAdapter = (): SearchViewModelAdapter => {
-    const { createNotification } = useNotifications();
-
+export const useSearchViewModel = (): SearchViewModelAdapter => {
     const searchModule = useSearchModule();
     const [searchParams] = useUrlSearchParams();
 
@@ -59,7 +55,7 @@ export const useFoundationSearchAdapter = (): SearchViewModelAdapter => {
                 if (abortController.signal.aborted) {
                     return;
                 }
-                createNotification({
+                getNotificationsManager().createNotification({
                     type: 'error',
                     text: c('Error').t`Search failed`,
                 });
@@ -70,7 +66,7 @@ export const useFoundationSearchAdapter = (): SearchViewModelAdapter => {
                 setIsSearching(false);
             }
         }
-    }, [createNotification, searchModule, searchParams]);
+    }, [searchModule, searchParams]);
 
     useEffect(() => {
         if (!searchModule.isAvailable || !searchModule.isSearchable) {
