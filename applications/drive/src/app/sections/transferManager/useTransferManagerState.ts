@@ -83,7 +83,8 @@ const getShouldIgnoreTransferProgress = (
         status === BaseTransferStatus.Failed ||
         status === BaseTransferStatus.MalwareDetected ||
         status === UploadStatus.Skipped ||
-        status === UploadStatus.PhotosDuplicate
+        status === UploadStatus.PhotosDuplicate ||
+        status === UploadStatus.NotSupportedForPhotos
     );
 };
 
@@ -139,7 +140,11 @@ export const useTransferManagerState = () => {
             statesMap.get(UploadStatus.Waiting)
         ) {
             status = TransferManagerStatus.InProgress;
-        } else if (statesMap.get(BaseTransferStatus.Failed) || statesMap.get(BaseTransferStatus.MalwareDetected)) {
+        } else if (
+            statesMap.get(BaseTransferStatus.Failed) ||
+            statesMap.get(BaseTransferStatus.MalwareDetected) ||
+            statesMap.get(UploadStatus.NotSupportedForPhotos)
+        ) {
             status = TransferManagerStatus.Failed;
         } else if (statesMap.get(BaseTransferStatus.Cancelled)) {
             status = TransferManagerStatus.Cancelled;
@@ -168,11 +173,13 @@ export const useTransferManagerState = () => {
         const getPriority = (status: BaseTransferStatus | UploadStatus | DownloadItem['status']) => {
             switch (status) {
                 case BaseTransferStatus.InProgress:
-                    return 4;
+                    return 5;
                 case UploadStatus.Preparing:
-                    return 3;
+                    return 4;
                 case BaseTransferStatus.Failed:
                 case BaseTransferStatus.MalwareDetected:
+                    return 3;
+                case UploadStatus.NotSupportedForPhotos:
                     return 2;
                 case BaseTransferStatus.Pending:
                 case UploadStatus.Waiting:
