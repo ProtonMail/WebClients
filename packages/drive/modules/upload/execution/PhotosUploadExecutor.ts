@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { CryptoProxy } from '@proton/crypto';
+import { getFileExtension, isImage, isRAWExtension, isRAWPhoto, isVideo } from '@proton/shared/lib/helpers/mimetype';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 import { getItem } from '@proton/shared/lib/helpers/storage';
 
@@ -76,6 +77,18 @@ export class PhotosUploadExecutor extends TaskExecutor<PhotosUploadTask> {
             const { thumbnails, mediaInfo, mimeType } = await this.generateThumbnails(task.file);
 
             if (abortController.signal.aborted) {
+                return;
+            }
+
+            const extension = getFileExtension(task.file.name);
+            const isSupportedPhotoType =
+                isImage(mimeType) || isVideo(mimeType) || isRAWPhoto(mimeType) || isRAWExtension(extension);
+
+            if (!isSupportedPhotoType) {
+                void this.eventCallback?.({
+                    type: 'photo:unsupported',
+                    uploadId: task.uploadId,
+                });
                 return;
             }
 

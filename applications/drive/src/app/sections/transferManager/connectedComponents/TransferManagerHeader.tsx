@@ -10,6 +10,7 @@ import { ProgressBarStatus } from '../../../components/TransferManager/ProgressB
 import { BaseTransferStatus } from '../../../zustand/download/downloadManager.store';
 import { CloseButton } from '../statelessComponents/CloseButton';
 import { MinimizeButton } from '../statelessComponents/MinimizeButton';
+import { isRetryable } from '../transferStatus';
 import type { TransferManagerEntry } from '../useTransferManagerState';
 import { TransferManagerStatus, useTransferManagerState } from '../useTransferManagerState';
 
@@ -95,7 +96,7 @@ export const TransferManagerHeader = ({
                             {cancelText}
                         </Button>
                     )}
-                    {status === TransferManagerStatus.Failed && (
+                    {status === TransferManagerStatus.Failed && items.some(isRetryable) && (
                         <Button
                             icon={viewportWidth.xsmall}
                             type="button"

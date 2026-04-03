@@ -45,6 +45,8 @@ export class UploadEventHandler {
             'file:complete': (event: Extract<UploadEvent, { type: 'file:complete' }>) => this.handleFileComplete(event),
             'file:error': (event: Extract<UploadEvent, { type: 'file:error' }>) => this.handleFileError(event),
             'photo:exist': (event: Extract<UploadEvent, { type: 'photo:exist' }>) => this.handlePhotoExist(event),
+            'photo:unsupported': (event: Extract<UploadEvent, { type: 'photo:unsupported' }>) =>
+                this.handlePhotoUnsupported(event),
             'file:conflict': (event: Extract<UploadEvent, { type: 'file:conflict' }>) =>
                 this.conflictManager.handleConflict(event.uploadId, event.error),
             'file:cancelled': (event: Extract<UploadEvent, { type: 'file:cancelled' }>) =>
@@ -212,6 +214,16 @@ export class UploadEventHandler {
         });
         this.cancelFolderChildren(event.uploadId);
         this.sdkTransferActivity.checkAndUnsubscribeIfQueueEmpty();
+    }
+
+    private async handlePhotoUnsupported(event: PhotosUploadEvent & { type: 'photo:unsupported' }): Promise<void> {
+        const queueStore = useUploadQueueStore.getState();
+
+        this.uploadSpeedMetrics.onFileEnded(event.uploadId);
+        queueStore.updateQueueItems(event.uploadId, {
+            status: UploadStatus.NotSupportedForPhotos,
+        });
+        this.sdkPhotosTransferActivity.checkAndUnsubscribeIfQueueEmpty();
     }
 
     private async handlePhotoExist(event: PhotosUploadEvent & { type: 'photo:exist' }): Promise<void> {
