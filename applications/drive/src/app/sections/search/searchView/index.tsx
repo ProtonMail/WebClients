@@ -7,7 +7,6 @@ import { useActiveBreakpoint } from '@proton/components/index';
 
 import { FileBrowserStateProvider } from '../../../components/FileBrowser';
 import ToolbarRow from '../../../components/sections/ToolbarRow/ToolbarRow';
-import { useFlagsDriveFoundationSearch } from '../../../flags/useFlagsDriveFoundationSearch';
 import { useContextMenuStore } from '../../../modules/contextMenu';
 import { useSelectionStore } from '../../../modules/selection';
 import { DriveExplorer } from '../../../statelessComponents/DriveExplorer/DriveExplorer';
@@ -22,10 +21,9 @@ import { NoSearchResultsView } from './NoSearchResultsView';
 import { SearchContextMenu } from './SearchContextMenu';
 import { getCellDefinitions, getGridDefinition } from './SearchDriveExplorerDefinitions';
 import { SearchResultViewToolbar } from './Toolbar';
-import { useFoundationSearchAdapter } from './hooks/useFoundationSearchAdapter';
-import { useLegacySearchAdapter } from './hooks/useLegacySearchAdapter';
+import { loadNodesForSearchView } from './hooks/loadNodesForSearchView';
 import { useSearchResultItems } from './hooks/useSearchResultItems';
-import { useSearchViewNodesLoader } from './hooks/useSearchViewLoader';
+import { useSearchViewModel } from './hooks/useSearchViewModel';
 import { useSearchViewStore } from './store';
 import { subscribeSearchStoreToEvents } from './subscribeSearchStoreToEvents';
 
@@ -40,11 +38,7 @@ const SearchResultTitle = ({ loading, resultCount }: { loading: boolean; resultC
 };
 
 export const SearchView = () => {
-    const legacySearchModel = useLegacySearchAdapter();
-    const foundationSearchModel = useFoundationSearchAdapter();
-
-    const isFoudationSearchEnabled = useFlagsDriveFoundationSearch();
-    const searchModel = isFoudationSearchEnabled ? foundationSearchModel : legacySearchModel;
+    const searchModel = useSearchViewModel();
 
     const { isSearchAvailable, isSearchEnabled, isSearchable, startIndexing, isSearching, resultUids, refreshResults } =
         searchModel;
@@ -65,35 +59,38 @@ export const SearchView = () => {
 
     const { viewportWidth } = useActiveBreakpoint();
 
-    const { loadNodes } = useSearchViewNodesLoader();
-
     // The store can go in a dirty state when one of the search results has changed
     // (renamed, moved, trashed, deleted, etc).
     const isStoreDirty = useSearchViewStore((state) => state.dirty);
 
     // Load nodes for current search query.
-    useEffect(() => {
-        const abortController = new AbortController();
-        if (resultUids) {
-            void loadNodes(resultUids, abortController.signal);
-        }
-        return () => {
-            abortController.abort();
-        };
-    }, [loadNodes, resultUids]);
+    useEffect(
+        function loadSearchResultNodes() {
+            const abortController = new AbortController();
+            if (resultUids) {
+                void loadNodesForSearchView(resultUids, abortController.signal);
+            }
+            return () => {
+                abortController.abort();
+            };
+        },
+        [resultUids]
+    );
 
-    useEffect(() => {
-        // Store is dirty:
-        //  -> it triggers a refresh of the search results
-        //  -> new results trigger a new load
-        //  -> loader sync the store and undirty it.
-        if (isStoreDirty) {
-            refreshResults();
-        }
-    }, [isStoreDirty, refreshResults]);
+    useEffect(
+        function listenToSearchStore() {
+            if (isStoreDirty) {
+                // Store is dirty:
+                //  -> it triggers a refresh of the search results
+                //  -> new results trigger a new load
+                //  -> loader sync the store and undirty it.
+                refreshResults();
+            }
+        },
+        [isStoreDirty, refreshResults]
+    );
 
-    useEffect(() => {
-        // Make the search view react to Web Drive events.
+    useEffect(function listenToBusDriverEvents() {
         const unsubscribe = subscribeSearchStoreToEvents();
         return () => {
             unsubscribe();

@@ -1,6 +1,6 @@
 import { IndexKind } from '../../../../modules/search';
 import type { SearchResultItem } from '../../../../modules/search';
-import { mergeAndSortResults } from './useFoundationSearchAdapter';
+import { mergeAndSortResults } from './useSearchViewModel';
 
 const resultItem = (nodeUid: string, score: number, indexKind = IndexKind.MAIN): SearchResultItem => ({
     nodeUid,
