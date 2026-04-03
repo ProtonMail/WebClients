@@ -3973,6 +3973,12 @@
       ],
       "Unable to start the search: not enough storage space": [
         "Die Suche kann nicht gestartet werden: nicht genügend Speicherplatz"
+      ],
+      "Something went wrong with search. Please try again later.": [
+        "Bei der Suche ist ein Fehler aufgetreten. Bitte versuche es später erneut."
+      ],
+      "Something went wrong with search: Not enough storage space.": [
+        "Bei der Suche ist ein Fehler aufgetreten: Nicht genügend Speicherplatz."
       ]
     },
     "error": {
@@ -4842,6 +4848,9 @@
     "Import provider": {
       "Advanced import": [
         "Erweiterter Import"
+      ],
+      "More import options": [
+        "Weitere Importoptionen"
       ]
     },
     "Import warning": {

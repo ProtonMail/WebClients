@@ -3979,6 +3979,12 @@
       ],
       "Unable to start the search: not enough storage space": [
         "Kan de zoekopdracht niet starten: onvoldoende opslagruimte"
+      ],
+      "Something went wrong with search. Please try again later.": [
+        "Er ging iets mis. Probeer het later nog eens."
+      ],
+      "Something went wrong with search: Not enough storage space.": [
+        "Er ging iets mis met zoeken: Onvoldoende opslagruimte."
       ]
     },
     "error": {
@@ -6987,6 +6993,9 @@
       ],
       "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
         "U kunt \"${ fileName }\" niet delen na het wijzigen van de toegang tot 'alleen-lezer'. Alleen de eigenaar kan uw toegang opnieuw wijzigen."
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Voeg ${ PLAN_NAMES[PLANS.MEET_BUSINESS] } toe"
       ]
     },
     "info": {
@@ -8031,7 +8040,7 @@
         "24 uur per vergadering"
       ],
       "60 minutes per meeting": [
-        "60 uur per vergadering"
+        "60 minuten per vergadering"
       ],
       "Appointment scheduling": [
         "Afspraak Plannen"

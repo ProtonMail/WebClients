@@ -1238,6 +1238,9 @@
       ],
       "Remove my access": [
         "Poista käyttöoikeuteni"
+      ],
+      "Hide": [
+        "Piilota"
       ]
     },
     "Action: Docs": {
@@ -1317,6 +1320,9 @@
       ],
       "Users": [
         "Käyttäjät"
+      ],
+      "Writing assistant": [
+        "Kirjoitusavustaja"
       ]
     },
     "Alert": {
@@ -2768,6 +2774,9 @@
       ],
       "Åland Islands": [
         "Ahvenanmaa"
+      ],
+      "North Macedonia": [
+        "Pohjois-Makedonia"
       ]
     },
     "customer_support.feature.all": {
@@ -6696,6 +6705,9 @@
       ],
       "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
         "Et voi jakaa tiedostoa ”${ fileName }” sen jälkeen, kun käyttöoikeus on muutettu katselijaksi. Vain omistaja voi muuttaa käyttöoikeutesi uudelleen."
+      ],
+      "Some items failed": [
+        "Jotkin kohteet epäonnistuivat"
       ]
     },
     "info": {
@@ -10029,6 +10041,12 @@
       ],
       "ZIP code": [
         "Postinumero"
+      ],
+      "Enter a name": [
+        "Syötä nimi"
+      ],
+      "Select a provider": [
+        "Valitse tarjoaja"
       ]
     },
     "Placeholder for contact group name": {
@@ -12898,6 +12916,20 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Kokeilujaksosi päättyy ${ textDate }. Sinua ei veloiteta, jos peruutat tilauksesi ennen ${ textDate }. ${ action }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }
