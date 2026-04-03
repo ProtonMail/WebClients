@@ -51,7 +51,10 @@ const SharingSettingsModal = ({
     return (
         <>
             <ModalTwo as="form" size="large" onClose={onClose} onExit={onExit} open={open} fullscreenOnMobile>
-                <div className="modal-two-header flex items-center justify-space-between flex-nowrap border-bottom border-weak px-8 py-3 m-0 mb-5">
+                <div
+                    className="modal-two-header flex items-center justify-space-between flex-nowrap border-bottom border-weak px-8 py-3 m-0 mb-5"
+                    data-testid="modal-two-header"
+                >
                     <div className="flex items-center flex-nowrap gap-2">
                         <Button color="weak" shape="ghost" icon onClick={onClose}>
                             <IcArrowLeft />
