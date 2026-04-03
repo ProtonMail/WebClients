@@ -121,7 +121,10 @@ const PublicLinkSettingsModal = ({
                 onExit={onExit}
                 open={open}
             >
-                <div className="flex items-center justify-space-between border-bottom border-weak modal-two-header px-8 py-3 m-0 mb-5">
+                <div
+                    className="flex items-center justify-space-between border-bottom border-weak modal-two-header px-8 py-3 m-0 mb-5"
+                    data-testid="modal-two-header"
+                >
                     <div className="flex items-center flex-nowrap gap-2">
                         <Button color="weak" shape="ghost" icon onClick={onClose}>
                             <IcArrowLeft />
