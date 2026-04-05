@@ -43,8 +43,8 @@ export const rootCertificates: Map<KT_CERTIFICATE_ISSUER, string[]> = new Map([
  * See comment at the top of this file.
  */
 export const ctLogs ={
-  version: '85.6',
-  log_list_timestamp: '2026-03-05T12:53:02Z',
+  version: '85.36',
+  log_list_timestamp: '2026-04-05T13:35:18Z',
   operators: [
     {
       name: 'Google',
