@@ -1,10 +1,8 @@
-import { useState } from 'react';
-
 import { c } from 'ttag';
 
 import SignInWithGoogle from '@proton/activation/src/components/Modals/GmailSyncModal/SignInWithGoogle';
-import { Checkbox, type ModalProps, ModalTwo, ModalTwoHeader } from '@proton/components';
-import { MAIL_APP_NAME, PRODUCT_NAMES } from '@proton/shared/lib/constants';
+import { type ModalProps, ModalTwo, ModalTwoHeader } from '@proton/components';
+import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import byoeConnectGmail from '@proton/styles/assets/img/illustrations/byoe-connect-gmail.svg';
 import byoeForwarding from '@proton/styles/assets/img/illustrations/byoe-forwarding.svg';
 import byoeProfiling from '@proton/styles/assets/img/illustrations/byoe-profiling.svg';
@@ -13,19 +11,14 @@ import stopHandSign from '@proton/styles/assets/img/illustrations/stop-hand-sign
 import './AddBYOEModal.scss';
 
 interface Props extends Omit<ModalProps, 'onSubmit'> {
-    onSubmit: (importRecentEmails: boolean) => void;
+    onSubmit: () => void;
     submitDisabled?: boolean;
     isLoading: boolean;
-    source: 'signup' | 'existingUser';
     expectedEmailAddress?: string;
 }
 
-const AddBYOEModal = ({ onSubmit, submitDisabled, isLoading, source, expectedEmailAddress, ...rest }: Props) => {
+const AddBYOEModal = ({ onSubmit, submitDisabled, isLoading, expectedEmailAddress, ...rest }: Props) => {
     const { onClose } = rest;
-
-    // Do not show the import checkbox on signup or when user is converting a forwarding to a BYOE address
-    const showImportCheckbox = source === 'existingUser' && !expectedEmailAddress;
-    const [importRecentEmails, setImportRecentEmails] = useState(showImportCheckbox);
 
     return (
         <ModalTwo
@@ -46,37 +39,13 @@ const AddBYOEModal = ({ onSubmit, submitDisabled, isLoading, source, expectedEma
                         .t`We'll bring in your old emails and connect your Gmail to ${MAIL_APP_NAME} so new messages appear automatically`}</div>
                     <div className="flex flex-column items-center gap-4">
                         <SignInWithGoogle
-                            onClick={() => onSubmit(importRecentEmails)}
+                            onClick={() => onSubmit()}
                             loading={isLoading}
                             disabled={submitDisabled}
                             fullWidth
                             buttonText={c('loc_nightly: BYOE').t`Connect to Gmail`}
                         />
                     </div>
-
-                    {showImportCheckbox ? (
-                        <>
-                            <div className="border rounded-xl p-4">
-                                <Checkbox
-                                    checked={importRecentEmails}
-                                    onChange={(e) => setImportRecentEmails(e.target.checked)}
-                                    className="self-start"
-                                    data-testid="AddBYOEModal:importCheckbox"
-                                >
-                                    <span>{c('Label').t`Import recent mails`}</span>
-                                </Checkbox>
-                            </div>
-                            <div className="color-weak text-sm text-wrap-balance">
-                                {c('loc_nightly: BYOE')
-                                    .t`We import the last 180 days, you can import more mails later via ${PRODUCT_NAMES.EASY_SWITCH}`}
-                            </div>
-                        </>
-                    ) : (
-                        <div className="color-weak text-sm text-center text-wrap-balance">
-                            {c('loc_nightly: BYOE')
-                                .t`We will never use your data for profiling, advertising, or share it with third parties.`}
-                        </div>
-                    )}
                 </div>
                 <div className="lg:block modal-two-addbyoe-aside px-8 md:px-10 relative">
                     <p className="text-center">
