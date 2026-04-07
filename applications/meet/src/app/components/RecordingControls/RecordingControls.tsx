@@ -183,17 +183,16 @@ const RecordingControlsInternal = () => {
                     <Button
                         className={clsx(
                             isLargerThanMd ? 'px-5 py-4' : 'px-4 py-3',
-                            'stop-recording-button border-none shrink-0 min-w-custom'
+                            'stop-recording-button border-none shrink-0'
                         )}
                         pill={true}
                         size="large"
                         onClick={handleStopRecordingConfirmation}
                         aria-label={c('Alt').t`Stop recording and download.`}
-                        style={{ '--min-w-custom': '16.5rem' }}
                     >
                         <div className="w-full flex items-center justify-center gap-2 flex-nowrap whitespace-nowrap">
                             <IcMeetRecordStop className="shrink-0" size={6} />
-                            <span>{c('Action').t`Stop recording`}</span>
+                            {isLargerThanMd ? <span>{c('Action').t`Stop recording`}</span> : null}
                             <span
                                 className="inline-block text-center"
                                 style={{ minWidth: '3.5rem', fontVariantNumeric: 'tabular-nums' }}

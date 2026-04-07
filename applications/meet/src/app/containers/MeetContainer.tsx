@@ -53,7 +53,6 @@ interface MeetContainerProps {
     preparePictureInPicture: () => void;
     instantMeeting: boolean;
     assignHost: (participantUuid: string) => Promise<void>;
-    isRecordingInProgress: boolean;
     getKeychainIndexInformation: () => (number | undefined)[];
     expirationTime: number | null;
     isGuestAdmin: boolean;
@@ -87,7 +86,6 @@ export const MeetContainer = ({
     instantMeeting,
     assignHost,
     isGuestAdmin,
-    isRecordingInProgress,
     getKeychainIndexInformation,
     isUsingTurnRelay,
     liveKitConnectionState,
@@ -124,7 +122,6 @@ export const MeetContainer = ({
                 participantNameMap,
                 isScreenShare,
                 isLocalScreenShare,
-                isRecordingInProgress,
             })
         );
     }, [
@@ -143,7 +140,6 @@ export const MeetContainer = ({
         participantNameMap,
         isScreenShare,
         isLocalScreenShare,
-        isRecordingInProgress,
     ]);
 
     useEffect(() => {

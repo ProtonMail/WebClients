@@ -5,6 +5,9 @@ import type { LocalParticipant, RemoteParticipant } from 'livekit-client';
 import { RemoteTrackPublication, RoomEvent, Track } from 'livekit-client';
 
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
+import { useMeetDispatch } from '@proton/meet/store/hooks';
+import { addParticipantRecording, removeParticipantRecording } from '@proton/meet/store/slices/recordingStatusSlice';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { RecordingStatus } from '../../types';
 import { calculateGridLayout } from '../../utils/calculateGridLayout';
@@ -32,7 +35,10 @@ export function useMeetingRecorder(
     participantNameMap: Record<string, string>,
     pagedParticipants: (RemoteParticipant | LocalParticipant)[]
 ) {
+    const isMeetMultipleRecordingEnabled = useFlag('MeetMultipleRecording');
+
     const room = useRoomContext();
+    const dispatch = useMeetDispatch();
     const isLargerThanMd = useIsLargerThanMd();
     const { reportMeetError } = useMeetErrorReporting();
 
@@ -489,6 +495,9 @@ export function useMeetingRecorder(
                 isRecording: true,
                 recordedChunks: [],
             });
+            if (isMeetMultipleRecordingEnabled) {
+                dispatch(addParticipantRecording(room.localParticipant.identity));
+            }
 
             void publishRecordingStatus(RecordingStatus.Started);
         } catch (error) {
@@ -549,6 +558,10 @@ export function useMeetingRecorder(
                         isRecording: false,
                         recordedChunks: [],
                     });
+
+                    if (isMeetMultipleRecordingEnabled) {
+                        dispatch(removeParticipantRecording(room.localParticipant.identity));
+                    }
 
                     resolve(blob);
                 };
