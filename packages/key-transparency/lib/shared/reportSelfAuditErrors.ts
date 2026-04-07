@@ -6,7 +6,7 @@ import { sendMultipleTelemetryReports } from '@proton/shared/lib/helpers/metrics
 import type { Api, SimpleMap } from '@proton/shared/lib/interfaces';
 import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 
-import { ktSentryReport } from '../helpers/utils';
+import { KT_ERROR_TYPE, ktSentryReport } from '../helpers/utils';
 import { AddressAuditStatus, type SelfAuditResult } from '../interfaces';
 import { getWarningReason } from '../shared/telemetry';
 
@@ -45,7 +45,7 @@ export const reportSelfAuditErrors = ({
         failedLSAuditsOther.length ||
         tooManyRetries
     ) {
-        ktSentryReport('Self audit would display an error', {
+        ktSentryReport('Self audit would display an error', KT_ERROR_TYPE.LOCAL, {
             failedAddressAudits,
             failedLSAuditsOwn,
             failedLSAuditsOther,

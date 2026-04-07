@@ -21,7 +21,7 @@ import {
     updateSignedKeyListSignature,
     uploadVerifiedEpoch,
 } from '../../helpers/apiHelpers';
-import { KeyTransparencyError, throwKTError } from '../../helpers/utils';
+import { KeyTransparencyError, KT_ERROR_TYPE, throwKTError } from '../../helpers/utils';
 import type { AddressAuditResult, Epoch, VerifiedEpoch } from '../../interfaces';
 import { AddressAuditStatus, AddressAuditWarningReason } from '../../interfaces';
 import { saveSKLToLS } from '../../storage/saveSKLToLS';
@@ -166,7 +166,7 @@ const checkAndFixSKLInTheFuture = async (address: Address, primaryAddressKey: Pr
             return;
         }
     }
-    return throwKTError('Input SKL signature was not verified', { email: Email, inputSKL: SignedKeyList });
+    return throwKTError('Input SKL signature was not verified', KT_ERROR_TYPE.LOCAL, { email: Email, inputSKL: SignedKeyList });
 };
 
 /**
@@ -193,14 +193,14 @@ const checkAddressWithNoKeys = async ({
         return;
     }
     if (!inputSKL.ObsolescenceToken) {
-        return throwKTError('Expected an obsolescence token for an address without keys', {
+        return throwKTError('Expected an obsolescence token for an address without keys', KT_ERROR_TYPE.LOCAL, {
             inputSKL,
         });
     }
     // If MinEpochID is not set, the SKL is not yet included in KT.
     if (!inputSKL.MinEpochID) {
         if (!inputSKL.Revision || !inputSKL.ExpectedMinEpochID) {
-            return throwKTError('Expected an ExpectedMinEpochID and Revision', {
+            return throwKTError('Expected an ExpectedMinEpochID and Revision', KT_ERROR_TYPE.LOCAL, {
                 inputSKL,
             });
         }
@@ -258,10 +258,10 @@ const auditAddressImplementation = async ({
         };
     }
     if (!inputSKL.Revision) {
-        return throwKTError('Input SKL has no revision set', { email, inputSKL });
+        return throwKTError('Input SKL has no revision set', KT_ERROR_TYPE.LOCAL, { email, inputSKL });
     }
     if (!userKeys.length) {
-        return throwKTError('Account key list was empty', { email });
+        return throwKTError('Account key list was empty', KT_ERROR_TYPE.LOCAL, { email });
     }
     const userPrimaryKey = userKeys[0].privateKey;
     const userVerificationKeys = userKeys.map(({ publicKey }) => publicKey);
@@ -297,7 +297,7 @@ const auditAddressImplementation = async ({
     const minEpochIDs = newSKLs.map((skl) => skl.MinEpochID).filter((minEpochID) => minEpochID != null);
     const minEpochIDsIncrease = isMonotonicallyIncreasing(minEpochIDs, verifiedEpoch?.EpochID ?? 0);
     if (!minEpochIDsIncrease) {
-        return throwKTError('MinEpochIDs are not increasing', { email, minEpochIDs });
+        return throwKTError('MinEpochIDs are not increasing', KT_ERROR_TYPE.LOCAL, { email, minEpochIDs });
     }
 
     const sklCreationTimestamps = sklAudits
@@ -308,7 +308,7 @@ const auditAddressImplementation = async ({
         new Date(secondsToMilliseconds(verifiedEpoch?.SKLCreationTime ?? 0))
     );
     if (!sklCreationTimestampsIncrease) {
-        return throwKTError('SKL timestamps are not increasing', { email, sklCreationTimestamps });
+        return throwKTError('SKL timestamps are not increasing', KT_ERROR_TYPE.LOCAL, { email, sklCreationTimestamps });
     }
 
     const nextRevisionProof = proofs.find(({ revision }) => revision === lastIncludedRevision + 1)?.proof!;
@@ -318,7 +318,7 @@ const auditAddressImplementation = async ({
     let signatureWasInTheFuture = false;
     if (audit) {
         if (audit.signedKeyList?.Data !== inputSKL.Data) {
-            return throwKTError('Audited SKL doesnt match the input SKL', { email, inputSKL });
+            return throwKTError('Audited SKL doesnt match the input SKL', KT_ERROR_TYPE.LOCAL, { email, inputSKL });
         }
         if (audit.status !== SKLAuditStatus.ExistentVerified) {
             // only SKL with v4 keys were generated in the future
@@ -347,7 +347,7 @@ const auditAddressImplementation = async ({
         }
         const expectedMinEpochID = inputSKL.MinEpochID ?? inputSKL.ExpectedMinEpochID;
         if (!expectedMinEpochID) {
-            return throwKTError('Input SKL has not minEpochID or expectedMinEpochID', { email, inputSKL });
+            return throwKTError('Input SKL has not minEpochID or expectedMinEpochID', KT_ERROR_TYPE.LOCAL, { email, inputSKL });
         }
         await saveSKLToLS({
             ktUserContext,
