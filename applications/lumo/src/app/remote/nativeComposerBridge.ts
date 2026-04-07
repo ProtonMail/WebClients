@@ -61,6 +61,7 @@ export enum LumoFileType {
 export interface FeatureFlags {
     isImageGenEnabled: boolean;
     isModelSelectionEnabled: boolean;
+    isToolsEnabled: boolean;
 }
 
 export interface UserFlags {
@@ -139,6 +140,7 @@ class NativeComposerApi {
         featureFlags: {
             isImageGenEnabled: false,
             isModelSelectionEnabled: false,
+            isToolsEnabled: true,
         },
     };
 
@@ -405,6 +407,11 @@ class NativeComposerApi {
         this.updateState({ featureFlags: { ...this.state.featureFlags, isModelSelectionEnabled: enabled } });
     }
 
+    public setToolsEnabled(enabled: boolean): void {
+        console.log(`NativeComposerApi: Set tools enabled to ${enabled}`);
+        this.updateState({ featureFlags: { ...this.state.featureFlags, isToolsEnabled: enabled } });
+    }
+
     public setIsFreeUser(isFreeUser: boolean): void {
         console.log(`NativeComposerApi: Set isFreeUser`);
         this.updateState({ userFlags: { ...this.state.userFlags, isFreeUser: isFreeUser } });
@@ -524,6 +531,9 @@ try {
         setIsFreeUser: createNativeWrapper('setIsFreeUser'),
         setIsGuestUser: createNativeWrapper('setIsGuestUser'),
         previewFile: createNativeWrapper('previewFile'),
+
+        // Tools
+        setToolsEnabled: createNativeWrapper('setToolsEnabled'),
 
         // Error handling
         onComposerError: createNativeWrapper('onComposerError'),
