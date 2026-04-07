@@ -1,29 +1,15 @@
 import type { FC } from 'react';
-import { useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import Icon from '@proton/components/components/icon/Icon';
-import { useAutoUnlock } from '@proton/pass/hooks/auth/useAutoUnlock';
-import { useDesktopUnlock } from '@proton/pass/hooks/auth/useDesktopUnlock';
+import { useAutoDesktopUnlock } from '@proton/pass/hooks/auth/useDesktopUnlock';
 import { isMac } from '@proton/shared/lib/helpers/browser';
 import noop from '@proton/utils/noop';
 
 export const DesktopUnlock: FC = () => {
-    const [loading, setLoading] = useState(false);
-    const desktopUnlock = useDesktopUnlock();
-
-    const onUnlock = async () => {
-        try {
-            setLoading(true);
-            await desktopUnlock();
-        } finally {
-            setLoading(false);
-        }
-    };
-
-    useAutoUnlock({ loading, onUnlock });
+    const { loading, onUnlock } = useAutoDesktopUnlock();
 
     return (
         <Button
