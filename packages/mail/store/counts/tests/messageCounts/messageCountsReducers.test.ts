@@ -17,8 +17,8 @@ const makeState = (
 
 const makeMessage = (LabelIDs: string[], Unread = 1) => ({ ID: 'msg', Unread, LabelIDs }) as MessageMetadata;
 
-describe('messageCountsReducers', () => {
-    it('should decrement unread count when marking messages as read', () => {
+describe('markMessagesAsRead', () => {
+    it('decrements unread count for each label the message belongs to', () => {
         const state = makeState([
             { LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 2, Total: 2 },
             { LabelID: 'customLabel', Unread: 0, Total: 1 },
@@ -38,95 +38,107 @@ describe('messageCountsReducers', () => {
         ]);
     });
 
-    it('should not decrement the category unread count when marking messages as read and not in inbox', () => {
-        const state = makeState([
-            { LabelID: MAILBOX_LABEL_IDS.TRASH, Unread: 2, Total: 2 },
-            { LabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, Unread: 2, Total: 2 },
-        ]);
-        const messages = [
-            makeMessage([MAILBOX_LABEL_IDS.TRASH, MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS]),
-            makeMessage([MAILBOX_LABEL_IDS.TRASH, MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS]),
-        ];
+    describe('category label unread count', () => {
+        it('decrements when message is in Inbox', () => {
+            const state = makeState([
+                { LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 2, Total: 2 },
+                { LabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, Unread: 2, Total: 2 },
+            ]);
+            const messages = [
+                makeMessage([MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS]),
+                makeMessage([MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS]),
+            ];
 
-        markMessagesAsRead(state, {
-            type: 'mailbox/markMessagesAsRead',
-            payload: { messages, labelID: MAILBOX_LABEL_IDS.TRASH },
+            markMessagesAsRead(state, {
+                type: 'mailbox/markMessagesAsRead',
+                payload: { messages, labelID: MAILBOX_LABEL_IDS.INBOX },
+            });
+
+            expect(state.value).toEqual([
+                { LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 0, Total: 2 },
+                { LabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, Unread: 0, Total: 2 },
+            ]);
         });
 
-        expect(state.value).toEqual([
-            { LabelID: MAILBOX_LABEL_IDS.TRASH, Unread: 0, Total: 2 },
-            { LabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, Unread: 2, Total: 2 },
-        ]);
-    });
+        it('decrements when message is in Inbox and Starred', () => {
+            const state = makeState([
+                { LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 2, Total: 2 },
+                { LabelID: MAILBOX_LABEL_IDS.STARRED, Unread: 2, Total: 2 },
+                { LabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, Unread: 2, Total: 2 },
+            ]);
+            const messages = [
+                makeMessage([
+                    MAILBOX_LABEL_IDS.INBOX,
+                    MAILBOX_LABEL_IDS.STARRED,
+                    MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
+                ]),
+                makeMessage([
+                    MAILBOX_LABEL_IDS.INBOX,
+                    MAILBOX_LABEL_IDS.STARRED,
+                    MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
+                ]),
+            ];
 
-    it('should decrement the category unread count when marking messages as read', () => {
-        const state = makeState([
-            { LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 2, Total: 2 },
-            { LabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, Unread: 2, Total: 2 },
-        ]);
-        const messages = [
-            makeMessage([MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS]),
-            makeMessage([MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS]),
-        ];
+            markMessagesAsRead(state, {
+                type: 'mailbox/markMessagesAsRead',
+                payload: { messages, labelID: MAILBOX_LABEL_IDS.STARRED },
+            });
 
-        markMessagesAsRead(state, {
-            type: 'mailbox/markMessagesAsRead',
-            payload: { messages, labelID: MAILBOX_LABEL_IDS.INBOX },
+            expect(state.value).toEqual([
+                { LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 0, Total: 2 },
+                { LabelID: MAILBOX_LABEL_IDS.STARRED, Unread: 0, Total: 2 },
+                { LabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, Unread: 0, Total: 2 },
+            ]);
         });
 
-        expect(state.value).toEqual([
-            { LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 0, Total: 2 },
-            { LabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, Unread: 0, Total: 2 },
-        ]);
-    });
+        it('does not decrement when message is in Trash but not Inbox', () => {
+            const state = makeState([
+                { LabelID: MAILBOX_LABEL_IDS.TRASH, Unread: 2, Total: 2 },
+                { LabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, Unread: 2, Total: 2 },
+            ]);
+            const messages = [
+                makeMessage([MAILBOX_LABEL_IDS.TRASH, MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS]),
+                makeMessage([MAILBOX_LABEL_IDS.TRASH, MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS]),
+            ];
 
-    it('should decrement the category unread count when marking messages as read in inbox and star', () => {
-        const state = makeState([
-            { LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 2, Total: 2 },
-            { LabelID: MAILBOX_LABEL_IDS.STARRED, Unread: 2, Total: 2 },
-            { LabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, Unread: 2, Total: 2 },
-        ]);
-        const messages = [
-            makeMessage([MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.STARRED, MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS]),
-            makeMessage([MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.STARRED, MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS]),
-        ];
+            markMessagesAsRead(state, {
+                type: 'mailbox/markMessagesAsRead',
+                payload: { messages, labelID: MAILBOX_LABEL_IDS.TRASH },
+            });
 
-        markMessagesAsRead(state, {
-            type: 'mailbox/markMessagesAsRead',
-            payload: { messages, labelID: MAILBOX_LABEL_IDS.STARRED },
+            expect(state.value).toEqual([
+                { LabelID: MAILBOX_LABEL_IDS.TRASH, Unread: 0, Total: 2 },
+                { LabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, Unread: 2, Total: 2 },
+            ]);
         });
 
-        expect(state.value).toEqual([
-            { LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 0, Total: 2 },
-            { LabelID: MAILBOX_LABEL_IDS.STARRED, Unread: 0, Total: 2 },
-            { LabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, Unread: 0, Total: 2 },
-        ]);
-    });
+        it('does not decrement when message is in Starred but not Inbox', () => {
+            const state = makeState([
+                { LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 2, Total: 2 },
+                { LabelID: MAILBOX_LABEL_IDS.STARRED, Unread: 2, Total: 2 },
+                { LabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, Unread: 2, Total: 2 },
+            ]);
+            const messages = [
+                makeMessage([MAILBOX_LABEL_IDS.STARRED, MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS]),
+                makeMessage([MAILBOX_LABEL_IDS.STARRED, MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS]),
+            ];
 
-    it('should not decrement the category unread count when marking messages as read not in inbox and star', () => {
-        const state = makeState([
-            { LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 2, Total: 2 },
-            { LabelID: MAILBOX_LABEL_IDS.STARRED, Unread: 2, Total: 2 },
-            { LabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, Unread: 2, Total: 2 },
-        ]);
-        const messages = [
-            makeMessage([MAILBOX_LABEL_IDS.STARRED, MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS]),
-            makeMessage([MAILBOX_LABEL_IDS.STARRED, MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS]),
-        ];
+            markMessagesAsRead(state, {
+                type: 'mailbox/markMessagesAsRead',
+                payload: { messages, labelID: MAILBOX_LABEL_IDS.STARRED },
+            });
 
-        markMessagesAsRead(state, {
-            type: 'mailbox/markMessagesAsRead',
-            payload: { messages, labelID: MAILBOX_LABEL_IDS.STARRED },
+            expect(state.value).toEqual([
+                { LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 2, Total: 2 },
+                { LabelID: MAILBOX_LABEL_IDS.STARRED, Unread: 0, Total: 2 },
+                { LabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, Unread: 2, Total: 2 },
+            ]);
         });
-
-        expect(state.value).toEqual([
-            { LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 2, Total: 2 },
-            { LabelID: MAILBOX_LABEL_IDS.STARRED, Unread: 0, Total: 2 },
-            { LabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, Unread: 2, Total: 2 },
-        ]);
     });
+});
 
-    it('should increment unread count when marking messages as unread', () => {
+describe('markMessagesAsUnread', () => {
+    it('increments unread count for each label the message belongs to', () => {
         const state = makeState([
             { LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 2, Total: 2 },
             { LabelID: 'customLabel', Unread: 0, Total: 1 },
