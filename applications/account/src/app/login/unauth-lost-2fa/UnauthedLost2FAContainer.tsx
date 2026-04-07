@@ -66,7 +66,7 @@ export const UnauthedLost2FAContainer = ({
 }: Props) => {
     return (
         <UnauthedLost2FAContext.Provider
-            logic={unauthedLost2FAStateMachine.provide({})}
+            logic={unauthedLost2FAStateMachine}
             options={{
                 input: {
                     recoveryMethods,

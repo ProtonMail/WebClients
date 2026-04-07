@@ -6,10 +6,11 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Tabs } from '@proton/components';
 import type { AuthTypes } from '@proton/components/containers/login/interface';
 import type { Fido2Data, Fido2Response } from '@proton/shared/lib/authentication/interface';
+import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
 import Fido2Form from './Fido2Form';
-import LoginTOTPForm from './LoginTOTPForm';
+import LoginTOTPForm, { LoginTOTPFormWithRecoveryCodeInputForm } from './LoginTOTPForm';
 
 interface Props {
     onSubmit: (data: { type: 'code'; payload: string } | { type: 'fido2'; payload: Fido2Data }) => Promise<void>;
@@ -20,6 +21,8 @@ interface Props {
 
 const TwoFactorStep = ({ onSubmit, fido2, authTypes, onLost2FAClick }: Props) => {
     const [tabIndex, setTabIndex] = useState(0);
+    const unauthLost2FAEnabled = useFlag('UnauthLost2FA');
+
     return (
         <>
             <Tabs
@@ -36,9 +39,11 @@ const TwoFactorStep = ({ onSubmit, fido2, authTypes, onLost2FAClick }: Props) =>
                                         onSubmit={(payload) => onSubmit({ type: 'fido2', payload })}
                                         fido2={fido2}
                                     />
-                                    <Button size="large" onClick={onLost2FAClick} fullWidth className="mt-2">
-                                        {c('Action').t`I don’t have my key`}
-                                    </Button>
+                                    {unauthLost2FAEnabled ? (
+                                        <Button size="large" onClick={onLost2FAClick} fullWidth className="mt-2">
+                                            {c('Action').t`I don't have my key`}
+                                        </Button>
+                                    ) : null}
                                 </>
                             ),
                         },
@@ -46,10 +51,18 @@ const TwoFactorStep = ({ onSubmit, fido2, authTypes, onLost2FAClick }: Props) =>
                         title: c('Label').t`Authenticator app`,
                         content: (
                             <>
-                                <LoginTOTPForm onSubmit={(payload) => onSubmit({ type: 'code', payload })} />
-                                <Button size="large" onClick={onLost2FAClick} fullWidth className="mt-2">
-                                    {c('Action').t`I don’t have my 2FA device`}
-                                </Button>
+                                {unauthLost2FAEnabled ? (
+                                    <>
+                                        <LoginTOTPForm onSubmit={(payload) => onSubmit({ type: 'code', payload })} />
+                                        <Button size="large" onClick={onLost2FAClick} fullWidth className="mt-2">
+                                            {c('Action').t`I don't have my 2FA device`}
+                                        </Button>
+                                    </>
+                                ) : (
+                                    <LoginTOTPFormWithRecoveryCodeInputForm
+                                        onSubmit={(payload) => onSubmit({ type: 'code', payload })}
+                                    />
+                                )}
                             </>
                         ),
                     },
