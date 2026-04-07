@@ -5079,14 +5079,6 @@
         "90 นาที"
       ]
     },
-    "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "ในการส่งต่ออีเมลจากบัญชีสูงสุด ${ MAX_SYNC_PAID_USER } บัญชี ให้อัปเกรดเป็น ${ planName }"
-      ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "คุณกำลังส่งต่ออีเมลจากบัญชีภายนอก ${ MAX_SYNC_FREE_USER } บัญชีไปยัง ${ MAIL_APP_NAME }"
-      ]
-    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "ช่องข้อความเป็นข้อมูลทางเลือก ข้อมูลที่ระบุในแบบฟอร์มนี้จะปรากฏบนใบแจ้งค่าชำระบริการที่ออกในอนาคตเท่านั้น และจะไม่ส่งผลต่อใบแจ้งค่าชำระบริการที่มีอยู่"
@@ -10918,9 +10910,6 @@
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "ใช้เซิร์ฟเวอร์ที่ดีที่สุดตามภาระงานและตำแหน่งปัจจุบัน: ${ formattedBestServerName }"
-      ],
-      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "ใช้ประเภทของที่อยู่อีเมลและนามแฝงต่างๆ ที่นำเสนอโดย ${ BRAND_NAME }"
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "ใช้ข้อมูลยืนยันตัวตนต่อไปนี้เมื่อเชื่อมต่อกับเซิร์ฟเวอร์ ${ VPN_APP_NAME } โดยไม่ใช้แอปพลิเคชั่น ตัวอย่างกรณีการใช้งาน ได้แก่ Tunnelblick บน macOS, OpenVPN บน GNU/Linux"
@@ -21337,9 +21326,6 @@
       ],
       "Connect apps and devices": [
         "เชื่อมต่อแอปและอุปกรณ์"
-      ],
-      "Connect more addresses": [
-        "เชื่อมต่อที่อยู่เพิ่มเติม"
       ],
       "Connect organization": [
         "เชื่อมต่อองค์กร"
