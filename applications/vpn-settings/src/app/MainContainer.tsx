@@ -54,7 +54,6 @@ import {
     SessionsSection,
     SubscriptionModalProvider,
     SubscriptionsSection,
-    TVContainer,
     ThemesSection,
     ThirdPartySection,
     TopBanners,
@@ -95,6 +94,7 @@ import { APPS, VPN_TV_PATHS } from '@proton/shared/lib/constants';
 import { localeCode } from '@proton/shared/lib/i18n';
 import { locales } from '@proton/shared/lib/i18n/locales';
 import { useFlag } from '@proton/unleash/useFlag';
+import { TVContainer } from '@proton/vpn/components/tv';
 
 import { VPNSidebar } from './VPNSidebar';
 import { getRoutes } from './routes';
