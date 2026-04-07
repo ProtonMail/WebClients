@@ -2,7 +2,7 @@
 
 .pass-quickactions {
 	&--badge {
-		inline-size: rem(16);
+		margin-block-start: rem(-2);
 		background-color: var(--interaction-norm) !important;
 	}
 }
