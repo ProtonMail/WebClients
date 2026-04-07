@@ -26,20 +26,6 @@ export const useNativeComposerFileApi = (
         setNativeTsAndCsVisibility(!hasAttachments);
     }, [hasAttachments]);
 
-    // useEffect(() => {
-    //     const unsubscribePreviewFile = onNativePreviewFile((event) => {
-    //         const { attachmentId } = event.detail;
-    //         const file = allRelevantAttachments.find((attachment: Attachment) => attachment.id === attachmentId);
-    //         if (file) {
-    //             setFileToView(file);
-    //         }
-    //         console.log('Received native preview file event');
-    //     });
-    //     return () => {
-    //         unsubscribePreviewFile();
-    //     };
-    // }, [allRelevantAttachments, setFileToView]);
-
     const handleFilesFromNativeRef = useRef<((files: { base64: string; name: string }[]) => void) | null>(null);
     const handleBrowseDriveRef = useRef<(() => void) | null>(null);
     const handleDeleteAttachmentRef = useRef<((attachmentId: string) => void) | null>(null);
