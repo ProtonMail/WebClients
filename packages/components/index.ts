@@ -812,6 +812,7 @@ export { default as useIsInboxElectronApp } from './hooks/useIsInboxElectronApp'
 export { default as useIsMnemonicAvailable } from './hooks/useIsMnemonicAvailable';
 export { default as useKeyPress } from './hooks/useKeyPress';
 export { default as useLocalState } from './hooks/useLocalState';
+export { useDeclarativeLocalState } from './hooks/useDeclarativeLocalState';
 export { default as useModals } from './hooks/useModals';
 export { default as useMyCountry } from './hooks/useMyCountry';
 export { default as useNewFeatureOnboarding } from './hooks/useNewFeatureOnboarding';

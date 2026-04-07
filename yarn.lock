@@ -10942,7 +10942,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/nav@workspace:packages/nav":
+"@proton/nav@workspace:^, @proton/nav@workspace:packages/nav":
   version: 0.0.0-use.local
   resolution: "@proton/nav@workspace:packages/nav"
   dependencies:
@@ -11495,14 +11495,18 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/vpn@workspace:packages/vpn"
   dependencies:
+    "@proton/atoms": "workspace:^"
     "@proton/colors": "workspace:^"
     "@proton/components": "workspace:^"
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/hooks": "workspace:^"
     "@proton/icons": "workspace:^"
+    "@proton/nav": "workspace:^"
+    "@proton/payments": "workspace:^"
     "@proton/react-polymorphic-types": "workspace:^"
     "@proton/shared": "workspace:^"
     "@proton/testing": "workspace:^"
+    "@proton/unleash": "workspace:^"
     "@proton/utils": "workspace:^"
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@testing-library/react": "npm:^15.0.7"
@@ -42120,6 +42124,7 @@ __metadata:
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/hooks": "workspace:^"
     "@proton/i18n": "workspace:^"
+    "@proton/jest-env": "workspace:^"
     "@proton/metrics": "workspace:^"
     "@proton/pack": "workspace:^"
     "@proton/polyfill": "workspace:^"
@@ -42128,13 +42133,19 @@ __metadata:
     "@proton/redux-shared-store-types": "workspace:^"
     "@proton/shared": "workspace:^"
     "@proton/styles": "workspace:^"
+    "@proton/testing": "workspace:^"
     "@proton/utils": "workspace:^"
     "@proton/vpn": "workspace:^"
+    "@testing-library/jest-dom": "npm:^6.9.1"
+    "@testing-library/react": "npm:^15.0.7"
+    "@testing-library/user-event": "npm:^14.6.1"
     "@types/react": "npm:^18.3.28"
     "@types/react-dom": "npm:^18.3.7"
     "@types/react-router-dom": "npm:^5.3.3"
     cross-env: "npm:^10.1.0"
     eslint: "npm:^9.39.4"
+    jest: "npm:^30.3.0"
+    jest-junit: "npm:^16.0.0"
     lodash: "npm:^4.18.1"
     prettier: "npm:^3.8.1"
     proton-account: "workspace:^"
