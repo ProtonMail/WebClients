@@ -35,6 +35,12 @@ export const clearOAuthSession = (sessionId: string) => {
     syncOAuthProcessGlobal();
 };
 
+const oauthWindowIds = new Set<number>();
+
+export const registerOAuthWindow = (id: number) => oauthWindowIds.add(id);
+export const unregisterOAuthWindow = (id: number) => oauthWindowIds.delete(id);
+export const isOAuthWindow = (id: number) => oauthWindowIds.has(id);
+
 export const isDynamicOAuthURL = (url: string): boolean => {
     if (sessions.size === 0) return false;
     try {
