@@ -301,6 +301,9 @@
       "Continue import": [
         "Continuar la importación"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Ir a ${ planOrAppName }"
+      ],
       "Continue with categories": [
         "Continuar con categorías"
       ],
@@ -1760,6 +1763,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } licencia de ${ LUMO_APP_NAME }",
         "${ seats } licencias de ${ LUMO_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } licencia de ${ MEET_APP_NAME }",
+        "${ seats } licencias de ${ MEET_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } licencia del asistente de escritura",
@@ -4169,6 +4176,9 @@
       "We didn't find any known trackers and tracking URLs in this email.": [
         "No hemos encontrado ningún rastreador o URL de rastreo conocidos en este correo."
       ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Lamentamos que te vayas. Si tienes un momento, te agradeceríamos mucho que nos contaras por qué quieres cancelar. Tus comentarios nos ayudan a mejorar ${ BRAND_NAME } para todo el mundo."
+      ],
       "When do you want your message to be sent?": [
         "¿Cuándo quieres que se envíe tu mensaje?"
       ],
@@ -4334,13 +4344,11 @@
       ]
     },
     "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "Para reenviar correos electrónicos de hasta ${ MAX_SYNC_PAID_USER } cuenta, mejora a ${ planName }.",
-        "Para reenviar correos electrónicos de hasta ${ MAX_SYNC_PAID_USER } cuentas, mejora a ${ planName }."
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
+        "Para reenviar correos de hasta ${ MAX_SYNC_PAID_USER } cuentas, pásate a ${ planName }."
       ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "Estás reenviando correos electrónicos desde ${ MAX_SYNC_FREE_USER } cuenta externa a ${ MAIL_APP_NAME }.",
-        "Estás reenviando correos electrónicos desde ${ MAX_SYNC_FREE_USER } cuentas externas a ${ MAIL_APP_NAME }."
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "Estás reenviando correos desde una cuenta externa a ${ MAIL_APP_NAME }."
       ]
     },
     "Edit billing address form note": {
@@ -6339,11 +6347,11 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "Importación avanzada"
-      ],
       "Import from ${ providerName }": [
         "Importar desde ${ providerName }"
+      ],
+      "More import options": [
+        "Más opciones de importación"
       ]
     },
     "Import warning": {
@@ -6493,6 +6501,12 @@
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } también puede proteger tu negocio."
+      ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } es una solución de videoconferencia cifrada de extremo a extremo. Añádelo a tu plan para organizar reuniones seguras."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Plazas de ${ MEET_APP_NAME }"
       ],
       "${ n } unread conversation": [
         "${ n } conversación sin leer",
@@ -7223,6 +7237,9 @@
       "Everything in ${ planOrAppName }": [
         "Todo en ${ planOrAppName }"
       ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Todo lo incluido en ${ planOrAppName }, y además:"
+      ],
       "Expand selection": [
         "Expandir la selección"
       ],
@@ -7258,6 +7275,9 @@
       ],
       "Folder": [
         "Carpeta"
+      ],
+      "for ${ price }": [
+        "por ${ price }"
       ],
       "For additional information and to remove restrictions, please login at ${ mailLink }.": [
         "Para obtener información adicional y eliminar restricciones, inicia sesión en ${ mailLink }."
@@ -7419,8 +7439,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar una imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -7514,6 +7533,9 @@
       ],
       "Low Priority": [
         "Prioridad baja"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Establecer ${ MAIL_APP_NAME } como aplicación de correo predeterminada"
       ],
       "Manage your folders": [
         "Administra tus carpetas"
@@ -9183,6 +9205,9 @@
       "Add to group": [
         "Añadir al grupo"
       ],
+      "Additional comments": [
+        "Comentarios adicionales"
+      ],
       "Address": [
         "Dirección"
       ],
@@ -9326,6 +9351,9 @@
       ],
       "Contacts": [
         "Contactos"
+      ],
+      "Continue cancelling": [
+        "Continuar cancelando"
       ],
       "Copy": [
         "Copiar"
@@ -9564,6 +9592,9 @@
       "Main": [
         "Principal"
       ],
+      "Main reason for cancelling": [
+        "Motivo principal de la cancelación"
+      ],
       "Manage categories": [
         "Administrar categorías"
       ],
@@ -9759,11 +9790,17 @@
       "Sender": [
         "Remitente"
       ],
+      "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
+        "Comparte tu disponibilidad con las páginas de reserva de ${ CALENDAR_APP_NAME } y organiza reuniones seguras con ${ MEET_APP_NAME }."
+      ],
       "Sign emails": [
         "Firmar correos electrónicos"
       ],
       "Size:": [
         "Tamaño:"
+      ],
+      "Skip feedback": [
+        "Omitir comentarios"
       ],
       "Social": [
         "Redes Sociales"
@@ -10377,6 +10414,18 @@
         "Enviar a la papelera"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "Licencia de ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Plazas de ${ MEET_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } licencia de ${ MEET_APP_NAME }",
+        "${ seats } licencias de ${ MEET_APP_NAME }"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: videollamadas privadas para lo que de verdad importa"
@@ -10410,6 +10459,9 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Pantalla compartida con cifrado de extremo a extremo y chat efímero en la llamada"
       ],
+      "Hosts can record meetings locally on their computers": [
+        "Los anfitriones pueden grabar reuniones localmente en sus ordenadores"
+      ],
       "Meeting recording": [
         "Grabación de la reunión"
       ],
@@ -10429,6 +10481,19 @@
       "Up to ${ n } participant": [
         "Hasta ${ n } participante",
         "Hasta ${ n } participantes"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videollamadas, ${ n } participante",
+        "Videollamadas, ${ n } participantes"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } licencia incluida",
+        "${ seats } licencias incluidas"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Puedes tener hasta ${ TRIAL_MAX_MEET_SEATS } licencias de ${ MEET_SHORT_APP_NAME } durante el período de prueba."
       ]
     },
     "Message": {
@@ -10880,6 +10945,9 @@
       "Data breach monitoring": [
         "Monitoreo de vulneración de datos"
       ],
+      "Data retention policies": [
+        "Políticas de retención de datos"
+      ],
       "Dedicated servers optimized for streaming": [
         "Servidores dedicados optimizados para streaming"
       ],
@@ -10988,6 +11056,9 @@
       ],
       "Priority support & live chat": [
         "Soporte prioritario y chat en vivo"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Chat de IA privado (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "Copia de seguridad de fotos privada"
@@ -11134,6 +11205,9 @@
       "Vault sharing with up to ${ n } person": [
         "Compartir la caja fuerte con hasta ${ n } persona",
         "Compartir la caja fuerte con hasta ${ n } personas"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN con bloqueador de publicidad y protección contra malware"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la red oscura para verificar si tus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarte de inmediato si encontramos algo."
@@ -11752,29 +11826,29 @@
       ]
     },
     "Onboarding List Placeholder": {
-      "Choose your service": [
-        "Elige tu servicio"
+      "Bring your emails into ${ MAIL_APP_NAME }": [
+        "Trae tus correos electrónicos a ${ MAIL_APP_NAME }"
+      ],
+      "Bring your existing email into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Trae tus correos actuales a ${ MAIL_APP_NAME } para gestionarlo todo desde una única bandeja de entrada privada."
+      ],
+      "Choose a provider": [
+        "Elige un proveedor"
       ],
       "Maybe later": [
         "Quizá más tarde"
       ],
-      "Popular services": [
-        "Servicios populares"
+      "Protect your accounts": [
+        "Protege tus cuentas"
       ],
       "Skip for now": [
         "Omitir por ahora"
       ],
-      "Switch your accounts to ${ BRAND_NAME }": [
-        "Cambia tus cuentas a ${ BRAND_NAME }"
+      "Some popular services": [
+        "Algunos servicios populares"
       ],
-      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
-        "Cambiar de correo es difícil. ${ BRAND_NAME } te lo pone fácil. Conecta tu cuenta antigua y gestiónalo todo en un único espacio de trabajo centrado y sin anuncios."
-      ],
-      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
-        "Actualiza tu correo electrónico en los servicios que más utilizas. Evita el rastreo y protege tu privacidad."
-      ],
-      "Welcome to ${ MAIL_APP_NAME }": [
-        "Te damos la bienvenida a ${ MAIL_APP_NAME }"
+      "Switch the services you use every day to your ${ BRAND_NAME } address for better security and privacy.": [
+        "Cambia los servicios que usas a diario a tu dirección de ${ BRAND_NAME } para mayor seguridad y privacidad."
       ]
     },
     "Onboarding modal": {
@@ -11993,6 +12067,12 @@
       ],
       "No parent folder": [
         "No hay carpeta superior."
+      ],
+      "Remind me later": [
+        "Recordármelo más tarde"
+      ],
+      "Yes, don't show again": [
+        "Sí, no volver a mostrar"
       ]
     },
     "Option group": {
@@ -12424,6 +12504,9 @@
       "Anderson": [
         "García"
       ],
+      "Anything you'd like us to know": [
+        "¿Algo más que quieras decirnos?"
+      ],
       "Anytown": [
         "Valclaro"
       ],
@@ -12444,6 +12527,9 @@
       ],
       "End date": [
         "Fecha de fin"
+      ],
+      "Enter a name": [
+        "Introduce un nombre"
       ],
       "Enter passphrase": [
         "Introducir la frase de contraseña"
@@ -12540,6 +12626,9 @@
       ],
       "Select": [
         "Seleccionar"
+      ],
+      "Select a provider": [
+        "Selecciona un Proveedor"
       ],
       "Select a reason": [
         "Selecciona un motivo"
@@ -12695,6 +12784,26 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Correo oficial de ${ BRAND_NAME }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Otro"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {
@@ -14911,9 +15020,6 @@
       "Connect apps and devices": [
         "Conectar aplicaciones y dispositivos"
       ],
-      "Connect more addresses": [
-        "Conectar más direcciones"
-      ],
       "Connect to video conferencing": [
         "Conéctate a la videoconferencia"
       ],
@@ -15213,6 +15319,9 @@
       ],
       "Invalid verification code": [
         "Código de verificación no válido"
+      ],
+      "Keep this banner hidden?": [
+        "¿Mantener oculto este banner?"
       ],
       "Label as": [
         "Etiquetar como"

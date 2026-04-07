@@ -4279,16 +4279,6 @@
         "გააზიარეთ თქვენი სატარიფო გეგმის უპირატესობები ${ BRAND_NAME } Duo-ისთან ერთად"
       ]
     },
-    "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "ელფოსტების გადასაგზავნად ${ MAX_SYNC_PAID_USER }-მდე ანგარიშიდან, ასწიეთ სატარიფო გეგმა ${ planName }-ზე.",
-        "ელფოსტების გადასაგზავნად ${ MAX_SYNC_PAID_USER }-მდე ანგარიშიდან, ასწიეთ სატარიფო გეგმა ${ planName }-ზე."
-      ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "თქვენ აგზავნით ელფოსტებს ${ MAX_SYNC_FREE_USER } გარე ანგარიშიდან ${ MAIL_APP_NAME }-ზე.",
-        "თქვენ აგზავნით ელფოსტებს ${ MAX_SYNC_FREE_USER } გარე ანგარიშიდან ${ MAIL_APP_NAME }-ზე."
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } გაუქმდა."
@@ -5770,6 +5760,9 @@
       "Discover privacy features": [
         "აღმოაჩინეთ კონფიდენციალობის ფუნქციები"
       ],
+      "Download apps": [
+        "გადმოწერეთ აპები"
+      ],
       "Encryption so strong, only you and intended recipients can view your emails.": [
         "დაშიფვრა, რომელიც ისეთი ძლიერია, რომ თქვენი ელფოსტების გახსნა, მხოლოდ, მისთვის განკუთვნილ მიმღებებს შეუძლიათ."
       ],
@@ -5778,6 +5771,9 @@
       ],
       "For your eyes only": [
         "მხოლოდ, თქვენს დასანახად"
+      ],
+      "Get storage bonus": [
+        "მიიღეთ საცავის ბონუსი"
       ],
       "Get the ${ MAIL_APP_NAME } mobile app": [
         "გადმოწერეთ ${ MAIL_APP_NAME }-ის მობილური აპლიკაცია"
@@ -6238,8 +6234,8 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "გაფართოებული შემოტანა"
+      "More import options": [
+        "მეტი შემოტანის პარამეტრები"
       ]
     },
     "Import warning": {
@@ -7113,6 +7109,9 @@
       "Folder": [
         "საქაღალდე"
       ],
+      "for ${ price }": [
+        "${ price }-ისთვის"
+      ],
       "For additional information and to remove restrictions, please login at ${ mailLink }.": [
         "დამატებითი ინფორმაციისთვის და შეზღუდვების მოსაცილებლად შედით ბმულზე ${ mailLink }."
       ],
@@ -7267,8 +7266,7 @@
         "ინიციალიზაცია…"
       ],
       "Insert image": [
-        "გამოსახულების ჩასმა",
-        "გამოსახულებების ჩასმა"
+        "გამოსახულების ჩასმა"
       ],
       "Insert link": [
         "ბმულის ჩასმა"
@@ -8957,6 +8955,9 @@
       "Add to group": [
         "ჯგუფში ჩამატება"
       ],
+      "Additional comments": [
+        "დამატებითი კომენტარები"
+      ],
       "Address": [
         "მისამართი"
       ],
@@ -9100,6 +9101,9 @@
       ],
       "Contacts": [
         "კონტაქტები"
+      ],
+      "Continue cancelling": [
+        "გაუქმების გაგრძელება"
       ],
       "Copy": [
         "კოპირება"
@@ -9535,6 +9539,9 @@
       ],
       "Size:": [
         "ზომა:"
+      ],
+      "Skip feedback": [
+        "უკუკავშირის გამოტოვება"
       ],
       "Social": [
         "სოციალური"
@@ -11511,8 +11518,14 @@
       ]
     },
     "Onboarding List Placeholder": {
+      "Choose a provider": [
+        "აირჩიეთ პროვაიდერი"
+      ],
       "Maybe later": [
         "შესაძლოა მოგვიანებით"
+      ],
+      "Skip for now": [
+        "ჯეჯერობით გამოტოვება"
       ]
     },
     "Onboarding modal": {
@@ -11731,6 +11744,9 @@
       ],
       "No parent folder": [
         "მშობელი საქაღალდის გარეშე"
+      ],
+      "Remind me later": [
+        "შემახსენე მოგვიანებით"
       ]
     },
     "Option group": {
@@ -12125,6 +12141,9 @@
       "End date": [
         "დასრულების თარიღი"
       ],
+      "Enter a name": [
+        "შეიყვანეთ სახელი"
+      ],
       "Enter passphrase": [
         "შეიყვანეთ საკვანძო ფრაზა"
       ],
@@ -12220,6 +12239,9 @@
       ],
       "Select": [
         "აირჩიეთ"
+      ],
+      "Select a provider": [
+        "აირჩიეთ პროვაიდერი"
       ],
       "Select a reason": [
         "აირჩიეთ მიზეზი"
@@ -12364,6 +12386,26 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "ოფიციალური ელფოსტა ${ BRAND_NAME }-სგან"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "სხვა"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Received email icon": {
@@ -14446,9 +14488,6 @@
       ],
       "Connect apps and devices": [
         "აპებისა და მოწყობილობების დაკავშირება"
-      ],
-      "Connect more addresses": [
-        "მეტი მისამართის დაკავშირება"
       ],
       "Connect to video conferencing": [
         "დაკავსირება ვიდეოკონფერენციასთან"

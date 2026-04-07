@@ -4401,17 +4401,11 @@
       ]
     },
     "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "Na preposielanie emailov z ${ MAX_SYNC_PAID_USER } účtu prejdite na ${ planName }.",
-        "Na preposielanie emailov až z ${ MAX_SYNC_PAID_USER } účtov prejdite na ${ planName }.",
-        "Na preposielanie emailov až z ${ MAX_SYNC_PAID_USER } účtov prejdite na ${ planName }.",
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
         "Na preposielanie emailov až z ${ MAX_SYNC_PAID_USER } účtov prejdite na ${ planName }."
       ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "Preposielate emaily z ${ MAX_SYNC_FREE_USER } externého účtu do ${ MAIL_APP_NAME }.",
-        "Preposielate emaily z ${ MAX_SYNC_FREE_USER } externých účtov do ${ MAIL_APP_NAME }.",
-        "Preposielate emaily z ${ MAX_SYNC_FREE_USER } externých účtov do ${ MAIL_APP_NAME }.",
-        "Preposielate emaily z ${ MAX_SYNC_FREE_USER } externých účtov do ${ MAIL_APP_NAME }."
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "Preposielate emaily z jedného externého účtu do ${ MAIL_APP_NAME }."
       ]
     },
     "Edit billing address form note": {
@@ -6480,11 +6474,11 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "Pokročilý import"
-      ],
       "Import from ${ providerName }": [
         "Importovať z ${ providerName }"
+      ],
+      "More import options": [
+        "Ďalšie možnosti importu"
       ]
     },
     "Import warning": {
@@ -7706,10 +7700,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -12251,29 +12242,29 @@
       ]
     },
     "Onboarding List Placeholder": {
-      "Choose your service": [
-        "Vyberte svoju službu"
+      "Bring your emails into ${ MAIL_APP_NAME }": [
+        "Prineste svoje emaily do ${ MAIL_APP_NAME }"
+      ],
+      "Bring your existing email into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Prineste svoj existujúci email do aplikácie ${ MAIL_APP_NAME }, aby ste mohli všetko spravovať z jednej súkromnej schránky."
+      ],
+      "Choose a provider": [
+        "Vyberte poskytovateľa"
       ],
       "Maybe later": [
         "Možno neskôr"
       ],
-      "Popular services": [
-        "Populárne služby"
+      "Protect your accounts": [
+        "Chráňte svoje účty"
       ],
       "Skip for now": [
         "Zatiaľ preskočiť"
       ],
-      "Switch your accounts to ${ BRAND_NAME }": [
-        "Prejdite so svojimi účtami na ${ BRAND_NAME }"
+      "Some popular services": [
+        "Niektoré obľúbené služby"
       ],
-      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
-        "Prechod na nový email je náročný. S ${ BRAND_NAME } je to jednoduché. Pripojte si svoj starý účet a spravujte všetko na jednom prehľadnom pracovnom prostredí bez reklám."
-      ],
-      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
-        "Aktualizujte si emailové adresy v službách, ktoré najčastejšie používate. Zabráňte sledovaniu a chráňte svoje súkromie."
-      ],
-      "Welcome to ${ MAIL_APP_NAME }": [
-        "Vitajte v ${ MAIL_APP_NAME }"
+      "Switch the services you use every day to your ${ BRAND_NAME } address for better security and privacy.": [
+        "Pre lepšiu bezpečnosť a ochranu súkromia prejdite pri službách, ktoré používate každý deň, na adresu ${ BRAND_NAME }."
       ]
     },
     "Onboarding modal": {
@@ -15532,9 +15523,6 @@
       ],
       "Connect apps and devices": [
         "Pripojenie aplikácií a zariadení"
-      ],
-      "Connect more addresses": [
-        "Pripojiť viac adries"
       ],
       "Connect to video conferencing": [
         "Pripojiť sa k videokonferencii"

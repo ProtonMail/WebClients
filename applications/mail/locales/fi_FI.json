@@ -663,6 +663,9 @@
       "Help and resources": [
         "Tuki ja resurssit"
       ],
+      "Hide": [
+        "Piilota"
+      ],
       "Hide ${ BRAND_NAME } Scribe writing assistant": [
         "Piilota ${ BRAND_NAME } Scribe kirjoitusavustaja"
       ],
@@ -1762,6 +1765,9 @@
       ],
       "Users": [
         "Käyttäjät"
+      ],
+      "Writing assistant": [
+        "Kirjoitusavustaja"
       ]
     },
     "Alert": {
@@ -3515,6 +3521,9 @@
       "North Korea": [
         "Pohjois-Korea"
       ],
+      "North Macedonia": [
+        "Pohjois-Makedonia"
+      ],
       "Northern Mariana Islands": [
         "Pohjois-Mariaanit"
       ],
@@ -4220,16 +4229,6 @@
       ],
       "Share your plan benefits with ${ BRAND_NAME } Duo": [
         "Jaa tilausetusi ${ BRAND_NAME } Duon kanssa"
-      ]
-    },
-    "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "Välittääksesi sähköposteja ${ MAX_SYNC_PAID_USER } tililtä, päivitä tilauksesi tasolle ${ planName }.",
-        "Välittääksesi sähköposteja jopa ${ MAX_SYNC_PAID_USER } tililtä, päivitä tilauksesi tasolle ${ planName }."
-      ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "Välität sähköposteja ${ MAX_SYNC_FREE_USER } ulkoiselta tililtä ${ MAIL_APP_NAME }iin.",
-        "Välität sähköposteja ${ MAX_SYNC_FREE_USER } ulkoiselta tililtä ${ MAIL_APP_NAME }iin."
       ]
     },
     "Email body for invitation": {
@@ -6208,9 +6207,6 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "Edistynyt tuonti"
-      ],
       "Import from ${ providerName }": [
         "Tuo palvelusta ${ providerName }"
       ]
@@ -7279,8 +7275,7 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva",
-        "Lisää kuvia"
+        "Lisää kuva"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -11528,29 +11523,14 @@
       ]
     },
     "Onboarding List Placeholder": {
-      "Choose your service": [
-        "Valitse palvelusi"
+      "Choose a provider": [
+        "Valitse tarjoaja"
       ],
       "Maybe later": [
         "Ehkä myöhemmin"
       ],
-      "Popular services": [
-        "Suositut palvelut"
-      ],
       "Skip for now": [
         "Ohita toistaiseksi"
-      ],
-      "Switch your accounts to ${ BRAND_NAME }": [
-        "Vaihda tilisi ${ BRAND_NAME }:iin"
-      ],
-      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
-        "Sähköpostin vaihtaminen on vaikeaa. ${ BRAND_NAME } tekee siitä helppoa. Yhdistä vanha tilisi ja hallitse kaikkea yhdessä keskitetyssä, mainoksettomassa työtilassa."
-      ],
-      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
-        "Päivitä sähköpostisi eniten käyttämissäsi palveluissa. Estä seuranta ja suojaa yksityisyyttäsi."
-      ],
-      "Welcome to ${ MAIL_APP_NAME }": [
-        "Tervetuloa ${ MAIL_APP_NAME }iin"
       ]
     },
     "Onboarding modal": {
@@ -11742,6 +11722,9 @@
       ],
       "No parent folder": [
         "Ei yläkansiota"
+      ],
+      "Remind me later": [
+        "Muistuta myöhemmin"
       ]
     },
     "Option group": {
@@ -12176,6 +12159,9 @@
       "End date": [
         "Lopetuspäivä"
       ],
+      "Enter a name": [
+        "Syötä nimi"
+      ],
       "Enter passphrase": [
         "Syötä salalause"
       ],
@@ -12271,6 +12257,9 @@
       ],
       "Select": [
         "Valitse"
+      ],
+      "Select a provider": [
+        "Valitse tarjoaja"
       ],
       "Select a reason": [
         "Valitse syy"
@@ -12409,6 +12398,20 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Virallinen viesti ${ BRAND_NAME }ilta"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {
@@ -14570,9 +14573,6 @@
       ],
       "Connect apps and devices": [
         "Yhdistä sovelluksia ja laitteita"
-      ],
-      "Connect more addresses": [
-        "Yhdistä lisää osoitteita"
       ],
       "Connect to video conferencing": [
         "Yhdistä videoneuvotteluun"
