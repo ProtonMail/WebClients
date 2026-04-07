@@ -2,6 +2,8 @@ import { useCallback, useEffect, useState } from 'react';
 
 import isEqual from 'lodash/isEqual';
 
+import { generateNodeUid, getDriveForPhotos } from '@proton/drive/index';
+import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { getItem, removeItem, setItem } from '@proton/shared/lib/helpers/storage';
 import { VolumeType } from '@proton/shared/lib/interfaces/drive/volume';
 
@@ -133,6 +135,18 @@ export const usePhotosRecovery = ({ onSucceed }: { onSucceed?: () => void } = {}
                         newParentLinkId: newLinkId,
                         newShareId: shareId,
                     });
+
+                    await getBusDriver().emit(
+                        {
+                            type: BusDriverEventName.UPDATED_NODES,
+                            items: successes.map((successLinkId) => ({
+                                uid: generateNodeUid(volumeId, successLinkId),
+                                parentUid: generateNodeUid(volumeId, newLinkId),
+                            })),
+                        },
+                        getDriveForPhotos()
+                    );
+
                     setCountOfUnrecoveredLinksLeft(
                         (prevState) => prevState - (successes.length + Object.keys(failures).length)
                     );
