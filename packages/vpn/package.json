@@ -6,7 +6,9 @@
     "sideEffects": false,
     "type": "module",
     "exports": {
-        "./*": "./src/*"
+        "./components/Sidebar": "./src/components/Sidebar/index.tsx",
+        "./definitions/routes": "./src/definitions/routes.ts",
+        "./hooks/useB2BAdminSidebarFeature": "./src/hooks/useB2BAdminSidebarFeature.ts"
     },
     "main": "./src/index.ts",
     "scripts": {
@@ -17,13 +19,17 @@
         "test:watch": "jest --watch"
     },
     "dependencies": {
+        "@proton/atoms": "workspace:^",
         "@proton/colors": "workspace:^",
         "@proton/components": "workspace:^",
         "@proton/hooks": "workspace:^",
         "@proton/icons": "workspace:^",
+        "@proton/nav": "workspace:^",
+        "@proton/payments": "workspace:^",
         "@proton/react-polymorphic-types": "workspace:^",
         "@proton/shared": "workspace:^",
         "@proton/testing": "workspace:^",
+        "@proton/unleash": "workspace:^",
         "@proton/utils": "workspace:^",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
