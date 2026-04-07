@@ -68,6 +68,19 @@ export const getHasFIDO2Enabled = (Enabled?: number) => {
     return hasBit(Enabled || 0, SETTINGS_2FA_ENABLED.FIDO2);
 };
 
+export interface TwoFactorAuthTypes {
+    /** Whether TOTP (time-based one-time password) two-factor authentication is enabled for the user. */
+    totp: boolean;
+    /**
+     * Whether FIDO2 (security key) two-factor authentication is enabled for the user and supported
+     * by the current application and browser. False if the app does not support FIDO2 (e.g. non-account
+     * apps, onion domains) or the browser lacks WebAuthn support.
+     */
+    fido2: boolean;
+    /** Whether any two-factor authentication method is enabled for the user. */
+    enabled: boolean;
+}
+
 export const getTwoFactorTypes = ({
     enabled,
     app,
@@ -76,7 +89,7 @@ export const getTwoFactorTypes = ({
     enabled: number;
     app: APP_NAMES;
     hostname: string;
-}) => {
+}): TwoFactorAuthTypes => {
     const result = {
         totp: getHasTOTPEnabled(enabled),
         fido2: getHasFIDO2Enabled(enabled),
