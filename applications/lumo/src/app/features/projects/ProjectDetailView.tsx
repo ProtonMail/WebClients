@@ -36,7 +36,6 @@ import {
     pushConversationRequest,
 } from '../../redux/slices/core/conversations';
 import { addSpace, pullSpaceRequest, pushSpaceRequest } from '../../redux/slices/core/spaces';
-import { setNativeComposerVisibility } from '../../remote/nativeComposerBridgeHelpers';
 import { ComposerMode, getProjectInfo } from '../../types';
 import { openLumoUpsellModal } from '../../upsells/providers/LumoUpsellModalProvider';
 import { ProjectFilesPanel } from './ProjectFilesPanel';
@@ -44,6 +43,7 @@ import { ConversationDropdown } from './components/ConversationDropdown';
 import { ProjectDetailHeader } from './components/ProjectDetailHeader';
 import { ProjectEmptyState } from './components/ProjectEmptyState';
 import { getProjectCategory, getPromptSuggestionsForCategory } from './constants';
+import { useNativeComposerProjectDetailVisibilityApi } from './hooks/useNativeComposerProjectDetailVisibilityApi';
 import { useProjectActions } from './hooks/useProjectActions';
 import { DeleteConversationModal } from './modals/DeleteConversationModal';
 import { DeleteProjectModal } from './modals/DeleteProjectModal';
@@ -208,13 +208,7 @@ const ProjectDetailViewInner = () => {
         () => {} // todo: abort handler missing at this point, known bug
     );
 
-    useEffect(() => {
-        if (!sidebarModal.render) {
-            return;
-        }
-        setNativeComposerVisibility(false);
-        return () => setNativeComposerVisibility(true);
-    }, [sidebarModal.render]);
+    useNativeComposerProjectDetailVisibilityApi(sidebarModal.render);
 
     const handleSaveTitle = useCallback(
         (newTitle: string) => {
