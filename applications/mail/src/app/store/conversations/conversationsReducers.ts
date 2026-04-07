@@ -350,7 +350,13 @@ export const markMessagesAsReadPending = (
     action: PayloadAction<
         undefined,
         string,
-        { arg: { messages: MessageMetadata[]; labelID: string; showSuccessNotification?: boolean } }
+        {
+            arg: {
+                messages: MessageMetadata[];
+                labelID: string;
+                showSuccessNotification?: boolean;
+            };
+        }
     >
 ) => {
     const { messages } = action.meta.arg;
