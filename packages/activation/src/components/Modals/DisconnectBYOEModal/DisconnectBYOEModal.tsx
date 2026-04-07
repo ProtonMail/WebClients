@@ -31,11 +31,11 @@ const DisconnectBYOEModal = ({ address, ...rest }: Props) => {
 
     return (
         <ModalTwo size="small" {...rest}>
-            <ModalTwoHeader title={c('loc_nightly: BYOE').t`Are you sure you want to disconnect this address?`} />
+            <ModalTwoHeader title={c('Title').t`Are you sure you want to disconnect this address?`} />
             <ModalTwoContent>
-                <div>{c('loc_nightly: BYOE')
+                <div>{c('Description')
                     .t`You will no longer be able to use ${address.Email} to receive and send emails in ${BRAND_NAME}. Also note that messages sent to this address from ${BRAND_NAME} will no longer be end-to-end encrypted.`}</div>
-                <div>{c('loc_nightly: BYOE').t`You can still login with this address and re-connect at any time.`}</div>
+                <div>{c('Description').t`You can still login with this address and re-connect at any time.`}</div>
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Button className="w-full" onClick={onClose} disabled={loading}>{c('Action').t`Cancel`}</Button>
@@ -45,7 +45,7 @@ const DisconnectBYOEModal = ({ address, ...rest }: Props) => {
                     onClick={() => withLoading(handleSubmit)}
                     loading={loading}
                 >
-                    {c('loc_nightly: BYOE').t`Disconnect`}
+                    {c('Action').t`Disconnect`}
                 </Button>
             </ModalTwoFooter>
         </ModalTwo>

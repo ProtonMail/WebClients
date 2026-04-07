@@ -33,9 +33,9 @@ const AddBYOEModal = ({ onSubmit, submitDisabled, isLoading, expectedEmailAddres
             <div className="m-8 mt-0 flex flex-column *:min-size-auto md:flex-row items-center flex-nowrap gap-7">
                 <div className="flex flex-column flex-nowrap w-full lg:w-auto flex-1 gap-4">
                     <h1 className="text-break text-4xl text-wrap-balance">
-                        <strong>{c('loc_nightly: BYOE').t`Bring your Gmail into ${MAIL_APP_NAME}`}</strong>
+                        <strong>{c('Title').t`Bring your Gmail into ${MAIL_APP_NAME}`}</strong>
                     </h1>
-                    <div className="color-weak text-lg text-wrap-balance">{c('loc_nightly: BYOE')
+                    <div className="color-weak text-lg text-wrap-balance">{c('Description')
                         .t`We'll bring in your old emails and connect your Gmail to ${MAIL_APP_NAME} so new messages appear automatically`}</div>
                     <div className="flex flex-column items-center gap-4">
                         <SignInWithGoogle
@@ -43,7 +43,7 @@ const AddBYOEModal = ({ onSubmit, submitDisabled, isLoading, expectedEmailAddres
                             loading={isLoading}
                             disabled={submitDisabled}
                             fullWidth
-                            buttonText={c('loc_nightly: BYOE').t`Connect to Gmail`}
+                            buttonText={c('Action').t`Connect to Gmail`}
                         />
                     </div>
                 </div>
@@ -53,16 +53,16 @@ const AddBYOEModal = ({ onSubmit, submitDisabled, isLoading, expectedEmailAddres
                     </p>
                     <div className="flex flex-row flex-nowrap items-center gap-4 border rounded-xl p-4 mb-2 modal-two-addbyoe-feature relative">
                         <img src={byoeForwarding} alt="" className="shrink-0" />
-                        <div>{c('loc_nightly: BYOE')
+                        <div>{c('Description')
                             .t`Read, reply, and stay on top of Gmail from within ${MAIL_APP_NAME}`}</div>
                     </div>
                     <div className="flex flex-row flex-nowrap items-center gap-4 border rounded-xl p-4 mb-2 modal-two-addbyoe-feature relative">
                         <img src={stopHandSign} alt="" className="shrink-0" />
-                        <div>{c('loc_nightly: BYOE').t`No ads. No trackers.`}</div>
+                        <div>{c('Description').t`No ads. No trackers.`}</div>
                     </div>
                     <div className="flex flex-row flex-nowrap items-center gap-4 border rounded-xl p-4 mb-2 modal-two-addbyoe-feature relative">
                         <img src={byoeProfiling} alt="" className="shrink-0" />
-                        <div>{c('loc_nightly: BYOE')
+                        <div>{c('Description')
                             .t`Block Google's ability to profile you. Gmail can't see what you do in ${MAIL_APP_NAME}`}</div>
                     </div>
                 </div>

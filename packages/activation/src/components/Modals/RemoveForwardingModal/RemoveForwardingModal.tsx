@@ -16,10 +16,10 @@ const RemoveForwardingModal = ({ ...rest }: Props) => {
             buttons={[<Button onClick={rest.onClose}>{c('Action').t`Got it`}</Button>]}
             {...rest}
         >
-            <div>{c('loc_nightly: BYOE')
+            <div>{c('Description')
                 .t`To connect a different Gmail address, remove extra Gmail addresses forwarding to ${BRAND_NAME}.`}</div>
             <div>
-                {c('loc_nightly: BYOE').ngettext(
+                {c('Description').ngettext(
                     msgid`Your plan supports a total of ${MAX_SYNC_PAID_USER} Gmail address`,
                     `Your plan supports a total of ${MAX_SYNC_PAID_USER} Gmail addresses`,
                     MAX_SYNC_PAID_USER

@@ -157,7 +157,7 @@ const AccountStepDetails = ({
             <Info
                 className="ml-1"
                 buttonClass="align-text-bottom"
-                title={c('loc_nightly: BYOE').t`This password is used to login to your ${BRAND_NAME} account`}
+                title={c('Info').t`This password is used to login to your ${BRAND_NAME} account`}
             />
         </span>
     );

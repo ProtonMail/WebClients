@@ -37,7 +37,7 @@ const useBYOEAddressData = (): [AddressData | undefined, boolean] => {
         } catch (e) {
             createNotification({
                 type: 'error',
-                text: c('loc_nightly: BYOE').t`Something went wrong while fetching available domains`,
+                text: c('Error').t`Something went wrong while fetching available domains`,
             });
 
             setLoadingAddressData(false);
