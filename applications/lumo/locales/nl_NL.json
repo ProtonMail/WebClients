@@ -86,6 +86,9 @@
       "Continue to ${ planOrAppName }": [
         "Doorgaan naar ${ planOrAppName }"
       ],
+      "Copied": [
+        "Gekopieerd"
+      ],
       "Copy": [
         "Kopiëren"
       ],
@@ -415,7 +418,7 @@
         "${ ips } toegewijde VPN-servers"
       ],
       "${ LUMO_APP_NAME } AI license": [
-        "${ LUMO_APP_NAME } AI licentie"
+        "${ LUMO_APP_NAME } AI-licentie"
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } licenties"
@@ -943,6 +946,9 @@
       "Enable ghost mode": [
         "Spookmodus inschakelen"
       ],
+      "Generate workflow": [
+        "Workflow genereren"
+      ],
       "Get ${ LUMO_SHORT_APP_NAME } Plus from only ${ price }": [
         "Ontvang ${ LUMO_SHORT_APP_NAME } Plus al vanaf ${ price }"
       ],
@@ -1004,6 +1010,11 @@
       ],
       "For Business": [
         "Voor Bedrijven"
+      ]
+    },
+    "collider_2025: Badge": {
+      "OpenAI-compatible": [
+        "OpenAI-compatibel"
       ]
     },
     "collider_2025: Button": {
@@ -1186,6 +1197,9 @@
       ]
     },
     "collider_2025: Error": {
+      "Describe what you want the workflow to do.": [
+        "Beschrijf wat de workflow moet doen."
+      ],
       "Error processing ${ result.fileName }: ${ result.errorMessage }": [
         "Fout bij het verwerken van ${ result.fileName }: ${ result.errorMessage }"
       ],
@@ -1230,6 +1244,9 @@
       ],
       "The provided URL is invalid.": [
         "De opgegeven URL is ongeldig."
+      ],
+      "The response could not be parsed. Raw output is shown below.": [
+        "De response kon niet worden verwerkt. Ruwe uitvoer wordt hieronder getoond."
       ],
       "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus for unlimited chats, extended history, access to advanced AI models, and more.": [
         "Upgrade naar ${ LUMO_SHORT_APP_NAME } Plus voor onbeperkte gesprekken, uitgebreide geschiedenis, toegang tot geavanceerde AI-modellen en meer."
@@ -1379,6 +1396,9 @@
       " files are hidden (unsupported file types)": [
         " bestanden zijn verborgen (niet ondersteunde bestandstypen)"
       ],
+      " header. Keys are scoped to your account and can be revoked from ": [
+        " header. Sleutels zijn beperkt tot uw account en kunnen worden ingetrokken vanuit "
+      ],
       " talk to your admin.": [
         " neem contact op met uw beheerder."
       ],
@@ -1391,8 +1411,17 @@
       "${ LUMO_SHORT_APP_NAME } provide access to advanced models to help with more complex queries and provide better answers": [
         "${ LUMO_SHORT_APP_NAME } geeft toegang tot geavanceerde modellen om u te helpen bij complexere vragen en betere antwoorden te bieden."
       ],
+      "${ LUMO_SHORT_APP_NAME }+ — API access and keys are included with a ${ LUMO_SHORT_APP_NAME }+ subscription (sign in to upgrade or manage keys)": [
+        "${ LUMO_SHORT_APP_NAME }+ — API-toegang en sleutels zijn inbegrepen bij een ${ LUMO_SHORT_APP_NAME }+ abonnement (log in om sleutels te upgraden of te beheren)"
+      ],
       "1 file": [
         "1 bestand"
+      ],
+      "A ${ LUMO_SHORT_APP_NAME } account": [
+        "Een ${ LUMO_SHORT_APP_NAME }-account"
+      ],
+      "A workflow that uploads a folder of PDFs, extracts text, asks ${ LUMO_SHORT_APP_NAME } to summarize each file, and writes one Markdown summary per document.": [
+        "Een workflow die een map met PDF's oplaadt, tekst extraheert, ${ LUMO_SHORT_APP_NAME } vraagt om elk bestand samen te vatten en één Markdown-samenvatting per document schrijft."
       ],
       "Access ${ DRIVE_APP_NAME }": [
         "Open ${ DRIVE_APP_NAME }"
@@ -1412,11 +1441,20 @@
       "Attached Files": [
         "Bijgevoegde bestanden"
       ],
+      "Authenticates the request. Never expose this in client-side code.": [
+        "Verifieert het verzoek. Stel deze nooit bloot in client-side code."
+      ],
       "Auto-matched": [
         "Automatisch gematcht"
       ],
       "Be cautious of unfamiliar domains or excessive subdomains": [
         "Wees voorzichtig met onbekende domeinen of excessieve subdomeinen"
+      ],
+      "Build privacy-first assistants with streaming and persistent context.": [
+        "Bouw privacygerichte assistenten met streaming en persistente context."
+      ],
+      "Chain tool calls to orchestrate multi-step pipelines end-to-end.": [
+        "Keten van toolaanroepen om meertraps pijplijnen end-to-end te orkestreren."
       ],
       "characters": [
         "tekens"
@@ -1438,6 +1476,12 @@
       ],
       "columns found, no data rows": [
         "kolommen gevonden, geen gegevensrijen"
+      ],
+      "Create and revoke API keys for programmatic access. Keys are shown only once when created.": [
+        "Maak en trek API-sleutels in voor programmatische toegang. Sleutels worden slechts één keer weergegeven wanneer ze worden gemaakt."
+      ],
+      "Describe a workflow in plain language and get a graph plus runnable code. Sign in to use this feature.": [
+        "Beschrijf een workflow in eenvoudige taal en krijg een grafiek plus uitvoerbare code. Log in om deze functie te gebruiken."
       ],
       "Domain name": [
         "Domeinnaam"
@@ -1465,6 +1509,9 @@
       ],
       "Excluded": [
         "Uitgesloten"
+      ],
+      "Extract, analyse, and summarise documents, PDFs, and images.": [
+        "Documenten, pdf's en afbeeldingen extraheren, analyseren en samenvatten."
       ],
       "File capacity": [
         "Bestand capaciteit"
@@ -1496,6 +1543,12 @@
       "For each conversation, ${ LUMO_SHORT_APP_NAME } has the capacity to process a limited amount of information. The progress bar shows how much capacity your current files are using. ": [
         "Voor elk gesprek heeft ${ LUMO_SHORT_APP_NAME } de capaciteit om een beperkte hoeveelheid informatie te verwerken. De voortgangsbalk toont hoeveel capaciteit uw huidige bestanden gebruiken. "
       ],
+      "For each day, average tokens per API call (tokens ÷ calls, or 0 if no calls).": [
+        "Gemiddeld aantal tokens per API-aanroep per dag (tokens ÷ aanroepen, of 0 indien geen aanroepen)."
+      ],
+      "Generate a workflow graph and implementation code for the following goal. Target language for code:": [
+        "Genereer een workflow-grafiek en implementatiecode voor het volgende doel. Doeltaal voor code:"
+      ],
       "High-speed chats and advanced AI features.": [
         "Chats op hoge snelheid en geavanceerde AI-functies."
       ],
@@ -1505,8 +1558,14 @@
       "Include your prompt and the response to help us improve accuracy.": [
         "Voeg uw prompt en het antwoord toe om ons te helpen de nauwkeurigheid te verbeteren."
       ],
+      "Ingest a customer message, classify urgency and topic with ${ LUMO_SHORT_APP_NAME }, branch on whether it needs escalation, then draft a reply or hand off to a human.": [
+        "Neem een klantbericht op, classificeer urgentie en onderwerp met ${ LUMO_SHORT_APP_NAME }, kies afhankelijk van of escalatie nodig is, en stel vervolgens een antwoord op of geef het door aan een medewerker."
+      ],
       "Loading": [
         "Laden"
+      ],
+      "Loading usage…": [
+        "Gebruik wordt geladen…"
       ],
       "Looks like your ${ DRIVE_APP_NAME } hasn't been set up yet.": [
         "Het lijkt erop dat uw ${ DRIVE_APP_NAME } nog niet is ingesteld."
@@ -1514,8 +1573,17 @@
       "Manage files": [
         "Bestanden beheren"
       ],
+      "Manage keys after you sign in": [
+        "Beheer sleutels nadat u bent ingelogd"
+      ],
       "Maybe later": [
         "Misschien later"
+      ],
+      "Never embed API keys in client-side bundles. Use environment variables and a server-side proxy in production.": [
+        "Insluit nooit API-sleutels in client-side bundels. Gebruik omgevingsvariabelen en een server-side proxy in productie."
+      ],
+      "No calls": [
+        "Geen oproepen"
       ],
       "No Content Available": [
         "Geen inhoud beschikbaar"
@@ -1529,6 +1597,9 @@
       "No files available": [
         "Geen bestanden beschikbaar"
       ],
+      "No nodes in this workflow.": [
+        "Geen knooppunten in deze workflow."
+      ],
       "No supported files in this folder": [
         "Geen ondersteunde bestanden in deze map"
       ],
@@ -1540,6 +1611,9 @@
       ],
       "Partial content": [
         "Gedeeltelijke inhoud"
+      ],
+      "Pass model: \"auto\" to let ${ LUMO_SHORT_APP_NAME } route to the best available model for your task. Specify a model ID directly for predictable latency or capability targeting.": [
+        "Model doorgeven: \"auto\" om ${ LUMO_SHORT_APP_NAME } het beste beschikbare model voor uw taak te laten routeren. Specificeer direct een model-ID voor voorspelbare latentie- of doelgerichte functionaliteit."
       ],
       "Please share what you expected": [
         "Deel wat uw verwachting was"
@@ -1613,6 +1687,12 @@
       "Sign in or create an account to browse and add files from your ${ DRIVE_APP_NAME } (end-to-end encrypted cloud storage) to your chat knowledge.": [
         "Meld u aan of maak een account aan om bestanden van uw ${ DRIVE_APP_NAME } (end-to-end versleutelde cloudopslag) te bekijken en toe te voegen aan uw chatkennis."
       ],
+      "Sign in to create and manage API keys for ${ LUMO_SHORT_APP_NAME }.": [
+        "Meld u aan om API-sleutels voor ${ LUMO_SHORT_APP_NAME } te maken en te beheren."
+      ],
+      "Sign in to generate workflows with ${ LUMO_SHORT_APP_NAME }.": [
+        "Meld u aan om workflows te genereren met ${ LUMO_SHORT_APP_NAME }."
+      ],
       "Sketch added as attachment": [
         "Schets toegevoegd als bijlage"
       ],
@@ -1621,6 +1701,9 @@
       ],
       "Table view": [
         "Tabelweergave"
+      ],
+      "The ${ LUMO_SHORT_APP_NAME } API gives you programmatic access to language models with ${ BRAND_NAME }'s privacy architecture built in. No data training on your requests. No tracking.": [
+        "De ${ LUMO_SHORT_APP_NAME } API biedt u programmatische toegang tot taalmodellen met de privacyarchitectuur van ${ BRAND_NAME } ingebouwd. Geen datatraining op uw verzoeken. Geen tracking."
       ],
       "There was an error processing this file. The content may not be readable or the file format might not be fully supported.": [
         "Er is een fout opgetreden bij het verwerken van dit bestand. De inhoud is mogelijk niet leesbaar of het bestandsformaat wordt mogelijk niet volledig ondersteund."
@@ -1664,6 +1747,9 @@
       "Watch for misspellings (e.g., proton.me vs pr0t0n.me)": [
         "Let op spelfouten (bijv. proton.me vs pr0t0n.me)"
       ],
+      "We can help you get started with using the ${ LUMO_SHORT_APP_NAME } API. Describe what you want to automate. ${ LUMO_SHORT_APP_NAME } returns a workflow graph and sample code that calls the ${ LUMO_SHORT_APP_NAME } API.": [
+        "We kunnen u op weg helpen met het gebruik van de ${ LUMO_SHORT_APP_NAME } API. Beschrijf wat u wilt automatiseren. ${ LUMO_SHORT_APP_NAME } retourneert een workflow grafiek en voorbeeldcode die de ${ LUMO_SHORT_APP_NAME } API aanroept."
+      ],
       "You are about to visit an external website:": [
         "U staat op het punt een externe website te bezoeken:"
       ],
@@ -1701,14 +1787,65 @@
       ]
     },
     "collider_2025: Label": {
+      "API calls": [
+        "API-oproepen"
+      ],
+      "API calls (30d)": [
+        "API-aanroepen (30d)"
+      ],
+      "Basic": [
+        "Basis"
+      ],
+      "Compare two drafts": [
+        "Vergelijk twee conceptversies"
+      ],
+      "Description": [
+        "Beschrijving"
+      ],
       "Did not follow instructions": [
         "Heeft de instructies niet gevolgd"
       ],
       "Don't like the style": [
         "Vind de stijl niet leuk"
       ],
+      "Example ideas": [
+        "Voorbeeldideeën"
+      ],
+      "File upload": [
+        "Bestand opladen"
+      ],
       "Not factually correct": [
         "Niet feitelijk correct"
+      ],
+      "optional": [
+        "optioneel"
+      ],
+      "Path": [
+        "Pad"
+      ],
+      "Prompt": [
+        "Prompt"
+      ],
+      "Python": [
+        "Python"
+      ],
+      "required": [
+        "vereist"
+      ],
+      "Research brief": [
+        "Onderzoeksbrief"
+      ],
+      "Response": [
+        "Antwoord"
+      ],
+      "Rust": [
+        "Rust"
+      ],
+      "Status": [
+        "Status"
+      ],
+      "Tokens (30d)": [
+        "Tokens (30d)"
       ],
       "Unsafe or problematic": [
         "Onveilig of problematisch"
@@ -1743,6 +1880,9 @@
       "create a free account.": [
         "maak een gratis account aan."
       ],
+      "Manage keys": [
+        "Beheer sleutels"
+      ],
       "New chat": [
         "Nieuwe chat"
       ],
@@ -1754,6 +1894,23 @@
       ],
       "upgrade to ${ LUMO_SHORT_APP_NAME } Plus.": [
         "upgrade naar ${ LUMO_SHORT_APP_NAME } Plus."
+      ],
+      "View plans": [
+        "Bekijk abonnementen"
+      ]
+    },
+    "collider_2025: Nav": {
+      "Authentication": [
+        "Authenticatie"
+      ],
+      "Endpoints": [
+        "Endpoints"
+      ],
+      "Models": [
+        "Modellen"
+      ],
+      "Overview": [
+        "Overzicht"
       ]
     },
     "collider_2025: Personality": {
@@ -1859,7 +2016,21 @@
         "Bedankt voor de feedback!"
       ]
     },
+    "collider_2025: Tab": {
+      "API": [
+        "API"
+      ],
+      "Manage keys": [
+        "Beheer sleutels"
+      ],
+      "Workflow Builder": [
+        "Workflow Builder"
+      ]
+    },
     "collider_2025: Title": {
+      "${ LUMO_SHORT_APP_NAME } API · ${ spec.versionLabel }": [
+        "${ LUMO_SHORT_APP_NAME } API · ${ spec.versionLabel }"
+      ],
       "${ LUMO_SHORT_APP_NAME } Business": [
         "${ LUMO_SHORT_APP_NAME } Business"
       ],
@@ -1869,11 +2040,29 @@
       "About ${ LUMO_SHORT_APP_NAME }": [
         "Over ${ LUMO_SHORT_APP_NAME }"
       ],
+      "API calls per day": [
+        "API-aanroepen per dag"
+      ],
+      "API endpoints overview": [
+        "Overzicht van API-endpoints"
+      ],
+      "Authentication": [
+        "Authenticatie"
+      ],
       "Automatic web search": [
         "Automatisch zoeken op internet"
       ],
+      "Build intelligent apps.": [
+        "Bouw intelligente apps."
+      ],
+      "Chat": [
+        "Chat"
+      ],
       "Delete everything": [
         "Alles verwijderen"
+      ],
+      "Document intelligence": [
+        "Documentintelligentie"
       ],
       "Don't lose the thread": [
         "Raak de draad niet kwijt"
@@ -1884,8 +2073,23 @@
       "Invalid Link": [
         "Ongeldige link"
       ],
+      "Manage keys": [
+        "Beheer sleutels"
+      ],
+      "Models": [
+        "Modellen"
+      ],
       "Opening External Link": [
         "Externe link openen"
+      ],
+      "Parameters": [
+        "Parameters"
+      ],
+      "Prerequisites": [
+        "Vereisten"
+      ],
+      "Privacy included by default.": [
+        "Privacy standaard inbegrepen."
       ],
       "Save your favorites": [
         "Sla uw favorieten op"
@@ -1899,11 +2103,20 @@
       "Theme": [
         "Thema"
       ],
+      "Tokens per call (daily)": [
+        "Tokens per aanroep (dagelijks)"
+      ],
       "Upload files": [
         "Bestanden uploaden"
       ],
       "Visionary": [
         "Visionary"
+      ],
+      "What you can build": [
+        "Wat u kunt bouwen"
+      ],
+      "Workflow graph": [
+        "Workflow-grafiek"
       ]
     },
     "collider_2025: Tooltip": {
@@ -2000,6 +2213,14 @@
         "Gebruik moderne omgangstaal en een eigentijdse communicatiestijl."
       ]
     },
+    "collider_2025: Unit": {
+      "calls": [
+        "oproepen"
+      ],
+      "tokens/call": [
+        "tokens/oproep"
+      ]
+    },
     "collider_2025: Upsell": {
       "Create free account": [
         "Maak een gratis account aan"
@@ -2061,9 +2282,6 @@
       "Cancel": [
         "Annuleren"
       ],
-      "Choose project icon": [
-        "Kies projectpictogram"
-      ],
       "Click to edit title": [
         "Klik om titel te bewerken"
       ],
@@ -2090,9 +2308,6 @@
       ],
       "Edit instructions": [
         "Instructies bewerken"
-      ],
-      "Edit project": [
-        "Project bewerken"
       ],
       "Go to project": [
         "Ga naar project"
@@ -2178,9 +2393,6 @@
       "Unlink Folder": [
         "Map ontkoppelen"
       ],
-      "Upgrade to Plus": [
-        "Upgrade naar Plus"
-      ],
       "Upload file": [
         "Bestand opladen"
       ],
@@ -2195,6 +2407,9 @@
       "Add instructions to tailor ${ LUMO_SHORT_APP_NAME }'s responses": [
         "Instructies toevoegen om de antwoorden van ${ LUMO_SHORT_APP_NAME } aan te passen"
       ],
+      "API": [
+        "API"
+      ],
       "Back to projects": [
         "Terug naar het projecten"
       ],
@@ -2206,9 +2421,6 @@
       ],
       "Collapse projects": [
         "Projecten inklappen"
-      ],
-      "Create a free account": [
-        "Maak een gratis account aan"
       ],
       "Create project": [
         "Project aanmaken"
@@ -2249,9 +2461,6 @@
       "New chat": [
         "Nieuwe chat"
       ],
-      "New project": [
-        "Nieuw project"
-      ],
       "Projects": [
         "Projecten"
       ],
@@ -2272,9 +2481,6 @@
       ],
       "Show sidebar": [
         "Toon zijbalk"
-      ],
-      "Sign in": [
-        "Inloggen"
       ],
       "Unfavorite": [
         "Verwijderen uit favorieten"
@@ -2328,17 +2534,6 @@
       ],
       "Project not found": [
         "Project niet gevonden"
-      ]
-    },
-    "collider_2025:Feature": {
-      "Advanced AI models": [
-        "Geavanceerde AI-modellen"
-      ],
-      "Priority access & faster responses": [
-        "Prioriteitstoegang en snellere reacties"
-      ],
-      "Unlimited projects": [
-        "Onbeperkte projecten"
       ]
     },
     "collider_2025:FeaturePoint": {
@@ -2428,12 +2623,6 @@
       "Processing...": [
         "Wordt verwerkt..."
       ],
-      "Projects help you organize conversations with custom instructions and files.": [
-        "Projecten helpen u gesprekken te organiseren met aangepaste instructies en bestanden."
-      ],
-      "Projects help you organize conversations with custom instructions and files. Sign in or create a free account to get started.": [
-        "Projecten helpen u gesprekken te organiseren met aangepaste instructies en bestanden. Log in of maak een gratis account aan om te beginnen."
-      ],
       "This message is empty. Sorry about that.": [
         "Dit bericht is leeg. Onze excuses hiervoor."
       ],
@@ -2449,26 +2638,14 @@
       "Type @filename to ask questions about a specific file": [
         "Typ @bestandsnaam om vragen te stellen over een specifiek bestand"
       ],
-      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited projects, unlock advanced AI models, and more.": [
-        "Upgrade naar ${ LUMO_SHORT_APP_NAME } Plus om onbeperkte projecten aan te maken, geavanceerde AI-modellen te ontgrendelen en meer."
-      ],
       "Using ${ DRIVE_APP_NAME } lets ${ LUMO_SHORT_APP_NAME } work with larger files.": [
         "Door ${ LUMO_SHORT_APP_NAME } te gebruiken, kan ${ DRIVE_APP_NAME } grotere bestanden verwerken."
       ],
       "Your files are large. ${ LUMO_SHORT_APP_NAME } may not be able to process all information.": [
         "Uw bestanden zijn groot. ${ LUMO_SHORT_APP_NAME } kan mogelijk niet alle informatie verwerken."
-      ],
-      "Your information is zero-access encrypted": [
-        "Uw informatie is versleuteld met zero-access encryptie"
       ]
     },
     "collider_2025:Label": {
-      "chat": [
-        "chat"
-      ],
-      "chats": [
-        "gesprekken"
-      ],
       "Current folder:": [
         "Huidige map:"
       ],
@@ -2477,12 +2654,6 @@
       ],
       "Folder name": [
         "Mapnaam"
-      ],
-      "Instructions": [
-        "Instructies"
-      ],
-      "Project Instructions (optional)": [
-        "Project Instructies (optioneel)"
       ],
       "Untitled chat": [
         "Naamloos gesprek"
@@ -2502,61 +2673,23 @@
       ]
     },
     "collider_2025:Placeholder": {
-      "Add instructions about the tone, style, and persona you want ${ LUMO_SHORT_APP_NAME } to adopt.": [
-        "Voeg instructies toe over de toon, stijl en persona die u wilt dat ${ LUMO_SHORT_APP_NAME } aanneemt."
-      ],
       "Add instructions about the tone, style, and persona you want ${ LUMO_SHORT_APP_NAME } to adopt. These instructions will apply to all chats in this project.": [
         "Voeg instructies toe over de toon, stijl en persona die u wilt dat ${ LUMO_SHORT_APP_NAME } aanneemt. Deze instructies zijn van toepassing op alle chats in dit project."
       ],
       "Ask anything…": [
         "Vraag alles..."
       ],
+      "e.g. Iterate over documents in a folder, extract people and dates from each, then build a graph of how terms relate.": [
+        "e.g. Doorloop documenten in een map, extraheer personen en datums uit elk document, bouw vervolgens een grafiek van hoe termen met elkaar verband houden."
+      ],
       "Enter folder name": [
         "Voer mapnaam in"
-      ],
-      "Enter project name": [
-        "Projectnaam invoeren"
-      ],
-      "Holiday planner": [
-        "Vakantieplanner"
       ],
       "Search chats": [
         "Gesprekken doorzoeken"
       ],
       "Sign in required": [
         "Aanmelden vereist"
-      ]
-    },
-    "collider_2025:Project": {
-      "Develop stories, refine prose, and improve your writing craft": [
-        "Ontwikkel verhalen, verfijn proza en verbeter uw schrijfvaardigheid"
-      ],
-      "Financial assistant": [
-        "Financiële assistent"
-      ],
-      "Get help understanding assignments, solving problems, and learning concepts": [
-        "Hulp krijgen bij het begrijpen van opdrachten, het oplossen van problemen en het leren van concepten"
-      ],
-      "Learn a language": [
-        "Een taal leren"
-      ],
-      "Plan financial goals with personalized insights": [
-        "Plan financiële doelen met gepersonaliseerde inzichten"
-      ],
-      "Practice conversations, learn grammar, and build vocabulary in your target language": [
-        "Oefen gesprekken, leer grammatica en bouw woordenschat op in uw doeltaal"
-      ],
-      "Research & Analysis Partner": [
-        "Onderzoeks- en analysepartner"
-      ],
-      "Study companion": [
-        "Studiemaatje"
-      ],
-      "Synthesize sources, analyze data, and develop insights for your research projects": [
-        "Synthetiseer bronnen, analyseer gegevens en ontwikkel inzichten voor uw onderzoeksprojecten"
-      ],
-      "Writing coach": [
-        "Schrijfhulp"
       ]
     },
     "collider_2025:Prompt": {
@@ -2694,11 +2827,6 @@
         "Indexeren voor zoeken"
       ]
     },
-    "collider_2025:Subline": {
-      "Projects help you keep related chats, files, and instructions in one place. They make it easy to stay organized and reuse context across chats.": [
-        "Projecten helpen u gerelateerde gesprekken, bestanden en instructies op één plek te bewaren. Ze maken het eenvoudig om georganiseerd te blijven en context te hergebruiken in gesprekken."
-      ]
-    },
     "collider_2025:Success": {
       "All files removed from project": [
         "Alle bestanden verwijderd uit project"
@@ -2735,9 +2863,6 @@
       "Create folder": [
         "Map maken"
       ],
-      "Create new project": [
-        "Nieuw project aanmaken"
-      ],
       "Delete conversation?": [
         "Gesprek verwijderen?"
       ],
@@ -2750,17 +2875,11 @@
       "Edit Instructions": [
         "Instructies bewerken"
       ],
-      "Edit Project": [
-        "Edit Project"
-      ],
       "Expiring Soon": [
         "Verloopt binnenkort"
       ],
       "Favorites": [
         "Favorieten"
-      ],
-      "Get started by creating a new project": [
-        "Begin met het aanmaken van een nieuw project"
       ],
       "Ghost mode": [
         "Spookmodus"
@@ -2776,9 +2895,6 @@
       ],
       "How does ${ LUMO_SHORT_APP_NAME } keep our conversations confidential?": [
         "Hoe houdt ${ LUMO_SHORT_APP_NAME } onze gesprekken vertrouwelijk?"
-      ],
-      "Inspiration": [
-        "Inspiratie"
       ],
       "Instructions": [
         "Instructies"
@@ -2804,9 +2920,6 @@
       "More options": [
         "Meer opties"
       ],
-      "More Projects with ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Meer projecten met ${ LUMO_SHORT_APP_NAME } Plus"
-      ],
       "No chat history yet. Let's start chatting!": [
         "Nog geen gespreksgeschiedenis. Laten we beginnen met chatten!"
       ],
@@ -2822,17 +2935,11 @@
       "Project knowledge": [
         "Projectkennis"
       ],
-      "Projects": [
-        "Projecten"
-      ],
       "Remove all files?": [
         "Verwijder alle bestanden?"
       ],
       "Settings": [
         "Instellingen"
-      ],
-      "Sign in to create projects": [
-        "Inloggen om projecten te maken"
       ],
       "Start a new conversation": [
         "Start een nieuw gesprek"
@@ -2848,11 +2955,6 @@
       ],
       "Whatever you ask me is:": [
         "Wat u mij ook vraagt, is:"
-      ]
-    },
-    "collider_2025:Tooltip": {
-      "Choose icon": [
-        "Kies pictogram"
       ]
     },
     "collider_2025:Warning": {
@@ -4218,7 +4320,15 @@
         "Hoge snelheden"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Er is iets misgegaan bij het authenticeren met uw beveiligingssleutel. Probeer het opnieuw."
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Plaats een beveiligingssleutel die is gekoppeld aan uw ${ BRAND_NAME }-account."
+      ],
       "Security key": [
         "Beveiligingssleutel"
       ]
@@ -4384,6 +4494,9 @@
       ],
       "Account successfully updated": [
         "Account succesvol bijgewerkt"
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Voeg ${ PLAN_NAMES[PLANS.MEET_BUSINESS] } toe"
       ],
       "Address copied to clipboard": [
         "Adres gekopieerd naar het klembord"
@@ -6692,7 +6805,7 @@
         "De vernieuwingsprijs is afhankelijk van de facturatie regio en het EIN."
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
-        "De vernieuwingsprijs is afhankelijk van de facturatie regio en het VAT nummer."
+        "De vernieuwingsprijs is afhankelijk van de facturatie regio en het VAT-nummer."
       ]
     },
     "Payments.Saved payment method details": {
