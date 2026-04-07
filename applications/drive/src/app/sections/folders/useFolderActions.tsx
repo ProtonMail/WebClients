@@ -1,5 +1,7 @@
 import { generateNodeUid, useDrive } from '@proton/drive';
+import { uploadManager } from '@proton/drive/modules/upload';
 
+import { useUploadInput } from '../../hooks/drive/useUploadInput';
 import { useCopyItemsModal } from '../../modals/CopyItemsModal';
 import { useCreateFileModal } from '../../modals/CreateFileModal';
 import { useCreateFolderModal } from '../../modals/CreateFolderModal';
@@ -11,7 +13,6 @@ import { useRevisionsModal } from '../../modals/RevisionsModal';
 import { useFileSharingModal } from '../../modals/SelectLinkToShareModal';
 import { useSharingModal } from '../../modals/SharingModal/SharingModal';
 import { useDrivePreviewModal } from '../../modals/preview';
-import { useFileUploadInput, useFolderUploadInput } from '../../store';
 import { createDocument } from '../../utils/docs/openInDocs';
 import { isPreviewOrFallbackAvailable } from '../../utils/isPreviewOrFallbackAvailable';
 import { getPublicLinkIsExpired } from '../../utils/sdk/getPublicLinkIsExpired';
@@ -41,13 +42,13 @@ export const useFolderActions = ({ allSortedItems, selectedItems, shareId, linkI
         inputRef: fileInputRef,
         handleClick: handleFileClick,
         handleChange: handleFileChange,
-    } = useFileUploadInput(volumeId, shareId, linkId);
+    } = useUploadInput({ onUpload: (files) => uploadManager.upload(files, uid) });
 
     const {
         inputRef: folderInputRef,
         handleClick: handleFolderClick,
         handleChange: handleFolderChange,
-    } = useFolderUploadInput(volumeId, shareId, linkId);
+    } = useUploadInput({ onUpload: (files) => uploadManager.upload(files, uid), forFolders: true });
 
     // Modal hooks
     const { previewModal, showPreviewModal } = useDrivePreviewModal();
