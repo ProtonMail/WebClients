@@ -63,17 +63,17 @@ export const GlobalBYOESpotlightModal = () => {
                             <img src={byoeSpolightImg} alt="" />
                         </div>
                         <div className="mx-8 mt-8 mb-4 text-center">
-                            <h1 className="text-lg text-bold">{c('loc_nightly: BYOE')
+                            <h1 className="text-lg text-bold">{c('Title')
                                 .t`Use Gmail securely in ${MAIL_APP_NAME}`}</h1>
                             <div className="my-4 color-weak">
-                                {c('loc_nightly: BYOE')
+                                {c('Description')
                                     .jt`Send and receive Gmail correspondence directly in ${MAIL_APP_NAME}. Connect your address in ${addressesSettingsLink}.`}
                             </div>
                             {forwardingCount > 0 && (
                                 <div className="border border-weak rounded flex flex-nowrap gap-2 p-3 color-weak text-left">
                                     <Icon className="flex shrink-0 mt-0.5 mb-auto" name="light-lightbulb" />
                                     <div>
-                                        {c('loc_nightly: BYOE').ngettext(
+                                        {c('Description').ngettext(
                                             msgid`You're forwarding emails from ${forwardingCount} Gmail address. By connecting it, you'll be able to both receive and reply in ${MAIL_APP_NAME}`,
                                             `You're forwarding emails from ${forwardingCount} Gmail addresses. By connecting them, you'll be able to both receive and reply in ${MAIL_APP_NAME}`,
                                             forwardingCount
@@ -90,7 +90,7 @@ export const GlobalBYOESpotlightModal = () => {
                             app={APPS.PROTONMAIL}
                             className="w-full"
                             color="norm"
-                        >{c('loc_nightly: BYOE').t`Connect to Gmail`}</ButtonLike>
+                        >{c('Action').t`Connect to Gmail`}</ButtonLike>
                     </ModalTwoFooter>
                 </ModalTwo>
             )}

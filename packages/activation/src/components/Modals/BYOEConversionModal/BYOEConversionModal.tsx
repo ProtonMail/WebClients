@@ -60,13 +60,13 @@ const BYOEConversionModal = ({ openSyncModal, openUpsellModal, openRemoveForward
 
     return (
         <ModalTwo {...rest} data-testid="converstionModal">
-            <ModalTwoHeader title={c('loc_nightly: BYOE').t`Send and receive Gmail using ${MAIL_APP_NAME}`} />
+            <ModalTwoHeader title={c('Title').t`Send and receive Gmail using ${MAIL_APP_NAME}`} />
             <ModalTwoContent>
                 <p className="color-weak">
                     {forwardingList.length > 1
-                        ? c('loc_nightly: BYOE')
+                        ? c('Description')
                               .t`You already have Gmail addresses forwarding to ${MAIL_APP_NAME}. Connect one below to send and receive emails directly from ${MAIL_APP_NAME}.`
-                        : c('loc_nightly: BYOE')
+                        : c('Description')
                               .t`You already have a Gmail address forwarding to ${MAIL_APP_NAME}. Connect it below to send and receive emails directly from ${MAIL_APP_NAME}.`}
                 </p>
                 {isLoadingAddressesCount && <Loader size="small" />}
@@ -80,7 +80,7 @@ const BYOEConversionModal = ({ openSyncModal, openUpsellModal, openRemoveForward
 
                 {!isLoadingAddressesCount && forwardingList.length > 1 && (
                     <div>
-                        <div className="text-bold mb-2" id="label-select-gmail">{c('loc_nightly: BYOE')
+                        <div className="text-bold mb-2" id="label-select-gmail">{c('Label')
                             .t`Select which Gmail address to connect`}</div>
                         <RadioGroup
                             name="selected-address"

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import AddBYOEModal from '@proton/activation/src/components/Modals/AddBYOEModal/AddBYOEModal';
-import { BYOE_FAIL_NOTIFICATION, SYNC_SUCCESS_NOTIFICATION } from '@proton/activation/src/constants';
+import { getBYOEFailNotification, getSyncSuccessNotification } from '@proton/activation/src/constants';
 import useOAuthPopup from '@proton/activation/src/hooks/useOAuthPopup';
 import type { EASY_SWITCH_SOURCES, ImportToken, OAuthProps } from '@proton/activation/src/interface';
 import { EASY_SWITCH_FEATURES, OAUTH_PROVIDER } from '@proton/activation/src/interface';
@@ -69,8 +69,8 @@ const GmailSyncModal = ({
                         Provider,
                         RedirectUri,
                         Source: source,
-                        successNotification: hasAccessToBYOE ? undefined : SYNC_SUCCESS_NOTIFICATION,
-                        errorNotification: hasAccessToBYOE ? BYOE_FAIL_NOTIFICATION : undefined,
+                        successNotification: hasAccessToBYOE ? undefined : getSyncSuccessNotification(),
+                        errorNotification: hasAccessToBYOE ? getBYOEFailNotification() : undefined,
                         expectedEmailAddress: expectedEmailAddress
                             ? { address: expectedEmailAddress, type: 'convertToBYOE' }
                             : undefined,
@@ -104,7 +104,7 @@ const GmailSyncModal = ({
                         Provider,
                         RedirectUri,
                         Source: source,
-                        errorNotification: BYOE_FAIL_NOTIFICATION,
+                        errorNotification: getBYOEFailNotification(),
                     })
                 );
                 const payload = res.type.endsWith('fulfilled') ? res?.payload : undefined;
