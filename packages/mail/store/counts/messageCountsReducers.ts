@@ -33,6 +33,11 @@ export const markMessagesAsRead = (
         }
 
         message.LabelIDs.forEach((selectedLabelID) => {
+            // Only decrement category labelID if the message is in inbox
+            if (isCategoryLabel(selectedLabelID) && !message.LabelIDs.includes(MAILBOX_LABEL_IDS.INBOX)) {
+                return;
+            }
+
             const updatedMessageCounter = state.value?.find((counter) => counter.LabelID === selectedLabelID);
 
             if (updatedMessageCounter) {
