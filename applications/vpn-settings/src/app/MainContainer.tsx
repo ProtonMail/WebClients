@@ -15,7 +15,6 @@ import MembersAuthDevicesTopBanner from '@proton/account/sso/MembersAuthDevicesT
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
-import type { SectionConfig } from '@proton/components';
 import {
     AccountRecoverySection,
     AuthenticatedBugModal,
@@ -37,7 +36,6 @@ import {
     InvoicesSection,
     LanguageSection,
     LogsSection,
-    MainLogo,
     OpenVPNConfigurationSection,
     OpenVPNCredentialsSection,
     OverviewSection,
@@ -54,10 +52,6 @@ import {
     SentinelSection,
     SessionRecoverySection,
     SessionsSection,
-    SettingsListItem,
-    Sidebar,
-    SidebarList,
-    SidebarNav,
     SubscriptionModalProvider,
     SubscriptionsSection,
     TVContainer,
@@ -86,7 +80,7 @@ import {
     useToggle,
 } from '@proton/components';
 import SSODomainUnverifiedBanner from '@proton/components/containers/account/sso/SSODomainUnverifiedBanner';
-import { getIsSectionAvailable, getRoutePaths, getSectionPath } from '@proton/components/containers/layout/helper';
+import { getIsSectionAvailable, getRoutePaths } from '@proton/components/containers/layout/helper';
 import DashboardComparePlansCTA from '@proton/components/containers/payments/subscription/YourPlanSectionV2/DashboardComparePlansCTA';
 import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/cancellationFlow/helper';
 import { useReferralUserEligible } from '@proton/components/containers/referral/hooks/useReferralUserEligible';
@@ -102,7 +96,7 @@ import { localeCode } from '@proton/shared/lib/i18n';
 import { locales } from '@proton/shared/lib/i18n/locales';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import VpnSidebarVersion from './containers/VpnSidebarVersion';
+import { VPNSidebar } from './VPNSidebar';
 import { getRoutes } from './routes';
 
 const MainContainer: FunctionComponent = () => {
@@ -213,8 +207,6 @@ const MainContainer: FunctionComponent = () => {
         setExpand(false);
     }, [location.pathname, location.hash]);
 
-    const logo = <MainLogo to="/" />;
-
     const top = (
         <TopBanners app={APPS.PROTONVPN_SETTINGS}>
             <SSODomainUnverifiedBanner app={APPS.PROTONVPN_SETTINGS} />
@@ -242,40 +234,6 @@ const MainContainer: FunctionComponent = () => {
         />
     );
 
-    const sidebar = (
-        <Sidebar
-            app={APPS.PROTONVPN_SETTINGS}
-            appsDropdown={null}
-            logo={logo}
-            expanded={expanded}
-            onToggleExpand={onToggleExpand}
-            version={<VpnSidebarVersion />}
-            hasAppLinks={false}
-        >
-            <SidebarNav>
-                <SidebarList>
-                    {Object.values({
-                        ...vpnRoutes,
-                        ...(organizationAppRoutes.available ? organizationAppRoutes.routes : {}),
-                    }).map(
-                        (section: SectionConfig) =>
-                            getIsSectionAvailable(section) && (
-                                <SettingsListItem
-                                    to={getSectionPath('', section)}
-                                    icon={section.icon}
-                                    notification={section.notification}
-                                    key={section.to}
-                                >
-                                    <span className="text-ellipsis" title={section.text}>
-                                        {section.text}
-                                    </span>
-                                </SettingsListItem>
-                            )
-                    )}
-                </SidebarList>
-            </SidebarNav>
-        </Sidebar>
-    );
     const name = user.DisplayName || user.Name;
     const email = user.Email || userSettings?.Email?.Value;
 
@@ -328,7 +286,18 @@ const MainContainer: FunctionComponent = () => {
                     </UnAuthenticated>
                 </Route>
                 <Route path="*">
-                    <PrivateAppContainer top={top} header={header} sidebar={sidebar}>
+                    <PrivateAppContainer
+                        top={top}
+                        header={header}
+                        sidebar={
+                            <VPNSidebar
+                                routes={vpnRoutes}
+                                organizationRoutes={organizationAppRoutes}
+                                sidebarExpanded={expanded}
+                                onSidebarToggle={onToggleExpand}
+                            />
+                        }
+                    >
                         <Switch>
                             {getIsSectionAvailable(vpnRoutes.dashboardV2) && (
                                 <Route path={vpnRoutes.dashboardV2.to}>
@@ -438,6 +407,24 @@ const MainContainer: FunctionComponent = () => {
                             <Route path={vpnRoutes.downloads.to}>
                                 <PrivateMainSettingsArea config={vpnRoutes.downloads}>
                                     <ProtonVPNClientsSection />
+                                </PrivateMainSettingsArea>
+                            </Route>
+                            <Route path="/configurations">
+                                <PrivateMainSettingsArea
+                                    config={{
+                                        text: c('Title').t`Configurations`,
+                                        subsections: [
+                                            {
+                                                text: c('Title').t`WireGuard configuration`,
+                                                id: 'wireguard-configuration',
+                                            },
+                                            {
+                                                text: c('Title').t`OpenVPN configuration files`,
+                                                id: 'openvpn-configuration-files',
+                                            },
+                                        ],
+                                    }}
+                                >
                                     <WireGuardConfigurationSection />
                                     <OpenVPNConfigurationSection />
                                 </PrivateMainSettingsArea>
