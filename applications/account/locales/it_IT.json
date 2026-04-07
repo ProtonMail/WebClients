@@ -5181,16 +5181,6 @@
         "90 min"
       ]
     },
-    "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "Per inoltrare email da un massimo di ${ MAX_SYNC_PAID_USER } account, effettua l’upgrade a ${ planName }.",
-        "Per inoltrare email da un massimo di ${ MAX_SYNC_PAID_USER } account, effettua l\"upgrade a ${ planName }."
-      ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "Stai inoltrando email da ${ MAX_SYNC_FREE_USER } account esterno a ${ MAIL_APP_NAME }.",
-        "Stai inoltrando email da ${ MAX_SYNC_FREE_USER } account esterni a ${ MAIL_APP_NAME }."
-      ]
-    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "I campi di testo sono opzionali. Le informazioni inserite in questo modulo verranno mostrate solo sulle fatture future e non su quelle esistenti."
@@ -8432,11 +8422,6 @@
         "Sei sicuro di voler importare una chiave privata? L'importazione di una chiave privata generata in modo non sicuro o trapelata può danneggiare la sicurezza delle tue email.\n\nTieni inoltre presente che la chiave pubblica corrispondente a questa chiave privata sarà disponibile pubblicamente dal nostro server di chiavi. Se la chiave contiene dettagli personali (come il tuo nome completo) che non vuoi pubblicare, modifica la chiave prima di importarla."
       ]
     },
-    "Import provider": {
-      "Advanced import": [
-        "Importazione avanzata"
-      ]
-    },
     "Import status": {
       "Active": [
         "Attivo"
@@ -11176,9 +11161,6 @@
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Usa il miglior server in base al carico attuale e alla posizione: ${ formattedBestServerName }"
-      ],
-      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "Usa i diversi tipi di indirizzi email e alias offerti da ${ BRAND_NAME }."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Usa le seguenti credenziali quando ti connetti ai server ${ VPN_APP_NAME } senza applicazione. Esempi di utilizzo includono: Tunnelblick su macOS, OpenVPN su GNU/Linux."
@@ -21990,9 +21972,6 @@
       ],
       "Connect apps and devices": [
         "Connetti app e dispositivi"
-      ],
-      "Connect more addresses": [
-        "Connetti più indirizzi"
       ],
       "Connect organization": [
         "Connetti l'organizzazione"

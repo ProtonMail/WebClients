@@ -5159,14 +5159,6 @@
         "90 mnt"
       ]
     },
-    "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "Untuk meneruskan email dari hingga ${ MAX_SYNC_PAID_USER } akun, tingkatkan ke ${ planName }."
-      ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "Anda meneruskan alamat dari ${ MAX_SYNC_FREE_USER } akun eksternal ke ${ MAIL_APP_NAME }."
-      ]
-    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Kolom teks bersifat opsional. Informasi yang Anda sediakan pada kolom ini hanya akan terlihat pada faktur yang diterbitkan ke depannya tanpa memengaruhi faktur yang telah ada."
@@ -11064,9 +11056,6 @@
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Gunakan server terbaik berdasarkan beban jaringan dan posisi Anda saat ini: ${ formattedBestServerName }"
-      ],
-      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "Gunakan jenis-jenis alamat email dan alias berbeda yang ditawarkan oleh ${ BRAND_NAME }."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Gunakan informasi kredensial berikut pada saat Anda ingin terhubung ke server ${ VPN_APP_NAME } tanpa menggunakan aplikasi, semisal: Melalui Tunnelblick di macOS atau OpenVPN di GNU/Linux."
@@ -21539,9 +21528,6 @@
       ],
       "Connect apps and devices": [
         "Hubungkan aplkasi dan perangkat"
-      ],
-      "Connect more addresses": [
-        "Hubungkan lebih banyak alamat"
       ],
       "Connect organization": [
         "Sambungkan organisasi"
