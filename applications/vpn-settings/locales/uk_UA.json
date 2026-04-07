@@ -2808,20 +2808,6 @@
         "Пріоритетна підтримка"
       ]
     },
-    "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "Щоб пересилати електронні листи з до ${ MAX_SYNC_PAID_USER } облікового запису, оновіть тариф до ${ planName }.",
-        "Щоб пересилати електронні листи з до ${ MAX_SYNC_PAID_USER } облікових записів, оновіть тариф до ${ planName }.",
-        "Щоб пересилати електронні листи з до ${ MAX_SYNC_PAID_USER } облікових записів, оновіть тариф до ${ planName }.",
-        "Щоб пересилати електронні листи з до ${ MAX_SYNC_PAID_USER } облікового(их) запису(ів), оновіть тариф до ${ planName }."
-      ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "Ви пересилаєте електронні листи з ${ MAX_SYNC_FREE_USER } зовнішнього облікового запису до ${ MAIL_APP_NAME }.",
-        "Ви пересилаєте електронні листи з ${ MAX_SYNC_FREE_USER } зовнішніх облікових записів до ${ MAIL_APP_NAME }.",
-        "Ви пересилаєте електронні листи з ${ MAX_SYNC_FREE_USER } зовнішніх облікових записів до ${ MAIL_APP_NAME }.",
-        "Ви пересилаєте електронні листи з ${ MAX_SYNC_FREE_USER } облікового(их) запису(ів) до ${ MAIL_APP_NAME }."
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "Подію ${ eventTitle } скасовано."
@@ -6402,9 +6388,6 @@
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Використовуйте найкращий сервер відповідно до поточного навантаження та розташування: ${ formattedBestServerName }"
-      ],
-      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "Використовуйте різні типи адрес електронної пошти та псевдонімів, які пропонує ${ BRAND_NAME }"
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Використовуйте ці облікові дані за з'єднання з серверами ${ VPN_APP_NAME } без програми. Наприклад, Tunnelblick на macOS, або OpenVPN на GNU/Linux."

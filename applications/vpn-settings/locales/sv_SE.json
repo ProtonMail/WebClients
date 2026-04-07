@@ -3780,13 +3780,11 @@
       ]
     },
     "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "För att vidarebefordra e-post från upp till ${ MAX_SYNC_PAID_USER } konto, uppgradera till ${ planName }.",
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
         "För att vidarebefordra e-post från upp till ${ MAX_SYNC_PAID_USER } konton, uppgradera till ${ planName }."
       ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "Du vidarebefordrar e-post från ${ MAX_SYNC_FREE_USER } externt konto till ${ MAIL_APP_NAME }.",
-        "Du vidarebefordrar e-post från ${ MAX_SYNC_FREE_USER } externa konton till ${ MAIL_APP_NAME }."
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "Du vidarebefordrar e-post från ett externt konto till ${ MAIL_APP_NAME }."
       ]
     },
     "Edit billing address form note": {
@@ -5861,8 +5859,8 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "Avancerad import"
+      "More import options": [
+        "Fler importalternativ"
       ]
     },
     "Import warning": {
@@ -7423,6 +7421,9 @@
       "Product reviews, rankings, or guides": [
         "Produktrecensioner, rankingar eller guider"
       ],
+      "Professional": [
+        "Professionell"
+      ],
       "Protected by Swiss privacy laws": [
         "Skyddad av schweiziska integritetslagar"
       ],
@@ -7998,11 +7999,11 @@
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Använd en återställningsmetod för att inaktivera dina tvåfaktorsautentiseringsmetoder."
       ],
+      "Use multiple email addresses with ${ MAIL_APP_NAME }. Add a new ${ BRAND_NAME } address or connect another email account to manage everything from one inbox.": [
+        "Använd flera e-postadresser med ${ MAIL_APP_NAME }. Lägg till en ny ${ BRAND_NAME }-adress eller anslut ett annat e-postkonto för att hantera allt från en inkorg."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Använd den bästa servern enligt nuvarande belastning och position: ${ formattedBestServerName }"
-      ],
-      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "Använd de olika typerna av e-postadresser och alias som erbjuds av ${ BRAND_NAME }."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Använd följande användaruppgifter när du ansluter till ${ VPN_APP_NAME }-servrar utan applikation. Exempel på användningsfall inkluderar: Tunnelblick på macOS, OpenVPN på GNU/Linux."
@@ -15418,9 +15419,6 @@
       "Connect apps and devices": [
         "Anslut appar och enheter"
       ],
-      "Connect more addresses": [
-        "Anslut fler adresser"
-      ],
       "Connect organization": [
         "Anslut organisation"
       ],
@@ -16891,6 +16889,9 @@
       ],
       "Get more from your ${ planTitle } subscription.": [
         "Få ut mer av din ${ planTitle }-prenumeration."
+      ],
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } cloud storage.": [
+        "Håll dina filer, foton och dokument säkra med ${ maxDriveSpace } molnlagring."
       ],
       "Set secure passwords without the hassle.": [
         "Ställ in säkra lösenord utan krångel."

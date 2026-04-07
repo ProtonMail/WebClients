@@ -3849,17 +3849,11 @@
       ]
     },
     "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "Na preposielanie emailov z ${ MAX_SYNC_PAID_USER } účtu prejdite na ${ planName }.",
-        "Na preposielanie emailov až z ${ MAX_SYNC_PAID_USER } účtov prejdite na ${ planName }.",
-        "Na preposielanie emailov až z ${ MAX_SYNC_PAID_USER } účtov prejdite na ${ planName }.",
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
         "Na preposielanie emailov až z ${ MAX_SYNC_PAID_USER } účtov prejdite na ${ planName }."
       ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "Preposielate emaily z ${ MAX_SYNC_FREE_USER } externého účtu do ${ MAIL_APP_NAME }.",
-        "Preposielate emaily z ${ MAX_SYNC_FREE_USER } externých účtov do ${ MAIL_APP_NAME }.",
-        "Preposielate emaily z ${ MAX_SYNC_FREE_USER } externých účtov do ${ MAIL_APP_NAME }.",
-        "Preposielate emaily z ${ MAX_SYNC_FREE_USER } externých účtov do ${ MAIL_APP_NAME }."
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "Preposielate emaily z jedného externého účtu do ${ MAIL_APP_NAME }."
       ]
     },
     "Edit billing address form note": {
@@ -6004,8 +5998,8 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "Pokročilý import"
+      "More import options": [
+        "Ďalšie možnosti importu"
       ]
     },
     "Import warning": {
@@ -8261,11 +8255,11 @@
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Na deaktiváciu vašich metód dvojfázového overovania použite metódu obnovenia."
       ],
+      "Use multiple email addresses with ${ MAIL_APP_NAME }. Add a new ${ BRAND_NAME } address or connect another email account to manage everything from one inbox.": [
+        "Používajte viacero emailových adries s ${ MAIL_APP_NAME }. Pridajte novú adresu ${ BRAND_NAME } alebo pripojte iný emailový účet a spravujte všetko z jednej doručenej pošty."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Použite najlepší server podľa aktuálneho zaťaženia a umiestnenia: ${ formattedBestServerName }"
-      ],
-      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "Použite rôzne typy emailových adries a aliasov od ${ BRAND_NAME }."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Pri pripájaní k serverom ${ VPN_APP_NAME } bez aplikácie použite nasledujúce poverenia. Príklady použitia zahŕňajú: Tunnelblick na macOS, OpenVPN na GNU/Linux."
@@ -15931,9 +15925,6 @@
       ],
       "Connect apps and devices": [
         "Pripojenie aplikácií a zariadení"
-      ],
-      "Connect more addresses": [
-        "Pripojiť viac adries"
       ],
       "Connect organization": [
         "Pripojiť organizáciu"

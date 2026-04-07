@@ -3801,13 +3801,11 @@
       ]
     },
     "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "Για να προωθήσετε μηνύματα ηλεκτρονικού ταχυδρομείου από έως και ${ MAX_SYNC_PAID_USER } λογαριασμό, αναβαθμίστε σε ${ planName }.",
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
         "Για να προωθήσετε μηνύματα ηλεκτρονικού ταχυδρομείου από έως και ${ MAX_SYNC_PAID_USER } λογαριασμούς, αναβαθμίστε σε ${ planName }."
       ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "Προωθείτε μηνύματα ηλεκτρονικού ταχυδρομείου από ${ MAX_SYNC_FREE_USER } εξωτερικό λογαριασμό στο ${ MAIL_APP_NAME }.",
-        "Προωθείτε μηνύματα ηλεκτρονικού ταχυδρομείου από ${ MAX_SYNC_FREE_USER } εξωτερικούς λογαριασμούς στο ${ MAIL_APP_NAME }."
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "Προωθείτε μηνύματα ηλεκτρονικού ταχυδρομείου από ένα εξωτερικό λογαριασμό στο ${ MAIL_APP_NAME }."
       ]
     },
     "Edit billing address form note": {
@@ -5894,8 +5892,8 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "Προηγμένη εισαγωγή"
+      "More import options": [
+        "Περισσότερες επιλογές εισαγωγής"
       ]
     },
     "Import warning": {
@@ -8049,11 +8047,11 @@
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Χρησιμοποιήστε μια μέθοδο ανάκτησης για να απενεργοποιήσετε τις μεθόδους ελέγχου ταυτότητας δύο παραγόντων."
       ],
+      "Use multiple email addresses with ${ MAIL_APP_NAME }. Add a new ${ BRAND_NAME } address or connect another email account to manage everything from one inbox.": [
+        "Χρησιμοποιήστε πολλούς λογαριασμούς ηλεκτρονικού ταχυδρομείου με το ${ MAIL_APP_NAME }. Προσθέστε μια νέα διεύθυνση ${ BRAND_NAME } ή συνδέστε έναν άλλο λογαριασμό ηλεκτρονικού ταχυδρομείου για να διαχειρίζεστε τα πάντα από ένα εισερχόμενο φάκελο."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Χρησιμοποιείστε τον βέλτιστο διακομιστή για το τρέχον φορτίο και θέση: ${ formattedBestServerName }"
-      ],
-      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "Χρησιμοποιήστε τους διαφορετικούς τύπους διευθύνσεων email και ψευδωνύμων που προσφέρονται από το ${ BRAND_NAME }."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Χρησιμοποιείτε τα ακόλουθα διαπιστευτήρια όταν συνδέεστε σε διακομιστές ${ VPN_APP_NAME } χωρίς εφαρμογή. Παραδείγματα περιπτώσεων χρήσης περιλαμβάνουν: Tunnelblick σε macOS, OpenVPN σε GNU/Linux."
@@ -15449,9 +15447,6 @@
       ],
       "Connect apps and devices": [
         "Σύνδεση εφαρμογών και συσκευών"
-      ],
-      "Connect more addresses": [
-        "Σύνδεση περισσότερων διευθύνσεων"
       ],
       "Connect organization": [
         "Σύνδεση οργανισμού"

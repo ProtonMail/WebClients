@@ -3234,6 +3234,11 @@
         "使用 ${ BRAND_NAME } Duo 分享您的方案權益"
       ]
     },
+    "Easy switch": {
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "您正轉寄來自外部帳號的電子郵件至 ${ MAIL_APP_NAME }。"
+      ]
+    },
     "edm": {
       "Security tips": [
         "安全性提示"
@@ -5051,8 +5056,8 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "進階匯入"
+      "More import options": [
+        "更多匯入選項"
       ]
     },
     "Import warning": {
@@ -5120,6 +5125,9 @@
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } 也可使用單一密碼取代登入密碼和第二個密碼。如要切換為單一密碼模式，請輸入您想使用的單一密碼，然後按一下「儲存」。"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } 個席次"
       ],
       "${ n } address": [
         "${ n } 個電郵位址"
@@ -6806,9 +6814,6 @@
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "根據目前的負載與地理位置挑選最佳的伺服器： ${ formattedBestServerName }"
-      ],
-      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "使用由 ${ BRAND_NAME } 提供的不同類型的電子郵件位址與別名"
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "當使用非官方程式連接 ${ VPN_APP_NAME } 伺服器時可以使用下列憑證。像是 macOS上的 Tunnelblick 、 GUN/Linux 上的 OpenVPN。"
@@ -8511,6 +8516,14 @@
         "${ price } 版"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } 個席次"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME } 席位"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: 給重要對話保密的視訊"
@@ -8559,6 +8572,14 @@
       ],
       "Up to ${ n } participant": [
         "至多 ${ n } 位參與者"
+      ],
+      "Video meetings, ${ n } participant": [
+        "視訊， ${ n } 參與者"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "包含 ${ seats } 座席"
       ]
     },
     "Member action": {
@@ -8908,6 +8929,9 @@
       "Data breach monitoring": [
         "資料外洩監測"
       ],
+      "Data retention policies": [
+        "資料保留政策"
+      ],
       "Dedicated servers and IP": [
         "獨立的伺服器及 IP"
       ],
@@ -9021,6 +9045,9 @@
       ],
       "Priority support & live chat": [
         "優先處理您的客服單與線上聊天客服"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "隱私 AI 對話 (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "私人照片備份"
@@ -9168,6 +9195,9 @@
       ],
       "Vault sharing with up to ${ n } person": [
         "與最多 ${ n } 個人分享保管庫"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN 附帶廣告攔截器及惡意軟體防護"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我們會掃描暗網去檢查你的${ BRAND_NAME }地址或别名是否被外洩，並且在發現任何問題時立即通知你。"
