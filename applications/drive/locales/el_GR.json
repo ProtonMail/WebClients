@@ -815,6 +815,9 @@
       "Refer a friend": [
         "Συστήστε ένα φίλο"
       ],
+      "Refetch index": [
+        "Επανάκτηστη ευρετηρίου"
+      ],
       "Refresh the page": [
         "Ανανέωση της σελίδας"
       ],
@@ -4837,8 +4840,8 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "Προηγμένη εισαγωγή"
+      "More import options": [
+        "Περισσότερες επιλογές εισαγωγής"
       ]
     },
     "Import warning": {
@@ -5047,6 +5050,9 @@
       ],
       "${ speed }/s": [
         "${ speed }/δ"
+      ],
+      "${ state.result.entries.length } entries": [
+        "${ state.result.entries.length } εγγραφές"
       ],
       "${ storage } storage": [
         "${ storage } αποθηκευτικού χώρου"
@@ -5725,6 +5731,9 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Στο επόμενο βήμα, θα μπορείτε να υποβάλετε μια κατάθεση χρησιμοποιώντας μια διεύθυνση Bitcoin."
       ],
+      "Index is empty.": [
+        "Ο ευρετήριο είναι άδειο."
+      ],
       "Indexing in progress": [
         "Ευρετηρίαση σε εξέλιξη"
       ],
@@ -6207,6 +6216,9 @@
       "Search enabled. You may now close this dialogue and search for files and folders.": [
         "Η αναζήτηση ενεργοποιήθηκε. Τώρα μπορείτε να κλείσετε αυτόν τον διάλογο και να αναζητήσετε αρχεία και φακέλους."
       ],
+      "Search module is not available.": [
+        "Η μονάδα αναζήτησης δεν είναι διαθέσιμη."
+      ],
       "Select a destination folder": [
         "Επιλέξτε φάκελο προορισμού"
       ],
@@ -6592,6 +6604,9 @@
       ],
       "Unsupported file": [
         "Μη υποστηριζόμενο αρχείο"
+      ],
+      "Unsupported file type for Photos": [
+        "Μη υποστηριζόμενος τύπος αρχείου για Φωτογραφίες"
       ],
       "Untitled": [
         "Χωρίς τίτλο"
@@ -7351,6 +7366,9 @@
       "Enter device name": [
         "Εισάγετε όνομα συσκευής"
       ],
+      "Environment compatible": [
+        "Συμβατό με το περιβάλλον"
+      ],
       "Expired": [
         "Έχει λήξει"
       ],
@@ -7419,6 +7437,12 @@
       ],
       "Include message and file name in invite email": [
         "Συμπερίληψη μηνύματος και ονόματος αρχείου σε μήνυμα ηλεκτρονικού ταχυδρομείου πρόσκλησης"
+      ],
+      "Index kinds": [
+        "Τύποι ευρετηρίου"
+      ],
+      "Initial indexing": [
+        "Αρχικοποίηση ευρετηρίου"
       ],
       "Integrated 2FA authenticator": [
         "Ενσωματωμένος ελεγκτής 2FA"
@@ -7519,6 +7543,9 @@
       "Other": [
         "Άλλο"
       ],
+      "Outdated version": [
+        "Ξεπερασμένη έκδοση"
+      ],
       "Password": [
         "Κωδικός πρόσβασης"
       ],
@@ -7587,6 +7614,9 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Γενεύη"
+      ],
+      "Searchable": [
+        "Αναζητήσιμο"
       ],
       "Select type of abuse": [
         "Επιλογή τύπου κατάχρησης"
@@ -7699,6 +7729,9 @@
       "Uploaded by": [
         "Ανέβηκε από"
       ],
+      "User opted in": [
+        "Ο χρήστης επέλεξε να συμμετάσχει"
+      ],
       "Username": [
         "Όνομα Χρήστη"
       ],
@@ -7707,6 +7740,9 @@
       ],
       "Viewer": [
         "Θεατής"
+      ],
+      "Visible columns:": [
+        "Ορατές στήλες:"
       ],
       "Vulnerable": [
         "Ευάλωτο"
@@ -12107,6 +12143,9 @@
       "Account temporarily locked": [
         "Ο λογαριασμός έχει κλειδωθεί προσωρινά"
       ],
+      "Actions": [
+        "Ενέργειες"
+      ],
       "Active": [
         "Ενεργά"
       ],
@@ -12509,6 +12548,9 @@
       "Gift": [
         "Δώρο"
       ],
+      "Global": [
+        "Παγκόσμια"
+      ],
       "Groups": [
         "Ομάδες"
       ],
@@ -12819,6 +12861,9 @@
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Αποθηκεύστε το για αργότερα στο ${ DRIVE_APP_NAME }"
+      ],
+      "Search": [
+        "Αναζήτηση"
       ],
       "Search results": [
         "Αποτελέσματα αναζήτησης"

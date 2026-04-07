@@ -4421,8 +4421,8 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "進階匯入"
+      "More import options": [
+        "更多匯入選項"
       ]
     },
     "Import warning": {
@@ -4529,6 +4529,9 @@
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } 包含 ${ BRAND_NAME } Scribe 撰稿助理"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } 個席次"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME }終身方案無續約費，他是單次付費終身存取${ PASS_SHORT_APP_NAME }。"
@@ -7160,6 +7163,14 @@
         "${ price } 版"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } 個席次"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME } 席位"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: 給重要對話保密的視訊"
@@ -7208,6 +7219,14 @@
       ],
       "Up to ${ n } participant": [
         "至多 ${ n } 位參與者"
+      ],
+      "Video meetings, ${ n } participant": [
+        "視訊， ${ n } 參與者"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "包含 ${ seats } 座席"
       ]
     },
     "Message": {
@@ -7667,6 +7686,9 @@
       "Data breach monitoring": [
         "資料外洩監測"
       ],
+      "Data retention policies": [
+        "資料保留政策"
+      ],
       "Dedicated servers optimized for streaming": [
         "針對影音串流優化的獨立伺服器"
       ],
@@ -7774,6 +7796,9 @@
       ],
       "Priority support & live chat": [
         "優先處理您的客服單與線上聊天客服"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "隱私 AI 對話 (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "私人照片備份"
@@ -7915,6 +7940,9 @@
       ],
       "Vault sharing with up to ${ n } person": [
         "與最多 ${ n } 個人分享保管庫"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN 附帶廣告攔截器及惡意軟體防護"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我們會掃描暗網去檢查你的${ BRAND_NAME }地址或别名是否被外洩，並且在發現任何問題時立即通知你。"
@@ -10904,6 +10932,9 @@
       ],
       "Account security": [
         "帳號安全性"
+      ],
+      "Actions": [
+        "操作"
       ],
       "Active": [
         "使用中"

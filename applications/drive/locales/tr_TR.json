@@ -815,6 +815,9 @@
       "Refer a friend": [
         "Arkadaşınıza önerin"
       ],
+      "Refetch index": [
+        "Dizini yeniden getir"
+      ],
       "Refresh the page": [
         "Sayfayı yenile"
       ],
@@ -3766,6 +3769,12 @@
       "Something went wrong during folder listing": [
         "Klasör listelenirken bir sorun çıktı"
       ],
+      "Something went wrong with search. Please try again later.": [
+        "Arama sırasında bir sorun çıktı. Lütfen bir süre sonra yeniden deneyin."
+      ],
+      "Something went wrong with search: Not enough storage space.": [
+        "Arama sırasında bir sorun çıktı: Yeterli depolama alanı yok."
+      ],
       "Something went wrong. Please try again.": [
         "Bir sorun çıktı. Lütfen yeniden deneyin."
       ],
@@ -4831,8 +4840,8 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "Gelişmiş içe aktarma"
+      "More import options": [
+        "Diğer içe aktarma seçenekleri"
       ]
     },
     "Import warning": {
@@ -5041,6 +5050,9 @@
       ],
       "${ speed }/s": [
         "${ speed }/s"
+      ],
+      "${ state.result.entries.length } entries": [
+        "${ state.result.entries.length } girdi"
       ],
       "${ storage } storage": [
         "${ storage } depolama alanı"
@@ -5719,6 +5731,9 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Bir sonraki adımda, bir Bitcoin adresi kullanarak ön ödemenizi yapabilirsiniz."
       ],
+      "Index is empty.": [
+        "Dizin boş."
+      ],
       "Indexing in progress": [
         "Dizine ekleme sürüyor"
       ],
@@ -6201,6 +6216,9 @@
       "Search enabled. You may now close this dialogue and search for files and folders.": [
         "Arama özelliği açıldı. Bu pencereyi kapatarak dosyaları ve klasörleri arayabilirsiniz."
       ],
+      "Search module is not available.": [
+        "Arama modülü kullanılamıyor."
+      ],
       "Select a destination folder": [
         "Hedef klasörü seçin"
       ],
@@ -6586,6 +6604,9 @@
       ],
       "Unsupported file": [
         "Dosya desteklenmiyor"
+      ],
+      "Unsupported file type for Photos": [
+        "Fotoğraflar için desteklenmeyen dosya türü"
       ],
       "Untitled": [
         "Adlandırılmamış"
@@ -7345,6 +7366,9 @@
       "Enter device name": [
         "Aygıt adını yazın"
       ],
+      "Environment compatible": [
+        "Çevre uyumlu"
+      ],
       "Expired": [
         "Geçerlilik süresi dolmuş"
       ],
@@ -7413,6 +7437,12 @@
       ],
       "Include message and file name in invite email": [
         "Davet e-postasına bir ileti ve dosya adı eklensin"
+      ],
+      "Index kinds": [
+        "Dizin türleri"
+      ],
+      "Initial indexing": [
+        "İlk dizinleme"
       ],
       "Integrated 2FA authenticator": [
         "Bütünleşik iki adımlı kimlik doğrulayıcı"
@@ -7513,6 +7543,9 @@
       "Other": [
         "Diğer"
       ],
+      "Outdated version": [
+        "Eski sürüm"
+      ],
       "Password": [
         "Parola"
       ],
@@ -7581,6 +7614,9 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
+      ],
+      "Searchable": [
+        "Arama yapılabilir"
       ],
       "Select type of abuse": [
         "Kötüye kullanım türünü seçin"
@@ -7693,6 +7729,9 @@
       "Uploaded by": [
         "Yükleyen"
       ],
+      "User opted in": [
+        "Kullanıcı onay verdi"
+      ],
       "Username": [
         "Kullanıcı adı"
       ],
@@ -7701,6 +7740,9 @@
       ],
       "Viewer": [
         "Görüntüleyici"
+      ],
+      "Visible columns:": [
+        "Görünen sütunlar:"
       ],
       "Vulnerable": [
         "Çok zayıf"
@@ -12197,6 +12239,9 @@
       "Account temporarily locked": [
         "Hesap geçici olarak kilitlendi"
       ],
+      "Actions": [
+        "İşlemler"
+      ],
       "Active": [
         "İşlenen"
       ],
@@ -12599,6 +12644,9 @@
       "Gift": [
         "Hediye"
       ],
+      "Global": [
+        "Genel"
+      ],
       "Groups": [
         "Gruplar"
       ],
@@ -12909,6 +12957,9 @@
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Daha sonra kullanmak için ${ DRIVE_APP_NAME } üzerine kaydet"
+      ],
+      "Search": [
+        "Ara"
       ],
       "Search results": [
         "Arama sonuçları"
