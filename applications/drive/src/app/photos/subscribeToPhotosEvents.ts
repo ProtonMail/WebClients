@@ -1,6 +1,7 @@
 import { getDriveForPhotos } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
+import { getNodeEntity } from '../utils/sdk/getNodeEntity';
 import { loadAlbum, refreshAlbumMetadata } from './loaders/loadAlbum';
 import { useAlbumsStore } from './useAlbums.store';
 import { usePhotosStore } from './usePhotos.store';
@@ -67,25 +68,27 @@ export const subscribeToPhotosEvents = () => {
         const albumStore = useAlbumsStore.getState();
         const timelineUids: string[] = [];
         const albumOnlyUids: string[] = [];
-
         for (const item of event.items) {
-            const inTimeline = photosStore.photoTimelineUids.has(item.uid);
             const inAlbum = albumStore.currentAlbum?.photoNodeUids.has(item.uid) ?? false;
             const isAlbumNode = albumStore.currentAlbum?.nodeUid == item.uid;
-            if (!inTimeline && !inAlbum && !isAlbumNode) {
+            // TODO: Update that as we probably can do it differently instead of loading the root
+            const getIsInTimeline = async () =>
+                photosStore.photoTimelineUids.has(item.uid) ||
+                getNodeEntity(await getDriveForPhotos().getMyPhotosRootFolder()).node.uid === item.parentUid;
+            if (!inAlbum && !isAlbumNode && !(await getIsInTimeline())) {
                 continue;
             }
             if (item.isTrashed) {
                 photosStore.removePhotoItem(item.uid);
                 continue;
             }
-            if (inTimeline) {
-                timelineUids.push(item.uid);
-            } else if (inAlbum) {
+            if (inAlbum) {
                 albumOnlyUids.push(item.uid);
             } else if (isAlbumNode) {
                 // TODO: We need to update the SDK to not have to re-iterate all photos on album update
                 void loadAlbum(item.uid);
+            } else {
+                timelineUids.push(item.uid);
             }
         }
 
