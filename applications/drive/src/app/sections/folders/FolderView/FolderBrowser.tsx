@@ -195,6 +195,24 @@ export function FolderBrowser({
 
     const isEmpty = hasEverLoaded && !isLoading && !sortedList.length;
 
+    const uploadInputs = (
+        <>
+            <input
+                multiple
+                type="file"
+                ref={uploadFile.fileInputRef}
+                className="hidden"
+                onChange={uploadFile.handleFileChange}
+            />
+            <input
+                type="file"
+                ref={uploadFolder.folderInputRef}
+                className="hidden"
+                onChange={uploadFolder.handleFolderChange}
+            />
+        </>
+    );
+
     if (isEmpty) {
         if (!permissions.canEdit) {
             return (
@@ -208,19 +226,7 @@ export function FolderBrowser({
             <>
                 <ToolbarRow titleArea={breadcrumbs} toolbar={toolbar} />
                 <EmptyFolder actions={actions} uploadFile={uploadFile} uploadFolder={uploadFolder} />
-                <input
-                    multiple
-                    type="file"
-                    ref={uploadFile.fileInputRef}
-                    className="hidden"
-                    onChange={uploadFile.handleFileChange}
-                />
-                <input
-                    type="folder"
-                    ref={uploadFolder.folderInputRef}
-                    className="hidden"
-                    onChange={uploadFolder.handleFolderChange}
-                />
+                {uploadInputs}
                 {modals.createFolderModal}
                 {modals.createFileModal}
                 {modals.sharingModal}
@@ -318,19 +324,7 @@ export function FolderBrowser({
                     close: contextMenu.close,
                 }}
             />
-            <input
-                multiple
-                type="file"
-                ref={uploadFile.fileInputRef}
-                className="hidden"
-                onChange={uploadFile.handleFileChange}
-            />
-            <input
-                type="file"
-                ref={uploadFolder.folderInputRef}
-                className="hidden"
-                onChange={uploadFolder.handleFolderChange}
-            />
+            {uploadInputs}
             {modals.previewModal}
             {modals.renameModal}
             {modals.moveItemsModal}
