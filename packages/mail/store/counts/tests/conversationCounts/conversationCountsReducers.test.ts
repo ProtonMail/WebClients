@@ -95,6 +95,32 @@ describe('conversationCountsReducers', () => {
                 { LabelID: MAILBOX_LABEL_IDS.TRASH, Unread: 1, Total: 1 },
             ]);
         });
+
+        it('should decrement category label unread count regardless of the label the conversation is marked as read from', () => {
+            state = getInitialState([
+                { LabelID: MAILBOX_LABEL_IDS.TRASH, Unread: 1, Total: 1 },
+                { LabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, Unread: 1, Total: 1 },
+            ]);
+
+            const conversation = {
+                ID: conversationID1,
+                ContextNumUnread: 1,
+                Labels: [
+                    { ID: MAILBOX_LABEL_IDS.TRASH, ContextNumUnread: 1 },
+                    { ID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, ContextNumUnread: 1 },
+                ],
+            };
+
+            markConversationsAsRead(state, {
+                type: 'mailbox/markConversationsAsRead',
+                payload: { conversations: [conversation], labelID: MAILBOX_LABEL_IDS.TRASH },
+            });
+
+            expect(state.value).toEqual([
+                { LabelID: MAILBOX_LABEL_IDS.TRASH, Unread: 0, Total: 1 },
+                { LabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, Unread: 0, Total: 1 },
+            ]);
+        });
     });
 
     describe('markConversationsAsUnreadPending', () => {
