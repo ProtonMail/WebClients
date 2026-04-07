@@ -54,6 +54,7 @@ export const FeedbackModal = (props: Props) => {
         telemetry.sendCustomEvent('b2bAdminSidebarFeedback', {
             feedback,
             platform: 'web',
+            location: window.location.toString(),
         });
         setIsSubmitting(false);
 

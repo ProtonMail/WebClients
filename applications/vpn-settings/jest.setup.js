@@ -48,6 +48,24 @@ global.MutationObserver = class {
     observe() {}
 };
 
+class MockIntersectionObserver {
+    constructor(callback, options) {
+        this.callback = callback;
+        this.options = options;
+    }
+
+    observe = jest.fn();
+    unobserve = jest.fn();
+    disconnect = jest.fn();
+
+    // helper to trigger intersection manually
+    trigger(entries) {
+        this.callback(entries, this);
+    }
+}
+
+global.IntersectionObserver = MockIntersectionObserver;
+
 // Mock window.getComputedStyle to prevent "Not implemented" errors in jsdom, as it's required by useActiveBreakpoint to determine the active breakpoint.
 global.window.getComputedStyle = jest.fn(() => ({
     getPropertyValue: jest.fn(() => ''),
