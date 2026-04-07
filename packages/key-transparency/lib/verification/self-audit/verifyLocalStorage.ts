@@ -4,6 +4,7 @@ import { ParsedSignedKeyList } from '@proton/shared/lib/keys';
 
 import { fetchProof, fetchSignedKeyList } from '../../helpers/apiHelpers';
 import {
+    KT_ERROR_TYPE,
     KeyTransparencyError,
     getEmailDomain,
     isTimestampOlderThanThreshold,
@@ -24,11 +25,11 @@ enum LocalStorageAuditStatus {
 const fetchSKLWithRevision = async (api: Api, email: string, revision: number, data: string) => {
     const includedSKL = await fetchSignedKeyList(api, revision, email);
     if (!includedSKL) {
-        return throwKTError('Could not find new SKL with same revision', { email, revision });
+        return throwKTError('Could not find new SKL with same revision',KT_ERROR_TYPE.LOCAL, { email, revision });
     }
 
     if (includedSKL.Data != data && includedSKL.ObsolescenceToken != data) {
-        return throwKTError('SKL data has changed for revision', {
+        return throwKTError('SKL data has changed for revision', KT_ERROR_TYPE.LOCAL, {
             email,
             revision,
             savedData: data,
@@ -72,7 +73,7 @@ const verifyKTBlobContent = async (
                 return LocalStorageAuditStatus.Success;
             } else {
                 if (isTimestampTooOld(creationTimestamp)) {
-                    return throwKTError('SKL revision was ignored after more than max allowed interval', {
+                    return throwKTError('SKL revision was ignored after more than max allowed interval', KT_ERROR_TYPE.LOCAL, {
                         email,
                         revision,
                     });

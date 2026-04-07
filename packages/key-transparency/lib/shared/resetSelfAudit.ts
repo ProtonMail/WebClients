@@ -4,7 +4,7 @@ import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
 
 import { fetchLatestEpoch, uploadVerifiedEpoch } from '../helpers/apiHelpers';
-import { ktSentryReportError } from '../helpers/utils';
+import { KT_ERROR_TYPE, ktSentryReportError } from '../helpers/utils';
 import type { VerifiedEpoch } from '../interfaces';
 
 /**
@@ -50,6 +50,6 @@ export const resetSelfAudit: ResetSelfAudit = async ({
                 })
         );
     } catch (error: any) {
-        ktSentryReportError(error, { context: 'resetSelfAudit' });
+        ktSentryReportError(error, KT_ERROR_TYPE.LOCAL, { context: 'resetSelfAudit' });
     }
 };

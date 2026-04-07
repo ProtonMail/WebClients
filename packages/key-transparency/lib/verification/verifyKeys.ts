@@ -17,7 +17,7 @@ import { ParsedSignedKeyList } from '@proton/shared/lib/keys';
 import { KT_SKL_VERIFICATION_CONTEXT } from '../constants/constants';
 import { NO_KT_DOMAINS } from '../constants/domains';
 import { fetchEpochByEpochID, fetchProof } from '../helpers/apiHelpers';
-import { KeyTransparencyError, StaleEpochError, getEmailDomain, throwKTError } from '../helpers/utils';
+import { KT_ERROR_TYPE, KeyTransparencyError, StaleEpochError, getEmailDomain, throwKTError } from '../helpers/utils';
 import type { Proof } from '../interfaces';
 import { saveSKLToLS } from '../storage/saveSKLToLS';
 import {
@@ -34,27 +34,27 @@ import {
 const compareKeyInfo = (email: string, keyInfo: SignedKeyListItem, sklKeyInfo: SignedKeyListItem): void => {
     // Check fingerprints
     if (keyInfo.Fingerprint !== sklKeyInfo.Fingerprint) {
-        return throwKTError('Fingerprints differ', { email });
+        return throwKTError('Fingerprints differ', KT_ERROR_TYPE.LOCAL, { email });
     }
 
     // Check SHA256Fingerprints
     if (keyInfo.SHA256Fingerprints.length !== sklKeyInfo.SHA256Fingerprints.length) {
-        return throwKTError('SHA256Fingerprints length differ', { email });
+        return throwKTError('SHA256Fingerprints length differ', KT_ERROR_TYPE.LOCAL, { email });
     }
     keyInfo.SHA256Fingerprints.forEach((sha256Fingerprint, i) => {
         if (sha256Fingerprint !== sklKeyInfo.SHA256Fingerprints[i]) {
-            return throwKTError('SHA256Fingerprints differ', { email });
+            return throwKTError('SHA256Fingerprints differ', KT_ERROR_TYPE.LOCAL, { email });
         }
     });
 
     // Check Flags
     if (keyInfo.Flags !== sklKeyInfo.Flags) {
-        return throwKTError('Flags differ', { email });
+        return throwKTError('Flags differ', KT_ERROR_TYPE.LOCAL, { email });
     }
 
     // Check primariness
     if (keyInfo.Primary !== sklKeyInfo.Primary) {
-        return throwKTError('Primariness differs', { email });
+        return throwKTError('Primariness differs', KT_ERROR_TYPE.LOCAL, { email });
     }
 };
 
@@ -71,7 +71,7 @@ interface KeyWithFlags {
 export const checkKeysInSKL = (email: string, apiKeys: KeyWithFlags[], sklData: string): void => {
     const signedKeyListInfo = new ParsedSignedKeyList(sklData).getParsedSignedKeyList();
     if (!signedKeyListInfo) {
-        return throwKTError('SignedKeyList data parsing failed', { sklData });
+        return throwKTError('SignedKeyList data parsing failed', KT_ERROR_TYPE.LOCAL, { sklData });
     }
 
     const untrustedKeyListInfo = apiKeys.map(({ key, flags, primary }) => ({
@@ -83,10 +83,10 @@ export const checkKeysInSKL = (email: string, apiKeys: KeyWithFlags[], sklData: 
 
     // Check arrays validity
     if (untrustedKeyListInfo.length === 0) {
-        return throwKTError('No keys detected', { email });
+        return throwKTError('No keys detected', KT_ERROR_TYPE.LOCAL, { email });
     }
     if (untrustedKeyListInfo.length !== signedKeyListInfo.length) {
-        return throwKTError('Key list and signed key list have different lengths', { email });
+        return throwKTError('Key list and signed key list have different lengths', KT_ERROR_TYPE.LOCAL, { email });
     }
 
     // Sorting both lists just to make sure key infos appear in the same order
@@ -170,7 +170,7 @@ const verifyPublicKeys = async ({
         }
 
         if (signedKeyList?.Revision === 0) {
-            return throwKTError('Signed key list with revision 0', { email });
+            return throwKTError('Signed key list with revision 0', KT_ERROR_TYPE.LOCAL, { email });
         }
 
         // The following checks can only be executed if the SKL is non-obsolescent.
@@ -192,14 +192,14 @@ const verifyPublicKeys = async ({
 
         if (signedKeyList && !signedKeyList.MinEpochID) {
             if (!signedKeyList.ExpectedMinEpochID) {
-                return throwKTError("SKL doesn't have a MinEpochID or ExpectedMinEpochID set", {
+                return throwKTError("SKL doesn't have a MinEpochID or ExpectedMinEpochID set", KT_ERROR_TYPE.LOCAL, {
                     email,
                     signedKeyList,
                 });
             }
             const data = signedKeyList.Data ?? signedKeyList.ObsolescenceToken;
             if (!data) {
-                return throwKTError("SKL doesn't have data or obsolescence token", { email, signedKeyList });
+                return throwKTError("SKL doesn't have data or obsolescence token", KT_ERROR_TYPE.LOCAL, { email, signedKeyList });
             }
             await sklVerificationPromise;
             await saveSKLToLS({
@@ -368,7 +368,7 @@ export const verifyAddressKeyToRecover = async ({
     // Find the key in the SKL -- we only check for fingerprints, and that the key was not marked compromised
     const signedKeyListInfo = new ParsedSignedKeyList(signedKeyList.Data).getParsedSignedKeyList();
     if (!signedKeyListInfo) {
-        return throwKTError('SignedKeyList data parsing failed', { sklData: signedKeyList.Data });
+        return throwKTError('SignedKeyList data parsing failed', KT_ERROR_TYPE.LOCAL, { sklData: signedKeyList.Data });
     }
     const matchingKeyInSKL = signedKeyListInfo.find((keyInfo) =>
         keyInfo.SHA256Fingerprints.every(

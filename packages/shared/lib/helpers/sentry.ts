@@ -23,7 +23,7 @@ import type { ProtonConfig } from '../interfaces';
 import { isElectronApp } from './desktop';
 
 export { spanToJSON } from '@sentry/core';
-export type { Span } from '@sentry/browser';
+export type { Span, SeverityLevel } from '@sentry/browser';
 
 type SentryContext = {
     authHeaders: { [key: string]: string };

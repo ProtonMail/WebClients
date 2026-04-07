@@ -88,30 +88,44 @@ const sanitizeErrorMessage = (errorMessage: string) => {
     return errorMessage.replace(stripRegex, '');
 };
 
+export enum KT_ERROR_TYPE {
+    /** Error may indicate global KT issue (e.g. invalid epoch detected) */
+    SYSTEM,
+    /** Error limited to KT state of the user (e.g. SKL does not verify) */
+    LOCAL,
+}
+
 /**
  * Helper to send KT-related sentry reports
  */
-export const ktSentryReport = (errorMessage: string, extra?: { [key: string]: any }) => {
+export const ktSentryReport = (errorMessage: string, ktErrorType: KT_ERROR_TYPE, extra?: { [key: string]: any }) => {
     const isoServerTime = serverTime().toISOString();
     const extraWithServerTime = { ...extra, server_time: isoServerTime };
-    captureMessage(`[KeyTransparency] ${sanitizeErrorMessage(errorMessage)}`, { extra: extraWithServerTime });
+    captureMessage(`[KeyTransparency] ${sanitizeErrorMessage(errorMessage)}`, {
+        level: ktErrorType === KT_ERROR_TYPE.SYSTEM ? 'error' : 'warning',
+        extra: extraWithServerTime,
+    });
 };
 
 /**
  * Helper to send KT-related sentry reports
  */
-export const ktSentryReportError = (error: any, extra?: { [key: string]: any }) => {
+export const ktSentryReportError = (error: any, ktErrorType: KT_ERROR_TYPE, extra?: { [key: string]: any }) => {
     const errorMessage = error instanceof Error ? `${error.name}: ${error.message}` : 'unknown error';
     const stack = error instanceof Error ? error.stack : undefined;
-    ktSentryReport(errorMessage, { ...extra, stack });
+    ktSentryReport(errorMessage, ktErrorType, { ...extra, stack });
 };
 
 export class KeyTransparencyError extends Error {}
 
 export class StaleEpochError extends Error {}
 
-export const throwKTError = (errorMessage: string, extra?: { [key: string]: any }): never => {
-    ktSentryReport(errorMessage, extra);
+export const throwKTError = (
+    errorMessage: string,
+    ktErrorType: KT_ERROR_TYPE,
+    extra?: { [key: string]: any }
+): never => {
+    ktSentryReport(errorMessage, ktErrorType, extra);
     throw new KeyTransparencyError(errorMessage);
 };
 
@@ -154,7 +168,7 @@ export const getBaseDomain = (sendReport: boolean = true) => {
     // Since this function is also used to test whether to use KT at all, we don't want to spam sentry with
     // attempts to figure this out, in which case sendReport should be false
     if (sendReport) {
-        return throwKTError('Domain not recognised', {
+        return throwKTError('Domain not recognised', KT_ERROR_TYPE.LOCAL, {
             hostname,
             currentDomain,
             domainParts: JSON.stringify(domainParts),
