@@ -29,7 +29,6 @@ import {
     PrivateHeader,
     PrivateMainAreaLoading,
     SubscriptionModalProvider,
-    TVContainer,
     TopBanners,
     TopNavbarUpsell,
     UserDropdown,
@@ -66,14 +65,16 @@ import type { UserModel } from '@proton/shared/lib/interfaces';
 import { getRequiresAddressSetup } from '@proton/shared/lib/keys';
 import { hasPaidPass } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash/useFlag';
+import { TVContainer, TvContainerSignedIn } from '@proton/vpn/components/tv';
 
 import AccountSettingsRouter from '../containers/account/AccountSettingsRouter';
 import { recoveryIds } from '../containers/account/recoveryIds';
 import OrganizationSettingsRouter from '../containers/organization/OrganizationSettingsRouter';
+import Layout from '../public/Layout';
+import Main from '../public/Main';
 import AccountSidebar from './AccountSidebar';
 import AccountStartupModals from './AccountStartupModals';
 import SettingsSearch from './SettingsSearch';
-import { TvContainerSignedIn } from './TvContainerSignedIn/TvContainerSignedIn';
 import { getRoutes } from './routes';
 
 const MailSettingsRouter = lazy(
@@ -435,11 +436,14 @@ const MainContainer = () => {
         return <Redirect to={`${SETUP_ADDRESS_PATH}?to=${app}&to-type=settings&to-path=${toPath}`} />;
     }
 
-    if (app === APPS.PROTONVPN_SETTINGS && matchPath(location.pathname, VPN_TV_PATH_WITH_CODE)) {
+    const match = matchPath<{ code: string }>(location.pathname, VPN_TV_PATH_WITH_CODE);
+    if (app === APPS.PROTONVPN_SETTINGS && match) {
         return (
-            <Route path={VPN_TV_PATH_WITH_CODE}>
-                <TvContainerSignedIn />
-            </Route>
+            <Layout toApp={APPS.PROTONVPN_SETTINGS} hasDecoration hasFooter={false} hasAppLogos={false}>
+                <Main className="flex flex-column items-center justify-center">
+                    <TvContainerSignedIn code={match.params.code} />
+                </Main>
+            </Layout>
         );
     }
 

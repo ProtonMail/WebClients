@@ -752,7 +752,6 @@ export { default as ProtonVPNClientsSection } from './containers/vpn/ProtonVPNCl
 export { default as ProtonVPNCredentialsSection } from './containers/vpn/ProtonVPNCredentialsSection/ProtonVPNCredentialsSection';
 export { default as ProtonVPNResourcesSection } from './containers/vpn/ProtonVPNResourcesSection/ProtonVPNResourcesSection';
 export { default as SharedServersSection } from './containers/vpn/sharedServers/SharedServersSection';
-export { default as TVContainer } from './containers/vpn/tv/TVContainer';
 export { default as VpnAlsoInYourPlanSection } from './containers/vpn/VpnAlsoInYourPlanSection/VpnAlsoInYourPlanSection';
 export { default as VpnBlogSection } from './containers/vpn/VpnBlogSection/VpnBlogSection';
 export { default as VpnDownloadAndInfoSection } from './containers/vpn/VpnDownloadAndInfoSection/VpnDownloadAndInfoSection';
