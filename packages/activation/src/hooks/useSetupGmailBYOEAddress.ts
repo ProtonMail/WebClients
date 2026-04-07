@@ -54,7 +54,7 @@ const useSetupGmailBYOEAddress = ({ showSuccessModal }: Props) => {
         if (findUserAddress(emailAddress, addresses)) {
             createNotification({
                 type: 'error',
-                text: c('loc_nightly: BYOE').t`Address is already added to your account`,
+                text: c('Error').t`Address is already added to your account`,
             });
         } else {
             try {
@@ -99,7 +99,7 @@ const useSetupGmailBYOEAddress = ({ showSuccessModal }: Props) => {
             if (findUserAddress(token.Account, addresses)) {
                 createNotification({
                     type: 'error',
-                    text: c('loc_nightly: BYOE').t`Address is already added to your account`,
+                    text: c('Error').t`Address is already added to your account`,
                 });
                 return;
             }
@@ -123,7 +123,7 @@ const useSetupGmailBYOEAddress = ({ showSuccessModal }: Props) => {
                 onError: () => {
                     createNotification({
                         type: 'error',
-                        text: c('loc_nightly: BYOE').t`Something went wrong while creating the address`,
+                        text: c('Error').t`Something went wrong while creating the address`,
                     });
                 },
             });
