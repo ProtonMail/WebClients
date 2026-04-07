@@ -352,6 +352,34 @@ describe('conversationsReducers', () => {
                 expect(updatedConversationState!.Conversation.NumUnread).toBe(0);
                 expect(updatedConversationState!.Messages!.every((message) => message.Unread === 0)).toBe(true);
             });
+
+            it('should decrement category label unread count regardless of the label the conversation is marked as read from', () => {
+                const trashConversation = {
+                    ...mockConversation,
+                    Labels: [
+                        { ID: MAILBOX_LABEL_IDS.TRASH, ContextNumUnread: 2 },
+                        { ID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, ContextNumUnread: 2 },
+                    ],
+                };
+                state[conversationID] = { ...mockConversationState, Conversation: trashConversation };
+
+                markConversationsAsReadPending(state, {
+                    type: 'markConversationsAsRead/pending',
+                    payload: undefined,
+                    meta: {
+                        arg: {
+                            conversations: [trashConversation],
+                            labelID: MAILBOX_LABEL_IDS.TRASH,
+                        },
+                    },
+                });
+
+                const labels = state[conversationID]!.Conversation.Labels!;
+                expect(labels.find((label) => label.ID === MAILBOX_LABEL_IDS.TRASH)?.ContextNumUnread).toBe(0);
+                expect(
+                    labels.find((label) => label.ID === MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS)?.ContextNumUnread
+                ).toBe(0);
+            });
         });
     });
 
