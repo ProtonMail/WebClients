@@ -40,7 +40,7 @@ import { selectLayoutIsExpanded } from '../../store/layout/layoutSliceSelectors'
 import OnboardingChecklistSidebar from '../onboarding/checklist/sidebar/OnboardingChecklistSidebar';
 import MailSidebarList from './MailSidebarList';
 import MailSidebarPrimaryButton from './MailSidebarPrimaryButton';
-import { BookingPageLocationSpotlightContent, useBookingPageSpotlight } from './bookingSpotlight/useBookingSpotlight';
+import { MeetBookingSpotlightMail, useBookingPageSpotlight } from './bookingSpotlight/useBookingSpotlight';
 
 const MailSidebar = () => {
     const api = useApi();
@@ -90,7 +90,7 @@ const MailSidebar = () => {
                     closeIcon="cross-big"
                     className="border-none spotlight--with-illustration"
                     borderRadius="xl"
-                    content={<BookingPageLocationSpotlightContent />}
+                    content={<MeetBookingSpotlightMail />}
                     show={bookingSpotlight.shouldShowSpotlight}
                     onClose={bookingSpotlight.onClose}
                     onDisplayed={bookingSpotlight.onDisplayed}
