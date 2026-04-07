@@ -30,10 +30,20 @@ function trackError(error: unknown, downloadId: string, nodes: NodeEntity[]) {
 }
 
 export function handleDownloadError(downloadId: string, nodes: NodeEntity[], error: unknown, aborted?: boolean) {
-    const { updateDownloadItem } = useDownloadManagerStore.getState();
+    const { updateDownloadItem, getQueueItem } = useDownloadManagerStore.getState();
     const isCancelled = Boolean(aborted) || isTransferCancelError(error);
 
     if (isCancelled) {
+        const currentItem = getQueueItem(downloadId);
+        // If retry() was called before this async callback fired, the download will have
+        // isRetried:true and a non-terminal status. Don't overwrite it with Cancelled.
+        if (
+            currentItem?.isRetried &&
+            currentItem.status !== DownloadStatus.Cancelled &&
+            currentItem.status !== DownloadStatus.Failed
+        ) {
+            return;
+        }
         updateDownloadItem(downloadId, { status: DownloadStatus.Cancelled, error: undefined });
     } else {
         downloadLogDebug('Download error', { downloadId, error });
