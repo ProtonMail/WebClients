@@ -27,6 +27,29 @@ const noReferrerInfo = (link: HTMLLinkElement) => {
 };
 
 /**
+ * flatten the text content of the link and check if there is a long run without natural breaking opportunities
+ */
+const LONG_UNBREAKABLE_LINK_TEXT_THRESHOLD = 30;
+
+const detectLongUnbreakableContent = (link: HTMLLinkElement) => {
+    const text = link.textContent ?? '';
+
+    // Split only with normal spaces
+    const segments = text.split(/ +/).filter(Boolean);
+
+    const maxRun = segments.reduce((max, segment) => Math.max(max, segment.length), 0);
+
+    return maxRun > LONG_UNBREAKABLE_LINK_TEXT_THRESHOLD;
+};
+
+const transformLinksWithLongUnbreakableContent = (link: HTMLLinkElement) => {
+    if (detectLongUnbreakableContent(link)) {
+        // add in style attribute a word-break: break-word;
+        link.style.wordBreak = 'break-word';
+    }
+};
+
+/**
  * make links open in a new tab
  */
 const httpInNewTab = (link: HTMLLinkElement) => {
@@ -91,6 +114,7 @@ export const transformLinks = (
     const utmTrackers: MessageUTMTracker[] = [];
 
     links.forEach((link) => {
+        transformLinksWithLongUnbreakableContent(link);
         sanitizeRelativeHttpLinks(link);
         httpInNewTab(link);
         noReferrerInfo(link);
