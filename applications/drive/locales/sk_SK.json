@@ -1262,6 +1262,9 @@
       ],
       "Continue to ${ planOrAppName }": [
         "Pokračovať do ${ planOrAppName }"
+      ],
+      "Refetch index": [
+        "Znovu načítať index"
       ]
     },
     "Action: Docs": {
@@ -7207,6 +7210,18 @@
       ],
       "for ${ price }": [
         "za ${ price }"
+      ],
+      "${ state.result.entries.length } entries": [
+        "${ state.result.entries.length } záznamov"
+      ],
+      "Index is empty.": [
+        "Index je prázdny."
+      ],
+      "Search module is not available.": [
+        "Modul vyhľadávania nie je k dispozícii."
+      ],
+      "Unsupported file type for Photos": [
+        "Nepodporovaný typ súboru pre Fotografie"
       ]
     },
     "info": {
@@ -7985,6 +8000,27 @@
       ],
       "Skip feedback": [
         "Preskočiť spätnú väzbu"
+      ],
+      "Environment compatible": [
+        "Kompatibilné prostredie"
+      ],
+      "Index kinds": [
+        "Typy indexu"
+      ],
+      "Initial indexing": [
+        "Počiatočné indexovanie"
+      ],
+      "Outdated version": [
+        "Zastaralá verzia"
+      ],
+      "Searchable": [
+        "Vyhľadávateľné"
+      ],
+      "User opted in": [
+        "Používateľ udelil súhlas"
+      ],
+      "Visible columns:": [
+        "Viditeľné stĺpce:"
       ]
     },
     "Label for contact group color": {
@@ -13591,6 +13627,15 @@
       ],
       "Change access to viewer?": [
         "Zmeniť prístup čitateľovi?"
+      ],
+      "Actions": [
+        "Akcie"
+      ],
+      "Global": [
+        "Globálna"
+      ],
+      "Search": [
+        "Hľadať"
       ]
     },
     "Today icon tooltip in mini calendar": {

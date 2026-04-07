@@ -1256,6 +1256,9 @@
       ],
       "Continue to ${ planOrAppName }": [
         "Continuare cu ${ planOrAppName }"
+      ],
+      "Refetch index": [
+        "Refacere index"
       ]
     },
     "Action: Docs": {
@@ -4009,6 +4012,12 @@
       ],
       "Unable to start the search: not enough storage space": [
         "Nu se poate iniția căutarea: spațiu de stocare insuficient"
+      ],
+      "Something went wrong with search. Please try again later.": [
+        "Ceva nu a funcționat corect cu căutarea. Reîncercați mai târziu."
+      ],
+      "Something went wrong with search: Not enough storage space.": [
+        "Ceva nu a funcționat corect cu căutarea: nu există suficient spațiu de stocare."
       ]
     },
     "error": {
@@ -4896,6 +4905,9 @@
     "Import provider": {
       "Advanced import": [
         "Importare avansată"
+      ],
+      "More import options": [
+        "Mai multe opțiuni de importare"
       ]
     },
     "Import warning": {
@@ -7104,6 +7116,18 @@
       ],
       "Everything in ${ planOrAppName }, plus:": [
         "Totul din ${ planOrAppName }, plus:"
+      ],
+      "${ state.result.entries.length } entries": [
+        "${ state.result.entries.length } intrări"
+      ],
+      "Index is empty.": [
+        "Indexul este gol."
+      ],
+      "Search module is not available.": [
+        "Modulul de căutare nu este disponibil."
+      ],
+      "Unsupported file type for Photos": [
+        "Tip de fișier nesuportat pentru „Fotografii”"
       ]
     },
     "info": {
@@ -7876,6 +7900,27 @@
       ],
       "Skip feedback": [
         "Omitere feedback"
+      ],
+      "Environment compatible": [
+        "Mediu compatibil"
+      ],
+      "Index kinds": [
+        "Tipuri de indexare"
+      ],
+      "Initial indexing": [
+        "Indexare inițială"
+      ],
+      "Outdated version": [
+        "Versiune învechită"
+      ],
+      "Searchable": [
+        "Permite căutare"
+      ],
+      "User opted in": [
+        "Utilizatorul a optat pentru"
+      ],
+      "Visible columns:": [
+        "Coloane vizibile:"
       ]
     },
     "Label for contact group color": {
@@ -13450,6 +13495,15 @@
       ],
       "You’ve got 5 GB of storage": [
         "Ați primit 5 GiB spațiu de stocare"
+      ],
+      "Actions": [
+        "Acțiuni"
+      ],
+      "Global": [
+        "Global"
+      ],
+      "Search": [
+        "Căutare"
       ]
     },
     "Today icon tooltip in mini calendar": {

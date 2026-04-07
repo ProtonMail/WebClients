@@ -1250,6 +1250,9 @@
       ],
       "Continue to ${ planOrAppName }": [
         "Continuer vers ${ planOrAppName }"
+      ],
+      "Refetch index": [
+        "Réindexer"
       ]
     },
     "Action: Docs": {
@@ -6987,6 +6990,18 @@
       ],
       "Everything in ${ planOrAppName }, plus:": [
         "Tout ce qui est inclus dans ${ planOrAppName }, et plus encore :"
+      ],
+      "${ state.result.entries.length } entries": [
+        "${ state.result.entries.length } entrées"
+      ],
+      "Index is empty.": [
+        "L'index est vide."
+      ],
+      "Search module is not available.": [
+        "Le module de recherche n'est pas disponible."
+      ],
+      "Unsupported file type for Photos": [
+        "Type de fichier non pris en charge pour Photos"
       ]
     },
     "info": {
@@ -7756,6 +7771,27 @@
       ],
       "Skip feedback": [
         "Ignorer les commentaires"
+      ],
+      "Environment compatible": [
+        "Environnement compatible"
+      ],
+      "Index kinds": [
+        "Types d'index"
+      ],
+      "Initial indexing": [
+        "Indexation initiale"
+      ],
+      "Outdated version": [
+        "Version obsolète"
+      ],
+      "Searchable": [
+        "Consultable"
+      ],
+      "User opted in": [
+        "L'utilisateur a accepté"
+      ],
+      "Visible columns:": [
+        "Colonnes visibles :"
       ]
     },
     "Label for contact group color": {
@@ -13244,6 +13280,15 @@
       ],
       "Share \"${ fileName }\"": [
         "Partager « ${ fileName } »"
+      ],
+      "Actions": [
+        "Actions"
+      ],
+      "Global": [
+        "Global"
+      ],
+      "Search": [
+        "Rechercher"
       ]
     },
     "Today icon tooltip in mini calendar": {
