@@ -679,12 +679,10 @@ export const getAccountAppRoutes = ({
                     {
                         text: c('Title').t`Imports`,
                         id: 'import-list',
-                        invisibleTitle: true,
                     },
                     {
                         text: c('Title').t`Forwardings`,
                         id: 'forwarding-list',
-                        invisibleTitle: true,
                     },
                 ],
             },
