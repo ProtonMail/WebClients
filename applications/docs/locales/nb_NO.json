@@ -934,6 +934,10 @@
         "${ seats } ${ LUMO_APP_NAME } lisens",
         "${ seats } ${ LUMO_APP_NAME } lisenser"
       ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME }-lisens",
+        "${ seats } ${ MEET_APP_NAME }-lisenser"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } skriveassistentlisens",
         "${ seats } skriveassistentlisenser"
@@ -4045,8 +4049,8 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "Avansert import"
+      "More import options": [
+        "Flere importalternativer"
       ]
     },
     "Import warning": {
@@ -4510,6 +4514,9 @@
       ],
       "Everything in ${ planOrAppName }": [
         "Alt i ${ planOrAppName }"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Alt i ${ planOrAppName }, pluss:"
       ],
       "Failed to generate a secure link. The reason is: ${ error }": [
         "Kunne ikke generere en sikker kobling. Årsaken er: ${ error }"
@@ -6151,6 +6158,18 @@
         "Tillegg med gratis prøveperiode"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME }-tilgang"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME }-tilganger"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME }-tilgang",
+        "${ seats } ${ MEET_APP_NAME }-tilganger"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: konfidensielle videokonferanser for samtalene som betyr noe"
@@ -6184,6 +6203,9 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Ende-til-ende-kryptert skjermdeling og kortvarig chat under samtaler"
       ],
+      "Hosts can record meetings locally on their computers": [
+        "Verter kan ta opp møter lokalt på datamaskinene sine"
+      ],
       "Meeting recording": [
         "Opptak av møte"
       ],
@@ -6203,6 +6225,10 @@
       "Up to ${ n } participant": [
         "Opptil ${ n } deltaker",
         "Opptil ${ n } deltakere"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videomøter, ${ n } deltaker",
+        "Videomøter, ${ n } deltakere"
       ]
     },
     "Message": {
@@ -6738,6 +6764,9 @@
       "Data breach monitoring": [
         "Overvåking av datainnbrudd"
       ],
+      "Data retention policies": [
+        "Retningslinjer for dataoppbevaring"
+      ],
       "Dedicated servers optimized for streaming": [
         "Dedikerte tjenere optimalisert for strømming"
       ],
@@ -6846,6 +6875,9 @@
       ],
       "Priority support & live chat": [
         "Proritert kundestøtte & chat"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Privat KI-chat (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "Privat sikkerhetskopiering av bilder"
@@ -6992,6 +7024,9 @@
       "Vault sharing with up to ${ n } person": [
         "Deling av hvelv med opptil ${ n } person",
         "Deling av hvelv med opptil ${ n } personer"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN med annonseblokkering og skadevarebeskyttelse"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skanner det mørke nettet for å sjekke om ${ BRAND_NAME }-adressene eller aliasene dine har blitt lekket, og varsler deg umiddelbart hvis vi finner noe."
@@ -8039,7 +8074,7 @@
         "En måte å kontakte deg på"
       ],
       "Anything you'd like us to know": [
-        "Er det noe mer du vil at vi skal vite om"
+        "Er det noe mer du vil at vi skal vite om?"
       ],
       "Choose password": [
         "Velg passord"
@@ -8204,7 +8239,7 @@
         "Microsoft 365"
       ],
       "Other": [
-        "Annen"
+        "Annet"
       ],
       "Outlook": [
         "Outlook"
