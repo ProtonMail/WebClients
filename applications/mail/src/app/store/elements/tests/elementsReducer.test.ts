@@ -212,6 +212,88 @@ describe('markMessageAs', () => {
             ]);
         });
 
+        it('should decrement category label unread count regardless of the label the message is marked as read from', () => {
+            const message = setupMessage({
+                messageID: MESSAGE_ID,
+                unreadState: 'unread',
+                labelIDs: [
+                    MAILBOX_LABEL_IDS.TRASH,
+                    MAILBOX_LABEL_IDS.ALL_MAIL,
+                    MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                    MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
+                ],
+            });
+
+            const conversation = setupConversation({
+                conversationLabels: [
+                    {
+                        ID: MAILBOX_LABEL_IDS.TRASH,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 1,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 1,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 1,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 1,
+                    },
+                ] as ConversationLabel[],
+                numMessages: 2,
+                numUnread: 1,
+                numAttachments: 0,
+            });
+
+            testState.elements = {
+                [CONVERSATION_ID]: conversation,
+                [MESSAGE_ID]: message,
+            };
+
+            markMessagesAsReadPending(testState, {
+                type: 'mailbox/markMessageAsRead',
+                payload: undefined,
+                meta: {
+                    arg: {
+                        messages: [message],
+                        labelID: MAILBOX_LABEL_IDS.TRASH,
+                        conversations: [conversation],
+                    },
+                },
+            });
+
+            const updatedConversation = testState.elements[CONVERSATION_ID] as Conversation;
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
+                {
+                    ID: MAILBOX_LABEL_IDS.TRASH,
+                    ContextNumMessages: 2,
+                    ContextNumUnread: 0,
+                },
+                {
+                    ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                    ContextNumMessages: 2,
+                    ContextNumUnread: 0,
+                },
+                {
+                    ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                    ContextNumMessages: 2,
+                    ContextNumUnread: 0,
+                },
+                {
+                    ID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
+                    ContextNumMessages: 2,
+                    ContextNumUnread: 0,
+                },
+            ]);
+        });
+
         it('should mark element message and conversation as read when marking conversation', () => {
             const message = setupMessage({
                 messageID: MESSAGE_ID,
@@ -372,6 +454,87 @@ describe('markMessageAs', () => {
                 },
                 {
                     ID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                    ContextNumMessages: 2,
+                    ContextNumUnread: 0,
+                },
+            ]);
+        });
+
+        it('should decrement category label unread count regardless of the label the conversation is marked as read from', () => {
+            const message = setupMessage({
+                messageID: MESSAGE_ID,
+                unreadState: 'unread',
+                labelIDs: [
+                    MAILBOX_LABEL_IDS.TRASH,
+                    MAILBOX_LABEL_IDS.ALL_MAIL,
+                    MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                    MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
+                ],
+            });
+
+            const conversation = setupConversation({
+                conversationLabels: [
+                    {
+                        ID: MAILBOX_LABEL_IDS.TRASH,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 1,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 1,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 1,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 1,
+                    },
+                ] as ConversationLabel[],
+                numMessages: 2,
+                numUnread: 1,
+                numAttachments: 0,
+            });
+
+            testState.elements = {
+                [CONVERSATION_ID]: conversation,
+                [MESSAGE_ID]: message,
+            };
+
+            markConversationsAsReadPending(testState, {
+                type: 'mailbox/markConversationsAsRead',
+                payload: undefined,
+                meta: {
+                    arg: {
+                        conversations: [conversation],
+                        labelID: MAILBOX_LABEL_IDS.TRASH,
+                    },
+                },
+            });
+
+            const updatedConversation = testState.elements[CONVERSATION_ID] as Conversation;
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
+                {
+                    ID: MAILBOX_LABEL_IDS.TRASH,
+                    ContextNumMessages: 2,
+                    ContextNumUnread: 0,
+                },
+                {
+                    ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                    ContextNumMessages: 2,
+                    ContextNumUnread: 0,
+                },
+                {
+                    ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                    ContextNumMessages: 2,
+                    ContextNumUnread: 0,
+                },
+                {
+                    ID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
                     ContextNumMessages: 2,
                     ContextNumUnread: 0,
                 },
