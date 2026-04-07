@@ -12,7 +12,7 @@ import noop from '@proton/utils/noop';
 type ShortcutRowProps = {
     description: string;
     shortcut: string;
-    onConfigure: () => void;
+    onConfigure?: () => void;
 };
 
 const ShortcutKeys: FC<{ shortcut: string }> = ({ shortcut }) => (
@@ -41,9 +41,11 @@ const ShortcutRow: FC<ShortcutRowProps> = ({ description, shortcut, onConfigure 
             </span>
             <span className="block color-weak text-sm">{description}</span>
         </div>
-        <Button onClick={onConfigure} size="small" shape="outline">
-            {c('Action').t`Configure`}
-        </Button>
+        {BUILD_TARGET !== 'firefox' && (
+            <Button onClick={onConfigure} size="small" shape="outline">
+                {c('Action').t`Configure`}
+            </Button>
+        )}
     </div>
 );
 
@@ -64,13 +66,18 @@ export const Shortcuts: FC = () => {
             .catch(noop);
     }, []);
 
-    const openShortcutsPage = () => {
-        const url = BUILD_TARGET === 'firefox' ? 'about:addons' : 'chrome://extensions/shortcuts';
-        browser.tabs.create({ url }).catch(noop);
-    };
+    const openShortcutsPage =
+        BUILD_TARGET !== 'firefox'
+            ? () => browser.tabs.create({ url: 'chrome://extensions/shortcuts' }).catch(noop)
+            : undefined;
+
+    const subTitle =
+        BUILD_TARGET === 'firefox'
+            ? c('Info').t`To configure shortcuts, go to about:addons in Firefox and select "Manage Extension Shortcuts"`
+            : undefined;
 
     return (
-        <SettingsPanel title={c('Label').t`Keyboard shortcuts`}>
+        <SettingsPanel title={c('Label').t`Keyboard shortcuts`} subTitle={subTitle}>
             <div className="flex flex-column gap-4">
                 {shortcuts.map(({ name, description, shortcut }, i) => (
                     <Fragment key={name}>
