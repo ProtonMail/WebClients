@@ -2,6 +2,7 @@ import { type FC, useCallback, useEffect, useState } from 'react';
 
 import { DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { DROPDOWN_MIN_HEIGHT } from 'proton-pass-extension/app/content/constants.static';
+import { DropdownDesktopUnlock } from 'proton-pass-extension/app/content/services/inline/dropdown/app/components/DropdownDesktopUnlock';
 import type { DropdownActions } from 'proton-pass-extension/app/content/services/inline/dropdown/dropdown.app';
 import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';
 import {
@@ -21,6 +22,7 @@ import { useAppState } from '@proton/pass/components/Core/AppStateProvider';
 import { Localized } from '@proton/pass/components/Core/Localized';
 import {
     clientBusy,
+    clientDesktopLocked,
     clientErrored,
     clientMissingScope,
     clientPasswordLocked,
@@ -32,7 +34,7 @@ import { ForkType } from '@proton/shared/lib/authentication/fork/constants';
 import { BRAND_NAME, PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { DropdownFocusController } from './components/DropdownFocusController';
-import { DropdownUnlock } from './components/DropdownUnlock';
+import { DropdownPinUnlock } from './components/DropdownPinUnlock';
 import { AutofillCC } from './views/AutofillCC';
 import { AutofillIdentity } from './views/AutofillIdentity';
 import { AutofillLogin } from './views/AutofillLogin';
@@ -72,7 +74,9 @@ export const Dropdown: FC<Props> = ({ initial = null }) => {
                     {(() => {
                         if (loading) return <CircleLoader className="absolute inset-center m-auto" />;
 
-                        if (clientSessionLocked(status)) return <DropdownUnlock />;
+                        if (clientSessionLocked(status)) return <DropdownPinUnlock />;
+
+                        if (clientDesktopLocked(status)) return <DropdownDesktopUnlock />;
 
                         if (clientErrored(status)) {
                             return (

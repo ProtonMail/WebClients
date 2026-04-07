@@ -12,7 +12,7 @@ import clsx from '@proton/utils/clsx';
 
 import { useFocusController } from './DropdownFocusController';
 
-export const DropdownUnlock: FC = () => {
+export const DropdownPinUnlock: FC = () => {
     const ctrl = useIFrameAppController();
     const focusCtrl = useFocusController();
     const { visible } = useIFrameAppState();
