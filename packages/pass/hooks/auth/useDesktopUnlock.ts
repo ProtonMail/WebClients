@@ -1,9 +1,10 @@
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useOnlineRef } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { useUnlock } from '@proton/pass/components/Lock/UnlockProvider';
+import { useAutoUnlock } from '@proton/pass/hooks/auth/useAutoUnlock';
 import type { UnlockDTO } from '@proton/pass/lib/auth/lock/types';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 
@@ -26,4 +27,22 @@ export const useDesktopUnlock = () => {
 
         return dto;
     }, []);
+};
+
+export const useAutoDesktopUnlock = () => {
+    const [loading, setLoading] = useState(false);
+    const desktopUnlock = useDesktopUnlock();
+
+    const onUnlock = useCallback(async () => {
+        try {
+            setLoading(true);
+            await desktopUnlock();
+        } finally {
+            setLoading(false);
+        }
+    }, [desktopUnlock]);
+
+    useAutoUnlock({ loading, onUnlock });
+
+    return { loading, onUnlock };
 };
