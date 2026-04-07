@@ -821,6 +821,72 @@ describe('DownloadManager', () => {
         expect(activeDownloads.has('download-cancel-active')).toBe(false);
     });
 
+    it('should not overwrite status with Cancelled when retry is called before stale completion promise settles', async () => {
+        const manager = DownloadManager.getInstance();
+        const schedulerInstance = getSchedulerInstance();
+
+        storeMockState.addDownloadItem.mockReturnValue('download-race');
+
+        const node: NodeEntity = createMockNodeEntity({ uid: 'file-race', name: 'race.txt' });
+        hydrateAndCheckNodesMock.mockResolvedValue({ nodes: [node], containsSheetOrDoc: false });
+
+        const controllerCompletion = createDeferred<void>();
+        const controller = {
+            pause: jest.fn(),
+            resume: jest.fn(),
+            completion: jest.fn(() => controllerCompletion.promise),
+            isDownloadCompleteWithSignatureIssues: jest.fn(() => false),
+        };
+        const fileDownloader = {
+            getClaimedSizeInBytes: jest.fn(() => node.activeRevision?.storageSize ?? 0),
+            downloadToStream: jest.fn(() => controller),
+        };
+        sdkMock.driveMock.getFileDownloader.mockResolvedValue(fileDownloader);
+
+        const readableStream = {
+            cancel: jest.fn().mockResolvedValue(undefined),
+            locked: false,
+        } as unknown as ReadableStream<Uint8Array<ArrayBuffer>>;
+        loadCreateReadableStreamWrapperMock.mockResolvedValue(readableStream);
+        fileSaverSaveAsFileMock.mockResolvedValue(undefined);
+
+        // Start the download and wait for it to register as active
+        await manager.download([node.uid]);
+        const scheduledTask = schedulerInstance.scheduleDownload.mock.calls[0][0];
+        const completionPromise = scheduledTask.start();
+        await flushAsync();
+
+        // Cancel while InProgress — synchronously marks as Cancelled
+        storeMockState.getQueueItem.mockReturnValue({ status: DownloadStatus.InProgress });
+        await manager.cancel(['download-race']);
+
+        // Before the old completion promise settles, immediately retry
+        // (simulates the user clicking retry quickly right after cancel)
+        storeMockState.getQueueItem.mockReturnValue({ status: DownloadStatus.Cancelled });
+        manager.retry(['download-race']);
+
+        // Simulate the abort propagating through the stream asynchronously.
+        // At this point the store shows Pending with isRetried:true (as retry() sets it).
+        storeMockState.getQueueItem.mockReturnValue({ status: DownloadStatus.Pending, isRetried: true });
+        controllerCompletion.reject(new AbortError('Transfer download-race canceled'));
+        await expect(completionPromise).rejects.toBeInstanceOf(AbortError);
+        await flushAsync(5);
+
+        // The stale onError must NOT overwrite the Pending status back to Cancelled.
+        // The only Cancelled update should be the one issued directly by manager.cancel().
+        const cancelStatusUpdates = storeMockState.updateDownloadItem.mock.calls.filter(
+            ([id, update]: [string, { status?: string }]) =>
+                id === 'download-race' && update.status === DownloadStatus.Cancelled
+        );
+        expect(cancelStatusUpdates).toHaveLength(1);
+
+        // The stale .finally() must not delete a new activeDownload entry registered by retry.
+        // Since the scheduler mock doesn't start the new download automatically, the old entry
+        // is cleaned up (expected), but a real scenario would keep the new entry intact.
+        const activeDownloads = Reflect.get(manager, 'activeDownloads') as Map<string, unknown>;
+        expect(activeDownloads.has('download-race')).toBe(false);
+    });
+
     it('should clear active downloads, scheduler, and queue', async () => {
         const manager = DownloadManager.getInstance();
         const schedulerInstance = getSchedulerInstance();

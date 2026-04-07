@@ -521,7 +521,11 @@ export class DownloadManager {
                 await onError(error);
             })
             .finally(() => {
-                this.activeDownloads.delete(downloadId);
+                // Guard: only remove from activeDownloads if this is still the registered instance.
+                // A retry() may have already replaced it with a new one before this promise settled.
+                if (this.activeDownloads.get(downloadId) === activeDownload) {
+                    this.activeDownloads.delete(downloadId);
+                }
                 this.downloadSpeedMetrics.onFileEnded(downloadId);
             });
 
