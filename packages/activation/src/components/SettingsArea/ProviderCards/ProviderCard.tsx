@@ -35,7 +35,7 @@ interface Props {
     hasBorders?: boolean;
     header?: ReactNode;
     showAdvancedImport?: boolean;
-    onComplete?: () => void;
+    onComplete?: () => Promise<void>;
 }
 
 const ProviderCard = ({ app, header, hasBorders = true, showAdvancedImport = true, onComplete }: Props) => {
