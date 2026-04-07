@@ -19,6 +19,7 @@ import { ModelModeDropdown } from './ModelModeDropdown';
 import { ToolMenuDropdown } from './ToolMenuDropdown';
 import { UploadMenuDropdown } from './UploadMenuDropdown';
 import type { FileUploadMode } from './hooks/useFileHandling';
+import { useNativeComposerImageApi } from './hooks/useNativeComposerImageApi';
 
 interface UploadMenuSectionProps {
     onFilesSelected: (files: File[]) => void;
@@ -131,6 +132,8 @@ export const ComposerToolbar = ({
     const [showToolsMenu, setShowToolsMenu] = useState(false);
     const { externalTools: isLumoToolingEnabled } = useLumoFlags();
     const [showCreateImageButton, setShowCreateImageButton] = useState(false);
+
+    useNativeComposerImageApi();
 
     const handleToolsButtonClick = useCallback(() => {
         setShowToolsMenu((prev) => !prev);
