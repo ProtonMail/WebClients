@@ -11,7 +11,6 @@ import { getPersistedSessions } from 'proton-pass-web/lib/sessions';
 import { settings } from 'proton-pass-web/lib/settings';
 import { spotlight } from 'proton-pass-web/lib/spotlight';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
-import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { AppStateManager } from '@proton/pass/components/Core/AppStateManager';
@@ -31,7 +30,7 @@ import { usePassConfig } from '@proton/pass/hooks/usePassConfig';
 import { isDocumentVisible, useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
 import { api } from '@proton/pass/lib/api/api';
 import { authStore } from '@proton/pass/lib/auth/store';
-import { clientBooted, clientOffline, clientReady } from '@proton/pass/lib/client';
+import { clientBooted, clientReady } from '@proton/pass/lib/client';
 import { ACTIVE_POLLING_TIMEOUT } from '@proton/pass/lib/events/constants';
 import { createMonitorReport } from '@proton/pass/lib/monitor/monitor.report';
 import { setVersionTag } from '@proton/pass/lib/settings/beta';
@@ -50,6 +49,7 @@ import {
 } from '@proton/pass/store/selectors';
 import { SpotlightMessage } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
+import { pipe } from '@proton/pass/utils/fp/pipe';
 import { semver } from '@proton/pass/utils/string/semver';
 import noop from '@proton/utils/noop';
 
@@ -170,13 +170,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                     }
                 },
 
-                onNotification: (notification) => {
-                    if (notification.type === 'error' && clientOffline(AppStateManager.getState().status)) {
-                        notification.errorMessage = c('Warning').t`Offline`;
-                    }
-
-                    createNotification(enhance(notification));
-                },
+                onNotification: pipe(enhance, createNotification),
 
                 onItemsUpdated: (options) => {
                     if (options?.report ?? true) {
