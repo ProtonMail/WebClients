@@ -4039,12 +4039,6 @@
         "60 perc"
       ]
     },
-    "Easy switch": {
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "E-maileket továbbít ${ MAX_SYNC_FREE_USER } külső fiókból a ${ MAIL_APP_NAME } szolgáltatásba.",
-        "E-maileket továbbít ${ MAX_SYNC_FREE_USER } külső fiókból a ${ MAIL_APP_NAME } szolgáltatásba."
-      ]
-    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "A szövegmezők nem kötelezőek. Az ebben az űrlapon megadott információk csak a jövőben kiállított számlákon jelennek meg, és nem befolyásolják a meglévő számlákat."
@@ -8820,9 +8814,6 @@
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Használja a legjobb szervert, jelenlegi terhelés és pozíció szerint: ${ formattedBestServerName }"
-      ],
-      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "Használjon különböző típusú e-mail címeket és álneveket a ${ BRAND_NAME } segítségével."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Használja az alábbi adatokat, amikor a ${ VPN_APP_NAME } szerverekhez az alkalmazás nélkül csatlakozik. Például: Tunnelblick MacOS-en, vagy OpenVPN GNU/Linux-on."

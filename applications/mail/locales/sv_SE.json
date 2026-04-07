@@ -4335,13 +4335,11 @@
       ]
     },
     "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "För att vidarebefordra e-post från upp till ${ MAX_SYNC_PAID_USER } konto, uppgradera till ${ planName }.",
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
         "För att vidarebefordra e-post från upp till ${ MAX_SYNC_PAID_USER } konton, uppgradera till ${ planName }."
       ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "Du vidarebefordrar e-post från ${ MAX_SYNC_FREE_USER } externt konto till ${ MAIL_APP_NAME }.",
-        "Du vidarebefordrar e-post från ${ MAX_SYNC_FREE_USER } externa konton till ${ MAIL_APP_NAME }."
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "Du vidarebefordrar e-post från ett externt konto till ${ MAIL_APP_NAME }."
       ]
     },
     "Edit billing address form note": {
@@ -6336,11 +6334,11 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "Avancerad import"
-      ],
       "Import from ${ providerName }": [
         "Importera från ${ providerName }"
+      ],
+      "More import options": [
+        "Fler importalternativ"
       ]
     },
     "Import warning": {
@@ -7425,8 +7423,7 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"
@@ -11769,29 +11766,29 @@
       ]
     },
     "Onboarding List Placeholder": {
-      "Choose your service": [
-        "Välj din tjänst"
+      "Bring your emails into ${ MAIL_APP_NAME }": [
+        "Ta med din e-post till ${ MAIL_APP_NAME }"
+      ],
+      "Bring your existing email into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Ta med din befintliga e-post till ${ MAIL_APP_NAME } så kan du hantera allt från en privat inkorg."
+      ],
+      "Choose a provider": [
+        "Välj en leverantör"
       ],
       "Maybe later": [
         "Kanske senare"
       ],
-      "Popular services": [
-        "Populära tjänster"
+      "Protect your accounts": [
+        "Skydda dina konton"
       ],
       "Skip for now": [
         "Hoppa över just nu"
       ],
-      "Switch your accounts to ${ BRAND_NAME }": [
-        "Byt dina konton till ${ BRAND_NAME }"
+      "Some popular services": [
+        "Några populära tjänster"
       ],
-      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
-        "Att byta e-post är svårt. ${ BRAND_NAME } gör det enkelt. Anslut ditt gamla konto och hantera allt i en fokuserad, annonsfri arbetsyta."
-      ],
-      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
-        "Uppdatera din e-post på de tjänster du använder mest. Förhindra spårning och skydda din integritet."
-      ],
-      "Welcome to ${ MAIL_APP_NAME }": [
-        "Välkommen till ${ MAIL_APP_NAME }"
+      "Switch the services you use every day to your ${ BRAND_NAME } address for better security and privacy.": [
+        "Växla tjänsterna du använder varje dag till din ${ BRAND_NAME }-adress för bättre säkerhet och integritet."
       ]
     },
     "Onboarding modal": {
@@ -14959,9 +14956,6 @@
       ],
       "Connect apps and devices": [
         "Anslut appar och enheter"
-      ],
-      "Connect more addresses": [
-        "Anslut fler adresser"
       ],
       "Connect to video conferencing": [
         "Anslut till videokonferens"

@@ -3801,13 +3801,11 @@
       ]
     },
     "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "${ MAX_SYNC_PAID_USER } hesaba kadar e-postaları iletmek için ${ planName } tarifesine yükseltin.",
-        "${ MAX_SYNC_PAID_USER } hesaba kadar e-postaları iletmek için ${ planName } tarifesine yükseltin."
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
+        "${ MAX_SYNC_PAID_USER } hesaba kadar e-posta iletmek için ${ planName } tarifesine yükseltin."
       ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "E-postaları ${ MAX_SYNC_FREE_USER } dış hesaptan ${ MAIL_APP_NAME } üzerine iletiyorsunuz.",
-        "E-postaları ${ MAX_SYNC_FREE_USER } dış hesaptan ${ MAIL_APP_NAME } üzerine iletiyorsunuz."
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "E-postaları bir dış hesaptan ${ MAIL_APP_NAME } üzerine iletiyorsunuz."
       ]
     },
     "Edit billing address form note": {
@@ -5894,8 +5892,8 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "Gelişmiş içe aktarma"
+      "More import options": [
+        "Diğer içe aktarma seçenekleri"
       ]
     },
     "Import warning": {
@@ -8049,11 +8047,11 @@
       "Use a recovery method to disable your two-factor authentication methods.": [
         "İki adımlı doğrulama yöntemlerini kapatmak için bir kurtarma yöntemi kullanın."
       ],
+      "Use multiple email addresses with ${ MAIL_APP_NAME }. Add a new ${ BRAND_NAME } address or connect another email account to manage everything from one inbox.": [
+        "${ MAIL_APP_NAME } ile birden fazla e-posta adresi kullanın. Yeni bir ${ BRAND_NAME } adresi ekleyin veya başka bir e-posta hesabını bağlayarak her şeyi tek bir gelen kutusundan yönetin."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Güncel yük ve konuma göre en iyi sunucuyu kullanın: ${ formattedBestServerName }"
-      ],
-      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "${ BRAND_NAME } tarafından sunulan farklı e-posta adresi ve takma ad türlerini kullanın."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "${ VPN_APP_NAME } sunucularına uygulama olmadan bağlanmak için şu kimlik doğrulama bilgilerini kullanın. Kullanım örnekleri: macOS üzerinde Tunnelblick, GNU/Linux üzerinde OpenVPN."
@@ -8230,7 +8228,7 @@
         "${ AUTHENTICATOR_APP_NAME } ile şunları yapabilirsiniz:"
       ],
       "With a ${ boldProfessionalPlan } plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
-        "${ boldProfessionalPlan } planıyla kuruluşunuz için ${ boldDedicatedServers } satın alabilir ve hangi kullanıcıların bunlara erişebileceğini kontrol etmek için ${ boldGateways } kurabilirsiniz."
+        "${ boldProfessionalPlan } tarifesi ile kuruluşunuz için ${ boldDedicatedServers } satın alabilir ve hangi kullanıcıların bunlara erişebileceğini belirlemek için ${ boldGateways } kurabilirsiniz."
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Şifrelenmiş bir ${ BRAND_NAME } adresi ile tüm ${ BRAND_NAME } hizmetlerini kullanabilirsiniz"
@@ -15545,9 +15543,6 @@
       ],
       "Connect apps and devices": [
         "Uygulamaları ve aygıtları bağlayın"
-      ],
-      "Connect more addresses": [
-        "Başka adresler bağlayın"
       ],
       "Connect organization": [
         "Kuruluş ile bağlantı kur"

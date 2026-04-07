@@ -3777,11 +3777,11 @@
       ]
     },
     "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "要转发来自最多 ${ MAX_SYNC_PAID_USER } 个账户的邮件，请升级至 ${ planName } 计划。"
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
+        "如需将最多 ${ MAX_SYNC_PAID_USER } 个账户的邮件进行转发，请升级至 ${ planName }。"
       ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "您正在将来自${ MAX_SYNC_FREE_USER }个外部账户的电子邮件转发至${ MAIL_APP_NAME }。"
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "您正在将邮件从一个外部账户转发至 ${ MAIL_APP_NAME }。"
       ]
     },
     "Edit billing address form note": {
@@ -5839,8 +5839,8 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "高级导入"
+      "More import options": [
+        "更多导入选项"
       ]
     },
     "Import warning": {
@@ -7943,11 +7943,11 @@
       "Use a recovery method to disable your two-factor authentication methods.": [
         "使用恢复方法以禁用双因素身份验证方式。"
       ],
+      "Use multiple email addresses with ${ MAIL_APP_NAME }. Add a new ${ BRAND_NAME } address or connect another email account to manage everything from one inbox.": [
+        "使用 ${ MAIL_APP_NAME } 管理多个邮箱地址。添加新的 ${ BRAND_NAME } 地址或关联其他邮箱账户，以便在一个收件箱中统一管理所有内容。"
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "使用最优服务器（由系统负荷与当前位置得出）：${ formattedBestServerName }"
-      ],
-      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "使用 ${ BRAND_NAME } 提供的各类邮箱地址与别名。"
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "要是不使用官方客户端，比如使用 macOS 上的 Tunnelblick 或者 GNU/Linux 上的 OpenVPN，那就用下面的凭据连接 ${ VPN_APP_NAME }。"
@@ -15208,9 +15208,6 @@
       ],
       "Connect apps and devices": [
         "连接应用和设备"
-      ],
-      "Connect more addresses": [
-        "连接更多地址"
       ],
       "Connect organization": [
         "联系群组"

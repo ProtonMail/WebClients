@@ -3770,20 +3770,6 @@
         "Пріоритетна підтримка"
       ]
     },
-    "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "Щоб пересилати електронні листи з до ${ MAX_SYNC_PAID_USER } облікового запису, оновіть тариф до ${ planName }.",
-        "Щоб пересилати електронні листи з до ${ MAX_SYNC_PAID_USER } облікових записів, оновіть тариф до ${ planName }.",
-        "Щоб пересилати електронні листи з до ${ MAX_SYNC_PAID_USER } облікових записів, оновіть тариф до ${ planName }.",
-        "Щоб пересилати електронні листи з до ${ MAX_SYNC_PAID_USER } облікового(их) запису(ів), оновіть тариф до ${ planName }."
-      ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "Ви пересилаєте електронні листи з ${ MAX_SYNC_FREE_USER } зовнішнього облікового запису до ${ MAIL_APP_NAME }.",
-        "Ви пересилаєте електронні листи з ${ MAX_SYNC_FREE_USER } зовнішніх облікових записів до ${ MAIL_APP_NAME }.",
-        "Ви пересилаєте електронні листи з ${ MAX_SYNC_FREE_USER } зовнішніх облікових записів до ${ MAIL_APP_NAME }.",
-        "Ви пересилаєте електронні листи з ${ MAX_SYNC_FREE_USER } облікового(их) запису(ів) до ${ MAIL_APP_NAME }."
-      ]
-    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "Подію ${ eventTitle } скасовано."
@@ -6656,9 +6642,6 @@
         "Ініціалізація…"
       ],
       "Insert image": [
-        "Вставити зображення",
-        "Вставити зображення",
-        "Вставити зображення",
         "Вставити зображення"
       ],
       "Insert link": [

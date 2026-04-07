@@ -102,7 +102,7 @@
         "Заўсёды дазваляць адпраўку"
       ],
       "Apply": [
-        "Ужыць"
+        "Прымяніць"
       ],
       "Attach screenshot(s)": [
         "Далучыць здымак(-і) экрана"
@@ -1966,7 +1966,7 @@
         "Выберыце прынамсі аднаго карыстальніка, каб пачаць перанос"
       ],
       "Select what you want to migrate, this will apply to all users whether they are created now or later. Migration will start after user accounts are created.": [
-        "Выберыце, што вы хочаце перанесці. Гэта дзеянне будзе ўжыта да ўсіх карыстальнікаў незалежна ад таго, калі яны былі створаны. Перанос пачнецца пасля стварэння ўліковых запісаў карыстальнікаў."
+        "Выберыце, што вы хочаце перанесці. Гэта дзеянне будзе прыменена да ўсіх карыстальнікаў незалежна ад таго, калі яны былі створаны. Перанос пачнецца пасля стварэння ўліковых запісаў карыстальнікаў."
       ],
       "Set up": [
         "Наладзіць"
@@ -3849,17 +3849,11 @@
       ]
     },
     "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "Палепшыце да тарыфнага плана ${ planName }, каб перасылаць лісты з максімальнай колькасцю ў ${ MAX_SYNC_PAID_USER } уліковы запіс.",
-        "Палепшыце да тарыфнага плана ${ planName }, каб перасылаць лісты з максімальнай колькасцю ў ${ MAX_SYNC_PAID_USER } уліковыя запісы.",
-        "Палепшыце да тарыфнага плана ${ planName }, каб перасылаць лісты з максімальнай колькасцю ў ${ MAX_SYNC_PAID_USER } уліковых запісаў.",
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
         "Палепшыце да тарыфнага плана ${ planName }, каб перасылаць лісты з максімальнай колькасцю ў ${ MAX_SYNC_PAID_USER } уліковых запісаў."
       ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "Вы перасылаеце лісты з ${ MAX_SYNC_FREE_USER } знешняга ўліковага запісу ў ${ MAIL_APP_NAME }.",
-        "Вы перасылаеце лісты з ${ MAX_SYNC_FREE_USER } знешніх уліковых запісаў у ${ MAIL_APP_NAME }.",
-        "Вы перасылаеце лісты з ${ MAX_SYNC_FREE_USER } знешніх уліковых запісаў у ${ MAIL_APP_NAME }.",
-        "Вы перасылаеце лісты з ${ MAX_SYNC_FREE_USER } знешніх уліковых запісаў у ${ MAIL_APP_NAME }."
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "Вы перасылаеце лісты з аднаго знешняга ўліковага запісу ў ${ MAIL_APP_NAME }."
       ]
     },
     "Edit billing address form note": {
@@ -5444,7 +5438,7 @@
         "Вазьміце пад кантроль тое, што знаходзіцца ў скрынях удзельнікаў вашай арганізацыі, стварыўшы наступныя спісы:"
       ],
       "These lists apply to all accounts in your organization. Members can create their own individual filters, but won't be able to override addresses or domains you blocked.": [
-        "Гэтыя спісы ўжываюцца для ўсіх уліковых запісаў у вашай арганізацыі. Удзельнікі змогуць ствараць свае ўласныя фільтры, але не змогуць змяніць заблакіраваныя адрасы або дамены."
+        "Гэтыя спісы прымяняцца для ўсіх уліковых запісаў у вашай арганізацыі. Удзельнікі змогуць ствараць свае ўласныя фільтры, але не змогуць змяніць заблакіраваныя адрасы або дамены."
       ],
       "To ensure critical messages don't end up in spam and getting missed": [
         "прадухіляе пропуск крытычных паведамленняў, якія могуць трапіць у спам"
@@ -6004,8 +5998,8 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "Пашыраны імпарт"
+      "More import options": [
+        "Больш параметраў імпарту"
       ]
     },
     "Import warning": {
@@ -7107,7 +7101,7 @@
         "Калі вы маеце карыстальніцкі дамен у ${ MAIL_APP_NAME }, вы можаце задаць агульны адрас электроннай пошты для атрымання ўсіх паведамленняў, якія будуць адпраўляцца не толькі на ваш дамен, але і на памылковы адрас (напрыклад, які змяшчае памылкі)."
       ],
       "If you have a gift code, enter it below to apply your discount.": [
-        "Калі ў вас ёсць падарункавы код, то вы можаце ўжыць яго ніжэй для атрымання скідкі."
+        "Калі ў вас ёсць падарункавы код, то вы можаце прымяніць яго ніжэй для атрымання скідкі."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Калі вы згубіце сваю прыладу двухфактарнай аўтэнтыфікацыі, то гэтыя коды могуць быць выкарыстаны замест 6-значнага кода двухфактарнай аўтэнтыфікацыі, каб увайсці ў ваш уліковы запіс. Кожны код можна выкарыстаць толькі адзін раз."
@@ -8261,11 +8255,11 @@
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Скарыстайцеся метадам аднаўлення, каб адключыць вашы двухфактарныя метады аўтэнтыфікацыі."
       ],
+      "Use multiple email addresses with ${ MAIL_APP_NAME }. Add a new ${ BRAND_NAME } address or connect another email account to manage everything from one inbox.": [
+        "Выкарыстоўвайце некалькі адрасоў электроннай пошты з ${ MAIL_APP_NAME }. Дадайце новы адрас ${ BRAND_NAME } або падключыце іншы ўліковы запіс электроннай пошты, каб кіраваць усім з адной паштовай скрыні."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Выкарыстоўваць лепшы сервер у адпаведнасці з бягучай нагрузкай і размяшчэннем: ${ formattedBestServerName }"
-      ],
-      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "Выкарыстоўвайце розныя тыпы адрасоў электроннай пошты і псеўданімы, якія прапануе ${ BRAND_NAME }."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Выкарыстоўвайце наступныя ўліковыя даныя, калі падключаецеся да сервераў ${ VPN_APP_NAME } праз праграмы VPN ад іншых распрацоўшчыкаў. Напрыклад, Tunnelblick на MacOS або OpenVPN на GNU/Linux."
@@ -8688,7 +8682,7 @@
         "Ваш уліковы запіс мае прынамсі адзін пратэрмінаваны рахунак. Ваш доступ неўзабаве будзе абмежаваны. ${ payInvoiceLink }"
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
-        "Ваш уліковы запіс у цяперашні час сканфігурыраваны, каб ужываць схему адваротнага налічэння падатку. Гэты параметр не падтрымліваецца для выбранага тарыфнага плана. Вы можаце, або выдаліць нумар ПДВ з плацежнага адраса, або выбраць іншы тарыфны план, каб працягнуць аперацыю."
+        "Ваш уліковы запіс у цяперашні час сканфігурыраваны, каб прымяняць схему адваротнага налічэння падатку. Гэты параметр не падтрымліваецца для выбранага тарыфнага плана. Вы можаце, або выдаліць нумар ПДВ з плацежнага адраса, або выбраць іншы тарыфны план, каб працягнуць аперацыю."
       ],
       "Your account was successfully updated with this promotion": [
         "Ваш уліковы запіс паспяхова абноўлены з дапамогай гэтай рэкламнай акцыі"
@@ -9063,7 +9057,7 @@
         "Пароль праграмы"
       ],
       "Apply policy to": [
-        "Ужыць палітыку да"
+        "Прымяніць палітыку да"
       ],
       "Ask members to set up 2FA": [
         "Папрасіць удзельнікаў наладзіць 2ФА"
@@ -11443,7 +11437,7 @@
         "Абараняе вас, блакіруючы ўсе падключэнні да сеткі пры нечаканым адключэнні ад нашага сервера VPN."
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
-        "Меткі - гэта простыя тэгі, якія можна дадаваць да паведамленняў. Яны дазваляюць прасцей знаходзіць неабходныя лісты або ўжываць фільтры"
+        "Меткі - гэта простыя тэгі, якія можна дадаваць да паведамленняў. Яны дазваляюць прасцей знаходзіць неабходныя лісты або прымяняць фільтры"
       ],
       "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
         "Пажыццёвы доступ да ${ PASS_APP_NAME } + прэміяльныя функцыі SimpleLogin."
@@ -13352,7 +13346,7 @@
         "Пасля таго, як перыяд захоўвання міне"
       ],
       "Applies to": [
-        "Ужыць да"
+        "Прымяніць да"
       ],
       "day": [
         "дзень",
@@ -13421,7 +13415,7 @@
         "Дзеянне"
       ],
       "Applies to": [
-        "Ужыць да"
+        "Прымяніць да"
       ],
       "Retention period": [
         "Перыяд захоўвання"
@@ -15840,7 +15834,7 @@
         "Доступ да праграмы"
       ],
       "Apply gift code": [
-        "Ужыць падарункавы код"
+        "Прымяніць падарункавы код"
       ],
       "Are you sure you want to close the preview?": [
         "Вы сапраўды хочаце закрыць папярэдні прагляд?"
@@ -15931,9 +15925,6 @@
       ],
       "Connect apps and devices": [
         "Падключэнне праграм і прылад"
-      ],
-      "Connect more addresses": [
-        "Падключыць больш адрасоў"
       ],
       "Connect organization": [
         "Падключэнне арганізацыі"

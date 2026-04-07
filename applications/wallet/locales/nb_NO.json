@@ -466,6 +466,10 @@
         "${ seats } ${ LUMO_APP_NAME } lisens",
         "${ seats } ${ LUMO_APP_NAME } lisenser"
       ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME }-lisens",
+        "${ seats } ${ MEET_APP_NAME }-lisenser"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } skriveassistentlisens",
         "${ seats } skriveassistentlisenser"
@@ -2707,6 +2711,12 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } inkluderer ${ BRAND_NAME } Scribe-skriveassistenten."
       ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } er en ende-til-ende-kryptert løsning for videokonferanser. Legg den til abonnementet ditt for å verte sikre møter."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME }-tilganger"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Livsvarig avtale for ${ PASS_SHORT_APP_NAME } har ikke noen fornyelsespris. Det er en engangsbetaling for livsvarig tilgang til ${ PASS_SHORT_APP_NAME }."
       ],
@@ -2747,6 +2757,9 @@
       ],
       "Account successfully updated": [
         "Konto oppdatert"
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Legg til ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
       "Address copied to clipboard": [
         "Adresse kopiert til utklippstavlen"
@@ -2872,8 +2885,14 @@
       "Everything in ${ planOrAppName }": [
         "Alt i ${ planOrAppName }"
       ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Alt i ${ planOrAppName }, pluss:"
+      ],
       "Expired": [
         "Utløpt"
+      ],
+      "for ${ price }": [
+        "for ${ price }"
       ],
       "Google Pay mark": [
         "Merk Google Pay"
@@ -3579,6 +3598,18 @@
         "for ${ price }"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME }-tilgang"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME }-tilganger"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME }-tilgang",
+        "${ seats } ${ MEET_APP_NAME }-tilganger"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: konfidensielle videokonferanser for samtalene som betyr noe"
@@ -3612,6 +3643,9 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Ende-til-ende-kryptert skjermdeling og kortvarig chat under samtaler"
       ],
+      "Hosts can record meetings locally on their computers": [
+        "Verter kan ta opp møter lokalt på datamaskinene sine"
+      ],
       "Meeting recording": [
         "Opptak av møte"
       ],
@@ -3631,6 +3665,19 @@
       "Up to ${ n } participant": [
         "Opptil ${ n } deltaker",
         "Opptil ${ n } deltakere"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videomøter, ${ n } deltaker",
+        "Videomøter, ${ n } deltakere"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } tilgang inkludert",
+        "${ seats } tilganger inkludert"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME }-tilganger i prøveperioden."
       ]
     },
     "New Label form": {
@@ -3853,6 +3900,9 @@
       "Data breach monitoring": [
         "Overvåking av datainnbrudd"
       ],
+      "Data retention policies": [
+        "Retningslinjer for dataoppbevaring"
+      ],
       "Dedicated servers optimized for streaming": [
         "Dedikerte tjenere optimalisert for strømming"
       ],
@@ -3958,6 +4008,9 @@
       ],
       "Priority support & live chat": [
         "Proritert kundestøtte & chat"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Privat KI-chat (${ LUMO_APP_NAME })"
       ],
       "Recover previous file versions": [
         "Gjenopprett tidligere filversjoner"
@@ -4086,6 +4139,9 @@
       "Vault sharing with up to ${ n } person": [
         "Deling av hvelv med opptil ${ n } person",
         "Deling av hvelv med opptil ${ n } personer"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN med annonseblokkering og skadevarebeskyttelse"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skanner det mørke nettet for å sjekke om ${ BRAND_NAME }-adressene eller aliasene dine har blitt lekket, og varsler deg umiddelbart hvis vi finner noe."
@@ -4884,7 +4940,7 @@
         "Andersen"
       ],
       "Anything you'd like us to know": [
-        "Er det noe mer du vil at vi skal vite om"
+        "Er det noe mer du vil at vi skal vite om?"
       ],
       "Anytown": [
         "By"
@@ -5006,7 +5062,7 @@
         "Microsoft 365"
       ],
       "Other": [
-        "Annen"
+        "Annet"
       ],
       "Outlook": [
         "Outlook"

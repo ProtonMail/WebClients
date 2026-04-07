@@ -4895,8 +4895,8 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "გაფართოებული შემოტანა"
+      "More import options": [
+        "მეტი შემოტანის პარამეტრები"
       ]
     },
     "Import warning": {
@@ -5431,6 +5431,9 @@
       ],
       "finance": [
         "ფინანსები"
+      ],
+      "for ${ price }": [
+        "${ price }-ისთვის"
       ],
       "Frequency modifications will be lost.": [
         "სიხშირის ცვლილებები დაიკარგება."
@@ -6534,6 +6537,9 @@
       "Add Zoom meeting": [
         "Zoom-ის შეხვედრის დამატება"
       ],
+      "Additional comments": [
+        "დამატებითი კომენტარები"
+      ],
       "Address": [
         "მისამართი"
       ],
@@ -6623,6 +6629,9 @@
       ],
       "Contacts": [
         "კონტაქტები"
+      ],
+      "Continue cancelling": [
+        "გაუქმების გაგრძელება"
       ],
       "Copy": [
         "კოპირება"
@@ -6942,6 +6951,9 @@
       ],
       "Sign emails": [
         "ელფოსტის ხელმოწერა"
+      ],
+      "Skip feedback": [
+        "უკუკავშირის გამოტოვება"
       ],
       "Start date": [
         "საწყისი თარიღი"
@@ -9401,6 +9413,9 @@
       "Email for booking confirmation": [
         "ელფოსტა ჯავშნის დადასტურებისთვის"
       ],
+      "Enter a name": [
+        "შეიყვანეთ სახელი"
+      ],
       "Enter a short description or additional info": [
         "შეიყვანეთ მოკლე აღწერა, ან დამატებითი ინფორმაცია"
       ],
@@ -9481,6 +9496,9 @@
       ],
       "Select": [
         "აირჩიეთ"
+      ],
+      "Select a provider": [
+        "აირჩიეთ პროვაიდერი"
       ],
       "Select a reason": [
         "აირჩიეთ მიზეზი"
@@ -9597,6 +9615,26 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "ოფიციალური ელფოსტა ${ BRAND_NAME }-სგან"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "სხვა"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Referral": {

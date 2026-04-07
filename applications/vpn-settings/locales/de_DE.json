@@ -3801,13 +3801,11 @@
       ]
     },
     "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "Um E-Mails von ${ MAX_SYNC_PAID_USER } Konto weiterzuleiten, upgrade auf ${ planName }.",
-        "Um E-Mails von bis zu ${ MAX_SYNC_PAID_USER } Konten weiterzuleiten, upgrade zu ${ planName }."
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
+        "Um E-Mails von bis zu ${ MAX_SYNC_PAID_USER } Konten weiterzuleiten, upgrade auf ${ planName }."
       ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "Du leitest E-Mails von ${ MAX_SYNC_FREE_USER } externen Konto an ${ MAIL_APP_NAME } weiter.",
-        "Du leitest E-Mails von ${ MAX_SYNC_FREE_USER } externen Konten an ${ MAIL_APP_NAME } weiter."
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "Du leitest E-Mails von einem externen Konto an ${ MAIL_APP_NAME } weiter."
       ]
     },
     "Edit billing address form note": {
@@ -5894,8 +5892,8 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "Erweiterter Import"
+      "More import options": [
+        "Weitere Importoptionen"
       ]
     },
     "Import warning": {
@@ -8049,11 +8047,11 @@
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Verwende eine Wiederherstellungsmethode, um deine Zwei-Faktor-Authentifizierungsmethoden zu deaktivieren."
       ],
+      "Use multiple email addresses with ${ MAIL_APP_NAME }. Add a new ${ BRAND_NAME } address or connect another email account to manage everything from one inbox.": [
+        "Verwalte mehrere E-Mail-Adressen mit ${ MAIL_APP_NAME }. Füge eine neue ${ BRAND_NAME }-E-Mail-Adresse hinzu oder verbinde ein anderes E-Mail-Konto, um alles von einem Posteingang aus zu verwalten."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Verwende den besten Server je nach aktueller Auslastung und Standort: ${ formattedBestServerName }"
-      ],
-      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "Verwende die verschiedenen Arten von E-Mail-Adressen und Aliassen, die dir ${ BRAND_NAME } bietet."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Verwende die folgenden Anmeldedaten, wenn du dich ohne Anwendung mit ${ VPN_APP_NAME }-Servern verbinden möchtest. Beispiele für Anwendungsfälle sind: „Tunnelblick“ unter macOS, „OpenVPN“ unter GNU/Linux."
@@ -15545,9 +15543,6 @@
       ],
       "Connect apps and devices": [
         "Apps und Geräte verbinden"
-      ],
-      "Connect more addresses": [
-        "Verbinde mehr Adressen"
       ],
       "Connect organization": [
         "Organisation verbinden"

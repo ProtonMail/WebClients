@@ -815,6 +815,9 @@
       "Refer a friend": [
         "Referir una amistad"
       ],
+      "Refetch index": [
+        "Volver a cargar índice"
+      ],
       "Refresh the page": [
         "Refrescar la página"
       ],
@@ -4837,8 +4840,8 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "Importación avanzada"
+      "More import options": [
+        "Más opciones de importación"
       ]
     },
     "Import warning": {
@@ -5047,6 +5050,9 @@
       ],
       "${ speed }/s": [
         "${ speed }/s"
+      ],
+      "${ state.result.entries.length } entries": [
+        "${ state.result.entries.length } entradas"
       ],
       "${ storage } storage": [
         "${ storage } de almacenamiento"
@@ -5725,6 +5731,9 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "En el siguiente paso, podrá enviar un depósito con una dirección Bitcoin."
       ],
+      "Index is empty.": [
+        "El índice está vacío."
+      ],
       "Indexing in progress": [
         "Indexación en curso"
       ],
@@ -6207,6 +6216,9 @@
       "Search enabled. You may now close this dialogue and search for files and folders.": [
         "Búsqueda activada. Puede cerrar esta ventana y buscar archivos y carpetas."
       ],
+      "Search module is not available.": [
+        "El módulo de búsqueda no está disponible."
+      ],
       "Select a destination folder": [
         "Seleccione una carpeta de destino"
       ],
@@ -6592,6 +6604,9 @@
       ],
       "Unsupported file": [
         "Archivo no soportado"
+      ],
+      "Unsupported file type for Photos": [
+        "Tipo de archivo no compatible para Fotos"
       ],
       "Untitled": [
         "Sin título"
@@ -7354,6 +7369,9 @@
       "Enter device name": [
         "Ingrese el nombre del dispositivo"
       ],
+      "Environment compatible": [
+        "Entorno compatible"
+      ],
       "Expired": [
         "Expirado"
       ],
@@ -7422,6 +7440,12 @@
       ],
       "Include message and file name in invite email": [
         "Incluir el mensaje y nombre del archivo en el correo de invitación"
+      ],
+      "Index kinds": [
+        "Tipos de índice"
+      ],
+      "Initial indexing": [
+        "Indexación inicial"
       ],
       "Integrated 2FA authenticator": [
         "Autenticador de 2FA integrado"
@@ -7522,6 +7546,9 @@
       "Other": [
         "Otro"
       ],
+      "Outdated version": [
+        "Versión obsoleta"
+      ],
       "Password": [
         "Contraseña"
       ],
@@ -7590,6 +7617,9 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Ginebra"
+      ],
+      "Searchable": [
+        "Indexado"
       ],
       "Select type of abuse": [
         "Seleccione el tipo de abuso"
@@ -7702,6 +7732,9 @@
       "Uploaded by": [
         "Cargado por"
       ],
+      "User opted in": [
+        "El usuario optó por participar"
+      ],
       "Username": [
         "Nombre de usuario"
       ],
@@ -7710,6 +7743,9 @@
       ],
       "Viewer": [
         "Lector"
+      ],
+      "Visible columns:": [
+        "Columnas visibles:"
       ],
       "Vulnerable": [
         "Vulnerable"
@@ -12263,6 +12299,9 @@
       "Account temporarily locked": [
         "Cuenta temporalmente bloqueada"
       ],
+      "Actions": [
+        "Acciones"
+      ],
       "Active": [
         "Activa"
       ],
@@ -12665,6 +12704,9 @@
       "Gift": [
         "Regalía"
       ],
+      "Global": [
+        "Global"
+      ],
       "Groups": [
         "Grupos"
       ],
@@ -12975,6 +13017,9 @@
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Guardarlo para después en ${ DRIVE_APP_NAME }"
+      ],
+      "Search": [
+        "Búsqueda"
       ],
       "Search results": [
         "Buscar resultados"

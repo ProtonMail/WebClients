@@ -5355,20 +5355,6 @@
         "90 min."
       ]
     },
-    "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "Chcete-li přeposílat e-maily z ${ MAX_SYNC_PAID_USER } účtu, navyšte tarif na ${ planName }.",
-        "Chcete-li přeposílat e-maily až ze ${ MAX_SYNC_PAID_USER } účtů, navyšte tarif na ${ planName }.",
-        "Chcete-li přeposílat e-maily až z ${ MAX_SYNC_PAID_USER } účtů, navyšte tarif na ${ planName }.",
-        "Chcete-li přeposílat e-maily až z ${ MAX_SYNC_PAID_USER } účtů, navyšte tarif na ${ planName }."
-      ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "Přeposíláte e-maily z ${ MAX_SYNC_FREE_USER } externího účtu na ${ MAIL_APP_NAME }.",
-        "Přeposíláte e-maily z ${ MAX_SYNC_FREE_USER } externích účtů na ${ MAIL_APP_NAME }.",
-        "Přeposíláte e-maily z ${ MAX_SYNC_FREE_USER } externích účtů na ${ MAIL_APP_NAME }.",
-        "Přeposíláte e-maily z ${ MAX_SYNC_FREE_USER } externích účtů na ${ MAIL_APP_NAME }."
-      ]
-    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Textová pole jsou nepovinná. Informace, které uvedete v tomto formuláři, se objeví pouze na fakturách vystavených v budoucnu a nebudou mít vliv na stávající faktury."
@@ -11755,9 +11741,6 @@
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Použijte nejlepší server podle aktuálního zatížení a polohy: ${ formattedBestServerName }"
-      ],
-      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "Použijte různé typy e-mailových adres a aliasů, které nabízí ${ BRAND_NAME }."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Při připojování k serverům ${ VPN_APP_NAME } bez aplikace použijte následující přihlašovací údaje. Příklady použití zahrnují: Tunnelblick na macOS, OpenVPN na GNU/Linux."
@@ -23077,9 +23060,6 @@
       ],
       "Connect apps and devices": [
         "Připojit aplikace a zařízení"
-      ],
-      "Connect more addresses": [
-        "Připojit více adres"
       ],
       "Connect organization": [
         "Připojení organizace"

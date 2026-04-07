@@ -1764,6 +1764,10 @@
         "${ seats } ${ LUMO_APP_NAME } lisens",
         "${ seats } ${ LUMO_APP_NAME } lisenser"
       ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME }-lisens",
+        "${ seats } ${ MEET_APP_NAME }-lisenser"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats } skriveassistentlisens",
         "${ seats } skriveassistentlisenser"
@@ -4340,13 +4344,11 @@
       ]
     },
     "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "For å videresende e-poster fra opptil ${ MAX_SYNC_PAID_USER } konto, oppgrader til ${ planName }.",
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
         "For å videresende e-poster fra opptil ${ MAX_SYNC_PAID_USER } kontoer, oppgrader til ${ planName }."
       ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "Du videresender e-poster fra ${ MAX_SYNC_FREE_USER } ekstern konto til ${ MAIL_APP_NAME }.",
-        "Du videresender e-poster fra ${ MAX_SYNC_FREE_USER } eksterne kontoer til ${ MAIL_APP_NAME }."
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "Du videresender e-poster fra én ekstern konto til ${ MAIL_APP_NAME }."
       ]
     },
     "Edit billing address form note": {
@@ -6353,11 +6355,11 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "Avansert import"
-      ],
       "Import from ${ providerName }": [
         "Importer fra ${ providerName }"
+      ],
+      "More import options": [
+        "Flere importalternativer"
       ]
     },
     "Import warning": {
@@ -6507,6 +6509,12 @@
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } kan også beskytte virksomheten din."
+      ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } er en ende-til-ende-kryptert løsning for videokonferanser. Legg den til abonnementet ditt for å verte sikre møter."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME }-tilganger"
       ],
       "${ n } unread conversation": [
         "${ n } ulest samtale",
@@ -6709,6 +6717,9 @@
       ],
       "Ad targeting": [
         "Annonsemålretting"
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Legg til ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
       "Add image URL": [
         "Legg til bildenettadresse"
@@ -7240,6 +7251,9 @@
       "Everything in ${ planOrAppName }": [
         "Alt i ${ planOrAppName }"
       ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Alt i ${ planOrAppName }, pluss:"
+      ],
       "Expand selection": [
         "Utvid utvalget"
       ],
@@ -7275,6 +7289,9 @@
       ],
       "Folder": [
         "Mappe"
+      ],
+      "for ${ price }": [
+        "for ${ price }"
       ],
       "For additional information and to remove restrictions, please login at ${ mailLink }.": [
         "For ytterligere informasjon og for å fjerne restriksjoner, logg inn på ${ mailLink }."
@@ -7436,8 +7453,7 @@
         "Initialiserer…"
       ],
       "Insert image": [
-        "Sett inn bilde",
-        "Sett inn bilder"
+        "Sett inn bilde"
       ],
       "Insert link": [
         "Sett inn kobling"
@@ -7531,6 +7547,9 @@
       ],
       "Low Priority": [
         "Lav prioritet"
+      ],
+      "Make ${ MAIL_APP_NAME } your default email application.": [
+        "Gjør ${ MAIL_APP_NAME } til standard e-postapplikasjon."
       ],
       "Manage your folders": [
         "Administrer mappene dine"
@@ -10412,6 +10431,18 @@
         "Papirkurv"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME }-tilgang"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME }-tilganger"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME }-tilgang",
+        "${ seats } ${ MEET_APP_NAME }-tilganger"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: konfidensielle videokonferanser for samtalene som betyr noe"
@@ -10445,6 +10476,9 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Ende-til-ende-kryptert skjermdeling og kortvarig chat under samtaler"
       ],
+      "Hosts can record meetings locally on their computers": [
+        "Verter kan ta opp møter lokalt på datamaskinene sine"
+      ],
       "Meeting recording": [
         "Opptak av møte"
       ],
@@ -10464,6 +10498,19 @@
       "Up to ${ n } participant": [
         "Opptil ${ n } deltaker",
         "Opptil ${ n } deltakere"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videomøter, ${ n } deltaker",
+        "Videomøter, ${ n } deltakere"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } tilgang inkludert",
+        "${ seats } tilganger inkludert"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME }-tilganger i prøveperioden."
       ]
     },
     "Message": {
@@ -10919,6 +10966,9 @@
       "Data breach monitoring": [
         "Overvåking av datainnbrudd"
       ],
+      "Data retention policies": [
+        "Retningslinjer for dataoppbevaring"
+      ],
       "Dedicated servers optimized for streaming": [
         "Dedikerte tjenere optimalisert for strømming"
       ],
@@ -11027,6 +11077,9 @@
       ],
       "Priority support & live chat": [
         "Proritert kundestøtte & chat"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Privat KI-chat (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "Privat sikkerhetskopiering av bilder"
@@ -11173,6 +11226,9 @@
       "Vault sharing with up to ${ n } person": [
         "Deling av hvelv med opptil ${ n } person",
         "Deling av hvelv med opptil ${ n } personer"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN med annonseblokkering og skadevarebeskyttelse"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skanner det mørke nettet for å sjekke om ${ BRAND_NAME }-adressene eller aliasene dine har blitt lekket, og varsler deg umiddelbart hvis vi finner noe."
@@ -11791,29 +11847,29 @@
       ]
     },
     "Onboarding List Placeholder": {
-      "Choose your service": [
-        "Velg tjenesten din"
+      "Bring your emails into ${ MAIL_APP_NAME }": [
+        "Ta med e-postene dine til ${ MAIL_APP_NAME }"
+      ],
+      "Bring your existing email into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Ta med deg din eksisterende e-post til ${ MAIL_APP_NAME } slik at du kan administrere alt fra én privat innboks."
+      ],
+      "Choose a provider": [
+        "Velg en leverandør"
       ],
       "Maybe later": [
         "Kanskje senere"
       ],
-      "Popular services": [
-        "Populære tjenester"
+      "Protect your accounts": [
+        "Beskytt kontoene dine"
       ],
       "Skip for now": [
         "Hopp over for nå"
       ],
-      "Switch your accounts to ${ BRAND_NAME }": [
-        "Bytt kontoene dine til ${ BRAND_NAME }"
+      "Some popular services": [
+        "Noen populære tjenester"
       ],
-      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
-        "Å bytte e-post er vanskelig. ${ BRAND_NAME } gjør det enkelt. Koble til din gamle konto og administrer alt på ett fokusert, reklamefritt arbeidsområde."
-      ],
-      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
-        "Oppdater e-posten din på tjenestene du bruker mest. Forhindre sporing og beskytt personvernet ditt."
-      ],
-      "Welcome to ${ MAIL_APP_NAME }": [
-        "Velkommen til ${ MAIL_APP_NAME }"
+      "Switch the services you use every day to your ${ BRAND_NAME } address for better security and privacy.": [
+        "Bytt tjenestene du bruker hver dag til din ${ BRAND_NAME }-adresse for bedre sikkerhet og personvern."
       ]
     },
     "Onboarding modal": {
@@ -12032,6 +12088,12 @@
       ],
       "No parent folder": [
         "Ingen overordnet mappe"
+      ],
+      "Remind me later": [
+        "Påminn meg senere"
+      ],
+      "Yes, don't show again": [
+        "Ja, ikke vis igjen"
       ]
     },
     "Option group": {
@@ -12464,7 +12526,7 @@
         "Andersen"
       ],
       "Anything you'd like us to know": [
-        "Er det noe mer du vil at vi skal vite om"
+        "Er det noe mer du vil at vi skal vite om?"
       ],
       "Anytown": [
         "By"
@@ -12756,7 +12818,7 @@
         "Microsoft 365"
       ],
       "Other": [
-        "Annen"
+        "Annet"
       ],
       "Outlook": [
         "Outlook"
@@ -14979,9 +15041,6 @@
       "Connect apps and devices": [
         "Koble til apper og enheter"
       ],
-      "Connect more addresses": [
-        "Koble til flere adresser"
-      ],
       "Connect to video conferencing": [
         "Koble til videokonferanser"
       ],
@@ -15281,6 +15340,9 @@
       ],
       "Invalid verification code": [
         "Ugyldig verifiseringskode"
+      ],
+      "Keep this banner hidden?": [
+        "Holde dette banneret skjult?"
       ],
       "Label as": [
         "Merk som"

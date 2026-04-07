@@ -4371,15 +4371,11 @@
       ]
     },
     "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "Pentru a transfera mesaje de la ${ MAX_SYNC_PAID_USER } cont, treceți la ${ planName }.",
-        "Pentru a transfera mesaje de la maxim ${ MAX_SYNC_PAID_USER } conturi, treceți la ${ planName }.",
-        "Pentru a transfera mesaje de la maxim ${ MAX_SYNC_PAID_USER } de conturi, treceți la ${ planName }."
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
+        "Pentru a redirecționa mesajele de la maxim ${ MAX_SYNC_PAID_USER } conturi, treceți la ${ planName }."
       ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "Transferați mesaje de la ${ MAX_SYNC_FREE_USER } cont extern către ${ MAIL_APP_NAME }.",
-        "Transferați mesaje de la ${ MAX_SYNC_FREE_USER } conturi externe către ${ MAIL_APP_NAME }.",
-        "Transferați mesaje de la ${ MAX_SYNC_FREE_USER } de conturi externe către ${ MAIL_APP_NAME }."
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "Transferați mesajele de la un cont extern către ${ MAIL_APP_NAME }."
       ]
     },
     "Edit billing address form note": {
@@ -6417,11 +6413,11 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "Importare avansată"
-      ],
       "Import from ${ providerName }": [
         "Importare din ${ providerName }"
+      ],
+      "More import options": [
+        "Mai multe opțiuni de importare"
       ]
     },
     "Import warning": {
@@ -7579,9 +7575,7 @@
         "Se inițializează…"
       ],
       "Insert image": [
-        "Inserare imagine",
-        "Inserare imagini",
-        "Inserare imagini"
+        "Inserare imagine"
       ],
       "Insert link": [
         "Inserare legătură web"
@@ -12049,29 +12043,29 @@
       ]
     },
     "Onboarding List Placeholder": {
-      "Choose your service": [
-        "Alegeți serviciul"
+      "Bring your emails into ${ MAIL_APP_NAME }": [
+        "Aduceți-vă mesajele în ${ MAIL_APP_NAME }"
+      ],
+      "Bring your existing email into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Aduceți-vă contul de e-mail existent în ${ MAIL_APP_NAME } pentru a putea gestiona totul dintr-un singur cont privat."
+      ],
+      "Choose a provider": [
+        "Alegeți un furnizor"
       ],
       "Maybe later": [
         "Poate mai târziu"
       ],
-      "Popular services": [
-        "Servicii populare"
+      "Protect your accounts": [
+        "Protejați-vă conturile"
       ],
       "Skip for now": [
         "Omitere momentan"
       ],
-      "Switch your accounts to ${ BRAND_NAME }": [
-        "Comutați-vă conturile la ${ BRAND_NAME }"
+      "Some popular services": [
+        "Câteva servicii populare"
       ],
-      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
-        "Migrarea conturilor de e-mail este dificilă. ${ BRAND_NAME } o face ușoară. Conectați-vă contul vechi și gestionați totul într-un singur spațiu de lucru concentrat, fără reclame."
-      ],
-      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
-        "Actualizați-vă e-mailul pe serviciile pe care le utilizați cel mai des. Preveniți urmărirea și protejați-vă confidențialitatea."
-      ],
-      "Welcome to ${ MAIL_APP_NAME }": [
-        "Bun venit la ${ MAIL_APP_NAME }"
+      "Switch the services you use every day to your ${ BRAND_NAME } address for better security and privacy.": [
+        "Comutați serviciile pe care le utilizați zilnic la adresa ${ BRAND_NAME } proprie pentru securitate și confidențialitate sporite."
       ]
     },
     "Onboarding modal": {
@@ -15334,9 +15328,6 @@
       ],
       "Connect apps and devices": [
         "Conectați aplicații și dispozitive"
-      ],
-      "Connect more addresses": [
-        "Conectați mai multe adrese"
       ],
       "Connect to video conferencing": [
         "Conectați-vă la conferințe video"

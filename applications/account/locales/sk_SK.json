@@ -324,6 +324,9 @@
       "Connected": [
         "Pripojené"
       ],
+      "Contact sales": [
+        "Kontaktovať obchodný tím"
+      ],
       "Contact support": [
         "Kontaktovať podporu"
       ],
@@ -452,6 +455,9 @@
       ],
       "Delete account": [
         "Vymazať účet"
+      ],
+      "Delete and confirm": [
+        "Vymazať a potvrdiť"
       ],
       "Delete filter “${ Name }”": [
         "Vymazať filter „${ Name }”"
@@ -4871,6 +4877,9 @@
       "Available with ${ title }": [
         "K dispozícii s ${ title }"
       ],
+      "Bring over email, calendar events, and contacts from another provider.": [
+        "Preneste si emaily, udalosti kalendára a kontakty od iného poskytovateľa."
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Najprv nakonfigurujte túto možnosť, aby ste aktivovali svoju organizáciu a prispôsobili svoju emailovú adresu."
       ],
@@ -4894,9 +4903,6 @@
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Jednoducho synchronizujte súbory do cloudu z počítača a pristupujte k nim z mobilného zariadenia."
-      ],
-      "Easily transfer emails, calendar events, and contacts from your previous provider. Choose a one-time import or automatic ongoing sync.": [
-        "Jednoducho preneste emaily, udalosti z kalendára a kontakty od vášho predchádzajúceho poskytovateľa. Vyberte si jednorazový import alebo automatickú priebežnú synchronizáciu."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Povoľte ${ PROTON_SENTINEL_NAME } pre prístup k týmto funkciám"
@@ -5446,17 +5452,11 @@
       ]
     },
     "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "Na preposielanie emailov z ${ MAX_SYNC_PAID_USER } účtu prejdite na ${ planName }.",
-        "Na preposielanie emailov až z ${ MAX_SYNC_PAID_USER } účtov prejdite na ${ planName }.",
-        "Na preposielanie emailov až z ${ MAX_SYNC_PAID_USER } účtov prejdite na ${ planName }.",
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
         "Na preposielanie emailov až z ${ MAX_SYNC_PAID_USER } účtov prejdite na ${ planName }."
       ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "Preposielate emaily z ${ MAX_SYNC_FREE_USER } externého účtu do ${ MAIL_APP_NAME }.",
-        "Preposielate emaily z ${ MAX_SYNC_FREE_USER } externých účtov do ${ MAIL_APP_NAME }.",
-        "Preposielate emaily z ${ MAX_SYNC_FREE_USER } externých účtov do ${ MAIL_APP_NAME }.",
-        "Preposielate emaily z ${ MAX_SYNC_FREE_USER } externých účtov do ${ MAIL_APP_NAME }."
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "Preposielate emaily z jedného externého účtu do ${ MAIL_APP_NAME }."
       ]
     },
     "Edit billing address form note": {
@@ -8988,11 +8988,11 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "Pokročilý import"
-      ],
       "Import from ${ providerName }": [
         "Importovať z ${ providerName }"
+      ],
+      "More import options": [
+        "Ďalšie možnosti importu"
       ]
     },
     "Import status": {
@@ -9120,6 +9120,9 @@
       ],
       "${ discountPercent }% discount": [
         "${ discountPercent }% zľava"
+      ],
+      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
+        "${ DRIVE_APP_NAME } už nebude uchovávať predchádzajúce verzie vašich súborov."
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } je neplatná"
@@ -10374,6 +10377,9 @@
       ],
       "for ${ price }": [
         "za ${ price }"
+      ],
+      "For a 10-year version history, please contact our sales team.": [
+        "Pre 10-ročnú históriu verzií prosím kontaktujte náš obchodný tím."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Ak chcete mať k emailom prístup kedykoľvek a mať optimalizované mobilné prostredie, stiahnite si našu aplikáciu ${ androidAppLink } alebo ${ iosAppLink }."
@@ -11815,6 +11821,12 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Toto overenie môže trvať až jednu hodinu. Po úspešnom overení neodstraňujte záznam TXT, pretože je potrebný na potvrdenie, že doménu naďalej vlastníte."
       ],
+      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
+        "Toto zmaže všetky predchádzajúce verzie vašich súborov, ktoré sú staršie ako ${ rententionLabel }."
+      ],
+      "This will delete all previous versions of your files.": [
+        "Toto zmaže všetky predchádzajúce verzie vašich súborov."
+      ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Týmto bude prístup k **${ email }** zamietnutý. Skutočne chcete pokračovať?"
       ],
@@ -12013,6 +12025,9 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Zvýšte si úroveň, aby ste si zachovali svoje ${ planTitle } výhody."
       ],
+      "Upgrade to unlock": [
+        "Pre odomknutie upgradujte"
+      ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "Zvýšte úroveň pre prístup k ${ monitorLink }."
       ],
@@ -12049,11 +12064,11 @@
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Na deaktiváciu vašich metód dvojfázového overovania použite metódu obnovenia."
       ],
+      "Use multiple email addresses with ${ MAIL_APP_NAME }. Add a new ${ BRAND_NAME } address or connect another email account to manage everything from one inbox.": [
+        "Používajte viacero emailových adries s ${ MAIL_APP_NAME }. Pridajte novú adresu ${ BRAND_NAME } alebo pripojte iný emailový účet a spravujte všetko z jednej doručenej pošty."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Použite najlepší server podľa aktuálneho zaťaženia a umiestnenia: ${ formattedBestServerName }"
-      ],
-      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "Použite rôzne typy emailových adries a aliasov od ${ BRAND_NAME }."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Pri pripájaní k serverom ${ VPN_APP_NAME } bez aplikácie použite nasledujúce poverenia. Príklady použitia zahŕňajú: Tunnelblick na macOS, OpenVPN na GNU/Linux."
@@ -12111,6 +12126,9 @@
       ],
       "Version ${ version }": [
         "Verzia ${ version }"
+      ],
+      "Version history": [
+        "História verzií"
       ],
       "Version number successfully copied to clipboard": [
         "Číslo verzie bolo úspešne skopírované do schránky"
@@ -13816,6 +13834,9 @@
       ],
       "Don't ask again": [
         "Viac sa nepýtať"
+      ],
+      "Don't keep versions": [
+        "Neuchovávať verzie"
       ],
       "Don't show this again": [
         "Nabudúce nezobrazovať"
@@ -20674,6 +20695,9 @@
       ]
     },
     "Setting": {
+      "Enable Photos section": [
+        "Zapnúť sekciu Fotografie"
+      ],
       "Get updates about comments via email": [
         "Dostávajte aktualizácie o komentároch prostredníctvom emailu"
       ],
@@ -23505,9 +23529,6 @@
       "Connect apps and devices": [
         "Pripojenie aplikácií a zariadení"
       ],
-      "Connect more addresses": [
-        "Pripojiť viac adries"
-      ],
       "Connect organization": [
         "Pripojiť organizáciu"
       ],
@@ -23687,6 +23708,9 @@
       ],
       "Delete user?": [
         "Vymazať používateľa?"
+      ],
+      "Delete version history?": [
+        "Vymazať históriu verzií?"
       ],
       "Deny access to user?": [
         "Zamietnuť prístup užívateľovi?"

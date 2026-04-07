@@ -4385,20 +4385,6 @@
         "Sdílejte výhody svého tarifu s ${ BRAND_NAME } Duo"
       ]
     },
-    "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "Chcete-li přeposílat e-maily z ${ MAX_SYNC_PAID_USER } účtu, navyšte tarif na ${ planName }.",
-        "Chcete-li přeposílat e-maily až ze ${ MAX_SYNC_PAID_USER } účtů, navyšte tarif na ${ planName }.",
-        "Chcete-li přeposílat e-maily až z ${ MAX_SYNC_PAID_USER } účtů, navyšte tarif na ${ planName }.",
-        "Chcete-li přeposílat e-maily až z ${ MAX_SYNC_PAID_USER } účtů, navyšte tarif na ${ planName }."
-      ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "Přeposíláte e-maily z ${ MAX_SYNC_FREE_USER } externího účtu na ${ MAIL_APP_NAME }.",
-        "Přeposíláte e-maily z ${ MAX_SYNC_FREE_USER } externích účtů na ${ MAIL_APP_NAME }.",
-        "Přeposíláte e-maily z ${ MAX_SYNC_FREE_USER } externích účtů na ${ MAIL_APP_NAME }.",
-        "Přeposíláte e-maily z ${ MAX_SYNC_FREE_USER } externích účtů na ${ MAIL_APP_NAME }."
-      ]
-    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Textová pole jsou nepovinná. Informace, které uvedete v tomto formuláři, se objeví pouze na fakturách vystavených v budoucnu a nebudou mít vliv na stávající faktury."
@@ -7638,10 +7624,7 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek",
-        "Vložit obrázky",
-        "Vložit obrázky",
-        "Vložit obrázky"
+        "Vložit obrázek"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -15419,9 +15402,6 @@
       ],
       "Connect apps and devices": [
         "Připojit aplikace a zařízení"
-      ],
-      "Connect more addresses": [
-        "Připojit více adres"
       ],
       "Connect to video conferencing": [
         "Připojit se k videokonferenci"

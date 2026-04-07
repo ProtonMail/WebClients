@@ -3677,16 +3677,6 @@
         "გააზიარეთ თქვენი სატარიფო გეგმის უპირატესობები ${ BRAND_NAME } Duo-ისთან ერთად"
       ]
     },
-    "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "ელფოსტების გადასაგზავნად ${ MAX_SYNC_PAID_USER }-მდე ანგარიშიდან, ასწიეთ სატარიფო გეგმა ${ planName }-ზე.",
-        "ელფოსტების გადასაგზავნად ${ MAX_SYNC_PAID_USER }-მდე ანგარიშიდან, ასწიეთ სატარიფო გეგმა ${ planName }-ზე."
-      ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "თქვენ აგზავნით ელფოსტებს ${ MAX_SYNC_FREE_USER } გარე ანგარიშიდან ${ MAIL_APP_NAME }-ზე.",
-        "თქვენ აგზავნით ელფოსტებს ${ MAX_SYNC_FREE_USER } გარე ანგარიშიდან ${ MAIL_APP_NAME }-ზე."
-      ]
-    },
     "edm": {
       "${ BRAND_NAME } will never contact you unexpectedly asking you to sign in with a QR code.": [
         "${ BRAND_NAME } არასდროს დაგიკავშირდებათ მოულოდნელად და არასდროს გთხოვთ, QR კოდით შეხვიდეთ."
@@ -5694,8 +5684,8 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "გაფართოებული შემოტანა"
+      "More import options": [
+        "მეტი შემოტანის პარამეტრები"
       ]
     },
     "Import warning": {
@@ -6565,6 +6555,9 @@
       "finance": [
         "ფინანსები"
       ],
+      "for ${ price }": [
+        "${ price }-ისთვის"
+      ],
       "for choosing ${ product }": [
         "${ product }-ის არჩევისთვის"
       ],
@@ -7189,6 +7182,9 @@
       "Private AI assistant": [
         "პირადი ხი დამხმარე"
       ],
+      "Professional": [
+        "Professional"
+      ],
       "Protected by Swiss privacy laws": [
         "დაცულია შვეიცარიული კონფიდენციალობის კანონებით"
       ],
@@ -7742,9 +7738,6 @@
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "გამოიყენეთ საუკეთესო სერვერი თქვენი მიმდინარე მდებარეობისა და დატვირთვის მიხედვით: ${ formattedBestServerName }"
-      ],
-      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "გამოიყენეთ ელფოსტის მისამართებისა და მეტსახელების სხვადასხვა ტიპები, რომლებსაც ${ BRAND_NAME } გთავაზობთ."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "${ VPN_APP_NAME }-ის სერვერებთან აპლიკაციის გარეშე მიერთებისას გამოიყენეთ შემდეგი მომხმარებელი და პაროლი. მაგალითად, თუ იყენებთ Tunnelblick-ს macOS-ზე ან OpenVPN -ს GNU/Linux-ზე."
@@ -8379,6 +8372,9 @@
       "Add group member": [
         "ჯგუფის წევრის დამატება"
       ],
+      "Additional comments": [
+        "დამატებითი კომენტარები"
+      ],
       "Address": [
         "მისამართი"
       ],
@@ -8540,6 +8536,9 @@
       ],
       "Contacts": [
         "კონტაქტები"
+      ],
+      "Continue cancelling": [
+        "გაუქმების გაგრძელება"
       ],
       "Copy": [
         "კოპირება"
@@ -9009,6 +9008,9 @@
       ],
       "Single sign-on URL": [
         "SSO-ის ბმული"
+      ],
+      "Skip feedback": [
+        "უკუკავშირის გამოტოვება"
       ],
       "Spam": [
         "სპამი"
@@ -9651,6 +9653,11 @@
       "Up to ${ n } participant": [
         "${ n }-მდე მონაწილე",
         "${ n }-მდე მონაწილე"
+      ]
+    },
+    "Meet_launch": {
+      "Add ${ planName }": [
+        "${ planName }-ის დამატება"
       ]
     },
     "Member action": {
@@ -11909,6 +11916,9 @@
       "End date": [
         "დასრულების თარიღი"
       ],
+      "Enter a name": [
+        "შეიყვანეთ სახელი"
+      ],
       "Enter name": [
         "შეიყვანეთ სახელი"
       ],
@@ -11971,6 +11981,9 @@
       ],
       "Select": [
         "აირჩიეთ"
+      ],
+      "Select a provider": [
+        "აირჩიეთ პროვაიდერი"
       ],
       "Select a reason": [
         "აირჩიეთ მიზეზი"
@@ -12107,6 +12120,26 @@
       ],
       "Unknown": [
         "უცნობი"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "სხვა"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Recovery Email": {
@@ -14778,9 +14811,6 @@
       ],
       "Connect apps and devices": [
         "აპებისა და მოწყობილობების დაკავშირება"
-      ],
-      "Connect more addresses": [
-        "მეტი მისამართის დაკავშირება"
       ],
       "Connect organization": [
         "ორგანიზაციასთან მიერთება"

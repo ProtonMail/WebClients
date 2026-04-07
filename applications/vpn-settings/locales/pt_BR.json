@@ -3791,16 +3791,6 @@
         "Compartilhe os benefícios do seu plano com ${ BRAND_NAME } Duo"
       ]
     },
-    "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "Para encaminhar e-mails de até ${ MAX_SYNC_PAID_USER } conta, faça o upgrade para ${ planName }.",
-        "Para encaminhar e-mails de até ${ MAX_SYNC_PAID_USER } contas, faça o upgrade para ${ planName }."
-      ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "Você está encaminhando e-mails de ${ MAX_SYNC_FREE_USER } conta externa para ${ MAIL_APP_NAME }.\n",
-        "Você está encaminhando e-mails de ${ MAX_SYNC_FREE_USER } contas externas para ${ MAIL_APP_NAME }."
-      ]
-    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Os campos de texto são opcionais. As informações que você fornecer neste formulário aparecerão somente em faturas emitidas no futuro e não afetarão as faturas existentes."
@@ -5873,8 +5863,8 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "Importação avançada"
+      "More import options": [
+        "Mais opções de importação"
       ]
     },
     "Import warning": {
@@ -8028,9 +8018,6 @@
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Use o melhor servidor de acordo com a carga atual e a posição: ${ formattedBestServerName }"
       ],
-      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "Use os diferentes tipos de endereços de e-mail e aliases oferecidas pela ${ BRAND_NAME }."
-      ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Use as credenciais a seguir ao se conectar aos servidores ${ VPN_APP_NAME } sem o aplicativo. Exemplo: Tunnelblick no macOS, OpenVPN no GNU/Linux."
       ],
@@ -9134,6 +9121,9 @@
       ],
       "Main": [
         "Principal"
+      ],
+      "Main reason for cancelling": [
+        "Motivo principal para cancelar"
       ],
       "Manage categories": [
         "Gerenciar categorias"
@@ -15506,9 +15496,6 @@
       ],
       "Connect apps and devices": [
         "Conectar aplicativos e dispositivos"
-      ],
-      "Connect more addresses": [
-        "Conectar mais endereços"
       ],
       "Connect organization": [
         "Conectar organização"

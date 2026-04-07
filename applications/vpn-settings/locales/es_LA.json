@@ -3801,13 +3801,11 @@
       ]
     },
     "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "Para reenviar correos electrónicos desde hasta ${ MAX_SYNC_PAID_USER } cuenta, actualice a ${ planName }.",
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
         "Para reenviar correos electrónicos de hasta ${ MAX_SYNC_PAID_USER } cuentas, actualice a ${ planName }."
       ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "Está reenviando correos electrónicos desde ${ MAX_SYNC_FREE_USER } cuenta externa a ${ MAIL_APP_NAME }.",
-        "Está reenviando correos electrónicos desde ${ MAX_SYNC_FREE_USER } cuentas externas a ${ MAIL_APP_NAME }."
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "Está reenviando correos electrónicos desde una cuenta externa a ${ MAIL_APP_NAME }."
       ]
     },
     "Edit billing address form note": {
@@ -5894,8 +5892,8 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "Importación avanzada"
+      "More import options": [
+        "Más opciones de importación"
       ]
     },
     "Import warning": {
@@ -8049,11 +8047,11 @@
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Use un método de recuperación para desactivar los métodos de autenticación de dos factores."
       ],
+      "Use multiple email addresses with ${ MAIL_APP_NAME }. Add a new ${ BRAND_NAME } address or connect another email account to manage everything from one inbox.": [
+        "Use múltiples direcciones de correo con ${ MAIL_APP_NAME }. Añada una nueva dirección de ${ BRAND_NAME } o conecte otra cuenta de correo electrónico para gestionar todo desde una sola bandeja de entrada."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Use el mejor servidor según la carga actual y la ubicación: ${ formattedBestServerName }"
-      ],
-      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "Use diferentes tipos de direcciones de correo y alias ofrecidos por ${ BRAND_NAME }."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Use las siguientes credenciales cuando se conecte a servidores de ${ VPN_APP_NAME } sin aplicación. Ejemplos de casos de uso incluyen: Tunnelblick en macOS, OpenVPN en GNU/Linux."
@@ -15545,9 +15543,6 @@
       ],
       "Connect apps and devices": [
         "Conecte aplicaciones y dispositivos"
-      ],
-      "Connect more addresses": [
-        "Conectar más direcciones"
       ],
       "Connect organization": [
         "Conectar la organización"
