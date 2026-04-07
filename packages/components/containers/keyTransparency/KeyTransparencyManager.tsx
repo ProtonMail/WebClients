@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 
 import useApiStatus from '@proton/components/hooks/useApiStatus';
 import { serverTime } from '@proton/crypto';
-import { ktSentryReportError } from '@proton/key-transparency/helpers';
+import { KT_ERROR_TYPE, ktSentryReportError } from '@proton/key-transparency/helpers';
 import { SECOND } from '@proton/shared/lib/constants';
 import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 
@@ -37,7 +37,7 @@ const KeyTransparencyManager = ({ children }: Props) => {
                 const { selfAuditResult } = await runSelfAudit(ktState.selfAuditResult);
                 setKTState({ selfAuditResult });
             } catch (error) {
-                ktSentryReportError(error, { context: 'runSelfAuditPeriodically' });
+                ktSentryReportError(error, KT_ERROR_TYPE.LOCAL, { context: 'runSelfAuditPeriodically' });
             }
         };
         if (selfAuditPending && ktActivation !== KeyTransparencyActivation.DISABLED && safeIsOnline) {

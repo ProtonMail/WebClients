@@ -1,6 +1,6 @@
 import { CryptoProxy, serverTime } from '@proton/crypto';
 
-import { throwKTError } from '../helpers/utils';
+import { KT_ERROR_TYPE, throwKTError } from '../helpers/utils';
 import type { Epoch } from '../interfaces';
 import { parseCertChain, parseCertTime, verifyAltName, verifyCertChain, verifySCT } from './verifyCertificates';
 
@@ -24,7 +24,7 @@ export const verifyEpoch = async (epoch: Epoch, verificationTime = serverTime())
         })
     ).toHex();
     if (ChainHash !== checkChainHash) {
-        return throwKTError('Chain hash of fetched epoch is not consistent', {
+        return throwKTError('Chain hash of fetched epoch is not consistent', KT_ERROR_TYPE.SYSTEM, {
             ChainHash,
             PrevChainHash,
             TreeHash,

@@ -9,7 +9,7 @@ import type {
 import { KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 
 import { fetchSignedKeyLists } from '../helpers/apiHelpers';
-import { ktSentryReport, ktSentryReportError } from '../helpers/utils';
+import { KT_ERROR_TYPE, ktSentryReport, ktSentryReportError } from '../helpers/utils';
 import { commitSKLToLS } from '../storage/storageHelpers';
 import { getDefaultKTLS } from './defaults';
 
@@ -57,7 +57,7 @@ export const createPreAuthKTVerifier = (ktActivation: KeyTransparencyActivation)
                 const allSKLs = await fetchSignedKeyLists(api, savedSKL.revision ?? 0, savedSKL.address.Email);
                 const correspondingSKL = allSKLs.find((skl) => savedSKL.signedKeyList.Data == skl.Data);
                 if (!correspondingSKL || !correspondingSKL.Revision || !correspondingSKL.ExpectedMinEpochID) {
-                    ktSentryReport('Could not find new SKL revision and expectedMinEpochID', {
+                    ktSentryReport('Could not find new SKL revision and expectedMinEpochID', KT_ERROR_TYPE.LOCAL, {
                         email: savedSKL.address.Email,
                     });
                     return;
@@ -74,7 +74,7 @@ export const createPreAuthKTVerifier = (ktActivation: KeyTransparencyActivation)
             }
             createdSKLs = [];
         } catch (error: any) {
-            ktSentryReportError(error, { context: 'preAuthKTCommit' });
+            ktSentryReportError(error, KT_ERROR_TYPE.LOCAL, { context: 'preAuthKTCommit' });
         }
     };
 
