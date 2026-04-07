@@ -4,8 +4,7 @@ import React, { forwardRef, useContext, useRef, useState } from 'react';
 import { isFocusable } from 'tabbable';
 
 import { Input } from '@proton/atoms/Input/Input';
-import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { TooltipTypeEnum } from '@proton/atoms/Tooltip/Tooltip';
+import { Tooltip, TooltipTypeEnum } from '@proton/atoms/Tooltip/Tooltip';
 import { FormContext } from '@proton/components/components/form/Form';
 import Icon from '@proton/components/components/icon/Icon';
 import useInstance from '@proton/hooks/useInstance';
