@@ -32,9 +32,10 @@ interface Props {
     volumeId: string;
     selectedItems: Item[];
     role: MemberRole;
+    canShareSingleItem: boolean;
 }
 
-export const ActionsDropdown = ({ volumeId, selectedItems, role }: Props) => {
+export const ActionsDropdown = ({ volumeId, selectedItems, role, canShareSingleItem }: Props) => {
     const [uid] = useState(generateUID('actions-dropdown'));
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const { filesDetailsModal, showFilesDetailsModal } = useFilesDetailsModal();
@@ -43,7 +44,6 @@ export const ActionsDropdown = ({ volumeId, selectedItems, role }: Props) => {
     const { renameModal, showRenameModal } = useRenameModal();
     const { sharingModal, showSharingModal } = useSharingModal();
     const isEditor = role === MemberRole.Editor;
-    const isAdmin = role === MemberRole.Admin;
     const { trashItems } = useTrashActions();
     const hasFoldersSelected = selectedItems.some((item) => !item.isFile);
     const isMultiSelect = selectedItems.length > 1;
@@ -57,7 +57,7 @@ export const ActionsDropdown = ({ volumeId, selectedItems, role }: Props) => {
         action: () => void;
     }[] = [
         {
-            hidden: isMultiSelect || !isAdmin,
+            hidden: !canShareSingleItem,
             name: c('Action').t`Share`,
             icon: 'user-plus',
             testId: 'actions-dropdown-share-link',
