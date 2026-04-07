@@ -119,6 +119,7 @@ export function useFolder() {
                                 clearInterval(intervalId);
                                 return;
                             }
+
                             const item = await mapNodeToFolderViewItem(maybeNode, folderShareId, drive, node);
                             itemsBatch.push(item);
                         } catch (e) {
