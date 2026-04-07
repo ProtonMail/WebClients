@@ -17,7 +17,8 @@ export const IntroduceBookingsSpotlightContent = () => {
                 </div>
                 <div className="flex flex-column flex-nowrap items-start">
                     <p className="text-lg text-bold m-0 mb-1">{c('Title').t`Introducing booking pages`}</p>
-                    <p className="m-0">{c('Label').t`Create shareable pages where people can book time with you.`}</p>
+                    <p className="m-0">{c('Label')
+                        .t`Securely share parts of your schedule through a booking page you can send to anyone.`}</p>
                 </div>
             </div>
         </>
