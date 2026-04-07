@@ -324,6 +324,9 @@
       "Connected": [
         "Tilkoblet"
       ],
+      "Contact sales": [
+        "Ta kontakt med salg"
+      ],
       "Contact support": [
         "Kontakt brukerstøtte"
       ],
@@ -452,6 +455,9 @@
       ],
       "Delete account": [
         "Slett konto"
+      ],
+      "Delete and confirm": [
+        "Slett og bekreft"
       ],
       "Delete filter “${ Name }”": [
         "Slett filter “${ Name }”"
@@ -1812,6 +1818,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } lisens",
         "${ seats } ${ LUMO_APP_NAME } lisenser"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME }-lisens",
+        "${ seats } ${ MEET_APP_NAME }-lisenser"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } skriveassistentlisens",
@@ -4805,6 +4815,9 @@
       "Available with ${ title }": [
         "Tilgjengelig med ${ title }"
       ],
+      "Bring over email, calendar events, and contacts from another provider.": [
+        "Hent e-post, kalenderhendelser og kontakter fra en annen leverandør."
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Konfigurer dette først for å aktivere organisasjonen din og tilpasse e-postadressen din."
       ],
@@ -4828,9 +4841,6 @@
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Synkroniser filer enkelt til skyen fra datamaskinen din, og få tilgang til dem fra mobilenheten din."
-      ],
-      "Easily transfer emails, calendar events, and contacts from your previous provider. Choose a one-time import or automatic ongoing sync.": [
-        "Overfør enkelt e-poster, kalenderhendelser og kontakter fra din forrige leverandør. Velg engangsimport eller automatisk kontinuerlig synkronisering."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Aktiver ${ PROTON_SENTINEL_NAME } for å få tilgang til disse funksjonene"
@@ -5380,13 +5390,11 @@
       ]
     },
     "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "For å videresende e-poster fra opptil ${ MAX_SYNC_PAID_USER } konto, oppgrader til ${ planName }.",
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
         "For å videresende e-poster fra opptil ${ MAX_SYNC_PAID_USER } kontoer, oppgrader til ${ planName }."
       ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "Du videresender e-poster fra ${ MAX_SYNC_FREE_USER } ekstern konto til ${ MAIL_APP_NAME }.",
-        "Du videresender e-poster fra ${ MAX_SYNC_FREE_USER } eksterne kontoer til ${ MAIL_APP_NAME }."
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "Du videresender e-poster fra én ekstern konto til ${ MAIL_APP_NAME }."
       ]
     },
     "Edit billing address form note": {
@@ -8842,11 +8850,11 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "Avansert import"
-      ],
       "Import from ${ providerName }": [
         "Importer fra ${ providerName }"
+      ],
+      "More import options": [
+        "Flere importalternativer"
       ]
     },
     "Import status": {
@@ -8965,6 +8973,9 @@
       "${ discountPercent }% discount": [
         "${ discountPercent }% rabatt"
       ],
+      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
+        "${ DRIVE_APP_NAME } vil ikke lenger beholde tidligere versjoner av filene dine."
+      ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } er ugyldig"
       ],
@@ -8997,6 +9008,12 @@
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "${ MAIL_APP_NAME } kan også bli brukt med et enkelt passord som erstatter både innloggings- og det andre passordet. For å bytte til enkel passordmodus, angi det enkelt passordet du ønsker å bruke og klikk Lagre."
+      ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } er en ende-til-ende-kryptert løsning for videokonferanser. Legg den til abonnementet ditt for å verte sikre møter."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME }-tilganger"
       ],
       "${ n } address": [
         "${ n } adresse",
@@ -9284,6 +9301,9 @@
       ],
       "Activity Monitor": [
         "Aktivitetsovervåking"
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Legg til ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
       "Add a @pm.me email address to your account. This simple, shorter domain stands for \"${ MAIL_APP_NAME } me\" or \"Private Message me.\"": [
         "Legg til en @pm.me e-postadresse til kontoen din. Dette enkle, kortere domene står for \"${ MAIL_APP_NAME } meg\" eller \"send meg privat melding.\""
@@ -10083,6 +10103,9 @@
       "Everything in ${ planOrAppName }": [
         "Alt i ${ planOrAppName }"
       ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Alt i ${ planOrAppName }, pluss:"
+      ],
       "Example: ${ spfExample }": [
         "Eksempel: ${ spfExample }"
       ],
@@ -10133,6 +10156,12 @@
       ],
       "finance": [
         "finans"
+      ],
+      "for ${ price }": [
+        "for ${ price }"
+      ],
+      "For a 10-year version history, please contact our sales team.": [
+        "Kontakt vårt salgsapparat for en 10-årig versjonshistorikk."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "For tilgang til e-post når som helst og optimalisert mobilopplevelse, last ned vår ${ androidAppLink } eller ${ iosAppLink }."
@@ -11005,6 +11034,9 @@
       "Product reviews, rankings, or guides": [
         "Produktanmeldelser, rangeringer eller guider"
       ],
+      "Professional": [
+        "profesjonell"
+      ],
       "Protect this device too?": [
         "Beskytte denne enheten også?"
       ],
@@ -11545,6 +11577,12 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Denne verifiseringen kan ta opptil én time. Når bekreftelsen er fullført, må du ikke fjerne TXT-posten, siden det er nødvendig for å bekrefte at du fortsatt eier domenet."
       ],
+      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
+        "Dette vil slette alle tidligere versjoner av filene dine som er eldre enn ${ rententionLabel }."
+      ],
+      "This will delete all previous versions of your files.": [
+        "Dette vil slette alle tidligere versjoner av filene dine."
+      ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Dette vil nekte tilgang til **${ email }**. Er du sikker på at du vil fortsette?"
       ],
@@ -11684,7 +11722,7 @@
         "Totalt: ${ totalPrice }"
       ],
       "Trial ends on ${ formattedPeriodEndDate }": [
-        "Prøveversjonen avsluttes ${ formattedPeriodEndDate }"
+        "Prøveperioden avsluttes ${ formattedPeriodEndDate }"
       ],
       "trusted device": [
         "klarert enhet"
@@ -11743,6 +11781,9 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Oppgrader for å beholde ${ planTitle } fordelene dine."
       ],
+      "Upgrade to unlock": [
+        "Oppgrader for å låse opp"
+      ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "Oppgrader for å låse opp ${ monitorLink }."
       ],
@@ -11779,11 +11820,11 @@
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Bruk en gjenopprettingsmetode for å deaktivere tofaktorautentiseringsmetodene dine."
       ],
+      "Use multiple email addresses with ${ MAIL_APP_NAME }. Add a new ${ BRAND_NAME } address or connect another email account to manage everything from one inbox.": [
+        "Bruk flere e-postadresser med ${ MAIL_APP_NAME }. Legg til en ny ${ BRAND_NAME }-adresse eller koble til en annen e-postkonto for å administrere alt fra én innboks."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Bruk den beste tjeneren i henhold til gjeldende belastning og posisjon: ${ formattedBestServerName }"
-      ],
-      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "Bruk de forskjellige typene e-postadresser og aliaser som tilbys av ${ BRAND_NAME }."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Bruk følgende påloggingsinformasjon når du kobler til ${ VPN_APP_NAME }-tjenere uten applikasjon. Bruksområder kan inkludere: Tunnelblick på macOS, OpenVPN på GNU/Linux."
@@ -11841,6 +11882,9 @@
       ],
       "Version ${ version }": [
         "Versjon ${ version }"
+      ],
+      "Version history": [
+        "Versjonshistorikk"
       ],
       "Version number successfully copied to clipboard": [
         "Versjonsnummeret ble kopiert til utklippstavlen"
@@ -12000,6 +12044,9 @@
       ],
       "With ${ AUTHENTICATOR_APP_NAME }, you can:": [
         "Med ${ AUTHENTICATOR_APP_NAME } kan du:"
+      ],
+      "With a ${ boldProfessionalPlan } plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
+        "Med et ${ boldProfessionalPlan }-plan kan du kjøpe ${ boldDedicatedServers } for organisasjonen din, og sette opp ${ boldGateways } for å kontrollere hvilke brukere som får tilgang til dem."
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Med en kryptert ${ BRAND_NAME }-adresse, kan du bruke alle ${ BRAND_NAME }-tjenester"
@@ -13505,6 +13552,9 @@
       ],
       "Don't ask again": [
         "Ikke spør igjen"
+      ],
+      "Don't keep versions": [
+        "Ikke behold versjoner"
       ],
       "Don't show this again": [
         "Ikke vis dette igjen"
@@ -15110,6 +15160,22 @@
         "Du har nådd maksimum ${ MAX_CALENDAR_MEMBERS } medlemmer."
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (for ${ quantity } bruker)",
+        "${ MEET_APP_NAME } (for ${ quantity } brukere)"
+      ],
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME }-tilgang"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME }-tilganger"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME }-tilgang",
+        "${ seats } ${ MEET_APP_NAME }-tilganger"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: konfidensielle videokonferanser for samtalene som betyr noe"
@@ -15143,6 +15209,9 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Ende-til-ende-kryptert skjermdeling og kortvarig chat under samtaler"
       ],
+      "Hosts can record meetings locally on their computers": [
+        "Verter kan ta opp møter lokalt på datamaskinene sine"
+      ],
       "Meeting recording": [
         "Opptak av møte"
       ],
@@ -15162,9 +15231,17 @@
       "Up to ${ n } participant": [
         "Opptil ${ n } deltaker",
         "Opptil ${ n } deltakere"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videomøter, ${ n } deltaker",
+        "Videomøter, ${ n } deltakere"
       ]
     },
     "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } tilgang inkludert",
+        "${ seats } tilganger inkludert"
+      ],
       "100 ${ BRAND_NAME } email addresses": [
         "100 ${ BRAND_NAME }-e-postadresser"
       ],
@@ -15179,6 +15256,9 @@
       ],
       "Email writing assistant": [
         "Assistent for e-postskriving"
+      ],
+      "Includes these features:": [
+        "Inkluderer disse funksjonene:"
       ],
       "Open source": [
         "Åpen kildekode"
@@ -15197,6 +15277,20 @@
       ],
       "Strict no-logs policy": [
         "Strenge retningslinjer mot loggføring"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Du kan ha opptil ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME }-tilganger i prøveperioden."
+      ]
+    },
+    "Meet_launch": {
+      "Add ${ planName }": [
+        "Legg til ${ planName }"
+      ],
+      "Confidential video conferencing for the conversations that matter. Only ${ priceString } more each month.": [
+        "Konfidensiell videokonferanse for de viktige samtalene. Kun ${ priceString } mer hver måned."
+      ],
+      "Talk privately with ${ planName }": [
+        "Snakk privat med ${ planName }"
       ]
     },
     "meet_signup_2025: title": {
@@ -15865,6 +15959,9 @@
       "Data breach monitoring": [
         "Overvåking av datainnbrudd"
       ],
+      "Data retention policies": [
+        "Retningslinjer for dataoppbevaring"
+      ],
       "Dedicated account manager": [
         "Dedikert kontobehandler"
       ],
@@ -15982,6 +16079,9 @@
       ],
       "Priority support & live chat": [
         "Proritert kundestøtte & chat"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Privat KI-chat (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "Privat sikkerhetskopiering av bilder"
@@ -16144,6 +16244,9 @@
       "Vault sharing with up to ${ n } person": [
         "Deling av hvelv med opptil ${ n } person",
         "Deling av hvelv med opptil ${ n } personer"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN med annonseblokkering og skadevarebeskyttelse"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skanner det mørke nettet for å sjekke om ${ BRAND_NAME }-adressene eller aliasene dine har blitt lekket, og varsler deg umiddelbart hvis vi finner noe."
@@ -18399,7 +18502,7 @@
         "Andersen"
       ],
       "Anything you'd like us to know": [
-        "Er det noe mer du vil at vi skal vite om"
+        "Er det noe mer du vil at vi skal vite om?"
       ],
       "Anytown": [
         "By"
@@ -18809,7 +18912,7 @@
         "Microsoft 365"
       ],
       "Other": [
-        "Annen"
+        "Annet"
       ],
       "Outlook": [
         "Outlook"
@@ -20236,6 +20339,9 @@
       ]
     },
     "Setting": {
+      "Enable Photos section": [
+        "Aktiver Bilder-seksjonen"
+      ],
       "Get updates about comments via email": [
         "Få oppdateringer om kommentarer via e-post"
       ],
@@ -20470,6 +20576,9 @@
       "Compare plans": [
         "Sammenlign planer"
       ],
+      "Confirm payment": [
+        "Bekreft betaling"
+      ],
       "Confirm payment, access your Drive": [
         "Bekreft betaling, få tilgang til din Drive"
       ],
@@ -20596,6 +20705,9 @@
       ],
       "Share and collaborate of files": [
         "Del og samarbeid på filer"
+      ],
+      "Sign up to ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }": [
+        "Registrer deg hos ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }"
       ],
       "Sign up to get everything ${ BRAND_NAME } has to offer": [
         "Meld deg på for å få alt ${ BRAND_NAME } har å tilby"
@@ -21598,6 +21710,10 @@
       "${ n } VPN connection per user": [
         "${ n } VPN-tilkobling per bruker",
         "${ n } VPN-tilkoblinger per bruker"
+      ],
+      "${ productName } for ${ count } user": [
+        "${ productName } for ${ count } bruker",
+        "${ productName } for ${ count } brukere"
       ],
       "${ UsedAddresses } address": [
         "${ UsedAddresses } adresse",
@@ -22927,9 +23043,6 @@
       "Connect apps and devices": [
         "Koble til apper og enheter"
       ],
-      "Connect more addresses": [
-        "Koble til flere adresser"
-      ],
       "Connect organization": [
         "Koble organisasjon"
       ],
@@ -23105,6 +23218,9 @@
       ],
       "Delete user?": [
         "Slett bruker?"
+      ],
+      "Delete version history?": [
+        "Slette versjonshistorikken?"
       ],
       "Deny access to user?": [
         "Nekte tilgang til bruker?"

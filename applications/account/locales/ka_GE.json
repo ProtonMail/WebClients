@@ -324,6 +324,9 @@
       "Connected": [
         "დაკავშირებულია"
       ],
+      "Contact sales": [
+        "გაყიდვებთან დაკავშირება"
+      ],
       "Contact support": [
         "კონტაქტი მხარდაჭერის გუნდთან"
       ],
@@ -449,6 +452,9 @@
       ],
       "Delete account": [
         "ანგარიშის წაშლა"
+      ],
+      "Delete and confirm": [
+        "წაშლა და დადასტურება"
       ],
       "Delete filter “${ Name }”": [
         "ფილტრის \"${ Name }\" წაშლა"
@@ -5206,16 +5212,6 @@
         "90წთ"
       ]
     },
-    "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "ელფოსტების გადასაგზავნად ${ MAX_SYNC_PAID_USER }-მდე ანგარიშიდან, ასწიეთ სატარიფო გეგმა ${ planName }-ზე.",
-        "ელფოსტების გადასაგზავნად ${ MAX_SYNC_PAID_USER }-მდე ანგარიშიდან, ასწიეთ სატარიფო გეგმა ${ planName }-ზე."
-      ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "თქვენ აგზავნით ელფოსტებს ${ MAX_SYNC_FREE_USER } გარე ანგარიშიდან ${ MAIL_APP_NAME }-ზე.",
-        "თქვენ აგზავნით ელფოსტებს ${ MAX_SYNC_FREE_USER } გარე ანგარიშიდან ${ MAIL_APP_NAME }-ზე."
-      ]
-    },
     "edm": {
       "${ BRAND_NAME } will never contact you unexpectedly asking you to sign in with a QR code.": [
         "${ BRAND_NAME } არასდროს დაგიკავშირდებათ მოულოდნელად და არასდროს გთხოვთ, QR კოდით შეხვიდეთ."
@@ -8513,8 +8509,8 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "გაფართოებული შემოტანა"
+      "More import options": [
+        "მეტი შემოტანის პარამეტრები"
       ]
     },
     "Import status": {
@@ -9253,6 +9249,9 @@
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "CNET-ის რედაქტორების არჩევნის ჯილდო 8.4 რეიტინგიტ 10-დან"
       ],
+      "Code expired": [
+        "კოდს ვადა ამოიწურა"
+      ],
       "Coming soon": [
         "სულ მალე"
       ],
@@ -9713,6 +9712,9 @@
       ],
       "finance": [
         "ფინანსები"
+      ],
+      "for ${ price }": [
+        "${ price }-ისთვის"
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "ელფოსტასთან ნენებისმიერ დროს წვდომისთვის და მობილურისთვის ოპტიმიზებული პროგრამებისთვის გადმოწერეთ ჩვენი ${ androidAppLink }-ის ან ${ iosAppLink }-ის აპი."
@@ -10518,6 +10520,9 @@
       "Private AI assistant": [
         "პირადი ხი დამხმარე"
       ],
+      "Professional": [
+        "Professional"
+      ],
       "Protect your account from quantum computing threats with quantum-resistant cryptographic keys.": [
         "დაიცავით თქვენი ანგარიში კვანტური კომპიუტერის საფრთხეებისგან კვანტურად მდგრადი კრიპტოგრაფიული გასაღებებით."
       ],
@@ -10746,6 +10751,9 @@
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "თქვენი მისამართის გასააქტიურებლად შედით ${ MAIL_APP_NAME }-ში"
+      ],
+      "Sign-in complete": [
+        "შესვლა დასრულდა"
       ],
       "Signed up": [
         "რეგისტრირებული"
@@ -11208,6 +11216,9 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "ასწიეთ სატარიფო გეგმა ${ planTitle }-ის ფუნქციების შესანარჩუნებლად."
       ],
+      "Upgrade to unlock": [
+        "განსაბლოკად ასწიეთ ტარიფი"
+      ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "ასწიეთ თქვენი სატარიფო გეგმა ${ monitorLink }-ის ჩასართავად."
       ],
@@ -11243,9 +11254,6 @@
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "გამოიყენეთ საუკეთესო სერვერი თქვენი მიმდინარე მდებარეობისა და დატვირთვის მიხედვით: ${ formattedBestServerName }"
-      ],
-      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "გამოიყენეთ ელფოსტის მისამართებისა და მეტსახელების სხვადასხვა ტიპები, რომლებსაც ${ BRAND_NAME } გთავაზობთ."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "${ VPN_APP_NAME }-ის სერვერებთან აპლიკაციის გარეშე მიერთებისას გამოიყენეთ შემდეგი მომხმარებელი და პაროლი. მაგალითად, თუ იყენებთ Tunnelblick-ს macOS-ზე ან OpenVPN -ს GNU/Linux-ზე."
@@ -11297,6 +11305,9 @@
       ],
       "Version ${ version }": [
         "ვერსია ${ version }"
+      ],
+      "Version history": [
+        "ვერსიის ისტორია"
       ],
       "Version number successfully copied to clipboard": [
         "ვერსიის ნომერი წარმატებით დაკოპირდა ბუფერში"
@@ -12419,6 +12430,9 @@
       "Add group member": [
         "ჯგუფის წევრის დამატება"
       ],
+      "Additional comments": [
+        "დამატებითი კომენტარები"
+      ],
       "Address": [
         "მისამართი"
       ],
@@ -12728,6 +12742,9 @@
       "Contacts": [
         "კონტაქტები"
       ],
+      "Continue cancelling": [
+        "გაუქმების გაგრძელება"
+      ],
       "Conversation grouping": [
         "საუბრების დაჯგუფება"
       ],
@@ -12844,6 +12861,9 @@
       ],
       "Don't ask again": [
         "აღარ მკითხო"
+      ],
+      "Don't keep versions": [
+        "ვერსიები არ შენარჩუნდება"
       ],
       "Don't show this again": [
         "აღარ მაჩვენო"
@@ -13505,6 +13525,9 @@
       ],
       "Single sign-on URL": [
         "SSO-ის ბმული"
+      ],
+      "Skip feedback": [
+        "უკუკავშირის გამოტოვება"
       ],
       "SMTP port": [
         "SMTP პორტი"
@@ -14501,6 +14524,11 @@
       ],
       "Strict no-logs policy": [
         "ჩვენ არ ვინახავთ ჟურნალს"
+      ]
+    },
+    "Meet_launch": {
+      "Add ${ planName }": [
+        "${ planName }-ის დამატება"
       ]
     },
     "meet_signup_2025: title": {
@@ -17620,6 +17648,9 @@
       "End date": [
         "დასრულების თარიღი"
       ],
+      "Enter a name": [
+        "შეიყვანეთ სახელი"
+      ],
       "Enter name": [
         "შეიყვანეთ სახელი"
       ],
@@ -17697,6 +17728,9 @@
       ],
       "Select": [
         "აირჩიეთ"
+      ],
+      "Select a provider": [
+        "აირჩიეთ პროვაიდერი"
       ],
       "Select a reason": [
         "აირჩიეთ მიზეზი"
@@ -17936,6 +17970,26 @@
       ],
       "Unknown": [
         "უცნობი"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "სხვა"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Recovery Email": {
@@ -19428,6 +19482,9 @@
       "Compare plans": [
         "სატარიფო გეგმების შედარება"
       ],
+      "Confirm payment": [
+        "გადახდის დადასტურება"
+      ],
       "Confirm payment, access your Drive": [
         "დაადასტურეთ გადახდა. იქონიეთ წვდომა თქვენს Drive-სთან"
       ],
@@ -19634,6 +19691,9 @@
       "Yearly": [
         "წლიურად"
       ],
+      "You are all set": [
+        "ყველაფერი მზადაა"
+      ],
       "Your plan": [
         "თქვენი გეგმა"
       ],
@@ -19662,6 +19722,12 @@
       ],
       "Username": [
         "მომხმარებლის სახელი"
+      ],
+      "Your email": [
+        "თქვენი ელფოსტა"
+      ],
+      "Your password": [
+        "თქვენი პაროლი"
       ]
     },
     "signup: Action": {
@@ -21802,9 +21868,6 @@
       "Connect apps and devices": [
         "აპებისა და მოწყობილობების დაკავშირება"
       ],
-      "Connect more addresses": [
-        "მეტი მისამართის დაკავშირება"
-      ],
       "Connect organization": [
         "ორგანიზაციასთან მიერთება"
       ],
@@ -22804,6 +22867,9 @@
       ],
       "Sign in and grant access": [
         "შესვლა და წვდომის მინიჭება"
+      ],
+      "Sign in on TV": [
+        "შესვლა ტელევიზორზე"
       ],
       "Sign in to join the Beta program": [
         "შედით სისტემაში ბეტა პროგრამაში დასარეგისტრირებლად"

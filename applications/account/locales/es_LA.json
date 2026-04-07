@@ -324,6 +324,9 @@
       "Connected": [
         "Conectado"
       ],
+      "Contact sales": [
+        "Contactarse con el equipo de ventas"
+      ],
       "Contact support": [
         "Contactar con soporte"
       ],
@@ -452,6 +455,9 @@
       ],
       "Delete account": [
         "Eliminar la cuenta"
+      ],
+      "Delete and confirm": [
+        "Eliminar y confirmar"
       ],
       "Delete filter “${ Name }”": [
         "Eliminar el filtro «${ Name }»"
@@ -4809,6 +4815,9 @@
       "Available with ${ title }": [
         "Disponible con ${ title }"
       ],
+      "Bring over email, calendar events, and contacts from another provider.": [
+        "Traiga correos electrónicos, eventos de calendario y contactos desde otro proveedor."
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Configure esto primero para activar su organización y personalizar su dirección de correo electrónico."
       ],
@@ -4832,9 +4841,6 @@
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Sincronice fácilmente los archivos a la nube desde su escritorio y acceda a ellos desde su dispositivo móvil."
-      ],
-      "Easily transfer emails, calendar events, and contacts from your previous provider. Choose a one-time import or automatic ongoing sync.": [
-        "Transfiera fácilmente correos, eventos de calendario y contactos desde su proveedor anterior. Elija entre una sola importación o una sincronización automática continua."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Active ${ PROTON_SENTINEL_NAME } para acceder a estas funciones"
@@ -5384,13 +5390,11 @@
       ]
     },
     "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "Para reenviar correos electrónicos desde hasta ${ MAX_SYNC_PAID_USER } cuenta, actualice a ${ planName }.",
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
         "Para reenviar correos electrónicos de hasta ${ MAX_SYNC_PAID_USER } cuentas, actualice a ${ planName }."
       ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "Está reenviando correos electrónicos desde ${ MAX_SYNC_FREE_USER } cuenta externa a ${ MAIL_APP_NAME }.",
-        "Está reenviando correos electrónicos desde ${ MAX_SYNC_FREE_USER } cuentas externas a ${ MAIL_APP_NAME }."
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "Está reenviando correos electrónicos desde una cuenta externa a ${ MAIL_APP_NAME }."
       ]
     },
     "Edit billing address form note": {
@@ -8849,11 +8853,11 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "Importación avanzada"
-      ],
       "Import from ${ providerName }": [
         "Importar desde ${ providerName }"
+      ],
+      "More import options": [
+        "Más opciones de importación"
       ]
     },
     "Import status": {
@@ -8971,6 +8975,9 @@
       ],
       "${ discountPercent }% discount": [
         "${ discountPercent }% de descuento"
+      ],
+      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
+        "${ DRIVE_APP_NAME } no conservará versiones anteriores de los archivos."
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } no es válida"
@@ -10155,6 +10162,9 @@
       ],
       "for ${ price }": [
         "por ${ price }"
+      ],
+      "For a 10-year version history, please contact our sales team.": [
+        "Para un historial de versiones de 10 años, contacte con nuestro equipo de ventas."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Para acceder a su correo electrónico en cualquier momento y disfrutar de una experiencia móvil optimizada, descargue nuestra aplicación desde ${ androidAppLink } o ${ iosAppLink }."
@@ -11570,6 +11580,12 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Esta verificación puede tomar hasta una hora. Después de la verificación, no elimine el registro TXT ya que se necesita para confirmar que continúa siendo el propietario del dominio."
       ],
+      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
+        "Esto eliminará todas las versiones anteriores de los archivos previo a ${ rententionLabel }."
+      ],
+      "This will delete all previous versions of your files.": [
+        "Esto eliminará todas las versiones anteriores de sus archivos."
+      ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Esto denegará el acceso a **${ email }**. ¿En verdad desea continuar?"
       ],
@@ -11768,6 +11784,9 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Mejore para mantener sus beneficios de ${ planTitle }."
       ],
+      "Upgrade to unlock": [
+        "Actualice para desbloquear"
+      ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "Actualice a un mejor plan para desbloquear ${ monitorLink }."
       ],
@@ -11804,11 +11823,11 @@
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Use un método de recuperación para desactivar los métodos de autenticación de dos factores."
       ],
+      "Use multiple email addresses with ${ MAIL_APP_NAME }. Add a new ${ BRAND_NAME } address or connect another email account to manage everything from one inbox.": [
+        "Use múltiples direcciones de correo con ${ MAIL_APP_NAME }. Añada una nueva dirección de ${ BRAND_NAME } o conecte otra cuenta de correo electrónico para gestionar todo desde una sola bandeja de entrada."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Use el mejor servidor según la carga actual y la ubicación: ${ formattedBestServerName }"
-      ],
-      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "Use diferentes tipos de direcciones de correo y alias ofrecidos por ${ BRAND_NAME }."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Use las siguientes credenciales cuando se conecte a servidores de ${ VPN_APP_NAME } sin aplicación. Ejemplos de casos de uso incluyen: Tunnelblick en macOS, OpenVPN en GNU/Linux."
@@ -11866,6 +11885,9 @@
       ],
       "Version ${ version }": [
         "Versión ${ version }"
+      ],
+      "Version history": [
+        "Historial de versiones"
       ],
       "Version number successfully copied to clipboard": [
         "El número de versión fue copiado en el portapapeles."
@@ -13533,6 +13555,9 @@
       ],
       "Don't ask again": [
         "No volver a preguntar"
+      ],
+      "Don't keep versions": [
+        "No conservar versiones"
       ],
       "Don't show this again": [
         "No mostrar esto de nuevo"
@@ -20317,6 +20342,9 @@
       ]
     },
     "Setting": {
+      "Enable Photos section": [
+        "Activar sección Fotos"
+      ],
       "Get updates about comments via email": [
         "Recibir actualizaciones sobre los comentarios por correo electrónico"
       ],
@@ -23018,9 +23046,6 @@
       "Connect apps and devices": [
         "Conecte aplicaciones y dispositivos"
       ],
-      "Connect more addresses": [
-        "Conectar más direcciones"
-      ],
       "Connect organization": [
         "Conectar la organización"
       ],
@@ -23196,6 +23221,9 @@
       ],
       "Delete user?": [
         "¿Eliminar usuario?"
+      ],
+      "Delete version history?": [
+        "¿Eliminar historial de versiones?"
       ],
       "Deny access to user?": [
         "¿Denegar acceso al usuario?"
