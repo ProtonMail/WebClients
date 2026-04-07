@@ -8,7 +8,8 @@
     "exports": {
         "./components/Sidebar": "./src/components/Sidebar/index.tsx",
         "./definitions/routes": "./src/definitions/routes.ts",
-        "./hooks/useB2BAdminSidebarFeature": "./src/hooks/useB2BAdminSidebarFeature.ts"
+        "./hooks/useB2BAdminSidebarFeature": "./src/hooks/useB2BAdminSidebarFeature.ts",
+        "./components/tv": "./src/components/tv/index.ts"
     },
     "main": "./src/index.ts",
     "scripts": {
@@ -28,11 +29,13 @@
         "@proton/payments": "workspace:^",
         "@proton/react-polymorphic-types": "workspace:^",
         "@proton/shared": "workspace:^",
+        "@proton/styles": "workspace:^",
         "@proton/testing": "workspace:^",
         "@proton/unleash": "workspace:^",
         "@proton/utils": "workspace:^",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
+        "react-router-dom": "^7.13.2",
         "ttag": "^1.8.12"
     },
     "devDependencies": {
