@@ -42,7 +42,7 @@ const UpsellConversionModal = ({ modalProps }: Props) => {
                 <>
                     <span>
                         {/*translator: full sentence is "You're forwarding X Gmail address to Proton Mail."*/}
-                        {c('loc_nightly: BYOE').ngettext(
+                        {c('Description').ngettext(
                             msgid`You're forwarding ${numAddressesOrSync} Gmail address to ${MAIL_APP_NAME}.`,
                             `You're forwarding ${numAddressesOrSync} Gmail address to ${MAIL_APP_NAME}.`,
                             numAddressesOrSync
@@ -50,7 +50,7 @@ const UpsellConversionModal = ({ modalProps }: Props) => {
                     </span>
                     <span className="ml-1">
                         {/*translator: full sentence is "Your plan supports 1 Gmail address."*/}
-                        {c('loc_nightly: BYOE').ngettext(
+                        {c('Description').ngettext(
                             msgid`Your plan supports ${MAX_SYNC_FREE_USER} Gmail address.`,
                             `Your plan supports ${MAX_SYNC_FREE_USER} Gmail addresses.`,
                             MAX_SYNC_FREE_USER
@@ -58,7 +58,7 @@ const UpsellConversionModal = ({ modalProps }: Props) => {
                     </span>
                     <span className="ml-1">
                         {/*translator: full sentence is "To connect more, upgrade to Mail Plus and get up to 3 Gmail accounts linked to your inbox."*/}
-                        {c('loc_nightly: BYOE').ngettext(
+                        {c('Description').ngettext(
                             msgid`To connect up to ${MAX_SYNC_PAID_USER} Gmail address, upgrade to ${planName}.`,
                             `To connect up to ${MAX_SYNC_PAID_USER} Gmail addresses, upgrade to ${planName}.`,
                             MAX_SYNC_PAID_USER
@@ -68,7 +68,7 @@ const UpsellConversionModal = ({ modalProps }: Props) => {
             }
             customDescription={
                 <ButtonLike as={SettingsLink} shape="underline" path="/easy-switch" className="color-weak">
-                    {c('loc_nightly: BYOE').t`Or remove forwarding address`}
+                    {c('Action').t`Or remove forwarding address`}
                 </ButtonLike>
             }
             customDescriptionClassname="my-2"

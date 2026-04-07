@@ -202,9 +202,7 @@ const AddressesWithMembers = ({
                                     <div>
                                         {hasAccessToBYOE && isSelfSelected && (
                                             <>
-                                                <ConnectGmailButton
-                                                    buttonText={c('loc_nightly: BYOE').t`Connect Gmail address`}
-                                                />
+                                                <ConnectGmailButton buttonText={c('Action').t`Connect Gmail address`} />
                                                 <p className="color-weak text-sm my-2">
                                                     {c('Label BYOE').ngettext(
                                                         msgid`${byoeAddressesAvailableCount} of ${maxBYOEAddresses} email address available`,
