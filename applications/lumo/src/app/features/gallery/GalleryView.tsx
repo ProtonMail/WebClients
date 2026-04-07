@@ -16,6 +16,12 @@ import { useLumoNavigate as useNavigate } from '../../hooks/useLumoNavigate';
 import { HeaderWrapper } from '../../layouts/header/HeaderWrapper';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useSidebar } from '../../providers/SidebarProvider';
+import {
+    setNativeCreateImage,
+    setNativeIsModelSectionEnabled,
+    setNativeToolsEnabled,
+    setNativeTsAndCsVisibility,
+} from '../../remote/nativeComposerBridgeHelpers';
 import { ComposerMode } from '../../types';
 import { base64ToFile } from '../../util/imageHelpers';
 import { CreatedGrid } from './CreatedGrid';
@@ -80,6 +86,19 @@ export const GalleryView = ({
     const pendingEditPromptRef = useRef<string>('');
     const [composerPrefill, setComposerPrefill] = useState<string | undefined>(externalPrefill);
     const [gallerySketchTrigger, setGallerySketchTrigger] = useState(false);
+
+    useEffect(() => {
+        setNativeCreateImage(true);
+        setNativeIsModelSectionEnabled(false);
+        setNativeToolsEnabled(false);
+        setNativeTsAndCsVisibility(false);
+        return () => {
+            setNativeCreateImage(false);
+            setNativeIsModelSectionEnabled(true);
+            setNativeToolsEnabled(true);
+            setNativeTsAndCsVisibility(true);
+        };
+    }, []);
 
     // Hoisted gallery data — used to decide default tab and passed to CreatedGrid
     const galleryImages = useGeneratedGalleryImages();
