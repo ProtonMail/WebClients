@@ -1250,6 +1250,9 @@
       ],
       "Continue to ${ planOrAppName }": [
         "Continuar amb ${ planOrAppName }"
+      ],
+      "Refetch index": [
+        "Tornar a carregar l'índex"
       ]
     },
     "Action: Docs": {
@@ -7013,6 +7016,18 @@
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Afegiu ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
+      "${ state.result.entries.length } entries": [
+        "${ state.result.entries.length } entrades"
+      ],
+      "Index is empty.": [
+        "L'índex és buit."
+      ],
+      "Search module is not available.": [
+        "El mòdul de cerca no està disponible."
+      ],
+      "Unsupported file type for Photos": [
+        "Tipus de fitxer no admès per a Fotos"
       ]
     },
     "info": {
@@ -7782,6 +7797,27 @@
       ],
       "Skip feedback": [
         "Ometre els comentaris"
+      ],
+      "Environment compatible": [
+        "Compatible amb l'entorn"
+      ],
+      "Index kinds": [
+        "Tipus d'índex"
+      ],
+      "Initial indexing": [
+        "Indexació inicial"
+      ],
+      "Outdated version": [
+        "Versió obsoleta"
+      ],
+      "Searchable": [
+        "Cercable"
+      ],
+      "User opted in": [
+        "L'usuari ha acceptat"
+      ],
+      "Visible columns:": [
+        "Columnes visibles:"
       ]
     },
     "Label for contact group color": {
@@ -13189,6 +13225,15 @@
       ],
       "You’ve got 5 GB of storage": [
         "Teniu 5 GB d'emmagatzematge"
+      ],
+      "Actions": [
+        "Accions"
+      ],
+      "Global": [
+        "Global"
+      ],
+      "Search": [
+        "Cerca"
       ]
     },
     "Today icon tooltip in mini calendar": {

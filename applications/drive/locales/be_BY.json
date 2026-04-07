@@ -106,7 +106,7 @@
         "Назва альбома"
       ],
       "Apply": [
-        "Ужыць"
+        "Прымяніць"
       ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "У групе кантактаў можа быць не больш за ${ maxContacts } кантакт",
@@ -745,7 +745,7 @@
         "Новы абагулены альбом"
       ],
       "New spreadsheet": [
-        "Новая электронная табліца"
+        "Новая эл. табліца"
       ],
       "Next": [
         "Далей"
@@ -1262,6 +1262,9 @@
       ],
       "Continue to ${ planOrAppName }": [
         "Працягнуць у ${ planOrAppName }"
+      ],
+      "Refetch index": [
+        "Абнавіць індэкс"
       ]
     },
     "Action: Docs": {
@@ -4950,6 +4953,9 @@
     "Import provider": {
       "Advanced import": [
         "Пашыраны імпарт"
+      ],
+      "More import options": [
+        "Больш параметраў імпарту"
       ]
     },
     "Import warning": {
@@ -7083,7 +7089,7 @@
         "Ваш уліковы запіс мае прынамсі адзін пратэрмінаваны рахунак. Ваш доступ неўзабаве будзе абмежаваны. ${ payInvoiceLink }"
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
-        "Ваш уліковы запіс у цяперашні час сканфігурыраваны, каб ужываць схему адваротнага налічэння падатку. Гэты параметр не падтрымліваецца для выбранага тарыфнага плана. Вы можаце, або выдаліць нумар ПДВ з плацежнага адраса, або выбраць іншы тарыфны план, каб працягнуць аперацыю."
+        "Ваш уліковы запіс у цяперашні час сканфігурыраваны, каб прымяняць схему адваротнага налічэння падатку. Гэты параметр не падтрымліваецца для выбранага тарыфнага плана. Вы можаце, або выдаліць нумар ПДВ з плацежнага адраса, або выбраць іншы тарыфны план, каб працягнуць аперацыю."
       ],
       "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
         "У вашага браўзера адсутнічае функцыя спампоўкі вялікіх файлаў або некалькіх файлаў. Спампуйце настольную праграму для бесперашкоднай запампоўкі і спампоўкі."
@@ -7210,6 +7216,18 @@
       ],
       "Everything in ${ planOrAppName }, plus:": [
         "Усе функцыі тарыфнага плана ${ planOrAppName }, а яшчэ:"
+      ],
+      "${ state.result.entries.length } entries": [
+        "${ state.result.entries.length } запісаў"
+      ],
+      "Index is empty.": [
+        "Індэкс адсутнічае."
+      ],
+      "Search module is not available.": [
+        "Модуль пошуку недаступны."
+      ],
+      "Unsupported file type for Photos": [
+        "Тып файла для фатаграфій не падтрымліваецца"
       ]
     },
     "info": {
@@ -7387,13 +7405,13 @@
         "Праграмы ў бізнес абстаноўцы"
       ],
       "Apply to all duplicated files": [
-        "Ужыць да ўсіх дублікатаў файлаў"
+        "Прымяніць да ўсіх дублікатаў файлаў"
       ],
       "Apply to all duplicated folders": [
-        "Ужыць да ўсіх дублікатаў папак"
+        "Прымяніць да ўсіх дублікатаў папак"
       ],
       "Apply to all unverified items": [
-        "Ужыць да ўсіх неправераных элементаў"
+        "Прымяніць да ўсіх неправераных элементаў"
       ],
       "Attach screenshot(s)": [
         "Далучыць здымак(-і) экрана"
@@ -7988,6 +8006,27 @@
       ],
       "Skip feedback": [
         "Прапусціць водгук"
+      ],
+      "Environment compatible": [
+        "Сумяшчальнасць з асяроддзем"
+      ],
+      "Index kinds": [
+        "Тыпы індэксаў"
+      ],
+      "Initial indexing": [
+        "Першапачатковая індэксацыя"
+      ],
+      "Outdated version": [
+        "Састарэлая версія"
+      ],
+      "Searchable": [
+        "Даступны да пошуку"
+      ],
+      "User opted in": [
+        "Карыстальнік, які выбраў"
+      ],
+      "Visible columns:": [
+        "Бачныя слупкі:"
       ]
     },
     "Label for contact group color": {
@@ -9406,7 +9445,7 @@
         "Абараняе вас, блакіруючы ўсе падключэнні да сеткі пры нечаканым адключэнні ад нашага сервера VPN."
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
-        "Меткі - гэта простыя тэгі, якія можна дадаваць да паведамленняў. Яны дазваляюць прасцей знаходзіць неабходныя лісты або ўжываць фільтры"
+        "Меткі - гэта простыя тэгі, якія можна дадаваць да паведамленняў. Яны дазваляюць прасцей знаходзіць неабходныя лісты або прымяняць фільтры"
       ],
       "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
         "Пажыццёвы доступ да ${ PASS_APP_NAME } + прэміяльныя функцыі SimpleLogin."
@@ -11435,7 +11474,7 @@
     },
     "sheets_2025:Action": {
       "New spreadsheet": [
-        "Новая электронная табліца"
+        "Новая эл. табліца"
       ],
       "Open in ${ appName }": [
         "Адкрыць у ${ appName }"
@@ -12666,7 +12705,7 @@
         "Ананімны карыстальнік"
       ],
       "Apply gift code": [
-        "Ужыць падарункавы код"
+        "Прымяніць падарункавы код"
       ],
       "Are you sure you want to close the preview?": [
         "Вы сапраўды хочаце закрыць папярэдні прагляд?"
@@ -13645,6 +13684,15 @@
       ],
       "Share \"${ fileName }\"": [
         "Абагуліць \"${ fileName }\""
+      ],
+      "Actions": [
+        "Дзеянні"
+      ],
+      "Global": [
+        "Глабальныя"
+      ],
+      "Search": [
+        "Пошук"
       ]
     },
     "Today icon tooltip in mini calendar": {

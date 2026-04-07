@@ -1241,6 +1241,15 @@
       ],
       "Zoom out": [
         "დაპატარავება"
+      ],
+      "Change my access": [
+        "ჩემი წვდომების შეცვლა"
+      ],
+      "Refetch index": [
+        "ინდექსის თავიდან გამოთხოვა"
+      ],
+      "Remove my access": [
+        "ჩემი წვდომის გაუქმება"
       ]
     },
     "Action: Docs": {
@@ -4729,6 +4738,9 @@
     "Import provider": {
       "Advanced import": [
         "გაფართოებული შემოტანა"
+      ],
+      "More import options": [
+        "მეტი შემოტანის პარამეტრები"
       ]
     },
     "Import warning": {
@@ -6697,6 +6709,15 @@
       ],
       "You’ll lose access to ${ boldPlanTitle } on ${ boldEndDate }.": [
         "დაკარგავთ წვდომას ${ boldPlanTitle }-სთან. თარიღი: ${ boldEndDate }."
+      ],
+      "for ${ price }": [
+        "${ price }-ისთვის"
+      ],
+      "Index is empty.": [
+        "ინდექსი ცარიელია."
+      ],
+      "Update required": [
+        "საჭიროა განახლება"
       ]
     },
     "info": {
@@ -7448,6 +7469,33 @@
       ],
       "ZIP code": [
         "საფოსტო კოდი"
+      ],
+      "Additional comments": [
+        "დამატებითი კომენტარები"
+      ],
+      "Continue cancelling": [
+        "გაუქმების გაგრძელება"
+      ],
+      "Index kinds": [
+        "ინდექსის ტიპები"
+      ],
+      "Initial indexing": [
+        "საწყისი დაინდექსება"
+      ],
+      "Outdated version": [
+        "მოძველებული ვერსია"
+      ],
+      "Searchable": [
+        "ძებნადი"
+      ],
+      "Skip feedback": [
+        "უკუკავშირის გამოტოვება"
+      ],
+      "User opted in": [
+        "მომხმარებელმა მოიწონა"
+      ],
+      "Visible columns:": [
+        "ხილული სვეტები:"
       ]
     },
     "Label for contact group color": {
@@ -10095,6 +10143,12 @@
       ],
       "ZIP code": [
         "საფოსტო კოდი"
+      ],
+      "Enter a name": [
+        "შეიყვანეთ სახელი"
+      ],
+      "Select a provider": [
+        "აირჩიეთ პროვაიდერი"
       ]
     },
     "Placeholder for contact group name": {
@@ -10790,6 +10844,9 @@
       ],
       "pending": [
         "რიგში"
+      ],
+      "user joined": [
+        "მომხმარებელი შემოვიდა"
       ]
     },
     "Storage": {
@@ -12599,6 +12656,18 @@
       ],
       "You’ve got 5 GB of storage": [
         "გაქვთ 5გბ საცავი"
+      ],
+      "Actions": [
+        "ქმედებები"
+      ],
+      "Global": [
+        "გლობალური"
+      ],
+      "Remove your access?": [
+        "გავაუქმოთ თქვენი წვდომა?"
+      ],
+      "Search": [
+        "ძებნა"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -12917,6 +12986,12 @@
       ],
       "Yahoo": [
         "Yahoo"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
       ]
     }
   }

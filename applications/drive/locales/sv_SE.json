@@ -1250,6 +1250,9 @@
       ],
       "Continue to ${ planOrAppName }": [
         "Fortsätt till ${ planOrAppName }"
+      ],
+      "Refetch index": [
+        "Hämta index igen"
       ]
     },
     "Action: Docs": {
@@ -3946,6 +3949,9 @@
       ],
       "Unable to start the search": [
         "Kan inte att starta sökningen"
+      ],
+      "Something went wrong with search. Please try again later.": [
+        "Något gick fel med sökning. Försök igen senare."
       ]
     },
     "error": {
@@ -4815,6 +4821,9 @@
     "Import provider": {
       "Advanced import": [
         "Avancerad import"
+      ],
+      "More import options": [
+        "Fler importalternativ"
       ]
     },
     "Import warning": {
@@ -6931,6 +6940,15 @@
       ],
       "Everything in ${ planOrAppName }, plus:": [
         "Allt i ${ planOrAppName }, plus:"
+      ],
+      "Index is empty.": [
+        "Index är tom."
+      ],
+      "Search module is not available.": [
+        "Sökmodul inte tillgänglig."
+      ],
+      "Unsupported file type for Photos": [
+        "Filtyp för foton stöds inte"
       ]
     },
     "info": {
@@ -7691,6 +7709,27 @@
       ],
       "Skip feedback": [
         "Hoppa över feedback"
+      ],
+      "Environment compatible": [
+        "Miljökompatibel"
+      ],
+      "Index kinds": [
+        "Indextyper"
+      ],
+      "Initial indexing": [
+        "Initial indexering"
+      ],
+      "Outdated version": [
+        "Föråldrad version"
+      ],
+      "Searchable": [
+        "Sökbar"
+      ],
+      "User opted in": [
+        "Användare tackade ja"
+      ],
+      "Visible columns:": [
+        "Synliga kolumner:"
       ]
     },
     "Label for contact group color": {
@@ -13173,6 +13212,15 @@
       ],
       "Share \"${ fileName }\"": [
         "Dela ”${ fileName }”"
+      ],
+      "Actions": [
+        "Åtgärder"
+      ],
+      "Global": [
+        "Global"
+      ],
+      "Search": [
+        "Sök"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -1250,6 +1250,9 @@
       ],
       "Remove my access": [
         "Mijn toegang verwijderen"
+      ],
+      "Refetch index": [
+        "Opnieuw indexeren"
       ]
     },
     "Action: Docs": {
@@ -1294,7 +1297,7 @@
         "${ ips } toegewijde VPN-servers"
       ],
       "${ LUMO_APP_NAME } AI license": [
-        "${ LUMO_APP_NAME } AI licentie"
+        "${ LUMO_APP_NAME } AI-licentie"
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } licenties"
@@ -4389,6 +4392,9 @@
     "fido2: Info": {
       "Security key": [
         "Beveiligingssleutel"
+      ],
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Plaats een beveiligingssleutel die is gekoppeld aan uw ${ BRAND_NAME }-account."
       ]
     },
     "fido2: Label": {
@@ -4846,6 +4852,9 @@
     "Import provider": {
       "Advanced import": [
         "Geavanceerde import"
+      ],
+      "More import options": [
+        "Meer importopties"
       ]
     },
     "Import warning": {
@@ -6996,6 +7005,18 @@
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Voeg ${ PLAN_NAMES[PLANS.MEET_BUSINESS] } toe"
+      ],
+      "${ state.result.entries.length } entries": [
+        "${ state.result.entries.length } vermeldingen"
+      ],
+      "Index is empty.": [
+        "Index niet ingevuld."
+      ],
+      "Search module is not available.": [
+        "De zoekfunctie is niet beschikbaar."
+      ],
+      "Unsupported file type for Photos": [
+        "Bestandstype wordt niet ondersteund voor Foto's"
       ]
     },
     "info": {
@@ -7762,6 +7783,27 @@
       ],
       "Skip feedback": [
         "Feedback overslaan"
+      ],
+      "Environment compatible": [
+        "Omgevingscompatibiliteit"
+      ],
+      "Index kinds": [
+        "Soorten indexen"
+      ],
+      "Initial indexing": [
+        "Eerste indexering"
+      ],
+      "Outdated version": [
+        "Verouderde versie"
+      ],
+      "Searchable": [
+        "Doorzoekbaar"
+      ],
+      "User opted in": [
+        "De gebruiker heeft ingestemd"
+      ],
+      "Visible columns:": [
+        "Zichtbare kolommen:"
       ]
     },
     "Label for contact group color": {
@@ -10314,7 +10356,7 @@
         "De vernieuwingsprijs is afhankelijk van de facturatie regio en het EIN."
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
-        "De vernieuwingsprijs is afhankelijk van de facturatie regio en het VAT nummer."
+        "De vernieuwingsprijs is afhankelijk van de facturatie regio en het VAT-nummer."
       ]
     },
     "Payments.Saved payment method details": {
@@ -13208,6 +13250,15 @@
       ],
       "Share \"${ fileName }\"": [
         "Deel \"${ fileName }\""
+      ],
+      "Actions": [
+        "Acties"
+      ],
+      "Global": [
+        "Globaal"
+      ],
+      "Search": [
+        "Zoeken"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13562,6 +13613,11 @@
       ],
       "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
         "U kunt tot ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME }-licenties hebben tijdens de proefperiode."
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Er is iets misgegaan bij het authenticeren met uw beveiligingssleutel. Probeer het opnieuw."
       ]
     }
   }

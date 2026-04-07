@@ -1250,6 +1250,9 @@
       ],
       "Continue to ${ planOrAppName }": [
         "Continuar con ${ planOrAppName }"
+      ],
+      "Refetch index": [
+        "Volver a cargar índice"
       ]
     },
     "Action: Docs": {
@@ -7013,6 +7016,18 @@
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Agregar ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
+      "${ state.result.entries.length } entries": [
+        "${ state.result.entries.length } entradas"
+      ],
+      "Index is empty.": [
+        "El índice está vacío."
+      ],
+      "Search module is not available.": [
+        "El módulo de búsqueda no está disponible."
+      ],
+      "Unsupported file type for Photos": [
+        "Tipo de archivo no compatible para Fotos"
       ]
     },
     "info": {
@@ -7782,6 +7797,27 @@
       ],
       "Skip feedback": [
         "Omitir comentarios"
+      ],
+      "Environment compatible": [
+        "Entorno compatible"
+      ],
+      "Index kinds": [
+        "Tipos de índice"
+      ],
+      "Initial indexing": [
+        "Indexación inicial"
+      ],
+      "Outdated version": [
+        "Versión obsoleta"
+      ],
+      "Searchable": [
+        "Indexado"
+      ],
+      "User opted in": [
+        "El usuario optó por participar"
+      ],
+      "Visible columns:": [
+        "Columnas visibles:"
       ]
     },
     "Label for contact group color": {
@@ -13285,6 +13321,15 @@
       ],
       "Share \"${ fileName }\"": [
         "Compartir «${ fileName }»"
+      ],
+      "Actions": [
+        "Acciones"
+      ],
+      "Global": [
+        "Global"
+      ],
+      "Search": [
+        "Búsqueda"
       ]
     },
     "Today icon tooltip in mini calendar": {

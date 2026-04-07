@@ -1250,6 +1250,9 @@
       ],
       "Continue to ${ planOrAppName }": [
         "${ planOrAppName } ile ilerle"
+      ],
+      "Refetch index": [
+        "Dizini yeniden getir"
       ]
     },
     "Action: Docs": {
@@ -7013,6 +7016,18 @@
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } ekle"
+      ],
+      "${ state.result.entries.length } entries": [
+        "${ state.result.entries.length } girdi"
+      ],
+      "Index is empty.": [
+        "Dizin boş."
+      ],
+      "Search module is not available.": [
+        "Arama modülü kullanılamıyor."
+      ],
+      "Unsupported file type for Photos": [
+        "Fotoğraflar için desteklenmeyen dosya türü"
       ]
     },
     "info": {
@@ -7779,6 +7794,27 @@
       ],
       "Skip feedback": [
         "Geri bildirimi atla"
+      ],
+      "Environment compatible": [
+        "Çevre uyumlu"
+      ],
+      "Index kinds": [
+        "Dizin türleri"
+      ],
+      "Initial indexing": [
+        "İlk dizinleme"
+      ],
+      "Outdated version": [
+        "Eski sürüm"
+      ],
+      "Searchable": [
+        "Arama yapılabilir"
+      ],
+      "User opted in": [
+        "Kullanıcı onay verdi"
+      ],
+      "Visible columns:": [
+        "Görünen sütunlar:"
       ]
     },
     "Label for contact group color": {
@@ -13225,6 +13261,15 @@
       ],
       "Share \"${ fileName }\"": [
         "\"${ fileName }\" dosyasını paylaş"
+      ],
+      "Actions": [
+        "İşlemler"
+      ],
+      "Global": [
+        "Genel"
+      ],
+      "Search": [
+        "Ara"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -1250,6 +1250,9 @@
       ],
       "Remove my access": [
         "Fjern tilgangen min"
+      ],
+      "Refetch index": [
+        "Hent indeks på nytt"
       ]
     },
     "Action: Docs": {
@@ -1346,8 +1349,8 @@
         "Skriveassistentlisenser"
       ],
       "${ seats } ${ MEET_APP_NAME } license": [
-        "${ seats } ${ MEET_APP_NAME } lisens",
-        "${ seats } ${ MEET_APP_NAME } lisenser"
+        "${ seats } ${ MEET_APP_NAME }-lisens",
+        "${ seats } ${ MEET_APP_NAME }-lisenser"
       ]
     },
     "Alert": {
@@ -7001,6 +7004,18 @@
       ],
       "for ${ price }": [
         "for ${ price }"
+      ],
+      "${ state.result.entries.length } entries": [
+        "${ state.result.entries.length } oppføringer"
+      ],
+      "Index is empty.": [
+        "Indeks er tom."
+      ],
+      "Search module is not available.": [
+        "Søkemodul er ikke tilgjengelig."
+      ],
+      "Unsupported file type for Photos": [
+        "Filtypen støttes ikke for bilder"
       ]
     },
     "info": {
@@ -7767,6 +7782,27 @@
       ],
       "Skip feedback": [
         "Hopp over tilbakemelding"
+      ],
+      "Environment compatible": [
+        "Miljøkompatibel"
+      ],
+      "Index kinds": [
+        "Indekstyper"
+      ],
+      "Initial indexing": [
+        "Innledende indeksering"
+      ],
+      "Outdated version": [
+        "Utdatert versjon"
+      ],
+      "Searchable": [
+        "Søkbar"
+      ],
+      "User opted in": [
+        "Brukeren samtykket"
+      ],
+      "Visible columns:": [
+        "Synlige kolonner:"
       ]
     },
     "Label for contact group color": {
@@ -13270,6 +13306,15 @@
       ],
       "Share \"${ fileName }\"": [
         "Del \"${ fileName }}\""
+      ],
+      "Actions": [
+        "Handlinger"
+      ],
+      "Global": [
+        "Global"
+      ],
+      "Search": [
+        "Søk"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13610,11 +13655,11 @@
         "${ MEET_APP_NAME }-tilgang"
       ],
       "${ MEET_APP_NAME } seats": [
-        "${ MEET_APP_NAME } -tilganger"
+        "${ MEET_APP_NAME }-tilganger"
       ],
       "${ seats } ${ MEET_APP_NAME } seat": [
-        "${ seats } ${ MEET_APP_NAME } tilgang",
-        "${ seats } ${ MEET_APP_NAME } tilganger"
+        "${ seats } ${ MEET_APP_NAME }-tilgang",
+        "${ seats } ${ MEET_APP_NAME }-tilganger"
       ]
     },
     "meet_2025: Info": {
