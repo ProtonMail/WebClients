@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 import type { AuthRouteState } from '@proton/pass/components/Navigation/routing';
 import { useVisibleEffect } from '@proton/pass/hooks/useVisibleEffect';
 import type { MaybeNull } from '@proton/pass/types';
+import { isMainFrame } from '@proton/pass/utils/dom/is-main-frame';
 
 type Props = {
     loading: boolean;
@@ -22,15 +23,18 @@ export const useAutoUnlock = ({ loading, onUnlock }: Props) => {
             if (isError) return;
 
             /** if user has triggered the lock - don't auto-prompt.  */
-            const { userInitiatedLock = false } = history.location.state ?? {};
+            const { userInitiatedLock = false } = history?.location.state ?? {};
 
             /** If page is hidden away - remove the `userInitiatedLock` flag
              * to force biometrics prompt when re-opening the app */
             if (!visible && userInitiatedLock) history.replace({ ...history.location, state: null });
 
+            /** Allow auto unlock in extension dropdown (in a frame) unfocused */
+            const focusOrFrame = document.hasFocus() || !isMainFrame();
+
             /* Trigger unlock automatically on first render if the app is
              * focused and the current lock was not user initiated */
-            if (!visible || loading || !document.hasFocus()) return;
+            if (!visible || loading || !focusOrFrame) return;
             if (!userInitiatedLock) onUnlock().catch(() => setIsError(true));
         },
         [loading, isError]
