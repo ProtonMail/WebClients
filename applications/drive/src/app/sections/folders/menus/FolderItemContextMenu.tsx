@@ -1,7 +1,6 @@
 import { useShallow } from 'zustand/react/shallow';
 
 import { ContextSeparator } from '@proton/components';
-import { MemberRole } from '@proton/drive';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { ItemContextMenu } from '../../../components/sections/ContextMenu/ItemContextMenu';
@@ -31,6 +30,7 @@ export function FolderItemContextMenu({
     open,
     close,
     actions,
+    canShareSingleItem,
     children,
 }: {
     anchorRef: React.RefObject<HTMLElement>;
@@ -43,24 +43,24 @@ export function FolderItemContextMenu({
     volumeId: string;
     selectedItems: FolderViewItem[];
     actions: FolderActions;
+    canShareSingleItem: boolean;
     children?: React.ReactNode;
 }) {
     const selectedItem = selectedItems.length > 0 ? selectedItems[0] : undefined;
     const isOnlyOneItem = selectedItems.length === 1 && !!selectedItem;
     const isOnlyOneFileItem = isOnlyOneItem && selectedItem?.isFile;
     const { downloadItems } = useDownloadActions({ selectedItems });
-    const { permissions, role } = useFolderStore(
+    const { permissions } = useFolderStore(
         useShallow((state) => ({
-            role: state.role,
             permissions: state.permissions,
         }))
     );
 
-    const isAdmin = role === MemberRole.Admin;
+    const canCopyPublicLink = canShareSingleItem && selectedItem?.isSharedPublicly;
+
     const openInDocs = useOpenInDocs(selectedItem);
     const hasPreviewAvailable =
         isOnlyOneFileItem && selectedItem?.mimeType && isPreviewAvailable(selectedItem.mimeType, selectedItem.size);
-    const canCopyPublicLink = isAdmin && isOnlyOneItem && selectedItem.isSharedPublicly;
 
     const {
         showPreviewModal,
@@ -86,7 +86,7 @@ export function FolderItemContextMenu({
             )}
             <DownloadButton type="context" selectedItems={selectedItems} onClick={downloadItems} close={close} />
             {canCopyPublicLink && <CopyLinkContextButton getPublicLinkInfo={getPublicLinkInfo} close={close} />}
-            {isAdmin && isOnlyOneItem && <ShareLinkButton type="context" onClick={showSharingModal} close={close} />}
+            {canShareSingleItem && <ShareLinkButton type="context" onClick={showSharingModal} close={close} />}
             <ContextSeparator />
             {permissions.canMove ? (
                 <MoveButton type="context" selectedItems={selectedItems} close={close} onClick={showMoveModal} />
