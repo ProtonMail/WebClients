@@ -40,6 +40,7 @@ import { ParticipantList } from '../ParticipantList/ParticipantList';
 import { ParticipantSidebar } from '../ParticipantSidebar/ParticipantSidebar';
 import { PermissionRequest } from '../PermissionRequest/PermissionRequest';
 import { RecordingInProgressModal } from '../RecordingInProgressModal/RecordingInProgressModal';
+import { RecordingTopBanner } from '../RecordingTopBanner';
 import { Settings } from '../Settings/Settings';
 
 import './MeetingBody.scss';
@@ -170,151 +171,157 @@ export const MeetingBody = ({
     };
 
     return (
-        <div
-            className={clsx(
-                'w-full h-full flex flex-column flex-nowrap overflow-hidden pl-4 pr-4 pb-0 pt-4',
-                isScreenShare ? 'gap-0' : 'gap-4',
-                isElectronApp && 'pt-6'
-            )}
-        >
-            {!bannerIsClosed && (
-                <TopBanner className="bg-norm meet-radius turn-top-banner" onClose={() => setBannerIsClosed(true)}>{c(
-                    'Banner'
-                )
-                    .t`Connected via TURN relay mode due to your network restrictions. This may increase latency and affect call quality.`}</TopBanner>
-            )}
-            {!isDisconnected &&
-                (liveKitConnectionState === ConnectionState.SignalReconnecting ||
-                    liveKitConnectionState === ConnectionState.Reconnecting ||
-                    showReconnectedMessage) && (
-                    <TopBanner
-                        className={showReconnectedMessage ? 'bg-success meet-radius' : 'bg-warning meet-radius'}
-                        onClose={() => {
-                            setShowReconnectedMessage(false);
-                            setLiveKitConnectionState(null);
-                        }}
-                    >
-                        {getConnectionStatusMessage(showReconnectedMessage, liveKitConnectionState)}
-                    </TopBanner>
-                )}
-            {!isNarrowHeight && (
-                <div className="flex lg:hidden flex-nowrap gap-2 justify-between items-center">
-                    <MeetingName classNames={{ name: 'flex-1 text-lg text-semibold' }} />
-                    <div className="text-ellipsis overflow-hidden">
-                        {isVideoEnabled && isMobile() && (
-                            <CircleButton
-                                IconComponent={IcMeetRotateCamera}
-                                onClick={() => {
-                                    handleRotateCamera();
-                                }}
-                                ariaLabel={c('Alt').t`Rotate camera`}
-                                size={5}
-                                buttonStyle={{
-                                    'padding-block': 0,
-                                    'padding-inline': 0,
-                                    width: '2.5rem',
-                                    height: '2.5rem',
-                                }}
-                            />
-                        )}
-                    </div>
-                </div>
-            )}
+        <div className="w-full h-full flex flex-column flex-nowrap">
+            <RecordingTopBanner />
             <div
                 className={clsx(
-                    'flex flex-nowrap w-full flex-1 overflow-hidden',
-                    (participantSideBarOpen || isSideBarOpen) && isLargerThanMd ? 'gap-4' : 'gap-0'
+                    'w-full h-full flex flex-column flex-nowrap overflow-hidden pl-4 pr-4 pb-0 pt-4',
+                    isScreenShare ? 'gap-0' : 'gap-4',
+                    isElectronApp && 'pt-6'
                 )}
             >
-                {isScreenShare ? (
-                    <>
-                        <div
-                            className="bg-strong h-full overflow-hidden mx-auto my-0 rounded relative shrink-1"
-                            style={{
-                                flexGrow: isLargerThanMd ? defaultScreenShareFlexGrow : smallScreenScreenShareFlexGrow,
-                                flexBasis: 0,
+                {!bannerIsClosed && (
+                    <TopBanner
+                        className="bg-norm meet-radius turn-top-banner"
+                        onClose={() => setBannerIsClosed(true)}
+                    >{c('Banner')
+                        .t`Connected via TURN relay mode due to your network restrictions. This may increase latency and affect call quality.`}</TopBanner>
+                )}
+                {!isDisconnected &&
+                    (liveKitConnectionState === ConnectionState.SignalReconnecting ||
+                        liveKitConnectionState === ConnectionState.Reconnecting ||
+                        showReconnectedMessage) && (
+                        <TopBanner
+                            className={showReconnectedMessage ? 'bg-success meet-radius' : 'bg-warning meet-radius'}
+                            onClose={() => {
+                                setShowReconnectedMessage(false);
+                                setLiveKitConnectionState(null);
                             }}
                         >
-                            <VideoTrack
-                                key={screenShareTrack?.publication?.track?.sid}
-                                className="screen-share-video w-full h-full block object-contain"
-                                trackRef={screenShareTrack}
-                                autoPlay
-                                playsInline
-                                muted={isLocalScreenShare}
-                                manageSubscription={false}
-                            />
-                            <div
-                                className="screen-share-label absolute bottom-custom left-custom flex rounded opacity-80"
-                                style={{ '--bottom-custom': '1rem', '--left-custom': '1rem' }}
-                            >
-                                <SecurityShield
-                                    title={c('Info').t`End-to-end encryption is active for screen share`}
-                                    size={3}
-                                    tooltipPlacement="top-start"
-                                />
-                                {screenShareLabel}
-                            </div>
-                            {!isLocalScreenShare && showReloadTrackButton && (
-                                <button
-                                    className={clsx(
-                                        'absolute user-select-none flex items-center justify-center w-custom h-custom bg-weak rounded-full border-none cursor-pointer transition-opacity',
-                                        isRefreshingScreenShare
-                                            ? 'opacity-50 cursor-not-allowed'
-                                            : 'opacity-80 hover:opacity-100'
-                                    )}
-                                    style={{
-                                        '--w-custom': '2rem',
-                                        '--h-custom': '2rem',
-                                        bottom: '1rem',
-                                        right: '1rem',
-                                        zIndex: 2,
+                            {getConnectionStatusMessage(showReconnectedMessage, liveKitConnectionState)}
+                        </TopBanner>
+                    )}
+                {!isNarrowHeight && (
+                    <div className="flex lg:hidden flex-nowrap gap-2 justify-between items-center">
+                        <MeetingName classNames={{ name: 'flex-1 text-lg text-semibold' }} />
+                        <div className="text-ellipsis overflow-hidden">
+                            {isVideoEnabled && isMobile() && (
+                                <CircleButton
+                                    IconComponent={IcMeetRotateCamera}
+                                    onClick={() => {
+                                        handleRotateCamera();
                                     }}
-                                    onClick={handleRefreshScreenShareTrack}
-                                    disabled={isRefreshingScreenShare}
-                                    aria-label={c('Action').t`Refresh screen share track`}
-                                    title={c('Info').t`Refresh screen share track`}
-                                >
-                                    <IcArrowsRotate
-                                        size={4}
-                                        className={clsx(isRefreshingScreenShare && 'animate-spin')}
-                                    />
-                                </button>
+                                    ariaLabel={c('Alt').t`Rotate camera`}
+                                    size={5}
+                                    buttonStyle={{
+                                        'padding-block': 0,
+                                        'padding-inline': 0,
+                                        width: '2.5rem',
+                                        height: '2.5rem',
+                                    }}
+                                />
                             )}
                         </div>
-                        {isLargerThanMd && (
-                            <ParticipantSidebar
-                                participantSideBarOpen={participantSideBarOpen}
-                                setParticipantSideBarOpen={setParticipantSideBarOpen}
-                            />
-                        )}
-                    </>
-                ) : (
-                    (isLargerThanMd || !isSideBarOpen) && (
-                        <div className="h-full shrink-0" style={{ flexGrow: 8, flexBasis: 0 }}>
-                            <ParticipantGrid />
-                        </div>
-                    )
-                )}
-
-                {isSideBarOpen && (
-                    <div className="h-full shrink-0" style={{ flexGrow: isScreenShare ? 2 : 3, flexBasis: 0 }}>
-                        <ParticipantList />
-                        <Settings />
-                        <Chat />
-                        <AssignHostSidebar />
-                        {isGuest || !isEarlyAccess ? <MeetingDetails /> : <WrappedMeetingDetails />}
                     </div>
                 )}
+                <div
+                    className={clsx(
+                        'flex flex-nowrap w-full flex-1 overflow-hidden',
+                        (participantSideBarOpen || isSideBarOpen) && isLargerThanMd ? 'gap-4' : 'gap-0'
+                    )}
+                >
+                    {isScreenShare ? (
+                        <>
+                            <div
+                                className="bg-strong h-full overflow-hidden mx-auto my-0 rounded relative shrink-1"
+                                style={{
+                                    flexGrow: isLargerThanMd
+                                        ? defaultScreenShareFlexGrow
+                                        : smallScreenScreenShareFlexGrow,
+                                    flexBasis: 0,
+                                }}
+                            >
+                                <VideoTrack
+                                    key={screenShareTrack?.publication?.track?.sid}
+                                    className="screen-share-video w-full h-full block object-contain"
+                                    trackRef={screenShareTrack}
+                                    autoPlay
+                                    playsInline
+                                    muted={isLocalScreenShare}
+                                    manageSubscription={false}
+                                />
+                                <div
+                                    className="screen-share-label absolute bottom-custom left-custom flex rounded opacity-80"
+                                    style={{ '--bottom-custom': '1rem', '--left-custom': '1rem' }}
+                                >
+                                    <SecurityShield
+                                        title={c('Info').t`End-to-end encryption is active for screen share`}
+                                        size={3}
+                                        tooltipPlacement="top-start"
+                                    />
+                                    {screenShareLabel}
+                                </div>
+                                {!isLocalScreenShare && showReloadTrackButton && (
+                                    <button
+                                        className={clsx(
+                                            'absolute user-select-none flex items-center justify-center w-custom h-custom bg-weak rounded-full border-none cursor-pointer transition-opacity',
+                                            isRefreshingScreenShare
+                                                ? 'opacity-50 cursor-not-allowed'
+                                                : 'opacity-80 hover:opacity-100'
+                                        )}
+                                        style={{
+                                            '--w-custom': '2rem',
+                                            '--h-custom': '2rem',
+                                            bottom: '1rem',
+                                            right: '1rem',
+                                            zIndex: 2,
+                                        }}
+                                        onClick={handleRefreshScreenShareTrack}
+                                        disabled={isRefreshingScreenShare}
+                                        aria-label={c('Action').t`Refresh screen share track`}
+                                        title={c('Info').t`Refresh screen share track`}
+                                    >
+                                        <IcArrowsRotate
+                                            size={4}
+                                            className={clsx(isRefreshingScreenShare && 'animate-spin')}
+                                        />
+                                    </button>
+                                )}
+                            </div>
+                            {isLargerThanMd && (
+                                <ParticipantSidebar
+                                    participantSideBarOpen={participantSideBarOpen}
+                                    setParticipantSideBarOpen={setParticipantSideBarOpen}
+                                />
+                            )}
+                        </>
+                    ) : (
+                        (isLargerThanMd || !isSideBarOpen) && (
+                            <div className="h-full shrink-0" style={{ flexGrow: 8, flexBasis: 0 }}>
+                                <ParticipantGrid />
+                            </div>
+                        )
+                    )}
+
+                    {isSideBarOpen && (
+                        <div className="h-full shrink-0" style={{ flexGrow: isScreenShare ? 2 : 3, flexBasis: 0 }}>
+                            <ParticipantList />
+                            <Settings />
+                            <Chat />
+                            <AssignHostSidebar />
+                            {isGuest || !isEarlyAccess ? <MeetingDetails /> : <WrappedMeetingDetails />}
+                        </div>
+                    )}
+                </div>
+                <ParticipantControls />
+                {isSpatialAudioEnabled ? <SpatialAudioRoomAudioRenderer /> : <RoomAudioRenderer />}
+                <NoDeviceDetectedInfo />
+                <NoDeviceDetectedModal />
+                <NoPermissionInfo />
+                <PermissionRequest />
+                {isXSmallScreen && <MeetingReadyPopup meetingLink={meetingLink} closeBySlide={true} />}
+                <RecordingInProgressModal />
             </div>
-            <ParticipantControls />
-            {isSpatialAudioEnabled ? <SpatialAudioRoomAudioRenderer /> : <RoomAudioRenderer />}
-            <NoDeviceDetectedInfo />
-            <NoDeviceDetectedModal />
-            <NoPermissionInfo />
-            <PermissionRequest />
-            {isXSmallScreen && <MeetingReadyPopup meetingLink={meetingLink} closeBySlide={true} />}
-            <RecordingInProgressModal />
         </div>
     );
 };
