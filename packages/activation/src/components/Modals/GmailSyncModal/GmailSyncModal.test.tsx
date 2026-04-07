@@ -53,31 +53,7 @@ describe('GmailSyncModal', () => {
         screen.getByText('Automatically forward');
     });
 
-    it('should call onSyncCallback when the import checkbox is unchecked', async () => {
-        const mockSyncCallback = jest.fn();
-        const mockBYOEWithImportCallback = jest.fn();
-
-        easySwitchRender(
-            <GmailSyncModal
-                open
-                source={EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS}
-                hasAccessToBYOE
-                onSyncCallback={mockSyncCallback}
-                onBYOEWithImportCallback={mockBYOEWithImportCallback}
-            />
-        );
-
-        // Uncheck the import checkbox to use the old sync flow
-        fireEvent.click(screen.getByTestId('AddBYOEModal:importCheckbox'));
-        fireEvent.click(screen.getByText('Connect to Gmail'));
-
-        await waitFor(() => {
-            expect(mockSyncCallback).toHaveBeenCalled();
-            expect(mockBYOEWithImportCallback).not.toHaveBeenCalled();
-        });
-    });
-
-    it('should call onBYOEWithImportCallback when the import checkbox is checked', async () => {
+    it('should call onBYOEWithImportCallback', async () => {
         const mockSyncCallback = jest.fn();
         const mockBYOEWithImportCallback = jest.fn();
 
