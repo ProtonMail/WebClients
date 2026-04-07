@@ -20,7 +20,6 @@ export interface MeetingInfoState {
     mlsGroupState: MLSGroupState | null;
     isLocalScreenShare: boolean;
     isScreenShare: boolean;
-    isRecordingInProgress: boolean;
     keyRotationLogs: KeyRotationLog[];
 }
 
@@ -40,7 +39,6 @@ export const initialState: MeetingInfoState = {
     mlsGroupState: null,
     isLocalScreenShare: false,
     isScreenShare: false,
-    isRecordingInProgress: false,
     keyRotationLogs: [],
 };
 
@@ -106,7 +104,6 @@ export const selectIsLocalScreenShare = (state: MeetState) => state.meetingInfo.
 export const selectIsScreenShare = (state: MeetState) => state.meetingInfo.isScreenShare;
 export const selectIsSharingScreen = (state: MeetState) =>
     state.meetingInfo.isLocalScreenShare && state.meetingInfo.isScreenShare;
-export const selectIsRecordingInProgress = (state: MeetState) => state.meetingInfo.isRecordingInProgress;
 export const selectKeyRotationLogs = (state: MeetState) => state.meetingInfo.keyRotationLogs;
 
 export const meetingInfoReducer = { meetingInfo: slice.reducer };

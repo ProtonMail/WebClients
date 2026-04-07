@@ -13,7 +13,9 @@ import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { selectActiveReaction, selectParticipantHasRaisedHand } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { selectParticipantNameMap } from '@proton/meet/store/slices/meetingInfo';
+import { selectIsParticipantRecording } from '@proton/meet/store/slices/recordingStatusSlice';
 import { disableParticipantVideo, enableParticipantVideo } from '@proton/meet/store/slices/settings';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { SpeakingIndicator } from '../../atoms/SpeakingIndicator';
@@ -52,7 +54,12 @@ export const ParticipantListItem = memo(
         isLocalParticipantHost,
         toggleVideo,
     }: ParticipantListItemProps) => {
+        const isMeetMultipleRecordingEnabled = useFlag('MeetMultipleRecording');
+
         const participantNameMap = useMeetSelector(selectParticipantNameMap);
+        const isParticipantRecording = useMeetSelector((state) =>
+            selectIsParticipantRecording(state, participant.identity)
+        );
 
         const dispatch = useMeetDispatch();
 
@@ -96,9 +103,15 @@ export const ParticipantListItem = memo(
                 >
                     <div>{getInitials()}</div>
                 </div>
-                <div className="text-ellipsis my-auto flex-1" title={displayName}>
-                    {displayName} {participant.isLocal ? c('Info').t`(You)` : null}
+                <div className="flex flex-column justify-center">
+                    <div className="text-ellipsis w-full" title={displayName}>
+                        {displayName} {participant.isLocal ? c('Info').t`(You)` : null}
+                    </div>
+                    {isParticipantRecording && isMeetMultipleRecordingEnabled && (
+                        <div className="text-sm color-hint w-full">{c('Info').t`Recording`}</div>
+                    )}
                 </div>
+
                 <div className="flex flex-nowrap items-center ml-auto gap-1 shrink-0">
                     {displayEmoji && <span>{displayEmoji}</span>}
 

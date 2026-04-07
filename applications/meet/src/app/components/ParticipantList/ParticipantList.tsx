@@ -66,6 +66,7 @@ export const ParticipantList = () => {
         .filter(isTruthy);
 
     const participantNameMap = useMeetSelector(selectParticipantNameMap);
+
     const maxParticipants = useMeetSelector(selectMaxParticipants);
     const dispatch = useMeetDispatch();
 
