@@ -4320,11 +4320,11 @@
       ]
     },
     "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
         "최대 ${ MAX_SYNC_PAID_USER }개의 계정에서 이메일을 전달하려면, ${ planName }(으)로 업그레이드하세요."
       ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "${ MAX_SYNC_FREE_USER }개의 외부 계정에서 ${ MAIL_APP_NAME }(으)로 이메일을 전달하는 중입니다."
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "외부 계정에서 ${ MAIL_APP_NAME }로 이메일을 전달하는 중입니다."
       ]
     },
     "Edit billing address form note": {
@@ -6300,11 +6300,11 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "고급 불러오기 설정"
-      ],
       "Import from ${ providerName }": [
         "${ providerName }(에)서 불러오기"
+      ],
+      "More import options": [
+        "추가 불러오기 옵션"
       ]
     },
     "Import warning": {
@@ -11651,29 +11651,29 @@
       ]
     },
     "Onboarding List Placeholder": {
-      "Choose your service": [
-        "사용하고 계신 서비스를 선택하세요"
+      "Bring your emails into ${ MAIL_APP_NAME }": [
+        "이메일을 ${ MAIL_APP_NAME }로 가져오세요"
+      ],
+      "Bring your existing email into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "기존 이메일을 ${ MAIL_APP_NAME }로 가져와 하나의 개인 받은 편지함에서 모두 관리하세요."
+      ],
+      "Choose a provider": [
+        "제공자 선택"
       ],
       "Maybe later": [
         "나중에"
       ],
-      "Popular services": [
-        "인기 있는 서비스"
+      "Protect your accounts": [
+        "계정을 보호하세요"
       ],
       "Skip for now": [
         "지금은 건너뛰기"
       ],
-      "Switch your accounts to ${ BRAND_NAME }": [
-        "회원님의 계정을 ${ BRAND_NAME }으로 전환하세요"
+      "Some popular services": [
+        "인기 있는 서비스"
       ],
-      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
-        "이메일 이전은 어려운 일이죠. ${ BRAND_NAME }이 그 과정을 쉽게 만들어 드릴게요. 이전 계정을 Proton과 연결하고 모든 메일을 하나의 집중적이고 광고 없는 작업 공간에서 관리해 보세요."
-      ],
-      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
-        "가장 많이 사용하는 서비스에서 이메일을 업데이트하세요. 추적을 방지하고 개인정보를 보호하세요."
-      ],
-      "Welcome to ${ MAIL_APP_NAME }": [
-        "${ MAIL_APP_NAME }에 오신 것을 환영해요"
+      "Switch the services you use every day to your ${ BRAND_NAME } address for better security and privacy.": [
+        "매일 사용하는 서비스를 ${ BRAND_NAME } 주소로 전환하여 보안과 개인정보 보호를 강화하세요."
       ]
     },
     "Onboarding modal": {
@@ -14752,9 +14752,6 @@
       ],
       "Connect apps and devices": [
         "앱 및 장치 연결하기"
-      ],
-      "Connect more addresses": [
-        "더 많은 주소 연결"
       ],
       "Connect to video conferencing": [
         "화상 회의에 연결하기"

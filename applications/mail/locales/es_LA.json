@@ -4347,13 +4347,11 @@
       ]
     },
     "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "Para reenviar correos electrónicos desde hasta ${ MAX_SYNC_PAID_USER } cuenta, actualice a ${ planName }.",
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
         "Para reenviar correos electrónicos de hasta ${ MAX_SYNC_PAID_USER } cuentas, actualice a ${ planName }."
       ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "Está reenviando correos electrónicos desde ${ MAX_SYNC_FREE_USER } cuenta externa a ${ MAIL_APP_NAME }.",
-        "Está reenviando correos electrónicos desde ${ MAX_SYNC_FREE_USER } cuentas externas a ${ MAIL_APP_NAME }."
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "Está reenviando correos electrónicos desde una cuenta externa a ${ MAIL_APP_NAME }."
       ]
     },
     "Edit billing address form note": {
@@ -6360,11 +6358,11 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "Importación avanzada"
-      ],
       "Import from ${ providerName }": [
         "Importar desde ${ providerName }"
+      ],
+      "More import options": [
+        "Más opciones de importación"
       ]
     },
     "Import warning": {
@@ -7458,8 +7456,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -11853,29 +11850,29 @@
       ]
     },
     "Onboarding List Placeholder": {
-      "Choose your service": [
-        "Elija su servicio"
+      "Bring your emails into ${ MAIL_APP_NAME }": [
+        "Traiga sus correos electrónicos a ${ MAIL_APP_NAME }"
+      ],
+      "Bring your existing email into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Traiga su correo electrónico existente a ${ MAIL_APP_NAME } para que pueda gestionar todo desde una bandeja de entrada privada."
+      ],
+      "Choose a provider": [
+        "Elegir un proveedor"
       ],
       "Maybe later": [
         "Quizás más tarde"
       ],
-      "Popular services": [
-        "Servicios populares"
+      "Protect your accounts": [
+        "Proteja sus cuentas"
       ],
       "Skip for now": [
         "Omitir por ahora"
       ],
-      "Switch your accounts to ${ BRAND_NAME }": [
-        "Cambie sus cuentas a ${ BRAND_NAME }"
+      "Some popular services": [
+        "Algunos servicios populares"
       ],
-      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
-        "Cambiar de correo electrónico es difícil. ${ BRAND_NAME } lo hace fácil. Conecte su cuenta anterior y gestione todo en un espacio de trabajo enfocado y sin anuncios."
-      ],
-      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
-        "Actualice su correo electrónico en los servicios que más usa. Evite el rastreo y proteja su privacidad."
-      ],
-      "Welcome to ${ MAIL_APP_NAME }": [
-        "Le damos la bienvenida a ${ MAIL_APP_NAME }"
+      "Switch the services you use every day to your ${ BRAND_NAME } address for better security and privacy.": [
+        "Cambie los servicios que usa todos los días a su dirección de ${ BRAND_NAME } para mayor seguridad y privacidad."
       ]
     },
     "Onboarding modal": {
@@ -15046,9 +15043,6 @@
       ],
       "Connect apps and devices": [
         "Conecte aplicaciones y dispositivos"
-      ],
-      "Connect more addresses": [
-        "Conectar más direcciones"
       ],
       "Connect to video conferencing": [
         "Conéctese a la videoconferencia"

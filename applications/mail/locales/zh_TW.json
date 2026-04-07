@@ -4208,6 +4208,11 @@
         "使用 ${ BRAND_NAME } Duo 分享您的方案權益"
       ]
     },
+    "Easy switch": {
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "您正轉寄來自外部帳號的電子郵件至 ${ MAIL_APP_NAME }。"
+      ]
+    },
     "Email body for invitation": {
       "${ eventTitle } was canceled.": [
         "${ eventTitle } 已被取消。"
@@ -6142,8 +6147,8 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "進階匯入"
+      "More import options": [
+        "更多匯入選項"
       ]
     },
     "Import warning": {
@@ -6265,6 +6270,9 @@
       ],
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } 亦可防護您的企業商號。"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } 個席次"
       ],
       "${ n } unread conversation": [
         "${ n } 則未讀的往來對話"
@@ -7110,7 +7118,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入影像"
+        "插入圖像"
       ],
       "Insert link": [
         "插入連結"
@@ -9982,6 +9990,14 @@
         "垃圾"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } 個席次"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME } 席位"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: 給重要對話保密的視訊"
@@ -10030,6 +10046,14 @@
       ],
       "Up to ${ n } participant": [
         "至多 ${ n } 位參與者"
+      ],
+      "Video meetings, ${ n } participant": [
+        "視訊， ${ n } 參與者"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "包含 ${ seats } 座席"
       ]
     },
     "Message": {
@@ -10463,6 +10487,9 @@
       "Data breach monitoring": [
         "資料外洩監測"
       ],
+      "Data retention policies": [
+        "資料保留政策"
+      ],
       "Dedicated servers optimized for streaming": [
         "針對影音串流優化的獨立伺服器"
       ],
@@ -10570,6 +10597,9 @@
       ],
       "Priority support & live chat": [
         "優先處理您的客服單與線上聊天客服"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "隱私 AI 對話 (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "私人照片備份"
@@ -10711,6 +10741,9 @@
       ],
       "Vault sharing with up to ${ n } person": [
         "與最多 ${ n } 個人分享保管庫"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN 附帶廣告攔截器及惡意軟體防護"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我們會掃描暗網去檢查你的${ BRAND_NAME }地址或别名是否被外洩，並且在發現任何問題時立即通知你。"
@@ -11300,23 +11333,23 @@
       ]
     },
     "Onboarding List Placeholder": {
-      "Choose your service": [
-        "選擇您的服務"
+      "Bring your emails into ${ MAIL_APP_NAME }": [
+        "帶入您的電子郵件至 ${ MAIL_APP_NAME }"
+      ],
+      "Bring your existing email into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "帶入您既有的電子郵件至 ${ MAIL_APP_NAME } 以便於單一私有收件匣管理全部。"
       ],
       "Maybe later": [
         "稍後再說"
       ],
-      "Popular services": [
-        "熱門服務"
+      "Protect your accounts": [
+        "保護您的帳號"
       ],
       "Skip for now": [
         "暫時略過"
       ],
-      "Switch your accounts to ${ BRAND_NAME }": [
-        "切換您的帳號至 ${ BRAND_NAME }"
-      ],
-      "Welcome to ${ MAIL_APP_NAME }": [
-        "歡迎使用 ${ MAIL_APP_NAME }"
+      "Some popular services": [
+        "熱門的服務"
       ]
     },
     "Onboarding modal": {
@@ -14534,6 +14567,9 @@
       ],
       "Invalid verification code": [
         "驗證碼無效"
+      ],
+      "Keep this banner hidden?": [
+        "保持隱藏此橫幅？"
       ],
       "Label as": [
         "套用標籤"

@@ -4347,13 +4347,11 @@
       ]
     },
     "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "${ MAX_SYNC_PAID_USER } hesaba kadar e-postaları iletmek için ${ planName } tarifesine yükseltin.",
-        "${ MAX_SYNC_PAID_USER } hesaba kadar e-postaları iletmek için ${ planName } tarifesine yükseltin."
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
+        "${ MAX_SYNC_PAID_USER } hesaba kadar e-posta iletmek için ${ planName } tarifesine yükseltin."
       ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "E-postaları ${ MAX_SYNC_FREE_USER } dış hesaptan ${ MAIL_APP_NAME } üzerine iletiyorsunuz.",
-        "E-postaları ${ MAX_SYNC_FREE_USER } dış hesaptan ${ MAIL_APP_NAME } üzerine iletiyorsunuz."
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "E-postaları bir dış hesaptan ${ MAIL_APP_NAME } üzerine iletiyorsunuz."
       ]
     },
     "Edit billing address form note": {
@@ -6360,11 +6358,11 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "Gelişmiş içe aktarma"
-      ],
       "Import from ${ providerName }": [
         "${ providerName } üzerinden içe aktar"
+      ],
+      "More import options": [
+        "Diğer içe aktarma seçenekleri"
       ]
     },
     "Import warning": {
@@ -7458,8 +7456,7 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle",
-        "Görseller ekle"
+        "Görsel ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -11853,29 +11850,29 @@
       ]
     },
     "Onboarding List Placeholder": {
-      "Choose your service": [
-        "Hizmetinizi seçin"
+      "Bring your emails into ${ MAIL_APP_NAME }": [
+        "E-postalarınızı ${ MAIL_APP_NAME } üzerine taşıyın"
+      ],
+      "Bring your existing email into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Var olan e-postalarınızı ${ MAIL_APP_NAME } üzerine taşıyın. Böylece her şeyi gizliliği koruyan tek bir gelen kutusundan yönetebilirsiniz."
+      ],
+      "Choose a provider": [
+        "Bir hizmet sağlayıcı seçin"
       ],
       "Maybe later": [
         "Belki sonra"
       ],
-      "Popular services": [
-        "Yaygın kullanılan hizmetler"
+      "Protect your accounts": [
+        "Hesaplarınızı koruyun"
       ],
       "Skip for now": [
         "Şimdilik atla"
       ],
-      "Switch your accounts to ${ BRAND_NAME }": [
-        "Hesaplarınızı ${ BRAND_NAME } üzerine alın"
+      "Some popular services": [
+        "Bazı yaygın kullanılan hizmetler"
       ],
-      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
-        "E-posta hizmetini değiştirmek zordur, ${ BRAND_NAME } bunu kolaylaştırır. Eski hesabınızı bağlayıp her şeyi odaklanmış ve reklamsız tek bir çalışma alanında yönetin."
-      ],
-      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
-        "Sık kullandığınız hizmetlerde e-posta adresinizi güncelleyin. İzlenmeyi önleyin ve gizliliğinizi koruyun."
-      ],
-      "Welcome to ${ MAIL_APP_NAME }": [
-        "${ MAIL_APP_NAME } hizmetine hoş geldiniz"
+      "Switch the services you use every day to your ${ BRAND_NAME } address for better security and privacy.": [
+        "Daha fazla güvenlik ve gizlilik için her gün kullandığınız hizmetleri ${ BRAND_NAME } adresinize taşıyın."
       ]
     },
     "Onboarding modal": {
@@ -15046,9 +15043,6 @@
       ],
       "Connect apps and devices": [
         "Uygulamaları ve aygıtları bağlayın"
-      ],
-      "Connect more addresses": [
-        "Başka adresler bağlayın"
       ],
       "Connect to video conferencing": [
         "Görüntülü konferansa bağlanın"

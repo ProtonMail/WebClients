@@ -4347,13 +4347,11 @@
       ]
     },
     "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "Per reenviar correus electrònics des de fins a ${ MAX_SYNC_PAID_USER } compte, milloreu a ${ planName }.",
-        "Per reenviar correus electrònics des de fins a ${ MAX_SYNC_PAID_USER } comptes, milloreu a ${ planName }."
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
+        "Per a reenviar correus electrònics de fins a ${ MAX_SYNC_PAID_USER } comptes, milloreu al pla ${ planName }."
       ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "Esteu reenviant correus electrònics des d'${ MAX_SYNC_FREE_USER } compte extern a ${ MAIL_APP_NAME }.",
-        "Esteu reenviant correus electrònics des de ${ MAX_SYNC_FREE_USER } comptes externs a ${ MAIL_APP_NAME }."
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "Esteu reenviant correus electrònics d'un compte extern a ${ MAIL_APP_NAME }."
       ]
     },
     "Edit billing address form note": {
@@ -6360,11 +6358,11 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "Importació avançada"
-      ],
       "Import from ${ providerName }": [
         "Importeu des de ${ providerName }"
+      ],
+      "More import options": [
+        "Més opcions d'importació"
       ]
     },
     "Import warning": {
@@ -7458,8 +7456,7 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge",
-        "Insereix imatges"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -11853,29 +11850,29 @@
       ]
     },
     "Onboarding List Placeholder": {
-      "Choose your service": [
-        "Trieu el vostre servei"
+      "Bring your emails into ${ MAIL_APP_NAME }": [
+        "Porteu els vostres correus electrònics a ${ MAIL_APP_NAME }"
+      ],
+      "Bring your existing email into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Porteu el vostre correu electrònic existent a ${ MAIL_APP_NAME } perquè pugueu gestionar-ho tot des d'una única safata d'entrada privada."
+      ],
+      "Choose a provider": [
+        "Trieu un proveïdor"
       ],
       "Maybe later": [
         "Potser més tard"
       ],
-      "Popular services": [
-        "Serveis populars"
+      "Protect your accounts": [
+        "Protegiu els vostres comptes"
       ],
       "Skip for now": [
         "Ometeu-ho per ara"
       ],
-      "Switch your accounts to ${ BRAND_NAME }": [
-        "Canvieu els vostres comptes a ${ BRAND_NAME }"
+      "Some popular services": [
+        "Alguns serveis populars"
       ],
-      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
-        "Canviar de correu és difícil. ${ BRAND_NAME } ho fa fàcil. Connecteu el vostre compte antic i gestioneu-ho tot en un espai de treball concentrat i sense anuncis."
-      ],
-      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
-        "Actualitzeu el vostre correu als serveis que feu servir més. Preveniu el rastreig i protegiu la vostra privacitat."
-      ],
-      "Welcome to ${ MAIL_APP_NAME }": [
-        "Benvingut a ${ MAIL_APP_NAME }"
+      "Switch the services you use every day to your ${ BRAND_NAME } address for better security and privacy.": [
+        "Canvia els serveis que utilitzes cada dia a la teva adreça de ${ BRAND_NAME } per millorar la seguretat i la privacitat."
       ]
     },
     "Onboarding modal": {
@@ -14950,9 +14947,6 @@
       ],
       "Connect apps and devices": [
         "Connecteu aplicacions i dispositius"
-      ],
-      "Connect more addresses": [
-        "Connecteu més adreces"
       ],
       "Connect to video conferencing": [
         "Connecteu-vos a una videoconferència"
