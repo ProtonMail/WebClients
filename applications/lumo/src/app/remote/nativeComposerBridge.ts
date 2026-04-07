@@ -104,6 +104,29 @@ const sendResultToNative = (callId: string, payload: any) => {
 };
 
 /**
+ * Injects an image generation helper prompt to the native side
+ */
+const injectImageGenerationHelperPrompt = (prompt: string) => {
+    console.log('Native Composer Bridge: Injecting image generation helper prompt to native', prompt);
+    try {
+        if ((window as any).webkit?.messageHandlers?.nativeComposerImageGenerationHelperPromptHandler) {
+            // iOS bridge
+            (window as any).webkit.messageHandlers.nativeComposerImageGenerationHelperPromptHandler.postMessage(prompt);
+        } else if ((window as any).Android?.injectImageGenerationHelperPrompt) {
+            // Android bridge
+            (window as any).Android.injectImageGenerationHelperPrompt(prompt);
+        } else {
+            console.log(
+                'Native Composer Bridge: Native bridge not detected for image generation helper prompt. Prompt:',
+                prompt
+            );
+        }
+    } catch (e) {
+        console.log('Native Composer Bridge: Error injecting image generation helper prompt to native:', e);
+    }
+};
+
+/**
  * Sends state updates to the native side
  */
 const sendStateToNative = (state: State) => {
@@ -422,6 +445,10 @@ class NativeComposerApi {
         this.updateState({ userFlags: { ...this.state.userFlags, isGuestUser: isGuestUser } });
     }
 
+    public injectImageGenerationHelperPrompt(prompt: string): void {
+        injectImageGenerationHelperPrompt(prompt);
+    }
+
     public onComposerError(error: string): void {
         console.log(`Native Composer Bridge: on composer error: ${error}`);
         sendResultToNative('', { status: 'error', error: error });
@@ -537,6 +564,9 @@ try {
 
         // Error handling
         onComposerError: createNativeWrapper('onComposerError'),
+
+        // Image generation
+        injectImageGenerationHelperPrompt: createNativeWrapper('injectImageGenerationHelperPrompt'),
     };
     console.log('Native Composer Bridge: Native wrapper functions created under window.nativeComposerApi');
 
