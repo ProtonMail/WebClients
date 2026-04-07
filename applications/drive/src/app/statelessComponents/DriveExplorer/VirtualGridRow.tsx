@@ -24,7 +24,7 @@ interface VirtualGridRowProps {
     events?: DriveExplorerEvents;
     conditions: DriveExplorerConditions;
     isMultiSelectionDisabled?: boolean;
-    dragMoveControls?: DragMoveControls;
+    getDragMoveControls?: (uid: string) => DragMoveControls;
     showCheckboxColumn?: boolean;
     contextMenuControls?: ContextMenuControls;
     onObserve: (element: HTMLElement | null, uid: string) => void;
@@ -42,7 +42,7 @@ export function VirtualGridRow({
     events,
     conditions,
     isMultiSelectionDisabled,
-    dragMoveControls,
+    getDragMoveControls,
     showCheckboxColumn,
     contextMenuControls,
     onObserve,
@@ -71,6 +71,7 @@ export function VirtualGridRow({
             >
                 {itemsInRow.map((itemId, colIndex) => {
                     const index = startIndex + colIndex;
+                    const dragMoveControls = getDragMoveControls?.(itemId);
                     return (
                         <DriveExplorerGridBox
                             key={itemId}

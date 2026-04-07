@@ -3,7 +3,7 @@ import { type ReactNode, useCallback, useEffect, useRef } from 'react';
 import { useShallow } from 'zustand/react/shallow';
 
 import { useActiveBreakpoint } from '@proton/components';
-import { generateNodeUid, getDrive, splitNodeUid } from '@proton/drive';
+import { getDrive, splitNodeUid } from '@proton/drive';
 import { loadThumbnail } from '@proton/drive/modules/thumbnails';
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import type { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
@@ -11,8 +11,11 @@ import type { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSett
 import ToolbarRow from '../../../components/sections/ToolbarRow/ToolbarRow';
 import type { DriveFolder } from '../../../hooks/drive/useActiveShare';
 import useDriveNavigation from '../../../hooks/drive/useNavigate';
+import { useMoveNodes } from '../../../hooks/sdk/useMoveNodes';
+import type { MoveNodesItemMap } from '../../../hooks/sdk/useMoveNodes';
 import { useContextMenuStore } from '../../../modules/contextMenu';
 import { useSelectionStore } from '../../../modules/selection';
+import { useDriveDragMove } from '../../../modules/selection/useDriveDragMove';
 import type { SortConfig, SortField } from '../../../modules/sorting';
 import { DriveExplorer } from '../../../statelessComponents/DriveExplorer/DriveExplorer';
 import type {
@@ -70,13 +73,42 @@ export function FolderBrowser({
     const sortedItemUids = sortedList.map((item) => item.uid);
 
     const selectedItemIds = useSelectionStore(useShallow((state) => state.selectedItemIds));
-    const selectedItems = getSelectedItems(sortedList, Array.from(selectedItemIds));
+    const selectedItemIdsArray = Array.from(selectedItemIds);
+    const selectedItems = getSelectedItems(sortedList, selectedItemIdsArray);
 
     const allSortedItems = sortedList.map((item) => ({
         nodeUid: item.uid,
         mimeType: item.mimeType,
         storageSize: item.size,
     }));
+
+    const { moveNodes } = useMoveNodes();
+
+    const isAvailableTarget = useCallback((uid: string) => {
+        const item = useFolderStore.getState().items.get(uid);
+        return !!item && !item.isFile;
+    }, []);
+
+    const handleDrop = useCallback(
+        (itemUids: string[], newParentUid: string) => {
+            const itemMap = itemUids.reduce<MoveNodesItemMap>((acc, uid) => {
+                const item = useFolderStore.getState().items.get(uid);
+                if (!item || !item.parentUid) {
+                    return acc;
+                }
+                return { ...acc, [uid]: { name: item.name, parentUid: item.parentUid } };
+            }, {});
+            void moveNodes(itemMap, newParentUid);
+        },
+        [moveNodes]
+    );
+
+    const { getDragMoveControls } = useDriveDragMove(selectedItemIdsArray, {
+        isAvailableTarget,
+        clearSelections: useSelectionStore.getState().clearSelections,
+        onDrop: handleDrop,
+        isFile: (uid) => !!useFolderStore.getState().items.get(uid)?.isFile,
+    });
 
     const { actions, uploadFile, uploadFolder, modals } = useFolderActions({
         allSortedItems,
@@ -109,7 +141,7 @@ export function FolderBrowser({
                 return openDocsOrSheetsDocument({
                     type: openInDocsInfo.type,
                     isNative: openInDocsInfo.isNative,
-                    uid: generateNodeUid(item.volumeId, item.linkId),
+                    uid: item.uid,
                     openBehavior: 'tab',
                 });
             }
@@ -275,6 +307,7 @@ export function FolderBrowser({
                 sort={sort}
                 loading={isLoading}
                 caption={folder?.name}
+                getDragMoveControls={getDragMoveControls}
                 contextMenuControls={{
                     isOpen: contextMenu.isOpen,
                     showContextMenu: contextMenu.handleContextMenu,
