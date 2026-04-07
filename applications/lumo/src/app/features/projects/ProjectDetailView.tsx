@@ -36,6 +36,7 @@ import {
     pushConversationRequest,
 } from '../../redux/slices/core/conversations';
 import { addSpace, pullSpaceRequest, pushSpaceRequest } from '../../redux/slices/core/spaces';
+import { setNativeComposerVisibility } from '../../remote/nativeComposerBridgeHelpers';
 import { ComposerMode, getProjectInfo } from '../../types';
 import { openLumoUpsellModal } from '../../upsells/providers/LumoUpsellModalProvider';
 import { ProjectFilesPanel } from './ProjectFilesPanel';
@@ -206,6 +207,14 @@ const ProjectDetailViewInner = () => {
         handleSendInProject,
         () => {} // todo: abort handler missing at this point, known bug
     );
+
+    useEffect(() => {
+        if (!sidebarModal.render) {
+            return;
+        }
+        setNativeComposerVisibility(false);
+        return () => setNativeComposerVisibility(true);
+    }, [sidebarModal.render]);
 
     const handleSaveTitle = useCallback(
         (newTitle: string) => {

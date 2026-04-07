@@ -79,6 +79,10 @@ im.$media-expressions: $media-expressions;
 	flex: 1;
 	overflow-y: auto;
 	min-block-size: 0;
+
+	.gallery-inner {
+		padding-block-end: 16px;
+	}
 }
 
 // ── Top pane: empty state (Lottie + title) ────────────────────────────────────
