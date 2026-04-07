@@ -417,6 +417,9 @@
       "Help and resources": [
         "Tuki ja resurssit"
       ],
+      "Hide": [
+        "Piilota"
+      ],
       "Hide advanced PGP settings": [
         "Piilota PGP-lisäasetukset"
       ],
@@ -665,6 +668,9 @@
       ],
       "Save changes": [
         "Tallenna muutokset"
+      ],
+      "Save preferences": [
+        "Tallenna asetukset"
       ],
       "Search": [
         "Hae"
@@ -917,6 +923,9 @@
       ],
       "Users": [
         "Käyttäjät"
+      ],
+      "Writing assistant": [
+        "Kirjoitusavustaja"
       ]
     },
     "Alert": {
@@ -1985,6 +1994,9 @@
       ],
       "North Korea": [
         "Pohjois-Korea"
+      ],
+      "North Macedonia": [
+        "Pohjois-Makedonia"
       ],
       "Northern Mariana Islands": [
         "Pohjois-Mariaanit"
@@ -3905,11 +3917,6 @@
         "Valitse ${ boldExport } viedäksesi kalenterin ICS-tiedostona."
       ]
     },
-    "Import provider": {
-      "Advanced import": [
-        "Edistynyt tuonti"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded }/${ totalContacts } yhteystietoa ei tuoda. Näytä tiedot painamalla tästä."
@@ -4537,6 +4544,9 @@
       ],
       "Low Priority": [
         "Alhainen tärkeys"
+      ],
+      "Making a copy...": [
+        "Luodaan kopiota..."
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Enintään ${ MAX_SHARED_URL_PASSWORD_LENGTH } merkki",
@@ -7661,6 +7671,9 @@
       "Email": [
         "Sähköposti"
       ],
+      "Enter a name": [
+        "Syötä nimi"
+      ],
       "Enter a new folder name": [
         "Syötä kansion uusi nimi"
       ],
@@ -7708,6 +7721,9 @@
       ],
       "Select": [
         "Valitse"
+      ],
+      "Select a provider": [
+        "Valitse tarjoaja"
       ],
       "Select a reason": [
         "Valitse syy"
@@ -7788,6 +7804,20 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Virallinen viesti ${ BRAND_NAME }ilta"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {
