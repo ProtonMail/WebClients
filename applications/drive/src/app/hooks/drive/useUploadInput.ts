@@ -1,5 +1,5 @@
 import type { ChangeEvent } from 'react';
-import { useEffect, useRef } from 'react';
+import { useCallback, useRef } from 'react';
 
 interface UseUploadInputOptions {
     onUpload: (files: FileList) => void;
@@ -9,11 +9,18 @@ interface UseUploadInputOptions {
 export function useUploadInput({ onUpload, forFolders = false }: UseUploadInputOptions) {
     const inputRef = useRef<HTMLInputElement>(null);
 
-    useEffect(() => {
-        if (forFolders && inputRef.current) {
-            inputRef.current.setAttribute('webkitdirectory', 'true');
-        }
-    }, [forFolders]);
+    // Use a callback ref so webkitdirectory is set every time the element mounts,
+    // not just once — the <input> can remount when switching between empty/non-empty folder views.
+    const setInputRef = useCallback(
+        (node: HTMLInputElement | null) => {
+            (inputRef as React.MutableRefObject<HTMLInputElement | null>).current = node;
+            if (forFolders && node) {
+                // React types don't allow `webkitdirectory` but it exists and works
+                node.setAttribute('webkitdirectory', 'true');
+            }
+        },
+        [forFolders]
+    );
 
     const handleClick = () => {
         if (!inputRef.current) {
@@ -33,5 +40,5 @@ export function useUploadInput({ onUpload, forFolders = false }: UseUploadInputO
         onUpload(files);
     };
 
-    return { inputRef, handleClick, handleChange };
+    return { inputRef: setInputRef, handleClick, handleChange };
 }
