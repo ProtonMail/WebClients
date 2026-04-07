@@ -25,6 +25,7 @@ import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { nextTick, onNextTick } from '@proton/pass/utils/time/next-tick';
 import { resolveSubdomain } from '@proton/pass/utils/url/utils';
 import { omit } from '@proton/shared/lib/helpers/object';
+import noop from '@proton/utils/noop';
 
 import { autofillIdentityFields } from './autofill.identity';
 
@@ -246,7 +247,7 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
     });
 
     const executeAutofill = withContext<(payload: AutofillRequest<'fill'>) => Promise<AutofillResult>>(
-        (ctx, payload) => {
+        async (ctx, payload) => {
             switch (payload.type) {
                 case 'creditCard':
                     /** `formIds` are resolved via service worker's clustering phase.
@@ -258,8 +259,19 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
                     );
 
                     return autofillCCFields(ccFields.filter(truthy), payload)
-                        .then((autofilled) => ({ type: 'creditCard' as const, autofilled: autofilled.flat() }))
-                        .catch(() => ({ type: 'creditCard' as const, autofilled: [] }));
+                        .then((autofilled) => ({ type: payload.type, autofilled: autofilled.flat() }))
+                        .catch(() => ({ type: payload.type, autofilled: [] }));
+
+                case 'login':
+                    const form = ctx?.service.formManager.getFormById(payload.field.formId);
+
+                    if (form) {
+                        await autofillLogin(form, payload.data)
+                            .then(() => form.getFieldById(payload.field.fieldId)?.focus({ preventAction: true }))
+                            .catch(noop);
+                    }
+
+                    return { type: payload.type };
             }
         }
     );

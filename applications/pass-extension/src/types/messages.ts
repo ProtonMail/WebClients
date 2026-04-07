@@ -54,12 +54,7 @@ import type {
 } from '@proton/pass/types/worker/autofill';
 import type { AutosaveRequest } from '@proton/pass/types/worker/autosave';
 import type { LoginItemPreview } from '@proton/pass/types/worker/data';
-import type {
-    AutosaveFormEntry,
-    FormCredentials,
-    FormStatusPayload,
-    FormSubmitPayload,
-} from '@proton/pass/types/worker/form';
+import type { AutosaveFormEntry, FormStatusPayload, FormSubmitPayload } from '@proton/pass/types/worker/form';
 import type { OtpCode, OtpRequest } from '@proton/pass/types/worker/otp';
 import type { ClientEndpoint, ClientInitResult, EndpointContext, TabId } from '@proton/pass/types/worker/runtime';
 import type { SpotlightMessage } from '@proton/pass/types/worker/spotlight';
@@ -206,12 +201,12 @@ export type AuthInitMessage = { type: WorkerMessageType.AUTH_INIT; options: Auth
 export type AuthOfflineSwitchMessage = { type: WorkerMessageType.AUTH_OFFLINE_SWITCH };
 export type AuthPullForkMessage = WithPayload<WorkerMessageType.AUTH_PULL_FORK, { selector: string }>;
 export type AuthUnlockMessage = WithPayload<WorkerMessageType.AUTH_UNLOCK, UnlockDTO>;
-export type AutofillCCMessage = WithPayload<WorkerMessageType.AUTOFILL_CC, AutofillActionDTO>;
 
+export type AutofillCCMessage = WithPayload<WorkerMessageType.AUTOFILL_CC, AutofillActionDTO>;
 export type AutofillCCQueryMessage = { type: WorkerMessageType.AUTOFILL_CC_QUERY };
 export type AutofillIdentityMessage = WithPayload<WorkerMessageType.AUTOFILL_IDENTITY, SelectedItem>;
 export type AutofillIdentityQueryMessage = { type: WorkerMessageType.AUTOFILL_IDENTITY_QUERY };
-export type AutofillLoginMessage = WithPayload<WorkerMessageType.AUTOFILL_LOGIN, SelectedItem>;
+export type AutofillLoginMessage = WithPayload<WorkerMessageType.AUTOFILL_LOGIN, AutofillActionDTO>;
 export type AutofillLoginQueryMessage = WithPayload<WorkerMessageType.AUTOFILL_LOGIN_QUERY, AutofillOptions>;
 export type AutofillOTPCheckMessage = { type: WorkerMessageType.AUTOFILL_OTP_CHECK };
 export type AutofillPasswordOptionsMessage = { type: WorkerMessageType.AUTOSUGGEST_PASSWORD };
@@ -413,7 +408,6 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.AUTOFILL_IDENTITY_QUERY]: AutofillIdentityResult;
     [WorkerMessageType.AUTOFILL_IDENTITY]: ItemContent<'identity'>;
     [WorkerMessageType.AUTOFILL_LOGIN_QUERY]: AutofillLoginResult;
-    [WorkerMessageType.AUTOFILL_LOGIN]: FormCredentials;
     [WorkerMessageType.AUTOFILL_OTP_CHECK]: { shouldPrompt: false } | ({ shouldPrompt: true } & LoginItemPreview);
     [WorkerMessageType.AUTOFILL_SEQUENCE]: AutofillResult;
     [WorkerMessageType.AUTOSUGGEST_ALIAS]: { aliasCreationDisabled: boolean };
