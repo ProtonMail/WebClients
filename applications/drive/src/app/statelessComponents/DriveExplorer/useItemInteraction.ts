@@ -53,11 +53,16 @@ export const useItemInteraction = ({
                 return;
             }
 
-            performSelection(event);
+            // Preserve multi-selection on mousedown so dragging doesn't collapse it.
+            // handleClick (mouse-up) handles the single-select reset for plain clicks.
+            const hasModifier = event.shiftKey || event.ctrlKey || event.metaKey;
+            if (!isSelected || hasModifier) {
+                performSelection(event);
+            }
 
             events?.onItemClick?.(itemId, event);
         },
-        [performSelection, events, itemId]
+        [performSelection, events, itemId, isSelected]
     );
 
     const handleClick = useCallback(
