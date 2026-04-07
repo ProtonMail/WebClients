@@ -80,7 +80,7 @@ export const CircleButton = ({
                             '--right-custom': '-0.25rem',
                             '--w-custom': '1.5rem',
                             '--h-custom': '1.5rem',
-                            'font-size': '0.5625rem',
+                            fontSize: '0.5625rem',
                         }}
                     >
                         {indicatorContent}
