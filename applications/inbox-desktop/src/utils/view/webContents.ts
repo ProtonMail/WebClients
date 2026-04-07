@@ -1,4 +1,4 @@
-import { WebContents, WindowOpenHandlerResponse, shell } from "electron";
+import { BrowserWindow, WebContents, WindowOpenHandlerResponse, shell } from "electron";
 import { basename } from "node:path";
 import {
     getLocalID,
@@ -38,7 +38,7 @@ import { resetBadge } from "../../ipc/notification";
 import { mainLogger, rendererLogger, viewLogger } from "../log";
 import { CHANGE_VIEW_TARGET } from "@proton/shared/lib/desktop/desktopTypes";
 import { PRINT_DATA_URL_PREFIX } from "../printing/print";
-import { isDynamicOAuthURL } from "../oauthProcess";
+import { isDynamicOAuthURL, isOAuthWindow, registerOAuthWindow, unregisterOAuthWindow } from "../oauthProcess";
 import { sentryReport } from "../sentryReport";
 
 const RENDERER_LOG_MAX_MESSAGE_LENGTH = 500;
@@ -184,7 +184,12 @@ export function handleWebContents(contents: WebContents) {
     contents.on("will-navigate", (details) => {
         logger().info("will-navigate", details.url);
 
-        if (!isHostAllowed(details.url) && !global.oauthProcess && !global.subscriptionProcess) {
+        if (
+            !isOAuthWindow(contents.id) &&
+            !isHostAllowed(details.url) &&
+            !global.oauthProcess &&
+            !global.subscriptionProcess
+        ) {
             logger().info("opening external URL", details.url);
             shell.openExternal(details.url);
             return details.preventDefault();
@@ -261,7 +266,22 @@ export function handleWebContents(contents: WebContents) {
             isDynamicOAuthURL(url)
         ) {
             if (!global.oauthProcess) return denyAndOpenExternal(`oauth disabled, link in view ${url}`);
-            return allow(`oauth process enabled, opening in new electron window ${url}`);
+            logWindowOpen("allowed", `oauth process enabled, opening in new electron window ${url}`);
+            contents.once("did-create-window", (win: BrowserWindow) => {
+                registerOAuthWindow(win.webContents.id);
+                win.webContents.once("destroyed", () => unregisterOAuthWindow(win.webContents.id));
+            });
+            return {
+                action: "allow",
+                overrideBrowserWindowOptions: {
+                    webPreferences: {
+                        preload: undefined,
+                        sandbox: true,
+                        nodeIntegration: false,
+                        contextIsolation: true,
+                    },
+                },
+            };
         }
 
         // We want to open booking URLs in the browser to avoid blocking the user
