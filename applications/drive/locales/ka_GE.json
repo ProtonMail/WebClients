@@ -159,6 +159,9 @@
       "Change": [
         "შეცვლა"
       ],
+      "Change my access": [
+        "ჩემი წვდომების შეცვლა"
+      ],
       "Change password": [
         "პაროლის შეცვლა"
       ],
@@ -809,6 +812,9 @@
       "Refer a friend": [
         "მიმართეთ მეგობარს"
       ],
+      "Refetch index": [
+        "ინდექსის თავიდან გამოთხოვა"
+      ],
       "Refresh the page": [
         "გვერდის განახლება"
       ],
@@ -844,6 +850,9 @@
       ],
       "Remove me": [
         "წამშალე"
+      ],
+      "Remove my access": [
+        "ჩემი წვდომის გაუქმება"
       ],
       "Remove without saving": [
         "წაშლა შენახვის გარეშე"
@@ -4718,8 +4727,8 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "გაფართოებული შემოტანა"
+      "More import options": [
+        "მეტი შემოტანის პარამეტრები"
       ]
     },
     "Import warning": {
@@ -5446,6 +5455,9 @@
       "Folders you sync from your computer will appear here.": [
         "საქაღალდეები, რომლებსაც კომპიუტერიდან უკეთებთ სინქრონიზაციას, აქ გამოჩნდება"
       ],
+      "for ${ price }": [
+        "${ price }-ისთვის"
+      ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "საუკეთესო შედეგისთვის, მოერიდეთ სტრიმინგს და მეხსიერების ინტენსიურ აქტივობებს, ან დაყავით თქვენი ატვირთვა მცირე ნაკრებებად."
       ],
@@ -5536,6 +5548,9 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "შემდეგ ნაბიჯზე თქვენ საშუალება გექნებათ, დეპოზიტი ბიტკოინის მისამართით გადმოგვცეთ."
+      ],
+      "Index is empty.": [
+        "ინდექსი ცარიელია."
       ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "მიმდინარეობს ${ esProgress }-ე ჩანაწერის ინდექსირება (${ totalProgressToShow }-დან)"
@@ -6356,6 +6371,9 @@
       "Untitled": [
         "უსათაურო"
       ],
+      "Update required": [
+        "საჭიროა განახლება"
+      ],
       "Updating drive search...": [
         "Drive-ზე ძებნის განახლება..."
       ],
@@ -6824,6 +6842,9 @@
       "Add to group": [
         "ჯგუფში ჩამატება"
       ],
+      "Additional comments": [
+        "დამატებითი კომენტარები"
+      ],
       "Address": [
         "მისამართი"
       ],
@@ -6940,6 +6961,9 @@
       ],
       "Contacts": [
         "კონტაქტები"
+      ],
+      "Continue cancelling": [
+        "გაუქმების გაგრძელება"
       ],
       "Copy": [
         "კოპირება"
@@ -7110,6 +7134,12 @@
       "Include message and file name in invite email": [
         "მოსაწვევის ფაილში შეტყობინებისა და ფაილის სახელის დართვა"
       ],
+      "Index kinds": [
+        "ინდექსის ტიპები"
+      ],
+      "Initial indexing": [
+        "საწყისი დაინდექსება"
+      ],
       "Integrated 2FA authenticator": [
         "ჩაშენებული 2FA ავთენტიკატორი"
       ],
@@ -7206,6 +7236,9 @@
       "Other": [
         "სხვა"
       ],
+      "Outdated version": [
+        "მოძველებული ვერსია"
+      ],
       "Password": [
         "პაროლი"
       ],
@@ -7275,6 +7308,9 @@
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, ჟენევა"
       ],
+      "Searchable": [
+        "ძებნადი"
+      ],
       "Select type of abuse": [
         "აირჩიეთ კანონის დარღვევის ტიპი"
       ],
@@ -7307,6 +7343,9 @@
       ],
       "Size": [
         "ზომა"
+      ],
+      "Skip feedback": [
+        "უკუკავშირის გამოტოვება"
       ],
       "Skip file": [
         "ფაილის გამოტოვება"
@@ -7383,6 +7422,9 @@
       "Uploaded by": [
         "ატვირთული ფაილის მფლობელი"
       ],
+      "User opted in": [
+        "მომხმარებელმა მოიწონა"
+      ],
       "Username": [
         "მომხმარებლის სახელი"
       ],
@@ -7391,6 +7433,9 @@
       ],
       "Viewer": [
         "მთვალიერებელი"
+      ],
+      "Visible columns:": [
+        "ხილული სვეტები:"
       ],
       "Vulnerable": [
         "მოწყვლადი"
@@ -9976,6 +10021,9 @@
       "Email": [
         "ელფოსტა"
       ],
+      "Enter a name": [
+        "შეიყვანეთ სახელი"
+      ],
       "Enter a new file name": [
         "შეიყვანეთ ახალი ფაილის სახელი"
       ],
@@ -10047,6 +10095,9 @@
       ],
       "Select": [
         "აირჩიეთ"
+      ],
+      "Select a provider": [
+        "აირჩიეთ პროვაიდერი"
       ],
       "Select a reason": [
         "აირჩიეთ მიზეზი"
@@ -10158,6 +10209,26 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "ოფიციალური ელფოსტა ${ BRAND_NAME }-სგან"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "სხვა"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Referral": {
@@ -10760,6 +10831,9 @@
     "Status": {
       "pending": [
         "რიგში"
+      ],
+      "user joined": [
+        "მომხმარებელი შემოვიდა"
       ]
     },
     "Storage": {
@@ -11587,6 +11661,9 @@
       "Account temporarily locked": [
         "ანგარიში დროებით დაბლოკილია"
       ],
+      "Actions": [
+        "ქმედებები"
+      ],
       "Active": [
         "აქტიური"
       ],
@@ -11974,6 +12051,9 @@
       "Gift": [
         "საჩუქარი"
       ],
+      "Global": [
+        "გლობალური"
+      ],
       "Groups": [
         "ჯგუფები"
       ],
@@ -12255,6 +12335,9 @@
         "წავშალო ელემენტი?",
         "წავშალო ელემენტები?"
       ],
+      "Remove your access?": [
+        "გავაუქმოთ თქვენი წვდომა?"
+      ],
       "Rename a file": [
         "ფაილის სახელის გადარქმევა"
       ],
@@ -12275,6 +12358,9 @@
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "შეინახეთ ის მოგვიანებით სამუშაოდ ${ DRIVE_APP_NAME }-ზე"
+      ],
+      "Search": [
+        "ძებნა"
       ],
       "Search results": [
         "ძებნის შედეგები"
@@ -12627,6 +12713,9 @@
       ],
       "Message and file name are stored with zero access encryption when included in the email": [
         "შეტყოვინების და ფაილის სახელი ნულოვანი წვდომის დაშიფვრით ინახება, როცა მას ამ ელფოსტაში ჩასვამთ"
+      ],
+      "New!": [
+        "ახალი!"
       ],
       "Not all information listed here was exposed for all users.": [
         "აქ ჩამოთვლილი ინფორმაცია ყველა მომხმარებლისთვის ხელმისაწვდომი არ იქნება."
