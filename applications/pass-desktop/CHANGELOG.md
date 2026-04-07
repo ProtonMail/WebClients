@@ -1,3 +1,13 @@
+### Version 1.36.0
+
+- Custom item fields are now searchable
+- Hide biometrics unlock option on Linux
+- Lock desktop app when closed
+- Improve importers
+- Take into account B2B Policy for secure link
+- Take into account B2B Policy for email alias
+- Group sharing
+
 ### Version 1.35.0
 
 - Support for b2b groups (behind feature flag)
