@@ -117,7 +117,7 @@ const BYOEClaimProtonAddressModal = ({
 
             createNotification({
                 type: 'success',
-                text: c('loc_nightly: BYOE').t`Your ${BRAND_NAME} address is ready to use`,
+                text: c('Notification').t`Your ${BRAND_NAME} address is ready to use`,
             });
             onCreateCallback?.();
 
