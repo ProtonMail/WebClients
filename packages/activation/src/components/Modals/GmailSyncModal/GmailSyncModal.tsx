@@ -30,7 +30,7 @@ interface Props extends ModalProps {
     hasAccessToBYOE?: boolean;
     expectedEmailAddress?: string;
     onCloseCallback?: () => void;
-    onComplete?: () => void;
+    onComplete?: () => Promise<void>;
 }
 
 const GmailSyncModal = ({
@@ -84,7 +84,7 @@ const GmailSyncModal = ({
                 if (!hasError) {
                     rest?.onClose?.();
                     onCloseCallback?.();
-                    onComplete?.();
+                    void onComplete?.();
                 }
                 onSyncCallback?.(hasError, sync);
             },
@@ -113,7 +113,6 @@ const GmailSyncModal = ({
                 if (!hasError) {
                     rest?.onClose?.();
                     onCloseCallback?.();
-                    onComplete?.();
                 }
                 onBYOEWithImportCallback?.(hasError, payload);
             },

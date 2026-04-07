@@ -39,7 +39,7 @@ const getDefaultProducts = (provider: ImportProvider, hasCalendar: boolean) => {
 interface Props extends ModalProps {
     source: EASY_SWITCH_SOURCES;
     provider: ImportProvider;
-    onComplete?: () => void;
+    onComplete?: () => Promise<void>;
 }
 
 export const ProductSelectionModal = ({ onClose, provider, source, onComplete, ...rest }: Props) => {
@@ -92,7 +92,7 @@ export const ProductSelectionModal = ({ onClose, provider, source, onComplete, .
 
     return (
         <>
-            <ModalTwo onClose={onClose} {...rest} data-testid='EasySwitch:ImportModal'>
+            <ModalTwo onClose={onClose} {...rest} data-testid="EasySwitch:ImportModal">
                 <ModalHeader title={c('Title').t`Import your data to ${BRAND_NAME}`} />
                 <ModalContent>
                     <div className="flex flex-column gap-5">
@@ -192,10 +192,10 @@ export const ProductSelectionModal = ({ onClose, provider, source, onComplete, .
                 <ModalFooter>
                     <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>
                     <Button
-                        onClick={() => {
+                        onClick={async () => {
                             handleSubmit(selectedProvider, selectedProducts, source);
                             onClose?.();
-                            onComplete?.();
+                            await onComplete?.();
                         }}
                         color="norm"
                         disabled={loadingConfig}

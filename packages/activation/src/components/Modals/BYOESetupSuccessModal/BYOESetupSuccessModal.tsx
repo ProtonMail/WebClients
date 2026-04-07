@@ -3,27 +3,32 @@ import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
-import SettingsLink from '@proton/components/components/link/SettingsLink';
+import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader, useSettingsLink } from '@proton/components';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import { APPS, BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import byoeSetupSuccess from '@proton/styles/assets/img/illustrations/byoe-setup-success.svg';
 
 interface Props extends ModalProps {
     connectedAddress: string;
+    onComplete?: () => Promise<void>;
 }
 
-export const BYOESetupSuccessModal = ({ onClose, connectedAddress, ...rest }: Props) => {
+export const BYOESetupSuccessModal = ({ onClose, onComplete, connectedAddress, ...rest }: Props) => {
     const location = useLocation();
+    const goToSettings = useSettingsLink();
 
     // If we're already in the correct settings section, no need to show the button
     const showManageAddressesButton = !location.pathname.includes('identity-addresses');
 
     const connectedAddressText = <b key="connectedAddress">{connectedAddress}</b>;
 
+    const handleClose = async () => {
+        onClose?.();
+        void onComplete?.();
+    };
+
     return (
-        <ModalTwo size="small" {...rest} onClose={onClose}>
+        <ModalTwo size="small" {...rest} onClose={handleClose}>
             <ModalTwoHeader />
             <ModalTwoContent className="flex">
                 <div className="justify-center items-center text-center w-full">
@@ -39,16 +44,21 @@ export const BYOESetupSuccessModal = ({ onClose, connectedAddress, ...rest }: Pr
                 </ul>
             </ModalTwoContent>
             <ModalTwoFooter>
-                <Button color="norm" className="w-full inline-flex items-center justify-center gap-2" onClick={onClose}>
+                <Button
+                    color="norm"
+                    className="w-full inline-flex items-center justify-center gap-2"
+                    onClick={handleClose}
+                >
                     {c('Action').t`Done`}
                 </Button>
                 {showManageAddressesButton && (
-                    <ButtonLike
-                        as={SettingsLink}
-                        path="/identity-addresses#addresses"
-                        app={APPS.PROTONMAIL}
+                    <Button
                         className="w-full"
-                    >{c('Action').t`Manage addresses`}</ButtonLike>
+                        onClick={async () => {
+                            await onComplete?.();
+                            goToSettings('/identity-addresses#addresses', APPS.PROTONMAIL);
+                        }}
+                    >{c('Action').t`Manage addresses`}</Button>
                 )}
             </ModalTwoFooter>
         </ModalTwo>
