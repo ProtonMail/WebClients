@@ -37,7 +37,7 @@ describe('conversationsReducers', () => {
             ConversationID: conversationID,
             Unread: 1,
             Order: 1,
-            LabelIDs: [inboxLabelID],
+            LabelIDs: [inboxLabelID, MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS],
             Flags: 1, // FLAG_RECEIVED
         } as Message;
 
@@ -76,6 +76,10 @@ describe('conversationsReducers', () => {
                 {
                     ID: draftLabelID,
                     ContextNumUnread: 0,
+                },
+                {
+                    ID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
+                    ContextNumUnread: 2,
                 },
             ],
         } as Conversation;
@@ -158,6 +162,35 @@ describe('conversationsReducers', () => {
                 expect(updatedConversationState!.Conversation.NumUnread).toBe(1);
                 const label = updatedConversationState!.Conversation.Labels!.find((label) => label.ID === inboxLabelID);
                 expect(label?.ContextNumUnread).toBe(1);
+            });
+
+            it('should handle category label update when marking messages as read', () => {
+                const messages = [mockMessage1];
+
+                markMessagesAsReadPending(state, {
+                    type: 'markMessagesAsRead/pending',
+                    payload: undefined,
+                    meta: {
+                        arg: {
+                            messages,
+                            labelID: MAILBOX_LABEL_IDS.INBOX,
+                        },
+                    },
+                });
+
+                const updatedConversationState = state[conversationID];
+                expect(updatedConversationState).toBeDefined();
+                expect(updatedConversationState!.Conversation.ContextNumUnread).toBe(1);
+                expect(updatedConversationState!.Conversation.NumUnread).toBe(1);
+                console.log(updatedConversationState!.Conversation.Labels);
+                const inboxLabel = updatedConversationState!.Conversation.Labels!.find(
+                    (label) => label.ID === inboxLabelID
+                );
+                const categoryLabel = updatedConversationState!.Conversation.Labels!.find(
+                    (label) => label.ID === MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS
+                );
+                expect(inboxLabel?.ContextNumUnread).toBe(1);
+                expect(categoryLabel?.ContextNumUnread).toBe(1);
             });
         });
     });
