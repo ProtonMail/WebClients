@@ -63,7 +63,7 @@ export const createContentScriptContext = (options: ContentScriptContextFactoryO
             autosave: options.mainFrame ? createAutosaveService() : createAutosaveRelay(),
 
             detector: createDetectorService({
-                ...(options.mainFrame ? {} : { fieldTypes: [FieldType.CREDIT_CARD] }),
+                ...(options.mainFrame ? {} : { excludedFieldTypes: [FieldType.OTP] }),
                 root: document,
                 onBottleneck: ({ detectionTime }) => {
                     logger.info(`[Detector] Prediction bottleneck detected [${detectionTime}ms]`);
