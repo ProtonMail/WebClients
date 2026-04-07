@@ -172,6 +172,14 @@ export const setNativeIsGuestUser = (isGuestUser: boolean): void => {
     (window as any).nativeComposerApiInstance.setIsGuestUser(isGuestUser);
 };
 
+export const setNativeToolsEnabled = (enabled: boolean): void => {
+    if (!isNativeComposerBridgeAvailable()) {
+        console.warn('Native Composer Bridge not available');
+        return;
+    }
+    (window as any).nativeComposerApiInstance.setToolsEnabled(enabled);
+};
+
 export const setNativeTsAndCsVisibility = (visible: boolean): void => {
     if (!isNativeComposerBridgeAvailable()) {
         console.warn('Native Composer Bridge not available');

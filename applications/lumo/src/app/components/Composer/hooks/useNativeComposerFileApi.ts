@@ -6,6 +6,7 @@ import {
     onNativeOpenDriveRequest,
     onNativeOpenSketch,
     onNativeRemoveFile,
+    setNativeTsAndCsVisibility,
 } from '../../../remote/nativeComposerBridgeHelpers';
 import type { Attachment } from '../../../types';
 
@@ -22,6 +23,7 @@ export const useNativeComposerFileApi = (
             clearNativeComposerFiles();
             console.log(`removed all files`);
         }
+        setNativeTsAndCsVisibility(!hasAttachments);
     }, [hasAttachments]);
 
     // useEffect(() => {
