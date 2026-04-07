@@ -1987,9 +1987,6 @@
       "Cancel": [
         "Annulla"
       ],
-      "Choose project icon": [
-        "Scegli un'icona per il tuo progetto"
-      ],
       "Click to edit title": [
         "Fai clic per modificare il titolo"
       ],
@@ -2016,9 +2013,6 @@
       ],
       "Edit instructions": [
         "Modifica istruzioni"
-      ],
-      "Edit project": [
-        "Modifica progetto"
       ],
       "Go to project": [
         "Vai al progetto"
@@ -2104,9 +2098,6 @@
       "Unlink Folder": [
         "Scollega cartella"
       ],
-      "Upgrade to Plus": [
-        "Effettua l'upgrade a Plus"
-      ],
       "Upload file": [
         "Carica file"
       ],
@@ -2129,9 +2120,6 @@
       ],
       "Close sidebar": [
         "Chiudi la barra laterale"
-      ],
-      "Create a free account": [
-        "Crea un account gratuito"
       ],
       "Create project": [
         "Crea progetto"
@@ -2169,9 +2157,6 @@
       "New chat": [
         "Nuova chat"
       ],
-      "New project": [
-        "Nuovo progetto"
-      ],
       "Save": [
         "Salva"
       ],
@@ -2186,9 +2171,6 @@
       ],
       "Show sidebar": [
         "Mostra la barra laterale"
-      ],
-      "Sign in": [
-        "Accedi"
       ],
       "Unfavorite": [
         "Rimuovi dai preferiti"
@@ -2242,17 +2224,6 @@
       ],
       "Project not found": [
         "Progetto non trovato"
-      ]
-    },
-    "collider_2025:Feature": {
-      "Advanced AI models": [
-        "Modelli AI avanzati"
-      ],
-      "Priority access & faster responses": [
-        "Accesso prioritario e risposte più veloci"
-      ],
-      "Unlimited projects": [
-        "Progetti illimitati"
       ]
     },
     "collider_2025:Icon": {
@@ -2328,12 +2299,6 @@
       "Processing...": [
         "Elaborazione in corso..."
       ],
-      "Projects help you organize conversations with custom instructions and files.": [
-        "I progetti ti aiutano a organizzare le conversazioni con istruzioni e file personalizzati."
-      ],
-      "Projects help you organize conversations with custom instructions and files. Sign in or create a free account to get started.": [
-        "I progetti ti aiutano a organizzare le conversazioni con istruzioni e file personalizzati. Accedi o crea un account gratuito per iniziare."
-      ],
       "This message is empty. Sorry about that.": [
         "Questo messaggio è vuoto. Spiacenti."
       ],
@@ -2346,26 +2311,14 @@
       "Type @filename to ask questions about a specific file": [
         "Digita @filename per porre domande su un file specifico"
       ],
-      "Upgrade to ${ LUMO_SHORT_APP_NAME } Plus to create unlimited projects, unlock advanced AI models, and more.": [
-        "Esegui l'upgrade a ${ LUMO_SHORT_APP_NAME } Plus per creare progetti illimitati, sbloccare modelli AI avanzati e altro ancora."
-      ],
       "Using ${ DRIVE_APP_NAME } lets ${ LUMO_SHORT_APP_NAME } work with larger files.": [
         "Usare ${ DRIVE_APP_NAME } permette a ${ LUMO_SHORT_APP_NAME } di lavorare con file più grandi."
       ],
       "Your files are large. ${ LUMO_SHORT_APP_NAME } may not be able to process all information.": [
         "I tuoi file sono grandi. ${ LUMO_SHORT_APP_NAME } potrebbe non essere in grado di elaborare tutte le informazioni."
-      ],
-      "Your information is zero-access encrypted": [
-        "Le tue informazioni sono crittografate a conoscenza zero"
       ]
     },
     "collider_2025:Label": {
-      "chat": [
-        "Chat"
-      ],
-      "chats": [
-        "chat"
-      ],
       "Current folder:": [
         "Cartella corrente:"
       ],
@@ -2374,12 +2327,6 @@
       ],
       "Folder name": [
         "Nome cartella"
-      ],
-      "Instructions": [
-        "Istruzioni"
-      ],
-      "Project Instructions (optional)": [
-        "Istruzioni del progetto (facoltativo)"
       ],
       "Untitled chat": [
         "Chat senza titolo"
@@ -2399,9 +2346,6 @@
       ]
     },
     "collider_2025:Placeholder": {
-      "Add instructions about the tone, style, and persona you want ${ LUMO_SHORT_APP_NAME } to adopt.": [
-        "Aggiungi istruzioni sul tono, stile e persona che vuoi che ${ LUMO_SHORT_APP_NAME } adotti."
-      ],
       "Add instructions about the tone, style, and persona you want ${ LUMO_SHORT_APP_NAME } to adopt. These instructions will apply to all chats in this project.": [
         "Aggiungi istruzioni sul tono, stile e persona che vuoi che ${ LUMO_SHORT_APP_NAME } adotti. Queste istruzioni si applicheranno a tutte le chat in questo progetto."
       ],
@@ -2411,49 +2355,11 @@
       "Enter folder name": [
         "Inserisci il nome della cartella"
       ],
-      "Enter project name": [
-        "Inserisci nome progetto"
-      ],
-      "Holiday planner": [
-        "Calendario delle festività"
-      ],
       "Search chats": [
         "Cerca nelle chat"
       ],
       "Sign in required": [
         "Login richiesto"
-      ]
-    },
-    "collider_2025:Project": {
-      "Develop stories, refine prose, and improve your writing craft": [
-        "Sviluppa storie, affina la prosa e migliora la tua arte di scrivere"
-      ],
-      "Financial assistant": [
-        "Assistente finanziario"
-      ],
-      "Get help understanding assignments, solving problems, and learning concepts": [
-        "Ottieni aiuto per capire i compiti, risolvere problemi e imparare concetti"
-      ],
-      "Learn a language": [
-        "Impara una lingua"
-      ],
-      "Plan financial goals with personalized insights": [
-        "Pianifica obiettivi finanziari con insight personalizzati"
-      ],
-      "Practice conversations, learn grammar, and build vocabulary in your target language": [
-        "Pratica conversazioni, impara la grammatica e costruisci il vocabolario nella tua lingua di destinazione"
-      ],
-      "Research & Analysis Partner": [
-        "Partner di Ricerca e Analisi"
-      ],
-      "Study companion": [
-        "Compagno di studi"
-      ],
-      "Synthesize sources, analyze data, and develop insights for your research projects": [
-        "Sintetizza le fonti, analizza i dati e sviluppa insight per i tuoi progetti di ricerca"
-      ],
-      "Writing coach": [
-        "Assistente di scrittura"
       ]
     },
     "collider_2025:Prompt": {
@@ -2580,11 +2486,6 @@
         "Indicizzazione per la ricerca"
       ]
     },
-    "collider_2025:Subline": {
-      "Projects help you keep related chats, files, and instructions in one place. They make it easy to stay organized and reuse context across chats.": [
-        "I progetti ti aiutano a tenere in un unico posto chat, file e istruzioni correlate. Rendono facile rimanere organizzati e riutilizzare il contesto tra le chat."
-      ]
-    },
     "collider_2025:Success": {
       "All files removed from project": [
         "Tutti i file rimossi dal progetto"
@@ -2621,9 +2522,6 @@
       "Create folder": [
         "Crea una cartella"
       ],
-      "Create new project": [
-        "Crea nuovo oggetto"
-      ],
       "Delete conversation?": [
         "Elimina la conversazione?"
       ],
@@ -2636,17 +2534,11 @@
       "Edit Instructions": [
         "Modifica istruzioni"
       ],
-      "Edit Project": [
-        "Modifica progetto"
-      ],
       "Expiring Soon": [
         "Scadenza imminente"
       ],
       "Favorites": [
         "Preferiti"
-      ],
-      "Get started by creating a new project": [
-        "Inizia creando un nuovo progetto"
       ],
       "Ghost mode": [
         "Modalità Ghost"
@@ -2662,9 +2554,6 @@
       ],
       "How does ${ LUMO_SHORT_APP_NAME } keep our conversations confidential?": [
         "Come fa ${ LUMO_SHORT_APP_NAME } a mantenere riservate le nostre conversazioni?"
-      ],
-      "Inspiration": [
-        "Ispirazione"
       ],
       "Instructions": [
         "Istruzioni"
@@ -2690,9 +2579,6 @@
       "More options": [
         "Altre opzioni"
       ],
-      "More Projects with ${ LUMO_SHORT_APP_NAME } Plus": [
-        "Altri progetti con ${ LUMO_SHORT_APP_NAME } Plus"
-      ],
       "No chat history yet. Let's start chatting!": [
         "Ancora nessuna cronologia chat. Iniziamo a chattare!"
       ],
@@ -2708,17 +2594,11 @@
       "Project knowledge": [
         "Conoscenza del progetto"
       ],
-      "Projects": [
-        "Progetti"
-      ],
       "Remove all files?": [
         "Rimuovi tutti i file?"
       ],
       "Settings": [
         "Impostazioni"
-      ],
-      "Sign in to create projects": [
-        "Accedi per creare progetti"
       ],
       "Start a new conversation": [
         "Inizia una nuova conversazione"
@@ -2734,11 +2614,6 @@
       ],
       "Whatever you ask me is:": [
         "Qualunque cosa mi chiedi è:"
-      ]
-    },
-    "collider_2025:Tooltip": {
-      "Choose icon": [
-        "Scegli icona"
       ]
     },
     "collider_2025:Warning": {
