@@ -9,10 +9,6 @@ import yahooLogo from '@proton/styles/assets/img/import/providers/yahoo_short.sv
 
 import { ImportProvider, MailImportGmailCategories, OAUTH_PROVIDER, TIME_PERIOD } from './interface';
 
-export const G_OAUTH_SCOPE_DEFAULT = ['email', 'openid'];
-
-export const G_OAUTH_SCOPE_MAIL_READONLY = ['https://www.googleapis.com/auth/gmail.readonly'];
-
 export const O_OAUTH_SCOPE_DEFAULT = ['email', 'openid', 'User.Read', 'offline_access'];
 export const O_OAUTH_SCOPE_MAIL = ['Mail.read'];
 export const O_OAUTH_SCOPE_CONTACTS = ['Contacts.read'];
@@ -55,15 +51,18 @@ export const CALENDAR_TO_BE_CREATED_PREFIX = '###TO_BE_CREATED###';
 
 /* Sync specific */
 
-export const SYNC_G_OAUTH_SCOPES = [...G_OAUTH_SCOPE_DEFAULT, G_OAUTH_SCOPE_MAIL_READONLY];
-export const SYNC_SUCCESS_NOTIFICATION: CreateNotificationOptions = {
-    type: 'success',
-    text: c('account').t`Forwarding will start soon. New emails will appear in your inbox.`,
+export const getSyncSuccessNotification = (): CreateNotificationOptions => {
+    return {
+        type: 'success',
+        text: c('account').t`Forwarding will start soon. New emails will appear in your inbox.`,
+    };
 };
 
-export const BYOE_FAIL_NOTIFICATION: CreateNotificationOptions = {
-    type: 'error',
-    text: c('loc_nightly: BYOE').t`Address could not be added.`,
+export const getBYOEFailNotification = (): CreateNotificationOptions => {
+    return {
+        type: 'error',
+        text: c('Error').t`Address could not be added.`,
+    };
 };
 
 export const MAX_SYNC_FREE_USER = 1;

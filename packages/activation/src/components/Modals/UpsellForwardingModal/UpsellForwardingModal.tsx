@@ -35,16 +35,14 @@ const UpsellForwardingModal = ({ hasAccessToBYOE, modalProps }: Props) => {
                 <>
                     <span>
                         {hasAccessToBYOE
-                            ? c('loc_nightly: BYOE')
-                                  .t`You've connected one external account address to ${MAIL_APP_NAME}.`
+                            ? c('Description').t`You've connected one external account address to ${MAIL_APP_NAME}.`
                             : c('Easy switch')
                                   .t`You're forwarding emails from one external account to ${MAIL_APP_NAME}.`}
                     </span>
                     <span className="ml-1">
                         {hasAccessToBYOE
                             ? /*translator: full sentence is "Upgrade to Mail Plus to connect up to 3 accounts."*/
-                              c('loc_nightly: BYOE')
-                                  .t`Upgrade to ${planName} to connect up to ${MAX_SYNC_PAID_USER} accounts`
+                              c('Description').t`Upgrade to ${planName} to connect up to ${MAX_SYNC_PAID_USER} accounts`
                             : /*translator: full sentence is "To forward emails from up to 3 accounts, upgrade to Mail Plus."*/
                               c('Easy switch')
                                   .t`To forward emails from up to ${MAX_SYNC_PAID_USER} accounts, upgrade to ${planName}.`}
