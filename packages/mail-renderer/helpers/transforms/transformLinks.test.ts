@@ -85,5 +85,28 @@ describe('transformLinks service', () => {
             expect(querySelector('#test-link')?.getAttribute('target')).toBe('_blank');
             expect(querySelector('#test-link')?.getAttribute('href')).toBe('https://testing.com');
         });
+
+        it('should set word-break on long link text without wrap opportunities', () => {
+            const longRun = 'loremipsumloremipsumloremipsumloremipsumloremipsumloremipsumloremipsumloremipsum';
+            const { querySelector } = setup(`<a id="long-run" href="https://example.com">${longRun}</a>`);
+            expect((querySelector('#long-run') as HTMLElement).style.wordBreak).toBe('break-word');
+        });
+
+        it('should not set word-break when long text is breakable at spaces', () => {
+            const text = 'short words repeated short words repeated short words repeated short words repeated';
+            const { querySelector } = setup(`<a id="breakable" href="https://example.com">${text}</a>`);
+            expect((querySelector('#breakable') as HTMLElement).style.wordBreak).toBe('');
+        });
+
+        it('should set word-break when many inline spans concatenate to a long unbroken run', () => {
+            const spans = Array.from({ length: 12 }, () => '<span>lorem</span>').join('');
+            const { querySelector } = setup(`<a id="spans" href="https://example.com">${spans}</a>`);
+            expect((querySelector('#spans') as HTMLElement).style.wordBreak).toBe('break-word');
+        });
+        it('should set word-break when many inline spans concatenate to a long unbroken run with unbreakable characters', () => {
+            const spans = Array.from({ length: 12 }, () => '<span>lorem&nbsp;</span>').join('');
+            const { querySelector } = setup(`<a id="spans" href="https://example.com">${spans}</a>`);
+            expect((querySelector('#spans') as HTMLElement).style.wordBreak).toBe('break-word');
+        });
     });
 });
