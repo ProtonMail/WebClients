@@ -1241,6 +1241,9 @@
       ],
       "Hide": [
         "Piilota"
+      ],
+      "Refetch index": [
+        "Hae indeksi uudelleen"
       ]
     },
     "Action: Docs": {
@@ -6708,6 +6711,18 @@
       ],
       "Some items failed": [
         "Jotkin kohteet epäonnistuivat"
+      ],
+      "${ state.result.entries.length } entries": [
+        "${ state.result.entries.length } kohdetta"
+      ],
+      "Index is empty.": [
+        "Indeksi on tyhjä."
+      ],
+      "Search module is not available.": [
+        "Hakumoduulia ei ole saatavilla."
+      ],
+      "Unsupported file type for Photos": [
+        "Tiedostotyyppiä ei tueta Photos-palvelussa"
       ]
     },
     "info": {
@@ -7453,6 +7468,27 @@
       ],
       "ZIP code": [
         "Postinumero"
+      ],
+      "Environment compatible": [
+        "Yhteensopiva ympäristö"
+      ],
+      "Index kinds": [
+        "Indeksilajit"
+      ],
+      "Initial indexing": [
+        "Alustava indeksointi"
+      ],
+      "Outdated version": [
+        "Vanhentunut versio"
+      ],
+      "Searchable": [
+        "Haettavissa"
+      ],
+      "User opted in": [
+        "Suostumus annettu"
+      ],
+      "Visible columns:": [
+        "Näkyvät sarakkeet:"
       ]
     },
     "Label for contact group color": {
@@ -12609,6 +12645,15 @@
       ],
       "Share \"${ fileName }\"": [
         "Jaa \"${ fileName }\""
+      ],
+      "Actions": [
+        "Toiminnot"
+      ],
+      "Global": [
+        "Globaali"
+      ],
+      "Search": [
+        "Hae"
       ]
     },
     "Today icon tooltip in mini calendar": {

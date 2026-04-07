@@ -1244,6 +1244,9 @@
       ],
       "Continue to ${ planOrAppName }": [
         "Weiter zu ${ planOrAppName }"
+      ],
+      "Refetch index": [
+        "Index neu abrufen"
       ]
     },
     "Action: Docs": {
@@ -7007,6 +7010,18 @@
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } hinzufügen"
+      ],
+      "${ state.result.entries.length } entries": [
+        "${ state.result.entries.length } Einträge"
+      ],
+      "Index is empty.": [
+        "Kein Index verfügbar."
+      ],
+      "Search module is not available.": [
+        "Suchmodul ist nicht verfügbar."
+      ],
+      "Unsupported file type for Photos": [
+        "Für Fotos nicht unterstützter Dateityp"
       ]
     },
     "info": {
@@ -7773,6 +7788,27 @@
       ],
       "Skip feedback": [
         "Rückmeldung überspringen"
+      ],
+      "Environment compatible": [
+        "Umweltverträglich"
+      ],
+      "Index kinds": [
+        "Indexarten"
+      ],
+      "Initial indexing": [
+        "Erstindizierung"
+      ],
+      "Outdated version": [
+        "Veraltete Version"
+      ],
+      "Searchable": [
+        "Durchsuchbar"
+      ],
+      "User opted in": [
+        "Nutzer hat zugestimmt"
+      ],
+      "Visible columns:": [
+        "Sichtbare Spalten:"
       ]
     },
     "Label for contact group color": {
@@ -13276,6 +13312,15 @@
       ],
       "You’ve got 5 GB of storage": [
         "Du hast 5 GB Speicherplatz."
+      ],
+      "Actions": [
+        "Aktionen"
+      ],
+      "Global": [
+        "Systemweit"
+      ],
+      "Search": [
+        "Suchen"
       ]
     },
     "Today icon tooltip in mini calendar": {
