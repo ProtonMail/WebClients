@@ -133,7 +133,7 @@
         "Усе без зорачкі"
       ],
       "Apply": [
-        "Ужыць"
+        "Прымяніць"
       ],
       "Archive": [
         "Архіваваць"
@@ -4401,17 +4401,11 @@
       ]
     },
     "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "Палепшыце да тарыфнага плана ${ planName }, каб перасылаць лісты з максімальнай колькасцю ў ${ MAX_SYNC_PAID_USER } уліковы запіс.",
-        "Палепшыце да тарыфнага плана ${ planName }, каб перасылаць лісты з максімальнай колькасцю ў ${ MAX_SYNC_PAID_USER } уліковыя запісы.",
-        "Палепшыце да тарыфнага плана ${ planName }, каб перасылаць лісты з максімальнай колькасцю ў ${ MAX_SYNC_PAID_USER } уліковых запісаў.",
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
         "Палепшыце да тарыфнага плана ${ planName }, каб перасылаць лісты з максімальнай колькасцю ў ${ MAX_SYNC_PAID_USER } уліковых запісаў."
       ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "Вы перасылаеце лісты з ${ MAX_SYNC_FREE_USER } знешняга ўліковага запісу ў ${ MAIL_APP_NAME }.",
-        "Вы перасылаеце лісты з ${ MAX_SYNC_FREE_USER } знешніх уліковых запісаў у ${ MAIL_APP_NAME }.",
-        "Вы перасылаеце лісты з ${ MAX_SYNC_FREE_USER } знешніх уліковых запісаў у ${ MAIL_APP_NAME }.",
-        "Вы перасылаеце лісты з ${ MAX_SYNC_FREE_USER } знешніх уліковых запісаў у ${ MAIL_APP_NAME }."
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "Вы перасылаеце лісты з аднаго знешняга ўліковага запісу ў ${ MAIL_APP_NAME }."
       ]
     },
     "Edit billing address form note": {
@@ -6480,11 +6474,11 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "Пашыраны імпарт"
-      ],
       "Import from ${ providerName }": [
         "Імпартаваць з ${ providerName }"
+      ],
+      "More import options": [
+        "Больш параметраў імпарту"
       ]
     },
     "Import warning": {
@@ -7028,13 +7022,13 @@
         "Любыя падпапкі будуць выдалены таксама. Аднак лісты, якія захаваны ў папцы ${ nameDeleted }, не будуць выдалены і іх можна будзе знайсці ў папцы \"Уся пошта\"."
       ],
       "Apply to future messages": [
-        "Ужыць да будучых паведамленняў"
+        "Прымяніць да будучых паведамленняў"
       ],
       "Applying actions to conversations": [
-        "Ужыць дзеянні да размоў"
+        "Прымяніць дзеянні да размоў"
       ],
       "Applying actions to messages": [
-        "Ужыць дзеянні да паведамленняў"
+        "Прымяніць дзеянні да паведамленняў"
       ],
       "Archive existing messages": [
         "Архіваваць існуючыя паведамленні"
@@ -7706,10 +7700,7 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс",
-        "Уставіць відарысы",
-        "Уставіць відарысы",
-        "Уставіць відарысы"
+        "Уставіць відарыс"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -9095,7 +9086,7 @@
         "Ваш уліковы запіс мае прынамсі адзін пратэрмінаваны рахунак. Ваш доступ неўзабаве будзе абмежаваны. ${ payInvoiceLink }"
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
-        "Ваш уліковы запіс у цяперашні час сканфігурыраваны, каб ужываць схему адваротнага налічэння падатку. Гэты параметр не падтрымліваецца для выбранага тарыфнага плана. Вы можаце, або выдаліць нумар ПДВ з плацежнага адраса, або выбраць іншы тарыфны план, каб працягнуць аперацыю."
+        "Ваш уліковы запіс у цяперашні час сканфігурыраваны, каб прымяняць схему адваротнага налічэння падатку. Гэты параметр не падтрымліваецца для выбранага тарыфнага плана. Вы можаце, або выдаліць нумар ПДВ з плацежнага адраса, або выбраць іншы тарыфны план, каб працягнуць аперацыю."
       ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "Ваш браўзер не падтрымлівае памочніка ў напісанні. Паспрабуйце запусціць яго на серверы."
@@ -9305,7 +9296,7 @@
         "Дадаць тэрмін дзеяння"
       ],
       "Apply / open": [
-        "Ужыць / адкрыць"
+        "Прымяніць / адкрыць"
       ],
       "Attach file": [
         "Далучыць файл"
@@ -9585,10 +9576,10 @@
         "Пароль праграмы"
       ],
       "Apply filter to existing emails": [
-        "Ужыць фільтр да існуючых лістоў"
+        "Прымяніць фільтр да існуючых лістоў"
       ],
       "Apply to future messages": [
-        "Ужыць да будучых паведамленняў"
+        "Прымяніць да будучых паведамленняў"
       ],
       "Attach screenshot(s)": [
         "Далучыць здымак(-і) экрана"
@@ -11869,7 +11860,7 @@
         "Абараняе вас, блакіруючы ўсе падключэнні да сеткі пры нечаканым адключэнні ад нашага сервера VPN."
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
-        "Меткі - гэта простыя тэгі, якія можна дадаваць да паведамленняў. Яны дазваляюць прасцей знаходзіць неабходныя лісты або ўжываць фільтры"
+        "Меткі - гэта простыя тэгі, якія можна дадаваць да паведамленняў. Яны дазваляюць прасцей знаходзіць неабходныя лісты або прымяняць фільтры"
       ],
       "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
         "Пажыццёвы доступ да ${ PASS_APP_NAME } + прэміяльныя функцыі SimpleLogin."
@@ -12251,29 +12242,29 @@
       ]
     },
     "Onboarding List Placeholder": {
-      "Choose your service": [
-        "Выберыце свой сэрвіс"
+      "Bring your emails into ${ MAIL_APP_NAME }": [
+        "Перанясіце свае лісты ў ${ MAIL_APP_NAME }"
+      ],
+      "Bring your existing email into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Перанясіце сваю існуючучую электронную пошту ў ${ MAIL_APP_NAME }, каб у вас была магчымасць кіраваць усімі лістамі з адной прыватнай паштовай скрыні."
+      ],
+      "Choose a provider": [
+        "Выберыце пастаўшчыка"
       ],
       "Maybe later": [
         "Магчыма пазней"
       ],
-      "Popular services": [
-        "Папулярныя сэрвісы"
+      "Protect your accounts": [
+        "Абараніце свае ўліковыя запісы"
       ],
       "Skip for now": [
         "Пакуль прапусціць"
       ],
-      "Switch your accounts to ${ BRAND_NAME }": [
-        "Пераключыце свае ўліковыя запісы на ${ BRAND_NAME }"
+      "Some popular services": [
+        "Некаторыя папулярныя сэрвісы"
       ],
-      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
-        "Перайсці на іншую электронную пошту даволі складана. З ${ BRAND_NAME } гэта зрабіць проста. Падключыце свой стары ўліковы запіс у адной мэтанакіраванай працоўнай прасторы, якая не змяшчае рэкламы."
-      ],
-      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
-        "Абнавіце сваю электронную пошту ў сэрвісах, якімі вы карыстаецеся часцей за ўсё. Прадухіляйце адсочванне і абараняйце сваю прыватнасць."
-      ],
-      "Welcome to ${ MAIL_APP_NAME }": [
-        "Вітаем у ${ MAIL_APP_NAME }"
+      "Switch the services you use every day to your ${ BRAND_NAME } address for better security and privacy.": [
+        "Перанясіце сэрвісы, якімі вы карыстаецеся штодзень у свой адрас ${ BRAND_NAME } для лепшай бяспекі і прыватнасці."
       ]
     },
     "Onboarding modal": {
@@ -15441,7 +15432,7 @@
         "Доступ у любы час і ў любым месцы"
       ],
       "Apply gift code": [
-        "Ужыць падарункавы код"
+        "Прымяніць падарункавы код"
       ],
       "Archive all messages?": [
         "Архіваваць усе паведамленні?"
@@ -15532,9 +15523,6 @@
       ],
       "Connect apps and devices": [
         "Падключэнне праграм і прылад"
-      ],
-      "Connect more addresses": [
-        "Падключыць больш адрасоў"
       ],
       "Connect to video conferencing": [
         "Падключыцца да відэаканферэнцыі"
