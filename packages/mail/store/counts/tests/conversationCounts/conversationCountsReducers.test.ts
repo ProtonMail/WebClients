@@ -808,6 +808,155 @@ describe('conversationCountsReducers', () => {
                     { LabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS, Unread: 1, Total: 3 }, // Not decremented
                 ]);
             });
+
+            it('should not decrement category count when messages are in Trash but not Inbox', () => {
+                state = getInitialState([
+                    { LabelID: MAILBOX_LABEL_IDS.TRASH, Unread: 1, Total: 5 },
+                    { LabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, Unread: 1, Total: 3 },
+                ]);
+
+                const conversation = {
+                    ID: conversationID1,
+                    Labels: [
+                        { ID: MAILBOX_LABEL_IDS.TRASH, ContextNumUnread: 2 },
+                        { ID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, ContextNumUnread: 2 },
+                    ],
+                };
+
+                const messages = [
+                    {
+                        ConversationID: conversationID1,
+                        ID: 'msg1',
+                        LabelIDs: [MAILBOX_LABEL_IDS.TRASH, MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS],
+                        Unread: 1,
+                    },
+                    {
+                        ConversationID: conversationID1,
+                        ID: 'msg2',
+                        LabelIDs: [MAILBOX_LABEL_IDS.TRASH, MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS],
+                        Unread: 1,
+                    },
+                ] as MessageMetadata[];
+
+                markMessagesAsRead(state, {
+                    type: 'mailbox/markMessagesAsRead',
+                    payload: {
+                        messages,
+                        labelID: MAILBOX_LABEL_IDS.TRASH,
+                        conversations: [conversation],
+                        folders: [],
+                        labels: [],
+                    },
+                });
+
+                expect(state.value).toEqual([
+                    { LabelID: MAILBOX_LABEL_IDS.TRASH, Unread: 0, Total: 5 },
+                    { LabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, Unread: 1, Total: 3 },
+                ]);
+            });
+
+            it('should not decrement category count when messages are in Starred but not Inbox', () => {
+                state = getInitialState([
+                    { LabelID: MAILBOX_LABEL_IDS.STARRED, Unread: 1, Total: 5 },
+                    { LabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, Unread: 1, Total: 3 },
+                ]);
+
+                const conversation = {
+                    ID: conversationID1,
+                    Labels: [
+                        { ID: MAILBOX_LABEL_IDS.STARRED, ContextNumUnread: 2 },
+                        { ID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, ContextNumUnread: 2 },
+                    ],
+                };
+
+                const messages = [
+                    {
+                        ConversationID: conversationID1,
+                        ID: 'msg1',
+                        LabelIDs: [MAILBOX_LABEL_IDS.STARRED, MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS],
+                        Unread: 1,
+                    },
+                    {
+                        ConversationID: conversationID1,
+                        ID: 'msg2',
+                        LabelIDs: [MAILBOX_LABEL_IDS.STARRED, MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS],
+                        Unread: 1,
+                    },
+                ] as MessageMetadata[];
+
+                markMessagesAsRead(state, {
+                    type: 'mailbox/markMessagesAsRead',
+                    payload: {
+                        messages,
+                        labelID: MAILBOX_LABEL_IDS.STARRED,
+                        conversations: [conversation],
+                        folders: [],
+                        labels: [],
+                    },
+                });
+
+                expect(state.value).toEqual([
+                    { LabelID: MAILBOX_LABEL_IDS.STARRED, Unread: 0, Total: 5 },
+                    { LabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, Unread: 1, Total: 3 },
+                ]);
+            });
+
+            it('should decrement category count when messages are in Inbox and Starred', () => {
+                state = getInitialState([
+                    { LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 1, Total: 5 },
+                    { LabelID: MAILBOX_LABEL_IDS.STARRED, Unread: 1, Total: 3 },
+                    { LabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, Unread: 1, Total: 3 },
+                ]);
+
+                const conversation = {
+                    ID: conversationID1,
+                    Labels: [
+                        { ID: MAILBOX_LABEL_IDS.INBOX, ContextNumUnread: 2 },
+                        { ID: MAILBOX_LABEL_IDS.STARRED, ContextNumUnread: 2 },
+                        { ID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, ContextNumUnread: 2 },
+                    ],
+                };
+
+                const messages = [
+                    {
+                        ConversationID: conversationID1,
+                        ID: 'msg1',
+                        LabelIDs: [
+                            MAILBOX_LABEL_IDS.INBOX,
+                            MAILBOX_LABEL_IDS.STARRED,
+                            MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
+                        ],
+                        Unread: 1,
+                    },
+                    {
+                        ConversationID: conversationID1,
+                        ID: 'msg2',
+                        LabelIDs: [
+                            MAILBOX_LABEL_IDS.INBOX,
+                            MAILBOX_LABEL_IDS.STARRED,
+                            MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
+                        ],
+                        Unread: 1,
+                    },
+                ] as MessageMetadata[];
+
+                markMessagesAsRead(state, {
+                    type: 'mailbox/markMessagesAsRead',
+                    payload: {
+                        messages,
+                        labelID: MAILBOX_LABEL_IDS.STARRED,
+                        conversations: [conversation],
+                        folders: [],
+                        labels: [],
+                    },
+                });
+
+                expect(state.value).toEqual([
+                    { LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 0, Total: 5 },
+                    { LabelID: MAILBOX_LABEL_IDS.STARRED, Unread: 0, Total: 3 },
+                    { LabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, Unread: 0, Total: 3 },
+                ]);
+            });
         });
 
         describe('custom folders', () => {
