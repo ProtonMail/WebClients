@@ -1,6 +1,16 @@
 import { updateServerTime } from '@proton/crypto/lib/serverTime';
 import { API_CONCURRENCY_TRESHOLD } from '@proton/pass/constants';
-import type { Api, ApiAuth, ApiCallFn, ApiOptions, ApiResult, ApiSubscriptionEvent, Maybe } from '@proton/pass/types';
+import { authStore } from '@proton/pass/lib/auth/store';
+import {
+    type Api,
+    type ApiAuth,
+    type ApiCallFn,
+    type ApiOptions,
+    type ApiResult,
+    type ApiSubscriptionEvent,
+    AuthMode,
+    type Maybe,
+} from '@proton/pass/types';
 import { awaiter } from '@proton/pass/utils/fp/promises';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { logger } from '@proton/pass/utils/logger';
@@ -24,7 +34,7 @@ import noop from '@proton/utils/noop';
 import { PassErrorCode, isAbortError } from './errors';
 import { withApiHandlers } from './handlers';
 import { refreshHandlerFactory } from './refresh';
-import { buildApiState, getDynamicAuth, getSilenced, isAccessRestricted } from './utils';
+import { buildApiState, getSilenced, isAccessRestricted } from './utils';
 
 export type ApiFactoryOptions = {
     config: ProtonConfig;
@@ -33,6 +43,18 @@ export type ApiFactoryOptions = {
      * requests will be deferred until the threshold is ready for additional processing. */
     threshold?: number;
     getAuth?: () => Maybe<ApiAuth>;
+};
+
+/** Provides dynamic API auth options based on the current session state.
+ * Supports upgrading from token-based to cookie-based authentication.
+ * This is crucial for scenarios where token-based auth is required
+ * before transitioning to cookies, enabling seamless auth upgrades. */
+export const getDynamicAuth = (): Maybe<ApiAuth> => {
+    const { cookies, UID, AccessToken, RefreshToken, RefreshTime } = authStore.getSession();
+    if (!UID) return undefined;
+
+    if (cookies) return { type: AuthMode.COOKIE, UID, RefreshTime };
+    if (AccessToken && RefreshToken) return { type: AuthMode.TOKEN, UID, AccessToken, RefreshToken, RefreshTime };
 };
 
 export const createApi = ({
