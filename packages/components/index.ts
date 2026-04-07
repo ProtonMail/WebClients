@@ -356,7 +356,6 @@ export {
     useAccountSpotlights,
 } from './containers/account/spotlights/AccountSpotlightsProvider';
 export { StartUsingPassSpotlight } from './containers/account/spotlights/passB2bOnboardingSpotlights/PassB2bOnboardingSpotlights';
-export { default as TotpInputs } from './containers/account/totp/TotpInputs';
 export { default as TwoFactorSection } from './containers/account/TwoFactorSection';
 export { default as UpgradeBanner } from './containers/account/UpgradeBanner';
 export { default as UsernameSection } from './containers/account/UsernameSection';

@@ -46,6 +46,7 @@ import Testflight from './Testflight';
 import TwoFactorStep from './TwoFactorStep';
 import UnlockForm from './UnlockForm';
 import SSOLogin from './sso/SSOLogin';
+import { UnauthedLost2FAContainer } from './unauth-lost-2fa/UnauthedLost2FAContainer';
 
 export enum RememberMode {
     VisibleDisabled = 0, // default
@@ -255,9 +256,9 @@ const LoginContainer = ({
         };
     })();
 
-    const sharedProps: Pick<RenderProps, 'step' | 'toApp'> = {
+    const sharedProps: Pick<RenderProps, 'toApp' | 'hasDecoration'> = {
         toApp,
-        step,
+        hasDecoration: step === AuthStep.LOGIN,
     };
     if (isElectronDisabled) {
         return <ElectronBlockedContainer />;
@@ -328,6 +329,7 @@ const LoginContainer = ({
                                                 authType: data.authType,
                                                 authResponse: data.authResponse,
                                                 authVersion: data.authVersion,
+                                                challengeResult: data.payload,
                                                 productParam,
                                             });
                                             if (validateFlow()) {
@@ -390,10 +392,49 @@ const LoginContainer = ({
 
                                     throw new Error('Unknown type');
                                 }}
+                                onLost2FAClick={() => setStep(AuthStep.LOST_TWO_FA)}
                             />
                         ),
                     })}
                 </>
+            )}
+            {step === AuthStep.LOST_TWO_FA && cache && (
+                <UnauthedLost2FAContainer
+                    render={render}
+                    toApp={toApp}
+                    returnTo2FAStep={() => setStep(AuthStep.TWO_FA)}
+                    username={cache.username}
+                    recoveryMethods={{
+                        email: cache.authResponse.HasRecoveryEmail,
+                        phone: cache.authResponse.HasRecoveryPhone,
+                    }}
+                    twoFactorAuthTypes={cache.authTypes.twoFactor}
+                    onSubmitBackupTotpCode={async (backupCode: string) => {
+                        try {
+                            const validateFlow = createFlow();
+                            const result = await handleTotp({
+                                cache,
+                                totp: backupCode,
+                            });
+                            if (validateFlow()) {
+                                return await handleResult(result);
+                            }
+                        } catch (e: any) {
+                            if (e.name === 'TOTPError') {
+                                // Re-throw so the machine can show an inline error and allow retry
+                                throw e;
+                            }
+                            handleError(e);
+                            handleCancel();
+                        }
+                    }}
+                    on2FADisabled={(username) => {
+                        window.location.assign(`${paths.login}?username=${username}`);
+                    }}
+                    onResetPassword={(username) => {
+                        window.location.assign(`${paths.reset}?username=${username}`);
+                    }}
+                />
             )}
             {step === AuthStep.UNLOCK && cache && (
                 <>
