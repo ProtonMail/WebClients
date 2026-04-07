@@ -175,7 +175,7 @@ export interface DriveExplorerProps {
      * Drag-and-drop handlers for moving items.
      * Includes drag state, drop validation, and event handlers.
      */
-    dragMoveControls?: DragMoveControls;
+    getDragMoveControls?: (uid: string) => DragMoveControls;
 
     /**
      * Disable multi-selection (Ctrl/Shift+click).
@@ -248,7 +248,7 @@ const DriveExplorer = ({
     sort,
     loading = false,
     caption,
-    dragMoveControls,
+    getDragMoveControls,
     isMultiSelectionDisabled,
     showCheckboxColumn = true,
     contextMenuControls,
@@ -342,7 +342,7 @@ const DriveExplorer = ({
                     loading={loading}
                     config={config}
                     isMultiSelectionDisabled={isMultiSelectionDisabled}
-                    dragMoveControls={dragMoveControls}
+                    getDragMoveControls={getDragMoveControls}
                     showCheckboxColumn={showCheckboxColumn}
                     contextMenuControls={contextMenuControls}
                 />
@@ -356,7 +356,7 @@ const DriveExplorer = ({
                     conditions={resolvedConditions}
                     loading={loading}
                     selection={selection}
-                    dragMoveControls={dragMoveControls}
+                    getDragMoveControls={getDragMoveControls}
                     isMultiSelectionDisabled={isMultiSelectionDisabled}
                     showCheckboxColumn={showCheckboxColumn}
                     contextMenuControls={contextMenuControls}

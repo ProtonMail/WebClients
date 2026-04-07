@@ -26,7 +26,7 @@ interface DriveExplorerGridBodyProps {
     loading?: boolean;
     selection: DriveExplorerSelection;
     isMultiSelectionDisabled?: boolean;
-    dragMoveControls?: DragMoveControls;
+    getDragMoveControls?: (uid: string) => DragMoveControls;
     showCheckboxColumn?: boolean;
     contextMenuControls?: ContextMenuControls;
 }
@@ -66,7 +66,7 @@ export const DriveExplorerGridBody = ({
     loading,
     selection,
     isMultiSelectionDisabled,
-    dragMoveControls,
+    getDragMoveControls,
     showCheckboxColumn = true,
     contextMenuControls,
 }: DriveExplorerGridBodyProps) => {
@@ -128,7 +128,7 @@ export const DriveExplorerGridBody = ({
                                     events={events}
                                     conditions={conditions}
                                     isMultiSelectionDisabled={isMultiSelectionDisabled}
-                                    dragMoveControls={dragMoveControls}
+                                    getDragMoveControls={getDragMoveControls}
                                     showCheckboxColumn={showCheckboxColumn}
                                     contextMenuControls={contextMenuControls}
                                     onObserve={observeElement}
