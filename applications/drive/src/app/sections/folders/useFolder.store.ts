@@ -32,6 +32,7 @@ export type FolderViewItem = {
     parentUid: string | undefined;
     hasSignatureIssues: boolean;
     type: NodeType;
+    effectiveRole: MemberRole;
 };
 
 export type FolderViewData = {
