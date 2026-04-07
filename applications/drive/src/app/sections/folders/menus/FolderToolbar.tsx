@@ -2,7 +2,6 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { Vr } from '@proton/atoms/Vr/Vr';
 import { Toolbar, useActiveBreakpoint } from '@proton/components';
-import { MemberRole } from '@proton/drive/index';
 import { getDevice } from '@proton/shared/lib/helpers/browser';
 
 import { isMultiSelect, noSelection } from '../../../components/sections/ToolbarButtons/utils';
@@ -37,6 +36,7 @@ interface Props {
     uploadFile: FolderUploadFile;
     uploadFolder: FolderUploadFolder;
     showOptionsForNoSelection?: boolean;
+    canShareSingleItem: boolean;
 }
 
 export const FolderToolbar = ({
@@ -45,6 +45,7 @@ export const FolderToolbar = ({
     uploadFile,
     uploadFolder,
     showOptionsForNoSelection = true,
+    canShareSingleItem,
 }: Props) => {
     const isDesktop = !getDevice()?.type;
     const { viewportWidth } = useActiveBreakpoint();
@@ -74,10 +75,6 @@ export const FolderToolbar = ({
         showFileSharingModal,
     } = actions;
 
-    const isAdmin = role === MemberRole.Admin;
-    const shouldShowShareButton = permissions.canShare && selectedItems.length === 0 && items.size > 0;
-    const shouldShowShareLinkButton = isAdmin && (selectedItems.length > 0 || permissions.canShareNode);
-    const selectedItem = selectedItems.length === 1 ? selectedItems[0] : undefined;
     const { downloadItems } = useDownloadActions({ selectedItems });
 
     const renderSelectionActions = () => {
@@ -108,8 +105,8 @@ export const FolderToolbar = ({
                         </>
                     ) : null}
 
-                    {shouldShowShareButton && <ShareToolbarButton onClick={showFileSharingModal} />}
-                    {shouldShowShareLinkButton && <ShareLinkButton type="toolbar" onClick={showSharingModal} />}
+                    {canShareSingleItem && <ShareToolbarButton onClick={showFileSharingModal} />}
+                    {canShareSingleItem && <ShareLinkButton type="toolbar" onClick={showSharingModal} />}
                 </>
             );
         }
@@ -119,11 +116,17 @@ export const FolderToolbar = ({
                 <PreviewButton selectedItems={selectedItems} type="toolbar" onClick={showPreviewModal} />
                 {permissions.canOpenInDocs && <OpenInDocsButton type="toolbar" selectedItems={selectedItems} />}
                 <DownloadButton type="toolbar" selectedItems={selectedItems} onClick={downloadItems} />
+                {/* CAREFUL separate menu for small viewport - same problem with sharing... */}
                 {viewportWidth['<=small'] ? (
-                    <ActionsDropdown volumeId={volumeId} selectedItems={selectedItems} role={role} />
+                    <ActionsDropdown
+                        volumeId={volumeId}
+                        selectedItems={selectedItems}
+                        role={role}
+                        canShareSingleItem={canShareSingleItem}
+                    />
                 ) : (
                     <>
-                        {shouldShowShareLinkButton && selectedItem && (
+                        {canShareSingleItem && (
                             <>
                                 <ShareLinkButton type="toolbar" onClick={showSharingModal} />
                                 <Vr />

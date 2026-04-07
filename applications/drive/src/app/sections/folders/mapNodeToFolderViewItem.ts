@@ -2,6 +2,7 @@ import type { ProtonDriveClient } from '@proton/drive';
 import { type MaybeNode, type NodeEntity, NodeType, splitNodeUid } from '@proton/drive';
 
 import { getNodeDisplaySize } from '../../utils/sdk/getNodeDisplaySize';
+import { getNodeEffectiveRole } from '../../utils/sdk/getNodeEffectiveRole';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { getSignatureIssues } from '../../utils/sdk/getSignatureIssues';
 import { getLegacyModifiedTime, getLegacyTrashedTime, legacyTimestampToDate } from '../../utils/sdk/legacyTime';
@@ -28,6 +29,8 @@ export const mapNodeToFolderViewItem = async (
     const sdkSignatureIssues = getSignatureIssues(maybeNode);
     const modificationTimestamp = getLegacyModifiedTime(node);
 
+    const effectiveRole = await getNodeEffectiveRole(node, drive);
+
     return {
         uid: node.uid,
         name: node.name,
@@ -50,5 +53,6 @@ export const mapNodeToFolderViewItem = async (
         isSharedPublicly: node.isSharedPublicly,
         hasSignatureIssues: !sdkSignatureIssues.ok,
         type: node.type,
+        effectiveRole,
     };
 };

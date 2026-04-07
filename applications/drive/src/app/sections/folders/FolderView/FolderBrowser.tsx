@@ -3,7 +3,7 @@ import { type ReactNode, useCallback, useEffect, useRef } from 'react';
 import { useShallow } from 'zustand/react/shallow';
 
 import { useActiveBreakpoint } from '@proton/components';
-import { getDrive, splitNodeUid } from '@proton/drive';
+import { MemberRole, getDrive, splitNodeUid } from '@proton/drive';
 import { loadThumbnail } from '@proton/drive/modules/thumbnails';
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import type { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
@@ -122,6 +122,8 @@ export function FolderBrowser({
         useSelectionStore.getState().setAllItemIds(new Set(sortedItemUids));
     }, [sortedItemUids]);
 
+    const canShareSingleItem = selectedItems.length === 1 ? selectedItems[0].effectiveRole === MemberRole.Admin : false;
+
     // Close context menu when navigating to a different folder
     useEffect(() => {
         contextMenu.close();
@@ -178,6 +180,7 @@ export function FolderBrowser({
             uploadFile={uploadFile}
             uploadFolder={uploadFolder}
             showOptionsForNoSelection={showToolbarOptionsForNoSelection}
+            canShareSingleItem={canShareSingleItem}
         />
     );
 
@@ -296,6 +299,7 @@ export function FolderBrowser({
                 open={contextMenu.open}
                 position={contextMenu.position}
                 actions={actions}
+                canShareSingleItem={canShareSingleItem}
             />
             <DriveExplorer
                 itemIds={sortedItemUids}
