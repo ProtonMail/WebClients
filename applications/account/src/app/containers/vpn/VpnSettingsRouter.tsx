@@ -6,11 +6,11 @@ import {
     OpenVPNCredentialsSection,
     PrivateMainSettingsArea,
     ProtonVPNClientsSection,
-    TVContainer,
     WireGuardConfigurationSection,
 } from '@proton/components';
 import { getSectionPath } from '@proton/components/containers/layout/helper';
 import { VPN_TV_PATHS } from '@proton/shared/lib/constants';
+import { TVContainer } from '@proton/vpn/components/tv';
 
 import VpnUpgradeSection from './VpnUpgradeSection';
 import type { getVpnAppRoutes } from './routes';
@@ -31,7 +31,7 @@ const VpnSettingsRouter = ({
     return (
         <Switch>
             <Route path={VPN_TV_PATHS.map((pathname) => `${path}${pathname}`)}>
-                <TVContainer background={false} />
+                <TVContainer />
             </Route>
             <Route path={getSectionPath(path, downloads)}>
                 <PrivateMainSettingsArea config={downloads}>
