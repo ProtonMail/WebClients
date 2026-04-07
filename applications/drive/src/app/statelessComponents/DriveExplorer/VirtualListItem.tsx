@@ -22,7 +22,7 @@ interface VirtualListItemProps {
     selection: DriveExplorerSelection;
     events?: DriveExplorerEvents;
     onObserve: (element: HTMLElement | null, uid: string) => void;
-    dragMoveControls?: DragMoveControls;
+    getDragMoveControls?: (uid: string) => DragMoveControls;
     isMultiSelectionDisabled?: boolean;
     showCheckboxColumn?: boolean;
     contextMenuControls?: ContextMenuControls;
@@ -38,7 +38,7 @@ export function VirtualListItem({
     selection,
     events,
     onObserve,
-    dragMoveControls,
+    getDragMoveControls,
     isMultiSelectionDisabled,
     showCheckboxColumn,
     contextMenuControls,
@@ -81,7 +81,7 @@ export function VirtualListItem({
             selection={selection}
             events={events}
             onObserve={onObserve}
-            dragMoveControls={dragMoveControls}
+            dragMoveControls={itemId ? getDragMoveControls?.(itemId) : undefined}
             isMultiSelectionDisabled={isMultiSelectionDisabled}
             showCheckboxColumn={showCheckboxColumn}
             contextMenuControls={contextMenuControls}
