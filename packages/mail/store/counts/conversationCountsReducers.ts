@@ -236,10 +236,17 @@ export const markMessagesAsRead = (
 
         /**
          * Update category counts
-         * All messages in the conversation share the same category, so we can simply check if we're marking all unread messages as read
+         * All messages in the conversation share the same category, so we can simply check if we're marking all unread messages as read.
+         * Only decrement if at least one of the messages being marked as read is in Inbox (category messages outside Inbox are not counted).
          */
+        const hasMessagesInInbox = messagesFromConversation.some(({ LabelIDs }) =>
+            LabelIDs.includes(MAILBOX_LABEL_IDS.INBOX)
+        );
         const categoryLabels = conversation.Labels?.filter((label) => isCategoryLabel(label.ID)) || [];
         categoryLabels.forEach((categoryLabel) => {
+            if (!hasMessagesInInbox) {
+                return;
+            }
             if (categoryLabel.ContextNumUnread === totalMessagesCount && totalMessagesCount > 0) {
                 const categoryCounter = state.value?.find((counter) => counter.LabelID === categoryLabel.ID);
                 if (categoryCounter) {
