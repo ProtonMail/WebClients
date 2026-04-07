@@ -2,6 +2,7 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 import type { Draft } from 'immer';
 
 import type { MessageState, MessagesState } from '@proton/mail/store/messages/messagesTypes';
+import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { Message, MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 
 import type { Conversation } from 'proton-mail/models/conversation';
@@ -93,6 +94,40 @@ describe('messagesReducer', () => {
                     arg: {
                         conversations: [conversation],
                         labelID: 'label1',
+                    },
+                },
+            } as PayloadAction<undefined, string, { arg: { conversations: Conversation[]; labelID: string } }>;
+
+            messagesByConversationID.mockReturnValue([messageState1, messageState2]);
+
+            markConversationsAsReadPending(state, action);
+
+            expect(messageState1.data?.Unread).toBe(0);
+            expect(messageState2.data?.Unread).toBe(0);
+        });
+
+        it('should mark all messages as read regardless of which label the conversation is marked as read from', () => {
+            const messageState1: MessageState = {
+                localID: 'msg1',
+                data: { ID: 'msg1', Unread: 1, ConversationID: 'conv1' } as Message,
+            };
+            const messageState2: MessageState = {
+                localID: 'msg2',
+                data: { ID: 'msg2', Unread: 1, ConversationID: 'conv1' } as Message,
+            };
+            const state = {} as Draft<MessagesState>;
+            const conversation = {
+                ID: 'conv1',
+                Labels: [
+                    { ID: MAILBOX_LABEL_IDS.TRASH, ContextNumUnread: 2 },
+                    { ID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, ContextNumUnread: 2 },
+                ],
+            } as Conversation;
+            const action = {
+                meta: {
+                    arg: {
+                        conversations: [conversation],
+                        labelID: MAILBOX_LABEL_IDS.TRASH,
                     },
                 },
             } as PayloadAction<undefined, string, { arg: { conversations: Conversation[]; labelID: string } }>;
