@@ -16,13 +16,7 @@ export function SuggestBusinessButton() {
 
     // Business will get a spotlight for 1 week each month for free users with less than 50% storage used
     const now = new Date();
-    const year = now.getFullYear();
-    const month = now.getMonth();
     const dayOfMonth = now.getDate();
-    if (month === 2 && year === 2026) {
-        // Hide it during spring sale (from March 16th 2026)
-        return undefined;
-    }
     const shouldSuggestBusiness = !user.isPaid && usedSpaceRatio < 0.5 && dayOfMonth >= 15 && dayOfMonth <= 22;
     if (shouldSuggestBusiness) {
         return (

@@ -417,7 +417,6 @@ export {
     subscriptionExpires,
     isReferralTrial,
     getIsVPNPassPromotion,
-    hasSpringSale2026Coupon,
 } from './core/subscription/helpers';
 export {
     type Coupon,
