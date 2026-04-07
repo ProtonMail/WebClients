@@ -90,6 +90,9 @@
       "Apply": [
         "Aplicar"
       ],
+      "Ask me next time": [
+        "Preguntarme la próxima vez"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Se permite como máximo ${ maxContacts } contacto por grupo de contactos.",
         "Se permiten como máximo ${ maxContacts } contactos por grupo de contactos."
@@ -204,6 +207,9 @@
       ],
       "Continue import": [
         "Continuar la importación"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "Ir a ${ planOrAppName }"
       ],
       "Continue with Google": [
         "Continuar con Google"
@@ -672,6 +678,9 @@
       "Save changes": [
         "Guardar los cambios"
       ],
+      "Save preferences": [
+        "Guardar las preferencias"
+      ],
       "Search": [
         "Buscar"
       ],
@@ -927,6 +936,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } licencia de ${ LUMO_APP_NAME }",
         "${ seats } licencias de ${ LUMO_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } licencia de ${ MEET_APP_NAME }",
+        "${ seats } licencias de ${ MEET_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } licencia del asistente de escritura",
@@ -2518,6 +2531,9 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Usa esta guía para que tu organización se beneficie rápidamente del cifrado y el ecosistema de privacidad líderes del sector de ${ BRAND_NAME }."
       ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Lamentamos que te vayas. Si tienes un momento, te agradeceríamos mucho que nos contaras por qué quieres cancelar. Tus comentarios nos ayudan a mejorar ${ BRAND_NAME } para todo el mundo."
+      ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Con los grupos de contactos, puedes enviar correos electrónicos a todos los miembros del grupo con un clic."
       ],
@@ -4028,8 +4044,8 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "Importación avanzada"
+      "More import options": [
+        "Más opciones de importación"
       ]
     },
     "Import warning": {
@@ -4328,6 +4344,9 @@
       "Continue": [
         "Continuar"
       ],
+      "Converting document...": [
+        "Convirtiendo el documento..."
+      ],
       "Copied to clipboard": [
         "Copiada al portapapeles"
       ],
@@ -4377,11 +4396,17 @@
       "Creating link to folder": [
         "Creando enlace a la carpeta"
       ],
+      "Creating new document...": [
+        "Creando nuevo documento..."
+      ],
       "Current plan": [
         "Plan actual"
       ],
       "Current version": [
         "Versión actual"
+      ],
+      "Decrypting your document": [
+        "Descifrando tu documento"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Firma digital verificada. Se ha cargado este archivo de forma segura por ${ emailAddress }."
@@ -4467,6 +4492,12 @@
       "Enter your own password (as trusted contact).": [
         "Introduce tu propia contraseña (como contacto de confianza)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Error al convertir el documento: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Error al cargar el documento: ${ errorDetail }"
+      ],
       "Error Syncing": [
         "Error al sincronizar"
       ],
@@ -4475,6 +4506,9 @@
       ],
       "Everything in ${ planOrAppName }": [
         "Todo en ${ planOrAppName }"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Todo lo incluido en ${ planOrAppName }, y además:"
       ],
       "Failed to generate a secure link. The reason is: ${ error }": [
         "Error al generar un enlace seguro. Motivo: ${ error }"
@@ -4526,6 +4560,12 @@
       ],
       "Geoblocking": [
         "Bloqueo geográfico"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Recibe actualizaciones por correo electrónico sobre comentarios y sugerencias añadidos a tus documentos."
+      ],
+      "Get Notified About Comments": [
+        "Recibir notificaciones sobre los comentarios"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Los gobiernos y los proveedores de servicios de internet pueden monitorear tu actividad en línea. Ocultando tu IP real y cifrando tu actividad de navegación se vuelve privada."
@@ -4666,6 +4706,9 @@
       "Low Priority": [
         "Prioridad baja"
       ],
+      "Making a copy...": [
+        "Haciendo una copia..."
+      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Máximo ${ MAX_SHARED_URL_PASSWORD_LENGTH } carácter",
         "Máximo ${ MAX_SHARED_URL_PASSWORD_LENGTH } caracteres"
@@ -4696,6 +4739,9 @@
       ],
       "No contacts added yet": [
         "Todavía no se han añadido contactos."
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "No se ha especificado ningún documento en la URL. Vuelve a ${ DRIVE_APP_NAME } y selecciona uno."
       ],
       "No email address": [
         "No hay dirección de correo electrónico."
@@ -4977,6 +5023,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "El propietario de esta dirección ha desactivado el cifrado de extremo a extremo. Para poder enviar correos electrónicos cifrados a esta dirección, el propietario deberá volver a activar el cifrado de extremo a extremo."
+      ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "Parece que la URL que has introducido se ha copiado de Slack de forma incorrecta. Al copiar enlaces largos de Slack, haz clic derecho en el enlace y elige «Copiar enlace» en lugar de copiar directamente el texto truncado de la URL."
       ],
       "There are no documents in the trash.": [
         "No hay documentos en la papelera."
@@ -5460,6 +5509,9 @@
       "Add to group": [
         "Añadir al grupo"
       ],
+      "Additional comments": [
+        "Comentarios adicionales"
+      ],
       "Alias title": [
         "Título del alias"
       ],
@@ -5526,6 +5578,9 @@
       "Contacts": [
         "Contactos"
       ],
+      "Continue cancelling": [
+        "Continuar cancelando"
+      ],
       "Copy": [
         "Copiar"
       ],
@@ -5589,6 +5644,9 @@
       "Emails (last month)": [
         "Correos electrónicos (último mes)"
       ],
+      "Enable email notifications": [
+        "Activar las notificaciones de correo electrónico"
+      ],
       "Encrypt emails": [
         "Cifrar correos electrónicos"
       ],
@@ -5637,6 +5695,9 @@
       "Include application logs in bug report": [
         "Incluir los registros de la aplicación en el informe de errores"
       ],
+      "Include document name in notification": [
+        "Incluir el nombre del documento en las notificaciones"
+      ],
       "Include message and file name in invite email": [
         "Incluir el mensaje y nombre del archivo en el correo de invitación"
       ],
@@ -5675,6 +5736,9 @@
       ],
       "Main": [
         "Principal"
+      ],
+      "Main reason for cancelling": [
+        "Motivo principal de la cancelación"
       ],
       "Make editor": [
         "Dar permisos para editar"
@@ -5780,6 +5844,9 @@
       ],
       "Sign emails": [
         "Firmar correos electrónicos"
+      ],
+      "Skip feedback": [
+        "Omitir comentarios"
       ],
       "Skip file": [
         "Omitir archivo"
@@ -6080,6 +6147,18 @@
         "Complemento con prueba gratuita"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "Licencia de ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Plazas de ${ MEET_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } licencia de ${ MEET_APP_NAME }",
+        "${ seats } licencias de ${ MEET_APP_NAME }"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: videollamadas privadas para lo que de verdad importa"
@@ -6113,6 +6192,9 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Pantalla compartida con cifrado de extremo a extremo y chat efímero en la llamada"
       ],
+      "Hosts can record meetings locally on their computers": [
+        "Los anfitriones pueden grabar reuniones localmente en sus ordenadores"
+      ],
       "Meeting recording": [
         "Grabación de la reunión"
       ],
@@ -6132,6 +6214,10 @@
       "Up to ${ n } participant": [
         "Hasta ${ n } participante",
         "Hasta ${ n } participantes"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videollamadas, ${ n } participante",
+        "Videollamadas, ${ n } participantes"
       ]
     },
     "Message": {
@@ -6663,6 +6749,9 @@
       "Data breach monitoring": [
         "Monitoreo de vulneración de datos"
       ],
+      "Data retention policies": [
+        "Políticas de retención de datos"
+      ],
       "Dedicated servers optimized for streaming": [
         "Servidores dedicados optimizados para streaming"
       ],
@@ -6771,6 +6860,9 @@
       ],
       "Priority support & live chat": [
         "Soporte prioritario y chat en vivo"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Chat de IA privado (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "Copia de seguridad de fotos privada"
@@ -6917,6 +7009,9 @@
       "Vault sharing with up to ${ n } person": [
         "Compartir la caja fuerte con hasta ${ n } persona",
         "Compartir la caja fuerte con hasta ${ n } personas"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN con bloqueador de publicidad y protección contra malware"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la red oscura para verificar si tus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarte de inmediato si encontramos algo."
@@ -7963,6 +8058,9 @@
       "A way to contact you": [
         "Una forma de contactarte"
       ],
+      "Anything you'd like us to know": [
+        "¿Algo más que quieras decirnos?"
+      ],
       "Choose password": [
         "Elegir una contraseña"
       ],
@@ -7971,6 +8069,9 @@
       ],
       "Email": [
         "Correo electrónico"
+      ],
+      "Enter a name": [
+        "Introduce un nombre"
       ],
       "Enter a new folder name": [
         "Introduce un nombre nuevo para la carpeta."
@@ -8019,6 +8120,9 @@
       ],
       "Select": [
         "Seleccionar"
+      ],
+      "Select a provider": [
+        "Selecciona un Proveedor"
       ],
       "Select a reason": [
         "Selecciona un motivo"
@@ -8107,6 +8211,26 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Correo oficial de ${ BRAND_NAME }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Otro"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {
@@ -8610,6 +8734,9 @@
       ]
     },
     "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Creando nueva hoja de cálculo..."
+      ],
       "Detect automatically": [
         "Detectar automáticamente"
       ],
