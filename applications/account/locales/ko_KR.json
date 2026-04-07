@@ -324,6 +324,9 @@
       "Connected": [
         "연결됨"
       ],
+      "Contact sales": [
+        "영업팀에 문의"
+      ],
       "Contact support": [
         "문의하기"
       ],
@@ -452,6 +455,9 @@
       ],
       "Delete account": [
         "계정 삭제"
+      ],
+      "Delete and confirm": [
+        "삭제 및 확인"
       ],
       "Delete filter “${ Name }”": [
         "필터 \"${ Name }\" 삭제"
@@ -4778,6 +4784,9 @@
       "Available with ${ title }": [
         "${ title }(에)서 사용 가능"
       ],
+      "Bring over email, calendar events, and contacts from another provider.": [
+        "이메일, 캘린더 이벤트 및 연락처를 다른 제공자로부터 가져오세요."
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "먼저 구성하여 조직을 활성화한 뒤 이메일 주소를 사용자화하세요."
       ],
@@ -4801,9 +4810,6 @@
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "데스크톱에서 클라우드에 파일을 쉽게 동기화하고 휴대 기기에서 접근할 수 있습니다."
-      ],
-      "Easily transfer emails, calendar events, and contacts from your previous provider. Choose a one-time import or automatic ongoing sync.": [
-        "이전 제공업체의 이메일, 캘린더 이벤트, 연락처를 간편하게 이전하세요. 일회성 불러오기 또는 자동 진행 동기화를 선택하세요."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "이 기능에 접근하려면 ${ PROTON_SENTINEL_NAME }을 활성화해 주세요."
@@ -5353,11 +5359,11 @@
       ]
     },
     "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
         "최대 ${ MAX_SYNC_PAID_USER }개의 계정에서 이메일을 전달하려면, ${ planName }(으)로 업그레이드하세요."
       ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "${ MAX_SYNC_FREE_USER }개의 외부 계정에서 ${ MAIL_APP_NAME }(으)로 이메일을 전달하는 중입니다."
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "외부 계정에서 ${ MAIL_APP_NAME }로 이메일을 전달하는 중입니다."
       ]
     },
     "Edit billing address form note": {
@@ -8775,11 +8781,11 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "고급 불러오기 설정"
-      ],
       "Import from ${ providerName }": [
         "${ providerName }(에)서 불러오기"
+      ],
+      "More import options": [
+        "추가 불러오기 옵션"
       ]
     },
     "Import status": {
@@ -8892,6 +8898,9 @@
       ],
       "${ discountPercent }% discount": [
         "${ discountPercent }% 할인"
+      ],
+      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
+        "${ DRIVE_APP_NAME }가 더 이상 이전 버전의 파일을 보관하지 않습니다."
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } 이(가) 유효하지 않음"
@@ -10039,6 +10048,9 @@
       "finance": [
         "금융정보"
       ],
+      "For a 10-year version history, please contact our sales team.": [
+        "10년 버전 기록은 영업팀에 문의하세요."
+      ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "언제든지 이메일에 접근하고 최적화된 모바일 경험을 위해, ${ androidAppLink } 또는 ${ iosAppLink } 을(를)다운로드하세요."
       ],
@@ -10903,6 +10915,9 @@
       "Product reviews, rankings, or guides": [
         "제품 리뷰, 순위 또는 가이드"
       ],
+      "Professional": [
+        "Professional"
+      ],
       "Protect this device too?": [
         "이 기기도 보호하시겠어요?"
       ],
@@ -11437,6 +11452,12 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "이 인증은 최대 한 시간까지 걸릴 수 있습니다. 인증이 성공한 뒤에도 TXT 레코드는 도메인을 계속 소유하고 있음을 인증하기 위해 필요하므로 삭제하지 마십시오."
       ],
+      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
+        "이 작업을 실행하면 ${ rententionLabel }보다 오래된 모든 이전 버전의 파일이 삭제됩니다."
+      ],
+      "This will delete all previous versions of your files.": [
+        "이 작업은 파일의 기존 버전을 모두 삭제합니다."
+      ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "이 작업은 **${ email }**의 접근을 거절합니다. 정말 계속하시겠어요?"
       ],
@@ -11635,6 +11656,9 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "${ planTitle } 플랜의 혜택을 놓치지 않기 위해 업그레이드하세요."
       ],
+      "Upgrade to unlock": [
+        "잠금해제하려면 업그레이드"
+      ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "${ monitorLink } 잠금 해제하려면 업그레이드"
       ],
@@ -11671,11 +11695,11 @@
       "Use a recovery method to disable your two-factor authentication methods.": [
         "복구 방법을 사용하여 2단계 인증 방법을 비활성화할 수 있습니다."
       ],
+      "Use multiple email addresses with ${ MAIL_APP_NAME }. Add a new ${ BRAND_NAME } address or connect another email account to manage everything from one inbox.": [
+        "${ MAIL_APP_NAME }로 여러 이메일 주소를 사용하세요. 기존 받은 편지함 하나에서 모든 것을 관리하려면 ${ BRAND_NAME } 주소를 추가하거나 다른 이메일 계정과 연결하세요."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "현재 로드 및 위치에 따라 최상의 서버 사용: ${ formattedBestServerName }"
-      ],
-      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "${ BRAND_NAME }이 제공하는 다양한 유형의 이메일 주소와 별칭을 사용하세요."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "애플리케이션 없이 ${ VPN_APP_NAME } 서버에 연결할 때 다음 자격 증명을 사용하세요. macOS의 Tunnelblick, GNU/Linux의 OpenVPN도 사용하고 있어요."
@@ -11733,6 +11757,9 @@
       ],
       "Version ${ version }": [
         "${ version } 버전"
+      ],
+      "Version history": [
+        "버전 기록"
       ],
       "Version number successfully copied to clipboard": [
         "버전 넘버를 클립보드에 복사했습니다"
@@ -11892,6 +11919,9 @@
       ],
       "With ${ AUTHENTICATOR_APP_NAME }, you can:": [
         "${ AUTHENTICATOR_APP_NAME }로:"
+      ],
+      "With a ${ boldProfessionalPlan } plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
+        "${ boldProfessionalPlan } 플랜으로, 조직에 ${ boldDedicatedServers }를 구매하고 ${ boldGateways }를 설정하여 누가 접근할 수 있는지 제어할 수 있습니다."
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "암호화된 ${ BRAND_NAME } 주소로, 모든 ${ BRAND_NAME } 서비스를 사용할 수 있어요."
@@ -13378,6 +13408,9 @@
       ],
       "Don't ask again": [
         "다시 묻지 않기"
+      ],
+      "Don't keep versions": [
+        "버전 유지 안 함"
       ],
       "Don't show this again": [
         "다시 보지 않기"
@@ -20077,6 +20110,9 @@
       ]
     },
     "Setting": {
+      "Enable Photos section": [
+        "사진 섹션 활성화"
+      ],
       "Get updates about comments via email": [
         "이메일로 댓글에 대한 업데이트를 받아보세요"
       ],
@@ -22707,9 +22743,6 @@
       "Connect apps and devices": [
         "앱 및 장치 연결하기"
       ],
-      "Connect more addresses": [
-        "더 많은 주소 연결"
-      ],
       "Connect organization": [
         "조직에 연결"
       ],
@@ -22883,6 +22916,9 @@
       ],
       "Delete user?": [
         "사용자를 삭제합니까?"
+      ],
+      "Delete version history?": [
+        "버전 기록을 삭제하시겠어요?"
       ],
       "Deny access to user?": [
         "사용자에게 접근을 거부할까요?"

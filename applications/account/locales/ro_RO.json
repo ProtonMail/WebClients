@@ -324,6 +324,9 @@
       "Connected": [
         "Conectat"
       ],
+      "Contact sales": [
+        "Contactați echipa de vânzări"
+      ],
       "Contact support": [
         "Contactați asistența"
       ],
@@ -452,6 +455,9 @@
       ],
       "Delete account": [
         "Ștergere cont"
+      ],
+      "Delete and confirm": [
+        "Ștergere și confirmare"
       ],
       "Delete filter “${ Name }”": [
         "Ștergere filtru „${ Name }”"
@@ -4840,6 +4846,9 @@
       "Available with ${ title }": [
         "Disponibil cu ${ title }"
       ],
+      "Bring over email, calendar events, and contacts from another provider.": [
+        "Importați-vă mesajele, evenimentele din calendar și contactele de la un alt furnizor."
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Configurați mai întâi aceasta pentru a vă activa organizația și a vă personaliza adresa de e-mail."
       ],
@@ -4863,9 +4872,6 @@
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Sincronizați ușor fișierele în cloud de pe desktop și accesați-le de pe dispozitivul mobil."
-      ],
-      "Easily transfer emails, calendar events, and contacts from your previous provider. Choose a one-time import or automatic ongoing sync.": [
-        "Transferați cu ușurință e-mailuri, evenimente din calendar și contacte de la furnizorul anterior. Alegeți o importare unică sau o sincronizare automată continuă."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Activați ${ PROTON_SENTINEL_NAME } pentru a accesa aceste funcții."
@@ -5415,15 +5421,11 @@
       ]
     },
     "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "Pentru a transfera mesaje de la ${ MAX_SYNC_PAID_USER } cont, treceți la ${ planName }.",
-        "Pentru a transfera mesaje de la maxim ${ MAX_SYNC_PAID_USER } conturi, treceți la ${ planName }.",
-        "Pentru a transfera mesaje de la maxim ${ MAX_SYNC_PAID_USER } de conturi, treceți la ${ planName }."
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
+        "Pentru a redirecționa mesajele de la maxim ${ MAX_SYNC_PAID_USER } conturi, treceți la ${ planName }."
       ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "Transferați mesaje de la ${ MAX_SYNC_FREE_USER } cont extern către ${ MAIL_APP_NAME }.",
-        "Transferați mesaje de la ${ MAX_SYNC_FREE_USER } conturi externe către ${ MAIL_APP_NAME }.",
-        "Transferați mesaje de la ${ MAX_SYNC_FREE_USER } de conturi externe către ${ MAIL_APP_NAME }."
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "Transferați mesajele de la un cont extern către ${ MAIL_APP_NAME }."
       ]
     },
     "Edit billing address form note": {
@@ -8917,11 +8919,11 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "Importare avansată"
-      ],
       "Import from ${ providerName }": [
         "Importare din ${ providerName }"
+      ],
+      "More import options": [
+        "Mai multe opțiuni de importare"
       ]
     },
     "Import status": {
@@ -9044,6 +9046,9 @@
       ],
       "${ discountPercent }% discount": [
         "Reducere ${ discountPercent }%"
+      ],
+      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
+        "${ DRIVE_APP_NAME } nu va mai păstra versiunile anterioare ale fișierelor."
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } nu este validă"
@@ -10263,6 +10268,9 @@
       ],
       "for ${ price }": [
         "cu ${ price }"
+      ],
+      "For a 10-year version history, please contact our sales team.": [
+        "Pentru un istoric de 10 ani al versiunilor, contactați echipa noastră de vânzări."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Pentru acces oricând la e-mail și experiență mobilă optimizată, descărcați aplicația ${ androidAppLink } sau ${ iosAppLink }."
@@ -11691,6 +11699,12 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Această verificare poate dura până la o oră. După confirmarea verificării, nu eliminați înregistrarea TXT, deoarece este necesară pentru a confirma că dețineți în continuare domeniul."
       ],
+      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
+        "Aceasta va șterge toate versiunile anterioare ale fișierelor mai vechi de ${ rententionLabel }."
+      ],
+      "This will delete all previous versions of your files.": [
+        "Aceasta va șterge toate versiunile anterioare ale fișierelor."
+      ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Aceasta va refuza accesul la **${ email }**. Continuați?"
       ],
@@ -11889,6 +11903,9 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Îmbunătățiți contul pentru a vă menține beneficiile din ${ planTitle }."
       ],
+      "Upgrade to unlock": [
+        "Treceți la alt tip de cont pentru deblocare."
+      ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "Îmbunătățiți-vă planul pentru a debloca funcția ${ monitorLink }."
       ],
@@ -11925,11 +11942,11 @@
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Utilizați o metodă de recuperare pentru a dezactiva metodele de autentificare cu doi factori."
       ],
+      "Use multiple email addresses with ${ MAIL_APP_NAME }. Add a new ${ BRAND_NAME } address or connect another email account to manage everything from one inbox.": [
+        "Folosiți mai multe adrese de e-mail cu ${ MAIL_APP_NAME }. Adăugați o adresă ${ BRAND_NAME } nouă sau conectați un alt cont de e-mail pentru a gestiona totul dintr-un singur loc."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Folosire cel mai bun server ținând cont de încărcarea și poziția sa: ${ formattedBestServerName }"
-      ],
-      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "Folosiți tipuri diferite de adrese de e-mail și pseudonime oferite de ${ BRAND_NAME }."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Utilizați următoarele date atunci când vă conectați la serverele ${ VPN_APP_NAME } fără aplicație. Exemplu de utilizare include: Tunnelblick pe macOS, OpenVPN pe GNU/Linux."
@@ -11987,6 +12004,9 @@
       ],
       "Version ${ version }": [
         "Versiunea ${ version }"
+      ],
+      "Version history": [
+        "Istoric versiuni"
       ],
       "Version number successfully copied to clipboard": [
         "Numărul versiunii a fost copiat în memorie."
@@ -13673,6 +13693,9 @@
       ],
       "Don't ask again": [
         "Nu mă mai întreba"
+      ],
+      "Don't keep versions": [
+        "Fără păstrare versiuni"
       ],
       "Don't show this again": [
         "Nu mai arăta asta"
@@ -20542,6 +20565,9 @@
       ]
     },
     "Setting": {
+      "Enable Photos section": [
+        "Activare secțiune „Fotografii”"
+      ],
       "Get updates about comments via email": [
         "Obținere actualizări despre comentarii prin e-mail"
       ],
@@ -23308,9 +23334,6 @@
       "Connect apps and devices": [
         "Conectați aplicații și dispozitive"
       ],
-      "Connect more addresses": [
-        "Conectați mai multe adrese"
-      ],
       "Connect organization": [
         "Conectare organizație"
       ],
@@ -23488,6 +23511,9 @@
       ],
       "Delete user?": [
         "Ștergere utilizator?"
+      ],
+      "Delete version history?": [
+        "Ștergeți istoricul versiunilor?"
       ],
       "Deny access to user?": [
         "Refuzați accesul utilizatorului?"

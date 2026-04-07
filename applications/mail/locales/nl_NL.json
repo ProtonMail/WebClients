@@ -1742,7 +1742,7 @@
         "${ ips } toegewijde VPN-servers"
       ],
       "${ LUMO_APP_NAME } AI license": [
-        "${ LUMO_APP_NAME } AI licentie"
+        "${ LUMO_APP_NAME } AI-licentie"
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } licenties"
@@ -4346,16 +4346,6 @@
         "Deel uw abonnementsvoordelen met ${ BRAND_NAME } Duo"
       ]
     },
-    "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "Om e-mails door te sturen van maximaal ${ MAX_SYNC_PAID_USER } account, upgrade naar ${ planName }.",
-        "Om e-mails door te sturen van maximaal ${ MAX_SYNC_PAID_USER } accounts, upgrade naar ${ planName }."
-      ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "U stuurt e-mails door van ${ MAX_SYNC_FREE_USER } extern account naar ${ MAIL_APP_NAME }.",
-        "U stuurt e-mails door van ${ MAX_SYNC_FREE_USER } externe accounts naar ${ MAIL_APP_NAME }."
-      ]
-    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Tekstvelden zijn optioneel. De informatie die u in dit formulier verstrekt zal alleen verschijnen op in de toekomst uitgegeven facturen en zal geen invloed hebben op bestaande facturen."
@@ -5590,7 +5580,15 @@
         "Hoge snelheden"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Er is iets misgegaan bij het authenticeren met uw beveiligingssleutel. Probeer het opnieuw."
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Plaats een beveiligingssleutel die is gekoppeld aan uw ${ BRAND_NAME }-account."
+      ],
       "Security key": [
         "Beveiligingssleutel"
       ]
@@ -6352,11 +6350,11 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "Geavanceerde import"
-      ],
       "Import from ${ providerName }": [
         "Importeer uit ${ providerName }"
+      ],
+      "More import options": [
+        "Meer importopties"
       ]
     },
     "Import warning": {
@@ -6714,6 +6712,9 @@
       ],
       "Ad targeting": [
         "Advertentie doelwit"
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Voeg ${ PLAN_NAMES[PLANS.MEET_BUSINESS] } toe"
       ],
       "Add image URL": [
         "Afbeeldings-URL toevoegen"
@@ -7447,8 +7448,7 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding toevoegen",
-        "Afbeeldingen toevoegen"
+        "Afbeelding invoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -11842,29 +11842,17 @@
       ]
     },
     "Onboarding List Placeholder": {
-      "Choose your service": [
-        "Kies uw dienst"
+      "Choose a provider": [
+        "Kies een provider"
       ],
       "Maybe later": [
         "Misschien later"
       ],
-      "Popular services": [
-        "Populaire Services"
+      "Protect your accounts": [
+        "Beveilig uw accounts"
       ],
       "Skip for now": [
         "Sla voorlopig over"
-      ],
-      "Switch your accounts to ${ BRAND_NAME }": [
-        "Schakel uw accounts over naar ${ BRAND_NAME }"
-      ],
-      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
-        "E-mail wisselen is moeilijk. ${ BRAND_NAME } maakt het gemakkelijk. Verbind uw oude account en beheer alles in één gerichte, advertentievrije werkruimte."
-      ],
-      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
-        "Update uw e-mail op de services die u het meest gebruikt. Voorkom tracking en bescherm uw privacy."
-      ],
-      "Welcome to ${ MAIL_APP_NAME }": [
-        "Welkom bij ${ MAIL_APP_NAME }"
       ]
     },
     "Onboarding modal": {
@@ -12435,7 +12423,7 @@
         "De vernieuwingsprijs is afhankelijk van de facturatie regio en het EIN."
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
-        "De vernieuwingsprijs is afhankelijk van de facturatie regio en het VAT nummer."
+        "De vernieuwingsprijs is afhankelijk van de facturatie regio en het VAT-nummer."
       ]
     },
     "Payments.Saved payment method details": {
@@ -15035,9 +15023,6 @@
       ],
       "Connect apps and devices": [
         "Apps en apparaten verbinden"
-      ],
-      "Connect more addresses": [
-        "Verbind meer adressen"
       ],
       "Connect to video conferencing": [
         "Verbinding maken met videoconferentie"

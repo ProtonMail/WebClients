@@ -90,6 +90,9 @@
       "Apply": [
         "გადატარება"
       ],
+      "Ask me next time": [
+        "მკითხე შემდეგ ჯერზე"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "კონტაქტების თითოეულ ჯგუფში ${ maxContacts }-მდე კონტაქტი შეგიძლიათ, იქონიოთ",
         "კონტაქტების თითოეულ ჯგუფში ${ maxContacts }-მდე კონტაქტი შეგიძლიათ, იქონიოთ"
@@ -668,6 +671,9 @@
       ],
       "Save changes": [
         "ცვლილებების შენახვა"
+      ],
+      "Save preferences": [
+        "პარამეტრების შენახვა"
       ],
       "Search": [
         "ძებნა"
@@ -3958,8 +3964,8 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "გაფართოებული შემოტანა"
+      "More import options": [
+        "მეტი შემოტანის პარამეტრები"
       ]
     },
     "Import warning": {
@@ -4559,6 +4565,9 @@
       ],
       "Low Priority": [
         "დაბალი პრიორიტეტი"
+      ],
+      "Making a copy...": [
+        "ასლის შექმნა..."
       ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "მაქს ${ MAX_SHARED_URL_PASSWORD_LENGTH } სიმბოლო",
@@ -5290,6 +5299,9 @@
       "Add to group": [
         "ჯგუფში ჩამატება"
       ],
+      "Additional comments": [
+        "დამატებითი კომენტარები"
+      ],
       "Alias title": [
         "ფსევდონიმის სათაური"
       ],
@@ -5355,6 +5367,9 @@
       ],
       "Contacts": [
         "კონტაქტები"
+      ],
+      "Continue cancelling": [
+        "გაუქმების გაგრძელება"
       ],
       "Copy": [
         "კოპირება"
@@ -5610,6 +5625,9 @@
       ],
       "Sign emails": [
         "ელფოსტის ხელმოწერა"
+      ],
+      "Skip feedback": [
+        "უკუკავშირის გამოტოვება"
       ],
       "Skip file": [
         "ფაილის გამოტოვება"
@@ -7719,6 +7737,9 @@
       "Email": [
         "ელფოსტა"
       ],
+      "Enter a name": [
+        "შეიყვანეთ სახელი"
+      ],
       "Enter a new folder name": [
         "შეიყვანეთ ახალი საქაღალდის სახელი"
       ],
@@ -7766,6 +7787,9 @@
       ],
       "Select": [
         "აირჩიეთ"
+      ],
+      "Select a provider": [
+        "აირჩიეთ პროვაიდერი"
       ],
       "Select a reason": [
         "აირჩიეთ მიზეზი"
@@ -7846,6 +7870,26 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "ოფიციალური ელფოსტა ${ BRAND_NAME }-სგან"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "სხვა"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "Recent documents table header": {

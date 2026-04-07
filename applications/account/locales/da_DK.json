@@ -4815,6 +4815,9 @@
       "Available with ${ title }": [
         "Tilgængelig med ${ title }"
       ],
+      "Bring over email, calendar events, and contacts from another provider.": [
+        "Overfør e-mail, kalenderbegivenheder og kontakter fra en anden udbyder."
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Konfigurer dette først for at aktivere din organisation og tilpasse din e-mailadresse."
       ],
@@ -4838,9 +4841,6 @@
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Synkroniser nemt filer til skyen fra din computer og få adgang til dem fra din mobilenhed."
-      ],
-      "Easily transfer emails, calendar events, and contacts from your previous provider. Choose a one-time import or automatic ongoing sync.": [
-        "Overfør nemt e-mails, kalenderbegivenheder og kontakter fra din tidligere udbyder. Vælg mellem et engangsimport eller løbende, automatisk synkronisering."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Aktiver ${ PROTON_SENTINEL_NAME } for at få adgang til disse funktioner"
@@ -5390,13 +5390,11 @@
       ]
     },
     "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "For at videresende e-mails fra op til ${ MAX_SYNC_PAID_USER } konto skal du opgradere til ${ planName }.",
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
         "For at videresende e-mails fra op til ${ MAX_SYNC_PAID_USER } konti skal du opgradere til ${ planName }."
       ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "Du videresender e-mails fra ${ MAX_SYNC_FREE_USER } ekstern konto til ${ MAIL_APP_NAME }.",
-        "Du videresender e-mails fra ${ MAX_SYNC_FREE_USER } eksterne konti til ${ MAIL_APP_NAME }."
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "Du videresender e-mails fra én ekstern konto til ${ MAIL_APP_NAME }."
       ]
     },
     "Edit billing address form note": {
@@ -8855,11 +8853,11 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "Avanceret import"
-      ],
       "Import from ${ providerName }": [
         "Importér fra ${ providerName }"
+      ],
+      "More import options": [
+        "Flere importindstillinger"
       ]
     },
     "Import status": {
@@ -11825,11 +11823,11 @@
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Brug en gendannelsesmetode til at deaktivere dine totrins-godkendelsesmetoder."
       ],
+      "Use multiple email addresses with ${ MAIL_APP_NAME }. Add a new ${ BRAND_NAME } address or connect another email account to manage everything from one inbox.": [
+        "Brug flere e-mailadresser med ${ MAIL_APP_NAME }. Tilføj en ny ${ BRAND_NAME }-adresse eller forbind en anden e-mail-konto for at administrere alt fra én indbakke."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Brug den bedste server i henhold til den aktuelle belastning og placering: ${ formattedBestServerName }"
-      ],
-      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "Brug de forskellige typer e-mailadresser og aliasser udbudt af ${ BRAND_NAME }."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Brug følgende legitimationsoplysninger, når du opretter forbindelse til ${ VPN_APP_NAME }-servere uden applikation. Eksempler på brug omfatter: Tunnelblick på macOS, OpenVPN på GNU/Linux."
@@ -23047,9 +23045,6 @@
       ],
       "Connect apps and devices": [
         "Forbind apps og enheder"
-      ],
-      "Connect more addresses": [
-        "Tilslut flere adresser"
       ],
       "Connect organization": [
         "Forbind organisation"

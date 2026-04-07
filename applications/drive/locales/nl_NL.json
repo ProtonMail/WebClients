@@ -815,6 +815,9 @@
       "Refer a friend": [
         "Verwijs een vriend door"
       ],
+      "Refetch index": [
+        "Opnieuw indexeren"
+      ],
       "Refresh the page": [
         "Pagina vernieuwen"
       ],
@@ -1294,7 +1297,7 @@
         "${ ips } toegewijde VPN-servers"
       ],
       "${ LUMO_APP_NAME } AI license": [
-        "${ LUMO_APP_NAME } AI licentie"
+        "${ LUMO_APP_NAME } AI-licentie"
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } licenties"
@@ -3766,6 +3769,12 @@
       "Something went wrong during folder listing": [
         "Er is iets misgegaan tijdens het oplijsten van de mappen"
       ],
+      "Something went wrong with search. Please try again later.": [
+        "Er ging iets mis. Probeer het later nog eens."
+      ],
+      "Something went wrong with search: Not enough storage space.": [
+        "Er ging iets mis met zoeken: Onvoldoende opslagruimte."
+      ],
       "Something went wrong. Please try again.": [
         "Er is iets fout gegaan. Probeer het later nog eens."
       ],
@@ -4365,7 +4374,15 @@
         "Hoge snelheden"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Er is iets misgegaan bij het authenticeren met uw beveiligingssleutel. Probeer het opnieuw."
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Plaats een beveiligingssleutel die is gekoppeld aan uw ${ BRAND_NAME }-account."
+      ],
       "Security key": [
         "Beveiligingssleutel"
       ]
@@ -4823,8 +4840,8 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "Geavanceerde import"
+      "More import options": [
+        "Meer importopties"
       ]
     },
     "Import warning": {
@@ -5034,6 +5051,9 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
+      "${ state.result.entries.length } entries": [
+        "${ state.result.entries.length } vermeldingen"
+      ],
       "${ storage } storage": [
         "${ storage } opslag"
       ],
@@ -5117,6 +5137,9 @@
       ],
       "Ad targeting": [
         "Advertentie doelwit"
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Voeg ${ PLAN_NAMES[PLANS.MEET_BUSINESS] } toe"
       ],
       "Address copied to clipboard": [
         "Adres gekopieerd naar het klembord"
@@ -5708,6 +5731,9 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "In de volgende stap kunt u een storting doen met een Bitcoin-adres."
       ],
+      "Index is empty.": [
+        "Index niet ingevuld."
+      ],
       "Indexing in progress": [
         "Bezig met indexeren"
       ],
@@ -6190,6 +6216,9 @@
       "Search enabled. You may now close this dialogue and search for files and folders.": [
         "Zoeken ingeschakeld. U kunt dit dialoog nu sluiten en zoeken naar bestanden en mappen."
       ],
+      "Search module is not available.": [
+        "De zoekfunctie is niet beschikbaar."
+      ],
       "Select a destination folder": [
         "Selecteer een doelmap"
       ],
@@ -6575,6 +6604,9 @@
       ],
       "Unsupported file": [
         "Niet-ondersteund bestand"
+      ],
+      "Unsupported file type for Photos": [
+        "Bestandstype wordt niet ondersteund voor Foto's"
       ],
       "Untitled": [
         "Naamloos"
@@ -7334,6 +7366,9 @@
       "Enter device name": [
         "Apparaatnaam invoeren"
       ],
+      "Environment compatible": [
+        "Omgevingscompatibiliteit"
+      ],
       "Expired": [
         "Verlopen"
       ],
@@ -7402,6 +7437,12 @@
       ],
       "Include message and file name in invite email": [
         "Bericht- en bestandsnaam opnemen in uitnodigingsmail"
+      ],
+      "Index kinds": [
+        "Soorten indexen"
+      ],
+      "Initial indexing": [
+        "Eerste indexering"
       ],
       "Integrated 2FA authenticator": [
         "Geïntegreerde tweestapsverificatie"
@@ -7502,6 +7543,9 @@
       "Other": [
         "Overig"
       ],
+      "Outdated version": [
+        "Verouderde versie"
+      ],
       "Password": [
         "Wachtwoord"
       ],
@@ -7570,6 +7614,9 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Genève"
+      ],
+      "Searchable": [
+        "Doorzoekbaar"
       ],
       "Select type of abuse": [
         "Selecteer soort misbruik"
@@ -7682,6 +7729,9 @@
       "Uploaded by": [
         "Geüpload door"
       ],
+      "User opted in": [
+        "De gebruiker heeft ingestemd"
+      ],
       "Username": [
         "Gebruikersnaam"
       ],
@@ -7690,6 +7740,9 @@
       ],
       "Viewer": [
         "Kijker"
+      ],
+      "Visible columns:": [
+        "Zichtbare kolommen:"
       ],
       "Vulnerable": [
         "Kwetsbaar"
@@ -10296,7 +10349,7 @@
         "De vernieuwingsprijs is afhankelijk van de facturatie regio en het EIN."
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
-        "De vernieuwingsprijs is afhankelijk van de facturatie regio en het VAT nummer."
+        "De vernieuwingsprijs is afhankelijk van de facturatie regio en het VAT-nummer."
       ]
     },
     "Payments.Saved payment method details": {
@@ -12186,6 +12239,9 @@
       "Account temporarily locked": [
         "Account tijdelijk geblokkeerd"
       ],
+      "Actions": [
+        "Acties"
+      ],
       "Active": [
         "Actief"
       ],
@@ -12588,6 +12644,9 @@
       "Gift": [
         "Geschenk"
       ],
+      "Global": [
+        "Globaal"
+      ],
       "Groups": [
         "Groepen"
       ],
@@ -12898,6 +12957,9 @@
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Opslaan voor later in ${ DRIVE_APP_NAME }"
+      ],
+      "Search": [
+        "Zoeken"
       ],
       "Search results": [
         "Zoekresultaten"

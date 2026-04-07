@@ -3777,11 +3777,11 @@
       ]
     },
     "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
         "최대 ${ MAX_SYNC_PAID_USER }개의 계정에서 이메일을 전달하려면, ${ planName }(으)로 업그레이드하세요."
       ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "${ MAX_SYNC_FREE_USER }개의 외부 계정에서 ${ MAIL_APP_NAME }(으)로 이메일을 전달하는 중입니다."
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "외부 계정에서 ${ MAIL_APP_NAME }로 이메일을 전달하는 중입니다."
       ]
     },
     "Edit billing address form note": {
@@ -5839,8 +5839,8 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "고급 불러오기 설정"
+      "More import options": [
+        "추가 불러오기 옵션"
       ]
     },
     "Import warning": {
@@ -7361,6 +7361,9 @@
       "Product reviews, rankings, or guides": [
         "제품 리뷰, 순위 또는 가이드"
       ],
+      "Professional": [
+        "Professional"
+      ],
       "Protected by Swiss privacy laws": [
         "스위스 개인정보법에 의해 보호됨"
       ],
@@ -7937,11 +7940,11 @@
       "Use a recovery method to disable your two-factor authentication methods.": [
         "복구 방법을 사용하여 2단계 인증 방법을 비활성화할 수 있습니다."
       ],
+      "Use multiple email addresses with ${ MAIL_APP_NAME }. Add a new ${ BRAND_NAME } address or connect another email account to manage everything from one inbox.": [
+        "${ MAIL_APP_NAME }로 여러 이메일 주소를 사용하세요. 기존 받은 편지함 하나에서 모든 것을 관리하려면 ${ BRAND_NAME } 주소를 추가하거나 다른 이메일 계정과 연결하세요."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "현재 로드 및 위치에 따라 최상의 서버 사용: ${ formattedBestServerName }"
-      ],
-      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "${ BRAND_NAME }이 제공하는 다양한 유형의 이메일 주소와 별칭을 사용하세요."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "애플리케이션 없이 ${ VPN_APP_NAME } 서버에 연결할 때 다음 자격 증명을 사용하세요. macOS의 Tunnelblick, GNU/Linux의 OpenVPN도 사용하고 있어요."
@@ -8116,6 +8119,9 @@
       ],
       "With ${ AUTHENTICATOR_APP_NAME }, you can:": [
         "${ AUTHENTICATOR_APP_NAME }로:"
+      ],
+      "With a ${ boldProfessionalPlan } plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
+        "${ boldProfessionalPlan } 플랜으로, 조직에 ${ boldDedicatedServers }를 구매하고 ${ boldGateways }를 설정하여 누가 접근할 수 있는지 제어할 수 있습니다."
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "암호화된 ${ BRAND_NAME } 주소로, 모든 ${ BRAND_NAME } 서비스를 사용할 수 있어요."
@@ -15295,9 +15301,6 @@
       ],
       "Connect apps and devices": [
         "앱 및 장치 연결하기"
-      ],
-      "Connect more addresses": [
-        "더 많은 주소 연결"
       ],
       "Connect organization": [
         "조직에 연결"

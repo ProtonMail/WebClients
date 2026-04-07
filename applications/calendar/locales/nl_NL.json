@@ -1075,7 +1075,7 @@
         "${ ips } toegewijde VPN-servers"
       ],
       "${ LUMO_APP_NAME } AI license": [
-        "${ LUMO_APP_NAME } AI licentie"
+        "${ LUMO_APP_NAME } AI-licentie"
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } licenties"
@@ -4524,7 +4524,15 @@
         "Hoge snelheden"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Er is iets misgegaan bij het authenticeren met uw beveiligingssleutel. Probeer het opnieuw."
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Plaats een beveiligingssleutel die is gekoppeld aan uw ${ BRAND_NAME }-account."
+      ],
       "Security key": [
         "Beveiligingssleutel"
       ]
@@ -4988,8 +4996,8 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "Geavanceerde import"
+      "More import options": [
+        "Meer importopties"
       ]
     },
     "Import warning": {
@@ -5199,6 +5207,9 @@
       ],
       "Ad targeting": [
         "Advertentie doelwit"
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Voeg ${ PLAN_NAMES[PLANS.MEET_BUSINESS] } toe"
       ],
       "Added and removed participants will be notified about all the events in this series.": [
         "Toegevoegde en verwijderde deelnemers zullen op de hoogte worden gebracht van alle afspraken in deze serie."
@@ -9614,7 +9625,7 @@
         "De vernieuwingsprijs is afhankelijk van de facturatie regio en het EIN."
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
-        "De vernieuwingsprijs is afhankelijk van de facturatie regio en het VAT nummer."
+        "De vernieuwingsprijs is afhankelijk van de facturatie regio en het VAT-nummer."
       ]
     },
     "Payments.Saved payment method details": {

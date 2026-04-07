@@ -3819,8 +3819,8 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "進階匯入"
+      "More import options": [
+        "更多匯入選項"
       ]
     },
     "Import warning": {
@@ -5667,6 +5667,14 @@
         "可免費試用的擴充功能"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } 個席次"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME } 席位"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: 給重要對話保密的視訊"
@@ -5715,6 +5723,9 @@
       ],
       "Up to ${ n } participant": [
         "至多 ${ n } 位參與者"
+      ],
+      "Video meetings, ${ n } participant": [
+        "視訊， ${ n } 參與者"
       ]
     },
     "Message": {
@@ -6174,6 +6185,9 @@
       "Data breach monitoring": [
         "資料外洩監測"
       ],
+      "Data retention policies": [
+        "資料保留政策"
+      ],
       "Dedicated servers optimized for streaming": [
         "針對影音串流優化的獨立伺服器"
       ],
@@ -6281,6 +6295,9 @@
       ],
       "Priority support & live chat": [
         "優先處理您的客服單與線上聊天客服"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "隱私 AI 對話 (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "私人照片備份"
@@ -6422,6 +6439,9 @@
       ],
       "Vault sharing with up to ${ n } person": [
         "與最多 ${ n } 個人分享保管庫"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN 附帶廣告攔截器及惡意軟體防護"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我們會掃描暗網去檢查你的${ BRAND_NAME }地址或别名是否被外洩，並且在發現任何問題時立即通知你。"

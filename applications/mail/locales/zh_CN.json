@@ -4320,11 +4320,11 @@
       ]
     },
     "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "要转发来自最多 ${ MAX_SYNC_PAID_USER } 个账户的邮件，请升级至 ${ planName } 计划。"
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
+        "如需将最多 ${ MAX_SYNC_PAID_USER } 个账户的邮件进行转发，请升级至 ${ planName }。"
       ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "您正在将来自${ MAX_SYNC_FREE_USER }个外部账户的电子邮件转发至${ MAIL_APP_NAME }。"
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "您正在将邮件从一个外部账户转发至 ${ MAIL_APP_NAME }。"
       ]
     },
     "Edit billing address form note": {
@@ -6300,11 +6300,11 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "高级导入"
-      ],
       "Import from ${ providerName }": [
         "从 ${ providerName } 导入"
+      ],
+      "More import options": [
+        "更多导入选项"
       ]
     },
     "Import warning": {
@@ -7334,7 +7334,7 @@
         "初始化中..."
       ],
       "Insert image": [
-        "插入图像"
+        "插入图片"
       ],
       "Insert link": [
         "插入链接"
@@ -11654,29 +11654,29 @@
       ]
     },
     "Onboarding List Placeholder": {
-      "Choose your service": [
-        "请选择您的服务"
+      "Bring your emails into ${ MAIL_APP_NAME }": [
+        "将您的电子邮件导入 ${ MAIL_APP_NAME }"
+      ],
+      "Bring your existing email into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "将您现有的电子邮件导入 ${ MAIL_APP_NAME }，以便在一个私密收件箱中管理所有内容。"
+      ],
+      "Choose a provider": [
+        "请选择提供商"
       ],
       "Maybe later": [
         "以后再说"
       ],
-      "Popular services": [
-        "热门服务"
+      "Protect your accounts": [
+        "保护您的账户"
       ],
       "Skip for now": [
         "稍后再说"
       ],
-      "Switch your accounts to ${ BRAND_NAME }": [
-        "将您的账户切换到 ${ BRAND_NAME }"
+      "Some popular services": [
+        "热门服务"
       ],
-      "Switching email is hard. ${ BRAND_NAME } makes it easy. Connect your old account and manage everything in one focused, ad-free workspace.": [
-        "切换邮箱很麻烦，但 ${ BRAND_NAME } 让这一切变得简单！连接您的旧账户，在一个专注、无广告的工作空间中管理所有内容。"
-      ],
-      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
-        "在您最常用的服务上更新您的邮箱，防止追踪并保护您的隐私。"
-      ],
-      "Welcome to ${ MAIL_APP_NAME }": [
-        "欢迎使用 ${ MAIL_APP_NAME }"
+      "Switch the services you use every day to your ${ BRAND_NAME } address for better security and privacy.": [
+        "将您日常使用的服务切换到 ${ BRAND_NAME } 地址，以获得更高的安全性和隐私保护。"
       ]
     },
     "Onboarding modal": {
@@ -14659,9 +14659,6 @@
       ],
       "Connect apps and devices": [
         "连接应用和设备"
-      ],
-      "Connect more addresses": [
-        "连接更多地址"
       ],
       "Connect to video conferencing": [
         "连接至视频会议"

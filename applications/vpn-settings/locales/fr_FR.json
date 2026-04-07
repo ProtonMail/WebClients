@@ -3798,13 +3798,11 @@
       ]
     },
     "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "Pour transférer des messages depuis ${ MAX_SYNC_PAID_USER } compte, passez à ${ planName }.",
-        "Pour transférer des messages depuis ${ MAX_SYNC_PAID_USER } comptes, passez à ${ planName }."
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
+        "Pour transférer des messages provenant d'un maximum de ${ MAX_SYNC_PAID_USER } comptes, passez à ${ planName }."
       ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "Vous transférez des messages depuis ${ MAX_SYNC_FREE_USER } compte externe vers ${ MAIL_APP_NAME }.",
-        "Vous transférez des messages depuis ${ MAX_SYNC_FREE_USER } comptes externes vers ${ MAIL_APP_NAME }."
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "Vous transférez des messages d'un compte externe vers ${ MAIL_APP_NAME }."
       ]
     },
     "Edit billing address form note": {
@@ -5882,8 +5880,8 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "Importation avancée"
+      "More import options": [
+        "Plus d'options d'importation"
       ]
     },
     "Import warning": {
@@ -8031,11 +8029,11 @@
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Utilisez une méthode de récupération pour désactiver vos méthodes d'authentification à deux facteurs."
       ],
+      "Use multiple email addresses with ${ MAIL_APP_NAME }. Add a new ${ BRAND_NAME } address or connect another email account to manage everything from one inbox.": [
+        "Utilisez plusieurs adresses e-mail avec ${ MAIL_APP_NAME }. Ajoutez une nouvelle adresse ${ BRAND_NAME } ou connectez un autre compte de messagerie pour tout gérer depuis une seule boite de réception."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Utilisez le meilleur serveur en fonction de la charge actuelle et de la position : ${ formattedBestServerName }"
-      ],
-      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "Utilisez les différents types d'adresses e-mail et d'alias proposés par ${ BRAND_NAME }."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Utilisez les identifiants suivants lorsque vous vous connectez à des serveurs ${ VPN_APP_NAME } sans application. Quelques exemples de cas d'utilisation : Tunnelblick sur macOS, OpenVPN sur GNU/Linux."
@@ -12988,7 +12986,7 @@
     },
     "retention_policy_2025_Confirmation": {
       "${ strongText }, including those in Inbox, Sent, and Drafts. This might purge messages that users expect to keep. It is not possible to recover these messages later.": [
-        "${ strongText }, y compris ceux de la boîte de réception, des éléments envoyés et des brouillons. Cette opération peut supprimer les messages que les utilisateurs veulent conserver. Il est impossible de les récupérer après."
+        "${ strongText }, y compris ceux de la boîte de réception, des éléments envoyés et des brouillons. Cette opération peut purger les messages que les utilisateurs veulent conserver. Il est impossible de les récupérer après."
       ],
       "After ${ lifetime } day all messages will be deleted": [
         "Après ${ lifetime } jour, tous les messages seront supprimés.",
@@ -13004,7 +13002,7 @@
         "La durée doit être supérieure à ${ MIN_LIFETIME } jours."
       ],
       "Lifetime must not be set for \"Retain All\" action": [
-        "La durée ne doit pas être définie pour l'action « Conserver tout »"
+        "La durée ne doit pas être définie pour l'action « Conserver tout »."
       ],
       "Scope value is not valid": [
         "Cette valeur de zone n'est pas valide."
@@ -13039,7 +13037,7 @@
         "Inclut tous les messages de la boîte de réception, des éléments envoyés et de tous les autres emplacements. Les messages supprimés ne peuvent pas être récupérés."
       ],
       "Removes messages already deleted by users.": [
-        "Retirer les messages déjà supprimés."
+        "Retirer les messages déjà supprimés par les utilisateurs."
       ],
       "Retention rule \"${ formData.name }\" updated successfully": [
         "La règle de conservation « ${ formData.name } » a été mise à jour."
@@ -13089,7 +13087,7 @@
         "Groupe"
       ],
       "Purge all messages": [
-        "Supprimer tous les messages."
+        "Purger tous les messages."
       ],
       "Purge deleted messages only": [
         "Seulement supprimer les messages dans la corbeille."
@@ -13103,7 +13101,7 @@
     },
     "retention_policy_2025_Placeholder": {
       "E.g. Cleanup unused mailboxes": [
-        "Par exemple, nettoyer les boîtes aux lettres inutilisées."
+        "Par exemple, nettoyer les messageries inutilisées."
       ],
       "Enter duration": [
         "Saisir la durée"
@@ -15512,9 +15510,6 @@
       ],
       "Connect apps and devices": [
         "Connecter les applications et les appareils"
-      ],
-      "Connect more addresses": [
-        "Connecter plus d'adresses"
       ],
       "Connect organization": [
         "Connecter l'organisation"

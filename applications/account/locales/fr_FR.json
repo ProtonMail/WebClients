@@ -4812,6 +4812,9 @@
       "Available with ${ title }": [
         "Disponible avec ${ title }"
       ],
+      "Bring over email, calendar events, and contacts from another provider.": [
+        "Importez vos messages, calendriers et contacts depuis un autre fournisseur."
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Configurez d'abord cette option pour activer votre organisation et personnaliser votre adresse e-mail."
       ],
@@ -4835,9 +4838,6 @@
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Synchronisez facilement les fichiers sur le cloud depuis votre ordinateur et accédez-y depuis votre appareil mobile."
-      ],
-      "Easily transfer emails, calendar events, and contacts from your previous provider. Choose a one-time import or automatic ongoing sync.": [
-        "Transférez facilement des e-mails, des événements de calendrier et des contacts de votre ancien fournisseur. Choisissez une importation unique ou une synchronisation continue automatique."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Activez ${ PROTON_SENTINEL_NAME } pour accéder à ces fonctionnalités."
@@ -5387,13 +5387,11 @@
       ]
     },
     "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "Pour transférer des messages depuis ${ MAX_SYNC_PAID_USER } compte, passez à ${ planName }.",
-        "Pour transférer des messages depuis ${ MAX_SYNC_PAID_USER } comptes, passez à ${ planName }."
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
+        "Pour transférer des messages provenant d'un maximum de ${ MAX_SYNC_PAID_USER } comptes, passez à ${ planName }."
       ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "Vous transférez des messages depuis ${ MAX_SYNC_FREE_USER } compte externe vers ${ MAIL_APP_NAME }.",
-        "Vous transférez des messages depuis ${ MAX_SYNC_FREE_USER } comptes externes vers ${ MAIL_APP_NAME }."
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "Vous transférez des messages d'un compte externe vers ${ MAIL_APP_NAME }."
       ]
     },
     "Edit billing address form note": {
@@ -8843,11 +8841,11 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "Importation avancée"
-      ],
       "Import from ${ providerName }": [
         "Importer depuis ${ providerName }"
+      ],
+      "More import options": [
+        "Plus d'options d'importation"
       ]
     },
     "Import status": {
@@ -8967,7 +8965,7 @@
         "${ discountPercent } % de réduction"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME } ne conservera plus les versions précédentes de vos fichiers."
+        "${ DRIVE_APP_NAME } ne gardera plus les versions précédentes de vos fichiers."
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } n'est pas valide."
@@ -9549,7 +9547,7 @@
         "Effacez automatiquement les e-mails déplacés dans la corbeille et le dossier Indésirables/spam de plus de 30 jours."
       ],
       "Automatically show the next email when an open email is deleted, archived or moved.": [
-        "Afficher automatiquement le message suivant lorsqu le message ouvert est supprimé, archivé ou déplacé."
+        "Afficher automatiquement le message suivant lorsque le message ouvert est supprimé, archivé ou déplacé."
       ],
       "Available on macOS, Windows, and Linux.": [
         "Disponible sur macOS, Windows et Linux."
@@ -10661,7 +10659,7 @@
         "Les messages dans le dossier Envoyés ou Brouillons continueront à apparaître dans ce dossier, même si vous les déplacez vers un autre dossier."
       ],
       "Messages in the Spam or Trash folder will be excluded from the All mail location.": [
-        "Les messages dans le dossier pourriels ou Corbeille seront exclus de l'emplacement Tous les messages."
+        "Les messages dans le dossier indésirables/spam ou Corbeille seront exclus de l'emplacement Tous les messages."
       ],
       "Messages to all your email addresses will go to your inbox.": [
         "Les messages adressés à toutes vos adresses e-mail seront envoyés dans votre boîte de réception."
@@ -11807,11 +11805,11 @@
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Utilisez une méthode de récupération pour désactiver vos méthodes d'authentification à deux facteurs."
       ],
+      "Use multiple email addresses with ${ MAIL_APP_NAME }. Add a new ${ BRAND_NAME } address or connect another email account to manage everything from one inbox.": [
+        "Utilisez plusieurs adresses e-mail avec ${ MAIL_APP_NAME }. Ajoutez une nouvelle adresse ${ BRAND_NAME } ou connectez un autre compte de messagerie pour tout gérer depuis une seule boite de réception."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Utilisez le meilleur serveur en fonction de la charge actuelle et de la position : ${ formattedBestServerName }"
-      ],
-      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "Utilisez les différents types d'adresses e-mail et d'alias proposés par ${ BRAND_NAME }."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Utilisez les identifiants suivants lorsque vous vous connectez à des serveurs ${ VPN_APP_NAME } sans application. Quelques exemples de cas d'utilisation : Tunnelblick sur macOS, OpenVPN sur GNU/Linux."
@@ -19291,7 +19289,7 @@
     },
     "retention_policy_2025_Confirmation": {
       "${ strongText }, including those in Inbox, Sent, and Drafts. This might purge messages that users expect to keep. It is not possible to recover these messages later.": [
-        "${ strongText }, y compris ceux de la boîte de réception, des éléments envoyés et des brouillons. Cette opération peut supprimer les messages que les utilisateurs veulent conserver. Il est impossible de les récupérer après."
+        "${ strongText }, y compris ceux de la boîte de réception, des éléments envoyés et des brouillons. Cette opération peut purger les messages que les utilisateurs veulent conserver. Il est impossible de les récupérer après."
       ],
       "After ${ lifetime } day all messages will be deleted": [
         "Après ${ lifetime } jour, tous les messages seront supprimés.",
@@ -19307,7 +19305,7 @@
         "La durée doit être supérieure à ${ MIN_LIFETIME } jours."
       ],
       "Lifetime must not be set for \"Retain All\" action": [
-        "La durée ne doit pas être définie pour l'action « Conserver tout »"
+        "La durée ne doit pas être définie pour l'action « Conserver tout »."
       ],
       "Scope value is not valid": [
         "Cette valeur de zone n'est pas valide."
@@ -19342,7 +19340,7 @@
         "Inclut tous les messages de la boîte de réception, des éléments envoyés et de tous les autres emplacements. Les messages supprimés ne peuvent pas être récupérés."
       ],
       "Removes messages already deleted by users.": [
-        "Retirer les messages déjà supprimés."
+        "Retirer les messages déjà supprimés par les utilisateurs."
       ],
       "Retention rule \"${ formData.name }\" updated successfully": [
         "La règle de conservation « ${ formData.name } » a été mise à jour."
@@ -19392,7 +19390,7 @@
         "Groupe"
       ],
       "Purge all messages": [
-        "Supprimer tous les messages."
+        "Purger tous les messages."
       ],
       "Purge deleted messages only": [
         "Seulement supprimer les messages dans la corbeille."
@@ -19406,7 +19404,7 @@
     },
     "retention_policy_2025_Placeholder": {
       "E.g. Cleanup unused mailboxes": [
-        "Par exemple, nettoyer les boîtes aux lettres inutilisées."
+        "Par exemple, nettoyer les messageries inutilisées."
       ],
       "Enter duration": [
         "Saisir la durée"
@@ -20703,7 +20701,7 @@
         "Alors ${ priceElement }"
       ],
       "Then ${ priceWithDiscountPerMonth } per month, if you subscribe.": [
-        "Puis un rabais mensuel de ${ priceWithDiscountPerMonth }, en vous abonnant."
+        "Puis ${ priceWithDiscountPerMonth } par mois., si vous vous abonnez."
       ],
       "Then ${ priceWithDiscountPerMonth } per month. Cancel anytime.": [
         "Puis ${ priceWithDiscountPerMonth } par mois. Annulez à tout moment."
@@ -23014,9 +23012,6 @@
       ],
       "Connect apps and devices": [
         "Connecter les applications et les appareils"
-      ],
-      "Connect more addresses": [
-        "Connecter plus d'adresses"
       ],
       "Connect organization": [
         "Connecter l'organisation"

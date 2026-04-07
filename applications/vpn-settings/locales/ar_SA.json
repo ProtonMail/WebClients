@@ -3657,24 +3657,6 @@
         "شارك مزايا خطتك مع ${ BRAND_NAME } Duo"
       ]
     },
-    "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
-        "لإعادة توجيه رسائل البريد الإلكتروني من ما يصل إلى ${ MAX_SYNC_PAID_USER } من الحسابات، قم بالترقية إلى ${ planName }.",
-        "لإعادة توجيه رسائل البريد الإلكتروني من ما يصل إلى حساب واحد (${ MAX_SYNC_PAID_USER })، قم بالترقية إلى ${ planName }.",
-        "لإعادة توجيه رسائل البريد الإلكتروني من ما يصل إلى حسابين (${ MAX_SYNC_PAID_USER })، قم بالترقية إلى ${ planName }.",
-        "لإعادة توجيه رسائل البريد الإلكتروني من ما يصل إلى ${ MAX_SYNC_PAID_USER } حسابات، قم بالترقية إلى ${ planName }.",
-        "لإعادة توجيه رسائل البريد الإلكتروني من ما يصل إلى ${ MAX_SYNC_PAID_USER } حسابًا، قم بالترقية إلى ${ planName }.",
-        "لإعادة توجيه رسائل البريد الإلكتروني من ما يصل إلى ${ MAX_SYNC_PAID_USER } حسابًا، قم بالترقية إلى ${ planName }."
-      ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external accounts to ${ MAIL_APP_NAME }.": [
-        "يُجري إعادة توجيه رسائل البريد الإلكتروني من ${ MAX_SYNC_FREE_USER } من الحسابات الخارجية إلى ${ MAIL_APP_NAME }.",
-        "يُجري إعادة توجيه رسائل البريد الإلكتروني من حساب خارجي واحد (${ MAX_SYNC_FREE_USER }) إلى ${ MAIL_APP_NAME }.",
-        "يُجري إعادة توجيه رسائل البريد الإلكتروني من حسابين خارجيين (${ MAX_SYNC_FREE_USER }) إلى ${ MAIL_APP_NAME }.",
-        "يُجري إعادة توجيه رسائل البريد الإلكتروني من ${ MAX_SYNC_FREE_USER } حسابات خارجية إلى ${ MAIL_APP_NAME }.",
-        "يُجري إعادة توجيه رسائل البريد الإلكتروني من ${ MAX_SYNC_FREE_USER } حسابًا خارجيًا إلى ${ MAIL_APP_NAME }.",
-        "يُجري إعادة توجيه رسائل البريد الإلكتروني من ${ MAX_SYNC_FREE_USER } حسابًا خارجيًا إلى ${ MAIL_APP_NAME }."
-      ]
-    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "حقول النص اختيارية. ستظهر المعلومات التي تقدمها في هذا النموذج فقط في الفواتير الصادرة مستقبلًا ولن تؤثر على الفواتير الحالية."
@@ -5823,11 +5805,6 @@
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "حدد ${ boldExport } لتصدير التقويم كملف ICS."
-      ]
-    },
-    "Import provider": {
-      "Advanced import": [
-        "استيراد متقدم"
       ]
     },
     "Import warning": {
@@ -8080,9 +8057,6 @@
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "استخدم أفضل خادم وفقًا للحمل الحالي والموقع الحالي: ${ formattedBestServerName }"
-      ],
-      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "استخدم الأنواع المختلفة من عناوين البريد الإلكتروني والأسماء المستعارة التي يوفرها ${ BRAND_NAME }."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "استخدم بيانات الاعتماد التالية عند الاتصال بخوادم ${ VPN_APP_NAME } دون تطبيق. حالات الاستخدام تشمل على سبيل المثال: Tunnelblick لأنظمة macOS، OpenVPN لمنصات لينوكس/GNU."
@@ -15796,9 +15770,6 @@
       ],
       "Connect apps and devices": [
         "ربط التطبيقات والأجهزة"
-      ],
-      "Connect more addresses": [
-        "ربط المزيد من العناوين"
       ],
       "Connect organization": [
         "اضف المؤسسة"

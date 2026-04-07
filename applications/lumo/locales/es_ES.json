@@ -77,6 +77,9 @@
       "Continue": [
         "Continuar"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Ir a ${ planOrAppName }"
+      ],
       "Copy": [
         "Copiar"
       ],
@@ -439,6 +442,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } licencia de ${ LUMO_APP_NAME }",
         "${ seats } licencias de ${ LUMO_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } licencia de ${ MEET_APP_NAME }",
+        "${ seats } licencias de ${ MEET_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } licencia del asistente de escritura",
@@ -2015,9 +2022,6 @@
       "Cancel": [
         "Cancelar"
       ],
-      "Choose project icon": [
-        "Elegir icono del proyecto"
-      ],
       "Click to edit title": [
         "Haz click para editar el título"
       ],
@@ -2032,9 +2036,6 @@
       ],
       "Edit instructions": [
         "Editar instrucciones"
-      ],
-      "Edit project": [
-        "Editar proyecto"
       ],
       "Hide settings": [
         "Ocultar ajustes"
@@ -2112,9 +2113,6 @@
       ],
       "Collapse projects": [
         "Contraer proyectos"
-      ],
-      "Create a free account": [
-        "Crea una cuenta gratuita"
       ],
       "Delete": [
         "Eliminar"
@@ -2212,14 +2210,6 @@
         "La descarga del archivo falló debido a la comprobación de integridad. Inténtalo nuevamente."
       ]
     },
-    "collider_2025:Feature": {
-      "Advanced AI models": [
-        "Modelos avanzados de IA"
-      ],
-      "Priority access & faster responses": [
-        "Acceso prioritario y respuestas rápidas"
-      ]
-    },
     "collider_2025:Icon": {
       "Expiring soon": [
         "Caducará pronto"
@@ -2265,9 +2255,6 @@
       "Processing...": [
         "Procesando..."
       ],
-      "Projects help you organize conversations with custom instructions and files.": [
-        "Los proyectos te ayudan a organizar las conversaciones con instrucciones y archivos personalizados."
-      ],
       "This message is empty. Sorry about that.": [
         "Este mensaje está vacío. Lo sentimos."
       ],
@@ -2282,23 +2269,11 @@
       ],
       "Your files are large. ${ LUMO_SHORT_APP_NAME } may not be able to process all information.": [
         "Tus archivos son grandes. ${ LUMO_SHORT_APP_NAME } quizás no pueda procesar toda la información."
-      ],
-      "Your information is zero-access encrypted": [
-        "Tu información está cifrada con acceso cero"
       ]
     },
     "collider_2025:Label": {
-      "chats": [
-        "conversaciones"
-      ],
       "Edit conversation title": [
         "Editar título de la conversación"
-      ],
-      "Instructions": [
-        "Instrucciones"
-      ],
-      "Project Instructions (optional)": [
-        "Instrucciones del proyecto (opcional)"
       ],
       "Untitled chat": [
         "Conversación sin título"
@@ -2329,20 +2304,6 @@
       ],
       "Sign in required": [
         "Se requiere iniciar sesión"
-      ]
-    },
-    "collider_2025:Project": {
-      "Get help understanding assignments, solving problems, and learning concepts": [
-        "Obtén ayuda para comprender las tareas, resolver problemas y aprender conceptos"
-      ],
-      "Practice conversations, learn grammar, and build vocabulary in your target language": [
-        "Practica conversaciones, aprende gramática y construye vocabulario en tu idioma objetivo"
-      ],
-      "Research & Analysis Partner": [
-        "Compañero de investigación y análisis"
-      ],
-      "Study companion": [
-        "Compañero de estudio"
       ]
     },
     "collider_2025:Prompt": {
@@ -2477,9 +2438,6 @@
       "How does ${ LUMO_SHORT_APP_NAME } keep our conversations confidential?": [
         "¿Cómo mantiene ${ LUMO_SHORT_APP_NAME } la confidencialidad de nuestras conversaciones?"
       ],
-      "Inspiration": [
-        "Inspiración"
-      ],
       "Introducing Projects": [
         "Presentamos los proyectos"
       ],
@@ -2503,9 +2461,6 @@
       ],
       "Nothing here yet": [
         "Todavía no hay nada aquí"
-      ],
-      "Projects": [
-        "Proyectos"
       ],
       "Start a new conversation": [
         "Inicia una nueva conversación"
@@ -3519,6 +3474,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Usa esta guía para que tu organización se beneficie rápidamente del cifrado y el ecosistema de privacidad líderes del sector de ${ BRAND_NAME }."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Lamentamos que te vayas. Si tienes un momento, te agradeceríamos mucho que nos contaras por qué quieres cancelar. Tus comentarios nos ayudan a mejorar ${ BRAND_NAME } para todo el mundo."
       ]
     },
     "Downgrade account reason": {
@@ -4001,6 +3959,12 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } incluye el asistente de escritura ${ BRAND_NAME } Scribe."
       ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } es una solución de videoconferencia cifrada de extremo a extremo. Añádelo a tu plan para organizar reuniones seguras."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Plazas de ${ MEET_APP_NAME }"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "La oferta de por vida de ${ PASS_SHORT_APP_NAME } Plus no tiene precio de renovación. Es un pago único por el acceso de por vida a ${ PASS_SHORT_APP_NAME }."
       ],
@@ -4165,11 +4129,17 @@
       "Everything in ${ planOrAppName }": [
         "Todo en ${ planOrAppName }"
       ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Todo lo incluido en ${ planOrAppName }, y además:"
+      ],
       "Expired": [
         "Expirado"
       ],
       "Folder:": [
         "Carpeta:"
+      ],
+      "for ${ price }": [
+        "por ${ price }"
       ],
       "Google Pay mark": [
         "marca de Google Pay"
@@ -4545,6 +4515,9 @@
       "Account holder": [
         "Titular de la cuenta"
       ],
+      "Additional comments": [
+        "Comentarios adicionales"
+      ],
       "Address": [
         "Dirección"
       ],
@@ -4607,6 +4580,9 @@
       ],
       "Company name": [
         "Nombre de la empresa"
+      ],
+      "Continue cancelling": [
+        "Continuar cancelando"
       ],
       "Copy": [
         "Copiar"
@@ -4677,6 +4653,9 @@
       "Last name": [
         "Apellido"
       ],
+      "Main reason for cancelling": [
+        "Motivo principal de la cancelación"
+      ],
       "Notification": [
         "Notificación"
       ],
@@ -4715,6 +4694,9 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Ginebra"
+      ],
+      "Skip feedback": [
+        "Omitir comentarios"
       ],
       "Start date": [
         "Fecha de inicio"
@@ -4922,6 +4904,18 @@
         "para ${ price }"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "Licencia de ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Plazas de ${ MEET_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } licencia de ${ MEET_APP_NAME }",
+        "${ seats } licencias de ${ MEET_APP_NAME }"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: videollamadas privadas para lo que de verdad importa"
@@ -4955,6 +4949,9 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Pantalla compartida con cifrado de extremo a extremo y chat efímero en la llamada"
       ],
+      "Hosts can record meetings locally on their computers": [
+        "Los anfitriones pueden grabar reuniones localmente en sus ordenadores"
+      ],
       "Meeting recording": [
         "Grabación de la reunión"
       ],
@@ -4974,6 +4971,19 @@
       "Up to ${ n } participant": [
         "Hasta ${ n } participante",
         "Hasta ${ n } participantes"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videollamadas, ${ n } participante",
+        "Videollamadas, ${ n } participantes"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } licencia incluida",
+        "${ seats } licencias incluidas"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Puedes tener hasta ${ TRIAL_MAX_MEET_SEATS } licencias de ${ MEET_SHORT_APP_NAME } durante el período de prueba."
       ]
     },
     "New Label form": {
@@ -5192,6 +5202,9 @@
       "Data breach monitoring": [
         "Monitoreo de vulneración de datos"
       ],
+      "Data retention policies": [
+        "Políticas de retención de datos"
+      ],
       "Dedicated servers optimized for streaming": [
         "Servidores dedicados optimizados para streaming"
       ],
@@ -5297,6 +5310,9 @@
       ],
       "Priority support & live chat": [
         "Soporte prioritario y chat en vivo"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Chat de IA privado (${ LUMO_APP_NAME })"
       ],
       "Recover previous file versions": [
         "Recupera las versiones previas de los archivos"
@@ -5425,6 +5441,9 @@
       "Vault sharing with up to ${ n } person": [
         "Compartir la caja fuerte con hasta ${ n } persona",
         "Compartir la caja fuerte con hasta ${ n } personas"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN con bloqueador de publicidad y protección contra malware"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la red oscura para verificar si tus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarte de inmediato si encontramos algo."
@@ -6251,6 +6270,9 @@
       "Anderson": [
         "García"
       ],
+      "Anything you'd like us to know": [
+        "¿Algo más que quieras decirnos?"
+      ],
       "Anytown": [
         "Valclaro"
       ],
@@ -6262,6 +6284,9 @@
       ],
       "e.g. My automation script": [
         "por ejemplo, mi script de automatización"
+      ],
+      "Enter a name": [
+        "Introduce un nombre"
       ],
       "Enter a new folder name": [
         "Introduce un nombre nuevo para la carpeta."
@@ -6295,6 +6320,9 @@
       ],
       "Select": [
         "Seleccionar"
+      ],
+      "Select a provider": [
+        "Selecciona un Proveedor"
       ],
       "Select a reason": [
         "Selecciona un motivo"
@@ -6346,6 +6374,26 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Mejorar a ${ upsellPlanTitle }"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Otro"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {

@@ -820,6 +820,9 @@
       "Help and resources": [
         "Tuki ja resurssit"
       ],
+      "Hide": [
+        "Piilota"
+      ],
       "Hide more benefits": [
         "Piilota enemmän etuja"
       ],
@@ -1731,6 +1734,9 @@
       ],
       "Users": [
         "Käyttäjät"
+      ],
+      "Writing assistant": [
+        "Kirjoitusavustaja"
       ]
     },
     "Address action": {
@@ -2342,6 +2348,9 @@
       ],
       "In progress": [
         "Käynnissä"
+      ],
+      "Install app": [
+        "Asenna sovellus"
       ],
       "Install migration app": [
         "Asenna migraatio-sovellus"
@@ -3770,6 +3779,9 @@
       "North Korea": [
         "Pohjois-Korea"
       ],
+      "North Macedonia": [
+        "Pohjois-Makedonia"
+      ],
       "Northern Mariana Islands": [
         "Pohjois-Mariaanit"
       ],
@@ -4288,9 +4300,6 @@
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Synkronoi tiedostot helposti pilveen työpöydältäsi ja käytä niitä mobiililaitteellasi."
-      ],
-      "Easily transfer emails, calendar events, and contacts from your previous provider. Choose a one-time import or automatic ongoing sync.": [
-        "Siirrä sähköpostit, kalenterimerkinnät ja yhteystiedot helposti edelliseltä palveluntarjoajalta. Valitse kertaluonteinen tuonti tai automaattinen jatkuva synkronointi."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Käytä näitä ominaisuuksia ottamalla ${ PROTON_SENTINEL_NAME } käyttöön"
@@ -4812,16 +4821,6 @@
         "90 min"
       ]
     },
-    "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "Välittääksesi sähköposteja ${ MAX_SYNC_PAID_USER } tililtä, päivitä tilauksesi tasolle ${ planName }.",
-        "Välittääksesi sähköposteja jopa ${ MAX_SYNC_PAID_USER } tililtä, päivitä tilauksesi tasolle ${ planName }."
-      ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "Välität sähköposteja ${ MAX_SYNC_FREE_USER } ulkoiselta tililtä ${ MAIL_APP_NAME }iin.",
-        "Välität sähköposteja ${ MAX_SYNC_FREE_USER } ulkoiselta tililtä ${ MAIL_APP_NAME }iin."
-      ]
-    },
     "edm": {
       "Allow QR code sign‒in": [
         "Salli kirjautuminen QR-koodilla"
@@ -5257,6 +5256,9 @@
       ],
       "Added on ${ formattedDate }": [
         "Lisätty ${ formattedDate }"
+      ],
+      "Cancel request": [
+        "Peruuta pyyntö"
       ],
       "Cancel request?": [
         "Peruuta pyyntö?"
@@ -7718,9 +7720,6 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "Edistynyt tuonti"
-      ],
       "Import from ${ providerName }": [
         "Tuo palvelusta ${ providerName }"
       ]
@@ -8406,6 +8405,9 @@
       "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
         "Pilvitallennus, integroitu ${ DOCS_APP_NAME } kanssa"
       ],
+      "Code expired": [
+        "Koodi vanhentunut"
+      ],
       "Coming soon": [
         "Tulossa pian"
       ],
@@ -9058,6 +9060,9 @@
       "Insert link": [
         "Lisää linkki"
       ],
+      "Instagram": [
+        "Instagram"
+      ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Asenna maakohtainen määritystiedosto yhdistääksesi satunnaiseen palvelimeen valitsemassasi maassa."
       ],
@@ -9569,6 +9574,9 @@
       ],
       "Plus or Visionary subscription required": [
         "Edellyttää Plus- tai Visionary-tilausta"
+      ],
+      "Podcast": [
+        "Podcast"
       ],
       "Preference saved": [
         "Asetus tallennettiin"
@@ -10287,9 +10295,6 @@
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Käytä nykyisen kuormituksen ja sijainnin perusteella parasta palvelinta: ${ formattedBestServerName }"
       ],
-      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "Käytä erilaisia ${ BRAND_NAME }in tarjoamia sähköpostiosoitteita ja aliaksia."
-      ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Seuraavilla tunnistetiedoilla voit muodostaa yhteyden ${ VPN_APP_NAME } -palvelimiin ilman sovellusta. Esimerkkejä: Tunnelblick macOS:lle ja OpenVPN GNU/Linuxille."
       ],
@@ -10343,6 +10348,9 @@
       ],
       "Version ${ version }": [
         "Versio ${ version }"
+      ],
+      "Version history": [
+        "Versiohistoria"
       ],
       "Version number successfully copied to clipboard": [
         "Versionumero kopioitiin leikepöydälle"
@@ -10514,6 +10522,9 @@
       ],
       "Writing assistant": [
         "Kirjoitusavustaja"
+      ],
+      "X": [
+        "X"
       ],
       "Yearly": [
         "Vuosittain"
@@ -10808,6 +10819,9 @@
       ],
       "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
         "Kuponkisi varattua ${ BRAND_NAME }-sähköpostiosoitetta varten: ${ reservedEmail }"
+      ],
+      "YouTube": [
+        "YouTube"
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Voit lisätä nämä palvelimet toiseen yhdyskäytävään välittömästi."
@@ -16349,6 +16363,9 @@
       "End date": [
         "Lopetuspäivä"
       ],
+      "Enter a name": [
+        "Syötä nimi"
+      ],
       "Enter name": [
         "Syötä nimi"
       ],
@@ -16423,6 +16440,9 @@
       ],
       "Select": [
         "Valitse"
+      ],
+      "Select a provider": [
+        "Valitse tarjoaja"
       ],
       "Select a reason": [
         "Valitse syy"
@@ -16580,6 +16600,9 @@
       ]
     },
     "Primary timezone": {
+      "Primary time zone": [
+        "Ensisijainen aikavyöhyke"
+      ],
       "Secondary time zone": [
         "Toissijainen aikavyöhyke"
       ]
@@ -16634,6 +16657,20 @@
       ],
       "Unknown": [
         "Tuntematon"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {
@@ -18075,6 +18112,9 @@
       "Compare plans": [
         "Vertaile tilauksia"
       ],
+      "Confirm payment": [
+        "Vahvista maksu"
+      ],
       "Connect all your devices": [
         "Yhdistä kaikki laitteesi"
       ],
@@ -18211,6 +18251,9 @@
       ],
       "Yearly": [
         "Vuosittain"
+      ],
+      "You are all set": [
+        "Kaikki on kunnossa"
       ],
       "Your plan": [
         "Sinun tilauksesi"
@@ -19506,6 +19549,9 @@
       "Address added": [
         "Osoite lisättiin"
       ],
+      "Address updated": [
+        "Osoite päivitettiin"
+      ],
       "Administrator privileges restored": [
         "Hallintaoikeudet palautettiin"
       ],
@@ -20288,9 +20334,6 @@
       ],
       "Connect apps and devices": [
         "Yhdistä sovelluksia ja laitteita"
-      ],
-      "Connect more addresses": [
-        "Yhdistä lisää osoitteita"
       ],
       "Connect organization": [
         "Yhdistä organisaatio"

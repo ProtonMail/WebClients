@@ -4216,20 +4216,6 @@
         "Priorytetowe wsparcie"
       ]
     },
-    "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "Ulepsz konto do planu ${ planName }, aby przekierować wiadomości z ${ MAX_SYNC_PAID_USER } adresu.",
-        "Ulepsz konto do planu ${ planName }, aby przekierować wiadomości z ${ MAX_SYNC_PAID_USER } adresów.",
-        "Ulepsz konto do planu ${ planName }, aby przekierować wiadomości z ${ MAX_SYNC_PAID_USER } adresów.",
-        "Ulepsz konto do planu ${ planName }, aby przekierować wiadomości z ${ MAX_SYNC_PAID_USER } adresów."
-      ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "Przekierowujesz do ${ MAIL_APP_NAME } wiadomości z ${ MAX_SYNC_FREE_USER } adresu.",
-        "Przekierowujesz do ${ MAIL_APP_NAME } wiadomości z ${ MAX_SYNC_FREE_USER } adresów.",
-        "Przekierowujesz do ${ MAIL_APP_NAME } wiadomości z ${ MAX_SYNC_FREE_USER } adresów.",
-        "Przekierowujesz do ${ MAIL_APP_NAME } wiadomości z ${ MAX_SYNC_FREE_USER } adresów."
-      ]
-    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Pola tekstowe są opcjonalne. Te informacje pojawią się tylko na przyszłych fakturach i nie będą miały wpływu na obecne faktury."
@@ -9438,9 +9424,6 @@
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Użyj najlepszego serwera w zależności od obciążenia i lokalizacji: ${ formattedBestServerName }"
-      ],
-      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "Używaj różnych typów adresów e-mail i aliasów oferowanych przez ${ BRAND_NAME }."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Użyj następujących danych logowania, podczas łączenia się z serwerami ${ VPN_APP_NAME } poza aplikacją. Przykładowe użycie: Tunnelblick na macOS, OpenVPN na GNU/Linuksie."
@@ -18735,9 +18718,6 @@
       ],
       "Connect apps and devices": [
         "Połącz aplikacje i urządzenia"
-      ],
-      "Connect more addresses": [
-        "Połącz więcej adresów"
       ],
       "Connect organization": [
         "Połącz organizację"

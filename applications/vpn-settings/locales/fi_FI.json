@@ -545,6 +545,9 @@
       "Help and resources": [
         "Tuki ja resurssit"
       ],
+      "Hide": [
+        "Piilota"
+      ],
       "Hide more benefits": [
         "Piilota enemmän etuja"
       ],
@@ -1228,6 +1231,9 @@
       ],
       "Users": [
         "Käyttäjät"
+      ],
+      "Writing assistant": [
+        "Kirjoitusavustaja"
       ]
     },
     "Address action": {
@@ -1708,6 +1714,9 @@
       "In progress": [
         "Käynnissä"
       ],
+      "Install app": [
+        "Asenna sovellus"
+      ],
       "Install migration app": [
         "Asenna migraatio-sovellus"
       ],
@@ -1918,6 +1927,9 @@
       ],
       "Set up other features": [
         "Määritä muut ominaisuudet"
+      ],
+      "Set up SSO": [
+        "Määritä SSO"
       ],
       "Take a tour": [
         "Katso esittely"
@@ -2766,6 +2778,9 @@
       "North Korea": [
         "Pohjois-Korea"
       ],
+      "North Macedonia": [
+        "Pohjois-Makedonia"
+      ],
       "Northern Mariana Islands": [
         "Pohjois-Mariaanit"
       ],
@@ -3552,16 +3567,6 @@
       ],
       "Share your plan benefits with ${ BRAND_NAME } Duo": [
         "Jaa tilausetusi ${ BRAND_NAME } Duon kanssa"
-      ]
-    },
-    "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "Välittääksesi sähköposteja ${ MAX_SYNC_PAID_USER } tililtä, päivitä tilauksesi tasolle ${ planName }.",
-        "Välittääksesi sähköposteja jopa ${ MAX_SYNC_PAID_USER } tililtä, päivitä tilauksesi tasolle ${ planName }."
-      ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "Välität sähköposteja ${ MAX_SYNC_FREE_USER } ulkoiselta tililtä ${ MAIL_APP_NAME }iin.",
-        "Välität sähköposteja ${ MAX_SYNC_FREE_USER } ulkoiselta tililtä ${ MAIL_APP_NAME }iin."
       ]
     },
     "edm": {
@@ -5558,11 +5563,6 @@
         "Valitse ${ boldExport } viedäksesi kalenterin ICS-tiedostona."
       ]
     },
-    "Import provider": {
-      "Advanced import": [
-        "Edistynyt tuonti"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded }/${ totalContacts } yhteystietoa ei tuoda. Näytä tiedot painamalla tästä."
@@ -6416,6 +6416,9 @@
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Vastaanota ilmoituksia, jos salasanasi tai muita henkilökohtaisia tietojasi on vuotanut. ${ learnMoreLinkNoBreach }"
       ],
+      "Get started": [
+        "Aloita"
+      ],
       "Get started with the referral link above.": [
         "Aloita yllä olevalla suosittelulinkillä."
       ],
@@ -6533,6 +6536,9 @@
       ],
       "Inherited from parent folder": [
         "Peritty yläkansiosta"
+      ],
+      "Instagram": [
+        "Instagram"
       ],
       "Install a Country configuration file to connect to a random server in the country of your choice.": [
         "Asenna maakohtainen määritystiedosto yhdistääksesi satunnaiseen palvelimeen valitsemassasi maassa."
@@ -6958,6 +6964,9 @@
       ],
       "Plus or Visionary subscription required": [
         "Edellyttää Plus- tai Visionary-tilausta"
+      ],
+      "Podcast": [
+        "Podcast"
       ],
       "Preference saved": [
         "Asetus tallennettiin"
@@ -7525,9 +7534,6 @@
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Käytä nykyisen kuormituksen ja sijainnin perusteella parasta palvelinta: ${ formattedBestServerName }"
       ],
-      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "Käytä erilaisia ${ BRAND_NAME }in tarjoamia sähköpostiosoitteita ja aliaksia."
-      ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Seuraavilla tunnistetiedoilla voit muodostaa yhteyden ${ VPN_APP_NAME } -palvelimiin ilman sovellusta. Esimerkkejä: Tunnelblick macOS:lle ja OpenVPN GNU/Linuxille."
       ],
@@ -7722,6 +7728,9 @@
       ],
       "Writing assistant": [
         "Kirjoitusavustaja"
+      ],
+      "X": [
+        "X"
       ],
       "You already have a free account": [
         "Sinulla on jo ilmainen tili"
@@ -7953,6 +7962,9 @@
       ],
       "Your trial will end in ${ timeRemaining }.": [
         "Tilauksesi päättyy ajassa ${ timeRemaining }."
+      ],
+      "YouTube": [
+        "YouTube"
       ],
       "You’ll be able to add these servers to another Gateway immediately.": [
         "Voit lisätä nämä palvelimet toiseen yhdyskäytävään välittömästi."
@@ -11606,6 +11618,9 @@
       "End date": [
         "Lopetuspäivä"
       ],
+      "Enter a name": [
+        "Syötä nimi"
+      ],
       "Enter name": [
         "Syötä nimi"
       ],
@@ -11665,6 +11680,9 @@
       ],
       "Select": [
         "Valitse"
+      ],
+      "Select a provider": [
+        "Valitse tarjoaja"
       ],
       "Select a reason": [
         "Valitse syy"
@@ -11795,6 +11813,20 @@
       ],
       "Unknown": [
         "Tuntematon"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {
@@ -14258,6 +14290,9 @@
       "Access control": [
         "Käyttöoikeusvalvonta"
       ],
+      "Account": [
+        "Tili"
+      ],
       "Account monitor": [
         "Tilinvalvonta"
       ],
@@ -14447,9 +14482,6 @@
       ],
       "Connect apps and devices": [
         "Yhdistä sovelluksia ja laitteita"
-      ],
-      "Connect more addresses": [
-        "Yhdistä lisää osoitteita"
       ],
       "Connect organization": [
         "Yhdistä organisaatio"
@@ -14742,6 +14774,9 @@
       "Get more from your VPN": [
         "Saa enemmän VPN-yhteydestäsi"
       ],
+      "Get started": [
+        "Aloita"
+      ],
       "Get the apps": [
         "Hanki sovellukset"
       ],
@@ -14857,6 +14892,9 @@
       "OpenVPN configuration files": [
         "OpenVPN-määritystiedostot"
       ],
+      "OpenVPN username": [
+        "OpenVPN-käyttäjäjtunnus"
+      ],
       "Org setup": [
         "Organisaation määritys"
       ],
@@ -14901,6 +14939,9 @@
       ],
       "Phone": [
         "Puhelin"
+      ],
+      "Plans": [
+        "Tilaukset"
       ],
       "Preview": [
         "Esikatselu"
@@ -15247,6 +15288,9 @@
       ],
       "Your changes are not synced yet": [
         "Muutoksiasi ei ole vielä synkronoitu"
+      ],
+      "Your current plan": [
+        "Nykyinen tilauksesi"
       ],
       "Your exposed information": [
         "Paljastuneet tietosi"

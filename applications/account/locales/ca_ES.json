@@ -4815,6 +4815,9 @@
       "Available with ${ title }": [
         "Està disponible amb ${ title }"
       ],
+      "Bring over email, calendar events, and contacts from another provider.": [
+        "Porteu correus electrònics, esdeveniments del calendari i contactes d'un altre proveïdor."
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Configureu això primer per activar la vostra organització i personalitzar la vostra adreça de correu."
       ],
@@ -4838,9 +4841,6 @@
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Sincronitzeu fàcilment els fitxers al núvol des de l'ordinador i accediu-hi des del dispositiu mòbil."
-      ],
-      "Easily transfer emails, calendar events, and contacts from your previous provider. Choose a one-time import or automatic ongoing sync.": [
-        "Transferiu fàcilment els correus electrònics, els esdeveniments del calendari i els contactes del vostre proveïdor anterior. Trieu una importació única o una sincronització contínua automàtica."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Activeu ${ PROTON_SENTINEL_NAME } per accedir a aquestes funcions"
@@ -5390,13 +5390,11 @@
       ]
     },
     "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "Per reenviar correus electrònics des de fins a ${ MAX_SYNC_PAID_USER } compte, milloreu a ${ planName }.",
-        "Per reenviar correus electrònics des de fins a ${ MAX_SYNC_PAID_USER } comptes, milloreu a ${ planName }."
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
+        "Per a reenviar correus electrònics de fins a ${ MAX_SYNC_PAID_USER } comptes, milloreu al pla ${ planName }."
       ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "Esteu reenviant correus electrònics des d'${ MAX_SYNC_FREE_USER } compte extern a ${ MAIL_APP_NAME }.",
-        "Esteu reenviant correus electrònics des de ${ MAX_SYNC_FREE_USER } comptes externs a ${ MAIL_APP_NAME }."
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "Esteu reenviant correus electrònics d'un compte extern a ${ MAIL_APP_NAME }."
       ]
     },
     "Edit billing address form note": {
@@ -8852,11 +8850,11 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "Importació avançada"
-      ],
       "Import from ${ providerName }": [
         "Importeu des de ${ providerName }"
+      ],
+      "More import options": [
+        "Més opcions d'importació"
       ]
     },
     "Import status": {
@@ -11822,11 +11820,11 @@
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Utilitzeu un mètode de recuperació per desactivar els mètodes d'autenticació de doble factor."
       ],
+      "Use multiple email addresses with ${ MAIL_APP_NAME }. Add a new ${ BRAND_NAME } address or connect another email account to manage everything from one inbox.": [
+        "Utilitza diverses adreces de correu electrònic amb ${ MAIL_APP_NAME }. Afegeix una nova adreça ${ BRAND_NAME } o connecta un altre compte de correu electrònic per gestionar-ho tot des d'una safata d'entrada."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Utilitzeu el millor servidor segons la càrrega i la ubicació actuals: ${ formattedBestServerName }"
-      ],
-      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "Utilitzeu els diferents tipus d'adreces de correu electrònic i àlies que ofereix ${ BRAND_NAME }."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Utilitzeu les següents credencials quan us connecteu a servidors ${ VPN_APP_NAME } sense aplicació. Exemple d'utilització: Tunnelblick a macOS, OpenVPN a GNU/Linux."
@@ -22951,9 +22949,6 @@
       ],
       "Connect apps and devices": [
         "Connecteu aplicacions i dispositius"
-      ],
-      "Connect more addresses": [
-        "Connecteu més adreces"
       ],
       "Connect organization": [
         "Connecta l'organització"
