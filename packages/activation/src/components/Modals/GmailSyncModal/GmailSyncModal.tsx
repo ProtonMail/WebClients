@@ -120,30 +120,6 @@ const GmailSyncModal = ({
         });
     };
 
-    const handleAddBYOE = (importRecentEmails?: boolean) => {
-        /* When the user checks the import recent email checkbox, we need to use the new flow.
-         * If we wanted to create an import on the frontend we have to deal with the full folders mapping, etc...
-         */
-        if (importRecentEmails) {
-            /* New flow:
-             * - Open oAuth
-             * - Create token
-             * - Call new route so that the backend can create sync + importer (and start an import on the last 180 days)
-             * - Create BYOE address
-             */
-            handleBYOEWithImport();
-        } else {
-            /* Old flow:
-             * - Open oAuth
-             * - Create token
-             * - Create importer (this is not an import)
-             * - Create sync
-             * - Create BYOE address
-             */
-            handleGoogleSync();
-        }
-    };
-
     const handleSyncSkip = () => {
         onSyncSkipCallback?.();
         rest?.onClose?.();
@@ -161,10 +137,9 @@ const GmailSyncModal = ({
             <AddBYOEModal
                 {...rest}
                 onClose={handleClose}
-                onSubmit={handleAddBYOE}
+                onSubmit={handleBYOEWithImport}
                 expectedEmailAddress={expectedEmailAddress}
                 isLoading={loading}
-                source="existingUser"
             />
         );
     }
