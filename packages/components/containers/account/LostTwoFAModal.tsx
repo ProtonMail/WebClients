@@ -11,10 +11,9 @@ import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { CacheType } from '@proton/redux-utilities';
-import { disableTotp, removeSecurityKey } from '@proton/shared/lib/api/settings';
+import { disable2FA } from '@proton/shared/lib/api/settings';
 import { lockSensitiveSettings } from '@proton/shared/lib/api/user';
 import { getHasFIDO2SettingEnabled } from '@proton/shared/lib/settings/twoFactor';
-import { getId } from '@proton/shared/lib/webauthn/id';
 import noop from '@proton/utils/noop';
 
 import ReauthUsingRecoveryModal from './ReauthUsingRecoveryModal';
@@ -36,7 +35,6 @@ const LostTwoFAModal = ({ availableRecoveryMethods, onClose, ...rest }: Props) =
 
     const [userSettings] = useUserSettings();
 
-    const registeredKeys = userSettings['2FA']?.RegisteredKeys || [];
     const hasFIDO2Enabled = getHasFIDO2SettingEnabled(userSettings);
 
     if (step === STEP.RECOVERY_MODAL) {
@@ -47,19 +45,7 @@ const LostTwoFAModal = ({ availableRecoveryMethods, onClose, ...rest }: Props) =
                 title={c('Title').t`Disable two-factor authentication`}
                 availableRecoveryMethods={availableRecoveryMethods}
                 onSuccess={async () => {
-                    if (hasFIDO2Enabled) {
-                        const keys = registeredKeys.map((RegisteredKey) => ({
-                            id: getId(RegisteredKey),
-                            name: RegisteredKey.Name,
-                        }));
-                        await Promise.all(
-                            keys.map((key) => {
-                                return api(removeSecurityKey(key.id, { PersistPasswordScope: true })).catch(noop);
-                            })
-                        );
-                    }
-
-                    await api(disableTotp());
+                    await api(disable2FA());
                     await dispatch(userSettingsThunk({ cache: CacheType.None }));
                     await api(lockSensitiveSettings()).catch(noop);
 

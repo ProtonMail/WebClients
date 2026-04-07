@@ -27,6 +27,8 @@ export interface AuthResponse {
     LocalID: number;
     TwoFactor: number;
     '2FA': TwoFaResponse;
+    HasRecoveryEmail: boolean;
+    HasRecoveryPhone: boolean;
 }
 
 export interface PushForkResponse {

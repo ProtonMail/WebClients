@@ -340,6 +340,7 @@ export const handleNextLogin = async ({
     setupVPN,
     ktActivation,
     productParam,
+    challengeResult,
 }: {
     authType: AuthType;
     authVersion: AuthVersion;
@@ -355,6 +356,7 @@ export const handleNextLogin = async ({
     setupVPN: boolean;
     ktActivation: KeyTransparencyActivation;
     productParam: ProductParam;
+    challengeResult: ChallengeResult | undefined;
 }): Promise<AuthActionResponse> => {
     const cache: AuthCacheResult = {
         authType,
@@ -374,6 +376,7 @@ export const handleNextLogin = async ({
         setupVPN,
         preAuthKTVerifier: createPreAuthKTVerifier(ktActivation),
         keyMigrationKTVerifier: createKeyMigrationKTVerifier(ktActivation),
+        challengeResult,
     };
     return next({ cache, from: AuthStep.LOGIN });
 };
