@@ -25,7 +25,7 @@ interface Props {
     showIcon?: boolean;
     className?: string;
     buttonText?: string;
-    onComplete?: () => void;
+    onComplete?: () => Promise<void>;
 }
 
 const ConnectGmailButton = ({
@@ -137,7 +137,11 @@ const ConnectGmailButton = ({
             )}
             {renderRemoveForwardingModal && <RemoveForwardingModal {...removeForwardingModalProps} />}
             {renderBYOESetupSuccessModal && connectedAddress && (
-                <BYOESetupSuccessModal connectedAddress={connectedAddress} {...byoeSetupSuccessModal} />
+                <BYOESetupSuccessModal
+                    connectedAddress={connectedAddress}
+                    onComplete={onComplete}
+                    {...byoeSetupSuccessModal}
+                />
             )}
         </>
     );

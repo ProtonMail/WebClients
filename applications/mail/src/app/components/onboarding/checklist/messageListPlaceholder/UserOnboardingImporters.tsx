@@ -39,8 +39,8 @@ export const UserOnboardingImporters = ({ goToNextStep }: Props) => {
                         <span className="text-sm color-weak">{c('Onboarding List Placeholder')
                             .t`Choose a provider`}</span>
                     }
-                    onComplete={() => {
-                        void markItemsAsDone(ChecklistKey.Import);
+                    onComplete={async () => {
+                        await markItemsAsDone(ChecklistKey.Import);
                         goToNextStep();
                     }}
                 />
