@@ -9,6 +9,7 @@ im.$breakpoints: $breakpoints-product;
 im.$media-expressions: $media-expressions;
 
 // Initialisation
+$width-sidebar: 280;
 @use 'base/' as *;
 
 // Layout
