@@ -825,6 +825,9 @@
       "Refer a friend": [
         "Odporučiť priateľa"
       ],
+      "Refetch index": [
+        "Znovu načítať index"
+      ],
       "Refresh the page": [
         "Obnoviť stránku"
       ],
@@ -3824,6 +3827,12 @@
       "Something went wrong during folder listing": [
         "Pri výpise priečinkov došlo k chybe"
       ],
+      "Something went wrong with search. Please try again later.": [
+        "Pri vyhľadávaní došlo k chybe. Skúste to neskôr, prosím."
+      ],
+      "Something went wrong with search: Not enough storage space.": [
+        "Pri vyhľadávaní došlo k chybe: Nedostatok úložného priestoru."
+      ],
       "Something went wrong. Please try again.": [
         "Niečo sa pokazilo. Skúste to znova, prosím."
       ],
@@ -4927,8 +4936,8 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "Pokročilý import"
+      "More import options": [
+        "Ďalšie možnosti importu"
       ]
     },
     "Import warning": {
@@ -5197,6 +5206,9 @@
       ],
       "${ speed }/s": [
         "${ speed }/s"
+      ],
+      "${ state.result.entries.length } entries": [
+        "${ state.result.entries.length } záznamov"
       ],
       "${ storage } storage": [
         "${ storage } úložisko"
@@ -5897,6 +5909,9 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "V ďalšom kroku budete môcť odoslať vklad pomocou Bitcoin adresy."
       ],
+      "Index is empty.": [
+        "Index je prázdny."
+      ],
       "Indexing in progress": [
         "Prebieha indexovanie"
       ],
@@ -6383,6 +6398,9 @@
       "Search enabled. You may now close this dialogue and search for files and folders.": [
         "Vyhľadávanie je povolené. Teraz môžete zatvoriť toto dialógové okno a vyhľadávať súbory a priečinky."
       ],
+      "Search module is not available.": [
+        "Modul vyhľadávania nie je k dispozícii."
+      ],
       "Select a destination folder": [
         "Vyberte cieľový priečinok"
       ],
@@ -6772,6 +6790,9 @@
       ],
       "Unsupported file": [
         "Nepodporovaný súbor"
+      ],
+      "Unsupported file type for Photos": [
+        "Nepodporovaný typ súboru pre Fotografie"
       ],
       "Untitled": [
         "Bez názvu"
@@ -7557,6 +7578,9 @@
       "Enter device name": [
         "Zadajte názov zariadenia"
       ],
+      "Environment compatible": [
+        "Kompatibilné prostredie"
+      ],
       "Expired": [
         "Vypršal"
       ],
@@ -7625,6 +7649,12 @@
       ],
       "Include message and file name in invite email": [
         "Zahrnúť správu a názov súboru do emailovej pozvánky"
+      ],
+      "Index kinds": [
+        "Typy indexu"
+      ],
+      "Initial indexing": [
+        "Počiatočné indexovanie"
       ],
       "Integrated 2FA authenticator": [
         "Integrovaný 2FA autentifikátor"
@@ -7725,6 +7755,9 @@
       "Other": [
         "Iné"
       ],
+      "Outdated version": [
+        "Zastaralá verzia"
+      ],
       "Password": [
         "Heslo"
       ],
@@ -7793,6 +7826,9 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
+      ],
+      "Searchable": [
+        "Vyhľadávateľné"
       ],
       "Select type of abuse": [
         "Vyberte typ zneužitia"
@@ -7905,6 +7941,9 @@
       "Uploaded by": [
         "Nahrané používateľom"
       ],
+      "User opted in": [
+        "Používateľ udelil súhlas"
+      ],
       "Username": [
         "Používateľské meno"
       ],
@@ -7913,6 +7952,9 @@
       ],
       "Viewer": [
         "Čitateľ"
+      ],
+      "Visible columns:": [
+        "Viditeľné stĺpce:"
       ],
       "Vulnerable": [
         "Zraniteľné"
@@ -12557,6 +12599,9 @@
       "Account temporarily locked": [
         "Účet dočasne zablokovaný"
       ],
+      "Actions": [
+        "Akcie"
+      ],
       "Active": [
         "Aktívny"
       ],
@@ -12971,6 +13016,9 @@
       "Gift": [
         "Dar"
       ],
+      "Global": [
+        "Globálna"
+      ],
       "Groups": [
         "Skupiny"
       ],
@@ -13285,6 +13333,9 @@
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Uložiť na neskôr v ${ DRIVE_APP_NAME }"
+      ],
+      "Search": [
+        "Hľadať"
       ],
       "Search results": [
         "Výsledky vyhľadávania"

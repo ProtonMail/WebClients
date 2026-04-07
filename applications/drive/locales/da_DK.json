@@ -815,6 +815,9 @@
       "Refer a friend": [
         "Henvis en ven"
       ],
+      "Refetch index": [
+        "Genindlæs indeks"
+      ],
       "Refresh the page": [
         "Opdater siden"
       ],
@@ -4837,8 +4840,8 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "Avanceret import"
+      "More import options": [
+        "Flere importindstillinger"
       ]
     },
     "Import warning": {
@@ -5047,6 +5050,9 @@
       ],
       "${ speed }/s": [
         "${ speed }/s"
+      ],
+      "${ state.result.entries.length } entries": [
+        "${ state.result.entries.length } elementer"
       ],
       "${ storage } storage": [
         "${ storage } lagerplads"
@@ -5725,6 +5731,9 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "I det næste trin kan du foretage en indbetaling ved hjælp af en Bitcoin-adresse."
       ],
+      "Index is empty.": [
+        "Indeks er tom."
+      ],
       "Indexing in progress": [
         "Indeksering i gang"
       ],
@@ -6207,6 +6216,9 @@
       "Search enabled. You may now close this dialogue and search for files and folders.": [
         "Søgning aktiveret. Du kan nu lukke dialogen og søge efter filer og mapper."
       ],
+      "Search module is not available.": [
+        "Søgningsmodulet er ikke tilgængeligt."
+      ],
       "Select a destination folder": [
         "Vælg en destinationsmappe"
       ],
@@ -6592,6 +6604,9 @@
       ],
       "Unsupported file": [
         "Ikke-understøttet fil"
+      ],
+      "Unsupported file type for Photos": [
+        "Filtypen for Fotos er ikke understøttet"
       ],
       "Untitled": [
         "Uden titel"
@@ -7351,6 +7366,9 @@
       "Enter device name": [
         "Indtast navn på enheden"
       ],
+      "Environment compatible": [
+        "Kompatibel til miljøet"
+      ],
       "Expired": [
         "Udløbet"
       ],
@@ -7419,6 +7437,12 @@
       ],
       "Include message and file name in invite email": [
         "Medtag besked og filnavn i invitationsmail"
+      ],
+      "Index kinds": [
+        "Typer af indeks"
+      ],
+      "Initial indexing": [
+        "Første indeksering"
       ],
       "Integrated 2FA authenticator": [
         "Integreret 2FA-godkendelsesværktøj"
@@ -7519,6 +7543,9 @@
       "Other": [
         "Andet"
       ],
+      "Outdated version": [
+        "Forældet version"
+      ],
       "Password": [
         "Adgangskode"
       ],
@@ -7587,6 +7614,9 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Genève"
+      ],
+      "Searchable": [
+        "Søgbar"
       ],
       "Select type of abuse": [
         "Vælg type af misbrug"
@@ -7699,6 +7729,9 @@
       "Uploaded by": [
         "Uploadet af"
       ],
+      "User opted in": [
+        "Brugeren tilmeldte sig"
+      ],
       "Username": [
         "Brugernavn"
       ],
@@ -7707,6 +7740,9 @@
       ],
       "Viewer": [
         "Seer"
+      ],
+      "Visible columns:": [
+        "Synlige kolonner:"
       ],
       "Vulnerable": [
         "Sårbar"
@@ -12203,6 +12239,9 @@
       "Account temporarily locked": [
         "Konto midlertidigt låst"
       ],
+      "Actions": [
+        "Handlinger"
+      ],
       "Active": [
         "Aktiv"
       ],
@@ -12605,6 +12644,9 @@
       "Gift": [
         "Gave"
       ],
+      "Global": [
+        "Globalt"
+      ],
       "Groups": [
         "Grupper"
       ],
@@ -12915,6 +12957,9 @@
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Gem den til senere i ${ DRIVE_APP_NAME }."
+      ],
+      "Search": [
+        "Søg"
       ],
       "Search results": [
         "Søgeresultater"
