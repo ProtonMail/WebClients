@@ -569,6 +569,9 @@
       "Help and resources": [
         "Tuki ja resurssit"
       ],
+      "Hide": [
+        "Piilota"
+      ],
       "Hide advanced PGP settings": [
         "Piilota PGP-lisäasetukset"
       ],
@@ -805,6 +808,9 @@
       ],
       "Refer a friend": [
         "Kerro kaverille"
+      ],
+      "Refetch index": [
+        "Hae indeksi uudelleen"
       ],
       "Refresh the page": [
         "Päivitä sivu"
@@ -1317,6 +1323,9 @@
       ],
       "Users": [
         "Käyttäjät"
+      ],
+      "Writing assistant": [
+        "Kirjoitusavustaja"
       ]
     },
     "Alert": {
@@ -2495,6 +2504,9 @@
       ],
       "North Korea": [
         "Pohjois-Korea"
+      ],
+      "North Macedonia": [
+        "Pohjois-Makedonia"
       ],
       "Northern Mariana Islands": [
         "Pohjois-Mariaanit"
@@ -4642,11 +4654,6 @@
         "Valitse ${ boldExport } viedäksesi kalenterin ICS-tiedostona."
       ]
     },
-    "Import provider": {
-      "Advanced import": [
-        "Edistynyt tuonti"
-      ]
-    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded }/${ totalContacts } yhteystietoa ei tuoda. Näytä tiedot painamalla tästä."
@@ -4841,6 +4848,9 @@
       ],
       "${ speed }/s": [
         "${ speed }/s"
+      ],
+      "${ state.result.entries.length } entries": [
+        "${ state.result.entries.length } kohdetta"
       ],
       "${ storage } storage": [
         "${ storage } tallennustilaa"
@@ -5486,6 +5496,9 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Seuraavassa vaiheessa voit tehdä talletuksen Bitcoin-osoitteella."
       ],
+      "Index is empty.": [
+        "Indeksi on tyhjä."
+      ],
       "Indexing in progress": [
         "Indeksointi käynnissä"
       ],
@@ -5953,6 +5966,9 @@
       "Search enabled. You may now close this dialogue and search for files and folders.": [
         "Haku otettu käyttöön. Voit nyt sulkea tämän ikkunan ja etsiä tiedostoja ja kansioita."
       ],
+      "Search module is not available.": [
+        "Hakumoduulia ei ole saatavilla."
+      ],
       "Select a destination folder": [
         "Valitse kohdekansio"
       ],
@@ -6039,6 +6055,9 @@
       ],
       "Some governments block or restrict access to certain websites. A VPN helps bypass censorship while keeping your activity and identity private.": [
         "Jotkut viranomaiset estävät tai rajoittavat pääsyä tietyille verkkosivustoille. VPN auttaa ohittamaan sensuurin ja pitämään toimintasi ja identiteettisi yksityisenä."
+      ],
+      "Some items failed": [
+        "Jotkin kohteet epäonnistuivat"
       ],
       "Some of your files are no longer accessible. Restore the access to your files. ${ StartRecoveryButton }": [
         "Jotkin tiedostot eivät ole enää käytettävissä. Palauta ne käyttöösi. ${ StartRecoveryButton }"
@@ -6311,6 +6330,9 @@
       ],
       "Unsupported file": [
         "Tiedostomuotoa ei tueta"
+      ],
+      "Unsupported file type for Photos": [
+        "Tiedostotyyppiä ei tueta Photos-palvelussa"
       ],
       "Untitled": [
         "Nimetön"
@@ -7037,6 +7059,9 @@
       "Enter device name": [
         "Syötä laitteen nimi"
       ],
+      "Environment compatible": [
+        "Yhteensopiva ympäristö"
+      ],
       "Expired": [
         "Erääntynyt"
       ],
@@ -7099,6 +7124,12 @@
       ],
       "Include message and file name in invite email": [
         "Sisällytä viestin teksti ja tiedoston nimi kutsuviestiin"
+      ],
+      "Index kinds": [
+        "Indeksilajit"
+      ],
+      "Initial indexing": [
+        "Alustava indeksointi"
       ],
       "Integrated 2FA authenticator": [
         "Sisäänrakennettu kaksivaiheinen todentaja"
@@ -7196,6 +7227,9 @@
       "Other": [
         "Muu"
       ],
+      "Outdated version": [
+        "Vanhentunut versio"
+      ],
       "Password": [
         "Salasana"
       ],
@@ -7264,6 +7298,9 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
+      ],
+      "Searchable": [
+        "Haettavissa"
       ],
       "Select type of abuse": [
         "Valitse väärinkäytön tyyppi"
@@ -7373,6 +7410,9 @@
       "Uploaded by": [
         "Lähettänyt"
       ],
+      "User opted in": [
+        "Suostumus annettu"
+      ],
       "Username": [
         "Käyttäjätunnus"
       ],
@@ -7381,6 +7421,9 @@
       ],
       "Viewer": [
         "Tarkastelu"
+      ],
+      "Visible columns:": [
+        "Näkyvät sarakkeet:"
       ],
       "Vulnerable": [
         "Haavoittuvainen"
@@ -9904,6 +9947,9 @@
       "Email": [
         "Sähköposti"
       ],
+      "Enter a name": [
+        "Syötä nimi"
+      ],
       "Enter a new file name": [
         "Syötä tiedoston uusi nimi"
       ],
@@ -9975,6 +10021,9 @@
       ],
       "Select": [
         "Valitse"
+      ],
+      "Select a provider": [
+        "Valitse tarjoaja"
       ],
       "Select a reason": [
         "Valitse syy"
@@ -10080,6 +10129,20 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Virallinen viesti ${ BRAND_NAME }ilta"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {
@@ -11591,6 +11654,9 @@
       "Account security": [
         "Tilin suojaus"
       ],
+      "Actions": [
+        "Toiminnot"
+      ],
       "Active": [
         "Aktiiviset"
       ],
@@ -11966,6 +12032,9 @@
       "Gift": [
         "Lahja"
       ],
+      "Global": [
+        "Globaali"
+      ],
       "Groups": [
         "Ryhmät"
       ],
@@ -12273,6 +12342,9 @@
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Tallenna myöhemmäksi ${ DRIVE_APP_NAME }en"
+      ],
+      "Search": [
+        "Hae"
       ],
       "Search results": [
         "Hakutulokset"

@@ -3681,14 +3681,6 @@
         "${ BRAND_NAME } Duo であなたのプラン特典を共有しましょう"
       ]
     },
-    "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "最大${ MAX_SYNC_PAID_USER }個のアカウントからメールを転送するには、${ planName }にアップグレードしてください。"
-      ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "お客様は${ MAX_SYNC_FREE_USER }個の外部アカウントから${ MAIL_APP_NAME }へメールを転送しています。"
-      ]
-    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "テキストフィールドは任意です。 このフォームに入力した情報は、将来発行された請求書にのみ表示され、既存の請求書には影響しません。"
@@ -5696,11 +5688,6 @@
       ],
       "Select ${ boldExport } to export the calendar as an ICS file.": [
         "${ boldExport } を選択して ICS ファイルとしてカレンダーをエクスポートします。"
-      ]
-    },
-    "Import provider": {
-      "Advanced import": [
-        "高度なインポート"
       ]
     },
     "Import warning": {
@@ -7742,9 +7729,6 @@
       ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "負荷や所在地を考慮した最適なサーバーを使用: ${ formattedBestServerName }"
-      ],
-      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "${ BRAND_NAME } が提供する、様々な種類のメールアドレスとエイリアスを使用します。"
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "公式アプリを使わず${ VPN_APP_NAME }のサーバーに接続するには、以下の認証情報を使用してください。TunnelblickをMacOSで使う場合や、OpenVPNを使う場合などです。"
@@ -14996,9 +14980,6 @@
       ],
       "Connect apps and devices": [
         "アプリとデバイスを接続"
-      ],
-      "Connect more addresses": [
-        "さらにメールアドレスを接続"
       ],
       "Connect organization": [
         "組織を接続"

@@ -1210,7 +1210,7 @@
         "${ LUMO_APP_NAME } AI-assistent (voor ${ quantity } gebruikers)"
       ],
       "${ LUMO_APP_NAME } AI license": [
-        "${ LUMO_APP_NAME } AI licentie"
+        "${ LUMO_APP_NAME } AI-licentie"
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } licenties"
@@ -3800,16 +3800,6 @@
         "Deel uw abonnementsvoordelen met ${ BRAND_NAME } Duo"
       ]
     },
-    "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "Om e-mails door te sturen van maximaal ${ MAX_SYNC_PAID_USER } account, upgrade naar ${ planName }.",
-        "Om e-mails door te sturen van maximaal ${ MAX_SYNC_PAID_USER } accounts, upgrade naar ${ planName }."
-      ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "U stuurt e-mails door van ${ MAX_SYNC_FREE_USER } extern account naar ${ MAIL_APP_NAME }.",
-        "U stuurt e-mails door van ${ MAX_SYNC_FREE_USER } externe accounts naar ${ MAIL_APP_NAME }."
-      ]
-    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Tekstvelden zijn optioneel. De informatie die u in dit formulier verstrekt zal alleen verschijnen op in de toekomst uitgegeven facturen en zal geen invloed hebben op bestaande facturen."
@@ -5208,6 +5198,9 @@
       ]
     },
     "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Er is iets misgegaan bij het authenticeren met uw beveiligingssleutel. Probeer het opnieuw."
+      ],
       "Something went wrong registering your security key. Please try again.": [
         "Er is iets fout gegaan bij het registreren van uw beveiligingssleutel. Probeer het opnieuw."
       ]
@@ -5227,6 +5220,9 @@
       ],
       "Are you sure you want to delete security key ${ name }?": [
         "Weet u zeker dat u de beveiligingssleutel ${ name } wilt verwijderen?"
+      ],
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Plaats een beveiligingssleutel die is gekoppeld aan uw ${ BRAND_NAME }-account."
       ],
       "Insert your security key into your device's USB port.": [
         "Steek uw beveiligingssleutel in de USB-poort van uw apparaat."
@@ -5888,8 +5884,8 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "Geavanceerde import"
+      "More import options": [
+        "Meer importopties"
       ]
     },
     "Import warning": {
@@ -6214,6 +6210,9 @@
       "Activity Monitor": [
         "Activiteitenmonitor"
       ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Voeg ${ PLAN_NAMES[PLANS.MEET_BUSINESS] } toe"
+      ],
       "add a recovery method": [
         "een herstelmethode toe voegt"
       ],
@@ -6258,7 +6257,7 @@
         "Deze gebruikers staan op rijen"
       ],
       "AI chatbot": [
-        "AI chatbot"
+        "AI-chatbot"
       ],
       "AI powered assistant to help you craft better emails, quickly and effortlessly.": [
         "AI-aangedreven assistent om u te helpen snel en moeiteloos betere e-mails te schrijven."
@@ -7456,6 +7455,9 @@
       "Product reviews, rankings, or guides": [
         "Productrecensies, ranglijsten of gidsen"
       ],
+      "Professional": [
+        "Professioneel"
+      ],
       "Protected by Swiss privacy laws": [
         "Beschermd door Zwitserse privacywetten"
       ],
@@ -8037,11 +8039,11 @@
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Gebruik een herstelmethode om uw tweestapsverificatiemethodes uit te schakelen."
       ],
+      "Use multiple email addresses with ${ MAIL_APP_NAME }. Add a new ${ BRAND_NAME } address or connect another email account to manage everything from one inbox.": [
+        "Gebruik meerdere e-mailadressen met ${ MAIL_APP_NAME }. Voeg een nieuw ${ BRAND_NAME } adres toe of koppel een ander e-mailaccount om alles vanuit één inbox te beheren."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Gebruik de beste servers volgens de huidige belasting en positie: ${ formattedBestServerName }"
-      ],
-      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "Gebruik de verschillende types e-mailadressen en aliassen die aangeboden worden door ${ BRAND_NAME }."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Gebruik de volgende inloggegevens bij het verbinden met ${ VPN_APP_NAME }-servers zonder toepassing. Voorbeelden van gebruik zijn: Tunnelblick on macOS, OpenVPN op GNU/Linux."
@@ -8216,6 +8218,9 @@
       ],
       "With ${ AUTHENTICATOR_APP_NAME }, you can:": [
         "Met ${ AUTHENTICATOR_APP_NAME } kunt u:"
+      ],
+      "With a ${ boldProfessionalPlan } plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
+        "Met een ${ boldProfessionalPlan } plan, kan u ${ boldDedicatedServers } kopen voor uw organisatie en ${ boldGateways } opzetten om te beheren welke gebruikers er toegang tot hebben."
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Met een versleuteld ${ BRAND_NAME }-adres, kan je gebruik maken van alle ${ BRAND_NAME }-diensten"
@@ -12343,7 +12348,7 @@
         "De vernieuwingsprijs is afhankelijk van de facturatie regio en het EIN."
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
-        "De vernieuwingsprijs is afhankelijk van de facturatie regio en het VAT nummer."
+        "De vernieuwingsprijs is afhankelijk van de facturatie regio en het VAT-nummer."
       ]
     },
     "Payments.Saved payment method details": {
@@ -15530,9 +15535,6 @@
       ],
       "Connect apps and devices": [
         "Apps en apparaten verbinden"
-      ],
-      "Connect more addresses": [
-        "Verbind meer adressen"
       ],
       "Connect organization": [
         "Connecteer organisatie"

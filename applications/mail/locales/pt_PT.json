@@ -3965,16 +3965,6 @@
         "Apoio ao cliente prioritário"
       ]
     },
-    "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "Para encaminhar e-mails de até ${ MAX_SYNC_PAID_USER } conta, melhore para o ${ planName }.",
-        "Para encaminhar e-mails de até ${ MAX_SYNC_PAID_USER } contas, melhore para ${ planName }."
-      ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "Está a encaminhar e-mails de ${ MAX_SYNC_FREE_USER } conta externa para ${ MAIL_APP_NAME }.",
-        "Está a encaminhar e-mails de ${ MAX_SYNC_FREE_USER } contas externas para ${ MAIL_APP_NAME }."
-      ]
-    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Os campos de texto são opcionais. As informações fornecidas neste formulário só aparecerão nas faturas emitidas no futuro e não afetarão as faturas existentes."
@@ -6830,8 +6820,7 @@
         "A inicializar…"
       ],
       "Insert image": [
-        "Inserir imagem",
-        "Inserir imagens"
+        "Inserir uma imagem"
       ],
       "Insert link": [
         "Inserir uma ligação"

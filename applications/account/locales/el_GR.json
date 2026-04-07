@@ -324,6 +324,9 @@
       "Connected": [
         "Συνδεδεμένο"
       ],
+      "Contact sales": [
+        "Επικοινωνία με το Τμήμα Πωλήσεων"
+      ],
       "Contact support": [
         "Επικοινωνήστε με την υποστήριξη πελατών"
       ],
@@ -452,6 +455,9 @@
       ],
       "Delete account": [
         "Διαγραφή λογαριασμού"
+      ],
+      "Delete and confirm": [
+        "Διαγραφή και επιβεβαίωση"
       ],
       "Delete filter “${ Name }”": [
         "Διαγραφή φίλτρου “${ Name }”"
@@ -4809,6 +4815,9 @@
       "Available with ${ title }": [
         "Διατίθεται με το ${ title }"
       ],
+      "Bring over email, calendar events, and contacts from another provider.": [
+        "Μεταφέρετε μηνύματα, εκδηλώσεις ημερολογίου και επαφές από έναν άλλο πάροχο."
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Ρυθμίστε πρώτα αυτό για να ενεργοποιήσετε τον οργανισμό σας και να προσαρμόσετε τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας."
       ],
@@ -4832,9 +4841,6 @@
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Συγχρονίστε εύκολα τα αρχεία στο cloud από τον υπολογιστή σας και αποκτήστε πρόσβαση σε αυτά από την κινητή συσκευή σας."
-      ],
-      "Easily transfer emails, calendar events, and contacts from your previous provider. Choose a one-time import or automatic ongoing sync.": [
-        "Μεταφέρετε εύκολα μηνύματα ηλεκτρονικού ταχυδρομείου, συμβάντα ημερολογίου και επαφές από τον προηγούμενο πάροχό σας. Επιλέξτε μια εφάπαξ εισαγωγή ή αυτόματο συνεχόμενο συγχρονισμό."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Ενεργοποιήστε το ${ PROTON_SENTINEL_NAME } για πρόσβαση σε αυτές τις δυνατότητες"
@@ -5384,13 +5390,11 @@
       ]
     },
     "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "Για να προωθήσετε μηνύματα ηλεκτρονικού ταχυδρομείου από έως και ${ MAX_SYNC_PAID_USER } λογαριασμό, αναβαθμίστε σε ${ planName }.",
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
         "Για να προωθήσετε μηνύματα ηλεκτρονικού ταχυδρομείου από έως και ${ MAX_SYNC_PAID_USER } λογαριασμούς, αναβαθμίστε σε ${ planName }."
       ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "Προωθείτε μηνύματα ηλεκτρονικού ταχυδρομείου από ${ MAX_SYNC_FREE_USER } εξωτερικό λογαριασμό στο ${ MAIL_APP_NAME }.",
-        "Προωθείτε μηνύματα ηλεκτρονικού ταχυδρομείου από ${ MAX_SYNC_FREE_USER } εξωτερικούς λογαριασμούς στο ${ MAIL_APP_NAME }."
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "Προωθείτε μηνύματα ηλεκτρονικού ταχυδρομείου από ένα εξωτερικό λογαριασμό στο ${ MAIL_APP_NAME }."
       ]
     },
     "Edit billing address form note": {
@@ -8846,11 +8850,11 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "Προηγμένη εισαγωγή"
-      ],
       "Import from ${ providerName }": [
         "Εισαγωγή από ${ providerName }"
+      ],
+      "More import options": [
+        "Περισσότερες επιλογές εισαγωγής"
       ]
     },
     "Import status": {
@@ -8968,6 +8972,9 @@
       ],
       "${ discountPercent }% discount": [
         "${ discountPercent }% έκπτωση"
+      ],
+      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
+        "Το ${ DRIVE_APP_NAME } δε θα διατηρεί πλέον προηγούμενες εκδόσεις των αρχείων σας."
       ],
       "${ emailAddress } is invalid": [
         "Η ${ emailAddress } είναι μη έγκυρη"
@@ -10153,6 +10160,9 @@
       "for ${ price }": [
         "για ${ price }"
       ],
+      "For a 10-year version history, please contact our sales team.": [
+        "Για ιστορικό εκδόσεων 10 ετών, επικοινωνήστε με την ομάδα πωλήσεών μας."
+      ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Για πρόσβαση ανά πάσα στιγμή στο ηλεκτρονικό ταχυδρομείο και βελτιστοποιημένη εμπειρία κινητής τηλεφωνίας, κατεβάστε την εφαρμογή ${ androidAppLink } ή ${ iosAppLink }."
       ],
@@ -11254,7 +11264,7 @@
         "Σύνδεση μόνο"
       ],
       "Sign in or create an account to continue.": [
-        "Για να συνεχίσετε, εισέλθετε ή δημιουργήστε λογαριασμό."
+        "Για να συνεχίσετε, συνδεθείτε ή δημιουργήστε λογαριασμό."
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Για ενεργοποίηση της διεύθυνσής σας, συνδεθείτε στο ${ MAIL_APP_NAME }"
@@ -11567,6 +11577,12 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Αυτή η επαλήθευση μπορεί να διαρκέσει έως και μία ώρα. Μετά την επιτυχή επαλήθευση, μην καταργήσετε την εγγραφή TXT, καθώς είναι απαραίτητη για να επιβεβαιώσετε ότι εξακολουθείτε να είστε κάτοχος του τομέα."
       ],
+      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
+        "Αυτό θα διαγράψει όλες τις προηγούμενες εκδόσεις των αρχείων σας που είναι παλαιότερες από ${ rententionLabel }."
+      ],
+      "This will delete all previous versions of your files.": [
+        "Αυτό θα διαγράψει όλες τις προηγούμενες εκδόσεις των αρχείων σας."
+      ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Αυτό θα αρνηθεί την πρόσβαση στο **${ email }**. Είστε σίγουροι ότι θέλετε να συνεχίσετε;"
       ],
@@ -11765,6 +11781,9 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Αναβαθμίστε για να διατηρήσετε τα ${ planTitle } προνόμιά σας."
       ],
+      "Upgrade to unlock": [
+        "Αναβαθμίστε για να ξεκλειδώσετε"
+      ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "Αναβαθμίστε για να ξεκλειδώσετε το ${ monitorLink }."
       ],
@@ -11801,11 +11820,11 @@
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Χρησιμοποιήστε μια μέθοδο ανάκτησης για να απενεργοποιήσετε τις μεθόδους ελέγχου ταυτότητας δύο παραγόντων."
       ],
+      "Use multiple email addresses with ${ MAIL_APP_NAME }. Add a new ${ BRAND_NAME } address or connect another email account to manage everything from one inbox.": [
+        "Χρησιμοποιήστε πολλούς λογαριασμούς ηλεκτρονικού ταχυδρομείου με το ${ MAIL_APP_NAME }. Προσθέστε μια νέα διεύθυνση ${ BRAND_NAME } ή συνδέστε έναν άλλο λογαριασμό ηλεκτρονικού ταχυδρομείου για να διαχειρίζεστε τα πάντα από ένα εισερχόμενο φάκελο."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Χρησιμοποιείστε τον βέλτιστο διακομιστή για το τρέχον φορτίο και θέση: ${ formattedBestServerName }"
-      ],
-      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "Χρησιμοποιήστε τους διαφορετικούς τύπους διευθύνσεων email και ψευδωνύμων που προσφέρονται από το ${ BRAND_NAME }."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Χρησιμοποιείτε τα ακόλουθα διαπιστευτήρια όταν συνδέεστε σε διακομιστές ${ VPN_APP_NAME } χωρίς εφαρμογή. Παραδείγματα περιπτώσεων χρήσης περιλαμβάνουν: Tunnelblick σε macOS, OpenVPN σε GNU/Linux."
@@ -11863,6 +11882,9 @@
       ],
       "Version ${ version }": [
         "'Εκδοση ${ version }"
+      ],
+      "Version history": [
+        "Ιστορικό εκδόσεων"
       ],
       "Version number successfully copied to clipboard": [
         "Ο αριθμός έκδοσης αντιγράφηκε με επιτυχία στο πρόχειρο"
@@ -13530,6 +13552,9 @@
       ],
       "Don't ask again": [
         "Να μην ερωτηθώ ξανά"
+      ],
+      "Don't keep versions": [
+        "Μη διατηρείτε εκδόσεις"
       ],
       "Don't show this again": [
         "Να μην εμφανιστεί ξανά"
@@ -20218,6 +20243,9 @@
       ]
     },
     "Setting": {
+      "Enable Photos section": [
+        "Ενεργοποίηση ενότητας Φωτογραφίες"
+      ],
       "Get updates about comments via email": [
         "Λάβετε ενημερώσεις σχετικά με σχόλια μέσω ηλεκτρονικού ταχυδρομείου"
       ],
@@ -22919,9 +22947,6 @@
       "Connect apps and devices": [
         "Σύνδεση εφαρμογών και συσκευών"
       ],
-      "Connect more addresses": [
-        "Σύνδεση περισσότερων διευθύνσεων"
-      ],
       "Connect organization": [
         "Σύνδεση οργανισμού"
       ],
@@ -23097,6 +23122,9 @@
       ],
       "Delete user?": [
         "Διαγραφή χρήστη;"
+      ],
+      "Delete version history?": [
+        "Διαγραφή ιστορικού εκδόσεων;"
       ],
       "Deny access to user?": [
         "Άρνηση πρόσβασης στο χρήστη;"

@@ -815,6 +815,9 @@
       "Refer a friend": [
         "Wirb einen Freund"
       ],
+      "Refetch index": [
+        "Index neu abrufen"
+      ],
       "Refresh the page": [
         "Seite aktualisieren"
       ],
@@ -3760,6 +3763,12 @@
       "Something went wrong during folder listing": [
         "Etwas ist bei der Ordnerauflistung schiefgelaufen."
       ],
+      "Something went wrong with search. Please try again later.": [
+        "Bei der Suche ist ein Fehler aufgetreten. Bitte versuche es später erneut."
+      ],
+      "Something went wrong with search: Not enough storage space.": [
+        "Bei der Suche ist ein Fehler aufgetreten: Nicht genügend Speicherplatz."
+      ],
       "Something went wrong. Please try again.": [
         "Etwas ist schief gelaufen. Bitte versuche es später erneut."
       ],
@@ -4825,8 +4834,8 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "Erweiterter Import"
+      "More import options": [
+        "Weitere Importoptionen"
       ]
     },
     "Import warning": {
@@ -5035,6 +5044,9 @@
       ],
       "${ speed }/s": [
         "${ speed }/s"
+      ],
+      "${ state.result.entries.length } entries": [
+        "${ state.result.entries.length } Einträge"
       ],
       "${ storage } storage": [
         "${ storage } Speicherplatz"
@@ -5713,6 +5725,9 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Im nächsten Schritt kann eine Einzahlung mit einer Bitcoin-Adresse getätigt werden."
       ],
+      "Index is empty.": [
+        "Kein Index verfügbar."
+      ],
       "Indexing in progress": [
         "Indizierung läuft"
       ],
@@ -6195,6 +6210,9 @@
       "Search enabled. You may now close this dialogue and search for files and folders.": [
         "Suche aktiviert. Du kannst diesen Dialog jetzt schließen und nach Dateien und Ordnern suchen."
       ],
+      "Search module is not available.": [
+        "Suchmodul ist nicht verfügbar."
+      ],
       "Select a destination folder": [
         "Zielordner auswählen"
       ],
@@ -6580,6 +6598,9 @@
       ],
       "Unsupported file": [
         "Nicht unterstützte Datei"
+      ],
+      "Unsupported file type for Photos": [
+        "Für Fotos nicht unterstützter Dateityp"
       ],
       "Untitled": [
         "Ohne Titel"
@@ -7339,6 +7360,9 @@
       "Enter device name": [
         "Gerätename eingeben"
       ],
+      "Environment compatible": [
+        "Umweltverträglich"
+      ],
       "Expired": [
         "Abgelaufen"
       ],
@@ -7407,6 +7431,12 @@
       ],
       "Include message and file name in invite email": [
         "Nachricht und Dateiname in die Einladungs-E-Mail einfügen"
+      ],
+      "Index kinds": [
+        "Indexarten"
+      ],
+      "Initial indexing": [
+        "Erstindizierung"
       ],
       "Integrated 2FA authenticator": [
         "Integrierter 2FA-Authentifikator"
@@ -7507,6 +7537,9 @@
       "Other": [
         "Weitere"
       ],
+      "Outdated version": [
+        "Veraltete Version"
+      ],
       "Password": [
         "Passwort"
       ],
@@ -7575,6 +7608,9 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32,\n1228 Plan-les-Ouates\nGenf, Schweiz"
+      ],
+      "Searchable": [
+        "Durchsuchbar"
       ],
       "Select type of abuse": [
         "Wähle die Art des Missbrauchs"
@@ -7687,6 +7723,9 @@
       "Uploaded by": [
         "Hochgeladen von"
       ],
+      "User opted in": [
+        "Nutzer hat zugestimmt"
+      ],
       "Username": [
         "Benutzername"
       ],
@@ -7695,6 +7734,9 @@
       ],
       "Viewer": [
         "Betrachter"
+      ],
+      "Visible columns:": [
+        "Sichtbare Spalten:"
       ],
       "Vulnerable": [
         "Verwundbar"
@@ -12248,6 +12290,9 @@
       "Account temporarily locked": [
         "Konto vorübergehend gesperrt"
       ],
+      "Actions": [
+        "Aktionen"
+      ],
       "Active": [
         "Aktiv"
       ],
@@ -12650,6 +12695,9 @@
       "Gift": [
         "Geschenk"
       ],
+      "Global": [
+        "Systemweit"
+      ],
       "Groups": [
         "Gruppen"
       ],
@@ -12960,6 +13008,9 @@
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Für später speichern in ${ DRIVE_APP_NAME }"
+      ],
+      "Search": [
+        "Suchen"
       ],
       "Search results": [
         "Suchergebnisse"

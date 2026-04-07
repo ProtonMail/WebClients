@@ -324,6 +324,9 @@
       "Connected": [
         "Ansluten"
       ],
+      "Contact sales": [
+        "Kontakta försäljning"
+      ],
       "Contact support": [
         "Kontakta support"
       ],
@@ -452,6 +455,9 @@
       ],
       "Delete account": [
         "Ta bort konto"
+      ],
+      "Delete and confirm": [
+        "Ta bort och bekräfta"
       ],
       "Delete filter “${ Name }”": [
         "Ta bort filter “${ Name }“"
@@ -4767,6 +4773,9 @@
       "Available with ${ title }": [
         "Tillgänglig med ${ title }"
       ],
+      "Bring over email, calendar events, and contacts from another provider.": [
+        "Hämta e-post, kalenderhändelser och kontakter från annan leverantör."
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Konfigurera detta först för att aktivera din organisation och anpassa din e-postadress."
       ],
@@ -4790,9 +4799,6 @@
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Synkronisera enkelt filer till molnet från din stationära dator och kom åt dem från din mobila enhet."
-      ],
-      "Easily transfer emails, calendar events, and contacts from your previous provider. Choose a one-time import or automatic ongoing sync.": [
-        "Överför enkelt e-post, kalenderhändelser och kontakter från din tidigare leverantör. Välj en engångsimportering eller automatisk pågående synkronisering."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Aktivera ${ PROTON_SENTINEL_NAME } för att komma åt dessa funktioner"
@@ -5336,13 +5342,11 @@
       ]
     },
     "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "För att vidarebefordra e-post från upp till ${ MAX_SYNC_PAID_USER } konto, uppgradera till ${ planName }.",
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
         "För att vidarebefordra e-post från upp till ${ MAX_SYNC_PAID_USER } konton, uppgradera till ${ planName }."
       ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "Du vidarebefordrar e-post från ${ MAX_SYNC_FREE_USER } externt konto till ${ MAIL_APP_NAME }.",
-        "Du vidarebefordrar e-post från ${ MAX_SYNC_FREE_USER } externa konton till ${ MAIL_APP_NAME }."
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "Du vidarebefordrar e-post från ett externt konto till ${ MAIL_APP_NAME }."
       ]
     },
     "Edit billing address form note": {
@@ -8776,11 +8780,11 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "Avancerad import"
-      ],
       "Import from ${ providerName }": [
         "Importera från ${ providerName }"
+      ],
+      "More import options": [
+        "Fler importalternativ"
       ]
     },
     "Import status": {
@@ -8898,6 +8902,9 @@
       ],
       "${ discountPercent }% discount": [
         "${ discountPercent } % rabatt"
+      ],
+      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
+        "${ DRIVE_APP_NAME } kommer inte längre behålla tidigare versioner av dina filer."
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } är ogiltig"
@@ -10074,6 +10081,9 @@
       "for ${ price }": [
         "för ${ price }"
       ],
+      "For a 10-year version history, please contact our sales team.": [
+        "För en 10-årig versionshistorik, kontakta vårt säljteam."
+      ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "För åtkomst när som helst till e-post och en optimerad mobilupplevelse, ladda ner vår ${ androidAppLink }- eller ${ iosAppLink }."
       ],
@@ -10933,6 +10943,9 @@
       "Product reviews, rankings, or guides": [
         "Produktrecensioner, rankingar eller guider"
       ],
+      "Professional": [
+        "Professionell"
+      ],
       "Protect this device too?": [
         "Skydda denna enhet också?"
       ],
@@ -11461,6 +11474,12 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Denna verifiering kan ta upp till en timme. Efter lyckad verifiering, ta inte bort TXT-posten eftersom den behövs för att bekräfta att du fortsätter att äga domänen."
       ],
+      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
+        "Detta kommer ta bort alla tidigare versioner av dina filer äldre än ${ rententionLabel }."
+      ],
+      "This will delete all previous versions of your files.": [
+        "Detta kommer ta bort alla tidigare versioner av dina filer."
+      ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Detta kommer neka åtkomst till **${ email }**. Är du säker på att du vill fortsätta?"
       ],
@@ -11659,6 +11678,9 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Uppgradera för att behålla dina ${ planTitle }-förmåner."
       ],
+      "Upgrade to unlock": [
+        "Uppgradera för att låsa upp"
+      ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "Uppgradera för att låsa upp ${ monitorLink }."
       ],
@@ -11695,11 +11717,11 @@
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Använd en återställningsmetod för att inaktivera dina tvåfaktorsautentiseringsmetoder."
       ],
+      "Use multiple email addresses with ${ MAIL_APP_NAME }. Add a new ${ BRAND_NAME } address or connect another email account to manage everything from one inbox.": [
+        "Använd flera e-postadresser med ${ MAIL_APP_NAME }. Lägg till en ny ${ BRAND_NAME }-adress eller anslut ett annat e-postkonto för att hantera allt från en inkorg."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Använd den bästa servern enligt nuvarande belastning och position: ${ formattedBestServerName }"
-      ],
-      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "Använd de olika typerna av e-postadresser och alias som erbjuds av ${ BRAND_NAME }."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Använd följande användaruppgifter när du ansluter till ${ VPN_APP_NAME }-servrar utan applikation. Exempel på användningsfall inkluderar: Tunnelblick på macOS, OpenVPN på GNU/Linux."
@@ -11757,6 +11779,9 @@
       ],
       "Version ${ version }": [
         "Version ${ version }"
+      ],
+      "Version history": [
+        "Versionshistorik"
       ],
       "Version number successfully copied to clipboard": [
         "Versionsnummer kopierat till urklipp"
@@ -13392,6 +13417,9 @@
       ],
       "Don't ask again": [
         "Fråga inte igen"
+      ],
+      "Don't keep versions": [
+        "Behåll inte versioner"
       ],
       "Don't show this again": [
         "Visa inte detta igen"
@@ -20112,6 +20140,9 @@
       ]
     },
     "Setting": {
+      "Enable Photos section": [
+        "Aktivera sektion för foton"
+      ],
       "Get updates about comments via email": [
         "Få uppdateringar om kommentarer via e-post"
       ],
@@ -20475,6 +20506,9 @@
       ],
       "Share and collaborate of files": [
         "Dela och samarbeta på filer"
+      ],
+      "Sign up to ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }": [
+        "Registrera på ${ BRAND_NAME } ${ MEET_SHORT_APP_NAME }"
       ],
       "Sign up to get everything ${ BRAND_NAME } has to offer": [
         "Registrera dig för att få allt ${ BRAND_NAME } har att erbjuda"
@@ -22807,9 +22841,6 @@
       "Connect apps and devices": [
         "Anslut appar och enheter"
       ],
-      "Connect more addresses": [
-        "Anslut fler adresser"
-      ],
       "Connect organization": [
         "Anslut organisation"
       ],
@@ -22985,6 +23016,9 @@
       ],
       "Delete user?": [
         "Ta bort användare?"
+      ],
+      "Delete version history?": [
+        "Ta bort versionshistorik?"
       ],
       "Deny access to user?": [
         "Neka åtkomst till användare?"
@@ -24969,6 +25003,9 @@
       ],
       "Get more from your ${ planTitle } subscription.": [
         "Få ut mer av din ${ planTitle }-prenumeration."
+      ],
+      "Keep your files, photos, and documents safe with ${ maxDriveSpace } cloud storage.": [
+        "Håll dina filer, foton och dokument säkra med ${ maxDriveSpace } molnlagring."
       ],
       "Set secure passwords without the hassle.": [
         "Ställ in säkra lösenord utan krångel."

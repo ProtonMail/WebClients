@@ -324,6 +324,9 @@
       "Connected": [
         "Bağlı"
       ],
+      "Contact sales": [
+        "Satış ekibiyle görüşün"
+      ],
       "Contact support": [
         "Destek ekibimizle görüşün"
       ],
@@ -452,6 +455,9 @@
       ],
       "Delete account": [
         "Hesabı sil"
+      ],
+      "Delete and confirm": [
+        "Sil ve onayla"
       ],
       "Delete filter “${ Name }”": [
         "“${ Name }” süzgecini sil"
@@ -4809,6 +4815,9 @@
       "Available with ${ title }": [
         "${ title } ile kullanılabilir"
       ],
+      "Bring over email, calendar events, and contacts from another provider.": [
+        "Başka bir hizmet sağlayıcıdaki e-postalarınızı, takvim etkinliklerinizi ve kişilerinizi aktarın."
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Kuruluşunuzu açmak ve e-posta adresinizi özelleştirmek için önce bunu yapılandırın."
       ],
@@ -4832,9 +4841,6 @@
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Bilgisayarınızdaki dosyaları bulutla kolayca eşitleyin ve mobil aygıtınızdan erişin."
-      ],
-      "Easily transfer emails, calendar events, and contacts from your previous provider. Choose a one-time import or automatic ongoing sync.": [
-        "Eski hizmet sağlayıcınızdaki e-postaları, takvim etkinliklerini ve kişileri kolayca aktarın. Tek seferlik içe aktarma ya da sürekli otomatik eşitleme yöntemlerinden birini seçin."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Bu özelliklere erişmek için ${ PROTON_SENTINEL_NAME } özelliğini açın"
@@ -5384,13 +5390,11 @@
       ]
     },
     "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "${ MAX_SYNC_PAID_USER } hesaba kadar e-postaları iletmek için ${ planName } tarifesine yükseltin.",
-        "${ MAX_SYNC_PAID_USER } hesaba kadar e-postaları iletmek için ${ planName } tarifesine yükseltin."
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
+        "${ MAX_SYNC_PAID_USER } hesaba kadar e-posta iletmek için ${ planName } tarifesine yükseltin."
       ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "E-postaları ${ MAX_SYNC_FREE_USER } dış hesaptan ${ MAIL_APP_NAME } üzerine iletiyorsunuz.",
-        "E-postaları ${ MAX_SYNC_FREE_USER } dış hesaptan ${ MAIL_APP_NAME } üzerine iletiyorsunuz."
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "E-postaları bir dış hesaptan ${ MAIL_APP_NAME } üzerine iletiyorsunuz."
       ]
     },
     "Edit billing address form note": {
@@ -8846,11 +8850,11 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "Gelişmiş içe aktarma"
-      ],
       "Import from ${ providerName }": [
         "${ providerName } üzerinden içe aktar"
+      ],
+      "More import options": [
+        "Diğer içe aktarma seçenekleri"
       ]
     },
     "Import status": {
@@ -8968,6 +8972,9 @@
       ],
       "${ discountPercent }% discount": [
         "%${ discountPercent } indirim"
+      ],
+      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
+        "${ DRIVE_APP_NAME } artık dosyalarınızın önceki sürümlerini tutmayacak."
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } geçersiz"
@@ -10152,6 +10159,9 @@
       ],
       "for ${ price }": [
         "${ price } karşılığında"
+      ],
+      "For a 10-year version history, please contact our sales team.": [
+        "10 yıllık sürüm geçmişine erişebilmek için lütfen satış ekibimizle görüşün."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "E-postanıza istediğiniz zaman erişebilmek ve iyi bir mobil deneyim için ${ androidAppLink } ya da ${ iosAppLink } uygulamamızı indirin."
@@ -11567,6 +11577,12 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Doğrulama işleminin tamamlanması bir saat kadar sürebilir. Doğrulama tamamlandıktan sonra da bu etki alanının sahibi olduğunuzu doğrulamayı sürdürmemiz gerektiğinden bu TXT kaydını kaldırmayın."
       ],
+      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
+        "Bu işlem dosyalarınızın ${ rententionLabel } öncesindeki tüm sürümlerini silecek."
+      ],
+      "This will delete all previous versions of your files.": [
+        "Bu işlem dosyalarınızın tüm önceki sürümlerini silecek."
+      ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Bu işlem, **${ email }** hesabına erişme izni vermeyecek. İlerlemek istediğinize emin misiniz?"
       ],
@@ -11765,6 +11781,9 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "${ planTitle } avantajlarınızı korumak için tarifenizi yükseltin."
       ],
+      "Upgrade to unlock": [
+        "Kullanmak için tarifenizi yükseltin"
+      ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "${ monitorLink } özelliğine erişmek için tarifenizi yükseltin."
       ],
@@ -11801,11 +11820,11 @@
       "Use a recovery method to disable your two-factor authentication methods.": [
         "İki adımlı doğrulama yöntemlerini kapatmak için bir kurtarma yöntemi kullanın."
       ],
+      "Use multiple email addresses with ${ MAIL_APP_NAME }. Add a new ${ BRAND_NAME } address or connect another email account to manage everything from one inbox.": [
+        "${ MAIL_APP_NAME } ile birden fazla e-posta adresi kullanın. Yeni bir ${ BRAND_NAME } adresi ekleyin veya başka bir e-posta hesabını bağlayarak her şeyi tek bir gelen kutusundan yönetin."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Güncel yük ve konuma göre en iyi sunucuyu kullanın: ${ formattedBestServerName }"
-      ],
-      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "${ BRAND_NAME } tarafından sunulan farklı e-posta adresi ve takma ad türlerini kullanın."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "${ VPN_APP_NAME } sunucularına uygulama olmadan bağlanmak için şu kimlik doğrulama bilgilerini kullanın. Kullanım örnekleri: macOS üzerinde Tunnelblick, GNU/Linux üzerinde OpenVPN."
@@ -11863,6 +11882,9 @@
       ],
       "Version ${ version }": [
         "Sürüm ${ version }"
+      ],
+      "Version history": [
+        "Sürüm geçmişi"
       ],
       "Version number successfully copied to clipboard": [
         "Sürüm numarası kopyalandı"
@@ -12024,7 +12046,7 @@
         "${ AUTHENTICATOR_APP_NAME } ile şunları yapabilirsiniz:"
       ],
       "With a ${ boldProfessionalPlan } plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
-        "${ boldProfessionalPlan } planıyla kuruluşunuz için ${ boldDedicatedServers } satın alabilir ve hangi kullanıcıların bunlara erişebileceğini kontrol etmek için ${ boldGateways } kurabilirsiniz."
+        "${ boldProfessionalPlan } tarifesi ile kuruluşunuz için ${ boldDedicatedServers } satın alabilir ve hangi kullanıcıların bunlara erişebileceğini belirlemek için ${ boldGateways } kurabilirsiniz."
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Şifrelenmiş bir ${ BRAND_NAME } adresi ile tüm ${ BRAND_NAME } hizmetlerini kullanabilirsiniz"
@@ -13530,6 +13552,9 @@
       ],
       "Don't ask again": [
         "Bir daha sorma"
+      ],
+      "Don't keep versions": [
+        "Sürüm geçmişi tutulmasın"
       ],
       "Don't show this again": [
         "Bu bir daha görüntülenmesin"
@@ -20314,6 +20339,9 @@
       ]
     },
     "Setting": {
+      "Enable Photos section": [
+        "Fotoğraflar bölümünü aç"
+      ],
       "Get updates about comments via email": [
         "Yorum güncellemeleri e-posta ile bildirilsin"
       ],
@@ -23015,9 +23043,6 @@
       "Connect apps and devices": [
         "Uygulamaları ve aygıtları bağlayın"
       ],
-      "Connect more addresses": [
-        "Başka adresler bağlayın"
-      ],
       "Connect organization": [
         "Kuruluş ile bağlantı kur"
       ],
@@ -23193,6 +23218,9 @@
       ],
       "Delete user?": [
         "Kullanıcı silinsin mi?"
+      ],
+      "Delete version history?": [
+        "Sürüm geçmişi silinsin mi?"
       ],
       "Deny access to user?": [
         "Kullanıcının erişme izni reddedilsin mi?"

@@ -820,6 +820,9 @@
       "Refer a friend": [
         "Recomandați persoane"
       ],
+      "Refetch index": [
+        "Refacere index"
+      ],
       "Refresh the page": [
         "Împrospătare pagină"
       ],
@@ -3795,6 +3798,12 @@
       "Something went wrong during folder listing": [
         "Ceva nu a funcționat bine pe durata listării folderelor."
       ],
+      "Something went wrong with search. Please try again later.": [
+        "Ceva nu a funcționat corect cu căutarea. Reîncercați mai târziu."
+      ],
+      "Something went wrong with search: Not enough storage space.": [
+        "Ceva nu a funcționat corect cu căutarea: nu există suficient spațiu de stocare."
+      ],
       "Something went wrong. Please try again.": [
         "Ceva nu a funcționat bine. Mai încercați."
       ],
@@ -4879,8 +4888,8 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "Importare avansată"
+      "More import options": [
+        "Mai multe opțiuni de importare"
       ]
     },
     "Import warning": {
@@ -5119,6 +5128,9 @@
       ],
       "${ speed }/s": [
         "${ speed }/s"
+      ],
+      "${ state.result.entries.length } entries": [
+        "${ state.result.entries.length } intrări"
       ],
       "${ storage } storage": [
         "Stocare ${ storage }"
@@ -5808,6 +5820,9 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "În pasul următor, veți putea trimite o depunere folosind o adresă de Bitcoin."
       ],
+      "Index is empty.": [
+        "Indexul este gol."
+      ],
       "Indexing in progress": [
         "Indexare în curs"
       ],
@@ -6292,6 +6307,9 @@
       "Search enabled. You may now close this dialogue and search for files and folders.": [
         "Căutarea este activată. Puteți închide acest dialog și căuta fișiere și foldere."
       ],
+      "Search module is not available.": [
+        "Modulul de căutare nu este disponibil."
+      ],
       "Select a destination folder": [
         "Selectați un folder de destinație"
       ],
@@ -6679,6 +6697,9 @@
       ],
       "Unsupported file": [
         "Fişier nesuportat"
+      ],
+      "Unsupported file type for Photos": [
+        "Tip de fișier nesuportat pentru „Fotografii”"
       ],
       "Untitled": [
         "Nedenumit"
@@ -7451,6 +7472,9 @@
       "Enter device name": [
         "Introduceți numele dispozitivului"
       ],
+      "Environment compatible": [
+        "Mediu compatibil"
+      ],
       "Expired": [
         "Expirat"
       ],
@@ -7519,6 +7543,12 @@
       ],
       "Include message and file name in invite email": [
         "Includere mesaj și nume fișier în e-mailul de invitație"
+      ],
+      "Index kinds": [
+        "Tipuri de indexare"
+      ],
+      "Initial indexing": [
+        "Indexare inițială"
       ],
       "Integrated 2FA authenticator": [
         "Autentificator A2F integrat"
@@ -7619,6 +7649,9 @@
       "Other": [
         "Alt motiv"
       ],
+      "Outdated version": [
+        "Versiune învechită"
+      ],
       "Password": [
         "Parola"
       ],
@@ -7687,6 +7720,9 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
+      ],
+      "Searchable": [
+        "Permite căutare"
       ],
       "Select type of abuse": [
         "Selectați tipul de abuz"
@@ -7799,6 +7835,9 @@
       "Uploaded by": [
         "Încărcat de"
       ],
+      "User opted in": [
+        "Utilizatorul a optat pentru"
+      ],
       "Username": [
         "Nume utilizator"
       ],
@@ -7807,6 +7846,9 @@
       ],
       "Viewer": [
         "Utilizator"
+      ],
+      "Visible columns:": [
+        "Coloane vizibile:"
       ],
       "Vulnerable": [
         "Vulnerabilă"
@@ -12425,6 +12467,9 @@
       "Account temporarily locked": [
         "Cont blocat temporar"
       ],
+      "Actions": [
+        "Acțiuni"
+      ],
       "Active": [
         "Activ"
       ],
@@ -12833,6 +12878,9 @@
       "Gift": [
         "Cadou"
       ],
+      "Global": [
+        "Global"
+      ],
       "Groups": [
         "Grupuri"
       ],
@@ -13145,6 +13193,9 @@
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Salvare pentru mai târziu în ${ DRIVE_APP_NAME }"
+      ],
+      "Search": [
+        "Căutare"
       ],
       "Search results": [
         "Rezultate căutare"

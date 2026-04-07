@@ -224,6 +224,9 @@
       "Continue import": [
         "Continuar la importación"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Ir a ${ planOrAppName }"
+      ],
       "Continue with this password": [
         "Continuar con esta contraseña"
       ],
@@ -1235,6 +1238,10 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } licencia de ${ LUMO_APP_NAME }",
         "${ seats } licencias de ${ LUMO_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } licencia de ${ MEET_APP_NAME }",
+        "${ seats } licencias de ${ MEET_APP_NAME }"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } licencia del asistente de escritura",
@@ -3505,6 +3512,9 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Usa esta guía para que tu organización se beneficie rápidamente del cifrado y el ecosistema de privacidad líderes del sector de ${ BRAND_NAME }."
       ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Lamentamos que te vayas. Si tienes un momento, te agradeceríamos mucho que nos contaras por qué quieres cancelar. Tus comentarios nos ayudan a mejorar ${ BRAND_NAME } para todo el mundo."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puedes importar eventos en formato iCal (archivos ICS). El archivo puede tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener hasta ${ MAX_IMPORT_EVENTS_STRING } eventos. Si tu archivo es más grande, debes dividirlo en archivos más pequeños."
       ]
@@ -3791,13 +3801,11 @@
       ]
     },
     "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "Para reenviar correos electrónicos de hasta ${ MAX_SYNC_PAID_USER } cuenta, mejora a ${ planName }.",
-        "Para reenviar correos electrónicos de hasta ${ MAX_SYNC_PAID_USER } cuentas, mejora a ${ planName }."
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
+        "Para reenviar correos de hasta ${ MAX_SYNC_PAID_USER } cuentas, pásate a ${ planName }."
       ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "Estás reenviando correos electrónicos desde ${ MAX_SYNC_FREE_USER } cuenta externa a ${ MAIL_APP_NAME }.",
-        "Estás reenviando correos electrónicos desde ${ MAX_SYNC_FREE_USER } cuentas externas a ${ MAIL_APP_NAME }."
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "Estás reenviando correos desde una cuenta externa a ${ MAIL_APP_NAME }."
       ]
     },
     "Edit billing address form note": {
@@ -5872,8 +5880,8 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "Importación avanzada"
+      "More import options": [
+        "Más opciones de importación"
       ]
     },
     "Import warning": {
@@ -5961,6 +5969,12 @@
       ],
       "${ MAIL_APP_NAME } can also be used with a single password which replaces both the login and second password. To switch to single password mode, enter the single password you would like to use and click Save.": [
         "Se puede también utilizar ${ MAIL_APP_NAME } con una contraseña única que reemplaza tanto a la contraseña de inicio de sesión como a la segunda contraseña. Para cambiar al modo de contraseña única, ingresa la contraseña única que quieres utilizar y haz clic en Guardar."
+      ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } es una solución de videoconferencia cifrada de extremo a extremo. Añádelo a tu plan para organizar reuniones seguras."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Plazas de ${ MEET_APP_NAME }"
       ],
       "${ n } address": [
         "${ n } dirección",
@@ -6759,6 +6773,9 @@
       "Everything in ${ planOrAppName }": [
         "Todo en ${ planOrAppName }"
       ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Todo lo incluido en ${ planOrAppName }, y además:"
+      ],
       "Example: ${ spfExample }": [
         "Ejemplo: ${ spfExample }"
       ],
@@ -6779,6 +6796,9 @@
       ],
       "finance": [
         "finanzas"
+      ],
+      "for ${ price }": [
+        "por ${ price }"
       ],
       "for choosing ${ product }": [
         "por elegir ${ product }"
@@ -7425,6 +7445,9 @@
       "Product reviews, rankings, or guides": [
         "Reseñas de productos, clasificaciones o guías"
       ],
+      "Professional": [
+        "Profesional"
+      ],
       "Protected by Swiss privacy laws": [
         "Protegido por la legislación suiza sobre privacidad"
       ],
@@ -8003,11 +8026,11 @@
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Usa un método de recuperación para desactivar tus métodos de autenticación de dos factores."
       ],
+      "Use multiple email addresses with ${ MAIL_APP_NAME }. Add a new ${ BRAND_NAME } address or connect another email account to manage everything from one inbox.": [
+        "Usa varias direcciones de correo con ${ MAIL_APP_NAME }. Añade una nueva dirección de ${ BRAND_NAME } o conecta otra cuenta de correo para gestionarlo todo desde una única bandeja de entrada."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Utiliza el mejor servidor según la carga actual y la posición: ${ formattedBestServerName }"
-      ],
-      "Use the different types of email addresses and aliases offered by ${ BRAND_NAME }.": [
-        "Usa diferentes tipos de direcciones de correo y alias ofrecidos por ${ BRAND_NAME }."
       ],
       "Use the following credentials when connecting to ${ VPN_APP_NAME } servers without application. Example use cases include: Tunnelblick on macOS, OpenVPN on GNU/Linux.": [
         "Utiliza las siguientes credenciales cuando te conectes a servidores ${ VPN_APP_NAME } sin aplicación como con Tunnelblick en macOSu OpenVPN en GNU/Linux."
@@ -8179,6 +8202,9 @@
       ],
       "With ${ AUTHENTICATOR_APP_NAME }, you can:": [
         "Con ${ AUTHENTICATOR_APP_NAME }, puedes:"
+      ],
+      "With a ${ boldProfessionalPlan } plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
+        "Con un plan ${ boldProfessionalPlan }, puedes comprar ${ boldDedicatedServers } para tu organización y configurar ${ boldGateways } para controlar qué usuarios pueden acceder a ellos."
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Con una dirección ${ BRAND_NAME } cifrada, puedes usar todos los servicios ${ BRAND_NAME }."
@@ -8708,6 +8734,9 @@
       "Add group member": [
         "Añadir un miembro al grupo"
       ],
+      "Additional comments": [
+        "Comentarios adicionales"
+      ],
       "Address": [
         "Dirección"
       ],
@@ -8869,6 +8898,9 @@
       ],
       "Contacts": [
         "Contactos"
+      ],
+      "Continue cancelling": [
+        "Continuar cancelando"
       ],
       "Copy": [
         "Copiar"
@@ -9107,6 +9139,9 @@
       "Main": [
         "Principal"
       ],
+      "Main reason for cancelling": [
+        "Motivo principal de la cancelación"
+      ],
       "Manage categories": [
         "Administrar categorías"
       ],
@@ -9344,6 +9379,9 @@
       ],
       "Single sign-on URL": [
         "URL de inicio de sesión único"
+      ],
+      "Skip feedback": [
+        "Omitir comentarios"
       ],
       "Spam": [
         "Spam"
@@ -9951,6 +9989,22 @@
         "Configura tu cuenta con tu dominio de Porkbun."
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } (for ${ quantity } user)": [
+        "${ MEET_APP_NAME } (para ${ quantity } usuario)",
+        "${ MEET_APP_NAME } (para ${ quantity } usuarios)"
+      ],
+      "${ MEET_APP_NAME } license": [
+        "Licencia de ${ MEET_APP_NAME }"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "Plazas de ${ MEET_APP_NAME }"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } licencia de ${ MEET_APP_NAME }",
+        "${ seats } licencias de ${ MEET_APP_NAME }"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: videollamadas privadas para lo que de verdad importa"
@@ -9984,6 +10038,9 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Pantalla compartida con cifrado de extremo a extremo y chat efímero en la llamada"
       ],
+      "Hosts can record meetings locally on their computers": [
+        "Los anfitriones pueden grabar reuniones localmente en sus ordenadores"
+      ],
       "Meeting recording": [
         "Grabación de la reunión"
       ],
@@ -10003,6 +10060,30 @@
       "Up to ${ n } participant": [
         "Hasta ${ n } participante",
         "Hasta ${ n } participantes"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videollamadas, ${ n } participante",
+        "Videollamadas, ${ n } participantes"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats } licencia incluida",
+        "${ seats } licencias incluidas"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Puedes tener hasta ${ TRIAL_MAX_MEET_SEATS } licencias de ${ MEET_SHORT_APP_NAME } durante el período de prueba."
+      ]
+    },
+    "Meet_launch": {
+      "Add ${ planName }": [
+        "Añade ${ planName }"
+      ],
+      "Confidential video conferencing for the conversations that matter. Only ${ priceString } more each month.": [
+        "Videoconferencias confidenciales para las conversaciones que de verdad importan. Por solo ${ priceString } más al mes."
+      ],
+      "Talk privately with ${ planName }": [
+        "Habla en privado con ${ planName }"
       ]
     },
     "Member action": {
@@ -10424,6 +10505,9 @@
       "Data breach monitoring": [
         "Monitoreo de vulneración de datos"
       ],
+      "Data retention policies": [
+        "Políticas de retención de datos"
+      ],
       "Dedicated servers and IP": [
         "Servidores e IP dedicados"
       ],
@@ -10538,6 +10622,9 @@
       ],
       "Priority support & live chat": [
         "Soporte prioritario y chat en vivo"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Chat de IA privado (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "Copia de seguridad de fotos privada"
@@ -10697,6 +10784,9 @@
       "Vault sharing with up to ${ n } person": [
         "Compartir la caja fuerte con hasta ${ n } persona",
         "Compartir la caja fuerte con hasta ${ n } personas"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN con bloqueador de publicidad y protección contra malware"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la red oscura para verificar si tus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarte de inmediato si encontramos algo."
@@ -11218,6 +11308,9 @@
       ],
       "Daily email notifications": [
         "Notificaciones diarias por correo electrónico"
+      ],
+      "Disabling this means you won't get in-app notifications about promotions, new features, new ${ BRAND_NAME } services, and reminders.": [
+        "Desactivar esto significa que no recibirás notificaciones en la aplicación sobre promociones, nuevas funciones, nuevos servicios de ${ BRAND_NAME } y recordatorios."
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Durante el primer mes de uso de un producto de ${ BRAND_NAME }"
@@ -12289,6 +12382,9 @@
       "Anderson": [
         "García"
       ],
+      "Anything you'd like us to know": [
+        "¿Algo más que quieras decirnos?"
+      ],
       "Anytown": [
         "Valclaro"
       ],
@@ -12327,6 +12423,9 @@
       ],
       "End date": [
         "Fecha de fin"
+      ],
+      "Enter a name": [
+        "Introduce un nombre"
       ],
       "Enter name": [
         "Introduzca un nombre"
@@ -12390,6 +12489,9 @@
       ],
       "Select": [
         "Seleccionar"
+      ],
+      "Select a provider": [
+        "Selecciona un Proveedor"
       ],
       "Select a reason": [
         "Selecciona un motivo"
@@ -12540,6 +12642,26 @@
       ],
       "Unknown": [
         "Desconocido"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Otro"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {
@@ -14259,6 +14381,10 @@
         "${ n } conexión VPN por usuario",
         "${ n } conexiones VPN por usuario"
       ],
+      "${ productName } for ${ count } user": [
+        "${ productName } para ${ count } usuario",
+        "${ productName } para ${ count } usuarios"
+      ],
       "${ UsedAddresses } address": [
         "${ UsedAddresses } dirección",
         "${ UsedAddresses } direcciones"
@@ -15362,9 +15488,6 @@
       ],
       "Connect apps and devices": [
         "Conectar aplicaciones y dispositivos"
-      ],
-      "Connect more addresses": [
-        "Conectar más direcciones"
       ],
       "Connect organization": [
         "Conectar la organización"

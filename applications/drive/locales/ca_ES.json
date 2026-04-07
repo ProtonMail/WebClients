@@ -815,6 +815,9 @@
       "Refer a friend": [
         "Recomana una amistat"
       ],
+      "Refetch index": [
+        "Tornar a carregar l'índex"
+      ],
       "Refresh the page": [
         "Refresca la pàgina"
       ],
@@ -4837,8 +4840,8 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "Importació avançada"
+      "More import options": [
+        "Més opcions d'importació"
       ]
     },
     "Import warning": {
@@ -5047,6 +5050,9 @@
       ],
       "${ speed }/s": [
         "${ speed }/s"
+      ],
+      "${ state.result.entries.length } entries": [
+        "${ state.result.entries.length } entrades"
       ],
       "${ storage } storage": [
         "${ storage } d'emmagatzematge"
@@ -5725,6 +5731,9 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Al següent pas, podreu enviar un dipòsit utilitzant una adreça de Bitcoin."
       ],
+      "Index is empty.": [
+        "L'índex és buit."
+      ],
       "Indexing in progress": [
         "Indexació en curs"
       ],
@@ -6207,6 +6216,9 @@
       "Search enabled. You may now close this dialogue and search for files and folders.": [
         "S'ha habilitat la cerca. Ara podeu tancar aquest diàleg i cercar fitxers i carpetes."
       ],
+      "Search module is not available.": [
+        "El mòdul de cerca no està disponible."
+      ],
       "Select a destination folder": [
         "Seleccioneu una carpeta de destinació"
       ],
@@ -6592,6 +6604,9 @@
       ],
       "Unsupported file": [
         "Fitxer no compatible"
+      ],
+      "Unsupported file type for Photos": [
+        "Tipus de fitxer no admès per a Fotos"
       ],
       "Untitled": [
         "Sense títol"
@@ -7354,6 +7369,9 @@
       "Enter device name": [
         "Introduïu el nom del dispositiu"
       ],
+      "Environment compatible": [
+        "Compatible amb l'entorn"
+      ],
       "Expired": [
         "Caducat"
       ],
@@ -7422,6 +7440,12 @@
       ],
       "Include message and file name in invite email": [
         "Inclou el missatge i el nom del fitxer al correu electrònic d'invitació"
+      ],
+      "Index kinds": [
+        "Tipus d'índex"
+      ],
+      "Initial indexing": [
+        "Indexació inicial"
       ],
       "Integrated 2FA authenticator": [
         "Autenticador de doble factor (2FA) integrat"
@@ -7522,6 +7546,9 @@
       "Other": [
         "Altres"
       ],
+      "Outdated version": [
+        "Versió obsoleta"
+      ],
       "Password": [
         "Contrasenya"
       ],
@@ -7590,6 +7617,9 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Ginebra"
+      ],
+      "Searchable": [
+        "Cercable"
       ],
       "Select type of abuse": [
         "Seleccioneu el tipus d'abús"
@@ -7702,6 +7732,9 @@
       "Uploaded by": [
         "Carregat per"
       ],
+      "User opted in": [
+        "L'usuari ha acceptat"
+      ],
       "Username": [
         "Nom d'usuari"
       ],
@@ -7710,6 +7743,9 @@
       ],
       "Viewer": [
         "Visualitzador"
+      ],
+      "Visible columns:": [
+        "Columnes visibles:"
       ],
       "Vulnerable": [
         "Vulnerable"
@@ -12167,6 +12203,9 @@
       "Account temporarily locked": [
         "El compte s'ha bloquejat temporalment"
       ],
+      "Actions": [
+        "Accions"
+      ],
       "Active": [
         "Actiu"
       ],
@@ -12569,6 +12608,9 @@
       "Gift": [
         "Regal"
       ],
+      "Global": [
+        "Global"
+      ],
       "Groups": [
         "Grups"
       ],
@@ -12879,6 +12921,9 @@
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Desa-ho per a més tard a ${ DRIVE_APP_NAME }"
+      ],
+      "Search": [
+        "Cerca"
       ],
       "Search results": [
         "Resultats de la cerca"

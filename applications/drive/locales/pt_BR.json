@@ -815,6 +815,9 @@
       "Refer a friend": [
         "Indicar um amigo"
       ],
+      "Refetch index": [
+        "Recarregar índice"
+      ],
       "Refresh the page": [
         "Atualizar a página"
       ],
@@ -3369,6 +3372,9 @@
       "Cannot export this contact": [
         "Não é possível exportar este contato."
       ],
+      "Cannot find move target": [
+        "Não foi possível encontrar o destino do movimento"
+      ],
       "Checkout expired, please try again": [
         "Pedido expirado. Tente novamente"
       ],
@@ -4816,8 +4822,8 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "Importação avançada"
+      "More import options": [
+        "Mais opções de importação"
       ]
     },
     "Import warning": {
@@ -5026,6 +5032,9 @@
       ],
       "${ speed }/s": [
         "${ speed }/s"
+      ],
+      "${ state.result.entries.length } entries": [
+        "${ state.result.entries.length } entradas"
       ],
       "${ storage } storage": [
         "${ storage } de armazenamento"
@@ -5700,6 +5709,9 @@
       ],
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Na próxima etapa, poderá enviar um depósito usando um endereço Bitcoin."
+      ],
+      "Index is empty.": [
+        "O índice está vazio."
       ],
       "Indexing in progress": [
         "Indexação em progresso"
@@ -6478,6 +6490,9 @@
       ],
       "To enable truly private search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we’ll let you know when indexing is done.": [
         "Para ativar uma pesquisa verdadeiramente privada, precisamos indexar seus arquivos localmente. Você ainda pode usar ${ DRIVE_APP_NAME } normalmente - nós o informaremos quando a indexação estiver concluída."
+      ],
+      "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we'll let you know when indexing is done.": [
+        "Para ativar uma pesquisa verdadeiramente, precisamos indexar seus arquivos localmente. Você ainda pode usar ${ DRIVE_APP_NAME } normalmente - nós o informaremos quando a indexação estiver concluída."
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para combater o spam e/ou abuso, verifique se você é humano."
@@ -7318,6 +7333,9 @@
       "Enter device name": [
         "Digite o nome do dispositivo"
       ],
+      "Environment compatible": [
+        "Ambiente compatível"
+      ],
       "Expired": [
         "Expirado"
       ],
@@ -7429,6 +7447,9 @@
       "Main": [
         "Principal"
       ],
+      "Main reason for cancelling": [
+        "Motivo principal para cancelar"
+      ],
       "Malware": [
         "Malware"
       ],
@@ -7482,6 +7503,9 @@
       ],
       "Other": [
         "Outros"
+      ],
+      "Outdated version": [
+        "Versão desatualizada"
       ],
       "Password": [
         "Senha"
@@ -7551,6 +7575,9 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
+      ],
+      "Searchable": [
+        "Pesquisável"
       ],
       "Select type of abuse": [
         "Selecione a categoria de abuso"
@@ -7663,6 +7690,9 @@
       "Uploaded by": [
         "Enviado por"
       ],
+      "User opted in": [
+        "O usuário aceitoiu"
+      ],
       "Username": [
         "Nome de usuário"
       ],
@@ -7671,6 +7701,9 @@
       ],
       "Viewer": [
         "Visualizador"
+      ],
+      "Visible columns:": [
+        "Colunas visíveis:"
       ],
       "Vulnerable": [
         "Vulnerável"
@@ -12215,6 +12248,9 @@
       "Account temporarily locked": [
         "Conta temporariamente bloqueada"
       ],
+      "Actions": [
+        "Ações"
+      ],
       "Active": [
         "Ativo"
       ],
@@ -12617,6 +12653,9 @@
       "Gift": [
         "Presente"
       ],
+      "Global": [
+        "Global"
+      ],
       "Groups": [
         "Grupos"
       ],
@@ -12924,6 +12963,9 @@
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Salve para mais tarde em ${ DRIVE_APP_NAME }"
+      ],
+      "Search": [
+        "Pesquisar"
       ],
       "Search results": [
         "Resultados da pesquisa"

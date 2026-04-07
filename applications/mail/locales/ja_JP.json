@@ -4313,14 +4313,6 @@
         "${ BRAND_NAME } Duo であなたのプラン特典を共有しましょう"
       ]
     },
-    "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "最大${ MAX_SYNC_PAID_USER }個のアカウントからメールを転送するには、${ planName }にアップグレードしてください。"
-      ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "お客様は${ MAX_SYNC_FREE_USER }個の外部アカウントから${ MAIL_APP_NAME }へメールを転送しています。"
-      ]
-    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "テキストフィールドは任意です。 このフォームに入力した情報は、将来発行された請求書にのみ表示され、既存の請求書には影響しません。"
@@ -6279,9 +6271,6 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "高度なインポート"
-      ],
       "Import from ${ providerName }": [
         "${ providerName } からインポート"
       ]
@@ -7298,7 +7287,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像を挿入"
+        "画像の挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -11594,23 +11583,8 @@
       ]
     },
     "Onboarding List Placeholder": {
-      "Choose your service": [
-        "サービスを選択"
-      ],
       "Maybe later": [
         "今度やる"
-      ],
-      "Popular services": [
-        "人気のサービス"
-      ],
-      "Switch your accounts to ${ BRAND_NAME }": [
-        "アカウントを ${ BRAND_NAME } に切り替える"
-      ],
-      "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
-        "よく利用するサービスで使っているメールアドレスを更新することで、トラッキングの脅威からプライバシーを保護しましょう。"
-      ],
-      "Welcome to ${ MAIL_APP_NAME }": [
-        "${ MAIL_APP_NAME } へようこそ"
       ]
     },
     "Onboarding modal": {
@@ -14686,9 +14660,6 @@
       ],
       "Connect apps and devices": [
         "アプリとデバイスを接続"
-      ],
-      "Connect more addresses": [
-        "さらにメールアドレスを接続"
       ],
       "Connect to video conferencing": [
         "ビデオ会議に接続"

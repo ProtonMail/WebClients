@@ -4093,20 +4093,6 @@
         "Priorytetowe wsparcie"
       ]
     },
-    "Easy switch": {
-      "To forward emails from up to ${ MAX_SYNC_PAID_USER } account, upgrade to ${ planName }.": [
-        "Ulepsz konto do planu ${ planName }, aby przekierować wiadomości z ${ MAX_SYNC_PAID_USER } adresu.",
-        "Ulepsz konto do planu ${ planName }, aby przekierować wiadomości z ${ MAX_SYNC_PAID_USER } adresów.",
-        "Ulepsz konto do planu ${ planName }, aby przekierować wiadomości z ${ MAX_SYNC_PAID_USER } adresów.",
-        "Ulepsz konto do planu ${ planName }, aby przekierować wiadomości z ${ MAX_SYNC_PAID_USER } adresów."
-      ],
-      "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
-        "Przekierowujesz do ${ MAIL_APP_NAME } wiadomości z ${ MAX_SYNC_FREE_USER } adresu.",
-        "Przekierowujesz do ${ MAIL_APP_NAME } wiadomości z ${ MAX_SYNC_FREE_USER } adresów.",
-        "Przekierowujesz do ${ MAIL_APP_NAME } wiadomości z ${ MAX_SYNC_FREE_USER } adresów.",
-        "Przekierowujesz do ${ MAIL_APP_NAME } wiadomości z ${ MAX_SYNC_FREE_USER } adresów."
-      ]
-    },
     "Edit billing address form note": {
       "Text fields are optional. The information you provide in this form will only appear on invoices issued in the future and will not affect existing invoices.": [
         "Pola tekstowe są opcjonalne. Te informacje pojawią się tylko na przyszłych fakturach i nie będą miały wpływu na obecne faktury."
@@ -7200,10 +7186,7 @@
         "Inicjowanie…"
       ],
       "Insert image": [
-        "Wstaw obraz",
-        "Wstaw obrazy",
-        "Wstaw obrazy",
-        "Wstaw obrazy"
+        "Wstaw obraz"
       ],
       "Insert link": [
         "Wstaw link"
@@ -14364,9 +14347,6 @@
       ],
       "Connect apps and devices": [
         "Połącz aplikacje i urządzenia"
-      ],
-      "Connect more addresses": [
-        "Połącz więcej adresów"
       ],
       "Connect to video conferencing": [
         "Połącz się z wideokonferencją"

@@ -810,6 +810,9 @@
       "Refer a friend": [
         "친구 초대"
       ],
+      "Refetch index": [
+        "색인 다시 가져오기"
+      ],
       "Refresh the page": [
         "페이지 새로 고침"
       ],
@@ -3737,6 +3740,12 @@
       "Something went wrong during folder listing": [
         "폴더 목록을 불러오는 동안 오류가 발생했습니다."
       ],
+      "Something went wrong with search. Please try again later.": [
+        "검색에 문제가 발생했습니다. 나중에 다시 시도하세요."
+      ],
+      "Something went wrong with search: Not enough storage space.": [
+        "검색에 문제가 발생했습니다: 저장공간이 부족합니다."
+      ],
       "Something went wrong. Please try again.": [
         "문제가 발생했습니다. 다시 시도해주세요."
       ],
@@ -4783,8 +4792,8 @@
       ]
     },
     "Import provider": {
-      "Advanced import": [
-        "고급 불러오기 설정"
+      "More import options": [
+        "추가 불러오기 옵션"
       ]
     },
     "Import warning": {
@@ -4963,6 +4972,9 @@
       ],
       "${ speed }/s": [
         "${ speed }/초"
+      ],
+      "${ state.result.entries.length } entries": [
+        "${ state.result.entries.length }개 항목"
       ],
       "${ storage } storage": [
         "저장공간 ${ storage }"
@@ -5627,6 +5639,9 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "다음 단계에서, Bitcoin 주소를 사용하여 보증금을 제출할 수 있습니다."
       ],
+      "Index is empty.": [
+        "색인이 비어있습니다."
+      ],
       "Indexing in progress": [
         "색인 진행 중"
       ],
@@ -6107,6 +6122,9 @@
       "Search enabled. You may now close this dialogue and search for files and folders.": [
         "검색이 활성화되었습니다. 이제 이 대화 상자를 닫고 파일과 폴더를 검색할 수 있습니다."
       ],
+      "Search module is not available.": [
+        "검색 모듈 사용 불가합니다."
+      ],
       "Select a destination folder": [
         "대상 폴더 선택"
       ],
@@ -6490,6 +6508,9 @@
       ],
       "Unsupported file": [
         "지원되지 않는 파일"
+      ],
+      "Unsupported file type for Photos": [
+        "사진에서 사용할 수 없는 지원되지 않는 파일 형식"
       ],
       "Untitled": [
         "무제"
@@ -7236,6 +7257,9 @@
       "Enter device name": [
         "기기 이름 입력"
       ],
+      "Environment compatible": [
+        "호환되는 환경"
+      ],
       "Expired": [
         "만료됨"
       ],
@@ -7304,6 +7328,12 @@
       ],
       "Include message and file name in invite email": [
         "초대 이메일에 메시지 및 파일 이름을 포함하기"
+      ],
+      "Index kinds": [
+        "색인 종류"
+      ],
+      "Initial indexing": [
+        "색인 구성 중"
       ],
       "Integrated 2FA authenticator": [
         "2단계 인증기 내장"
@@ -7404,6 +7434,9 @@
       "Other": [
         "기타"
       ],
+      "Outdated version": [
+        "이전 버전"
+      ],
       "Password": [
         "비밀번호"
       ],
@@ -7472,6 +7505,9 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "서울 종로구 청와대로 1"
+      ],
+      "Searchable": [
+        "검색 가능"
       ],
       "Select type of abuse": [
         "악용 유형 선택"
@@ -7583,6 +7619,9 @@
       ],
       "Uploaded by": [
         "업로드한 사용자:"
+      ],
+      "User opted in": [
+        "사용자가 수신 동의함"
       ],
       "Username": [
         "사용자 이름"
@@ -11966,6 +12005,9 @@
       "Account temporarily locked": [
         "계정 일시 잠김"
       ],
+      "Actions": [
+        "작업"
+      ],
       "Active": [
         "활성"
       ],
@@ -12362,6 +12404,9 @@
       "Gift": [
         "선물"
       ],
+      "Global": [
+        "글로벌"
+      ],
       "Groups": [
         "그룹"
       ],
@@ -12670,6 +12715,9 @@
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "나중에 ${ DRIVE_APP_NAME }에 저장하기"
+      ],
+      "Search": [
+        "검색"
       ],
       "Search results": [
         "검색 결과"
