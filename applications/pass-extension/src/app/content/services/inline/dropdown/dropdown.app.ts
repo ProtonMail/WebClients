@@ -150,24 +150,6 @@ export const createDropdown = (popover: PopoverController): DropdownApp => {
         }
     });
 
-    /* On a login autofill request - resolve the credentials via
-     * worker communication and autofill the parent form of the
-     * field the current dropdown is attached to. */
-    iframe.registerMessageHandler(
-        InlinePortMessageType.AUTOFILL_LOGIN,
-        withContext(async (ctx, { payload }) => {
-            const target = anchor.current;
-            if (target?.type !== 'field') return;
-
-            const form = target.field.getFormHandle();
-            if (!form) return;
-
-            await ctx?.service.autofill.autofillLogin(form, payload);
-            target.field.focus({ preventAction: true });
-        }),
-        { userAction: true }
-    );
-
     /* For a password auto-suggestion - the password will have
      * been generated in the injected iframe and passed in clear
      * text through the secure extension port channel */
@@ -241,6 +223,13 @@ export const createDropdown = (popover: PopoverController): DropdownApp => {
                         contentScriptMessage({
                             type: WorkerMessageType.AUTOFILL_CC,
                             payload: validateAutofillAction(payload),
+                        })
+                    );
+                case 'login':
+                    return sendMessage(
+                        contentScriptMessage({
+                            type: WorkerMessageType.AUTOFILL_LOGIN,
+                            payload,
                         })
                     );
             }

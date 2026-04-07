@@ -67,7 +67,7 @@ export const createAutoFillService = () => {
     const iframeAutofillEnabled = withContext<() => Promise<boolean>>(async (ctx) => {
         const { autofill } = await ctx.service.settings.resolve();
         const { features } = await ctx.service.featureFlags.resolve();
-        return Boolean(!features.PassIFrameKillswitch && features.PassCreditCardWebAutofill && autofill.cc);
+        return Boolean(!features.PassIFrameKillswitch && autofill.cc);
     });
 
     const init = withContext(async (ctx) => {
@@ -269,10 +269,28 @@ export const createAutoFillService = () => {
 
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.AUTOFILL_LOGIN,
-        onContextReady(async (_, message) => {
-            const credentials = getCredentials(message.payload);
-            if (!credentials) throw new Error('Could not get credentials for autofill request');
-            return credentials;
+        onContextReady(async (_, { payload }, sender) => {
+            const tabId = sender.tab?.id;
+            const { fieldId, formId, frameId, itemId, shareId } = payload;
+            const credentials = getCredentials(payload);
+            if (!(credentials && tabId)) throw new Error('Could not get credentials for autofill request');
+
+            await sendTabMessage(
+                backgroundMessage({
+                    type: WorkerMessageType.AUTOFILL_SEQUENCE,
+                    payload: {
+                        status: 'fill',
+                        type: 'login',
+                        data: credentials,
+                        field: { fieldId, frameId, formId },
+                        itemId,
+                        shareId,
+                    },
+                }),
+                { tabId, frameId }
+            );
+
+            return true;
         })
     );
 
