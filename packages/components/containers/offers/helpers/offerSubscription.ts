@@ -12,7 +12,6 @@ import {
     hasMail,
     hasPass,
     hasPassFamily,
-    hasSpringSale2026Coupon,
     hasVPN2024,
     hasVPNPassBundle,
     hasVisionary,
@@ -180,13 +179,6 @@ class OfferSubscription {
         }
 
         return hasVisionary(this.subscription);
-    }
-
-    usedSpringSale2026() {
-        if (this.upcomingSubscription) {
-            return hasSpringSale2026Coupon(this.upcomingSubscription) || hasSpringSale2026Coupon(this.subscription);
-        }
-        return hasSpringSale2026Coupon(this.subscription);
     }
 
     isTrial() {
