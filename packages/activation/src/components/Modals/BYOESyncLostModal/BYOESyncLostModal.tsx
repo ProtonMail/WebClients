@@ -28,17 +28,15 @@ const BYOESyncLostModal = ({ disconnectedEmails, onCustomClose, onResolve, onRej
 
     return (
         <ModalTwo size="small" {...rest} onClose={handleClose}>
-            <ModalTwoHeader title={c('loc_nightly: BYOE').t`Disconnected from Gmail`} />
+            <ModalTwoHeader title={c('Title').t`Disconnected from Gmail`} />
             <ModalTwoContent>
-                <div>{c('loc_nightly: BYOE').jt`We can't access ${boldEmails} anymore.`}</div>
-                <div>
-                    {c('loc_nightly: BYOE').t`This may happen if permissions were removed or your password changed.`}
-                </div>
+                <div>{c('Description').jt`We can't access ${boldEmails} anymore.`}</div>
+                <div>{c('Description').t`This may happen if permissions were removed or your password changed.`}</div>
                 <div>
                     {disconnectedEmails.length > 1
-                        ? c('loc_nightly: BYOE')
+                        ? c('Description')
                               .t`To continue receiving and sending Gmail messages in ${BRAND_NAME}, please reconnect your accounts.`
-                        : c('loc_nightly: BYOE')
+                        : c('Description')
                               .t`To continue receiving and sending Gmail messages in ${BRAND_NAME}, please reconnect your account.`}
                 </div>
             </ModalTwoContent>
@@ -52,7 +50,7 @@ const BYOESyncLostModal = ({ disconnectedEmails, onCustomClose, onResolve, onRej
                     onClick={onResolve}
                 >
                     <img src={googleLogo} alt="" />
-                    <span>{c('loc_nightly: BYOE').t`Reconnect to Gmail`}</span>
+                    <span>{c('Action').t`Reconnect to Gmail`}</span>
                 </ButtonLike>
             </ModalTwoFooter>
         </ModalTwo>
