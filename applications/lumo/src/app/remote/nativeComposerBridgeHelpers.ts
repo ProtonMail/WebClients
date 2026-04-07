@@ -188,6 +188,14 @@ export const setNativeTsAndCsVisibility = (visible: boolean): void => {
     (window as any).nativeComposerApiInstance.setTsAndCsVisibility(visible);
 };
 
+export const injectNativeImageGenerationHelper = (prompt: string): void => {
+    if (!isNativeComposerBridgeAvailable()) {
+        console.warn('Native Composer Bridge not available');
+        return;
+    }
+    (window as any).nativeComposerApiInstance.injectImageGenerationHelperPrompt(prompt);
+};
+
 export type { LumoFile, LumoMode, State };
 export { LumoFileType, getLumoFileType } from './nativeComposerBridge';
 
