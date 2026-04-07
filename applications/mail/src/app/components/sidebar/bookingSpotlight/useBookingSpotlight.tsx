@@ -7,13 +7,14 @@ import NewBadge from '@proton/components/components/newBadge/NewBadge';
 import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
 import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { FeatureCode } from '@proton/features/interface';
+import useFeature from '@proton/features/useFeature';
 import { CALENDAR_APP_NAME, MEET_APP_NAME } from '@proton/shared/lib/constants';
 import spotlightImg from '@proton/styles/assets/img/calendar-booking/meet-booking-icon.svg';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import './bookingSpotlight.scss';
 
-export const BookingPageLocationSpotlightContent = () => {
+export const MeetBookingSpotlightMail = () => {
     return (
         <>
             <div className="flex flex-nowrap items-start mb-1 gap-4">
@@ -39,10 +40,12 @@ export const useBookingPageSpotlight = () => {
     const accountAge = differenceInDays(new Date(), fromUnixTime(user.CreateTime));
 
     const isBookingsEnabled = useFlag('CalendarBookings');
+    const calendarSpotlight = useFeature(FeatureCode.SpotlightIntroduceBookings);
+    const hasUserSeeCalendarSpotlight = !calendarSpotlight.loading && !calendarSpotlight.feature?.Value;
 
     const { show, onDisplayed, onClose } = useSpotlightOnFeature(
         FeatureCode.BookingSpotlightInMail,
-        !isWelcomeFlow && isBookingsEnabled && accountAge > 3
+        !isWelcomeFlow && accountAge > 3 && !hasUserSeeCalendarSpotlight && isBookingsEnabled
     );
 
     const shouldShowSpotlight = useSpotlightShow(show);
