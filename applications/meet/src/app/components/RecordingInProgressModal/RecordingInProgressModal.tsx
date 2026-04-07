@@ -3,7 +3,10 @@ import { useEffect, useRef, useState } from 'react';
 import { c } from 'ttag';
 
 import { useMeetSelector } from '@proton/meet/store/hooks';
-import { selectIsRecordingInProgress } from '@proton/meet/store/slices/meetingInfo';
+import {
+    selectIsLocalParticipantRecording,
+    selectIsRecordingInProgress,
+} from '@proton/meet/store/slices/recordingStatusSlice';
 import IcCircleRadioFilled from '@proton/styles/assets/img/meet/ic-circle-radio-filled.svg';
 
 import { useMeetContext } from '../../contexts/MeetContext';
@@ -11,6 +14,7 @@ import { ConfirmationModal } from '../ConfirmationModal/ConfirmationModal';
 
 export const RecordingInProgressModal = () => {
     const isRecordingInProgress = useMeetSelector(selectIsRecordingInProgress);
+    const isLocalParticipantRecording = useMeetSelector(selectIsLocalParticipantRecording);
     const prevIsRecordingInProgressRef = useRef<boolean | null>(null);
 
     const { handleLeave } = useMeetContext();
@@ -19,11 +23,11 @@ export const RecordingInProgressModal = () => {
 
     useEffect(() => {
         if (isRecordingInProgress !== prevIsRecordingInProgressRef.current) {
-            setIsRecordingInProgressModalOpen(isRecordingInProgress);
+            setIsRecordingInProgressModalOpen(isRecordingInProgress && !isLocalParticipantRecording);
         }
 
         prevIsRecordingInProgressRef.current = isRecordingInProgress;
-    }, [isRecordingInProgress]);
+    }, [isRecordingInProgress, isLocalParticipantRecording]);
 
     if (!isRecordingInProgressModalOpen) {
         return null;

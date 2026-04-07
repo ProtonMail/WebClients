@@ -1,7 +1,8 @@
+import { chatAndReactionsReducer } from './chatAndReactionsSlice';
 import { meetAppStateReducer } from './meetAppStateSlice';
 import { meetingInfoReducer } from './meetingInfo';
-import { chatAndReactionsReducer } from './chatAndReactionsSlice';
 import { meetingsReducer } from './meetings';
+import { recordingStatusReducer } from './recordingStatusSlice';
 import { settingsReducer } from './settings';
 import { sortedParticipantsReducer } from './sortedParticipantsSlice';
 import { uiStateReducer } from './uiStateSlice';
@@ -19,6 +20,7 @@ export const meetReducers = {
     ...meetingsReducer,
     ...userSettingsReducer,
     ...chatAndReactionsReducer,
+    ...recordingStatusReducer,
     ...settingsReducer,
     ...sortedParticipantsReducer,
     ...uiStateReducer,

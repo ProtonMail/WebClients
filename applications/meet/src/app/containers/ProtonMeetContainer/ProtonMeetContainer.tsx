@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
-import { type GroupKeyInfo, JoinTypeInfo, MeetCoreErrorEnum } from '@proton-meet/proton-meet-core';
+import { type App, type GroupKeyInfo, JoinTypeInfo, MeetCoreErrorEnum } from '@proton-meet/proton-meet-core';
 import { ConnectionState, DisconnectReason, type Room, RoomEvent, Track } from 'livekit-client';
 import { c } from 'ttag';
 
@@ -47,6 +47,7 @@ import { useGuestContext } from '../../contexts/GuestProvider/GuestContext';
 import { MLSContext } from '../../contexts/MLSContext';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useWasmApp } from '../../contexts/WasmContext';
+import { useIsRecordingInProgressReceiver } from '../../hooks/bridges/useIsRecordingInProgressReceiver';
 import type { SRPHandshakeInfo } from '../../hooks/srp/useMeetSrp';
 import { useMeetingSetup } from '../../hooks/srp/useMeetingSetup';
 import { useAssignHost } from '../../hooks/useAssignHost';
@@ -55,7 +56,6 @@ import { defaultDisplayNameHooks } from '../../hooks/useDefaultDisplayName';
 import { useDependencySetup } from '../../hooks/useDependencySetup';
 import { useIsTreatedAsPaidMeetUser } from '../../hooks/useIsTreatedAsPaidMeetUser';
 import { MeetingListStatus } from '../../hooks/useMeetingList';
-import { useIsRecordingInProgress } from '../../hooks/useMeetingRecorder/useIsRecordingInProgress';
 import { useParticipantNameMap } from '../../hooks/useParticipantNameMap';
 import { usePictureInPicture } from '../../hooks/usePictureInPicture/usePictureInPicture';
 import { useSafariWebsocketVisibilityHandler } from '../../hooks/useSafariWebsocketVisibilityHandler';
@@ -352,8 +352,6 @@ export const ProtonMeetContainer = ({
         participantNameMap,
     });
 
-    const isRecordingInProgress = useIsRecordingInProgress();
-
     const joinBlockedRef = useRef(false);
     const lastEpochRef = useRef<bigint | null>(null);
     const joinedRoomLoggedRef = useRef(false);
@@ -370,6 +368,8 @@ export const ProtonMeetContainer = ({
     const notifications = useNotifications();
 
     const [keyRotationScheduler] = useState(() => new KeyRotationScheduler(keyProvider));
+
+    useIsRecordingInProgressReceiver(wasmApp as App);
 
     const isGuestAdminRef = useRef(false);
 
@@ -1316,7 +1316,6 @@ export const ProtonMeetContainer = ({
                         instantMeeting={instantMeetingRef.current}
                         assignHost={assignHost}
                         paidUser={paidUser}
-                        isRecordingInProgress={isRecordingInProgress}
                         getKeychainIndexInformation={getKeychainIndexInformation}
                         expirationTime={meetingDetails.expirationTime}
                         isGuestAdmin={isGuestAdminRef.current}
