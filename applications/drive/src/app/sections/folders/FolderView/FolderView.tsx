@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 
 import { useShallow } from 'zustand/react/shallow';
 
@@ -7,8 +7,9 @@ import { splitNodeUid } from '@proton/drive/index';
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 
 import UploadDragDrop from '../../../components/uploads/UploadDragDrop/UploadDragDrop';
-import { useDriveDragMoveTarget } from '../../../hooks/drive/useDriveDragMove';
+import { type MoveNodesItemMap, useMoveNodes } from '../../../hooks/sdk/useMoveNodes';
 import { useAlbumOnboardingModal } from '../../../modals/AlbumOnboardingModal';
+import { useDriveDragMove } from '../../../modules/selection/useDriveDragMove';
 import { SortField } from '../../../modules/sorting/types';
 import { useUserSettings } from '../../../store';
 import { SortField as StoredSortField } from '../../../store/_views/utils/useSorting';
@@ -65,7 +66,26 @@ export function FolderView({ shareId, nodeUid }: FolderViewProps) {
         };
     }, [shareId, nodeUid, load]);
 
-    const { getHandleItemDrop } = useDriveDragMoveTarget(shareId);
+    const { moveNodes } = useMoveNodes();
+    const handleDrop = useCallback(
+        (itemUids: string[], newParentUid: string) => {
+            const itemMap = itemUids.reduce<MoveNodesItemMap>((acc, uid) => {
+                const item = useFolderStore.getState().items.get(uid);
+                if (!item || !item.parentUid) {
+                    return acc;
+                }
+                return { ...acc, [uid]: { name: item.name, parentUid: item.parentUid } };
+            }, {});
+            void moveNodes(itemMap, newParentUid);
+        },
+        [moveNodes]
+    );
+    // TODO: Improve this helper, maybe by creating a new helper
+    const { getHandleItemDrop } = useDriveDragMove([], {
+        isAvailableTarget: (uid) => !useFolderStore.getState().items.get(uid)?.isFile,
+        clearSelections: () => {},
+        onDrop: handleDrop,
+    });
     const breadcrumbs = nodeUid && <FolderViewBreadcrumbs createHandleItemDrop={getHandleItemDrop} nodeUid={nodeUid} />;
 
     const splitedNodeUid = nodeUid ? splitNodeUid(nodeUid) : undefined;
