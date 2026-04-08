@@ -437,7 +437,6 @@ const PublicAppInteractive = ({
                                                 SSO_PATHS.MEET_SIGNUP_B2B,
                                                 SSO_PATHS.PORKBUN_SIGNUP,
                                                 SSO_PATHS.PORKBUN_SIGN_IN,
-                                                SSO_PATHS.GREENLAND_SIGNUP,
                                                 SSO_PATHS.BORN_PRIVATE,
                                             ]}
                                         >
