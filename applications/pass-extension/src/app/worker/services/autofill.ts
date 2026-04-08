@@ -300,7 +300,7 @@ export const createAutoFillService = () => {
                 payload: {
                     status: 'fill',
                     type: 'email',
-                    data: value,
+                    email: value,
                     field: { fieldId, frameId, formId },
                 },
             }),
