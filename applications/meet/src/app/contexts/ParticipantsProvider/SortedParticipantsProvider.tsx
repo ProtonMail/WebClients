@@ -1,6 +1,6 @@
 import { createContext, useCallback, useContext, useEffect, useMemo } from 'react';
 
-import { useParticipants, useRoomContext } from '@livekit/components-react';
+import { useLocalParticipant, useParticipants, useRoomContext } from '@livekit/components-react';
 import type { LocalParticipant, RemoteParticipant } from 'livekit-client';
 import { RoomEvent } from 'livekit-client';
 
@@ -12,6 +12,7 @@ import {
     resetSortedParticipants,
     selectPagedIdentities,
     selectSortedParticipantIdentities,
+    setLocalParticipantIdentity,
     updateSortedParticipants,
 } from '@proton/meet/store/slices/sortedParticipantsSlice';
 
@@ -62,7 +63,21 @@ export const SortedParticipantsProvider = ({ children }: { children: React.React
 
     useEffect(() => {
         throttledUpdateSortedParticipants();
-    }, [participants, throttledUpdateSortedParticipants, raisedHands]);
+    }, [
+        participants,
+        throttledUpdateSortedParticipants,
+        // We want to update sorted participants when a participant raises or lowers their hand
+        raisedHands,
+    ]);
+
+    const { localParticipant } = useLocalParticipant();
+
+    // Store local participant identity as soon as it is available
+    useEffect(() => {
+        if (localParticipant.identity) {
+            dispatch(setLocalParticipantIdentity(localParticipant.identity));
+        }
+    }, [localParticipant.identity, dispatch]);
 
     useEffect(() => {
         room.on(RoomEvent.ActiveSpeakersChanged, throttledUpdateSortedParticipants);

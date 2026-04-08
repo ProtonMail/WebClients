@@ -1,7 +1,8 @@
 import type { PayloadAction } from '@reduxjs/toolkit';
-import { createSlice } from '@reduxjs/toolkit';
+import { createSelector, createSlice } from '@reduxjs/toolkit';
 
 import type { KeyRotationLog, MLSGroupState, ParticipantEntity } from '../../types/types';
+import { ParticipantCapabilityPermission } from '../../types/types';
 import type { MeetState } from '../rootReducer';
 
 export interface MeetingInfoState {
@@ -16,7 +17,7 @@ export interface MeetingInfoState {
     passphrase: string;
     isGuestAdmin: boolean;
     participantsMap: Record<string, ParticipantEntity>;
-    participantNameMap: Record<string, string>;
+    isFetchingParticipants: boolean;
     mlsGroupState: MLSGroupState | null;
     isLocalScreenShare: boolean;
     isScreenShare: boolean;
@@ -35,7 +36,7 @@ export const initialState: MeetingInfoState = {
     passphrase: '',
     isGuestAdmin: false,
     participantsMap: {},
-    participantNameMap: {},
+    isFetchingParticipants: false,
     mlsGroupState: null,
     isLocalScreenShare: false,
     isScreenShare: false,
@@ -70,7 +71,33 @@ const slice = createSlice({
         addKeyRotationLog: (state, action: PayloadAction<KeyRotationLog>) => {
             state.keyRotationLogs = [...state.keyRotationLogs, action.payload];
         },
+        mergeParticipantsMap: (state, action: PayloadAction<Record<string, ParticipantEntity>>) => {
+            state.participantsMap = { ...state.participantsMap, ...action.payload };
+        },
+        removeParticipantFromMap: (state, action: PayloadAction<string>) => {
+            const next = { ...state.participantsMap };
+            delete next[action.payload];
+            state.participantsMap = next;
+        },
+        resetParticipantMaps: (state) => {
+            state.participantsMap = {};
+            state.isFetchingParticipants = false;
+        },
+        setParticipantAdmin: (state, action: PayloadAction<{ participantUid: string; participantType: number }>) => {
+            const { participantUid, participantType } = action.payload;
+            state.participantsMap = Object.fromEntries(
+                Object.entries(state.participantsMap).map(([key, value]) => {
+                    const isTargetParticipant = value.ParticipantUUID === participantUid;
+                    const isAdmin = isTargetParticipant && participantType === 1;
+                    const adminPermission = isAdmin ? ParticipantCapabilityPermission.Allowed : value.IsAdmin;
+                    return [key, { ...value, IsAdmin: adminPermission }];
+                })
+            );
+        },
         resetMeetingInfo: () => initialState,
+        setIsFetchingParticipants: (state, action: PayloadAction<boolean>) => {
+            state.isFetchingParticipants = action.payload;
+        },
     },
 });
 
@@ -84,6 +111,11 @@ export const {
     setMlsGroupState,
     resetMeetingInfo,
     addKeyRotationLog,
+    mergeParticipantsMap,
+    removeParticipantFromMap,
+    resetParticipantMaps,
+    setParticipantAdmin,
+    setIsFetchingParticipants,
 } = slice.actions;
 
 export const selectMeetingInfo = (state: MeetState) => state.meetingInfo;
@@ -97,8 +129,16 @@ export const selectInstantMeeting = (state: MeetState) => state.meetingInfo.inst
 export const selectDisplayName = (state: MeetState) => state.meetingInfo.displayName;
 export const selectPassphrase = (state: MeetState) => state.meetingInfo.passphrase;
 export const selectIsGuestAdmin = (state: MeetState) => state.meetingInfo.isGuestAdmin;
+
 export const selectParticipantsMap = (state: MeetState) => state.meetingInfo.participantsMap;
-export const selectParticipantNameMap = (state: MeetState) => state.meetingInfo.participantNameMap;
+export const selectParticipantNameMap = createSelector([selectParticipantsMap], (participantsMap) => {
+    return Object.fromEntries(Object.entries(participantsMap).map(([key, value]) => [key, value.DisplayName]));
+});
+export const selectParticipantName = createSelector(
+    [selectParticipantsMap, (_state: MeetState, identity: string) => identity],
+    (participantsMap, identity) => participantsMap[identity]?.DisplayName ?? ''
+);
+
 export const selectMlsGroupState = (state: MeetState) => state.meetingInfo.mlsGroupState;
 export const selectIsLocalScreenShare = (state: MeetState) => state.meetingInfo.isLocalScreenShare;
 export const selectIsScreenShare = (state: MeetState) => state.meetingInfo.isScreenShare;

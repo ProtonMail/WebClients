@@ -13,6 +13,7 @@ import { selectSelfView } from './settings';
 import { selectParticipantsMap } from './meetingInfo';
 
 export interface SortedParticipantsState {
+    localParticipantIdentity: string;
     sortedParticipantIdentities: string[];
     page: number;
     pageSize: number;
@@ -20,6 +21,7 @@ export interface SortedParticipantsState {
 }
 
 export const initialState: SortedParticipantsState = {
+    localParticipantIdentity: '',
     sortedParticipantIdentities: [],
     page: 0,
     pageSize: PAGE_SIZE,
@@ -71,6 +73,9 @@ const slice = createSlice({
         },
         setLocalParticipantColorIndex: (state, action: PayloadAction<number>) => {
             state.localParticipantColorIndex = action.payload;
+        },
+        setLocalParticipantIdentity: (state, action: PayloadAction<string>) => {
+            state.localParticipantIdentity = action.payload;
         },
         // Used in combination of removeParticipant thunk
         _removeParticipant: (state, action: PayloadAction<{ participantIdentity: string; lastPage: number }>) => {
@@ -189,9 +194,9 @@ export const selectLocalParticipantColorIndex = (state: MeetState) => {
     return state.sortedParticipants.localParticipantColorIndex;
 };
 
-export const selectLocalParticipantIdentity = createSelector([selectSortedParticipantIdentities], (identities) => {
-    return identities[0];
-});
+export const selectLocalParticipantIdentity = (state: MeetState) => {
+    return state.sortedParticipants.localParticipantIdentity;
+};
 
 export const selectIsLocalParticipantAdminOrHost = createSelector([
     selectParticipantsMap,
@@ -207,6 +212,7 @@ export const {
     setPage,
     setPageSize,
     setLocalParticipantColorIndex,
+    setLocalParticipantIdentity,
 } = slice.actions;
 
 export const sortedParticipantsReducer = { sortedParticipants: slice.reducer };
