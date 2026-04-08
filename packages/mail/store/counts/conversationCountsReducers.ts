@@ -636,6 +636,7 @@ export const labelConversationsPending = (
         ) {
             // Move missing received messages in INBOX
             const inboxMessageCountState = state.value?.find((counter) => counter.LabelID === MAILBOX_LABEL_IDS.INBOX);
+            const conversationLabelID = conversation.Labels?.find((label) => isCategoryLabel(label.ID))?.ID;
 
             if (inboxMessageCountState) {
                 if (numMessagesInInbox === 0) {
@@ -649,27 +650,21 @@ export const labelConversationsPending = (
 
             // When conversation enters INBOX, also increase category counters
             if (numMessagesInInbox === 0) {
-                conversation.Labels?.forEach((convLabel) => {
-                    if (isCategoryLabel(convLabel.ID)) {
-                        const categoryCountState = state.value?.find((counter) => counter.LabelID === convLabel.ID);
+                const categoryCountState = state.value?.find((counter) => counter.LabelID === conversationLabelID);
 
-                        if (categoryCountState) {
-                            categoryCountState.Total = safeIncreaseCount(categoryCountState.Total, 1);
-                        }
-                    }
-                });
+                if (categoryCountState) {
+                    categoryCountState.Total = safeIncreaseCount(categoryCountState.Total, 1);
+                }
             }
 
+            // Conversation had no unread in INBOX before, but has unread received messages (e.g. coming from TRASH/SPAM).
+            // Since received messages land in INBOX, the category unread counter should increase.
             if (numUnreadMessagesInInbox === 0 && hasUnreadReceivedMessage) {
-                conversation.Labels?.forEach((convLabel) => {
-                    if (isCategoryLabel(convLabel.ID)) {
-                        const categoryCountState = state.value?.find((counter) => counter.LabelID === convLabel.ID);
+                const categoryCountState = state.value?.find((counter) => counter.LabelID === conversationLabelID);
 
-                        if (categoryCountState) {
-                            categoryCountState.Unread = safeIncreaseCount(categoryCountState.Unread, 1);
-                        }
-                    }
-                });
+                if (categoryCountState) {
+                    categoryCountState.Unread = safeIncreaseCount(categoryCountState.Unread, 1);
+                }
             }
 
             // Move all sent messages to SENT
