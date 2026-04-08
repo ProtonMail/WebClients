@@ -95,13 +95,7 @@ export const AutofillCC: FC<Props> = (payload) => {
                         onClick={() => {
                             controller.forwardMessage({
                                 type: InlinePortMessageType.AUTOFILL_ACTION,
-                                payload: {
-                                    ...payload,
-                                    itemId,
-                                    shareId,
-                                    crossFrame: true,
-                                    type: 'creditCard',
-                                },
+                                payload: { ...payload, itemId, shareId, type: 'creditCard' },
                             });
                             controller.close({ userAction: true });
                         }}
