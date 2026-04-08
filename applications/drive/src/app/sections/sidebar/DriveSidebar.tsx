@@ -34,6 +34,7 @@ import SidebarStorageUpsell from '../../components/layout/sidebar/SidebarStorage
 import { useIsFreeUploadInProgress } from '../../hooks/drive/freeUpload/useIsFreeUploadInProgress';
 import { useActiveShare } from '../../hooks/drive/useActiveShare';
 import { useDebug } from '../../hooks/drive/useDebug';
+import { directoryTreeFactory } from '../../modules/directoryTree';
 import type { ShareWithKey } from '../../store';
 import { useCreateDevice } from '../../store/_shares/useCreateDevice';
 import { useCreatePhotos } from '../../store/_shares/useCreatePhotos';
@@ -41,15 +42,15 @@ import { useDefaultShare } from '../../store/_shares/useDefaultShare';
 import { ActionMenuButton } from './ActionMenu/ActionMenuButton';
 import { DriveSidebarFooter } from './DriveSidebarFooter';
 import { DriveSidebarList } from './DriveSidebarList';
-import { subscribeToSidebarEvents } from './hooks/subscribeToSidebarEvents';
 import { useSidebarStore } from './hooks/useSidebar.store';
-import { useSidebarFolders } from './hooks/useSidebarFolders';
 
 interface DriveSidebarProps {
     isHeaderExpanded: boolean;
     toggleHeaderExpanded: () => void;
     isNewUploadDisabled: boolean;
 }
+
+const useSidebarDirectoryTree = directoryTreeFactory();
 
 export const DriveSidebar = ({ isNewUploadDisabled, isHeaderExpanded, toggleHeaderExpanded }: DriveSidebarProps) => {
     const { activeShareId } = useActiveShare();
@@ -67,6 +68,11 @@ export const DriveSidebar = ({ isNewUploadDisabled, isHeaderExpanded, toggleHead
     const navigationRef = useRef<HTMLDivElement>(null);
     const storageRef = useRef<HTMLDivElement>(null);
 
+    const store = useSidebarDirectoryTree('sidebar', {
+        onlyFolders: true,
+        loadPermissions: true,
+    });
+
     // This is same logic is in SidebarStorageUpsell to determine if we show the storage button
     const showStorage =
         getCanAddStorage({ user, subscription }) && (user.Subscribed === PRODUCT_BIT.DRIVE || user.Subscribed === 0);
@@ -74,7 +80,6 @@ export const DriveSidebar = ({ isNewUploadDisabled, isHeaderExpanded, toggleHead
     const collapsed = !showSideBar && !viewportWidth['<=small'];
     const currentStorage = storageRef.current;
 
-    const { loadFoldersRoot } = useSidebarFolders();
     const { isScrollPresent } = useLeftSidebarButton({
         navigationRef,
     });
@@ -86,14 +91,6 @@ export const DriveSidebar = ({ isNewUploadDisabled, isHeaderExpanded, toggleHead
     );
 
     const logo = <SidebarLogo collapsed={collapsed} to="/drive" app={APPS.PROTONDRIVE} />;
-
-    useEffect(() => {
-        void loadFoldersRoot();
-        const unsubscribe = subscribeToSidebarEvents();
-        return () => {
-            unsubscribe();
-        };
-    }, [loadFoldersRoot]);
 
     useEffect(() => {
         void getDefaultShare().then((share) => {
@@ -124,13 +121,6 @@ export const DriveSidebar = ({ isNewUploadDisabled, isHeaderExpanded, toggleHead
         setShowSideBar(!showSideBar);
     };
 
-    /*
-     * The sidebar supports multiple shares, but as we currently have
-     * only one main share in use, we gonna use the default share only,
-     * unless the opposite is decided.
-     */
-    const shares = defaultShare ? [defaultShare] : [];
-
     const isFreeUploadInProgress = useIsFreeUploadInProgress();
 
     return (
@@ -153,7 +143,7 @@ export const DriveSidebar = ({ isNewUploadDisabled, isHeaderExpanded, toggleHead
         >
             <SidebarNav className="flex *:min-size-auto">
                 <div>
-                    <DriveSidebarList shareId={activeShareId} userShares={shares} />
+                    <DriveSidebarList shareId={activeShareId} store={store} />
                     {displayContactsInHeader && <SidebarDrawerItems toggleHeaderDropdown={toggleHeaderExpanded} />}
                 </div>
 

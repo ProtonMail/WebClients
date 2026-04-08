@@ -1,70 +1,63 @@
-import { useEffect, useMemo } from 'react';
-
-import { useShallow } from 'zustand/react/shallow';
+import { useEffect, useState } from 'react';
 
 import { FileIcon, FileNameDisplay, Loader, SidebarListItem, SidebarListItemContent } from '@proton/components';
 import { splitNodeUid } from '@proton/drive/index';
 
 import SidebarListItemLink from '../../../components/layout/sidebar/SidebarListItemLink';
-import type { SidebarItem } from '../hooks/useSidebar.store';
+import type { TreeItemWithChildren } from '../../../modules/directoryTree';
 import { useSidebarStore } from '../hooks/useSidebar.store';
-import { useSidebarFolders } from '../hooks/useSidebarFolders';
 import { generateSidebarItemStyle } from '../utils';
 import { DriveExpandButton } from './DriveExpandButton';
+import { DriveSidebarSubfolders } from './DriveSidebarSubfolders';
 
 type Props = {
     shareId: string;
-    item: SidebarItem;
+    item: TreeItemWithChildren;
+    toggleExpand: (treeItemId: string) => Promise<void>;
+    level: number;
 };
 
-export const DriveSidebarSubfolder = ({ shareId, item }: Props) => {
-    const { toggleExpand } = useSidebarFolders();
-    const isLoading = Boolean(item?.isLoading);
-    const isExpanded = Boolean(item?.isExpanded);
-    const linkId = splitNodeUid(item.uid).nodeId;
-    const { children, setSidebarLevel } = useSidebarStore(
-        useShallow((state) => ({
-            children: state.getChildren(item.uid),
-            setSidebarLevel: state.setSidebarLevel,
-        }))
-    );
-
-    const shouldShowArrow = useMemo(() => children.length || !item.hasLoadedChildren, [item, children]);
+export const DriveSidebarSubfolder = ({ shareId, item, toggleExpand, level }: Props) => {
+    const { setSidebarLevel } = useSidebarStore((state) => ({ setSidebarLevel: state.setSidebarLevel }));
+    const [isLoading, setIsLoading] = useState(false);
+    const { nodeId: linkId } = splitNodeUid(item.nodeUid);
+    const isExpanded = item.children !== null;
+    const children = item.children ? Object.values(item.children) : [];
+    const shouldShowArrow = !item.hasLoadedChildren || item.hasChildren;
 
     useEffect(() => {
-        setSidebarLevel(item.level);
-    }, [item.level, setSidebarLevel]);
+        setSidebarLevel(level);
+    }, [level, setSidebarLevel]);
 
-    const handleFolderClick = (e: any) => {
+    const handleExpand = () => {
+        setIsLoading(true);
+        void toggleExpand(item.treeItemId).finally(() => setIsLoading(false));
+    };
+
+    const handleFolderClick = (e: React.MouseEvent) => {
         if (e.detail !== 1) {
             e.stopPropagation();
             e.preventDefault();
         }
     };
 
-    const expandeButtonStyle: React.CSSProperties = !shouldShowArrow
-        ? {
-              visibility: 'hidden',
-          }
-        : {};
-
     return (
         <SidebarListItem>
             <SidebarListItemLink
                 to={`/${shareId}/folder/${linkId}`}
                 onClick={handleFolderClick}
-                onDoubleClick={() => toggleExpand(item.uid)}
+                onDoubleClick={handleExpand}
             >
                 <SidebarListItemContent>
                     <div
                         className="flex flex-nowrap items-center gap-2"
                         data-testid="sidebar-sub-folders"
-                        style={generateSidebarItemStyle(item.level)}
+                        style={generateSidebarItemStyle(level)}
                     >
                         <DriveExpandButton
                             expanded={isExpanded}
-                            onClick={() => toggleExpand(item.uid)}
-                            style={expandeButtonStyle}
+                            onClick={handleExpand}
+                            style={shouldShowArrow ? undefined : { visibility: 'hidden' }}
                         />
 
                         {isLoading ? (
@@ -76,6 +69,15 @@ export const DriveSidebarSubfolder = ({ shareId, item }: Props) => {
                     </div>
                 </SidebarListItemContent>
             </SidebarListItemLink>
+
+            {isExpanded && children.length > 0 && (
+                <DriveSidebarSubfolders
+                    shareId={shareId}
+                    children={children}
+                    toggleExpand={toggleExpand}
+                    level={level + 1}
+                />
+            )}
         </SidebarListItem>
     );
 };
