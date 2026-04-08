@@ -547,8 +547,12 @@ describe('messagesReducer', () => {
                 },
             });
 
-            expect(messageState.data?.LabelIDs).toContain(MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
-            expect(messageState.data?.LabelIDs).toContain(MAILBOX_LABEL_IDS.INBOX);
+            expect(messageState.data?.LabelIDs).toStrictEqual([
+                MAILBOX_LABEL_IDS.INBOX,
+                MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                MAILBOX_LABEL_IDS.ALL_MAIL,
+                MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+            ]);
             expect(messageState.data?.LabelIDs).not.toContain(customLabelID);
         });
     });
@@ -591,14 +595,18 @@ describe('messagesReducer', () => {
                         conversations: [conversation],
                         sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
                         destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
-                        labels: [] as Label[],
-                        folders: [] as Folder[],
+                        labels: [],
+                        folders: [],
                     },
                 },
             });
 
-            expect(messageState1.data?.LabelIDs).toContain(MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
-            expect(messageState1.data?.LabelIDs).toContain(MAILBOX_LABEL_IDS.ARCHIVE);
+            expect(messageState1.data?.LabelIDs).toStrictEqual([
+                MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                MAILBOX_LABEL_IDS.ALL_MAIL,
+                MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                MAILBOX_LABEL_IDS.ARCHIVE,
+            ]);
             expect(messageState1.data?.LabelIDs).not.toContain(MAILBOX_LABEL_IDS.INBOX);
         });
 
@@ -627,6 +635,9 @@ describe('messagesReducer', () => {
                 Labels: [
                     { ID: MAILBOX_LABEL_IDS.INBOX, ContextNumMessages: 1, ContextNumUnread: 0 },
                     { ID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, ContextNumMessages: 1, ContextNumUnread: 0 },
+                    { ID: MAILBOX_LABEL_IDS.ALL_MAIL, ContextNumMessages: 1, ContextNumUnread: 0 },
+                    { ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL, ContextNumMessages: 1, ContextNumUnread: 0 },
+                    { ID: MAILBOX_LABEL_IDS.STARRED, ContextNumMessages: 1, ContextNumUnread: 0 },
                 ],
             } as Conversation;
 
@@ -645,13 +656,14 @@ describe('messagesReducer', () => {
             });
 
             // Old category removed, new category added
-            expect(messageState1.data?.LabelIDs).toContain(MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS);
+            expect(messageState1.data?.LabelIDs).toStrictEqual([
+                MAILBOX_LABEL_IDS.INBOX,
+                MAILBOX_LABEL_IDS.ALL_MAIL,
+                MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                MAILBOX_LABEL_IDS.STARRED,
+                MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+            ]);
             expect(messageState1.data?.LabelIDs).not.toContain(MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
-            // Everything else unchanged
-            expect(messageState1.data?.LabelIDs).toContain(MAILBOX_LABEL_IDS.INBOX);
-            expect(messageState1.data?.LabelIDs).toContain(MAILBOX_LABEL_IDS.ALL_MAIL);
-            expect(messageState1.data?.LabelIDs).toContain(MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL);
-            expect(messageState1.data?.LabelIDs).toContain(MAILBOX_LABEL_IDS.STARRED);
         });
     });
 });

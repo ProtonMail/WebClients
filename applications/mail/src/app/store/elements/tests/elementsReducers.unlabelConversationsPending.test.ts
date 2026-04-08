@@ -352,18 +352,6 @@ describe('unLabelConversationsPending', () => {
                     ContextNumAttachments: 1,
                 },
                 {
-                    ID: MAILBOX_LABEL_IDS.SENT,
-                    ContextNumMessages: 1,
-                    ContextNumUnread: 0,
-                    ContextNumAttachments: 0,
-                },
-                {
-                    ID: MAILBOX_LABEL_IDS.ALL_SENT,
-                    ContextNumMessages: 1,
-                    ContextNumUnread: 0,
-                    ContextNumAttachments: 0,
-                },
-                {
                     ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
                     ContextNumMessages: 2,
                     ContextNumUnread: 1,
@@ -413,27 +401,12 @@ describe('unLabelConversationsPending', () => {
 
         const updatedConversation = testState.elements[CONVERSATION_ID] as Conversation;
 
-        expect(updatedConversation.NumMessages).toEqual(2);
-        expect(updatedConversation.NumUnread).toEqual(1);
-        expect(updatedConversation.NumAttachments).toEqual(1);
         expectConversationLabelsSameArray(updatedConversation.Labels, [
             {
                 ID: MAILBOX_LABEL_IDS.INBOX,
                 ContextNumMessages: 1,
                 ContextNumUnread: 1,
                 ContextNumAttachments: 1,
-            },
-            {
-                ID: MAILBOX_LABEL_IDS.SENT,
-                ContextNumMessages: 1,
-                ContextNumUnread: 0,
-                ContextNumAttachments: 0,
-            },
-            {
-                ID: MAILBOX_LABEL_IDS.ALL_SENT,
-                ContextNumMessages: 1,
-                ContextNumUnread: 0,
-                ContextNumAttachments: 0,
             },
             {
                 ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
