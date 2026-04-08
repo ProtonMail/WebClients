@@ -1,7 +1,7 @@
 import { SHARED_WITH_ME_ROOT_ID, makeTreeItemId } from './helpers';
 import type { TreeStoreItem } from './types';
 
-interface TreeItemWithChildren extends TreeStoreItem {
+export interface TreeItemWithChildren extends TreeStoreItem {
     children: Record<string, TreeItemWithChildren> | null;
 }
 

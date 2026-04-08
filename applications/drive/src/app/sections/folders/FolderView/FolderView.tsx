@@ -12,7 +12,6 @@ import { useAlbumOnboardingModal } from '../../../modals/AlbumOnboardingModal';
 import { SortField } from '../../../modules/sorting/types';
 import { useUserSettings } from '../../../store';
 import { SortField as StoredSortField } from '../../../store/_views/utils/useSorting';
-import { useDevicesStore } from '../../devices/useDevices.store';
 import { FolderViewBreadcrumbs } from '../FolderViewBreadcrumbs';
 import { getFolderSortConfig } from '../folder.sorting';
 import { useFolder } from '../useFolder';
@@ -44,11 +43,6 @@ export function FolderView({ shareId, nodeUid }: FolderViewProps) {
     );
 
     useAppTitle(!isRootFolder ? folderName : undefined);
-    const { isLoadingDevices } = useDevicesStore(
-        useShallow((state) => ({
-            isLoadingDevices: state.isLoading,
-        }))
-    );
 
     const { layout, sort, changeSort } = useUserSettings();
     // Initialize folder sort from user settings on first mount
@@ -63,13 +57,13 @@ export function FolderView({ shareId, nodeUid }: FolderViewProps) {
 
     useEffect(() => {
         const ac = new AbortController();
-        if (!isLoadingDevices && nodeUid) {
+        if (nodeUid) {
             void load(nodeUid, shareId, ac);
         }
         return () => {
             ac.abort();
         };
-    }, [shareId, nodeUid, load, isLoadingDevices]);
+    }, [shareId, nodeUid, load]);
 
     const { getHandleItemDrop } = useDriveDragMoveTarget(shareId);
     const breadcrumbs = nodeUid && <FolderViewBreadcrumbs createHandleItemDrop={getHandleItemDrop} nodeUid={nodeUid} />;

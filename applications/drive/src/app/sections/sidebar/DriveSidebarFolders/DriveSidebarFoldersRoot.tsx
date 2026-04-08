@@ -1,40 +1,41 @@
-import { useMemo } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
-import { useShallow } from 'zustand/react/shallow';
 
 import { Loader } from '@proton/components';
+import { splitNodeUid } from '@proton/drive/index';
 import { LinkURLType } from '@proton/shared/lib/drive/constants';
 import clsx from '@proton/utils/clsx';
 
 import FileRecoveryIcon from '../../../components/ResolveLockedVolumes/FileRecovery/FileRecoveryIcon';
+import type { TreeItemWithChildren } from '../../../modules/directoryTree';
 import { DriveSidebarListItem } from '../DriveSidebarListItem';
-import type { SidebarItem } from '../hooks/useSidebar.store';
-import { useSidebarStore } from '../hooks/useSidebar.store';
-import { useSidebarFolders } from '../hooks/useSidebarFolders';
 import { DriveExpandButton } from './DriveExpandButton';
 
 type DriveSidebarFoldersRootProps = {
-    shareId: string;
-    linkId: string;
-    rootFolder: SidebarItem;
+    rootFolder: TreeItemWithChildren;
+    toggleExpand: (treeItemId: string) => Promise<void>;
+    isExpanded: boolean;
+    isCollapsed: boolean;
+    shareId?: string;
 };
 
-export const DriveSidebarFoldersRoot = ({ shareId, linkId, rootFolder }: DriveSidebarFoldersRootProps) => {
-    const { toggleExpand } = useSidebarFolders();
+export const DriveSidebarFoldersRoot = ({
+    rootFolder,
+    toggleExpand,
+    isExpanded,
+    isCollapsed,
+    shareId,
+}: DriveSidebarFoldersRootProps) => {
+    const [isLoading, setIsLoading] = useState(false);
+    const { nodeId } = splitNodeUid(rootFolder.nodeUid);
+    const url = `/${shareId}/${LinkURLType.FOLDER}/${nodeId}`;
+    const shouldShowArrow = !rootFolder.hasLoadedChildren || rootFolder.hasChildren;
 
-    const url = `/${shareId}/${LinkURLType.FOLDER}/${linkId}`;
-    const { children, isCollapsed } = useSidebarStore(
-        useShallow((state) => ({
-            children: state.getChildren(rootFolder.uid),
-            isCollapsed: state.isCollapsed,
-        }))
-    );
-
-    const shouldShowArrow = useMemo(
-        () => children.length || !rootFolder.hasLoadedChildren,
-        [children.length, rootFolder.hasLoadedChildren]
-    );
+    const handleExpand = () => {
+        setIsLoading(true);
+        void toggleExpand(rootFolder.treeItemId).finally(() => setIsLoading(false));
+    };
 
     return (
         <DriveSidebarListItem
@@ -42,19 +43,15 @@ export const DriveSidebarFoldersRoot = ({ shareId, linkId, rootFolder }: DriveSi
             to={url}
             icon="inbox"
             shareId={shareId}
-            onDoubleClick={() => toggleExpand(rootFolder.uid)}
+            onDoubleClick={handleExpand}
             collapsed={isCollapsed}
         >
             <span className={clsx('text-ellipsis', isCollapsed && 'sr-only')}>{c('Title').t`My files`}</span>
-            {rootFolder.isLoading ? (
+            {isLoading ? (
                 <Loader className="drive-sidebar--icon inline-flex" />
             ) : (
                 shouldShowArrow && (
-                    <DriveExpandButton
-                        className="shrink-0"
-                        expanded={rootFolder.isExpanded}
-                        onClick={() => toggleExpand(rootFolder.uid)}
-                    />
+                    <DriveExpandButton className="shrink-0" expanded={isExpanded} onClick={handleExpand} />
                 )
             )}
             <FileRecoveryIcon className="ml-2" />
