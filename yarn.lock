@@ -10223,6 +10223,28 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@proton/ci-pass@workspace:utilities/ci-pass":
+  version: 0.0.0-use.local
+  resolution: "@proton/ci-pass@workspace:utilities/ci-pass"
+  dependencies:
+    "@proton/ci-tools": "workspace:^"
+    "@proton/eslint-config-proton": "workspace:^"
+    "@proton/gitlab": "workspace:^"
+    "@types/jest": "npm:^30.0.0"
+    "@types/semver": "npm:^7.5.8"
+    "@vercel/ncc": "npm:^0.38.4"
+    dotenv: "npm:^16.0.0"
+    eslint: "npm:^9.39.4"
+    jest: "npm:^30.3.0"
+    semver: "npm:^7.7.1"
+    ts-jest: "npm:^29.4.6"
+    ts-node: "npm:^10.9.2"
+    tsx: "npm:^4.21.0"
+    undici: "npm:^7.24.6"
+    yaml: "npm:^2.8.3"
+  languageName: unknown
+  linkType: soft
+
 "@proton/ci-release@workspace:utilities/ci-release":
   version: 0.0.0-use.local
   resolution: "@proton/ci-release@workspace:utilities/ci-release"
@@ -16722,7 +16744,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/semver@npm:^7.7.1":
+"@types/semver@npm:^7.5.8, @types/semver@npm:^7.7.1":
   version: 7.7.1
   resolution: "@types/semver@npm:7.7.1"
   checksum: 10/8f09e7e6ca3ded67d78ba7a8f7535c8d9cf8ced83c52e7f3ac3c281fe8c689c3fe475d199d94390dc04fc681d51f2358b430bb7b2e21c62de24f2bee2c719068
