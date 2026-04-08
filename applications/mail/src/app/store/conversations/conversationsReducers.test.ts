@@ -1,16 +1,18 @@
 import type { Draft } from 'immer';
 
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
-import type { Label } from '@proton/shared/lib/interfaces';
+import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import type { Message, MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 
 import type { Conversation } from '../../models/conversation';
 import {
+    labelConversationsPending,
     labelMessagesPending,
     markConversationsAsReadPending,
     markConversationsAsUnreadPending,
     markMessagesAsReadPending,
     markMessagesAsUnreadPending,
+    unlabelConversationsPending,
     unlabelMessagesPending,
 } from './conversationsReducers';
 import type { ConversationState, ConversationsState } from './conversationsTypes';
@@ -967,6 +969,130 @@ describe('conversationsReducers', () => {
             });
         });
 
+        describe('labelMessagesPending - category handling', () => {
+            it('should preserve category label when moving message from INBOX to ARCHIVE', () => {
+                // Message 1 has CATEGORY_NEWSLETTERS and INBOX
+                mockMessage1.LabelIDs = [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS];
+                // Conversation has both INBOX and CATEGORY_NEWSLETTERS labels
+                mockConversation.Labels = [
+                    {
+                        ID: MAILBOX_LABEL_IDS.INBOX,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 2,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 2,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ARCHIVE,
+                        ContextNumMessages: 0,
+                        ContextNumUnread: 0,
+                    },
+                ];
+
+                mockConversationState = {
+                    Conversation: mockConversation,
+                    Messages: [mockMessage1, mockMessage2, mockMessage3],
+                    loadRetry: 0,
+                    errors: { network: [], unknown: [] },
+                };
+                state = {
+                    [conversationID]: mockConversationState,
+                } as Draft<ConversationsState>;
+
+                const messages: MessageMetadata[] = [mockMessage1];
+
+                labelMessagesPending(state, {
+                    type: 'labelMessages/pending',
+                    payload: undefined,
+                    meta: {
+                        arg: {
+                            messages,
+                            sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
+                            destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                            labels: [],
+                            folders: [],
+                        },
+                    },
+                });
+
+                const updatedConversationState = state[conversationID];
+                expect(updatedConversationState).toBeDefined();
+
+                // CATEGORY_NEWSLETTERS ContextNumMessages should NOT change (category persists on message)
+                const categoryLabel = updatedConversationState!.Conversation.Labels!.find(
+                    (label) => label.ID === MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS
+                );
+                expect(categoryLabel?.ContextNumMessages).toBe(2);
+
+                // INBOX ContextNumMessages should decrease
+                const inboxLabel = updatedConversationState!.Conversation.Labels!.find(
+                    (label) => label.ID === MAILBOX_LABEL_IDS.INBOX
+                );
+                expect(inboxLabel?.ContextNumMessages).toBe(1);
+
+                // Message LabelIDs should include CATEGORY_NEWSLETTERS and ARCHIVE but not INBOX
+                const updatedMessage = updatedConversationState!.Messages!.find((m) => m.ID === messageID1);
+                expect(updatedMessage!.LabelIDs).toContain(MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS);
+                expect(updatedMessage!.LabelIDs).toContain(MAILBOX_LABEL_IDS.ARCHIVE);
+                expect(updatedMessage!.LabelIDs).not.toContain(MAILBOX_LABEL_IDS.INBOX);
+            });
+
+            it('should replace old category with new category when moving between categories', () => {
+                mockMessage1.LabelIDs = [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.CATEGORY_SOCIAL];
+                mockConversation.Labels = [
+                    {
+                        ID: MAILBOX_LABEL_IDS.INBOX,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 2,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 2,
+                    },
+                ];
+
+                mockConversationState = {
+                    Conversation: mockConversation,
+                    Messages: [mockMessage1, mockMessage2, mockMessage3],
+                    loadRetry: 0,
+                    errors: { network: [], unknown: [] },
+                };
+                state = {
+                    [conversationID]: mockConversationState,
+                } as Draft<ConversationsState>;
+
+                const messages: MessageMetadata[] = [mockMessage1];
+
+                labelMessagesPending(state, {
+                    type: 'labelMessages/pending',
+                    payload: undefined,
+                    meta: {
+                        arg: {
+                            messages,
+                            sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
+                            destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+                            labels: [],
+                            folders: [],
+                        },
+                    },
+                });
+
+                const updatedConversationState = state[conversationID];
+                expect(updatedConversationState).toBeDefined();
+
+                // Message should have new category and not old category
+                const updatedMessage = updatedConversationState!.Messages!.find((m) => m.ID === messageID1);
+                expect(updatedMessage!.LabelIDs).toContain(MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS);
+                expect(updatedMessage!.LabelIDs).not.toContain(MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
+                // INBOX should still be present (categories don't remove folders)
+                expect(updatedMessage!.LabelIDs).toContain(MAILBOX_LABEL_IDS.INBOX);
+            });
+        });
+
         describe('unlabelMessagesPending', () => {
             const customLabelID = 'custom-label-1';
             const mockLabel: Label = {
@@ -1011,6 +1137,207 @@ describe('conversationsReducers', () => {
                 const updatedMessage3 = updatedConversationState!.Messages!.find((m) => m.ID === messageID3);
                 expect(updatedMessage3!.LabelIDs).toContain(customLabelID);
             });
+
+            it('should not remove category label when unlabeling a custom label', () => {
+                mockMessage1.LabelIDs = [MAILBOX_LABEL_IDS.INBOX, customLabelID, MAILBOX_LABEL_IDS.CATEGORY_SOCIAL];
+
+                const messages: MessageMetadata[] = [mockMessage1];
+
+                unlabelMessagesPending(state, {
+                    type: 'unlabelMessages/pending',
+                    payload: undefined,
+                    meta: {
+                        arg: {
+                            messages,
+                            destinationLabelID: customLabelID,
+                            labels: [mockLabel],
+                            folders: [],
+                        },
+                    },
+                });
+
+                const updatedConversationState = state[conversationID];
+                expect(updatedConversationState).toBeDefined();
+
+                const updatedMessage1 = updatedConversationState!.Messages!.find((m) => m.ID === messageID1);
+                expect(updatedMessage1!.LabelIDs).not.toContain(customLabelID);
+                expect(updatedMessage1!.LabelIDs).toContain(MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
+                expect(updatedMessage1!.LabelIDs).toContain(MAILBOX_LABEL_IDS.INBOX);
+            });
+        });
+    });
+
+    describe('unlabelConversationsPending - category handling', () => {
+        it('should not remove category label when unlabeling a custom label from conversation', () => {
+            const customLabelID = 'custom-label-1';
+            const mockLabel: Label = {
+                ID: customLabelID,
+                Name: 'Custom Label',
+                Color: '#ff0000',
+                Type: 1,
+                Path: 'Custom Label',
+                Order: 1,
+            } as Label;
+
+            mockMessage1.LabelIDs = [MAILBOX_LABEL_IDS.INBOX, customLabelID, MAILBOX_LABEL_IDS.CATEGORY_SOCIAL];
+            mockConversation.Labels = [
+                {
+                    ID: MAILBOX_LABEL_IDS.INBOX,
+                    ContextNumMessages: 2,
+                    ContextNumUnread: 2,
+                },
+                {
+                    ID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                    ContextNumMessages: 2,
+                    ContextNumUnread: 2,
+                },
+                {
+                    ID: customLabelID,
+                    ContextNumMessages: 2,
+                    ContextNumUnread: 2,
+                },
+            ];
+
+            mockConversationState = {
+                Conversation: mockConversation,
+                Messages: [mockMessage1, mockMessage2, mockMessage3],
+                loadRetry: 0,
+                errors: { network: [], unknown: [] },
+            };
+            state = {
+                [conversationID]: mockConversationState,
+            } as Draft<ConversationsState>;
+
+            unlabelConversationsPending(state, {
+                type: 'mailbox/unlabelConversations/pending',
+                payload: undefined,
+                meta: {
+                    arg: {
+                        conversations: [mockConversation],
+                        destinationLabelID: customLabelID,
+                        labels: [mockLabel],
+                    },
+                },
+            });
+
+            const updatedConversationState = state[conversationID];
+            expect(updatedConversationState).toBeDefined();
+
+            // CATEGORY_SOCIAL label should be preserved
+            const categoryLabel = updatedConversationState!.Conversation.Labels!.find(
+                (label) => label.ID === MAILBOX_LABEL_IDS.CATEGORY_SOCIAL
+            );
+            expect(categoryLabel).toBeDefined();
+            expect(categoryLabel?.ContextNumMessages).toBe(2);
+
+            // Custom label should be removed
+            const customLabel = updatedConversationState!.Conversation.Labels!.find(
+                (label) => label.ID === customLabelID
+            );
+            expect(customLabel).toBeUndefined();
+
+            // Message should still have CATEGORY_SOCIAL in LabelIDs
+            const updatedMessage = updatedConversationState!.Messages!.find((m) => m.ID === messageID1);
+            expect(updatedMessage!.LabelIDs).toContain(MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
+            expect(updatedMessage!.LabelIDs).not.toContain(customLabelID);
+        });
+    });
+
+    describe('labelConversationsPending - category handling', () => {
+        it('should preserve CATEGORY_SOCIAL label with ContextNumMessages when moving from INBOX to ARCHIVE', () => {
+            const categoryMessage: Message = {
+                ID: messageID1,
+                ConversationID: conversationID,
+                Unread: 1,
+                Order: 1,
+                LabelIDs: [
+                    MAILBOX_LABEL_IDS.INBOX,
+                    MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                    MAILBOX_LABEL_IDS.ALL_MAIL,
+                    MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                ],
+                Flags: 1,
+            } as Message;
+
+            const categoryConversation = {
+                ID: conversationID,
+                Subject: 'Test Conversation',
+                ContextNumUnread: 1,
+                NumUnread: 1,
+                NumMessages: 2,
+                NumAttachments: 0,
+                Labels: [
+                    {
+                        ID: MAILBOX_LABEL_IDS.INBOX,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 0,
+                    },
+                ],
+            } as Conversation;
+
+            const categoryConversationState: ConversationState = {
+                Conversation: categoryConversation,
+                Messages: [categoryMessage],
+                loadRetry: 0,
+                errors: { network: [], unknown: [] },
+            };
+
+            state = {
+                [conversationID]: categoryConversationState,
+            } as Draft<ConversationsState>;
+
+            labelConversationsPending(state, {
+                type: 'mailbox/labelConversations/pending',
+                payload: undefined,
+                meta: {
+                    arg: {
+                        conversations: [categoryConversation],
+                        sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
+                        destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                        labels: [] as Label[],
+                        folders: [] as Folder[],
+                    },
+                },
+            });
+
+            const updatedConversationState = state[conversationID];
+            expect(updatedConversationState).toBeDefined();
+
+            // CATEGORY_SOCIAL label should be preserved with ContextNumMessages unchanged
+            const categoryLabel = updatedConversationState!.Conversation.Labels!.find(
+                (label) => label.ID === MAILBOX_LABEL_IDS.CATEGORY_SOCIAL
+            );
+            expect(categoryLabel).toBeDefined();
+            expect(categoryLabel?.ContextNumMessages).toBe(2);
+
+            // ARCHIVE label should be added
+            const archiveLabel = updatedConversationState!.Conversation.Labels!.find(
+                (label) => label.ID === MAILBOX_LABEL_IDS.ARCHIVE
+            );
+            expect(archiveLabel).toBeDefined();
+
+            // Message should still have CATEGORY_SOCIAL in LabelIDs
+            const updatedMessage = updatedConversationState!.Messages!.find((m) => m.ID === messageID1);
+            expect(updatedMessage!.LabelIDs).toContain(MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
         });
     });
 });

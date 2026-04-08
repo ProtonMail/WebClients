@@ -4549,6 +4549,75 @@ describe('labelConversationsPending', () => {
         });
     });
 
+    describe('Category handling when moving between folders', () => {
+        it('should preserve category ContextNumMessages when moving from INBOX to ARCHIVE', () => {
+            const conversation = setupConversation({
+                conversationLabels: [
+                    {
+                        ID: MAILBOX_LABEL_IDS.INBOX,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 1,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 1,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 1,
+                    },
+                ] as ConversationLabel[],
+                numUnread: 1,
+                numMessages: 2,
+                numAttachments: 1,
+            });
+
+            testState.elements = {
+                [CONVERSATION_ID]: conversation,
+            };
+
+            labelConversationsPending(testState, {
+                type: 'mailbox/labelConversations',
+                payload: undefined,
+                meta: {
+                    arg: {
+                        conversations: [conversation],
+                        sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
+                        destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                        labels: customLabels,
+                        folders: customFolders,
+                    },
+                },
+            });
+
+            const updatedConversation = testState.elements[CONVERSATION_ID] as Conversation;
+
+            // Category label ContextNumMessages should be preserved (not zeroed)
+            const categoryLabel = updatedConversation.Labels?.find((l) => l.ID === MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
+            expect(categoryLabel?.ContextNumMessages).toEqual(2);
+
+            // INBOX label should be zeroed
+            const inboxLabel = updatedConversation.Labels?.find((l) => l.ID === MAILBOX_LABEL_IDS.INBOX);
+            expect(inboxLabel).toBeUndefined();
+
+            // ARCHIVE label should be added
+            const archiveLabel = updatedConversation.Labels?.find((l) => l.ID === MAILBOX_LABEL_IDS.ARCHIVE);
+            expect(archiveLabel).toBeDefined();
+            expect(archiveLabel?.ContextNumMessages).toEqual(2);
+        });
+    });
+
     describe('Add elements back to ALMOST_ALL_MAIL', () => {
         it('should add back TRASH and SPAM messages to ALMOST_ALL_MAIL', () => {
             const conversation = setupConversation({

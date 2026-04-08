@@ -457,6 +457,29 @@ export const labelMessagesPending = (
                 conversationCounterTarget.Unread = safeIncreaseCount(conversationCounterTarget.Unread, 1);
             }
         }
+
+        // When moving to INBOX, also increase category counters if the conversation was not already in INBOX
+        if (destinationLabelID === MAILBOX_LABEL_IDS.INBOX) {
+            const conversationWasInInbox = conversation.Labels?.some(
+                (label) => label.ID === MAILBOX_LABEL_IDS.INBOX && (label.ContextNumMessages || 0) > 0
+            );
+
+            if (!conversationWasInInbox) {
+                conversation.Labels?.forEach((label) => {
+                    if (isCategoryLabel(label.ID)) {
+                        const categoryCounter = state.value?.find((c) => c.LabelID === label.ID);
+
+                        if (categoryCounter) {
+                            categoryCounter.Total = safeIncreaseCount(categoryCounter.Total, 1);
+
+                            if (unreadMessagesFromConversation.length > 0) {
+                                categoryCounter.Unread = safeIncreaseCount(categoryCounter.Unread, 1);
+                            }
+                        }
+                    }
+                });
+            }
+        }
     });
 };
 
@@ -622,6 +645,31 @@ export const labelConversationsPending = (
                 if (numUnreadMessagesInInbox === 0 && hasUnreadReceivedMessage) {
                     inboxMessageCountState.Unread = safeIncreaseCount(inboxMessageCountState.Unread, 1);
                 }
+            }
+
+            // When conversation enters INBOX, also increase category counters
+            if (numMessagesInInbox === 0) {
+                conversation.Labels?.forEach((convLabel) => {
+                    if (isCategoryLabel(convLabel.ID)) {
+                        const categoryCountState = state.value?.find((counter) => counter.LabelID === convLabel.ID);
+
+                        if (categoryCountState) {
+                            categoryCountState.Total = safeIncreaseCount(categoryCountState.Total, 1);
+                        }
+                    }
+                });
+            }
+
+            if (numUnreadMessagesInInbox === 0 && hasUnreadReceivedMessage) {
+                conversation.Labels?.forEach((convLabel) => {
+                    if (isCategoryLabel(convLabel.ID)) {
+                        const categoryCountState = state.value?.find((counter) => counter.LabelID === convLabel.ID);
+
+                        if (categoryCountState) {
+                            categoryCountState.Unread = safeIncreaseCount(categoryCountState.Unread, 1);
+                        }
+                    }
+                });
             }
 
             // Move all sent messages to SENT
