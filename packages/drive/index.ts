@@ -16,11 +16,13 @@ import useLocalState from '@proton/components/hooks/useLocalState';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { getAppVersionHeaders } from '@proton/shared/lib/fetch/headers';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { getClientUid } from './internal/clientUid';
 import { LatestEventIdProvider } from './internal/latestEventIdProvider';
 import { initOpenPGPCryptoModule } from './internal/openPGPCryptoModule';
 import { proxyDriveClientWithEventTracking } from './internal/proxyDriveClientWithEventTracking';
+import { proxyDriveClientWithSDKMismatchDetection } from './internal/proxyDriveClientWithSDKMismatchDetection';
 import type { UserPlan } from './internal/telemetry';
 import { initTelemetry } from './internal/telemetry';
 import { useAccount } from './internal/useAccount';
@@ -133,6 +135,7 @@ export function useDrive() {
     const srpModule = useSrpModule();
     const featureFlagProvider = useFeatureFlagProvider();
     const openPGPCryptoModule = initOpenPGPCryptoModule();
+    const sdkMismatchDetectionEnabled = useFlag('DriveWebSDKMismatchDetection');
 
     /**
      * Configure the Drive SDK with the application.
@@ -208,8 +211,22 @@ export function useDrive() {
             });
             photosSingleton = proxyDriveClientWithEventTracking(photosClient, photosLatestEventIdProvider);
             photosEntitiesCacheSingleton = photosEntitiesCache;
+
+            if (sdkMismatchDetectionEnabled) {
+                driveSingleton = proxyDriveClientWithSDKMismatchDetection(driveSingleton, 'drive');
+                photosSingleton = proxyDriveClientWithSDKMismatchDetection(photosSingleton, 'photos');
+            }
         },
-        [setAppVersionHeaders, debug, httpClient, account, openPGPCryptoModule, srpModule, featureFlagProvider]
+        [
+            setAppVersionHeaders,
+            debug,
+            httpClient,
+            account,
+            openPGPCryptoModule,
+            srpModule,
+            featureFlagProvider,
+            sdkMismatchDetectionEnabled,
+        ]
     );
 
     return {
