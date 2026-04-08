@@ -7,7 +7,10 @@ interface DirectoryTreeState {
     expandedTreeIds: Map<string, boolean>;
     addItem: (newItem: TreeStoreItem) => void;
     removeItem: (nodeUid: string) => void;
-    updateItem: (nodeUid: string, partial: Partial<Pick<TreeStoreItem, 'name' | 'parentUid' | 'treeItemId'>>) => void;
+    updateItem: (
+        nodeUid: string,
+        partial: Partial<Pick<TreeStoreItem, 'name' | 'parentUid' | 'treeItemId' | 'hasLoadedChildren' | 'hasChildren'>>
+    ) => void;
     setExpanded: (treeItemId: string, newValue: boolean) => void;
     clearStore: () => void;
     getItemsByParentUid: (parentUid: string) => TreeStoreItem[];

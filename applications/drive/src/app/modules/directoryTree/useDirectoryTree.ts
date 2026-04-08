@@ -43,12 +43,13 @@ function useDirectoryTree(
 ) {
     const { drive } = useDrive();
 
-    const { items, addItem, expandedTreeIds, changeExpanded } = useDirectoryTreeStore(
+    const { items, addItem, expandedTreeIds, changeExpanded, updateItem } = useDirectoryTreeStore(
         useShallow((state) => ({
             items: state.items,
             addItem: state.addItem,
             expandedTreeIds: state.expandedTreeIds,
             changeExpanded: state.setExpanded,
+            updateItem: state.updateItem,
         }))
     );
 
@@ -56,7 +57,7 @@ function useDirectoryTree(
         async (nodeUid: string, parentFolderUid: string, name: string) => {
             const maybeNode = await drive.getNode(nodeUid);
 
-            const { type } = getNodeEntity(maybeNode).node;
+            const { type, deprecatedShareId } = getNodeEntity(maybeNode).node;
 
             const highestEffectiveRole = options?.loadPermissions
                 ? await findEffectiveRole(drive, maybeNode.ok ? maybeNode.value : maybeNode.error)
@@ -71,6 +72,7 @@ function useDirectoryTree(
                 expandable: type === NodeType.Folder,
                 isSharedWithMe: false,
                 highestEffectiveRole,
+                deprecatedShareId,
             });
         },
         [addItem, drive, options?.loadPermissions]
@@ -88,6 +90,7 @@ function useDirectoryTree(
                         type: DirectoryTreeRootType.Device,
                         expandable: true,
                         isSharedWithMe: false,
+                        deprecatedShareId: device.shareId,
                     });
                 }
             } catch (error) {
@@ -101,7 +104,7 @@ function useDirectoryTree(
     const loadSharedWithMe = useCallback(
         async (abortSignal: AbortSignal) => {
             for (const { node } of await iterateSharedWithMeNodes(abortSignal)) {
-                const { uid, name, type, treeEventScopeId } = node;
+                const { uid, name, type, treeEventScopeId, deprecatedShareId } = node;
 
                 if (options?.onlyFolders && type !== NodeType.Folder) {
                     continue;
@@ -120,6 +123,7 @@ function useDirectoryTree(
                     isSharedWithMe: true,
                     highestEffectiveRole,
                     treeEventScopeId,
+                    deprecatedShareId,
                 });
             }
         },
@@ -142,18 +146,22 @@ function useDirectoryTree(
 
             if (parentUid === DEVICES_ROOT_ID) {
                 await loadDevices(abortSignal);
+                const hasChildren = useDirectoryTreeStore.getState().getItemsByParentUid(parentUid).length > 0;
+                updateItem(parentUid, { hasLoadedChildren: true, hasChildren });
                 return;
             }
 
             if (parentUid === SHARED_WITH_ME_ROOT_ID) {
                 await loadSharedWithMe(abortSignal);
+                const hasChildren = useDirectoryTreeStore.getState().getItemsByParentUid(parentUid).length > 0;
+                updateItem(parentUid, { hasLoadedChildren: true, hasChildren });
                 return;
             }
 
             try {
                 const iterateOptions = options?.onlyFolders ? { type: NodeType.Folder } : undefined;
                 for await (const node of drive.iterateFolderChildren(parentUid, iterateOptions, abortSignal)) {
-                    const { uid, name, type, treeEventScopeId } = getNodeEntity(node).node;
+                    const { uid, name, type, treeEventScopeId, deprecatedShareId } = getNodeEntity(node).node;
                     const highestEffectiveRole = options?.loadPermissions
                         ? await findEffectiveRole(drive, node.ok ? node.value : node.error)
                         : undefined;
@@ -169,6 +177,7 @@ function useDirectoryTree(
                         // We need to preserve value between item displayed in the root of shares and deeply nested child that is also shared.
                         isSharedWithMe: existingItem?.isSharedWithMe ?? false,
                         highestEffectiveRole,
+                        deprecatedShareId,
                     });
                 }
             } catch (error) {
@@ -177,6 +186,9 @@ function useDirectoryTree(
                     extra: { uid: parentUid },
                 });
                 throw error;
+            } finally {
+                const hasChildren = useDirectoryTreeStore.getState().getItemsByParentUid(parentUid).length > 0;
+                updateItem(parentUid, { hasLoadedChildren: true, hasChildren });
             }
         },
         [
@@ -187,6 +199,7 @@ function useDirectoryTree(
             options?.loadPermissions,
             drive,
             addItem,
+            updateItem,
         ]
     );
 
@@ -326,16 +339,19 @@ function useDirectoryTree(
         addNode,
         clear: () => useDirectoryTreeStore.getState().clearStore(),
         loadSharedWithMe,
+        expandedTreeIds,
     };
 }
 
 export function directoryTreeFactory() {
     const directoryTreeStore = directoryTreeStoreFactory();
     let eventManager: TreeEventManager | undefined;
-    return function useDirectoryTreeWithStore(context: string, options?: DirectoryTreeOptions) {
+    function useDirectoryTreeWithStore(context: string, options?: DirectoryTreeOptions) {
         if (!eventManager) {
             eventManager = new TreeEventManager(directoryTreeStore, context);
         }
         return useDirectoryTree(directoryTreeStore, eventManager, options);
-    };
+    }
+    useDirectoryTreeWithStore.getStore = () => directoryTreeStore;
+    return useDirectoryTreeWithStore;
 }
