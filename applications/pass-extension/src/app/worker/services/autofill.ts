@@ -282,7 +282,7 @@ export const createAutoFillService = () => {
             const data = intoAutofillableCCItem(item, autofilledFields, frame.crossOrigin);
             const request = { status: 'fill', type: 'creditCard', data, fields, itemId, shareId } as const;
             const [res] = await onAutofillSequenceUpdate(request, tabId, [frame]);
-            if (res && res.type === 'creditCard') res.autofilled.forEach((type) => autofilledFields.add(type));
+            if (res && res.ok && res.type === 'creditCard') res.autofilled.forEach((t) => autofilledFields.add(t));
         }
 
         await onAutofillSequenceUpdate({ status: 'completed', refocus }, tabId, frames);
