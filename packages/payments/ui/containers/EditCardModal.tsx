@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useGetPaymentMethods } from '@proton/account/paymentMethods/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -12,10 +13,10 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import RenewToggle, { useRenewToggle } from '@proton/components/containers/payments/RenewToggle';
 import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import { useLoading } from '@proton/hooks';
+import { CacheType } from '@proton/redux-utilities';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getSentryError } from '@proton/shared/lib/keys';
@@ -28,6 +29,7 @@ import type { PaymentMethodCardDetails } from '../../core/interface';
 import { isV5PaymentToken } from '../../core/type-guards';
 import { v5PaymentTokenToLegacyPaymentToken } from '../../core/utils';
 import { ChargebeeCreditCardWrapper } from '../components/ChargebeeWrapper';
+import { usePaymentPollers } from '../hooks/usePaymentPollers';
 
 interface Props extends Omit<ModalProps<'form'>, 'as' | 'children' | 'size'> {
     card?: CardModel;
@@ -49,8 +51,9 @@ const EditCardModal = ({
 }: Props) => {
     const api = useApi();
     const [user] = useUser();
+    const { createPaymentMethodsPoller } = usePaymentPollers();
+    const getPaymentMethods = useGetPaymentMethods();
 
-    const { call } = useEventManager();
     const [processing, withProcessing] = useLoading();
     const { createNotification } = useNotifications();
     const title = existingCard ? c('Title').t`Edit credit/debit card` : c('Title').t`Add credit/debit card`;
@@ -73,6 +76,8 @@ const EditCardModal = ({
                     return;
                 }
 
+                const pollPaymentMethods = createPaymentMethodsPoller();
+
                 if (sourceType === PAYMENT_METHOD_TYPES.CARD) {
                     const legacyPaymentToken = v5PaymentTokenToLegacyPaymentToken(chargeablePaymentParameters);
                     await api(
@@ -91,14 +96,18 @@ const EditCardModal = ({
                     );
                 }
 
-                await call();
-                rest.onClose?.();
                 if (existingCard) {
+                    await getPaymentMethods({ cache: CacheType.None });
                     createNotification({ text: c('Success').t`Payment method updated` });
                 } else {
+                    // Poll until the new payment method has been added.
+                    try {
+                        await pollPaymentMethods();
+                    } catch {}
                     createNotification({ text: c('Success').t`Payment method added` });
                     onMethodAdded?.();
                 }
+                rest.onClose?.();
             }).catch(noop);
         },
         user,
@@ -185,7 +194,8 @@ const EditCardModal = ({
                                     )
                                 );
 
-                                await call().catch(noop);
+                                // Refetch the payment methods to get the updated value.
+                                await getPaymentMethods({ cache: CacheType.None });
 
                                 const text =
                                     result === Autopay.ENABLE
@@ -221,10 +231,10 @@ const EditCardModal = ({
         >
             <ModalTwoHeader title={title} />
             <ModalTwoContent>
-                {/* In the future, this spinner can be passed inside of chargebee card component to 
-                replace its internal spinner and make to loading animation continious 
-                currently there are two stages: first wait till the facade is fully loaded, 
-                then wait till the chargebee form is initialized. We need to find a way to use one loading spinner 
+                {/* In the future, this spinner can be passed inside of chargebee card component to
+                replace its internal spinner and make to loading animation continious
+                currently there are two stages: first wait till the facade is fully loaded,
+                then wait till the chargebee form is initialized. We need to find a way to use one loading spinner
                 for both stages
                 */}
                 {/* {loading ? (
