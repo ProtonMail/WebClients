@@ -2,13 +2,18 @@ import { c } from 'ttag';
 
 import { useOrganization } from '@proton/account/organization/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import { Panel } from '@proton/atoms/Panel/Panel';
 import { PanelHeader } from '@proton/atoms/Panel/PanelHeader';
 import Copy from '@proton/components/components/button/Copy';
 import Icon from '@proton/components/components/icon/Icon';
+import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { useLoading } from '@proton/hooks';
+import { KEY_FLAG } from '@proton/shared/lib/constants';
+import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import type { Group } from '@proton/shared/lib/interfaces';
 
+import AddUsersToGroupModal from './AddUsersToGroupModal';
+import DeleteGroupPrompt from './DeleteGroupPrompt';
 import E2EEDisabledWarning from './E2EEDisabledWarning';
 import GroupMemberList from './GroupMemberList';
 import shouldShowMail from './shouldShowMail';
@@ -28,6 +33,13 @@ const ViewGroup = ({
 }: Props) => {
     const { createNotification } = useNotifications();
     const [organization] = useOrganization();
+    const addUsersToGroupModal = useModalStateObject();
+    const deleteGroupPrompt = useModalStateObject();
+    const [addingMembers, withAddingMembers] = useLoading();
+
+    const handleAddMembers = (group: Group, emails: string[]) => {
+        void withAddingMembers(actions.onAddGroupMembers(group, emails));
+    };
 
     const handleCopy = () => {
         createNotification({ text: c('Info').t`Copied to clipboard` });
@@ -37,52 +49,76 @@ const ViewGroup = ({
         return null;
     }
 
-    const showMail = shouldShowMail(organization?.PlanName);
+    const showMailFeatures = shouldShowMail(organization?.PlanName);
+    const primaryGroupAddressKey = groupData.Address.Keys[0];
+    const isE2eeEnabled = !hasBit(primaryGroupAddressKey?.Flags ?? 0, KEY_FLAG.FLAG_EMAIL_NO_ENCRYPT);
 
     return (
-        <Panel
-            header={
-                <PanelHeader
-                    title=""
-                    subtitle=""
-                    actions={(() => {
-                        return [
+        <>
+            <section className="flex flex-column flex-nowrap">
+                <div className="shrink-0 pl-6 py-3">
+                    <PanelHeader
+                        className="border-bottom pb-4 pt-1"
+                        title={
+                            <h2
+                                className="text-bold text-4xl text-ellipsis"
+                                style={{ lineHeight: '2rem' }}
+                                title={groupData.Name}
+                            >
+                                {groupData.Name}
+                            </h2>
+                        }
+                        actions={[
                             <Button
+                                color="norm"
                                 disabled={canOnlyDelete}
                                 className="flex items-center"
+                                key="button-add-user"
+                                onClick={() => addUsersToGroupModal.openModal(true)}
+                            >
+                                <Icon className="shrink-0 mr-2" name="user-plus" alt={c('Action').t`Add user`} />
+                                <span>{c('Action').t`Add user`}</span>
+                            </Button>,
+                            <Button
+                                shape="outline"
+                                icon
+                                disabled={canOnlyDelete}
                                 key="button-edit"
                                 onClick={() => {
                                     actions.onEditGroup(groupData);
                                 }}
+                                title={c('Action').t`Edit group`}
                             >
-                                <Icon className="shrink-0 mr-2" name="pencil" />
-                                <span>{c('Action').t`Edit group`}</span>
+                                <Icon name="pencil" alt={c('Action').t`Edit group`} />
                             </Button>,
-                        ];
-                    })()}
-                />
-            }
-        >
-            {showMail && (
-                <E2EEDisabledWarning
-                    groupMembers={groupMembers}
-                    loadingGroupMembers={loadingGroupMembers}
-                    group={groupData}
-                    groupsManagement={groupsManagement}
-                />
-            )}
-            <div className="flex-col text-left p-1">
-                {groupData.Name && (
-                    <div className="mb-6">
-                        <h3 className="text-bold">{groupData.Name}</h3>
-                        {groupData.Description !== '' && groupData.Description}
+                            <Button
+                                shape="outline"
+                                icon
+                                key="button-delete"
+                                onClick={() => {
+                                    deleteGroupPrompt.openModal(true);
+                                }}
+                                title={c('Action').t`Delete group`}
+                            >
+                                <Icon name="trash" alt={c('Action').t`Delete group`} />
+                            </Button>,
+                        ]}
+                    />
+                </div>
+                <div className="flex flex-column text-left pl-6 py-3 gap-4">
+                    {showMailFeatures && !isE2eeEnabled && (
+                        <E2EEDisabledWarning groupMembers={groupMembers} loadingGroupMembers={loadingGroupMembers} />
+                    )}
+
+                    <div className="text-ellipsis-two-lines text-break">
+                        <span className="text-bold mr-1">{c('Group detail label').t`Description:`}</span>
+                        {groupData.Description}
                     </div>
-                )}
-                {showMail && groupData.Address.Email && (
-                    <div className="mb-4">
-                        <div className="color-weak text-sm">{c('Group address title').t`Group address`}</div>
-                        <div className="text-left">
-                            <span className="flex-1 my-auto mr-2">{groupData.Address.Email}</span>
+
+                    {showMailFeatures && groupData.Address.Email && (
+                        <div className="flex items-center">
+                            <span className="text-bold mr-1">{c('Group detail label').t`Group address:`}</span>
+                            <span className="mr-2">{groupData.Address.Email}</span>
                             <Copy
                                 size="small"
                                 shape="ghost"
@@ -91,18 +127,42 @@ const ViewGroup = ({
                                 onCopy={handleCopy}
                             />
                         </div>
+                    )}
+
+                    <div className="pt-4">
+                        <GroupMemberList
+                            groupMembers={groupMembers}
+                            addressToMemberMap={addressToMemberMap}
+                            loading={loadingGroupMembers || addingMembers}
+                            group={selectedGroup}
+                            canOnlyDelete={canOnlyDelete}
+                            canChangeVisibility={showMailFeatures}
+                            showMailFeatures={showMailFeatures}
+                        />
                     </div>
-                )}
-                <GroupMemberList
-                    groupMembers={groupMembers}
-                    addressToMemberMap={addressToMemberMap}
-                    loading={loadingGroupMembers}
+                </div>
+            </section>
+            {addUsersToGroupModal.render && (
+                <AddUsersToGroupModal
+                    modalProps={addUsersToGroupModal.modalProps}
                     group={selectedGroup}
-                    canOnlyDelete={canOnlyDelete}
-                    canChangeVisibility={showMail}
+                    groupMembers={groupMembers}
+                    members={groupsManagement.members}
+                    isE2eeEnabled={isE2eeEnabled}
+                    showMailFeatures={showMailFeatures}
+                    addressEmailToMemberMap={groupsManagement.addressEmailToMemberMap}
+                    onAddMembers={handleAddMembers}
                 />
-            </div>
-        </Panel>
+            )}
+            {deleteGroupPrompt.render && (
+                <DeleteGroupPrompt
+                    group={groupData}
+                    showMailFeatures={showMailFeatures}
+                    onConfirm={async () => actions.onDeleteGroup()}
+                    modalProps={deleteGroupPrompt.modalProps}
+                />
+            )}
+        </>
     );
 };
 
