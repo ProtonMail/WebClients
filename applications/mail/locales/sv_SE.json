@@ -1687,6 +1687,15 @@
       ],
       "Continue to ${ planOrAppName }": [
         "Fortsätt till ${ planOrAppName }"
+      ],
+      "Connect to Gmail": [
+        "Anslut till Gmail"
+      ],
+      "Or remove forwarding address": [
+        "Eller ta bort vidarebefordringsadress"
+      ],
+      "Reconnect to Gmail": [
+        "Återanslut till Gmail"
       ]
     },
     "action": {
@@ -4193,6 +4202,61 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
+      ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Blocka Googles möjlighet att profilera dig. Gmail kan inte se vad du gör i ${ MAIL_APP_NAME }."
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "E-post skickat till ${ connectedAddressText } kommer nu visas i ${ MAIL_APP_NAME }."
+      ],
+      "No ads. No trackers.": [
+        "Inga annonser. Inga spårare."
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "Läs, svara och håll koll på Gmail inifrån ${ MAIL_APP_NAME }"
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Detta kan hända om behörigheter togs bort eller ditt lösenord har ändrats."
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "För att ansluta en annan Gmail-adress, ta bort extra Gmail-adresser som vidarebefordras till ${ BRAND_NAME }."
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "För att ansluta upp till ${ MAX_SYNC_PAID_USER } Gmail-adress, uppgradera till ${ planName }.",
+        "För att ansluta upp till ${ MAX_SYNC_PAID_USER } Gmail-adresser, uppgradera till ${ planName }."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "För att fortsätta ta emot och skicka Gmail-meddelanden i ${ BRAND_NAME }, återanslut ditt konto."
+      ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "Uppgradera till ${ planName } för att ansluta upp till ${ MAX_SYNC_PAID_USER } konton"
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Vi kan inte komma åt ${ boldEmails } längre."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "Vi importerar din gamla e-post och ansluter din Gmail till ${ MAIL_APP_NAME } så nya meddelanden visas automatiskt"
+      ],
+      "We've started importing your email from Gmail. We'll let you know when it's done.": [
+        "Vi har börjat importera din e-post från Gmail. Vi meddelar dig när det är klart."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Du kan nu skicka e-post från ${ BRAND_NAME } med denna adress."
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "Du vidarebefordrar ${ numAddressesOrSync } Gmail-adress till ${ MAIL_APP_NAME }.",
+        "Du vidarebefordrar ${ numAddressesOrSync } Gmail-adresser till ${ MAIL_APP_NAME }."
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "Du har anslutit en extern kontoadress till ${ MAIL_APP_NAME }."
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "Ditt paket stöder ${ MAX_SYNC_FREE_USER } Gmail-adress.",
+        "Ditt paket stöder ${ MAX_SYNC_FREE_USER } Gmail-adresser."
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "Ditt paket stöder totalt ${ MAX_SYNC_PAID_USER } Gmail-adress",
+        "Ditt paket stöder ett totalt antal av ${ MAX_SYNC_PAID_USER } Gmail-adresser"
       ]
     },
     "description": {
@@ -4342,6 +4406,12 @@
       "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
         "Du vidarebefordrar e-post från ${ MAX_SYNC_FREE_USER } externt konto till ${ MAIL_APP_NAME }.",
         "Du vidarebefordrar e-post från ${ MAX_SYNC_FREE_USER } externa konton till ${ MAIL_APP_NAME }."
+      ],
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
+        "För att vidarebefordra e-post från upp till ${ MAX_SYNC_PAID_USER } konton, uppgradera till ${ planName }."
+      ],
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "Du vidarebefordrar e-post från ett externt konto till ${ MAIL_APP_NAME }."
       ]
     },
     "Edit billing address form note": {
@@ -5132,6 +5202,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Din sökning matchade för många resultat. Begränsa din sökning och försök igen."
+      ],
+      "Address could not be added.": [
+        "Adress kunde inte läggas till."
+      ],
+      "Address is already added to your account": [
+        "Adress är redan tillagd till ditt konto"
+      ],
+      "Something went wrong while creating the address": [
+        "Något gick fel när adressen skapades"
       ]
     },
     "error": {
@@ -6341,6 +6420,9 @@
       ],
       "Import from ${ providerName }": [
         "Importera från ${ providerName }"
+      ],
+      "More import options": [
+        "Fler importalternativ"
       ]
     },
     "Import warning": {
@@ -8844,6 +8926,9 @@
       ],
       "Everything in ${ planOrAppName }, plus:": [
         "Allt i ${ planOrAppName }, plus:"
+      ],
+      "Enter code": [
+        "Ange kod"
       ]
     },
     "info": {
@@ -9927,6 +10012,9 @@
       ],
       "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
         "Dela din tillgänglighet med bokningssidor i ${ CALENDAR_APP_NAME } och håll säkra möten med ${ MEET_APP_NAME }."
+      ],
+      "Select which Gmail address to connect": [
+        "Välj vilken Gmail-adress att ansluta"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11627,6 +11715,9 @@
       ],
       "Trial started": [
         "Provperiod startad"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Din ${ BRAND_NAME }-adress är redo att användas"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11796,6 +11887,24 @@
       ],
       "Update your email on the services you use the most. Prevent tracking and protect your privacy.": [
         "Uppdatera din e-post på de tjänster du använder mest. Förhindra spårning och skydda din integritet."
+      ],
+      "Bring your emails into ${ MAIL_APP_NAME }": [
+        "Ta med din e-post till ${ MAIL_APP_NAME }"
+      ],
+      "Bring your existing email into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Ta med din befintliga e-post till ${ MAIL_APP_NAME } så kan du hantera allt från en privat inkorg."
+      ],
+      "Choose a provider": [
+        "Välj en leverantör"
+      ],
+      "Protect your accounts": [
+        "Skydda dina konton"
+      ],
+      "Some popular services": [
+        "Några populära tjänster"
+      ],
+      "Switch the services you use every day to your ${ BRAND_NAME } address for better security and privacy.": [
+        "Växla tjänsterna du använder varje dag till din ${ BRAND_NAME }-adress för bättre säkerhet och integritet."
       ]
     },
     "Onboarding modal": {
@@ -15815,6 +15924,21 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategorier kommer!"
+      ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Ta med din Gmail till ${ MAIL_APP_NAME }"
+      ],
+      "Disconnected from Gmail": [
+        "Koppla från Gmail"
+      ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Skicka och ta emot Gmail med ${ MAIL_APP_NAME }"
+      ],
+      "Use Gmail securely in ${ MAIL_APP_NAME }": [
+        "Använd Gmail säkert i ${ MAIL_APP_NAME }"
+      ],
+      "You are all set": [
+        "Du är klar"
       ]
     },
     "Today icon tooltip in mini calendar": {

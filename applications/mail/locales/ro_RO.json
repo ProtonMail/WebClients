@@ -1689,6 +1689,15 @@
       ],
       "Continue to ${ planOrAppName }": [
         "Continuare cu ${ planOrAppName }"
+      ],
+      "Connect to Gmail": [
+        "Conectare la Gmail"
+      ],
+      "Or remove forwarding address": [
+        "Sau eliminați adresa de transferare"
+      ],
+      "Reconnect to Gmail": [
+        "Reconectare la Gmail"
       ]
     },
     "action": {
@@ -4228,6 +4237,87 @@
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Ne pare rău să vă vedem plecând. Dacă aveți un moment, am aprecia foarte mult să aflăm de ce doriți să anulați. Feedback-ul dvs. ne ajută să facem ${ BRAND_NAME } mai bun pentru toată lumea."
+      ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Blocați capacitatea Google de a vă analiza profilul. Gmail nu poate vedea ce faceți în ${ MAIL_APP_NAME }."
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Mesajele trimise către ${ connectedAddressText } vor apărea acum în ${ MAIL_APP_NAME }."
+      ],
+      "No ads. No trackers.": [
+        "Fără reclame. Fără instrumente de urmărire."
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "Citiți, răspundeți și rămâneți deasupra lui Gmail direct din ${ MAIL_APP_NAME }"
+      ],
+      "Send and receive Gmail correspondence directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "Trimiteți și primiți corespondența Gmail direct în ${ MAIL_APP_NAME }. Conectați-vă adresa în ${ addressesSettingsLink }."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Acest lucru se poate întâmpla dacă permisiunile au fost eliminate sau parola a fost modificată."
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "Pentru a conecta o altă adresă Gmail, eliminați adresele Gmail suplimentare care se transferă către ${ BRAND_NAME }."
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "Pentru a conecta până la ${ MAX_SYNC_PAID_USER } adresă Gmail, treceți la ${ planName }.",
+        "Pentru a conecta până la ${ MAX_SYNC_PAID_USER } adrese Gmail, treceți la ${ planName }.",
+        "Pentru a conecta până la ${ MAX_SYNC_PAID_USER } de adrese Gmail, treceți la ${ planName }."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Pentru a continua să primiți și să trimiteți mesaje Gmail în ${ BRAND_NAME }, reconectați-vă conturile."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Pentru a continua să primiți și să trimiteți mesaje Gmail în ${ BRAND_NAME }, reconectați-vă conturile."
+      ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "Treceți la ${ planName } pentru a conecta până la ${ MAX_SYNC_PAID_USER } conturi."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Nu mai putem accesa ${ boldEmails }."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "Se vor importa mesajele vechi și se va conecta contul Gmail la ${ MAIL_APP_NAME }, astfel încât mesajele noi să apară automat."
+      ],
+      "We've started importing your email from Gmail. We'll let you know when it's done.": [
+        "S-a început importarea contului de pe Gmail. Vă vom anunța când va fi gata."
+      ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Aveți deja o adresă Gmail care transferă mesajele către ${ MAIL_APP_NAME }. Conectați-o mai jos pentru a trimite și primi mesaje direct din ${ MAIL_APP_NAME }."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Aveți deja o adresă Gmail care transferă mesajele către ${ MAIL_APP_NAME }. Conectați una mai jos pentru a trimite și primi mesaje direct din ${ MAIL_APP_NAME }."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Puteți trimite acum mesaje de pe ${ BRAND_NAME } folosind această adresă."
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "Transferați ${ numAddressesOrSync } adresă Gmail către ${ MAIL_APP_NAME }.",
+        "Transferați ${ numAddressesOrSync } adrese Gmail către ${ MAIL_APP_NAME }.",
+        "Transferați ${ numAddressesOrSync } de adrese Gmail către ${ MAIL_APP_NAME }."
+      ],
+      "You're forwarding emails from ${ forwardingCount } Gmail address. By connecting it, you'll be able to both receive and reply in ${ MAIL_APP_NAME }": [
+        "Transferați mesaje de la ${ forwardingCount } adresă Gmail. Prin conectarea acesteia, veți putea atât să primiți, cât și să răspundeți în ${ MAIL_APP_NAME }.",
+        "Transferați mesaje de la ${ forwardingCount } adrese Gmail. Prin conectarea acestora, veți putea atât să primiți, cât și să răspundeți în ${ MAIL_APP_NAME }.",
+        "Transferați mesaje de la ${ forwardingCount } de adrese Gmail. Prin conectarea acestora, veți putea atât să primiți, cât și să răspundeți în ${ MAIL_APP_NAME }."
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "Ați conectat ${ MAX_SYNC_PAID_USER } adresă de Gmail. Pentru a adăuga alta, mai întâi dezactivați unul dintre conturile conectate.",
+        "Ați conectat ${ MAX_SYNC_PAID_USER } adrese Gmail. Pentru a adăuga alta, dezactivați mai întâi unul dintre conturile conectate.",
+        "Ați conectat ${ MAX_SYNC_PAID_USER } de adrese Gmail. Pentru a adăuga alta, mai întâi dezactivați unul dintre conturile conectate."
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "Ați conectat o adresă de cont externă la ${ MAIL_APP_NAME }."
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "Planul actual permite ${ MAX_SYNC_FREE_USER } adresă Gmail.",
+        "Planul actual permite ${ MAX_SYNC_FREE_USER } adrese Gmail.",
+        "Planul actual permite ${ MAX_SYNC_FREE_USER } de adrese Gmail."
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "Planul actual permite maxim ${ MAX_SYNC_PAID_USER } adresă Gmail",
+        "Planul actual permite maxim ${ MAX_SYNC_PAID_USER } adrese Gmail",
+        "Planul actual permite maxim ${ MAX_SYNC_PAID_USER } de adrese Gmail"
       ]
     },
     "description": {
@@ -4380,6 +4470,12 @@
         "Transferați mesaje de la ${ MAX_SYNC_FREE_USER } cont extern către ${ MAIL_APP_NAME }.",
         "Transferați mesaje de la ${ MAX_SYNC_FREE_USER } conturi externe către ${ MAIL_APP_NAME }.",
         "Transferați mesaje de la ${ MAX_SYNC_FREE_USER } de conturi externe către ${ MAIL_APP_NAME }."
+      ],
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
+        "Pentru a redirecționa mesajele de la maxim ${ MAX_SYNC_PAID_USER } conturi, treceți la ${ planName }."
+      ],
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "Transferați mesajele de la un cont extern către ${ MAIL_APP_NAME }."
       ]
     },
     "Edit billing address form note": {
@@ -5191,6 +5287,18 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Căutarea a găsit prea multe rezultate. Vă rugăm să limitați căutarea și să reîncercați."
+      ],
+      "Address could not be added.": [
+        "Adresa nu a putut fi adăugată."
+      ],
+      "Address is already added to your account": [
+        "Adresa este deja adăugată în cont."
+      ],
+      "Something went wrong while creating the address": [
+        "Ceva nu a mers bine în timpul creării adresei."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Ceva nu a funcționat corect la preluarea domeniilor disponibile."
       ]
     },
     "error": {
@@ -6422,6 +6530,9 @@
       ],
       "Import from ${ providerName }": [
         "Importare din ${ providerName }"
+      ],
+      "More import options": [
+        "Mai multe opțiuni de importare"
       ]
     },
     "Import warning": {
@@ -9052,6 +9163,12 @@
       ],
       "Everything in ${ planOrAppName }, plus:": [
         "Totul din ${ planOrAppName }, plus:"
+      ],
+      "Enter code": [
+        "Introduceți codul"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Dacă v-ați pierdut accesul la aplicația de autentificare, puteți utiliza unul din cele 16 coduri de recuperare de rezervă furnizate la configurarea autentificării cu doi factori. ${ learnMoreLink }"
       ]
     },
     "info": {
@@ -10146,6 +10263,9 @@
       ],
       "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
         "Partajați-vă disponibilitatea prin paginile de rezervare în ${ CALENDAR_APP_NAME } și găzduiți conferințe securizate cu ${ MEET_APP_NAME }."
+      ],
+      "Select which Gmail address to connect": [
+        "Selectați ce adresă Gmail doriți să conectați"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11892,6 +12012,9 @@
       ],
       "Trial started": [
         "Perioada de probă a început"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Adresa ${ BRAND_NAME } este gata de utilizare"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -12061,6 +12184,24 @@
       ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "Bun venit la ${ MAIL_APP_NAME }"
+      ],
+      "Bring your emails into ${ MAIL_APP_NAME }": [
+        "Aduceți-vă mesajele în ${ MAIL_APP_NAME }"
+      ],
+      "Bring your existing email into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Aduceți-vă contul de e-mail existent în ${ MAIL_APP_NAME } pentru a putea gestiona totul dintr-un singur cont privat."
+      ],
+      "Choose a provider": [
+        "Alegeți un furnizor"
+      ],
+      "Protect your accounts": [
+        "Protejați-vă conturile"
+      ],
+      "Some popular services": [
+        "Câteva servicii populare"
+      ],
+      "Switch the services you use every day to your ${ BRAND_NAME } address for better security and privacy.": [
+        "Comutați serviciile pe care le utilizați zilnic la adresa ${ BRAND_NAME } proprie pentru securitate și confidențialitate sporite."
       ]
     },
     "Onboarding modal": {
@@ -16186,6 +16327,21 @@
       ],
       "✨ Categories are coming!": [
         "✨ Sosesc categoriile!"
+      ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Aduceți-vă contul Gmail în ${ MAIL_APP_NAME }"
+      ],
+      "Disconnected from Gmail": [
+        "Deconectat de la Gmail"
+      ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Trimiteți și primiți mesaje Gmail folosind ${ MAIL_APP_NAME }"
+      ],
+      "Use Gmail securely in ${ MAIL_APP_NAME }": [
+        "Utilizați Gmail în siguranță în ${ MAIL_APP_NAME }"
+      ],
+      "You are all set": [
+        "Totul este pregătit"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -133,7 +133,7 @@
         "Усе без зорачкі"
       ],
       "Apply": [
-        "Ужыць"
+        "Прымяніць"
       ],
       "Archive": [
         "Архіваваць"
@@ -1697,6 +1697,9 @@
       ],
       "Continue to ${ planOrAppName }": [
         "Працягнуць у ${ planOrAppName }"
+      ],
+      "Reconnect to Gmail": [
+        "Перападключыцца да Gmail"
       ]
     },
     "action": {
@@ -4257,6 +4260,66 @@
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Нам шкада, што вы пакідаеце нас. Мы будзем вам вельмі ўдзячныя, калі вы знойдзеце крыху часу паведаміць аб прычынах скасавання сваёй падпіскі. Вашы водгукі дапамагаюць зрабіць ${ BRAND_NAME } яшчэ лепш для кожнага карыстальніка."
+      ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Не давайце магчымасці Google ствараць ваш профіль. Gmail больш не зможа бачыць, што вы робіце ў ${ MAIL_APP_NAME }"
+      ],
+      "No ads. No trackers.": [
+        "Без рэкламы і праграм сачэння"
+      ],
+      "Send and receive Gmail correspondence directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "Адпраўляйце і атрымлівайце карэспандэнцыю Gmail наўпрост у ${ MAIL_APP_NAME }. Падключыце свой адрас у ${ addressesSettingsLink }."
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "Выдаліце дадатковыя адрасы Gmail, якія перасылаюцца на ${ BRAND_NAME }. Гэта дзеянне неабходна для падключэння іншага адраса Gmail."
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "Абнавіце свой тарыфны план да ${ planName }, каб падключыць да ${ MAX_SYNC_PAID_USER } адраса Gmail.",
+        "Абнавіце свой тарыфны план да ${ planName }, каб падключыць да ${ MAX_SYNC_PAID_USER } адрасоў Gmail.",
+        "Абнавіце свой тарыфны план да ${ planName }, каб падключыць да ${ MAX_SYNC_PAID_USER } адрасоў Gmail.",
+        "Абнавіце свой тарыфны план да ${ planName }, каб падключыць да ${ MAX_SYNC_PAID_USER } адрасоў Gmail."
+      ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "Палепшыце тарыфны план да ${ planName }, каб падключыць да ${ MAX_SYNC_PAID_USER } уліковых запісаў"
+      ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "У вас ужо ёсць адрас Gmail, які перасылае лісты ў ${ MAIL_APP_NAME }. Падключыце яго ніжэй, каб адпраўляць і атрымліваць лісты наўпрост з ${ MAIL_APP_NAME }."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Цяпер можна адпраўляць лісты з ${ BRAND_NAME } выкарыстоўваючы гэты адрас."
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "Вы перасылаеце ${ numAddressesOrSync } адрас Gmail у ${ MAIL_APP_NAME }.",
+        "Вы перасылаеце ${ numAddressesOrSync } адрасы Gmail у ${ MAIL_APP_NAME }.",
+        "Вы перасылаеце ${ numAddressesOrSync } адрасоў Gmail у ${ MAIL_APP_NAME }.",
+        "Вы перасылаеце ${ numAddressesOrSync } адрасоў Gmail у ${ MAIL_APP_NAME }."
+      ],
+      "You're forwarding emails from ${ forwardingCount } Gmail address. By connecting it, you'll be able to both receive and reply in ${ MAIL_APP_NAME }": [
+        "Вы перасылаеце лісты з ${ forwardingCount } адраса Gmail. Падключыўшы яго, вы зможаце як атрымліваць, так і адказваць у ${ MAIL_APP_NAME }.",
+        "Вы перасылаеце лісты з ${ forwardingCount } адраса Gmail. Падключыўшы іх, вы зможаце як атрымліваць, так і адказваць у ${ MAIL_APP_NAME }.",
+        "Вы перасылаеце лісты з ${ forwardingCount } адрасоў Gmail. Падключыўшы іх, вы зможаце як атрымліваць, так і адказваць у ${ MAIL_APP_NAME }.",
+        "Вы перасылаеце лісты з ${ forwardingCount } адрасоў Gmail. Падключыўшы іх, вы зможаце як атрымліваць, так і адказваць у ${ MAIL_APP_NAME }."
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "Вы падключылі ${ MAX_SYNC_PAID_USER } адрас Gmail. Спачатку адключыце адзін са сваіх падключаных уліковых запісаў, каб дадаць яшчэ адзін.",
+        "Вы падключылі ${ MAX_SYNC_PAID_USER } адрасы Gmail. Спачатку адключыце адзін са сваіх падключаных уліковых запісаў, каб дадаць яшчэ адзін.",
+        "Вы падключылі ${ MAX_SYNC_PAID_USER } адрасоў Gmail. Спачатку адключыце адзін са сваіх падключаных уліковых запісаў, каб дадаць яшчэ адзін.",
+        "Вы падключылі ${ MAX_SYNC_PAID_USER } адрасоў Gmail. Спачатку адключыце адзін са сваіх падключаных уліковых запісаў, каб дадаць яшчэ адзін."
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "Вы падключылі адзін адрас знешняга ўліковага запісу да ${ MAIL_APP_NAME }."
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "Ваш тарыфны план падтрымлівае ${ MAX_SYNC_FREE_USER } адрас Gmail.",
+        "Ваш тарыфны план падтрымлівае ${ MAX_SYNC_FREE_USER } адрасы Gmail.",
+        "Ваш тарыфны план падтрымлівае ${ MAX_SYNC_FREE_USER } адрасоў Gmail.",
+        "Ваш тарыфны план падтрымлівае ${ MAX_SYNC_FREE_USER } адрасоў Gmail."
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "Ваш тарыфны план у сукупнасці падтрымлівае ${ MAX_SYNC_PAID_USER } адрас Gmail",
+        "Ваш тарыфны план агулам падтрымлівае ${ MAX_SYNC_PAID_USER } адрасы Gmail",
+        "Ваш тарыфны план у сукупнасці падтрымлівае ${ MAX_SYNC_PAID_USER } адрасоў Gmail",
+        "Ваш тарыфны план у сукупнасці падтрымлівае ${ MAX_SYNC_PAID_USER } адрасоў Gmail"
       ]
     },
     "description": {
@@ -4412,6 +4475,12 @@
         "Вы перасылаеце лісты з ${ MAX_SYNC_FREE_USER } знешніх уліковых запісаў у ${ MAIL_APP_NAME }.",
         "Вы перасылаеце лісты з ${ MAX_SYNC_FREE_USER } знешніх уліковых запісаў у ${ MAIL_APP_NAME }.",
         "Вы перасылаеце лісты з ${ MAX_SYNC_FREE_USER } знешніх уліковых запісаў у ${ MAIL_APP_NAME }."
+      ],
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
+        "Палепшыце да тарыфнага плана ${ planName }, каб перасылаць лісты з максімальнай колькасцю ў ${ MAX_SYNC_PAID_USER } уліковых запісаў."
+      ],
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "Вы перасылаеце лісты з аднаго знешняга ўліковага запісу ў ${ MAIL_APP_NAME }."
       ]
     },
     "Edit billing address form note": {
@@ -5235,6 +5304,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Ваш пошук вярнуў занадта шмат вынікаў. Абмяжуйце вобласць пошуку і паспрабуйце яшчэ раз."
+      ],
+      "Address is already added to your account": [
+        "Адрас ужо дададзены ў ваш уліковы запіс"
       ]
     },
     "error": {
@@ -6485,6 +6557,9 @@
       ],
       "Import from ${ providerName }": [
         "Імпартаваць з ${ providerName }"
+      ],
+      "More import options": [
+        "Больш параметраў імпарту"
       ]
     },
     "Import warning": {
@@ -7019,13 +7094,13 @@
         "Любыя падпапкі будуць выдалены таксама. Аднак лісты, якія захаваны ў папцы ${ nameDeleted }, не будуць выдалены і іх можна будзе знайсці ў папцы \"Уся пошта\"."
       ],
       "Apply to future messages": [
-        "Ужыць да будучых паведамленняў"
+        "Прымяніць да будучых паведамленняў"
       ],
       "Applying actions to conversations": [
-        "Ужыць дзеянні да размоў"
+        "Прымяніць дзеянні да размоў"
       ],
       "Applying actions to messages": [
-        "Ужыць дзеянні да паведамленняў"
+        "Прымяніць дзеянні да паведамленняў"
       ],
       "Archive existing messages": [
         "Архіваваць існуючыя паведамленні"
@@ -9080,7 +9155,7 @@
         "Ваш уліковы запіс мае прынамсі адзін пратэрмінаваны рахунак. Ваш доступ неўзабаве будзе абмежаваны. ${ payInvoiceLink }"
       ],
       "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
-        "Ваш уліковы запіс у цяперашні час сканфігурыраваны, каб ужываць схему адваротнага налічэння падатку. Гэты параметр не падтрымліваецца для выбранага тарыфнага плана. Вы можаце, або выдаліць нумар ПДВ з плацежнага адраса, або выбраць іншы тарыфны план, каб працягнуць аперацыю."
+        "Ваш уліковы запіс у цяперашні час сканфігурыраваны, каб прымяняць схему адваротнага налічэння падатку. Гэты параметр не падтрымліваецца для выбранага тарыфнага плана. Вы можаце, або выдаліць нумар ПДВ з плацежнага адраса, або выбраць іншы тарыфны план, каб працягнуць аперацыю."
       ],
       "Your browser doesn't support the writing assistant. Try running it on servers.": [
         "Ваш браўзер не падтрымлівае памочніка ў напісанні. Паспрабуйце запусціць яго на серверы."
@@ -9311,7 +9386,7 @@
         "Дадаць тэрмін дзеяння"
       ],
       "Apply / open": [
-        "Ужыць / адкрыць"
+        "Прымяніць / адкрыць"
       ],
       "Attach file": [
         "Далучыць файл"
@@ -9588,10 +9663,10 @@
         "Пароль праграмы"
       ],
       "Apply filter to existing emails": [
-        "Ужыць фільтр да існуючых лістоў"
+        "Прымяніць фільтр да існуючых лістоў"
       ],
       "Apply to future messages": [
-        "Ужыць да будучых паведамленняў"
+        "Прымяніць да будучых паведамленняў"
       ],
       "Attach screenshot(s)": [
         "Далучыць здымак(-і) экрана"
@@ -10306,6 +10381,9 @@
       ],
       "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
         "Абагуляйце сваю даступнасць з дапамогай старонак браніравання ў ${ CALENDAR_APP_NAME } і праводзьце бяспечныя сустрэчы з ${ MEET_APP_NAME }."
+      ],
+      "Select which Gmail address to connect": [
+        "Выберыце, які адрас Gmail неабходна падключыць"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11856,7 +11934,7 @@
         "Абараняе вас, блакіруючы ўсе падключэнні да сеткі пры нечаканым адключэнні ад нашага сервера VPN."
       ],
       "Labels are simple tags you can add to messages to make them easier to find or to apply filters to": [
-        "Меткі - гэта простыя тэгі, якія можна дадаваць да паведамленняў. Яны дазваляюць прасцей знаходзіць неабходныя лісты або ўжываць фільтры"
+        "Меткі - гэта простыя тэгі, якія можна дадаваць да паведамленняў. Яны дазваляюць прасцей знаходзіць неабходныя лісты або прымяняць фільтры"
       ],
       "Lifetime access to ${ PASS_APP_NAME } + SimpleLogin premium features.": [
         "Пажыццёвы доступ да ${ PASS_APP_NAME } + прэміяльныя функцыі SimpleLogin."
@@ -12261,6 +12339,24 @@
       ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "Вітаем у ${ MAIL_APP_NAME }"
+      ],
+      "Bring your emails into ${ MAIL_APP_NAME }": [
+        "Перанясіце свае лісты ў ${ MAIL_APP_NAME }"
+      ],
+      "Bring your existing email into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Перанясіце сваю існуючучую электронную пошту ў ${ MAIL_APP_NAME }, каб у вас была магчымасць кіраваць усімі лістамі з адной прыватнай паштовай скрыні."
+      ],
+      "Choose a provider": [
+        "Выберыце пастаўшчыка"
+      ],
+      "Protect your accounts": [
+        "Абараніце свае ўліковыя запісы"
+      ],
+      "Some popular services": [
+        "Некаторыя папулярныя сэрвісы"
+      ],
+      "Switch the services you use every day to your ${ BRAND_NAME } address for better security and privacy.": [
+        "Перанясіце сэрвісы, якімі вы карыстаецеся штодзень у свой адрас ${ BRAND_NAME } для лепшай бяспекі і прыватнасці."
       ]
     },
     "Onboarding modal": {
@@ -15411,7 +15507,7 @@
         "Доступ у любы час і ў любым месцы"
       ],
       "Apply gift code": [
-        "Ужыць падарункавы код"
+        "Прымяніць падарункавы код"
       ],
       "Archive all messages?": [
         "Архіваваць усе паведамленні?"
@@ -16390,6 +16486,12 @@
       ],
       "✨ Categories are coming!": [
         "✨ Неўзабаве чакайце катэгорыі!"
+      ],
+      "Disconnected from Gmail": [
+        "Адключана ад Gmail"
+      ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Адпраўка і атрыманне лістоў Gmail з дапамогай ${ MAIL_APP_NAME }"
       ]
     },
     "Today icon tooltip in mini calendar": {

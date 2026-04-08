@@ -4354,6 +4354,12 @@
       "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
         "Du videresender e-mails fra ${ MAX_SYNC_FREE_USER } ekstern konto til ${ MAIL_APP_NAME }.",
         "Du videresender e-mails fra ${ MAX_SYNC_FREE_USER } eksterne konti til ${ MAIL_APP_NAME }."
+      ],
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
+        "For at videresende e-mails fra op til ${ MAX_SYNC_PAID_USER } konti skal du opgradere til ${ planName }."
+      ],
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "Du videresender e-mails fra én ekstern konto til ${ MAIL_APP_NAME }."
       ]
     },
     "Edit billing address form note": {
@@ -6360,6 +6366,9 @@
       ],
       "Advanced import": [
         "Avanceret import"
+      ],
+      "More import options": [
+        "Flere importindstillinger"
       ]
     },
     "Import warning": {
@@ -11862,6 +11871,24 @@
       ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "Velkommen til ${ MAIL_APP_NAME }"
+      ],
+      "Bring your emails into ${ MAIL_APP_NAME }": [
+        "Få dine e-mails ind i ${ MAIL_APP_NAME }"
+      ],
+      "Bring your existing email into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Få din eksisterende e-mail ind i ${ MAIL_APP_NAME }, så du kan administrere alt fra én privat indbakke."
+      ],
+      "Choose a provider": [
+        "Vælg en udbyder"
+      ],
+      "Protect your accounts": [
+        "Beskyt dine konti"
+      ],
+      "Some popular services": [
+        "Populære tjenester"
+      ],
+      "Switch the services you use every day to your ${ BRAND_NAME } address for better security and privacy.": [
+        "Skift de tjenester du bruger hver dag til din ${ BRAND_NAME }-adresse for bedre sikkerhed og privatliv."
       ]
     },
     "Onboarding modal": {

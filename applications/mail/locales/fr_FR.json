@@ -1687,6 +1687,15 @@
       ],
       "Continue to ${ planOrAppName }": [
         "Continuer vers ${ planOrAppName }"
+      ],
+      "Connect to Gmail": [
+        "Se connecter à Gmail"
+      ],
+      "Or remove forwarding address": [
+        "Ou supprimez l'adresse de transfert"
+      ],
+      "Reconnect to Gmail": [
+        "Se reconnecter à Gmail"
       ]
     },
     "action": {
@@ -4202,6 +4211,81 @@
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Nous regrettons de vous voir partir. Si vous avez un moment, nous aimerions beaucoup savoir pourquoi vous souhaitez résilier votre abonnement. Vos commentaires nous aident à améliorer ${ BRAND_NAME } pour le bénéfice de tous."
+      ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Empêchez Google de vous profiler. Gmail ne peut pas voir ce que vous faites dans ${ MAIL_APP_NAME }."
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Les e-mails envoyés à ${ connectedAddressText } apparaîtront désormais dans ${ MAIL_APP_NAME }."
+      ],
+      "No ads. No trackers.": [
+        "Pas de publicité. Pas de traqueurs."
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "Lisez, répondez et restez au courant de Gmail depuis ${ MAIL_APP_NAME }"
+      ],
+      "Send and receive Gmail correspondence directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "Envoyez et recevez la correspondance Gmail directement dans ${ MAIL_APP_NAME }. Connectez votre adresse dans ${ addressesSettingsLink }."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Cela peut se produire si les autorisations ont été supprimées ou si votre mot de passe a été modifié."
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "Pour connecter une autre adresse Gmail, retirez les adresses Gmail supplémentaires qui se transfère vers ${ BRAND_NAME }."
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "Pour connecter jusqu'à ${ MAX_SYNC_PAID_USER } adresse Gmail, passez à ${ planName }.",
+        "Pour connecter jusqu'à ${ MAX_SYNC_PAID_USER } adresses Gmail, passez à ${ planName }."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Pour continuer à recevoir et envoyer des messages Gmail dans ${ BRAND_NAME }, veuillez reconnecter votre compte."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Pour continuer à recevoir et envoyer des messages Gmail dans ${ BRAND_NAME }, veuillez reconnecter vos comptes."
+      ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "Passez à ${ planName } pour connecter jusqu'à ${ MAX_SYNC_PAID_USER } comptes."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Nous ne pouvons plus accéder à ${ boldEmails }."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "Nous apporterons vos anciens messages et connecterons votre Gmail à ${ MAIL_APP_NAME } afin que les nouveaux messages apparaissent automatiquement"
+      ],
+      "We've started importing your email from Gmail. We'll let you know when it's done.": [
+        "Nous avons commencé à importer vos messages depuis Gmail. Nous vous informerons une fois que ce sera terminé."
+      ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Vous avez déjà une adresse Gmail transférée vers ${ MAIL_APP_NAME }. Connectez-la ci-dessous pour envoyer et recevoir des e-mails directement depuis ${ MAIL_APP_NAME }."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Vous avez déjà une adresse Gmail transférée vers ${ MAIL_APP_NAME }. Connectez-la ci-dessous pour envoyer et recevoir des e-mails directement depuis ${ MAIL_APP_NAME }."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Vous pouvez désormais envoyer des e-mails depuis ${ BRAND_NAME } en utilisant cette adresse."
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "Vous transférez ${ numAddressesOrSync } adresse Gmail vers ${ MAIL_APP_NAME }.",
+        "Vous transférez ${ numAddressesOrSync } adresses Gmail vers ${ MAIL_APP_NAME }."
+      ],
+      "You're forwarding emails from ${ forwardingCount } Gmail address. By connecting it, you'll be able to both receive and reply in ${ MAIL_APP_NAME }": [
+        "Vous transférez des messages depuis ${ forwardingCount } adresse Gmail. En la connectant, vous pourrez à la fois recevoir et répondre dans ${ MAIL_APP_NAME }.",
+        "Vous transférez des messages depuis ${ forwardingCount } adresses Gmail. En les connectant, vous pourrez à la fois recevoir et répondre dans ${ MAIL_APP_NAME }."
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "Vous avez connecté ${ MAX_SYNC_PAID_USER } adresse Gmail. Pour en ajouter une autre, désactivez d'abord un de vos comptes connectés.",
+        "Vous avez connecté ${ MAX_SYNC_PAID_USER } adresses Gmail. Pour en ajouter une autre, désactivez d'abord un de vos comptes connectés."
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "Vous avez connecté une adresse de compte externe à ${ MAIL_APP_NAME }."
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "Votre abonnement prend en charge ${ MAX_SYNC_FREE_USER } adresse Gmail.",
+        "Votre abonnement prend en charge ${ MAX_SYNC_FREE_USER } adresses Gmail."
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "Votre abonnement prend en charge un total de ${ MAX_SYNC_PAID_USER } adresse Gmail",
+        "Votre abonnement prend en charge un total de ${ MAX_SYNC_PAID_USER } adresses Gmail"
       ]
     },
     "description": {
@@ -4351,6 +4435,12 @@
       "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
         "Vous transférez des messages depuis ${ MAX_SYNC_FREE_USER } compte externe vers ${ MAIL_APP_NAME }.",
         "Vous transférez des messages depuis ${ MAX_SYNC_FREE_USER } comptes externes vers ${ MAIL_APP_NAME }."
+      ],
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
+        "Pour transférer des messages provenant d'un maximum de ${ MAX_SYNC_PAID_USER } comptes, passez à ${ planName }."
+      ],
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "Vous transférez des messages d'un compte externe vers ${ MAIL_APP_NAME }."
       ]
     },
     "Edit billing address form note": {
@@ -5147,6 +5237,21 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Votre recherche a donné trop de résultats. Nous vous invitons à limiter votre recherche et à réessayer."
+      ],
+      "Address could not be added.": [
+        "L'adresse n'a pas pu être ajoutée."
+      ],
+      "Address is already added to your account": [
+        "L'adresse a déjà été ajoutée à votre compte"
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Le régime de TVA intracommunautaire n'est pas pris en charge pour cet abonnement."
+      ],
+      "Something went wrong while creating the address": [
+        "Quelque chose s'est mal passé lors de la création de l'adresse"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Quelque chose s'est mal passé lors de la récupération des domaines disponibles"
       ]
     },
     "error": {
@@ -6351,6 +6456,9 @@
       ],
       "Import from ${ providerName }": [
         "Importer depuis ${ providerName }"
+      ],
+      "More import options": [
+        "Plus d'options d'importation"
       ]
     },
     "Import warning": {
@@ -8880,6 +8988,15 @@
       ],
       "Everything in ${ planOrAppName }, plus:": [
         "Tout ce qui est inclus dans ${ planOrAppName }, et plus encore :"
+      ],
+      "Enter code": [
+        "Saisissez le code"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Si vous avez perdu l'accès à votre application d'authentification, vous pouvez utiliser 1 des 16 codes de récupération de sauvegarde fournis lors de la configuration de l'authentification à deux facteurs. ${ learnMoreLink }"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Votre compte est actuellement configuré pour appliquer le régime de TVA intracommunautaire. Ceci n’est pas pris en charge pour l'abonnement sélectionné. Pour continuer, retirez le numéro de TVA de l'adresse de facturation ou sélectionnez un autre abonnement."
       ]
     },
     "info": {
@@ -9966,6 +10083,9 @@
       ],
       "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
         "Partagez vos disponibilités via les pages de réservation de ${ CALENDAR_APP_NAME } et organisez des réunions sécurisées avec ${ MEET_APP_NAME }."
+      ],
+      "Select which Gmail address to connect": [
+        "Sélectionnez l'adresse Gmail à connecter"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11672,6 +11792,9 @@
       ],
       "Trial started": [
         "La version d'essai a commencé."
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Votre adresse ${ BRAND_NAME } est prête à être utilisée"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11841,6 +11964,24 @@
       ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "Bienvenue dans ${ MAIL_APP_NAME }"
+      ],
+      "Bring your emails into ${ MAIL_APP_NAME }": [
+        "Importez vos e-mails dans ${ MAIL_APP_NAME }"
+      ],
+      "Bring your existing email into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Importez vos e-mails actuels dans ${ MAIL_APP_NAME } afin de pouvoir tout gérer depuis une seule boîte de réception privée."
+      ],
+      "Choose a provider": [
+        "Choisissez un fournisseur"
+      ],
+      "Protect your accounts": [
+        "Protégez vos comptes"
+      ],
+      "Some popular services": [
+        "Certains services populaires"
+      ],
+      "Switch the services you use every day to your ${ BRAND_NAME } address for better security and privacy.": [
+        "Transférez les services que vous utilisez au quotidien vers votre adresse ${ BRAND_NAME } pour bénéficier d'une meilleure sécurité et d'une confidentialité accrues."
       ]
     },
     "Onboarding modal": {
@@ -15851,6 +15992,24 @@
       ],
       "✨ Categories are coming!": [
         "✨ Les catégories arrivent !"
+      ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Amenez votre Gmail dans ${ MAIL_APP_NAME }"
+      ],
+      "Disconnected from Gmail": [
+        "Déconnecté de Gmail"
+      ],
+      "Reverse charge not supported": [
+        "Le régime de TVA intracommunautaire n'est pas pris en charge."
+      ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Envoyez et recevez des e-mails Gmail en utilisant ${ MAIL_APP_NAME }"
+      ],
+      "Use Gmail securely in ${ MAIL_APP_NAME }": [
+        "Utilisez Gmail en toute sécurité dans ${ MAIL_APP_NAME }"
+      ],
+      "You are all set": [
+        "Vous êtes paré"
       ]
     },
     "Today icon tooltip in mini calendar": {
