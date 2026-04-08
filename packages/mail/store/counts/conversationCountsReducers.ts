@@ -76,17 +76,32 @@ export const markMessagesAsUnread = (
     const { conversations, messages, labelID } = action.payload;
 
     conversations.forEach((conversation) => {
-        const filteredMessages = messages.filter(
-            (message) => message.ConversationID === conversation.ID && message.LabelIDs.includes(labelID)
-        );
+        const hasConversationMessage =
+            messages.filter(
+                (message) => message.ConversationID === conversation.ID && message.LabelIDs.includes(labelID)
+            ).length > 0;
 
         const conversationLabel = conversation.Labels?.find((label) => label.ID === labelID);
 
-        if (conversationLabel?.ContextNumUnread === 0 && filteredMessages.length > 0) {
+        if (conversationLabel?.ContextNumUnread === 0 && hasConversationMessage) {
             const conversationCounter = state.value?.find((counter) => counter.LabelID === labelID);
 
             if (conversationCounter) {
                 conversationCounter.Unread = safeIncreaseCount(conversationCounter.Unread, 1);
+            }
+        }
+
+        const convCategoryLabel = conversation.Labels?.find((label) => isCategoryLabel(label.ID));
+        if (
+            labelID === MAILBOX_LABEL_IDS.INBOX &&
+            convCategoryLabel &&
+            convCategoryLabel.ContextNumUnread === 0 &&
+            hasConversationMessage
+        ) {
+            const categoryCounter = state.value?.find((counter) => counter.LabelID === convCategoryLabel.ID);
+
+            if (categoryCounter) {
+                categoryCounter.Unread = safeIncreaseCount(categoryCounter.Unread, 1);
             }
         }
     });
