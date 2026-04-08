@@ -1,8 +1,7 @@
 import useApi from '@proton/components/hooks/useApi';
-import { usePollCoreEventsV6 } from '@proton/components/payments/client-extensions/usePollEvents';
 import type { WithLoading } from '@proton/hooks/useLoading';
 import { Renew, SubscriptionMode, changeRenewState, isTrial } from '@proton/payments';
-import { ActionEventV6 } from '@proton/shared/lib/api/events';
+import { usePaymentPollers } from '@proton/payments/ui/hooks/usePaymentPollers';
 import noop from '@proton/utils/noop';
 
 import { AddCreditCardButton, type PublicProps as AddCreditCardButtonProps } from './AddCreditCardButton';
@@ -12,14 +11,7 @@ export type Props = SubscriptionSubmitButtonProps & AddCreditCardButtonProps & {
 
 export const SubscriptionConfirmButton = (props: Props) => {
     const api = useApi();
-    const pollPaymentsMethodsEventsMultipleTimes = usePollCoreEventsV6({
-        action: ActionEventV6.Create,
-        subscribeToProperty: 'PaymentsMethods',
-    });
-    const pollSubscriptionsEventsMultipleTimes = usePollCoreEventsV6({
-        action: ActionEventV6.Update,
-        subscribeToProperty: 'Subscriptions',
-    });
+    const { createSubscriptionRenewEnabledPoller } = usePaymentPollers();
     const { paymentForbiddenReason, checkResult, subscription, hasPaymentMethod, onDone } = props;
 
     // If user has a trial subscription and doesn't have a payment method and the selects the same cycle then he can't
@@ -49,17 +41,14 @@ export const SubscriptionConfirmButton = (props: Props) => {
             userKeepsBillingCycle={userKeepsBillingCycle}
             willCreateScheduledSubscription={willCreateScheduledSubscription}
             onDone={async () => {
-                void props.withLoading(
-                    // wait for PaymentsMethods event
-                    pollPaymentsMethodsEventsMultipleTimes()
-                        .then(() => api(changeRenewState({ RenewalState: Renew.Enabled })))
-                        .then(() => {
-                            onDone?.();
-                            // trigger quick event polling to update background
-                            void pollSubscriptionsEventsMultipleTimes();
-                        })
-                        .catch(noop)
-                );
+                void props.withLoading(async () => {
+                    const pollSubscriptionRenewEnabled = createSubscriptionRenewEnabledPoller();
+                    // Assumes that a new payment method has been added, so this call will succeed.
+                    await api(changeRenewState({ RenewalState: Renew.Enabled }));
+                    // Poll until subscription becomes renew enabled.
+                    await pollSubscriptionRenewEnabled().catch(noop);
+                    onDone?.();
+                });
             }}
         />
     ) : (
