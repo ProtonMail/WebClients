@@ -14,7 +14,6 @@ import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { sortMethodsBasedOnDevice } from '@proton/components/payments/client-extensions';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions/usePaymentFacade';
-import { usePollEvents } from '@proton/components/payments/client-extensions/usePollEvents';
 import type {
     Operations,
     OperationsSubscriptionData,
@@ -30,6 +29,7 @@ import { hasPlanIDs } from '@proton/payments/core/planIDs';
 import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
 import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import { usePayments } from '@proton/payments/ui/context/PaymentContext';
+import { usePaymentPollers } from '@proton/payments/ui/hooks/usePaymentPollers';
 import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/plans';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
@@ -90,7 +90,7 @@ const useSubscriptionCheckout = ({ onStepChange, onSubscribed, onUnsubscribed, m
     const { planName, planIDs, cycle, currency } = checkoutUi;
     const [subscribing, withSubscribing] = useLoading();
     const api = useApi();
-    const pollEventsMultipleTimes = usePollEvents();
+    const { createSubscriptionPoller } = usePaymentPollers();
     const app = useAppName();
     const { createNotification } = useNotifications();
     const { cancelSubscriptionModals, cancelSubscription } = useCancelSubscriptionFlow({ app });
@@ -134,6 +134,7 @@ const useSubscriptionCheckout = ({ onStepChange, onSubscribed, onUnsubscribed, m
         };
 
         try {
+            const pollSubscription = createSubscriptionPoller();
             eventManager.stop();
             onStepChange(SUBSCRIPTION_STEPS.UPGRADE);
             try {
@@ -161,12 +162,14 @@ const useSubscriptionCheckout = ({ onStepChange, onSubscribed, onUnsubscribed, m
 
                 throw error;
             }
-            await eventManager.call();
 
             void Metrics.payments_subscription_total.increment({
                 ...metricsProps,
                 status: 'success',
             });
+
+            await pollSubscription().catch(noop);
+
             onSubscribed();
         } catch (error: any) {
             const { Code = 0 } = error.data || {};
@@ -212,11 +215,7 @@ const useSubscriptionCheckout = ({ onStepChange, onSubscribed, onUnsubscribed, m
                 paymentMethodValue: source,
             };
 
-            const promise = withSubscribing(handleSubscribe(operations, context));
-
-            promise.then(() => pollEventsMultipleTimes()).catch(noop);
-
-            return promise.catch(noop);
+            return withSubscribing(handleSubscribe(operations, context)).catch(noop);
         },
         flow: 'subscription',
         product: appName,
