@@ -103,7 +103,7 @@ export const AutosuggestPassword: FC<Props> = ({ action, config, copy, policy, .
                         <PauseListDropdown
                             criteria="Autosuggest"
                             dense
-                            hostname={payload.origin}
+                            hostname={payload.frameOrigin}
                             label={c('Action').t`Do not suggest on this website`}
                         />
                     </div>

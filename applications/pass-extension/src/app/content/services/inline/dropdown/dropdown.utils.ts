@@ -61,24 +61,21 @@ export const matchesDropdownAnchor = <T extends DropdownAnchor>(a: Maybe<MaybeNu
     }
 };
 
-/** Resolves origin based on autofill action requirements:
- * - CC autofill: uses domain for loose cross-frame matching across subdomains
- * - Other actions: uses subdomain for strict origin matching */
-export const resolveDropdownOrigins = (
+/** CC uses domain-level scope (TLD private-domain aware) so cross-origin payment
+ * iframes fall within the same trust boundary as `getTabFrames` frame origins. Other
+ * actions use the full hostname for strict same-host item matching. */
+export const resolveOriginScope = (request: DropdownRequest, url: ParsedUrl) => {
+    if (request.action === DropdownAction.AUTOFILL_CC) return resolveDomain(url);
+    else return resolveSubdomain(url);
+};
+
+export const resolveAutofillOrigins = (
     request: DropdownRequest,
     url: ParsedUrl
 ): MaybeNull<[origin: string, frameOrigin: string]> => {
-    const domain = resolveDomain(url);
-    const subdomain = resolveSubdomain(url);
-
-    switch (request.action) {
-        case DropdownAction.AUTOFILL_CC:
-            if (!domain) return null;
-            return request.type === 'frame' ? [domain, request.origin] : [domain, domain];
-        default:
-            if (!subdomain) return null;
-            return request.type === 'frame' ? [subdomain, request.origin] : [subdomain, subdomain];
-    }
+    const origin = resolveOriginScope(request, url);
+    if (!origin) return null;
+    return request.type === 'frame' ? [origin, request.origin] : [origin, origin];
 };
 
 export const validateDropdownRequest = withContext<(request: DropdownRequest) => Promise<boolean>>(
@@ -121,13 +118,13 @@ export const intoDropdownAction = withContext<(request: DropdownRequest) => Prom
         if (!ctx) return;
 
         const { action } = request;
-        const url = ctx.getExtensionContext()?.tabUrl;
+        const tabUrl = ctx.getExtensionContext()?.tabUrl;
         const frameId = request.type === 'frame' ? request.frameId : request.field.frameId;
         const fieldId = request.type === 'frame' ? request.fieldId : request.field.fieldId;
         const formId = request.type === 'frame' ? request.formId : request.field.formId;
-        const origins = url ? resolveDropdownOrigins(request, url) : null;
+        const origins = tabUrl ? resolveAutofillOrigins(request, tabUrl) : null;
 
-        if (!(url && origins)) return;
+        if (!(tabUrl && origins)) return;
 
         const [origin, frameOrigin] = origins;
         const base = { frameOrigin, frameId, fieldId, formId, origin } as const;
@@ -140,12 +137,12 @@ export const intoDropdownAction = withContext<(request: DropdownRequest) => Prom
             case DropdownAction.AUTOFILL_LOGIN:
                 return { action, ...base, startsWith: '' };
             case DropdownAction.AUTOSUGGEST_ALIAS: {
-                if (!url.displayName) return;
+                if (!tabUrl.displayName) return;
                 return sendMessage.on(contentScriptMessage({ type: WorkerMessageType.AUTOSUGGEST_ALIAS }), (res) => {
                     if (res.type === 'error') return;
                     return {
                         action,
-                        prefix: deriveAliasPrefix(url.displayName!),
+                        prefix: deriveAliasPrefix(tabUrl.displayName!),
                         aliasCreationDisabled: res.aliasCreationDisabled,
                         ...base,
                     };
