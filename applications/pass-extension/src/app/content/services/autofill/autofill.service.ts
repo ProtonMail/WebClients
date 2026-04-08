@@ -281,9 +281,25 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
 
                     case 'email': {
                         const field = resolveField(payload.field);
+                        const tracker = field.getFormHandle().tracker;
                         await autofillEmail(field, payload.email);
                         field.focus({ preventAction: true });
-                        field.getFormHandle().tracker?.processForm({ submit: false, partial: true }).catch(noop);
+                        tracker?.processForm({ submit: false, partial: true }).catch(noop);
+                        return { ok: true, type: payload.type };
+                    }
+
+                    case 'password': {
+                        const field = resolveField(payload.field);
+                        const tracker = field.getFormHandle().tracker;
+                        const prompt = ctx?.getSettings().autosave.passwordSuggest;
+                        await autofillPassword(field.getFormHandle(), payload.password);
+                        field.focus({ preventAction: true });
+
+                        tracker
+                            ?.processForm({ submit: false, partial: true })
+                            .then((res) => res && prompt && ctx.service.autosave.prompt(res))
+                            .catch(noop);
+
                         return { ok: true, type: payload.type };
                     }
                 }

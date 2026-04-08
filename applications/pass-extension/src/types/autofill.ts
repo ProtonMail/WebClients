@@ -11,7 +11,7 @@ export type WithAutofillOrigin<T> = T &
         origin: string;
     };
 
-export type AutofillActionType = 'creditCard' | 'login' | 'identity' | 'email';
+export type AutofillActionType = 'creditCard' | 'login' | 'identity' | 'email' | 'password';
 export type AutofillItem = WithAutofillOrigin<SelectedItem>;
 export type AutofillValue = WithAutofillOrigin<{ value: string }>;
 
@@ -25,6 +25,7 @@ export type AutofillActionDTO<T extends AutofillActionType = AutofillActionType>
         login: AutofillItem;
         identity: AutofillItem;
         email: AutofillValue;
+        password: AutofillValue;
     }>,
     { type: T }
 >;
@@ -46,6 +47,7 @@ export type AutofillRequest<T extends AutofillStatus = AutofillStatus> = Extract
              * stripped when autofilling across origin boundaries. */
             creditCard: SelectedItem & { data: Partial<CCItemData>; fields: FrameField[] };
             email: { email: string; field: FrameField };
+            password: { password: string; field: FrameField };
         }>
     >,
     { status: T }
@@ -61,5 +63,6 @@ export type AutofillResult = Result<
         login: Record<never, never>;
         identity: Record<never, never>;
         email: Record<never, never>;
+        password: Record<never, never>;
     }>
 >;
