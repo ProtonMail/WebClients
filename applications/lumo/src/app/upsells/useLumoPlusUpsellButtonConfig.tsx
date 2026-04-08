@@ -20,28 +20,13 @@ const useLumoPlusUpsellButtonConfig = (feature: UPSELL_FEATURE, options?: Upsell
     const isGuest = useIsGuest();
     const { canShowLumoUpsellFree, canShowLumoUpsellB2C, canShowLumoUpsellB2B } = useLumoPlan();
 
-    const { hasBlackFridayOffer, hasBlackFridayFreeOffer, hasSpringSaleOffer, hasSpringSaleFreeOffer, loadingOffer } =
-        useOfferFlags();
+    const { hasBlackFridayOffer, hasBlackFridayFreeOffer, loadingOffer } = useOfferFlags();
 
     const guestModal = useModalStateObject();
 
     return useMemo(() => {
         if (loadingOffer) {
             return null;
-        }
-
-        if (hasSpringSaleOffer) {
-            return {
-                getChatCTAContent: () => c('collider_2025: Link').t`upgrade to ${LUMO_SHORT_APP_NAME} Plus.`,
-                onUpgrade: () => openLumoUpsellModal(feature),
-                showInSidebar: hasSpringSaleFreeOffer,
-                showInNavbar: true,
-                showInSettingsModal: hasSpringSaleFreeOffer,
-                hasSpringSaleOffer: true,
-                className: hasSpringSaleFreeOffer
-                    ? 'lumo-spring-sale-2026-promotion lumo-spring-sale-2026-free'
-                    : 'lumo-spring-sale-2026-promotion',
-            };
         }
 
         if (hasBlackFridayOffer) {
@@ -111,7 +96,6 @@ const useLumoPlusUpsellButtonConfig = (feature: UPSELL_FEATURE, options?: Upsell
         loadingOffer,
         hasBlackFridayOffer,
         hasBlackFridayFreeOffer,
-        hasSpringSaleOffer,
         isGuest,
         canShowLumoUpsellFree,
         canShowLumoUpsellB2C,

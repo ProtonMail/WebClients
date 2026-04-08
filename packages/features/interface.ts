@@ -137,39 +137,4 @@ export enum FeatureCode {
     NPSFeedbackDesktopMail = 'NPSFeedbackDesktopMail',
     NPSFeedbackWebCalendar = 'NPSFeedbackWebCalendar',
     NPSFeedbackWebMail = 'NPSFeedbackWebMail',
-
-    // Spring sale 2026
-    // Mail
-    OfferMar26MailPlus = `OfferMar26MailPlus`,
-    OfferMar26MailPlusToYearly = `OfferMar26MailPlusToYearly`,
-    OfferMar26MailPlusRetention = `OfferMar26MailPlusRetention`,
-    OfferMar26MailPlusRetentionExperiment = `OfferMar26MailPlusRetentionExperiment`,
-    // VPN
-    OfferMar26VpnPlus = `OfferMar26VpnPlus`,
-    OfferMar26VpnPlusToYearly = `OfferMar26VpnPlusToYearly`,
-    OfferMar26VpnPlusRetention = `OfferMar26VpnPlusRetention`,
-    OfferMar26VpnPlusRetentionExperiment = `OfferMar26VpnPlusRetentionExperiment`,
-    // Drive
-    OfferMar26DrivePlus = `OfferMar26DrivePlus`,
-    OfferMar26DrivePlusRetention = `OfferMar26DrivePlusRetention`,
-    OfferMar26DrivePlusRetentionExperiment = `OfferMar26DrivePlusRetentionExperiment`,
-    // Pass
-    OfferMar26PassPlus = `OfferMar26PassPlus`,
-    OfferMar26PassPlusRetention = `OfferMar26PassPlusRetention`,
-    OfferMar26PassPlusRetentionExperiment = `OfferMar26PassPlusRetentionExperiment`,
-    // Lumo
-    OfferMar26LumoPlus = `OfferMar26LumoPlus`,
-    OfferMar26LumoPlusToYearly = `OfferMar26LumoPlusToYearly`,
-    OfferMar26LumoPlusRetention = `OfferMar26LumoPlusRetention`,
-    OfferMar26LumoPlusRetentionExperiment = `OfferMar26LumoPlusRetentionExperiment`,
-    // Unlimited
-    OfferMar26UnlimitedFromVpnPlus = `OfferMar26UnlimitedFromVpnPlus`,
-    OfferMar26UnlimitedFromMailPlus = `OfferMar26UnlimitedFromMailPlus`,
-    OfferMar26UnlimitedFromDrivePlus = `OfferMar26UnlimitedFromDrivePlus`,
-    OfferMar26UnlimitedFromPassPlus = `OfferMar26UnlimitedFromPassPlus`,
-    OfferMar26UnlimitedRetention = `OfferMar26UnlimitedRetention`,
-    OfferMar26UnlimitedRetentionExperiment = `OfferMar26UnlimitedRetentionExperiment`,
-    // Multi-user
-    OfferMar26Duo = `OfferMar26Duo`,
-    OfferMar26Family = `OfferMar26Family`,
 }
