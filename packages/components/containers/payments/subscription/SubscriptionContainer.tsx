@@ -4,7 +4,8 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import isEqual from 'lodash/isEqual';
 import { c } from 'ttag';
 
-import { useUser } from '@proton/account/user/hooks';
+import { useGetPaymentMethods } from '@proton/account/paymentMethods/hooks';
+import { useGetUser, useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { useGetCalendars } from '@proton/calendar/calendars/hooks';
@@ -86,6 +87,8 @@ import { useSubscriptionModificationChangeStepTelemetry } from '@proton/payments
 import { PaymentsContextProvider } from '@proton/payments/ui';
 import { VatReverseChargeErrorModal } from '@proton/payments/ui/billing-address/containers/VatReverseChargeErrorModal';
 import { useBillingAddress } from '@proton/payments/ui/billing-address/hooks/useBillingAddress';
+import { usePaymentPollers } from '@proton/payments/ui/hooks/usePaymentPollers';
+import { CacheType } from '@proton/redux-utilities';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/plans';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
@@ -98,7 +101,6 @@ import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import { usePaymentFacade } from '../../../../components/payments/client-extensions';
-import { usePollEvents } from '../../../../components/payments/client-extensions/usePollEvents';
 import type { Operations, OperationsSubscriptionData } from '../../../../components/payments/react-extensions';
 import { usePaymentsApi } from '../../../../components/payments/react-extensions/usePaymentsApi';
 import { useModalTwoPromise } from '../../../components/modalTwo/useModalTwo';
@@ -318,7 +320,6 @@ const SubscriptionContainerInner = ({
     const [user] = useUser();
     const [loading, withLoading] = useLoading();
     const eventManager = useEventManager();
-    const pollEventsMultipleTimes = usePollEvents();
     const [calendarDowngradeModal, showCalendarDowngradeModal] = useModalTwoPromise();
     const { createNotification } = useNotifications();
     const { cancelSubscriptionModals, cancelSubscription } = useCancelSubscriptionFlow({ app });
@@ -336,6 +337,9 @@ const SubscriptionContainerInner = ({
     const meetAddonFlag = useFlag('MeetAddonCustomizer');
     const [upsellModal, setUpsellModal, renderUpsellModal] = useModalState();
     const [plusToPlusUpsell, setPlusToPlusUpsell] = useState<{ unlockPlan: Plan | undefined } | null>(null);
+    const getUser = useGetUser();
+    const getPaymentMethods = useGetPaymentMethods();
+    const { createSubscriptionPoller } = usePaymentPollers();
 
     const {
         showVisionaryDowngradeWarning,
@@ -571,6 +575,7 @@ const SubscriptionContainerInner = ({
         // When user has an error during checkout, we need to return him to the exact same step
         const checkoutStep = model.step;
         try {
+            const pollSubscription = createSubscriptionPoller();
             eventManager.stop();
             setModel((model) => ({ ...model, step: SUBSCRIPTION_STEPS.UPGRADE }));
             try {
@@ -612,7 +617,11 @@ const SubscriptionContainerInner = ({
 
                 throw error;
             }
-            await eventManager.call();
+            await pollSubscription().catch(noop);
+            // These entity may also have gotten updated, let's refetch them.
+            await Promise.all([getUser({ cache: CacheType.None }), getPaymentMethods({ cache: CacheType.None })]).catch(
+                noop
+            );
 
             void metrics.payments_subscription_total.increment({
                 ...metricsProps,
@@ -681,11 +690,7 @@ const SubscriptionContainerInner = ({
                 paymentMethodType: sourceType,
             };
 
-            const promise = withSubscribing(handleSubscribe(operations, context));
-
-            promise.then(() => pollEventsMultipleTimes()).catch(noop);
-
-            return promise.catch(noop);
+            return withSubscribing(handleSubscribe(operations, context)).catch(noop);
         },
         flow: 'subscription',
         telemetryFlow,
