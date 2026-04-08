@@ -2,7 +2,6 @@ import type { UPSELL_FEATURE } from '@proton/shared/lib/constants';
 import { LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
 
 import GetLumoPlusButton from '../primitives/GetLumoPlusButton';
-import { SpringSaleOfferNavbarButton } from '../primitives/SpringSaleOfferNavbarButton';
 import useLumoPlusUpsellButtonConfig from '../useLumoPlusUpsellButtonConfig';
 
 interface LumoNavbarUpsellProps {
@@ -19,13 +18,6 @@ const LumoNavbarUpsell = ({
 
     // Don't show anything if no config or shouldn't show in navbar
     if (!lumoPlusConfig || !lumoPlusConfig.showInNavbar) return null;
-
-    // Prioritize Spring Sale offers when available (keeping as fallback)
-    if (lumoPlusConfig.hasSpringSaleOffer) {
-        return (
-            <SpringSaleOfferNavbarButton onUpgrade={lumoPlusConfig.onUpgrade} className={lumoPlusConfig.className} />
-        );
-    }
 
     // Show regular upgrade button (only if not in "offers only" mode)
     if (!onlyShowOffers) {
