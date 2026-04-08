@@ -42,7 +42,7 @@ import type { ShareId } from '@proton/pass/types/crypto/pass-types';
 import type { AliasOptions } from '@proton/pass/types/data/alias';
 import type { B2BEvent } from '@proton/pass/types/data/b2b';
 import type { FileTransferErrorDTO, FileTransferWriteDTO } from '@proton/pass/types/data/files';
-import type { ItemContent, SelectedItem, UniqueItem } from '@proton/pass/types/data/items';
+import type { UniqueItem } from '@proton/pass/types/data/items';
 import type { AliasCreateRequest } from '@proton/pass/types/data/items.dto';
 import type { TelemetryEventDTO } from '@proton/pass/types/data/telemetry';
 import type { Maybe, MaybeNull, Result } from '@proton/pass/types/utils/index';
@@ -204,7 +204,7 @@ export type AuthUnlockMessage = WithPayload<WorkerMessageType.AUTH_UNLOCK, Unloc
 
 export type AutofillCCMessage = WithPayload<WorkerMessageType.AUTOFILL_CC, AutofillActionDTO>;
 export type AutofillCCQueryMessage = { type: WorkerMessageType.AUTOFILL_CC_QUERY };
-export type AutofillIdentityMessage = WithPayload<WorkerMessageType.AUTOFILL_IDENTITY, SelectedItem>;
+export type AutofillIdentityMessage = WithPayload<WorkerMessageType.AUTOFILL_IDENTITY, AutofillActionDTO>;
 export type AutofillIdentityQueryMessage = { type: WorkerMessageType.AUTOFILL_IDENTITY_QUERY };
 export type AutofillLoginMessage = WithPayload<WorkerMessageType.AUTOFILL_LOGIN, AutofillActionDTO>;
 export type AutofillLoginQueryMessage = WithPayload<WorkerMessageType.AUTOFILL_LOGIN_QUERY, AutofillOptions>;
@@ -406,7 +406,6 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.AUTH_UNLOCK]: Result;
     [WorkerMessageType.AUTOFILL_CC_QUERY]: AutofillCCResult;
     [WorkerMessageType.AUTOFILL_IDENTITY_QUERY]: AutofillIdentityResult;
-    [WorkerMessageType.AUTOFILL_IDENTITY]: ItemContent<'identity'>;
     [WorkerMessageType.AUTOFILL_LOGIN_QUERY]: AutofillLoginResult;
     [WorkerMessageType.AUTOFILL_OTP_CHECK]: { shouldPrompt: false } | ({ shouldPrompt: true } & LoginItemPreview);
     [WorkerMessageType.AUTOFILL_SEQUENCE]: AutofillResult;

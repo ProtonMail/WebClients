@@ -2,7 +2,7 @@ import type { FrameField } from 'proton-pass-extension/types/frames';
 
 import type { CCFieldType } from '@proton/pass/fathom/labels';
 import type { FormCredentials } from '@proton/pass/types';
-import type { SelectedItem } from '@proton/pass/types/data/items';
+import type { ItemContent, SelectedItem } from '@proton/pass/types/data/items';
 import type { CCItemData } from '@proton/pass/types/worker/data';
 
 export type WithAutofillOrigin<T> = T &
@@ -12,8 +12,7 @@ export type WithAutofillOrigin<T> = T &
     };
 
 export type AutofillItem = WithAutofillOrigin<SelectedItem>;
-
-export type AutofillActionType = 'creditCard' | 'login';
+export type AutofillActionType = 'creditCard' | 'login' | 'identity';
 export type AutofillActionDTO = AutofillItem & { type: AutofillActionType; crossFrame: boolean };
 
 export type AutofillSequence<T = {}> =
@@ -43,6 +42,11 @@ export type AutofillRequest<T extends AutofillStatus = AutofillStatus> = Extract
                       data: FormCredentials;
                       field: FrameField;
                   }
+                | {
+                      type: 'identity';
+                      data: ItemContent<'identity'>;
+                      field: FrameField;
+                  }
             )
     >,
     { status: T }
@@ -57,4 +61,5 @@ export type AutofillResult =
            * filling ensuring we never autofill more than twice.. */
           autofilled: CCFieldType[];
       }
-    | { type: 'login' };
+    | { type: 'login' }
+    | { type: 'identity' };
