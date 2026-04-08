@@ -2053,8 +2053,7 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
-        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
+        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo los elementos"
@@ -5228,6 +5227,9 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "La suscripción no le permite crear varias bóvedas. Todos los elementos serán importados a la primera bóveda. Para importar a varias bóvedas mejore la suscripción."
+      ],
+      "Offline": [
+        "Sin conexión"
       ]
     }
   }

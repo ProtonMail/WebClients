@@ -2651,6 +2651,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "あなたの組織では、 ${ PASS_APP_NAME }へのアクセスの安全性を要求しています"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "アイテムを別の保管庫に移動すると、そのアイテムのセキュアリンクはすべて消去されます。"
       ]
     },
     "Keyboard key": {
@@ -5084,6 +5087,9 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "あなたのサブスクリプションでは、複数の保管庫を作成することはできません。すべてのアイテムは最初の保管庫にインポートされます。複数の保管庫にインポートするには、サブスクリプションをアップグレードしてください。"
+      ],
+      "Offline": [
+        "オフライン"
       ]
     }
   }
