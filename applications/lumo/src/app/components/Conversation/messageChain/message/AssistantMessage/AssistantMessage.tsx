@@ -237,16 +237,12 @@ const AssistantMessage = ({
             <div className="gap-2 relative w-full">
                 {shouldShow && (
                     <div
-                        // ref={markdownContainerRef}
                         className="assistant-msg-container w-full flex flex-row flex-nowrap rounded-xl p-bg-norm"
                         style={{
                             '--min-h-custom': '62px',
                         }}
                     >
-                        <div
-                            ref={markdownContainerRef}
-                            className="w-full flex *:min-size-auto flex-nowrap items-start flex-column gap-2"
-                        >
+                        <div className="w-full flex *:min-size-auto flex-nowrap items-start flex-column gap-2">
                             <DebugInfo
                                 isLoading={isLoading || false}
                                 hasToolCall={hasToolCall}
@@ -268,6 +264,7 @@ const AssistantMessage = ({
                                             isLastMessage={isLastMessage}
                                             handleLinkClick={handleLinkClick}
                                             sourcesContainerRef={sourcesContainerRef}
+                                            messageContentContainerRef={markdownContainerRef}
                                             reasoning={message.reasoning}
                                             toolCallResults={searchResults}
                                         />
