@@ -156,9 +156,7 @@ export function sendMessage({
         // NOT be assigned to the space (they are ephemeral context, not project uploads).
         const fileReferences = parseFileReferences(m.content);
         const referencedFileNames = new Set(fileReferences.map((ref) => ref.fileName.toLowerCase()));
-        const uploadedAttachments = m.attachments.filter(
-            (att) => !referencedFileNames.has(att.filename.toLowerCase())
-        );
+        const uploadedAttachments = m.attachments.filter((att) => !referencedFileNames.has(att.filename.toLowerCase()));
 
         // Create the new messages (user and assistant)
         const lastMessage = c.messageChain.at(-1);
@@ -200,8 +198,6 @@ export function sendMessage({
 
         // Update navigation and siblings preference
         updateUi(userMessage, conversationId, ui);
-
-        const noAttachment = m.attachments.length === 0;
 
         // Get project instructions from space if this is a project conversation
         let projectInstructions: string | undefined;
@@ -309,12 +305,9 @@ export function sendMessage({
             // files; the RAG results are not yet loaded from Redux, so without this they are dropped.
             const updatedC: ConversationContext = ragResult?.attachments?.length
                 ? {
-                    ...c,
-                    allConversationAttachments: [
-                        ...c.allConversationAttachments,
-                        ...ragResult.attachments,
-                    ],
-                }
+                      ...c,
+                      allConversationAttachments: [...c.allConversationAttachments, ...ragResult.attachments],
+                  }
                 : c;
 
             const turns = prepareTurns(
@@ -330,7 +323,7 @@ export function sendMessage({
                     conversationId,
                     spaceId,
                     signal: a.signal,
-                    enableExternalTools: noAttachment && ui.enableExternalTools,
+                    enableExternalTools: ui.enableExternalTools,
                     enableImageTools: ui.enableImageTools,
                     generateTitle,
                     config: {
