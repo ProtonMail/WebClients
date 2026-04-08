@@ -8,7 +8,7 @@ import { useFolderViewBreadcrumbs } from './useFolderViewBreadcrumbs';
 
 type FolderViewBreadcrumbsProps = {
     nodeUid: string;
-    createHandleItemDrop: (newParentUid: string) => (e: React.DragEvent<Element>) => Promise<void>;
+    createHandleItemDrop: (newParentUid: string) => (e: React.DragEvent<Element>) => void;
 };
 
 export const FolderViewBreadcrumbs = ({ nodeUid, createHandleItemDrop }: FolderViewBreadcrumbsProps) => {
