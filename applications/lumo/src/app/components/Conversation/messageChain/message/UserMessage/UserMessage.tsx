@@ -212,7 +212,7 @@ const UserMessage = ({
     };
 
     return (
-        <div className="flex flex-column flex-nowrap gap-2">
+        <div className={clsx('flex flex-column flex-nowrap gap-2', isEditing && 'w-full')}>
             {hasAttachments && (!isCollapsed || isEditing) && (
                 <div className={clsx('overflow-x-scroll flex-nowrap min-w-full max-w-full flex flex-row gap-3')}>
                     {manualAttachments.map((attachment) => (
@@ -265,7 +265,7 @@ const UserMessage = ({
                 {!isEditing && (
                     <div
                         className={clsx(
-                            "user-toolbar flex *:min-size-auto flex-row flex-nowrap gap-1 absolute bottom-custom right-0 p-1 items-center",
+                            'user-toolbar flex *:min-size-auto flex-row flex-nowrap gap-1 absolute bottom-custom right-0 p-1 items-center',
                             !isMobile && 'group-hover:opacity-100'
                         )}
                         style={{ '--bottom-custom': '-1.5rem' }}
