@@ -476,6 +476,117 @@ describe('message counts - label messages', () => {
         });
     });
 
+    describe('Move to INBOX', () => {
+        it('should increase category counter when moving from TRASH to INBOX', () => {
+            const message1 = {
+                ID: 'message1',
+                Unread: 1,
+                LabelIDs: [MAILBOX_LABEL_IDS.TRASH, MAILBOX_LABEL_IDS.ALL_MAIL, MAILBOX_LABEL_IDS.CATEGORY_SOCIAL],
+            } as MessageMetadata;
+
+            labelMessages(state, {
+                type: 'mailbox/labelMessages',
+                payload: {
+                    messages: [message1],
+                    sourceLabelID: MAILBOX_LABEL_IDS.TRASH,
+                    destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
+                    labels: customLabels,
+                    folders: customFolders,
+                },
+            });
+
+            const updatedCounters = state.value as LabelCount[];
+
+            const trashCount = updatedCounters.find((c) => c.LabelID === MAILBOX_LABEL_IDS.TRASH);
+            expect(trashCount).toEqual({ LabelID: MAILBOX_LABEL_IDS.TRASH, Unread: 0, Total: 4 });
+
+            const inboxCount = updatedCounters.find((c) => c.LabelID === MAILBOX_LABEL_IDS.INBOX);
+            expect(inboxCount).toEqual({ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 6, Total: 11 });
+
+            const categoryCount = updatedCounters.find((c) => c.LabelID === MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
+            expect(categoryCount).toEqual({ LabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, Unread: 2, Total: 3 });
+
+            checkUpdatedCounters({
+                updatedCounters,
+                skippedLabelIDs: [MAILBOX_LABEL_IDS.TRASH, MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.CATEGORY_SOCIAL],
+            });
+        });
+
+        it('should increase category counter when moving from ARCHIVE to INBOX', () => {
+            const message1 = {
+                ID: 'message1',
+                Unread: 0,
+                LabelIDs: [
+                    MAILBOX_LABEL_IDS.ARCHIVE,
+                    MAILBOX_LABEL_IDS.ALL_MAIL,
+                    MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                    MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                ],
+            } as MessageMetadata;
+
+            labelMessages(state, {
+                type: 'mailbox/labelMessages',
+                payload: {
+                    messages: [message1],
+                    sourceLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                    destinationLabelID: MAILBOX_LABEL_IDS.INBOX,
+                    labels: customLabels,
+                    folders: customFolders,
+                },
+            });
+
+            const updatedCounters = state.value as LabelCount[];
+
+            const archiveCount = updatedCounters.find((c) => c.LabelID === MAILBOX_LABEL_IDS.ARCHIVE);
+            expect(archiveCount).toEqual({ LabelID: MAILBOX_LABEL_IDS.ARCHIVE, Unread: 1, Total: 1 });
+
+            const inboxCount = updatedCounters.find((c) => c.LabelID === MAILBOX_LABEL_IDS.INBOX);
+            expect(inboxCount).toEqual({ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 5, Total: 11 });
+
+            const categoryCount = updatedCounters.find((c) => c.LabelID === MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
+            expect(categoryCount).toEqual({ LabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, Unread: 1, Total: 3 });
+
+            checkUpdatedCounters({
+                updatedCounters,
+                skippedLabelIDs: [
+                    MAILBOX_LABEL_IDS.ARCHIVE,
+                    MAILBOX_LABEL_IDS.INBOX,
+                    MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                ],
+            });
+        });
+
+        it('should not decrease category counter when message was not in INBOX', () => {
+            const message1 = {
+                ID: 'message1',
+                Unread: 1,
+                LabelIDs: [MAILBOX_LABEL_IDS.TRASH, MAILBOX_LABEL_IDS.ALL_MAIL, MAILBOX_LABEL_IDS.CATEGORY_SOCIAL],
+            } as MessageMetadata;
+
+            labelMessages(state, {
+                type: 'mailbox/labelMessages',
+                payload: {
+                    messages: [message1],
+                    sourceLabelID: MAILBOX_LABEL_IDS.TRASH,
+                    destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                    labels: customLabels,
+                    folders: customFolders,
+                },
+            });
+
+            const updatedCounters = state.value as LabelCount[];
+
+            // Category counter should NOT change because message was in TRASH, not INBOX
+            const categoryCount = updatedCounters.find((c) => c.LabelID === MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
+            expect(categoryCount).toEqual({ LabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, Unread: 1, Total: 2 });
+
+            checkUpdatedCounters({
+                updatedCounters,
+                skippedLabelIDs: [MAILBOX_LABEL_IDS.TRASH, MAILBOX_LABEL_IDS.ARCHIVE],
+            });
+        });
+    });
+
     describe('Default scenario', () => {
         it('should increase new folder counters, decrease old folder counters', () => {
             const message1 = {
