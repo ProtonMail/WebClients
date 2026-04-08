@@ -14,15 +14,8 @@ import {
     markMessagesAsUnreadPending,
 } from './messagesReducer';
 
-jest.mock('../messagesSelectors', () => ({
-    messageByID: jest.fn(),
-    messagesByConversationID: jest.fn(),
-}));
-
-const { messageByID, messagesByConversationID } = require('../messagesSelectors');
-
 describe('messagesReducer', () => {
-    beforeEach(() => {
+    afterEach(() => {
         jest.clearAllMocks();
     });
 
@@ -69,6 +62,75 @@ describe('messagesReducer', () => {
             messageByID.mockReturnValue(messageState);
 
             markMessagesAsUnreadPending(state, action);
+
+            expect(messageState.data?.Unread).toBe(1);
+        });
+
+        it('should mark read messages from category as unread when in Inbox', () => {
+            const messageState: MessageState = {
+                localID: 'msg1',
+                data: {
+                    ID: 'msg1',
+                    Unread: 0,
+                    LabelIDs: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS],
+                } as Message,
+            };
+
+            const state = {
+                msg1: messageState,
+            } as Draft<MessagesState>;
+
+            // messageByID.mockReturnValue(messageState);
+            markMessagesAsUnreadPending(state, {
+                type: 'markMessageUnread/pending',
+                payload: undefined,
+                meta: {
+                    arg: {
+                        messages: [
+                            {
+                                ID: 'msg1',
+                                Unread: 0,
+                                LabelIDs: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS],
+                            } as MessageMetadata,
+                        ],
+                        labelID: MAILBOX_LABEL_IDS.INBOX,
+                    },
+                },
+            });
+
+            expect(messageState.data?.Unread).toBe(1);
+        });
+
+        it('should mark read messages from category as unread when in Trash and not in Inbox', () => {
+            const messageState: MessageState = {
+                localID: 'msg1',
+                data: {
+                    ID: 'msg1',
+                    Unread: 0,
+                    LabelIDs: [MAILBOX_LABEL_IDS.TRASH, MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS],
+                } as Message,
+            };
+
+            const state = {
+                msg1: messageState,
+            } as Draft<MessagesState>;
+
+            markMessagesAsUnreadPending(state, {
+                type: 'markMessageUnread/pending',
+                payload: undefined,
+                meta: {
+                    arg: {
+                        messages: [
+                            {
+                                ID: 'msg1',
+                                Unread: 0,
+                                LabelIDs: [MAILBOX_LABEL_IDS.TRASH, MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS],
+                            } as MessageMetadata,
+                        ],
+                        labelID: MAILBOX_LABEL_IDS.TRASH,
+                    },
+                },
+            });
 
             expect(messageState.data?.Unread).toBe(1);
         });
