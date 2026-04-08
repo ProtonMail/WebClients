@@ -1339,5 +1339,116 @@ describe('conversationsReducers', () => {
             const updatedMessage = updatedConversationState!.Messages!.find((m) => m.ID === messageID1);
             expect(updatedMessage!.LabelIDs).toContain(MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
         });
+
+        it('should replace old category with new category and keep everything else unchanged', () => {
+            const categoryMessage: Message = {
+                ID: messageID1,
+                ConversationID: conversationID,
+                Unread: 1,
+                Order: 1,
+                LabelIDs: [
+                    MAILBOX_LABEL_IDS.INBOX,
+                    MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                    MAILBOX_LABEL_IDS.ALL_MAIL,
+                    MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                    MAILBOX_LABEL_IDS.STARRED,
+                ],
+                Flags: 1,
+            } as Message;
+
+            const categoryConversation = {
+                ID: conversationID,
+                Subject: 'Test Conversation',
+                ContextNumUnread: 1,
+                NumUnread: 1,
+                NumMessages: 1,
+                NumAttachments: 0,
+                Labels: [
+                    {
+                        ID: MAILBOX_LABEL_IDS.INBOX,
+                        ContextNumMessages: 1,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                        ContextNumMessages: 1,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                        ContextNumMessages: 1,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                        ContextNumMessages: 1,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.STARRED,
+                        ContextNumMessages: 1,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 0,
+                    },
+                ],
+            } as Conversation;
+
+            state = {
+                [conversationID]: {
+                    Conversation: categoryConversation,
+                    Messages: [categoryMessage],
+                    loadRetry: 0,
+                    errors: { network: [], unknown: [] },
+                },
+            } as Draft<ConversationsState>;
+
+            labelConversationsPending(state, {
+                type: 'mailbox/labelConversations/pending',
+                payload: undefined,
+                meta: {
+                    arg: {
+                        conversations: [categoryConversation],
+                        sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
+                        destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+                        labels: [] as Label[],
+                        folders: [] as Folder[],
+                    },
+                },
+            });
+
+            const updated = state[conversationID]!;
+
+            // Old category should be removed (ContextNumMessages zeroed, then filtered)
+            const oldCategory = updated.Conversation.Labels!.find((l) => l.ID === MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
+            expect(oldCategory).toBeUndefined();
+
+            // New category should be added
+            const newCategory = updated.Conversation.Labels!.find(
+                (l) => l.ID === MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS
+            );
+            expect(newCategory).toBeDefined();
+            expect(newCategory?.ContextNumMessages).toBe(1);
+
+            // INBOX should be unchanged
+            const inboxLabel = updated.Conversation.Labels!.find((l) => l.ID === MAILBOX_LABEL_IDS.INBOX);
+            expect(inboxLabel).toBeDefined();
+            expect(inboxLabel?.ContextNumMessages).toBe(1);
+
+            // STARRED should be unchanged
+            const starredLabel = updated.Conversation.Labels!.find((l) => l.ID === MAILBOX_LABEL_IDS.STARRED);
+            expect(starredLabel).toBeDefined();
+            expect(starredLabel?.ContextNumMessages).toBe(1);
+
+            // Message should have new category, not old, and keep INBOX + STARRED
+            const updatedMessage = updated.Messages!.find((m) => m.ID === messageID1);
+            expect(updatedMessage!.LabelIDs).toContain(MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS);
+            expect(updatedMessage!.LabelIDs).not.toContain(MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
+            expect(updatedMessage!.LabelIDs).toContain(MAILBOX_LABEL_IDS.INBOX);
+            expect(updatedMessage!.LabelIDs).toContain(MAILBOX_LABEL_IDS.STARRED);
+        });
     });
 });
