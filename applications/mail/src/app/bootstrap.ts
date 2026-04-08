@@ -178,7 +178,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
 
         if (unleashClient.isEnabled('EncryptedSearchMigrationSystem')) {
             const shouldLoad = await shouldLoadMigrationWorker(userData.user);
-            const canLoad = canLoadRunner();
+            const canLoad = await canLoadRunner();
 
             if (shouldLoad && canLoad) {
                 void migrationToolWorker({
