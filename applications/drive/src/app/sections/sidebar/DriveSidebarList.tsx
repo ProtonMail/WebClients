@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 
 import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
@@ -7,8 +7,11 @@ import { Loader, SidebarList } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
 import { useUserSettings } from '../../hooks/user';
-import { type ShareWithKey, useDriveSharingFlags } from '../../store';
-import { DevicesSidebar } from '../devices/connectedComponents/DevicesSidebar';
+import type { directoryTreeFactory } from '../../modules/directoryTree';
+import { DirectoryTreeRootType } from '../../modules/directoryTree/types';
+import { useDriveSharingFlags } from '../../store';
+import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
+import { DevicesSidebar } from './DriveSidebarDevices/DevicesSidebar';
 import { DriveSidebarFolders } from './DriveSidebarFolders/DriveSidebarFolders';
 import { DriveSidebarListItem } from './DriveSidebarListItem';
 import { DriveSidebarSharedWithMe } from './DriveSidebarSharedWithMe/DriveSidebarSharedWithMe';
@@ -16,7 +19,7 @@ import { useSidebarStore } from './hooks/useSidebar.store';
 
 type DriveSidebarListProps = {
     shareId?: string;
-    userShares: ShareWithKey[];
+    store: ReturnType<ReturnType<typeof directoryTreeFactory>>;
 };
 
 export type TreeNodeItem = {
@@ -32,15 +35,25 @@ export type SimpleNode = {
     name: string;
 };
 
-export const DriveSidebarList = ({ shareId, userShares }: DriveSidebarListProps) => {
+export const DriveSidebarList = ({ shareId, store }: DriveSidebarListProps) => {
     const { photosEnabled } = useUserSettings();
-    const { rootFolder, isCollapsed, sidebarLevel } = useSidebarStore(
+    const { treeRoots, initializeTree, toggleExpand, expandedTreeIds } = store;
+    const { isCollapsed, sidebarLevel } = useSidebarStore(
         useShallow((state) => ({
-            rootFolder: state.getRootFolder(),
             isCollapsed: state.isCollapsed,
             sidebarLevel: state.sidebarLevel,
         }))
     );
+
+    const myFilesRoot = useMemo(() => treeRoots.find((d) => d.type === DirectoryTreeRootType.FilesRoot), [treeRoots]);
+    const devicesRoot = useMemo(() => treeRoots.find((d) => d.type === DirectoryTreeRootType.DevicesRoot), [treeRoots]);
+
+    useEffect(() => {
+        const initTree = async () => {
+            await initializeTree().catch(handleSdkError);
+        };
+        void initTree();
+    }, [initializeTree]);
 
     const sidebarWidth = useMemo(() => {
         const extraWidth = Math.floor(sidebarLevel / 7) * 50;
@@ -52,16 +65,13 @@ export const DriveSidebarList = ({ shareId, userShares }: DriveSidebarListProps)
 
     return (
         <SidebarList style={{ width: sidebarWidth, maxWidth: sidebarWidth }}>
-            {/* TODO: There is only one rootShare, we should only include the default one*/}
-            {userShares.length && rootFolder ? (
-                userShares.map((userShare) => (
-                    <DriveSidebarFolders
-                        key={userShare.shareId}
-                        rootFolder={rootFolder}
-                        shareId={userShare.shareId}
-                        linkId={userShare.rootLinkId}
-                    />
-                ))
+            {myFilesRoot ? (
+                <DriveSidebarFolders
+                    rootFolder={myFilesRoot}
+                    toggleExpand={toggleExpand}
+                    isExpanded={!!expandedTreeIds.get(myFilesRoot.treeItemId)}
+                    isCollapsed={isCollapsed}
+                />
             ) : (
                 <DriveSidebarListItem to="/" icon="inbox" collapsed={isCollapsed}>
                     <span className="text-ellipsis">{c('Title').t`My files`}</span>
@@ -69,7 +79,14 @@ export const DriveSidebarList = ({ shareId, userShares }: DriveSidebarListProps)
                 </DriveSidebarListItem>
             )}
 
-            <DevicesSidebar collapsed={isCollapsed} />
+            {devicesRoot && (
+                <DevicesSidebar
+                    deviceRoot={devicesRoot}
+                    toggleExpand={toggleExpand}
+                    isExpanded={!!expandedTreeIds.get(devicesRoot.treeItemId)}
+                    isCollapsed={isCollapsed}
+                />
+            )}
 
             {photosEnabled && (
                 <DriveSidebarListItem to="/photos" icon="image" collapsed={isCollapsed}>

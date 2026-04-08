@@ -22,6 +22,13 @@ export interface TreeStoreItem {
     isSharedWithMe: boolean;
     treeEventScopeId?: string;
     highestEffectiveRole?: MemberRole;
+    deprecatedShareId?: string;
+    // This flag is false if the item has never tried to load its children
+    // after loading it remains true regardless of the item having children
+    hasLoadedChildren?: boolean;
+    // This flag is true if the item has children
+    // it maintains its value even if the `children` prop is emptied after collapsing the branch
+    hasChildren?: boolean;
 }
 
 export type DirectoryTreeStore = ReturnType<typeof directoryTreeStoreFactory>;
