@@ -176,4 +176,44 @@ describe('markMessagesAsUnread', () => {
             { LabelID: 'customLabel', Unread: 40, Total: 1 },
         ]);
     });
+
+    it('does not increment category counter when message is in Trash but not Inbox', () => {
+        const state = makeState([
+            { LabelID: MAILBOX_LABEL_IDS.TRASH, Unread: 0, Total: 2 },
+            { LabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, Unread: 0, Total: 2 },
+        ]);
+
+        markMessagesAsUnread(state, {
+            type: 'mailbox/markMessagesAsUnread',
+            payload: {
+                messages: [makeMessage([MAILBOX_LABEL_IDS.TRASH, MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS], 0)],
+                labelID: MAILBOX_LABEL_IDS.TRASH,
+            },
+        });
+
+        expect(state.value).toEqual([
+            { LabelID: MAILBOX_LABEL_IDS.TRASH, Unread: 1, Total: 2 },
+            { LabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, Unread: 0, Total: 2 },
+        ]);
+    });
+
+    it('does not increment category counter when message is in Starred but not Inbox', () => {
+        const state = makeState([
+            { LabelID: MAILBOX_LABEL_IDS.STARRED, Unread: 0, Total: 2 },
+            { LabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, Unread: 0, Total: 2 },
+        ]);
+
+        markMessagesAsUnread(state, {
+            type: 'mailbox/markMessagesAsUnread',
+            payload: {
+                messages: [makeMessage([MAILBOX_LABEL_IDS.STARRED, MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS], 0)],
+                labelID: MAILBOX_LABEL_IDS.STARRED,
+            },
+        });
+
+        expect(state.value).toEqual([
+            { LabelID: MAILBOX_LABEL_IDS.STARRED, Unread: 1, Total: 2 },
+            { LabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, Unread: 0, Total: 2 },
+        ]);
+    });
 });
