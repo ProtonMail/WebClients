@@ -46,7 +46,14 @@ export class VideoHandler extends BaseHandler {
         }
 
         const testVideo = document.createElement('video');
-        const canPlay = testVideo.canPlayType(originalMimeType);
+        let canPlay = testVideo.canPlayType(originalMimeType);
+        // MOV (video/quicktime) and MP4 share the same ISO BMFF container.
+        // Browsers often reject 'video/quicktime' in canPlayType while still
+        // being able to decode the underlying H.264/AAC streams, so fall back
+        // to checking 'video/mp4' for QuickTime files.
+        if (canPlay === '' && originalMimeType === 'video/quicktime') {
+            canPlay = testVideo.canPlayType('video/mp4');
+        }
         if (canPlay === '') {
             throw new UnsupportedFormatError('video format not supported by browser', {
                 context: {
