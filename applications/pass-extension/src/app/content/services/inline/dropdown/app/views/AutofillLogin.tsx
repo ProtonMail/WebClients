@@ -116,10 +116,10 @@ export const AutofillLogin: FC<Props> = ({ startsWith, action, ...payload }) => 
                                           type: InlinePortMessageType.AUTOFILL_ACTION,
                                           payload: {
                                               ...payload,
+                                              type: 'login',
                                               itemId,
                                               shareId,
                                               crossFrame: false,
-                                              type: 'login',
                                           },
                                       });
                                       controller.close({ userAction: true });

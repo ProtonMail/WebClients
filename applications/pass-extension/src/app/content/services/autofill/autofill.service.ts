@@ -262,16 +262,31 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
                         .then((autofilled) => ({ type: payload.type, autofilled: autofilled.flat() }))
                         .catch(() => ({ type: payload.type, autofilled: [] }));
 
-                case 'login':
+                case 'login': {
                     const form = ctx?.service.formManager.getFormById(payload.field.formId);
+                    const field = form?.getFieldById(payload.field.fieldId);
 
-                    if (form) {
+                    if (form && field) {
                         await autofillLogin(form, payload.data)
-                            .then(() => form.getFieldById(payload.field.fieldId)?.focus({ preventAction: true }))
+                            .then(() => field?.focus({ preventAction: true }))
                             .catch(noop);
                     }
 
                     return { type: payload.type };
+                }
+
+                case 'identity': {
+                    const form = ctx?.service.formManager.getFormById(payload.field.formId);
+                    const field = form?.getFieldById(payload.field.fieldId);
+
+                    if (form && field) {
+                        await autofillIdentity(field, payload.data)
+                            .then(() => field.focus({ preventAction: true }))
+                            .catch(noop);
+                    }
+
+                    return { type: payload.type };
+                }
             }
         }
     );

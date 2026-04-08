@@ -296,10 +296,28 @@ export const createAutoFillService = () => {
 
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.AUTOFILL_IDENTITY,
-        onContextReady(async (_, message) => {
-            const identity = getIdentity(message.payload);
-            if (!identity) throw new Error('Could not get identity for autofill request');
-            return identity;
+        onContextReady(async (_, { payload }, sender) => {
+            const tabId = sender.tab?.id;
+            const { fieldId, formId, frameId, itemId, shareId } = payload;
+            const credentials = getIdentity(payload);
+            if (!(credentials && tabId)) throw new Error('Could not get identity for autofill request');
+
+            await sendTabMessage(
+                backgroundMessage({
+                    type: WorkerMessageType.AUTOFILL_SEQUENCE,
+                    payload: {
+                        status: 'fill',
+                        type: 'identity',
+                        data: credentials,
+                        field: { fieldId, frameId, formId },
+                        itemId,
+                        shareId,
+                    },
+                }),
+                { tabId, frameId }
+            );
+
+            return true;
         })
     );
 

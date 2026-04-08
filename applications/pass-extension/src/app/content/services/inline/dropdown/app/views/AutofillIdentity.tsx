@@ -28,7 +28,7 @@ import noop from '@proton/utils/noop';
 
 type Props = Extract<DropdownActions, { action: DropdownAction.AUTOFILL_IDENTITY }>;
 
-export const AutofillIdentity: FC<Props> = ({ origin }) => {
+export const AutofillIdentity: FC<Props> = ({ action, ...payload }) => {
     const { visible } = useIFrameAppState();
     const controller = useIFrameAppController();
 
@@ -80,21 +80,20 @@ export const AutofillIdentity: FC<Props> = ({ origin }) => {
                               title={name}
                               subTitle={fullName || c('Title').t`Identity`}
                               icon={{ type: 'icon', icon: 'card-identity' }}
-                              onClick={() =>
-                                  sendMessage.onSuccess(
-                                      contentScriptMessage({
-                                          type: WorkerMessageType.AUTOFILL_IDENTITY,
-                                          payload: { shareId, itemId },
-                                      }),
-                                      (fields) => {
-                                          controller.forwardMessage({
-                                              type: InlinePortMessageType.AUTOFILL_IDENTITY,
-                                              payload: fields,
-                                          });
-                                          controller.close({ userAction: true });
-                                      }
-                                  )
-                              }
+                              onClick={() => {
+                                  controller.forwardMessage({
+                                      type: InlinePortMessageType.AUTOFILL_ACTION,
+                                      payload: {
+                                          ...payload,
+                                          type: 'identity',
+                                          itemId,
+                                          shareId,
+                                          crossFrame: false,
+                                      },
+                                  });
+
+                                  controller.close({ userAction: true });
+                              }}
                           />
                       )),
                   ].filter(truthy)
@@ -112,7 +111,7 @@ export const AutofillIdentity: FC<Props> = ({ origin }) => {
                     <PauseListDropdown
                         criteria="Autofill"
                         dense
-                        hostname={origin}
+                        hostname={payload.origin}
                         label={c('Action').t`Do not suggest on this website`}
                     />
                 }
