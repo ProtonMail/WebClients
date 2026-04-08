@@ -21,7 +21,6 @@ const NBSP_HTML = '\u00A0';
 
 export interface Props {
     methods: SavedPaymentMethod[];
-    loading: boolean;
     app: APP_NAMES;
 }
 
@@ -79,8 +78,8 @@ const MethodCell = ({ method }: { method: SavedPaymentMethod }) => {
     return null;
 };
 
-const PaymentMethodsTable = ({ methods, loading, app }: Props) => {
-    if (!loading && !methods.length) {
+const PaymentMethodsTable = ({ methods, app }: Props) => {
+    if (!methods.length) {
         return <p data-testid="no-payments">{c('Info').t`You have no saved payment methods.`}</p>;
     }
 
@@ -93,7 +92,7 @@ const PaymentMethodsTable = ({ methods, loading, app }: Props) => {
                     c('Title for payment methods table').t`Actions`,
                 ]}
             />
-            <TableBody loading={loading} colSpan={3}>
+            <TableBody colSpan={3}>
                 {methods.map((method) => {
                     return (
                         <TableRow

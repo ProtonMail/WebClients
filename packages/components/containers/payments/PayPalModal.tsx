@@ -6,38 +6,45 @@ import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
+import useLoading from '@proton/hooks/useLoading';
 import { ChargebeePaypalButton } from '@proton/payments/ui';
+import { usePaymentPollers } from '@proton/payments/ui/hooks/usePaymentPollers';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import noop from '@proton/utils/noop';
 
 const PAYMENT_AUTHORIZATION_AMOUNT = 100;
 const PAYMENT_AUTHORIZATION_CURRENCY = 'CHF';
 
-type PaypalV5Props = ModalProps & {
-    onMethodAdded: () => void;
+type PayPalModalProps = ModalProps & {
     app: APP_NAMES;
 };
 
-export const PayPalV5Modal = ({ onClose, onMethodAdded, app, ...rest }: PaypalV5Props) => {
+export const PayPalModal = ({ onClose, app, ...rest }: PayPalModalProps) => {
     const { createNotification } = useNotifications();
     const [user] = useUser();
+    const { createPaymentMethodsPoller } = usePaymentPollers();
+    const [savingPaypal, withSavingPaypal] = useLoading();
 
     const paymentFacade = usePaymentFacade({
         amount: PAYMENT_AUTHORIZATION_AMOUNT,
         currency: PAYMENT_AUTHORIZATION_CURRENCY,
         flow: 'add-paypal',
-        onChargeable: async ({ savePaymentMethod }) => {
-            try {
-                await savePaymentMethod();
-
-                onClose?.();
-                onMethodAdded();
-                createNotification({ text: c('Success').t`Payment method added` });
-            } catch (error: any) {
-                if (error && error.message && !error.config) {
-                    createNotification({ text: error.message, type: 'error' });
+        onChargeable: ({ savePaymentMethod }) => {
+            withSavingPaypal(async () => {
+                try {
+                    const pollPaymentMethods = createPaymentMethodsPoller();
+                    await savePaymentMethod();
+                    // Poll until the new payment method has been added.
+                    await pollPaymentMethods().catch(noop);
+                    createNotification({ text: c('Success').t`Payment method added` });
+                    onClose?.();
+                } catch (error: any) {
+                    if (error && error.message && !error.config) {
+                        createNotification({ text: error.message, type: 'error' });
+                    }
                 }
-            }
+            }).catch(noop);
         },
         user,
         product: app,
@@ -54,6 +61,7 @@ export const PayPalV5Modal = ({ onClose, onMethodAdded, app, ...rest }: PaypalV5
                     width="100%"
                     chargebeePaypal={paymentFacade.chargebeePaypal}
                     iframeHandles={paymentFacade.iframeHandles}
+                    loading={savingPaypal}
                 />,
                 <Button onClick={onClose}>{c('Action').t`Cancel`}</Button>,
             ]}
