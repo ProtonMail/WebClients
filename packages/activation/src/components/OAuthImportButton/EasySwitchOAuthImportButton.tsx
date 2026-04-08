@@ -1,9 +1,8 @@
 import { c } from 'ttag';
 
+import { useProductSelectionSubmit } from '@proton/activation/src/components/Modals/ProductSelectionModal/useProductSelectionSubmit';
 import type { EASY_SWITCH_SOURCES, ImportType } from '@proton/activation/src/interface';
 import { ImportProvider } from '@proton/activation/src/interface';
-import { startOauthDraft } from '@proton/activation/src/logic/draft/oauthDraft/oauthDraft.actions';
-import { useEasySwitchDispatch } from '@proton/activation/src/logic/store';
 
 import GoogleButton from './GoogleButton';
 import OutlookButton from './OutlookButton';
@@ -12,23 +11,17 @@ type AllowedImporter = ImportProvider.GOOGLE | ImportProvider.OUTLOOK;
 interface Props {
     className?: string;
     source: EASY_SWITCH_SOURCES;
-    defaultCheckedTypes: ImportType[];
+    products: ImportType[];
     onClick?: () => void;
     provider: AllowedImporter;
     isDropdownButton?: boolean;
 }
 
-const OAuthImportButton = ({ className, provider, defaultCheckedTypes, source, onClick, isDropdownButton }: Props) => {
-    const dispatch = useEasySwitchDispatch();
+const EasySwitchOauthImportButton = ({ className, provider, products, source, onClick, isDropdownButton }: Props) => {
+    const { handleSubmit } = useProductSelectionSubmit();
 
     const handleClick = () => {
-        dispatch(
-            startOauthDraft({
-                source,
-                provider,
-                products: defaultCheckedTypes,
-            })
-        );
+        handleSubmit(provider, products, source);
         onClick?.();
     };
 
@@ -57,4 +50,4 @@ const OAuthImportButton = ({ className, provider, defaultCheckedTypes, source, o
     return null;
 };
 
-export default OAuthImportButton;
+export default EasySwitchOauthImportButton;
