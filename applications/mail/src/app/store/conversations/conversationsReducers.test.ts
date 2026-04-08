@@ -16,9 +16,6 @@ import {
 import type { ConversationState, ConversationsState } from './conversationsTypes';
 
 describe('conversationsReducers', () => {
-    const inboxLabelID = MAILBOX_LABEL_IDS.INBOX;
-    const archiveLabelID = MAILBOX_LABEL_IDS.ARCHIVE;
-    const draftLabelID = MAILBOX_LABEL_IDS.DRAFTS;
     const conversationID = 'conversation-1';
     const messageID1 = 'message-1';
     const messageID2 = 'message-2';
@@ -37,7 +34,7 @@ describe('conversationsReducers', () => {
             ConversationID: conversationID,
             Unread: 1,
             Order: 1,
-            LabelIDs: [inboxLabelID, MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS],
+            LabelIDs: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS],
             Flags: 1, // FLAG_RECEIVED
         } as Message;
 
@@ -46,7 +43,7 @@ describe('conversationsReducers', () => {
             ConversationID: conversationID,
             Unread: 1,
             Order: 2,
-            LabelIDs: [inboxLabelID, archiveLabelID],
+            LabelIDs: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.ARCHIVE],
             Flags: 1, // FLAG_RECEIVED
         } as Message;
 
@@ -55,7 +52,7 @@ describe('conversationsReducers', () => {
             ConversationID: conversationID,
             Unread: 0,
             Order: 3,
-            LabelIDs: [draftLabelID],
+            LabelIDs: [MAILBOX_LABEL_IDS.DRAFTS],
             Flags: 1, // FLAG_RECEIVED
         } as Message;
 
@@ -66,15 +63,15 @@ describe('conversationsReducers', () => {
             NumUnread: 2,
             Labels: [
                 {
-                    ID: inboxLabelID,
+                    ID: MAILBOX_LABEL_IDS.INBOX,
                     ContextNumUnread: 2,
                 },
                 {
-                    ID: archiveLabelID,
+                    ID: MAILBOX_LABEL_IDS.ARCHIVE,
                     ContextNumUnread: 1,
                 },
                 {
-                    ID: draftLabelID,
+                    ID: MAILBOX_LABEL_IDS.DRAFTS,
                     ContextNumUnread: 0,
                 },
                 {
@@ -107,7 +104,7 @@ describe('conversationsReducers', () => {
                     meta: {
                         arg: {
                             messages,
-                            labelID: inboxLabelID,
+                            labelID: MAILBOX_LABEL_IDS.INBOX,
                         },
                     },
                 });
@@ -116,7 +113,9 @@ describe('conversationsReducers', () => {
                 expect(updatedConversationState).toBeDefined();
                 expect(updatedConversationState!.Conversation.ContextNumUnread).toBe(0);
                 expect(updatedConversationState!.Conversation.NumUnread).toBe(0);
-                const label = updatedConversationState!.Conversation.Labels!.find((label) => label.ID === inboxLabelID);
+                const label = updatedConversationState!.Conversation.Labels!.find(
+                    (label) => label.ID === MAILBOX_LABEL_IDS.INBOX
+                );
                 expect(label?.ContextNumUnread).toBe(0);
             });
 
@@ -130,7 +129,7 @@ describe('conversationsReducers', () => {
                     meta: {
                         arg: {
                             messages,
-                            labelID: inboxLabelID,
+                            labelID: MAILBOX_LABEL_IDS.INBOX,
                         },
                     },
                 });
@@ -151,7 +150,7 @@ describe('conversationsReducers', () => {
                     meta: {
                         arg: {
                             messages,
-                            labelID: inboxLabelID,
+                            labelID: MAILBOX_LABEL_IDS.INBOX,
                         },
                     },
                 });
@@ -160,7 +159,9 @@ describe('conversationsReducers', () => {
                 expect(updatedConversationState).toBeDefined();
                 expect(updatedConversationState!.Conversation.ContextNumUnread).toBe(1);
                 expect(updatedConversationState!.Conversation.NumUnread).toBe(1);
-                const label = updatedConversationState!.Conversation.Labels!.find((label) => label.ID === inboxLabelID);
+                const label = updatedConversationState!.Conversation.Labels!.find(
+                    (label) => label.ID === MAILBOX_LABEL_IDS.INBOX
+                );
                 expect(label?.ContextNumUnread).toBe(1);
             });
 
@@ -183,7 +184,7 @@ describe('conversationsReducers', () => {
                 expect(updatedConversationState!.Conversation.ContextNumUnread).toBe(1);
                 expect(updatedConversationState!.Conversation.NumUnread).toBe(1);
                 const inboxLabel = updatedConversationState!.Conversation.Labels!.find(
-                    (label) => label.ID === inboxLabelID
+                    (label) => label.ID === MAILBOX_LABEL_IDS.INBOX
                 );
                 const categoryLabel = updatedConversationState!.Conversation.Labels!.find(
                     (label) => label.ID === MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS
@@ -216,7 +217,7 @@ describe('conversationsReducers', () => {
                     meta: {
                         arg: {
                             messages,
-                            labelID: inboxLabelID,
+                            labelID: MAILBOX_LABEL_IDS.INBOX,
                         },
                     },
                 });
@@ -225,7 +226,9 @@ describe('conversationsReducers', () => {
                 expect(updatedConversationState).toBeDefined();
                 expect(updatedConversationState!.Conversation.ContextNumUnread).toBe(2);
                 expect(updatedConversationState!.Conversation.NumUnread).toBe(2);
-                const label = updatedConversationState!.Conversation.Labels!.find((label) => label.ID === inboxLabelID);
+                const label = updatedConversationState!.Conversation.Labels!.find(
+                    (label) => label.ID === MAILBOX_LABEL_IDS.INBOX
+                );
                 expect(label?.ContextNumUnread).toBe(2);
             });
 
@@ -239,7 +242,7 @@ describe('conversationsReducers', () => {
                     meta: {
                         arg: {
                             messages,
-                            labelID: inboxLabelID,
+                            labelID: MAILBOX_LABEL_IDS.INBOX,
                         },
                     },
                 });
@@ -265,7 +268,7 @@ describe('conversationsReducers', () => {
                     meta: {
                         arg: {
                             messages,
-                            labelID: inboxLabelID,
+                            labelID: MAILBOX_LABEL_IDS.INBOX,
                         },
                     },
                 });
@@ -275,18 +278,20 @@ describe('conversationsReducers', () => {
                 expect(updatedConversationState!.Conversation.ContextNumUnread).toBe(1);
                 expect(updatedConversationState!.Conversation.NumUnread).toBe(1);
                 // Label should not be updated since message doesn't have this label
-                const label = updatedConversationState!.Conversation.Labels!.find((label) => label.ID === inboxLabelID);
+                const label = updatedConversationState!.Conversation.Labels!.find(
+                    (label) => label.ID === MAILBOX_LABEL_IDS.INBOX
+                );
                 expect(label?.ContextNumUnread).toBe(0);
             });
 
             it.only('should update category label when marking as unread from Inbox', () => {
                 mockConversation.Labels = [
                     {
-                        ID: inboxLabelID,
+                        ID: MAILBOX_LABEL_IDS.INBOX,
                         ContextNumUnread: 2,
                     },
                     {
-                        ID: archiveLabelID,
+                        ID: MAILBOX_LABEL_IDS.ARCHIVE,
                         ContextNumUnread: 1,
                     },
                     {
@@ -303,7 +308,7 @@ describe('conversationsReducers', () => {
                     meta: {
                         arg: {
                             messages,
-                            labelID: inboxLabelID,
+                            labelID: MAILBOX_LABEL_IDS.INBOX,
                         },
                     },
                 });
@@ -323,7 +328,7 @@ describe('conversationsReducers', () => {
                         ContextNumUnread: 2,
                     },
                     {
-                        ID: archiveLabelID,
+                        ID: MAILBOX_LABEL_IDS.ARCHIVE,
                         ContextNumUnread: 1,
                     },
                     {
@@ -366,7 +371,7 @@ describe('conversationsReducers', () => {
                     meta: {
                         arg: {
                             conversations,
-                            labelID: inboxLabelID,
+                            labelID: MAILBOX_LABEL_IDS.INBOX,
                         },
                     },
                 });
@@ -383,7 +388,7 @@ describe('conversationsReducers', () => {
             it('should skip already read conversations', () => {
                 const readConversation = {
                     ...mockConversation,
-                    Labels: [{ ID: inboxLabelID, ContextNumUnread: 0 }],
+                    Labels: [{ ID: MAILBOX_LABEL_IDS.INBOX, ContextNumUnread: 0 }],
                 };
                 const conversations = [readConversation];
 
@@ -393,7 +398,7 @@ describe('conversationsReducers', () => {
                     meta: {
                         arg: {
                             conversations,
-                            labelID: inboxLabelID,
+                            labelID: MAILBOX_LABEL_IDS.INBOX,
                         },
                     },
                 });
@@ -414,7 +419,7 @@ describe('conversationsReducers', () => {
                     meta: {
                         arg: {
                             conversations,
-                            labelID: inboxLabelID,
+                            labelID: MAILBOX_LABEL_IDS.INBOX,
                         },
                     },
                 });
@@ -476,7 +481,7 @@ describe('conversationsReducers', () => {
                     meta: {
                         arg: {
                             conversations,
-                            labelID: inboxLabelID,
+                            labelID: MAILBOX_LABEL_IDS.INBOX,
                         },
                     },
                 });
@@ -485,14 +490,16 @@ describe('conversationsReducers', () => {
                 expect(updatedConversationState).toBeDefined();
                 expect(updatedConversationState!.Conversation.ContextNumUnread).toBe(1);
                 expect(updatedConversationState!.Conversation.NumUnread).toBe(1);
-                const label = updatedConversationState!.Conversation.Labels!.find((label) => label.ID === inboxLabelID);
+                const label = updatedConversationState!.Conversation.Labels!.find(
+                    (label) => label.ID === MAILBOX_LABEL_IDS.INBOX
+                );
                 expect(label?.ContextNumUnread).toBe(1);
             });
 
             it('should skip already unread conversations', () => {
                 const unreadConversation = {
                     ...mockConversation,
-                    Labels: [{ ID: inboxLabelID, ContextNumUnread: 1 }],
+                    Labels: [{ ID: MAILBOX_LABEL_IDS.INBOX, ContextNumUnread: 1 }],
                 };
                 const conversations = [unreadConversation];
 
@@ -502,7 +509,7 @@ describe('conversationsReducers', () => {
                     meta: {
                         arg: {
                             conversations,
-                            labelID: inboxLabelID,
+                            labelID: MAILBOX_LABEL_IDS.INBOX,
                         },
                     },
                 });
@@ -523,14 +530,16 @@ describe('conversationsReducers', () => {
                     meta: {
                         arg: {
                             conversations,
-                            labelID: inboxLabelID,
+                            labelID: MAILBOX_LABEL_IDS.INBOX,
                         },
                     },
                 });
 
                 const updatedConversationState = state[conversationID];
                 expect(updatedConversationState).toBeDefined();
-                const label = updatedConversationState!.Conversation.Labels!.find((label) => label.ID === inboxLabelID);
+                const label = updatedConversationState!.Conversation.Labels!.find(
+                    (label) => label.ID === MAILBOX_LABEL_IDS.INBOX
+                );
                 expect(label?.ContextNumUnread).toBe(1);
             });
 
@@ -543,7 +552,7 @@ describe('conversationsReducers', () => {
                     meta: {
                         arg: {
                             conversations,
-                            labelID: inboxLabelID,
+                            labelID: MAILBOX_LABEL_IDS.INBOX,
                         },
                     },
                 });
@@ -557,7 +566,7 @@ describe('conversationsReducers', () => {
                 const draftMessage = {
                     ...mockMessage1,
                     ID: 'draft-message',
-                    LabelIDs: [inboxLabelID, draftLabelID],
+                    LabelIDs: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.DRAFTS],
                     Flags: 0, // Draft: no sent/received flags
                     Unread: 0,
                 };
@@ -570,7 +579,7 @@ describe('conversationsReducers', () => {
                         NumUnread: 0,
                         Labels: [
                             {
-                                ID: inboxLabelID,
+                                ID: MAILBOX_LABEL_IDS.INBOX,
                                 ContextNumUnread: 0,
                             },
                         ],
@@ -589,7 +598,7 @@ describe('conversationsReducers', () => {
                     meta: {
                         arg: {
                             conversations,
-                            labelID: inboxLabelID,
+                            labelID: MAILBOX_LABEL_IDS.INBOX,
                         },
                     },
                 });
@@ -607,7 +616,7 @@ describe('conversationsReducers', () => {
                     ...mockMessage1,
                     ID: 'older-message',
                     Order: 1,
-                    LabelIDs: [inboxLabelID],
+                    LabelIDs: [MAILBOX_LABEL_IDS.INBOX],
                     Unread: 0,
                     Flags: 1, // FLAG_RECEIVED
                 };
@@ -615,7 +624,7 @@ describe('conversationsReducers', () => {
                     ...mockMessage2,
                     ID: 'newer-message',
                     Order: 3,
-                    LabelIDs: [inboxLabelID],
+                    LabelIDs: [MAILBOX_LABEL_IDS.INBOX],
                     Unread: 0,
                     Flags: 1, // FLAG_RECEIVED
                 };
@@ -623,7 +632,7 @@ describe('conversationsReducers', () => {
                     ...mockMessage3,
                     ID: 'draft-message',
                     Order: 4,
-                    LabelIDs: [inboxLabelID, draftLabelID],
+                    LabelIDs: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.DRAFTS],
                     Flags: 0, // Draft: no sent/received flags
                     Unread: 0,
                 };
@@ -642,7 +651,7 @@ describe('conversationsReducers', () => {
                     meta: {
                         arg: {
                             conversations,
-                            labelID: inboxLabelID,
+                            labelID: MAILBOX_LABEL_IDS.INBOX,
                         },
                     },
                 });
@@ -664,7 +673,7 @@ describe('conversationsReducers', () => {
                 const alreadyUnreadMessage = {
                     ...mockMessage1,
                     Order: 1,
-                    LabelIDs: [inboxLabelID],
+                    LabelIDs: [MAILBOX_LABEL_IDS.INBOX],
                     Unread: 1, // Already unread
                     Flags: 1, // FLAG_RECEIVED
                 };
@@ -683,7 +692,7 @@ describe('conversationsReducers', () => {
                     meta: {
                         arg: {
                             conversations,
-                            labelID: inboxLabelID,
+                            labelID: MAILBOX_LABEL_IDS.INBOX,
                         },
                     },
                 });
@@ -712,7 +721,7 @@ describe('conversationsReducers', () => {
                     meta: {
                         arg: {
                             messages,
-                            labelID: inboxLabelID,
+                            labelID: MAILBOX_LABEL_IDS.INBOX,
                         },
                     },
                 });
@@ -748,7 +757,7 @@ describe('conversationsReducers', () => {
                     meta: {
                         arg: {
                             messages,
-                            labelID: inboxLabelID,
+                            labelID: MAILBOX_LABEL_IDS.INBOX,
                         },
                     },
                 });
@@ -780,9 +789,9 @@ describe('conversationsReducers', () => {
             } as Label;
 
             it('should only add label to the targeted message, not other messages in the conversation', () => {
-                mockMessage1.LabelIDs = [inboxLabelID];
-                mockMessage2.LabelIDs = [inboxLabelID];
-                mockMessage3.LabelIDs = [draftLabelID];
+                mockMessage1.LabelIDs = [MAILBOX_LABEL_IDS.INBOX];
+                mockMessage2.LabelIDs = [MAILBOX_LABEL_IDS.INBOX];
+                mockMessage3.LabelIDs = [MAILBOX_LABEL_IDS.DRAFTS];
 
                 const messages: MessageMetadata[] = [mockMessage1];
 
@@ -792,7 +801,7 @@ describe('conversationsReducers', () => {
                     meta: {
                         arg: {
                             messages,
-                            sourceLabelID: inboxLabelID,
+                            sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
                             destinationLabelID: customLabelID,
                             labels: [mockLabel],
                             folders: [],
@@ -827,9 +836,9 @@ describe('conversationsReducers', () => {
             } as Label;
 
             it('should only remove label from the targeted message, not other messages in the conversation', () => {
-                mockMessage1.LabelIDs = [inboxLabelID, customLabelID];
-                mockMessage2.LabelIDs = [inboxLabelID, customLabelID];
-                mockMessage3.LabelIDs = [draftLabelID, customLabelID];
+                mockMessage1.LabelIDs = [MAILBOX_LABEL_IDS.INBOX, customLabelID];
+                mockMessage2.LabelIDs = [MAILBOX_LABEL_IDS.INBOX, customLabelID];
+                mockMessage3.LabelIDs = [MAILBOX_LABEL_IDS.DRAFTS, customLabelID];
 
                 const messages: MessageMetadata[] = [mockMessage1];
 
