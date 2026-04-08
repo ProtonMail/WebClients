@@ -611,7 +611,7 @@ describe('conversation counts - label messages', () => {
                 type: 'mailbox/labelMessages',
                 payload: {
                     conversations: [conversation],
-                    sourceLabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                    sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
                     destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
                     labels: customLabels,
                     folders: customFolders,
@@ -982,7 +982,7 @@ describe('conversation counts - label messages', () => {
                 type: 'mailbox/labelMessages',
                 payload: {
                     conversations: [conversation],
-                    sourceLabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                    sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
                     destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                     labels: customLabels,
                     folders: customFolders,
@@ -1048,7 +1048,7 @@ describe('conversation counts - label messages', () => {
                 type: 'mailbox/labelMessages',
                 payload: {
                     conversations: [conversation],
-                    sourceLabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                    sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
                     destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
                     labels: customLabels,
                     folders: customFolders,
