@@ -120,6 +120,17 @@ const LiveChatZendesk = ({ zendeskRef, name, email, onLoaded, onUnavailable, loc
     }));
 
     useEffect(() => {
+        if (state.loaded && isZendeskV2Enabled) {
+            (async () => {
+                const jwt = await fetchJWT(api);
+                if (jwt) {
+                    sendMessage(['login', jwt], 'proton');
+                }
+            })().catch(noop);
+        }
+    }, [state.loaded]);
+
+    useEffect(() => {
         if (!state.loaded || isZendeskV2Enabled) {
             return;
         }
@@ -165,13 +176,6 @@ const LiveChatZendesk = ({ zendeskRef, name, email, onLoaded, onUnavailable, loc
         if (oldPending.open) {
             handleOpen();
         }
-
-        (async () => {
-            const jwt = await fetchJWT(api);
-            if (jwt) {
-                sendMessage(['login', jwt], 'proton');
-            }
-        })().catch(noop);
     }, [state.loaded]);
 
     useEffect(() => {
