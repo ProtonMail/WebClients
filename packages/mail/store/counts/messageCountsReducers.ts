@@ -61,7 +61,13 @@ export const markMessagesAsUnread = (
             return;
         }
 
+        const hasInbox = message.LabelIDs.includes(MAILBOX_LABEL_IDS.INBOX);
         message.LabelIDs.forEach((selectedLabelID) => {
+            // Only increment category labelID if the message is in inbox
+            if (isCategoryLabel(selectedLabelID) && !hasInbox) {
+                return;
+            }
+
             const updatedMessageCounter = state.value?.find((counter) => counter.LabelID === selectedLabelID);
 
             if (updatedMessageCounter) {
