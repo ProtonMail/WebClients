@@ -25,7 +25,10 @@ export type ExtensionContextType = {
      * popup contexts where it represents the popup's source tab. */
     senderTabId: TabId;
     port: Runtime.Port;
+    /** URL of the current frame - may differ from the actual
+     * tab URL if the extension context is running in a subframe. */
     url: MaybeNull<ParsedUrl>;
+    /** Top-frame (0) tab URL */
     tabUrl: MaybeNull<ParsedUrl>;
     destroy: () => void;
 };
