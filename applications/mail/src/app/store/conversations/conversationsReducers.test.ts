@@ -284,7 +284,7 @@ describe('conversationsReducers', () => {
                 expect(label?.ContextNumUnread).toBe(0);
             });
 
-            it.only('should update category label when marking as unread from Inbox', () => {
+            it('should update category label when marking as unread from Inbox', () => {
                 mockConversation.Labels = [
                     {
                         ID: MAILBOX_LABEL_IDS.INBOX,
@@ -321,7 +321,7 @@ describe('conversationsReducers', () => {
                 ).toEqual(true);
             });
 
-            it.only('should update category label when marking as unread from Trash', () => {
+            it('should update category label when marking as unread from Trash', () => {
                 mockConversation.Labels = [
                     {
                         ID: MAILBOX_LABEL_IDS.TRASH,
@@ -703,6 +703,149 @@ describe('conversationsReducers', () => {
                 expect(updatedConversationState!.Conversation.NumUnread).toBe(1);
                 // Message should remain unread (no change)
                 expect(updatedConversationState!.Messages![0].Unread).toBe(1);
+            });
+
+            it('should mark category label as unread when conversation is in inbox', () => {
+                mockConversation.Labels = [
+                    {
+                        ID: MAILBOX_LABEL_IDS.INBOX,
+                        ContextNumUnread: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
+                        ContextNumUnread: 0,
+                    },
+                ];
+
+                mockConversationState = {
+                    Conversation: mockConversation,
+                    Messages: [mockMessage1, mockMessage2, mockMessage3],
+                    loadRetry: 0,
+                    errors: { network: [], unknown: [] },
+                };
+
+                state = {
+                    [conversationID]: mockConversationState,
+                } as Draft<ConversationsState>;
+
+                markConversationsAsUnreadPending(state, {
+                    type: 'markConversationsAsUnread/pending',
+                    payload: undefined,
+                    meta: {
+                        arg: {
+                            conversations: [mockConversation],
+                            labelID: MAILBOX_LABEL_IDS.INBOX,
+                        },
+                    },
+                });
+
+                const inboxLabel = state[conversationID]?.Conversation.Labels?.find(
+                    (label) => label.ID === MAILBOX_LABEL_IDS.INBOX
+                );
+                const categoryLabel = state[conversationID]?.Conversation.Labels?.find(
+                    (label) => label.ID === MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS
+                );
+
+                expect(inboxLabel?.ContextNumUnread).toBe(1);
+                expect(categoryLabel?.ContextNumUnread).toBe(1);
+            });
+
+            it('should not mark category label as unread when conversation is in inbox but action is for a different label', () => {
+                mockConversation.Labels = [
+                    {
+                        ID: MAILBOX_LABEL_IDS.INBOX,
+                        ContextNumUnread: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.TRASH,
+                        ContextNumUnread: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
+                        ContextNumUnread: 0,
+                    },
+                ];
+
+                mockConversationState = {
+                    Conversation: mockConversation,
+                    Messages: [mockMessage1, mockMessage2, mockMessage3],
+                    loadRetry: 0,
+                    errors: { network: [], unknown: [] },
+                };
+
+                state = {
+                    [conversationID]: mockConversationState,
+                } as Draft<ConversationsState>;
+
+                markConversationsAsUnreadPending(state, {
+                    type: 'markConversationsAsUnread/pending',
+                    payload: undefined,
+                    meta: {
+                        arg: {
+                            conversations: [mockConversation],
+                            labelID: MAILBOX_LABEL_IDS.TRASH,
+                        },
+                    },
+                });
+
+                const inboxLabel = state[conversationID]?.Conversation.Labels?.find(
+                    (label) => label.ID === MAILBOX_LABEL_IDS.INBOX
+                );
+                const trashLabel = state[conversationID]?.Conversation.Labels?.find(
+                    (label) => label.ID === MAILBOX_LABEL_IDS.TRASH
+                );
+                const categoryLabel = state[conversationID]?.Conversation.Labels?.find(
+                    (label) => label.ID === MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS
+                );
+
+                expect(inboxLabel?.ContextNumUnread).toBe(0);
+                expect(trashLabel?.ContextNumUnread).toBe(1);
+                expect(categoryLabel?.ContextNumUnread).toBe(0);
+            });
+
+            it('should not mark category label as unread when conversation is not in inbox', () => {
+                mockConversation.Labels = [
+                    {
+                        ID: MAILBOX_LABEL_IDS.TRASH,
+                        ContextNumUnread: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
+                        ContextNumUnread: 0,
+                    },
+                ];
+
+                mockConversationState = {
+                    Conversation: mockConversation,
+                    Messages: [mockMessage1, mockMessage2, mockMessage3],
+                    loadRetry: 0,
+                    errors: { network: [], unknown: [] },
+                };
+
+                state = {
+                    [conversationID]: mockConversationState,
+                } as Draft<ConversationsState>;
+
+                markConversationsAsUnreadPending(state, {
+                    type: 'markConversationsAsUnread/pending',
+                    payload: undefined,
+                    meta: {
+                        arg: {
+                            conversations: [mockConversation],
+                            labelID: MAILBOX_LABEL_IDS.TRASH,
+                        },
+                    },
+                });
+
+                const trashLabel = state[conversationID]?.Conversation.Labels?.find(
+                    (label) => label.ID === MAILBOX_LABEL_IDS.TRASH
+                );
+                const categoryLabel = state[conversationID]?.Conversation.Labels?.find(
+                    (label) => label.ID === MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS
+                );
+
+                expect(trashLabel?.ContextNumUnread).toBe(1);
+                expect(categoryLabel?.ContextNumUnread).toBe(0);
             });
         });
     });
