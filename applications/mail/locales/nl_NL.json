@@ -1493,8 +1493,7 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Sleutel vertrouwen",
-        "Sleutels vertrouwen"
+        "Vertrouwde sleutel"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -1743,7 +1742,7 @@
         "${ ips } toegewijde VPN-servers"
       ],
       "${ LUMO_APP_NAME } AI license": [
-        "${ LUMO_APP_NAME } AI licentie"
+        "${ LUMO_APP_NAME } AI-licentie"
       ],
       "${ LUMO_APP_NAME } seats": [
         "${ LUMO_APP_NAME } licenties"
@@ -1761,8 +1760,8 @@
         "${ price } per gebruiker"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
-        "${ seats } ${ LUMO_APP_NAME } AI licentie",
-        "${ seats } ${ LUMO_APP_NAME } AI licenties"
+        "${ seats } ${ LUMO_APP_NAME } AI-licentie",
+        "${ seats } ${ LUMO_APP_NAME } AI-licenties"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } plaats",
@@ -2081,7 +2080,7 @@
         "3 TB opslagruimte"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Toegang tot 15.000+ servers in 120+ landen"
+        "Toegang tot 15 000+ servers in 120+ landen"
       ],
       "Access advanced AI models": [
         "Toegang tot geavanceerde AI-modellen"
@@ -5594,6 +5593,9 @@
     "fido2: Info": {
       "Security key": [
         "Beveiligingssleutel"
+      ],
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Plaats een beveiligingssleutel die is gekoppeld aan uw ${ BRAND_NAME }-account."
       ]
     },
     "fido2: Label": {
@@ -6358,6 +6360,9 @@
       ],
       "Import from ${ providerName }": [
         "Importeer uit ${ providerName }"
+      ],
+      "More import options": [
+        "Meer importopties"
       ]
     },
     "Import warning": {
@@ -6512,7 +6517,7 @@
         "${ MEET_APP_NAME } is een end-to-end versleutelde videoconferentie oplossing. Voeg het toe aan uw abonnement om veilige vergaderingen te hosten."
       ],
       "${ MEET_APP_NAME } seats": [
-        "${ MEET_APP_NAME } licenties"
+        "${ MEET_APP_NAME }-licenties"
       ],
       "${ n } unread conversation": [
         "${ n } ongelezen gesprek",
@@ -7448,7 +7453,8 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding invoegen"
+        "Afbeelding toevoegen",
+        "Afbeeldingen toevoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -8889,6 +8895,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "U bent slechts een paar klikken verwijderd van een overzichtelijke inbox"
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Voeg ${ PLAN_NAMES[PLANS.MEET_BUSINESS] } toe"
       ]
     },
     "info": {
@@ -10454,7 +10463,7 @@
         "24 uur per vergadering"
       ],
       "60 minutes per meeting": [
-        "60 uur per vergadering"
+        "60 minuten per vergadering"
       ],
       "Appointment scheduling": [
         "Afspraak Plannen"
@@ -11865,6 +11874,12 @@
       ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "Welkom bij ${ MAIL_APP_NAME }"
+      ],
+      "Choose a provider": [
+        "Kies een provider"
+      ],
+      "Protect your accounts": [
+        "Beveilig uw accounts"
       ]
     },
     "Onboarding modal": {
@@ -12435,7 +12450,7 @@
         "De vernieuwingsprijs is afhankelijk van de facturatie regio en het EIN."
       ],
       "Renewal price is dependent on the billing region and VAT number.": [
-        "De vernieuwingsprijs is afhankelijk van de facturatie regio en het VAT nummer."
+        "De vernieuwingsprijs is afhankelijk van de facturatie regio en het VAT-nummer."
       ]
     },
     "Payments.Saved payment method details": {
@@ -16484,6 +16499,11 @@
       ],
       "Passcode:": [
         "Toegangscode:"
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Er is iets misgegaan bij het authenticeren met uw beveiligingssleutel. Probeer het opnieuw."
       ]
     }
   }

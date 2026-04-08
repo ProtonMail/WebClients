@@ -1501,10 +1501,7 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč",
-        "Dôveryhodné kľúče",
-        "Dôveryhodné kľúče",
-        "Dôveryhodné kľúče"
+        "Dôveryhodný kľúč"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -4415,6 +4412,12 @@
         "Preposielate emaily z ${ MAX_SYNC_FREE_USER } externých účtov do ${ MAIL_APP_NAME }.",
         "Preposielate emaily z ${ MAX_SYNC_FREE_USER } externých účtov do ${ MAIL_APP_NAME }.",
         "Preposielate emaily z ${ MAX_SYNC_FREE_USER } externých účtov do ${ MAIL_APP_NAME }."
+      ],
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
+        "Na preposielanie emailov až z ${ MAX_SYNC_PAID_USER } účtov prejdite na ${ planName }."
+      ],
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "Preposielate emaily z jedného externého účtu do ${ MAIL_APP_NAME }."
       ]
     },
     "Edit billing address form note": {
@@ -6488,6 +6491,9 @@
       ],
       "Import from ${ providerName }": [
         "Importovať z ${ providerName }"
+      ],
+      "More import options": [
+        "Ďalšie možnosti importu"
       ]
     },
     "Import warning": {
@@ -7709,7 +7715,10 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok"
+        "Vložiť obrázok",
+        "Vložiť obrázky",
+        "Vložiť obrázky",
+        "Vložiť obrázky"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -12274,6 +12283,24 @@
       ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "Vitajte v ${ MAIL_APP_NAME }"
+      ],
+      "Bring your emails into ${ MAIL_APP_NAME }": [
+        "Prineste svoje emaily do ${ MAIL_APP_NAME }"
+      ],
+      "Bring your existing email into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Prineste svoj existujúci email do aplikácie ${ MAIL_APP_NAME }, aby ste mohli všetko spravovať z jednej súkromnej schránky."
+      ],
+      "Choose a provider": [
+        "Vyberte poskytovateľa"
+      ],
+      "Protect your accounts": [
+        "Chráňte svoje účty"
+      ],
+      "Some popular services": [
+        "Niektoré obľúbené služby"
+      ],
+      "Switch the services you use every day to your ${ BRAND_NAME } address for better security and privacy.": [
+        "Pre lepšiu bezpečnosť a ochranu súkromia prejdite pri službách, ktoré používate každý deň, na adresu ${ BRAND_NAME }."
       ]
     },
     "Onboarding modal": {

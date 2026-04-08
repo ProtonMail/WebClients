@@ -4325,6 +4325,12 @@
       ],
       "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
         "${ MAX_SYNC_FREE_USER }개의 외부 계정에서 ${ MAIL_APP_NAME }(으)로 이메일을 전달하는 중입니다."
+      ],
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
+        "최대 ${ MAX_SYNC_PAID_USER }개의 계정에서 이메일을 전달하려면, ${ planName }(으)로 업그레이드하세요."
+      ],
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "외부 계정에서 ${ MAIL_APP_NAME }로 이메일을 전달하는 중입니다."
       ]
     },
     "Edit billing address form note": {
@@ -6305,6 +6311,9 @@
       ],
       "Import from ${ providerName }": [
         "${ providerName }(에)서 불러오기"
+      ],
+      "More import options": [
+        "추가 불러오기 옵션"
       ]
     },
     "Import warning": {
@@ -11674,6 +11683,24 @@
       ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME }에 오신 것을 환영해요"
+      ],
+      "Bring your emails into ${ MAIL_APP_NAME }": [
+        "이메일을 ${ MAIL_APP_NAME }로 가져오세요"
+      ],
+      "Bring your existing email into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "기존 이메일을 ${ MAIL_APP_NAME }로 가져와 하나의 개인 받은 편지함에서 모두 관리하세요."
+      ],
+      "Choose a provider": [
+        "제공자 선택"
+      ],
+      "Protect your accounts": [
+        "계정을 보호하세요"
+      ],
+      "Some popular services": [
+        "인기 있는 서비스"
+      ],
+      "Switch the services you use every day to your ${ BRAND_NAME } address for better security and privacy.": [
+        "매일 사용하는 서비스를 ${ BRAND_NAME } 주소로 전환하여 보안과 개인정보 보호를 강화하세요."
       ]
     },
     "Onboarding modal": {

@@ -1493,8 +1493,7 @@
         "Güven"
       ],
       "Trust key": [
-        "Güvenilen anahtar",
-        "Güvenilen anahtarlar"
+        "Anahtara güven"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -4206,6 +4205,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
+      ],
+      "No ads. No trackers.": [
+        "Reklam yok. İzleyici yok."
       ]
     },
     "description": {
@@ -4355,6 +4357,12 @@
       "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
         "E-postaları ${ MAX_SYNC_FREE_USER } dış hesaptan ${ MAIL_APP_NAME } üzerine iletiyorsunuz.",
         "E-postaları ${ MAX_SYNC_FREE_USER } dış hesaptan ${ MAIL_APP_NAME } üzerine iletiyorsunuz."
+      ],
+      "To forward emails from up to ${ MAX_SYNC_PAID_USER } accounts, upgrade to ${ planName }.": [
+        "${ MAX_SYNC_PAID_USER } hesaba kadar e-posta iletmek için ${ planName } tarifesine yükseltin."
+      ],
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "E-postaları bir dış hesaptan ${ MAIL_APP_NAME } üzerine iletiyorsunuz."
       ]
     },
     "Edit billing address form note": {
@@ -6366,6 +6374,9 @@
       ],
       "Import from ${ providerName }": [
         "${ providerName } üzerinden içe aktar"
+      ],
+      "More import options": [
+        "Diğer içe aktarma seçenekleri"
       ]
     },
     "Import warning": {
@@ -7459,7 +7470,8 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle"
+        "Görsel ekle",
+        "Görseller ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -8900,6 +8912,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Dağınıklıktan arındırılmış bir gelen kutusundan yalnızca birkaç tık uzaktasınız."
+      ],
+      "Enter code": [
+        "Kodu girin"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Kimlik doğrulama uygulamanıza erişemiyorsanız iki adımlı doğrulamayı kurarken size verilen 16 yedek kurtarma kodundan birini kullanabilirsiniz. ${ learnMoreLink }"
       ]
     },
     "info": {
@@ -11876,6 +11894,24 @@
       ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } hizmetine hoş geldiniz"
+      ],
+      "Bring your emails into ${ MAIL_APP_NAME }": [
+        "E-postalarınızı ${ MAIL_APP_NAME } üzerine taşıyın"
+      ],
+      "Bring your existing email into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "Var olan e-postalarınızı ${ MAIL_APP_NAME } üzerine taşıyın. Böylece her şeyi gizliliği koruyan tek bir gelen kutusundan yönetebilirsiniz."
+      ],
+      "Choose a provider": [
+        "Bir hizmet sağlayıcı seçin"
+      ],
+      "Protect your accounts": [
+        "Hesaplarınızı koruyun"
+      ],
+      "Some popular services": [
+        "Bazı yaygın kullanılan hizmetler"
+      ],
+      "Switch the services you use every day to your ${ BRAND_NAME } address for better security and privacy.": [
+        "Daha fazla güvenlik ve gizlilik için her gün kullandığınız hizmetleri ${ BRAND_NAME } adresinize taşıyın."
       ]
     },
     "Onboarding modal": {

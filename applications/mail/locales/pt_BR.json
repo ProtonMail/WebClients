@@ -1493,8 +1493,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança",
-        "Chaves de confiança"
+        "Chave de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -1688,6 +1687,15 @@
       ],
       "Zoom out": [
         "Diminuir zoom"
+      ],
+      "Connect to Gmail": [
+        "Conectar ao Gmail"
+      ],
+      "Or remove forwarding address": [
+        "Ou remover endereço de encaminhamento"
+      ],
+      "Reconnect to Gmail": [
+        "Reconectar ao Gmail"
       ]
     },
     "action": {
@@ -4203,6 +4211,19 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Você já criou 10 aliases. Obtenha aliases ilimitados e 500 GB de armazenamento com ${ BRAND_NAME } Unlimited."
+      ],
+      "No ads. No trackers.": [
+        "Sem anúncios. Sem rastreadores."
+      ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "Faça upgrade para ${ planName } para conectar até ${ MAX_SYNC_PAID_USER } contas"
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Você agora pode enviar e-mails da ${ BRAND_NAME } usando este endereço."
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "Seu plano suporta um total de ${ MAX_SYNC_PAID_USER } endereço do Gmail",
+        "Seu plano suporta um total de ${ MAX_SYNC_PAID_USER } endereços do Gmail"
       ]
     },
     "description": {
@@ -5145,6 +5166,15 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "A sua pesquisa correspondeu a muitos resultados. Limite sua busca e tente novamente."
+      ],
+      "Address could not be added.": [
+        "O endereço não pôde ser adicionado."
+      ],
+      "Address is already added to your account": [
+        "Endereço já adicionado à sua conta"
+      ],
+      "Something went wrong while creating the address": [
+        "Algo deu errado ao criar o endereço"
       ]
     },
     "error": {
@@ -6357,6 +6387,9 @@
       ],
       "Import from ${ providerName }": [
         "Importar de ${ providerName }"
+      ],
+      "More import options": [
+        "Mais opções de importação"
       ]
     },
     "Import warning": {
@@ -7450,7 +7483,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir link"
@@ -8885,6 +8919,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Você está a alguns cliques de distância de ter uma caixa de entrada organizada"
+      ],
+      "Enter code": [
+        "Inserir código"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "If Se você perdeu o acesso ao seu aplicativo de autenticação, pode usar um dos 16 códigos de recuperação de backup fornecidos quando configurou a autenticação de dois fatores. ${ learnMoreLink }"
       ]
     },
     "info": {
@@ -9962,6 +10002,9 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Main reason for cancelling": [
+        "Motivo principal para cancelar"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11689,6 +11732,9 @@
       ],
       "Trial started": [
         "Avaliação iniciada"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Seu endereço da ${ BRAND_NAME } está pronto para uso"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11852,6 +11898,15 @@
       ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "Boas-vindas ao ${ MAIL_APP_NAME }"
+      ],
+      "Choose a provider": [
+        "Selecionar um provedor"
+      ],
+      "Protect your accounts": [
+        "Proteja suas contas"
+      ],
+      "Some popular services": [
+        "Alguns serviços populares"
       ]
     },
     "Onboarding modal": {
@@ -15891,6 +15946,15 @@
       ],
       "✨ Categories are coming!": [
         "✨ Categorias estão chegando!"
+      ],
+      "Disconnected from Gmail": [
+        "Desconectado do Gmail"
+      ],
+      "Use Gmail securely in ${ MAIL_APP_NAME }": [
+        "Use o Gmail com segurança no ${ MAIL_APP_NAME }"
+      ],
+      "You are all set": [
+        "Tudo pronto"
       ]
     },
     "Today icon tooltip in mini calendar": {

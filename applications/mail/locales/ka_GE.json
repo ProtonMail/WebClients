@@ -5815,6 +5815,12 @@
       ],
       "You've unlocked 1 GB": [
         "განბლოკეთ 1 გბ"
+      ],
+      "Download apps": [
+        "გადმოწერეთ აპები"
+      ],
+      "Get storage bonus": [
+        "მიიღეთ საცავის ბონუსი"
       ]
     },
     "Gmail forwarding": {
@@ -6244,6 +6250,9 @@
     "Import provider": {
       "Advanced import": [
         "გაფართოებული შემოტანა"
+      ],
+      "More import options": [
+        "მეტი შემოტანის პარამეტრები"
       ]
     },
     "Import warning": {
@@ -7271,7 +7280,8 @@
         "ინიციალიზაცია…"
       ],
       "Insert image": [
-        "გამოსახულების ჩასმა"
+        "გამოსახულების ჩასმა",
+        "გამოსახულებების ჩასმა"
       ],
       "Insert link": [
         "ბმულის ჩასმა"
@@ -8635,6 +8645,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "გაჭედვისგან თავისუფალი საფოსტო ყუთისგან რამდენიმე წკაპი გაშორებთ"
+      ],
+      "for ${ price }": [
+        "${ price }-ისთვის"
       ]
     },
     "info": {
@@ -9694,6 +9707,15 @@
       ],
       "ZIP code": [
         "საფოსტო კოდი"
+      ],
+      "Additional comments": [
+        "დამატებითი კომენტარები"
+      ],
+      "Continue cancelling": [
+        "გაუქმების გაგრძელება"
+      ],
+      "Skip feedback": [
+        "უკუკავშირის გამოტოვება"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11516,6 +11538,12 @@
     "Onboarding List Placeholder": {
       "Maybe later": [
         "შესაძლოა მოგვიანებით"
+      ],
+      "Choose a provider": [
+        "აირჩიეთ პროვაიდერი"
+      ],
+      "Skip for now": [
+        "ჯეჯერობით გამოტოვება"
       ]
     },
     "Onboarding modal": {
@@ -11734,6 +11762,9 @@
       ],
       "No parent folder": [
         "მშობელი საქაღალდის გარეშე"
+      ],
+      "Remind me later": [
+        "შემახსენე მოგვიანებით"
       ]
     },
     "Option group": {
@@ -12277,6 +12308,12 @@
       ],
       "ZIP code": [
         "საფოსტო კოდი"
+      ],
+      "Enter a name": [
+        "შეიყვანეთ სახელი"
+      ],
+      "Select a provider": [
+        "აირჩიეთ პროვაიდერი"
       ]
     },
     "Placeholder for contact group name": {
@@ -15883,6 +15920,26 @@
       ],
       "Passcode:": [
         "საკვანძო კოდი:"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "სხვა"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }
