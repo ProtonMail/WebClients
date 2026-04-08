@@ -70,7 +70,7 @@ export type OnChargeable = (
         paymentsVersion: PaymentsVersion;
         paymentProcessorType: PaymentProcessorType;
     }
-) => Promise<unknown>;
+) => Promise<unknown> | unknown;
 
 type PaymentFacadeProps = {
     amount: number;

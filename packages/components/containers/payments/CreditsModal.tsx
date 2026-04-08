@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useGetPaymentMethods } from '@proton/account/paymentMethods/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
@@ -17,10 +18,8 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import Price from '@proton/components/components/price/Price';
 import useConfig from '@proton/components/hooks/useConfig';
-import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useAutomaticCurrency, usePaymentFacade } from '@proton/components/payments/client-extensions';
-import { usePollEvents } from '@proton/components/payments/client-extensions/usePollEvents';
 import { useLoading } from '@proton/hooks';
 import {
     type Currency,
@@ -33,11 +32,12 @@ import {
 } from '@proton/payments';
 import { getMaxBitcoinAmount, getMinBitcoinAmount, getMinCreditAmount } from '@proton/payments/core/amount-limits';
 import { ChargebeePaypalButton } from '@proton/payments/ui';
+import { usePaymentPollers } from '@proton/payments/ui/hooks/usePaymentPollers';
+import { CacheType } from '@proton/redux-utilities';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { getSentryError } from '@proton/shared/lib/keys';
-import noop from '@proton/utils/noop';
 
 import AmountRow from './AmountRow';
 import PaymentInfo from './PaymentInfo';
@@ -74,7 +74,6 @@ const nonChargeableMethods = new Set<PlainPaymentMethodType | undefined>([
 
 const CreditsModal = ({ paymentStatus, app, ...props }: Props) => {
     const { APP_NAME } = useConfig();
-    const { call } = useEventManager();
     const { createNotification } = useNotifications();
     const [loading, withLoading] = useLoading();
 
@@ -85,7 +84,8 @@ const CreditsModal = ({ paymentStatus, app, ...props }: Props) => {
     const amountLoading = debouncedAmount !== amount;
     const i18n = getCurrenciesI18N();
     const i18nCurrency = i18n[currency];
-    const pollEventsMultipleTimes = usePollEvents();
+    const { createCreditsPoller } = usePaymentPollers();
+    const getPaymentMethods = useGetPaymentMethods();
     const [subscription, loadingSubscription] = useSubscription();
     const [user, loadingUser] = useUser();
 
@@ -95,9 +95,8 @@ const CreditsModal = ({ paymentStatus, app, ...props }: Props) => {
         paymentStatus,
         onChargeable: (operations, data) => {
             const run = async () => {
+                const pollCredits = createCreditsPoller();
                 await operations.buyCredit();
-                await call();
-                props.onClose?.();
 
                 if (data.sourceType === 'chargebee-bitcoin') {
                     createNotification({
@@ -106,16 +105,19 @@ const CreditsModal = ({ paymentStatus, app, ...props }: Props) => {
                         expiration: 20000,
                     });
                 } else {
+                    try {
+                        await pollCredits();
+                    } catch {}
+                    // Might have used this to add a payment method, so let's refetch them.
+                    await getPaymentMethods({ cache: CacheType.None });
+
                     createNotification({ text: c('Success').t`Credits added` });
                 }
+
+                props.onClose?.();
             };
 
-            const promise = run();
-            void withLoading(promise);
-
-            promise.then(() => pollEventsMultipleTimes()).catch(noop);
-
-            return promise;
+            return withLoading(run());
         },
         flow: 'credit',
         user,
