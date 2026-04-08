@@ -1,10 +1,20 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 
 import { useLocalParticipant, useRoomContext } from '@livekit/components-react';
 import type { Participant } from 'livekit-client';
 
 import useApi from '@proton/components/hooks/useApi';
-import { ParticipantCapabilityPermission, type ParticipantEntity } from '@proton/meet/types/types';
+import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import {
+    mergeParticipantsMap,
+    removeParticipantFromMap,
+    resetParticipantMaps,
+    selectParticipantNameMap,
+    selectParticipantsMap,
+    setIsFetchingParticipants,
+    setParticipantAdmin,
+} from '@proton/meet/store/slices/meetingInfo';
+import type { ParticipantEntity } from '@proton/meet/types/types';
 import { queryParticipants, queryParticipantsCount } from '@proton/shared/lib/api/meet';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -16,8 +26,9 @@ export const useParticipantNameMap = (meetingLinkName: string) => {
     const room = useRoomContext();
     const { localParticipant } = useLocalParticipant();
 
-    const [participantNameMap, setParticipantNameMap] = useState<Record<string, string>>({});
-    const [participantsMap, setParticipantsMap] = useState<Record<string, ParticipantEntity>>({});
+    const dispatch = useMeetDispatch();
+    const participantNameMap = useMeetSelector(selectParticipantNameMap);
+    const participantsMap = useMeetSelector(selectParticipantsMap);
 
     const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -31,28 +42,25 @@ export const useParticipantNameMap = (meetingLinkName: string) => {
 
     const handleFetch = useCallback(
         async (meetingLinkName: string) => {
+            dispatch(setIsFetchingParticipants(true));
             const response = await api<{ Participants: ParticipantEntity[] }>(queryParticipants(meetingLinkName));
 
             const participants = response.Participants;
 
-            const updatedParticipantNameMap = Object.fromEntries(
-                participants.map((participant) => [participant.ParticipantUUID, participant.DisplayName])
+            dispatch(setIsFetchingParticipants(false));
+
+            dispatch(
+                mergeParticipantsMap(
+                    Object.fromEntries(participants.map((participant) => [participant.ParticipantUUID, participant]))
+                )
             );
-
-            setParticipantNameMap((prev) => ({ ...prev, ...updatedParticipantNameMap }));
-
-            const updatedParticipantsMap = Object.fromEntries(
-                participants.map((participant) => [participant.ParticipantUUID, participant])
-            );
-
-            setParticipantsMap((prev) => ({ ...prev, ...updatedParticipantsMap }));
 
             countRef.current = participants.length;
             isFetchingRef.current = false;
 
             lastFetchTimestamp.current = Date.now();
         },
-        [api]
+        [api, dispatch]
     );
 
     const getParticipants = useCallback(
@@ -104,8 +112,7 @@ export const useParticipantNameMap = (meetingLinkName: string) => {
     };
 
     const resetParticipantNameMap = () => {
-        setParticipantNameMap({});
-        setParticipantsMap({});
+        dispatch(resetParticipantMaps());
     };
 
     const updateAdminParticipant = async (roomId: string, participantUid: string, participantType: Number) => {
@@ -114,31 +121,12 @@ export const useParticipantNameMap = (meetingLinkName: string) => {
             return;
         }
 
-        setParticipantsMap((prev) =>
-            Object.fromEntries(
-                Object.entries(prev).map(([key, value]) => {
-                    const isTargetParticipant = value.ParticipantUUID === participantUid;
-                    const isAdmin = isTargetParticipant && participantType === 1;
-                    const adminPermission = isAdmin ? ParticipantCapabilityPermission.Allowed : value.IsAdmin;
-
-                    return [
-                        key,
-                        {
-                            ...value,
-                            IsAdmin: adminPermission,
-                        },
-                    ];
-                })
-            )
-        );
+        dispatch(setParticipantAdmin({ participantUid, participantType: participantType as number }));
     };
 
     useEffect(() => {
         const handleParticipantDisconnected = (participant: Participant) => {
-            setParticipantsMap((prev) => {
-                const { [participant.identity]: removed, ...rest } = prev;
-                return rest;
-            });
+            dispatch(removeParticipantFromMap(participant.identity));
         };
 
         room.on('participantDisconnected', handleParticipantDisconnected);
@@ -146,7 +134,7 @@ export const useParticipantNameMap = (meetingLinkName: string) => {
         return () => {
             room.off('participantDisconnected', handleParticipantDisconnected);
         };
-    }, [room]);
+    }, [room, dispatch]);
 
     useEffect(() => {
         return () => {

@@ -14,7 +14,7 @@ import { IcMeetCameraOff } from '@proton/icons/icons/IcMeetCameraOff';
 import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import { useMeetSelector } from '@proton/meet/store/hooks';
-import { selectParticipantNameMap, selectParticipantsMap } from '@proton/meet/store/slices/meetingInfo';
+import { selectParticipantName, selectParticipantsMap } from '@proton/meet/store/slices/meetingInfo';
 import { ParticipantCapabilityPermission } from '@proton/meet/types/types';
 import clsx from '@proton/utils/clsx';
 
@@ -42,9 +42,9 @@ export const ParticipantHostControls = ({
     const { localParticipant } = useLocalParticipant();
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
 
-    const participantNameMap = useMeetSelector(selectParticipantNameMap);
+    const participantName =
+        useMeetSelector((state) => selectParticipantName(state, participant.identity)) ?? c('Info').t`Participant`;
     const participantsMap = useMeetSelector(selectParticipantsMap);
-    const participantName = participantNameMap[participant.identity] ?? c('Info').t`participant`;
 
     const mls = useMLSContext();
 

@@ -58,8 +58,11 @@ const createMockStore = () => {
         preloadedState: {
             meetingInfo: {
                 ...initialMeetingInfoState,
-                participantNameMap: {
-                    '123': mockParticipantName,
+                participantsMap: {
+                    '123': {
+                        ParticipantUUID: '123',
+                        DisplayName: mockParticipantName,
+                    },
                 },
             },
         },
