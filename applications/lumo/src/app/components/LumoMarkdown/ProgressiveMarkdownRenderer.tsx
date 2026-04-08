@@ -8,12 +8,14 @@ import { visit } from 'unist-util-visit';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { isIos, isIpad, isSafari } from '@proton/shared/lib/helpers/browser';
+
 import type { SearchItem } from '../../lib/toolCall/types';
 import { parseInteger } from '../../util/number';
-import { convertRefTokensToSpans, normalizeBrTags, processForLatexMarkdown } from '../../util/tokens';
+import { convertRefTokensToSpans, normalizeBrTags } from '../../util/tokens';
 import { getDomain } from '../Conversation/messageChain/message/toolCall/helpers';
 import { InlineImageComponent } from './InlineImageComponent';
 import { LumoMarkdownCodeBlock } from './LumoMarkdownCodeBlock';
+import { remarkLatexDelimiters } from './remarkLatexDelimiters';
 
 import './LumoMarkdown.scss';
 
@@ -304,7 +306,16 @@ const MarkdownBlock: React.FC<{
 
         return (
             <Markdown
-                remarkPlugins={[remarkGfm, [remarkMath, { singleDollarTextMath: false }], remarkBrToBreak]}
+                remarkPlugins={[
+                    remarkGfm,
+                    // singleDollarTextMath is intentionally disabled: single `$` is ambiguous with
+                    // shell/bash variable syntax (e.g. $HOME, $DEST) and would corrupt any LLM-generated
+                    // bash scripts that appear outside a fenced code block. Inline math is handled by
+                    // remarkLatexDelimiters via \(...\), and display math via \[...\] or $$...$$
+                    remarkMath,
+                    remarkLatexDelimiters,
+                    remarkBrToBreak,
+                ]}
                 rehypePlugins={[() => rehypeKatex({ output: 'mathml' })]}
                 components={components}
                 urlTransform={(url) => {
@@ -346,8 +357,7 @@ export const ProgressiveMarkdownRenderer: React.FC<ProgressiveMarkdownProps> = R
                 console.log('[LUMO:RENDER:RAW]', JSON.stringify(content || ''));
             }
             const processedContent = convertRefTokensToSpans(content || '');
-            const processedContentWithMath = processForLatexMarkdown(processedContent);
-            return normalizeBrTags(processedContentWithMath);
+            return normalizeBrTags(processedContent);
         }, [content]);
 
         // Split content into complete (cacheable) and incomplete (active) blocks

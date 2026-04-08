@@ -126,11 +126,6 @@ export function testRefToSpanConversion() {
     });
 }
 
-// replace \Bigl and \Bigr with \left and \right to prevent rendering different size parentheses
-export function processForLatexParentheses(markdown: string) {
-    return markdown.replace(/\\Bigl/g, '\\left').replace(/\\Bigr/g, '\\right');
-}
-
 /**
  * Previously replaced <br> tags with spaces, but this caused bullet points
  * separated by <br> inside table cells to collapse into a single line.
@@ -140,20 +135,3 @@ export function processForLatexParentheses(markdown: string) {
 export function normalizeBrTags(markdown: string): string {
     return markdown;
 }
-
-// remark-math does not natively support latex delimiters like \(, \[, \\(, etc so we must convert both block-level and inline LaTeX delimiters \[ \] and \( \)
-//  to markdown-style math delimiters $$
-// for more information see https://github.com/remarkjs/react-markdown/issues/785
-export const processForLatexMarkdown = (content: string) => {
-    const processedContent = processForLatexParentheses(content);
-    // Convert \[...\] block math to $$...$$
-    const blockProcessedContent = processedContent.replace(/\\\[(.*?)\\\]/gs, (_, equation) => `$$${equation}$$`);
-    // Convert \(...\) inline math to $$...$$
-    const inlineProcessedContent = blockProcessedContent.replace(/\\\((.*?)\\\)/gs, (_, equation) => `$$${equation}$$`);
-    // Convert $...$ inline math (but not $$...$$) to $$...$$
-    // Requires non-whitespace-bordered content to avoid false positives with currency ($5, $10)
-    return inlineProcessedContent.replace(
-        /(?<!\$)\$(?!\$|\s)((?:[^$\n])+?)(?<!\s)\$(?!\$)/g,
-        (_, equation) => `$$${equation}$$`
-    );
-};
