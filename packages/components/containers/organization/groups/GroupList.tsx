@@ -39,10 +39,11 @@ const GroupList = ({
     canOnlyDelete,
     hasUsableDomain,
 }: Props) => {
-    const [searchInput, setSearchInput] = useState<string>('');
-    const [showSearchButton, setShowSearchButton] = useState(false);
     const [user] = useUser();
     const isAdmin = user?.isAdmin;
+    const canCreateGroup = isAdmin && hasUsableDomain && !canOnlyDelete;
+    const [searchInput, setSearchInput] = useState<string>('');
+    const [showSearchInput, setShowSearchInput] = useState(!canCreateGroup);
 
     const sideBarPlaceholder = (
         <div className="flex justify-center items-center w-full m-auto overflow-x-auto p-3 h-full">
@@ -60,8 +61,8 @@ const GroupList = ({
 
     return (
         <>
-            {showSearchButton ? (
-                <div className="flex items-center gap-2 border-bottom pb-4 mb-4 shrink-0 flex-nowrap mx-4 pt-4">
+            {showSearchInput ? (
+                <div className="flex items-center gap-2 border-bottom pb-4 mb-4 shrink-0 flex-nowrap px-3 pt-4">
                     <Input
                         autoFocus
                         value={searchInput}
@@ -69,34 +70,33 @@ const GroupList = ({
                         placeholder={c('Placeholder').t`Group name`}
                         prefix={<IcMagnifier />}
                     />
-                    <Button
-                        shape="ghost"
-                        icon
-                        onClick={() => {
-                            setShowSearchButton(false);
-                            setSearchInput('');
-                        }}
-                        title={c('Action').t`Close search`}
-                    >
-                        <IcCross alt={c('Action').t`Close search`} />
-                    </Button>
-                </div>
-            ) : (
-                <div className="flex items-center justify-space-between border-bottom pb-4 mb-4 shrink-0 flex-nowrap mx-4 pt-4">
-                    {isAdmin && (
+                    {canCreateGroup && (
                         <Button
-                            className="group-button flex flex-row flex-nowrap items-center px-3"
-                            disabled={!hasUsableDomain || canOnlyDelete}
-                            onClick={() => actions.onCreateGroup()}
+                            shape="ghost"
+                            icon
+                            onClick={() => {
+                                setShowSearchInput(false);
+                                setSearchInput('');
+                            }}
+                            title={c('Action').t`Close search`}
                         >
-                            <IcPlus className="shrink-0 mr-2" />
-                            {c('Action').t`New group`}
+                            <IcCross alt={c('Action').t`Close search`} />
                         </Button>
                     )}
+                </div>
+            ) : (
+                <div className="flex items-center justify-space-between border-bottom pb-4 mb-4 shrink-0 flex-nowrap px-3 pt-4">
+                    <Button
+                        className="group-button flex flex-row flex-nowrap items-center px-3"
+                        onClick={() => actions.onCreateGroup()}
+                    >
+                        <IcPlus className="shrink-0 mr-2" />
+                        {c('Action').t`New group`}
+                    </Button>
                     <Button
                         icon
                         className="ml-auto"
-                        onClick={() => setShowSearchButton(true)}
+                        onClick={() => setShowSearchInput(true)}
                         title={c('Action').t`Search groups`}
                     >
                         <IcMagnifier alt={c('Action').t`Search groups`} />
@@ -105,7 +105,7 @@ const GroupList = ({
             )}
 
             {uiState !== 'new' && groups.length === 0 && sideBarPlaceholder}
-            <Scroll className="px-4 pb-4">
+            <Scroll className="pb-4">
                 {uiState === 'new' && (
                     <GroupItem
                         key="new"

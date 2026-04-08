@@ -9,6 +9,7 @@ import { DualPaneContent } from '@proton/atoms/DualPane/DualPaneContent';
 import { DualPaneSidebar } from '@proton/atoms/DualPane/DualPaneSidebar';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import Loader from '@proton/components/components/loader/Loader';
+import SettingsPageTitle from '@proton/components/containers/account/SettingsPageTitle';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import canUseGroups from '@proton/components/containers/organization/groups/canUseGroups';
@@ -69,7 +70,7 @@ const OrganizationGroupsManagementSection = ({ organization }: Props) => {
             usingGroupsDomainButNotActive) &&
         (groups?.length ?? 0) > 0;
 
-    const showMail = shouldShowMail(organization?.PlanName);
+    const showMailFeatures = shouldShowMail(organization?.PlanName);
     const mailDescription = c('Info')
         .t`With groups, you can quickly and easily send emails to all the people in a specified group.`;
     const genericDescription = c('Info')
@@ -77,8 +78,9 @@ const OrganizationGroupsManagementSection = ({ organization }: Props) => {
 
     return (
         <SettingsSectionWide className="h-full groups-management">
+            <SettingsPageTitle className="mt-14">{c('Title').t`Groups`}</SettingsPageTitle>
             <SettingsParagraph className="flex flex-column flex-nowrap" learnMoreUrl={getKnowledgeBaseUrl('/groups')}>
-                {showMail ? mailDescription : genericDescription}
+                {showMailFeatures ? mailDescription : genericDescription}
             </SettingsParagraph>
             {!hasUsableDomain && (
                 <SettingsParagraph>
@@ -99,9 +101,9 @@ const OrganizationGroupsManagementSection = ({ organization }: Props) => {
                 </Card>
             )}
             {(hasUsableDomain || usingGroupsDomainButNotActive) && (
-                <div className="content flex-1 overflow-hidden mt-4 h-custom" style={{ '--h-custom': '95%' }}>
+                <div className="content flex-1 mt-8">
                     <div className="flex flex-nowrap flex-column h-full">
-                        <div className="flex items-center justify-start flex-nowrap w-full h-full">
+                        <div className="groups-dual-pane flex items-start justify-start flex-nowrap w-full gap-6">
                             <DualPaneSidebar>
                                 <GroupList
                                     groupsManagement={groupsManagement}

@@ -4,7 +4,7 @@ import type { FormikErrors } from 'formik';
 import { useFormik } from 'formik';
 import { c } from 'ttag';
 
-import { addGroup, removeGroup, updateGroup, updateMembersAfterEdit } from '@proton/account';
+import { addGroup, removeGroup, updateGroup } from '@proton/account';
 import { useCustomDomains } from '@proton/account/domains/hooks';
 import { useGroupMembers } from '@proton/account/groupMembers/hooks';
 import { useGroupMemberships } from '@proton/account/groupMemberships/hooks';
@@ -22,7 +22,7 @@ import { useDispatch } from '@proton/redux-shared-store';
 import { deleteGroup } from '@proton/shared/lib/api/groups';
 import { checkMemberAddressAvailability } from '@proton/shared/lib/api/members';
 import { emailValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
-import type { Address, EnhancedMember, Group, GroupMember, Organization } from '@proton/shared/lib/interfaces';
+import type { EnhancedMember, Group, GroupMember, Organization } from '@proton/shared/lib/interfaces';
 import { GroupFlags, GroupPermissions } from '@proton/shared/lib/interfaces';
 import { GROUP_MEMBER_PERMISSIONS } from '@proton/shared/lib/interfaces/GroupMember';
 
@@ -44,7 +44,7 @@ const INITIAL_FORM_VALUES = (organization?: Organization) => ({
 });
 
 const useGroupsManagement = (organization?: Organization): GroupsManagementReturn | undefined => {
-    const showMail = shouldShowMail(organization?.PlanName);
+    const showMailFeatures = shouldShowMail(organization?.PlanName);
 
     const handleError = useErrorHandler();
     const [members] = useMembers();
@@ -54,12 +54,13 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
     const api = useApi();
     const dispatch = useDispatch();
     const { createNotification } = useNotifications();
-    const [selectedGroup, setSelectedGroup] = useState<Group | undefined>(undefined);
+    const [selectedGroupId, setSelectedGroupId] = useState<string | undefined>(undefined);
+    const selectedGroup = groups?.find((group) => group.ID === selectedGroupId);
     const [uiState, setUiState] = useState<GROUPS_STATE>('empty');
     const [customDomains, loadingCustomDomains] = useCustomDomains();
     const { getMemberPublicKeys } = useGroupKeys();
 
-    const addGroupMembers = async (group: { ID: string; Address: Address }, emails: string[]) => {
+    const addGroupMembers = async (group: Group, emails: string[]) => {
         try {
             await dispatch(addGroupMembersThunk({ group, emails, getMemberPublicKeys }));
         } catch (e: unknown) {
@@ -106,7 +107,7 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
 
     const getSuggestedAddressDomainPart = (): DomainSuggestion => {
         // case 1: simplest case, prefer custom domain if available and mail is enabled
-        if (showMail && customDomains && customDomains.length > 0) {
+        if (showMailFeatures && customDomains && customDomains.length > 0) {
             return {
                 domain: customDomains[0].DomainName,
                 source: 'customdomain',
@@ -157,7 +158,7 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
             loadingPmMeDomain,
             groupsProtonMeDomain,
             loadingGroupsProtonMeDomain,
-            showMail,
+            showMailFeatures,
         ]
     );
 
@@ -254,14 +255,14 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
             dispatch(removeGroup(selectedGroup.ID));
             createNotification({ type: 'success', text: c('Info').t`Group deleted` });
             resetForm();
-            setSelectedGroup(undefined);
+            setSelectedGroupId(undefined);
             setUiState('empty');
         } catch (error) {
             handleError(error);
         }
     };
 
-    const handleSaveGroup = async (newEmails: string[]) => {
+    const handleSaveGroup = async () => {
         const serializedGroup = getSerializedGroup();
         if (!serializedGroup) {
             throw new Error('Unexpected save group state');
@@ -302,16 +303,10 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
             dispatch(updateGroup(Group));
         }
 
-        await addGroupMembers({ ID: Group.ID, Address: Group.Address }, newEmails);
-
-        if (!isNewGroup) {
-            dispatch(updateMembersAfterEdit({ groupId: Group.ID }));
-        }
-
         setUiState('view');
 
         resetForm();
-        setSelectedGroup(Group);
+        setSelectedGroupId(Group.ID);
     };
 
     const handleEditGroup = (group: Group) => {
@@ -328,7 +323,7 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
     };
 
     const handleViewGroup = (group: Group) => {
-        setSelectedGroup(group);
+        setSelectedGroupId(group.ID);
         setUiState('view');
         resetForm({
             values: {
@@ -346,7 +341,7 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
         resetForm({
             values: INITIAL_FORM_VALUES(organization),
         });
-        setSelectedGroup(undefined);
+        setSelectedGroupId(undefined);
     };
 
     const handleDiscardChanges = () => {
@@ -388,6 +383,7 @@ const useGroupsManagement = (organization?: Organization): GroupsManagementRetur
             onViewGroup: handleViewGroup,
             onSaveGroup: handleSaveGroup,
             onCreateGroup: handleCreateGroup,
+            onAddGroupMembers: addGroupMembers,
         },
     };
 };

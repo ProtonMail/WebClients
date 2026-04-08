@@ -5,15 +5,13 @@ import { c } from 'ttag';
 import { useMembers } from '@proton/account/members/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import InputFieldStacked from '@proton/components/components/inputFieldStacked/InputFieldStacked';
-import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
 import AddressesAutocompleteTwo from '@proton/components/components/v2/addressesAutocomplete/AddressesAutocomplete';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { RECIPIENT_TYPES } from '@proton/shared/lib/constants';
 import { emailValidator } from '@proton/shared/lib/helpers/formValidators';
 import { GROUP_MEMBER_TYPE, type GroupMember, type Recipient } from '@proton/shared/lib/interfaces';
 
-import type { NewGroupMember } from './EditGroup';
+import type { NewGroupMember } from './AddUsersToGroupModal';
 import { convertEnhancedMembersToContactEmails, convertGroupMemberToRecipient } from './helpers';
 import useGroupKeys from './useGroupKeys';
 
@@ -76,26 +74,20 @@ export const NewGroupMemberInput = ({
 
     return (
         <>
-            <InputFieldStackedGroup classname="mt-4">
-                <InputFieldStacked
-                    isGroupElement
-                    icon="pass-group"
-                    suffix={processing && <CircleLoader size="small" />}
-                >
-                    <AddressesAutocompleteTwo
-                        id="group-autocomplete"
-                        recipients={recipients}
-                        onAddRecipients={handleAddRecipients}
-                        contactEmails={convertEnhancedMembersToContactEmails(members)}
-                        label={c('Label').t`Group members`}
-                        validate={emailValidator}
-                        unstyled
-                        placeholder={c('Label').t`Add group member`}
-                        hasAddOnBlur
-                        hasEmailPasting
-                    />
-                </InputFieldStacked>
-            </InputFieldStackedGroup>
+            <AddressesAutocompleteTwo
+                id="group-autocomplete"
+                autoFocus
+                label={c('Label').t`Invite people`}
+                suffix={processing && <CircleLoader size="small" />}
+                recipients={recipients}
+                onAddRecipients={handleAddRecipients}
+                contactEmails={convertEnhancedMembersToContactEmails(members)}
+                validate={emailValidator}
+                placeholder={c('Label').t`Enter name or email address`}
+                hasAddOnBlur
+                hasEmailPasting
+                inputClassName="p-3"
+            />
             <Button color="norm" shape="ghost" size="small" className="p-1 mt-1" onClick={onAddAllOrgMembers}>
                 {c('Label').t`Add all organization members`}
             </Button>
