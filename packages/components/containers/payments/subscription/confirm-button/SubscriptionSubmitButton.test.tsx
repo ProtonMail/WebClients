@@ -94,4 +94,20 @@ describe('SubscriptionSubmitButton', () => {
 
         expect(screen.getByText('Confirm')).toBeInTheDocument();
     });
+
+    it('should display billing address error banner when taxCountry has an error message', () => {
+        renderButton({
+            taxCountry: { billingAddressErrorMessage: 'Please select billing country' } as any,
+        });
+
+        expect(screen.getByText('Please select billing country')).toBeInTheDocument();
+    });
+
+    it('should not display billing address error banner when taxCountry has no error message', () => {
+        renderButton({
+            taxCountry: { billingAddressErrorMessage: undefined } as any,
+        });
+
+        expect(screen.queryByText(/billing/i)).not.toBeInTheDocument();
+    });
 });
