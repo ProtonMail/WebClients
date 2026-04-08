@@ -1259,6 +1259,9 @@
       ],
       "Refetch index": [
         "Refacere index"
+      ],
+      "Reconnect to Gmail": [
+        "Reconectare la Gmail"
       ]
     },
     "Action: Docs": {
@@ -3083,6 +3086,18 @@
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Ne pare rău să vă vedem plecând. Dacă aveți un moment, am aprecia foarte mult să aflăm de ce doriți să anulați. Feedback-ul dvs. ne ajută să facem ${ BRAND_NAME } mai bun pentru toată lumea."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Acest lucru se poate întâmpla dacă permisiunile au fost eliminate sau parola a fost modificată."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Pentru a continua să primiți și să trimiteți mesaje Gmail în ${ BRAND_NAME }, reconectați-vă conturile."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Pentru a continua să primiți și să trimiteți mesaje Gmail în ${ BRAND_NAME }, reconectați-vă conturile."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Nu mai putem accesa ${ boldEmails }."
       ]
     },
     "description": {
@@ -4018,6 +4033,12 @@
       ],
       "Something went wrong with search: Not enough storage space.": [
         "Ceva nu a funcționat corect cu căutarea: nu există suficient spațiu de stocare."
+      ],
+      "Address could not be added.": [
+        "Adresa nu a putut fi adăugată."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Ceva nu a funcționat corect la preluarea domeniilor disponibile."
       ]
     },
     "error": {
@@ -7128,6 +7149,27 @@
       ],
       "Unsupported file type for Photos": [
         "Tip de fișier nesuportat pentru „Fotografii”"
+      ],
+      "Enter code": [
+        "Introduceți codul"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Dacă v-ați pierdut accesul la aplicația de autentificare, puteți utiliza unul din cele 16 coduri de recuperare de rezervă furnizate la configurarea autentificării cu doi factori. ${ learnMoreLink }"
+      ],
+      "Move ${ dragCount } item": [
+        "Mutare ${ dragCount } articol.",
+        "Mutare ${ dragCount } articole.",
+        "Mutare ${ dragCount } de articole."
+      ],
+      "Move ${ fileCount } file": [
+        "Mută ${ fileCount } fișier",
+        "Mutare ${ fileCount } fișiere",
+        "Mutare ${ fileCount } de fișiere"
+      ],
+      "Move ${ folderCount } folder": [
+        "Mutare ${ folderCount } folder",
+        "Mutare ${ folderCount } foldere",
+        "Mutare ${ folderCount } de foldere"
       ]
     },
     "info": {
@@ -9810,6 +9852,9 @@
       ],
       "Your settings have been changed successfully": [
         "Setările au fost modificate cu succes."
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Adresa ${ BRAND_NAME } este gata de utilizare"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13504,6 +13549,9 @@
       ],
       "Search": [
         "Căutare"
+      ],
+      "Disconnected from Gmail": [
+        "Deconectat de la Gmail"
       ]
     },
     "Today icon tooltip in mini calendar": {

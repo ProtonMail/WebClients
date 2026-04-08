@@ -1253,6 +1253,9 @@
       ],
       "Refetch index": [
         "Tornar a carregar l'índex"
+      ],
+      "Reconnect to Gmail": [
+        "Torneu a connectar-vos a Gmail"
       ]
     },
     "Action: Docs": {
@@ -3061,6 +3064,18 @@
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Ens sap greu que marxeu. Si teniu un moment, us agrairíem molt que ens diguéssiu per què voleu cancel·lar la subscripció. Els vostres comentaris ens ajuden a fer que ${ BRAND_NAME } sigui millor per a tothom."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Això podria passar si s'han suprimit els permisos o s'ha canviat la contrasenya."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Per continuar rebent i enviant missatges de Gmail a ${ BRAND_NAME }, torneu a connectar el vostre compte."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Per continuar rebent i enviant missatges de Gmail a ${ BRAND_NAME }, torneu a connectar els vostres comptes."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Ja no podem accedir a ${ boldEmails }."
       ]
     },
     "description": {
@@ -3988,6 +4003,12 @@
       ],
       "Something went wrong with search: Not enough storage space.": [
         "S'ha produït un error amb la cerca: no hi ha prou espai d'emmagatzematge."
+      ],
+      "Address could not be added.": [
+        "No s'ha pogut afegir l'adreça."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Alguna cosa ha anat malament mentre s'obtenien els dominis disponibles"
       ]
     },
     "error": {
@@ -7028,6 +7049,24 @@
       ],
       "Unsupported file type for Photos": [
         "Tipus de fitxer no admès per a Fotos"
+      ],
+      "Enter code": [
+        "Introduir el codi"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Si heu perdut l'accés a la vostra aplicació d'autenticació, podeu fer servir 1 dels 16 codis de recuperació de seguretat que se us van proporcionar quan vau configurar l'autenticació de doble factor. ${ learnMoreLink }"
+      ],
+      "Move ${ dragCount } item": [
+        "Moveu ${ dragCount } element",
+        "Moveu ${ dragCount } elements"
+      ],
+      "Move ${ fileCount } file": [
+        "Moure ${ fileCount } fitxer",
+        "Moure ${ fileCount } fitxers"
+      ],
+      "Move ${ folderCount } folder": [
+        "Moveu ${ folderCount } carpeta",
+        "Moveu ${ folderCount } carpetes"
       ]
     },
     "info": {
@@ -9699,6 +9738,9 @@
       ],
       "Your settings have been changed successfully": [
         "La configuració s'ha modificat."
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "La vostra adreça de ${ BRAND_NAME } ja està a punt per fer-se servir"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13234,6 +13276,9 @@
       ],
       "Search": [
         "Cerca"
+      ],
+      "Disconnected from Gmail": [
+        "Esteu desconnectat de Gmail"
       ]
     },
     "Today icon tooltip in mini calendar": {

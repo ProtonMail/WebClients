@@ -1244,6 +1244,9 @@
       ],
       "Remove my access": [
         "移除我的访问权限"
+      ],
+      "Refetch index": [
+        "重新获取索引"
       ]
     },
     "Action: Docs": {
@@ -6901,6 +6904,18 @@
       ],
       "for ${ price }": [
         "仅需 ${ price }"
+      ],
+      "${ state.result.entries.length } entries": [
+        "${ state.result.entries.length } 条目"
+      ],
+      "Index is empty.": [
+        "索引为空！"
+      ],
+      "Search module is not available.": [
+        "搜索模块不可用！"
+      ],
+      "Unsupported file type for Photos": [
+        "照片文件类型不受支持"
       ]
     },
     "info": {
@@ -7661,6 +7676,24 @@
       ],
       "Skip feedback": [
         "跳过反馈"
+      ],
+      "Environment compatible": [
+        "环境兼容"
+      ],
+      "Index kinds": [
+        "索引类型"
+      ],
+      "Initial indexing": [
+        "正在初始化索引"
+      ],
+      "Outdated version": [
+        "过时版本"
+      ],
+      "Searchable": [
+        "可搜索"
+      ],
+      "Visible columns:": [
+        "可见列："
       ]
     },
     "Label for contact group color": {
@@ -12045,7 +12078,7 @@
         "创建群组"
       ],
       "Created by": [
-        "由......创建"
+        "创建者"
       ],
       "Currency": [
         "货币"
@@ -12886,6 +12919,12 @@
       ],
       "Actions": [
         "操作"
+      ],
+      "Global": [
+        "全局"
+      ],
+      "Search": [
+        "搜索"
       ]
     },
     "Today icon tooltip in mini calendar": {
