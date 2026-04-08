@@ -11,9 +11,22 @@ export type WithAutofillOrigin<T> = T &
         origin: string;
     };
 
-export type AutofillItem = WithAutofillOrigin<SelectedItem>;
 export type AutofillActionType = 'creditCard' | 'login' | 'identity';
-export type AutofillActionDTO = AutofillItem & { type: AutofillActionType; crossFrame: boolean };
+export type AutofillItem = WithAutofillOrigin<SelectedItem>;
+export type AutofillValue = WithAutofillOrigin<{ value: string }>;
+
+export type AbstractAutofillDTO<T extends Record<AutofillActionType, any>> = {
+    [K in AutofillActionType]: { type: K } & T[K];
+}[AutofillActionType];
+
+export type AutofillActionDTO<T extends AutofillActionType = AutofillActionType> = Extract<
+    AbstractAutofillDTO<{
+        creditCard: AutofillItem;
+        login: AutofillItem;
+        identity: AutofillItem;
+    }>,
+    { type: T }
+>;
 
 export type AutofillSequence<T = {}> =
     | { status: 'start' }
@@ -22,44 +35,26 @@ export type AutofillSequence<T = {}> =
 
 export type AutofillStatus = AutofillSequence['status'];
 
-/** NOTE: augment this type with additional `ItemTypes`
- * when supporting cross-frame support for all forms.
- * We use a "sequence" here for UX purposes. */
 export type AutofillRequest<T extends AutofillStatus = AutofillStatus> = Extract<
     AutofillSequence<
-        SelectedItem &
-            (
-                | {
-                      type: 'creditCard';
-                      /** Credit card autofill request payload. The data field is partial to support
-                       * cross-origin autofill scenarios where sensitive fields (number, CVV) must be
-                       * stripped when autofilling across origin boundaries. */
-                      data: Partial<CCItemData>;
-                      fields: FrameField[];
-                  }
-                | {
-                      type: 'login';
-                      data: FormCredentials;
-                      field: FrameField;
-                  }
-                | {
-                      type: 'identity';
-                      data: ItemContent<'identity'>;
-                      field: FrameField;
-                  }
-            )
+        AbstractAutofillDTO<{
+            login: SelectedItem & { credentials: FormCredentials; field: FrameField };
+            identity: SelectedItem & { identity: ItemContent<'identity'>; field: FrameField };
+            /** Credit card autofill request payload. The data field is partial to support
+             * cross-origin autofill scenarios where sensitive fields (number, CVV) must be
+             * stripped when autofilling across origin boundaries. */
+            creditCard: SelectedItem & { data: Partial<CCItemData>; fields: FrameField[] };
+        }>
     >,
     { status: T }
 >;
 
-export type AutofillResult =
-    | {
-          type: 'creditCard';
-          /** Returns what fields where autofilled as part
-           * of the autofill request for the specific frame.
-           * We track autofilled fields to secure cross-frame
-           * filling ensuring we never autofill more than twice.. */
-          autofilled: CCFieldType[];
-      }
-    | { type: 'login' }
-    | { type: 'identity' };
+export type AutofillResult = AbstractAutofillDTO<{
+    /** Returns what fields where autofilled as part
+     * of the autofill request for the specific frame.
+     * We track autofilled fields to secure cross-frame
+     * filling ensuring we never autofill more than twice.. */
+    creditCard: { autofilled: CCFieldType[] };
+    login: Record<never, never>;
+    identity: Record<never, never>;
+}>;

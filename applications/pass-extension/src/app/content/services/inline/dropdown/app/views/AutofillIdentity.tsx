@@ -83,15 +83,8 @@ export const AutofillIdentity: FC<Props> = ({ action, ...payload }) => {
                               onClick={() => {
                                   controller.forwardMessage({
                                       type: InlinePortMessageType.AUTOFILL_ACTION,
-                                      payload: {
-                                          ...payload,
-                                          type: 'identity',
-                                          itemId,
-                                          shareId,
-                                          crossFrame: false,
-                                      },
+                                      payload: { ...payload, type: 'identity', itemId, shareId },
                                   });
-
                                   controller.close({ userAction: true });
                               }}
                           />
