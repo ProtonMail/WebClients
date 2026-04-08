@@ -1,7 +1,6 @@
 import type { DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { DROPDOWN_IFRAME_SRC } from 'proton-pass-extension/app/content/constants.runtime';
 import { DROPDOWN_MIN_HEIGHT, DROPDOWN_WIDTH } from 'proton-pass-extension/app/content/constants.static';
-import { withContext } from 'proton-pass-extension/app/content/context/context';
 import { type InlineAppHandler, createInlineApp } from 'proton-pass-extension/app/content/services/inline/inline.app';
 import type { InlineCloseOptions } from 'proton-pass-extension/app/content/services/inline/inline.messages';
 import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';
@@ -149,30 +148,6 @@ export const createDropdown = (popover: PopoverController): DropdownApp => {
                 return onDestroy();
         }
     });
-
-    /* For a password auto-suggestion - the password will have
-     * been generated in the injected iframe and passed in clear
-     * text through the secure extension port channel */
-    iframe.registerMessageHandler(
-        InlinePortMessageType.AUTOFILL_GENERATED_PW,
-        withContext(async (ctx, { payload }) => {
-            const target = anchor.current;
-            if (target?.type !== 'field') return;
-
-            const form = target.field.getFormHandle();
-            if (!form) return;
-
-            const prompt = ctx?.getSettings().autosave.passwordSuggest;
-            await ctx?.service.autofill.autofillPassword(form, payload.password);
-            target.field.focus({ preventAction: true });
-
-            form.tracker
-                ?.processForm({ submit: false, partial: true })
-                .then((res) => res && prompt && ctx.service.autosave.prompt(res))
-                .catch(noop);
-        }),
-        { userAction: true }
-    );
 
     iframe.registerMessageHandler(
         InlinePortMessageType.AUTOFILL_ACTION,

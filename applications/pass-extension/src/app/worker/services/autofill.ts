@@ -310,6 +310,26 @@ export const createAutoFillService = () => {
         return true;
     };
 
+    const onAutofillPassword = async (payload: AutofillActionDTO<'password'>, tabId: TabId) => {
+        const { fieldId, formId, frameId, value } = payload;
+        if (!value) throw new Error('AutofillPassword: no password');
+
+        await sendTabMessage(
+            backgroundMessage({
+                type: WorkerMessageType.AUTOFILL_SEQUENCE,
+                payload: {
+                    status: 'fill',
+                    type: 'password',
+                    password: value,
+                    field: { fieldId, frameId, formId },
+                },
+            }),
+            { tabId, frameId }
+        );
+
+        return true;
+    };
+
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.AUTOFILL_LOGIN_QUERY,
         onContextReady(async ({ getState }, { payload }, sender) => {
@@ -385,6 +405,8 @@ export const createAutoFillService = () => {
                     return onAutofillEmail(payload, tabId);
                 case 'creditCard':
                     return onAutofillCreditCard(payload, tabId);
+                case 'password':
+                    return onAutofillPassword(payload, tabId);
             }
         })
     );
