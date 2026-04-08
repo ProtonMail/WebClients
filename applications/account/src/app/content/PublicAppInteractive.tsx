@@ -346,7 +346,10 @@ const PublicAppInteractive = ({
                                     <Switch location={location}>
                                         <Route path={VPN_TV_PATH_WITH_CODE}>
                                             <UnAuthenticated>
-                                                <TvContainerNotSignedIn />
+                                                <TvContainerNotSignedIn
+                                                    paths={paths}
+                                                    searchParams={initialSearchParams}
+                                                />
                                             </UnAuthenticated>
                                         </Route>
                                         <Route path={SSO_PATHS.JOIN_MAGIC_LINK}>
