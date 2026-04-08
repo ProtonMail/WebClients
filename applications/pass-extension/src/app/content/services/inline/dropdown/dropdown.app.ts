@@ -174,22 +174,6 @@ export const createDropdown = (popover: PopoverController): DropdownApp => {
         { userAction: true }
     );
 
-    /* When suggesting an alias on a register form, the alias will
-     * only be created upon user action - this avoids creating
-     * aliases everytime the injected iframe dropdown is opened */
-    iframe.registerMessageHandler(
-        InlinePortMessageType.AUTOFILL_EMAIL,
-        withContext(async (ctx, { payload }) => {
-            const target = anchor.current;
-            if (target?.type !== 'field') return;
-
-            await ctx?.service.autofill.autofillEmail(target.field, payload.email);
-            target.field.focus({ preventAction: true });
-            void target.field.getFormHandle()?.tracker?.processForm({ submit: false, partial: true });
-        }),
-        { userAction: true }
-    );
-
     iframe.registerMessageHandler(
         InlinePortMessageType.AUTOFILL_ACTION,
         async ({ payload }) => {
