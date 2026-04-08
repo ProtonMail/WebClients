@@ -1143,16 +1143,3 @@ export function canAddLumoAddon(subscription: Subscription | FreeSubscription): 
         (sub) => hasLumo(sub) && isManagedExternally(sub)
     );
 }
-
-export function hasSpringSale2026Coupon(subscription: Subscription | FreeSubscription | undefined) {
-    return (
-        [
-            COUPON_CODES.MAR26SALE,
-            COUPON_CODES.MAR26SALECS,
-            COUPON_CODES.MAR26OFFER,
-            COUPON_CODES.MAR26OFFERCS,
-            COUPON_CODES.MAR26BUNDLESALE,
-            COUPON_CODES.MAR26BUNDLESALECS,
-        ] as string[]
-    ).includes(subscription?.CouponCode || '');
-}
