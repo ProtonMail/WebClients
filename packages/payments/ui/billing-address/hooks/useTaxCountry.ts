@@ -24,7 +24,6 @@ import { getDefaultPostalCodeByStateCode } from '../../../postal-codes/default-p
 import { isPostalCodeValid } from '../../../postal-codes/postal-codes-validation';
 import type { PaymentTelemetryContext } from '../../../telemetry/helpers';
 import { checkoutTelemetry } from '../../../telemetry/telemetry';
-import { type OfferUnavailableErrorMessage, useOfferUnavailableErrorMessage } from '../../components/PayButton';
 import { type CountryItem, getFullList } from '../../helpers/countries-sorted';
 
 export type OnBillingAddressChange = (billingAddress: BillingAddress) => void;
@@ -52,7 +51,6 @@ export interface TaxCountryHook {
     zipCodeBackendValid: boolean;
     allowedCountries?: string[];
     disabledCountries?: string[];
-    offerUnavailableErrorMessage?: OfferUnavailableErrorMessage;
     paymentsApi: PaymentsApi;
     billingAddressChangedInModal: (billingAddress: BillingAddress) => void;
     billingAddressValidationResult?: BillingAddressValidationResult;
@@ -110,8 +108,6 @@ export const useTaxCountry = (props: HookProps): TaxCountryHook => {
 
     const { paymentsApi: defaultPaymentsApi } = usePaymentsApi();
     const paymentsApi = props.paymentsApi ?? defaultPaymentsApi;
-
-    const offerUnavailableErrorMessage = useOfferUnavailableErrorMessage(props.paymentFacade);
 
     const currentFromPaymentStatus: BillingAddress = getBillingAddressFromProp(props);
 
@@ -287,7 +283,6 @@ export const useTaxCountry = (props: HookProps): TaxCountryHook => {
         zipCodeBackendValid,
         allowedCountries: props.allowedCountries,
         disabledCountries: props.disabledCountries,
-        offerUnavailableErrorMessage,
         paymentsApi,
         billingAddressChangedInModal,
         billingAddressValidationResult,
