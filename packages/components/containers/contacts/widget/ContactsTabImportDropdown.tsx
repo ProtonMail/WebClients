@@ -36,7 +36,7 @@ const ContactsTabImportDropdown = ({ onImport }: Props) => {
                         <>
                             <EasySwitchOauthImportButton
                                 className="w-full sm:justify-start"
-                                defaultCheckedTypes={[ImportType.CONTACTS]}
+                                products={[ImportType.CONTACTS]}
                                 source={EASY_SWITCH_SOURCES.CONTACTS_WEB_SETTINGS}
                                 provider={ImportProvider.GOOGLE}
                                 isDropdownButton
@@ -44,12 +44,12 @@ const ContactsTabImportDropdown = ({ onImport }: Props) => {
                             <div className="dropdown-item-hr" key="hr-1" />
                             <EasySwitchOauthImportButton
                                 className="w-full sm:justify-start"
-                                defaultCheckedTypes={[ImportType.CONTACTS]}
+                                products={[ImportType.CONTACTS]}
                                 source={EASY_SWITCH_SOURCES.CONTACTS_WEB_SETTINGS}
                                 provider={ImportProvider.OUTLOOK}
                                 isDropdownButton
                             />
-                            <div className="dropdown-item-hr" key="hr-1" />
+                            <div className="dropdown-item-hr" key="hr-2" />
                         </>
                     )}
                     <DropdownMenuButton

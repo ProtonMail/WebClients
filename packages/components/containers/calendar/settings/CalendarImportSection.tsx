@@ -63,7 +63,7 @@ const CalendarImportSection = ({ calendars, initialCalendar }: Props) => {
                     <EasySwitchOauthImportButton
                         className="mr-4 mb-2"
                         source={EASY_SWITCH_SOURCES.CALENDAR_WEB_SETTINGS}
-                        defaultCheckedTypes={[ImportType.CALENDAR]}
+                        products={[ImportType.CALENDAR]}
                         provider={ImportProvider.GOOGLE}
                     />
                 </EasySwitchProvider>
