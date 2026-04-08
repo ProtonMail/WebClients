@@ -16,6 +16,7 @@ interface RenderBlocksProps {
     isLastMessage: boolean;
     handleLinkClick: (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void;
     sourcesContainerRef: React.MutableRefObject<HTMLDivElement | null>;
+    messageContentContainerRef: React.MutableRefObject<HTMLDivElement | null>;
     reasoning?: string;
     toolCallResults?: SearchItem[] | null;
 }
@@ -134,6 +135,7 @@ export const RenderBlocks = ({
     isLastMessage,
     handleLinkClick,
     sourcesContainerRef,
+    messageContentContainerRef,
     reasoning,
     toolCallResults,
 }: RenderBlocksProps) => {
@@ -227,25 +229,27 @@ export const RenderBlocks = ({
             )}
 
             {/* Render text content blocks */}
-            {groups.map((group, idx) => {
-                if (group.type === 'text') {
-                    const isLastGroup = idx === groups.length - 1;
-                    return (
-                        <StreamingMarkdownRenderer
-                            key={idx}
-                            message={message}
-                            content={preprocessContent(group.block.content)}
-                            isStreaming={isGenerating && isLastMessage && isLastGroup}
-                            handleLinkClick={handleLinkClick}
-                            toolCallResults={toolCallResults}
-                            sourcesContainerRef={sourcesContainerRef}
-                        />
-                    );
-                }
+            <div ref={messageContentContainerRef}>
+                {groups.map((group, idx) => {
+                    if (group.type === 'text') {
+                        const isLastGroup = idx === groups.length - 1;
+                        return (
+                            <StreamingMarkdownRenderer
+                                key={idx}
+                                message={message}
+                                content={preprocessContent(group.block.content)}
+                                isStreaming={isGenerating && isLastMessage && isLastGroup}
+                                handleLinkClick={handleLinkClick}
+                                toolCallResults={toolCallResults}
+                                sourcesContainerRef={sourcesContainerRef}
+                            />
+                        );
+                    }
 
-                // Skip timeline groups - they're now handled by ThinkingPath
-                return null;
-            })}
+                    // Skip timeline groups - they're now handled by ThinkingPath
+                    return null;
+                })}
+            </div>
         </>
     );
 };
