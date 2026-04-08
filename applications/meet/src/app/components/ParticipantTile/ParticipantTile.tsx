@@ -8,11 +8,7 @@ import { c } from 'ttag';
 import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
 import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
 import { useMeetSelector } from '@proton/meet/store/hooks';
-import {
-    selectDisplayName,
-    selectIsScreenShare,
-    selectParticipantNameMap,
-} from '@proton/meet/store/slices/meetingInfo';
+import { selectDisplayName, selectIsScreenShare, selectParticipantName } from '@proton/meet/store/slices/meetingInfo';
 import { selectMeetSettings, selectParticipantsWithDisabledVideos } from '@proton/meet/store/slices/settings';
 import { isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -27,10 +23,10 @@ import { useDebouncedSpeakingStatus } from '../../hooks/useDebouncedSpeakingStat
 import { useParticipantDisplayColors } from '../../hooks/useParticipantDisplayColors';
 import { NetworkQualityIndicator } from '../NetworkQualityIndicator/NetworkQualityIndicator';
 import { ParticipantPlaceholder } from '../ParticipantPlaceholder/ParticipantPlaceholder';
-import { AUDIO_ICON_SIZE, POSITION_BY_SIZE, INDICATOR_SIZE_BY_SIZE } from './constants';
+import { ParticipantTileReaction } from './ParticipantTileReaction';
+import { AUDIO_ICON_SIZE, INDICATOR_SIZE_BY_SIZE, POSITION_BY_SIZE } from './constants';
 
 import './ParticipantTile.scss';
-import { ParticipantTileReaction } from './ParticipantTileReaction';
 
 interface ParticipantTileProps {
     participant: Participant;
@@ -38,7 +34,6 @@ interface ParticipantTileProps {
 }
 
 export const ParticipantTile = memo(({ participant, viewSize = 'large' }: ParticipantTileProps) => {
-    const participantNameMap = useMeetSelector(selectParticipantNameMap);
     const displayName = useMeetSelector(selectDisplayName);
     const participantsWithDisabledVideos = useMeetSelector(selectParticipantsWithDisabledVideos);
     const isScreenShare = useMeetSelector(selectIsScreenShare);
@@ -52,7 +47,6 @@ export const ParticipantTile = memo(({ participant, viewSize = 'large' }: Partic
     const { disableVideos } = useMeetSelector(selectMeetSettings);
 
     const isSpeaking = useDebouncedSpeakingStatus(participant);
-
 
     // Use useParticipantTracks to get camera tracks for this specific participant
     // This properly subscribes to track state changes
@@ -83,7 +77,8 @@ export const ParticipantTile = memo(({ participant, viewSize = 'large' }: Partic
     const isLocalParticipant = participant.identity === localParticipant.identity;
 
     const participantName =
-        participantNameMap[participant.identity] ?? (isLocalParticipant ? displayName : c('Info').t`Loading...`);
+        useMeetSelector((state) => selectParticipantName(state, participant.identity)) ??
+        (isLocalParticipant ? displayName : c('Info').t`Loading...`);
 
     const { width, height } = cameraVideoPublication?.dimensions ?? {
         width: 0,

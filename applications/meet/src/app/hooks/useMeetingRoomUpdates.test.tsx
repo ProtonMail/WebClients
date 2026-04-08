@@ -31,8 +31,11 @@ const mockChatMessages: MeetChatMessage[] = [
     },
 ];
 
-const mockParticipantNameMap = {
-    test: 'test',
+const mockParticipantMap = {
+    test: {
+        ParticipantUUID: 'test',
+        DisplayName: 'test',
+    },
 };
 
 const createMockStore = (overrides?: { chatMessages?: MeetChatMessage[]; events?: ParticipantEventRecord[] }) => {
@@ -56,7 +59,7 @@ const createMockStore = (overrides?: { chatMessages?: MeetChatMessage[]; events?
             },
             meetingInfo: {
                 ...initialMeetingInfoState,
-                participantNameMap: mockParticipantNameMap,
+                participantsMap: mockParticipantMap,
             },
         },
     });

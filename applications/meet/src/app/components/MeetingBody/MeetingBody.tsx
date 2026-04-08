@@ -10,7 +10,7 @@ import { TopBanner } from '@proton/components/index';
 import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
 import { IcMeetRotateCamera } from '@proton/icons/icons/IcMeetRotateCamera';
 import { useMeetSelector } from '@proton/meet/store/hooks';
-import { selectMeetingLink, selectParticipantNameMap } from '@proton/meet/store/slices/meetingInfo';
+import { selectMeetingLink, selectParticipantName } from '@proton/meet/store/slices/meetingInfo';
 import { selectSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 import { isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
@@ -49,7 +49,7 @@ interface MeetingBodyProps {
     isScreenShare: boolean;
     isLocalScreenShare: boolean;
     screenShareTrack: TrackReference;
-    screenShareParticipant: Participant;
+    screenShareParticipant?: Participant;
     isUsingTurnRelay: boolean;
     liveKitConnectionState: ConnectionState | null;
     showReconnectedMessage: boolean;
@@ -83,7 +83,6 @@ export const MeetingBody = ({
 
     const [participantSideBarOpen, setParticipantSideBarOpen] = useState(true);
 
-    const participantNameMap = useMeetSelector(selectParticipantNameMap);
     const meetingLink = useMeetSelector(selectMeetingLink);
 
     const { handleRotateCamera, isVideoEnabled } = useMediaManagementContext();
@@ -151,7 +150,8 @@ export const MeetingBody = ({
     // Using 0 instead of removing the video element to avoid reinitializing the screenshare video
     const smallScreenScreenShareFlexGrow = isSideBarOpen ? 0 : 8;
 
-    const presenterName = participantNameMap[screenShareParticipant?.identity ?? null] ?? '';
+    const presenterName =
+        useMeetSelector((state) => selectParticipantName(state, screenShareParticipant?.identity ?? '')) ?? '';
 
     const screenShareLabel = isLocalScreenShare
         ? c('Info').t`${presenterName} (you) is presenting`
