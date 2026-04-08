@@ -281,7 +281,7 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
 
                     case 'email': {
                         const field = resolveField(payload.field);
-                        await autofillEmail(field, payload.data);
+                        await autofillEmail(field, payload.email);
                         field.focus({ preventAction: true });
                         field.getFormHandle().tracker?.processForm({ submit: false, partial: true }).catch(noop);
                         return { ok: true, type: payload.type };
