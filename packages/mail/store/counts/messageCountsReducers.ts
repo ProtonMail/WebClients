@@ -404,7 +404,9 @@ export const labelConversationsPending = (
                 );
             }
 
-            // When conversation enters INBOX, also increase category counters
+            // When conversation enters INBOX, also increase category counters.
+            // This mirrors the INBOX counter increase above — when moving to INBOX/SENT/DRAFTS,
+            // received messages land in INBOX, making the conversation visible in the category tab.
             if (numMessagesInInbox === 0) {
                 conversation.Labels?.forEach((convLabel) => {
                     if (isCategoryLabel(convLabel.ID)) {
