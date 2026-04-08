@@ -96,11 +96,9 @@ export enum WorkerMessageType {
     AUTH_PULL_FORK = 'AUTH_PULL_FORK',
     AUTH_UNLOCK = 'AUTH_UNLOCK',
 
-    AUTOFILL_CC = 'AUTOFILL_CC',
+    AUTOFILL_ACTION = 'AUTOFILL_ACTION',
     AUTOFILL_CC_QUERY = 'AUTOFILL_CC_QUERY',
-    AUTOFILL_IDENTITY = 'AUTOFILL_IDENTITY',
     AUTOFILL_IDENTITY_QUERY = 'AUTOFILL_IDENTITY_QUERY',
-    AUTOFILL_LOGIN = 'AUTOFILL_LOGIN',
     AUTOFILL_LOGIN_QUERY = 'AUTOFILL_LOGIN_QUERY',
     AUTOFILL_OTP_CHECK = 'AUTOFILL_OTP_CHECK',
     AUTOFILL_SEQUENCE = 'AUTOFILL_SEQUENCE',
@@ -109,6 +107,7 @@ export enum WorkerMessageType {
     AUTOSAVE_REQUEST = 'AUTOSAVE_REQUEST',
     AUTOSUGGEST_ALIAS = 'AUTOSUGGEST_ALIAS',
     AUTOSUGGEST_PASSWORD = 'AUTOSUGGEST_PASSWORD',
+
     B2B_EVENT = 'B2B_EVENT',
     CLIENT_INIT = 'CLIENT_INIT',
     CLIPBOARD_AUTOCLEAR = 'CLIPBOARD_AUTOCLEAR',
@@ -202,11 +201,9 @@ export type AuthOfflineSwitchMessage = { type: WorkerMessageType.AUTH_OFFLINE_SW
 export type AuthPullForkMessage = WithPayload<WorkerMessageType.AUTH_PULL_FORK, { selector: string }>;
 export type AuthUnlockMessage = WithPayload<WorkerMessageType.AUTH_UNLOCK, UnlockDTO>;
 
-export type AutofillCCMessage = WithPayload<WorkerMessageType.AUTOFILL_CC, AutofillActionDTO>;
+export type AutofillActionMessage = WithPayload<WorkerMessageType.AUTOFILL_ACTION, AutofillActionDTO>;
 export type AutofillCCQueryMessage = { type: WorkerMessageType.AUTOFILL_CC_QUERY };
-export type AutofillIdentityMessage = WithPayload<WorkerMessageType.AUTOFILL_IDENTITY, AutofillActionDTO>;
 export type AutofillIdentityQueryMessage = { type: WorkerMessageType.AUTOFILL_IDENTITY_QUERY };
-export type AutofillLoginMessage = WithPayload<WorkerMessageType.AUTOFILL_LOGIN, AutofillActionDTO>;
 export type AutofillLoginQueryMessage = WithPayload<WorkerMessageType.AUTOFILL_LOGIN_QUERY, AutofillOptions>;
 export type AutofillOTPCheckMessage = { type: WorkerMessageType.AUTOFILL_OTP_CHECK };
 export type AutofillPasswordOptionsMessage = { type: WorkerMessageType.AUTOSUGGEST_PASSWORD };
@@ -305,11 +302,9 @@ export type WorkerMessage =
     | AuthOfflineSwitchMessage
     | AuthPullForkMessage
     | AuthUnlockMessage
-    | AutofillCCMessage
+    | AutofillActionMessage
     | AutofillCCQueryMessage
-    | AutofillIdentityMessage
     | AutofillIdentityQueryMessage
-    | AutofillLoginMessage
     | AutofillLoginQueryMessage
     | AutofillOTPCheckMessage
     | AutofillPasswordOptionsMessage

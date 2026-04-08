@@ -25,7 +25,6 @@ import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { nextTick, onNextTick } from '@proton/pass/utils/time/next-tick';
 import { resolveSubdomain } from '@proton/pass/utils/url/utils';
 import { omit } from '@proton/shared/lib/helpers/object';
-import noop from '@proton/utils/noop';
 
 import { autofillIdentityFields } from './autofill.identity';
 
@@ -258,18 +257,16 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
                             ?.getFieldById<FieldType.CREDIT_CARD>(field.fieldId)
                     );
 
-                    return autofillCCFields(ccFields.filter(truthy), payload)
-                        .then((autofilled) => ({ type: payload.type, autofilled: autofilled.flat() }))
-                        .catch(() => ({ type: payload.type, autofilled: [] }));
+                    const autofilled = await autofillCCFields(ccFields.filter(truthy), payload);
+                    return { type: payload.type, autofilled: autofilled.flat() };
 
                 case 'login': {
                     const form = ctx?.service.formManager.getFormById(payload.field.formId);
                     const field = form?.getFieldById(payload.field.fieldId);
 
                     if (form && field) {
-                        await autofillLogin(form, payload.data)
-                            .then(() => field?.focus({ preventAction: true }))
-                            .catch(noop);
+                        await autofillLogin(form, payload.credentials);
+                        field?.focus({ preventAction: true });
                     }
 
                     return { type: payload.type };
@@ -280,9 +277,8 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
                     const field = form?.getFieldById(payload.field.fieldId);
 
                     if (form && field) {
-                        await autofillIdentity(field, payload.data)
-                            .then(() => field.focus({ preventAction: true }))
-                            .catch(noop);
+                        await autofillIdentity(field, payload.identity);
+                        field.focus({ preventAction: true });
                     }
 
                     return { type: payload.type };

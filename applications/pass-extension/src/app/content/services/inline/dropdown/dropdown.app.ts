@@ -7,7 +7,7 @@ import type { InlineCloseOptions } from 'proton-pass-extension/app/content/servi
 import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';
 import type { PopoverController } from 'proton-pass-extension/app/content/services/inline/inline.popover';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import type { AutofillActionDTO, WithAutofillOrigin } from 'proton-pass-extension/types/autofill';
+import type { WithAutofillOrigin } from 'proton-pass-extension/types/autofill';
 import type { Coords } from 'proton-pass-extension/types/inline';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
@@ -190,46 +190,15 @@ export const createDropdown = (popover: PopoverController): DropdownApp => {
         { userAction: true }
     );
 
-    const validateAutofillAction = withContext<(payload: AutofillActionDTO) => AutofillActionDTO>((ctx, payload) => {
-        if (payload.type === 'creditCard') {
-            /** Optimize cross-frame detection for credit card autofill. If the
-             * target form exists in the top frame and contains no iframes, we can
-             * safely mark this as a same-frame operation. */
-            const form = ctx?.service.formManager.getFormById(payload.formId);
-            if (form && !form.hasFrameFields()) payload.crossFrame = false;
-        }
-
-        return payload;
-    });
-
     iframe.registerMessageHandler(
         InlinePortMessageType.AUTOFILL_ACTION,
         async ({ payload }) => {
-            switch (payload.type) {
-                case 'creditCard':
-                    return sendMessage(
-                        contentScriptMessage({
-                            type: WorkerMessageType.AUTOFILL_CC,
-                            payload: validateAutofillAction(payload),
-                        })
-                    );
-
-                case 'login':
-                    return sendMessage(
-                        contentScriptMessage({
-                            type: WorkerMessageType.AUTOFILL_LOGIN,
-                            payload,
-                        })
-                    );
-
-                case 'identity':
-                    return sendMessage(
-                        contentScriptMessage({
-                            type: WorkerMessageType.AUTOFILL_IDENTITY,
-                            payload,
-                        })
-                    );
-            }
+            return sendMessage(
+                contentScriptMessage({
+                    type: WorkerMessageType.AUTOFILL_ACTION,
+                    payload,
+                })
+            );
         },
         { userAction: true }
     );
