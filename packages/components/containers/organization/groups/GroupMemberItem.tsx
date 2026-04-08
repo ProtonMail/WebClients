@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import Badge from '@proton/components/components/badge/Badge';
+import { Badge } from '@proton/components/components/badge/Badge';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import type { EnhancedMember, Group, GroupMember } from '@proton/shared/lib/interfaces';
 import { GROUP_MEMBER_PERMISSIONS, GROUP_MEMBER_STATE } from '@proton/shared/lib/interfaces';
@@ -34,6 +34,7 @@ interface Props {
     group: Group; // needs to be removed once GroupMemberItemDropdown does not need it
     canOnlyDelete: boolean;
     canChangeVisibility: boolean;
+    showMailFeatures: boolean;
 }
 
 export const GroupMemberItem = ({
@@ -43,6 +44,7 @@ export const GroupMemberItem = ({
     group,
     canOnlyDelete,
     canChangeVisibility,
+    showMailFeatures,
 }: Props) => {
     const badge = getInvitationBadgeMap()[State];
     const isGroupOwner = hasBit(groupMember.Permissions, GROUP_MEMBER_PERMISSIONS.OWNER);
@@ -55,6 +57,7 @@ export const GroupMemberItem = ({
                 memberEmail={Email}
                 memberName={memberName ?? Email}
                 groupMemberType={groupMember.Type}
+                showMailFeatures={showMailFeatures}
             >
                 <div className="flex flex-row gap-2 flex-nowrap self-center">
                     {badge && (

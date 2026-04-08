@@ -9,10 +9,12 @@ import { useModalStateObject } from '@proton/components/components/modalTwo/useM
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import type { Group } from '@proton/shared/lib/interfaces';
 
+import DeleteGroupPrompt from './DeleteGroupPrompt';
 import GroupItemActionPrompt from './GroupItemActionPrompt';
 
 interface Props {
     group: Group;
+    showMailFeatures: boolean;
     handleDeleteGroup: () => Promise<void>;
     handleDeleteAllGroupMembers: () => Promise<void>;
     canOnlyDelete: boolean;
@@ -20,6 +22,7 @@ interface Props {
 
 const GroupItemMoreOptionsDropdown = ({
     group,
+    showMailFeatures,
     handleDeleteGroup,
     handleDeleteAllGroupMembers,
     canOnlyDelete,
@@ -27,17 +30,6 @@ const GroupItemMoreOptionsDropdown = ({
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
     const deleteGroupPrompt = useModalStateObject();
     const removeAllMembersPrompt = useModalStateObject();
-    const displayGroupName = (
-        <strong key="group-name" className="text-break">
-            {group.Name}
-        </strong>
-    );
-
-    const displayGroupAddressEmail = (
-        <strong key="group-email" className="text-break">
-            {group.Address.Email}
-        </strong>
-    );
 
     return (
         <>
@@ -51,20 +43,11 @@ const GroupItemMoreOptionsDropdown = ({
                 />
             )}
             {deleteGroupPrompt.render && (
-                <GroupItemActionPrompt
-                    title={c('Title').t`Delete group?`}
-                    buttonTitle={c('Action').t`Delete group`}
-                    children={
-                        <>
-                            {c('Delete group prompt')
-                                .jt`Please note that if you delete the group ${displayGroupName} (with address ${displayGroupAddressEmail}), you will no longer be able to receive emails using its address.`}
-                            <br />
-                            <br />
-                            {c('Delete group prompt').t`Are you sure you want to delete this group?`}
-                        </>
-                    }
+                <DeleteGroupPrompt
+                    group={group}
+                    showMailFeatures={showMailFeatures}
                     onConfirm={handleDeleteGroup}
-                    {...deleteGroupPrompt.modalProps}
+                    modalProps={deleteGroupPrompt.modalProps}
                 />
             )}
             {!canOnlyDelete && (
