@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { Banner } from '@proton/atoms/Banner/Banner';
 import { Badge } from '@proton/components/components/badge/Badge';
 import Info from '@proton/components/components/link/Info';
 import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
@@ -404,13 +403,6 @@ const SubscriptionCheckout = ({
                 {checkoutView.render('taxInclusive')}
                 {checkoutView.render('vatReverseCharge')}
             </div>
-
-            {/* Error message related to billing address */}
-            {taxCountry.billingAddressErrorMessage && (
-                <Banner variant="danger" className="mt-2 mb-2">
-                    {taxCountry.billingAddressErrorMessage}
-                </Banner>
-            )}
 
             {/* Gift code input */}
             {planAmountValue > 0 && gift ? gift : null}
