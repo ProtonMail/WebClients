@@ -109,4 +109,33 @@ describe('message counts - unlabel conversations', () => {
             skippedLabelIDs: [CUSTOM_LABEL_ID1],
         });
     });
+
+    it('should not affect category counter when unlabeling a custom label from a message with CATEGORY_SOCIAL', () => {
+        const message = {
+            ID: 'messageID',
+            LabelIDs: [MAILBOX_LABEL_IDS.INBOX, CUSTOM_LABEL_ID1, MAILBOX_LABEL_IDS.CATEGORY_SOCIAL],
+            Unread: 1,
+        } as Message;
+
+        unlabelMessages(state, {
+            type: 'mailbox/unlabelMessages',
+            payload: {
+                messages: [message],
+                sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
+                destinationLabelID: CUSTOM_LABEL_ID1,
+                labels: customLabels,
+                folders: customFolders,
+            },
+        });
+
+        const updatedCounters = state.value as LabelCount[];
+
+        const categorySocialCount = updatedCounters.find((c) => c.LabelID === MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
+        expect(categorySocialCount).toEqual({ LabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, Unread: 1, Total: 2 });
+
+        checkUpdatedCounters({
+            updatedCounters,
+            skippedLabelIDs: [CUSTOM_LABEL_ID1],
+        });
+    });
 });

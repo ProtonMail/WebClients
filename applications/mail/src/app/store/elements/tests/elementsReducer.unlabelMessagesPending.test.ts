@@ -146,6 +146,47 @@ describe('unlabelMessagesPending', () => {
         ]);
     });
 
+    it('should not remove CATEGORY_SOCIAL when unlabeling a custom label from a message', () => {
+        const message = setupMessage({
+            messageID: MESSAGE_ID,
+            unreadState: 'unread',
+            labelIDs: [
+                MAILBOX_LABEL_IDS.INBOX,
+                MAILBOX_LABEL_IDS.ALL_MAIL,
+                MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                CUSTOM_LABEL_ID1,
+                MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+            ],
+        });
+
+        testState.elements = {
+            [MESSAGE_ID]: message,
+        };
+
+        unlabelMessagesPending(testState, {
+            type: 'mailbox/unlabelMessages',
+            payload: undefined,
+            meta: {
+                arg: {
+                    messages: [message],
+                    destinationLabelID: CUSTOM_LABEL_ID1,
+                    sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
+                    labels: customLabels,
+                    folders: customFolders,
+                },
+            },
+        });
+
+        const updatedMessage = testState.elements[MESSAGE_ID] as Message;
+        expect(updatedMessage.Unread).toEqual(1);
+        expectMessagesLabelsSameArray(updatedMessage.LabelIDs, [
+            MAILBOX_LABEL_IDS.INBOX,
+            MAILBOX_LABEL_IDS.ALL_MAIL,
+            MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+            MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+        ]);
+    });
+
     describe('Remove a label on the conversation', () => {
         it('should remove the label from the converastion when', () => {
             const message = setupMessage({
