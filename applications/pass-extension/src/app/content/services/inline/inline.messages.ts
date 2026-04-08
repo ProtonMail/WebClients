@@ -26,7 +26,6 @@ import type { NotificationRequest } from './notification/notification.app';
  * between the content-script and iframe. */
 export enum InlinePortMessageType {
     AUTOFILL_ACTION = 'AUTOFILL_ACTION',
-    AUTOFILL_EMAIL = 'AUTOFILL_EMAIL',
     AUTOFILL_FILTER = 'AUTOFILL_FILTER',
     AUTOFILL_GENERATED_PW = 'AUTOFILL_GENERATED_PASSWORD',
     AUTOFILL_OTP = 'AUTOFILL_OTP',
@@ -86,7 +85,6 @@ export type InlineMessageType = InlinePortMessageType | InlineWorkerMessages['ty
 export type InlineMessage<T extends InlineMessageType = InlineMessageType> = Extract<
     | InlineWorkerMessages
     | { type: InlinePortMessageType.AUTOFILL_ACTION; payload: AutofillActionDTO }
-    | { type: InlinePortMessageType.AUTOFILL_EMAIL; payload: { email: string } }
     | { type: InlinePortMessageType.AUTOFILL_FILTER; payload: { startsWith: string } }
     | { type: InlinePortMessageType.AUTOFILL_GENERATED_PW; payload: { password: string } }
     | { type: InlinePortMessageType.AUTOFILL_OTP; payload: { code: string } }

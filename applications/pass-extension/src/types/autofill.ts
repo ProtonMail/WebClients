@@ -11,7 +11,7 @@ export type WithAutofillOrigin<T> = T &
         origin: string;
     };
 
-export type AutofillActionType = 'creditCard' | 'login' | 'identity';
+export type AutofillActionType = 'creditCard' | 'login' | 'identity' | 'email';
 export type AutofillItem = WithAutofillOrigin<SelectedItem>;
 export type AutofillValue = WithAutofillOrigin<{ value: string }>;
 
@@ -24,6 +24,7 @@ export type AutofillActionDTO<T extends AutofillActionType = AutofillActionType>
         creditCard: AutofillItem;
         login: AutofillItem;
         identity: AutofillItem;
+        email: AutofillValue;
     }>,
     { type: T }
 >;
@@ -44,6 +45,7 @@ export type AutofillRequest<T extends AutofillStatus = AutofillStatus> = Extract
              * cross-origin autofill scenarios where sensitive fields (number, CVV) must be
              * stripped when autofilling across origin boundaries. */
             creditCard: SelectedItem & { data: Partial<CCItemData>; fields: FrameField[] };
+            email: { data: string; field: FrameField };
         }>
     >,
     { status: T }
@@ -57,4 +59,5 @@ export type AutofillResult = AbstractAutofillDTO<{
     creditCard: { autofilled: CCFieldType[] };
     login: Record<never, never>;
     identity: Record<never, never>;
+    email: Record<never, never>;
 }>;
