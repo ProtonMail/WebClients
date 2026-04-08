@@ -1028,6 +1028,9 @@
       ],
       "Continue to ${ planOrAppName }": [
         "Continuar amb ${ planOrAppName }"
+      ],
+      "Reconnect to Gmail": [
+        "Torneu a connectar-vos a Gmail"
       ]
     },
     "action": {
@@ -3197,6 +3200,18 @@
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Ens sap greu que marxeu. Si teniu un moment, us agrairíem molt que ens diguéssiu per què voleu cancel·lar la subscripció. Els vostres comentaris ens ajuden a fer que ${ BRAND_NAME } sigui millor per a tothom."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Això podria passar si s'han suprimit els permisos o s'ha canviat la contrasenya."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Per continuar rebent i enviant missatges de Gmail a ${ BRAND_NAME }, torneu a connectar el vostre compte."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Per continuar rebent i enviant missatges de Gmail a ${ BRAND_NAME }, torneu a connectar els vostres comptes."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Ja no podem accedir a ${ boldEmails }."
       ]
     },
     "description": {
@@ -4068,6 +4083,12 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "La vostra connexió de Zoom ha caducat. Torneu a connectar-vos per continuar."
+      ],
+      "Address could not be added.": [
+        "No s'ha pogut afegir l'adreça."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Alguna cosa ha anat malament mentre s'obtenien els dominis disponibles"
       ]
     },
     "error": {
@@ -5001,6 +5022,9 @@
     "Import provider": {
       "Advanced import": [
         "Importació avançada"
+      ],
+      "More import options": [
+        "Més opcions d'importació"
       ]
     },
     "Import warning": {
@@ -6557,6 +6581,12 @@
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Afegiu ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
+      "Enter code": [
+        "Introduir el codi"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Si heu perdut l'accés a la vostra aplicació d'autenticació, podeu fer servir 1 dels 16 codis de recuperació de seguretat que se us van proporcionar quan vau configurar l'autenticació de doble factor. ${ learnMoreLink }"
       ]
     },
     "info": {
@@ -7299,6 +7329,9 @@
       ],
       "Skip feedback": [
         "Ometre els comentaris"
+      ],
+      "Securely share parts of your schedule through a booking page you can send to anyone.": [
+        "Compartiu de manera segura parts de la vostra agenda mitjançant una pàgina de reserves que podeu enviar a tothom."
       ]
     },
     "label": {
@@ -8837,6 +8870,9 @@
       ],
       "Passphrase copied to clipboard": [
         "S'ha copiat la frase de contrasenya al porta-retalls"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "La vostra adreça de ${ BRAND_NAME } ja està a punt per fer-se servir"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -12289,6 +12325,9 @@
       ],
       "Your shorter address is now ready": [
         "La vostra adreça més curta ja està a punt."
+      ],
+      "Disconnected from Gmail": [
+        "Esteu desconnectat de Gmail"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

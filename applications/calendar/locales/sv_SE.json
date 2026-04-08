@@ -1022,6 +1022,9 @@
       ],
       "Continue to ${ planOrAppName }": [
         "Fortsätt till ${ planOrAppName }"
+      ],
+      "Reconnect to Gmail": [
+        "Återanslut till Gmail"
       ]
     },
     "action": {
@@ -3179,6 +3182,15 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Detta kan hända om behörigheter togs bort eller ditt lösenord har ändrats."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "För att fortsätta ta emot och skicka Gmail-meddelanden i ${ BRAND_NAME }, återanslut ditt konto."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Vi kan inte komma åt ${ boldEmails } längre."
       ]
     },
     "description": {
@@ -4038,6 +4050,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Din Zoom-anslutning har löpt ut. Återanslut för att fortsätta."
+      ],
+      "Address could not be added.": [
+        "Adress kunde inte läggas till."
       ]
     },
     "error": {
@@ -4971,6 +4986,9 @@
     "Import provider": {
       "Advanced import": [
         "Avancerad import"
+      ],
+      "More import options": [
+        "Fler importalternativ"
       ]
     },
     "Import warning": {
@@ -6481,6 +6499,9 @@
       ],
       "Everything in ${ planOrAppName }, plus:": [
         "Allt i ${ planOrAppName }, plus:"
+      ],
+      "Enter code": [
+        "Ange kod"
       ]
     },
     "info": {
@@ -8746,6 +8767,9 @@
       ],
       "Passphrase copied to clipboard": [
         "Lösenfras kopierat till urklipp"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Din ${ BRAND_NAME }-adress är redo att användas"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -12285,6 +12309,9 @@
       ],
       "Your shorter address is now ready": [
         "Din kortare adress är redo nu"
+      ],
+      "Disconnected from Gmail": [
+        "Koppla från Gmail"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

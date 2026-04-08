@@ -998,6 +998,12 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Ilmainen työpöytäsovelluksen kokeilujaksosi päättyy ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Hide": [
+        "Piilota"
+      ],
+      "Reconnect to Gmail": [
+        "Yhdistä uudelleen Gmailiin"
       ]
     },
     "action": {
@@ -1083,6 +1089,9 @@
       ],
       "Users": [
         "Käyttäjät"
+      ],
+      "Writing assistant": [
+        "Kirjoitusavustaja"
       ]
     },
     "Alarm notification": {
@@ -2792,6 +2801,9 @@
       ],
       "Åland Islands": [
         "Ahvenanmaa"
+      ],
+      "North Macedonia": [
+        "Pohjois-Makedonia"
       ]
     },
     "Country select label": {
@@ -3055,6 +3067,18 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Olet jo luonut 10 aliasta. Saat rajattomasti aliaksia ja 500 Gt tallennustilaa ${ BRAND_NAME } Unlimitedilla."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Tämä voi johtua, jos käyttöoikeudet on poistettu tai salasanasi on vaihdettu."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Jotta voit jatkaa Gmail-viestien vastaanottamista ja lähettämistä ${ BRAND_NAME } -palvelussa, yhdistä tilisi uudelleen."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Jotta voit jatkaa Gmail-viestien vastaanottamista ja lähettämistä ${ BRAND_NAME } -palvelussa, yhdistä tilisi uudelleen."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Emme voi enää käyttää ${ boldEmails } -osoitteita."
       ]
     },
     "description": {
@@ -3903,6 +3927,12 @@
       ],
       "Your import will not be processed.": [
         "Tuontiasi ei käsitellä."
+      ],
+      "Address could not be added.": [
+        "Osoitetta ei voitu lisätä."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Jotain meni vikaan haettaessa käytettävissä olevia verkkotunnuksia"
       ]
     },
     "error": {
@@ -8450,6 +8480,9 @@
       ],
       "Passphrase copied to clipboard": [
         "Salalause kopioitiin leikepöydälle"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "${ BRAND_NAME } -osoitteesi on valmis käytettäväksi"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9385,6 +9418,12 @@
       ],
       "ZIP code": [
         "Postinumero"
+      ],
+      "Enter a name": [
+        "Syötä nimi"
+      ],
+      "Select a provider": [
+        "Valitse tarjoaja"
       ]
     },
     "Placeholder for contact group name": {
@@ -11828,6 +11867,9 @@
       ],
       "Your shorter address is now ready": [
         "Lyhyempi osoittesi on nyt valmis"
+      ],
+      "Disconnected from Gmail": [
+        "Yhteys Gmailiin katkaistu"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -12395,6 +12437,20 @@
       ],
       "Passcode:": [
         "Tunnuskoodi:"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }

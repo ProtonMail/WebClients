@@ -4788,6 +4788,9 @@
     "Import provider": {
       "Advanced import": [
         "進階匯入"
+      ],
+      "More import options": [
+        "更多匯入選項"
       ]
     },
     "Import warning": {
@@ -6175,6 +6178,9 @@
       ],
       "How far in advance can someone book?": [
         "有人可以提前多久預訂？"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } 個席次"
       ]
     },
     "info": {
@@ -7210,6 +7216,9 @@
       ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "端對端加密的螢幕共享和臨時通話內聊天"
+      ],
+      "Video meetings, ${ n } participant": [
+        "視訊， ${ n } 參與者"
       ]
     },
     "Message": {
@@ -7913,6 +7922,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我們會掃描暗網去檢查你的${ BRAND_NAME }地址或别名是否被外洩，並且在發現任何問題時立即通知你。"
+      ],
+      "Data retention policies": [
+        "資料保留政策"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "隱私 AI 對話 (${ LUMO_APP_NAME })"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN 附帶廣告攔截器及惡意軟體防護"
       ]
     },
     "new_plans: feature highlight": {
@@ -12157,6 +12175,19 @@
       ],
       "Yahoo": [
         "Yahoo"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } 個席次"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME } 席位"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "包含 ${ seats } 座席"
       ]
     }
   }

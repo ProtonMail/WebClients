@@ -1032,6 +1032,9 @@
       ],
       "Continue to ${ planOrAppName }": [
         "Continuare cu ${ planOrAppName }"
+      ],
+      "Reconnect to Gmail": [
+        "Reconectare la Gmail"
       ]
     },
     "action": {
@@ -3225,6 +3228,18 @@
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Ne pare rău să vă vedem plecând. Dacă aveți un moment, am aprecia foarte mult să aflăm de ce doriți să anulați. Feedback-ul dvs. ne ajută să facem ${ BRAND_NAME } mai bun pentru toată lumea."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Acest lucru se poate întâmpla dacă permisiunile au fost eliminate sau parola a fost modificată."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Pentru a continua să primiți și să trimiteți mesaje Gmail în ${ BRAND_NAME }, reconectați-vă conturile."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Pentru a continua să primiți și să trimiteți mesaje Gmail în ${ BRAND_NAME }, reconectați-vă conturile."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Nu mai putem accesa ${ boldEmails }."
       ]
     },
     "description": {
@@ -4108,6 +4123,12 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Conexiunea la Zoom a expirat. Reconectați-vă pentru a continua."
+      ],
+      "Address could not be added.": [
+        "Adresa nu a putut fi adăugată."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Ceva nu a funcționat corect la preluarea domeniilor disponibile."
       ]
     },
     "error": {
@@ -5058,6 +5079,9 @@
     "Import provider": {
       "Advanced import": [
         "Importare avansată"
+      ],
+      "More import options": [
+        "Mai multe opțiuni de importare"
       ]
     },
     "Import warning": {
@@ -6648,6 +6672,12 @@
       ],
       "Everything in ${ planOrAppName }, plus:": [
         "Totul din ${ planOrAppName }, plus:"
+      ],
+      "Enter code": [
+        "Introduceți codul"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Dacă v-ați pierdut accesul la aplicația de autentificare, puteți utiliza unul din cele 16 coduri de recuperare de rezervă furnizate la configurarea autentificării cu doi factori. ${ learnMoreLink }"
       ]
     },
     "info": {
@@ -7396,6 +7426,9 @@
       ],
       "Skip feedback": [
         "Omitere feedback"
+      ],
+      "Securely share parts of your schedule through a booking page you can send to anyone.": [
+        "Partajați în siguranță părți din programul personal printr-o pagină de planificări pe care o puteți trimite oricui."
       ]
     },
     "label": {
@@ -8974,6 +9007,9 @@
       ],
       "Passphrase copied to clipboard": [
         "Fraza de acces s-a copiat în memorie."
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Adresa ${ BRAND_NAME } este gata de utilizare"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -12609,6 +12645,9 @@
       ],
       "Your shorter address is now ready": [
         "Adresa scurtă este pregătită acum"
+      ],
+      "Disconnected from Gmail": [
+        "Deconectat de la Gmail"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

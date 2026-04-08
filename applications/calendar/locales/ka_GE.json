@@ -4900,6 +4900,9 @@
     "Import provider": {
       "Advanced import": [
         "გაფართოებული შემოტანა"
+      ],
+      "More import options": [
+        "მეტი შემოტანის პარამეტრები"
       ]
     },
     "Import warning": {
@@ -6335,6 +6338,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "თქვენ მიაღწიეთ დაჯავშნის სლოტების ლიმიტს (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "for ${ price }": [
+        "${ price }-ისთვის"
       ]
     },
     "info": {
@@ -7062,6 +7068,15 @@
       ],
       "Zoom meeting": [
         "Zoom-ის შეხვედრა"
+      ],
+      "Additional comments": [
+        "დამატებითი კომენტარები"
+      ],
+      "Continue cancelling": [
+        "გაუქმების გაგრძელება"
+      ],
+      "Skip feedback": [
+        "უკუკავშირის გამოტოვება"
       ]
     },
     "label": {
@@ -9514,6 +9529,12 @@
       ],
       "ZIP code": [
         "საფოსტო კოდი"
+      ],
+      "Enter a name": [
+        "შეიყვანეთ სახელი"
+      ],
+      "Select a provider": [
+        "აირჩიეთ პროვაიდერი"
       ]
     },
     "Placeholder for contact group name": {
@@ -12466,6 +12487,26 @@
       ],
       "Passcode:": [
         "საკვანძო კოდი:"
+      ]
+    },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "სხვა"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }
