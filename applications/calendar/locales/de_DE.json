@@ -1025,6 +1025,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Deine kostenlose Testversion der Desktop-App endet am ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Reconnect to Gmail": [
+        "Mit Gmail wieder verbinden"
       ]
     },
     "action": {
@@ -3194,6 +3197,18 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du hast bereits 10 Aliasnamen erstellt. Erhalte unbegrenzte Aliase und 500 GB Speicherplatz mit ${ BRAND_NAME } Unlimitiert."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Dies kann passieren, wenn Berechtigungen entfernt wurden oder dein Passwort geändert wurde."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Um weiterhin Gmail-Nachrichten in ${ BRAND_NAME } zu empfangen und zu senden, verbinde dein Konto erneut."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Um weiterhin Gmail-Nachrichten in ${ BRAND_NAME } zu empfangen und zu senden, Konten erneut verbinden."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Wir können nicht mehr auf ${ boldEmails } zugreifen."
       ]
     },
     "description": {
@@ -4065,6 +4080,12 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Deine Zoom-Verbindung ist abgelaufen. Bitte verbinde dich erneut, um fortzufahren."
+      ],
+      "Address could not be added.": [
+        "E-Mail-Adresse konnte nicht hinzugefügt werden."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Etwas ist schiefgegangen beim Abrufen der verfügbaren Domains"
       ]
     },
     "error": {
@@ -4998,6 +5019,9 @@
     "Import provider": {
       "Advanced import": [
         "Erweiterter Import"
+      ],
+      "More import options": [
+        "Weitere Importoptionen"
       ]
     },
     "Import warning": {
@@ -6548,6 +6572,12 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Du hast das Limit für Buchungsplätze erreicht (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Enter code": [
+        "Code eingeben"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Wenn du den Zugriff auf deine Authenticator-App verloren hast, kannst du 1 der 16 Wiederherstellungscodes verwenden, die du bei der Einrichtung der Zwei-Faktor-Authentifizierung erhalten hast. ${ learnMoreLink }"
       ]
     },
     "info": {
@@ -7284,6 +7314,9 @@
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
+      ],
+      "Securely share parts of your schedule through a booking page you can send to anyone.": [
+        "Teile deines Zeitplans über eine Buchungsseite teilen, die du an jeden senden kannst."
       ]
     },
     "label": {
@@ -8843,6 +8876,9 @@
       ],
       "Passphrase copied to clipboard": [
         "Passphrase in die Zwischenablage kopiert"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Deine ${ BRAND_NAME }-E-Mail-Adresse ist einsatzbereit"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -12408,6 +12444,9 @@
       ],
       "Your shorter address is now ready": [
         "Deine kürzere E-Mail-Adresse ist jetzt fertig"
+      ],
+      "Disconnected from Gmail": [
+        "Von Gmail getrennt"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

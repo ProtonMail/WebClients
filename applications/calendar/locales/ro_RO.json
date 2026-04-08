@@ -1029,6 +1029,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Perioada de încercare a versiunii pentru desktop se încheie ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Reconnect to Gmail": [
+        "Reconectare la Gmail"
       ]
     },
     "action": {
@@ -3222,6 +3225,18 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ați creat deja 10 aliasuri. Obțineți aliasuri nelimitate și 500 GiB de spațiu de stocare cu ${ BRAND_NAME } Unlimited."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Acest lucru se poate întâmpla dacă permisiunile au fost eliminate sau parola a fost modificată."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Pentru a continua să primiți și să trimiteți mesaje Gmail în ${ BRAND_NAME }, reconectați-vă conturile."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Pentru a continua să primiți și să trimiteți mesaje Gmail în ${ BRAND_NAME }, reconectați-vă conturile."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Nu mai putem accesa ${ boldEmails }."
       ]
     },
     "description": {
@@ -4105,6 +4120,12 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Conexiunea la Zoom a expirat. Reconectați-vă pentru a continua."
+      ],
+      "Address could not be added.": [
+        "Adresa nu a putut fi adăugată."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Ceva nu a funcționat corect la preluarea domeniilor disponibile."
       ]
     },
     "error": {
@@ -5055,6 +5076,9 @@
     "Import provider": {
       "Advanced import": [
         "Importare avansată"
+      ],
+      "More import options": [
+        "Mai multe opțiuni de importare"
       ]
     },
     "Import warning": {
@@ -6639,6 +6663,12 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Ați atins limita locurilor de rezervare (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Enter code": [
+        "Introduceți codul"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Dacă v-ați pierdut accesul la aplicația de autentificare, puteți utiliza unul din cele 16 coduri de recuperare de rezervă furnizate la configurarea autentificării cu doi factori. ${ learnMoreLink }"
       ]
     },
     "info": {
@@ -7381,6 +7411,9 @@
       ],
       "Zoom meeting": [
         "Conferință pe Zoom"
+      ],
+      "Securely share parts of your schedule through a booking page you can send to anyone.": [
+        "Partajați în siguranță părți din programul personal printr-o pagină de planificări pe care o puteți trimite oricui."
       ]
     },
     "label": {
@@ -8982,6 +9015,9 @@
       ],
       "Passphrase copied to clipboard": [
         "Fraza de acces s-a copiat în memorie."
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Adresa ${ BRAND_NAME } este gata de utilizare"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -12634,6 +12670,9 @@
       ],
       "Your shorter address is now ready": [
         "Adresa scurtă este pregătită acum"
+      ],
+      "Disconnected from Gmail": [
+        "Deconectat de la Gmail"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

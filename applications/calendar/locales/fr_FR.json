@@ -1025,6 +1025,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Votre essai gratuit de l'application de bureau se termine le ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Reconnect to Gmail": [
+        "Se reconnecter à Gmail"
       ]
     },
     "action": {
@@ -3191,6 +3194,18 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vous avez déjà créé 10 alias. Bénéficiez d'un nombre illimité d'alias et de 500 Go d'espace de stockage avec ${ BRAND_NAME } Unlimited."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Cela peut se produire si les autorisations ont été supprimées ou si votre mot de passe a été modifié."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Pour continuer à recevoir et envoyer des messages Gmail dans ${ BRAND_NAME }, veuillez reconnecter votre compte."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Pour continuer à recevoir et envoyer des messages Gmail dans ${ BRAND_NAME }, veuillez reconnecter vos comptes."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Nous ne pouvons plus accéder à ${ boldEmails }."
       ]
     },
     "description": {
@@ -4059,6 +4074,15 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Votre connexion Zoom a expiré. Veuillez vous reconnecter pour continuer."
+      ],
+      "Address could not be added.": [
+        "L'adresse n'a pas pu être ajoutée."
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Le régime de TVA intracommunautaire n'est pas pris en charge pour cet abonnement."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Quelque chose s'est mal passé lors de la récupération des domaines disponibles"
       ]
     },
     "error": {
@@ -4984,6 +5008,9 @@
     "Import provider": {
       "Advanced import": [
         "Importation avancée"
+      ],
+      "More import options": [
+        "Plus d'options d'importation"
       ]
     },
     "Import warning": {
@@ -6522,6 +6549,15 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Vous avez atteint la limite de créneaux de réservation (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })."
+      ],
+      "Enter code": [
+        "Saisissez le code"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Si vous avez perdu l'accès à votre application d'authentification, vous pouvez utiliser 1 des 16 codes de récupération de sauvegarde fournis lors de la configuration de l'authentification à deux facteurs. ${ learnMoreLink }"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Votre compte est actuellement configuré pour appliquer le régime de TVA intracommunautaire. Ceci n’est pas pris en charge pour l'abonnement sélectionné. Pour continuer, retirez le numéro de TVA de l'adresse de facturation ou sélectionnez un autre abonnement."
       ]
     },
     "info": {
@@ -7258,6 +7294,9 @@
       ],
       "Zoom meeting": [
         "Réunion Zoom"
+      ],
+      "Securely share parts of your schedule through a booking page you can send to anyone.": [
+        "Partagez en toute sécurité des parties de votre agenda via une page de réservation que vous pouvez envoyer à n'importe qui."
       ]
     },
     "label": {
@@ -8817,6 +8856,9 @@
       ],
       "Passphrase copied to clipboard": [
         "La phrase secrète a été copiée dans le presse-papiers."
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Votre adresse ${ BRAND_NAME } est prête à être utilisée"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -12367,6 +12409,12 @@
       ],
       "Your shorter address is now ready": [
         "Votre adresse au format plus court est maintenant prête."
+      ],
+      "Disconnected from Gmail": [
+        "Déconnecté de Gmail"
+      ],
+      "Reverse charge not supported": [
+        "Le régime de TVA intracommunautaire n'est pas pris en charge."
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
