@@ -3,9 +3,8 @@ import { createContext, useContext, useEffect, useLayoutEffect, useMemo } from '
 import type { ConnectionState } from 'livekit-client';
 
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
-import { resetMeetingInfo, setMeetingInfo } from '@proton/meet/store/slices/meetingInfo';
+import { resetMeetingInfo, selectParticipantNameMap, setMeetingInfo } from '@proton/meet/store/slices/meetingInfo';
 import { selectTotalParticipantCount } from '@proton/meet/store/slices/sortedParticipantsSlice';
-import type { ParticipantEntity } from '@proton/meet/types/types';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { AutoCloseMeetingModal } from '../components/AutoCloseMeetingModal/AutoCloseMeetingModal';
@@ -41,8 +40,6 @@ interface MeetContainerProps {
     handleEndMeeting: () => Promise<void>;
     shareLink: string;
     roomName: string;
-    participantsMap: Record<string, ParticipantEntity>;
-    participantNameMap: Record<string, string>;
     passphrase: string;
     handleMeetingLockToggle: () => Promise<void>;
     isDisconnected: boolean;
@@ -73,8 +70,6 @@ export const MeetContainer = ({
     handleEndMeeting,
     shareLink,
     roomName,
-    participantsMap,
-    participantNameMap,
     passphrase,
     handleMeetingLockToggle,
     isDisconnected,
@@ -118,8 +113,6 @@ export const MeetContainer = ({
                 displayName,
                 passphrase,
                 isGuestAdmin,
-                participantsMap,
-                participantNameMap,
                 isScreenShare,
                 isLocalScreenShare,
             })
@@ -136,8 +129,6 @@ export const MeetContainer = ({
         displayName,
         passphrase,
         isGuestAdmin,
-        participantsMap,
-        participantNameMap,
         isScreenShare,
         isLocalScreenShare,
     ]);
@@ -150,6 +141,7 @@ export const MeetContainer = ({
 
     const pagedParticipants = useSortedPagedParticipants();
     const totalParticipantCount = useMeetSelector(selectTotalParticipantCount);
+    const participantNameMap = useMeetSelector(selectParticipantNameMap);
 
     const { recordingState, startRecording, stopRecording, downloadRecording } = useMeetingRecorder(
         participantNameMap,
