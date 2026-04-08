@@ -242,6 +242,7 @@ export const markMessagesAsRead = (
         const hasMessagesInInbox = messagesFromConversation.some(({ LabelIDs }) =>
             LabelIDs.includes(MAILBOX_LABEL_IDS.INBOX)
         );
+
         const categoryLabels = conversation.Labels?.filter((label) => isCategoryLabel(label.ID)) || [];
         categoryLabels.forEach((categoryLabel) => {
             if (!hasMessagesInInbox) {
