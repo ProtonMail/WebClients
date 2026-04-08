@@ -238,6 +238,7 @@ export const getOrganizationAppRoutes = ({
                 text: c('Title').t`Groups`,
                 to: '/user-groups',
                 icon: 'pass-group',
+                noTitle: true,
                 available: organizationSectionVisible && canShowGroupsSection,
                 subsections: [
                     {

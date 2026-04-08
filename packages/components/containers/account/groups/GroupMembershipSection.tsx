@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { useGroupMemberships } from '@proton/account/groupMemberships/hooks';
+import { useOrganization } from '@proton/account/organization/hooks';
 import Loader from '@proton/components/components/loader/Loader';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
@@ -11,10 +12,17 @@ import SettingsParagraph from '@proton/components/containers/account/SettingsPar
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import type { GroupMembership } from '@proton/shared/lib/interfaces';
 
+import shouldShowMail from '../../organization/groups/shouldShowMail';
 import GroupActions from './GroupActions';
 import GroupState from './GroupState';
 
-const GroupsTable = ({ memberships }: { memberships: GroupMembership[] }) => {
+const GroupsTable = ({
+    memberships,
+    showMailFeatures,
+}: {
+    memberships: GroupMembership[];
+    showMailFeatures: boolean;
+}) => {
     const isEmpty = memberships.length === 0;
 
     return (
@@ -26,12 +34,12 @@ const GroupsTable = ({ memberships }: { memberships: GroupMembership[] }) => {
                         <TableHeader>
                             <TableRow>
                                 <TableCell type="header">{c('Title').t`Group`}</TableCell>
-                                <TableCell type="header">{c('Title').t`Address`}</TableCell>
+                                {showMailFeatures && <TableCell type="header">{c('Title').t`Address`}</TableCell>}
                                 <TableCell type="header">{c('Title').t`Status`}</TableCell>
                                 <TableCell type="header">{c('Title').t`Action`}</TableCell>
                             </TableRow>
                         </TableHeader>
-                        <TableBody colSpan={6}>
+                        <TableBody colSpan={showMailFeatures ? 6 : 5}>
                             {memberships.map((membership, index) => {
                                 const key = index.toString();
                                 return (
@@ -39,7 +47,7 @@ const GroupsTable = ({ memberships }: { memberships: GroupMembership[] }) => {
                                         key={key}
                                         labels={[
                                             c('Title').t`Group`,
-                                            c('Title').t`Address`,
+                                            ...(showMailFeatures ? [c('Title').t`Address`] : []),
                                             c('Title').t`Status`,
                                             c('Title').t`Action`,
                                             '',
@@ -48,9 +56,16 @@ const GroupsTable = ({ memberships }: { memberships: GroupMembership[] }) => {
                                             <span className="block max-w-full text-ellipsis" title={membership.Name}>
                                                 {membership.Name}
                                             </span>,
-                                            <span className="block max-w-full text-ellipsis" title={membership.Address}>
-                                                {membership.Address}
-                                            </span>,
+                                            ...(showMailFeatures
+                                                ? [
+                                                      <span
+                                                          className="block max-w-full text-ellipsis"
+                                                          title={membership.Address}
+                                                      >
+                                                          {membership.Address}
+                                                      </span>,
+                                                  ]
+                                                : []),
                                             <GroupState key={key} membership={membership} />,
                                             <GroupActions key={key} membership={membership} />,
                                         ]}
@@ -66,6 +81,8 @@ const GroupsTable = ({ memberships }: { memberships: GroupMembership[] }) => {
 };
 
 const GroupMembershipSection = () => {
+    const [organization] = useOrganization();
+    const showMailFeatures = shouldShowMail(organization?.PlanName);
     const [originalGroupMemberships, loading] = useGroupMemberships();
 
     const groupMemberships: GroupMembership[] = (originalGroupMemberships ?? []).map(
@@ -96,7 +113,7 @@ const GroupMembershipSection = () => {
             <SettingsSectionWide>
                 <SettingsParagraph>{c('Info').t`View and manage your groups.`}</SettingsParagraph>
                 {loading && <Loader />}
-                {!loading && <GroupsTable memberships={sortedGroupMemberships} />}
+                {!loading && <GroupsTable memberships={sortedGroupMemberships} showMailFeatures={showMailFeatures} />}
             </SettingsSectionWide>
         </>
     );

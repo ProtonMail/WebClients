@@ -2,6 +2,7 @@ import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
 import { CryptoProxy, type PrivateKeyReference, type PublicKeyReference } from '@proton/crypto';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
+import { CacheType } from '@proton/redux-utilities';
 import { addGroupMember as addGroupMemberApi } from '@proton/shared/lib/api/groups';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { MEMBER_PRIVATE, RECIPIENT_TYPES } from '@proton/shared/lib/constants';
@@ -22,6 +23,7 @@ import { getMemberByEmail } from '@proton/shared/lib/keys/memberHelper';
 
 import type { AddressesState } from '../addresses';
 import { replaceMemberAddressTokensIfNeeded } from '../addresses/replaceAddressToken';
+import { type GroupMembersState, groupMembersThunk } from '../groupMembers';
 import { getGroupKey } from '../groups/getGroupKey';
 import { disableGroupAddressEncryption } from '../groups/setGroupAddressFlags';
 import type { KtState } from '../kt';
@@ -29,7 +31,7 @@ import { getMemberAddresses, membersThunk } from '../members';
 import { type OrganizationKeyState, organizationKeyThunk } from '../organizationKey';
 import type { UserKeysState } from '../userKeys';
 
-type RequiredState = AddressesState & UserKeysState & OrganizationKeyState & KtState;
+type RequiredState = AddressesState & UserKeysState & OrganizationKeyState & KtState & GroupMembersState;
 
 const signMemberEmail = async (memberEmail: string, groupKey: PrivateKeyReference) => {
     // we must always sign using the canonical email, canonicalize even if it's already canonical
@@ -272,7 +274,7 @@ export const addGroupMembersThunk = ({
         }
 
         // Add each member, passing pre-computed values
-        await Promise.all(
+        const results = await Promise.allSettled(
             emails.map((email, index) =>
                 dispatch(
                     addGroupMemberThunk({
@@ -281,11 +283,16 @@ export const addGroupMembersThunk = ({
                         groupMemberPublicKeys: allMemberPublicKeys[index],
                         forwarderKey,
                     })
-                ).catch((error) => {
-                    // eslint-disable-next-line no-console
-                    console.error(`Failed to add recipient ${email}:`, error);
-                })
+                )
             )
         );
+
+        const firstError = results.find((result): result is PromiseRejectedResult => result.status === 'rejected');
+
+        await dispatch(groupMembersThunk({ groupId, cache: CacheType.None }));
+
+        if (firstError) {
+            throw firstError.reason;
+        }
     };
 };

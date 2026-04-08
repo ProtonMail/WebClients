@@ -10,14 +10,21 @@ interface Props {
     memberEmail: string | null;
     memberName: string | null;
     groupMemberType: GROUP_MEMBER_TYPE;
+    showMailFeatures: boolean;
     children?: ReactNode;
 }
 
-export const GroupMemberItemWrapper = ({ memberEmail, memberName, groupMemberType, children }: Props) => {
+export const GroupMemberItemWrapper = ({
+    memberEmail,
+    memberName,
+    groupMemberType,
+    showMailFeatures,
+    children,
+}: Props) => {
     const mailE2EEDisabled = groupMemberType !== GROUP_MEMBER_TYPE.INTERNAL;
     return (
         <>
-            <div className="flex gap-3 items-center">
+            <div className="flex shrink-0 gap-3 items-center">
                 <Avatar className="shrink-0 text-rg" color="weak">
                     {getInitials(memberName ?? memberEmail ?? '')}
                 </Avatar>
@@ -31,7 +38,7 @@ export const GroupMemberItemWrapper = ({ memberEmail, memberName, groupMemberTyp
                         </span>
                     )}
                 </span>
-                {mailE2EEDisabled && <UserIsExternalIcon groupMemberType={groupMemberType} />}
+                {showMailFeatures && mailE2EEDisabled && <UserIsExternalIcon groupMemberType={groupMemberType} />}
                 {children}
             </div>
         </>
