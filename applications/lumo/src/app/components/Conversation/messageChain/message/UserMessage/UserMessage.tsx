@@ -19,7 +19,6 @@ import { parseFileReferences } from '../../../../../util/fileReferences';
 import { getMimeTypeFromExtension } from '../../../../../util/filetypes';
 import { sendMessageEditEvent } from '../../../../../util/telemetry';
 import { AttachmentFileCard, FileContentModal } from '../../../../Files/Common';
-import { LazyProgressiveMarkdownRenderer } from '../../../../LumoMarkdown/LazyMarkdownComponents';
 import SiblingSelector from '../../../../SiblingSelector';
 import useCollapsibleMessageContent from '../useCollapsibleMessageContent';
 import MessageEditor from './MessageEditor';
@@ -65,7 +64,11 @@ interface MessageContentWithMentionsProps {
 const MessageContentWithMentions = ({ content, message, allAttachments, onView }: MessageContentWithMentionsProps) => {
     const refs = parseFileReferences(content);
     if (refs.length === 0) {
-        return <LazyProgressiveMarkdownRenderer content={content} isStreaming={false} message={message} />;
+        // User messages are raw text input, not LLM-generated markdown. Running them through
+        // the markdown renderer causes unintended formatting — underscores in bash variable names
+        // like backup_$TIMESTAMP become italic, $VAR patterns can be consumed as math, etc.
+        // Render as plain text with whitespace-pre-line so newlines are preserved as typed.
+        return <span className="whitespace-pre-line">{content}</span>;
     }
 
     const nodes: React.ReactNode[] = [];
