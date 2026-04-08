@@ -12,7 +12,7 @@ import { IcMeetEyeClosed } from '@proton/icons/icons/IcMeetEyeClosed';
 import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { selectActiveReaction, selectParticipantHasRaisedHand } from '@proton/meet/store/slices/chatAndReactionsSlice';
-import { selectParticipantNameMap } from '@proton/meet/store/slices/meetingInfo';
+import { selectParticipantName } from '@proton/meet/store/slices/meetingInfo';
 import { selectIsParticipantRecording } from '@proton/meet/store/slices/recordingStatusSlice';
 import { disableParticipantVideo, enableParticipantVideo } from '@proton/meet/store/slices/settings';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -56,7 +56,7 @@ export const ParticipantListItem = memo(
     }: ParticipantListItemProps) => {
         const isMeetMultipleRecordingEnabled = useFlag('MeetMultipleRecording');
 
-        const participantNameMap = useMeetSelector(selectParticipantNameMap);
+        const participantName = useMeetSelector((state) => selectParticipantName(state, participant.identity));
         const isParticipantRecording = useMeetSelector((state) =>
             selectIsParticipantRecording(state, participant.identity)
         );
@@ -67,14 +67,14 @@ export const ParticipantListItem = memo(
         const isHandRaised = useMeetSelector((state) => selectParticipantHasRaisedHand(state, participant.identity));
         const displayEmoji = activeReactions || (isHandRaised ? RAISE_HAND_EMOJI : undefined);
 
-        const displayName = participantNameMap[participant.identity] ?? c('Info').t`Loading...`;
+        const displayName = participantName ?? c('Info').t`Loading...`;
         const {
             participantColors: { backgroundColor, profileTextColor },
         } = useParticipantDisplayColors(participant.identity);
 
         const getInitials = () => {
-            return participantNameMap[participant.identity] ? (
-                getParticipantInitials(participantNameMap[participant.identity])
+            return participantName ? (
+                getParticipantInitials(participantName)
             ) : (
                 <CircleLoader
                     className="color-primary w-custom h-custom"

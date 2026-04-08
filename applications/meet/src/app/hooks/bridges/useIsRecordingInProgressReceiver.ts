@@ -5,13 +5,14 @@ import type { App } from '@proton-meet/proton-meet-core';
 import { RoomEvent } from 'livekit-client';
 import type { Participant, RemoteParticipant } from 'livekit-client';
 
-import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { useMeetDispatch, useMeetSelector, useMeetStore } from '@proton/meet/store/hooks';
 import { selectParticipantsMap } from '@proton/meet/store/slices/meetingInfo';
 import {
     addParticipantRecording,
     removeParticipantRecording,
     setIsRecording,
 } from '@proton/meet/store/slices/recordingStatusSlice';
+import type { ParticipantEntity } from '@proton/meet/types/types';
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import { useFlag } from '@proton/unleash/useFlag';
 
@@ -21,11 +22,41 @@ import { isValidMessageString } from '../../utils/isValidMessageString';
 export const useIsRecordingInProgressReceiver = (mls: App) => {
     const isMeetMultipleRecordingEnabled = useFlag('MeetMultipleRecording');
 
+    const store = useMeetStore();
     const dispatch = useMeetDispatch();
     const room = useRoomContext();
+
     const participantsMap = useMeetSelector(selectParticipantsMap);
     const participantsMapRef = useRef(participantsMap);
     participantsMapRef.current = participantsMap;
+
+    const waitForParticipant = useCallback(
+        (identity: string, timeoutMs = 10_000): Promise<ParticipantEntity | undefined> => {
+            const current = store.getState().meetingInfo.participantsMap[identity];
+            if (current) {
+                return Promise.resolve(current);
+            }
+
+            return new Promise((resolve) => {
+                let timeout: NodeJS.Timeout;
+
+                const unsubscribe = store.subscribe(() => {
+                    const participant = store.getState().meetingInfo.participantsMap[identity];
+                    if (participant) {
+                        clearTimeout(timeout);
+                        unsubscribe();
+                        resolve(participant);
+                    }
+                });
+
+                timeout = setTimeout(() => {
+                    unsubscribe();
+                    resolve(undefined);
+                }, timeoutMs);
+            });
+        },
+        [store]
+    );
 
     const handleDataReceive = useCallback(
         // This is the actual typing LiveKit uses for the payload
@@ -66,7 +97,8 @@ export const useIsRecordingInProgressReceiver = (mls: App) => {
                 return;
             }
 
-            const senderParticipant = participantsMapRef.current[participant.identity];
+            // Wait for the participant to be fetched
+            const senderParticipant = await waitForParticipant(participant.identity);
 
             // Only allow messages sent by admins or hosts
             if (!senderParticipant?.IsAdmin || !senderParticipant?.IsHost) {

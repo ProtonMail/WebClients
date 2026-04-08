@@ -4,7 +4,7 @@ import { clsx } from 'clsx';
 import { c } from 'ttag';
 
 import { useMeetSelector } from '@proton/meet/store/hooks';
-import { selectParticipantNameMap } from '@proton/meet/store/slices/meetingInfo';
+import { selectParticipantName } from '@proton/meet/store/slices/meetingInfo';
 import {
     type MeetChatMessage,
     type MeetingRoomUpdate,
@@ -47,13 +47,11 @@ export const ChatItem = ({
 }: ChatItemProps) => {
     const { type, identity, timestamp } = item;
 
-    const participantNameMap = useMeetSelector(selectParticipantNameMap);
+    const participantName = useMeetSelector((state) => selectParticipantName(state, identity));
     const sendReaction = useChatMessageReaction();
 
     const [isHovered, setIsHovered] = useState(false);
     const { participantColors } = useParticipantDisplayColors(identity);
-
-    const participantName = participantNameMap[identity];
 
     const showReactionControls = isMeetChatMessage(item) && !ellipsisOverflow;
 
