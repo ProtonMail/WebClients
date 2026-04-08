@@ -27,7 +27,6 @@ import type { NotificationRequest } from './notification/notification.app';
 export enum InlinePortMessageType {
     AUTOFILL_ACTION = 'AUTOFILL_ACTION',
     AUTOFILL_FILTER = 'AUTOFILL_FILTER',
-    AUTOFILL_GENERATED_PW = 'AUTOFILL_GENERATED_PASSWORD',
     AUTOFILL_OTP = 'AUTOFILL_OTP',
     DROPDOWN_ACTION = 'DROPDOWN_ACTION',
     DROPDOWN_FOCUS = 'DROPDOWN_FOCUS',
@@ -86,7 +85,6 @@ export type InlineMessage<T extends InlineMessageType = InlineMessageType> = Ext
     | InlineWorkerMessages
     | { type: InlinePortMessageType.AUTOFILL_ACTION; payload: AutofillActionDTO }
     | { type: InlinePortMessageType.AUTOFILL_FILTER; payload: { startsWith: string } }
-    | { type: InlinePortMessageType.AUTOFILL_GENERATED_PW; payload: { password: string } }
     | { type: InlinePortMessageType.AUTOFILL_OTP; payload: { code: string } }
     | { type: InlinePortMessageType.DROPDOWN_ACTION; payload: DropdownActions }
     | { type: InlinePortMessageType.DROPDOWN_BLURRED }

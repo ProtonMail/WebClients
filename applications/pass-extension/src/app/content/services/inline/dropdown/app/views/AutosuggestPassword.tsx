@@ -30,7 +30,7 @@ import { serialize } from '@proton/pass/utils/object/serialize';
 
 type Props = Extract<DropdownActions, { action: DropdownAction.AUTOSUGGEST_PASSWORD }>;
 
-export const AutosuggestPassword: FC<Props> = ({ origin, config, copy, policy }) => {
+export const AutosuggestPassword: FC<Props> = ({ action, config, copy, policy, ...payload }) => {
     const { visible } = useIFrameAppState();
     const controller = useIFrameAppController();
 
@@ -67,8 +67,12 @@ export const AutosuggestPassword: FC<Props> = ({ origin, config, copy, policy })
 
     const autofillPassword = (feedback: boolean) => {
         controller.forwardMessage({
-            type: InlinePortMessageType.AUTOFILL_GENERATED_PW,
-            payload: { password: generator.password },
+            type: InlinePortMessageType.AUTOFILL_ACTION,
+            payload: {
+                ...payload,
+                type: 'password',
+                value: generator.password,
+            },
         });
 
         if (copy) copyToClipboard();
@@ -99,7 +103,7 @@ export const AutosuggestPassword: FC<Props> = ({ origin, config, copy, policy })
                         <PauseListDropdown
                             criteria="Autosuggest"
                             dense
-                            hostname={origin}
+                            hostname={payload.origin}
                             label={c('Action').t`Do not suggest on this website`}
                         />
                     </div>
