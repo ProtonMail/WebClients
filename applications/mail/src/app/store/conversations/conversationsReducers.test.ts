@@ -182,7 +182,6 @@ describe('conversationsReducers', () => {
                 expect(updatedConversationState).toBeDefined();
                 expect(updatedConversationState!.Conversation.ContextNumUnread).toBe(1);
                 expect(updatedConversationState!.Conversation.NumUnread).toBe(1);
-                console.log(updatedConversationState!.Conversation.Labels);
                 const inboxLabel = updatedConversationState!.Conversation.Labels!.find(
                     (label) => label.ID === inboxLabelID
                 );
