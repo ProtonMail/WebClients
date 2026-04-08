@@ -1159,6 +1159,48 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Connect Gmail address": [
+        "Anslut Gmail-adress"
+      ],
+      "Connect to Gmail": [
+        "Anslut till Gmail"
+      ],
+      "Contact Support Center": [
+        "Kontakta supportcenter"
+      ],
+      "Continue to sign in": [
+        "Fortsätt till inloggning"
+      ],
+      "Disconnect": [
+        "Koppla från"
+      ],
+      "Enter code": [
+        "Ange kod"
+      ],
+      "I don't have my 2FA device": [
+        "Jag har inte min 2FA-enhet"
+      ],
+      "I don't have my key": [
+        "Jag har inte min nyckel"
+      ],
+      "Or remove forwarding address": [
+        "Eller ta bort vidarebefordringsadress"
+      ],
+      "Reconnect to Gmail": [
+        "Återanslut till Gmail"
+      ],
+      "Recover account": [
+        "Återställ konto"
+      ],
+      "Send feedback": [
+        "Skicka feedback"
+      ],
+      "Share feedback": [
+        "Dela feedback"
+      ],
+      "Verify another way": [
+        "Verifiera på annat sätt"
       ]
     },
     "action": {
@@ -3496,6 +3538,64 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kan importera händelser i iCal-format (ICS-fil). Filen bör ha en maximal storlek på ${ MAX_IMPORT_FILE_SIZE_STRING } och ha upp till ${ MAX_IMPORT_EVENTS_STRING } händelser. Om din fil är större, dela upp den i mindre filer."
+      ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Blocka Googles möjlighet att profilera dig. Gmail kan inte se vad du gör i ${ MAIL_APP_NAME }."
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "E-post skickat till ${ connectedAddressText } kommer nu visas i ${ MAIL_APP_NAME }."
+      ],
+      "No ads. No trackers.": [
+        "Inga annonser. Inga spårare."
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "Läs, svara och håll koll på Gmail inifrån ${ MAIL_APP_NAME }"
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Detta kan hända om behörigheter togs bort eller ditt lösenord har ändrats."
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "För att ansluta en annan Gmail-adress, ta bort extra Gmail-adresser som vidarebefordras till ${ BRAND_NAME }."
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "För att ansluta upp till ${ MAX_SYNC_PAID_USER } Gmail-adress, uppgradera till ${ planName }.",
+        "För att ansluta upp till ${ MAX_SYNC_PAID_USER } Gmail-adresser, uppgradera till ${ planName }."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "För att fortsätta ta emot och skicka Gmail-meddelanden i ${ BRAND_NAME }, återanslut ditt konto."
+      ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "Uppgradera till ${ planName } för att ansluta upp till ${ MAX_SYNC_PAID_USER } konton"
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Vi kan inte komma åt ${ boldEmails } längre."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "Vi importerar din gamla e-post och ansluter din Gmail till ${ MAIL_APP_NAME } så nya meddelanden visas automatiskt"
+      ],
+      "We've started importing your email from Gmail. We'll let you know when it's done.": [
+        "Vi har börjat importera din e-post från Gmail. Vi meddelar dig när det är klart."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Du kan nu skicka e-post från ${ BRAND_NAME } med denna adress."
+      ],
+      "You can still login with this address and re-connect at any time.": [
+        "Du kan fortfarande logga in med denna adress och återansluta när som helst."
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "Du vidarebefordrar ${ numAddressesOrSync } Gmail-adress till ${ MAIL_APP_NAME }.",
+        "Du vidarebefordrar ${ numAddressesOrSync } Gmail-adresser till ${ MAIL_APP_NAME }."
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "Du har anslutit en extern kontoadress till ${ MAIL_APP_NAME }."
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "Ditt paket stöder ${ MAX_SYNC_FREE_USER } Gmail-adress.",
+        "Ditt paket stöder ${ MAX_SYNC_FREE_USER } Gmail-adresser."
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "Ditt paket stöder totalt ${ MAX_SYNC_PAID_USER } Gmail-adress",
+        "Ditt paket stöder ett totalt antal av ${ MAX_SYNC_PAID_USER } Gmail-adresser"
       ]
     },
     "description": {
@@ -4540,6 +4640,18 @@
       ],
       "Zero keys reactivated": [
         "Noll nycklar återaktiverade"
+      ],
+      "Address could not be added.": [
+        "Adress kunde inte läggas till."
+      ],
+      "Address is already added to your account": [
+        "Adress är redan tillagd till ditt konto"
+      ],
+      "Incorrect recovery code. Please try again.": [
+        "Felaktig återställningskod. Försök igen."
+      ],
+      "Something went wrong while creating the address": [
+        "Något gick fel när adressen skapades"
       ]
     },
     "error": {
@@ -8464,6 +8576,54 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
+      ],
+      "An SMS with a verification code was just sent to ${ recoveryPhoneElement }.": [
+        "Ett SMS med en verifieringskod skickades just till ${ recoveryPhoneElement }."
+      ],
+      "Couldn´t send feedback": [
+        "Kunde inte skicka feedback"
+      ],
+      "Download ${ VPN_APP_NAME }": [
+        "Ladda ner ${ VPN_APP_NAME }"
+      ],
+      "Enter code": [
+        "Ange kod"
+      ],
+      "New sidebar": [
+        "Ny sidopanel"
+      ],
+      "New sidebar layout": [
+        "Ny layout på sidopanel"
+      ],
+      "Protect this device too?": [
+        "Skydda denna enhet också?"
+      ],
+      "Share your thoughts...": [
+        "Dela dina tankar …"
+      ],
+      "Sign-in complete": [
+        "Inloggning slutförd"
+      ],
+      "Something went wrong. Please try again.": [
+        "Någonting gick fel. Försök igen."
+      ],
+      "Switch sidebars": [
+        "Byt sidopaneler"
+      ],
+      "Thanks - your feedback was sent.": [
+        "Tack - din feedback skickades."
+      ],
+      "You can now sign in to your account again.": [
+        "Du kan nu logga in på ditt konto igen."
+      ],
+      "You will not be asked for a one-time code or a security key.": [
+        "Du kommer inte att tillfrågas om en engångskod eller en säkerhetsnyckel."
+      ],
+      "You're now signed in on your TV.": [
+        "Du är nu inloggad på din TV."
+      ],
+      "Your feedback": [
+        "Din feedback"
       ]
     },
     "info": {
@@ -9449,6 +9609,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Select which Gmail address to connect": [
+        "Välj vilken Gmail-adress att ansluta"
       ]
     },
     "label": {
@@ -11336,6 +11499,9 @@
       ],
       "Zoom video conferencing settings have been updated": [
         "Inställningar för Zoom-videokonferenser har uppdaterats"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Din ${ BRAND_NAME }-adress är redo att användas"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13090,6 +13256,9 @@
       ],
       "Your account is fully secure.": [
         "Ditt konto är helt säkert."
+      ],
+      "Invalid code": [
+        "Ogiltig kod"
       ]
     },
     "saml: Action": {
@@ -16287,6 +16456,60 @@
       ],
       "Your subscriptions": [
         "Din prenumeration"
+      ],
+      "Account and password": [
+        "Konto och lösenord"
+      ],
+      "An error occurred": [
+        "Ett fel uppstod"
+      ],
+      "Are you sure you want to disconnect this address?": [
+        "Är du säker på att du vill koppla från denna adress?"
+      ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Ta med din Gmail till ${ MAIL_APP_NAME }"
+      ],
+      "Configurations": [
+        "Konfigurationer"
+      ],
+      "Disconnected from Gmail": [
+        "Koppla från Gmail"
+      ],
+      "Download apps": [
+        "Ladda ner appar"
+      ],
+      "Help us improve": [
+        "Hjälp oss att förbättra"
+      ],
+      "Integrations": [
+        "Integrationer"
+      ],
+      "Monitoring": [
+        "Övervakning"
+      ],
+      "My account": [
+        "Mitt konto"
+      ],
+      "My VPN": [
+        "Min VPN"
+      ],
+      "Organization": [
+        "Organisation"
+      ],
+      "Organization and people": [
+        "Organisation och personer"
+      ],
+      "Security and compliance": [
+        "Säkerhet och efterlevnad"
+      ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Skicka och ta emot Gmail med ${ MAIL_APP_NAME }"
+      ],
+      "VPN": [
+        "VPN"
+      ],
+      "You are all set": [
+        "Du är klar"
       ]
     },
     "Title for payment methods table": {

@@ -1159,6 +1159,51 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ],
+      "Connect Gmail address": [
+        "Connecter l'adresse Gmail"
+      ],
+      "Connect to Gmail": [
+        "Se connecter à Gmail"
+      ],
+      "Contact Support Center": [
+        "Contacter le centre d'aide"
+      ],
+      "Continue to sign in": [
+        "Poursuivre vers la connexion"
+      ],
+      "Disconnect": [
+        "Déconnecter"
+      ],
+      "Enter code": [
+        "Saisissez le code"
+      ],
+      "I don't have my 2FA device": [
+        "Je n'ai pas mon appareil A2F"
+      ],
+      "I don't have my key": [
+        "Je n'ai pas ma clé"
+      ],
+      "I don’t have my backup codes": [
+        "Je n’ai pas mes codes de sauvegarde"
+      ],
+      "Or remove forwarding address": [
+        "Ou supprimez l'adresse de transfert"
+      ],
+      "Reconnect to Gmail": [
+        "Se reconnecter à Gmail"
+      ],
+      "Recover account": [
+        "Récupérer le compte"
+      ],
+      "Send feedback": [
+        "Envoyer un commentaire"
+      ],
+      "Share feedback": [
+        "Partager un commentaire"
+      ],
+      "Verify another way": [
+        "Vérifier autrement"
       ]
     },
     "action": {
@@ -3514,6 +3559,80 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Vous pouvez importer des événements au format iCal (fichier ICS). Le fichier peut avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et contenir jusqu'à ${ MAX_IMPORT_EVENTS_STRING } événements. Si votre fichier est plus volumineux, nous vous invitons à le diviser en plusieurs fichiers plus petits."
+      ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Empêchez Google de vous profiler. Gmail ne peut pas voir ce que vous faites dans ${ MAIL_APP_NAME }."
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Les e-mails envoyés à ${ connectedAddressText } apparaîtront désormais dans ${ MAIL_APP_NAME }."
+      ],
+      "No ads. No trackers.": [
+        "Pas de publicité. Pas de traqueurs."
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "Lisez, répondez et restez au courant de Gmail depuis ${ MAIL_APP_NAME }"
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Cela peut se produire si les autorisations ont été supprimées ou si votre mot de passe a été modifié."
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "Pour connecter une autre adresse Gmail, retirez les adresses Gmail supplémentaires qui se transfère vers ${ BRAND_NAME }."
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "Pour connecter jusqu'à ${ MAX_SYNC_PAID_USER } adresse Gmail, passez à ${ planName }.",
+        "Pour connecter jusqu'à ${ MAX_SYNC_PAID_USER } adresses Gmail, passez à ${ planName }."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Pour continuer à recevoir et envoyer des messages Gmail dans ${ BRAND_NAME }, veuillez reconnecter votre compte."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Pour continuer à recevoir et envoyer des messages Gmail dans ${ BRAND_NAME }, veuillez reconnecter vos comptes."
+      ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "Passez à ${ planName } pour connecter jusqu'à ${ MAX_SYNC_PAID_USER } comptes."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Nous ne pouvons plus accéder à ${ boldEmails }."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "Nous apporterons vos anciens messages et connecterons votre Gmail à ${ MAIL_APP_NAME } afin que les nouveaux messages apparaissent automatiquement"
+      ],
+      "We've started importing your email from Gmail. We'll let you know when it's done.": [
+        "Nous avons commencé à importer vos messages depuis Gmail. Nous vous informerons une fois que ce sera terminé."
+      ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Vous avez déjà une adresse Gmail transférée vers ${ MAIL_APP_NAME }. Connectez-la ci-dessous pour envoyer et recevoir des e-mails directement depuis ${ MAIL_APP_NAME }."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Vous avez déjà une adresse Gmail transférée vers ${ MAIL_APP_NAME }. Connectez-la ci-dessous pour envoyer et recevoir des e-mails directement depuis ${ MAIL_APP_NAME }."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Vous pouvez désormais envoyer des e-mails depuis ${ BRAND_NAME } en utilisant cette adresse."
+      ],
+      "You can still login with this address and re-connect at any time.": [
+        "Vous pouvez toujours vous connecter avec cette adresse et vous reconnecter à tout moment."
+      ],
+      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
+        "Vous ne pourrez plus utiliser ${ address.Email } pour recevoir et envoyer des emails dans ${ BRAND_NAME }. Notez également que les messages envoyés à cette adresse depuis ${ BRAND_NAME } ne seront plus chiffrés de bout en bout."
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "Vous transférez ${ numAddressesOrSync } adresse Gmail vers ${ MAIL_APP_NAME }.",
+        "Vous transférez ${ numAddressesOrSync } adresses Gmail vers ${ MAIL_APP_NAME }."
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "Vous avez connecté ${ MAX_SYNC_PAID_USER } adresse Gmail. Pour en ajouter une autre, désactivez d'abord un de vos comptes connectés.",
+        "Vous avez connecté ${ MAX_SYNC_PAID_USER } adresses Gmail. Pour en ajouter une autre, désactivez d'abord un de vos comptes connectés."
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "Vous avez connecté une adresse de compte externe à ${ MAIL_APP_NAME }."
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "Votre abonnement prend en charge ${ MAX_SYNC_FREE_USER } adresse Gmail.",
+        "Votre abonnement prend en charge ${ MAX_SYNC_FREE_USER } adresses Gmail."
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "Votre abonnement prend en charge un total de ${ MAX_SYNC_PAID_USER } adresse Gmail",
+        "Votre abonnement prend en charge un total de ${ MAX_SYNC_PAID_USER } adresses Gmail"
       ]
     },
     "description": {
@@ -4564,6 +4683,24 @@
       ],
       "Zero keys reactivated": [
         "Aucune clé n'est réactivée."
+      ],
+      "Address could not be added.": [
+        "L'adresse n'a pas pu être ajoutée."
+      ],
+      "Address is already added to your account": [
+        "L'adresse a déjà été ajoutée à votre compte"
+      ],
+      "Incorrect recovery code. Please try again.": [
+        "Le code n'est pas correct. Nous vous invitons à réessayer."
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Le régime de TVA intracommunautaire n'est pas pris en charge pour cet abonnement."
+      ],
+      "Something went wrong while creating the address": [
+        "Quelque chose s'est mal passé lors de la création de l'adresse"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Quelque chose s'est mal passé lors de la récupération des domaines disponibles"
       ]
     },
     "error": {
@@ -8514,6 +8651,78 @@
       ],
       "Zoom meeting": [
         "réunion Zoom"
+      ],
+      "An email with a verification code was just sent to ${ recoveryEmailElement }. If you can’t find the message in your inbox, please check your spam folder.": [
+        "Un message contenant un code de vérification vient d'être envoyé à ${ recoveryEmailElement }. Si vous ne trouvez pas le message dans votre boîte de réception, veuillez consulter votre dossier indésirables/spam."
+      ],
+      "An SMS with a verification code was just sent to ${ recoveryPhoneElement }.": [
+        "Un SMS contenant un code de vérification vient d'être envoyé à ${ recoveryPhoneElement }."
+      ],
+      "Contact our Customer Support team to disable two-factor authentication for your account, or recover your account another way.": [
+        "Contactez notre équipe du service client pour désactiver l'authentification à deux facteurs de votre compte, ou pour récupérer votre compte par un autre moyen."
+      ],
+      "Couldn´t send feedback": [
+        "Le commentaire n'a pas pu être envoyé."
+      ],
+      "Download ${ VPN_APP_NAME }": [
+        "Télécharger ${ VPN_APP_NAME }"
+      ],
+      "Enter code": [
+        "Saisissez le code"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Si vous avez perdu l'accès à votre application d'authentification, vous pouvez utiliser 1 des 16 codes de récupération de sauvegarde fournis lors de la configuration de l'authentification à deux facteurs. ${ learnMoreLink }"
+      ],
+      "Key sections reorganized for faster access.": [
+        "Sections principales réorganisées pour un accès plus rapide."
+      ],
+      "New sidebar": [
+        "Nouvelle barre latérale"
+      ],
+      "New sidebar layout": [
+        "Nouvelle mise en page de la barre latérale"
+      ],
+      "Protect this device too?": [
+        "Protéger cet appareil aussi ?"
+      ],
+      "Share your thoughts...": [
+        "Partagez vos réflexions..."
+      ],
+      "Sign-in complete": [
+        "Connexion terminée"
+      ],
+      "Something went wrong. Please try again.": [
+        "Une erreur s'est produite. Nous vous invitons à réessayer."
+      ],
+      "Switch sidebars": [
+        "Échanger les barres latérales"
+      ],
+      "Thanks - your feedback was sent.": [
+        "Merci, votre commentaire a été envoyé."
+      ],
+      "This password is used to login to your ${ BRAND_NAME } account": [
+        "Ce mot de passe est utilisé pour vous connecter à votre compte ${ BRAND_NAME }"
+      ],
+      "To help keep your account safe, we want to make sure it's really you trying to sign in.": [
+        "Pour aider à sécuriser votre compte, nous voulons nous assurer que c'est bien vous qui tentez de vous connecter."
+      ],
+      "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
+        "Pour aider à sécuriser votre compte, nous voulons nous assurer que c'est bien vous qui tentez de vous connecter."
+      ],
+      "You can now sign in to your account again.": [
+        "Vous pouvez maintenant vous reconnecter à votre compte."
+      ],
+      "You will not be asked for a one-time code or a security key.": [
+        "Un code unique ou une clé de sécurité ne vous sera pas demandé."
+      ],
+      "You're now signed in on your TV.": [
+        "Vous êtes maintenant connecté sur votre TV."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Votre compte est actuellement configuré pour appliquer le régime de TVA intracommunautaire. Ceci n’est pas pris en charge pour l'abonnement sélectionné. Pour continuer, retirez le numéro de TVA de l'adresse de facturation ou sélectionnez un autre abonnement."
+      ],
+      "Your feedback": [
+        "Votre commentaire"
       ]
     },
     "info": {
@@ -9502,6 +9711,9 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Select which Gmail address to connect": [
+        "Sélectionnez l'adresse Gmail à connecter"
       ]
     },
     "label": {
@@ -11422,6 +11634,9 @@
       ],
       "Zoom video conferencing settings have been updated": [
         "Les paramètres de vidéoconférence de Zoom ont été mis à jour."
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Votre adresse ${ BRAND_NAME } est prête à être utilisée"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13188,6 +13403,9 @@
       ],
       "Your account is fully secure.": [
         "Votre compte est entièrement sécurisé."
+      ],
+      "Invalid code": [
+        "Le code n’est pas valide."
       ]
     },
     "saml: Action": {
@@ -16382,6 +16600,72 @@
       ],
       "Your subscriptions": [
         "Vos abonnements"
+      ],
+      "Account and password": [
+        "Compte et mot de passe"
+      ],
+      "An error occurred": [
+        "Une erreur s’est produite"
+      ],
+      "Are you sure you want to disconnect this address?": [
+        "Voulez-vous vraiment déconnecter cette adresse ?"
+      ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Amenez votre Gmail dans ${ MAIL_APP_NAME }"
+      ],
+      "Configurations": [
+        "Configurations"
+      ],
+      "Disconnected from Gmail": [
+        "Déconnecté de Gmail"
+      ],
+      "Download apps": [
+        "Télécharger les applications"
+      ],
+      "Help us improve": [
+        "Aidez-nous à nous améliorer"
+      ],
+      "Integrations": [
+        "Intégrations"
+      ],
+      "Monitoring": [
+        "Surveillance"
+      ],
+      "My account": [
+        "Mon compte"
+      ],
+      "My VPN": [
+        "Mon VPN"
+      ],
+      "Organization": [
+        "Organisation"
+      ],
+      "Organization and people": [
+        "Organisation et personnes"
+      ],
+      "Reverse charge not supported": [
+        "Le régime de TVA intracommunautaire n'est pas pris en charge."
+      ],
+      "Security and compliance": [
+        "Sécurité et conformité"
+      ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Envoyez et recevez des e-mails Gmail en utilisant ${ MAIL_APP_NAME }"
+      ],
+      "Single-sign on (SSO)": [
+        "Authentification unique (SSO)"
+      ],
+      "Two-factor authentication disabled": [
+        "L’authentification à deux facteurs a été désactivée"
+      ],
+      "Use backup recovery code": [
+        "Utiliser le code de récupération de sauvegarde"
+      ],
+      "VPN": [
+        "VPN"
+      ],
+      "You are all set": [
+        "Vous êtes paré"
       ]
     },
     "Title for payment methods table": {

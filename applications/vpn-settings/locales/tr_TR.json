@@ -1159,6 +1159,36 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Contact Support Center": [
+        "Destek Merkeziyle iletişime geçin"
+      ],
+      "Continue to sign in": [
+        "Oturum açmaya devam et"
+      ],
+      "Enter code": [
+        "Kodu girin"
+      ],
+      "I don't have my 2FA device": [
+        "İki adımlı doğrulama aygıtım yanımda değil"
+      ],
+      "I don't have my key": [
+        "Anahtarım yok"
+      ],
+      "I don’t have my backup codes": [
+        "Yedek kodlarım yok"
+      ],
+      "Recover account": [
+        "Hesabı kurtar"
+      ],
+      "Send feedback": [
+        "Geri bildirim gönder"
+      ],
+      "Share feedback": [
+        "Geri bildirim paylaş"
+      ],
+      "Verify another way": [
+        "Başka bir yöntemle doğrula"
       ]
     },
     "action": {
@@ -3517,6 +3547,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Etkinlikleri iCal biçiminde içe aktarabilirsiniz (ICS dosyası).\nDosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_EVENTS_STRING } etkinlik kaydı içermelidir.\nDosyanız daha büyükse, daha küçük dosyalara bölün."
+      ],
+      "No ads. No trackers.": [
+        "Reklam yok. İzleyici yok."
       ]
     },
     "description": {
@@ -4570,6 +4603,9 @@
       ],
       "Zero keys reactivated": [
         "Hiç bir anahtar yeniden kullanıma alınmadı"
+      ],
+      "Incorrect recovery code. Please try again.": [
+        "Kurtarma kodu yanlış. Lütfen tekrar deneyin."
       ]
     },
     "error": {
@@ -8538,6 +8574,54 @@
       ],
       "Zoom meeting": [
         "Zoom görüşmesi"
+      ],
+      "An email with a verification code was just sent to ${ recoveryEmailElement }. If you can’t find the message in your inbox, please check your spam folder.": [
+        "Doğrulama kodunu içeren bir e-posta az önce ${ recoveryEmailElement } adresine gönderildi. İletiyi gelen kutunuzda bulamazsanız lütfen istenmeyen klasörünüzü kontrol edin."
+      ],
+      "An SMS with a verification code was just sent to ${ recoveryPhoneElement }.": [
+        "Doğrulama kodunu içeren bir SMS az önce ${ recoveryPhoneElement } numarasına gönderildi."
+      ],
+      "Contact our Customer Support team to disable two-factor authentication for your account, or recover your account another way.": [
+        "Hesabınız için iki adımlı doğrulamayı devre dışı bırakmak veya hesabınızı başka bir yolla geri almak için Müşteri Destek ekibimizle iletişime geçin."
+      ],
+      "Download ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME } indir"
+      ],
+      "Enter code": [
+        "Kodu girin"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Kimlik doğrulama uygulamanıza erişemiyorsanız iki adımlı doğrulamayı kurarken size verilen 16 yedek kurtarma kodundan birini kullanabilirsiniz. ${ learnMoreLink }"
+      ],
+      "New sidebar": [
+        "Yeni kenar çubuğu"
+      ],
+      "Protect this device too?": [
+        "Bu aygıtı da korumak ister misiniz?"
+      ],
+      "Share your thoughts...": [
+        "Düşüncelerinizi paylaşın..."
+      ],
+      "Sign-in complete": [
+        "Oturum açıldı"
+      ],
+      "Something went wrong. Please try again.": [
+        "Bir şeyler ters gitti. Lütfen tekrar deneyin."
+      ],
+      "To help keep your account safe, we want to make sure it's really you trying to sign in.": [
+        "Hesabınızın güvenliğini sağlamak amacıyla oturum açmaya çalışan kişinin gerçekten siz olduğunuzdan emin olmak istiyoruz."
+      ],
+      "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
+        "Hesabınızın güvenliğini sağlamak amacıyla oturum açmaya çalışan kişinin gerçekten siz olduğunuzdan emin olmak istiyoruz."
+      ],
+      "You can now sign in to your account again.": [
+        "Artık hesabınızda tekrar oturum açabilirsiniz."
+      ],
+      "You will not be asked for a one-time code or a security key.": [
+        "Sizden tek kullanımlık kod veya güvenlik anahtarı istenmeyecek."
+      ],
+      "You're now signed in on your TV.": [
+        "Televizyonunuzda oturum açtınız."
       ]
     },
     "info": {
@@ -13212,6 +13296,9 @@
       ],
       "Your account is fully secure.": [
         "Hesabınız tümüyle güvende."
+      ],
+      "Invalid code": [
+        "Kod geçersiz"
       ]
     },
     "saml: Action": {
@@ -16418,6 +16505,39 @@
       ],
       "Your subscriptions": [
         "Abonelikleriniz"
+      ],
+      "Account and password": [
+        "Hesap ve parola"
+      ],
+      "An error occurred": [
+        "Bir hata oluştu"
+      ],
+      "Download apps": [
+        "Uygulamaları indir"
+      ],
+      "Help us improve": [
+        "Geliştirmemize yardımcı olun"
+      ],
+      "Integrations": [
+        "Bütünleştirmeler"
+      ],
+      "Monitoring": [
+        "İzleme"
+      ],
+      "My account": [
+        "Hesabım"
+      ],
+      "My VPN": [
+        "VPN'im"
+      ],
+      "Two-factor authentication disabled": [
+        "İki adımlı doğrulama devre dışı"
+      ],
+      "Use backup recovery code": [
+        "Yedek kurtarma kodunu kullan"
+      ],
+      "VPN": [
+        "VPN"
       ]
     },
     "Title for payment methods table": {

@@ -1232,8 +1232,8 @@
         "${ quantity } aangepaste domeinen"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
-        "${ seats } ${ LUMO_APP_NAME } AI licentie",
-        "${ seats } ${ LUMO_APP_NAME } AI licenties"
+        "${ seats } ${ LUMO_APP_NAME } AI-licentie",
+        "${ seats } ${ LUMO_APP_NAME } AI-licenties"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } plaats",
@@ -1676,7 +1676,7 @@
         "3 TB opslagruimte"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Toegang tot 15.000+ servers in 120+ landen"
+        "Toegang tot 15 000+ servers in 120+ landen"
       ],
       "Access advanced AI models": [
         "Toegang tot geavanceerde AI-modellen"
@@ -3989,7 +3989,7 @@
         "Contactpersonen"
       ],
       "Get in touch with them now to see if they can help, and to let them know personally it’s you trying to unlock your data.": [
-        "Contacteer hen op om te zien of zij kunnen helpen, en om hen persoonlijk te laten weten dat u het bent die uw gegevens probeert te ontgrendelen."
+        "Contacteer hen op om te zien of zij kunnen helpen, en om hen persoonlijk te laten weten dat u het bent, die uw gegevens probeert te ontgrendelen."
       ],
       "Immediate": [
         "Onmiddellijk"
@@ -5978,7 +5978,7 @@
         "${ MEET_APP_NAME } is een end-to-end versleutelde videoconferentie oplossing. Voeg het toe aan uw abonnement om veilige vergaderingen te hosten."
       ],
       "${ MEET_APP_NAME } seats": [
-        "${ MEET_APP_NAME } licenties"
+        "${ MEET_APP_NAME }-licenties"
       ],
       "${ n } address": [
         "${ n } adres",
@@ -8530,6 +8530,18 @@
       ],
       "Zoom meeting": [
         "Zoom meeting"
+      ],
+      "Download ${ VPN_APP_NAME }": [
+        "${ VPN_APP_NAME } downloaden"
+      ],
+      "Protect this device too?": [
+        "Dit apparaat ook beschermen?"
+      ],
+      "Sign-in complete": [
+        "Inloggen voltooid"
+      ],
+      "You're now signed in on your TV.": [
+        "U bent nu aangemeld op uw tv."
       ]
     },
     "info": {
@@ -10200,13 +10212,13 @@
         "Bent u uw ${ BRAND_NAME } account wachtwoord vergeten? Vind deze met uw herstel e-mailadres of telefoonnummer en krijg weer toegang tot uw ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } en meer."
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
-        "Bent u uw ${ BRAND_NAME } account gebruikersnaam vergeten? Vind deze met uw herstel e-mailadres of telefoonnummer en krijg weer toegang tot uw ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } en meer."
+        "Bent u uw ${ BRAND_NAME }-account gebruikersnaam vergeten? Vind deze met uw herstel e-mailadres of telefoonnummer en krijg weer toegang tot uw ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } en meer."
       ],
       "Reset your ${ BRAND_NAME } Account password": [
-        "Reset uw ${ BRAND_NAME } accountwachtwoord"
+        "Reset uw ${ BRAND_NAME }-accountwachtwoord"
       ],
       "Sign in to access your ${ appName } account": [
-        "Log in om toegang te krijgen tot uw ${ appName } account"
+        "Log in om toegang te krijgen tot uw ${ appName }-account"
       ]
     },
     "Modal title": {
@@ -13204,6 +13216,9 @@
       ],
       "Your account is fully secure.": [
         "Uw account is volledig veilig."
+      ],
+      "Invalid code": [
+        "Ongeldige code"
       ]
     },
     "saml: Action": {
@@ -16410,6 +16425,12 @@
       ],
       "Your subscriptions": [
         "Uw abonnementen"
+      ],
+      "Account and password": [
+        "Account en wachtwoord"
+      ],
+      "Integrations": [
+        "Integraties"
       ]
     },
     "Title for payment methods table": {

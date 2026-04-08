@@ -1159,6 +1159,51 @@
       ],
       "Zoom out": [
         "Diminuir zoom"
+      ],
+      "Connect Gmail address": [
+        "Conectar endereço do Gmail"
+      ],
+      "Connect to Gmail": [
+        "Conectar ao Gmail"
+      ],
+      "Contact Support Center": [
+        "Contacte a Central de Suporte"
+      ],
+      "Continue to sign in": [
+        "Continuar para iniciar sessão"
+      ],
+      "Disconnect": [
+        "Desconectar"
+      ],
+      "Enter code": [
+        "Inserir código"
+      ],
+      "I don't have my 2FA device": [
+        "Eu não tenho meu dispositivo de A2F"
+      ],
+      "I don't have my key": [
+        "Eu não tenho minha chave"
+      ],
+      "I don’t have my backup codes": [
+        "Eu não tenho meus códigos de backup"
+      ],
+      "Or remove forwarding address": [
+        "Ou remover endereço de encaminhamento"
+      ],
+      "Reconnect to Gmail": [
+        "Reconectar ao Gmail"
+      ],
+      "Recover account": [
+        "Recuperar conta"
+      ],
+      "Send feedback": [
+        "Enviar comentários"
+      ],
+      "Share feedback": [
+        "Compartilhar comentário"
+      ],
+      "Verify another way": [
+        "Verificar de outra forma"
       ]
     },
     "action": {
@@ -3508,6 +3553,19 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Você pode importar eventos no formato iCal (arquivo ICS). O arquivo deve ter o tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter até ${ MAX_IMPORT_EVENTS_STRING } eventos. Se o seu arquivo for maior, divida-o em arquivos menores."
+      ],
+      "No ads. No trackers.": [
+        "Sem anúncios. Sem rastreadores."
+      ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "Faça upgrade para ${ planName } para conectar até ${ MAX_SYNC_PAID_USER } contas"
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Você agora pode enviar e-mails da ${ BRAND_NAME } usando este endereço."
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "Seu plano suporta um total de ${ MAX_SYNC_PAID_USER } endereço do Gmail",
+        "Seu plano suporta um total de ${ MAX_SYNC_PAID_USER } endereços do Gmail"
       ]
     },
     "description": {
@@ -4544,6 +4602,18 @@
       ],
       "Zero keys reactivated": [
         "Zero chaves reativadas"
+      ],
+      "Address could not be added.": [
+        "O endereço não pôde ser adicionado."
+      ],
+      "Address is already added to your account": [
+        "Endereço já adicionado à sua conta"
+      ],
+      "Incorrect recovery code. Please try again.": [
+        "Código de recuperação incorreto. Tente novamente."
+      ],
+      "Something went wrong while creating the address": [
+        "Algo deu errado ao criar o endereço"
       ]
     },
     "error": {
@@ -8491,6 +8561,51 @@
       ],
       "Zoom meeting": [
         "Reunião no Zoom"
+      ],
+      "Couldn´t send feedback": [
+        "Não foi possível enviar o feedback"
+      ],
+      "Download ${ VPN_APP_NAME }": [
+        "Baixar ${ VPN_APP_NAME }"
+      ],
+      "Enter code": [
+        "Inserir código"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "If Se você perdeu o acesso ao seu aplicativo de autenticação, pode usar um dos 16 códigos de recuperação de backup fornecidos quando configurou a autenticação de dois fatores. ${ learnMoreLink }"
+      ],
+      "Key sections reorganized for faster access.": [
+        "Seções principais reorganizadas para acesso mais rápido."
+      ],
+      "New sidebar": [
+        "Nova barra lateral"
+      ],
+      "New sidebar layout": [
+        "Novo layout da barra lateral"
+      ],
+      "Protect this device too?": [
+        "Proteger este dispositivo também?"
+      ],
+      "Share your thoughts...": [
+        "Compartilhe suas ideias..."
+      ],
+      "Sign-in complete": [
+        "Início de sessão concluída"
+      ],
+      "Something went wrong. Please try again.": [
+        "Ocorreu um erro. Tente novamente."
+      ],
+      "Switch sidebars": [
+        "Alternar barras laterais"
+      ],
+      "Use multiple email addresses with ${ MAIL_APP_NAME }. Add a new ${ BRAND_NAME } address or connect another email account to manage everything from one inbox.": [
+        "Use múltiplos endereços de e-mail com o ${ MAIL_APP_NAME }. Adicione um novo endereço da ${ BRAND_NAME } ou conecte outra conta de e-mail para gerenciar tudo de uma só caixa de entrada."
+      ],
+      "You're now signed in on your TV.": [
+        "Você já iniciou sessão na sua TV."
+      ],
+      "Your feedback": [
+        "Seu comentário"
       ]
     },
     "info": {
@@ -11399,6 +11514,9 @@
       ],
       "Zoom video conferencing settings have been updated": [
         "As configurações de videoconferência do Zoom foram atualizadas"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Seu endereço da ${ BRAND_NAME } está pronto para uso"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13165,6 +13283,9 @@
       ],
       "Your account is fully secure.": [
         "Sua conta está totalmente segura."
+      ],
+      "Invalid code": [
+        "O código não é válido."
       ]
     },
     "saml: Action": {
@@ -16368,6 +16489,63 @@
       ],
       "Your subscriptions": [
         "Suas assinaturas"
+      ],
+      "Account and password": [
+        "Conta e senha"
+      ],
+      "An error occurred": [
+        "Ocorreu um erro"
+      ],
+      "Are you sure you want to disconnect this address?": [
+        "Você tem certeza de que deseja desconectar este endereço?"
+      ],
+      "Configurations": [
+        "Configurações"
+      ],
+      "Disconnected from Gmail": [
+        "Desconectado do Gmail"
+      ],
+      "Download apps": [
+        "Baixar aplicativos"
+      ],
+      "Help us improve": [
+        "Ajude-nos a melhorar"
+      ],
+      "Integrations": [
+        "Integrações"
+      ],
+      "Monitoring": [
+        "Monitoramento"
+      ],
+      "My account": [
+        "Minha conta"
+      ],
+      "My VPN": [
+        "Minha VPN"
+      ],
+      "Organization": [
+        "Organização"
+      ],
+      "Organization and people": [
+        "Organização e pessoas"
+      ],
+      "Security and compliance": [
+        "Segurança e conformidade"
+      ],
+      "Single-sign on (SSO)": [
+        "Início de sessão único (SSO)"
+      ],
+      "Two-factor authentication disabled": [
+        "Autenticação de dois fatores desativada"
+      ],
+      "Use backup recovery code": [
+        "Usar código de recuperação de backup"
+      ],
+      "VPN": [
+        "VPN"
+      ],
+      "You are all set": [
+        "Tudo pronto"
       ]
     },
     "Title for payment methods table": {
