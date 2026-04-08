@@ -27,6 +27,8 @@ export const markConversationsAsUnread = (
     // This message must be part of the current label (labelID)
     const { conversations, labelID } = action.payload;
 
+    // We assume that it's not possible to mark an unread conversation as unread from the UI.
+    // For this reason we don't do any additional checks before updating the conversation counter.
     conversations.forEach((conversation) => {
         const isConversationInInbox = conversation.Labels?.some((label) => label.ID === MAILBOX_LABEL_IDS.INBOX);
 
