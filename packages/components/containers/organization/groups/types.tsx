@@ -58,10 +58,11 @@ export interface GroupsManagementReturn {
     getSerializedGroup: () => { type: 'new' | 'edit'; payload: SerializedGroupFormData } | undefined;
     actions: {
         onDiscardChanges: () => void;
-        onSaveGroup: (newEmailsToAdd: string[]) => Promise<void>;
+        onSaveGroup: () => Promise<void>;
         onViewGroup: (group: Group) => void;
         onDeleteGroup: () => void;
         onEditGroup: (group: Group) => void;
         onCreateGroup: () => void;
+        onAddGroupMembers: (group: Group, emails: string[]) => Promise<void>;
     };
 }

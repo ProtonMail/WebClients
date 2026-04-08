@@ -2,7 +2,6 @@ import { useMemo } from 'react';
 
 import { c, msgid } from 'ttag';
 
-import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import Loader from '@proton/components/components/loader/Loader';
 import type { Group, GroupMember } from '@proton/shared/lib/interfaces';
 
@@ -17,6 +16,7 @@ interface Props {
     edit?: boolean;
     canOnlyDelete: boolean;
     canChangeVisibility: boolean;
+    showMailFeatures: boolean;
 }
 
 const compareMemberNames = (a: GroupMember, b: GroupMember) => {
@@ -34,6 +34,7 @@ const GroupMemberList = ({
     edit = false,
     canOnlyDelete,
     canChangeVisibility,
+    showMailFeatures,
 }: Props) => {
     const sortedGroupMembers = useMemo(() => getSortedGroupMembers(groupMembers), [groupMembers]);
 
@@ -48,9 +49,9 @@ const GroupMemberList = ({
     const memberCount = groupMembers.length;
 
     return (
-        <>
+        <div className="flex flex-column gap-2">
             {!edit && (
-                <p className="color-weak text-sm p-0">
+                <p className="color-weak text-sm p-0 m-0">
                     {c('Group member count').ngettext(
                         msgid`${memberCount} member`,
                         `${memberCount} members`,
@@ -58,24 +59,23 @@ const GroupMemberList = ({
                     )}
                 </p>
             )}
-            <Scroll>
-                <div className="flex flex-column gap-3">
-                    {sortedGroupMembers.map((memberData: GroupMember) => {
-                        const member = addressToMemberMap[memberData?.AddressID ?? memberData?.AddressId ?? ''];
-                        return (
-                            <GroupMemberItem
-                                key={memberData.ID}
-                                group={group}
-                                groupMember={memberData}
-                                member={member}
-                                canOnlyDelete={canOnlyDelete}
-                                canChangeVisibility={canChangeVisibility}
-                            />
-                        );
-                    })}
-                </div>
-            </Scroll>
-        </>
+            <div className="flex flex-column gap-4">
+                {sortedGroupMembers.map((memberData: GroupMember) => {
+                    const member = addressToMemberMap[memberData?.AddressID ?? memberData?.AddressId ?? ''];
+                    return (
+                        <GroupMemberItem
+                            key={memberData.ID}
+                            group={group}
+                            groupMember={memberData}
+                            member={member}
+                            canOnlyDelete={canOnlyDelete}
+                            canChangeVisibility={canChangeVisibility}
+                            showMailFeatures={showMailFeatures}
+                        />
+                    );
+                })}
+            </div>
+        </div>
     );
 };
 
