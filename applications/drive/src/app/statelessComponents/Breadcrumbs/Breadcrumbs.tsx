@@ -12,7 +12,7 @@ export interface BreadcrumbsProps {
     loading: boolean;
     crumbs: CrumbDefinition[];
     events: BreadcrumbsEvents;
-    createHandleItemDrop?: (newParentNodeUid: string) => (e: React.DragEvent<Element>) => Promise<void>;
+    createHandleItemDrop?: (newParentNodeUid: string) => (e: React.DragEvent<Element>) => void;
 }
 
 export const Breadcrumbs = ({ crumbs, loading, events, createHandleItemDrop }: BreadcrumbsProps) => {
