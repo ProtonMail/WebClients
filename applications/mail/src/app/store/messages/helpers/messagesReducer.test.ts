@@ -211,15 +211,27 @@ describe('messagesReducer', () => {
         it('should mark the last message in read conversation as unread', () => {
             const messageState1: MessageState = {
                 localID: 'msg1',
-                data: { ID: 'msg1', Unread: 0, ConversationID: 'conv1', Order: 1, LabelIDs: ['label1'] } as Message,
+                data: {
+                    ID: 'msg1',
+                    Unread: 0,
+                    ConversationID: 'conv1',
+                    Order: 1,
+                    LabelIDs: [MAILBOX_LABEL_IDS.INBOX],
+                } as Message,
             };
             const messageState2: MessageState = {
                 localID: 'msg2',
-                data: { ID: 'msg2', Unread: 0, ConversationID: 'conv1', Order: 2, LabelIDs: ['label1'] } as Message,
+                data: {
+                    ID: 'msg2',
+                    Unread: 0,
+                    ConversationID: 'conv1',
+                    Order: 2,
+                    LabelIDs: [MAILBOX_LABEL_IDS.INBOX],
+                } as Message,
             };
             const conversation = {
                 ID: 'conv1',
-                Labels: [{ ID: 'label1', ContextNumUnread: 0 }],
+                Labels: [{ ID: MAILBOX_LABEL_IDS.INBOX, ContextNumUnread: 0 }],
             } as Conversation;
 
             const state = {
@@ -233,13 +245,99 @@ describe('messagesReducer', () => {
                 meta: {
                     arg: {
                         conversations: [conversation],
-                        labelID: 'label1',
+                        labelID: MAILBOX_LABEL_IDS.INBOX,
                     },
                 },
             });
 
             expect(messageState1.data?.Unread).toBe(0); // Should remain read
             expect(messageState2.data?.Unread).toBe(1); // Should be marked as unread (highest Order)
+        });
+
+        it('should not update a conversation where the current label already has unread', () => {
+            const messageState1: MessageState = {
+                localID: 'msg1',
+                data: {
+                    ID: 'msg1',
+                    Unread: 1,
+                    ConversationID: 'conv1',
+                    Order: 1,
+                    LabelIDs: [MAILBOX_LABEL_IDS.INBOX],
+                } as Message,
+            };
+            const messageState2: MessageState = {
+                localID: 'msg2',
+                data: {
+                    ID: 'msg2',
+                    Unread: 0,
+                    ConversationID: 'conv1',
+                    Order: 2,
+                    LabelIDs: [MAILBOX_LABEL_IDS.INBOX],
+                } as Message,
+            };
+
+            const conversation = {
+                ID: 'conv1',
+                Labels: [{ ID: MAILBOX_LABEL_IDS.INBOX, ContextNumUnread: 1 }],
+            } as Conversation;
+
+            const state = {
+                msg1: messageState1,
+                msg2: messageState2,
+            } as Draft<MessagesState>;
+
+            markConversationsAsUnreadPending(state, {
+                type: 'markConversationsAsRead/pending',
+                payload: undefined,
+                meta: {
+                    arg: {
+                        conversations: [conversation],
+                        labelID: MAILBOX_LABEL_IDS.INBOX,
+                    },
+                },
+            });
+
+            expect(messageState1.data?.Unread).toBe(1);
+            // It remains unread because messageState1 is already unread
+            expect(messageState2.data?.Unread).toBe(0);
+        });
+
+        it('should mark message as unread when conversation label is unread and has a cateory', () => {
+            const messageState1: MessageState = {
+                localID: 'msg1',
+                data: {
+                    ID: 'msg1',
+                    Unread: 0,
+                    ConversationID: 'conv1',
+                    Order: 1,
+                    LabelIDs: [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS],
+                } as Message,
+            };
+
+            const conversation = {
+                ID: 'conv1',
+                Labels: [
+                    { ID: MAILBOX_LABEL_IDS.INBOX, ContextNumUnread: 0 },
+                    { ID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, ContextNumUnread: 1 },
+                ],
+            } as Conversation;
+
+            const state = {
+                msg1: messageState1,
+            } as Draft<MessagesState>;
+
+            markConversationsAsUnreadPending(state, {
+                type: 'markConversationsAsRead/pending',
+                payload: undefined,
+                meta: {
+                    arg: {
+                        conversations: [conversation],
+                        labelID: MAILBOX_LABEL_IDS.INBOX,
+                    },
+                },
+            });
+
+            expect(messageState1.data?.Unread).toBe(1);
         });
     });
 });
