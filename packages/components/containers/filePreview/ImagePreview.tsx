@@ -117,6 +117,10 @@ const ImagePreview = ({
 
     useEffect(() => {
         if (!fullImageDimensions) {
+            if (isFallbackToThumbnail) {
+                const thumbnailDimensions = getImageDimensions(imageLowResRef.current);
+                setImageStyles(scaleDimensions(thumbnailDimensions, imageScale));
+            }
             return;
         }
         setImageStyles(scaleDimensions(fullImageDimensions, imageScale));
@@ -230,7 +234,8 @@ const ImagePreview = ({
                         className="flex *:min-size-auto m-auto relative"
                         style={{
                             ...imageStyles,
-                            overflow: !isLowResImageHidden && placeholderSrc ? 'hidden' : 'initial',
+                            overflow:
+                                !isLowResImageHidden && placeholderSrc && !isFallbackToThumbnail ? 'hidden' : 'initial',
                         }}
                     >
                         {!isLoading && (
