@@ -278,6 +278,80 @@ describe('conversationsReducers', () => {
                 const label = updatedConversationState!.Conversation.Labels!.find((label) => label.ID === inboxLabelID);
                 expect(label?.ContextNumUnread).toBe(0);
             });
+
+            it.only('should update category label when marking as unread from Inbox', () => {
+                mockConversation.Labels = [
+                    {
+                        ID: inboxLabelID,
+                        ContextNumUnread: 2,
+                    },
+                    {
+                        ID: archiveLabelID,
+                        ContextNumUnread: 1,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
+                        ContextNumUnread: 2,
+                    },
+                ];
+
+                const messages = [mockMessage1, mockMessage2];
+
+                markMessagesAsUnreadPending(state, {
+                    type: 'markMessagesAsUnread/pending',
+                    payload: undefined,
+                    meta: {
+                        arg: {
+                            messages,
+                            labelID: inboxLabelID,
+                        },
+                    },
+                });
+
+                const updatedConversationState = state[conversationID];
+                expect(
+                    updatedConversationState?.Conversation.Labels?.every(
+                        ({ ContextNumUnread }) => ContextNumUnread !== 0
+                    )
+                ).toEqual(true);
+            });
+
+            it.only('should update category label when marking as unread from Trash', () => {
+                mockConversation.Labels = [
+                    {
+                        ID: MAILBOX_LABEL_IDS.TRASH,
+                        ContextNumUnread: 2,
+                    },
+                    {
+                        ID: archiveLabelID,
+                        ContextNumUnread: 1,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
+                        ContextNumUnread: 2,
+                    },
+                ];
+
+                const messages = [mockMessage1, mockMessage2];
+
+                markMessagesAsUnreadPending(state, {
+                    type: 'markMessagesAsUnread/pending',
+                    payload: undefined,
+                    meta: {
+                        arg: {
+                            messages,
+                            labelID: MAILBOX_LABEL_IDS.TRASH,
+                        },
+                    },
+                });
+
+                const updatedConversationState = state[conversationID];
+                expect(
+                    updatedConversationState?.Conversation.Labels?.every(
+                        ({ ContextNumUnread }) => ContextNumUnread !== 0
+                    )
+                ).toEqual(true);
+            });
         });
     });
 
