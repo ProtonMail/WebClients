@@ -190,18 +190,6 @@ export const createDropdown = (popover: PopoverController): DropdownApp => {
         { userAction: true }
     );
 
-    iframe.registerMessageHandler(
-        InlinePortMessageType.AUTOFILL_IDENTITY,
-        withContext(async (ctx, { payload }) => {
-            const target = anchor.current;
-            if (target?.type !== 'field') return;
-
-            await ctx?.service.autofill.autofillIdentity(target.field, payload);
-            target.field.focus({ preventAction: true });
-        }),
-        { userAction: true }
-    );
-
     const validateAutofillAction = withContext<(payload: AutofillActionDTO) => AutofillActionDTO>((ctx, payload) => {
         if (payload.type === 'creditCard') {
             /** Optimize cross-frame detection for credit card autofill. If the
@@ -225,10 +213,19 @@ export const createDropdown = (popover: PopoverController): DropdownApp => {
                             payload: validateAutofillAction(payload),
                         })
                     );
+
                 case 'login':
                     return sendMessage(
                         contentScriptMessage({
                             type: WorkerMessageType.AUTOFILL_LOGIN,
+                            payload,
+                        })
+                    );
+
+                case 'identity':
+                    return sendMessage(
+                        contentScriptMessage({
+                            type: WorkerMessageType.AUTOFILL_IDENTITY,
                             payload,
                         })
                     );

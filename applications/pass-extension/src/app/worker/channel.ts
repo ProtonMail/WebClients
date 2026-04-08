@@ -32,7 +32,6 @@ const WorkerMessageBroker = createMessageBroker({
         WorkerMessageType.ALIAS_OPTIONS,
         WorkerMessageType.AUTH_CHECK,
         WorkerMessageType.AUTH_UNLOCK,
-        WorkerMessageType.AUTOFILL_IDENTITY,
         WorkerMessageType.AUTOSAVE_REQUEST,
         WorkerMessageType.LOG_REQUEST,
         WorkerMessageType.SPOTLIGHT_ACK,

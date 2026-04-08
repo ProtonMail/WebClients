@@ -13,7 +13,6 @@ import type {
 import type { PassThemeOption } from '@proton/pass/components/Layout/Theme/types';
 import type { FeatureFlagState } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
-import type { ItemContent } from '@proton/pass/types/data/items';
 import type { Rect } from '@proton/pass/types/utils/dom';
 import type { ClientEndpoint } from '@proton/pass/types/worker/runtime';
 import type { AppState } from '@proton/pass/types/worker/state';
@@ -30,7 +29,6 @@ export enum InlinePortMessageType {
     AUTOFILL_EMAIL = 'AUTOFILL_EMAIL',
     AUTOFILL_FILTER = 'AUTOFILL_FILTER',
     AUTOFILL_GENERATED_PW = 'AUTOFILL_GENERATED_PASSWORD',
-    AUTOFILL_IDENTITY = 'AUTOFILL_IDENTITY',
     AUTOFILL_OTP = 'AUTOFILL_OTP',
     DROPDOWN_ACTION = 'DROPDOWN_ACTION',
     DROPDOWN_FOCUS = 'DROPDOWN_FOCUS',
@@ -91,7 +89,6 @@ export type InlineMessage<T extends InlineMessageType = InlineMessageType> = Ext
     | { type: InlinePortMessageType.AUTOFILL_EMAIL; payload: { email: string } }
     | { type: InlinePortMessageType.AUTOFILL_FILTER; payload: { startsWith: string } }
     | { type: InlinePortMessageType.AUTOFILL_GENERATED_PW; payload: { password: string } }
-    | { type: InlinePortMessageType.AUTOFILL_IDENTITY; payload: ItemContent<'identity'> }
     | { type: InlinePortMessageType.AUTOFILL_OTP; payload: { code: string } }
     | { type: InlinePortMessageType.DROPDOWN_ACTION; payload: DropdownActions }
     | { type: InlinePortMessageType.DROPDOWN_BLURRED }
