@@ -290,6 +290,26 @@ export const createAutoFillService = () => {
         return true;
     };
 
+    const onAutofillEmail = async (payload: AutofillActionDTO<'email'>, tabId: TabId) => {
+        const { fieldId, formId, frameId, value } = payload;
+        if (!value) throw new Error('AutofillEmail: no email');
+
+        await sendTabMessage(
+            backgroundMessage({
+                type: WorkerMessageType.AUTOFILL_SEQUENCE,
+                payload: {
+                    status: 'fill',
+                    type: 'email',
+                    data: value,
+                    field: { fieldId, frameId, formId },
+                },
+            }),
+            { tabId, frameId }
+        );
+
+        return true;
+    };
+
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.AUTOFILL_LOGIN_QUERY,
         onContextReady(async ({ getState }, { payload }, sender) => {
@@ -361,6 +381,8 @@ export const createAutoFillService = () => {
                     return onAutofillLogin(payload, tabId);
                 case 'identity':
                     return onAutofillIdentity(payload, tabId);
+                case 'email':
+                    return onAutofillEmail(payload, tabId);
                 case 'creditCard':
                     return onAutofillCreditCard(payload, tabId);
             }

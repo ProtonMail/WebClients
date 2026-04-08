@@ -25,6 +25,7 @@ import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { nextTick, onNextTick } from '@proton/pass/utils/time/next-tick';
 import { resolveSubdomain } from '@proton/pass/utils/url/utils';
 import { omit } from '@proton/shared/lib/helpers/object';
+import noop from '@proton/utils/noop';
 
 import { autofillIdentityFields } from './autofill.identity';
 
@@ -279,6 +280,19 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
                     if (form && field) {
                         await autofillIdentity(field, payload.identity);
                         field.focus({ preventAction: true });
+                    }
+
+                    return { type: payload.type };
+                }
+
+                case 'email': {
+                    const form = ctx?.service.formManager.getFormById(payload.field.formId);
+                    const field = form?.getFieldById(payload.field.fieldId);
+
+                    if (form && field) {
+                        await ctx?.service.autofill.autofillEmail(field, payload.data);
+                        field.focus({ preventAction: true });
+                        field.getFormHandle()?.tracker?.processForm({ submit: false, partial: true }).catch(noop);
                     }
 
                     return { type: payload.type };
