@@ -20,7 +20,7 @@ import {
     shadowPiercingContains,
 } from '@proton/pass/fathom';
 import type { FormType } from '@proton/pass/fathom/labels';
-import { FieldType } from '@proton/pass/fathom/labels';
+import { FieldType, IdentityFieldType } from '@proton/pass/fathom/labels';
 import browser from '@proton/pass/lib/globals/browser';
 import type { Maybe } from '@proton/pass/types/utils/index';
 import { isActiveElement } from '@proton/pass/utils/dom/active-element';
@@ -208,6 +208,12 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
                 switch (handle.fieldType) {
                     case FieldType.IDENTITY:
                         handle.fieldSubType = handle.fieldSubType ?? getIdentityFieldType(field);
+                        break;
+                    case FieldType.EMAIL:
+                        /** Email fields within identity forms need `fieldSubType` set so that
+                         * `autofillIdentityFields` can recognize and autofill them: it resolves
+                         * the identity value to write via `field.fieldSubType`. */
+                        handle.fieldSubType = IdentityFieldType.EMAIL;
                         break;
                     case FieldType.CREDIT_CARD:
                         handle.fieldSubType = handle.fieldSubType ?? getCCFieldType(field);
