@@ -590,5 +590,57 @@ describe('messagesReducer', () => {
             expect(messageState1.data?.LabelIDs).toContain(MAILBOX_LABEL_IDS.ARCHIVE);
             expect(messageState1.data?.LabelIDs).not.toContain(MAILBOX_LABEL_IDS.INBOX);
         });
+
+        it('should replace old category with new category and keep everything else unchanged', () => {
+            const messageState1: MessageState = {
+                localID: 'msg1',
+                data: {
+                    ID: 'msg1',
+                    ConversationID: 'conv1',
+                    LabelIDs: [
+                        MAILBOX_LABEL_IDS.INBOX,
+                        MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                        MAILBOX_LABEL_IDS.ALL_MAIL,
+                        MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                        MAILBOX_LABEL_IDS.STARRED,
+                    ],
+                } as Message,
+            };
+
+            const state = {
+                msg1: messageState1,
+            } as Draft<MessagesState>;
+
+            const conversation = {
+                ID: 'conv1',
+                Labels: [
+                    { ID: MAILBOX_LABEL_IDS.INBOX, ContextNumMessages: 1, ContextNumUnread: 0 },
+                    { ID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, ContextNumMessages: 1, ContextNumUnread: 0 },
+                ],
+            } as Conversation;
+
+            labelConversationsPending(state, {
+                type: 'mailbox/labelConversations/pending',
+                payload: undefined,
+                meta: {
+                    arg: {
+                        conversations: [conversation],
+                        sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
+                        destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+                        labels: [] as Label[],
+                        folders: [] as Folder[],
+                    },
+                },
+            });
+
+            // Old category removed, new category added
+            expect(messageState1.data?.LabelIDs).toContain(MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS);
+            expect(messageState1.data?.LabelIDs).not.toContain(MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
+            // Everything else unchanged
+            expect(messageState1.data?.LabelIDs).toContain(MAILBOX_LABEL_IDS.INBOX);
+            expect(messageState1.data?.LabelIDs).toContain(MAILBOX_LABEL_IDS.ALL_MAIL);
+            expect(messageState1.data?.LabelIDs).toContain(MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL);
+            expect(messageState1.data?.LabelIDs).toContain(MAILBOX_LABEL_IDS.STARRED);
+        });
     });
 });
