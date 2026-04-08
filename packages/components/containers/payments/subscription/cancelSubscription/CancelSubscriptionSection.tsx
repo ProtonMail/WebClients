@@ -18,6 +18,7 @@ import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import useCancellationTelemetry from '../cancellationFlow/useCancellationTelemetry';
 import useCancellationEligibility from '../cancellationFlowFeedbackFirst/useCancellationEligibility';
 import { useCancelSubscriptionFlow } from './useCancelSubscriptionFlow';
+import useFeedbackFirstCancellationFlow from '@proton/components/containers/payments/subscription/cancellationFlowFeedbackFirst/useFeedbackFirstCancellationFlow';
 
 export const CancelSubscriptionSection = ({ app }: { app: APP_NAMES }) => {
     const [user] = useUser();
@@ -27,6 +28,7 @@ export const CancelSubscriptionSection = ({ app }: { app: APP_NAMES }) => {
     const { loadingCancelSubscription, cancelSubscriptionModals, cancelSubscription } = useCancelSubscriptionFlow({
         app,
     });
+    const { startFlow: startFeedbackFirstFlow, modals: feedbackFirstModals } = useFeedbackFirstCancellationFlow();
     const [subscription] = useSubscription();
     const [organization] = useOrganization();
     const isB2BTrial = useIsB2BTrial(subscription, organization);
@@ -42,7 +44,7 @@ export const CancelSubscriptionSection = ({ app }: { app: APP_NAMES }) => {
         if (isB2BTrial) {
             void cancelSubscription({});
         } else if (feedbackFirstB2BAccess || feedbackFirstB2CAccess) {
-            // open new feedback first flow
+            startFeedbackFirstFlow();
         } else if (b2cAccess || b2bAccess) {
             redirectToCancellationFlow();
             sendStartCancellationSectionReport();
@@ -63,6 +65,7 @@ export const CancelSubscriptionSection = ({ app }: { app: APP_NAMES }) => {
 
     return (
         <>
+            {feedbackFirstModals}
             {cancelSubscriptionModals}
             <SettingsSection>
                 <SettingsParagraph>{cancellationText}</SettingsParagraph>
