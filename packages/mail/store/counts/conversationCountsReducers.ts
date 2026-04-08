@@ -26,9 +26,10 @@ export const markConversationsAsUnread = (
     // When we mark a conversation as unread, the latest message of this conversation is marked as unread.
     // This message must be part of the current label (labelID)
     const { conversations, labelID } = action.payload;
-    const isCurrentLabelIDCategory = isCategoryLabel(labelID);
 
     conversations.forEach((conversation) => {
+        const isConversationInInbox = conversation.Labels?.some((label) => label.ID === MAILBOX_LABEL_IDS.INBOX);
+
         conversation.Labels?.forEach((label) => {
             const conversationCounter = state.value?.find((counter) => counter.LabelID === label.ID);
             if (!conversationCounter) {
@@ -37,7 +38,9 @@ export const markConversationsAsUnread = (
 
             if (label.ID === labelID) {
                 conversationCounter.Unread = safeIncreaseCount(conversationCounter.Unread, 1);
-            } else if (isCurrentLabelIDCategory && label.ID === MAILBOX_LABEL_IDS.INBOX) {
+            }
+
+            if (labelID === MAILBOX_LABEL_IDS.INBOX && isConversationInInbox && isCategoryLabel(label.ID)) {
                 conversationCounter.Unread = safeIncreaseCount(conversationCounter.Unread, 1);
             }
         });
