@@ -12,7 +12,6 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import StripedItem from '@proton/components/components/stripedList/StripedItem';
 import { StripedList } from '@proton/components/components/stripedList/StripedList';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
-import type { PLANS } from '@proton/payments';
 
 import type { ConfirmationModal } from './interface';
 import useCancellationTelemetry from './useCancellationTelemetry';
@@ -20,7 +19,6 @@ import useCancellationTelemetry from './useCancellationTelemetry';
 interface Props extends ModalProps, ConfirmationModal {
     ctaText: string;
     cancelSubscription: () => void;
-    upsellPlan?: PLANS;
 }
 
 const CancelConfirmationModal = ({
@@ -29,7 +27,6 @@ const CancelConfirmationModal = ({
     warningPoints,
     warningTitle,
     cancelSubscription,
-    upsellPlan,
     ...modalProps
 }: Props) => {
     const { sendCancelModalKeepPlanReport, sendCancelModalConfirmCancelReport } = useCancellationTelemetry();

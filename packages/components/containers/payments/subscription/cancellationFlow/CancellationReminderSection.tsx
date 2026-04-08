@@ -150,7 +150,6 @@ export const CancellationReminderSection = ({ app }: Props) => {
                     cancelSubscription={async () => {
                         await handleCancelSubscription();
                     }}
-                    upsellPlan={config.upsellPlan}
                     {...config.confirmationModal}
                 />
             )}

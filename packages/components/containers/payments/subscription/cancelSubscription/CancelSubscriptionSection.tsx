@@ -30,7 +30,6 @@ export const CancelSubscriptionSection = ({ app }: { app: APP_NAMES }) => {
     const [subscription] = useSubscription();
     const [organization] = useOrganization();
     const isB2BTrial = useIsB2BTrial(subscription, organization);
-
     const [referralInfo] = useReferralInfo();
     const { referrerRewardAmount } = referralInfo.uiData;
     const isActiveReferralTrial = isReferralTrial(subscription);
