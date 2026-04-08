@@ -22,16 +22,16 @@ export const DriveSidebarFolders = ({
 }: DriveSidebarFoldersProps) => {
     const children = rootFolder.children ? Object.values(rootFolder.children) : [];
     const [shareId, setShareId] = useState<string | undefined>();
-
+    const rootFolderNodeUid = rootFolder.nodeUid;
     useEffect(() => {
         const getShareId = async () => {
-            if (rootFolder) {
-                const { node } = getNodeEntity(await getDrive().getNode(rootFolder.nodeUid));
+            if (rootFolderNodeUid) {
+                const { node } = getNodeEntity(await getDrive().getNode(rootFolderNodeUid));
                 setShareId(node.deprecatedShareId);
             }
         };
         void getShareId();
-    }, [rootFolder]);
+    }, [rootFolderNodeUid]);
 
     return (
         <>
