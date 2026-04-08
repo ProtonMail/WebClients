@@ -1253,6 +1253,9 @@
       ],
       "Refetch index": [
         "Réindexer"
+      ],
+      "Reconnect to Gmail": [
+        "Se reconnecter à Gmail"
       ]
     },
     "Action: Docs": {
@@ -3058,6 +3061,18 @@
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Nous regrettons de vous voir partir. Si vous avez un moment, nous aimerions beaucoup savoir pourquoi vous souhaitez résilier votre abonnement. Vos commentaires nous aident à améliorer ${ BRAND_NAME } pour le bénéfice de tous."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Cela peut se produire si les autorisations ont été supprimées ou si votre mot de passe a été modifié."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Pour continuer à recevoir et envoyer des messages Gmail dans ${ BRAND_NAME }, veuillez reconnecter votre compte."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Pour continuer à recevoir et envoyer des messages Gmail dans ${ BRAND_NAME }, veuillez reconnecter vos comptes."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Nous ne pouvons plus accéder à ${ boldEmails }."
       ]
     },
     "description": {
@@ -3982,6 +3997,15 @@
       ],
       "Something went wrong with search: Not enough storage space.": [
         "Un problème est survenu lors de la recherche : l'espace de stockage est insuffisant."
+      ],
+      "Address could not be added.": [
+        "L'adresse n'a pas pu être ajoutée."
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Le régime de TVA intracommunautaire n'est pas pris en charge pour cet abonnement."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Quelque chose s'est mal passé lors de la récupération des domaines disponibles"
       ]
     },
     "error": {
@@ -7002,6 +7026,27 @@
       ],
       "Unsupported file type for Photos": [
         "Type de fichier non pris en charge pour Photos"
+      ],
+      "Enter code": [
+        "Saisissez le code"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Si vous avez perdu l'accès à votre application d'authentification, vous pouvez utiliser 1 des 16 codes de récupération de sauvegarde fournis lors de la configuration de l'authentification à deux facteurs. ${ learnMoreLink }"
+      ],
+      "Move ${ dragCount } item": [
+        "Déplacer ${ dragCount } élément",
+        "Déplacer ${ dragCount } éléments"
+      ],
+      "Move ${ fileCount } file": [
+        "Déplacer ${ fileCount } fichier",
+        "Déplacer ${ fileCount } fichiers"
+      ],
+      "Move ${ folderCount } folder": [
+        "Déplacer ${ folderCount } dossier",
+        "Déplacer ${ folderCount } dossiers"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Votre compte est actuellement configuré pour appliquer le régime de TVA intracommunautaire. Ceci n’est pas pris en charge pour l'abonnement sélectionné. Pour continuer, retirez le numéro de TVA de l'adresse de facturation ou sélectionnez un autre abonnement."
       ]
     },
     "info": {
@@ -9673,6 +9718,9 @@
       ],
       "Your settings have been changed successfully": [
         "Vos réglages ont été modifiés."
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Votre adresse ${ BRAND_NAME } est prête à être utilisée"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13289,6 +13337,12 @@
       ],
       "Search": [
         "Rechercher"
+      ],
+      "Disconnected from Gmail": [
+        "Déconnecté de Gmail"
+      ],
+      "Reverse charge not supported": [
+        "Le régime de TVA intracommunautaire n'est pas pris en charge."
       ]
     },
     "Today icon tooltip in mini calendar": {

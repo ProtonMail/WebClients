@@ -1253,6 +1253,9 @@
       ],
       "Refetch index": [
         "Hämta index igen"
+      ],
+      "Reconnect to Gmail": [
+        "Återanslut till Gmail"
       ]
     },
     "Action: Docs": {
@@ -3049,6 +3052,15 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Detta kan hända om behörigheter togs bort eller ditt lösenord har ändrats."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "För att fortsätta ta emot och skicka Gmail-meddelanden i ${ BRAND_NAME }, återanslut ditt konto."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Vi kan inte komma åt ${ boldEmails } längre."
       ]
     },
     "description": {
@@ -3952,6 +3964,9 @@
       ],
       "Something went wrong with search. Please try again later.": [
         "Något gick fel med sökning. Försök igen senare."
+      ],
+      "Address could not be added.": [
+        "Adress kunde inte läggas till."
       ]
     },
     "error": {
@@ -6949,6 +6964,21 @@
       ],
       "Unsupported file type for Photos": [
         "Filtyp för foton stöds inte"
+      ],
+      "Enter code": [
+        "Ange kod"
+      ],
+      "Move ${ dragCount } item": [
+        "Flytta ${ dragCount } objekt",
+        "Flytta ${ dragCount } objekt"
+      ],
+      "Move ${ fileCount } file": [
+        "Flytta ${ fileCount } fil",
+        "Flytta ${ fileCount } filer"
+      ],
+      "Move ${ folderCount } folder": [
+        "Flytta ${ folderCount } mapp",
+        "Flytta ${ folderCount } mappar"
       ]
     },
     "info": {
@@ -9605,6 +9635,9 @@
       ],
       "\"${ fileName }\" shared": [
         "”${ fileName }” delad"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Din ${ BRAND_NAME }-adress är redo att användas"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13221,6 +13254,9 @@
       ],
       "Search": [
         "Sök"
+      ],
+      "Disconnected from Gmail": [
+        "Koppla från Gmail"
       ]
     },
     "Today icon tooltip in mini calendar": {

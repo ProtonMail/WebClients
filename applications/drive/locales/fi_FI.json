@@ -1244,6 +1244,9 @@
       ],
       "Refetch index": [
         "Hae indeksi uudelleen"
+      ],
+      "Reconnect to Gmail": [
+        "Yhdistä uudelleen Gmailiin"
       ]
     },
     "Action: Docs": {
@@ -2946,6 +2949,18 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Olet jo luonut 10 aliasta. Saat rajattomasti aliaksia ja 500 Gt tallennustilaa ${ BRAND_NAME } Unlimitedilla."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Tämä voi johtua, jos käyttöoikeudet on poistettu tai salasanasi on vaihdettu."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Jotta voit jatkaa Gmail-viestien vastaanottamista ja lähettämistä ${ BRAND_NAME } -palvelussa, yhdistä tilisi uudelleen."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Jotta voit jatkaa Gmail-viestien vastaanottamista ja lähettämistä ${ BRAND_NAME } -palvelussa, yhdistä tilisi uudelleen."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Emme voi enää käyttää ${ boldEmails } -osoitteita."
       ]
     },
     "description": {
@@ -3811,6 +3826,12 @@
       ],
       "Something went wrong with search: Not enough storage space.": [
         "Jotain meni vikaan haussa: Ei tarpeeksi tallennustilaa."
+      ],
+      "Address could not be added.": [
+        "Osoitetta ei voitu lisätä."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Jotain meni vikaan haettaessa käytettävissä olevia verkkotunnuksia"
       ]
     },
     "error": {
@@ -6723,6 +6744,18 @@
       ],
       "Unsupported file type for Photos": [
         "Tiedostotyyppiä ei tueta Photos-palvelussa"
+      ],
+      "Move ${ dragCount } item": [
+        "Siirrä ${ dragCount } kohde",
+        "Siirrä ${ dragCount } kohdetta"
+      ],
+      "Move ${ fileCount } file": [
+        "Siirrä ${ fileCount } tiedosto",
+        "Siirrä ${ fileCount } tiedostoa"
+      ],
+      "Move ${ folderCount } folder": [
+        "Siirrä ${ folderCount } kansio",
+        "Siirrä ${ folderCount } kansiota"
       ]
     },
     "info": {
@@ -9226,6 +9259,9 @@
       ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" jaettiin"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "${ BRAND_NAME } -osoitteesi on valmis käytettäväksi"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -12654,6 +12690,9 @@
       ],
       "Search": [
         "Hae"
+      ],
+      "Disconnected from Gmail": [
+        "Yhteys Gmailiin katkaistu"
       ]
     },
     "Today icon tooltip in mini calendar": {

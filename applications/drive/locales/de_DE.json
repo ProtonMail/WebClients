@@ -1247,6 +1247,9 @@
       ],
       "Refetch index": [
         "Index neu abrufen"
+      ],
+      "Reconnect to Gmail": [
+        "Mit Gmail wieder verbinden"
       ]
     },
     "Action: Docs": {
@@ -3055,6 +3058,18 @@
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Wir bedauern, dass du gehst. Wenn du einen Moment Zeit hast, würden wir uns sehr freuen zu erfahren, warum du kündigen möchtest. Dein Feedback hilft uns, ${ BRAND_NAME } für alle besser zu machen."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Dies kann passieren, wenn Berechtigungen entfernt wurden oder dein Passwort geändert wurde."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Um weiterhin Gmail-Nachrichten in ${ BRAND_NAME } zu empfangen und zu senden, verbinde dein Konto erneut."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Um weiterhin Gmail-Nachrichten in ${ BRAND_NAME } zu empfangen und zu senden, Konten erneut verbinden."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Wir können nicht mehr auf ${ boldEmails } zugreifen."
       ]
     },
     "description": {
@@ -3982,6 +3997,12 @@
       ],
       "Something went wrong with search: Not enough storage space.": [
         "Bei der Suche ist ein Fehler aufgetreten: Nicht genügend Speicherplatz."
+      ],
+      "Address could not be added.": [
+        "E-Mail-Adresse konnte nicht hinzugefügt werden."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Etwas ist schiefgegangen beim Abrufen der verfügbaren Domains"
       ]
     },
     "error": {
@@ -7022,6 +7043,24 @@
       ],
       "Unsupported file type for Photos": [
         "Für Fotos nicht unterstützter Dateityp"
+      ],
+      "Enter code": [
+        "Code eingeben"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Wenn du den Zugriff auf deine Authenticator-App verloren hast, kannst du 1 der 16 Wiederherstellungscodes verwenden, die du bei der Einrichtung der Zwei-Faktor-Authentifizierung erhalten hast. ${ learnMoreLink }"
+      ],
+      "Move ${ dragCount } item": [
+        "${ dragCount } Element verschieben",
+        "${ dragCount } Elemente verschieben"
+      ],
+      "Move ${ fileCount } file": [
+        "${ fileCount } Datei verschieben",
+        "${ fileCount } Dateien verschieben"
+      ],
+      "Move ${ folderCount } folder": [
+        "${ folderCount } Ordner verschieben",
+        "${ folderCount } Ordner verschieben"
       ]
     },
     "info": {
@@ -9690,6 +9729,9 @@
       ],
       "Your settings have been changed successfully": [
         "Deine Einstellungen wurden erfolgreich geändert"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Deine ${ BRAND_NAME }-E-Mail-Adresse ist einsatzbereit"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13321,6 +13363,9 @@
       ],
       "Search": [
         "Suchen"
+      ],
+      "Disconnected from Gmail": [
+        "Von Gmail getrennt"
       ]
     },
     "Today icon tooltip in mini calendar": {

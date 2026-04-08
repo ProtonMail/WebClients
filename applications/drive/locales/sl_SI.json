@@ -1184,6 +1184,9 @@
       ],
       "Zoom out": [
         "Pomanjšaj"
+      ],
+      "Refetch index": [
+        "Ponovno pridobi indeks"
       ]
     },
     "Actions": {
@@ -6743,6 +6746,36 @@
       ],
       "You’ll also lose access to ${ boldPlanTitle } features:": [
         "Prav tako izgubite dostop do ${ boldPlanTitle } možnosti:"
+      ],
+      "${ state.result.entries.length } entries": [
+        "${ state.result.entries.length } vnosov"
+      ],
+      "Index is empty.": [
+        "Indeks je prazen."
+      ],
+      "Move ${ dragCount } item": [
+        "Premakni ${ dragCount } predmet",
+        "Premakni ${ dragCount } predmeta",
+        "Premakni ${ dragCount } predmete",
+        "Premakni ${ dragCount } predmete"
+      ],
+      "Move ${ fileCount } file": [
+        "Premakni datoteko ${ fileCount }",
+        "Premakni datoteki ${ fileCount }",
+        "Premakni datoteke ${ fileCount }",
+        "Premakni datoteke ${ fileCount }"
+      ],
+      "Move ${ folderCount } folder": [
+        "Premakni mapo ${ folderCount }",
+        "Premakni mapi ${ folderCount }",
+        "Premakni mape ${ folderCount }",
+        "Premakni mape ${ folderCount }"
+      ],
+      "Search module is not available.": [
+        "Iskalni modul ni na voljo."
+      ],
+      "Unsupported file type for Photos": [
+        "Nepodprta vrsta datoteke za fotografije"
       ]
     },
     "info": {
@@ -7485,6 +7518,27 @@
       ],
       "ZIP code": [
         "Poštna številka"
+      ],
+      "Environment compatible": [
+        "Združljivo z okoljem"
+      ],
+      "Index kinds": [
+        "Vrste indeksa"
+      ],
+      "Initial indexing": [
+        "Začetno indeksiranje"
+      ],
+      "Outdated version": [
+        "Zastarela različica"
+      ],
+      "Searchable": [
+        "Iskano"
+      ],
+      "User opted in": [
+        "Uporabnik se je prijavil"
+      ],
+      "Visible columns:": [
+        "Vidni stolpci:"
       ]
     },
     "Label for contact group color": {
@@ -12548,6 +12602,12 @@
       ],
       "Actions": [
         "Dejanja"
+      ],
+      "Global": [
+        "Globalno"
+      ],
+      "Search": [
+        "Išči"
       ]
     },
     "Today icon tooltip in mini calendar": {
