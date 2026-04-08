@@ -8,6 +8,7 @@ import type { FormHandle } from 'proton-pass-extension/app/content/services/form
 import { sendContentScriptTelemetry } from 'proton-pass-extension/app/content/utils/telemetry';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import type { AutofillRequest, AutofillResult } from 'proton-pass-extension/types/autofill';
+import type { FrameField } from 'proton-pass-extension/types/frames';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { CCFieldType, FieldType } from '@proton/pass/fathom/labels';
@@ -19,6 +20,7 @@ import type { FormCredentials } from '@proton/pass/types/worker/form';
 import { first } from '@proton/pass/utils/array/first';
 import { truthy } from '@proton/pass/utils/fp/predicates';
 import { asyncLock } from '@proton/pass/utils/fp/promises';
+import { safeCall } from '@proton/pass/utils/fp/safe-call';
 import { serialize } from '@proton/pass/utils/object/serialize';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
@@ -248,55 +250,45 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
 
     const executeAutofill = withContext<(payload: AutofillRequest<'fill'>) => Promise<AutofillResult>>(
         async (ctx, payload) => {
-            switch (payload.type) {
-                case 'creditCard':
-                    /** `formIds` are resolved via service worker's clustering phase.
-                     * Origin validation is enforced service-worker side. */
-                    const ccFields = payload.fields.map((field) =>
-                        ctx?.service.formManager
-                            .getFormById(field.formId)
-                            ?.getFieldById<FieldType.CREDIT_CARD>(field.fieldId)
-                    );
+            const resolveField = <T extends FieldType>(frameField: FrameField) => {
+                const form = ctx?.service.formManager.getFormById(frameField.formId);
+                const field = form?.getFieldById<T>(frameField.fieldId);
+                if (!field) throw new Error('[AutofillRequest] unknown target');
+                return field;
+            };
 
-                    const autofilled = await autofillCCFields(ccFields.filter(truthy), payload);
-                    return { type: payload.type, autofilled: autofilled.flat() };
-
-                case 'login': {
-                    const form = ctx?.service.formManager.getFormById(payload.field.formId);
-                    const field = form?.getFieldById(payload.field.fieldId);
-
-                    if (form && field) {
-                        await autofillLogin(form, payload.credentials);
-                        field?.focus({ preventAction: true });
+            try {
+                switch (payload.type) {
+                    case 'creditCard': {
+                        const ccFields = payload.fields.map(safeCall(resolveField<FieldType.CREDIT_CARD>));
+                        const autofilled = await autofillCCFields(ccFields.filter(truthy), payload);
+                        return { ok: true, type: payload.type, autofilled: autofilled.flat() };
                     }
 
-                    return { type: payload.type };
-                }
+                    case 'login': {
+                        const field = resolveField(payload.field);
+                        await autofillLogin(field.getFormHandle(), payload.credentials);
+                        field.focus({ preventAction: true });
+                        return { ok: true, type: payload.type };
+                    }
 
-                case 'identity': {
-                    const form = ctx?.service.formManager.getFormById(payload.field.formId);
-                    const field = form?.getFieldById(payload.field.fieldId);
-
-                    if (form && field) {
+                    case 'identity': {
+                        const field = resolveField(payload.field);
                         await autofillIdentity(field, payload.identity);
                         field.focus({ preventAction: true });
+                        return { ok: true, type: payload.type };
                     }
 
-                    return { type: payload.type };
-                }
-
-                case 'email': {
-                    const form = ctx?.service.formManager.getFormById(payload.field.formId);
-                    const field = form?.getFieldById(payload.field.fieldId);
-
-                    if (form && field) {
-                        await ctx?.service.autofill.autofillEmail(field, payload.data);
+                    case 'email': {
+                        const field = resolveField(payload.field);
+                        await autofillEmail(field, payload.data);
                         field.focus({ preventAction: true });
-                        field.getFormHandle()?.tracker?.processForm({ submit: false, partial: true }).catch(noop);
+                        field.getFormHandle().tracker?.processForm({ submit: false, partial: true }).catch(noop);
+                        return { ok: true, type: payload.type };
                     }
-
-                    return { type: payload.type };
                 }
+            } catch {
+                return { ok: false };
             }
         }
     );
