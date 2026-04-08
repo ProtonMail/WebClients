@@ -104,7 +104,7 @@ export const AutofillIdentity: FC<Props> = ({ action, ...payload }) => {
                     <PauseListDropdown
                         criteria="Autofill"
                         dense
-                        hostname={payload.origin}
+                        hostname={payload.frameOrigin}
                         label={c('Action').t`Do not suggest on this website`}
                     />
                 }

@@ -132,7 +132,7 @@ export const AutosuggestEmail: FC<Props> = ({ action, aliasCreationDisabled, pre
                     <PauseListDropdown
                         criteria="Autosuggest"
                         dense
-                        hostname={origin}
+                        hostname={payload.frameOrigin}
                         label={c('Action').t`Do not suggest on this website`}
                     />
                 }
