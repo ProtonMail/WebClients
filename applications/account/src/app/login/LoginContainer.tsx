@@ -407,6 +407,7 @@ const LoginContainer = ({
                     recoveryMethods={{
                         email: cache.authResponse.HasRecoveryEmail,
                         phone: cache.authResponse.HasRecoveryPhone,
+                        phrase: cache.authResponse.HasRecoveryPhrase,
                     }}
                     twoFactorAuthTypes={cache.authTypes.twoFactor}
                     onSubmitBackupTotpCode={async (backupCode: string) => {

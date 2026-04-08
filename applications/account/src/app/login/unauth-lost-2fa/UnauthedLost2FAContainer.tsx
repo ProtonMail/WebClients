@@ -7,6 +7,7 @@ import type { TotpBackupCodesActorRef } from './state-machine/totpBackupCodeMach
 import { type Lost2FARecoveryMethods, unauthedLost2FAStateMachine } from './state-machine/unauthedLost2FAStateMachine';
 import type { VerifyOwnershipWithEmailActorRef } from './state-machine/verifyOwnershipWithEmailMachine';
 import type { VerifyOwnershipWithPhoneActorRef } from './state-machine/verifyOwnershipWithPhoneMachine';
+import type { VerifyOwnershipWithPhraseActorRef } from './state-machine/verifyOwnershipWithPhraseMachine';
 import { UnauthedLost2FATelemetryProvider, useUnauthedLost2FATelemetryFunctions } from './useUnauthedLost2FATelemetry';
 
 const UnauthedLost2FAContext = createActorContext(unauthedLost2FAStateMachine);
@@ -45,6 +46,15 @@ export const useVerifyOwnershipWithPhoneActorRef = () => {
     );
 
     return verifyOwnershipWithPhoneActorRef;
+};
+
+export const useVerifyOwnershipWithPhraseActorRef = () => {
+    const { useUnauthLost2FASelector } = useUnauthLost2FA();
+    const verifyOwnershipWithPhraseActorRef = useUnauthLost2FASelector(
+        (snapshot) => snapshot.children.verifyOwnershipWithPhrase as VerifyOwnershipWithPhraseActorRef
+    );
+
+    return verifyOwnershipWithPhraseActorRef;
 };
 
 interface Props extends UnauthedLost2FAStepsProps {
