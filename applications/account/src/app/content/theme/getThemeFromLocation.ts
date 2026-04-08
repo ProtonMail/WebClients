@@ -59,7 +59,6 @@ export const getThemeFromLocation = (
         pathname.includes('signup') ||
         pathname === SSO_PATHS.REFERAL_SIGNUP ||
         pathname === SSO_PATHS.REFERAL_PLAN_SELECTION ||
-        pathname === SSO_PATHS.GREENLAND_SIGNUP ||
         pathname === SSO_PATHS.START ||
         pathname === SSO_PATHS.PASS_SIGNUP ||
         pathname === SSO_PATHS.MAIL_SIGNUP ||

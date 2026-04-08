@@ -37,7 +37,6 @@ export const InlineTaxCountrySelector = ({
     zipCodeBackendValid,
     allowedCountries,
     disabledCountries,
-    offerUnavailableErrorMessage,
     defaultCollapsed,
     className,
 }: InlineTaxCountrySelectorProps) => {
@@ -102,10 +101,6 @@ export const InlineTaxCountrySelector = ({
         onOpen: () => setIsStatesDropdownOpen(true),
         onClose: () => setIsStatesDropdownOpen(false),
     };
-
-    if (offerUnavailableErrorMessage?.hideBillingCountry) {
-        return null;
-    }
 
     const shouldStackCountriesField = showBoth || showStateCode || showZipCode;
 
