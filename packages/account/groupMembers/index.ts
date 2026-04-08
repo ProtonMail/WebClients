@@ -2,13 +2,8 @@ import { type PayloadAction, type UnknownAction, createSlice, miniSerializeError
 import type { ThunkAction } from 'redux-thunk';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import {
-    CacheType,
-    cacheHelper,
-    createPromiseMapStore,
-    getFetchedAt,
-    getFetchedEphemeral,
-} from '@proton/redux-utilities';
+import type { CacheType } from '@proton/redux-utilities';
+import { cacheHelper, createPromiseMapStore, getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities';
 import type { CoreEventV6Response } from '@proton/shared/lib/api/events';
 import { getGroupMember, getGroupMembers } from '@proton/shared/lib/api/groups';
 import { EVENT_ACTIONS } from '@proton/shared/lib/constants';
@@ -220,16 +215,6 @@ export const groupMembersThunk = ({
             }
         };
         return cacheHelper({ store: promiseStore, key: groupId, select, cb, cache });
-    };
-};
-
-export const updateMembersAfterEdit = ({
-    groupId,
-}: {
-    groupId: string;
-}): ThunkAction<void, GroupMembersState, ProtonThunkArguments, UnknownAction> => {
-    return async (dispatch) => {
-        await dispatch(groupMembersThunk({ groupId, cache: CacheType.None }));
     };
 };
 

@@ -1,24 +1,30 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Badge from '@proton/components/components/badge/Badge';
+import { Badge } from '@proton/components/components/badge/Badge';
 import { IcCross } from '@proton/icons/icons/IcCross';
 
-import type { NewGroupMember } from './EditGroup';
+import type { NewGroupMember } from './AddUsersToGroupModal';
 import { GroupMemberItemWrapper } from './components/GroupMemberItemWrapper';
 
 interface Props {
     member: NewGroupMember;
     handleRemoveNewMember: (memberToRemove: NewGroupMember) => void;
     submitting?: boolean;
+    showMailFeatures: boolean;
 }
 
-export const NewGroupMemberItem = ({ member, handleRemoveNewMember, submitting }: Props) => {
+export const NewGroupMemberItem = ({ member, handleRemoveNewMember, submitting, showMailFeatures }: Props) => {
     const { Name, Address, GroupMemberType } = member;
 
     return (
         <>
-            <GroupMemberItemWrapper memberEmail={Address} memberName={Name} groupMemberType={GroupMemberType}>
+            <GroupMemberItemWrapper
+                memberEmail={Address}
+                memberName={Name}
+                groupMemberType={GroupMemberType}
+                showMailFeatures={showMailFeatures}
+            >
                 {!submitting ? (
                     <Button
                         shape="ghost"

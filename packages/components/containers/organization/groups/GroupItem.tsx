@@ -2,8 +2,8 @@ import { c, msgid } from 'ttag';
 
 import { useOrganization } from '@proton/account/organization/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
 import useApi from '@proton/components/hooks/useApi';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { deleteAllGroupMembers } from '@proton/shared/lib/api/groups';
 import type { Group } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
@@ -26,7 +26,7 @@ interface Props {
 const GroupItem = ({ active, group, serializedGroup, onClick, isNew, onDeleteGroup, canOnlyDelete }: Props) => {
     const api = useApi();
     const [organization] = useOrganization();
-    const showMail = shouldShowMail(organization?.PlanName);
+    const showMailFeatures = shouldShowMail(organization?.PlanName);
 
     const memberCount = group && Number.isInteger(group.MemberCount) ? group.MemberCount : undefined;
 
@@ -46,26 +46,27 @@ const GroupItem = ({ active, group, serializedGroup, onClick, isNew, onDeleteGro
     return (
         <div className="relative">
             <Button
-                className={clsx(['group-button interactive-pseudo w-full pr-2 py-4', active && 'is-active'])}
+                className={clsx(['group-button interactive-pseudo w-full p-4', active && 'is-active'])}
                 color="weak"
                 shape="ghost"
                 onClick={onClick}
             >
-                <div className="text-left flex items-start flex-nowrap">
+                <div className="text-left flex items-start flex-nowrap gap-2">
                     <div
-                        className="mr-2 mb-2 rounded flex w-custom h-custom shrink-0 "
+                        className="mr-1 rounded flex w-custom h-custom shrink-0"
                         style={{
-                            '--w-custom': '1.75rem',
-                            '--h-custom': '1.75rem',
+                            '--w-custom': '2rem',
+                            '--h-custom': '2rem',
+                            backgroundColor: 'var(--interaction-norm-minor-1)',
                         }}
                     >
-                        <Icon className="m-auto color-primary shrink-0" size={4} name="users-filled" />
+                        <IcUsers className="m-auto color-primary shrink-0" size={4} />
                     </div>
                     <div className="text-left flex flex-column flex-1">
-                        <span className="block max-w-full text-bold text-lg text-ellipsis" title={name}>
+                        <span className="block max-w-full text-bold text-ellipsis" title={name}>
                             {name}
                         </span>
-                        {showMail && email && (
+                        {showMailFeatures && email && (
                             <span className="block max-w-full text-ellipsis" title={email}>
                                 {email}
                             </span>
@@ -84,6 +85,7 @@ const GroupItem = ({ active, group, serializedGroup, onClick, isNew, onDeleteGro
                         <div className="shrink-0">
                             <GroupItemMoreOptionsDropdown
                                 group={group}
+                                showMailFeatures={showMailFeatures}
                                 handleDeleteGroup={handleDeleteGroup}
                                 handleDeleteAllGroupMembers={handleDeleteAllGroupMembers}
                                 canOnlyDelete={canOnlyDelete}
