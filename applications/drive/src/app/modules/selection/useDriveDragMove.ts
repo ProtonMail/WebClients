@@ -105,5 +105,5 @@ export const useDriveDragMove = (
         };
     };
 
-    return { getDragMoveControls };
+    return { getDragMoveControls, getHandleItemDrop };
 };
