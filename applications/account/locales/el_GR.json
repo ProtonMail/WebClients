@@ -1724,6 +1724,45 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
+      ],
+      "Connect Gmail address": [
+        "Σύνδεση διεύθυνσης Gmail"
+      ],
+      "Connect to Gmail": [
+        "Σύνδεση στο Gmail"
+      ],
+      "Contact Support Center": [
+        "Επικοινωνία Κέντρου Υποστήριξης"
+      ],
+      "Continue to sign in": [
+        "Συνέχεια στη σύνδεση"
+      ],
+      "Disconnect": [
+        "Αποσύνδεση"
+      ],
+      "Enter code": [
+        "Εισαγωγή κωδικού"
+      ],
+      "I don't have my 2FA device": [
+        "Δεν έχω τη συσκευή μου 2FA"
+      ],
+      "I don't have my key": [
+        "Δεν έχω το κλειδί μου"
+      ],
+      "I don’t have my backup codes": [
+        "Δεν έχω τους εφεδρικούς κωδικούς ασφαλείας μου"
+      ],
+      "Or remove forwarding address": [
+        "Ή καταργήστε τη διεύθυνση προώθησης"
+      ],
+      "Reconnect to Gmail": [
+        "Επανασύνδεση στο Gmail"
+      ],
+      "Recover account": [
+        "Ανάκτηση λογαριασμού"
+      ],
+      "Verify another way": [
+        "Επαλήθευση μ' άλλο τρόπο"
       ]
     },
     "action": {
@@ -4940,6 +4979,80 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Μπορείτε να εισάγετε εκδηλώσεις σε μορφή iCal (ICS αρχείο).\nΤο αρχείο θα πρέπει να έχει μέγιστο μέγεθος ${ MAX_IMPORT_FILE_SIZE_STRING } και να έχει μέχρι και ${ MAX_IMPORT_EVENTS_STRING } εκδηλώσεις.\nΑν το αρχείο σας είναι μεγαλύτερο, παρακαλούμε να το χωρίσετε σε μικρότερα αρχεία."
+      ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Αποκλείστε την ικανότητα της Google να δημιουργήσει το προφίλ σας. Το Gmail δεν μπορεί να δει τι κάνετε στο ${ MAIL_APP_NAME }"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Τα μηνύματα ηλεκτρονικού ταχυδρομείου που αποστέλλονται στο ${ connectedAddressText } θα εμφανίζονται πλέον στο ${ MAIL_APP_NAME }."
+      ],
+      "No ads. No trackers.": [
+        "Χωρίς διαφημίσεις. Χωρίς ιχνηλάτες."
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "Διαβάστε, απαντήστε και μείνετε ενημερωμένοι στο Gmail μέσα από το ${ MAIL_APP_NAME }"
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Αυτό μπορεί να συμβεί εάν τα δικαιώματα αφαιρέθηκαν ή αν άλλαξε ο κωδικός σας."
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "Για να συνδεθείτε με διαφορετική διεύθυνση Gmail, καταργήστε τις επιπλέον διευθύνσεις Gmail που προωθούνται στο ${ BRAND_NAME }."
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "Για να συνδέσετε έως ${ MAX_SYNC_PAID_USER } διεύθυνση Gmail, αναβαθμίστε στο ${ planName }.",
+        "Για να συνδέσετε έως ${ MAX_SYNC_PAID_USER } διευθύνσεις Gmail, αναβαθμίστε στο ${ planName }."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Για να συνεχίσετε να λαμβάνετε και να στέλνετε μηνύματα Gmail στο ${ BRAND_NAME }, παρακαλούμε επανασυνδέστε τον λογαριασμό σας."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Για να συνεχίσετε να λαμβάνετε και να στέλνετε μηνύματα Gmail στο ${ BRAND_NAME }, παρακαλούμε επανασυνδέστε τους λογαριασμούς σας."
+      ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "Αναβαθμίστε στο ${ planName } για να συνδέσετε έως και ${ MAX_SYNC_PAID_USER } λογαριασμούς"
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Δεν μπορούμε πια να έχουμε πρόσβαση στα ${ boldEmails }."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "Θα εισαγάγουμε τα παλιά σας μηνύματα ηλεκτρονικού ταχυδρομείου και θα συνδέσουμε το Gmail σας με το ${ MAIL_APP_NAME } ώστε τα νέα μηνύματα να εμφανίζονται αυτόματα"
+      ],
+      "We've started importing your email from Gmail. We'll let you know when it's done.": [
+        "Ξεκινήσαμε την εισαγωγή του email σας από το Gmail. Θα σας ενημερώσουμε όταν ολοκληρωθεί."
+      ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Έχετε ήδη μια διεύθυνση Gmail που προωθείται στο ${ MAIL_APP_NAME }. Συνδέστε τη παρακάτω για να στείλετε και να λάβετε μηνύματα ηλεκτρονικού ταχυδρομείου απευθείας από το ${ MAIL_APP_NAME }."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Έχετε ήδη διευθύνσεις Gmail που προωθούνται στο ${ MAIL_APP_NAME }. Συνδέστε μία παρακάτω για να στείλετε και να λάβετε μηνύματα ηλεκτρονικού ταχυδρομείου απευθείας από το ${ MAIL_APP_NAME }."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Τώρα μπορείτε να στέλνετε μηνύματα ηλεκτρονικού ταχυδρομείου από το ${ BRAND_NAME } χρησιμοποιώντας αυτή τη διεύθυνση."
+      ],
+      "You can still login with this address and re-connect at any time.": [
+        "Μπορείτε ακόμα να συνδεθείτε με αυτήν τη διεύθυνση και να επανασυνδεθείτε οποιαδήποτε στιγμή."
+      ],
+      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
+        "Δε θα μπορείτε πλέον να χρησιμοποιείτε το ${ address.Email } για να λαμβάνετε και να στέλνετε μηνύματα ηλεκτρονικού ταχυδρομείου στο ${ BRAND_NAME }. Σημειώστε επίσης ότι τα μηνύματα που αποστέλλονται σε αυτήν τη διεύθυνση από το ${ BRAND_NAME } δε θα είναι πλέον κρυπτογραφημένα διατερματικά."
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "Προωθείτε ${ numAddressesOrSync } διεύθυνση Gmail προς ${ MAIL_APP_NAME }.",
+        "Προωθείτε ${ numAddressesOrSync } διευθύνσεις Gmail προς ${ MAIL_APP_NAME }."
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "Έχετε συνδέσει ${ MAX_SYNC_PAID_USER } διεύθυνση Gmail. Για να προσθέσετε άλλη, απενεργοποιήστε πρώτα έναν από τους συνδεδεμένους λογαριασμούς σας.",
+        "Έχετε συνδέσει ${ MAX_SYNC_PAID_USER } διευθύνσεις Gmail. Για να προσθέσετε άλλη μία, απενεργοποιήστε πρώτα έναν από τους συνδεδεμένους λογαριασμούς σας."
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "Έχετε συνδέσει μία διεύθυνση εξωτερικού λογαριασμού στο ${ MAIL_APP_NAME }."
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "Το σχέδιό σας υποστηρίζει ${ MAX_SYNC_FREE_USER } διεύθυνση Gmail.",
+        "Το σχέδιό σας υποστηρίζει ${ MAX_SYNC_FREE_USER } διευθύνσεις Gmail."
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "Το σχέδιό σας υποστηρίζει συνολικά ${ MAX_SYNC_PAID_USER } διεύθυνση Gmail",
+        "Το σχέδιό σας υποστηρίζει συνολικά ${ MAX_SYNC_PAID_USER } διευθύνσεις Gmail"
       ]
     },
     "description": {
@@ -7090,6 +7203,21 @@
       ],
       "Zero keys reactivated": [
         "Τα Μηδενικά κλειδιά ενεργοποιήθηκαν ξανά"
+      ],
+      "Address could not be added.": [
+        "Η διεύθυνση δεν μπόρεσε να προστεθεί."
+      ],
+      "Address is already added to your account": [
+        "Η διεύθυνση έχει ήδη προστεθεί στον λογαριασμό σας"
+      ],
+      "Incorrect recovery code. Please try again.": [
+        "Λανθασμένος κωδικός ανάκτησης. Παρακαλούμε δοκιμάστε ξανά."
+      ],
+      "Something went wrong while creating the address": [
+        "Κάτι πήγε στραβά κατά τη δημιουργία της διεύθυνσης"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Κάτι πήγε στραβά κατά την ανάκτηση των διαθέσιμων τομέων"
       ]
     },
     "error": {
@@ -12452,6 +12580,45 @@
       ],
       "Zoom meeting": [
         "Σύσκεψη Zoom"
+      ],
+      "An email with a verification code was just sent to ${ recoveryEmailElement }. If you can’t find the message in your inbox, please check your spam folder.": [
+        "Ένα μήνυμα ηλεκτρονικού ταχυδρομείου με έναν κωδικό επαλήθευσης μόλις στάλθηκε στο ${ recoveryEmailElement }. Αν δεν μπορείτε να βρείτε το μήνυμα στα εισερχόμενά σας, παρακαλούμε ελέγξτε τον φάκελο ανεπιθύμητης αλληλογραφίας σας."
+      ],
+      "An SMS with a verification code was just sent to ${ recoveryPhoneElement }.": [
+        "Μόλις στάλθηκε ένα SMS με κωδικό επαλήθευσης στο ${ recoveryPhoneElement }."
+      ],
+      "Contact our Customer Support team to disable two-factor authentication for your account, or recover your account another way.": [
+        "Επικοινωνήστε με την ομάδα Υποστήριξης Πελατών μας για να απενεργοποιήσετε την ταυτοποίηση δύο παραγόντων για τον λογαριασμό σας ή να ανακτήσετε τον λογαριασμό σας με άλλο τρόπο."
+      ],
+      "Enter code": [
+        "Εισαγάγετε κωδικό"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Εάν χάσατε την πρόσβαση στην εφαρμογή ελέγχου ταυτότητας, μπορείτε να χρησιμοποιήσετε 1 από τους 16 εφεδρικούς κωδικούς ανάκτησης που παρέχονται κατά τη ρύθμιση της ταυτοποίησης δύο παραγόντων. ${ learnMoreLink }"
+      ],
+      "No forwarding history.": [
+        "Δεν υπάρχει ιστορικό προώθησης."
+      ],
+      "No import history.": [
+        "Δεν υπάρχει ιστορικό εισαγωγής."
+      ],
+      "Something went wrong. Please try again.": [
+        "Κάτι πήγε στραβά. Παρακαλούμε δοκιμάστε ξανά."
+      ],
+      "This password is used to login to your ${ BRAND_NAME } account": [
+        "Αυτός ο κωδικός πρόσβασης χρησιμοποιείται για τη σύνδεση στον λογαριασμό σας ${ BRAND_NAME }"
+      ],
+      "To help keep your account safe, we want to make sure it's really you trying to sign in.": [
+        "Για να βοηθήσουμε να διατηρηθεί ο λογαριασμός σας ασφαλής, θέλουμε να βεβαιωθούμε ότι είστε πραγματικά εσείς που προσπαθείτε να συνδεθείτε."
+      ],
+      "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
+        "Για να βοηθήσουμε να διατηρηθεί ο λογαριασμός σας ασφαλής, θέλουμε να βεβαιωθούμε ότι είστε πραγματικά εσείς που προσπαθείτε να συνδεθείτε."
+      ],
+      "You can now sign in to your account again.": [
+        "Τώρα μπορείτε να συνδεθείτε ξανά στον λογαριασμό σας."
+      ],
+      "You will not be asked for a one-time code or a security key.": [
+        "Δεν θα σας ζητηθεί ένας κωδικός μιας χρήσης ή ένα κλειδί ασφαλείας."
       ]
     },
     "info": {
@@ -14483,6 +14650,9 @@
       ],
       "ZIP code": [
         "Τ.Κ."
+      ],
+      "Select which Gmail address to connect": [
+        "Επιλέξτε ποια διεύθυνση Gmail να συνδεθεί"
       ]
     },
     "label": {
@@ -16899,6 +17069,9 @@
       ],
       "Zoom video conferencing settings have been updated": [
         "Οι ρυθμίσεις τηλεδιάσκεψης του Zoom έχουν ενημερωθεί."
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Η διεύθυνσή σας ${ BRAND_NAME } είναι έτοιμη για χρήση"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -24265,6 +24438,30 @@
       ],
       "Your subscriptions": [
         "Οι συνδρομές σας"
+      ],
+      "An error occurred": [
+        "Συνέβη ένα σφάλμα"
+      ],
+      "Are you sure you want to disconnect this address?": [
+        "Θέλετε σίγουρα να αποσυνδέσετε αυτή τη διεύθυνση;"
+      ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Φέρτε το Gmail σας στο ${ MAIL_APP_NAME }"
+      ],
+      "Disconnected from Gmail": [
+        "Αποσυνδεδεμένο από το Gmail"
+      ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Αποστολή και λήψη Gmail χρησιμοποιώντας ${ MAIL_APP_NAME }"
+      ],
+      "Two-factor authentication disabled": [
+        "Η ταυτοποίηση δύο παραγόντων είναι απενεργοποιημένη"
+      ],
+      "Use backup recovery code": [
+        "Χρησιμοποιήστε εφεδρικό κωδικό ανάκτησης"
+      ],
+      "You are all set": [
+        "Είστε έτοιμοι"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

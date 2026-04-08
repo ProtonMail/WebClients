@@ -1724,6 +1724,45 @@
       ],
       "Zoom out": [
         "Verkleinern"
+      ],
+      "Connect Gmail address": [
+        "Gmail-Adresse verbinden"
+      ],
+      "Connect to Gmail": [
+        "Mit Gmail verbinden"
+      ],
+      "Contact Support Center": [
+        "Support-Center kontaktieren"
+      ],
+      "Continue to sign in": [
+        "Weiter zur Anmeldung"
+      ],
+      "Disconnect": [
+        "Trennen"
+      ],
+      "Enter code": [
+        "Code eingeben"
+      ],
+      "I don't have my 2FA device": [
+        "Ich habe mein 2FA-Gerät nicht"
+      ],
+      "I don't have my key": [
+        "Ich habe meinen Schlüssel nicht"
+      ],
+      "I don’t have my backup codes": [
+        "Ich habe meine Sicherheitscodes nicht"
+      ],
+      "Or remove forwarding address": [
+        "Oder Weiterleitungsadresse entfernen"
+      ],
+      "Reconnect to Gmail": [
+        "Mit Gmail wieder verbinden"
+      ],
+      "Recover account": [
+        "Konto wiederherstellen"
+      ],
+      "Verify another way": [
+        "Anderen Weg prüfen"
       ]
     },
     "action": {
@@ -4940,6 +4979,80 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kannst Termine im iCal-Format (ICS-Datei) importieren. Die Datei darf die max. Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } nicht überschreiten und bis zu ${ MAX_IMPORT_EVENTS_STRING } Termine enthalten. Sollte deine Datei größer sein, teile sie bitte in kleinere Dateien auf."
+      ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Verhindere, dass Google ein Profil von dir erstellt. Gmail kann nicht sehen, was du in ${ MAIL_APP_NAME } machst"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "E-Mails, die an ${ connectedAddressText } gesendet werden, werden jetzt in ${ MAIL_APP_NAME } angezeigt."
+      ],
+      "No ads. No trackers.": [
+        "Keine Werbung. Keine Tracker."
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "Lies, antworte und behalte den Überblick über Gmail innerhalb von ${ MAIL_APP_NAME }"
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Dies kann passieren, wenn Berechtigungen entfernt wurden oder dein Passwort geändert wurde."
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "Um eine andere Gmail-Adresse zu verbinden, entferne zusätzliche Gmail-Adressen, die an ${ BRAND_NAME } weiterleiten."
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "Um bis zu ${ MAX_SYNC_PAID_USER } Gmail-Adresse zu verbinden, führe ein Upgrade auf ${ planName } durch.",
+        "Um bis zu ${ MAX_SYNC_PAID_USER } Gmail-Adressen zu verbinden, upgrade auf ${ planName }."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Um weiterhin Gmail-Nachrichten in ${ BRAND_NAME } zu empfangen und zu senden, verbinde dein Konto erneut."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Um weiterhin Gmail-Nachrichten in ${ BRAND_NAME } zu empfangen und zu senden, Konten erneut verbinden."
+      ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "Upgrade auf ${ planName }, um bis zu ${ MAX_SYNC_PAID_USER } Konten zu verbinden"
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Wir können nicht mehr auf ${ boldEmails } zugreifen."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "Wir holen deine alten E-Mails und verbinden dein Gmail mit ${ MAIL_APP_NAME }, damit neue Nachrichten automatisch angezeigt werden"
+      ],
+      "We've started importing your email from Gmail. We'll let you know when it's done.": [
+        "Wir haben mit dem Import deiner E-Mail-Adresse von Gmail begonnen. Wir benachrichtigen dich, wenn der Vorgang abgeschlossen ist."
+      ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Du hast bereits eine Gmail-Adresse, die an ${ MAIL_APP_NAME } weiterleitet. Verbinde sie unten, um E-Mails direkt von ${ MAIL_APP_NAME } zu senden und zu empfangen."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Du hast bereits Gmail-Adressen, die an ${ MAIL_APP_NAME } weiterleiten. Verbinde unten eine, um E-Mails direkt mit ${ MAIL_APP_NAME } zu senden und zu empfangen."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Du kannst jetzt E-Mails von ${ BRAND_NAME } unter dieser Adresse senden."
+      ],
+      "You can still login with this address and re-connect at any time.": [
+        "Du kannst dich immer noch mit dieser E-Mail-Adresse anmelden und dich jederzeit wieder verbinden."
+      ],
+      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
+        "Du kannst ${ address.Email } nicht mehr verwenden, um E-Mails in ${ BRAND_NAME } zu empfangen und zu senden. Beachte auch, dass Nachrichten, die von ${ BRAND_NAME } an diese Adresse gesendet werden, nicht mehr Ende-zu-Ende-verschlüsselt sind."
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "Du leitest ${ numAddressesOrSync } Gmail-Adresse an ${ MAIL_APP_NAME } weiter.",
+        "Du leitest ${ numAddressesOrSync } Gmail-Adressen an ${ MAIL_APP_NAME } weiter."
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "Du hast ${ MAX_SYNC_PAID_USER } Gmail-Adresse verbunden. Um eine weitere hinzuzufügen, deaktiviere zuerst dein verbundenes Konto.",
+        "Du hast ${ MAX_SYNC_PAID_USER } Gmail-Adressen verbunden. Um eine weitere hinzuzufügen, deaktiviere zuerst eines deiner verbundenen Konten."
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "Du hast eine externe E-Mail-Adresse mit ${ MAIL_APP_NAME } verbunden."
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "Dein Abonnement unterstützt ${ MAX_SYNC_FREE_USER } Gmail-Adresse.",
+        "Dein Abonnement unterstützt ${ MAX_SYNC_FREE_USER } Gmail-Adressen."
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "Dein Abonnement unterstützt insgesamt ${ MAX_SYNC_PAID_USER } Gmail-Adresse",
+        "Dein Abonnement unterstützt insgesamt ${ MAX_SYNC_PAID_USER } Gmail-Adressen"
       ]
     },
     "description": {
@@ -7090,6 +7203,21 @@
       ],
       "Zero keys reactivated": [
         "Kein Schüssel wiederhergestellt"
+      ],
+      "Address could not be added.": [
+        "E-Mail-Adresse konnte nicht hinzugefügt werden."
+      ],
+      "Address is already added to your account": [
+        "E-Mail-Adresse wurde bereits zu deinem Konto hinzugefügt"
+      ],
+      "Incorrect recovery code. Please try again.": [
+        "Ungültiger Wiederherstellungscode. Bitte versuche es erneut."
+      ],
+      "Something went wrong while creating the address": [
+        "Beim Erstellen der E-Mail-Adresse ist ein Fehler aufgetreten"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Etwas ist schiefgegangen beim Abrufen der verfügbaren Domains"
       ]
     },
     "error": {
@@ -12452,6 +12580,45 @@
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
+      ],
+      "An email with a verification code was just sent to ${ recoveryEmailElement }. If you can’t find the message in your inbox, please check your spam folder.": [
+        "Eine E-Mail mit einem Bestätigungscode wurde eben an ${ recoveryEmailElement } gesendet. Solltest du die E-Mail nicht in deinem Posteingang vorfinden, überprüfe bitte deinen Spam-Ordner."
+      ],
+      "An SMS with a verification code was just sent to ${ recoveryPhoneElement }.": [
+        "Eine SMS mit einem Bestätigungscode wurde gerade an ${ recoveryPhoneElement } gesendet."
+      ],
+      "Contact our Customer Support team to disable two-factor authentication for your account, or recover your account another way.": [
+        "Wende dich an unser Kundensupport-Team, um die Zwei-Faktor-Authentifizierung für dein Konto zu deaktivieren, oder stelle dein Konto auf andere Weise wieder her."
+      ],
+      "Enter code": [
+        "Code eingeben"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Wenn du den Zugriff auf deine Authenticator-App verloren hast, kannst du 1 der 16 Wiederherstellungscodes verwenden, die du bei der Einrichtung der Zwei-Faktor-Authentifizierung erhalten hast. ${ learnMoreLink }"
+      ],
+      "No forwarding history.": [
+        "Kein Weiterleitungsverlauf."
+      ],
+      "No import history.": [
+        "Kein Importverlauf."
+      ],
+      "Something went wrong. Please try again.": [
+        "Etwas ist schiefgegangen. Bitte versuche es erneut."
+      ],
+      "This password is used to login to your ${ BRAND_NAME } account": [
+        "Dieses Passwort wird für die Anmeldung bei deinem ${ BRAND_NAME }-Konto verwendet"
+      ],
+      "To help keep your account safe, we want to make sure it's really you trying to sign in.": [
+        "Um dein Konto sicher zu halten, möchten wir sicherstellen, dass du es wirklich bist, der sich anmeldet."
+      ],
+      "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
+        "Um dein Konto sicher zu halten, möchten wir sicherstellen, dass du es wirklich bist, der sich anmeldet."
+      ],
+      "You can now sign in to your account again.": [
+        "Du kannst dich jetzt wieder bei deinem Konto anmelden."
+      ],
+      "You will not be asked for a one-time code or a security key.": [
+        "Du wirst nicht nach einem Einmalcode oder einem Sicherheitsschlüssel gefragt."
       ]
     },
     "info": {
@@ -14483,6 +14650,9 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "Select which Gmail address to connect": [
+        "Wähle, welche Gmail-Adresse verbunden werden soll"
       ]
     },
     "label": {
@@ -16899,6 +17069,9 @@
       ],
       "Zoom video conferencing settings have been updated": [
         "Die Einstellungen für Zoom-Videokonferenzen wurden aktualisiert"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Deine ${ BRAND_NAME }-E-Mail-Adresse ist einsatzbereit"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -24361,6 +24534,30 @@
       ],
       "Your subscriptions": [
         "Deine Abonnements"
+      ],
+      "An error occurred": [
+        "Ein Fehler ist aufgetreten"
+      ],
+      "Are you sure you want to disconnect this address?": [
+        "Möchtest du diese E-Mail-Adresse wirklich trennen?"
+      ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Bringe dein Gmail nach ${ MAIL_APP_NAME }"
+      ],
+      "Disconnected from Gmail": [
+        "Von Gmail getrennt"
+      ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Gmail mit ${ MAIL_APP_NAME } senden und empfangen"
+      ],
+      "Two-factor authentication disabled": [
+        "Zwei-Faktor-Authentifizierung deaktiviert"
+      ],
+      "Use backup recovery code": [
+        "Sicherungs-Wiederherstellungscode verwenden"
+      ],
+      "You are all set": [
+        "Du bist startklar"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

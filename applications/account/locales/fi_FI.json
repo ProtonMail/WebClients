@@ -1635,6 +1635,21 @@
       ],
       "Zoom out": [
         "Loitonna"
+      ],
+      "Connect Gmail address": [
+        "Yhdistä Gmail-osoite"
+      ],
+      "Connect to Gmail": [
+        "Yhdistä Gmailiin"
+      ],
+      "Disconnect": [
+        "Katkaise yhteys"
+      ],
+      "Or remove forwarding address": [
+        "Tai poista välitysosoite"
+      ],
+      "Reconnect to Gmail": [
+        "Yhdistä uudelleen Gmailiin"
       ]
     },
     "action": {
@@ -4381,6 +4396,80 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Voit tuoda tapahtumia iCal-muodossa (ICS-tiedostosta). Tiedosto voi olla enintään ${ MAX_IMPORT_FILE_SIZE_STRING } kokoinen ja sisältää enintään ${ MAX_IMPORT_EVENTS_STRING } tapahtumaa. Jos tiedosto on suurempi, jaa se pienempiin tiedostoihin."
+      ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Estä Googlen mahdollisuus profiloida sinua. Gmail ei näe, mitä teet ${ MAIL_APP_NAME }-palvelussa"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Osoitteeseen ${ connectedAddressText } lähetetyt sähköpostit näkyvät nyt ${ MAIL_APP_NAME }ssa."
+      ],
+      "No ads. No trackers.": [
+        "Ei mainoksia. Ei seurantaa."
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "Lue, vastaa ja pysy ajan tasalla Gmailista suoraan ${ MAIL_APP_NAME } -sovelluksessa"
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Tämä voi johtua, jos käyttöoikeudet on poistettu tai salasanasi on vaihdettu."
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "Lisätäksesi toisen Gmail-osoitteen, poista ylimääräiset Gmail-osoitteet, jotka ohjaavat viestit ${ BRAND_NAME }-palveluun."
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "Yhdistääksesi jopa ${ MAX_SYNC_PAID_USER } Gmail-osoite, päivitä tilauksesi ${ planName } -tasolle.",
+        "Yhdistääksesi jopa ${ MAX_SYNC_PAID_USER } Gmail-osoitetta, päivitä tilauksesi ${ planName } -tasolle."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Jotta voit jatkaa Gmail-viestien vastaanottamista ja lähettämistä ${ BRAND_NAME } -palvelussa, yhdistä tilisi uudelleen."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Jotta voit jatkaa Gmail-viestien vastaanottamista ja lähettämistä ${ BRAND_NAME } -palvelussa, yhdistä tilisi uudelleen."
+      ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "Päivitä ${ planName } -tilaukseen yhdistääksesi jopa ${ MAX_SYNC_PAID_USER } tiliä"
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Emme voi enää käyttää ${ boldEmails } -osoitteita."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "Tuomme vanhat sähköpostisi ja yhdistämme Gmail-tilisi ${ MAIL_APP_NAME } -sovellukseen, jotta uudet viestit näkyvät automaattisesti"
+      ],
+      "We've started importing your email from Gmail. We'll let you know when it's done.": [
+        "Olemme aloittaneet viestiesi tuonnin Gmailista. Ilmoitamme sinulle, kun se on valmis."
+      ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Sinulla on jo Gmail-osoite, joka ohjataan ${ MAIL_APP_NAME } -sovellukseen. Yhdistä se alla, jotta voit lähettää ja vastaanottaa sähköposteja suoraan ${ MAIL_APP_NAME } -sovelluksesta."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Sinulla on jo Gmail-osoitteita, jotka ohjataan ${ MAIL_APP_NAME }-sovellukseen. Liitä jokin alla olevista osoitteista, jotta voit lähettää ja vastaanottaa sähköposteja suoraan ${ MAIL_APP_NAME }-sovelluksesta."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Voit nyt lähettää sähköposteja ${ BRAND_NAME }:sta tällä osoitteella."
+      ],
+      "You can still login with this address and re-connect at any time.": [
+        "Voit edelleen kirjautua sisään tällä osoitteella ja muodostaa yhteyden uudelleen milloin tahansa."
+      ],
+      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
+        "Et voi enää käyttää osoitetta ${ address.Email } sähköpostien vastaanottamiseen ja lähettämiseen ${ BRAND_NAME }ssa. Huomaa myös, että viestit, jotka lähetetään tähän osoitteeseen ${ BRAND_NAME }sta, eivät enää ole päästä päähän salattuja."
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "Välität ${ numAddressesOrSync } Gmail-osoitteen sovellukseen ${ MAIL_APP_NAME }.",
+        "Välität ${ numAddressesOrSync } Gmail-osoitetta sovellukseen ${ MAIL_APP_NAME }."
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "Olet liittänyt ${ MAX_SYNC_PAID_USER } Gmail-osoitteen. Jos haluat lisätä uuden, poista ensin käytöstä jokin liitetyistä tileistäsi.",
+        "Olet liittänyt ${ MAX_SYNC_PAID_USER } Gmail-osoitetta. Jos haluat lisätä uuden, poista ensin käytöstä jokin liitetyistä tileistäsi."
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "Olet liittänyt yhden ulkoisen tilin osoitteen sovellukseen ${ MAIL_APP_NAME }."
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "Pakettisi tukee ${ MAX_SYNC_FREE_USER } Gmail-osoitteen.",
+        "Pakettisi tukee ${ MAX_SYNC_FREE_USER } Gmail-osoitetta."
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "Tilauksesi kattaa yhteensä ${ MAX_SYNC_PAID_USER } Gmail-osoitteen",
+        "Tilauksesi kattaa yhteensä ${ MAX_SYNC_PAID_USER } Gmail-osoitetta"
       ]
     },
     "description": {
@@ -6055,6 +6144,18 @@
       ],
       "Zero keys reactivated": [
         "Yhtään avainta ei aktivoitu uudelleen"
+      ],
+      "Address could not be added.": [
+        "Osoitetta ei voitu lisätä."
+      ],
+      "Address is already added to your account": [
+        "Osoite on jo lisätty tilillesi"
+      ],
+      "Something went wrong while creating the address": [
+        "Jotain meni vikaan luotaessa osoitetta"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Jotain meni vikaan haettaessa käytettävissä olevia verkkotunnuksia"
       ]
     },
     "error": {
@@ -10834,6 +10935,15 @@
       ],
       "Zoom meeting": [
         "Zoom-kokousta"
+      ],
+      "No forwarding history.": [
+        "Ei välityshistoriaa."
+      ],
+      "No import history.": [
+        "Ei tuontihistoriaa."
+      ],
+      "This password is used to login to your ${ BRAND_NAME } account": [
+        "Tätä salasanaa käytetään kirjautumiseen ${ BRAND_NAME } -tilillesi"
       ]
     },
     "info": {
@@ -12652,6 +12762,9 @@
       ],
       "ZIP code": [
         "Postinumero"
+      ],
+      "Select which Gmail address to connect": [
+        "Valitse, mikä Gmail-osoite liitetään"
       ]
     },
     "label": {
@@ -14856,6 +14969,9 @@
       ],
       "Two-factor authentication is not required anymore": [
         "Kaksivaiheista tunnistautumista ei enää vaadita"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "${ BRAND_NAME } -osoitteesi on valmis käytettäväksi"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -21524,6 +21640,21 @@
       ],
       "Your subscriptions": [
         "Tilauksesi"
+      ],
+      "Are you sure you want to disconnect this address?": [
+        "Haluatko varmasti katkaista tämän osoitteen yhteyden?"
+      ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Tuo Gmailisi ${ MAIL_APP_NAME }iin"
+      ],
+      "Disconnected from Gmail": [
+        "Yhteys Gmailiin katkaistu"
+      ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Lähetä ja vastaanota Gmail-viestejä ${ MAIL_APP_NAME } -sovelluksella"
+      ],
+      "You are all set": [
+        "Kaikki on valmista"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

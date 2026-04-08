@@ -1724,6 +1724,45 @@
       ],
       "Zoom out": [
         "Allunyar"
+      ],
+      "Connect Gmail address": [
+        "Connecteu l'adreça de Gmail"
+      ],
+      "Connect to Gmail": [
+        "Connecteu-vos a Gmail"
+      ],
+      "Contact Support Center": [
+        "Contacteu amb el Centre d'ajuda"
+      ],
+      "Continue to sign in": [
+        "Continueu iniciant sessió"
+      ],
+      "Disconnect": [
+        "Desconnecteu-vos"
+      ],
+      "Enter code": [
+        "Introduïu el codi"
+      ],
+      "I don't have my 2FA device": [
+        "No tinc el meu dispositiu 2FA"
+      ],
+      "I don't have my key": [
+        "No tinc la meva clau"
+      ],
+      "I don’t have my backup codes": [
+        "No tinc els meus codis de còpia de seguretat"
+      ],
+      "Or remove forwarding address": [
+        "O esborreu l'adreça de reenviament"
+      ],
+      "Reconnect to Gmail": [
+        "Torneu a connectar-vos a Gmail"
+      ],
+      "Recover account": [
+        "Recuperar el compte"
+      ],
+      "Verify another way": [
+        "Verifiqueu-ho d'una altra manera"
       ]
     },
     "action": {
@@ -4940,6 +4979,80 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Pots importar esdeveniments en format iCal (fitxer ICS).\nEl fitxer ha de tenir una mida màxima de ${ MAX_IMPORT_FILE_SIZE_STRING } i tenir fins a ${ MAX_IMPORT_EVENTS_STRING } esdeveniments. Si el fitxer és més gran, dividiu-lo en fitxers més petits."
+      ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Bloquegeu la capacitat de Google per crear el vostre perfil. Gmail no podrà veure què feu a ${ MAIL_APP_NAME }"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Els correus enviats a ${ connectedAddressText } apareixeran ara a ${ MAIL_APP_NAME }."
+      ],
+      "No ads. No trackers.": [
+        "Sense anuncis. Sense rastrejadors."
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "Llegiu, responeu i estigueu al dia de Gmail des de ${ MAIL_APP_NAME }"
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Això podria passar si s'han suprimit els permisos o s'ha canviat la contrasenya."
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "Per connectar una adreça de Gmail diferent, elimineu les adreces de Gmail addicionals que es reenvien a ${ BRAND_NAME }."
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "Per connectar fins a ${ MAX_SYNC_PAID_USER } adreça de Gmail, milloreu a ${ planName }.",
+        "Per connectar fins a ${ MAX_SYNC_PAID_USER } adreces de Gmail, milloreu a ${ planName }."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Per continuar rebent i enviant missatges de Gmail a ${ BRAND_NAME }, torneu a connectar el vostre compte."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Per continuar rebent i enviant missatges de Gmail a ${ BRAND_NAME }, torneu a connectar els vostres comptes."
+      ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "Milloreu a ${ planName } per connectar fins a ${ MAX_SYNC_PAID_USER } comptes"
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Ja no podem accedir a ${ boldEmails }."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "Importarem els vostres correus antics i connectarem el vostre Gmail a ${ MAIL_APP_NAME } perquè els missatges nous apareguin automàticament"
+      ],
+      "We've started importing your email from Gmail. We'll let you know when it's done.": [
+        "Hem començat a importar els vostres correus de Gmail. Us avisarem en acabar."
+      ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Ja teniu una adreça de Gmail que es reenvia a ${ MAIL_APP_NAME }. Connecteu-la a continuació per enviar i rebre correus electrònics directament des de ${ MAIL_APP_NAME }."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Ja teniu adreces de Gmail que es reenvien a ${ MAIL_APP_NAME }. Connecteu-ne una a continuació per enviar i rebre correus electrònics directament des de ${ MAIL_APP_NAME }."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Ara ja podeu enviar correus electrònics des de ${ BRAND_NAME } utilitzant aquesta adreça."
+      ],
+      "You can still login with this address and re-connect at any time.": [
+        "Encara podreu iniciar sessió amb aquesta adreça i tornar-la a connectar en qualsevol moment."
+      ],
+      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
+        "Ja no podreu utilitzar ${ address.Email } per rebre i enviar correus electrònics a ${ BRAND_NAME }. Tingueu en compte també que els missatges enviats a aquesta adreça des de ${ BRAND_NAME } ja no estaran xifrats d'extrem a extrem."
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "Esteu redirigint ${ numAddressesOrSync } adreça de Gmail a ${ MAIL_APP_NAME }.",
+        "Esteu redirigint ${ numAddressesOrSync } adreces de Gmail a ${ MAIL_APP_NAME }."
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "Heu connectat ${ MAX_SYNC_PAID_USER } adreça de Gmail. Per afegir-ne una altra, primer desactiveu un dels vostres comptes connectats.",
+        "Heu connectat ${ MAX_SYNC_PAID_USER } adreces de Gmail. Per afegir-ne una altra, primer desactiveu un dels vostres comptes connectats."
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "Heu connectat una adreça d'un compte extern a ${ MAIL_APP_NAME }."
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "El vostre pla admet ${ MAX_SYNC_FREE_USER } adreça de Gmail.",
+        "El vostre pla admet ${ MAX_SYNC_FREE_USER } adreces de Gmail."
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "El vostre pla admet un total de ${ MAX_SYNC_PAID_USER } adreça de Gmail",
+        "El vostre pla admet un total de ${ MAX_SYNC_PAID_USER } adreces de Gmail"
       ]
     },
     "description": {
@@ -7090,6 +7203,21 @@
       ],
       "Zero keys reactivated": [
         "Cap clau s'ha reactivat"
+      ],
+      "Address could not be added.": [
+        "No s'ha pogut afegir l'adreça."
+      ],
+      "Address is already added to your account": [
+        "L'adreça ja s'ha afegit al vostre compte"
+      ],
+      "Incorrect recovery code. Please try again.": [
+        "El codi de recuperació no és correcte. Torneu-ho a provar."
+      ],
+      "Something went wrong while creating the address": [
+        "Alguna cosa ha anat malament mentre es creava l'adreça"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Alguna cosa ha anat malament mentre s'obtenien els dominis disponibles"
       ]
     },
     "error": {
@@ -12452,6 +12580,45 @@
       ],
       "Zoom meeting": [
         "reunió de Zoom"
+      ],
+      "An email with a verification code was just sent to ${ recoveryEmailElement }. If you can’t find the message in your inbox, please check your spam folder.": [
+        "S'acaba d'enviar un correu amb un codi de verificació a ${ recoveryEmailElement }. Si no trobeu el missatge a la safata d'entrada, comproveu la carpeta de correu brossa."
+      ],
+      "An SMS with a verification code was just sent to ${ recoveryPhoneElement }.": [
+        "Acabem d'enviar un SMS amb un codi de verificació a ${ recoveryPhoneElement }."
+      ],
+      "Contact our Customer Support team to disable two-factor authentication for your account, or recover your account another way.": [
+        "Contacteu amb el nostre equip d'atenció al client per desactivar l'autenticació de doble factor del vostre compte, o per recuperar el compte d'una altra manera."
+      ],
+      "Enter code": [
+        "Introduir el codi"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Si heu perdut l'accés a la vostra aplicació d'autenticació, podeu fer servir 1 dels 16 codis de recuperació de seguretat que se us van proporcionar quan vau configurar l'autenticació de doble factor. ${ learnMoreLink }"
+      ],
+      "No forwarding history.": [
+        "No hi ha cap historial de reenviaments."
+      ],
+      "No import history.": [
+        "No hi ha cap historial d'importacions."
+      ],
+      "Something went wrong. Please try again.": [
+        "Alguna cosa ha anat malament. Torneu-ho a provar."
+      ],
+      "This password is used to login to your ${ BRAND_NAME } account": [
+        "Aquesta contrasenya s'utilitza per iniciar sessió al vostre compte de ${ BRAND_NAME }"
+      ],
+      "To help keep your account safe, we want to make sure it's really you trying to sign in.": [
+        "Per ajudar-vos a mantenir el compte segur, ens volem assegurar que sou realment vós qui intenteu iniciar sessió."
+      ],
+      "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
+        "Per ajudar-vos a mantenir el compte segur, ens volem assegurar que sou realment vós qui intenteu iniciar sessió."
+      ],
+      "You can now sign in to your account again.": [
+        "Ja podeu tornar a iniciar sessió al vostre compte."
+      ],
+      "You will not be asked for a one-time code or a security key.": [
+        "No se us demanarà cap codi d'un sol ús ni una clau de seguretat."
       ]
     },
     "info": {
@@ -14483,6 +14650,9 @@
       ],
       "ZIP code": [
         "Codi postal"
+      ],
+      "Select which Gmail address to connect": [
+        "Seleccioneu quina adreça de Gmail voleu connectar"
       ]
     },
     "label": {
@@ -16899,6 +17069,9 @@
       ],
       "Zoom video conferencing settings have been updated": [
         "S'ha actualitzat la configuració de les videoconferències de Zoom"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "La vostra adreça de ${ BRAND_NAME } ja està a punt per fer-se servir"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -24268,6 +24441,30 @@
       ],
       "Your subscriptions": [
         "Les vostres subscripcions"
+      ],
+      "An error occurred": [
+        "Hi ha hagut un error"
+      ],
+      "Are you sure you want to disconnect this address?": [
+        "Esteu segurs que voleu desconnectar aquesta adreça?"
+      ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Porteu el vostre Gmail a ${ MAIL_APP_NAME }"
+      ],
+      "Disconnected from Gmail": [
+        "Esteu desconnectat de Gmail"
+      ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Envieu i rebeu correus de Gmail mitjançant ${ MAIL_APP_NAME }"
+      ],
+      "Two-factor authentication disabled": [
+        "S'ha desactivat l'autenticació de doble factor"
+      ],
+      "Use backup recovery code": [
+        "Utilitzeu el codi de recuperació de còpia de seguretat"
+      ],
+      "You are all set": [
+        "Ja esteu a punt"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

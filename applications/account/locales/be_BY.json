@@ -1724,6 +1724,9 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "Reconnect to Gmail": [
+        "Перападключыцца да Gmail"
       ]
     },
     "action": {
@@ -5002,6 +5005,57 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Вы можаце імпартаваць падзеі ў фармаце iCal (файл ICS). Максімальна памер файла павінен быць ${ MAX_IMPORT_FILE_SIZE_STRING } і мець не больш за ${ MAX_IMPORT_EVENTS_STRING } падзей. Падзяліце свой файл на меншыя часткі, калі ён занадта вялікі."
+      ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Не давайце магчымасці Google ствараць ваш профіль. Gmail больш не зможа бачыць, што вы робіце ў ${ MAIL_APP_NAME }"
+      ],
+      "No ads. No trackers.": [
+        "Без рэкламы і праграм сачэння"
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "Выдаліце дадатковыя адрасы Gmail, якія перасылаюцца на ${ BRAND_NAME }. Гэта дзеянне неабходна для падключэння іншага адраса Gmail."
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "Абнавіце свой тарыфны план да ${ planName }, каб падключыць да ${ MAX_SYNC_PAID_USER } адраса Gmail.",
+        "Абнавіце свой тарыфны план да ${ planName }, каб падключыць да ${ MAX_SYNC_PAID_USER } адрасоў Gmail.",
+        "Абнавіце свой тарыфны план да ${ planName }, каб падключыць да ${ MAX_SYNC_PAID_USER } адрасоў Gmail.",
+        "Абнавіце свой тарыфны план да ${ planName }, каб падключыць да ${ MAX_SYNC_PAID_USER } адрасоў Gmail."
+      ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "Палепшыце тарыфны план да ${ planName }, каб падключыць да ${ MAX_SYNC_PAID_USER } уліковых запісаў"
+      ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "У вас ужо ёсць адрас Gmail, які перасылае лісты ў ${ MAIL_APP_NAME }. Падключыце яго ніжэй, каб адпраўляць і атрымліваць лісты наўпрост з ${ MAIL_APP_NAME }."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Цяпер можна адпраўляць лісты з ${ BRAND_NAME } выкарыстоўваючы гэты адрас."
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "Вы перасылаеце ${ numAddressesOrSync } адрас Gmail у ${ MAIL_APP_NAME }.",
+        "Вы перасылаеце ${ numAddressesOrSync } адрасы Gmail у ${ MAIL_APP_NAME }.",
+        "Вы перасылаеце ${ numAddressesOrSync } адрасоў Gmail у ${ MAIL_APP_NAME }.",
+        "Вы перасылаеце ${ numAddressesOrSync } адрасоў Gmail у ${ MAIL_APP_NAME }."
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "Вы падключылі ${ MAX_SYNC_PAID_USER } адрас Gmail. Спачатку адключыце адзін са сваіх падключаных уліковых запісаў, каб дадаць яшчэ адзін.",
+        "Вы падключылі ${ MAX_SYNC_PAID_USER } адрасы Gmail. Спачатку адключыце адзін са сваіх падключаных уліковых запісаў, каб дадаць яшчэ адзін.",
+        "Вы падключылі ${ MAX_SYNC_PAID_USER } адрасоў Gmail. Спачатку адключыце адзін са сваіх падключаных уліковых запісаў, каб дадаць яшчэ адзін.",
+        "Вы падключылі ${ MAX_SYNC_PAID_USER } адрасоў Gmail. Спачатку адключыце адзін са сваіх падключаных уліковых запісаў, каб дадаць яшчэ адзін."
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "Вы падключылі адзін адрас знешняга ўліковага запісу да ${ MAIL_APP_NAME }."
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "Ваш тарыфны план падтрымлівае ${ MAX_SYNC_FREE_USER } адрас Gmail.",
+        "Ваш тарыфны план падтрымлівае ${ MAX_SYNC_FREE_USER } адрасы Gmail.",
+        "Ваш тарыфны план падтрымлівае ${ MAX_SYNC_FREE_USER } адрасоў Gmail.",
+        "Ваш тарыфны план падтрымлівае ${ MAX_SYNC_FREE_USER } адрасоў Gmail."
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "Ваш тарыфны план у сукупнасці падтрымлівае ${ MAX_SYNC_PAID_USER } адрас Gmail",
+        "Ваш тарыфны план агулам падтрымлівае ${ MAX_SYNC_PAID_USER } адрасы Gmail",
+        "Ваш тарыфны план у сукупнасці падтрымлівае ${ MAX_SYNC_PAID_USER } адрасоў Gmail",
+        "Ваш тарыфны план у сукупнасці падтрымлівае ${ MAX_SYNC_PAID_USER } адрасоў Gmail"
       ]
     },
     "description": {
@@ -7178,6 +7232,9 @@
       ],
       "Zero keys reactivated": [
         "Нуль ключоў паўторна актывавана"
+      ],
+      "Address is already added to your account": [
+        "Адрас ужо дададзены ў ваш уліковы запіс"
       ]
     },
     "error": {
@@ -14767,6 +14824,9 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Select which Gmail address to connect": [
+        "Выберыце, які адрас Gmail неабходна падключыць"
       ]
     },
     "label": {
@@ -24857,6 +24917,12 @@
       ],
       "Your subscriptions": [
         "Вашы падпіскі"
+      ],
+      "Disconnected from Gmail": [
+        "Адключана ад Gmail"
+      ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Адпраўка і атрыманне лістоў Gmail з дапамогай ${ MAIL_APP_NAME }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

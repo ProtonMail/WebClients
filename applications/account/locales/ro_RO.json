@@ -1724,6 +1724,45 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Connect Gmail address": [
+        "Conectați adresa Gmail"
+      ],
+      "Connect to Gmail": [
+        "Conectare la Gmail"
+      ],
+      "Contact Support Center": [
+        "Contactați centrul de asistență"
+      ],
+      "Continue to sign in": [
+        "Continuare autentificare"
+      ],
+      "Disconnect": [
+        "Deconectare"
+      ],
+      "Enter code": [
+        "Introduceți codul"
+      ],
+      "I don't have my 2FA device": [
+        "Nu am dispozitivul de A2F"
+      ],
+      "I don't have my key": [
+        "Nu am cheia mea"
+      ],
+      "I don’t have my backup codes": [
+        "Nu am codurile de rezervă"
+      ],
+      "Or remove forwarding address": [
+        "Sau eliminați adresa de transferare"
+      ],
+      "Reconnect to Gmail": [
+        "Reconectare la Gmail"
+      ],
+      "Recover account": [
+        "Recuperare cont"
+      ],
+      "Verify another way": [
+        "Verificare altfel"
       ]
     },
     "action": {
@@ -4971,6 +5010,85 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puteți importa evenimente în format iCal (fișier ICS). Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_EVENTS_STRING } evenimente. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici."
+      ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Blocați capacitatea Google de a vă analiza profilul. Gmail nu poate vedea ce faceți în ${ MAIL_APP_NAME }."
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Mesajele trimise către ${ connectedAddressText } vor apărea acum în ${ MAIL_APP_NAME }."
+      ],
+      "No ads. No trackers.": [
+        "Fără reclame. Fără instrumente de urmărire."
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "Citiți, răspundeți și rămâneți deasupra lui Gmail direct din ${ MAIL_APP_NAME }"
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Acest lucru se poate întâmpla dacă permisiunile au fost eliminate sau parola a fost modificată."
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "Pentru a conecta o altă adresă Gmail, eliminați adresele Gmail suplimentare care se transferă către ${ BRAND_NAME }."
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "Pentru a conecta până la ${ MAX_SYNC_PAID_USER } adresă Gmail, treceți la ${ planName }.",
+        "Pentru a conecta până la ${ MAX_SYNC_PAID_USER } adrese Gmail, treceți la ${ planName }.",
+        "Pentru a conecta până la ${ MAX_SYNC_PAID_USER } de adrese Gmail, treceți la ${ planName }."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Pentru a continua să primiți și să trimiteți mesaje Gmail în ${ BRAND_NAME }, reconectați-vă conturile."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Pentru a continua să primiți și să trimiteți mesaje Gmail în ${ BRAND_NAME }, reconectați-vă conturile."
+      ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "Treceți la ${ planName } pentru a conecta până la ${ MAX_SYNC_PAID_USER } conturi."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Nu mai putem accesa ${ boldEmails }."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "Se vor importa mesajele vechi și se va conecta contul Gmail la ${ MAIL_APP_NAME }, astfel încât mesajele noi să apară automat."
+      ],
+      "We've started importing your email from Gmail. We'll let you know when it's done.": [
+        "S-a început importarea contului de pe Gmail. Vă vom anunța când va fi gata."
+      ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Aveți deja o adresă Gmail care transferă mesajele către ${ MAIL_APP_NAME }. Conectați-o mai jos pentru a trimite și primi mesaje direct din ${ MAIL_APP_NAME }."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Aveți deja o adresă Gmail care transferă mesajele către ${ MAIL_APP_NAME }. Conectați una mai jos pentru a trimite și primi mesaje direct din ${ MAIL_APP_NAME }."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Puteți trimite acum mesaje de pe ${ BRAND_NAME } folosind această adresă."
+      ],
+      "You can still login with this address and re-connect at any time.": [
+        "Încă vă puteți conecta cu această adresă și vă puteți reconecta oricând."
+      ],
+      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
+        "Nu veți mai putea utiliza ${ address.Email } pentru a primi și trimite mesaje din ${ BRAND_NAME }. De asemenea, rețineți că mesajele trimise la această adresă din ${ BRAND_NAME } nu vor mai fi criptate bilateral."
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "Transferați ${ numAddressesOrSync } adresă Gmail către ${ MAIL_APP_NAME }.",
+        "Transferați ${ numAddressesOrSync } adrese Gmail către ${ MAIL_APP_NAME }.",
+        "Transferați ${ numAddressesOrSync } de adrese Gmail către ${ MAIL_APP_NAME }."
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "Ați conectat ${ MAX_SYNC_PAID_USER } adresă de Gmail. Pentru a adăuga alta, mai întâi dezactivați unul dintre conturile conectate.",
+        "Ați conectat ${ MAX_SYNC_PAID_USER } adrese Gmail. Pentru a adăuga alta, dezactivați mai întâi unul dintre conturile conectate.",
+        "Ați conectat ${ MAX_SYNC_PAID_USER } de adrese Gmail. Pentru a adăuga alta, mai întâi dezactivați unul dintre conturile conectate."
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "Ați conectat o adresă de cont externă la ${ MAIL_APP_NAME }."
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "Planul actual permite ${ MAX_SYNC_FREE_USER } adresă Gmail.",
+        "Planul actual permite ${ MAX_SYNC_FREE_USER } adrese Gmail.",
+        "Planul actual permite ${ MAX_SYNC_FREE_USER } de adrese Gmail."
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "Planul actual permite maxim ${ MAX_SYNC_PAID_USER } adresă Gmail",
+        "Planul actual permite maxim ${ MAX_SYNC_PAID_USER } adrese Gmail",
+        "Planul actual permite maxim ${ MAX_SYNC_PAID_USER } de adrese Gmail"
       ]
     },
     "description": {
@@ -7134,6 +7252,21 @@
       ],
       "Zero keys reactivated": [
         "Zero taste reactivate."
+      ],
+      "Address could not be added.": [
+        "Adresa nu a putut fi adăugată."
+      ],
+      "Address is already added to your account": [
+        "Adresa este deja adăugată în cont."
+      ],
+      "Incorrect recovery code. Please try again.": [
+        "Cod de recuperare incorect. Reîncercați."
+      ],
+      "Something went wrong while creating the address": [
+        "Ceva nu a mers bine în timpul creării adresei."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Ceva nu a funcționat corect la preluarea domeniilor disponibile."
       ]
     },
     "error": {
@@ -12586,6 +12719,45 @@
       ],
       "Zoom meeting": [
         "o întâlnire pe Zoom"
+      ],
+      "An email with a verification code was just sent to ${ recoveryEmailElement }. If you can’t find the message in your inbox, please check your spam folder.": [
+        "Un mesaj cu un cod de verificare a fost trimis la ${ recoveryEmailElement }. Dacă nu găsiți mesajul în mesajele primite, verificați și în folderul de mesaje nedorite."
+      ],
+      "An SMS with a verification code was just sent to ${ recoveryPhoneElement }.": [
+        "Un SMS cu un cod de verificare tocmai a fost trimis la ${ recoveryPhoneElement }."
+      ],
+      "Contact our Customer Support team to disable two-factor authentication for your account, or recover your account another way.": [
+        "Contactați echipa de asistență clienți pentru a vă dezactiva autentificarea cu doi factori pentru cont sau pentru a vă recupera contul altfel."
+      ],
+      "Enter code": [
+        "Introduceți codul"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Dacă v-ați pierdut accesul la aplicația de autentificare, puteți utiliza unul din cele 16 coduri de recuperare de rezervă furnizate la configurarea autentificării cu doi factori. ${ learnMoreLink }"
+      ],
+      "No forwarding history.": [
+        "Nu există istoric de transferare."
+      ],
+      "No import history.": [
+        "Nu există istoric de importări."
+      ],
+      "Something went wrong. Please try again.": [
+        "Ceva nu a funcționat. Reîncercați."
+      ],
+      "This password is used to login to your ${ BRAND_NAME } account": [
+        "Această parolă este folosită pentru a vă conecta la contul ${ BRAND_NAME }"
+      ],
+      "To help keep your account safe, we want to make sure it's really you trying to sign in.": [
+        "Pentru a vă ajuta să vă protejați contul, dorim să ne asigurăm că dețineți cu adevărat contul."
+      ],
+      "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
+        "Pentru a vă ajuta să vă protejați contul, dorim să ne asigurăm că dețineți cu adevărat contul."
+      ],
+      "You can now sign in to your account again.": [
+        "Acum vă puteți conecta din nou în cont."
+      ],
+      "You will not be asked for a one-time code or a security key.": [
+        "Nu vi se va solicita un cod de unică folosință sau o cheie de securitate."
       ]
     },
     "info": {
@@ -14625,6 +14797,9 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Select which Gmail address to connect": [
+        "Selectați ce adresă Gmail doriți să conectați"
       ]
     },
     "label": {
@@ -17088,6 +17263,9 @@
       ],
       "Zoom video conferencing settings have been updated": [
         "Setările conferințelor video Zoom au fost actualizate."
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Adresa ${ BRAND_NAME } este gata de utilizare"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -24657,6 +24835,30 @@
       ],
       "Your subscriptions": [
         "Abonamente personale"
+      ],
+      "An error occurred": [
+        "A apărut o eroare"
+      ],
+      "Are you sure you want to disconnect this address?": [
+        "Sigur doriți să deconectați această adresă?"
+      ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Aduceți-vă contul Gmail în ${ MAIL_APP_NAME }"
+      ],
+      "Disconnected from Gmail": [
+        "Deconectat de la Gmail"
+      ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Trimiteți și primiți mesaje Gmail folosind ${ MAIL_APP_NAME }"
+      ],
+      "Two-factor authentication disabled": [
+        "Autentificare cu doi factori dezactivată"
+      ],
+      "Use backup recovery code": [
+        "Utilizare cod de recuperare de rezervă"
+      ],
+      "You are all set": [
+        "Totul este pregătit"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
