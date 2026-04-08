@@ -18,6 +18,7 @@ import {
     filterElementsInState,
     getElementContextIdentifier,
     getSearchParameters,
+    hasLabel,
     isElementConversation,
     isElementMessage,
     parseElementContextIdentifier,
@@ -787,7 +788,6 @@ export const markConversationsAsUnreadPending = (
     action: PayloadAction<undefined, string, { arg: { conversations: Conversation[]; labelID: string } }>
 ) => {
     const { conversations, labelID } = action.meta.arg;
-    const isCurrentLabelIDCategory = isCategoryLabel(labelID);
 
     conversations.forEach((conversation) => {
         const conversationLabel = conversation?.Labels?.find((label) => label.ID === labelID);
@@ -803,12 +803,16 @@ export const markConversationsAsUnreadPending = (
             return;
         }
 
+        const isConversationInInbox = hasLabel(elementState, MAILBOX_LABEL_IDS.INBOX);
         elementState.ContextNumUnread = safeIncreaseCount(elementState.ContextNumUnread, 1);
         elementState.NumUnread = safeIncreaseCount(elementState.NumUnread, 1);
         elementState.Labels?.forEach((label) => {
             if (label.ID === labelID) {
                 label.ContextNumUnread = safeIncreaseCount(label.ContextNumUnread, 1);
-            } else if (isCurrentLabelIDCategory && label.ID === MAILBOX_LABEL_IDS.INBOX) {
+            }
+
+            // We can update the category label if the conversation is in the inbox
+            if (labelID === MAILBOX_LABEL_IDS.INBOX && isConversationInInbox && isCategoryLabel(label.ID)) {
                 label.ContextNumUnread = safeIncreaseCount(label.ContextNumUnread, 1);
             }
         });
