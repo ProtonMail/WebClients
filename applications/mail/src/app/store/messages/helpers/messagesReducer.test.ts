@@ -1,4 +1,3 @@
-import type { PayloadAction } from '@reduxjs/toolkit';
 import type { Draft } from 'immer';
 
 import type { MessageState, MessagesState } from '@proton/mail/store/messages/messagesTypes';
@@ -15,29 +14,27 @@ import {
 } from './messagesReducer';
 
 describe('messagesReducer', () => {
-    afterEach(() => {
-        jest.clearAllMocks();
-    });
-
     describe('markMessagesAsReadPending', () => {
         it('should mark unread messages as read', () => {
             const messageState: MessageState = {
                 localID: 'msg1',
                 data: { ID: 'msg1', Unread: 1 } as Message,
             };
-            const state = {} as Draft<MessagesState>;
-            const action = {
+
+            const state = {
+                msg1: messageState,
+            } as Draft<MessagesState>;
+
+            markMessagesAsReadPending(state, {
+                type: 'markMessagesAsRead/pending',
+                payload: undefined,
                 meta: {
                     arg: {
                         messages: [{ ID: 'msg1', Unread: 1 } as MessageMetadata],
                         labelID: 'label1',
                     },
                 },
-            } as PayloadAction<undefined, string, { arg: { messages: MessageMetadata[]; labelID: string } }>;
-
-            messageByID.mockReturnValue(messageState);
-
-            markMessagesAsReadPending(state, action);
+            });
 
             expect(messageState.data?.Unread).toBe(0);
         });
@@ -49,19 +46,21 @@ describe('messagesReducer', () => {
                 localID: 'msg1',
                 data: { ID: 'msg1', Unread: 0 } as Message,
             };
-            const state = {} as Draft<MessagesState>;
-            const action = {
+
+            const state = {
+                msg1: messageState,
+            } as Draft<MessagesState>;
+
+            markMessagesAsUnreadPending(state, {
+                type: 'markMessageUnread/pending',
+                payload: undefined,
                 meta: {
                     arg: {
                         messages: [{ ID: 'msg1', Unread: 0 } as MessageMetadata],
                         labelID: 'label1',
                     },
                 },
-            } as PayloadAction<undefined, string, { arg: { messages: MessageMetadata[]; labelID: string } }>;
-
-            messageByID.mockReturnValue(messageState);
-
-            markMessagesAsUnreadPending(state, action);
+            });
 
             expect(messageState.data?.Unread).toBe(1);
         });
@@ -80,7 +79,6 @@ describe('messagesReducer', () => {
                 msg1: messageState,
             } as Draft<MessagesState>;
 
-            // messageByID.mockReturnValue(messageState);
             markMessagesAsUnreadPending(state, {
                 type: 'markMessageUnread/pending',
                 payload: undefined,
@@ -146,23 +144,26 @@ describe('messagesReducer', () => {
                 localID: 'msg2',
                 data: { ID: 'msg2', Unread: 1, ConversationID: 'conv1' } as Message,
             };
-            const state = {} as Draft<MessagesState>;
             const conversation = {
                 ID: 'conv1',
                 Labels: [{ ID: 'label1', ContextNumUnread: 2 }],
             } as Conversation;
-            const action = {
+
+            const state = {
+                msg1: messageState1,
+                msg2: messageState2,
+            } as Draft<MessagesState>;
+
+            markConversationsAsReadPending(state, {
+                type: 'markConversationsAsRead/pending',
+                payload: undefined,
                 meta: {
                     arg: {
                         conversations: [conversation],
                         labelID: 'label1',
                     },
                 },
-            } as PayloadAction<undefined, string, { arg: { conversations: Conversation[]; labelID: string } }>;
-
-            messagesByConversationID.mockReturnValue([messageState1, messageState2]);
-
-            markConversationsAsReadPending(state, action);
+            });
 
             expect(messageState1.data?.Unread).toBe(0);
             expect(messageState2.data?.Unread).toBe(0);
@@ -177,7 +178,6 @@ describe('messagesReducer', () => {
                 localID: 'msg2',
                 data: { ID: 'msg2', Unread: 1, ConversationID: 'conv1' } as Message,
             };
-            const state = {} as Draft<MessagesState>;
             const conversation = {
                 ID: 'conv1',
                 Labels: [
@@ -185,18 +185,22 @@ describe('messagesReducer', () => {
                     { ID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, ContextNumUnread: 2 },
                 ],
             } as Conversation;
-            const action = {
+
+            const state = {
+                msg1: messageState1,
+                msg2: messageState2,
+            } as Draft<MessagesState>;
+
+            markConversationsAsReadPending(state, {
+                type: 'markConversationsAsRead/pending',
+                payload: undefined,
                 meta: {
                     arg: {
                         conversations: [conversation],
                         labelID: MAILBOX_LABEL_IDS.TRASH,
                     },
                 },
-            } as PayloadAction<undefined, string, { arg: { conversations: Conversation[]; labelID: string } }>;
-
-            messagesByConversationID.mockReturnValue([messageState1, messageState2]);
-
-            markConversationsAsReadPending(state, action);
+            });
 
             expect(messageState1.data?.Unread).toBe(0);
             expect(messageState2.data?.Unread).toBe(0);
@@ -213,23 +217,26 @@ describe('messagesReducer', () => {
                 localID: 'msg2',
                 data: { ID: 'msg2', Unread: 0, ConversationID: 'conv1', Order: 2, LabelIDs: ['label1'] } as Message,
             };
-            const state = {} as Draft<MessagesState>;
             const conversation = {
                 ID: 'conv1',
                 Labels: [{ ID: 'label1', ContextNumUnread: 0 }],
             } as Conversation;
-            const action = {
+
+            const state = {
+                msg1: messageState1,
+                msg2: messageState2,
+            } as Draft<MessagesState>;
+
+            markConversationsAsUnreadPending(state, {
+                type: 'markConversationsAsRead/pending',
+                payload: undefined,
                 meta: {
                     arg: {
                         conversations: [conversation],
                         labelID: 'label1',
                     },
                 },
-            } as PayloadAction<undefined, string, { arg: { conversations: Conversation[]; labelID: string } }>;
-
-            messagesByConversationID.mockReturnValue([messageState1, messageState2]);
-
-            markConversationsAsUnreadPending(state, action);
+            });
 
             expect(messageState1.data?.Unread).toBe(0); // Should remain read
             expect(messageState2.data?.Unread).toBe(1); // Should be marked as unread (highest Order)
