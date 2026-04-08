@@ -454,7 +454,7 @@ describe('message counts - label messages', () => {
                 type: 'mailbox/labelMessages',
                 payload: {
                     messages: [message1, message2],
-                    sourceLabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                    sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
                     destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
                     labels: customLabels,
                     folders: customFolders,
@@ -882,7 +882,7 @@ describe('message counts - label messages', () => {
                 type: 'mailbox/labelMessages',
                 payload: {
                     messages: [message1, message2],
-                    sourceLabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                    sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
                     destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
                     labels: customLabels,
                     folders: customFolders,
