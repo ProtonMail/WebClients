@@ -1,7 +1,10 @@
+import { useState } from 'react';
+
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
 import Collapsible from '@proton/components/components/collapsible/Collapsible';
 import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';
+import { CollapsibleGroup } from '@proton/components/components/collapsible/CollapsibleGroup';
 import CollapsibleHeader from '@proton/components/components/collapsible/CollapsibleHeader';
 import CollapsibleHeaderButton from '@proton/components/components/collapsible/CollapsibleHeaderButton';
 import CollapsibleHeaderIconButton from '@proton/components/components/collapsible/CollapsibleHeaderIconButton';
@@ -18,6 +21,7 @@ const meta: Meta<typeof Collapsible> = {
         CollapsibleContent: CollapsibleContent as any,
         CollapsibleHeaderButton: CollapsibleHeaderButton as any,
         CollapsibleHeaderIconButton: CollapsibleHeaderIconButton as any,
+        CollapsibleGroup: CollapsibleGroup as any,
     },
     parameters: {
         docs: {
@@ -182,4 +186,70 @@ export const DisableContainerToggle: Story = {
             <CollapsibleContent>{loremIpsum}</CollapsibleContent>
         </Collapsible>
     ),
+};
+
+export const UncontrolledGroupedCollapsibles: Story = {
+    render: () => (
+        <CollapsibleGroup>
+            <Collapsible key="0">
+                <CollapsibleHeader
+                    suffix={
+                        <CollapsibleHeaderIconButton>
+                            <Icon name="chevron-down" />
+                        </CollapsibleHeaderIconButton>
+                    }
+                >
+                    First collapsible header
+                </CollapsibleHeader>
+                <CollapsibleContent>{loremIpsum}</CollapsibleContent>
+            </Collapsible>
+            <Collapsible key="1">
+                <CollapsibleHeader
+                    suffix={
+                        <CollapsibleHeaderIconButton>
+                            <Icon name="chevron-down" />
+                        </CollapsibleHeaderIconButton>
+                    }
+                >
+                    Second collapsible header
+                </CollapsibleHeader>
+                <CollapsibleContent>{loremIpsum}</CollapsibleContent>
+            </Collapsible>
+        </CollapsibleGroup>
+    ),
+};
+
+export const ControlledGroupedCollapsibles: Story = {
+    render: () => {
+        const [openId, setOpenId] = useState<string | null>('0');
+
+        return (
+            <CollapsibleGroup value={openId} onChange={setOpenId}>
+                <Collapsible key="0">
+                    <CollapsibleHeader
+                        suffix={
+                            <CollapsibleHeaderIconButton>
+                                <Icon name="chevron-down" />
+                            </CollapsibleHeaderIconButton>
+                        }
+                    >
+                        First collapsible header
+                    </CollapsibleHeader>
+                    <CollapsibleContent>{loremIpsum}</CollapsibleContent>
+                </Collapsible>
+                <Collapsible key="1">
+                    <CollapsibleHeader
+                        suffix={
+                            <CollapsibleHeaderIconButton>
+                                <Icon name="chevron-down" />
+                            </CollapsibleHeaderIconButton>
+                        }
+                    >
+                        Second collapsible header
+                    </CollapsibleHeader>
+                    <CollapsibleContent>{loremIpsum}</CollapsibleContent>
+                </Collapsible>
+            </CollapsibleGroup>
+        );
+    },
 };
