@@ -154,4 +154,26 @@ describe('markMessagesAsUnread', () => {
             { LabelID: 'customLabel', Unread: 1, Total: 1 },
         ]);
     });
+
+    it('should update only the message label count when marking as unread', () => {
+        const state = makeState([
+            { LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 0, Total: 2 },
+            { LabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, Unread: 0, Total: 2 },
+            { LabelID: 'customLabel', Unread: 40, Total: 1 },
+        ]);
+
+        markMessagesAsUnread(state, {
+            type: 'mailbox/markMessagesAsUnread',
+            payload: {
+                messages: [makeMessage([MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS], 0)],
+                labelID: MAILBOX_LABEL_IDS.INBOX,
+            },
+        });
+
+        expect(state.value).toEqual([
+            { LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 1, Total: 2 },
+            { LabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, Unread: 1, Total: 2 },
+            { LabelID: 'customLabel', Unread: 40, Total: 1 },
+        ]);
+    });
 });
