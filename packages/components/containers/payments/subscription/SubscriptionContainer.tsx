@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import isEqual from 'lodash/isEqual';
 import { c } from 'ttag';
 
+import { useGetOrganization } from '@proton/account/organization/hooks';
 import { useGetPaymentMethods } from '@proton/account/paymentMethods/hooks';
 import { useGetUser, useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
@@ -325,6 +326,7 @@ const SubscriptionContainerInner = ({
     const { cancelSubscriptionModals, cancelSubscription } = useCancelSubscriptionFlow({ app });
     const [vpnServers] = useVPNServersCount();
     const getCalendars = useGetCalendars();
+    const getOrganization = useGetOrganization();
     const { APP_NAME } = useConfig();
 
     const [subscribing, withSubscribing] = useLoading();
@@ -618,10 +620,12 @@ const SubscriptionContainerInner = ({
                 throw error;
             }
             await pollSubscription().catch(noop);
-            // These entity may also have gotten updated, let's refetch them.
-            await Promise.all([getUser({ cache: CacheType.None }), getPaymentMethods({ cache: CacheType.None })]).catch(
-                noop
-            );
+            // These entities may also have gotten updated, let's refetch them.
+            await Promise.all([
+                getUser({ cache: CacheType.None }),
+                getOrganization({ cache: CacheType.None }),
+                getPaymentMethods({ cache: CacheType.None }),
+            ]).catch(noop);
 
             void metrics.payments_subscription_total.increment({
                 ...metricsProps,
