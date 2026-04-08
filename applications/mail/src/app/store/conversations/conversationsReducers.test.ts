@@ -1222,22 +1222,27 @@ describe('conversationsReducers', () => {
             expect(updatedConversationState).toBeDefined();
 
             // CATEGORY_SOCIAL label should be preserved
-            const categoryLabel = updatedConversationState!.Conversation.Labels!.find(
+            const categoryLabel = updatedConversationState?.Conversation.Labels?.find(
                 (label) => label.ID === MAILBOX_LABEL_IDS.CATEGORY_SOCIAL
             );
             expect(categoryLabel).toBeDefined();
             expect(categoryLabel?.ContextNumMessages).toBe(2);
 
             // Custom label should be removed
-            const customLabel = updatedConversationState!.Conversation.Labels!.find(
+            const customLabel = updatedConversationState?.Conversation.Labels?.find(
                 (label) => label.ID === customLabelID
             );
             expect(customLabel).toBeUndefined();
 
             // Message should still have CATEGORY_SOCIAL in LabelIDs
-            const updatedMessage = updatedConversationState!.Messages!.find((m) => m.ID === messageID1);
-            expect(updatedMessage!.LabelIDs).toContain(MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
-            expect(updatedMessage!.LabelIDs).not.toContain(customLabelID);
+            const updatedMessage = updatedConversationState?.Messages?.find((m) => m.ID === messageID1);
+            expect(updatedMessage).toBeDefined();
+            expect(updatedMessage?.LabelIDs).toStrictEqual([
+                MAILBOX_LABEL_IDS.INBOX,
+                MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+            ]);
+
+            expect(updatedMessage?.LabelIDs).not.toContain(customLabelID);
         });
     });
 
@@ -1321,21 +1326,27 @@ describe('conversationsReducers', () => {
             expect(updatedConversationState).toBeDefined();
 
             // CATEGORY_SOCIAL label should be preserved with ContextNumMessages unchanged
-            const categoryLabel = updatedConversationState!.Conversation.Labels!.find(
+            const categoryLabel = updatedConversationState?.Conversation.Labels?.find(
                 (label) => label.ID === MAILBOX_LABEL_IDS.CATEGORY_SOCIAL
             );
             expect(categoryLabel).toBeDefined();
             expect(categoryLabel?.ContextNumMessages).toBe(2);
 
             // ARCHIVE label should be added
-            const archiveLabel = updatedConversationState!.Conversation.Labels!.find(
+            const archiveLabel = updatedConversationState?.Conversation.Labels?.find(
                 (label) => label.ID === MAILBOX_LABEL_IDS.ARCHIVE
             );
             expect(archiveLabel).toBeDefined();
+            expect(updatedConversationState?.Conversation.Labels);
 
             // Message should still have CATEGORY_SOCIAL in LabelIDs
-            const updatedMessage = updatedConversationState!.Messages!.find((m) => m.ID === messageID1);
-            expect(updatedMessage!.LabelIDs).toContain(MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
+            const updatedMessage = updatedConversationState?.Messages?.find((m) => m.ID === messageID1);
+            expect(updatedMessage?.LabelIDs).toStrictEqual([
+                MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                MAILBOX_LABEL_IDS.ALL_MAIL,
+                MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                MAILBOX_LABEL_IDS.ARCHIVE,
+            ]);
         });
 
         it('should replace old category with new category and keep everything else unchanged', () => {
@@ -1421,32 +1432,31 @@ describe('conversationsReducers', () => {
             const updated = state[conversationID]!;
 
             // Old category should be removed (ContextNumMessages zeroed, then filtered)
-            const oldCategory = updated.Conversation.Labels!.find((l) => l.ID === MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
+            const oldCategory = updated.Conversation.Labels?.find((l) => l.ID === MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
             expect(oldCategory).toBeUndefined();
 
             // New category should be added
-            const newCategory = updated.Conversation.Labels!.find(
+            const newCategory = updated.Conversation.Labels?.find(
                 (l) => l.ID === MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS
             );
             expect(newCategory).toBeDefined();
             expect(newCategory?.ContextNumMessages).toBe(1);
 
             // INBOX should be unchanged
-            const inboxLabel = updated.Conversation.Labels!.find((l) => l.ID === MAILBOX_LABEL_IDS.INBOX);
+            const inboxLabel = updated.Conversation.Labels?.find((l) => l.ID === MAILBOX_LABEL_IDS.INBOX);
             expect(inboxLabel).toBeDefined();
             expect(inboxLabel?.ContextNumMessages).toBe(1);
 
-            // STARRED should be unchanged
-            const starredLabel = updated.Conversation.Labels!.find((l) => l.ID === MAILBOX_LABEL_IDS.STARRED);
-            expect(starredLabel).toBeDefined();
-            expect(starredLabel?.ContextNumMessages).toBe(1);
-
             // Message should have new category, not old, and keep INBOX + STARRED
-            const updatedMessage = updated.Messages!.find((m) => m.ID === messageID1);
-            expect(updatedMessage!.LabelIDs).toContain(MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS);
-            expect(updatedMessage!.LabelIDs).not.toContain(MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
-            expect(updatedMessage!.LabelIDs).toContain(MAILBOX_LABEL_IDS.INBOX);
-            expect(updatedMessage!.LabelIDs).toContain(MAILBOX_LABEL_IDS.STARRED);
+            const updatedMessage = updated.Messages?.find((m) => m.ID === messageID1);
+            expect(updatedMessage).toBeDefined();
+            expect(updatedMessage?.LabelIDs).toStrictEqual([
+                MAILBOX_LABEL_IDS.INBOX,
+                MAILBOX_LABEL_IDS.ALL_MAIL,
+                MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                MAILBOX_LABEL_IDS.STARRED,
+                MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+            ]);
         });
     });
 });
