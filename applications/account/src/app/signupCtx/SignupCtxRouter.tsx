@@ -9,7 +9,6 @@ import EmailReservationSignup from './flows/bornPrivate/emailReservation/EmailRe
 import DrivePricing from './flows/drive/DrivePricing';
 import DriveSignup from './flows/drive/DriveSignup';
 import GenericStartSignup from './flows/genericStart/GenericStartSignup';
-import GreenlandSignup from './flows/greenland/GreenlandSignup';
 import MeetB2CSignup from './flows/meet/MeetB2CSignup';
 import MeetB2CPlanSignup from './flows/meetB2CPlan/MeetB2CPlanSignup';
 import PassSignup from './flows/pass/PassSignup';
@@ -63,9 +62,6 @@ const SignupCtxRouter = (props: BaseSignupContextProps) => {
                 </Route>
                 <Route path={SSO_PATHS.MEET_SIGNUP}>
                     <MeetB2CSignup {...props} />
-                </Route>
-                <Route path={SSO_PATHS.GREENLAND_SIGNUP}>
-                    <GreenlandSignup {...props} />
                 </Route>
                 <Route path={SSO_PATHS.BORN_PRIVATE}>
                     <EmailReservationSignup />
