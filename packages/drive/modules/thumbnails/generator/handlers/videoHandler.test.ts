@@ -131,6 +131,47 @@ describe('VideoHandler', () => {
             jest.restoreAllMocks();
         });
 
+        test('Falls back to video/mp4 canPlayType check for video/quicktime', async () => {
+            const originalCreateElement = document.createElement.bind(document);
+            jest.spyOn(document, 'createElement').mockImplementation((tagName: string) => {
+                const element = originalCreateElement(tagName);
+                if (tagName === 'video') {
+                    (element as HTMLVideoElement).canPlayType = jest.fn().mockImplementation((mime: string) => {
+                        if (mime === 'video/quicktime') {
+                            return '';
+                        }
+                        if (mime === 'video/mp4') {
+                            return 'probably';
+                        }
+                        return '';
+                    });
+                }
+                return element;
+            });
+
+            const blob = new Blob(['video content'], { type: 'video/quicktime' });
+
+            // Should not throw UnsupportedFormatError for canPlayType — it falls
+            // through to video frame extraction which throws a different error in
+            // the test environment (no real video data).
+            await expect(
+                handler.generate(
+                    blob,
+                    'test.mov',
+                    blob.size,
+                    SupportedMimeTypes.webp,
+                    [ThumbnailType.Type1],
+                    'video/quicktime'
+                )
+            ).rejects.not.toThrow(
+                expect.objectContaining({
+                    message: expect.stringContaining('video format not supported by browser'),
+                })
+            );
+
+            jest.restoreAllMocks();
+        });
+
         test('Throws UnsupportedFormatError when video extraction fails', async () => {
             const blob = new Blob(['video content'], { type: 'video/mp4' });
 
