@@ -8,9 +8,9 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 
 import { SketchOverlay } from '../../features/drawingcanvas';
+import useComposerInput from '../../hooks/useComposerInput';
 import type { DriveSDKMethods } from '../../hooks/useDriveSDK';
 import { useDriveSDK } from '../../hooks/useDriveSDK';
-import useComposerInput from '../../hooks/useComposerInput';
 import type { HandleSendMessage } from '../../hooks/useLumoActions';
 import { useDragArea } from '../../providers/DragAreaProvider';
 import { useGhostChat } from '../../providers/GhostChatProvider';
@@ -144,7 +144,7 @@ const ComposerComponentInner = ({
             await handleSendMessage(value, isWebSearchButtonToggled);
         },
         // composerInput.clear is intentionally omitted from deps — it's stable but the object is created below
-        // eslint-disable-next-line react-hooks/exhaustive-deps
+
         [handleSendMessage, isWebSearchButtonToggled, isProcessingAttachment]
     );
 
@@ -269,7 +269,6 @@ const ComposerComponentInner = ({
                             onFilesSelected={handleFilesSelected}
                             onBrowseDrive={handleBrowseDrive}
                             onDrawSketch={handleDrawSketch}
-                            hasAttachments={hasAttachments}
                             canShowLumoUpsellToggle={canShowLumoUpsellToggle}
                             fileUploadMode={fileUploadMode}
                         />
