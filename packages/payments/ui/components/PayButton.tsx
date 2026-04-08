@@ -1,18 +1,14 @@
 import { type ElementType, type ReactNode, useMemo } from 'react';
 
-import { c } from 'ttag';
-
 import { Button, type ButtonProps } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { greenlandOfferCountryCodes } from '@proton/components/containers/payments/subscription/coupon-config/greenlandIceland';
 import useConfig from '@proton/components/hooks/useConfig';
 import type { PaymentFacade } from '@proton/components/payments/client-extensions';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
-import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 import isFunction from '@proton/utils/isFunction';
 
-import { COUPON_CODES, PAYMENT_METHOD_TYPES } from '../../core/constants';
+import { PAYMENT_METHOD_TYPES } from '../../core/constants';
 import type { PlainPaymentMethodType } from '../../core/interface';
 import type { PaymentTelemetryContext } from '../../telemetry/helpers';
 import { checkoutTelemetry } from '../../telemetry/telemetry';
@@ -55,31 +51,6 @@ export type OfferUnavailableErrorMessage =
       }
     | undefined;
 
-export function useOfferUnavailableErrorMessage(
-    paymentFacade: Pick<PaymentFacade, 'checkResult' | 'paymentStatus'> | undefined
-): OfferUnavailableErrorMessage {
-    const regionalPaymentBlock = useFlag('GreenlandOfferRegionalPaymentBlock');
-    if (!regionalPaymentBlock) {
-        return;
-    }
-
-    const couponCode = paymentFacade?.checkResult?.Coupon?.Code;
-    const paymentStatus = paymentFacade?.paymentStatus;
-    if (
-        couponCode === COUPON_CODES.PLUS12FOR1 &&
-        paymentStatus &&
-        !greenlandOfferCountryCodes.includes(paymentStatus.CountryCode)
-    ) {
-        return {
-            message: c('Error').t`This offer is not available in your country`,
-            paymentDisabled: true,
-            hideBillingCountry: true,
-        };
-    }
-
-    return undefined;
-}
-
 export const PayButton = ({
     taxCountry,
     vatNumber,
@@ -97,8 +68,6 @@ export const PayButton = ({
     ...rest
 }: Props) => {
     const { APP_NAME } = useConfig();
-
-    const offerUnavailableErrorMessage = useOfferUnavailableErrorMessage(paymentFacade);
 
     const suffixElement = useMemo(() => {
         if (isFunction(suffix)) {
@@ -141,10 +110,7 @@ export const PayButton = ({
         const isApplePay = paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.APPLE_PAY;
         const isGooglePay = paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.GOOGLE_PAY;
         const submitButtonDisabled =
-            !taxCountry.billingAddressValid ||
-            (mustCheckVatNumberErrors && !vatNumber?.vatFormValid) ||
-            disabled ||
-            offerUnavailableErrorMessage?.paymentDisabled;
+            !taxCountry.billingAddressValid || (mustCheckVatNumberErrors && !vatNumber?.vatFormValid) || disabled;
 
         const className = clsx(submitButtonDisabled && 'cursor-not-allowed', classNameProp);
 
@@ -203,9 +169,7 @@ export const PayButton = ({
     })();
 
     const errorMessage =
-        taxCountry?.billingAddressErrorMessage ||
-        (mustCheckVatNumberErrors && vatNumber?.vatFormErrorMessage) ||
-        offerUnavailableErrorMessage?.message;
+        taxCountry?.billingAddressErrorMessage || (mustCheckVatNumberErrors && vatNumber?.vatFormErrorMessage);
 
     if (!errorMessage) {
         return (

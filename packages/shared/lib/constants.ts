@@ -425,7 +425,6 @@ export const SSO_PATHS = {
     PORKBUN_SIGNUP: '/partner/porkbun/signup',
     PORKBUN_SIGN_IN: '/partner/porkbun/login',
     SIGN_IN_WITH_ANOTHER_DEVICE: '/sign-in-with-another-device',
-    GREENLAND_SIGNUP: '/greenland',
     BORN_PRIVATE: '/born-private',
     BORN_PRIVATE_ACTIVATE: '/born-private/activate',
     BORN_PRIVATE_RECOVERY: '/born-private/recovery',

@@ -12,7 +12,7 @@ import {
 import { getPaymentMethods } from './api/api';
 import type { BillingAddress } from './billing-address/billing-address';
 import { isExpired as getIsExpired } from './cardDetails';
-import { type ADDON_NAMES, COUPON_CODES, MethodStorage, PAYMENT_METHOD_TYPES, PLANS } from './constants';
+import { type ADDON_NAMES, MethodStorage, PAYMENT_METHOD_TYPES, PLANS } from './constants';
 import { isSignupFlow } from './helpers';
 import type {
     AvailablePaymentMethod,
@@ -454,8 +454,7 @@ export class PaymentMethods {
             !isSignupFlow(this.flow) &&
             !this.isBF2025Offer() &&
             !this.coupon &&
-            !this.isTrial &&
-            !this.isGreenlandOffer()
+            !this.isTrial
         );
     }
 
@@ -480,8 +479,7 @@ export class PaymentMethods {
             !this.isBF2025Offer() &&
             // separate flag for B2C plans
             (this.isB2BPlan() || this.enableSepaB2C) &&
-            !this.isTrial &&
-            !this.isGreenlandOffer()
+            !this.isTrial
         );
     }
 
@@ -521,8 +519,7 @@ export class PaymentMethods {
             !this.isB2BPlan() &&
             !btcDisabledSpecialCases &&
             (notDelinquent || this.flow === 'credit') &&
-            !this.isTrial &&
-            !this.isGreenlandOffer()
+            !this.isTrial
         );
     }
 
@@ -560,8 +557,7 @@ export class PaymentMethods {
             (isPaypalAmountValid || isInvoice) &&
             !this.isTrial &&
             (!isNewCurrency || this.enablePaypalRegionalCurrenciesBatch3) &&
-            (!isKrwCurrency || this.enablePaypalKrw) &&
-            !this.isGreenlandOffer();
+            (!isKrwCurrency || this.enablePaypalKrw);
 
         return paypalAvailable;
     }
@@ -587,8 +583,7 @@ export class PaymentMethods {
             isAllowedFlow &&
             this.canUseApplePay &&
             isSafari() &&
-            !this.isTrial &&
-            !this.isGreenlandOffer()
+            !this.isTrial
         );
     }
 
@@ -613,8 +608,7 @@ export class PaymentMethods {
             isGooglePayAmountValid &&
             isAllowedFlow &&
             this.canUseGooglePay &&
-            !this.isTrial &&
-            !this.isGreenlandOffer()
+            !this.isTrial
         );
     }
 
@@ -628,10 +622,6 @@ export class PaymentMethods {
 
     private isBF2025Offer() {
         return getHas2025OfferCoupon(this.coupon);
-    }
-
-    private isGreenlandOffer() {
-        return this.coupon === COUPON_CODES.PLUS12FOR1;
     }
 }
 
