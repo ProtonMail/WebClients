@@ -366,7 +366,7 @@ describe('messagesReducer', () => {
             } as Draft<MessagesState>;
 
             labelMessagesPending(state, {
-                type: 'mailbox/labelMessages/pending',
+                type: 'labelMessages/pending',
                 payload: undefined,
                 meta: {
                     arg: {
@@ -388,8 +388,12 @@ describe('messagesReducer', () => {
                 },
             });
 
-            expect(messageState.data?.LabelIDs).toContain(MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
-            expect(messageState.data?.LabelIDs).toContain(MAILBOX_LABEL_IDS.ARCHIVE);
+            expect(messageState.data?.LabelIDs).toStrictEqual([
+                MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                MAILBOX_LABEL_IDS.ALL_MAIL,
+                MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                MAILBOX_LABEL_IDS.ARCHIVE,
+            ]);
             expect(messageState.data?.LabelIDs).not.toContain(MAILBOX_LABEL_IDS.INBOX);
         });
 
@@ -412,7 +416,7 @@ describe('messagesReducer', () => {
             } as Draft<MessagesState>;
 
             labelMessagesPending(state, {
-                type: 'mailbox/labelMessages/pending',
+                type: 'labelMessages/pending',
                 payload: undefined,
                 meta: {
                     arg: {
@@ -434,10 +438,13 @@ describe('messagesReducer', () => {
                 },
             });
 
-            expect(messageState.data?.LabelIDs).toContain(MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS);
+            expect(messageState.data?.LabelIDs).toStrictEqual([
+                MAILBOX_LABEL_IDS.INBOX,
+                MAILBOX_LABEL_IDS.ALL_MAIL,
+                MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+            ]);
             expect(messageState.data?.LabelIDs).not.toContain(MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
-            // INBOX should still be present (categories don't remove folders)
-            expect(messageState.data?.LabelIDs).toContain(MAILBOX_LABEL_IDS.INBOX);
         });
     });
 
@@ -463,7 +470,7 @@ describe('messagesReducer', () => {
             } as Draft<MessagesState>;
 
             unlabelMessagesPending(state, {
-                type: 'mailbox/unlabelMessages/pending',
+                type: 'unlabelMessages/pending',
                 payload: undefined,
                 meta: {
                     arg: {
@@ -485,8 +492,12 @@ describe('messagesReducer', () => {
                 },
             });
 
-            expect(messageState.data?.LabelIDs).toContain(MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
-            expect(messageState.data?.LabelIDs).toContain(MAILBOX_LABEL_IDS.INBOX);
+            expect(messageState.data?.LabelIDs).toStrictEqual([
+                MAILBOX_LABEL_IDS.INBOX,
+                MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                MAILBOX_LABEL_IDS.ALL_MAIL,
+                MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+            ]);
             expect(messageState.data?.LabelIDs).not.toContain(customLabelID);
         });
     });

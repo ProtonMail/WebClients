@@ -1002,14 +1002,12 @@ describe('conversationsReducers', () => {
                     [conversationID]: mockConversationState,
                 } as Draft<ConversationsState>;
 
-                const messages: MessageMetadata[] = [mockMessage1];
-
                 labelMessagesPending(state, {
                     type: 'labelMessages/pending',
                     payload: undefined,
                     meta: {
                         arg: {
-                            messages,
+                            messages: [mockMessage1],
                             sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
                             destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
                             labels: [],
@@ -1022,22 +1020,25 @@ describe('conversationsReducers', () => {
                 expect(updatedConversationState).toBeDefined();
 
                 // CATEGORY_NEWSLETTERS ContextNumMessages should NOT change (category persists on message)
-                const categoryLabel = updatedConversationState!.Conversation.Labels!.find(
+                const categoryLabel = updatedConversationState?.Conversation.Labels?.find(
                     (label) => label.ID === MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS
                 );
                 expect(categoryLabel?.ContextNumMessages).toBe(2);
 
                 // INBOX ContextNumMessages should decrease
-                const inboxLabel = updatedConversationState!.Conversation.Labels!.find(
+                const inboxLabel = updatedConversationState?.Conversation.Labels?.find(
                     (label) => label.ID === MAILBOX_LABEL_IDS.INBOX
                 );
                 expect(inboxLabel?.ContextNumMessages).toBe(1);
 
                 // Message LabelIDs should include CATEGORY_NEWSLETTERS and ARCHIVE but not INBOX
-                const updatedMessage = updatedConversationState!.Messages!.find((m) => m.ID === messageID1);
-                expect(updatedMessage!.LabelIDs).toContain(MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS);
-                expect(updatedMessage!.LabelIDs).toContain(MAILBOX_LABEL_IDS.ARCHIVE);
-                expect(updatedMessage!.LabelIDs).not.toContain(MAILBOX_LABEL_IDS.INBOX);
+                const updatedMessage = updatedConversationState?.Messages?.find((m) => m.ID === messageID1);
+                expect(updatedMessage?.LabelIDs).toBeDefined();
+                expect(updatedMessage?.LabelIDs).toStrictEqual([
+                    MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
+                    MAILBOX_LABEL_IDS.ARCHIVE,
+                ]);
+                expect(updatedMessage?.LabelIDs).not.toContain(MAILBOX_LABEL_IDS.INBOX);
             });
 
             it('should replace old category with new category when moving between categories', () => {
@@ -1065,16 +1066,14 @@ describe('conversationsReducers', () => {
                     [conversationID]: mockConversationState,
                 } as Draft<ConversationsState>;
 
-                const messages: MessageMetadata[] = [mockMessage1];
-
                 labelMessagesPending(state, {
                     type: 'labelMessages/pending',
                     payload: undefined,
                     meta: {
                         arg: {
-                            messages,
+                            messages: [mockMessage1],
                             sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
-                            destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+                            destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
                             labels: [],
                             folders: [],
                         },
@@ -1085,11 +1084,14 @@ describe('conversationsReducers', () => {
                 expect(updatedConversationState).toBeDefined();
 
                 // Message should have new category and not old category
-                const updatedMessage = updatedConversationState!.Messages!.find((m) => m.ID === messageID1);
-                expect(updatedMessage!.LabelIDs).toContain(MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS);
-                expect(updatedMessage!.LabelIDs).not.toContain(MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
-                // INBOX should still be present (categories don't remove folders)
-                expect(updatedMessage!.LabelIDs).toContain(MAILBOX_LABEL_IDS.INBOX);
+                const updatedMessage = updatedConversationState?.Messages?.find((m) => m.ID === messageID1);
+                expect(updatedMessage?.LabelIDs).toBeDefined();
+
+                expect(updatedMessage?.LabelIDs).toStrictEqual([
+                    MAILBOX_LABEL_IDS.INBOX,
+                    MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
+                ]);
+                expect(updatedMessage?.LabelIDs).not.toContain(MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
             });
         });
 
@@ -1109,14 +1111,12 @@ describe('conversationsReducers', () => {
                 mockMessage2.LabelIDs = [MAILBOX_LABEL_IDS.INBOX, customLabelID];
                 mockMessage3.LabelIDs = [MAILBOX_LABEL_IDS.DRAFTS, customLabelID];
 
-                const messages: MessageMetadata[] = [mockMessage1];
-
                 unlabelMessagesPending(state, {
                     type: 'unlabelMessages/pending',
                     payload: undefined,
                     meta: {
                         arg: {
-                            messages,
+                            messages: [mockMessage1],
                             destinationLabelID: customLabelID,
                             labels: [mockLabel],
                             folders: [],
@@ -1128,27 +1128,25 @@ describe('conversationsReducers', () => {
                 expect(updatedConversationState).toBeDefined();
 
                 // message 1 is unlabelled
-                const updatedMessage1 = updatedConversationState!.Messages!.find((m) => m.ID === messageID1);
-                expect(updatedMessage1!.LabelIDs).not.toContain(customLabelID);
+                const updatedMessage1 = updatedConversationState?.Messages?.find((m) => m.ID === messageID1);
+                expect(updatedMessage1?.LabelIDs).not.toContain(customLabelID);
 
                 // message 2 and 3 are unchanged
-                const updatedMessage2 = updatedConversationState!.Messages!.find((m) => m.ID === messageID2);
-                expect(updatedMessage2!.LabelIDs).toContain(customLabelID);
-                const updatedMessage3 = updatedConversationState!.Messages!.find((m) => m.ID === messageID3);
-                expect(updatedMessage3!.LabelIDs).toContain(customLabelID);
+                const updatedMessage2 = updatedConversationState?.Messages?.find((m) => m.ID === messageID2);
+                expect(updatedMessage2?.LabelIDs).toContain(customLabelID);
+                const updatedMessage3 = updatedConversationState?.Messages?.find((m) => m.ID === messageID3);
+                expect(updatedMessage3?.LabelIDs).toContain(customLabelID);
             });
 
             it('should not remove category label when unlabeling a custom label', () => {
                 mockMessage1.LabelIDs = [MAILBOX_LABEL_IDS.INBOX, customLabelID, MAILBOX_LABEL_IDS.CATEGORY_SOCIAL];
-
-                const messages: MessageMetadata[] = [mockMessage1];
 
                 unlabelMessagesPending(state, {
                     type: 'unlabelMessages/pending',
                     payload: undefined,
                     meta: {
                         arg: {
-                            messages,
+                            messages: [mockMessage1],
                             destinationLabelID: customLabelID,
                             labels: [mockLabel],
                             folders: [],
@@ -1159,10 +1157,10 @@ describe('conversationsReducers', () => {
                 const updatedConversationState = state[conversationID];
                 expect(updatedConversationState).toBeDefined();
 
-                const updatedMessage1 = updatedConversationState!.Messages!.find((m) => m.ID === messageID1);
-                expect(updatedMessage1!.LabelIDs).not.toContain(customLabelID);
-                expect(updatedMessage1!.LabelIDs).toContain(MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
-                expect(updatedMessage1!.LabelIDs).toContain(MAILBOX_LABEL_IDS.INBOX);
+                const updatedMessage1 = updatedConversationState?.Messages?.find((m) => m.ID === messageID1);
+                expect(updatedMessage1?.LabelIDs).not.toContain(customLabelID);
+                expect(updatedMessage1?.LabelIDs).toContain(MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
+                expect(updatedMessage1?.LabelIDs).toContain(MAILBOX_LABEL_IDS.INBOX);
             });
         });
     });
