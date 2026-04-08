@@ -124,14 +124,12 @@ describe('conversationCountsReducers', () => {
     });
 
     describe('markConversationsAsUnreadPending', () => {
-        beforeEach(() => {
+        it('should mark the conversation as unread only in the current location', () => {
             state = getInitialState([
                 { LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 0, Total: 2 },
                 { LabelID: MAILBOX_LABEL_IDS.TRASH, Unread: 0, Total: 1 },
             ]);
-        });
 
-        it('should mark the conversation as unread only in the current location', () => {
             const conversation1 = {
                 ID: conversationID1,
                 ContextNumUnread: 0,
@@ -155,6 +153,91 @@ describe('conversationCountsReducers', () => {
             expect(state.value).toEqual([
                 { LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 2, Total: 2 },
                 { LabelID: MAILBOX_LABEL_IDS.TRASH, Unread: 0, Total: 1 },
+            ]);
+        });
+
+        it('should mark category label as unread when conversation is in inbox', () => {
+            state = getInitialState([
+                { LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 0, Total: 2 },
+                { LabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, Unread: 0, Total: 2 },
+                { LabelID: MAILBOX_LABEL_IDS.TRASH, Unread: 0, Total: 1 },
+            ]);
+
+            const conversation1 = {
+                ID: conversationID1,
+                ContextNumUnread: 0,
+                Labels: [
+                    { ID: MAILBOX_LABEL_IDS.INBOX, ContextNumUnread: 0 },
+                    { ID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, ContextNumUnread: 0 },
+                ],
+            };
+
+            markConversationsAsUnread(state, {
+                type: 'mailbox/markConversationsAsUnread',
+                payload: { conversations: [conversation1], labelID: MAILBOX_LABEL_IDS.INBOX },
+            });
+
+            expect(state.value).toEqual([
+                { LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 1, Total: 2 },
+                { LabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, Unread: 1, Total: 2 },
+                { LabelID: MAILBOX_LABEL_IDS.TRASH, Unread: 0, Total: 1 },
+            ]);
+        });
+
+        it('should not mark category label as unread when conversation is not in inbox', () => {
+            state = getInitialState([
+                { LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 0, Total: 2 },
+                { LabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, Unread: 0, Total: 2 },
+                { LabelID: MAILBOX_LABEL_IDS.TRASH, Unread: 0, Total: 1 },
+            ]);
+
+            const conversation1 = {
+                ID: conversationID1,
+                ContextNumUnread: 0,
+                Labels: [
+                    { ID: MAILBOX_LABEL_IDS.TRASH, ContextNumUnread: 0 },
+                    { ID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, ContextNumUnread: 0 },
+                ],
+            };
+
+            markConversationsAsUnread(state, {
+                type: 'mailbox/markConversationsAsUnread',
+                payload: { conversations: [conversation1], labelID: MAILBOX_LABEL_IDS.TRASH },
+            });
+
+            expect(state.value).toEqual([
+                { LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 0, Total: 2 },
+                { LabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, Unread: 0, Total: 2 },
+                { LabelID: MAILBOX_LABEL_IDS.TRASH, Unread: 1, Total: 1 },
+            ]);
+        });
+
+        it('should not mark category label as unread when conversation is in inbox but action is for a different label', () => {
+            state = getInitialState([
+                { LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 0, Total: 2 },
+                { LabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, Unread: 0, Total: 2 },
+                { LabelID: MAILBOX_LABEL_IDS.TRASH, Unread: 0, Total: 1 },
+            ]);
+
+            const conversation1 = {
+                ID: conversationID1,
+                ContextNumUnread: 0,
+                Labels: [
+                    { ID: MAILBOX_LABEL_IDS.INBOX, ContextNumUnread: 0 },
+                    { ID: MAILBOX_LABEL_IDS.TRASH, ContextNumUnread: 0 },
+                    { ID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, ContextNumUnread: 0 },
+                ],
+            };
+
+            markConversationsAsUnread(state, {
+                type: 'mailbox/markConversationsAsUnread',
+                payload: { conversations: [conversation1], labelID: MAILBOX_LABEL_IDS.TRASH },
+            });
+
+            expect(state.value).toEqual([
+                { LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 0, Total: 2 },
+                { LabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS, Unread: 0, Total: 2 },
+                { LabelID: MAILBOX_LABEL_IDS.TRASH, Unread: 1, Total: 1 },
             ]);
         });
     });
