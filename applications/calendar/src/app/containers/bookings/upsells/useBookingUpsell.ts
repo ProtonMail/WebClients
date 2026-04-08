@@ -15,7 +15,7 @@ export const useBookingUpsell = () => {
         const hasUserReachedBookingLimit = hasUserReachBookingsLimit(bookingsPages);
 
         // This is made to make sure that if both are true, we only show the booking limit reached modal
-        const areBothTrue = hasUserReachedBookingLimit && hasUserReachedBookingLimit;
+        const areBothTrue = hasUserReachedPlanLimit && hasUserReachedBookingLimit;
         return {
             plan: hasUserReachedPlanLimit && !areBothTrue,
             booking: hasUserReachedBookingLimit || areBothTrue,
