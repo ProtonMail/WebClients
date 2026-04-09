@@ -27,17 +27,18 @@ import {
     subscriptionReducer,
     userInvitationsReducer,
     userKeysReducer,
+    userPermissionsReducer,
     userReducer,
     userSettingsReducer,
     vpnServersCountReducer,
     welcomeFlagsReducer,
 } from '@proton/account';
 import { featuresReducer } from '@proton/features';
-import { categoriesReducer } from '@proton/mail/store/labels';
 import { contactEmailsReducer } from '@proton/mail/store/contactEmails';
-import { contactReducer } from '@proton/mail/store/contacts/contactSlice';
 import { contactsReducer } from '@proton/mail/store/contacts';
+import { contactReducer } from '@proton/mail/store/contacts/contactSlice';
 import { importerConfigReducer } from '@proton/mail/store/importerConfig';
+import { categoriesReducer } from '@proton/mail/store/labels';
 import { mailSettingsReducer } from '@proton/mail/store/mailSettings';
 import { selectPersistModel } from '@proton/redux-utilities';
 
@@ -77,6 +78,7 @@ export const sharedReducers = {
     ...featureTourReducer,
     ...referralInfoReducer,
     ...referralsReducer,
+    ...userPermissionsReducer,
     kt: ktSlice.reducer,
     securityCheckup: securityCheckupSlice.reducer,
     features: featuresReducer.reducer,
