@@ -1724,6 +1724,30 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ],
+      "Connect Gmail address": [
+        "Pripojte Gmailovú adresu"
+      ],
+      "Connect to Gmail": [
+        "Pripojiť ku Gmailu"
+      ],
+      "Continue to sign in": [
+        "Pokračovať na prihlásenie"
+      ],
+      "Disconnect": [
+        "Odpojiť"
+      ],
+      "Enter code": [
+        "Zadajte kód"
+      ],
+      "I don’t have my backup codes": [
+        "Nemám svoje záložné kódy"
+      ],
+      "Reconnect to Gmail": [
+        "Znova sa pripojiť ku Gmailu"
+      ],
+      "Verify another way": [
+        "Overiť iným spôsobom"
       ]
     },
     "action": {
@@ -4999,6 +5023,63 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Môžete importovať udalosti vo formáte iCal (ICS súbor). Tento súbor by mal mať maximálnu veľkosť ${ MAX_IMPORT_FILE_SIZE_STRING } a maximálne ${ MAX_IMPORT_EVENTS_STRING } udalostí. Ak je váš súbor väčší, prosím rozdeľte ho na menšie súbory."
+      ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Zabráňte spoločnosti Google v profilovaní vašej osoby. Gmail nemá prehľad o tom, čo robíte v aplikácii ${ MAIL_APP_NAME }"
+      ],
+      "No ads. No trackers.": [
+        "Žiadne reklamy. Žiadne sledovacie nástroje."
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "Pre pripojenie inej adresy Gmail odstráňte extra adresy Gmail, ktoré sa preposielajú na ${ BRAND_NAME }."
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "Na pripojenie ${ MAX_SYNC_PAID_USER } Gmailovej adresy navýšte úroveň na ${ planName }.",
+        "Na pripojenie až ${ MAX_SYNC_PAID_USER } Gmailových adries navýšte úroveň na ${ planName }.",
+        "Na pripojenie až ${ MAX_SYNC_PAID_USER } Gmailových adries navýšte úroveň na ${ planName }.",
+        "Na pripojenie až ${ MAX_SYNC_PAID_USER } Gmailových adries navýšte úroveň na ${ planName }."
+      ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "Navýšte úroveň na ${ planName } pre pripojenie až ${ MAX_SYNC_PAID_USER } účtov"
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Už nemáme prístup k ${ boldEmails }."
+      ],
+      "We've started importing your email from Gmail. We'll let you know when it's done.": [
+        "Začali sme importovať vaše emaily z Gmailu. Dáme vám vedieť, keď bude import hotový."
+      ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Už máte Gmailovú adresu presmerovanú do aplikácie ${ MAIL_APP_NAME }. Pripojte ju nižšie, aby ste mohli odosielať a prijímať emaily priamo z aplikácie ${ MAIL_APP_NAME }."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Teraz môžete posielať emaily z ${ BRAND_NAME } pomocou tejto adresy."
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "Preposielate ${ numAddressesOrSync } Gmailovú adresu do aplikácie ${ MAIL_APP_NAME }.",
+        "Preposielate ${ numAddressesOrSync } Gmailové adresy do aplikácie ${ MAIL_APP_NAME }.",
+        "Preposielate ${ numAddressesOrSync } Gmailových adries do aplikácie ${ MAIL_APP_NAME }.",
+        "Preposielate ${ numAddressesOrSync } Gmailových adries do aplikácie ${ MAIL_APP_NAME }."
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "Pripojili ste ${ MAX_SYNC_PAID_USER } Gmailovú adresu. Ak chcete pridať ďalšiu, najskôr odpojte jeden zo svojich pripojených účtov.",
+        "Pripojili ste ${ MAX_SYNC_PAID_USER } Gmailové adresy. Ak chcete pridať ďalšiu, najskôr odpojte jeden zo svojich pripojených účtov.",
+        "Pripojili ste ${ MAX_SYNC_PAID_USER } Gmailových adries. Ak chcete pridať ďalšiu, najskôr odpojte jeden zo svojich pripojených účtov.",
+        "Pripojili ste ${ MAX_SYNC_PAID_USER } Gmailových adries. Ak chcete pridať ďalšiu, najskôr odpojte jeden zo svojich pripojených účtov."
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "Do jedného externého účtu ste pripojili adresu v ${ MAIL_APP_NAME }."
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "Váš plán podporuje ${ MAX_SYNC_FREE_USER } Gmailovú adresu.",
+        "Váš plán podporuje ${ MAX_SYNC_FREE_USER } Gmailové adresy.",
+        "Váš plán podporuje ${ MAX_SYNC_FREE_USER } Gmailových adries.",
+        "Váš plán podporuje ${ MAX_SYNC_FREE_USER } Gmailových adries."
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "Váš plán podporuje najviac ${ MAX_SYNC_PAID_USER } Gmailovú adresu",
+        "Váš plán podporuje celkom ${ MAX_SYNC_PAID_USER } Gmailové adresy",
+        "Váš plán podporuje celkom ${ MAX_SYNC_PAID_USER } Gmailových adries",
+        "Váš plán podporuje celkom ${ MAX_SYNC_PAID_USER } Gmailových adries"
       ]
     },
     "description": {
@@ -7169,6 +7250,15 @@
       ],
       "Zero keys reactivated": [
         "Žiadne kľúče neboli znovu aktivované"
+      ],
+      "Address could not be added.": [
+        "Adresu nebolo možné pridať."
+      ],
+      "Address is already added to your account": [
+        "Adresa už bola pridaná do vášho účtu"
+      ],
+      "Incorrect recovery code. Please try again.": [
+        "Nesprávny obnovovací kód. Skúste to znova, prosím."
       ]
     },
     "error": {
@@ -12706,6 +12796,15 @@
       ],
       "Zoom meeting": [
         "Zoom míting"
+      ],
+      "Enter code": [
+        "Zadajte kód"
+      ],
+      "This password is used to login to your ${ BRAND_NAME } account": [
+        "Toto heslo sa používa na prihlásenie do vášho účtu ${ BRAND_NAME }"
+      ],
+      "You will not be asked for a one-time code or a security key.": [
+        "Zadanie jednorazového kódu alebo bezpečnostného kľúča nebude požadované."
       ]
     },
     "info": {
@@ -14744,6 +14843,15 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Enter name or email address": [
+        "Zadajte meno alebo emailovú adresu"
+      ],
+      "Invite people": [
+        "Pozvite ľudí"
+      ],
+      "Select which Gmail address to connect": [
+        "Vyberte, ktorú Gmailovú adresu chcete pripojiť"
       ]
     },
     "label": {
@@ -24804,6 +24912,27 @@
       ],
       "Your subscriptions": [
         "Vaše predplatné"
+      ],
+      "Are you sure you want to disconnect this address?": [
+        "Naozaj chcete odpojiť túto adresu?"
+      ],
+      "Disconnected from Gmail": [
+        "Odpojené od Gmailu"
+      ],
+      "Edit group": [
+        "Upraviť skupinu"
+      ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Odosielajte a prijímajte Gmailovú poštu pomocou ${ MAIL_APP_NAME }"
+      ],
+      "Two-factor authentication disabled": [
+        "Dvojstupňové overenie vypnuté"
+      ],
+      "Use backup recovery code": [
+        "Použiť záložný kód na obnovenie"
+      ],
+      "You are all set": [
+        "Všetko je nastavené"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -26332,6 +26461,14 @@
       ],
       "Yearly, ${ untilString }": [
         "Ročne, ${ untilString }"
+      ]
+    },
+    "Group detail label": {
+      "Description:": [
+        "Popis:"
+      ],
+      "Group address:": [
+        "Skupinová adresa:"
       ]
     }
   }
