@@ -2,6 +2,7 @@ import {
     initEvent,
     serverEvent,
     startLogoutListener,
+    userPermissionsThunk,
     userSettingsThunk,
     userThunk,
     welcomeFlagsActions,
@@ -101,6 +102,7 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
         };
 
         const userPromise = loadUser();
+        dispatch(userPermissionsThunk()).catch(noop);
 
         const [userData] = await Promise.all([
             userPromise,
