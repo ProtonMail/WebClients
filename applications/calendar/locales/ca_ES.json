@@ -698,6 +698,9 @@
       "Reconnect": [
         "Reconnecta"
       ],
+      "Reconnect to Gmail": [
+        "Torneu a connectar-vos a Gmail"
+      ],
       "Reconnect to Zoom": [
         "Reconnecta a Zoom"
       ],
@@ -3153,6 +3156,15 @@
       "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
         "Això pot trigar uns minuts. Mentrestant, podeu continuar utilitzant ${ CALENDAR_APP_NAME } com de costum."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Això podria passar si s'han suprimit els permisos o s'ha canviat la contrasenya."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Per continuar rebent i enviant missatges de Gmail a ${ BRAND_NAME }, torneu a connectar el vostre compte."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Per continuar rebent i enviant missatges de Gmail a ${ BRAND_NAME }, torneu a connectar els vostres comptes."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Per a garantir la màxima seguretat possible del vostre compte, configureu una frase de recuperació."
       ],
@@ -3170,6 +3182,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Utilitzeu aquesta guia per aconseguir que la vostra organització es beneficiï ràpidament de l'ecosistema d'encriptació i privadesa líder del sector del ${ BRAND_NAME }."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Ja no podem accedir a ${ boldEmails }."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Ens sap greu que marxeu. Si teniu un moment, us agrairíem molt que ens diguéssiu per què voleu cancel·lar la subscripció. Els vostres comentaris ens ajuden a fer que ${ BRAND_NAME } sigui millor per a tothom."
@@ -3511,6 +3526,9 @@
       ],
       "Account does not exist": [
         "El compte no existeix."
+      ],
+      "Address could not be added.": [
+        "No s'ha pogut afegir l'adreça."
       ],
       "Address primary private key not found": [
         "No s'ha trobat la clau privada primària de l'adreça"
@@ -3936,6 +3954,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Els noms d'algunes de les etiquetes superen el límit de caràcters màxim de ${ MAIL_APP_NAME }. Modifiqueu la importació per tal d'editar-ne els noms."
       ],
+      "Something went wrong while fetching available domains": [
+        "Alguna cosa ha anat malament mentre s'obtenien els dominis disponibles"
+      ],
       "Something went wrong. Please try again.": [
         "Alguna cosa ha anat malament. Torneu a provar-ho."
       ],
@@ -4004,9 +4025,6 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Aquest missatge pot contenir adreces URL que no es puguin obrir amb el navegador actual."
-      ],
-      "This offer is not available in your country": [
-        "Aquesta oferta no està disponible al vostre país"
       ],
       "Trusted keys are not valid for sending": [
         "Les claus de confiança no són vàlides per enviar-les"
@@ -5520,6 +5538,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Assegureu-vos una comunicació totalment privada i xifrada. Aconseguiu ara la vostra adreça gratuïta de correu electrònic de ${ BRAND_NAME }."
       ],
+      "Enter code": [
+        "Introduir el codi"
+      ],
       "Enter the code from your authenticator app": [
         "Introduïu el codi de la vostra aplicació d'autenticació."
       ],
@@ -5625,6 +5646,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no trobeu el correu electrònic a la safata d'entrada, comproveu la vostra carpeta de correu brossa."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Si heu perdut l'accés a la vostra aplicació d'autenticació, podeu fer servir 1 dels 16 codis de recuperació de seguretat que se us van proporcionar quan vau configurar l'autenticació de doble factor. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Si passeu a un pla inferior, perdreu l'accés a les funcions de pagament de ${ MAIL_APP_NAME } i ${ VPN_APP_NAME }."
@@ -6284,9 +6308,6 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Quan us connecteu a la VPN, aquesta utilitza tecnologia de xifratge per ocultar la vostra adreça IP (un codi únic assignat al vostre dispositiu)."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quan configureu l'autenticació en dos passos, et proporcionem codis de recuperació que pots utilitzar per iniciar sessió si perds l'accés a l'aplicació d'autenticació."
-      ],
       "Where will the appointment take place?": [
         "On tindrà lloc la cita?"
       ],
@@ -6867,9 +6888,6 @@
       "Country": [
         "País"
       ],
-      "Create shareable pages where people can book time with you.": [
-        "Creeu pàgines per compartir on les persones puguin reservar temps amb vosaltres."
-      ],
       "Credits": [
         "Crèdits"
       ],
@@ -7161,6 +7179,9 @@
       ],
       "Secondary time zone": [
         "Fus horari secundari"
+      ],
+      "Securely share parts of your schedule through a booking page you can send to anyone.": [
+        "Compartiu de manera segura parts de la vostra agenda mitjançant una pàgina de reserves que podeu enviar a tothom."
       ],
       "Show others when I'm busy": [
         "Mostra als altres quan estic ocupat"
@@ -8843,6 +8864,9 @@
       ],
       "Passphrase copied to clipboard": [
         "S'ha copiat la frase de contrasenya al porta-retalls"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "La vostra adreça de ${ BRAND_NAME } ja està a punt per fer-se servir"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11781,6 +11805,9 @@
       "Discard changes?": [
         "Voleu descartar els canvis?"
       ],
+      "Disconnected from Gmail": [
+        "Esteu desconnectat de Gmail"
+      ],
       "Does not repeat": [
         "No es repeteix"
       ],
@@ -12171,9 +12198,6 @@
       ],
       "Simplify password management": [
         "Simplifiqueu la gestió de contrasenyes"
-      ],
-      "Spring Sale": [
-        "Rebaixes de primavera"
       ],
       "Start a new import": [
         "Inicia una nova importació"

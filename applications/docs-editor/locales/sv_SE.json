@@ -442,6 +442,9 @@
       "There was an error processing updates to the document. Please reload the page and try again.": [
         "Det uppstod ett fel vid bearbetning av uppdateringar av dokumentet. Ladda om sidan och försök igen."
       ],
+      "This spreadsheet is incompatible with the current client version. Please try reloading the client. If the error persists, please contact support.": [
+        "Detta kalkylblad är inkompatibelt med den nuvarande klientversionen. Försök att ladda om klienten. Om felet kvarstår, kontakta support."
+      ],
       "Tried to import Sheet data into Lexical": [
         "Försökte importera arkdata till Lexical"
       ],
@@ -1303,6 +1306,9 @@
     "sheets_2025:Spreadsheet editor menubar view menu": {
       "Formula bar": [
         "Formelfält"
+      ],
+      "Freeze": [
+        "Frys"
       ],
       "Show": [
         "Visa"

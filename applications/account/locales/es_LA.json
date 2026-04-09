@@ -315,6 +315,12 @@
       "Connect apps and devices": [
         "Conectar apps y dispositivos"
       ],
+      "Connect Gmail address": [
+        "Conectar dirección de Gmail"
+      ],
+      "Connect to Gmail": [
+        "Conectar a Gmail"
+      ],
       "Connect to video conferencing": [
         "Conectarse a la videoconferencia"
       ],
@@ -330,6 +336,9 @@
       "Contact support": [
         "Contactar con soporte"
       ],
+      "Contact Support Center": [
+        "Contactar centro de soporte"
+      ],
       "Contact us": [
         "Contáctenos"
       ],
@@ -344,6 +353,9 @@
       ],
       "Continue to ${ planOrAppName }": [
         "Continuar con ${ planOrAppName }"
+      ],
+      "Continue to sign in": [
+        "Continuar para iniciar sesión"
       ],
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "Continuar con ${ nameToDisplay } ${ maybeEmailInBrackets }"
@@ -552,6 +564,9 @@
       "Discard Changes": [
         "Descartar cambios"
       ],
+      "Disconnect": [
+        "Desconectar"
+      ],
       "Discover ${ planName }": [
         "Descubra ${ planName }"
       ],
@@ -695,6 +710,9 @@
       ],
       "Encrypt and export": [
         "Cifrar y exportar"
+      ],
+      "Enter code": [
+        "Ingresar código"
       ],
       "Explore ${ target }": [
         "Descubra ${ target }"
@@ -878,6 +896,15 @@
       ],
       "Hide plan features": [
         "Ocultar funcionalidades del plan"
+      ],
+      "I don't have my 2FA device": [
+        "No tengo mi dispositivo 2FA"
+      ],
+      "I don't have my key": [
+        "No tengo mi clave"
+      ],
+      "I don’t have my backup codes": [
+        "No tengo mis códigos de respaldo"
       ],
       "Ignore": [
         "Ignorar"
@@ -1098,6 +1125,9 @@
       "Or": [
         "O"
       ],
+      "Or remove forwarding address": [
+        "O eliminar dirección de reenvío"
+      ],
       "Or use a different Gmail address": [
         "O use otra dirección de Gmail"
       ],
@@ -1142,6 +1172,12 @@
       ],
       "Reconnect": [
         "Reconectar"
+      ],
+      "Reconnect to Gmail": [
+        "Volver a conectar a Gmail"
+      ],
+      "Recover account": [
+        "Recuperar cuenta"
       ],
       "Recover data": [
         "Recuperar datos"
@@ -1664,6 +1700,9 @@
       ],
       "Verify account": [
         "Verificar cuenta"
+      ],
+      "Verify another way": [
+        "Verificar de otra manera"
       ],
       "Verify code": [
         "Verificar código"
@@ -4775,6 +4814,11 @@
       "Are you sure you want to delete this group?": [
         "¿Está seguro de que quiere eliminar este grupo?"
       ],
+      "Please note that if you delete the group ${ displayGroupName }, it will be permanently removed.": [
+        "Tenga en cuenta que si elimina el grupo ${ displayGroupName }, este se eliminará de forma permanente."
+      ]
+    },
+    "Delete group prompt with email": {
       "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
         "Tenga en cuenta que si elimina el grupo ${ displayGroupName } (con la dirección ${ displayGroupAddressEmail }), ya no podrá recibir correos electrónicos usando esta dirección."
       ]
@@ -4815,6 +4859,9 @@
       "Available with ${ title }": [
         "Disponible con ${ title }"
       ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Bloquee la capacidad de Google de perfilarle. ${ MAIL_APP_NAME } no puede ver lo que usted hace en Gmail"
+      ],
       "Bring over email, calendar events, and contacts from another provider.": [
         "Traiga correos electrónicos, eventos de calendario y contactos desde otro proveedor."
       ],
@@ -4841,6 +4888,9 @@
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Sincronice fácilmente los archivos a la nube desde su escritorio y acceda a ellos desde su dispositivo móvil."
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Los correos electrónicos enviados a ${ connectedAddressText } ahora aparecerán en ${ MAIL_APP_NAME }."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Active ${ PROTON_SENTINEL_NAME } para acceder a estas funciones"
@@ -4896,8 +4946,14 @@
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "Haga su pie de página único, muestre su marca, no la nuestra."
       ],
+      "No ads. No trackers.": [
+        "Sin anuncios. Sin rastreadores."
+      ],
       "No one in your organization can connect to shared servers.": [
         "Nadie en su organización puede conectarse a servidores compartidos."
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "Lea, responda y manténgase al día con Gmail desde dentro de ${ MAIL_APP_NAME }"
       ],
       "Send a code to your recovery email or phone": [
         "Envíe un código a su correo electrónico o teléfono de recuperación"
@@ -4911,6 +4967,22 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Simplifique la sincronización y la programación con calendarios compartidos."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Esto puede suceder si se eliminaron permisos o si cambió su contraseña."
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "Para conectar una dirección de Gmail diferente, borre las direcciones de Gmail adicionales que se reenvían a ${ BRAND_NAME }."
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "Para conectar hasta ${ MAX_SYNC_PAID_USER } dirección de Gmail, actualice a ${ planName }.",
+        "Para conectar hasta ${ MAX_SYNC_PAID_USER } direcciones de Gmail, actualice a ${ planName }."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Para continuar recibiendo y enviando mensajes de Gmail en ${ BRAND_NAME }, reconecte su cuenta."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Para continuar recibiendo y enviando mensajes de Gmail en ${ BRAND_NAME }, reconecte sus cuentas."
+      ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Para importar mediante un archivo CSV o VCF, asegúrese de que este no supere los ${ MAX_IMPORT_FILE_SIZE_STRING } o los ${ maxContactString } contactos. Si el archivo es más grande, divídalo en varios archivos más pequeños. ${ learnMoreLink }."
       ],
@@ -4923,14 +4995,32 @@
       "Track the status and activity of your referrals": [
         "Rastree el estado y actividad de sus referidos"
       ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "Actualice a ${ planName } para conectar hasta ${ MAX_SYNC_PAID_USER } cuentas"
+      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Mejore su plan para obtener ${ activatePmUser } para una dirección de correo electrónico más corta y fácil de recordar, además de su dirección actual."
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Use esta guía para que su organización se beneficie inmediatamente del cifrado y ecosistema de privacidad líderes en la industria de ${ BRAND_NAME }."
       ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Ya no podemos acceder a ${ boldEmails }."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "Importaremos sus correos electrónicos antiguos y conectaremos su Gmail a ${ MAIL_APP_NAME } para que los nuevos mensajes aparezcan automáticamente"
+      ],
+      "We've started importing your email from Gmail. We'll let you know when it's done.": [
+        "Estamos importando su correo electrónico de Gmail. Le avisaremos cuando finalicemos."
+      ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Lamentamos que se vaya. Si tiene un momento, agradeceríamos mucho saber por qué desea cancelar. Sus comentarios nos ayudan a mejorar ${ BRAND_NAME } para todos."
+      ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Ya tiene una dirección de Gmail que reenvía a ${ MAIL_APP_NAME }. Conéctela a continuación para enviar y recibir correos electrónicos directamente desde ${ MAIL_APP_NAME }."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Usted ya tiene direcciones de Gmail reenviando a ${ MAIL_APP_NAME }. Conecte una a continuación para enviar y recibir correos electrónicos directamente desde ${ MAIL_APP_NAME }."
       ],
       "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
         "Puede personalizar la lista de dominios donde ciertas funciones automáticas en la extensión del navegador ${ PASS_APP_NAME } (completado automático, sugerencia automática, guardado automático) no deberían de ejecutarse."
@@ -4940,6 +5030,34 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puede importar eventos en formato iCal (archivos ICS). El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener hasta ${ MAX_IMPORT_EVENTS_STRING } eventos.\nSi el archivo es más grande, debe dividirlo en archivos más pequeños."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Ahora puede enviar correos electrónicos desde ${ BRAND_NAME } usando esta dirección."
+      ],
+      "You can still login with this address and re-connect at any time.": [
+        "Todavía puede iniciar sesión con esta dirección y volver a conectarse en cualquier momento."
+      ],
+      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
+        "Ya no podrá usar ${ address.Email } para recibir y enviar correos electrónicos en ${ BRAND_NAME }. Tenga en cuenta también que los mensajes enviados a esta dirección desde ${ BRAND_NAME } ya no estarán cifrados de extremo a extremo."
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "Usted está reenviando ${ numAddressesOrSync } dirección de Gmail a ${ MAIL_APP_NAME }.",
+        "Usted está reenviando ${ numAddressesOrSync } direcciones de Gmail a ${ MAIL_APP_NAME }."
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "Ha conectado ${ MAX_SYNC_PAID_USER } dirección de Gmail. Para agregar otra, primero desactive una de sus cuentas conectadas.",
+        "Ha conectado ${ MAX_SYNC_PAID_USER } direcciones de Gmail. Para añadir otra, primero deshabilite una de sus cuentas conectadas."
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "Ha conectado una dirección de cuenta externa a ${ MAIL_APP_NAME }."
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "Su plan admite ${ MAX_SYNC_FREE_USER } dirección de Gmail.",
+        "Su plan admite ${ MAX_SYNC_FREE_USER } direcciones de Gmail."
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "Su plan admite un total de ${ MAX_SYNC_PAID_USER } dirección de Gmail",
+        "Su plan soporta un total de ${ MAX_SYNC_PAID_USER } direcciones de Gmail"
       ]
     },
     "description": {
@@ -6426,6 +6544,12 @@
       "Address cannot be yours": [
         "La dirección no puede ser suya"
       ],
+      "Address could not be added.": [
+        "No se pudo agregar la dirección."
+      ],
+      "Address is already added to your account": [
+        "La dirección ya está agregada a su cuenta"
+      ],
       "Address primary private key not found": [
         "Clave privada principal de la dirección no encontrada"
       ],
@@ -6610,6 +6734,9 @@
       ],
       "Incorrect password": [
         "Contraseña incorrecta"
+      ],
+      "Incorrect recovery code. Please try again.": [
+        "Código de recuperación incorrecto. Inténtelo de nuevo."
       ],
       "Incorrect second password. Please try again.": [
         "La segunda contraseña no es correcta. Inténtelo de nuevo."
@@ -6899,8 +7026,11 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Algunos nombres de etiquetas exceden el límite máximo de caracteres de ${ MAIL_APP_NAME }. Personalice la importación y edite estos nombres."
       ],
-      "Something went wrong connecting your TV. Scan the QR code on your TV once more.": [
-        "Hubo un problema al conectar su TV. Escanee el código QR de su TV una vez más."
+      "Something went wrong while creating the address": [
+        "Algo salió mal al crear la dirección"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Ocurrió un error al obtener los dominios disponibles"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Hubo un problema. ${ refresh } para continuar. Si aún ve este mensaje de error, contacte a nuestro ${ supportTeam }."
@@ -6988,9 +7118,6 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Este mensaje podría contener enlaces que no pueden abrirse correctamente en el navegador actual."
-      ],
-      "This offer is not available in your country": [
-        "Esta oferta no está disponible en su país"
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Necesita restaurar sus privilegios de administración para crear cuentas no privadas y acceder a las mismas."
@@ -8244,9 +8371,12 @@
         "Servicios"
       ]
     },
-    "Group address title": {
-      "Group address": [
-        "Dirección del grupo"
+    "Group detail label": {
+      "Description:": [
+        "Descripción:"
+      ],
+      "Group address:": [
+        "Dirección del grupo:"
       ]
     },
     "Group member count": {
@@ -9333,6 +9463,9 @@
         "Agregar servidor (${ availableAddedCount } disponible)",
         "Agregar servidor (${ availableAddedCount } disponibles)"
       ],
+      "Add users by name or email to this group.": [
+        "Agregue usuarios por nombre o correo electrónico a este grupo."
+      ],
       "Add video conferencing links to calendar invitations": [
         "Añadir enlaces de videoconferencia a las invitaciones del calendario"
       ],
@@ -9432,6 +9565,9 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Un alias de correo funciona como una dirección de correo electrónico, pero reduce el spam y mantiene la dirección e identidad real ocultas."
       ],
+      "An email with a verification code was just sent to ${ recoveryEmailElement }. If you can’t find the message in your inbox, please check your spam folder.": [
+        "Se acaba de enviar un correo electrónico con un código de verificación a ${ recoveryEmailElement }. Si no encuentra el mensaje en su bandeja de entrada, revise su carpeta de spam."
+      ],
       "An error occurred while communicating with **${ applicationName }**": [
         "Ocurrió un error al comunicarse con **${ applicationName }**"
       ],
@@ -9443,6 +9579,9 @@
       ],
       "An import is paused because your storage is almost full.": [
         "Se ha pausado una importación porque su almacenamiento está casi lleno."
+      ],
+      "An SMS with a verification code was just sent to ${ recoveryPhoneElement }.": [
+        "Se acaba de enviar un SMS con un código de verificación a ${ recoveryPhoneElement }."
       ],
       "and": [
         "y"
@@ -9692,6 +9831,9 @@
       ],
       "Connection data will be available in around 1 hour.": [
         "Los datos de conexión estarán disponible en aproximadamente 1 hora."
+      ],
+      "Contact our Customer Support team to disable two-factor authentication for your account, or recover your account another way.": [
+        "Póngase en contacto con nuestro equipo de soporte al cliente para desactivar la autenticación de dos factores de su cuenta o para recuperarla de otra manera."
       ],
       "Continue": [
         "Continuar"
@@ -10022,9 +10164,6 @@
       "End-to-end email encryption is disabled for this group. It can be enabled.": [
         "El cifrado de extremo a extremo de los correos electrónicos de grupo está desactivado para este grupo. Se puede activar."
       ],
-      "End-to-end email encryption is enabled for this group.": [
-        "El cifrado de extremo a extremo de los correos electrónicos de grupo está activado para este grupo."
-      ],
       "End-to-end encrypted": [
         "Cifrado de extremo a extremo"
       ],
@@ -10042,6 +10181,9 @@
       ],
       "Enter a password to finalize your ${ BRAND_NAME } Account and start using ${ VPN_APP_NAME } across all your devices!": [
         "Ingrese una contraseña para finalizar su cuenta de ${ BRAND_NAME } y ¡empezar a usar ${ VPN_APP_NAME } en todos sus dispositivos!"
+      ],
+      "Enter code": [
+        "Ingresar código"
       ],
       "Enter key manually instead": [
         "Ingrese la clave manualmente"
@@ -10333,6 +10475,9 @@
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Si pierde el dispositivo activado para dos factores, estos códigos pueden usarse en lugar del código de autenticación de dos factores de 6 dígitos para iniciar sesión en la cuenta. Cada código solo se puede usar una vez."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Si perdió el acceso a su aplicación de autenticación, puede usar 1 de los 16 códigos de recuperación de copia de seguridad proporcionados cuando configuró la autenticación de dos factores. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Si procede con darse de baja, perderá el acceso a las funciones de pago de ${ MAIL_APP_NAME } y ${ VPN_APP_NAME }."
@@ -10751,11 +10896,17 @@
       "No folder selected": [
         "Ninguna carpeta seleccionada"
       ],
+      "No forwarding history.": [
+        "Sin historial de reenvío."
+      ],
       "No gateways": [
         "Sin puertas de enlace"
       ],
       "No Gateways yet": [
         "Aún no hay puertas de enlace"
+      ],
+      "No import history.": [
+        "Sin historial de importación."
       ],
       "No label selected": [
         "Ninguna etiqueta seleccionada"
@@ -11169,6 +11320,9 @@
       "Securing your account": [
         "Asegurando la cuenta"
       ],
+      "Select a group to view its members and settings.": [
+        "Seleccione un grupo para ver sus miembros y ajustes."
+      ],
       "Select one or multiple user affiliations": [
         "Seleccione una o varias afiliaciones para el usuario"
       ],
@@ -11301,6 +11455,9 @@
       ],
       "Something went wrong. Please try again or contact customer support.": [
         "Algo salió mal. Intente de nuevo o contacte con soporte al cliente."
+      ],
+      "Something went wrong. Please try again.": [
+        "Algo salió mal. Inténtelo de nuevo."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Especifique el dominio que puede autenticarse con SAML SSO."
@@ -11565,6 +11722,9 @@
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Este mensaje no llegará al equipo de soporte. Si tiene algún problema con nuestro servicio o necesita más asistencia de nuestra parte ${ supportLink }."
       ],
+      "This password is used to login to your ${ BRAND_NAME } account": [
+        "Esta contraseña se usa para iniciar sesión en su cuenta de ${ BRAND_NAME }"
+      ],
       "This service is not available to users signing in with single sign-on.": [
         "Este servicio no está disponible para los usuarios que inician sesión con inicio de sesión único (SSO)."
       ],
@@ -11678,6 +11838,12 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Para luchar contra el spam y el abuso, verifique que es humano."
+      ],
+      "To help keep your account safe, we want to make sure it's really you trying to sign in.": [
+        "Para ayudar a mantener su cuenta segura, queremos asegurarnos de que sea usted quien intente iniciar sesión."
+      ],
+      "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
+        "Para ayudar a mantener su cuenta segura, queremos asegurarnos de que sea usted quien intente iniciar sesión."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Para importar eventos, primero cree un calendario en ${ CALENDAR_APP_NAME }. Aquí es donde aparecerán los eventos tras la importación."
@@ -12030,9 +12196,6 @@
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Cuando se elimina un servidor de una puerta de enlace, este entra en un período de desactivación de 10 días. Estos servidores se pueden agregar a una nueva puerta de enlace, pero no se puede cambiar su país."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Cuando configura la autenticación de dos factores, nosotros proporcionamos códigos de recuperación que podrá usar para iniciar sesión si llega a perder acceso a su app de autenticación."
-      ],
       "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
         "Cuando esté listo para activar la dirección, escanee el código QR o use el enlace del cupón."
       ],
@@ -12174,6 +12337,9 @@
       "You can now return to the application to continue": [
         "Ahora puede regresar a la aplicación para continuar."
       ],
+      "You can now sign in to your account again.": [
+        "Puede iniciar sesión en su cuenta nuevamente."
+      ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "Puede activar las notificaciones para recibir alertas cuando lleguen mensajes nuevos a esta carpeta."
       ],
@@ -12281,6 +12447,9 @@
       ],
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
         "NO podrá descifrar ningún mensaje, archivo u otros datos cifrados con esta clave. Todos los datos firmados con esta clave ya no serán verificados por las aplicaciones de ${ BRAND_NAME }."
+      ],
+      "You will not be asked for a one-time code or a security key.": [
+        "No se le pedirá un código de un solo uso ni una llave de seguridad."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pronto será redirigido a PayPal para verificar el pago."
@@ -13121,9 +13290,6 @@
       "Add extra services": [
         "Agregar servicios adicionales"
       ],
-      "Add group member": [
-        "Agregar un miembro al grupo"
-      ],
       "Additional comments": [
         "Comentarios adicionales"
       ],
@@ -13616,6 +13782,9 @@
       "End weekday": [
         "Último día de la semana"
       ],
+      "Enter name or email address": [
+        "Ingrese nombre o dirección de correo"
+      ],
       "Enter password": [
         "Ingresar contraseña"
       ],
@@ -13718,9 +13887,6 @@
       "Group address": [
         "Dirección del grupo"
       ],
-      "Group members": [
-        "Miembros del grupo"
-      ],
       "Group name": [
         "Nombre del grupo"
       ],
@@ -13754,9 +13920,6 @@
       "Import interval": [
         "Importar intervalo"
       ],
-      "Import recent mails": [
-        "Importar correos recientes"
-      ],
       "Import to email address": [
         "Importar a la dirección de correo"
       ],
@@ -13777,6 +13940,9 @@
       ],
       "Interval": [
         "Intervalo"
+      ],
+      "Invite people": [
+        "Invitar personas"
       ],
       "Invite via email": [
         "Invitar con un correo electrónico"
@@ -14176,6 +14342,9 @@
       ],
       "Select Linux platform": [
         "Seleccione la plataforma de Linux"
+      ],
+      "Select which Gmail address to connect": [
+        "Seleccione qué dirección de Gmail desea conectar"
       ],
       "Send auto-reply": [
         "Enviar respuesta automática"
@@ -16900,6 +17069,9 @@
       "Two-factor authentication is not required anymore": [
         "La autenticación de dos factores ya no es requerida"
       ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Su dirección de ${ BRAND_NAME } está lista para usarse"
+      ],
       "Zoom video conferencing settings have been updated": [
         "Se actualizaron los ajustes de videoconferencia de Zoom"
       ]
@@ -18236,9 +18408,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Se renueva por ${ renewPriceStr }, cancele en cualquier momento."
-      ],
-      "Sorry, this offer is not available for your account.": [
-        "Lo sentimos, esta oferta no está disponible para su cuenta."
       ],
       "Sorry, this offer is not available with your current plan.": [
         "Lo sentimos, esta oferta no está disponible con su plan actual."
@@ -20466,9 +20635,6 @@
         "${ FREE_PASS_ALIASES } alias de hide-my-email para combatir el spam",
         "${ FREE_PASS_ALIASES } alias de hide-my-email para combatir el spam"
       ],
-      "${ MAIL_APP_NAME } desktop app": [
-        "Aplicación de escritorio ${ MAIL_APP_NAME }"
-      ],
       "${ maxAddresses } address": [
         "${ maxAddresses } dirección",
         "${ maxAddresses } direcciones"
@@ -20476,10 +20642,6 @@
       "${ maxAddresses } email address": [
         "${ maxAddresses } dirección de correo electrónico",
         "${ maxAddresses } direcciones de correo electrónico"
-      ],
-      "${ maxAddresses } extra email address": [
-        "${ maxAddresses } dirección de correo electrónico extra",
-        "${ maxAddresses } direcciones de correo electrónico extra"
       ],
       "${ maxAddresses } extra email address for you": [
         "${ maxAddresses } dirección de correo electrónico adicional para usted",
@@ -20511,9 +20673,6 @@
       ],
       "${ value } total encrypted storage": [
         "${ value } de almacenamiento cifrado total"
-      ],
-      "${ value } total storage": [
-        "${ value } de almacenamiento total"
       ],
       "${ VPN_CONNECTIONS } high-speed VPN connection": [
         "${ VPN_CONNECTIONS } conexión VPN de alta velocidad",
@@ -20763,9 +20922,6 @@
       "Ultra fast and private VPN": [
         "VPN ultrarrápida y privada"
       ],
-      "Unlimited folders, labels, and filters": [
-        "Carpetas, etiquetas y filtros ilimitados"
-      ],
       "Unlimited hide-my-email aliases": [
         "hide-my-email alias ilimitados"
       ],
@@ -20789,9 +20945,6 @@
       ],
       "Use your email, or ${ externalButton }": [
         "Use su correo electrónico u ${ externalButton }"
-      ],
-      "Use your own email domain": [
-        "Use su propio dominio de correo electrónico"
       ],
       "use your own email.": [
         "use su propio correo electrónico."
@@ -22899,6 +23052,9 @@
       "An address for each role": [
         "Una dirección para cada rol"
       ],
+      "An error occurred": [
+        "Ocurrió un error"
+      ],
       "Annual": [
         "Anual"
       ],
@@ -22926,6 +23082,9 @@
       "Are you sure you want to close?": [
         "¿En verdad desea cerrar?"
       ],
+      "Are you sure you want to disconnect this address?": [
+        "¿En verdad desea desconectar esta dirección?"
+      ],
       "Are you sure?": [
         "¿Está seguro?"
       ],
@@ -22949,6 +23108,9 @@
       ],
       "Bridge for ${ platform }": [
         "Bridge para ${ platform }"
+      ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Traiga su Gmail a ${ MAIL_APP_NAME }"
       ],
       "Browser extensions": [
         "Extensiones de navegador"
@@ -23088,6 +23250,9 @@
       ],
       "Create Gateway": [
         "Crear puerta de enlace"
+      ],
+      "Create group": [
+        "Crear grupo"
       ],
       "Create multiple user accounts": [
         "Crear múltiples cuentas de usuario"
@@ -23240,9 +23405,6 @@
       "Device": [
         "Dispositivo"
       ],
-      "Device connected!": [
-        "¡Dispositivo conectado!"
-      ],
       "Device name": [
         "Nombre del dispositivo"
       ],
@@ -23263,6 +23425,9 @@
       ],
       "Discard changes?": [
         "¿Descartar cambios?"
+      ],
+      "Disconnected from Gmail": [
+        "Desconectado de Gmail"
       ],
       "Display name and signature": [
         "Nombre a mostrar y firma"
@@ -23326,6 +23491,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Editar puerta de enlace ${ currentName }"
+      ],
+      "Edit group": [
+        "Editar grupo"
       ],
       "Edit invoice note": [
         "Editar la nota de la factura"
@@ -23995,6 +24163,9 @@
       "Select when you want this notification to be sent": [
         "Seleccione cuándo quiere que se envíe esta notificación"
       ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Enviar y recibir Gmail usando ${ MAIL_APP_NAME }"
+      ],
       "Send email reminders?": [
         "¿Enviar recordatorios por correo electrónico?"
       ],
@@ -24106,9 +24277,6 @@
       "Special Offer": [
         "Oferta especial"
       ],
-      "Spring Sale": [
-        "Oferta de primavera"
-      ],
       "Start a new import": [
         "Iniciar una importación nueva"
       ],
@@ -24194,11 +24362,11 @@
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Active ${ DARK_WEB_MONITORING_NAME }"
       ],
-      "TV sign in": [
-        "Inicio de sesión en TV"
-      ],
       "Two-factor authentication": [
         "Autenticación de dos factores"
+      ],
+      "Two-factor authentication disabled": [
+        "Autenticación de dos factores desactivada"
       ],
       "Two-factor authentication enforcement": [
         "Autenticación de dos factores requerida"
@@ -24247,6 +24415,9 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Use ${ VPN_SHORT_APP_NAME } para la privacidad de los datos"
+      ],
+      "Use backup recovery code": [
+        "Usar código de recuperación de copia de seguridad"
       ],
       "User": [
         "Usuario"
@@ -24319,6 +24490,9 @@
       ],
       "WireGuard configuration": [
         "Configuración de WireGuard"
+      ],
+      "You are all set": [
+        "Ya está todo listo"
       ],
       "You can now create unlimited folders and labels": [
         "Ahora puede crear carpetas y etiquetas ilimitadas."

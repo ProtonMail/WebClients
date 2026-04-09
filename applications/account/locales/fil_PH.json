@@ -4533,9 +4533,6 @@
     "Delete group prompt": {
       "Are you sure you want to delete this group?": [
         "Sigurado ka bang gusto mong i-delete ang pangkat na ito?"
-      ],
-      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
-        "Pakitandaan na kung i-delete ang pangkat na ${ displayGroupName } (na may address na ${ displayGroupAddressEmail }), hindi na makakatanggap ng mga email gamit ang address nito."
       ]
     },
     "Delinquent modal title": {
@@ -7684,11 +7681,6 @@
         "Mga Serbisyo"
       ]
     },
-    "Group address title": {
-      "Group address": [
-        "Address ng pangkat"
-      ]
-    },
     "Group member count": {
       "${ memberCount } member": [
         "${ memberCount } na miyembro",
@@ -9351,9 +9343,6 @@
       ],
       "End-to-end email encryption is disabled for this group. It can be enabled.": [
         "Hindi pinagana ang end-to-end na encryption sa email para sa pangkat na ito. Maaari itong paganahin."
-      ],
-      "End-to-end email encryption is enabled for this group.": [
-        "Pinagana ang end-to-end na encryption sa email para sa pangkat na ito."
       ],
       "End-to-end encrypted": [
         "End-to-end na naka-encrypt"
@@ -12220,9 +12209,6 @@
       "Add all organization members": [
         "Idagdag ang lahat ng miyembro ng organisasyon"
       ],
-      "Add group member": [
-        "Magdagdag ng miyembro ng pangkat"
-      ],
       "Address": [
         "Address"
       ],
@@ -12786,9 +12772,6 @@
       ],
       "Group address": [
         "Address ng pangkat"
-      ],
-      "Group members": [
-        "Mga miyembro ng pangkat"
       ],
       "Group name": [
         "Pangalan ng pangkat"
@@ -19077,9 +19060,6 @@
         "${ FREE_PASS_ALIASES } na hide-my-email na alias upang labanan ang spam",
         "${ FREE_PASS_ALIASES } na hide-my-email na mga alias upang labanan ang spam"
       ],
-      "${ MAIL_APP_NAME } desktop app": [
-        "${ MAIL_APP_NAME } desktop app"
-      ],
       "${ maxAddresses } address": [
         "${ maxAddresses } address",
         "${ maxAddresses } na address"
@@ -19087,10 +19067,6 @@
       "${ maxAddresses } email address": [
         "${ maxAddresses } email address",
         "${ maxAddresses } na email address"
-      ],
-      "${ maxAddresses } extra email address": [
-        "${ maxAddresses } karagdagang email address",
-        "${ maxAddresses } na karagdagang email address"
       ],
       "${ maxCalendars } calendar": [
         "${ maxCalendars } kalendaryo",
@@ -19112,9 +19088,6 @@
       ],
       "${ value } of secure storage per user": [
         "${ value } ng secure na storage bawat user"
-      ],
-      "${ value } total storage": [
-        "${ value } kabuuang storage"
       ],
       "${ VPN_CONNECTIONS } high-speed VPN connection": [
         "${ VPN_CONNECTIONS } high-speed na koneksyon sa VPN",
@@ -19340,9 +19313,6 @@
       "Ultra fast and private VPN": [
         "Napakabilis at pribadong VPN"
       ],
-      "Unlimited folders, labels, and filters": [
-        "Unlimited na mga folder, label, at filter"
-      ],
       "Unlimited hide-my-email aliases": [
         "Unlimited na mga hide-my-email alias"
       ],
@@ -19366,9 +19336,6 @@
       ],
       "Use your email, or ${ externalButton }": [
         "Gamitin ang iyong email o ${ externalButton }"
-      ],
-      "Use your own email domain": [
-        "Gamitin ang sariling domain ng email"
       ],
       "use your own email.": [
         "gamitin ang sariling email."
@@ -21686,9 +21653,6 @@
       "Device": [
         "Device"
       ],
-      "Device connected!": [
-        "Nakakonekta ang device!"
-      ],
       "Device name": [
         "Pangalan ng device"
       ],
@@ -22597,9 +22561,6 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "I-on ang ${ DARK_WEB_MONITORING_NAME }"
-      ],
-      "TV sign in": [
-        "Pag-sign in sa TV"
       ],
       "Two-factor authentication": [
         "Two-factor authentication"

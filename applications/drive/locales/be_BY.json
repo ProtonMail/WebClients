@@ -819,6 +819,9 @@
       "Reconnect": [
         "Перападключыцца"
       ],
+      "Reconnect to Gmail": [
+        "Перападключыцца да Gmail"
+      ],
       "Recover data": [
         "Аднавіць даныя"
       ],
@@ -3064,6 +3067,15 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Спрасціце сінхранізацыю і планаванне з дапамогай абагуленых календароў."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Гэта магло адбыцца з-за таго, што дазволы былі выдалены або ваш пароль зменены."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Перападключыце свой уліковы запіс, каб працягнуць атрыманне і адпраўку паведамленняў Gmail у ${ BRAND_NAME }."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Перападключыце свае ўліковыя запісы, каб працягнуць атрыманне і адпраўку паведамленняў Gmail у ${ BRAND_NAME }."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Задайце фразу аднаўлення для забеспячэння свайму ўліковаму запісу найвышэйшага з магчымых узроўняў абароны."
       ],
@@ -3084,6 +3096,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Выкарыстоўвайце гэты дапаможнік, каб ваша арганізацыя хутка змагла атрымаць перавагі ад ${ BRAND_NAME }. Дадзеная экасістэма з'яўляецца адной з лепшых у галіне шыфравання і прыватнасці."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Больш не ўдаецца атрымаць доступ да ${ boldEmails }."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Нам шкада, што вы пакідаеце нас. Мы будзем вам вельмі ўдзячныя, калі вы знойдзеце крыху часу паведаміць аб прычынах скасавання сваёй падпіскі. Вашы водгукі дапамагаюць зрабіць ${ BRAND_NAME } яшчэ лепш для кожнага карыстальніка."
@@ -3367,6 +3382,9 @@
       ],
       "Account does not exist": [
         "Уліковы запіс не існуе"
+      ],
+      "Address could not be added.": [
+        "Немагчыма дадаць адрас."
       ],
       "Address primary private key not found": [
         "Асноўны закрыты ключ адраса не знойдзены"
@@ -3827,6 +3845,9 @@
       "Something went wrong during folder listing": [
         "Нешта пайшло не так падчас пераліку папак."
       ],
+      "Something went wrong while fetching available domains": [
+        "Нешта пайшло не так пры атрыманні даступных даменаў"
+      ],
       "Something went wrong with search. Please try again later.": [
         "Нешта пайшло не так з пошукам. Паспрабуйце яшчэ раз пазней."
       ],
@@ -3925,9 +3946,6 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Гэта паведамленне можа змяшчаць некаторыя спасылкі на URL-адрасы, якія ваш бягучы браўзер не зможа правільна адкрыць."
-      ],
-      "This offer is not available in your country": [
-        "Гэта прапанова недаступна ў вашай краіне"
       ],
       "Try using only letters, numerals, and _.-": [
         "Паспрабуйце выкарыстоўваць толькі літары, лічбы і _.-"
@@ -5720,6 +5738,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Забяспечце цалкам прыватную і зашыфраваную сувязь. Атрымайце бясплатны адрас электроннай пошты ${ BRAND_NAME }."
       ],
+      "Enter code": [
+        "Увядзіце код"
+      ],
       "Enter password": [
         "Увядзіце пароль"
       ],
@@ -6082,6 +6103,24 @@
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Большасць агульнадаступных сетак Wi-Fi з'яўляюцца бяспечнымі, але ў некаторых адсутнічаюць функцыі бяспекі і гэта падвяргае вас кіберпагрозам. VPN шыфруе трафік і абараняе ваша падключэнне."
+      ],
+      "Move ${ dragCount } item": [
+        "Перамясціць ${ dragCount } элемент",
+        "Перамясціць ${ dragCount } элементы",
+        "Перамясціць ${ dragCount } элементаў",
+        "Перамясціць ${ dragCount } элементаў"
+      ],
+      "Move ${ fileCount } file": [
+        "Перамясціць ${ fileCount } файл",
+        "Перамясціць ${ fileCount } файлы",
+        "Перамясціць ${ fileCount } файлаў",
+        "Перамясціць ${ fileCount } файлаў"
+      ],
+      "Move ${ folderCount } folder": [
+        "Перамясціць ${ folderCount } папку",
+        "Перамясціць ${ folderCount } папкі",
+        "Перамясціць ${ folderCount } папак",
+        "Перамясціць ${ folderCount } папак"
       ],
       "Moving files": [
         "Перамяшчэнне файлаў"
@@ -6928,9 +6967,6 @@
       ],
       "When you remove ${ deviceName } as a synced device, all folders added to My Computers from this device will be permanently deleted from ${ DRIVE_APP_NAME }.": [
         "Усе папкі, якія дададзены ў папку \"Мае камп'ютары\" з гэтай прылады, будуць незваротна выдалены з ${ DRIVE_APP_NAME } пры выдаленні прылады ${ deviceName } у якасці сінхранізаванай."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Пры наладжванні двухфактарнай аўтэнтыфікацыі, вы будзеце забяспечаны кодамі аднаўлення, якія зможаце выкарыстаць для ўваходу пры страце доступу да праграмы аўтэнтыфікацыі."
       ],
       "who": [
         "хто"
@@ -9941,9 +9977,6 @@
       "Public link access updated": [
         "Доступ да публічнай спасылкі абноўлены"
       ],
-      "Root folder failed to be loaded": [
-        "Не ўдалося загрузіць каранёвую папку"
-      ],
       "Selected item was not removed from your list": [
         "Выбраны элемент не быў выдалены з вашага спіса",
         "Выбраныя элементы не былі выдалены з вашага спіса",
@@ -9986,9 +10019,6 @@
       "Stopping the sharing of this item has failed": [
         "Збой спынення абагульвання гэтага элемента"
       ],
-      "Subfolder failed to be loaded": [
-        "Не ўдалося загрузіць падпапкі"
-      ],
       "The document failed to be created": [
         "Збой стварэння дакумента"
       ],
@@ -10012,6 +10042,9 @@
       ],
       "You stopped sharing this item": [
         "Вы спынілі абагульванне гэтага элемента"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Ваш адрас ${ BRAND_NAME } гатовы да выкарыстання"
       ],
       "Your old files will be deleted in 72 hours": [
         "Вашы старыя файлы будуць выдалены на працягу 72 гадзін"
@@ -12938,6 +12971,9 @@
       "Discard changes?": [
         "Адхіліць змены?"
       ],
+      "Disconnected from Gmail": [
+        "Адключана ад Gmail"
+      ],
       "Downgrade account": [
         "Панізіць уліковы запіс"
       ],
@@ -13471,9 +13507,6 @@
       ],
       "Sort files/folders": [
         "Сартаванне файлаў/папак"
-      ],
-      "Spring Sale": [
-        "Вясенні распродаж"
       ],
       "Start a new import": [
         "Пачаць новае імпартаванне"

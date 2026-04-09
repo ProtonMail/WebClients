@@ -289,6 +289,9 @@
       "Connect apps and devices": [
         "Apps und Geräte verbinden"
       ],
+      "Connect to Gmail": [
+        "Mit Gmail verbinden"
+      ],
       "Connect to video conferencing": [
         "Mit Videokonferenzen verbinden"
       ],
@@ -1027,6 +1030,9 @@
       "Open navigation": [
         "Navigation öffnen"
       ],
+      "Or remove forwarding address": [
+        "Oder Weiterleitungsadresse entfernen"
+      ],
       "Or use a different Gmail address": [
         "Oder benutze eine andere Gmail-Adresse"
       ],
@@ -1101,6 +1107,9 @@
       ],
       "Reconnect": [
         "Erneut verbinden"
+      ],
+      "Reconnect to Gmail": [
+        "Mit Gmail wieder verbinden"
       ],
       "Recover data": [
         "Daten wiederherstellen"
@@ -1493,7 +1502,8 @@
         "Vertrauen"
       ],
       "Trust key": [
-        "Schlüssel vertrauen"
+        "Schlüssel vertrauen",
+        "Schlüsseln vertrauen"
       ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
@@ -4052,6 +4062,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Sortiere deine eingehenden Nachrichten automatisch, bevor sie deinen Posteingang erreichen."
       ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Verhindere, dass Google ein Profil von dir erstellt. Gmail kann nicht sehen, was du in ${ MAIL_APP_NAME } machst"
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Konfiguriere dies zuerst, um deine Organisation zu aktivieren und deine E-Mail-Adresse anzupassen."
       ],
@@ -4078,6 +4091,9 @@
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Synchronisiere Dateien einfach von deinem Desktop mit der Cloud und greife von deinem Mobilgerät darauf zu."
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "E-Mails, die an ${ connectedAddressText } gesendet werden, werden jetzt in ${ MAIL_APP_NAME } angezeigt."
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Ermutige die Verwendung der Zwei-Faktor-Authentifizierung in deiner Organisation für zusätzliche Sicherheit."
@@ -4122,11 +4138,20 @@
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "Neue E-Mails von „${ senderEmailAddress }“ werden nicht zugestellt und dauerhaft gelöscht."
       ],
+      "No ads. No trackers.": [
+        "Keine Werbung. Keine Tracker."
+      ],
       "No folders": [
         "Keine Ordner"
       ],
       "No labels": [
         "Keine Kategorien"
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "Lies, antworte und behalte den Überblick über Gmail innerhalb von ${ MAIL_APP_NAME }"
+      ],
+      "Send and receive Gmail correspondence directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "Gmail-Korrespondenz direkt in ${ MAIL_APP_NAME } senden und empfangen. Deine Adresse unter ${ addressesSettingsLink } verbinden."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Trenne verschiedene Aspekte deines Lebens mit mehreren E-Mail-Adressen und schalte weitere Premium-Funktionen frei, wenn du ein Upgrade durchführst."
@@ -4142,6 +4167,22 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Vereinfache die Synchronisierung und Planung mit geteilten Kalendern."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Dies kann passieren, wenn Berechtigungen entfernt wurden oder dein Passwort geändert wurde."
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "Um eine andere Gmail-Adresse zu verbinden, entferne zusätzliche Gmail-Adressen, die an ${ BRAND_NAME } weiterleiten."
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "Um bis zu ${ MAX_SYNC_PAID_USER } Gmail-Adresse zu verbinden, führe ein Upgrade auf ${ planName } durch.",
+        "Um bis zu ${ MAX_SYNC_PAID_USER } Gmail-Adressen zu verbinden, upgrade auf ${ planName }."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Um weiterhin Gmail-Nachrichten in ${ BRAND_NAME } zu empfangen und zu senden, verbinde dein Konto erneut."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Um weiterhin Gmail-Nachrichten in ${ BRAND_NAME } zu empfangen und zu senden, Konten erneut verbinden."
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Wenn du den Schreibassistenten weiterhin nutzen möchtest, füge ihn zu deinem Abonnement hinzu."
@@ -4164,6 +4205,9 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Aktiviere den E-Mail-Tracker-Schutz, um zu verhindern, dass Werbetreibende und andere Personen deinen Standort und deine Online-Aktivitäten verfolgen."
       ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "Upgrade auf ${ planName }, um bis zu ${ MAX_SYNC_PAID_USER } Konten zu verbinden"
+      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Upgrade, um ${ activatePmUser } für eine kürzere, leicht zu merkende E-Mail-Adresse zusätzlich zu deiner aktuellen zu erhalten."
       ],
@@ -4176,8 +4220,17 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Nutze diese Anleitung, damit deine Organisation unverzüglich von der branchenführenden Verschlüsselung und dem Privatsphäre-Ökosystem von ${ BRAND_NAME } profitiert."
       ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Wir können nicht mehr auf ${ boldEmails } zugreifen."
+      ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "Wir haben in dieser E-Mail keine bekannten Tracker und Tracking-URLs gefunden."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "Wir holen deine alten E-Mails und verbinden dein Gmail mit ${ MAIL_APP_NAME }, damit neue Nachrichten automatisch angezeigt werden"
+      ],
+      "We've started importing your email from Gmail. We'll let you know when it's done.": [
+        "Wir haben mit dem Import deiner E-Mail-Adresse von Gmail begonnen. Wir benachrichtigen dich, wenn der Vorgang abgeschlossen ist."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Wir bedauern, dass du gehst. Wenn du einen Moment Zeit hast, würden wir uns sehr freuen zu erfahren, warum du kündigen möchtest. Dein Feedback hilft uns, ${ BRAND_NAME } für alle besser zu machen."
@@ -4191,17 +4244,49 @@
       "With custom snooze, you can hide emails and set them to reappear at a better time.": [
         "Mit der benutzerdefinierten Funktion „Zurückstellen“ können Sie E-Mails ausblenden und festlegen, dass sie zu einem günstigeren Zeitpunkt erneut angezeigt werden."
       ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Du hast bereits eine Gmail-Adresse, die an ${ MAIL_APP_NAME } weiterleitet. Verbinde sie unten, um E-Mails direkt von ${ MAIL_APP_NAME } zu senden und zu empfangen."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Du hast bereits Gmail-Adressen, die an ${ MAIL_APP_NAME } weiterleiten. Verbinde unten eine, um E-Mails direkt mit ${ MAIL_APP_NAME } zu senden und zu empfangen."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kannst Termine im iCal-Format (ICS-Datei) importieren. Die Datei darf die max. Größe von ${ MAX_IMPORT_FILE_SIZE_STRING } nicht überschreiten und bis zu ${ MAX_IMPORT_EVENTS_STRING } Termine enthalten. Sollte deine Datei größer sein, teile sie bitte in kleinere Dateien auf."
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Du kannst Kontakte, die du weder zusammenführen noch behalten willst, zum Löschen vormerken. Das Löschen erfolgt erst, wenn du auf die Schaltfläche „Zusammenführen“ klickst."
       ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Du kannst jetzt E-Mails von ${ BRAND_NAME } unter dieser Adresse senden."
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "Du leitest ${ numAddressesOrSync } Gmail-Adresse an ${ MAIL_APP_NAME } weiter.",
+        "Du leitest ${ numAddressesOrSync } Gmail-Adressen an ${ MAIL_APP_NAME } weiter."
+      ],
+      "You're forwarding emails from ${ forwardingCount } Gmail address. By connecting it, you'll be able to both receive and reply in ${ MAIL_APP_NAME }": [
+        "Du leitest E-Mails von ${ forwardingCount } Gmail-Adresse weiter. Durch die Verbindung kannst du sowohl in ${ MAIL_APP_NAME } empfangen als auch antworten.",
+        "Du leitest E-Mails von ${ forwardingCount } Gmail-Adressen weiter. Durch die Verbindung kannst du sowohl in ${ MAIL_APP_NAME } empfangen als auch antworten."
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "Du hast ${ MAX_SYNC_PAID_USER } Gmail-Adresse verbunden. Um eine weitere hinzuzufügen, deaktiviere zuerst dein verbundenes Konto.",
+        "Du hast ${ MAX_SYNC_PAID_USER } Gmail-Adressen verbunden. Um eine weitere hinzuzufügen, deaktiviere zuerst eines deiner verbundenen Konten."
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "Du hast eine externe E-Mail-Adresse mit ${ MAIL_APP_NAME } verbunden."
+      ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Deine Konto- und Datenwiederherstellungsmethoden sind festgelegt und 2FA ist aktiviert."
       ],
       "Your account and data recovery methods are set.": [
         "Dein Konto und die Methoden zur Datenwiederherstellung sind festgelegt."
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "Dein Abonnement unterstützt ${ MAX_SYNC_FREE_USER } Gmail-Adresse.",
+        "Dein Abonnement unterstützt ${ MAX_SYNC_FREE_USER } Gmail-Adressen."
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "Dein Abonnement unterstützt insgesamt ${ MAX_SYNC_PAID_USER } Gmail-Adresse",
+        "Dein Abonnement unterstützt insgesamt ${ MAX_SYNC_PAID_USER } Gmail-Adressen"
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du hast bereits 10 Aliasnamen erstellt. Erhalte unbegrenzte Aliase und 500 GB Speicherplatz mit ${ BRAND_NAME } Unlimitiert."
@@ -4519,6 +4604,12 @@
       ],
       "Add at least one condition": [
         "Füge mindestens eine Bedingung hinzu"
+      ],
+      "Address could not be added.": [
+        "E-Mail-Adresse konnte nicht hinzugefügt werden."
+      ],
+      "Address is already added to your account": [
+        "E-Mail-Adresse wurde bereits zu deinem Konto hinzugefügt"
       ],
       "Address primary private key not found": [
         "Privater Hauptschlüssel für die Adresse nicht gefunden"
@@ -4972,6 +5063,12 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Einige deiner Kategorienamen überschreiten die maximale Zeichenanzahl von ${ MAIL_APP_NAME }. Bitte passe den Import an, um diese Namen zu bearbeiten."
       ],
+      "Something went wrong while creating the address": [
+        "Beim Erstellen der E-Mail-Adresse ist ein Fehler aufgetreten"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Etwas ist schiefgegangen beim Abrufen der verfügbaren Domains"
+      ],
       "Something went wrong. Please try again.": [
         "Etwas ist schief gelaufen. Bitte versuche es später erneut."
       ],
@@ -5077,9 +5174,6 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Diese Nachricht enthält möglicherweise Internetadressen, die von deinem aktuellen Browser nicht ordnungsgemäß geöffnet werden können."
-      ],
-      "This offer is not available in your country": [
-        "Dieses Angebot ist in deinem Land nicht verfügbar"
       ],
       "Trusted keys are not valid for sending": [
         "Die vertrauenswürdigen Schlüssel sind für den Versand nicht gültig"
@@ -7223,6 +7317,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Sorge für vollständig private und verschlüsselte Kommunikation. Sichere dir jetzt deine kostenlose ${ BRAND_NAME }-E-Mail-Adresse."
       ],
+      "Enter code": [
+        "Code eingeben"
+      ],
       "Enter the code from your authenticator app": [
         "Code aus deiner Authentifizierungs-App ein eingeben"
       ],
@@ -7372,6 +7469,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Wenn du die E-Mail nicht in deinem Posteingang finden kannst, überprüfe bitte deinen Spam-Ordner."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Wenn du den Zugriff auf deine Authenticator-App verloren hast, kannst du 1 der 16 Wiederherstellungscodes verwenden, die du bei der Einrichtung der Zwei-Faktor-Authentifizierung erhalten hast. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Wenn du mit dem Downgrade fortfährst, verlierst du den Zugang zu den kostenpflichtigen Funktionen von ${ MAIL_APP_NAME } und ${ VPN_APP_NAME }."
@@ -8595,9 +8695,6 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Wenn du für ${ senderName } vertrauenswürdige Schlüssel aktiviert hast, wurden die öffentlichen Schlüssel zu den Kontaktdaten hinzugefügt."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Beim Einrichten der Zwei-Faktor-Authentifizierung stellen wir dir Wiederherstellungscodes zur Verfügung, mit denen du dich anmelden kannst, wenn du den Zugriff auf deine Authentifizierungs-App verloren hast."
-      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Wenn du dich für einen Newsletter anmeldest, verwende einen Alias anstelle deiner E-Mail-Adresse. Deine Identität bleibt verborgen, und du kannst den Alias jederzeit deaktivieren."
       ],
@@ -9555,9 +9652,6 @@
       "Import interval": [
         "Importintervall"
       ],
-      "Import recent mails": [
-        "Neueste E-Mails importieren"
-      ],
       "Import to email address": [
         "In E-Mail-Adresse importieren"
       ],
@@ -9803,6 +9897,9 @@
       ],
       "Search in": [
         "Suchen in"
+      ],
+      "Select which Gmail address to connect": [
+        "Wähle, welche Gmail-Adresse verbunden werden soll"
       ],
       "Send auto-reply": [
         "Automatische Antwort senden"
@@ -11704,6 +11801,9 @@
       ],
       "Trial started": [
         "Testphase begonnen"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Deine ${ BRAND_NAME }-E-Mail-Adresse ist einsatzbereit"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -14990,6 +15090,9 @@
       "Block sender": [
         "Absender sperren"
       ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Bringe dein Gmail nach ${ MAIL_APP_NAME }"
+      ],
       "Built for privacy": [
         "Gemacht für Privatsphäre"
       ],
@@ -15156,6 +15259,9 @@
       ],
       "Desktop": [
         "Desktop"
+      ],
+      "Disconnected from Gmail": [
+        "Von Gmail getrennt"
       ],
       "Discover your subscription benefits": [
         "Entdecke die Vorteile deines Abonnements"
@@ -15665,6 +15771,9 @@
       "Self-destruct message": [
         "Selbstzerstörende Nachricht"
       ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Gmail mit ${ MAIL_APP_NAME } senden und empfangen"
+      ],
       "Send email": [
         "E-Mail senden"
       ],
@@ -15745,9 +15854,6 @@
       ],
       "Sort messages": [
         "Nachrichten sortieren"
-      ],
-      "Spring Sale": [
-        "Frühlingsangebot"
       ],
       "Start a new import": [
         "Neuer Importvorgang"
@@ -15834,6 +15940,9 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Nutze ${ VPN_SHORT_APP_NAME } für Daten-Privatsphäre"
       ],
+      "Use Gmail securely in ${ MAIL_APP_NAME }": [
+        "Gmail sicher in ${ MAIL_APP_NAME } nutzen"
+      ],
       "Verification error": [
         "Verifizierungsfehler"
       ],
@@ -15879,6 +15988,9 @@
       ],
       "When is it most important to use a VPN?": [
         "Wann ist es am wichtigsten, ein VPN zu verwenden?"
+      ],
+      "You are all set": [
+        "Du bist startklar"
       ],
       "You can now create unlimited folders and labels": [
         "Du kannst jetzt unbegrenzt viele Ordner und Kategorien erstellen"

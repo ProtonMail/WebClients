@@ -809,6 +809,9 @@
       "Reconnect": [
         "Reconnecta"
       ],
+      "Reconnect to Gmail": [
+        "Torneu a connectar-vos a Gmail"
+      ],
       "Recover data": [
         "Recuperar dades"
       ],
@@ -3020,6 +3023,15 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Simplifiqueu la sincronització i la programació amb calendaris compartits."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Això podria passar si s'han suprimit els permisos o s'ha canviat la contrasenya."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Per continuar rebent i enviant missatges de Gmail a ${ BRAND_NAME }, torneu a connectar el vostre compte."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Per continuar rebent i enviant missatges de Gmail a ${ BRAND_NAME }, torneu a connectar els vostres comptes."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Per a garantir la màxima seguretat possible del vostre compte, configureu una frase de recuperació."
       ],
@@ -3040,6 +3052,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Utilitzeu aquesta guia per aconseguir que la vostra organització es beneficiï ràpidament de l'ecosistema d'encriptació i privadesa líder del sector del ${ BRAND_NAME }."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Ja no podem accedir a ${ boldEmails }."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Ens sap greu que marxeu. Si teniu un moment, us agrairíem molt que ens diguéssiu per què voleu cancel·lar la subscripció. Els vostres comentaris ens ajuden a fer que ${ BRAND_NAME } sigui millor per a tothom."
@@ -3323,6 +3338,9 @@
       ],
       "Account does not exist": [
         "El compte no existeix."
+      ],
+      "Address could not be added.": [
+        "No s'ha pogut afegir l'adreça."
       ],
       "Address primary private key not found": [
         "No s'ha trobat la clau privada primària de l'adreça"
@@ -3769,6 +3787,9 @@
       "Something went wrong during folder listing": [
         "Hi ha hagut un error durant el llistat de carpetes"
       ],
+      "Something went wrong while fetching available domains": [
+        "Alguna cosa ha anat malament mentre s'obtenien els dominis disponibles"
+      ],
       "Something went wrong with search. Please try again later.": [
         "Alguna cosa ha anat malament amb la cerca. Torneu-ho a provar més tard."
       ],
@@ -3867,9 +3888,6 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Aquest missatge pot contenir adreces URL que no es puguin obrir amb el navegador actual."
-      ],
-      "This offer is not available in your country": [
-        "Aquesta oferta no està disponible al vostre país"
       ],
       "Try using only letters, numerals, and _.-": [
         "Intenteu utilitzar només lletres, numerals i _.-"
@@ -5546,6 +5564,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Assegureu-vos una comunicació totalment privada i xifrada. Aconseguiu ara la vostra adreça gratuïta de correu electrònic de ${ BRAND_NAME }."
       ],
+      "Enter code": [
+        "Introduir el codi"
+      ],
       "Enter password": [
         "Introduïu la contrasenya"
       ],
@@ -5690,6 +5711,9 @@
       ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "Si teniu un d'aquests, aneu a la configuració del Compte ${ BRAND_NAME } per a iniciar el procés de desbloqueig."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Si heu perdut l'accés a la vostra aplicació d'autenticació, podeu fer servir 1 dels 16 codis de recuperació de seguretat que se us van proporcionar quan vau configurar l'autenticació de doble factor. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Si passeu a un pla inferior, perdreu l'accés a les funcions de pagament de ${ MAIL_APP_NAME } i ${ VPN_APP_NAME }."
@@ -5902,6 +5926,18 @@
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "La majoria de les xarxes wifi públiques són segures, però algunes no tenen seguretat, la qual cosa us exposa a amenaces cibernètiques. Una VPN xifra el vostre trànsit, mantenint-vos protegit."
+      ],
+      "Move ${ dragCount } item": [
+        "Moveu ${ dragCount } element",
+        "Moveu ${ dragCount } elements"
+      ],
+      "Move ${ fileCount } file": [
+        "Moure ${ fileCount } fitxer",
+        "Moure ${ fileCount } fitxers"
+      ],
+      "Move ${ folderCount } folder": [
+        "Moveu ${ folderCount } carpeta",
+        "Moveu ${ folderCount } carpetes"
       ],
       "Moving files": [
         "S'està movent fitxers"
@@ -6742,9 +6778,6 @@
       ],
       "When you remove ${ deviceName } as a synced device, all folders added to My Computers from this device will be permanently deleted from ${ DRIVE_APP_NAME }.": [
         "Quan elimineu ${ deviceName } com a dispositiu sincronitzat, totes les carpetes afegides a Els Meus Ordinadors des d'aquest dispositiu s'eliminaran permanentment de ${ DRIVE_APP_NAME }."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quan configureu l'autenticació en dos passos, et proporcionem codis de recuperació que pots utilitzar per iniciar sessió si perds l'accés a l'aplicació d'autenticació."
       ],
       "who": [
         "qui"
@@ -9612,9 +9645,6 @@
       "Public link access updated": [
         "S'ha actualitzat l'accés a l'enllaç públic."
       ],
-      "Root folder failed to be loaded": [
-        "No s'ha pogut carregar la carpeta arrel"
-      ],
       "Selected item was not removed from your list": [
         "L'element seleccionat no s'ha esborrat de la llista",
         "Els elements seleccionats no s'han esborrat de la llista"
@@ -9649,9 +9679,6 @@
       "Stopping the sharing of this item has failed": [
         "Error en deixar de compartir aquest element"
       ],
-      "Subfolder failed to be loaded": [
-        "No s'ha pogut carregar la subcarpeta."
-      ],
       "The document failed to be created": [
         "No s'ha pogut crear el document."
       ],
@@ -9675,6 +9702,9 @@
       ],
       "You stopped sharing this item": [
         "Heu deixat de compartir aquest element."
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "La vostra adreça de ${ BRAND_NAME } ja està a punt per fer-se servir"
       ],
       "Your old files will be deleted in 72 hours": [
         "Els vostres fitxers antics s'eliminaran en 72 hores"
@@ -12481,6 +12511,9 @@
       "Discard changes?": [
         "Voleu descartar els canvis?"
       ],
+      "Disconnected from Gmail": [
+        "Esteu desconnectat de Gmail"
+      ],
       "Downgrade account": [
         "Passa a un pla inferior"
       ],
@@ -13008,9 +13041,6 @@
       ],
       "Sort files/folders": [
         "Ordenar fitxers/carpetes"
-      ],
-      "Spring Sale": [
-        "Rebaixes de primavera"
       ],
       "Start a new import": [
         "Inicia una nova importació"

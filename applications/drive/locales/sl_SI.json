@@ -765,6 +765,9 @@
       "Refer a friend": [
         "Priporočite prijatelju"
       ],
+      "Refetch index": [
+        "Ponovno pridobi indeks"
+      ],
       "Refresh the page": [
         "Osveži stran"
       ],
@@ -3669,9 +3672,6 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "To sporočilo morda vsebuje povezave, ki jih vaš trenutni brskalnik ne more pravilno odpreti."
       ],
-      "This offer is not available in your country": [
-        "Ta ponudba ni na voljo v vaši državi"
-      ],
       "Try using only letters, numerals, and _.-": [
         "Poskusite uporabiti samo črke, števke in _.-"
       ],
@@ -4885,6 +4885,9 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
+      "${ state.result.entries.length } entries": [
+        "${ state.result.entries.length } vnosov"
+      ],
       "${ storage } storage": [
         "${ storage } shrambe"
       ],
@@ -5524,6 +5527,9 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "V naslednjem koraku boste lahko vložili polog z uporabo Bitcoin naslova."
       ],
+      "Index is empty.": [
+        "Indeks je prazen."
+      ],
       "Indexing in progress": [
         "Indeksiranje je v teku"
       ],
@@ -5688,6 +5694,24 @@
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Večina javnih omrežij WiFi je varnih, vendar nekatera nimajo ustrezne varnosti, zato ste izpostavljeni kibernetskim grožnjam. VPN šifrira vaš promet in vas ohranja zaščitene."
+      ],
+      "Move ${ dragCount } item": [
+        "Premakni ${ dragCount } predmet",
+        "Premakni ${ dragCount } predmeta",
+        "Premakni ${ dragCount } predmete",
+        "Premakni ${ dragCount } predmete"
+      ],
+      "Move ${ fileCount } file": [
+        "Premakni datoteko ${ fileCount }",
+        "Premakni datoteki ${ fileCount }",
+        "Premakni datoteke ${ fileCount }",
+        "Premakni datoteke ${ fileCount }"
+      ],
+      "Move ${ folderCount } folder": [
+        "Premakni mapo ${ folderCount }",
+        "Premakni mapi ${ folderCount }",
+        "Premakni mape ${ folderCount }",
+        "Premakni mape ${ folderCount }"
       ],
       "Moving files": [
         "Premikanje datotek"
@@ -5985,6 +6009,9 @@
       ],
       "Search enabled. You may now close this dialogue and search for files and folders.": [
         "Iskanje omogočeno. Zdaj lahko zaprete to pogovorno okno in poiščete datoteke in mape."
+      ],
+      "Search module is not available.": [
+        "Iskalni modul ni na voljo."
       ],
       "Select a destination folder": [
         "Izberite ciljno mapo"
@@ -6358,6 +6385,9 @@
       "Unsupported file": [
         "Nepodprta datoteka"
       ],
+      "Unsupported file type for Photos": [
+        "Nepodprta vrsta datoteke za fotografije"
+      ],
       "Untitled": [
         "Brez naslova"
       ],
@@ -6483,9 +6513,6 @@
       ],
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Ko se povežete z VPN, ta uporablja tehnologijo šifriranja, da skrije vaš IP naslov (edinstvena koda, dodeljena vaši napravi)."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Ko nastavite dvojno preverjanje pristnosti, nudimo obnovitvene kode, ki jih lahko uporabite za prijavo, če izgubite dostop do aplikacije za preverjanje pristnosti."
       ],
       "who": [
         "kdo"
@@ -7088,6 +7115,9 @@
       "Enter device name": [
         "Vnesite ime naprave"
       ],
+      "Environment compatible": [
+        "Združljivo z okoljem"
+      ],
       "Expired": [
         "Poteklo"
       ],
@@ -7153,6 +7183,12 @@
       ],
       "Include message and file name in invite email": [
         "Vključi sporočilo in ime datoteke v vabilo"
+      ],
+      "Index kinds": [
+        "Vrste indeksa"
+      ],
+      "Initial indexing": [
+        "Začetno indeksiranje"
       ],
       "Integrated 2FA authenticator": [
         "Vgrajen modul za preverjanje pristnosti 2FA"
@@ -7247,6 +7283,9 @@
       "Other": [
         "Drugo"
       ],
+      "Outdated version": [
+        "Zastarela različica"
+      ],
       "Password": [
         "Geslo"
       ],
@@ -7315,6 +7354,9 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Ženeva"
+      ],
+      "Searchable": [
+        "Iskano"
       ],
       "Select type of abuse": [
         "Izberite vrsto zlorabe"
@@ -7424,6 +7466,9 @@
       "Uploaded by": [
         "Naložil"
       ],
+      "User opted in": [
+        "Uporabnik se je prijavil"
+      ],
       "Username": [
         "Uporabniško ime"
       ],
@@ -7432,6 +7477,9 @@
       ],
       "Viewer": [
         "Pregledovalnik"
+      ],
+      "Visible columns:": [
+        "Vidni stolpci:"
       ],
       "Vulnerable": [
         "Ranljivo"
@@ -9210,9 +9258,6 @@
       "Public link access updated": [
         "Dostop do javne povezave posodobljen"
       ],
-      "Root folder failed to be loaded": [
-        "Korenske mape ni bilo mogoče naložiti"
-      ],
       "Selected item was successfully removed from your list": [
         "Izbrani predmet je bil uspešno odstranjen s seznama.",
         "Izbrana predmeta sta bila uspešno odstranjena s seznama.",
@@ -9242,9 +9287,6 @@
       ],
       "Stopping the sharing of this item has failed": [
         "Preklic deljenja za ta predmet ni uspel"
-      ],
-      "Subfolder failed to be loaded": [
-        "Podmape ni bilo mogoče naložiti"
       ],
       "The document failed to be created": [
         "Dokumenta ni bilo mogoče ustvariti"
@@ -11947,6 +11989,9 @@
       "Gift": [
         "Darilo"
       ],
+      "Global": [
+        "Globalno"
+      ],
       "Groups": [
         "Skupine"
       ],
@@ -12241,6 +12286,9 @@
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Shrani za kasneje v ${ DRIVE_APP_NAME }"
       ],
+      "Search": [
+        "Išči"
+      ],
       "Search results": [
         "Rezultati iskanja"
       ],
@@ -12315,9 +12363,6 @@
       ],
       "Sort files/folders": [
         "Razporedi datoteke/mape"
-      ],
-      "Spring Sale": [
-        "Pomladanska akcija"
       ],
       "Start a new import": [
         "Začni z novim uvozom"

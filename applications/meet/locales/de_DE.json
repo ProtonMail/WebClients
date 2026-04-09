@@ -1725,6 +1725,12 @@
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "${ MEET_APP_NAME } benötigt WebRTC, um zu funktionieren. Bitte aktualisiere deinen Browser oder dein Gerät auf eine Version, die WebRTC unterstützt, versuche es mit einem anderen Browser oder deaktiviere alle Erweiterungen, die es möglicherweise blockieren."
       ],
+      "${ participantName } and ${ otherParticipantsCount } others are recording": [
+        "${ participantName } und ${ otherParticipantsCount } weitere nehmen auf"
+      ],
+      "${ participantName } is recording": [
+        "${ participantName } nimmt auf"
+      ],
       "${ presenterName } (you) is presenting": [
         "${ presenterName } (du) präsentiert"
       ],
@@ -1861,6 +1867,9 @@
       "End-to-end encryption is active for this chat.": [
         "Ende-zu-Ende-Verschlüsselung ist für diesen Chat aktiv."
       ],
+      "Enter code": [
+        "Code eingeben"
+      ],
       "Enter the code from your authenticator app": [
         "Code aus deiner Authentifizierungs-App ein eingeben"
       ],
@@ -1911,6 +1920,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Wenn du die E-Mail nicht in deinem Posteingang finden kannst, überprüfe bitte deinen Spam-Ordner."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Wenn du den Zugriff auf deine Authenticator-App verloren hast, kannst du 1 der 16 Wiederherstellungscodes verwenden, die du bei der Einrichtung der Zwei-Faktor-Authentifizierung erhalten hast. ${ learnMoreLink }"
       ],
       "If you’re using Firefox, make sure PeerConnection is enabled.": [
         "Wenn du Firefox verwendest, stelle sicher, dass PeerConnection aktiviert ist."
@@ -2047,7 +2059,7 @@
       "Our end-to-end encrypted meetings protect privacy and empower truly free expression.": [
         "Unsere Ende-zu-Ende-verschlüsselten Meetings schützen deine Privatsphäre und ermöglichen wirklich freie Meinungsäußerung."
       ],
-      "participant": [
+      "Participant": [
         "Teilnehmer"
       ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
@@ -2085,6 +2097,12 @@
       ],
       "Record your meetings": [
         "Meetings aufzeichnen"
+      ],
+      "Recording": [
+        "Aufnahme"
+      ],
+      "Recording in progress": [
+        "Aufnahme läuft"
       ],
       "Recording saved": [
         "Aufzeichnung gespeichert"
@@ -2235,9 +2253,6 @@
       ],
       "Week": [
         "Woche"
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Beim Einrichten der Zwei-Faktor-Authentifizierung stellen wir dir Wiederherstellungscodes zur Verfügung, mit denen du dich anmelden kannst, wenn du den Zugriff auf deine Authentifizierungs-App verloren hast."
       ],
       "Would you like to delete this event?": [
         "Möchtest du diesen Termin löschen?"

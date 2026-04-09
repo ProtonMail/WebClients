@@ -437,9 +437,6 @@
       "Fit to window": [
         "貼齊視窗邊沿"
       ],
-      "Forgot password?": [
-        "忘記密碼?"
-      ],
       "Forgot recovery method?": [
         "忘記復原方法?"
       ],
@@ -3764,9 +3761,6 @@
       "This label name is not available. Please choose a different name.": [
         "此標籤名稱無法使用。請選擇其它名稱。"
       ],
-      "This offer is not available in your country": [
-        "此優惠在您的國家/地區無法使用"
-      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "您需還原啟用您的管理員權限以建立或存取非私人帳號。"
       ],
@@ -4610,11 +4604,6 @@
       ],
       "Services": [
         "服務"
-      ]
-    },
-    "Group address title": {
-      "Group address": [
-        "群組地址"
       ]
     },
     "Group member count": {
@@ -5705,9 +5694,6 @@
       "End-to-end email encryption is disabled for this group. It can be enabled.": [
         "此群組已停用端對端加密電子郵件。它可以被啟用。"
       ],
-      "End-to-end email encryption is enabled for this group.": [
-        "此群組已開啟端對端加密電子郵件。"
-      ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "由您的身分提供者提供的端點 URL (範例：https://idp.example.com/sso/saml)。"
       ],
@@ -5746,9 +5732,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "輸入您的 ${ BRAND_NAME } 帳號電郵位址或使用者名稱。"
-      ],
-      "Enter your own password (as organization admin).": [
-        "輸入您的個人密碼 (組織機構管理員身份)。"
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "請輸入您的復原電郵位址，我們將向您發送您的使用者名稱或電郵位址。"
@@ -7386,9 +7369,6 @@
       "Add all organization members": [
         "添加全部組織成員"
       ],
-      "Add group member": [
-        "增加群組成員"
-      ],
       "Address": [
         "電郵位址"
       ],
@@ -7686,9 +7666,6 @@
       "Group address": [
         "群組地址"
       ],
-      "Group members": [
-        "群組成員"
-      ],
       "Group name": [
         "群組名稱"
       ],
@@ -7706,9 +7683,6 @@
       ],
       "Import interval": [
         "匯入頻率"
-      ],
-      "Import recent mails": [
-        "匯入近期郵件"
       ],
       "Import to email address": [
         "匯入至電郵位址"
@@ -8084,12 +8058,6 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "是的，我要永久刪除此帳號以及當中所有的資料。"
-      ],
-      "Your password (admin)": [
-        "您的密碼（管理員）"
-      ],
-      "Your password (trusted contact)": [
-        "您的密碼 (信任的內容)"
       ],
       "ZIP code": [
         "郵遞區號"
@@ -11100,6 +11068,9 @@
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "若你遺失登入帳號所需的資訊且需要重設你的帳號。**最重要的是**您同時擁有**復原帳號與資料的手段**，不然您可能再也無法存取您的電子郵件、聯絡人或檔案。"
       ],
+      "Invalid code": [
+        "代碼無效"
+      ],
       "Review account safety": [
         "查看帳號安全"
       ],
@@ -11948,9 +11919,6 @@
       "Share the confirmation code with your administrator": [
         "與您的管理員分享確認碼"
       ],
-      "Sign in": [
-        "登入"
-      ],
       "Sign in to your organization": [
         "登入您的組織"
       ],
@@ -11995,9 +11963,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "您將需要手動建立新使用者以便重新加入至您的組織中。"
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "您將被重新導向至您的第三方單一登入提供者。"
       ],
       "Your SSO configuration will be deleted.": [
         "您的單一登入配置將被刪除。"
@@ -12949,6 +12914,9 @@
       "Access control": [
         "存取控制"
       ],
+      "Account and password": [
+        "帳號與密碼"
+      ],
       "Account recovery": [
         "帳號救援"
       ],
@@ -13258,9 +13226,6 @@
       "Device": [
         "裝置"
       ],
-      "Device connected!": [
-        "裝置已連線！"
-      ],
       "Device name": [
         "裝置名稱"
       ],
@@ -13350,9 +13315,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "輸入您的 ${ BRAND_NAME } 帳號詳細資訊以加入 ${ app } 體驗版方案"
-      ],
-      "Enter your password": [
-        "輸入您的密碼"
       ],
       "Error": [
         "錯誤"
@@ -13449,6 +13411,9 @@
       ],
       "Information exposed in breach": [
         "於外洩的資料"
+      ],
+      "Integrations": [
+        "整合"
       ],
       "Invalid verification code": [
         "驗證碼無效"
@@ -13726,9 +13691,6 @@
       "Spam, block, and allow lists": [
         "垃圾郵件、攔截和允許清單"
       ],
-      "Spring Sale": [
-        "春季促銷"
-      ],
       "Start a new import": [
         "開始新匯入"
       ],
@@ -13776,9 +13738,6 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "啟用${ DARK_WEB_MONITORING_NAME }"
-      ],
-      "TV sign in": [
-        "電視登入"
       ],
       "Two-factor authentication": [
         "兩步驟驗證"

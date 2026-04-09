@@ -429,9 +429,6 @@
       "Fit to window": [
         "Ablakhoz illesztés"
       ],
-      "Forgot password?": [
-        "Elfelejtett jelszó?"
-      ],
       "Forgot recovery method?": [
         "Elfelejtette a helyreállítási módszert?"
       ],
@@ -2858,9 +2855,6 @@
     "Delete group prompt": {
       "Are you sure you want to delete this group?": [
         "Biztos, hogy törölni szeretné ezt a csoportot?"
-      ],
-      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
-        "Felhívjuk a figyelmet, hogy ha törli a ${ displayGroupName } csoportot (a ${ displayGroupAddressEmail } címmel), a továbbiakban nem fog tudni e-maileket fogadni a csoport címe segítségével."
       ]
     },
     "Delinquent modal title": {
@@ -4672,11 +4666,6 @@
         "Szolgáltatások"
       ]
     },
-    "Group address title": {
-      "Group address": [
-        "Csoport címei"
-      ]
-    },
     "Group member count": {
       "${ memberCount } member": [
         "${ memberCount } tag",
@@ -5830,9 +5819,6 @@
       "End-to-end email encryption is disabled for this group. It can be enabled.": [
         "A végponttól végpontig tartó e-mail titkosítás le van tiltva ennél a csoportnál, de engedélyezhető."
       ],
-      "End-to-end email encryption is enabled for this group.": [
-        "A végponttól végpontig tartó e-mail titkosítás engedélyezve van ebben a csoportban."
-      ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "A személyazonosság-szolgáltatótól kapott végpont URL-je (pl. https://idp.pelda.com/sso/saml)."
       ],
@@ -5874,9 +5860,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Adja meg a ${ BRAND_NAME } fiókja e-mail címét vagy felhasználónevét."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Adja meg saját jelszavát (mint a szervezet adminisztrátora)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Írja be a helyreállítási e-mail címét és elküldjük a felhasználónevét vagy e-mail címét."
@@ -7591,9 +7574,6 @@
       "Add all organization members": [
         "A szervezet összes tagjának hozzáadása"
       ],
-      "Add group member": [
-        "Csoport tag hozzáadása"
-      ],
       "Address": [
         "Cím"
       ],
@@ -7893,9 +7873,6 @@
       ],
       "Group address": [
         "Csoport címei"
-      ],
-      "Group members": [
-        "Csoporttagok"
       ],
       "Group name": [
         "Csoport neve"
@@ -8293,9 +8270,6 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Igen, törölni szeretném a fiókomat és az összes adatát."
-      ],
-      "Your password (admin)": [
-        "Jelszó (adminisztrátor)"
       ],
       "ZIP code": [
         "Irányítószám"
@@ -11201,6 +11175,9 @@
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Ha elveszíti a belépéshez szükséges adatait és vissza kell állítania a fiókját, **feltétlenül szükséges**, hogy legyen **mind fiók, mind pedig adat helyreállítási módszere** beállítva, különben megeshet, hogy nem fogja tudni többé elérni az e-mailjeit, névjegyeit, fájljait vagy jelszavait."
       ],
+      "Invalid code": [
+        "Érvénytelen kód"
+      ],
       "Review account safety": [
         "Fiókbiztonság átnézése"
       ],
@@ -12195,9 +12172,6 @@
       "Share the confirmation code with your administrator": [
         "Ossza meg az ellenőrző kódot az adminisztrátorral."
       ],
-      "Sign in": [
-        "Bejelentkezés"
-      ],
       "Sign in to your organization": [
         "Jelentkezzen be a szervezetébe"
       ],
@@ -12254,9 +12228,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Új felhasználókat manuálisan kell létrehoznia ahhoz, hogy hozzáadja őket a szervezetéhez."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Önt átirányítjuk a harmadik fél SSO-szolgáltatójához."
       ],
       "Your SSO configuration will be deleted.": [
         "Az Ön SSO-beállítása törlődik."
@@ -13263,6 +13234,9 @@
       "Access control": [
         "Hozzáférés vezérlés"
       ],
+      "Account and password": [
+        "Fiók és jelszó"
+      ],
       "Account recovery": [
         "Fiók helyreállítás"
       ],
@@ -13581,9 +13555,6 @@
       "Device": [
         "Eszköz"
       ],
-      "Device connected!": [
-        "Eszköz csatlakoztatva!"
-      ],
       "Device name": [
         "Eszköz neve"
       ],
@@ -13673,9 +13644,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Adja meg a ${ BRAND_NAME } fiókja adatait a ${ app } Béta programhoz való csatlakozáshoz"
-      ],
-      "Enter your password": [
-        "Adja meg a jelszavát"
       ],
       "Error": [
         "Hiba"
@@ -13774,6 +13742,9 @@
       ],
       "Information exposed in breach": [
         "Adatvédelmi incidens során kiszivárgott információk"
+      ],
+      "Integrations": [
+        "Integrációk"
       ],
       "Invalid verification code": [
         "Érvénytelen ellenőrző kód"
@@ -14084,9 +14055,6 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } bekapcsolása"
-      ],
-      "TV sign in": [
-        "TV bejelentkezés"
       ],
       "Two-factor authentication": [
         "Kétlépcsős hitelesítés"

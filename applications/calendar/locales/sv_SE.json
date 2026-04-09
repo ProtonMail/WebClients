@@ -692,6 +692,9 @@
       "Reconnect": [
         "Anslut igen"
       ],
+      "Reconnect to Gmail": [
+        "Återanslut till Gmail"
+      ],
       "Reconnect to Zoom": [
         "Återanslut till Zoom"
       ],
@@ -3138,6 +3141,12 @@
       "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
         "Detta kan ta några minuter. Under tiden kan du fortsätta använda ${ CALENDAR_APP_NAME } som vanligt."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Detta kan hända om behörigheter togs bort eller ditt lösenord har ändrats."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "För att fortsätta ta emot och skicka Gmail-meddelanden i ${ BRAND_NAME }, återanslut ditt konto."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "För att säkerställa högsta möjliga säkerhet för ditt konto, ställ in en återställningsfras."
       ],
@@ -3155,6 +3164,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Använd den här guiden för att din organisation snabbt ska kunna dra nytta av ${ BRAND_NAME }:s branschledande kryptering och ekosystem för integritet."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Vi kan inte komma åt ${ boldEmails } längre."
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Med kontaktgrupper kan du skicka e-post till alla i gruppen med ett klick."
@@ -3493,6 +3505,9 @@
       ],
       "Account does not exist": [
         "Konto finns inte"
+      ],
+      "Address could not be added.": [
+        "Adress kunde inte läggas till."
       ],
       "Address primary private key not found": [
         "Adressens privata nyckel hittades inte"
@@ -3974,9 +3989,6 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Detta meddelande kan innehålla några URL-länkar som inte kan öppnas korrekt av din nuvarande webbläsare."
-      ],
-      "This offer is not available in your country": [
-        "Detta erbjudande är inte tillgängligt i ditt land"
       ],
       "Trusted keys are not valid for sending": [
         "Betrodda nycklar är inte giltiga för att skicka"
@@ -5481,6 +5493,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Säkerställ fullständig privat och krypterad kommunikation. Gör anspråk på din gratis ${ BRAND_NAME } e-postadress nu."
       ],
+      "Enter code": [
+        "Ange kod"
+      ],
       "Enter the code from your authenticator app": [
         "Ange koden från din autentiseringsapp"
       ],
@@ -6227,9 +6242,6 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "När du ansluter till VPN används krypteringsteknik för att dölja din IP-adress (en unik kod som tilldelas din enhet)."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "När du ställer in tvåfaktorsautentisering tillhandahåller vi återställningskoder som du kan använda för att logga in om du förlorar åtkomsten till din autentiseringsapp."
-      ],
       "Where will the appointment take place?": [
         "Var kommer mötet att äga rum?"
       ],
@@ -6794,9 +6806,6 @@
       "Country": [
         "Land"
       ],
-      "Create shareable pages where people can book time with you.": [
-        "Skapa delningsbara sidor där människor kan boka tid med dig."
-      ],
       "Credits": [
         "Krediter"
       ],
@@ -7085,6 +7094,9 @@
       ],
       "Secondary time zone": [
         "Sekundär tidszon"
+      ],
+      "Securely share parts of your schedule through a booking page you can send to anyone.": [
+        "Dela säkert delar av ditt schema genom en bokningssida som du kan skicka till vem som helst."
       ],
       "Show others when I'm busy": [
         "Visa andra när jag är upptagen"
@@ -8739,6 +8751,9 @@
       ],
       "Passphrase copied to clipboard": [
         "Lösenfras kopierat till urklipp"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Din ${ BRAND_NAME }-adress är redo att användas"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11767,6 +11782,9 @@
       "Discard changes?": [
         "Ignorera ändringar?"
       ],
+      "Disconnected from Gmail": [
+        "Koppla från Gmail"
+      ],
       "Does not repeat": [
         "Upprepas inte"
       ],
@@ -12154,9 +12172,6 @@
       ],
       "Simplify password management": [
         "Förenkla lösenordshantering"
-      ],
-      "Spring Sale": [
-        "Vårrea"
       ],
       "Start a new import": [
         "Starta en ny import"

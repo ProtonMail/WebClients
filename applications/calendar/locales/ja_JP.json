@@ -695,6 +695,9 @@
       "Reconnect": [
         "再接続"
       ],
+      "Reconnect to Gmail": [
+        "Gmailに再接続"
+      ],
       "Reconnect to Zoom": [
         "Zoomに再接続する"
       ],
@@ -1091,6 +1094,9 @@
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ LUMO_APP_NAME } の ${ seats } シート"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } ライセンス"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } ライティングアシスタントのシート"
@@ -3122,6 +3128,9 @@
       "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
         "これは数分かかる場合があります。その間、通常通り ${ CALENDAR_APP_NAME }を使用し続けることができます。"
       ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "${ BRAND_NAME }でGmailメッセージの送受信を続けるには、アカウントを再接続してください。"
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "アカウントを可能な限り高度に保護するためには、回復用フレーズを設定してください。"
       ],
@@ -3139,6 +3148,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "このガイドを利用して、あなたの組織が${ BRAND_NAME }の業界をリードする暗号化をプライバシーのエコシステムから速やかに恩恵を受けられるようにしてください。"
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "${ boldEmails }へのアクセスができなくなりました。"
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "ご利用をおやめになるのは残念です。よろしければ、取消の理由をお聞かせいただけますでしょうか。お客様のご感想は、${ BRAND_NAME } を改善するのに役立ちます。"
@@ -3693,6 +3705,9 @@
       "Invalid public key file": [
         "無効な公開鍵ファイル"
       ],
+      "Invalid VAT number": [
+        "無効なVAT番号です"
+      ],
       "Invalid verification code": [
         "無効な検証コード"
       ],
@@ -3953,9 +3968,6 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "このメッセージは、現在お使いのブラウザでは適切に開くことができないリンクのURLを含んでいる可能性があります。"
-      ],
-      "This offer is not available in your country": [
-        "このオファーはお住まいの国ではご利用いただけません"
       ],
       "Trusted keys are not valid for sending": [
         "信頼された鍵が送信に使用できません"
@@ -4989,6 +5001,9 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } には ${ BRAND_NAME } Scribe 執筆アシスタントが搭載されています"
       ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME }シート"
+      ],
       "${ MEET_APP_NAME } video call": [
         "${ MEET_APP_NAME }ビデオ通話"
       ],
@@ -5459,6 +5474,9 @@
       ],
       "finance": [
         "ファイナンス"
+      ],
+      "for ${ price }": [
+        "${ price }で"
       ],
       "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
         "より高いセキュリティのために、パスフレーズを設定できます。それはカレンダーの招待には含まれませんので、ゲストには別途共有することを忘れないでください。"
@@ -6159,9 +6177,6 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "VPNに接続することで、暗号化技術により、お客様のIPアドレス(デバイス毎に割り振られる一意のコード)は秘匿されます。"
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "2要素認証を設定する際、認証アプリにアクセスできなくなった場合に使用できる回復用コードを提供します。"
-      ],
       "Where will the appointment take place?": [
         "ご予定はどこで行われますか？"
       ],
@@ -6729,9 +6744,6 @@
       ],
       "Country": [
         "国"
-      ],
-      "Create shareable pages where people can book time with you.": [
-        "お客様と日程を調整できる共有ページを作成します。"
       ],
       "Credits": [
         "クレジット"
@@ -7430,6 +7442,12 @@
     "meet_2025: Addon": {
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME } ライセンス"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME }シート"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats }${ MEET_APP_NAME }シート"
       ]
     },
     "meet_2025: Feature": {
@@ -7480,9 +7498,15 @@
       ],
       "Up to ${ n } participant": [
         "最大${ n }人の参加者"
+      ],
+      "Video meetings, ${ n } participant": [
+        "ビデオ会議、${ n }名まで参加可能"
       ]
     },
     "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats }シートが含まれています"
+      ],
       "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
         "トライアル期間中、${ MEET_SHORT_APP_NAME }のシートを${ TRIAL_MAX_MEET_SEATS }ヶまでをご利用いただけます。"
       ]
@@ -11590,6 +11614,9 @@
       "Discard changes?": [
         "変更を破棄しますか?"
       ],
+      "Disconnected from Gmail": [
+        "Gmailから切断しました"
+      ],
       "Does not repeat": [
         "繰り返さない"
       ],
@@ -11979,9 +12006,6 @@
       ],
       "Simplify password management": [
         "パスワード管理を簡単に"
-      ],
-      "Spring Sale": [
-        "スプリングセール"
       ],
       "Start a new import": [
         "新しいインポートを開始"

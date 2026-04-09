@@ -683,6 +683,9 @@
       "Reconnect": [
         "Yhdistä uudelleen"
       ],
+      "Reconnect to Gmail": [
+        "Yhdistä uudelleen Gmailiin"
+      ],
       "Recover data": [
         "Palauta tiedot"
       ],
@@ -3029,6 +3032,15 @@
       "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
         "Tämä voi kestää muutamia minuutteja. Voit jatkaa ${ CALENDAR_APP_NAME }in käyttöä odottaessasi normaalisti."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Tämä voi johtua, jos käyttöoikeudet on poistettu tai salasanasi on vaihdettu."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Jotta voit jatkaa Gmail-viestien vastaanottamista ja lähettämistä ${ BRAND_NAME } -palvelussa, yhdistä tilisi uudelleen."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Jotta voit jatkaa Gmail-viestien vastaanottamista ja lähettämistä ${ BRAND_NAME } -palvelussa, yhdistä tilisi uudelleen."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Varmista tilillesi korkein mahdollinen suojaus asettamalla palautuslauseke."
       ],
@@ -3043,6 +3055,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Määritä yhdistettävien yhteystietojen painotusjärjestys vetämällä ja pudottamalla. Poista niiden valinta, joita et halua yhdistää."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Emme voi enää käyttää ${ boldEmails } -osoitteita."
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Yhteystietoryhmillä voit lähettää sähköposteja kaikille ryhmän jäsenille yhdellä klikkauksella."
@@ -3373,6 +3388,9 @@
       ],
       "Account does not exist": [
         "Tiliä ei ole olemassa"
+      ],
+      "Address could not be added.": [
+        "Osoitetta ei voitu lisätä."
       ],
       "Address primary private key not found": [
         "Osoitteen ensisijaista yksityistä avainta ei löytynyt"
@@ -3789,6 +3807,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Joidenkin tunnisteiden nimet ylittävät ${ MAIL_APP_NAME }n enimmäismerkkimäärän. Muuta nimiä muokkaamalla tuontia."
       ],
+      "Something went wrong while fetching available domains": [
+        "Jotain meni vikaan haettaessa käytettävissä olevia verkkotunnuksia"
+      ],
       "Something went wrong. Please try again.": [
         "Jotain meni pieleen. Yritä uudelleen."
       ],
@@ -3854,9 +3875,6 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Viesti saattaa sisältää joitakin URL-linkkejä, joita käyttämäsi selain ei voi avata oikein."
-      ],
-      "This offer is not available in your country": [
-        "Tämä tarjous ei ole saatavilla maassasi"
       ],
       "Trusted keys are not valid for sending": [
         "Luotetut avaimet eivät kelpaa lähetykseen"
@@ -6570,9 +6588,6 @@
       "Country": [
         "Maa"
       ],
-      "Create shareable pages where people can book time with you.": [
-        "Luo jaettavia sivuja, joiden kautta ihmiset voivat varata aikoja kanssasi."
-      ],
       "Credits": [
         "Krediitit"
       ],
@@ -8445,6 +8460,9 @@
       ],
       "Passphrase copied to clipboard": [
         "Salalause kopioitiin leikepöydälle"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "${ BRAND_NAME } -osoitteesi on valmis käytettäväksi"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11321,6 +11339,9 @@
       "Discard changes?": [
         "Hylätäänkö muutokset?"
       ],
+      "Disconnected from Gmail": [
+        "Yhteys Gmailiin katkaistu"
+      ],
       "Does not repeat": [
         "Ei toistu"
       ],
@@ -11711,9 +11732,6 @@
       ],
       "Simplify password management": [
         "Yksinkertaista salasanahallintaa"
-      ],
-      "Spring Sale": [
-        "Kevätale"
       ],
       "Start a new import": [
         "Aloita uusi tuonti"
