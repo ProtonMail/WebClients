@@ -18,9 +18,8 @@ export const selectCategoriesLabel = createSelector([selectCategories], (categor
 
 export const selectDisabledCategoriesIDs = createSelector([selectCategoriesLabel], (categories): CategoryLabelID[] => {
     return categories
-        .filter((category) => !category.Display)
-        .map((category) => category.ID)
-        .filter(isCategoryLabel);
+        .filter((category) => !category.Display && isCategoryLabel(category.ID))
+        .map((category) => category.ID as CategoryLabelID);
 });
 
 export const selectCategoriesTabs = createSelector([selectCategoriesLabel], (categoriesStore) => {
