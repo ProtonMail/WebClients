@@ -1,3 +1,4 @@
+import type { NotificationRequest } from 'proton-pass-extension/app/content/services/inline/notification/notification.app';
 import type { ClusterFrame } from 'proton-pass-extension/app/worker/services/autofill.cc';
 import type { AutofillActionDTO, AutofillRequest, AutofillResult } from 'proton-pass-extension/types/autofill';
 import type {
@@ -136,6 +137,7 @@ export enum WorkerMessageType {
     INLINE_DROPDOWN_OPENED = 'INLINE_DROPDOWN_OPENED',
     INLINE_DROPDOWN_STATE = 'INLINE_DROPDOWN_STATE',
     INLINE_DROPDOWN_TOGGLE = 'INLINE_DROPDOWN_TOGGLE',
+    INLINE_NOTIFICATION_OPEN = 'INLINE_NOTIFICATION_OPEN',
     INLINE_ICON_SHIFT = 'INLINE_ICON_SHIFT',
     INLINE_ICON_ATTACHED = 'INLINE_ICON_ATTACHED',
 
@@ -251,6 +253,7 @@ export type InlineDropdownStateMessage = { type: WorkerMessageType.INLINE_DROPDO
 export type InlineDropdownToggleMessage = WithPayload<WorkerMessageType.INLINE_DROPDOWN_TOGGLE, DropdownOpenDTO>;
 export type InlineIconAttachedMessage = WithPayload<WorkerMessageType.INLINE_ICON_ATTACHED, FrameField>;
 export type InlineIconShiftMessage = WithPayload<WorkerMessageType.INLINE_ICON_SHIFT, IconShiftRequest>;
+export type InlineNotificationMessage = WithPayload<WorkerMessageType.INLINE_NOTIFICATION_OPEN, NotificationRequest>;
 
 export type LoadContentScriptMessage = { type: WorkerMessageType.LOAD_CONTENT_SCRIPT };
 export type LocaleUpdatedMessage = WithPayload<WorkerMessageType.LOCALE_UPDATED, { locale: string }>;
@@ -345,6 +348,7 @@ export type WorkerMessage =
     | InlineDropdownToggleMessage
     | InlineIconAttachedMessage
     | InlineIconShiftMessage
+    | InlineNotificationMessage
     | LoadContentScriptMessage
     | LocaleUpdatedMessage
     | LogEventMessage
