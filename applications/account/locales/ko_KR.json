@@ -315,6 +315,12 @@
       "Connect apps and devices": [
         "앱 및 장치 연결하기"
       ],
+      "Connect Gmail address": [
+        "Gmail 주소 연결"
+      ],
+      "Connect to Gmail": [
+        "Gmail 에 연결"
+      ],
       "Connect to video conferencing": [
         "화상 회의에 연결하기"
       ],
@@ -344,6 +350,9 @@
       ],
       "Continue to ${ planOrAppName }": [
         "${ planOrAppName }(으)로 계속하기"
+      ],
+      "Continue to sign in": [
+        "로그인하기"
       ],
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "${ nameToDisplay } ${ maybeEmailInBrackets }으로 계속하기"
@@ -1098,6 +1107,9 @@
       "Or": [
         "또는"
       ],
+      "Or remove forwarding address": [
+        "혹은 포워딩 주소 삭제"
+      ],
       "Or use a different Gmail address": [
         "또는 다른 Gmail 주소를 사용하세요"
       ],
@@ -1142,6 +1154,9 @@
       ],
       "Reconnect": [
         "다시 연결"
+      ],
+      "Reconnect to Gmail": [
+        "Gmail에 다시 연결"
       ],
       "Recover data": [
         "데이터 복구"
@@ -4744,8 +4759,8 @@
       "Are you sure you want to delete this group?": [
         "이 그룹을 정말 삭제하시겠어요?"
       ],
-      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
-        "그룹 ${ displayGroupName } (${ displayGroupAddressEmail } 주소)을(를) 삭제하면 해당 주소로 이메일 수신이 더 이상 불가능해집니다."
+      "Please note that if you delete the group ${ displayGroupName }, it will be permanently removed.": [
+        "${ displayGroupName } 그룹을 삭제하면, 그룹이 영구적으로 제거됨을 알려드립니다."
       ]
     },
     "Delinquent modal title": {
@@ -4784,6 +4799,9 @@
       "Available with ${ title }": [
         "${ title }(에)서 사용 가능"
       ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Google의 염탐 가능성을 차단하세요. Gmail 은 사용자가 ${ MAIL_APP_NAME }에서 무엇을 하는지 볼 수 없습니다."
+      ],
       "Bring over email, calendar events, and contacts from another provider.": [
         "이메일, 캘린더 이벤트 및 연락처를 다른 제공자로부터 가져오세요."
       ],
@@ -4810,6 +4828,9 @@
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "데스크톱에서 클라우드에 파일을 쉽게 동기화하고 휴대 기기에서 접근할 수 있습니다."
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "${ connectedAddressText }로 보내진 이메일은 이제 ${ MAIL_APP_NAME }에서 보여집니다."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "이 기능에 접근하려면 ${ PROTON_SENTINEL_NAME }을 활성화해 주세요."
@@ -4865,8 +4886,14 @@
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "나만의 것으로 이메일 바닥 글을 만들어 보세요 — 기본값이 아닌 내 독특한 브랜드의 것으로 보여주세요."
       ],
+      "No ads. No trackers.": [
+        "광고 없음. 트래커 없음."
+      ],
       "No one in your organization can connect to shared servers.": [
         "조직 내에 공유된 서버에 연결할 수 있는 구성원이 없습니다."
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } 안에서 Gmail을 읽고, 답장하고 관리하세요."
       ],
       "Send a code to your recovery email or phone": [
         "복구 이메일 또는 전화로 코드 전송"
@@ -4879,6 +4906,18 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "공유 캘린더로 동기화 및 일정 예약을 간소화하세요."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "권한이 사라졌거나 비밀번호가 바뀌었을 때 일어날 수 있습니다."
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "새로운 Gmail 주소를 연결하려면, ${ BRAND_NAME }로 전달되는 기존 Gmail 주소를 삭제하세요."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "${ BRAND_NAME }에서 Gmail 메시지를 계속 송수신 하려면, 계정을 다시 연결해주세요."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "${ BRAND_NAME }에서 Gmail 메시지를 계속 송수신 하려면, 계정을 다시 연결해주세요."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "CSV 파일 및 VCF 파일을 통한 불러오기를 위해, 파일이 ${ MAX_IMPORT_FILE_SIZE_STRING } 또는 연락처 ${ maxContactString }개를 초과하지 않도록 않도록 해주세요. 파일이 더 크다면, 더 작은 파일로 나눠주세요. ${ learnMoreLink }."
@@ -4898,8 +4937,23 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "이 가이드를 통해 조직이 ${ BRAND_NAME }의 업계 최고의 암호화 및 개인정보 보호 생태계로부터 즉시 혜택을 받을 수 있습니다."
       ],
+      "We can't access ${ boldEmails } anymore.": [
+        "${ boldEmails }에 더 이상 접근할 수 없습니다."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "지난 이메일을 불러오고 Gmail을 ${ MAIL_APP_NAME }에 연결하여 새 메세지가 자동으로 표시되도록 합니다."
+      ],
+      "We've started importing your email from Gmail. We'll let you know when it's done.": [
+        "Gmail에서 이메일을 불러오기 시작했습니다. 완료되면 알려드리겠습니다."
+      ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "떠나시는 모습을 보니 아쉽네요. 잠시 시간을 내어주셔서 취소하시려는 이유에 대해 알려주시면 정말 감사하겠습니다. 회원님의 소중한 의견은 ${ BRAND_NAME }을 모든 사용자에게 더 나은 서비스로 만드는 데 있어서 큰 도움이 됩니다."
+      ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "이미 ${ MAIL_APP_NAME }에 전달되는 Gmail 주소가 있습니다. 아래에서 주소를 연결 하고 ${ MAIL_APP_NAME }에서 직접 이메일을 주고 받을 수 있습니다."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "이미 ${ MAIL_APP_NAME }에 전달되는 Gmail 주소가 있습니다. 아래에서 주소를 연결 하고 ${ MAIL_APP_NAME }에서 직접 이메일을 주고 받을 수 있습니다."
       ],
       "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
         "${ PASS_APP_NAME } 브라우저 확장 프로그램에서 특정 자동 기능(자동 완성, 자동 제안, 자동 저장)이 실행되지 않아야 하는 도메인 목록을 사용자 지정할 수 있습니다."
@@ -4909,6 +4963,12 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "iCal 포맷(ICS 파일)으로 이벤트를 불러올 수 있습니다. 파일 크기가 최대 ${ MAX_IMPORT_FILE_SIZE_STRING } 및 최대 ${ MAX_IMPORT_EVENTS_STRING }개의 이벤트를 포함하고 있어야 합니다. 만약 파일이 너무 크다면, 작은 파일들로 분할해 주세요."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "이제 이 주소를 이용해 ${ BRAND_NAME }로부터 이메일을 보낼 수 있습니다."
+      ],
+      "You can still login with this address and re-connect at any time.": [
+        "여전히 이 주소로 로그인하고 언제든지 다시 연결할 수 있습니다."
       ]
     },
     "description": {
@@ -6387,6 +6447,12 @@
       "Address cannot be yours": [
         "주소를 내 소유로 할 수 없습니다"
       ],
+      "Address could not be added.": [
+        "주소를 추가할 수 없습니다."
+      ],
+      "Address is already added to your account": [
+        "이미 추가된 주소입니다."
+      ],
       "Address primary private key not found": [
         "기본 주소 키 찾을 수 없음"
       ],
@@ -6569,6 +6635,9 @@
       ],
       "Incorrect password": [
         "잘못된 비밀번호입니다"
+      ],
+      "Incorrect recovery code. Please try again.": [
+        "잘못된 복구 코드입니다. 다시 시도해주세요."
       ],
       "Incorrect second password. Please try again.": [
         "2차 비밀번호가 틀렸습니다. 다시 시도해 주세요."
@@ -6855,8 +6924,11 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "${ MAIL_APP_NAME }의 최대 글자 수 제한을 초과하는 라벨 이름이 있습니다. 해당하는 이름을 수정해 주세요."
       ],
-      "Something went wrong connecting your TV. Scan the QR code on your TV once more.": [
-        "TV와 연결하는 데 문제가 발생했습니다. TV 화면의 QR코드를 다시 스캔해 주세요."
+      "Something went wrong while creating the address": [
+        "주소를 생성하는 동안 문제가 발생했습니다."
+      ],
+      "Something went wrong while fetching available domains": [
+        "사용가능한 도메인을 가져오는 동안 문제가 발생했습니다."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "문제가 발생했습니다. 진행하려면 ${ refresh } 해주세요. 그래도 이 오류가 지속될 경우 ${ supportTeam } 으로 문의해 주세요."
@@ -6944,9 +7016,6 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "이 메시지는 현재 브라우저에서 제대로 열 수 없는 URL 링크있을 수 있습니다."
-      ],
-      "This offer is not available in your country": [
-        "이 제안은 현재 거주 중인 국가에서 사용할 수 없습니다."
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "개인이 아닌 사용자를 생성하거나 해당 계정에 접근하도록 하려면, 관리자 권한을 복원해야만 합니다."
@@ -8178,11 +8247,6 @@
       ],
       "Services": [
         "서비스"
-      ]
-    },
-    "Group address title": {
-      "Group address": [
-        "그룹 주소"
       ]
     },
     "Group member count": {
@@ -9910,9 +9974,6 @@
       "End-to-end email encryption is disabled for this group. It can be enabled.": [
         "이 그룹에서 이메일 종단간 암호화가 비활성화 되어있습니다. 활성화될 수 있습니다."
       ],
-      "End-to-end email encryption is enabled for this group.": [
-        "이 그룹에 이메일 종단간 암호화가 활성회 되어있습니다."
-      ],
       "End-to-end encrypted": [
         "종단간 암호화됨"
       ],
@@ -10047,6 +10108,9 @@
       ],
       "finance": [
         "금융정보"
+      ],
+      "for ${ price }": [
+        "${ price }으로"
       ],
       "For a 10-year version history, please contact our sales team.": [
         "10년 버전 기록은 영업팀에 문의하세요."
@@ -11551,6 +11615,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "스팸과 남용의 방지를 위해 사람임을 확인해 주세요."
       ],
+      "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
+        "계정을 안전하게 보호하기 위해, 로그인하려는 사람이 정말로 본인인지 확인하려고 합니다."
+      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "이벤트를 불러오려면, ${ CALENDAR_APP_NAME } 에서 캘린더를 생성하세요. 이벤트가 어디에 생성되었는지 처리 후 표시됩니다."
       ],
@@ -11902,9 +11969,6 @@
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "게이트웨이에서 서버를 제거하면 10일의 비활성화 기간에 돌입합니다. 서버들이 새 게이트웨이에 적용되지만 국가는 변경되지 않습니다."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "2단계 인증을 설정하면, 인증 앱에 접근할 수 없을때 로그인시 사용할 수 있는 복구 코드를 제공해 드립니다."
-      ],
       "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
         "주소를 활성화할 준비가 되면 QR 코드를 스캔하거나 바우처에 있는 링크를 사용하세요."
       ],
@@ -12039,6 +12103,9 @@
       ],
       "You can now return to the application to continue": [
         "계속하기 위해 다시 애플리케이션으로 돌아갈 수 있습니다."
+      ],
+      "You can now sign in to your account again.": [
+        "이제 계정으로 다시 로그인할 수 있습니다."
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "만약 이 폴더에 새로운 이메일 메시지가 도착한다면 알림을 켜서 알 수 있습니다."
@@ -12974,9 +13041,6 @@
       "Add extra services": [
         "부가 서비스 추가"
       ],
-      "Add group member": [
-        "그룹 구성원 추가"
-      ],
       "Additional comments": [
         "추가 의견"
       ],
@@ -13571,9 +13635,6 @@
       "Group address": [
         "그룹 주소"
       ],
-      "Group members": [
-        "그룹 구성원"
-      ],
       "Group name": [
         "그룹 이름"
       ],
@@ -13606,9 +13667,6 @@
       ],
       "Import interval": [
         "가져오기 간격"
-      ],
-      "Import recent mails": [
-        "최근 메일 가져오기"
       ],
       "Import to email address": [
         "이메일 주소로 가져오기"
@@ -14029,6 +14087,9 @@
       ],
       "Select Linux platform": [
         "Linux 플랫폼 선태 ㄱ"
+      ],
+      "Select which Gmail address to connect": [
+        "연결할 Gmail 주소를 선택하세요"
       ],
       "Send auto-reply": [
         "자동 회신 보내기"
@@ -16705,6 +16766,9 @@
       "Two-factor authentication is not required anymore": [
         "2단계 인증이 모든 구성원에게 요구되지 않습니다."
       ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "${ BRAND_NAME } 주소를 사용할 수 있습니다."
+      ],
       "Zoom video conferencing settings have been updated": [
         "줌 화상 회의 설정이 업데이트 되었습니다"
       ]
@@ -18031,9 +18095,6 @@
       ],
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "${ renewPriceStr }에 갱신되며 언제나 취소할 수 있습니다."
-      ],
-      "Sorry, this offer is not available for your account.": [
-        "죄송합니다. 이 제안은 회원님의 계정에서 사용할 수 없습니다."
       ],
       "Sorry, this offer is not available with your current plan.": [
         "죄송합니다, 현재 플랜에서는 이 제안이 제공되지 않습니다."
@@ -20231,17 +20292,11 @@
       "${ FREE_PASS_ALIASES } hide-my-email alias to fight spam": [
         "스팸 방지를 위한 ${ FREE_PASS_ALIASES }개 hide-my-email 별칭"
       ],
-      "${ MAIL_APP_NAME } desktop app": [
-        "${ MAIL_APP_NAME } 데스크톱 앱"
-      ],
       "${ maxAddresses } address": [
         "${ maxAddresses }개 주소"
       ],
       "${ maxAddresses } email address": [
         "${ maxAddresses }개 이메일 주소"
-      ],
-      "${ maxAddresses } extra email address": [
-        "${ maxAddresses }개 추가 이메일 주소"
       ],
       "${ maxAddresses } extra email address for you": [
         "${ maxAddresses } 개 추가 이메일 주소"
@@ -20269,9 +20324,6 @@
       ],
       "${ value } total encrypted storage": [
         "총 암호화된 저장 공간 ${ value }"
-      ],
-      "${ value } total storage": [
-        "${ value }개 총 저장공간"
       ],
       "${ VPN_CONNECTIONS } high-speed VPN connection": [
         "${ VPN_CONNECTIONS }개 기기에서의 고속 VPN 연결"
@@ -20513,9 +20565,6 @@
       "Ultra fast and private VPN": [
         "초고속 비공개 VPN"
       ],
-      "Unlimited folders, labels, and filters": [
-        "무제한 폴더, 라벨 및 필터"
-      ],
       "Unlimited hide-my-email aliases": [
         "무제한 hide-my-email 별칭"
       ],
@@ -20539,9 +20588,6 @@
       ],
       "Use your email, or ${ externalButton }": [
         "내 이메일을 사용하거나 ${ externalButton }"
-      ],
-      "Use your own email domain": [
-        "기존 이메일 도메인 사용"
       ],
       "use your own email.": [
         "자신만의 이메일 주소를 사용해보세요."
@@ -22623,6 +22669,9 @@
       "Are you sure you want to close?": [
         "정말로 닫을까요?"
       ],
+      "Are you sure you want to disconnect this address?": [
+        "정말로 이 주소를 연결 해제하시겠습니까?"
+      ],
       "Are you sure?": [
         "확실하신가요?"
       ],
@@ -22646,6 +22695,9 @@
       ],
       "Bridge for ${ platform }": [
         "${ platform }용 Bridge"
+      ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "당신의 Gmail을 ${ MAIL_APP_NAME }로 가져오세요."
       ],
       "Browser extensions": [
         "브라우저 확장 기능"
@@ -22935,9 +22987,6 @@
       "Device": [
         "기기"
       ],
-      "Device connected!": [
-        "디바이스 연결됨!"
-      ],
       "Device name": [
         "장치명"
       ],
@@ -22958,6 +23007,9 @@
       ],
       "Discard changes?": [
         "변경 사항을 취소할까요?"
+      ],
+      "Disconnected from Gmail": [
+        "Gmail 연결 해제됨"
       ],
       "Display name and signature": [
         "표시되는 이름과 서명"
@@ -23799,9 +23851,6 @@
       "Special Offer": [
         "특가"
       ],
-      "Spring Sale": [
-        "봄맞이 할인"
-      ],
       "Start a new import": [
         "신규 불러오기 시작"
       ],
@@ -23885,9 +23934,6 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "${ DARK_WEB_MONITORING_NAME } 켜기"
-      ],
-      "TV sign in": [
-        "TV 로그인"
       ],
       "Two-factor authentication": [
         "2단계 인증"
@@ -24011,6 +24057,9 @@
       ],
       "WireGuard configuration": [
         "WireGuard 설정"
+      ],
+      "You are all set": [
+        "모든 준비가 완료되었어요"
       ],
       "You can now create unlimited folders and labels": [
         "무제한 폴더 및 라벨을 생성할 수 있습니다."

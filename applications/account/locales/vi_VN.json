@@ -4534,9 +4534,6 @@
     "Delete group prompt": {
       "Are you sure you want to delete this group?": [
         "Chắc chắn muốn xóa nhóm này không?"
-      ],
-      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
-        "Lưu ý rằng nếu xóa nhóm ${ displayGroupName } (với địa chỉ ${ displayGroupAddressEmail }), sẽ không còn nhận được email sử dụng địa chỉ đó nữa."
       ]
     },
     "Delinquent modal title": {
@@ -7819,11 +7816,6 @@
         "Các dịch vụ"
       ]
     },
-    "Group address title": {
-      "Group address": [
-        "Địa chỉ nhóm"
-      ]
-    },
     "Group member count": {
       "${ memberCount } member": [
         "${ memberCount } thành viên"
@@ -9453,9 +9445,6 @@
       ],
       "End-to-end email encryption is disabled for this group. It can be enabled.": [
         "Mã hóa email đầu cuối bị vô hiệu hóa cho nhóm này. Có thể kích hoạt lại."
-      ],
-      "End-to-end email encryption is enabled for this group.": [
-        "Mã hóa email đầu cuối đã được kích hoạt cho nhóm này."
       ],
       "End-to-end encrypted": [
         "Được mã hóa đầu cuối"
@@ -12335,9 +12324,6 @@
       "Add all organization members": [
         "Thêm tất cả thành viên tổ chức"
       ],
-      "Add group member": [
-        "Thêm thành viên nhóm"
-      ],
       "Address": [
         "Địa chỉ"
       ],
@@ -12910,9 +12896,6 @@
       ],
       "Group address": [
         "Địa chỉ nhóm"
-      ],
-      "Group members": [
-        "Thành viên nhóm"
       ],
       "Group name": [
         "Tên nhóm"
@@ -17203,9 +17186,6 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Gia hạn ở mức ${ renewPriceStr }, hủy bất kỳ lúc nào."
       ],
-      "Sorry, this offer is not available for your account.": [
-        "Rất tiếc, ưu đãi này không dành cho tài khoản của bạn"
-      ],
       "Sorry, this offer is not available with your current plan.": [
         "Xin lỗi, ưu đãi này không khả dụng với gói hiện tại."
       ],
@@ -19207,17 +19187,11 @@
       "${ FREE_PASS_ALIASES } hide-my-email alias to fight spam": [
         "${ FREE_PASS_ALIASES } biệt danh hide-my-email để chống thư rác"
       ],
-      "${ MAIL_APP_NAME } desktop app": [
-        "Ứng dụng máy tính để bàn ${ MAIL_APP_NAME }"
-      ],
       "${ maxAddresses } address": [
         "${ maxAddresses } địa chỉ"
       ],
       "${ maxAddresses } email address": [
         "${ maxAddresses } địa chỉ email"
-      ],
-      "${ maxAddresses } extra email address": [
-        "${ maxAddresses } địa chỉ email thêm"
       ],
       "${ maxCalendars } calendar": [
         "${ maxCalendars } lịch"
@@ -19236,9 +19210,6 @@
       ],
       "${ value } of secure storage per user": [
         "${ value } lưu trữ bảo mật cho mỗi người dùng"
-      ],
-      "${ value } total storage": [
-        "Tổng dung lượng lưu trữ ${ value }"
       ],
       "${ VPN_CONNECTIONS } high-speed VPN connection": [
         "${ VPN_CONNECTIONS } kết nối VPN tốc độ cao"
@@ -19459,9 +19430,6 @@
       "Ultra fast and private VPN": [
         "VPN siêu nhanh và riêng tư"
       ],
-      "Unlimited folders, labels, and filters": [
-        "Không giới hạn thư mục, nhãn dán và bộ lọc"
-      ],
       "Unlimited hide-my-email aliases": [
         "Không giới hạn biệt danh hide-my-email"
       ],
@@ -19485,9 +19453,6 @@
       ],
       "Use your email, or ${ externalButton }": [
         "Sử dụng email, hoặc ${ externalButton }"
-      ],
-      "Use your own email domain": [
-        "Sử dụng miền email của riêng bạn"
       ],
       "use your own email.": [
         "sử dụng email của riêng bạn."
@@ -21801,9 +21766,6 @@
       "Device": [
         "Thiết bị"
       ],
-      "Device connected!": [
-        "Thiết bị đã kết nối!"
-      ],
       "Device name": [
         "Tên thiết bị"
       ],
@@ -22721,9 +22683,6 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Bật ${ DARK_WEB_MONITORING_NAME }"
-      ],
-      "TV sign in": [
-        "Đăng nhập TV"
       ],
       "Two-factor authentication": [
         "Xác thực hai yếu tố"

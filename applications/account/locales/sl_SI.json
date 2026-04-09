@@ -5419,9 +5419,6 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Nekatera imena vaših oznak presegajo največje dovoljeno število znakov za ${ MAIL_APP_NAME }. Prilagodite uvoz za urejanje teh imen."
       ],
-      "Something went wrong connecting your TV. Scan the QR code on your TV once more.": [
-        "Pri povezovanju vašega TV-ja je prišlo do napake. Ponovno odčitajte kodo QR na vašem TV-ju."
-      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Nekaj je šlo narobe; pred nadaljevanjem ${ refresh }. Če se napaka še naprej prikazuje, se obrnite na našo ${ supportTeam }."
       ],
@@ -5505,9 +5502,6 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "To sporočilo morda vsebuje povezave, ki jih vaš trenutni brskalnik ne more pravilno odpreti."
-      ],
-      "This offer is not available in your country": [
-        "Ta ponudba ni na voljo v vaši državi"
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Če želite ustvariti nezasebne uporabniške račune in dostopati do njihovih računov, boste morali obnoviti skrbniške pravice."
@@ -6637,11 +6631,6 @@
       ],
       "Services": [
         "Storitve"
-      ]
-    },
-    "Group address title": {
-      "Group address": [
-        "Naslov skupine"
       ]
     },
     "Group member count": {
@@ -8682,11 +8671,17 @@
       "No folder selected": [
         "Mapa ni izbrana"
       ],
+      "No forwarding history.": [
+        "Ni zgodovine posredovanja."
+      ],
       "No gateways": [
         "Brez prehodov"
       ],
       "No Gateways yet": [
         "Še ni prehodov"
+      ],
+      "No import history.": [
+        "Ni zgodovine uvozov."
       ],
       "No label selected": [
         "Izbrana ni nobena oznaka"
@@ -9708,9 +9703,6 @@
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Ko odstranite strežnik iz prehoda, ta vstopi v 10-dnevno obdobje deaktivacije. Ta strežnik je mogoče dodati novemu prehodu, vendar njegove države ni mogoče spremeniti."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Ko nastavite dvojno preverjanje pristnosti, nudimo obnovitvene kode, ki jih lahko uporabite za prijavo, če izgubite dostop do aplikacije za preverjanje pristnosti."
-      ],
       "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
         "Ko ste pripravljeni aktivirati naslov, odčitajte kodo QR ali uporabite povezavo v kuponu."
       ],
@@ -10561,9 +10553,6 @@
       "Add extra services": [
         "Dodaj dodatne storitve"
       ],
-      "Add group member": [
-        "Dodaj člana skupine"
-      ],
       "Address": [
         "Naslov"
       ],
@@ -11011,9 +11000,6 @@
       "Group address": [
         "Naslov skupine"
       ],
-      "Group members": [
-        "Člani skupine"
-      ],
       "Group name": [
         "Ime skupine"
       ],
@@ -11040,9 +11026,6 @@
       ],
       "Import interval": [
         "Interval uvoza"
-      ],
-      "Import recent mails": [
-        "Uvozi nedavna e-poštna sporočila"
       ],
       "Import to email address": [
         "Uvozi na e-poštni naslov"
@@ -14918,9 +14901,6 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Obnovi se za ${ renewPriceStr }. Prekliči kadar koli."
       ],
-      "Sorry, this offer is not available for your account.": [
-        "Žal ta ponudba ni na voljo za vaš račun."
-      ],
       "Sorry, this offer is not available with your current plan.": [
         "Žal ta ponudba ni na voljo z vašim trenutnim paketom."
       ],
@@ -16332,9 +16312,6 @@
         "${ FREE_PASS_ALIASES } vzdevki hide-my-email",
         "${ FREE_PASS_ALIASES } vzdevki hide-my-email"
       ],
-      "${ MAIL_APP_NAME } desktop app": [
-        "Program ${ MAIL_APP_NAME } za namizje"
-      ],
       "${ maxAddresses } address": [
         "${ maxAddresses } naslov",
         "${ maxAddresses } naslova",
@@ -16367,9 +16344,6 @@
       ],
       "${ value } total encrypted storage": [
         "${ value } skupne šifrirane shrambe"
-      ],
-      "${ value } total storage": [
-        "${ value } skupnega prostora shrambe"
       ],
       "${ VPN_CONNECTIONS } high-speed VPN connection": [
         "${ VPN_CONNECTIONS } hitra VPN povezava",
@@ -16482,17 +16456,11 @@
       "Ultra fast and private VPN": [
         "Ultra hiter in zaseben VPN"
       ],
-      "Unlimited folders, labels, and filters": [
-        "Neomejeno število map, oznak in filtrov"
-      ],
       "Unlimited hide-my-email aliases": [
         "Neomejeno število vzdevkov hide-my-email"
       ],
       "Up to 6 users": [
         "Do šest uporabnikov"
-      ],
-      "Use your own email domain": [
-        "Uporabite svojo e-poštno domeno"
       ],
       "Yearly": [
         "Letno"
@@ -18638,9 +18606,6 @@
       "Device": [
         "Naprava"
       ],
-      "Device connected!": [
-        "Naprava je povezana!"
-      ],
       "Device name": [
         "Ime naprave"
       ],
@@ -19379,9 +19344,6 @@
       "Special Offer": [
         "Posebna ponudba"
       ],
-      "Spring Sale": [
-        "Pomladanska akcija"
-      ],
       "Start a new import": [
         "Začni z novim uvozom"
       ],
@@ -19441,9 +19403,6 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Vklopi ${ DARK_WEB_MONITORING_NAME }"
-      ],
-      "TV sign in": [
-        "TV prijava"
       ],
       "Two-factor authentication": [
         "Dvojno preverjanja pristnosti"
