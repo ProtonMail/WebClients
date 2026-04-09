@@ -1,4 +1,4 @@
-import React, { type PropsWithChildren } from 'react';
+import React, { type PropsWithChildren, useRef } from 'react';
 
 import { c } from 'ttag';
 
@@ -13,7 +13,7 @@ import SettingsListItem from '@proton/components/components/sidebar/SettingsList
 import Sidebar from '@proton/components/components/sidebar/Sidebar';
 import SidebarList from '@proton/components/components/sidebar/SidebarList';
 import SidebarNav from '@proton/components/components/sidebar/SidebarNav';
-import { VisibilityTracker } from '@proton/components/components/visibility/VisibilityTracker';
+import { useVisibilityTracker } from '@proton/components/components/visibility/useVisibilityTracker';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 import type { Subscription } from '@proton/payments/index';
 import { APPS } from '@proton/shared/lib/constants';
@@ -31,7 +31,20 @@ type CoupledParentProps = {
     onSidebarToggle: () => void;
 };
 
-const SidebarParent = ({ children, sidebarExpanded, onSidebarToggle }: PropsWithChildren<CoupledParentProps>) => {
+const onViewEventKey = 'b2b-admin-sidebar-viewed';
+const SidebarParent = ({
+    children,
+    sidebarExpanded,
+    onSidebarToggle,
+    trackingData,
+}: PropsWithChildren<CoupledParentProps & { trackingData: Record<string, unknown> }>) => {
+    const navigationRef = useRef<HTMLDivElement>(null);
+    useVisibilityTracker(navigationRef, {
+        onEnter: () => {
+            telemetry.sendCustomEvent(onViewEventKey, trackingData);
+        },
+        once: true,
+    });
     return (
         <Sidebar
             app={APPS.PROTONVPN_SETTINGS}
@@ -41,6 +54,7 @@ const SidebarParent = ({ children, sidebarExpanded, onSidebarToggle }: PropsWith
             onToggleExpand={onSidebarToggle}
             version={<VpnSidebarVersion />}
             hasAppLinks={false}
+            navigationRef={navigationRef}
         >
             {children}
         </Sidebar>
@@ -76,7 +90,6 @@ const SidebarToggle = ({
             >
                 <div className="flex flex-row items-center justify-space-between">
                     {c('Info').t`New sidebar`}
-
                     <Toggle
                         id="sidebar-admin-toggle"
                         role="switch"
@@ -121,9 +134,7 @@ const TrackableSidebar = ({
     organization: OrganizationExtended | undefined;
     subscription: Subscription | undefined;
 } & Props) => {
-    const onViewEventKey = 'b2b-admin-sidebar-viewed';
     const [user] = useUser();
-
     const adminSidebarFeature = useB2BAdminSidebarFeature({ user, subscription, organization });
     const isSidebarActive = adminSidebarFeature.enabled && adminSidebarFeature.sidebar.status;
     const trackingData = {
@@ -134,54 +145,42 @@ const TrackableSidebar = ({
     };
 
     return (
-        <VisibilityTracker
-            onEnter={() => {
-                telemetry.sendCustomEvent(onViewEventKey, trackingData);
-            }}
-            once
-        >
+        <SidebarParent sidebarExpanded={sidebarExpanded} onSidebarToggle={onSidebarToggle} trackingData={trackingData}>
             {isSidebarActive ? (
-                <SidebarParent sidebarExpanded={sidebarExpanded} onSidebarToggle={onSidebarToggle}>
+                <>
                     <SidebarNav className="overflow-auto">
                         <SidebarB routes={adminSidebarFeature.routes} />
                     </SidebarNav>
                     <SidebarToggle adminSidebarFeature={adminSidebarFeature} trackingData={trackingData} />
-                </SidebarParent>
+                </>
             ) : (
-                <SidebarParent sidebarExpanded={sidebarExpanded} onSidebarToggle={onSidebarToggle}>
-                    <VisibilityTracker
-                        onEnter={() => {
-                            telemetry.sendCustomEvent(onViewEventKey, trackingData);
-                        }}
-                        once
-                    >
-                        <SidebarNav>
-                            <SidebarList>
-                                {Object.values({
-                                    ...routes,
-                                    ...(organizationRoutes.available ? organizationRoutes.routes : {}),
-                                }).map(
-                                    (section: SectionConfig) =>
-                                        getIsSectionAvailable(section) && (
-                                            <SettingsListItem
-                                                to={getSectionPath('', section)}
-                                                icon={section.icon}
-                                                notification={section.notification}
-                                                key={section.to}
-                                            >
-                                                <span className="text-ellipsis" title={section.text}>
-                                                    {section.text}
-                                                </span>
-                                            </SettingsListItem>
-                                        )
-                                )}
-                            </SidebarList>
-                        </SidebarNav>
-                        <SidebarToggle adminSidebarFeature={adminSidebarFeature} trackingData={trackingData} />
-                    </VisibilityTracker>
-                </SidebarParent>
+                <>
+                    <SidebarNav>
+                        <SidebarList>
+                            {Object.values({
+                                ...routes,
+                                ...(organizationRoutes.available ? organizationRoutes.routes : {}),
+                            }).map(
+                                (section: SectionConfig) =>
+                                    getIsSectionAvailable(section) && (
+                                        <SettingsListItem
+                                            to={getSectionPath('', section)}
+                                            icon={section.icon}
+                                            notification={section.notification}
+                                            key={section.to}
+                                        >
+                                            <span className="text-ellipsis" title={section.text}>
+                                                {section.text}
+                                            </span>
+                                        </SettingsListItem>
+                                    )
+                            )}
+                        </SidebarList>
+                    </SidebarNav>
+                    <SidebarToggle adminSidebarFeature={adminSidebarFeature} trackingData={trackingData} />
+                </>
             )}
-        </VisibilityTracker>
+        </SidebarParent>
     );
 };
 
@@ -196,9 +195,17 @@ export const VPNSidebar = ({ routes, organizationRoutes, sidebarExpanded, onSide
 
     if (loadingSubscription || loadingOrganization) {
         return (
-            <SidebarParent sidebarExpanded={sidebarExpanded} onSidebarToggle={onSidebarToggle}>
+            <Sidebar
+                app={APPS.PROTONVPN_SETTINGS}
+                appsDropdown={null}
+                logo={<MainLogo to="/" />}
+                expanded={sidebarExpanded}
+                onToggleExpand={onSidebarToggle}
+                version={<VpnSidebarVersion />}
+                hasAppLinks={false}
+            >
                 <Loader size="medium" />
-            </SidebarParent>
+            </Sidebar>
         );
     }
 
