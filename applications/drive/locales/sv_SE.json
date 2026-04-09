@@ -809,6 +809,9 @@
       "Reconnect": [
         "Anslut igen"
       ],
+      "Reconnect to Gmail": [
+        "Återanslut till Gmail"
+      ],
       "Recover data": [
         "Återställ data"
       ],
@@ -3011,6 +3014,12 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Förenkla synkronisering och schemaläggning med delade kalendrar."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Detta kan hända om behörigheter togs bort eller ditt lösenord har ändrats."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "För att fortsätta ta emot och skicka Gmail-meddelanden i ${ BRAND_NAME }, återanslut ditt konto."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "För att säkerställa högsta möjliga säkerhet för ditt konto, ställ in en återställningsfras."
       ],
@@ -3031,6 +3040,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Använd den här guiden för att din organisation snabbt ska kunna dra nytta av ${ BRAND_NAME }:s branschledande kryptering och ekosystem för integritet."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Vi kan inte komma åt ${ boldEmails } längre."
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Med kontaktgrupper kan du skicka e-post till alla i gruppen med ett klick."
@@ -3311,6 +3323,9 @@
       ],
       "Account does not exist": [
         "Konto finns inte"
+      ],
+      "Address could not be added.": [
+        "Adress kunde inte läggas till."
       ],
       "Address primary private key not found": [
         "Adressens privata nyckel hittades inte"
@@ -3840,9 +3855,6 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Detta meddelande kan innehålla några URL-länkar som inte kan öppnas korrekt av din nuvarande webbläsare."
-      ],
-      "This offer is not available in your country": [
-        "Detta erbjudande är inte tillgängligt i ditt land"
       ],
       "Try using only letters, numerals, and _.-": [
         "Prova använda endast bokstäver, siffror och _.-"
@@ -5501,6 +5513,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Säkerställ fullständig privat och krypterad kommunikation. Gör anspråk på din gratis ${ BRAND_NAME } e-postadress nu."
       ],
+      "Enter code": [
+        "Ange kod"
+      ],
       "Enter password": [
         "Ange lösenord"
       ],
@@ -5854,6 +5869,18 @@
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "De flesta offentliga WiFi-nätverk är säkra, men vissa saknar säkerhet, vilket gör att du utsätts för cyberhot. Ett VPN krypterar din trafik och håller dig skyddad."
+      ],
+      "Move ${ dragCount } item": [
+        "Flytta ${ dragCount } objekt",
+        "Flytta ${ dragCount } objekt"
+      ],
+      "Move ${ fileCount } file": [
+        "Flytta ${ fileCount } fil",
+        "Flytta ${ fileCount } filer"
+      ],
+      "Move ${ folderCount } folder": [
+        "Flytta ${ folderCount } mapp",
+        "Flytta ${ folderCount } mappar"
       ],
       "Moving files": [
         "Flyttar filer"
@@ -6685,9 +6712,6 @@
       ],
       "When you remove ${ deviceName } as a synced device, all folders added to My Computers from this device will be permanently deleted from ${ DRIVE_APP_NAME }.": [
         "När du tar bort ${ deviceName } som en synkroniserad enhet kommer alla mappar som lagts till i \"Mina datorer\" från denna enhet att tas bort permanent från ${ DRIVE_APP_NAME }."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "När du ställer in tvåfaktorsautentisering tillhandahåller vi återställningskoder som du kan använda för att logga in om du förlorar åtkomsten till din autentiseringsapp."
       ],
       "who": [
         "vem"
@@ -9508,9 +9532,6 @@
       "Public link access updated": [
         "Offentlig länkåtkomst uppdaterad"
       ],
-      "Root folder failed to be loaded": [
-        "Misslyckades att ladda rotmapp"
-      ],
       "Selected item was not removed from your list": [
         "Valt objekt togs inte bort från din lista",
         "Valda objekt misslyckades att tas bort från din lista"
@@ -9545,9 +9566,6 @@
       "Stopping the sharing of this item has failed": [
         "Misslyckades att stoppa delning av detta objekt"
       ],
-      "Subfolder failed to be loaded": [
-        "Undermapp kunde inte laddas"
-      ],
       "The document failed to be created": [
         "Dokumentet misslyckades att skapas"
       ],
@@ -9571,6 +9589,9 @@
       ],
       "You stopped sharing this item": [
         "Du stoppade dela detta objekt"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Din ${ BRAND_NAME }-adress är redo att användas"
       ],
       "Your old files will be deleted in 72 hours": [
         "Dina gamla filer kommer att tas bort inom 72 timmar"
@@ -12461,6 +12482,9 @@
       "Discard changes?": [
         "Ignorera ändringar?"
       ],
+      "Disconnected from Gmail": [
+        "Koppla från Gmail"
+      ],
       "Downgrade account": [
         "Nedgradera konto"
       ],
@@ -12985,9 +13009,6 @@
       ],
       "Sort files/folders": [
         "Sortera filer/mappar"
-      ],
-      "Spring Sale": [
-        "Vårrea"
       ],
       "Start a new import": [
         "Starta en ny import"

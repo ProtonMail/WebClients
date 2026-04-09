@@ -814,6 +814,9 @@
       "Reconnect": [
         "Reconectare"
       ],
+      "Reconnect to Gmail": [
+        "Reconectare la Gmail"
+      ],
       "Recover data": [
         "Recuperare date"
       ],
@@ -3042,6 +3045,15 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Simplificați sincronizarea și programarea cu calendare partajate."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Acest lucru se poate întâmpla dacă permisiunile au fost eliminate sau parola a fost modificată."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Pentru a continua să primiți și să trimiteți mesaje Gmail în ${ BRAND_NAME }, reconectați-vă conturile."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Pentru a continua să primiți și să trimiteți mesaje Gmail în ${ BRAND_NAME }, reconectați-vă conturile."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Pentru a asigura cea mai mare securitate posibilă a contului, setați o frază de recuperare."
       ],
@@ -3062,6 +3074,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Utilizați acest ghid pentru ca organizația să beneficieze imediat de criptarea și ecosistemul de confidențialitate maximă oferite de ${ BRAND_NAME } ."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Nu mai putem accesa ${ boldEmails }."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Ne pare rău să vă vedem plecând. Dacă aveți un moment, am aprecia foarte mult să aflăm de ce doriți să anulați. Feedback-ul dvs. ne ajută să facem ${ BRAND_NAME } mai bun pentru toată lumea."
@@ -3345,6 +3360,9 @@
       ],
       "Account does not exist": [
         "Contul nu există."
+      ],
+      "Address could not be added.": [
+        "Adresa nu a putut fi adăugată."
       ],
       "Address primary private key not found": [
         "Nu s-a găsit adresa cheii private primare"
@@ -3798,6 +3816,9 @@
       "Something went wrong during folder listing": [
         "Ceva nu a funcționat bine pe durata listării folderelor."
       ],
+      "Something went wrong while fetching available domains": [
+        "Ceva nu a funcționat corect la preluarea domeniilor disponibile."
+      ],
       "Something went wrong with search. Please try again later.": [
         "Ceva nu a funcționat corect cu căutarea. Reîncercați mai târziu."
       ],
@@ -3896,9 +3917,6 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Acest mesaj poate conține unele legături web care nu pot fi deschise corect de către navigatorul actual."
-      ],
-      "This offer is not available in your country": [
-        "Această ofertă nu este disponibilă țara actuală."
       ],
       "Try using only letters, numerals, and _.-": [
         "Folosiți doar litere, cifre și _ . -"
@@ -5633,6 +5651,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Asigurați o comunicare complet privată și criptată. Revendicați-vă acum adresa gratuită de e-mail ${ BRAND_NAME }."
       ],
+      "Enter code": [
+        "Introduceți codul"
+      ],
       "Enter password": [
         "Introduceți parola"
       ],
@@ -5778,6 +5799,9 @@
       ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "Dacă aveți una dintre acestea, accesați setările contului ${ BRAND_NAME } pentru a începe procesul de deblocare."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Dacă v-ați pierdut accesul la aplicația de autentificare, puteți utiliza unul din cele 16 coduri de recuperare de rezervă furnizate la configurarea autentificării cu doi factori. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Dacă continuați cu retrogradarea, veți pierde accesul la funcțiile cu plată din ${ MAIL_APP_NAME } și ${ VPN_APP_NAME }."
@@ -5992,6 +6016,21 @@
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Majoritatea rețelelor Wi-Fi publice sunt sigure, dar unele nu au securitate, expunându-vă la amenințări cibernetice. Un VPN vă criptează traficul, păstrându-vă protecția."
+      ],
+      "Move ${ dragCount } item": [
+        "Mutare ${ dragCount } articol.",
+        "Mutare ${ dragCount } articole.",
+        "Mutare ${ dragCount } de articole."
+      ],
+      "Move ${ fileCount } file": [
+        "Mută ${ fileCount } fișier",
+        "Mutare ${ fileCount } fișiere",
+        "Mutare ${ fileCount } de fișiere"
+      ],
+      "Move ${ folderCount } folder": [
+        "Mutare ${ folderCount } folder",
+        "Mutare ${ folderCount } foldere",
+        "Mutare ${ folderCount } de foldere"
       ],
       "Moving files": [
         "Se mută fișierele"
@@ -6835,9 +6874,6 @@
       ],
       "When you remove ${ deviceName } as a synced device, all folders added to My Computers from this device will be permanently deleted from ${ DRIVE_APP_NAME }.": [
         "Când eliminați ${ deviceName } ca dispozitiv sincronizat, toate folderele adăugate la Calculatoarele mele de pe acest dispozitiv vor fi șterse permanent din ${ DRIVE_APP_NAME }."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Când configurați autentificarea cu doi factori, vă furnizăm coduri de recuperare pe care le puteți folosi pentru a vă conecta dacă vă pierdeți accesul la aplicația de autentificare."
       ],
       "who": [
         "cine"
@@ -9721,9 +9757,6 @@
       "Public link access updated": [
         "Accesul la legătura web publică s-a actualizat."
       ],
-      "Root folder failed to be loaded": [
-        "Folderul rădăcină nu s-a putut încărca."
-      ],
       "Selected item was not removed from your list": [
         "Articolul selectat nu a fost eliminat din listă.",
         "Articolele selectate nu au fost eliminate din listă.",
@@ -9762,9 +9795,6 @@
       "Stopping the sharing of this item has failed": [
         "Oprirea partajării acestui articol a eșuat."
       ],
-      "Subfolder failed to be loaded": [
-        "Subfolderul nu s-a putut încărca."
-      ],
       "The document failed to be created": [
         "Crearea documentului a eșuat."
       ],
@@ -9788,6 +9818,9 @@
       ],
       "You stopped sharing this item": [
         "Ați oprit partajarea acestui articol."
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Adresa ${ BRAND_NAME } este gata de utilizare"
       ],
       "Your old files will be deleted in 72 hours": [
         "Fișierele vechi vor fi șterse în 72 de ore."
@@ -12750,6 +12783,9 @@
       "Discard changes?": [
         "Anulare modificări?"
       ],
+      "Disconnected from Gmail": [
+        "Deconectat de la Gmail"
+      ],
       "Downgrade account": [
         "Retrogradare cont"
       ],
@@ -13280,9 +13316,6 @@
       ],
       "Sort files/folders": [
         "Sortare fișiere/foldere"
-      ],
-      "Spring Sale": [
-        "Ofertă de primăvară"
       ],
       "Start a new import": [
         "Începere importare nouă"
