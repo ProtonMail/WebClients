@@ -120,6 +120,7 @@ enum AccountFlag {
     BornPrivateEurope = 'BornPrivateEurope',
     B2BSidebarRefreshEnabled = 'B2BSidebarRefreshEnabled',
     UnauthLost2FA = 'UnauthLost2FA',
+    UnauthedForgotPassword = 'UnauthedForgotPassword',
 }
 
 enum PaymentsFlag {
