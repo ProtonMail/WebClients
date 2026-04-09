@@ -161,10 +161,8 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
             }
         }),
 
-        reconciliate: withContext((ctx, formType, fields) => {
-            /** Attach the form tracker only to the top frame.
-             * FIXME: supporting cross-frame autosave */
-            if (ctx?.mainFrame && !formHandle.tracker) {
+        reconciliate: withContext((_, formType, fields) => {
+            if (!formHandle.tracker) {
                 formHandle.tracker = createFormTracker(formHandle);
                 formHandle.tracker.attach();
             }
