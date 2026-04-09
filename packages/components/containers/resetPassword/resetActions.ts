@@ -4,6 +4,7 @@ import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { auth, authMnemonic, getMnemonicAuthInfo } from '@proton/shared/lib/api/auth';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import { resetKeysRoute } from '@proton/shared/lib/api/keys';
+import type { AccountType, RecoveryMethod, ValidateResetTokenResponse } from '@proton/shared/lib/api/reset';
 import { requestLoginResetToken } from '@proton/shared/lib/api/reset';
 import type { GetMnemonicResetData } from '@proton/shared/lib/api/settingsMnemonic';
 import { getMnemonicReset, mnemonicReset } from '@proton/shared/lib/api/settingsMnemonic';
@@ -29,13 +30,7 @@ import { computeKeyPassword, generateKeySalt } from '@proton/srp';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
-import type {
-    AccountType,
-    RecoveryMethod,
-    ResetActionResponse,
-    ResetCacheResult,
-    ValidateResetTokenResponse,
-} from './interface';
+import type { ResetActionResponse, ResetCacheResult } from './interface';
 import { STEPS } from './interface';
 
 export const handleNewPassword = async ({

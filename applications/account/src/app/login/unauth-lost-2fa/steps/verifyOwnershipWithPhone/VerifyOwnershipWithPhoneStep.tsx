@@ -21,6 +21,7 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { numberValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
 import { initiateVerification, verifyCode } from '../../../../containers/securityCheckup/verification/verification';
+import { getSMSVerificationCodeText } from '../../../../content/helper';
 import { useVerifyOwnershipWithPhoneActorRef } from '../../UnauthedLost2FAContainer';
 
 type VerificationResult = Awaited<ReturnType<typeof initiateVerification>>;
@@ -82,9 +83,7 @@ const VerifyCodeStep = ({ verificationResult }: { verificationResult: Verificati
             <div className="mb-4">
                 {c('Info').t`To help keep your account safe, we want to make sure it's really you trying to sign in.`}
             </div>
-            <div className="mb-4">
-                {c('Info').jt`An SMS with a verification code was just sent to ${recoveryPhoneElement}.`}
-            </div>
+            <div className="mb-4">{getSMSVerificationCodeText(recoveryPhoneElement)}</div>
             <InputFieldTwo
                 label={
                     // translator: 'code' here refers to a 6 digit code sent to the users recovery phone via SMS

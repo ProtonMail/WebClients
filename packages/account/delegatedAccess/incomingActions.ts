@@ -14,6 +14,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';
 import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import type { Api } from '@proton/shared/lib/interfaces';
+import type { DelegatedAccessTypeEnum } from '@proton/shared/lib/interfaces/DelegatedAccess';
 import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
@@ -25,7 +26,7 @@ import { userThunk } from '../user';
 import { getIsIncomingDelegatedAccessAvailable } from './available';
 import { getDecryptedDelegatedAccessToken, getReEncryptedRecoveryToken } from './crypto';
 import { type DelegatedAccessState, delegatedAccessActions, selectIncomingDelegatedAccess } from './index';
-import type { DelegatedAccessTypeEnum, IncomingDelegatedAccessOutput } from './interface';
+import type { IncomingDelegatedAccessOutput } from './interface';
 
 const queryListIncomingDelegatedAccess = () => ({
     url: `account/v1/access/incoming`,
