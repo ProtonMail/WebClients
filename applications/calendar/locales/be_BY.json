@@ -704,6 +704,9 @@
       "Reconnect": [
         "Перападключыцца"
       ],
+      "Reconnect to Gmail": [
+        "Перападключыцца да Gmail"
+      ],
       "Reconnect to Zoom": [
         "Перападключыцца да Zoom"
       ],
@@ -3209,6 +3212,15 @@
       "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
         "Гэта можа заняць некалькі хвілін. Тым часам вы можаце працягнуць карыстацца ${ CALENDAR_APP_NAME }."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Гэта магло адбыцца з-за таго, што дазволы былі выдалены або ваш пароль зменены."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Перападключыце свой уліковы запіс, каб працягнуць атрыманне і адпраўку паведамленняў Gmail у ${ BRAND_NAME }."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Перападключыце свае ўліковыя запісы, каб працягнуць атрыманне і адпраўку паведамленняў Gmail у ${ BRAND_NAME }."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Задайце фразу аднаўлення для забеспячэння свайму ўліковаму запісу найвышэйшага з магчымых узроўняў абароны."
       ],
@@ -3226,6 +3238,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Выкарыстоўвайце гэты дапаможнік, каб ваша арганізацыя хутка змагла атрымаць перавагі ад ${ BRAND_NAME }. Дадзеная экасістэма з'яўляецца адной з лепшых у галіне шыфравання і прыватнасці."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Больш не ўдаецца атрымаць доступ да ${ boldEmails }."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Нам шкада, што вы пакідаеце нас. Мы будзем вам вельмі ўдзячныя, калі вы знойдзеце крыху часу паведаміць аб прычынах скасавання сваёй падпіскі. Вашы водгукі дапамагаюць зрабіць ${ BRAND_NAME } яшчэ лепш для кожнага карыстальніка."
@@ -3575,6 +3590,9 @@
       ],
       "Account does not exist": [
         "Уліковы запіс не існуе"
+      ],
+      "Address could not be added.": [
+        "Немагчыма дадаць адрас."
       ],
       "Address primary private key not found": [
         "Асноўны закрыты ключ адраса не знойдзены"
@@ -4014,6 +4032,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Назвы некаторых вашых метак перавышаюць абмежаванні колькасці сімвалаў ${ MAIL_APP_NAME }. Наладзьце імпартаванне, каб змяніць гэтыя назвы."
       ],
+      "Something went wrong while fetching available domains": [
+        "Нешта пайшло не так пры атрыманні даступных даменаў"
+      ],
       "Something went wrong. Please try again.": [
         "Нешта пайшло не так. Паспрабуйце яшчэ раз."
       ],
@@ -4082,9 +4103,6 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Гэта паведамленне можа змяшчаць некаторыя спасылкі на URL-адрасы, якія ваш бягучы браўзер не зможа правільна адкрыць."
-      ],
-      "This offer is not available in your country": [
-        "Гэта прапанова недаступна ў вашай краіне"
       ],
       "Trusted keys are not valid for sending": [
         "Давераныя ключы несапраўдныя для адпраўкі"
@@ -5684,6 +5702,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Забяспечце цалкам прыватную і зашыфраваную сувязь. Атрымайце бясплатны адрас электроннай пошты ${ BRAND_NAME }."
       ],
+      "Enter code": [
+        "Увядзіце код"
+      ],
       "Enter the code from your authenticator app": [
         "Увядзіце код з вашай праграмы аўтэнтыфікацыі"
       ],
@@ -6458,9 +6479,6 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "VPN выкарыстоўвае тэхналогію шыфравання, каб схаваць ваш IP-адрас пры падключэнні да VPN (унікальны код, які прызначаны вашай прыладзе)."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Пры наладжванні двухфактарнай аўтэнтыфікацыі, вы будзеце забяспечаны кодамі аднаўлення, якія зможаце выкарыстаць для ўваходу пры страце доступу да праграмы аўтэнтыфікацыі."
-      ],
       "Where will the appointment take place?": [
         "Дзе адбудзецца сустрэча?"
       ],
@@ -7059,9 +7077,6 @@
       "Country": [
         "Краіна"
       ],
-      "Create shareable pages where people can book time with you.": [
-        "Стварайце абагуленыя старонкі, дзе людзі змогуць браніраваць час з вамі."
-      ],
       "Credits": [
         "Крэдыты"
       ],
@@ -7355,6 +7370,9 @@
       ],
       "Secondary time zone": [
         "Другі часавы пояс"
+      ],
+      "Securely share parts of your schedule through a booking page you can send to anyone.": [
+        "Бяспечна абагульвайце часткі свайго раскладу праз старонку браніравання, якую вы можаце адправіць каму заўгодна."
       ],
       "Show others when I'm busy": [
         "Паказваць іншым, калі я заняты"
@@ -9121,6 +9139,9 @@
       ],
       "Passphrase copied to clipboard": [
         "Парольная фраза скапіявана ў буфер абмену"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Ваш адрас ${ BRAND_NAME } гатовы да выкарыстання"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -12231,6 +12252,9 @@
       "Discard changes?": [
         "Адхіліць змены?"
       ],
+      "Disconnected from Gmail": [
+        "Адключана ад Gmail"
+      ],
       "Does not repeat": [
         "Не паўтараць"
       ],
@@ -12623,9 +12647,6 @@
       ],
       "Simplify password management": [
         "Спрасціць кіраванне паролямі"
-      ],
-      "Spring Sale": [
-        "Вясенні распродаж"
       ],
       "Start a new import": [
         "Пачаць новае імпартаванне"

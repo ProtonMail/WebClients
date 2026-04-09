@@ -698,6 +698,9 @@
       "Reconnect": [
         "Reconectar"
       ],
+      "Reconnect to Gmail": [
+        "Reconectar ao Gmail"
+      ],
       "Reconnect to Zoom": [
         "Reconectar ao Zoom"
       ],
@@ -3509,6 +3512,9 @@
       "Account does not exist": [
         "A conta não existe"
       ],
+      "Address could not be added.": [
+        "O endereço não pôde ser adicionado."
+      ],
       "Address primary private key not found": [
         "Chave privada principal do endereço não encontrada"
       ],
@@ -3995,9 +4001,6 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Essa mensagem pode conter alguns links de URL que podem não serem abertos corretamente pelo seu navegador."
-      ],
-      "This offer is not available in your country": [
-        "Esta oferta não está disponível no seu país"
       ],
       "Trusted keys are not valid for sending": [
         "As chaves de confiança não são válidas para o envio"
@@ -5511,6 +5514,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Garanta uma comunicação totalmente privada e criptografada. Crie seu endereço de e-mail ${ BRAND_NAME } gratuito agora."
       ],
+      "Enter code": [
+        "Inserir código"
+      ],
       "Enter the code from your authenticator app": [
         "Insira o código do seu aplicativo de autenticação."
       ],
@@ -5616,6 +5622,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se você não encontrar o e-mail na caixa de entrada. Verifique a pasta de spam."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "If Se você perdeu o acesso ao seu aplicativo de autenticação, pode usar um dos 16 códigos de recuperação de backup fornecidos quando configurou a autenticação de dois fatores. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Se você prosseguir com o downgrade, perderá o acesso aos recursos pagos do ${ MAIL_APP_NAME } e ${ VPN_APP_NAME }."
@@ -6275,9 +6284,6 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Quando você se conectar à VPN, ela usa tecnologia de criptografia para ocultar seu endereço IP (um código exclusivo atribuído ao seu dispositivo)."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quando você configura a autenticação de dois fatores, fornecemos códigos de recuperação que você pode usar para fazer login se perder o acesso ao seu aplicativo de autenticação."
-      ],
       "Where will the appointment take place?": [
         "Onde o compromisso vai acontecer?"
       ],
@@ -6852,9 +6858,6 @@
       "Country": [
         "País"
       ],
-      "Create shareable pages where people can book time with you.": [
-        "Crie páginas compartilháveis onde as pessoas podem agendar um horário com você."
-      ],
       "Credits": [
         "Créditos"
       ],
@@ -7146,6 +7149,9 @@
       ],
       "Secondary time zone": [
         "Fuso horário secundário"
+      ],
+      "Securely share parts of your schedule through a booking page you can send to anyone.": [
+        "Compartilhe com segurança partes da sua agenda por meio de uma página de agendamento que você pode enviar para qualquer pessoa."
       ],
       "Show others when I'm busy": [
         "Mostrar aos outros quando estou ocupado"
@@ -8828,6 +8834,9 @@
       ],
       "Passphrase copied to clipboard": [
         "Frase secreta copiada para a área de transferência"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Seu endereço da ${ BRAND_NAME } está pronto para uso"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11862,6 +11871,9 @@
       "Discard changes?": [
         "Descartar alterações?"
       ],
+      "Disconnected from Gmail": [
+        "Desconectado do Gmail"
+      ],
       "Does not repeat": [
         "Não repete"
       ],
@@ -12249,9 +12261,6 @@
       ],
       "Simplify password management": [
         "Facilite o gerenciamento de senhas"
-      ],
-      "Spring Sale": [
-        "Promoção de primavera"
       ],
       "Start a new import": [
         "Iniciar uma nova importação"
