@@ -10,15 +10,18 @@ export const useBookingUpsell = () => {
     const [organization, loadingOrganization] = useOrganization();
 
     const shouldShowLimitModal = () => {
-        const bookingsPages = bookings?.bookingPages;
-        const hasUserReachedPlanLimit = hasUserReachPlanLimit(user, bookingsPages?.length || 0, organization);
-        const hasUserReachedBookingLimit = hasUserReachBookingsLimit(bookingsPages);
+        const hasUserReachedBookingLimit = hasUserReachBookingsLimit(bookings?.bookingPages);
+        if (hasUserReachedBookingLimit) {
+            return {
+                planLimitReached: false,
+                bookingPageLimitReached: true,
+            };
+        }
 
-        // This is made to make sure that if both are true, we only show the booking limit reached modal
-        const areBothTrue = hasUserReachedPlanLimit && hasUserReachedBookingLimit;
+        const hasUserReachedPlanLimit = hasUserReachPlanLimit(user, bookings?.bookingPages?.length || 0, organization);
         return {
-            plan: hasUserReachedPlanLimit && !areBothTrue,
-            booking: hasUserReachedBookingLimit || areBothTrue,
+            planLimitReached: hasUserReachedPlanLimit,
+            bookingPageLimitReached: false,
         };
     };
 
