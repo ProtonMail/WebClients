@@ -2438,9 +2438,6 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Este campo requiere un mínimo de ${ minimumLength } caracteres."
       ],
-      "This offer is not available in your country": [
-        "Esta oferta no está disponible en su país"
-      ],
       "Try using only letters, numerals, and _.-": [
         "Intente usando solo letras, números y _.-"
       ],
@@ -2867,6 +2864,9 @@
       "Enabling auto-deletion…": [
         "Activando la eliminación automática…"
       ],
+      "Enter code": [
+        "Ingresar código"
+      ],
       "Enter the code from your authenticator app": [
         "Ingrese el código de la aplicación de autenticación."
       ],
@@ -2905,6 +2905,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no encuentra el correo electrónico en el buzón, revise en la carpeta de spam."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Si perdió el acceso a su aplicación de autenticación, puede usar 1 de los 16 códigos de recuperación de copia de seguridad proporcionados cuando configuró la autenticación de dos factores. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Si procede con darse de baja, perderá el acceso a las funciones de pago de ${ MAIL_APP_NAME } y ${ VPN_APP_NAME }."
@@ -3113,9 +3116,6 @@
       ],
       "Week": [
         "Semana"
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Cuando configura la autenticación de dos factores, nosotros proporcionamos códigos de recuperación que podrá usar para iniciar sesión si llega a perder acceso a su app de autenticación."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "¿Quiere recibir un código de verificación nuevo o usar un método de verificación alternativo?"
@@ -5706,9 +5706,6 @@
       ],
       "Simplify password management": [
         "Simplifique la gestión de contraseñas"
-      ],
-      "Spring Sale": [
-        "Oferta de primavera"
       ],
       "Summary": [
         "Resumen"

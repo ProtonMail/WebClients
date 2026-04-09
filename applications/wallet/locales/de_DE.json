@@ -2438,9 +2438,6 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "In dieses Feld müssen mindestens ${ minimumLength } Zeichen eingegeben werden."
       ],
-      "This offer is not available in your country": [
-        "Dieses Angebot ist in deinem Land nicht verfügbar"
-      ],
       "Try using only letters, numerals, and _.-": [
         "Bitte nur Buchstaben, Ziffern und die Zeichen _ . - verwenden"
       ],
@@ -2867,6 +2864,9 @@
       "Enabling auto-deletion…": [
         "Automatisches Löschen wird aktiviert…"
       ],
+      "Enter code": [
+        "Code eingeben"
+      ],
       "Enter the code from your authenticator app": [
         "Code aus deiner Authentifizierungs-App ein eingeben"
       ],
@@ -2905,6 +2905,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Wenn du die E-Mail nicht in deinem Posteingang finden kannst, überprüfe bitte deinen Spam-Ordner."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Wenn du den Zugriff auf deine Authenticator-App verloren hast, kannst du 1 der 16 Wiederherstellungscodes verwenden, die du bei der Einrichtung der Zwei-Faktor-Authentifizierung erhalten hast. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Wenn du mit dem Downgrade fortfährst, verlierst du den Zugang zu den kostenpflichtigen Funktionen von ${ MAIL_APP_NAME } und ${ VPN_APP_NAME }."
@@ -3113,9 +3116,6 @@
       ],
       "Week": [
         "Woche"
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Beim Einrichten der Zwei-Faktor-Authentifizierung stellen wir dir Wiederherstellungscodes zur Verfügung, mit denen du dich anmelden kannst, wenn du den Zugriff auf deine Authentifizierungs-App verloren hast."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Möchtest du einen neuen Verifizierungscode anfordern oder eine alternative Verifizierungsmethode verwenden?"
@@ -5706,9 +5706,6 @@
       ],
       "Simplify password management": [
         "Vereinfache die Passwortverwaltung"
-      ],
-      "Spring Sale": [
-        "Frühlingsangebot"
       ],
       "Summary": [
         "Zusammenfassung"
