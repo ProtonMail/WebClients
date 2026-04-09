@@ -459,8 +459,8 @@
         "${ price } per gebruiker"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
-        "${ seats } ${ LUMO_APP_NAME } AI licentie",
-        "${ seats } ${ LUMO_APP_NAME } AI licenties"
+        "${ seats } ${ LUMO_APP_NAME } AI-licentie",
+        "${ seats } ${ LUMO_APP_NAME } AI-licenties"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } plaats",
@@ -2438,9 +2438,6 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Dit veld vereist een minimum van ${ minimumLength } tekens."
       ],
-      "This offer is not available in your country": [
-        "Dit aanbod is niet beschikbaar in uw land"
-      ],
       "Try using only letters, numerals, and _.-": [
         "Probeer enkel letters, nummers en _.- te gebruiken"
       ],
@@ -2715,7 +2712,7 @@
         "${ MEET_APP_NAME } is een end-to-end versleutelde videoconferentie oplossing. Voeg het toe aan uw abonnement om veilige vergaderingen te hosten."
       ],
       "${ MEET_APP_NAME } seats": [
-        "${ MEET_APP_NAME } licenties"
+        "${ MEET_APP_NAME }-licenties"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "${ PASS_SHORT_APP_NAME } levenslange deal heeft geen verlengingsprijs, het is een eenmalige betaling voor levenslang toegang tot ${ PASS_SHORT_APP_NAME }."
@@ -3113,9 +3110,6 @@
       ],
       "Week": [
         "Week"
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Wanneer u tweestapsverificatie instelt, bieden we herstelcodes die u kunt gebruiken om u aan te melden als u de toegang tot uw authenticatie app verliest."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Wilt u een nieuwe verificatiecode ontvangen of een alternatieve verificatiemethode kiezen?"
@@ -5706,9 +5700,6 @@
       ],
       "Simplify password management": [
         "Vereenvoudig wachtwoordbeheer"
-      ],
-      "Spring Sale": [
-        "Lenteverkoop"
       ],
       "Summary": [
         "Overzicht"
