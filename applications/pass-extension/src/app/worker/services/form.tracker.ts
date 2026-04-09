@@ -2,18 +2,18 @@ import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { withContext } from 'proton-pass-extension/app/worker/context/inject';
 import { backgroundMessage } from 'proton-pass-extension/lib/message/send-message';
 import { isFormEntryCommitted, setFormEntryStatus } from 'proton-pass-extension/lib/utils/form-entry';
+import { parseSender } from 'proton-pass-extension/lib/utils/sender';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import browser from '@proton/pass/lib/globals/browser';
 import type { Maybe } from '@proton/pass/types/utils/index';
 import type { FormEntry, FormEntryBase, FormStatusPayload } from '@proton/pass/types/worker/form';
 import { FormEntryStatus } from '@proton/pass/types/worker/form';
-import type { TabId } from '@proton/pass/types/worker/runtime';
+import type { FrameId, TabId } from '@proton/pass/types/worker/runtime';
 import { waitUntil } from '@proton/pass/utils/fp/wait-until';
 import { logger } from '@proton/pass/utils/logger';
 import { merge } from '@proton/pass/utils/object/merge';
 import { requestHasBodyFormData } from '@proton/pass/utils/requests';
-import { parseSender } from '@proton/pass/utils/url/parser';
 import type { URLComponents } from '@proton/pass/utils/url/types';
 import { urlEq } from '@proton/pass/utils/url/utils';
 import noop from '@proton/utils/noop';
@@ -52,14 +52,17 @@ export const createFormTrackerService = () => {
         }
     };
 
-    const stage = (tabId: TabId, submission: FormEntryBase, reason: string): FormEntry => {
+    /** TODO: when adding support for iframe autosaving, the `frameId` should be leveraged
+     * to orchestrate cross-frame autosave submissions. For now it's only used as a gate to protect
+     * against cross-frame submission merging. (see: content-script autosave reconciliation) */
+    const stage = (tabId: TabId, frameId: FrameId, submission: FormEntryBase, reason: string): FormEntry => {
         logger.info(`[FormTracker::Stage]: on tab ${tabId} for domain "${submission.domain}" {${reason}}`);
         const pending = get(tabId, submission);
         const updatedAt = Date.now();
         const submittedAt = submission.submit ? updatedAt : null;
 
         const staging = ((): FormEntry => {
-            if (pending && pending.status === FormEntryStatus.STAGING) {
+            if (pending && pending.status === FormEntryStatus.STAGING && pending.frameId === frameId) {
                 pending.action = submission.action;
                 pending.data = merge(pending.data, submission.data, { excludeEmpty: true });
                 pending.type = submission.type;
@@ -71,6 +74,7 @@ export const createFormTrackerService = () => {
             } else {
                 return {
                     ...submission,
+                    frameId,
                     status: FormEntryStatus.STAGING,
                     submittedAt,
                     updatedAt,
@@ -151,13 +155,13 @@ export const createFormTrackerService = () => {
 
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.FORM_ENTRY_STAGE,
-        withContext((ctx, { payload }, sender) => {
+        withContext(async (ctx, { payload }, sender) => {
             const { reason, ...staging } = payload;
 
             if (ctx.getState().authorized) {
-                const { tabId, url } = parseSender(sender);
+                const { tabId, url, frameId } = await parseSender(sender);
                 const { domain, protocol, port } = url;
-                const staged = stage(tabId, { domain, protocol, port, ...staging }, reason);
+                const staged = stage(tabId, frameId, { domain, protocol, port, ...staging }, reason);
                 const autosave = ctx.service.autosave.resolve(staged);
 
                 return { submission: merge(staged, { autosave }) };
@@ -169,9 +173,9 @@ export const createFormTrackerService = () => {
 
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.FORM_ENTRY_STASH,
-        withContext((ctx, { payload: { reason } }, sender) => {
+        withContext(async (ctx, { payload: { reason } }, sender) => {
             if (ctx.getState().authorized) {
-                const { tabId, url } = parseSender(sender);
+                const { tabId, url } = await parseSender(sender);
                 if (url.domain) {
                     stash(tabId, reason);
                     return true;
@@ -184,9 +188,9 @@ export const createFormTrackerService = () => {
 
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.FORM_ENTRY_COMMIT,
-        withContext((ctx, { payload: { reason } }, sender) => {
+        withContext(async (ctx, { payload: { reason } }, sender) => {
             if (ctx.getState().authorized) {
-                const { tabId, url } = parseSender(sender);
+                const { tabId, url } = await parseSender(sender);
                 if (url.domain) {
                     const committed = commit(tabId, url, reason);
 
@@ -214,7 +218,7 @@ export const createFormTrackerService = () => {
         WorkerMessageType.FORM_ENTRY_REQUEST,
         withContext(async (ctx, _, sender) => {
             if (ctx.getState().authorized) {
-                const { tabId, url } = parseSender(sender);
+                const { tabId, url } = await parseSender(sender);
 
                 if (url.domain) {
                     const submission = get(tabId, url);

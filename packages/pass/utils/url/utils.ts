@@ -1,7 +1,7 @@
 import type { MaybeNull } from '@proton/pass/types';
 
 import { sanitizeURL } from './sanitize';
-import type { ParsedSenderUrl, ParsedUrl, URLComponents } from './types';
+import type { ParsedUrl, URLComponents } from './types';
 
 export const MAX_HOSTNAME_LENGTH = 253;
 export const URL_COMPONENTS = ['domain', 'port', 'protocol'] as const;
@@ -30,9 +30,6 @@ export const isValidURLScheme = (url?: URL): url is URL =>
     url !== undefined && !UNSUPPORTED_SCHEMES.includes(url.protocol);
 
 export const urlEq = (a: URLComponents, b: URLComponents) => URL_COMPONENTS.every((key) => a[key] === b[key]);
-
-export const isSupportedSenderUrl = (parsedUrl: ParsedUrl): parsedUrl is ParsedSenderUrl =>
-    parsedUrl.domain !== null && parsedUrl.protocol !== null;
 
 /** Converts a URL string into a clean lowercased
  * hostname removing any `www.` prefix */
