@@ -106,8 +106,6 @@ enum AccountFlag {
     PassDashboard = 'PassDashboard',
     DriveDashboard = 'DriveDashboard',
     MeetDashboard = 'MeetDashboard',
-    MeetMobileDownloadSection = 'MeetMobileDownloadSection',
-    MeetAddonUpsells = 'MeetAddonUpsells',
     SocialRecovery = 'SocialRecovery',
     MembersRemote = 'MembersRemote',
     ShowLiteAppCheckoutV2 = 'ShowLiteAppCheckoutV2',
