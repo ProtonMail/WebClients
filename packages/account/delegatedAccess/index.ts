@@ -4,6 +4,7 @@ import { getFetchedAt, getFetchedEphemeral } from '@proton/redux-utilities';
 import { type UpdateCollectionV6, updateCollectionV6 } from '@proton/shared/lib/eventManager/updateCollectionV6';
 import { clearBit } from '@proton/shared/lib/helpers/bitset';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
+import type { DelegatedAccessTypeEnum } from '@proton/shared/lib/interfaces/DelegatedAccess';
 import { removeById } from '@proton/utils/removeById';
 import { upsertById } from '@proton/utils/upsertById';
 
@@ -18,7 +19,6 @@ import type { OrganizationKeyState } from '../organizationKey';
 import type { UserState } from '../user';
 import type { UserKeysState } from '../userKeys';
 import type {
-    DelegatedAccessTypeEnum,
     IncomingDelegatedAccessOutput,
     IncomingEphemeral,
     OutgoingDelegatedAccessOutput,

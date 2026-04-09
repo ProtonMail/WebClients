@@ -8,9 +8,9 @@ import { InputFieldTwo, PhoneInput, Tabs, useFormErrors } from '@proton/componen
 import MnemonicInputField, {
     useMnemonicInputValidation,
 } from '@proton/components/containers/mnemonic/MnemonicInputField';
-import type { RecoveryMethod } from '@proton/components/containers/resetPassword/interface';
 import { useLoading } from '@proton/hooks';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
+import type { RecoveryMethod } from '@proton/shared/lib/api/reset';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';

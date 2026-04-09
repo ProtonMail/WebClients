@@ -14,10 +14,10 @@ import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import { BRAND_NAME, SECOND } from '@proton/shared/lib/constants';
+import { DelegatedAccessTypeEnum } from '@proton/shared/lib/interfaces/DelegatedAccess';
 import { telemetry } from '@proton/shared/lib/telemetry';
 
 import ValidationError from '../../../ValidationError';
-import { DelegatedAccessTypeEnum } from '../../../interface';
 import { addDelegatedAccessThunk } from '../../../outgoingActions';
 import ContactEmailInput, { type ContactEmailInputProps } from '../../../shared/outgoing/ContactEmailInput';
 import shield from '../../../shared/shield.svg';

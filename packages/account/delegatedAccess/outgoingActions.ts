@@ -18,6 +18,7 @@ import {
     type FetchedSignedKeyList,
     KT_VERIFICATION_STATUS,
 } from '@proton/shared/lib/interfaces';
+import type { DelegatedAccessTypeEnum } from '@proton/shared/lib/interfaces/DelegatedAccess';
 import type { ReactivateKeysResult } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
@@ -38,7 +39,7 @@ import {
     recoverKeys,
 } from './crypto';
 import { type DelegatedAccessState, delegatedAccessActions, selectOutgoingDelegatedAccess } from './index';
-import type { DelegatedAccessTypeEnum, OutgoingDelegatedAccessOutput } from './interface';
+import type { OutgoingDelegatedAccessOutput } from './interface';
 
 const queryListOutgoingDelegatedAccess = () => ({
     url: `account/v1/access/outgoing`,

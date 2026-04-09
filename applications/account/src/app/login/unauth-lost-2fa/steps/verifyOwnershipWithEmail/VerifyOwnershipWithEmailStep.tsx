@@ -21,6 +21,7 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { numberValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
 import { initiateVerification, verifyCode } from '../../../../containers/securityCheckup/verification/verification';
+import { getEmailVerificationCodeText } from '../../../../content/helper';
 import { useVerifyOwnershipWithEmailActorRef } from '../../UnauthedLost2FAContainer';
 
 type VerificationResult = Awaited<ReturnType<typeof initiateVerification>>;
@@ -81,10 +82,7 @@ const VerifyCodeStep = ({ verificationResult }: { verificationResult: Verificati
             <div className="mb-4">
                 {c('Info').t`To help keep your account safe, we want to make sure it’s really you trying to sign in.`}
             </div>
-            <div className="mb-4">
-                {c('Info')
-                    .jt`An email with a verification code was just sent to ${recoveryEmailElement}. If you can’t find the message in your inbox, please check your spam folder.`}
-            </div>
+            <div className="mb-4">{getEmailVerificationCodeText(recoveryEmailElement)}</div>
             <InputFieldTwo
                 label={
                     // translator: 'code' here refers to a 6 digit code sent to the users recovery email inbox

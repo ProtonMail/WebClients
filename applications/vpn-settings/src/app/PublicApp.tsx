@@ -3,10 +3,10 @@ import { Redirect, Route, Switch, useHistory } from 'react-router-dom';
 
 import type * as H from 'history';
 import ExternalSSOConsumer from 'proton-account/src/app/content/ExternalSSOConsumer';
+import ResetPasswordSwitchContainer from 'proton-account/src/app/content/ResetPasswordSwitchContainer';
 import type { Paths } from 'proton-account/src/app/content/helper';
 import { getLocaleMapping } from 'proton-account/src/app/locales';
 import AccountForgotUsernameContainer from 'proton-account/src/app/public/ForgotUsernameContainer';
-import AccountResetPasswordContainer from 'proton-account/src/app/reset/ResetPasswordContainer';
 import AccountSignupInviteContainer from 'proton-account/src/app/signup/SignupInviteContainer';
 import AccountSingleSignupContainer from 'proton-account/src/app/single-signup/SingleSignupContainer';
 import useLocationWithoutLocale, { getLocalePathPrefix } from 'proton-account/src/app/useLocationWithoutLocale';
@@ -169,7 +169,7 @@ const InnerPublicApp = ({ api, onLogin, loader, location }: InnerPublicAppProps)
                             <UnAuthenticated>
                                 <Switch location={location}>
                                     <Route path={publicRoutes.reset}>
-                                        <AccountResetPasswordContainer
+                                        <ResetPasswordSwitchContainer
                                             metaTags={resetPasswordPage()}
                                             loginUrl={paths.login}
                                             setupVPN={false}
