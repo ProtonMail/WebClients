@@ -1,5 +1,7 @@
 import { useOrganization } from '@proton/account/organization/hooks';
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { ADDON_PREFIXES, getAddons } from '@proton/payments';
 
 import { useInternalBooking } from '../../../store/internalBooking/bookingsHook';
 import { hasUserReachBookingsLimit, hasUserReachPlanLimit } from './upsellHelpers';
@@ -7,6 +9,7 @@ import { hasUserReachBookingsLimit, hasUserReachPlanLimit } from './upsellHelper
 export const useBookingUpsell = () => {
     const [user] = useUser();
     const [bookings] = useInternalBooking();
+    const [subscription] = useSubscription();
     const [organization, loadingOrganization] = useOrganization();
 
     const shouldShowLimitModal = () => {
@@ -18,7 +21,9 @@ export const useBookingUpsell = () => {
             };
         }
 
-        const hasUserReachedPlanLimit = hasUserReachPlanLimit(user, bookings?.bookingPages?.length || 0, organization);
+        const bookingPageNumber = bookings?.bookingPages?.length || 0;
+        const meetAddon = getAddons(subscription).filter(({ Name }) => Name.startsWith(ADDON_PREFIXES.MEET)) || [];
+        const hasUserReachedPlanLimit = hasUserReachPlanLimit(user, bookingPageNumber, organization, meetAddon[0]);
         return {
             planLimitReached: hasUserReachedPlanLimit,
             bookingPageLimitReached: false,
