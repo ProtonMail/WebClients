@@ -26,6 +26,13 @@ export type AliasDetails = {
     slNote: string;
     stats?: AliasStats;
 };
+
+export type AliasOptionsResult = {
+    options: AliasOptions;
+    needsUpgrade: boolean;
+    aliasCreationDisabled: boolean;
+};
+
 export type AliasPending = { pendingAliasID: string; aliasEmail: string; aliasNote: string };
 export type AliasContactNewDTO = UniqueItem & { email: string; name?: string };
 export type AliasContactInfoDTO = UniqueItem & { contactId: number };
