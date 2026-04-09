@@ -1,7 +1,13 @@
 #!/usr/bin/env bash
 
-if [[ ! -n "$DISABLE_WAYLAND" ]] && [[ -n "$WAYLAND_DISPLAY" ]] ; then
-  WAYLAND_OPTS="--enable-features=WaylandWindowDecorations,WebRTCPipeWireCapturer --ozone-platform-hint=auto"
-fi
+COMMON_OPTS="--no-sandbox --disable-seccomp-filter-sandbox"
+WAYLAND_FEATURES="--enable-features=WaylandWindowDecorations,WebRTCPipeWireCapturer"
 
-exec "$SNAP/usr/bin/proton-mail" --no-sandbox --disable-seccomp-filter-sandbox $WAYLAND_OPTS "$@"
+# Check if wayland socket is reachable inside the snap
+WAYLAND_SOCK="${XDG_RUNTIME_DIR}/${WAYLAND_DISPLAY:-wayland-0}"
+
+if [ "$XDG_SESSION_TYPE" = "wayland" ] && [ -S "$WAYLAND_SOCK" ]; then
+    exec "$SNAP/usr/bin/proton-mail" $COMMON_OPTS $WAYLAND_FEATURES "$@"
+else
+    exec "$SNAP/usr/bin/proton-mail" $COMMON_OPTS --ozone-platform=x11 "$@"
+fi
