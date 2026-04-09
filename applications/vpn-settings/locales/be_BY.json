@@ -203,6 +203,12 @@
       "Connect apps and devices": [
         "Падключыць праграмы і прылады"
       ],
+      "Connect Gmail address": [
+        "Падключэнне адраса Gmail"
+      ],
+      "Connect to Gmail": [
+        "Падключыцца да Gmail"
+      ],
       "Connect to video conferencing": [
         "Падключыцца да відэаканферэнцыі"
       ],
@@ -211,6 +217,9 @@
       ],
       "Contact support": [
         "Звязацца са службай падтрымкі"
+      ],
+      "Contact Support Center": [
+        "Звязацца з цэнтрам падтрымкі"
       ],
       "Contact us": [
         "Звязацца з намі"
@@ -226,6 +235,9 @@
       ],
       "Continue to ${ planOrAppName }": [
         "Працягнуць у ${ planOrAppName }"
+      ],
+      "Continue to sign in": [
+        "Перайсці да ўваходу"
       ],
       "Continue with this password": [
         "Працягнуць з гэтым паролем"
@@ -347,6 +359,9 @@
       "Discard Changes": [
         "Адхіліць змены"
       ],
+      "Disconnect": [
+        "Адключыць"
+      ],
       "Discover ${ planName }": [
         "Знаёмства з ${ planName }"
       ],
@@ -443,6 +458,9 @@
       "Enable multi-user support": [
         "Уключыць падтрымку шматкарыстальніцкага рэжыму"
       ],
+      "Enter code": [
+        "Увядзіце код"
+      ],
       "Explore ${ target }": [
         "Даследаваць ${ target }"
       ],
@@ -466,9 +484,6 @@
       ],
       "Fit to window": [
         "Па памеры акна"
-      ],
-      "Forgot password?": [
-        "Забылі пароль?"
       ],
       "Forgot recovery method?": [
         "Забылі спосаб аднаўлення?"
@@ -559,6 +574,15 @@
       ],
       "Hide plan features": [
         "Схаваць функцыі тарыфнага плана"
+      ],
+      "I don't have my 2FA device": [
+        "У мяне няма прылады 2ФА"
+      ],
+      "I don't have my key": [
+        "У мяне няма ключа"
+      ],
+      "I don’t have my backup codes": [
+        "У мяне няма рэзервовых кодаў"
       ],
       "Import": [
         "Імпартаваць"
@@ -683,6 +707,9 @@
       "Or": [
         "Або"
       ],
+      "Or remove forwarding address": [
+        "Або выдаліце адрас перасылкі"
+      ],
       "Or use a different Gmail address": [
         "Ці скарыстайцеся іншым адрасам Gmail"
       ],
@@ -712,6 +739,12 @@
       ],
       "Reconnect": [
         "Перападключыцца"
+      ],
+      "Reconnect to Gmail": [
+        "Перападключыцца да Gmail"
+      ],
+      "Recover account": [
+        "Аднавіць уліковы запіс"
       ],
       "Recover data": [
         "Аднавіць даныя"
@@ -878,6 +911,9 @@
       "Send email reminder": [
         "Адправіць напамін поштай"
       ],
+      "Send feedback": [
+        "Адправіць водгук"
+      ],
       "Send my username": [
         "Адправіць маё імя карыстальніка"
       ],
@@ -919,6 +955,9 @@
       ],
       "Share": [
         "Абагуліць"
+      ],
+      "Share feedback": [
+        "Абагуліць водгук"
       ],
       "Share via link": [
         "Абагуліць праз спасылку"
@@ -1111,6 +1150,9 @@
       ],
       "Verify account": [
         "Спраўдзіць уліковы запіс"
+      ],
+      "Verify another way": [
+        "Іншы спосаб спраўджання"
       ],
       "Verify code": [
         "Спраўдзіць код"
@@ -3432,9 +3474,6 @@
     "Delete group prompt": {
       "Are you sure you want to delete this group?": [
         "Вы сапраўды хочаце выдаліць гэту групу?"
-      ],
-      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
-        "Звярніце ўвагу, што калі вы выдаліце групу ${ displayGroupName } (з адрасам ${ displayGroupAddressEmail }), то ў вас больш не будзе магчымасці атрымліваць лісты з выкарыстаннем гэтага адраса."
       ]
     },
     "Delinquent modal title": {
@@ -3454,6 +3493,9 @@
       ],
       "Automatically forward incoming email to another email address.": [
         "Аўтаматычна перасылайце ўваходныя лісты на іншы адрас электроннай пошты."
+      ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Не давайце магчымасці Google ствараць ваш профіль. Gmail больш не зможа бачыць, што вы робіце ў ${ MAIL_APP_NAME }"
       ],
       "Configure this first to activate your organization and customize your email address.": [
         "Спачатку сканфігурыруйце гэтыя функцыі для актывацыі сваёй арганізацыі, а потым наладзьце адрас сваёй электроннай пошты."
@@ -3484,6 +3526,9 @@
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Лёгка сінхранізуйце файлы ў воблака са свайго камп’ютара і атрымлівайце доступ да іх на сваёй мабільнай прыладзе."
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Лісты, якія адпраўленыя на ${ connectedAddressText }, цяпер будуць паказвацца ў ${ MAIL_APP_NAME }."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Уключыце ${ PROTON_SENTINEL_NAME }, каб атрымаць доступ да гэтых функцый"
@@ -3536,14 +3581,38 @@
       "Let's you instantly add meeting links to your event invitations.": [
         "Дазваляе імгненна дадаваць спасылкі на сустрэчы ў вашыя запрашэнні на падзеі."
       ],
+      "No ads. No trackers.": [
+        "Без рэкламы і праграм сачэння"
+      ],
       "No one in your organization can connect to shared servers.": [
         "Ніводны ўдзельнік вашай арганізацыі не можа падключацца да абагуленых сервераў."
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "Чытайце, адказвайце і будзьце ў курсе таго, што адбываецца ў Gmail з дапамогай ${ MAIL_APP_NAME }"
       ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Наладзьце ўліковыя запісы для ўсіх карыстальнікаў і запрасіце іх далучыцца да ${ BRAND_NAME }."
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Спрасціце сінхранізацыю і планаванне з дапамогай абагуленых календароў."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Гэта магло адбыцца з-за таго, што дазволы былі выдалены або ваш пароль зменены."
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "Выдаліце дадатковыя адрасы Gmail, якія перасылаюцца на ${ BRAND_NAME }. Гэта дзеянне неабходна для падключэння іншага адраса Gmail."
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "Абнавіце свой тарыфны план да ${ planName }, каб падключыць да ${ MAX_SYNC_PAID_USER } адраса Gmail.",
+        "Абнавіце свой тарыфны план да ${ planName }, каб падключыць да ${ MAX_SYNC_PAID_USER } адрасоў Gmail.",
+        "Абнавіце свой тарыфны план да ${ planName }, каб падключыць да ${ MAX_SYNC_PAID_USER } адрасоў Gmail.",
+        "Абнавіце свой тарыфны план да ${ planName }, каб падключыць да ${ MAX_SYNC_PAID_USER } адрасоў Gmail."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Перападключыце свой уліковы запіс, каб працягнуць атрыманне і адпраўку паведамленняў Gmail у ${ BRAND_NAME }."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Перападключыце свае ўліковыя запісы, каб працягнуць атрыманне і адпраўку паведамленняў Gmail у ${ BRAND_NAME }."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Пераканайцеся, што файл не перавышае аб'ем у ${ MAX_IMPORT_FILE_SIZE_STRING } або ${ maxContactString } кантакты для імпартавання праз файл CSV і VCF. Раздзяліце яго на меншыя файлы, калі файл перавышае максімальны аб'ём. ${ learnMoreLink }"
@@ -3557,14 +3626,68 @@
       "Track the status and activity of your referrals": [
         "Сачэнне за статусам і актыўнасцю вашых рэферальных спасылак"
       ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "Палепшыце тарыфны план да ${ planName }, каб падключыць да ${ MAX_SYNC_PAID_USER } уліковых запісаў"
+      ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Выкарыстоўвайце гэты дапаможнік, каб ваша арганізацыя хутка змагла атрымаць перавагі ад ${ BRAND_NAME }. Дадзеная экасістэма з'яўляецца адной з лепшых у галіне шыфравання і прыватнасці."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Больш не ўдаецца атрымаць доступ да ${ boldEmails }."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "Мы перанясём вашы старыя паведамленні і падключым ваш Gmail да ${ MAIL_APP_NAME }, каб новыя паведамленні з'яўляліся ў ім аўтаматычна."
+      ],
+      "We've started importing your email from Gmail. We'll let you know when it's done.": [
+        "Пачалося імпартаванне вашых лістоў з Gmail. Вы будзеце апавешчаны, калі працэс будзе завершаны."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Нам шкада, што вы пакідаеце нас. Мы будзем вам вельмі ўдзячныя, калі вы знойдзеце крыху часу паведаміць аб прычынах скасавання сваёй падпіскі. Вашы водгукі дапамагаюць зрабіць ${ BRAND_NAME } яшчэ лепш для кожнага карыстальніка."
       ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "У вас ужо ёсць адрас Gmail, які перасылае лісты ў ${ MAIL_APP_NAME }. Падключыце яго ніжэй, каб адпраўляць і атрымліваць лісты наўпрост з ${ MAIL_APP_NAME }."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "У вас ужо ёсць адрасы Gmail, якія перасылаюць лісты ў ${ MAIL_APP_NAME }. Падключыце адзін з іх ніжэй, каб адпраўляць і атрымліваць лісты наўпрост з ${ MAIL_APP_NAME }."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Вы можаце імпартаваць падзеі ў фармаце iCal (файл ICS). Максімальна памер файла павінен быць ${ MAX_IMPORT_FILE_SIZE_STRING } і мець не больш за ${ MAX_IMPORT_EVENTS_STRING } падзей. Падзяліце свой файл на меншыя часткі, калі ён занадта вялікі."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Цяпер можна адпраўляць лісты з ${ BRAND_NAME } выкарыстоўваючы гэты адрас."
+      ],
+      "You can still login with this address and re-connect at any time.": [
+        "Вы ўсё яшчэ можаце ўвайсці з гэтым адрасам і паўторна падключыцца ў любы час."
+      ],
+      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
+        "У вас больш не будзе магчымасці выкарыстоўваць ${ address.Email } для атрымання і адпраўкі лістоў у ${ BRAND_NAME }. Таксама звярніце ўвагу, што лісты адпраўленыя на гэты адрас з ${ BRAND_NAME }, больш не будуць зашыфраваны скразным метадам."
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "Вы перасылаеце ${ numAddressesOrSync } адрас Gmail у ${ MAIL_APP_NAME }.",
+        "Вы перасылаеце ${ numAddressesOrSync } адрасы Gmail у ${ MAIL_APP_NAME }.",
+        "Вы перасылаеце ${ numAddressesOrSync } адрасоў Gmail у ${ MAIL_APP_NAME }.",
+        "Вы перасылаеце ${ numAddressesOrSync } адрасоў Gmail у ${ MAIL_APP_NAME }."
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "Вы падключылі ${ MAX_SYNC_PAID_USER } адрас Gmail. Спачатку адключыце адзін са сваіх падключаных уліковых запісаў, каб дадаць яшчэ адзін.",
+        "Вы падключылі ${ MAX_SYNC_PAID_USER } адрасы Gmail. Спачатку адключыце адзін са сваіх падключаных уліковых запісаў, каб дадаць яшчэ адзін.",
+        "Вы падключылі ${ MAX_SYNC_PAID_USER } адрасоў Gmail. Спачатку адключыце адзін са сваіх падключаных уліковых запісаў, каб дадаць яшчэ адзін.",
+        "Вы падключылі ${ MAX_SYNC_PAID_USER } адрасоў Gmail. Спачатку адключыце адзін са сваіх падключаных уліковых запісаў, каб дадаць яшчэ адзін."
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "Вы падключылі адзін адрас знешняга ўліковага запісу да ${ MAIL_APP_NAME }."
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "Ваш тарыфны план падтрымлівае ${ MAX_SYNC_FREE_USER } адрас Gmail.",
+        "Ваш тарыфны план падтрымлівае ${ MAX_SYNC_FREE_USER } адрасы Gmail.",
+        "Ваш тарыфны план падтрымлівае ${ MAX_SYNC_FREE_USER } адрасоў Gmail.",
+        "Ваш тарыфны план падтрымлівае ${ MAX_SYNC_FREE_USER } адрасоў Gmail."
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "Ваш тарыфны план у сукупнасці падтрымлівае ${ MAX_SYNC_PAID_USER } адрас Gmail",
+        "Ваш тарыфны план агулам падтрымлівае ${ MAX_SYNC_PAID_USER } адрасы Gmail",
+        "Ваш тарыфны план у сукупнасці падтрымлівае ${ MAX_SYNC_PAID_USER } адрасоў Gmail",
+        "Ваш тарыфны план у сукупнасці падтрымлівае ${ MAX_SYNC_PAID_USER } адрасоў Gmail"
       ]
     },
     "description": {
@@ -4095,6 +4218,12 @@
       "A group with this name already exists": [
         "Група з такой назвай ужо існуе"
       ],
+      "Address could not be added.": [
+        "Немагчыма дадаць адрас."
+      ],
+      "Address is already added to your account": [
+        "Адрас ужо дададзены ў ваш уліковы запіс"
+      ],
       "Address primary private key not found": [
         "Асноўны закрыты ключ адраса не знойдзены"
       ],
@@ -4226,6 +4355,9 @@
       ],
       "Incorrect password": [
         "Няправільны пароль"
+      ],
+      "Incorrect recovery code. Please try again.": [
+        "Няправільны код аднаўлення. Паспрабуйце яшчэ раз."
       ],
       "Incorrect second password. Please try again.": [
         "Няправільны другі пароль. Паспрабуйце яшчэ раз."
@@ -4470,8 +4602,11 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Назвы некаторых вашых метак перавышаюць абмежаванні колькасці сімвалаў ${ MAIL_APP_NAME }. Наладзьце імпартаванне, каб змяніць гэтыя назвы."
       ],
-      "Something went wrong connecting your TV. Scan the QR code on your TV once more.": [
-        "Нешта пайшло не так пры падключэнні вашага тэлевізара. Паспрабуйце яшчэ раз адсканіраваць QR-код на сваім тэлевізары."
+      "Something went wrong while creating the address": [
+        "Нешта пайшло не так пры стварэнні адраса"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Нешта пайшло не так пры атрыманні даступных даменаў"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Нешта пайшло не так. ${ refresh } для працягу. Калі вы ўсё яшчэ бачыце паведамленне з памылкай, напішыце ў нашу ${ supportTeam }."
@@ -4544,9 +4679,6 @@
       ],
       "This label name is not available. Please choose a different name.": [
         "Гэта назва для меткі недаступна. Выберыце іншую назву."
-      ],
-      "This offer is not available in your country": [
-        "Гэта прапанова недаступна ў вашай краіне"
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Вам неабходна аднавіць прывілеі адміністратара, каб ствараць уліковыя запісы непрыватных карыстальнікаў і атрымліваць доступ да іх."
@@ -5518,9 +5650,9 @@
         "Сэрвісы"
       ]
     },
-    "Group address title": {
-      "Group address": [
-        "Адрас групы"
+    "Group detail label": {
+      "Description:": [
+        "Апісанне:"
       ]
     },
     "Group member count": {
@@ -6503,6 +6635,12 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Псеўданімы электроннай пошты працуюць аналагічна адрасам электроннай пошты, але змяншаюць колькасць спама і захоўваюць ваш фактычны адрас электроннай пошты і ідэнтычнасць схаванымі."
       ],
+      "An email with a verification code was just sent to ${ recoveryEmailElement }. If you can’t find the message in your inbox, please check your spam folder.": [
+        "Ліст з кодам спраўджання тбыў толькі што адпраўлены на ${ recoveryEmailElement }. Калі вы не знайшлі паведамленне з кодам у папцы ўваходныя, праверце папку са спамам."
+      ],
+      "An SMS with a verification code was just sent to ${ recoveryPhoneElement }.": [
+        "SMS з кодам спраўджання толькі што было адпраўлена на нумар тэлефона ${ recoveryPhoneElement }."
+      ],
       "and": [
         "і"
       ],
@@ -6644,6 +6782,9 @@
       "Connection data will be available in around 1 hour.": [
         "Даныя аб падключэнні будуць даступны прыблізна праз 1 гадзіну."
       ],
+      "Contact our Customer Support team to disable two-factor authentication for your account, or recover your account another way.": [
+        "Звярніцеся ў нашу службу падтрымкі кліентаў, каб адключыць двухфактарную аўтэнтыфікацыю для вашага ўліковага запісу або аднавіце свой уліковы запіс іншым спосабам."
+      ],
       "Continue": [
         "Працягнуць"
       ],
@@ -6670,6 +6811,9 @@
       ],
       "Copy your referral link": [
         "Скапіяваць сваю рэферальную спасылку"
+      ],
+      "Couldn´t send feedback": [
+        "Немагчыма адправіць водгук"
       ],
       "Country code": [
         "Код краіны"
@@ -6833,6 +6977,9 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Паніжэнне тарыфнага плана спыніць усе бягучыя падключэнні да платных сервераў ${ VPN_APP_NAME }."
       ],
+      "Download ${ VPN_APP_NAME }": [
+        "Спампаваць ${ VPN_APP_NAME }"
+      ],
       "Download current logs": [
         "Спампоўванне бягучых журналаў"
       ],
@@ -6911,9 +7058,6 @@
       "End-to-end email encryption is disabled for this group. It can be enabled.": [
         "Скразное шыфраванне электроннай пошты адключана для гэтай групы. Яго можна ўключыць."
       ],
-      "End-to-end email encryption is enabled for this group.": [
-        "Скразное шыфраванне электроннай пошты ўключана для гэтай групы."
-      ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL-адрас канцавога пункта атрыманы ад вашага пастаўшчыка пасведчанняў (напрыклад, https://idp.example.com/sso/saml)."
       ],
@@ -6922,6 +7066,9 @@
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Забяспечце цалкам прыватную і зашыфраваную сувязь. Атрымайце бясплатны адрас электроннай пошты ${ BRAND_NAME }."
+      ],
+      "Enter code": [
+        "Увядзіце код"
       ],
       "Enter key manually instead": [
         "Увесці ключ уручную"
@@ -6958,12 +7105,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Увядзіце ваш уліковы запіс электроннай пошты ${ BRAND_NAME } або імя карыстальніка."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Увядзіце свой пароль (адміністратара арганізацыі)."
-      ],
-      "Enter your own password (as trusted contact).": [
-        "Увядзіце свой пароль (як давераны кантакт)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Увядзіце адрас электроннай пошты, які вы выкарыстоўваеце для аднаўлення доступу, і мы адправім вам ваша імя карыстальніка або адрас электроннай пошты."
@@ -7283,6 +7424,9 @@
       "Keep your info more secure and private with these guides and tips.": [
         "Захоўвайце свае звесткі больш бяспечна і прыватна з дапамогай гэтых дапаможнікаў і парад."
       ],
+      "Key sections reorganized for faster access.": [
+        "Ключавыя раздзелы рэарганізаваны для больш хуткага доступу."
+      ],
       "Keys created": [
         "Ключы створаны"
       ],
@@ -7414,6 +7558,9 @@
       ],
       "New activity data will stop being collected and shown.": [
         "Новыя даныя актыўнасці больш не будуць збірацца і паказвацца."
+      ],
+      "New sidebar": [
+        "Новая бакавая панэль"
       ],
       "New user invited to organization": [
         "Новы карыстальнік запрошаны ў арганізацыю"
@@ -7664,6 +7811,9 @@
       "Professional": [
         "Professional"
       ],
+      "Protect this device too?": [
+        "Абараняць гэту прыладу таксама?"
+      ],
       "Protected by Swiss privacy laws": [
         "Абаронены швейцарскімі законамі аб прыватнасці"
       ],
@@ -7820,6 +7970,9 @@
       "Setting up your organization": [
         "Наладжванне вашай арганізацыі"
       ],
+      "Share your thoughts...": [
+        "Падзяліцеся сваімі думкамі..."
+      ],
       "Shared ${ vaultLink } deleted": [
         "Абагульванне ${ vaultLink } выдалена"
       ],
@@ -7844,6 +7997,9 @@
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Увайдзіце ў ${ MAIL_APP_NAME }, каб актываваць свой адрас"
       ],
+      "Sign-in complete": [
+        "Уваход завершаны"
+      ],
       "Signed up": [
         "Зарэгістравалася"
       ],
@@ -7858,6 +8014,9 @@
       ],
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "Некаторыя серверы могуць не адлюстроўвацца ў спісе вышэй. Шукайце па назве сервера (напрыклад, AT#62), каб знайсці іх."
+      ],
+      "Something went wrong. Please try again.": [
+        "Нешта пайшло не так. Паспрабуйце яшчэ раз."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Пазначыць дамен, які можна выкарыстоўваць для аўтэнтыфікацыі з SAML SSO."
@@ -7919,6 +8078,9 @@
       "Swiss based": [
         "Знаходзіцца ў Швейцарыі"
       ],
+      "Switch sidebars": [
+        "Пераключыць бакавыя панэлі"
+      ],
       "Symbols (#$&)": [
         "Сімвалы (#$&)"
       ],
@@ -7933,6 +8095,9 @@
       ],
       "Thank you for subscribing. Secure browsing starts now.": [
         "Дзякуй, што падпісаліся. Зараз пачнецца бяспечны прагляд."
+      ],
+      "Thanks - your feedback was sent.": [
+        "Дзякуй! Ваш водгук адпраўлены."
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Дзякуй за падтрымку нашай місіі па стварэнні лепшага інтэрнэту, дзе прыватнасць і свабода стаяць на першым месцы."
@@ -8048,6 +8213,9 @@
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Гэта паведамленне не трапіць у службу падтрымкі, калі ў вас праблемы з нашым сэрвісам або неабходны нейкія дзеянні з нашага боку ${ supportLink }"
       ],
+      "This password is used to login to your ${ BRAND_NAME } account": [
+        "Гэты пароль выкарыстоўваецца для ўваходу ў ваш уліковы запіс ${ BRAND_NAME }"
+      ],
       "This service is not available to users signing in with single sign-on.": [
         "Гэты сэрвіс недаступны для карыстальнікаў, якія ўваходзяць з дапамогай адзінага ўваходу."
       ],
@@ -8140,6 +8308,12 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "У мэтах барацьбы са спамам і іншымі злоўжываннямі, нам неабходна пераканацца, што вы чалавек."
+      ],
+      "To help keep your account safe, we want to make sure it's really you trying to sign in.": [
+        "Пацвердзіце, што менавіта вы хочаце ўвайсці ва ўліковы запіс. Гэта дазволіць захаваць бяспеку вашага ўліковага запісу."
+      ],
+      "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
+        "Пацвердзіце, што менавіта вы хочаце ўвайсці ва ўліковы запіс. Гэта дазволіць захаваць бяспеку вашага ўліковага запісу."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Спачатку стварыце каляндар у ${ CALENDAR_APP_NAME } для імпартавання падзей. Менавіта тут з'явяцца падзеі пасля імпартавання."
@@ -8420,9 +8594,6 @@
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Сервер уступае ў 10-дзённы перыяд дэактывацыі, калі ён выдаляецца са шлюза. Гэты сервер можа быць дадзены ў новы шлюз, але яго краіна не можа быць зменена."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Пры наладжванні двухфактарнай аўтэнтыфікацыі, вы будзеце забяспечаны кодамі аднаўлення, якія зможаце выкарыстаць для ўваходу пры страце доступу да праграмы аўтэнтыфікацыі."
-      ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Калі ваша падпіска будзе падаўжацца, першапачаткова будуць выкарыстаны любыя даступныя крэдыты перад выкарыстаннем азначанага вышэй спосабу аплаты."
       ],
@@ -8543,6 +8714,9 @@
       "You can now return to the application to continue": [
         "Цяпер вы можаце вярнуцца да праграмы, каб працягнуць"
       ],
+      "You can now sign in to your account again.": [
+        "Цяпер вы можаце зноў увайсці ў свой уліковы запіс."
+      ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Толькі адзін экзэмпляр чата можа быць адкрыты адначасова. Закрыйце папярэднюю размову перад тым, як пачаць новую."
       ],
@@ -8624,6 +8798,9 @@
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Вам будзе неабходны адрас ${ BRAND_NAME } для выкарыстання ${ MAIL_APP_NAME } і ${ CALENDAR_APP_NAME }"
       ],
+      "You will not be asked for a one-time code or a security key.": [
+        "У вас не будзе запытаны аднаразовы код або ключ бяспекі."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Неўзабаве вы будзеце перанакіраваны на сайт PayPal для спраўджання плацяжу."
       ],
@@ -8653,6 +8830,9 @@
         "Пасля гэтага вам будзе выстаўляцца рахунак кожны ${ renewCycle } месяцы ў памеры ${ renewAmountStr }. Скасаваць можна ў любы час.",
         "Пасля гэтага вам будзе выстаўляцца рахунак кожны ${ renewCycle } месяцаў у памеры ${ renewAmountStr }. Скасаваць можна ў любы час.",
         "Пасля гэтага вам будзе выстаўляцца рахунак кожны ${ renewCycle } месяцаў у памеры ${ renewAmountStr }. Скасаваць можна ў любы час."
+      ],
+      "You're now signed in on your TV.": [
+        "Вы ўвайшлі ў сістэму на сваім тэлевізары."
       ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "Вы ўключылі перасылку на ${ MAX_SYNC_PAID_USER } адрас Gmail. Спачатку адключыце які-небудзь з адрасоў, каб дадаць яшчэ адзін.",
@@ -8692,6 +8872,9 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Ваша электронная пошта будзе выкарыстана толькі для гэтай аднаразовай праверкі."
+      ],
+      "Your feedback": [
+        "Ваш водгук"
       ],
       "Your files will be encrypted and then saved": [
         "Вашы файлы будуць зашыфраваны, а пасля гэтага захаваны"
@@ -9005,9 +9188,6 @@
       "Add all organization members": [
         "Дадаць удзельнікаў арганізацыі"
       ],
-      "Add group member": [
-        "Дадаць удзельніка групы"
-      ],
       "Additional comments": [
         "Дадатковыя каментарыі"
       ],
@@ -9275,6 +9455,9 @@
       "Enabled": [
         "Уключана"
       ],
+      "Enter name or email address": [
+        "Увядзіце імя або адрас электроннай пошты"
+      ],
       "Enter password": [
         "Увядзіце пароль"
       ],
@@ -9329,9 +9512,6 @@
       "Group address": [
         "Адрас групы"
       ],
-      "Group members": [
-        "Удзельнікі групы"
-      ],
       "Group name": [
         "Назва групы"
       ],
@@ -9353,9 +9533,6 @@
       "Import interval": [
         "Інтэрвал імпартавання"
       ],
-      "Import recent mails": [
-        "Імпартаваць нядаўнія лісты"
-      ],
       "Import to email address": [
         "Імпартаваць у адрас электроннай пошты"
       ],
@@ -9370,6 +9547,9 @@
       ],
       "Interval": [
         "Інтэрвал"
+      ],
+      "Invite people": [
+        "Запрасіць людзей"
       ],
       "Invite via email": [
         "Запрасіць праз электронную пошту"
@@ -9629,6 +9809,9 @@
       "Second password": [
         "Другі пароль"
       ],
+      "Select which Gmail address to connect": [
+        "Выберыце, які адрас Gmail неабходна падключыць"
+      ],
       "Send crash reports": [
         "Адпраўляць справаздачы аб збоях"
       ],
@@ -9763,12 +9946,6 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Так, я хачу незваротна выдаліць гэты ўліковы запіс і ўсе яго даныя."
-      ],
-      "Your password (admin)": [
-        "Ваш пароль (admin)"
-      ],
-      "Your password (trusted contact)": [
-        "Ваш пароль (давераны кантакт)"
       ],
       "ZIP code": [
         "Паштовы індэкс"
@@ -11774,6 +11951,9 @@
       "Two-factor authentication is not required anymore": [
         "Двухфактарная аўтэнтыфікацыя больш не патрабуецца"
       ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Ваш адрас ${ BRAND_NAME } гатовы да выкарыстання"
+      ],
       "Zoom video conferencing settings have been updated": [
         "Налады відэаканферэнцыі Zoom абноўлены"
       ]
@@ -13447,6 +13627,9 @@
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Калі вы страціце свае ўліковыя даныя для ўваходу і вам неабходна будзе скінуць уліковы запіс, то ў вас **абавязкова** павінен быць як **метад аднаўлення даных, так і метад аднаўлення ўліковага запісу**. У адваротным выпадку без іх вы не зможаце атрымаць доступ да сваіх паведамленняў, файлаў кантактаў або пароляў."
       ],
+      "Invalid code": [
+        "Памылковы код"
+      ],
       "Review account safety": [
         "Агляд бяспекі ўліковага запісу"
       ],
@@ -14528,9 +14711,6 @@
       "Share the confirmation code with your administrator": [
         "Абагуліць код пацвярджэння з вашым адміністратарам"
       ],
-      "Sign in": [
-        "Уваход"
-      ],
       "Sign in to your organization": [
         "Увайсці ў сваю арганізацыю"
       ],
@@ -14590,9 +14770,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Вам давядзецца стварыць новых карыстальнікаў уручную, каб дадаць іх у вашу арганізацыю."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Вы будзеце перанакіраваны ў вашага старонняга пастаўшчыка SSO."
       ],
       "Your SSO configuration will be deleted.": [
         "Ваша канфігурацыя SSO будзе выдалена."
@@ -15722,6 +15899,9 @@
       "Account": [
         "Уліковы запіс"
       ],
+      "Account and password": [
+        "Уліковы запіс і пароль"
+      ],
       "Account monitor": [
         "Назіранне за ўліковым запісам"
       ],
@@ -15824,6 +16004,9 @@
       "An address for each role": [
         "Адрас для кожнай ролі"
       ],
+      "An error occurred": [
+        "Адбылася памылка"
+      ],
       "App": [
         "Праграма"
       ],
@@ -15839,6 +16022,9 @@
       "Are you sure you want to close the preview?": [
         "Вы сапраўды хочаце закрыць папярэдні прагляд?"
       ],
+      "Are you sure you want to disconnect this address?": [
+        "Вы сапраўды хочаце адключыць гэты адрас?"
+      ],
       "Are you sure?": [
         "Вы ўпэўнены?"
       ],
@@ -15850,6 +16036,9 @@
       ],
       "Block trackers and malware": [
         "Блакіроўка праграм сачэння і шкодных праграм"
+      ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Перанясіце свае лісты ў ${ MAIL_APP_NAME }"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Скасаваць падпіску ${ MAIL_SHORT_APP_NAME }"
@@ -15904,6 +16093,9 @@
       ],
       "Collaborate on documents": [
         "Сумесная праца над дакументамі"
+      ],
+      "Configurations": [
+        "Канфігурацыі"
       ],
       "Confirm": [
         "Пацвердзіць"
@@ -16073,9 +16265,6 @@
       "Device": [
         "Прылада"
       ],
-      "Device connected!": [
-        "Прылада падключана!"
-      ],
       "Device name": [
         "Назва прылады"
       ],
@@ -16093,6 +16282,9 @@
       ],
       "Discard changes?": [
         "Адхіліць змены?"
+      ],
+      "Disconnected from Gmail": [
+        "Адключана ад Gmail"
       ],
       "Dismiss setup checklist": [
         "Адхіліць кантрольны спіс наладкі"
@@ -16114,6 +16306,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Спампаваць праграмы ${ DRIVE_APP_NAME }"
+      ],
+      "Download apps": [
+        "Спампаваць праграмы"
       ],
       "Downloads": [
         "Спампоўкі"
@@ -16138,6 +16333,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Рэдагаваць шлюз з назвай ${ currentName }"
+      ],
+      "Edit group": [
+        "Рэдагаваць групу"
       ],
       "Edit invoice note": [
         "Рэдагаваць нататку рахунка"
@@ -16183,9 +16381,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Увядзіце падрабязнасці вашага ўліковага запісу ${ BRAND_NAME }, каб далучыцца да бэта-праграмы ${ app }"
-      ],
-      "Enter your password": [
-        "Увядзіце свой пароль"
       ],
       "Error": [
         "Памылка"
@@ -16262,6 +16457,9 @@
       "Help center": [
         "Даведачны цэнтр"
       ],
+      "Help us improve": [
+        "Дапамажыце палепшыць наш сэрвіс"
+      ],
       "Home": [
         "Галоўная"
       ],
@@ -16304,6 +16502,9 @@
       "Information exposed in breach": [
         "Звесткі, якія былі скампраметаваныя ў выніку парушэння"
       ],
+      "Integrations": [
+        "Інтэграцыі"
+      ],
       "Invalid verification code": [
         "Памылковы код спраўджання"
       ],
@@ -16328,11 +16529,20 @@
       "Minicalendar": [
         "Мінікаляндар"
       ],
+      "Monitoring": [
+        "Маніторынг"
+      ],
       "Multi-user support": [
         "Падтрымка шматкарыстальніцкага рэжыму"
       ],
       "Multiple accounts, 1 private inbox": [
         "Некалькі ўліковых запісаў і 1 прыватная паштовая скрыня"
+      ],
+      "My account": [
+        "Мой уліковы запіс"
+      ],
+      "My VPN": [
+        "Мой VPN"
       ],
       "Name": [
         "Назва"
@@ -16372,6 +16582,12 @@
       ],
       "Org setup": [
         "Наладка арганізацыі"
+      ],
+      "Organization": [
+        "Арганізацыя"
+      ],
+      "Organization and people": [
+        "Арганізацыя і людзі"
       ],
       "Organization filters": [
         "Фільтры арганізацыі"
@@ -16523,6 +16739,9 @@
       "Security": [
         "Бяспека"
       ],
+      "Security and compliance": [
+        "Бяспека і адпаведнасць патрабаванням"
+      ],
       "Security and privacy": [
         "Бяспека і прыватнасць"
       ],
@@ -16537,6 +16756,9 @@
       ],
       "Select data to import": [
         "Выберыце даныя для імпарту"
+      ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Адпраўка і атрыманне лістоў Gmail з дапамогай ${ MAIL_APP_NAME }"
       ],
       "Send email reminders?": [
         "Адправіць напаміны поштай?"
@@ -16607,11 +16829,11 @@
       "Single sign-on": [
         "Адзіны ўваход"
       ],
+      "Single-sign on (SSO)": [
+        "Адзіны ўваход (SSO)"
+      ],
       "Spam, block, and allow lists": [
         "Спам, а таксама спісы заблакіраваных і дазволеных адрасоў"
-      ],
-      "Spring Sale": [
-        "Вясенні распродаж"
       ],
       "Start a new import": [
         "Пачаць новае імпартаванне"
@@ -16676,11 +16898,11 @@
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Уключэнне ${ DARK_WEB_MONITORING_NAME }"
       ],
-      "TV sign in": [
-        "Увайсці на тэлевізары"
-      ],
       "Two-factor authentication": [
         "Двухфактарная аўтэнтыфікацыя"
+      ],
+      "Two-factor authentication disabled": [
+        "Двухфактарная аўтэнтыфікацыя адключана"
       ],
       "Two-factor authentication enforcement": [
         "Прымусовае ўжыванне двухфактарнай аўтэнтыфікацыі"
@@ -16727,6 +16949,9 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Скарыстацца ${ VPN_SHORT_APP_NAME } для захавання прыватнасці даных"
       ],
+      "Use backup recovery code": [
+        "Выкарыстанне рэзервовага кода аднаўлення"
+      ],
       "User": [
         "Карыстальнік"
       ],
@@ -16754,6 +16979,9 @@
       "View organization events by upgrading to Professional": [
         "Палепшыце да тарыфнага плана Professional, каб паглядзець падзеі арганізацыі"
       ],
+      "VPN": [
+        "VPN"
+      ],
       "Warning": [
         "Папярэджанне"
       ],
@@ -16777,6 +17005,9 @@
       ],
       "WireGuard configuration": [
         "Канфігурацыя WireGuard"
+      ],
+      "You are all set": [
+        "Усё гатова"
       ],
       "You can now create unlimited folders and labels": [
         "Цяпер вы можаце ствараць неабмежаваную колькасць папак і метак"

@@ -203,6 +203,12 @@
       "Connect apps and devices": [
         "Connecta aplicacions i dispositius"
       ],
+      "Connect Gmail address": [
+        "Connecteu l'adreça de Gmail"
+      ],
+      "Connect to Gmail": [
+        "Connecteu-vos a Gmail"
+      ],
       "Connect to video conferencing": [
         "Connecta't a la videoconferència"
       ],
@@ -211,6 +217,9 @@
       ],
       "Contact support": [
         "Contactar amb el suport"
+      ],
+      "Contact Support Center": [
+        "Contacteu amb el Centre d'ajuda"
       ],
       "Contact us": [
         "Contacteu amb nosaltres"
@@ -226,6 +235,9 @@
       ],
       "Continue to ${ planOrAppName }": [
         "Continuar amb ${ planOrAppName }"
+      ],
+      "Continue to sign in": [
+        "Continueu iniciant sessió"
       ],
       "Continue with this password": [
         "Continua amb aquesta contrasenya"
@@ -347,6 +359,9 @@
       "Discard Changes": [
         "Descarta els canvis"
       ],
+      "Disconnect": [
+        "Desconnecteu-vos"
+      ],
       "Discover ${ planName }": [
         "Descobriu ${ planName }"
       ],
@@ -443,6 +458,9 @@
       "Enable multi-user support": [
         "Activar suport multiusuari"
       ],
+      "Enter code": [
+        "Introduïu el codi"
+      ],
       "Explore ${ target }": [
         "Descobriu ${ target }"
       ],
@@ -466,9 +484,6 @@
       ],
       "Fit to window": [
         "Ajusta a la finestra"
-      ],
-      "Forgot password?": [
-        "Heu oblidat la contrasenya?"
       ],
       "Forgot recovery method?": [
         "Heu oblidat el mètode de recuperació?"
@@ -559,6 +574,15 @@
       ],
       "Hide plan features": [
         "Amaga les característiques del pla"
+      ],
+      "I don't have my 2FA device": [
+        "No tinc el meu dispositiu 2FA"
+      ],
+      "I don't have my key": [
+        "No tinc la meva clau"
+      ],
+      "I don’t have my backup codes": [
+        "No tinc els meus codis de còpia de seguretat"
       ],
       "Import": [
         "Importa"
@@ -683,6 +707,9 @@
       "Or": [
         "O"
       ],
+      "Or remove forwarding address": [
+        "O esborreu l'adreça de reenviament"
+      ],
       "Or use a different Gmail address": [
         "O utilitzeu una altra adreça de Gmail"
       ],
@@ -712,6 +739,12 @@
       ],
       "Reconnect": [
         "Reconnecta"
+      ],
+      "Reconnect to Gmail": [
+        "Torneu a connectar-vos a Gmail"
+      ],
+      "Recover account": [
+        "Recuperar el compte"
       ],
       "Recover data": [
         "Recuperar dades"
@@ -878,6 +911,9 @@
       "Send email reminder": [
         "Envia un recordatori per correu electrònic"
       ],
+      "Send feedback": [
+        "Envieu comentaris"
+      ],
       "Send my username": [
         "Enviar el meu nom d'usuari"
       ],
@@ -919,6 +955,9 @@
       ],
       "Share": [
         "Compartir"
+      ],
+      "Share feedback": [
+        "Compartiu els comentaris"
       ],
       "Share via link": [
         "Comparteix amb un enllaç"
@@ -1111,6 +1150,9 @@
       ],
       "Verify account": [
         "Verifiqueu el compte"
+      ],
+      "Verify another way": [
+        "Verifiqueu-ho d'una altra manera"
       ],
       "Verify code": [
         "Verifiqueu el codi"
@@ -3385,8 +3427,13 @@
       "Are you sure you want to delete this group?": [
         "Segur que voleu eliminar aquest grup?"
       ],
+      "Please note that if you delete the group ${ displayGroupName }, it will be permanently removed.": [
+        "Tingueu en compte que si esborreu el grup ${ displayGroupName }, serà eliminat permanentment."
+      ]
+    },
+    "Delete group prompt with email": {
       "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
-        "Si suprimiu el grup ${ displayGroupName } (amb l'adreça ${ displayGroupAddressEmail }), ja no podreu rebre correus electrònics amb la seva adreça."
+        "Tingueu en compte que si suprimiu el grup ${ displayGroupName } (amb l'adreça ${ displayGroupAddressEmail }), ja no podreu rebre correus electrònics amb la seva adreça."
       ]
     },
     "Delinquent modal title": {
@@ -3406,6 +3453,9 @@
       ],
       "Automatically forward incoming email to another email address.": [
         "Reenvieu automàticament el correu entrant a una altra adreça electrònica."
+      ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Bloquegeu la capacitat de Google per crear el vostre perfil. Gmail no podrà veure què feu a ${ MAIL_APP_NAME }"
       ],
       "Configure this first to activate your organization and customize your email address.": [
         "Configureu això primer per activar la vostra organització i personalitzar la vostra adreça de correu."
@@ -3436,6 +3486,9 @@
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Sincronitzeu fàcilment els fitxers al núvol des de l'ordinador i accediu-hi des del dispositiu mòbil."
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Els correus enviats a ${ connectedAddressText } apareixeran ara a ${ MAIL_APP_NAME }."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Activeu ${ PROTON_SENTINEL_NAME } per accedir a aquestes funcions"
@@ -3488,14 +3541,36 @@
       "Let's you instantly add meeting links to your event invitations.": [
         "Us permet afegir instantàniament enllaços de reunió a les invitacions d'esdeveniments."
       ],
+      "No ads. No trackers.": [
+        "Sense anuncis. Sense rastrejadors."
+      ],
       "No one in your organization can connect to shared servers.": [
         "Ningú de la vostra organització no es pot connectar a servidors compartits."
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "Llegiu, responeu i estigueu al dia de Gmail des de ${ MAIL_APP_NAME }"
       ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Configureu comptes per a tots els usuaris i convideu-los a unir-se a ${ BRAND_NAME }."
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Simplifiqueu la sincronització i la programació amb calendaris compartits."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Això podria passar si s'han suprimit els permisos o s'ha canviat la contrasenya."
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "Per connectar una adreça de Gmail diferent, elimineu les adreces de Gmail addicionals que es reenvien a ${ BRAND_NAME }."
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "Per connectar fins a ${ MAX_SYNC_PAID_USER } adreça de Gmail, milloreu a ${ planName }.",
+        "Per connectar fins a ${ MAX_SYNC_PAID_USER } adreces de Gmail, milloreu a ${ planName }."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Per continuar rebent i enviant missatges de Gmail a ${ BRAND_NAME }, torneu a connectar el vostre compte."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Per continuar rebent i enviant missatges de Gmail a ${ BRAND_NAME }, torneu a connectar els vostres comptes."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Per importar mitjançant un fitxer CSV i VCF, assegureu-vos que el fitxer no superi ${ MAX_IMPORT_FILE_SIZE_STRING } o els ${ maxContactString } contactes. Si el vostre fitxer és més gran, dividiu-lo en fitxers més petits. ${ learnMoreLink }."
@@ -3509,14 +3584,60 @@
       "Track the status and activity of your referrals": [
         "Feu un seguiment de l'estat i l'activitat de les vostres referències"
       ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "Milloreu a ${ planName } per connectar fins a ${ MAX_SYNC_PAID_USER } comptes"
+      ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Utilitzeu aquesta guia per aconseguir que la vostra organització es beneficiï ràpidament de l'ecosistema d'encriptació i privadesa líder del sector del ${ BRAND_NAME }."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Ja no podem accedir a ${ boldEmails }."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "Importarem els vostres correus antics i connectarem el vostre Gmail a ${ MAIL_APP_NAME } perquè els missatges nous apareguin automàticament"
+      ],
+      "We've started importing your email from Gmail. We'll let you know when it's done.": [
+        "Hem començat a importar els vostres correus de Gmail. Us avisarem en acabar."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Ens sap greu que marxeu. Si teniu un moment, us agrairíem molt que ens diguéssiu per què voleu cancel·lar la subscripció. Els vostres comentaris ens ajuden a fer que ${ BRAND_NAME } sigui millor per a tothom."
       ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Ja teniu una adreça de Gmail que es reenvia a ${ MAIL_APP_NAME }. Connecteu-la a continuació per enviar i rebre correus electrònics directament des de ${ MAIL_APP_NAME }."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Ja teniu adreces de Gmail que es reenvien a ${ MAIL_APP_NAME }. Connecteu-ne una a continuació per enviar i rebre correus electrònics directament des de ${ MAIL_APP_NAME }."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Pots importar esdeveniments en format iCal (fitxer ICS).\nEl fitxer ha de tenir una mida màxima de ${ MAX_IMPORT_FILE_SIZE_STRING } i tenir fins a ${ MAX_IMPORT_EVENTS_STRING } esdeveniments. Si el fitxer és més gran, dividiu-lo en fitxers més petits."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Ara ja podeu enviar correus electrònics des de ${ BRAND_NAME } utilitzant aquesta adreça."
+      ],
+      "You can still login with this address and re-connect at any time.": [
+        "Encara podreu iniciar sessió amb aquesta adreça i tornar-la a connectar en qualsevol moment."
+      ],
+      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
+        "Ja no podreu utilitzar ${ address.Email } per rebre i enviar correus electrònics a ${ BRAND_NAME }. Tingueu en compte també que els missatges enviats a aquesta adreça des de ${ BRAND_NAME } ja no estaran xifrats d'extrem a extrem."
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "Esteu redirigint ${ numAddressesOrSync } adreça de Gmail a ${ MAIL_APP_NAME }.",
+        "Esteu redirigint ${ numAddressesOrSync } adreces de Gmail a ${ MAIL_APP_NAME }."
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "Heu connectat ${ MAX_SYNC_PAID_USER } adreça de Gmail. Per afegir-ne una altra, primer desactiveu un dels vostres comptes connectats.",
+        "Heu connectat ${ MAX_SYNC_PAID_USER } adreces de Gmail. Per afegir-ne una altra, primer desactiveu un dels vostres comptes connectats."
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "Heu connectat una adreça d'un compte extern a ${ MAIL_APP_NAME }."
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "El vostre pla admet ${ MAX_SYNC_FREE_USER } adreça de Gmail.",
+        "El vostre pla admet ${ MAX_SYNC_FREE_USER } adreces de Gmail."
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "El vostre pla admet un total de ${ MAX_SYNC_PAID_USER } adreça de Gmail",
+        "El vostre pla admet un total de ${ MAX_SYNC_PAID_USER } adreces de Gmail"
       ]
     },
     "description": {
@@ -4045,6 +4166,12 @@
       "A group with this name already exists": [
         "Ja existeix un grup amb aquest nom"
       ],
+      "Address could not be added.": [
+        "No s'ha pogut afegir l'adreça."
+      ],
+      "Address is already added to your account": [
+        "L'adreça ja s'ha afegit al vostre compte"
+      ],
       "Address primary private key not found": [
         "No s'ha trobat la clau privada primària de l'adreça"
       ],
@@ -4172,6 +4299,9 @@
       ],
       "Incorrect password": [
         "Contrasenya incorrecta"
+      ],
+      "Incorrect recovery code. Please try again.": [
+        "El codi de recuperació no és correcte. Torneu-ho a provar."
       ],
       "Incorrect second password. Please try again.": [
         "La segona contrasenya no és correcta. Torneu-ho a intentar."
@@ -4412,8 +4542,11 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Els noms d'algunes de les etiquetes superen el límit de caràcters màxim de ${ MAIL_APP_NAME }. Modifiqueu la importació per tal d'editar-ne els noms."
       ],
-      "Something went wrong connecting your TV. Scan the QR code on your TV once more.": [
-        "Alguna cosa ha anat malament en connectar el vostre televisor. Torneu-ne a escanejar el codi QR."
+      "Something went wrong while creating the address": [
+        "Alguna cosa ha anat malament mentre es creava l'adreça"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Alguna cosa ha anat malament mentre s'obtenien els dominis disponibles"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "S'ha produït un error, ${ refresh } per continuar. Si continueu veient aquest missatge d'error, poseu-vos en contacte amb el nostre ${ supportTeam }."
@@ -4486,9 +4619,6 @@
       ],
       "This label name is not available. Please choose a different name.": [
         "Aquest nom d'etiqueta no està disponible. Trieu-ne un altre."
-      ],
-      "This offer is not available in your country": [
-        "Aquesta oferta no està disponible al vostre país"
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Per a crear comptes d'usuari no privats i accedir als seus comptes, necessitareu restaurar els vostres privilegis d'administrador."
@@ -5428,9 +5558,12 @@
         "Serveis"
       ]
     },
-    "Group address title": {
-      "Group address": [
-        "Adreça del grup"
+    "Group detail label": {
+      "Description:": [
+        "Descripció:"
+      ],
+      "Group address:": [
+        "Adreça del grup:"
       ]
     },
     "Group member count": {
@@ -6237,6 +6370,9 @@
         "Afegeix un servidor (${ availableAddedCount } disponible)",
         "Afegeix un servidor (${ availableAddedCount } disponibles)"
       ],
+      "Add users by name or email to this group.": [
+        "Afegiu usuaris a aquest grup per nom o correu electrònic."
+      ],
       "Add video conferencing links to calendar invitations": [
         "Afegiu enllaços de videoconferència a les invitacions del calendari"
       ],
@@ -6326,6 +6462,12 @@
       ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Un àlies de correu electrònic funciona com una adreça de correu electrònic, però redueix el correu brossa i manté ocultes la vostra adreça de correu electrònic real i la vostra identitat."
+      ],
+      "An email with a verification code was just sent to ${ recoveryEmailElement }. If you can’t find the message in your inbox, please check your spam folder.": [
+        "S'acaba d'enviar un correu amb un codi de verificació a ${ recoveryEmailElement }. Si no trobeu el missatge a la safata d'entrada, comproveu la carpeta de correu brossa."
+      ],
+      "An SMS with a verification code was just sent to ${ recoveryPhoneElement }.": [
+        "Acabem d'enviar un SMS amb un codi de verificació a ${ recoveryPhoneElement }."
       ],
       "and": [
         "i"
@@ -6468,6 +6610,9 @@
       "Connection data will be available in around 1 hour.": [
         "Les dades de connexió estaran disponibles en aproximadament 1 hora."
       ],
+      "Contact our Customer Support team to disable two-factor authentication for your account, or recover your account another way.": [
+        "Contacteu amb el nostre equip d'atenció al client per desactivar l'autenticació de doble factor del vostre compte, o per recuperar el compte d'una altra manera."
+      ],
       "Continue": [
         "Continueu"
       ],
@@ -6494,6 +6639,9 @@
       ],
       "Copy your referral link": [
         "Copieu el vostre enllaç de recomanació"
+      ],
+      "Couldn´t send feedback": [
+        "No s'han pogut enviar els comentaris"
       ],
       "Country code": [
         "Codi de país"
@@ -6647,6 +6795,9 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Passar a un pla inferior finalitzarà qualsevol connexió als servidors de pagament de ${ VPN_APP_NAME }."
       ],
+      "Download ${ VPN_APP_NAME }": [
+        "Descarregueu ${ VPN_APP_NAME }"
+      ],
       "Download current logs": [
         "Descarrega els registres actuals"
       ],
@@ -6725,9 +6876,6 @@
       "End-to-end email encryption is disabled for this group. It can be enabled.": [
         "El xifratge de correu electrònic d'extrem a extrem està desactivat per a aquest grup. Es pot activar."
       ],
-      "End-to-end email encryption is enabled for this group.": [
-        "El xifratge de correu electrònic d'extrem a extrem està activat per a aquest grup."
-      ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "S'ha rebut l'URL del punt final del proveïdor d'identitat (p. ex. https://idp.exemple.com/sso/saml)."
       ],
@@ -6736,6 +6884,9 @@
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Assegureu-vos una comunicació totalment privada i xifrada. Aconseguiu ara la vostra adreça gratuïta de correu electrònic de ${ BRAND_NAME }."
+      ],
+      "Enter code": [
+        "Introduir el codi"
       ],
       "Enter key manually instead": [
         "Introduïu la clau manualment"
@@ -6772,12 +6923,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Introduïu la vostra adreça de correu electrònic o usuari del compte de ${ BRAND_NAME }."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Introduïu la vostra contrasenya (com a administrador de l'organització)."
-      ],
-      "Enter your own password (as trusted contact).": [
-        "Introduïu la vostra contrasenya (com a contacte de confiança)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Introduïu la vostra adreça de correu electrònic de recuperació i us enviarem el vostre usuari o adreça de correu electrònic."
@@ -6919,6 +7064,9 @@
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Si perdeu el dispositiu activat per a l'autenticació de doble factor, es poden utilitzar aquests codis en lloc del codi d’autenticació de doble factor de 6 dígits per a iniciar la sessió al vostre compte. Cada codi només es pot fer servir una vegada."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Si heu perdut l'accés a la vostra aplicació d'autenticació, podeu fer servir 1 dels 16 codis de recuperació de seguretat que se us van proporcionar quan vau configurar l'autenticació de doble factor. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Si passeu a un pla inferior, perdreu l'accés a les funcions de pagament de ${ MAIL_APP_NAME } i ${ VPN_APP_NAME }."
@@ -7093,6 +7241,9 @@
       "Keep your info more secure and private with these guides and tips.": [
         "Manteniu la vostra informació més segura i privada amb aquestes guies i consells."
       ],
+      "Key sections reorganized for faster access.": [
+        "S'han reorganitzat les seccions clau per un accés més ràpid."
+      ],
       "Keys created": [
         "S'han creat les claus."
       ],
@@ -7224,6 +7375,12 @@
       ],
       "New activity data will stop being collected and shown.": [
         "Les noves dades d'activitat deixaran de ser recopilades i mostrades."
+      ],
+      "New sidebar": [
+        "Nova barra lateral"
+      ],
+      "New sidebar layout": [
+        "Nou disseny de la barra lateral"
       ],
       "New user invited to organization": [
         "S'ha convidat el nou usuari a l'organització."
@@ -7466,6 +7623,9 @@
       "Professional": [
         "Professional"
       ],
+      "Protect this device too?": [
+        "Voleu protegir també aquest dispositiu?"
+      ],
       "Protected by Swiss privacy laws": [
         "Protegit per les lleis de privacitat suïsses"
       ],
@@ -7568,6 +7728,9 @@
       "Securing your account": [
         "S'està protegint el compte"
       ],
+      "Select a group to view its members and settings.": [
+        "Seleccioneu un grup per veure els seus membres i preferències."
+      ],
       "Select one or multiple user affiliations": [
         "Seleccioneu una o diverses afiliacions per a l'usuari."
       ],
@@ -7622,6 +7785,9 @@
       "Setting up your organization": [
         "S'està configurant la vostra organització."
       ],
+      "Share your thoughts...": [
+        "Compartiu els vostres pensaments..."
+      ],
       "Shared ${ vaultLink } deleted": [
         "S'ha eliminat l'enllaç compartit ${ vaultLink }."
       ],
@@ -7644,6 +7810,9 @@
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Inicieu la sessió a ${ MAIL_APP_NAME } per activar la vostra adreça"
       ],
+      "Sign-in complete": [
+        "S’ha completat l'inici de sessió"
+      ],
       "Signed up": [
         "Registat"
       ],
@@ -7658,6 +7827,9 @@
       ],
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "És possible que alguns servidors no apareguin a la llista anterior. Cerqueu per nom de servidor (p. ex., AT#62) per trobar-los."
+      ],
+      "Something went wrong. Please try again.": [
+        "Alguna cosa ha anat malament. Torneu-ho a provar."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Especifiqueu el domini que es pot autenticar amb SSO basat en SAML."
@@ -7717,6 +7889,9 @@
       "Swiss based": [
         "Amb seu a Suïssa"
       ],
+      "Switch sidebars": [
+        "Commutar les barres laterals"
+      ],
       "Symbols (#$&)": [
         "Símbols (#$&)"
       ],
@@ -7731,6 +7906,9 @@
       ],
       "Thank you for subscribing. Secure browsing starts now.": [
         "Gràcies per la subscripció. La navegació segura comença ara."
+      ],
+      "Thanks - your feedback was sent.": [
+        "Gràcies, s'han enviat els vostres comentaris."
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Gràcies per donar suport a la nostra missió de construir una Internet millor amb la privacitat i la llibertat en primer lloc."
@@ -7840,6 +8018,9 @@
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Aquest missatge no arribarà a l'equip de suport. Si teniu un problema amb el nostre servei o necessiteu més assistència per part nostra, ${ supportLink }"
       ],
+      "This password is used to login to your ${ BRAND_NAME } account": [
+        "Aquesta contrasenya s'utilitza per iniciar sessió al vostre compte de ${ BRAND_NAME }"
+      ],
       "This service is not available to users signing in with single sign-on.": [
         "Aquest servei no està disponible per als usuaris que inicien la sessió amb l’inici de sessió únic."
       ],
@@ -7932,6 +8113,12 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Per lluitar contra el correu brossa i l'abús, verifiqueu que sou humà."
+      ],
+      "To help keep your account safe, we want to make sure it's really you trying to sign in.": [
+        "Per ajudar-vos a mantenir el compte segur, ens volem assegurar que sou realment vós qui intenteu iniciar sessió."
+      ],
+      "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
+        "Per ajudar-vos a mantenir el compte segur, ens volem assegurar que sou realment vós qui intenteu iniciar sessió."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Per a importar esdeveniments, creeu abans un calendari en ${ CALENDAR_APP_NAME }. Aquí és on apareixeran tots els esdeveniments després de la importació."
@@ -8212,9 +8399,6 @@
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Quan elimineu un servidor d'una passarel·la, entra en un període de desactivació de 10 dies. Aquest servidor es pot afegir a una nova passarel·la, però no es pot canviar el seu país."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quan configureu l'autenticació en dos passos, et proporcionem codis de recuperació que pots utilitzar per iniciar sessió si perds l'accés a l'aplicació d'autenticació."
-      ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Quan la vostra subscripció es renovi, utilitzarem els crèdits disponibles abans de fer un càrrec al mètode de pagament anterior."
       ],
@@ -8323,6 +8507,9 @@
       "You can now return to the application to continue": [
         "Ara podeu tornar a l'aplicació per continuar."
       ],
+      "You can now sign in to your account again.": [
+        "Ja podeu tornar a iniciar sessió al vostre compte."
+      ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Només podeu tenir una instància de xat oberta alhora. Tanqueu les converses anteriors abans de començar-ne una de nova."
       ],
@@ -8398,6 +8585,9 @@
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Necessitareu una adreça de ${ BRAND_NAME } per a utilitzar ${ MAIL_APP_NAME } i ${ CALENDAR_APP_NAME }"
       ],
+      "You will not be asked for a one-time code or a security key.": [
+        "No se us demanarà cap codi d'un sol ús ni una clau de seguretat."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Ben aviat sereu redirigits a PayPal per verificar el pagament."
       ],
@@ -8425,6 +8615,9 @@
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Se us facturarà cada ${ renewCycle } mes a ${ renewAmountStr }. Podeu cancel·lar-ho en qualsevol moment.",
         "Llavors se us facturarà cada ${ renewCycle } mesos a ${ renewAmountStr }. Podeu cancel·lar-ho en qualsevol moment."
+      ],
+      "You're now signed in on your TV.": [
+        "Ja heu iniciat la sessió al vostre televisor."
       ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "Heu habilitat el reenviament en ${ MAX_SYNC_PAID_USER } adreça del Gmail. Per afegir-ne una altra, primer desactiveu-ne una.",
@@ -8462,6 +8655,9 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "El vostre correu electrònic només s’utilitzarà per a aquesta única verificació."
+      ],
+      "Your feedback": [
+        "Els vostres comentaris"
       ],
       "Your files will be encrypted and then saved": [
         "Es xifraran els fitxers i després es desaran."
@@ -8761,9 +8957,6 @@
       "Add all organization members": [
         "Afegeix tots els membres de l'organització"
       ],
-      "Add group member": [
-        "Afegeix el membre al grup"
-      ],
       "Additional comments": [
         "Comentaris addicionals"
       ],
@@ -9031,6 +9224,9 @@
       "Enabled": [
         "Habilitat"
       ],
+      "Enter name or email address": [
+        "Introduïu un nom o una adreça electrònica"
+      ],
       "Enter password": [
         "Introduïu la contrasenya"
       ],
@@ -9085,9 +9281,6 @@
       "Group address": [
         "Adreça del grup"
       ],
-      "Group members": [
-        "Membres del grup"
-      ],
       "Group name": [
         "Nom del grup"
       ],
@@ -9109,9 +9302,6 @@
       "Import interval": [
         "Interval d'importació"
       ],
-      "Import recent mails": [
-        "Importar els correus electrònics recents"
-      ],
       "Import to email address": [
         "Importar a l'adreça de correu electrònic"
       ],
@@ -9126,6 +9316,9 @@
       ],
       "Interval": [
         "Interval"
+      ],
+      "Invite people": [
+        "Convideu persones"
       ],
       "Invite via email": [
         "Convida per correu electrònic"
@@ -9385,6 +9578,9 @@
       "Second password": [
         "Segona contrasenya"
       ],
+      "Select which Gmail address to connect": [
+        "Seleccioneu quina adreça de Gmail voleu connectar"
+      ],
       "Send crash reports": [
         "Envia informes d'error"
       ],
@@ -9517,12 +9713,6 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Sí, vull suprimir definitivament aquest compte i totes les seves dades."
-      ],
-      "Your password (admin)": [
-        "La vostra contrasenya (administrador)"
-      ],
-      "Your password (trusted contact)": [
-        "La vostra contrasenya (contacte de confiança)"
       ],
       "ZIP code": [
         "Codi postal"
@@ -11444,6 +11634,9 @@
       "Two-factor authentication is not required anymore": [
         "L'autenticació de doble factor ja no és necessària"
       ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "La vostra adreça de ${ BRAND_NAME } ja està a punt per fer-se servir"
+      ],
       "Zoom video conferencing settings have been updated": [
         "S'ha actualitzat la configuració de les videoconferències de Zoom"
       ]
@@ -13081,6 +13274,9 @@
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Si perdeu les dades d'inici de sessió i necessiteu restablir el compte, **és imprescindible** que tingueu un **mètode de recuperació del compte i de les dades**. En cas contrari, és possible que no pugueu accedir a cap dels vostres correus electrònics, contactes, fitxers o contrasenyes."
       ],
+      "Invalid code": [
+        "El codi no és vàlid."
+      ],
       "Review account safety": [
         "Reviseu la seguretat del compte"
       ],
@@ -14113,9 +14309,6 @@
       "Share the confirmation code with your administrator": [
         "Compartiu el codi de confirmació amb l'administrador"
       ],
-      "Sign in": [
-        "Inicia la sessió"
-      ],
       "Sign in to your organization": [
         "Inicieu la sessió a la vostra organització"
       ],
@@ -14175,9 +14368,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Haureu de crear nous usuaris manualment per afegir-los a la vostra organització."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Se us redirigirà al vostre proveïdor d'SSO de tercers."
       ],
       "Your SSO configuration will be deleted.": [
         "S'eliminarà la vostra configuració de SSO."
@@ -15249,6 +15439,9 @@
       "Account": [
         "Compte"
       ],
+      "Account and password": [
+        "Compte i contrasenya"
+      ],
       "Account monitor": [
         "Monitor del compte"
       ],
@@ -15349,6 +15542,9 @@
       "An address for each role": [
         "Una adreça per a cada rol"
       ],
+      "An error occurred": [
+        "Hi ha hagut un error"
+      ],
       "App": [
         "Applicació"
       ],
@@ -15364,6 +15560,9 @@
       "Are you sure you want to close the preview?": [
         "Segur que voleu tancar la previsualització?"
       ],
+      "Are you sure you want to disconnect this address?": [
+        "Esteu segurs que voleu desconnectar aquesta adreça?"
+      ],
       "Are you sure?": [
         "N'esteu segur?"
       ],
@@ -15375,6 +15574,9 @@
       ],
       "Block trackers and malware": [
         "Bloca els rastrejadors i programaris maliciosos"
+      ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Porteu el vostre Gmail a ${ MAIL_APP_NAME }"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Cancel·la la subscripció de ${ MAIL_SHORT_APP_NAME }"
@@ -15430,6 +15632,9 @@
       "Collaborate on documents": [
         "Col·laboració en documents"
       ],
+      "Configurations": [
+        "Configuracions"
+      ],
       "Confirm": [
         "Confirma"
       ],
@@ -15446,7 +15651,7 @@
         "Confirmeu el número de telèfon"
       ],
       "Connect a Gmail address": [
-        "Connecteu-vos a una adreça de Gmail"
+        "Connecteu una adreça de Gmail"
       ],
       "Connect apps and devices": [
         "Connecteu aplicacions i dispositius"
@@ -15490,6 +15695,9 @@
       ],
       "Create Gateway": [
         "Crea una passarel·la"
+      ],
+      "Create group": [
+        "Creeu un grup"
       ],
       "Create multiple user accounts": [
         "Crea diversos comptes d'usuari"
@@ -15594,9 +15802,6 @@
       "Device": [
         "Dispositiu"
       ],
-      "Device connected!": [
-        "S'ha connectat el dispositiu"
-      ],
       "Device name": [
         "Nom del dispositiu"
       ],
@@ -15614,6 +15819,9 @@
       ],
       "Discard changes?": [
         "Voleu descartar els canvis?"
+      ],
+      "Disconnected from Gmail": [
+        "Esteu desconnectat de Gmail"
       ],
       "Dismiss setup checklist": [
         "Descartar la llista de verificació de configuració"
@@ -15635,6 +15843,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Descarregueu aplicacions de ${ DRIVE_APP_NAME }"
+      ],
+      "Download apps": [
+        "Descarregueu les aplicacions"
       ],
       "Downloads": [
         "Descàrregues"
@@ -15659,6 +15870,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Edita la passarel·la ${ currentName }"
+      ],
+      "Edit group": [
+        "Editeu el grup"
       ],
       "Edit invoice note": [
         "Edita la nota de la factura"
@@ -15704,9 +15918,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Introduïu els detalls del compte de ${ BRAND_NAME } per unir-vos al programa beta de ${ app }"
-      ],
-      "Enter your password": [
-        "Introduïu la vostra contrasenya"
       ],
       "Error": [
         "Error"
@@ -15781,6 +15992,9 @@
       "Help center": [
         "Centre d'ajuda"
       ],
+      "Help us improve": [
+        "Ajudeu-nos a millorar"
+      ],
       "Home": [
         "Inici"
       ],
@@ -15821,6 +16035,9 @@
       "Information exposed in breach": [
         "Informació exposada en la filtració"
       ],
+      "Integrations": [
+        "Integracions"
+      ],
       "Invalid verification code": [
         "El codi de verificació no és vàlid."
       ],
@@ -15845,11 +16062,20 @@
       "Minicalendar": [
         "Minicalendari"
       ],
+      "Monitoring": [
+        "S'està monitorant"
+      ],
       "Multi-user support": [
         "Suport multi-usuari"
       ],
       "Multiple accounts, 1 private inbox": [
         "Múltiples comptes, 1 safata d'entrada privada"
+      ],
+      "My account": [
+        "El meu compte"
+      ],
+      "My VPN": [
+        "La meva VPN"
       ],
       "Name": [
         "Nom"
@@ -15889,6 +16115,12 @@
       ],
       "Org setup": [
         "Configuració de l'organització"
+      ],
+      "Organization": [
+        "Organització"
+      ],
+      "Organization and people": [
+        "Organització i persones"
       ],
       "Organization filters": [
         "Filtres de l'organització"
@@ -16040,6 +16272,9 @@
       "Security": [
         "Seguretat"
       ],
+      "Security and compliance": [
+        "Seguretat i compliment"
+      ],
       "Security and privacy": [
         "Seguretat i privacitat"
       ],
@@ -16054,6 +16289,9 @@
       ],
       "Select data to import": [
         "Seleccioneu les dades que voleu importar"
+      ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Envieu i rebeu correus de Gmail mitjançant ${ MAIL_APP_NAME }"
       ],
       "Send email reminders?": [
         "Voleu enviar recordatoris per correu electrònic?"
@@ -16124,11 +16362,11 @@
       "Single sign-on": [
         "Inici de sessió únic"
       ],
+      "Single-sign on (SSO)": [
+        "Inici de sessió únic (SSO)"
+      ],
       "Spam, block, and allow lists": [
         "Llistes de correu brossa, bloquejats i permesos"
-      ],
-      "Spring Sale": [
-        "Rebaixes de primavera"
       ],
       "Start a new import": [
         "Inicia una nova importació"
@@ -16191,11 +16429,11 @@
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Activeu ${ DARK_WEB_MONITORING_NAME }"
       ],
-      "TV sign in": [
-        "Inici de sessió al TV"
-      ],
       "Two-factor authentication": [
         "Autenticació de doble factor"
+      ],
+      "Two-factor authentication disabled": [
+        "S'ha desactivat l'autenticació de doble factor"
       ],
       "Two-factor authentication enforcement": [
         "Aplicació obligatòria de l'autenticació de doble factor"
@@ -16242,6 +16480,9 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Utilitzeu ${ VPN_SHORT_APP_NAME } per a la privacitat de les dades"
       ],
+      "Use backup recovery code": [
+        "Utilitzeu el codi de recuperació de còpia de seguretat"
+      ],
       "User": [
         "Usuari"
       ],
@@ -16269,6 +16510,9 @@
       "View organization events by upgrading to Professional": [
         "Podreu veure els esdeveniments de l'organització si milloreu al pla Professional"
       ],
+      "VPN": [
+        "VPN"
+      ],
       "Warning": [
         "Advertència"
       ],
@@ -16292,6 +16536,9 @@
       ],
       "WireGuard configuration": [
         "Configuració del WireGuard"
+      ],
+      "You are all set": [
+        "Ja esteu a punt"
       ],
       "You can now create unlimited folders and labels": [
         "Ara podeu crear carpetes i etiquetes il·limitades."
