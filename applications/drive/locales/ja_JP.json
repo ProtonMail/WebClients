@@ -1244,6 +1244,9 @@
       ],
       "Remove my access": [
         "自分のアクセス権を削除"
+      ],
+      "Reconnect to Gmail": [
+        "Gmailに再接続"
       ]
     },
     "Action: Docs": {
@@ -1332,6 +1335,9 @@
       ],
       "Writing assistant seats": [
         "執筆アシスタントシート"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } ライセンス"
       ]
     },
     "Alert": {
@@ -3033,6 +3039,12 @@
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "ご利用をおやめになるのは残念です。よろしければ、取消の理由をお聞かせいただけますでしょうか。お客様のご感想は、${ BRAND_NAME } を改善するのに役立ちます。"
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "${ BRAND_NAME }でGmailメッセージの送受信を続けるには、アカウントを再接続してください。"
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "${ boldEmails }へのアクセスができなくなりました。"
       ]
     },
     "description": {
@@ -3937,6 +3949,9 @@
       ],
       "Wrong billing address": [
         "請求先住所を変更"
+      ],
+      "Invalid VAT number": [
+        "無効なVAT番号です"
       ]
     },
     "error": {
@@ -6848,6 +6863,12 @@
       ],
       "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
         "2要素認証を設定する際、認証アプリにアクセスできなくなった場合に使用できる回復用コードを提供します。"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME }シート"
+      ],
+      "for ${ price }": [
+        "${ price }で"
       ]
     },
     "info": {
@@ -7913,6 +7934,9 @@
       ],
       "Up to ${ n } participant": [
         "最大${ n }人の参加者"
+      ],
+      "Video meetings, ${ n } participant": [
+        "ビデオ会議、${ n }名まで参加可能"
       ]
     },
     "Message": {
@@ -12911,6 +12935,9 @@
       ],
       "Actions": [
         "アクション"
+      ],
+      "Disconnected from Gmail": [
+        "Gmailから切断しました"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13219,11 +13246,20 @@
     "meet_2025: Addon": {
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME } ライセンス"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME }シート"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats }${ MEET_APP_NAME }シート"
       ]
     },
     "meet_2025: Info": {
       "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
         "トライアル期間中、${ MEET_SHORT_APP_NAME }のシートを${ TRIAL_MAX_MEET_SEATS }ヶまでをご利用いただけます。"
+      ],
+      "${ seats } seat included": [
+        "${ seats }シートが含まれています"
       ]
     },
     "Provider option": {
