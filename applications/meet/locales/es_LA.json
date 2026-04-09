@@ -1725,6 +1725,12 @@
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "${ MEET_APP_NAME } necesita WebRTC para funcionar. Actualice su navegador o dispositivo a una versión que sea compatible con WebRTC, pruebe un navegador diferente o desactive cualquier extensión que pueda estar bloqueándolo."
       ],
+      "${ participantName } and ${ otherParticipantsCount } others are recording": [
+        "${ participantName } y ${ otherParticipantsCount } más están grabando"
+      ],
+      "${ participantName } is recording": [
+        "${ participantName } está grabando"
+      ],
       "${ presenterName } (you) is presenting": [
         "${ presenterName } (usted) está presentando"
       ],
@@ -1861,6 +1867,9 @@
       "End-to-end encryption is active for this chat.": [
         "El cifrado de extremo a extremo está activo para este chat."
       ],
+      "Enter code": [
+        "Ingresar código"
+      ],
       "Enter the code from your authenticator app": [
         "Ingrese el código de la aplicación de autenticación."
       ],
@@ -1911,6 +1920,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no encuentra el correo electrónico en el buzón, revise en la carpeta de spam."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Si perdió el acceso a su aplicación de autenticación, puede usar 1 de los 16 códigos de recuperación de copia de seguridad proporcionados cuando configuró la autenticación de dos factores. ${ learnMoreLink }"
       ],
       "If you’re using Firefox, make sure PeerConnection is enabled.": [
         "Si está usando Firefox, asegúrese de que PeerConnection está activado."
@@ -2047,8 +2059,8 @@
       "Our end-to-end encrypted meetings protect privacy and empower truly free expression.": [
         "Nuestras reuniones cifradas de extremo a extremo protegen la privacidad y fomentan la verdadera libertad de expresión."
       ],
-      "participant": [
-        "participante"
+      "Participant": [
+        "Participante"
       ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Pegue su enlace de ${ MEET_APP_NAME } para unirse a una reunión segura"
@@ -2085,6 +2097,12 @@
       ],
       "Record your meetings": [
         "Grabe sus reuniones"
+      ],
+      "Recording": [
+        "Grabando"
+      ],
+      "Recording in progress": [
+        "Grabación en curso"
       ],
       "Recording saved": [
         "Grabación guardada"
@@ -2235,9 +2253,6 @@
       ],
       "Week": [
         "Semana"
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Cuando configura la autenticación de dos factores, nosotros proporcionamos códigos de recuperación que podrá usar para iniciar sesión si llega a perder acceso a su app de autenticación."
       ],
       "Would you like to delete this event?": [
         "¿Quiere eliminar este evento?"
