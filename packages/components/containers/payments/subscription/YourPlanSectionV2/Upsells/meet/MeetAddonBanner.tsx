@@ -19,7 +19,6 @@ import {
     hasMeetAddonFromPlanIDs,
 } from '@proton/payments';
 import { getHasMeetIncludedInPlan } from '@proton/payments/core/subscription/helpers';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import { useSubscriptionModal } from '../../../SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../../../constants';
@@ -34,7 +33,6 @@ const MeetAddonBanner = ({ app }: UpsellSectionBaseProps) => {
     const [subscription] = useSubscription();
     const [plansResult] = usePlans();
     const { getPreferredCurrency } = useCurrencies();
-    const meetAddonUpsellsEnabled = useFlag('MeetAddonUpsells');
 
     const plans = plansResult?.plans ?? [];
     const preferredCurrency = subscription ? getPreferredCurrency({ subscription, plans }) : undefined;
@@ -66,7 +64,7 @@ const MeetAddonBanner = ({ app }: UpsellSectionBaseProps) => {
         });
     };
 
-    if (!meetAddonUpsellsEnabled || !meetAddon || hasMeetAddon || getHasMeetIncludedInPlan(subscription)) {
+    if (!meetAddon || hasMeetAddon || getHasMeetIncludedInPlan(subscription)) {
         return null;
     }
 
