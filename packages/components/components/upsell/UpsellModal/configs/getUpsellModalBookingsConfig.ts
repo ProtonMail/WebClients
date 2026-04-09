@@ -1,4 +1,4 @@
-import { CYCLE, PLANS } from '@proton/payments';
+import { CYCLE, PLANS, getFallbackCurrency } from '@proton/payments';
 
 import { getUpsellModalFooterText } from '../helpers/getUpsellModalFooterText';
 import { getUpsellModalSubmitText } from '../helpers/getUpsellModalSubmitText';
@@ -12,7 +12,8 @@ export const getUpsellModalBookingsConfig: UpsellModalConfigCase = async (props)
     const cycle = CYCLE.YEARLY;
 
     const monthlyPrice = await getUpsellPlanMonthlyPrice({
-        currency,
+        // B2B plans don't support regional currencies, this fallback to a main currency
+        currency: getFallbackCurrency(currency),
         cycle,
         paymentsApi,
         planIDs,
