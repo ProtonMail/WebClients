@@ -803,6 +803,9 @@
       "Reconnect": [
         "Yhdistä uudelleen"
       ],
+      "Reconnect to Gmail": [
+        "Yhdistä uudelleen Gmailiin"
+      ],
       "Recover data": [
         "Palauta tiedot"
       ],
@@ -2914,6 +2917,15 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Yksinkertaista synkronointia ja ajoitusta jaetuilla kalentereilla."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Tämä voi johtua, jos käyttöoikeudet on poistettu tai salasanasi on vaihdettu."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Jotta voit jatkaa Gmail-viestien vastaanottamista ja lähettämistä ${ BRAND_NAME } -palvelussa, yhdistä tilisi uudelleen."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Jotta voit jatkaa Gmail-viestien vastaanottamista ja lähettämistä ${ BRAND_NAME } -palvelussa, yhdistä tilisi uudelleen."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Varmista tilillesi korkein mahdollinen suojaus asettamalla palautuslauseke."
       ],
@@ -2928,6 +2940,9 @@
       ],
       "Use Drag and Drop to rank merging priority between contacts. Uncheck the contacts you do not want to merge.": [
         "Määritä yhdistettävien yhteystietojen painotusjärjestys vetämällä ja pudottamalla. Poista niiden valinta, joita et halua yhdistää."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Emme voi enää käyttää ${ boldEmails } -osoitteita."
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Yhteystietoryhmillä voit lähettää sähköposteja kaikille ryhmän jäsenille yhdellä klikkauksella."
@@ -3203,6 +3218,9 @@
       ],
       "Account does not exist": [
         "Tiliä ei ole olemassa"
+      ],
+      "Address could not be added.": [
+        "Osoitetta ei voitu lisätä."
       ],
       "Address primary private key not found": [
         "Osoitteen ensisijaista yksityistä avainta ei löytynyt"
@@ -3613,6 +3631,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Joidenkin tunnisteiden nimet ylittävät ${ MAIL_APP_NAME }n enimmäismerkkimäärän. Muuta nimiä muokkaamalla tuontia."
       ],
+      "Something went wrong while fetching available domains": [
+        "Jotain meni vikaan haettaessa käytettävissä olevia verkkotunnuksia"
+      ],
       "Something went wrong with search. Please try again later.": [
         "Jotain meni vikaan haussa. Yritä myöhemmin uudelleen."
       ],
@@ -3708,9 +3729,6 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Viesti saattaa sisältää joitakin URL-linkkejä, joita käyttämäsi selain ei voi avata oikein."
-      ],
-      "This offer is not available in your country": [
-        "Tämä tarjous ei ole saatavilla maassasi"
       ],
       "Try using only letters, numerals, and _.-": [
         "Kokeile vain kirjaimia, numeroita ja merkkejä _.-"
@@ -5661,6 +5679,18 @@
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Useimmat julkiset Wi-Fi-verkot ovat turvallisia, mutta joskus puutteellisesti suojattuja, jolloin voit altistua kyberuhkille. VPN salaa tietoliikenteesi ja pitää sinut suojattuna."
+      ],
+      "Move ${ dragCount } item": [
+        "Siirrä ${ dragCount } kohde",
+        "Siirrä ${ dragCount } kohdetta"
+      ],
+      "Move ${ fileCount } file": [
+        "Siirrä ${ fileCount } tiedosto",
+        "Siirrä ${ fileCount } tiedostoa"
+      ],
+      "Move ${ folderCount } folder": [
+        "Siirrä ${ folderCount } kansio",
+        "Siirrä ${ folderCount } kansiota"
       ],
       "Moving files": [
         "Tiedostoja siirretään"
@@ -9125,9 +9155,6 @@
       "Public link access updated": [
         "Julkisen linkin käyttöoikeus päivitetty"
       ],
-      "Root folder failed to be loaded": [
-        "Juurikansion lataus epäonnistui"
-      ],
       "Selected item was not removed from your list": [
         "Valittua kohdetta ei poistettu listaltasi",
         "Valittuja kohteita ei poistettu listaltasi"
@@ -9162,9 +9189,6 @@
       "Stopping the sharing of this item has failed": [
         "Kohteen jakamisen lopetus epäonnistui"
       ],
-      "Subfolder failed to be loaded": [
-        "Alikansion lataus epäonnistui"
-      ],
       "The document failed to be created": [
         "Dokumentin luominen epäonnistui"
       ],
@@ -9185,6 +9209,9 @@
       ],
       "You stopped sharing this item": [
         "Lopetit kohteen jakamisen"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "${ BRAND_NAME } -osoitteesi on valmis käytettäväksi"
       ],
       "Your old files will be deleted in 72 hours": [
         "Vanhat tiedostosi poistetaan 72 tunnin kuluessa"
@@ -11908,6 +11935,9 @@
       "Discard changes?": [
         "Hylätäänkö muutokset?"
       ],
+      "Disconnected from Gmail": [
+        "Yhteys Gmailiin katkaistu"
+      ],
       "Downgrade account": [
         "Alenna tili"
       ],
@@ -12429,9 +12459,6 @@
       ],
       "Sort files/folders": [
         "Järjestä tiedostot/kansiot"
-      ],
-      "Spring Sale": [
-        "Kevätale"
       ],
       "Start a new import": [
         "Aloita uusi tuonti"

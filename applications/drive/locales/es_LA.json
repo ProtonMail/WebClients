@@ -809,6 +809,9 @@
       "Reconnect": [
         "Reconectar"
       ],
+      "Reconnect to Gmail": [
+        "Volver a conectar a Gmail"
+      ],
       "Recover data": [
         "Recuperar datos"
       ],
@@ -3020,6 +3023,15 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Simplifique la sincronización y la programación con calendarios compartidos."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Esto puede suceder si se eliminaron permisos o si cambió su contraseña."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Para continuar recibiendo y enviando mensajes de Gmail en ${ BRAND_NAME }, reconecte su cuenta."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Para continuar recibiendo y enviando mensajes de Gmail en ${ BRAND_NAME }, reconecte sus cuentas."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Para asegurar la seguridad máxima posible de la cuenta, establezca una frase de recuperación."
       ],
@@ -3040,6 +3052,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Use esta guía para que su organización se beneficie inmediatamente del cifrado y ecosistema de privacidad líderes en la industria de ${ BRAND_NAME }."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Ya no podemos acceder a ${ boldEmails }."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Lamentamos que se vaya. Si tiene un momento, agradeceríamos mucho saber por qué desea cancelar. Sus comentarios nos ayudan a mejorar ${ BRAND_NAME } para todos."
@@ -3323,6 +3338,9 @@
       ],
       "Account does not exist": [
         "La cuenta no existe"
+      ],
+      "Address could not be added.": [
+        "No se pudo agregar la dirección."
       ],
       "Address primary private key not found": [
         "Clave privada principal de la dirección no encontrada"
@@ -3769,6 +3787,9 @@
       "Something went wrong during folder listing": [
         "Algo salió mal durante el listado de carpetas"
       ],
+      "Something went wrong while fetching available domains": [
+        "Ocurrió un error al obtener los dominios disponibles"
+      ],
       "Something went wrong with search. Please try again later.": [
         "Hubo un problema con la búsqueda. Inténtelo de nuevo más tarde."
       ],
@@ -3867,9 +3888,6 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Este mensaje podría contener enlaces que no pueden abrirse correctamente en el navegador actual."
-      ],
-      "This offer is not available in your country": [
-        "Esta oferta no está disponible en su país"
       ],
       "Try using only letters, numerals, and _.-": [
         "Intente usando solo letras, números y _.-"
@@ -5546,6 +5564,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Asegure una comunicación privada y cifrada completa. Reclame su dirección gratuita de ${ BRAND_NAME } ahora."
       ],
+      "Enter code": [
+        "Ingresar código"
+      ],
       "Enter password": [
         "Ingrese la contraseña"
       ],
@@ -5690,6 +5711,9 @@
       ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "Si tiene una de las siguientes opciones, continúe con la configuración de la cuenta de ${ BRAND_NAME } para comenzar con el proceso de desbloqueo."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Si perdió el acceso a su aplicación de autenticación, puede usar 1 de los 16 códigos de recuperación de copia de seguridad proporcionados cuando configuró la autenticación de dos factores. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Si procede con darse de baja, perderá el acceso a las funciones de pago de ${ MAIL_APP_NAME } y ${ VPN_APP_NAME }."
@@ -5902,6 +5926,18 @@
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "La mayoría de las redes Wi-Fi públicas son seguras, pero algunas carecen de seguridad, exponiéndole a amenazas cibernéticas. Una VPN cifra su tráfico brindándole protección."
+      ],
+      "Move ${ dragCount } item": [
+        "Mover ${ dragCount } elemento",
+        "Mover ${ dragCount } elementos"
+      ],
+      "Move ${ fileCount } file": [
+        "Mover ${ fileCount } archivo",
+        "Mover ${ fileCount } archivos"
+      ],
+      "Move ${ folderCount } folder": [
+        "Mover ${ folderCount } carpeta",
+        "Mover ${ folderCount } carpetas"
       ],
       "Moving files": [
         "Moviendo archivos"
@@ -6742,9 +6778,6 @@
       ],
       "When you remove ${ deviceName } as a synced device, all folders added to My Computers from this device will be permanently deleted from ${ DRIVE_APP_NAME }.": [
         "Cuando elimine ${ deviceName } como dispositivo sincronizado, todas las carpetas añadidas a Mis computadoras desde este dispositivo se eliminarán permanentemente de ${ DRIVE_APP_NAME }."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Cuando configura la autenticación de dos factores, nosotros proporcionamos códigos de recuperación que podrá usar para iniciar sesión si llega a perder acceso a su app de autenticación."
       ],
       "who": [
         "quién"
@@ -9612,9 +9645,6 @@
       "Public link access updated": [
         "Se actualizó el acceso al enlace público."
       ],
-      "Root folder failed to be loaded": [
-        "Error al cargar la carpeta raíz"
-      ],
       "Selected item was not removed from your list": [
         "El elemento seleccionado no se eliminó de su lista",
         "Los elementos seleccionados no se eliminaron de su lista"
@@ -9649,9 +9679,6 @@
       "Stopping the sharing of this item has failed": [
         "Error al dejar de compartir este elemento"
       ],
-      "Subfolder failed to be loaded": [
-        "Error al cargar la subcarpeta"
-      ],
       "The document failed to be created": [
         "No se creó el documento."
       ],
@@ -9675,6 +9702,9 @@
       ],
       "You stopped sharing this item": [
         "Ha dejado de compartir este elemento"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Su dirección de ${ BRAND_NAME } está lista para usarse"
       ],
       "Your old files will be deleted in 72 hours": [
         "Los archivos antiguos serán eliminados en 72 horas"
@@ -12577,6 +12607,9 @@
       "Discard changes?": [
         "¿Descartar cambios?"
       ],
+      "Disconnected from Gmail": [
+        "Desconectado de Gmail"
+      ],
       "Downgrade account": [
         "Pasar a un plan inferior"
       ],
@@ -13104,9 +13137,6 @@
       ],
       "Sort files/folders": [
         "Ordenar archivos/carpetas"
-      ],
-      "Spring Sale": [
-        "Oferta de primavera"
       ],
       "Start a new import": [
         "Iniciar una importación nueva"

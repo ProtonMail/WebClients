@@ -809,6 +809,9 @@
       "Reconnect": [
         "Reconnecter"
       ],
+      "Reconnect to Gmail": [
+        "Se reconnecter à Gmail"
+      ],
       "Recover data": [
         "Récupérer les données"
       ],
@@ -3017,6 +3020,15 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Simplifiez la synchronisation et la planification grâce aux calendriers partagés."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Cela peut se produire si les autorisations ont été supprimées ou si votre mot de passe a été modifié."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Pour continuer à recevoir et envoyer des messages Gmail dans ${ BRAND_NAME }, veuillez reconnecter votre compte."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Pour continuer à recevoir et envoyer des messages Gmail dans ${ BRAND_NAME }, veuillez reconnecter vos comptes."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Pour garantir la sécurité maximale de votre compte, définissez une phrase de récupération."
       ],
@@ -3037,6 +3049,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Utilisez ce guide pour que votre organisation bénéficie rapidement du chiffrement et de l’écosystème de respect de la vie privée de pointe de ${ BRAND_NAME }."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Nous ne pouvons plus accéder à ${ boldEmails }."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Nous regrettons de vous voir partir. Si vous avez un moment, nous aimerions beaucoup savoir pourquoi vous souhaitez résilier votre abonnement. Vos commentaires nous aident à améliorer ${ BRAND_NAME } pour le bénéfice de tous."
@@ -3320,6 +3335,9 @@
       ],
       "Account does not exist": [
         "Ce compte n'existe pas."
+      ],
+      "Address could not be added.": [
+        "L'adresse n'a pas pu être ajoutée."
       ],
       "Address primary private key not found": [
         "La clé privée principale de l’adresse n’a pas été trouvée."
@@ -3727,6 +3745,9 @@
       "Request timed out": [
         "La requête a expiré."
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Le régime de TVA intracommunautaire n'est pas pris en charge pour cet abonnement."
+      ],
       "Search failed": [
         "La recherche n'a pas abouti."
       ],
@@ -3762,6 +3783,9 @@
       ],
       "Something went wrong during folder listing": [
         "Une erreur s'est produite lors du recensement des dossiers."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Quelque chose s'est mal passé lors de la récupération des domaines disponibles"
       ],
       "Something went wrong with search. Please try again later.": [
         "Un problème est survenu lors de la recherche. Veuillez réessayer plus tard."
@@ -3861,9 +3885,6 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Ce message contient peut-être des liens URL qui pourraient ne pas s'ouvrir correctement avec votre navigateur."
-      ],
-      "This offer is not available in your country": [
-        "Cette offre n'est pas disponible dans votre pays."
       ],
       "Try using only letters, numerals, and _.-": [
         "Essayez d'utiliser uniquement des lettres, des chiffres et ces signes : _ . -"
@@ -5529,6 +5550,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Assurez une communication entièrement privée et chiffrée. Obtenez dès maintenant votre adresse e-mail ${ BRAND_NAME } gratuite."
       ],
+      "Enter code": [
+        "Saisissez le code"
+      ],
       "Enter password": [
         "Saisissez le mot de passe"
       ],
@@ -5670,6 +5694,9 @@
       ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "Si vous avez un de ces éléments, passez à la configuration du compte ${ BRAND_NAME } pour commencer le déverrouillage."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Si vous avez perdu l'accès à votre application d'authentification, vous pouvez utiliser 1 des 16 codes de récupération de sauvegarde fournis lors de la configuration de l'authentification à deux facteurs. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "En passant à un abonnement inférieur, vous perdrez l'accès aux fonctionnalités payantes de ${ MAIL_APP_NAME } et ${ VPN_APP_NAME }."
@@ -5882,6 +5909,18 @@
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "La plupart des réseaux wifi publics sont sûrs, mais certains manquent de sécurité, vous exposant ainsi aux cybermenaces. Un VPN chiffre votre trafic pour vous protéger."
+      ],
+      "Move ${ dragCount } item": [
+        "Déplacer ${ dragCount } élément",
+        "Déplacer ${ dragCount } éléments"
+      ],
+      "Move ${ fileCount } file": [
+        "Déplacer ${ fileCount } fichier",
+        "Déplacer ${ fileCount } fichiers"
+      ],
+      "Move ${ folderCount } folder": [
+        "Déplacer ${ folderCount } dossier",
+        "Déplacer ${ folderCount } dossiers"
       ],
       "Moving files": [
         "Déplacement de fichiers"
@@ -6884,6 +6923,9 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Votre compte a au moins une facture en retard. Votre accès sera bientôt restreint. ${ payInvoiceLink }"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Votre compte est actuellement configuré pour appliquer le régime de TVA intracommunautaire. Ceci n’est pas pris en charge pour l'abonnement sélectionné. Pour continuer, retirez le numéro de TVA de l'adresse de facturation ou sélectionnez un autre abonnement."
       ],
       "Your current browser does not support the downloading of large files/multiple files. Download the desktop app for seamless uploads and downloads.": [
         "Votre navigateur actuel ne prend pas en charge le téléchargement de fichiers volumineux/multiples. Téléchargez l'application de bureau pour des importations et des téléchargements fluides."
@@ -9586,9 +9628,6 @@
       "Public link access updated": [
         "L'accès au lien public a été mis à jour."
       ],
-      "Root folder failed to be loaded": [
-        "Le dossier racine n'a pas pu être chargé."
-      ],
       "Selected item was not removed from your list": [
         "L'élément sélectionné n'a pas été supprimé votre liste",
         "Les éléments sélectionnés n'ont pas pu être supprimés de votre liste."
@@ -9623,9 +9662,6 @@
       "Stopping the sharing of this item has failed": [
         "L'arrêt du partage de cet élément n'a pas abouti."
       ],
-      "Subfolder failed to be loaded": [
-        "Le sous-dossier n'a pas pu être chargé."
-      ],
       "The document failed to be created": [
         "Le document n'a pas été créé."
       ],
@@ -9649,6 +9685,9 @@
       ],
       "You stopped sharing this item": [
         "Vous avez arrêté le partage de cet élément."
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Votre adresse ${ BRAND_NAME } est prête à être utilisée"
       ],
       "Your old files will be deleted in 72 hours": [
         "Vos anciens fichiers seront supprimés dans 72 heures."
@@ -12539,6 +12578,9 @@
       "Discard changes?": [
         "Abandonner les modifications ?"
       ],
+      "Disconnected from Gmail": [
+        "Déconnecté de Gmail"
+      ],
       "Downgrade account": [
         "Passer à un abonnement inférieur"
       ],
@@ -12974,6 +13016,9 @@
       "Restore your files": [
         "Restaurer vos fichiers"
       ],
+      "Reverse charge not supported": [
+        "Le régime de TVA intracommunautaire n'est pas pris en charge."
+      ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "L'enregistrer pour plus tard dans ${ DRIVE_APP_NAME }"
       ],
@@ -13063,9 +13108,6 @@
       ],
       "Sort files/folders": [
         "Trier les fichiers/dossiers"
-      ],
-      "Spring Sale": [
-        "Soldes de printemps"
       ],
       "Start a new import": [
         "Démarrer une nouvelle importation"

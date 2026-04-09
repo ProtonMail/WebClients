@@ -3868,9 +3868,6 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Bu iletide, geçerli tarayıcınızda açılamayacak bazı bağlantı adresleri bulunuyor olabilir."
       ],
-      "This offer is not available in your country": [
-        "Bu teklif ülkeniz için geçerli değil"
-      ],
       "Try using only letters, numerals, and _.-": [
         "Yalnızca harfleri, rakamları ve _.- karakterlerini kullanmayı deneyin"
       ],
@@ -5546,6 +5543,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Tümüyle güvenli ve şifrelenmiş iletişim sağlayın. Ücretsiz ${ BRAND_NAME } e-posta adresinizi şimdi alın."
       ],
+      "Enter code": [
+        "Kodu girin"
+      ],
       "Enter password": [
         "Parolayı yazın"
       ],
@@ -5690,6 +5690,9 @@
       ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "Bunlardan birine sahipseniz, engellemeyi kaldırmak için ${ BRAND_NAME } hesap ayarına gidin."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Kimlik doğrulama uygulamanıza erişemiyorsanız iki adımlı doğrulamayı kurarken size verilen 16 yedek kurtarma kodundan birini kullanabilirsiniz. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Tarifenizi düşürdüğünüzde, ücretli ${ MAIL_APP_NAME } ve ${ VPN_APP_NAME } özelliklerini kullanamayacaksınız."
@@ -5902,6 +5905,18 @@
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Çoğu herkese açık Wi-Fi ağı güvenlidir. Ancak bazılarında güvenlik açıkları vardır ve sizi siber tehditlerle karşı karşıya bırakır. Bir VPN, trafiğinizi şifreleyerek sizi korur."
+      ],
+      "Move ${ dragCount } item": [
+        "${ dragCount } ögeyi taşı",
+        "${ dragCount } ögeyi taşı"
+      ],
+      "Move ${ fileCount } file": [
+        "${ fileCount } dosyayı taşı",
+        "${ fileCount } dosyayı taşı"
+      ],
+      "Move ${ folderCount } folder": [
+        "${ folderCount } klasörü taşı",
+        "${ folderCount } klasörü taşı"
       ],
       "Moving files": [
         "Dosyalar taşınıyor"
@@ -6742,9 +6757,6 @@
       ],
       "When you remove ${ deviceName } as a synced device, all folders added to My Computers from this device will be permanently deleted from ${ DRIVE_APP_NAME }.": [
         "${ deviceName } uygulamasını eşitlenmiş aygıtlardan kaldırdığınızda, ${ DRIVE_APP_NAME } uygulaması ile bu aygıttan Bilgisayarlarım klasörüne eklenen tüm klasörler kalıcı olarak silinir."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "İki adımlı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları veriyoruz."
       ],
       "who": [
         "kim"
@@ -9552,9 +9564,6 @@
       "Public link access updated": [
         "Herkese açık bağlantı erişimi güncellendi"
       ],
-      "Root folder failed to be loaded": [
-        "Kök klasör yüklenemedi"
-      ],
       "Selected item was not removed from your list": [
         "Seçilmiş öge listenizden kaldırılmadı",
         "Seçilmiş ögeler listenizden kaldırılmadı"
@@ -9588,9 +9597,6 @@
       ],
       "Stopping the sharing of this item has failed": [
         "Bu öge paylaşımdan kaldırılamadı"
-      ],
-      "Subfolder failed to be loaded": [
-        "Alt klasör yüklenemedi"
       ],
       "The document failed to be created": [
         "Belge oluşturulurken sorun çıktı"
@@ -13044,9 +13050,6 @@
       ],
       "Sort files/folders": [
         "Dosyaları/klasörleri sırala"
-      ],
-      "Spring Sale": [
-        "Bahar indirimi"
       ],
       "Start a new import": [
         "Yeni bir içe aktarma başlatın"
