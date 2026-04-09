@@ -1,12 +1,12 @@
 import { useRef } from 'react';
 
 import { FilePreview, NavigationControl } from '@proton/components';
-import { getDrive } from '@proton/drive/index';
 
 import { useFlagsDriveSheet } from '../../flags/useFlagsDriveSheet';
 import { useDetailsModal } from '../../modals/DetailsModal';
 import { useSharingModal } from '../SharingModal/SharingModal';
 import type { Drive } from './interface';
+import { isDriveWithSharing } from './interface';
 import { SignatureInformation, SignatureStatus } from './signatures';
 import { usePreviewState } from './usePreviewState';
 
@@ -15,7 +15,7 @@ export interface PreviewProps {
     revisionUid?: string;
     // Entire list of previewable images in the current view
     previewableNodeUids?: string[];
-    drive?: Drive;
+    drive: Drive;
     onNodeChange?: (nodeUid: string) => void;
     verifySignatures?: boolean;
     canOpenInDocs?: boolean;
@@ -39,7 +39,7 @@ type PhotosProps = {
 };
 
 export function Preview({
-    drive = getDrive(),
+    drive,
     nodeUid,
     revisionUid,
     previewableNodeUids,
@@ -77,7 +77,11 @@ export function Preview({
     const onDetails = () => {
         showDetailsModal({ nodeUid: preview.node.nodeUid, drive, verifySignatures });
     };
-    const onShare = preview.canShare ? () => showSharingModal({ nodeUid: preview.node.nodeUid }) : undefined;
+    const sharingDrive = isDriveWithSharing(drive) ? drive : undefined;
+    const onShare =
+        preview.canShare && sharingDrive
+            ? () => showSharingModal({ nodeUid: preview.node.nodeUid, drive: sharingDrive })
+            : undefined;
 
     return (
         <>

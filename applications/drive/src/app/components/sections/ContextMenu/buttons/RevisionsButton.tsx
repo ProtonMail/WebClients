@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { generateNodeUid } from '@proton/drive/index';
+import { generateNodeUid, getDrive } from '@proton/drive';
 import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import type { useRevisionsModal } from '../../../../modals/RevisionsModal';
@@ -39,7 +39,8 @@ export const RevisionsButton = ({ selectedLink, showRevisionsModal, close }: Pro
                         linkId: selectedLink.linkId,
                     });
                 } else {
-                    showRevisionsModal({ nodeUid });
+                    // Legacy so we force getDrive
+                    showRevisionsModal({ nodeUid, drive: getDrive() });
                 }
             }}
             close={close}

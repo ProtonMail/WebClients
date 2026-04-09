@@ -1,9 +1,10 @@
 import { Vr } from '@proton/atoms/Vr/Vr';
 import { Toolbar } from '@proton/components';
-import { NodeType } from '@proton/drive';
+import { NodeType, getDrivePerNodeType } from '@proton/drive';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { DownloadManager } from '../../../managers/download/DownloadManager';
+import type { Drive } from '../../../modals/preview/interface';
 import { useSelectionStore } from '../../../modules/selection';
 import { DetailsButton } from '../../commonButtons/DetailsButton';
 import { DownloadButton } from '../../commonButtons/DownloadButton';
@@ -17,7 +18,12 @@ import { useTrashStore } from '../useTrash.store';
 interface Props {
     onRestore: (items: TrashItem[]) => void;
     onDelete: (items: TrashItem[]) => void;
-    onPreview: (props: { deprecatedContextShareId: string; nodeUid: string; canOpenInDocs: boolean }) => void;
+    onPreview: (props: {
+        deprecatedContextShareId: string;
+        nodeUid: string;
+        canOpenInDocs: boolean;
+        drive: Drive;
+    }) => void;
     showDetailsModal: (props: { nodeUid: string }) => void;
     showFilesDetailsModal: (props: { nodeUids: string[] }) => void;
 }
@@ -32,7 +38,12 @@ export const TrashToolbar = ({ onRestore, onDelete, onPreview, showDetailsModal,
 
     const dm = DownloadManager.getInstance();
     const handlePreviewClick = () =>
-        onPreview({ deprecatedContextShareId: '', nodeUid: selectedItem.uid, canOpenInDocs: false });
+        onPreview({
+            deprecatedContextShareId: '',
+            nodeUid: selectedItem.uid,
+            canOpenInDocs: false,
+            drive: getDrivePerNodeType(selectedItem.type),
+        });
 
     const renderSelectionActions = () => {
         if (!selectedItems.length) {

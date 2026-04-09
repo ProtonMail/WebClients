@@ -469,7 +469,7 @@ export const PhotosLayout = () => {
     const openSharePhotoModal = useCallback(() => {
         const item = selectedItems[0];
 
-        showSharingModal({ nodeUid: item.nodeUid });
+        showSharingModal({ nodeUid: item.nodeUid, drive: getDriveForPhotos() });
     }, [showSharingModal, selectedItems]);
 
     const onAddAlbumPhotos = useCallback(

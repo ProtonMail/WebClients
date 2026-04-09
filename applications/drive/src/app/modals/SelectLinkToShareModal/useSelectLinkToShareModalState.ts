@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 
 import type { ModalStateProps } from '@proton/components';
+import { getDrive } from '@proton/drive';
 
 import { directoryTreeFactory } from '../../modules/directoryTree';
 import { getNodeUidFromTreeItemId } from '../../modules/directoryTree/helpers';
@@ -57,7 +58,8 @@ export const useSelectLinkToShareModalState = ({
         if (!selectedNodeUid) {
             return;
         }
-        showSharingModal({ nodeUid: selectedNodeUid });
+        // We don't have tree for photos section so this will only be used with standard drive
+        showSharingModal({ nodeUid: selectedNodeUid, drive: getDrive() });
         onClose();
     };
 

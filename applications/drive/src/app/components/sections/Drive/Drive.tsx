@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef } from 'react';
 
 import { useActiveBreakpoint } from '@proton/components';
-import { generateNodeUid } from '@proton/drive/index';
+import { generateNodeUid, getDrive } from '@proton/drive';
 import { getCanAdmin } from '@proton/shared/lib/drive/permissions';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 
@@ -111,7 +111,8 @@ function Drive({ activeFolder, folderView }: Props) {
         id: item.linkId,
         // TODO: Improve this, we should not pass showLinkSharingModal here
         onShareClick: item.isShared
-            ? () => showSharingModal({ nodeUid: generateNodeUid(item.volumeId, item.linkId) })
+            ? // This is not targeting photos section
+              () => showSharingModal({ nodeUid: generateNodeUid(item.volumeId, item.linkId), drive: getDrive() })
             : undefined,
         isAdmin,
     }));

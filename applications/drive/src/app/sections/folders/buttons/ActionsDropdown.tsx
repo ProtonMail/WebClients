@@ -61,7 +61,9 @@ export const ActionsDropdown = ({ volumeId, selectedItems, role, canShareSingleI
             name: c('Action').t`Share`,
             icon: 'user-plus',
             testId: 'actions-dropdown-share-link',
-            action: () => showSharingModal({ nodeUid: generateNodeUid(volumeId, selectedLinkIds[0]) }),
+            action: () =>
+                // This is only used for standard folder view and not photos so we can force getDrive
+                showSharingModal({ nodeUid: generateNodeUid(volumeId, selectedLinkIds[0]), drive: getDrive() }),
         },
         {
             hidden: !isEditor,

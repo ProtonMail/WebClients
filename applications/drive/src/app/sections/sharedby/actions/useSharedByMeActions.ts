@@ -59,7 +59,11 @@ export const useSharedByMeActions = () => {
     };
 
     const handleShare = (uid: string) => {
-        showSharingModal({ nodeUid: uid });
+        const item = useSharedByMeStore.getState().getSharedByMeItem(uid);
+        if (!item) {
+            return;
+        }
+        showSharingModal({ nodeUid: uid, drive: getDrivePerNodeType(item.type) });
     };
 
     const handleStopSharing = (uid: string) => {

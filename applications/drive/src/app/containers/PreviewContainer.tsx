@@ -133,7 +133,8 @@ function PreviewContainerDeprecated() {
     // Open sharing modal through URL parameter - needed for Proton Docs
     useEffect(() => {
         if (isShareAction && link) {
-            showSharingModal({ nodeUid: generateNodeUid(link.volumeId, linkId) });
+            // Legacy stuff so we can force getDrive
+            showSharingModal({ nodeUid: generateNodeUid(link.volumeId, linkId), drive: getDrive() });
         }
     }, []);
 
@@ -264,7 +265,8 @@ function PreviewContainerDeprecated() {
                 onShare={
                     !isAdmin || isLinkLoading || !link || !!link?.trashed
                         ? undefined
-                        : () => showSharingModal({ nodeUid: generateNodeUid(link.volumeId, linkId) })
+                        : // Legacy stuff so we can force getDrive
+                          () => showSharingModal({ nodeUid: generateNodeUid(link.volumeId, linkId), drive: getDrive() })
                 }
                 onOpenInDocs={
                     openInDocs.canOpen
