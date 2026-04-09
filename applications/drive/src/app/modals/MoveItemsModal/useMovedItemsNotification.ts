@@ -1,15 +1,17 @@
 import { c, msgid } from 'ttag';
 
-import { useErrorHandler } from '../../store/_utils';
+import { useNotifications } from '@proton/components';
+
+import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { useListNotifications } from '../../utils/useListNotifications';
 
 export const useMovedItemsNotification = () => {
     const { createSuccessMessage } = useListNotifications();
-    const { showAggregatedErrorNotification } = useErrorHandler();
+    const { createNotification } = useNotifications();
 
     const createMovedItemsNotifications = (
         successItems: { name: string; uid: string }[],
-        failureItems: { uid: string; error: string }[],
+        failureItems: { uid: string; error: Error }[],
         undoAction?: () => Promise<void>
     ) => {
         createSuccessMessage(
@@ -24,9 +26,18 @@ export const useMovedItemsNotification = () => {
             undoAction
         );
 
-        showAggregatedErrorNotification(Object.values(failureItems), (errors) => {
-            return errors.length === 1 ? errors[0].error : `${failureItems.length} items failed to be moved`;
-        });
+        if (failureItems.length > 0) {
+            const text =
+                failureItems.length === 1
+                    ? failureItems[0].error.message
+                    : c('Error').ngettext(
+                          msgid`${failureItems.length} item failed to be moved`,
+                          `${failureItems.length} items failed to be moved`,
+                          failureItems.length
+                      );
+            createNotification({ type: 'error', text });
+            failureItems.forEach(({ error }) => handleSdkError(error, { showNotification: false }));
+        }
     };
 
     return {
