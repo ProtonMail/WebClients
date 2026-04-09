@@ -3,7 +3,7 @@ import { useMemo, useState } from 'react';
 import { c } from 'ttag';
 
 import { Dropdown, DropdownMenu, DropdownMenuButton, Icon, ToolbarButton, usePopperAnchor } from '@proton/components';
-import { generateNodeUid } from '@proton/drive';
+import { generateNodeUid, getDrive } from '@proton/drive';
 import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
 import type { IconName } from '@proton/icons/types';
 import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
@@ -57,7 +57,9 @@ const ActionsDropdown = ({ volumeId, selectedLinks, permissions, trashLinks, ren
             name: c('Action').t`Share`,
             icon: 'user-plus',
             testId: 'actions-dropdown-share-link',
-            action: () => showSharingModal({ nodeUid: generateNodeUid(volumeId, selectedLinkIds[0]) }),
+            action: () =>
+                // This is not targeting photos section
+                showSharingModal({ nodeUid: generateNodeUid(volumeId, selectedLinkIds[0]), drive: getDrive() }),
         },
         {
             hidden: !isEditor,

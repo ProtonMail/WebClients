@@ -18,7 +18,7 @@ import {
     useActiveBreakpoint,
     usePopperAnchor,
 } from '@proton/components';
-import { generateNodeUid } from '@proton/drive/index';
+import { generateNodeUid, getDriveForPhotos } from '@proton/drive/index';
 import useLoading from '@proton/hooks/useLoading';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
@@ -399,7 +399,10 @@ const ToolbarRightActionsAlbumGallery = ({
                     showIconOnly={showIconOnly}
                     onClick={() => {
                         // TODO: avoid the data loop and just execute callback
-                        showSharingModal({ nodeUid: generateNodeUid(album.volumeId, album.linkId) });
+                        showSharingModal({
+                            nodeUid: generateNodeUid(album.volumeId, album.linkId),
+                            drive: getDriveForPhotos(),
+                        });
                     }}
                 />
             )}

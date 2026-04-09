@@ -4,6 +4,7 @@ import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
 import { useConfirmActionModal } from '@proton/components';
+import { getDrivePerNodeType } from '@proton/drive';
 import { uploadManager, useUploadQueueStore } from '@proton/drive/modules/upload';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -116,7 +117,7 @@ export const useTransferManagerActions = () => {
     const share = async (entry: TransferManagerEntry) => {
         const uploadedItem = getUploadItem(entry.id);
         if (uploadedItem && uploadedItem.nodeUid) {
-            showSharingModal({ nodeUid: uploadedItem.nodeUid });
+            showSharingModal({ nodeUid: uploadedItem.nodeUid, drive: getDrivePerNodeType(uploadedItem.type) });
         }
     };
 

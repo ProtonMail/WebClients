@@ -1,8 +1,9 @@
-import { NodeType } from '@proton/drive';
+import { NodeType, getDrivePerNodeType } from '@proton/drive';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { ItemContextMenu } from '../../../components/sections/ContextMenu/ItemContextMenu';
 import { DownloadManager } from '../../../managers/download/DownloadManager';
+import type { Drive } from '../../../modals/preview/interface';
 import type { ContextMenuPosition } from '../../../modules/contextMenu';
 import { DetailsButton } from '../../commonButtons/DetailsButton';
 import { DownloadButton } from '../../commonButtons/DownloadButton';
@@ -20,7 +21,12 @@ interface Props {
     selectedItems: TrashItem[];
     onRestore: (items: TrashItem[]) => void;
     onDelete: (items: TrashItem[]) => void;
-    onPreview: (props: { deprecatedContextShareId: string; nodeUid: string; canOpenInDocs: boolean }) => void;
+    onPreview: (props: {
+        deprecatedContextShareId: string;
+        nodeUid: string;
+        canOpenInDocs: boolean;
+        drive: Drive;
+    }) => void;
     showDetailsModal: (props: { nodeUid: string }) => void;
     showFilesDetailsModal: (props: { nodeUids: string[] }) => void;
 }
@@ -50,7 +56,12 @@ export function TrashItemContextMenu({
 
     const hasDownloadAvailable = selectedItems.every(isFileOrPhoto);
     const handlePreviewClick = () =>
-        onPreview({ deprecatedContextShareId: '', nodeUid: selectedItem.uid, canOpenInDocs: false });
+        onPreview({
+            deprecatedContextShareId: '',
+            nodeUid: selectedItem.uid,
+            canOpenInDocs: false,
+            drive: getDrivePerNodeType(selectedItem.type),
+        });
 
     const handleDetailsClick = () => {
         if (selectedItems.length === 1) {
