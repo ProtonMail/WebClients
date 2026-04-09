@@ -2517,6 +2517,9 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Dette vil afvise enheden **${ name }**, der forsøgte at logge ind på din ${ BRAND_NAME }-konto den **${ date }**."
       ],
+      "To configure shortcuts, go to about:addons in Firefox and select \"Manage Extension Shortcuts\"": [
+        "For at konfigurere genveje skal du gå til about:addons i Firefox og vælge \"Administrér udvidelsesgenveje\""
+      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Hvis du vil fortsætte med at modtage e-mails, skal du overføre disse aliasser til en anden postkasse:"
       ],
@@ -5093,6 +5096,9 @@
       ],
       "No shared items matching": [
         "Ingen delte elementer matcher"
+      ],
+      "Offline": [
+        "Offline"
       ],
       "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
         "Når de er synkroniseret, vil sletning af aliasser i ${ PASS_SHORT_APP_NAME } også slette dem i SimpleLogin."
