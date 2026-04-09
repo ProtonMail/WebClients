@@ -20,7 +20,8 @@ export const AccessToggleZoom = () => {
     const { createNotification } = useNotifications();
     const { sendEventVideoConferenceSettingsToggle } = useVideoConfTelemetry();
 
-    const isZoomEnabled = useFlag('ZoomIntegration');
+    const isZoomIntegrationDisabled = useFlag('ZoomIntegrationDisabled');
+    const isZoomEnabled = !isZoomIntegrationDisabled;
 
     const [zoomLoading, withZoomLoading] = useLoading();
 
