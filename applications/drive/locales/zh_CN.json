@@ -810,6 +810,9 @@
       "Refer a friend": [
         "邀请好友"
       ],
+      "Refetch index": [
+        "重新获取索引"
+      ],
       "Refresh the page": [
         "刷新页面"
       ],
@@ -3836,9 +3839,6 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "此邮件含有浏览器不能打开的链接."
       ],
-      "This offer is not available in your country": [
-        "此优惠在您所在的国家/地区不可用"
-      ],
       "Try using only letters, numerals, and _.-": [
         "请使用英文字母、阿拉伯数字或 _ . - 符号"
       ],
@@ -4970,6 +4970,9 @@
       "${ speed }/s": [
         "${ speed }/秒"
       ],
+      "${ state.result.entries.length } entries": [
+        "${ state.result.entries.length } 条目"
+      ],
       "${ storage } storage": [
         "${ storage } 存储空间"
       ],
@@ -5636,6 +5639,9 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "在下一步中，您将能够使用比特币地址提交存款。"
       ],
+      "Index is empty.": [
+        "索引为空！"
+      ],
       "Indexing in progress": [
         "正在索引"
       ],
@@ -6116,6 +6122,9 @@
       "Search enabled. You may now close this dialogue and search for files and folders.": [
         "搜索已启用，您现在可以关闭此对话框，开始搜索文件和文件夹。"
       ],
+      "Search module is not available.": [
+        "搜索模块不可用！"
+      ],
       "Select a destination folder": [
         "选择目标文件夹"
       ],
@@ -6500,6 +6509,9 @@
       "Unsupported file": [
         "不支持文件"
       ],
+      "Unsupported file type for Photos": [
+        "照片文件类型不受支持"
+      ],
       "Untitled": [
         "未命名"
       ],
@@ -6634,9 +6646,6 @@
       ],
       "When you remove ${ deviceName } as a synced device, all folders added to My Computers from this device will be permanently deleted from ${ DRIVE_APP_NAME }.": [
         "当您将 ${ deviceName } 从同步设备中移除时，从该设备添加到“我的电脑”中的所有文件夹都将从 ${ DRIVE_APP_NAME } 中永久删除。"
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "当您设置双因素身份验证时，我们会提供恢复码。如果您无法使用验证器，可以使用这些恢复码登录。"
       ],
       "who": [
         "谁"
@@ -7245,6 +7254,9 @@
       "Enter device name": [
         "输入设备名称"
       ],
+      "Environment compatible": [
+        "环境兼容"
+      ],
       "Expired": [
         "已失效"
       ],
@@ -7313,6 +7325,12 @@
       ],
       "Include message and file name in invite email": [
         "在邀请电子邮件中包含邮件和文件名"
+      ],
+      "Index kinds": [
+        "索引类型"
+      ],
+      "Initial indexing": [
+        "正在初始化索引"
       ],
       "Integrated 2FA authenticator": [
         "内置 2FA 验证器"
@@ -7413,6 +7431,9 @@
       "Other": [
         "其他"
       ],
+      "Outdated version": [
+        "过时版本"
+      ],
       "Password": [
         "密码"
       ],
@@ -7481,6 +7502,9 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
+      ],
+      "Searchable": [
+        "可搜索"
       ],
       "Select type of abuse": [
         "选择滥用类型"
@@ -7601,6 +7625,9 @@
       ],
       "Viewer": [
         "查看者"
+      ],
+      "Visible columns:": [
+        "可见列："
       ],
       "Vulnerable": [
         "易受攻击"
@@ -9347,9 +9374,6 @@
       "Public link access updated": [
         "公共链接访问已更新"
       ],
-      "Root folder failed to be loaded": [
-        "加载根目录失败"
-      ],
       "Selected item was not removed from your list": [
         "所选项目未能从您的列表中移除"
       ],
@@ -9379,9 +9403,6 @@
       ],
       "Stopping the sharing of this item has failed": [
         "停止共享此项目失败"
-      ],
-      "Subfolder failed to be loaded": [
-        "加载子文件夹失败"
       ],
       "The document failed to be created": [
         "文档创建失败"
@@ -12057,7 +12078,7 @@
         "创建群组"
       ],
       "Created by": [
-        "由......创建"
+        "创建者"
       ],
       "Currency": [
         "货币"
@@ -12277,6 +12298,9 @@
       ],
       "Gift": [
         "礼品码"
+      ],
+      "Global": [
+        "全局"
       ],
       "Groups": [
         "群组"
@@ -12587,6 +12611,9 @@
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "稍后保存在 ${ DRIVE_APP_NAME }"
       ],
+      "Search": [
+        "搜索"
+      ],
       "Search results": [
         "搜索结果"
       ],
@@ -12670,9 +12697,6 @@
       ],
       "Sort files/folders": [
         "文件/文件夹排序"
-      ],
-      "Spring Sale": [
-        "春季特惠"
       ],
       "Start a new import": [
         "开始导入"

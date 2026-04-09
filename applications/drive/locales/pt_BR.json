@@ -809,6 +809,9 @@
       "Reconnect": [
         "Reconectar"
       ],
+      "Reconnect to Gmail": [
+        "Reconectar ao Gmail"
+      ],
       "Recover data": [
         "Recuperar dados"
       ],
@@ -3321,6 +3324,9 @@
       "Account does not exist": [
         "A conta não existe"
       ],
+      "Address could not be added.": [
+        "O endereço não pôde ser adicionado."
+      ],
       "Address primary private key not found": [
         "Chave privada principal do endereço não encontrada"
       ],
@@ -3849,9 +3855,6 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Essa mensagem pode conter alguns links de URL que podem não serem abertos corretamente pelo seu navegador."
-      ],
-      "This offer is not available in your country": [
-        "Esta oferta não está disponível no seu país"
       ],
       "Try using only letters, numerals, and _.-": [
         "Tente usar apenas letras, números e _.-"
@@ -5528,6 +5531,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Garanta uma comunicação totalmente privada e criptografada. Crie seu endereço de e-mail ${ BRAND_NAME } gratuito agora."
       ],
+      "Enter code": [
+        "Inserir código"
+      ],
       "Enter password": [
         "Insira a senha"
       ],
@@ -5672,6 +5678,9 @@
       ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "Se você tiver um desses, vá para a configuração da conta da ${ BRAND_NAME } para iniciar o processo de desbloqueio."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "If Se você perdeu o acesso ao seu aplicativo de autenticação, pode usar um dos 16 códigos de recuperação de backup fornecidos quando configurou a autenticação de dois fatores. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Se você prosseguir com o downgrade, perderá o acesso aos recursos pagos do ${ MAIL_APP_NAME } e ${ VPN_APP_NAME }."
@@ -5881,6 +5890,18 @@
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "A maioria das redes Wi-Fi públicas é segura, mas algumas são vulneráveis, expondo você a ameaças cibernéticas. Uma VPN criptografa seu tráfego, mantendo você protegido."
+      ],
+      "Move ${ dragCount } item": [
+        "Mover ${ dragCount } item",
+        "Mover ${ dragCount } itens"
+      ],
+      "Move ${ fileCount } file": [
+        "Mover ${ fileCount } arquivo",
+        "Mover ${ fileCount } arquivos"
+      ],
+      "Move ${ folderCount } folder": [
+        "Mover ${ folderCount } pasta",
+        "Mover ${ folderCount } pastas"
       ],
       "Moving files": [
         "Movendo arquivos"
@@ -6194,6 +6215,9 @@
       ],
       "Search enabled. You may now close this dialogue and search for files and folders.": [
         "Pesquisa ativada. Agora você pode fechar esta caixa de diálogo e procurar arquivos e pastas."
+      ],
+      "Search module is not available.": [
+        "Módulo de pesquisa não disponível"
       ],
       "Select a destination folder": [
         "Selecione uma pasta de destino"
@@ -6715,9 +6739,6 @@
       ],
       "When you remove ${ deviceName } as a synced device, all folders added to My Computers from this device will be permanently deleted from ${ DRIVE_APP_NAME }.": [
         "Quando você remover ${ deviceName } como um dispositivo sincronizado, todas as pastas adicionadas aos Meus Computadores a partir deste dispositivo serão permanentemente excluídas do ${ DRIVE_APP_NAME }."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quando você configura a autenticação de dois fatores, fornecemos códigos de recuperação que você pode usar para fazer login se perder o acesso ao seu aplicativo de autenticação."
       ],
       "who": [
         "quem"
@@ -7404,6 +7425,12 @@
       ],
       "Include message and file name in invite email": [
         "Incluir mensagem e nome do arquivo no e-mail de convite."
+      ],
+      "Index kinds": [
+        "Tipos de índice"
+      ],
+      "Initial indexing": [
+        "Indexação inicial"
       ],
       "Integrated 2FA authenticator": [
         "Autenticador A2F integrado"
@@ -9564,9 +9591,6 @@
       "Public link access updated": [
         "Acesso ao link público atualizado"
       ],
-      "Root folder failed to be loaded": [
-        "Erro ao carregar a pasta raiz"
-      ],
       "Selected item was not removed from your list": [
         "O item selecionado não foi removido da sua lista",
         "Os itens selecionados não foram removidos da sua lista"
@@ -9601,9 +9625,6 @@
       "Stopping the sharing of this item has failed": [
         "Erro ao interromper o compartilhamento deste item"
       ],
-      "Subfolder failed to be loaded": [
-        "Não foi possível carregar a subpasta."
-      ],
       "The document failed to be created": [
         "O documento não foi criado."
       ],
@@ -9627,6 +9648,9 @@
       ],
       "You stopped sharing this item": [
         "Você parou de compartilhar esse item"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Seu endereço da ${ BRAND_NAME } está pronto para uso"
       ],
       "Your old files will be deleted in 72 hours": [
         "Seus arquivos antigos serão excluídos em 72 horas"
@@ -11415,6 +11439,9 @@
     "Status": {
       "pending": [
         "pendente"
+      ],
+      "user joined": [
+        "usuário entrou"
       ]
     },
     "Storage": {
@@ -12526,6 +12553,9 @@
       "Discard changes?": [
         "Descartar alterações?"
       ],
+      "Disconnected from Gmail": [
+        "Desconectado do Gmail"
+      ],
       "Downgrade account": [
         "Fazer downgrade da conta"
       ],
@@ -13050,9 +13080,6 @@
       ],
       "Sort files/folders": [
         "Ordenar arquivos/pastas"
-      ],
-      "Spring Sale": [
-        "Promoção de primavera"
       ],
       "Start a new import": [
         "Iniciar uma nova importação"

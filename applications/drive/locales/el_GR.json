@@ -809,6 +809,9 @@
       "Reconnect": [
         "Επανασύνδεση"
       ],
+      "Reconnect to Gmail": [
+        "Επανασύνδεση στο Gmail"
+      ],
       "Recover data": [
         "Ανάκτηση δεδομένων"
       ],
@@ -3020,6 +3023,15 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Απλοποιήστε τον συγχρονισμό και τον προγραμματισμό με τα κοινοποιημένα ημερολόγια."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Αυτό μπορεί να συμβεί εάν τα δικαιώματα αφαιρέθηκαν ή αν άλλαξε ο κωδικός σας."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Για να συνεχίσετε να λαμβάνετε και να στέλνετε μηνύματα Gmail στο ${ BRAND_NAME }, παρακαλούμε επανασυνδέστε τον λογαριασμό σας."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Για να συνεχίσετε να λαμβάνετε και να στέλνετε μηνύματα Gmail στο ${ BRAND_NAME }, παρακαλούμε επανασυνδέστε τους λογαριασμούς σας."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Για να διασφαλίσετε τη μέγιστη δυνατή ασφάλεια του λογαριασμού σας, ορίστε μια φράση ανάκτησης."
       ],
@@ -3040,6 +3052,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Χρησιμοποιήστε αυτόν τον οδηγό για να επωφεληθεί άμεσα ο οργανισμός σας από το κορυφαίο οικοσύστημα κρυπτογράφησης και προστασίας προσωπικών δεδομένων του ${ BRAND_NAME }."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Δεν μπορούμε πια να έχουμε πρόσβαση στα ${ boldEmails }."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Λυπόμαστε που φεύγετε. Αν έχετε λίγο χρόνο, θα εκτιμούσαμε πραγματικά να μας πείτε γιατί θέλετε να ακυρώσετε. Τα σχόλιά σας μας βοηθούν να κάνουμε το ${ BRAND_NAME } καλύτερο για όλους."
@@ -3323,6 +3338,9 @@
       ],
       "Account does not exist": [
         "Ο λογαριασμός δεν υπάρχει"
+      ],
+      "Address could not be added.": [
+        "Η διεύθυνση δεν μπόρεσε να προστεθεί."
       ],
       "Address primary private key not found": [
         "Δεν βρέθηκε πρωτεύον ιδιωτικό κλειδί διεύθυνσης"
@@ -3769,6 +3787,9 @@
       "Something went wrong during folder listing": [
         "Κάτι πήγε στραβά κατά την εμφάνιση του φακέλου"
       ],
+      "Something went wrong while fetching available domains": [
+        "Κάτι πήγε στραβά κατά την ανάκτηση των διαθέσιμων τομέων"
+      ],
       "Something went wrong with search. Please try again later.": [
         "Κάτι πήγε στραβά με την αναζήτηση. Παρακαλούμε δοκιμάστε αργότερα."
       ],
@@ -3867,9 +3888,6 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Αυτό το μήνυμα μπορεί να περιέχει κάποιους συνδέσμους URL που δεν μπορούν να ανοίξουν σωστά από το τρέχον πρόγραμμα περιήγησης."
-      ],
-      "This offer is not available in your country": [
-        "Αυτή η προσφορά δεν είναι διαθέσιμη στη χώρα σας"
       ],
       "Try using only letters, numerals, and _.-": [
         "Δοκιμάστε να χρησιμοποιήσετε μόνο γράμματα, αριθμούς και _.-"
@@ -5546,6 +5564,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Διασφαλίστε πλήρως ιδιωτική και κρυπτογραφημένη επικοινωνία. Αποκτήστε επίσης τώρα τη δωρεάν ${ BRAND_NAME } ηλεκτρονική διεύθυνση σας."
       ],
+      "Enter code": [
+        "Εισαγάγετε κωδικό"
+      ],
       "Enter password": [
         "Εισάγετε κωδικό πρόσβασης"
       ],
@@ -5690,6 +5711,9 @@
       ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "Εάν έχετε ένα από αυτά, συνεχίστε στη ρύθμιση λογαριασμού ${ BRAND_NAME }\nγια να αρχίσετε τη διαδικασία ξεμπλοκαρίσματος."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Εάν χάσατε την πρόσβαση στην εφαρμογή ελέγχου ταυτότητας, μπορείτε να χρησιμοποιήσετε 1 από τους 16 εφεδρικούς κωδικούς ανάκτησης που παρέχονται κατά τη ρύθμιση της ταυτοποίησης δύο παραγόντων. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Αν προχωρήσετε με την υποβάθμιση, θα χάσετε πρόσβαση στα χαρακτηριστικά επί πληρωμή των ${ MAIL_APP_NAME } και ${ VPN_APP_NAME }."
@@ -5902,6 +5926,18 @@
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Τα περισσότερα δημόσια δίκτυα WiFi είναι ασφαλή, αλλά ορισμένα στερούνται ασφάλειας, εκθέτοντάς σας σε απειλές στον κυβερνοχώρο. Ένα VPN κρυπτογραφεί την κίνησή σας, διατηρώντας σας προστατευμένους."
+      ],
+      "Move ${ dragCount } item": [
+        "Μετακίνηση ${ dragCount } στοιχείου",
+        "Μετακίνηση ${ dragCount } στοιχείων"
+      ],
+      "Move ${ fileCount } file": [
+        "Μετακίνηση ${ fileCount } αρχείου",
+        "Μετακίνηση ${ fileCount } αρχείων"
+      ],
+      "Move ${ folderCount } folder": [
+        "Μετακίνηση ${ folderCount } φακέλου",
+        "Μετακίνηση ${ folderCount } φακέλων"
       ],
       "Moving files": [
         "Πραγματοποιείται μετακίνηση αρχείων"
@@ -6742,9 +6778,6 @@
       ],
       "When you remove ${ deviceName } as a synced device, all folders added to My Computers from this device will be permanently deleted from ${ DRIVE_APP_NAME }.": [
         "Όταν αφαιρέσετε το ${ deviceName } ως συγχρονισμένη συσκευή, όλοι οι φάκελοι που προστέθηκαν στους Οι Υπολογιστές μου από αυτήν τη συσκευή θα διαγραφούν οριστικά από το ${ DRIVE_APP_NAME }."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Όταν ρυθμίσετε τον έλεγχο ταυτοποίησης δύο παραγόντων, σας παρέχουμε κωδικούς ανάκτησης τους οποίους μπορείτε να χρησιμοποιήσετε για να συνδεθείτε σε περίπτωση που χάσετε την πρόσβαση στην εφαρμογή ταυτοποίησης σας."
       ],
       "who": [
         "ποιος"
@@ -9552,9 +9585,6 @@
       "Public link access updated": [
         "Ενημερώθηκε η πρόσβαση σε δημόσιο σύνδεσμο"
       ],
-      "Root folder failed to be loaded": [
-        "Απέτυχε η φόρτωση του ριζικού φακέλου"
-      ],
       "Selected item was not removed from your list": [
         "Το επιλεγμένο στοιχείο δεν αφαιρέθηκε από τη λίστα σας",
         "Τα επιλεγμένα στοιχεία απέτυχαν να αφαιρεθούν από τη λίστα σας."
@@ -9589,9 +9619,6 @@
       "Stopping the sharing of this item has failed": [
         "Η διακοπή της κοινοποίησης αυτού του στοιχείου απέτυχε"
       ],
-      "Subfolder failed to be loaded": [
-        "Απέτυχε η φόρτωση του υποφακέλου"
-      ],
       "The document failed to be created": [
         "Απέτυχε η δημιουργία του εγγράφου"
       ],
@@ -9615,6 +9642,9 @@
       ],
       "You stopped sharing this item": [
         "Διακόψατε την κοινή χρήση αυτού του στοιχείου"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Η διεύθυνσή σας ${ BRAND_NAME } είναι έτοιμη για χρήση"
       ],
       "Your old files will be deleted in 72 hours": [
         "Τα παλιά αρχεία σας θα διαγραφούν σε 72 ώρες"
@@ -12421,6 +12451,9 @@
       "Discard changes?": [
         "Απόρριψη αλλαγών;"
       ],
+      "Disconnected from Gmail": [
+        "Αποσυνδεδεμένο από το Gmail"
+      ],
       "Downgrade account": [
         "Υποβάθμιση λογαριασμού"
       ],
@@ -12948,9 +12981,6 @@
       ],
       "Sort files/folders": [
         "Ταξινόμηση αρχείων/φάκελων"
-      ],
-      "Spring Sale": [
-        "Ανοιξιάτικες Εκπτώσεις"
       ],
       "Start a new import": [
         "Ξεκινήστε μια νέα εισαγωγή"
