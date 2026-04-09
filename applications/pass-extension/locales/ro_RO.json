@@ -2547,6 +2547,9 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Aceasta va respinge dispozitivul **${ name }** care a încercat să se conecteze la contul personal ${ BRAND_NAME } la **${ date }**."
       ],
+      "To configure shortcuts, go to about:addons in Firefox and select \"Manage Extension Shortcuts\"": [
+        "Pentru a configura scurtături, accesați about:addons în Firefox și selectați „Gestionare scurtături extensie\""
+      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Pentru a continua să primiți mesaje pe e-mail, transferați aceste aliasuri la un alt cont de e-mail:"
       ],
@@ -5156,6 +5159,9 @@
       ],
       "No shared items matching": [
         "Nu există articole partajate care se potrivesc"
+      ],
+      "Offline": [
+        "Deconectat"
       ],
       "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
         "După sincronizare, aliasurile șterse din ${ PASS_SHORT_APP_NAME } vor fi șterse și din SimpleLogin."
