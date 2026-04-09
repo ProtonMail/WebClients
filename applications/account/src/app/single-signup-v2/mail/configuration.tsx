@@ -4,6 +4,7 @@ import { AppsLogos, MailLogo } from '@proton/components';
 import { getManageUserPermissionsAndAccessFeature } from '@proton/components/containers/payments/features/b2b';
 import {
     getCalendarAppFeature,
+    getCalendarAppointmentScheduling,
     getSecurePersonalAndSharedCalendarFeature,
 } from '@proton/components/containers/payments/features/calendar';
 import {
@@ -32,7 +33,6 @@ import {
 import {
     PAID_MAX_PARTICIPANTS,
     PAID_PREMIUM_MAX_PARTICIPANTS,
-    getMeetAppointmentScheduling,
     getVideoMeetingsFeature,
 } from '@proton/components/containers/payments/features/meet';
 import { getPasswordManagerToSecureCredentialsFeature } from '@proton/components/containers/payments/features/pass';
@@ -169,7 +169,7 @@ export const getMailEssentialsFeatures = (plan: Plan | undefined, freePlan: Free
         getStorageFeature(plan.MaxSpace, { freePlan }),
         getNDomainsFeature({ n: plan.MaxDomains }),
         getSecurePersonalAndSharedCalendarFeature(),
-        getMeetAppointmentScheduling(true),
+        getCalendarAppointmentScheduling(true, 1),
         getCloudStorageAndSharingFeature(),
         getDocumentEditor(),
     ].filter(isTruthy);
