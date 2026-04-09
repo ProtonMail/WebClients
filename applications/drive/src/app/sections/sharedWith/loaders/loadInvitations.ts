@@ -43,6 +43,9 @@ export const loadInvitations = async (abortSignal: AbortSignal) => {
                 });
             }
         } catch (e) {
+            if (abortSignal.aborted) {
+                return;
+            }
             handleSdkError(e, {
                 showNotification: false,
             });
@@ -76,10 +79,17 @@ export const loadInvitations = async (abortSignal: AbortSignal) => {
                 });
             }
         } catch (e) {
+            if (abortSignal.aborted) {
+                return;
+            }
             handleSdkError(e, {
                 showNotification: false,
             });
             showErrorNotification = true;
+        }
+
+        if (abortSignal.aborted) {
+            return;
         }
 
         if (showErrorNotification) {
