@@ -1247,6 +1247,9 @@
       ],
       "Refetch index": [
         "색인 다시 가져오기"
+      ],
+      "Reconnect to Gmail": [
+        "Gmail에 다시 연결"
       ]
     },
     "Action: Docs": {
@@ -3039,6 +3042,18 @@
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "떠나시는 모습을 보니 아쉽네요. 잠시 시간을 내어주셔서 취소하시려는 이유에 대해 알려주시면 정말 감사하겠습니다. 회원님의 소중한 의견은 ${ BRAND_NAME }을 모든 사용자에게 더 나은 서비스로 만드는 데 있어서 큰 도움이 됩니다."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "권한이 사라졌거나 비밀번호가 바뀌었을 때 일어날 수 있습니다."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "${ BRAND_NAME }에서 Gmail 메시지를 계속 송수신 하려면, 계정을 다시 연결해주세요."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "${ BRAND_NAME }에서 Gmail 메시지를 계속 송수신 하려면, 계정을 다시 연결해주세요."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "${ boldEmails }에 더 이상 접근할 수 없습니다."
       ]
     },
     "description": {
@@ -3958,6 +3973,12 @@
       ],
       "Something went wrong with search: Not enough storage space.": [
         "검색에 문제가 발생했습니다: 저장공간이 부족합니다."
+      ],
+      "Address could not be added.": [
+        "주소를 추가할 수 없습니다."
+      ],
+      "Something went wrong while fetching available domains": [
+        "사용가능한 도메인을 가져오는 동안 문제가 발생했습니다."
       ]
     },
     "error": {
@@ -6919,6 +6940,18 @@
       ],
       "Unsupported file type for Photos": [
         "사진에서 사용할 수 없는 지원되지 않는 파일 형식"
+      ],
+      "for ${ price }": [
+        "${ price }으로"
+      ],
+      "Move ${ dragCount } item": [
+        "항목 ${ dragCount }개 이동"
+      ],
+      "Move ${ fileCount } file": [
+        "파일 ${ fileCount }개 이동"
+      ],
+      "Move ${ folderCount } folder": [
+        "폴더 ${ folderCount }개 이동"
       ]
     },
     "info": {
@@ -7697,6 +7730,9 @@
       ],
       "User opted in": [
         "사용자가 수신 동의함"
+      ],
+      "Visible columns:": [
+        "보이는 열:"
       ]
     },
     "Label for contact group color": {
@@ -9456,6 +9492,9 @@
       ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\"이(가) 공유됨"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "${ BRAND_NAME } 주소를 사용할 수 있습니다."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13024,6 +13063,9 @@
       ],
       "Search": [
         "검색"
+      ],
+      "Disconnected from Gmail": [
+        "Gmail 연결 해제됨"
       ]
     },
     "Today icon tooltip in mini calendar": {
