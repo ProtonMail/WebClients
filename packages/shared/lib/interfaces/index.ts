@@ -24,6 +24,7 @@ export * from './PasswordPolicy';
 export * from './Organization';
 export * from './OrganizationKey';
 export * from './OrganizationRole';
+export * from './UserPermission';
 export * from './PendingInvitation';
 export * from './Referrals';
 export * from './SignedKeyList';
