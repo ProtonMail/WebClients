@@ -1453,7 +1453,10 @@
         "Zaupaj"
       ],
       "Trust key": [
-        "Zaupaj ključu"
+        "Ključ zaupanja",
+        "Ključa zaupanja",
+        "Ključi zaupanja",
+        "Ključev zaupanja"
       ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
@@ -4939,9 +4942,6 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "To sporočilo morda vsebuje povezave, ki jih vaš trenutni brskalnik ne more pravilno odpreti."
-      ],
-      "This offer is not available in your country": [
-        "Ta ponudba ni na voljo v vaši državi"
       ],
       "Trusted keys are not valid for sending": [
         "Zaupanja vredni ključi niso veljavni za pošiljanje"
@@ -8504,9 +8504,6 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Ko ste omogočili zaupanja vredne ključe za ${ senderName }, so bili javni ključi dodani kontaktnim podrobnostim."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Ko nastavite dvojno preverjanje pristnosti, nudimo obnovitvene kode, ki jih lahko uporabite za prijavo, če izgubite dostop do aplikacije za preverjanje pristnosti."
-      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Ko se prijavite na glasilo, uporabite vzdevek namesto svojega e-poštnega naslova. Vaša identiteta ostane skrita, vzdevek pa lahko kadar koli onemogočite."
       ],
@@ -9443,9 +9440,6 @@
       ],
       "Import interval": [
         "Interval uvoza"
-      ],
-      "Import recent mails": [
-        "Uvozi nedavna e-poštna sporočila"
       ],
       "Import to email address": [
         "Uvozi na e-poštni naslov"
@@ -15345,9 +15339,6 @@
       ],
       "Sort messages": [
         "Razvrsti sporočila"
-      ],
-      "Spring Sale": [
-        "Pomladanska akcija"
       ],
       "Start a new import": [
         "Začni z novim uvozom"
