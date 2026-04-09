@@ -223,6 +223,7 @@ export enum ADDON_NAMES {
     MEET_BUNDLE = `${ADDON_PREFIXES.MEET}-bundle2022`,
     MEET_FAMILY = `${ADDON_PREFIXES.MEET}-family2022`,
     MEET_DUO = `${ADDON_PREFIXES.MEET}-duo2024`,
+    MEET_VPN_PASS_BUNDLE = `${ADDON_PREFIXES.MEET}-vpnpass2023`,
 }
 
 export const AddonFeatureLimitKeyMapping: Readonly<{
@@ -331,6 +332,7 @@ export const AddonFeatureLimitKeyMapping: Readonly<{
     [ADDON_NAMES.MEET_BUNDLE]: 'MaxMeet',
     [ADDON_NAMES.MEET_FAMILY]: 'MaxMeet',
     [ADDON_NAMES.MEET_DUO]: 'MaxMeet',
+    [ADDON_NAMES.MEET_VPN_PASS_BUNDLE]: 'MaxMeet',
 } as const;
 
 // Max quantity for all addons
@@ -462,6 +464,7 @@ export const AddonLimit: { [key in ADDON_NAMES]: number } = {
     [ADDON_NAMES.MEET_BUNDLE]: MAX_MEET_ADDON,
     [ADDON_NAMES.MEET_FAMILY]: MAX_MEMBER_MEET_ADDON,
     [ADDON_NAMES.MEET_DUO]: MAX_MEMBER_MEET_ADDON,
+    [ADDON_NAMES.MEET_VPN_PASS_BUNDLE]: MAX_MEET_ADDON,
 } as const;
 
 export enum PLANS {

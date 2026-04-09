@@ -29,6 +29,7 @@ export const hasUserReachPlanLimit = (
         case ADDON_NAMES.MEET_DRIVE:
         case ADDON_NAMES.MEET_PASS:
         case ADDON_NAMES.MEET_DRIVE_1TB:
+        case ADDON_NAMES.MEET_VPN_PASS_BUNDLE:
         case ADDON_NAMES.MEET_MAIL:
         case ADDON_NAMES.MEET_BUNDLE:
         case ADDON_NAMES.MEET_MAIL_PRO:
