@@ -51,6 +51,7 @@ export class DownloadManager {
     private hasPhotosListeners;
     private scheduler: DownloadScheduler;
     private readonly activeDownloads = new Map<string, ActiveDownload>();
+    private readonly pendingAbortControllers = new Map<string, AbortController>();
     private requestedDownloads = new Map<string, NodeEntity[]>();
     private readonly malwareDetection: MalwareDetection;
     private readonly downloadSpeedMetrics = new TransferSpeedMetrics((values) => {
@@ -258,6 +259,7 @@ export class DownloadManager {
         const { updateDownloadItem, getQueueItem } = useDownloadManagerStore.getState();
 
         const abortController = new AbortController();
+        this.pendingAbortControllers.set(downloadId, abortController);
         let completionPromise: Promise<void>;
         let currentDownloadedBytes = 0;
 
@@ -380,6 +382,7 @@ export class DownloadManager {
         let currentDownloadedBytes = 0;
         let totalEncryptedSize = 0;
         const abortController = new AbortController();
+        this.pendingAbortControllers.set(downloadId, abortController);
 
         try {
             // Traversing all folders to get the node entities + parentPath
@@ -526,6 +529,8 @@ export class DownloadManager {
                 if (this.activeDownloads.get(downloadId) === activeDownload) {
                     this.activeDownloads.delete(downloadId);
                 }
+                this.activeDownloads.delete(downloadId);
+                this.pendingAbortControllers.delete(downloadId);
                 this.downloadSpeedMetrics.onFileEnded(downloadId);
             });
 
@@ -585,6 +590,7 @@ export class DownloadManager {
                 this.scheduler.cancelDownloadsById(id);
             } else if (storeItem && this.requestedDownloads.has(id)) {
                 downloadLogDebug('Cancel download', { downloadId: id, isPending: true });
+                stopPromises.push(this.stopDownload([id]));
                 this.scheduler.cancelDownloadsById(id);
             }
         });
@@ -621,8 +627,9 @@ export class DownloadManager {
     private async stopDownload(downloadIds: string[]) {
         downloadIds.forEach((id) => {
             this.downloadSpeedMetrics.onFileEnded(id);
-            const active = this.activeDownloads.get(id);
-            active?.abortController.abort(new AbortError(`Transfer ${id} canceled`));
+            const abortController =
+                this.activeDownloads.get(id)?.abortController ?? this.pendingAbortControllers.get(id);
+            abortController?.abort(new AbortError(`Transfer ${id} canceled`));
         });
     }
 
