@@ -9,7 +9,7 @@ import './ChatHistoryUpsell.scss';
 // For unathenticated guest users - enhanced sign-in section
 export const ChatHistoryGuestUserUpsell = () => {
     return (
-        <div className="chat-history-signin-section rounded-sm mt-4 ml-0 md:ml-2 mr-2 mb-0 mx-auto">
+        <div className="chat-history-signin-section rounded-sm mt-1 ml-0 md:ml-2 mr-2 mb-0 mx-auto">
             <div className="p-4 rounded-sm text-center">
                 {/* Header with icon */}
                 <div className="mb-3">
@@ -18,7 +18,7 @@ export const ChatHistoryGuestUserUpsell = () => {
                 </div>
 
                 {/* Description */}
-                <p className="chat-history-signin-description mb-4">
+                <p className="chat-history-signin-description mb-4 text-sm">
                     {c('collider_2025: Guest Signin')
                         .t`Sign in to save your conversations and access them from anywhere.`}
                 </p>
