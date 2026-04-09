@@ -171,7 +171,7 @@ const GeneralSettingsPanelGuest = () => {
     const formattedDate = DATE_VERSION ? `${format(new Date(DATE_VERSION), 'PPpp', { locale: dateLocale })} UTC` : '';
 
     return (
-        <div className="flex flex-column gap-4">
+        <div className="flex flex-column flex-nowrap *:min-size-auto gap-4">
             <div className="flex flex-column flex-nowrap gap-4 mb-4">
                 <SettingsSectionItem
                     icon={isDarkLumoTheme ? 'moon' : 'sun'}
@@ -280,7 +280,7 @@ const GeneralSettingsPanelAuth = ({ onClose }: { onClose?: () => void }) => {
     const hasError = indexError || messageIndexingStatus.error;
 
     return (
-        <div className="flex flex-column gap-4">
+        <div className="flex flex-column flex-nowrap *:min-size-auto gap-4">
             <div className="flex flex-column flex-nowrap gap-4 mb-4">
                 <SettingsSectionItem
                     icon={isDarkLumoTheme ? 'moon' : 'sun'}
@@ -514,10 +514,7 @@ const SettingsModal = ({ initialPanel = 'account', ...modalProps }: SettingsModa
                             </div>
 
                             {/* Panel content — rendered exactly once */}
-                            <div
-                                className="flex flex-row gap-2 flex-1 overflow-y-auto mb-10"
-                                style={{ minHeight: 0 }}
-                            >
+                            <div className="flex flex-row gap-2 flex-1 overflow-y-auto mb-10" style={{ minHeight: 0 }}>
                                 {activePanel === 'account' &&
                                     (isGuest ? <AccountSettingsPanelGuest /> : <AccountSettingsPanel />)}
                                 {activePanel === 'personalization' && <PersonalizationPanel />}
