@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 
-import type { RecoveryMethod } from '@proton/components/containers/resetPassword/interface';
 import useApi from '@proton/components/hooks/useApi';
+import type { RecoveryMethod } from '@proton/shared/lib/api/reset';
 import { TelemetryMeasurementGroups, TelemetryResetPasswordEvents } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport, telemetryReportsBatchQueue } from '@proton/shared/lib/helpers/metrics';
 

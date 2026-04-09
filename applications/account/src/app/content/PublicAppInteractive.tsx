@@ -50,7 +50,6 @@ import SwitchAccountContainer from '../public/SwitchAccountContainer';
 import VerifyEmailContainer from '../public/VerifyEmailContainer';
 import PassExtensionOnboarding from '../public/pass/PassExtensionOnboarding';
 import SignInWithAnotherDeviceContainer from '../public/signInWithAnotherDevice/SignInWithAnotherDeviceContainer';
-import ResetPasswordContainer from '../reset/ResetPasswordContainer';
 import SignupInviteContainer from '../signup/SignupInviteContainer';
 import { getSignupMeta } from '../signup/signupPagesJson';
 import Activation from '../signupCtx/flows/bornPrivate/activation/Activation';
@@ -60,6 +59,7 @@ import { extraThunkArguments } from '../store/public-thunk';
 import type useLocationWithoutLocale from '../useLocationWithoutLocale';
 import AccountPublicApp from './AccountPublicApp';
 import ExternalSSOConsumer from './ExternalSSOConsumer';
+import ResetPasswordSwitchContainer from './ResetPasswordSwitchContainer';
 import SingleSignupSwitchContainer from './SingleSignupSwitchContainer';
 import { TvContainerNotSignedIn } from './TvContainerNotSignedIn/TvContainerNotSignedIn';
 import { type ProduceForkData, SSOType } from './actions/forkInterface';
@@ -502,7 +502,7 @@ const PublicAppInteractive = ({
                                         </Route>
                                         <Route path={SSO_PATHS.RESET_PASSWORD}>
                                             <UnAuthenticated>
-                                                <ResetPasswordContainer
+                                                <ResetPasswordSwitchContainer
                                                     metaTags={resetPasswordPage()}
                                                     toApp={maybePreAppIntent}
                                                     onLogin={handleLogin}

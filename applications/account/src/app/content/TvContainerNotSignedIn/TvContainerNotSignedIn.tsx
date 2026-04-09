@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { IcKey } from '@proton/icons/icons/IcKey';
 import { IcUserCircle } from '@proton/icons/icons/IcUserCircle';
+import { useFlag } from '@proton/unleash/useFlag';
 import { TvNotSignedIn } from '@proton/vpn/components/tv';
 
 import Layout from '../../public/Layout';
@@ -12,13 +13,14 @@ import SupportDropdown from '../../public/SupportDropdown';
 import type { Paths } from '../helper';
 
 export const TvContainerNotSignedIn = ({ searchParams, paths }: { searchParams: URLSearchParams; paths: Paths }) => {
+    const unauthedForgotPasswordEnabled = useFlag('UnauthedForgotPassword');
     return (
         <Layout toApp="proton-vpn-settings" hasDecoration hasAppLogos={false} hasFooter={false}>
             <Main className="flex flex-column gap-4 p-4 w-auto" style={{ 'justify-self': 'center' }}>
                 <TvNotSignedIn searchParams={searchParams} paths={paths} />
                 <SupportDropdown buttonClassName="mx-auto link link-focus" content={c('Link').t`Trouble signing in?`}>
                     <Link
-                        to={paths.reset}
+                        to={`${paths.reset}?variant=${unauthedForgotPasswordEnabled ? 'b' : 'a'}`}
                         className="dropdown-item-link w-full px-4 py-2 flex flex-nowrap gap-2 items-center text-no-decoration text-left"
                     >
                         <IcKey />

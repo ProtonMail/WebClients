@@ -2,6 +2,7 @@ import type { ReactNode } from 'react';
 import { useState } from 'react';
 
 import { Button } from '@proton/atoms/Button/Button';
+import type { ThemeColorUnion } from '@proton/colors/types';
 import { useFormErrors } from '@proton/components';
 import { usePasswordPolicyValidation } from '@proton/components/components/passwordPolicy';
 import PasswordWithPolicyInputs from '@proton/components/components/passwordPolicy/PasswordWithPolicyInputs';
@@ -22,6 +23,7 @@ interface Props {
     type?: PasswordPolicyFormType;
     onSubmit: (data: { password: string }) => Promise<void>;
     passwordPolicies: PasswordPolicies;
+    submitButtonColor?: ThemeColorUnion;
 }
 
 const getPasswordFormLabels = (type?: PasswordPolicyFormType) => {
@@ -34,7 +36,13 @@ const getPasswordFormLabels = (type?: PasswordPolicyFormType) => {
     }
 };
 
-const SetPasswordWithPolicyForm = ({ type, onSubmit, children, passwordPolicies }: Props) => {
+const SetPasswordWithPolicyForm = ({
+    type,
+    onSubmit,
+    children,
+    passwordPolicies,
+    submitButtonColor = 'norm',
+}: Props) => {
     const [loading, withLoading] = useLoading();
     const formErrors = useFormErrors();
     const passwordState = useState('');
@@ -70,7 +78,7 @@ const SetPasswordWithPolicyForm = ({ type, onSubmit, children, passwordPolicies 
                 confirmRootClassName="mt-2"
                 autoFocus={true}
             />
-            <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt-6">
+            <Button size="large" color={submitButtonColor} type="submit" fullWidth loading={loading} className="mt-6">
                 {formLabels.cta}
             </Button>
         </form>

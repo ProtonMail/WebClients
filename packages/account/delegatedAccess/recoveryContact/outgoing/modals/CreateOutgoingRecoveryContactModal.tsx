@@ -13,9 +13,10 @@ import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { DelegatedAccessTypeEnum } from '@proton/shared/lib/interfaces/DelegatedAccess';
 
 import ValidationError from '../../../ValidationError';
-import { DelegatedAccessTypeEnum, type OutgoingDelegatedAccessOutput } from '../../../interface';
+import type { OutgoingDelegatedAccessOutput } from '../../../interface';
 import { addDelegatedAccessThunk } from '../../../outgoingActions';
 import ContactEmailInput, { type ContactEmailInputProps } from '../../../shared/outgoing/ContactEmailInput';
 import shieldSuccess from '../../../shared/shield-success.svg';
