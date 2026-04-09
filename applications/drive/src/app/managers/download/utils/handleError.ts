@@ -45,7 +45,7 @@ export function handleDownloadError(downloadId: string, nodes: NodeEntity[], err
             return;
         }
         updateDownloadItem(downloadId, { status: DownloadStatus.Cancelled, error: undefined });
-    } else {
+    } else if (getQueueItem(downloadId)?.status !== DownloadStatus.Cancelled) {
         downloadLogDebug('Download error', { downloadId, error });
         trackError(error, downloadId, nodes);
     }
