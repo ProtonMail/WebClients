@@ -146,8 +146,9 @@ const ComposerComponentInner = ({
 
     // registers a hook that updates the native composer state
     useNativeComposerFileApi(
+        composerMode,
         hasAttachments,
-        allRelevantAttachments,
+        messageChain && messageChain.length !== 0,
         handleFilesFromNative,
         handleBrowseDrive,
         handleDrawSketch,

@@ -8,11 +8,12 @@ import {
     onNativeRemoveFile,
     setNativeTsAndCsVisibility,
 } from '../../../remote/nativeComposerBridgeHelpers';
-import type { Attachment } from '../../../types';
+import { ComposerMode } from '../../../types';
 
 export const useNativeComposerFileApi = (
+    composerMode: ComposerMode,
     hasAttachments: boolean,
-    allRelevantAttachments: Attachment[],
+    hasMessages: boolean,
     handleFilesFromNative: (files: { base64: string; name: string }[]) => void,
     handleBrowseDrive: () => void,
     handleDrawSketch: () => void,
@@ -23,8 +24,8 @@ export const useNativeComposerFileApi = (
             clearNativeComposerFiles();
             console.log(`removed all files`);
         }
-        setNativeTsAndCsVisibility(!hasAttachments);
-    }, [hasAttachments]);
+        setNativeTsAndCsVisibility(composerMode !== ComposerMode.GALLERY && !hasMessages && !hasAttachments);
+    }, [composerMode, hasMessages, hasAttachments]);
 
     const handleFilesFromNativeRef = useRef<((files: { base64: string; name: string }[]) => void) | null>(null);
     const handleBrowseDriveRef = useRef<(() => void) | null>(null);

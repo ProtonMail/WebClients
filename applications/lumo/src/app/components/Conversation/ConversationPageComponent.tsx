@@ -28,7 +28,6 @@ import { clearPendingPrefill } from '../../redux/slices/composerActions';
 import { resetAllContextFilters } from '../../redux/slices/contextFilters';
 import { clearProvisionalAttachments } from '../../redux/slices/core/attachments';
 import { EMPTY_CONVERSATION_MAP, pullConversationRequest } from '../../redux/slices/core/conversations';
-import { setNativeTsAndCsVisibility } from '../../remote/nativeComposerBridgeHelpers';
 import { type ConversationId, ConversationStatus } from '../../types';
 import ConversationSkeleton from '../ConversationSkeleton';
 import ConversationComponent from './ConversationComponent';
@@ -116,8 +115,6 @@ const ConversationPageComponentInner = () => {
             dispatch(resetAllContextFilters());
             dispatch(clearProvisionalAttachments());
         }
-
-        setNativeTsAndCsVisibility(!curConversationId);
 
         return () => setConversationId(undefined);
     }, [curConversationId, dispatch]);
