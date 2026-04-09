@@ -65,6 +65,9 @@ export const loadSharedWithMeNodes = async (abortSignal: AbortSignal) => {
                 onItemsLoadedToState(1);
             }
         } catch (e) {
+            if (abortSignal.aborted) {
+                return;
+            }
             handleSdkError(e, {
                 showNotification: false,
             });
@@ -134,10 +137,17 @@ export const loadSharedWithMeNodes = async (abortSignal: AbortSignal) => {
                 onItemsLoadedToState(1);
             }
         } catch (e) {
+            if (abortSignal.aborted) {
+                return;
+            }
             handleSdkError(e, {
                 showNotification: false,
             });
             showErrorNotification = true;
+        }
+
+        if (abortSignal.aborted) {
+            return;
         }
 
         if (showErrorNotification) {
@@ -148,12 +158,12 @@ export const loadSharedWithMeNodes = async (abortSignal: AbortSignal) => {
         }
 
         cleanupStaleItems(ItemType.DIRECT_SHARE, loadedUids);
-        onFinished();
     } catch (e) {
         handleSdkError(e, {
             fallbackMessage: c('Error').t`We were not able to load some items shared with you`,
         });
     } finally {
         setLoadingNodes(false);
+        onFinished();
     }
 };
