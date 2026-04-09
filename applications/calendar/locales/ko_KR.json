@@ -695,6 +695,9 @@
       "Reconnect": [
         "다시 연결"
       ],
+      "Reconnect to Gmail": [
+        "Gmail에 다시 연결"
+      ],
       "Reconnect to Zoom": [
         "Zoom에 재연결"
       ],
@@ -3125,6 +3128,15 @@
       "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
         "약간의 시간이 걸릴 수 있습니다. 진행되고 있는 동안에도 지금처럼 ${ CALENDAR_APP_NAME }를 사용할 수 있습니다."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "권한이 사라졌거나 비밀번호가 바뀌었을 때 일어날 수 있습니다."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "${ BRAND_NAME }에서 Gmail 메시지를 계속 송수신 하려면, 계정을 다시 연결해주세요."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "${ BRAND_NAME }에서 Gmail 메시지를 계속 송수신 하려면, 계정을 다시 연결해주세요."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "최상의 계정 보안 상태를 유지하려면, 복구 문구를 설정하세요."
       ],
@@ -3142,6 +3154,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "이 가이드를 통해 조직이 ${ BRAND_NAME }의 업계 최고의 암호화 및 개인정보 보호 생태계로부터 즉시 혜택을 받을 수 있습니다."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "${ boldEmails }에 더 이상 접근할 수 없습니다."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "떠나시는 모습을 보니 아쉽네요. 잠시 시간을 내어주셔서 취소하시려는 이유에 대해 알려주시면 정말 감사하겠습니다. 회원님의 소중한 의견은 ${ BRAND_NAME }을 모든 사용자에게 더 나은 서비스로 만드는 데 있어서 큰 도움이 됩니다."
@@ -3479,6 +3494,9 @@
       ],
       "Account does not exist": [
         "계정이 존재하지 않음"
+      ],
+      "Address could not be added.": [
+        "주소를 추가할 수 없습니다."
       ],
       "Address primary private key not found": [
         "기본 주소 키 찾을 수 없음"
@@ -3897,6 +3915,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "${ MAIL_APP_NAME }의 최대 글자 수 제한을 초과하는 라벨 이름이 있습니다. 해당하는 이름을 수정해 주세요."
       ],
+      "Something went wrong while fetching available domains": [
+        "사용가능한 도메인을 가져오는 동안 문제가 발생했습니다."
+      ],
       "Something went wrong. Please try again.": [
         "문제가 발생했습니다. 다시 시도해주세요."
       ],
@@ -3965,9 +3986,6 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "이 메시지는 현재 브라우저에서 제대로 열 수 없는 URL 링크있을 수 있습니다."
-      ],
-      "This offer is not available in your country": [
-        "이 제안은 현재 거주 중인 국가에서 사용할 수 없습니다."
       ],
       "Trusted keys are not valid for sending": [
         "인증된 키가 전송하기에 유효하지 않음"
@@ -5495,6 +5513,9 @@
       "finance": [
         "금융정보"
       ],
+      "for ${ price }": [
+        "${ price }으로"
+      ],
       "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
         "추가 보안을 위해 암호 문구를 설정할 수 있습니다. 이는 캘린더 초대에 포함되지 않으므로 초대 손님과 별도로 공유해야 합니다."
       ],
@@ -6194,9 +6215,6 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "VPN에 연결하여 암호화 기술을 사용하여 IP 주소(기기에 할당된 고유 코드)를 숨길 수 있습니다."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "2단계 인증을 설정하면, 인증 앱에 접근할 수 없을때 로그인시 사용할 수 있는 복구 코드를 제공해 드립니다."
-      ],
       "Where will the appointment take place?": [
         "약속은 어디에서 진행되나요?"
       ],
@@ -6767,9 +6785,6 @@
       ],
       "Country": [
         "국가"
-      ],
-      "Create shareable pages where people can book time with you.": [
-        "사람들이 회원님과의 시간을 예약할 수 있는 공유 가능한 페이지를 만들어 보세요."
       ],
       "Credits": [
         "크레딧"
@@ -8701,6 +8716,9 @@
       ],
       "Passphrase copied to clipboard": [
         "암호 문구를 클립보드에 복사했습니다"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "${ BRAND_NAME } 주소를 사용할 수 있습니다."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11649,6 +11667,9 @@
       "Discard changes?": [
         "변경 사항을 취소할까요?"
       ],
+      "Disconnected from Gmail": [
+        "Gmail 연결 해제됨"
+      ],
       "Does not repeat": [
         "반복하지 않음"
       ],
@@ -12038,9 +12059,6 @@
       ],
       "Simplify password management": [
         "비밀번호 관리 간소화하기"
-      ],
-      "Spring Sale": [
-        "봄맞이 할인"
       ],
       "Start a new import": [
         "신규 불러오기 시작"

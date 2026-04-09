@@ -701,6 +701,9 @@
       "Reconnect": [
         "Reconectare"
       ],
+      "Reconnect to Gmail": [
+        "Reconectare la Gmail"
+      ],
       "Reconnect to Zoom": [
         "Reconectare la Zoom"
       ],
@@ -3181,6 +3184,15 @@
       "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
         "Aceasta ar putea dura câteva minute. Între timp, puteți continua să folosiți ${ CALENDAR_APP_NAME } ca de obicei."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Acest lucru se poate întâmpla dacă permisiunile au fost eliminate sau parola a fost modificată."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Pentru a continua să primiți și să trimiteți mesaje Gmail în ${ BRAND_NAME }, reconectați-vă conturile."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Pentru a continua să primiți și să trimiteți mesaje Gmail în ${ BRAND_NAME }, reconectați-vă conturile."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Pentru a asigura cea mai mare securitate posibilă a contului, setați o frază de recuperare."
       ],
@@ -3198,6 +3210,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Utilizați acest ghid pentru ca organizația să beneficieze imediat de criptarea și ecosistemul de confidențialitate maximă oferite de ${ BRAND_NAME } ."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Nu mai putem accesa ${ boldEmails }."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Ne pare rău să vă vedem plecând. Dacă aveți un moment, am aprecia foarte mult să aflăm de ce doriți să anulați. Feedback-ul dvs. ne ajută să facem ${ BRAND_NAME } mai bun pentru toată lumea."
@@ -3543,6 +3558,9 @@
       ],
       "Account does not exist": [
         "Contul nu există."
+      ],
+      "Address could not be added.": [
+        "Adresa nu a putut fi adăugată."
       ],
       "Address primary private key not found": [
         "Nu s-a găsit adresa cheii private primare"
@@ -3975,6 +3993,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Unele nume de etichete depășesc limita maximă admisă de caractere din ${ MAIL_APP_NAME }. Modificați opțiunile de importare pentru a edita aceste nume."
       ],
+      "Something went wrong while fetching available domains": [
+        "Ceva nu a funcționat corect la preluarea domeniilor disponibile."
+      ],
       "Something went wrong. Please try again.": [
         "Ceva nu a funcționat bine. Mai încercați."
       ],
@@ -4043,9 +4064,6 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Acest mesaj poate conține unele legături web care nu pot fi deschise corect de către navigatorul actual."
-      ],
-      "This offer is not available in your country": [
-        "Această ofertă nu este disponibilă țara actuală."
       ],
       "Trusted keys are not valid for sending": [
         "Cheile de încredere nu sunt valide pentru trimitere"
@@ -5602,6 +5620,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Asigurați o comunicare complet privată și criptată. Revendicați-vă acum adresa gratuită de e-mail ${ BRAND_NAME }."
       ],
+      "Enter code": [
+        "Introduceți codul"
+      ],
       "Enter the code from your authenticator app": [
         "Introduceți codul din aplicația Authenticator."
       ],
@@ -5708,6 +5729,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Dacă nu vedeți mesajul verificați în folderul de mesaje nedorite."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Dacă v-ați pierdut accesul la aplicația de autentificare, puteți utiliza unul din cele 16 coduri de recuperare de rezervă furnizate la configurarea autentificării cu doi factori. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Dacă continuați cu retrogradarea, veți pierde accesul la funcțiile cu plată din ${ MAIL_APP_NAME } și ${ VPN_APP_NAME }."
@@ -6371,9 +6395,6 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Când vă conectați la VPN, acesta utilizează tehnologia de criptare pentru a vă ascunde adresa IP (un cod unic atribuit dispozitivului)."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Când configurați autentificarea cu doi factori, vă furnizăm coduri de recuperare pe care le puteți folosi pentru a vă conecta dacă vă pierdeți accesul la aplicația de autentificare."
-      ],
       "Where will the appointment take place?": [
         "Unde va avea loc întâlnirea?"
       ],
@@ -6963,9 +6984,6 @@
       "Country": [
         "Țara"
       ],
-      "Create shareable pages where people can book time with you.": [
-        "Creați pagini partajabile unde persoanele pot rezerva timp pentru a vă întâlni."
-      ],
       "Credits": [
         "Credite"
       ],
@@ -7258,6 +7276,9 @@
       ],
       "Secondary time zone": [
         "Fus orar secundar"
+      ],
+      "Securely share parts of your schedule through a booking page you can send to anyone.": [
+        "Partajați în siguranță părți din programul personal printr-o pagină de planificări pe care o puteți trimite oricui."
       ],
       "Show others when I'm busy": [
         "Arată celorlalți stare mea"
@@ -8982,6 +9003,9 @@
       ],
       "Passphrase copied to clipboard": [
         "Fraza de acces s-a copiat în memorie."
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Adresa ${ BRAND_NAME } este gata de utilizare"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -12102,6 +12126,9 @@
       "Discard changes?": [
         "Anulare modificări?"
       ],
+      "Disconnected from Gmail": [
+        "Deconectat de la Gmail"
+      ],
       "Does not repeat": [
         "Nu se repetă"
       ],
@@ -12493,9 +12520,6 @@
       ],
       "Simplify password management": [
         "Simplificați gestionarea parolelor"
-      ],
-      "Spring Sale": [
-        "Ofertă de primăvară"
       ],
       "Start a new import": [
         "Începere importare nouă"

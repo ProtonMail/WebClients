@@ -698,6 +698,9 @@
       "Reconnect": [
         "Reconnecter"
       ],
+      "Reconnect to Gmail": [
+        "Se reconnecter à Gmail"
+      ],
       "Reconnect to Zoom": [
         "Reconnexion à Zoom"
       ],
@@ -3150,6 +3153,15 @@
       "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
         "Cette opération peut prendre quelques minutes. Pendant ce temps, vous pouvez continuer à utiliser ${ CALENDAR_APP_NAME } comme d'habitude."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Cela peut se produire si les autorisations ont été supprimées ou si votre mot de passe a été modifié."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Pour continuer à recevoir et envoyer des messages Gmail dans ${ BRAND_NAME }, veuillez reconnecter votre compte."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Pour continuer à recevoir et envoyer des messages Gmail dans ${ BRAND_NAME }, veuillez reconnecter vos comptes."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Pour garantir la sécurité maximale de votre compte, définissez une phrase de récupération."
       ],
@@ -3167,6 +3179,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Utilisez ce guide pour que votre organisation bénéficie rapidement du chiffrement et de l’écosystème de respect de la vie privée de pointe de ${ BRAND_NAME }."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Nous ne pouvons plus accéder à ${ boldEmails }."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Nous regrettons de vous voir partir. Si vous avez un moment, nous aimerions beaucoup savoir pourquoi vous souhaitez résilier votre abonnement. Vos commentaires nous aident à améliorer ${ BRAND_NAME } pour le bénéfice de tous."
@@ -3508,6 +3523,9 @@
       ],
       "Account does not exist": [
         "Ce compte n'existe pas."
+      ],
+      "Address could not be added.": [
+        "L'adresse n'a pas pu être ajoutée."
       ],
       "Address primary private key not found": [
         "La clé privée principale de l’adresse n’a pas été trouvée."
@@ -3900,6 +3918,9 @@
       "Request timed out": [
         "La requête a expiré."
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "Le régime de TVA intracommunautaire n'est pas pris en charge pour cet abonnement."
+      ],
       "Self invitation not allowed": [
         "Vous ne pouvez pas vous inviter vous-même."
       ],
@@ -3929,6 +3950,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Certains de vos noms de labels dépassent la limite de caractères autorisée par ${ MAIL_APP_NAME }. Nous vous invitons à personnaliser l'importation pour modifier ces noms."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Quelque chose s'est mal passé lors de la récupération des domaines disponibles"
       ],
       "Something went wrong. Please try again.": [
         "Une erreur s'est produite. Nous vous invitons à réessayer."
@@ -3998,9 +4022,6 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Ce message contient peut-être des liens URL qui pourraient ne pas s'ouvrir correctement avec votre navigateur."
-      ],
-      "This offer is not available in your country": [
-        "Cette offre n'est pas disponible dans votre pays."
       ],
       "Trusted keys are not valid for sending": [
         "Les clés approuvées ne sont pas valides pour l'envoi."
@@ -5503,6 +5524,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Assurez une communication entièrement privée et chiffrée. Obtenez dès maintenant votre adresse e-mail ${ BRAND_NAME } gratuite."
       ],
+      "Enter code": [
+        "Saisissez le code"
+      ],
       "Enter the code from your authenticator app": [
         "Saisissez le code de votre application d'authentification."
       ],
@@ -5605,6 +5629,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si vous ne trouvez pas le message dans votre boite de réception, vérifiez votre dossier Indésirables/spam."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Si vous avez perdu l'accès à votre application d'authentification, vous pouvez utiliser 1 des 16 codes de récupération de sauvegarde fournis lors de la configuration de l'authentification à deux facteurs. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "En passant à un abonnement inférieur, vous perdrez l'accès aux fonctionnalités payantes de ${ MAIL_APP_NAME } et ${ VPN_APP_NAME }."
@@ -6432,6 +6459,9 @@
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Votre compte a au moins une facture en retard. Votre accès sera bientôt restreint. ${ payInvoiceLink }"
       ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Votre compte est actuellement configuré pour appliquer le régime de TVA intracommunautaire. Ceci n’est pas pris en charge pour l'abonnement sélectionné. Pour continuer, retirez le numéro de TVA de l'adresse de facturation ou sélectionnez un autre abonnement."
+      ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "Votre adresse est désactivée. Un message d’annulation ne peut donc pas être envoyé aux participants. Voulez-vous quand même supprimer tous les événements de cette série ?"
       ],
@@ -6841,9 +6871,6 @@
       "Country": [
         "Pays"
       ],
-      "Create shareable pages where people can book time with you.": [
-        "Créez des pages partageables où les gens peuvent réserver du temps avec vous."
-      ],
       "Credits": [
         "Crédits"
       ],
@@ -7135,6 +7162,9 @@
       ],
       "Secondary time zone": [
         "Fuseau horaire secondaire"
+      ],
+      "Securely share parts of your schedule through a booking page you can send to anyone.": [
+        "Partagez en toute sécurité des parties de votre agenda via une page de réservation que vous pouvez envoyer à n'importe qui."
       ],
       "Show others when I'm busy": [
         "Montrer aux autres lorsque je suis occupé"
@@ -8817,6 +8847,9 @@
       ],
       "Passphrase copied to clipboard": [
         "La phrase secrète a été copiée dans le presse-papiers."
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Votre adresse ${ BRAND_NAME } est prête à être utilisée"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11839,6 +11872,9 @@
       "Discard changes?": [
         "Abandonner les modifications ?"
       ],
+      "Disconnected from Gmail": [
+        "Déconnecté de Gmail"
+      ],
       "Does not repeat": [
         "Ne pas répéter"
       ],
@@ -12128,6 +12164,9 @@
       "Reshare your calendars": [
         "Repartager vos calendriers"
       ],
+      "Reverse charge not supported": [
+        "Le régime de TVA intracommunautaire n'est pas pris en charge."
+      ],
       "Save": [
         "Enregistrer"
       ],
@@ -12226,9 +12265,6 @@
       ],
       "Simplify password management": [
         "Simplifiez la gestion des mots de passe"
-      ],
-      "Spring Sale": [
-        "Soldes de printemps"
       ],
       "Start a new import": [
         "Démarrer une nouvelle importation"
