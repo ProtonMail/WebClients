@@ -123,18 +123,6 @@ export const getMeetBuiltInChatText = () => {
     return c('meet_2025: Feature').t`Built-in chat`;
 };
 
-export const getMeetAppointmentSchedulingText = () => {
-    return c('meet_2025: Feature').t`Appointment scheduling`;
-};
-
-export const getMeetAppointmentScheduling = (included: boolean): PlanCardFeatureDefinition => {
-    return {
-        text: getMeetAppointmentSchedulingText(),
-        included: included,
-        icon: 'calendar-grid',
-    };
-};
-
 export const getMeetBookingPagesText = () => {
     return c('meet_2025: Feature').t`Booking pages`;
 };
@@ -343,38 +331,6 @@ export const getMeetFeatures = (): PlanCardFeature[] => {
                 [PLANS.MEET]: getMeetE2E(),
                 [PLANS.VISIONARY]: getMeetE2E(),
                 [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getMeetE2E(),
-            },
-        },
-        {
-            name: 'scheduling',
-            plans: {
-                [PLANS.FREE]: getMeetAppointmentScheduling(false),
-                [PLANS.BUNDLE]: getMeetAppointmentScheduling(false),
-                [PLANS.MAIL]: getMeetAppointmentScheduling(false),
-                [PLANS.VPN2024]: getMeetAppointmentScheduling(false),
-                [PLANS.DRIVE]: getMeetAppointmentScheduling(false),
-                [PLANS.DRIVE_1TB]: getMeetAppointmentScheduling(false),
-                [PLANS.DRIVE_BUSINESS]: getMeetAppointmentScheduling(false),
-                [PLANS.PASS]: getMeetAppointmentScheduling(false),
-                [PLANS.PASS_LIFETIME]: getMeetAppointmentScheduling(false),
-                [PLANS.PASS_FAMILY]: getMeetAppointmentScheduling(false),
-                [PLANS.FAMILY]: getMeetAppointmentScheduling(false),
-                [PLANS.DUO]: getMeetAppointmentScheduling(false),
-                [PLANS.MAIL_PRO]: getMeetAppointmentScheduling(false),
-                [PLANS.MAIL_BUSINESS]: getMeetAppointmentScheduling(false),
-                [PLANS.BUNDLE_PRO]: getMeetAppointmentScheduling(false),
-                [PLANS.BUNDLE_PRO_2024]: getMeetAppointmentScheduling(true),
-                [PLANS.BUNDLE_BIZ_2025]: getMeetAppointmentScheduling(true),
-                [PLANS.PASS_PRO]: getMeetAppointmentScheduling(false),
-                [PLANS.PASS_BUSINESS]: getMeetAppointmentScheduling(false),
-                [PLANS.VPN_PRO]: getMeetAppointmentScheduling(false),
-                [PLANS.VPN_BUSINESS]: getMeetAppointmentScheduling(false),
-                [PLANS.LUMO]: getMeetAppointmentScheduling(false),
-                [PLANS.LUMO_BUSINESS]: getMeetAppointmentScheduling(false),
-                [PLANS.MEET_BUSINESS]: getMeetAppointmentScheduling(true),
-                [PLANS.MEET]: getMeetAppointmentScheduling(true),
-                [PLANS.VISIONARY]: getMeetAppointmentScheduling(true),
-                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getMeetAppointmentScheduling(false),
             },
         },
         {

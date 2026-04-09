@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import MeetLogo from '@proton/components/components/logo/MeetLogo';
+import { getCalendarAppointmentSchedulingText } from '@proton/components/containers/payments/features/calendar';
 import { getNUsersText } from '@proton/components/containers/payments/features/highlights';
 import type { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import { getPrivateAIChatFeature } from '@proton/components/containers/payments/features/lumo';
@@ -16,7 +17,6 @@ import {
     getMaxMeetingsPerDayText,
     getMaxMeetingsText,
     getMaxParticipantsText,
-    getMeetAppointmentSchedulingText,
     getMeetAppsText,
     getMeetBuiltInChatText,
     getMeetMeetingRecordingText,
@@ -236,7 +236,7 @@ const getMeetBusinessFeatures = (): PlanCardFeatureDefinition[] => {
         { text: getMeetAppsText(), included: true },
         { text: getMeetScreenSharingText(), included: true },
         { text: getMeetBuiltInChatText(), included: true },
-        { text: getMeetAppointmentSchedulingText(), included: true },
+        { text: getCalendarAppointmentSchedulingText(25), included: true },
         { text: getMeetMeetingRecordingText(), included: true },
     ];
 };
