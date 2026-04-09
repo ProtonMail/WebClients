@@ -1,6 +1,7 @@
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { onContextReady, withContext } from 'proton-pass-extension/app/worker/context/inject';
 import type { MessageHandlerCallback } from 'proton-pass-extension/lib/message/message-broker';
+import { parseSender } from 'proton-pass-extension/lib/utils/sender';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
 import { isExtraOTPField } from '@proton/pass/lib/items/item.predicates';
@@ -11,7 +12,6 @@ import { selectItem } from '@proton/pass/store/selectors/items';
 import type { Maybe } from '@proton/pass/types/utils/index';
 import { logger } from '@proton/pass/utils/logger';
 import { deobfuscate } from '@proton/pass/utils/obfuscate/xor';
-import { parseSender } from '@proton/pass/utils/url/parser';
 
 /* Although clients should store a complete OTP URI in the `totpUri` field.
  * We take this with a grain of salt to account from possible faulty imports.
@@ -57,8 +57,8 @@ export const createOTPService = () => {
 
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.AUTOFILL_OTP_CHECK,
-        onContextReady((ctx, _, sender) => {
-            const { url, tabId } = parseSender(sender);
+        onContextReady(async (ctx, _, sender) => {
+            const { url, tabId } = await parseSender(sender);
             const submission = ctx.service.formTracker.get(tabId, url);
             const state = ctx.service.store.getState();
             const match = selectOTPCandidate({ ...url, submission })(state);
