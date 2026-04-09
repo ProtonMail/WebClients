@@ -1303,4 +1303,42 @@ describe('DownloadManager', () => {
             await waitForCondition(() => !activeDownloads.has('download-1'));
         });
     });
+
+    it('should cancel pending downloads correctly', async () => {
+        const manager = DownloadManager.getInstance();
+        const schedulerInstance = getSchedulerInstance();
+
+        storeMockState.addDownloadItem.mockReturnValue('download-pending-cancel');
+
+        const node: NodeEntity = createMockNodeEntity({ uid: 'file-pending', name: 'pending.txt' });
+        hydrateAndCheckNodesMock.mockResolvedValue({ nodes: [node], containsSheetOrDoc: false });
+
+        // Block createFileDownloadStream so the download stays pending (not in activeDownloads)
+        const fileDownloaderDeferred = createDeferred<unknown>();
+        sdkMock.driveMock.getFileDownloader.mockReturnValue(fileDownloaderDeferred.promise);
+
+        await manager.download([node.uid]);
+        const scheduledTask = schedulerInstance.scheduleDownload.mock.calls[0][0];
+        const taskPromise = scheduledTask.start();
+        await flushAsync();
+
+        // Verify we have both active and pending downloads
+        const activeDownloads = Reflect.get(manager, 'activeDownloads') as Map<string, unknown>;
+        const pendingAbortControllers = Reflect.get(manager, 'pendingAbortControllers') as Map<string, unknown>;
+        expect(activeDownloads.has('download-pending-cancel')).toBe(false);
+        expect(pendingAbortControllers.has('download-pending-cancel')).toBe(true);
+
+        // Check they are not marked as failed after cancellation
+        storeMockState.getQueueItem.mockReturnValue({ status: DownloadStatus.Pending });
+        await manager.cancel(['download-pending-cancel']);
+        storeMockState.getQueueItem.mockReturnValue({ status: DownloadStatus.Cancelled });
+        fileDownloaderDeferred.reject();
+        await taskPromise.catch(() => {});
+        await flushAsync(5);
+        const failedCalls = storeMockState.updateDownloadItem.mock.calls.filter(
+            ([id, update]: [string, { status?: string }]) =>
+                id === 'download-pending-cancel' && update.status === DownloadStatus.Failed
+        );
+        expect(failedCalls).toHaveLength(0);
+    });
 });
