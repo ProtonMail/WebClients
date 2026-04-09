@@ -289,6 +289,9 @@
       "Connect apps and devices": [
         "Anslut appar och enheter"
       ],
+      "Connect to Gmail": [
+        "Anslut till Gmail"
+      ],
       "Connect to video conferencing": [
         "Anslut till videokonferens"
       ],
@@ -1027,6 +1030,9 @@
       "Open navigation": [
         "Öppna navigering"
       ],
+      "Or remove forwarding address": [
+        "Eller ta bort vidarebefordringsadress"
+      ],
       "Or use a different Gmail address": [
         "Eller använd en annan Gmail-adress"
       ],
@@ -1101,6 +1107,9 @@
       ],
       "Reconnect": [
         "Anslut igen"
+      ],
+      "Reconnect to Gmail": [
+        "Återanslut till Gmail"
       ],
       "Recover data": [
         "Återställ data"
@@ -1493,7 +1502,8 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel"
+        "Lita på nyckel",
+        "Lita på nycklar"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -4043,6 +4053,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Sortera automatiskt dina inkommande meddelanden innan de når din inkorg."
       ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Blocka Googles möjlighet att profilera dig. Gmail kan inte se vad du gör i ${ MAIL_APP_NAME }."
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Konfigurera detta först för att aktivera din organisation och anpassa din e-postadress."
       ],
@@ -4069,6 +4082,9 @@
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Synkronisera enkelt filer till molnet från din stationära dator och kom åt dem från din mobila enhet."
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "E-post skickat till ${ connectedAddressText } kommer nu visas i ${ MAIL_APP_NAME }."
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Uppmuntra användningen av tvåfaktorsautentisering i din organisation för extra säkerhet."
@@ -4113,11 +4129,17 @@
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "Nya e-postmeddelanden från ${ senderEmailAddress } kommer inte att levereras och kommer att tas bort permanent."
       ],
+      "No ads. No trackers.": [
+        "Inga annonser. Inga spårare."
+      ],
       "No folders": [
         "Inga mappar"
       ],
       "No labels": [
         "Inga etiketter"
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "Läs, svara och håll koll på Gmail inifrån ${ MAIL_APP_NAME }"
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Separera olika aspekter av ditt liv med flera e-postadresser och lås upp fler premiumfunktioner när du uppgraderar."
@@ -4133,6 +4155,19 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Förenkla synkronisering och schemaläggning med delade kalendrar."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Detta kan hända om behörigheter togs bort eller ditt lösenord har ändrats."
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "För att ansluta en annan Gmail-adress, ta bort extra Gmail-adresser som vidarebefordras till ${ BRAND_NAME }."
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "För att ansluta upp till ${ MAX_SYNC_PAID_USER } Gmail-adress, uppgradera till ${ planName }.",
+        "För att ansluta upp till ${ MAX_SYNC_PAID_USER } Gmail-adresser, uppgradera till ${ planName }."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "För att fortsätta ta emot och skicka Gmail-meddelanden i ${ BRAND_NAME }, återanslut ditt konto."
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "För att fortsätta använda skrivassistenten, lägg till den i din prenumeration."
@@ -4155,6 +4190,9 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Slå på skydd för e-postspårning för att förhindra annonsörer och andra från att spåra din plats och onlineaktivitet."
       ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "Uppgradera till ${ planName } för att ansluta upp till ${ MAX_SYNC_PAID_USER } konton"
+      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Uppgradera för att få ${ activatePmUser } för en kortare e-postadress som är lätt att komma ihåg utöver din nuvarande."
       ],
@@ -4167,8 +4205,17 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Använd den här guiden för att din organisation snabbt ska kunna dra nytta av ${ BRAND_NAME }:s branschledande kryptering och ekosystem för integritet."
       ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Vi kan inte komma åt ${ boldEmails } längre."
+      ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "Vi hittade inga kända spårare och spårnings-URL:er i detta e-postmeddelande."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "Vi importerar din gamla e-post och ansluter din Gmail till ${ MAIL_APP_NAME } så nya meddelanden visas automatiskt"
+      ],
+      "We've started importing your email from Gmail. We'll let you know when it's done.": [
+        "Vi har börjat importera din e-post från Gmail. Vi meddelar dig när det är klart."
       ],
       "When do you want your message to be sent?": [
         "När vill du att ditt meddelande ska skickas?"
@@ -4179,17 +4226,38 @@
       "With custom snooze, you can hide emails and set them to reappear at a better time.": [
         "Med anpassad snooze kan du dölja e-post och ställa in dem att dyka upp igen vid en bättre tid."
       ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Du har redan Gmail-adresser som vidarebefordras till ${ MAIL_APP_NAME }. Anslut en nedan för att skicka och ta emot e-post direkt från ${ MAIL_APP_NAME }."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kan importera händelser i iCal-format (ICS-fil). Filen bör ha en maximal storlek på ${ MAX_IMPORT_FILE_SIZE_STRING } och ha upp till ${ MAX_IMPORT_EVENTS_STRING } händelser. Om din fil är större, dela upp den i mindre filer."
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Du kan markera de kontakter som du varken vill slå ihop eller behålla för borttagning. Borttagning kommer endast ske efter att ha klickat på knappen ”Slå ihop”"
       ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Du kan nu skicka e-post från ${ BRAND_NAME } med denna adress."
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "Du vidarebefordrar ${ numAddressesOrSync } Gmail-adress till ${ MAIL_APP_NAME }.",
+        "Du vidarebefordrar ${ numAddressesOrSync } Gmail-adresser till ${ MAIL_APP_NAME }."
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "Du har anslutit en extern kontoadress till ${ MAIL_APP_NAME }."
+      ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Ditt konto- och dataåterställningsmetoder är inställda och 2FA är aktiverat."
       ],
       "Your account and data recovery methods are set.": [
         "Ditt konto och dataåterställningsmetoder är inställda."
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "Ditt paket stöder ${ MAX_SYNC_FREE_USER } Gmail-adress.",
+        "Ditt paket stöder ${ MAX_SYNC_FREE_USER } Gmail-adresser."
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "Ditt paket stöder totalt ${ MAX_SYNC_PAID_USER } Gmail-adress",
+        "Ditt paket stöder ett totalt antal av ${ MAX_SYNC_PAID_USER } Gmail-adresser"
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
@@ -4507,6 +4575,12 @@
       ],
       "Add at least one condition": [
         "Lägg till minst ett villkor"
+      ],
+      "Address could not be added.": [
+        "Adress kunde inte läggas till."
+      ],
+      "Address is already added to your account": [
+        "Adress är redan tillagd till ditt konto"
       ],
       "Address primary private key not found": [
         "Adressens privata nyckel hittades inte"
@@ -4951,6 +5025,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Vissa av dina etikettnamn överskrider ${ MAIL_APP_NAME }s maximalt antal tillåtna tecken. Anpassa importen för att redigera dessa namn."
       ],
+      "Something went wrong while creating the address": [
+        "Något gick fel när adressen skapades"
+      ],
       "Something went wrong. Please try again.": [
         "Något gick fel. Försök igen."
       ],
@@ -5056,9 +5133,6 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Detta meddelande kan innehålla några URL-länkar som inte kan öppnas korrekt av din nuvarande webbläsare."
-      ],
-      "This offer is not available in your country": [
-        "Detta erbjudande är inte tillgängligt i ditt land"
       ],
       "Trusted keys are not valid for sending": [
         "Betrodda nycklar är inte giltiga för att skicka"
@@ -7190,6 +7264,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Säkerställ fullständig privat och krypterad kommunikation. Gör anspråk på din gratis ${ BRAND_NAME } e-postadress nu."
       ],
+      "Enter code": [
+        "Ange kod"
+      ],
       "Enter the code from your authenticator app": [
         "Ange koden från din autentiseringsapp"
       ],
@@ -8553,9 +8630,6 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "När du aktiverade betrodda nycklar för ${ senderName } lades de offentliga nycklarna till i kontaktuppgifterna."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "När du ställer in tvåfaktorsautentisering tillhandahåller vi återställningskoder som du kan använda för att logga in om du förlorar åtkomsten till din autentiseringsapp."
-      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "När du registrerar dig för ett nyhetsbrev, använd ett alias istället för din e-postadress. Din identitet förblir dold och du kan inaktivera aliaset när som helst."
       ],
@@ -9496,9 +9570,6 @@
       "Import interval": [
         "Importintervall"
       ],
-      "Import recent mails": [
-        "Importera senaste e-postmeddelanden"
-      ],
       "Import to email address": [
         "Importera till e-postadress"
       ],
@@ -9741,6 +9812,9 @@
       ],
       "Search in": [
         "Sök i"
+      ],
+      "Select which Gmail address to connect": [
+        "Välj vilken Gmail-adress att ansluta"
       ],
       "Send auto-reply": [
         "Skicka autosvar"
@@ -11620,6 +11694,9 @@
       ],
       "Trial started": [
         "Provperiod startad"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Din ${ BRAND_NAME }-adress är redo att användas"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -14903,6 +14980,9 @@
       "Block sender": [
         "Blockera avsändare"
       ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Ta med din Gmail till ${ MAIL_APP_NAME }"
+      ],
       "Built for privacy": [
         "Byggd för integritet"
       ],
@@ -15069,6 +15149,9 @@
       ],
       "Desktop": [
         "Stationär dator"
+      ],
+      "Disconnected from Gmail": [
+        "Koppla från Gmail"
       ],
       "Discover your subscription benefits": [
         "Upptäck dina prenumerationsförmåner"
@@ -15575,6 +15658,9 @@
       "Self-destruct message": [
         "Självförstörande meddelande"
       ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Skicka och ta emot Gmail med ${ MAIL_APP_NAME }"
+      ],
       "Send email": [
         "Skicka e-post"
       ],
@@ -15655,9 +15741,6 @@
       ],
       "Sort messages": [
         "Sortera meddelanden"
-      ],
-      "Spring Sale": [
-        "Vårrea"
       ],
       "Start a new import": [
         "Starta en ny import"
@@ -15744,6 +15827,9 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Använd ${ VPN_SHORT_APP_NAME } för dataintegritet"
       ],
+      "Use Gmail securely in ${ MAIL_APP_NAME }": [
+        "Använd Gmail säkert i ${ MAIL_APP_NAME }"
+      ],
       "Verification error": [
         "Verifieringsfel"
       ],
@@ -15789,6 +15875,9 @@
       ],
       "When is it most important to use a VPN?": [
         "När är det viktigast att använda en VPN?"
+      ],
+      "You are all set": [
+        "Du är klar"
       ],
       "You can now create unlimited folders and labels": [
         "Du kan nu skapa ett obegränsat antal mappar och etiketter"
