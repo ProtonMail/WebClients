@@ -23,7 +23,7 @@ interface Props {
 export const BookingSidebarAction = ({ onCreateEvent, disabled, utcDate }: Props) => {
     const [user] = useUser();
     const { shouldShowLimitModal } = useBookingUpsell();
-    const showUpsellIcon = user.canPay && shouldShowLimitModal().plan;
+    const showUpsellIcon = user.canPay && shouldShowLimitModal().planLimitReached;
     const { openBookingSidebarCreation, canCreateBooking } = useBookings();
 
     const handleBookingPage = () => {
