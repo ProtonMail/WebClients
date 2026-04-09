@@ -467,9 +467,6 @@
       "Fit to window": [
         "Ajustar a la ventana"
       ],
-      "Forgot password?": [
-        "¿Contraseña olvidada?"
-      ],
       "Forgot recovery method?": [
         "¿Método de recuperación olvidado?"
       ],
@@ -3384,9 +3381,6 @@
     "Delete group prompt": {
       "Are you sure you want to delete this group?": [
         "¿Estás seguro de que quieres eliminar este grupo?"
-      ],
-      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
-        "Ten en cuenta que si eliminas el grupo ${ displayGroupName } (con la dirección ${ displayGroupAddressEmail }), ya no podrás recibir correos electrónicos usando esta dirección."
       ]
     },
     "Delinquent modal title": {
@@ -4409,9 +4403,6 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Algunos de tus nombres de etiqueta exceden el límite de caracteres de ${ MAIL_APP_NAME }. Modifica la importación para editar estos nombres."
       ],
-      "Something went wrong connecting your TV. Scan the QR code on your TV once more.": [
-        "Se ha producido un error al conectar tu televisor. Escanea el código QR de nuevo."
-      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Se ha producido un error: ${ refresh } para continuar. Si aún ves este mensaje de error, póngate en contacto con nuestro ${ supportTeam }."
       ],
@@ -4483,9 +4474,6 @@
       ],
       "This label name is not available. Please choose a different name.": [
         "Este nombre de etiqueta no está disponible. Elige un nombre diferente."
-      ],
-      "This offer is not available in your country": [
-        "Esta oferta no está disponible en tu país"
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Necesitas restaurar tus privilegios de administración para crear cuentas no privadas y acceder a las mismas."
@@ -5414,11 +5402,6 @@
       ],
       "Services": [
         "Servicios"
-      ]
-    },
-    "Group address title": {
-      "Group address": [
-        "Dirección del grupo"
       ]
     },
     "Group member count": {
@@ -6632,6 +6615,9 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Al cambiar por un plan con menos funciones se terminarán las conexiones a los servidores de pago de ${ VPN_APP_NAME }."
       ],
+      "Download ${ VPN_APP_NAME }": [
+        "Descargar ${ VPN_APP_NAME }"
+      ],
       "Download current logs": [
         "Descargar los registros actuales"
       ],
@@ -6707,9 +6693,6 @@
       "End-to-end email encryption is disabled for this group. It can be enabled.": [
         "El cifrado de extremo a extremo de los correos electrónicos de grupo está desactivado para este grupo. Se puede activar."
       ],
-      "End-to-end email encryption is enabled for this group.": [
-        "El cifrado de extremo a extremo de los correos electrónicos de grupo está activado para este grupo."
-      ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL del punto final recibida de tu proveedor de identidad (por ejemplo, https://idp.ejemplo.es/sso/saml)."
       ],
@@ -6754,12 +6737,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Introduce tu dirección de correo electrónico o usuario de ${ BRAND_NAME }."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Introduce tu propia contraseña (como administrador de la organización)."
-      ],
-      "Enter your own password (as trusted contact).": [
-        "Introduce tu propia contraseña (como contacto de confianza)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Introduce tu dirección de correo electrónico de recuperación y te enviaremos tu nombre de usuario o dirección de correo electrónico."
@@ -7448,6 +7425,9 @@
       "Professional": [
         "Profesional"
       ],
+      "Protect this device too?": [
+        "¿Proteger también este dispositivo?"
+      ],
       "Protected by Swiss privacy laws": [
         "Protegido por la legislación suiza sobre privacidad"
       ],
@@ -7625,6 +7605,9 @@
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Inicia sesión en ${ MAIL_APP_NAME } para activar tu dirección"
+      ],
+      "Sign-in complete": [
+        "Inicio de sesión completado"
       ],
       "Signed up": [
         "Registrado"
@@ -8396,6 +8379,9 @@
         "A continuación, se te cobrarán ${ renewAmountStr } cada ${ renewCycle } mes. Puedes cancelar en cualquier momento.",
         "A continuación, se te cobrarán ${ renewAmountStr } cada ${ renewCycle } meses. Puedes cancelar en cualquier momento."
       ],
+      "You're now signed in on your TV.": [
+        "Ahora has iniciado sesión en tu TV."
+      ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "Has activado el reenvío en ${ MAX_SYNC_PAID_USER } dirección de Gmail. Para añadir otra, primero desactívala.",
         "Has activado el reenvío en ${ MAX_SYNC_PAID_USER } direcciones de Gmail. Para añadir otra, primero desactiva alguna de ellas."
@@ -8731,9 +8717,6 @@
       "Add all organization members": [
         "Añadir todos los miembros de la organización"
       ],
-      "Add group member": [
-        "Añadir un miembro al grupo"
-      ],
       "Additional comments": [
         "Comentarios adicionales"
       ],
@@ -9055,9 +9038,6 @@
       "Group address": [
         "Dirección del grupo"
       ],
-      "Group members": [
-        "Miembros del grupo"
-      ],
       "Group name": [
         "Nombre del grupo"
       ],
@@ -9078,9 +9058,6 @@
       ],
       "Import interval": [
         "Intervalo de importación"
-      ],
-      "Import recent mails": [
-        "Importar correos recientes"
       ],
       "Import to email address": [
         "Importar a la dirección de correo electrónico"
@@ -9487,12 +9464,6 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Sí, quiero eliminar permanentemente esta cuenta y todos sus datos."
-      ],
-      "Your password (admin)": [
-        "Tu contraseña (admin)"
-      ],
-      "Your password (trusted contact)": [
-        "Tu contraseña (contacto de confianza)"
       ],
       "ZIP code": [
         "Código postal"
@@ -13119,6 +13090,9 @@
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Si pierdes tus datos de inicio de sesión y necesitas restablecer tu cuenta, **es obligatorio** que tengas configurados **un método de recuperación de la cuenta y de los datos**. De lo contrario, es posible que no puedas acceder a ninguno de tus correos electrónicos, contactos, archivos o contraseñas."
       ],
+      "Invalid code": [
+        "El código no es válido."
+      ],
       "Review account safety": [
         "Verificar la seguridad de la cuenta"
       ],
@@ -14151,9 +14125,6 @@
       "Share the confirmation code with your administrator": [
         "Comparte el código de confirmación con tu administrador."
       ],
-      "Sign in": [
-        "Iniciar sesión"
-      ],
       "Sign in to your organization": [
         "Iniciar sesión en tu organización"
       ],
@@ -14213,9 +14184,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Tendrás que crear los nuevos usuarios manualmente para añadirlos a tu organización."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Se te redirigirá a tu proveedor de SSO de terceros."
       ],
       "Your SSO configuration will be deleted.": [
         "Se eliminará tu configuración de SSO."
@@ -15287,6 +15255,9 @@
       "Account": [
         "Cuenta"
       ],
+      "Account and password": [
+        "Cuenta y contraseña"
+      ],
       "Account monitor": [
         "Monitor de cuentas"
       ],
@@ -15632,9 +15603,6 @@
       "Device": [
         "Dispositivo"
       ],
-      "Device connected!": [
-        "¡Dispositivo conectado!"
-      ],
       "Device name": [
         "Nombre del dispositivo"
       ],
@@ -15742,9 +15710,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Introduce los detalles de tu cuenta de ${ BRAND_NAME } para unirte al programa Beta de ${ app }"
-      ],
-      "Enter your password": [
-        "Introduce tu contraseña"
       ],
       "Error": [
         "Error"
@@ -15858,6 +15823,9 @@
       ],
       "Information exposed in breach": [
         "Información expuesta en la vulneración"
+      ],
+      "Integrations": [
+        "Integraciones"
       ],
       "Invalid verification code": [
         "Código de verificación no válido"
@@ -16165,9 +16133,6 @@
       "Spam, block, and allow lists": [
         "Listas de direcciones permitidas, bloqueadas y spam"
       ],
-      "Spring Sale": [
-        "Oferta de primavera"
-      ],
       "Start a new import": [
         "Iniciar una nueva importación"
       ],
@@ -16228,9 +16193,6 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Activar ${ DARK_WEB_MONITORING_NAME }"
-      ],
-      "TV sign in": [
-        "Inicio de sesión en TV"
       ],
       "Two-factor authentication": [
         "Autenticación de dos factores"

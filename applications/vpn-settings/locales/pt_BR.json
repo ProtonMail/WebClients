@@ -203,6 +203,12 @@
       "Connect apps and devices": [
         "Conectar aplicativos e dispositivos"
       ],
+      "Connect Gmail address": [
+        "Conectar endereço do Gmail"
+      ],
+      "Connect to Gmail": [
+        "Conectar ao Gmail"
+      ],
       "Connect to video conferencing": [
         "Conectar-se à videoconferência.\n"
       ],
@@ -211,6 +217,9 @@
       ],
       "Contact support": [
         "Contatar o suporte"
+      ],
+      "Contact Support Center": [
+        "Contacte a Central de Suporte"
       ],
       "Contact us": [
         "Contate-nos"
@@ -226,6 +235,9 @@
       ],
       "Continue to ${ planOrAppName }": [
         "Continuar com ${ planOrAppName }"
+      ],
+      "Continue to sign in": [
+        "Continuar para iniciar sessão"
       ],
       "Continue with this password": [
         "Continuar com essa senha"
@@ -347,6 +359,9 @@
       "Discard Changes": [
         "Descartar alterações"
       ],
+      "Disconnect": [
+        "Desconectar"
+      ],
       "Discover ${ planName }": [
         "Descubra o ${ planName }"
       ],
@@ -443,6 +458,9 @@
       "Enable multi-user support": [
         "Ativar suporte para múltiplos usuários"
       ],
+      "Enter code": [
+        "Inserir código"
+      ],
       "Explore ${ target }": [
         "Explore ${ target }"
       ],
@@ -466,9 +484,6 @@
       ],
       "Fit to window": [
         "Ajustar na janela"
-      ],
-      "Forgot password?": [
-        "Esqueceu sua senha?"
       ],
       "Forgot recovery method?": [
         "Esqueceu um método de recuperação?"
@@ -559,6 +574,15 @@
       ],
       "Hide plan features": [
         "Ocultar recursos do plano"
+      ],
+      "I don't have my 2FA device": [
+        "Eu não tenho meu dispositivo de A2F"
+      ],
+      "I don't have my key": [
+        "Eu não tenho minha chave"
+      ],
+      "I don’t have my backup codes": [
+        "Eu não tenho meus códigos de backup"
       ],
       "Import": [
         "Importar"
@@ -683,6 +707,9 @@
       "Or": [
         "Ou"
       ],
+      "Or remove forwarding address": [
+        "Ou remover endereço de encaminhamento"
+      ],
       "Or use a different Gmail address": [
         "ou use um endereço do Gmail diferente"
       ],
@@ -712,6 +739,12 @@
       ],
       "Reconnect": [
         "Reconectar"
+      ],
+      "Reconnect to Gmail": [
+        "Reconectar ao Gmail"
+      ],
+      "Recover account": [
+        "Recuperar conta"
       ],
       "Recover data": [
         "Recuperar dados"
@@ -878,6 +911,9 @@
       "Send email reminder": [
         "Enviar lembrete por e-mail"
       ],
+      "Send feedback": [
+        "Enviar comentários"
+      ],
       "Send my username": [
         "Enviar meu nome de usuário"
       ],
@@ -919,6 +955,9 @@
       ],
       "Share": [
         "Compartilhar"
+      ],
+      "Share feedback": [
+        "Compartilhar comentário"
       ],
       "Share via link": [
         "Compartilhar via link"
@@ -1111,6 +1150,9 @@
       ],
       "Verify account": [
         "Verificar conta"
+      ],
+      "Verify another way": [
+        "Verificar de outra forma"
       ],
       "Verify code": [
         "Verificar código"
@@ -3378,9 +3420,6 @@
     "Delete group prompt": {
       "Are you sure you want to delete this group?": [
         "Você tem certeza de que deseja excluir esse grupo?"
-      ],
-      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
-        "Observe que se você excluir o grupo ${ displayGroupName } (com o endereço ${ displayGroupAddressEmail }), você não poderá mais receber e-mails usando esse endereço."
       ]
     },
     "Delinquent modal title": {
@@ -3482,6 +3521,9 @@
       "Let's you instantly add meeting links to your event invitations.": [
         "Permite que você adicione instantaneamente links de reunião aos convites dos seus eventos."
       ],
+      "No ads. No trackers.": [
+        "Sem anúncios. Sem rastreadores."
+      ],
       "No one in your organization can connect to shared servers.": [
         "Ninguém na sua organização pode se conectar a servidores compartilhados."
       ],
@@ -3503,11 +3545,21 @@
       "Track the status and activity of your referrals": [
         "Acompanhe o status e a atividade de suas referências"
       ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "Faça upgrade para ${ planName } para conectar até ${ MAX_SYNC_PAID_USER } contas"
+      ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Utilize este guia para que sua organização possa rapidamente se beneficiar do ecossistema de criptografia e privacidade de ponta do ${ BRAND_NAME }."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Você pode importar eventos no formato iCal (arquivo ICS). O arquivo deve ter o tamanho máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } e ter até ${ MAX_IMPORT_EVENTS_STRING } eventos. Se o seu arquivo for maior, divida-o em arquivos menores."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Você agora pode enviar e-mails da ${ BRAND_NAME } usando este endereço."
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "Seu plano suporta um total de ${ MAX_SYNC_PAID_USER } endereço do Gmail",
+        "Seu plano suporta um total de ${ MAX_SYNC_PAID_USER } endereços do Gmail"
       ]
     },
     "description": {
@@ -4028,6 +4080,12 @@
       "A group with this name already exists": [
         "Já existe um grupo com esse"
       ],
+      "Address could not be added.": [
+        "O endereço não pôde ser adicionado."
+      ],
+      "Address is already added to your account": [
+        "Endereço já adicionado à sua conta"
+      ],
       "Address primary private key not found": [
         "Chave privada principal do endereço não encontrada"
       ],
@@ -4152,6 +4210,9 @@
       ],
       "Incorrect password": [
         "A senha não é válida."
+      ],
+      "Incorrect recovery code. Please try again.": [
+        "Código de recuperação incorreto. Tente novamente."
       ],
       "Incorrect second password. Please try again.": [
         "Segunda senha incorreta. Tente novamente."
@@ -4386,8 +4447,8 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Alguns dos seus nomes de marcadores excederam o limite máximo de caracteres do ${ MAIL_APP_NAME }. Personalize a importação para editar esses nomes."
       ],
-      "Something went wrong connecting your TV. Scan the QR code on your TV once more.": [
-        "Ocorreu um erro ao conectar sua TV. Tente escanear o código QR na sua TV mais uma vez."
+      "Something went wrong while creating the address": [
+        "Algo deu errado ao criar o endereço"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Ocorreu um erro. ${ refresh } a página para continuar. Se você continuar vendo esta mensagem de erro, entre em contato com nossa ${ supportTeam }."
@@ -4460,9 +4521,6 @@
       ],
       "This label name is not available. Please choose a different name.": [
         "Este nome de marcador não está disponível. Escolha outro nome."
-      ],
-      "This offer is not available in your country": [
-        "Esta oferta não está disponível no seu país"
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Para criar e acessar contas de usuário não privadas, será necessário restaurar seus privilégios de administrador."
@@ -4952,6 +5010,9 @@
       "After leaving your plan, this user will be moved to a ${ BRAND_NAME } Unlimited plan with a 30-day free trial.*": [
         "Após sair do seu plano, este usuário será movido para o plano ${ BRAND_NAME } Unlimited com 30 dias de avaliação gratuita."
       ],
+      "Assign storage to the administrator account. You can distribute storage for additional users later on.": [
+        "Atribua armazenamento à conta do administrador. Você pode distribuir armazenamento para usuários adicionais mais tarde."
+      ],
       "Create and manage family members and assign them storage space shared between ${ DRIVE_APP_NAME } and ${ MAIL_APP_NAME }.": [
         "Crie e gerencie os membros da família e atribuí-los o espaço de armazenamento compartilhado entre ${ DRIVE_APP_NAME } e ${ MAIL_APP_NAME }."
       ],
@@ -5399,9 +5460,12 @@
         "Serviços"
       ]
     },
-    "Group address title": {
-      "Group address": [
-        "Endereço do grupo"
+    "Group detail label": {
+      "Description:": [
+        "Descrição:"
+      ],
+      "Group address:": [
+        "Endereço do grupo:"
       ]
     },
     "Group member count": {
@@ -6466,6 +6530,9 @@
       "Copy your referral link": [
         "Copiar seu link de referência"
       ],
+      "Couldn´t send feedback": [
+        "Não foi possível enviar o feedback"
+      ],
       "Country code": [
         "Código do país"
       ],
@@ -6618,6 +6685,9 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "O downgrade irá encerrar qualquer conexão com servidores pagos do ${ VPN_APP_NAME }."
       ],
+      "Download ${ VPN_APP_NAME }": [
+        "Baixar ${ VPN_APP_NAME }"
+      ],
       "Download current logs": [
         "Baixar os registros atuais"
       ],
@@ -6696,9 +6766,6 @@
       "End-to-end email encryption is disabled for this group. It can be enabled.": [
         "A criptografia de e-mail de ponta a ponta está desativada para este grupo. Ela pode ser ativada."
       ],
-      "End-to-end email encryption is enabled for this group.": [
-        "A criptografia de e-mail de ponta a ponta está ativada para este grupo."
-      ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL do endpoint recebido do seu provedor de identidade (por exemplo, https://idp.example.com/sso/saml)."
       ],
@@ -6707,6 +6774,9 @@
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Garanta uma comunicação totalmente privada e criptografada. Crie seu endereço de e-mail ${ BRAND_NAME } gratuito agora."
+      ],
+      "Enter code": [
+        "Inserir código"
       ],
       "Enter key manually instead": [
         "Em vez disso, digite a chave manualmente"
@@ -6743,12 +6813,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Entre seu e-mail ou nome de usuário da conta da ${ BRAND_NAME }."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Digite sua própria senha (como administrador da organização)."
-      ],
-      "Enter your own password (as trusted contact).": [
-        "Digite sua própria senha (como contato de confiança)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Digite o seu endereço de e-mail de recuperação e nós enviaremos o seu nome de usuário ou endereço de e-mail."
@@ -6890,6 +6954,9 @@
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Se você perder seu dispositivo ativado com a autenticação de dois fatores, estes códigos poderão ser usados no lugar do código de 6 dígitos para iniciar sessão em sua conta. Cada código poderá ser usado apenas uma vez."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "If Se você perdeu o acesso ao seu aplicativo de autenticação, pode usar um dos 16 códigos de recuperação de backup fornecidos quando configurou a autenticação de dois fatores. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Se você prosseguir com o downgrade, perderá o acesso aos recursos pagos do ${ MAIL_APP_NAME } e ${ VPN_APP_NAME }."
@@ -7064,6 +7131,9 @@
       "Keep your info more secure and private with these guides and tips.": [
         "Mantenha suas informações mais seguras e privadas com estes guias e dicas."
       ],
+      "Key sections reorganized for faster access.": [
+        "Seções principais reorganizadas para acesso mais rápido."
+      ],
       "Keys created": [
         "Chave criada"
       ],
@@ -7195,6 +7265,12 @@
       ],
       "New activity data will stop being collected and shown.": [
         "Os novos dados de atividade deixarão de ser coletados e mostrados."
+      ],
+      "New sidebar": [
+        "Nova barra lateral"
+      ],
+      "New sidebar layout": [
+        "Novo layout da barra lateral"
       ],
       "New user invited to organization": [
         "Novo usuário convidado para a organização"
@@ -7437,6 +7513,9 @@
       "Professional": [
         "Professional"
       ],
+      "Protect this device too?": [
+        "Proteger este dispositivo também?"
+      ],
       "Protected by Swiss privacy laws": [
         "Protegido pelas leis de privacidade suíças"
       ],
@@ -7593,6 +7672,9 @@
       "Setting up your organization": [
         "Configurando a sua organização"
       ],
+      "Share your thoughts...": [
+        "Compartilhe suas ideias..."
+      ],
       "Shared ${ vaultLink } deleted": [
         "${ vaultLink } compartilhado excluído"
       ],
@@ -7615,6 +7697,9 @@
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Inicie sessão no ${ MAIL_APP_NAME } para ativar seu endereço"
       ],
+      "Sign-in complete": [
+        "Início de sessão concluída"
+      ],
       "Signed up": [
         "Criar conta"
       ],
@@ -7629,6 +7714,9 @@
       ],
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "Alguns servidores podem não aparecer na lista acima. Pesquise pelo nome do servidor (por exemplo, AT#62) para encontrá-los."
+      ],
+      "Something went wrong. Please try again.": [
+        "Ocorreu um erro. Tente novamente."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Especifique o domínio com permissão para autenticação SAML SSO."
@@ -7687,6 +7775,9 @@
       ],
       "Swiss based": [
         "Sediado na Suíça"
+      ],
+      "Switch sidebars": [
+        "Alternar barras laterais"
       ],
       "Symbols (#$&)": [
         "Símbolos (#$&)"
@@ -8015,6 +8106,9 @@
       "Use a recovery method to disable your two-factor authentication methods.": [
         "Use um método de recuperação para desativar seu método de autenticação de dois fatores."
       ],
+      "Use multiple email addresses with ${ MAIL_APP_NAME }. Add a new ${ BRAND_NAME } address or connect another email account to manage everything from one inbox.": [
+        "Use múltiplos endereços de e-mail com o ${ MAIL_APP_NAME }. Adicione um novo endereço da ${ BRAND_NAME } ou conecte outra conta de e-mail para gerenciar tudo de uma só caixa de entrada."
+      ],
       "Use the best server according to current load and position: ${ formattedBestServerName }": [
         "Use o melhor servidor de acordo com a carga atual e a posição: ${ formattedBestServerName }"
       ],
@@ -8177,9 +8271,6 @@
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Quando você remove um servidor de um Gateway, ele entra em um período de desativação de 10 dias. Esse servidor pode ser adicionado a um novo Gateway, mas seu país não pode ser alterado."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quando você configura a autenticação de dois fatores, fornecemos códigos de recuperação que você pode usar para fazer login se perder o acesso ao seu aplicativo de autenticação."
-      ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Quando sua assinatura renovar, nós aplicaremos quaisquer créditos disponíveis antes de mudar o método de pagamento acima."
       ],
@@ -8288,6 +8379,9 @@
       "You can now return to the application to continue": [
         "Agora você pode retornar ao aplicativo para continuar"
       ],
+      "You can now sign in to your account again.": [
+        "Você já pode iniciar sessão na sua conta novamente."
+      ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Você só pode ter uma instância de chat aberta por vez. Feche as conversas anteriores antes de iniciar uma nova."
       ],
@@ -8382,6 +8476,9 @@
         "Você então será cobrado a cada ${ renewCycle } mês em ${ renewAmountStr }. Você pode cancelar a qualquer momento.",
         "Você então será cobrado a cada ${ renewCycle } meses em ${ renewAmountStr }.Você pode cancelar a qualquer momento."
       ],
+      "You're now signed in on your TV.": [
+        "Você já iniciou sessão na sua TV."
+      ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "Você ativou o encaminhamento em ${ MAX_SYNC_PAID_USER } endereço do Gmail. Para adicionar outro, primeiro desative um deles.",
         "Você ativou o encaminhamento em ${ MAX_SYNC_PAID_USER } endereços do Gmail. Para adicionar outro, primeiro desative um deles."
@@ -8415,6 +8512,9 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Seu e-mail só será usado para essa verificação única."
+      ],
+      "Your feedback": [
+        "Seu comentário"
       ],
       "Your files will be encrypted and then saved": [
         "Seus arquivos serão criptografados e depois salvos"
@@ -8714,9 +8814,6 @@
       "Add all organization members": [
         "Adicionar todos os membros da organização"
       ],
-      "Add group member": [
-        "Adicionar um membro ao grupo"
-      ],
       "Additional comments": [
         "Comentários adicionais"
       ],
@@ -8984,6 +9081,9 @@
       "Enabled": [
         "Ativado"
       ],
+      "Enter name or email address": [
+        "Inserir nome ou endereço de email"
+      ],
       "Enter password": [
         "Digite a senha"
       ],
@@ -9038,9 +9138,6 @@
       "Group address": [
         "Endereço do grupo"
       ],
-      "Group members": [
-        "Membros do grupo"
-      ],
       "Group name": [
         "Nome do grupo"
       ],
@@ -9062,9 +9159,6 @@
       "Import interval": [
         "Intervalo de importação"
       ],
-      "Import recent mails": [
-        "Importar e-mails recentes"
-      ],
       "Import to email address": [
         "Importar para o endereço de e-mail"
       ],
@@ -9079,6 +9173,9 @@
       ],
       "Interval": [
         "Intervalo"
+      ],
+      "Invite people": [
+        "Convidar pessoas"
       ],
       "Invite via email": [
         "Convidar através do e-mail"
@@ -9470,12 +9567,6 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Sim, eu quero excluir permanentemente esta conta e todos os seus dados."
-      ],
-      "Your password (admin)": [
-        "Sua senha (admin)"
-      ],
-      "Your password (trusted contact)": [
-        "Sua senha (contato de confiança)"
       ],
       "ZIP code": [
         "CEP"
@@ -11397,6 +11488,9 @@
       "Two-factor authentication is not required anymore": [
         "A autenticação de dois fatores não é mais necessária"
       ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Seu endereço da ${ BRAND_NAME } está pronto para uso"
+      ],
       "Zoom video conferencing settings have been updated": [
         "As configurações de videoconferência do Zoom foram atualizadas"
       ]
@@ -13130,6 +13224,9 @@
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Se você perder seus detalhes de login e precisar redefinir sua conta, é **imprescindível** que você tenha um **método de recuperação de conta e de recuperação de dados** em vigor, caso contrário, talvez não consiga acessar nenhum de seus e-mails, contatos, arquivos ou senhas."
       ],
+      "Invalid code": [
+        "O código não é válido."
+      ],
       "Review account safety": [
         "Revise a segurança da conta"
       ],
@@ -14159,9 +14256,6 @@
       "Share the confirmation code with your administrator": [
         "Compartilhe o código de confirmação com seu administrador"
       ],
-      "Sign in": [
-        "Iniciar sessão"
-      ],
       "Sign in to your organization": [
         "Iniciar sessão na sua organização."
       ],
@@ -14221,9 +14315,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Você terá que criar manualmente novos usuários para adicioná-los à sua organização."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Você será redirecionado para o seu provedor de SSO de terceiros."
       ],
       "Your SSO configuration will be deleted.": [
         "Sua configuração de SSO será excluída."
@@ -15295,6 +15386,9 @@
       "Account": [
         "Conta"
       ],
+      "Account and password": [
+        "Conta e senha"
+      ],
       "Account monitor": [
         "Monitor da conta"
       ],
@@ -15395,6 +15489,9 @@
       "An address for each role": [
         "Um endereço para cada função"
       ],
+      "An error occurred": [
+        "Ocorreu um erro"
+      ],
       "App": [
         "Aplicativo"
       ],
@@ -15410,6 +15507,9 @@
       "Are you sure you want to close the preview?": [
         "Você tem certeza que deseja fechar a pré-visualização?"
       ],
+      "Are you sure you want to disconnect this address?": [
+        "Você tem certeza de que deseja desconectar este endereço?"
+      ],
       "Are you sure?": [
         "Você tem certeza?"
       ],
@@ -15421,6 +15521,9 @@
       ],
       "Block trackers and malware": [
         "Bloqueie rastreadores e malware"
+      ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Traga seu Gmail para o ${ MAIL_APP_NAME }"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Cancelar assinatura do ${ MAIL_SHORT_APP_NAME }"
@@ -15475,6 +15578,9 @@
       ],
       "Collaborate on documents": [
         "Colaborar em documentos"
+      ],
+      "Configurations": [
+        "Configurações"
       ],
       "Confirm": [
         "Confirmar"
@@ -15536,6 +15642,9 @@
       ],
       "Create Gateway": [
         "Criar gateway"
+      ],
+      "Create group": [
+        "Criar grupo"
       ],
       "Create multiple user accounts": [
         "Criando múltiplas contas de usuários"
@@ -15640,9 +15749,6 @@
       "Device": [
         "Dispositivo"
       ],
-      "Device connected!": [
-        "Dispositivo conectado!"
-      ],
       "Device name": [
         "Nome do dispositivo"
       ],
@@ -15660,6 +15766,9 @@
       ],
       "Discard changes?": [
         "Descartar alterações?"
+      ],
+      "Disconnected from Gmail": [
+        "Desconectado do Gmail"
       ],
       "Dismiss setup checklist": [
         "Dispensar lista de verificação de configuração"
@@ -15681,6 +15790,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Baixar os aplicativos do ${ DRIVE_APP_NAME }"
+      ],
+      "Download apps": [
+        "Baixar aplicativos"
       ],
       "Downloads": [
         "Baixar"
@@ -15705,6 +15817,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Editar gateway ${ currentName }"
+      ],
+      "Edit group": [
+        "Editar grupo"
       ],
       "Edit invoice note": [
         "Editar a nota de fatura"
@@ -15750,9 +15865,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Entre com sua conta da ${ BRAND_NAME } para participar do programa Beta do ${ app }"
-      ],
-      "Enter your password": [
-        "Digite sua senha"
       ],
       "Error": [
         "Erro"
@@ -15827,6 +15939,9 @@
       "Help center": [
         "Central de ajuda"
       ],
+      "Help us improve": [
+        "Ajude-nos a melhorar"
+      ],
       "Home": [
         "Casa"
       ],
@@ -15867,6 +15982,9 @@
       "Information exposed in breach": [
         "Informação exposta na violação"
       ],
+      "Integrations": [
+        "Integrações"
+      ],
       "Invalid verification code": [
         "O código de verificação não é válido."
       ],
@@ -15891,11 +16009,20 @@
       "Minicalendar": [
         "Mini calendário"
       ],
+      "Monitoring": [
+        "Monitoramento"
+      ],
       "Multi-user support": [
         "Suporte para múltiplos usuários"
       ],
       "Multiple accounts, 1 private inbox": [
         "Várias contas, 1 caixa de entrada privada."
+      ],
+      "My account": [
+        "Minha conta"
+      ],
+      "My VPN": [
+        "Minha VPN"
       ],
       "Name": [
         "Nome"
@@ -15935,6 +16062,12 @@
       ],
       "Org setup": [
         "Configuração da organização"
+      ],
+      "Organization": [
+        "Organização"
+      ],
+      "Organization and people": [
+        "Organização e pessoas"
       ],
       "Organization filters": [
         "Filtros de organização"
@@ -16083,6 +16216,9 @@
       "Security": [
         "Segurança"
       ],
+      "Security and compliance": [
+        "Segurança e conformidade"
+      ],
       "Security and privacy": [
         "Segurança e privacidade"
       ],
@@ -16167,11 +16303,11 @@
       "Single sign-on": [
         "Autenticação única"
       ],
+      "Single-sign on (SSO)": [
+        "Início de sessão único (SSO)"
+      ],
       "Spam, block, and allow lists": [
         "Listas de endereços permitidos, bloqueados e spam"
-      ],
-      "Spring Sale": [
-        "Promoção de primavera"
       ],
       "Start a new import": [
         "Iniciar uma nova importação"
@@ -16234,11 +16370,11 @@
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Ativar ${ DARK_WEB_MONITORING_NAME }"
       ],
-      "TV sign in": [
-        "Iniciar sessão na TV"
-      ],
       "Two-factor authentication": [
         "Autenticação de dois fatores"
+      ],
+      "Two-factor authentication disabled": [
+        "Autenticação de dois fatores desativada"
       ],
       "Two-factor authentication enforcement": [
         "Imposição de autenticação de dois fatores"
@@ -16285,6 +16421,9 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Usar o ${ VPN_SHORT_APP_NAME } para a privacidade de dados"
       ],
+      "Use backup recovery code": [
+        "Usar código de recuperação de backup"
+      ],
       "User": [
         "Usuário"
       ],
@@ -16312,6 +16451,9 @@
       "View organization events by upgrading to Professional": [
         "Consulta os eventos da organização ao fazer upgrade para Professional."
       ],
+      "VPN": [
+        "VPN"
+      ],
       "Warning": [
         "Aviso"
       ],
@@ -16335,6 +16477,9 @@
       ],
       "WireGuard configuration": [
         "Configuração do WireGuard"
+      ],
+      "You are all set": [
+        "Tudo pronto"
       ],
       "You can now create unlimited folders and labels": [
         "Agora você pode criar pastas e etiquetas ilimitadas."

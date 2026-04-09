@@ -378,9 +378,6 @@
       "Fit to window": [
         "Припасувати до вікна"
       ],
-      "Forgot password?": [
-        "Не пам’ятаю пароль?"
-      ],
       "Forgot recovery method?": [
         "Забули спосіб відновлення?"
       ],
@@ -2579,9 +2576,6 @@
     "Delete group prompt": {
       "Are you sure you want to delete this group?": [
         "Ви дійсно хочете видалити цю групу?"
-      ],
-      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
-        "Зверніть увагу, що якщо ви видалите групу ${ displayGroupName } (з адресою ${ displayGroupAddressEmail }), ви більше не зможете отримувати електронні листи на її адресу."
       ]
     },
     "Delinquent modal title": {
@@ -4185,11 +4179,6 @@
         "Служби"
       ]
     },
-    "Group address title": {
-      "Group address": [
-        "Адреса групи"
-      ]
-    },
     "Group member count": {
       "${ memberCount } member": [
         "${ memberCount } учасник",
@@ -5321,9 +5310,6 @@
       "End-to-end email encryption is disabled for this group. It can be enabled.": [
         "Наскрізне шифрування електронної пошти вимкнено для цієї групи. Воно може бути увімкненим."
       ],
-      "End-to-end email encryption is enabled for this group.": [
-        "Наскрізне шифрування електронної пошти увімкнено для цієї групи."
-      ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL-адреса кінцевої точки, отримана від вашого провайдера ідентифікації (наприклад, https://idp.example.com/sso/saml)."
       ],
@@ -5362,9 +5348,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Уведіть свою адресу е-пошти ${ BRAND_NAME } або ім'я користувача."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Введіть власний пароль (як адміністратор організації)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Введіть свою адресу резервної електронної пошти і ми надішлемо ваше ім'я користувача або адресу електронної пошти."
@@ -6955,9 +6938,6 @@
       "Add all organization members": [
         "Додати всіх учасників організації"
       ],
-      "Add group member": [
-        "Додати учасника групи"
-      ],
       "Address": [
         "Адреса"
       ],
@@ -7245,9 +7225,6 @@
       ],
       "Group address": [
         "Адреса групи"
-      ],
-      "Group members": [
-        "Учасники групи"
       ],
       "Group name": [
         "Назва групи"
@@ -7605,9 +7582,6 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Так, я хочу остаточно видалити цей обліковий запис та всі пов'язані дані."
-      ],
-      "Your password (admin)": [
-        "Новий пароль (адмін)"
       ],
       "ZIP code": [
         "Поштовий індекс"
@@ -10208,6 +10182,9 @@
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Якщо ви втратили свої дані для входу і вам потрібно скинути обліковий запис, **обов'язково**, щоб у вас був спосіб **відновлення облікового запису та даних**, інакше ви не зможете отримати доступ до своїх електронних листів, контактів, файлів або паролів."
       ],
+      "Invalid code": [
+        "Невірний код"
+      ],
       "Safeguard account now": [
         "Безпечний захист облікового запису зараз"
       ],
@@ -11190,9 +11167,6 @@
       "Share the confirmation code with your administrator": [
         "Поділитися кодом підтвердження з адміністратором"
       ],
-      "Sign in": [
-        "Увійти"
-      ],
       "Sign in to your organization": [
         "Увійти до своєї організації"
       ],
@@ -11243,9 +11217,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Вам доведеться створювати нових користувачів вручну, щоб додати їх до вашої організації."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Вас буде перенаправлено до вашого стороннього провайдера SSO."
       ],
       "Your SSO configuration will be deleted.": [
         "Ваша конфігурація SSO буде видалена."
@@ -12274,6 +12245,9 @@
       "4. Select a server to connect to": [
         "4. Виберіть сервер, до якого потрібно під'єднатися"
       ],
+      "Account and password": [
+        "Обліковий запис і пароль"
+      ],
       "Account recovery": [
         "Відновлення облікового запису"
       ],
@@ -12562,9 +12536,6 @@
       "Device": [
         "Пристрій"
       ],
-      "Device connected!": [
-        "Пристрій під'єднано!"
-      ],
       "Device name": [
         "Назва пристрою"
       ],
@@ -12636,9 +12607,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Введіть дані свого облікового запису ${ BRAND_NAME }, щоб приєднатися до програми бета-тестування ${ app }"
-      ],
-      "Enter your password": [
-        "Введіть ваш пароль"
       ],
       "Error": [
         "Помилка"
@@ -12723,6 +12691,9 @@
       ],
       "Import groups": [
         "Імпорт груп"
+      ],
+      "Integrations": [
+        "Інтеграції"
       ],
       "Invalid verification code": [
         "Недійсний код підтвердження"
@@ -12973,9 +12944,6 @@
       "Spam, block, and allow lists": [
         "Спам, блокування та списки дозволених"
       ],
-      "Spring Sale": [
-        "Весняний розпродаж"
-      ],
       "Start a new import": [
         "Почати новий імпорт"
       ],
@@ -13017,9 +12985,6 @@
       ],
       "Third-party apps and services": [
         "Сторонні додатки та сервіси"
-      ],
-      "TV sign in": [
-        "Вхід на телевізорі"
       ],
       "Two-factor authentication": [
         "Двоетапна перевірка"

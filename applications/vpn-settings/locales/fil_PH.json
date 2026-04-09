@@ -449,9 +449,6 @@
       "Fit to window": [
         "Pagkasyahin sa window"
       ],
-      "Forgot password?": [
-        "Nakalimutan ang password?"
-      ],
       "Forgot recovery method?": [
         "Nakalimutan ang paraan ng pag-recover?"
       ],
@@ -3175,9 +3172,6 @@
     "Delete group prompt": {
       "Are you sure you want to delete this group?": [
         "Sigurado ka bang gusto mong i-delete ang pangkat na ito?"
-      ],
-      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
-        "Pakitandaan na kung i-delete ang pangkat na ${ displayGroupName } (na may address na ${ displayGroupAddressEmail }), hindi na makakatanggap ng mga email gamit ang address nito."
       ]
     },
     "Delinquent modal title": {
@@ -5071,11 +5065,6 @@
         "Mga Serbisyo"
       ]
     },
-    "Group address title": {
-      "Group address": [
-        "Address ng pangkat"
-      ]
-    },
     "Group member count": {
       "${ memberCount } member": [
         "${ memberCount } na miyembro",
@@ -6306,9 +6295,6 @@
       "End-to-end email encryption is disabled for this group. It can be enabled.": [
         "Hindi pinagana ang end-to-end na encryption sa email para sa pangkat na ito. Maaari itong paganahin."
       ],
-      "End-to-end email encryption is enabled for this group.": [
-        "Pinagana ang end-to-end na encryption sa email para sa pangkat na ito."
-      ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Endpoint URL na natanggap mula sa provider ng pagkakakilanlan (hal. https://idp.example.com/sso/saml)."
       ],
@@ -6350,12 +6336,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Ilagay ang email address o username ng iyong ${ BRAND_NAME } Account."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Ilagay ang sariling password (bilang admin ng organisasyon)."
-      ],
-      "Enter your own password (as trusted contact).": [
-        "Ilagay ang sariling password (bilang pinagkakatiwalaang contact)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Ilagay ang iyong recovery email address at ipapadala namin sa iyo ang iyong username o email address."
@@ -8206,9 +8186,6 @@
       "Add all organization members": [
         "Idagdag ang lahat ng miyembro ng organisasyon"
       ],
-      "Add group member": [
-        "Magdagdag ng miyembro ng pangkat"
-      ],
       "Address": [
         "Address"
       ],
@@ -8520,9 +8497,6 @@
       ],
       "Group address": [
         "Address ng pangkat"
-      ],
-      "Group members": [
-        "Mga miyembro ng pangkat"
       ],
       "Group name": [
         "Pangalan ng pangkat"
@@ -8941,12 +8915,6 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Oo, gusto kong permanenteng i-delete ang account na ito at lahat ng data nito."
-      ],
-      "Your password (admin)": [
-        "Password (admin)"
-      ],
-      "Your password (trusted contact)": [
-        "Ang password (pinagkakatiwalaang contact)"
       ],
       "ZIP code": [
         "ZIP code"
@@ -12278,6 +12246,9 @@
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Kung mawala ang mga detalye sa pag-login at kailangang i-reset ang account, **napakahalaga** na mayroon kang **paraan ng pag-recover ng account at pag-recover ng data**, kung hindi ay maaaring hindi mo ma-access ang alinman sa mga email, contact, file, o password."
       ],
+      "Invalid code": [
+        "Hindi valid na code"
+      ],
       "Review account safety": [
         "Suriin ang kaligtasan ng account"
       ],
@@ -13238,9 +13209,6 @@
       "Share the confirmation code with your administrator": [
         "I-share ang code ng kumpirmasyon sa iyong administrator"
       ],
-      "Sign in": [
-        "Mag-sign in"
-      ],
       "Sign in to your organization": [
         "Mag-sign in sa organisasyon"
       ],
@@ -13300,9 +13268,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Kakailanganin mong gumawa ng mga bagong user nang manu-mano upang maidagdag sila sa organisasyon."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Ire-redirect ka sa iyong third-party SSO provider."
       ],
       "Your SSO configuration will be deleted.": [
         "Ide-delete ang iyong configuration ng SSO."
@@ -14338,6 +14303,9 @@
       "Access control": [
         "Access control"
       ],
+      "Account and password": [
+        "Account at password"
+      ],
       "Account recovery": [
         "Pag-recover ng account"
       ],
@@ -14674,9 +14642,6 @@
       "Device": [
         "Device"
       ],
-      "Device connected!": [
-        "Nakakonekta ang device!"
-      ],
       "Device name": [
         "Pangalan ng device"
       ],
@@ -14775,9 +14740,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Ilagay ang mga detalye ng iyong ${ BRAND_NAME } Account upang sumali sa ${ app } Beta program"
-      ],
-      "Enter your password": [
-        "Ilagay ang password"
       ],
       "Error": [
         "Error"
@@ -14882,6 +14844,9 @@
       ],
       "Information exposed in breach": [
         "Impormasyong na-expose sa breach"
+      ],
+      "Integrations": [
+        "Mga integration"
       ],
       "Invalid verification code": [
         "Invalid na verification code"
@@ -15234,9 +15199,6 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "I-on ang ${ DARK_WEB_MONITORING_NAME }"
-      ],
-      "TV sign in": [
-        "Pag-sign in sa TV"
       ],
       "Two-factor authentication": [
         "Two-factor authentication"
