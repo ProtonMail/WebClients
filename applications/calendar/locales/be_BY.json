@@ -3253,6 +3253,18 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы ўжо стварылі 10 псеўданімаў. Атрымайце неабмежаваную колькасць псеўданімаў і 500 ГБ сховішча з ${ BRAND_NAME } Unlimited."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Гэта магло адбыцца з-за таго, што дазволы былі выдалены або ваш пароль зменены."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Перападключыце свой уліковы запіс, каб працягнуць атрыманне і адпраўку паведамленняў Gmail у ${ BRAND_NAME }."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Перападключыце свае ўліковыя запісы, каб працягнуць атрыманне і адпраўку паведамленняў Gmail у ${ BRAND_NAME }."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Больш не ўдаецца атрымаць доступ да ${ boldEmails }."
       ]
     },
     "description": {
@@ -4148,6 +4160,12 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Ваша падключэнне па Zoom пратэрмінавана. Перападключыцеся, каб працягнуць."
+      ],
+      "Address could not be added.": [
+        "Немагчыма дадаць адрас."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Нешта пайшло не так пры атрыманні даступных даменаў"
       ]
     },
     "error": {
@@ -6736,6 +6754,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Вы дасягнулі абмежавання па прамежках браніравання (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Enter code": [
+        "Увядзіце код"
       ]
     },
     "info": {
@@ -9130,6 +9151,9 @@
       ],
       "Passphrase copied to clipboard": [
         "Парольная фраза скапіявана ў буфер абмену"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Ваш адрас ${ BRAND_NAME } гатовы да выкарыстання"
       ]
     },
     "Notification for duplicate filenames in the current upload": {

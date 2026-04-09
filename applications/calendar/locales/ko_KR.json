@@ -1021,6 +1021,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "회원님의 데스크톱 앱 무료 체험 기간이 ${ formattedEndDate }에 종료됩니다. ${ upgradeButton }"
+      ],
+      "Reconnect to Gmail": [
+        "Gmail에 다시 연결"
       ]
     },
     "action": {
@@ -3166,6 +3169,18 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "이미 10개 별칭을 생성했습니다. ${ BRAND_NAME } Unlimited로 무제한 별칭과 500 GB 스토리지를 받아보세요."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "권한이 사라졌거나 비밀번호가 바뀌었을 때 일어날 수 있습니다."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "${ BRAND_NAME }에서 Gmail 메시지를 계속 송수신 하려면, 계정을 다시 연결해주세요."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "${ BRAND_NAME }에서 Gmail 메시지를 계속 송수신 하려면, 계정을 다시 연결해주세요."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "${ boldEmails }에 더 이상 접근할 수 없습니다."
       ]
     },
     "description": {
@@ -4025,6 +4040,12 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Zoom 연결이 만료되었습니다. 계속하려면 재연결하십시오."
+      ],
+      "Address could not be added.": [
+        "주소를 추가할 수 없습니다."
+      ],
+      "Something went wrong while fetching available domains": [
+        "사용가능한 도메인을 가져오는 동안 문제가 발생했습니다."
       ]
     },
     "error": {
@@ -6457,6 +6478,9 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "예약 슬롯 한도에 도달했습니다 (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "for ${ price }": [
+        "${ price }으로"
       ]
     },
     "info": {
@@ -8704,6 +8728,9 @@
       ],
       "Passphrase copied to clipboard": [
         "암호 문구를 클립보드에 복사했습니다"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "${ BRAND_NAME } 주소를 사용할 수 있습니다."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -12182,6 +12209,9 @@
       ],
       "Your shorter address is now ready": [
         "짧은 주소가 준비되었습니다"
+      ],
+      "Disconnected from Gmail": [
+        "Gmail 연결 해제됨"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

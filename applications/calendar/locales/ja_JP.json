@@ -1021,6 +1021,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "デスクトップアプリの無料トライアルは ${ formattedEndDate } で終了します。${ upgradeButton }"
+      ],
+      "Reconnect to Gmail": [
+        "Gmailに再接続"
       ]
     },
     "action": {
@@ -1115,6 +1118,9 @@
       ],
       "Writing assistant seats": [
         "執筆アシスタントシート"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } ライセンス"
       ]
     },
     "Alarm notification": {
@@ -3163,6 +3169,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "すでに 10 個のエリアスを作成しました。${ BRAND_NAME }Unlimitedで無制限のエイリアスと 500 GBのストレージを獲得しましょう。"
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "${ BRAND_NAME }でGmailメッセージの送受信を続けるには、アカウントを再接続してください。"
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "${ boldEmails }へのアクセスができなくなりました。"
       ]
     },
     "description": {
@@ -4013,6 +4025,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Zoomの接続が期限切れになりました。続けるには再接続してください。"
+      ],
+      "Invalid VAT number": [
+        "無効なVAT番号です"
       ]
     },
     "error": {
@@ -6421,6 +6436,12 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "予約枠の上限に達しました${ numberOfSlots }/${ MAX_BOOKING_SLOTS }"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME }シート"
+      ],
+      "for ${ price }": [
+        "${ price }で"
       ]
     },
     "info": {
@@ -7435,6 +7456,12 @@
     "meet_2025: Addon": {
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME } ライセンス"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME }シート"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats }${ MEET_APP_NAME }シート"
       ]
     },
     "meet_2025: Feature": {
@@ -7485,11 +7512,17 @@
       ],
       "Up to ${ n } participant": [
         "最大${ n }人の参加者"
+      ],
+      "Video meetings, ${ n } participant": [
+        "ビデオ会議、${ n }名まで参加可能"
       ]
     },
     "meet_2025: Info": {
       "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
         "トライアル期間中、${ MEET_SHORT_APP_NAME }のシートを${ TRIAL_MAX_MEET_SEATS }ヶまでをご利用いただけます。"
+      ],
+      "${ seats } seat included": [
+        "${ seats }シートが含まれています"
       ]
     },
     "Message": {
@@ -12125,6 +12158,9 @@
       ],
       "Your shorter address is now ready": [
         "短いアドレスの準備ができました"
+      ],
+      "Disconnected from Gmail": [
+        "Gmailから切断しました"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
