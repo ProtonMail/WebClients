@@ -4510,9 +4510,6 @@
     "Delete group prompt": {
       "Are you sure you want to delete this group?": [
         "แน่ใจหรือไม่ว่าต้องการลบกลุ่มนี้?"
-      ],
-      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
-        "โปรดทราบว่าหากลบกลุ่ม ${ displayGroupName } (ที่มีที่อยู่ ${ displayGroupAddressEmail }) จะไม่สามารถรับอีเมลโดยใช้ที่อยู่นั้นได้อีกต่อไป"
       ]
     },
     "Delinquent modal title": {
@@ -7644,11 +7641,6 @@
         "บริการ"
       ]
     },
-    "Group address title": {
-      "Group address": [
-        "ที่อยู่กลุ่ม"
-      ]
-    },
     "Group member count": {
       "${ memberCount } member": [
         "${ memberCount } สมาชิก"
@@ -9269,9 +9261,6 @@
       ],
       "End-to-end email encryption is disabled for this group. It can be enabled.": [
         "ปิดใช้งานการเข้ารหัสลับอีเมลจากต้นทางถึงปลายทางสำหรับกลุ่มนี้ แต่สามารถเปิดใช้งานได้"
-      ],
-      "End-to-end email encryption is enabled for this group.": [
-        "เปิดใช้งานการเข้ารหัสลับอีเมลจากต้นทางถึงปลายทางสำหรับกลุ่มนี้แล้ว"
       ],
       "End-to-end encrypted": [
         "การเข้ารหัสจากต้นทางถึงปลายทาง"
@@ -12112,9 +12101,6 @@
       "Add all organization members": [
         "เพิ่มสมาชิกองค์กรทั้งหมด"
       ],
-      "Add group member": [
-        "เพิ่มสมาชิกกลุ่ม"
-      ],
       "Address": [
         "ที่อยู่"
       ],
@@ -12678,9 +12664,6 @@
       ],
       "Group address": [
         "ที่อยู่กลุ่ม"
-      ],
-      "Group members": [
-        "สมาชิกกลุ่ม"
       ],
       "Group name": [
         "ชื่อกลุ่ม"
@@ -18948,17 +18931,11 @@
       "${ FREE_PASS_ALIASES } hide-my-email alias to fight spam": [
         "นามแฝง hide-my-email ${ FREE_PASS_ALIASES } รายการเพื่อต่อสู้กับสแปม"
       ],
-      "${ MAIL_APP_NAME } desktop app": [
-        "แอปเดสก์ท็อป ${ MAIL_APP_NAME }"
-      ],
       "${ maxAddresses } address": [
         "${ maxAddresses }ที่อยู่"
       ],
       "${ maxAddresses } email address": [
         "ที่อยู่อีเมลมี ${ maxAddresses }"
-      ],
-      "${ maxAddresses } extra email address": [
-        "ที่อยู่อีเมลเพิ่มเติม ${ maxAddresses } รายการ"
       ],
       "${ maxCalendars } calendar": [
         "${ maxCalendars }ปฏิทิน"
@@ -18977,9 +18954,6 @@
       ],
       "${ value } of secure storage per user": [
         "พื้นที่จัดเก็บที่ปลอดภัย ${ value } ต่อผู้ใช้"
-      ],
-      "${ value } total storage": [
-        "พื้นที่จัดเก็บรวม ${ value }"
       ],
       "${ VPN_CONNECTIONS } high-speed VPN connection": [
         "${ VPN_CONNECTIONS }การเชื่อมต่อ VPN ความเร็วสูง"
@@ -19200,9 +19174,6 @@
       "Ultra fast and private VPN": [
         "VPN ที่เร็วและเป็นส่วนตัวอย่างยิ่ง"
       ],
-      "Unlimited folders, labels, and filters": [
-        "โฟลเดอร์ ป้ายกำกับ และตัวกรองไม่จำกัด"
-      ],
       "Unlimited hide-my-email aliases": [
         "นามแฝง hide-my-email ไม่จำกัด"
       ],
@@ -19226,9 +19197,6 @@
       ],
       "Use your email, or ${ externalButton }": [
         "ใช้อีเมลของคุณ หรือ ${ externalButton }"
-      ],
-      "Use your own email domain": [
-        "ใช้โดเมนอีเมลของคุณเอง"
       ],
       "use your own email.": [
         "ใช้อีเมลของคุณเอง"
@@ -21513,9 +21481,6 @@
       "Device": [
         "อุปกรณ์"
       ],
-      "Device connected!": [
-        "อุปกรณ์เชื่อมต่อแล้ว!"
-      ],
       "Device name": [
         "ชื่ออุปกรณ์"
       ],
@@ -22421,9 +22386,6 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "เปิด ${ DARK_WEB_MONITORING_NAME }"
-      ],
-      "TV sign in": [
-        "เข้าสู่ระบบด้วยโทรทัศน์"
       ],
       "Two-factor authentication": [
         "การยืนยันตัวตนผ่านสองขั้นตอน"

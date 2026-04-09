@@ -597,6 +597,9 @@
       "Reconnect": [
         "Erneut verbinden"
       ],
+      "Reconnect to Gmail": [
+        "Mit Gmail wieder verbinden"
+      ],
       "Recover data": [
         "Daten wiederherstellen"
       ],
@@ -2507,6 +2510,15 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Vereinfache die Synchronisierung und Planung mit geteilten Kalendern."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Dies kann passieren, wenn Berechtigungen entfernt wurden oder dein Passwort geändert wurde."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Um weiterhin Gmail-Nachrichten in ${ BRAND_NAME } zu empfangen und zu senden, verbinde dein Konto erneut."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Um weiterhin Gmail-Nachrichten in ${ BRAND_NAME } zu empfangen und zu senden, Konten erneut verbinden."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Um die größtmögliche Sicherheit deines Kontos zu gewährleisten, solltest du eine Wiederherstellungsphrase festlegen."
       ],
@@ -2527,6 +2539,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Nutze diese Anleitung, damit deine Organisation unverzüglich von der branchenführenden Verschlüsselung und dem Privatsphäre-Ökosystem von ${ BRAND_NAME } profitiert."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Wir können nicht mehr auf ${ boldEmails } zugreifen."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Wir bedauern, dass du gehst. Wenn du einen Moment Zeit hast, würden wir uns sehr freuen zu erfahren, warum du kündigen möchtest. Dein Feedback hilft uns, ${ BRAND_NAME } für alle besser zu machen."
@@ -2794,6 +2809,9 @@
       ],
       "Account does not exist": [
         "Konto existiert nicht"
+      ],
+      "Address could not be added.": [
+        "E-Mail-Adresse konnte nicht hinzugefügt werden."
       ],
       "Address primary private key not found": [
         "Privater Hauptschlüssel für die Adresse nicht gefunden"
@@ -3095,6 +3113,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Einige deiner Kategorienamen überschreiten die maximale Zeichenanzahl von ${ MAIL_APP_NAME }. Bitte passe den Import an, um diese Namen zu bearbeiten."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Etwas ist schiefgegangen beim Abrufen der verfügbaren Domains"
       ],
       "Something went wrong. Please try again.": [
         "Etwas ist schief gelaufen. Bitte versuche es später erneut."
@@ -4479,6 +4500,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Sorge für vollständig private und verschlüsselte Kommunikation. Sichere dir jetzt deine kostenlose ${ BRAND_NAME }-E-Mail-Adresse."
       ],
+      "Enter code": [
+        "Code eingeben"
+      ],
       "Enter password": [
         "Passwort eingeben"
       ],
@@ -4595,6 +4619,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Wenn du die E-Mail nicht in deinem Posteingang finden kannst, überprüfe bitte deinen Spam-Ordner."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Wenn du den Zugriff auf deine Authenticator-App verloren hast, kannst du 1 der 16 Wiederherstellungscodes verwenden, die du bei der Einrichtung der Zwei-Faktor-Authentifizierung erhalten hast. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Wenn du mit dem Downgrade fortfährst, verlierst du den Zugang zu den kostenpflichtigen Funktionen von ${ MAIL_APP_NAME } und ${ VPN_APP_NAME }."
@@ -5223,9 +5250,6 @@
       ],
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Wenn du eine Verbindung zu VPN herstellst, wird deine IP-Adresse (ein eindeutiger Code, der deinem Gerät zugewiesen ist) mithilfe von Verschlüsselungstechnologie verborgen."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Beim Einrichten der Zwei-Faktor-Authentifizierung stellen wir dir Wiederherstellungscodes zur Verfügung, mit denen du dich anmelden kannst, wenn du den Zugriff auf deine Authentifizierungs-App verloren hast."
       ],
       "words": [
         "Wörter"
@@ -7670,6 +7694,9 @@
       "You stopped sharing this item": [
         "Du hast aufgehört, diesen Eintrag zu teilen."
       ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Deine ${ BRAND_NAME }-E-Mail-Adresse ist einsatzbereit"
+      ],
       "Your settings failed to be saved": [
         "Deine Einstellungen konnten nicht gespeichert werden"
       ],
@@ -9659,6 +9686,9 @@
       ],
       "Discard changes?": [
         "Änderungen verwerfen?"
+      ],
+      "Disconnected from Gmail": [
+        "Von Gmail getrennt"
       ],
       "Docs": [
         "Dokumente"

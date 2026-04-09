@@ -1861,6 +1861,9 @@
       "End-to-end encryption is active for this chat.": [
         "Bu sohbet uçtan uca şifreleniyor."
       ],
+      "Enter code": [
+        "Kodu girin"
+      ],
       "Enter the code from your authenticator app": [
         "Kimlik doğrulama uygulamanızdan alacağınız kodu yazın"
       ],
@@ -1911,6 +1914,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "E-postayı Gelen kutunuzda göremezseniz, İstenmeyen kutusuna bakmayı unutmayın."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Kimlik doğrulama uygulamanıza erişemiyorsanız iki adımlı doğrulamayı kurarken size verilen 16 yedek kurtarma kodundan birini kullanabilirsiniz. ${ learnMoreLink }"
       ],
       "If you’re using Firefox, make sure PeerConnection is enabled.": [
         "Firefox kullanıyorsanız, PeerConnection özelliğinin açık olduğundan emin olun."
@@ -2046,9 +2052,6 @@
       ],
       "Our end-to-end encrypted meetings protect privacy and empower truly free expression.": [
         "Uçtan uca şifrelenmiş görüşmelerimiz gizliliği korur ve gerçek anlamda ifade özgürlüğü sağlar."
-      ],
-      "participant": [
-        "katılımcı"
       ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Güvenli bir görüşmeye katılmak için ${ MEET_APP_NAME } bağlantınızı yapıştırın."
@@ -2235,9 +2238,6 @@
       ],
       "Week": [
         "Hafta"
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "İki adımlı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları veriyoruz."
       ],
       "Would you like to delete this event?": [
         "Bu etkinliği silmek ister misiniz?"

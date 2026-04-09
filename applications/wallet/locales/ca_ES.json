@@ -2438,9 +2438,6 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Aquest camp requereix un mínim de ${ minimumLength } caràcters."
       ],
-      "This offer is not available in your country": [
-        "Aquesta oferta no està disponible al vostre país"
-      ],
       "Try using only letters, numerals, and _.-": [
         "Intenteu utilitzar només lletres, numerals i _.-"
       ],
@@ -2867,6 +2864,9 @@
       "Enabling auto-deletion…": [
         "S'està activant la supressió automàtica…"
       ],
+      "Enter code": [
+        "Introduir el codi"
+      ],
       "Enter the code from your authenticator app": [
         "Introduïu el codi de la vostra aplicació d'autenticació."
       ],
@@ -2905,6 +2905,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si no trobeu el correu electrònic a la safata d'entrada, comproveu la vostra carpeta de correu brossa."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Si heu perdut l'accés a la vostra aplicació d'autenticació, podeu fer servir 1 dels 16 codis de recuperació de seguretat que se us van proporcionar quan vau configurar l'autenticació de doble factor. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Si passeu a un pla inferior, perdreu l'accés a les funcions de pagament de ${ MAIL_APP_NAME } i ${ VPN_APP_NAME }."
@@ -3113,9 +3116,6 @@
       ],
       "Week": [
         "Setmana"
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quan configureu l'autenticació en dos passos, et proporcionem codis de recuperació que pots utilitzar per iniciar sessió si perds l'accés a l'aplicació d'autenticació."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Voleu rebre un codi de verificació nou o utilitzar un mètode de verificació alternatiu?"
@@ -5706,9 +5706,6 @@
       ],
       "Simplify password management": [
         "Simplifiqueu la gestió de contrasenyes"
-      ],
-      "Spring Sale": [
-        "Rebaixes de primavera"
       ],
       "Summary": [
         "Resum"

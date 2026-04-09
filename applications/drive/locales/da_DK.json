@@ -3868,9 +3868,6 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Denne besked kan indeholde link-adresser, som ikke kan åbnes korrekt af din aktuelle browser."
       ],
-      "This offer is not available in your country": [
-        "Dette tilbud er ikke tilgængeligt i dit land"
-      ],
       "Try using only letters, numerals, and _.-": [
         "Prøv kun at bruge bogstaver, tal og _.-"
       ],
@@ -5903,6 +5900,18 @@
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "De fleste offentlige WiFi-netværk er sikre, men nogle mangler sikkerhed, hvilket udsætter dig for cybertrusler. En VPN krypterer din trafik og holder dig beskyttet."
       ],
+      "Move ${ dragCount } item": [
+        "Flyt ${ dragCount } element",
+        "Flyt ${ dragCount } elementer"
+      ],
+      "Move ${ fileCount } file": [
+        "Flyt ${ fileCount } fil",
+        "Flyt ${ fileCount } filer"
+      ],
+      "Move ${ folderCount } folder": [
+        "Flyt ${ folderCount } mappe",
+        "Flyt ${ folderCount } mapper"
+      ],
       "Moving files": [
         "Flytter filer"
       ],
@@ -6742,9 +6751,6 @@
       ],
       "When you remove ${ deviceName } as a synced device, all folders added to My Computers from this device will be permanently deleted from ${ DRIVE_APP_NAME }.": [
         "Når du fjerner ${ deviceName } som en synkroniseret enhed, slettes alle mapper tilføjet til Mine Computere fra denne enhed permanent fra ${ DRIVE_APP_NAME }."
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Når du indstiller to-faktor-godkendelse, giver vi dig gendannelseskoder, som du kan bruge til at logge på, hvis du mister adgangen til din godkendelsesapp."
       ],
       "who": [
         "hvem"
@@ -9552,9 +9558,6 @@
       "Public link access updated": [
         "Adgang til offentligt link opdateret"
       ],
-      "Root folder failed to be loaded": [
-        "Rodmappe kunne ikke indlæses"
-      ],
       "Selected item was not removed from your list": [
         "Det valgte element kunne ikke fjernes fra din liste",
         "De valgte elementer kunne ikke fjernes fra din liste"
@@ -9588,9 +9591,6 @@
       ],
       "Stopping the sharing of this item has failed": [
         "Det lykkedes ikke at stoppe delingen af dette element"
-      ],
-      "Subfolder failed to be loaded": [
-        "Undermappe kunne ikke indlæses"
       ],
       "The document failed to be created": [
         "Dokumentet kunne ikke oprettes"
@@ -13044,9 +13044,6 @@
       ],
       "Sort files/folders": [
         "Sorter filer/mapper"
-      ],
-      "Spring Sale": [
-        "Forårsudsalg"
       ],
       "Start a new import": [
         "Start en ny import"

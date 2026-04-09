@@ -698,6 +698,9 @@
       "Reconnect": [
         "Επανασύνδεση"
       ],
+      "Reconnect to Gmail": [
+        "Επανασύνδεση στο Gmail"
+      ],
       "Reconnect to Zoom": [
         "Επανασύνδεση στο Zoom"
       ],
@@ -3153,6 +3156,15 @@
       "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
         "Αυτό μπορεί να διαρκέσει λίγα λεπτά. Εν τω μεταξύ, μπορείτε να συνεχίσετε να χρησιμοποιείτε το ${ CALENDAR_APP_NAME } ως συνήθως."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Αυτό μπορεί να συμβεί εάν τα δικαιώματα αφαιρέθηκαν ή αν άλλαξε ο κωδικός σας."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Για να συνεχίσετε να λαμβάνετε και να στέλνετε μηνύματα Gmail στο ${ BRAND_NAME }, παρακαλούμε επανασυνδέστε τον λογαριασμό σας."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Για να συνεχίσετε να λαμβάνετε και να στέλνετε μηνύματα Gmail στο ${ BRAND_NAME }, παρακαλούμε επανασυνδέστε τους λογαριασμούς σας."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Για να διασφαλίσετε τη μέγιστη δυνατή ασφάλεια του λογαριασμού σας, ορίστε μια φράση ανάκτησης."
       ],
@@ -3170,6 +3182,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Χρησιμοποιήστε αυτόν τον οδηγό για να επωφεληθεί άμεσα ο οργανισμός σας από το κορυφαίο οικοσύστημα κρυπτογράφησης και προστασίας προσωπικών δεδομένων του ${ BRAND_NAME }."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Δεν μπορούμε πια να έχουμε πρόσβαση στα ${ boldEmails }."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Λυπόμαστε που φεύγετε. Αν έχετε λίγο χρόνο, θα εκτιμούσαμε πραγματικά να μας πείτε γιατί θέλετε να ακυρώσετε. Τα σχόλιά σας μας βοηθούν να κάνουμε το ${ BRAND_NAME } καλύτερο για όλους."
@@ -3511,6 +3526,9 @@
       ],
       "Account does not exist": [
         "Ο λογαριασμός δεν υπάρχει"
+      ],
+      "Address could not be added.": [
+        "Η διεύθυνση δεν μπόρεσε να προστεθεί."
       ],
       "Address primary private key not found": [
         "Δεν βρέθηκε πρωτεύον ιδιωτικό κλειδί διεύθυνσης"
@@ -3936,6 +3954,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Κάποια από τα ονόματα ετικετών σας υπερβαίνουν το μέγιστο όριο χαρακτήρων του ${ MAIL_APP_NAME }. Παρακαλούμε προσαρμόστε την εισαγωγή για να διορθώσετε αυτά τα ονόματα."
       ],
+      "Something went wrong while fetching available domains": [
+        "Κάτι πήγε στραβά κατά την ανάκτηση των διαθέσιμων τομέων"
+      ],
       "Something went wrong. Please try again.": [
         "Κάτι πήγε στραβά. Παρακαλούμε δοκιμάστε ξανά."
       ],
@@ -4004,9 +4025,6 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Αυτό το μήνυμα μπορεί να περιέχει κάποιους συνδέσμους URL που δεν μπορούν να ανοίξουν σωστά από το τρέχον πρόγραμμα περιήγησης."
-      ],
-      "This offer is not available in your country": [
-        "Αυτή η προσφορά δεν είναι διαθέσιμη στη χώρα σας"
       ],
       "Trusted keys are not valid for sending": [
         "Τα αξιόπιστα κλειδιά δεν είναι έγκυρα για την αποστολή"
@@ -5520,6 +5538,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Διασφαλίστε πλήρως ιδιωτική και κρυπτογραφημένη επικοινωνία. Αποκτήστε επίσης τώρα τη δωρεάν ${ BRAND_NAME } ηλεκτρονική διεύθυνση σας."
       ],
+      "Enter code": [
+        "Εισαγάγετε κωδικό"
+      ],
       "Enter the code from your authenticator app": [
         "Πληκτρολογήστε τον κωδικό από την εφαρμογή ταυτοποίησης"
       ],
@@ -5625,6 +5646,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Αν δε βρείτε το μήνυμα στα Εισερχόμενα, παρακαλούμε ελέγξτε τον φάκελο Ενοχλητικά."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Εάν χάσατε την πρόσβαση στην εφαρμογή ελέγχου ταυτότητας, μπορείτε να χρησιμοποιήσετε 1 από τους 16 εφεδρικούς κωδικούς ανάκτησης που παρέχονται κατά τη ρύθμιση της ταυτοποίησης δύο παραγόντων. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Αν προχωρήσετε με την υποβάθμιση, θα χάσετε πρόσβαση στα χαρακτηριστικά επί πληρωμή των ${ MAIL_APP_NAME } και ${ VPN_APP_NAME }."
@@ -6284,9 +6308,6 @@
       "When you connect to VPN, it uses encryption technology to hide your IP address (a unique code assigned to your device).": [
         "Όταν συνδέεστε στο VPN, χρησιμοποιεί τεχνολογία κρυπτογράφησης για να κρύψει τη διεύθυνση IP σας (ένας μοναδικός κωδικός που έχει εκχωρηθεί στη συσκευή σας)."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Όταν ρυθμίσετε τον έλεγχο ταυτοποίησης δύο παραγόντων, σας παρέχουμε κωδικούς ανάκτησης τους οποίους μπορείτε να χρησιμοποιήσετε για να συνδεθείτε σε περίπτωση που χάσετε την πρόσβαση στην εφαρμογή ταυτοποίησης σας."
-      ],
       "Where will the appointment take place?": [
         "Πού θα λάβει χώρα το ραντεβού;"
       ],
@@ -6867,9 +6888,6 @@
       "Country": [
         "Χώρα"
       ],
-      "Create shareable pages where people can book time with you.": [
-        "Δημιουργήστε κοινόχρηστες σελίδες όπου οι χρήστες μπορούν να κλείσουν ραντεβού μαζί σας."
-      ],
       "Credits": [
         "Πιστώσεις"
       ],
@@ -7161,6 +7179,9 @@
       ],
       "Secondary time zone": [
         "Δευτερεύουσα ζώνη ώρας"
+      ],
+      "Securely share parts of your schedule through a booking page you can send to anyone.": [
+        "Μοιραστείτε με ασφάλεια μέρη του προγράμματός σας μέσω μιας σελίδας κρατήσεων που μπορείτε να στείλετε σε οποιονδήποτε."
       ],
       "Show others when I'm busy": [
         "Εμφάνιση σε άλλους όταν είμαι απασχολημένος"
@@ -8843,6 +8864,9 @@
       ],
       "Passphrase copied to clipboard": [
         "Ο φράση πρόσβασης αντιγράφηκε στο πρόχειρο"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Η διεύθυνσή σας ${ BRAND_NAME } είναι έτοιμη για χρήση"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11781,6 +11805,9 @@
       "Discard changes?": [
         "Απόρριψη αλλαγών;"
       ],
+      "Disconnected from Gmail": [
+        "Αποσυνδεδεμένο από το Gmail"
+      ],
       "Does not repeat": [
         "Δεν επαναλαμβάνεται"
       ],
@@ -12171,9 +12198,6 @@
       ],
       "Simplify password management": [
         "Απλοποιήστε τη διαχείριση κωδικών πρόσβασης"
-      ],
-      "Spring Sale": [
-        "Ανοιξιάτικες Εκπτώσεις"
       ],
       "Start a new import": [
         "Ξεκινήστε μια νέα εισαγωγή"

@@ -245,9 +245,6 @@
       "Fit to window": [
         "متناسب کردن با پنجره"
       ],
-      "Forgot password?": [
-        "فراموشی رمز عبور?"
-      ],
       "Generate new recovery phrase": [
         "تولید عبارت بازیابی نو"
       ],
@@ -3377,9 +3374,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "آدرس ایمیل یا نام کاربری حساب ${ BRAND_NAME } خودرا وارد کنید."
       ],
-      "Enter your own password (as organization admin).": [
-        "گذرواژه خود را وارد نمایید (به عنوان مدیر سازمان)."
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "رایانشانی بازیابی خود را وارد کنید و ما نام کاربری‌ یا رایانشانی شما را برایتان ارسال خواهیم کرد."
       ],
@@ -4580,9 +4574,6 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "بلی، من می‌خواهم که برای همیشه این حساب و همه داده‌هایش را حذف کنم."
-      ],
-      "Your password (admin)": [
-        "گذرواژه شما (مدیر)"
       ],
       "ZIP code": [
         "کد پستی"
@@ -5880,6 +5871,11 @@
         "عملیات"
       ]
     },
+    "Safety review": {
+      "Invalid code": [
+        "کد نامعتبر است"
+      ]
+    },
     "saml: Action": {
       "Cancel": [
         "لغو"
@@ -6138,9 +6134,6 @@
       ],
       "Share the confirmation code with your administrator": [
         "اشتراک گذاری کد اعتبارسنجی با مدیر سیستم"
-      ],
-      "Sign in": [
-        "ورود به حساب"
       ],
       "Sign in to your organization": [
         "به سازمان خود وارد شوید"
@@ -6589,6 +6582,9 @@
       "4. Select a server to connect to": [
         "4. سروری برای اتصال انتخاب کنید"
       ],
+      "Account and password": [
+        "حسابر کاربری و رمزعبور"
+      ],
       "Account recovery": [
         "بازیابی حساب کاربری"
       ],
@@ -6757,9 +6753,6 @@
       "Device": [
         "دستگاه"
       ],
-      "Device connected!": [
-        "دستگاه متصل شد!"
-      ],
       "Device name": [
         "نام دستگاه"
       ],
@@ -6804,9 +6797,6 @@
       ],
       "Email": [
         "ایمیل"
-      ],
-      "Enter your password": [
-        "کلمه عبور خود را وارد نمایید"
       ],
       "Error": [
         "خطا"
@@ -7036,9 +7026,6 @@
       ],
       "Text": [
         "متن"
-      ],
-      "TV sign in": [
-        "ورود به حساب در تلویزیون"
       ],
       "Two-factor authentication": [
         "احراز هویت دو مرحله‌ای"

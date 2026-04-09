@@ -4774,9 +4774,6 @@
     "Delete group prompt": {
       "Are you sure you want to delete this group?": [
         "Er du sikker på at du vil slette denne gruppen?"
-      ],
-      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
-        "Vær oppmerksom på at hvis du sletter gruppen ${ displayGroupName } (med adresse ${ displayGroupAddressEmail }), vil du ikke lenger kunne motta e-post ved hjelp av adressen."
       ]
     },
     "Delinquent modal title": {
@@ -6899,9 +6896,6 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Noen av dine etikettnavn overskrider ${ MAIL_APP_NAME }s maksimale tegngrense.Tilpass importen for å redigere disse navnene."
       ],
-      "Something went wrong connecting your TV. Scan the QR code on your TV once more.": [
-        "Noe gikk galt da vi koblet til TV-en din. Skann QR-koden på TV-en en gang til."
-      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Noe gikk galt, ${ refresh } siden for å fortsette. Hvis du fortsatt ser denne feilmeldingen kan du kontakte vårt ${ supportTeam }."
       ],
@@ -6988,9 +6982,6 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Denne meldingen kan inneholde noen koblinger til nettadresser som ikke kan åpnes riktig av din nåværende nettleser."
-      ],
-      "This offer is not available in your country": [
-        "Dette tilbudet er ikke tilgjengelig i landet ditt"
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "For å opprette ikke-private brukerkontoer og få tilgang til kontoene deres, må du gjenopprette administratorrettighetene dine."
@@ -8239,11 +8230,6 @@
       ],
       "Services": [
         "Tjenester"
-      ]
-    },
-    "Group address title": {
-      "Group address": [
-        "Gruppeadresse"
       ]
     },
     "Group member count": {
@@ -10018,9 +10004,6 @@
       ],
       "End-to-end email encryption is disabled for this group. It can be enabled.": [
         "Ende-til-ende-kryptering av e-post er deaktivert for denne gruppen. Det kan aktiveres."
-      ],
-      "End-to-end email encryption is enabled for this group.": [
-        "Ende-til-ende-kryptering av e-post er aktivert for denne gruppen."
       ],
       "End-to-end encrypted": [
         "Ende-til-ende-kryptert"
@@ -12027,9 +12010,6 @@
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Når du fjerner en server fra en gateway, går den inn i en 10-dagers deaktiveringsperiode. Denne serveren kan legges til en ny gateway, men landet kan ikke endres."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Når du setter opp tofaktorautentisering, gir vi deg gjenopprettingskoder som du kan bruke til å logge på hvis du mister tilgangen til autentiseringsappen din."
-      ],
       "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
         "Når du er klar til å aktivere adressen, skann QR-koden eller bruk koblingen i verdikupongen."
       ],
@@ -13118,9 +13098,6 @@
       "Add extra services": [
         "Legg til tilleggstjenester"
       ],
-      "Add group member": [
-        "Legg til gruppemedlem"
-      ],
       "Additional comments": [
         "Ytterligere kommentarer"
       ],
@@ -13715,9 +13692,6 @@
       "Group address": [
         "Gruppeadresse"
       ],
-      "Group members": [
-        "Gruppemedlemmer"
-      ],
       "Group name": [
         "Gruppenavn"
       ],
@@ -13750,9 +13724,6 @@
       ],
       "Import interval": [
         "Importintervall"
-      ],
-      "Import recent mails": [
-        "Importer nylige e-poster"
       ],
       "Import to email address": [
         "Importer til e-postadresse"
@@ -18234,9 +18205,6 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "Fornyes til ${ renewPriceStr }, avbryt når som helst."
       ],
-      "Sorry, this offer is not available for your account.": [
-        "Beklager, dette tilbudet er ikke tilgjengelig for kontoen din."
-      ],
       "Sorry, this offer is not available with your current plan.": [
         "Beklager, dette tilbudet er ikke tilgjengelig med din gjeldende plan."
       ],
@@ -20463,9 +20431,6 @@
         "${ FREE_PASS_ALIASES } hide-my-email-alias for å bekjempe søppelpost",
         "${ FREE_PASS_ALIASES } hide-my-email-aliaser for å bekjempe søppelpost"
       ],
-      "${ MAIL_APP_NAME } desktop app": [
-        "${ MAIL_APP_NAME }-skrivebordsapp"
-      ],
       "${ maxAddresses } address": [
         "${ maxAddresses } adresse",
         "${ maxAddresses } adresser"
@@ -20473,10 +20438,6 @@
       "${ maxAddresses } email address": [
         "${ maxAddresses } e-postadresse",
         "${ maxAddresses } e-postadresser"
-      ],
-      "${ maxAddresses } extra email address": [
-        "${ maxAddresses } ekstra e-postadresse",
-        "${ maxAddresses } ekstra e-postadresser"
       ],
       "${ maxAddresses } extra email address for you": [
         "${ maxAddresses } ekstra e-postadresse til deg",
@@ -20508,9 +20469,6 @@
       ],
       "${ value } total encrypted storage": [
         "${ value } totalt kryptert lagringsplass"
-      ],
-      "${ value } total storage": [
-        "${ value } total lagringsplass"
       ],
       "${ VPN_CONNECTIONS } high-speed VPN connection": [
         "${ VPN_CONNECTIONS } høyhastighets VPN-tilkobling",
@@ -20760,9 +20718,6 @@
       "Ultra fast and private VPN": [
         "Superrask og privat VPN"
       ],
-      "Unlimited folders, labels, and filters": [
-        "Ubegrenset antall mapper, etiketter og filtre"
-      ],
       "Unlimited hide-my-email aliases": [
         "Ubegrenset antall hide-my-email-aliaser"
       ],
@@ -20786,9 +20741,6 @@
       ],
       "Use your email, or ${ externalButton }": [
         "Bruk e-posten din, eller ${ externalButton }"
-      ],
-      "Use your own email domain": [
-        "Bruk ditt eget e-postdomene"
       ],
       "use your own email.": [
         "bruk din egen e-post."
@@ -23237,9 +23189,6 @@
       "Device": [
         "Enhet"
       ],
-      "Device connected!": [
-        "Enhet tilkoblet!"
-      ],
       "Device name": [
         "Enhetsnavn"
       ],
@@ -24103,9 +24052,6 @@
       "Special Offer": [
         "Spesialtilbud"
       ],
-      "Spring Sale": [
-        "Vårsalg"
-      ],
       "Start a new import": [
         "Start en ny import"
       ],
@@ -24190,9 +24136,6 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Slå på ${ DARK_WEB_MONITORING_NAME }"
-      ],
-      "TV sign in": [
-        "TV-innlogging"
       ],
       "Two-factor authentication": [
         "Tofaktorautentisering"
