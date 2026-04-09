@@ -19,7 +19,8 @@ export const VideoConferenceToggle = () => {
     const [organization, loadingOrganization] = useOrganization();
     const { state: zoomState } = useToggle(organization?.Settings.VideoConferencingEnabled);
 
-    const isZoomEnabled = useFlag('ZoomIntegration');
+    const isZoomIntegrationDisabled = useFlag('ZoomIntegrationDisabled');
+    const isZoomEnabled = !isZoomIntegrationDisabled;
 
     const handleZoomToggle = async (checked: boolean) => {
         await dispatch(toggleOrganizationSetting({ settingName: 'VideoConferencingEnabled', checked }));
