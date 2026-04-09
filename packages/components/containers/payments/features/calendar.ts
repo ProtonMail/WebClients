@@ -112,6 +112,24 @@ export const getCalendarAppFeature = (options?: { family?: boolean; duo?: boolea
     };
 };
 
+export const getCalendarAppointmentSchedulingText = (n?: number) => {
+    return !!n
+        ? c('new_plans: feature').ngettext(
+              msgid`Appointment scheduling with ${n} booking page`,
+              `Appointment scheduling with ${n} booking pages`,
+              n
+          )
+        : c('new_plans: feature').t`Appointment scheduling`;
+};
+
+export const getCalendarAppointmentScheduling = (included: boolean, n?: number): PlanCardFeatureDefinition => {
+    return {
+        text: getCalendarAppointmentSchedulingText(n),
+        included: included,
+        icon: 'calendar-grid',
+    };
+};
+
 export const getCalendarFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
     return [
         {
@@ -297,6 +315,38 @@ export const getCalendarFeatures = (plansMap: PlansMap): PlanCardFeature[] => {
                 [PLANS.MEET]: null,
                 [PLANS.VPN_PASS_BUNDLE_BUSINESS]: null,
                 [PLANS.VISIONARY]: getTeamAvailability(),
+            },
+        },
+        {
+            name: 'scheduling',
+            plans: {
+                [PLANS.FREE]: getCalendarAppointmentScheduling(false),
+                [PLANS.BUNDLE]: getCalendarAppointmentScheduling(true, 1),
+                [PLANS.MAIL]: getCalendarAppointmentScheduling(true, 1),
+                [PLANS.VPN2024]: getCalendarAppointmentScheduling(false),
+                [PLANS.DRIVE]: getCalendarAppointmentScheduling(false),
+                [PLANS.DRIVE_1TB]: getCalendarAppointmentScheduling(false),
+                [PLANS.DRIVE_BUSINESS]: getCalendarAppointmentScheduling(false),
+                [PLANS.PASS]: getCalendarAppointmentScheduling(false),
+                [PLANS.PASS_LIFETIME]: getCalendarAppointmentScheduling(false),
+                [PLANS.PASS_FAMILY]: getCalendarAppointmentScheduling(false),
+                [PLANS.FAMILY]: getCalendarAppointmentScheduling(true, 1),
+                [PLANS.DUO]: getCalendarAppointmentScheduling(true, 1),
+                [PLANS.MAIL_PRO]: getCalendarAppointmentScheduling(true, 1),
+                [PLANS.MAIL_BUSINESS]: getCalendarAppointmentScheduling(true, 25),
+                [PLANS.BUNDLE_PRO]: getCalendarAppointmentScheduling(true, 25),
+                [PLANS.BUNDLE_PRO_2024]: getCalendarAppointmentScheduling(true, 25),
+                [PLANS.BUNDLE_BIZ_2025]: getCalendarAppointmentScheduling(true, 25),
+                [PLANS.PASS_PRO]: getCalendarAppointmentScheduling(false),
+                [PLANS.PASS_BUSINESS]: getCalendarAppointmentScheduling(false),
+                [PLANS.VPN_PRO]: getCalendarAppointmentScheduling(false),
+                [PLANS.VPN_BUSINESS]: getCalendarAppointmentScheduling(false),
+                [PLANS.LUMO]: getCalendarAppointmentScheduling(false),
+                [PLANS.LUMO_BUSINESS]: getCalendarAppointmentScheduling(false),
+                [PLANS.MEET_BUSINESS]: getCalendarAppointmentScheduling(true, 25),
+                [PLANS.MEET]: getCalendarAppointmentScheduling(true, 25),
+                [PLANS.VISIONARY]: getCalendarAppointmentScheduling(true, 25),
+                [PLANS.VPN_PASS_BUNDLE_BUSINESS]: getCalendarAppointmentScheduling(false),
             },
         },
     ];
