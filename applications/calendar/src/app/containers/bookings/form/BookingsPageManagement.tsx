@@ -8,7 +8,6 @@ import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { InputField } from '@proton/components/components/v2/field/InputField';
 import TextArea from '@proton/components/components/v2/input/TextArea';
-import useAllowedProducts from '@proton/components/containers/organization/accessControl/useAllowedProducts';
 import { IcCalendarDay } from '@proton/icons/icons/IcCalendarDay';
 import { IcCalendarLock } from '@proton/icons/icons/IcCalendarLock';
 import { IcClock } from '@proton/icons/icons/IcClock';
@@ -16,7 +15,7 @@ import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import { IcFileLines } from '@proton/icons/icons/IcFileLines';
 import { IcMapPin } from '@proton/icons/icons/IcMapPin';
 import { IcTextTitle } from '@proton/icons/icons/IcTextTitle';
-import { Product } from '@proton/shared/lib/ProductEnum';
+import { useHasMeetProductAccess } from '@proton/meet/hooks/useHasMeetProductAccess';
 import { MAX_CHARS_API } from '@proton/shared/lib/calendar/constants';
 import { getCalendarEventDefaultDuration } from '@proton/shared/lib/calendar/eventDefaults';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
@@ -51,9 +50,9 @@ const getBookingBufferTimeOptions = () => {
 export const Form = () => {
     const isMeetVideoConferenceEnabled = useFlag('NewScheduleOption');
     const isNoticeModeEnabled = useFlag('CalendarBookingsNoticeMode');
-    const [allowedProducts] = useAllowedProducts();
+    const hasMeetProductAccess = useHasMeetProductAccess();
 
-    const canUseMeetLocation = isMeetVideoConferenceEnabled && allowedProducts.has(Product.Meet);
+    const canUseMeetLocation = isMeetVideoConferenceEnabled && hasMeetProductAccess;
 
     const scheduleOptions = getCalendarEventDefaultDuration({ shortLabels: true });
     const locationOptions = getBookingLocationOption(canUseMeetLocation);
