@@ -449,9 +449,6 @@
       "Fit to window": [
         "Adatta alla finestra"
       ],
-      "Forgot password?": [
-        "Hai dimenticato la password?"
-      ],
       "Forgot recovery method?": [
         "Hai dimenticato il metodo di recupero?"
       ],
@@ -3233,9 +3230,6 @@
     "Delete group prompt": {
       "Are you sure you want to delete this group?": [
         "Sei sicuro di voler eliminare questo gruppo?"
-      ],
-      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
-        "Tieni presente che se elimini il gruppo ${ displayGroupName } (con indirizzo ${ displayGroupAddressEmail }), non sarai più in grado di ricevere email utilizzando il suo indirizzo."
       ]
     },
     "Delinquent modal title": {
@@ -4231,9 +4225,6 @@
       "This label name is not available. Please choose a different name.": [
         "Questo nome dell'etichetta non è disponibile. Scegli un nome diverso."
       ],
-      "This offer is not available in your country": [
-        "Questa offerta non é disponibile nel tuo Paese"
-      ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Per creare degli account utente non privati e accedere ai loro account, dovrai ripristinare i tuoi privilegi di amministratore."
       ],
@@ -5158,11 +5149,6 @@
       ],
       "Services": [
         "Servizi"
-      ]
-    },
-    "Group address title": {
-      "Group address": [
-        "Gruppo di indirizzi"
       ]
     },
     "Group member count": {
@@ -6407,9 +6393,6 @@
       "End-to-end email encryption is disabled for this group. It can be enabled.": [
         "La crittografia email end-to-end è disabilitata per questo gruppo. Può essere abilitata."
       ],
-      "End-to-end email encryption is enabled for this group.": [
-        "Per questo gruppo è abilitata la crittografia email end-to-end."
-      ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Endpoint URL ricevuto dal tuo fornitore di identità (es. https://idp.esempio.it/sso/saml)."
       ],
@@ -6451,12 +6434,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Inserisci l'indirizzo email o il nome utente del tuo account ${ BRAND_NAME }."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Inserisci la tua password (come amministratore dell'organizzazione)."
-      ],
-      "Enter your own password (as trusted contact).": [
-        "Inserisci la tua password (come contatto attendibile)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Inserisci il tuo indirizzo email di recupero e ti invieremo il tuo nome utente o indirizzo email."
@@ -8335,9 +8312,6 @@
       "Add all organization members": [
         "Aggiungi tutti i membri dell'organizzazione"
       ],
-      "Add group member": [
-        "Aggiungi un membro del gruppo"
-      ],
       "Address": [
         "Indirizzo"
       ],
@@ -8649,9 +8623,6 @@
       ],
       "Group address": [
         "Indirizzo di gruppo"
-      ],
-      "Group members": [
-        "Membri del gruppo"
       ],
       "Group name": [
         "Nome del gruppo"
@@ -9073,12 +9044,6 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Sì, voglio eliminare definitivamente questo account e tutti i suoi dati."
-      ],
-      "Your password (admin)": [
-        "La tua password (admin)"
-      ],
-      "Your password (trusted contact)": [
-        "La tua password (contatto attendibile)"
       ],
       "ZIP code": [
         "Codice postale"
@@ -12571,6 +12536,9 @@
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Se perdi i tuoi dati di accesso e devi reimpostare il tuo account, **è fondamentale** disporre sia di un **metodo di recupero dell'account che di recupero dei dati**, altrimenti potresti non essere in grado di accedere a nessuna delle tue email, contatti, file o password."
       ],
+      "Invalid code": [
+        "Codice non valido"
+      ],
       "Review account safety": [
         "Controlla la sicurezza dell'account"
       ],
@@ -13582,9 +13550,6 @@
       "Share the confirmation code with your administrator": [
         "Condividi il codice di conferma con il tuo amministratore"
       ],
-      "Sign in": [
-        "Accedi"
-      ],
       "Sign in to your organization": [
         "Accedi alla tua organizzazione"
       ],
@@ -13644,9 +13609,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Dovrai creare manualmente nuovi utenti per aggiungerli alla tua organizzazione."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Verrai reindirizzato al tuo provider SSO di terze parti."
       ],
       "Your SSO configuration will be deleted.": [
         "La tua configurazione SSO verrà eliminata."
@@ -14700,6 +14662,9 @@
       "Access control": [
         "Controllo accesso"
       ],
+      "Account and password": [
+        "Account e password"
+      ],
       "Account recovery": [
         "Recupero dell'account"
       ],
@@ -15042,9 +15007,6 @@
       "Device": [
         "Dispositivo"
       ],
-      "Device connected!": [
-        "Dispositivo connesso!"
-      ],
       "Device name": [
         "Nome dispositivo"
       ],
@@ -15143,9 +15105,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Inserisci i dettagli del tuo account ${ BRAND_NAME } per partecipare al programma beta di ${ app }"
-      ],
-      "Enter your password": [
-        "Inserisci la tua password"
       ],
       "Error": [
         "Errore"
@@ -15250,6 +15209,9 @@
       ],
       "Information exposed in breach": [
         "Informazioni esposte in caso di violazioni"
+      ],
+      "Integrations": [
+        "Integrazioni"
       ],
       "Invalid verification code": [
         "Codice di verifica non valido"
@@ -15605,9 +15567,6 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Attiva ${ DARK_WEB_MONITORING_NAME }"
-      ],
-      "TV sign in": [
-        "Accesso TV"
       ],
       "Two-factor authentication": [
         "Autenticazione a due fattori"

@@ -1493,7 +1493,8 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Vertrouwde sleutel"
+        "Sleutel vertrouwen",
+        "Sleutels vertrouwen"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -1760,8 +1761,8 @@
         "${ price } per gebruiker"
       ],
       "${ seats } ${ LUMO_APP_NAME } AI license": [
-        "${ seats } ${ LUMO_APP_NAME } AI licentie",
-        "${ seats } ${ LUMO_APP_NAME } AI licenties"
+        "${ seats } ${ LUMO_APP_NAME } AI-licentie",
+        "${ seats } ${ LUMO_APP_NAME } AI-licenties"
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } ${ LUMO_APP_NAME } plaats",
@@ -2080,7 +2081,7 @@
         "3 TB opslagruimte"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Toegang tot 15.000+ servers in 120+ landen"
+        "Toegang tot 15 000+ servers in 120+ landen"
       ],
       "Access advanced AI models": [
         "Toegang tot geavanceerde AI-modellen"
@@ -5070,9 +5071,6 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Dit bericht kan koppelingen bevatten die niet op de juiste wijze geopend kunnen worden door uw huidige browser."
       ],
-      "This offer is not available in your country": [
-        "Dit aanbod is niet beschikbaar in uw land"
-      ],
       "Trusted keys are not valid for sending": [
         "Vertrouwde sleutels zijn niet geldig om mee te verzenden"
       ],
@@ -6509,7 +6507,7 @@
         "${ MEET_APP_NAME } is een end-to-end versleutelde videoconferentie oplossing. Voeg het toe aan uw abonnement om veilige vergaderingen te hosten."
       ],
       "${ MEET_APP_NAME } seats": [
-        "${ MEET_APP_NAME } licenties"
+        "${ MEET_APP_NAME }-licenties"
       ],
       "${ n } unread conversation": [
         "${ n } ongelezen gesprek",
@@ -8587,9 +8585,6 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Toen u vertrouwde sleutels inschakelde voor ${ senderName }, zijn de openbare sleutels meteen toegevoegd aan deze contactpersoon."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Wanneer u tweestapsverificatie instelt, bieden we herstelcodes die u kunt gebruiken om u aan te melden als u de toegang tot uw authenticatie app verliest."
-      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Wanneer u zich aanmeldt voor een nieuwsbrief, gebruik dan een alias in plaats van uw e-mailadres. Uw identiteit blijft verborgen, en u kunt de alias op elk moment uitschakelen."
       ],
@@ -9546,9 +9541,6 @@
       ],
       "Import interval": [
         "Interval importeren"
-      ],
-      "Import recent mails": [
-        "Importeer recente e-mails"
       ],
       "Import to email address": [
         "Importeren naar e-mailadres"
@@ -15725,9 +15717,6 @@
       ],
       "Sort messages": [
         "Berichten sorteren"
-      ],
-      "Spring Sale": [
-        "Lenteverkoop"
       ],
       "Start a new import": [
         "Start een nieuwe import"

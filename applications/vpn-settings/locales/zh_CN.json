@@ -467,9 +467,6 @@
       "Fit to window": [
         "适应窗口大小"
       ],
-      "Forgot password?": [
-        "忘记密码？"
-      ],
       "Forgot recovery method?": [
         "忘记恢复方法？"
       ],
@@ -3360,9 +3357,6 @@
     "Delete group prompt": {
       "Are you sure you want to delete this group?": [
         "确定要删除这个群组吗？"
-      ],
-      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
-        "请注意，如果您删除群组 ${ displayGroupName }（含地址 ${ displayGroupAddressEmail }），您将无法再收到使用其地址的电子邮件。"
       ]
     },
     "Delinquent modal title": {
@@ -4383,9 +4377,6 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "部分标签名称超过了 ${ MAIL_APP_NAME } 的字数限制，请在导入内容中予以更改。"
       ],
-      "Something went wrong connecting your TV. Scan the QR code on your TV once more.": [
-        "连接电视时出现问题，请再次扫描电视上的二维码。"
-      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "发生错误，请${ refresh }后重试。若仍出现此错误，请联系我们的${ supportTeam }。"
       ],
@@ -4457,9 +4448,6 @@
       ],
       "This label name is not available. Please choose a different name.": [
         "标签名称不可用，请重新填写。"
-      ],
-      "This offer is not available in your country": [
-        "此优惠在您所在的国家/地区不可用"
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "如需创建非私密用户账户并访问其账户，您需要恢复管理员权限。"
@@ -5381,11 +5369,6 @@
       ],
       "Services": [
         "服务"
-      ]
-    },
-    "Group address title": {
-      "Group address": [
-        "群组地址"
       ]
     },
     "Group member count": {
@@ -6554,6 +6537,9 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "降级将导致与 ${ VPN_APP_NAME } 服务器的所有连接中断。"
       ],
+      "Download ${ VPN_APP_NAME }": [
+        "下载 ${ VPN_APP_NAME }"
+      ],
       "Download current logs": [
         "下载当前日志"
       ],
@@ -6632,9 +6618,6 @@
       "End-to-end email encryption is disabled for this group. It can be enabled.": [
         "此组已禁用端到端电子邮件加密。它仍可以启用。"
       ],
-      "End-to-end email encryption is enabled for this group.": [
-        "此组已启用端到端电子邮件加密。"
-      ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "从身份供应商（如 https://idp.example.com/sso/saml）收到的终端 URL。"
       ],
@@ -6679,12 +6662,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "请输入您的 ${ BRAND_NAME } 账户邮箱地址或用户名。"
-      ],
-      "Enter your own password (as organization admin).": [
-        "请输入您自己的密码（作为组织管理员）。"
-      ],
-      "Enter your own password (as trusted contact).": [
-        "输入您自己的密码（作为可信联系人）"
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "输入您的密保邮箱，我们将发邮件告知您的用户名或邮箱地址。"
@@ -7367,6 +7344,9 @@
       "Professional": [
         "专业版"
       ],
+      "Protect this device too?": [
+        "同时保护此设备？"
+      ],
       "Protected by Swiss privacy laws": [
         "由瑞士隐私法律保护"
       ],
@@ -7543,6 +7523,9 @@
       ],
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "登录 ${ MAIL_APP_NAME } 以激活您的地址"
+      ],
+      "Sign-in complete": [
+        "登录完成"
       ],
       "Signed up": [
         "已注册"
@@ -8108,9 +8091,6 @@
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "当您从网关移除服务器时，该服务器将进入为期 10 天的停用期。此服务器可以添加到新网关，但其所在国家/地区无法更改。"
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "当您设置双因素身份验证时，我们会提供恢复码。如果您无法使用验证器，可以使用这些恢复码登录。"
-      ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "账户续费将先扣除余额，再通过上述支付方式扣费。"
       ],
@@ -8311,6 +8291,9 @@
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "此后每 ${ renewCycle } 个月按 ${ renewAmountStr } 收费。您可以随时取消。"
+      ],
+      "You're now signed in on your TV.": [
+        "您已在电视上登录。"
       ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "您已经在 ${ MAX_SYNC_PAID_USER } 个 Gmail 地址上启用了转发功能。若要添加另一个，请先禁用其中一个。"
@@ -8639,9 +8622,6 @@
       "Add all organization members": [
         "添加所有组织成员"
       ],
-      "Add group member": [
-        "添加群组成员"
-      ],
       "Additional comments": [
         "附加备注"
       ],
@@ -8963,9 +8943,6 @@
       "Group address": [
         "组地址"
       ],
-      "Group members": [
-        "群组成员"
-      ],
       "Group name": [
         "群组名称"
       ],
@@ -8986,9 +8963,6 @@
       ],
       "Import interval": [
         "导入间隔"
-      ],
-      "Import recent mails": [
-        "导入最近的邮件"
       ],
       "Import to email address": [
         "导入到邮箱地址"
@@ -9394,12 +9368,6 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "我确定要永久删除此账户及其所有数据。"
-      ],
-      "Your password (admin)": [
-        "您的密码（管理员）"
-      ],
-      "Your password (trusted contact)": [
-        "您的密码（可信联系人）"
       ],
       "ZIP code": [
         "邮政编码"
@@ -12898,6 +12866,9 @@
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "如果您丢失了登录信息并需要重置账户，**重要的是**您必须同时使用**账户恢复和数据恢复方法**，否则您可能无法访问任何电子邮件、联系人、文件或密码。"
       ],
+      "Invalid code": [
+        "无效的验证码"
+      ],
       "Review account safety": [
         "审查账户安全"
       ],
@@ -13901,9 +13872,6 @@
       "Share the confirmation code with your administrator": [
         "与您的管理员分享该验证码"
       ],
-      "Sign in": [
-        "登录"
-      ],
       "Sign in to your organization": [
         "登录到您的组织"
       ],
@@ -13963,9 +13931,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "您必须手动创建新用户，并将其添加到组织中。"
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "您将被重定向到您的第三方 SSO 提供商。"
       ],
       "Your SSO configuration will be deleted.": [
         "您的 SSO 配置将被删除。"
@@ -15008,6 +14973,9 @@
       "Account": [
         "账户"
       ],
+      "Account and password": [
+        "账户与密码"
+      ],
       "Account monitor": [
         "账户监测"
       ],
@@ -15350,9 +15318,6 @@
       "Device": [
         "台设备"
       ],
-      "Device connected!": [
-        "设备连上了！"
-      ],
       "Device name": [
         "设备名称"
       ],
@@ -15460,9 +15425,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "输入您的 ${ BRAND_NAME } 账户详情以加入 ${ app } Beta 计划"
-      ],
-      "Enter your password": [
-        "请输入您的密码"
       ],
       "Error": [
         "失败"
@@ -15574,6 +15536,9 @@
       ],
       "Information exposed in breach": [
         "数据外泄事件中泄露的信息"
+      ],
+      "Integrations": [
+        "集成"
       ],
       "Invalid verification code": [
         "验证码无效"
@@ -15881,9 +15846,6 @@
       "Spam, block, and allow lists": [
         "垃圾邮件与黑白名单"
       ],
-      "Spring Sale": [
-        "春季特惠"
-      ],
       "Start a new import": [
         "开始导入"
       ],
@@ -15943,9 +15905,6 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "启用 ${ DARK_WEB_MONITORING_NAME }"
-      ],
-      "TV sign in": [
-        "使用电视登录"
       ],
       "Two-factor authentication": [
         "双因素身份验证"

@@ -2514,6 +2514,9 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Ceci refusera l'appareil **${ name }** qui a tenté de se connecter à votre compte ${ BRAND_NAME } le **${ date }**."
       ],
+      "To configure shortcuts, go to about:addons in Firefox and select \"Manage Extension Shortcuts\"": [
+        "Pour configurer les raccourcis, allez sur « about:addons » dans Firefox et sélectionnez « Gérer les raccourcis d'extension »."
+      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Pour continuer à recevoir des e-mails, transférez ces alias vers une autre messagerie :"
       ],
@@ -5090,6 +5093,9 @@
       ],
       "No shared items matching": [
         "Aucune correspondance pour les éléments partagés"
+      ],
+      "Offline": [
+        "Hors ligne"
       ],
       "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
         "Une fois synchronisés, la suppression d'alias dans ${ PASS_SHORT_APP_NAME } les supprimera également dans SimpleLogin."

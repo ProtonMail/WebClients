@@ -426,9 +426,6 @@
       "Fit to window": [
         "Ajustar na janela"
       ],
-      "Forgot password?": [
-        "Palavra-passe esquecida?"
-      ],
       "Forgot recovery method?": [
         "Esqueceu-se do método de recuperação?"
       ],
@@ -2796,9 +2793,6 @@
     "Delete group prompt": {
       "Are you sure you want to delete this group?": [
         "Tem a certeza de que deseja eliminar este grupo?"
-      ],
-      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
-        "Se eliminar o grupo ${ displayGroupName } (com o endereço ${ displayGroupAddressEmail }), não poderá receber e-mails com o seu endereço."
       ]
     },
     "Delinquent modal title": {
@@ -4564,11 +4558,6 @@
         "Serviços"
       ]
     },
-    "Group address title": {
-      "Group address": [
-        "Endereço do grupo"
-      ]
-    },
     "Group member count": {
       "${ memberCount } member": [
         "${ memberCount } membro",
@@ -5704,9 +5693,6 @@
       "End-to-end email encryption is disabled for this group. It can be enabled.": [
         "A encriptação de ponta a ponta para e-mails está desativada para este grupo, mas pode ser ativada."
       ],
-      "End-to-end email encryption is enabled for this group.": [
-        "A encriptação de e-mail de ponta a ponta está ativada para este grupo."
-      ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "URL do endpoint recebido do seu fornecedor de identidade (por exemplo, https://idp.exemplo.pt/sso/saml)."
       ],
@@ -5745,9 +5731,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Introduza o seu endereço de e-mail ou nome de utilizador da conta ${ BRAND_NAME }."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Introduza a sua palavra-passe (como administrador da organização)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Introduza o seu e-mail de recuperação e receberá o seu nome de utilizador ou endereço de e-mail."
@@ -7468,9 +7451,6 @@
       "Add all organization members": [
         "Adicionar todos os membros da organização"
       ],
-      "Add group member": [
-        "Adicionar um membro ao grupo"
-      ],
       "Address": [
         "Endereço"
       ],
@@ -7767,9 +7747,6 @@
       ],
       "Group address": [
         "Endereço do grupo"
-      ],
-      "Group members": [
-        "Membros do grupo"
       ],
       "Group name": [
         "Nome do grupo"
@@ -8170,9 +8147,6 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Sim, quero eliminar permanentemente esta conta e todos os seus dados."
-      ],
-      "Your password (admin)": [
-        "A sua palavra-passe (admin)"
       ],
       "ZIP code": [
         "Código postal"
@@ -11157,6 +11131,9 @@
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Se perder os seus dados de acesso e precisar de redefinir a sua conta, **é imperativo** que tenha tanto **um método de recuperação da conta como de recuperação de dados configurados**. Caso contrário, poderá não conseguir aceder aos seus e-mails, contactos, ficheiros ou palavras-passe."
       ],
+      "Invalid code": [
+        "O código é inválido."
+      ],
       "Review account safety": [
         "Verifique a segurança da sua conta"
       ],
@@ -12154,9 +12131,6 @@
       "Share the confirmation code with your administrator": [
         "Partilhe o código de confirmação com o seu administrador"
       ],
-      "Sign in": [
-        "Iniciar sessão"
-      ],
       "Sign in to your organization": [
         "Iniciar sessão na sua organização"
       ],
@@ -12213,9 +12187,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Precisará criar utilizadores manualmente para adicioná-los à sua organização."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Será redirecionado para o seu fornecedor de SSO de terceiros."
       ],
       "Your SSO configuration will be deleted.": [
         "A sua configuração SSO será eliminada."
@@ -13233,6 +13204,9 @@
       "Access control": [
         "Controlo de acesso"
       ],
+      "Account and password": [
+        "Conta e palavra-passe"
+      ],
       "Account recovery": [
         "Recuperação de conta"
       ],
@@ -13551,9 +13525,6 @@
       "Device": [
         "Dispositivo"
       ],
-      "Device connected!": [
-        "Dispositivo ligado!"
-      ],
       "Device name": [
         "Nome do dispositivo"
       ],
@@ -13643,9 +13614,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Introduza os seus detalhes da Conta ${ BRAND_NAME } para aderir ao programa Beta ${ app }"
-      ],
-      "Enter your password": [
-        "Introduza a sua palavra-passe"
       ],
       "Error": [
         "Erro"
@@ -13741,6 +13709,9 @@
       ],
       "Information exposed in breach": [
         "Informação exposta na violação"
+      ],
+      "Integrations": [
+        "Integrações"
       ],
       "Invalid verification code": [
         "O código de verificação não é válido."
@@ -14063,9 +14034,6 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Ativar o ${ DARK_WEB_MONITORING_NAME }"
-      ],
-      "TV sign in": [
-        "Iniciar sessão na TV"
       ],
       "Two-factor authentication": [
         "Autenticação de dois fatores"

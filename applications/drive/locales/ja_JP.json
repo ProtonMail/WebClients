@@ -804,6 +804,9 @@
       "Reconnect": [
         "再接続"
       ],
+      "Reconnect to Gmail": [
+        "Gmailに再接続"
+      ],
       "Recover data": [
         "データを復元する"
       ],
@@ -1308,6 +1311,9 @@
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ LUMO_APP_NAME } の ${ seats } シート"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } ライセンス"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } ライティングアシスタントのシート"
@@ -2992,6 +2998,9 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "共有カレンダーで同期やスケジューリングを簡単に。"
       ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "${ BRAND_NAME }でGmailメッセージの送受信を続けるには、アカウントを再接続してください。"
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "アカウントを可能な限り高度に保護するためには、回復用フレーズを設定してください。"
       ],
@@ -3012,6 +3021,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "このガイドを利用して、あなたの組織が${ BRAND_NAME }の業界をリードする暗号化をプライバシーのエコシステムから速やかに恩恵を受けられるようにしてください。"
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "${ boldEmails }へのアクセスができなくなりました。"
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "ご利用をおやめになるのは残念です。よろしければ、取消の理由をお聞かせいただけますでしょうか。お客様のご感想は、${ BRAND_NAME } を改善するのに役立ちます。"
@@ -3557,6 +3569,9 @@
       "Invalid public key file": [
         "無効な公開鍵ファイル"
       ],
+      "Invalid VAT number": [
+        "無効なVAT番号です"
+      ],
       "Invalid verification code": [
         "無効な検証コード"
       ],
@@ -3817,9 +3832,6 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "このメッセージは、現在お使いのブラウザでは適切に開くことができないリンクのURLを含んでいる可能性があります。"
-      ],
-      "This offer is not available in your country": [
-        "このオファーはお住まいの国ではご利用いただけません"
       ],
       "Try using only letters, numerals, and _.-": [
         "文字、数字、_.- のみを使用してみてください。"
@@ -4881,6 +4893,9 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } には ${ BRAND_NAME } Scribe 執筆アシスタントが搭載されています"
       ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME }シート"
+      ],
       "${ normalizedProgress }% completed": [
         "${ normalizedProgress }% 完了"
       ],
@@ -5498,6 +5513,9 @@
       ],
       "Folders you sync from your computer will appear here.": [
         "コンピューターと同期されたフォルダーがここに表示されます。"
+      ],
+      "for ${ price }": [
+        "${ price }で"
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "最適な結果を得るには、ストリーミングやメモリ消費の大きな処理を避けるか、より小さな処理単位にアップロードを分割してください。"
@@ -6584,9 +6602,6 @@
       ],
       "When you remove ${ deviceName } as a synced device, all folders added to My Computers from this device will be permanently deleted from ${ DRIVE_APP_NAME }.": [
         "${ deviceName } を同期されたデバイスとして削除すると、このデバイスから自分の端末に追加されたすべてのフォルダーは、${ DRIVE_APP_NAME } から完全に削除されます。"
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "2要素認証を設定する際、認証アプリにアクセスできなくなった場合に使用できる回復用コードを提供します。"
       ],
       "who": [
         "誰が"
@@ -7847,6 +7862,12 @@
     "meet_2025: Addon": {
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME } ライセンス"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME }シート"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats }${ MEET_APP_NAME }シート"
       ]
     },
     "meet_2025: Feature": {
@@ -7897,9 +7918,15 @@
       ],
       "Up to ${ n } participant": [
         "最大${ n }人の参加者"
+      ],
+      "Video meetings, ${ n } participant": [
+        "ビデオ会議、${ n }名まで参加可能"
       ]
     },
     "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats }シートが含まれています"
+      ],
       "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
         "トライアル期間中、${ MEET_SHORT_APP_NAME }のシートを${ TRIAL_MAX_MEET_SEATS }ヶまでをご利用いただけます。"
       ]
@@ -9273,9 +9300,6 @@
       "Public link access updated": [
         "公開リンクのアクセスが更新されました"
       ],
-      "Root folder failed to be loaded": [
-        "ルートフォルダーの読み込みに失敗しました"
-      ],
       "Selected item was not removed from your list": [
         "選択したアイテムをリストから削除できませんでした"
       ],
@@ -9305,9 +9329,6 @@
       ],
       "Stopping the sharing of this item has failed": [
         "この項目の共有停止に失敗しました。"
-      ],
-      "Subfolder failed to be loaded": [
-        "サブフォルダーの読み込みに失敗しました"
       ],
       "The document failed to be created": [
         "ドキュメントの作成に失敗しました"
@@ -12165,6 +12186,9 @@
       "Discard changes?": [
         "変更を破棄しますか?"
       ],
+      "Disconnected from Gmail": [
+        "Gmailから切断しました"
+      ],
       "Downgrade account": [
         "アカウントのダウングレード"
       ],
@@ -12683,9 +12707,6 @@
       ],
       "Sort files/folders": [
         "ファイル・フォルダーの並べ替え"
-      ],
-      "Spring Sale": [
-        "スプリングセール"
       ],
       "Start a new import": [
         "新しいインポートを開始"

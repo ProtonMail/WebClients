@@ -426,9 +426,6 @@
       "Fit to window": [
         "Prilagodi oknu"
       ],
-      "Forgot password?": [
-        "Pozabljeno geslo?"
-      ],
       "Forgot recovery method?": [
         "Ste pozabili način obnovitve?"
       ],
@@ -819,6 +816,9 @@
       "Send email reminder": [
         "Pošlji opomnik po elektronski pošti."
       ],
+      "Send feedback": [
+        "Pošlji povratne informacije"
+      ],
       "Send my username": [
         "Pošlji moje uporabniško ime"
       ],
@@ -857,6 +857,9 @@
       ],
       "Share": [
         "Deli"
+      ],
+      "Share feedback": [
+        "Delite povratne informacije"
       ],
       "Share via link": [
         "Deli prek povezave"
@@ -3919,9 +3922,6 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Nekatera imena vaših oznak presegajo največje dovoljeno število znakov za ${ MAIL_APP_NAME }. Prilagodite uvoz za urejanje teh imen."
       ],
-      "Something went wrong connecting your TV. Scan the QR code on your TV once more.": [
-        "Pri povezovanju vašega TV-ja je prišlo do napake. Ponovno odčitajte kodo QR na vašem TV-ju."
-      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Nekaj je šlo narobe; pred nadaljevanjem ${ refresh }. Če se napaka še naprej prikazuje, se obrnite na našo ${ supportTeam }."
       ],
@@ -3990,9 +3990,6 @@
       ],
       "This label name is not available. Please choose a different name.": [
         "To ime oznake ni na voljo. Izberite drugačno ime."
-      ],
-      "This offer is not available in your country": [
-        "Ta ponudba ni na voljo v vaši državi"
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Če želite ustvariti nezasebne uporabniške račune in dostopati do njihovih računov, boste morali obnoviti skrbniške pravice."
@@ -4893,11 +4890,6 @@
       ],
       "Services": [
         "Storitve"
-      ]
-    },
-    "Group address title": {
-      "Group address": [
-        "Naslov skupine"
       ]
     },
     "Group member count": {
@@ -5881,6 +5873,9 @@
       "Copy your referral link": [
         "Kopirajte svojo povezavo za priporočilo"
       ],
+      "Couldn´t send feedback": [
+        "Ni bilo mogoče poslati povratnih informacij"
+      ],
       "Country code": [
         "Koda države"
       ],
@@ -6121,9 +6116,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Vnesi svoj e-poštni naslov ali uporabniško ime ${ BRAND_NAME } računa."
       ],
-      "Enter your own password (as organization admin).": [
-        "Vpišite vaše lastno geslo (kot skrbnik organizacije)."
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Vnesite svoj naslov za obnovitev računa in poslali vam bomo vaše uporabniško ime ali naslov e-pošte."
       ],
@@ -6358,6 +6350,9 @@
       "Keep your info more secure and private with these guides and tips.": [
         "Poskrbite, da bodo vaši podatki bolj varni in zasebni s temi vodniki in nasveti."
       ],
+      "Key sections reorganized for faster access.": [
+        "Ključni razdelki so preurejeni za hitrejši dostop."
+      ],
       "Keys created": [
         "Ključi so bili ustvarjeni."
       ],
@@ -6471,6 +6466,12 @@
       ],
       "New activity data will stop being collected and shown.": [
         "Zbirajo podatkov o dejavnosti se bo ustavilo in podatki ne bodo več prikazani."
+      ],
+      "New sidebar": [
+        "Nova stranska vrstica"
+      ],
+      "New sidebar layout": [
+        "Nova postavitev stranske vrstice"
       ],
       "News or media article": [
         "Novice ali medijski članki"
@@ -6820,6 +6821,9 @@
       "Setting up your organization": [
         "Nastavljam vašo organizacijo"
       ],
+      "Share your thoughts...": [
+        "Delite svoje misli ..."
+      ],
       "Shared server country (${ countriesCount })": [
         "Država z deljenim strežnikom (${ countriesCount })",
         "Državi z deljenim strežnikom (${ countriesCount })",
@@ -6895,6 +6899,9 @@
       "Swiss based": [
         "S sedežem v Švici"
       ],
+      "Switch sidebars": [
+        "Preklopi stranske vrstice"
+      ],
       "Symbols (#$&)": [
         "Simboli (#$&)"
       ],
@@ -6906,6 +6913,9 @@
       ],
       "Thank you for subscribing. Secure browsing starts now.": [
         "Hvala, ker ste se naročili. Varno brskanje se prične zdaj."
+      ],
+      "Thanks - your feedback was sent.": [
+        "Hvala – vaše povratne informacije so bile poslane."
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Hvala, ker podpirate naše poslanstvo za izgradnjo boljšega interneta, kjer sta zasebnost in svoboda na prvem mestu."
@@ -7303,9 +7313,6 @@
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Ko odstranite strežnik iz prehoda, ta vstopi v 10-dnevno obdobje deaktivacije. Ta strežnik je mogoče dodati novemu prehodu, vendar njegove države ni mogoče spremeniti."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Ko nastavite dvojno preverjanje pristnosti, nudimo obnovitvene kode, ki jih lahko uporabite za prijavo, če izgubite dostop do aplikacije za preverjanje pristnosti."
-      ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Ko se vaša naročnina obnovi, bomo uporabili vso razpoložljivo dobroimetje, preden bomo zaračunali zgornji način plačila."
       ],
@@ -7518,6 +7525,9 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Vaš e-poštni naslov bo uporabljen le za to enkratno preverjanje."
+      ],
+      "Your feedback": [
+        "Vaše povratne informacije"
       ],
       "Your files will be encrypted and then saved": [
         "Vaše datoteke bodo šifrirane in nato shranjene."
@@ -7777,9 +7787,6 @@
       ],
       "Add all organization members": [
         "Dodaj vse člane organizacije"
-      ],
-      "Add group member": [
-        "Dodaj člana skupine"
       ],
       "Address": [
         "Naslov"
@@ -8078,9 +8085,6 @@
       "Group address": [
         "Naslov skupine"
       ],
-      "Group members": [
-        "Člani skupine"
-      ],
       "Group name": [
         "Ime skupine"
       ],
@@ -8098,9 +8102,6 @@
       ],
       "Import interval": [
         "Interval uvoza"
-      ],
-      "Import recent mails": [
-        "Uvozi nedavna e-poštna sporočila"
       ],
       "Import to email address": [
         "Uvozi na e-poštni naslov"
@@ -8470,9 +8471,6 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Da, želim trajno izbrisati ta račun in vse njegove podatke."
-      ],
-      "Your password (admin)": [
-        "Vaše geslo (admin)"
       ],
       "ZIP code": [
         "Poštna številka"
@@ -11466,6 +11464,9 @@
       "Check account security": [
         "Preveri varnost računa"
       ],
+      "Invalid code": [
+        "Neveljavna koda"
+      ],
       "Review account safety": [
         "Preglejte varnost računa"
       ],
@@ -12429,9 +12430,6 @@
       "Share the confirmation code with your administrator": [
         "Delite potrditveno kodo z vašim skrbnikom"
       ],
-      "Sign in": [
-        "Prijava"
-      ],
       "Sign in to your organization": [
         "Prijavite se v svojo organizacijo"
       ],
@@ -12467,9 +12465,6 @@
       ],
       "Yes, it was me": [
         "Da, bil sem jaz."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Preusmerjeni boste k ponudniku SSO tretje osebe."
       ]
     },
     "sso: auth device state": {
@@ -13483,6 +13478,9 @@
       "Account": [
         "Račun"
       ],
+      "Account and password": [
+        "Račun in geslo"
+      ],
       "Account monitor": [
         "Nadzor računa"
       ],
@@ -13639,6 +13637,9 @@
       "Collaborate on documents": [
         "Sodelujte pri dokumentih"
       ],
+      "Configurations": [
+        "Konfiguracija"
+      ],
       "Confirm": [
         "Potrdi"
       ],
@@ -13792,9 +13793,6 @@
       "Device": [
         "Naprava"
       ],
-      "Device connected!": [
-        "Naprava je povezana!"
-      ],
       "Device name": [
         "Ime naprave"
       ],
@@ -13827,6 +13825,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Prenesite aplikacije ${ DRIVE_APP_NAME }"
+      ],
+      "Download apps": [
+        "Prenesite aplikacije"
       ],
       "Downloads": [
         "Prenosi"
@@ -13891,9 +13892,6 @@
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Vpišite podrobnosti vašega računa ${ BRAND_NAME } za vključitev v beta preizkuševalni program za ${ app }."
       ],
-      "Enter your password": [
-        "Vnesite svoje geslo"
-      ],
       "Error": [
         "Napaka"
       ],
@@ -13954,6 +13952,9 @@
       "Help center": [
         "Središče za pomoč"
       ],
+      "Help us improve": [
+        "Pomagajte nam izboljšati se"
+      ],
       "Home": [
         "Začetek"
       ],
@@ -13996,6 +13997,9 @@
       "Information exposed in breach": [
         "Informacije, razkrite pri kršitvi"
       ],
+      "Integrations": [
+        "Integracije"
+      ],
       "Invalid verification code": [
         "Neveljavna koda za preverjanje"
       ],
@@ -14017,8 +14021,17 @@
       "Minicalendar": [
         "Mini koledar"
       ],
+      "Monitoring": [
+        "Nadzor"
+      ],
       "Multi-user support": [
         "Podpora za več uporabnikov"
+      ],
+      "My account": [
+        "Moj račun"
+      ],
+      "My VPN": [
+        "Moj VPN"
       ],
       "Name": [
         "Ime"
@@ -14055,6 +14068,12 @@
       ],
       "Org setup": [
         "Nastavitev organizacije"
+      ],
+      "Organization": [
+        "Organizacija"
+      ],
+      "Organization and people": [
+        "Organizacija in ljudje"
       ],
       "Organization filters": [
         "Filtri organizacije"
@@ -14194,6 +14213,9 @@
       "Schedule meetings in one click": [
         "Načrtujte sestanke z enim klikom"
       ],
+      "Security and compliance": [
+        "Varnost in skladnost"
+      ],
       "Security and privacy": [
         "Varnost in zasebnost"
       ],
@@ -14275,11 +14297,11 @@
       "Single sign-on": [
         "Enotna prijava"
       ],
+      "Single-sign on (SSO)": [
+        "Enotna prijava (SSO)"
+      ],
       "Spam, block, and allow lists": [
         "Seznami neželene pošte, blokiranih naslovov in dovoljenih naslovov"
-      ],
-      "Spring Sale": [
-        "Pomladanska akcija"
       ],
       "Start a new import": [
         "Začni z novim uvozom"
@@ -14322,9 +14344,6 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Vklopi ${ DARK_WEB_MONITORING_NAME }"
-      ],
-      "TV sign in": [
-        "TV prijava"
       ],
       "Two-factor authentication": [
         "Dvojno preverjanja pristnosti"
@@ -14388,6 +14407,9 @@
       ],
       "Verifying your payment...": [
         "Preverjanje vašega plačila ..."
+      ],
+      "VPN": [
+        "VPN"
       ],
       "Warning": [
         "Opozorilo"

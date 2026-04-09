@@ -2517,6 +2517,9 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Αυτό θα απορρίψει τη συσκευή **${ name }** που προσπάθησε να συνδεθεί στον λογαριασμό σας ${ BRAND_NAME } στις **${ date }**."
       ],
+      "To configure shortcuts, go to about:addons in Firefox and select \"Manage Extension Shortcuts\"": [
+        "Για να ρυθμίσετε τις συντομεύσεις, πηγαίνετε στο about:addons στον Firefox και επιλέξτε \"Διαχείριση Συντομεύσεων Προεκτάσεων\""
+      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Για να συνεχίσετε να λαμβάνετε μηνύματα ηλεκτρονικού ταχυδρομείου, μεταφέρετε αυτά τα ψευδώνυμα σε διαφορετικό γραμματοκιβώτιο:"
       ],
@@ -5093,6 +5096,9 @@
       ],
       "No shared items matching": [
         "Δε βρέθηκαν κοινόχρηστα στοιχεία που να ταιριάζουν"
+      ],
+      "Offline": [
+        "Εκτός σύνδεσης"
       ],
       "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
         "Μετά τον συγχρονισμό, διαγράφοντας ψευδώνυμα στο ${ PASS_SHORT_APP_NAME } αυτά θα διαγραφούν ταυτόχρονα και από το SimpleLogin"

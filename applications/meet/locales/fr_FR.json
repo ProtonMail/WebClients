@@ -1714,6 +1714,12 @@
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "${ MEET_APP_NAME } requiert WebRTC pour fonctionner. Veuillez mettre à jour votre navigateur ou appareil vers une version prenant en charge WebRTC, essayer un autre navigateur, ou désactiver toute extension susceptible de le bloquer."
       ],
+      "${ participantName } and ${ otherParticipantsCount } others are recording": [
+        "${ participantName } et ${ otherParticipantsCount } autres sont entrain d'enregistrer"
+      ],
+      "${ participantName } is recording": [
+        "${ participantName } est entrain d'enregistré"
+      ],
       "${ presenterName } (you) is presenting": [
         "${ presenterName } (vous) est en train de présenter"
       ],
@@ -1847,6 +1853,9 @@
       "End-to-end encryption is active for this chat.": [
         "Le chiffrement de bout en bout est actif pour cette discussion."
       ],
+      "Enter code": [
+        "Saisissez le code"
+      ],
       "Enter the code from your authenticator app": [
         "Saisissez le code de votre application d'authentification."
       ],
@@ -1894,6 +1903,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Si vous ne trouvez pas le message dans votre boite de réception, vérifiez votre dossier Indésirables/spam."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Si vous avez perdu l'accès à votre application d'authentification, vous pouvez utiliser 1 des 16 codes de récupération de sauvegarde fournis lors de la configuration de l'authentification à deux facteurs. ${ learnMoreLink }"
       ],
       "If you’re using Firefox, make sure PeerConnection is enabled.": [
         "Si vous utilisez Firefox, assurez-vous que PeerConnection est activé."
@@ -2030,8 +2042,8 @@
       "Our end-to-end encrypted meetings protect privacy and empower truly free expression.": [
         "Nos réunions chiffrées de bout-en-bout protègent la confidentialité des données et favorisent une expression véritablement libre."
       ],
-      "participant": [
-        "participant"
+      "Participant": [
+        "Participant"
       ],
       "Paste your ${ MEET_APP_NAME } link to join a secure meeting": [
         "Insérez votre lien ${ MEET_APP_NAME } pour rejoindre une réunion sécurisée"
@@ -2068,6 +2080,12 @@
       ],
       "Record your meetings": [
         "Enregistrez vos réunions"
+      ],
+      "Recording": [
+        "Enregistrement en cours"
+      ],
+      "Recording in progress": [
+        "Enregistrement en cours"
       ],
       "Recording saved": [
         "L'enregistrement a été enregistré."

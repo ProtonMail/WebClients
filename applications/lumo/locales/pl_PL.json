@@ -92,6 +92,9 @@
       "Delete": [
         "Usuń"
       ],
+      "Delete ${ token.Name }": [
+        "Usuń token ${ token.Name }"
+      ],
       "Delete all conversations?": [
         "Usunąć wszystkie wątki?"
       ],
@@ -4907,6 +4910,11 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Ulepsz do planu ${ upsellPlanTitle }"
+      ]
+    },
+    "Provider option": {
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {

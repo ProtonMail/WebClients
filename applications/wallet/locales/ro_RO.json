@@ -2451,9 +2451,6 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Acest câmp necesită un minimum de ${ minimumLength } caractere."
       ],
-      "This offer is not available in your country": [
-        "Această ofertă nu este disponibilă țara actuală."
-      ],
       "Try using only letters, numerals, and _.-": [
         "Folosiți doar litere, cifre și _ . -"
       ],
@@ -2889,6 +2886,9 @@
       "Enabling auto-deletion…": [
         "Se activează ștergerea automată…"
       ],
+      "Enter code": [
+        "Introduceți codul"
+      ],
       "Enter the code from your authenticator app": [
         "Introduceți codul din aplicația Authenticator."
       ],
@@ -2927,6 +2927,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Dacă nu vedeți mesajul verificați în folderul de mesaje nedorite."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Dacă v-ați pierdut accesul la aplicația de autentificare, puteți utiliza unul din cele 16 coduri de recuperare de rezervă furnizate la configurarea autentificării cu doi factori. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Dacă continuați cu retrogradarea, veți pierde accesul la funcțiile cu plată din ${ MAIL_APP_NAME } și ${ VPN_APP_NAME }."
@@ -3136,9 +3139,6 @@
       ],
       "Week": [
         "Săptămâna"
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Când configurați autentificarea cu doi factori, vă furnizăm coduri de recuperare pe care le puteți folosi pentru a vă conecta dacă vă pierdeți accesul la aplicația de autentificare."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Doriți să primiți un cod nou de verificare sau să folosiți o metodă alternativă de verificare?"
@@ -5786,9 +5786,6 @@
       ],
       "Simplify password management": [
         "Simplificați gestionarea parolelor"
-      ],
-      "Spring Sale": [
-        "Ofertă de primăvară"
       ],
       "Summary": [
         "Sumar"

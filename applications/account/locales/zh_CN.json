@@ -4743,9 +4743,6 @@
     "Delete group prompt": {
       "Are you sure you want to delete this group?": [
         "确定要删除这个群组吗？"
-      ],
-      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
-        "请注意，如果您删除群组 ${ displayGroupName }（含地址 ${ displayGroupAddressEmail }），您将无法再收到使用其地址的电子邮件。"
       ]
     },
     "Delinquent modal title": {
@@ -6855,9 +6852,6 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "部分标签名称超过了 ${ MAIL_APP_NAME } 的字数限制，请在导入内容中予以更改。"
       ],
-      "Something went wrong connecting your TV. Scan the QR code on your TV once more.": [
-        "连接电视时出现问题，请再次扫描电视上的二维码。"
-      ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "发生错误，请${ refresh }后重试。若仍出现此错误，请联系我们的${ supportTeam }。"
       ],
@@ -6944,9 +6938,6 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "此邮件含有浏览器不能打开的链接."
-      ],
-      "This offer is not available in your country": [
-        "此优惠在您所在的国家/地区不可用"
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "如需创建非私密用户账户并访问其账户，您需要恢复管理员权限。"
@@ -8178,11 +8169,6 @@
       ],
       "Services": [
         "服务"
-      ]
-    },
-    "Group address title": {
-      "Group address": [
-        "群组地址"
       ]
     },
     "Group member count": {
@@ -9909,9 +9895,6 @@
       ],
       "End-to-end email encryption is disabled for this group. It can be enabled.": [
         "此组已禁用端到端电子邮件加密。它仍可以启用。"
-      ],
-      "End-to-end email encryption is enabled for this group.": [
-        "此组已启用端到端电子邮件加密。"
       ],
       "End-to-end encrypted": [
         "端到端加密"
@@ -11905,9 +11888,6 @@
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "当您从网关移除服务器时，该服务器将进入为期 10 天的停用期。此服务器可以添加到新网关，但其所在国家/地区无法更改。"
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "当您设置双因素身份验证时，我们会提供恢复码。如果您无法使用验证器，可以使用这些恢复码登录。"
-      ],
       "When you're ready to activate the address, scan the QR code or use the link in the voucher.": [
         "当您准备好激活该地址时，请扫描二维码或使用凭证中的链接。"
       ],
@@ -12977,9 +12957,6 @@
       "Add extra services": [
         "添加额外服务"
       ],
-      "Add group member": [
-        "添加群组成员"
-      ],
       "Additional comments": [
         "附加备注"
       ],
@@ -13574,9 +13551,6 @@
       "Group address": [
         "组地址"
       ],
-      "Group members": [
-        "群组成员"
-      ],
       "Group name": [
         "群组名称"
       ],
@@ -13609,9 +13583,6 @@
       ],
       "Import interval": [
         "导入间隔"
-      ],
-      "Import recent mails": [
-        "导入最近的邮件"
       ],
       "Import to email address": [
         "导入到邮箱地址"
@@ -18035,9 +18006,6 @@
       "Renews at ${ renewPriceStr }, cancel anytime.": [
         "续费价格是${ renewPriceStr }，可随时取消。"
       ],
-      "Sorry, this offer is not available for your account.": [
-        "抱歉，此优惠不适用于您的账户"
-      ],
       "Sorry, this offer is not available with your current plan.": [
         "抱歉，此优惠不适用于您当前的套餐。"
       ],
@@ -20138,17 +20106,11 @@
       "${ FREE_PASS_ALIASES } hide-my-email alias to fight spam": [
         "适用于打击垃圾邮件的 ${ FREE_PASS_ALIASES } Hide-my-email 别名邮箱"
       ],
-      "${ MAIL_APP_NAME } desktop app": [
-        "${ MAIL_APP_NAME } 桌面应用"
-      ],
       "${ maxAddresses } address": [
         "${ maxAddresses } 个地址"
       ],
       "${ maxAddresses } email address": [
         "${ maxAddresses } 个邮箱地址"
-      ],
-      "${ maxAddresses } extra email address": [
-        "${ maxAddresses } 个额外邮箱地址"
       ],
       "${ maxAddresses } extra email address for you": [
         "为您提供的 ${ maxAddresses } 个额外邮箱地址"
@@ -20176,9 +20138,6 @@
       ],
       "${ value } total encrypted storage": [
         "${ value } 总计加密存储空间"
-      ],
-      "${ value } total storage": [
-        "${ value } 总存储空间"
       ],
       "${ VPN_CONNECTIONS } high-speed VPN connection": [
         "${ VPN_CONNECTIONS } 高速的VPN连接"
@@ -20423,9 +20382,6 @@
       "Ultra fast and private VPN": [
         "超快且私有的 VPN"
       ],
-      "Unlimited folders, labels, and filters": [
-        "不限量文件夹、标签和筛选规则"
-      ],
       "Unlimited hide-my-email aliases": [
         "不限量 Hide-my-email 邮箱别名"
       ],
@@ -20449,9 +20405,6 @@
       ],
       "Use your email, or ${ externalButton }": [
         "使用您自己的邮箱，或 ${ externalButton }"
-      ],
-      "Use your own email domain": [
-        "个性化邮箱域名"
       ],
       "use your own email.": [
         "使用您自己的邮箱。"
@@ -22848,9 +22801,6 @@
       "Device": [
         "台设备"
       ],
-      "Device connected!": [
-        "设备连上了！"
-      ],
       "Device name": [
         "设备名称"
       ],
@@ -23712,9 +23662,6 @@
       "Special Offer": [
         "特别优惠"
       ],
-      "Spring Sale": [
-        "春季特惠"
-      ],
       "Start a new import": [
         "开始导入"
       ],
@@ -23798,9 +23745,6 @@
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "启用 ${ DARK_WEB_MONITORING_NAME }"
-      ],
-      "TV sign in": [
-        "使用电视登录"
       ],
       "Two-factor authentication": [
         "双因素身份验证"

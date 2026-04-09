@@ -290,6 +290,9 @@
       "Connect apps and devices": [
         "Conectați aplicații și dispozitive"
       ],
+      "Connect to Gmail": [
+        "Conectare la Gmail"
+      ],
       "Connect to video conferencing": [
         "Conectați-vă la conferințe video"
       ],
@@ -1031,6 +1034,9 @@
       "Open navigation": [
         "Deschidere navigare"
       ],
+      "Or remove forwarding address": [
+        "Sau eliminați adresa de transferare"
+      ],
       "Or use a different Gmail address": [
         "Sau utilizați o altă adresă Gmail"
       ],
@@ -1105,6 +1111,9 @@
       ],
       "Reconnect": [
         "Reconectare"
+      ],
+      "Reconnect to Gmail": [
+        "Reconectare la Gmail"
       ],
       "Recover data": [
         "Recuperare date"
@@ -1495,6 +1504,11 @@
       ],
       "Trust": [
         "Aprobare"
+      ],
+      "Trust key": [
+        "Aprobare cheie",
+        "Aprobare cheie",
+        "Aprobare cheie"
       ],
       "Trust public key": [
         "Aprobare cheie publică"
@@ -4074,6 +4088,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Sortați automat mesajele primite înainte ca acestea să vă ajungă în contul de e-mail."
       ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Blocați capacitatea Google de a vă analiza profilul. Gmail nu poate vedea ce faceți în ${ MAIL_APP_NAME }."
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Configurați mai întâi aceasta pentru a vă activa organizația și a vă personaliza adresa de e-mail."
       ],
@@ -4100,6 +4117,9 @@
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Sincronizați ușor fișierele în cloud de pe desktop și accesați-le de pe dispozitivul mobil."
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Mesajele trimise către ${ connectedAddressText } vor apărea acum în ${ MAIL_APP_NAME }."
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Încurajați utilizarea autentificării cu doi factori în organizație pentru un plus de securitate."
@@ -4145,11 +4165,20 @@
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "Mesajele noi de la ${ senderEmailAddress } nu vor fi livrate și vor fi șterse permanent."
       ],
+      "No ads. No trackers.": [
+        "Fără reclame. Fără instrumente de urmărire."
+      ],
       "No folders": [
         "Nu sunt foldere."
       ],
       "No labels": [
         "Nu sunt etichete."
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "Citiți, răspundeți și rămâneți deasupra lui Gmail direct din ${ MAIL_APP_NAME }"
+      ],
+      "Send and receive Gmail correspondence directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "Trimiteți și primiți corespondența Gmail direct în ${ MAIL_APP_NAME }. Conectați-vă adresa în ${ addressesSettingsLink }."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Modernizați-vă contul pentru a vă separa diferitele aspecte ale vieții personale cu mai multe adrese de e-mail și a debloca mai multe funcții premium."
@@ -4165,6 +4194,23 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Simplificați sincronizarea și programarea cu calendare partajate."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Acest lucru se poate întâmpla dacă permisiunile au fost eliminate sau parola a fost modificată."
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "Pentru a conecta o altă adresă Gmail, eliminați adresele Gmail suplimentare care se transferă către ${ BRAND_NAME }."
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "Pentru a conecta până la ${ MAX_SYNC_PAID_USER } adresă Gmail, treceți la ${ planName }.",
+        "Pentru a conecta până la ${ MAX_SYNC_PAID_USER } adrese Gmail, treceți la ${ planName }.",
+        "Pentru a conecta până la ${ MAX_SYNC_PAID_USER } de adrese Gmail, treceți la ${ planName }."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Pentru a continua să primiți și să trimiteți mesaje Gmail în ${ BRAND_NAME }, reconectați-vă conturile."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Pentru a continua să primiți și să trimiteți mesaje Gmail în ${ BRAND_NAME }, reconectați-vă conturile."
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Pentru a continua să utilizați asistentul de scriere, adăugați-l la abonament."
@@ -4187,6 +4233,9 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Activați protecția împotriva monitorizării prin e-mail pentru a împiedica agenții de publicitate și alții să vă urmărească unde vă aflați și activitatea online."
       ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "Treceți la ${ planName } pentru a conecta până la ${ MAX_SYNC_PAID_USER } conturi."
+      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Treceți la alt plan pentru a obține adresa ${ activatePmUser } mai scurtă și ușor de reținut pe lângă cea actuală."
       ],
@@ -4199,8 +4248,17 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Utilizați acest ghid pentru ca organizația să beneficieze imediat de criptarea și ecosistemul de confidențialitate maximă oferite de ${ BRAND_NAME } ."
       ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Nu mai putem accesa ${ boldEmails }."
+      ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "Nu am găsit instrumente de urmărire și adrese URL cunoscute în acest e-mail."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "Se vor importa mesajele vechi și se va conecta contul Gmail la ${ MAIL_APP_NAME }, astfel încât mesajele noi să apară automat."
+      ],
+      "We've started importing your email from Gmail. We'll let you know when it's done.": [
+        "S-a început importarea contului de pe Gmail. Vă vom anunța când va fi gata."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Ne pare rău să vă vedem plecând. Dacă aveți un moment, am aprecia foarte mult să aflăm de ce doriți să anulați. Feedback-ul dvs. ne ajută să facem ${ BRAND_NAME } mai bun pentru toată lumea."
@@ -4214,17 +4272,54 @@
       "With custom snooze, you can hide emails and set them to reappear at a better time.": [
         "Cu amânarea personalizată, puteți ascunde mesajele și le puteți seta să apară din nou într-un moment mai bun."
       ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Aveți deja o adresă Gmail care transferă mesajele către ${ MAIL_APP_NAME }. Conectați-o mai jos pentru a trimite și primi mesaje direct din ${ MAIL_APP_NAME }."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Aveți deja o adresă Gmail care transferă mesajele către ${ MAIL_APP_NAME }. Conectați una mai jos pentru a trimite și primi mesaje direct din ${ MAIL_APP_NAME }."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puteți importa evenimente în format iCal (fișier ICS). Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_EVENTS_STRING } evenimente. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici."
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Puteți marca pentru ștergere contactele pe care nu doriți nici să le îmbinați, nici să le păstrați. Ștergerea va fi efectuată doar după apăsarea butonului de îmbinare."
       ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Puteți trimite acum mesaje de pe ${ BRAND_NAME } folosind această adresă."
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "Transferați ${ numAddressesOrSync } adresă Gmail către ${ MAIL_APP_NAME }.",
+        "Transferați ${ numAddressesOrSync } adrese Gmail către ${ MAIL_APP_NAME }.",
+        "Transferați ${ numAddressesOrSync } de adrese Gmail către ${ MAIL_APP_NAME }."
+      ],
+      "You're forwarding emails from ${ forwardingCount } Gmail address. By connecting it, you'll be able to both receive and reply in ${ MAIL_APP_NAME }": [
+        "Transferați mesaje de la ${ forwardingCount } adresă Gmail. Prin conectarea acesteia, veți putea atât să primiți, cât și să răspundeți în ${ MAIL_APP_NAME }.",
+        "Transferați mesaje de la ${ forwardingCount } adrese Gmail. Prin conectarea acestora, veți putea atât să primiți, cât și să răspundeți în ${ MAIL_APP_NAME }.",
+        "Transferați mesaje de la ${ forwardingCount } de adrese Gmail. Prin conectarea acestora, veți putea atât să primiți, cât și să răspundeți în ${ MAIL_APP_NAME }."
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "Ați conectat ${ MAX_SYNC_PAID_USER } adresă de Gmail. Pentru a adăuga alta, mai întâi dezactivați unul dintre conturile conectate.",
+        "Ați conectat ${ MAX_SYNC_PAID_USER } adrese Gmail. Pentru a adăuga alta, dezactivați mai întâi unul dintre conturile conectate.",
+        "Ați conectat ${ MAX_SYNC_PAID_USER } de adrese Gmail. Pentru a adăuga alta, mai întâi dezactivați unul dintre conturile conectate."
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "Ați conectat o adresă de cont externă la ${ MAIL_APP_NAME }."
+      ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Metodele de recuperare a contului și datelor sunt setate și A2F este activată."
       ],
       "Your account and data recovery methods are set.": [
         "Metodele de recuperare a contului și datelor sunt setate."
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "Planul actual permite ${ MAX_SYNC_FREE_USER } adresă Gmail.",
+        "Planul actual permite ${ MAX_SYNC_FREE_USER } adrese Gmail.",
+        "Planul actual permite ${ MAX_SYNC_FREE_USER } de adrese Gmail."
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "Planul actual permite maxim ${ MAX_SYNC_PAID_USER } adresă Gmail",
+        "Planul actual permite maxim ${ MAX_SYNC_PAID_USER } adrese Gmail",
+        "Planul actual permite maxim ${ MAX_SYNC_PAID_USER } de adrese Gmail"
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Ați creat deja 10 aliasuri. Obțineți aliasuri nelimitate și 500 GiB de spațiu de stocare cu ${ BRAND_NAME } Unlimited."
@@ -4544,6 +4639,12 @@
       ],
       "Add at least one condition": [
         "Adăugați cel puțin o condiție."
+      ],
+      "Address could not be added.": [
+        "Adresa nu a putut fi adăugată."
+      ],
+      "Address is already added to your account": [
+        "Adresa este deja adăugată în cont."
       ],
       "Address primary private key not found": [
         "Nu s-a găsit adresa cheii private primare"
@@ -5005,6 +5106,12 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Unele nume de etichete depășesc limita maximă admisă de caractere din ${ MAIL_APP_NAME }. Modificați opțiunile de importare pentru a edita aceste nume."
       ],
+      "Something went wrong while creating the address": [
+        "Ceva nu a mers bine în timpul creării adresei."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Ceva nu a funcționat corect la preluarea domeniilor disponibile."
+      ],
       "Something went wrong. Please try again.": [
         "Ceva nu a funcționat bine. Mai încercați."
       ],
@@ -5111,9 +5218,6 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Acest mesaj poate conține unele legături web care nu pot fi deschise corect de către navigatorul actual."
-      ],
-      "This offer is not available in your country": [
-        "Această ofertă nu este disponibilă țara actuală."
       ],
       "Trusted keys are not valid for sending": [
         "Cheile de încredere nu sunt valide pentru trimitere"
@@ -7335,6 +7439,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Asigurați o comunicare complet privată și criptată. Revendicați-vă acum adresa gratuită de e-mail ${ BRAND_NAME }."
       ],
+      "Enter code": [
+        "Introduceți codul"
+      ],
       "Enter the code from your authenticator app": [
         "Introduceți codul din aplicația Authenticator."
       ],
@@ -7490,6 +7597,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Dacă nu vedeți mesajul verificați în folderul de mesaje nedorite."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Dacă v-ați pierdut accesul la aplicația de autentificare, puteți utiliza unul din cele 16 coduri de recuperare de rezervă furnizate la configurarea autentificării cu doi factori. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Dacă continuați cu retrogradarea, veți pierde accesul la funcțiile cu plată din ${ MAIL_APP_NAME } și ${ VPN_APP_NAME }."
@@ -8720,9 +8830,6 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Când ați activat cheile de încredere pentru ${ senderName }, cheile publice au fost adăugate la datele de contact."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Când configurați autentificarea cu doi factori, vă furnizăm coduri de recuperare pe care le puteți folosi pentru a vă conecta dacă vă pierdeți accesul la aplicația de autentificare."
-      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Când vă înscrieți pentru un buletin informativ, utilizați un alias în loc de adresa de e-mail reală. Identitatea vă va rămâne ascunsă și puteți dezactiva oricând aliasul."
       ],
@@ -9706,9 +9813,6 @@
       "Import interval": [
         "Interval de importare"
       ],
-      "Import recent mails": [
-        "Importare mesaje recente"
-      ],
       "Import to email address": [
         "Importare în adresa de e-mail"
       ],
@@ -9954,6 +10058,9 @@
       ],
       "Search in": [
         "Căutare în"
+      ],
+      "Select which Gmail address to connect": [
+        "Selectați ce adresă Gmail doriți să conectați"
       ],
       "Send auto-reply": [
         "Trimitere autorăspuns"
@@ -11897,6 +12004,9 @@
       ],
       "Trial started": [
         "Perioada de probă a început"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Adresa ${ BRAND_NAME } este gata de utilizare"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -15275,6 +15385,9 @@
       "Block sender": [
         "Blocare expeditor"
       ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Aduceți-vă contul Gmail în ${ MAIL_APP_NAME }"
+      ],
       "Built for privacy": [
         "Construit pentru confidențialitate"
       ],
@@ -15446,6 +15559,9 @@
       ],
       "Desktop": [
         "Desktop"
+      ],
+      "Disconnected from Gmail": [
+        "Deconectat de la Gmail"
       ],
       "Discover your subscription benefits": [
         "Descoperiți-vă beneficiile abonamentului"
@@ -15956,6 +16072,9 @@
       "Self-destruct message": [
         "Mesaj autodistructibil"
       ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Trimiteți și primiți mesaje Gmail folosind ${ MAIL_APP_NAME }"
+      ],
       "Send email": [
         "Trimitere mesaj"
       ],
@@ -16036,9 +16155,6 @@
       ],
       "Sort messages": [
         "Sortare mesaje"
-      ],
-      "Spring Sale": [
-        "Ofertă de primăvară"
       ],
       "Start a new import": [
         "Începere importare nouă"
@@ -16126,6 +16242,9 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Utilizați ${ VPN_SHORT_APP_NAME } pentru confidențialitatea datelor"
       ],
+      "Use Gmail securely in ${ MAIL_APP_NAME }": [
+        "Utilizați Gmail în siguranță în ${ MAIL_APP_NAME }"
+      ],
       "Verification error": [
         "Eroare verificare"
       ],
@@ -16172,6 +16291,9 @@
       ],
       "When is it most important to use a VPN?": [
         "Când este cel mai important să folosiți un VPN?"
+      ],
+      "You are all set": [
+        "Totul este pregătit"
       ],
       "You can now create unlimited folders and labels": [
         "Acum puteți crea foldere și fișiere nelimitate"
