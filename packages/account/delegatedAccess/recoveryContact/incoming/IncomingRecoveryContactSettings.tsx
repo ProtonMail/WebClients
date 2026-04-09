@@ -9,9 +9,9 @@ import TableHeader from '@proton/components/components/table/TableHeader';
 import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
 import TableRow from '@proton/components/components/table/TableRow';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
+import { DelegatedAccessStateEnum } from '@proton/shared/lib/interfaces/DelegatedAccess';
 import isTruthy from '@proton/utils/isTruthy';
 
-import { DelegatedAccessStateEnum } from '../../interface';
 import { ContactCell } from '../../shared/ContactCell';
 import {
     type IncomingDelegatedAccessProviderValue,

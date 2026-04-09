@@ -19,11 +19,7 @@ import {
     useNotifications,
     useSearchParamsEffect,
 } from '@proton/components';
-import type {
-    ResetActionResponse,
-    ResetCacheResult,
-    ValidateResetTokenResponse,
-} from '@proton/components/containers/resetPassword/interface';
+import type { ResetActionResponse, ResetCacheResult } from '@proton/components/containers/resetPassword/interface';
 import { STEPS } from '@proton/components/containers/resetPassword/interface';
 import {
     handleNewPassword,
@@ -33,6 +29,7 @@ import {
     handleValidateResetToken,
 } from '@proton/components/containers/resetPassword/resetActions';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import type { ValidateResetTokenResponse } from '@proton/shared/lib/api/reset';
 import { validateResetToken } from '@proton/shared/lib/api/reset';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
@@ -53,8 +50,6 @@ import Text from '../public/Text';
 import { defaultPersistentKey } from '../public/helper';
 import { useFlowRef } from '../useFlowRef';
 import { useGetAccountKTActivation } from '../useGetAccountKTActivation';
-import type { MetaTags } from '../useMetaTags';
-import { useMetaTags } from '../useMetaTags';
 import RequestRecoveryForm from './RequestRecoveryForm';
 import RequestResetTokenForm from './RequestResetTokenForm';
 import ValidateResetTokenForm from './ValidateResetTokenForm';
@@ -65,7 +60,6 @@ interface Props {
     toApp: APP_NAMES | undefined;
     setupVPN: boolean;
     loginUrl: string;
-    metaTags: MetaTags;
     productParam: ProductParam;
     onPreSubmit?: () => Promise<void>;
     onStartAuth: () => Promise<void>;
@@ -75,7 +69,6 @@ const ResetPasswordContainer = ({
     onPreSubmit,
     onStartAuth,
     toApp,
-    metaTags,
     onLogin,
     setupVPN,
     loginUrl,
@@ -90,8 +83,6 @@ const ResetPasswordContainer = ({
         sendResetPasswordSuccess,
         sendResetPasswordFailure,
     } = useResetPasswordTelemetry();
-
-    useMetaTags(metaTags);
 
     const history = useHistory();
     const location = useLocation();

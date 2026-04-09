@@ -1,3 +1,7 @@
+import type { ReactNode } from 'react';
+
+import { c } from 'ttag';
+
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import {
     getIsCalendarApp,
@@ -192,4 +196,13 @@ export const getPreAppIntent = ({
         maybeLocalRedirect?.toApp ||
         maybeQueryAppIntent
     );
+};
+
+export const getEmailVerificationCodeText = (emailAddress: ReactNode) => {
+    return c('Info')
+        .jt`An email with a verification code was just sent to ${emailAddress}. If you can’t find the message in your inbox, please check your spam folder.`;
+};
+
+export const getSMSVerificationCodeText = (phoneNumber: ReactNode) => {
+    return c('Info').jt`An SMS with a verification code was just sent to ${phoneNumber}.`;
 };

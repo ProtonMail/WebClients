@@ -3,9 +3,9 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { ModalTwo, ModalTwoContent, ModalTwoFooter, ModalTwoHeader } from '@proton/components';
-import type { RecoveryMethod } from '@proton/components/containers/resetPassword/interface';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
+import type { RecoveryMethod } from '@proton/shared/lib/api/reset';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 

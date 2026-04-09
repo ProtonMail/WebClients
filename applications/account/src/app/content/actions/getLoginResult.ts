@@ -10,7 +10,7 @@ import { getReturnUrl } from '@proton/shared/lib/authentication/returnUrl';
 import { APPS, type APP_NAMES, SETUP_ADDRESS_PATH } from '@proton/shared/lib/constants';
 import { invokeInboxDesktopIPC } from '@proton/shared/lib/desktop/ipcHelpers';
 import { joinPaths } from '@proton/shared/lib/helpers/url';
-import type { Api } from '@proton/shared/lib/interfaces';
+import type { Api, User } from '@proton/shared/lib/interfaces';
 import { getEncryptedSetupBlob, getRequiresAddressSetup } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
@@ -130,6 +130,76 @@ const getRedirectUrl = ({
     return url;
 };
 
+const goToAppSwitcher = async ({
+    session,
+    api,
+    paths,
+}: {
+    session: AuthSession;
+    api: Api;
+    paths: Paths;
+}): Promise<LoginResult> => {
+    const uidApi = getUIDApi(session.data.UID, api);
+    const organization = await getOrganization({ session, api: uidApi }).catch(noop);
+    const appSwitcherState: AppSwitcherState = {
+        session: { ...session, data: { ...session.data, Organization: organization } },
+    };
+    return {
+        type: 'app-switcher',
+        location: paths.appSwitcher,
+        payload: appSwitcherState,
+    };
+};
+
+const getPostPasswordResetResult = async ({
+    session,
+    api,
+    paths,
+    maybeToApp,
+    user,
+    localRedirect,
+    initialSearchParams,
+}: {
+    session: AuthSession;
+    api: Api;
+    paths: Paths;
+    maybeToApp: APP_NAMES | undefined;
+    user: User;
+    localRedirect?: LocalRedirect;
+    initialSearchParams: URLSearchParams;
+}): Promise<LoginResult> => {
+    const hasKeysToRecover = session.data.User.Keys.some((key) => !key.Active);
+
+    if (hasKeysToRecover) {
+        const url = getUrlFromLocation({
+            // Automatically open the reactivate keys modal
+            location: { pathname: '/recovery', search: 'action=recover-data', hash: '' },
+            toApp: APPS.PROTONACCOUNT,
+            context: 'private',
+            localID: session.data.localID,
+        });
+
+        return { type: 'done', payload: { session, url } };
+    }
+    if (maybeToApp) {
+        const toApp = getToApp(maybeToApp, user);
+        const url = getRedirectUrl({
+            localRedirect,
+            session,
+            initialSearchParams,
+            toApp,
+        });
+        return {
+            type: 'done',
+            payload: {
+                session,
+                url,
+            },
+        };
+    }
+    return goToAppSwitcher({ session, api, paths });
+};
+
 export const getLoginResult = async ({
     api,
     session,
@@ -157,18 +227,24 @@ export const getLoginResult = async ({
 
     const maybeToApp = appIntent?.app || maybePreAppIntent;
 
+    const toApp = getToApp(maybeToApp, user);
+
+    // Prioritise recovery routing for all post resets
+    if (session.flow === 'reset') {
+        return getPostPasswordResetResult({
+            session,
+            api,
+            paths,
+            maybeToApp,
+            user,
+            initialSearchParams,
+            localRedirect: maybeLocalRedirect,
+        });
+    }
+
     // In any forking scenario, ignore the app switcher
     if (!maybeToApp && !forkState) {
-        const uidApi = getUIDApi(session.data.UID, api);
-        const organization = await getOrganization({ session, api: uidApi }).catch(noop);
-        const appSwitcherState: AppSwitcherState = {
-            session: { ...session, data: { ...session.data, Organization: organization } },
-        };
-        return {
-            type: 'app-switcher',
-            location: paths.appSwitcher,
-            payload: appSwitcherState,
-        };
+        return goToAppSwitcher({ session, api, paths });
     }
 
     const forkParameters = forkState?.type === SSOType.Proton ? forkState.payload.forkParameters : undefined;
@@ -184,8 +260,6 @@ export const getLoginResult = async ({
             payload: getReAuthState(forkParameters, session),
         };
     }
-
-    const toApp = getToApp(maybeToApp, user);
 
     // OAuth sessions are only allowed for the VPN browser extension at the moment. Go to the restricted settings view.
     if (persistedSession.source === SessionSource.Oauth && toApp !== APPS.PROTONVPNBROWSEREXTENSION) {
