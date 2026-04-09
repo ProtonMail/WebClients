@@ -10,6 +10,7 @@ import { IcCalendarListCheck } from '@proton/icons/icons/IcCalendarListCheck';
 import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 
 import { useBookings } from './bookingsProvider/BookingsProvider';
+import { useBookingUpsell } from './upsells/useBookingUpsell';
 
 import './BookingSidebarAction.scss';
 
@@ -21,6 +22,8 @@ interface Props {
 
 export const BookingSidebarAction = ({ onCreateEvent, disabled, utcDate }: Props) => {
     const [user] = useUser();
+    const { shouldShowLimitModal } = useBookingUpsell();
+    const showUpsellIcon = user.canPay && shouldShowLimitModal().plan;
     const { openBookingSidebarCreation, canCreateBooking } = useBookings();
 
     const handleBookingPage = () => {
@@ -53,7 +56,7 @@ export const BookingSidebarAction = ({ onCreateEvent, disabled, utcDate }: Props
                                 <IcCalendarListCheck />
                                 {c('Action').t`Create a booking page`}
                             </div>
-                            {user.hasPaidMail ? null : <IcUpgrade className="color-hint" name="upgrade" />}
+                            {showUpsellIcon ? <IcUpgrade className="color-hint" name="upgrade" /> : null}
                         </div>
                     </DropdownMenuButton>
                 </DropdownMenu>
