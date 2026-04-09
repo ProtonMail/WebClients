@@ -203,6 +203,12 @@
       "Connect apps and devices": [
         "Conectați aplicații și dispozitive"
       ],
+      "Connect Gmail address": [
+        "Conectați adresa Gmail"
+      ],
+      "Connect to Gmail": [
+        "Conectare la Gmail"
+      ],
       "Connect to video conferencing": [
         "Conectați-vă la conferințe video"
       ],
@@ -211,6 +217,9 @@
       ],
       "Contact support": [
         "Contactați asistența"
+      ],
+      "Contact Support Center": [
+        "Contactați centrul de asistență"
       ],
       "Contact us": [
         "Contactați-ne"
@@ -226,6 +235,9 @@
       ],
       "Continue to ${ planOrAppName }": [
         "Continuare cu ${ planOrAppName }"
+      ],
+      "Continue to sign in": [
+        "Continuare autentificare"
       ],
       "Continue with this password": [
         "Continuare cu această parolă"
@@ -347,6 +359,9 @@
       "Discard Changes": [
         "Ignorare modificări"
       ],
+      "Disconnect": [
+        "Deconectare"
+      ],
       "Discover ${ planName }": [
         "Descoperiți ${ planName }"
       ],
@@ -443,6 +458,9 @@
       "Enable multi-user support": [
         "Activare suport utilizatori multipli"
       ],
+      "Enter code": [
+        "Introduceți codul"
+      ],
       "Explore ${ target }": [
         "Explorare ${ target }"
       ],
@@ -466,9 +484,6 @@
       ],
       "Fit to window": [
         "Potrivire la fereastră"
-      ],
-      "Forgot password?": [
-        "Ați uitat parola?"
       ],
       "Forgot recovery method?": [
         "Ați uitat metoda de recuperare?"
@@ -559,6 +574,15 @@
       ],
       "Hide plan features": [
         "Ascundere caracteristici plan"
+      ],
+      "I don't have my 2FA device": [
+        "Nu am dispozitivul de A2F"
+      ],
+      "I don't have my key": [
+        "Nu am cheia mea"
+      ],
+      "I don’t have my backup codes": [
+        "Nu am codurile de rezervă"
       ],
       "Import": [
         "Importare"
@@ -683,6 +707,9 @@
       "Or": [
         "Sau"
       ],
+      "Or remove forwarding address": [
+        "Sau eliminați adresa de transferare"
+      ],
       "Or use a different Gmail address": [
         "Sau utilizați o altă adresă Gmail"
       ],
@@ -712,6 +739,12 @@
       ],
       "Reconnect": [
         "Reconectare"
+      ],
+      "Reconnect to Gmail": [
+        "Reconectare la Gmail"
+      ],
+      "Recover account": [
+        "Recuperare cont"
       ],
       "Recover data": [
         "Recuperare date"
@@ -878,6 +911,9 @@
       "Send email reminder": [
         "Trimitere notificare pe e-mail"
       ],
+      "Send feedback": [
+        "Trimitere feedback"
+      ],
       "Send my username": [
         "Trimiteți-mi numele de utilizator"
       ],
@@ -919,6 +955,9 @@
       ],
       "Share": [
         "Partajare"
+      ],
+      "Share feedback": [
+        "Trimitere feedback"
       ],
       "Share via link": [
         "Partajare prin legătură web"
@@ -1111,6 +1150,9 @@
       ],
       "Verify account": [
         "Verificare cont"
+      ],
+      "Verify another way": [
+        "Verificare altfel"
       ],
       "Verify code": [
         "Cod verificare"
@@ -3408,9 +3450,6 @@
     "Delete group prompt": {
       "Are you sure you want to delete this group?": [
         "Ștergeți acest grup?"
-      ],
-      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
-        "Rețineți că, dacă ștergeți grupul ${ displayGroupName } (cu adresa ${ displayGroupAddressEmail }), nu veți mai putea primi mesaje folosind adresa acestuia."
       ]
     },
     "Delinquent modal title": {
@@ -3430,6 +3469,9 @@
       ],
       "Automatically forward incoming email to another email address.": [
         "Transferați automat mesajele primite către o altă adresă de e-mail."
+      ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Blocați capacitatea Google de a vă analiza profilul. Gmail nu poate vedea ce faceți în ${ MAIL_APP_NAME }."
       ],
       "Configure this first to activate your organization and customize your email address.": [
         "Configurați mai întâi aceasta pentru a vă activa organizația și a vă personaliza adresa de e-mail."
@@ -3460,6 +3502,9 @@
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Sincronizați ușor fișierele în cloud de pe desktop și accesați-le de pe dispozitivul mobil."
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Mesajele trimise către ${ connectedAddressText } vor apărea acum în ${ MAIL_APP_NAME }."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Activați ${ PROTON_SENTINEL_NAME } pentru a accesa aceste funcții."
@@ -3512,14 +3557,37 @@
       "Let's you instantly add meeting links to your event invitations.": [
         "Vă permite să adăugați imediat legături web de întâlnire în invitațiile la evenimente."
       ],
+      "No ads. No trackers.": [
+        "Fără reclame. Fără instrumente de urmărire."
+      ],
       "No one in your organization can connect to shared servers.": [
         "Nu se poate conecta nimeni din organizație la serverele partajate."
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "Citiți, răspundeți și rămâneți deasupra lui Gmail direct din ${ MAIL_APP_NAME }"
       ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Configurați conturi pentru toți utilizatorii și invitați-i să se alăture la ${ BRAND_NAME }."
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Simplificați sincronizarea și programarea cu calendare partajate."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Acest lucru se poate întâmpla dacă permisiunile au fost eliminate sau parola a fost modificată."
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "Pentru a conecta o altă adresă Gmail, eliminați adresele Gmail suplimentare care se transferă către ${ BRAND_NAME }."
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "Pentru a conecta până la ${ MAX_SYNC_PAID_USER } adresă Gmail, treceți la ${ planName }.",
+        "Pentru a conecta până la ${ MAX_SYNC_PAID_USER } adrese Gmail, treceți la ${ planName }.",
+        "Pentru a conecta până la ${ MAX_SYNC_PAID_USER } de adrese Gmail, treceți la ${ planName }."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Pentru a continua să primiți și să trimiteți mesaje Gmail în ${ BRAND_NAME }, reconectați-vă conturile."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Pentru a continua să primiți și să trimiteți mesaje Gmail în ${ BRAND_NAME }, reconectați-vă conturile."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Pentru a importa prin fișier CSV sau VCF, asigurați-vă că fișierul nu depășește ${ MAX_IMPORT_FILE_SIZE_STRING } sau ${ maxContactString } de contacte. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici. ${ learnMoreLink }."
@@ -3533,14 +3601,64 @@
       "Track the status and activity of your referrals": [
         "Urmăriți starea și activitatea celor recomandați."
       ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "Treceți la ${ planName } pentru a conecta până la ${ MAX_SYNC_PAID_USER } conturi."
+      ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Utilizați acest ghid pentru ca organizația să beneficieze imediat de criptarea și ecosistemul de confidențialitate maximă oferite de ${ BRAND_NAME } ."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Nu mai putem accesa ${ boldEmails }."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "Se vor importa mesajele vechi și se va conecta contul Gmail la ${ MAIL_APP_NAME }, astfel încât mesajele noi să apară automat."
+      ],
+      "We've started importing your email from Gmail. We'll let you know when it's done.": [
+        "S-a început importarea contului de pe Gmail. Vă vom anunța când va fi gata."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Ne pare rău să vă vedem plecând. Dacă aveți un moment, am aprecia foarte mult să aflăm de ce doriți să anulați. Feedback-ul dvs. ne ajută să facem ${ BRAND_NAME } mai bun pentru toată lumea."
       ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Aveți deja o adresă Gmail care transferă mesajele către ${ MAIL_APP_NAME }. Conectați-o mai jos pentru a trimite și primi mesaje direct din ${ MAIL_APP_NAME }."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Aveți deja o adresă Gmail care transferă mesajele către ${ MAIL_APP_NAME }. Conectați una mai jos pentru a trimite și primi mesaje direct din ${ MAIL_APP_NAME }."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puteți importa evenimente în format iCal (fișier ICS). Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_EVENTS_STRING } evenimente. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Puteți trimite acum mesaje de pe ${ BRAND_NAME } folosind această adresă."
+      ],
+      "You can still login with this address and re-connect at any time.": [
+        "Încă vă puteți conecta cu această adresă și vă puteți reconecta oricând."
+      ],
+      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
+        "Nu veți mai putea utiliza ${ address.Email } pentru a primi și trimite mesaje din ${ BRAND_NAME }. De asemenea, rețineți că mesajele trimise la această adresă din ${ BRAND_NAME } nu vor mai fi criptate bilateral."
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "Transferați ${ numAddressesOrSync } adresă Gmail către ${ MAIL_APP_NAME }.",
+        "Transferați ${ numAddressesOrSync } adrese Gmail către ${ MAIL_APP_NAME }.",
+        "Transferați ${ numAddressesOrSync } de adrese Gmail către ${ MAIL_APP_NAME }."
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "Ați conectat ${ MAX_SYNC_PAID_USER } adresă de Gmail. Pentru a adăuga alta, mai întâi dezactivați unul dintre conturile conectate.",
+        "Ați conectat ${ MAX_SYNC_PAID_USER } adrese Gmail. Pentru a adăuga alta, dezactivați mai întâi unul dintre conturile conectate.",
+        "Ați conectat ${ MAX_SYNC_PAID_USER } de adrese Gmail. Pentru a adăuga alta, mai întâi dezactivați unul dintre conturile conectate."
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "Ați conectat o adresă de cont externă la ${ MAIL_APP_NAME }."
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "Planul actual permite ${ MAX_SYNC_FREE_USER } adresă Gmail.",
+        "Planul actual permite ${ MAX_SYNC_FREE_USER } adrese Gmail.",
+        "Planul actual permite ${ MAX_SYNC_FREE_USER } de adrese Gmail."
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "Planul actual permite maxim ${ MAX_SYNC_PAID_USER } adresă Gmail",
+        "Planul actual permite maxim ${ MAX_SYNC_PAID_USER } adrese Gmail",
+        "Planul actual permite maxim ${ MAX_SYNC_PAID_USER } de adrese Gmail"
       ]
     },
     "description": {
@@ -4070,6 +4188,12 @@
       "A group with this name already exists": [
         "Un grup cu acest nume există deja"
       ],
+      "Address could not be added.": [
+        "Adresa nu a putut fi adăugată."
+      ],
+      "Address is already added to your account": [
+        "Adresa este deja adăugată în cont."
+      ],
       "Address primary private key not found": [
         "Nu s-a găsit adresa cheii private primare"
       ],
@@ -4199,6 +4323,9 @@
       ],
       "Incorrect password": [
         "Parolă incorectă"
+      ],
+      "Incorrect recovery code. Please try again.": [
+        "Cod de recuperare incorect. Reîncercați."
       ],
       "Incorrect second password. Please try again.": [
         "Parolă secundară incorectă. Încercați din nou."
@@ -4441,8 +4568,11 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Unele nume de etichete depășesc limita maximă admisă de caractere din ${ MAIL_APP_NAME }. Modificați opțiunile de importare pentru a edita aceste nume."
       ],
-      "Something went wrong connecting your TV. Scan the QR code on your TV once more.": [
-        "A apărut o eroare la conectarea televizorului. Scanați din nou codul QR de pe televizor."
+      "Something went wrong while creating the address": [
+        "Ceva nu a mers bine în timpul creării adresei."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Ceva nu a funcționat corect la preluarea domeniilor disponibile."
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Ceva nu a funcționat bine, ${ refresh } pagina pentru a continua. Dacă mai vedeți acest mesaj de eroare contactați ${ supportTeam }."
@@ -4515,9 +4645,6 @@
       ],
       "This label name is not available. Please choose a different name.": [
         "Acest nume de etichetă nu este disponibil. Alegeți un alt nume."
-      ],
-      "This offer is not available in your country": [
-        "Această ofertă nu este disponibilă țara actuală."
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
         "Pentru a crea conturi de utilizator neprivate și pentru a le accesa, va trebui să vă restabiliți privilegiile de administrator."
@@ -5473,11 +5600,6 @@
         "Servicii"
       ]
     },
-    "Group address title": {
-      "Group address": [
-        "Grup adrese"
-      ]
-    },
     "Group member count": {
       "${ memberCount } member": [
         "${ memberCount } membru",
@@ -6415,6 +6537,12 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Un alias de e-mail funcționează ca o adresă de e-mail, dar reduce mesajele nedorite și vă păstrează adresa de e-mail și identitatea reală ascunse."
       ],
+      "An email with a verification code was just sent to ${ recoveryEmailElement }. If you can’t find the message in your inbox, please check your spam folder.": [
+        "Un mesaj cu un cod de verificare a fost trimis la ${ recoveryEmailElement }. Dacă nu găsiți mesajul în mesajele primite, verificați și în folderul de mesaje nedorite."
+      ],
+      "An SMS with a verification code was just sent to ${ recoveryPhoneElement }.": [
+        "Un SMS cu un cod de verificare tocmai a fost trimis la ${ recoveryPhoneElement }."
+      ],
       "and": [
         "și"
       ],
@@ -6556,6 +6684,9 @@
       "Connection data will be available in around 1 hour.": [
         "Datele de conectare vor fi disponibile peste aproximativ o oră."
       ],
+      "Contact our Customer Support team to disable two-factor authentication for your account, or recover your account another way.": [
+        "Contactați echipa de asistență clienți pentru a vă dezactiva autentificarea cu doi factori pentru cont sau pentru a vă recupera contul altfel."
+      ],
       "Continue": [
         "Continuare"
       ],
@@ -6582,6 +6713,9 @@
       ],
       "Copy your referral link": [
         "Copiere legătură web de recomandare"
+      ],
+      "Couldn´t send feedback": [
+        "Mesajul nu s-a putut trimite."
       ],
       "Country code": [
         "Cod țară"
@@ -6740,6 +6874,9 @@
       "Downgrading will terminate any connections to paid ${ VPN_APP_NAME } servers.": [
         "Retrogradarea va încheia orice conexiune la serverele ${ VPN_APP_NAME } cu plată."
       ],
+      "Download ${ VPN_APP_NAME }": [
+        "Descărcare ${ VPN_APP_NAME }"
+      ],
       "Download current logs": [
         "Descărcare jurnale actuale"
       ],
@@ -6818,9 +6955,6 @@
       "End-to-end email encryption is disabled for this group. It can be enabled.": [
         "Pentru acest grup este dezactivată criptarea bilaterală a mesajelor pe e-mail. Aceasta poate fi activată."
       ],
-      "End-to-end email encryption is enabled for this group.": [
-        "Pentru acest grup este activată criptarea bilaterală a mesajelor pe e-mail."
-      ],
       "Endpoint URL received from your identity provider (e.g. https://idp.example.com/sso/saml).": [
         "Adresa URL a punctului final primită de la furnizorul de identitate (ex. https://idp.exemplu.com/sso/saml)."
       ],
@@ -6829,6 +6963,9 @@
       ],
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Asigurați o comunicare complet privată și criptată. Revendicați-vă acum adresa gratuită de e-mail ${ BRAND_NAME }."
+      ],
+      "Enter code": [
+        "Introduceți codul"
       ],
       "Enter key manually instead": [
         "Introduceți cheia manual"
@@ -6865,12 +7002,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Introduceți adresa de e-mail sau numele de utilizator al contului ${ BRAND_NAME }."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Introduceți parola (ca administrator al organizației)."
-      ],
-      "Enter your own password (as trusted contact).": [
-        "Introduceți parola (ca și contact aprobat)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Introduceți adresa de e-mail de recuperare și veți primi numele de utilizator sau adresa de e-mail."
@@ -7012,6 +7143,9 @@
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Dacă vă pierdeți dispozitivul pentru autentificarea cu doi factori (A2F), puteți folosi aceste coduri în locul celor 6 cifre pentru autentificarea cu doi factori pentru a vă conecta la cont. Fiecare cod e de unică folosință."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Dacă v-ați pierdut accesul la aplicația de autentificare, puteți utiliza unul din cele 16 coduri de recuperare de rezervă furnizate la configurarea autentificării cu doi factori. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Dacă continuați cu retrogradarea, veți pierde accesul la funcțiile cu plată din ${ MAIL_APP_NAME } și ${ VPN_APP_NAME }."
@@ -7188,6 +7322,9 @@
       "Keep your info more secure and private with these guides and tips.": [
         "Păstrați informațiile mai sigure și private cu aceste ghiduri și sfaturi."
       ],
+      "Key sections reorganized for faster access.": [
+        "Secțiuni cheie reorganizate pentru acces mai rapid."
+      ],
       "Keys created": [
         "Cheile au fost create."
       ],
@@ -7319,6 +7456,12 @@
       ],
       "New activity data will stop being collected and shown.": [
         "Noile date de activitate vor înceta să fie colectate și afișate."
+      ],
+      "New sidebar": [
+        "Bară laterală nouă"
+      ],
+      "New sidebar layout": [
+        "Aspect nou al barei laterale"
       ],
       "New user invited to organization": [
         "Utilizator nou invitat în organizație."
@@ -7565,6 +7708,9 @@
       "Professional": [
         "Professional"
       ],
+      "Protect this device too?": [
+        "Protejați și acest dispozitiv?"
+      ],
       "Protected by Swiss privacy laws": [
         "Protejat de legile stricte elvețiene privind confidențialitatea"
       ],
@@ -7721,6 +7867,9 @@
       "Setting up your organization": [
         "Setare organizație"
       ],
+      "Share your thoughts...": [
+        "Spuneți-vă părerile..."
+      ],
       "Shared ${ vaultLink } deleted": [
         "${ vaultLink } partajat șters."
       ],
@@ -7744,6 +7893,9 @@
       "Sign in to ${ MAIL_APP_NAME } to activate your address": [
         "Conectați-vă la ${ MAIL_APP_NAME } pentru a vă activa adresa."
       ],
+      "Sign-in complete": [
+        "Autentificare finalizată"
+      ],
       "Signed up": [
         "Înscris"
       ],
@@ -7758,6 +7910,9 @@
       ],
       "Some servers may not appear in the list above. Search by server name (e.g., AT#62) to find them.": [
         "Unele servere s-ar putea să nu apară în lista de mai sus. Căutați după numele serverului (de exemplu, AT#62) pentru a le găsi."
+      ],
+      "Something went wrong. Please try again.": [
+        "Ceva nu a funcționat. Reîncercați."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Specificați domeniul căruia i se permite autentificarea cu SAML SSO."
@@ -7818,6 +7973,9 @@
       "Swiss based": [
         "Situat în Elveția"
       ],
+      "Switch sidebars": [
+        "Comutare bare laterale"
+      ],
       "Symbols (#$&)": [
         "Simboluri (#$&)"
       ],
@@ -7832,6 +7990,9 @@
       ],
       "Thank you for subscribing. Secure browsing starts now.": [
         "Vă mulțumim pentru abonare. Navigarea sigură începe acum."
+      ],
+      "Thanks - your feedback was sent.": [
+        "Vă mulțumim – mesajul a fost trimis."
       ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Vă mulțumim că ne susțineți misiunea de a construi un internet mai bun unde confidențialitatea și libertatea primează."
@@ -7944,6 +8105,9 @@
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Acest mesaj nu va ajunge la echipa de asistență. Dacă aveți o problemă cu serviciul nostru sau aveți nevoie de acțiuni suplimentare din partea noastră ${ supportLink }."
       ],
+      "This password is used to login to your ${ BRAND_NAME } account": [
+        "Această parolă este folosită pentru a vă conecta la contul ${ BRAND_NAME }"
+      ],
       "This service is not available to users signing in with single sign-on.": [
         "Acest serviciu nu este disponibil pentru utilizatorii care se conectează cu ajutorul funcției de conectare unică."
       ],
@@ -8036,6 +8200,12 @@
       ],
       "To fight spam and abuse, please verify you are human.": [
         "Pentru a combate abuzurile, dovediți că sunteți o persoană."
+      ],
+      "To help keep your account safe, we want to make sure it's really you trying to sign in.": [
+        "Pentru a vă ajuta să vă protejați contul, dorim să ne asigurăm că dețineți cu adevărat contul."
+      ],
+      "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
+        "Pentru a vă ajuta să vă protejați contul, dorim să ne asigurăm că dețineți cu adevărat contul."
       ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "Pentru a importa evenimente, mai întâi creați un calendar în ${ CALENDAR_APP_NAME }. Aici vor apărea evenimentele după importare."
@@ -8316,9 +8486,6 @@
       "When you remove a server from a Gateway, it enters a 10-day deactivation period. This server can be added to a new Gateway, but its country cannot be changed.": [
         "Când un server este eliminat dintr-o poartă de acces, acesta intră într-o perioadă de dezactivare de 10 zile. Acest server poate fi adăugat la o poartă de acces nouă, dar țara acestuia nu poate fi modificată."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Când configurați autentificarea cu doi factori, vă furnizăm coduri de recuperare pe care le puteți folosi pentru a vă conecta dacă vă pierdeți accesul la aplicația de autentificare."
-      ],
       "When your subscription renews, we will apply any available credits before we charge the payment method above.": [
         "Când abonamentul se înnoiește, se va folosi mai întâi creditul disponibil înainte de a folosi metoda de plată de mai sus."
       ],
@@ -8433,6 +8600,9 @@
       "You can now return to the application to continue": [
         "Puteți reveni la aplicație pentru a continua"
       ],
+      "You can now sign in to your account again.": [
+        "Acum vă puteți conecta din nou în cont."
+      ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Puteți avea o singură fereastră de conversații deschisă. Închideți conversațiile anterioare înainte de a deschide alta."
       ],
@@ -8511,6 +8681,9 @@
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Veți avea nevoie de o adresă ${ BRAND_NAME } pentru a utiliza ${ MAIL_APP_NAME } și ${ CALENDAR_APP_NAME }"
       ],
+      "You will not be asked for a one-time code or a security key.": [
+        "Nu vi se va solicita un cod de unică folosință sau o cheie de securitate."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pentru verificarea plății se va deschide o filă către PayPal."
       ],
@@ -8539,6 +8712,9 @@
         "Se va factura apoi la fiecare ${ renewCycle } lună cu ${ renewAmountStr }. Puteți anula oricând.",
         "Se va factura apoi la fiecare ${ renewCycle } luni cu ${ renewAmountStr }. Puteți anula oricând.",
         "Se va factura apoi la fiecare ${ renewCycle } de luni cu ${ renewAmountStr }. Puteți anula oricând."
+      ],
+      "You're now signed in on your TV.": [
+        "V-ați autentificat pe televizor."
       ],
       "You've enabled forwarding on ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of them.": [
         "Ați activat transferarea mesajelor pentru ${ MAX_SYNC_PAID_USER } adresă de Gmail. Pentru a adăuga alta, mai întâi dezactivați una.",
@@ -8577,6 +8753,9 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Adresa va fi folosită doar pentru această verificare unică."
+      ],
+      "Your feedback": [
+        "Mesaj"
       ],
       "Your files will be encrypted and then saved": [
         "Fișierele vor fi criptate și apoi salvate."
@@ -8882,9 +9061,6 @@
       ],
       "Add all organization members": [
         "Adăugare toți membrii organizației"
-      ],
-      "Add group member": [
-        "Adăugare membru în grup"
       ],
       "Additional comments": [
         "Comentarii adiționale"
@@ -9207,9 +9383,6 @@
       "Group address": [
         "Adresă grup"
       ],
-      "Group members": [
-        "Membrii grup"
-      ],
       "Group name": [
         "Nume grup"
       ],
@@ -9230,9 +9403,6 @@
       ],
       "Import interval": [
         "Interval de importare"
-      ],
-      "Import recent mails": [
-        "Importare mesaje recente"
       ],
       "Import to email address": [
         "Importare în adresa de e-mail"
@@ -9507,6 +9677,9 @@
       "Second password": [
         "Parola secundară"
       ],
+      "Select which Gmail address to connect": [
+        "Selectați ce adresă Gmail doriți să conectați"
+      ],
       "Send crash reports": [
         "Trimitere rapoarte de erori"
       ],
@@ -9640,12 +9813,6 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Da, vreau să șterg definitiv acest cont și toate datele sale."
-      ],
-      "Your password (admin)": [
-        "Parola dvs. (administrator)"
-      ],
-      "Your password (trusted contact)": [
-        "Parola dvs. (contact aprobat)"
       ],
       "ZIP code": [
         "Cod poștal"
@@ -11609,6 +11776,9 @@
       "Two-factor authentication is not required anymore": [
         "Autentificarea cu doi factori nu mai este obligatorie."
       ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Adresa ${ BRAND_NAME } este gata de utilizare"
+      ],
       "Zoom video conferencing settings have been updated": [
         "Setările conferințelor video Zoom au fost actualizate."
       ]
@@ -13360,6 +13530,9 @@
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Dacă vă pierdeți detaliile de conectare și trebuie să vă resetați contul, **este imperativ** să aveți atât o **metodă de recuperare a contului, cât și o metodă de recuperare a datelor**, altfel este posibil să nu vă puteți accesa niciunul dintre mesajele de pe e-mail, contactele, fișierele sau parolele."
       ],
+      "Invalid code": [
+        "Codul nu este valid."
+      ],
       "Review account safety": [
         "Revizuire securitate cont"
       ],
@@ -14415,9 +14588,6 @@
       "Share the confirmation code with your administrator": [
         "Partajați codul de confirmare cu administratorul"
       ],
-      "Sign in": [
-        "Conectare"
-      ],
       "Sign in to your organization": [
         "Autentificare în organizație"
       ],
@@ -14477,9 +14647,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Va trebui să creați utilizatorii manual pentru a-i adăuga în organizație."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Pagina va fi redirecționată spre furnizorul autentificării unice (SSO)."
       ],
       "Your SSO configuration will be deleted.": [
         "Configurarea pentru autentificarea unică (SSO) va fi ștearsă."
@@ -15580,6 +15747,9 @@
       "Account": [
         "Cont"
       ],
+      "Account and password": [
+        "Cont și parolă"
+      ],
       "Account monitor": [
         "Monitorizare cont"
       ],
@@ -15681,6 +15851,9 @@
       "An address for each role": [
         "O adresă pentru fiecare rol"
       ],
+      "An error occurred": [
+        "A apărut o eroare"
+      ],
       "App": [
         "Aplicație"
       ],
@@ -15696,6 +15869,9 @@
       "Are you sure you want to close the preview?": [
         "Închideți examinarea?"
       ],
+      "Are you sure you want to disconnect this address?": [
+        "Sigur doriți să deconectați această adresă?"
+      ],
       "Are you sure?": [
         "Confirmați?"
       ],
@@ -15707,6 +15883,9 @@
       ],
       "Block trackers and malware": [
         "Blocați instrumentele de urmărire și programele malware"
+      ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Aduceți-vă contul Gmail în ${ MAIL_APP_NAME }"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Anulare abonare ${ MAIL_SHORT_APP_NAME }"
@@ -15761,6 +15940,9 @@
       ],
       "Collaborate on documents": [
         "Colaborați la documente"
+      ],
+      "Configurations": [
+        "Configurări"
       ],
       "Confirm": [
         "Confirmare"
@@ -15928,9 +16110,6 @@
       "Device": [
         "Dispozitiv"
       ],
-      "Device connected!": [
-        "Dispozitiv conectat!"
-      ],
       "Device name": [
         "Nume dispozitiv"
       ],
@@ -15948,6 +16127,9 @@
       ],
       "Discard changes?": [
         "Anulare modificări?"
+      ],
+      "Disconnected from Gmail": [
+        "Deconectat de la Gmail"
       ],
       "Dismiss setup checklist": [
         "Ignorare listă de verificare configurare"
@@ -15969,6 +16151,9 @@
       ],
       "Download ${ DRIVE_APP_NAME } apps": [
         "Descărcați aplicațiile ${ DRIVE_APP_NAME }"
+      ],
+      "Download apps": [
+        "Descărcare aplicații"
       ],
       "Downloads": [
         "Descărcări"
@@ -16038,9 +16223,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Introduceți detaliile contului ${ BRAND_NAME } pentru a vă alătura la programul beta al ${ app }"
-      ],
-      "Enter your password": [
-        "Introduceți parola"
       ],
       "Error": [
         "Eroare"
@@ -16116,6 +16298,9 @@
       "Help center": [
         "Centru de ajutor"
       ],
+      "Help us improve": [
+        "Ajutați-ne să îmbunătățim"
+      ],
       "Home": [
         "Început"
       ],
@@ -16157,6 +16342,9 @@
       "Information exposed in breach": [
         "Informații expuse în divulgare"
       ],
+      "Integrations": [
+        "Integrări"
+      ],
       "Invalid verification code": [
         "Cod de verificare nevalid"
       ],
@@ -16181,11 +16369,20 @@
       "Minicalendar": [
         "Minicalendar"
       ],
+      "Monitoring": [
+        "Monitorizare"
+      ],
       "Multi-user support": [
         "Suport utilizatori multipli"
       ],
       "Multiple accounts, 1 private inbox": [
         "Conturi multiple, un cont privat"
+      ],
+      "My account": [
+        "Contul meu"
+      ],
+      "My VPN": [
+        "VPN-ul meu"
       ],
       "Name": [
         "Nume"
@@ -16225,6 +16422,12 @@
       ],
       "Org setup": [
         "Setare organizație"
+      ],
+      "Organization": [
+        "Organizație"
+      ],
+      "Organization and people": [
+        "Organizație și persoane"
       ],
       "Organization filters": [
         "Filtre organizație"
@@ -16376,6 +16579,9 @@
       "Security": [
         "Securitate"
       ],
+      "Security and compliance": [
+        "Securitate și conformitate"
+      ],
       "Security and privacy": [
         "Securitate și intimitate"
       ],
@@ -16390,6 +16596,9 @@
       ],
       "Select data to import": [
         "Selectați datele de importat"
+      ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Trimiteți și primiți mesaje Gmail folosind ${ MAIL_APP_NAME }"
       ],
       "Send email reminders?": [
         "Trimiteți notificări pe e-mail?"
@@ -16460,11 +16669,11 @@
       "Single sign-on": [
         "Autentificare unică"
       ],
+      "Single-sign on (SSO)": [
+        "Autentificare unică (SSO)"
+      ],
       "Spam, block, and allow lists": [
         "Listă adrese blocate și permise"
-      ],
-      "Spring Sale": [
-        "Ofertă de primăvară"
       ],
       "Start a new import": [
         "Începere importare nouă"
@@ -16528,11 +16737,11 @@
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Activare ${ DARK_WEB_MONITORING_NAME }"
       ],
-      "TV sign in": [
-        "Autentificare TV"
-      ],
       "Two-factor authentication": [
         "Autentificare cu doi factori"
+      ],
+      "Two-factor authentication disabled": [
+        "Autentificare cu doi factori dezactivată"
       ],
       "Two-factor authentication enforcement": [
         "Obligare autentificare cu doi factori"
@@ -16579,6 +16788,9 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Utilizați ${ VPN_SHORT_APP_NAME } pentru confidențialitatea datelor"
       ],
+      "Use backup recovery code": [
+        "Utilizare cod de recuperare de rezervă"
+      ],
       "User": [
         "Utilizator"
       ],
@@ -16606,6 +16818,9 @@
       "View organization events by upgrading to Professional": [
         "Vedeți evenimentele organizației trecând la planul Professional"
       ],
+      "VPN": [
+        "VPN"
+      ],
       "Warning": [
         "Avertizare"
       ],
@@ -16629,6 +16844,9 @@
       ],
       "WireGuard configuration": [
         "Configurare WireGuard"
+      ],
+      "You are all set": [
+        "Totul este pregătit"
       ],
       "You can now create unlimited folders and labels": [
         "Acum puteți crea foldere și fișiere nelimitate"
