@@ -1,8 +1,9 @@
 import { renderHook } from '@testing-library/react-hooks';
 
 import { useOrganization } from '@proton/account/organization/hooks';
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { PLANS } from '@proton/payments';
+import { ADDON_NAMES, PLANS, PLAN_TYPES } from '@proton/payments';
 
 import { useInternalBooking } from '../../../store/internalBooking/bookingsHook';
 import { MAX_BOOKING_PAGES } from '../interface';
@@ -16,6 +17,9 @@ const mockUseOrganization = jest.mocked(useOrganization);
 
 jest.mock('../../../store/internalBooking/bookingsHook');
 const mockUseInternalBooking = jest.mocked(useInternalBooking);
+
+jest.mock('@proton/account/subscription/hooks');
+const mockUseSubscription = jest.mocked(useSubscription);
 
 const mockBookingPage = (id: string) => ({
     id,
@@ -34,6 +38,10 @@ const getBookingPagesArray = (bookingPagesCount: number) =>
 
 describe('useBookingUpsell', () => {
     beforeEach(() => {
+        mockUseSubscription.mockReturnValue([] as any);
+    });
+
+    afterEach(() => {
         jest.clearAllMocks();
     });
 
@@ -113,6 +121,53 @@ describe('useBookingUpsell', () => {
             const limits = result.current.shouldShowLimitModal();
 
             expect(limits).toEqual({ planLimitReached: false, bookingPageLimitReached: false });
+        });
+    });
+
+    describe('addon tests', () => {
+        beforeEach(() => {
+            mockUseUser.mockReturnValue([{ hasPaidMail: false, hasPaidMeet: true }] as any);
+            mockUseInternalBooking.mockReturnValue([{ bookingPages: getBookingPagesArray(10) }] as any);
+            mockUseOrganization.mockReturnValue([{ PlanName: PLANS.DUO }, false] as any);
+        });
+
+        it('should return no limit reached for account with less than max booking pages', () => {
+            mockUseSubscription.mockReturnValue([
+                {
+                    Plans: [
+                        {
+                            Type: PLAN_TYPES.ADDON,
+                            PlanName: ADDON_NAMES.MEET_LUMO,
+                            Name: ADDON_NAMES.MEET_LUMO,
+                        },
+                    ],
+                },
+            ] as any);
+
+            const { result } = renderHook(() => useBookingUpsell());
+            const limits = result.current.shouldShowLimitModal();
+
+            expect(limits).toEqual({ planLimitReached: false, bookingPageLimitReached: false });
+        });
+
+        it('should return booking limit reached for account with max booking pages', () => {
+            mockUseInternalBooking.mockReturnValue([{ bookingPages: getBookingPagesArray(MAX_BOOKING_PAGES) }] as any);
+            mockUseSubscription.mockReturnValue([
+                {
+                    Plans: [
+                        {
+                            Type: PLAN_TYPES.ADDON,
+                            PlanName: ADDON_NAMES.MEET_LUMO,
+                            Name: ADDON_NAMES.MEET_LUMO,
+                        },
+                    ],
+                },
+            ] as any);
+
+            const { result } = renderHook(() => useBookingUpsell());
+            const limits = result.current.shouldShowLimitModal();
+
+            expect(limits).toEqual({ planLimitReached: false, bookingPageLimitReached: true });
         });
     });
 });
