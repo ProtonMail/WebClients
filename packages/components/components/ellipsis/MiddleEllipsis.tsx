@@ -82,7 +82,7 @@ const MiddleEllipsis = ({
         } else {
             setTooltipTitle(null);
         }
-    }, [textIsTooLong, displayTooltip]);
+    }, [text, textIsTooLong, displayTooltip]);
 
     return (
         <Tooltip title={tooltipTitle} originalPlacement="bottom">
