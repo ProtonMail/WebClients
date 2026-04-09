@@ -3,14 +3,11 @@ import type { PasskeyQueryPayload, SelectedPasskey } from '@proton/pass/lib/pass
 import type { SelectAutofillCandidatesOptions, SelectOTPAutofillCandidateOptions } from '@proton/pass/lib/search/types';
 import { isAutofillableShare } from '@proton/pass/lib/shares/share.predicates';
 import { selectItemsFactory, selectVisibleItems } from '@proton/pass/store/selectors/items';
-import { selectVaultLimits } from '@proton/pass/store/selectors/limits';
 import { createMatchDomainItemsSelector } from '@proton/pass/store/selectors/match';
 import { selectVisibleShares } from '@proton/pass/store/selectors/shares';
-import { selectPassPlan } from '@proton/pass/store/selectors/user';
 import { NOOP_LIST_SELECTOR, createUncachedSelector } from '@proton/pass/store/selectors/utils';
 import type { State } from '@proton/pass/store/types';
 import type { ItemRevision, ItemRevisionWithOptimistic, ShareId } from '@proton/pass/types';
-import { UserPassPlan } from '@proton/pass/types/api/plan';
 import { deduplicate } from '@proton/pass/utils/array/duplicate';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { and } from '@proton/pass/utils/fp/predicates';
@@ -18,11 +15,8 @@ import { sortOn } from '@proton/pass/utils/fp/sort';
 import { parseUrl } from '@proton/pass/utils/url/parser';
 
 export const selectAutofillableShareIDs = createUncachedSelector(
-    [selectVisibleShares, selectVaultLimits, selectPassPlan, (_: State, writableFilter?: boolean) => writableFilter],
-    (shares, { didDowngrade }, plan, writableFilter): ShareId[] => {
-        const writableOnly = writableFilter || didDowngrade || plan === UserPassPlan.FREE;
-        return shares.filter((share) => isAutofillableShare(share, writableOnly)).map(prop('shareId'));
-    }
+    [selectVisibleShares, (_: State, writableOnly?: boolean) => writableOnly],
+    (shares, writableOnly = false): ShareId[] => shares.filter((share) => isAutofillableShare(share, writableOnly)).map(prop('shareId'))
 );
 
 export const selectAutofillIdentityCandidates = (shareIds?: string[]) =>
