@@ -39,7 +39,7 @@ import type { Notification } from '@proton/pass/store/actions/enhancers/notifica
 import type { FeatureFlagState, VaultShareItem } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { ShareId } from '@proton/pass/types/crypto/pass-types';
-import type { AliasOptions } from '@proton/pass/types/data/alias';
+import type { AliasOptionsResult } from '@proton/pass/types/data/alias';
 import type { B2BEvent } from '@proton/pass/types/data/b2b';
 import type { FileTransferErrorDTO, FileTransferWriteDTO } from '@proton/pass/types/data/files';
 import type { UniqueItem } from '@proton/pass/types/data/items';
@@ -389,11 +389,7 @@ export type MaybeMessage<T> = MessageSuccess<T> | MessageFailure;
 type WorkerMessageResponseMap = {
     [WorkerMessageType.ACCOUNT_FORK]: { payload: ExtensionForkResultPayload };
     [WorkerMessageType.ALIAS_CREATE]: Result;
-    [WorkerMessageType.ALIAS_OPTIONS]: Result<{
-        options: AliasOptions;
-        needsUpgrade: boolean;
-        aliasCreationDisabled: boolean;
-    }>;
+    [WorkerMessageType.ALIAS_OPTIONS]: Result<AliasOptionsResult>;
     [WorkerMessageType.AUTH_CHECK]: Result<{ locked: boolean }, {}>;
     [WorkerMessageType.AUTH_CONFIRM_PASSWORD]: Result;
     [WorkerMessageType.AUTH_INIT]: AppState;
