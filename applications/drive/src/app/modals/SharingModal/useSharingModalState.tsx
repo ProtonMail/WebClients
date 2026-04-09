@@ -5,14 +5,13 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import type { ModalStateProps } from '@proton/components';
 import { useNotifications } from '@proton/components';
-import type { DegradedNode, ProtonDriveClient, ProtonDrivePhotosClient } from '@proton/drive';
+import type { DegradedNode, ProtonDriveClient } from '@proton/drive';
 import {
     MemberRole,
     type NodeEntity,
     NodeType,
     type ShareNodeSettings,
     type ShareResult,
-    getDrive,
     splitInvitationUid,
     splitNodeUid,
 } from '@proton/drive';
@@ -31,13 +30,14 @@ import { getNodeAncestry } from '../../utils/sdk/getNodeAncestry';
 import { getNodeEffectiveRole } from '../../utils/sdk/getNodeEffectiveRole';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { getNodeName } from '../../utils/sdk/getNodeName';
+import type { DriveWithSharing } from '../preview/interface';
 import { getDisplayName } from './DirectSharing/helpers/userNames';
 import type { SharingModalViewProps } from './SharingModalView';
 import { type DirectMember, MemberType } from './interfaces';
 
 export type SharingModalInnerProps = {
     nodeUid: string;
-    drive?: ProtonDriveClient | ProtonDrivePhotosClient;
+    drive: DriveWithSharing;
 };
 
 export type UseSharingModalProps = ModalStateProps & SharingModalInnerProps;
@@ -61,7 +61,7 @@ const getIsShared = (shareResult: ShareResult) => {
 
 export const useSharingModalState = ({
     nodeUid,
-    drive = getDrive(),
+    drive,
     onClose,
     open,
     onExit,

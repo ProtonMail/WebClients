@@ -1,4 +1,4 @@
-import { getDrivePerNodeType } from '@proton/drive/index';
+import { getDrive, getDrivePerNodeType } from '@proton/drive';
 import isTruthy from '@proton/utils/isTruthy';
 
 import useDriveNavigation from '../../../../hooks/drive/useNavigate';
@@ -35,6 +35,8 @@ export const useSearchActions = () => {
                 .filter((item) => item.mediaType && isPreviewOrFallbackAvailable(item.mediaType, item.size))
                 .map((item) => item.nodeUid),
             deprecatedContextShareId: '',
+            // TODO: Search doesn't support photos for now so we can force getDrive
+            drive: getDrive(),
         });
     };
 
@@ -98,11 +100,13 @@ export const useSearchActions = () => {
     };
 
     const handleShare = (uid: string) => {
-        showSharingModal({ nodeUid: uid });
+        // TODO: Search doesn't support photos for now so we can force getDrive
+        showSharingModal({ nodeUid: uid, drive: getDrive() });
     };
 
     const handleShowRevisions = (uid: string) => {
-        showRevisionsModal({ nodeUid: uid });
+        // TODO: Search doesn't support photos for now but revision is only for files
+        showRevisionsModal({ nodeUid: uid, drive: getDrive() });
     };
 
     return {

@@ -10,6 +10,7 @@ import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { isNativeProtonDocsAppFile } from '@proton/shared/lib/helpers/mimetype';
 
 import { useUserSettings } from '../../../hooks/user';
+import type { Drive } from '../../../modals/preview/interface';
 import { useContextMenuStore } from '../../../modules/contextMenu';
 import { useSelectionStore } from '../../../modules/selection';
 import type { SortConfig, SortField } from '../../../modules/sorting';
@@ -26,7 +27,12 @@ import type { TrashItem } from '../useTrash.store';
 import { useTrashStore } from '../useTrash.store';
 
 interface Props {
-    onPreview: (props: { deprecatedContextShareId: string; nodeUid: string; canOpenInDocs: boolean }) => void;
+    onPreview: (props: {
+        deprecatedContextShareId: string;
+        nodeUid: string;
+        canOpenInDocs: boolean;
+        drive: Drive;
+    }) => void;
     handleShowDetails: (props: { nodeUid: string }) => void;
     handleShowFilesDetails: (props: { nodeUids: string[] }) => void;
     onRestore: (items: TrashItem[]) => void;
@@ -103,7 +109,12 @@ export function Trash({ onPreview, handleShowDetails, handleShowFilesDetails, on
             return;
         }
 
-        onPreview({ deprecatedContextShareId: '', nodeUid: item.uid, canOpenInDocs: false });
+        onPreview({
+            deprecatedContextShareId: '',
+            nodeUid: item.uid,
+            canOpenInDocs: false,
+            drive: getDrivePerNodeType(item.type),
+        });
     };
 
     const isEmpty = hasEverLoaded && !isLoading && sortedItemUids.size === 0;

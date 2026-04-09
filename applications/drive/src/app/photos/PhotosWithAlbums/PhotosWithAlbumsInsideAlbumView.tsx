@@ -124,7 +124,10 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
     useEffect(() => {
         if (album && albumShareId) {
             if (searchParams.has('openShare')) {
-                modals.linkSharing?.({ nodeUid: generateNodeUid(album.volumeId, album.linkId) });
+                modals.linkSharing?.({
+                    nodeUid: generateNodeUid(album.volumeId, album.linkId),
+                    drive: getDriveForPhotos(),
+                });
                 searchParams.delete('openShare');
                 setSearchParams(searchParams);
             }
