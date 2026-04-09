@@ -1,4 +1,5 @@
-import { PLANS } from '@proton/payments';
+import type { SubscriptionPlan } from '@proton/payments';
+import { ADDON_NAMES, PLANS } from '@proton/payments';
 import type { OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
 
 import type { InternalBookingPage } from '../../../store/internalBooking/interface';
@@ -11,16 +12,28 @@ import { MAX_BOOKING_PAGES, MAX_BOOKING_PAGE_MAIL_FREE, MAX_BOOKING_PAGE_MAIL_PA
 export const hasUserReachPlanLimit = (
     user: UserModel,
     pageCount: number,
-    organization?: OrganizationExtended
+    organization?: OrganizationExtended,
+    meetAddon?: SubscriptionPlan
 ): boolean => {
     // Users not paying for Mail or Meet get no booking pages
     if (!user.hasPaidMail && !user.hasPaidMeet) {
         return true;
     }
 
-    const planName = organization?.PlanName;
+    // If the user has a addon we use this to determine the plan name and the assosciated limits
+    const planName = meetAddon ? meetAddon.Name : organization?.PlanName;
     switch (planName) {
         // Those plans have the maximum number of booking pages
+        case ADDON_NAMES.MEET_VPN2024:
+        case ADDON_NAMES.MEET_LUMO:
+        case ADDON_NAMES.MEET_DRIVE:
+        case ADDON_NAMES.MEET_PASS:
+        case ADDON_NAMES.MEET_DRIVE_1TB:
+        case ADDON_NAMES.MEET_MAIL:
+        case ADDON_NAMES.MEET_BUNDLE:
+        case ADDON_NAMES.MEET_MAIL_PRO:
+        case ADDON_NAMES.MEET_DUO:
+        case ADDON_NAMES.MEET_FAMILY:
         case PLANS.VISIONARY:
         case PLANS.MAIL_BUSINESS:
         case PLANS.BUNDLE_PRO:
