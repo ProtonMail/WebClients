@@ -2383,6 +2383,9 @@
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Tämä hylkää laitteen **${ name }**, joka yritti kirjautua ${ BRAND_NAME }-tilillesi **${ date }**."
       ],
+      "To configure shortcuts, go to about:addons in Firefox and select \"Manage Extension Shortcuts\"": [
+        "Määritä pikakuvakkeet siirtymällä Firefoxissa osoitteeseen about:addons ja valitsemalla ”Hallitse laajennusten pikakuvakkeita”"
+      ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Siirrä nämä aliakset toiseen postilaatikkoon jatkaaksesi sähköpostien vastaanottamista:"
       ],
@@ -4906,6 +4909,9 @@
       ],
       "No shared items matching": [
         "Vastaavia jaettuja kohteita ei ole"
+      ],
+      "Offline": [
+        "Yhteydetön"
       ],
       "Once synced, deleting aliases in ${ PASS_SHORT_APP_NAME } will also delete them in SimpleLogin.": [
         "Synkronoinnin jälkeen aliasten poistaminen ${ PASS_SHORT_APP_NAME }ista poistaa ne myös SimpleLoginista."
