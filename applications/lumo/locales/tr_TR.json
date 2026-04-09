@@ -4580,9 +4580,6 @@
       "This field requires a minimum of ${ minimumLength } characters.": [
         "Bu alana en az ${ minimumLength } karakter yazılmalıdır."
       ],
-      "This offer is not available in your country": [
-        "Bu teklif ülkeniz için geçerli değil"
-      ],
       "Try using only letters, numerals, and _.-": [
         "Yalnızca harfleri, rakamları ve _.- karakterlerini kullanmayı deneyin"
       ],
@@ -4997,6 +4994,9 @@
       "Enabling auto-deletion…": [
         "Otomatik silme özelliği açılıyor…"
       ],
+      "Enter code": [
+        "Kodu girin"
+      ],
       "Enter the code from your authenticator app": [
         "Kimlik doğrulama uygulamanızdan alacağınız kodu yazın"
       ],
@@ -5038,6 +5038,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "E-postayı Gelen kutunuzda göremezseniz, İstenmeyen kutusuna bakmayı unutmayın."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Kimlik doğrulama uygulamanıza erişemiyorsanız iki adımlı doğrulamayı kurarken size verilen 16 yedek kurtarma kodundan birini kullanabilirsiniz. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Tarifenizi düşürdüğünüzde, ücretli ${ MAIL_APP_NAME } ve ${ VPN_APP_NAME } özelliklerini kullanamayacaksınız."
@@ -5297,9 +5300,6 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "${ strong } alıcısına yeni bir doğrulama kodu göndereceğiz"
-      ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "İki adımlı doğrulamayı kurduğunuzda, kimlik doğrulama uygulamanızda sorun olması durumunda oturum açmak için kullanabileceğiniz kurtarma kodları veriyoruz."
       ],
       "Would you like to receive a new verification code or use an alternative verification method?": [
         "Yeni bir doğrulama kodu almak ya da alternatif bir doğrulama yöntemi kullanmak ister misiniz?"
@@ -8205,9 +8205,6 @@
       ],
       "Simplify password management": [
         "Parola yönetimini kolaylaştırın"
-      ],
-      "Spring Sale": [
-        "Bahar indirimi"
       ],
       "Summary": [
         "Özet"
