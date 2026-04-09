@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
 import { LoaderPage } from '@proton/components/index';
-import { IcUser } from '@proton/icons/icons/IcUser';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
+import { UserNameWithIcon } from '../../components/username/UserNameWithIcon';
 import type { Render, RenderProps } from '../LoginRender';
 import { useUnauthLost2FA } from './UnauthedLost2FAContainer';
 import { ErrorStep } from './steps/ErrorStep';
@@ -33,11 +33,7 @@ export const UnauthedLost2FASteps = ({ render, toApp, username }: UnauthedLost2F
             toApp,
             onBack: handleBack,
             title,
-            subTitle: (
-                <span className="flex gap-2 items-center">
-                    <IcUser size={4} /> {username}
-                </span>
-            ),
+            subTitle: <UserNameWithIcon username={username} />,
             content,
         });
     };

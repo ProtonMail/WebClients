@@ -1,13 +1,9 @@
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
+import { DelegatedAccessStateEnum, DelegatedAccessTypeEnum } from '@proton/shared/lib/interfaces/DelegatedAccess';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
 import { getContact, getParsedDateTime } from '../../emergencyContact/helper';
-import {
-    DelegatedAccessStateEnum,
-    DelegatedAccessTypeEnum,
-    type OutgoingDelegatedAccessOutput,
-    type OutgoingEphemeral,
-} from '../../interface';
+import type { OutgoingDelegatedAccessOutput, OutgoingEphemeral } from '../../interface';
 
 export const getIsRecoveryContact = (value: OutgoingDelegatedAccessOutput) => {
     // Can be both emergency contact and recovery contact

@@ -1,13 +1,8 @@
+import type { AccountType, RecoveryMethod, ValidateResetTokenResponse } from '@proton/shared/lib/api/reset';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import type {
-    Address,
-    Api,
-    DecryptedKey,
-    KeyTransparencyActivation,
-    PasswordPolicies,
-} from '@proton/shared/lib/interfaces';
+import type { Api, DecryptedKey, KeyTransparencyActivation } from '@proton/shared/lib/interfaces';
 
 import type { AuthSession } from '../login/interface';
 
@@ -23,19 +18,7 @@ export enum STEPS {
     DONE,
 }
 
-// Login is valid for external accounts
-export type RecoveryMethod = 'email' | 'sms' | 'login' | 'mnemonic';
-export type AccountType = 'internal' | 'external';
-
-export interface ValidateResetTokenResponse {
-    UserID: string;
-    Addresses: Address[];
-    ToMigrate: 0 | 1;
-    SupportPgpV6Keys: 0 | 1;
-    PasswordPolicies: PasswordPolicies;
-}
-
-interface MnemonicData {
+export interface MnemonicData {
     api: Api;
     decryptedUserKeys: DecryptedKey[];
     authResponse: AuthResponse;

@@ -13,6 +13,7 @@ import type {
     Api,
     DecryptedKey,
     InactiveKey,
+    Key,
     KeyPair,
     PreAuthKTVerify,
     User,
@@ -37,9 +38,9 @@ import {
 } from './recoveryFile';
 import { getHasRecoveryMessage, getRecoveryMessage, removeDeviceRecovery, setRecoveryMessage } from './storage';
 
-export const getKeysFromDeviceRecovery = async (user: User) => {
-    const recoveryMessage = getRecoveryMessage(user.ID);
-    const recoverySecrets = getRecoverySecrets(user.Keys);
+export const getKeysFromDeviceRecovery = async (userId: string, userKeys: Key[]) => {
+    const recoveryMessage = getRecoveryMessage(userId);
+    const recoverySecrets = getRecoverySecrets(userKeys);
 
     if (!recoveryMessage || !recoverySecrets.length) {
         return;
@@ -101,7 +102,7 @@ export const attemptDeviceRecovery = async ({
         inactiveKeys,
     });
     const initialStates = getInitialStates(allKeysToReactivate);
-    const keys = await getKeysFromDeviceRecovery(user);
+    const keys = await getKeysFromDeviceRecovery(user.ID, user.Keys);
 
     if (!keys) {
         return;
@@ -162,7 +163,7 @@ const storeRecoveryMessage = async ({
     userKeys: KeyPair[];
     recoverySecret: string;
 }) => {
-    const currentDeviceRecoveryKeys = (await getKeysFromDeviceRecovery(user)) || [];
+    const currentDeviceRecoveryKeys = (await getKeysFromDeviceRecovery(user.ID, user.Keys)) || [];
 
     // Merge current device recovery keys with new keys to store. This way the act of storing device recovery information is not destructive.
     const keysToStore = [...userKeys.map(({ privateKey }) => privateKey), ...currentDeviceRecoveryKeys];
@@ -268,7 +269,7 @@ export const syncDeviceRecovery = async ({
         return;
     }
 
-    const storedKeys = (await getKeysFromDeviceRecovery(user)) || [];
+    const storedKeys = (await getKeysFromDeviceRecovery(user.ID, user.Keys)) || [];
     if (signal?.aborted) {
         return;
     }

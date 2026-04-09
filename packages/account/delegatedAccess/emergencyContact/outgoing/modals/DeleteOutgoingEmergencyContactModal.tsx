@@ -5,8 +5,8 @@ import Prompt, { type PromptProps } from '@proton/components/components/prompt/P
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
+import { DelegatedAccessTypeEnum } from '@proton/shared/lib/interfaces/DelegatedAccess';
 
-import { DelegatedAccessTypeEnum } from '../../../interface';
 import { deleteDelegatedAccessThunk } from '../../../outgoingActions';
 import type { EnrichedOutgoingDelegatedAccess } from '../../../shared/outgoing/interface';
 import { useDispatch } from '../../../useDispatch';

@@ -44,6 +44,7 @@ import { withUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Api, Unwrap } from '@proton/shared/lib/interfaces';
+import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 import type { Paths } from '../content/helper';
@@ -390,10 +391,20 @@ const LoginForm = ({
         setExternalSSOState(undefined);
     };
 
-    const usernameParams = username ? `?username=${username}` : '';
-    const signinHelpPath = `${paths.signinHelp}${usernameParams}`;
-    const resetPath = `${paths.reset}${usernameParams}`;
-    const forgotUsernamePath = `${paths.forgotUsername}${usernameParams}`;
+    const unauthedForgotPasswordEnabled = useFlag('UnauthedForgotPassword');
+    const urlParams = new URLSearchParams();
+
+    if (username) {
+        urlParams.append('username', username);
+    }
+    if (unauthedForgotPasswordEnabled) {
+        urlParams.append('variant', 'b');
+    }
+
+    const stringUrlParams = urlParams.toString();
+    const signinHelpPath = `${paths.signinHelp}?${stringUrlParams}`;
+    const resetPath = `${paths.reset}?${stringUrlParams}`;
+    const forgotUsernamePath = `${paths.forgotUsername}?${stringUrlParams}`;
 
     useEffect(() => {
         // This handles the case for:

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -11,6 +11,7 @@ import {
 } from '@proton/account/signInWithAnotherDevice/signInWithAnotherDevicePull';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
+import { Href } from '@proton/atoms/Href/Href';
 import { useLocalState } from '@proton/components';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import type { OnLoginCallback } from '@proton/components/containers/app/interface';
@@ -25,6 +26,7 @@ import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getToAppName } from '@proton/shared/lib/authentication/apps';
 import { type APP_NAMES, BRAND_NAME, MAIL_APP_NAME, SECOND } from '@proton/shared/lib/constants';
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
@@ -60,6 +62,9 @@ const SignInWithAnotherDeviceContainer = ({ api, toApp, paths, onLogin, onStartA
     const getKtActivation = useGetAccountKTActivation();
     const errorHandler = useErrorHandler();
     const restartRef = useRef<null | (() => Promise<void>)>(null);
+
+    const history = useHistory();
+    const backToSignIn = () => history.push(paths.login);
 
     useEffect(() => {
         const abortController = new AbortController();
@@ -185,11 +190,12 @@ const SignInWithAnotherDeviceContainer = ({ api, toApp, paths, onLogin, onStartA
     }
 
     return (
-        <Layout hasDecoration={true} toApp={toApp}>
+        <Layout hasDecoration={true} toApp={toApp} onBack={backToSignIn}>
             <Main>
                 <Header
                     title={c('edm').t`Sign in with QR code`}
                     subTitle={toAppName ? getContinueToString(toAppName) : ''}
+                    onBack={backToSignIn}
                 />
                 <Content>
                     <div className="ui-standard flex justify-center items-center mb-6 bg-elevated">
@@ -203,22 +209,27 @@ const SignInWithAnotherDeviceContainer = ({ api, toApp, paths, onLogin, onStartA
                     </div>
                     <div className="flex flex-column gap-4">
                         <div className="text-lg text-bold">{c('edm').t`How to sign in using another device`}</div>
-                        <ol className="m-0 pl-4">
-                            <li className="mb-2">{c('edm')
-                                .t`Get another device that’s signed in to your ${BRAND_NAME} Account`}</li>
-                            <li className="mb-2">
-                                {getBoldFormattedText(
-                                    c('edm').t`Using that device, open the ${MAIL_APP_NAME} app and select **Settings**`
-                                )}
-                            </li>
-                            <li className="mb-2">
-                                {getBoldFormattedText(c('edm').t`Select **Sign in on another device → Scan QR code**`)}
-                            </li>
-                            <li className="mb-2">{c('edm').t`Scan the code to sign in`}</li>
-                        </ol>
-
-                        <ButtonLike size="large" as={Link} to={paths.login} color="weak" fullWidth>
-                            {c('Action').t`Cancel`}
+                        <div>
+                            <ol className="m-0 pl-4">
+                                <li className="mb-2">{c('edm')
+                                    .t`Get another device that’s signed in to your ${BRAND_NAME} Account`}</li>
+                                <li className="mb-2">
+                                    {getBoldFormattedText(
+                                        c('edm')
+                                            .t`Using that device, open the ${MAIL_APP_NAME} app and select **Settings**`
+                                    )}
+                                </li>
+                                <li className="mb-2">
+                                    {getBoldFormattedText(
+                                        c('edm').t`Select **Sign in on another device → Scan QR code**`
+                                    )}
+                                </li>
+                                <li className="mb-2">{c('edm').t`Scan the code to sign in`}</li>
+                            </ol>
+                            <Href href={getKnowledgeBaseUrl('/qr-code-sign-in')}>{c('Link').t`Learn more`}</Href>
+                        </div>
+                        <ButtonLike size="large" as={Link} to={paths.reset} color="weak" fullWidth>
+                            {c('Action').t`I don’t have my phone`}
                         </ButtonLike>
                     </div>
                 </Content>

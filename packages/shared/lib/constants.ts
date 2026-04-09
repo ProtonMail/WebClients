@@ -58,6 +58,8 @@ export const AUTHENTICATOR_SHORT_APP_NAME = 'Authenticator';
 export const AUTHENTICATOR_APP_NAME = `${BRAND_NAME} ${AUTHENTICATOR_SHORT_APP_NAME}`;
 export const MEET_SHORT_APP_NAME = 'Meet';
 export const MEET_APP_NAME = `${BRAND_NAME} ${MEET_SHORT_APP_NAME}`;
+export const ACCOUNT_SHORT_APP_NAME = 'Account';
+export const ACCOUNT_APP_NAME = `${BRAND_NAME} ${ACCOUNT_SHORT_APP_NAME}`;
 
 export const APPS = {
     PROTONACCOUNT: 'proton-account',

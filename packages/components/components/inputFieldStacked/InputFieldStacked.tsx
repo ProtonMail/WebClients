@@ -14,10 +14,11 @@ interface InputFieldStackedProps {
     isBigger?: boolean;
     isGroupElement?: boolean;
     classname?: string;
+    style?: React.CSSProperties;
 }
 
 const InputFieldStacked = forwardRef<HTMLDivElement, InputFieldStackedProps>(
-    ({ children, icon, suffix, hasError, isBigger, isGroupElement, classname }, ref) => (
+    ({ children, icon, suffix, hasError, isBigger, isGroupElement, classname, style }, ref) => (
         <div
             ref={ref}
             className={clsx(
@@ -27,6 +28,7 @@ const InputFieldStacked = forwardRef<HTMLDivElement, InputFieldStackedProps>(
                 isGroupElement ? 'border-top border-left border-right' : 'border stacked-field--rounded',
                 classname
             )}
+            style={style}
         >
             {icon &&
                 (typeof icon === 'string' ? (
