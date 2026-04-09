@@ -112,12 +112,19 @@ export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
         return <ChatHistorySkeleton />;
     }
 
+    if (isGuest) {
+        return (
+            <div className="chat-history-container flex flex-column flex-nowrap gap-2">
+                <Scroll className="flex-1">
+                    <ChatHistoryGuestUserUpsell />
+                </Scroll>
+            </div>
+        );
+    }
+
     return (
         <div className="chat-history-container flex flex-column flex-nowrap gap-2">
             <Scroll className="flex-1">
-                {/* Enhanced sign-in section for all guest users */}
-                {isGuest && <ChatHistoryGuestUserUpsell />}
-
                 {!isGuest && noConversationAtAll && (
                     <>
                         <div className="color-weak text-sm my-2 ml-3 pl-6">
