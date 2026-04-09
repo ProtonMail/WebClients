@@ -61,9 +61,9 @@ export const matchesDropdownAnchor = <T extends DropdownAnchor>(a: Maybe<MaybeNu
     }
 };
 
-/** CC uses domain-level scope (TLD private-domain aware) so cross-origin payment
- * iframes fall within the same trust boundary as `getTabFrames` frame origins. Other
- * actions use the full hostname for strict same-host item matching. */
+/** CC uses domain-level scope (TLD private-domain aware) so cross-origin payment iframes
+ * share the same trust boundary as the origins validated by `getAutofillableFrames`.
+ * All other actions use the full hostname for strict same-host item matching. */
 export const resolveOriginScope = (request: DropdownRequest, url: ParsedUrl) => {
     if (request.action === DropdownAction.AUTOFILL_CC) return resolveDomain(url);
     else return resolveSubdomain(url);
