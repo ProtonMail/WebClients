@@ -10,9 +10,8 @@ import { useReadCalendarBootstrap } from '@proton/calendar/calendarBootstrap/hoo
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { useWriteableCalendars } from '@proton/calendar/calendars/hooks';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import useAllowedProducts from '@proton/components/containers/organization/accessControl/useAllowedProducts';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { Product } from '@proton/shared/lib/ProductEnum';
+import { useHasMeetProductAccess } from '@proton/meet/hooks/useHasMeetProductAccess';
 import { getPreferredActiveWritableCalendar } from '@proton/shared/lib/calendar/calendar';
 import { useFlag } from '@proton/unleash/useFlag';
 
@@ -65,14 +64,13 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     const [writeableCalendars = []] = useWriteableCalendars();
     const readCalendarBootstrap = useReadCalendarBootstrap();
 
-    const [allowedProducts] = useAllowedProducts();
-
     const [loading, setLoading] = useState(false);
     const [bookingsState, setBookingsState] = useState<BookingState>(BookingState.OFF);
 
     const isMeetVideoConferenceEnabled = useFlag('NewScheduleOption');
+    const hasMeetProductAccess = useHasMeetProductAccess();
 
-    const canUseMeetLocation = isMeetVideoConferenceEnabled && allowedProducts.has(Product.Meet);
+    const canUseMeetLocation = isMeetVideoConferenceEnabled && hasMeetProductAccess;
 
     // Upsell modals
     const { shouldShowLimitModal, loadingLimits } = useBookingUpsell();
