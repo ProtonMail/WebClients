@@ -37,11 +37,14 @@ const SidebarParent = ({
     sidebarExpanded,
     onSidebarToggle,
     trackingData,
-}: PropsWithChildren<CoupledParentProps & { trackingData: Record<string, unknown> }>) => {
+    isSidebarEnabled,
+}: PropsWithChildren<CoupledParentProps & { trackingData: Record<string, unknown>; isSidebarEnabled: boolean }>) => {
     const navigationRef = useRef<HTMLDivElement>(null);
     useVisibilityTracker(navigationRef, {
         onEnter: () => {
-            telemetry.sendCustomEvent(onViewEventKey, trackingData);
+            if (isSidebarEnabled) {
+                telemetry.sendCustomEvent(onViewEventKey, trackingData);
+            }
         },
         once: true,
     });
@@ -145,7 +148,12 @@ const TrackableSidebar = ({
     };
 
     return (
-        <SidebarParent sidebarExpanded={sidebarExpanded} onSidebarToggle={onSidebarToggle} trackingData={trackingData}>
+        <SidebarParent
+            sidebarExpanded={sidebarExpanded}
+            onSidebarToggle={onSidebarToggle}
+            trackingData={trackingData}
+            isSidebarEnabled={adminSidebarFeature.enabled}
+        >
             {isSidebarActive ? (
                 <>
                     <SidebarNav className="overflow-auto">
