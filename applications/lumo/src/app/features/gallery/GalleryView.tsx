@@ -8,6 +8,7 @@ import lumoImageLight from '@proton/styles/assets/img/lumo/lumo-image-light.svg'
 
 import { ComposerComponent } from '../../components/Composer/ComposerComponent';
 import { useFileHandling } from '../../components/Composer/hooks/useFileHandling';
+import { useNativeComposerVisibilityApi } from '../../components/Composer/hooks/useNativeComposerVisibilityApi';
 import { GuestSignInState } from '../../components/GuestSignInState/GuestSignInState';
 import { LazyLottie } from '../../components/LazyLottie';
 import type { DrawingMode } from '../../features/drawingcanvas/types';
@@ -82,6 +83,7 @@ export const GalleryView = ({
     const pendingEditPromptRef = useRef<string>('');
     const [composerPrefill, setComposerPrefill] = useState<string | undefined>(externalPrefill);
     const [gallerySketchTrigger, setGallerySketchTrigger] = useState(false);
+    const nativeComposerVisibilityApi = useNativeComposerVisibilityApi();
 
     // Hoisted gallery data — used to decide default tab and passed to CreatedGrid
     const galleryImages = useGeneratedGalleryImages();
@@ -107,7 +109,9 @@ export const GalleryView = ({
     const handleSuggestionClick = useCallback(
         (suggestion: GalleryPromptSuggestion) => {
             if (suggestion.action === 'sketch') {
-                setComposerPrefill(suggestion.prompt);
+                if (nativeComposerVisibilityApi.showWebComposer()) {
+                    setComposerPrefill(suggestion.prompt);
+                }
                 pendingEditPromptRef.current = suggestion.prompt;
                 setGallerySketchTrigger(true);
                 setTimeout(() => setGallerySketchTrigger(false), 0);
@@ -144,7 +148,9 @@ export const GalleryView = ({
             const files = Array.from(e.target.files ?? []);
             if (files.length === 0) return;
             handleFilesSelected(files);
-            setComposerPrefill(pendingEditPromptRef.current);
+            if (nativeComposerVisibilityApi.showWebComposer()) {
+                setComposerPrefill(pendingEditPromptRef.current);
+            }
             injectNativeImageGenerationHelper(pendingEditPromptRef.current);
             e.target.value = '';
         },
@@ -236,7 +242,12 @@ export const GalleryView = ({
             )}
 
             {/* Bottom panel — composer only, always visible */}
-            <div className={clsx('gallery-bottom w-full', hasImages && 'absolute')}>
+            <div
+                className={clsx(
+                    'gallery-bottom w-full',
+                    !isSmallScreen && activeTab === 'gallery' && hasImages && 'absolute'
+                )}
+            >
                 <div className="gallery-inner">
                     <div className="gallery-composer-wrapper">
                         <ComposerComponent
