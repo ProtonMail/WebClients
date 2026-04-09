@@ -22,6 +22,10 @@ export const selectOrganizationRoles = (state: OrganizationRolesState) => state[
 
 const modelThunk = createAsyncModelThunk<Model, OrganizationRolesState, ProtonThunkArguments>(`${name}/fetch`, {
     miss: async ({ extraArgument }) => {
+        const isEnabled = extraArgument.unleashClient?.isEnabled('AdminRoleMVP') ?? false;
+        if (!isEnabled) {
+            return [];
+        }
         const { Roles } = await extraArgument.api<{ Roles: OrganizationRole[] }>(getOrganizationRoles());
         return Roles;
     },
