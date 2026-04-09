@@ -138,6 +138,7 @@ export const DirectShareActions = ({
                                     (item) => item.mediaType && isPreviewOrFallbackAvailable(item.mediaType, item.size)
                                 )
                                 .map((item) => item.nodeUid),
+                            drive: getDrivePerNodeType(singleItem.type),
                         });
                     }}
                     {...(buttonType === 'contextMenu' ? { close, buttonType } : { buttonType })}
@@ -190,7 +191,9 @@ export const DirectShareActions = ({
             ) : null}
             {itemChecker.isOnlyOneItem && hasAdminRole && (
                 <ShareButton
-                    onClick={() => showSharingModal({ nodeUid: singleItem.nodeUid })}
+                    onClick={() =>
+                        showSharingModal({ nodeUid: singleItem.nodeUid, drive: getDrivePerNodeType(singleItem.type) })
+                    }
                     {...(buttonType === 'contextMenu' ? { close, buttonType } : { buttonType })}
                 />
             )}

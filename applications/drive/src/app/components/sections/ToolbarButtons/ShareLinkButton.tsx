@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { ToolbarButton } from '@proton/components';
-import { generateNodeUid } from '@proton/drive/index';
+import { generateNodeUid, getDrive } from '@proton/drive';
 import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
 
 import { useSharingModal } from '../../../modals/SharingModal/SharingModal';
@@ -18,7 +18,8 @@ const ShareLinkButton = ({ volumeId, linkId }: Props) => {
             <ToolbarButton
                 title={c('Action').t`Share`}
                 icon={<IcUserPlus alt={c('Action').t`Share`} />}
-                onClick={() => showSharingModal({ nodeUid: generateNodeUid(volumeId, linkId) })}
+                // Forced to getDrive as it's legacy stuff not used in shared with me or shared by me
+                onClick={() => showSharingModal({ nodeUid: generateNodeUid(volumeId, linkId), drive: getDrive() })}
                 data-testid="toolbar-share-link"
             />
             {sharingModal}

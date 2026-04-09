@@ -1,4 +1,4 @@
-import { generateNodeUid, useDrive } from '@proton/drive';
+import { generateNodeUid, getDrive, useDrive } from '@proton/drive';
 import { uploadManager } from '@proton/drive/modules/upload';
 
 import { useUploadInput } from '../../hooks/drive/useUploadInput';
@@ -78,6 +78,8 @@ export const useFolderActions = ({ allSortedItems, selectedItems, shareId, linkI
             deprecatedContextShareId: shareId,
             nodeUid: item.uid,
             previewableNodeUids: getPreviewableNodeUids(),
+            // Force getDrive as it's folder section
+            drive: getDrive(),
         });
     };
 
@@ -86,6 +88,8 @@ export const useFolderActions = ({ allSortedItems, selectedItems, shareId, linkI
             deprecatedContextShareId: shareId,
             nodeUid,
             previewableNodeUids: getPreviewableNodeUids(),
+            // Force getDrive as it's folder section
+            drive: getDrive(),
         });
     };
 
@@ -128,10 +132,15 @@ export const useFolderActions = ({ allSortedItems, selectedItems, shareId, linkI
     const createShareLink = () => {
         if (selectedItems.length === 1) {
             const item = selectedItems[0];
-            showSharingModal({ nodeUid: generateNodeUid(item.volumeId, item.linkId) });
+            showSharingModal({
+                nodeUid: generateNodeUid(item.volumeId, item.linkId),
+                // For folder section so we can force getDrive
+                drive: getDrive(),
+            });
         } else {
             // In case nothing is selected we share the active folder
-            showSharingModal({ nodeUid: generateNodeUid(volumeId, linkId) });
+            // For folder section so we can force getDrive
+            showSharingModal({ nodeUid: generateNodeUid(volumeId, linkId), drive: getDrive() });
         }
     };
 

@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
 import { ToolbarButton } from '@proton/components';
+import { getDrive } from '@proton/drive';
 import { IcEye } from '@proton/icons/icons/IcEye';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
@@ -51,6 +52,8 @@ const PreviewButton = ({ selectedBrowserItems }: Props) => {
                             showPreviewModal({
                                 deprecatedContextShareId: selectedBrowserItems[0].rootShareId,
                                 nodeUid,
+                                // Force getDrive as it's legacy
+                                drive: getDrive(),
                             });
                         } else {
                             openLegacyPreview(selectedBrowserItems[0].rootShareId, selectedBrowserItems[0].linkId);

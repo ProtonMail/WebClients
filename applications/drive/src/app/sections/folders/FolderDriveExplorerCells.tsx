@@ -1,7 +1,7 @@
 import { useShallow } from 'zustand/react/shallow';
 
 import type { Breakpoints } from '@proton/components';
-import { MemberRole } from '@proton/drive/index';
+import { MemberRole, getDrive } from '@proton/drive';
 import { useThumbnail } from '@proton/drive/modules/thumbnails';
 
 import { ShareIcon } from '../../components/sections/FileBrowser/ShareIcon';
@@ -110,7 +110,8 @@ export const getFolderCells = ({
                         <ShareIcon
                             trashed={trashed}
                             isAdmin={isAdmin}
-                            onClick={() => showSharingModal({ nodeUid: uid })}
+                            // For folder section so we can force getDrive
+                            onClick={() => showSharingModal({ nodeUid: uid, drive: getDrive() })}
                         />
                         {sharingModal}
                     </>
