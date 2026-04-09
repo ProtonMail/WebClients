@@ -1,5 +1,7 @@
 import { c } from 'ttag';
 
+import { getDrive } from '@proton/drive';
+
 import { useFlagsDriveSDKPreview } from '../../../../flags/useFlagsDriveSDKPreview';
 import type { useDrivePreviewModal } from '../../../../modals/preview';
 import useOpenPreview from '../../../useOpenPreview';
@@ -28,6 +30,8 @@ const PreviewButton = ({ shareId, linkId, nodeUid, showPreviewModal, close }: Pr
                     showPreviewModal({
                         deprecatedContextShareId: shareId,
                         nodeUid,
+                        // Force drive as it's legacy
+                        drive: getDrive(),
                     });
                 } else {
                     openLegacyPreview(shareId, linkId);

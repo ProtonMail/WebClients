@@ -7,7 +7,6 @@ import { useConfirmActionModal, useNotifications } from '@proton/components';
 import type { ModalStateProps } from '@proton/components';
 import { Portal } from '@proton/components/components/portal';
 import type { NodeEntity, ProtonDriveClient, Revision } from '@proton/drive';
-import { getDrive } from '@proton/drive';
 import { useLoading } from '@proton/hooks';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 import { dateLocale } from '@proton/shared/lib/i18n';
@@ -39,7 +38,7 @@ export interface RevisionsProviderState {
 
 export type UseRevisionsModalStateProps = {
     nodeUid: string;
-    drive?: ProtonDriveClient;
+    drive: ProtonDriveClient;
 } & ModalStateProps;
 
 export type RevisionsModalContentViewProps = RevisionsProviderState & {
@@ -50,7 +49,7 @@ export type RevisionsModalContentViewProps = RevisionsProviderState & {
 
 export const useRevisionsModalState = ({
     nodeUid,
-    drive = getDrive(),
+    drive,
     ...modalProps
 }: UseRevisionsModalStateProps): RevisionsModalContentViewProps => {
     const { createNotification } = useNotifications();
@@ -211,6 +210,7 @@ export const useRevisionsModalState = ({
                     revisionUid={selectedRevision.uid}
                     date={selectedRevision.creationTime}
                     onClose={() => setSelectedRevision(null)}
+                    drive={drive}
                 />
             </div>
         </Portal>
