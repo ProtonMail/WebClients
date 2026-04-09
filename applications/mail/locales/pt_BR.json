@@ -289,6 +289,9 @@
       "Connect apps and devices": [
         "Conectar aplicativos e dispositivos"
       ],
+      "Connect to Gmail": [
+        "Conectar ao Gmail"
+      ],
       "Connect to video conferencing": [
         "Conectar-se à videoconferência.\n"
       ],
@@ -1027,6 +1030,9 @@
       "Open navigation": [
         "Abrir navegação"
       ],
+      "Or remove forwarding address": [
+        "Ou remover endereço de encaminhamento"
+      ],
       "Or use a different Gmail address": [
         "ou use um endereço do Gmail diferente"
       ],
@@ -1101,6 +1107,9 @@
       ],
       "Reconnect": [
         "Reconectar"
+      ],
+      "Reconnect to Gmail": [
+        "Reconectar ao Gmail"
       ],
       "Recover data": [
         "Recuperar dados"
@@ -1493,7 +1502,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança"
+        "Chave de confiança",
+        "Chaves de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -4122,6 +4132,9 @@
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "Novos e-mails de ${ senderEmailAddress } não serão entregues e serão excluídos permanentemente."
       ],
+      "No ads. No trackers.": [
+        "Sem anúncios. Sem rastreadores."
+      ],
       "No folders": [
         "Nenhuma pasta"
       ],
@@ -4164,6 +4177,9 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Ative a proteção do rastreador de e-mail para evitar que anunciantes e outras pessoas rastreiem sua localização e atividade online."
       ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "Faça upgrade para ${ planName } para conectar até ${ MAX_SYNC_PAID_USER } contas"
+      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Faça upgrade para obter ${ activatePmUser } para um endereço de e-mail mais curto e fácil de lembrar, além do seu atual."
       ],
@@ -4194,11 +4210,18 @@
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Você pode marcar para exclusão os contatos que não quer mesclar nem manter. A exclusão somente ocorrerá após o botão de mesclagem ser clicado"
       ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Você agora pode enviar e-mails da ${ BRAND_NAME } usando este endereço."
+      ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Sua conta e métodos de recuperação de dados estão definidos, e a A2F está ativada."
       ],
       "Your account and data recovery methods are set.": [
         "Sua conta e métodos de recuperação de dados estão definidos."
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "Seu plano suporta um total de ${ MAX_SYNC_PAID_USER } endereço do Gmail",
+        "Seu plano suporta um total de ${ MAX_SYNC_PAID_USER } endereços do Gmail"
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Você já criou 10 aliases. Obtenha aliases ilimitados e 500 GB de armazenamento com ${ BRAND_NAME } Unlimited."
@@ -4508,6 +4531,12 @@
       ],
       "Add at least one condition": [
         "Adicione pelo menos uma condição"
+      ],
+      "Address could not be added.": [
+        "O endereço não pôde ser adicionado."
+      ],
+      "Address is already added to your account": [
+        "Endereço já adicionado à sua conta"
       ],
       "Address primary private key not found": [
         "Chave privada principal do endereço não encontrada"
@@ -4955,6 +4984,9 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Alguns dos seus nomes de marcadores excederam o limite máximo de caracteres do ${ MAIL_APP_NAME }. Personalize a importação para editar esses nomes."
       ],
+      "Something went wrong while creating the address": [
+        "Algo deu errado ao criar o endereço"
+      ],
       "Something went wrong. Please try again.": [
         "Ocorreu um erro. Tente novamente."
       ],
@@ -5060,9 +5092,6 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Essa mensagem pode conter alguns links de URL que podem não serem abertos corretamente pelo seu navegador."
-      ],
-      "This offer is not available in your country": [
-        "Esta oferta não está disponível no seu país"
       ],
       "Trusted keys are not valid for sending": [
         "As chaves de confiança não são válidas para o envio"
@@ -7206,6 +7235,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Garanta uma comunicação totalmente privada e criptografada. Crie seu endereço de e-mail ${ BRAND_NAME } gratuito agora."
       ],
+      "Enter code": [
+        "Inserir código"
+      ],
       "Enter the code from your authenticator app": [
         "Insira o código do seu aplicativo de autenticação."
       ],
@@ -7355,6 +7387,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Se você não encontrar o e-mail na caixa de entrada. Verifique a pasta de spam."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "If Se você perdeu o acesso ao seu aplicativo de autenticação, pode usar um dos 16 códigos de recuperação de backup fornecidos quando configurou a autenticação de dois fatores. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Se você prosseguir com o downgrade, perderá o acesso aos recursos pagos do ${ MAIL_APP_NAME } e ${ VPN_APP_NAME }."
@@ -8578,9 +8613,6 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Quando você ativou as chaves de confiança para ${ senderName }, as chaves públicas foram adicionadas aos detalhes do contato."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Quando você configura a autenticação de dois fatores, fornecemos códigos de recuperação que você pode usar para fazer login se perder o acesso ao seu aplicativo de autenticação."
-      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Ao se inscrever para receber um boletim informativo, use um alias em vez do seu endereço de e-mail. Sua identidade permanece oculta, e você pode desativar o alias a qualquer momento."
       ],
@@ -9531,9 +9563,6 @@
       ],
       "Import interval": [
         "Intervalo de importação"
-      ],
-      "Import recent mails": [
-        "Importar e-mails recentes"
       ],
       "Import to email address": [
         "Importar para o endereço de e-mail"
@@ -11681,6 +11710,9 @@
       ],
       "Trial started": [
         "Avaliação iniciada"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Seu endereço da ${ BRAND_NAME } está pronto para uso"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -14958,6 +14990,9 @@
       "Block sender": [
         "Bloquear remetente"
       ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Traga seu Gmail para o ${ MAIL_APP_NAME }"
+      ],
       "Built for privacy": [
         "Feito para privacidade"
       ],
@@ -15124,6 +15159,9 @@
       ],
       "Desktop": [
         "Área de trabalho"
+      ],
+      "Disconnected from Gmail": [
+        "Desconectado do Gmail"
       ],
       "Discover your subscription benefits": [
         "Descubra os benefícios da sua assinatura"
@@ -15711,9 +15749,6 @@
       "Sort messages": [
         "Ordenar mensagens"
       ],
-      "Spring Sale": [
-        "Promoção de primavera"
-      ],
       "Start a new import": [
         "Iniciar uma nova importação"
       ],
@@ -15799,6 +15834,9 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Usar o ${ VPN_SHORT_APP_NAME } para a privacidade de dados"
       ],
+      "Use Gmail securely in ${ MAIL_APP_NAME }": [
+        "Use o Gmail com segurança no ${ MAIL_APP_NAME }"
+      ],
       "Verification error": [
         "Erro de verificação"
       ],
@@ -15844,6 +15882,9 @@
       ],
       "When is it most important to use a VPN?": [
         "Quando é mais importante usar uma VPN?"
+      ],
+      "You are all set": [
+        "Tudo pronto"
       ],
       "You can now create unlimited folders and labels": [
         "Agora você pode criar pastas e etiquetas ilimitadas."

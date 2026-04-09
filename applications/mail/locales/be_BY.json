@@ -291,6 +291,9 @@
       "Connect apps and devices": [
         "Падключыць праграмы і прылады"
       ],
+      "Connect to Gmail": [
+        "Падключыцца да Gmail"
+      ],
       "Connect to video conferencing": [
         "Падключыцца да відэаканферэнцыі"
       ],
@@ -1035,6 +1038,9 @@
       "Open navigation": [
         "Адкрыць панэль навігацыі"
       ],
+      "Or remove forwarding address": [
+        "Або выдаліце адрас перасылкі"
+      ],
       "Or use a different Gmail address": [
         "Ці скарыстайцеся іншым адрасам Gmail"
       ],
@@ -1109,6 +1115,9 @@
       ],
       "Reconnect": [
         "Перападключыцца"
+      ],
+      "Reconnect to Gmail": [
+        "Перападключыцца да Gmail"
       ],
       "Recover data": [
         "Аднавіць даныя"
@@ -1501,7 +1510,10 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу"
+        "Давяраць ключу",
+        "Давяраць ключам",
+        "Давяраць ключам",
+        "Давяраць ключам"
       ],
       "Trust public key": [
         "Давяраць адкрытаму ключу"
@@ -4102,6 +4114,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Аўтаматычна сартуйце свае ўваходныя паведамленні перад тым, як яны трапяць у вашу паштовую скрыню."
       ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Не давайце магчымасці Google ствараць ваш профіль. Gmail больш не зможа бачыць, што вы робіце ў ${ MAIL_APP_NAME }"
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Спачатку сканфігурыруйце гэтыя функцыі для актывацыі сваёй арганізацыі, а потым наладзьце адрас сваёй электроннай пошты."
       ],
@@ -4128,6 +4143,9 @@
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Лёгка сінхранізуйце файлы ў воблака са свайго камп’ютара і атрымлівайце доступ да іх на сваёй мабільнай прыладзе."
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Лісты, якія адпраўленыя на ${ connectedAddressText }, цяпер будуць паказвацца ў ${ MAIL_APP_NAME }."
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Заахвочвайце выкарыстанне двухфактарнай аўтэнтыфікацыі ў сваёй арганізацыі для дадатковай бяспекі."
@@ -4174,11 +4192,20 @@
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "Новыя лісты ад ${ senderEmailAddress } не будуць дастаўляцца, а замест гэтага будуць незваротна выдаляцца."
       ],
+      "No ads. No trackers.": [
+        "Без рэкламы і праграм сачэння"
+      ],
       "No folders": [
         "Няма папак"
       ],
       "No labels": [
         "Няма метак"
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "Чытайце, адказвайце і будзьце ў курсе таго, што адбываецца ў Gmail з дапамогай ${ MAIL_APP_NAME }"
+      ],
+      "Send and receive Gmail correspondence directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "Адпраўляйце і атрымлівайце карэспандэнцыю Gmail наўпрост у ${ MAIL_APP_NAME }. Падключыце свой адрас у ${ addressesSettingsLink }."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Размяжуйце асобныя аспекты свайго жыцця з дапамогай некалькіх адрасоў электроннай пошты і разблакіруйце больш прэміяльных функцый пасля паляпшэння."
@@ -4194,6 +4221,24 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Спрасціце сінхранізацыю і планаванне з дапамогай абагуленых календароў."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Гэта магло адбыцца з-за таго, што дазволы былі выдалены або ваш пароль зменены."
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "Выдаліце дадатковыя адрасы Gmail, якія перасылаюцца на ${ BRAND_NAME }. Гэта дзеянне неабходна для падключэння іншага адраса Gmail."
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "Абнавіце свой тарыфны план да ${ planName }, каб падключыць да ${ MAX_SYNC_PAID_USER } адраса Gmail.",
+        "Абнавіце свой тарыфны план да ${ planName }, каб падключыць да ${ MAX_SYNC_PAID_USER } адрасоў Gmail.",
+        "Абнавіце свой тарыфны план да ${ planName }, каб падключыць да ${ MAX_SYNC_PAID_USER } адрасоў Gmail.",
+        "Абнавіце свой тарыфны план да ${ planName }, каб падключыць да ${ MAX_SYNC_PAID_USER } адрасоў Gmail."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Перападключыце свой уліковы запіс, каб працягнуць атрыманне і адпраўку паведамленняў Gmail у ${ BRAND_NAME }."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Перападключыце свае ўліковыя запісы, каб працягнуць атрыманне і адпраўку паведамленняў Gmail у ${ BRAND_NAME }."
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Дадайце памочніка ў апісанні ў сваю падпіску, каб працягнуць карыстацца ім."
@@ -4216,6 +4261,9 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Уключыце абарону ад праграм сачэння электроннай пошты, каб прадухіліць рэкламу і іншыя спосабы вызначэння вашага месцазнаходжання і актыўнасці ў інтэрнэце."
       ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "Палепшыце тарыфны план да ${ planName }, каб падключыць да ${ MAX_SYNC_PAID_USER } уліковых запісаў"
+      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Абнавіце падпіску, каб атрымаць больш кароткі і запамінальны адрас электроннай пошты ${ activatePmUser } у дадатак да вашага бягучага."
       ],
@@ -4228,8 +4276,17 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Выкарыстоўвайце гэты дапаможнік, каб ваша арганізацыя хутка змагла атрымаць перавагі ад ${ BRAND_NAME }. Дадзеная экасістэма з'яўляецца адной з лепшых у галіне шыфравання і прыватнасці."
       ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Больш не ўдаецца атрымаць доступ да ${ boldEmails }."
+      ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "Не знойдзена ніякіх вядомых праграм сачэння і URL-адрасоў з элементамі сачэння ў гэтым лісце."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "Мы перанясём вашы старыя паведамленні і падключым ваш Gmail да ${ MAIL_APP_NAME }, каб новыя паведамленні з'яўляліся ў ім аўтаматычна."
+      ],
+      "We've started importing your email from Gmail. We'll let you know when it's done.": [
+        "Пачалося імпартаванне вашых лістоў з Gmail. Вы будзеце апавешчаны, калі працэс будзе завершаны."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Нам шкада, што вы пакідаеце нас. Мы будзем вам вельмі ўдзячныя, калі вы знойдзеце крыху часу паведаміць аб прычынах скасавання сваёй падпіскі. Вашы водгукі дапамагаюць зрабіць ${ BRAND_NAME } яшчэ лепш для кожнага карыстальніка."
@@ -4243,17 +4300,59 @@
       "With custom snooze, you can hide emails and set them to reappear at a better time.": [
         "З дапамогай карыстальніцкага адкладання вы можаце хаваць электронныя лісты і задаваць іх паўторнае з'яўленне ў больш зручны час."
       ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "У вас ужо ёсць адрас Gmail, які перасылае лісты ў ${ MAIL_APP_NAME }. Падключыце яго ніжэй, каб адпраўляць і атрымліваць лісты наўпрост з ${ MAIL_APP_NAME }."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "У вас ужо ёсць адрасы Gmail, якія перасылаюць лісты ў ${ MAIL_APP_NAME }. Падключыце адзін з іх ніжэй, каб адпраўляць і атрымліваць лісты наўпрост з ${ MAIL_APP_NAME }."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Вы можаце імпартаваць падзеі ў фармаце iCal (файл ICS). Максімальна памер файла павінен быць ${ MAX_IMPORT_FILE_SIZE_STRING } і мець не больш за ${ MAX_IMPORT_EVENTS_STRING } падзей. Падзяліце свой файл на меншыя часткі, калі ён занадта вялікі."
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Вы можаце пазначыць для выдалення кантакты, якія вы не хочаце ні аб'ядноўваць, ні захоўваць. Выдаленне адбываецца толькі пасля націску кнопкі аб'яднання"
       ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Цяпер можна адпраўляць лісты з ${ BRAND_NAME } выкарыстоўваючы гэты адрас."
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "Вы перасылаеце ${ numAddressesOrSync } адрас Gmail у ${ MAIL_APP_NAME }.",
+        "Вы перасылаеце ${ numAddressesOrSync } адрасы Gmail у ${ MAIL_APP_NAME }.",
+        "Вы перасылаеце ${ numAddressesOrSync } адрасоў Gmail у ${ MAIL_APP_NAME }.",
+        "Вы перасылаеце ${ numAddressesOrSync } адрасоў Gmail у ${ MAIL_APP_NAME }."
+      ],
+      "You're forwarding emails from ${ forwardingCount } Gmail address. By connecting it, you'll be able to both receive and reply in ${ MAIL_APP_NAME }": [
+        "Вы перасылаеце лісты з ${ forwardingCount } адраса Gmail. Падключыўшы яго, вы зможаце як атрымліваць, так і адказваць у ${ MAIL_APP_NAME }.",
+        "Вы перасылаеце лісты з ${ forwardingCount } адраса Gmail. Падключыўшы іх, вы зможаце як атрымліваць, так і адказваць у ${ MAIL_APP_NAME }.",
+        "Вы перасылаеце лісты з ${ forwardingCount } адрасоў Gmail. Падключыўшы іх, вы зможаце як атрымліваць, так і адказваць у ${ MAIL_APP_NAME }.",
+        "Вы перасылаеце лісты з ${ forwardingCount } адрасоў Gmail. Падключыўшы іх, вы зможаце як атрымліваць, так і адказваць у ${ MAIL_APP_NAME }."
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "Вы падключылі ${ MAX_SYNC_PAID_USER } адрас Gmail. Спачатку адключыце адзін са сваіх падключаных уліковых запісаў, каб дадаць яшчэ адзін.",
+        "Вы падключылі ${ MAX_SYNC_PAID_USER } адрасы Gmail. Спачатку адключыце адзін са сваіх падключаных уліковых запісаў, каб дадаць яшчэ адзін.",
+        "Вы падключылі ${ MAX_SYNC_PAID_USER } адрасоў Gmail. Спачатку адключыце адзін са сваіх падключаных уліковых запісаў, каб дадаць яшчэ адзін.",
+        "Вы падключылі ${ MAX_SYNC_PAID_USER } адрасоў Gmail. Спачатку адключыце адзін са сваіх падключаных уліковых запісаў, каб дадаць яшчэ адзін."
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "Вы падключылі адзін адрас знешняга ўліковага запісу да ${ MAIL_APP_NAME }."
+      ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Спосабы аднаўлення вашага ўліковага запісу і даных зададзены, а 2ФА уключаны."
       ],
       "Your account and data recovery methods are set.": [
         "Спосабы аднаўлення вашага ўліковага запісу зададзены."
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "Ваш тарыфны план падтрымлівае ${ MAX_SYNC_FREE_USER } адрас Gmail.",
+        "Ваш тарыфны план падтрымлівае ${ MAX_SYNC_FREE_USER } адрасы Gmail.",
+        "Ваш тарыфны план падтрымлівае ${ MAX_SYNC_FREE_USER } адрасоў Gmail.",
+        "Ваш тарыфны план падтрымлівае ${ MAX_SYNC_FREE_USER } адрасоў Gmail."
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "Ваш тарыфны план у сукупнасці падтрымлівае ${ MAX_SYNC_PAID_USER } адрас Gmail",
+        "Ваш тарыфны план агулам падтрымлівае ${ MAX_SYNC_PAID_USER } адрасы Gmail",
+        "Ваш тарыфны план у сукупнасці падтрымлівае ${ MAX_SYNC_PAID_USER } адрасоў Gmail",
+        "Ваш тарыфны план у сукупнасці падтрымлівае ${ MAX_SYNC_PAID_USER } адрасоў Gmail"
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Вы ўжо стварылі 10 псеўданімаў. Атрымайце неабмежаваную колькасць псеўданімаў і 500 ГБ сховішча з ${ BRAND_NAME } Unlimited."
@@ -4575,6 +4674,12 @@
       ],
       "Add at least one condition": [
         "Дадайце прынамсі адну ўмову"
+      ],
+      "Address could not be added.": [
+        "Немагчыма дадаць адрас."
+      ],
+      "Address is already added to your account": [
+        "Адрас ужо дададзены ў ваш уліковы запіс"
       ],
       "Address primary private key not found": [
         "Асноўны закрыты ключ адраса не знойдзены"
@@ -5044,6 +5149,12 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Назвы некаторых вашых метак перавышаюць абмежаванні колькасці сімвалаў ${ MAIL_APP_NAME }. Наладзьце імпартаванне, каб змяніць гэтыя назвы."
       ],
+      "Something went wrong while creating the address": [
+        "Нешта пайшло не так пры стварэнні адраса"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Нешта пайшло не так пры атрыманні даступных даменаў"
+      ],
       "Something went wrong. Please try again.": [
         "Нешта пайшло не так. Паспрабуйце яшчэ раз."
       ],
@@ -5151,9 +5262,6 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Гэта паведамленне можа змяшчаць некаторыя спасылкі на URL-адрасы, якія ваш бягучы браўзер не зможа правільна адкрыць."
-      ],
-      "This offer is not available in your country": [
-        "Гэта прапанова недаступна ў вашай краіне"
       ],
       "Trusted keys are not valid for sending": [
         "Давераныя ключы несапраўдныя для адпраўкі"
@@ -7453,6 +7561,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Забяспечце цалкам прыватную і зашыфраваную сувязь. Атрымайце бясплатны адрас электроннай пошты ${ BRAND_NAME }."
       ],
+      "Enter code": [
+        "Увядзіце код"
+      ],
       "Enter the code from your authenticator app": [
         "Увядзіце код з вашай праграмы аўтэнтыфікацыі"
       ],
@@ -8851,9 +8962,6 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Калі вы ўключылі давераныя ключы для ${ senderName }, то гэтыя адкрытыя ключы былі дададзены да кантактных звестак."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Пры наладжванні двухфактарнай аўтэнтыфікацыі, вы будзеце забяспечаны кодамі аднаўлення, якія зможаце выкарыстаць для ўваходу пры страце доступу да праграмы аўтэнтыфікацыі."
-      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Выкарыстоўвайце псеўданімы замест свайго адраса электроннай пошты пры падпісцы на рассылку. Ваша ідэнтычнасць застанецца схаванай, а псеўданім вы можаце адключыць у любы момант."
       ],
@@ -9863,9 +9971,6 @@
       "Import interval": [
         "Інтэрвал імпартавання"
       ],
-      "Import recent mails": [
-        "Імпартаваць нядаўнія лісты"
-      ],
       "Import to email address": [
         "Імпартаваць у адрас электроннай пошты"
       ],
@@ -10111,6 +10216,9 @@
       ],
       "Search in": [
         "Шукаць у"
+      ],
+      "Select which Gmail address to connect": [
+        "Выберыце, які адрас Gmail неабходна падключыць"
       ],
       "Send auto-reply": [
         "Адправіць аўтаматычны адказ"
@@ -12096,6 +12204,9 @@
       ],
       "Trial started": [
         "Пачаты пробны перыяд"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Ваш адрас ${ BRAND_NAME } гатовы да выкарыстання"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -15470,6 +15581,9 @@
       "Block sender": [
         "Заблакіраваць адпраўніка"
       ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Перанясіце свае лісты ў ${ MAIL_APP_NAME }"
+      ],
       "Built for privacy": [
         "Створаны для прыватнасці"
       ],
@@ -15646,6 +15760,9 @@
       ],
       "Desktop": [
         "Для камп'ютара"
+      ],
+      "Disconnected from Gmail": [
+        "Адключана ад Gmail"
       ],
       "Discover your subscription benefits": [
         "Пазнаёмцеся з перавагамі вашай падпіскі"
@@ -16157,6 +16274,9 @@
       "Self-destruct message": [
         "Самазнішчальнае паведамленне"
       ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Адпраўка і атрыманне лістоў Gmail з дапамогай ${ MAIL_APP_NAME }"
+      ],
       "Send email": [
         "Адправіць ліст"
       ],
@@ -16237,9 +16357,6 @@
       ],
       "Sort messages": [
         "Сартаваць паведамленні"
-      ],
-      "Spring Sale": [
-        "Вясенні распродаж"
       ],
       "Start a new import": [
         "Пачаць новае імпартаванне"
@@ -16328,6 +16445,9 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Скарыстацца ${ VPN_SHORT_APP_NAME } для захавання прыватнасці даных"
       ],
+      "Use Gmail securely in ${ MAIL_APP_NAME }": [
+        "Выкарыстоўвайце Gmail бяспечна ў ${ MAIL_APP_NAME }"
+      ],
       "Verification error": [
         "Памылка праверкі"
       ],
@@ -16375,6 +16495,9 @@
       ],
       "When is it most important to use a VPN?": [
         "У якіх выпадках варта выкарыстоўваць VPN?"
+      ],
+      "You are all set": [
+        "Усё гатова"
       ],
       "You can now create unlimited folders and labels": [
         "Цяпер вы можаце ствараць неабмежаваную колькасць папак і метак"

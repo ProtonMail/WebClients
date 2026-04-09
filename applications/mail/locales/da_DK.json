@@ -1493,7 +1493,8 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Stol på nøgle"
+        "Betroet nøgle",
+        "Betroede nøgler"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -5078,9 +5079,6 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Denne besked kan indeholde link-adresser, som ikke kan åbnes korrekt af din aktuelle browser."
       ],
-      "This offer is not available in your country": [
-        "Dette tilbud er ikke tilgængeligt i dit land"
-      ],
       "Trusted keys are not valid for sending": [
         "Betroede nøgler er ikke gyldige til afsendelse"
       ],
@@ -8595,9 +8593,6 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Da du aktiverede betroede nøgler for ${ senderName }, blev de offentlige nøgler tilføjet til kontaktoplysningerne."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Når du indstiller to-faktor-godkendelse, giver vi dig gendannelseskoder, som du kan bruge til at logge på, hvis du mister adgangen til din godkendelsesapp."
-      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Brug et alias i stedet for din e-mailadresse, når du tilmelder dig et nyhedsbrev. Din identitet forbliver skjult, og du kan altid deaktivere aliasset."
       ],
@@ -9554,9 +9549,6 @@
       ],
       "Import interval": [
         "Importinterval"
-      ],
-      "Import recent mails": [
-        "Importér seneste mails"
       ],
       "Import to email address": [
         "Importer til e-mailadresse"
@@ -15745,9 +15737,6 @@
       ],
       "Sort messages": [
         "Sorter beskeder"
-      ],
-      "Spring Sale": [
-        "Forårsudsalg"
       ],
       "Start a new import": [
         "Start en ny import"

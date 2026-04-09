@@ -1492,6 +1492,10 @@
       "Trust": [
         "Klarér"
       ],
+      "Trust key": [
+        "Klarér nøkkel",
+        "Klarér nøkler"
+      ],
       "Trust public key": [
         "Klarér offentlig nøkkel"
       ],
@@ -5075,9 +5079,6 @@
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Denne meldingen kan inneholde noen koblinger til nettadresser som ikke kan åpnes riktig av din nåværende nettleser."
       ],
-      "This offer is not available in your country": [
-        "Dette tilbudet er ikke tilgjengelig i landet ditt"
-      ],
       "Trusted keys are not valid for sending": [
         "Klarerte nøkler er ikke gyldige for sending."
       ],
@@ -8592,9 +8593,6 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Når du aktiverte klarerte nøkler for ${ senderName }, ble de offentlige nøklene lagt til i kontaktdetaljene."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Når du setter opp tofaktorautentisering, gir vi deg gjenopprettingskoder som du kan bruke til å logge på hvis du mister tilgangen til autentiseringsappen din."
-      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Når du registrerer deg for et nyhetsbrev, bruk et alias i stedet for e-postadressen din. Identiteten din forblir skjult, og du kan deaktivere aliaset når som helst."
       ],
@@ -9551,9 +9549,6 @@
       ],
       "Import interval": [
         "Importintervall"
-      ],
-      "Import recent mails": [
-        "Importer nylige e-poster"
       ],
       "Import to email address": [
         "Importer til e-postadresse"
@@ -15742,9 +15737,6 @@
       ],
       "Sort messages": [
         "Sorter meldinger"
-      ],
-      "Spring Sale": [
-        "Vårsalg"
       ],
       "Start a new import": [
         "Start en ny import"

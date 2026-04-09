@@ -289,6 +289,9 @@
       "Connect apps and devices": [
         "Σύνδεση εφαρμογών και συσκευών"
       ],
+      "Connect to Gmail": [
+        "Σύνδεση στο Gmail"
+      ],
       "Connect to video conferencing": [
         "Σύνδεση σε τηλεδιάσκεψη"
       ],
@@ -1027,6 +1030,9 @@
       "Open navigation": [
         "Άνοιγμα μενού πλοήγησης"
       ],
+      "Or remove forwarding address": [
+        "Ή καταργήστε τη διεύθυνση προώθησης"
+      ],
       "Or use a different Gmail address": [
         "Ή χρησιμοποιήστε μια διαφορετική διεύθυνση Gmail"
       ],
@@ -1101,6 +1107,9 @@
       ],
       "Reconnect": [
         "Επανασύνδεση"
+      ],
+      "Reconnect to Gmail": [
+        "Επανασύνδεση στο Gmail"
       ],
       "Recover data": [
         "Ανάκτηση δεδομένων"
@@ -1493,7 +1502,8 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Εμπιστοσύνη στο κλειδί"
+        "Κλειδί Εμπιστοσύνης",
+        "Κλειδιά Εμπιστοσύνης"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -4052,6 +4062,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Ταξινομήστε αυτόματα τα εισερχόμενα μηνύματά σας πριν φτάσουν στα εισερχόμενά σας."
       ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Αποκλείστε την ικανότητα της Google να δημιουργήσει το προφίλ σας. Το Gmail δεν μπορεί να δει τι κάνετε στο ${ MAIL_APP_NAME }"
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Ρυθμίστε πρώτα αυτό για να ενεργοποιήσετε τον οργανισμό σας και να προσαρμόσετε τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας."
       ],
@@ -4078,6 +4091,9 @@
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Συγχρονίστε εύκολα τα αρχεία στο cloud από τον υπολογιστή σας και αποκτήστε πρόσβαση σε αυτά από την κινητή συσκευή σας."
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Τα μηνύματα ηλεκτρονικού ταχυδρομείου που αποστέλλονται στο ${ connectedAddressText } θα εμφανίζονται πλέον στο ${ MAIL_APP_NAME }."
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Ενθαρρύνετε τη χρήση της ταυτοποίησης δύο παραγόντων στην οργάνωσή σας για επιπλέον ασφάλεια."
@@ -4122,11 +4138,20 @@
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "Νέα μηνύματα από ${ senderEmailAddress } δεν θα αποσταλούν και θα διαγραφούν οριστικά."
       ],
+      "No ads. No trackers.": [
+        "Χωρίς διαφημίσεις. Χωρίς ιχνηλάτες."
+      ],
       "No folders": [
         "Κανένας φάκελος"
       ],
       "No labels": [
         "Καμία ετικέτα"
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "Διαβάστε, απαντήστε και μείνετε ενημερωμένοι στο Gmail μέσα από το ${ MAIL_APP_NAME }"
+      ],
+      "Send and receive Gmail correspondence directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "Αποστολή και λήψη αλληλογραφίας Gmail απευθείας στο ${ MAIL_APP_NAME }. Συνδέστε τη διεύθυνσή σας στο ${ addressesSettingsLink }."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Διαχωρίστε διαφορετικές πτυχές της ζωής σας με πολλές διευθύνσεις email και ξεκλειδώστε περισσότερες premium δυνατότητες όταν αναβαθμίσετε."
@@ -4142,6 +4167,22 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Απλοποιήστε τον συγχρονισμό και τον προγραμματισμό με τα κοινοποιημένα ημερολόγια."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Αυτό μπορεί να συμβεί εάν τα δικαιώματα αφαιρέθηκαν ή αν άλλαξε ο κωδικός σας."
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "Για να συνδεθείτε με διαφορετική διεύθυνση Gmail, καταργήστε τις επιπλέον διευθύνσεις Gmail που προωθούνται στο ${ BRAND_NAME }."
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "Για να συνδέσετε έως ${ MAX_SYNC_PAID_USER } διεύθυνση Gmail, αναβαθμίστε στο ${ planName }.",
+        "Για να συνδέσετε έως ${ MAX_SYNC_PAID_USER } διευθύνσεις Gmail, αναβαθμίστε στο ${ planName }."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Για να συνεχίσετε να λαμβάνετε και να στέλνετε μηνύματα Gmail στο ${ BRAND_NAME }, παρακαλούμε επανασυνδέστε τον λογαριασμό σας."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Για να συνεχίσετε να λαμβάνετε και να στέλνετε μηνύματα Gmail στο ${ BRAND_NAME }, παρακαλούμε επανασυνδέστε τους λογαριασμούς σας."
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Για να συνεχίσετε να χρησιμοποιείτε τον βοηθό γραφής, προσθέστε τον στη συνδρομή σας."
@@ -4164,6 +4205,9 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Ενεργοποιήστε την προστασία παρακολούθησης ηλεκτρονικού ταχυδρομείου για να αποτρέψετε διαφημιστές και άλλους χρήστες από την παρακολούθηση της τοποθεσίας και της δραστηριότητάς σας στο διαδίκτυο."
       ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "Αναβαθμίστε στο ${ planName } για να συνδέσετε έως και ${ MAX_SYNC_PAID_USER } λογαριασμούς"
+      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Αναβαθμίστε για να λάβετε ${ activatePmUser } για μια συντομότερη, εύκολη στην απομνημόνευση διεύθυνση ηλεκτρονικού ταχυδρομείου εκτός από την τρέχουσα."
       ],
@@ -4176,8 +4220,17 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Χρησιμοποιήστε αυτόν τον οδηγό για να επωφεληθεί άμεσα ο οργανισμός σας από το κορυφαίο οικοσύστημα κρυπτογράφησης και προστασίας προσωπικών δεδομένων του ${ BRAND_NAME }."
       ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Δεν μπορούμε πια να έχουμε πρόσβαση στα ${ boldEmails }."
+      ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "Δε βρήκαμε γνωστούς ιχνηλάτες και διευθύνσεις URL παρακολούθησης σε αυτό το μήνυμα ηλεκτρονικού ταχυδρομείου."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "Θα εισαγάγουμε τα παλιά σας μηνύματα ηλεκτρονικού ταχυδρομείου και θα συνδέσουμε το Gmail σας με το ${ MAIL_APP_NAME } ώστε τα νέα μηνύματα να εμφανίζονται αυτόματα"
+      ],
+      "We've started importing your email from Gmail. We'll let you know when it's done.": [
+        "Ξεκινήσαμε την εισαγωγή του email σας από το Gmail. Θα σας ενημερώσουμε όταν ολοκληρωθεί."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Λυπόμαστε που φεύγετε. Αν έχετε λίγο χρόνο, θα εκτιμούσαμε πραγματικά να μας πείτε γιατί θέλετε να ακυρώσετε. Τα σχόλιά σας μας βοηθούν να κάνουμε το ${ BRAND_NAME } καλύτερο για όλους."
@@ -4191,17 +4244,49 @@
       "With custom snooze, you can hide emails and set them to reappear at a better time.": [
         "Με την προσαρμοσμένη αναβολή, μπορείτε να αποκρύψετε μηνύματα ηλεκτρονικού ταχυδρομείου και να τα ρυθμίσετε ώστε να εμφανίζονται ξανά σε καλύτερη στιγμή."
       ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Έχετε ήδη μια διεύθυνση Gmail που προωθείται στο ${ MAIL_APP_NAME }. Συνδέστε τη παρακάτω για να στείλετε και να λάβετε μηνύματα ηλεκτρονικού ταχυδρομείου απευθείας από το ${ MAIL_APP_NAME }."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Έχετε ήδη διευθύνσεις Gmail που προωθούνται στο ${ MAIL_APP_NAME }. Συνδέστε μία παρακάτω για να στείλετε και να λάβετε μηνύματα ηλεκτρονικού ταχυδρομείου απευθείας από το ${ MAIL_APP_NAME }."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Μπορείτε να εισάγετε εκδηλώσεις σε μορφή iCal (ICS αρχείο).\nΤο αρχείο θα πρέπει να έχει μέγιστο μέγεθος ${ MAX_IMPORT_FILE_SIZE_STRING } και να έχει μέχρι και ${ MAX_IMPORT_EVENTS_STRING } εκδηλώσεις.\nΑν το αρχείο σας είναι μεγαλύτερο, παρακαλούμε να το χωρίσετε σε μικρότερα αρχεία."
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Μπορείτε να επισημάνετε για διαγραφή τις επαφές που δεν θέλετε να συγχωνεύσετε ούτε να διατηρήσετε. Η διαγραφή θα πραγματοποιηθεί μόνο αφού πατηθεί το κουμπί συγχώνευσης"
       ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Τώρα μπορείτε να στέλνετε μηνύματα ηλεκτρονικού ταχυδρομείου από το ${ BRAND_NAME } χρησιμοποιώντας αυτή τη διεύθυνση."
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "Προωθείτε ${ numAddressesOrSync } διεύθυνση Gmail προς ${ MAIL_APP_NAME }.",
+        "Προωθείτε ${ numAddressesOrSync } διευθύνσεις Gmail προς ${ MAIL_APP_NAME }."
+      ],
+      "You're forwarding emails from ${ forwardingCount } Gmail address. By connecting it, you'll be able to both receive and reply in ${ MAIL_APP_NAME }": [
+        "Προωθείτε μηνύματα από ${ forwardingCount } διεύθυνση Gmail. Συνδέοντάς την, θα μπορείτε να λαμβάνετε και να απαντάτε σε ${ MAIL_APP_NAME }",
+        "Προωθείτε μηνύματα από ${ forwardingCount } διευθύνσεις Gmail. Συνδέοντάς τες, θα μπορείτε να λαμβάνετε και να απαντάτε σε ${ MAIL_APP_NAME }"
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "Έχετε συνδέσει ${ MAX_SYNC_PAID_USER } διεύθυνση Gmail. Για να προσθέσετε άλλη, απενεργοποιήστε πρώτα έναν από τους συνδεδεμένους λογαριασμούς σας.",
+        "Έχετε συνδέσει ${ MAX_SYNC_PAID_USER } διευθύνσεις Gmail. Για να προσθέσετε άλλη μία, απενεργοποιήστε πρώτα έναν από τους συνδεδεμένους λογαριασμούς σας."
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "Έχετε συνδέσει μία διεύθυνση εξωτερικού λογαριασμού στο ${ MAIL_APP_NAME }."
+      ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Οι μέθοδοι ανάκτησης του λογαριασμού και των δεδομένων σας έχουν οριστεί και το 2FA είναι ενεργοποιημένο."
       ],
       "Your account and data recovery methods are set.": [
         "Οι μέθοδοι ανάκτησης του λογαριασμού και των δεδομένων σας έχουν οριστεί."
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "Το πλάνο σας υποστηρίζει ${ MAX_SYNC_FREE_USER } διεύθυνση Gmail.",
+        "Το πλάνο σας υποστηρίζει ${ MAX_SYNC_FREE_USER } διευθύνσεις Gmail."
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "Το πλάνο σας υποστηρίζει συνολικά ${ MAX_SYNC_PAID_USER } διεύθυνση Gmail",
+        "Το πλάνο σας υποστηρίζει συνολικά ${ MAX_SYNC_PAID_USER } διευθύνσεις Gmail"
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Έχετε ήδη δημιουργήσει 10 ψευδώνυμα. Αποκτήστε απεριόριστα ψευδώνυμα και 500 GB αποθηκευτικού χώρου με ${ BRAND_NAME } Unlimited."
@@ -4519,6 +4604,12 @@
       ],
       "Add at least one condition": [
         "Προσθέστε τουλάχιστον μία συνθήκη"
+      ],
+      "Address could not be added.": [
+        "Η διεύθυνση δεν μπόρεσε να προστεθεί."
+      ],
+      "Address is already added to your account": [
+        "Η διεύθυνση έχει ήδη προστεθεί στον λογαριασμό σας"
       ],
       "Address primary private key not found": [
         "Δεν βρέθηκε πρωτεύον ιδιωτικό κλειδί διεύθυνσης"
@@ -4972,6 +5063,12 @@
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Κάποια από τα ονόματα ετικετών σας υπερβαίνουν το μέγιστο όριο χαρακτήρων του ${ MAIL_APP_NAME }. Παρακαλούμε προσαρμόστε την εισαγωγή για να διορθώσετε αυτά τα ονόματα."
       ],
+      "Something went wrong while creating the address": [
+        "Κάτι πήγε στραβά κατά τη δημιουργία της διεύθυνσης"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Κάτι πήγε στραβά κατά την ανάκτηση των διαθέσιμων τομέων"
+      ],
       "Something went wrong. Please try again.": [
         "Κάτι πήγε στραβά. Παρακαλούμε δοκιμάστε ξανά."
       ],
@@ -5077,9 +5174,6 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "Αυτό το μήνυμα μπορεί να περιέχει κάποιους συνδέσμους URL που δεν μπορούν να ανοίξουν σωστά από το τρέχον πρόγραμμα περιήγησης."
-      ],
-      "This offer is not available in your country": [
-        "Αυτή η προσφορά δεν είναι διαθέσιμη στη χώρα σας"
       ],
       "Trusted keys are not valid for sending": [
         "Τα αξιόπιστα κλειδιά δεν είναι έγκυρα για την αποστολή"
@@ -7223,6 +7317,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Διασφαλίστε πλήρως ιδιωτική και κρυπτογραφημένη επικοινωνία. Αποκτήστε επίσης τώρα τη δωρεάν ${ BRAND_NAME } ηλεκτρονική διεύθυνση σας."
       ],
+      "Enter code": [
+        "Εισαγάγετε κωδικό"
+      ],
       "Enter the code from your authenticator app": [
         "Πληκτρολογήστε τον κωδικό από την εφαρμογή ταυτοποίησης"
       ],
@@ -7372,6 +7469,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Αν δε βρείτε το μήνυμα στα Εισερχόμενα, παρακαλούμε ελέγξτε τον φάκελο Ενοχλητικά."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Εάν χάσατε την πρόσβαση στην εφαρμογή ελέγχου ταυτότητας, μπορείτε να χρησιμοποιήσετε 1 από τους 16 εφεδρικούς κωδικούς ανάκτησης που παρέχονται κατά τη ρύθμιση της ταυτοποίησης δύο παραγόντων. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Αν προχωρήσετε με την υποβάθμιση, θα χάσετε πρόσβαση στα χαρακτηριστικά επί πληρωμή των ${ MAIL_APP_NAME } και ${ VPN_APP_NAME }."
@@ -8595,9 +8695,6 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "Όταν ενεργοποιήσατε τα αξιόπιστα κλειδιά για ${ senderName }, τα δημόσια κλειδιά προστέθηκαν στα στοιχεία της επαφής."
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "Όταν ρυθμίσετε τον έλεγχο ταυτοποίησης δύο παραγόντων, σας παρέχουμε κωδικούς ανάκτησης τους οποίους μπορείτε να χρησιμοποιήσετε για να συνδεθείτε σε περίπτωση που χάσετε την πρόσβαση στην εφαρμογή ταυτοποίησης σας."
-      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "Όταν εγγράφεστε σε ένα ενημερωτικό δελτίο, χρησιμοποιήστε ένα ψευδώνυμο αντί για τη διεύθυνση ηλ. ταχυδρομείου σας. Η ταυτότητά σας παραμένει κρυφή και μπορείτε να απενεργοποιήσετε το ψευδώνυμο ανά πάσα στιγμή."
       ],
@@ -9555,9 +9652,6 @@
       "Import interval": [
         "Μεσοδιάστημα εισαγωγών"
       ],
-      "Import recent mails": [
-        "Εισαγωγή πρόσφατων μηνυμάτων"
-      ],
       "Import to email address": [
         "Εισαγωγή σε διεύθυνση email"
       ],
@@ -9803,6 +9897,9 @@
       ],
       "Search in": [
         "Αναζήτηση σε"
+      ],
+      "Select which Gmail address to connect": [
+        "Επιλέξτε ποια διεύθυνση Gmail να συνδεθεί"
       ],
       "Send auto-reply": [
         "Αποστολή αυτόματης απάντησης"
@@ -11704,6 +11801,9 @@
       ],
       "Trial started": [
         "Η δοκιμαστική περίοδος ξεκίνησε"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Η διεύθυνσή σας ${ BRAND_NAME } είναι έτοιμη για χρήση"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -14894,6 +14994,9 @@
       "Block sender": [
         "Αποκλεισμός αποστολέα"
       ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Φέρτε το Gmail σας στο ${ MAIL_APP_NAME }"
+      ],
       "Built for privacy": [
         "Κατασκευασμένο για ιδιωτικότητα"
       ],
@@ -15060,6 +15163,9 @@
       ],
       "Desktop": [
         "Υπολογιστής"
+      ],
+      "Disconnected from Gmail": [
+        "Αποσυνδεδεμένο από το Gmail"
       ],
       "Discover your subscription benefits": [
         "Ανακαλύψτε τα πλεονεκτήματα της συνδρομής σας"
@@ -15569,6 +15675,9 @@
       "Self-destruct message": [
         "Αυτοκαταστρεφόμενο μήνυμα"
       ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Αποστολή και λήψη Gmail χρησιμοποιώντας ${ MAIL_APP_NAME }"
+      ],
       "Send email": [
         "Αποστολή μηνύματος"
       ],
@@ -15649,9 +15758,6 @@
       ],
       "Sort messages": [
         "Ταξινόμηση μηνυμάτων"
-      ],
-      "Spring Sale": [
-        "Ανοιξιάτικες Εκπτώσεις"
       ],
       "Start a new import": [
         "Ξεκινήστε μια νέα εισαγωγή"
@@ -15738,6 +15844,9 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Χρησιμοποιήστε το ${ VPN_SHORT_APP_NAME } για την προστασία των προσωπικών δεδομένων σας"
       ],
+      "Use Gmail securely in ${ MAIL_APP_NAME }": [
+        "Χρησιμοποιήστε το Gmail με ασφάλεια στο ${ MAIL_APP_NAME }"
+      ],
       "Verification error": [
         "Σφάλμα επαλήθευσης"
       ],
@@ -15783,6 +15892,9 @@
       ],
       "When is it most important to use a VPN?": [
         "Πότε είναι πιο σημαντικό να χρησιμοποιήσετε ένα VPN;"
+      ],
+      "You are all set": [
+        "Είστε έτοιμοι"
       ],
       "You can now create unlimited folders and labels": [
         "Τώρα μπορείτε να δημιουργήσετε απεριόριστους φακέλους και ετικέτες"

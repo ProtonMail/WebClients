@@ -288,6 +288,9 @@
       "Connect apps and devices": [
         "アプリとデバイスを接続"
       ],
+      "Connect to Gmail": [
+        "Gmailに接続"
+      ],
       "Connect to video conferencing": [
         "ビデオ会議に接続"
       ],
@@ -1098,6 +1101,9 @@
       "Reconnect": [
         "再接続"
       ],
+      "Reconnect to Gmail": [
+        "Gmailに再接続"
+      ],
       "Recover data": [
         "データを復元する"
       ],
@@ -1488,6 +1494,9 @@
       "Trust": [
         "信頼する"
       ],
+      "Trust key": [
+        "鍵を信頼する"
+      ],
       "Trust public key": [
         "公開鍵を信頼"
       ],
@@ -1754,6 +1763,9 @@
       ],
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ LUMO_APP_NAME } の ${ seats } シート"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } ライセンス"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } ライティングアシスタントのシート"
@@ -4021,6 +4033,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "受信トレイに届く前に、メールを自動的に分類します。"
       ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Google によるあなたのプロファイリングをブロックします。 ${ MAIL_APP_NAME } でのお客様の行動は Gmail からは閲覧できません"
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "最初に組織を有効にし、メールアドレスをカスタマイズするように設定してください。"
       ],
@@ -4090,11 +4105,17 @@
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "${ senderEmailAddress }からのメールは今後一切受信しません。"
       ],
+      "No ads. No trackers.": [
+        "広告なし。トラッカーなし。"
+      ],
       "No folders": [
         "フォルダがありません。"
       ],
       "No labels": [
         "ラベルがありません"
+      ],
+      "Send and receive Gmail correspondence directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "${ MAIL_APP_NAME } で Gmail の送受信を直接行えます。 ${ addressesSettingsLink } でアドレスを接続してください。"
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "アップグレードすると、複数のメールアドレスを生活のシーンによって使い分け、より多くのプレミアム機能が利用できるようになります。"
@@ -4110,6 +4131,15 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "共有カレンダーで同期やスケジューリングを簡単に。"
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "別のGmailアドレスに接続するには、${ BRAND_NAME }に転送されている余分なGmailアドレスを削除してください。"
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "最大${ MAX_SYNC_PAID_USER }件のGmailアドレスに接続するには、${ planName }にアップグレードしてください。"
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "${ BRAND_NAME }でGmailメッセージの送受信を続けるには、アカウントを再接続してください。"
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "執筆アシスタントを引き続き使用するには、サブスクリプションを追加してください。"
@@ -4132,6 +4162,9 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "メール トラッカー保護をオンにして、広告主などがお客様の位置情報やオンライン アクティビティを追跡しないようにします。"
       ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "最大${ MAX_SYNC_PAID_USER }件のアカウントを接続するには${ planName }にアップグレードしてください"
+      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "現在のメールアドレスに加えて、短くて覚えやすいメールアドレス（${ activatePmUser }）を取得するためにアップグレードしてください。"
       ],
@@ -4144,8 +4177,14 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "このガイドを利用して、あなたの組織が${ BRAND_NAME }の業界をリードする暗号化をプライバシーのエコシステムから速やかに恩恵を受けられるようにしてください。"
       ],
+      "We can't access ${ boldEmails } anymore.": [
+        "${ boldEmails }へのアクセスができなくなりました。"
+      ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "このメールには既知のトラッカーと追跡URLは見つかりませんでした。"
+      ],
+      "We've started importing your email from Gmail. We'll let you know when it's done.": [
+        "Gmailからメールのインポートを開始しました。完了したらお知らせします。"
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "ご利用をおやめになるのは残念です。よろしければ、取消の理由をお聞かせいただけますでしょうか。お客様のご感想は、${ BRAND_NAME } を改善するのに役立ちます。"
@@ -4159,17 +4198,41 @@
       "With custom snooze, you can hide emails and set them to reappear at a better time.": [
         "カスタムスヌーズを使用すると、メールを非表示にして、より適切なタイミングで再表示するように設定できます。"
       ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "すでにGmailアドレスが${ MAIL_APP_NAME }に転送される設定になっています。以下から接続してお客様の${ MAIL_APP_NAME }で直接メールを送受信できるようにしましょう。"
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "iCal形式(ICSファイル)でイベントをインポートできます。ファイルの最大サイズは${ MAX_IMPORT_FILE_SIZE_STRING }で、最大${ MAX_IMPORT_EVENTS_STRING }件のイベントを含むことができます。ファイルがそれより大きい場合は、小さいファイルに分割してください。"
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "結合または保持する必要のない連絡先を削除するためにマークすることができます。 削除はマージボタンがクリックされた後にのみ行われます"
       ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "${ BRAND_NAME } から、このアドレスを使用してメールを送信できるようになりました。"
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "${ numAddressesOrSync } 件のGmailアドレスを${ MAIL_APP_NAME }に転送しています。"
+      ],
+      "You're forwarding emails from ${ forwardingCount } Gmail address. By connecting it, you'll be able to both receive and reply in ${ MAIL_APP_NAME }": [
+        "${ forwardingCount }件のGmailアドレスからメールを転送しています。接続することで、${ MAIL_APP_NAME }で受信および返信ができるようになります"
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "${ MAX_SYNC_PAID_USER }件のGmailアドレスを接続しています。他にも追加するには、まず接続済みのアカウントの内1つを無効にしてください。"
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "外部アカウントアドレスの1件が${ MAIL_APP_NAME }に接続されました。"
+      ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "アカウントとデータの回復手段が設定され、2要素認証が有効になっています。"
       ],
       "Your account and data recovery methods are set.": [
         "アカウントとデータの回復手段が設定されています。"
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "あなたのプランでは${ MAX_SYNC_FREE_USER }件のGmailアドレスがサポートされています。"
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "あなたのプランでは、合計${ MAX_SYNC_PAID_USER }件のGmailアドレスをサポートしています。"
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "すでに 10 個のエリアスを作成しました。${ BRAND_NAME }Unlimitedで無制限のエイリアスと 500 GBのストレージを獲得しましょう。"
@@ -4311,6 +4374,11 @@
       ],
       "Share your plan benefits with ${ BRAND_NAME } Duo": [
         "${ BRAND_NAME } Duo であなたのプラン特典を共有しましょう"
+      ]
+    },
+    "Easy switch": {
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "お客様は外部アカウントから${ MAIL_APP_NAME }へメールを転送しています。"
       ]
     },
     "Edit billing address form note": {
@@ -4477,6 +4545,9 @@
       ],
       "Add at least one condition": [
         "条件を少なくとも一つ追加してください"
+      ],
+      "Address is already added to your account": [
+        "アドレスはすでにアカウントに追加されています"
       ],
       "Address primary private key not found": [
         "メールアドレスのプライマリー秘密鍵が見つかりません"
@@ -4687,6 +4758,9 @@
       ],
       "Invalid public key file": [
         "無効な公開鍵ファイル"
+      ],
+      "Invalid VAT number": [
+        "無効なVAT番号です"
       ],
       "Invalid verification code": [
         "無効な検証コード"
@@ -5017,9 +5091,6 @@
       ],
       "This message may contain some links URL that cannot be properly opened by your current browser.": [
         "このメッセージは、現在お使いのブラウザでは適切に開くことができないリンクのURLを含んでいる可能性があります。"
-      ],
-      "This offer is not available in your country": [
-        "このオファーはお住まいの国ではご利用いただけません"
       ],
       "Trusted keys are not valid for sending": [
         "信頼された鍵が送信に使用できません"
@@ -6401,6 +6472,9 @@
       "${ MAIL_APP_NAME } can protect your business as well.": [
         "${ MAIL_APP_NAME } はあなたのビジネスも保護します。"
       ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME }シート"
+      ],
       "${ n } unread conversation": [
         "${ n } 件の未読の会話"
       ],
@@ -7129,6 +7203,9 @@
       ],
       "Folder": [
         "フォルダ"
+      ],
+      "for ${ price }": [
+        "${ price }で"
       ],
       "For additional information and to remove restrictions, please login at ${ mailLink }.": [
         "他の情報をお求めである場合や、制限解除にあたっては、${ mailLink }にログインしてください。"
@@ -8420,9 +8497,6 @@
       "When you enabled trusted keys for ${ senderName }, the public keys were added to the contact details.": [
         "${ senderName } の信頼された鍵を有効にすると、公開鍵は連絡先の詳細に追加されます。"
       ],
-      "When you set up two-factor authentication, we provide recovery codes which you can use to sign in if you lose access to your authenticator app.": [
-        "2要素認証を設定する際、認証アプリにアクセスできなくなった場合に使用できる回復用コードを提供します。"
-      ],
       "When you sign up for a newsletter, use an alias instead of your email address. Your identity stays hidden, and you can disable the alias at any time.": [
         "ニュースレターを購読する際は、メールアドレスの代わりにエイリアスを使用しましょう。あなたの個人情報は秘匿され、いつでもエイリアスを無効にすることができます。"
       ],
@@ -9351,9 +9425,6 @@
       "Import interval": [
         "インポートの間隔"
       ],
-      "Import recent mails": [
-        "最近のメールをインポート"
-      ],
       "Import to email address": [
         "メールアドレスをインポート"
       ],
@@ -9600,11 +9671,17 @@
       "Search in": [
         "検索対象"
       ],
+      "Select which Gmail address to connect": [
+        "接続するGmailアドレスを選択してください"
+      ],
       "Send auto-reply": [
         "自動返信を送信"
       ],
       "Sender": [
         "差出人"
+      ],
+      "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
+        "${ CALENDAR_APP_NAME }で予約ページと利用可能な時間を共有し、${ MEET_APP_NAME }で安全な会議をホストしましょう。"
       ],
       "Sign emails": [
         "メールに署名"
@@ -10225,6 +10302,12 @@
     "meet_2025: Addon": {
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME } ライセンス"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME }シート"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats }${ MEET_APP_NAME }シート"
       ]
     },
     "meet_2025: Feature": {
@@ -10275,9 +10358,15 @@
       ],
       "Up to ${ n } participant": [
         "最大${ n }人の参加者"
+      ],
+      "Video meetings, ${ n } participant": [
+        "ビデオ会議、${ n }名まで参加可能"
       ]
     },
     "meet_2025: Info": {
+      "${ seats } seat included": [
+        "${ seats }シートが含まれています"
+      ],
       "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
         "トライアル期間中、${ MEET_SHORT_APP_NAME }のシートを${ TRIAL_MAX_MEET_SEATS }ヶまでをご利用いただけます。"
       ]
@@ -11583,8 +11672,17 @@
       ]
     },
     "Onboarding List Placeholder": {
+      "Bring your emails into ${ MAIL_APP_NAME }": [
+        "メールを${ MAIL_APP_NAME }に取り込む"
+      ],
+      "Bring your existing email into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "既存のメールを${ MAIL_APP_NAME }に取り込むと、すべてを1つのプライベート受信トレイで管理できるようになります。"
+      ],
       "Maybe later": [
         "今度やる"
+      ],
+      "Protect your accounts": [
+        "アカウントを保護"
       ]
     },
     "Onboarding modal": {
@@ -14769,6 +14867,9 @@
       "Desktop": [
         "デスクトップ"
       ],
+      "Disconnected from Gmail": [
+        "Gmailから切断しました"
+      ],
       "Discover your subscription benefits": [
         "サブスクリプションの特典をご覧ください"
       ],
@@ -15276,6 +15377,9 @@
       "Self-destruct message": [
         "有効期限付きメッセージ"
       ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Gmail を ${ MAIL_APP_NAME } で送受信"
+      ],
       "Send email": [
         "メール送信"
       ],
@@ -15356,9 +15460,6 @@
       ],
       "Sort messages": [
         "メッセージの並べ替え"
-      ],
-      "Spring Sale": [
-        "スプリングセール"
       ],
       "Start a new import": [
         "新しいインポートを開始"
@@ -15443,6 +15544,9 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "データプライバシーのために ${ VPN_SHORT_APP_NAME } を使用する"
+      ],
+      "Use Gmail securely in ${ MAIL_APP_NAME }": [
+        "Gmail を ${ MAIL_APP_NAME } で安全に使用する"
       ],
       "Verification error": [
         "検証エラーが発生しました"
