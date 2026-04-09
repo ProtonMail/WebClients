@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import { isMobile } from '@proton/shared/lib/helpers/browser';
 import lumoStart from '@proton/styles/assets/img/illustrations/lumo-arrow.svg';
 import lumoStop from '@proton/styles/assets/img/illustrations/lumo-stop.svg';
 
@@ -183,7 +184,7 @@ export const ComposerEditorArea = ({
                 className="tiptap ProseMirror composer flex-grow w-full resize-none p-1 bg-transparent border-0 outline-none shadow-none"
                 maxRows={8}
                 minRows={1}
-                autoFocus
+                autoFocus={!isMobile()}
                 autoCorrect="on"
                 autoComplete="on"
                 autoCapitalize="sentences"
