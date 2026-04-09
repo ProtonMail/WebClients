@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { getDrive } from '@proton/drive';
 import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import { ContextMenuButton } from '../../../components/sections/ContextMenu';
@@ -25,7 +26,8 @@ export const RevisionsContextButton = ({ nodeUid, mediaType, showRevisionsModal,
                 if (isProtonDocsDocument(mediaType)) {
                     void openDocumentHistory({ type: 'doc', uid: nodeUid });
                 } else {
-                    showRevisionsModal({ nodeUid });
+                    // Revision is not supported on photos so we force getDrive
+                    showRevisionsModal({ nodeUid, drive: getDrive() });
                 }
             }}
             close={close}
