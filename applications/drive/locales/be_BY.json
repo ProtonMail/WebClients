@@ -3108,6 +3108,18 @@
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Нам шкада, што вы пакідаеце нас. Мы будзем вам вельмі ўдзячныя, калі вы знойдзеце крыху часу паведаміць аб прычынах скасавання сваёй падпіскі. Вашы водгукі дапамагаюць зрабіць ${ BRAND_NAME } яшчэ лепш для кожнага карыстальніка."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Гэта магло адбыцца з-за таго, што дазволы былі выдалены або ваш пароль зменены."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Перападключыце свой уліковы запіс, каб працягнуць атрыманне і адпраўку паведамленняў Gmail у ${ BRAND_NAME }."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Перападключыце свае ўліковыя запісы, каб працягнуць атрыманне і адпраўку паведамленняў Gmail у ${ BRAND_NAME }."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Больш не ўдаецца атрымаць доступ да ${ boldEmails }."
       ]
     },
     "description": {
@@ -4051,6 +4063,12 @@
       ],
       "Something went wrong with search: Not enough storage space.": [
         "Нешта пайшло не так з пошукам: недастаткова месца на дыску."
+      ],
+      "Address could not be added.": [
+        "Немагчыма дадаць адрас."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Нешта пайшло не так пры атрыманні даступных даменаў"
       ]
     },
     "error": {
@@ -7231,6 +7249,27 @@
       ],
       "Unsupported file type for Photos": [
         "Тып файла для фатаграфій не падтрымліваецца"
+      ],
+      "Enter code": [
+        "Увядзіце код"
+      ],
+      "Move ${ dragCount } item": [
+        "Перамясціць ${ dragCount } элемент",
+        "Перамясціць ${ dragCount } элементы",
+        "Перамясціць ${ dragCount } элементаў",
+        "Перамясціць ${ dragCount } элементаў"
+      ],
+      "Move ${ fileCount } file": [
+        "Перамясціць ${ fileCount } файл",
+        "Перамясціць ${ fileCount } файлы",
+        "Перамясціць ${ fileCount } файлаў",
+        "Перамясціць ${ fileCount } файлаў"
+      ],
+      "Move ${ folderCount } folder": [
+        "Перамясціць ${ folderCount } папку",
+        "Перамясціць ${ folderCount } папкі",
+        "Перамясціць ${ folderCount } папак",
+        "Перамясціць ${ folderCount } папак"
       ]
     },
     "info": {
@@ -10035,6 +10074,9 @@
       ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" абагулены"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Ваш адрас ${ BRAND_NAME } гатовы да выкарыстання"
       ]
     },
     "Notification for duplicate filenames in the current upload": {

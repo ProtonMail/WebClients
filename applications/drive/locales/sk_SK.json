@@ -1265,6 +1265,9 @@
       ],
       "Refetch index": [
         "Znovu načítať index"
+      ],
+      "Reconnect to Gmail": [
+        "Znova sa pripojiť ku Gmailu"
       ]
     },
     "Action: Docs": {
@@ -3105,6 +3108,9 @@
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Je nám ľúto, že odchádzate. Ak máte chvíľku, veľmi by sme ocenili, keby ste nám povedali, prečo chcete zrušiť odber. Vaša spätná väzba nám pomáha vylepšovať ${ BRAND_NAME } pre všetkých."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Už nemáme prístup k ${ boldEmails }."
       ]
     },
     "description": {
@@ -4048,6 +4054,9 @@
       ],
       "Something went wrong with search: Not enough storage space.": [
         "Pri vyhľadávaní došlo k chybe: Nedostatok úložného priestoru."
+      ],
+      "Address could not be added.": [
+        "Adresu nebolo možné pridať."
       ]
     },
     "error": {
@@ -7222,6 +7231,27 @@
       ],
       "Unsupported file type for Photos": [
         "Nepodporovaný typ súboru pre Fotografie"
+      ],
+      "Enter code": [
+        "Zadajte kód"
+      ],
+      "Move ${ dragCount } item": [
+        "Presunúť ${ dragCount } položku",
+        "Presunúť ${ dragCount } položky",
+        "Presunúť ${ dragCount } položiek",
+        "Presunúť ${ dragCount } položiek"
+      ],
+      "Move ${ fileCount } file": [
+        "Presunúť ${ fileCount } súbor",
+        "Presunúť ${ fileCount } súbory",
+        "Presunúť ${ fileCount } súborov",
+        "Presunúť ${ fileCount } súborov"
+      ],
+      "Move ${ folderCount } folder": [
+        "Presunúť ${ folderCount } priečinok",
+        "Presunúť ${ folderCount } priečinky",
+        "Presunúť ${ folderCount } priečinkov",
+        "Presunúť ${ folderCount } priečinka"
       ]
     },
     "info": {
@@ -13636,6 +13666,9 @@
       ],
       "Search": [
         "Hľadať"
+      ],
+      "Disconnected from Gmail": [
+        "Odpojené od Gmailu"
       ]
     },
     "Today icon tooltip in mini calendar": {
