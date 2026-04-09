@@ -176,7 +176,7 @@ const MainContainer = () => {
     const isUserGroupsPassBusinessEnabled = useFlag('UserGroupsPassBusiness');
     const { paymentsEnabled: isScribePaymentEnabled } = useAssistantFeatureEnabled();
     const isScribeAdminSettingFeatureEnabled = useFlag('ScribeAdminSetting');
-    const isZoomIntegrationEnabled = useFlag('ZoomIntegration');
+    const isZoomIntegrationDisabled = useFlag('ZoomIntegrationDisabled');
     const isProtonMeetIntegrationEnabled = useFlag('NewScheduleOption');
     const canB2BHidePhotos = useFlag('DriveB2BPhotosUpload');
     const isSharedServerFeatureEnabled = useFlag('SharedServerFeature');
@@ -273,7 +273,7 @@ const MainContainer = () => {
         canB2BHidePhotos,
         isB2BDrive,
         isScribeEnabled: isScribePaymentEnabled && isScribeAdminSettingFeatureEnabled,
-        isZoomIntegrationEnabled,
+        isZoomIntegrationEnabled: !isZoomIntegrationDisabled,
         isProtonMeetIntegrationEnabled,
         isSharedServerFeatureEnabled,
         isCryptoPostQuantumOptInEnabled,
