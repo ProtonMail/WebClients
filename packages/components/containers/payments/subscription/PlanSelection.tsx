@@ -62,7 +62,7 @@ import {
     notHigherThanAvailableOnBackend,
     switchPlan,
 } from '@proton/payments';
-import { getAutoCoupon, hasMeet, hasMeetBusiness } from '@proton/payments/core/subscription/helpers';
+import { getAutoCoupon, hasMeet } from '@proton/payments/core/subscription/helpers';
 import { OfferPrice } from '@proton/payments/ui';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { APPS } from '@proton/shared/lib/constants';
@@ -289,10 +289,7 @@ export function useAccessiblePlans({
     if (isWalletIndividualPlans) {
         IndividualPlans = walletIndividualPlans;
     } else if (isMeetSettingsApp) {
-        IndividualPlans = filterPlans([
-            hasFreePlan ? FREE_PLAN : null,
-            hasMeetBusiness(subscription) ? null : plansMap[PLANS.MEET],
-        ]);
+        IndividualPlans = [];
     } else {
         const plusPlan =
             enabledProductB2CPlans.find((plan) => plan.Name === selectedProductPlans[Audience.B2C]) ??
