@@ -22,7 +22,6 @@ export interface ComposerToolbarProps {
     onFilesSelected: (files: File[]) => void;
     onBrowseDrive: () => void;
     onDrawSketch: () => void;
-    hasAttachments: boolean;
     canShowLumoUpsellToggle?: boolean;
     fileUploadMode: FileUploadMode;
 }
@@ -31,7 +30,6 @@ export const ComposerToolbar = ({
     onFilesSelected,
     onBrowseDrive,
     onDrawSketch,
-    hasAttachments,
     canShowLumoUpsellToggle,
     fileUploadMode,
 }: ComposerToolbarProps) => {
@@ -102,7 +100,6 @@ export const ComposerToolbar = ({
                             'web-search-button order-0 shrink-0 inline-flex flex-row flex-nowrap gap-1 items-center color-weak',
                             isWebSearchButtonToggled && 'is-active'
                         )}
-                        disabled={hasAttachments}
                         onClick={handleWebSearchButtonClick}
                         shape="ghost"
                         size="small"
