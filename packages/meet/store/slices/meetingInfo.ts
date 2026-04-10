@@ -17,6 +17,7 @@ export interface MeetingInfoState {
     passphrase: string;
     isGuestAdmin: boolean;
     participantsMap: Record<string, ParticipantEntity>;
+    participantDecryptedNameMap: Record<string, string>;
     isFetchingParticipants: boolean;
     mlsGroupState: MLSGroupState | null;
     isLocalScreenShare: boolean;
@@ -36,6 +37,7 @@ export const initialState: MeetingInfoState = {
     passphrase: '',
     isGuestAdmin: false,
     participantsMap: {},
+    participantDecryptedNameMap: {},
     isFetchingParticipants: false,
     mlsGroupState: null,
     isLocalScreenShare: false,
@@ -74,6 +76,9 @@ const slice = createSlice({
         mergeParticipantsMap: (state, action: PayloadAction<Record<string, ParticipantEntity>>) => {
             state.participantsMap = { ...state.participantsMap, ...action.payload };
         },
+        mergeParticipantDecryptedNameMap: (state, action: PayloadAction<Record<string, string>>) => {
+            state.participantDecryptedNameMap = { ...state.participantDecryptedNameMap, ...action.payload };
+        },
         removeParticipantFromMap: (state, action: PayloadAction<string>) => {
             const next = { ...state.participantsMap };
             delete next[action.payload];
@@ -81,6 +86,7 @@ const slice = createSlice({
         },
         resetParticipantMaps: (state) => {
             state.participantsMap = {};
+            state.participantDecryptedNameMap = {};
             state.isFetchingParticipants = false;
         },
         setParticipantAdmin: (state, action: PayloadAction<{ participantUid: string; participantType: number }>) => {
@@ -112,6 +118,7 @@ export const {
     resetMeetingInfo,
     addKeyRotationLog,
     mergeParticipantsMap,
+    mergeParticipantDecryptedNameMap,
     removeParticipantFromMap,
     resetParticipantMaps,
     setParticipantAdmin,
@@ -131,12 +138,10 @@ export const selectPassphrase = (state: MeetState) => state.meetingInfo.passphra
 export const selectIsGuestAdmin = (state: MeetState) => state.meetingInfo.isGuestAdmin;
 
 export const selectParticipantsMap = (state: MeetState) => state.meetingInfo.participantsMap;
-export const selectParticipantNameMap = createSelector([selectParticipantsMap], (participantsMap) => {
-    return Object.fromEntries(Object.entries(participantsMap).map(([key, value]) => [key, value.DisplayName]));
-});
+export const selectParticipantDecryptedNameMap = (state: MeetState) => state.meetingInfo.participantDecryptedNameMap;
 export const selectParticipantName = createSelector(
-    [selectParticipantsMap, (_state: MeetState, identity: string) => identity],
-    (participantsMap, identity) => participantsMap[identity]?.DisplayName ?? ''
+    [selectParticipantDecryptedNameMap, (_state: MeetState, identity: string) => identity],
+    (participantDecryptedNameMap, identity) => participantDecryptedNameMap[identity] ?? ''
 );
 
 export const selectMlsGroupState = (state: MeetState) => state.meetingInfo.mlsGroupState;

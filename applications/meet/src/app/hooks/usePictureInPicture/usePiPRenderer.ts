@@ -113,7 +113,7 @@ export function usePiPRenderer() {
             canvas: HTMLCanvasElement,
             tracksToDisplay: TrackInfo[],
             messages: PiPOverlayMessage[],
-            participantNameMap: Record<string, string>
+            participantDecryptedNameMap: Record<string, string>
         ) => {
             if (!canvas) {
                 return;
@@ -169,7 +169,7 @@ export function usePiPRenderer() {
 
                 // Draw participant name below the video
                 const nameY = y + videoHeight - 25;
-                const participantName = participantNameMap[trackInfo.participant?.identity || ''] || 'Unknown';
+                const participantName = participantDecryptedNameMap[trackInfo.participant?.identity || ''] || 'Unknown';
                 const displayName = trackInfo.isScreenShare ? `${participantName} (Screen Sharing)` : participantName;
 
                 // Draw participant name with white text
@@ -205,10 +205,10 @@ export function usePiPRenderer() {
             canvas: HTMLCanvasElement,
             tracksToDisplay: TrackInfo[],
             messages: PiPOverlayMessage[],
-            participantNameMap: Record<string, string>
+            participantDecryptedNameMap: Record<string, string>
         ) => {
             const render = () => {
-                drawPiP(canvas, tracksToDisplay, messages, participantNameMap);
+                drawPiP(canvas, tracksToDisplay, messages, participantDecryptedNameMap);
 
                 animationFrameRef.current = requestAnimationFrame(render);
             };

@@ -32,7 +32,7 @@ const FPS = 30;
 const { mimeType, extension } = getRecordingDetails();
 
 export function useMeetingRecorder(
-    participantNameMap: Record<string, string>,
+    participantDecryptedNameMap: Record<string, string>,
     pagedParticipants: (RemoteParticipant | LocalParticipant)[]
 ) {
     const isMeetMultipleRecordingEnabled = useFlag('MeetMultipleRecording');
@@ -77,7 +77,7 @@ export function useMeetingRecorder(
         screenShareTracks,
         audioTracks,
         pagedParticipants,
-        participantNameMap,
+        participantDecryptedNameMap,
     });
 
     renderInfoRef.current = {
@@ -85,7 +85,7 @@ export function useMeetingRecorder(
         screenShareTracks,
         audioTracks,
         pagedParticipants,
-        participantNameMap,
+        participantDecryptedNameMap,
     };
 
     const getRecordedTracks = () => {
@@ -106,7 +106,7 @@ export function useMeetingRecorder(
 
             return {
                 identity: track.participant?.identity || '',
-                name: renderInfoRef.current.participantNameMap[track.participant?.identity || ''] || 'Unknown',
+                name: renderInfoRef.current.participantDecryptedNameMap[track.participant?.identity || ''] || 'Unknown',
                 participantIndex: track.participantIndex,
                 isScreenShare: track.isScreenShare,
                 hasVideo: Boolean(track.track && !track.track.isMuted),
@@ -647,7 +647,7 @@ export function useMeetingRecorder(
         isLargerThanMd,
         isNarrowHeight,
         pagedParticipants,
-        participantNameMap,
+        participantDecryptedNameMap,
         videoTracksSignature,
         screenShareTracksSignature,
     ]);

@@ -3,7 +3,11 @@ import { createContext, useContext, useEffect, useLayoutEffect, useMemo } from '
 import type { ConnectionState } from 'livekit-client';
 
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
-import { resetMeetingInfo, selectParticipantNameMap, setMeetingInfo } from '@proton/meet/store/slices/meetingInfo';
+import {
+    resetMeetingInfo,
+    selectParticipantDecryptedNameMap,
+    setMeetingInfo,
+} from '@proton/meet/store/slices/meetingInfo';
 import { selectTotalParticipantCount } from '@proton/meet/store/slices/sortedParticipantsSlice';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 
@@ -141,10 +145,10 @@ export const MeetContainer = ({
 
     const pagedParticipants = useSortedPagedParticipants();
     const totalParticipantCount = useMeetSelector(selectTotalParticipantCount);
-    const participantNameMap = useMeetSelector(selectParticipantNameMap);
+    const participantDecryptedNameMap = useMeetSelector(selectParticipantDecryptedNameMap);
 
     const { recordingState, startRecording, stopRecording, downloadRecording } = useMeetingRecorder(
-        participantNameMap,
+        participantDecryptedNameMap,
         pagedParticipants
     );
 
