@@ -3,64 +3,42 @@ import { c } from 'ttag';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
 import { useGetSubscription, useSubscription } from '@proton/account/subscription/hooks';
-import { useGetUser, useUser } from '@proton/account/user/hooks';
-import { useGetCalendars } from '@proton/calendar/calendars/hooks';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import { useModalTwo, useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
-import useApi from '@proton/components/hooks/useApi';
-import useEventManager from '@proton/components/hooks/useEventManager';
+import { useGetUser } from '@proton/account/user/hooks';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
-import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import {
     FREE_PLAN,
-    type FeedbackDowngradeData,
     type PLANS,
     Renew,
     type Subscription,
-    changeRenewState,
-    deleteSubscription,
     getAvailableSubscriptionActions,
-    getPlan,
     getPlanName,
-    getRenewalTime,
     hasCancellablePlan,
-    hasMigrationDiscount,
-    hasPassLaunchOffer,
     isFreeSubscription,
 } from '@proton/payments';
 import { useIsB2BTrial } from '@proton/payments/ui';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
-import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/plans';
 import { APPS } from '@proton/shared/lib/constants';
-import { hasBonuses } from '@proton/shared/lib/helpers/organization';
-import { hasPaidMail, hasPaidVpn } from '@proton/shared/lib/user/helpers';
 import { useFlag } from '@proton/unleash/useFlag';
 
-import { OPEN_TRIAL_CANCELED_MODAL } from '../../../topBanners/constants';
-import DowngradeModal from '../../DowngradeModal';
-import LossLoyaltyModal from '../../LossLoyaltyModal';
-import MemberDowngradeModal from '../../MemberDowngradeModal';
-import PassLaunchOfferDowngradeModal from '../../PassLaunchOfferDowngradeModal';
-import { getShortPlan } from '../../features/plan';
-import CalendarDowngradeModal from '../CalendarDowngradeModal';
-import CancelTrialModal from '../CancelTrialModal';
-import type { FeedbackDowngradeResult } from '../FeedbackDowngradeModal';
-import FeedbackDowngradeModal, { isKeepSubscription } from '../FeedbackDowngradeModal';
-import type { HighlightPlanDowngradeModalOwnProps } from '../HighlightPlanDowngradeModal';
-import HighlightPlanDowngradeModal, { planSupportsCancellationDowngradeModal } from '../HighlightPlanDowngradeModal';
-import InAppPurchaseModal from '../InAppPurchaseModal';
-import { DiscountWarningModal } from '../PlanLossWarningModal';
-import UpsellModal from '../UpsellModal';
-import CancelSubscriptionLoadingModal from './CancelSubscriptionLoadingModal';
-import { CancelSubscriptionModal } from './CancelSubscriptionModal';
+import { useCalendarDowngradeStep } from '../cancellationSteps/useCalendarDowngradeStep';
+import { useCancelConfirmationStep } from '../cancellationSteps/useCancelConfirmationStep';
+import { useCancelTrialStep } from '../cancellationSteps/useCancelTrialStep';
+import { useDiscountWarningStep } from '../cancellationSteps/useDiscountWarningStep';
+import { useDowngradeStep } from '../cancellationSteps/useDowngradeStep';
+import { useFeedbackStep } from '../cancellationSteps/useFeedbackStep';
+import { useHighlightPlanDowngradeStep } from '../cancellationSteps/useHighlightPlanDowngradeStep';
+import { useInAppPurchaseStep } from '../cancellationSteps/useInAppPurchaseStep';
+import { useLossLoyaltyStep } from '../cancellationSteps/useLossLoyaltyStep';
+import { useMemberDowngradeStep } from '../cancellationSteps/useMemberDowngradeStep';
+import { usePassLaunchOfferStep } from '../cancellationSteps/usePassLaunchOfferStep';
+import { useUpsellStep } from '../cancellationSteps/useUpsellStep';
 import type { CancelSubscriptionResult } from './types';
+import { useCancelRenewal } from './useCancelRenewal';
+import { useCancellationStepEligibility } from './useCancellationStepEligibility';
+import { useDeleteSubscription } from './useDeleteSubscription';
 
 const SUBSCRIPTION_KEPT: CancelSubscriptionResult = {
     status: 'kept',
-};
-const SUBSCRIPTION_DOWNGRADED: CancelSubscriptionResult = {
-    status: 'downgraded',
 };
 
 const SUBSCRIPTION_CANCELLED: CancelSubscriptionResult = {
@@ -79,170 +57,70 @@ interface Props {
  * This hook will handle cancellation flow. It will display the cancellation modal and the feedback modal.
  * Use this hook if you need to implement cancellation flow elsewhere. It will help to be consistent in terms of UX
  * and expectations of the internal stakeholders.
+ *
+ * For building custom cancellation flows, consider using the individual step hooks from
+ * `cancellationSteps/` and action hooks (`useCancelRenewal`, `useDeleteSubscription`) directly.
+ *
  * @returns {cancelSubscriptionModals, cancelSubscription}
- * cancelSubscriptionModals: the modals to display – just render them in your component by returning them
+ * cancelSubscriptionModals: the modals to display -- just render them in your component by returning them
  * cancelSubscription: the function to call to cancel the subscription.
  */
 export const useCancelSubscriptionFlow = ({ app }: Props) => {
-    const [user] = useUser();
     const getSubscription = useGetSubscription();
     const getUser = useGetUser();
     const [subscription, loadingSubscription] = useSubscription();
     const [organization, loadingOrganization] = useOrganization();
     const isB2BTrial = useIsB2BTrial(subscription, organization);
     const [plansResult, loadingPlans] = usePlans();
-    const eventManager = useEventManager();
-    const getCalendars = useGetCalendars();
-    const [vpnServers] = useVPNServersCount();
-    const api = useApi();
     const freePlan = plansResult?.freePlan || FREE_PLAN;
     const plans = plansResult?.plans ?? [];
-    const { plansMap, plansMapLoading } = usePreferredPlansMap();
     const currentPlanId = getPlanName(subscription);
     const isUpsellEnabled = useFlag('NewCancellationFlowUpsell');
     const canUseUpsellFlow = isUpsellEnabled && app === APPS.PROTONMAIL;
 
-    const [cancelSubscriptionModal, showCancelSubscriptionModal] = useModalTwoPromise<
-        undefined,
-        CancelSubscriptionResult
-    >();
-    const [feedbackDowngradeModal, showFeedbackDowngradeModal] = useModalTwoPromise<
-        undefined,
-        FeedbackDowngradeResult
-    >();
-    const [upsellModal, showUpsellModal] = useModalTwo(UpsellModal);
-    const [discountWarningModal, showDiscountWarningModal] = useModalTwoPromise();
-    const [inAppPurchaseModal, showInAppPurchaseModal] = useModalTwoPromise();
-    const [highlightPlanDowngradeModal, showHighlightPlanDowngradeModal] =
-        useModalTwoPromise<HighlightPlanDowngradeModalOwnProps>();
-    const [calendarDowngradeModal, showCalendarDowngradeModal] = useModalTwoPromise();
-    const [cancelTrialModal, showCancelTrialModal] = useModalTwoPromise();
-    const [lossLoyaltyModal, showLossLoyaltyModal] = useModalTwoPromise();
-    const [memberDowngradeModal, showMemberDowngradeModal] = useModalTwoPromise();
-    const [passLaunchOfferDowngradeModal, showPassLaunchDowngradeModal] = useModalTwoPromise();
-    const [downgradeModal, showDowngradeModal] = useModalTwoPromise<{ hasMail: boolean; hasVpn: boolean }>();
-    const [cancellationLoadingModal, showCancellationLoadingModal, renderCancellationLoadingModal] = useModalState();
+    const {
+        canShowCalendarDowngrade,
+        canShowDiscountWarning,
+        canShowDowngrade,
+        canShowLossLoyalty,
+        canShowMemberDowngrade,
+        canShowPassLaunchOffer,
+    } = useCancellationStepEligibility();
 
-    const { createNotification, hideNotification } = useNotifications();
+    const cancelTrial = useCancelTrialStep({ canShow: async () => true });
+    const cancelConfirmation = useCancelConfirmationStep({ canShow: async () => true });
+    const upsell = useUpsellStep();
+    const highlightPlanDowngrade = useHighlightPlanDowngradeStep({ canShow: async () => true });
+    const inAppPurchase = useInAppPurchaseStep({ canShow: async () => true });
+    const calendarDowngrade = useCalendarDowngradeStep({ canShow: canShowCalendarDowngrade });
+    const lossLoyalty = useLossLoyaltyStep({ canShow: canShowLossLoyalty });
+    const memberDowngrade = useMemberDowngradeStep({ canShow: canShowMemberDowngrade });
+    const passLaunchOffer = usePassLaunchOfferStep({ canShow: canShowPassLaunchOffer });
+    const downgrade = useDowngradeStep({ canShow: canShowDowngrade });
+    const discountWarning = useDiscountWarningStep({ canShow: canShowDiscountWarning });
+    const feedback = useFeedbackStep({ canShow: async () => true });
+    const { deleteUserSubscription, cancellationLoadingModal } = useDeleteSubscription();
+    const { cancelSubscriptionRenewal } = useCancelRenewal();
+
+    const { createNotification } = useNotifications();
 
     const modals = (
         <>
-            {cancelTrialModal(({ onResolve, onReject, ...props }) => {
-                return <CancelTrialModal {...props} onConfirm={onResolve} onClose={onReject} />;
-            })}
-            {downgradeModal(({ onResolve, onReject, ...props }) => {
-                return <DowngradeModal {...props} onConfirm={onResolve} onClose={onReject} />;
-            })}
-
-            {organization &&
-                memberDowngradeModal(({ onResolve, onReject, ...props }) => {
-                    return (
-                        <MemberDowngradeModal
-                            organization={organization}
-                            {...props}
-                            onConfirm={onResolve}
-                            onClose={onReject}
-                        />
-                    );
-                })}
-            {organization &&
-                lossLoyaltyModal(({ onResolve, onReject, ...props }) => {
-                    return (
-                        <LossLoyaltyModal
-                            organization={organization}
-                            {...props}
-                            onConfirm={onResolve}
-                            onClose={onReject}
-                        />
-                    );
-                })}
-            {calendarDowngradeModal(({ onResolve, onReject, ...props }) => {
-                return <CalendarDowngradeModal isDowngrade {...props} onConfirm={onResolve} onClose={onReject} />;
-            })}
-            {highlightPlanDowngradeModal(({ onResolve, onReject, ...props }) => {
-                return <HighlightPlanDowngradeModal {...props} onConfirm={onResolve} onClose={onReject} />;
-            })}
-            {subscription &&
-                inAppPurchaseModal(({ onResolve, onReject, ...props }) => {
-                    return <InAppPurchaseModal {...props} subscription={subscription} onClose={onReject} />;
-                })}
-
-            {currentPlanId ? upsellModal : null}
-            {discountWarningModal(({ onResolve, onReject, ...props }) => {
-                return <DiscountWarningModal {...props} type="downgrade" onConfirm={onResolve} onClose={onReject} />;
-            })}
-            {subscription &&
-                passLaunchOfferDowngradeModal(({ onResolve, onReject, ...props }) => {
-                    return (
-                        <PassLaunchOfferDowngradeModal
-                            {...props}
-                            subscription={subscription}
-                            onConfirm={onResolve}
-                            onClose={onReject}
-                        />
-                    );
-                })}
-            {renderCancellationLoadingModal && <CancelSubscriptionLoadingModal {...cancellationLoadingModal} />}
-            {subscription &&
-                cancelSubscriptionModal((props) => {
-                    return <CancelSubscriptionModal subscription={subscription} {...props} />;
-                })}
-            {feedbackDowngradeModal((props) => {
-                return <FeedbackDowngradeModal user={user} {...props} />;
-            })}
+            {cancelTrial.modal}
+            {downgrade.modal}
+            {memberDowngrade.modal}
+            {lossLoyalty.modal}
+            {calendarDowngrade.modal}
+            {highlightPlanDowngrade.modal}
+            {inAppPurchase.modal}
+            {currentPlanId ? upsell.modal : null}
+            {discountWarning.modal}
+            {passLaunchOffer.modal}
+            {cancellationLoadingModal}
+            {cancelConfirmation.modal}
+            {feedback.modal}
         </>
     );
-
-    interface CancellationProps {
-        feedback?: FeedbackDowngradeData;
-    }
-
-    const finaliseCancellation = async (
-        cancellationProps: CancellationProps = {}
-    ): Promise<CancelSubscriptionResult> => {
-        let cancelNotificationId;
-
-        try {
-            let { feedback } = cancellationProps;
-
-            if (!feedback) {
-                const downgradeFeedback = await showFeedbackDowngradeModal();
-                if (isKeepSubscription(downgradeFeedback)) {
-                    return SUBSCRIPTION_KEPT;
-                }
-
-                feedback = downgradeFeedback;
-            }
-
-            cancelNotificationId = createNotification({
-                type: 'info',
-                text: c('State').t`Canceling your subscription, please wait`,
-                expiration: 99999,
-            });
-
-            await api(
-                changeRenewState({
-                    RenewalState: Renew.Disabled,
-                    CancellationFeedback: feedback,
-                })
-            );
-            await eventManager.call();
-
-            if (!isB2BTrial) {
-                createNotification({ text: c('Success').t`You have successfully canceled your subscription.` });
-            }
-        } finally {
-            if (cancelNotificationId) {
-                hideNotification(cancelNotificationId);
-            }
-        }
-
-        if (isB2BTrial) {
-            document.dispatchEvent(new CustomEvent(OPEN_TRIAL_CANCELED_MODAL));
-        }
-
-        return SUBSCRIPTION_CANCELLED;
-    };
 
     interface CancelWithUpsellProps {
         subscription: Subscription;
@@ -258,7 +136,7 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
         }
 
         const resolution = upsellPlanId
-            ? await showUpsellModal({
+            ? await upsell.show({
                   freePlan,
                   plans,
                   subscription,
@@ -271,7 +149,11 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
         }
 
         if (resolution.status === SUBSCRIPTION_CANCELLED.status) {
-            return finaliseCancellation();
+            const feedbackResult = await feedback.show();
+            if (feedbackResult.status === 'kept') {
+                return SUBSCRIPTION_KEPT;
+            }
+            return cancelSubscriptionRenewal(feedbackResult.feedback);
         }
         return SUBSCRIPTION_UPSOLD;
     };
@@ -281,7 +163,6 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
         subscription: Subscription;
         subscriptionReminderFlow: boolean | undefined;
         upsellPlanId: PLANS | undefined;
-        existingFeedback?: FeedbackDowngradeData;
     }
 
     const cancelRenew = async ({
@@ -289,11 +170,10 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
         subscription,
         subscriptionReminderFlow,
         upsellPlanId,
-        existingFeedback,
     }: CancelRenewProps): Promise<CancelSubscriptionResult> => {
         if (isB2BTrial) {
             try {
-                await showCancelTrialModal();
+                await cancelTrial.show();
             } catch {
                 return SUBSCRIPTION_KEPT;
             }
@@ -303,7 +183,7 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
             if (canUseUpsellFlow && !skipUpsell) {
                 return cancelWithUpsell({ subscription, upsellPlanId });
             } else {
-                const result = await showCancelSubscriptionModal();
+                const result = await cancelConfirmation.show();
 
                 if (result.status === 'kept') {
                     return SUBSCRIPTION_KEPT;
@@ -311,67 +191,28 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
             }
         }
 
-        const currentPlan = getPlan(subscription);
-        const shortPlan = currentPlan
-            ? getShortPlan(currentPlan.Name as PLANS, plansMap, {
-                  vpnServers,
-                  freePlan,
-              })
-            : undefined;
-
-        // We only show the plan downgrade modal for plans that are defined with features
-        if (
-            !isB2BTrial &&
-            shortPlan &&
-            !subscriptionReminderFlow &&
-            planSupportsCancellationDowngradeModal(shortPlan.plan)
-        ) {
+        if (!isB2BTrial && !subscriptionReminderFlow) {
             try {
-                await showHighlightPlanDowngradeModal({
-                    user,
-                    plansMap,
-                    app,
-                    shortPlan,
-                    periodEnd: getRenewalTime(subscription),
-                    freePlan,
-                    cancellationFlow: true,
-                    subscription,
-                });
+                await highlightPlanDowngrade.show({ app, cancellationFlow: true });
             } catch {
                 return SUBSCRIPTION_KEPT;
             }
         }
 
-        if (!isB2BTrial && hasPassLaunchOffer(subscription)) {
+        if (!isB2BTrial) {
             try {
-                await showPassLaunchDowngradeModal();
+                await passLaunchOffer.show();
             } catch {
                 return SUBSCRIPTION_KEPT;
             }
         }
 
-        if (existingFeedback) {
-            return finaliseCancellation({ feedback: existingFeedback });
-        }
-
-        const feedback = await showFeedbackDowngradeModal();
-        if (isKeepSubscription(feedback)) {
+        const feedbackResult = await feedback.show();
+        if (feedbackResult.status === 'kept') {
             return SUBSCRIPTION_KEPT;
         }
 
-        return finaliseCancellation({ feedback });
-    };
-
-    const handleFinalizeUnsubscribe = async (data: FeedbackDowngradeData) => {
-        try {
-            showCancellationLoadingModal(true);
-            await api(deleteSubscription(data, 'v5'));
-            await eventManager.call();
-            createNotification({ text: c('Success').t`You have successfully unsubscribed` });
-            return SUBSCRIPTION_DOWNGRADED;
-        } finally {
-            showCancellationLoadingModal(false);
-        }
+        return cancelSubscriptionRenewal(feedbackResult.feedback);
     };
 
     const handleUnsubscribe = async (subscriptionReminderFlow: boolean = false) => {
@@ -379,65 +220,26 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
             return SUBSCRIPTION_KEPT;
         }
 
-        const shouldCalendarPreventDowngradePromise = getShouldCalendarPreventSubscripitionChange({
-            user,
-            newPlan: {},
-            api,
-            getCalendars,
-            plans,
-        });
+        await discountWarning.show();
 
-        if (hasMigrationDiscount(subscription)) {
-            await showDiscountWarningModal();
+        if (!subscriptionReminderFlow) {
+            await highlightPlanDowngrade.show({ app, cancellationFlow: false });
         }
 
-        const currentPlan = getPlan(subscription);
-        const shortPlan = currentPlan
-            ? getShortPlan(currentPlan.Name as PLANS, plansMap, {
-                  vpnServers,
-                  freePlan,
-              })
-            : undefined;
+        await calendarDowngrade.show();
+        await lossLoyalty.show();
+        await memberDowngrade.show();
 
-        // We only show the plan downgrade modal for plans that are defined with features
-        if (shortPlan && !subscriptionReminderFlow) {
-            await showHighlightPlanDowngradeModal({
-                user,
-                plansMap,
-                app,
-                shortPlan,
-                periodEnd: getRenewalTime(subscription),
-                freePlan,
-                cancellationFlow: false,
-                subscription,
-            });
+        if (!subscriptionReminderFlow) {
+            await downgrade.show();
         }
 
-        if (await shouldCalendarPreventDowngradePromise) {
-            await showCalendarDowngradeModal();
-        }
-
-        if (hasBonuses(organization)) {
-            await showLossLoyaltyModal();
-        }
-
-        if ((organization?.UsedMembers ?? 0) > 1) {
-            await showMemberDowngradeModal();
-        }
-
-        const hasMail = hasPaidMail(user);
-        const hasVpn = hasPaidVpn(user);
-
-        if ((hasMail || hasVpn) && !subscriptionReminderFlow) {
-            await showDowngradeModal({ hasMail, hasVpn });
-        }
-
-        const feedback = await showFeedbackDowngradeModal();
-        if (isKeepSubscription(feedback)) {
+        const feedbackResult = await feedback.show();
+        if (feedbackResult.status === 'kept') {
             return SUBSCRIPTION_KEPT;
         }
 
-        return handleFinalizeUnsubscribe(feedback);
+        return deleteUserSubscription(feedbackResult.feedback);
     };
 
     const cancelSubscription = async ({
@@ -445,13 +247,11 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
         upsellPlanId,
         skipUpsell,
         forceDeleteSubscription,
-        existingFeedback,
     }: {
         subscriptionReminderFlow?: boolean;
         upsellPlanId?: PLANS;
         skipUpsell?: boolean;
         forceDeleteSubscription?: boolean;
-        existingFeedback?: FeedbackDowngradeData;
     }): Promise<CancelSubscriptionResult> => {
         const [subscription, user] = await Promise.all([getSubscription(), getUser()]);
         if (user.isFree || isFreeSubscription(subscription)) {
@@ -461,7 +261,7 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
 
         const subscriptionActions = getAvailableSubscriptionActions(subscription);
         if (!subscriptionActions.canCancel) {
-            await showInAppPurchaseModal();
+            await inAppPurchase.show();
             return SUBSCRIPTION_KEPT;
         }
 
@@ -475,7 +275,6 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
                 subscription,
                 subscriptionReminderFlow,
                 upsellPlanId,
-                existingFeedback,
             });
         }
 
@@ -483,7 +282,7 @@ export const useCancelSubscriptionFlow = ({ app }: Props) => {
     };
 
     return {
-        loadingCancelSubscription: loadingOrganization || loadingSubscription || loadingPlans || plansMapLoading,
+        loadingCancelSubscription: loadingOrganization || loadingSubscription || loadingPlans,
         cancelSubscriptionModals: modals,
         cancelSubscription,
     };

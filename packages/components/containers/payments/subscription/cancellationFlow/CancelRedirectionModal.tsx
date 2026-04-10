@@ -9,6 +9,7 @@ import Prompt from '@proton/components/components/prompt/Prompt';
 import { PLANS, getRenewalTime } from '@proton/payments';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
+import useEventManager from '../../../../hooks/useEventManager';
 import useCancellationTelemetry, { REACTIVATE_SOURCE } from './useCancellationTelemetry';
 
 interface Props extends ModalProps {
@@ -16,8 +17,9 @@ interface Props extends ModalProps {
     planName: string;
 }
 
-const CancelRedirectionModal = ({ planName, plan, ...props }: Props) => {
+export const CancelRedirectionModal = ({ planName, plan, ...props }: Props) => {
     const { sendResubscribeModalResubcribeReport, sendResubscribeModalCloseReport } = useCancellationTelemetry();
+    const eventManager = useEventManager();
     const [subscription] = useSubscription();
 
     if (!subscription) {
@@ -37,7 +39,8 @@ const CancelRedirectionModal = ({ planName, plan, ...props }: Props) => {
         return (
             <ButtonLike
                 as={SettingsLink}
-                onClick={() => {
+                onClick={async () => {
+                    await eventManager.call();
                     sendResubscribeModalResubcribeReport();
                 }}
                 fullWidth
@@ -55,12 +58,18 @@ const CancelRedirectionModal = ({ planName, plan, ...props }: Props) => {
     return (
         <Prompt
             {...props}
+            onClose={async () => {
+                await eventManager.call();
+                sendResubscribeModalCloseReport();
+                props.onClose?.();
+            }}
             title={c('Subscription reminder').t`Subscription canceled`}
             data-testid="cancellation-reminder-redirection"
             buttons={[
                 <ButtonLike
                     as={SettingsLink}
-                    onClick={() => {
+                    onClick={async () => {
+                        await eventManager.call();
                         sendResubscribeModalCloseReport();
                     }}
                     color="norm"
@@ -75,5 +84,3 @@ const CancelRedirectionModal = ({ planName, plan, ...props }: Props) => {
         </Prompt>
     );
 };
-
-export default CancelRedirectionModal;
