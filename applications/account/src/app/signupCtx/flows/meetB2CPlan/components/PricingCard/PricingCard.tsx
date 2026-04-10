@@ -51,7 +51,7 @@ const PricingFeatures = () => {
     const { selectedPlan } = payments;
 
     const features =
-        selectedPlan.name === PLANS.MEET ? (
+        selectedPlan.name === PLANS.MEET_BUSINESS ? (
             <>
                 <FeatureItem text={getMeetingMaxLengthText('paid')} highlighted />
                 <FeatureItem text={getMaxParticipantsText(PAID_MAX_PARTICIPANTS)} highlighted />
