@@ -15,8 +15,17 @@ export type Drive = Pick<ProtonDriveClient, 'getNode' | 'iterateThumbnails' | 'g
     Partial<Pick<ProtonDriveClient, 'getFileRevisionUploader' | 'getFileRevisionDownloader'>>;
 
 export type DriveWithSharing = Drive &
-    Pick<ProtonDriveClient, 'getSharingInfo' | 'unshareNode' | 'resendInvitation' | 'shareNode'>;
+    Pick<
+        ProtonDriveClient,
+        'getSharingInfo' | 'unshareNode' | 'resendInvitation' | 'shareNode' | 'convertNonProtonInvitation'
+    >;
 
 export function isDriveWithSharing(drive: Drive): drive is DriveWithSharing {
-    return 'getSharingInfo' in drive && 'unshareNode' in drive && 'resendInvitation' in drive && 'shareNode' in drive;
+    return (
+        'getSharingInfo' in drive &&
+        'unshareNode' in drive &&
+        'resendInvitation' in drive &&
+        'shareNode' in drive &&
+        'convertNonProtonInvitation' in drive
+    );
 }
