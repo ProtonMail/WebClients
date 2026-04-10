@@ -1,10 +1,11 @@
+import type { KeyboardEvent } from 'react';
 import { useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
 
 import { AddressesAutocompleteTwo, AddressesInput, InputFieldTwo } from '@proton/components';
-import { useContactGroups } from '@proton/mail/store/labels/hooks';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
+import { useContactGroups } from '@proton/mail/store/labels/hooks';
 import clsx from '@proton/utils/clsx';
 
 import type { DirectSharingRole } from '../interfaces';
@@ -46,6 +47,13 @@ export const DirectSharingAutocomplete = ({
 
     const recipients = useMemo(() => inviteesToRecipients(invitees), [invitees]);
 
+    const onKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+    };
+
     return (
         <>
             <div className="flex justify-space-between items-center flex-nowrap relative mb-5">
@@ -64,6 +72,7 @@ export const DirectSharingAutocomplete = ({
                     assistContainerClassName="sr-only"
                     autocomplete={
                         <AddressesAutocompleteTwo
+                            onKeyDown={onKeyDown}
                             hasAddOnBlur
                             hasEmailPasting
                             id={inputId}
