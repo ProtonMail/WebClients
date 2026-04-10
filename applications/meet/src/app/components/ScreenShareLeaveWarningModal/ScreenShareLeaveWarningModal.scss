@@ -1,9 +1,0 @@
-.leave-despite-screen-share-button {
-	background-color: var(--signal-danger-major-3);
-
-	&:hover,
-	&:focus-within {
-		background-color: var(--signal-danger-minor-1);
-		color: var(--text-norm) !important;
-	}
-}

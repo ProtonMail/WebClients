@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -41,6 +43,8 @@ export const LeaveMeetingPopup = () => {
     const popupState = useMeetSelector(selectPopupState);
     const [loadingEndMeeting, withLoadingEndMeeting] = useLoading();
 
+    const [endingMeeting, setEndingMeeting] = useState(false);
+
     const isLargerThanMd = useIsLargerThanMd();
 
     const { isLocalParticipantHost, isLocalParticipantAdmin, hasAnotherAdmin, hostIsPresent } =
@@ -48,8 +52,6 @@ export const LeaveMeetingPopup = () => {
 
     const handleButtonClick = () => {
         switch (true) {
-            case isLocalScreenShare:
-                return dispatch(setPopupStateValue({ popup: PopUpControls.ScreenShareLeaveWarning, value: true }));
             // If there is only one participant, regardless of the role, show the leave meeting participant modal
             case totalParticipantCount === 1:
                 return dispatch(togglePopupState(PopUpControls.LeaveMeetingParticipant));
@@ -59,6 +61,8 @@ export const LeaveMeetingPopup = () => {
             case isLocalParticipantHost && !hasAnotherAdmin:
             case isLocalParticipantAdmin && !hasAnotherAdmin && !hostIsPresent:
                 return dispatch(togglePopupState(PopUpControls.LeaveMeeting));
+            case isLocalScreenShare:
+                return dispatch(togglePopupState(PopUpControls.ScreenShareLeaveWarning));
             default:
                 dispatch(togglePopupState(PopUpControls.LeaveMeetingParticipant));
         }
@@ -73,9 +77,9 @@ export const LeaveMeetingPopup = () => {
         handleLeave();
     };
 
-    const handleEndMeetingConfirm = () => {
-        dispatch(setPopupStateValue({ popup: PopUpControls.EndMeeting, value: false }));
-        void withLoadingEndMeeting(handleEndMeeting);
+    const handleEndMeetingConfirm = async (controls: PopUpControls) => {
+        await withLoadingEndMeeting(handleEndMeeting);
+        dispatch(setPopupStateValue({ popup: controls, value: false }));
     };
 
     return (
@@ -106,7 +110,14 @@ export const LeaveMeetingPopup = () => {
 
                     <Button
                         className="end-meeting-for-all-button border-none rounded-full w-full py-4"
-                        onClick={() => dispatch(togglePopupState(PopUpControls.EndMeeting))}
+                        onClick={() => {
+                            setEndingMeeting(true);
+
+                            const action = isLocalScreenShare
+                                ? PopUpControls.ScreenShareLeaveWarning
+                                : PopUpControls.EndMeeting;
+                            dispatch(togglePopupState(action));
+                        }}
                         disabled={loadingEndMeeting}
                         loading={loadingEndMeeting}
                         size="large"
@@ -115,7 +126,12 @@ export const LeaveMeetingPopup = () => {
                     </Button>
                     <Button
                         className="leave-meeting-button border-none rounded-full w-full py-4"
-                        onClick={() => dispatch(togglePopupState(PopUpControls.LeaveMeetingParticipant))}
+                        onClick={() => {
+                            const action = isLocalScreenShare
+                                ? PopUpControls.ScreenShareLeaveWarning
+                                : PopUpControls.LeaveMeetingParticipant;
+                            dispatch(togglePopupState(action));
+                        }}
                         size="large"
                     >
                         {c('Action').t`Leave meeting`}
@@ -137,10 +153,15 @@ export const LeaveMeetingPopup = () => {
             </Dropdown>
             {popupState[PopUpControls.ScreenShareLeaveWarning] && (
                 <ScreenShareLeaveWarningModal
-                    onClose={() =>
-                        dispatch(setPopupStateValue({ popup: PopUpControls.ScreenShareLeaveWarning, value: false }))
-                    }
-                    onConfirm={() => handleConfirm(PopUpControls.ScreenShareLeaveWarning)}
+                    onClose={() => {
+                        dispatch(setPopupStateValue({ popup: PopUpControls.ScreenShareLeaveWarning, value: false }));
+                        setEndingMeeting(false);
+                    }}
+                    onConfirm={() => {
+                        const handlerFunction = endingMeeting ? handleEndMeetingConfirm : handleConfirm;
+                        handlerFunction(PopUpControls.ScreenShareLeaveWarning);
+                    }}
+                    endingMeeting={endingMeeting}
                 />
             )}
             {popupState[PopUpControls.LeaveMeetingParticipant] && (
@@ -153,8 +174,11 @@ export const LeaveMeetingPopup = () => {
             )}
             {popupState[PopUpControls.EndMeeting] && (
                 <EndMeetingWarningModal
-                    onClose={() => dispatch(setPopupStateValue({ popup: PopUpControls.EndMeeting, value: false }))}
-                    onConfirm={() => handleEndMeetingConfirm()}
+                    onClose={() => {
+                        dispatch(setPopupStateValue({ popup: PopUpControls.EndMeeting, value: false }));
+                        setEndingMeeting(false);
+                    }}
+                    onConfirm={() => handleEndMeetingConfirm(PopUpControls.EndMeeting)}
                 />
             )}
         </>
