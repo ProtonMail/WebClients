@@ -485,6 +485,9 @@
       "Fit to window": [
         "Ajusta a la finestra"
       ],
+      "Forgot password?": [
+        "Heu oblidat la contrasenya?"
+      ],
       "Forgot recovery method?": [
         "Heu oblidat el mètode de recuperació?"
       ],
@@ -580,6 +583,9 @@
       ],
       "I don't have my key": [
         "No tinc la meva clau"
+      ],
+      "I don't have my phrase": [
+        "No tinc la meva frase"
       ],
       "I don’t have my backup codes": [
         "No tinc els meus codis de còpia de seguretat"
@@ -691,6 +697,9 @@
       ],
       "Next page": [
         "Pàgina següent"
+      ],
+      "No": [
+        "No"
       ],
       "OK": [
         "D'acord"
@@ -840,6 +849,9 @@
         "Reintenta"
       ],
       "Return to sign in": [
+        "Tornar a l'inici de sessió"
+      ],
+      "Return to sign-in": [
         "Tornar a l'inici de sessió"
       ],
       "Review": [
@@ -1061,6 +1073,9 @@
       "Try another method": [
         "Proveu amb un altre mètode"
       ],
+      "Try another way": [
+        "Proveu-ho d'una altra manera"
+      ],
       "Try for free": [
         "Proveu-lo gratuïtament"
       ],
@@ -1192,6 +1207,9 @@
       ],
       "Wipe": [
         "Esborra"
+      ],
+      "Yes": [
+        "Sí"
       ],
       "Your server will be provisioned in the next days": [
         "El vostre servidor serà aprovisionat en els pròxims dies"
@@ -6064,6 +6082,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistent d'escriptura ${ BRAND_NAME } Scribe"
       ],
+      "${ BRAND_NAME } will send a verification code to ${ RedactedPhoneNumber }. Standard message rates may apply.": [
+        "${ BRAND_NAME } enviarà un codi de verificació a ${ RedactedPhoneNumber }. Pot ser que s'apliquin tarifes estàndard de missatgeria."
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "La tecnologia d'encriptació de ${ BRAND_NAME } significa que ningú pot accedir a la vostra contrasenya, ni tan sols nosaltres."
       ],
@@ -6081,6 +6102,9 @@
       "${ countriesCount } country enabled": [
         "${ countriesCount } país activat",
         "${ countriesCount } països activats"
+      ],
+      "${ DataLockedText }, but recoverable with your ${ RecoveryContactsLink }:": [
+        "${ DataLockedText }, però recuperable amb el vostre ${ RecoveryContactsLink }:"
       ],
       "${ discountPercent }% discount": [
         "${ discountPercent }% de descompte"
@@ -6463,11 +6487,11 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Un àlies de correu electrònic funciona com una adreça de correu electrònic, però redueix el correu brossa i manté ocultes la vostra adreça de correu electrònic real i la vostra identitat."
       ],
-      "An email with a verification code was just sent to ${ recoveryEmailElement }. If you can’t find the message in your inbox, please check your spam folder.": [
-        "S'acaba d'enviar un correu amb un codi de verificació a ${ recoveryEmailElement }. Si no trobeu el missatge a la safata d'entrada, comproveu la carpeta de correu brossa."
+      "An email with a verification code was just sent to ${ emailAddress }. If you can’t find the message in your inbox, please check your spam folder.": [
+        "S'acaba d'enviar un correu electrònic amb un codi de verificació a ${ emailAddress }. Si no trobeu el missatge a la vostra safata d'entrada, reviseu la carpeta de correu brossa."
       ],
-      "An SMS with a verification code was just sent to ${ recoveryPhoneElement }.": [
-        "Acabem d'enviar un SMS amb un codi de verificació a ${ recoveryPhoneElement }."
+      "An SMS with a verification code was just sent to ${ phoneNumber }.": [
+        "Acabem d'enviar un SMS amb un codi de verificació a ${ phoneNumber }."
       ],
       "and": [
         "i"
@@ -6498,6 +6522,9 @@
       ],
       "Are you sure you want to revoke certificate **${ name }**": [
         "Segur que voleu revocar el certificat **${ name }**?"
+      ],
+      "Ask them to sign in to their ${ ACCOUNT_APP_NAME } in the browser, and go to **Settings → All settings → Recovery → Emergency access→ People who trust me.**": [
+        "Demaneu-los que iniciïn sessió a la seva ${ ACCOUNT_APP_NAME } al navegador i que vagin a **Preferències → Totes les preferències → Recuperació → Accés d'emergència → Persones que confien en mi.**"
       ],
       "Ask your organization admin to setup Gateways.": [
         "Demaneu a l'administrador de l'organització que configuri passarel·les."
@@ -6562,6 +6589,15 @@
       "By leaving now, changes may not be saved": [
         "Si surt ara, és possible que els canvis no es desin"
       ],
+      "Can you access your active session?": [
+        "Podeu accedir a la vostra sessió activa?"
+      ],
+      "Can you access your active web session in another browser?": [
+        "Podeu accedir a la vostra sessió web activa en un altre navegador?"
+      ],
+      "Can you reach out to your contact?": [
+        "Teniu el vostre contacte a l'abast?"
+      ],
       "Cancel": [
         "Cancel·lar-ho"
       ],
@@ -6585,6 +6621,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Feu clic a \"Sol·licitar un nou codi\" per rebre un codi de verificació nou a ${ strong }. Si aquest número de telèfon és incorrecte, feu clic a \"Editar\" per corregir-lo."
+      ],
+      "Click **Request password reset** and follow the prompts.": [
+        "Feu clic a **Sol·licitar el restabliment de la contrasenya** i seguiu les instruccions."
       ],
       "Close this screen to exit.": [
         "Tanqueu la finestra per sortir."
@@ -6703,6 +6742,9 @@
       "Data recoverable on this device": [
         "Dades recuperables en aquest dispositiu"
       ],
+      "Data recoverable with recovery phrase": [
+        "Podeu recuperar les dades amb la frase de recuperació"
+      ],
       "dedicated servers": [
         "servidors dedicats"
       ],
@@ -6724,6 +6766,9 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "S'està eliminant ${ deletedServerCount } servidor de passarel·la",
         "S'estan eliminant ${ deletedServerCount } servidors de passarel·la"
+      ],
+      "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
+        "Depenent de les vostres preferències, podran rebre accés immediatament o després d'un **període d'espera** designat."
       ],
       "Did you know?": [
         "Ho sabíeu?"
@@ -6816,6 +6861,9 @@
       "Drop to import": [
         "Arrossegueu aquí per a importar"
       ],
+      "Due to end-to-end encryption, you can reset your password, but ${ DataLockedText } until you use a ${ DataRecoveryOptionsLink }:": [
+        "A causa del xifratge d'extrem a extrem, podreu restablir la contrasenya, però ${ DataLockedText } fins que feu servir ${ DataRecoveryOptionsLink }:"
+      ],
       "Each code can only be used once": [
         "Cada codi només es pot utilitzar una vegada"
       ],
@@ -6894,6 +6942,9 @@
       "Enter new password for user ${ userName }.": [
         "Introduïu una nova contrasenya per a l'usuari ${ userName }."
       ],
+      "Enter the 12-word recovery phrase associated with your account.": [
+        "Introduïu la frase de recuperació de 12 paraules associada al vostre compte."
+      ],
       "Enter the code from your authenticator app": [
         "Introduïu el codi de la vostra aplicació d'autenticació."
       ],
@@ -6923,6 +6974,12 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Introduïu la vostra adreça de correu electrònic o usuari del compte de ${ BRAND_NAME }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Introduïu la vostra contrasenya (com a administrador de l'organització)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Introduïu la vostra contrasenya (com a contacte de confiança)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Introduïu la vostra adreça de correu electrònic de recuperació i us enviarem el vostre usuari o adreça de correu electrònic."
@@ -6975,6 +7032,9 @@
       "Friends and family": [
         "Amistats i família"
       ],
+      "From there, they can request emergency access to your account by clicking **Request access.**": [
+        "Des d'allà poden sol·licitar l'accés d'emergència al vostre compte fent clic a **Sol·licitar accés**."
+      ],
       "Gateway couldn't be deleted. Please try again": [
         "No s'ha pogut eliminar la passarel·la. Torneu-ho a provar"
       ],
@@ -6992,6 +7052,9 @@
       ],
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "Obteniu ${ AUTHENTICATOR_APP_NAME } per a tots els vostres dispositius."
+      ],
+      "Get in touch with your emergency contacts, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed**.": [
+        "Acudiu als vostres contactes d'emergència per veure si us poden ajudar. Després de sol·licitar l'accés d'emergència al vostre compte, podran canviar la vostra contrasenya **un cop hagi passat el temps d'espera per l'accés**."
       ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Rebeu una notificació si la vostra contrasenya o altres dades personals han estat filtrades. ${ learnMoreLinkNoBreach }"
@@ -7029,11 +7092,20 @@
       "High Priority": [
         "Alta prioritat"
       ],
+      "How to perform a signed-in reset": [
+        "Com realitzar un restabliment amb la sessió iniciada"
+      ],
+      "How your emergency contact can change your password for you:": [
+        "Com pot el vostre contacte d'emergència canviar la contrasenya per vosaltres:"
+      ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Clau pública del proveïdor d'identitat per a signar les assercions d'autenticació. Hi ha d'haver un lloc on descarregar o copiar l'empremta electrònica del certificat del proveïdor d'identitat. Simplement, enganxeu-la al camp de l'àrea de text."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Si un altre administrador ha canviat aquesta contrasenya, haureu de preguntar-li quina és la nova contrasenya d'organització."
+      ],
+      "If possible, when signing in, use a device or a browser where you’ve signed in before.": [
+        "Si pot ser, inicieu sessió en un dispositiu o un navegador on ja ho hàgiu fet abans."
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Si això és a causa d'un restabliment antic de la contrasenya, podeu evitar que el missatge torni a aparèixer"
@@ -7043,6 +7115,9 @@
       ],
       "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
         "Si teniu sessió iniciada a qualsevol altre lloc, podríeu ${ signedInPasswordResetLink }."
+      ],
+      "If you are signed in to a ${ BRAND_NAME } web app in **another browser**, you may be able to perform a password reset from your active session.": [
+        "Si heu iniciat sessió en una aplicació web de ${ BRAND_NAME } en un **altre navegador**, és possible que pugueu realitzar un restabliment de contrasenya des de la vostra sessió activa."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Si creieu que es tracta d'un error, poseu-vos en contacte amb nosaltres ${ contactLink }."
@@ -7061,6 +7136,9 @@
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Si teniu un codi regal, introduïu-lo a sota per aplicar el vostre descompte."
+      ],
+      "If you have emergency contacts, get in touch with them, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed.**": [
+        "Si teniu contactes d'emergència, demaneu-los si us poden ajudar. Després de sol·licitar l'accés d'emergència al vostre compte, podran canviar-vos la contrasenya **un cop transcorregut el temps d'espera per accedir.**"
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Si perdeu el dispositiu activat per a l'autenticació de doble factor, es poden utilitzar aquests codis en lloc del codi d’autenticació de doble factor de 6 dígits per a iniciar la sessió al vostre compte. Cada codi només es pot fer servir una vegada."
@@ -7436,6 +7514,9 @@
       "On": [
         "Activat"
       ],
+      "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
+        "Un cop concedit l'accés al vostre compte, podran anar a la vostra configuració de **Recuperació** i canviar-vos la **contrasenya de ${ ACCOUNT_APP_NAME }**."
+      ],
       "Once you reset your password:": [
         "Un cop restabliu la contrasenya:"
       ],
@@ -7444,6 +7525,9 @@
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Obriu la guia per obtenir accions recomanades i enllaços útils."
+      ],
+      "Open your active session in the browser, and go to **Settings → All settings → Recovery → Password reset settings.**": [
+        "Obriu la sessió activa al navegador i aneu a **Preferències → Totes les preferències → Recuperació → Configuració del restabliment de contrasenya.**"
       ],
       "or ${ selectFileButton }": [
         "o ${ selectFileButton }"
@@ -7644,6 +7728,12 @@
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Recomanat en dispositius de confiança. ${ keepMeSignedInLearnMoreLink }"
       ],
+      "Recovery contacts": [
+        "Contactes de recuperació"
+      ],
+      "Recovery file": [
+        "Fitxer de recuperació"
+      ],
       "Recovery file downloaded": [
         "S'ha descarregat el fitxer de recuperació"
       ],
@@ -7652,6 +7742,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "La informació de recuperació es mantindrà en aquest dispositiu llevat que escolliu eliminar-la."
+      ],
+      "Recovery phrase": [
+        "Frase de recuperació"
       ],
       "Recovery phrase copied to clipboard": [
         "Frase de recuperació copiada al porta-retalls"
@@ -7688,6 +7781,9 @@
       ],
       "Resend verification email": [
         "Reenvia el correu electrònic de verificació"
+      ],
+      "Resetting your password in your active web session will ensure **your encrypted data will remain accessible** after you change your password.": [
+        "Restablir la contrasenya en la sessió web activa us garantirà **que les vostres dades xifrades romandran accessibles** després de canviar-la."
       ],
       "Restore": [
         "Restaura"
@@ -8162,6 +8258,9 @@
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Proveu ${ productName } totalment sense riscos. Si per qualsevol motiu canvieu d'opinió, rebreu un reemborsament complet. Sense preguntes."
       ],
+      "Try recovering your account from a **device or browser where you have signed in before**, as it may be possible from there:": [
+        "Proveu de recuperar el vostre compte des d'un **dispositiu o navegador on hàgiu iniciat sessió abans **, ja que podria funcionar des d'allà:"
+      ],
       "Two-factor authentication": [
         "Autenticació de doble factor"
       ],
@@ -8176,6 +8275,9 @@
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "No es pot verificar la signatura del fitxer de recuperació. Poseu-vos en contacte amb atenció al client."
+      ],
+      "Unfortunately there is no recovery method available for this account.": [
+        "Malauradament no hi ha cap mètode de recuperació disponible per aquest compte."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Malauradament no hi ha cap mètode de recuperació establert per a aquest compte."
@@ -8318,6 +8420,9 @@
       "We couldn’t process your payment.": [
         "No hem pogut processar el vostre pagament."
       ],
+      "We detected you are already signed in to a ${ BRAND_NAME } web app on **another browser**. You may be able to perform a password reset from your active session.": [
+        "Hem detectat que ja heu iniciat sessió en una aplicació web de ${ BRAND_NAME } en un **altre navegador**. És possible que pugueu realitzar un restabliment de contrasenya des de la vostra sessió activa."
+      ],
       "We generated a strong password for you": [
         "Us hem generat una contrasenya forta"
       ],
@@ -8368,6 +8473,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Enviarem un codi de verificació nou a ${ strong }"
+      ],
+      "Web sessions detected:": [
+        "S'han detectat sessions web:"
       ],
       "Week": [
         "Setmana"
@@ -8504,6 +8612,12 @@
       "You can now access and manage the account as an administrator.": [
         "Ara podeu accedir i gestionar el compte com a administrador."
       ],
+      "You can now reset your password to regain access to your account.": [
+        "Ara podeu restablir la contrasenya per recuperar l'accés al vostre compte."
+      ],
+      "You can now reset your password to regain access to your account. **This will disable 2-factor authentication.**": [
+        "Ara podeu restablir la contrasenya per recuperar l'accés al vostre compte. **Això desactivarà l'autenticació de doble factor**."
+      ],
       "You can now return to the application to continue": [
         "Ara podeu tornar a l'aplicació per continuar."
       ],
@@ -8588,6 +8702,9 @@
       "You will not be asked for a one-time code or a security key.": [
         "No se us demanarà cap codi d'un sol ús ni una clau de seguretat."
       ],
+      "You will regain complete or partial access to your encrypted data.": [
+        "Recuperareu l'accés complet o parcial a les vostres dades xifrades."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Ben aviat sereu redirigits a PayPal per verificar el pagament."
       ],
@@ -8656,6 +8773,12 @@
       "Your email will only be used for this one-time verification.": [
         "El vostre correu electrònic només s’utilitzarà per a aquesta única verificació."
       ],
+      "Your encrypted data will be locked": [
+        "Les vostres dades xifrades es bloquejaran"
+      ],
+      "your encrypted data will be locked": [
+        "les vostres dades xifrades es bloquejaran"
+      ],
       "Your feedback": [
         "Els vostres comentaris"
       ],
@@ -8679,6 +8802,9 @@
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "La pròxima data de facturació és el ${ renewalTime }. Podeu cancel·lar-ho en qualsevol moment. Poseu-vos en contacte amb el servei d'assistència si necessiteu un canvi de pla immediat."
+      ],
+      "Your old password": [
+        "La vostra contrasenya anterior"
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "La vostra organització utilitza un inici de sessió únic (SSO). Premeu Inicia la sessió per a continuar amb el vostre proveïdor SSO."
@@ -9224,6 +9350,9 @@
       "Enabled": [
         "Habilitat"
       ],
+      "Enter code": [
+        "Introduïu el codi"
+      ],
       "Enter name or email address": [
         "Introduïu un nom o una adreça electrònica"
       ],
@@ -9714,6 +9843,12 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Sí, vull suprimir definitivament aquest compte i totes les seves dades."
       ],
+      "Your password (admin)": [
+        "La vostra contrasenya (administrador)"
+      ],
+      "Your password (trusted contact)": [
+        "La vostra contrasenya (contacte de confiança)"
+      ],
       "ZIP code": [
         "Codi postal"
       ]
@@ -9855,11 +9990,20 @@
       "Common sign up issues": [
         "Problemes comuns de registre"
       ],
+      "contacts’ assistance": [
+        "assistència dels contactes"
+      ],
       "Create account": [
         "Crea un compte"
       ],
       "Create an alias": [
         "Crea un àlies"
+      ],
+      "data recovery option": [
+        "opció de recuperació de dades"
+      ],
+      "Details": [
+        "Detalls"
       ],
       "Don't have access to your 2FA?": [
         "No teniu accés al vostre 2FA?"
@@ -10245,9 +10389,6 @@
       ],
       "60 minutes per meeting": [
         "60 minuts per reunió"
-      ],
-      "Appointment scheduling": [
-        "Programació de cites"
       ],
       "Booking pages": [
         "Pàgines de reserves"
@@ -10686,6 +10827,13 @@
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Tots els serveis bàsics de ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "Appointment scheduling": [
+        "Programació de cites"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Programació de cites amb ${ n } pàgina de reserva",
+        "Programació de cites amb ${ n } pàgines de reserva"
       ],
       "Apps for": [
         "Aplicacions per a"
@@ -14309,6 +14457,9 @@
       "Share the confirmation code with your administrator": [
         "Compartiu el codi de confirmació amb l'administrador"
       ],
+      "Sign in": [
+        "Inicia la sessió"
+      ],
       "Sign in to your organization": [
         "Inicieu la sessió a la vostra organització"
       ],
@@ -14368,6 +14519,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Haureu de crear nous usuaris manualment per afegir-los a la vostra organització."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Se us redirigirà al vostre proveïdor d'SSO de tercers."
       ],
       "Your SSO configuration will be deleted.": [
         "S'eliminarà la vostra configuració de SSO."
@@ -15557,6 +15711,9 @@
       "Apply gift code": [
         "Aplicar el codi regal"
       ],
+      "Are you already signed in to ${ BRAND_NAME } in a browser?": [
+        "Ja heu iniciat sessió a ${ BRAND_NAME } en un navegador?"
+      ],
       "Are you sure you want to close the preview?": [
         "Segur que voleu tancar la previsualització?"
       ],
@@ -15565,6 +15722,9 @@
       ],
       "Are you sure?": [
         "N'esteu segur?"
+      ],
+      "Ask your emergency contacts for help": [
+        "Demaneu ajuda als vostres contactes d'emergència"
       ],
       "Auto-deletion is active": [
         "La supressió automàtica està activada."
@@ -15577,6 +15737,12 @@
       ],
       "Bring your Gmail into ${ MAIL_APP_NAME }": [
         "Porteu el vostre Gmail a ${ MAIL_APP_NAME }"
+      ],
+      "Can you access your session in the browser?": [
+        "Podeu accedir a la vostra sessió al navegador?"
+      ],
+      "Can you reach out to your emergency contacts?": [
+        "Podeu posar-vos en contacte amb els vostres contactes d'emergència?"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Cancel·la la subscripció de ${ MAIL_SHORT_APP_NAME }"
@@ -15679,6 +15845,9 @@
       ],
       "Couldn’t create accounts": [
         "No s'han pogut crear els comptes"
+      ],
+      "Couldn’t recover your account": [
+        "No s'ha pogut recuperar el vostre compte"
       ],
       "Coupon": [
         "Cupó"
@@ -15918,6 +16087,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Introduïu els detalls del compte de ${ BRAND_NAME } per unir-vos al programa beta de ${ app }"
+      ],
+      "Enter your password": [
+        "Introduïu la vostra contrasenya"
       ],
       "Error": [
         "Error"
@@ -16191,6 +16363,9 @@
       "Reconnect your account": [
         "Reconnectar el teu compte"
       ],
+      "Recover account": [
+        "Recuperar el compte"
+      ],
       "Recover data": [
         "Recuperar dades"
       ],
@@ -16426,6 +16601,9 @@
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "Proveu ${ AUTHENTICATOR_APP_NAME }"
       ],
+      "Try changing your password in your active web session": [
+        "Proveu de canviar la contrasenya a la vostra sessió web activa"
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Activeu ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -16497,6 +16675,9 @@
       ],
       "Verification failed": [
         "No s'ha pogut completar la verificació."
+      ],
+      "Verify it’s you": [
+        "Verifiqueu que sou vós"
       ],
       "Verifying your card...": [
         "S'està verificant la targeta…"
@@ -17040,6 +17221,9 @@
       ]
     },
     "user_modal": {
+      "Add delegated roles to a user to grant them only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
+        "Delegueu rols a un usuari per concedir-li només els permisos específics que necessiti, mentre manteniu separats els poders complets d'administració i el vostre entorn segur."
+      ],
       "Add multiple users": [
         "Afegeix diversos usuaris"
       ],
@@ -17064,11 +17248,11 @@
       "Create password instead": [
         "En lloc d'això, creeu una contrasenya"
       ],
-      "Create user": [
-        "Crea un usuari"
-      ],
       "Email": [
         "Corrreu electrònic"
+      ],
+      "General": [
+        "General"
       ],
       "Invitation email": [
         "Correu electrònic d'invitació"
@@ -17084,6 +17268,12 @@
       ],
       "Remember to share the user's sign in details with them.": [
         "Recordeu compartir els detalls d'inici de sessió amb l'usuari."
+      ],
+      "Roles and permissions": [
+        "Rols i permisos"
+      ],
+      "Save": [
+        "Desar"
       ],
       "Send invite link via email instead": [
         "Envieu l'enllaç d'invitació per correu electrònic"

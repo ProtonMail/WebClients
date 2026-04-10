@@ -467,6 +467,9 @@
       "Fit to window": [
         "Tilpass til vindu"
       ],
+      "Forgot password?": [
+        "Glemt passord?"
+      ],
       "Forgot recovery method?": [
         "Glemt gjenopprettingsmetode?"
       ],
@@ -664,6 +667,9 @@
       ],
       "Next page": [
         "Neste side"
+      ],
+      "No": [
+        "Nei"
       ],
       "OK": [
         "OK"
@@ -1147,6 +1153,9 @@
       ],
       "Wipe": [
         "Slett"
+      ],
+      "Yes": [
+        "Ja"
       ],
       "Your server will be provisioned in the next days": [
         "Tjeneren din vil bli klargjort i løpet av de neste dagene"
@@ -6756,6 +6765,12 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Skriv inn din ${ BRAND_NAME }-konto e-postadresse eller brukernavn."
       ],
+      "Enter your own password (as organization admin).": [
+        "Skriv inn ditt eget passord (som organisasjonsadministrator)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Skriv inn ditt eget passord (som betrodd kontakt)."
+      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Angi din gjenopprettings-e-postadresse og vi vil sende deg ditt brukernavn eller e-postadresse."
       ],
@@ -9492,6 +9507,12 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Ja, jeg ønsker å slette denne kontoen og all dataen dens permanent."
       ],
+      "Your password (admin)": [
+        "Ditt passord (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Passordet ditt (betrodd kontakt)"
+      ],
       "ZIP code": [
         "Postnummer"
       ]
@@ -10023,9 +10044,6 @@
       ],
       "60 minutes per meeting": [
         "60 minutter per møte"
-      ],
-      "Appointment scheduling": [
-        "Avtaleplanlegging"
       ],
       "Booking pages": [
         "Bestillingssider"
@@ -14177,6 +14195,9 @@
       "Share the confirmation code with your administrator": [
         "Del bekreftelseskoden med administratoren din"
       ],
+      "Sign in": [
+        "Logg på"
+      ],
       "Sign in to your organization": [
         "Logg på organisasjonen"
       ],
@@ -14236,6 +14257,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Du må opprette nye brukere manuelt for å legge dem til i organisasjonen din."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Du blir omdirigert til din tredjeparts SSO-leverandør."
       ],
       "Your SSO configuration will be deleted.": [
         "SSO-konfigurasjonen din vil bli slettet."
@@ -15763,6 +15787,9 @@
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Angi din ${ BRAND_NAME }-kontoinformasjon for å bli med i ${ app }-testprogrammet"
       ],
+      "Enter your password": [
+        "Skriv inn passordet"
+      ],
       "Error": [
         "Feil"
       ],
@@ -16868,9 +16895,6 @@
       ],
       "Create password instead": [
         "Opprett passord i stedet"
-      ],
-      "Create user": [
-        "Opprett bruker"
       ],
       "Email": [
         "E-post"

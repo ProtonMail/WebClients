@@ -903,8 +903,14 @@
       "I don't have my key": [
         "У мяне няма ключа"
       ],
+      "I don't have my phrase": [
+        "У мяне адсутнічае фраза"
+      ],
       "I don’t have my backup codes": [
         "У мяне няма рэзервовых кодаў"
+      ],
+      "I don’t have my phone": [
+        "У мяне няма нумара тэлефона"
       ],
       "Ignore": [
         "Ігнараваць"
@@ -1585,6 +1591,9 @@
         "Паспрабуйце яшчэ раз"
       ],
       "Try another method": [
+        "Паспрабуйце іншы спосаб"
+      ],
+      "Try another way": [
         "Паспрабуйце іншы спосаб"
       ],
       "Try for free": [
@@ -4875,6 +4884,14 @@
     "Delete group prompt": {
       "Are you sure you want to delete this group?": [
         "Вы сапраўды хочаце выдаліць гэту групу?"
+      ],
+      "Please note that if you delete the group ${ displayGroupName }, it will be permanently removed.": [
+        "Звярніце ўвагу, што калі вы выдаліце групу ${ displayGroupName }, то яна будзе выдалена незваротна."
+      ]
+    },
+    "Delete group prompt with email": {
+      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
+        "Звярніце ўвагу, што калі вы выдаліце групу ${ displayGroupName } (з адрасам ${ displayGroupAddressEmail }), то ў вас больш не будзе магчымасці атрымліваць лісты з выкарыстаннем гэтага адраса."
       ]
     },
     "Delinquent modal title": {
@@ -8495,6 +8512,9 @@
     "Group detail label": {
       "Description:": [
         "Апісанне:"
+      ],
+      "Group address:": [
+        "Адрас групы:"
       ]
     },
     "Group member count": {
@@ -9766,8 +9786,8 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Псеўданімы электроннай пошты працуюць аналагічна адрасам электроннай пошты, але змяншаюць колькасць спама і захоўваюць ваш фактычны адрас электроннай пошты і ідэнтычнасць схаванымі."
       ],
-      "An email with a verification code was just sent to ${ recoveryEmailElement }. If you can’t find the message in your inbox, please check your spam folder.": [
-        "Ліст з кодам спраўджання тбыў толькі што адпраўлены на ${ recoveryEmailElement }. Калі вы не знайшлі паведамленне з кодам у папцы ўваходныя, праверце папку са спамам."
+      "An email with a verification code was just sent to ${ emailAddress }. If you can’t find the message in your inbox, please check your spam folder.": [
+        "Ліст з кодам спраўджання быў толькі што адпраўлены на ${ emailAddress }. Калі вы не знайшлі паведамленне з кодам у папцы ўваходныя, праверце папку са спамам."
       ],
       "An error occurred while communicating with **${ applicationName }**": [
         "Адбылася памылка пры сувязі з **${ applicationName }**"
@@ -9781,8 +9801,8 @@
       "An import is paused because your storage is almost full.": [
         "Імпарт прыпынены, бо ваша сховішча амаль запоўнена."
       ],
-      "An SMS with a verification code was just sent to ${ recoveryPhoneElement }.": [
-        "SMS з кодам спраўджання толькі што было адпраўлена на нумар тэлефона ${ recoveryPhoneElement }."
+      "An SMS with a verification code was just sent to ${ phoneNumber }.": [
+        "SMS з кодам спраўджання толькі што было адпраўлена на нумар тэлефона ${ phoneNumber }."
       ],
       "and": [
         "і"
@@ -9855,6 +9875,9 @@
       ],
       "Are you sure you want to sort your labels alphabetically?": [
         "Вы сапраўды хочаце сартаваць свае меткі па алфавіце?"
+      ],
+      "Ask them to sign in to their ${ ACCOUNT_APP_NAME } in the browser, and go to **Settings → All settings → Recovery → Emergency access→ People who trust me.**": [
+        "Папрасіце іх увайсці ў свой ${ ACCOUNT_APP_NAME } праз браўзер і перайдзіце ў раздзел **Налады → Усе налады → Аднаўленне → Экстранны доступ → Людзі, якім я давяраю.**"
       ],
       "Ask your organization admin to setup Gateways.": [
         "Папрасіце адміністратара сваёй арганізацыі наладзіць шлюзы."
@@ -9967,6 +9990,12 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Вы згаджаецеся даць доступ ${ BRAND_NAME } да гэтай зашыфраванай інфармацыі, каб падзяліцца ўсімі падрабязнасцямі падзей у гэтым календары."
       ],
+      "Can you access your active session?": [
+        "Ці ёсць у вас доступ да актыўнага сеанса?"
+      ],
+      "Can you reach out to your contact?": [
+        "Вы можаце звязацца са сваімі кантактамі?"
+      ],
       "Cancel": [
         "Скасаваць"
       ],
@@ -9999,6 +10028,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Націсніце \"Запытаць новы код\", каб атрымаць новы код спраўджання на ${ strong }. Калі нумар тэлефона з'яўляецца няправільным, то неабходна націснуць \"Рэдагаваць\" для яго выпраўлення."
+      ],
+      "Click **Request password reset** and follow the prompts.": [
+        "Націсніце **Запытаць скіданне пароля** і выконвайце інструкцыі."
       ],
       "Click the icon to open it anytime.": [
         "Націсніце па значку, каб адкрыць яго ў любы час."
@@ -10159,6 +10191,9 @@
       "Data recoverable on this device": [
         "Даныя, якія можна аднавіць на гэтай прыладзе"
       ],
+      "Data recoverable with recovery phrase": [
+        "Даныя можна аднавіць з дапамогай фразы аднаўлення"
+      ],
       "dedicated servers": [
         "вылучаныя серверы"
       ],
@@ -10191,6 +10226,9 @@
         "Выдаленне ${ deletedServerCount } сервераў шлюза",
         "Выдаленне ${ deletedServerCount } сервераў шлюза",
         "Выдаленне ${ deletedServerCount } сервераў шлюза"
+      ],
+      "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
+        "У залежнасці ад вашых налад, яны могуць атрымаць доступ неадкладна або пасля прызначанага **перыяду чакання **."
       ],
       "Did you know?": [
         "Ці ведалі вы што?"
@@ -10402,6 +10440,9 @@
       "Enter new password for user ${ userName }.": [
         "Увядзіце новы пароль для карыстальніка ${ userName }."
       ],
+      "Enter the 12-word recovery phrase associated with your account.": [
+        "Увядзіце фразу аднаўлення з 12 слоў, якая звязана з вашым уліковым запісам."
+      ],
       "Enter the code from your authenticator app": [
         "Увядзіце код з вашай праграмы аўтэнтыфікацыі"
       ],
@@ -10546,6 +10587,9 @@
       "Friends and family": [
         "Сябры і сям’я"
       ],
+      "From there, they can request emergency access to your account by clicking **Request access.**": [
+        "Пасля гэтага яны могуць запытваць экстранны доступ у ваш уліковы запіс, націснуўшы **Запытаць доступ.**"
+      ],
       "Gateway couldn't be deleted. Please try again": [
         "Шлюз не можа быць выдалены. Паспрабуйце яшчэ раз."
       ],
@@ -10566,6 +10610,9 @@
       ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Атрымайце доступ стварыўшы ўліковы запіс ${ BRAND_NAME } і прыміце запрашэнне."
+      ],
+      "Get in touch with your emergency contacts, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed**.": [
+        "Звярніцеся да сваіх экстранных кантактаў з просьбай дапамагчы вам. Пасля запыту экстраннага доступу да вашага ўліковага запісу яны змогуць змяніць пароль для вас **пасля таго, як час чакання доступу міне**."
       ],
       "Get it on Google Play": [
         "Спампаваць у Google Play"
@@ -10624,6 +10671,9 @@
       "How it works": [
         "Як гэта працуе"
       ],
+      "How your emergency contact can change your password for you:": [
+        "Якім чынам ваш экстранны кантакт можа змяніць ваш пароль:"
+      ],
       "IBAN: ${ formattedIBAN }": [
         "IBAN: ${ formattedIBAN }"
       ],
@@ -10665,6 +10715,9 @@
       ],
       "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
         "У вас будзе магчымасць ${ signedInPasswordResetLink }, калі вы ўвайшлі на якой-небудзь іншай прыладзе."
+      ],
+      "If you are signed in to a ${ BRAND_NAME } web app in **another browser**, you may be able to perform a password reset from your active session.": [
+        "У вас ёсць магчымасць скінуць пароль з актыўнага сеанса, калі вы ўвайшлі ў вэб-праграму ${ BRAND_NAME } у **іншым браўзеры**."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Калі вы ўпэўнены, што гэта памылка, звяжыцеся з намі ${ contactLink }."
@@ -11185,6 +11238,9 @@
       "Open the guide for recommended actions and helpful links.": [
         "Адкрыйце дапаможнік, дзе можна даведацца пра рэкамендаваныя дзеянні і карысныя спасылкі."
       ],
+      "Open your active session in the browser, and go to **Settings → All settings → Recovery → Password reset settings.**": [
+        "Адкрыйце ваш актыўны сеанс у браўзеры і перайдзіце ў **Налады → Усе налады → Аднаўленне → Налады скідання пароля.**"
+      ],
       "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
         "Адкрыйце свае налады Safari для пашырэння і пераканайцеся, што дазволы вэб-сайта ўключаны для даменаў ${ BRAND_NAME }"
       ],
@@ -11446,6 +11502,9 @@
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Рэкамендавана на давераных прыладах. ${ keepMeSignedInLearnMoreLink }"
       ],
+      "Recovery file": [
+        "Файл аднаўлення"
+      ],
       "Recovery file downloaded": [
         "Файлы аднаўлення спампаваны"
       ],
@@ -11454,6 +11513,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Інфармацыя з аднаўленнем застанецца на гэтай прыладзе пакуль вы не выдаліце яе."
+      ],
+      "Recovery phrase": [
+        "Фраза аднаўлення"
       ],
       "Recovery phrase copied to clipboard": [
         "Фраза аднаўлення скапіявана ў буфер абмену"
@@ -11500,6 +11562,9 @@
       "Resend verification email": [
         "Паўторна адправіць ліст з пацвярджэннем"
       ],
+      "Resetting your password in your active web session will ensure **your encrypted data will remain accessible** after you change your password.": [
+        "Скіданне пароля ў вашым актыўным вэб-сеансе гарантуе, што **вашы зашыфраваныя даныя застануцца даступнымі** пасля змены пароля."
+      ],
       "Restore": [
         "Аднавіць"
       ],
@@ -11541,6 +11606,9 @@
       ],
       "Securing your account": [
         "Абарона вашага ўліковага запісу"
+      ],
+      "Select a group to view its members and settings.": [
+        "Выберыце групу, каб паглядзець яе ўдзельнікаў і налады."
       ],
       "Select one or multiple user affiliations": [
         "Выберыце адну або некалькі прыналежнасцей карыстальніка"
@@ -12322,6 +12390,9 @@
       "We couldn’t process your payment.": [
         "Мы не можам апрацаваць ваш плацеж."
       ],
+      "We detected you are already signed in to a ${ BRAND_NAME } web app on **another browser**. You may be able to perform a password reset from your active session.": [
+        "Сістэма вызначыла, што вы ўжо ўвайшлі ў вэб-праграму ${ BRAND_NAME } у **іншым браўзеры**. У вас ёсць магчымасць выканаць скіданне пароля з актыўнага сеанса."
+      ],
       "We generated a strong password for you": [
         "Мы згенерыравалі для вас надзейны пароль"
       ],
@@ -12375,6 +12446,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Вам адпраўлены новы код спраўджання на ${ strong }"
+      ],
+      "Web sessions detected:": [
+        "Выяўлены вэб-сеансы:"
       ],
       "Web URL": [
         "URL-адрас"
@@ -12577,6 +12651,9 @@
       "You can now close this window.": [
         "Цяпер вы можаце закрыць гэта акно."
       ],
+      "You can now reset your password to regain access to your account.": [
+        "Цяпер вы можаце скінуць пароль, каб аднавіць доступ да вашага ўліковага запісу."
+      ],
       "You can now return to the application to continue": [
         "Цяпер вы можаце вярнуцца да праграмы, каб працягнуць"
       ],
@@ -12700,6 +12777,9 @@
       "You will not be asked for a one-time code or a security key.": [
         "У вас не будзе запытаны аднаразовы код або ключ бяспекі."
       ],
+      "You will regain complete or partial access to your encrypted data.": [
+        "Вы адновіце поўны або частковы доступ да вашых зашыфраваных даных."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Неўзабаве вы будзеце перанакіраваны на сайт PayPal для спраўджання плацяжу."
       ],
@@ -12778,6 +12858,12 @@
       "Your email will only be used for this one-time verification.": [
         "Ваша электронная пошта будзе выкарыстана толькі для гэтай аднаразовай праверкі."
       ],
+      "Your encrypted data will be locked": [
+        "Вашы зашыфраваныя даныя будуць заблакіраваны"
+      ],
+      "your encrypted data will be locked": [
+        "вашы зашыфраваныя даныя будуць заблакіраваны"
+      ],
       "Your files will be encrypted and then saved": [
         "Вашы файлы будуць зашыфраваны, а пасля гэтага захаваны"
       ],
@@ -12804,6 +12890,9 @@
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "Наступная дата спагнання адбудзецца ${ renewalTime }. Скасаваць можна ў любы час. Звяжыцеся са службай падтрымкі, калі вы запатрабавалі неадкладную змену тарыфнага плана."
+      ],
+      "Your old password": [
+        "Ваш стары пароль"
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Ваша арганізацыя выкарыстоўвае адзіны ўваход (SSO). Націсніце кнопку \"Увайсці\", каб працягнуць уваход з вашым пастаўшчыком SSO."
@@ -15139,6 +15228,9 @@
       "Create an alias": [
         "Стварыць псеўданім"
       ],
+      "Details": [
+        "Падрабязнасці"
+      ],
       "Don't have access to your 2FA?": [
         "Адсутнічае доступ да 2ФА?"
       ],
@@ -15660,9 +15752,6 @@
       ],
       "60 minutes per meeting": [
         "60 хвілін на сустрэчу"
-      ],
-      "Appointment scheduling": [
-        "Планаванне сустрэч"
       ],
       "Booking pages": [
         "Старонкі браніравання"
@@ -20984,6 +21073,12 @@
         "${ FREE_PASS_ALIASES } псеўданімаў hide-my-email для барацьбы са спамам",
         "${ FREE_PASS_ALIASES } псеўданімаў hide-my-email для барацьбы са спамам"
       ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } псеўданімаў hide-my-email для барацьбы са спамам"
+      ],
+      "${ MAIL_SHORT_APP_NAME } Free": [
+        "${ MAIL_SHORT_APP_NAME } Free"
+      ],
       "${ maxAddresses } address": [
         "${ maxAddresses } адрас",
         "${ maxAddresses } адрасы",
@@ -21161,6 +21256,9 @@
       "Gifted by **${ referrerName }**": [
         "Падаравана **${ referrerName }**"
       ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "Захоўвайце свае размовы прыватнымі з дапамогай ${ MAIL_APP_NAME }"
+      ],
       "Manage user access": [
         "Кіраванне доступам карыстальнікаў"
       ],
@@ -21184,6 +21282,9 @@
       ],
       "Password manager for all your devices": [
         "Менеджар пароляў для ўсіх вашых прылад"
+      ],
+      "Password-protected messages": [
+        "Паведамленні абароненыя паролем"
       ],
       "Pick a service to get started.": [
         "Выберыце сэрвіс, каб пачаць."
@@ -21211,6 +21312,9 @@
         "Абараняе ${ VPN_CONNECTIONS } прылады адначасова",
         "Абараняе ${ VPN_CONNECTIONS } прылад адначасова",
         "Абараняе ${ VPN_CONNECTIONS } прылад адначасова"
+      ],
+      "Secure calendar": [
+        "Бяспечны каляндар"
       ],
       "Secure file sharing": [
         "Бяспечнае абагульванне файлаў"
@@ -21320,6 +21424,9 @@
       "use your own email.": [
         "выкарыстоўвайце ўласную электронную пошту."
       ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "VPN з серверамі ў ${ vpnServersCountData.free.countries } краінах"
+      ],
       "VPN with servers in ${ vpnServersCountData.free.countries } country": [
         "VPN з серверамі ў ${ vpnServersCountData.free.countries } краіне",
         "VPN з серверамі ў ${ vpnServersCountData.free.countries } краінах",
@@ -21334,6 +21441,9 @@
       ],
       "You are all set": [
         "Усё гатова"
+      ],
+      "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
+        "Ваш уліковы запіс уключае доступ да бясплатных функцый у ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } і ${ LUMO_SHORT_APP_NAME }."
       ],
       "Your plan": [
         "Ваш тарыфны план"
@@ -23547,6 +23657,9 @@
       "Apply gift code": [
         "Прымяніць падарункавы код"
       ],
+      "Are you already signed in to ${ BRAND_NAME } in a browser?": [
+        "Вы ўжо ўвайшлі ў ${ BRAND_NAME } праз свой браўзер?"
+      ],
       "Are you sure you want to close the preview?": [
         "Вы сапраўды хочаце закрыць папярэдні прагляд?"
       ],
@@ -23558,6 +23671,9 @@
       ],
       "Are you sure?": [
         "Вы ўпэўнены?"
+      ],
+      "Ask your emergency contacts for help": [
+        "Папрасіце сваіх экстранных кантактаў дапамагчы вам"
       ],
       "Auto-deletion is active": [
         "Аўтавыдаленне ў актыўным стане"
@@ -23585,6 +23701,12 @@
       ],
       "Browser extensions": [
         "Пашырэнні для браўзера"
+      ],
+      "Can you access your session in the browser?": [
+        "Ці можаце вы атрымаць доступ да вашага сеанса ў браўзеры?"
+      ],
+      "Can you reach out to your emergency contacts?": [
+        "Ці можаце вы звязацца са сваімі экстраннымі кантактамі?"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Скасаваць падпіску ${ MAIL_SHORT_APP_NAME }"
@@ -23706,6 +23828,9 @@
       "Couldn’t create accounts": [
         "Немагчыма стварыць уліковыя запісы"
       ],
+      "Couldn’t recover your account": [
+        "Немагчыма аднавіць ваш уліковы запіс"
+      ],
       "Coupon": [
         "Купон"
       ],
@@ -23723,6 +23848,9 @@
       ],
       "Create Gateway": [
         "Стварэнне шлюза"
+      ],
+      "Create group": [
+        "Стварэнне групу"
       ],
       "Create multiple user accounts": [
         "Стварэнне некалькіх уліковых запісаў карыстальніка"
@@ -24513,6 +24641,9 @@
       "Reconnect your account": [
         "Перападключыць свой уліковы запіс"
       ],
+      "Recover account": [
+        "Аднавіць уліковы запіс"
+      ],
       "Recover data": [
         "Аднаўленне даных"
       ],
@@ -24837,6 +24968,9 @@
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "Паспрабуйце ${ AUTHENTICATOR_APP_NAME }"
       ],
+      "Try changing your password in your active web session": [
+        "Паспрабуйце змяніць свой пароль у вашым актыўным вэб-сеансе"
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Уключэнне ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -24917,6 +25051,9 @@
       ],
       "Verification failed": [
         "Збой праверкі"
+      ],
+      "Verify it’s you": [
+        "Спраўдзіце, што гэта вы"
       ],
       "Verifying your card...": [
         "Спраўджанне вашай карткі..."
@@ -25727,6 +25864,9 @@
       ]
     },
     "user_modal": {
+      "Add delegated roles to a user to grant them only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
+        "Дадайце ўпаўнаважаныя ролі карыстальніку, каб даць яму толькі канкрэтныя правы. Асобна вамі будуць захаваны поўныя правы адміністратара і ваша бяспечнае асяроддзе."
+      ],
       "Add multiple users": [
         "Дадаць некалькі карыстальнікаў"
       ],
@@ -25751,11 +25891,11 @@
       "Create password instead": [
         "Замест гэтага стварыце пароль"
       ],
-      "Create user": [
-        "Стварыць карыстальніка"
-      ],
       "Email": [
         "Электронная пошта"
+      ],
+      "General": [
+        "Асноўныя"
       ],
       "Invitation email": [
         "Электронны ліст з запрашэннем"
@@ -25771,6 +25911,12 @@
       ],
       "Remember to share the user's sign in details with them.": [
         "Не забудзьце абагуліць падрабязнасці ўваходу з імі."
+      ],
+      "Roles and permissions": [
+        "Ролі і дазволы"
+      ],
+      "Save": [
+        "Захаваць"
       ],
       "Send invite link via email instead": [
         "Замест гэтага адпраўце запрашальную спасылку праз электронную пошту"

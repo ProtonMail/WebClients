@@ -903,6 +903,15 @@
       "I don't have my key": [
         "Jag har inte min nyckel"
       ],
+      "I don't have my phrase": [
+        "Jag har inte min fras"
+      ],
+      "I don’t have my backup codes": [
+        "Jag har inte mina reservkoder"
+      ],
+      "I don’t have my phone": [
+        "Jag har inte min telefon"
+      ],
       "Ignore": [
         "Ignorera"
       ],
@@ -1299,6 +1308,9 @@
       "Return to sign in": [
         "Tillbaka till inloggning"
       ],
+      "Return to sign-in": [
+        "Tillbaka till inloggning"
+      ],
       "Review": [
         "Granska"
       ],
@@ -1583,6 +1595,9 @@
       ],
       "Try another method": [
         "Prova annan metod"
+      ],
+      "Try another way": [
+        "Prova annat sätt"
       ],
       "Try for free": [
         "Prova gratis"
@@ -9014,6 +9029,9 @@
         "${ countriesCount } land aktiverat",
         "${ countriesCount } länder aktiverade"
       ],
+      "${ DataLockedText }, but recoverable with your ${ RecoveryContactsLink }:": [
+        "${ DataLockedText }, men återställningsbar med din ${ RecoveryContactsLink }"
+      ],
       "${ discountPercent }% discount": [
         "${ discountPercent } % rabatt"
       ],
@@ -9482,8 +9500,8 @@
       "An import is paused because your storage is almost full.": [
         "En import har pausats eftersom ditt lagringsutrymme nästan är fullt."
       ],
-      "An SMS with a verification code was just sent to ${ recoveryPhoneElement }.": [
-        "Ett SMS med en verifieringskod skickades just till ${ recoveryPhoneElement }."
+      "An SMS with a verification code was just sent to ${ phoneNumber }.": [
+        "Ett SMS med en verifieringskod skickades just till ${ phoneNumber }."
       ],
       "and": [
         "och"
@@ -9668,6 +9686,15 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Genom att dela all information om händelser i denna kalender, accepterar du att ge ${ BRAND_NAME } åtkomst till denna kalenders krypterade information."
       ],
+      "Can you access your active session?": [
+        "Kan du komma åt din aktiva session?"
+      ],
+      "Can you access your active web session in another browser?": [
+        "Kan du komma åt din aktiva webbsession i annan webbläsare?"
+      ],
+      "Can you reach out to your contact?": [
+        "Kan du kontakta din kontakt?"
+      ],
       "Cancel": [
         "Avbryt"
       ],
@@ -9700,6 +9727,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klicka på \"Begär ny kod\" för att få en ny verifieringskod skickad till ${ strong }. Om telefonnumret är felaktigt klickar du på \"Redigera\" för att korrigera det."
+      ],
+      "Click **Request password reset** and follow the prompts.": [
+        "Klicka på **Begär lösenordsåterställning** och följ anvisningarna."
       ],
       "Click the icon to open it anytime.": [
         "Klicka på ikonen för att öppna den när som helst."
@@ -9850,6 +9880,9 @@
       ],
       "Data recoverable on this device": [
         "Data återställningsbart på denna enhet"
+      ],
+      "Data recoverable with recovery phrase": [
+        "Data återställningsbar med återställningsfras"
       ],
       "dedicated servers": [
         "dedikerade servrar"
@@ -10090,6 +10123,9 @@
       "Enter new password for user ${ userName }.": [
         "Ange nytt lösenord för användare ${ userName }."
       ],
+      "Enter the 12-word recovery phrase associated with your account.": [
+        "Ange den 12-ord långa återställningsfrasen som är associerat med ditt konto."
+      ],
       "Enter the code from your authenticator app": [
         "Ange koden från din autentiseringsapp"
       ],
@@ -10311,6 +10347,9 @@
       ],
       "How it works": [
         "Hur det fungerar"
+      ],
+      "How your emergency contact can change your password for you:": [
+        "Hur din nödkontakt ändra ditt lösenord åt dig:"
       ],
       "IBAN: ${ formattedIBAN }": [
         "IBAN: ${ formattedIBAN }"
@@ -11102,6 +11141,9 @@
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Rekommenderas på betrodda enheter. ${ keepMeSignedInLearnMoreLink }"
       ],
+      "Recovery contacts": [
+        "Återställningskontakter"
+      ],
       "Recovery file downloaded": [
         "Återställningsfil nerladdad"
       ],
@@ -11110,6 +11152,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Återställningsinformation kommer finnas kvar på denna enhet om du inte väljer att ta bort den."
+      ],
+      "Recovery phrase": [
+        "Återställningsfras"
       ],
       "Recovery phrase copied to clipboard": [
         "Återställningsfras kopierad till urklipp"
@@ -11156,6 +11201,9 @@
       "Resend verification email": [
         "Skicka e-postverifiering igen"
       ],
+      "Resetting your password in your active web session will ensure **your encrypted data will remain accessible** after you change your password.": [
+        "Att återställa ditt lösenord i din aktiva webbsession kommer säkerställa att **din krypterade data förblir tillgänglig** efter du ändrat ditt lösenord."
+      ],
       "Restore": [
         "Återställ"
       ],
@@ -11197,6 +11245,9 @@
       ],
       "Securing your account": [
         "Säkrar ditt konto"
+      ],
+      "Select a group to view its members and settings.": [
+        "Välj en grupp för att visa dess medlemmar och inställningar."
       ],
       "Select one or multiple user affiliations": [
         "Välj en eller flera användartillhörigheter"
@@ -11780,6 +11831,9 @@
       "Unable to verify recovery file signature. Please contact support.": [
         "Det gick inte att verifiera återställningsfilens signatur. Kontakta support."
       ],
+      "Unfortunately there is no recovery method available for this account.": [
+        "Tyvärr finns det ingen återställningsmetod tillgänglig för detta konto."
+      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Det finns ingen återställningsmetod sparad för detta konto."
       ],
@@ -12011,6 +12065,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Vi skickar en ny verifieringskod till ${ strong }"
       ],
+      "Web sessions detected:": [
+        "Webb-sessioner upptäckta:"
+      ],
       "Web URL": [
         "Webb-URL"
       ],
@@ -12076,6 +12133,9 @@
       ],
       "With ${ AUTHENTICATOR_APP_NAME }, you can:": [
         "Med ${ AUTHENTICATOR_APP_NAME } kan du:"
+      ],
+      "With a ${ boldProfessionalPlan } plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
+        "Med ett ${ boldProfessionalPlan }-paket kan du köpa ${ boldDedicatedServers } för din organisation och ställa in ${ boldGateways } för att kontrollera vilka användare som kan komma åt dem."
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Med en krypterad ${ BRAND_NAME }-adress kan du använda alla ${ BRAND_NAME }-tjänster"
@@ -12365,6 +12425,12 @@
       "Your email will only be used for this one-time verification.": [
         "Din e-post kommer endast användas för denna engångsverifiering."
       ],
+      "Your encrypted data will be locked": [
+        "Dina krypterade data kommer att låsas"
+      ],
+      "your encrypted data will be locked": [
+        "dina krypterade data kommer att låsas"
+      ],
       "Your files will be encrypted and then saved": [
         "Dina filer kommer att krypteras och sedan sparas"
       ],
@@ -12391,6 +12457,9 @@
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "Ditt nästa faktureringsdatum är ${ renewalTime }. Du kan avbryta när som helst. Kontakta support om du behöver ett omedelbart paketbyte."
+      ],
+      "Your old password": [
+        "Ditt gamla lösenord"
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Din organisation använder enkel inloggning (SSO). Tryck på “Logga in“ för att fortsätta med din SSO-leverantör."
@@ -13616,6 +13685,9 @@
       "End weekday": [
         "Sista veckodagen"
       ],
+      "Enter code": [
+        "Ange kod"
+      ],
       "Enter name or email address": [
         "Ange namn eller e-postadress"
       ],
@@ -14696,6 +14768,9 @@
       ],
       "Create an alias": [
         "Skapa ett alias"
+      ],
+      "Details": [
+        "Detaljer"
       ],
       "Don't have access to your 2FA?": [
         "Har du inte åtkomst till din 2FA?"
@@ -20408,6 +20483,9 @@
         "${ FREE_PASS_ALIASES } hide-my-email-alias för att bekämpa skräppost",
         "${ FREE_PASS_ALIASES } hide-my-email-alias för att bekämpa skräppost"
       ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } hide-my-email-alias för att bekämpa skräppost"
+      ],
       "${ maxAddresses } address": [
         "${ maxAddresses } adress",
         "${ maxAddresses } adresser"
@@ -20502,6 +20580,9 @@
       "Bundle": [
         "Paket"
       ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "Välj en säker ${ MAIL_APP_NAME }-adress för att komma igång"
+      ],
       "Collaborative document editing": [
         "Dokumentredigering i samarbete"
       ],
@@ -20565,6 +20646,9 @@
       "Gifted by **${ referrerName }**": [
         "Gåva från **${ referrerName }**"
       ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "Håll dina konversationer privata med ${ MAIL_APP_NAME }"
+      ],
       "Manage user access": [
         "Hantera användaråtkomst"
       ],
@@ -20588,6 +20672,9 @@
       ],
       "Password manager for all your devices": [
         "Lösenordshanterare för alla dina enheter"
+      ],
+      "Password-protected messages": [
+        "Lösenordsskyddade meddelanden"
       ],
       "Pick a service to get started.": [
         "Välj en tjänst för att komma igång."
@@ -20613,6 +20700,9 @@
       "Secure ${ VPN_CONNECTIONS } device at a time": [
         "Säkra ${ VPN_CONNECTIONS } enhet åt gången",
         "Säkra ${ VPN_CONNECTIONS } enheter åt gången"
+      ],
+      "Secure calendar": [
+        "Säker kalender"
       ],
       "Secure file sharing": [
         "Säker fildelning"
@@ -20721,6 +20811,9 @@
       ],
       "use your own email.": [
         "använd din egen e-post."
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "VPN med servrar i ${ vpnServersCountData.free.countries } länder"
       ],
       "VPN with servers in ${ vpnServersCountData.free.countries } country": [
         "VPN med servrar i ${ vpnServersCountData.free.countries } land",
@@ -21339,6 +21432,9 @@
       ],
       "Sign-in requested on another device. Was it you?": [
         "Inloggning begärd på annan enhet. Var det du?"
+      ],
+      "Single sign-on may not function correctly without an organization identity. Set an identity to ensure reliable authentication.": [
+        "Enkel inloggning kanske inte fungerar korrekt utan en organisationsidentitet. Ställ in en identitet för att säkerställa tillförlitlig autentisering."
       ],
       "Single sign-on removed": [
         "Enkel inloggning borttagen"
@@ -22846,6 +22942,9 @@
       "Apply gift code": [
         "Tillämpa presentkod"
       ],
+      "Are you already signed in to ${ BRAND_NAME } in a browser?": [
+        "Är du redan inloggad på ${ BRAND_NAME } i en webbläsare?"
+      ],
       "Are you sure you want to close the preview?": [
         "Är du säker på att du vill stänga förhandsgranskningen?"
       ],
@@ -22884,6 +22983,12 @@
       ],
       "Browser extensions": [
         "Webbläsartillägg"
+      ],
+      "Can you access your session in the browser?": [
+        "Kan du komma åt din session i webbläsaren?"
+      ],
+      "Can you reach out to your emergency contacts?": [
+        "Kan du kontakta dina nödkontakter?"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Avsluta ${ MAIL_SHORT_APP_NAME }-prenumeration"
@@ -23004,6 +23109,9 @@
       ],
       "Couldn’t create accounts": [
         "Kunde inte skapa konton"
+      ],
+      "Couldn’t recover your account": [
+        "Kunde inte återställa ditt konto"
       ],
       "Coupon": [
         "Kupong"
@@ -23810,6 +23918,9 @@
       "Reconnect your account": [
         "Återanslut ditt konto"
       ],
+      "Recover account": [
+        "Återställ konto"
+      ],
       "Recover data": [
         "Återställ data"
       ],
@@ -24129,6 +24240,9 @@
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "Prova ${ AUTHENTICATOR_APP_NAME }"
       ],
+      "Try changing your password in your active web session": [
+        "Försök ändra ditt lösenord i din aktiva webbsession"
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Slå på ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -24206,6 +24320,9 @@
       ],
       "Verification failed": [
         "Verifiering misslyckades"
+      ],
+      "Verify it’s you": [
+        "Verifiera att det är du"
       ],
       "Verifying your card...": [
         "Verifierar ditt kort …"
@@ -25030,11 +25147,11 @@
       "Create password instead": [
         "Skapa lösenord istället"
       ],
-      "Create user": [
-        "Skapa användare"
-      ],
       "Email": [
         "E-post"
+      ],
+      "General": [
+        "Allmänt"
       ],
       "Invitation email": [
         "E-postinbjudan"
@@ -25050,6 +25167,12 @@
       ],
       "Remember to share the user's sign in details with them.": [
         "Kom ihåg att dela användarens inloggningsinformation med dem."
+      ],
+      "Roles and permissions": [
+        "Roller och behörigheter"
+      ],
+      "Save": [
+        "Spara"
       ],
       "Send invite link via email instead": [
         "Skicka inbjudningslänk via e-post istället"

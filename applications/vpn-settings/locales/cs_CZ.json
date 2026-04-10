@@ -452,6 +452,9 @@
       "Fit to window": [
         "Přizpůsobit oknu"
       ],
+      "Forgot password?": [
+        "Zapomenuté heslo?"
+      ],
       "Forgot recovery method?": [
         "Zapomněli jste metodu obnovení?"
       ],
@@ -646,6 +649,9 @@
       ],
       "Next page": [
         "Další stránka"
+      ],
+      "No": [
+        "Ne"
       ],
       "OK": [
         "OK"
@@ -1126,6 +1132,9 @@
       ],
       "Wipe": [
         "Smazat"
+      ],
+      "Yes": [
+        "Ano"
       ],
       "Your server will be provisioned in the next days": [
         "Váš server bude zprovozněn v následujících dnech."
@@ -6791,6 +6800,12 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Zadejte svou e-mailovou adresu nebo uživatelské jméno účtu ${ BRAND_NAME }."
       ],
+      "Enter your own password (as organization admin).": [
+        "Zadejte vlastní heslo (jako správce organizace)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Zadejte vlastní heslo (jako důvěryhodný kontakt)."
+      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Zadejte vaši obnovovací e-mailovou adresu a my Vám pošleme Vaše uživatelské jméno nebo e-mailovou adresu."
       ],
@@ -9479,6 +9494,12 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Ano, chci trvale smazat tento účet a všechna data s ním spojená."
       ],
+      "Your password (admin)": [
+        "Vaše heslo (správce)"
+      ],
+      "Your password (trusted contact)": [
+        "Vaše heslo (důvěryhodný kontakt)"
+      ],
       "ZIP code": [
         "PSČ"
       ]
@@ -10007,9 +10028,6 @@
       ],
       "60 minutes per meeting": [
         "Schůzka o délce 60 minut"
-      ],
-      "Appointment scheduling": [
-        "Plánování schůzek"
       ],
       "Booking pages": [
         "Rezervační stránky"
@@ -14235,6 +14253,9 @@
       "Share the confirmation code with your administrator": [
         "Sdílejte potvrzovací kód s vaším správcem"
       ],
+      "Sign in": [
+        "Přihlásit se"
+      ],
       "Sign in to your organization": [
         "Přihlaste se ke své organizaci"
       ],
@@ -14294,6 +14315,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Nové uživatele budete muset vytvořit ručně a přidat je do organizace."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Budete přesměrováni na poskytovatele SSO třetí strany."
       ],
       "Your SSO configuration will be deleted.": [
         "Vaše nastavení SSO bude smazáno."
@@ -15867,6 +15891,9 @@
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Zadejte své detaily k ${ BRAND_NAME } účtu pro připojení k ${ app } Beta programu"
       ],
+      "Enter your password": [
+        "Zadejte své heslo"
+      ],
       "Error": [
         "Chyba"
       ],
@@ -16968,9 +16995,6 @@
       ],
       "Create password instead": [
         "Místo toho vytvořit heslo"
-      ],
-      "Create user": [
-        "Vytvořit uživatele"
       ],
       "Email": [
         "E-mail"

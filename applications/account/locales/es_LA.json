@@ -9565,9 +9565,6 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Un alias de correo funciona como una dirección de correo electrónico, pero reduce el spam y mantiene la dirección e identidad real ocultas."
       ],
-      "An email with a verification code was just sent to ${ recoveryEmailElement }. If you can’t find the message in your inbox, please check your spam folder.": [
-        "Se acaba de enviar un correo electrónico con un código de verificación a ${ recoveryEmailElement }. Si no encuentra el mensaje en su bandeja de entrada, revise su carpeta de spam."
-      ],
       "An error occurred while communicating with **${ applicationName }**": [
         "Ocurrió un error al comunicarse con **${ applicationName }**"
       ],
@@ -9579,9 +9576,6 @@
       ],
       "An import is paused because your storage is almost full.": [
         "Se ha pausado una importación porque su almacenamiento está casi lleno."
-      ],
-      "An SMS with a verification code was just sent to ${ recoveryPhoneElement }.": [
-        "Se acaba de enviar un SMS con un código de verificación a ${ recoveryPhoneElement }."
       ],
       "and": [
         "y"
@@ -15366,9 +15360,6 @@
       "60 minutes per meeting": [
         "60 minutos por reunión"
       ],
-      "Appointment scheduling": [
-        "Programación de citas"
-      ],
       "Booking pages": [
         "Páginas de reservas"
       ],
@@ -16073,6 +16064,13 @@
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Todos los servicios básicos de ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "Appointment scheduling": [
+        "Programación de citas"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Programación de citas con ${ n } página de reservas",
+        "Programación de citas con ${ n } páginas de reservas"
       ],
       "Apps for": [
         "Aplicaciones para"
@@ -25268,9 +25266,6 @@
       ],
       "Create password instead": [
         "Crear una contraseña en su lugar"
-      ],
-      "Create user": [
-        "Crear usuario"
       ],
       "Email": [
         "Correo"
