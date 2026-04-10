@@ -9,7 +9,7 @@ import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
-import { selectParticipantNameMap, selectParticipantsMap } from '@proton/meet/store/slices/meetingInfo';
+import { selectParticipantDecryptedNameMap, selectParticipantsMap } from '@proton/meet/store/slices/meetingInfo';
 import { MeetingSideBars, selectSideBarState, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 import clsx from '@proton/utils/clsx';
 
@@ -30,7 +30,7 @@ export const AssignHostSidebar = () => {
 
     const { assignHost } = useMeetContext();
     const participantsMap = useMeetSelector(selectParticipantsMap);
-    const participantNameMap = useMeetSelector(selectParticipantNameMap);
+    const participantDecryptedNameMap = useMeetSelector(selectParticipantDecryptedNameMap);
     const sortedParticipants = useSortedParticipants();
 
     const [isScrolled, setIsScrolled] = useState(false);
@@ -46,7 +46,7 @@ export const AssignHostSidebar = () => {
             !participantsMap[participant.identity]?.IsAdmin &&
             (!isSearchOn ||
                 !searchExpression ||
-                participantNameMap[participant.identity]?.toLowerCase().includes(lowerCaseSearchExpression))
+                participantDecryptedNameMap[participant.identity]?.toLowerCase().includes(lowerCaseSearchExpression))
         );
     });
 
@@ -58,7 +58,9 @@ export const AssignHostSidebar = () => {
         return null;
     }
 
-    const selectedParticipantName = selectedParticipantIdentity ? participantNameMap[selectedParticipantIdentity] : '';
+    const selectedParticipantName = selectedParticipantIdentity
+        ? participantDecryptedNameMap[selectedParticipantIdentity]
+        : '';
 
     return (
         <SideBar onClose={() => dispatch(toggleSideBarState(MeetingSideBars.AssignHost))} paddingClassName="px-2 py-4">
@@ -101,7 +103,7 @@ export const AssignHostSidebar = () => {
                         style={{ '--pb-custom': '5rem' }}
                     >
                         {filteredParticipants.map((participant: Participant, index) => {
-                            const name = participantNameMap[participant.identity] ?? c('Info').t`Loading...`;
+                            const name = participantDecryptedNameMap[participant.identity] ?? c('Info').t`Loading...`;
 
                             const isSelected = selectedParticipantIdentity === participant.identity;
 
@@ -127,8 +129,10 @@ export const AssignHostSidebar = () => {
                                         style={{ '--w-custom': '2.5rem', '--h-custom': '2.5rem' }}
                                     >
                                         <div>
-                                            {participantNameMap[participant.identity] ? (
-                                                getParticipantInitials(participantNameMap[participant.identity])
+                                            {participantDecryptedNameMap[participant.identity] ? (
+                                                getParticipantInitials(
+                                                    participantDecryptedNameMap[participant.identity]
+                                                )
                                             ) : (
                                                 <CircleLoader
                                                     className="color-primary w-custom h-custom"

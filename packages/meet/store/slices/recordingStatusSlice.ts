@@ -2,7 +2,7 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 import { createSelector, createSlice } from '@reduxjs/toolkit';
 
 import type { MeetState } from '../rootReducer';
-import { selectParticipantNameMap } from './meetingInfo';
+import { selectParticipantDecryptedNameMap } from './meetingInfo';
 import { selectLocalParticipantIdentity } from './sortedParticipantsSlice';
 
 export interface RecordingStatusState {
@@ -48,10 +48,10 @@ export const selectIsLocalParticipantRecording = createSelector(
 );
 
 export const selectRecordingParticipantNames = createSelector(
-    [selectParticipantNameMap, selectParticipantsRecording],
-    (participantNameMap, participantsRecording) => {
+    [selectParticipantDecryptedNameMap, selectParticipantsRecording],
+    (participantDecryptedNameMap, participantsRecording) => {
         return participantsRecording.map((identity) => {
-            return participantNameMap[identity];
+            return participantDecryptedNameMap[identity];
         });
     }
 );
