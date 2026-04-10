@@ -4,7 +4,7 @@ import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import Icon from '@proton/components/components/icon/Icon';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
-import { type CountryOptions, getLocalizedCountryByAbbr } from '@proton/payments';
+import { type CountryOptions, getLocalizedCountryByAbbr } from '@proton/payments/core/countries';
 import { SERVER_FEATURES } from '@proton/shared/lib/constants';
 
 import type { GatewayDto } from './GatewayDto';

@@ -5,6 +5,7 @@ import { endOfDay, isAfter, isBefore, startOfDay } from 'date-fns';
 import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { Href } from '@proton/atoms/Href/Href';
 import Icon from '@proton/components/components/icon/Icon';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { Pagination, usePaginationAsync } from '@proton/components/components/pagination';
@@ -15,9 +16,10 @@ import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
-import { getCountryOptions } from '@proton/payments';
+import { getCountryOptions } from '@proton/payments/core/countries';
 import { getVPNLogDownload, getVPNLogs, getVpnEventTypes } from '@proton/shared/lib/api/b2bevents';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
+import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { B2BLogsQuery } from '@proton/shared/lib/interfaces/B2BLogs';
 import noop from '@proton/utils/noop';
 
@@ -32,8 +34,6 @@ import { getMonitoringSetting, updateMonitoringSetting } from './api';
 import type { Event as EventObject } from './helpers';
 import { downloadEvents, getConnectionEvents } from './helpers';
 import type { VPNEvent } from './interface';
-import { getKnowledgeBaseUrl } from "@proton/shared/lib/helpers/url";
-import { Href } from "@proton/atoms/Href/Href";
 
 export interface FilterModel {
     eventType: string;
@@ -101,7 +101,7 @@ export const VPNEvents = () => {
     };
 
     useEffect(() => {
-        fetchVpnConnectionEvents();
+        void fetchVpnConnectionEvents();
     }, []);
 
     const fetchVPNLogs = async (params: B2BLogsQuery) => {
@@ -125,11 +125,11 @@ export const VPNEvents = () => {
     };
 
     useEffect(() => {
-        withLoading(fetchVPNLogs({ ...query, Page: page - 1 }).catch(noop));
+        void withLoading(fetchVPNLogs({ ...query, Page: page - 1 }).catch(noop));
     }, [page, query, sortDirection]);
 
     useEffect(() => {
-        withMonitoringInitializing(
+        void withMonitoringInitializing(
             new Promise(async (resolve) => {
                 const timeout = setTimeout(() => {
                     setMonitoringLoading(false);
@@ -187,7 +187,7 @@ export const VPNEvents = () => {
             });
         }
 
-        downloadEvents(response);
+        void downloadEvents(response);
     };
 
     const handleStartDateChange = (start: Date | undefined) => {
@@ -305,7 +305,7 @@ export const VPNEvents = () => {
         );
 
         const boldValue = (
-            <span className="text-semibold" key="eslint-autofix-F3CE6C">
+            <span className="text-semibold" key="time-of-event">
                 {formattedDateAndTime}
             </span>
         );
@@ -360,11 +360,8 @@ export const VPNEvents = () => {
                     <div className="flex flex-column gap-1">
                         <span className="text-bold">{getMonitoringInfoText()}</span>
                         <span className="color-weak">
-                            {c('Info').t`View VPN session details for your organization.`}
-                            {' '}
-                            <Href href={getKnowledgeBaseUrl('/gateway-monitor')}>
-                                {c('Link').t`Learn more`}
-                            </Href>
+                            {c('Info').t`View VPN session details for your organization.`}{' '}
+                            <Href href={getKnowledgeBaseUrl('/gateway-monitor')}>{c('Link').t`Learn more`}</Href>
                         </span>
                     </div>
                 </div>

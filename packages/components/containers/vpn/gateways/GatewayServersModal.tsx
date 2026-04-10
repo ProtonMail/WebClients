@@ -16,7 +16,8 @@ import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
 import TableRow from '@proton/components/components/table/TableRow';
-import { type CountryOptions, MAX_IPS_ADDON, getLocalizedCountryByAbbr } from '@proton/payments';
+import { MAX_IPS_ADDON } from '@proton/payments';
+import { type CountryOptions, getLocalizedCountryByAbbr } from '@proton/payments/core/countries';
 import range from '@proton/utils/range';
 
 import { CountryFlagAndName } from './CountryFlagAndName';

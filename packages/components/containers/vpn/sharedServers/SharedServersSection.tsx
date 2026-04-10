@@ -32,7 +32,7 @@ import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedTex
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
-import { getCountryOptions } from '@proton/payments';
+import { getCountryOptions } from '@proton/payments/core/countries';
 import { MINUTE, SECOND, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';

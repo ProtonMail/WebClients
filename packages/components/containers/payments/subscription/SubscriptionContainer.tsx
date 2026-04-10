@@ -28,7 +28,6 @@ import type { WebPaymentsSubscriptionStepsTotal } from '@proton/metrics/types/we
 import {
     type AddonGuard,
     Audience,
-    type BillingAddress,
     type CheckSubscriptionData,
     type Currency,
     type Cycle,
@@ -74,7 +73,7 @@ import {
     shouldPassIsTrial as shouldPassIsTrialPayments,
     switchPlan,
 } from '@proton/payments';
-import type { BillingAddressExtended } from '@proton/payments/core/billing-address/billing-address';
+import type { BillingAddress, BillingAddressExtended } from '@proton/payments/core/billing-address/billing-address';
 import { getIsCustomCycle, getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import { VatReverseChargeNotSupportedError } from '@proton/payments/core/errors';
 import { computeOptimisticSubscriptionMode } from '@proton/payments/core/optimisticSubscriptionMode';

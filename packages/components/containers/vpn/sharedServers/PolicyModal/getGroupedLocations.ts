@@ -1,5 +1,4 @@
-import type { CountryOptions } from '@proton/payments';
-import { getLocalizedCountryByAbbr } from '@proton/payments';
+import { type CountryOptions, getLocalizedCountryByAbbr } from '@proton/payments/core/countries';
 
 import type { CitiesTranslations, CountryCitiesTranslationsNonNull, SharedServerLocation } from '../api';
 

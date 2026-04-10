@@ -6,7 +6,7 @@ import Checkbox from '@proton/components/components/input/Checkbox';
 import Label from '@proton/components/components/label/Label';
 import { IcMinus } from '@proton/icons/icons/IcMinus';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
-import type { CountryOptions } from '@proton/payments';
+import type { CountryOptions } from '@proton/payments/core/countries';
 import clsx from '@proton/utils/clsx';
 
 import { CountryFlagAndName } from './CountryFlagAndName';

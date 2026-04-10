@@ -20,7 +20,8 @@ import SettingsParagraph from '@proton/components/containers/account/SettingsPar
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import useUserVPN from '@proton/components/hooks/useUserVPN';
 import useVPNLogicals from '@proton/components/hooks/useVPNLogicals';
-import { type CountryOptions, PLANS, getCountryOptions, getLocalizedCountryByAbbr } from '@proton/payments';
+import { PLANS } from '@proton/payments';
+import { type CountryOptions, getCountryOptions, getLocalizedCountryByAbbr } from '@proton/payments/core/countries';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { SORT_DIRECTION, VPN_APP_NAME, VPN_CONNECTIONS, VPN_HOSTNAME } from '@proton/shared/lib/constants';
 import { getPlanOrAppNameText } from '@proton/shared/lib/i18n/ttag';

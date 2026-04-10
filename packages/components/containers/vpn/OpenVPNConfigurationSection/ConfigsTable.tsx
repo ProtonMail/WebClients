@@ -14,7 +14,7 @@ import TableCell from '@proton/components/components/table/TableCell';
 import TableRow from '@proton/components/components/table/TableRow';
 import useApi from '@proton/components/hooks/useApi';
 import { PLANS } from '@proton/payments';
-import type { CountryOptions } from '@proton/payments';
+import type { CountryOptions } from '@proton/payments/core/countries';
 import { getVPNServerConfig } from '@proton/shared/lib/api/vpn';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import type { Logical } from '@proton/shared/lib/vpn/Logical';
@@ -156,31 +156,41 @@ const ConfigsTable = ({
                                 {isP2PEnabled(server.Features) && <P2PIcon />}
                                 {isTorEnabled(server.Features) && <TorIcon />}
                             </div>,
-                            server.isUpgradeRequired ? (
-                                <Tooltip
-                                    key="download"
-                                    title={
-                                        server.Tier === 2
-                                            ? c('Info').t`Plus or Visionary subscription required`
-                                            : c('Info').t`Basic, Plus or Visionary subscription required`
-                                    }
-                                >
-                                    <ButtonLike
-                                        as={SettingsLink}
-                                        color="norm"
-                                        size="small"
-                                        path={hasPaidVpn ? `/dashboard?plan=${PLANS.VPN2024}` : '/upgrade'}
-                                    >{c('Action').t`Upgrade`}</ButtonLike>
-                                </Tooltip>
-                            ) : onSelect ? (
-                                <Button size="small" onClick={() => onSelect(server)} loading={selecting}>
-                                    {c('Action').t`Create`}
-                                </Button>
-                            ) : (
-                                <Button size="small" onClick={handleClickDownload(server)}>
-                                    {c('Action').t`Download`}
-                                </Button>
-                            ),
+                            (() => {
+                                if (server.isUpgradeRequired) {
+                                    return (
+                                        <Tooltip
+                                            key="download"
+                                            title={
+                                                server.Tier === 2
+                                                    ? c('Info').t`Plus or Visionary subscription required`
+                                                    : c('Info').t`Basic, Plus or Visionary subscription required`
+                                            }
+                                        >
+                                            <ButtonLike
+                                                as={SettingsLink}
+                                                color="norm"
+                                                size="small"
+                                                path={hasPaidVpn ? `/dashboard?plan=${PLANS.VPN2024}` : '/upgrade'}
+                                            >{c('Action').t`Upgrade`}</ButtonLike>
+                                        </Tooltip>
+                                    );
+                                }
+
+                                if (onSelect) {
+                                    return (
+                                        <Button size="small" onClick={() => onSelect(server)} loading={selecting}>
+                                            {c('Action').t`Create`}
+                                        </Button>
+                                    );
+                                }
+
+                                return (
+                                    <Button size="small" onClick={handleClickDownload(server)}>
+                                        {c('Action').t`Download`}
+                                    </Button>
+                                );
+                            })(),
                         ].filter(isTruthy)}
                     />
                 ))}
