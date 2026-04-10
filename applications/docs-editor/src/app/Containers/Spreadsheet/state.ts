@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef } from 'react'
 
 import type { CellXfs, SheetData, UseSpreadsheetProps } from '@rowsncolumns/spreadsheet-state'
 import { Align, type CellInterface } from '@rowsncolumns/grid'
@@ -349,11 +349,13 @@ export function useProtonSheetsState(deps: ProtonSheetsStateDependencies) {
   const spreadsheetState = useSpreadsheetState({ ...depsWithLocalState, locale: localeResolved })
   const canvasGridMethods = useSpreadsheet()
 
-  const [previousLocaleResolved, setPreviousLocaleResolved] = useState(localeResolved)
-  if (previousLocaleResolved !== localeResolved) {
-    setPreviousLocaleResolved(localeResolved)
-    spreadsheetState.onChangeLocale(localeResolved)
-  }
+  const previousLocaleResolved = useRef(localeResolved)
+  useLayoutEffect(() => {
+    if (previousLocaleResolved.current !== localeResolved) {
+      previousLocaleResolved.current = localeResolved
+      spreadsheetState.onChangeLocale(localeResolved)
+    }
+  }, [localeResolved, spreadsheetState])
 
   const { scrollToCell, getCellOffsetFromCoords: _getCellOffsetFromCoords, getGridRef } = canvasGridMethods
 
