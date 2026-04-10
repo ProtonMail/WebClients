@@ -4798,6 +4798,14 @@
     "Delete group prompt": {
       "Are you sure you want to delete this group?": [
         "Bu grubu silmek istediğinize emin misiniz?"
+      ],
+      "Please note that if you delete the group ${ displayGroupName }, it will be permanently removed.": [
+        "${ displayGroupName } grubunu silerseniz grubun kalıcı olarak silineceğini lütfen unutmayın."
+      ]
+    },
+    "Delete group prompt with email": {
+      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
+        "${ displayGroupName } grubunu (bu adresle birlikte: ${ displayGroupAddressEmail }) silerseniz bu adresi kullanarak artık e-posta alamayacağınızı lütfen unutmayın."
       ]
     },
     "Delinquent modal title": {
@@ -8262,6 +8270,14 @@
         "Hizmetler"
       ]
     },
+    "Group detail label": {
+      "Description:": [
+        "Açıklama:"
+      ],
+      "Group address:": [
+        "Grup adresi:"
+      ]
+    },
     "Group member count": {
       "${ memberCount } member": [
         "${ memberCount } üye",
@@ -9346,6 +9362,9 @@
         "Sunucu ekle (${ availableAddedCount } kullanılabilir)",
         "Sunucu ekle (${ availableAddedCount } kullanılabilir)"
       ],
+      "Add users by name or email to this group.": [
+        "Bu gruba kullanıcıları ad veya e-posta adresiyle ekleyin."
+      ],
       "Add video conferencing links to calendar invitations": [
         "Takvim davetiyelerinize görüntülü görüşme bağlantıları ekleyin."
       ],
@@ -9445,9 +9464,6 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "E-posta takma adı e-posta adresi gibi çalışır. Ancak istenmeyen e-postaları azaltır ve gerçek e-posta adresinizi ve kimliğinizi gizli tutar."
       ],
-      "An email with a verification code was just sent to ${ recoveryEmailElement }. If you can’t find the message in your inbox, please check your spam folder.": [
-        "Doğrulama kodunu içeren bir e-posta az önce ${ recoveryEmailElement } adresine gönderildi. İletiyi gelen kutunuzda bulamazsanız lütfen istenmeyen klasörünüzü kontrol edin."
-      ],
       "An error occurred while communicating with **${ applicationName }**": [
         "**${ applicationName }** ile iletişim kurulurken bir sorun çıktı."
       ],
@@ -9459,9 +9475,6 @@
       ],
       "An import is paused because your storage is almost full.": [
         "Depolama alanınız neredeyse dolduğundan içe aktarma duraklatıldı."
-      ],
-      "An SMS with a verification code was just sent to ${ recoveryPhoneElement }.": [
-        "Doğrulama kodunu içeren bir SMS az önce ${ recoveryPhoneElement } numarasına gönderildi."
       ],
       "and": [
         "ve"
@@ -11196,6 +11209,9 @@
       ],
       "Securing your account": [
         "Hesabınız korunuyor"
+      ],
+      "Select a group to view its members and settings.": [
+        "Üyelerini ve ayarlarını görüntülemek için bir grup seçin."
       ],
       "Select one or multiple user affiliations": [
         "Bir ya da birkaç kullanıcı ilişkisi seçin"
@@ -13653,6 +13669,9 @@
       "End weekday": [
         "Haftanın bitiş günü"
       ],
+      "Enter name or email address": [
+        "Adınızı veya e-posta adresinizi girin"
+      ],
       "Enter password": [
         "Parolayı yazın"
       ],
@@ -13808,6 +13827,9 @@
       ],
       "Interval": [
         "Aralık"
+      ],
+      "Invite people": [
+        "İnsanları davet et"
       ],
       "Invite via email": [
         "E-posta ile davet edin"
@@ -15227,9 +15249,6 @@
       ],
       "60 minutes per meeting": [
         "Görüşme başına 60 dakika"
-      ],
-      "Appointment scheduling": [
-        "Randevu planlama"
       ],
       "Booking pages": [
         "Rezervasyon sayfaları"
@@ -23104,6 +23123,9 @@
       "Create Gateway": [
         "Ağ geçidi ekle"
       ],
+      "Create group": [
+        "Grup oluştur"
+      ],
       "Create multiple user accounts": [
         "Birkaç kullanıcı hesabı ekle"
       ],
@@ -23338,6 +23360,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "${ currentName } ağ geçidini düzenle"
+      ],
+      "Edit group": [
+        "Grubu düzenle"
       ],
       "Edit invoice note": [
         "Fatura notunu düzenle"
@@ -25106,9 +25131,6 @@
       ],
       "Create password instead": [
         "Bunun yerine parola oluşturun"
-      ],
-      "Create user": [
-        "Kullanıcı ekle"
       ],
       "Email": [
         "E-posta adresi"

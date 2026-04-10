@@ -903,8 +903,14 @@
       "I don't have my key": [
         "Eu não tenho minha chave"
       ],
+      "I don't have my phrase": [
+        "Eu não tenho minha frase"
+      ],
       "I don’t have my backup codes": [
         "Eu não tenho meus códigos de backup"
+      ],
+      "I don’t have my phone": [
+        "Eu não tenho meu telefone"
       ],
       "Ignore": [
         "Ignorar"
@@ -1302,6 +1308,9 @@
       "Return to sign in": [
         "Voltar ao inicio de sessão"
       ],
+      "Return to sign-in": [
+        "Voltar para o início de sessão"
+      ],
       "Review": [
         "Revisão"
       ],
@@ -1586,6 +1595,9 @@
       ],
       "Try another method": [
         "Tentar outro método"
+      ],
+      "Try another way": [
+        "Tentar de outra forma"
       ],
       "Try for free": [
         "Experimente gratuitamente"
@@ -4869,6 +4881,9 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Sincronize facilmente arquivos com a nuvem a partir do seu computador e acesse-os no seu dispositivo móvel."
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "E-mails enviados para ${ connectedAddressText } agora serão exibidos em ${ MAIL_APP_NAME }."
+      ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Ative ${ PROTON_SENTINEL_NAME } para acessar esses recursos"
       ],
@@ -4941,6 +4956,10 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Facilite a sincronização e o agendamento com calendários compartilhados."
       ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "Para conectar até ${ MAX_SYNC_PAID_USER } endereço do Gmail, faça o upgrade para o plano ${ planName }.",
+        "Para conectar até ${ MAX_SYNC_PAID_USER } endereços do Gmail, faça o upgrade para o plano ${ planName }."
+      ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Para importar por meio de um arquivo CSV e VCF, certifique-se de que o arquivo não exceda ${ MAX_IMPORT_FILE_SIZE_STRING } ou ${ maxContactString } contatos. Se o seu arquivo for maior, divida-o em arquivos menores. ${ learnMoreLink }."
       ],
@@ -4961,6 +4980,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Utilize este guia para que sua organização possa rapidamente se beneficiar do ecossistema de criptografia e privacidade de ponta do ${ BRAND_NAME }."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Não podemos mais acessar o ${ boldEmails }."
       ],
       "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
         "Você pode personalizar a lista de domínios onde certas funções automáticas na extensão do navegador ${ PASS_APP_NAME } (preenchimento automático, sugestão automática e salvamento automático) não devem ser executadas."
@@ -6503,6 +6525,9 @@
       "Code is incorrect or not valid anymore": [
         "Código está incorreto ou não é mais válido"
       ],
+      "Company name or personal name is required": [
+        "É necessário informar o nome da empresa ou o nome pessoal"
+      ],
       "Condition incomplete": [
         "Condição incompleta"
       ],
@@ -6930,6 +6955,9 @@
       ],
       "Something went wrong while creating the address": [
         "Algo deu errado ao criar o endereço"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Ocorreu um erro ao buscar os domínios disponíveis"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Ocorreu um erro. ${ refresh } a página para continuar. Se você continuar vendo esta mensagem de erro, entre em contato com nossa ${ supportTeam }."
@@ -9359,6 +9387,9 @@
         "Adicionar servidor (${ availableAddedCount } disponíveis)",
         "Adicionar servidor (${ availableAddedCount } disponíveis)"
       ],
+      "Add users by name or email to this group.": [
+        "Adicione usuários por nome ou e-mail a este grupo."
+      ],
       "Add video conferencing links to calendar invitations": [
         "Adicionar links de videoconferência a convites de calendário"
       ],
@@ -9466,6 +9497,9 @@
       ],
       "An import is paused because the connection to your email provider was lost.": [
         "Uma importação foi pausada porque a conexão com o seu provedor de e-mail foi perdida."
+      ],
+      "An import is paused because your storage is almost full.": [
+        "Uma importação foi pausada porque seu armazenamento está quase cheio."
       ],
       "and": [
         "e"
@@ -9701,6 +9735,9 @@
       "Coming soon": [
         "Em breve"
       ],
+      "Complete the sign-in on this device to start using ${ VPN_APP_NAME } on your TV.": [
+        "Complete o início de sessão neste dispositivo para começar a usar o ${ VPN_APP_NAME } na sua TV."
+      ],
       "Compromised": [
         "Comprometido"
       ],
@@ -9712,6 +9749,9 @@
       ],
       "Connection data will be available in around 1 hour.": [
         "Os dados de conexão estarão disponíveis em cerca de uma hora."
+      ],
+      "Contact our Customer Support team to disable two-factor authentication for your account, or recover your account another way.": [
+        "Entre em contato com nossa equipe de suporte ao cliente para desativar a autenticação de dois fatores da sua conta ou recupere sua conta de outra forma."
       ],
       "Continue": [
         "Continuar"
@@ -10291,6 +10331,9 @@
       "How it works": [
         "Como funciona"
       ],
+      "How to perform a signed-in reset": [
+        "Como realizar uma redefinição com a sessão iniciada"
+      ],
       "IBAN: ${ formattedIBAN }": [
         "IBAN: ${ formattedIBAN }"
       ],
@@ -10767,11 +10810,17 @@
       "No folder selected": [
         "Nenhuma pasta selecionada"
       ],
+      "No forwarding history.": [
+        "Sem histórico de encaminhamento."
+      ],
       "No gateways": [
         "Sem gateways"
       ],
       "No Gateways yet": [
         "Sem gateways ainda"
+      ],
+      "No import history.": [
+        "Nenhum histórico de importação."
       ],
       "No label selected": [
         "Nenhum marcador selecionado"
@@ -11086,6 +11135,12 @@
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Recomendado em dispositivos de confiança. ${ keepMeSignedInLearnMoreLink }"
       ],
+      "Recovery contacts": [
+        "Contatos de recuperação"
+      ],
+      "Recovery file": [
+        "Arquivo de recuperação"
+      ],
       "Recovery file downloaded": [
         "Arquivo de recuperação baixado"
       ],
@@ -11094,6 +11149,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "As informações de recuperação permanecerão neste dispositivo, a menos que você opte por excluí-las."
+      ],
+      "Recovery phrase": [
+        "Frase de recuperação"
       ],
       "Recovery phrase copied to clipboard": [
         "Frase de recuperação copiada para a área de transferência"
@@ -11761,6 +11819,9 @@
       "Unable to verify recovery file signature. Please contact support.": [
         "Não foi possível verificar a assinatura do arquivo de recuperação. Entre em contato com o suporte."
       ],
+      "Unfortunately there is no recovery method available for this account.": [
+        "Infelizmente não há um método de recuperação disponível para esta conta."
+      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Infelizmente não há um método de recuperação salvo para esta conta."
       ],
@@ -12383,6 +12444,9 @@
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "Sua próxima data de cobrança é ${ renewalTime }. Você pode cancelar a qualquer momento. Entre em contato com o suporte se precisar de uma mudança imediata de plano."
+      ],
+      "Your old password": [
+        "Sua senha antiga"
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Sua organização usa o login único (SSO). Pressione iniciar seção para continuar com seu provedor SSO."
@@ -13614,6 +13678,9 @@
       "End weekday": [
         "Dia de término da semana"
       ],
+      "Enter code": [
+        "Insira o código"
+      ],
       "Enter name or email address": [
         "Inserir nome ou endereço de email"
       ],
@@ -14175,6 +14242,9 @@
       "Select Linux platform": [
         "Selecionar a distribuição Linux"
       ],
+      "Select which Gmail address to connect": [
+        "Selecione o endereço do Gmail que deseja conectar"
+      ],
       "Send auto-reply": [
         "Enviar resposta automática"
       ],
@@ -14695,6 +14765,12 @@
       "Create an alias": [
         "Criar um alias"
       ],
+      "data recovery option": [
+        "opção de recuperação de dados"
+      ],
+      "Details": [
+        "Detalhes"
+      ],
       "Don't have access to your 2FA?": [
         "Não tem acesso ao seu A2F?"
       ],
@@ -15195,9 +15271,6 @@
       "60 minutes per meeting": [
         "60 minutos por reunião"
       ],
-      "Appointment scheduling": [
-        "Agendamento de compromissos"
-      ],
       "Booking pages": [
         "Páginas de agendamentos"
       ],
@@ -15384,6 +15457,12 @@
       "${ BRAND_NAME } Account": [
         "Conta da ${ BRAND_NAME }"
       ],
+      "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
+        "Ative o endereço de e-mail privado da ${ BRAND_NAME } reservado para seu filho e configure a conta dele."
+      ],
+      "Activate your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "Ative a conta da ${ BRAND_NAME } do seu filho | ${ BRAND_NAME }"
+      ],
       "Create a ${ BRAND_NAME } Account to use all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more, with just one login. Get a Free ${ BRAND_NAME } Account.": [
         "Crie uma conta da ${ BRAND_NAME } para, com um único nome de usuário, utilizar todos os serviços ${ BRAND_NAME } criptografados como ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, e muito mais. Obtenha gratuitamente uma conta ${ BRAND_NAME }."
       ],
@@ -15407,6 +15486,9 @@
       ],
       "Forgot your ${ BRAND_NAME } Account username? Find it using your recovery email or phone number and regain access to your ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more.": [
         "Esqueceu o nome de usuário da sua conta ${ BRAND_NAME }? Encontre-o usando seu e-mail ou telefone de recuperação e recupere o acesso ao seu ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e muito mais."
+      ],
+      "Recover your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "Recuperar a conta da ${ BRAND_NAME } do seu filho | ${ BRAND_NAME }"
       ],
       "Reserve your child's private email | ${ BRAND_NAME }": [
         "Reserve o e-mail privado do seu filho | ${ BRAND_NAME }"
@@ -18493,6 +18575,9 @@
       "Anderson": [
         "Braga"
       ],
+      "Anything you'd like us to know": [
+        "Algo que você gostaria que soubéssemos?"
+      ],
       "Anytown": [
         "Nova Esperança"
       ],
@@ -20452,6 +20537,12 @@
         "${ FREE_PASS_ALIASES } alias do hide-my-email para combater o spam",
         "${ FREE_PASS_ALIASES } aliasesdo hide-my-email para combater o spam"
       ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } aliases do hide-my-email para combater spam"
+      ],
+      "${ MAIL_SHORT_APP_NAME } Free": [
+        "${ MAIL_SHORT_APP_NAME } Free"
+      ],
       "${ maxAddresses } address": [
         "${ maxAddresses } endereço",
         "${ maxAddresses } endereços"
@@ -20633,6 +20724,9 @@
       "Password manager for all your devices": [
         "Gerenciador de senhas para todos os seus dispositivos."
       ],
+      "Password-protected messages": [
+        "Mensagens protegidas por senha"
+      ],
       "Pick a service to get started.": [
         "Escolha um serviço para começar."
       ],
@@ -20657,6 +20751,9 @@
       "Secure ${ VPN_CONNECTIONS } device at a time": [
         "Proteja ${ VPN_CONNECTIONS } dispositivo ao mesmo tempo",
         "Proteja ${ VPN_CONNECTIONS } dispositivos ao mesmo tempo"
+      ],
+      "Secure calendar": [
+        "Calendário seguro"
       ],
       "Secure file sharing": [
         "Compartilhamento de arquivos seguros"
@@ -22896,6 +22993,9 @@
       "Apply gift code": [
         "Adicionar código de vale-presente"
       ],
+      "Are you already signed in to ${ BRAND_NAME } in a browser?": [
+        "Você já está iniciado sessão à ${ BRAND_NAME } em um navegador?"
+      ],
       "Are you sure you want to close the preview?": [
         "Você tem certeza que deseja fechar a pré-visualização?"
       ],
@@ -23054,6 +23154,9 @@
       ],
       "Couldn’t create accounts": [
         "Não foi possível criar contas."
+      ],
+      "Couldn’t recover your account": [
+        "Não foi possível recuperar sua conta"
       ],
       "Coupon": [
         "Cupom"
@@ -23859,6 +23962,9 @@
       ],
       "Reconnect your account": [
         "Reconecte sua conta"
+      ],
+      "Recover account": [
+        "Recuperar conta"
       ],
       "Recover data": [
         "Recuperar dados"
@@ -25089,11 +25195,11 @@
       "Create password instead": [
         "Crie uma senha em vez disso"
       ],
-      "Create user": [
-        "Criar usuário"
-      ],
       "Email": [
         "E-mail"
+      ],
+      "General": [
+        "Geral"
       ],
       "Invitation email": [
         "E-mail de convite"
@@ -25109,6 +25215,12 @@
       ],
       "Remember to share the user's sign in details with them.": [
         "Lembre-se de compartilhar os detalhes de início de sessão do usuário com eles."
+      ],
+      "Roles and permissions": [
+        "Funções e permissões"
+      ],
+      "Save": [
+        "Salvar"
       ],
       "Send invite link via email instead": [
         "Envie o link de convite por e-mail em vez disso"
