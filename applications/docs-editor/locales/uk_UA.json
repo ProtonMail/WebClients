@@ -178,6 +178,60 @@
       ],
       "Undo": [
         "Скасувати"
+      ],
+      "a) b) c) d)": [
+        "a) b) c) d)"
+      ],
+      "A) B) C) D)": [
+        "A) B) C) D)"
+      ],
+      "A. B. C. D.": [
+        "A. B. C. D."
+      ],
+      "a. b. c. d.": [
+        "a. b. c. d."
+      ],
+      "Accept suggestion": [
+        "Прийняти пропозицію"
+      ],
+      "Add suggestion": [
+        "Додати пропозицію"
+      ],
+      "Adjust font size": [
+        "Змінити розмір шрифту"
+      ],
+      "Bulleted List": [
+        "Маркований список"
+      ],
+      "Check List": [
+        "Контрольний список"
+      ],
+      "Colour": [
+        "Колір"
+      ],
+      "Decline suggestion": [
+        "Відхилити пропозицію"
+      ],
+      "Divider": [
+        "Роздільник"
+      ],
+      "Insert comment": [
+        "Вставити коментар"
+      ],
+      "More options": [
+        "Додаткові параметри"
+      ],
+      "Numbered List": [
+        "Нумерований список"
+      ],
+      "Roman": [
+        "Римські"
+      ],
+      "Signature could not be verified": [
+        "Не вдалося перевірити підпис"
+      ],
+      "Strike-through": [
+        "Закреслений"
       ]
     },
     "color": {
@@ -376,6 +430,12 @@
       ],
       "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
         "Не вдається конвертувати документ Word. Він захищений паролем? Якщо так, видаліть пароль та спробуйте ще раз."
+      ],
+      "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again. If the error persists, please open Version History from the menu options to attempt to restore your document to an earlier version.": [
+        "Під час завантаження документа сталася помилка. Щоб запобігти пошкодженню документа, редактор було заблоковано. Перезавантажте сторінку і повторіть спробу. Якщо помилка не зникне, відкрийте Історію версій в меню, щоб спробувати відновити документ до попередньої версії."
+      ],
+      "Failed to export document.": [
+        "Не вдалося експортувати документ."
       ]
     },
     "Error message": {
@@ -471,6 +531,15 @@
       ],
       "You cannot undo this action.": [
         "Цю дію не можна скасувати."
+      ],
+      "Highlight": [
+        "Виділення"
+      ],
+      "Suggesting": [
+        "Пропонування"
+      ],
+      "The language you're using isn’t currently supported in suggestion mode. Please switch to edit mode or change the language.": [
+        "Мова, яку ви використовуєте, наразі не підтримується в режимі пропонування. Перейдіть у режим редагування або змініть мову."
       ]
     },
     "Label": {
@@ -509,6 +578,66 @@
       ],
       "Text colour": [
         "Колір тексту"
+      ],
+      "Add link": [
+        "Додати посилання"
+      ],
+      "Align": [
+        "Вирівнювання"
+      ],
+      "Change image size": [
+        "Змінити розмір зображення"
+      ],
+      "Change indent level": [
+        "Змінити рівень відступу"
+      ],
+      "Clear formatting": [
+        "Очистити форматування"
+      ],
+      "Delete divider": [
+        "Видалити роздільник"
+      ],
+      "Delete link": [
+        "Видалити посилання"
+      ],
+      "Delete paragraph": [
+        "Видалити абзац"
+      ],
+      "Delete table": [
+        "Видалити таблицю"
+      ],
+      "Delete table column": [
+        "Видалити стовпець таблиці"
+      ],
+      "Delete table row": [
+        "Видалити рядок таблиці"
+      ],
+      "Duplicate table column": [
+        "Дублювати стовпець таблиці"
+      ],
+      "Duplicate table row": [
+        "Дублювати рядок таблиці"
+      ],
+      "Insert divider": [
+        "Вставити роздільник"
+      ],
+      "Insert paragraph": [
+        "Вставити абзац"
+      ],
+      "Insert table": [
+        "Вставити таблицю"
+      ],
+      "Insert table column": [
+        "Вставити стовпець таблиці"
+      ],
+      "Insert table row": [
+        "Вставити рядок таблиці"
+      ],
+      "Replace link": [
+        "Замінити посилання"
+      ],
+      "with \"${ replaceWith }\"": [
+        "на \"${ replaceWith }\""
       ]
     },
     "Placeholder": {
@@ -534,6 +663,31 @@
       ],
       "Delete thread": [
         "Видалити гілку"
+      ],
+      "Explore the New Suggestion Mode": [
+        "Ознайомитись з новим режимом пропонування"
+      ],
+      "Language not supported": [
+        "Мова не підтримується"
+      ]
+    },
+    "Description": {
+      "Edit document directly": [
+        "Редагувати документ напряму"
+      ],
+      "Edits become suggestions": [
+        "Пропонування внести зміни"
+      ],
+      "Read or print final document": [
+        "Переглянути або друкувати остаточну версію документа"
+      ],
+      "Use the dropdown above to switch and start making suggestions.": [
+        "Скористайтеся випадним списком вище, щоб змінити режим і почати робити пропозиції."
+      ]
+    },
+    "Warning": {
+      "Making suggestions inside code blocks is not supported": [
+        "Пропозиції всередині кодових блоків не підтримуються"
       ]
     }
   }

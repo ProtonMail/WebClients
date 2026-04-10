@@ -223,6 +223,18 @@
       ],
       "Undo": [
         "Kumoa"
+      ],
+      "Colour": [
+        "Väri"
+      ],
+      "More options": [
+        "Lisää asetuksia"
+      ],
+      "Signature could not be verified": [
+        "Allekirjoitusta ei voitu vahvistaa"
+      ],
+      "Table of contents": [
+        "Sisällysluettelo"
       ]
     },
     "color": {
@@ -412,6 +424,9 @@
       ],
       "Read or print final document": [
         "Lue tai tulosta lopullinen dokumentti"
+      ],
+      "Use the dropdown above to switch and start making suggestions.": [
+        "Vaihda tilaa yllä olevasta pudotusvalikkosta ja aloita ehdotusten tekeminen."
       ]
     },
     "Error": {
@@ -438,6 +453,15 @@
       ],
       "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
         "Word-asiakirjaa ei voida muuntaa. Jos se on suojattu salasanalla, poista salasana ja yritä uudelleen."
+      ],
+      "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again. If the error persists, please open Version History from the menu options to attempt to restore your document to an earlier version.": [
+        "Dokumentin lataamisessa tapahtui virhe. Editori on lukittu dokumentin korruptoitumisen estämiseksi. Yritä ladata sivu uudelleen. Jos virhe jatkuu, avaa versiohistoria valikkovaihtoehdoista ja yritä palauttaa dokumentti aikaisempaan versioon."
+      ],
+      "There was an error processing updates to the document. Please reload the page and try again.": [
+        "Dokumentin päivityksen käsittelyssä tapahtui virhe. Päivitä sivu ja yritä uudelleen."
+      ],
+      "Tried to import Sheet data into Lexical": [
+        "Yritettiin tuoda taulukon tiedot Lexicaliin"
       ]
     },
     "Error message": {
@@ -450,7 +474,7 @@
     },
     "Font face option": {
       "System default": [
-        "Seuraa järjestelmää"
+        "Järjestelmän oletus"
       ],
       "Theme font": [
         "Teeman fontti"
@@ -537,6 +561,24 @@
       ],
       "You cannot undo this action.": [
         "Et voi kumota toimintoa."
+      ],
+      "Alpha only experimental feature": [
+        "Vain alfavaiheen kokeellinen ominaisuus"
+      ],
+      "Headings you add to the document will appear here.": [
+        "Dokumenttiin lisäämäsi otsikot näkyvät tässä."
+      ],
+      "Highlight": [
+        "Korosta"
+      ],
+      "Importing Excel file...": [
+        "Tuodaan Excel-tiedostoa"
+      ],
+      "Importing ODS file...": [
+        "Tuodaan ODS-tiedostoa"
+      ],
+      "No title": [
+        "Ei otsikkoa"
       ]
     },
     "Label": {
@@ -547,7 +589,7 @@
         "Taustan väri"
       ],
       "Change image size": [
-        "Muokkaa kuvan kokoa"
+        "Muuta kuvan kokoa"
       ],
       "Change indent level": [
         "Muuta sisennystasoa"
@@ -574,16 +616,16 @@
         "Poista taulukko"
       ],
       "Delete table column": [
-        "Poista taulukkosarake"
+        "Poista taulukon sarake"
       ],
       "Delete table row": [
-        "Poista taulukkorivi"
+        "Poista taulukon rivi"
       ],
       "Duplicate table column": [
-        "Luo taulukkosarakkeen kopio"
+        "Monista taulukon sarake"
       ],
       "Duplicate table row": [
-        "Luo taulukkorivin kopio"
+        "Monista taulukon rivi"
       ],
       "Format": [
         "Muoto"
@@ -604,10 +646,10 @@
         "Lisää taulukko"
       ],
       "Insert table column": [
-        "Lisää taulukkosarake"
+        "Lisää taulukkoon sarake"
       ],
       "Insert table row": [
-        "Lisää taulukkorivi"
+        "Lisää taulukkoon rivi"
       ],
       "Keyboard shortcut: ${ shortcut }": [
         "Pikanäppäin: ${ shortcut }"
@@ -629,6 +671,24 @@
       ],
       "Text colour": [
         "Tekstin väri"
+      ],
+      "${ name } background color and white text color": [
+        "${ name } taustaväri ja valkoinen tekstin väri"
+      ],
+      "${ name } text color and highlight": [
+        "${ name } tekstin väri ja korostus"
+      ],
+      "${ name } text color with no background": [
+        "${ name } tekstin väri ilman taustaa"
+      ],
+      "Align": [
+        "Tasaa"
+      ],
+      "Text and highlight color": [
+        "Tekstin ja korostuksen väri"
+      ],
+      "with \"${ replaceWith }\"": [
+        "tekstillä \"${ replaceWith }\""
       ]
     },
     "Placeholder": {
@@ -645,7 +705,7 @@
         "Vastaa..."
       ],
       "Text": [
-        "Teksti"
+        "Tekstitiedosto"
       ]
     },
     "Title": {
@@ -657,6 +717,693 @@
       ],
       "Language not supported": [
         "Kieltä ei tueta"
+      ],
+      "Explore the New Suggestion Mode": [
+        "Kokeile uutta ehdotustilaa"
+      ]
+    },
+    "sheets_2025:Bottom bar": {
+      "All sheets": [
+        "Kaikki taulukot"
+      ],
+      "New sheet": [
+        "Uusi taulukko"
+      ]
+    },
+    "sheets_2025:Color picker": {
+      "Reset": [
+        "Nollaa"
+      ],
+      "Theme colors": [
+        "Teeman värit"
+      ]
+    },
+    "sheets_2025:Range selector menu": {
+      "Add new": [
+        "Lisää uusi"
+      ],
+      "Sheets": [
+        "Taulukot"
+      ]
+    },
+    "sheets_2025:Sheet tab options": {
+      "Change color": [
+        "Muuta väriä"
+      ],
+      "Delete": [
+        "Poista"
+      ],
+      "Hide sheet": [
+        "Piilota taulukko"
+      ],
+      "Move left": [
+        "Siirrä vasemmalle"
+      ],
+      "Move right": [
+        "Siirrä oikealle"
+      ],
+      "Rename": [
+        "Uudelleennimeä"
+      ]
+    },
+    "sheets_2025:Spreadsheet cell tooltip": {
+      "Error": [
+        "Virhe"
+      ],
+      "Invalid": [
+        "Virheellinen"
+      ]
+    },
+    "sheets_2025:Spreadsheet context menu": {
+      "Clear": [
+        "Tyhjennä"
+      ],
+      "Clear content": [
+        "Tyhjennä sisältö"
+      ],
+      "Clear formatting": [
+        "Poista muotoilu"
+      ],
+      "Comma": [
+        "Pilkku"
+      ],
+      "Copy": [
+        "Kopioi"
+      ],
+      "Create a filter": [
+        "Luo suodatin"
+      ],
+      "Delete": [
+        "Poista"
+      ],
+      "Delete column": [
+        "Poista sarake"
+      ],
+      "Delete row": [
+        "Poista rivi"
+      ],
+      "Edit table": [
+        "Muokkaa taulukkoa"
+      ],
+      "Filter": [
+        "Suodatin"
+      ],
+      "Formula only": [
+        "Vain kaava"
+      ],
+      "Hide column": [
+        "Piilota sarake"
+      ],
+      "Hide row": [
+        "Piilota rivi"
+      ],
+      "Insert link": [
+        "Lisää linkki"
+      ],
+      "Link only": [
+        "Vain linkki"
+      ],
+      "Paste": [
+        "Liitä"
+      ],
+      "Period": [
+        "Piste"
+      ],
+      "Remove filter": [
+        "Poista suodatin"
+      ],
+      "Semicolon": [
+        "Puolipiste"
+      ],
+      "Table": [
+        "Taulukko"
+      ],
+      "Values only": [
+        "Vain arvot"
+      ]
+    },
+    "sheets_2025:Spreadsheet context menu (columns/rows)": {
+      "below": [
+        "alla"
+      ],
+      "left": [
+        "vasen"
+      ],
+      "right": [
+        "oikea"
+      ]
+    },
+    "sheets_2025:Spreadsheet delete sheet dialog": {
+      "Cancel": [
+        "Peruuta"
+      ],
+      "Delete": [
+        "Poista"
+      ],
+      "Delete sheet": [
+        "Poista taulukko"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor cell merge options": {
+      "Merge all": [
+        "Yhdistä kaikki"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar data menu": {
+      "Create a filter": [
+        "Luo suodatin"
+      ],
+      "Remove filter": [
+        "Poista suodatin"
+      ],
+      "Sort sheet": [
+        "Lajittele taulukko"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar data menu (sort submenu)": {
+      "(A to Z)": [
+        "(A - Ö)"
+      ],
+      "(Z to A)": [
+        "(Ö - A)"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar edit menu": {
+      "Copy": [
+        "Kopioi"
+      ],
+      "Cut": [
+        "Leikkaa"
+      ],
+      "Find": [
+        "Etsi"
+      ],
+      "Formula only": [
+        "Vain kaava"
+      ],
+      "Paste": [
+        "Liitä"
+      ],
+      "Undo": [
+        "Kumoa"
+      ],
+      "Values only": [
+        "Vain arvot"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar file menu": {
+      "Download": [
+        "Lataa"
+      ],
+      "Download logs": [
+        "Lataa lokitiedot"
+      ],
+      "Help": [
+        "Tuki"
+      ],
+      "Import": [
+        "Tuo"
+      ],
+      "Make a copy": [
+        "Luo kopio"
+      ],
+      "Move to folder": [
+        "Siirrä kansioon"
+      ],
+      "Move to trash": [
+        "Siirrä roskakoriin"
+      ],
+      "New document": [
+        "Uusi dokumentti"
+      ],
+      "New spreadsheet": [
+        "Uusi laskentataulukko"
+      ],
+      "Print": [
+        "Tulosta"
+      ],
+      "See version history": [
+        "Näytä versiohistoria"
+      ],
+      "Settings": [
+        "Asetukset"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar format menu": {
+      "Clear": [
+        "Tyhjennä"
+      ],
+      "Clear content": [
+        "Tyhjennä sisältö"
+      ],
+      "Clear formatting": [
+        "Poista muotoilu"
+      ],
+      "Font size": [
+        "Fonttikoko"
+      ],
+      "Italic": [
+        "Kursivointi"
+      ],
+      "Number": [
+        "Numero"
+      ],
+      "Text": [
+        "Teksti"
+      ],
+      "Theme": [
+        "Teema"
+      ],
+      "Underline": [
+        "Alleviivaus"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar format menu (alignment)": {
+      "Left": [
+        "Vasen"
+      ],
+      "Right": [
+        "Oikea"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar insert menu": {
+      "Cells": [
+        "Solut"
+      ],
+      "Chart": [
+        "Kaavio"
+      ],
+      "Checkbox": [
+        "Valintaruutu"
+      ],
+      "Columns": [
+        "Sarakkeet"
+      ],
+      "Image": [
+        "Kuva"
+      ],
+      "Link": [
+        "Linkki"
+      ],
+      "Rows": [
+        "Rivit"
+      ],
+      "Sheet": [
+        "Taulukko"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar insert menu (columns/rows submenus)": {
+      "above": [
+        "yläpuolelle"
+      ],
+      "below": [
+        "alla"
+      ],
+      "left": [
+        "vasen"
+      ],
+      "right": [
+        "oikea"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar title": {
+      "Edit": [
+        "Muokkaa"
+      ],
+      "File": [
+        "Tiedosto"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar view menu": {
+      "Show": [
+        "Näytä"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor number formats menu": {
+      "$ US Dollar": [
+        "$ Yhdysvaltain dollari"
+      ],
+      "Currency": [
+        "Valuutta"
+      ],
+      "Custom currency": [
+        "Mukautettu valuutta"
+      ],
+      "Date": [
+        "Päivämäärä"
+      ],
+      "Duration": [
+        "Kesto"
+      ],
+      "General": [
+        "Yleiset"
+      ],
+      "Number": [
+        "Numero"
+      ],
+      "Percent": [
+        "Prosentti"
+      ],
+      "Plain text": [
+        "Pelkkä teksti"
+      ],
+      "Time": [
+        "Aika"
+      ],
+      "£ Pound": [
+        "£ Punta"
+      ],
+      "¥ Yen": [
+        "¥ Jeni"
+      ],
+      "€ Euro": [
+        "€ Euro"
+      ],
+      "₹ Rupee": [
+        "₹ Rupia"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor search dialog": {
+      "Close": [
+        "Sulje"
+      ],
+      "Go to previous": [
+        "Siirry edelliseen"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor spreadsheet settings dialog": {
+      "Auto": [
+        "Autom."
+      ],
+      "Cancel": [
+        "Peruuta"
+      ],
+      "Save and reload": [
+        "Tallenna ja lataa uudelleen"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor toolbar": {
+      "Bold": [
+        "Lihavointi"
+      ],
+      "Clear formatting": [
+        "Poista muotoilu"
+      ],
+      "Create a filter": [
+        "Luo suodatin"
+      ],
+      "Find": [
+        "Etsi"
+      ],
+      "Font": [
+        "Fontti"
+      ],
+      "Font size": [
+        "Fonttikoko"
+      ],
+      "Insert chart": [
+        "Lisää kaavio"
+      ],
+      "Insert link": [
+        "Lisää linkki"
+      ],
+      "Italic": [
+        "Kursivointi"
+      ],
+      "More": [
+        "Lisää"
+      ],
+      "Remove filter": [
+        "Poista suodatin"
+      ],
+      "Strikethrough": [
+        "Yliviivaus"
+      ],
+      "Text color": [
+        "Tekstin väri"
+      ],
+      "Underline": [
+        "Alleviivaus"
+      ],
+      "Undo": [
+        "Kumoa"
+      ]
+    },
+    "sheets_2025:Spreadsheet filter menu": {
+      "Apply": [
+        "Käytä"
+      ],
+      "Cancel": [
+        "Peruuta"
+      ],
+      "Clear": [
+        "Tyhjennä"
+      ],
+      "Copy": [
+        "Kopioi"
+      ],
+      "Enter value": [
+        "Syötä arvo"
+      ],
+      "Paste": [
+        "Liitä"
+      ],
+      "Select all": [
+        "Valitse kaikki"
+      ],
+      "Sort A → Z": [
+        "Järjestä A → Ö"
+      ],
+      "Sort Z → A": [
+        "Järjestä Ö → A"
+      ]
+    },
+    "sheets_2025:Spreadsheet insert link dialog": {
+      "Apply": [
+        "Käytä"
+      ],
+      "Cancel": [
+        "Peruuta"
+      ],
+      "Insert link": [
+        "Lisää linkki"
+      ],
+      "Paste link": [
+        "Liitä linkki"
+      ]
+    },
+    "sheets_2025:Spreadsheet link tooltip": {
+      "Copy link": [
+        "Kopioi linkki"
+      ],
+      "Edit link": [
+        "Muokkaa linkkiä"
+      ],
+      "Link removed": [
+        "Linkki poistettu"
+      ],
+      "Remove link": [
+        "Poista linkki"
+      ]
+    },
+    "sheets_2025:Spreadsheet resize dimension dialog": {
+      "Cancel": [
+        "Peruuta"
+      ],
+      "column": [
+        "sarake"
+      ],
+      "Default": [
+        "Oletus"
+      ],
+      "OK": [
+        "OK"
+      ],
+      "row": [
+        "rivi"
+      ],
+      "row height": [
+        "rivin korkeus"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar cell format editor dialog": {
+      "Bold": [
+        "Lihavointi"
+      ],
+      "Cancel": [
+        "Peruuta"
+      ],
+      "Choose Category": [
+        "Valitse kategoria"
+      ],
+      "Color": [
+        "Väri"
+      ],
+      "Effects": [
+        "Efektit"
+      ],
+      "Font": [
+        "Fontti"
+      ],
+      "Font size": [
+        "Fonttikoko"
+      ],
+      "General": [
+        "Yleiset"
+      ],
+      "Italic": [
+        "Kursivointi"
+      ],
+      "Merge": [
+        "Yhdistä"
+      ],
+      "Merge all": [
+        "Yhdistä kaikki"
+      ],
+      "Number": [
+        "Numero"
+      ],
+      "Preview": [
+        "Esikatselu"
+      ],
+      "Save": [
+        "Tallenna"
+      ],
+      "Type": [
+        "Tyyppi"
+      ],
+      "Underline": [
+        "Alleviivaus"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar chart editor dialog": {
+      "Add": [
+        "Lisää"
+      ],
+      "Cancel": [
+        "Peruuta"
+      ],
+      "Enter title": [
+        "Syötä otsikko"
+      ],
+      "Name": [
+        "Nimi"
+      ],
+      "Save": [
+        "Tallenna"
+      ],
+      "Value": [
+        "Arvo"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar conditional format dialog": {
+      "Add another rule": [
+        "Lisää toinen sääntö"
+      ],
+      "Add rule": [
+        "Lisää sääntö"
+      ],
+      "Cancel": [
+        "Peruuta"
+      ],
+      "Close": [
+        "Sulje"
+      ],
+      "Delete rule": [
+        "Poista sääntö"
+      ],
+      "Enter a formula": [
+        "Syötä kaava"
+      ],
+      "Enter value": [
+        "Syötä arvo"
+      ],
+      "Number": [
+        "Numero"
+      ],
+      "Preview": [
+        "Esikatselu"
+      ],
+      "Save": [
+        "Tallenna"
+      ],
+      "Single color": [
+        "Yksivärinen"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar custom currency format dialog": {
+      "Apply": [
+        "Käytä"
+      ],
+      "Cancel": [
+        "Peruuta"
+      ],
+      "Custom currencies": [
+        "Mukautetut valuutat"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar data validation dialog": {
+      "Allow blanks": [
+        "Salli tyhjät"
+      ],
+      "Cancel": [
+        "Peruuta"
+      ],
+      "Enter value": [
+        "Syötä arvo"
+      ],
+      "Formula": [
+        "Kaava"
+      ],
+      "Save": [
+        "Tallenna"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar dialog": {
+      "Close": [
+        "Sulje"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar named ranges dialog": {
+      "Cancel": [
+        "Peruuta"
+      ],
+      "Enter a formula": [
+        "Syötä kaava"
+      ],
+      "Name": [
+        "Nimi"
+      ],
+      "Save": [
+        "Tallenna"
+      ],
+      "Text or formula": [
+        "Teksti tai kaava"
+      ],
+      "Type": [
+        "Tyyppi"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar table editor dialog": {
+      "Cancel": [
+        "Peruuta"
+      ],
+      "Edit table": [
+        "Muokkaa taulukkoa"
+      ],
+      "More settings": [
+        "Lisää asetuksia"
+      ],
+      "Save": [
+        "Tallenna"
+      ],
+      "Table title": [
+        "Taulukon otsikko"
+      ]
+    },
+    "Warning": {
+      "Making suggestions inside code blocks is not supported": [
+        "Koodilohkojen sisälle ei ole mahdollista tehdä ehdotuksia"
       ]
     }
   }

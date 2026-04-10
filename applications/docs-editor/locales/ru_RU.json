@@ -60,7 +60,7 @@
         "Закрыть"
       ],
       "Code block": [
-        "Блокировка кода"
+        "Блок кода"
       ],
       "Color": [
         "Цвет"
@@ -192,7 +192,7 @@
         "Открыть обсуждение"
       ],
       "Strike-through": [
-        "Зачеркнутый"
+        "Зачёркнутый"
       ],
       "Strikethrough": [
         "Зачеркивание"
@@ -208,6 +208,33 @@
       ],
       "Undo": [
         "Отменить"
+      ],
+      "a) b) c) d)": [
+        "a) b) c) d)"
+      ],
+      "A) B) C) D)": [
+        "A) B) C) D)"
+      ],
+      "A. B. C. D.": [
+        "A. B. C. D."
+      ],
+      "a. b. c. d.": [
+        "a. b. c. d."
+      ],
+      "Add suggestion": [
+        "Добавить предложение"
+      ],
+      "Colour": [
+        "Цвет"
+      ],
+      "More options": [
+        "Дополнительные параметры"
+      ],
+      "Signature could not be verified": [
+        "Подпись не может быть подтверждена"
+      ],
+      "Table of contents": [
+        "Оглавление"
       ]
     },
     "color": {
@@ -412,11 +439,17 @@
       ],
       "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
         "Не удается преобразовать документ Word. Защищен ли он паролем? Если да, удалите пароль и повторите попытку."
+      ],
+      "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again. If the error persists, please open Version History from the menu options to attempt to restore your document to an earlier version.": [
+        "При загрузке документа произошла ошибка. Чтобы предотвратить повреждение документа, редактор был заблокирован. Перезагрузите страницу и повторите попытку. Если ошибка не исчезнет, откройте «Историю версий» в меню, чтобы попытаться восстановить документ до более ранней версии."
+      ],
+      "Tried to import Sheet data into Lexical": [
+        "Попытка импорта данных Sheet в Lexical"
       ]
     },
     "Error message": {
       "Please refresh the page or try again later.": [
-        "Пожалуйста, обновите страницу или повторите попытку позже."
+        "Обновите страницу или повторите попытку позже."
       ],
       "Something went wrong": [
         "Что-то пошло не так"
@@ -507,6 +540,21 @@
       ],
       "You cannot undo this action.": [
         "Это действие нельзя отменить."
+      ],
+      "Alpha only experimental feature": [
+        "Экспериментальная функция только для альфа-версии"
+      ],
+      "Font": [
+        "Шрифт"
+      ],
+      "Font size": [
+        "Размер шрифта"
+      ],
+      "Headings you add to the document will appear here.": [
+        "Заголовки, которые вы добавите в документ, появятся здесь."
+      ],
+      "Highlight": [
+        "Выделить"
       ]
     },
     "Label": {
@@ -535,7 +583,7 @@
         "Удалить абзац"
       ],
       "Format": [
-        "Формат"
+        "Форматировать"
       ],
       "Insert": [
         "Вставить"
@@ -566,6 +614,57 @@
       ],
       "Text colour": [
         "Цвет текста"
+      ],
+      "${ name } background color and white text color": [
+        "${ name } цвет фона и белый цвет текста"
+      ],
+      "${ name } text color and highlight": [
+        "${ name } цвет текста и выделение"
+      ],
+      "${ name } text color with no background": [
+        "${ name } цвет текста без фона"
+      ],
+      "Add link": [
+        "Добавить ссылку"
+      ],
+      "Change indent level": [
+        "Изменить уровень отступа"
+      ],
+      "Delete link": [
+        "Удалить ссылку"
+      ],
+      "Delete table": [
+        "Удалить таблицу"
+      ],
+      "Delete table column": [
+        "Удалить столбец таблицы"
+      ],
+      "Delete table row": [
+        "Удалить строку таблицы"
+      ],
+      "Duplicate table column": [
+        "Дублировать столбец таблицы"
+      ],
+      "Duplicate table row": [
+        "Дублировать строку таблицы"
+      ],
+      "Insert table": [
+        "Вставить таблицу"
+      ],
+      "Insert table column": [
+        "Вставить столбец таблицы"
+      ],
+      "Insert table row": [
+        "Вставить строку таблицы"
+      ],
+      "Replace link": [
+        "Заменить ссылку"
+      ],
+      "Text and highlight color": [
+        "Цвет текста и выделения"
+      ],
+      "with \"${ replaceWith }\"": [
+        "с помощью \"${ replaceWith }\""
       ]
     },
     "Placeholder": {
@@ -593,7 +692,29 @@
         "Удалить тему"
       ],
       "Language not supported": [
-        "Язык не поддерживается."
+        "Язык не поддерживается"
+      ],
+      "Explore the New Suggestion Mode": [
+        "Изучить Новый Режим Предложения"
+      ]
+    },
+    "Description": {
+      "Edit document directly": [
+        "Редактирование документа напрямую"
+      ],
+      "Edits become suggestions": [
+        "Правки становятся предложениями"
+      ],
+      "Read or print final document": [
+        "Прочитать или распечатать окончательный документ"
+      ],
+      "Use the dropdown above to switch and start making suggestions.": [
+        "Воспользуйтесь выпадающим меню, чтобы переключиться и начать делать предложения."
+      ]
+    },
+    "Warning": {
+      "Making suggestions inside code blocks is not supported": [
+        "Создание предложений внутри блоков кода не поддерживается"
       ]
     }
   }
