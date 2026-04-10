@@ -7,9 +7,9 @@ import { useInternalBooking } from '../../../store/internalBooking/bookingsHook'
 import { hasUserReachBookingsLimit, hasUserReachPlanLimit } from './upsellHelpers';
 
 export const useBookingUpsell = () => {
-    const [user] = useUser();
+    const [user, loadingUser] = useUser();
     const [bookings] = useInternalBooking();
-    const [subscription] = useSubscription();
+    const [subscription, loadingSubscription] = useSubscription();
     const [organization, loadingOrganization] = useOrganization();
 
     const shouldShowLimitModal = () => {
@@ -32,6 +32,6 @@ export const useBookingUpsell = () => {
 
     return {
         shouldShowLimitModal,
-        loadingLimits: loadingOrganization,
+        loadingLimits: loadingOrganization || loadingUser || loadingSubscription,
     };
 };
