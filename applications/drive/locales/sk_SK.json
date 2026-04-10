@@ -4069,6 +4069,12 @@
       ],
       "Something went wrong while fetching available domains": [
         "Pri načítavaní dostupných domén sa vyskytla chyba"
+      ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } položku sa nepodarilo presunúť",
+        "${ failureItems.length } položky sa nepodarilo presunúť",
+        "${ failureItems.length } položiek sa nepodarilo presunúť",
+        "${ failureItems.length } položiek sa nepodarilo presunúť"
       ]
     },
     "error": {

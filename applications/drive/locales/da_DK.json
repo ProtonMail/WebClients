@@ -1253,6 +1253,9 @@
       ],
       "Refetch index": [
         "Genindlæs indeks"
+      ],
+      "Reconnect to Gmail": [
+        "Genopret forbindelse til Gmail"
       ]
     },
     "Action: Docs": {
@@ -3061,6 +3064,18 @@
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Vi er kede af at du forlader os. Hvis du har et øjeblik, så ville vi sætte stor pris på at høre hvorfor du annullerer. Din feedback hjælper os med at gøre ${ BRAND_NAME } bedre for alle."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Dette kan ske hvis nogle tilladelser blev fjernet, eller din adgangskode blev ændret."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "For at fortsætte med at modtage og sende Gmail-beskeder i ${ BRAND_NAME } skal du genoprette forbindelsen til din konto."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "For at fortsætte med at modtage og sende Gmail-beskeder i ${ BRAND_NAME } skal du genoprette forbindelsen til dine konti."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Vi kan ikke længere få adgang til ${ boldEmails }."
       ]
     },
     "description": {
@@ -3988,6 +4003,12 @@
       ],
       "Something went wrong with search: Not enough storage space.": [
         "Der opstod en fejl under søgningen: Ikke nok lagerplads."
+      ],
+      "Address could not be added.": [
+        "Adressen kunne ikke tilføjes."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Noget gik galt under hentning af tilgængelige domæner"
       ]
     },
     "error": {
@@ -7027,6 +7048,12 @@
       "Move ${ folderCount } folder": [
         "Flyt ${ folderCount } mappe",
         "Flyt ${ folderCount } mapper"
+      ],
+      "Enter code": [
+        "Indtast kode"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Hvis du har mistet adgangen til din godkender-app kan du bruge 1 af de 16 gendannelseskoder som du fik da du satte to-faktor-godkendelses op. ${ learnMoreLink }"
       ]
     },
     "info": {
@@ -9638,6 +9665,9 @@
       ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" delt"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Din ${ BRAND_NAME }-adresse er klar til brug"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13269,6 +13299,9 @@
       ],
       "Search": [
         "Søg"
+      ],
+      "Disconnected from Gmail": [
+        "Forbindelsen til Gmail er afbrudt"
       ]
     },
     "Today icon tooltip in mini calendar": {
