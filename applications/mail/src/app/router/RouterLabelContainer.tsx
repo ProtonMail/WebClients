@@ -203,7 +203,7 @@ export const RouterLabelContainer = ({
                                 elementsData={elementsData}
                                 actions={{ ...actions, handleMove }}
                             />
-                            {categoryViewControl.shouldShowTabs && <CategoriesTabs categoryLabelID={labelID} />}
+                            {categoryViewControl.shouldShowTabs && <CategoriesTabs />}
                         </>
                     }
                     listRef={listRef}

@@ -8,10 +8,7 @@ import type { Api } from '@proton/shared/lib/interfaces';
 import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
 import range from '@proton/utils/range';
 
-import {
-    convertCategoryLabelToCategoryAndInbox,
-    convertCustomViewLabelsToAlmostAllMail,
-} from '../../../helpers/labels';
+import { appendCategoryIDsInInbox, convertCustomViewLabelsToAlmostAllMail } from '../../../helpers/labels';
 import type { Element } from '../../../models/element';
 import type { MailState } from '../../store';
 import { pollTaskRunning } from '../elementsActions';
@@ -24,17 +21,15 @@ const PAGE_FETCH_COUNT = 2;
 const getQueryElementsParameters = ({
     page,
     pageSize,
-    params: { labelID, sort, search, filter, newsletterSubscriptionID },
-    disabledCategoriesIDs,
+    params: { labelID, sort, search, filter, newsletterSubscriptionID, categoryIDs },
 }: Pick<QueryParams, 'page' | 'pageSize'> & {
     params: ElementsStateParams;
-    disabledCategoriesIDs: string[];
 }): MailboxItemsQueryParams => {
     // Use ALMOST_ALL_MAIL as the LabelID when we're viewing a custom view like a newsletter subscription
     let effectiveLabelID: string | string[] = convertCustomViewLabelsToAlmostAllMail(labelID);
 
     // Use [INBOX, CATEGORY_ID] when we're viewing a category to only show elements in both INBOX and CATEGORY_ID
-    effectiveLabelID = convertCategoryLabelToCategoryAndInbox(effectiveLabelID, disabledCategoriesIDs);
+    effectiveLabelID = appendCategoryIDsInInbox(effectiveLabelID, categoryIDs);
 
     // Only send NewsletterSubscriptionID when we're actually in the newsletter subscriptions view
     const shouldIncludeNewsletterSubscriptionID = labelID === CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS;
@@ -78,14 +73,12 @@ export const queryElementsInBatch = async (
         pageSize,
         params,
         abortController,
-        disabledCategoriesIDs,
     }: {
         api: Api;
         page: number;
         pageSize: number;
         params: ElementsStateParams;
         abortController?: AbortController;
-        disabledCategoriesIDs: string[];
     },
     onSerializedResponse?: (param: { result: QueryResults; page: number }) => void
 ) => {
@@ -95,7 +88,6 @@ export const queryElementsInBatch = async (
         page,
         pageSize,
         params,
-        disabledCategoriesIDs,
     });
 
     abortController?.abort();

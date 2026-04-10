@@ -1,7 +1,6 @@
 import { createAction, createAsyncThunk } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import { selectDisabledCategoriesIDs } from '@proton/mail/store/labels/selector';
 import {
     labelAll as labelAllRequest,
     markAllMessagesAsRead,
@@ -73,7 +72,6 @@ export const load = createAsyncThunk<
             );
         };
 
-        const disabledCategoriesIDs = selectDisabledCategoriesIDs(state);
         const result = await queryElementsInBatch(
             {
                 api: extra.api,
@@ -81,7 +79,6 @@ export const load = createAsyncThunk<
                 pageSize,
                 params,
                 abortController,
-                disabledCategoriesIDs,
             },
             onSerializedResponse
         ).catch((error: any | undefined) => {

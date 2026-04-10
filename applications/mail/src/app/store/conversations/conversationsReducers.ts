@@ -11,7 +11,7 @@ import { isDraft } from '@proton/shared/lib/mail/messages';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { mergeConversations } from '../../helpers/conversation';
-import { isElementConversation, parseLabelIDsInEvent } from '../../helpers/elements';
+import { hasLabel, isElementConversation, parseLabelIDsInEvent } from '../../helpers/elements';
 import { isNetworkError } from '../../helpers/errors';
 import type { LabelChanges, UnreadStatus } from '../../helpers/labels';
 import { applyLabelChangesOnConversation, applyLabelChangesOnMessage } from '../../helpers/labels';
@@ -350,7 +350,13 @@ export const markMessagesAsReadPending = (
     action: PayloadAction<
         undefined,
         string,
-        { arg: { messages: MessageMetadata[]; labelID: string; showSuccessNotification?: boolean } }
+        {
+            arg: {
+                messages: MessageMetadata[];
+                labelID: string;
+                showSuccessNotification?: boolean;
+            };
+        }
     >
 ) => {
     const { messages } = action.meta.arg;
@@ -464,7 +470,6 @@ export const markConversationsAsUnreadPending = (
     action: PayloadAction<undefined, string, { arg: { conversations: Conversation[]; labelID: string } }>
 ) => {
     const { conversations, labelID } = action.meta.arg;
-    const isCurrentLabelIDCategory = isCategoryLabel(labelID);
 
     conversations.forEach((conversation) => {
         const conversationLabel = conversation?.Labels?.find((label) => label.ID === labelID);
@@ -481,11 +486,17 @@ export const markConversationsAsUnreadPending = (
                 conversationState.Conversation.ContextNumUnread,
                 1
             );
+
             conversationState.Conversation.NumUnread = safeIncreaseCount(conversationState.Conversation.NumUnread, 1);
+
+            const isConversationInInbox = hasLabel(conversationState.Conversation, MAILBOX_LABEL_IDS.INBOX);
             conversationState.Conversation.Labels?.forEach((label) => {
                 if (label.ID === labelID) {
                     label.ContextNumUnread = safeIncreaseCount(label.ContextNumUnread, 1);
-                } else if (isCurrentLabelIDCategory && label.ID === MAILBOX_LABEL_IDS.INBOX) {
+                }
+
+                // We can update the category label if the conversation is in the inbox
+                if (labelID === MAILBOX_LABEL_IDS.INBOX && isConversationInInbox && isCategoryLabel(label.ID)) {
                     label.ContextNumUnread = safeIncreaseCount(label.ContextNumUnread, 1);
                 }
             });

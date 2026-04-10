@@ -11,7 +11,7 @@ import { isExpired } from '../expiration';
 interface NormalizeProps {
     searchParams: SearchParameters;
     labelID: string;
-    disabledCategoriesIDs: string[];
+    categoryIDs: CategoryLabelID[];
     filter?: Filter;
     sort?: Sort;
 }
@@ -19,23 +19,14 @@ interface NormalizeProps {
 /**
  * Remove wildcard, normalize keyword and recipients
  */
-export const normaliseSearchParams = ({
-    searchParams,
-    labelID,
-    disabledCategoriesIDs,
-    filter,
-    sort,
-}: NormalizeProps) => {
+export const normaliseSearchParams = ({ searchParams, labelID, categoryIDs, filter, sort }: NormalizeProps) => {
     const { wildcard, keyword, to, from, ...otherParams } = searchParams;
     let normalizedKeywords: string[] | undefined;
     if (keyword) {
         normalizedKeywords = normalizeKeyword(keyword);
     }
 
-    const labelIDs = [labelID];
-    if (labelID === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT) {
-        labelIDs.push(...disabledCategoriesIDs);
-    }
+    const labelIDs = [labelID, ...categoryIDs];
 
     const normalisedSearchParams: NormalizedSearchParams = {
         labelIDs,

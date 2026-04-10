@@ -34,6 +34,7 @@ const mockElementsState = (elementIds: string[] = []): ElementsState => ({
     pendingActions: 0,
     params: {
         labelID: 'inbox',
+        categoryIDs: [],
         conversationMode: true,
         sort: { sort: 'Time', desc: true },
         filter: {},

@@ -23,6 +23,7 @@ describe('unLabelConversationsPending', () => {
             elements: {},
             total: {},
             params: {
+                categoryIDs: [],
                 filter: {},
                 conversationMode: true,
             },
@@ -334,6 +335,93 @@ describe('unLabelConversationsPending', () => {
             },
             {
                 ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                ContextNumMessages: 2,
+                ContextNumUnread: 1,
+                ContextNumAttachments: 1,
+            },
+        ]);
+    });
+
+    it('should not remove CATEGORY_SOCIAL label when unlabeling a custom label', () => {
+        const conversation = setupConversation({
+            conversationLabels: [
+                {
+                    ID: MAILBOX_LABEL_IDS.INBOX,
+                    ContextNumMessages: 1,
+                    ContextNumUnread: 1,
+                    ContextNumAttachments: 1,
+                },
+                {
+                    ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                    ContextNumMessages: 2,
+                    ContextNumUnread: 1,
+                    ContextNumAttachments: 1,
+                },
+                {
+                    ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                    ContextNumMessages: 2,
+                    ContextNumUnread: 1,
+                    ContextNumAttachments: 1,
+                },
+                {
+                    ID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                    ContextNumMessages: 2,
+                    ContextNumUnread: 1,
+                    ContextNumAttachments: 1,
+                },
+                {
+                    ID: CUSTOM_LABEL_ID1,
+                    ContextNumMessages: 2,
+                    ContextNumUnread: 1,
+                    ContextNumAttachments: 1,
+                },
+            ] as ConversationLabel[],
+            numUnread: 1,
+            numMessages: 2,
+            numAttachments: 1,
+        });
+
+        testState.elements = {
+            [CONVERSATION_ID]: conversation,
+        };
+
+        unlabelConversationsPending(testState, {
+            type: 'mailbox/unlabelConversations',
+            payload: undefined,
+            meta: {
+                arg: {
+                    conversations: [conversation],
+                    destinationLabelID: CUSTOM_LABEL_ID1,
+                    sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
+                    labels: customLabels,
+                    folders: customFolders,
+                },
+            },
+        });
+
+        const updatedConversation = testState.elements[CONVERSATION_ID] as Conversation;
+
+        expectConversationLabelsSameArray(updatedConversation.Labels, [
+            {
+                ID: MAILBOX_LABEL_IDS.INBOX,
+                ContextNumMessages: 1,
+                ContextNumUnread: 1,
+                ContextNumAttachments: 1,
+            },
+            {
+                ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                ContextNumMessages: 2,
+                ContextNumUnread: 1,
+                ContextNumAttachments: 1,
+            },
+            {
+                ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                ContextNumMessages: 2,
+                ContextNumUnread: 1,
+                ContextNumAttachments: 1,
+            },
+            {
+                ID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
                 ContextNumMessages: 2,
                 ContextNumUnread: 1,
                 ContextNumAttachments: 1,

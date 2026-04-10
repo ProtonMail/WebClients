@@ -18,6 +18,7 @@ import {
     filterElementsInState,
     getElementContextIdentifier,
     getSearchParameters,
+    hasLabel,
     isElementConversation,
     isElementMessage,
     parseElementContextIdentifier,
@@ -109,6 +110,7 @@ export const loadFulfilled = (
 
     const contextFilter = getElementContextIdentifier({
         labelID: params.labelID,
+        categoryIDs: params.categoryIDs,
         conversationMode: params.conversationMode,
         filter: params.filter,
         sort: params.sort,
@@ -156,6 +158,7 @@ export const showSerializedElements = (
 
     const contextFilter = getElementContextIdentifier({
         labelID: params.labelID,
+        categoryIDs: params.categoryIDs,
         conversationMode: params.conversationMode,
         filter: params.filter,
         sort: params.sort,
@@ -231,6 +234,7 @@ export const addESResults = (state: Draft<ElementsState>, action: PayloadAction<
     const params = action.payload.params;
     const contextFilter = getElementContextIdentifier({
         labelID: params.labelID,
+        categoryIDs: params.categoryIDs,
         conversationMode: params.conversationMode,
         filter: params.filter,
         sort: params.sort,
@@ -267,6 +271,7 @@ export const optimisticUpdates = (state: Draft<ElementsState>, action: PayloadAc
 
     const contextFilter = getElementContextIdentifier({
         labelID: params.labelID,
+        categoryIDs: params.categoryIDs,
         conversationMode: params.conversationMode,
         filter: params.filter,
         sort: params.sort,
@@ -312,6 +317,7 @@ export const optimisticUpdates = (state: Draft<ElementsState>, action: PayloadAc
         // When some element bypass the filter in the current context, we need to update total in the "opposite" context
         const oppositeFilter = getElementContextIdentifier({
             labelID: params.labelID,
+            categoryIDs: params.categoryIDs,
             conversationMode: params.conversationMode,
             filter: { Unread: unreadFilter ? 0 : 1 },
             sort: params.sort,
@@ -349,6 +355,7 @@ export const optimisticDelete = (state: Draft<ElementsState>, action: PayloadAct
 
         const contextFilter = getElementContextIdentifier({
             labelID: params.labelID,
+            categoryIDs: params.categoryIDs,
             conversationMode: params.conversationMode,
             filter: params.filter,
             sort: params.sort,
@@ -485,6 +492,7 @@ export const setParams = (
 
     const prevContextFilter = getElementContextIdentifier({
         labelID: state.params.labelID,
+        categoryIDs: state.params.categoryIDs,
         conversationMode: state.params.conversationMode,
         filter: state.params.filter,
         sort: state.params.sort,
@@ -498,6 +506,7 @@ export const setParams = (
 
     const nextContextFilter = getElementContextIdentifier({
         labelID: params.labelID ?? state.params.labelID,
+        categoryIDs: params.categoryIDs ?? state.params.categoryIDs,
         conversationMode: params.conversationMode ?? state.params.conversationMode,
         filter: params.filter,
         sort: params.sort,
@@ -530,6 +539,12 @@ export const setParams = (
         ...state.params,
         ...params,
     };
+
+    // We reset the category IDs when the label is not inbox
+    if (params.labelID && params.labelID !== MAILBOX_LABEL_IDS.INBOX) {
+        state.params.categoryIDs = [];
+    }
+
     if (total !== undefined) {
         state.total[nextContextFilter] = total;
         state.retry = newRetry(state.retry, state.params, undefined);
@@ -572,6 +587,7 @@ const handleBypassFilter = (
         // When some element bypass the filter in the current context, we need to update total in the "opposite" context
         const oppositeFilter = getElementContextIdentifier({
             labelID: state.params.labelID,
+            categoryIDs: state.params.categoryIDs,
             conversationMode: state.params.conversationMode,
             filter: { Unread: unreadFilter ? 0 : 1 },
             sort: state.params.sort,
@@ -772,7 +788,6 @@ export const markConversationsAsUnreadPending = (
     action: PayloadAction<undefined, string, { arg: { conversations: Conversation[]; labelID: string } }>
 ) => {
     const { conversations, labelID } = action.meta.arg;
-    const isCurrentLabelIDCategory = isCategoryLabel(labelID);
 
     conversations.forEach((conversation) => {
         const conversationLabel = conversation?.Labels?.find((label) => label.ID === labelID);
@@ -788,12 +803,16 @@ export const markConversationsAsUnreadPending = (
             return;
         }
 
+        const isConversationInInbox = hasLabel(elementState, MAILBOX_LABEL_IDS.INBOX);
         elementState.ContextNumUnread = safeIncreaseCount(elementState.ContextNumUnread, 1);
         elementState.NumUnread = safeIncreaseCount(elementState.NumUnread, 1);
         elementState.Labels?.forEach((label) => {
             if (label.ID === labelID) {
                 label.ContextNumUnread = safeIncreaseCount(label.ContextNumUnread, 1);
-            } else if (isCurrentLabelIDCategory && label.ID === MAILBOX_LABEL_IDS.INBOX) {
+            }
+
+            // We can update the category label if the conversation is in the inbox
+            if (labelID === MAILBOX_LABEL_IDS.INBOX && isConversationInInbox && isCategoryLabel(label.ID)) {
                 label.ContextNumUnread = safeIncreaseCount(label.ContextNumUnread, 1);
             }
         });
@@ -847,18 +866,61 @@ export const markNewsletterElementsAsReadPending = (
 };
 
 /**
- * Update all the context of the store to reflect the change that was just made
- * To do so, we get the store before and after the action. We use the length difference of the two list to compute the new total count.
+ * Compute the number of elements matching each cached context filter.
+ * Called before mutations to snapshot the counts without cloning the entire store.
+ */
+const computeFilteredCounts = (state: Draft<ElementsState>): Record<string, number> => {
+    const currentContextIdentifier = getElementContextIdentifier({
+        labelID: state.params.labelID,
+        categoryIDs: state.params.categoryIDs,
+        conversationMode: state.params.conversationMode,
+        filter: state.params.filter,
+        sort: state.params.sort,
+        from: state.params.search?.from,
+        to: state.params.search?.to,
+        address: state.params.search?.address,
+        begin: state.params.search?.begin,
+        end: state.params.search?.end,
+        keyword: state.params.search?.keyword,
+    });
+    const elements = Object.values(state.elements);
+    const counts: Record<string, number> = {};
+
+    Object.keys(state.total).forEach((contextIdentifier) => {
+        const context = parseElementContextIdentifier(contextIdentifier);
+        if (!context) {
+            return;
+        }
+
+        counts[contextIdentifier] = filterElementsInState({
+            elements,
+            bypassFilter: currentContextIdentifier === contextIdentifier ? state.bypassFilter : [],
+            labelID: context.labelID,
+            categoryIDs: context.categoryIDs,
+            filter: context.filter || {},
+            conversationMode: context.conversationMode,
+            search: getSearchParameters(context),
+            newsletterSubscriptionID: context.newsletterSubscriptionID,
+        }).length;
+    });
+
+    return counts;
+};
+
+/**
+ * Update all the context of the store to reflect the change that was just made.
+ * Compares the element counts before and after the action to compute the new total for each cached context.
  */
 const updateTotal = ({
     state,
-    elementsBeforeAction,
+    countsBeforeAction,
 }: {
     state: Draft<ElementsState>;
-    elementsBeforeAction: Element[];
+    countsBeforeAction: Record<string, number>;
 }) => {
     const currentContextIdentifier = getElementContextIdentifier({
         labelID: state.params.labelID,
+        categoryIDs: state.params.categoryIDs,
         conversationMode: state.params.conversationMode,
         filter: state.params.filter,
         sort: state.params.sort,
@@ -877,34 +939,23 @@ const updateTotal = ({
             return;
         }
 
-        // Local filtering of state before change for the current context
-        const beforeChangeFiltered = filterElementsInState({
-            elements: elementsBeforeAction,
-            bypassFilter: currentContextIdentifier === contextIdentifier ? state.bypassFilter : [],
-            labelID: context.labelID,
-            filter: context.filter || {},
-            conversationMode: context.conversationMode,
-            search: getSearchParameters(context),
-            newsletterSubscriptionID: context.newsletterSubscriptionID,
-            disabledCategoriesIDs: [],
-        });
+        const countBefore = countsBeforeAction[contextIdentifier] ?? 0;
 
-        // Local filtering of state after change for the current context
-        const filteredElements = filterElementsInState({
+        const countAfter = filterElementsInState({
             elements,
             bypassFilter: currentContextIdentifier === contextIdentifier ? state.bypassFilter : [],
             labelID: context.labelID,
+            categoryIDs: context.categoryIDs,
             filter: context.filter || {},
             conversationMode: context.conversationMode,
             search: getSearchParameters(context),
             newsletterSubscriptionID: context.newsletterSubscriptionID,
-            disabledCategoriesIDs: [],
-        });
+        }).length;
 
         const totalBefore = state.total[contextIdentifier] || 0;
 
         // The new total is the current total minus the difference between the number of elements before and after filtering
-        state.total[contextIdentifier] = totalBefore - (beforeChangeFiltered.length - filteredElements.length);
+        state.total[contextIdentifier] = totalBefore - (countBefore - countAfter);
     });
 };
 
@@ -925,7 +976,7 @@ export const labelMessagesPending = (
     >
 ) => {
     const { messages, sourceLabelID, destinationLabelID, labels, folders } = action.meta.arg;
-    const elementsBeforeAction = structuredClone(Object.values(state.elements));
+    const countsBeforeAction = computeFilteredCounts(state);
 
     messages.forEach((message) => {
         // Update conversation first because we need to have the initial state of the element
@@ -949,7 +1000,7 @@ export const labelMessagesPending = (
         applyLabelToMessage(elementState, destinationLabelID, folders, labels);
     });
 
-    updateTotal({ state, elementsBeforeAction });
+    updateTotal({ state, countsBeforeAction });
 };
 
 export const unlabelMessagesPending = (
@@ -969,7 +1020,7 @@ export const unlabelMessagesPending = (
     >
 ) => {
     const { messages, destinationLabelID, labels } = action.meta.arg;
-    const elementsBeforeAction = structuredClone(Object.values(state.elements));
+    const countsBeforeAction = computeFilteredCounts(state);
 
     messages.forEach((message) => {
         const conversationElementState = state.elements[message.ConversationID];
@@ -986,7 +1037,7 @@ export const unlabelMessagesPending = (
         removeLabelFromMessage(elementState, destinationLabelID, labels);
     });
 
-    updateTotal({ state, elementsBeforeAction });
+    updateTotal({ state, countsBeforeAction });
 };
 
 export const labelMessagesRejected = (
@@ -1027,7 +1078,7 @@ export const labelConversationsPending = (
     >
 ) => {
     const { conversations, sourceLabelID, destinationLabelID, labels, folders } = action.meta.arg;
-    const elementsBeforeAction = structuredClone(Object.values(state.elements));
+    const countsBeforeAction = computeFilteredCounts(state);
 
     conversations.forEach((conversation) => {
         const conversationState = state.elements[conversation.ID];
@@ -1048,7 +1099,7 @@ export const labelConversationsPending = (
         });
     });
 
-    updateTotal({ state, elementsBeforeAction });
+    updateTotal({ state, countsBeforeAction });
 };
 
 export const unlabelConversationsPending = (
@@ -1068,7 +1119,7 @@ export const unlabelConversationsPending = (
     >
 ) => {
     const { conversations, destinationLabelID, labels } = action.meta.arg;
-    const elementsBeforeAction = structuredClone(Object.values(state.elements));
+    const countsBeforeAction = computeFilteredCounts(state);
 
     conversations.forEach((conversation) => {
         const conversationState = state.elements[conversation.ID];
@@ -1089,5 +1140,5 @@ export const unlabelConversationsPending = (
         });
     });
 
-    updateTotal({ state, elementsBeforeAction });
+    updateTotal({ state, countsBeforeAction });
 };

@@ -16,11 +16,9 @@ describe('useCategoriesShortcuts', () => {
         it('should return inbox shortcuts if flag is disabled', () => {
             mockUseCategoriesView.mockReturnValue({
                 categoriesStore: [],
-                categoriesTabs: [],
                 activeCategoriesTabs: [],
                 categoryViewAccess: false,
                 shouldShowTabs: false,
-                disabledCategoriesIDs: [],
             });
 
             const { result } = renderHook(() => useCategoriesShortcuts());
@@ -40,11 +38,9 @@ describe('useCategoriesShortcuts', () => {
         it('should return inbox shortcuts if there is no active categories', () => {
             mockUseCategoriesView.mockReturnValue({
                 categoriesStore: [],
-                categoriesTabs: [],
                 activeCategoriesTabs: [],
                 categoryViewAccess: true,
                 shouldShowTabs: true,
-                disabledCategoriesIDs: [],
             });
 
             const { result } = renderHook(() => useCategoriesShortcuts());
@@ -64,11 +60,9 @@ describe('useCategoriesShortcuts', () => {
         it('should return only inbox if categories are disabled', () => {
             mockUseCategoriesView.mockReturnValue({
                 categoriesStore: mockCategoriesStore,
-                categoriesTabs: mockActiveCategoriesData,
                 activeCategoriesTabs: mockActiveCategoriesData,
                 categoryViewAccess: false,
                 shouldShowTabs: false,
-                disabledCategoriesIDs: [],
             });
 
             const { result } = renderHook(() => useCategoriesShortcuts());
@@ -81,11 +75,9 @@ describe('useCategoriesShortcuts', () => {
         it('should return all activated categories', () => {
             mockUseCategoriesView.mockReturnValue({
                 categoriesStore: mockCategoriesStore,
-                categoriesTabs: mockActiveCategoriesData,
                 activeCategoriesTabs: mockActiveCategoriesData,
                 categoryViewAccess: true,
                 shouldShowTabs: true,
-                disabledCategoriesIDs: [],
             });
 
             const { result } = renderHook(() => useCategoriesShortcuts());
@@ -96,7 +88,6 @@ describe('useCategoriesShortcuts', () => {
         it('should return only the activated categories', () => {
             mockUseCategoriesView.mockReturnValue({
                 categoriesStore: mockCategoriesStore,
-                categoriesTabs: mockActiveCategoriesData,
                 activeCategoriesTabs: [
                     mockActiveCategoriesData[0],
                     mockActiveCategoriesData[1],
@@ -104,7 +95,6 @@ describe('useCategoriesShortcuts', () => {
                 ],
                 categoryViewAccess: true,
                 shouldShowTabs: true,
-                disabledCategoriesIDs: [],
             });
 
             const { result } = renderHook(() => useCategoriesShortcuts());

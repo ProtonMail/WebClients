@@ -384,4 +384,77 @@ describe('conversation counts - unlabel messages', () => {
             skippedLabelIDs: [CUSTOM_LABEL_ID1],
         });
     });
+
+    it('should not affect category counter when unlabeling a custom label from a message with CATEGORY_SOCIAL', () => {
+        const message1 = {
+            ConversationID: 'conversationID',
+            LabelIDs: [
+                MAILBOX_LABEL_IDS.INBOX,
+                MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                MAILBOX_LABEL_IDS.ALL_MAIL,
+                CUSTOM_LABEL_ID1,
+                MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+            ],
+            Unread: 1,
+        } as Message;
+
+        const conversation = {
+            ID: 'conversationID',
+            Labels: [
+                {
+                    ID: MAILBOX_LABEL_IDS.INBOX,
+                    ContextNumMessages: 1,
+                    ContextNumUnread: 1,
+                    ContextNumAttachments: 1,
+                },
+                {
+                    ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                    ContextNumMessages: 2,
+                    ContextNumUnread: 1,
+                    ContextNumAttachments: 1,
+                },
+                {
+                    ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                    ContextNumMessages: 2,
+                    ContextNumUnread: 1,
+                    ContextNumAttachments: 1,
+                },
+                {
+                    ID: CUSTOM_LABEL_ID1,
+                    ContextNumMessages: 1,
+                    ContextNumUnread: 1,
+                    ContextNumAttachments: 1,
+                },
+                {
+                    ID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                    ContextNumMessages: 1,
+                    ContextNumUnread: 1,
+                    ContextNumAttachments: 1,
+                },
+            ],
+            NumMessages: 2,
+            NumUnread: 1,
+            NumAttachments: 1,
+        } as Conversation;
+
+        unlabelMessagesPending(state, {
+            type: 'mailbox/unlabelMessages',
+            payload: {
+                messages: [message1],
+                destinationLabelID: CUSTOM_LABEL_ID1,
+                conversations: [conversation],
+                labels: customLabels,
+            },
+        });
+
+        const updatedCounters = state.value as LabelCount[];
+
+        const categorySocialCount = updatedCounters.find((c) => c.LabelID === MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
+        expect(categorySocialCount).toEqual({ LabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL, Unread: 1, Total: 2 });
+
+        checkUpdatedCounters({
+            updatedCounters,
+            skippedLabelIDs: [CUSTOM_LABEL_ID1],
+        });
+    });
 });

@@ -5,9 +5,7 @@ type UseCategoriesDataReturnType = ReturnType<typeof useCategoriesDataModule.use
 export const mockUseCategoriesData = (params?: Partial<UseCategoriesDataReturnType>) => {
     const value: UseCategoriesDataReturnType = {
         categoriesStore: [],
-        categoriesTabs: [],
         activeCategoriesTabs: [],
-        disabledCategoriesIDs: [],
         categoryViewAccess: false,
         ...params,
     };
