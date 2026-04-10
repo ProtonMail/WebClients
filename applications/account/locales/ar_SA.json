@@ -745,6 +745,12 @@
       "Hide plan features": [
         "إخفاء ميزات الخطة"
       ],
+      "I don't have my phrase": [
+        "ليس لدي عبارة الاسترداد"
+      ],
+      "I don’t have my phone": [
+        "ليس لدي هاتفي"
+      ],
       "Ignore": [
         "تجاهل"
       ],
@@ -8013,6 +8019,9 @@
         "${ countriesCount } بلدًا مفعلًا",
         "${ countriesCount } بلدًا مفعلًا"
       ],
+      "${ DataLockedText }, but recoverable with your ${ RecoveryContactsLink }:": [
+        "${ DataLockedText }، ولكن يمكن استعادتها باستخدام ${ RecoveryContactsLink }:"
+      ],
       "${ discountPercent }% discount": [
         "خصم ${ discountPercent }%"
       ],
@@ -8530,11 +8539,17 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "يُشبه البريد الإلكتروني المستعار عنوان البريد الإلكتروني، ويَعمُلُ على تقليل الرسائل المزعجة وإخفاء بريدك وهويتك الحقيقية."
       ],
+      "An email with a verification code was just sent to ${ emailAddress }. If you can’t find the message in your inbox, please check your spam folder.": [
+        "تم إرسال رسالة بريد إلكتروني تحتوي على رمز تحقق إلى ${ emailAddress }. إذا لم تجد الرسالة في صندوق الوارد، يُرجى التحقق من مجلد الرسائل غير المرغوب فيها."
+      ],
       "An error occurred while communicating with **${ applicationName }**": [
         "حدث خطأ أثناء الاتصال بـ **${ applicationName }**"
       ],
       "An error occurred while communicating with the extension": [
         "حدث خطأ أثناء التواصل مع الملحق"
+      ],
+      "An SMS with a verification code was just sent to ${ phoneNumber }.": [
+        "تم إرسال رسالة نصية (SMS) تحتوي على رمز تحقق إلى ${ phoneNumber }."
       ],
       "and": [
         "و"
@@ -8589,6 +8604,9 @@
       ],
       "Are you sure you want to sort your labels alphabetically?": [
         "هل أنت متأكد من رغبتك في فرز تسمياتك أبجديًا؟"
+      ],
+      "Ask them to sign in to their ${ ACCOUNT_APP_NAME } in the browser, and go to **Settings → All settings → Recovery → Emergency access→ People who trust me.**": [
+        "اطلب منهم تسجيل الدخول إلى ${ ACCOUNT_APP_NAME } في المتصفح، وانتقل إلى **الإعدادات → جميع الإعدادات → الاسترداد → الوصول في حالات الطوارئ → الأشخاص الذين يثقون بي. **"
       ],
       "Ask your organization admin to setup Gateways.": [
         "اطلب من مسؤول مؤسستك إعداد البوابات."
@@ -8680,6 +8698,9 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "من خلال مشاركة تفاصيل الحدث الكاملة لهذا التقويم، فإنك توافق على منح ${ BRAND_NAME } وصولاً إلى معلومات هذا التقويم المشفرة."
       ],
+      "Can you reach out to your contact?": [
+        "هل يمكنك التواصل مع جهة الاتصال الخاصة بك؟"
+      ],
       "Cancel anytime": [
         "يمكن الإلغاء في أي وقت"
       ],
@@ -8709,6 +8730,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "انقر فوق \"طلب رمز جديد\" للحصول على رمز تحقق جديد أرسل إلى ${ strong }. إذا كان رقم الهاتف هذا غير صحيح، انقر فوق \"تعديل\" لتصحيحه."
+      ],
+      "Click **Request password reset** and follow the prompts.": [
+        "انقر فوق **طلب إعادة تعيين كلمة المرور** واتبع المطالبات."
       ],
       "Click the icon to open it anytime.": [
         "انقر على الأيقونة لفتحه في أي وقت."
@@ -8857,6 +8881,9 @@
       "Data recoverable on this device": [
         "البيانات القابلة للاسترداد على هذا الجهاز"
       ],
+      "Data recoverable with recovery phrase": [
+        "البيانات قابلة للاسترداد باستخدام عبارة الاسترداد"
+      ],
       "dedicated servers": [
         "خوادم مخصصة"
       ],
@@ -8888,6 +8915,9 @@
         "جارٍ حذف ${ deletedServerCount } خوادم بوابة",
         "جارٍ حذف ${ deletedServerCount } خوادم بوابة",
         "جارٍ حذف ${ deletedServerCount } خوادم بوابة"
+      ],
+      "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
+        "اعتمادًا على إعداداتك، قد يحصلون على إمكانية الوصول فورًا أو بعد **فترة انتظار محددة.**"
       ],
       "Did you know?": [
         "هل تعلم؟"
@@ -9077,6 +9107,9 @@
       "Enter new password for user ${ userName }.": [
         "أدخل كلمة مرور جديدة للمستخدم ${ userName }."
       ],
+      "Enter the 12-word recovery phrase associated with your account.": [
+        "أدخل عبارة الاسترداد المكونة من 12 كلمة المرتبطة بحسابك."
+      ],
       "Enter the code from your authenticator app": [
         "أدخل الرمز من تطبيق المصادقة لديك"
       ],
@@ -9194,6 +9227,9 @@
       "Free trial": [
         "فترة تجريبية مجانية"
       ],
+      "From there, they can request emergency access to your account by clicking **Request access.**": [
+        "من هناك، يمكنهم طلب الوصول الطارئ إلى حسابك بالنقر فوق **طلب الوصول. **"
+      ],
       "Gateway couldn't be deleted. Please try again": [
         "تعذّر حذف البوابة. يُرجى المحاولة مرة أخرى."
       ],
@@ -9214,6 +9250,9 @@
       ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "احصل على حق الوصول عن طريق إنشاء حساب ${ BRAND_NAME } وقبول الدعوة."
+      ],
+      "Get in touch with your emergency contacts, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed**.": [
+        "تواصل مع جهات اتصال الطوارئ الخاصة بك، لمعرفة ما إذا كان بإمكانهم المساعدة. بعد طلب الوصول الطارئ إلى حسابك، سيتمكنون من تغيير كلمة المرور الخاصة بك **بعد مرور وقت الانتظار للوصول**."
       ],
       "Get it on Google Play": [
         "احصل عليه من Google Play"
@@ -9260,6 +9299,12 @@
       "How it works": [
         "كيفية العمل"
       ],
+      "How to perform a signed-in reset": [
+        "كيفية إجراء إعادة تعيين تسجيل الدخول"
+      ],
+      "How your emergency contact can change your password for you:": [
+        "كيف يمكن لجهة اتصال الطوارئ الخاصة بك تغيير كلمة المرور الخاصة بك من أجلك:"
+      ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "المفتاح العمومي لمقدم خدمات الهوية لتوقيع تأكيدات المصادقة. ينبغي أن يكون هناك مكان لتنزيل أو نسخ شهادة التشفير من موفر الهوية. الصق شهادة التشفير في منطقة النص."
       ],
@@ -9281,6 +9326,9 @@
       "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
         "إذا كنت مسجلاً دخولك في مكان آخر، فقد تتمكن من ${ signedInPasswordResetLink }."
       ],
+      "If you are signed in to a ${ BRAND_NAME } web app in **another browser**, you may be able to perform a password reset from your active session.": [
+        "إذا قمت بتسجيل الدخول إلى تطبيق ويب ${ BRAND_NAME } في **متصفح آخر**، فقد تتمكن من إعادة تعيين كلمة المرور من جلستك النشطة."
+      ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "إذا كنت تعتقد أن هذا حدث بالخطأ، يرجى الاتصال بنا ${ contactLink }."
       ],
@@ -9298,6 +9346,9 @@
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "إذا كان لديك رمز هدية، قم بإدخاله في الخانة التالية لتحصل على خصم."
+      ],
+      "If you have emergency contacts, get in touch with them, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed.**": [
+        "إذا كان لديك جهات اتصال في حالات الطوارئ، فاتصل بهم، لمعرفة ما إذا كان بإمكانهم المساعدة. بعد طلب الوصول الطارئ إلى حسابك، سيتمكنون من تغيير كلمة المرور الخاصة بك ** بعد مرور وقت الانتظار للوصول. **"
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "إذا فقدت الوصول إلى جهاز المصادقة الثنائية، يمكنك استخدام الرموز الاحتياطية لتسجيل الدخول إلى حسابك. يستخدم الرمز الاحتياطي مرة واحدة فقط."
@@ -9747,6 +9798,9 @@
       "Open the guide for recommended actions and helpful links.": [
         "افتح الدليل للاطلاع على الإجراءات الموصى بها والروابط المفيدة."
       ],
+      "Open your active session in the browser, and go to **Settings → All settings → Recovery → Password reset settings.**": [
+        "افتح جلستك النشطة في المتصفح، وانتقل إلى **الإعدادات → جميع الإعدادات → الاسترداد → إعدادات إعادة تعيين كلمة المرور. **"
+      ],
       "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
         "افتح إعدادات سفاري للملحق وتحقق من تفعيل أذونات الموقع لنطاقات ${ BRAND_NAME }"
       ],
@@ -9965,6 +10019,9 @@
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "موصى به على الأجهزة الموثوقة ${ keepMeSignedInLearnMoreLink }"
       ],
+      "Recovery file": [
+        "ملف الاسترداد"
+      ],
       "Recovery file downloaded": [
         "تم تنزيل ملف الاسترداد"
       ],
@@ -9973,6 +10030,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "ستبقى معلومات الاسترداد على هذا الجهاز ما لم تحدد حذفها."
+      ],
+      "Recovery phrase": [
+        "عبارة الاسترداد"
       ],
       "Recovery phrase copied to clipboard": [
         "تم نسخ عبارة الاسترداد في الحافظة"
@@ -10012,6 +10072,9 @@
       ],
       "Resend verification email": [
         "إعادة إرسال البريد الإلكتروني للتحقق"
+      ],
+      "Resetting your password in your active web session will ensure **your encrypted data will remain accessible** after you change your password.": [
+        "ستضمن إعادة تعيين كلمة المرور الخاصة بك في جلسة الويب النشطة ** ستظل بياناتك المشفرة متاحة ** بعد تغيير كلمة المرور الخاصة بك."
       ],
       "Restore": [
         "استعِد"
@@ -10745,6 +10808,9 @@
       "We couldn’t process your payment.": [
         "تعذر علينا معالجة دفعتك."
       ],
+      "We detected you are already signed in to a ${ BRAND_NAME } web app on **another browser**. You may be able to perform a password reset from your active session.": [
+        "اكتشفنا أنك قمت بتسجيل الدخول بالفعل إلى تطبيق ويب ${ BRAND_NAME } على **متصفح آخر**. قد تتمكن من إعادة تعيين كلمة المرور من جلستك النشطة."
+      ],
       "We generated a strong password for you": [
         "لقد أنشأنا لك كلمة مرور قوية"
       ],
@@ -10795,6 +10861,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "سنرسل رمز تحقق جديدًا إلى ${strong}"
+      ],
+      "Web sessions detected:": [
+        "تم اكتشاف جلسات الويب:"
       ],
       "Web URL": [
         "عنوان ويب"
@@ -10985,6 +11054,12 @@
       "You can now close this window.": [
         "يمكنك الآن إغلاق هذه النافذة."
       ],
+      "You can now reset your password to regain access to your account.": [
+        "يمكنك الآن إعادة تعيين كلمة المرور لاستعادة الوصول إلى حسابك."
+      ],
+      "You can now reset your password to regain access to your account. **This will disable 2-factor authentication.**": [
+        "يمكنك الآن إعادة تعيين كلمة المرور الخاصة بك لاستعادة الوصول إلى حسابك. **سيعطيل هذا المصادقة الثنائية. **"
+      ],
       "You can now return to the application to continue": [
         "يمكنك الآن العودة إلى التطبيق للمتابعة"
       ],
@@ -11087,6 +11162,9 @@
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "ستحتاج إلى عنوان ${ BRAND_NAME } لاستخدام ${ MAIL_APP_NAME } و${ CALENDAR_APP_NAME }"
       ],
+      "You will regain complete or partial access to your encrypted data.": [
+        "سوف تستعيد الوصول الكامل أو الجزئي إلى بياناتك المشفرة."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "سيتم توجيهك قريبًا إلى PayPal للتحقق من عملية الدفع."
       ],
@@ -11155,6 +11233,12 @@
       "Your email will only be used for this one-time verification.": [
         "سيتم استخدام بريدك الإلكتروني فقط لهذا التحقق لمرة واحدة."
       ],
+      "Your encrypted data will be locked": [
+        "سيتم قفل بياناتك المشفرة"
+      ],
+      "your encrypted data will be locked": [
+        "سيتم قفل بياناتك المشفرة"
+      ],
       "Your files will be encrypted and then saved": [
         "ستُشفر ملفاتك ثم تُحفظ"
       ],
@@ -11181,6 +11265,9 @@
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "تاريخ الفوترة التالي هو ${ renewalTime }. يمكنك الإلغاء في أي وقت. يرجى الاتصال بالدعم إذا كنت بحاجة إلى تغيير فوري في الخطة."
+      ],
+      "Your old password": [
+        "كلمة المرور القديمة الخاصة بك"
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "تستخدم مؤسستك تسجيل الدخول الأحادي (SSO). اضغط على تسجيل الدخول للمتابعة مع موفر خدمة SSO الخاص بك."
@@ -13073,11 +13160,17 @@
       "Common sign up issues": [
         "المشكلات الشائعة في تسجيل"
       ],
+      "contacts’ assistance": [
+        "مساعدة جهات الاتصال"
+      ],
       "Create account": [
         "إنشاء حساب"
       ],
       "Create an alias": [
         "إنشاء اسم مستعار"
+      ],
+      "Details": [
+        "تفاصيل"
       ],
       "Downloads": [
         "التنزيلات"
@@ -13545,9 +13638,6 @@
       ],
       "60 minutes per meeting": [
         "60 دقيقة لكل اجتماع"
-      ],
-      "Appointment scheduling": [
-        "جدولة المواعيد"
       ],
       "Booking pages": [
         "صفحات الحجز"
@@ -18439,12 +18529,10 @@
         "${ DRIVE_APP_NAME } للأعمال"
       ],
       "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
-        "${ FREE_PASS_ALIASES } من أسماء hide-my-email المستعارة لمكافحة البريد المزعج",
-        "اسم مستعار واحد (${ FREE_PASS_ALIASES }) من hide-my-email لمكافحة البريد المزعج",
-        "اسمان مستعاران (${ FREE_PASS_ALIASES }) من hide-my-email لمكافحة البريد المزعج",
-        "${ FREE_PASS_ALIASES } من أسماء hide-my-email المستعارة لمكافحة البريد المزعج",
-        "${ FREE_PASS_ALIASES } من أسماء hide-my-email المستعارة لمكافحة البريد المزعج",
-        "${ FREE_PASS_ALIASES } من أسماء hide-my-email المستعارة لمكافحة البريد المزعج"
+        "${ FREE_PASS_ALIASES } عناوين hide-my-email لمكافحة الرسائل المزعجة"
+      ],
+      "${ MAIL_SHORT_APP_NAME } Free": [
+        "${ MAIL_SHORT_APP_NAME } مجانا"
       ],
       "${ maxAddresses } addresses": [
         "${ maxAddresses } العناوين",
@@ -18629,6 +18717,9 @@
       "Gifted by **${ referrerName }**": [
         "مُهداة من **${ referrerName }**"
       ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "حافظ على خصوصية محادثاتك مع ${ MAIL_APP_NAME }"
+      ],
       "Manage user access": [
         "إدارة وصول المستخدم"
       ],
@@ -18653,6 +18744,9 @@
       "Password manager for all your devices": [
         "مدير كلمات المرور لجميع أجهزتك"
       ],
+      "Password-protected messages": [
+        "رسائل محمية بكلمة مرور"
+      ],
       "Pick a service to get started.": [
         "اختر خدمة للبدء."
       ],
@@ -18675,6 +18769,9 @@
         "تأمين ${ VPN_CONNECTIONS } أجهزة دفعة واحدة",
         "تأمين ${ VPN_CONNECTIONS } جهازًا دفعة واحدة",
         "تأمين ${ VPN_CONNECTIONS } جهازًا دفعة واحدة"
+      ],
+      "Secure calendar": [
+        "تقويم آمن"
       ],
       "Secure file sharing": [
         "مشاركة الملفات بشكل آمن"
@@ -18782,18 +18879,16 @@
         "استخدم بريدك الإلكتروني."
       ],
       "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
-        "VPN بخوادم في ${ vpnServersCountData.free.countries } من البلدان",
-        "VPN مع خوادم في دولة واحدة (${ vpnServersCountData.free.countries })",
-        "VPN مع خوادم في دولتين (${ vpnServersCountData.free.countries })",
-        "VPN بخوادم في ${ vpnServersCountData.free.countries } بلدان",
-        "VPN بخوادم في ${ vpnServersCountData.free.countries } بلدًا",
-        "VPN بخوادم في ${ vpnServersCountData.free.countries } بلدًا"
+        "VPN مع خوادم في دول ${ vpnServersCountData.free.countries }"
       ],
       "We’ll email you before your trial ends.": [
         "سنرسل إليك بريدًا إلكترونيًا قبل انتهاء الفترة التجريبية."
       ],
       "Yearly": [
         "سنويًا"
+      ],
+      "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
+        "يتضمن حسابك إمكانية الوصول إلى الميزات المجانية في ${ MAIL_SHORT_APP_NAME } و${ CALENDAR_SHORT_APP_NAME } و${ DRIVE_SHORT_APP_NAME } و${ VPN_SHORT_APP_NAME } و${ PASS_SHORT_APP_NAME } و${ LUMO_SHORT_APP_NAME }."
       ],
       "Your plan": [
         "خطة اشتراكك"
@@ -20929,6 +21024,9 @@
       "Apply gift code": [
         "تطبيق رمز الهدية"
       ],
+      "Are you already signed in to ${ BRAND_NAME } in a browser?": [
+        "هل قمت بالفعل بتسجيل الدخول إلى ${ BRAND_NAME } في المتصفح؟"
+      ],
       "Are you sure you want to close the preview?": [
         "هل أنت متأكد أنك تريد إغلاق المعاينة؟"
       ],
@@ -20937,6 +21035,9 @@
       ],
       "Are you sure?": [
         "هل أنت متأكد؟"
+      ],
+      "Ask your emergency contacts for help": [
+        "اطلب المساعدة من جهات اتصال الطوارئ الخاصة بك"
       ],
       "Auto-deletion is active": [
         "الحذف التلقائي نشط"
@@ -20952,6 +21053,12 @@
       ],
       "Block trackers and malware": [
         "حظر المتتبعات والبرامج الضارة"
+      ],
+      "Can you access your session in the browser?": [
+        "هل يمكنك الوصول إلى جلستك في المتصفح؟"
+      ],
+      "Can you reach out to your emergency contacts?": [
+        "هل يمكنك التواصل مع جهات الاتصال الخاصة بك في حالات الطوارئ؟"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "إلغاء اشتراك ${ MAIL_SHORT_APP_NAME }"
@@ -21063,6 +21170,9 @@
       ],
       "Couldn’t create accounts": [
         "تعذر إنشاء الحسابات"
+      ],
+      "Couldn’t recover your account": [
+        "تعذر استرداد حسابك"
       ],
       "Coupon": [
         "قسيمة"
@@ -21792,6 +21902,9 @@
       "Reconnect your account": [
         "إعادة الاتصال بحسابك"
       ],
+      "Recover account": [
+        "استرداد الحساب"
+      ],
       "Recover data": [
         "استعادة البيانات"
       ],
@@ -22103,6 +22216,9 @@
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "جرب ${ AUTHENTICATOR_APP_NAME }"
       ],
+      "Try changing your password in your active web session": [
+        "حاول تغيير كلمة المرور الخاصة بك في جلسة الويب النشطة الخاصة بك"
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "تشغيل ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -22168,6 +22284,9 @@
       ],
       "Verification failed": [
         "فشل التحقق"
+      ],
+      "Verify it’s you": [
+        "تحقق من أنك أنت"
       ],
       "Verifying your card...": [
         "جارٍ التحقق من بطاقتك..."
@@ -22814,6 +22933,9 @@
       ]
     },
     "user_modal": {
+      "Add delegated roles to a user to grant them only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
+        "أضف أدوارا مفوضة إلى مستخدم لمنحه الأذونات المحددة التي يحتاجونها فقط، مع الحفاظ على فصل قوة المشرف الكاملة وبيئتك آمنة."
+      ],
       "Add multiple users": [
         "إضافة عدة مستخدمين"
       ],
@@ -22838,11 +22960,11 @@
       "Create password instead": [
         "أنشئ كلمة مرور بدلًا من ذلك"
       ],
-      "Create user": [
-        "إنشاء مستخدم"
-      ],
       "Email": [
         "البريد الإلكتروني"
+      ],
+      "General": [
+        "عام"
       ],
       "Invitation email": [
         "البريد الإلكتروني للدعوة"
@@ -22858,6 +22980,12 @@
       ],
       "Remember to share the user's sign in details with them.": [
         "تذكر مشاركة تفاصيل تسجيل دخول المستخدم معه."
+      ],
+      "Roles and permissions": [
+        "الأدوار والأذونات"
+      ],
+      "Save": [
+        "حفظ"
       ],
       "Send invite link via email instead": [
         "أرسل رابط الدعوة عبر البريد الإلكتروني بدلًا من ذلك"
