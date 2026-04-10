@@ -22,7 +22,7 @@ export type InviteListItem =
 type Props = AccessDTO & {
     canManage: boolean;
     canTransfer: boolean;
-    isMine: boolean;
+    isManagerThroughGroup?: boolean;
     className?: string;
     heading?: ReactNode;
     invites?: InviteListItem[];
@@ -34,7 +34,7 @@ type Props = AccessDTO & {
 export const AccessList: FC<Props> = ({
     canManage,
     canTransfer,
-    isMine,
+    isManagerThroughGroup = false,
     className,
     heading,
     invites,
@@ -118,15 +118,15 @@ export const AccessList: FC<Props> = ({
                         canTransfer={canTransfer}
                         className="rounded-none"
                         email={member.email}
+                        isGroupShare={member.isGroupShare}
+                        isManagerThroughGroup={isManagerThroughGroup}
                         itemId={itemId}
                         me={shareId === member.shareId}
                         owner={member.owner}
-                        isMine={isMine}
                         role={member.shareRoleId}
                         shareId={shareId}
                         target={target}
                         userShareId={member.shareId}
-                        isGroupShare={member.isGroupShare}
                     />
                 ))}
             </FieldsetCluster>
