@@ -1,3 +1,4 @@
+import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import type { SimpleMap } from '@proton/shared/lib/interfaces';
 import type { MARK_AS_STATUS } from '@proton/shared/lib/mail/constants';
 import type { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
@@ -10,6 +11,11 @@ export interface ElementsStateParams {
     labelID: string;
     elementID?: string;
     messageID?: string;
+    /**
+     * List of categories that are displayed, acts as a filter like `sort` or `filter`
+     * Only set when `labelID` is Inbox, set to empty array elsewhere.
+     */
+    categoryIDs: CategoryLabelID[];
     conversationMode: boolean;
     sort: Sort;
     filter: Filter;

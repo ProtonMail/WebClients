@@ -13,6 +13,7 @@ const buildFiftyItems = (start: number = 0, count = 50) => {
 
 const baseElementsStateParams: ElementsStateParams = {
     labelID: 'all-mail',
+    categoryIDs: [],
     conversationMode: true,
     sort: { sort: 'Time', desc: true },
     filter: {},
@@ -70,7 +71,6 @@ describe('elementQuery.ts', () => {
                         page: clientPage,
                         pageSize: settingsPageSize,
                         params: baseElementsStateParams,
-                        disabledCategoriesIDs: [],
                     });
 
                     expect(result).toHaveProperty('More', false);
@@ -102,7 +102,6 @@ describe('elementQuery.ts', () => {
                         page: clientPage,
                         pageSize: settingsPageSize,
                         params: baseElementsStateParams,
-                        disabledCategoriesIDs: [],
                     });
 
                     expect(result).toHaveProperty('More', false);
@@ -139,7 +138,6 @@ describe('elementQuery.ts', () => {
                         page: clientPage,
                         pageSize: settingsPageSize,
                         params: baseElementsStateParams,
-                        disabledCategoriesIDs: [],
                     });
 
                     expect(result).toHaveProperty('More', false);
@@ -176,7 +174,6 @@ describe('elementQuery.ts', () => {
                         page: clientPage,
                         pageSize: settingsPageSize,
                         params: baseElementsStateParams,
-                        disabledCategoriesIDs: [],
                     });
 
                     expect(result).toHaveProperty('More', false);
@@ -205,7 +202,6 @@ describe('elementQuery.ts', () => {
                     page: clientPage,
                     pageSize: settingsPageSize,
                     params: baseElementsStateParams,
-                    disabledCategoriesIDs: [],
                 });
 
                 // expect(result).toHaveProperty('More', true);
@@ -238,7 +234,6 @@ describe('elementQuery.ts', () => {
                     page: clientPage,
                     pageSize: settingsPageSize,
                     params: baseElementsStateParams,
-                    disabledCategoriesIDs: [],
                 });
 
                 // expect(result).toHaveProperty('More', true);
@@ -274,7 +269,6 @@ describe('elementQuery.ts', () => {
                         ...baseElementsStateParams,
                         conversationMode,
                     },
-                    disabledCategoriesIDs: [],
                 });
 
                 expect(result).toHaveProperty('More', false);

@@ -2,8 +2,8 @@ import { createSelector } from '@reduxjs/toolkit';
 
 import { ES_EXTRA_RESULTS_LIMIT } from '@proton/encrypted-search/constants';
 import type { ESStatus, NormalizedSearchParams } from '@proton/encrypted-search/models';
-import { selectDisabledCategoriesIDs } from '@proton/mail/store/labels/selector';
 import type { MailSettingState } from '@proton/mail/store/mailSettings';
+import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { LabelCount } from '@proton/shared/lib/interfaces';
 import { CUSTOM_VIEWS_LABELS } from '@proton/shared/lib/mail/constants';
@@ -27,6 +27,9 @@ import { selectedSubscriptionSelector } from '../newsletterSubscriptions/newslet
 import type { MailState } from '../store';
 import { getTotal } from './helpers/elementTotal';
 
+// Stable reference so that selectors returning an empty array don't cause unnecessary re-renders
+const EMPTY_ARRAY: never[] = [];
+
 export const params = (state: MailState) => state.elements.params;
 
 export const selectLabelID = createSelector([params], (params) => params.labelID);
@@ -39,6 +42,12 @@ export const selectSearch = createSelector([params], (params) => params.search);
 export const selectESEnabled = createSelector([params], (params) => params.esEnabled);
 export const selectisSearching = createSelector([params], (params) => params.isSearching);
 export const selectNewsletterSubscriptionID = createSelector([params], (params) => params.newsletterSubscriptionID);
+export const selectCategoryIDs = createSelector([params], (params): CategoryLabelID[] => {
+    if (params.labelID === MAILBOX_LABEL_IDS.INBOX) {
+        return params.categoryIDs;
+    }
+    return EMPTY_ARRAY;
+});
 
 const beforeFirstLoad = (state: MailState) => state.elements.beforeFirstLoad;
 export const elementsMap = (state: MailState) => state.elements.elements;
@@ -70,6 +79,7 @@ const currentLabelID = (_: MailState, { labelID }: { labelID: string }) => label
 export const contextPages = createSelector([params, pages], (params, pages) => {
     const contextFilter = getElementContextIdentifier({
         labelID: params.labelID,
+        categoryIDs: params.categoryIDs,
         conversationMode: params.conversationMode,
         filter: params.filter,
         sort: params.sort,
@@ -88,6 +98,7 @@ export const contextPages = createSelector([params, pages], (params, pages) => {
 export const contextTotal = createSelector([params, total], (params, total) => {
     const contextFilter = getElementContextIdentifier({
         labelID: params.labelID,
+        categoryIDs: params.categoryIDs,
         conversationMode: params.conversationMode,
         filter: params.filter,
         sort: params.sort,
@@ -104,11 +115,11 @@ export const contextTotal = createSelector([params, total], (params, total) => {
 });
 
 export const elements = createSelector(
-    [elementsMap, params, page, pageSize, contextPages, bypassFilter, addresses, selectDisabledCategoriesIDs],
-    (elements, params, page, pageSize, pages, bypassFilter, addresses, selectDisabledCategoriesIDs) => {
+    [elementsMap, params, page, pageSize, contextPages, bypassFilter, addresses],
+    (elements, params, page, pageSize, pages, bypassFilter, addresses) => {
         // Getting all params from the cache and not from scoped params
         // To prevent any de-synchronization between cache and the output of the memo
-        const { labelID, sort, filter, conversationMode, search } = params;
+        const { labelID, sort, filter, conversationMode, search, categoryIDs } = params;
 
         let finalSort = { ...sort };
         // The default sorting needs to be overridden when in inbox or snooze to display snoozed emails on top
@@ -141,11 +152,11 @@ export const elements = createSelector(
                   addresses: addresses?.value,
                   bypassFilter,
                   labelID,
+                  categoryIDs,
                   filter,
                   conversationMode,
                   search,
                   newsletterSubscriptionID: params.newsletterSubscriptionID,
-                  disabledCategoriesIDs: selectDisabledCategoriesIDs,
               })
             : [];
 
@@ -321,7 +332,13 @@ export const dynamicTotal = createSelector(
             return undefined;
         }
 
-        return getTotal(counts, params.labelID, params.filter, bypassFilter.length);
+        return getTotal({
+            counts,
+            labelID: params.labelID,
+            categoryIDs: params.categoryIDs,
+            filter: params.filter,
+            bypassFilterCount: bypassFilter.length,
+        });
     }
 );
 

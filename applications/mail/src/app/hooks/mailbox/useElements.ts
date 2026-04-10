@@ -6,7 +6,9 @@ import isDeepEqual from 'lodash/isEqual';
 import { useConversationCounts, useGetConversationCounts } from '@proton/mail/store/counts/conversationCountsSlice';
 import { useGetMessageCounts, useMessageCounts } from '@proton/mail/store/counts/messageCountsSlice';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
+import { selectDisabledCategoriesIDs } from '@proton/mail/store/labels/selector';
 import { CacheType } from '@proton/redux-utilities';
+import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { omit } from '@proton/shared/lib/helpers/object';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
@@ -17,8 +19,16 @@ import type { Filter, SearchParameters, Sort } from '@proton/shared/lib/mail/sea
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
+import { useCategoriesView } from 'proton-mail/components/categoryView/useCategoriesView';
 import { isConversationMode } from 'proton-mail/helpers/mailSettings';
-import { extractSearchParameters, filterFromUrl, filterToString, sortFromUrl } from 'proton-mail/helpers/mailboxUrl';
+import {
+    categoryIDFromUrl,
+    extractSearchParameters,
+    filterFromUrl,
+    filterToString,
+    setCategoryInUrl,
+    sortFromUrl,
+} from 'proton-mail/helpers/mailboxUrl';
 import { useMailDispatch, useMailSelector, useMailStore } from 'proton-mail/store/hooks';
 
 import { useEncryptedSearchContext } from '../../containers/EncryptedSearchProvider';
@@ -47,6 +57,7 @@ import {
     taskRunning,
     totalReturned as totalReturnedSelector,
 } from '../../store/elements/elementsSelectors';
+import { getTotal } from '../../store/elements/helpers/elementTotal';
 import { messageByID } from '../../store/messages/messagesSelectors';
 import type { MailState } from '../../store/store';
 import { useElementsEvents } from '../events/useElementsEvents';
@@ -133,6 +144,9 @@ export const useElements: UseElements = ({
     const [messageCounts = [], loadingMessageCounts] = useMessageCounts();
     const countValues = conversationMode ? conversationCounts : messageCounts;
     const countsLoading = conversationMode ? loadingConversationCounts : loadingMessageCounts;
+
+    const { categoryViewAccess } = useCategoriesView();
+    const disabledCategoriesIDs = useMailSelector(selectDisabledCategoriesIDs);
 
     const { esStatus } = useEncryptedSearchContext();
     const { esEnabled } = esStatus;
@@ -221,6 +235,23 @@ export const useElements: UseElements = ({
             return;
         }
 
+        // Update the category IDs and push the disabled categories if the default category is selected
+        const categoryIDs: CategoryLabelID[] = [];
+        if (categoryViewAccess && labelID === MAILBOX_LABEL_IDS.INBOX) {
+            const categoryInURL = categoryIDFromUrl(location);
+            const category = categoryInURL ?? MAILBOX_LABEL_IDS.CATEGORY_DEFAULT;
+            categoryIDs.push(category);
+
+            if (!categoryInURL) {
+                const newLocation = setCategoryInUrl(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT);
+                history.push(newLocation);
+            }
+
+            if (category === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT) {
+                categoryIDs.push(...disabledCategoriesIDs);
+            }
+        }
+
         esEnabledRef.current = esEnabled;
 
         if (shouldResetElementsState) {
@@ -237,6 +268,7 @@ export const useElements: UseElements = ({
                         search,
                         conversationMode,
                         isSearching,
+                        categoryIDs,
                     },
                 })
             );
@@ -245,8 +277,9 @@ export const useElements: UseElements = ({
             // In some cases we cannot predict the total, for example when applying the has file filter
             const locationTotal =
                 !filterToString(filter) && !isSearching
-                    ? countValues.find((label) => label.LabelID === labelID)?.Total
+                    ? getTotal({ counts: countValues, labelID, categoryIDs, filter, bypassFilterCount: 0 }) || undefined
                     : undefined;
+
             dispatch(
                 setParams({
                     labelID,
@@ -258,11 +291,12 @@ export const useElements: UseElements = ({
                     conversationMode,
                     isSearching,
                     total: locationTotal,
+                    categoryIDs,
                 })
             );
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps -- autofix-eslint-577287
-    }, [location.pathname, location.hash, mailSettings.ViewMode, labelIDs, esEnabled, onPage]);
+    }, [location.pathname, location.hash, mailSettings.ViewMode, labelIDs, esEnabled, onPage, disabledCategoriesIDs]);
 
     // Reset the element state when receiving a setting update for page size or conversation mode
     useEffect(() => {

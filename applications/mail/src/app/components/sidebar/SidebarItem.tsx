@@ -12,15 +12,17 @@ import type { HotkeyTuple } from '@proton/components/hooks/useHotkeys';
 import { useHotkeys } from '@proton/components/hooks/useHotkeys';
 import { useLoading } from '@proton/hooks';
 import type { IconName, IconSize } from '@proton/icons/types';
+import { isCategoryLabel } from '@proton/mail/helpers/location';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
-import { CATEGORY_LABELS_TO_ROUTE_ARRAY, CUSTOM_VIEWS, LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
+import { CUSTOM_VIEWS, LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 
 import { useCheckAllRef } from 'proton-mail/containers/CheckAllRefProvider';
+import { categoryIDFromUrl, setCategoryInUrl } from 'proton-mail/helpers/mailboxUrl';
 import type { MoveParams } from 'proton-mail/hooks/actions/applyLocation/interface';
 import { useSelectAll } from 'proton-mail/hooks/useSelectAll';
 import { params } from 'proton-mail/store/elements/elementsSelectors';
@@ -107,18 +109,22 @@ const SidebarItem = ({
 
     const mailParams = useMailSelector(params);
 
-    const categoryViewControl = useCategoriesView();
-
     const [refreshing, withRefreshing] = useLoading(false);
 
-    // We want to redirect the inbox link to the primary category if the feature is enabled and pointing to inbox
-    const labelIDRoute =
-        categoryViewControl.categoryViewAccess && labelID === MAILBOX_LABEL_IDS.INBOX
-            ? MAILBOX_LABEL_IDS.CATEGORY_DEFAULT
-            : (labelID as MAILBOX_LABEL_IDS);
+    const { categoryViewAccess } = useCategoriesView();
 
-    const humanID = LABEL_IDS_TO_HUMAN[labelIDRoute] ?? labelID;
-    const link = `/${humanID}`;
+    const humanID = LABEL_IDS_TO_HUMAN[labelID as MAILBOX_LABEL_IDS] ?? labelID;
+
+    let link: string;
+    if (isCategoryLabel(labelID)) {
+        // Category labels view redirect to /inbox#category=CATEGORY
+        link = setCategoryInUrl(labelID);
+    } else if (labelID === MAILBOX_LABEL_IDS.INBOX && categoryViewAccess) {
+        // We want to redirect to /inbox#category=primary when categories are enabled
+        link = setCategoryInUrl(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT);
+    } else {
+        link = `/${humanID}`;
+    }
 
     const needsTotalDisplay = shouldDisplayTotal(labelID);
 
@@ -199,13 +205,12 @@ const SidebarItem = ({
             <SidebarListItemLink
                 title={tooltipText}
                 to={link}
+                onClick={handleClick}
                 isActive={(match, location) => {
-                    // The inbox button should be active if the location starts with /inbox or starts with a category from the array
-                    if (labelID === MAILBOX_LABEL_IDS.INBOX || labelID === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT) {
-                        return (
-                            location.pathname.startsWith(`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`) ||
-                            CATEGORY_LABELS_TO_ROUTE_ARRAY.some((route) => location.pathname.startsWith(route))
-                        );
+                    // Categories are displayed on the sidebar, this highlights the active category
+                    if (isCategoryLabel(labelID)) {
+                        const categoryID = categoryIDFromUrl(location);
+                        return !!(labelID === categoryID);
                     }
 
                     if (labelID === MAILBOX_LABEL_IDS.ALL_MAIL || labelID === MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL) {
@@ -217,7 +222,6 @@ const SidebarItem = ({
 
                     return !!match;
                 }}
-                onClick={handleClick}
                 {...dragProps}
                 onDrop={handleDrop}
                 ref={elementRef}

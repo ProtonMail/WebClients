@@ -26,9 +26,12 @@ export const markConversationsAsUnread = (
     // When we mark a conversation as unread, the latest message of this conversation is marked as unread.
     // This message must be part of the current label (labelID)
     const { conversations, labelID } = action.payload;
-    const isCurrentLabelIDCategory = isCategoryLabel(labelID);
 
+    // We assume that it's not possible to mark an unread conversation as unread from the UI.
+    // For this reason we don't do any additional checks before updating the conversation counter.
     conversations.forEach((conversation) => {
+        const isConversationInInbox = conversation.Labels?.some((label) => label.ID === MAILBOX_LABEL_IDS.INBOX);
+
         conversation.Labels?.forEach((label) => {
             const conversationCounter = state.value?.find((counter) => counter.LabelID === label.ID);
             if (!conversationCounter) {
@@ -37,7 +40,9 @@ export const markConversationsAsUnread = (
 
             if (label.ID === labelID) {
                 conversationCounter.Unread = safeIncreaseCount(conversationCounter.Unread, 1);
-            } else if (isCurrentLabelIDCategory && label.ID === MAILBOX_LABEL_IDS.INBOX) {
+            }
+
+            if (labelID === MAILBOX_LABEL_IDS.INBOX && isConversationInInbox && isCategoryLabel(label.ID)) {
                 conversationCounter.Unread = safeIncreaseCount(conversationCounter.Unread, 1);
             }
         });
@@ -76,17 +81,32 @@ export const markMessagesAsUnread = (
     const { conversations, messages, labelID } = action.payload;
 
     conversations.forEach((conversation) => {
-        const filteredMessages = messages.filter(
-            (message) => message.ConversationID === conversation.ID && message.LabelIDs.includes(labelID)
-        );
+        const hasConversationMessage =
+            messages.filter(
+                (message) => message.ConversationID === conversation.ID && message.LabelIDs.includes(labelID)
+            ).length > 0;
 
         const conversationLabel = conversation.Labels?.find((label) => label.ID === labelID);
 
-        if (conversationLabel?.ContextNumUnread === 0 && filteredMessages.length > 0) {
+        if (conversationLabel?.ContextNumUnread === 0 && hasConversationMessage) {
             const conversationCounter = state.value?.find((counter) => counter.LabelID === labelID);
 
             if (conversationCounter) {
                 conversationCounter.Unread = safeIncreaseCount(conversationCounter.Unread, 1);
+            }
+        }
+
+        const convCategoryLabel = conversation.Labels?.find((label) => isCategoryLabel(label.ID));
+        if (
+            labelID === MAILBOX_LABEL_IDS.INBOX &&
+            convCategoryLabel &&
+            convCategoryLabel.ContextNumUnread === 0 &&
+            hasConversationMessage
+        ) {
+            const categoryCounter = state.value?.find((counter) => counter.LabelID === convCategoryLabel.ID);
+
+            if (categoryCounter) {
+                categoryCounter.Unread = safeIncreaseCount(categoryCounter.Unread, 1);
             }
         }
     });
@@ -236,10 +256,18 @@ export const markMessagesAsRead = (
 
         /**
          * Update category counts
-         * All messages in the conversation share the same category, so we can simply check if we're marking all unread messages as read
+         * All messages in the conversation share the same category, so we can simply check if we're marking all unread messages as read.
+         * Only decrement if at least one of the messages being marked as read is in Inbox (category messages outside Inbox are not counted).
          */
+        const hasMessagesInInbox = messagesFromConversation.some(({ LabelIDs }) =>
+            LabelIDs.includes(MAILBOX_LABEL_IDS.INBOX)
+        );
+
         const categoryLabels = conversation.Labels?.filter((label) => isCategoryLabel(label.ID)) || [];
         categoryLabels.forEach((categoryLabel) => {
+            if (!hasMessagesInInbox) {
+                return;
+            }
             if (categoryLabel.ContextNumUnread === totalMessagesCount && totalMessagesCount > 0) {
                 const categoryCounter = state.value?.find((counter) => counter.LabelID === categoryLabel.ID);
                 if (categoryCounter) {
@@ -429,6 +457,29 @@ export const labelMessagesPending = (
                 conversationCounterTarget.Unread = safeIncreaseCount(conversationCounterTarget.Unread, 1);
             }
         }
+
+        // When moving to INBOX, also increase category counters if the conversation was not already in INBOX
+        if (destinationLabelID === MAILBOX_LABEL_IDS.INBOX) {
+            const conversationWasInInbox = conversation.Labels?.some(
+                (label) => label.ID === MAILBOX_LABEL_IDS.INBOX && (label.ContextNumMessages || 0) > 0
+            );
+
+            if (!conversationWasInInbox) {
+                conversation.Labels?.forEach((label) => {
+                    if (isCategoryLabel(label.ID)) {
+                        const categoryCounter = state.value?.find((c) => c.LabelID === label.ID);
+
+                        if (categoryCounter) {
+                            categoryCounter.Total = safeIncreaseCount(categoryCounter.Total, 1);
+
+                            if (unreadMessagesFromConversation.length > 0) {
+                                categoryCounter.Unread = safeIncreaseCount(categoryCounter.Unread, 1);
+                            }
+                        }
+                    }
+                });
+            }
+        }
     });
 };
 
@@ -585,6 +636,7 @@ export const labelConversationsPending = (
         ) {
             // Move missing received messages in INBOX
             const inboxMessageCountState = state.value?.find((counter) => counter.LabelID === MAILBOX_LABEL_IDS.INBOX);
+            const conversationLabelID = conversation.Labels?.find((label) => isCategoryLabel(label.ID))?.ID;
 
             if (inboxMessageCountState) {
                 if (numMessagesInInbox === 0) {
@@ -593,6 +645,25 @@ export const labelConversationsPending = (
 
                 if (numUnreadMessagesInInbox === 0 && hasUnreadReceivedMessage) {
                     inboxMessageCountState.Unread = safeIncreaseCount(inboxMessageCountState.Unread, 1);
+                }
+            }
+
+            // When conversation enters INBOX, also increase category counters
+            if (numMessagesInInbox === 0) {
+                const categoryCountState = state.value?.find((counter) => counter.LabelID === conversationLabelID);
+
+                if (categoryCountState) {
+                    categoryCountState.Total = safeIncreaseCount(categoryCountState.Total, 1);
+                }
+            }
+
+            // Conversation had no unread in INBOX before, but has unread received messages (e.g. coming from TRASH/SPAM).
+            // Since received messages land in INBOX, the category unread counter should increase.
+            if (numUnreadMessagesInInbox === 0 && hasUnreadReceivedMessage) {
+                const categoryCountState = state.value?.find((counter) => counter.LabelID === conversationLabelID);
+
+                if (categoryCountState) {
+                    categoryCountState.Unread = safeIncreaseCount(categoryCountState.Unread, 1);
                 }
             }
 

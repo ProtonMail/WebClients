@@ -11,7 +11,6 @@ import { expectedAll, expectedGrouped } from './useLocationFieldOptions.test.dat
 jest.mock('proton-mail/components/categoryView/useCategoriesView', () => ({
     useCategoriesView: jest.fn(() => ({
         categoriesStore: [],
-        categoriesTabs: [],
         activeCategoriesTabs: [],
     })),
 }));

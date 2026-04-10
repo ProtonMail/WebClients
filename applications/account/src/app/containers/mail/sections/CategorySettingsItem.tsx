@@ -10,7 +10,6 @@ import {
     getLabelFromCategoryId,
 } from '@proton/mail/features/categoriesView/categoriesStringHelpers';
 import clsx from '@proton/utils/clsx';
-import noop from '@proton/utils/noop';
 
 interface CategoryItemProps {
     category: CategoryTab;
@@ -27,13 +26,10 @@ export const CategorySettingsItem = ({ category, loading, categoriesEnabled, onU
             <Toggle
                 id={`enable-${category.id}`}
                 className={clsx('mr-3', categoriesEnabled ? 'visible' : 'hidden')}
-                // checked={category.display}
-                checked={true}
-                // onClick={() => onUpdate({ ...category, display: !category.display })}
-                onClick={noop}
+                checked={category.display}
+                onClick={() => onUpdate({ ...category, display: !category.display })}
                 data-testid={`${category.id}-display`}
-                // disabled={loading}
-                disabled={true}
+                disabled={loading}
             />
 
             <Label htmlFor={`enable-${category.id}`} className="p-0 flex-1 flex gap-3">
