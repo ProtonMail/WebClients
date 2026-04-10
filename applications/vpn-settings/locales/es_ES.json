@@ -467,6 +467,9 @@
       "Fit to window": [
         "Ajustar a la ventana"
       ],
+      "Forgot password?": [
+        "¿Contraseña olvidada?"
+      ],
       "Forgot recovery method?": [
         "¿Método de recuperación olvidado?"
       ],
@@ -664,6 +667,9 @@
       ],
       "Next page": [
         "Página siguiente"
+      ],
+      "No": [
+        "No"
       ],
       "OK": [
         "Aceptar"
@@ -1147,6 +1153,9 @@
       ],
       "Wipe": [
         "Borrar"
+      ],
+      "Yes": [
+        "Sí"
       ],
       "Your server will be provisioned in the next days": [
         "Tu servidor estará configurado en unos días."
@@ -6738,6 +6747,12 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Introduce tu dirección de correo electrónico o usuario de ${ BRAND_NAME }."
       ],
+      "Enter your own password (as organization admin).": [
+        "Introduce tu propia contraseña (como administrador de la organización)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Introduce tu propia contraseña (como contacto de confianza)."
+      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Introduce tu dirección de correo electrónico de recuperación y te enviaremos tu nombre de usuario o dirección de correo electrónico."
       ],
@@ -9465,6 +9480,12 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Sí, quiero eliminar permanentemente esta cuenta y todos sus datos."
       ],
+      "Your password (admin)": [
+        "Tu contraseña (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Tu contraseña (contacto de confianza)"
+      ],
       "ZIP code": [
         "Código postal"
       ]
@@ -9993,9 +10014,6 @@
       ],
       "60 minutes per meeting": [
         "60 minutos por reunión"
-      ],
-      "Appointment scheduling": [
-        "Programación de citas"
       ],
       "Booking pages": [
         "Páginas de reserva"
@@ -14125,6 +14143,9 @@
       "Share the confirmation code with your administrator": [
         "Comparte el código de confirmación con tu administrador."
       ],
+      "Sign in": [
+        "Iniciar sesión"
+      ],
       "Sign in to your organization": [
         "Iniciar sesión en tu organización"
       ],
@@ -14184,6 +14205,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Tendrás que crear los nuevos usuarios manualmente para añadirlos a tu organización."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Se te redirigirá a tu proveedor de SSO de terceros."
       ],
       "Your SSO configuration will be deleted.": [
         "Se eliminará tu configuración de SSO."
@@ -15711,6 +15735,9 @@
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Introduce los detalles de tu cuenta de ${ BRAND_NAME } para unirte al programa Beta de ${ app }"
       ],
+      "Enter your password": [
+        "Introduce tu contraseña"
+      ],
       "Error": [
         "Error"
       ],
@@ -16816,9 +16843,6 @@
       ],
       "Create password instead": [
         "Crear una contraseña en su lugar"
-      ],
-      "Create user": [
-        "Crear un usuario"
       ],
       "Email": [
         "Correo electrónico"

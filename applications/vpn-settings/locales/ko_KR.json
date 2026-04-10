@@ -476,6 +476,9 @@
       "Fit to window": [
         "창에 맞게"
       ],
+      "Forgot password?": [
+        "비밀번호를 잊어버리셨나요?"
+      ],
       "Forgot recovery method?": [
         "복구 방법을 잊으셨나요?"
       ],
@@ -673,6 +676,9 @@
       ],
       "Next page": [
         "다음 페이지"
+      ],
+      "No": [
+        "아니오"
       ],
       "OK": [
         "확인"
@@ -1162,6 +1168,9 @@
       ],
       "Wipe": [
         "초기화"
+      ],
+      "Yes": [
+        "예"
       ],
       "Your server will be provisioned in the next days": [
         "서버가 내일 프로비저닝될 것입니다."
@@ -6741,6 +6750,12 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "${ BRAND_NAME } 계정 이메일 주소 및 사용자 이름을 입력하세요."
       ],
+      "Enter your own password (as organization admin).": [
+        "사용자의 비밀번호 입력 (조직 관리자와 같음)"
+      ],
+      "Enter your own password (as trusted contact).": [
+        "사용자 고유의 비밀번호 입력 (신뢰할 수 있는 연락처로서)"
+      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "복구 이메일 주소를 입력하면 사용자 이름 또는 이메일 주소를 보내드립니다."
       ],
@@ -9474,6 +9489,12 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "네, 저는 완전히 이 계정과 모든 데이터를 지우고 싶습니다."
       ],
+      "Your password (admin)": [
+        "사용자의 비밀번호 (관리자)"
+      ],
+      "Your password (trusted contact)": [
+        "사용자 비밀번호 (신뢰할 수 있는 연락처)"
+      ],
       "ZIP code": [
         "우편번호"
       ]
@@ -9995,9 +10016,6 @@
       ],
       "60 minutes per meeting": [
         "회의 당 60분"
-      ],
-      "Appointment scheduling": [
-        "일정 예약"
       ],
       "Booking pages": [
         "예약 페이지"
@@ -14076,6 +14094,9 @@
       "Share the confirmation code with your administrator": [
         "관리자에게 확인 코드를 공유하세요"
       ],
+      "Sign in": [
+        "로그인"
+      ],
       "Sign in to your organization": [
         "조직에 로그인"
       ],
@@ -14135,6 +14156,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "새 사용자를 회원님의 조직에 추가하려면 직접 생성해야 합니다."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "서드 파티 SSO 제공자로 리다이렉트됩니다."
       ],
       "Your SSO configuration will be deleted.": [
         "SSO 구성 또한 삭제됩니다."
@@ -15642,6 +15666,9 @@
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "${ app } 베타 프로그램에 참여하려면 ${ BRAND_NAME } 계정 상세 사항을 입력하세요."
       ],
+      "Enter your password": [
+        "비밀번호를 입력하세요"
+      ],
       "Error": [
         "오류"
       ],
@@ -16761,9 +16788,6 @@
       ],
       "Create password instead": [
         "대신 비밀번호 생성하기"
-      ],
-      "Create user": [
-        "사용자 만들기"
       ],
       "Email": [
         "이메일"

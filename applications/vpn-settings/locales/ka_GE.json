@@ -461,6 +461,9 @@
       "Fit to window": [
         "ფანჯარაში ჩატევა"
       ],
+      "Forgot password?": [
+        "დაგავიწყდათ პაროლი?"
+      ],
       "Forgot recovery method?": [
         "დაგავიწყდათ აღდგენის მეთოდი?"
       ],
@@ -658,6 +661,9 @@
       ],
       "Next page": [
         "შემდეგი გვერდი"
+      ],
+      "No": [
+        "არა"
       ],
       "OK": [
         "დიახ"
@@ -1141,6 +1147,9 @@
       ],
       "Wipe": [
         "წაშლა"
+      ],
+      "Yes": [
+        "დიახ"
       ],
       "Your server will be provisioned in the next days": [
         "თქვენი სერვერის დაყენება მომდევნო რამდენიმე დღეში მოხდება"
@@ -6499,6 +6508,12 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "შეიყვანეთ ${ BRAND_NAME }-ის თქვენი ანგარიშის მისამართი ან მომხმარებლის სახელი."
       ],
+      "Enter your own password (as organization admin).": [
+        "შეიყვანეთ თქვენი საკუთარი პაროლი (როგორც ორგანიზაციის ადმინმა)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "შეიყვანეთ თქვენი საკუთარი პაროლი (როგორც სანდო კონტაქტმა)."
+      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "შეიყვანეთ აღდგენის ელფოსტის მისამართი და ჩვენ მომხმარებლის სახელსა და ელფოსტის მისამართს გამოგიგზავნით."
       ],
@@ -9088,6 +9103,12 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "დიახ, მე მინდა ამ ანგარიშის და მისი მონაცემების სამუდამოდ წაშლა."
       ],
+      "Your password (admin)": [
+        "თქვენი პაროლი (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "თქვენი პაროლი (სანდო კონტაქტი)"
+      ],
       "ZIP code": [
         "საფოსტო კოდი"
       ]
@@ -9583,9 +9604,6 @@
       ],
       "60 minutes per meeting": [
         "60 წუთი თითო შეხვედრისთვის"
-      ],
-      "Appointment scheduling": [
-        "შეხვედრის დაგეგმვა"
       ],
       "Booking pages": [
         "დაჯავშნის გვერდები"
@@ -13461,6 +13479,9 @@
       "Share the confirmation code with your administrator": [
         "გაუზიარეთ დადასტურების კოდი თქვენს ადმინისტრატორს"
       ],
+      "Sign in": [
+        "შესვლა"
+      ],
       "Sign in to your organization": [
         "შედით თქვენს ორგანიზაციაში"
       ],
@@ -13511,6 +13532,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "თქვენს ორგანიზაციაშ დასამატებლად ახალი მომხმარებლების ხელით შექმნა მოგიწევთ."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "ახლა გადაგამისამართებთ თქვენს SSO პროვაიდერზე."
       ],
       "Your SSO configuration will be deleted.": [
         "თქვენი SSO-ის კონფიგურაცია წაიშლება."
@@ -15028,6 +15052,9 @@
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "შეიყვანეთ თქვენი ${ BRAND_NAME }-ის ანგარიშის დეტალები რომ ${ app }-ის ბეტა პროგრამას შეუერთდეთ"
       ],
+      "Enter your password": [
+        "შეიყვანეთ თქვენი პაროლი"
+      ],
       "Error": [
         "შეცდომა"
       ],
@@ -16094,9 +16121,6 @@
       ],
       "Create password instead": [
         "შექმენით პაროლი ამის მაგიერ"
-      ],
-      "Create user": [
-        "მომხმარებლის შექმნა"
       ],
       "Email": [
         "ელფოსტა"
