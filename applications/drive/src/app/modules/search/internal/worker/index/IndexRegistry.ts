@@ -10,6 +10,7 @@ import { IndexWriter } from './IndexWriter';
 export { IndexKind } from '../../shared/types';
 
 export interface IndexInstance {
+    indexKind: IndexKind;
     engine: Engine;
     blobStore: IndexBlobStore;
     indexWriter: IndexWriter;
@@ -39,7 +40,7 @@ export class IndexRegistry {
         const blobStore = new IndexBlobStore(kind, db);
         const indexWriter = new IndexWriter(engine, blobStore);
         const indexReader = new IndexReader(engine, blobStore);
-        const instance: IndexInstance = { engine, blobStore, indexWriter, indexReader };
+        const instance: IndexInstance = { indexKind: kind, engine, blobStore, indexWriter, indexReader };
         this.instances.set(kind, instance);
         return instance;
     }
