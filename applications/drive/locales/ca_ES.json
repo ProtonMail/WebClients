@@ -4009,6 +4009,10 @@
       ],
       "Something went wrong while fetching available domains": [
         "Alguna cosa ha anat malament mentre s'obtenien els dominis disponibles"
+      ],
+      "${ failureItems.length } item failed to be moved": [
+        "No s'ha pogut moure ${ failureItems.length } element",
+        "No s'han pogut moure ${ failureItems.length } elements"
       ]
     },
     "error": {
@@ -8979,6 +8983,13 @@
       ],
       "VPN with ad-blocker and malware protection": [
         "VPN amb bloqueig d’anuncis i protecció contra programari maliciós"
+      ],
+      "Appointment scheduling": [
+        "Programació de cites"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Programació de cites amb ${ n } pàgina de reserva",
+        "Programació de cites amb ${ n } pàgines de reserva"
       ]
     },
     "new_plans: feature highlight": {

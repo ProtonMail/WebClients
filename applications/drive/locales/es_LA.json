@@ -4009,6 +4009,10 @@
       ],
       "Something went wrong while fetching available domains": [
         "Ocurrió un error al obtener los dominios disponibles"
+      ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } elemento no se pudo mover",
+        "${ failureItems.length } elementos no se pudieron mover"
       ]
     },
     "error": {
@@ -8979,6 +8983,13 @@
       ],
       "VPN with ad-blocker and malware protection": [
         "VPN con bloqueador de publicidad y protección contra malware"
+      ],
+      "Appointment scheduling": [
+        "Programación de citas"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Programación de citas con ${ n } página de reservas",
+        "Programación de citas con ${ n } páginas de reservas"
       ]
     },
     "new_plans: feature highlight": {

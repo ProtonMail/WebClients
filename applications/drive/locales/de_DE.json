@@ -4003,6 +4003,10 @@
       ],
       "Something went wrong while fetching available domains": [
         "Etwas ist schiefgegangen beim Abrufen der verfügbaren Domains"
+      ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } Eintrag konnte nicht verschoben werden",
+        "${ failureItems.length } Einträge konnten nicht verschoben werden"
       ]
     },
     "error": {
@@ -8970,6 +8974,13 @@
       ],
       "VPN with ad-blocker and malware protection": [
         "VPN mit Werbeblocker und Malware-Schutz"
+      ],
+      "Appointment scheduling": [
+        "Terminplanung"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Terminplanung mit ${ n } Buchungsseite",
+        "Terminplanung mit ${ n } Buchungsseiten"
       ]
     },
     "new_plans: feature highlight": {
