@@ -30,12 +30,12 @@ type Props = AccessDTO & {
     canTransfer: boolean;
     className?: string;
     email: string;
+    isGroupShare: boolean;
+    isManagerThroughGroup: boolean;
     me: boolean;
     owner: boolean;
-    isMine: boolean;
     role: ShareRole;
     userShareId: string;
-    isGroupShare: boolean;
 };
 
 const getDefinition = (owner: boolean, target: AccessTarget, role: ShareRole, labels: InviteLabels) =>
@@ -54,17 +54,17 @@ export const ShareMember: FC<Props> = ({
     canTransfer,
     className,
     email,
+    isGroupShare,
+    isManagerThroughGroup,
     itemId,
     me,
     owner,
-    isMine,
     role,
     shareId,
     target,
     userShareId,
-    isGroupShare,
 }) => {
-    const { name, onShowMembers } = useMaybeGroup(email);
+    const { name, isMember, onShowMembers } = useMaybeGroup(email);
 
     // TODO: Remove this in IDTEAM-4660
     const labels = useInviteLabels();
@@ -92,8 +92,20 @@ export const ShareMember: FC<Props> = ({
             shareRoleId,
         });
 
-    const groupShareWithManager = !isMine && isGroupShare && role === ShareRole.MANAGER;
-    const showActions = !me && canManage && !owner && !groupShareWithManager;
+    /** This block deals with a complex scenario: we want to prevent a user
+     * having manager access to a share through a group to remove their own access.
+     * First we only consider group shares members and we receive from above the flag
+     * that defined that we see this share from a group shares.
+     * Then we only care about manager members and finally we check we're in the
+     * group corresponding to the access */
+    const dontShowGroupActions = (() => {
+        if (!isGroupShare) return false;
+        if (!isManagerThroughGroup) return false;
+        if (role !== ShareRole.MANAGER) return false;
+        if (!isMember) return false;
+        return true;
+    })();
+    const showActions = canManage && !me && !owner && !dontShowGroupActions;
     const loading = transferOwner.loading || removeAccess.loading || editRole.loading;
     const showTransfer = !isGroupShare && canTransfer && role === ShareRole.MANAGER;
 
