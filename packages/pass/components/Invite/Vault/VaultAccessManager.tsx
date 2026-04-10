@@ -19,7 +19,7 @@ import { useShareAccess } from '@proton/pass/hooks/invite/useShareAccess';
 import { useShareAccessOptionsPolling } from '@proton/pass/hooks/useShareAccessOptionsPolling';
 import { AccessTarget } from '@proton/pass/lib/access/types';
 import { getLimitReachedText } from '@proton/pass/lib/invites/invite.utils';
-import { isShareManageable } from '@proton/pass/lib/shares/share.predicates';
+import { isGroupManagedShare, isShareManageable } from '@proton/pass/lib/shares/share.predicates';
 import { selectOwnWritableVaults, selectPassPlan, selectShareOrThrow } from '@proton/pass/store/selectors';
 import type { ShareType } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
@@ -37,6 +37,7 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
 
     const access = useShareAccess(shareId);
     const canManage = isShareManageable(vault);
+    const isManagerThroughGroup = isGroupManagedShare(vault);
     const canTransfer = vault.owner && ownWritableVaults.length > 1;
 
     const { limitReached, invites, members } = access;
@@ -82,7 +83,7 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
                         <AccessList
                             canManage={canManage}
                             canTransfer={canTransfer}
-                            isMine={vault.owner}
+                            isManagerThroughGroup={isManagerThroughGroup}
                             invites={invites}
                             onInvite={onVaultInvite}
                             shareId={shareId}
@@ -95,7 +96,7 @@ export const VaultAccessManager: FC<Props> = ({ shareId }) => {
                         <AccessList
                             canManage={canManage}
                             canTransfer={canTransfer}
-                            isMine={vault.owner}
+                            isManagerThroughGroup={isManagerThroughGroup}
                             members={members}
                             shareId={shareId}
                             title={c('Label').t`Members`}
