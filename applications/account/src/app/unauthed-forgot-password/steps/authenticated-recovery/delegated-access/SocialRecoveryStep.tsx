@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
+import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import InputFieldStacked from '@proton/components/components/inputFieldStacked/InputFieldStacked';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
@@ -50,39 +51,44 @@ export const SocialRecoveryStep = () => {
                     <b>{c('Info')
                         .t`This will sign you out of any active sessions and disable 2-factor authentication.`}</b>
                 </div>
-
-                <InputFieldStackedGroup>
-                    <InputFieldStacked
-                        icon={
-                            <img
-                                alt=""
-                                src={lockWarningExclamation}
-                                className="w-custom"
-                                style={{ '--w-custom': '28px' }}
-                            />
-                        }
-                        isGroupElement
-                        classname="bg-norm-weak"
-                        style={{
-                            '--stacked-field-background': 'var(--background-weak)',
-                        }}
-                    >
-                        {/* translator: Full sentence "Your encrypted data will be locked, but recoverable with your contacts’ assistance:" */}
-                        <div>{c('Info').jt`${DataLockedText}, but recoverable with your ${RecoveryContactsLink}:`}</div>
-                    </InputFieldStacked>
-                    {socialRecoveryContacts.map(({ TargetEmail, DelegatedAccessID }) => (
-                        <InputFieldStacked
-                            icon={<Avatar color="weak">{getInitials(TargetEmail)}</Avatar>}
-                            isGroupElement
-                            key={DelegatedAccessID}
-                        >
-                            <div className="text-semibold text-ellipsis" title={TargetEmail}>
-                                {TargetEmail}
-                            </div>
-                        </InputFieldStacked>
-                    ))}
-                </InputFieldStackedGroup>
-
+                <div className="flex">
+                    <div className="max-h-custom" style={{ '--max-h-custom': '12.5rem' }}>
+                        <Scroll>
+                            <InputFieldStackedGroup>
+                                <InputFieldStacked
+                                    icon={
+                                        <img
+                                            alt=""
+                                            src={lockWarningExclamation}
+                                            className="w-custom"
+                                            style={{ '--w-custom': '28px' }}
+                                        />
+                                    }
+                                    isGroupElement
+                                    classname="bg-norm-weak"
+                                    style={{
+                                        '--stacked-field-background': 'var(--background-weak)',
+                                    }}
+                                >
+                                    {/* translator: Full sentence "Your encrypted data will be locked, but recoverable with your contacts’ assistance:" */}
+                                    <div>{c('Info')
+                                        .jt`${DataLockedText}, but recoverable with your ${RecoveryContactsLink}:`}</div>
+                                </InputFieldStacked>
+                                {socialRecoveryContacts.map(({ TargetEmail, DelegatedAccessID }) => (
+                                    <InputFieldStacked
+                                        icon={<Avatar color="weak">{getInitials(TargetEmail)}</Avatar>}
+                                        isGroupElement
+                                        key={DelegatedAccessID}
+                                    >
+                                        <div className="text-semibold text-ellipsis" title={TargetEmail}>
+                                            {TargetEmail}
+                                        </div>
+                                    </InputFieldStacked>
+                                ))}
+                            </InputFieldStackedGroup>
+                        </Scroll>
+                    </div>
+                </div>
                 <Button
                     size="large"
                     color="norm"
