@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53DAB27E2EF5B0E900523764 /* AutoFillEngine in Frameworks */ = {isa = PBXBuildFile; productRef = 53DAB27D2EF5B0E900523764 /* AutoFillEngine */; };
 		53DF69442EE32E5700CF98F0 /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53DF69432EE32E5700CF98F0 /* AuthenticationServices.framework */; };
-		53DF694F2EE32E5700CF98F0 /* AutoFill.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 53DF69412EE32E5700CF98F0 /* AutoFill.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		53DF694F2EE32E5700CF98F0 /* Proton Pass AutoFill.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 53DF69412EE32E5700CF98F0 /* Proton Pass AutoFill.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +29,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				53DF694F2EE32E5700CF98F0 /* AutoFill.appex in Embed Foundation Extensions */,
+				53DF694F2EE32E5700CF98F0 /* Proton Pass AutoFill.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -37,17 +38,21 @@
 
 /* Begin PBXFileReference section */
 		5304886F2EE32D890085291E /* Proton Pass Extensions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Proton Pass Extensions.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		53DF69412EE32E5700CF98F0 /* AutoFill.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AutoFill.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		53A40A422F0340E400DB5517 /* PassRustCore */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = PassRustCore; path = Packages/PassRustCore; sourceTree = "<group>"; };
+		53DAB2742EF5B05400523764 /* AutoFillEngine */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = AutoFillEngine; path = Packages/AutoFillEngine; sourceTree = "<group>"; };
+		53DF69412EE32E5700CF98F0 /* Proton Pass AutoFill.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Proton Pass AutoFill.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		53DF69432EE32E5700CF98F0 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
+		53E40A5E2EF9F18E00349EE3 /* Core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Core; path = Packages/Core; sourceTree = "<group>"; };
+		53E451172EF5A40500913067 /* DesignSystem */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = DesignSystem; path = Packages/DesignSystem; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		53DF69502EE32E5700CF98F0 /* Exceptions for "AutoFill" folder in "AutoFill" target */ = {
+		53DF69502EE32E5700CF98F0 /* Exceptions for "AutoFill" folder in "Proton Pass AutoFill" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 53DF69402EE32E5700CF98F0 /* AutoFill */;
+			target = 53DF69402EE32E5700CF98F0 /* Proton Pass AutoFill */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -60,7 +65,7 @@
 		53DF69452EE32E5700CF98F0 /* AutoFill */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				53DF69502EE32E5700CF98F0 /* Exceptions for "AutoFill" folder in "AutoFill" target */,
+				53DF69502EE32E5700CF98F0 /* Exceptions for "AutoFill" folder in "Proton Pass AutoFill" target */,
 			);
 			path = AutoFill;
 			sourceTree = "<group>";
@@ -80,6 +85,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				53DF69442EE32E5700CF98F0 /* AuthenticationServices.framework in Frameworks */,
+				53DAB27E2EF5B0E900523764 /* AutoFillEngine in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +97,10 @@
 			children = (
 				530488712EE32D8A0085291E /* Proton Pass Extensions */,
 				53DF69452EE32E5700CF98F0 /* AutoFill */,
+				53DAB2742EF5B05400523764 /* AutoFillEngine */,
+				53E40A5E2EF9F18E00349EE3 /* Core */,
+				53E451172EF5A40500913067 /* DesignSystem */,
+				53A40A422F0340E400DB5517 /* PassRustCore */,
 				53DF69422EE32E5700CF98F0 /* Frameworks */,
 				530488702EE32D890085291E /* Products */,
 			);
@@ -100,7 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				5304886F2EE32D890085291E /* Proton Pass Extensions.app */,
-				53DF69412EE32E5700CF98F0 /* AutoFill.appex */,
+				53DF69412EE32E5700CF98F0 /* Proton Pass AutoFill.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -140,9 +150,9 @@
 			productReference = 5304886F2EE32D890085291E /* Proton Pass Extensions.app */;
 			productType = "com.apple.product-type.application";
 		};
-		53DF69402EE32E5700CF98F0 /* AutoFill */ = {
+		53DF69402EE32E5700CF98F0 /* Proton Pass AutoFill */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 53DF69512EE32E5700CF98F0 /* Build configuration list for PBXNativeTarget "AutoFill" */;
+			buildConfigurationList = 53DF69512EE32E5700CF98F0 /* Build configuration list for PBXNativeTarget "Proton Pass AutoFill" */;
 			buildPhases = (
 				53DF693D2EE32E5700CF98F0 /* Sources */,
 				53DF693E2EE32E5700CF98F0 /* Frameworks */,
@@ -155,11 +165,12 @@
 			fileSystemSynchronizedGroups = (
 				53DF69452EE32E5700CF98F0 /* AutoFill */,
 			);
-			name = AutoFill;
+			name = "Proton Pass AutoFill";
 			packageProductDependencies = (
+				53DAB27D2EF5B0E900523764 /* AutoFillEngine */,
 			);
 			productName = AutoFill;
-			productReference = 53DF69412EE32E5700CF98F0 /* AutoFill.appex */;
+			productReference = 53DF69412EE32E5700CF98F0 /* Proton Pass AutoFill.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -195,7 +206,7 @@
 			projectRoot = "";
 			targets = (
 				5304886E2EE32D890085291E /* Proton Pass Extensions */,
-				53DF69402EE32E5700CF98F0 /* AutoFill */,
+				53DF69402EE32E5700CF98F0 /* Proton Pass AutoFill */,
 			);
 		};
 /* End PBXProject section */
@@ -237,7 +248,7 @@
 /* Begin PBXTargetDependency section */
 		53DF694E2EE32E5700CF98F0 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 53DF69402EE32E5700CF98F0 /* AutoFill */;
+			target = 53DF69402EE32E5700CF98F0 /* Proton Pass AutoFill */;
 			targetProxy = 53DF694D2EE32E5700CF98F0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -384,7 +395,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.33.1;
 				PRODUCT_BUNDLE_IDENTIFIER = me.proton.pass.electron;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -421,7 +432,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.33.1;
 				PRODUCT_BUNDLE_IDENTIFIER = me.proton.pass.electron;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -448,14 +459,14 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AutoFill/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = AutoFill;
+				INFOPLIST_KEY_CFBundleDisplayName = "Proton Pass AutoFill";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
 				MARKETING_VERSION = 1.33.1;
 				PRODUCT_BUNDLE_IDENTIFIER = me.proton.pass.electron.autofill;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -482,14 +493,14 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AutoFill/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = AutoFill;
+				INFOPLIST_KEY_CFBundleDisplayName = "Proton Pass AutoFill";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.4;
 				MARKETING_VERSION = 1.33.1;
 				PRODUCT_BUNDLE_IDENTIFIER = me.proton.pass.electron.autofill;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -526,7 +537,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		53DF69512EE32E5700CF98F0 /* Build configuration list for PBXNativeTarget "AutoFill" */ = {
+		53DF69512EE32E5700CF98F0 /* Build configuration list for PBXNativeTarget "Proton Pass AutoFill" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				53DF69522EE32E5700CF98F0 /* Debug */,
@@ -536,6 +547,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		53DAB27D2EF5B0E900523764 /* AutoFillEngine */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = AutoFillEngine;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 530488672EE32D890085291E /* Project object */;
 }
