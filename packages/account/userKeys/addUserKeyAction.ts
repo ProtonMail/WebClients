@@ -41,7 +41,6 @@ export const addUserKeyAction = ({
                 user,
                 addresses,
                 userKeys,
-                appName: extra.config.APP_NAME,
             });
             const isDeviceRecoveryEnabled = getIsDeviceRecoveryEnabled(userSettings, extra.authentication);
 

@@ -110,7 +110,6 @@ export const finalizeLogin = async ({
         addresses: cache.data.addresses,
         api,
         persistent,
-        appName,
         preAuthKTVerifier,
     });
     user = deviceRecoveryResult.user;

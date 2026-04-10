@@ -15,7 +15,6 @@ import { SessionSource } from '@proton/shared/lib/authentication/SessionInterfac
 import { getUser } from '@proton/shared/lib/authentication/getUser';
 import type { AuthResponse, InfoResponse } from '@proton/shared/lib/authentication/interface';
 import { persistSession } from '@proton/shared/lib/authentication/persistedSessionHelper';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import type { Api } from '@proton/shared/lib/interfaces';
 import type { KeyTransparencyActivation } from '@proton/shared/lib/interfaces/KeyTransparency';
@@ -139,7 +138,6 @@ export const performPasswordReset = async ({
     ownershipVerificationCode,
     resetResponse,
     persistent,
-    appName,
     productParam,
     ktActivation,
     setupVPN,
@@ -150,7 +148,6 @@ export const performPasswordReset = async ({
     ownershipVerificationCode: string;
     resetResponse: ValidateResetTokenResponse;
     persistent: boolean;
-    appName: APP_NAMES;
     productParam: ProductParam;
     ktActivation: KeyTransparencyActivation;
     setupVPN: boolean;
@@ -217,7 +214,6 @@ export const performPasswordReset = async ({
         api,
         keyPassword,
         persistent,
-        appName,
         addresses: undefined,
         user,
         preAuthKTVerifier,
