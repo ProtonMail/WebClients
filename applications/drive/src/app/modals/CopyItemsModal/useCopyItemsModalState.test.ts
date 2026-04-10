@@ -83,10 +83,10 @@ describe('useCopyItemsModalState', () => {
     });
 
     describe('handleSelect', () => {
-        it('sets copyTargetTreeId for folders, ignores files', () => {
+        it('sets copyTargetTreeId for folders, ignores files', async () => {
             const { result } = renderHook(() => useCopyItemsModalState(defaultProps));
 
-            act(() => {
+            await act(async () => {
                 result.current.handleSelect('null___file-uid', { type: NodeType.File } as any);
             });
             expect(result.current.copyTargetTreeId).toBeUndefined();
@@ -100,11 +100,11 @@ describe('useCopyItemsModalState', () => {
     });
 
     describe('errorMessage', () => {
-        it('returns null for writable roles and a message for Viewer', () => {
+        it('returns null for writable roles and a message for Viewer', async () => {
             const { result } = renderHook(() => useCopyItemsModalState(defaultProps));
 
             mockTree.get.mockReturnValue({ highestEffectiveRole: MemberRole.Editor });
-            act(() => {
+            await act(async () => {
                 result.current.handleSelect(FOLDER_TREE_ID, { type: NodeType.Folder } as any);
             });
             expect(result.current.errorMessage).toBeNull();
@@ -118,10 +118,10 @@ describe('useCopyItemsModalState', () => {
     });
 
     describe('onCopy', () => {
-        it('does nothing when no target is selected', () => {
+        it('does nothing when no target is selected', async () => {
             const { result } = renderHook(() => useCopyItemsModalState(defaultProps));
 
-            act(() => {
+            await act(async () => {
                 result.current.onCopy();
             });
 
@@ -131,7 +131,7 @@ describe('useCopyItemsModalState', () => {
         it('calls copyItems and closes modal on success', async () => {
             const { result } = renderHook(() => useCopyItemsModalState(defaultProps));
 
-            act(() => {
+            await act(async () => {
                 result.current.handleSelect(FOLDER_TREE_ID, { type: NodeType.Folder } as any);
             });
 
@@ -149,7 +149,7 @@ describe('useCopyItemsModalState', () => {
 
             const { result } = renderHook(() => useCopyItemsModalState(defaultProps));
 
-            act(() => {
+            await act(async () => {
                 result.current.handleSelect(FOLDER_TREE_ID, { type: NodeType.Folder } as any);
             });
 
@@ -163,11 +163,11 @@ describe('useCopyItemsModalState', () => {
     });
 
     describe('onCreateFolder', () => {
-        it('opens the create folder modal and calls addNode on success', () => {
+        it('opens the create folder modal and calls addNode on success', async () => {
             const { result } = renderHook(() => useCopyItemsModalState(defaultProps));
 
             // Split into two acts so copyTargetUid is committed before onCreateFolder closes over it.
-            act(() => {
+            await act(async () => {
                 result.current.handleSelect(FOLDER_TREE_ID, { type: NodeType.Folder } as any);
             });
             act(() => {
