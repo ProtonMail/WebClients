@@ -14,6 +14,7 @@ export function isItemShare(share: Share): share is Share<ShareType.Item> {
 }
 
 export const isShareManageable = <T extends Share>(share: T) => share.owner || share.shareRoleId === ShareRole.MANAGER;
+export const isGroupManagedShare = <T extends Share>(share: T) => isShareManageable(share) && share.groupId !== null;
 export const isShareWritable = <T extends Share>({ shareRoleId }: T) => shareRoleId !== ShareRole.READ;
 export const isShareReadOnly = <T extends Share>({ shareRoleId }: T) => shareRoleId === ShareRole.READ;
 export const isShareDeduped =
