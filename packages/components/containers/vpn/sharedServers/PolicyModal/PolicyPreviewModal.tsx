@@ -21,7 +21,7 @@ import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFi
 import { IcCircleSlash } from '@proton/icons/icons/IcCircleSlash';
 import { IcPencil } from '@proton/icons/icons/IcPencil';
 import { IcUsersFilled } from '@proton/icons/icons/IcUsersFilled';
-import { getCountryOptions } from '@proton/payments';
+import { getCountryOptions } from '@proton/payments/core/countries';
 import { MINUTE } from '@proton/shared/lib/constants';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 

@@ -10,7 +10,7 @@ import Checkbox from '@proton/components/components/input/Checkbox';
 import Label from '@proton/components/components/label/Label';
 import Info from '@proton/components/components/link/Info';
 import { useNow } from '@proton/components/hooks/useNow';
-import type { CountryOptions } from '@proton/payments';
+import type { CountryOptions } from '@proton/payments/core/countries';
 import { useIsB2BTrial } from '@proton/payments/ui';
 import { SECOND } from '@proton/shared/lib/constants';
 

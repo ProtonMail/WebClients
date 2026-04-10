@@ -32,7 +32,6 @@ import type { IconName } from '@proton/icons/types';
 import metrics from '@proton/metrics';
 import {
     type AvailablePaymentMethod,
-    type BillingAddress,
     COUPON_CODES,
     CYCLE,
     type Currency,
@@ -55,6 +54,7 @@ import {
     isSubscriptionCheckForbidden,
     switchPlan,
 } from '@proton/payments';
+import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import { getCheckoutUi, getOptimisticCheckResult, getOptimisticCheckout } from '@proton/payments/core/checkout';
 import { VatReverseChargeNotSupportedError } from '@proton/payments/core/errors';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';

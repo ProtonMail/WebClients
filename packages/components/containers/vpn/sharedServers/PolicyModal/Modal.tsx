@@ -24,7 +24,7 @@ import type {
     VpnLocationFilterPolicy,
 } from '@proton/components/containers/vpn/sharedServers/useSharedServers';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { getCountryOptions } from '@proton/payments';
+import { getCountryOptions } from '@proton/payments/core/countries';
 import { MINUTE } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
