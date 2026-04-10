@@ -452,6 +452,9 @@
       "Fit to window": [
         "Sesuaikan dengan jendela"
       ],
+      "Forgot password?": [
+        "Lupa kata sandi?"
+      ],
       "Forgot recovery method?": [
         "Lupa metode pemulihan?"
       ],
@@ -649,6 +652,9 @@
       ],
       "Next page": [
         "Halaman selanjutnya"
+      ],
+      "No": [
+        "Tidak"
       ],
       "OK": [
         "OK"
@@ -1132,6 +1138,9 @@
       ],
       "Wipe": [
         "Hapus"
+      ],
+      "Yes": [
+        "Ya"
       ],
       "Your server will be provisioned in the next days": [
         "Server Anda akan disiapkan dalam beberapa hari ke depan"
@@ -6328,6 +6337,12 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Masukkan alamat email atau nama pengguna akun ${ BRAND_NAME } Anda."
       ],
+      "Enter your own password (as organization admin).": [
+        "Masukkan kata sandi Anda (selaku admin organisasi)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Masukkan kata sandi Anda (selaku kontak tepercaya)"
+      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Masukkan alamat email pemulihan Anda dan kami akan mengirimkan nama pengguna atau alamat email Anda."
       ],
@@ -8911,6 +8926,12 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Ya, saya ingin menghapus akun ini beserta seluruh data yang terkandung di dalamnya secara permanen."
       ],
+      "Your password (admin)": [
+        "Kata sandi Anda (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Kata sandi Anda (kontak tepercaya)"
+      ],
       "ZIP code": [
         "Kode pos"
       ]
@@ -9395,9 +9416,6 @@
       ],
       "60 minutes per meeting": [
         "60 menit per pertemuan"
-      ],
-      "Appointment scheduling": [
-        "Penjadwalan janji temu"
       ],
       "Booking pages": [
         "Laman pemesanan"
@@ -11866,6 +11884,20 @@
         "Tidak diketahui"
       ]
     },
+    "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Other": [
+        "Lainnya"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
+      "Yahoo": [
+        "Yahoo"
+      ]
+    },
     "Recovery Email": {
       "Cancel": [
         "Batal"
@@ -13211,6 +13243,9 @@
       "Share the confirmation code with your administrator": [
         "Bagikan kode konfirmasi ini dengan administrator Anda"
       ],
+      "Sign in": [
+        "Masuk"
+      ],
       "Sign in to your organization": [
         "Masuk ke organisasi Anda"
       ],
@@ -13270,6 +13305,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Anda akan perlu untuk membuat pengguna baru secara manual untuk menambahkan pengguna ini ke organisasi Anda."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Anda akan diarahkan ke penyedia SSO pihak ketiga Anda."
       ],
       "Your SSO configuration will be deleted.": [
         "Konfigurasi SSO Anda akan dihapus."
@@ -14729,6 +14767,9 @@
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Masukkan rincian Akun ${ BRAND_NAME } Anda untuk bergabung ke program Beta ${ app }"
       ],
+      "Enter your password": [
+        "Masukkan kata sandi Anda"
+      ],
       "Error": [
         "Kesalahan"
       ],
@@ -14866,6 +14907,9 @@
       ],
       "Multiple accounts, 1 private inbox": [
         "Banyak akun, 1 kotak masuk privat"
+      ],
+      "My VPN": [
+        "VPN Saya"
       ],
       "Name": [
         "Nama"
@@ -15262,6 +15306,9 @@
       ],
       "View organization events by upgrading to Professional": [
         "Tinjau rekaman peristiwa organisasi dengan meningkatkan ke Professional"
+      ],
+      "VPN": [
+        "VPN"
       ],
       "Warning": [
         "Peringatan"
@@ -15794,9 +15841,6 @@
       ],
       "Create password instead": [
         "Buat kata sandi saja"
-      ],
-      "Create user": [
-        "Buat pengguna"
       ],
       "Email": [
         "Email"

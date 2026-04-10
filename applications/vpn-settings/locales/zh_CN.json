@@ -467,6 +467,9 @@
       "Fit to window": [
         "适应窗口大小"
       ],
+      "Forgot password?": [
+        "忘记密码？"
+      ],
       "Forgot recovery method?": [
         "忘记恢复方法？"
       ],
@@ -664,6 +667,9 @@
       ],
       "Next page": [
         "下一页"
+      ],
+      "No": [
+        "否"
       ],
       "OK": [
         "确定"
@@ -1147,6 +1153,9 @@
       ],
       "Wipe": [
         "清除"
+      ],
+      "Yes": [
+        "是"
       ],
       "Your server will be provisioned in the next days": [
         "近几天，服务器会配置、准备好。"
@@ -6663,6 +6672,12 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "请输入您的 ${ BRAND_NAME } 账户邮箱地址或用户名。"
       ],
+      "Enter your own password (as organization admin).": [
+        "请输入您自己的密码（作为组织管理员）。"
+      ],
+      "Enter your own password (as trusted contact).": [
+        "输入您自己的密码（作为可信联系人）"
+      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "输入您的密保邮箱，我们将发邮件告知您的用户名或邮箱地址。"
       ],
@@ -9369,6 +9384,12 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "我确定要永久删除此账户及其所有数据。"
       ],
+      "Your password (admin)": [
+        "您的密码（管理员）"
+      ],
+      "Your password (trusted contact)": [
+        "您的密码（可信联系人）"
+      ],
       "ZIP code": [
         "邮政编码"
       ]
@@ -9890,9 +9911,6 @@
       ],
       "60 minutes per meeting": [
         "每次会议最长 60 分钟"
-      ],
-      "Appointment scheduling": [
-        "预约安排"
       ],
       "Booking pages": [
         "预约页面"
@@ -13872,6 +13890,9 @@
       "Share the confirmation code with your administrator": [
         "与您的管理员分享该验证码"
       ],
+      "Sign in": [
+        "登录"
+      ],
       "Sign in to your organization": [
         "登录到您的组织"
       ],
@@ -13931,6 +13952,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "您必须手动创建新用户，并将其添加到组织中。"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "您将被重定向到您的第三方 SSO 提供商。"
       ],
       "Your SSO configuration will be deleted.": [
         "您的 SSO 配置将被删除。"
@@ -15426,6 +15450,9 @@
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "输入您的 ${ BRAND_NAME } 账户详情以加入 ${ app } Beta 计划"
       ],
+      "Enter your password": [
+        "请输入您的密码"
+      ],
       "Error": [
         "失败"
       ],
@@ -16527,9 +16554,6 @@
       ],
       "Create password instead": [
         "新建密码"
-      ],
-      "Create user": [
-        "创建用户"
       ],
       "Email": [
         "邮箱地址"

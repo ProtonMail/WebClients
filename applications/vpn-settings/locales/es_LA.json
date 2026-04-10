@@ -485,6 +485,9 @@
       "Fit to window": [
         "Ajustar a la ventana"
       ],
+      "Forgot password?": [
+        "¿Olvidó su contraseña?"
+      ],
       "Forgot recovery method?": [
         "¿Método de recuperación olvidado?"
       ],
@@ -691,6 +694,9 @@
       ],
       "Next page": [
         "Página siguiente"
+      ],
+      "No": [
+        "No"
       ],
       "OK": [
         "OK"
@@ -1192,6 +1198,9 @@
       ],
       "Wipe": [
         "Borrar"
+      ],
+      "Yes": [
+        "Sí"
       ],
       "Your server will be provisioned in the next days": [
         "Su servidor estará configurado en unos días."
@@ -6463,12 +6472,6 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Un alias de correo funciona como una dirección de correo electrónico, pero reduce el spam y mantiene la dirección e identidad real ocultas."
       ],
-      "An email with a verification code was just sent to ${ recoveryEmailElement }. If you can’t find the message in your inbox, please check your spam folder.": [
-        "Se acaba de enviar un correo electrónico con un código de verificación a ${ recoveryEmailElement }. Si no encuentra el mensaje en su bandeja de entrada, revise su carpeta de spam."
-      ],
-      "An SMS with a verification code was just sent to ${ recoveryPhoneElement }.": [
-        "Se acaba de enviar un SMS con un código de verificación a ${ recoveryPhoneElement }."
-      ],
       "and": [
         "y"
       ],
@@ -6923,6 +6926,12 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Ingrese la dirección de correo o usuario de ${ BRAND_NAME }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Ingrese su propia contraseña (como administrador de la organización)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Ingrese su propia contraseña (como contacto de confianza)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Ingrese la dirección de correo electrónico de recuperación y le enviaremos el nombre de usuario o dirección de correo."
@@ -9714,6 +9723,12 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Sí, quiero eliminar permanentemente esta cuenta y todos los datos."
       ],
+      "Your password (admin)": [
+        "Su contraseña (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Su contraseña (contacto de confianza)"
+      ],
       "ZIP code": [
         "Código postal"
       ]
@@ -10246,9 +10261,6 @@
       "60 minutes per meeting": [
         "60 minutos por reunión"
       ],
-      "Appointment scheduling": [
-        "Programación de citas"
-      ],
       "Booking pages": [
         "Páginas de reservas"
       ],
@@ -10686,6 +10698,13 @@
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Todos los servicios básicos de ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "Appointment scheduling": [
+        "Programación de citas"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Programación de citas con ${ n } página de reservas",
+        "Programación de citas con ${ n } páginas de reservas"
       ],
       "Apps for": [
         "Aplicaciones para"
@@ -14402,6 +14421,9 @@
       "Share the confirmation code with your administrator": [
         "Comparta el código de confirmación con su administrador"
       ],
+      "Sign in": [
+        "Iniciar sesión"
+      ],
       "Sign in to your organization": [
         "Iniciar sesión en la organización"
       ],
@@ -14461,6 +14483,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Tendrá que crear los nuevos usuarios manualmente para agregarlos a su organización."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Se le redirigirá a su proveedor de SSO de terceros."
       ],
       "Your SSO configuration will be deleted.": [
         "Se eliminará su configuración de SSO."
@@ -16012,6 +16037,9 @@
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Ingrese los detalles de la cuenta de ${ BRAND_NAME } para unirse al programa Beta de ${ app }"
       ],
+      "Enter your password": [
+        "Ingrese su contraseña"
+      ],
       "Error": [
         "Error"
       ],
@@ -17156,9 +17184,6 @@
       ],
       "Create password instead": [
         "Crear una contraseña en su lugar"
-      ],
-      "Create user": [
-        "Crear usuario"
       ],
       "Email": [
         "Correo"

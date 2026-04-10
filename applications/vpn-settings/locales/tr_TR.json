@@ -476,6 +476,9 @@
       "Fit to window": [
         "Pencereye sığdır"
       ],
+      "Forgot password?": [
+        "Parolamı unuttum"
+      ],
       "Forgot recovery method?": [
         "Kurtarma yöntemi unutulsun mu?"
       ],
@@ -682,6 +685,9 @@
       ],
       "Next page": [
         "Sonraki sayfa"
+      ],
+      "No": [
+        "Hayır"
       ],
       "OK": [
         "Tamam"
@@ -1177,6 +1183,9 @@
       ],
       "Wipe": [
         "Yok et"
+      ],
+      "Yes": [
+        "Evet"
       ],
       "Your server will be provisioned in the next days": [
         "Sunucunuz bir kaç gün içinde hazırlanacak"
@@ -3411,6 +3420,14 @@
     "Delete group prompt": {
       "Are you sure you want to delete this group?": [
         "Bu grubu silmek istediğinize emin misiniz?"
+      ],
+      "Please note that if you delete the group ${ displayGroupName }, it will be permanently removed.": [
+        "${ displayGroupName } grubunu silerseniz grubun kalıcı olarak silineceğini lütfen unutmayın."
+      ]
+    },
+    "Delete group prompt with email": {
+      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
+        "${ displayGroupName } grubunu (bu adresle birlikte: ${ displayGroupAddressEmail }) silerseniz bu adresi kullanarak artık e-posta alamayacağınızı lütfen unutmayın."
       ]
     },
     "Delinquent modal title": {
@@ -5452,6 +5469,14 @@
         "Hizmetler"
       ]
     },
+    "Group detail label": {
+      "Description:": [
+        "Açıklama:"
+      ],
+      "Group address:": [
+        "Grup adresi:"
+      ]
+    },
     "Group member count": {
       "${ memberCount } member": [
         "${ memberCount } üye",
@@ -6256,6 +6281,9 @@
         "Sunucu ekle (${ availableAddedCount } kullanılabilir)",
         "Sunucu ekle (${ availableAddedCount } kullanılabilir)"
       ],
+      "Add users by name or email to this group.": [
+        "Bu gruba kullanıcıları ad veya e-posta adresiyle ekleyin."
+      ],
       "Add video conferencing links to calendar invitations": [
         "Takvim davetiyelerinize görüntülü görüşme bağlantıları ekleyin."
       ],
@@ -6345,12 +6373,6 @@
       ],
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "E-posta takma adı e-posta adresi gibi çalışır. Ancak istenmeyen e-postaları azaltır ve gerçek e-posta adresinizi ve kimliğinizi gizli tutar."
-      ],
-      "An email with a verification code was just sent to ${ recoveryEmailElement }. If you can’t find the message in your inbox, please check your spam folder.": [
-        "Doğrulama kodunu içeren bir e-posta az önce ${ recoveryEmailElement } adresine gönderildi. İletiyi gelen kutunuzda bulamazsanız lütfen istenmeyen klasörünüzü kontrol edin."
-      ],
-      "An SMS with a verification code was just sent to ${ recoveryPhoneElement }.": [
-        "Doğrulama kodunu içeren bir SMS az önce ${ recoveryPhoneElement } numarasına gönderildi."
       ],
       "and": [
         "ve"
@@ -6803,6 +6825,12 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "${ BRAND_NAME } hesabınızın e-posta adresini ya da kullanıcı adını yazın."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Kendi parolanızı yazın (kuruluş yöneticisi olarak)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Kendi parolanızı yazın (güvenilen kişi olarak)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Kurtarma e-posta adresinizi yazın. Size kullanıcı adınızı veya e-posta adresinizi göndereceğiz."
@@ -7601,6 +7629,9 @@
       ],
       "Securing your account": [
         "Hesabınız korunuyor"
+      ],
+      "Select a group to view its members and settings.": [
+        "Üyelerini ve ayarlarını görüntülemek için bir grup seçin."
       ],
       "Select one or multiple user affiliations": [
         "Bir ya da birkaç kullanıcı ilişkisi seçin"
@@ -9083,6 +9114,9 @@
       "Enabled": [
         "Kullanılıyor"
       ],
+      "Enter name or email address": [
+        "Adınızı veya e-posta adresinizi girin"
+      ],
       "Enter password": [
         "Parolayı yazın"
       ],
@@ -9172,6 +9206,9 @@
       ],
       "Interval": [
         "Aralık"
+      ],
+      "Invite people": [
+        "İnsanları davet et"
       ],
       "Invite via email": [
         "E-posta ile davet edin"
@@ -9563,6 +9600,12 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Evet, bu hesabı ve tüm verilerini kalıcı olarak silmek istiyorum."
+      ],
+      "Your password (admin)": [
+        "Parolanız (yönetici)"
+      ],
+      "Your password (trusted contact)": [
+        "Parolanız (güvenilen kişi)"
       ],
       "ZIP code": [
         "Posta kodu"
@@ -10095,9 +10138,6 @@
       ],
       "60 minutes per meeting": [
         "Görüşme başına 60 dakika"
-      ],
-      "Appointment scheduling": [
-        "Randevu planlama"
       ],
       "Booking pages": [
         "Rezervasyon sayfaları"
@@ -14249,6 +14289,9 @@
       "Share the confirmation code with your administrator": [
         "Doğrulama kodunu yöneticiniz ile paylaşın"
       ],
+      "Sign in": [
+        "Oturum aç"
+      ],
       "Sign in to your organization": [
         "Kuruluşunuzda oturum açın"
       ],
@@ -14308,6 +14351,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Kuruluşunuza eklemek istediğiniz yeni kullanıcıları el ile oluşturmanız gerekecek."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Tek oturum açma hizmeti sağlayıcınıza yönlendirileceksiniz."
       ],
       "Your SSO configuration will be deleted.": [
         "Tek oturum açma yapılandırmanız silinecek"
@@ -15627,6 +15673,9 @@
       "Create Gateway": [
         "Ağ geçidi ekle"
       ],
+      "Create group": [
+        "Grup oluştur"
+      ],
       "Create multiple user accounts": [
         "Birkaç kullanıcı hesabı ekle"
       ],
@@ -15796,6 +15845,9 @@
       "Edit Gateway ${ currentName }": [
         "${ currentName } ağ geçidini düzenle"
       ],
+      "Edit group": [
+        "Grubu düzenle"
+      ],
       "Edit invoice note": [
         "Fatura notunu düzenle"
       ],
@@ -15840,6 +15892,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "${ app } Beta programına katılmak için ${ BRAND_NAME } hesabınızın bilgilerini yazın"
+      ],
+      "Enter your password": [
+        "Parolanızı yazın"
       ],
       "Error": [
         "Hata"
@@ -16967,9 +17022,6 @@
       ],
       "Create password instead": [
         "Bunun yerine parola oluşturun"
-      ],
-      "Create user": [
-        "Kullanıcı ekle"
       ],
       "Email": [
         "E-posta adresi"
