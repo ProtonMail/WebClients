@@ -3312,6 +3312,10 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Ayrıca ${ statusPageLink }na da bakabilirsiniz"
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } öğe taşınamadı",
+        "${ failureItems.length } öğe taşınamadı"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "Kullanıcı adınız: ${ user.Name }. ${ emailAddress } oluşturmak için lütfen Ayarlar > Kimlik ve adresler > Kısa etki alanı (pm.me) bölümüne gidin."
       ],
@@ -8088,9 +8092,6 @@
       ],
       "60 minutes per meeting": [
         "Görüşme başına 60 dakika"
-      ],
-      "Appointment scheduling": [
-        "Randevu planlama"
       ],
       "Booking pages": [
         "Rezervasyon sayfaları"

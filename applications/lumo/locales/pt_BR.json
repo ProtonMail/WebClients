@@ -1224,11 +1224,23 @@
       ]
     },
     "collider_2025: Error": {
+      "Describe what you want the workflow to do.": [
+        "Descreva o que você quer que o fluxo de trabalho faça."
+      ],
       "Error processing ${ result.fileName }: ${ result.errorMessage }": [
         "Erro ao processar ${ result.fileName }: ${ result.errorMessage }"
       ],
       "Error processing file: ${ file.name }": [
         "Erro ao processar arquivo: ${ file.name }"
+      ],
+      "Failed to create API key": [
+        "Falha ao criar a chave de API"
+      ],
+      "Failed to delete API key": [
+        "Falha ao excluir a chave de API"
+      ],
+      "Failed to load API keys": [
+        "Falha ao carregar as chaves de API"
       ],
       "Failed to process ${ DRIVE_SHORT_APP_NAME } file: ${ file.name }": [
         "Falha ao processar o arquivo ${ DRIVE_SHORT_APP_NAME }: ${ file.name }"
@@ -1702,6 +1714,9 @@
       "Table view": [
         "Visualização em tabela"
       ],
+      "The ${ LUMO_SHORT_APP_NAME } API is available for ${ LUMO_SHORT_APP_NAME }+ subscribers. Upgrade to create API keys and use the API programmatically.": [
+        "A API do ${ LUMO_SHORT_APP_NAME } está disponível para assinantes do ${ LUMO_SHORT_APP_NAME }+. Faça upgrade para criar chaves de API e usar a API programaticamente."
+      ],
       "There was an error processing this file. The content may not be readable or the file format might not be fully supported.": [
         "Ocorreu um erro ao processar este arquivo. O conteúdo pode não ser legível ou o formato do arquivo pode não ser totalmente suportado."
       ],
@@ -1847,11 +1862,17 @@
       "Path": [
         "Caminho"
       ],
+      "Prompt": [
+        "Prompt"
+      ],
       "Python": [
         "Python"
       ],
       "required": [
         "obrigatório"
+      ],
+      "Research brief": [
+        "Resumo da investigação"
       ],
       "Response": [
         "Resposta"
@@ -1873,6 +1894,9 @@
       ],
       "Tokens generated": [
         "Tokens gerados"
+      ],
+      "Tool calls": [
+        "Chamadas de ferramenta"
       ],
       "TypeScript": [
         "TypeScript"
@@ -2841,6 +2865,9 @@
       ]
     },
     "collider_2025:Placeholder": {
+      "Add instructions about the tone, style, and persona you want ${ LUMO_SHORT_APP_NAME } to adopt.": [
+        "Adicione instruções sobre o tom, estilo e personalidade que você deseja que o ${ LUMO_SHORT_APP_NAME } adote."
+      ],
       "Add instructions about the tone, style, and persona you want ${ LUMO_SHORT_APP_NAME } to adopt. These instructions will apply to all chats in this project.": [
         "Adicione instruções sobre o tom, estilo e persona que você deseja que o ${ LUMO_SHORT_APP_NAME } adote. Estas instruções se aplicarão a todos os bate-papos neste projeto."
       ],
@@ -3028,6 +3055,11 @@
       ],
       "Indexing for search": [
         "Indexando para pesquisa"
+      ]
+    },
+    "collider_2025:Subline": {
+      "Projects help you keep related chats, files, and instructions in one place. They make it easy to stay organized and reuse context across chats.": [
+        "Os projetos ajudam você a manter bate-papos, arquivos e instruções relacionados em um só lugar. Eles facilitam a organização e a reutilização do contexto entre os bate-papos."
       ]
     },
     "collider_2025:Success": {
@@ -4280,6 +4312,9 @@
       ],
       "Checkout expired, please try again": [
         "Pedido expirado. Tente novamente"
+      ],
+      "Company name or personal name is required": [
+        "É necessário informar o nome da empresa ou o nome pessoal"
       ],
       "Domain not available, try again later": [
         "Domínio indisponível. Tente novamente mais tarde."
@@ -5743,9 +5778,6 @@
       "60 minutes per meeting": [
         "60 minutos por reunião"
       ],
-      "Appointment scheduling": [
-        "Agendamento de compromissos"
-      ],
       "Booking pages": [
         "Páginas de agendamentos"
       ],
@@ -7085,6 +7117,9 @@
       ],
       "Anderson": [
         "Braga"
+      ],
+      "Anything you'd like us to know": [
+        "Algo que você gostaria que soubéssemos?"
       ],
       "Anytown": [
         "Nova Esperança"

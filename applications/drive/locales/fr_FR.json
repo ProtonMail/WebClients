@@ -3324,6 +3324,10 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Vous pouvez aussi vérifier notre ${ statusPageLink }."
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } élément n'a pas pu être déplacé.",
+        "${ failureItems.length } éléments n'ont pas pu être déplacés."
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } est votre nom d'utilisateur. Pour créer ${ emailAddress }, dirigez-vous vers Paramètres > Identités et adresses > Domaine court (pm.me)."
       ],
@@ -8095,9 +8099,6 @@
       ],
       "60 minutes per meeting": [
         "60 minutes par réunion"
-      ],
-      "Appointment scheduling": [
-        "Planification de rendez-vous"
       ],
       "Booking pages": [
         "Pages de réservation"

@@ -3371,6 +3371,12 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Вы можаце таксама праверыць наш ${ statusPageLink }"
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "Не ўдалося перамясціць ${ failureItems.length } элемент",
+        "Не ўдалося перамясціць ${ failureItems.length } элементы",
+        "Не ўдалося перамясціць ${ failureItems.length } элементаў",
+        "Не ўдалося перамясціць ${ failureItems.length } элементаў"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } з'яўляецца вашым імем карыстальніка. Перайдзіце ў Налады -> Ідэнтычнасць і адрасы -> Кароткі дамен (pm.me), каб стварыць ${ emailAddress }."
       ],
@@ -8340,9 +8346,6 @@
       ],
       "60 minutes per meeting": [
         "60 хвілін на сустрэчу"
-      ],
-      "Appointment scheduling": [
-        "Планаванне сустрэч"
       ],
       "Booking pages": [
         "Старонкі браніравання"
