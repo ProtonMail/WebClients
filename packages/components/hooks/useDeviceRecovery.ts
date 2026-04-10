@@ -11,7 +11,6 @@ import { getIsDeviceRecoveryEnabled, syncDeviceRecovery } from '@proton/shared/l
 import noop from '@proton/utils/noop';
 
 import useApi from './useApi';
-import useConfig from './useConfig';
 
 export const useIsDeviceRecoveryEnabled = () => {
     const [userSettings] = useUserSettings();
@@ -32,7 +31,6 @@ export const useDeviceRecovery = () => {
     const getUserSettings = useGetUserSettings();
     const authentication = useAuthentication();
     const api = useApi();
-    const { APP_NAME } = useConfig();
 
     useEffect(() => {
         if (!userKeys?.length) {
@@ -55,7 +53,6 @@ export const useDeviceRecovery = () => {
                 userKeys,
                 addresses,
                 userSettings,
-                appName: APP_NAME,
                 signal: abortController.signal,
                 authentication,
             });

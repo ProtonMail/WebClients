@@ -7,7 +7,6 @@ import noop from '@proton/utils/noop';
 import uniqueBy from '@proton/utils/uniqueBy';
 
 import { setNewRecoverySecret } from '../api/settingsRecovery';
-import type { APP_NAMES } from '../constants';
 import type {
     Address,
     Api,
@@ -231,7 +230,6 @@ export const syncDeviceRecovery = async ({
     user,
     userKeys,
     userSettings,
-    appName,
     addresses,
     signal,
     authentication,
@@ -240,7 +238,6 @@ export const syncDeviceRecovery = async ({
     user: User;
     userKeys: DecryptedKey[];
     userSettings: UserSettings;
-    appName: APP_NAMES;
     addresses: Address[];
     signal?: AbortSignal;
     authentication: AuthenticationStore;
@@ -258,7 +255,6 @@ export const syncDeviceRecovery = async ({
         user,
         addresses,
         userKeys,
-        appName,
     });
     const isDeviceRecoveryAvailable = authentication.getTrusted() && isRecoveryFileAvailable;
 

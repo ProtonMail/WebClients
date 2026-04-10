@@ -1,6 +1,5 @@
 import { c } from 'ttag';
 
-import useConfig from '@proton/components/hooks/useConfig';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLocalState from '@proton/components/hooks/useLocalState';
 import useNotifications from '@proton/components/hooks/useNotifications';
@@ -25,7 +24,6 @@ export const ResetPassword = () => {
 
     const silentApi = useSilentApi();
     const [persistent] = useLocalState(false, defaultPersistentKey);
-    const { APP_NAME } = useConfig();
     const getKtActivation = useGetAccountKTActivation();
     const errorHandler = useErrorHandler();
 
@@ -51,7 +49,6 @@ export const ResetPassword = () => {
                     ownershipVerificationCode,
                     resetResponse,
                     persistent,
-                    appName: APP_NAME,
                     productParam,
                     ktActivation: await getKtActivation(),
                     setupVPN,

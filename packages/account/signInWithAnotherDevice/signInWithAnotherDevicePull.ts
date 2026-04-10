@@ -225,7 +225,6 @@ const consumeForkSession = async ({
         user,
         addresses: undefined,
         api: authApi,
-        appName: config.appName,
         persistent,
         keyPassword,
         preAuthKTVerifier,
