@@ -289,6 +289,9 @@
       "Connect apps and devices": [
         "Forbind apps og enheder"
       ],
+      "Connect to Gmail": [
+        "Forbind til Gmail"
+      ],
       "Connect to video conferencing": [
         "Forbind til videokonferencer"
       ],
@@ -1027,6 +1030,9 @@
       "Open navigation": [
         "Åbn navigation"
       ],
+      "Or remove forwarding address": [
+        "Eller fjern videresendelsesadresse"
+      ],
       "Or use a different Gmail address": [
         "Eller brug en anden Gmail-adresse"
       ],
@@ -1101,6 +1107,9 @@
       ],
       "Reconnect": [
         "Tilslut igen"
+      ],
+      "Reconnect to Gmail": [
+        "Genopret forbindelse til Gmail"
       ],
       "Recover data": [
         "Gendan data"
@@ -4053,6 +4062,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "Sorter automatisk dine indgående beskeder, før de når din indbakke."
       ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Blokér Google fra at profilere dig. Gmail kan ikke se hvad du laver i ${ MAIL_APP_NAME }"
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Konfigurer dette først for at aktivere din organisation og tilpasse din e-mailadresse."
       ],
@@ -4079,6 +4091,9 @@
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Synkroniser nemt filer til skyen fra din computer og få adgang til dem fra din mobilenhed."
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "E-mails der er sendt til ${ connectedAddressText } vil nu blive vist i ${ MAIL_APP_NAME }."
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Tilskynd til brug af to-faktor-godkendelse i din organisation for ekstra sikkerhed."
@@ -4123,11 +4138,20 @@
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "Nye e-mails fra ${ senderEmailAddress } vil ikke blive leveret og vil blive permanent slettet."
       ],
+      "No ads. No trackers.": [
+        "Ingen reklamer. Ingen trackere."
+      ],
       "No folders": [
         "Ingen mapper"
       ],
       "No labels": [
         "Ingen etiketter"
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "Læs, svar og hold styr på Gmail direkte fra ${ MAIL_APP_NAME }"
+      ],
+      "Send and receive Gmail correspondence directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "Send og modtag Gmail-korrespondancer direkte i ${ MAIL_APP_NAME }. Forbind din adresse i ${ addressesSettingsLink }."
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "Adskil forskellige aspekter af dit liv, med flere e-mailadresser, og lås op for flere premium-funktioner, når du opgraderer."
@@ -4143,6 +4167,22 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Forenkl synkronisering og planlægning med delte kalendere."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Dette kan ske hvis nogle tilladelser blev fjernet, eller din adgangskode blev ændret."
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "For at forbinde en anden Gmail-adresse skal du fjerne ekstra Gmail-adresser, der videresender til ${ BRAND_NAME }."
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "For at forbinde op til ${ MAX_SYNC_PAID_USER } Gmail-adresse skal du opgradere til ${ planName }.",
+        "For at forbinde op til ${ MAX_SYNC_PAID_USER } Gmail-adresser skal du opgradere til ${ planName }."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "For at fortsætte med at modtage og sende Gmail-beskeder i ${ BRAND_NAME } skal du genoprette forbindelsen til din konto."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "For at fortsætte med at modtage og sende Gmail-beskeder i ${ BRAND_NAME } skal du genoprette forbindelsen til dine konti."
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Du kan fortsætte med at bruge skriveassistenten ved at tilføje den til dit abonnement."
@@ -4165,6 +4205,9 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "Slå e-mail-trackerbeskyttelse til for at forhindre annoncører og andre i at spore din placering og onlineaktivitet."
       ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "Opgrader til ${ planName } for at forbinde op til ${ MAX_SYNC_PAID_USER } konti"
+      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "Opgrader for at få ${ activatePmUser } og en kortere e-mailadresse, der er nem at huske, ud over din nuværende."
       ],
@@ -4177,8 +4220,17 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Brug denne vejledning for hurtigt at lade din organisation drage fordel af ${ BRAND_NAME }'s branchens førende kryptering og privatlivsøkosystem."
       ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Vi kan ikke længere få adgang til ${ boldEmails }."
+      ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "Vi har ikke fundet nogen kendte trackere og tracking-URL'er i denne e-mail."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "Vi importerer dine gamle e-mails og forbinder din Gmail til ${ MAIL_APP_NAME }, så nye beskeder vises automatisk"
+      ],
+      "We've started importing your email from Gmail. We'll let you know when it's done.": [
+        "Vi er begyndt at importere din e-mail fra Gmail. Vi giver dig besked når det er færdigt."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Vi er kede af at du forlader os. Hvis du har et øjeblik, så ville vi sætte stor pris på at høre hvorfor du annullerer. Din feedback hjælper os med at gøre ${ BRAND_NAME } bedre for alle."
@@ -4192,17 +4244,49 @@
       "With custom snooze, you can hide emails and set them to reappear at a better time.": [
         "Med tilpasset udsættelse kan du skjule e-mails og indstille dem til at dukke op igen på et bedre tidspunkt."
       ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Du har allerede en Gmail-adresse, der videresender til ${ MAIL_APP_NAME }. Forbind til den nedenfor for at sende og modtage e-mails direkte fra ${ MAIL_APP_NAME }."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Du har allerede Gmail-adresser der videresender til ${ MAIL_APP_NAME }. Forbind til en nedenfor for at sende og modtage e-mails direkte fra ${ MAIL_APP_NAME }."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kan importere begivenheder i iCal format (ICS-fil). Denne fil skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have op til ${ MAX_IMPORT_EVENTS_STRING } begivenheder. Hvis din fil er større, skal du opdele den i mindre filer."
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "Du kan markere de kontakter til sletning, som du hverken ønsker at flette eller beholde.\nSletning vil kun ske, når der er klikket på fletningsknappen"
       ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Du kan nu sende e-mails fra ${ BRAND_NAME } med denne adresse."
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "Du videresender ${ numAddressesOrSync } Gmail-adresse til ${ MAIL_APP_NAME }.",
+        "Du videresender ${ numAddressesOrSync } Gmail-adresser til ${ MAIL_APP_NAME }."
+      ],
+      "You're forwarding emails from ${ forwardingCount } Gmail address. By connecting it, you'll be able to both receive and reply in ${ MAIL_APP_NAME }": [
+        "Du videresender e-mails fra ${ forwardingCount } Gmail-adresse. Ved at forbinde den vil du både kunne modtage og svare i ${ MAIL_APP_NAME }",
+        "Du videresender e-mails fra ${ forwardingCount } Gmail-adresser. Ved at forbinde dem vil du både kunne modtage og svare i ${ MAIL_APP_NAME }"
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "Du har forbundet ${ MAX_SYNC_PAID_USER } Gmail-adresse. For at tilføje en anden skal du først deaktivere en af dine tilsluttede konti.",
+        "Du har forbundet ${ MAX_SYNC_PAID_USER } Gmail-adresser. For at tilføje en ny skal du først deaktivere en af dine tilsluttede konti."
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "Du har forbundet én ekstern kontoadresse til ${ MAIL_APP_NAME }."
+      ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "Dine konto- og datagendannelsesmetoder er indstillet, og 2FA er aktiveret."
       ],
       "Your account and data recovery methods are set.": [
         "Dine konto- og datagendannelsesmetoder er indstillet."
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "Dit abonnement understøtter ${ MAX_SYNC_FREE_USER } Gmail-adresse.",
+        "Dit abonnement understøtter ${ MAX_SYNC_FREE_USER } Gmail-adresser."
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "Dit abonnement understøtter i alt ${ MAX_SYNC_PAID_USER } Gmail-adresse",
+        "Dit abonnement understøtter i alt ${ MAX_SYNC_PAID_USER } Gmail-adresser"
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede oprettet 10 aliasser. Få ubegrænsede aliasser og 500 GB lagerplads med ${ BRAND_NAME } Unlimited."
@@ -4520,6 +4604,12 @@
       ],
       "Add at least one condition": [
         "Tilføj mindst én betingelse"
+      ],
+      "Address could not be added.": [
+        "Adressen kunne ikke tilføjes."
+      ],
+      "Address is already added to your account": [
+        "Adressen er allerede tilføjet til din konto"
       ],
       "Address primary private key not found": [
         "Adresses primære private nøgle ikke fundet"
@@ -4972,6 +5062,12 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Nogle af dine etikettenavne overskrider ${ MAIL_APP_NAME }'s maksimale tegngrænse. Tilpas venligst importen for at ændre disse navne."
+      ],
+      "Something went wrong while creating the address": [
+        "Noget gik galt under oprettelsen af adressen"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Noget gik galt under hentning af tilgængelige domæner"
       ],
       "Something went wrong. Please try again.": [
         "Et eller andet gik galt. Prøv igen."
@@ -7221,6 +7317,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Sørg for privat og krypteret kommunikation. Gør krav på din gratis ${ BRAND_NAME } e-mailadresse nu."
       ],
+      "Enter code": [
+        "Indtast kode"
+      ],
       "Enter the code from your authenticator app": [
         "Indtast koden fra din godkendelsesapp"
       ],
@@ -7370,6 +7469,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Hvis du ikke kan se mailen i din indbakke, bedes du tjekke din spammappe."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Hvis du har mistet adgangen til din godkender-app kan du bruge 1 af de 16 gendannelseskoder som du fik da du satte to-faktor-godkendelses op. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Hvis du fortsætter med nedgraderingen, vil du miste adgang til betalte funktioner i ${ MAIL_APP_NAME } og ${ VPN_APP_NAME }."
@@ -9796,6 +9898,9 @@
       "Search in": [
         "Søg i"
       ],
+      "Select which Gmail address to connect": [
+        "Vælg hvilken Gmail-adresse der skal forbindes"
+      ],
       "Send auto-reply": [
         "Send auto-svar"
       ],
@@ -10455,9 +10560,6 @@
       ],
       "60 minutes per meeting": [
         "60 minutter pr. møde"
-      ],
-      "Appointment scheduling": [
-        "Aftaleplanlægning"
       ],
       "Booking pages": [
         "Reservationssider"
@@ -11696,6 +11798,9 @@
       ],
       "Trial started": [
         "Prøveperiode startet"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Din ${ BRAND_NAME }-adresse er klar til brug"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -14982,6 +15087,9 @@
       "Block sender": [
         "Bloker afsender"
       ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Flyt din Gmail ind i ${ MAIL_APP_NAME }"
+      ],
       "Built for privacy": [
         "Bygget til privatliv"
       ],
@@ -15148,6 +15256,9 @@
       ],
       "Desktop": [
         "Desktop"
+      ],
+      "Disconnected from Gmail": [
+        "Forbindelsen til Gmail er afbrudt"
       ],
       "Discover your subscription benefits": [
         "Opdag fordelene ved dit abonnement"
@@ -15657,6 +15768,9 @@
       "Self-destruct message": [
         "Selvdestruerende besked"
       ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Send og modtag fra Gmail med ${ MAIL_APP_NAME }"
+      ],
       "Send email": [
         "Send e-mail"
       ],
@@ -15823,6 +15937,9 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Brug ${ VPN_SHORT_APP_NAME } for at beskytte dine data"
       ],
+      "Use Gmail securely in ${ MAIL_APP_NAME }": [
+        "Brug Gmail sikkert i ${ MAIL_APP_NAME }"
+      ],
       "Verification error": [
         "Bekræftelsesfejl"
       ],
@@ -15868,6 +15985,9 @@
       ],
       "When is it most important to use a VPN?": [
         "Hvornår er det vigtigst at bruge en VPN?"
+      ],
+      "You are all set": [
+        "Så er du klar"
       ],
       "You can now create unlimited folders and labels": [
         "Du kan nu oprette ubegrænsede mængder af mapper og etiketter"

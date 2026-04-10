@@ -4089,6 +4089,9 @@
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Sincronize facilmente arquivos com a nuvem a partir do seu computador e acesse-os no seu dispositivo móvel."
       ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "E-mails enviados para ${ connectedAddressText } agora serão exibidos em ${ MAIL_APP_NAME }."
+      ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Promova a adoção da autenticação de dois fatores em sua organização para garantir uma segurança adicional."
       ],
@@ -4156,6 +4159,10 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Facilite a sincronização e o agendamento com calendários compartilhados."
       ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "Para conectar até ${ MAX_SYNC_PAID_USER } endereço do Gmail, faça o upgrade para o plano ${ planName }.",
+        "Para conectar até ${ MAX_SYNC_PAID_USER } endereços do Gmail, faça o upgrade para o plano ${ planName }."
+      ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Para continuar usando o assistente de escrita, adicione-o à sua assinatura."
       ],
@@ -4191,6 +4198,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Utilize este guia para que sua organização possa rapidamente se beneficiar do ecossistema de criptografia e privacidade de ponta do ${ BRAND_NAME }."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Não podemos mais acessar o ${ boldEmails }."
       ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "Não encontramos nenhum rasteador conhecido e URLs de rastreamentro nesse e-mail."
@@ -4593,6 +4603,9 @@
         "Escolha uma data no próximo ${ n } dia.",
         "Escolha uma data nos próximos ${ n } dias."
       ],
+      "Company name or personal name is required": [
+        "É necessário informar o nome da empresa ou o nome pessoal"
+      ],
       "Condition incomplete": [
         "Condição incompleta"
       ],
@@ -4986,6 +4999,9 @@
       ],
       "Something went wrong while creating the address": [
         "Algo deu errado ao criar o endereço"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Ocorreu um erro ao buscar os domínios disponíveis"
       ],
       "Something went wrong. Please try again.": [
         "Ocorreu um erro. Tente novamente."
@@ -9810,6 +9826,9 @@
       "Search in": [
         "Procurar em"
       ],
+      "Select which Gmail address to connect": [
+        "Selecione o endereço do Gmail que deseja conectar"
+      ],
       "Send auto-reply": [
         "Enviar resposta automática"
       ],
@@ -10469,9 +10488,6 @@
       ],
       "60 minutes per meeting": [
         "60 minutos por reunião"
-      ],
-      "Appointment scheduling": [
-        "Agendamento de compromissos"
       ],
       "Booking pages": [
         "Páginas de agendamentos"
@@ -11859,6 +11875,9 @@
       ]
     },
     "Onboarding List Placeholder": {
+      "Bring your emails into ${ MAIL_APP_NAME }": [
+        "Traga seus e-mails para o ${ MAIL_APP_NAME }"
+      ],
       "Choose a provider": [
         "Selecionar um provedor"
       ],
@@ -12530,6 +12549,9 @@
       ],
       "Anderson": [
         "Braga"
+      ],
+      "Anything you'd like us to know": [
+        "Algo que você gostaria que soubéssemos?"
       ],
       "Anytown": [
         "Nova Esperança"
