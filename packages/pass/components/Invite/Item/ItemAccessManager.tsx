@@ -21,7 +21,7 @@ import { isItemTarget, isVaultTarget } from '@proton/pass/lib/access/access.pred
 import { AccessTarget } from '@proton/pass/lib/access/types';
 import { getLimitReachedText } from '@proton/pass/lib/invites/invite.utils';
 import { isItemShared } from '@proton/pass/lib/items/item.predicates';
-import { isShareManageable, isVaultShare } from '@proton/pass/lib/shares/share.predicates';
+import { isGroupManagedShare, isShareManageable, isVaultShare } from '@proton/pass/lib/shares/share.predicates';
 import { selectItem, selectOwnWritableVaults, selectPassPlan, selectShareOrThrow } from '@proton/pass/store/selectors';
 import type { SelectedItem } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
@@ -42,6 +42,7 @@ export const ItemAccessManager: FC<SelectedItem> = ({ shareId, itemId }) => {
 
     const vaultShare = isVaultShare(share);
     const canManage = isShareManageable(share);
+    const isManagerThroughGroup = isGroupManagedShare(share);
     const canTransfer = share.owner && ownWritableVaults.length > 1;
     const canItemInvite = item.data.type !== 'alias';
     const canVaultInvite = vaultShare;
@@ -105,7 +106,7 @@ export const ItemAccessManager: FC<SelectedItem> = ({ shareId, itemId }) => {
                         <AccessList
                             canManage={canManage}
                             canTransfer={false}
-                            isMine={share.owner}
+                            isManagerThroughGroup={isManagerThroughGroup}
                             invites={itemInvites}
                             itemId={itemId}
                             members={itemMembers}
@@ -124,7 +125,7 @@ export const ItemAccessManager: FC<SelectedItem> = ({ shareId, itemId }) => {
                         <AccessList
                             canManage={vaultShare && canManage}
                             canTransfer={vaultShare && canTransfer}
-                            isMine={share.owner}
+                            isManagerThroughGroup={isManagerThroughGroup}
                             heading={vaultShare && <VaultHeading shareId={shareId} />}
                             invites={vaultInvites}
                             itemId={itemId}
