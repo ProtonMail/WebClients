@@ -1763,6 +1763,18 @@
       ],
       "Zoom out": [
         "Verkleinern"
+      ],
+      "I don't have my phrase": [
+        "Ich habe meine Wiederherstellungsphrase nicht"
+      ],
+      "I don’t have my phone": [
+        "Ich habe mein Handy nicht"
+      ],
+      "Return to sign-in": [
+        "Zurück zur Anmeldung"
+      ],
+      "Try another way": [
+        "Versuche es auf eine andere Weise"
       ]
     },
     "action": {
@@ -12621,6 +12633,114 @@
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
+      ],
+      "${ BRAND_NAME } will send a verification code to ${ RedactedPhoneNumber }. Standard message rates may apply.": [
+        "${ BRAND_NAME } sendet einen Bestätigungscode an ${ RedactedPhoneNumber }. Es können Standardgebühren für Nachrichten anfallen."
+      ],
+      "${ DataLockedText }, but recoverable with your ${ RecoveryContactsLink }:": [
+        "${ DataLockedText }, aber wiederherstellbar mit deinen ${ RecoveryContactsLink }:"
+      ],
+      "An email with a verification code was just sent to ${ emailAddress }. If you can’t find the message in your inbox, please check your spam folder.": [
+        "Eine E-Mail mit einem Bestätigungscode wurde gerade an ${ emailAddress } gesendet. Wenn du die Nachricht nicht in deinem Posteingang findest, überprüfe bitte deinen Spam-Ordner."
+      ],
+      "An SMS with a verification code was just sent to ${ phoneNumber }.": [
+        "Eine SMS mit einem Bestätigungscode wurde gerade an ${ phoneNumber } gesendet."
+      ],
+      "Ask them to sign in to their ${ ACCOUNT_APP_NAME } in the browser, and go to **Settings → All settings → Recovery → Emergency access→ People who trust me.**": [
+        "Bitte sie, sich im Browser bei ihrem ${ ACCOUNT_APP_NAME } anzumelden und zu **Einstellungen → Alle Einstellungen → Wiederherstellung → Notfallzugriff→ Personen, die mir vertrauen** zu navigieren."
+      ],
+      "Can you access your active session?": [
+        "Kannst du auf deine aktive Sitzung zugreifen?"
+      ],
+      "Can you access your active web session in another browser?": [
+        "Kannst du in einem anderen Browser auf deine aktive Web-Sitzung zugreifen?"
+      ],
+      "Can you reach out to your contact?": [
+        "Kannst du deine Kontaktperson erreichen?"
+      ],
+      "Click **Request password reset** and follow the prompts.": [
+        "Klicke auf **Passwort zurücksetzen anfordern** und folge den Anweisungen."
+      ],
+      "Data recoverable with recovery phrase": [
+        "Daten mit Wiederherstellungsphrase wiederherstellbar"
+      ],
+      "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
+        "Je nach Einstellungen erhalten sie sofort oder nach einer festgelegten **Wartezeit** Zugriff."
+      ],
+      "Due to end-to-end encryption, you can reset your password, but ${ DataLockedText } until you use a ${ DataRecoveryOptionsLink }:": [
+        "Aufgrund der Ende-zu-Ende-Verschlüsselung kannst du dein Passwort zurücksetzen, aber ${ DataLockedText } bis du deine ${ DataRecoveryOptionsLink } verwendest:"
+      ],
+      "Enter the 12-word recovery phrase associated with your account.": [
+        "Gib die 12-Wort-Wiederherstellungsphrase ein, die mit deinem Konto verknüpft ist."
+      ],
+      "From there, they can request emergency access to your account by clicking **Request access.**": [
+        "Von dort können sie Notfallzugriff auf dein Konto beantragen, indem sie auf **Zugriff anfordern.** klicken."
+      ],
+      "Get in touch with your emergency contacts, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed**.": [
+        "Kontaktiere deine Notfallkontakte, um zu sehen, ob sie helfen können. Nachdem der Notfallzugriff auf dein Konto angefordert wurde, können sie dein Passwort für dich ändern, **nachdem die Wartezeit für den Zugriff abgelaufen ist**."
+      ],
+      "How to perform a signed-in reset": [
+        "Wie man einen angemeldeten Reset durchführt"
+      ],
+      "How your emergency contact can change your password for you:": [
+        "So kann dein Notfallkontakt dein Passwort für dich ändern:"
+      ],
+      "If possible, when signing in, use a device or a browser where you’ve signed in before.": [
+        "Wenn möglich, verwende beim Anmelden ein Gerät oder einen Browser, bei dem du dich bereits angemeldet hattest."
+      ],
+      "If you are signed in to a ${ BRAND_NAME } web app in **another browser**, you may be able to perform a password reset from your active session.": [
+        "Wenn du in einem **anderen Browser** in einer ${ BRAND_NAME }-Web-App angemeldet bist, kannst du eventuell ein Zurücksetzen des Passworts von deiner aktiven Sitzung aus durchführen."
+      ],
+      "If you have emergency contacts, get in touch with them, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed.**": [
+        "Wenn du Notfallkontakte hast, wende dich an sie, um zu sehen, ob sie helfen können. Nachdem sie den Notfallzugriff auf dein Konto angefordert haben, können sie dein Passwort für dich ändern, **nachdem die Wartezeit für den Zugriff abgelaufen ist.**"
+      ],
+      "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
+        "Sobald der Zugriff auf dein Konto gewährt wurde, können sie auf deine **Wiederherstellungs**-Einstellungen zugreifen und dein ${ ACCOUNT_APP_NAME }-Passwort für dich **ändern**."
+      ],
+      "Open your active session in the browser, and go to **Settings → All settings → Recovery → Password reset settings.**": [
+        "Öffne deine aktive Sitzung im Browser und gehe zu **Einstellungen → Alle Einstellungen → Wiederherstellung → Einstellungen für Passwort zurücksetzen**."
+      ],
+      "Recovery contacts": [
+        "Wiederherstellungskontakte"
+      ],
+      "Recovery file": [
+        "Wiederherstellungsdatei"
+      ],
+      "Recovery phrase": [
+        "Wiederherstellungsphrase"
+      ],
+      "Resetting your password in your active web session will ensure **your encrypted data will remain accessible** after you change your password.": [
+        "Wenn du dein Passwort in deiner aktiven Web-Sitzung zurücksetzest, wird sichergestellt, dass **deine verschlüsselten Daten zugänglich bleiben** nachdem du dein Passwort geändert hast."
+      ],
+      "Try recovering your account from a **device or browser where you have signed in before**, as it may be possible from there:": [
+        "Versuche, dein Konto von einem **Gerät oder Browser wiederherzustellen, auf dem du dich zuvor angemeldet hast**, da dies von dort aus möglich sein könnte:"
+      ],
+      "Unfortunately there is no recovery method available for this account.": [
+        "Leider ist keine Wiederherstellungsmethode für dieses Konto verfügbar."
+      ],
+      "We detected you are already signed in to a ${ BRAND_NAME } web app on **another browser**. You may be able to perform a password reset from your active session.": [
+        "Wir haben erkannt, dass du in einer ${ BRAND_NAME }-Web-App in einem **anderen Browser** angemeldet bist. Möglicherweise kannst du ein Zurücksetzen des Passworts von deiner aktiven Sitzung aus durchführen."
+      ],
+      "Web sessions detected:": [
+        "Web-Sitzungen erkannt:"
+      ],
+      "You can now reset your password to regain access to your account.": [
+        "Du kannst jetzt dein Passwort zurücksetzen, um wieder Zugriff auf dein Konto zu erhalten."
+      ],
+      "You can now reset your password to regain access to your account. **This will disable 2-factor authentication.**": [
+        "Du kannst dein Passwort jetzt zurücksetzen, um wieder Zugriff auf dein Konto zu erhalten. **Dadurch wird die Zwei-Faktor-Authentifizierung deaktiviert.**"
+      ],
+      "You will regain complete or partial access to your encrypted data.": [
+        "Du erhältst vollständigen oder teilweisen Zugriff auf deine verschlüsselten Daten."
+      ],
+      "Your encrypted data will be locked": [
+        "Deine verschlüsselten Daten werden gesperrt"
+      ],
+      "your encrypted data will be locked": [
+        "Deine verschlüsselten Daten werden gesperrt"
+      ],
+      "Your old password": [
+        "Dein altes Passwort"
       ]
     },
     "info": {
@@ -14652,6 +14772,9 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "Enter code": [
+        "Code eingeben"
       ]
     },
     "label": {
@@ -15045,6 +15168,15 @@
       ],
       "What’s this?": [
         "Was ist das?"
+      ],
+      "contacts’ assistance": [
+        "Unterstützung durch Kontakte"
+      ],
+      "data recovery option": [
+        "Datenwiederherstellungsoption"
+      ],
+      "Details": [
+        "Details"
       ]
     },
     "Link (Scribe)": {
@@ -16419,6 +16551,13 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Wir scannen das Dark Web, um zu überprüfen, ob deine ${ BRAND_NAME }-Adressen oder Aliasse veröffentlicht wurden, und benachrichtigen dich sofort, wenn wir etwas finden."
+      ],
+      "Appointment scheduling": [
+        "Terminplanung"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Terminplanung mit ${ n } Buchungsseite",
+        "Terminplanung mit ${ n } Buchungsseiten"
       ]
     },
     "new_plans: feature highlight": {
@@ -20967,6 +21106,30 @@
       ],
       "You’re invited to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
         "Du bist eingeladen, dich 100 Millionen+ Menschen anzuschließen, die sich entschieden haben, die Kontrolle über ihre Daten mit ${ BRAND_NAME }s verschlüsseltem Ökosystem zu behalten."
+      ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } Hide-my-email-Aliasse, um Spam zu bekämpfen"
+      ],
+      "${ MAIL_SHORT_APP_NAME } Free": [
+        "${ MAIL_SHORT_APP_NAME } Kostenlos"
+      ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "Wähle eine sichere ${ MAIL_APP_NAME }-E-Mail-Adresse, um loszulegen"
+      ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "Halte deine Unterhaltungen mit ${ MAIL_APP_NAME } privat"
+      ],
+      "Password-protected messages": [
+        "Passwortgeschützte Nachrichten"
+      ],
+      "Secure calendar": [
+        "Sicherer Kalender"
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "VPN mit Servern in ${ vpnServersCountData.free.countries } Ländern"
+      ],
+      "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
+        "Dein Konto beinhaltet Zugriff auf kostenlose Funktionen in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } und ${ LUMO_SHORT_APP_NAME }."
       ]
     },
     "Signup label": {
@@ -24535,6 +24698,30 @@
       ],
       "Your subscriptions": [
         "Deine Abonnements"
+      ],
+      "Are you already signed in to ${ BRAND_NAME } in a browser?": [
+        "Bist du bereits bei ${ BRAND_NAME } in einem Browser angemeldet?"
+      ],
+      "Ask your emergency contacts for help": [
+        "Bitte deine Notfallkontakte um Hilfe"
+      ],
+      "Can you access your session in the browser?": [
+        "Kannst du deine Sitzung im Browser aufrufen?"
+      ],
+      "Can you reach out to your emergency contacts?": [
+        "Kannst du deine Notfallkontakte erreichen?"
+      ],
+      "Couldn’t recover your account": [
+        "Konto konnte nicht wiederhergestellt werden"
+      ],
+      "Recover account": [
+        "Konto wiederherstellen"
+      ],
+      "Try changing your password in your active web session": [
+        "Versuche, dein Passwort in deiner aktiven Web-Sitzung zu ändern"
+      ],
+      "Verify it’s you": [
+        "Überprüfe, ob du es bist"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -25301,6 +25488,18 @@
       ],
       "Writing assistant": [
         "Schreibassistent"
+      ],
+      "Add delegated roles to a user to grant them only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
+        "Weise einem Benutzer delegierte Rollen zu, um ihm nur die spezifischen Berechtigungen zu erteilen, die er benötigt. Behalte die vollen Administrationsrechte getrennt und deine Umgebung sicher."
+      ],
+      "General": [
+        "Allgemein"
+      ],
+      "Roles and permissions": [
+        "Rollen und Berechtigungen"
+      ],
+      "Save": [
+        "Speichern"
       ]
     },
     "Users table: badge": {

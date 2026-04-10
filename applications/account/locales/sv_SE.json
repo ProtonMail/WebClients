@@ -1760,6 +1760,21 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "I don't have my phrase": [
+        "Jag har inte min fras"
+      ],
+      "I don’t have my backup codes": [
+        "Jag har inte mina reservkoder"
+      ],
+      "I don’t have my phone": [
+        "Jag har inte min telefon"
+      ],
+      "Return to sign-in": [
+        "Tillbaka till inloggning"
+      ],
+      "Try another way": [
+        "Prova annat sätt"
       ]
     },
     "action": {
@@ -12464,6 +12479,63 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
+      ],
+      "${ DataLockedText }, but recoverable with your ${ RecoveryContactsLink }:": [
+        "${ DataLockedText }, men återställningsbar med din ${ RecoveryContactsLink }"
+      ],
+      "An SMS with a verification code was just sent to ${ phoneNumber }.": [
+        "Ett SMS med en verifieringskod skickades just till ${ phoneNumber }."
+      ],
+      "Can you access your active session?": [
+        "Kan du komma åt din aktiva session?"
+      ],
+      "Can you access your active web session in another browser?": [
+        "Kan du komma åt din aktiva webbsession i annan webbläsare?"
+      ],
+      "Can you reach out to your contact?": [
+        "Kan du kontakta din kontakt?"
+      ],
+      "Click **Request password reset** and follow the prompts.": [
+        "Klicka på **Begär lösenordsåterställning** och följ anvisningarna."
+      ],
+      "Data recoverable with recovery phrase": [
+        "Data återställningsbar med återställningsfras"
+      ],
+      "Enter the 12-word recovery phrase associated with your account.": [
+        "Ange den 12-ord långa återställningsfrasen som är associerat med ditt konto."
+      ],
+      "How your emergency contact can change your password for you:": [
+        "Hur din nödkontakt ändra ditt lösenord åt dig:"
+      ],
+      "Recovery contacts": [
+        "Återställningskontakter"
+      ],
+      "Recovery phrase": [
+        "Återställningsfras"
+      ],
+      "Resetting your password in your active web session will ensure **your encrypted data will remain accessible** after you change your password.": [
+        "Att återställa ditt lösenord i din aktiva webbsession kommer säkerställa att **din krypterade data förblir tillgänglig** efter du ändrat ditt lösenord."
+      ],
+      "Select a group to view its members and settings.": [
+        "Välj en grupp för att visa dess medlemmar och inställningar."
+      ],
+      "Unfortunately there is no recovery method available for this account.": [
+        "Tyvärr finns det ingen återställningsmetod tillgänglig för detta konto."
+      ],
+      "Web sessions detected:": [
+        "Webb-sessioner upptäckta:"
+      ],
+      "With a ${ boldProfessionalPlan } plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
+        "Med ett ${ boldProfessionalPlan }-paket kan du köpa ${ boldDedicatedServers } för din organisation och ställa in ${ boldGateways } för att kontrollera vilka användare som kan komma åt dem."
+      ],
+      "Your encrypted data will be locked": [
+        "Dina krypterade data kommer att låsas"
+      ],
+      "your encrypted data will be locked": [
+        "dina krypterade data kommer att låsas"
+      ],
+      "Your old password": [
+        "Ditt gamla lösenord"
       ]
     },
     "info": {
@@ -14486,6 +14558,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Enter code": [
+        "Ange kod"
       ]
     },
     "label": {
@@ -14879,6 +14954,9 @@
       ],
       "What’s this?": [
         "Vad är detta?"
+      ],
+      "Details": [
+        "Detaljer"
       ]
     },
     "Link (Scribe)": {
@@ -20740,6 +20818,24 @@
       ],
       "Your trial": [
         "Din provperiod"
+      ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } hide-my-email-alias för att bekämpa skräppost"
+      ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "Välj en säker ${ MAIL_APP_NAME }-adress för att komma igång"
+      ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "Håll dina konversationer privata med ${ MAIL_APP_NAME }"
+      ],
+      "Password-protected messages": [
+        "Lösenordsskyddade meddelanden"
+      ],
+      "Secure calendar": [
+        "Säker kalender"
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "VPN med servrar i ${ vpnServersCountData.free.countries } länder"
       ]
     },
     "Signup label": {
@@ -21390,6 +21486,9 @@
       ],
       "Your SSO configuration will be deleted.": [
         "Din SSO-konfiguration kommer att tas bort."
+      ],
+      "Single sign-on may not function correctly without an organization identity. Set an identity to ensure reliable authentication.": [
+        "Enkel inloggning kanske inte fungerar korrekt utan en organisationsidentitet. Ställ in en identitet för att säkerställa tillförlitlig autentisering."
       ]
     },
     "sso: auth device state": {
@@ -24308,6 +24407,27 @@
       ],
       "Your subscriptions": [
         "Din prenumeration"
+      ],
+      "Are you already signed in to ${ BRAND_NAME } in a browser?": [
+        "Är du redan inloggad på ${ BRAND_NAME } i en webbläsare?"
+      ],
+      "Can you access your session in the browser?": [
+        "Kan du komma åt din session i webbläsaren?"
+      ],
+      "Can you reach out to your emergency contacts?": [
+        "Kan du kontakta dina nödkontakter?"
+      ],
+      "Couldn’t recover your account": [
+        "Kunde inte återställa ditt konto"
+      ],
+      "Recover account": [
+        "Återställ konto"
+      ],
+      "Try changing your password in your active web session": [
+        "Försök ändra ditt lösenord i din aktiva webbsession"
+      ],
+      "Verify it’s you": [
+        "Verifiera att det är du"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -25065,6 +25185,15 @@
       ],
       "Writing assistant": [
         "Skrivassistent"
+      ],
+      "General": [
+        "Allmänt"
+      ],
+      "Roles and permissions": [
+        "Roller och behörigheter"
+      ],
+      "Save": [
+        "Spara"
       ]
     },
     "Users table: badge": {

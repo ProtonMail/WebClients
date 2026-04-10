@@ -1763,6 +1763,18 @@
       ],
       "Zoom out": [
         "Diminuir zoom"
+      ],
+      "I don't have my phrase": [
+        "Eu não tenho minha frase"
+      ],
+      "I don’t have my phone": [
+        "Eu não tenho meu telefone"
+      ],
+      "Return to sign-in": [
+        "Voltar para o início de sessão"
+      ],
+      "Try another way": [
+        "Tentar de outra forma"
       ]
     },
     "action": {
@@ -4977,6 +4989,16 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Seu plano suporta um total de ${ MAX_SYNC_PAID_USER } endereço do Gmail",
         "Seu plano suporta um total de ${ MAX_SYNC_PAID_USER } endereços do Gmail"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "E-mails enviados para ${ connectedAddressText } agora serão exibidos em ${ MAIL_APP_NAME }."
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "Para conectar até ${ MAX_SYNC_PAID_USER } endereço do Gmail, faça o upgrade para o plano ${ planName }.",
+        "Para conectar até ${ MAX_SYNC_PAID_USER } endereços do Gmail, faça o upgrade para o plano ${ planName }."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Não podemos mais acessar o ${ boldEmails }."
       ]
     },
     "description": {
@@ -7116,6 +7138,12 @@
       ],
       "Zero keys reactivated": [
         "Zero chaves reativadas"
+      ],
+      "Company name or personal name is required": [
+        "É necessário informar o nome da empresa ou o nome pessoal"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Ocorreu um erro ao buscar os domínios disponíveis"
       ]
     },
     "error": {
@@ -12456,6 +12484,42 @@
       ],
       "Zoom meeting": [
         "Reunião no Zoom"
+      ],
+      "Add users by name or email to this group.": [
+        "Adicione usuários por nome ou e-mail a este grupo."
+      ],
+      "An import is paused because your storage is almost full.": [
+        "Uma importação foi pausada porque seu armazenamento está quase cheio."
+      ],
+      "Complete the sign-in on this device to start using ${ VPN_APP_NAME } on your TV.": [
+        "Complete o início de sessão neste dispositivo para começar a usar o ${ VPN_APP_NAME } na sua TV."
+      ],
+      "Contact our Customer Support team to disable two-factor authentication for your account, or recover your account another way.": [
+        "Entre em contato com nossa equipe de suporte ao cliente para desativar a autenticação de dois fatores da sua conta ou recupere sua conta de outra forma."
+      ],
+      "How to perform a signed-in reset": [
+        "Como realizar uma redefinição com a sessão iniciada"
+      ],
+      "No forwarding history.": [
+        "Sem histórico de encaminhamento."
+      ],
+      "No import history.": [
+        "Nenhum histórico de importação."
+      ],
+      "Recovery contacts": [
+        "Contatos de recuperação"
+      ],
+      "Recovery file": [
+        "Arquivo de recuperação"
+      ],
+      "Recovery phrase": [
+        "Frase de recuperação"
+      ],
+      "Unfortunately there is no recovery method available for this account.": [
+        "Infelizmente não há um método de recuperação disponível para esta conta."
+      ],
+      "Your old password": [
+        "Sua senha antiga"
       ]
     },
     "info": {
@@ -14484,6 +14548,12 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Enter code": [
+        "Insira o código"
+      ],
+      "Select which Gmail address to connect": [
+        "Selecione o endereço do Gmail que deseja conectar"
       ]
     },
     "label": {
@@ -14877,6 +14947,12 @@
       ],
       "What’s this?": [
         "O que é isso?"
+      ],
+      "data recovery option": [
+        "opção de recuperação de dados"
+      ],
+      "Details": [
+        "Detalhes"
       ]
     },
     "Link (Scribe)": {
@@ -15419,6 +15495,15 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Acesse a sua conta da ${ BRAND_NAME } para ter acesso a todos os serviços criptografados da ${ BRAND_NAME }, como ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e muito mais. Ainda não tem uma conta? Crie uma GRATUITAMENTE."
+      ],
+      "Activate the private ${ BRAND_NAME } email address reserved for your child and set up their account.": [
+        "Ative o endereço de e-mail privado da ${ BRAND_NAME } reservado para seu filho e configure a conta dele."
+      ],
+      "Activate your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "Ative a conta da ${ BRAND_NAME } do seu filho | ${ BRAND_NAME }"
+      ],
+      "Recover your child's ${ BRAND_NAME } account | ${ BRAND_NAME }": [
+        "Recuperar a conta da ${ BRAND_NAME } do seu filho | ${ BRAND_NAME }"
       ]
     },
     "Modal title": {
@@ -16239,6 +16324,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Rastreamos a dark web para verificar se seus endereços ou aliases ${ BRAND_NAME } sofreram vazamento e alertarmos você imediatamente se encontrarmos alguma coisa."
+      ],
+      "Appointment scheduling": [
+        "Agendamento de compromissos"
       ]
     },
     "new_plans: feature highlight": {
@@ -18651,6 +18739,9 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Anything you'd like us to know": [
+        "Algo que você gostaria que soubéssemos?"
       ]
     },
     "placeholder": {
@@ -20787,6 +20878,18 @@
       ],
       "You’re invited to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
         "Junte-se a mais de 100 milhões de pessoas que escolheram manter o controle sobre seus dados com o ecossistema criptografado da ${ BRAND_NAME }."
+      ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } aliases do hide-my-email para combater spam"
+      ],
+      "${ MAIL_SHORT_APP_NAME } Free": [
+        "${ MAIL_SHORT_APP_NAME } Free"
+      ],
+      "Password-protected messages": [
+        "Mensagens protegidas por senha"
+      ],
+      "Secure calendar": [
+        "Calendário seguro"
       ]
     },
     "Signup label": {
@@ -24358,6 +24461,15 @@
       ],
       "Your subscriptions": [
         "Suas assinaturas"
+      ],
+      "Are you already signed in to ${ BRAND_NAME } in a browser?": [
+        "Você já está iniciado sessão à ${ BRAND_NAME } em um navegador?"
+      ],
+      "Couldn’t recover your account": [
+        "Não foi possível recuperar sua conta"
+      ],
+      "Recover account": [
+        "Recuperar conta"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -25124,6 +25236,15 @@
       ],
       "Writing assistant": [
         "Assistente de escrita"
+      ],
+      "General": [
+        "Geral"
+      ],
+      "Roles and permissions": [
+        "Funções e permissões"
+      ],
+      "Save": [
+        "Salvar"
       ]
     },
     "Users table: badge": {

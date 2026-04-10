@@ -1763,6 +1763,15 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "I don't have my phrase": [
+        "У мяне адсутнічае фраза"
+      ],
+      "I don’t have my phone": [
+        "У мяне няма нумара тэлефона"
+      ],
+      "Try another way": [
+        "Паспрабуйце іншы спосаб"
       ]
     },
     "action": {
@@ -4875,6 +4884,9 @@
     "Delete group prompt": {
       "Are you sure you want to delete this group?": [
         "Вы сапраўды хочаце выдаліць гэту групу?"
+      ],
+      "Please note that if you delete the group ${ displayGroupName }, it will be permanently removed.": [
+        "Звярніце ўвагу, што калі вы выдаліце групу ${ displayGroupName }, то яна будзе выдалена незваротна."
       ]
     },
     "Delinquent modal title": {
@@ -8495,6 +8507,9 @@
     "Group detail label": {
       "Description:": [
         "Апісанне:"
+      ],
+      "Group address:": [
+        "Адрас групы:"
       ]
     },
     "Group member count": {
@@ -12879,6 +12894,81 @@
       ],
       "Zoom meeting": [
         "сустрэчу па Zoom"
+      ],
+      "An email with a verification code was just sent to ${ emailAddress }. If you can’t find the message in your inbox, please check your spam folder.": [
+        "Ліст з кодам спраўджання быў толькі што адпраўлены на ${ emailAddress }. Калі вы не знайшлі паведамленне з кодам у папцы ўваходныя, праверце папку са спамам."
+      ],
+      "An SMS with a verification code was just sent to ${ phoneNumber }.": [
+        "SMS з кодам спраўджання толькі што было адпраўлена на нумар тэлефона ${ phoneNumber }."
+      ],
+      "Ask them to sign in to their ${ ACCOUNT_APP_NAME } in the browser, and go to **Settings → All settings → Recovery → Emergency access→ People who trust me.**": [
+        "Папрасіце іх увайсці ў свой ${ ACCOUNT_APP_NAME } праз браўзер і перайдзіце ў раздзел **Налады → Усе налады → Аднаўленне → Экстранны доступ → Людзі, якім я давяраю.**"
+      ],
+      "Can you access your active session?": [
+        "Ці ёсць у вас доступ да актыўнага сеанса?"
+      ],
+      "Can you reach out to your contact?": [
+        "Вы можаце звязацца са сваімі кантактамі?"
+      ],
+      "Click **Request password reset** and follow the prompts.": [
+        "Націсніце **Запытаць скіданне пароля** і выконвайце інструкцыі."
+      ],
+      "Data recoverable with recovery phrase": [
+        "Даныя можна аднавіць з дапамогай фразы аднаўлення"
+      ],
+      "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
+        "У залежнасці ад вашых налад, яны могуць атрымаць доступ неадкладна або пасля прызначанага **перыяду чакання **."
+      ],
+      "Enter the 12-word recovery phrase associated with your account.": [
+        "Увядзіце фразу аднаўлення з 12 слоў, якая звязана з вашым уліковым запісам."
+      ],
+      "From there, they can request emergency access to your account by clicking **Request access.**": [
+        "Пасля гэтага яны могуць запытваць экстранны доступ у ваш уліковы запіс, націснуўшы **Запытаць доступ.**"
+      ],
+      "Get in touch with your emergency contacts, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed**.": [
+        "Звярніцеся да сваіх экстранных кантактаў з просьбай дапамагчы вам. Пасля запыту экстраннага доступу да вашага ўліковага запісу яны змогуць змяніць пароль для вас **пасля таго, як час чакання доступу міне**."
+      ],
+      "How your emergency contact can change your password for you:": [
+        "Якім чынам ваш экстранны кантакт можа змяніць ваш пароль:"
+      ],
+      "If you are signed in to a ${ BRAND_NAME } web app in **another browser**, you may be able to perform a password reset from your active session.": [
+        "У вас ёсць магчымасць скінуць пароль з актыўнага сеанса, калі вы ўвайшлі ў вэб-праграму ${ BRAND_NAME } у **іншым браўзеры**."
+      ],
+      "Open your active session in the browser, and go to **Settings → All settings → Recovery → Password reset settings.**": [
+        "Адкрыйце ваш актыўны сеанс у браўзеры і перайдзіце ў **Налады → Усе налады → Аднаўленне → Налады скідання пароля.**"
+      ],
+      "Recovery file": [
+        "Файл аднаўлення"
+      ],
+      "Recovery phrase": [
+        "Фраза аднаўлення"
+      ],
+      "Resetting your password in your active web session will ensure **your encrypted data will remain accessible** after you change your password.": [
+        "Скіданне пароля ў вашым актыўным вэб-сеансе гарантуе, што **вашы зашыфраваныя даныя застануцца даступнымі** пасля змены пароля."
+      ],
+      "Select a group to view its members and settings.": [
+        "Выберыце групу, каб паглядзець яе ўдзельнікаў і налады."
+      ],
+      "We detected you are already signed in to a ${ BRAND_NAME } web app on **another browser**. You may be able to perform a password reset from your active session.": [
+        "Сістэма вызначыла, што вы ўжо ўвайшлі ў вэб-праграму ${ BRAND_NAME } у **іншым браўзеры**. У вас ёсць магчымасць выканаць скіданне пароля з актыўнага сеанса."
+      ],
+      "Web sessions detected:": [
+        "Выяўлены вэб-сеансы:"
+      ],
+      "You can now reset your password to regain access to your account.": [
+        "Цяпер вы можаце скінуць пароль, каб аднавіць доступ да вашага ўліковага запісу."
+      ],
+      "You will regain complete or partial access to your encrypted data.": [
+        "Вы адновіце поўны або частковы доступ да вашых зашыфраваных даных."
+      ],
+      "Your encrypted data will be locked": [
+        "Вашы зашыфраваныя даныя будуць заблакіраваны"
+      ],
+      "your encrypted data will be locked": [
+        "вашы зашыфраваныя даныя будуць заблакіраваны"
+      ],
+      "Your old password": [
+        "Ваш стары пароль"
       ]
     },
     "info": {
@@ -15321,6 +15411,9 @@
       ],
       "What’s this?": [
         "Што гэта?"
+      ],
+      "Details": [
+        "Падрабязнасці"
       ]
     },
     "Link (Scribe)": {
@@ -21343,6 +21436,27 @@
       ],
       "You’re invited to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
         "Вас запрашаюць далучыцца да больш чым 100 мільёнаў чалавек, якія вырашылі пакінуць сабе кантроль над сваімі данымі з зашыфраванай экасістэмай ${ BRAND_NAME }."
+      ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } псеўданімаў hide-my-email для барацьбы са спамам"
+      ],
+      "${ MAIL_SHORT_APP_NAME } Free": [
+        "${ MAIL_SHORT_APP_NAME } Free"
+      ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "Захоўвайце свае размовы прыватнымі з дапамогай ${ MAIL_APP_NAME }"
+      ],
+      "Password-protected messages": [
+        "Паведамленні абароненыя паролем"
+      ],
+      "Secure calendar": [
+        "Бяспечны каляндар"
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "VPN з серверамі ў ${ vpnServersCountData.free.countries } краінах"
+      ],
+      "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
+        "Ваш уліковы запіс уключае доступ да бясплатных функцый у ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } і ${ LUMO_SHORT_APP_NAME }."
       ]
     },
     "Signup label": {
@@ -25016,6 +25130,33 @@
       ],
       "Your subscriptions": [
         "Вашы падпіскі"
+      ],
+      "Are you already signed in to ${ BRAND_NAME } in a browser?": [
+        "Вы ўжо ўвайшлі ў ${ BRAND_NAME } праз свой браўзер?"
+      ],
+      "Ask your emergency contacts for help": [
+        "Папрасіце сваіх экстранных кантактаў дапамагчы вам"
+      ],
+      "Can you access your session in the browser?": [
+        "Ці можаце вы атрымаць доступ да вашага сеанса ў браўзеры?"
+      ],
+      "Can you reach out to your emergency contacts?": [
+        "Ці можаце вы звязацца са сваімі экстраннымі кантактамі?"
+      ],
+      "Couldn’t recover your account": [
+        "Немагчыма аднавіць ваш уліковы запіс"
+      ],
+      "Create group": [
+        "Стварэнне групу"
+      ],
+      "Recover account": [
+        "Аднавіць уліковы запіс"
+      ],
+      "Try changing your password in your active web session": [
+        "Паспрабуйце змяніць свой пароль у вашым актыўным вэб-сеансе"
+      ],
+      "Verify it’s you": [
+        "Спраўдзіце, што гэта вы"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -25786,6 +25927,18 @@
       ],
       "Writing assistant": [
         "Памочнік у напісанні"
+      ],
+      "Add delegated roles to a user to grant them only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
+        "Дадайце ўпаўнаважаныя ролі карыстальніку, каб даць яму толькі канкрэтныя правы. Асобна вамі будуць захаваны поўныя правы адміністратара і ваша бяспечнае асяроддзе."
+      ],
+      "General": [
+        "Асноўныя"
+      ],
+      "Roles and permissions": [
+        "Ролі і дазволы"
+      ],
+      "Save": [
+        "Захаваць"
       ]
     },
     "Users table: badge": {
@@ -26541,6 +26694,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Штогод, ${ untilString }"
+      ]
+    },
+    "Delete group prompt with email": {
+      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
+        "Звярніце ўвагу, што калі вы выдаліце групу ${ displayGroupName } (з адрасам ${ displayGroupAddressEmail }), то ў вас больш не будзе магчымасці атрымліваць лісты з выкарыстаннем гэтага адраса."
       ]
     }
   }

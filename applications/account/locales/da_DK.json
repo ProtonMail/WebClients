@@ -1724,6 +1724,48 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Connect Gmail address": [
+        "Forbind Gmail-adresse"
+      ],
+      "Connect to Gmail": [
+        "Forbind til Gmail"
+      ],
+      "Contact Support Center": [
+        "Kontakt supportcenter"
+      ],
+      "Continue to sign in": [
+        "Fortsæt til log ind"
+      ],
+      "Disconnect": [
+        "Afbryd forbindelsen"
+      ],
+      "Enter code": [
+        "Indtast kode"
+      ],
+      "I don't have my 2FA device": [
+        "Jeg har ikke min 2FA-enhed"
+      ],
+      "I don't have my key": [
+        "Jeg har ikke min nøgle"
+      ],
+      "I don't have my phrase": [
+        "Jeg har ikke min sætning"
+      ],
+      "I don’t have my backup codes": [
+        "Jeg har ikke mine backup-koder"
+      ],
+      "Or remove forwarding address": [
+        "Eller fjern videresendelsesadresse"
+      ],
+      "Reconnect to Gmail": [
+        "Genopret forbindelse til Gmail"
+      ],
+      "Recover account": [
+        "Gendan konto"
+      ],
+      "Verify another way": [
+        "Bekræft på en anden måde"
       ]
     },
     "action": {
@@ -4776,7 +4818,7 @@
         "Er du sikker på, at du vil slette denne gruppe?"
       ],
       "Please note that if you delete the group ${ displayGroupName }, it will be permanently removed.": [
-        "Bemærk, at hvis du sletter gruppen${ displayGroupName } fjernes den permanent"
+        "Bemærk, at hvis du sletter gruppen ${ displayGroupName } fjernes den permanent."
       ]
     },
     "Delete group prompt with email": {
@@ -4945,6 +4987,80 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kan importere begivenheder i iCal format (ICS-fil). Denne fil skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have op til ${ MAX_IMPORT_EVENTS_STRING } begivenheder. Hvis din fil er større, skal du opdele den i mindre filer."
+      ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Blokér Google fra at profilere dig. Gmail kan ikke se hvad du laver i ${ MAIL_APP_NAME }"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "E-mails der er sendt til ${ connectedAddressText } vil nu blive vist i ${ MAIL_APP_NAME }."
+      ],
+      "No ads. No trackers.": [
+        "Ingen reklamer. Ingen trackere."
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "Læs, svar og hold styr på Gmail direkte fra ${ MAIL_APP_NAME }"
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Dette kan ske hvis nogle tilladelser blev fjernet, eller din adgangskode blev ændret."
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "For at forbinde en anden Gmail-adresse skal du fjerne ekstra Gmail-adresser, der videresender til ${ BRAND_NAME }."
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "For at forbinde op til ${ MAX_SYNC_PAID_USER } Gmail-adresse skal du opgradere til ${ planName }.",
+        "For at forbinde op til ${ MAX_SYNC_PAID_USER } Gmail-adresser skal du opgradere til ${ planName }."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "For at fortsætte med at modtage og sende Gmail-beskeder i ${ BRAND_NAME } skal du genoprette forbindelsen til din konto."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "For at fortsætte med at modtage og sende Gmail-beskeder i ${ BRAND_NAME } skal du genoprette forbindelsen til dine konti."
+      ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "Opgrader til ${ planName } for at forbinde op til ${ MAX_SYNC_PAID_USER } konti"
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Vi kan ikke længere få adgang til ${ boldEmails }."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "Vi importerer dine gamle e-mails og forbinder din Gmail til ${ MAIL_APP_NAME }, så nye beskeder vises automatisk"
+      ],
+      "We've started importing your email from Gmail. We'll let you know when it's done.": [
+        "Vi er begyndt at importere din e-mail fra Gmail. Vi giver dig besked når det er færdigt."
+      ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Du har allerede en Gmail-adresse, der videresender til ${ MAIL_APP_NAME }. Forbind til den nedenfor for at sende og modtage e-mails direkte fra ${ MAIL_APP_NAME }."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Du har allerede Gmail-adresser der videresender til ${ MAIL_APP_NAME }. Forbind til en nedenfor for at sende og modtage e-mails direkte fra ${ MAIL_APP_NAME }."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Du kan nu sende e-mails fra ${ BRAND_NAME } med denne adresse."
+      ],
+      "You can still login with this address and re-connect at any time.": [
+        "Du kan stadig logge ind med denne adresse og genoprette forbindelsen når som helst."
+      ],
+      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
+        "Du vil ikke længere kunne bruge ${ address.Email } til at modtage og sende e-mails i ${ BRAND_NAME }. Bemærk at beskeder sendt til denne adresse fra ${ BRAND_NAME } ikke længere vil være end-to-end-krypteret."
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "Du videresender ${ numAddressesOrSync } Gmail-adresse til ${ MAIL_APP_NAME }.",
+        "Du videresender ${ numAddressesOrSync } Gmail-adresser til ${ MAIL_APP_NAME }."
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "Du har forbundet ${ MAX_SYNC_PAID_USER } Gmail-adresse. For at tilføje en anden skal du først deaktivere en af dine tilsluttede konti.",
+        "Du har forbundet ${ MAX_SYNC_PAID_USER } Gmail-adresser. For at tilføje en ny skal du først deaktivere en af dine tilsluttede konti."
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "Du har forbundet én ekstern kontoadresse til ${ MAIL_APP_NAME }."
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "Dit abonnement understøtter ${ MAX_SYNC_FREE_USER } Gmail-adresse.",
+        "Dit abonnement understøtter ${ MAX_SYNC_FREE_USER } Gmail-adresser."
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "Dit abonnement understøtter i alt ${ MAX_SYNC_PAID_USER } Gmail-adresse",
+        "Dit abonnement understøtter i alt ${ MAX_SYNC_PAID_USER } Gmail-adresser"
       ]
     },
     "description": {
@@ -7089,6 +7205,21 @@
       ],
       "Zero keys reactivated": [
         "Nul nøgler genaktiveret"
+      ],
+      "Address could not be added.": [
+        "Adressen kunne ikke tilføjes."
+      ],
+      "Address is already added to your account": [
+        "Adressen er allerede tilføjet til din konto"
+      ],
+      "Incorrect recovery code. Please try again.": [
+        "Forkert gendannelseskode. Prøv igen."
+      ],
+      "Something went wrong while creating the address": [
+        "Noget gik galt under oprettelsen af adressen"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Noget gik galt under hentning af tilgængelige domæner"
       ]
     },
     "error": {
@@ -12463,6 +12594,72 @@
       ],
       "Zoom meeting": [
         "Zoom-møde"
+      ],
+      "Ask them to sign in to their ${ ACCOUNT_APP_NAME } in the browser, and go to **Settings → All settings → Recovery → Emergency access→ People who trust me.**": [
+        "Bed dem om at logge ind på deres ${ ACCOUNT_APP_NAME } i browseren, og gå til **Indstillinger → Alle indstillinger → Gendannelse → Nødadgang → Personer som stoler på mig.**"
+      ],
+      "Click **Request password reset** and follow the prompts.": [
+        "Klik på **Anmod om nulstilling af adgangskode** og følg vejledningen."
+      ],
+      "Contact our Customer Support team to disable two-factor authentication for your account, or recover your account another way.": [
+        "Kontakt vores kundesupport for at slå to-faktor-godkendelse fra på din konto, eller gendan din konto på en anden måde."
+      ],
+      "Data recoverable with recovery phrase": [
+        "Data kan gendannes med gendannelsessætning"
+      ],
+      "Enter code": [
+        "Indtast kode"
+      ],
+      "Enter the 12-word recovery phrase associated with your account.": [
+        "Indtast gendannelsessætningen på 12 ord der er knyttet til din konto."
+      ],
+      "From there, they can request emergency access to your account by clicking **Request access.**": [
+        "Derfra kan de anmode om nødadgang til din konto ved at klikke på **Anmod om adgang.**"
+      ],
+      "How to perform a signed-in reset": [
+        "Sådan udføres en nulstilling når du er logget ind"
+      ],
+      "If you are signed in to a ${ BRAND_NAME } web app in **another browser**, you may be able to perform a password reset from your active session.": [
+        "Hvis du er logget ind på en ${ BRAND_NAME } web-app i en **anden browser**, kan du muligvis nulstille adgangskoden fra din aktive session."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Hvis du har mistet adgangen til din godkender-app kan du bruge 1 af de 16 gendannelseskoder som du fik da du satte to-faktor-godkendelses op. ${ learnMoreLink }"
+      ],
+      "Open your active session in the browser, and go to **Settings → All settings → Recovery → Password reset settings.**": [
+        "Åbn din aktive session i browseren, og gå til **Indstillinger → Alle indstillinger → Gendannelse → Indstillinger for nulstilling af adgangskode.**"
+      ],
+      "Recovery phrase": [
+        "Gendannelsesssætning"
+      ],
+      "Resetting your password in your active web session will ensure **your encrypted data will remain accessible** after you change your password.": [
+        "Ved at nulstille din adgangskode i din aktive websession sikrer du at **dine krypterede data forbliver tilgængelige** efter du har ændret din adgangskode."
+      ],
+      "Something went wrong. Please try again.": [
+        "Der gik noget galt. Prøv igen."
+      ],
+      "This password is used to login to your ${ BRAND_NAME } account": [
+        "Denne adgangskode bruges til at logge ind på din ${ BRAND_NAME }-konto"
+      ],
+      "To help keep your account safe, we want to make sure it's really you trying to sign in.": [
+        "For at holde din konto sikker skal vi sikre os at det faktisk er dig der prøver at logge ind."
+      ],
+      "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
+        "For at holde din konto sikker skal vi sikre os at det faktisk er dig der prøver at logge ind."
+      ],
+      "We detected you are already signed in to a ${ BRAND_NAME } web app on **another browser**. You may be able to perform a password reset from your active session.": [
+        "Vi har registreret at du allerede er logget ind på en ${ BRAND_NAME } web-app i en **anden browser**. Du kan muligvis nulstille adgangskoden fra din aktive session."
+      ],
+      "You can now reset your password to regain access to your account.": [
+        "Du kan nu nulstille din adgangskode for igen at få adgang til din konto."
+      ],
+      "You can now sign in to your account again.": [
+        "Du kan nu logge ind på din konto igen."
+      ],
+      "You will not be asked for a one-time code or a security key.": [
+        "Du vil ikke blive bedt om en engangskode eller en sikkerhedsnøgle."
+      ],
+      "You will regain complete or partial access to your encrypted data.": [
+        "Du vil få fuld eller delvis adgang til dine krypterede data igen."
       ]
     },
     "info": {
@@ -13781,7 +13978,7 @@
         "Interval"
       ],
       "Invite people": [
-        "Invitér personer"
+        "Inviter personer"
       ],
       "Invite via email": [
         "Inviter via e-mail"
@@ -14491,6 +14688,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Select which Gmail address to connect": [
+        "Vælg hvilken Gmail-adresse der skal forbindes"
       ]
     },
     "label": {
@@ -16907,6 +17107,9 @@
       ],
       "Zoom video conferencing settings have been updated": [
         "Indstillingerne for Zoom-videokonferencer er blevet opdateret"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Din ${ BRAND_NAME }-adresse er klar til brug"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -20803,6 +21006,18 @@
       ],
       "You’re invited to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
         "Du er inviteret til at slutte dig til over 100 mio. mennesker, der har valgt at bevare kontrollen over deres data med ${ BRAND_NAME }s krypterede økosystem."
+      ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } hide-my-email-aliasser til at bekæmpe spam"
+      ],
+      "${ MAIL_SHORT_APP_NAME } Free": [
+        "${ MAIL_SHORT_APP_NAME } Gratis"
+      ],
+      "Password-protected messages": [
+        "Adgangskodebeskyttede beskeder"
+      ],
+      "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
+        "Din konto inkluderer adgang til gratis funktioner i ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, og ${ LUMO_SHORT_APP_NAME }."
       ]
     },
     "Signup label": {
@@ -23314,7 +23529,7 @@
         "Redigér gateway ${ currentName }"
       ],
       "Edit group": [
-        "Redigér Gruppe"
+        "Rediger gruppe"
       ],
       "Edit invoice note": [
         "Rediger fakturanote"
@@ -24347,6 +24562,42 @@
       ],
       "Your subscriptions": [
         "Dine abonnementer"
+      ],
+      "An error occurred": [
+        "Der opstod en fejl"
+      ],
+      "Are you already signed in to ${ BRAND_NAME } in a browser?": [
+        "Er du allerede logget ind på ${ BRAND_NAME } i en browser?"
+      ],
+      "Are you sure you want to disconnect this address?": [
+        "Er du sikker på, at du vil afbryde forbindelsen til denne adresse?"
+      ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Flyt din Gmail ind i ${ MAIL_APP_NAME }"
+      ],
+      "Can you reach out to your emergency contacts?": [
+        "Kan du kontakte dine nødkontakter?"
+      ],
+      "Couldn’t recover your account": [
+        "Kunne ikke gendanne din konto"
+      ],
+      "Disconnected from Gmail": [
+        "Forbindelsen til Gmail er afbrudt"
+      ],
+      "Recover account": [
+        "Gendan konto"
+      ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Send og modtag fra Gmail med ${ MAIL_APP_NAME }"
+      ],
+      "Two-factor authentication disabled": [
+        "To-faktor-godkendelse deaktiveret"
+      ],
+      "Use backup recovery code": [
+        "Brug backup-gendannelseskode"
+      ],
+      "You are all set": [
+        "Så er du klar"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -25113,6 +25364,15 @@
       ],
       "Writing assistant": [
         "Skriveassistent"
+      ],
+      "Add delegated roles to a user to grant them only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
+        "Tilføj delegerede roller til en bruger for kun at give dem de specifikke tilladelser de har brug for, og dermed holde fuld admin-adgang seperat og dit miljø sikkert."
+      ],
+      "General": [
+        "Generelt"
+      ],
+      "Save": [
+        "Gem"
       ]
     },
     "Users table: badge": {

@@ -1763,6 +1763,18 @@
       ],
       "Zoom out": [
         "Allunyar"
+      ],
+      "I don't have my phrase": [
+        "No tinc la meva frase"
+      ],
+      "I don’t have my phone": [
+        "No tinc el telèfon a mà"
+      ],
+      "Return to sign-in": [
+        "Tornar a l'inici de sessió"
+      ],
+      "Try another way": [
+        "Proveu-ho d'una altra manera"
       ]
     },
     "action": {
@@ -12621,6 +12633,114 @@
       ],
       "Zoom meeting": [
         "reunió de Zoom"
+      ],
+      "${ BRAND_NAME } will send a verification code to ${ RedactedPhoneNumber }. Standard message rates may apply.": [
+        "${ BRAND_NAME } enviarà un codi de verificació a ${ RedactedPhoneNumber }. Pot ser que s'apliquin tarifes estàndard de missatgeria."
+      ],
+      "${ DataLockedText }, but recoverable with your ${ RecoveryContactsLink }:": [
+        "${ DataLockedText }, però recuperable amb el vostre ${ RecoveryContactsLink }:"
+      ],
+      "An email with a verification code was just sent to ${ emailAddress }. If you can’t find the message in your inbox, please check your spam folder.": [
+        "S'acaba d'enviar un correu electrònic amb un codi de verificació a ${ emailAddress }. Si no trobeu el missatge a la vostra safata d'entrada, reviseu la carpeta de correu brossa."
+      ],
+      "An SMS with a verification code was just sent to ${ phoneNumber }.": [
+        "Acabem d'enviar un SMS amb un codi de verificació a ${ phoneNumber }."
+      ],
+      "Ask them to sign in to their ${ ACCOUNT_APP_NAME } in the browser, and go to **Settings → All settings → Recovery → Emergency access→ People who trust me.**": [
+        "Demaneu-los que iniciïn sessió a la seva ${ ACCOUNT_APP_NAME } al navegador i que vagin a **Preferències → Totes les preferències → Recuperació → Accés d'emergència → Persones que confien en mi.**"
+      ],
+      "Can you access your active session?": [
+        "Podeu accedir a la vostra sessió activa?"
+      ],
+      "Can you access your active web session in another browser?": [
+        "Podeu accedir a la vostra sessió web activa en un altre navegador?"
+      ],
+      "Can you reach out to your contact?": [
+        "Teniu el vostre contacte a l'abast?"
+      ],
+      "Click **Request password reset** and follow the prompts.": [
+        "Feu clic a **Sol·licitar el restabliment de la contrasenya** i seguiu les instruccions."
+      ],
+      "Data recoverable with recovery phrase": [
+        "Podeu recuperar les dades amb la frase de recuperació"
+      ],
+      "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
+        "Depenent de les vostres preferències, podran rebre accés immediatament o després d'un **període d'espera** designat."
+      ],
+      "Due to end-to-end encryption, you can reset your password, but ${ DataLockedText } until you use a ${ DataRecoveryOptionsLink }:": [
+        "A causa del xifratge d'extrem a extrem, podreu restablir la contrasenya, però ${ DataLockedText } fins que feu servir ${ DataRecoveryOptionsLink }:"
+      ],
+      "Enter the 12-word recovery phrase associated with your account.": [
+        "Introduïu la frase de recuperació de 12 paraules associada al vostre compte."
+      ],
+      "From there, they can request emergency access to your account by clicking **Request access.**": [
+        "Des d'allà poden sol·licitar l'accés d'emergència al vostre compte fent clic a **Sol·licitar accés**."
+      ],
+      "Get in touch with your emergency contacts, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed**.": [
+        "Acudiu als vostres contactes d'emergència per veure si us poden ajudar. Després de sol·licitar l'accés d'emergència al vostre compte, podran canviar la vostra contrasenya **un cop hagi passat el temps d'espera per l'accés**."
+      ],
+      "How to perform a signed-in reset": [
+        "Com realitzar un restabliment amb la sessió iniciada"
+      ],
+      "How your emergency contact can change your password for you:": [
+        "Com pot el vostre contacte d'emergència canviar la contrasenya per vosaltres:"
+      ],
+      "If possible, when signing in, use a device or a browser where you’ve signed in before.": [
+        "Si pot ser, inicieu sessió en un dispositiu o un navegador on ja ho hàgiu fet abans."
+      ],
+      "If you are signed in to a ${ BRAND_NAME } web app in **another browser**, you may be able to perform a password reset from your active session.": [
+        "Si heu iniciat sessió en una aplicació web de ${ BRAND_NAME } en un **altre navegador**, és possible que pugueu realitzar un restabliment de contrasenya des de la vostra sessió activa."
+      ],
+      "If you have emergency contacts, get in touch with them, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed.**": [
+        "Si teniu contactes d'emergència, demaneu-los si us poden ajudar. Després de sol·licitar l'accés d'emergència al vostre compte, podran canviar-vos la contrasenya **un cop transcorregut el temps d'espera per accedir.**"
+      ],
+      "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
+        "Un cop concedit l'accés al vostre compte, podran anar a la vostra configuració de **Recuperació** i canviar-vos la **contrasenya de ${ ACCOUNT_APP_NAME }**."
+      ],
+      "Open your active session in the browser, and go to **Settings → All settings → Recovery → Password reset settings.**": [
+        "Obriu la sessió activa al navegador i aneu a **Preferències → Totes les preferències → Recuperació → Configuració del restabliment de contrasenya.**"
+      ],
+      "Recovery contacts": [
+        "Contactes de recuperació"
+      ],
+      "Recovery file": [
+        "Fitxer de recuperació"
+      ],
+      "Recovery phrase": [
+        "Frase de recuperació"
+      ],
+      "Resetting your password in your active web session will ensure **your encrypted data will remain accessible** after you change your password.": [
+        "Restablir la contrasenya en la sessió web activa us garantirà **que les vostres dades xifrades romandran accessibles** després de canviar-la."
+      ],
+      "Try recovering your account from a **device or browser where you have signed in before**, as it may be possible from there:": [
+        "Proveu de recuperar el vostre compte des d'un **dispositiu o navegador on hàgiu iniciat sessió abans **, ja que podria funcionar des d'allà:"
+      ],
+      "Unfortunately there is no recovery method available for this account.": [
+        "Malauradament no hi ha cap mètode de recuperació disponible per aquest compte."
+      ],
+      "We detected you are already signed in to a ${ BRAND_NAME } web app on **another browser**. You may be able to perform a password reset from your active session.": [
+        "Hem detectat que ja heu iniciat sessió en una aplicació web de ${ BRAND_NAME } en un **altre navegador**. És possible que pugueu realitzar un restabliment de contrasenya des de la vostra sessió activa."
+      ],
+      "Web sessions detected:": [
+        "S'han detectat sessions web:"
+      ],
+      "You can now reset your password to regain access to your account.": [
+        "Ara podeu restablir la contrasenya per recuperar l'accés al vostre compte."
+      ],
+      "You can now reset your password to regain access to your account. **This will disable 2-factor authentication.**": [
+        "Ara podeu restablir la contrasenya per recuperar l'accés al vostre compte. **Això desactivarà l'autenticació de doble factor**."
+      ],
+      "You will regain complete or partial access to your encrypted data.": [
+        "Recuperareu l'accés complet o parcial a les vostres dades xifrades."
+      ],
+      "Your encrypted data will be locked": [
+        "Les vostres dades xifrades es bloquejaran"
+      ],
+      "your encrypted data will be locked": [
+        "les vostres dades xifrades es bloquejaran"
+      ],
+      "Your old password": [
+        "La vostra contrasenya anterior"
       ]
     },
     "info": {
@@ -14652,6 +14772,9 @@
       ],
       "ZIP code": [
         "Codi postal"
+      ],
+      "Enter code": [
+        "Introduïu el codi"
       ]
     },
     "label": {
@@ -15045,6 +15168,15 @@
       ],
       "What’s this?": [
         "Què és això?"
+      ],
+      "contacts’ assistance": [
+        "assistència dels contactes"
+      ],
+      "data recovery option": [
+        "opció de recuperació de dades"
+      ],
+      "Details": [
+        "Detalls"
       ]
     },
     "Link (Scribe)": {
@@ -16419,6 +16551,13 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escanegem el web fosc per a comprovar si les vostres adreces o àlies de ${ BRAND_NAME } s'han filtrat i us avisem immediatament si trobem alguna cosa."
+      ],
+      "Appointment scheduling": [
+        "Programació de cites"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Programació de cites amb ${ n } pàgina de reserva",
+        "Programació de cites amb ${ n } pàgines de reserva"
       ]
     },
     "new_plans: feature highlight": {
@@ -20874,6 +21013,30 @@
       ],
       "You’re invited to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
         "Esteu convidat a unir-vos a més de 100 milions de persones que han triat mantenir el control de les seves dades amb l'ecosistema xifrat de ${ BRAND_NAME }."
+      ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } hide-my-email àlies de correu electrònic per combatre el correu brossa"
+      ],
+      "${ MAIL_SHORT_APP_NAME } Free": [
+        "${ MAIL_SHORT_APP_NAME } de franc"
+      ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "Trieu una adreça de ${ MAIL_APP_NAME } segura per començar"
+      ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "Manteniu les vostres converses privades amb ${ MAIL_APP_NAME }"
+      ],
+      "Password-protected messages": [
+        "Missatges protegits amb contrasenya"
+      ],
+      "Secure calendar": [
+        "Calendari segur"
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "VPN amb servidors a ${ vpnServersCountData.free.countries } països"
+      ],
+      "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
+        "El vostre compte inclou accés a funcions gratuïtes a ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ LUMO_SHORT_APP_NAME }."
       ]
     },
     "Signup label": {
@@ -24442,6 +24605,30 @@
       ],
       "Your subscriptions": [
         "Les vostres subscripcions"
+      ],
+      "Are you already signed in to ${ BRAND_NAME } in a browser?": [
+        "Ja heu iniciat sessió a ${ BRAND_NAME } en un navegador?"
+      ],
+      "Ask your emergency contacts for help": [
+        "Demaneu ajuda als vostres contactes d'emergència"
+      ],
+      "Can you access your session in the browser?": [
+        "Podeu accedir a la vostra sessió al navegador?"
+      ],
+      "Can you reach out to your emergency contacts?": [
+        "Podeu posar-vos en contacte amb els vostres contactes d'emergència?"
+      ],
+      "Couldn’t recover your account": [
+        "No s'ha pogut recuperar el vostre compte"
+      ],
+      "Recover account": [
+        "Recuperar el compte"
+      ],
+      "Try changing your password in your active web session": [
+        "Proveu de canviar la contrasenya a la vostra sessió web activa"
+      ],
+      "Verify it’s you": [
+        "Verifiqueu que sou vós"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -25208,6 +25395,18 @@
       ],
       "Writing assistant": [
         "Assistent d'escriptura"
+      ],
+      "Add delegated roles to a user to grant them only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
+        "Delegueu rols a un usuari per concedir-li només els permisos específics que necessiti, mentre manteniu separats els poders complets d'administració i el vostre entorn segur."
+      ],
+      "General": [
+        "General"
+      ],
+      "Roles and permissions": [
+        "Rols i permisos"
+      ],
+      "Save": [
+        "Desar"
       ]
     },
     "Users table: badge": {

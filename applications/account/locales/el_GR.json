@@ -1763,6 +1763,18 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
+      ],
+      "I don't have my phrase": [
+        "Δεν έχω τη φράση μου"
+      ],
+      "I don’t have my phone": [
+        "Δεν έχω το τηλέφωνό μου"
+      ],
+      "Return to sign-in": [
+        "Επιστροφή στη σύνδεση"
+      ],
+      "Try another way": [
+        "Δοκιμάστε έναν άλλο τρόπο"
       ]
     },
     "action": {
@@ -12621,6 +12633,114 @@
       ],
       "Zoom meeting": [
         "Σύσκεψη Zoom"
+      ],
+      "${ BRAND_NAME } will send a verification code to ${ RedactedPhoneNumber }. Standard message rates may apply.": [
+        "Η ${ BRAND_NAME } θα στείλει έναν κωδικό επαλήθευσης στο ${ RedactedPhoneNumber }. Ενδέχεται να ισχύουν οι τυπικές χρεώσεις μηνυμάτων."
+      ],
+      "${ DataLockedText }, but recoverable with your ${ RecoveryContactsLink }:": [
+        "${ DataLockedText }, αλλά ανακτήσιμα με το ${ RecoveryContactsLink }:"
+      ],
+      "An email with a verification code was just sent to ${ emailAddress }. If you can’t find the message in your inbox, please check your spam folder.": [
+        "Ένα μήνυμα ηλεκτρονικού ταχυδρομείου με έναν κωδικό επαλήθευσης μόλις στάλθηκε στο ${ emailAddress }. Αν δεν μπορείτε να βρείτε το μήνυμα στα εισερχόμενά σας, παρακαλούμε ελέγξτε τον φάκελο ανεπιθύμητης αλληλογραφίας σας."
+      ],
+      "An SMS with a verification code was just sent to ${ phoneNumber }.": [
+        "Μόλις στάλθηκε ένα SMS με κωδικό επαλήθευσης στο ${ phoneNumber }."
+      ],
+      "Ask them to sign in to their ${ ACCOUNT_APP_NAME } in the browser, and go to **Settings → All settings → Recovery → Emergency access→ People who trust me.**": [
+        "Ζητήστε τους να συνδεθούν στον λογαριασμό τους ${ ACCOUNT_APP_NAME } στο πρόγραμμα περιήγησης και μεταβείτε στις **Ρυθμίσεις → Όλες οι ρυθμίσεις → Ανάκτηση → Πρόσβαση έκτακτης ανάγκης → Άτομα που με εμπιστεύονται.**"
+      ],
+      "Can you access your active session?": [
+        "Μπορείτε να έχετε πρόσβαση στην ενεργή σας συνεδρία;"
+      ],
+      "Can you access your active web session in another browser?": [
+        "Έχετε πρόσβαση στην ενεργή συνεδρία σας σε άλλο πρόγραμμα περιήγησης;"
+      ],
+      "Can you reach out to your contact?": [
+        "Μπορείτε να επικοινωνήσετε με την επαφή σας;"
+      ],
+      "Click **Request password reset** and follow the prompts.": [
+        "Κάντε κλικ στο **Αίτηση επαναφοράς κωδικού** και ακολουθήστε τις οδηγίες."
+      ],
+      "Data recoverable with recovery phrase": [
+        "Ανακτήσιμα δεδομένα με φράση ανάκτησης"
+      ],
+      "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
+        "Ανάλογα με τις ρυθμίσεις σας, ενδέχεται να λάβουν πρόσβαση αμέσως ή μετά από μια καθορισμένη **περίοδο αναμονής**."
+      ],
+      "Due to end-to-end encryption, you can reset your password, but ${ DataLockedText } until you use a ${ DataRecoveryOptionsLink }:": [
+        "Λόγω της διατερματικής κρυπτογράφησης, μπορείτε να επαναφέρετε τον κωδικό πρόσβασής σας, αλλά ${ DataLockedText } μέχρι να χρησιμοποιήσετε ένα ${ DataRecoveryOptionsLink }:"
+      ],
+      "Enter the 12-word recovery phrase associated with your account.": [
+        "Εισαγάγετε τη 12-λεκτη φράση ανάκτησης που σχετίζεται με τον λογαριασμό σας."
+      ],
+      "From there, they can request emergency access to your account by clicking **Request access.**": [
+        "Από εκεί, μπορούν να ζητήσουν πρόσβαση έκτακτης ανάγκης στον λογαριασμό σας κάνοντας κλικ στην επιλογή **Αίτημα πρόσβασης**."
+      ],
+      "Get in touch with your emergency contacts, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed**.": [
+        "Επικοινωνήστε με τις επαφές έκτακτης ανάγκης, για να δείτε αν μπορούν να σας βοηθήσουν. Αφού ζητήσετε πρόσβαση έκτακτης ανάγκης στον λογαριασμό σας, θα μπορούν να αλλάξουν τον κωδικό πρόσβασής σας για εσάς **αφού παρέλθει ο χρόνος αναμονής για την πρόσβαση**."
+      ],
+      "How to perform a signed-in reset": [
+        "Πώς να εκτελέσετε επαναφορά σε κατάσταση σύνδεσης"
+      ],
+      "How your emergency contact can change your password for you:": [
+        "Πώς μπορεί η επαφή έκτακτης ανάγκης να αλλάξει τον κωδικό πρόσβασής σας:"
+      ],
+      "If possible, when signing in, use a device or a browser where you’ve signed in before.": [
+        "Εάν είναι δυνατόν, κατά τη σύνδεση, χρησιμοποιήστε μια συσκευή ή ένα πρόγραμμα περιήγησης στο οποίο έχετε συνδεθεί στο παρελθόν."
+      ],
+      "If you are signed in to a ${ BRAND_NAME } web app in **another browser**, you may be able to perform a password reset from your active session.": [
+        "Εάν είστε συνδεδεμένοι σε μια εφαρμογή ιστού ${ BRAND_NAME } σε **άλλο πρόγραμμα περιήγησης**, ενδέχεται να μπορείτε να πραγματοποιήσετε επαναφορά κωδικού πρόσβασης από την ενεργή σας περίοδο λειτουργίας."
+      ],
+      "If you have emergency contacts, get in touch with them, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed.**": [
+        "Εάν έχετε επαφές έκτακτης ανάγκης, επικοινωνήστε μαζί τους για να δείτε αν μπορούν να σας βοηθήσουν. Αφού ζητήσετε πρόσβαση έκτακτης ανάγκης στον λογαριασμό σας, θα μπορούν να αλλάξουν τον κωδικό πρόσβασής σας για εσάς **αφού παρέλθει ο χρόνος αναμονής για την πρόσβαση.**"
+      ],
+      "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
+        "Μόλις τους παραχωρηθεί πρόσβαση στον λογαριασμό σας, μπορούν να έχουν πρόσβαση στις ρυθμίσεις **Ανάκτησης** και **να αλλάξουν τον κωδικό πρόσβασής σας ${ ACCOUNT_APP_NAME }** για εσάς."
+      ],
+      "Open your active session in the browser, and go to **Settings → All settings → Recovery → Password reset settings.**": [
+        "Ανοίξτε την ενεργή σας συνεδρία στο πρόγραμμα περιήγησης και μεταβείτε στις **Ρυθμίσεις → Όλες οι ρυθμίσεις → Ανάκτηση → Ρυθμίσεις επαναφοράς κωδικού πρόσβασης.**"
+      ],
+      "Recovery contacts": [
+        "Επαφές ανάκτησης"
+      ],
+      "Recovery file": [
+        "Αρχείο ανάκτησης"
+      ],
+      "Recovery phrase": [
+        "Φράση ανάκτησης"
+      ],
+      "Resetting your password in your active web session will ensure **your encrypted data will remain accessible** after you change your password.": [
+        "Η επαναφορά του κωδικού πρόσβασής σας στην ενεργή περίοδο σύνδεσης ιστού θα διασφαλίσει ότι **τα κρυπτογραφημένα δεδομένα σας θα παραμείνουν προσβάσιμα** μετά την αλλαγή του κωδικού πρόσβασής σας."
+      ],
+      "Try recovering your account from a **device or browser where you have signed in before**, as it may be possible from there:": [
+        "Δοκιμάστε να ανακτήσετε τον λογαριασμό σας από μια **συσκευή ή πρόγραμμα περιήγησης όπου έχετε συνδεθεί στο παρελθόν**, καθώς ενδέχεται να είναι δυνατό από εκεί:"
+      ],
+      "Unfortunately there is no recovery method available for this account.": [
+        "Δυστυχώς, δεν υπάρχει διαθέσιμη μέθοδος ανάκτησης για αυτόν τον λογαριασμό."
+      ],
+      "We detected you are already signed in to a ${ BRAND_NAME } web app on **another browser**. You may be able to perform a password reset from your active session.": [
+        "Εντοπίσαμε ότι έχετε ήδη συνδεθεί σε μια εφαρμογή ιστού ${ BRAND_NAME } σε **άλλο πρόγραμμα περιήγησης**. Ενδέχεται να μπορείτε να πραγματοποιήσετε επαναφορά κωδικού πρόσβασης από την ενεργή σας περίοδο λειτουργίας."
+      ],
+      "Web sessions detected:": [
+        "Εντοπίστηκαν συνεδρίες ιστού:"
+      ],
+      "You can now reset your password to regain access to your account.": [
+        "Τώρα μπορείτε να επαναφέρετε τον κωδικό πρόσβασής σας για να ανακτήσετε την πρόσβαση στον λογαριασμό σας."
+      ],
+      "You can now reset your password to regain access to your account. **This will disable 2-factor authentication.**": [
+        "Μπορείτε πλέον να επαναφέρετε τον κωδικό πρόσβασής σας για να ανακτήσετε την πρόσβαση στον λογαριασμό σας. **Αυτό θα απενεργοποιήσει την ταυτοποίηση 2 παραγόντων.**"
+      ],
+      "You will regain complete or partial access to your encrypted data.": [
+        "Θα ανακτήσετε πλήρη ή μερική πρόσβαση στα κρυπτογραφημένα δεδομένα σας."
+      ],
+      "Your encrypted data will be locked": [
+        "Τα κρυπτογραφημένα δεδομένα σας θα κλειδωθούν"
+      ],
+      "your encrypted data will be locked": [
+        "τα κρυπτογραφημένα δεδομένα σας θα κλειδωθούν"
+      ],
+      "Your old password": [
+        "Ο παλιός κωδικός σας"
       ]
     },
     "info": {
@@ -14652,6 +14772,9 @@
       ],
       "ZIP code": [
         "Τ.Κ."
+      ],
+      "Enter code": [
+        "Εισαγωγή κωδικού"
       ]
     },
     "label": {
@@ -15045,6 +15168,15 @@
       ],
       "What’s this?": [
         "Τι είναι αυτό;"
+      ],
+      "contacts’ assistance": [
+        "βοήθεια από την επαφή"
+      ],
+      "data recovery option": [
+        "επιλογή ανάκτησης δεδομένων"
+      ],
+      "Details": [
+        "Λεπτομέρειες"
       ]
     },
     "Link (Scribe)": {
@@ -16419,6 +16551,13 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Σαρώνουμε τον σκοτεινό ιστό για να ελέγξουμε εάν οι διευθύνσεις ή τα ψευδώνυμά σας ${ BRAND_NAME } έχουν διαρρεύσει και σας ειδοποιούμε αμέσως αν βρούμε κάτι."
+      ],
+      "Appointment scheduling": [
+        "Προγραμματισμός ραντεβού"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Προγραμματισμός ραντεβού με ${ n } σελίδα κράτησης",
+        "Προγραμματισμός ραντεβού με ${ n } σελίδες κρατήσεων"
       ]
     },
     "new_plans: feature highlight": {
@@ -20871,6 +21010,30 @@
       ],
       "You’re invited to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
         "Σας προσκαλούμε να γίνετε μέλος μιας κοινότητας με πάνω από 100 εκατομμύρια άτομα που επέλεξαν να διατηρήσουν τον έλεγχο των δεδομένων τους με το κρυπτογραφημένο οικοσύστημα της ${ BRAND_NAME }."
+      ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } hide-my-email ψευδώνυμα για την καταπολέμηση των ενοχλητικών μηνυμάτων"
+      ],
+      "${ MAIL_SHORT_APP_NAME } Free": [
+        "${ MAIL_SHORT_APP_NAME } Free"
+      ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "Επιλέξτε μια ασφαλή διεύθυνση ${ MAIL_APP_NAME } για να ξεκινήσετε"
+      ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "Διατηρήστε τις συνομιλίες σας ιδιωτικές με το ${ MAIL_APP_NAME }"
+      ],
+      "Password-protected messages": [
+        "Μηνύματα που προστατεύονται με κωδικό πρόσβασης"
+      ],
+      "Secure calendar": [
+        "Ασφαλές ημερολόγιο"
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "VPN με διακομιστές σε ${ vpnServersCountData.free.countries } χώρες"
+      ],
+      "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
+        "Ο λογαριασμός σας περιλαμβάνει πρόσβαση σε δωρεάν λειτουργίες στο ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } και ${ LUMO_SHORT_APP_NAME }."
       ]
     },
     "Signup label": {
@@ -24439,6 +24602,30 @@
       ],
       "Your subscriptions": [
         "Οι συνδρομές σας"
+      ],
+      "Are you already signed in to ${ BRAND_NAME } in a browser?": [
+        "Έχετε ήδη συνδεθεί στο ${ BRAND_NAME } σε κάποιο πρόγραμμα περιήγησης;"
+      ],
+      "Ask your emergency contacts for help": [
+        "Ζητήστε βοήθεια από τις επαφές έκτακτης ανάγκης που έχετε στη διάθεσή σας."
+      ],
+      "Can you access your session in the browser?": [
+        "Έχετε πρόσβαση στη συνεδρία σας μέσω του προγράμματος περιήγησης;"
+      ],
+      "Can you reach out to your emergency contacts?": [
+        "Μπορείτε να επικοινωνήσετε με τις επαφές έκτακτης ανάγκης σας;"
+      ],
+      "Couldn’t recover your account": [
+        "Δεν ήταν δυνατή η ανάκτηση του λογαριασμού σας"
+      ],
+      "Recover account": [
+        "Ανάκτηση λογαριασμού"
+      ],
+      "Try changing your password in your active web session": [
+        "Δοκιμάστε να αλλάξετε τον κωδικό πρόσβασής σας στην ενεργή συνεδρία ιστού σας"
+      ],
+      "Verify it’s you": [
+        "Επαλήθευση ταυτότητας"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -25205,6 +25392,18 @@
       ],
       "Writing assistant": [
         "Βοηθός γραφής"
+      ],
+      "Add delegated roles to a user to grant them only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
+        "Προσθέστε ανατεθειμένους ρόλους σε έναν χρήστη για να του εκχωρήσετε μόνο τα συγκεκριμένα δικαιώματα που χρειάζεται, διατηρώντας ξεχωριστή την πλήρη εξουσία διαχειριστή και το περιβάλλον σας ασφαλές."
+      ],
+      "General": [
+        "Γενικά"
+      ],
+      "Roles and permissions": [
+        "Ρόλοι και δικαιώματα"
+      ],
+      "Save": [
+        "Αποθήκευση"
       ]
     },
     "Users table: badge": {

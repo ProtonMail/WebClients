@@ -1650,6 +1650,18 @@
       ],
       "Zoom out": [
         "Loitonna"
+      ],
+      "I don't have my phrase": [
+        "Minulla ei ole lausettani"
+      ],
+      "I don’t have my phone": [
+        "Minulla ei ole puhelintani"
+      ],
+      "Return to sign-in": [
+        "Palaa kirjautumiseen"
+      ],
+      "Try another way": [
+        "Kokeile toista tapaa"
       ]
     },
     "action": {
@@ -10927,6 +10939,114 @@
       ],
       "Zoom meeting": [
         "Zoom-kokousta"
+      ],
+      "${ BRAND_NAME } will send a verification code to ${ RedactedPhoneNumber }. Standard message rates may apply.": [
+        "${ BRAND_NAME } lähettää vahvistuskoodin numeroon ${ RedactedPhoneNumber }. Viesteistä saatetaan veloittaa tavanomaiset viestimaksut."
+      ],
+      "${ DataLockedText }, but recoverable with your ${ RecoveryContactsLink }:": [
+        "${ DataLockedText }, mutta tiedot voidaan palauttaa käyttämällä ${ RecoveryContactsLink }:"
+      ],
+      "An email with a verification code was just sent to ${ emailAddress }. If you can’t find the message in your inbox, please check your spam folder.": [
+        "Vahvistuskoodin sisältävä sähköposti on juuri lähetetty osoitteeseen ${ emailAddress }. Jos et löydä viestiä saapuneet-kansiosta, tarkista roskapostikansio."
+      ],
+      "An SMS with a verification code was just sent to ${ phoneNumber }.": [
+        "Vahvistuskoodia sisältävä tekstiviesti on juuri lähetetty numeroon ${ phoneNumber }."
+      ],
+      "Ask them to sign in to their ${ ACCOUNT_APP_NAME } in the browser, and go to **Settings → All settings → Recovery → Emergency access→ People who trust me.**": [
+        "Pyydä heitä kirjautumaan selaimessa ${ ACCOUNT_APP_NAME } -tililleen ja siirtymään kohtaan **Asetukset → Kaikki asetukset → Palautus → Hätätilannepääsy → Henkilöt, jotka luottavat minuun.**"
+      ],
+      "Can you access your active session?": [
+        "Pääsetkö aktiiviseen istuntoosi?"
+      ],
+      "Can you access your active web session in another browser?": [
+        "Pääsetkö aktiiviseen verkkoselaamisistuntoosi toisella selaimella?"
+      ],
+      "Can you reach out to your contact?": [
+        "Voitko ottaa yhteyttä yhteyshenkilöösi?"
+      ],
+      "Click **Request password reset** and follow the prompts.": [
+        "Napsauta **Pyydä salasanan nollausta** ja noudata ohjeita."
+      ],
+      "Data recoverable with recovery phrase": [
+        "Tiedot, jotka voidaan palauttaa palautuslauseella"
+      ],
+      "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
+        "Asetuksistasi riippuen he saattavat saada käyttöoikeuden välittömästi tai tietyn **odotusaikansa** jälkeen."
+      ],
+      "Due to end-to-end encryption, you can reset your password, but ${ DataLockedText } until you use a ${ DataRecoveryOptionsLink }:": [
+        "Päästä päähän -salauksen vuoksi voit nollata salasanasi, mutta ${ DataLockedText }, kunnes käytät ${ DataRecoveryOptionsLink }:"
+      ],
+      "Enter the 12-word recovery phrase associated with your account.": [
+        "Syötä tilillesi liitetty 12 sanan palautuslause."
+      ],
+      "From there, they can request emergency access to your account by clicking **Request access.**": [
+        "Sieltä he voivat pyytää hätätilannetta varten pääsyn tilillesi napsauttamalla **Pyydä pääsyä**."
+      ],
+      "Get in touch with your emergency contacts, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed**.": [
+        "Ota yhteyttä hätäyhteyshenkilöihisi ja kysy, voivatko he auttaa. Kun olet pyytänyt hätäpääsyä tilillesi, he voivat vaihtaa salasanasi puolestasi **kun pääsyn odotusaika on kulunut umpeen**."
+      ],
+      "How to perform a signed-in reset": [
+        "Kuinka suorittaa kirjautuneen käyttäjän nollaus"
+      ],
+      "How your emergency contact can change your password for you:": [
+        "Kuinka hätäyhteyshenkilösi voi vaihtaa salasanasi puolestasi:"
+      ],
+      "If possible, when signing in, use a device or a browser where you’ve signed in before.": [
+        "Käytä kirjautuessasi mahdollisuuksien mukaan laitetta tai selainta, jolla olet kirjautunut sisään aiemmin."
+      ],
+      "If you are signed in to a ${ BRAND_NAME } web app in **another browser**, you may be able to perform a password reset from your active session.": [
+        "Jos olet kirjautunut sisään ${ BRAND_NAME } -verkkosovellukseen **toisessa selaimessa**, voit mahdollisesti nollata salasanasi nykyisen istunnon kautta."
+      ],
+      "If you have emergency contacts, get in touch with them, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed.**": [
+        "Jos sinulla on hätäyhteyshenkilöitä, ota heihin yhteyttä ja kysy, voivatko he auttaa. Kun olet pyytänyt hätäpääsyä tilillesi, he voivat vaihtaa salasanasi puolestasi **sen jälkeen, kun pääsyn odotusaika on kulunut umpeen.**"
+      ],
+      "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
+        "Kun tilillesi on myönnetty käyttöoikeus, he voivat avata **Palautus**-asetuksesi ja **vaihtaa ${ ACCOUNT_APP_NAME } -salasanasi** puolestasi."
+      ],
+      "Open your active session in the browser, and go to **Settings → All settings → Recovery → Password reset settings.**": [
+        "Avaa selaimessa avoinna oleva istunto ja siirry kohtaan **Asetukset → Kaikki asetukset → Palautus → Salasanan nollausasetukset.**"
+      ],
+      "Recovery contacts": [
+        "Palautuskontaktit"
+      ],
+      "Recovery file": [
+        "Palautustiedosto"
+      ],
+      "Recovery phrase": [
+        "Palautuslause"
+      ],
+      "Resetting your password in your active web session will ensure **your encrypted data will remain accessible** after you change your password.": [
+        "Salasanan nollaaminen nykyisen verkkoselaamisen aikana varmistaa, että **salatut tietosi pysyvät käytettävissä** salasanan vaihdon jälkeen."
+      ],
+      "Try recovering your account from a **device or browser where you have signed in before**, as it may be possible from there:": [
+        "Yritä palauttaa tilisi **laitteella tai selaimella, jolla olet kirjautunut sisään aiemmin**, sillä se saattaa onnistua sieltä:"
+      ],
+      "Unfortunately there is no recovery method available for this account.": [
+        "Valitettavasti tälle tilille ei ole saatavilla palautusmenetelmää."
+      ],
+      "We detected you are already signed in to a ${ BRAND_NAME } web app on **another browser**. You may be able to perform a password reset from your active session.": [
+        "Havaitsimme, että olet jo kirjautunut sisään ${ BRAND_NAME } -verkkosovellukseen **toisella selaimella**. Voit mahdollisesti nollata salasanasi nykyisen istunnon kautta."
+      ],
+      "Web sessions detected:": [
+        "Havaittuja verkkosessioita:"
+      ],
+      "You can now reset your password to regain access to your account.": [
+        "Voit nyt nollata salasanasi ja saada jälleen pääsyn tilillesi."
+      ],
+      "You can now reset your password to regain access to your account. **This will disable 2-factor authentication.**": [
+        "Voit nyt nollata salasanasi ja saada jälleen pääsyn tilillesi. **Tämä poistaa kaksivaiheisen todennuksen käytöstä.**"
+      ],
+      "You will regain complete or partial access to your encrypted data.": [
+        "Saat takaisin täyden tai osittaisen pääsyn salattuihin tietoihisi."
+      ],
+      "Your encrypted data will be locked": [
+        "Salatut tietosi lukitaan"
+      ],
+      "your encrypted data will be locked": [
+        "salatut tietosi lukitaan"
+      ],
+      "Your old password": [
+        "Vanha salasanasi"
       ]
     },
     "info": {
@@ -12739,6 +12859,9 @@
       ],
       "ZIP code": [
         "Postinumero"
+      ],
+      "Enter code": [
+        "Syötä koodi"
       ]
     },
     "label": {
@@ -13120,6 +13243,15 @@
       ],
       "What’s this?": [
         "Mikä tämä on?"
+      ],
+      "contacts’ assistance": [
+        "yhteyshenkilöiden apu"
+      ],
+      "data recovery option": [
+        "tietojen palautusvaihtoehto"
+      ],
+      "Details": [
+        "Tiedot"
       ]
     },
     "Link (Scribe)": {
@@ -14327,6 +14459,13 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skannaamme pimeää verkkoa tarkistaaksemme, onko ${ BRAND_NAME } -osoitteesi tai -aliaksesi vuotaneet ja hälytämme välittömästi, jos löydämme jotain."
+      ],
+      "Appointment scheduling": [
+        "Ajanvaraus"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Ajanvaraus ${ n } -varaussivulla",
+        "Ajanvaraus ${ n } -varaussivulla"
       ]
     },
     "new_plans: feature highlight": {
@@ -18331,6 +18470,30 @@
       ],
       "Your trial": [
         "Kokeilujaksosi"
+      ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } hide-my-email-aliasta roskapostin torjumiseksi"
+      ],
+      "${ MAIL_SHORT_APP_NAME } Free": [
+        "${ MAIL_SHORT_APP_NAME } Free"
+      ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "Aloita valitsemalla turvallinen ${ MAIL_APP_NAME } -osoite"
+      ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "Pidä keskustelusi yksityisinä ${ MAIL_APP_NAME }issa"
+      ],
+      "Password-protected messages": [
+        "Salasanasuojatut viestit"
+      ],
+      "Secure calendar": [
+        "Suojattu kalenteri"
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "VPN, jolla on palvelimia ${ vpnServersCountData.free.countries } maassa"
+      ],
+      "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
+        "Tiliisi sisältyy pääsy ilmaisiin ominaisuuksiin palveluissa ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } ja ${ LUMO_SHORT_APP_NAME }."
       ]
     },
     "Signup label": {
@@ -21601,6 +21764,30 @@
       ],
       "Your subscriptions": [
         "Tilauksesi"
+      ],
+      "Are you already signed in to ${ BRAND_NAME } in a browser?": [
+        "Oletko jo kirjautunut ${ BRAND_NAME }iin selaimessa?"
+      ],
+      "Ask your emergency contacts for help": [
+        "Pyydä apua hätäyhteyshenkilöiltäsi"
+      ],
+      "Can you access your session in the browser?": [
+        "Pääsetkö istuntoosi selaimella?"
+      ],
+      "Can you reach out to your emergency contacts?": [
+        "Voitko ottaa yhteyttä hätäyhteyshenkilöihisi?"
+      ],
+      "Couldn’t recover your account": [
+        "Tiliäsi ei voitu palauttaa"
+      ],
+      "Recover account": [
+        "Palauta tili"
+      ],
+      "Try changing your password in your active web session": [
+        "Kokeile vaihtaa salasanasi nykyisessä verkkoselaimen istunnossa"
+      ],
+      "Verify it’s you": [
+        "Vahvista henkilöllisyytesi"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -22231,6 +22418,18 @@
       ],
       "Writing assistant": [
         "Kirjoitusavustaja"
+      ],
+      "Add delegated roles to a user to grant them only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
+        "Määritä käyttäjälle delegoituja rooleja, jotta hänelle myönnetään vain tarvittavat käyttöoikeudet. Näin pidät järjestelmänvalvojan oikeudet erillään ja varmistat ympäristösi turvallisuuden."
+      ],
+      "General": [
+        "Yleinen"
+      ],
+      "Roles and permissions": [
+        "Roolit ja oikeudet"
+      ],
+      "Save": [
+        "Tallenna"
       ]
     },
     "Users table: badge": {

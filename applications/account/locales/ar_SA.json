@@ -1518,6 +1518,12 @@
       ],
       "Zoom out": [
         "تصغير"
+      ],
+      "I don't have my phrase": [
+        "ليس لدي عبارة الاسترداد"
+      ],
+      "I don’t have my phone": [
+        "ليس لدي هاتفي"
       ]
     },
     "action": {
@@ -11252,6 +11258,87 @@
       ],
       "Zoom meeting": [
         "اجتماع Zoom"
+      ],
+      "${ DataLockedText }, but recoverable with your ${ RecoveryContactsLink }:": [
+        "${ DataLockedText }، ولكن يمكن استعادتها باستخدام ${ RecoveryContactsLink }:"
+      ],
+      "An email with a verification code was just sent to ${ emailAddress }. If you can’t find the message in your inbox, please check your spam folder.": [
+        "تم إرسال رسالة بريد إلكتروني تحتوي على رمز تحقق إلى ${ emailAddress }. إذا لم تجد الرسالة في صندوق الوارد، يُرجى التحقق من مجلد الرسائل غير المرغوب فيها."
+      ],
+      "An SMS with a verification code was just sent to ${ phoneNumber }.": [
+        "تم إرسال رسالة نصية (SMS) تحتوي على رمز تحقق إلى ${ phoneNumber }."
+      ],
+      "Ask them to sign in to their ${ ACCOUNT_APP_NAME } in the browser, and go to **Settings → All settings → Recovery → Emergency access→ People who trust me.**": [
+        "اطلب منهم تسجيل الدخول إلى ${ ACCOUNT_APP_NAME } في المتصفح، وانتقل إلى **الإعدادات → جميع الإعدادات → الاسترداد → الوصول في حالات الطوارئ → الأشخاص الذين يثقون بي. **"
+      ],
+      "Can you reach out to your contact?": [
+        "هل يمكنك التواصل مع جهة الاتصال الخاصة بك؟"
+      ],
+      "Click **Request password reset** and follow the prompts.": [
+        "انقر فوق **طلب إعادة تعيين كلمة المرور** واتبع المطالبات."
+      ],
+      "Data recoverable with recovery phrase": [
+        "البيانات قابلة للاسترداد باستخدام عبارة الاسترداد"
+      ],
+      "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
+        "اعتمادًا على إعداداتك، قد يحصلون على إمكانية الوصول فورًا أو بعد **فترة انتظار محددة.**"
+      ],
+      "Enter the 12-word recovery phrase associated with your account.": [
+        "أدخل عبارة الاسترداد المكونة من 12 كلمة المرتبطة بحسابك."
+      ],
+      "From there, they can request emergency access to your account by clicking **Request access.**": [
+        "من هناك، يمكنهم طلب الوصول الطارئ إلى حسابك بالنقر فوق **طلب الوصول. **"
+      ],
+      "Get in touch with your emergency contacts, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed**.": [
+        "تواصل مع جهات اتصال الطوارئ الخاصة بك، لمعرفة ما إذا كان بإمكانهم المساعدة. بعد طلب الوصول الطارئ إلى حسابك، سيتمكنون من تغيير كلمة المرور الخاصة بك **بعد مرور وقت الانتظار للوصول**."
+      ],
+      "How to perform a signed-in reset": [
+        "كيفية إجراء إعادة تعيين تسجيل الدخول"
+      ],
+      "How your emergency contact can change your password for you:": [
+        "كيف يمكن لجهة اتصال الطوارئ الخاصة بك تغيير كلمة المرور الخاصة بك من أجلك:"
+      ],
+      "If you are signed in to a ${ BRAND_NAME } web app in **another browser**, you may be able to perform a password reset from your active session.": [
+        "إذا قمت بتسجيل الدخول إلى تطبيق ويب ${ BRAND_NAME } في **متصفح آخر**، فقد تتمكن من إعادة تعيين كلمة المرور من جلستك النشطة."
+      ],
+      "If you have emergency contacts, get in touch with them, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed.**": [
+        "إذا كان لديك جهات اتصال في حالات الطوارئ، فاتصل بهم، لمعرفة ما إذا كان بإمكانهم المساعدة. بعد طلب الوصول الطارئ إلى حسابك، سيتمكنون من تغيير كلمة المرور الخاصة بك ** بعد مرور وقت الانتظار للوصول. **"
+      ],
+      "Open your active session in the browser, and go to **Settings → All settings → Recovery → Password reset settings.**": [
+        "افتح جلستك النشطة في المتصفح، وانتقل إلى **الإعدادات → جميع الإعدادات → الاسترداد → إعدادات إعادة تعيين كلمة المرور. **"
+      ],
+      "Recovery file": [
+        "ملف الاسترداد"
+      ],
+      "Recovery phrase": [
+        "عبارة الاسترداد"
+      ],
+      "Resetting your password in your active web session will ensure **your encrypted data will remain accessible** after you change your password.": [
+        "ستضمن إعادة تعيين كلمة المرور الخاصة بك في جلسة الويب النشطة ** ستظل بياناتك المشفرة متاحة ** بعد تغيير كلمة المرور الخاصة بك."
+      ],
+      "We detected you are already signed in to a ${ BRAND_NAME } web app on **another browser**. You may be able to perform a password reset from your active session.": [
+        "اكتشفنا أنك قمت بتسجيل الدخول بالفعل إلى تطبيق ويب ${ BRAND_NAME } على **متصفح آخر**. قد تتمكن من إعادة تعيين كلمة المرور من جلستك النشطة."
+      ],
+      "Web sessions detected:": [
+        "تم اكتشاف جلسات الويب:"
+      ],
+      "You can now reset your password to regain access to your account.": [
+        "يمكنك الآن إعادة تعيين كلمة المرور لاستعادة الوصول إلى حسابك."
+      ],
+      "You can now reset your password to regain access to your account. **This will disable 2-factor authentication.**": [
+        "يمكنك الآن إعادة تعيين كلمة المرور الخاصة بك لاستعادة الوصول إلى حسابك. **سيعطيل هذا المصادقة الثنائية. **"
+      ],
+      "You will regain complete or partial access to your encrypted data.": [
+        "سوف تستعيد الوصول الكامل أو الجزئي إلى بياناتك المشفرة."
+      ],
+      "Your encrypted data will be locked": [
+        "سيتم قفل بياناتك المشفرة"
+      ],
+      "your encrypted data will be locked": [
+        "سيتم قفل بياناتك المشفرة"
+      ],
+      "Your old password": [
+        "كلمة المرور القديمة الخاصة بك"
       ]
     },
     "info": {
@@ -13246,6 +13333,12 @@
       ],
       "What’s this?": [
         "ما هذا؟"
+      ],
+      "contacts’ assistance": [
+        "مساعدة جهات الاتصال"
+      ],
+      "Details": [
+        "تفاصيل"
       ]
     },
     "Link label": {
@@ -18439,12 +18532,7 @@
         "${ DRIVE_APP_NAME } للأعمال"
       ],
       "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
-        "${ FREE_PASS_ALIASES } من أسماء hide-my-email المستعارة لمكافحة البريد المزعج",
-        "اسم مستعار واحد (${ FREE_PASS_ALIASES }) من hide-my-email لمكافحة البريد المزعج",
-        "اسمان مستعاران (${ FREE_PASS_ALIASES }) من hide-my-email لمكافحة البريد المزعج",
-        "${ FREE_PASS_ALIASES } من أسماء hide-my-email المستعارة لمكافحة البريد المزعج",
-        "${ FREE_PASS_ALIASES } من أسماء hide-my-email المستعارة لمكافحة البريد المزعج",
-        "${ FREE_PASS_ALIASES } من أسماء hide-my-email المستعارة لمكافحة البريد المزعج"
+        "${ FREE_PASS_ALIASES } عناوين hide-my-email لمكافحة الرسائل المزعجة"
       ],
       "${ maxAddresses } addresses": [
         "${ maxAddresses } العناوين",
@@ -18782,12 +18870,7 @@
         "استخدم بريدك الإلكتروني."
       ],
       "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
-        "VPN بخوادم في ${ vpnServersCountData.free.countries } من البلدان",
-        "VPN مع خوادم في دولة واحدة (${ vpnServersCountData.free.countries })",
-        "VPN مع خوادم في دولتين (${ vpnServersCountData.free.countries })",
-        "VPN بخوادم في ${ vpnServersCountData.free.countries } بلدان",
-        "VPN بخوادم في ${ vpnServersCountData.free.countries } بلدًا",
-        "VPN بخوادم في ${ vpnServersCountData.free.countries } بلدًا"
+        "VPN مع خوادم في دول ${ vpnServersCountData.free.countries }"
       ],
       "We’ll email you before your trial ends.": [
         "سنرسل إليك بريدًا إلكترونيًا قبل انتهاء الفترة التجريبية."
@@ -18803,6 +18886,21 @@
       ],
       "You’re invited to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
         "أنت مدعو للانضمام إلى أكثر من 100 مليون شخص اختاروا البقاء مسيطرين على بياناتهم ضمن منظومة ${ BRAND_NAME } المُشفّرة."
+      ],
+      "${ MAIL_SHORT_APP_NAME } Free": [
+        "${ MAIL_SHORT_APP_NAME } مجانا"
+      ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "حافظ على خصوصية محادثاتك مع ${ MAIL_APP_NAME }"
+      ],
+      "Password-protected messages": [
+        "رسائل محمية بكلمة مرور"
+      ],
+      "Secure calendar": [
+        "تقويم آمن"
+      ],
+      "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
+        "يتضمن حسابك إمكانية الوصول إلى الميزات المجانية في ${ MAIL_SHORT_APP_NAME } و${ CALENDAR_SHORT_APP_NAME } و${ DRIVE_SHORT_APP_NAME } و${ VPN_SHORT_APP_NAME } و${ PASS_SHORT_APP_NAME } و${ LUMO_SHORT_APP_NAME }."
       ]
     },
     "Signup label": {
@@ -22261,6 +22359,30 @@
       ],
       "Your subscriptions": [
         "اشتراكاتك"
+      ],
+      "Are you already signed in to ${ BRAND_NAME } in a browser?": [
+        "هل قمت بالفعل بتسجيل الدخول إلى ${ BRAND_NAME } في المتصفح؟"
+      ],
+      "Ask your emergency contacts for help": [
+        "اطلب المساعدة من جهات اتصال الطوارئ الخاصة بك"
+      ],
+      "Can you access your session in the browser?": [
+        "هل يمكنك الوصول إلى جلستك في المتصفح؟"
+      ],
+      "Can you reach out to your emergency contacts?": [
+        "هل يمكنك التواصل مع جهات الاتصال الخاصة بك في حالات الطوارئ؟"
+      ],
+      "Couldn’t recover your account": [
+        "تعذر استرداد حسابك"
+      ],
+      "Recover account": [
+        "استرداد الحساب"
+      ],
+      "Try changing your password in your active web session": [
+        "حاول تغيير كلمة المرور الخاصة بك في جلسة الويب النشطة الخاصة بك"
+      ],
+      "Verify it’s you": [
+        "تحقق من أنك أنت"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -22873,6 +22995,18 @@
       ],
       "Writing assistant": [
         "مساعد الكتابة"
+      ],
+      "Add delegated roles to a user to grant them only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
+        "أضف أدوارا مفوضة إلى مستخدم لمنحه الأذونات المحددة التي يحتاجونها فقط، مع الحفاظ على فصل قوة المشرف الكاملة وبيئتك آمنة."
+      ],
+      "General": [
+        "عام"
+      ],
+      "Roles and permissions": [
+        "الأدوار والأذونات"
+      ],
+      "Save": [
+        "حفظ"
       ]
     },
     "Users table: badge": {

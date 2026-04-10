@@ -4798,6 +4798,9 @@
     "Delete group prompt": {
       "Are you sure you want to delete this group?": [
         "Bu grubu silmek istediğinize emin misiniz?"
+      ],
+      "Please note that if you delete the group ${ displayGroupName }, it will be permanently removed.": [
+        "${ displayGroupName } grubunu silerseniz grubun kalıcı olarak silineceğini lütfen unutmayın."
       ]
     },
     "Delinquent modal title": {
@@ -12495,6 +12498,12 @@
       ],
       "Zoom meeting": [
         "Zoom görüşmesi"
+      ],
+      "Add users by name or email to this group.": [
+        "Bu gruba kullanıcıları ad veya e-posta adresiyle ekleyin."
+      ],
+      "Select a group to view its members and settings.": [
+        "Üyelerini ve ayarlarını görüntülemek için bir grup seçin."
       ]
     },
     "info": {
@@ -14517,6 +14526,15 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Enter name or email address": [
+        "Adınızı veya e-posta adresinizi girin"
+      ],
+      "Invite people": [
+        "İnsanları davet et"
+      ],
+      "Select which Gmail address to connect": [
+        "Hangi Gmail adresine bağlanacağınızı seçin"
       ]
     },
     "label": {
@@ -24376,6 +24394,15 @@
       ],
       "Your subscriptions": [
         "Abonelikleriniz"
+      ],
+      "Create group": [
+        "Grup oluştur"
+      ],
+      "Disconnected from Gmail": [
+        "Gmail'dan bağlantı kesildi"
+      ],
+      "Edit group": [
+        "Grubu düzenle"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -25814,6 +25841,19 @@
       ],
       "Yearly, ${ untilString }": [
         "Yılda bir, ${ untilString }"
+      ]
+    },
+    "Delete group prompt with email": {
+      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
+        "${ displayGroupName } grubunu (bu adresle birlikte: ${ displayGroupAddressEmail }) silerseniz bu adresi kullanarak artık e-posta alamayacağınızı lütfen unutmayın."
+      ]
+    },
+    "Group detail label": {
+      "Description:": [
+        "Açıklama:"
+      ],
+      "Group address:": [
+        "Grup adresi:"
       ]
     }
   }

@@ -1724,6 +1724,15 @@
       ],
       "Zoom out": [
         "缩小"
+      ],
+      "Connect to Gmail": [
+        "连接 Gmail"
+      ],
+      "Or remove forwarding address": [
+        "或者移除转发地址"
+      ],
+      "Reconnect to Gmail": [
+        "重新连接 Gmail"
       ]
     },
     "action": {
@@ -4906,6 +4915,69 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "您可以导入 iCal 格式（. ics 文件）的日程。文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且日程总数上限为 ${ MAX_IMPORT_EVENTS_STRING }。若您的文件超出限制，请先拆分成较小的文件。"
+      ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "阻止 Google 对您进行用户画像分析。Gmail 无法查看您在 ${ MAIL_APP_NAME } 中的操作"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "发送到 ${ connectedAddressText } 的电子邮件现在将显示在 ${ MAIL_APP_NAME } 中。"
+      ],
+      "No ads. No trackers.": [
+        "无广告、无追踪。"
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "在 ${ MAIL_APP_NAME } 中阅读、回复并随时处理 Gmail 邮件"
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "如果权限被移除或密码被更改，可能会发生此情况。"
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "若要连接其他 Gmail 地址，请移除转发到 ${ BRAND_NAME } 的多余 Gmail 地址。"
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "如要连接多达 ${ MAX_SYNC_PAID_USER } 个 Gmail 地址，请升级到 ${ planName }。"
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "若要继续在 ${ BRAND_NAME } 中接收和发送 Gmail 邮件，请重新连接您的账户。"
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "若要继续在 ${ BRAND_NAME } 中接收和发送 Gmail 邮件，请重新连接您的账户。"
+      ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "升级到 ${ planName } 最多可连接 ${ MAX_SYNC_PAID_USER } 个账户"
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "我们无法再访问 ${ boldEmails }。"
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "我们将导入您的旧电子邮件并将 Gmail 连接到 ${ MAIL_APP_NAME }，以便新邮件自动显示。"
+      ],
+      "We've started importing your email from Gmail. We'll let you know when it's done.": [
+        "我们已开始从 Gmail 导入您的电子邮件，完成后将通知您。"
+      ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "您已有一个 Gmail 地址转发到 ${ MAIL_APP_NAME }。请在下方连接该地址，以便直接从 ${ MAIL_APP_NAME } 收发电子邮件。"
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "您已有 Gmail 地址转发到 ${ MAIL_APP_NAME }。请在下方连接其中一个地址，以便直接从 ${ MAIL_APP_NAME } 收发电子邮件。"
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "您现在可以使用此地址从 ${ BRAND_NAME } 发送电子邮件。"
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "您正在将 ${ numAddressesOrSync } 个 Gmail 地址转发到 ${ MAIL_APP_NAME }。"
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "您已连接了 ${ MAX_SYNC_PAID_USER } 个 Gmail 地址。若要添加另一个地址，请先禁用其中一个已连接的账户。"
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "您已将 1 个外部账户地址连接到 ${ MAIL_APP_NAME }。"
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "您的套餐支持 ${ MAX_SYNC_FREE_USER } 个 Gmail 地址。"
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "您的套餐总共支持 ${ MAX_SYNC_PAID_USER } 个 Gmail 地址"
       ]
     },
     "description": {
@@ -7037,6 +7109,18 @@
       ],
       "Zero keys reactivated": [
         "未重新激活任何密钥"
+      ],
+      "Address could not be added.": [
+        "无法添加地址！"
+      ],
+      "Address is already added to your account": [
+        "地址已添加到您的账户"
+      ],
+      "Something went wrong while creating the address": [
+        "创建地址时出错"
+      ],
+      "Something went wrong while fetching available domains": [
+        "获取可用域名时出错"
       ]
     },
     "error": {
@@ -12298,6 +12382,12 @@
       ],
       "Zoom meeting": [
         "Zoom 会议"
+      ],
+      "Enter code": [
+        "输入代码"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "如果您无法访问验证器应用，可以使用设置 2FA 时提供的 16 个备用恢复码之一。${ learnMoreLink }"
       ]
     },
     "info": {
@@ -14312,6 +14402,9 @@
       ],
       "ZIP code": [
         "邮政编码"
+      ],
+      "Select which Gmail address to connect": [
+        "请选择要连接的 Gmail 地址"
       ]
     },
     "label": {
@@ -16037,6 +16130,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我们会扫描暗网，检查您的 ${ BRAND_NAME } 地址或别名是否被泄露，一旦发现任何情况，我们会立即提醒您。"
+      ],
+      "Appointment scheduling": [
+        "预约安排"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "使用 ${ n } 个预约页面进行日程安排"
       ]
     },
     "new_plans: feature highlight": {
@@ -16681,6 +16780,9 @@
       ],
       "Zoom video conferencing settings have been updated": [
         "Zoom 视频会议设置已更新"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "您的 ${ BRAND_NAME } 地址已准备就绪"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -20429,6 +20531,9 @@
       ],
       "You’re invited to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
         "您受邀加入 1 亿多名用户的行列，通过 ${ BRAND_NAME } 的加密生态系统掌握自己数据的控制权。"
+      ],
+      "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
+        "您的账户包含 ${ MAIL_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME } 和 ${ LUMO_SHORT_APP_NAME } 免费功能的访问权限。"
       ]
     },
     "Signup label": {
@@ -23913,6 +24018,18 @@
       ],
       "Your subscriptions": [
         "您的账户等级"
+      ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "将您的 Gmail 导入 ${ MAIL_APP_NAME }"
+      ],
+      "Disconnected from Gmail": [
+        "已断开与 Gmail 的连接"
+      ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "使用 ${ MAIL_APP_NAME } 收发 Gmail 邮件"
+      ],
+      "You are all set": [
+        "一切就绪"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
