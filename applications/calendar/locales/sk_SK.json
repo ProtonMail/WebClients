@@ -1036,6 +1036,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Bezplatná skúšobná verzia desktopovej aplikácie končí dňa ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Reconnect to Gmail": [
+        "Znova sa pripojiť ku Gmailu"
       ]
     },
     "action": {
@@ -3265,6 +3268,18 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Už ste vytvorili 10 aliasov. Získajte neobmedzený počet aliasov a 500 GB úložiska s ${ BRAND_NAME } Unlimited."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "K tomu môže dôjsť, ak boli zrušené oprávnenia alebo ste si zmenili heslo."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Ak chcete aj naďalej dostávať a odosielať správy Gmail v službe ${ BRAND_NAME }, pripojte svoje účet znova, prosím."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Ak chcete aj naďalej dostávať a odosielať správy Gmail v službe ${ BRAND_NAME }, pripojte svoje účty znova, prosím."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Už nemáme prístup k ${ boldEmails }."
       ]
     },
     "description": {
@@ -4163,6 +4178,12 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Vaše pripojenie k Zoom vypršalo. Pripojte sa znova pre pokračovanie, prosím."
+      ],
+      "Address could not be added.": [
+        "Adresu nebolo možné pridať."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Pri načítavaní dostupných domén sa vyskytla chyba"
       ]
     },
     "error": {
@@ -6751,6 +6772,12 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "Dosiahli ste limit rezervačných slotov (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Enter code": [
+        "Zadajte kód"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Ak ste stratili prístup k aplikácii na overovanie, môžete použiť jeden zo 16 záložných obnovovacích kódov, ktoré ste dostali pri nastavovaní dvojfaktorovej autentifikácie. ${ learnMoreLink }"
       ]
     },
     "info": {
@@ -7499,6 +7526,9 @@
       ],
       "Zoom meeting": [
         "Zoom schôdzka"
+      ],
+      "Securely share parts of your schedule through a booking page you can send to anyone.": [
+        "Bezpečne zdieľajte časti svojho rozvrhu prostredníctvom rezervačnej stránky, ktorú môžete poslať komukoľvek."
       ]
     },
     "label": {
@@ -12785,6 +12815,9 @@
       ],
       "Your shorter address is now ready": [
         "Vaša skrátená adresa je pripravená"
+      ],
+      "Disconnected from Gmail": [
+        "Odpojené od Gmailu"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

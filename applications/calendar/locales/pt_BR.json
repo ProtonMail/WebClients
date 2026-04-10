@@ -3197,6 +3197,9 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Você já criou 10 aliases. Obtenha aliases ilimitados e 500 GB de armazenamento com ${ BRAND_NAME } Unlimited."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Não podemos mais acessar o ${ boldEmails }."
       ]
     },
     "description": {
@@ -4068,6 +4071,12 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Sua conexão do Zoom expirou. Reconecte-se para continuar."
+      ],
+      "Company name or personal name is required": [
+        "É necessário informar o nome da empresa ou o nome pessoal"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Ocorreu um erro ao buscar os domínios disponíveis"
       ]
     },
     "error": {
@@ -9856,6 +9865,9 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Anything you'd like us to know": [
+        "Algo que você gostaria que soubéssemos?"
       ]
     },
     "Placeholder for contact group name": {
