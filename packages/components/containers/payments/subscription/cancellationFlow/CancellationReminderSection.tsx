@@ -20,7 +20,7 @@ import { useCancelSubscriptionFlow } from '../cancelSubscription/useCancelSubscr
 import { SUBSCRIPTION_STEPS } from '../constants';
 import useSubscriptionModalTelemetry from '../useSubscriptionModalTelemetry';
 import CancelConfirmationModal from './CancelConfirmationModal';
-import CancelRedirectionModal from './CancelRedirectionModal';
+import { CancelRedirectionModal } from './CancelRedirectionModal';
 import ReminderSectionFeatures from './ReminderSectionFeatures';
 import ReminderSectionPlan from './ReminderSectionPlan';
 import ReminderSectionTestimonials from './ReminderSectionTestimonials';
