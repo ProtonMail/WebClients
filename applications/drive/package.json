@@ -23,7 +23,7 @@
         "test:watch": "jest --watch --coverage=false"
     },
     "resolutions": {
-        "@xmldom/xmldom": "0.9.8"
+        "@xmldom/xmldom": "0.9.9"
     },
     "dependencies": {
         "@mattiasbuelens/web-streams-adapter": "0.1.0",
@@ -64,7 +64,7 @@
         "comlink": "^4.4.2",
         "core-js": "^3.49.0",
         "date-fns": "^2.30.0",
-        "exifreader": "^4.37.0",
+        "exifreader": "^4.37.1",
         "heic-to": "^1.4.2",
         "history": "^4.10.1",
         "idb": "^8.0.3",
