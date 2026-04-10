@@ -22,22 +22,22 @@ tauri = { version = "2.10.3", features = [] }
 tauri-plugin-opener = "2.5.3"
 serde = { version = "1.0.228", features = ["derive"] }
 serde_json = "1.0.149"
-tauri-plugin-dialog = "2.6.0"
-tauri-plugin-fs = "2.4.5"
+tauri-plugin-dialog = "2.7.0"
+tauri-plugin-fs = "2.5.0"
 tauri-plugin-store = "2.4.2"
 keyring = { version = "3.6.3", features = ["apple-native", "windows-native", "sync-secret-service"] }
 tauri-plugin-process = "2.3.1"
 tauri-plugin-log = "2.8.0"
 log = "0.4.29"
-tauri-plugin-http = { version = "2.5.7", features = ["unsafe-headers", "dangerous-settings"] }
+tauri-plugin-http = { version = "2.5.8", features = ["unsafe-headers", "dangerous-settings"] }
 rand = { version = "0.10.0" }
 base64 = { version = "0.22.1" }
 # Tauri Specta v2 is still in beta, and requires using Tauri v2 and Specta v2
 # lands as stable. It is really important you use = in versions.
 # see: https://docs.rs/tauri-specta/2.0.0-rc.21/tauri_specta/
-specta = { version = "=2.0.0-rc.23" }
-specta-typescript = { version = "=0.0.10" }
-tauri-specta = { version = "=2.0.0-rc.21", features = ["derive", "typescript"] }
+specta = { version = "=2.0.0-rc.24" }
+specta-typescript = { version = "=0.0.11" }
+tauri-specta = { version = "=2.0.0-rc.24", features = ["derive", "typescript"] }
 
 [target.'cfg(target_os = "macos")'.dependencies]
 objc2-local-authentication = "0.3.2"
@@ -46,8 +46,8 @@ block2 = "0.6.2"
 objc2 = "0.6.4"
 
 [target.'cfg(not(any(target_os = "android", target_os = "ios")))'.dependencies]
-tauri-plugin-single-instance = "2.4.0"
-tauri-plugin-updater = "2.10.0"
+tauri-plugin-single-instance = "2.4.1"
+tauri-plugin-updater = "2.10.1"
 tauri-plugin-window-state = "2.4.1"
 
 [target.'cfg(windows)'.dependencies]

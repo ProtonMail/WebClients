@@ -12,7 +12,7 @@
         "test:watch": "jest --watch"
     },
     "dependencies": {
-        "@types/node": "^24.12.0",
+        "@types/node": "^24.12.2",
         "css-tree": "^2.3.1",
         "prettier": "^3.8.1",
         "tinycolor2": "^1.6.0"
@@ -24,8 +24,8 @@
         "@types/tinycolor2": "^1.4.6",
         "eslint": "^9.39.4",
         "jest": "^30.3.0",
-        "ts-jest": "^29.4.6",
-        "ts-loader": "^9.5.4",
+        "ts-jest": "^29.4.9",
+        "ts-loader": "^9.5.7",
         "ts-node": "^10.9.2",
         "typescript": "^6.0.2",
         "webpack": "^5.105.4",
