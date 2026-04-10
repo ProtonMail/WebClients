@@ -107,11 +107,11 @@ const MeetB2CPlanSignupInner = () => {
     );
 };
 
-const meetB2C: { planIDs: PlanIDs } = {
-    planIDs: { [PLANS.MEET]: 1 },
+const meetB2B: { planIDs: PlanIDs } = {
+    planIDs: { [PLANS.MEET_BUSINESS]: 1 },
 };
 
-export const availablePlans = getAvailablePlansWithCycles([meetB2C], [CYCLE.MONTHLY, CYCLE.YEARLY]);
+export const availablePlans = getAvailablePlansWithCycles([meetB2B], [CYCLE.MONTHLY, CYCLE.YEARLY]);
 
 const MeetB2CPlanSignup = (props: BaseSignupContextProps) => {
     const location = useLocation();
@@ -128,9 +128,7 @@ const MeetB2CPlanSignup = (props: BaseSignupContextProps) => {
             paymentsDataConfig={{
                 availablePlans,
                 plan: {
-                    planIDs: {
-                        [PLANS.MEET]: 1,
-                    },
+                    planIDs: meetB2B.planIDs,
                     currency: signupSearchParams.getCurrency(searchParams),
                     cycle: signupSearchParams.getCycle(searchParams) || DEFAULT_CYCLE,
                     coupon: signupSearchParams.getCoupon(searchParams),
