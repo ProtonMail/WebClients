@@ -1210,6 +1210,9 @@
       ],
       "Writing assistant seats": [
         "撰寫幫手就位"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } 授權"
       ]
     },
     "Alert": {
@@ -1651,6 +1654,9 @@
       ],
       "Total for ${ n } month": [
         " ${ n } 個月總計"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "${ cycle } 個月小計"
       ]
     },
     "Collapsible tooltip": {
@@ -6218,6 +6224,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } 個席次"
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "新增 ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ]
     },
     "info": {
@@ -11752,6 +11761,9 @@
       ],
       "Actions": [
         "操作"
+      ],
+      "Disconnected from Gmail": [
+        "與 Gmail 中斷連線"
       ]
     },
     "Today icon tooltip in mini calendar": {

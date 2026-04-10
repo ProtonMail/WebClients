@@ -1247,6 +1247,9 @@
       ],
       "Refetch index": [
         "重新获取索引"
+      ],
+      "Reconnect to Gmail": [
+        "重新连接 Gmail"
       ]
     },
     "Action: Docs": {
@@ -3039,6 +3042,18 @@
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "很遗憾看到您离开。如果您有时间，我们希望了解您取消的原因。您的反馈有助于我们改进 ${ BRAND_NAME }，让产品变得更好。"
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "如果权限被移除或密码被更改，可能会发生此情况。"
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "若要继续在 ${ BRAND_NAME } 中接收和发送 Gmail 邮件，请重新连接您的账户。"
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "若要继续在 ${ BRAND_NAME } 中接收和发送 Gmail 邮件，请重新连接您的账户。"
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "我们无法再访问 ${ boldEmails }。"
       ]
     },
     "description": {
@@ -3952,6 +3967,15 @@
       ],
       "Something went wrong with search: Not enough storage space.": [
         "搜索时出现问题：存储空间不足。"
+      ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } 个项目移动失败"
+      ],
+      "Address could not be added.": [
+        "无法添加地址！"
+      ],
+      "Something went wrong while fetching available domains": [
+        "获取可用域名时出错"
       ]
     },
     "error": {
@@ -6916,6 +6940,21 @@
       ],
       "Unsupported file type for Photos": [
         "照片文件类型不受支持"
+      ],
+      "Enter code": [
+        "输入代码"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "如果您无法访问验证器应用，可以使用设置 2FA 时提供的 16 个备用恢复码之一。${ learnMoreLink }"
+      ],
+      "Move ${ dragCount } item": [
+        "移动 ${ dragCount } 项"
+      ],
+      "Move ${ fileCount } file": [
+        "移动 ${ fileCount } 个文件"
+      ],
+      "Move ${ folderCount } folder": [
+        "移动 ${ folderCount } 个文件夹"
       ]
     },
     "info": {
@@ -8727,6 +8766,12 @@
       ],
       "VPN with ad-blocker and malware protection": [
         "具备广告拦截器和恶意软件防护功能的 VPN"
+      ],
+      "Appointment scheduling": [
+        "预约安排"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "使用 ${ n } 个预约页面进行日程安排"
       ]
     },
     "new_plans: feature highlight": {
@@ -9453,6 +9498,9 @@
       ],
       "\"${ fileName }\" shared": [
         "“${ fileName }”已共享"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "您的 ${ BRAND_NAME } 地址已准备就绪"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -12925,6 +12973,9 @@
       ],
       "Search": [
         "搜索"
+      ],
+      "Disconnected from Gmail": [
+        "已断开与 Gmail 的连接"
       ]
     },
     "Today icon tooltip in mini calendar": {
