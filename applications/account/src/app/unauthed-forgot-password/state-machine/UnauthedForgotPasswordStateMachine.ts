@@ -308,6 +308,10 @@ export const UnauthedForgotPasswordStateMachine = setup({
                                 target: 'enterPhrase',
                             },
                             {
+                                guard: 'hasResetResponse',
+                                target: '#forgotPassword.authenticatedRecovery',
+                            },
+                            {
                                 target: '#forgotPassword.unauthenticatedRecovery',
                             },
                         ],
@@ -541,7 +545,7 @@ export const UnauthedForgotPasswordStateMachine = setup({
         recoveryFailed: {
             on: {
                 'decision.back': {
-                    target: '#forgotPassword.entry',
+                    target: '#forgotPassword.unauthenticatedRecovery.emergencyAccessOffer',
                 },
             },
         },

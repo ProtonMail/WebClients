@@ -1,3 +1,4 @@
+import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import InputFieldStacked from '@proton/components/components/inputFieldStacked/InputFieldStacked';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
 import Time from '@proton/components/components/time/Time';
@@ -13,25 +14,31 @@ export const SignedInSessionsList = ({ activeSessions }: Props) => {
         return null;
     }
     return (
-        <InputFieldStackedGroup>
-            {activeSessions?.map(({ CreateTime, LocalizedClientName }, index) => (
-                <InputFieldStacked
-                    icon={<IcDesktop className="color-weak" size={5} />}
-                    isGroupElement
-                    key={index}
-                    classname="bg-norm-weak"
-                    style={{
-                        '--stacked-field-background': 'var(--background-weak)',
-                    }}
-                >
-                    <div className="flex flex-column">
-                        <span className="text-semibold">{LocalizedClientName}</span>
-                        <Time sameDayFormat="PPP" format="PPP">
-                            {CreateTime}
-                        </Time>
-                    </div>
-                </InputFieldStacked>
-            ))}
-        </InputFieldStackedGroup>
+        <div className="flex">
+            <div className="max-h-custom flex-1" style={{ '--max-h-custom': '12.5rem' }}>
+                <Scroll>
+                    <InputFieldStackedGroup>
+                        {activeSessions?.map(({ CreateTime, LocalizedClientName }, index) => (
+                            <InputFieldStacked
+                                icon={<IcDesktop className="color-weak" size={5} />}
+                                isGroupElement
+                                key={index}
+                                classname="bg-norm-weak"
+                                style={{
+                                    '--stacked-field-background': 'var(--background-weak)',
+                                }}
+                            >
+                                <div className="flex flex-column">
+                                    <span className="text-semibold">{LocalizedClientName}</span>
+                                    <Time sameDayFormat="PPP" format="PPP">
+                                        {CreateTime}
+                                    </Time>
+                                </div>
+                            </InputFieldStacked>
+                        ))}
+                    </InputFieldStackedGroup>
+                </Scroll>
+            </div>
+        </div>
     );
 };
