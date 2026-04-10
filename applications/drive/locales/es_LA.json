@@ -3327,6 +3327,10 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. También puede comprobar nuestra ${ statusPageLink }"
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } elemento no se pudo mover",
+        "${ failureItems.length } elementos no se pudieron mover"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } es su nombre de usuario. Para crear ${ emailAddress }, vaya a Ajustes > Identidad y direcciones > Dominio corto (pm.me)"
       ],
@@ -8113,9 +8117,6 @@
       "60 minutes per meeting": [
         "60 minutos por reunión"
       ],
-      "Appointment scheduling": [
-        "Programación de citas"
-      ],
       "Booking pages": [
         "Páginas de reservas"
       ],
@@ -8646,6 +8647,13 @@
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Todos los servicios básicos de ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "Appointment scheduling": [
+        "Programación de citas"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Programación de citas con ${ n } página de reservas",
+        "Programación de citas con ${ n } páginas de reservas"
       ],
       "Auto-delete Spam and Trash": [
         "Eliminación automática de spam y papelera"
