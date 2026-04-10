@@ -1443,12 +1443,13 @@ describe('useDirectoryTree', () => {
             });
 
             // Start expanding multiple branches without awaiting
-            const devicesPromise = result.current.toggleExpand(makeTreeItemId(null, DEVICES_ROOT_ID));
-            const sharedPromise = result.current.toggleExpand(makeTreeItemId(null, SHARED_WITH_ME_ROOT_ID));
-            const myFilesPromise = result.current.toggleExpand(makeTreeItemId(null, MY_FILES_ROOT_UID));
-
-            // Wait a bit for some items to be processed
+            let devicesPromise: Promise<void> = Promise.resolve();
+            let sharedPromise: Promise<void> = Promise.resolve();
+            let myFilesPromise: Promise<void> = Promise.resolve();
             await act(async () => {
+                devicesPromise = result.current.toggleExpand(makeTreeItemId(null, DEVICES_ROOT_ID));
+                sharedPromise = result.current.toggleExpand(makeTreeItemId(null, SHARED_WITH_ME_ROOT_ID));
+                myFilesPromise = result.current.toggleExpand(makeTreeItemId(null, MY_FILES_ROOT_UID));
                 await new Promise((resolve) => setTimeout(resolve, 150));
             });
 
