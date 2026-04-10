@@ -17,7 +17,7 @@ import {
 } from '@proton/payments/core/subscription/helpers';
 import { useFlag } from '@proton/unleash/useFlag';
 
-const useCancellationEligibility = () => {
+export const useFeedbackFirstEligibility = () => {
     const [subscription] = useSubscription();
     const feedbackFirstCancellationEnabled = useFlag('CancellationFlowFeedbackFirst');
 
@@ -66,5 +66,3 @@ const useCancellationEligibility = () => {
         hasB2BAccess: getHasB2BAccess(),
     };
 };
-
-export default useCancellationEligibility;
