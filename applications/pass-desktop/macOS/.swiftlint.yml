@@ -1,0 +1,172 @@
+# You can find the documentation here :
+# https://realm.github.io/SwiftLint/rule-directory.html
+
+################
+#Included Folder#
+################
+
+included: # paths to include during linting. `--path` is ignored if present.
+  - AutoFill
+  - Packages
+  - Proton Pass Extensions
+  
+################
+#Excluded Folder & Files#
+################
+
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+ - "**/Package.swift"
+
+##############
+#Disabled rules#
+##############
+
+disabled_rules:
+ - todo
+ - accessibility_label_for_image 
+ - no_magic_numbers
+ - multiline_arguments_brackets
+ - contrasted_opening_brace
+ - no_extension_access_modifier
+ - file_header
+ - explicit_acl
+ - indentation_width
+ - no_grouping_extension
+ - one_declaration_per_file
+ - explicit_type_interface
+ - explicit_top_level_acl
+ - type_contents_order
+ - attributes
+ - multiline_parameters_brackets
+ - closure_body_length
+ - required_deinit
+ - file_types_order
+ - missing_docs
+ - conditional_returns_on_newline
+ - private_subject
+ - sorted_enum_cases
+ - file_name
+ - explicit_enum_raw_value
+ - anonymous_argument_in_multiline_closure
+ - no_empty_block
+ - function_default_parameter_at_end
+ - switch_case_on_newline
+ - discouraged_optional_collection
+ - incompatible_concurrency_annotation
+
+##############
+#Opted in rules#
+##############
+
+opt_in_rules:
+  - all
+
+##############
+#Specific analyzer rules#
+##############
+  
+analyzer_rules: # Rules run by `swiftlint analyze`
+  - explicit_self
+  - unused_declaration
+  - unused_import
+  
+################
+#Customed rules#
+################
+  
+# configurable rules can be customized from this configuration file
+# binary rules can set their severity level
+#force_cast: warning # implicitly
+
+#force_try:
+#  severity: warning # explicitly
+#
+# rules that have both warning and error levels, can set just the warning level
+# implicitly
+line_length:
+  warning: 120
+  error: 200
+  ignores_urls: true
+  ignores_comments: true
+
+# they can set both implicitly with an array
+type_body_length:
+  warning: 300
+  error: 400
+  
+trailing_closure:
+  only_single_muted_parameter: true
+
+trailing_whitespace:
+  ignores_empty_lines: true
+
+# or they can set both explicitly
+file_length:
+  warning: 700
+  error: 1200
+  
+function_body_length: # Functions bodies should not span too many lines.
+ warning: 100
+ error: 200
+
+# naming rules can set warnings/errors for min_length and max_length
+# additionally they can set excluded names
+type_name:
+  min_length: 3 # only warning
+  max_length: # warning and error
+    warning: 45
+    error: 50
+  excluded: iPhone # excluded via string
+  allowed_symbols: ["_"] # these are allowed in type names
+
+identifier_name:
+  min_length: # only min_length
+    warning: 2
+  excluded: # excluded via string array
+reporter: "xcode" # reporter type (xcode, json, csv, checkstyle, junit, html, emoji, sonarqube, markdown)
+
+custom_rules:
+  drop_first_one:
+    name: "Drop first one"
+    message: "Implicitly drop first one element"
+    regex: "(\\.dropFirst\\(1\\))"
+
+  discouraged_optional_self:
+    name: "Discouraged optional self"
+    message: "Unwrap self via guard let and use implicit self instead of optional self"
+    regex: "(self\\?\\.)"
+
+  discouraged_previewprovider:
+    name: "Discouraged PreviewProvider"
+    message: "Use #Preview macro insteaf of PreviewProvider"
+    regex: "(PreviewProvider)"
+
+  discouraged_anyview:
+    name: "Discouraged AnyView"
+    message: "Avoid using AnyView for better performance"
+    regex: "(AnyView)"
+
+  discouraged_body_font:
+    name: "Discouraged body font"
+    message: "Prefer implicit body font"
+    regex: "(\\.font\\(\\.body\\))"
+  
+  discouraged_regular_font_weight:
+    name: "Discouraged regular font weight"
+    message: "Prefer implicit regular font weight"
+    regex: "(\\.fontWeight\\(\\.regular\\))"
+
+  discouraged_verbose_contentshape_rectangle:
+    name: "Discouraged verbose .contentShape(Rectangle())"
+    message: "Prefer static member lookup version .contentShape(.rectangle)"
+    regex: "(\\.contentShape\\(Rectangle\\(\\))"
+
+  deprecated_foregroundcolor_modifier:
+    name: "Deprecated foregroundColor modifier"
+    message: "Prefer foregroundStyle over deprecated foregroundColor"
+    regex: "(foregroundColor\\()"
+
+  nil_if_empty:
+    name: "Nil if empty"
+    message: "Use Collection's computed property nilIfEmpty"
+    regex: "\\.isEmpty \\? nil"

@@ -5,12 +5,13 @@ const fs = require('fs-extra');
 const BUILD_NUMBER = process.env.BUILD_NUMBER || '1';
 const AUTOFILL_APPEX_PATH = path.join(
     __dirname,
-    'macOS/build/Proton Pass Extensions.app/Contents/PlugIns/AutoFill.appex'
+    'macOS/build/Proton Pass Extensions.app/Contents/PlugIns/Proton Pass AutoFill.appex'
 );
 
 module.exports = {
     appId: 'me.proton.pass.electron',
     buildVersion: BUILD_NUMBER,
+    npmRebuild: false,
     files: [
         '.webpack/**/*',
         'package.json',
@@ -18,12 +19,18 @@ module.exports = {
         '!.webpack/**/target/**/*', // Exclude Rust build artifacts
         '!.webpack/**/*.map', // Exclude source maps (optional, add back if need for debugging)
     ],
+    protocols: [
+        {
+            name: 'Proton Pass',
+            schemes: ['protonpass'], // Allow the AutoFill extension to open the host app via protonpass:// URL
+        },
+    ],
     mac: {
         target: {
             target: 'mas',
             arch: 'universal',
         },
-        x64ArchFiles: 'Contents/PlugIns/AutoFill.appex/**/*',
+        x64ArchFiles: 'Contents/PlugIns/Proton Pass AutoFill.appex/**/*',
         type: 'distribution',
         hardenedRuntime: false,
         category: 'public.app-category.utilities',
@@ -49,7 +56,7 @@ module.exports = {
 
         if (appexBuildNumber !== BUILD_NUMBER) {
             throw new Error(
-                `Build number mismatch: AutoFill.appex has build number ${appexBuildNumber}, ` +
+                `Build number mismatch: Proton Pass AutoFill.appex has build number ${appexBuildNumber}, ` +
                     `but host app expects ${BUILD_NUMBER}. ` +
                     `Please rebuild the AutoFill extension with the correct build number.`
             );
@@ -58,9 +65,9 @@ module.exports = {
     afterSign: async (context) => {
         const appPath = path.join(context.appOutDir, `${context.packager.appInfo.productFilename}.app`);
         const plugInsDir = path.join(appPath, 'Contents', 'PlugIns');
-        const appexDest = path.join(plugInsDir, 'AutoFill.appex');
+        const appexDest = path.join(plugInsDir, 'Proton Pass AutoFill.appex');
 
-        console.log(`Copying pre-signed AutoFill.appex from ${AUTOFILL_APPEX_PATH} to ${appexDest}`);
+        console.log(`Copying pre-signed Proton Pass AutoFill.appex from ${AUTOFILL_APPEX_PATH} to ${appexDest}`);
 
         await fs.ensureDir(plugInsDir);
         await fs.copy(AUTOFILL_APPEX_PATH, appexDest, { overwrite: true });
