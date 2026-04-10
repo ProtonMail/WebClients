@@ -223,6 +223,18 @@
       ],
       "Undo": [
         "დაბრუნება"
+      ],
+      "Colour": [
+        "ფერი"
+      ],
+      "More options": [
+        "მეტი პარამეტრი"
+      ],
+      "Signature could not be verified": [
+        "ხელმოწერის გადამოწმება შეუძლებელია"
+      ],
+      "Table of contents": [
+        "სარჩევი"
       ]
     },
     "color": {
@@ -412,6 +424,9 @@
       ],
       "Read or print final document": [
         "საბოლოო დოკუმენტის წაკითხვა ან დაბეჭდვა"
+      ],
+      "Use the dropdown above to switch and start making suggestions.": [
+        "გამოიყენეთ ჩამოსაშლელი მენიუ მაღლა, რომ გადაერთოთ და მინიშნებების მიცემა დაიწყოთ."
       ]
     },
     "Error": {
@@ -438,6 +453,15 @@
       ],
       "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
         "Word-ის დოკუმენტის გადაყვანა შეუძლებელია. ის პაროლითაა დაცული? თუ კი, ჯერ პაროლი მოაცილეთ და თავიდან სცადეთ."
+      ],
+      "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again. If the error persists, please open Version History from the menu options to attempt to restore your document to an earlier version.": [
+        "შეცდომა დოკუმენტის ჩატვირთვისას. დოკუმენტის დაზიანების თავიდან ასაცილებლად რედაქტორი დაბლოკილია. ჩატვირთეთ თავიდან ეს გვერდი და თავიდან სცადეთ. თუ შეცდომა არ გაქრება, გახსენით ვერსიის ისტოია მენიუდან, რომ სცადოთ, აღადგინოთ დოკუმენტი უფრო ძველ ვერსიამდე."
+      ],
+      "There was an error processing updates to the document. Please reload the page and try again.": [
+        "შეცდომა დოკუმენტის განახლებების დამუშავებისას. გადატვირთეთ გვერდი და თავიდან სცადეთ."
+      ],
+      "Tried to import Sheet data into Lexical": [
+        "ვცადე ელცხრილის მონაცემების Lexical-ში შემოტანა"
       ]
     },
     "Error message": {
@@ -450,7 +474,7 @@
     },
     "Font face option": {
       "System default": [
-        "სისტემის ნაგულისხმები"
+        "სისტემის ნაგულისხმევი"
       ],
       "Theme font": [
         "თემის ფონტი"
@@ -540,6 +564,21 @@
       ],
       "You cannot undo this action.": [
         "თქვენ არ შეგიძლიათ ამ ქმედების დაბრუნება."
+      ],
+      "Alpha only experimental feature": [
+        "ალფა ვერსია. ექსპერიმენტული ფუნქცია"
+      ],
+      "Headings you add to the document will appear here.": [
+        "სათაურები, რომელსაც დოკუმენტს დაამატებთ, აქ გამოჩნდება."
+      ],
+      "Importing Excel file...": [
+        "Excel-ის ფაილის შემოტანა..."
+      ],
+      "Importing ODS file...": [
+        "ODS ფაილის შემოტანა..."
+      ],
+      "No title": [
+        "სათაურის გარეშე"
       ]
     },
     "Label": {
@@ -638,6 +677,18 @@
       ],
       "with \"${ replaceWith }\"": [
         "\"${ replaceWith }\"-ით"
+      ],
+      "${ name } background color and white text color": [
+        "${ name } ფონის ფერი და თეთრი ტექსტის ფერი"
+      ],
+      "${ name } text color and highlight": [
+        "${ name } ტექსტის ფერი და გამოკვეთა"
+      ],
+      "${ name } text color with no background": [
+        "${ name } ტექსტის ფერი ფონის გარეშე"
+      ],
+      "Text and highlight color": [
+        "ტექსტი და გამოკვეთის ფერი"
       ]
     },
     "Placeholder": {
@@ -666,11 +717,1360 @@
       ],
       "Language not supported": [
         "ენა მხარდაჭერილი არაა"
+      ],
+      "Explore the New Suggestion Mode": [
+        "დაათვალიერეთ ახალი მინიშნების რეჟიმი"
       ]
     },
     "Warning": {
       "Making suggestions inside code blocks is not supported": [
         "კოდის ბლოკების შიგნით მინიშნებების შექმნა მხარდაჭერილი არაა"
+      ]
+    },
+    "sheets_2025:Bottom bar": {
+      "All sheets": [
+        "ყველა ფურცელი"
+      ],
+      "New sheet": [
+        "ახალი ფურცელი"
+      ]
+    },
+    "sheets_2025:Color picker": {
+      "Recent colors": [
+        "ბოლო ფერები"
+      ],
+      "Reset": [
+        "ჩამოყრა"
+      ],
+      "Standard colors": [
+        "სტანდარტული ფერები"
+      ],
+      "Theme colors": [
+        "თემის ფერები"
+      ]
+    },
+    "sheets_2025:Range selector menu": {
+      "Add new": [
+        "ახლის დამატება"
+      ],
+      "Named ranges": [
+        "სახელიანი შუალედები"
+      ],
+      "Sheets": [
+        "ფურცლები"
+      ],
+      "Tables": [
+        "ცხრილები"
+      ]
+    },
+    "sheets_2025:Sheet tab options": {
+      "Change color": [
+        "ფერის შეცვლა"
+      ],
+      "Delete": [
+        "წაშლა"
+      ],
+      "Duplicate": [
+        "დუბლირება"
+      ],
+      "Hide sheet": [
+        "ფურცლის დამალვა"
+      ],
+      "Move left": [
+        "გადატანა მარცხნივ"
+      ],
+      "Move right": [
+        "მარჯვნივ გადატანა"
+      ],
+      "Rename": [
+        "სახელის გადარქმევა"
+      ]
+    },
+    "sheets_2025:Spreadsheet border editor menu": {
+      "All borders": [
+        "ყველა საზღვარი"
+      ],
+      "Bottom border": [
+        "ქვედა საზღვარი"
+      ],
+      "Dashed": [
+        "დაშტრიხული"
+      ],
+      "Dotted": [
+        "წერტილებიანი"
+      ],
+      "Double": [
+        "ორმაგი"
+      ],
+      "Horizontal borders": [
+        "ჰორიზონტალური საზღვრები"
+      ],
+      "Inner borders": [
+        "შიდა საზღვრები"
+      ],
+      "Left border": [
+        "მარცხენა საზღვარი"
+      ],
+      "No borders": [
+        "საზღვრების გარეშე"
+      ],
+      "Outer borders": [
+        "გარე საზღვრები"
+      ],
+      "Right border": [
+        "მარჯვენა საზღვარი"
+      ],
+      "Solid": [
+        "მყარი"
+      ],
+      "Solid medium": [
+        "მყარი საშუალო"
+      ],
+      "Solid thick": [
+        "სქელი მყარი"
+      ],
+      "Top border": [
+        "ზედა საზღვარი"
+      ],
+      "Vertical borders": [
+        "ვერტიკალური საზღვრები"
+      ]
+    },
+    "sheets_2025:Spreadsheet cell tooltip": {
+      "Error": [
+        "შეცდომა"
+      ],
+      "Invalid": [
+        "არასწორი"
+      ],
+      "Note": [
+        "შენიშვნა"
+      ]
+    },
+    "sheets_2025:Spreadsheet context menu": {
+      "AI Quick Edit": [
+        "სწრაფი ჩასწორება ხი-ით"
+      ],
+      "Auto fit to data": [
+        "ავტომატური მორგება მონაცემებზე"
+      ],
+      "Cell value": [
+        "უჯრედის მნიშვნელობა"
+      ],
+      "Clear": [
+        "გასუფთავება"
+      ],
+      "Clear content": [
+        "შემცველობის გასუფთავება"
+      ],
+      "Clear formatting": [
+        "დაფორმატების მოცილება"
+      ],
+      "Comma": [
+        "მძიმე"
+      ],
+      "Conditional format": [
+        "პირობითი დაფორმატება"
+      ],
+      "Convert to range": [
+        "გადაყვანა შუალედში"
+      ],
+      "Convert to table": [
+        "გადაყვანა ცხრილში"
+      ],
+      "Copy": [
+        "კოპირება"
+      ],
+      "Create a filter": [
+        "ფილტრის შექმნა"
+      ],
+      "Custom": [
+        "მორგებული"
+      ],
+      "Data validation": [
+        "მონაცემების გადამოწმება"
+      ],
+      "Define named range": [
+        "სახელიანი შუალედის აღწერა"
+      ],
+      "Delete": [
+        "წაშლა"
+      ],
+      "Delete column": [
+        "სვეტის წაშლა"
+      ],
+      "Delete row": [
+        "მწკრივის წაშლა"
+      ],
+      "Delete table column": [
+        "ცხრილის სვეტის წაშლა"
+      ],
+      "Delete table row": [
+        "ცხრილის მწკრივის წაშლა"
+      ],
+      "Edit table": [
+        "ცხრილის ჩასწორება"
+      ],
+      "Filter": [
+        "ფილტრი"
+      ],
+      "Formatting only": [
+        "მხოლოდ დაფორმატება"
+      ],
+      "Formula only": [
+        "მხოლოდ ფორმულა"
+      ],
+      "Freeze up to column": [
+        "გაყინვა სვეტამდე"
+      ],
+      "Freeze up to row": [
+        "გაყინვა მწკრივამდე"
+      ],
+      "Hide column": [
+        "სვეტის დამალვა"
+      ],
+      "Hide row": [
+        "მწკრივის დამალვა"
+      ],
+      "Insert link": [
+        "ბმულის ჩასმა"
+      ],
+      "Insert note": [
+        "შენიშვნის ჩასმა"
+      ],
+      "Insert table row": [
+        "ცხრილის მწკრივის ჩასმა"
+      ],
+      "Link only": [
+        "მხოლოდ დაკავშირება"
+      ],
+      "More cell actions": [
+        "მეტი უჯრედის ქმედება"
+      ],
+      "Paste": [
+        "ჩასმა"
+      ],
+      "Paste special": [
+        "სპეციალური ჩასმა"
+      ],
+      "Period": [
+        "პერიოდი"
+      ],
+      "Pipe": [
+        "მილი"
+      ],
+      "Remove filter": [
+        "ფილტრის წაშლა"
+      ],
+      "Resize column": [
+        "სვეტის ზომის შეცვლა"
+      ],
+      "Resize row": [
+        "მწკრივის ზომის შეცვლა"
+      ],
+      "Semicolon": [
+        "წერტილმძიმე"
+      ],
+      "Sort": [
+        "დალაგება"
+      ],
+      "Sort range A → Z": [
+        "დალაგება A → Z"
+      ],
+      "Sort range Z → A": [
+        "დალაგება Z → A"
+      ],
+      "Sort sheet A to Z": [
+        "ფურცლის დალაგება A-დან Z-მდე"
+      ],
+      "Sort sheet Z to A": [
+        "ფურცლის დალაგება Z-დან A-მდე"
+      ],
+      "Space": [
+        "სივრცე"
+      ],
+      "Table": [
+        "ცხრილი"
+      ],
+      "Transposed": [
+        "გადატანილი"
+      ],
+      "Unfreeze columns": [
+        "სვეტების გაყინვის გაუქმება"
+      ],
+      "Unfreeze rows": [
+        "მწკრივების გაყინვის გაუქმება"
+      ],
+      "Values only": [
+        "მხოლოდ მნიშვნელობები"
+      ]
+    },
+    "sheets_2025:Spreadsheet context menu (columns/rows)": {
+      "${ numberOfColumns } column": [
+        "${ numberOfColumns } სვეტი",
+        "${ numberOfColumns } სვეტი"
+      ],
+      "${ numberOfRows } row": [
+        "${ numberOfRows } მწკრივი",
+        "${ numberOfRows } მწკრივი"
+      ],
+      "above": [
+        "ზემოდან"
+      ],
+      "below": [
+        "ქვემოთ"
+      ],
+      "Insert": [
+        "Insert"
+      ],
+      "left": [
+        "მარცხენა"
+      ],
+      "right": [
+        "მარჯვნივ"
+      ]
+    },
+    "sheets_2025:Spreadsheet delete sheet dialog": {
+      "Cancel": [
+        "გაუქმება"
+      ],
+      "Delete": [
+        "წაშლა"
+      ],
+      "Delete sheet": [
+        "ფურცლის წაშლა"
+      ]
+    },
+    "sheets_2025:Spreadsheet editing disabled dialog": {
+      "Mobile Editing Coming Soon": [
+        "მობილურზე ჩასწორება მალე იქნება ხელმისაწვდომი"
+      ],
+      "Screen too small for editing": [
+        "ჩასასწორებლად ეკრანი ძალიან პატარაა"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor": {
+      "Cannot delete all columns": [
+        "ყველა სვეტის წაშლა შეუძლებელია"
+      ],
+      "Cannot delete all rows": [
+        "ყველა მწკრივის წაშლა შეუძლებელია"
+      ],
+      "Find in sheet": [
+        "ფურცელში ძებნა"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor cell merge options": {
+      "Merge all": [
+        "ყველას შერწყმა"
+      ],
+      "Merge cells": [
+        "უჯრედების შერწყმა"
+      ],
+      "Merge horizontally": [
+        "ჰორიზონტალური შერწყმა"
+      ],
+      "Merge vertically": [
+        "ვერტიკალური შერწყმა"
+      ],
+      "Unmerge": [
+        "შერწყმის გაუქმება"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar data menu": {
+      "Create a filter": [
+        "ფილტრის შექმნა"
+      ],
+      "Data validation": [
+        "მონაცემების გადამოწმება"
+      ],
+      "Protect range": [
+        "დიაპაზონის დაცვა"
+      ],
+      "Remove filter": [
+        "ფილტრის წაშლა"
+      ],
+      "Sort sheet": [
+        "ფურცლის დალაგება"
+      ],
+      "Unlock range": [
+        "შუალედის განბლოკვა"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar data menu (sort submenu)": {
+      "(A to Z)": [
+        "(A-დან Z-მდე)"
+      ],
+      "(Z to A)": [
+        "(Z-დან A-მდე)"
+      ],
+      "column ${ columnLetter }": [
+        "სვეტი ${ columnLetter }"
+      ],
+      "Sort sheet by": [
+        "ფურცლების დალაგების პირობა"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar edit menu": {
+      "Copy": [
+        "კოპირება"
+      ],
+      "Cut": [
+        "ამოჭრა"
+      ],
+      "Find": [
+        "ძებნა"
+      ],
+      "Formatting only": [
+        "მხოლოდ დაფორმატება"
+      ],
+      "Formula only": [
+        "მხოლოდ ფორმულა"
+      ],
+      "Link only": [
+        "მხოლოდ დაკავშირება"
+      ],
+      "Paste": [
+        "ჩასმა"
+      ],
+      "Paste special": [
+        "სპეციალური ჩასმა"
+      ],
+      "Redo": [
+        "გამეორება"
+      ],
+      "Transposed": [
+        "გადატანილი"
+      ],
+      "Undo": [
+        "გაუქმება"
+      ],
+      "Values only": [
+        "მხოლოდ მნიშვნელობები"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar file menu": {
+      "Download": [
+        "გადმოწერა"
+      ],
+      "Download logs": [
+        "ჟურნალის გადმოწერა"
+      ],
+      "Help": [
+        "დახმარება"
+      ],
+      "Import": [
+        "შემოტანა"
+      ],
+      "Make a copy": [
+        "ასლის შექმნა"
+      ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
+      "Move to folder": [
+        "გადატანა საქაღალდეში"
+      ],
+      "Move to trash": [
+        "ნაგვის ყუთში გადატანა"
+      ],
+      "New document": [
+        "ახალი დოკუმენტი"
+      ],
+      "New spreadsheet": [
+        "ახალი ელცხრილი"
+      ],
+      "Open ${ DRIVE_APP_NAME }": [
+        "${ DRIVE_APP_NAME }-ის გახსნა"
+      ],
+      "Print": [
+        "დაბეჭდვა"
+      ],
+      "See version history": [
+        "ვერსიის ისტორიის ნახვა"
+      ],
+      "Settings": [
+        "მორგება"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "ტაბით გამოყოფილი მნიშვნელობები (.tsv)"
+      ],
+      "Toggle debug mode": [
+        "გამართვის რეჟიმის გადართვა"
+      ],
+      "View recent spreadsheets": [
+        "უახლესი ელცხრილების ნახვა"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar format menu": {
+      "Alignment": [
+        "სწორება"
+      ],
+      "Bold": [
+        "სქელი"
+      ],
+      "Cell styles": [
+        "უჯრის სტილები"
+      ],
+      "Clear": [
+        "გასუფთავება"
+      ],
+      "Clear content": [
+        "შემცველობის გასუფთავება"
+      ],
+      "Clear formatting": [
+        "დაფორმატების მოცილება"
+      ],
+      "Conditional formatting": [
+        "პირობითი დაფორმატება"
+      ],
+      "Font size": [
+        "ფონტის ზომა"
+      ],
+      "Italic": [
+        "კურსივი"
+      ],
+      "Number": [
+        "ნომერი"
+      ],
+      "Strikethrough": [
+        "გადახაზული"
+      ],
+      "Table formatting": [
+        "ცხრილის დაფორმატება"
+      ],
+      "Text": [
+        "ტექსტი"
+      ],
+      "Theme": [
+        "თემა"
+      ],
+      "Underline": [
+        "ხაზგასმა"
+      ],
+      "Wrapping": [
+        "გადატანა"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar format menu (alignment)": {
+      "Bottom": [
+        "ქვედა"
+      ],
+      "Center": [
+        "ცენტრი"
+      ],
+      "Left": [
+        "მარცხენა"
+      ],
+      "Middle": [
+        "შუა"
+      ],
+      "Right": [
+        "მარჯვნივ"
+      ],
+      "Top": [
+        "ზედა"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar format menu (wrapping)": {
+      "Clip": [
+        "წაკვეთა"
+      ],
+      "Overflow": [
+        "გადავსება"
+      ],
+      "Wrap": [
+        "გადატანა"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar insert menu": {
+      "Cells": [
+        "უჯრედები"
+      ],
+      "Chart": [
+        "გრაფიკი"
+      ],
+      "Checkbox": [
+        "თოლია"
+      ],
+      "Columns": [
+        "სვეტები"
+      ],
+      "Dropdown": [
+        "ჩამოსაშლელი"
+      ],
+      "Function": [
+        "ფუნქცია"
+      ],
+      "Image": [
+        "გამოსახულება"
+      ],
+      "Insert cells and shift down": [
+        "უჯრედების ჩასმა და ქვემოთ ჩაწევა"
+      ],
+      "Insert cells and shift right": [
+        "უჯრედების ჩასმა და მარჯვნივ გაწევა"
+      ],
+      "Link": [
+        "ბმული"
+      ],
+      "Note": [
+        "შენიშვნა"
+      ],
+      "Rows": [
+        "მწკრივები"
+      ],
+      "Sheet": [
+        "ფურცელი"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar insert menu (columns/rows submenus)": {
+      "${ numberOfColumns } column": [
+        "${ numberOfColumns } სვეტი",
+        "${ numberOfColumns } სვეტი"
+      ],
+      "${ numberOfRows } row": [
+        "${ numberOfRows } მწკრივი",
+        "${ numberOfRows } მწკრივი"
+      ],
+      "above": [
+        "ზემოდან"
+      ],
+      "below": [
+        "ქვემოთ"
+      ],
+      "Insert": [
+        "ჩასმა"
+      ],
+      "left": [
+        "მარცხენა"
+      ],
+      "right": [
+        "მარჯვნივ"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar title": {
+      "Data": [
+        "მონაცემები"
+      ],
+      "Edit": [
+        "ჩასწორება"
+      ],
+      "File": [
+        "ფაილი"
+      ],
+      "Format": [
+        "ფორმატი"
+      ],
+      "Insert": [
+        "ჩასმა"
+      ],
+      "View": [
+        "ნახვა"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar view menu": {
+      "Formula bar": [
+        "ფორმულის ზოლი"
+      ],
+      "Freeze": [
+        "გაყინვა"
+      ],
+      "Gridlines": [
+        "ბადის ხაზები"
+      ],
+      "Show": [
+        "ჩვენება"
+      ],
+      "Zoom": [
+        "მასშტაბი"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar view menu (freeze submenu)": {
+      "column ${ columnLetter }": [
+        "სვეტი ${ columnLetter }"
+      ],
+      "row ${ rowNumber }": [
+        "მწკრივი ${ rowNumber }"
+      ],
+      "Up to": [
+        "სადამდე"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar view menu (hidden sheets submenu)": {
+      "Hidden sheets": [
+        "დამალული ფურცლები"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor number formats menu": {
+      "$ US Dollar": [
+        "$ აშშ დოლარი"
+      ],
+      "Accounting": [
+        "ბუღალტერია"
+      ],
+      "CN¥ Chinese Yuan": [
+        "CN¥ ჩინური იუანი"
+      ],
+      "Currency": [
+        "ვალუტა"
+      ],
+      "Currency rounded": [
+        "დამრგვალებული ვალუტა"
+      ],
+      "Custom currency": [
+        "მორგებული ვალუტა"
+      ],
+      "Custom number format": [
+        "მორგებული რიცხვის ფორმატი"
+      ],
+      "Date": [
+        "თარიღი"
+      ],
+      "Date time": [
+        "თარიღი და დრო"
+      ],
+      "Duration": [
+        "ხანგრძლივობა"
+      ],
+      "Financial": [
+        "ფინანსური"
+      ],
+      "General": [
+        "ზოგადი"
+      ],
+      "Long date": [
+        "გრძელი თარიღი"
+      ],
+      "More currency": [
+        "მეტი ვალუტა"
+      ],
+      "Number": [
+        "რიცხვი"
+      ],
+      "Percent": [
+        "პროცენტი"
+      ],
+      "Plain text": [
+        "უბრალო ტექსტი"
+      ],
+      "Scientific": [
+        "სამეცნიერო"
+      ],
+      "Time": [
+        "დრო"
+      ],
+      "£ Pound": [
+        "£ ფუნტი"
+      ],
+      "¥ Yen": [
+        "¥ იენი"
+      ],
+      "€ Euro": [
+        "€ ევრო"
+      ],
+      "₹ Rupee": [
+        "₹ რუპია"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor search dialog": {
+      "Close": [
+        "დახურვა"
+      ],
+      "Go to next": [
+        "შემდეგზე გადასვლა"
+      ],
+      "Go to previous": [
+        "წინაზე გადასვლა"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor spreadsheet settings dialog": {
+      "Auto": [
+        "ავტო"
+      ],
+      "Cancel": [
+        "გაუქმება"
+      ],
+      "Locale": [
+        "ლოკალი"
+      ],
+      "Save and reload": [
+        "შენახვა და გადატვირთვა"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor toolbar": {
+      "Bold": [
+        "სქელი"
+      ],
+      "Border": [
+        "საზღვარი"
+      ],
+      "Clear formatting": [
+        "დაფორმატების მოცილება"
+      ],
+      "Create a filter": [
+        "ფილტრის შექმნა"
+      ],
+      "Decrease decimal places": [
+        "ათწილადი ადგილების შემცირება"
+      ],
+      "Decrease font size": [
+        "ფონტის ზომის შემცირება"
+      ],
+      "Default (${ defaultFont })": [
+        "ნაგულისხმევი (${ defaultFont })"
+      ],
+      "Fill color": [
+        "შევსების ფერი"
+      ],
+      "Find": [
+        "ძებნა"
+      ],
+      "Font": [
+        "ფონტი"
+      ],
+      "Font size": [
+        "ფონტის ზომა"
+      ],
+      "Format as currency": [
+        "დაფორმატება ვალუტის სახით"
+      ],
+      "Format as percent": [
+        "დაფორმატება პროცენტის სახით"
+      ],
+      "Horizontal align": [
+        "ჰორიზონტალური სწორება"
+      ],
+      "Increase decimal places": [
+        "ათწილადი ადგილების გაზრდა"
+      ],
+      "Increase font size": [
+        "ფონტის ზომის გაზრდა"
+      ],
+      "Insert chart": [
+        "დიაგრამის ჩასმა"
+      ],
+      "Insert function": [
+        "ფუნქციის ჩასმა"
+      ],
+      "Insert link": [
+        "ბმულის ჩასმა"
+      ],
+      "Insert note": [
+        "შენიშვნის ჩასმა"
+      ],
+      "Italic": [
+        "კურსივი"
+      ],
+      "Merge cells": [
+        "უჯრედების შერწყმა"
+      ],
+      "More": [
+        "მეტი"
+      ],
+      "More formats": [
+        "მეტი ფორმატი"
+      ],
+      "Paint format": [
+        "ხატვის ფორმატი"
+      ],
+      "Redo": [
+        "გამეორება"
+      ],
+      "Remove filter": [
+        "ფილტრის წაშლა"
+      ],
+      "Select merge type": [
+        "აირჩიეთ შერწყმის ტიპი"
+      ],
+      "Strikethrough": [
+        "გადახაზული"
+      ],
+      "Text color": [
+        "ტექსტის ფერი"
+      ],
+      "Text wrapping": [
+        "ტექსტის გადატანა"
+      ],
+      "Underline": [
+        "ხაზგასმა"
+      ],
+      "Undo": [
+        "გაუქმება"
+      ],
+      "Unmerge cells": [
+        "უჯრედების შერწყმის გაუქმება"
+      ],
+      "Vertical align": [
+        "ვერტიკალური სწორება"
+      ],
+      "Zoom": [
+        "მასშტაბი"
+      ]
+    },
+    "sheets_2025:Spreadsheet filter menu": {
+      "Apply": [
+        "გადატარება"
+      ],
+      "Cancel": [
+        "გაუქმება"
+      ],
+      "Clear": [
+        "გასუფთავება"
+      ],
+      "Copy": [
+        "კოპირება"
+      ],
+      "Delete table column": [
+        "ცხრილის სვეტის წაშლა"
+      ],
+      "Enter value": [
+        "შეიყვანეთ მნიშვნელობა"
+      ],
+      "Filter by condition": [
+        "გაფილტვრა პირობით"
+      ],
+      "Filter by value": [
+        "გაფილტვრა მნიშვნელობით"
+      ],
+      "Insert 1 table column left": [
+        "1 ცხრილის სვეტის ჩასმა მარცხნივ"
+      ],
+      "Insert 1 table column right": [
+        "1 ცხრილის სვეტის ჩასმა მარჯვნივ"
+      ],
+      "Paste": [
+        "ჩასმა"
+      ],
+      "Select all": [
+        "ყველას მონიშვნა"
+      ],
+      "Sort A → Z": [
+        "დალაგება A → Z"
+      ],
+      "Sort Z → A": [
+        "დალაგება Z → A"
+      ]
+    },
+    "sheets_2025:Spreadsheet insert link dialog": {
+      "Apply": [
+        "გადატარება"
+      ],
+      "Cancel": [
+        "გაუქმება"
+      ],
+      "Insert link": [
+        "ბმულის ჩასმა"
+      ],
+      "Paste link": [
+        "ბმულის ჩასმა"
+      ]
+    },
+    "sheets_2025:Spreadsheet link tooltip": {
+      "Copy link": [
+        "ბმულის კოპირება"
+      ],
+      "Edit link": [
+        "ბმულის ჩასწორება"
+      ],
+      "Link copied to clipboard": [
+        "ბმული კოპირებულია ბუფერში"
+      ],
+      "Link removed": [
+        "ბმული წაიშალა"
+      ],
+      "Remove link": [
+        "ბმულის წაშლა"
+      ]
+    },
+    "sheets_2025:Spreadsheet resize dimension dialog": {
+      "Cancel": [
+        "გაუქმება"
+      ],
+      "column": [
+        "სვეტი"
+      ],
+      "column width": [
+        "სვეტის სიგანე"
+      ],
+      "Default": [
+        "ნაგულისხმევი"
+      ],
+      "OK": [
+        "OK"
+      ],
+      "row": [
+        "მწკრივი"
+      ],
+      "row height": [
+        "მწკრივის სიმაღლე"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar cell format editor dialog": {
+      "Alignment": [
+        "სწორება"
+      ],
+      "Bold": [
+        "სქელი"
+      ],
+      "Border": [
+        "საზღვარი"
+      ],
+      "Border style": [
+        "საზღვრის სტილი"
+      ],
+      "Cancel": [
+        "გაუქმება"
+      ],
+      "Choose Category": [
+        "აირჩიეთ კატეგორია"
+      ],
+      "Color": [
+        "ფერი"
+      ],
+      "Currency Symbol": [
+        "ვალუტის სიმბოლო"
+      ],
+      "Custom": [
+        "მორგებული"
+      ],
+      "Decimal places": [
+        "წერტილის შემდეგი ციფრები"
+      ],
+      "Effects": [
+        "ეფექტები"
+      ],
+      "Font": [
+        "ფონტი"
+      ],
+      "Font size": [
+        "ფონტის ზომა"
+      ],
+      "Format cells": [
+        "უჯრედების დაფორმატება"
+      ],
+      "General": [
+        "ზოგადი"
+      ],
+      "Horizontal Alignment": [
+        "ჰორიზონტალური სწორება"
+      ],
+      "Indent": [
+        "შეწევა"
+      ],
+      "Italic": [
+        "კურსივი"
+      ],
+      "Merge": [
+        "შერწყმა"
+      ],
+      "Merge all": [
+        "ყველას შერწყმა"
+      ],
+      "Merge horizontally": [
+        "ჰორიზონტალური შერწყმა"
+      ],
+      "Merge vertically": [
+        "ვერტიკალური შერწყმა"
+      ],
+      "Number": [
+        "ნომერი"
+      ],
+      "Overflow": [
+        "გადავსება"
+      ],
+      "Preview": [
+        "მინიატურა"
+      ],
+      "Save": [
+        "შენახვა"
+      ],
+      "Strikethrough": [
+        "გადახაზული"
+      ],
+      "Text control": [
+        "ტექსტის კონტროლი"
+      ],
+      "Thousands separator": [
+        "ათასეულების გამყოფი"
+      ],
+      "Type": [
+        "ტიპი"
+      ],
+      "Underline": [
+        "ხაზგასმა"
+      ],
+      "Unmerge": [
+        "შერწყმის გაუქმება"
+      ],
+      "Use 1000 Separator (,)": [
+        "1000 გამყოფის გამოყენება (,)"
+      ],
+      "Vertical Alignment": [
+        "ვერტიკალური სწორება"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar chart editor dialog": {
+      "Add": [
+        "დამატება"
+      ],
+      "Aggregate": [
+        "აგრეგაცია"
+      ],
+      "Cancel": [
+        "გაუქმება"
+      ],
+      "Chart data range": [
+        "დიაგრამის მონაცემების დიაპაზონი"
+      ],
+      "Chart editor": [
+        "დიაგრამის რედაქტორი"
+      ],
+      "Chart title": [
+        "დიაგრამის სათაური"
+      ],
+      "Chart type": [
+        "დიაგრამის ტიპი"
+      ],
+      "Enter title": [
+        "შეიყვანეთ სათაური"
+      ],
+      "Horizontal axis title": [
+        "ჰორიზონტალური ღერძის წარწერა"
+      ],
+      "Name": [
+        "სახელი"
+      ],
+      "Range": [
+        "შუალედი"
+      ],
+      "Save": [
+        "შენახვა"
+      ],
+      "Select a range": [
+        "მონიშნეთ შუალედი"
+      ],
+      "Series": [
+        "სერია"
+      ],
+      "Value": [
+        "მნიშვნელობა"
+      ],
+      "Vertical axis title": [
+        "ვერტიკალური ღერძის წარწერა"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar conditional format dialog": {
+      "Add another range": [
+        "კიდევ ერთი შუალედის დამატება"
+      ],
+      "Add another rule": [
+        "კიდევ ერთი წესის დამატება"
+      ],
+      "Add rule": [
+        "წესის დამატება"
+      ],
+      "Apply to range": [
+        "გადატარება შუალედზე"
+      ],
+      "Cancel": [
+        "გაუქმება"
+      ],
+      "Close": [
+        "დახურვა"
+      ],
+      "Color scale": [
+        "ფერების შკალა"
+      ],
+      "Conditional formatting": [
+        "პირობითი დაფორმატება"
+      ],
+      "Delete range": [
+        "შუალედის წაშლა"
+      ],
+      "Delete rule": [
+        "წესის წაშლა"
+      ],
+      "Enter a formula": [
+        "შეიყვანეთ ფორმულა"
+      ],
+      "Enter value": [
+        "შეიყვანეთ მნიშვნელობა"
+      ],
+      "Format rules": [
+        "ფორმატის წესები"
+      ],
+      "Format style": [
+        "ფორმატის სტილი"
+      ],
+      "Max point": [
+        "მაქს. წერტილი"
+      ],
+      "Max value": [
+        "მაქს. მნიშვნელობა"
+      ],
+      "Mid point": [
+        "შუა წერტილი"
+      ],
+      "Min point": [
+        "მინ. წერტილი"
+      ],
+      "Min value": [
+        "მინ. მნიშვნელობა"
+      ],
+      "None": [
+        "არცერთი"
+      ],
+      "Number": [
+        "ნომერი"
+      ],
+      "Preview": [
+        "მინიატურა"
+      ],
+      "Save": [
+        "შენახვა"
+      ],
+      "Select a range": [
+        "მონიშნეთ შუალედი"
+      ],
+      "Single color": [
+        "ერთი ფერი"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar custom currency format dialog": {
+      "Apply": [
+        "გადატარება"
+      ],
+      "Cancel": [
+        "გაუქმება"
+      ],
+      "Currency symbol": [
+        "ვალუტის სიმბოლო"
+      ],
+      "Custom currencies": [
+        "მორგებული ვალუტები"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar data validation dialog": {
+      "Add another named range": [
+        "კიდევ ერთი სახელიანი შუალედის დამატება"
+      ],
+      "Add another range": [
+        "კიდევ ერთი შუალედის დამატება"
+      ],
+      "Add named range": [
+        "სახელიანი შუალედის დამატება"
+      ],
+      "Allow blanks": [
+        "ცარიელების დაშვება"
+      ],
+      "Apply to range": [
+        "გადატარება შუალედზე"
+      ],
+      "Cancel": [
+        "გაუქმება"
+      ],
+      "Data validation": [
+        "მონაცემების გადამოწმება"
+      ],
+      "Delete data validation rule": [
+        "მონაცემების გადამოწმების წესის წაშლა"
+      ],
+      "Enter a formula": [
+        "შეიყვანეთ ფორმულა"
+      ],
+      "Enter value": [
+        "შეიყვანეთ მნიშვნელობა"
+      ],
+      "Formula": [
+        "ფორმულა"
+      ],
+      "Save": [
+        "შენახვა"
+      ],
+      "Select a range": [
+        "მონიშნეთ შუალედი"
+      ],
+      "Validation rules": [
+        "ვალიდაციის წესები"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar dialog": {
+      "Close": [
+        "დახურვა"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar named ranges dialog": {
+      "Add another named range": [
+        "კიდევ ერთი სახელიანი შუალედის დამატება"
+      ],
+      "Add named range": [
+        "სახელიანი შუალედის დამატება"
+      ],
+      "Apply to range": [
+        "გადატარება შუალედზე"
+      ],
+      "Cancel": [
+        "გაუქმება"
+      ],
+      "Delete named range": [
+        "სახელიანი შუალედის წაშლა"
+      ],
+      "Enter a formula": [
+        "შეიყვანეთ ფორმულა"
+      ],
+      "Enter text or formula": [
+        "შეიყვანეთ ტექსტი ან ფორმულა"
+      ],
+      "Name": [
+        "სახელი"
+      ],
+      "Named Ranges": [
+        "სახელიანი შუალედები"
+      ],
+      "Range": [
+        "შუალედი"
+      ],
+      "Save": [
+        "შენახვა"
+      ],
+      "Text or formula": [
+        "ტექსტი ან ფორმულა"
+      ],
+      "Type": [
+        "ტიპი"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar table editor dialog": {
+      "Banded columns": [
+        "დაშტრიხული სვეტები"
+      ],
+      "Banded rows": [
+        "ზოლიანი მწკრივები"
+      ],
+      "Cancel": [
+        "გაუქმება"
+      ],
+      "Edit table": [
+        "ცხრილის ჩასწორება"
+      ],
+      "More settings": [
+        "მეტი პარამეტრი"
+      ],
+      "Save": [
+        "შენახვა"
+      ],
+      "Select a range": [
+        "მონიშნეთ შუალედი"
+      ],
+      "Show filter button": [
+        "ფილტრის ღილაკის ჩვენება"
+      ],
+      "Table data range": [
+        "ცხრილის მონაცემების შუალედი"
+      ],
+      "Table title": [
+        "ცხრილის სათაური"
       ]
     }
   }

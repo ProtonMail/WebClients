@@ -126,7 +126,7 @@
         "Insereix un comentari"
       ],
       "Insert image": [
-        "Afegeix imatge"
+        "Insereix una imatge"
       ],
       "Insert left": [
         "Insereix a l'esquerra"
@@ -216,10 +216,25 @@
         "Opcions de taula"
       ],
       "Underline": [
-        "Subratllat"
+        "Subratlla"
       ],
       "Undo": [
         "Desfés"
+      ],
+      "Add suggestion": [
+        "Afegeix un suggeriment"
+      ],
+      "Colour": [
+        "Color"
+      ],
+      "More options": [
+        "Més opcions"
+      ],
+      "Signature could not be verified": [
+        "No s'ha pogut verificar la signatura."
+      ],
+      "Table of contents": [
+        "Taula de continguts"
       ]
     },
     "color": {
@@ -227,13 +242,13 @@
         "poma"
       ],
       "azureish white": [
-        "blanc blavós"
+        "blanc blavenc"
       ],
       "black": [
         "negre"
       ],
       "blanched almond": [
-        "ametlla blanca"
+        "ametlla blanquejada"
       ],
       "blue-gray": [
         "gris blavós"
@@ -248,7 +263,7 @@
         "vermell cirera"
       ],
       "cinnabar": [
-        "vermelló"
+        "cinabri"
       ],
       "cobalt": [
         "cobalt"
@@ -257,19 +272,19 @@
         "coure"
       ],
       "cyan-blue azure": [
-        "blau cel"
+        "blau cian"
       ],
       "dandelion": [
         "dent de lleó"
       ],
       "dark cerulean": [
-        "vermelló fosc"
+        "blau ceruli fosc"
       ],
       "dark midnight blue": [
-        "blau fosc mitjanit"
+        "blau mitjanit fosc"
       ],
       "dim gray": [
-        "gris suau"
+        "gris fosc"
       ],
       "enzian": [
         "genciana"
@@ -278,13 +293,13 @@
         "verd falguera"
       ],
       "field drab": [
-        "camp mongol"
+        "caqui fosc"
       ],
       "forest": [
         "verd bosc"
       ],
       "gainsboro": [
-        "gris boira"
+        "gris Gainsboro"
       ],
       "gray": [
         "gris"
@@ -311,7 +326,7 @@
         "dacsa"
       ],
       "mughal green": [
-        "verd mogol"
+        "verd fosc"
       ],
       "ocean": [
         "oceà"
@@ -320,7 +335,7 @@
         "verd oliva"
       ],
       "outer space": [
-        "espai exterior"
+        "blau còsmic"
       ],
       "pacific": [
         "pacífic"
@@ -329,10 +344,10 @@
         "blau palatinat"
       ],
       "pale cerulean": [
-        "ceruli pàl·lid"
+        "blau cel"
       ],
       "pastel gray": [
-        "gris pastís"
+        "gris pastel"
       ],
       "persian plum": [
         "pruna persa"
@@ -371,13 +386,13 @@
         "corall"
       ],
       "ruddy pink": [
-        "rosa vermellós"
+        "rosa rogenc"
       ],
       "sahara": [
         "sahara"
       ],
       "satin sheen gold": [
-        "daurat setinat"
+        "daurat brillant setinat"
       ],
       "slateblue": [
         "blau pissarra"
@@ -389,7 +404,7 @@
         "maduixa"
       ],
       "vivid auburn": [
-        "castany viu"
+        "caoba intens"
       ],
       "white": [
         "blanc"
@@ -406,6 +421,12 @@
       ],
       "Read or print final document": [
         "Llegir o imprimir el document final"
+      ],
+      "Edits become suggestions": [
+        "Les edicions es converteixen en suggeriments."
+      ],
+      "Use the dropdown above to switch and start making suggestions.": [
+        "Utilitzeu el menú desplegable de dalt per canviar i començar a fer suggeriments."
       ]
     },
     "Error": {
@@ -432,6 +453,18 @@
       ],
       "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
         "No s'ha pogut convertir el document Word. Està protegit per contrasenya? Si és així, esborreu la contrasenya i torneu a provar-ho."
+      ],
+      "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again. If the error persists, please open Version History from the menu options to attempt to restore your document to an earlier version.": [
+        "S'ha produït un error en carregar el document. Per evitar la corrupció del document, l'editor s'ha bloquejat. Torneu a carregar la pàgina i torneu-ho a provar. Si l'error continua, obriu l'historial de versions des de les opcions del menú per intentar restaurar el document a una versió anterior."
+      ],
+      "There was an error processing updates to the document. Please reload the page and try again.": [
+        "S'ha produït un error en processar les actualitzacions del document. Torneu a carregar la pàgina i torneu-ho a provar."
+      ],
+      "This spreadsheet is incompatible with the current client version. Please try reloading the client. If the error persists, please contact support.": [
+        "Aquest full de càlcul és incompatible amb la versió actual del client. Torneu a carregar el client. Si l'error persisteix, contacteu amb el servei de suport."
+      ],
+      "Tried to import Sheet data into Lexical": [
+        "S'ha intentat importar les dades del full al Lexical"
       ]
     },
     "Error message": {
@@ -439,7 +472,7 @@
         "Refresqueu la pàgina o proveu de nou més tard."
       ],
       "Something went wrong": [
-        "Alguna cosa ha anat malament."
+        "S'ha produït un error."
       ]
     },
     "Font face option": {
@@ -531,6 +564,24 @@
       ],
       "You cannot undo this action.": [
         "No pots desfer aquesta acció."
+      ],
+      "Alpha only experimental feature": [
+        "Funció experimental només alfa"
+      ],
+      "Headings you add to the document will appear here.": [
+        "Els encapçalaments que afegiu al document apareixeran aquí."
+      ],
+      "Importing Excel file...": [
+        "S'està important el fitxer d'Excel..."
+      ],
+      "Importing ODS file...": [
+        "S'està important el fitxer ODS..."
+      ],
+      "No title": [
+        "Sense títol"
+      ],
+      "The language you're using isn’t currently supported in suggestion mode. Please switch to edit mode or change the language.": [
+        "L'idioma que utilitzeu actualment no és encara compatible amb el mode de suggeriments. Canvieu al mode d'edició o canvieu l'idioma."
       ]
     },
     "Label": {
@@ -626,6 +677,21 @@
       ],
       "Text colour": [
         "Color del text"
+      ],
+      "${ name } background color and white text color": [
+        "Color de fons en ${ name } i color de text en blanc"
+      ],
+      "${ name } text color and highlight": [
+        "Color del text i de ressaltat en ${ name }"
+      ],
+      "${ name } text color with no background": [
+        "Color del text en ${ name } sense fons"
+      ],
+      "Text and highlight color": [
+        "Color del text i de ressaltat"
+      ],
+      "with \"${ replaceWith }\"": [
+        "per «${ replaceWith }»"
       ]
     },
     "Placeholder": {
@@ -654,6 +720,1411 @@
       ],
       "Language not supported": [
         "L'idioma no està disponible."
+      ],
+      "Explore the New Suggestion Mode": [
+        "Descobriu el nou mode de suggeriments"
+      ]
+    },
+    "sheets_2025:Bottom bar": {
+      "All sheets": [
+        "Tots els fulls"
+      ],
+      "New sheet": [
+        "Nou full"
+      ]
+    },
+    "sheets_2025:Color picker": {
+      "Recent colors": [
+        "Colors recents"
+      ],
+      "Reset": [
+        "Restablir-ho"
+      ],
+      "Standard colors": [
+        "Colors estàndard"
+      ],
+      "Theme colors": [
+        "Colors del tema"
+      ]
+    },
+    "sheets_2025:Range selector menu": {
+      "Add new": [
+        "Afegir-ne un de nou"
+      ],
+      "Named ranges": [
+        "Intervals amb nom"
+      ],
+      "Sheets": [
+        "Fulls"
+      ],
+      "Tables": [
+        "Taules"
+      ]
+    },
+    "sheets_2025:Sheet tab options": {
+      "Change color": [
+        "Canviar el color"
+      ],
+      "Delete": [
+        "Eliminar-ho"
+      ],
+      "Duplicate": [
+        "Duplicar-ho"
+      ],
+      "Hide sheet": [
+        "Amagar el full"
+      ],
+      "Move left": [
+        "Ho desplaça a l'esquerra"
+      ],
+      "Move right": [
+        "Moure-ho a la dreta"
+      ],
+      "Rename": [
+        "Canviar el nom"
+      ]
+    },
+    "sheets_2025:Spreadsheet border editor menu": {
+      "All borders": [
+        "Totes les vores"
+      ],
+      "Bottom border": [
+        "Vora inferior"
+      ],
+      "Dashed": [
+        "Discontinua"
+      ],
+      "Dotted": [
+        "Puntejada"
+      ],
+      "Double": [
+        "Doble"
+      ],
+      "Horizontal borders": [
+        "Vores horitzontals"
+      ],
+      "Inner borders": [
+        "Vores interiors"
+      ],
+      "Left border": [
+        "Vora esquerra"
+      ],
+      "No borders": [
+        "Sense vores"
+      ],
+      "Outer borders": [
+        "Vores exteriors"
+      ],
+      "Right border": [
+        "Vora dreta"
+      ],
+      "Solid": [
+        "Sòlid"
+      ],
+      "Solid medium": [
+        "Sòlid mitjà"
+      ],
+      "Solid thick": [
+        "Sòlid gruixut"
+      ],
+      "Top border": [
+        "Vora superior"
+      ],
+      "Vertical borders": [
+        "Vores verticals"
+      ]
+    },
+    "sheets_2025:Spreadsheet cell tooltip": {
+      "Error": [
+        "Error"
+      ],
+      "Invalid": [
+        "No és vàlid"
+      ],
+      "Note": [
+        "Nota"
+      ]
+    },
+    "sheets_2025:Spreadsheet context menu": {
+      "AI Quick Edit": [
+        "Edició ràpida amb IA"
+      ],
+      "Auto fit to data": [
+        "Ajustar automàticament a les dades"
+      ],
+      "Cell value": [
+        "Valor de la cel·la"
+      ],
+      "Clear": [
+        "Netejar"
+      ],
+      "Clear content": [
+        "Netejar el contingut"
+      ],
+      "Clear formatting": [
+        "Netejar el format"
+      ],
+      "Comma": [
+        "Coma"
+      ],
+      "Conditional format": [
+        "Format condicional"
+      ],
+      "Convert to range": [
+        "Convertir a interval"
+      ],
+      "Convert to table": [
+        "Convertir a taula"
+      ],
+      "Copy": [
+        "Copiar-ho"
+      ],
+      "Create a filter": [
+        "Crear un filtre"
+      ],
+      "Custom": [
+        "Personalitzar"
+      ],
+      "Data validation": [
+        "Validació de dades"
+      ],
+      "Define named range": [
+        "Definir un interval amb nom"
+      ],
+      "Delete": [
+        "Eliminar"
+      ],
+      "Delete cells and shift cells left": [
+        "Eliminar les cel·les i desplaçar-les a l'esquerra"
+      ],
+      "Delete cells and shift cells up": [
+        "Eliminar les cel·les i desplaçar-les cap amunt"
+      ],
+      "Delete column": [
+        "Elimina la columna"
+      ],
+      "Delete row": [
+        "Eliminar la fila"
+      ],
+      "Delete table column": [
+        "Eliminar la columna de la taula"
+      ],
+      "Delete table row": [
+        "Elimina la fila de la taula"
+      ],
+      "Edit table": [
+        "Editar la taula"
+      ],
+      "Filter": [
+        "Filtrar-ho"
+      ],
+      "Formatting only": [
+        "Només el format"
+      ],
+      "Formula only": [
+        "Només la fórmula"
+      ],
+      "Freeze up to column": [
+        "Congelar fins a la columna"
+      ],
+      "Freeze up to row": [
+        "Congelar fins a la fila"
+      ],
+      "Hide column": [
+        "Amagar la columna"
+      ],
+      "Hide row": [
+        "Amagar la fila"
+      ],
+      "Insert cells and shift cells down": [
+        "Insereix cel·les i les desplaça cap avall"
+      ],
+      "Insert cells and shift cells right": [
+        "Inserir cel·les i desplaçar-les cap a la dreta"
+      ],
+      "Insert link": [
+        "Inserir un enllaç"
+      ],
+      "Insert note": [
+        "Inserir una nota"
+      ],
+      "Insert table column to the left": [
+        "Inserir una columna a l'esquerra"
+      ],
+      "Insert table column to the right": [
+        "Inserir la columna a la dreta"
+      ],
+      "Insert table row": [
+        "Inserir una fila a la taula"
+      ],
+      "Link only": [
+        "Només l'enllaç"
+      ],
+      "More cell actions": [
+        "Més accions de cel·la"
+      ],
+      "Paste": [
+        "Enganxar-ho"
+      ],
+      "Paste special": [
+        "Enganxament especial"
+      ],
+      "Period": [
+        "Període"
+      ],
+      "Pipe": [
+        "Barra vertical"
+      ],
+      "Remove filter": [
+        "Esborrar el filtre"
+      ],
+      "Resize column": [
+        "Redimensionar la columna"
+      ],
+      "Resize row": [
+        "Redimensionar la fila"
+      ],
+      "Semicolon": [
+        "Punt i coma"
+      ],
+      "Sort": [
+        "Ordenar-ho"
+      ],
+      "Sort range A → Z": [
+        "Ordenar l'interval A → Z"
+      ],
+      "Sort range Z → A": [
+        "Ordenar l'interval de la Z a la A"
+      ],
+      "Sort sheet A to Z": [
+        "Ordenar el full de la A a la Z"
+      ],
+      "Sort sheet Z to A": [
+        "Ordenar el full de la Z a la A"
+      ],
+      "Space": [
+        "Espai"
+      ],
+      "Table": [
+        "Taula"
+      ],
+      "Transposed": [
+        "Transposat"
+      ],
+      "Unfreeze columns": [
+        "Descongelar les columnes"
+      ],
+      "Unfreeze rows": [
+        "Descongelar les files"
+      ],
+      "Values only": [
+        "Només valors"
+      ]
+    },
+    "sheets_2025:Spreadsheet context menu (columns/rows)": {
+      "${ numberOfColumns } column": [
+        "${ numberOfColumns } columna",
+        "${ numberOfColumns } columnes"
+      ],
+      "${ numberOfRows } row": [
+        "${ numberOfRows } fila",
+        "${ numberOfRows } files"
+      ],
+      "above": [
+        "a sobre"
+      ],
+      "below": [
+        "a sota"
+      ],
+      "Insert": [
+        "Inserir"
+      ],
+      "left": [
+        "esquerra"
+      ],
+      "right": [
+        "a la dreta"
+      ]
+    },
+    "sheets_2025:Spreadsheet delete sheet dialog": {
+      "Are you sure you want to delete ${ sheetName }?": [
+        "Esteu segur que voleu eliminar \"${ sheetName }\"?"
+      ],
+      "Cancel": [
+        "Cancel·lar-ho"
+      ],
+      "Delete": [
+        "Eliminar-ho"
+      ],
+      "Delete sheet": [
+        "Eliminar el full"
+      ]
+    },
+    "sheets_2025:Spreadsheet editing disabled dialog": {
+      "Mobile Editing Coming Soon": [
+        "L'edició al mòbil estarà disponible aviat"
+      ],
+      "Screen too small for editing": [
+        "La pantalla és massa petita per editar"
+      ],
+      "We’re working on bringing this feature to you soon. For now, sheets can only be edited on desktop": [
+        "Estem treballant per oferir-vos aquesta funció aviat. Per ara, els fulls només es poden editar des de l'escriptori"
+      ],
+      "Your screen is too small to edit this spreadsheet. You’re in view-only mode. To make changes, please open this spreadsheet on a larger screen or expand your browser window.": [
+        "La vostra pantalla és massa petita per editar aquest full de càlcul. Sou al mode de només lectura. Per fer-hi canvis, obriu aquest full de càlcul en una pantalla més gran o amplieu la finestra del vostre navegador."
+      ]
+    },
+    "sheets_2025:Spreadsheet editor": {
+      "Cannot delete all columns": [
+        "No es poden eliminar totes les columnes"
+      ],
+      "Cannot delete all rows": [
+        "No es poden eliminar totes les files"
+      ],
+      "Find in sheet": [
+        "Cerca al full"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor cell merge options": {
+      "Merge all": [
+        "Fusionar-ho tot"
+      ],
+      "Merge cells": [
+        "Fusionar les cel·les"
+      ],
+      "Merge horizontally": [
+        "Combinar horitzontalment"
+      ],
+      "Merge vertically": [
+        "Combinar verticalment"
+      ],
+      "Unmerge": [
+        "Desagrupar"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar data menu": {
+      "Create a filter": [
+        "Crear un filtre"
+      ],
+      "Data validation": [
+        "Validació de dades"
+      ],
+      "Protect range": [
+        "Protegir l'interval"
+      ],
+      "Remove filter": [
+        "Esborrar el filtre"
+      ],
+      "Sort sheet": [
+        "Ordenar el full"
+      ],
+      "Unlock range": [
+        "Desbloquejar l'interval"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar data menu (sort submenu)": {
+      "(A to Z)": [
+        "(De la A a la Z)"
+      ],
+      "(Z to A)": [
+        "(De la Z a la A)"
+      ],
+      "column ${ columnLetter }": [
+        "columna ${ columnLetter }"
+      ],
+      "Sort sheet by": [
+        "Ordenar el full per"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar edit menu": {
+      "Copy": [
+        "Copiar"
+      ],
+      "Cut": [
+        "Retallar"
+      ],
+      "Find": [
+        "Cercar"
+      ],
+      "Formatting only": [
+        "Només el format"
+      ],
+      "Formula only": [
+        "Només fórmula"
+      ],
+      "Link only": [
+        "Només l'enllaç"
+      ],
+      "Paste": [
+        "Enganxar"
+      ],
+      "Paste special": [
+        "Enganxament especial"
+      ],
+      "Redo": [
+        "Refer-ho"
+      ],
+      "Transposed": [
+        "Transposada"
+      ],
+      "Undo": [
+        "Desfer-ho"
+      ],
+      "Values only": [
+        "Només valors"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar file menu": {
+      "Comma Separated Values (.csv)": [
+        "Valors separats per coma (.csv)"
+      ],
+      "Download": [
+        "Descarregar"
+      ],
+      "Download logs": [
+        "Descarregar els registres"
+      ],
+      "Help": [
+        "Ajuda"
+      ],
+      "Import": [
+        "Importar"
+      ],
+      "Make a copy": [
+        "Fer-ne una còpia"
+      ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
+      "Move to folder": [
+        "Moure a la carpeta"
+      ],
+      "Move to trash": [
+        "Moure a la paperera"
+      ],
+      "New document": [
+        "Document nou"
+      ],
+      "New spreadsheet": [
+        "Nou full de càlcul"
+      ],
+      "Open ${ DRIVE_APP_NAME }": [
+        "Obrir ${ DRIVE_APP_NAME }"
+      ],
+      "OpenDocument Spreadsheet (.ods) (Beta)": [
+        "Full de càlcul d'OpenDocument (.ods) (Beta)"
+      ],
+      "Print": [
+        "Imprimir"
+      ],
+      "See version history": [
+        "Mostrar l’historial de versions"
+      ],
+      "Settings": [
+        "Preferències"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "Valors separats per tabulador (.tsv)"
+      ],
+      "Toggle debug mode": [
+        "Commuta el mode de depuració"
+      ],
+      "View recent spreadsheets": [
+        "Visualitza fulls de càlcul recents"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar format menu": {
+      "Alignment": [
+        "Alineació"
+      ],
+      "Bold": [
+        "Negreta"
+      ],
+      "Cell styles": [
+        "Estils de cel·la"
+      ],
+      "Clear": [
+        "Netejar-ho"
+      ],
+      "Clear content": [
+        "Netejar el contingut"
+      ],
+      "Clear formatting": [
+        "Netejar el format"
+      ],
+      "Conditional formatting": [
+        "Formatació condicional"
+      ],
+      "Font size": [
+        "Mida de la lletra"
+      ],
+      "Italic": [
+        "Cursiva"
+      ],
+      "Number": [
+        "Número"
+      ],
+      "Strikethrough": [
+        "Vora-ratllat"
+      ],
+      "Table formatting": [
+        "Format de la taula"
+      ],
+      "Text": [
+        "Text"
+      ],
+      "Theme": [
+        "Tema"
+      ],
+      "Underline": [
+        "Subratllat"
+      ],
+      "Wrapping": [
+        "Ajustament"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar format menu (alignment)": {
+      "Bottom": [
+        "Inferior"
+      ],
+      "Center": [
+        "Centrar-ho"
+      ],
+      "Left": [
+        "Esquerra"
+      ],
+      "Middle": [
+        "Mig"
+      ],
+      "Right": [
+        "Dreta"
+      ],
+      "Top": [
+        "A dalt"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar format menu (wrapping)": {
+      "Clip": [
+        "Retalleu"
+      ],
+      "Overflow": [
+        "Sobreeiximent"
+      ],
+      "Wrap": [
+        "Ajusteu"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar insert menu": {
+      "Cells": [
+        "Cel·les"
+      ],
+      "Chart": [
+        "Gràfic"
+      ],
+      "Checkbox": [
+        "Casella de selecció"
+      ],
+      "Columns": [
+        "Columnes"
+      ],
+      "Dropdown": [
+        "Desplegable"
+      ],
+      "Function": [
+        "Funció"
+      ],
+      "Image": [
+        "Imatge"
+      ],
+      "Insert cells and shift down": [
+        "Inserir cel·les i desplaçar cap avall"
+      ],
+      "Insert cells and shift right": [
+        "Insereix les cel·les i desplaça a la dreta"
+      ],
+      "Link": [
+        "Enllaç"
+      ],
+      "Note": [
+        "Nota"
+      ],
+      "Rows": [
+        "Files"
+      ],
+      "Sheet": [
+        "Full"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar insert menu (columns/rows submenus)": {
+      "${ numberOfColumns } column": [
+        "${ numberOfColumns } columna",
+        "${ numberOfColumns } columnes"
+      ],
+      "${ numberOfRows } row": [
+        "${ numberOfRows } fila",
+        "${ numberOfRows } files"
+      ],
+      "above": [
+        "a sobre"
+      ],
+      "below": [
+        "a sota"
+      ],
+      "Insert": [
+        "Inserir"
+      ],
+      "left": [
+        "esquerra"
+      ],
+      "right": [
+        "a la dreta"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar title": {
+      "Data": [
+        "Dades"
+      ],
+      "Edit": [
+        "Editar"
+      ],
+      "File": [
+        "Fitxer"
+      ],
+      "Format": [
+        "Format"
+      ],
+      "Insert": [
+        "Inserir"
+      ],
+      "View": [
+        "Vista"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar view menu": {
+      "Formula bar": [
+        "Barra de fórmules"
+      ],
+      "Freeze": [
+        "Congelar"
+      ],
+      "Gridlines": [
+        "Quadrícules"
+      ],
+      "Show": [
+        "Mostra"
+      ],
+      "Zoom": [
+        "Ampliació"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar view menu (freeze submenu)": {
+      "column ${ columnLetter }": [
+        "columna ${ columnLetter }"
+      ],
+      "row ${ rowNumber }": [
+        "fila ${ rowNumber }"
+      ],
+      "Up to": [
+        "Fins a"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar view menu (hidden sheets submenu)": {
+      "Hidden sheets": [
+        "Fulls ocults"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor number formats menu": {
+      "$ US Dollar": [
+        "$ Dòlar USA"
+      ],
+      "Accounting": [
+        "Comptabilitat"
+      ],
+      "CN¥ Chinese Yuan": [
+        "CN¥ Iuan xinès"
+      ],
+      "Currency": [
+        "Moneda"
+      ],
+      "Currency rounded": [
+        "Moneda arredonida"
+      ],
+      "Custom currency": [
+        "Moneda personalitzada"
+      ],
+      "Custom number format": [
+        "Format numèric personalitzat"
+      ],
+      "Date": [
+        "Data"
+      ],
+      "Date time": [
+        "Data i hora"
+      ],
+      "Duration": [
+        "Durada"
+      ],
+      "Financial": [
+        "Financer"
+      ],
+      "General": [
+        "General"
+      ],
+      "Long date": [
+        "Data llarga"
+      ],
+      "More currency": [
+        "Més monedes"
+      ],
+      "Number": [
+        "Número"
+      ],
+      "Percent": [
+        "Percentatge"
+      ],
+      "Plain text": [
+        "Text sense format"
+      ],
+      "Scientific": [
+        "Científica"
+      ],
+      "Time": [
+        "Hora"
+      ],
+      "£ Pound": [
+        "£ Lliura"
+      ],
+      "¥ Yen": [
+        "¥ Ien"
+      ],
+      "€ Euro": [
+        "€ Euro"
+      ],
+      "₹ Rupee": [
+        "₹ Rupia"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor search dialog": {
+      "Close": [
+        "Tancar-ho"
+      ],
+      "Go to next": [
+        "Anar al següent"
+      ],
+      "Go to previous": [
+        "Anar a l'anterior"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor spreadsheet settings dialog": {
+      "Auto": [
+        "Automàtic"
+      ],
+      "Cancel": [
+        "Cancel·lar-ho"
+      ],
+      "Locale": [
+        "Ubicació"
+      ],
+      "Save and reload": [
+        "Desar-ho i tornar-ho a carregar"
+      ],
+      "Settings for this spreadsheet": [
+        "Preferències d'aquest full de càlcul"
+      ],
+      "This affects formatting details such as functions, dates and currency": [
+        "Això afecta detalls de formatació com ara funcions, dates i moneda"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor toolbar": {
+      "Bold": [
+        "Negreta"
+      ],
+      "Border": [
+        "Vora"
+      ],
+      "Clear formatting": [
+        "Netejar el format"
+      ],
+      "Create a filter": [
+        "Crear un filtre"
+      ],
+      "Decrease decimal places": [
+        "Reduir el nombre de decimals"
+      ],
+      "Decrease font size": [
+        "Reduir la mida de la lletra"
+      ],
+      "Default (${ defaultFont })": [
+        "(${ defaultFont }) per defecte"
+      ],
+      "Fill color": [
+        "Color de fons"
+      ],
+      "Find": [
+        "Cercar"
+      ],
+      "Font": [
+        "Tipus de lletra"
+      ],
+      "Font size": [
+        "Mida de la lletra"
+      ],
+      "Format as currency": [
+        "Format com a moneda"
+      ],
+      "Format as percent": [
+        "Formatar com a percentatge"
+      ],
+      "Horizontal align": [
+        "Alineació horitzontal"
+      ],
+      "Increase decimal places": [
+        "Augmenta les xifres decimals"
+      ],
+      "Increase font size": [
+        "Augmentar la mida de la lletra"
+      ],
+      "Insert chart": [
+        "Inserir un gràfic"
+      ],
+      "Insert function": [
+        "Insereix una funció"
+      ],
+      "Insert link": [
+        "Inserir un enllaç"
+      ],
+      "Insert note": [
+        "Inserir una nota"
+      ],
+      "Italic": [
+        "Cursiva"
+      ],
+      "Merge cells": [
+        "Combinar les cel·les"
+      ],
+      "More": [
+        "Més"
+      ],
+      "More formats": [
+        "Més formats"
+      ],
+      "Paint format": [
+        "Format de pintura"
+      ],
+      "Redo": [
+        "Refer-ho"
+      ],
+      "Remove filter": [
+        "Esborrar el filtre"
+      ],
+      "Select merge type": [
+        "Seleccionar el tipus de fusió"
+      ],
+      "Strikethrough": [
+        "Ratllat"
+      ],
+      "Text color": [
+        "Color del text"
+      ],
+      "Text wrapping": [
+        "Ajust del text"
+      ],
+      "Underline": [
+        "Subratllat"
+      ],
+      "Undo": [
+        "Desfer-ho"
+      ],
+      "Unmerge cells": [
+        "Desagrupar les cel·les"
+      ],
+      "Vertical align": [
+        "Alineació vertical"
+      ],
+      "Zoom": [
+        "Ampliació"
+      ]
+    },
+    "sheets_2025:Spreadsheet filter menu": {
+      "Apply": [
+        "Aplicar-ho"
+      ],
+      "Cancel": [
+        "Cancel·lar-ho"
+      ],
+      "Clear": [
+        "Netejar"
+      ],
+      "Copy": [
+        "Copiar"
+      ],
+      "Delete table column": [
+        "Eliminar la columna de la taula"
+      ],
+      "Enter value": [
+        "Introduir un valor"
+      ],
+      "Filter by condition": [
+        "Filtrar per condició"
+      ],
+      "Filter by value": [
+        "Filtrar-ho per valor"
+      ],
+      "Insert 1 table column left": [
+        "Inserir 1 columna a l'esquerra"
+      ],
+      "Insert 1 table column right": [
+        "Inserir 1 columna a la dreta"
+      ],
+      "Paste": [
+        "Enganxar-ho"
+      ],
+      "Select all": [
+        "Seleccionar-ho tot"
+      ],
+      "Sort A → Z": [
+        "Ordena de la A a la Z"
+      ],
+      "Sort Z → A": [
+        "Ordena de la Z a la A"
+      ]
+    },
+    "sheets_2025:Spreadsheet insert link dialog": {
+      "Apply": [
+        "Aplicar-ho"
+      ],
+      "Cancel": [
+        "Cancel·lar"
+      ],
+      "Insert link": [
+        "Inserir un enllaç"
+      ],
+      "Paste link": [
+        "Enganxar l'enllaç"
+      ]
+    },
+    "sheets_2025:Spreadsheet link tooltip": {
+      "Copy link": [
+        "Copiar l'enllaç"
+      ],
+      "Edit link": [
+        "Editar l'enllaç"
+      ],
+      "Link copied to clipboard": [
+        "S'ha copiat l'enllaç al porta-retalls"
+      ],
+      "Link removed": [
+        "S'ha eliminar l'enllaç"
+      ],
+      "Remove link": [
+        "Eliminar l'enllaç"
+      ]
+    },
+    "sheets_2025:Spreadsheet resize dimension dialog": {
+      "Cancel": [
+        "Cancel·lar-ho"
+      ],
+      "column": [
+        "columna"
+      ],
+      "column width": [
+        "amplada de la columna"
+      ],
+      "Default": [
+        "Per defecte"
+      ],
+      "OK": [
+        "D'acord"
+      ],
+      "row": [
+        "fila"
+      ],
+      "row height": [
+        "alçada de la fila"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar cell format editor dialog": {
+      "Alignment": [
+        "Alineació"
+      ],
+      "Bold": [
+        "Negreta"
+      ],
+      "Border": [
+        "Vora"
+      ],
+      "Border style": [
+        "Estil de la vora"
+      ],
+      "Cancel": [
+        "Cancel·lar-ho"
+      ],
+      "Choose Category": [
+        "Trieu una categoria"
+      ],
+      "Color": [
+        "Color"
+      ],
+      "Currency Symbol": [
+        "Símbol de moneda"
+      ],
+      "Custom": [
+        "Personalitzar"
+      ],
+      "Decimal places": [
+        "Posicions decimals"
+      ],
+      "Effects": [
+        "Efectes"
+      ],
+      "Font": [
+        "Tipus de lletra"
+      ],
+      "Font size": [
+        "Mida de la lletra"
+      ],
+      "Format cells": [
+        "Formatar les cel·les"
+      ],
+      "General": [
+        "General"
+      ],
+      "Horizontal Alignment": [
+        "Alineació horitzontal"
+      ],
+      "Indent": [
+        "Sagnat"
+      ],
+      "Italic": [
+        "Cursiva"
+      ],
+      "Merge": [
+        "Fusionar"
+      ],
+      "Merge all": [
+        "Fusionar-ho tot"
+      ],
+      "Merge horizontally": [
+        "Combinar horitzontalment"
+      ],
+      "Merge vertically": [
+        "Fusionar verticalment"
+      ],
+      "Number": [
+        "Número"
+      ],
+      "Overflow": [
+        "Sobreeiximent"
+      ],
+      "Preview": [
+        "Previsualització"
+      ],
+      "Save": [
+        "Desar-ho"
+      ],
+      "Strikethrough": [
+        "Vora-ratllat"
+      ],
+      "Text control": [
+        "Control del text"
+      ],
+      "Thousands separator": [
+        "Separador de milers"
+      ],
+      "Type": [
+        "Tipus"
+      ],
+      "Underline": [
+        "Subratllar"
+      ],
+      "Unmerge": [
+        "Separar-les"
+      ],
+      "Use 1000 Separator (,)": [
+        "Utilitza el separador de milers (,)"
+      ],
+      "Vertical Alignment": [
+        "Alineació vertical"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar chart editor dialog": {
+      "Add": [
+        "Afegir"
+      ],
+      "Aggregate": [
+        "Agregar"
+      ],
+      "Cancel": [
+        "Cancel·lar-ho"
+      ],
+      "Chart data range": [
+        "Interval de dades del gràfic"
+      ],
+      "Chart editor": [
+        "Editor de gràfics"
+      ],
+      "Chart title": [
+        "Títol del gràfic"
+      ],
+      "Chart type": [
+        "Tipus de gràfic"
+      ],
+      "Enter title": [
+        "Introduir un títol"
+      ],
+      "Horizontal (category) axis labels": [
+        "Etiquetes de l'eix horitzontal (de categoria)"
+      ],
+      "Horizontal axis title": [
+        "Títol de l'eix horitzontal"
+      ],
+      "Name": [
+        "Nom"
+      ],
+      "Range": [
+        "Interval"
+      ],
+      "Save": [
+        "Desar-ho"
+      ],
+      "Select a range": [
+        "Seleccionar un interval"
+      ],
+      "Series": [
+        "Sèries"
+      ],
+      "Show data in hidden rows and columns": [
+        "Mostrar les dades de les files i columnes amagades"
+      ],
+      "Value": [
+        "Valor"
+      ],
+      "Vertical axis title": [
+        "Títol de l'eix vertical"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar conditional format dialog": {
+      "Add another range": [
+        "Afegir un altre interval"
+      ],
+      "Add another rule": [
+        "Afegir una altra regla"
+      ],
+      "Add rule": [
+        "Afegir una regla"
+      ],
+      "Apply to range": [
+        "Aplicar a l'interval"
+      ],
+      "Cancel": [
+        "Cancel·lar-ho"
+      ],
+      "Close": [
+        "Tancar"
+      ],
+      "Color scale": [
+        "Escala de color"
+      ],
+      "Conditional formatting": [
+        "Formatació condicional"
+      ],
+      "Delete range": [
+        "Eliminar l'interval"
+      ],
+      "Delete rule": [
+        "Eliminar la regla"
+      ],
+      "Enter a formula": [
+        "Introduir una fórmula"
+      ],
+      "Enter value": [
+        "Introduïu un valor"
+      ],
+      "Format rules": [
+        "Regles de format"
+      ],
+      "Format style": [
+        "Estil de format"
+      ],
+      "Max point": [
+        "Punt màxim"
+      ],
+      "Max value": [
+        "Valor màxim"
+      ],
+      "Mid point": [
+        "Punt mitjà"
+      ],
+      "Min point": [
+        "Punt mínim"
+      ],
+      "Min value": [
+        "Valor mínim"
+      ],
+      "None": [
+        "Cap"
+      ],
+      "Number": [
+        "Número"
+      ],
+      "Preview": [
+        "Previsualització"
+      ],
+      "Save": [
+        "Desar-ho"
+      ],
+      "Select a range": [
+        "Seleccionar un interval"
+      ],
+      "Single color": [
+        "Un sol color"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar custom currency format dialog": {
+      "Apply": [
+        "Aplicar-ho"
+      ],
+      "Apply to create a custom currency": [
+        "Aplicar-ho per crear una moneda personalitzada"
+      ],
+      "Cancel": [
+        "Cancel·lar-ho"
+      ],
+      "Currency symbol": [
+        "Símbol de la moneda"
+      ],
+      "Custom currencies": [
+        "Monedes personalitzades"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar data validation dialog": {
+      "Add another named range": [
+        "Afegir un altre interval amb nom"
+      ],
+      "Add another range": [
+        "Afegir un altre interval"
+      ],
+      "Add named range": [
+        "Afegir un interval amb nom"
+      ],
+      "Allow blanks": [
+        "Permetre espais en blanc"
+      ],
+      "Apply to range": [
+        "Aplicar-ho a l'interval"
+      ],
+      "Cancel": [
+        "Cancel·lar-ho"
+      ],
+      "Data validation": [
+        "Validació de dades"
+      ],
+      "Delete data validation rule": [
+        "Eliminar la regla de validació de dades"
+      ],
+      "Enter a formula": [
+        "Introduïu una fórmula"
+      ],
+      "Enter value": [
+        "Introduir un valor"
+      ],
+      "Formula": [
+        "Fórmula"
+      ],
+      "Save": [
+        "Desar-ho"
+      ],
+      "Select a range": [
+        "Seleccionar un interval"
+      ],
+      "Validation rules": [
+        "Regles de validació"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar dialog": {
+      "Close": [
+        "Tancar"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar named ranges dialog": {
+      "Add another named range": [
+        "Afegir un altre interval amb nom"
+      ],
+      "Add named range": [
+        "Afegir un interval amb nom"
+      ],
+      "Apply to range": [
+        "Aplicar a l'interval"
+      ],
+      "Cancel": [
+        "Cancel·lar-ho"
+      ],
+      "Delete named range": [
+        "Eliminar l’interval amb nom"
+      ],
+      "Enter a formula": [
+        "Introduir una fórmula"
+      ],
+      "Enter text or formula": [
+        "Introduïu text o una fórmula"
+      ],
+      "Name": [
+        "Nom"
+      ],
+      "Name should not contain spaces": [
+        "El nom no pot contenir espais"
+      ],
+      "Named Ranges": [
+        "Intervals amb nom"
+      ],
+      "Range": [
+        "Interval"
+      ],
+      "Save": [
+        "Desar-ho"
+      ],
+      "Text or formula": [
+        "Text o fórmula"
+      ],
+      "Type": [
+        "Tipus"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar table editor dialog": {
+      "Banded columns": [
+        "Columnes alternes"
+      ],
+      "Banded rows": [
+        "Files alternes"
+      ],
+      "Cancel": [
+        "Cancel·lar-ho"
+      ],
+      "Edit table": [
+        "Editar la taula"
+      ],
+      "More settings": [
+        "Més preferències"
+      ],
+      "Save": [
+        "Desar-ho"
+      ],
+      "Select a range": [
+        "Seleccionar un interval"
+      ],
+      "Show filter button": [
+        "Mostra el botó de filtre"
+      ],
+      "Table data range": [
+        "Interval de dades de la taula"
+      ],
+      "Table title": [
+        "Títol de la taula"
+      ]
+    },
+    "Warning": {
+      "Making suggestions inside code blocks is not supported": [
+        "No s'admet afegir suggeriments als blocs de codi."
       ]
     }
   }

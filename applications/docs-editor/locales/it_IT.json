@@ -129,7 +129,7 @@
         "Inserisci un commento"
       ],
       "Insert image": [
-        "Inserisci immagine"
+        "Inserisci immagini"
       ],
       "Insert left": [
         "Inserire a sinistra"
@@ -223,6 +223,18 @@
       ],
       "Undo": [
         "Annulla"
+      ],
+      "Colour": [
+        "Colore"
+      ],
+      "More options": [
+        "Più opzioni"
+      ],
+      "Signature could not be verified": [
+        "Impossibile verificare la firma"
+      ],
+      "Table of contents": [
+        "Tabella dei contenuti"
       ]
     },
     "color": {
@@ -412,6 +424,9 @@
       ],
       "Read or print final document": [
         "Leggi o stampa il documento finale"
+      ],
+      "Use the dropdown above to switch and start making suggestions.": [
+        "Utilizza il menu a cascata in alto per cambiare e iniziare a fornire suggerimenti."
       ]
     },
     "Error": {
@@ -438,6 +453,15 @@
       ],
       "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
         "Impossibile convertire il documento Word. È protetto da password? In tal caso, rimuovi la password e riprova."
+      ],
+      "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again. If the error persists, please open Version History from the menu options to attempt to restore your document to an earlier version.": [
+        "Si è verificato un errore durante il caricamento del documento. Per prevenire la corruzione del documento, l'editor è stato bloccato. Ricarica la pagina e riprova. Se l'errore persiste, apri Cronologia versioni dalle opzioni del menu per tentare di ripristinare il documento a una versione precedente."
+      ],
+      "There was an error processing updates to the document. Please reload the page and try again.": [
+        "Si è verificato un errore durante l'elaborazione degli aggiornamenti al documento. Ricarica la pagina e riprova."
+      ],
+      "Tried to import Sheet data into Lexical": [
+        "Tentativo di importare dati Sheet in Lexical"
       ]
     },
     "Error message": {
@@ -540,6 +564,21 @@
       ],
       "You cannot undo this action.": [
         "Non puoi annullare questa azione."
+      ],
+      "Alpha only experimental feature": [
+        "Solo funzionalità sperimentale Alpha"
+      ],
+      "Headings you add to the document will appear here.": [
+        "Le intestazioni aggiunte al documento appariranno qui."
+      ],
+      "Importing Excel file...": [
+        "Importazione del File Excel..."
+      ],
+      "Importing ODS file...": [
+        "Importazione del file ODS..."
+      ],
+      "No title": [
+        "Nessun titolo"
       ]
     },
     "Label": {
@@ -638,6 +677,18 @@
       ],
       "with \"${ replaceWith }\"": [
         "con \"${ replaceWith }\""
+      ],
+      "${ name } background color and white text color": [
+        "Colore sfondo di ${ name } e colore del testo bianco"
+      ],
+      "${ name } text color and highlight": [
+        "Colore ed evidenziazione del testo ${ name }"
+      ],
+      "${ name } text color with no background": [
+        "Colore del testo ${ name } senza sfondo"
+      ],
+      "Text and highlight color": [
+        "Colore del testo e dell'evidenziazione"
       ]
     },
     "Placeholder": {
@@ -654,7 +705,7 @@
         "Rispondi..."
       ],
       "Text": [
-        "Testo"
+        "di testo"
       ]
     },
     "Title": {
@@ -666,11 +717,39 @@
       ],
       "Language not supported": [
         "Lingua non supportata"
+      ],
+      "Explore the New Suggestion Mode": [
+        "Esplora la nuova modalità Suggerimento"
       ]
     },
     "Warning": {
       "Making suggestions inside code blocks is not supported": [
         "Non è supportato fornire suggerimenti all'interno di blocchi di codice"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar file menu": {
+      "Download": [
+        "Scarica"
+      ],
+      "Make a copy": [
+        "Crea una copia"
+      ],
+      "Move to folder": [
+        "Sposta nella cartella"
+      ],
+      "New document": [
+        "Nuovo documento"
+      ],
+      "New spreadsheet": [
+        "Nuovo foglio di calcolo"
+      ],
+      "See version history": [
+        "Visualizza cronologia delle versioni"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar custom currency format dialog": {
+      "Custom currencies": [
+        "Valute personalizzate"
       ]
     }
   }

@@ -223,6 +223,18 @@
       ],
       "Undo": [
         "Cofnij"
+      ],
+      "Colour": [
+        "Kolor"
+      ],
+      "More options": [
+        "Więcej opcji"
+      ],
+      "Signature could not be verified": [
+        "Podpis nie może zostać zweryfikowany"
+      ],
+      "Table of contents": [
+        "Spis treści"
       ]
     },
     "color": {
@@ -412,6 +424,9 @@
       ],
       "Read or print final document": [
         "Przeczytaj lub wydrukuj ostateczny dokument"
+      ],
+      "Use the dropdown above to switch and start making suggestions.": [
+        "Otwórz powyższe menu rozwijane, aby rozpocząć sugestie."
       ]
     },
     "Error": {
@@ -438,6 +453,15 @@
       ],
       "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
         "Nie można przekonwertować dokumentu Word. Czy jest on chroniony hasłem? Jeśli tak, usuń hasło i spróbuj ponownie."
+      ],
+      "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again. If the error persists, please open Version History from the menu options to attempt to restore your document to an earlier version.": [
+        "Wystąpił błąd podczas ładowania dokumentu. Aby zapobiec uszkodzeniu dokumentu, edytor został zablokowany. Odśwież stronę i spróbuj ponownie. Jeśli problem będzie się powtarzał, otwórz historię wersji z opcji menu, aby spróbować przywrócić dokument do wcześniejszej wersji."
+      ],
+      "There was an error processing updates to the document. Please reload the page and try again.": [
+        "Wystąpił błąd podczas przetwarzania aktualizacji dokumentu. Odśwież stronę i spróbuj ponownie."
+      ],
+      "Tried to import Sheet data into Lexical": [
+        "Próbowano zaimportować dane arkusza do Lexical"
       ]
     },
     "Error message": {
@@ -450,7 +474,7 @@
     },
     "Font face option": {
       "System default": [
-        "Domyślny systemu"
+        "Domyślne ustawienia systemu"
       ],
       "Theme font": [
         "Czcionka"
@@ -542,6 +566,18 @@
       ],
       "You cannot undo this action.": [
         "Tej akcji nie można cofnąć."
+      ],
+      "Alpha only experimental feature": [
+        "Tylko eksperymentalna funkcja Alpha"
+      ],
+      "Headings you add to the document will appear here.": [
+        "W tym miejscu pojawią się nagłówki dodane do dokumentu."
+      ],
+      "Importing ODS file...": [
+        "Importowanie pliku ODS..."
+      ],
+      "No title": [
+        "Brak tytułu"
       ]
     },
     "Label": {
@@ -618,7 +654,7 @@
         "Wstaw wiersz tabeli"
       ],
       "Keyboard shortcut: ${ shortcut }": [
-        "Skrót klawiszowy: ${ shortcut }"
+        "Skróty klawiszowe: ${ shortcut }"
       ],
       "Link text": [
         "Tekst linku"
@@ -640,6 +676,18 @@
       ],
       "with \"${ replaceWith }\"": [
         "przez \"${ replaceWith }\""
+      ],
+      "${ name } background color and white text color": [
+        "${ name } kolor tła i biały kolor tekstu"
+      ],
+      "${ name } text color and highlight": [
+        "${ name } kolor tekstu i wyróżnienia"
+      ],
+      "${ name } text color with no background": [
+        "${ name } kolor tekstu bez tła"
+      ],
+      "Text and highlight color": [
+        "Tekst i kolor wyróżenienia"
       ]
     },
     "Placeholder": {
@@ -668,6 +716,9 @@
       ],
       "Language not supported": [
         "Język nie jest obsługiwany"
+      ],
+      "Explore the New Suggestion Mode": [
+        "Sprawdź nowy tryb sugestii"
       ]
     },
     "Warning": {

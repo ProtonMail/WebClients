@@ -33,7 +33,7 @@
         "Lägg till förslag"
       ],
       "Adjust font size": [
-        "Justera teckenstorlek"
+        "Justera textstorlek"
       ],
       "Alphabetical": [
         "Alfabetiskt"
@@ -219,10 +219,22 @@
         "Tabellalternativ"
       ],
       "Underline": [
-        "Understruken"
+        "Understreck"
       ],
       "Undo": [
         "Ångra"
+      ],
+      "Colour": [
+        "Färg"
+      ],
+      "More options": [
+        "Fler alternativ"
+      ],
+      "Signature could not be verified": [
+        "Signaturen kunde inte verifieras"
+      ],
+      "Table of contents": [
+        "Innehållsförteckning"
       ]
     },
     "color": {
@@ -412,6 +424,9 @@
       ],
       "Read or print final document": [
         "Läs eller skriv ut slutdokument"
+      ],
+      "Use the dropdown above to switch and start making suggestions.": [
+        "Använd rullgardinsmenyn ovan för att byta och börja ge förslag."
       ]
     },
     "Error": {
@@ -438,6 +453,18 @@
       ],
       "Unable to convert Word document. Is it password protected? If so, please remove the password and try again.": [
         "Kan inte konvertera Word-dokument. Är det lösenordsskyddat? Ta i så fall bort lösenordet och försök igen."
+      ],
+      "An error occurred while loading the document. To prevent document corruption, the editor has been locked. Please reload the page and try again. If the error persists, please open Version History from the menu options to attempt to restore your document to an earlier version.": [
+        "Ett fel inträffade vid inläsning av dokumentet. För att förhindra att dokumentet blir korrupt så har redigeraren låsts. Uppdatera sidan och försök igen. Om felet kvarstår, öppna versionshistoriken från menyalternativen och försök att återställa dokumentet till en tidigare version."
+      ],
+      "There was an error processing updates to the document. Please reload the page and try again.": [
+        "Det uppstod ett fel vid bearbetning av uppdateringar av dokumentet. Ladda om sidan och försök igen."
+      ],
+      "This spreadsheet is incompatible with the current client version. Please try reloading the client. If the error persists, please contact support.": [
+        "Detta kalkylblad är inkompatibelt med den nuvarande klientversionen. Försök att ladda om klienten. Om felet kvarstår, kontakta support."
+      ],
+      "Tried to import Sheet data into Lexical": [
+        "Försökte importera arkdata till Lexical"
       ]
     },
     "Error message": {
@@ -467,7 +494,7 @@
         "Liten"
       ],
       "Very large": [
-        "Mycket stor"
+        "Väldigt stor"
       ],
       "Very small": [
         "Väldigt liten"
@@ -537,6 +564,24 @@
       ],
       "You cannot undo this action.": [
         "Du kan inte ångra denna åtgärd."
+      ],
+      "Alpha only experimental feature": [
+        "Experimentell funktion endast för alfaversion"
+      ],
+      "Headings you add to the document will appear here.": [
+        "Rubriker som du lägger till i dokumentet kommer visas här."
+      ],
+      "Highlight": [
+        "Markering"
+      ],
+      "Importing Excel file...": [
+        "Importerar Excel-fil …"
+      ],
+      "Importing ODS file...": [
+        "Importerar ODS-fil …"
+      ],
+      "No title": [
+        "Ingen rubrik"
       ]
     },
     "Label": {
@@ -632,6 +677,21 @@
       ],
       "with \"${ replaceWith }\"": [
         "med ”${ replaceWith }”"
+      ],
+      "${ name } background color and white text color": [
+        "${ name } bakgrundsfärg och vit textfärg"
+      ],
+      "${ name } text color and highlight": [
+        "${ name } textfärg och markering"
+      ],
+      "${ name } text color with no background": [
+        "${ name } textfärg utan bakgrund"
+      ],
+      "Change indent level": [
+        "Ändra indenteringsnivå"
+      ],
+      "Text and highlight color": [
+        "Text- och markeringsfärg"
       ]
     },
     "Placeholder": {
@@ -660,11 +720,1316 @@
       ],
       "Language not supported": [
         "Språk stöds inte"
+      ],
+      "Explore the New Suggestion Mode": [
+        "Utforska det nya förslagsläget"
       ]
     },
     "Warning": {
       "Making suggestions inside code blocks is not supported": [
         "Ge förslag inuti kodblock stöds inte"
+      ]
+    },
+    "sheets_2025:Bottom bar": {
+      "All sheets": [
+        "Alla kalkylblad"
+      ],
+      "New sheet": [
+        "Nytt kalkylblad"
+      ]
+    },
+    "sheets_2025:Color picker": {
+      "Recent colors": [
+        "Senaste färger"
+      ],
+      "Reset": [
+        "Återställ"
+      ],
+      "Standard colors": [
+        "Standardfärger"
+      ],
+      "Theme colors": [
+        "Temafärger"
+      ]
+    },
+    "sheets_2025:Range selector menu": {
+      "Add new": [
+        "Lägg till nytt"
+      ],
+      "Named ranges": [
+        "Namngivna intervall"
+      ],
+      "Sheets": [
+        "Kalkylblad"
+      ],
+      "Tables": [
+        "Tabeller"
+      ]
+    },
+    "sheets_2025:Sheet tab options": {
+      "Change color": [
+        "Ändra färg"
+      ],
+      "Delete": [
+        "Ta bort"
+      ],
+      "Duplicate": [
+        "Duplicera"
+      ],
+      "Hide sheet": [
+        "Dölj kalkylblad"
+      ],
+      "Move left": [
+        "Flytta vänster"
+      ],
+      "Move right": [
+        "Flytta höger"
+      ],
+      "Rename": [
+        "Byt namn"
+      ]
+    },
+    "sheets_2025:Spreadsheet border editor menu": {
+      "All borders": [
+        "Alla ramar"
+      ],
+      "Bottom border": [
+        "Botten ram"
+      ],
+      "Dashed": [
+        "Streckad"
+      ],
+      "Dotted": [
+        "Prickad"
+      ],
+      "Double": [
+        "Dubbel"
+      ],
+      "Horizontal borders": [
+        "Horisontella ramar"
+      ],
+      "Inner borders": [
+        "Inre ramar"
+      ],
+      "Left border": [
+        "Vänster ram"
+      ],
+      "No borders": [
+        "Inga ramar"
+      ],
+      "Outer borders": [
+        "Yttre ramar"
+      ],
+      "Right border": [
+        "Höger ram"
+      ],
+      "Solid": [
+        "Solid"
+      ],
+      "Solid medium": [
+        "Solid medium"
+      ],
+      "Solid thick": [
+        "Solid tjock"
+      ],
+      "Top border": [
+        "Toppen ram"
+      ],
+      "Vertical borders": [
+        "Vertikala ramar"
+      ]
+    },
+    "sheets_2025:Spreadsheet cell tooltip": {
+      "Error": [
+        "Fel"
+      ],
+      "Invalid": [
+        "Ogiltig"
+      ],
+      "Note": [
+        "Anteckning"
+      ]
+    },
+    "sheets_2025:Spreadsheet context menu": {
+      "AI Quick Edit": [
+        "AI-snabbredigering"
+      ],
+      "Auto fit to data": [
+        "Passa automatiskt till data"
+      ],
+      "Cell value": [
+        "Cellvärde"
+      ],
+      "Clear": [
+        "Rensa"
+      ],
+      "Clear content": [
+        "Rensa innehåll"
+      ],
+      "Clear formatting": [
+        "Rensa formatering"
+      ],
+      "Comma": [
+        "Kommatecken"
+      ],
+      "Conditional format": [
+        "Villkorligt format"
+      ],
+      "Convert to range": [
+        "Konvertera till intervall"
+      ],
+      "Convert to table": [
+        "Konvertera till tabell"
+      ],
+      "Copy": [
+        "Kopiera"
+      ],
+      "Create a filter": [
+        "Skapa ett filter"
+      ],
+      "Custom": [
+        "Anpassad"
+      ],
+      "Data validation": [
+        "Datavalidering"
+      ],
+      "Define named range": [
+        "Definiera namngivet intervall"
+      ],
+      "Delete": [
+        "Ta bort"
+      ],
+      "Delete column": [
+        "Ta bort kolumn"
+      ],
+      "Delete row": [
+        "Ta bort rad"
+      ],
+      "Delete table column": [
+        "Ta bort tabellkolumn"
+      ],
+      "Delete table row": [
+        "Ta bort tabellrad"
+      ],
+      "Edit table": [
+        "Redigera tabell"
+      ],
+      "Filter": [
+        "Filter"
+      ],
+      "Formatting only": [
+        "Endast formatering"
+      ],
+      "Formula only": [
+        "Endast formel"
+      ],
+      "Freeze up to row": [
+        "Lås upp till rad"
+      ],
+      "Hide column": [
+        "Dölj kolumn"
+      ],
+      "Hide row": [
+        "Dölj rad"
+      ],
+      "Insert link": [
+        "Infoga länk"
+      ],
+      "Insert note": [
+        "Infoga anteckning"
+      ],
+      "Insert table column to the left": [
+        "Infoga tabellkolumn till vänster"
+      ],
+      "Insert table column to the right": [
+        "Infoga tabellkolumn till höger"
+      ],
+      "Insert table row": [
+        "Infoga tabellrad"
+      ],
+      "Link only": [
+        "Endast länk"
+      ],
+      "More cell actions": [
+        "Fler cellåtgärder"
+      ],
+      "Paste": [
+        "Klistra in"
+      ],
+      "Paste special": [
+        "Klistra in special"
+      ],
+      "Period": [
+        "Period"
+      ],
+      "Remove filter": [
+        "Ta bort filter"
+      ],
+      "Resize column": [
+        "Storleksändra kolumn"
+      ],
+      "Resize row": [
+        "Storleksändra rad"
+      ],
+      "Semicolon": [
+        "Semikolon"
+      ],
+      "Sort": [
+        "Sortera"
+      ],
+      "Sort range A → Z": [
+        "Sortera intervall A → Ö"
+      ],
+      "Sort range Z → A": [
+        "Sortera intervall Ö → A"
+      ],
+      "Sort sheet A to Z": [
+        "Sortera kalkylblad A till Ö"
+      ],
+      "Sort sheet Z to A": [
+        "Sortera kalkylblad Ö till A"
+      ],
+      "Space": [
+        "Mellanrum"
+      ],
+      "Table": [
+        "Tabell"
+      ],
+      "Values only": [
+        "Endast värden"
+      ]
+    },
+    "sheets_2025:Spreadsheet context menu (columns/rows)": {
+      "${ numberOfColumns } column": [
+        "${ numberOfColumns } kolumn",
+        "${ numberOfColumns } kolumner"
+      ],
+      "${ numberOfRows } row": [
+        "${ numberOfRows } rad",
+        "${ numberOfRows } rader"
+      ],
+      "above": [
+        "ovan"
+      ],
+      "below": [
+        "under"
+      ],
+      "Insert": [
+        "Infoga"
+      ],
+      "left": [
+        "vänster"
+      ],
+      "right": [
+        "höger"
+      ]
+    },
+    "sheets_2025:Spreadsheet delete sheet dialog": {
+      "Are you sure you want to delete ${ sheetName }?": [
+        "Är du säker på att du vill ta bort ${ sheetName }?"
+      ],
+      "Cancel": [
+        "Avbryt"
+      ],
+      "Delete": [
+        "Ta bort"
+      ],
+      "Delete sheet": [
+        "Ta bort kalkylblad"
+      ]
+    },
+    "sheets_2025:Spreadsheet editing disabled dialog": {
+      "Mobile Editing Coming Soon": [
+        "Mobilredigering kommer snart"
+      ],
+      "Screen too small for editing": [
+        "Skärm för liten för redigering"
+      ],
+      "We’re working on bringing this feature to you soon. For now, sheets can only be edited on desktop": [
+        "Vi arbetar på att erbjuda denna funktion till dig snart. För närvarande kan kalkylblad endast redigeras på stationär dator"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor": {
+      "Cannot delete all columns": [
+        "Kan inte ta bort alla kolumner"
+      ],
+      "Cannot delete all rows": [
+        "Kan inte ta bort alla rader"
+      ],
+      "Find in sheet": [
+        "Hitta i kalkylblad"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor cell merge options": {
+      "Merge all": [
+        "Sammanfoga alla"
+      ],
+      "Merge cells": [
+        "Sammanfoga celler"
+      ],
+      "Merge horizontally": [
+        "Sammanfoga horisontellt"
+      ],
+      "Merge vertically": [
+        "Sammanfoga vertikalt"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar data menu": {
+      "Create a filter": [
+        "Skapa ett filter"
+      ],
+      "Data validation": [
+        "Datavalidering"
+      ],
+      "Protect range": [
+        "Skydda intervall"
+      ],
+      "Remove filter": [
+        "Ta bort filter"
+      ],
+      "Sort sheet": [
+        "Sortera kalkylblad"
+      ],
+      "Unlock range": [
+        "Lås upp intervall"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar data menu (sort submenu)": {
+      "(A to Z)": [
+        "(A till Ö)"
+      ],
+      "(Z to A)": [
+        "(ö till A)"
+      ],
+      "column ${ columnLetter }": [
+        "kolumn ${ columnLetter }"
+      ],
+      "Sort sheet by": [
+        "Sortera kalkylblad efter"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar edit menu": {
+      "Copy": [
+        "Kopiera"
+      ],
+      "Cut": [
+        "Klipp ut"
+      ],
+      "Find": [
+        "Hitta"
+      ],
+      "Formatting only": [
+        "Endast formatering"
+      ],
+      "Formula only": [
+        "Endast formel"
+      ],
+      "Link only": [
+        "Endast länk"
+      ],
+      "Paste": [
+        "Klistra in"
+      ],
+      "Paste special": [
+        "Klistra in special"
+      ],
+      "Redo": [
+        "Gör om"
+      ],
+      "Transposed": [
+        "Transponerad"
+      ],
+      "Undo": [
+        "Ångra"
+      ],
+      "Values only": [
+        "Endast värden"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar file menu": {
+      "Comma Separated Values (.csv)": [
+        "Kommaseparerade värden (.csv)"
+      ],
+      "Download": [
+        "Ladda ner"
+      ],
+      "Download logs": [
+        "Ladda ner loggar"
+      ],
+      "Help": [
+        "Hjälp"
+      ],
+      "Import": [
+        "Importera"
+      ],
+      "Make a copy": [
+        "Göra en kopia"
+      ],
+      "Microsoft Excel (.xlsx)": [
+        "Microsoft Excel (.xlsx)"
+      ],
+      "Move to folder": [
+        "Flytta till mapp"
+      ],
+      "Move to trash": [
+        "Flytta till papperskorgen"
+      ],
+      "New document": [
+        "Nytt dokument"
+      ],
+      "New spreadsheet": [
+        "Nytt kalkylblad"
+      ],
+      "Open ${ DRIVE_APP_NAME }": [
+        "Öppna ${ DRIVE_APP_NAME }"
+      ],
+      "OpenDocument Spreadsheet (.ods) (Beta)": [
+        "OpenDocument kalkylblad (.ods) (Beta)"
+      ],
+      "Print": [
+        "Skriv ut"
+      ],
+      "See version history": [
+        "Se versionshistorik"
+      ],
+      "Settings": [
+        "Inställningar"
+      ],
+      "Tab Separated Values (.tsv)": [
+        "Tabellseparerade värden (.tsv)"
+      ],
+      "Toggle debug mode": [
+        "Slå på/av felsökningsläge"
+      ],
+      "View recent spreadsheets": [
+        "Visa senaste kalkylblad"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar format menu": {
+      "Alignment": [
+        "Justering"
+      ],
+      "Bold": [
+        "Fet"
+      ],
+      "Cell styles": [
+        "Cellstilar"
+      ],
+      "Clear": [
+        "Rensa"
+      ],
+      "Clear content": [
+        "Rensa innehåll"
+      ],
+      "Clear formatting": [
+        "Rensa formatering"
+      ],
+      "Conditional formatting": [
+        "Villkorlig formatering"
+      ],
+      "Font size": [
+        "Textstorlek"
+      ],
+      "Italic": [
+        "Kursiv"
+      ],
+      "Number": [
+        "Nummer"
+      ],
+      "Strikethrough": [
+        "Linje igenom"
+      ],
+      "Table formatting": [
+        "Tabellformatering"
+      ],
+      "Text": [
+        "Text"
+      ],
+      "Theme": [
+        "Tema"
+      ],
+      "Underline": [
+        "Understreck"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar format menu (alignment)": {
+      "Bottom": [
+        "Bottom"
+      ],
+      "Center": [
+        "Centrera"
+      ],
+      "Left": [
+        "Vänster"
+      ],
+      "Middle": [
+        "Mitten"
+      ],
+      "Right": [
+        "Höger"
+      ],
+      "Top": [
+        "Toppen"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar insert menu": {
+      "Cells": [
+        "Celler"
+      ],
+      "Chart": [
+        "Diagram"
+      ],
+      "Checkbox": [
+        "Kryssruta"
+      ],
+      "Columns": [
+        "Kolumner"
+      ],
+      "Dropdown": [
+        "Rullgardinsmeny"
+      ],
+      "Function": [
+        "Funktion"
+      ],
+      "Image": [
+        "Bild"
+      ],
+      "Link": [
+        "Länk"
+      ],
+      "Note": [
+        "Anteckning"
+      ],
+      "Rows": [
+        "Rader"
+      ],
+      "Sheet": [
+        "Kalkylblad"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar insert menu (columns/rows submenus)": {
+      "${ numberOfColumns } column": [
+        "${ numberOfColumns } kolumn",
+        "${ numberOfColumns } kolumner"
+      ],
+      "${ numberOfRows } row": [
+        "${ numberOfRows } rad",
+        "${ numberOfRows } rader"
+      ],
+      "above": [
+        "ovan"
+      ],
+      "below": [
+        "under"
+      ],
+      "Insert": [
+        "Infoga"
+      ],
+      "left": [
+        "vänster"
+      ],
+      "right": [
+        "höger"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar title": {
+      "Data": [
+        "Data"
+      ],
+      "Edit": [
+        "Redigera"
+      ],
+      "File": [
+        "Fil"
+      ],
+      "Format": [
+        "Format"
+      ],
+      "Insert": [
+        "Infoga"
+      ],
+      "View": [
+        "Visa"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar view menu": {
+      "Formula bar": [
+        "Formelfält"
+      ],
+      "Freeze": [
+        "Frys"
+      ],
+      "Show": [
+        "Visa"
+      ],
+      "Zoom": [
+        "Zooma"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar view menu (freeze submenu)": {
+      "column ${ columnLetter }": [
+        "kolumn ${ columnLetter }"
+      ],
+      "row ${ rowNumber }": [
+        "rad ${ rowNumber }"
+      ],
+      "Up to": [
+        "Up till"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor menubar view menu (hidden sheets submenu)": {
+      "Hidden sheets": [
+        "Dolda kalkylblad"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor number formats menu": {
+      "$ US Dollar": [
+        "$ US-dollar"
+      ],
+      "Currency": [
+        "Valuta"
+      ],
+      "Currency rounded": [
+        "Valuta avrundad"
+      ],
+      "Custom currency": [
+        "Anpassad valuta"
+      ],
+      "Custom number format": [
+        "Anpassat nummerformat"
+      ],
+      "Date": [
+        "Datum"
+      ],
+      "Date time": [
+        "Datum och tid"
+      ],
+      "Duration": [
+        "Varaktighet"
+      ],
+      "Financial": [
+        "Finansiellt"
+      ],
+      "General": [
+        "Allmänt"
+      ],
+      "Long date": [
+        "Långt datum"
+      ],
+      "More currency": [
+        "Mer valuta"
+      ],
+      "Number": [
+        "Nummer"
+      ],
+      "Percent": [
+        "Procent"
+      ],
+      "Plain text": [
+        "Oformaterad text"
+      ],
+      "Scientific": [
+        "Vetenskaplig"
+      ],
+      "Time": [
+        "Tid"
+      ],
+      "£ Pound": [
+        "£ Pund"
+      ],
+      "¥ Yen": [
+        "¥ Yen"
+      ],
+      "€ Euro": [
+        "€ Euro"
+      ],
+      "₹ Rupee": [
+        "₹ Rupie"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor search dialog": {
+      "Close": [
+        "Stäng"
+      ],
+      "Go to next": [
+        "Gå till nästa"
+      ],
+      "Go to previous": [
+        "Gå till föregående"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor spreadsheet settings dialog": {
+      "Auto": [
+        "Auto"
+      ],
+      "Cancel": [
+        "Avbryt"
+      ],
+      "Locale": [
+        "Lokal"
+      ],
+      "Save and reload": [
+        "Spara och ladda om"
+      ],
+      "Settings for this spreadsheet": [
+        "Inställningar för detta kalkylblad"
+      ],
+      "This affects formatting details such as functions, dates and currency": [
+        "Detta påverkar formateringsdetaljer som funktioner, datum och valuta"
+      ]
+    },
+    "sheets_2025:Spreadsheet editor toolbar": {
+      "Bold": [
+        "Fet"
+      ],
+      "Border": [
+        "Ram"
+      ],
+      "Clear formatting": [
+        "Rensa formatering"
+      ],
+      "Create a filter": [
+        "Skapa ett filter"
+      ],
+      "Decrease decimal places": [
+        "Minska decimalplatser"
+      ],
+      "Decrease font size": [
+        "Minska textstorlek"
+      ],
+      "Default (${ defaultFont })": [
+        "Standard (${ defaultFont })"
+      ],
+      "Fill color": [
+        "Fyllningsfärg"
+      ],
+      "Find": [
+        "Hitta"
+      ],
+      "Font": [
+        "Typsnitt"
+      ],
+      "Font size": [
+        "Textstorlek"
+      ],
+      "Format as currency": [
+        "Formatera som valuta"
+      ],
+      "Format as percent": [
+        "Formatera som procent"
+      ],
+      "Horizontal align": [
+        "Horisontal justering"
+      ],
+      "Increase decimal places": [
+        "Öka decimalplatser"
+      ],
+      "Increase font size": [
+        "Öka textstorlek"
+      ],
+      "Insert chart": [
+        "Infoga diagram"
+      ],
+      "Insert function": [
+        "Infoga funktion"
+      ],
+      "Insert link": [
+        "Infoga länk"
+      ],
+      "Insert note": [
+        "Infoga anteckning"
+      ],
+      "Italic": [
+        "Kursiv"
+      ],
+      "Merge cells": [
+        "Sammanfoga celler"
+      ],
+      "More": [
+        "Mer"
+      ],
+      "More formats": [
+        "Fler format"
+      ],
+      "Redo": [
+        "Gör om"
+      ],
+      "Remove filter": [
+        "Ta bort filter"
+      ],
+      "Select merge type": [
+        "Välj sammanslagningstyp"
+      ],
+      "Strikethrough": [
+        "Linje igenom"
+      ],
+      "Text color": [
+        "Textfärg"
+      ],
+      "Underline": [
+        "Understreck"
+      ],
+      "Undo": [
+        "Ångra"
+      ],
+      "Vertical align": [
+        "Vertikal justering"
+      ],
+      "Zoom": [
+        "Zooma"
+      ]
+    },
+    "sheets_2025:Spreadsheet filter menu": {
+      "Apply": [
+        "Tillämpa"
+      ],
+      "Cancel": [
+        "Avbryt"
+      ],
+      "Clear": [
+        "Rensa"
+      ],
+      "Copy": [
+        "Kopiera"
+      ],
+      "Delete table column": [
+        "Ta bort tabellkolumn"
+      ],
+      "Enter value": [
+        "Ange värde"
+      ],
+      "Filter by condition": [
+        "Filtrera efter villkor"
+      ],
+      "Filter by value": [
+        "Filtrera efter värde"
+      ],
+      "Insert 1 table column left": [
+        "Infoga 1 tabellkolumn vänster"
+      ],
+      "Insert 1 table column right": [
+        "Infoga 1 tabellkolumn höger"
+      ],
+      "Paste": [
+        "Klistra in"
+      ],
+      "Select all": [
+        "Markera alla"
+      ],
+      "Sort A → Z": [
+        "Sortera A → Ö"
+      ],
+      "Sort Z → A": [
+        "Sortera Ö → A"
+      ]
+    },
+    "sheets_2025:Spreadsheet insert link dialog": {
+      "Apply": [
+        "Tillämpa"
+      ],
+      "Cancel": [
+        "Avbryt"
+      ],
+      "Insert link": [
+        "Infoga länk"
+      ],
+      "Paste link": [
+        "Klistra in länk"
+      ]
+    },
+    "sheets_2025:Spreadsheet link tooltip": {
+      "Copy link": [
+        "Kopiera länk"
+      ],
+      "Edit link": [
+        "Redigera länk"
+      ],
+      "Link copied to clipboard": [
+        "Länk kopierad till urklipp"
+      ],
+      "Link removed": [
+        "Länk borttagen"
+      ],
+      "Remove link": [
+        "Ta bort länk"
+      ]
+    },
+    "sheets_2025:Spreadsheet resize dimension dialog": {
+      "Cancel": [
+        "Avbryt"
+      ],
+      "column": [
+        "kolumn"
+      ],
+      "column width": [
+        "kolumnbredd"
+      ],
+      "Default": [
+        "Standard"
+      ],
+      "OK": [
+        "OK"
+      ],
+      "row": [
+        "rad"
+      ],
+      "row height": [
+        "radhöjd"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar cell format editor dialog": {
+      "Alignment": [
+        "Justering"
+      ],
+      "Bold": [
+        "Fet"
+      ],
+      "Border": [
+        "Ram"
+      ],
+      "Border style": [
+        "Ramstil"
+      ],
+      "Cancel": [
+        "Avbryt"
+      ],
+      "Choose Category": [
+        "Välj kategori"
+      ],
+      "Color": [
+        "Färg"
+      ],
+      "Currency Symbol": [
+        "Valutasymbol"
+      ],
+      "Custom": [
+        "Anpassad"
+      ],
+      "Decimal places": [
+        "Decimalplatser"
+      ],
+      "Effects": [
+        "Effekter"
+      ],
+      "Font": [
+        "Typsnitt"
+      ],
+      "Font size": [
+        "Textstorlek"
+      ],
+      "Format cells": [
+        "Formatera celler"
+      ],
+      "General": [
+        "Allmänt"
+      ],
+      "Horizontal Alignment": [
+        "Horisontell justering"
+      ],
+      "Indent": [
+        "Indrag"
+      ],
+      "Italic": [
+        "Kursiv"
+      ],
+      "Merge": [
+        "Sammanfoga"
+      ],
+      "Merge all": [
+        "Sammanfoga alla"
+      ],
+      "Merge horizontally": [
+        "Sammanfoga horisontellt"
+      ],
+      "Merge vertically": [
+        "Sammanfoga vertikalt"
+      ],
+      "Number": [
+        "Nummer"
+      ],
+      "Preview": [
+        "Förhandsgranska"
+      ],
+      "Save": [
+        "Spara"
+      ],
+      "Strikethrough": [
+        "Linje igenom"
+      ],
+      "Text control": [
+        "Textkontroll"
+      ],
+      "Thousands separator": [
+        "Tusentalsavgränsare"
+      ],
+      "Type": [
+        "Typ"
+      ],
+      "Underline": [
+        "Understreck"
+      ],
+      "Use 1000 Separator (,)": [
+        "Använd 1000-avgränsare (,)"
+      ],
+      "Vertical Alignment": [
+        "Vertikal justering"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar chart editor dialog": {
+      "Add": [
+        "Lägg till"
+      ],
+      "Aggregate": [
+        "Aggregera"
+      ],
+      "Cancel": [
+        "Avbryt"
+      ],
+      "Chart editor": [
+        "Diagramredigerare"
+      ],
+      "Chart title": [
+        "Diagramrubrik"
+      ],
+      "Chart type": [
+        "Diagramtyp"
+      ],
+      "Enter title": [
+        "Ange rubrik"
+      ],
+      "Horizontal axis title": [
+        "Horisontell axelrubrik"
+      ],
+      "Name": [
+        "Namn"
+      ],
+      "Range": [
+        "Intervall"
+      ],
+      "Save": [
+        "Spara"
+      ],
+      "Select a range": [
+        "Välj ett intervall"
+      ],
+      "Series": [
+        "Serier"
+      ],
+      "Show data in hidden rows and columns": [
+        "Visa data i dolda rader och kolumner"
+      ],
+      "Value": [
+        "Värde"
+      ],
+      "Vertical axis title": [
+        "Vertikalt axelrubrik"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar conditional format dialog": {
+      "Add another range": [
+        "Lägg till ett annat intervall"
+      ],
+      "Add another rule": [
+        "Lägg till en annan regel"
+      ],
+      "Add rule": [
+        "Lägg till regel"
+      ],
+      "Apply to range": [
+        "Tillämpa på intervall"
+      ],
+      "Cancel": [
+        "Avbryt"
+      ],
+      "Close": [
+        "Stäng"
+      ],
+      "Color scale": [
+        "Färgskala"
+      ],
+      "Conditional formatting": [
+        "Villkorlig formatering"
+      ],
+      "Delete range": [
+        "Ta bort intervall"
+      ],
+      "Delete rule": [
+        "Ta bort regel"
+      ],
+      "Enter a formula": [
+        "Ange en formel"
+      ],
+      "Enter value": [
+        "Ange värde"
+      ],
+      "Format rules": [
+        "Formateringsregler"
+      ],
+      "Format style": [
+        "Formatstil"
+      ],
+      "Max point": [
+        "Maxpoäng"
+      ],
+      "Max value": [
+        "Maximalt värde"
+      ],
+      "Mid point": [
+        "Mittpunkt"
+      ],
+      "Min value": [
+        "Minsta värde"
+      ],
+      "None": [
+        "Ingen"
+      ],
+      "Number": [
+        "Nummer"
+      ],
+      "Preview": [
+        "Förhandsgranska"
+      ],
+      "Save": [
+        "Spara"
+      ],
+      "Select a range": [
+        "Välj ett intervall"
+      ],
+      "Single color": [
+        "En färg"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar custom currency format dialog": {
+      "Apply": [
+        "Tillämpa"
+      ],
+      "Apply to create a custom currency": [
+        "Tillämpa för att skapa en anpassad valuta"
+      ],
+      "Cancel": [
+        "Avbryt"
+      ],
+      "Currency symbol": [
+        "Valutasymbol"
+      ],
+      "Custom currencies": [
+        "Anpassade valutor"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar data validation dialog": {
+      "Add another named range": [
+        "Lägg till ett annat namngivet intervall"
+      ],
+      "Add another range": [
+        "Lägg till ett annat intervall"
+      ],
+      "Add named range": [
+        "Lägg till namngivet intervall"
+      ],
+      "Allow blanks": [
+        "Tillåt tomma"
+      ],
+      "Apply to range": [
+        "Tillämpa på intervall"
+      ],
+      "Cancel": [
+        "Avbryt"
+      ],
+      "Data validation": [
+        "Datavalidering"
+      ],
+      "Delete data validation rule": [
+        "Ta bort datavalideringsregel"
+      ],
+      "Enter a formula": [
+        "Ange en formel"
+      ],
+      "Enter value": [
+        "Ange värde"
+      ],
+      "Formula": [
+        "Formel"
+      ],
+      "Save": [
+        "Spara"
+      ],
+      "Select a range": [
+        "Välj ett intervall"
+      ],
+      "Validation rules": [
+        "Valideringsregler"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar dialog": {
+      "Close": [
+        "Stäng"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar named ranges dialog": {
+      "Add another named range": [
+        "Lägg till ett annat namngivet intervall"
+      ],
+      "Add named range": [
+        "Lägg till namngivet intervall"
+      ],
+      "Apply to range": [
+        "Tillämpa på intervall"
+      ],
+      "Cancel": [
+        "Avbryt"
+      ],
+      "Delete named range": [
+        "Ta bort namngivet intervall"
+      ],
+      "Enter a formula": [
+        "Ange en formel"
+      ],
+      "Enter text or formula": [
+        "Ange text eller formel"
+      ],
+      "Name": [
+        "Namn"
+      ],
+      "Name should not contain spaces": [
+        "Namn får inte innehålla mellanslag"
+      ],
+      "Named Ranges": [
+        "Namngivna intervall"
+      ],
+      "Range": [
+        "Intervall"
+      ],
+      "Save": [
+        "Spara"
+      ],
+      "Text or formula": [
+        "Text eller formel"
+      ],
+      "Type": [
+        "Typ"
+      ]
+    },
+    "sheets_2025:Spreadsheet sidebar table editor dialog": {
+      "Cancel": [
+        "Avbryt"
+      ],
+      "Edit table": [
+        "Redigera tabell"
+      ],
+      "More settings": [
+        "Fler inställningar"
+      ],
+      "Save": [
+        "Spara"
+      ],
+      "Select a range": [
+        "Välj ett intervall"
+      ],
+      "Show filter button": [
+        "Visa filterknapp"
+      ],
+      "Table title": [
+        "Tabellrubrik"
       ]
     }
   }
