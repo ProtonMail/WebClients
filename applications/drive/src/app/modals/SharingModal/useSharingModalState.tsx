@@ -10,6 +10,7 @@ import {
     MemberRole,
     type NodeEntity,
     NodeType,
+    NonProtonInvitationState,
     type ShareNodeSettings,
     type ShareResult,
     splitInvitationUid,
@@ -266,7 +267,23 @@ export const useSharingModalState = ({
             try {
                 const sharingResult = await drive.getSharingInfo(nodeUid);
                 if (sharingResult) {
-                    setSharingInfo(sharingResult);
+                    // TODO: This is temporary fix until we have proper way to convert invitation in background
+                    const protonInvitations = [...sharingResult.protonInvitations];
+                    let nonProtonInvitations = [...sharingResult.nonProtonInvitations];
+                    for await (const nonProtonInvitation of sharingResult.nonProtonInvitations) {
+                        try {
+                            if (nonProtonInvitation.state === NonProtonInvitationState.UserRegistered) {
+                                const invitation = await drive.convertNonProtonInvitation(nodeUid, nonProtonInvitation);
+                                protonInvitations.push(invitation);
+                                nonProtonInvitations = nonProtonInvitations.filter(
+                                    (item) => item.uid !== nonProtonInvitation.uid
+                                );
+                            }
+                        } catch (e) {
+                            handleSdkError(e);
+                        }
+                    }
+                    setSharingInfo({ ...sharingResult, protonInvitations, nonProtonInvitations });
                 }
             } catch (e) {
                 handleSdkError(e, { fallbackMessage: c('Error').t`Failed to fetch sharing info`, extra: { nodeUid } });

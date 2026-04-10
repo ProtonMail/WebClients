@@ -81,7 +81,7 @@ export function useAccount(): ProtonDriveAccount {
         return ownAddresses;
     };
 
-    const getPublicKeys = async (email: string): Promise<PublicKey[]> => {
+    const getPublicKeys = async (email: string, forceRefresh?: boolean): Promise<PublicKey[]> => {
         if (!authentication.getUID()) {
             return [];
         }
@@ -111,9 +111,11 @@ export function useAccount(): ProtonDriveAccount {
             }
         } catch {}
 
-        const cachedKeys = cachedPublicKeys.current.get(email);
-        if (cachedKeys !== undefined) {
-            return [...cachedKeys, ...disabledKeys];
+        if (!forceRefresh) {
+            const cachedKeys = cachedPublicKeys.current.get(email);
+            if (cachedKeys !== undefined) {
+                return [...cachedKeys, ...disabledKeys];
+            }
         }
 
         const response = await api<{
