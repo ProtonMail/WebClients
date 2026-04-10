@@ -7,7 +7,6 @@ import useModals from '@proton/components/hooks/useModals';
 import {
     type ADDON_NAMES,
     type AvailablePaymentMethod,
-    type BillingAddress,
     type ChargeablePaymentParameters,
     type ChargebeeIframeEvents,
     type ChargebeeIframeHandles,
@@ -27,6 +26,7 @@ import {
     type SubscriptionEstimation,
     SubscriptionMode,
 } from '@proton/payments';
+import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import type { PaymentStage } from '@proton/payments/telemetry/shared-checkout-telemetry';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';

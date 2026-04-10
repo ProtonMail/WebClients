@@ -29,7 +29,7 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import useUserVPN from '@proton/components/hooks/useUserVPN';
 import useVPNLogicals from '@proton/components/hooks/useVPNLogicals';
 import { TextAreaTwo } from '@proton/components/index';
-import { getCountryOptions, getLocalizedCountryByAbbr } from '@proton/payments';
+import { getCountryOptions, getLocalizedCountryByAbbr } from '@proton/payments/core/countries';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { readableTime } from '@proton/shared/lib/helpers/time';
 import type { Logical } from '@proton/shared/lib/vpn/Logical';

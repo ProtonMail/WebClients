@@ -1,6 +1,5 @@
 import { createPreAuthKTVerifier } from '@proton/key-transparency/shared';
 import {
-    type BillingAddress,
     type Currency,
     type Cycle,
     type ExtendedTokenPayment,
@@ -12,6 +11,7 @@ import {
     hasFreePlanIDs,
 } from '@proton/payments';
 import { createPaymentSubscription } from '@proton/payments/core/api/createPaymentSubscription';
+import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { auth } from '@proton/shared/lib/api/auth';

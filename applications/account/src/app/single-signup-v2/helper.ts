@@ -3,7 +3,6 @@ import isDeepEqual from 'lodash/isEqual';
 import { canBuyPassLifetime } from '@proton/components/containers/payments/subscription/subscriptionEligbility';
 import {
     type ADDON_NAMES,
-    type BillingAddress,
     COUPON_CODES,
     CYCLE,
     type Currency,
@@ -47,6 +46,7 @@ import {
     isValidPlanName,
     switchPlan,
 } from '@proton/payments';
+import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import { VatReverseChargeNotSupportedError } from '@proton/payments/core/errors';
 import { getAutoCoupon } from '@proton/payments/core/subscription/helpers';

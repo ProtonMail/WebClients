@@ -6,7 +6,6 @@ import type {
     AmountAndCurrency,
     ApplePayModalHandles,
     AvailablePaymentMethod,
-    BillingAddress,
     ChargeablePaymentParameters,
     ChargebeeIframeEvents,
     ChargebeeIframeHandles,
@@ -39,6 +38,7 @@ import {
     useSepaCurrencyOverride,
 } from '@proton/payments';
 import { createPaymentSubscription } from '@proton/payments/core/api/createPaymentSubscription';
+import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { APP_NAMES } from '@proton/shared/lib/constants';

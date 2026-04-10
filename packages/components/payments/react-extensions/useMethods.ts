@@ -4,7 +4,6 @@ import { useGetPaymentStatus } from '@proton/account/paymentStatus/hooks';
 import {
     type ADDON_NAMES,
     type AvailablePaymentMethod,
-    type BillingAddress,
     type Currency,
     type FreeSubscription,
     PAYMENT_METHOD_TYPES,
@@ -25,6 +24,7 @@ import {
     isSavedPaymentMethodExternal,
     isSavedPaymentMethodInternal,
 } from '@proton/payments';
+import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import type { Api, User } from '@proton/shared/lib/interfaces';
 
 export type OnMethodChangedHandler = (method: AvailablePaymentMethod) => void;

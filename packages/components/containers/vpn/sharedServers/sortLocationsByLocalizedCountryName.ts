@@ -1,6 +1,5 @@
 import type { SharedServerLocation } from '@proton/components/containers/vpn/sharedServers/api';
-import type { CountryOptions } from '@proton/payments';
-import { getLocalizedCountryByAbbr } from '@proton/payments';
+import { type CountryOptions, getLocalizedCountryByAbbr } from '@proton/payments/core/countries';
 
 export function sortLocationsByLocalizedCountryName(locations: SharedServerLocation[], countryOptions: CountryOptions) {
     const countryMap = new Map<string, { localizedName: string; cities: Set<string> }>();

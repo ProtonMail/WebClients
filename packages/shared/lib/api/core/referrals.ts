@@ -1,4 +1,5 @@
-import type { BillingAddress, CYCLE, Currency, PLANS } from '@proton/payments';
+import type { CYCLE, Currency, PLANS } from '@proton/payments';
+import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
 
 import type { ReferralData } from '../../interfaces';
 
