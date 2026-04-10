@@ -4235,6 +4235,16 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Você já criou 10 aliases. Obtenha aliases ilimitados e 500 GB de armazenamento com ${ BRAND_NAME } Unlimited."
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "E-mails enviados para ${ connectedAddressText } agora serão exibidos em ${ MAIL_APP_NAME }."
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "Para conectar até ${ MAX_SYNC_PAID_USER } endereço do Gmail, faça o upgrade para o plano ${ planName }.",
+        "Para conectar até ${ MAX_SYNC_PAID_USER } endereços do Gmail, faça o upgrade para o plano ${ planName }."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Não podemos mais acessar o ${ boldEmails }."
       ]
     },
     "description": {
@@ -5179,6 +5189,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "A sua pesquisa correspondeu a muitos resultados. Limite sua busca e tente novamente."
+      ],
+      "Company name or personal name is required": [
+        "É necessário informar o nome da empresa ou o nome pessoal"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Ocorreu um erro ao buscar os domínios disponíveis"
       ]
     },
     "error": {
@@ -10002,6 +10018,9 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Select which Gmail address to connect": [
+        "Selecione o endereço do Gmail que deseja conectar"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11892,6 +11911,9 @@
       ],
       "Some popular services": [
         "Alguns serviços populares"
+      ],
+      "Bring your emails into ${ MAIL_APP_NAME }": [
+        "Traga seus e-mails para o ${ MAIL_APP_NAME }"
       ]
     },
     "Onboarding modal": {
@@ -12729,6 +12751,9 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Anything you'd like us to know": [
+        "Algo que você gostaria que soubéssemos?"
       ]
     },
     "Placeholder for contact group name": {
