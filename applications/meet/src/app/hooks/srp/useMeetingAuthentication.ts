@@ -61,18 +61,29 @@ export const useMeetingAuthentication = () => {
         [getSessionToken, getMeetingInfo]
     );
 
-    const getAccessDetails = useCallback(async ({ displayName, token }: { displayName: string; token: string }) => {
-        try {
-            const data = await getAccessToken(token, displayName);
-            return {
-                accessToken: data.AccessToken,
-                websocketUrl: data.WebsocketUrl.replace('/rtc', ''),
-            };
-        } catch (error: any) {
-            reportMeetError('Failed to get access details', error);
-            throw error;
-        }
-    }, []);
+    const getAccessDetails = useCallback(
+        async ({
+            displayName,
+            token,
+            encryptedDisplayName,
+        }: {
+            displayName: string;
+            token: string;
+            encryptedDisplayName: string;
+        }) => {
+            try {
+                const data = await getAccessToken(token, displayName, encryptedDisplayName);
+                return {
+                    accessToken: data.AccessToken,
+                    websocketUrl: data.WebsocketUrl.replace('/rtc', ''),
+                };
+            } catch (error: any) {
+                reportMeetError('Failed to get access details', error);
+                throw error;
+            }
+        },
+        [getAccessToken, reportMeetError]
+    );
 
     return { getMeetingDetails, getAccessDetails, initHandshake, getMeetingInfo };
 };

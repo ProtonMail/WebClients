@@ -8,7 +8,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
-import { selectMaxParticipants, selectParticipantNameMap } from '@proton/meet/store/slices/meetingInfo';
+import { selectMaxParticipants, selectParticipantDecryptedNameMap } from '@proton/meet/store/slices/meetingInfo';
 import { selectParticipantsWithDisabledVideos } from '@proton/meet/store/slices/settings';
 import { selectSortedParticipantIdentities } from '@proton/meet/store/slices/sortedParticipantsSlice';
 import { MeetingSideBars, selectSideBarState, toggleSideBarState } from '@proton/meet/store/slices/uiStateSlice';
@@ -65,7 +65,7 @@ export const ParticipantList = () => {
         .map((identity) => participantsMap.get(identity))
         .filter(isTruthy);
 
-    const participantNameMap = useMeetSelector(selectParticipantNameMap);
+    const participantDecryptedNameMap = useMeetSelector(selectParticipantDecryptedNameMap);
 
     const maxParticipants = useMeetSelector(selectMaxParticipants);
     const dispatch = useMeetDispatch();
@@ -78,7 +78,9 @@ export const ParticipantList = () => {
         !isSearchOn || !searchExpression
             ? updatedParticipantsWithSorting
             : updatedParticipantsWithSorting.filter((participant) => {
-                  return participantNameMap[participant.identity]?.toLowerCase().includes(lowerCaseSearchExpression);
+                  return participantDecryptedNameMap[participant.identity]
+                      ?.toLowerCase()
+                      .includes(lowerCaseSearchExpression);
               });
 
     if (!sideBarState[MeetingSideBars.Participants]) {

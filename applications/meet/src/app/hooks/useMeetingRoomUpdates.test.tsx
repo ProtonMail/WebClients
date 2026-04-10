@@ -38,6 +38,10 @@ const mockParticipantMap = {
     },
 };
 
+const mockParticipantNameMap = {
+    test: 'test',
+};
+
 const createMockStore = (overrides?: { chatMessages?: MeetChatMessage[]; events?: ParticipantEventRecord[] }) => {
     return configureStore({
         reducer: {
@@ -60,6 +64,7 @@ const createMockStore = (overrides?: { chatMessages?: MeetChatMessage[]; events?
             meetingInfo: {
                 ...initialMeetingInfoState,
                 participantsMap: mockParticipantMap,
+                participantDecryptedNameMap: mockParticipantNameMap,
             },
         },
     });

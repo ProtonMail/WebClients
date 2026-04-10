@@ -2,19 +2,22 @@ import { useCallback, useEffect, useRef } from 'react';
 
 import { useLocalParticipant, useRoomContext } from '@livekit/components-react';
 import type { Participant } from 'livekit-client';
+import { c } from 'ttag';
 
 import useApi from '@proton/components/hooks/useApi';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import {
+    mergeParticipantDecryptedNameMap,
     mergeParticipantsMap,
     removeParticipantFromMap,
     resetParticipantMaps,
-    selectParticipantNameMap,
+    selectParticipantDecryptedNameMap,
     selectParticipantsMap,
     setIsFetchingParticipants,
     setParticipantAdmin,
 } from '@proton/meet/store/slices/meetingInfo';
 import type { ParticipantEntity } from '@proton/meet/types/types';
+import { decryptDisplayNameWithKey } from '@proton/meet/utils/cryptoUtils';
 import { queryParticipants, queryParticipantsCount } from '@proton/shared/lib/api/meet';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -22,13 +25,19 @@ const FETCH_TIME_CONSTRAINT_MS = 5000;
 const PARTICIPANT_COUNT_THRESHOLD = 10;
 const REFRESH_CHECK_INTERVAL_MS = 30000;
 
-export const useParticipantNameMap = (meetingLinkName: string) => {
+export const useParticipantNameMap = (meetingLinkName: string, decryptionKey?: CryptoKey | null) => {
     const room = useRoomContext();
     const { localParticipant } = useLocalParticipant();
 
     const dispatch = useMeetDispatch();
-    const participantNameMap = useMeetSelector(selectParticipantNameMap);
+
     const participantsMap = useMeetSelector(selectParticipantsMap);
+    const participantsMapRef = useRef(participantsMap);
+    participantsMapRef.current = participantsMap;
+
+    const participantDecryptedNameMap = useMeetSelector(selectParticipantDecryptedNameMap);
+    const participantDecryptedNameMapRef = useRef(participantDecryptedNameMap);
+    participantDecryptedNameMapRef.current = participantDecryptedNameMap;
 
     const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -47,11 +56,39 @@ export const useParticipantNameMap = (meetingLinkName: string) => {
 
             const participants = response.Participants;
 
+            const resolvedNames = await Promise.all(
+                participants.map(async (participant) => {
+                    // Skip if already resolved, unless we can now decrypt an encrypted name
+                    // (e.g. session key wasn't available on a previous fetch)
+                    const cached = participantDecryptedNameMapRef.current[participant.ParticipantUUID];
+                    const displayName = participant.DisplayName ?? c('Display name').t`Loading…`;
+                    // Only re-decrypt if the cached value is still the unencrypted fallback
+                    if (cached && cached !== displayName) {
+                        return cached;
+                    }
+                    if (decryptionKey && participant.EncryptedDisplayName) {
+                        try {
+                            return await decryptDisplayNameWithKey(decryptionKey, participant.EncryptedDisplayName);
+                        } catch {
+                            return displayName;
+                        }
+                    }
+                    return displayName;
+                })
+            );
+
             dispatch(setIsFetchingParticipants(false));
 
             dispatch(
                 mergeParticipantsMap(
                     Object.fromEntries(participants.map((participant) => [participant.ParticipantUUID, participant]))
+                )
+            );
+            dispatch(
+                mergeParticipantDecryptedNameMap(
+                    Object.fromEntries(
+                        participants.map((participant, i) => [participant.ParticipantUUID, resolvedNames[i]])
+                    )
                 )
             );
 
@@ -60,7 +97,7 @@ export const useParticipantNameMap = (meetingLinkName: string) => {
 
             lastFetchTimestamp.current = Date.now();
         },
-        [api, dispatch]
+        [api, dispatch, decryptionKey]
     );
 
     const getParticipants = useCallback(
@@ -164,7 +201,9 @@ export const useParticipantNameMap = (meetingLinkName: string) => {
                 .filter(isTruthy) as string[];
 
             const hasMissingEntry = remoteParticipantIdentities.some((identity) => {
-                return !(identity in participantNameMap) || !(identity in participantsMap);
+                return (
+                    !(identity in participantDecryptedNameMapRef.current) || !(identity in participantsMapRef.current)
+                );
             });
 
             if (hasMissingEntry) {
@@ -173,10 +212,10 @@ export const useParticipantNameMap = (meetingLinkName: string) => {
         }, REFRESH_CHECK_INTERVAL_MS);
 
         return () => clearInterval(interval);
-    }, [room, meetingLinkName, participantNameMap, participantsMap, getParticipants]);
+    }, [room, meetingLinkName, getParticipants]);
 
     return {
-        participantNameMap,
+        participantDecryptedNameMap,
         getParticipants,
         participantsMap,
         resetParticipantNameMap,
