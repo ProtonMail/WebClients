@@ -3,19 +3,15 @@ import { useUser } from '@proton/account/user/hooks';
 import { useUserKeys } from '@proton/account/userKeys/hooks';
 import { getIsRecoveryFileAvailable } from '@proton/shared/lib/recoveryFile/recoveryFile';
 
-import useConfig from '../useConfig';
-
 const useIsRecoveryFileAvailable = () => {
     const [user, loadingUser] = useUser();
     const [addresses = [], loadingAddresses] = useAddresses();
     const [userKeys = [], loadingUserKeys] = useUserKeys();
-    const { APP_NAME } = useConfig();
 
     const isRecoveryFileAvailable = getIsRecoveryFileAvailable({
         user,
         addresses,
         userKeys,
-        appName: APP_NAME,
     });
 
     return [isRecoveryFileAvailable, loadingUserKeys || loadingAddresses || loadingUser] as const;
