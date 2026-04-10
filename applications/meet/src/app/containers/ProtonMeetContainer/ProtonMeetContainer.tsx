@@ -23,6 +23,11 @@ import {
 } from '@proton/meet/store/slices/uiStateSlice';
 import { UpsellModalTypes } from '@proton/meet/types/types';
 import type { KeyRotationLog, MLSGroupState } from '@proton/meet/types/types';
+import {
+    decryptSessionKey,
+    deriveEncryptionKeyFromSessionKey,
+    encryptDisplayNameWithKey,
+} from '@proton/meet/utils/cryptoUtils';
 import { getMeetingLink } from '@proton/meet/utils/getMeetingLink';
 import { sanitizeMessage } from '@proton/sanitize/purify';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -32,6 +37,7 @@ import { isWebRtcSupported } from '@proton/shared/lib/helpers/isWebRtcSupported'
 import { wait } from '@proton/shared/lib/helpers/promise';
 import { getItem } from '@proton/shared/lib/helpers/storage';
 import { CustomPasswordState } from '@proton/shared/lib/interfaces/Meet';
+import type { MeetingInfoResponse } from '@proton/shared/lib/interfaces/Meet';
 import type { UserModel } from '@proton/shared/lib/interfaces/User';
 import { useFlag } from '@proton/unleash/useFlag';
 
@@ -328,15 +334,16 @@ export const ProtonMeetContainer = ({
 
     const liveKitConnectionStateRef = useRef<ConnectionState | null>(null);
     const accessTokenRef = useRef<string | null>(null);
+    const [decryptionKey, setDecryptionKey] = useState<CryptoKey | null>(null);
 
     const {
         getParticipants,
-        participantNameMap,
+        participantDecryptedNameMap,
         participantsMap,
         resetParticipantNameMap,
         updateAdminParticipant,
         getQueryParticipantsCount,
-    } = useParticipantNameMap(meetingDetails.meetingId as string);
+    } = useParticipantNameMap(meetingDetails.meetingId as string, decryptionKey);
 
     const {
         stopPiP,
@@ -349,7 +356,7 @@ export const ProtonMeetContainer = ({
         pipCleanup,
     } = usePictureInPicture({
         isDisconnected: connectionLost,
-        participantNameMap,
+        participantDecryptedNameMap,
     });
 
     const joinBlockedRef = useRef(false);
@@ -364,6 +371,20 @@ export const ProtonMeetContainer = ({
     const mlsSetupDone = useRef(false);
 
     const meetingLinkRef = useRef<string | null>(null);
+
+    const meetingInfoRef = useRef<MeetingInfoResponse | null>(null);
+
+    const getCachedMeetingInfo = useCallback(
+        async (meetingToken: string) => {
+            if (meetingInfoRef.current) {
+                return meetingInfoRef.current;
+            }
+            const info = await getMeetingInfo(meetingToken);
+            meetingInfoRef.current = info;
+            return info;
+        },
+        [getMeetingInfo]
+    );
 
     const notifications = useNotifications();
 
@@ -696,10 +717,22 @@ export const ProtonMeetContainer = ({
 
         try {
             const sanitizedParticipantName = sanitizeMessage(displayName);
+            const meetingInfo = await getCachedMeetingInfo(meetingToken);
+            const sessionKey = await decryptSessionKey({
+                encryptedSessionKey: meetingInfo.MeetingInfo.SessionKey,
+                password: meetingPassword,
+                salt: meetingInfo.MeetingInfo.Salt,
+            });
+            const decryptionKey = sessionKey ? await deriveEncryptionKeyFromSessionKey(sessionKey) : null;
+            setDecryptionKey(decryptionKey);
+            const encryptedDisplayName = decryptionKey
+                ? await encryptDisplayNameWithKey(decryptionKey, sanitizedParticipantName)
+                : '';
 
             const { websocketUrl, accessToken } = await getAccessDetails({
                 displayName: sanitizedParticipantName,
                 token: meetingToken,
+                encryptedDisplayName: encryptedDisplayName,
             });
 
             // get participants count from the API so we can know which joinType to use based on the participants count
@@ -938,7 +971,7 @@ export const ProtonMeetContainer = ({
 
             meetingLinkRef.current = getMeetingLink(id, passwordBase);
 
-            const meetingInfo = await getMeetingInfo(id);
+            const meetingInfo = await getCachedMeetingInfo(id);
 
             setMeetingDetails((prev) => ({
                 ...prev,
@@ -1025,7 +1058,7 @@ export const ProtonMeetContainer = ({
             await handleJoin(displayName, meetingToken, urlPassword);
 
             meetingLinkRef.current = getMeetingLink(token, urlPassword);
-            const meetingInfo = await getMeetingInfo(meetingToken);
+            const meetingInfo = await getCachedMeetingInfo(meetingToken);
 
             setMeetingDetails((prev) => ({
                 ...prev,
@@ -1100,6 +1133,8 @@ export const ProtonMeetContainer = ({
         meetingLinkNameRef.current = '';
         void room.disconnect();
         resetParticipantNameMap();
+        meetingInfoRef.current = null;
+        setDecryptionKey(null);
         void wasmApp?.leaveMeeting();
         void stopPiP();
         mlsSetupDone.current = false; // need to set mls again after leave meeting
@@ -1136,6 +1171,8 @@ export const ProtonMeetContainer = ({
         } catch {
         } finally {
             resetParticipantNameMap();
+            meetingInfoRef.current = null;
+            setDecryptionKey(null);
         }
 
         mlsSetupDone.current = false; // need to set mls again after leave meeting
@@ -1167,6 +1204,8 @@ export const ProtonMeetContainer = ({
         instantMeetingRef.current = false;
         meetingLinkNameRef.current = '';
         resetParticipantNameMap();
+        meetingInfoRef.current = null;
+        setDecryptionKey(null);
         mlsSetupDone.current = false; // need to set mls again after leave meeting
 
         // Cleanup WASM polling interval to prevent MLS errors after leaving

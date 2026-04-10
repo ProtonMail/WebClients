@@ -86,7 +86,7 @@ export const useMeetSrp = () => {
     );
 
     const getAccessToken = useCallback(
-        async (meetingLinkName: string, displayName: string) => {
+        async (meetingLinkName: string, displayName: string, encryptedDisplayName: string) => {
             const result = {
                 AccessToken: '',
                 WebsocketUrl: '',
@@ -97,6 +97,7 @@ export const useMeetSrp = () => {
                     ...queryMeetAccessToken(meetingLinkName),
                     data: {
                         DisplayName: displayName,
+                        EncryptedDisplayName: encryptedDisplayName,
                     },
                 });
 

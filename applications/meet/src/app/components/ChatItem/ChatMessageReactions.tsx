@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectChatMessageReactions } from '@proton/meet/store/slices/chatAndReactionsSlice';
-import { selectParticipantNameMap } from '@proton/meet/store/slices/meetingInfo';
+import { selectParticipantDecryptedNameMap } from '@proton/meet/store/slices/meetingInfo';
 import clsx from '@proton/utils/clsx';
 
 import './ChatMessageReactions.scss';
@@ -18,7 +18,7 @@ interface ChatMessageReactionsProps {
 
 export const ChatMessageReactions = ({ messageId, onReact }: ChatMessageReactionsProps) => {
     const reactions = useMeetSelector((state) => selectChatMessageReactions(state, messageId));
-    const participantNameMap = useMeetSelector(selectParticipantNameMap);
+    const participantDecryptedNameMap = useMeetSelector(selectParticipantDecryptedNameMap);
     const { localParticipant } = useLocalParticipant();
 
     const entries = Object.entries(reactions);
@@ -39,7 +39,7 @@ export const ChatMessageReactions = ({ messageId, onReact }: ChatMessageReaction
                         {displayedParticipants.map((identity, index) => (
                             <span key={identity}>
                                 {index > 0 && ', '}
-                                <strong>{participantNameMap[identity] ?? identity}</strong>
+                                <strong>{participantDecryptedNameMap[identity] ?? identity}</strong>
                             </span>
                         ))}
                     </span>
