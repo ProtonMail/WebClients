@@ -464,6 +464,9 @@
       "Fit to window": [
         "ウィンドウに合わせる"
       ],
+      "Forgot password?": [
+        "パスワードを忘れましたか？"
+      ],
       "Forgot recovery method?": [
         "回復手順を忘れましたか？"
       ],
@@ -661,6 +664,9 @@
       ],
       "Next page": [
         "次のページ"
+      ],
+      "No": [
+        "いいえ"
       ],
       "OK": [
         "OK"
@@ -1144,6 +1150,9 @@
       ],
       "Wipe": [
         "すべて削除"
+      ],
+      "Yes": [
+        "はい"
       ],
       "Your server will be provisioned in the next days": [
         "サーバーは数日以内にプロビジョニングされます"
@@ -6554,6 +6563,12 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "${ BRAND_NAME } アカウントのメールアドレスまたはユーザー名を入力してください。"
       ],
+      "Enter your own password (as organization admin).": [
+        "(組織管理者としての)パスワードを入力してください。"
+      ],
+      "Enter your own password (as trusted contact).": [
+        "(信頼済みの連絡先としての)パスワードを入力してください。"
+      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "回復用メールアドレスを入力してください。ユーザー名またはメールアドレスを送信します。"
       ],
@@ -9203,6 +9218,12 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "このアカウントとすべてのデータを完全に削除することに同意します。"
       ],
+      "Your password (admin)": [
+        "あなたのパスワード (管理者)"
+      ],
+      "Your password (trusted contact)": [
+        "パスワード (信頼済みの連絡先)"
+      ],
       "ZIP code": [
         "郵便番号"
       ]
@@ -9707,9 +9728,6 @@
       ],
       "60 minutes per meeting": [
         "ミーティング1回あたり60分"
-      ],
-      "Appointment scheduling": [
-        "日程調整ツール"
       ],
       "Booking pages": [
         "予約ページ"
@@ -13750,6 +13768,9 @@
       "Share the confirmation code with your administrator": [
         "管理者に確認コードを共有してください"
       ],
+      "Sign in": [
+        "サインイン"
+      ],
       "Sign in to your organization": [
         "組織にサインインする"
       ],
@@ -13809,6 +13830,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "組織にユーザーを追加するためには、手動で新しいユーザーを作成する必要があります。"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "サードパーティのSSOプロバイダにリダイレクトされます"
       ],
       "Your SSO configuration will be deleted.": [
         "SSO構成が削除されます"
@@ -15275,6 +15299,9 @@
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "${ BRAND_NAME } アカウントの詳細を入力して ${ app } ベータ プログラムに参加してください"
       ],
+      "Enter your password": [
+        "パスワードを入力してください"
+      ],
       "Error": [
         "エラー"
       ],
@@ -16355,9 +16382,6 @@
       ],
       "Create password instead": [
         "代わりにパスワードを作成"
-      ],
-      "Create user": [
-        "ユーザー作成"
       ],
       "Email": [
         "メール"

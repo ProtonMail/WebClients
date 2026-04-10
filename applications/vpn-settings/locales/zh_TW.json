@@ -437,6 +437,9 @@
       "Fit to window": [
         "貼齊視窗邊沿"
       ],
+      "Forgot password?": [
+        "忘記密碼?"
+      ],
       "Forgot recovery method?": [
         "忘記復原方法?"
       ],
@@ -622,6 +625,9 @@
       ],
       "Next page": [
         "下一頁"
+      ],
+      "No": [
+        "否"
       ],
       "OK": [
         "好"
@@ -1072,6 +1078,9 @@
       ],
       "Wipe": [
         "清除"
+      ],
+      "Yes": [
+        "是"
       ],
       "Your server will be provisioned in the next days": [
         "您的伺服器將在接下來的幾天內設定完成"
@@ -5733,6 +5742,9 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "輸入您的 ${ BRAND_NAME } 帳號電郵位址或使用者名稱。"
       ],
+      "Enter your own password (as organization admin).": [
+        "輸入您的個人密碼 (組織機構管理員身份)。"
+      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "請輸入您的復原電郵位址，我們將向您發送您的使用者名稱或電郵位址。"
       ],
@@ -8059,6 +8071,12 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "是的，我要永久刪除此帳號以及當中所有的資料。"
       ],
+      "Your password (admin)": [
+        "您的密碼（管理員）"
+      ],
+      "Your password (trusted contact)": [
+        "您的密碼 (信任的內容)"
+      ],
       "ZIP code": [
         "郵遞區號"
       ]
@@ -8507,9 +8525,6 @@
       ],
       "60 minutes per meeting": [
         "60 分鐘會議"
-      ],
-      "Appointment scheduling": [
-        "預定排定中"
       ],
       "Booking pages": [
         "預定頁面"
@@ -11919,6 +11934,9 @@
       "Share the confirmation code with your administrator": [
         "與您的管理員分享確認碼"
       ],
+      "Sign in": [
+        "登入"
+      ],
       "Sign in to your organization": [
         "登入您的組織"
       ],
@@ -11963,6 +11981,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "您將需要手動建立新使用者以便重新加入至您的組織中。"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "您將被重新導向至您的第三方單一登入提供者。"
       ],
       "Your SSO configuration will be deleted.": [
         "您的單一登入配置將被刪除。"
@@ -13316,6 +13337,9 @@
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "輸入您的 ${ BRAND_NAME } 帳號詳細資訊以加入 ${ app } 體驗版方案"
       ],
+      "Enter your password": [
+        "輸入您的密碼"
+      ],
       "Error": [
         "錯誤"
       ],
@@ -14144,9 +14168,6 @@
       ],
       "Create password": [
         "創建密碼"
-      ],
-      "Create user": [
-        "創建使用者"
       ],
       "Email": [
         "電子信箱"

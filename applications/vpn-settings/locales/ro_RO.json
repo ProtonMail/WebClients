@@ -485,6 +485,9 @@
       "Fit to window": [
         "Potrivire la fereastră"
       ],
+      "Forgot password?": [
+        "Ați uitat parola?"
+      ],
       "Forgot recovery method?": [
         "Ați uitat metoda de recuperare?"
       ],
@@ -691,6 +694,9 @@
       ],
       "Next page": [
         "Pagina următoare"
+      ],
+      "No": [
+        "Nu"
       ],
       "OK": [
         "OK"
@@ -1192,6 +1198,9 @@
       ],
       "Wipe": [
         "Golire"
+      ],
+      "Yes": [
+        "Da"
       ],
       "Your server will be provisioned in the next days": [
         "Serverul vă va fi furnizat în următoarele zile."
@@ -6537,12 +6546,6 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Un alias de e-mail funcționează ca o adresă de e-mail, dar reduce mesajele nedorite și vă păstrează adresa de e-mail și identitatea reală ascunse."
       ],
-      "An email with a verification code was just sent to ${ recoveryEmailElement }. If you can’t find the message in your inbox, please check your spam folder.": [
-        "Un mesaj cu un cod de verificare a fost trimis la ${ recoveryEmailElement }. Dacă nu găsiți mesajul în mesajele primite, verificați și în folderul de mesaje nedorite."
-      ],
-      "An SMS with a verification code was just sent to ${ recoveryPhoneElement }.": [
-        "Un SMS cu un cod de verificare tocmai a fost trimis la ${ recoveryPhoneElement }."
-      ],
       "and": [
         "și"
       ],
@@ -7002,6 +7005,12 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Introduceți adresa de e-mail sau numele de utilizator al contului ${ BRAND_NAME }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Introduceți parola (ca administrator al organizației)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Introduceți parola (ca și contact aprobat)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Introduceți adresa de e-mail de recuperare și veți primi numele de utilizator sau adresa de e-mail."
@@ -9814,6 +9823,12 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Da, vreau să șterg definitiv acest cont și toate datele sale."
       ],
+      "Your password (admin)": [
+        "Parola dvs. (administrator)"
+      ],
+      "Your password (trusted contact)": [
+        "Parola dvs. (contact aprobat)"
+      ],
       "ZIP code": [
         "Cod poștal"
       ]
@@ -10355,9 +10370,6 @@
       ],
       "60 minutes per meeting": [
         "60 de minute per întâlnire"
-      ],
-      "Appointment scheduling": [
-        "Planificare întâlniri"
       ],
       "Booking pages": [
         "Pagini de rezervare"
@@ -14588,6 +14600,9 @@
       "Share the confirmation code with your administrator": [
         "Partajați codul de confirmare cu administratorul"
       ],
+      "Sign in": [
+        "Conectare"
+      ],
       "Sign in to your organization": [
         "Autentificare în organizație"
       ],
@@ -14647,6 +14662,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Va trebui să creați utilizatorii manual pentru a-i adăuga în organizație."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Pagina va fi redirecționată spre furnizorul autentificării unice (SSO)."
       ],
       "Your SSO configuration will be deleted.": [
         "Configurarea pentru autentificarea unică (SSO) va fi ștearsă."
@@ -16224,6 +16242,9 @@
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Introduceți detaliile contului ${ BRAND_NAME } pentru a vă alătura la programul beta al ${ app }"
       ],
+      "Enter your password": [
+        "Introduceți parola"
+      ],
       "Error": [
         "Eroare"
       ],
@@ -17372,9 +17393,6 @@
       ],
       "Create password instead": [
         "Creați în schimb o parolă"
-      ],
-      "Create user": [
-        "Creare utilizator"
       ],
       "Email": [
         "E-mail"
