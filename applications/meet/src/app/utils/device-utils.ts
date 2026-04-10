@@ -8,7 +8,7 @@ export const filterDevices = (devices: MediaDeviceInfo[]) => {
         .filter(
             (d) =>
                 !d.label?.toLocaleLowerCase()?.includes('zoom') &&
-                !d.label?.toLocaleLowerCase()?.includes('virtual') &&
+                (!d.label?.toLocaleLowerCase()?.includes('virtual') || d.label?.toLocaleLowerCase()?.includes('obs')) &&
                 d.deviceId !== DEFAULT_DEVICE_ID &&
                 !d.label?.toLocaleLowerCase()?.startsWith('monitor of')
         )
