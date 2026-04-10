@@ -210,6 +210,13 @@ export const ChatMessage = ({ onMessageSend }: ChatMessageProps) => {
                 divRef={floating}
                 isOpen={emojiPickerOpen}
                 style={position}
+                onBlur={(e) => {
+                    const next = e.relatedTarget as Node | null;
+                    if (next && emojiAnchorRef.current?.contains(next)) {
+                        return;
+                    }
+                    setEmojiPickerOpen(false);
+                }}
             >
                 <EmojiPicker
                     autoFocus="true"
