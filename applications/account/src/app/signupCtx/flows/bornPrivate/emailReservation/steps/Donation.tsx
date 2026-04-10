@@ -14,6 +14,7 @@ import type { BillingAddress, Currency, PaymentProcessorHook } from '@proton/pay
 import { getBillingAddressFromPaymentStatus } from '@proton/payments';
 import { getMinDonationAmount } from '@proton/payments/core/amount-limits';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
+import { normalizePostalCode } from '@proton/payments/postal-codes/format';
 import { useTaxCountry } from '@proton/payments/ui';
 import { PayButton } from '@proton/payments/ui/components/PayButton';
 import { usePayments } from '@proton/payments/ui/context/PaymentContext';
@@ -178,7 +179,12 @@ const Donation = ({ formData, onBack, onDonationSuccess }: DonationProps) => {
             paymentToken,
             amount: donationAmount,
             currency: currency,
-            billingAddress: options.billingAddress,
+            billingAddress: {
+                ...options.billingAddress,
+                ZipCode: options.billingAddress.ZipCode
+                    ? normalizePostalCode(options.billingAddress.ZipCode, options.billingAddress.CountryCode)
+                    : null,
+            },
         };
 
         resetFailedRequests();
