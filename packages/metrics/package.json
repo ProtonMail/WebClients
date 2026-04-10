@@ -20,12 +20,12 @@
     },
     "devDependencies": {
         "@proton/eslint-config-proton": "workspace:^",
-        "@types/node": "^24.12.0",
+        "@types/node": "^24.12.2",
         "eslint": "^9.39.4",
         "jest": "^30.3.0",
         "jest-fetch-mock": "^3.0.3",
         "rimraf": "^5.0.10",
-        "ts-jest": "^29.4.6",
+        "ts-jest": "^29.4.9",
         "ts-node": "^10.9.2"
     }
 }
