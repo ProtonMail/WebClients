@@ -2547,6 +2547,10 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Szervezete megköveteli, hogy biztosítsa a ${ PASS_APP_NAME } alkalmazáshoz való hozzáférését"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Egy elem másik tárolóba történő áthelyezése törli a biztonságos hivatkozásokat.",
+        "Az elemek másik tárolóba történő áthelyezése törli a biztonságos hivatkozásokat."
       ]
     },
     "Label": {
@@ -4964,6 +4968,9 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Az előfizetése nem teszi lehetővé több tároló létrehozását. Az összes elem az első tárolóba kerül importálásra. Több tárolóba való importáláshoz váltson nagyobb csomagra."
+      ],
+      "Offline": [
+        "Nincs internetkapcsolat"
       ]
     }
   }

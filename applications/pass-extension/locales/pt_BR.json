@@ -2050,7 +2050,8 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outro cofre apagará seu link seguro."
+        "Movendo um item para outro cofre apagará seu link seguro.",
+        "Movendo item para outro cofre apagará seus links seguros."
       ],
       "Moving items": [
         "Movendo itens"
@@ -5224,6 +5225,9 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "A sua assinatura não permite que você crie múltiplos cofres. Todos os itens serão importados para o seu primeiro cofre. Para importar em múltiplos cofres, atualize a sua assinatura."
+      ],
+      "Offline": [
+        "Off-line"
       ]
     }
   }
