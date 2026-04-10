@@ -485,6 +485,9 @@
       "Fit to window": [
         "Passa till fönster"
       ],
+      "Forgot password?": [
+        "Glömt lösenord?"
+      ],
       "Forgot recovery method?": [
         "Glömt återställningsmetod?"
       ],
@@ -580,6 +583,12 @@
       ],
       "I don't have my key": [
         "Jag har inte min nyckel"
+      ],
+      "I don't have my phrase": [
+        "Jag har inte min fras"
+      ],
+      "I don’t have my backup codes": [
+        "Jag har inte mina reservkoder"
       ],
       "Import": [
         "Importera"
@@ -688,6 +697,9 @@
       ],
       "Next page": [
         "Nästa sida"
+      ],
+      "No": [
+        "Nej"
       ],
       "OK": [
         "OK"
@@ -837,6 +849,9 @@
         "Försök igen"
       ],
       "Return to sign in": [
+        "Tillbaka till inloggning"
+      ],
+      "Return to sign-in": [
         "Tillbaka till inloggning"
       ],
       "Review": [
@@ -1058,6 +1073,9 @@
       "Try another method": [
         "Prova annan metod"
       ],
+      "Try another way": [
+        "Prova annat sätt"
+      ],
       "Try for free": [
         "Prova gratis"
       ],
@@ -1189,6 +1207,9 @@
       ],
       "Wipe": [
         "Rensa"
+      ],
+      "Yes": [
+        "Ja"
       ],
       "Your server will be provisioned in the next days": [
         "Din server kommer att provisioneras under de närmaste dagarna"
@@ -6030,6 +6051,9 @@
         "${ countriesCount } land aktiverat",
         "${ countriesCount } länder aktiverade"
       ],
+      "${ DataLockedText }, but recoverable with your ${ RecoveryContactsLink }:": [
+        "${ DataLockedText }, men återställningsbar med din ${ RecoveryContactsLink }"
+      ],
       "${ discountPercent }% discount": [
         "${ discountPercent } % rabatt"
       ],
@@ -6405,8 +6429,8 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Ett e-postalias fungerar som en e-postadress, men minskar skräppost och håller din faktiska e-postadress och identitet dold."
       ],
-      "An SMS with a verification code was just sent to ${ recoveryPhoneElement }.": [
-        "Ett SMS med en verifieringskod skickades just till ${ recoveryPhoneElement }."
+      "An SMS with a verification code was just sent to ${ phoneNumber }.": [
+        "Ett SMS med en verifieringskod skickades just till ${ phoneNumber }."
       ],
       "and": [
         "och"
@@ -6501,6 +6525,15 @@
       "By leaving now, changes may not be saved": [
         "Genom att lämna nu kan ändringar inte sparas"
       ],
+      "Can you access your active session?": [
+        "Kan du komma åt din aktiva session?"
+      ],
+      "Can you access your active web session in another browser?": [
+        "Kan du komma åt din aktiva webbsession i annan webbläsare?"
+      ],
+      "Can you reach out to your contact?": [
+        "Kan du kontakta din kontakt?"
+      ],
       "Cancel": [
         "Avbryt"
       ],
@@ -6524,6 +6557,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klicka på \"Begär ny kod\" för att få en ny verifieringskod skickad till ${ strong }. Om telefonnumret är felaktigt klickar du på \"Redigera\" för att korrigera det."
+      ],
+      "Click **Request password reset** and follow the prompts.": [
+        "Klicka på **Begär lösenordsåterställning** och följ anvisningarna."
       ],
       "Close this screen to exit.": [
         "Stäng denna skärm för att avsluta."
@@ -6641,6 +6677,9 @@
       ],
       "Data recoverable on this device": [
         "Data återställningsbart på denna enhet"
+      ],
+      "Data recoverable with recovery phrase": [
+        "Data återställningsbar med återställningsfras"
       ],
       "dedicated servers": [
         "dedikerade servrar"
@@ -6833,6 +6872,9 @@
       "Enter new password for user ${ userName }.": [
         "Ange nytt lösenord för användare ${ userName }."
       ],
+      "Enter the 12-word recovery phrase associated with your account.": [
+        "Ange den 12-ord långa återställningsfrasen som är associerat med ditt konto."
+      ],
       "Enter the code from your authenticator app": [
         "Ange koden från din autentiseringsapp"
       ],
@@ -6862,6 +6904,12 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Ange e-postadressen eller användarnamnet för ditt ${ BRAND_NAME }-konto."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Ange ditt eget lösenord (som organisationsadministratör)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Ange ditt eget lösenord (som betrodd kontakt)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Ange din e-postadress för återställning så skickar vi dig ditt användarnamn eller e-postadress."
@@ -6967,6 +7015,9 @@
       ],
       "High Priority": [
         "Hög prioritet"
+      ],
+      "How your emergency contact can change your password for you:": [
+        "Hur din nödkontakt ändra ditt lösenord åt dig:"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Identitetsleverantörens offentliga nyckel för signering av autentiseringspåståenden. Det borde finnas en plats att ladda ner eller kopiera certifikathashet från identitetsleverantören. Klistra in certifikathashet i textrutan."
@@ -7574,6 +7625,9 @@
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Rekommenderas på betrodda enheter. ${ keepMeSignedInLearnMoreLink }"
       ],
+      "Recovery contacts": [
+        "Återställningskontakter"
+      ],
       "Recovery file downloaded": [
         "Återställningsfil nerladdad"
       ],
@@ -7582,6 +7636,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Återställningsinformation kommer finnas kvar på denna enhet om du inte väljer att ta bort den."
+      ],
+      "Recovery phrase": [
+        "Återställningsfras"
       ],
       "Recovery phrase copied to clipboard": [
         "Återställningsfras kopierad till urklipp"
@@ -7618,6 +7675,9 @@
       ],
       "Resend verification email": [
         "Skicka e-postverifiering igen"
+      ],
+      "Resetting your password in your active web session will ensure **your encrypted data will remain accessible** after you change your password.": [
+        "Att återställa ditt lösenord i din aktiva webbsession kommer säkerställa att **din krypterade data förblir tillgänglig** efter du ändrat ditt lösenord."
       ],
       "Restore": [
         "Återställ"
@@ -7657,6 +7717,9 @@
       ],
       "Securing your account": [
         "Säkrar ditt konto"
+      ],
+      "Select a group to view its members and settings.": [
+        "Välj en grupp för att visa dess medlemmar och inställningar."
       ],
       "Select one or multiple user affiliations": [
         "Välj en eller flera användartillhörigheter"
@@ -8098,6 +8161,9 @@
       "Unable to verify recovery file signature. Please contact support.": [
         "Det gick inte att verifiera återställningsfilens signatur. Kontakta support."
       ],
+      "Unfortunately there is no recovery method available for this account.": [
+        "Tyvärr finns det ingen återställningsmetod tillgänglig för detta konto."
+      ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Det finns ingen återställningsmetod sparad för detta konto."
       ],
@@ -8290,6 +8356,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Vi skickar en ny verifieringskod till ${ strong }"
       ],
+      "Web sessions detected:": [
+        "Webb-sessioner upptäckta:"
+      ],
       "Week": [
         "Vecka"
       ],
@@ -8331,6 +8400,9 @@
       ],
       "With ${ AUTHENTICATOR_APP_NAME }, you can:": [
         "Med ${ AUTHENTICATOR_APP_NAME } kan du:"
+      ],
+      "With a ${ boldProfessionalPlan } plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
+        "Med ett ${ boldProfessionalPlan }-paket kan du köpa ${ boldDedicatedServers } för din organisation och ställa in ${ boldGateways } för att kontrollera vilka användare som kan komma åt dem."
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Med en krypterad ${ BRAND_NAME }-adress kan du använda alla ${ BRAND_NAME }-tjänster"
@@ -8551,6 +8623,12 @@
       "Your email will only be used for this one-time verification.": [
         "Din e-post kommer endast användas för denna engångsverifiering."
       ],
+      "Your encrypted data will be locked": [
+        "Dina krypterade data kommer att låsas"
+      ],
+      "your encrypted data will be locked": [
+        "dina krypterade data kommer att låsas"
+      ],
       "Your feedback": [
         "Din feedback"
       ],
@@ -8574,6 +8652,9 @@
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "Ditt nästa faktureringsdatum är ${ renewalTime }. Du kan avbryta när som helst. Kontakta support om du behöver ett omedelbart paketbyte."
+      ],
+      "Your old password": [
+        "Ditt gamla lösenord"
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Din organisation använder enkel inloggning (SSO). Tryck på “Logga in“ för att fortsätta med din SSO-leverantör."
@@ -9119,6 +9200,9 @@
       "Enabled": [
         "Aktiverat"
       ],
+      "Enter code": [
+        "Ange kod"
+      ],
       "Enter name or email address": [
         "Ange namn eller e-postadress"
       ],
@@ -9606,6 +9690,12 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Ja, jag vill permanent ta bort detta konto och alla dess data."
       ],
+      "Your password (admin)": [
+        "Ditt lösenord (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Ditt lösenord (betrodd kontakt)"
+      ],
       "ZIP code": [
         "Postnummer"
       ]
@@ -9752,6 +9842,9 @@
       ],
       "Create an alias": [
         "Skapa ett alias"
+      ],
+      "Details": [
+        "Detaljer"
       ],
       "Don't have access to your 2FA?": [
         "Har du inte åtkomst till din 2FA?"
@@ -14252,6 +14345,9 @@
       "Share the confirmation code with your administrator": [
         "Dela bekräftelsekoden med din administratör"
       ],
+      "Sign in": [
+        "Logga in"
+      ],
       "Sign in to your organization": [
         "Logga in på din organisation"
       ],
@@ -14266,6 +14362,9 @@
       ],
       "Sign-in requested on another device. Was it you?": [
         "Inloggning begärd på annan enhet. Var det du?"
+      ],
+      "Single sign-on may not function correctly without an organization identity. Set an identity to ensure reliable authentication.": [
+        "Enkel inloggning kanske inte fungerar korrekt utan en organisationsidentitet. Ställ in en identitet för att säkerställa tillförlitlig autentisering."
       ],
       "Single sign-on removed": [
         "Enkel inloggning borttagen"
@@ -14308,6 +14407,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Du måste skapa nya användare manuellt för att lägga till dem till din organisation."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Du kommer omdirigeras till din tredjeparts SSO-leverantör."
       ],
       "Your SSO configuration will be deleted.": [
         "Din SSO-konfiguration kommer att tas bort."
@@ -15497,6 +15599,9 @@
       "Apply gift code": [
         "Tillämpa presentkod"
       ],
+      "Are you already signed in to ${ BRAND_NAME } in a browser?": [
+        "Är du redan inloggad på ${ BRAND_NAME } i en webbläsare?"
+      ],
       "Are you sure you want to close the preview?": [
         "Är du säker på att du vill stänga förhandsgranskningen?"
       ],
@@ -15517,6 +15622,12 @@
       ],
       "Bring your Gmail into ${ MAIL_APP_NAME }": [
         "Ta med din Gmail till ${ MAIL_APP_NAME }"
+      ],
+      "Can you access your session in the browser?": [
+        "Kan du komma åt din session i webbläsaren?"
+      ],
+      "Can you reach out to your emergency contacts?": [
+        "Kan du kontakta dina nödkontakter?"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Avsluta ${ MAIL_SHORT_APP_NAME }-prenumeration"
@@ -15619,6 +15730,9 @@
       ],
       "Couldn’t create accounts": [
         "Kunde inte skapa konton"
+      ],
+      "Couldn’t recover your account": [
+        "Kunde inte återställa ditt konto"
       ],
       "Coupon": [
         "Kupong"
@@ -15855,6 +15969,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Ange dina kontodetaljer för ${ BRAND_NAME } för att gå med il ${ app } Beta-program"
+      ],
+      "Enter your password": [
+        "Ange ditt lösenord"
       ],
       "Error": [
         "Fel"
@@ -16128,6 +16245,9 @@
       "Reconnect your account": [
         "Återanslut ditt konto"
       ],
+      "Recover account": [
+        "Återställ konto"
+      ],
       "Recover data": [
         "Återställ data"
       ],
@@ -16357,6 +16477,9 @@
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "Prova ${ AUTHENTICATOR_APP_NAME }"
       ],
+      "Try changing your password in your active web session": [
+        "Försök ändra ditt lösenord i din aktiva webbsession"
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Slå på ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -16425,6 +16548,9 @@
       ],
       "Verification failed": [
         "Verifiering misslyckades"
+      ],
+      "Verify it’s you": [
+        "Verifiera att det är du"
       ],
       "Verifying your card...": [
         "Verifierar ditt kort …"
@@ -16983,11 +17109,11 @@
       "Create password instead": [
         "Skapa lösenord istället"
       ],
-      "Create user": [
-        "Skapa användare"
-      ],
       "Email": [
         "E-post"
+      ],
+      "General": [
+        "Allmänt"
       ],
       "Invitation email": [
         "E-postinbjudan"
@@ -17003,6 +17129,12 @@
       ],
       "Remember to share the user's sign in details with them.": [
         "Kom ihåg att dela användarens inloggningsinformation med dem."
+      ],
+      "Roles and permissions": [
+        "Roller och behörigheter"
+      ],
+      "Save": [
+        "Spara"
       ],
       "Send invite link via email instead": [
         "Skicka inbjudningslänk via e-post istället"

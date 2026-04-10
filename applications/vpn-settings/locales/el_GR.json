@@ -485,6 +485,9 @@
       "Fit to window": [
         "Προσαρμογή στο παράθυρο"
       ],
+      "Forgot password?": [
+        "Ξεχάσατε τον κωδικό πρόσβασης;"
+      ],
       "Forgot recovery method?": [
         "Ξεχάσατε τη μέθοδο ανάκτησης;"
       ],
@@ -580,6 +583,9 @@
       ],
       "I don't have my key": [
         "Δεν έχω το κλειδί μου"
+      ],
+      "I don't have my phrase": [
+        "Δεν έχω τη φράση μου"
       ],
       "I don’t have my backup codes": [
         "Δεν έχω τους εφεδρικούς κωδικούς ασφαλείας μου"
@@ -691,6 +697,9 @@
       ],
       "Next page": [
         "Επόμενη σελίδα"
+      ],
+      "No": [
+        "Όχι"
       ],
       "OK": [
         "ΟΚ"
@@ -841,6 +850,9 @@
       ],
       "Return to sign in": [
         "Επιστροφή στην είσοδο"
+      ],
+      "Return to sign-in": [
+        "Επιστροφή στη σύνδεση"
       ],
       "Review": [
         "Αναθεώρηση"
@@ -1061,6 +1073,9 @@
       "Try another method": [
         "Δοκιμάστε μια άλλη μέθοδο"
       ],
+      "Try another way": [
+        "Δοκιμάστε έναν άλλο τρόπο"
+      ],
       "Try for free": [
         "Δοκιμάστε δωρεάν"
       ],
@@ -1192,6 +1207,9 @@
       ],
       "Wipe": [
         "Εκκαθάριση"
+      ],
+      "Yes": [
+        "Ναι"
       ],
       "Your server will be provisioned in the next days": [
         "Ο διακομιστής σας θα παρασχεθεί τις επόμενες ημέρες"
@@ -6064,6 +6082,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe βοηθός γραφής"
       ],
+      "${ BRAND_NAME } will send a verification code to ${ RedactedPhoneNumber }. Standard message rates may apply.": [
+        "Η ${ BRAND_NAME } θα στείλει έναν κωδικό επαλήθευσης στο ${ RedactedPhoneNumber }. Ενδέχεται να ισχύουν οι τυπικές χρεώσεις μηνυμάτων."
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Η τεχνολογία κρυπτογράφησης του ${ BRAND_NAME } σημαίνει ότι κανείς δεν μπορεί να έχει πρόσβαση στον κωδικό πρόσβασής σας - ούτε καν εμείς."
       ],
@@ -6081,6 +6102,9 @@
       "${ countriesCount } country enabled": [
         "${ countriesCount } χώρα ενεργοποιημένη",
         "${ countriesCount } χώρες ενεργοποιημένες"
+      ],
+      "${ DataLockedText }, but recoverable with your ${ RecoveryContactsLink }:": [
+        "${ DataLockedText }, αλλά ανακτήσιμα με το ${ RecoveryContactsLink }:"
       ],
       "${ discountPercent }% discount": [
         "${ discountPercent }% έκπτωση"
@@ -6463,11 +6487,11 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Ένα ψευδώνυμο ηλεκτρονικού ταχυδρομείου λειτουργεί όπως μια διεύθυνση ηλεκτρονικού ταχυδρομείου, αλλά μειώνει τα ανεπιθύμητα μηνύματα και διατηρεί κρυφή την πραγματική διεύθυνση ηλεκτρονικού ταχυδρομείου και την ταυτότητά σας."
       ],
-      "An email with a verification code was just sent to ${ recoveryEmailElement }. If you can’t find the message in your inbox, please check your spam folder.": [
-        "Ένα μήνυμα ηλεκτρονικού ταχυδρομείου με έναν κωδικό επαλήθευσης μόλις στάλθηκε στο ${ recoveryEmailElement }. Αν δεν μπορείτε να βρείτε το μήνυμα στα εισερχόμενά σας, παρακαλούμε ελέγξτε τον φάκελο ανεπιθύμητης αλληλογραφίας σας."
+      "An email with a verification code was just sent to ${ emailAddress }. If you can’t find the message in your inbox, please check your spam folder.": [
+        "Ένα μήνυμα ηλεκτρονικού ταχυδρομείου με έναν κωδικό επαλήθευσης μόλις στάλθηκε στο ${ emailAddress }. Αν δεν μπορείτε να βρείτε το μήνυμα στα εισερχόμενά σας, παρακαλούμε ελέγξτε τον φάκελο ανεπιθύμητης αλληλογραφίας σας."
       ],
-      "An SMS with a verification code was just sent to ${ recoveryPhoneElement }.": [
-        "Μόλις στάλθηκε ένα SMS με κωδικό επαλήθευσης στο ${ recoveryPhoneElement }."
+      "An SMS with a verification code was just sent to ${ phoneNumber }.": [
+        "Μόλις στάλθηκε ένα SMS με κωδικό επαλήθευσης στο ${ phoneNumber }."
       ],
       "and": [
         "και"
@@ -6498,6 +6522,9 @@
       ],
       "Are you sure you want to revoke certificate **${ name }**": [
         "Είστε σίγουροι ότι θέλετε να ανακαλέσετε το πιστοποιητικό **${ name }**"
+      ],
+      "Ask them to sign in to their ${ ACCOUNT_APP_NAME } in the browser, and go to **Settings → All settings → Recovery → Emergency access→ People who trust me.**": [
+        "Ζητήστε τους να συνδεθούν στον λογαριασμό τους ${ ACCOUNT_APP_NAME } στο πρόγραμμα περιήγησης και μεταβείτε στις **Ρυθμίσεις → Όλες οι ρυθμίσεις → Ανάκτηση → Πρόσβαση έκτακτης ανάγκης → Άτομα που με εμπιστεύονται.**"
       ],
       "Ask your organization admin to setup Gateways.": [
         "Ζητήστε από τον διαχειριστή του οργανισμού σας να ρυθμίσει τις Πύλες."
@@ -6562,6 +6589,15 @@
       "By leaving now, changes may not be saved": [
         "Φεύγοντας τώρα, οι αλλαγές ενδέχεται να μην αποθηκευτούν"
       ],
+      "Can you access your active session?": [
+        "Μπορείτε να έχετε πρόσβαση στην ενεργή σας συνεδρία;"
+      ],
+      "Can you access your active web session in another browser?": [
+        "Έχετε πρόσβαση στην ενεργή συνεδρία σας σε άλλο πρόγραμμα περιήγησης;"
+      ],
+      "Can you reach out to your contact?": [
+        "Μπορείτε να επικοινωνήσετε με την επαφή σας;"
+      ],
       "Cancel": [
         "Ακύρωση"
       ],
@@ -6585,6 +6621,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Κάντε κλικ στην επιλογή \"Αίτηση νέου κωδικού\" για να σταλεί ένας νέος κωδικός επαλήθευσης στο ${ strong }. Εάν αυτός ο αριθμός τηλεφώνου είναι εσφαλμένος, κάντε κλικ στο \"Επεξεργασία\" για να τον διορθώσετε."
+      ],
+      "Click **Request password reset** and follow the prompts.": [
+        "Κάντε κλικ στο **Αίτηση επαναφοράς κωδικού** και ακολουθήστε τις οδηγίες."
       ],
       "Close this screen to exit.": [
         "Κλείστε αυτήν την οθόνη για έξοδο."
@@ -6703,6 +6742,9 @@
       "Data recoverable on this device": [
         "Δεδομένα ανακτήσιμα σε αυτήν τη συσκευή"
       ],
+      "Data recoverable with recovery phrase": [
+        "Ανακτήσιμα δεδομένα με φράση ανάκτησης"
+      ],
       "dedicated servers": [
         "αφοσιωμένοι διακομιστές"
       ],
@@ -6724,6 +6766,9 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "Διαγραφή ${ deletedServerCount } διακομιστή πύλης",
         "Διαγραφή ${ deletedServerCount } διακομιστών πύλης"
+      ],
+      "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
+        "Ανάλογα με τις ρυθμίσεις σας, ενδέχεται να λάβουν πρόσβαση αμέσως ή μετά από μια καθορισμένη **περίοδο αναμονής**."
       ],
       "Did you know?": [
         "Το γνωρίζατε;"
@@ -6816,6 +6861,9 @@
       "Drop to import": [
         "Απόθεση για εισαγωγή"
       ],
+      "Due to end-to-end encryption, you can reset your password, but ${ DataLockedText } until you use a ${ DataRecoveryOptionsLink }:": [
+        "Λόγω της διατερματικής κρυπτογράφησης, μπορείτε να επαναφέρετε τον κωδικό πρόσβασής σας, αλλά ${ DataLockedText } μέχρι να χρησιμοποιήσετε ένα ${ DataRecoveryOptionsLink }:"
+      ],
       "Each code can only be used once": [
         "Κάθε κωδικός μπορεί να χρησιμοποιηθεί μόνο μία φορά"
       ],
@@ -6894,6 +6942,9 @@
       "Enter new password for user ${ userName }.": [
         "Εισαγάγετε νέο κωδικό πρόσβασης για το χρήστη ${ userName }."
       ],
+      "Enter the 12-word recovery phrase associated with your account.": [
+        "Εισαγάγετε τη 12-λεκτη φράση ανάκτησης που σχετίζεται με τον λογαριασμό σας."
+      ],
       "Enter the code from your authenticator app": [
         "Πληκτρολογήστε τον κωδικό από την εφαρμογή ταυτοποίησης"
       ],
@@ -6923,6 +6974,12 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Εισάγετε την ηλ. διεύθυνση ή το όνομα χρήστη του λογαριασμού σας ${ BRAND_NAME }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Εισάγετε τον κωδικό πρόσβασής σας (ως διαχειριστής οργανισμού)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Εισάγετε τον κωδικό πρόσβασής σας (ως έμπιστη επαφή)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Εισάγετε τη διεύθυνση email ανάκτησης σας και θα σας στείλουμε το όνομα χρήστη ή τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας."
@@ -6975,6 +7032,9 @@
       "Friends and family": [
         "Φίλοι και οικογένεια"
       ],
+      "From there, they can request emergency access to your account by clicking **Request access.**": [
+        "Από εκεί, μπορούν να ζητήσουν πρόσβαση έκτακτης ανάγκης στον λογαριασμό σας κάνοντας κλικ στην επιλογή **Αίτημα πρόσβασης**."
+      ],
       "Gateway couldn't be deleted. Please try again": [
         "Δεν ήταν δυνατή η διαγραφή της πύλης. Παρακαλούμε προσπαθήστε ξανά"
       ],
@@ -6992,6 +7052,9 @@
       ],
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "Αποκτήστε το ${ AUTHENTICATOR_APP_NAME } για όλες τις συσκευές σας."
+      ],
+      "Get in touch with your emergency contacts, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed**.": [
+        "Επικοινωνήστε με τις επαφές έκτακτης ανάγκης, για να δείτε αν μπορούν να σας βοηθήσουν. Αφού ζητήσετε πρόσβαση έκτακτης ανάγκης στον λογαριασμό σας, θα μπορούν να αλλάξουν τον κωδικό πρόσβασής σας για εσάς **αφού παρέλθει ο χρόνος αναμονής για την πρόσβαση**."
       ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Λάβετε ειδοποίηση εάν ο κωδικός πρόσβασής σας ή άλλα προσωπικά δεδομένα έχουν διαρρεύσει. ${ learnMoreLinkNoBreach }"
@@ -7029,11 +7092,20 @@
       "High Priority": [
         "Υψηλή προτεραιότητα"
       ],
+      "How to perform a signed-in reset": [
+        "Πώς να εκτελέσετε επαναφορά σε κατάσταση σύνδεσης"
+      ],
+      "How your emergency contact can change your password for you:": [
+        "Πώς μπορεί η επαφή έκτακτης ανάγκης να αλλάξει τον κωδικό πρόσβασής σας:"
+      ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Δημόσιο κλειδί της υπηρεσίας παροχής ταυτότητας για την υπογραφή ισχυρισμών ελέγχου ταυτότητας. Θα πρέπει να υπάρχει ένα μέρος για τη λήψη ή την αντιγραφή του κατακερματισμού πιστοποιητικού από την υπηρεσία παροχής ταυτότητας. Απλώς επικολλήστε τον κατακερματισμό του πιστοποιητικού στο πεδίο περιοχής κειμένου."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Εάν ένας άλλος διαχειριστής άλλαξε αυτόν τον κωδικό πρόσβασης, θα πρέπει να του ζητήσετε τον νέο κωδικό οργανισμού."
+      ],
+      "If possible, when signing in, use a device or a browser where you’ve signed in before.": [
+        "Εάν είναι δυνατόν, κατά τη σύνδεση, χρησιμοποιήστε μια συσκευή ή ένα πρόγραμμα περιήγησης στο οποίο έχετε συνδεθεί στο παρελθόν."
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Εάν αυτό είναι εξαιτίας μιας παλιάς επαναφοράς κωδικού, μπορείτε να σταματήσετε την επανεμφάνιση του μηνύματος"
@@ -7043,6 +7115,9 @@
       ],
       "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
         "Εάν είστε συνδεδεμένοι κάπου αλλού, ενδέχεται να μπορείτε να ${ signedInPasswordResetLink }."
+      ],
+      "If you are signed in to a ${ BRAND_NAME } web app in **another browser**, you may be able to perform a password reset from your active session.": [
+        "Εάν είστε συνδεδεμένοι σε μια εφαρμογή ιστού ${ BRAND_NAME } σε **άλλο πρόγραμμα περιήγησης**, ενδέχεται να μπορείτε να πραγματοποιήσετε επαναφορά κωδικού πρόσβασης από την ενεργή σας περίοδο λειτουργίας."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Εάν πιστεύετε ότι αυτό είναι λάθος, παρακαλούμε επικοινωνήστε μαζί μας ${ contactLink }."
@@ -7061,6 +7136,9 @@
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Εάν έχετε κωδικό δώρου, προσθέστε τον παρακάτω ώστε να εφαρμοστεί η έκπτωσή σας."
+      ],
+      "If you have emergency contacts, get in touch with them, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed.**": [
+        "Εάν έχετε επαφές έκτακτης ανάγκης, επικοινωνήστε μαζί τους για να δείτε αν μπορούν να σας βοηθήσουν. Αφού ζητήσετε πρόσβαση έκτακτης ανάγκης στον λογαριασμό σας, θα μπορούν να αλλάξουν τον κωδικό πρόσβασής σας για εσάς **αφού παρέλθει ο χρόνος αναμονής για την πρόσβαση.**"
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Εάν χάσετε τη συσκευή σας με δύο παράγοντες, αυτοί οι κωδικοί μπορούν να χρησιμοποιηθούν αντί για τον 6-ψήφιο κωδικό ελέγχου ταυτότητας δύο παραγόντων για να συνδεθείτε στον λογαριασμό σας. Κάθε κωδικός μπορεί να χρησιμοποιηθεί μόνο μία φορά."
@@ -7436,6 +7514,9 @@
       "On": [
         "Ενεργό"
       ],
+      "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
+        "Μόλις τους παραχωρηθεί πρόσβαση στον λογαριασμό σας, μπορούν να έχουν πρόσβαση στις ρυθμίσεις **Ανάκτησης** και **να αλλάξουν τον κωδικό πρόσβασής σας ${ ACCOUNT_APP_NAME }** για εσάς."
+      ],
       "Once you reset your password:": [
         "Μετά την αλλαγή του κωδικού σας:"
       ],
@@ -7444,6 +7525,9 @@
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Ανοίξτε τον οδηγό για προτεινόμενες ενέργειες και χρήσιμους συνδέσμους."
+      ],
+      "Open your active session in the browser, and go to **Settings → All settings → Recovery → Password reset settings.**": [
+        "Ανοίξτε την ενεργή σας συνεδρία στο πρόγραμμα περιήγησης και μεταβείτε στις **Ρυθμίσεις → Όλες οι ρυθμίσεις → Ανάκτηση → Ρυθμίσεις επαναφοράς κωδικού πρόσβασης.**"
       ],
       "or ${ selectFileButton }": [
         "ή ${ selectFileButton }"
@@ -7644,6 +7728,12 @@
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Συνιστάται σε αξιόπιστες συσκευές. ${ keepMeSignedInLearnMoreLink }"
       ],
+      "Recovery contacts": [
+        "Επαφές ανάκτησης"
+      ],
+      "Recovery file": [
+        "Αρχείο ανάκτησης"
+      ],
       "Recovery file downloaded": [
         "Το αρχείο ανάκτησης κατέβηκε"
       ],
@@ -7652,6 +7742,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Οι πληροφορίες ανάκτησης θα παραμείνουν σε αυτήν τη συσκευή έως ότου επιλέξετε να τις διαγράψετε."
+      ],
+      "Recovery phrase": [
+        "Φράση ανάκτησης"
       ],
       "Recovery phrase copied to clipboard": [
         "Η φράση ανάκτησης αντιγράφηκε στο πρόχειρο"
@@ -7688,6 +7781,9 @@
       ],
       "Resend verification email": [
         "Επανάληψη αποστολής μηνύματος επαλήθευσης"
+      ],
+      "Resetting your password in your active web session will ensure **your encrypted data will remain accessible** after you change your password.": [
+        "Η επαναφορά του κωδικού πρόσβασής σας στην ενεργή περίοδο σύνδεσης ιστού θα διασφαλίσει ότι **τα κρυπτογραφημένα δεδομένα σας θα παραμείνουν προσβάσιμα** μετά την αλλαγή του κωδικού πρόσβασής σας."
       ],
       "Restore": [
         "Επαναφορά"
@@ -8162,6 +8258,9 @@
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Δοκιμάστε το ${ productName } εντελώς χωρίς κίνδυνο - εάν για οποιονδήποτε λόγο αλλάξετε γνώμη, θα λάβετε πλήρη επιστροφή χρημάτων. Χωρίς ερωτήσεις."
       ],
+      "Try recovering your account from a **device or browser where you have signed in before**, as it may be possible from there:": [
+        "Δοκιμάστε να ανακτήσετε τον λογαριασμό σας από μια **συσκευή ή πρόγραμμα περιήγησης όπου έχετε συνδεθεί στο παρελθόν**, καθώς ενδέχεται να είναι δυνατό από εκεί:"
+      ],
       "Two-factor authentication": [
         "Ταυτοποίηση δύο παραγόντων"
       ],
@@ -8176,6 +8275,9 @@
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Αδυναμία επαλήθευσης υπογραφής αρχείου ανάκτησης. Παρακαλούμε επικοινωνήστε με την υποστήριξη."
+      ],
+      "Unfortunately there is no recovery method available for this account.": [
+        "Δυστυχώς, δεν υπάρχει διαθέσιμη μέθοδος ανάκτησης για αυτόν τον λογαριασμό."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Δυστυχώς δεν έχει αποθηκευτεί μέθοδος ανάκτησης για αυτόν τον λογαριασμό."
@@ -8318,6 +8420,9 @@
       "We couldn’t process your payment.": [
         "Δεν ήταν δυνατή η επεξεργασία της πληρωμής σας."
       ],
+      "We detected you are already signed in to a ${ BRAND_NAME } web app on **another browser**. You may be able to perform a password reset from your active session.": [
+        "Εντοπίσαμε ότι έχετε ήδη συνδεθεί σε μια εφαρμογή ιστού ${ BRAND_NAME } σε **άλλο πρόγραμμα περιήγησης**. Ενδέχεται να μπορείτε να πραγματοποιήσετε επαναφορά κωδικού πρόσβασης από την ενεργή σας περίοδο λειτουργίας."
+      ],
       "We generated a strong password for you": [
         "Δημιουργήσαμε έναν ισχυρό κωδικό πρόσβασης για εσάς"
       ],
@@ -8368,6 +8473,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Θα στείλουμε νέο κωδικό επαλήθευσης στο ${ strong }"
+      ],
+      "Web sessions detected:": [
+        "Εντοπίστηκαν συνεδρίες ιστού:"
       ],
       "Week": [
         "Εβδομάδα"
@@ -8504,6 +8612,12 @@
       "You can now access and manage the account as an administrator.": [
         "Τώρα μπορείτε να έχετε πρόσβαση και να διαχειριστείτε τον λογαριασμό ως διαχειριστής."
       ],
+      "You can now reset your password to regain access to your account.": [
+        "Τώρα μπορείτε να επαναφέρετε τον κωδικό πρόσβασής σας για να ανακτήσετε την πρόσβαση στον λογαριασμό σας."
+      ],
+      "You can now reset your password to regain access to your account. **This will disable 2-factor authentication.**": [
+        "Μπορείτε πλέον να επαναφέρετε τον κωδικό πρόσβασής σας για να ανακτήσετε την πρόσβαση στον λογαριασμό σας. **Αυτό θα απενεργοποιήσει την ταυτοποίηση 2 παραγόντων.**"
+      ],
       "You can now return to the application to continue": [
         "Τώρα μπορείτε να επιστρέψετε στην εφαρμογή για να συνεχίσετε"
       ],
@@ -8588,6 +8702,9 @@
       "You will not be asked for a one-time code or a security key.": [
         "Δεν θα σας ζητηθεί ένας κωδικός μιας χρήσης ή ένα κλειδί ασφαλείας."
       ],
+      "You will regain complete or partial access to your encrypted data.": [
+        "Θα ανακτήσετε πλήρη ή μερική πρόσβαση στα κρυπτογραφημένα δεδομένα σας."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Θα ανακατευθυνθείτε σύντομα στο Paypal, για να επαληθεύσετε την πληρωμή σας."
       ],
@@ -8656,6 +8773,12 @@
       "Your email will only be used for this one-time verification.": [
         "Το email σας θα χρησιμοποιηθεί μόνο για αυτή την εφάπαξ επαλήθευση."
       ],
+      "Your encrypted data will be locked": [
+        "Τα κρυπτογραφημένα δεδομένα σας θα κλειδωθούν"
+      ],
+      "your encrypted data will be locked": [
+        "τα κρυπτογραφημένα δεδομένα σας θα κλειδωθούν"
+      ],
       "Your feedback": [
         "Τα σχόλιά σας"
       ],
@@ -8679,6 +8802,9 @@
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "Η επόμενη ημερομηνία χρέωσης είναι ${ renewalTime }. Μπορείτε να ακυρώσετε οποιαδήποτε στιγμή. Παρακαλούμε επικοινωνήστε με την υποστήριξη εάν χρειάζεστε άμεση αλλαγή πλάνου."
+      ],
+      "Your old password": [
+        "Ο παλιός κωδικός σας"
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Ο οργανισμός σας χρησιμοποιεί ενιαία πρόσβαση (SSO). Πατήστε Σύνδεση για να συνεχίσετε με τον πάροχο SSO σας."
@@ -9224,6 +9350,9 @@
       "Enabled": [
         "Ενεργοποιημένο"
       ],
+      "Enter code": [
+        "Εισαγωγή κωδικού"
+      ],
       "Enter name or email address": [
         "Εισαγάγετε όνομα ή διεύθυνση ηλεκτρονικού ταχυδρομείου"
       ],
@@ -9714,6 +9843,12 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Ναι, θέλω να διαγράψω οριστικά αυτόν τον λογαριασμό και όλα τα δεδομένα του."
       ],
+      "Your password (admin)": [
+        "Ο κωδικός σας (διαχειριστής)"
+      ],
+      "Your password (trusted contact)": [
+        "Ο κωδικός πρόσβασής σας (έμπιστη επαφή)"
+      ],
       "ZIP code": [
         "Τ.Κ."
       ]
@@ -9855,11 +9990,20 @@
       "Common sign up issues": [
         "Συνήθη ζητήματα εγγραφής"
       ],
+      "contacts’ assistance": [
+        "βοήθεια από την επαφή"
+      ],
       "Create account": [
         "Δημιουργία λογαριασμού"
       ],
       "Create an alias": [
         "Δημιουργία ψευδωνύμου"
+      ],
+      "data recovery option": [
+        "επιλογή ανάκτησης δεδομένων"
+      ],
+      "Details": [
+        "Λεπτομέρειες"
       ],
       "Don't have access to your 2FA?": [
         "Δεν έχετε πρόσβαση στο 2FA σας;"
@@ -10245,9 +10389,6 @@
       ],
       "60 minutes per meeting": [
         "60 λεπτά ανά σύσκεψη"
-      ],
-      "Appointment scheduling": [
-        "Προγραμματισμός ραντεβού"
       ],
       "Booking pages": [
         "Σελίδες κρατήσεων"
@@ -10686,6 +10827,13 @@
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Όλες οι βασικές ${ BRAND_NAME } υπηρεσίες (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "Appointment scheduling": [
+        "Προγραμματισμός ραντεβού"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Προγραμματισμός ραντεβού με ${ n } σελίδα κράτησης",
+        "Προγραμματισμός ραντεβού με ${ n } σελίδες κρατήσεων"
       ],
       "Apps for": [
         "Εφαρμογές για"
@@ -14306,6 +14454,9 @@
       "Share the confirmation code with your administrator": [
         "Μοιραστείτε τον κωδικό επιβεβαίωσης με τον διαχειριστή σας"
       ],
+      "Sign in": [
+        "Σύνδεση"
+      ],
       "Sign in to your organization": [
         "Συνδεθήτε στον οργανισμό σας"
       ],
@@ -14365,6 +14516,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Για να προσθέσετε νέους χρήστες στον οργανισμό σας, θα πρέπει να τους δημιουργήσετε χειροκίνητα."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Θα ανακατευθυνθείτε στον τρίτο πάροχο SSO."
       ],
       "Your SSO configuration will be deleted.": [
         "Η διαμόρφωση SSO θα διαγραφεί."
@@ -15554,6 +15708,9 @@
       "Apply gift code": [
         "Εφαρμογή κωδικού δώρου"
       ],
+      "Are you already signed in to ${ BRAND_NAME } in a browser?": [
+        "Έχετε ήδη συνδεθεί στο ${ BRAND_NAME } σε κάποιο πρόγραμμα περιήγησης;"
+      ],
       "Are you sure you want to close the preview?": [
         "Είστε βέβαιοι ότι θέλετε να κλείσετε την προεπισκόπηση;"
       ],
@@ -15562,6 +15719,9 @@
       ],
       "Are you sure?": [
         "Είστε σίγουρος/η;"
+      ],
+      "Ask your emergency contacts for help": [
+        "Ζητήστε βοήθεια από τις επαφές έκτακτης ανάγκης που έχετε στη διάθεσή σας."
       ],
       "Auto-deletion is active": [
         "Η αυτόματη διαγραφή είναι ενεργή"
@@ -15574,6 +15734,12 @@
       ],
       "Bring your Gmail into ${ MAIL_APP_NAME }": [
         "Φέρτε το Gmail σας στο ${ MAIL_APP_NAME }"
+      ],
+      "Can you access your session in the browser?": [
+        "Έχετε πρόσβαση στη συνεδρία σας μέσω του προγράμματος περιήγησης;"
+      ],
+      "Can you reach out to your emergency contacts?": [
+        "Μπορείτε να επικοινωνήσετε με τις επαφές έκτακτης ανάγκης σας;"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Ακύρωση συνδρομής ${ MAIL_SHORT_APP_NAME }"
@@ -15676,6 +15842,9 @@
       ],
       "Couldn’t create accounts": [
         "Αποτυχία δημιουργίας λογαριασμών"
+      ],
+      "Couldn’t recover your account": [
+        "Δεν ήταν δυνατή η ανάκτηση του λογαριασμού σας"
       ],
       "Coupon": [
         "Κουπόνι"
@@ -15915,6 +16084,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Εισαγάγετε τα στοιχεία του λογαριασμού σας ${ BRAND_NAME } για να συμμετάσχετε στο πρόγραμμα ${ app } Beta"
+      ],
+      "Enter your password": [
+        "Εισάγετε τον κωδικό πρόσβασης σας"
       ],
       "Error": [
         "Σφάλμα"
@@ -16188,6 +16360,9 @@
       "Reconnect your account": [
         "Επανασύνδεση του λογαριασμού σας"
       ],
+      "Recover account": [
+        "Ανάκτηση λογαριασμού"
+      ],
       "Recover data": [
         "Ανάκτηση δεδομένων"
       ],
@@ -16423,6 +16598,9 @@
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "Δοκιμάστε ${ AUTHENTICATOR_APP_NAME }"
       ],
+      "Try changing your password in your active web session": [
+        "Δοκιμάστε να αλλάξετε τον κωδικό πρόσβασής σας στην ενεργή συνεδρία ιστού σας"
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Ενεργοποίηση ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -16494,6 +16672,9 @@
       ],
       "Verification failed": [
         "Αποτυχία επαλήθευσης"
+      ],
+      "Verify it’s you": [
+        "Επαλήθευση ταυτότητας"
       ],
       "Verifying your card...": [
         "Γίνεται επαλήθευση της κάρτας σας..."
@@ -17037,6 +17218,9 @@
       ]
     },
     "user_modal": {
+      "Add delegated roles to a user to grant them only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
+        "Προσθέστε ανατεθειμένους ρόλους σε έναν χρήστη για να του εκχωρήσετε μόνο τα συγκεκριμένα δικαιώματα που χρειάζεται, διατηρώντας ξεχωριστή την πλήρη εξουσία διαχειριστή και το περιβάλλον σας ασφαλές."
+      ],
       "Add multiple users": [
         "Προσθήκη πολλαπλών χρηστών"
       ],
@@ -17061,11 +17245,11 @@
       "Create password instead": [
         "Δημιουργία κωδικού πρόσβασης"
       ],
-      "Create user": [
-        "Δημιουργία χρήστη"
-      ],
       "Email": [
         "Ηλεκτρονικό ταχυδρομείο"
+      ],
+      "General": [
+        "Γενικά"
       ],
       "Invitation email": [
         "Μήνυμα πρόσκλησης"
@@ -17081,6 +17265,12 @@
       ],
       "Remember to share the user's sign in details with them.": [
         "Θυμηθείτε να μοιραστείτε τις λεπτομέρειες σύνδεσης με τον χρήστη."
+      ],
+      "Roles and permissions": [
+        "Ρόλοι και δικαιώματα"
+      ],
+      "Save": [
+        "Αποθήκευση"
       ],
       "Send invite link via email instead": [
         "Αποστολή συνδέσμου πρόσκλησης μέσω ηλεκτρονικού ταχυδρομείου"

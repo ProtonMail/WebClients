@@ -470,6 +470,9 @@
       "Fit to window": [
         "Sovita ikkunaan"
       ],
+      "Forgot password?": [
+        "Unohditko salasanasi?"
+      ],
       "Forgot recovery method?": [
         "Unohditko palautustavan?"
       ],
@@ -559,6 +562,9 @@
       ],
       "Hide plan features": [
         "Piilota tilauksen ominaisuudet"
+      ],
+      "I don't have my phrase": [
+        "Minulla ei ole lausettani"
       ],
       "Import": [
         "Tuo"
@@ -667,6 +673,9 @@
       ],
       "Next page": [
         "Seuraava sivu"
+      ],
+      "No": [
+        "En"
       ],
       "OK": [
         "OK"
@@ -810,6 +819,9 @@
         "Yritä uudelleen"
       ],
       "Return to sign in": [
+        "Palaa kirjautumiseen"
+      ],
+      "Return to sign-in": [
         "Palaa kirjautumiseen"
       ],
       "Review": [
@@ -1031,6 +1043,9 @@
       "Try another method": [
         "Kokeile toista tapaa"
       ],
+      "Try another way": [
+        "Kokeile toista tapaa"
+      ],
       "Try for free": [
         "Kokeile ilmaiseksi"
       ],
@@ -1156,6 +1171,9 @@
       ],
       "Wipe": [
         "Tyhjennä"
+      ],
+      "Yes": [
+        "Kyllä"
       ],
       "Your server will be provisioned in the next days": [
         "Palvelimesi määritetään muutaman muutaman päivän kuluessa"
@@ -5688,6 +5706,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe kirjoitusavustaja"
       ],
+      "${ BRAND_NAME } will send a verification code to ${ RedactedPhoneNumber }. Standard message rates may apply.": [
+        "${ BRAND_NAME } lähettää vahvistuskoodin numeroon ${ RedactedPhoneNumber }. Viesteistä saatetaan veloittaa tavanomaiset viestimaksut."
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }in salaustekniikan ansioista kukaan ei voi päästä käsiksi salasanaasi - emme edes me."
       ],
@@ -5705,6 +5726,9 @@
       "${ countriesCount } country enabled": [
         "${ countriesCount } maa käytössä",
         "${ countriesCount } maata käytössä"
+      ],
+      "${ DataLockedText }, but recoverable with your ${ RecoveryContactsLink }:": [
+        "${ DataLockedText }, mutta tiedot voidaan palauttaa käyttämällä ${ RecoveryContactsLink }:"
       ],
       "${ discountPercent }% discount": [
         "${ discountPercent }% alennus"
@@ -6033,6 +6057,12 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Sähköpostialias toimii tavallisen sähköpostiosoitteen tavoin, mutta vähentää roskapostia ja pitää todellisen osoitteesi ja identiteettisi piilossa."
       ],
+      "An email with a verification code was just sent to ${ emailAddress }. If you can’t find the message in your inbox, please check your spam folder.": [
+        "Vahvistuskoodin sisältävä sähköposti on juuri lähetetty osoitteeseen ${ emailAddress }. Jos et löydä viestiä saapuneet-kansiosta, tarkista roskapostikansio."
+      ],
+      "An SMS with a verification code was just sent to ${ phoneNumber }.": [
+        "Vahvistuskoodia sisältävä tekstiviesti on juuri lähetetty numeroon ${ phoneNumber }."
+      ],
       "and": [
         "ja"
       ],
@@ -6062,6 +6092,9 @@
       ],
       "Are you sure you want to revoke certificate **${ name }**": [
         "Haluatko varmasti mitätöidä varmenteen **${ name }**"
+      ],
+      "Ask them to sign in to their ${ ACCOUNT_APP_NAME } in the browser, and go to **Settings → All settings → Recovery → Emergency access→ People who trust me.**": [
+        "Pyydä heitä kirjautumaan selaimessa ${ ACCOUNT_APP_NAME } -tililleen ja siirtymään kohtaan **Asetukset → Kaikki asetukset → Palautus → Hätätilannepääsy → Henkilöt, jotka luottavat minuun.**"
       ],
       "Ask your organization admin to setup Gateways.": [
         "Pyydä organisaatiosi ylläpitoa määrittämään yhdyskäytävät."
@@ -6117,6 +6150,15 @@
       "By leaving now, changes may not be saved": [
         "Jos poistut nyt, muutoksia ei tallenneta"
       ],
+      "Can you access your active session?": [
+        "Pääsetkö aktiiviseen istuntoosi?"
+      ],
+      "Can you access your active web session in another browser?": [
+        "Pääsetkö aktiiviseen verkkoselaamisistuntoosi toisella selaimella?"
+      ],
+      "Can you reach out to your contact?": [
+        "Voitko ottaa yhteyttä yhteyshenkilöösi?"
+      ],
       "Can’t access your recovery email?": [
         "Etkö voi käyttää palautusosoitettasi?"
       ],
@@ -6137,6 +6179,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Paina \"Pyydä uusi koodi\" saadaksesi uuden vahvistuskoodin numeroon ${ strong }. Jos numero on väärin, korjaa se painamalla \"Muokkaa\"."
+      ],
+      "Click **Request password reset** and follow the prompts.": [
+        "Napsauta **Pyydä salasanan nollausta** ja noudata ohjeita."
       ],
       "Close this screen to exit.": [
         "Poistu sulkemalla tämä ruutu."
@@ -6249,6 +6294,9 @@
       "Data recoverable on this device": [
         "Tiedot ovat palautettavissa tällä laitteella"
       ],
+      "Data recoverable with recovery phrase": [
+        "Tiedot, jotka voidaan palauttaa palautuslauseella"
+      ],
       "dedicated servers": [
         "omia palvelimia"
       ],
@@ -6270,6 +6318,9 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "Poistetaan ${ deletedServerCount } yhdyskäytäväpalvelinta",
         "Poistetaan ${ deletedServerCount } yhdyskäytäväpalvelinta"
+      ],
+      "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
+        "Asetuksistasi riippuen he saattavat saada käyttöoikeuden välittömästi tai tietyn **odotusaikansa** jälkeen."
       ],
       "Did you know?": [
         "Tiesitkö?"
@@ -6353,6 +6404,9 @@
       "Drop to import": [
         "Tuo pudottamalla"
       ],
+      "Due to end-to-end encryption, you can reset your password, but ${ DataLockedText } until you use a ${ DataRecoveryOptionsLink }:": [
+        "Päästä päähän -salauksen vuoksi voit nollata salasanasi, mutta ${ DataLockedText }, kunnes käytät ${ DataRecoveryOptionsLink }:"
+      ],
       "Each domain can only have one SPF (TXT) record. If you want to keep the existing SPF (TXT) record, you can add ${ spf } to your current record (put it after ${ spfValue }).": [
         "Kullakin verkkotunnuksella voi olla vain yksi SPF (TXT) -tietue. Mikäli haluat pitää olemassaolevan SPF (TXT) -tietueen, voit lisätä ${ spf } nykyiseen tietueeseen (se tulee ${ spfValue } jälkeen)."
       ],
@@ -6422,6 +6476,9 @@
       "Enter new password for user ${ userName }.": [
         "Syötä uusi salasana käyttäjälle ${ userName }."
       ],
+      "Enter the 12-word recovery phrase associated with your account.": [
+        "Syötä tilillesi liitetty 12 sanan palautuslause."
+      ],
       "Enter the code from your authenticator app": [
         "Syötä koodi todennussovelluksestasi"
       ],
@@ -6448,6 +6505,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Syötä ${ BRAND_NAME }-tilisi sähköpostiosoite tai käyttäjätunnus."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Syötä oma salasanasi (organisaation ylläpitäjänä)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Syötä palautusosoitteesi niin käyttäjätunnuksesi tai sähköpostiosoitteesi lähetetään sinulle."
@@ -6485,6 +6545,9 @@
       "For users who are switching to ${ MAIL_APP_NAME } from another email service, select the ${ boldAddresses } tab and add all active email addresses before changing the MX record to ensure a smooth transition.": [
         "Niiden käyttäjien, jotka siirtyvät käyttämään ${ MAIL_APP_NAME } jostain toisesta sähköpostipalvelusta, tulee valita ${ boldAddresses }-välilehti ja lisätä kaikki aktiiviset sähköpostiosoitteet ennen kuin MX-tietuetta voi muuttaa, jotta siirtymä olisi jouheva."
       ],
+      "From there, they can request emergency access to your account by clicking **Request access.**": [
+        "Sieltä he voivat pyytää hätätilannetta varten pääsyn tilillesi napsauttamalla **Pyydä pääsyä**."
+      ],
       "Gateway couldn't be deleted. Please try again": [
         "Yhdyskäytävää ei voitu poistaa. Yritä uudelleen"
       ],
@@ -6499,6 +6562,9 @@
       ],
       "Generating a new recovery phrase will deactivate your old one.": [
         "Uuden palautuslausekkeen luonti poistaa vanhan lauseen käytöstä."
+      ],
+      "Get in touch with your emergency contacts, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed**.": [
+        "Ota yhteyttä hätäyhteyshenkilöihisi ja kysy, voivatko he auttaa. Kun olet pyytänyt hätäpääsyä tilillesi, he voivat vaihtaa salasanasi puolestasi **kun pääsyn odotusaika on kulunut umpeen**."
       ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Vastaanota ilmoituksia, jos salasanasi tai muita henkilökohtaisia tietojasi on vuotanut. ${ learnMoreLinkNoBreach }"
@@ -6533,11 +6599,20 @@
       "High Priority": [
         "Korkea tärkeys"
       ],
+      "How to perform a signed-in reset": [
+        "Kuinka suorittaa kirjautuneen käyttäjän nollaus"
+      ],
+      "How your emergency contact can change your password for you:": [
+        "Kuinka hätäyhteyshenkilösi voi vaihtaa salasanasi puolestasi:"
+      ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Identiteetintarjoajan julkinen avain, jota käytetään todentamisvaltuutusten allekirjoittamiseksi. Identiteetintarjoajallasi pitäisi olla paikka, josta voit kopioida tai ladata varmenteen tiivisteen. Liitä lataamasi tai kopioimasi varmenteen tiiviste tekstikenttään."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Jos toinen ylläpitäjä on vaihtanut salasanan, sinun on pyydettävä organisaation uusi salasana heiltä."
+      ],
+      "If possible, when signing in, use a device or a browser where you’ve signed in before.": [
+        "Käytä kirjautuessasi mahdollisuuksien mukaan laitetta tai selainta, jolla olet kirjautunut sisään aiemmin."
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Jos tämä johtuu vanhasta salasanan nollauksesta, voit estää viestiä näkymästä uudelleen."
@@ -6547,6 +6622,9 @@
       ],
       "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
         "Jos olet kirjautuneena jossakin muualla, voi ${ signedInPasswordResetLink }."
+      ],
+      "If you are signed in to a ${ BRAND_NAME } web app in **another browser**, you may be able to perform a password reset from your active session.": [
+        "Jos olet kirjautunut sisään ${ BRAND_NAME } -verkkosovellukseen **toisessa selaimessa**, voit mahdollisesti nollata salasanasi nykyisen istunnon kautta."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Jos tämä ei mielestäsi pidä paikkaansa, ota yhteyttä osoitteessa ${ contactLink }."
@@ -6565,6 +6643,9 @@
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Jos sinulla on lahjakoodi, syötä se alle hyödyntääksesi alennuksen."
+      ],
+      "If you have emergency contacts, get in touch with them, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed.**": [
+        "Jos sinulla on hätäyhteyshenkilöitä, ota heihin yhteyttä ja kysy, voivatko he auttaa. Kun olet pyytänyt hätäpääsyä tilillesi, he voivat vaihtaa salasanasi puolestasi **sen jälkeen, kun pääsyn odotusaika on kulunut umpeen.**"
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Jos menetät todennuslaitteesi, voit kirjautua tilillesi käyttäen näitä koodeja 6-numeroisen vahvistuskoodin sijaan. Koodit ovat kertakäyttöisiä."
@@ -6919,6 +7000,9 @@
       "On": [
         "Päällä"
       ],
+      "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
+        "Kun tilillesi on myönnetty käyttöoikeus, he voivat avata **Palautus**-asetuksesi ja **vaihtaa ${ ACCOUNT_APP_NAME } -salasanasi** puolestasi."
+      ],
       "Once you reset your password:": [
         "Kun nollaat salasanasi:"
       ],
@@ -6927,6 +7011,9 @@
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Avaa opas ja tutustu suositeltuihin toimenpiteisiin ja hyödyllisiin linkkeihin."
+      ],
+      "Open your active session in the browser, and go to **Settings → All settings → Recovery → Password reset settings.**": [
+        "Avaa selaimessa avoinna oleva istunto ja siirry kohtaan **Asetukset → Kaikki asetukset → Palautus → Salasanan nollausasetukset.**"
       ],
       "or ${ selectFileButton }": [
         "tai ${ selectFileButton }"
@@ -7109,6 +7196,12 @@
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Suositeltavaa luotettavilla laitteilla. ${ keepMeSignedInLearnMoreLink }"
       ],
+      "Recovery contacts": [
+        "Palautuskontaktit"
+      ],
+      "Recovery file": [
+        "Palautustiedosto"
+      ],
       "Recovery file downloaded": [
         "Palautustiedosto ladattiin"
       ],
@@ -7117,6 +7210,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Palautustiedot säilyvät tällä laitteella, kunnes poistat ne."
+      ],
+      "Recovery phrase": [
+        "Palautuslause"
       ],
       "Recovery phrase copied to clipboard": [
         "Palautuslauseke kopioitiin leikepöydälle"
@@ -7150,6 +7246,9 @@
       ],
       "Resend verification email": [
         "Lähetä vahvistusviesti uudelleen"
+      ],
+      "Resetting your password in your active web session will ensure **your encrypted data will remain accessible** after you change your password.": [
+        "Salasanan nollaaminen nykyisen verkkoselaamisen aikana varmistaa, että **salatut tietosi pysyvät käytettävissä** salasanan vaihdon jälkeen."
       ],
       "Restore": [
         "Palauta"
@@ -7573,6 +7672,9 @@
       "trusted device": [
         "luotetulla laitteella"
       ],
+      "Try recovering your account from a **device or browser where you have signed in before**, as it may be possible from there:": [
+        "Yritä palauttaa tilisi **laitteella tai selaimella, jolla olet kirjautunut sisään aiemmin**, sillä se saattaa onnistua sieltä:"
+      ],
       "Two-factor authentication": [
         "Kaksivaiheinen tunnistautuminen"
       ],
@@ -7587,6 +7689,9 @@
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Palautustiedoston allekirjoitusta ei voitu vahvistaa. Ota yhteyttä tukeen."
+      ],
+      "Unfortunately there is no recovery method available for this account.": [
+        "Valitettavasti tälle tilille ei ole saatavilla palautusmenetelmää."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Valitettavasti tilille ei ole määritetty palautustapoja."
@@ -7720,6 +7825,9 @@
       "We couldn’t process your payment.": [
         "Maksuasi ei voitu käsitellä."
       ],
+      "We detected you are already signed in to a ${ BRAND_NAME } web app on **another browser**. You may be able to perform a password reset from your active session.": [
+        "Havaitsimme, että olet jo kirjautunut sisään ${ BRAND_NAME } -verkkosovellukseen **toisella selaimella**. Voit mahdollisesti nollata salasanasi nykyisen istunnon kautta."
+      ],
       "We generated a strong password for you": [
         "Loimme sinulle vahvan salasanan"
       ],
@@ -7770,6 +7878,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Uusi vahvistuskoodi lähetetään kohteeseen ${ strong }"
+      ],
+      "Web sessions detected:": [
+        "Havaittuja verkkosessioita:"
       ],
       "Week": [
         "Viikko"
@@ -7894,6 +8005,12 @@
       "You can now access and manage the account as an administrator.": [
         "Voit nyt käyttää ja hallita tiliä ylläptäjänä."
       ],
+      "You can now reset your password to regain access to your account.": [
+        "Voit nyt nollata salasanasi ja saada jälleen pääsyn tilillesi."
+      ],
+      "You can now reset your password to regain access to your account. **This will disable 2-factor authentication.**": [
+        "Voit nyt nollata salasanasi ja saada jälleen pääsyn tilillesi. **Tämä poistaa kaksivaiheisen todennuksen käytöstä.**"
+      ],
       "You can now return to the application to continue": [
         "Voit jatkaa palaamalla sovellukseen"
       ],
@@ -7969,6 +8086,9 @@
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Tarvitset ${ BRAND_NAME }-osoitteen käyttääksesi ${ MAIL_APP_NAME } ja ${ CALENDAR_APP_NAME } -palveluita"
       ],
+      "You will regain complete or partial access to your encrypted data.": [
+        "Saat takaisin täyden tai osittaisen pääsyn salattuihin tietoihisi."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Sinut ohjataan pian PayPaliin maksun vahvistamiseksi."
       ],
@@ -8019,6 +8139,12 @@
       "Your email will only be used for this one-time verification.": [
         "Sähköpostiosoitettasi käytetään vain tähän kertaluontoiseen vahvistukseen."
       ],
+      "Your encrypted data will be locked": [
+        "Salatut tietosi lukitaan"
+      ],
+      "your encrypted data will be locked": [
+        "salatut tietosi lukitaan"
+      ],
       "Your feedback": [
         "Palautteesi"
       ],
@@ -8036,6 +8162,9 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "Kirjautumistietojasi ei säilytetä tuonnin päätyttyä."
+      ],
+      "Your old password": [
+        "Vanha salasanasi"
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Organisaatiosi käyttää kertakirjautumista (SSO). Jatka SSO-palveluntarjoajan kautta painamalla \"Kirjaudu sisään\"."
@@ -8550,6 +8679,9 @@
       "Enabled": [
         "Käytössä"
       ],
+      "Enter code": [
+        "Syötä koodi"
+      ],
       "Enter password": [
         "Syötä salasana"
       ],
@@ -9016,6 +9148,9 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Kyllä, haluan poistaa tilin ja kaikki sen tiedot pysyvästi."
       ],
+      "Your password (admin)": [
+        "Salasanasi (ylläpitäjä)"
+      ],
       "ZIP code": [
         "Postinumero"
       ]
@@ -9157,11 +9292,20 @@
       "Common sign up issues": [
         "Yleiset rekisteröitymisongelmat"
       ],
+      "contacts’ assistance": [
+        "yhteyshenkilöiden apu"
+      ],
       "Create account": [
         "Luo tili"
       ],
       "Create an alias": [
         "Luo alias"
+      ],
+      "data recovery option": [
+        "tietojen palautusvaihtoehto"
+      ],
+      "Details": [
+        "Tiedot"
       ],
       "Encryption and keys": [
         "Salaus ja avaimet"
@@ -13297,6 +13441,9 @@
       "Share the confirmation code with your administrator": [
         "Jaa vahvistuskoodi ylläpidollesi"
       ],
+      "Sign in": [
+        "Kirjaudu sisään"
+      ],
       "Sign in to your organization": [
         "Kirjaudu sisään organisaatioosi"
       ],
@@ -13353,6 +13500,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Sinun on luotava uusia käyttäjiä manuaalisesti lisätäksesi niitä organisaatioosi."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Sinut ohjataan kolmannen osapuolen SSO- palveluntarjoajaan."
       ],
       "Your SSO configuration will be deleted.": [
         "SSO-määrityksesi poistetaan."
@@ -14501,6 +14651,9 @@
       "Apply gift code": [
         "Käytä lahjakoodia"
       ],
+      "Are you already signed in to ${ BRAND_NAME } in a browser?": [
+        "Oletko jo kirjautunut ${ BRAND_NAME }iin selaimessa?"
+      ],
       "Are you sure you want to close the preview?": [
         "Haluatko varmasti sulkea esikatselun?"
       ],
@@ -14509,6 +14662,9 @@
       ],
       "Are you sure?": [
         "Oletko varma?"
+      ],
+      "Ask your emergency contacts for help": [
+        "Pyydä apua hätäyhteyshenkilöiltäsi"
       ],
       "Auto-deletion is active": [
         "Automaattinen poisto on käytössä"
@@ -14521,6 +14677,12 @@
       ],
       "Bring your Gmail into ${ MAIL_APP_NAME }": [
         "Tuo Gmailisi ${ MAIL_APP_NAME }iin"
+      ],
+      "Can you access your session in the browser?": [
+        "Pääsetkö istuntoosi selaimella?"
+      ],
+      "Can you reach out to your emergency contacts?": [
+        "Voitko ottaa yhteyttä hätäyhteyshenkilöihisi?"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Peru ${ MAIL_SHORT_APP_NAME }-tilaus"
@@ -14620,6 +14782,9 @@
       ],
       "Couldn’t create accounts": [
         "Tilejä ei voitu luoda"
+      ],
+      "Couldn’t recover your account": [
+        "Tiliäsi ei voitu palauttaa"
       ],
       "Coupon": [
         "Etukoodi"
@@ -14838,6 +15003,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Liity sovelluksen ${ app } beetaohjelmaan syöttämällä ${ BRAND_NAME }-tilisi tiedot"
+      ],
+      "Enter your password": [
+        "Syötä salasanasi"
       ],
       "Error": [
         "Virhe"
@@ -15102,6 +15270,9 @@
       "Reconnect your account": [
         "Yhdistä tilisi uudelleen"
       ],
+      "Recover account": [
+        "Palauta tili"
+      ],
       "Recover data": [
         "Palauta tiedot"
       ],
@@ -15325,6 +15496,9 @@
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Esikatsellaksesi tätä laskentataulukkoa, avaa se ${ SHEETS_APP_NAME } -sovelluksessa tai lataa se."
       ],
+      "Try changing your password in your active web session": [
+        "Kokeile vaihtaa salasanasi nykyisessä verkkoselaimen istunnossa"
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Ota ${ DARK_WEB_MONITORING_NAME } käyttöön"
       ],
@@ -15381,6 +15555,9 @@
       ],
       "Verification failed": [
         "Vahvistus epäonnistui"
+      ],
+      "Verify it’s you": [
+        "Vahvista henkilöllisyytesi"
       ],
       "Verifying your card...": [
         "Vahvistetaan korttiasi..."
@@ -15882,6 +16059,9 @@
       ]
     },
     "user_modal": {
+      "Add delegated roles to a user to grant them only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
+        "Määritä käyttäjälle delegoituja rooleja, jotta hänelle myönnetään vain tarvittavat käyttöoikeudet. Näin pidät järjestelmänvalvojan oikeudet erillään ja varmistat ympäristösi turvallisuuden."
+      ],
       "Add multiple users": [
         "Lisää useita käyttäjiä"
       ],
@@ -15906,11 +16086,11 @@
       "Create password instead": [
         "Luo sen sijaan salasana"
       ],
-      "Create user": [
-        "Luo käyttäjä"
-      ],
       "Email": [
         "Sähköposti"
+      ],
+      "General": [
+        "Yleinen"
       ],
       "Invitation email": [
         "Kutsusähköposti"
@@ -15926,6 +16106,12 @@
       ],
       "Remember to share the user's sign in details with them.": [
         "Muista jakaa käyttäjälle hänen kirjautumistietonsa."
+      ],
+      "Roles and permissions": [
+        "Roolit ja oikeudet"
+      ],
+      "Save": [
+        "Tallenna"
       ],
       "Send invite link via email instead": [
         "Lähetä kutsulinkki sen sijaan sähköpostitse"
