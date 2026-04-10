@@ -16,7 +16,6 @@ import SettingsDivider from '@proton/components/containers/account/SettingsDivid
 import useIsRecoveryFileAvailable from '@proton/components/hooks/recoveryFile/useIsRecoveryFileAvailable';
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
-import useConfig from '@proton/components/hooks/useConfig';
 import useHasOutdatedRecoveryFile from '@proton/components/hooks/useHasOutdatedRecoveryFile';
 import useIsMnemonicAvailable from '@proton/components/hooks/useIsMnemonicAvailable';
 import useRecoverySecrets from '@proton/components/hooks/useRecoverySecrets';
@@ -48,7 +47,6 @@ export const DataRecoverySection = () => {
     const [userSettings] = useUserSettings();
     const dispatch = useDispatch();
     const api = useApi();
-    const { APP_NAME } = useConfig();
     const authentication = useAuthentication();
 
     const getUser = useGetUser();
@@ -106,7 +104,6 @@ export const DataRecoverySection = () => {
             api,
             user,
             addresses,
-            appName: APP_NAME,
             userSettings: { ...userSettings, ...partialUserSettings },
             userKeys,
             authentication,

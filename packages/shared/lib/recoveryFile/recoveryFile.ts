@@ -4,7 +4,6 @@ import { isSelf } from '@proton/shared/lib/user/helpers';
 import isTruthy from '@proton/utils/isTruthy';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
-import type { APP_NAMES } from '../constants';
 import { RECOVERY_FILE_FILE_NAME } from '../constants';
 import downloadFile from '../helpers/downloadFile';
 import type { Address, DecryptedKey, Key, KeyWithRecoverySecret, User } from '../interfaces';
@@ -148,7 +147,6 @@ export const getIsRecoveryFileAvailable = ({
     user: User;
     addresses: Address[];
     userKeys: DecryptedKey[];
-    appName: APP_NAMES;
 }) => {
     const hasMigratedKeys = getHasMigratedAddressKeys(addresses);
     const primaryKey = getPrimaryKey(userKeys);

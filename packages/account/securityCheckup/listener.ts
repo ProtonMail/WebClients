@@ -32,11 +32,7 @@ import type { SecurityCheckupReduxState } from './slice';
 import { securityCheckupSlice, selectSecurityCheckup } from './slice';
 
 interface RequiredState
-    extends UserSettingsState,
-        UserState,
-        AddressesState,
-        UserKeysState,
-        SecurityCheckupReduxState {}
+    extends UserSettingsState, UserState, AddressesState, UserKeysState, SecurityCheckupReduxState {}
 
 export const securityCheckupListener = (startListening: SharedStartListening<RequiredState>) => {
     /**
@@ -64,11 +60,7 @@ export const securityCheckupListener = (startListening: SharedStartListening<Req
             );
         },
         effect: async (action, listenerApi) => {
-            const {
-                getState,
-                dispatch,
-                extra: { config },
-            } = listenerApi;
+            const { getState, dispatch } = listenerApi;
 
             const { user, userKeys, addresses, userSettings, securityCheckup } = getState();
             const { actions } = securityCheckupSlice;
@@ -88,7 +80,6 @@ export const securityCheckupListener = (startListening: SharedStartListening<Req
                 user: user.value,
                 addresses: addresses.value,
                 userKeys: userKeys.value,
-                appName: config.APP_NAME,
             });
 
             const securityState: SecurityState = {
