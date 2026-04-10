@@ -11,8 +11,7 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
-import type { CountryOptions } from '@proton/payments/index';
-import { getLocalizedCountryByAbbr } from '@proton/payments/index';
+import { type CountryOptions, getLocalizedCountryByAbbr } from '@proton/payments/core/countries';
 import type { Either } from '@proton/shared/lib/interfaces';
 
 import { CountryFlagAndName } from './CountryFlagAndName';

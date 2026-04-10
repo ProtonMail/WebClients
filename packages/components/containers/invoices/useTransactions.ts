@@ -2,10 +2,9 @@ import {
     type InvoiceOwner,
     type Transaction,
     type TransactionResponse,
-    displayTransactionState,
-    displayTransactionType,
     queryTransactions,
 } from '@proton/payments';
+import { displayTransactionState, displayTransactionType } from '@proton/payments/core/transactions';
 
 import { usePaginationAsync } from '../../components/pagination';
 import useApiResult from '../../hooks/useApiResult';

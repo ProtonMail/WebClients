@@ -10,10 +10,7 @@ import useConfig from '@proton/components/hooks/useConfig';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import {
     type CheckSubscriptionData,
-    DEFAULT_TAX_BILLING_ADDRESS,
-    type FullBillingAddress,
     type MultiCheckOptions,
-    PAYMENTS_API_ERROR_CODES,
     type PaymentStatus,
     type PaymentsApi,
     type PaymentsVersion,
@@ -26,6 +23,7 @@ import {
     isLifetimePlanSelected,
     isSubscriptionCheckForbidden,
 } from '@proton/payments';
+import { PAYMENTS_API_ERROR_CODES } from '@proton/payments/core/api-error-codes';
 import {
     putFullBillingAddress,
     putInvoiceBillingAddress,
@@ -33,7 +31,11 @@ import {
     queryInvoiceBillingAddress,
 } from '@proton/payments/core/api/billing-information';
 import { getLifetimeProductType } from '@proton/payments/core/api/createPaymentSubscription';
-import { getBillingAddressPayload } from '@proton/payments/core/billing-address/billing-address';
+import {
+    DEFAULT_TAX_BILLING_ADDRESS,
+    type FullBillingAddress,
+    getBillingAddressPayload,
+} from '@proton/payments/core/billing-address/billing-address';
 import { getInformedOptimisticSubscriptionEstimation, getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import {
     InvalidCouponError,

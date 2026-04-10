@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 
 import groupBy from 'lodash/groupBy';
 
-import type { CountryOptions } from '@proton/payments';
+import type { CountryOptions } from '@proton/payments/core/countries';
 import type { Logical } from '@proton/shared/lib/vpn/Logical';
 import clsx from '@proton/utils/clsx';
 import compare from '@proton/utils/compare';

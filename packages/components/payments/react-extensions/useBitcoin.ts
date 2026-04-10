@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react';
 import { useLoading } from '@proton/hooks';
 import {
     type AmountAndCurrency,
-    type BillingAddress,
     type ChargeablePaymentParameters,
     type CreateBitcoinTokenData,
     PAYMENT_METHOD_TYPES,
@@ -16,6 +15,7 @@ import {
 } from '@proton/payments';
 import type { Currency, PaymentProcessorHook } from '@proton/payments';
 import { getMaxBitcoinAmount, getMinBitcoinAmount } from '@proton/payments/core/amount-limits';
+import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { Api } from '@proton/shared/lib/interfaces';
