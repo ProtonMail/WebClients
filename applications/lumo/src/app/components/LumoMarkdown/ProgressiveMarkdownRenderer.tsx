@@ -12,12 +12,10 @@ import { isIos, isIpad, isSafari } from '@proton/shared/lib/helpers/browser';
 import type { SearchItem } from '../../lib/toolCall/types';
 import { parseInteger } from '../../util/number';
 import { convertRefTokensToSpans, normalizeBrTags } from '../../util/tokens';
-import LumoCopyButton from '../Conversation/messageChain/message/actionToolbar/LumoCopyButton';
 import { getDomain } from '../Conversation/messageChain/message/toolCall/helpers';
 import { InlineImageComponent } from './InlineImageComponent';
-import { SyntaxHighlighter } from './syntaxHighlighterConfig';
+import { LumoMarkdownCodeBlock } from './LumoMarkdownCodeBlock';
 import { remarkLatexDelimiters } from './remarkLatexDelimiters';
-import {LumoMarkdownCodeBlock} from './LumoMarkdownCodeBlock';
 
 import './LumoMarkdown.scss';
 

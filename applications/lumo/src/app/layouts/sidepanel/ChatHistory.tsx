@@ -117,9 +117,9 @@ export const ChatHistory = ({ onItemClick, searchInput = '' }: Props) => {
     if (isGuest) {
         return (
             <div className="chat-history-container flex flex-column flex-nowrap gap-2">
-                <Scroll className="flex-1">
-                    <ChatHistoryGuestUserUpsell />
-                </Scroll>
+                {/* <Scroll className="flex-1"> */}
+                <ChatHistoryGuestUserUpsell />
+                {/* </Scroll> */}
             </div>
         );
     }
