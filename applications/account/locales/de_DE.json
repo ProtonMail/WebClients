@@ -903,8 +903,14 @@
       "I don't have my key": [
         "Ich habe meinen Schlüssel nicht"
       ],
+      "I don't have my phrase": [
+        "Ich habe meine Wiederherstellungsphrase nicht"
+      ],
       "I don’t have my backup codes": [
         "Ich habe meine Sicherheitscodes nicht"
+      ],
+      "I don’t have my phone": [
+        "Ich habe mein Handy nicht"
       ],
       "Ignore": [
         "Ignorieren"
@@ -1302,6 +1308,9 @@
       "Return to sign in": [
         "Zurück zur Anmeldung"
       ],
+      "Return to sign-in": [
+        "Zurück zur Anmeldung"
+      ],
       "Review": [
         "Überprüfen"
       ],
@@ -1586,6 +1595,9 @@
       ],
       "Try another method": [
         "Eine andere Methode ausprobieren"
+      ],
+      "Try another way": [
+        "Versuche es auf eine andere Weise"
       ],
       "Try for free": [
         "Kostenlos ausprobieren"
@@ -9082,6 +9094,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe-Schreibassistent"
       ],
+      "${ BRAND_NAME } will send a verification code to ${ RedactedPhoneNumber }. Standard message rates may apply.": [
+        "${ BRAND_NAME } sendet einen Bestätigungscode an ${ RedactedPhoneNumber }. Es können Standardgebühren für Nachrichten anfallen."
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }'s Verschlüsselungstechnologie bedeutet, dass keiner Zugriff auf dein Passwort hat - nicht einmal wir."
       ],
@@ -9099,6 +9114,9 @@
       "${ countriesCount } country enabled": [
         "${ countriesCount } Land aktiviert",
         "${ countriesCount } Länder aktiviert"
+      ],
+      "${ DataLockedText }, but recoverable with your ${ RecoveryContactsLink }:": [
+        "${ DataLockedText }, aber wiederherstellbar mit deinen ${ RecoveryContactsLink }:"
       ],
       "${ discountPercent }% discount": [
         "${ discountPercent }% Rabatt"
@@ -9562,8 +9580,8 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Ein E-Mail-Alias funktioniert wie eine E-Mail-Adresse, verhindert aber Spam und hält deine tatsächliche E-Mail-Adresse und Identität verborgen."
       ],
-      "An email with a verification code was just sent to ${ recoveryEmailElement }. If you can’t find the message in your inbox, please check your spam folder.": [
-        "Eine E-Mail mit einem Bestätigungscode wurde eben an ${ recoveryEmailElement } gesendet. Solltest du die E-Mail nicht in deinem Posteingang vorfinden, überprüfe bitte deinen Spam-Ordner."
+      "An email with a verification code was just sent to ${ emailAddress }. If you can’t find the message in your inbox, please check your spam folder.": [
+        "Eine E-Mail mit einem Bestätigungscode wurde gerade an ${ emailAddress } gesendet. Wenn du die Nachricht nicht in deinem Posteingang findest, überprüfe bitte deinen Spam-Ordner."
       ],
       "An error occurred while communicating with **${ applicationName }**": [
         "Bei der Kommunikation mit **${ applicationName }** ist ein Fehler aufgetreten."
@@ -9577,8 +9595,8 @@
       "An import is paused because your storage is almost full.": [
         "Ein Import ist pausiert, da dein Speicherplatz fast voll ist."
       ],
-      "An SMS with a verification code was just sent to ${ recoveryPhoneElement }.": [
-        "Eine SMS mit einem Bestätigungscode wurde gerade an ${ recoveryPhoneElement } gesendet."
+      "An SMS with a verification code was just sent to ${ phoneNumber }.": [
+        "Eine SMS mit einem Bestätigungscode wurde gerade an ${ phoneNumber } gesendet."
       ],
       "and": [
         "und"
@@ -9651,6 +9669,9 @@
       ],
       "Are you sure you want to sort your labels alphabetically?": [
         "Bist du sicher, dass du deine Kategorien alphabetisch sortieren möchtest?"
+      ],
+      "Ask them to sign in to their ${ ACCOUNT_APP_NAME } in the browser, and go to **Settings → All settings → Recovery → Emergency access→ People who trust me.**": [
+        "Bitte sie, sich im Browser bei ihrem ${ ACCOUNT_APP_NAME } anzumelden und zu **Einstellungen → Alle Einstellungen → Wiederherstellung → Notfallzugriff→ Personen, die mir vertrauen** zu navigieren."
       ],
       "Ask your organization admin to setup Gateways.": [
         "Bitte den Administrator deiner Organisation um die Einrichtung von Gateways."
@@ -9763,6 +9784,15 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Indem du die vollständigen Termindetails dieses Kalenders freigibst, erklärst du dich damit einverstanden, ${ BRAND_NAME } Zugriff auf diese verschlüsselten Informationen des Kalenders zu gewähren."
       ],
+      "Can you access your active session?": [
+        "Kannst du auf deine aktive Sitzung zugreifen?"
+      ],
+      "Can you access your active web session in another browser?": [
+        "Kannst du in einem anderen Browser auf deine aktive Web-Sitzung zugreifen?"
+      ],
+      "Can you reach out to your contact?": [
+        "Kannst du deine Kontaktperson erreichen?"
+      ],
       "Cancel": [
         "Abbrechen"
       ],
@@ -9795,6 +9825,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klicke auf „Neuen Code anfordern“, um einen neuen Verifizierungscode an ${ strong } senden zu lassen. Wenn diese Telefonnummer nicht stimmt, klicke auf „Bearbeiten“, um sie zu korrigieren."
+      ],
+      "Click **Request password reset** and follow the prompts.": [
+        "Klicke auf **Passwort zurücksetzen anfordern** und folge den Anweisungen."
       ],
       "Click the icon to open it anytime.": [
         "Klicke auf das Symbol, um es jederzeit zu öffnen."
@@ -9949,6 +9982,9 @@
       "Data recoverable on this device": [
         "Daten, die auf diesem Gerät wiederhergestellt werden können"
       ],
+      "Data recoverable with recovery phrase": [
+        "Daten mit Wiederherstellungsphrase wiederherstellbar"
+      ],
       "dedicated servers": [
         "dedizierte Server"
       ],
@@ -9979,6 +10015,9 @@
       "Deleting ${ deletedServerCount } gateway server": [
         "${ deletedServerCount } Gateway-Server wird gelöscht",
         "${ deletedServerCount } Gateway-Server werden gelöscht"
+      ],
+      "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
+        "Je nach Einstellungen erhalten sie sofort oder nach einer festgelegten **Wartezeit** Zugriff."
       ],
       "Did you know?": [
         "Schon gewusst?"
@@ -10079,6 +10118,9 @@
       ],
       "Drop to import": [
         "Ablegen zum Importieren"
+      ],
+      "Due to end-to-end encryption, you can reset your password, but ${ DataLockedText } until you use a ${ DataRecoveryOptionsLink }:": [
+        "Aufgrund der Ende-zu-Ende-Verschlüsselung kannst du dein Passwort zurücksetzen, aber ${ DataLockedText } bis du deine ${ DataRecoveryOptionsLink } verwendest:"
       ],
       "Each code can only be used once": [
         "Jeder Code kann nur ein Mal verwendet werden"
@@ -10187,6 +10229,9 @@
       ],
       "Enter new password for user ${ userName }.": [
         "Gib ein neues Passwort für den Benutzer ${ userName } ein."
+      ],
+      "Enter the 12-word recovery phrase associated with your account.": [
+        "Gib die 12-Wort-Wiederherstellungsphrase ein, die mit deinem Konto verknüpft ist."
       ],
       "Enter the code from your authenticator app": [
         "Code aus deiner Authentifizierungs-App ein eingeben"
@@ -10332,6 +10377,9 @@
       "Friends and family": [
         "Freunde und Familie"
       ],
+      "From there, they can request emergency access to your account by clicking **Request access.**": [
+        "Von dort können sie Notfallzugriff auf dein Konto beantragen, indem sie auf **Zugriff anfordern.** klicken."
+      ],
       "Gateway couldn't be deleted. Please try again": [
         "Gateway konnte nicht gelöscht werden. Bitte versuche es erneut"
       ],
@@ -10352,6 +10400,9 @@
       ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Erhalte Zugang, indem du ein Konto bei ${ BRAND_NAME } erstellst und die Einladung annimmst."
+      ],
+      "Get in touch with your emergency contacts, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed**.": [
+        "Kontaktiere deine Notfallkontakte, um zu sehen, ob sie helfen können. Nachdem der Notfallzugriff auf dein Konto angefordert wurde, können sie dein Passwort für dich ändern, **nachdem die Wartezeit für den Zugriff abgelaufen ist**."
       ],
       "Get it on Google Play": [
         "Auf Google Play holen"
@@ -10410,6 +10461,12 @@
       "How it works": [
         "So funktioniert's"
       ],
+      "How to perform a signed-in reset": [
+        "Wie man einen angemeldeten Reset durchführt"
+      ],
+      "How your emergency contact can change your password for you:": [
+        "So kann dein Notfallkontakt dein Passwort für dich ändern:"
+      ],
       "IBAN: ${ formattedIBAN }": [
         "IBAN: ${ formattedIBAN }"
       ],
@@ -10437,6 +10494,9 @@
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Wenn Tastaturkürzel aktiviert sind, kannst du die folgenden Tasten für Schnellaktionen oder zum Springen zu verschiedenen Ansichten verwenden. ${ metaKey } + K ist immer aktiviert."
       ],
+      "If possible, when signing in, use a device or a browser where you’ve signed in before.": [
+        "Wenn möglich, verwende beim Anmelden ein Gerät oder einen Browser, bei dem du dich bereits angemeldet hattest."
+      ],
       "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
         "Wenn die eingegebene E-Mail-Adresse zum Reservieren einer Kinder-E-Mail-Adresse verwendet wurde, senden wir den Aktivierungsgutschein erneut."
       ],
@@ -10451,6 +10511,9 @@
       ],
       "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
         "Wenn du an einem anderen Ort angemeldet bist, kannst du möglicherweise ${ signedInPasswordResetLink }."
+      ],
+      "If you are signed in to a ${ BRAND_NAME } web app in **another browser**, you may be able to perform a password reset from your active session.": [
+        "Wenn du in einem **anderen Browser** in einer ${ BRAND_NAME }-Web-App angemeldet bist, kannst du eventuell ein Zurücksetzen des Passworts von deiner aktiven Sitzung aus durchführen."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Wenn du glaubst, dass dies ungerechtfertigt ist, kontaktiere uns bitte ${ contactLink }."
@@ -10469,6 +10532,9 @@
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Wenn du einen Geschenkgutschein hast, gib den Code unten ein, um deinen Rabatt einzulösen."
+      ],
+      "If you have emergency contacts, get in touch with them, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed.**": [
+        "Wenn du Notfallkontakte hast, wende dich an sie, um zu sehen, ob sie helfen können. Nachdem sie den Notfallzugriff auf dein Konto angefordert haben, können sie dein Passwort für dich ändern, **nachdem die Wartezeit für den Zugriff abgelaufen ist.**"
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Wenn du dein bestätigtes 2-Faktor-Gerät verlierst, können diese Codes anstelle des 6-stelligen Zwei-Faktor-Authentifizierung-Codes verwendet werden, um dich wieder in deinem Konto anzumelden. Jeder Code kann nur einmal verwendet werden."
@@ -10950,6 +11016,9 @@
       "On Ubuntu?": [
         "Auf Ubuntu?"
       ],
+      "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
+        "Sobald der Zugriff auf dein Konto gewährt wurde, können sie auf deine **Wiederherstellungs**-Einstellungen zugreifen und dein ${ ACCOUNT_APP_NAME }-Passwort für dich **ändern**."
+      ],
       "Once you reset your password:": [
         "Sobald du dein Passwort zurücksetzt:"
       ],
@@ -10967,6 +11036,9 @@
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Öffne die Anleitung für empfohlene Aktionen und hilfreiche Links."
+      ],
+      "Open your active session in the browser, and go to **Settings → All settings → Recovery → Password reset settings.**": [
+        "Öffne deine aktive Sitzung im Browser und gehe zu **Einstellungen → Alle Einstellungen → Wiederherstellung → Einstellungen für Passwort zurücksetzen**."
       ],
       "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
         "Öffne deine Safari-Einstellungen für die Erweiterung und überprüfe, ob die Seitenberechtigungen für ${ BRAND_NAME }-Domains aktiviert sind."
@@ -11221,6 +11293,12 @@
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Auf vertrauenswürdigen Geräten empfohlen. ${ keepMeSignedInLearnMoreLink }"
       ],
+      "Recovery contacts": [
+        "Wiederherstellungskontakte"
+      ],
+      "Recovery file": [
+        "Wiederherstellungsdatei"
+      ],
       "Recovery file downloaded": [
         "Wiederherstellungsdatei wurde heruntergeladen"
       ],
@@ -11229,6 +11307,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Die Wiederherstellungsinformationen verbleiben auf diesem Gerät, sofern du sie nicht löschst."
+      ],
+      "Recovery phrase": [
+        "Wiederherstellungsphrase"
       ],
       "Recovery phrase copied to clipboard": [
         "Wiederherstellungsphrase wurde in die Zwischenablage kopiert"
@@ -11274,6 +11355,9 @@
       ],
       "Resend verification email": [
         "Verifizierungs-E-Mail erneut senden"
+      ],
+      "Resetting your password in your active web session will ensure **your encrypted data will remain accessible** after you change your password.": [
+        "Wenn du dein Passwort in deiner aktiven Web-Sitzung zurücksetzest, wird sichergestellt, dass **deine verschlüsselten Daten zugänglich bleiben** nachdem du dein Passwort geändert hast."
       ],
       "Restore": [
         "Wiederherstellen"
@@ -11896,6 +11980,9 @@
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Teste ${ productName } völlig risikofrei - wenn du aus irgendeinem Grund deine Meinung änderst, erhältst du eine volle Rückerstattung. Es werden keine Fragen gestellt."
       ],
+      "Try recovering your account from a **device or browser where you have signed in before**, as it may be possible from there:": [
+        "Versuche, dein Konto von einem **Gerät oder Browser wiederherzustellen, auf dem du dich zuvor angemeldet hast**, da dies von dort aus möglich sein könnte:"
+      ],
       "Two-factor authentication": [
         "Zwei-Faktor-Authentifizierung"
       ],
@@ -11910,6 +11997,9 @@
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Signatur der Wiederherstellungsdatei konnte nicht bestätigt werden. Bitte kontaktiere den Support."
+      ],
+      "Unfortunately there is no recovery method available for this account.": [
+        "Leider ist keine Wiederherstellungsmethode für dieses Konto verfügbar."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Leider wurde für dieses Konto keine Wiederherstellungsmethode gespeichert."
@@ -12088,6 +12178,9 @@
       "We couldn’t process your payment.": [
         "Wir konnten deine Zahlung nicht abschließen."
       ],
+      "We detected you are already signed in to a ${ BRAND_NAME } web app on **another browser**. You may be able to perform a password reset from your active session.": [
+        "Wir haben erkannt, dass du in einer ${ BRAND_NAME }-Web-App in einem **anderen Browser** angemeldet bist. Möglicherweise kannst du ein Zurücksetzen des Passworts von deiner aktiven Sitzung aus durchführen."
+      ],
       "We generated a strong password for you": [
         "Wir haben ein sicheres Passwort für dich generiert"
       ],
@@ -12141,6 +12234,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Wir senden einen neuen Verifizierungscode an ${ strong }"
+      ],
+      "Web sessions detected:": [
+        "Web-Sitzungen erkannt:"
       ],
       "Web URL": [
         "Web-URL"
@@ -12331,6 +12427,12 @@
       "You can now close this window.": [
         "Du kannst dieses Fenster jetzt schließen."
       ],
+      "You can now reset your password to regain access to your account.": [
+        "Du kannst jetzt dein Passwort zurücksetzen, um wieder Zugriff auf dein Konto zu erhalten."
+      ],
+      "You can now reset your password to regain access to your account. **This will disable 2-factor authentication.**": [
+        "Du kannst dein Passwort jetzt zurücksetzen, um wieder Zugriff auf dein Konto zu erhalten. **Dadurch wird die Zwei-Faktor-Authentifizierung deaktiviert.**"
+      ],
       "You can now return to the application to continue": [
         "Du kannst jetzt zur Anwendung zurückkehren, um fortzufahren."
       ],
@@ -12448,6 +12550,9 @@
       "You will not be asked for a one-time code or a security key.": [
         "Du wirst nicht nach einem Einmalcode oder einem Sicherheitsschlüssel gefragt."
       ],
+      "You will regain complete or partial access to your encrypted data.": [
+        "Du erhältst vollständigen oder teilweisen Zugriff auf deine verschlüsselten Daten."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du wirst in Kürze zu PayPal weitergeleitet, um deine Zahlung zu bestätigen."
       ],
@@ -12522,6 +12627,12 @@
       "Your email will only be used for this one-time verification.": [
         "Deine E-Mail-Adresse wird nur für diese einmalige Überprüfung verwendet."
       ],
+      "Your encrypted data will be locked": [
+        "Deine verschlüsselten Daten werden gesperrt"
+      ],
+      "your encrypted data will be locked": [
+        "Deine verschlüsselten Daten werden gesperrt"
+      ],
       "Your files will be encrypted and then saved": [
         "Deine Dateien werden verschlüsselt und anschließend gespeichert"
       ],
@@ -12548,6 +12659,9 @@
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "Dein nächster Abrechnungstermin ist der ${ renewalTime }. Eine Kündigung ist jederzeit möglich. Bitte wende dich an den Support, wenn du eine sofortige Änderung deines Abonnements wünschst."
+      ],
+      "Your old password": [
+        "Dein altes Passwort"
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Deine Organisation verwendet Single Sign-on (SSO). Klicke auf \"Anmelden\", um mit deinem SSO-Anbieter fortzufahren."
@@ -13779,6 +13893,9 @@
       "End weekday": [
         "Ende der Woche"
       ],
+      "Enter code": [
+        "Code eingeben"
+      ],
       "Enter name or email address": [
         "Namen oder E-Mail-Adresse eingeben"
       ],
@@ -14857,11 +14974,20 @@
       "Common sign up issues": [
         "Häufige Probleme bei der Registrierung"
       ],
+      "contacts’ assistance": [
+        "Unterstützung durch Kontakte"
+      ],
       "Create account": [
         "Konto erstellen"
       ],
       "Create an alias": [
         "Alias erstellen"
+      ],
+      "data recovery option": [
+        "Datenwiederherstellungsoption"
+      ],
+      "Details": [
+        "Details"
       ],
       "Don't have access to your 2FA?": [
         "Du hast keinen Zugriff auf deine 2FA?"
@@ -15362,9 +15488,6 @@
       ],
       "60 minutes per meeting": [
         "60 Minuten pro Meeting"
-      ],
-      "Appointment scheduling": [
-        "Terminplanung"
       ],
       "Booking pages": [
         "Buchungsseiten"
@@ -16070,6 +16193,13 @@
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Alle ${ BRAND_NAME } Standarddienste (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "Appointment scheduling": [
+        "Terminplanung"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Terminplanung mit ${ n } Buchungsseite",
+        "Terminplanung mit ${ n } Buchungsseiten"
       ],
       "Apps for": [
         "Apps für"
@@ -20632,6 +20762,12 @@
         "${ FREE_PASS_ALIASES } Hide-my-email-Alias, um Spam zu bekämpfen",
         "${ FREE_PASS_ALIASES } Hide-my-email-Aliasse, um Spam zu bekämpfen"
       ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } Hide-my-email-Aliasse, um Spam zu bekämpfen"
+      ],
+      "${ MAIL_SHORT_APP_NAME } Free": [
+        "${ MAIL_SHORT_APP_NAME } Kostenlos"
+      ],
       "${ maxAddresses } address": [
         "${ maxAddresses } Adresse",
         "${ maxAddresses } Adressen"
@@ -20726,6 +20862,9 @@
       "Bundle": [
         "Paket"
       ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "Wähle eine sichere ${ MAIL_APP_NAME }-E-Mail-Adresse, um loszulegen"
+      ],
       "Collaborative document editing": [
         "Gemeinsame Dokumentbearbeitung"
       ],
@@ -20789,6 +20928,9 @@
       "Gifted by **${ referrerName }**": [
         "Geschenkt von **${ referrerName }**"
       ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "Halte deine Unterhaltungen mit ${ MAIL_APP_NAME } privat"
+      ],
       "Manage user access": [
         "Benutzerzugriff verwalten"
       ],
@@ -20812,6 +20954,9 @@
       ],
       "Password manager for all your devices": [
         "Passwortmanager für alle deine Geräte"
+      ],
+      "Password-protected messages": [
+        "Passwortgeschützte Nachrichten"
       ],
       "Pick a service to get started.": [
         "Wähle einen Dienst, um zu beginnen."
@@ -20837,6 +20982,9 @@
       "Secure ${ VPN_CONNECTIONS } device at a time": [
         "Schütze ${ VPN_CONNECTIONS } Gerät gleichzeitig",
         "Schütze ${ VPN_CONNECTIONS } Geräte gleichzeitig"
+      ],
+      "Secure calendar": [
+        "Sicherer Kalender"
       ],
       "Secure file sharing": [
         "Sicherer Dateiaustausch"
@@ -20946,6 +21094,9 @@
       "use your own email.": [
         "Nutze deine eigene E-Mail-Adresse."
       ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "VPN mit Servern in ${ vpnServersCountData.free.countries } Ländern"
+      ],
       "VPN with servers in ${ vpnServersCountData.free.countries } country": [
         "VPN mit Servern in ${ vpnServersCountData.free.countries } Land",
         "VPN mit Servern in ${ vpnServersCountData.free.countries } Ländern"
@@ -20958,6 +21109,9 @@
       ],
       "You are all set": [
         "Du bist startklar"
+      ],
+      "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
+        "Dein Konto beinhaltet Zugriff auf kostenlose Funktionen in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } und ${ LUMO_SHORT_APP_NAME }."
       ],
       "Your plan": [
         "Dein Abonnement"
@@ -23073,6 +23227,9 @@
       "Apply gift code": [
         "Geschenkcode anwenden"
       ],
+      "Are you already signed in to ${ BRAND_NAME } in a browser?": [
+        "Bist du bereits bei ${ BRAND_NAME } in einem Browser angemeldet?"
+      ],
       "Are you sure you want to close the preview?": [
         "Möchtest du die Vorschau wirklich schließen?"
       ],
@@ -23084,6 +23241,9 @@
       ],
       "Are you sure?": [
         "Bist du sicher?"
+      ],
+      "Ask your emergency contacts for help": [
+        "Bitte deine Notfallkontakte um Hilfe"
       ],
       "Auto-deletion is active": [
         "Automatisches Löschen ist aktiv"
@@ -23111,6 +23271,12 @@
       ],
       "Browser extensions": [
         "Browsererweiterung"
+      ],
+      "Can you access your session in the browser?": [
+        "Kannst du deine Sitzung im Browser aufrufen?"
+      ],
+      "Can you reach out to your emergency contacts?": [
+        "Kannst du deine Notfallkontakte erreichen?"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "${ MAIL_SHORT_APP_NAME }-Abonnement kündigen"
@@ -23231,6 +23397,9 @@
       ],
       "Couldn’t create accounts": [
         "Konten konnten nicht erstellt werden"
+      ],
+      "Couldn’t recover your account": [
+        "Konto konnte nicht wiederhergestellt werden"
       ],
       "Coupon": [
         "Gutschein"
@@ -24034,6 +24203,9 @@
       "Reconnect your account": [
         "Erneut mit deinem Konto verbinden"
       ],
+      "Recover account": [
+        "Konto wiederherstellen"
+      ],
       "Recover data": [
         "Daten wiederherstellen"
       ],
@@ -24356,6 +24528,9 @@
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "${ AUTHENTICATOR_APP_NAME } ausprobieren"
       ],
+      "Try changing your password in your active web session": [
+        "Versuche, dein Passwort in deiner aktiven Web-Sitzung zu ändern"
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Aktiviere ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -24436,6 +24611,9 @@
       ],
       "Verification failed": [
         "Verifizierung fehlgeschlagen"
+      ],
+      "Verify it’s you": [
+        "Überprüfe, ob du es bist"
       ],
       "Verifying your card...": [
         "Deine Karte wird verifiziert..."
@@ -25242,6 +25420,9 @@
       ]
     },
     "user_modal": {
+      "Add delegated roles to a user to grant them only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
+        "Weise einem Benutzer delegierte Rollen zu, um ihm nur die spezifischen Berechtigungen zu erteilen, die er benötigt. Behalte die vollen Administrationsrechte getrennt und deine Umgebung sicher."
+      ],
       "Add multiple users": [
         "Füge mehrere Benutzer hinzu"
       ],
@@ -25266,11 +25447,11 @@
       "Create password instead": [
         "Stattdessen Passwort erstellen"
       ],
-      "Create user": [
-        "Benutzer erstellen"
-      ],
       "Email": [
         "E‐Mail‐Adresse"
+      ],
+      "General": [
+        "Allgemein"
       ],
       "Invitation email": [
         "Einladungs-E-Mail"
@@ -25286,6 +25467,12 @@
       ],
       "Remember to share the user's sign in details with them.": [
         "Denke daran, dem Benutzer seine Anmeldedaten mitzuteilen."
+      ],
+      "Roles and permissions": [
+        "Rollen und Berechtigungen"
+      ],
+      "Save": [
+        "Speichern"
       ],
       "Send invite link via email instead": [
         "Einladungslink stattdessen via E-Mail senden"
