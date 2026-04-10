@@ -11167,10 +11167,10 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@proton/proton-foundation-search@npm:2.0.0-job33067677":
-  version: 2.0.0-job33067677
-  resolution: "@proton/proton-foundation-search@npm:2.0.0-job33067677"
-  checksum: 10/d50b046795b757a991214d7cc66cd098aabea58e4a3c8911428749ba4bc5fc62410489d2393d3c26c9523954830e48449b9dd212c8086d3b4bca5ec59ac461ad
+"@proton/proton-foundation-search@npm:2.0.0-preview1-job33261394":
+  version: 2.0.0-preview1-job33261394
+  resolution: "@proton/proton-foundation-search@npm:2.0.0-preview1-job33261394"
+  checksum: 10/f267589235be61bad7e326e92485963ee772cd6aa69aa355974a7dc103de3002b9e421ed7014a9d530ae24e1f1b0c09392a026152883842922f4d41f5c630b67
   languageName: node
   linkType: hard
 
@@ -41478,7 +41478,7 @@ __metadata:
     "@proton/pack": "workspace:^"
     "@proton/payments": "workspace:^"
     "@proton/polyfill": "workspace:^"
-    "@proton/proton-foundation-search": "npm:2.0.0-job33067677"
+    "@proton/proton-foundation-search": "npm:2.0.0-preview1-job33261394"
     "@proton/raw-images": "workspace:^"
     "@proton/react-redux-store": "workspace:^"
     "@proton/redux-shared-store": "workspace:^"
