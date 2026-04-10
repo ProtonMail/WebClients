@@ -704,6 +704,9 @@
       "Reconnect": [
         "Obnoviť pripojenie"
       ],
+      "Reconnect to Gmail": [
+        "Znova sa pripojiť ku Gmailu"
+      ],
       "Reconnect to Zoom": [
         "Znova sa pripojiť k Zoomu"
       ],
@@ -3209,6 +3212,15 @@
       "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
         "Môže to trvať niekoľko minút. Medzitým môžete používať ${ CALENDAR_APP_NAME } ako zvyčajne."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "K tomu môže dôjsť, ak boli zrušené oprávnenia alebo ste si zmenili heslo."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Ak chcete aj naďalej dostávať a odosielať správy Gmail v službe ${ BRAND_NAME }, pripojte svoje účet znova, prosím."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Ak chcete aj naďalej dostávať a odosielať správy Gmail v službe ${ BRAND_NAME }, pripojte svoje účty znova, prosím."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Ak chcete zabezpečiť čo najvyššiu bezpečnosť svojho účtu, nastavte frázu na obnovenie."
       ],
@@ -3226,6 +3238,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Použite tohto sprievodcu, aby vaša organizácia mohla okamžite využívať výhody špičkového ekosystému šifrovania a ochrany osobných údajov od spoločnosti ${ BRAND_NAME }."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Už nemáme prístup k ${ boldEmails }."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Je nám ľúto, že odchádzate. Ak máte chvíľku, veľmi by sme ocenili, keby ste nám povedali, prečo chcete zrušiť odber. Vaša spätná väzba nám pomáha vylepšovať ${ BRAND_NAME } pre všetkých."
@@ -3575,6 +3590,9 @@
       ],
       "Account does not exist": [
         "Účet neexistuje"
+      ],
+      "Address could not be added.": [
+        "Adresu nebolo možné pridať."
       ],
       "Address primary private key not found": [
         "Primárny súkromný kľúč adresy nenájdený"
@@ -4013,6 +4031,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Niektoré z vašich názvov štítkov prekračujú maximálny limit znakov pre ${ MAIL_APP_NAME }. Prispôsobte import na úpravu týchto názvov."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Pri načítavaní dostupných domén sa vyskytla chyba"
       ],
       "Something went wrong. Please try again.": [
         "Niečo sa pokazilo. Skúste to znova, prosím."
@@ -5681,6 +5702,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Zabezpečte úplne súkromnú a šifrovanú komunikáciu. Vyžiadajte si teraz bezplatnú emailovú ${ BRAND_NAME } adresu."
       ],
+      "Enter code": [
+        "Zadajte kód"
+      ],
       "Enter the code from your authenticator app": [
         "Zadajte kód z vašej overovacej aplikácie"
       ],
@@ -5788,6 +5812,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Ak email v priečinku doručenej pošty nenájdete, skontrolujte priečinok so spamom, prosím."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Ak ste stratili prístup k aplikácii na overovanie, môžete použiť jeden zo 16 záložných obnovovacích kódov, ktoré ste dostali pri nastavovaní dvojfaktorovej autentifikácie. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Ak znížite predplatné, stratíte prístup k plateným funkciám ${ MAIL_APP_NAME } a ${ VPN_APP_NAME }."
@@ -7347,6 +7374,9 @@
       "Secondary time zone": [
         "Sekundárne časové pásmo"
       ],
+      "Securely share parts of your schedule through a booking page you can send to anyone.": [
+        "Bezpečne zdieľajte časti svojho rozvrhu prostredníctvom rezervačnej stránky, ktorú môžete poslať komukoľvek."
+      ],
       "Show others when I'm busy": [
         "Zobraziť ostatným, kedy som zaneprázdnený"
       ],
@@ -7800,9 +7830,6 @@
       ],
       "60 minutes per meeting": [
         "60 minút na schôdzu"
-      ],
-      "Appointment scheduling": [
-        "Plánovanie schôdzok"
       ],
       "Booking pages": [
         "Stránky rezervácií"
@@ -9112,6 +9139,9 @@
       ],
       "Passphrase copied to clipboard": [
         "Prístupová fráza skopírovaná do schránky"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Vaša adresa ${ BRAND_NAME } je pripravená na použitie"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -12221,6 +12251,9 @@
       ],
       "Discard changes?": [
         "Zrušiť zmeny?"
+      ],
+      "Disconnected from Gmail": [
+        "Odpojené od Gmailu"
       ],
       "Does not repeat": [
         "Neopakuje sa"
