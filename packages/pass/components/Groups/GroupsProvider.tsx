@@ -11,7 +11,7 @@ import { useRequest } from '@proton/pass/hooks/useRequest';
 import type { Group, GroupId, GroupMembersResponse } from '@proton/pass/lib/groups/groups.types';
 import { isBusinessPlan } from '@proton/pass/lib/organization/helpers';
 import { getGroupMembers, getGroups } from '@proton/pass/store/actions/creators/groups';
-import { selectOrganization, selectPassPlan } from '@proton/pass/store/selectors';
+import { selectOrganization, selectPassPlan, selectUser } from '@proton/pass/store/selectors';
 import { selectGroupByEmail, selectGroups } from '@proton/pass/store/selectors/groups';
 import type { Maybe, MaybeNull } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
@@ -106,6 +106,7 @@ export const GroupsProvider: FC<Props> = ({ children }) => {
 type UseMaybeGroup = {
     name: string;
     isGroup: boolean;
+    isMember: boolean;
     groupIsLoading: boolean;
     onShowMembers: (event: MouseEvent) => void;
 };
@@ -119,6 +120,7 @@ type UseMaybeGroup = {
 export const useMaybeGroup = (email: Maybe<string>, inputGroupId?: MaybeNull<string>): UseMaybeGroup => {
     const { groupsMembers, fetchGroupMembers, onShowMembers: onShowMembersById } = useGroups();
     const group = useSelector(selectGroupByEmail(email ?? ''));
+    const user = useSelector(selectUser);
 
     useEffect(() => {
         if (group) fetchGroupMembers(group.groupId);
@@ -138,10 +140,16 @@ export const useMaybeGroup = (email: Maybe<string>, inputGroupId?: MaybeNull<str
     // If we know it's a group and the group is not loaded yet
     const groupIsLoading = isGroup && !group;
 
+    const isMember = useMemo(() => {
+        if (!group || !user?.Email) return false;
+        const members = groupsMembers[group.groupId]?.members ?? [];
+        return members.some((member) => member.email === user.Email);
+    }, [group, groupsMembers, user?.Email]);
+
     const onShowMembers = useCallback(group ? (event: MouseEvent) => onShowMembersById(event, group?.groupId) : noop, [
         group?.groupId,
         onShowMembersById,
     ]);
 
-    return { name, isGroup, groupIsLoading, onShowMembers };
+    return { name, isGroup, isMember, groupIsLoading, onShowMembers };
 };
