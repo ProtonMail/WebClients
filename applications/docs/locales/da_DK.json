@@ -600,6 +600,9 @@
       "Reconnect": [
         "Tilslut igen"
       ],
+      "Reconnect to Gmail": [
+        "Genopret forbindelse til Gmail"
+      ],
       "Recover data": [
         "Gendan data"
       ],
@@ -2510,6 +2513,15 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Forenkl synkronisering og planlægning med delte kalendere."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Dette kan ske hvis nogle tilladelser blev fjernet, eller din adgangskode blev ændret."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "For at fortsætte med at modtage og sende Gmail-beskeder i ${ BRAND_NAME } skal du genoprette forbindelsen til din konto."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "For at fortsætte med at modtage og sende Gmail-beskeder i ${ BRAND_NAME } skal du genoprette forbindelsen til dine konti."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Opnå størst mulig sikkerhed for din konto ved at indstille en gendannelsessætning."
       ],
@@ -2530,6 +2542,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Brug denne vejledning for hurtigt at lade din organisation drage fordel af ${ BRAND_NAME }'s branchens førende kryptering og privatlivsøkosystem."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Vi kan ikke længere få adgang til ${ boldEmails }."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Vi er kede af at du forlader os. Hvis du har et øjeblik, så ville vi sætte stor pris på at høre hvorfor du annullerer. Din feedback hjælper os med at gøre ${ BRAND_NAME } bedre for alle."
@@ -2797,6 +2812,9 @@
       ],
       "Account does not exist": [
         "Konto findes ikke"
+      ],
+      "Address could not be added.": [
+        "Adressen kunne ikke tilføjes."
       ],
       "Address primary private key not found": [
         "Adresses primære private nøgle ikke fundet"
@@ -3098,6 +3116,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Nogle af dine etikettenavne overskrider ${ MAIL_APP_NAME }'s maksimale tegngrænse. Tilpas venligst importen for at ændre disse navne."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Noget gik galt under hentning af tilgængelige domæner"
       ],
       "Something went wrong. Please try again.": [
         "Et eller andet gik galt. Prøv igen."
@@ -4482,6 +4503,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Sørg for privat og krypteret kommunikation. Gør krav på din gratis ${ BRAND_NAME } e-mailadresse nu."
       ],
+      "Enter code": [
+        "Indtast kode"
+      ],
       "Enter password": [
         "Indtast adgangskode"
       ],
@@ -4598,6 +4622,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Hvis du ikke kan se mailen i din indbakke, bedes du tjekke din spammappe."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Hvis du har mistet adgangen til din godkender-app kan du bruge 1 af de 16 gendannelseskoder som du fik da du satte to-faktor-godkendelses op. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Hvis du fortsætter med nedgraderingen, vil du miste adgang til betalte funktioner i ${ MAIL_APP_NAME } og ${ VPN_APP_NAME }."
@@ -6188,9 +6215,6 @@
       "60 minutes per meeting": [
         "60 minutter pr. møde"
       ],
-      "Appointment scheduling": [
-        "Aftaleplanlægning"
-      ],
       "Booking pages": [
         "Reservationssider"
       ],
@@ -7612,6 +7636,9 @@
       ],
       "You stopped sharing this item": [
         "Du stoppede med at dele dette emne"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Din ${ BRAND_NAME }-adresse er klar til brug"
       ],
       "Your settings failed to be saved": [
         "Dine indstillinger kunne ikke gemmes"
@@ -9602,6 +9629,9 @@
       ],
       "Discard changes?": [
         "Kassér ændringer?"
+      ],
+      "Disconnected from Gmail": [
+        "Forbindelsen til Gmail er afbrudt"
       ],
       "Docs": [
         "Dokumenter"
