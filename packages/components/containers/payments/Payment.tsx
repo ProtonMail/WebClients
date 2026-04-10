@@ -18,7 +18,6 @@ import type { ChargebeeDirectDebitProcessorHook } from '@proton/components/payme
 import { useStableLoading } from '@proton/hooks';
 import {
     type AvailablePaymentMethod,
-    type BillingAddressStatus,
     type Currency,
     type FreeSubscription,
     PAYMENT_METHOD_TYPES,
@@ -33,6 +32,7 @@ import {
     type useSepaCurrencyOverride,
 } from '@proton/payments';
 import { getMinCreditAmount, getMinDonationAmount } from '@proton/payments/core/amount-limits';
+import type { BillingAddressStatus } from '@proton/payments/core/billing-address/billing-address';
 import {
     type CbIframeHandles,
     type ChargebeeCardWrapperProps,

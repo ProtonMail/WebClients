@@ -1,7 +1,6 @@
 import type { ChallengeResult, VerificationModel } from '@proton/components';
 import type { AddressGeneration, AppIntent, AuthSession } from '@proton/components/containers/login/interface';
 import type {
-    BillingAddress,
     Currency,
     Cycle,
     ExtendedTokenPayment,
@@ -12,6 +11,7 @@ import type {
     Subscription,
     SubscriptionEstimation,
 } from '@proton/payments';
+import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import type { ResumedSessionResult } from '@proton/shared/lib/authentication/persistedSessionHelper';

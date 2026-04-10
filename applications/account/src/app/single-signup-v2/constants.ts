@@ -1,13 +1,6 @@
 import type { PaymentStatus } from '@proton/payments';
-import {
-    CYCLE,
-    type Cycle,
-    DEFAULT_TAX_BILLING_ADDRESS,
-    FREE_PLAN,
-    PLANS,
-    getDefaultMainCurrency,
-    getFreeCheckResult,
-} from '@proton/payments';
+import { CYCLE, type Cycle, FREE_PLAN, PLANS, getDefaultMainCurrency, getFreeCheckResult } from '@proton/payments';
+import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/payments/core/billing-address/billing-address';
 import { Audience } from '@proton/shared/lib/interfaces';
 import { defaultVPNServersCountData } from '@proton/shared/lib/vpn/serversCount';
 

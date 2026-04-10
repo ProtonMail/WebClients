@@ -10,9 +10,10 @@ import { getSimplePriceString } from '@proton/components/components/price/helper
 import PaymentWrapper from '@proton/components/containers/payments/PaymentWrapper';
 import { type OnChargeable, usePaymentFacade } from '@proton/components/payments/client-extensions';
 import useLoading from '@proton/hooks/useLoading';
-import type { BillingAddress, Currency, PaymentProcessorHook } from '@proton/payments';
+import type { Currency, PaymentProcessorHook } from '@proton/payments';
 import { getBillingAddressFromPaymentStatus } from '@proton/payments';
 import { getMinDonationAmount } from '@proton/payments/core/amount-limits';
+import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import { useTaxCountry } from '@proton/payments/ui';
 import { PayButton } from '@proton/payments/ui/components/PayButton';
