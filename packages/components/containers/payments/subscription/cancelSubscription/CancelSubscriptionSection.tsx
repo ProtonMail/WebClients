@@ -16,14 +16,15 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import useCancellationTelemetry from '../cancellationFlow/useCancellationTelemetry';
-import useCancellationEligibility from '../cancellationFlowFeedbackFirst/useCancellationEligibility';
+import useFeedbackFirstCancellationFlow from '../cancellationFlowFeedbackFirst/useFeedbackFirstCancellationFlow';
+import { useFeedbackFirstEligibility } from '../cancellationFlowFeedbackFirst/useFeedbackFirstEligibility';
 import { useCancelSubscriptionFlow } from './useCancelSubscriptionFlow';
-import useFeedbackFirstCancellationFlow from '@proton/components/containers/payments/subscription/cancellationFlowFeedbackFirst/useFeedbackFirstCancellationFlow';
 
 export const CancelSubscriptionSection = ({ app }: { app: APP_NAMES }) => {
     const [user] = useUser();
     const { redirectToCancellationFlow, b2bAccess, b2cAccess } = useCancellationFlow();
-    const { hasB2BAccess: feedbackFirstB2BAccess, hasB2CAccess: feedbackFirstB2CAccess } = useCancellationEligibility();
+    const { hasB2BAccess: feedbackFirstB2BAccess, hasB2CAccess: feedbackFirstB2CAccess } =
+        useFeedbackFirstEligibility();
     const { sendStartCancellationSectionReport } = useCancellationTelemetry();
     const { loadingCancelSubscription, cancelSubscriptionModals, cancelSubscription } = useCancelSubscriptionFlow({
         app,
@@ -65,8 +66,8 @@ export const CancelSubscriptionSection = ({ app }: { app: APP_NAMES }) => {
 
     return (
         <>
-            {feedbackFirstModals}
             {cancelSubscriptionModals}
+            {feedbackFirstModals}
             <SettingsSection>
                 <SettingsParagraph>{cancellationText}</SettingsParagraph>
                 {user.hasPassLifetime && (
