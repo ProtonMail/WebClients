@@ -188,7 +188,6 @@ const ItemRender: FC<ItemProps> = ({
             onClick={copy}
             tabIndex={0}
             onContextMenu={handleContextMenu}
-            disabled={disabled}
         >
             <div className="flex items-center gap-2 flex-nowrap">
                 <OtpLogo issuer={issuer} name={name} syncing={syncing} />
