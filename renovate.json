@@ -23,7 +23,8 @@
         "**/node_modules/**",
         "vendor/**",
         "applications/pass-extension/safari/**",
-        "applications/pass-desktop/native/**"
+        "applications/pass-desktop/native/**",
+        "applications/pass-desktop/macOS/**"
     ],
     "packageRules": [
         {
