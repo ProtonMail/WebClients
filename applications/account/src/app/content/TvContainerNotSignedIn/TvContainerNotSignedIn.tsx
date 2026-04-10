@@ -2,8 +2,10 @@ import { Link } from 'react-router-dom';
 
 import { c } from 'ttag';
 
+import useEffectOnce from '@proton/hooks/useEffectOnce';
 import { IcKey } from '@proton/icons/icons/IcKey';
 import { IcUserCircle } from '@proton/icons/icons/IcUserCircle';
+import { isAndroid } from '@proton/shared/lib/helpers/browser';
 import { useFlag } from '@proton/unleash/useFlag';
 import { TvNotSignedIn } from '@proton/vpn/components/tv';
 
@@ -14,6 +16,14 @@ import type { Paths } from '../helper';
 
 export const TvContainerNotSignedIn = ({ searchParams, paths }: { searchParams: URLSearchParams; paths: Paths }) => {
     const unauthedForgotPasswordEnabled = useFlag('UnauthedForgotPassword');
+
+    useEffectOnce(() => {
+        const code = searchParams.get('code');
+        if (isAndroid() && code) {
+            window.location.href = `protonvpn://session-fork/${code}`;
+        }
+    });
+
     return (
         <Layout toApp="proton-vpn-settings" hasDecoration hasAppLogos={false} hasFooter={false}>
             <Main className="flex flex-column gap-4 p-4 w-auto" style={{ 'justify-self': 'center' }}>
