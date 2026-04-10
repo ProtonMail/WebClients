@@ -15,6 +15,7 @@ import {
     useNotifications,
 } from '@proton/components';
 import ConfirmSignOutAllModal from '@proton/components/components/confirmSignOutModal/ConfirmSignoutAllModal';
+import Prompt from '@proton/components/components/prompt/Prompt';
 import { useLoading } from '@proton/hooks';
 import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
 import { revoke } from '@proton/shared/lib/api/auth';
@@ -197,6 +198,7 @@ const SwitchAccountContainer = ({
     const validRef = useRef(false);
     const [openSignOutAllPrompt, setOpenSignOutAllPrompt, renderOpenSignOutAllPrompt] = useModalState();
     const [confirmSignoutModal, setConfirmSignoutModal, renderConfirmSignoutModal] = useModalState();
+    const [confirmSingleSignoutModal, setConfirmSingleSignoutModal, renderConfirmSingleSignoutModal] = useModalState();
     const [tmpSessions, setTmpSessions] = useState<ActiveSession[]>([]);
 
     useEffect(() => {
@@ -238,7 +240,8 @@ const SwitchAccountContainer = ({
             setOpenSignOutAllPrompt(true);
             return;
         }
-        return handleSignOut(activeSessions, false);
+        // Single sign out: always confirm
+        setConfirmSingleSignoutModal(true);
     }, []);
 
     const handleClickSession = async (localID: number) => {
@@ -375,6 +378,26 @@ const SwitchAccountContainer = ({
                         }}
                         {...openSignOutAllPrompt}
                     />
+                )}
+                {renderConfirmSingleSignoutModal && (
+                    <Prompt
+                        title={c('Title').t`Sign out`}
+                        buttons={[
+                            <Button
+                                color="norm"
+                                onClick={() => {
+                                    handleSignOut(tmpSessions, false);
+                                    confirmSingleSignoutModal.onClose?.();
+                                }}
+                            >
+                                {c('Action').t`Sign out`}
+                            </Button>,
+                            <Button onClick={confirmSingleSignoutModal.onClose}>{c('Action').t`Cancel`}</Button>,
+                        ]}
+                        {...confirmSingleSignoutModal}
+                    >
+                        <p>{c('Info').t`Are you sure you want to sign out of this account?`}</p>
+                    </Prompt>
                 )}
             </Content>
         </Main>
