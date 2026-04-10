@@ -3988,6 +3988,10 @@
       ],
       "Something went wrong with search: Not enough storage space.": [
         "Arama sırasında bir sorun çıktı: Yeterli depolama alanı yok."
+      ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } öğe taşınamadı",
+        "${ failureItems.length } öğe taşınamadı"
       ]
     },
     "error": {

@@ -4069,6 +4069,12 @@
       ],
       "Something went wrong while fetching available domains": [
         "Нешта пайшло не так пры атрыманні даступных даменаў"
+      ],
+      "${ failureItems.length } item failed to be moved": [
+        "Не ўдалося перамясціць ${ failureItems.length } элемент",
+        "Не ўдалося перамясціць ${ failureItems.length } элементы",
+        "Не ўдалося перамясціць ${ failureItems.length } элементаў",
+        "Не ўдалося перамясціць ${ failureItems.length } элементаў"
       ]
     },
     "error": {

@@ -3832,6 +3832,10 @@
       ],
       "Something went wrong while fetching available domains": [
         "Jotain meni vikaan haettaessa käytettävissä olevia verkkotunnuksia"
+      ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } kohteen siirto epäonnistui",
+        "${ failureItems.length } kohteen siirto epäonnistui"
       ]
     },
     "error": {

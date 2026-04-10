@@ -4006,6 +4006,10 @@
       ],
       "Something went wrong while fetching available domains": [
         "Quelque chose s'est mal passé lors de la récupération des domaines disponibles"
+      ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } élément n'a pas pu être déplacé.",
+        "${ failureItems.length } éléments n'ont pas pu être déplacés."
       ]
     },
     "error": {

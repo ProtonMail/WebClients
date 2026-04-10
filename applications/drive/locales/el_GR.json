@@ -4009,6 +4009,10 @@
       ],
       "Something went wrong while fetching available domains": [
         "Κάτι πήγε στραβά κατά την ανάκτηση των διαθέσιμων τομέων"
+      ],
+      "${ failureItems.length } item failed to be moved": [
+        "Αποτυχία μετακίνησης ${ failureItems.length } στοιχείου",
+        "Αποτυχία μετακίνησης ${ failureItems.length } στοιχείων"
       ]
     },
     "error": {
@@ -8919,6 +8923,13 @@
       ],
       "VPN with ad-blocker and malware protection": [
         "VPN με αποκλεισμός διαφημίσεων και προστασία από κακόβουλο λογισμικό"
+      ],
+      "Appointment scheduling": [
+        "Προγραμματισμός ραντεβού"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Προγραμματισμός ραντεβού με ${ n } σελίδα κράτησης",
+        "Προγραμματισμός ραντεβού με ${ n } σελίδες κρατήσεων"
       ]
     },
     "new_plans: feature highlight": {
