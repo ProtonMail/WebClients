@@ -95,7 +95,7 @@
         "і"
       ],
       "Apply lifetime coupon code": [
-        "Ужыць пажыццёвы код купона"
+        "Прымяніць пажыццёвы код купона"
       ],
       "Authenticate": [
         "Аўтэнтыфікацыя"
@@ -2212,7 +2212,7 @@
         "Замацаванне элемента..."
       ],
       "Please check your spam folder or try resending the code.": [
-        "Спраўдзіце папку са спамам або паспрабуйце адправіць код паўторна."
+        "Праверце папку са спамам або паспрабуйце адправіць код паўторна."
       ],
       "Please confirm your ${ BRAND_NAME } password in order to enable offline mode": [
         "Пацвердзіце свой пароль ${ BRAND_NAME } для таго, каб уключыць рэжым па-за сеткай"
@@ -2822,6 +2822,12 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Ваша арганізацыя патрабуе, каб вы забяспечылі доступ да ${ PASS_APP_NAME }"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Перамяшчэнне элемента ў іншае сховішча прывядзе да сцірання яго бяспечных спасылак",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак."
       ]
     },
     "Keyboard key": {
@@ -5345,6 +5351,9 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Ваша падпіска не дазваляе ствараць некалькі сховішчаў. Усе элементы будуць імпартаваны ў ваша першае сховішча. Палепшыце сваю падпіску, каб мець магчымасць імпартаваць у некалькі сховішчаў."
+      ],
+      "Offline": [
+        "Па-за сеткай"
       ]
     }
   }

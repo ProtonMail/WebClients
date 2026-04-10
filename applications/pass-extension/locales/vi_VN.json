@@ -1984,7 +1984,7 @@
         "Đang chuyển tất cả mục từ \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Việc chuyển một mục sang kho khác sẽ xóa các liên kết bảo mật của mục đó."
+        "Việc chuyển các mục sang kho khác sẽ xóa các liên kết bảo mật của chúng."
       ],
       "Moving items": [
         "Đang chuyển mục"
@@ -5078,6 +5078,9 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Gói đăng ký không cho phép tạo nhiều kho. Tất cả mục sẽ được nhập vào kho chính. Hãy nâng cấp gói đăng ký để nhập vào nhiều kho."
+      ],
+      "Offline": [
+        "Ngoại tuyến"
       ]
     }
   }
