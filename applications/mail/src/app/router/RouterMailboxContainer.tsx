@@ -8,7 +8,6 @@ import DrawerVisibilityButton from '@proton/components/components/drawer/DrawerV
 import InboxQuickSettingsAppButton from '@proton/components/components/drawer/drawerAppButtons/InboxQuickSettingsAppButton';
 import PrivateMainArea from '@proton/components/containers/layout/PrivateMainArea';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
-import { isCategoryLabel } from '@proton/mail/helpers/location';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { getSearchParams } from '@proton/shared/lib/helpers/url';
 import { CUSTOM_VIEWS, CUSTOM_VIEWS_LABELS, LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
@@ -16,7 +15,6 @@ import type { Filter, Sort } from '@proton/shared/lib/mail/search';
 import { isAdminOrLoginAsAdmin } from '@proton/shared/lib/user/helpers';
 import clsx from '@proton/utils/clsx';
 
-import { useCategoriesView } from 'proton-mail/components/categoryView/useCategoriesView';
 import MailHeader from 'proton-mail/components/header/MailHeader';
 import useScrollToTop from 'proton-mail/components/list/useScrollToTop';
 import { NewsletterSubscriptionView } from 'proton-mail/components/view/NewsletterSubscription/NewsletterSubscriptionView';
@@ -57,8 +55,6 @@ export const RouterMailboxContainer = () => {
 
     const [isResizing, setIsResizing] = useState(false);
 
-    const categoryViewControl = useCategoriesView();
-
     /**
      * Temporary: Router mailbox side effects
      */
@@ -96,12 +92,6 @@ export const RouterMailboxContainer = () => {
     }, [labelID, dispatch]);
 
     if (!labelID) {
-        const destination = categoryViewControl.categoryViewAccess
-            ? MAILBOX_LABEL_IDS.CATEGORY_DEFAULT
-            : MAILBOX_LABEL_IDS.INBOX;
-
-        return <Redirect to={`/${LABEL_IDS_TO_HUMAN[destination]}`} />;
-    } else if (!categoryViewControl.categoryViewAccess && isCategoryLabel(labelID)) {
         return <Redirect to={`/${LABEL_IDS_TO_HUMAN[MAILBOX_LABEL_IDS.INBOX]}`} />;
     }
 

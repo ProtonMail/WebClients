@@ -3,10 +3,10 @@ import { renderHook } from '@testing-library/react-hooks';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import { useCalendars } from '@proton/calendar/calendars/hooks';
 
+import { useMailboxPageTitle } from 'proton-mail/hooks/mailbox/mailboxPageTitle/useMailboxPageTitle';
 import useNewEmailNotification from 'proton-mail/hooks/mailbox/notifications/useNewEmailNotification';
 import { useApplyEncryptedSearch } from 'proton-mail/hooks/mailbox/useApplyEncryptedSearch';
 import { useMailboxFavicon } from 'proton-mail/hooks/mailbox/useMailboxFavicon';
-import { useMailboxPageTitle } from 'proton-mail/hooks/mailbox/useMailboxPageTitle';
 import usePreLoadElements from 'proton-mail/hooks/mailbox/usePreLoadElements';
 import useInboxBadgeCount from 'proton-mail/hooks/useInboxBadgeCount';
 import useInboxDesktopElementId from 'proton-mail/hooks/useInboxDesktopElementId';
@@ -25,7 +25,7 @@ jest.mock('proton-mail/hooks/useInboxDesktopElementId', () => ({
 jest.mock('proton-mail/hooks/mailbox/useApplyEncryptedSearch', () => ({
     useApplyEncryptedSearch: jest.fn(),
 }));
-jest.mock('proton-mail/hooks/mailbox/useMailboxPageTitle', () => ({
+jest.mock('proton-mail/hooks/mailbox/mailboxPageTitle/useMailboxPageTitle', () => ({
     useMailboxPageTitle: jest.fn(),
 }));
 jest.mock('proton-mail/hooks/mailbox/useMailboxFavicon', () => ({

@@ -217,6 +217,7 @@ describe('Mailbox elements list reacting to events', () => {
                 elements: {
                     params: {
                         labelID: props.labelID,
+                        categoryIDs: [],
                         elementID: props.elementID,
                         messageID: undefined,
                         conversationMode: false,
@@ -293,6 +294,7 @@ describe('Mailbox elements list reacting to events', () => {
                 elements: {
                     params: {
                         labelID: props.labelID,
+                        categoryIDs: [],
                         elementID: props.elementID,
                         messageID: undefined,
                         conversationMode: false,

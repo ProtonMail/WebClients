@@ -2,7 +2,7 @@ import { formatRelative, fromUnixTime } from 'date-fns';
 import type { Location } from 'history';
 
 import { isCustomLabel } from '@proton/mail/helpers/location';
-import { CATEGORY_LABEL_IDS_SET, type CategoryLabelID, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { type CategoryLabelID, MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { canonicalizeEmailByGuess } from '@proton/shared/lib/helpers/email';
 import { omit, toMap } from '@proton/shared/lib/helpers/object';
 import type { Address } from '@proton/shared/lib/interfaces';
@@ -45,6 +45,7 @@ export interface TypeParams {
 
 interface ContextIdentifier {
     labelID: string;
+    categoryIDs: CategoryLabelID[];
     conversationMode: boolean;
     filter?: Filter;
     sort?: Sort;
@@ -309,25 +310,23 @@ export const filterElementsInState = ({
     elements,
     bypassFilter,
     labelID,
+    categoryIDs,
     filter,
     conversationMode,
     search,
     newsletterSubscriptionID,
-    disabledCategoriesIDs,
 }: {
     elements: Element[];
     addresses?: Address[];
     bypassFilter: string[];
     labelID: string;
+    categoryIDs: CategoryLabelID[];
     filter: Filter;
     conversationMode: boolean;
     search: SearchParameters;
     newsletterSubscriptionID?: string;
-    disabledCategoriesIDs?: string[];
 }) => {
     const bypassFilterSet = new Set(bypassFilter);
-    const isCurrentLabelDefaultCategory = labelID === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT;
-    const isCurrentLabelCategory = CATEGORY_LABEL_IDS_SET.has(labelID as CategoryLabelID);
 
     return elements.filter((element) => {
         // Check ID and label first (cheapest operations)
@@ -350,19 +349,16 @@ export const filterElementsInState = ({
             return false;
         }
 
-        // Check if element has a disabled category label (only relevant for default category view)
-        const elementContainsDisabledCategoryLabel =
-            isCurrentLabelDefaultCategory &&
-            disabledCategoriesIDs?.some((id) => labelIDsSet.has(id)) &&
-            labelIDsSet.has(MAILBOX_LABEL_IDS.INBOX);
+        // Elements must be in the current label/folder (newsletter subscriptions use a separate check below)
+        if (labelID !== CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS && !labelIDsSet.has(labelID)) {
+            return false;
+        }
 
-        // Elements in a category but not in inbox should be filtered when viewing a category
-        const isElementInCategoryButNotInbox = isCurrentLabelCategory && !labelIDsSet.has(MAILBOX_LABEL_IDS.INBOX);
-
+        // When viewing inbox with specific categories, also require the element to have one of those category labels
         if (
-            (!labelIDsSet.has(labelID) || isElementInCategoryButNotInbox) &&
-            !elementContainsDisabledCategoryLabel &&
-            labelID !== CUSTOM_VIEWS_LABELS.NEWSLETTER_SUBSCRIPTIONS
+            labelID === MAILBOX_LABEL_IDS.INBOX &&
+            categoryIDs.length > 0 &&
+            !categoryIDs.some((id) => labelIDsSet.has(id))
         ) {
             return false;
         }
@@ -426,6 +422,7 @@ export const getElementContextIdentifier = (contextFilter: ContextIdentifier) =>
 
     return JSON.stringify({
         labelID: contextFilter.labelID,
+        categoryIDs: contextFilter.categoryIDs,
         conversationMode: contextFilter.conversationMode,
         filter: contextFilter.filter,
         sort: contextFilter.sort,

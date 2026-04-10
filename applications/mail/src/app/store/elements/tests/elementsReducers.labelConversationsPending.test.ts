@@ -28,6 +28,7 @@ describe('labelConversationsPending', () => {
             elements: {},
             total: {},
             params: {
+                categoryIDs: [],
                 filter: {},
                 conversationMode: true,
             },
@@ -4545,6 +4546,145 @@ describe('labelConversationsPending', () => {
                     ContextNumAttachments: 1,
                 },
             ]);
+        });
+    });
+
+    describe('Category handling when moving between folders', () => {
+        it('should preserve category ContextNumMessages when moving from INBOX to ARCHIVE', () => {
+            const conversation = setupConversation({
+                conversationLabels: [
+                    {
+                        ID: MAILBOX_LABEL_IDS.INBOX,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 1,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 1,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 1,
+                    },
+                ] as ConversationLabel[],
+                numUnread: 1,
+                numMessages: 2,
+                numAttachments: 1,
+            });
+
+            testState.elements = {
+                [CONVERSATION_ID]: conversation,
+            };
+
+            labelConversationsPending(testState, {
+                type: 'mailbox/labelConversations',
+                payload: undefined,
+                meta: {
+                    arg: {
+                        conversations: [conversation],
+                        sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
+                        destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                        labels: customLabels,
+                        folders: customFolders,
+                    },
+                },
+            });
+
+            const updatedConversation = testState.elements[CONVERSATION_ID] as Conversation;
+
+            // Category label ContextNumMessages should be present
+            const categoryLabel = updatedConversation.Labels?.find((l) => l.ID === MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
+            expect(categoryLabel?.ContextNumMessages).toEqual(2);
+
+            // INBOX label should not be present after moving to ARCHIVE
+            const inboxLabel = updatedConversation.Labels?.find((l) => l.ID === MAILBOX_LABEL_IDS.INBOX);
+            expect(inboxLabel).toBeUndefined();
+
+            // ARCHIVE label should be added
+            const archiveLabel = updatedConversation.Labels?.find((l) => l.ID === MAILBOX_LABEL_IDS.ARCHIVE);
+            expect(archiveLabel).toBeDefined();
+            expect(archiveLabel?.ContextNumMessages).toEqual(2);
+        });
+
+        it('should replace old category with new category and keep everything else unchanged', () => {
+            const conversation = setupConversation({
+                conversationLabels: [
+                    {
+                        ID: MAILBOX_LABEL_IDS.INBOX,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 1,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 1,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 1,
+                    },
+                ] as ConversationLabel[],
+                numUnread: 1,
+                numMessages: 2,
+                numAttachments: 1,
+            });
+
+            testState.elements = {
+                [CONVERSATION_ID]: conversation,
+            };
+
+            labelConversationsPending(testState, {
+                type: 'mailbox/labelConversations',
+                payload: undefined,
+                meta: {
+                    arg: {
+                        conversations: [conversation],
+                        sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
+                        destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
+                        labels: customLabels,
+                        folders: customFolders,
+                    },
+                },
+            });
+
+            const updatedConversation = testState.elements[CONVERSATION_ID] as Conversation;
+
+            // New category label ContextNumMessages should be present
+            const categoryLabel = updatedConversation.Labels?.find(
+                (l) => l.ID === MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS
+            );
+            expect(categoryLabel?.ContextNumMessages).toEqual(2);
+
+            // Old category label ContextNumMessages should be present
+            const oldCategoryLabel = updatedConversation.Labels?.find(
+                (l) => l.ID === MAILBOX_LABEL_IDS.CATEGORY_SOCIAL
+            );
+            expect(oldCategoryLabel).toBeUndefined();
+
+            // Inbox should have the same ContextNumMessages as before
+            const inboxLabel = updatedConversation.Labels?.find((l) => l.ID === MAILBOX_LABEL_IDS.INBOX);
+            expect(inboxLabel?.ContextNumMessages).toEqual(2);
         });
     });
 

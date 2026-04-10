@@ -26,6 +26,7 @@ describe('labelMessagesPending', () => {
             elements: {},
             total: {},
             params: {
+                categoryIDs: [],
                 filter: {},
                 conversationMode: true,
             },
@@ -353,7 +354,7 @@ describe('labelMessagesPending', () => {
                 meta: {
                     arg: {
                         messages: [message],
-                        sourceLabelID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                        sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
                         destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
                         labels: customLabels,
                         folders: customFolders,
@@ -536,6 +537,201 @@ describe('labelMessagesPending', () => {
                 MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
                 MAILBOX_LABEL_IDS.ALL_DRAFTS,
                 CUSTOM_LABEL_ID1,
+            ]);
+        });
+    });
+
+    describe('Category labels persist when moving between folders', () => {
+        it('should preserve category label on message when moving from INBOX to ARCHIVE', () => {
+            const message = setupMessage({
+                messageID: MESSAGE_ID,
+                unreadState: 'unread',
+                labelIDs: [
+                    MAILBOX_LABEL_IDS.INBOX,
+                    MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                    MAILBOX_LABEL_IDS.ALL_MAIL,
+                    MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                ],
+            });
+
+            testState.elements = {
+                [MESSAGE_ID]: message,
+            };
+
+            labelMessagesPending(testState, {
+                type: 'mailbox/labelMessages',
+                payload: undefined,
+                meta: {
+                    arg: {
+                        messages: [message],
+                        sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
+                        destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                        labels: customLabels,
+                        folders: customFolders,
+                    },
+                },
+            });
+
+            const updatedMessage = testState.elements[MESSAGE_ID] as Message;
+            expect(updatedMessage.Unread).toEqual(1);
+            expectMessagesLabelsSameArray(updatedMessage.LabelIDs, [
+                MAILBOX_LABEL_IDS.ARCHIVE,
+                MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                MAILBOX_LABEL_IDS.ALL_MAIL,
+                MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+            ]);
+        });
+
+        it('should replace old category with new category when moving between categories', () => {
+            const message = setupMessage({
+                messageID: MESSAGE_ID,
+                unreadState: 'unread',
+                labelIDs: [
+                    MAILBOX_LABEL_IDS.INBOX,
+                    MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                    MAILBOX_LABEL_IDS.ALL_MAIL,
+                    MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                ],
+            });
+
+            testState.elements = {
+                [MESSAGE_ID]: message,
+            };
+
+            labelMessagesPending(testState, {
+                type: 'mailbox/labelMessages',
+                payload: undefined,
+                meta: {
+                    arg: {
+                        messages: [message],
+                        sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
+                        destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+                        labels: customLabels,
+                        folders: customFolders,
+                    },
+                },
+            });
+
+            const updatedMessage = testState.elements[MESSAGE_ID] as Message;
+            expect(updatedMessage.Unread).toEqual(1);
+            expectMessagesLabelsSameArray(updatedMessage.LabelIDs, [
+                MAILBOX_LABEL_IDS.INBOX,
+                MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+                MAILBOX_LABEL_IDS.ALL_MAIL,
+                MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+            ]);
+        });
+    });
+
+    describe('Category labels persist on conversation when moving between folders', () => {
+        it('should not decrease category ContextNumMessages on conversation when moving message from INBOX to ARCHIVE', () => {
+            const message = setupMessage({
+                messageID: MESSAGE_ID,
+                unreadState: 'unread',
+                labelIDs: [
+                    MAILBOX_LABEL_IDS.INBOX,
+                    MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                    MAILBOX_LABEL_IDS.ALL_MAIL,
+                    MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                ],
+                attachments: [{ Name: 'att' }] as Attachment[],
+            });
+
+            const conversation = setupConversation({
+                conversationLabels: [
+                    {
+                        ID: MAILBOX_LABEL_IDS.INBOX,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 2,
+                        ContextNumAttachments: 1,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 2,
+                        ContextNumAttachments: 1,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 2,
+                        ContextNumAttachments: 1,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 2,
+                        ContextNumAttachments: 1,
+                    },
+                ] as ConversationLabel[],
+                numMessages: 2,
+                numUnread: 2,
+                numAttachments: 1,
+            });
+
+            testState.elements = {
+                [CONVERSATION_ID]: conversation,
+                [MESSAGE_ID]: message,
+            };
+
+            labelMessagesPending(testState, {
+                type: 'mailbox/labelMessages',
+                payload: undefined,
+                meta: {
+                    arg: {
+                        messages: [message],
+                        sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
+                        destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                        labels: customLabels,
+                        folders: customFolders,
+                    },
+                },
+            });
+
+            const updatedMessage = testState.elements[MESSAGE_ID] as Message;
+            expect(updatedMessage.Unread).toEqual(1);
+            expectMessagesLabelsSameArray(updatedMessage.LabelIDs, [
+                MAILBOX_LABEL_IDS.ARCHIVE,
+                MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                MAILBOX_LABEL_IDS.ALL_MAIL,
+                MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+            ]);
+
+            const updatedConversation = testState.elements[CONVERSATION_ID] as Conversation;
+            expect(updatedConversation.NumMessages).toBe(2);
+            expect(updatedConversation.NumUnread).toBe(2);
+            expect(updatedConversation.NumAttachments).toBe(1);
+            expectConversationLabelsSameArray(updatedConversation.Labels, [
+                {
+                    ID: MAILBOX_LABEL_IDS.INBOX,
+                    ContextNumMessages: 1,
+                    ContextNumUnread: 1,
+                    ContextNumAttachments: 0,
+                },
+                {
+                    ID: MAILBOX_LABEL_IDS.ARCHIVE,
+                    ContextNumMessages: 1,
+                    ContextNumUnread: 1,
+                    ContextNumAttachments: 1,
+                },
+                {
+                    ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                    ContextNumMessages: 2,
+                    ContextNumUnread: 2,
+                    ContextNumAttachments: 1,
+                },
+                {
+                    ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                    ContextNumMessages: 2,
+                    ContextNumUnread: 2,
+                    ContextNumAttachments: 1,
+                },
+                {
+                    ID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
+                    ContextNumMessages: 2,
+                    ContextNumUnread: 2,
+                    ContextNumAttachments: 1,
+                },
             ]);
         });
     });

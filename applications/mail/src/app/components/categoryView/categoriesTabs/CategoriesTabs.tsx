@@ -8,6 +8,8 @@ import { ModalType } from 'proton-mail/containers/globalModals/inteface';
 import { useMailboxCounter } from 'proton-mail/hooks/useMailboxCounter';
 import { getLocationCount } from 'proton-mail/hooks/useMailboxCounter.helpers';
 import { useMailboxLayoutProvider } from 'proton-mail/router/components/MailboxLayoutContext';
+import { selectCategoryIDs } from 'proton-mail/store/elements/elementsSelectors';
+import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { CategoriesOnboarding } from '../categoriesOnboarding/CategoriesOnboarding';
 import { hasSeeFullDisplay } from '../categoriesOnboarding/categoriesOnboarding.helpers';
@@ -22,13 +24,11 @@ import { useCategoriesDrag } from './useCategoriesDrag';
 
 import './CategoriesTabs.scss';
 
-interface Props {
-    categoryLabelID: string;
-}
-
-export const CategoriesTabsList = ({ categoryLabelID }: Props) => {
+export const CategoriesTabsList = () => {
     const recategorizeElement = useRecategorizeElement();
     const { activeCategoriesTabs } = useCategoriesView();
+
+    const categoryIDs = useMailSelector(selectCategoryIDs);
 
     const { isColumnModeActive } = useMailboxLayoutProvider();
 
@@ -89,8 +89,8 @@ export const CategoriesTabsList = ({ categoryLabelID }: Props) => {
                         index,
                         category,
                         categoriesList: activeCategoriesTabs || [],
-                        categoryLabelID,
                         draggedOverCategoryId,
+                        categoryIDs,
                     });
 
                     return (
@@ -120,10 +120,10 @@ export const CategoriesTabsList = ({ categoryLabelID }: Props) => {
 };
 
 // Used to wrap the categories components with an error boundary and have a safe fallback component
-export const CategoriesTabs = ({ categoryLabelID }: Props) => {
+export const CategoriesTabs = () => {
     return (
         <ErrorBoundary component={<CategoriesTabsError />}>
-            <CategoriesTabsList categoryLabelID={categoryLabelID} />
+            <CategoriesTabsList />
         </ErrorBoundary>
     );
 };

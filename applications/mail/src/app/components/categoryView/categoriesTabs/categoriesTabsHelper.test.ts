@@ -19,10 +19,27 @@ describe('CategoriesTabsHelper', () => {
                 index: 0,
                 category,
                 categoriesList: mockActiveCategoriesData,
-                categoryLabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+                categoryIDs: [MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS],
                 draggedOverCategoryId: undefined,
             });
             expect(tabState).toBe(TabState.INACTIVE);
+        });
+
+        it('should return active if the category is part of disabled categories', () => {
+            const category: CategoryTab = {
+                id: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+                colorShade: CATEGORIES_COLOR_SHADES.BLUE,
+                outlinedIcon: 'inbox',
+                filledIcon: 'inbox',
+            };
+            const tabState = getTabState({
+                index: 0,
+                category,
+                categoriesList: mockActiveCategoriesData,
+                categoryIDs: [MAILBOX_LABEL_IDS.CATEGORY_DEFAULT, MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS],
+                draggedOverCategoryId: undefined,
+            });
+            expect(tabState).toBe(TabState.ACTIVE);
         });
 
         it('should return active if the category is the same as the labelID', () => {
@@ -36,7 +53,7 @@ describe('CategoriesTabsHelper', () => {
                 index: 0,
                 category,
                 categoriesList: mockActiveCategoriesData,
-                categoryLabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+                categoryIDs: [MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS],
                 draggedOverCategoryId: undefined,
             });
             expect(tabState).toBe(TabState.ACTIVE);
@@ -53,7 +70,7 @@ describe('CategoriesTabsHelper', () => {
                 index: 0,
                 category,
                 categoriesList: mockActiveCategoriesData,
-                categoryLabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
+                categoryIDs: [MAILBOX_LABEL_IDS.CATEGORY_DEFAULT],
                 draggedOverCategoryId: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS.toString(),
             });
             expect(tabState).toBe(TabState.DRAGGING_OVER);
@@ -70,7 +87,7 @@ describe('CategoriesTabsHelper', () => {
                 index: 0,
                 category,
                 categoriesList: mockActiveCategoriesData,
-                categoryLabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
+                categoryIDs: [MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS],
                 draggedOverCategoryId: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS.toString(),
             });
             expect(tabState).toBe(TabState.ACTIVE);
@@ -87,7 +104,7 @@ describe('CategoriesTabsHelper', () => {
                 index: 1,
                 category,
                 categoriesList: mockActiveCategoriesData,
-                categoryLabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
+                categoryIDs: [MAILBOX_LABEL_IDS.CATEGORY_DEFAULT],
                 draggedOverCategoryId: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS.toString(),
             });
             expect(tabState).toBe(TabState.DRAGGING_NEIGHBOR);
@@ -104,7 +121,7 @@ describe('CategoriesTabsHelper', () => {
                 index: 3,
                 category,
                 categoriesList: mockActiveCategoriesData,
-                categoryLabelID: MAILBOX_LABEL_IDS.CATEGORY_DEFAULT,
+                categoryIDs: [MAILBOX_LABEL_IDS.CATEGORY_DEFAULT],
                 draggedOverCategoryId: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS.toString(),
             });
             expect(tabState).toBe(TabState.DRAGGING_NEIGHBOR);

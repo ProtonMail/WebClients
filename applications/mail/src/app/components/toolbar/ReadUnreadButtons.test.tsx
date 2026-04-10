@@ -12,6 +12,7 @@ import ReadUnreadButtons from './ReadUnreadButtons';
 
 const defaultParams: ElementsStateParams = {
     labelID: MAILBOX_LABEL_IDS.INBOX,
+    categoryIDs: [],
     conversationMode: true,
     filter: {},
     sort: { sort: 'Time', desc: true },
