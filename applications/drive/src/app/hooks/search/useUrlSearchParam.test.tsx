@@ -4,9 +4,15 @@ import { act, renderHook } from '@testing-library/react-hooks';
 
 import { useUrlSearchParams } from './useUrlSearchParam';
 
+// Opt into React Router v7 behavior to silence deprecation warnings.
+// See https://reactrouter.com/v6/upgrading/future
+const routerFutureFlags = { v7_startTransition: true, v7_relativeSplatPath: true };
+
 const createWrapper = (initialEntries: string[]) => {
     const Wrapper = ({ children }: { children: JSX.Element }) => (
-        <MemoryRouter initialEntries={initialEntries}>{children}</MemoryRouter>
+        <MemoryRouter initialEntries={initialEntries} future={routerFutureFlags}>
+            {children}
+        </MemoryRouter>
     );
     return Wrapper;
 };
