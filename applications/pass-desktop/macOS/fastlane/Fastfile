@@ -108,6 +108,8 @@ desc "Build and sign the macOS app for App Store"
     `security list-keychains -d user -s #{search_list.map { |k| %Q("#{k}") }.join(' ')}`
     UI.message("Keychain search list: #{`security list-keychains -d user`}")
 
+    sh "../scripts/download_rust_package.sh"
+
     gym(
       project: PROJECT_PATH,
       scheme: "Proton Pass Extensions",
@@ -118,6 +120,7 @@ desc "Build and sign the macOS app for App Store"
       destination: "generic/platform=macOS",
       configuration: "Release",
       archive_path: "#{BUILD_PATH}/Proton Pass.xcarchive",
+      xcargs: "-skipMacroValidation -skipPackagePluginValidation",
       export_options: {
         method: "app-store",
         signingStyle: "manual",

@@ -18,54 +18,124 @@
 // You should have received a copy of the GNU General Public License
 // along with Proton Pass. If not, see https://www.gnu.org/licenses/.
 
+import AppKit
 import AuthenticationServices
+import AutoFillEngine
+import SwiftUI
 
-class CredentialProviderViewController: ASCredentialProviderViewController {
+final class CredentialProviderViewController: ASCredentialProviderViewController {
+    private lazy var coordinator = AutoFillCoordinator<CredentialProviderViewController>(context: extensionContext)
 
-    /*
-     Prepare your UI to list available credentials for the user to choose from. The items in
-     'serviceIdentifiers' describe the service the user is logging in to, so your extension can
-     prioritize the most relevant credentials in the list.
-    */
-    override func prepareCredentialList(for serviceIdentifiers: [ASCredentialServiceIdentifier]) {
+    private var lastChildViewController: NSViewController?
+    private var spinner: NSProgressIndicator?
+
+    override func viewWillLayout() {
+        super.viewWillLayout()
+        NSLayoutConstraint.activate([
+            view.widthAnchor.constraint(greaterThanOrEqualToConstant: 450)
+        ])
     }
 
-    /*
-     Implement this method if your extension supports showing credentials in the QuickType bar.
-     When the user selects a credential from your app, this method will be called with the
-     ASPasswordCredentialIdentity your app has previously saved to the ASCredentialIdentityStore.
-     Provide the password by completing the extension request with the associated ASPasswordCredential.
-     If using the credential would require showing custom UI for authenticating the user, cancel
-     the request with error code ASExtensionError.userInteractionRequired.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        coordinator.delegate = self
+    }
 
-    override func provideCredentialWithoutUserInteraction(for credentialIdentity: ASPasswordCredentialIdentity) {
-        let databaseIsUnlocked = true
-        if (databaseIsUnlocked) {
-            let passwordCredential = ASPasswordCredential(user: "j_appleseed", password: "apple1234")
-            self.extensionContext.completeRequest(withSelectedCredential: passwordCredential, completionHandler: nil)
-        } else {
-            self.extensionContext.cancelRequest(withError: NSError(domain: ASExtensionErrorDomain, code:ASExtensionError.userInteractionRequired.rawValue))
+    override func prepareCredentialList(for serviceIdentifiers: [ASCredentialServiceIdentifier]) {
+        coordinator.prepareCredentialList(for: serviceIdentifiers)
+    }
+
+    override func prepareInterfaceForExtensionConfiguration() {
+        coordinator.prepareInterfaceForExtensionConfiguration()
+    }
+
+    override func prepareOneTimeCodeCredentialList(for serviceIdentifiers: [ASCredentialServiceIdentifier]) {
+        coordinator.prepareOneTimeCodeCredentialList(for: serviceIdentifiers)
+    }
+
+    override func prepareCredentialList(for serviceIdentifiers: [ASCredentialServiceIdentifier],
+                                        requestParameters: ASPasskeyCredentialRequestParameters) {
+        coordinator.prepareCredentialList(for: serviceIdentifiers,
+                                          requestParameters: requestParameters)
+    }
+
+    override func provideCredentialWithoutUserInteraction(for credentialRequest: any ASCredentialRequest) {
+        coordinator.provideCredentialWithoutUserInteraction(for: credentialRequest)
+    }
+
+    override func prepareInterfaceToProvideCredential(for credentialRequest: any ASCredentialRequest) {
+        coordinator.prepareInterfaceToProvideCredential(for: credentialRequest)
+    }
+
+    override func prepareInterface(forPasskeyRegistration registrationRequest: any ASCredentialRequest) {
+        coordinator.prepareInterface(forPasskeyRegistration: registrationRequest)
+    }
+}
+
+extension CredentialProviderViewController: AutoFillCoordinatorDelegate {
+    func removeLastChildViewControllerFromParent() {
+        lastChildViewController?.view.removeFromSuperview()
+        lastChildViewController?.removeFromParent()
+    }
+
+    func setRootView(_ view: some View) -> NSViewController {
+        let viewController = NSHostingController(rootView: view)
+        addChild(viewController)
+        viewController.view.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(viewController.view)
+        NSLayoutConstraint.activate([
+            viewController.view.topAnchor.constraint(equalTo: self.view.topAnchor),
+            viewController.view.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            viewController.view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+            viewController.view.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
+        ])
+        return viewController
+    }
+
+    func setLastChildViewController(_ viewController: NSViewController) {
+        lastChildViewController = viewController
+    }
+
+    func alert(error: any Error,
+               title: String,
+               cancelTitle: String,
+               onCancel: @escaping () -> Void) {
+        let alert = NSAlert()
+        alert.messageText = title
+        alert.informativeText = error.localizedDescription
+        alert.alertStyle = .warning
+
+        alert.addButton(withTitle: cancelTitle)
+
+        if let window = view.window {
+            alert.beginSheetModal(for: window) { _ in
+                onCancel()
+            }
         }
     }
-    */
 
-    /*
-     Implement this method if provideCredentialWithoutUserInteraction(for:) can fail with
-     ASExtensionError.userInteractionRequired. In this case, the system may present your extension's
-     UI and call this method. Show appropriate UI for authenticating the user then provide the password
-     by completing the extension request with the associated ASPasswordCredential.
+    func showLoadingSpinner() {
+        guard spinner == nil else { return }
+        let spinner = NSProgressIndicator()
+        spinner.style = .spinning
+        spinner.controlSize = .regular
+        spinner.isIndeterminate = true
+        spinner.translatesAutoresizingMaskIntoConstraints = false
 
-    override func prepareInterfaceToProvideCredential(for credentialIdentity: ASPasswordCredentialIdentity) {
+        view.addSubview(spinner)
+
+        NSLayoutConstraint.activate([
+            spinner.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            spinner.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
+
+        spinner.startAnimation(nil)
+        self.spinner = spinner
     }
-    */
 
-    @IBAction func cancel(_ sender: AnyObject?) {
-        self.extensionContext.cancelRequest(withError: NSError(domain: ASExtensionErrorDomain, code: ASExtensionError.userCanceled.rawValue))
+    func hideLoadingSpinner() {
+        spinner?.stopAnimation(nil)
+        spinner?.removeFromSuperview()
+        spinner = nil
     }
-
-    @IBAction func passwordSelected(_ sender: AnyObject?) {
-        let passwordCredential = ASPasswordCredential(user: "j_appleseed", password: "apple1234")
-        self.extensionContext.completeRequest(withSelectedCredential: passwordCredential, completionHandler: nil)
-    }
-
 }

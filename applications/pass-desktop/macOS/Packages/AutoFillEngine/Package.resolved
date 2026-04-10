@@ -1,0 +1,33 @@
+{
+  "originHash" : "8d4357ec523de22843f3b3b8639241b1eea211d1557733547348e2c1c426eae1",
+  "pins" : [
+    {
+      "identity" : "factory",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/hmlongco/Factory",
+      "state" : {
+        "revision" : "ccc898f21992ebc130bc04cc197460a5ae230bcf",
+        "version" : "2.5.3"
+      }
+    },
+    {
+      "identity" : "swift-macro",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/protonpass/swift-macro",
+      "state" : {
+        "revision" : "26e5d500f15d487de17ebbb51917e268bd1b1fb2",
+        "version" : "1.0.0"
+      }
+    },
+    {
+      "identity" : "swift-syntax",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/swiftlang/swift-syntax.git",
+      "state" : {
+        "revision" : "4799286537280063c85a32f09884cfbca301b1a1",
+        "version" : "602.0.0"
+      }
+    }
+  ],
+  "version" : 3
+}
