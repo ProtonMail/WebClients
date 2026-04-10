@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import type { PrivateKeyReference, SessionKey } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import { decryptData, deriveKey, encryptData } from '@proton/crypto/lib/subtle/aesGcm';
-import { utf8StringToUint8Array, uint8ArrayToUtf8String } from '@proton/crypto/lib/utils';
+import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@proton/crypto/lib/utils';
 import type { Api, DecryptedKey } from '@proton/shared/lib/interfaces';
 import { srpGetVerify } from '@proton/shared/lib/srp';
 import { computeKeyPassword as computeBcryptHash, generateKeySalt as generateBcryptSalt } from '@proton/srp';
@@ -39,7 +39,11 @@ export const deriveEncryptionKeyFromSessionKey = async (sessionKey: SessionKey) 
 };
 
 export const encryptMetadataWithKey = async (key: CryptoKey, data: string) => {
-    const encryptedData = await encryptData(key, utf8StringToUint8Array(data), utf8StringToUint8Array('metadata.meet.proton'));
+    const encryptedData = await encryptData(
+        key,
+        utf8StringToUint8Array(data),
+        utf8StringToUint8Array('metadata.meet.proton')
+    );
 
     return encryptedData.toBase64();
 };
@@ -47,7 +51,33 @@ export const encryptMetadataWithKey = async (key: CryptoKey, data: string) => {
 export const decryptMetadataWithKey = async (key: CryptoKey, encryptedData: string) => {
     const encryptedDataUint8Array = Uint8Array.fromBase64(encryptedData);
 
-    const decryptedData = await decryptData(key, encryptedDataUint8Array, utf8StringToUint8Array('metadata.meet.proton'));
+    const decryptedData = await decryptData(
+        key,
+        encryptedDataUint8Array,
+        utf8StringToUint8Array('metadata.meet.proton')
+    );
+
+    return uint8ArrayToUtf8String(decryptedData);
+};
+
+export const encryptDisplayNameWithKey = async (key: CryptoKey, data: string) => {
+    const encryptedData = await encryptData(
+        key,
+        utf8StringToUint8Array(data),
+        utf8StringToUint8Array('displayname.meet.proton')
+    );
+
+    return encryptedData.toBase64();
+};
+
+export const decryptDisplayNameWithKey = async (key: CryptoKey, encryptedData: string) => {
+    const encryptedDataUint8Array = Uint8Array.fromBase64(encryptedData);
+
+    const decryptedData = await decryptData(
+        key,
+        encryptedDataUint8Array,
+        utf8StringToUint8Array('displayname.meet.proton')
+    );
 
     return uint8ArrayToUtf8String(decryptedData);
 };
@@ -107,6 +137,14 @@ export const encryptMeetingName = async (meetingName: string, sessionKey: Sessio
     const encryptedMeetingName = await encryptMetadataWithKey(meetingNameEncryptionKey, meetingName);
 
     return encryptedMeetingName;
+};
+
+export const encryptDisplayName = async (displayName: string, sessionKey: SessionKey) => {
+    const displayNameEncryptionKey = await deriveEncryptionKeyFromSessionKey(sessionKey);
+
+    const encryptedDisplayName = await encryptDisplayNameWithKey(displayNameEncryptionKey, displayName);
+
+    return encryptedDisplayName;
 };
 
 export const encryptMeetingPassword = async (password: string, primaryUserKey: PrivateKeyReference) => {

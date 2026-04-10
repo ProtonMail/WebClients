@@ -64,6 +64,9 @@ const createMockStore = () => {
                         DisplayName: mockParticipantName,
                     },
                 },
+                participantDecryptedNameMap: {
+                    '123': mockParticipantName,
+                },
             },
         },
     });
