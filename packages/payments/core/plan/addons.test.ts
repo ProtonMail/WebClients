@@ -41,6 +41,14 @@ describe('getSupportedAddons', () => {
             const expected: SupportedAddons = {
                 [ADDON_NAMES.LUMO_PASS]: true,
                 [ADDON_NAMES.MEET_PASS]: true,
+            };
+            expect(result).toEqual(expected);
+        });
+
+        it('should return correct addons for PLANS.MAIL_BUSINESS', () => {
+            const planIDs: PlanIDs = { [PLANS.VPN_PASS_BUNDLE]: 1 };
+            const result = getSupportedAddons(planIDs);
+            const expected: SupportedAddons = {
                 [ADDON_NAMES.MEET_VPN_PASS_BUNDLE]: true,
             };
             expect(result).toEqual(expected);
