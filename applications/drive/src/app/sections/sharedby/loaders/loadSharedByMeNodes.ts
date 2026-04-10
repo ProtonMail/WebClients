@@ -14,11 +14,13 @@ type Drive = Pick<ProtonDriveClient, 'iterateSharedNodes' | 'getSharingInfo' | '
 
 const fetchSharedByMeNodes = async (abortSignal: AbortSignal, drive: Drive) => {
     const { onItemsLoadedToState, onFinished } = driveMetrics.drivePerformance.startDataLoad('sharedByMe');
+    const loadedUids = new Set<string>();
     for await (const sharedByMeMaybeNode of drive.iterateSharedNodes(abortSignal)) {
         try {
             const { node } = getNodeEntity(sharedByMeMaybeNode);
             const signatureResult = getSignatureIssues(sharedByMeMaybeNode);
 
+            loadedUids.add(node.uid);
             useSharedByMeStore.getState().setSharedByMeItem({
                 nodeUid: node.uid,
                 name: node.name,
@@ -64,6 +66,7 @@ const fetchSharedByMeNodes = async (abortSignal: AbortSignal, drive: Drive) => {
             handleSdkError(e);
         }
     }
+    useSharedByMeStore.getState().cleanupStaleItems(loadedUids);
     onFinished();
 };
 

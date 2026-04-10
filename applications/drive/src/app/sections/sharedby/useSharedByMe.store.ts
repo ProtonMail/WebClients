@@ -51,6 +51,7 @@ interface SharedByMeStore {
     updateSharedByMeItem: (uid: string, updates: Partial<SharedByMeItem>) => void;
     removeSharedByMeItem: (uid: string) => void;
     clearAll: () => void;
+    cleanupStaleItems: (loadedUids: Set<string>) => void;
 
     getSharedByMeItem: (uid: string) => SharedByMeItem | undefined;
 
@@ -131,6 +132,26 @@ export const useSharedByMeStore = create<SharedByMeStore>()(
                     sharedByMeItems: new Map(),
                     sortedItemUids: new Set(),
                     sortConfig: undefined,
+                });
+            },
+
+            cleanupStaleItems: (loadedUids: Set<string>) => {
+                set((state) => {
+                    const newSharedByMeItems = new Map(state.sharedByMeItems);
+                    const newSortedItemUids = new Set<string>(state.sortedItemUids);
+
+                    for (const [uid, item] of state.sharedByMeItems) {
+                        const shouldCleanup = !loadedUids.has(item.nodeUid);
+                        if (shouldCleanup) {
+                            newSharedByMeItems.delete(uid);
+                            newSortedItemUids.delete(uid);
+                        }
+                    }
+
+                    return {
+                        sharedByMeItems: newSharedByMeItems,
+                        sortedItemUids: newSortedItemUids,
+                    };
                 });
             },
 
