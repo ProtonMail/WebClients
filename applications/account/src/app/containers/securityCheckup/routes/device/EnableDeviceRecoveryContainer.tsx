@@ -9,7 +9,7 @@ import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { useGetUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import { useApi, useAuthentication, useConfig, useSecurityCheckup } from '@proton/components';
+import { useApi, useAuthentication, useSecurityCheckup } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { CacheType } from '@proton/redux-utilities';
 import { updateDeviceRecovery } from '@proton/shared/lib/api/settingsRecovery';
@@ -35,7 +35,6 @@ const EnableDeviceRecoveryContainer = () => {
 
     const [step, setStep] = useState(STEPS.ENABLE);
 
-    const { APP_NAME } = useConfig();
     const api = useApi();
     const authentication = useAuthentication();
 
@@ -64,7 +63,6 @@ const EnableDeviceRecoveryContainer = () => {
             api,
             user,
             addresses,
-            appName: APP_NAME,
             userSettings: { ...userSettings, ...partialUserSettings },
             userKeys,
             authentication,

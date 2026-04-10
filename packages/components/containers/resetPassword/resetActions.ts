@@ -42,7 +42,7 @@ export const handleNewPassword = async ({
     cache: ResetCacheResult;
     api: Api;
 }): Promise<ResetActionResponse> => {
-    const { username, token, resetResponse, persistent, appName, ktActivation } = cache;
+    const { username, token, resetResponse, persistent, ktActivation } = cache;
     if (!resetResponse || !token) {
         throw new Error('Missing response');
     }
@@ -107,7 +107,6 @@ export const handleNewPassword = async ({
         api,
         keyPassword,
         persistent,
-        appName,
         addresses: undefined,
         user,
         preAuthKTVerifier,

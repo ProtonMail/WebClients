@@ -1,7 +1,6 @@
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { getSettings } from '@proton/shared/lib/api/settings';
 import { getUser } from '@proton/shared/lib/authentication/getUser';
-import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { Address, Api, PreAuthKTVerifier, User, UserSettings } from '@proton/shared/lib/interfaces';
 import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys';
 import {
@@ -20,7 +19,6 @@ export const deviceRecovery = async ({
     keyPassword,
     persistent,
     user: initialUser,
-    appName,
     addresses: initialAddresses,
     preAuthKTVerifier,
     api,
@@ -28,7 +26,6 @@ export const deviceRecovery = async ({
     keyPassword: string;
     persistent: boolean;
     user: User;
-    appName: APP_NAMES;
     addresses: Address[] | undefined;
     preAuthKTVerifier: PreAuthKTVerifier;
     api: Api;
@@ -65,7 +62,6 @@ export const deviceRecovery = async ({
             user,
             addresses,
             userKeys,
-            appName,
         });
 
         if (isDeviceRecoveryAvailable) {
