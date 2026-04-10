@@ -46,10 +46,10 @@ const enableMediaSessionControls = async (reportMeetError: ReportMeetError) => {
 
 export function usePictureInPicture({
     isDisconnected,
-    participantNameMap,
+    participantDecryptedNameMap,
 }: {
     isDisconnected: boolean;
-    participantNameMap: Record<string, string>;
+    participantDecryptedNameMap: Record<string, string>;
 }) {
     const { reportMeetError } = useMeetErrorReporting();
     const room = useRoomContext();
@@ -66,7 +66,7 @@ export function usePictureInPicture({
     const [isPipActive, setIsPipActive] = useState(false);
 
     // Use useLatest to avoid stale closures
-    const participantNameMapRef = useLatest(participantNameMap);
+    const participantDecryptedNameMapRef = useLatest(participantDecryptedNameMap);
 
     const notifications = useNotifications();
 
@@ -132,7 +132,7 @@ export function usePictureInPicture({
         // Initialize session with canvas and video elements
         const { canvas } = sessionManager.init(displayableWithAvailableTracks) || {};
 
-        startRendering(canvas, displayableWithAvailableTracks, messages, participantNameMapRef.current);
+        startRendering(canvas, displayableWithAvailableTracks, messages, participantDecryptedNameMapRef.current);
         await sessionManager.setupVideoStream();
     };
 
@@ -205,7 +205,7 @@ export function usePictureInPicture({
     useEffect(() => {
         if (chatMessages.length > 0) {
             const lastMessage = chatMessages[chatMessages.length - 1];
-            addChatMessage(participantNameMapRef.current[lastMessage.identity], lastMessage.message);
+            addChatMessage(participantDecryptedNameMapRef.current[lastMessage.identity], lastMessage.message);
         }
     }, [chatMessages, addChatMessage]);
 
@@ -236,7 +236,7 @@ export function usePictureInPicture({
 
             // Restart rendering loop with the latest tracks to avoid stale closures
             stopRendering();
-            startRendering(canvas, displayableWithAvailableTracks, messages, participantNameMapRef.current);
+            startRendering(canvas, displayableWithAvailableTracks, messages, participantDecryptedNameMapRef.current);
         }
     }, [sessionManager, isPipActive, tracksKey, messages, startRendering, stopRendering]);
 

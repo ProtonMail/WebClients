@@ -13,7 +13,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { useMeetSelector } from '@proton/meet/store/hooks';
-import { selectParticipantNameMap, selectRoomName } from '@proton/meet/store/slices/meetingInfo';
+import { selectParticipantDecryptedNameMap, selectRoomName } from '@proton/meet/store/slices/meetingInfo';
 import { getBrowser, getOS } from '@proton/shared/lib/helpers/browser';
 import { useFlag } from '@proton/unleash/useFlag';
 
@@ -454,7 +454,7 @@ export const DebugOverlay = ({ isOpen, onClose }: DebugOverlayProps) => {
     const { localParticipant, isMicrophoneEnabled, isCameraEnabled } = useLocalParticipant();
     const remoteParticipants = useRemoteParticipants();
     const roomName = useMeetSelector(selectRoomName);
-    const participantNameMap = useMeetSelector(selectParticipantNameMap);
+    const participantDecryptedNameMap = useMeetSelector(selectParticipantDecryptedNameMap);
     const { cameras, microphones, speakers, selectedCameraId, selectedMicrophoneId, selectedAudioOutputDeviceId } =
         useMediaManagementContext();
 
@@ -755,7 +755,7 @@ export const DebugOverlay = ({ isOpen, onClose }: DebugOverlayProps) => {
     }
 
     const getParticipantDisplayName = (identity: string, name: string) => {
-        return participantNameMap[identity] || name || identity;
+        return participantDecryptedNameMap[identity] || name || identity;
     };
 
     return (
