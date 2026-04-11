@@ -7,6 +7,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { SettingsPanel } from '@proton/pass/components/Settings/SettingsPanel';
 import browser from '@proton/pass/lib/globals/browser';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
+import { isMac } from '@proton/shared/lib/helpers/browser';
 import noop from '@proton/utils/noop';
 
 type ShortcutRowProps = {
@@ -23,7 +24,7 @@ const ShortcutKeys: FC<{ shortcut: string }> = ({ shortcut }) => (
                 className="inline-flex items-center justify-center h-6 px-2 text-sm border border-weak rounded"
                 style={{ fontFamily: 'system-ui, sans-serif', minWidth: '1.5rem' }}
             >
-                {key}
+                {isMac() && key === 'Ctrl' ? 'Cmd' : key}
             </kbd>
         ))}
     </span>
