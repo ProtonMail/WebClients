@@ -54,7 +54,7 @@ export const createFormTrackerService = () => {
 
     /** TODO: when adding support for iframe autosaving, the `frameId` should be leveraged
      * to orchestrate cross-frame autosave submissions. For now it's only used as a gate to protect
-     * against cross-frame submission merging. (see: content-script autosave reconciliation) */
+     * against cross-frame submission merging. (see: autosave.relay.ts) */
     const stage = (tabId: TabId, frameId: FrameId, submission: FormEntryBase, reason: string): FormEntry => {
         logger.info(`[FormTracker::Stage]: on tab ${tabId} for domain "${submission.domain}" {${reason}}`);
         const pending = get(tabId, submission);

@@ -161,10 +161,13 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
             }
         }),
 
-        reconciliate: withContext((_, formType, fields) => {
+        reconciliate: withContext((ctx, formType, fields) => {
             if (!formHandle.tracker) {
                 formHandle.tracker = createFormTracker(formHandle);
-                formHandle.tracker.attach();
+                /** Sub-frames only support manual autosave prompts for now: skip
+                 * attach effects until reconciliation is wired up in iframes.
+                 * NOTE: remove this guard when full iframe autosave is supported. */
+                if (ctx?.mainFrame) formHandle.tracker.attach();
             }
 
             let didChange = formType !== formHandle.formType;
