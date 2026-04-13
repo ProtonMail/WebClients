@@ -321,7 +321,7 @@ export function getStateList(countryCode: CountryWithStates) {
             { stateName: 'West Virginia', stateCode: 'WV' },
             { stateName: 'Wisconsin', stateCode: 'WI' },
             { stateName: 'Wyoming', stateCode: 'WY' },
-            { stateName: 'District of Columbia', stateCode: 'DC' },
+            { stateName: 'District of Columbia (Washington, D.C.)', stateCode: 'DC' },
             { stateName: 'Armed Forces Americas', stateCode: 'AA' },
             { stateName: 'Armed Forces Europe', stateCode: 'AE' },
             { stateName: 'Armed Forces Pacific', stateCode: 'AP' },
