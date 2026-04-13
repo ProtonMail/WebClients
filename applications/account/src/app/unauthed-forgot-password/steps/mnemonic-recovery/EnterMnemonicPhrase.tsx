@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -18,6 +18,7 @@ import { UserNameWithIcon } from '../../../components/username/UserNameWithIcon'
 import Content from '../../../public/Content';
 import Header from '../../../public/Header';
 import { defaultPersistentKey } from '../../../public/helper';
+import { useResetPasswordTelemetry } from '../../../reset/resetPasswordTelemetry';
 import { authMnemonicAndGetKeys } from '../../actions';
 import type { UnauthedForgotPasswordStateMachine } from '../../state-machine/UnauthedForgotPasswordStateMachine';
 import { useMachineWizard } from '../../wizard/MachineWizardProvider';
@@ -35,6 +36,13 @@ export const EnterMnemonicPhrase = () => {
     const [persistent] = useLocalState(false, defaultPersistentKey);
     const errorHandler = useErrorHandler();
     const hasInvalidMnemonic = mnemonic && mnemonicValidation.filter(isTruthy);
+
+    const { sendResetPasswordStepLoad } = useResetPasswordTelemetry({ variant: 'B' });
+    useEffect(() => {
+        sendResetPasswordStepLoad({
+            step: 'mnemonicRecoveryEnterPhrase',
+        });
+    }, []);
 
     const handleSubmit = async () => {
         try {

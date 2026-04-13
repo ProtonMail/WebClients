@@ -20,6 +20,7 @@ import { UserNameWithIcon } from '../../../components/username/UserNameWithIcon'
 import { getEmailVerificationCodeText } from '../../../content/helper';
 import Content from '../../../public/Content';
 import Header from '../../../public/Header';
+import { useResetPasswordTelemetry } from '../../../reset/resetPasswordTelemetry';
 import { getDeviceRecoveryLevel } from '../../actions';
 import { useRequestCode } from '../../hooks/useRequestCode';
 import { useRequestNewVerificationCode } from '../../hooks/useRequestNewVerificationCode';
@@ -29,6 +30,8 @@ import { useMachineWizard } from '../../wizard/MachineWizardProvider';
 export const VerifyEmailRecoveryCode = () => {
     const { send, snapshot } = useMachineWizard<typeof UnauthedForgotPasswordStateMachine>();
     const { username, redactedRecoveryEmail } = snapshot.context;
+    const { sendResetPasswordCodeSent, sendResetPasswordMethodValidated, sendResetPasswordStepLoad } =
+        useResetPasswordTelemetry({ variant: 'B' });
 
     const silentApi = useSilentApi();
     const [loading, withLoading] = useLoading();
@@ -47,13 +50,21 @@ export const VerifyEmailRecoveryCode = () => {
     });
 
     useEffect(() => {
-        void withLoading(requestCode());
+        sendResetPasswordStepLoad({
+            step: 'verifyRecoveryEmail',
+        });
+
+        void withLoading(
+            requestCode().then(() => sendResetPasswordCodeSent({ step: 'verifyRecoveryEmail', method: 'email' }))
+        );
     }, []);
 
     const handleResend = () => {
         setCode('');
         setHasInvalidCodeError(null);
-        return withLoading(requestCode());
+        return withLoading(
+            requestCode().then(() => sendResetPasswordCodeSent({ step: 'verifyRecoveryEmail', method: 'email' }))
+        );
     };
 
     const { RequestNewCodeModal, InvalidCodeErrorMessage, AssistiveText } = useRequestNewVerificationCode({
@@ -67,6 +78,7 @@ export const VerifyEmailRecoveryCode = () => {
             const resetResponse = await silentApi<ValidateResetTokenResponse>(validateResetToken(username, code));
             const deviceRecoveryLevel = await getDeviceRecoveryLevel(resetResponse);
 
+            sendResetPasswordMethodValidated({ step: 'verifyRecoveryEmail', method: 'email' });
             send({
                 type: 'email.code.validated',
                 payload: {

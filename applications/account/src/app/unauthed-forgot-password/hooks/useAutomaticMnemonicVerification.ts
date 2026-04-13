@@ -8,6 +8,7 @@ import useLoading from '@proton/hooks/useLoading';
 import { decodeAutomaticResetParams } from '@proton/shared/lib/helpers/encoding';
 
 import { defaultPersistentKey } from '../../public/helper';
+import { useResetPasswordTelemetry } from '../../reset/resetPasswordTelemetry';
 import { authMnemonicAndGetKeys } from '../actions';
 import type { UnauthedForgotPasswordStateMachine } from '../state-machine/UnauthedForgotPasswordStateMachine';
 import { useMachineWizard } from '../wizard/MachineWizardProvider';
@@ -19,6 +20,9 @@ interface Props {
 
 export const useAutomaticMnemonicVerification = ({ onPreSubmit, onStartAuth }: Props) => {
     const [loading, withLoading] = useLoading();
+    const { sendResetPasswordMethodValidated } = useResetPasswordTelemetry({
+        variant: 'B',
+    });
 
     const { send } = useMachineWizard<typeof UnauthedForgotPasswordStateMachine>();
     const silentApi = useSilentApi();
@@ -64,6 +68,7 @@ export const useAutomaticMnemonicVerification = ({ onPreSubmit, onStartAuth }: P
                     persistent,
                     api: silentApi,
                 });
+                sendResetPasswordMethodValidated({ step: 'entry', method: 'mnemonic' });
                 if (mnemonicData) {
                     send({
                         type: 'mnemonic.prefilled',

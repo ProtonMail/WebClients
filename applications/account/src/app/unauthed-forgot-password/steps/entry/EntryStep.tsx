@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -14,6 +14,7 @@ import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import Content from '../../../public/Content';
 import Header from '../../../public/Header';
 import Text from '../../../public/Text';
+import { useResetPasswordTelemetry } from '../../../reset/resetPasswordTelemetry';
 import { NoResetMethodsError, handleRequestRecoveryMethods } from '../../actions';
 import { useAutomaticMnemonicVerification } from '../../hooks/useAutomaticMnemonicVerification';
 import { useAutomaticRecoveryVerification } from '../../hooks/useAutomaticRecoveryVerification';
@@ -22,6 +23,9 @@ import { useForgotPasswordProps } from '../../wizard/ForgotPasswordProvider';
 import { useMachineWizard } from '../../wizard/MachineWizardProvider';
 
 export const EntryStep = () => {
+    const { sendResetPasswordRecoveryMethodsRequested, sendResetPasswordStepLoad } = useResetPasswordTelemetry({
+        variant: 'B',
+    });
     const { onPreSubmit, onStartAuth } = useForgotPasswordProps();
     const { send } = useMachineWizard<typeof UnauthedForgotPasswordStateMachine>();
     const [loading, withLoading] = useLoading();
@@ -42,6 +46,12 @@ export const EntryStep = () => {
         },
     });
 
+    useEffect(() => {
+        sendResetPasswordStepLoad({
+            step: 'entry',
+        });
+    }, []);
+
     const handleSubmit = async () => {
         try {
             await onPreSubmit();
@@ -50,13 +60,20 @@ export const EntryStep = () => {
                 username,
                 api: silentApi,
             });
-
+            sendResetPasswordRecoveryMethodsRequested({
+                hasPasswordResetMethod: result.methods.includes('email') || result.methods.includes('sms'),
+                hasDataRecoveryMethod: result.methods.includes('mnemonic'),
+            });
             send({
                 type: 'recovery.started',
                 payload: result,
             });
         } catch (error) {
             if (error instanceof NoResetMethodsError) {
+                sendResetPasswordRecoveryMethodsRequested({
+                    hasPasswordResetMethod: false,
+                    hasDataRecoveryMethod: false,
+                });
                 send({
                     type: 'recovery.started',
                     payload: {
