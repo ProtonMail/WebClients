@@ -71,7 +71,7 @@ const ContactImage = ({
     if (tryToLoad) {
         return (
             <img
-                className={clsx(className, 'item-sender-image')}
+                className={clsx(className, 'item-sender-image ratio-square')}
                 alt=""
                 width={width}
                 src={url}
