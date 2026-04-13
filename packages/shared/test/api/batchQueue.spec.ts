@@ -28,4 +28,40 @@ describe('BatchQueue', () => {
 
         jasmine.clock().uninstall();
     });
+
+    it('should handle synchronous errors in the flush callback', () => {
+        const fakeCallback = jasmine.createSpy('fakeCallback').and.throwError('test');
+        const queue = new BatchQueue<number>({
+            batchSize: 5,
+            flushCallback: fakeCallback,
+            flushIntervalMs: 500,
+        });
+        spyOn(queue, 'flush').and.callThrough();
+
+        queue.add(1);
+
+        expect(() => queue.flush()).not.toThrowError();
+
+        expect(fakeCallback).toHaveBeenCalledTimes(1);
+        expect(fakeCallback).toThrowError('test');
+    });
+
+    it('should handle asynchronous errors in the flush callback', async () => {
+        const fakeError = new Error('test');
+
+        const fakeCallback = jasmine.createSpy('fakeCallback').and.returnValue(Promise.reject(fakeError));
+        const queue = new BatchQueue<number>({
+            batchSize: 5,
+            flushCallback: fakeCallback,
+            flushIntervalMs: 500,
+        });
+        spyOn(queue, 'flush').and.callThrough();
+
+        queue.add(1);
+
+        expect(() => queue.flush()).not.toThrowError();
+
+        expect(fakeCallback).toHaveBeenCalledTimes(1);
+        await expectAsync(fakeCallback()).toBeRejectedWith(fakeError);
+    });
 });
