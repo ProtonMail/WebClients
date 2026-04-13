@@ -7,6 +7,7 @@ import { IcMinus } from '@proton/icons/icons/IcMinus';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { PLANS, PLAN_NAMES, type Plan } from '@proton/payments';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
+import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
 
 import { NumberCustomiser, type NumberCustomiserProps } from './NumberCustomiser';
@@ -63,15 +64,7 @@ interface MeetAddonProps extends Omit<NumberCustomiserProps, 'label' | 'tooltip'
     telemetryContext: PaymentTelemetryContext;
 }
 
-const MeetAddon = ({
-    price,
-    onAddMeet,
-    onRemoveMeet,
-    locked,
-    value,
-    telemetryContext: _telemetryContext,
-    ...rest
-}: MeetAddonProps) => {
+const MeetAddon = ({ price, onAddMeet, onRemoveMeet, locked, value, telemetryContext, ...rest }: MeetAddonProps) => {
     const [showMeetBanner, setShowMeetBanner] = useState(value === 0);
 
     if (showMeetBanner) {
@@ -82,6 +75,7 @@ const MeetAddon = ({
                     onClick={() => {
                         setShowMeetBanner(false);
                         onAddMeet();
+                        checkoutTelemetry.reportAddMeet({ context: telemetryContext });
                     }}
                 />
             </div>
