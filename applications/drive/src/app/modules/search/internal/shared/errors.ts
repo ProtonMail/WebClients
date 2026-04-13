@@ -23,6 +23,28 @@ export function isQuotaExceededError(e: unknown): boolean {
     return e instanceof DOMException && e.name === 'QuotaExceededError';
 }
 
+/**
+ * Thrown when the SharedWorker connection is lost (crash, OOM, killed by user)
+ * and the client is reconnecting.
+ */
+export class SearchWorkerDisconnectedError extends Error {
+    constructor() {
+        super('Search SharedWorker disconnected');
+        this.name = 'SearchWorkerDisconnectedError';
+    }
+}
+
+/**
+ * Thrown when the SharedWorker heartbeat times out, indicating the worker
+ * is unresponsive (frozen, deadlocked, or extremely slow).
+ */
+export class SharedWorkerHeartbeatTimeout extends Error {
+    constructor() {
+        super('SharedWorker heartbeat timeout');
+        this.name = 'SharedWorkerHeartbeatTimeout';
+    }
+}
+
 export class InvalidIndexerState extends Error {
     constructor(message: string) {
         super(message);

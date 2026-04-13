@@ -33,6 +33,10 @@ export class ClientCoordinator {
         this.subscribers.clear();
     }
 
+    /**
+     * Register a worker client with the SharedWorker.
+     * Idempotent — safe to call again to update the bridge reference.
+     */
     register(userId: UserId, clientId: ClientId, bridge: MainThreadBridge) {
         const clientContext = { userId, clientId, lastSeen: Date.now(), bridge };
         this.clients.set(clientId, clientContext);
