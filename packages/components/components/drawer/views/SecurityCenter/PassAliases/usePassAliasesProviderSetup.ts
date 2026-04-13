@@ -21,7 +21,7 @@ import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
 import { filterPassAliases } from './PassAliases.helpers';
-import PassAliasesError, { PASS_ALIASES_ERROR_STEP } from './PassAliasesError';
+import { PASS_ALIASES_ERROR_STEP, PassAliasesError } from './PassAliasesError';
 import { fetchPassAliases } from './PassAliasesProvider.helpers';
 import type { CreateModalFormState, PassAliasesProviderReturnedValues, PassAliasesVault } from './interface';
 
@@ -75,6 +75,12 @@ export const usePassAliasesSetup = (): PassAliasesProviderReturnedValues => {
                 throw new Error('Vault should be defined');
             }
 
+            // Safari requires clipboard writes to happen synchronously within the active user
+            // gesture. Any `await` before this call causes WebKit to consider the gesture
+            // "consumed", resulting in a NotAllowedError. Calling textToClipboard here, before
+            // the first await, keeps us inside the original gesture context.
+            textToClipboard(formValues.alias);
+
             // Submit to API
             await PassBridge.alias.create({
                 shareId: passAliasVault.shareId,
@@ -97,7 +103,6 @@ export const usePassAliasesSetup = (): PassAliasesProviderReturnedValues => {
                 memoisedPassAliasesItems = filteredAliases;
             }
 
-            textToClipboard(formValues.alias);
             createNotification({
                 text: c('Success').t`Alias saved and copied`,
                 expiration: NOTIFICATION_DEFAULT_EXPIRATION_TIME,
