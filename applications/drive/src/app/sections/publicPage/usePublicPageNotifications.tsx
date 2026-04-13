@@ -1,11 +1,10 @@
 import { c, msgid } from 'ttag';
 
-import { useErrorHandler } from '../../store/_utils';
+import { showAggregatedErrorNotification } from '../../utils/errorHandling/errorNotifications';
 import { useListNotifications } from '../../utils/useListNotifications';
 
 export const usePublicPageNotifications = () => {
     const { createSuccessMessage } = useListNotifications();
-    const { showAggregatedErrorNotification } = useErrorHandler();
 
     const createDeleteNotification = (
         successItems: { name: string; uid: string }[],
@@ -24,16 +23,13 @@ export const usePublicPageNotifications = () => {
 
         showAggregatedErrorNotification(
             Object.values(failureItems).map((failureItem) => failureItem.error),
-            (errors) => {
-                const numberOfItems = errors.length;
-                return numberOfItems === 1
-                    ? errors[0]
-                    : c('Notification').ngettext(
-                          msgid`${numberOfItems} item failed to be deleted`,
-                          `${numberOfItems} items failed to be deleted`,
-                          numberOfItems
-                      );
-            }
+            (error) => error,
+            (errors) =>
+                c('Notification').ngettext(
+                    msgid`${errors.length} item failed to be deleted`,
+                    `${errors.length} items failed to be deleted`,
+                    errors.length
+                )
         );
     };
 
