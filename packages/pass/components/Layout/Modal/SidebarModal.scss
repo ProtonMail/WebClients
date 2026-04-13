@@ -41,7 +41,7 @@ im.$media-expressions: $media-expressions;
 			--size: 100%;
 		}
 
-		@include im.media('>small') {
+		@include im.media('>medium') {
 			--size: calc(((100% - var(--pass-sidebar-size)) * 0.596));
 		}
 	}
@@ -51,7 +51,7 @@ im.$media-expressions: $media-expressions;
 			--size: 90%;
 		}
 
-		@include im.media('>small') {
+		@include im.media('>medium') {
 			--size: calc(((100% - var(--pass-sidebar-size)) * 0.55));
 		}
 	}
