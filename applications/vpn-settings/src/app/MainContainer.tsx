@@ -83,6 +83,7 @@ import { getIsSectionAvailable, getRoutePaths } from '@proton/components/contain
 import DashboardComparePlansCTA from '@proton/components/containers/payments/subscription/YourPlanSectionV2/DashboardComparePlansCTA';
 import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/cancellationFlow/helper';
 import { useReferralUserEligible } from '@proton/components/containers/referral/hooks/useReferralUserEligible';
+import ReferralPageTelemetry from '@proton/components/containers/referral/components/ReferralPageTelemetry';
 import { RewardSection } from '@proton/components/containers/referral/rewards/RewardSection';
 import LiveChatZendesk, { getIsSelfChat } from '@proton/components/containers/zendesk/LiveChatZendesk';
 import type { ZendeskRef } from '@proton/components/containers/zendesk/helper';
@@ -432,6 +433,7 @@ const MainContainer: FunctionComponent = () => {
                             </Route>
                             {getIsSectionAvailable(vpnRoutes.referral) && (
                                 <Route path={vpnRoutes.referral.to}>
+                                    <ReferralPageTelemetry />
                                     <ReferralInvitesContextProvider>
                                         <PrivateMainSettingsArea config={vpnRoutes.referral}>
                                             <InviteSection />

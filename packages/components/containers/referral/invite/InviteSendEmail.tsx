@@ -16,6 +16,7 @@ import { PROTONMAIL_DOMAINS, getEmailParts } from '@proton/shared/lib/helpers/em
 import type { Recipient, Referral } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
+import { useReferralTelemetry } from '../hooks/useReferralTelemetry';
 import { useReferralInvitesContext } from '../ReferralInvitesContext';
 import InviteSendEmailRecipient from './InviteSendEmailRecipient';
 import { deduplicateRecipients, filterContactEmails, isValidEmailAdressToRefer } from './helpers';
@@ -44,6 +45,7 @@ const InviteSendEmail = ({ className }: { className?: string }) => {
     const { createNotification } = useNotifications();
     const [apiLoading, withLoading] = useLoading();
     const [protonDomains, setProtonDomains] = useState<Set<string>>(() => new Set(PROTONMAIL_DOMAINS));
+    const { sendEmailInvite } = useReferralTelemetry();
 
     const filteredContactEmails = useMemo(() => {
         if (!contactEmails || contactEmailIsLoading) {
@@ -82,6 +84,7 @@ const InviteSendEmail = ({ className }: { className?: string }) => {
             request
                 .then((result) => {
                     if (result?.Referrals && result?.Referrals.length) {
+                        sendEmailInvite();
                         createNotification({
                             text: c('Info').ngettext(
                                 msgid`Invite successfully sent`,
