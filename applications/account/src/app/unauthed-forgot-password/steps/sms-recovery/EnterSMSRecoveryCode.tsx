@@ -3,9 +3,9 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import { UserNameWithIcon } from '../../../components/username/UserNameWithIcon';
+import { getResendSMSVerificationCodeText } from '../../../content/helper';
 import Content from '../../../public/Content';
 import Header from '../../../public/Header';
 import { useRequestCode } from '../../hooks/useRequestCode';
@@ -51,10 +51,7 @@ export const EnterSMSRecoveryCode = () => {
                         .t`To help keep your account safe, we want to make sure it’s really you trying to sign in.`}
                 </p>
 
-                <p>
-                    {c('Info')
-                        .jt`${BRAND_NAME} will send a verification code to ${RedactedPhoneNumber}. Standard message rates may apply.`}
-                </p>
+                <p>{getResendSMSVerificationCodeText(RedactedPhoneNumber)}</p>
 
                 <Button
                     size="large"
