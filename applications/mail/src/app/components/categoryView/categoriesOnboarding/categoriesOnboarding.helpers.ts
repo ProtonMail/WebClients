@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 
@@ -39,13 +40,17 @@ export const hasSeeUpdate = (flagValue: number): boolean => {
     return hasBit(flagValue, CategoriesOnboardingFlags.UPDATE);
 };
 
-export const hasSeenCategoryCard = (audience: AudienceType, labelID: string, flagValue: number): boolean => {
+export const hasSeenCategoryCard = (
+    audience: AudienceType,
+    categoryID: CategoryLabelID,
+    flagValue: number
+): boolean => {
     if (flagValue === FeatureValueDefault) {
         return true;
     }
 
     if (audience === AudienceType.B2C) {
-        const config = B2C_CATEGORIES_MAPPING[labelID];
+        const config = B2C_CATEGORIES_MAPPING[categoryID];
         if (!config) {
             return false;
         }
@@ -54,7 +59,7 @@ export const hasSeenCategoryCard = (audience: AudienceType, labelID: string, fla
     }
 
     if (audience === AudienceType.B2B) {
-        const config = B2B_CATEGORIES_MAPPING[labelID];
+        const config = B2B_CATEGORIES_MAPPING[categoryID];
         if (!config) {
             return false;
         }
@@ -65,9 +70,9 @@ export const hasSeenCategoryCard = (audience: AudienceType, labelID: string, fla
     return false;
 };
 
-export const getOnboardingCardCopy = (audience: AudienceType, labelID: string) => {
+export const getOnboardingCardCopy = (audience: AudienceType, categoryID: CategoryLabelID) => {
     if (audience === AudienceType.B2C) {
-        switch (labelID) {
+        switch (categoryID) {
             case MAILBOX_LABEL_IDS.CATEGORY_SOCIAL:
                 return c('Info').t`Includes updates from social networks and media-sharing sites.`;
             case MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS:
@@ -80,7 +85,7 @@ export const getOnboardingCardCopy = (audience: AudienceType, labelID: string) =
     }
 
     if (audience === AudienceType.B2B) {
-        switch (labelID) {
+        switch (categoryID) {
             case MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS:
                 return c('Info').t`Includes invoices, purchase orders, and payment confirmations.`;
             case MAILBOX_LABEL_IDS.CATEGORY_UPDATES:
