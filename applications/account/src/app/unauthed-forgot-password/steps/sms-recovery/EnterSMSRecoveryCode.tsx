@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -8,6 +10,7 @@ import { UserNameWithIcon } from '../../../components/username/UserNameWithIcon'
 import { getResendSMSVerificationCodeText } from '../../../content/helper';
 import Content from '../../../public/Content';
 import Header from '../../../public/Header';
+import { useResetPasswordTelemetry } from '../../../reset/resetPasswordTelemetry';
 import { useRequestCode } from '../../hooks/useRequestCode';
 import type { UnauthedForgotPasswordStateMachine } from '../../state-machine/UnauthedForgotPasswordStateMachine';
 import { useMachineWizard } from '../../wizard/MachineWizardProvider';
@@ -15,10 +18,17 @@ import { useMachineWizard } from '../../wizard/MachineWizardProvider';
 export const EnterSMSRecoveryCode = () => {
     const { send, snapshot } = useMachineWizard<typeof UnauthedForgotPasswordStateMachine>();
     const { username, redactedRecoveryPhoneNumber } = snapshot.context;
+    const { sendResetPasswordCodeSent, sendResetPasswordStepLoad } = useResetPasswordTelemetry({ variant: 'B' });
 
     const [loading, withLoading] = useLoading();
     const errorHandler = useErrorHandler();
     const RedactedPhoneNumber = <strong key="redacted-phone-number">{redactedRecoveryPhoneNumber}</strong>;
+
+    useEffect(() => {
+        sendResetPasswordStepLoad({
+            step: 'enterRecoverySms',
+        });
+    }, []);
 
     const requestCode = useRequestCode({
         method: 'phone',
@@ -36,7 +46,9 @@ export const EnterSMSRecoveryCode = () => {
             return;
         }
 
-        void withLoading(requestCode());
+        void withLoading(
+            requestCode().then(() => sendResetPasswordCodeSent({ step: 'enterRecoverySms', method: 'sms' }))
+        );
     };
     return (
         <>

@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import { c } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
@@ -9,6 +11,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { UserNameWithIcon } from '../../../components/username/UserNameWithIcon';
 import Content from '../../../public/Content';
 import Header from '../../../public/Header';
+import { useResetPasswordTelemetry } from '../../../reset/resetPasswordTelemetry';
 import { SignedInSessionsList } from '../../components/SignedInSessionsList';
 import type { UnauthedForgotPasswordStateMachine } from '../../state-machine/UnauthedForgotPasswordStateMachine';
 import { useMachineWizard } from '../../wizard/MachineWizardProvider';
@@ -16,6 +19,13 @@ import { useMachineWizard } from '../../wizard/MachineWizardProvider';
 export const AccountLost = () => {
     const { send, snapshot } = useMachineWizard<typeof UnauthedForgotPasswordStateMachine>();
     const { resetResponse, username } = snapshot.context;
+
+    const { sendResetPasswordStepLoad } = useResetPasswordTelemetry({ variant: 'B' });
+    useEffect(() => {
+        sendResetPasswordStepLoad({
+            step: 'recoveryFailed',
+        });
+    }, []);
 
     const hasOtherSessions = resetResponse?.Sessions && resetResponse?.Sessions.length > 0;
     const AlternateStepInstruction = hasOtherSessions

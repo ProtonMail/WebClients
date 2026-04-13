@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import { c } from 'ttag';
 
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
@@ -6,6 +8,7 @@ import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { UserNameWithIcon } from '../../../components/username/UserNameWithIcon';
 import Content from '../../../public/Content';
 import Header from '../../../public/Header';
+import { useResetPasswordTelemetry } from '../../../reset/resetPasswordTelemetry';
 import type { UnauthedForgotPasswordStateMachine } from '../../state-machine/UnauthedForgotPasswordStateMachine';
 import { useMachineWizard } from '../../wizard/MachineWizardProvider';
 import YesNoButtons from '../authenticated-recovery/delegated-access/components/YesNoButtons';
@@ -13,6 +16,13 @@ import YesNoButtons from '../authenticated-recovery/delegated-access/components/
 export const OtherLoggedInSessionPrompt = () => {
     const { send, snapshot } = useMachineWizard<typeof UnauthedForgotPasswordStateMachine>();
     const { username } = snapshot.context;
+
+    const { sendResetPasswordStepLoad } = useResetPasswordTelemetry({ variant: 'B' });
+    useEffect(() => {
+        sendResetPasswordStepLoad({
+            step: 'unauthenticatedRecoveryOtherSessionsPrompt',
+        });
+    }, []);
 
     return (
         <>

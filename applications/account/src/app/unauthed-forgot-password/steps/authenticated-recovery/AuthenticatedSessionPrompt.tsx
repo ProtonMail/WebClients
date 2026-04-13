@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import { c } from 'ttag';
 
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
@@ -6,6 +8,7 @@ import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { UserNameWithIcon } from '../../../components/username/UserNameWithIcon';
 import Content from '../../../public/Content';
 import Header from '../../../public/Header';
+import { useResetPasswordTelemetry } from '../../../reset/resetPasswordTelemetry';
 import { SignedInSessionsList } from '../../components/SignedInSessionsList';
 import type { UnauthedForgotPasswordStateMachine } from '../../state-machine/UnauthedForgotPasswordStateMachine';
 import { useMachineWizard } from '../../wizard/MachineWizardProvider';
@@ -14,6 +17,14 @@ import YesNoButtons from './delegated-access/components/YesNoButtons';
 export const AuthenticatedSessionPrompt = () => {
     const { send, snapshot } = useMachineWizard<typeof UnauthedForgotPasswordStateMachine>();
     const { resetResponse, username } = snapshot.context;
+
+    const { sendResetPasswordStepLoad } = useResetPasswordTelemetry({ variant: 'B' });
+    useEffect(() => {
+        sendResetPasswordStepLoad({
+            step: 'authenticatedRecoveryOtherSessionsPrompt',
+        });
+    }, []);
+
     const activeSessions = resetResponse?.Sessions;
     // This should not happen as the state machine has a `null` check. This is purely to make TS happy
     if (!activeSessions) {

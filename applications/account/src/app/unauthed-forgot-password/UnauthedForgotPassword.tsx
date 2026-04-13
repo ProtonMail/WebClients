@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { useMachine } from '@xstate/react';
@@ -11,6 +12,7 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import Layout from '../public/Layout';
 import Main from '../public/Main';
 import PublicHelpLink from '../public/PublicHelpLink';
+import { useResetPasswordTelemetry } from '../reset/resetPasswordTelemetry';
 import { UnauthedForgotPasswordWizard } from './UnauthedForgotPasswordWizard';
 import {
     UnauthedForgotPasswordStateMachine,
@@ -38,6 +40,14 @@ export const UnauthedForgotPassword = ({
 }: Props) => {
     const history = useHistory();
     const redirectToSignIn = () => history.push(loginUrl);
+    const { sendResetPasswordPageLoad, sendResetPasswordPageExit } = useResetPasswordTelemetry({ variant: 'B' });
+
+    useEffect(() => {
+        sendResetPasswordPageLoad();
+        return () => {
+            sendResetPasswordPageExit();
+        };
+    }, []);
 
     const [snapshot, send, actorRef] = useMachine(
         UnauthedForgotPasswordStateMachine.provide({

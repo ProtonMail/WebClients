@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import { c } from 'ttag';
 
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
@@ -10,6 +12,7 @@ import SetPasswordWithPolicyForm from '../../../login/SetPasswordWithPolicyForm'
 import Content from '../../../public/Content';
 import Header from '../../../public/Header';
 import { defaultPersistentKey } from '../../../public/helper';
+import { useResetPasswordTelemetry } from '../../../reset/resetPasswordTelemetry';
 import { useGetAccountKTActivation } from '../../../useGetAccountKTActivation';
 import { performPasswordChangeViaMnemonic, performPasswordReset } from '../../actions';
 import type { UnauthedForgotPasswordStateMachine } from '../../state-machine/UnauthedForgotPasswordStateMachine';
@@ -19,13 +22,30 @@ import { useMachineWizard } from '../../wizard/MachineWizardProvider';
 export const ResetPassword = () => {
     const { onLogin, productParam, setupVPN } = useForgotPasswordProps();
     const { snapshot } = useMachineWizard<typeof UnauthedForgotPasswordStateMachine>();
-    const { username, resetResponse, ownershipVerificationCode, mnemonicData, resetWithDataLoss } = snapshot.context;
+    const {
+        username,
+        resetResponse,
+        ownershipVerificationCode,
+        mnemonicData,
+        resetWithDataLoss,
+        ownershipVerificationMethod,
+    } = snapshot.context;
     const { createNotification } = useNotifications();
+
+    const { sendResetPasswordSuccess, sendResetPasswordFailure, sendResetPasswordStepLoad } = useResetPasswordTelemetry(
+        { variant: 'B' }
+    );
 
     const silentApi = useSilentApi();
     const [persistent] = useLocalState(false, defaultPersistentKey);
     const getKtActivation = useGetAccountKTActivation();
     const errorHandler = useErrorHandler();
+
+    useEffect(() => {
+        sendResetPasswordStepLoad({
+            step: 'setNewPassword',
+        });
+    }, []);
 
     const handleSubmit = async (newPassword: string) => {
         createNotification({
@@ -41,6 +61,7 @@ export const ResetPassword = () => {
                     persistent,
                     api: silentApi,
                 });
+                sendResetPasswordSuccess({ step: 'setNewPassword', method: 'mnemonic' });
                 await onLogin(authSession);
             } else if (resetResponse) {
                 const authSession = await performPasswordReset({
@@ -54,9 +75,14 @@ export const ResetPassword = () => {
                     setupVPN,
                     api: silentApi,
                 });
+                sendResetPasswordSuccess({ step: 'setNewPassword', method: ownershipVerificationMethod });
                 await onLogin(authSession);
             }
         } catch (error) {
+            sendResetPasswordFailure({
+                method: mnemonicData ? 'mnemonic' : ownershipVerificationMethod,
+                step: 'setNewPassword',
+            });
             errorHandler(error);
         }
     };
