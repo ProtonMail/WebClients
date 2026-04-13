@@ -1,6 +1,7 @@
-import type { ReactElement, RefObject } from 'react';
+import { type ReactElement, type RefObject, useEffect } from 'react';
 
 import { useReferralDiscover } from '../hooks/useReferralDiscover';
+import { useReferralTelemetry } from '../hooks/useReferralTelemetry';
 import { ReferralSpotlight } from './ReferralSpotlight';
 
 interface Props {
@@ -10,6 +11,13 @@ interface Props {
 
 export const SettingsReferralSpotlight = ({ children, anchorRef }: Props) => {
     const referralSpotlight = useReferralDiscover();
+    const { sendSettingsSpotlightView } = useReferralTelemetry();
+
+    useEffect(() => {
+        if (referralSpotlight.shouldShowSettingsSpotlight) {
+            sendSettingsSpotlightView();
+        }
+    }, [referralSpotlight.shouldShowSettingsSpotlight, sendSettingsSpotlightView]);
 
     return (
         <ReferralSpotlight
