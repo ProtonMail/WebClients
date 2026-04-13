@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { useMaybeGroup } from '@proton/pass/components/Groups/GroupsProvider';
+import { MaybeGroupName } from '@proton/pass/components/Groups/MaybeGroupName';
 import { ShareMemberAvatar } from '@proton/pass/components/Invite/Member/ShareMemberAvatar';
 import { getShareRoleDefinition } from '@proton/pass/components/Invite/Member/ShareRoleOptions';
 import { useInviteLabels } from '@proton/pass/components/Invite/useInviteLabels';
@@ -25,7 +26,7 @@ export type InviteMemberProps = InviteFormMemberItem & {
 
 export const InviteMember: FC<InviteMemberProps> = ({ target, value, onRemove, onRoleChange }) => {
     const { role, email, isGroup } = value;
-    const { name, onShowMembers } = useMaybeGroup(email);
+    const { name, maybeGroupProps, onShowMembers } = useMaybeGroup(email);
 
     // TODO: Remove this in IDTEAM-4660
     const labels = useInviteLabels();
@@ -44,7 +45,7 @@ export const InviteMember: FC<InviteMemberProps> = ({ target, value, onRemove, o
                 <div className="flex flex-nowrap flex-1 items-center gap-2">
                     <Tooltip openDelay={100} originalPlacement="bottom-start" title={name} id={nameId}>
                         <ButtonIfNeeded onClick={onShowMembers}>
-                            <div className="text-ellipsis">{name}</div>
+                            <MaybeGroupName {...maybeGroupProps} />
                         </ButtonIfNeeded>
                     </Tooltip>
                 </div>
