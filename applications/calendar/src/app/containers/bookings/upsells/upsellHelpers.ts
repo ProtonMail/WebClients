@@ -68,8 +68,8 @@ export const hasOrgMemberReachedBookingLimit = (user: UserModel, bookingsPages?:
         return false;
     }
 
-    if (!user.hasPaidMail && !user.hasPaidMeet) {
-        return true;
+    if (!user.hasPaidMeet) {
+        return bookingsPages.length >= 1;
     }
 
     return bookingsPages.length >= MAX_BOOKING_PAGES;
