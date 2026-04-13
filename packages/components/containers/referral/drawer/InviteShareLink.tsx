@@ -16,12 +16,15 @@ import useConfig from '@proton/components/hooks/useConfig';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 
+import { useReferralTelemetry } from '../hooks/useReferralTelemetry';
+
 const InviteShareLink = () => {
     const [referral, loadingReferral] = useReferrals();
 
     const [userSettings] = useUserSettings();
     const { createNotification } = useNotifications();
     const { APP_NAME: currentApp } = useConfig();
+    const { sendCopyLinkDrawer } = useReferralTelemetry();
 
     // TODO: referral: Add this to referralInfo redux state. Along with formatting. And use in the other InviteShareLink too
     const referrerLink = userSettings.Referral?.Link || '';
@@ -31,6 +34,7 @@ const InviteShareLink = () => {
     const onCopyButtonClick = useCallback(
         throttle(
             () => {
+                sendCopyLinkDrawer();
                 textToClipboard(referrerLink);
                 createNotification({
                     text: c('Info').t`Referral link copied to your clipboard`,
@@ -39,7 +43,7 @@ const InviteShareLink = () => {
             1500,
             { leading: true, trailing: false }
         ),
-        [referrerLink]
+        [referrerLink, sendCopyLinkDrawer]
     );
 
     if (loadingReferral) {

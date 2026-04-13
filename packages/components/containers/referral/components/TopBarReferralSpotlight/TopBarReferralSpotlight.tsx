@@ -13,6 +13,7 @@ import useConfig from '@proton/components/hooks/useConfig';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
+import { useReferralTelemetry } from '../../hooks/useReferralTelemetry';
 import step1 from './step1.svg';
 import step2 from './step2.svg';
 import step3 from './step3.svg';
@@ -28,8 +29,14 @@ export const TopBarReferralSpotlight = ({ children, show, onClose, onDismiss }: 
     const { APP_NAME: currentApp } = useConfig();
     const [referralInfo] = useReferralInfo();
     const { referrerRewardAmount, maxRewardAmount } = referralInfo.uiData;
+    const { sendTopBarSpotlightCtaClick } = useReferralTelemetry();
 
     const openInCurrentTab = currentApp === APPS.PROTONACCOUNT || currentApp === APPS.PROTONVPN_SETTINGS;
+
+    const handleCtaClick = () => {
+        sendTopBarSpotlightCtaClick();
+        onClose();
+    };
 
     return (
         <Spotlight
@@ -111,7 +118,7 @@ export const TopBarReferralSpotlight = ({ children, show, onClose, onDismiss }: 
                         color="norm"
                         shape="solid"
                         className="mt-2"
-                        onClick={onClose}
+                        onClick={handleCtaClick}
                     >{c('Referral').t`Start earning credits`}</ButtonLike>
 
                     <Button shape="underline" color="norm" className="text-sm" onClick={onDismiss}>

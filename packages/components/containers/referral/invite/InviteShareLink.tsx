@@ -10,18 +10,21 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
+import { useReferralTelemetry } from '../hooks/useReferralTelemetry';
 import ReferralShareLinks from './inviteActions/ReferralShareLinks';
 import ReferralSignatureToggle from './inviteActions/ReferralSignatureToggle';
 
 const InviteShareLink = ({ className }: { className?: string }) => {
     const [userSettings] = useUserSettings();
     const { createNotification } = useNotifications();
+    const { sendCopyLinkPage } = useReferralTelemetry();
 
     const referrerLink = userSettings.Referral?.Link || '';
 
     const onCopyButtonClick = useCallback(
         throttle(
             () => {
+                sendCopyLinkPage();
                 textToClipboard(referrerLink);
                 createNotification({
                     text: c('Info').t`Referral link copied to your clipboard`,
@@ -30,7 +33,7 @@ const InviteShareLink = ({ className }: { className?: string }) => {
             1500,
             { leading: true, trailing: false }
         ),
-        [referrerLink]
+        [referrerLink, sendCopyLinkPage]
     );
 
     return (
