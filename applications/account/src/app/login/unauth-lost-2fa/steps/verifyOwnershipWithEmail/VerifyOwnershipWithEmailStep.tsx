@@ -29,6 +29,7 @@ import {
 import { getEmailVerificationCodeText } from '../../../../content/helper';
 import { useRequestNewVerificationCode } from '../../../../unauthed-forgot-password/hooks/useRequestNewVerificationCode';
 import { useVerifyOwnershipWithEmailActorRef } from '../../UnauthedLost2FAContainer';
+import { useUnauthedLost2FATelemetry } from '../../useUnauthedLost2FATelemetry';
 
 type VerificationResult = Awaited<ReturnType<typeof initiateVerification>>;
 
@@ -138,6 +139,15 @@ export const VerifyOwnershipWithEmailStep = () => {
 
     const validating = useSelector(actorRef, (s) => s.matches('validating'));
     const verifyCodeStep = useSelector(actorRef, (s) => s.matches('verify code'));
+
+    const { sendStepLoad } = useUnauthedLost2FATelemetry();
+    useEffect(() => {
+        if (!verifyCodeStep) {
+            return;
+        }
+
+        sendStepLoad('verify ownership with email');
+    }, [verifyCodeStep]);
 
     const handleError = useErrorHandler();
 

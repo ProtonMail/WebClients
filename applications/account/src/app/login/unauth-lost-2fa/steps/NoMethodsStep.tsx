@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -7,9 +9,16 @@ import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare';
 import { getSupportContactURL } from '@proton/shared/lib/helpers/url';
 
 import { useUnauthLost2FA } from '../UnauthedLost2FAContainer';
+import { useUnauthedLost2FATelemetry } from '../useUnauthedLost2FATelemetry';
 
 export const NoMethodsStep = () => {
     const { useUnauthLost2FAActorRef, useUnauthLost2FASelector } = useUnauthLost2FA();
+
+    const { sendStepLoad } = useUnauthedLost2FATelemetry();
+    useEffect(() => {
+        sendStepLoad('no method to disable 2fa');
+    }, []);
+
     const { send } = useUnauthLost2FAActorRef();
     const username = useUnauthLost2FASelector((snapshot) => snapshot.context.username);
 
