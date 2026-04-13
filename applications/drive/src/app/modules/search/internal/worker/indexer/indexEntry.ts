@@ -1,3 +1,5 @@
+import { splitExtension } from '@proton/shared/lib/helpers/file';
+
 import type { TreeEventScopeId } from '../../shared/types';
 
 // Attribute value variants that the search library WASM understands.
@@ -25,6 +27,9 @@ export interface CoreNodeFields {
     creationTime: Date;
     modificationTime: Date;
     mediaType?: string;
+    sharedBy?: string;
+    isShared?: boolean;
+    isSharedPublicly?: boolean;
 }
 
 /**
@@ -44,6 +49,10 @@ export const CORE_ATTRIBUTE_NAMES = [
     'modificationTime',
     'nodeType',
     'mediaType',
+    'extension',
+    'sharedBy',
+    'isShared',
+    'isSharedPublicly',
 ] as const;
 
 type CoreAttributeName = (typeof CORE_ATTRIBUTE_NAMES)[number];
@@ -63,6 +72,10 @@ export interface CreateIndexEntryParams<N extends string = string> {
     indexPopulatorVersion: number;
     indexPopulatorGeneration: number;
     additionalAttributes?: { name: N extends CoreAttributeName ? never : N; value: AttributeValue }[];
+}
+
+export function extractExtension(filename: string): string {
+    return splitExtension(filename)[1].toLowerCase();
 }
 
 export function createIndexEntry<N extends string>(params: CreateIndexEntryParams<N>): IndexEntry {
@@ -93,6 +106,10 @@ export function createIndexEntry<N extends string>(params: CreateIndexEntryParam
             { name: 'creationTime', value: { kind: 'integer', value: BigInt(node.creationTime.getTime()) } },
             { name: 'modificationTime', value: { kind: 'integer', value: BigInt(node.modificationTime.getTime()) } },
             { name: 'mediaType', value: { kind: 'tag', value: node.mediaType || '' } },
+            { name: 'extension', value: { kind: 'tag', value: extractExtension(node.name) } },
+            { name: 'sharedBy', value: { kind: 'tag', value: node.sharedBy || '' } },
+            { name: 'isShared', value: { kind: 'boolean', value: node.isShared ?? false } },
+            { name: 'isSharedPublicly', value: { kind: 'boolean', value: node.isSharedPublicly ?? false } },
             ...(additionalAttributes ?? []),
         ],
     };
