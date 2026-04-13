@@ -124,7 +124,7 @@ export default function useListNotifications() {
     const createDeletedPublicItemsNotifications = (
         linkInfos: Item[],
         ok: string[],
-        failures: { [linkId: string]: any }
+        errors: { [linkId: string]: any }
     ) => {
         createSuccessMessage(
             linkInfos,
@@ -139,13 +139,13 @@ export default function useListNotifications() {
         );
         createFailureMessage(
             linkInfos,
-            failures,
+            errors,
             (name: string) => c('Notification').t`"${name}" failed to be deleted`,
-            (numberOfItems: number) =>
+            () =>
                 c('Notification').ngettext(
-                    msgid`${numberOfItems} item failed to be deleted`,
-                    `${numberOfItems} items failed to be deleted`,
-                    numberOfItems
+                    msgid`${errors.length} item failed to be deleted`,
+                    `${errors.length} items failed to be deleted`,
+                    errors.length
                 )
         );
     };

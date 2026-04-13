@@ -25,13 +25,12 @@ export const useDeleteNotification = () => {
         showAggregatedErrorNotification(
             Object.values(failureItems).map((failureItem) => failureItem.error),
             (errors) => {
-                const numberOfItems = errors.length;
-                return numberOfItems === 1
+                return errors.length === 1
                     ? errors[0]
                     : c('Notification').ngettext(
-                          msgid`${numberOfItems} item failed to be deleted`,
-                          `${numberOfItems} items failed to be deleted`,
-                          numberOfItems
+                          msgid`${errors.length} item failed to be deleted`,
+                          `${errors.length} items failed to be deleted`,
+                          errors.length
                       );
             }
         );
