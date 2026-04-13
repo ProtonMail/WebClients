@@ -1250,6 +1250,15 @@
       ],
       "Zoom out": [
         "Oddálit"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "Pokračujte na ${ planOrAppName }"
+      ],
+      "Google": [
+        "Google"
+      ],
+      "Reconnect to Gmail": [
+        "Znovu se připojit ke službě Gmail"
       ]
     },
     "Action: Docs": {
@@ -1356,6 +1365,12 @@
       ],
       "Writing assistant seats": [
         "Licence asistenta psaní"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } licence",
+        "${ seats } ${ MEET_APP_NAME } licence",
+        "${ seats } ${ MEET_APP_NAME } licencí",
+        "${ seats } ${ MEET_APP_NAME } licencí"
       ]
     },
     "Alert": {
@@ -3081,6 +3096,12 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Vytvořili jste již 10 aliasů. Získejte neomezený počet aliasů a 500 GB úložného prostoru s ${ BRAND_NAME } Unlimited."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Nyní nemůžeme přistupovat k ${ boldEmails }."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Je nám líto, že odcházíte. Pokud máte chvilku, oceníme, pokud nám sdělíte důvod zrušení. Vaše zpětná vazba pomáhá vylepšovat ${ BRAND_NAME } pro všechny."
       ]
     },
     "description": {
@@ -3985,6 +4006,21 @@
       ],
       "⚠️ Undecryptable name": [
         "⚠️ Nerozšifrovatelný název"
+      ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } položku se nepodařilo přesunout",
+        "${ failureItems.length } položky se nepodařilo přesunout",
+        "${ failureItems.length } položek se nepodařilo přesunout",
+        "${ failureItems.length } položek se nepodařilo přesunout"
+      ],
+      "Invalid coupon": [
+        "Neplatný kupón"
+      ],
+      "Please complete the billing details": [
+        "Prosím, doplňte fakturační údaje"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Minimální výše daru je ${ price }"
       ]
     },
     "error": {
@@ -7073,6 +7109,36 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "Stále budete moci prohlížet data vlastního účtu, ale všechny uživatelské účty budou z vaší organizace odebrány."
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } licencí"
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Přidat ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
+      "Can view only": [
+        "Může pouze zobrazovat"
+      ],
+      "Move ${ dragCount } item": [
+        "Přesunout ${ dragCount } položku",
+        "Přesunout ${ dragCount } položky",
+        "Přesunout ${ dragCount } položek",
+        "Přesunout ${ dragCount } položek"
+      ],
+      "Move ${ fileCount } file": [
+        "Přesunout ${ fileCount } soubor",
+        "Přesunout ${ fileCount } soubory",
+        "Přesunout ${ fileCount } souborů",
+        "Přesunout ${ fileCount } souborů"
+      ],
+      "Move ${ folderCount } folder": [
+        "Přesunout ${ folderCount } složku",
+        "Přesunout ${ folderCount } složky",
+        "Přesunout ${ folderCount } složek",
+        "Přesunout ${ folderCount } složek"
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Kreditovou odměnu obdržíte 1 měsíc poté, co si váš přítel předplatí roční plán, a 2 měsíce poté, co si předplatí měsíční plán."
       ]
     },
     "info": {
@@ -7833,6 +7899,15 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Continue cancelling": [
+        "Pokračovat ve zrušení"
+      ],
+      "Last 6 months only": [
+        "Pouze posledních 6 měsíců"
+      ],
+      "User opted in": [
+        "Uživatel souhlasil"
       ]
     },
     "Label for contact group color": {
@@ -8165,6 +8240,12 @@
         "Až ${ n } účastníci",
         "Až ${ n } účastníků",
         "Až ${ n } účastníků"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videokonference, ${ n } účastník",
+        "Videokonference, ${ n } účastníci",
+        "Videokonference, ${ n } účastníků",
+        "Videokonference, ${ n } účastníků"
       ]
     },
     "Message": {
@@ -8944,6 +9025,24 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Prohledáváme dark web a kontrolujeme, zda nedošlo k úniku vašich adres nebo aliasů ${ BRAND_NAME }, pokud něco najdeme, okamžitě vás upozorníme."
+      ],
+      "Appointment scheduling": [
+        "Plánování schůzek"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Plánování schůzek pomocí ${ n } rezervační stránky",
+        "Plánování schůzek pomocí ${ n } rezervačních stránek",
+        "Plánování schůzek pomocí ${ n } rezervačních stránek",
+        "Plánování schůzek pomocí ${ n } rezervačních stránek"
+      ],
+      "Data retention policies": [
+        "Zásady uchovávání dat"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Soukromý chat s AI (${ LUMO_APP_NAME })"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN s blokováním reklam a ochranou proti malware"
       ]
     },
     "new_plans: feature highlight": {
@@ -10694,6 +10793,15 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Anything you'd like us to know": [
+        "Cokoliv, co bychom měli vědět"
+      ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
+      "Enter a name": [
+        "Zadejte název"
       ]
     },
     "Placeholder for contact group name": {
@@ -13466,6 +13574,18 @@
       ],
       "Actions": [
         "Akce"
+      ],
+      "Choose a provider": [
+        "Vybrat poskytovatele"
+      ],
+      "Custom": [
+        "Vlastní"
+      ],
+      "Disconnected from Gmail": [
+        "Odpojeno od služby Gmail"
+      ],
+      "Reverse charge not supported": [
+        "Funkce přenesení daňové povinnosti není podporována"
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13803,6 +13923,30 @@
       ],
       "Your trial will end on ${ textDate }. You won’t be charged if you cancel before ${ textDate }. ${ action }": [
         "Vaše zkušební verze skončí ${ textDate }. Pokud ji zrušíte před ${ textDate }, nebudou vám účtovány žádné poplatky. ${ action }"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } licencí"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME } licence",
+        "${ seats } ${ MEET_APP_NAME } licence",
+        "${ seats } ${ MEET_APP_NAME } licencí",
+        "${ seats } ${ MEET_APP_NAME } licencí"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "včetně ${ seats } licence",
+        "včetně ${ seats } licencí",
+        "včetně ${ seats } licencí",
+        "včetně ${ seats } licencí"
+      ]
+    },
+    "Provider option": {
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }

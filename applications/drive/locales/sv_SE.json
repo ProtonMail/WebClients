@@ -3967,6 +3967,10 @@
       ],
       "Address could not be added.": [
         "Adress kunde inte läggas till."
+      ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } objekt misslyckades att flyttas",
+        "${ failureItems.length } objekt misslyckades att flyttas"
       ]
     },
     "error": {
@@ -6979,6 +6983,9 @@
       "Move ${ folderCount } folder": [
         "Flytta ${ folderCount } mapp",
         "Flytta ${ folderCount } mappar"
+      ],
+      "Invitation confirmed": [
+        "Inbjudan bekräftad"
       ]
     },
     "info": {

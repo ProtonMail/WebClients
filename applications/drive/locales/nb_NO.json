@@ -1253,6 +1253,9 @@
       ],
       "Refetch index": [
         "Hent indeks på nytt"
+      ],
+      "Reconnect to Gmail": [
+        "Koble til Gmail på nytt"
       ]
     },
     "Action: Docs": {
@@ -3061,6 +3064,18 @@
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Vi beklager at du forlater oss. Hvis du har et øyeblikk, setter vi stor pris på å høre hvorfor du ønsker å avbryte abonnementet. Tilbakemeldingen din hjelper oss med å gjøre ${ BRAND_NAME } bedre for alle."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Dette kan skje hvis tillatelser ble fjernet eller passordet ditt ble endret."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "For å fortsette å motta og sende Gmail-meldinger i ${ BRAND_NAME }, må du koble til kontoen din på nytt."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "For å fortsette å motta og sende Gmail-meldinger i ${ BRAND_NAME }, må du koble til kontoene dine på nytt."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Vi får ikke lenger tilgang til ${ boldEmails }."
       ]
     },
     "description": {
@@ -3982,6 +3997,16 @@
       ],
       "Something went wrong with search: Not enough storage space.": [
         "Noe gikk galt med søket: Ikke nok lagringsplass."
+      ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } element kunne ikke flyttes",
+        "${ failureItems.length } elementer kunne ikke flyttes"
+      ],
+      "Address could not be added.": [
+        "Adressen kunne ikke legges til."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Noe gikk galt under henting av tilgjengelige domener"
       ]
     },
     "error": {
@@ -7016,6 +7041,21 @@
       ],
       "Unsupported file type for Photos": [
         "Filtypen støttes ikke for bilder"
+      ],
+      "Invitation confirmed": [
+        "Invitasjon bekreftet"
+      ],
+      "Move ${ dragCount } item": [
+        "Flytt ${ dragCount } element",
+        "Flytt ${ dragCount } elementer"
+      ],
+      "Move ${ fileCount } file": [
+        "Flytt ${ fileCount } fil",
+        "Flytt ${ fileCount } filer"
+      ],
+      "Move ${ folderCount } folder": [
+        "Flytt ${ folderCount } mappe",
+        "Flytt ${ folderCount } mapper"
       ]
     },
     "info": {
@@ -8925,6 +8965,13 @@
       ],
       "VPN with ad-blocker and malware protection": [
         "VPN med annonseblokkering og skadevarebeskyttelse"
+      ],
+      "Appointment scheduling": [
+        "Avtaleplanlegging"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Avtaleplanlegging med ${ n } bestillingsside",
+        "Avtaleplanlegging med ${ n } bestillingssider"
       ]
     },
     "new_plans: feature highlight": {
@@ -9684,6 +9731,9 @@
       ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }}\" delt"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Din ${ BRAND_NAME }-adresse er klar til bruk"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13315,6 +13365,9 @@
       ],
       "Search": [
         "Søk"
+      ],
+      "Disconnected from Gmail": [
+        "Frakoblet fra Gmail"
       ]
     },
     "Today icon tooltip in mini calendar": {
