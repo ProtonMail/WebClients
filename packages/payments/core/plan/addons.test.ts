@@ -45,7 +45,7 @@ describe('getSupportedAddons', () => {
             expect(result).toEqual(expected);
         });
 
-        it('should return correct addons for PLANS.MAIL_BUSINESS', () => {
+        it('should return correct addons for PLANS.VPN_PASS_BUNDLE', () => {
             const planIDs: PlanIDs = { [PLANS.VPN_PASS_BUNDLE]: 1 };
             const result = getSupportedAddons(planIDs);
             const expected: SupportedAddons = {
