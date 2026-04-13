@@ -61,6 +61,8 @@ export const LeaveMeetingPopup = () => {
             case isLocalParticipantHost && !hasAnotherAdmin:
             case isLocalParticipantAdmin && !hasAnotherAdmin && !hostIsPresent:
                 return dispatch(togglePopupState(PopUpControls.LeaveMeeting));
+            // Screen share warning is handled within the dropdown for hosts/admins,
+            // so this case only applies to regular participants who are screen sharing.
             case isLocalScreenShare:
                 return dispatch(togglePopupState(PopUpControls.ScreenShareLeaveWarning));
             default:
@@ -78,8 +80,12 @@ export const LeaveMeetingPopup = () => {
     };
 
     const handleEndMeetingConfirm = async (controls: PopUpControls) => {
-        await withLoadingEndMeeting(handleEndMeeting);
-        dispatch(setPopupStateValue({ popup: controls, value: false }));
+        try {
+            await withLoadingEndMeeting(handleEndMeeting);
+        } finally {
+            dispatch(setPopupStateValue({ popup: controls, value: false }));
+            setEndingMeeting(false);
+        }
     };
 
     return (
@@ -170,6 +176,7 @@ export const LeaveMeetingPopup = () => {
                         dispatch(setPopupStateValue({ popup: PopUpControls.LeaveMeetingParticipant, value: false }))
                     }
                     onConfirm={() => handleConfirm(PopUpControls.LeaveMeetingParticipant)}
+                    isHostOrAdmin={isLocalParticipantHost || isLocalParticipantAdmin}
                 />
             )}
             {popupState[PopUpControls.EndMeeting] && (

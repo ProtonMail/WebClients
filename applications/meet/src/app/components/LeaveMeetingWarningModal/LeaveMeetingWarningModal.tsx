@@ -7,9 +7,13 @@ import { ConfirmationModal } from '../ConfirmationModal/ConfirmationModal';
 interface LeaveMeetingWarningModalProps {
     onClose: () => void;
     onConfirm: () => void;
+    isHostOrAdmin: boolean;
 }
 
-export const LeaveMeetingWarningModal = ({ onClose, onConfirm }: LeaveMeetingWarningModalProps) => {
+export const LeaveMeetingWarningModal = ({ onClose, onConfirm, isHostOrAdmin }: LeaveMeetingWarningModalProps) => {
+    // We only show a subtitle message if the local participant is host or admin
+    const message = isHostOrAdmin ? c('Info').t`You will leave the meeting. Others will continue.` : null;
+
     return (
         <ConfirmationModal
             icon={
@@ -21,6 +25,7 @@ export const LeaveMeetingWarningModal = ({ onClose, onConfirm }: LeaveMeetingWar
                 />
             }
             title={c('Info').t`Are you sure you want to leave?`}
+            message={message}
             primaryText={c('Action').t`Leave meeting`}
             primaryButtonClass="danger"
             onPrimaryAction={onConfirm}
