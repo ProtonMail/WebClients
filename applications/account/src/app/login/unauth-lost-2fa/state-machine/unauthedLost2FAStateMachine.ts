@@ -54,7 +54,6 @@ export const unauthedLost2FAStateMachine = setup({
         verifyOwnershipWithEmailMachine,
         verifyOwnershipWithPhoneMachine,
     },
-    actions: {},
 }).createMachine({
     /** @xstate-layout N4IgpgJg5mDOIC5QFcB2BDZAXAFpAYgPYBOUhWATPgIIB0xYAjsnFgARbkAObARugGMA1sh4DCEOAGIIhVGFoBLVADdCQhZyxcAQoJFcAwhLgBtAAwBdRKC6FYirIrk2QAD0QAWAMwAOWuaB5t7mAKwAjADsoZG+4QA0IACeiACc-ua+3tk5udkAvvmJaJi4BCRklDT0TCyw7Fo8-MKibOKSsDJyCspqGrSNei1GJrCm4dZIIHYOTi5THgg+GUEhEdGxCcmI4TG0WXmH4YVFIKijriXYeBBEpORU1K4zjs6orosAtABsiSkIP0KxQw13K9yqdAYzFYHG4fH0rXacGe9le81Ai08FD+iDitFCQJAVzKtwqD2qKjAxEUADMkmxCAB3eTEWA4RQ8RmOHBsMAAW3QigANijZm8PohIpFwrRIt9QvLQusYnEcQhdt99ocjoTiTc7pVHgM4c0DG0TGwuMRCCpFJIIKK0e8FpLpbL5YrlZs1alQlrtXkTvkgA */
     id: 'unauthedLost2FA',

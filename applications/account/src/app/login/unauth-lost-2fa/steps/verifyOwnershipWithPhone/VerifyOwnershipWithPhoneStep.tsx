@@ -29,6 +29,7 @@ import {
 import { getSMSVerificationCodeText } from '../../../../content/helper';
 import { useRequestNewVerificationCode } from '../../../../unauthed-forgot-password/hooks/useRequestNewVerificationCode';
 import { useVerifyOwnershipWithPhoneActorRef } from '../../UnauthedLost2FAContainer';
+import { useUnauthedLost2FATelemetry } from '../../useUnauthedLost2FATelemetry';
 
 type VerificationResult = Awaited<ReturnType<typeof initiateVerification>>;
 
@@ -139,6 +140,15 @@ export const VerifyOwnershipWithPhoneStep = () => {
 
     const validating = useSelector(actorRef, (s) => s.matches('validating'));
     const verifyCodeStep = useSelector(actorRef, (s) => s.matches('verify code'));
+
+    const { sendStepLoad } = useUnauthedLost2FATelemetry();
+    useEffect(() => {
+        if (!verifyCodeStep) {
+            return;
+        }
+
+        sendStepLoad('verify ownership with phone');
+    }, [verifyCodeStep]);
 
     const handleError = useErrorHandler();
 
