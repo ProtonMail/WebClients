@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
@@ -8,8 +9,10 @@ import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { InputFieldTwo } from '@proton/components/index';
 import useLoading from '@proton/hooks/useLoading';
+import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { ValidateResetTokenResponse } from '@proton/shared/lib/api/reset';
 import { validateResetToken } from '@proton/shared/lib/api/reset';
+import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import noop from '@proton/utils/noop';
 
@@ -19,6 +22,7 @@ import Content from '../../../public/Content';
 import Header from '../../../public/Header';
 import { getDeviceRecoveryLevel } from '../../actions';
 import { useRequestCode } from '../../hooks/useRequestCode';
+import { useRequestNewVerificationCode } from '../../hooks/useRequestNewVerificationCode';
 import type { UnauthedForgotPasswordStateMachine } from '../../state-machine/UnauthedForgotPasswordStateMachine';
 import { useMachineWizard } from '../../wizard/MachineWizardProvider';
 
@@ -30,6 +34,7 @@ export const VerifyEmailRecoveryCode = () => {
     const [loading, withLoading] = useLoading();
     const { validator, onFormSubmit } = useFormErrors();
     const errorHandler = useErrorHandler();
+    const [hasInvalidCodeError, setHasInvalidCodeError] = useState<ReactNode | null>(null);
     const [code, setCode] = useState('');
 
     const RedactedEmail = <strong key="redacted-recovery-email">{redactedRecoveryEmail}</strong>;
@@ -45,6 +50,18 @@ export const VerifyEmailRecoveryCode = () => {
         void withLoading(requestCode());
     }, []);
 
+    const handleResend = () => {
+        setCode('');
+        setHasInvalidCodeError(null);
+        return withLoading(requestCode());
+    };
+
+    const { RequestNewCodeModal, InvalidCodeErrorMessage, AssistiveText } = useRequestNewVerificationCode({
+        recoveryMethod: 'email',
+        value: redactedRecoveryEmail ?? '',
+        onResend: handleResend,
+    });
+
     const handleSubmit = async () => {
         try {
             const resetResponse = await silentApi<ValidateResetTokenResponse>(validateResetToken(username, code));
@@ -59,9 +76,15 @@ export const VerifyEmailRecoveryCode = () => {
                 },
             });
         } catch (error) {
-            errorHandler(error);
+            const apiError = getApiError(error);
+            if (apiError.code === API_CUSTOM_ERROR_CODES.INVALID_VALUE) {
+                setHasInvalidCodeError(InvalidCodeErrorMessage);
+            } else {
+                errorHandler(error);
+            }
         }
     };
+
     return (
         <>
             <Header
@@ -90,11 +113,15 @@ export const VerifyEmailRecoveryCode = () => {
                         id="reset-token"
                         bigger
                         label={c('Label').t`Enter code`}
-                        error={validator([requiredValidator(code)])}
+                        error={validator([requiredValidator(code)]) || hasInvalidCodeError}
                         disableChange={loading}
                         value={code}
-                        onValue={setCode}
+                        onValue={(value: string) => {
+                            setCode(value);
+                            setHasInvalidCodeError(null);
+                        }}
                         autoFocus
+                        assistiveText={AssistiveText}
                     />
                     <Button size="large" color="norm" type="submit" fullWidth loading={loading} className="mt-6">
                         {c('Action').t`Verify`}
@@ -105,6 +132,7 @@ export const VerifyEmailRecoveryCode = () => {
                     </Button>
                 </form>
             </Content>
+            {RequestNewCodeModal}
         </>
     );
 };

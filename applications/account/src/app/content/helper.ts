@@ -15,7 +15,7 @@ import {
     getIsWalletApp,
 } from '@proton/shared/lib/authentication/apps';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { SSO_PATHS } from '@proton/shared/lib/constants';
+import { BRAND_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
 import { getTermsURL, stringifySearchParams } from '@proton/shared/lib/helpers/url';
 import { localeCode } from '@proton/shared/lib/i18n';
 
@@ -205,4 +205,9 @@ export const getEmailVerificationCodeText = (emailAddress: ReactNode) => {
 
 export const getSMSVerificationCodeText = (phoneNumber: ReactNode) => {
     return c('Info').jt`An SMS with a verification code was just sent to ${phoneNumber}.`;
+};
+
+export const getResendSMSVerificationCodeText = (phoneNumber: ReactNode) => {
+    return c('Info')
+        .jt`${BRAND_NAME} will send a verification code to ${phoneNumber}. Standard message rates may apply.`;
 };
