@@ -8,10 +8,19 @@ import { EnrichedError } from '../../../utils/errorHandling/EnrichedError';
 import { handleSdkError } from '../../../utils/errorHandling/handleSdkError';
 import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
 import { getSignatureIssues } from '../../../utils/sdk/getSignatureIssues';
+import { defaultSharedOnCellConfig } from '../driveExplorerCells/SharedOnCell';
 import { ItemType, useSharedWithMeStore } from '../useSharedWithMe.store';
 
 export const loadSharedWithMeNodes = async (abortSignal: AbortSignal) => {
-    const { isLoadingNodes, setLoadingNodes, setSharedWithMeItem, cleanupStaleItems } = useSharedWithMeStore.getState();
+    const {
+        isLoadingNodes,
+        setLoadingNodes,
+        setSharedWithMeItem,
+        cleanupStaleItems,
+        setSorting,
+        sortField,
+        direction,
+    } = useSharedWithMeStore.getState();
     if (isLoadingNodes) {
         return;
     }
@@ -154,6 +163,14 @@ export const loadSharedWithMeNodes = async (abortSignal: AbortSignal) => {
             getNotificationsManager().createNotification({
                 type: 'error',
                 text: c('Error').t`We were not able to load some items shared with you`,
+            });
+        }
+
+        if (defaultSharedOnCellConfig.sortConfig) {
+            setSorting({
+                sortField,
+                direction,
+                sortConfig: defaultSharedOnCellConfig.sortConfig,
             });
         }
 
