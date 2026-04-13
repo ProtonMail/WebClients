@@ -1,20 +1,12 @@
-import { useEffect, useRef } from 'react';
-
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import clsx from '@proton/utils/clsx';
 
-import { useMailGlobalModals } from 'proton-mail/containers/globalModals/GlobalModalProvider';
-import { ModalType } from 'proton-mail/containers/globalModals/inteface';
 import { useMailboxCounter } from 'proton-mail/hooks/useMailboxCounter';
 import { getLocationCount } from 'proton-mail/hooks/useMailboxCounter.helpers';
 import { useMailboxLayoutProvider } from 'proton-mail/router/components/MailboxLayoutContext';
 import { selectCategoryIDs } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
-import { CategoriesOnboarding } from '../categoriesOnboarding/CategoriesOnboarding';
-import { hasSeeFullDisplay } from '../categoriesOnboarding/categoriesOnboarding.helpers';
-import { AudienceType } from '../categoriesOnboarding/onboardingInterface';
-import { useCategoriesOnboarding } from '../categoriesOnboarding/useCategoriesOnboarding';
 import { useCategoriesView } from '../useCategoriesView';
 import { useRecategorizeElement } from '../useRecategorizeElement';
 import { CategoriesTabsError, CategoryTabError } from './CategoryTabsErrors';
@@ -33,32 +25,6 @@ export const CategoriesTabsList = () => {
     const { isColumnModeActive } = useMailboxLayoutProvider();
 
     const [counterMap] = useMailboxCounter();
-    const onboarding = useCategoriesOnboarding();
-
-    const { notify } = useMailGlobalModals();
-    const hasTriggeredModalRef = useRef(false);
-
-    useEffect(() => {
-        // Only trigger modal once per session
-        if (hasTriggeredModalRef.current) {
-            return;
-        }
-
-        if (!onboarding.isUserEligible || onboarding.audienceType === AudienceType.B2C) {
-            return;
-        }
-
-        const hasSeenModal = hasSeeFullDisplay(onboarding.flagValue);
-        if (!hasSeenModal) {
-            hasTriggeredModalRef.current = true;
-            notify({
-                type: ModalType.CategoriesViewB2BOnboarding,
-                value: {
-                    flagValue: onboarding.flagValue,
-                },
-            });
-        }
-    }, [onboarding, notify]);
 
     const handleCategoryDrop = (categoryId: string, itemIds: string[]) => {
         void recategorizeElement(categoryId, itemIds);
@@ -111,10 +77,6 @@ export const CategoriesTabsList = () => {
                     );
                 })}
             </div>
-
-            {onboarding.isUserEligible && (
-                <CategoriesOnboarding audience={onboarding.audienceType} flagValue={onboarding.flagValue} />
-            )}
         </>
     );
 };
