@@ -4999,6 +4999,9 @@
       ],
       "We can't access ${ boldEmails } anymore.": [
         "Não podemos mais acessar o ${ boldEmails }."
+      ],
+      "Bring over email, calendar events, and contacts from another provider.": [
+        "Traga e-mails, eventos do calendário e contatos de outro provedor."
       ]
     },
     "description": {
@@ -16327,6 +16330,10 @@
       ],
       "Appointment scheduling": [
         "Agendamento de compromissos"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Agendamento de compromissos com ${ n } página de agendamento",
+        "Agendamento de compromissos com ${ n } página de agendamentos"
       ]
     },
     "new_plans: feature highlight": {
@@ -24470,6 +24477,9 @@
       ],
       "Recover account": [
         "Recuperar conta"
+      ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Enviar e receber e-mails do Gmail usando o ${ MAIL_APP_NAME }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

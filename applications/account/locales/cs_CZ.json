@@ -1688,6 +1688,18 @@
       ],
       "Zoom out": [
         "Oddálit"
+      ],
+      "Connect to Gmail": [
+        "Připojit k Gmailu"
+      ],
+      "Continue to ${ planOrAppName }": [
+        "Pokračujte na ${ planOrAppName }"
+      ],
+      "Google": [
+        "Google"
+      ],
+      "Reconnect to Gmail": [
+        "Znovu se připojit ke službě Gmail"
       ]
     },
     "action": {
@@ -1826,6 +1838,12 @@
       ],
       "Writing assistant seats": [
         "Licence asistenta psaní"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } licence",
+        "${ seats } ${ MEET_APP_NAME } licence",
+        "${ seats } ${ MEET_APP_NAME } licencí",
+        "${ seats } ${ MEET_APP_NAME } licencí"
       ]
     },
     "Address action": {
@@ -4903,6 +4921,66 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Můžete importovat události ve formátu iCal (ICS soubor). Tento soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a maximálně ${ MAX_IMPORT_EVENTS_STRING } událostí. Pokud je váš soubor větší, prosím rozdělte ho na menší soubory."
+      ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Blokujte možnosti Googlu sledovat vaše aktivity. Gmail nemůže vidět, do děláte v ${ MAIL_APP_NAME }"
+      ],
+      "No ads. No trackers.": [
+        "Žádné reklamy. Žádné sledovací prvky."
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "Pro připojení jiné adresy Gmail odeberte další adresy Gmail přeposílané na ${ BRAND_NAME }."
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "Chcete-li připojit až ${ MAX_SYNC_PAID_USER } adresu Gmail, upgradujte na ${ planName }.",
+        "Chcete-li připojit až ${ MAX_SYNC_PAID_USER } adresy Gmail, upgradujte na ${ planName }.",
+        "Chcete-li připojit až ${ MAX_SYNC_PAID_USER } adres Gmail, upgradujte na ${ planName }.",
+        "Chcete-li připojit až ${ MAX_SYNC_PAID_USER } adres Gmail, upgradujte na ${ planName }."
+      ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "Upgradujte na ${ planName } pro připojení až ${ MAX_SYNC_PAID_USER } účtů"
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Nyní nemůžeme přistupovat k ${ boldEmails }."
+      ],
+      "We've started importing your email from Gmail. We'll let you know when it's done.": [
+        "Zahájili jsme import vašeho e-mailu z Gmailu. Dáme vám vědět, až to bude hotové."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Je nám líto, že odcházíte. Pokud máte chvilku, oceníme, pokud nám sdělíte důvod zrušení. Vaše zpětná vazba pomáhá vylepšovat ${ BRAND_NAME } pro všechny."
+      ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Již máte adresu Gmailu přeposílanou na ${ MAIL_APP_NAME }. Připojte ji níže a posílejte a přijímejte e-maily přímo z ${ MAIL_APP_NAME }."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Nyní můžete odesílat e-maily z ${ BRAND_NAME } pomocí této adresy."
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "Přeposíláte ${ numAddressesOrSync } adresu Gmail na ${ MAIL_APP_NAME }.",
+        "Přeposíláte ${ numAddressesOrSync } adresy Gmail na ${ MAIL_APP_NAME }.",
+        "Přeposíláte ${ numAddressesOrSync } adres Gmail na ${ MAIL_APP_NAME }.",
+        "Přeposíláte ${ numAddressesOrSync } adres Gmail na ${ MAIL_APP_NAME }."
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "Připojili jste ${ MAX_SYNC_PAID_USER } adresu Gmail. Chcete-li přidat další, nejprve odpojte jeden ze svých připojených účtů.",
+        "Připojili jste ${ MAX_SYNC_PAID_USER } adresy Gmail. Chcete-li přidat další, nejprve odpojte jeden ze svých připojených účtů.",
+        "Připojili jste ${ MAX_SYNC_PAID_USER } adres Gmail. Chcete-li přidat další, nejprve odpojte jeden ze svých připojených účtů.",
+        "Připojili jste ${ MAX_SYNC_PAID_USER } adres Gmail. Chcete-li přidat další, nejprve odpojte jeden ze svých připojených účtů."
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "Připojili jste jednu adresu externího účtu k ${ MAIL_APP_NAME }."
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "Váš tarif podporuje ${ MAX_SYNC_FREE_USER } adresu Gmail.",
+        "Váš tarif podporuje ${ MAX_SYNC_FREE_USER } adresy Gmail.",
+        "Váš tarif podporuje ${ MAX_SYNC_FREE_USER } adres Gmail.",
+        "Váš tarif podporuje ${ MAX_SYNC_FREE_USER } adres Gmail."
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "Váš tarif podporuje celkem ${ MAX_SYNC_PAID_USER } adresu Gmail",
+        "Váš tarif podporuje celkem ${ MAX_SYNC_PAID_USER } adresy Gmail",
+        "Váš tarif podporuje celkem ${ MAX_SYNC_PAID_USER } adres Gmail",
+        "Váš tarif podporuje celkem ${ MAX_SYNC_PAID_USER } adres Gmail"
       ]
     },
     "description": {
@@ -7041,6 +7119,18 @@
       ],
       "Zero keys reactivated": [
         "Žádné klíče nebyly znovu aktivovány"
+      ],
+      "Address is already added to your account": [
+        "Adresa je již přidána k vašemu účtu"
+      ],
+      "Invalid coupon": [
+        "Neplatný kupón"
+      ],
+      "Please complete the billing details": [
+        "Prosím, doplňte fakturační údaje"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Minimální výše daru je ${ price }"
       ]
     },
     "error": {
@@ -12345,6 +12435,15 @@
       ],
       "Zoom meeting": [
         "schůzku na Zoomu"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } licencí"
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Přidat ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Kreditovou odměnu obdržíte 1 měsíc poté, co si váš přítel předplatí roční plán, a 2 měsíce poté, co si předplatí měsíční plán."
       ]
     },
     "info": {
@@ -14353,6 +14452,15 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Continue cancelling": [
+        "Pokračovat ve zrušení"
+      ],
+      "Last 6 months only": [
+        "Pouze posledních 6 měsíců"
+      ],
+      "Select which Gmail address to connect": [
+        "Vyberte, kterou adresu Gmail chcete připojit"
       ]
     },
     "label": {
@@ -15103,6 +15211,12 @@
         "Až ${ n } účastníci",
         "Až ${ n } účastníků",
         "Až ${ n } účastníků"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videokonference, ${ n } účastník",
+        "Videokonference, ${ n } účastníci",
+        "Videokonference, ${ n } účastníků",
+        "Videokonference, ${ n } účastníků"
       ]
     },
     "meet_2025: Info": {
@@ -15138,6 +15252,12 @@
       ],
       "Strict no-logs policy": [
         "Přísné zásady neukládání logů"
+      ],
+      "${ seats } seat included": [
+        "včetně ${ seats } licence",
+        "včetně ${ seats } licencí",
+        "včetně ${ seats } licencí",
+        "včetně ${ seats } licencí"
       ]
     },
     "meet_signup_2025: title": {
@@ -16122,6 +16242,24 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Prohledáváme dark web a kontrolujeme, zda nedošlo k úniku vašich adres nebo aliasů ${ BRAND_NAME }, pokud něco najdeme, okamžitě vás upozorníme."
+      ],
+      "Appointment scheduling": [
+        "Plánování schůzek"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Plánování schůzek pomocí ${ n } rezervační stránky",
+        "Plánování schůzek pomocí ${ n } rezervačních stránek",
+        "Plánování schůzek pomocí ${ n } rezervačních stránek",
+        "Plánování schůzek pomocí ${ n } rezervačních stránek"
+      ],
+      "Data retention policies": [
+        "Zásady uchovávání dat"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Soukromý chat s AI (${ LUMO_APP_NAME })"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN s blokováním reklam a ochranou proti malware"
       ]
     },
     "new_plans: feature highlight": {
@@ -18555,6 +18693,15 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Anything you'd like us to know": [
+        "Cokoliv, co bychom měli vědět"
+      ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
+      "Enter a name": [
+        "Zadejte název"
       ]
     },
     "placeholder": {
@@ -24303,6 +24450,21 @@
       ],
       "Your subscriptions": [
         "Vaše předplatné"
+      ],
+      "Choose a provider": [
+        "Vybrat poskytovatele"
+      ],
+      "Custom": [
+        "Vlastní"
+      ],
+      "Disconnected from Gmail": [
+        "Odpojeno od služby Gmail"
+      ],
+      "Reverse charge not supported": [
+        "Funkce přenesení daňové povinnosti není podporována"
+      ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Odesílejte a přijímejte Gmail pomocí ${ MAIL_APP_NAME }"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -25819,6 +25981,27 @@
       ],
       "Yearly, ${ untilString }": [
         "Ročně, ${ untilString }"
+      ]
+    },
+    "Easy switch": {
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "Přeposíláte e-maily z jednoho externího účtu do ${ MAIL_APP_NAME }."
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } licencí"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME } licence",
+        "${ seats } ${ MEET_APP_NAME } licence",
+        "${ seats } ${ MEET_APP_NAME } licencí",
+        "${ seats } ${ MEET_APP_NAME } licencí"
+      ]
+    },
+    "Provider option": {
+      "Yahoo": [
+        "Yahoo"
       ]
     }
   }

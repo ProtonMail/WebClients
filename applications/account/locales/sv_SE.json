@@ -12536,6 +12536,15 @@
       ],
       "Your old password": [
         "Ditt gamla lösenord"
+      ],
+      "Due to end-to-end encryption, you can reset your password, but ${ DataLockedText } until you use a ${ DataRecoveryOptionsLink }:": [
+        "På grund av end-to-end-kryptering kan du återställa ditt lösenord, men ${ DataLockedText } tills du använder en ${ DataRecoveryOptionsLink }:"
+      ],
+      "From there, they can request emergency access to your account by clicking **Request access.**": [
+        "Därifrån kan de begära nödåtkomst till ditt konto genom att klicka på **Begär åtkomst.**"
+      ],
+      "If you have emergency contacts, get in touch with them, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed.**": [
+        "Om du har nödkontakter, kontakta dem för att se om de kan hjälpa. Efter att ha begärt nödåtkomst till ditt konto kommer de att kunna ändra ditt lösenord åt dig **efter att väntetiden för åtkomst har passerat.**"
       ]
     },
     "info": {
@@ -20836,6 +20845,9 @@
       ],
       "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
         "VPN med servrar i ${ vpnServersCountData.free.countries } länder"
+      ],
+      "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
+        "Ditt konto inkluderar åtkomst till gratis funktioner i ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } och ${ LUMO_SHORT_APP_NAME }."
       ]
     },
     "Signup label": {
@@ -24428,6 +24440,9 @@
       ],
       "Verify it’s you": [
         "Verifiera att det är du"
+      ],
+      "Ask your emergency contacts for help": [
+        "Be dina nödkontakter om hjälp"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

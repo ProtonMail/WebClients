@@ -1766,6 +1766,15 @@
       ],
       "Verify another way": [
         "Bekræft på en anden måde"
+      ],
+      "I don’t have my phone": [
+        "Jeg har ikke min telefon"
+      ],
+      "Return to sign-in": [
+        "Tilbage til login"
+      ],
+      "Try another way": [
+        "Prøv en anden måde"
       ]
     },
     "action": {
@@ -12660,6 +12669,75 @@
       ],
       "You will regain complete or partial access to your encrypted data.": [
         "Du vil få fuld eller delvis adgang til dine krypterede data igen."
+      ],
+      "${ BRAND_NAME } will send a verification code to ${ RedactedPhoneNumber }. Standard message rates may apply.": [
+        "${ BRAND_NAME } sender en bekræftelseskode til ${ RedactedPhoneNumber }. Standard SMS-takster gælder."
+      ],
+      "${ DataLockedText }, but recoverable with your ${ RecoveryContactsLink }:": [
+        "${ DataLockedText }, men kan gendannes med dine ${ RecoveryContactsLink }:"
+      ],
+      "An email with a verification code was just sent to ${ emailAddress }. If you can’t find the message in your inbox, please check your spam folder.": [
+        "En e-mail med en bekræftelseskode blev netop sendt til ${ emailAddress }. Hvis du ikke kan finde beskeden i din indbakke skal du tjekke din spam-mappe."
+      ],
+      "An SMS with a verification code was just sent to ${ phoneNumber }.": [
+        "En SMS med en bekræftelseskode blev netop sendt til ${ phoneNumber }."
+      ],
+      "Can you access your active session?": [
+        "Kan du tilgå din aktive session?"
+      ],
+      "Can you access your active web session in another browser?": [
+        "Kan du tilgå din aktive web-session i en anden browser?"
+      ],
+      "Can you reach out to your contact?": [
+        "Kan du kontakte dine nødkontakt?"
+      ],
+      "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
+        "Afhængigt af dine indstillinger, kan du få adgang med det samme eller efter en bestemt **venteperiode.**"
+      ],
+      "Due to end-to-end encryption, you can reset your password, but ${ DataLockedText } until you use a ${ DataRecoveryOptionsLink }:": [
+        "På grund af end-to-end-kryptering kan du nulstille din adgangskode, men ${ DataLockedText } indtil du bruger en ${ DataRecoveryOptionsLink }:"
+      ],
+      "Get in touch with your emergency contacts, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed**.": [
+        "Kontakt dine nødkontakter for at se om de kan hjælpe. Efter at de har anmodet om nødadgang til din konto vil de kunne ændre din adgangskode for dig **efter at ventetiden på nødadgang er gået**."
+      ],
+      "How your emergency contact can change your password for you:": [
+        "Sådan kan din nødkontakt ændre din adgangskode for dig:"
+      ],
+      "If possible, when signing in, use a device or a browser where you’ve signed in before.": [
+        "Hvis det er muligt, så brug en enhed eller browser hvor du har tidligere har været logget ind, når du logger ind."
+      ],
+      "If you have emergency contacts, get in touch with them, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed.**": [
+        "Hvis du har nødkontakter kan du kontakte dem for at se om de kan hjælpe. Efter at de har anmodet om nødadgang til din konto, vil de kunne ændre din adgangskode for dig **efter at ventiden på nødadgang er gået.**"
+      ],
+      "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
+        "Når der er blevet givet adgang til din konto, kan de få adgang til dine **gendannelsesindstillinger** og **ændre din ${ ACCOUNT_APP_NAME }-adgangskode** for dig."
+      ],
+      "Recovery contacts": [
+        "Gendannelseskontakter"
+      ],
+      "Recovery file": [
+        "Gendannelsesfil"
+      ],
+      "Try recovering your account from a **device or browser where you have signed in before**, as it may be possible from there:": [
+        "Prøv at gendanne din konto fra en **enhed eller browser, hvor du har været logget ind før**, da det derfra måske er muligt:"
+      ],
+      "Unfortunately there is no recovery method available for this account.": [
+        "Der er desværre ingen tilgængelig gendannelsesmetode for denne konto."
+      ],
+      "Web sessions detected:": [
+        "Websessioner fundet:"
+      ],
+      "You can now reset your password to regain access to your account. **This will disable 2-factor authentication.**": [
+        "Du kan nu nulstille din adgangskode for at få adgang til din konto igen. **Dette deaktiverer 2-faktor-godkendelse.**"
+      ],
+      "Your encrypted data will be locked": [
+        "Din krypterede data vil blive låst"
+      ],
+      "your encrypted data will be locked": [
+        "din krypterede data vil blive låst"
+      ],
+      "Your old password": [
+        "Din gamle adgangskode"
       ]
     },
     "info": {
@@ -14691,6 +14769,9 @@
       ],
       "Select which Gmail address to connect": [
         "Vælg hvilken Gmail-adresse der skal forbindes"
+      ],
+      "Enter code": [
+        "Indtast kode"
       ]
     },
     "label": {
@@ -15084,6 +15165,15 @@
       ],
       "What’s this?": [
         "Hvad er dette?"
+      ],
+      "contacts’ assistance": [
+        "hjælp fra kontakter"
+      ],
+      "data recovery option": [
+        "metode til datagendannelse"
+      ],
+      "Details": [
+        "Detaljer"
       ]
     },
     "Link (Scribe)": {
@@ -16458,6 +16548,13 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi scanner det mørke web for at tjekke, om dine ${ BRAND_NAME }-adresser eller aliasser er blevet lækket, og giver dig straks besked, hvis vi finder noget."
+      ],
+      "Appointment scheduling": [
+        "Mødebooking"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Mødebooking med ${ n } bookingside",
+        "Mødebooking med ${ n } bookingsider"
       ]
     },
     "new_plans: feature highlight": {
@@ -21018,6 +21115,18 @@
       ],
       "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
         "Din konto inkluderer adgang til gratis funktioner i ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, og ${ LUMO_SHORT_APP_NAME }."
+      ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "Vælg en sikker ${ MAIL_APP_NAME }-adresse for at komme i gang"
+      ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "Hold dine samtaler private med ${ MAIL_APP_NAME }"
+      ],
+      "Secure calendar": [
+        "Sikker kalender"
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "VPN med servere i ${ vpnServersCountData.free.countries } lande"
       ]
     },
     "Signup label": {
@@ -24598,6 +24707,18 @@
       ],
       "You are all set": [
         "Så er du klar"
+      ],
+      "Ask your emergency contacts for help": [
+        "Spørg dine nødkontakter om hjælp"
+      ],
+      "Can you access your session in the browser?": [
+        "Kan du tilgå din session i browseren?"
+      ],
+      "Try changing your password in your active web session": [
+        "Prøv at ændre din adgangskode i din aktive web-session"
+      ],
+      "Verify it’s you": [
+        "Bekræft at det er dig"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -25373,6 +25494,9 @@
       ],
       "Save": [
         "Gem"
+      ],
+      "Roles and permissions": [
+        "Roller og tilladelser"
       ]
     },
     "Users table: badge": {

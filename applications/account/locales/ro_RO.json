@@ -1763,6 +1763,18 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "I don't have my phrase": [
+        "Nu am fraza de recuperare"
+      ],
+      "I don’t have my phone": [
+        "Nu am telefonul"
+      ],
+      "Return to sign-in": [
+        "Revenire la conectare"
+      ],
+      "Try another way": [
+        "Încercați altă metodă"
       ]
     },
     "action": {
@@ -4844,6 +4856,9 @@
     "Delete group prompt": {
       "Are you sure you want to delete this group?": [
         "Ștergeți acest grup?"
+      ],
+      "Please note that if you delete the group ${ displayGroupName }, it will be permanently removed.": [
+        "Rețineți că dacă ștergeți grupul ${ displayGroupName }, acesta va fi eliminat permanent."
       ]
     },
     "Delinquent modal title": {
@@ -12738,6 +12753,120 @@
       ],
       "Zoom meeting": [
         "o întâlnire pe Zoom"
+      ],
+      "${ BRAND_NAME } will send a verification code to ${ RedactedPhoneNumber }. Standard message rates may apply.": [
+        "${ BRAND_NAME } va trimite un cod de verificare la ${ RedactedPhoneNumber }. Se pot aplica tarife standard pentru mesaje."
+      ],
+      "${ DataLockedText }, but recoverable with your ${ RecoveryContactsLink }:": [
+        "${ DataLockedText }, dar se pot recupera apelând la un ${ RecoveryContactsLink }:"
+      ],
+      "Add users by name or email to this group.": [
+        "Adăugați utilizatori după nume sau e-mail la acest grup."
+      ],
+      "An email with a verification code was just sent to ${ emailAddress }. If you can’t find the message in your inbox, please check your spam folder.": [
+        "Un mesaj cu un cod de verificare a fost trimis la ${ emailAddress }. Dacă nu găsiți mesajul în mesajele primite, verificați și în folderul de mesaje nedorite."
+      ],
+      "An SMS with a verification code was just sent to ${ phoneNumber }.": [
+        "Un SMS cu un cod de verificare tocmai a fost trimis la ${ phoneNumber }."
+      ],
+      "Ask them to sign in to their ${ ACCOUNT_APP_NAME } in the browser, and go to **Settings → All settings → Recovery → Emergency access→ People who trust me.**": [
+        "Spuneți-le să se conecteze la ${ ACCOUNT_APP_NAME } în navigatorul web și să acceseze **Setări → Toate setările → Recuperare → Acces de urgență → Persoane care au încredere în mine.**"
+      ],
+      "Can you access your active session?": [
+        "Vă puteți accesa sesiunea activă?"
+      ],
+      "Can you access your active web session in another browser?": [
+        "Vă puteți accesa sesiunea web activă într-un alt navigator web?"
+      ],
+      "Can you reach out to your contact?": [
+        "Puteți lua legătura cu persoana de contact?"
+      ],
+      "Click **Request password reset** and follow the prompts.": [
+        "Apăsați pe **Solicitare resetare parolă** și urmați instrucțiunile."
+      ],
+      "Data recoverable with recovery phrase": [
+        "Date recuperabile cu fraza de recuperare"
+      ],
+      "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
+        "În funcție de setările actuale, aceștia pot primi acces imediat sau după o **perioadă de așteptare** desemnată."
+      ],
+      "Due to end-to-end encryption, you can reset your password, but ${ DataLockedText } until you use a ${ DataRecoveryOptionsLink }:": [
+        "Datorită criptării bilaterale, vă puteți reseta parola, dar ${ DataLockedText } până când folosiți ${ DataRecoveryOptionsLink }:"
+      ],
+      "Enter the 12-word recovery phrase associated with your account.": [
+        "Introduceți fraza de recuperare de 12 cuvinte asociată contului."
+      ],
+      "From there, they can request emergency access to your account by clicking **Request access.**": [
+        "De acolo, ei pot solicita acces de urgență la contul dvs. făcând clic pe **Solicitare acces.**"
+      ],
+      "Get in touch with your emergency contacts, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed**.": [
+        "Luați legătura cu contactele de urgență pentru a vedea dacă vă pot ajuta. După solicitarea accesului de urgență la contul personal, acestea vor putea să vă schimbe parola **după ce a trecut timpul de așteptare pentru acces**."
+      ],
+      "How to perform a signed-in reset": [
+        "Cum se efectuează o resetare când v-ați conectat"
+      ],
+      "How your emergency contact can change your password for you:": [
+        "Cum vă poate reseta parola contactul de urgență:"
+      ],
+      "If possible, when signing in, use a device or a browser where you’ve signed in before.": [
+        "Dacă este posibil, la conectare, folosiți un dispozitiv sau un navigator web pe care v-ați mai conectat anterior."
+      ],
+      "If you are signed in to a ${ BRAND_NAME } web app in **another browser**, you may be able to perform a password reset from your active session.": [
+        "Dacă v-ați conectat la o aplicație web ${ BRAND_NAME } într-un **alt navigator web**, este posibil să puteți reseta parola din sesiunea activă."
+      ],
+      "If you have emergency contacts, get in touch with them, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed.**": [
+        "Dacă aveți contacte de urgență, luați legătura cu ele pentru a vedea dacă vă pot ajuta. După solicitarea accesului de urgență la cont, acestea vor putea să vă schimbe parola **după ce timpul de așteptare pentru acces a trecut**."
+      ],
+      "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
+        "După ce a fost acordat accesul la cont, aceștia vă pot accesa setările de **Recuperare** și vă **schimbe parola ${ ACCOUNT_APP_NAME }**."
+      ],
+      "Open your active session in the browser, and go to **Settings → All settings → Recovery → Password reset settings.**": [
+        "Deschideți sesiunea activă în navigaorul web și accesați **Setări → Toate setările → Recuperare → Setări de resetare parolă.**"
+      ],
+      "Recovery contacts": [
+        "Contacte de recuperare"
+      ],
+      "Recovery file": [
+        "Fișier de recuperare"
+      ],
+      "Recovery phrase": [
+        "Frază de recuperare"
+      ],
+      "Resetting your password in your active web session will ensure **your encrypted data will remain accessible** after you change your password.": [
+        "Resetarea parolei în sesiunea web activă vă asigură **că datele criptate vă vor rămâne accesibile** după schimbarea parolei."
+      ],
+      "Select a group to view its members and settings.": [
+        "Selectați un grup pentru a vizualiza membrii și setările acestuia."
+      ],
+      "Try recovering your account from a **device or browser where you have signed in before**, as it may be possible from there:": [
+        "Încercați să vă recuperați contul de pe un **dispozitiv sau navigator web pe care v-ați conectat anterior**, deoarece este posibil să reușiți de acolo:"
+      ],
+      "Unfortunately there is no recovery method available for this account.": [
+        "Din păcate nu există nicio metodă de recuperare disponibilă pentru acest cont."
+      ],
+      "We detected you are already signed in to a ${ BRAND_NAME } web app on **another browser**. You may be able to perform a password reset from your active session.": [
+        "Am detectat că deja v-ați conectat la o aplicație web ${ BRAND_NAME } într-un **alt navigator web**. Este posibil să puteți reseta parola din sesiunea activă."
+      ],
+      "Web sessions detected:": [
+        "Sesiune web detectată:"
+      ],
+      "You can now reset your password to regain access to your account.": [
+        "Acum vă puteți reseta parola pentru a redobândi accesul la contul personal."
+      ],
+      "You can now reset your password to regain access to your account. **This will disable 2-factor authentication.**": [
+        "Acum puteți reseta parola pentru a redobândi accesul la cont. **Aceasta va dezactiva autentificarea cu doi factori.**"
+      ],
+      "You will regain complete or partial access to your encrypted data.": [
+        "Veți recăpăta acces complet sau parțial la datele personale criptate."
+      ],
+      "Your encrypted data will be locked": [
+        "Datele criptate vor fi blocate"
+      ],
+      "your encrypted data will be locked": [
+        "datele criptate vor fi blocate"
+      ],
+      "Your old password": [
+        "Parola veche"
       ]
     },
     "info": {
@@ -14771,6 +14900,15 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Enter code": [
+        "Introduceți codul"
+      ],
+      "Enter name or email address": [
+        "Introduceți numele sau adresa de e-mail"
+      ],
+      "Invite people": [
+        "Invitați persoane"
       ]
     },
     "label": {
@@ -15165,6 +15303,15 @@
       ],
       "What’s this?": [
         "Ce este asta?"
+      ],
+      "contacts’ assistance": [
+        "contact de recuperare"
+      ],
+      "data recovery option": [
+        "opțiunea de recuperare a datelor"
+      ],
+      "Details": [
+        "Detalii"
       ]
     },
     "Link (Scribe)": {
@@ -16580,6 +16727,14 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Scanăm internetul ascuns pentru a verifica dacă adresele sau aliasurile ${ BRAND_NAME } v-au fost divulgate și vă avertizăm imediat dacă găsim ceva."
+      ],
+      "Appointment scheduling": [
+        "Planificare întâlniri"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Planificare întâlniri cu ${ n } pagină de programări",
+        "Planificare întâlniri cu ${ n } pagini de programări",
+        "Planificare întâlniri cu ${ n } de pagini de programări"
       ]
     },
     "new_plans: feature highlight": {
@@ -21185,6 +21340,30 @@
       ],
       "You’re invited to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
         "Vă invităm să vă alăturați celor peste 100 de milioane de persoane care au ales să-și păstreze controlul datelor cu ecosistemul criptat al ${ BRAND_NAME }."
+      ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } de aliasuri hide-my-email pentru a combate mesajele nedorite"
+      ],
+      "${ MAIL_SHORT_APP_NAME } Free": [
+        "${ MAIL_SHORT_APP_NAME } Free"
+      ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "Alegeți o adresă securizată ${ MAIL_APP_NAME } pentru a începe"
+      ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "Păstrați-vă conversațiile private cu ${ MAIL_APP_NAME }"
+      ],
+      "Password-protected messages": [
+        "Mesaje protejate prin parolă"
+      ],
+      "Secure calendar": [
+        "Calendar securizat"
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "VPN cu servere în ${ vpnServersCountData.free.countries } țări"
+      ],
+      "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
+        "Contul actual include acces la funcții gratuite în ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } și ${ LUMO_SHORT_APP_NAME }."
       ]
     },
     "Signup label": {
@@ -24801,6 +24980,36 @@
       ],
       "Your subscriptions": [
         "Abonamente personale"
+      ],
+      "Are you already signed in to ${ BRAND_NAME } in a browser?": [
+        "V-ați conectat deja la ${ BRAND_NAME } într-un navigator web?"
+      ],
+      "Ask your emergency contacts for help": [
+        "Cereți ajutor de la contactele de urgență"
+      ],
+      "Can you access your session in the browser?": [
+        "Vă puteți accesa sesiunea din navigatorul web?"
+      ],
+      "Can you reach out to your emergency contacts?": [
+        "Poți contacta persoanele de contact de urgență?"
+      ],
+      "Couldn’t recover your account": [
+        "Nu vi s-a putut recupera contul."
+      ],
+      "Create group": [
+        "Creare grup"
+      ],
+      "Edit group": [
+        "Editare grup"
+      ],
+      "Recover account": [
+        "Recuperare cont"
+      ],
+      "Try changing your password in your active web session": [
+        "Încercați să vă schimbați parola în sesiunea web activă"
+      ],
+      "Verify it’s you": [
+        "Verificați-vă autenticitatea"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -25569,6 +25778,18 @@
       ],
       "Writing assistant": [
         "Asistent de scriere"
+      ],
+      "Add delegated roles to a user to grant them only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
+        "Adăugați roluri delegate unui utilizator pentru a-i acorda doar permisiunile specifice de care are nevoie, păstrând puterea de administrator complet separată și mediul securizat."
+      ],
+      "General": [
+        "General"
+      ],
+      "Roles and permissions": [
+        "Roluri și permisiuni"
+      ],
+      "Save": [
+        "Salvare"
       ]
     },
     "Users table: badge": {
@@ -26284,6 +26505,19 @@
       ],
       "Yearly, ${ untilString }": [
         "Anual, ${ untilString }"
+      ]
+    },
+    "Delete group prompt with email": {
+      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
+        "Rețineți că, dacă ștergeți grupul ${ displayGroupName } (cu adresa ${ displayGroupAddressEmail }), nu veți mai putea primi mesaje folosind adresa acestuia."
+      ]
+    },
+    "Group detail label": {
+      "Description:": [
+        "Descriere:"
+      ],
+      "Group address:": [
+        "Adresă grup:"
       ]
     }
   }

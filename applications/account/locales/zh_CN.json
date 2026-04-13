@@ -1733,6 +1733,48 @@
       ],
       "Reconnect to Gmail": [
         "重新连接 Gmail"
+      ],
+      "Connect Gmail address": [
+        "连接 Gmail 地址"
+      ],
+      "Contact Support Center": [
+        "联系支持中心"
+      ],
+      "Continue to sign in": [
+        "继续登录"
+      ],
+      "Disconnect": [
+        "断开连接"
+      ],
+      "Enter code": [
+        "输入代码"
+      ],
+      "I don't have my 2FA device": [
+        "我没有 2FA 设备"
+      ],
+      "I don't have my key": [
+        "我没有密钥"
+      ],
+      "I don't have my phrase": [
+        "我没有恢复短语"
+      ],
+      "I don’t have my backup codes": [
+        "我没有备用码"
+      ],
+      "I don’t have my phone": [
+        "我没有手机"
+      ],
+      "Recover account": [
+        "恢复账户"
+      ],
+      "Return to sign-in": [
+        "返回登录"
+      ],
+      "Try another way": [
+        "尝试其他方式"
+      ],
+      "Verify another way": [
+        "使用其他方式验证"
       ]
     },
     "action": {
@@ -4752,6 +4794,9 @@
     "Delete group prompt": {
       "Are you sure you want to delete this group?": [
         "确定要删除这个群组吗？"
+      ],
+      "Please note that if you delete the group ${ displayGroupName }, it will be permanently removed.": [
+        "请注意，如果您删除 ${ displayGroupName } 分组，它将被永久移除！"
       ]
     },
     "Delinquent modal title": {
@@ -4978,6 +5023,12 @@
       ],
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "您的套餐总共支持 ${ MAX_SYNC_PAID_USER } 个 Gmail 地址"
+      ],
+      "You can still login with this address and re-connect at any time.": [
+        "您仍可以使用此地址登录，并随时重新连接。"
+      ],
+      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
+        "您将无法再使用 ${ address.Email } 在 ${ BRAND_NAME } 中接收和发送邮件。另请注意，来自 ${ BRAND_NAME } 发送到此地址的消息将不再采用端到端加密！"
       ]
     },
     "description": {
@@ -7121,6 +7172,9 @@
       ],
       "Something went wrong while fetching available domains": [
         "获取可用域名时出错"
+      ],
+      "Incorrect recovery code. Please try again.": [
+        "恢复码错误，请重试。"
       ]
     },
     "error": {
@@ -12388,6 +12442,147 @@
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
         "如果您无法访问验证器应用，可以使用设置 2FA 时提供的 16 个备用恢复码之一。${ learnMoreLink }"
+      ],
+      "${ BRAND_NAME } will send a verification code to ${ RedactedPhoneNumber }. Standard message rates may apply.": [
+        "${ BRAND_NAME } 将发送验证码至 ${ RedactedPhoneNumber }。这可能产生标准短信费用。"
+      ],
+      "${ DataLockedText }, but recoverable with your ${ RecoveryContactsLink }:": [
+        "${ DataLockedText }，但可通过 ${ RecoveryContactsLink } 恢复："
+      ],
+      "Add users by name or email to this group.": [
+        "按姓名或邮箱添加用户到此群组。"
+      ],
+      "An email with a verification code was just sent to ${ emailAddress }. If you can’t find the message in your inbox, please check your spam folder.": [
+        "包含验证码的邮件已发送至 ${ emailAddress }。如果您在收件箱中未找到该邮件，请检查垃圾邮件文件夹。"
+      ],
+      "An SMS with a verification code was just sent to ${ phoneNumber }.": [
+        "包含验证码的短信已发送至 ${ phoneNumber }！"
+      ],
+      "Ask them to sign in to their ${ ACCOUNT_APP_NAME } in the browser, and go to **Settings → All settings → Recovery → Emergency access→ People who trust me.**": [
+        "让他们在浏览器中登录 ${ ACCOUNT_APP_NAME }，然后转到**设置 → 所有设置 → 恢复 → 紧急访问 → 信任我的人**。"
+      ],
+      "Can you access your active session?": [
+        "您能否访问当前活跃的会话？"
+      ],
+      "Can you access your active web session in another browser?": [
+        "您能否在其他浏览器中访问当前活跃的网页会话？"
+      ],
+      "Can you reach out to your contact?": [
+        "您能否联系您的联系人？"
+      ],
+      "Click **Request password reset** and follow the prompts.": [
+        "请点击**请求重置密码**并按照提示操作！"
+      ],
+      "Contact our Customer Support team to disable two-factor authentication for your account, or recover your account another way.": [
+        "联系我们的客户支持团队以禁用您账户的 2FA，或通过其他方式恢复您的账户。"
+      ],
+      "Data recoverable with recovery phrase": [
+        "通过恢复短语恢复数据"
+      ],
+      "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
+        "根据您的设置，他们可能立即获得访问权限，或需要经过指定的**等待期**！"
+      ],
+      "Due to end-to-end encryption, you can reset your password, but ${ DataLockedText } until you use a ${ DataRecoveryOptionsLink }:": [
+        "由于端到端加密，您可以重置密码，但 ${ DataLockedText }，直到您使用 ${ DataRecoveryOptionsLink }："
+      ],
+      "Enter the 12-word recovery phrase associated with your account.": [
+        "请输入与您的账户关联的 12 字恢复短语！"
+      ],
+      "From there, they can request emergency access to your account by clicking **Request access.**": [
+        "他们可以在其中点击**请求访问**来请求对您账户的紧急访问。"
+      ],
+      "Get in touch with your emergency contacts, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed**.": [
+        "联系您的紧急联系人，看看他们是否能提供帮助。在请求紧急访问您的账户后，他们可以在**等待期结束后**为您更改密码！"
+      ],
+      "How to perform a signed-in reset": [
+        "如何执行已登录状态下的重置？"
+      ],
+      "How your emergency contact can change your password for you:": [
+        "您的紧急联系人如何为您更改密码："
+      ],
+      "If possible, when signing in, use a device or a browser where you’ve signed in before.": [
+        "如果可以，请在登录时使用之前登录过的设备或浏览器。"
+      ],
+      "If you are signed in to a ${ BRAND_NAME } web app in **another browser**, you may be able to perform a password reset from your active session.": [
+        "如果您在**其他浏览器**中登录了 ${ BRAND_NAME } 网页应用，则可以通过当前活动会话重置密码。"
+      ],
+      "If you have emergency contacts, get in touch with them, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed.**": [
+        "如果您有紧急联系人，请联系他们，看看是否能提供帮助。在请求紧急访问您的账户后，他们可以在**等待期结束后**为您更改密码！"
+      ],
+      "No forwarding history.": [
+        "暂无转发历史！"
+      ],
+      "No import history.": [
+        "暂无导入历史"
+      ],
+      "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
+        "当您的账户访问权限被授予后，他们可以访问您的**恢复**设置并为您**更改 ${ ACCOUNT_APP_NAME } 密码**！"
+      ],
+      "Open your active session in the browser, and go to **Settings → All settings → Recovery → Password reset settings.**": [
+        "在浏览器中打开您的活动会话，然后转到**设置 → 所有设置 → 恢复 → 密码重置设置**。"
+      ],
+      "Recovery contacts": [
+        "恢复联系人"
+      ],
+      "Recovery file": [
+        "恢复文件"
+      ],
+      "Recovery phrase": [
+        "恢复短语"
+      ],
+      "Resetting your password in your active web session will ensure **your encrypted data will remain accessible** after you change your password.": [
+        "在活动网页会话中重置密码将确保您更改密码后**加密数据仍然可访问**！"
+      ],
+      "Select a group to view its members and settings.": [
+        "请选择一个群组以查看其成员和设置！"
+      ],
+      "Something went wrong. Please try again.": [
+        "发生错误，请稍后再试。"
+      ],
+      "This password is used to login to your ${ BRAND_NAME } account": [
+        "此密码用于登录您的 ${ BRAND_NAME } 账户"
+      ],
+      "To help keep your account safe, we want to make sure it's really you trying to sign in.": [
+        "为保障您的账户安全，我们需要确认确实是您本人在尝试登录！"
+      ],
+      "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
+        "为保障您的账户安全，我们需要确认确实是您本人在尝试登录！"
+      ],
+      "Try recovering your account from a **device or browser where you have signed in before**, as it may be possible from there:": [
+        "尝试从**之前登录过的设备或浏览器**恢复您的账户，因为那里可能可以恢复："
+      ],
+      "Unfortunately there is no recovery method available for this account.": [
+        "很遗憾，此账户没有可用的恢复方式！"
+      ],
+      "We detected you are already signed in to a ${ BRAND_NAME } web app on **another browser**. You may be able to perform a password reset from your active session.": [
+        "我们检测到您已在**其他浏览器**中登录了 ${ BRAND_NAME } 网页应用，您可以通过当前活动会话重置密码！"
+      ],
+      "Web sessions detected:": [
+        "检测到网页会话："
+      ],
+      "You can now reset your password to regain access to your account.": [
+        "您现在可以重置密码以重新获得账户的访问权限！"
+      ],
+      "You can now reset your password to regain access to your account. **This will disable 2-factor authentication.**": [
+        "您现在可以重置密码以重新获得对您账户的访问权限。**这将禁用 2FA**！"
+      ],
+      "You can now sign in to your account again.": [
+        "您现在可以重新登录您的账户啦！"
+      ],
+      "You will not be asked for a one-time code or a security key.": [
+        "系统不会要求您提供一次性代码或安全密钥！"
+      ],
+      "You will regain complete or partial access to your encrypted data.": [
+        "您将重新获得对加密数据的完全或部分访问权限。"
+      ],
+      "Your encrypted data will be locked": [
+        "您的加密数据将被锁定"
+      ],
+      "your encrypted data will be locked": [
+        "您的加密数据将被锁定"
+      ],
+      "Your old password": [
+        "您的旧密码"
       ]
     },
     "info": {
@@ -14405,6 +14600,15 @@
       ],
       "Select which Gmail address to connect": [
         "请选择要连接的 Gmail 地址"
+      ],
+      "Enter code": [
+        "输入代码"
+      ],
+      "Enter name or email address": [
+        "请输入用户名或邮箱地址"
+      ],
+      "Invite people": [
+        "邀请他人"
       ]
     },
     "label": {
@@ -14797,6 +15001,15 @@
       ],
       "What’s this?": [
         "这是什么？"
+      ],
+      "contacts’ assistance": [
+        "联系人协助"
+      ],
+      "data recovery option": [
+        "数据恢复选项"
+      ],
+      "Details": [
+        "详细信息"
       ]
     },
     "Link (Scribe)": {
@@ -20534,6 +20747,27 @@
       ],
       "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
         "您的账户包含 ${ MAIL_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME } 和 ${ LUMO_SHORT_APP_NAME } 免费功能的访问权限。"
+      ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "适用于打击垃圾邮件的 ${ FREE_PASS_ALIASES } Hide-my-email 别名邮箱"
+      ],
+      "${ MAIL_SHORT_APP_NAME } Free": [
+        "${ MAIL_SHORT_APP_NAME } Free"
+      ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "请选择安全的 ${ MAIL_APP_NAME } 地址以开始使用"
+      ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "使用 ${ MAIL_APP_NAME } 保护您的通话隐私"
+      ],
+      "Password-protected messages": [
+        "消息密码保护"
+      ],
+      "Secure calendar": [
+        "安全日历"
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "遍布 ${ vpnServersCountData.free.countries } 个国家/地区的 VPN 服务器"
       ]
     },
     "Signup label": {
@@ -24030,6 +24264,48 @@
       ],
       "You are all set": [
         "一切就绪"
+      ],
+      "An error occurred": [
+        "发生错误"
+      ],
+      "Are you already signed in to ${ BRAND_NAME } in a browser?": [
+        "您是否已在浏览器中登录 ${ BRAND_NAME }？"
+      ],
+      "Are you sure you want to disconnect this address?": [
+        "您确定要断开此地址的连接吗？"
+      ],
+      "Ask your emergency contacts for help": [
+        "向您的紧急联系人寻求帮助"
+      ],
+      "Can you access your session in the browser?": [
+        "您能否访问浏览器中的会话？"
+      ],
+      "Can you reach out to your emergency contacts?": [
+        "您能联系到您的紧急联系人吗？"
+      ],
+      "Couldn’t recover your account": [
+        "无法恢复您的账户"
+      ],
+      "Create group": [
+        "创建群组"
+      ],
+      "Edit group": [
+        "编辑群组"
+      ],
+      "Recover account": [
+        "恢复账户"
+      ],
+      "Try changing your password in your active web session": [
+        "尝试在您当前活跃的网页会话中更改密码"
+      ],
+      "Two-factor authentication disabled": [
+        "2FA 已禁用"
+      ],
+      "Use backup recovery code": [
+        "使用备用恢复码"
+      ],
+      "Verify it’s you": [
+        "验证您的身份"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -24794,6 +25070,18 @@
       ],
       "Writing assistant": [
         "写作助手"
+      ],
+      "Add delegated roles to a user to grant them only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
+        "为用户添加委派角色，仅授予他们所需的特定权限，从而将完全管理员权限分开并保护您的环境安全。"
+      ],
+      "General": [
+        "常规"
+      ],
+      "Roles and permissions": [
+        "角色与权限"
+      ],
+      "Save": [
+        "保存"
       ]
     },
     "Users table: badge": {
@@ -25420,6 +25708,19 @@
       ],
       "Yearly, ${ untilString }": [
         "每一年，${ untilString }"
+      ]
+    },
+    "Delete group prompt with email": {
+      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
+        "请注意，如果您删除群组 ${ displayGroupName }（地址为 ${ displayGroupAddressEmail }），您将无法再使用该地址接收邮件！"
+      ]
+    },
+    "Group detail label": {
+      "Description:": [
+        "描述："
+      ],
+      "Group address:": [
+        "群组地址："
       ]
     }
   }

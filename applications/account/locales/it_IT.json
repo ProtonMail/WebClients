@@ -24637,6 +24637,12 @@
       "Yearly, ${ untilString }": [
         "Ogni anno, ${ untilString }"
       ]
+    },
+    "meet_2025: Addon": {
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } licenza ${ MEET_APP_NAME }",
+        "${ seats } licenze ${ MEET_APP_NAME }"
+      ]
     }
   }
 }
