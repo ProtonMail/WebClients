@@ -45,7 +45,7 @@ type Props = {
 export const ExtensionClient: FC<Props> = ({ children, onWorkerMessage }) => {
     const core = usePassCore();
     const config = usePassConfig();
-    const { url, port, senderTabId } = useExtensionContext();
+    const { frameUrl, port, senderTabId } = useExtensionContext();
 
     const activityProbe = useExtensionActivityProbe();
     const dispatch = useDispatch();
@@ -89,7 +89,7 @@ export const ExtensionClient: FC<Props> = ({ children, onWorkerMessage }) => {
             setupIgnore: () => false,
         });
 
-        core.setExtensionClientState?.({ url, tabId: senderTabId, port: port.name });
+        core.setExtensionClientState?.({ url: frameUrl, tabId: senderTabId, port: port.name });
 
         if (onWorkerMessage) {
             const listener = (message: unknown) => isExtensionMessage(message) && onWorkerMessage(message);

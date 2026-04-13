@@ -154,7 +154,7 @@ export const createAutofillService = ({ controller }: ContentScriptContextFactor
 
     const autofillPassword = autofillSequence(
         withContext<(form: FormHandle, password: string) => Promise<void>>(async (ctx, form, password) => {
-            const url = ctx?.getExtensionContext()?.url;
+            const url = ctx?.getExtensionContext()?.frameUrl;
             if (url) {
                 for (const field of form.getFieldsFor(FieldType.PASSWORD_NEW)) await field.autofill(password);
 

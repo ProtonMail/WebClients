@@ -98,7 +98,7 @@ export const createContentScriptContext = (options: ContentScriptContextFactoryO
         getFeatureFlags: () => featureFlags,
         getFeatures: () => {
             const ctx = context.getExtensionContext();
-            const frameUrl = ctx?.url ?? null;
+            const frameUrl = ctx?.frameUrl ?? null;
             const tabUrl = ctx?.tabUrl ?? null;
             return computeFeatures(settings, frameUrl, tabUrl);
         },
