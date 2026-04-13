@@ -6,6 +6,7 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Info from '@proton/components/components/link/Info';
 import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
 import { useMaybeGroup } from '@proton/pass/components/Groups/GroupsProvider';
+import { MaybeGroupName } from '@proton/pass/components/Groups/MaybeGroupName';
 import { type InviteLabels, useInviteLabels } from '@proton/pass/components/Invite/useInviteLabels';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
@@ -64,7 +65,7 @@ export const ShareMember: FC<Props> = ({
     target,
     userShareId,
 }) => {
-    const { name, isMember, onShowMembers } = useMaybeGroup(email);
+    const { maybeGroupProps, isMember, onShowMembers } = useMaybeGroup(email);
 
     // TODO: Remove this in IDTEAM-4660
     const labels = useInviteLabels();
@@ -120,13 +121,13 @@ export const ShareMember: FC<Props> = ({
             <div className="flex-1">
                 <div className="flex flex-nowrap flex-1 items-center gap-2">
                     {isGroupShare ? (
-                        <ButtonIfNeeded onClick={onShowMembers} className="text-ellipsis">
-                            {name}
+                        <ButtonIfNeeded onClick={onShowMembers}>
+                            <MaybeGroupName {...maybeGroupProps} />
                         </ButtonIfNeeded>
                     ) : (
                         <>
                             <Tooltip openDelay={100} originalPlacement="bottom-start" title={email}>
-                                <div className="text-ellipsis">{name}</div>
+                                <MaybeGroupName {...maybeGroupProps} />
                             </Tooltip>
                             {me && <span className="color-primary text-sm">({c('Info').t`me`})</span>}
                         </>
