@@ -60,8 +60,17 @@ export class BatchQueue<T> {
     }
 
     public flush() {
+        // handle synchronous errors in the flush callback
         if (typeof this.flushCallback === 'function') {
-            this.flushCallback([...this.queue]);
+            try {
+                // handle asynchronous errors in the flush callback
+                const result = this.flushCallback([...this.queue]);
+                void Promise.resolve(result).catch(() => {
+                    // fail silently
+                });
+            } catch (_error: unknown) {
+                // fail silently
+            }
         }
         this.clear();
     }
