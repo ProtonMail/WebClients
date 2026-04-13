@@ -1252,7 +1252,10 @@
         "${ planOrAppName } ile ilerle"
       ],
       "Refetch index": [
-        "Dizini yeniden getir"
+        "Dizini yeniden al"
+      ],
+      "Reconnect to Gmail": [
+        "Gmail bağlantısını yeniden kur"
       ]
     },
     "Action: Docs": {
@@ -3061,6 +3064,18 @@
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Aramızdan ayrıldığınız için üzgünüz. Vakit ayırıp iptal etme nedeninizi paylaşırsanız çok seviniriz. Geri bildiriminiz ${ BRAND_NAME } hizmetlerini herkes için daha iyi yapmamıza yardımcı olur."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Bu durum izinler kaldırılmışsa veya parolanız değiştirilmişse ortaya çıkabilir."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "${ BRAND_NAME } üzerinden Gmail iletilerini almayı ve göndermeyi sürdürmek için lütfen hesabınızı yeniden bağlayın."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "${ BRAND_NAME } üzerinden Gmail iletilerini almayı ve göndermeyi sürdürmek için lütfen hesaplarınızı yeniden bağlayın."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Artık ${ boldEmails } adresine erişemiyoruz."
       ]
     },
     "description": {
@@ -3990,8 +4005,14 @@
         "Arama sırasında bir sorun çıktı: Yeterli depolama alanı yok."
       ],
       "${ failureItems.length } item failed to be moved": [
-        "${ failureItems.length } öğe taşınamadı",
-        "${ failureItems.length } öğe taşınamadı"
+        "${ failureItems.length } öge taşınamadı",
+        "${ failureItems.length } öge taşınamadı"
+      ],
+      "Address could not be added.": [
+        "Adres eklenemedi."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Kullanılabilecek etki alanları alınırken bir sorun çıktı"
       ]
     },
     "error": {
@@ -7022,7 +7043,7 @@
         "${ PLAN_NAMES[PLANS.MEET_BUSINESS] } ekle"
       ],
       "${ state.result.entries.length } entries": [
-        "${ state.result.entries.length } girdi"
+        "${ state.result.entries.length } kayıt"
       ],
       "Index is empty.": [
         "Dizin boş."
@@ -7031,10 +7052,10 @@
         "Arama modülü kullanılamıyor."
       ],
       "Unsupported file type for Photos": [
-        "Fotoğraflar için desteklenmeyen dosya türü"
+        "Fotoğraflar için dosya türü desteklenmiyor"
       ],
       "Enter code": [
-        "Kodu girin"
+        "Kodu yazın"
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
         "Kimlik doğrulama uygulamanıza erişemiyorsanız iki adımlı doğrulamayı kurarken size verilen 16 yedek kurtarma kodundan birini kullanabilirsiniz. ${ learnMoreLink }"
@@ -7050,6 +7071,9 @@
       "Move ${ folderCount } folder": [
         "${ folderCount } klasörü taşı",
         "${ folderCount } klasörü taşı"
+      ],
+      "Invitation confirmed": [
+        "Davet kabul edildi"
       ]
     },
     "info": {
@@ -7818,22 +7842,22 @@
         "Geri bildirimi atla"
       ],
       "Environment compatible": [
-        "Çevre uyumlu"
+        "Ortam ile uyumlu"
       ],
       "Index kinds": [
         "Dizin türleri"
       ],
       "Initial indexing": [
-        "İlk dizinleme"
+        "İlk dizin oluşturma"
       ],
       "Outdated version": [
-        "Eski sürüm"
+        "Sürüm eski"
       ],
       "Searchable": [
-        "Arama yapılabilir"
+        "Aranabilir"
       ],
       "User opted in": [
-        "Kullanıcı onay verdi"
+        "Kullanıcı katıldı"
       ],
       "Visible columns:": [
         "Görünen sütunlar:"
@@ -8902,6 +8926,13 @@
       ],
       "VPN with ad-blocker and malware protection": [
         "Reklam engelleyici ve kötü amaçlı yazılım koruması ile VPN"
+      ],
+      "Appointment scheduling": [
+        "Randevu planlama"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "${ n } rezervasyon sayfası ile randevu planlama",
+        "${ n } rezervasyon sayfası ile randevu planlama"
       ]
     },
     "new_plans: feature highlight": {
@@ -9661,6 +9692,9 @@
       ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" paylaşıldı"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "${ BRAND_NAME } adresiniz kullanılmaya hazır"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13294,7 +13328,7 @@
         "Ara"
       ],
       "Disconnected from Gmail": [
-        "Gmail'dan bağlantı kesildi"
+        "Gmail bağlantısı kesildi"
       ]
     },
     "Today icon tooltip in mini calendar": {

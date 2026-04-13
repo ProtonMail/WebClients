@@ -4039,6 +4039,11 @@
       ],
       "Something went wrong while fetching available domains": [
         "Ceva nu a funcționat corect la preluarea domeniilor disponibile."
+      ],
+      "${ failureItems.length } item failed to be moved": [
+        "Articole care nu s-au putut muta: ${ failureItems.length }",
+        "Articole care nu s-au putut muta: ${ failureItems.length }",
+        "Articole care nu s-au putut muta: ${ failureItems.length }"
       ]
     },
     "error": {
@@ -7170,6 +7175,9 @@
         "Mutare ${ folderCount } folder",
         "Mutare ${ folderCount } foldere",
         "Mutare ${ folderCount } de foldere"
+      ],
+      "Invitation confirmed": [
+        "Invitație confirmată"
       ]
     },
     "info": {
@@ -9060,6 +9068,14 @@
       ],
       "VPN with ad-blocker and malware protection": [
         "VPN cu protecție împotriva programelor malware și blocare reclame"
+      ],
+      "Appointment scheduling": [
+        "Planificare întâlniri"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Planificare întâlniri cu ${ n } pagină de programări",
+        "Planificare întâlniri cu ${ n } pagini de programări",
+        "Planificare întâlniri cu ${ n } de pagini de programări"
       ]
     },
     "new_plans: feature highlight": {

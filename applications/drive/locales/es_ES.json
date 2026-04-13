@@ -1250,6 +1250,9 @@
       ],
       "Continue to ${ planOrAppName }": [
         "Ir a ${ planOrAppName }"
+      ],
+      "Refetch index": [
+        "Actualizar el índice"
       ]
     },
     "Action: Docs": {
@@ -6984,6 +6987,18 @@
       ],
       "for ${ price }": [
         "por ${ price }"
+      ],
+      "${ state.result.entries.length } entries": [
+        "${ state.result.entries.length } entradas"
+      ],
+      "Index is empty.": [
+        "El índice está vacío."
+      ],
+      "Search module is not available.": [
+        "El módulo de búsqueda no está disponible."
+      ],
+      "Unsupported file type for Photos": [
+        "Formato de archivo no compatible con Fotos"
       ]
     },
     "info": {
@@ -7753,6 +7768,27 @@
       ],
       "Skip feedback": [
         "Omitir comentarios"
+      ],
+      "Environment compatible": [
+        "Entorno compatible"
+      ],
+      "Index kinds": [
+        "Tipos de índice"
+      ],
+      "Initial indexing": [
+        "Indexación inicial"
+      ],
+      "Outdated version": [
+        "Versión obsoleta"
+      ],
+      "Searchable": [
+        "Se pueden realizar búsquedas"
+      ],
+      "User opted in": [
+        "El usuario ha aceptado"
+      ],
+      "Visible columns:": [
+        "Columnas visibles:"
       ]
     },
     "Label for contact group color": {
@@ -13255,6 +13291,12 @@
       ],
       "Actions": [
         "Acciones"
+      ],
+      "Global": [
+        "Global"
+      ],
+      "Search": [
+        "Buscar"
       ]
     },
     "Today icon tooltip in mini calendar": {
