@@ -1,6 +1,6 @@
 import { c, msgid } from 'ttag';
 
-import { useErrorHandler } from '../../store/_utils';
+import { showAggregatedErrorNotification } from '../../utils/errorHandling/errorNotifications';
 import { useListNotifications } from '../../utils/useListNotifications';
 
 /**
@@ -8,7 +8,6 @@ import { useListNotifications } from '../../utils/useListNotifications';
  */
 export const useCopiedItemsNotification = () => {
     const { createSuccessMessage } = useListNotifications();
-    const { showAggregatedErrorNotification } = useErrorHandler();
 
     const showCopiedItemsNotifications = (
         copies: { name: string; uid: string }[],
@@ -27,15 +26,16 @@ export const useCopiedItemsNotification = () => {
             undoAction
         );
 
-        showAggregatedErrorNotification(Object.values(errors), (errors) => {
-            return errors.length === 1
-                ? errors[0].error
-                : c('Notification').ngettext(
-                      msgid`${errors.length} item failed to be copied`,
-                      `${errors.length} items failed to be copied`,
-                      errors.length
-                  );
-        });
+        showAggregatedErrorNotification(
+            Object.values(errors),
+            (error) => error.error,
+            (errors) =>
+                c('Notification').ngettext(
+                    msgid`${errors.length} item failed to be copied`,
+                    `${errors.length} items failed to be copied`,
+                    errors.length
+                )
+        );
     };
 
     const showUndoCopyNotification = (deletedCopies: { name: string; uid: string }[], errors: { error: string }[]) => {
@@ -50,15 +50,16 @@ export const useCopiedItemsNotification = () => {
                 )
         );
 
-        showAggregatedErrorNotification(Object.values(errors), (errors) => {
-            return errors.length === 1
-                ? errors[0].error
-                : c('Notification').ngettext(
-                      msgid`${errors.length} item failed to be trashed`,
-                      `${errors.length} items failed to be trashed`,
-                      errors.length
-                  );
-        });
+        showAggregatedErrorNotification(
+            Object.values(errors),
+            (error) => error.error,
+            (errors) =>
+                c('Notification').ngettext(
+                    msgid`${errors.length} item failed to be trashed`,
+                    `${errors.length} items failed to be trashed`,
+                    errors.length
+                )
+        );
     };
 
     return {
