@@ -9,7 +9,6 @@ import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import { PillBadge } from '@proton/pass/components/Layout/Badge/PillBadge';
 import { ButtonCard } from '@proton/pass/components/Layout/Card/ButtonCard';
 import { CardContent } from '@proton/pass/components/Layout/Card/CardContent';
-import { SubHeader } from '@proton/pass/components/Layout/Section/SubHeader';
 import { BreachSummaryCard } from '@proton/pass/components/Monitor/Breach/Card/BreachSummaryCard';
 import { BreachUpsellCard } from '@proton/pass/components/Monitor/Breach/Card/BreachUpsellCard';
 import { Sentinel } from '@proton/pass/components/Monitor/Sentinel/Sentinel';
@@ -50,11 +49,10 @@ export const MonitorSummary: FC = () => {
             <div className="flex flex-1 flex-column items-start w-full h-full">
                 <Scroll className="flex-1 w-full">
                     <div className="flex flex-column gap-8 p-6 max-w-custom" style={{ '--max-w-custom': '80em' }}>
-                        <SubHeader
-                            title={c('Title').t`${PASS_SHORT_APP_NAME} Monitor`}
-                            description={c('Description')
+                        <span>
+                            {c('Description')
                                 .t`With ${PASS_SHORT_APP_NAME} Monitor, stay ahead of threats by getting instant alerts if your credentials are compromised. Unlock advanced security features and detailed logs to safeguard your online presence.`}
-                        />
+                        </span>
 
                         <section className="flex flex-column gap-4">
                             <h3 className="text-lg text-semibold">{DARK_WEB_MONITORING_NAME}</h3>
