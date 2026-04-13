@@ -34,7 +34,7 @@ export const createDropdownRelayHandler = (): DropdownHandler => {
             if (req.type === 'frame') return;
 
             const { fieldId, frameId, formId } = req.field;
-            const url = ctx?.getExtensionContext()?.url;
+            const url = ctx?.getExtensionContext()?.frameUrl;
             const origin = url ? resolveOriginScope(req, url) : null;
 
             if (!origin) return;

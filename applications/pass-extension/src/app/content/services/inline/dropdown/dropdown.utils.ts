@@ -96,7 +96,7 @@ export const validateDropdownRequest = withContext<(request: DropdownRequest) =>
         /** If unauthorized and autofocused: cancel request. */
         if (autofocused && !authorized) return false;
 
-        const url = ctx.getExtensionContext()?.url;
+        const url = ctx.getExtensionContext()?.frameUrl;
 
         switch (action) {
             case DropdownAction.AUTOFILL_CC:
