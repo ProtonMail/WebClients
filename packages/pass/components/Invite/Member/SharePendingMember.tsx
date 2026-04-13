@@ -6,6 +6,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Info from '@proton/components/components/link/Info';
 import { useMaybeGroup } from '@proton/pass/components/Groups/GroupsProvider';
+import { MaybeGroupName } from '@proton/pass/components/Groups/MaybeGroupName';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
 import { ButtonIfNeeded } from '@proton/pass/components/Utils/ButtonIfNeeded';
@@ -43,7 +44,7 @@ export const SharePendingMember: FC<SharePendingMemberProps> = ({
     loading,
     className,
 }) => {
-    const { name, isGroup: isGroupComputed, onShowMembers } = useMaybeGroup(email);
+    const { name, maybeGroupProps, isGroup: isGroupComputed, onShowMembers } = useMaybeGroup(email);
     // An invite to a group address is not known as a group invite
     // But we may still match the group address with the user groups
     const isGroup = isGroupInput || isGroupComputed;
@@ -58,7 +59,7 @@ export const SharePendingMember: FC<SharePendingMemberProps> = ({
                 <div className="flex-1">
                     <Tooltip openDelay={100} originalPlacement="bottom-start" title={name}>
                         <ButtonIfNeeded onClick={onShowMembers}>
-                            <div className="text-ellipsis">{name}</div>
+                            <MaybeGroupName {...maybeGroupProps} />
                         </ButtonIfNeeded>
                     </Tooltip>
                     <div className="flex items-center gap-1">
