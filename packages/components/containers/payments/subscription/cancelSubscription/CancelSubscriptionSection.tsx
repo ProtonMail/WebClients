@@ -8,6 +8,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import useCancellationFlow from '@proton/components/containers/payments/subscription/cancellationFlow/useCancellationFlow';
+import { useFeedbackFirstCancellationFlow } from '@proton/components/containers/payments/subscription/cancellationFlowFeedbackFirst/useFeedbackFirstCancellationFlow';
 import credits from '@proton/components/containers/referral/components/TrialInfo/credits.svg';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import { isReferralTrial } from '@proton/payments/core/subscription/helpers';
@@ -16,7 +17,6 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME, PASS_APP_NAME } from '@proton/shared/lib/constants';
 
 import useCancellationTelemetry from '../cancellationFlow/useCancellationTelemetry';
-import useFeedbackFirstCancellationFlow from '../cancellationFlowFeedbackFirst/useFeedbackFirstCancellationFlow';
 import { useFeedbackFirstEligibility } from '../cancellationFlowFeedbackFirst/useFeedbackFirstEligibility';
 import { useCancelSubscriptionFlow } from './useCancelSubscriptionFlow';
 
