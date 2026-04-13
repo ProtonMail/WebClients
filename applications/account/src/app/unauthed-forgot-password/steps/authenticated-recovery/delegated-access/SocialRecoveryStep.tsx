@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import { c } from 'ttag';
 
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
@@ -14,6 +16,7 @@ import { DelegatedAccessTypeEnum } from '@proton/shared/lib/interfaces/Delegated
 import { UserNameWithIcon } from '../../../../components/username/UserNameWithIcon';
 import Content from '../../../../public/Content';
 import Header from '../../../../public/Header';
+import { useResetPasswordTelemetry } from '../../../../reset/resetPasswordTelemetry';
 import lockWarningExclamation from '../../../icons/lock-warning-exclamation.svg';
 import type { UnauthedForgotPasswordStateMachine } from '../../../state-machine/UnauthedForgotPasswordStateMachine';
 import { useMachineWizard } from '../../../wizard/MachineWizardProvider';
@@ -21,6 +24,13 @@ import { useMachineWizard } from '../../../wizard/MachineWizardProvider';
 export const SocialRecoveryStep = () => {
     const { send, snapshot } = useMachineWizard<typeof UnauthedForgotPasswordStateMachine>();
     const { delegatedAccessContacts, username } = snapshot.context;
+
+    const { sendResetPasswordStepLoad } = useResetPasswordTelemetry({ variant: 'B' });
+    useEffect(() => {
+        sendResetPasswordStepLoad({
+            step: 'authenticatedRecoverySocialRecoveryOffer',
+        });
+    }, []);
 
     const socialRecoveryContacts = delegatedAccessContacts.filter(({ Types }) =>
         hasBit(Types, DelegatedAccessTypeEnum.SocialRecovery)

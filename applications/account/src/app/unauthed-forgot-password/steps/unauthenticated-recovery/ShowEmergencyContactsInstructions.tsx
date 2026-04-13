@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -9,12 +11,20 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { UserNameWithIcon } from '../../../components/username/UserNameWithIcon';
 import Content from '../../../public/Content';
 import Header from '../../../public/Header';
+import { useResetPasswordTelemetry } from '../../../reset/resetPasswordTelemetry';
 import type { UnauthedForgotPasswordStateMachine } from '../../state-machine/UnauthedForgotPasswordStateMachine';
 import { useMachineWizard } from '../../wizard/MachineWizardProvider';
 
 export const ShowEmergencyContactsInstructions = () => {
     const { send, snapshot } = useMachineWizard<typeof UnauthedForgotPasswordStateMachine>();
     const { username } = snapshot.context;
+
+    const { sendResetPasswordStepLoad } = useResetPasswordTelemetry({ variant: 'B' });
+    useEffect(() => {
+        sendResetPasswordStepLoad({
+            step: 'unauthenticatedRecoveryEmergencyContactInstructions',
+        });
+    }, []);
 
     return (
         <>

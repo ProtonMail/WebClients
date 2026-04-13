@@ -204,6 +204,8 @@ export enum TelemetryRecoverySettingsEvents {
 
 export enum TelemetryResetPasswordEvents {
     page_load = 'page_load',
+    page_exit = 'page_exit',
+    step_load = 'step_load',
     recovery_methods_requested = 'recovery_methods_requested',
     code_sent = 'code_sent',
     method_validated = 'method_validated',
