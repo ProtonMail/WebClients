@@ -16,9 +16,9 @@ export const resolveEndpointContext = async (tab: Maybe<Tabs.Tab>, frameId: Fram
         const result = await browser.webNavigation.getFrame({ frameId, tabId });
         if (!result) throw new Error('Invalid sender frame');
         const frameUrl = parseUrl(result.url);
-        return { tabId, url: frameUrl, tabUrl, senderTabId: tabId, frameId };
+        return { tabId, frameUrl, tabUrl, senderTabId: tabId, frameId };
     }
 
     /** For main frame: url and tabUrl are the same */
-    return { tabId, senderTabId: tabId, url: tabUrl, tabUrl, frameId };
+    return { tabId, senderTabId: tabId, frameUrl: tabUrl, tabUrl, frameId };
 };

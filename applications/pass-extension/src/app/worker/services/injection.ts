@@ -125,10 +125,10 @@ export const createContentScriptService = () => {
                 if (sender.frameId === undefined) return true;
                 if (sender.frameId > 0 && !(await ctx.service.autofill.iframeAutofillEnabled())) return true;
 
-                const { tabId, frameId, url, tabUrl } = await resolveEndpointContext(sender.tab, sender.frameId);
+                const { tabId, frameId, frameUrl, tabUrl } = await resolveEndpointContext(sender.tab, sender.frameId);
 
                 const settings = await ctx.service.settings.resolve();
-                const features = computeFeatures(settings, url, tabUrl);
+                const features = computeFeatures(settings, frameUrl, tabUrl);
                 if (!shouldInjectContentScript(features)) return true;
 
                 await inject({ tabId, frameId, js: ['client.js'] });

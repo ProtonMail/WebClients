@@ -27,7 +27,7 @@ export type ExtensionContextType = {
     port: Runtime.Port;
     /** URL of the current frame - may differ from the actual
      * tab URL if the extension context is running in a subframe. */
-    url: MaybeNull<ParsedUrl>;
+    frameUrl: MaybeNull<ParsedUrl>;
     /** Top-frame (0) tab URL */
     tabUrl: MaybeNull<ParsedUrl>;
     destroy: () => void;
@@ -59,7 +59,7 @@ export const setupExtensionContext = async (options: ExtensionContextOptions): P
             }
         );
 
-        const { tabId = 0, senderTabId = 0, url = null, tabUrl = null, frameId = 0 } = res;
+        const { tabId = 0, senderTabId = 0, frameUrl = null, tabUrl = null, frameId = 0 } = res;
         /** Generate a unique port name by combining the endpoint and sender tab ID.
          * This ensures requests are properly associated with their originating tab context */
         const name = generatePortName(endpoint, senderTabId, frameId);
@@ -87,7 +87,7 @@ export const setupExtensionContext = async (options: ExtensionContextOptions): P
 
         port.onDisconnect.addListener(onPortDisconnect);
 
-        return ExtensionContext.set({ endpoint, port, frameId, senderTabId, tabId, tabUrl, url, destroy });
+        return ExtensionContext.set({ endpoint, port, frameId, senderTabId, tabId, tabUrl, frameUrl, destroy });
     } catch (error) {
         logger.info(`[${logCtx}] fatal error`, error);
 

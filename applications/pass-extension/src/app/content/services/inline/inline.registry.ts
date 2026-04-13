@@ -72,7 +72,7 @@ export const createInlineRegistry = (elements: PassElementsConfig) => {
         if (!service) return;
 
         const port = ctx?.getExtensionContext()?.port;
-        const url = ctx?.getExtensionContext()?.url;
+        const url = ctx?.getExtensionContext()?.frameUrl;
 
         if (url && port && service.getState().port !== port) {
             const settings = ctx.getSettings();
