@@ -3,6 +3,7 @@ import type { ListRowProps } from 'react-virtualized';
 
 import Checkbox from '@proton/components/components/input/Checkbox';
 import { useMaybeGroup } from '@proton/pass/components/Groups/GroupsProvider';
+import { MaybeGroupName } from '@proton/pass/components/Groups/MaybeGroupName';
 import { ShareMemberAvatar } from '@proton/pass/components/Invite/Member/ShareMemberAvatar';
 import type { InviteRecommendationsProps } from '@proton/pass/components/Invite/Steps/InviteRecommendations';
 import type { MaybeNull } from '@proton/pass/types';
@@ -40,7 +41,7 @@ export const InviteRecommendationRow: FC<Props> = ({
     onToggle,
 }) => {
     const suggestion = suggestions.at(index);
-    const { name } = useMaybeGroup(suggestion?.email);
+    const { maybeGroupProps } = useMaybeGroup(suggestion?.email);
     const disabled = suggestion && excluded.has(suggestion.email);
 
     if (suggestion) {
@@ -55,7 +56,9 @@ export const InviteRecommendationRow: FC<Props> = ({
                 >
                     <div className="flex flex-nowrap items-center flex-1">
                         <ShareMemberAvatar email={suggestion.email} isGroup={suggestion.isGroup} />
-                        <div className="flex-1 text-ellipsis mr-2">{name}</div>
+                        <div className="flex-1 mr-2">
+                            <MaybeGroupName {...maybeGroupProps} />
+                        </div>
                     </div>
                 </Checkbox>
             </div>
