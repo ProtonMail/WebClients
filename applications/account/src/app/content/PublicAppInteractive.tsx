@@ -7,17 +7,20 @@ import { loadCrypto } from '@proton/account/bootstrap';
 import UnauthenticatedApiProvider from '@proton/components/containers/api/UnauthenticatedApiProvider';
 import type { OnLoginCallback } from '@proton/components/containers/app/interface';
 import UnAuthenticated from '@proton/components/containers/authentication/UnAuthenticated';
+import { openLinkInBrowser } from '@proton/components/containers/desktop/openExternalLink';
 import ForceRefreshContext from '@proton/components/containers/forceRefresh/context';
 import { AuthType } from '@proton/components/containers/login/interface';
 import PublicAppSetup from '@proton/components/containers/publicAppSetup/PublicAppSetup';
 import useApi from '@proton/components/hooks/useApi';
 import { getUIDApi } from '@proton/shared/lib/api/helpers/customConfig';
+import { getAppHref } from '@proton/shared/lib/apps/helper';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getIsPassApp, getIsVPNApp, getToAppName } from '@proton/shared/lib/authentication/apps';
 import { produceOAuthFork } from '@proton/shared/lib/authentication/fork';
 import type { ActiveSession, GetActiveSessionsResult } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { APPS, type APP_NAMES, CLIENT_TYPES, SSO_PATHS, VPN_TV_PATH_WITH_CODE } from '@proton/shared/lib/constants';
 import { replaceUrl } from '@proton/shared/lib/helpers/browser';
+import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { FlagProvider } from '@proton/unleash/proxy';
 import noop from '@proton/utils/noop';
 
@@ -66,6 +69,22 @@ import { type ProduceForkData, SSOType } from './actions/forkInterface';
 import { getSanitizedLocationDescriptorObject } from './actions/getSanitizedLocationDescriptorObject';
 import type { LoginLocationState, LoginResult } from './actions/interface';
 import { type Paths, UNAUTHENTICATED_ROUTES } from './helper';
+
+// Born-private flows are not supported inside the desktop app (no child account creation in-app).
+// When the account view navigates to these paths, redirect to the browser instead.
+const BornPrivateDesktopRedirect = () => {
+    useEffect(() => {
+        openLinkInBrowser(window.location.href);
+        // Go back to URL the user opened the link from
+        window.history.back();
+        // In case the back command doesn't work, fallback to a redirect in 15 seconds since the desktop app will be
+        // in a broken state otherwise
+        setTimeout(() => {
+            window.location.href = getAppHref('/', 'proton-mail');
+        }, 15_000);
+    }, []);
+    return null;
+};
 
 let cryptoWorkerPromise: Promise<void> | undefined;
 
@@ -329,6 +348,11 @@ const PublicAppInteractive = ({
                     <PassExtensionOnboarding />
                 </UnauthenticatedApiProvider>
             </Route>
+            {isElectronMail && (
+                <Route path={SSO_PATHS.BORN_PRIVATE}>
+                    <BornPrivateDesktopRedirect />
+                </Route>
+            )}
             {blockingLoginEffect && <Route path="*">{blockingLoginEffect}</Route>}
             <Route path="*">
                 <UnauthenticatedApiProvider unauthenticatedApi={extraThunkArguments.unauthenticatedApi}>
