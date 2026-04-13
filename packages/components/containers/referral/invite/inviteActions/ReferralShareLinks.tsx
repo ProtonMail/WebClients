@@ -3,6 +3,7 @@ import { c } from 'ttag';
 import { Href } from '@proton/atoms/Href/Href';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
+import { useReferralTelemetry } from '../../hooks/useReferralTelemetry';
 import FacebookIcon from './icons/facebook.svg';
 import LinkedInIcon from './icons/linkedIn.svg';
 import RedditIcon from './icons/reddit.svg';
@@ -13,15 +14,17 @@ interface ShareLinkProps {
     href: string;
     img: string;
     title: string;
+    onClick?: () => void;
 }
 
-const ShareLink = ({ href, img, title }: ShareLinkProps) => {
+const ShareLink = ({ href, img, title, onClick }: ShareLinkProps) => {
     return (
         <Href
             className="interactive-pseudo rounded relative shrink-0 grow-0"
             rel="noopener noreferrer"
             href={href}
             title={title}
+            onClick={onClick}
         >
             <img src={img} alt="" className="rounded w-custom ratio-square" style={{ '--w-custom': '36px' }} />
         </Href>
@@ -38,6 +41,8 @@ const getShareLinkTitle = (name: string) => {
 };
 
 const ReferralShareLinks = ({ referralLink }: ReferralShareLinksProps) => {
+    const { sendShare } = useReferralTelemetry();
+
     const encodedLink = encodeURIComponent(referralLink);
     const text = encodeURIComponent(
         c('Referral')
@@ -52,11 +57,31 @@ const ReferralShareLinks = ({ referralLink }: ReferralShareLinksProps) => {
 
     return (
         <div className="flex gap-2">
-            <ShareLink href={linkedInURL} img={LinkedInIcon} title={getShareLinkTitle('LinkedIn')} />
-            <ShareLink href={xURL} img={XIcon} title={getShareLinkTitle('X')} />
-            <ShareLink href={redditURL} img={RedditIcon} title={getShareLinkTitle('Reddit')} />
-            <ShareLink href={facebookURL} img={FacebookIcon} title={getShareLinkTitle('Facebook')} />
-            <ShareLink href={whatsappURL} img={WhatsappIcon} title={getShareLinkTitle('Whatsapp')} />
+            <ShareLink
+                href={linkedInURL}
+                img={LinkedInIcon}
+                title={getShareLinkTitle('LinkedIn')}
+                onClick={() => sendShare('linkedin')}
+            />
+            <ShareLink href={xURL} img={XIcon} title={getShareLinkTitle('X')} onClick={() => sendShare('x')} />
+            <ShareLink
+                href={redditURL}
+                img={RedditIcon}
+                title={getShareLinkTitle('Reddit')}
+                onClick={() => sendShare('reddit')}
+            />
+            <ShareLink
+                href={facebookURL}
+                img={FacebookIcon}
+                title={getShareLinkTitle('Facebook')}
+                onClick={() => sendShare('facebook')}
+            />
+            <ShareLink
+                href={whatsappURL}
+                img={WhatsappIcon}
+                title={getShareLinkTitle('Whatsapp')}
+                onClick={() => sendShare('whatsapp')}
+            />
         </div>
     );
 };
