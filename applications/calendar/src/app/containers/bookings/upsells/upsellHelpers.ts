@@ -35,6 +35,8 @@ export const hasUserReachPlanLimit = (
         case ADDON_NAMES.MEET_MAIL_PRO:
         case ADDON_NAMES.MEET_DUO:
         case ADDON_NAMES.MEET_FAMILY:
+        case ADDON_NAMES.MEET_MAIL_BUSINESS:
+        case ADDON_NAMES.MEET_BUNDLE_PRO:
         case PLANS.VISIONARY:
         case PLANS.MAIL_BUSINESS:
         case PLANS.BUNDLE_PRO:
