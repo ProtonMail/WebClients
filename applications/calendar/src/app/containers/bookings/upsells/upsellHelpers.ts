@@ -58,7 +58,7 @@ export const hasUserReachPlanLimit = (
 
 /**
  * Checks the eligibility of the organisation members for a booking limit based on their subscription and bookings pages.
- * The logic is simple for the moment, any organisation member with a paid mail or meet access can create up to MAX_BOOKING_PAGES bookings.
+ * The logic is simple for the moment, any organisation member with a paid meet access can create up to MAX_BOOKING_PAGES bookings.
  *
  * This logic might change when adding support for other subscription plans.
  * The logic might need to be based on plan name to get the limits.
