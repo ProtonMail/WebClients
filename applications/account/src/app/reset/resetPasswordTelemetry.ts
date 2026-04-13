@@ -5,10 +5,18 @@ import type { RecoveryMethod } from '@proton/shared/lib/api/reset';
 import { TelemetryMeasurementGroups, TelemetryResetPasswordEvents } from '@proton/shared/lib/api/telemetry';
 import { sendTelemetryReport, telemetryReportsBatchQueue } from '@proton/shared/lib/helpers/metrics';
 
+interface EventProps {
+    step: string;
+    method: RecoveryMethod | undefined;
+}
+interface Props {
+    variant: 'A' | 'B';
+}
+
 /**
  * Hook to send reset password flow telemetry via the API.
  */
-export const useResetPasswordTelemetry = () => {
+export const useResetPasswordTelemetry = ({ variant }: Props) => {
     const api = useApi();
 
     const commonProps = {
@@ -18,7 +26,7 @@ export const useResetPasswordTelemetry = () => {
     };
 
     const commonDimensions = {
-        variant: 'A',
+        variant,
     };
 
     const sendResetPasswordPageLoad = useCallback(() => {
@@ -26,11 +34,34 @@ export const useResetPasswordTelemetry = () => {
             ...commonProps,
             dimensions: {
                 ...commonDimensions,
+                step: 'entry',
             },
             event: TelemetryResetPasswordEvents.page_load,
         });
+    }, [api]);
+
+    const sendResetPasswordPageExit = useCallback(() => {
+        void sendTelemetryReport({
+            ...commonProps,
+            dimensions: {
+                ...commonDimensions,
+                step: 'exit',
+            },
+            event: TelemetryResetPasswordEvents.page_exit,
+        });
         void telemetryReportsBatchQueue.flush();
     }, [api]);
+
+    const sendResetPasswordStepLoad = useCallback(
+        ({ step }: Omit<EventProps, 'method'>) => {
+            void sendTelemetryReport({
+                ...commonProps,
+                event: TelemetryResetPasswordEvents.step_load,
+                dimensions: { step, ...commonDimensions },
+            });
+        },
+        [api]
+    );
 
     const sendResetPasswordRecoveryMethodsRequested = useCallback(
         ({
@@ -45,18 +76,18 @@ export const useResetPasswordTelemetry = () => {
 
                 event: TelemetryResetPasswordEvents.recovery_methods_requested,
                 dimensions: {
+                    step: 'entry',
                     hasPasswordResetMethod: String(hasPasswordResetMethod),
                     hasDataRecoveryMethod: String(hasDataRecoveryMethod),
                     ...commonDimensions,
                 },
             });
-            void telemetryReportsBatchQueue.flush();
         },
         [api]
     );
 
     const sendResetPasswordCodeSent = useCallback(
-        ({ method }: { method: RecoveryMethod | undefined }) => {
+        ({ method, step }: EventProps) => {
             if (method === undefined) {
                 return;
             }
@@ -65,15 +96,14 @@ export const useResetPasswordTelemetry = () => {
                 ...commonProps,
 
                 event: TelemetryResetPasswordEvents.code_sent,
-                dimensions: { method, ...commonDimensions },
+                dimensions: { method, step, ...commonDimensions },
             });
-            void telemetryReportsBatchQueue.flush();
         },
         [api]
     );
 
     const sendResetPasswordMethodValidated = useCallback(
-        ({ method }: { method: RecoveryMethod | undefined }) => {
+        ({ method, step }: EventProps) => {
             if (method === undefined) {
                 return;
             }
@@ -81,15 +111,14 @@ export const useResetPasswordTelemetry = () => {
             void sendTelemetryReport({
                 ...commonProps,
                 event: TelemetryResetPasswordEvents.method_validated,
-                dimensions: { method, ...commonDimensions },
+                dimensions: { method, step, ...commonDimensions },
             });
-            void telemetryReportsBatchQueue.flush();
         },
         [api]
     );
 
     const sendResetPasswordSuccess = useCallback(
-        ({ method }: { method: RecoveryMethod | undefined }) => {
+        ({ method, step }: EventProps) => {
             if (method === undefined) {
                 return;
             }
@@ -97,7 +126,7 @@ export const useResetPasswordTelemetry = () => {
             void sendTelemetryReport({
                 ...commonProps,
                 event: TelemetryResetPasswordEvents.success,
-                dimensions: { method, ...commonDimensions },
+                dimensions: { method, step, ...commonDimensions },
             });
             void telemetryReportsBatchQueue.flush();
         },
@@ -105,7 +134,7 @@ export const useResetPasswordTelemetry = () => {
     );
 
     const sendResetPasswordFailure = useCallback(
-        ({ step, method }: { step: string; method: RecoveryMethod | undefined }) => {
+        ({ step, method }: EventProps) => {
             if (method === undefined) {
                 return;
             }
@@ -122,6 +151,8 @@ export const useResetPasswordTelemetry = () => {
 
     return {
         sendResetPasswordPageLoad,
+        sendResetPasswordPageExit,
+        sendResetPasswordStepLoad,
         sendResetPasswordRecoveryMethodsRequested,
         sendResetPasswordCodeSent,
         sendResetPasswordMethodValidated,

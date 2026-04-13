@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -6,12 +8,20 @@ import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFi
 import { UserNameWithIcon } from '../../../components/username/UserNameWithIcon';
 import Content from '../../../public/Content';
 import Header from '../../../public/Header';
+import { useResetPasswordTelemetry } from '../../../reset/resetPasswordTelemetry';
 import type { UnauthedForgotPasswordStateMachine } from '../../state-machine/UnauthedForgotPasswordStateMachine';
 import { useMachineWizard } from '../../wizard/MachineWizardProvider';
 
 export const ConfirmMnemonicPhraseRecovery = () => {
     const { send, snapshot } = useMachineWizard<typeof UnauthedForgotPasswordStateMachine>();
     const { username } = snapshot.context;
+
+    const { sendResetPasswordStepLoad } = useResetPasswordTelemetry({ variant: 'B' });
+    useEffect(() => {
+        sendResetPasswordStepLoad({
+            step: 'mnemonicRecoveryConfirmPhrase',
+        });
+    }, []);
 
     return (
         <>

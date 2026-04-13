@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -20,6 +20,7 @@ import { UserNameWithIcon } from '../../../components/username/UserNameWithIcon'
 import { getSMSVerificationCodeText } from '../../../content/helper';
 import Content from '../../../public/Content';
 import Header from '../../../public/Header';
+import { useResetPasswordTelemetry } from '../../../reset/resetPasswordTelemetry';
 import { getDeviceRecoveryLevel } from '../../actions';
 import { useRequestCode } from '../../hooks/useRequestCode';
 import { useRequestNewVerificationCode } from '../../hooks/useRequestNewVerificationCode';
@@ -29,6 +30,8 @@ import { useMachineWizard } from '../../wizard/MachineWizardProvider';
 export const VerifySMSRecoveryCode = () => {
     const { send, snapshot } = useMachineWizard<typeof UnauthedForgotPasswordStateMachine>();
     const { username, redactedRecoveryPhoneNumber } = snapshot.context;
+    const { sendResetPasswordMethodValidated, sendResetPasswordStepLoad, sendResetPasswordCodeSent } =
+        useResetPasswordTelemetry({ variant: 'B' });
 
     const silentApi = useSilentApi();
     const [loading, withLoading] = useLoading();
@@ -37,6 +40,12 @@ export const VerifySMSRecoveryCode = () => {
     const [code, setCode] = useState('');
     const errorHandler = useErrorHandler();
     const RedactedPhoneNumber = <strong key="redacted-phone-number">{redactedRecoveryPhoneNumber}</strong>;
+
+    useEffect(() => {
+        sendResetPasswordStepLoad({
+            step: 'verifyRecoverySms',
+        });
+    }, []);
 
     const requestCode = useRequestCode({
         method: 'phone',
@@ -48,7 +57,9 @@ export const VerifySMSRecoveryCode = () => {
     const handleResend = () => {
         setCode('');
         setHasInvalidCodeError(null);
-        return withLoading(requestCode());
+        return withLoading(
+            requestCode().then(() => sendResetPasswordCodeSent({ step: 'verifyRecoverySms', method: 'sms' }))
+        );
     };
 
     const { RequestNewCodeModal, InvalidCodeErrorMessage, AssistiveText } = useRequestNewVerificationCode({
@@ -61,7 +72,7 @@ export const VerifySMSRecoveryCode = () => {
         try {
             const resetResponse = await silentApi<ValidateResetTokenResponse>(validateResetToken(username, code));
             const deviceRecoveryLevel = await getDeviceRecoveryLevel(resetResponse);
-
+            sendResetPasswordMethodValidated({ step: 'verifyRecoverySms', method: 'sms' });
             send({
                 type: 'sms.code.validated',
                 payload: {
