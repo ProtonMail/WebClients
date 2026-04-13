@@ -2053,8 +2053,7 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
-        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
+        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -2765,7 +2764,7 @@
         "Kuruluşunuz ${ PASS_APP_NAME } erişiminizi güvence altına almanızı zorunlu kılmış"
       ],
       "To configure shortcuts, go to about:addons in Firefox and select \"Manage Extension Shortcuts\"": [
-        "Kısayolları yapılandırmak için Firefox'ta about:addons adresine gidin ve \"Eklenti Kısayollarını Yönet\" seçeneğini seçin"
+        "Kısayolları yapılandırmak için Firefox üzerinde about:addons adresini açın ve ayarlar simgesine tıklayarak \"Eklenti kısayollarını yönet\" seçeneğine tıklayın"
       ]
     },
     "Keyboard key": {

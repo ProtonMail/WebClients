@@ -2026,7 +2026,7 @@
         "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "将项目移动到另一个保险库会删除其安全链接。"
+        "将项目移至其他保险库会清除其安全链接。"
       ],
       "Moving items": [
         "正在移动"
@@ -2729,6 +2729,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "您的组织要求您确保您对 ${ PASS_APP_NAME }的访问"
+      ],
+      "To configure shortcuts, go to about:addons in Firefox and select \"Manage Extension Shortcuts\"": [
+        "若要配置快捷键，请在 Firefox 中访问 about:addons 并选择“管理扩展快捷键”"
       ]
     },
     "Keyboard key": {
