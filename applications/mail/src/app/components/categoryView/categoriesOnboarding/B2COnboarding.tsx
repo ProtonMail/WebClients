@@ -45,7 +45,7 @@ export const B2COnboarding = ({ flagValue }: Props) => {
     return (
         <>
             <div
-                className="m-4 h-auto p-4 bg-norm rounded-lg shadow max-w-custom shrink-0"
+                className="m-4 h-auto p-4 bg-norm rounded-lg max-w-custom shrink-0 shadow-norm"
                 style={{ '--max-w-custom': '36.25rem' }}
             >
                 <h2 className="text-semibold text-rg mb-2">{c('Title').t`Introducing email categories`}</h2>
