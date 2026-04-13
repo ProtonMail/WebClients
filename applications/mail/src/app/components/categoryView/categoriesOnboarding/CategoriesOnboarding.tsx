@@ -1,6 +1,6 @@
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 
-import { params } from 'proton-mail/store/elements/elementsSelectors';
+import { selectCategoryIDs } from 'proton-mail/store/elements/elementsSelectors';
 import { useMailSelector } from 'proton-mail/store/hooks';
 
 import { B2COnboarding } from './B2COnboarding';
@@ -14,22 +14,25 @@ interface Props {
 }
 
 export const CategoriesOnboarding = ({ audience, flagValue }: Props) => {
-    const { labelID } = useMailSelector(params);
+    const categoryIDs = useMailSelector(selectCategoryIDs);
+    const categoryID = categoryIDs.includes(MAILBOX_LABEL_IDS.CATEGORY_DEFAULT)
+        ? MAILBOX_LABEL_IDS.CATEGORY_DEFAULT
+        : categoryIDs[0];
 
     if (audience === AudienceType.B2B) {
-        if (B2BOnboardinCategoriesWithCards.has(labelID)) {
-            return <CategoryCard audienceType={AudienceType.B2B} labelID={labelID} flagValue={flagValue} />;
+        if (B2BOnboardinCategoriesWithCards.has(categoryID)) {
+            return <CategoryCard audienceType={AudienceType.B2B} categoryID={categoryID} flagValue={flagValue} />;
         }
     } else if (audience === AudienceType.B2C) {
-        if (labelID === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT) {
+        if (categoryID === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT) {
             // We don't want to show the onboarding if the user has already seen it
             if (hasSeeFullDisplay(flagValue)) {
                 return null;
             }
 
             return <B2COnboarding flagValue={flagValue} />;
-        } else if (B2COnboardinCategoriesWithCards.has(labelID)) {
-            return <CategoryCard audienceType={AudienceType.B2C} labelID={labelID} flagValue={flagValue} />;
+        } else if (B2COnboardinCategoriesWithCards.has(categoryID)) {
+            return <CategoryCard audienceType={AudienceType.B2C} categoryID={categoryID} flagValue={flagValue} />;
         }
     }
 

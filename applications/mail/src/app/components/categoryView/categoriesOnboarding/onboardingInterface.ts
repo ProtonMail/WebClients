@@ -1,3 +1,4 @@
+import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 
@@ -23,14 +24,13 @@ export enum CategoriesOnboardingFlags {
 
 export const FeatureValueDefault = -1 as const;
 
-export const B2COnboardinCategoriesWithCards = new Set<string>([
+export const B2COnboardinCategoriesWithCards = new Set<CategoryLabelID>([
     MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
     MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
     MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
     MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS,
 ]);
-
-export const B2BOnboardinCategoriesWithCards = new Set<string>([
+export const B2BOnboardinCategoriesWithCards = new Set<CategoryLabelID>([
     MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS,
     MAILBOX_LABEL_IDS.CATEGORY_UPDATES,
 ]);
