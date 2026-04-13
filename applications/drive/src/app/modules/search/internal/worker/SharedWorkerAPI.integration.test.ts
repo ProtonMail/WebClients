@@ -463,6 +463,26 @@ describe('SharedWorkerAPI integration', () => {
         });
     });
 
+    describe('Scenario: duplicate registerClient is a noop', () => {
+        it('does not re-index when the same client registers twice', async () => {
+            await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
+            await state.waitForInitialIndexingStart();
+            await state.waitForSearchable();
+            await verifyThatUserCanSearchIndexProperly(api);
+
+            // Re-registering the same client should not trigger another indexing cycle.
+            state.checkpoint();
+            await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
+
+            // Give it a moment — if re-indexing were triggered we'd see isIndexing: true.
+            await jest.advanceTimersByTimeAsync(1_000);
+            state.expectNoUpdatesSinceCheckpoint();
+
+            // Search still works with the existing index.
+            await verifyThatUserCanSearchIndexProperly(api);
+        });
+    });
+
     // TODO: Add version upgrade scenario
     // TODO: Add incremental update scenario
     // TODO: Add shared_with_me scenarios: tree removed, tree added
