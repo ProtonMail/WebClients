@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
+import { useSelector } from '@xstate/react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
@@ -16,6 +17,7 @@ import { mnemonicToBase64RandomBytes } from '@proton/shared/lib/mnemonic';
 import { srpAuth } from '@proton/shared/lib/srp';
 
 import { useVerifyOwnershipWithPhraseActorRef } from '../../UnauthedLost2FAContainer';
+import { useUnauthedLost2FATelemetry } from '../../useUnauthedLost2FATelemetry';
 
 interface Props {
     username: string;
@@ -24,6 +26,17 @@ interface Props {
 export const VerifyOwnershipWithPhraseStep = ({ username }: Props) => {
     const actorRef = useVerifyOwnershipWithPhraseActorRef();
     const { send } = actorRef;
+
+    const verifyPhrase = useSelector(actorRef, (s) => s.matches('verify phrase'));
+
+    const { sendStepLoad } = useUnauthedLost2FATelemetry();
+    useEffect(() => {
+        if (!verifyPhrase) {
+            return;
+        }
+
+        sendStepLoad('verify ownership with phrase');
+    }, [verifyPhrase]);
 
     const api = useApi();
     const handleError = useErrorHandler();

@@ -9,7 +9,7 @@ import type { Lost2FARecoveryMethods } from './state-machine/unauthedLost2FAStat
 type Cohort = 'none' | 'single' | 'multiple';
 
 const getCohort = (recoveryMethods: Lost2FARecoveryMethods): Cohort => {
-    const count = [recoveryMethods.email, recoveryMethods.phone].filter(Boolean).length;
+    const count = [recoveryMethods.email, recoveryMethods.phone, recoveryMethods.phrase].filter(Boolean).length;
     if (count === 0) {
         return 'none';
     }
