@@ -1501,7 +1501,10 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč"
+        "Dôveryhodný kľúč",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -1697,6 +1700,15 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ],
+      "Connect to Gmail": [
+        "Pripojiť ku Gmailu"
+      ],
+      "Or remove forwarding address": [
+        "Alebo odstráňte adresu preposielania"
+      ],
+      "Reconnect to Gmail": [
+        "Znova sa pripojiť ku Gmailu"
       ]
     },
     "action": {
@@ -4257,6 +4269,93 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Už ste vytvorili 10 aliasov. Získajte neobmedzený počet aliasov a 500 GB úložiska s ${ BRAND_NAME } Unlimited."
+      ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Zabráňte spoločnosti Google v profilovaní vašej osoby. Gmail nemá prehľad o tom, čo robíte v aplikácii ${ MAIL_APP_NAME }"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Emaily odoslané na adresu ${ connectedAddressText } sa teraz zobrazia v ${ MAIL_APP_NAME }."
+      ],
+      "No ads. No trackers.": [
+        "Žiadne reklamy. Žiadne sledovacie nástroje."
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "Čítajte, odpovedajte a majte prehľad o Gmaile z aplikácie ${ MAIL_APP_NAME }"
+      ],
+      "Send and receive Gmail correspondence directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "Odosielajte a prijímajte Gmailovú poštu priamo v ${ MAIL_APP_NAME }. Pripojte svoju adresu v ${ addressesSettingsLink }."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "K tomu môže dôjsť, ak boli zrušené oprávnenia alebo ste si zmenili heslo."
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "Pre pripojenie inej adresy Gmail odstráňte extra adresy Gmail, ktoré sa preposielajú na ${ BRAND_NAME }."
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "Na pripojenie ${ MAX_SYNC_PAID_USER } Gmailovej adresy navýšte úroveň na ${ planName }.",
+        "Na pripojenie až ${ MAX_SYNC_PAID_USER } Gmailových adries navýšte úroveň na ${ planName }.",
+        "Na pripojenie až ${ MAX_SYNC_PAID_USER } Gmailových adries navýšte úroveň na ${ planName }.",
+        "Na pripojenie až ${ MAX_SYNC_PAID_USER } Gmailových adries navýšte úroveň na ${ planName }."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Ak chcete aj naďalej dostávať a odosielať správy Gmail v službe ${ BRAND_NAME }, pripojte svoje účet znova, prosím."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Ak chcete aj naďalej dostávať a odosielať správy Gmail v službe ${ BRAND_NAME }, pripojte svoje účty znova, prosím."
+      ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "Navýšte úroveň na ${ planName } pre pripojenie až ${ MAX_SYNC_PAID_USER } účtov"
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Už nemáme prístup k ${ boldEmails }."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "Načítame vaše staré emaily a prepojíme váš Gmail s aplikáciou ${ MAIL_APP_NAME }, aby sa nové správy zobrazovali automaticky"
+      ],
+      "We've started importing your email from Gmail. We'll let you know when it's done.": [
+        "Začali sme importovať vaše emaily z Gmailu. Dáme vám vedieť, keď bude import hotový."
+      ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Už máte Gmailovú adresu presmerovanú do aplikácie ${ MAIL_APP_NAME }. Pripojte ju nižšie, aby ste mohli odosielať a prijímať emaily priamo z aplikácie ${ MAIL_APP_NAME }."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Už máte nastavené presmerovanie adries Gmailu do aplikácie ${ MAIL_APP_NAME }. Pripojte nižšie uvedenú adresu, aby ste mohli odosielať a prijímať emaily priamo z aplikácie ${ MAIL_APP_NAME }."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Teraz môžete posielať emaily z ${ BRAND_NAME } pomocou tejto adresy."
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "Preposielate ${ numAddressesOrSync } Gmailovú adresu do aplikácie ${ MAIL_APP_NAME }.",
+        "Preposielate ${ numAddressesOrSync } Gmailové adresy do aplikácie ${ MAIL_APP_NAME }.",
+        "Preposielate ${ numAddressesOrSync } Gmailových adries do aplikácie ${ MAIL_APP_NAME }.",
+        "Preposielate ${ numAddressesOrSync } Gmailových adries do aplikácie ${ MAIL_APP_NAME }."
+      ],
+      "You're forwarding emails from ${ forwardingCount } Gmail address. By connecting it, you'll be able to both receive and reply in ${ MAIL_APP_NAME }": [
+        "Presmerovávate emaily z ${ forwardingCount } Gmailovej adresy. Po pripojení budete môcť v aplikácii ${ MAIL_APP_NAME } prijímať aj odpovedať na emaily.",
+        "Presmerovávate emaily z ${ forwardingCount } Gmailových adries. Po pripojení budete môcť v aplikácii ${ MAIL_APP_NAME } prijímať aj odpovedať na emaily.",
+        "Presmerovávate emaily z ${ forwardingCount } Gmailových adries. Po pripojení budete môcť v aplikácii ${ MAIL_APP_NAME } prijímať aj odpovedať na emaily.",
+        "Presmerovávate emaily z ${ forwardingCount } Gmailových adries. Po pripojení budete môcť v aplikácii ${ MAIL_APP_NAME } prijímať aj odpovedať na emaily."
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "Pripojili ste ${ MAX_SYNC_PAID_USER } Gmailovú adresu. Ak chcete pridať ďalšiu, najskôr odpojte jeden zo svojich pripojených účtov.",
+        "Pripojili ste ${ MAX_SYNC_PAID_USER } Gmailové adresy. Ak chcete pridať ďalšiu, najskôr odpojte jeden zo svojich pripojených účtov.",
+        "Pripojili ste ${ MAX_SYNC_PAID_USER } Gmailových adries. Ak chcete pridať ďalšiu, najskôr odpojte jeden zo svojich pripojených účtov.",
+        "Pripojili ste ${ MAX_SYNC_PAID_USER } Gmailových adries. Ak chcete pridať ďalšiu, najskôr odpojte jeden zo svojich pripojených účtov."
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "Do jedného externého účtu ste pripojili adresu v ${ MAIL_APP_NAME }."
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "Váš plán podporuje ${ MAX_SYNC_FREE_USER } Gmailovú adresu.",
+        "Váš plán podporuje ${ MAX_SYNC_FREE_USER } Gmailové adresy.",
+        "Váš plán podporuje ${ MAX_SYNC_FREE_USER } Gmailových adries.",
+        "Váš plán podporuje ${ MAX_SYNC_FREE_USER } Gmailových adries."
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "Váš plán podporuje najviac ${ MAX_SYNC_PAID_USER } Gmailovú adresu",
+        "Váš plán podporuje celkom ${ MAX_SYNC_PAID_USER } Gmailové adresy",
+        "Váš plán podporuje celkom ${ MAX_SYNC_PAID_USER } Gmailových adries",
+        "Váš plán podporuje celkom ${ MAX_SYNC_PAID_USER } Gmailových adries"
       ]
     },
     "description": {
@@ -5241,6 +5340,18 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Vyhľadávanie našlo príliš veľa výsledkov. Upresnite hľadanie a skúste to prosím znova."
+      ],
+      "Address could not be added.": [
+        "Adresu nebolo možné pridať."
+      ],
+      "Address is already added to your account": [
+        "Adresa už bola pridaná do vášho účtu"
+      ],
+      "Something went wrong while creating the address": [
+        "Pri vytváraní adresy došlo k chybe"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Pri načítavaní dostupných domén sa vyskytla chyba"
       ]
     },
     "error": {
@@ -7715,10 +7826,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -9207,6 +9315,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Ste len pár kliknutí od prehľadnej doručenej pošty."
+      ],
+      "Enter code": [
+        "Zadajte kód"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Ak ste stratili prístup k aplikácii na overovanie, môžete použiť jeden zo 16 záložných obnovovacích kódov, ktoré ste dostali pri nastavovaní dvojfaktorovej autentifikácie. ${ learnMoreLink }"
       ]
     },
     "info": {
@@ -10303,6 +10417,9 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Select which Gmail address to connect": [
+        "Vyberte, ktorú Gmailovú adresu chcete pripojiť"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11635,6 +11752,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skenujeme dark web a kontrolujeme, či nedošlo k úniku vašich adries alebo aliasov ${ BRAND_NAME }, a ak niečo nájdeme, okamžite vás upozorníme."
+      ],
+      "Appointment scheduling": [
+        "Plánovanie schôdzok"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Plánovanie schôdzok s ${ n } rezervačnou stránkou",
+        "Plánovanie schôdzok s ${ n } rezervačnými stránkami",
+        "Plánovanie schôdzok s ${ n } rezervačnými stránkami",
+        "Plánovanie schôdzok s ${ n } rezervačnými stránkami"
       ]
     },
     "new_plans: feature highlight": {
@@ -12114,6 +12240,9 @@
       ],
       "Trial started": [
         "Skúšobné obdobie začalo"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Vaša adresa ${ BRAND_NAME } je pripravená na použitie"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -16447,6 +16576,21 @@
       ],
       "✨ Categories are coming!": [
         "✨ Prichádzajú kategórie!"
+      ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Prineste svoj Gmail do ${ MAIL_APP_NAME }"
+      ],
+      "Disconnected from Gmail": [
+        "Odpojené od Gmailu"
+      ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Odosielajte a prijímajte Gmailovú poštu pomocou ${ MAIL_APP_NAME }"
+      ],
+      "Use Gmail securely in ${ MAIL_APP_NAME }": [
+        "Používajte Gmail bezpečne v ${ MAIL_APP_NAME }"
+      ],
+      "You are all set": [
+        "Všetko je nastavené"
       ]
     },
     "Today icon tooltip in mini calendar": {

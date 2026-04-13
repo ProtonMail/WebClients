@@ -1682,6 +1682,15 @@
       ],
       "Zoom out": [
         "축소"
+      ],
+      "Connect to Gmail": [
+        "Gmail 에 연결"
+      ],
+      "Or remove forwarding address": [
+        "혹은 포워딩 주소 삭제"
+      ],
+      "Reconnect to Gmail": [
+        "Gmail에 다시 연결"
       ]
     },
     "action": {
@@ -4179,6 +4188,48 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "이미 10개 별칭을 생성했습니다. ${ BRAND_NAME } Unlimited로 무제한 별칭과 500 GB 스토리지를 받아보세요."
+      ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Google의 염탐 가능성을 차단하세요. Gmail 은 사용자가 ${ MAIL_APP_NAME }에서 무엇을 하는지 볼 수 없습니다."
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "${ connectedAddressText }로 보내진 이메일은 이제 ${ MAIL_APP_NAME }에서 보여집니다."
+      ],
+      "No ads. No trackers.": [
+        "광고 없음. 트래커 없음."
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } 안에서 Gmail을 읽고, 답장하고 관리하세요."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "권한이 사라졌거나 비밀번호가 바뀌었을 때 일어날 수 있습니다."
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "새로운 Gmail 주소를 연결하려면, ${ BRAND_NAME }로 전달되는 기존 Gmail 주소를 삭제하세요."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "${ BRAND_NAME }에서 Gmail 메시지를 계속 송수신 하려면, 계정을 다시 연결해주세요."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "${ BRAND_NAME }에서 Gmail 메시지를 계속 송수신 하려면, 계정을 다시 연결해주세요."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "${ boldEmails }에 더 이상 접근할 수 없습니다."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "지난 이메일을 불러오고 Gmail을 ${ MAIL_APP_NAME }에 연결하여 새 메세지가 자동으로 표시되도록 합니다."
+      ],
+      "We've started importing your email from Gmail. We'll let you know when it's done.": [
+        "Gmail에서 이메일을 불러오기 시작했습니다. 완료되면 알려드리겠습니다."
+      ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "이미 ${ MAIL_APP_NAME }에 전달되는 Gmail 주소가 있습니다. 아래에서 주소를 연결 하고 ${ MAIL_APP_NAME }에서 직접 이메일을 주고 받을 수 있습니다."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "이미 ${ MAIL_APP_NAME }에 전달되는 Gmail 주소가 있습니다. 아래에서 주소를 연결 하고 ${ MAIL_APP_NAME }에서 직접 이메일을 주고 받을 수 있습니다."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "이제 이 주소를 이용해 ${ BRAND_NAME }로부터 이메일을 보낼 수 있습니다."
       ]
     },
     "description": {
@@ -5118,6 +5169,18 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "검색 결과가 너무 많습니다. 검색을 제한하고 다시 시도해주세요."
+      ],
+      "Address could not be added.": [
+        "주소를 추가할 수 없습니다."
+      ],
+      "Address is already added to your account": [
+        "이미 추가된 주소입니다."
+      ],
+      "Something went wrong while creating the address": [
+        "주소를 생성하는 동안 문제가 발생했습니다."
+      ],
+      "Something went wrong while fetching available domains": [
+        "사용가능한 도메인을 가져오는 동안 문제가 발생했습니다."
       ]
     },
     "error": {
@@ -8757,6 +8820,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "몇 번의 클릭만으로 정리된 받은 편지함을 만들어 보세요"
+      ],
+      "for ${ price }": [
+        "${ price }으로"
       ]
     },
     "info": {
@@ -9829,6 +9895,9 @@
       ],
       "ZIP code": [
         "우편번호"
+      ],
+      "Select which Gmail address to connect": [
+        "연결할 Gmail 주소를 선택하세요"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11514,6 +11583,9 @@
       ],
       "Trial started": [
         "체험기간이 시작되었습니다"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "${ BRAND_NAME } 주소를 사용할 수 있습니다."
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -15643,6 +15715,18 @@
       ],
       "✨ Categories are coming!": [
         "✨ 카테고리를 곧 만나보세요!"
+      ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "당신의 Gmail을 ${ MAIL_APP_NAME }로 가져오세요."
+      ],
+      "Disconnected from Gmail": [
+        "Gmail 연결 해제됨"
+      ],
+      "Use Gmail securely in ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME }에서 안전하게 Gmail 사용하기"
+      ],
+      "You are all set": [
+        "모든 준비가 완료되었어요"
       ]
     },
     "Today icon tooltip in mini calendar": {

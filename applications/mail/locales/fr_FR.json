@@ -1493,7 +1493,8 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Clé de confiance"
+        "Approuver la clé",
+        "Clés de confiance"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -7546,8 +7547,7 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image",
-        "Insérer des images"
+        "Insérer une image"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -11332,6 +11332,13 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Nous analysons le dark web et vérifions si vos adresses ou vos alias ${ BRAND_NAME } ont été divulgués et nous vous informons immédiatement des résultats."
+      ],
+      "Appointment scheduling": [
+        "Planification de rendez-vous"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Planification de rendez-vous avec ${ n } page de réservation",
+        "Planification de rendez-vous avec ${ n } pages de réservation"
       ]
     },
     "new_plans: feature highlight": {

@@ -1493,7 +1493,8 @@
         "De confiança"
       ],
       "Trust key": [
-        "Marca com a clau de confiança"
+        "Clau de confiança",
+        "Claus de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -7563,8 +7564,7 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge",
-        "Insereix imatges"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -11352,6 +11352,13 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escanegem el web fosc per a comprovar si les vostres adreces o àlies de ${ BRAND_NAME } s'han filtrat i us avisem immediatament si trobem alguna cosa."
+      ],
+      "Appointment scheduling": [
+        "Programació de cites"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Programació de cites amb ${ n } pàgina de reserva",
+        "Programació de cites amb ${ n } pàgines de reserva"
       ]
     },
     "new_plans: feature highlight": {
@@ -15081,7 +15088,7 @@
         "Confirmeu l'adreça del destinatari?"
       ],
       "Connect a Gmail address": [
-        "Connecteu-vos a una adreça de Gmail"
+        "Connecteu una adreça de Gmail"
       ],
       "Connect apps and devices": [
         "Connecteu aplicacions i dispositius"

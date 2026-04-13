@@ -1682,6 +1682,12 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Connect to Gmail": [
+        "Gmailに接続"
+      ],
+      "Reconnect to Gmail": [
+        "Gmailに再接続"
       ]
     },
     "action": {
@@ -1781,6 +1787,9 @@
       ],
       "Writing assistant seats": [
         "執筆アシスタントシート"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } ライセンス"
       ]
     },
     "Alert": {
@@ -4176,6 +4185,57 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "すでに 10 個のエリアスを作成しました。${ BRAND_NAME }Unlimitedで無制限のエイリアスと 500 GBのストレージを獲得しましょう。"
+      ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Google によるあなたのプロファイリングをブロックします。 ${ MAIL_APP_NAME } でのお客様の行動は Gmail からは閲覧できません"
+      ],
+      "No ads. No trackers.": [
+        "広告なし。トラッカーなし。"
+      ],
+      "Send and receive Gmail correspondence directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "${ MAIL_APP_NAME } で Gmail の送受信を直接行えます。 ${ addressesSettingsLink } でアドレスを接続してください。"
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "別のGmailアドレスに接続するには、${ BRAND_NAME }に転送されている余分なGmailアドレスを削除してください。"
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "最大${ MAX_SYNC_PAID_USER }件のGmailアドレスに接続するには、${ planName }にアップグレードしてください。"
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "${ BRAND_NAME }でGmailメッセージの送受信を続けるには、アカウントを再接続してください。"
+      ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "最大${ MAX_SYNC_PAID_USER }件のアカウントを接続するには${ planName }にアップグレードしてください"
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "${ boldEmails }へのアクセスができなくなりました。"
+      ],
+      "We've started importing your email from Gmail. We'll let you know when it's done.": [
+        "Gmailからメールのインポートを開始しました。完了したらお知らせします。"
+      ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "すでにGmailアドレスが${ MAIL_APP_NAME }に転送される設定になっています。以下から接続してお客様の${ MAIL_APP_NAME }で直接メールを送受信できるようにしましょう。"
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "${ BRAND_NAME } から、このアドレスを使用してメールを送信できるようになりました。"
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "${ numAddressesOrSync } 件のGmailアドレスを${ MAIL_APP_NAME }に転送しています。"
+      ],
+      "You're forwarding emails from ${ forwardingCount } Gmail address. By connecting it, you'll be able to both receive and reply in ${ MAIL_APP_NAME }": [
+        "${ forwardingCount }件のGmailアドレスからメールを転送しています。接続することで、${ MAIL_APP_NAME }で受信および返信ができるようになります"
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "${ MAX_SYNC_PAID_USER }件のGmailアドレスを接続しています。他にも追加するには、まず接続済みのアカウントの内1つを無効にしてください。"
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "外部アカウントアドレスの1件が${ MAIL_APP_NAME }に接続されました。"
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "あなたのプランでは${ MAX_SYNC_FREE_USER }件のGmailアドレスがサポートされています。"
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "あなたのプランでは、合計${ MAX_SYNC_PAID_USER }件のGmailアドレスをサポートしています。"
       ]
     },
     "description": {
@@ -4322,6 +4382,9 @@
       ],
       "You're forwarding emails from ${ MAX_SYNC_FREE_USER } external account to ${ MAIL_APP_NAME }.": [
         "お客様は${ MAX_SYNC_FREE_USER }個の外部アカウントから${ MAIL_APP_NAME }へメールを転送しています。"
+      ],
+      "You're forwarding emails from one external account to ${ MAIL_APP_NAME }.": [
+        "お客様は外部アカウントから${ MAIL_APP_NAME }へメールを転送しています。"
       ]
     },
     "Edit billing address form note": {
@@ -5100,6 +5163,12 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "一致する項目が多すぎるため、検索対象をより絞り込んでもう一度お試しください。"
+      ],
+      "Address is already added to your account": [
+        "アドレスはすでにアカウントに追加されています"
+      ],
+      "Invalid VAT number": [
+        "無効なVAT番号です"
       ]
     },
     "error": {
@@ -7301,7 +7370,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像を挿入"
+        "画像の挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -8715,6 +8784,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "不要なものが整理された受信トレイまで、あと数クリックです。"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME }シート"
+      ],
+      "for ${ price }": [
+        "${ price }で"
       ]
     },
     "info": {
@@ -9784,6 +9859,12 @@
       ],
       "ZIP code": [
         "郵便番号"
+      ],
+      "Select which Gmail address to connect": [
+        "接続するGmailアドレスを選択してください"
+      ],
+      "Share your availability with booking pages in ${ CALENDAR_APP_NAME }, and host secure meetings with ${ MEET_APP_NAME }.": [
+        "${ CALENDAR_APP_NAME }で予約ページと利用可能な時間を共有し、${ MEET_APP_NAME }で安全な会議をホストしましょう。"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -10239,6 +10320,12 @@
     "meet_2025: Addon": {
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME } ライセンス"
+      ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME }シート"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats }${ MEET_APP_NAME }シート"
       ]
     },
     "meet_2025: Feature": {
@@ -10289,11 +10376,17 @@
       ],
       "Up to ${ n } participant": [
         "最大${ n }人の参加者"
+      ],
+      "Video meetings, ${ n } participant": [
+        "ビデオ会議、${ n }名まで参加可能"
       ]
     },
     "meet_2025: Info": {
       "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
         "トライアル期間中、${ MEET_SHORT_APP_NAME }のシートを${ TRIAL_MAX_MEET_SEATS }ヶまでをご利用いただけます。"
+      ],
+      "${ seats } seat included": [
+        "${ seats }シートが含まれています"
       ]
     },
     "Message": {
@@ -11614,6 +11707,15 @@
       ],
       "Welcome to ${ MAIL_APP_NAME }": [
         "${ MAIL_APP_NAME } へようこそ"
+      ],
+      "Bring your emails into ${ MAIL_APP_NAME }": [
+        "メールを${ MAIL_APP_NAME }に取り込む"
+      ],
+      "Bring your existing email into ${ MAIL_APP_NAME } so you can manage everything from one private inbox.": [
+        "既存のメールを${ MAIL_APP_NAME }に取り込むと、すべてを1つのプライベート受信トレイで管理できるようになります。"
+      ],
+      "Protect your accounts": [
+        "アカウントを保護"
       ]
     },
     "Onboarding modal": {
@@ -15553,6 +15655,15 @@
       ],
       "✨ Categories are coming!": [
         "✨ カテゴリがまもなく登場します！"
+      ],
+      "Disconnected from Gmail": [
+        "Gmailから切断しました"
+      ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Gmail を ${ MAIL_APP_NAME } で送受信"
+      ],
+      "Use Gmail securely in ${ MAIL_APP_NAME }": [
+        "Gmail を ${ MAIL_APP_NAME } で安全に使用する"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -1501,7 +1501,10 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу"
+        "Давяраць ключу",
+        "Давяраць ключам",
+        "Давяраць ключам",
+        "Давяраць ключам"
       ],
       "Trust public key": [
         "Давяраць адкрытаму ключу"
@@ -1700,6 +1703,12 @@
       ],
       "Reconnect to Gmail": [
         "Перападключыцца да Gmail"
+      ],
+      "Connect to Gmail": [
+        "Падключыцца да Gmail"
+      ],
+      "Or remove forwarding address": [
+        "Або выдаліце адрас перасылкі"
       ]
     },
     "action": {
@@ -4320,6 +4329,33 @@
         "Ваш тарыфны план агулам падтрымлівае ${ MAX_SYNC_PAID_USER } адрасы Gmail",
         "Ваш тарыфны план у сукупнасці падтрымлівае ${ MAX_SYNC_PAID_USER } адрасоў Gmail",
         "Ваш тарыфны план у сукупнасці падтрымлівае ${ MAX_SYNC_PAID_USER } адрасоў Gmail"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "Лісты, якія адпраўленыя на ${ connectedAddressText }, цяпер будуць паказвацца ў ${ MAIL_APP_NAME }."
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "Чытайце, адказвайце і будзьце ў курсе таго, што адбываецца ў Gmail з дапамогай ${ MAIL_APP_NAME }"
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Гэта магло адбыцца з-за таго, што дазволы былі выдалены або ваш пароль зменены."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Перападключыце свой уліковы запіс, каб працягнуць атрыманне і адпраўку паведамленняў Gmail у ${ BRAND_NAME }."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Перападключыце свае ўліковыя запісы, каб працягнуць атрыманне і адпраўку паведамленняў Gmail у ${ BRAND_NAME }."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Больш не ўдаецца атрымаць доступ да ${ boldEmails }."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "Мы перанясём вашы старыя паведамленні і падключым ваш Gmail да ${ MAIL_APP_NAME }, каб новыя паведамленні з'яўляліся ў ім аўтаматычна."
+      ],
+      "We've started importing your email from Gmail. We'll let you know when it's done.": [
+        "Пачалося імпартаванне вашых лістоў з Gmail. Вы будзеце апавешчаны, калі працэс будзе завершаны."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "У вас ужо ёсць адрасы Gmail, якія перасылаюць лісты ў ${ MAIL_APP_NAME }. Падключыце адзін з іх ніжэй, каб адпраўляць і атрымліваць лісты наўпрост з ${ MAIL_APP_NAME }."
       ]
     },
     "description": {
@@ -4805,7 +4841,7 @@
         "Памылка пры запампоўванні далучэнняў. Паведамленне не адпраўлена."
       ],
       "Failed loading group members": [
-        "Збой загрузкі членаў групы"
+        "Збой загрузкі ўдзельнікаў групы"
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Не ўдалося зашыфраваць далучэнне. Паспрабуйце яшчэ раз."
@@ -5307,6 +5343,15 @@
       ],
       "Address is already added to your account": [
         "Адрас ужо дададзены ў ваш уліковы запіс"
+      ],
+      "Address could not be added.": [
+        "Немагчыма дадаць адрас."
+      ],
+      "Something went wrong while creating the address": [
+        "Нешта пайшло не так пры стварэнні адраса"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Нешта пайшло не так пры атрыманні даступных даменаў"
       ]
     },
     "error": {
@@ -7781,10 +7826,7 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс",
-        "Уставіць відарысы",
-        "Уставіць відарысы",
-        "Уставіць відарысы"
+        "Уставіць відарыс"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -9273,6 +9315,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "Вам засталося некалькі націскаў, каб навесці парадак у сваёй паштовай скрыні"
+      ],
+      "Enter code": [
+        "Увядзіце код"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Вы можаце выкарыстаць 1 з 16 рэзервовых кодаў аднаўлення, якія вы атрымалі пры наладжванні двухфактарнай аўтэнтыфікацыі, калі вы страцілі доступ да вашай праграмы аўтэнтыфікацыі. ${ learnMoreLink }"
       ]
     },
     "info": {
@@ -11704,6 +11752,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Наша сістэма сканіруе цёмную сетку для праверкі на прадмет уцечкі адрасоў і псеўданімаў ${ BRAND_NAME }. Вы неадкладна будзеце апавешчаны ў выпадку, калі нешта будзе выяўлена."
+      ],
+      "Appointment scheduling": [
+        "Планаванне сустрэч"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Планіруйце сустрэчы з ${ n } старонкай браніравання",
+        "Планіруйце сустрэчы з ${ n } старонкай браніравання",
+        "Планіруйце сустрэчы з ${ n } старонкамі браніравання",
+        "Планіруйце сустрэчы з ${ n } старонкамі браніравання"
       ]
     },
     "new_plans: feature highlight": {
@@ -11908,7 +11965,7 @@
         "Стварайце да ${ n } календароў або дадавайце календары ад сяброў, сям'і, калег і арганізацый"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
-        "Стварайце да ${ n } адрасоў электроннай пошты/псеўданімаў, якія вы можаце прызначыць членам сям'і. Выкарыстоўвайце іх для ідэнтычнасці ў інтэрнэце, напрыклад, JankaPakupnik@${ domain } для ўліковых запісаў пакупак."
+        "Стварайце да ${ n } адрасоў электроннай пошты/псеўданімаў, якія вы можаце прызначыць удзельнікам сям'і. Выкарыстоўвайце іх для ідэнтычнасці ў інтэрнэце, напрыклад, JankaPakupnik@${ domain } для ўліковых запісаў пакупак."
       ],
       "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
         "Карыстальніцкія дамены для псеўданімаў, дадатковыя паштовыя скрыні, магчымасць адпраўляць лісты з псеўданімаў і многае іншае"
@@ -12183,6 +12240,9 @@
       ],
       "Trial started": [
         "Пачаты пробны перыяд"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Ваш адрас ${ BRAND_NAME } гатовы да выкарыстання"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -16522,6 +16582,15 @@
       ],
       "Send and receive Gmail using ${ MAIL_APP_NAME }": [
         "Адпраўка і атрыманне лістоў Gmail з дапамогай ${ MAIL_APP_NAME }"
+      ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Перанясіце свае лісты ў ${ MAIL_APP_NAME }"
+      ],
+      "Use Gmail securely in ${ MAIL_APP_NAME }": [
+        "Выкарыстоўвайце Gmail бяспечна ў ${ MAIL_APP_NAME }"
+      ],
+      "You are all set": [
+        "Усё гатова"
       ]
     },
     "Today icon tooltip in mini calendar": {

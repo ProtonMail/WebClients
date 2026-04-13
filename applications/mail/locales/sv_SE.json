@@ -1493,7 +1493,8 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel"
+        "Lita på nyckel",
+        "Lita på nycklar"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -4257,6 +4258,9 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Ditt paket stöder totalt ${ MAX_SYNC_PAID_USER } Gmail-adress",
         "Ditt paket stöder ett totalt antal av ${ MAX_SYNC_PAID_USER } Gmail-adresser"
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Du har redan Gmail-adresser som vidarebefordras till ${ MAIL_APP_NAME }. Anslut en nedan för att skicka och ta emot e-post direkt från ${ MAIL_APP_NAME }."
       ]
     },
     "description": {
@@ -7507,8 +7511,7 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild",
-        "Infoga bilder"
+        "Infoga bild"
       ],
       "Insert link": [
         "Infoga länk"

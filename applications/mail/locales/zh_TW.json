@@ -1402,7 +1402,7 @@
         "停留"
       ],
       "Stop downloading assistant": [
-        "正在下載幫手"
+        "正在下載助理"
       ],
       "Stop generating result": [
         "停止產生結果"
@@ -1745,6 +1745,9 @@
       ],
       "Writing assistant seats": [
         "撰寫幫手就位"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } 授權"
       ]
     },
     "Alert": {
@@ -1818,13 +1821,13 @@
     },
     "Assistant option": {
       "Data remains on device to protect your privacy. Requires a download and compatible hardware.": [
-        "資料將保存於裝置以保護您的隱私。需要下載及兼容的硬體。"
+        "資料將保留在裝置上，以保護您的隱私。需下載並具備相容的硬體。"
       ],
       "Data stay on your device but requires a one-time download and compatible hardware": [
-        "資料會保留在您的裝置上，但需要一次性下載和相容的硬體"
+        "資料會保留在您的裝置上，但需要單次下載和相容的硬體"
       ],
       "Fast and secure. No logs are kept.": [
-        "塊和安全。無紀錄被保存。"
+        "快且安全。不會保留紀錄。"
       ],
       "No logs are kept to protect your privacy. Faster processing.": [
         "無日誌可以保護您的隱私；還有更快的速度。"
@@ -2548,6 +2551,9 @@
       ],
       "Total for ${ n } month": [
         " ${ n } 個月總計"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "${ cycle } 個月小計"
       ]
     },
     "Collapsible tooltip": {
@@ -4074,6 +4080,21 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已經創建10個別名。${ BRAND_NAME }無限版可獲得無限別名和500GB的儲存容量。"
+      ],
+      "No ads. No trackers.": [
+        "無廣告。無追蹤器。"
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "若連接至多 ${ MAX_SYNC_PAID_USER } Gmail 位址,升級至 ${ planName } 方案。"
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "您正在轉寄 ${ numAddressesOrSync } Gmail 位址至 ${ MAIL_APP_NAME }，"
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "您的帳號支援 ${ MAX_SYNC_FREE_USER } Gmail 位址。"
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "您的帳號支援最多 ${ MAX_SYNC_PAID_USER } Gmail 位址"
       ]
     },
     "description": {
@@ -4735,10 +4756,10 @@
         "從 ${ BRAND_NAME } 擷取出的使用者專屬主金鑰不適用於發送郵件"
       ],
       "Problem downloading the writing assistant. If you're using private mode, try using normal browsing mode or run the writing assistant on servers.": [
-        "下載撰寫幫手遇到困難。若為隱私模式，請嘗試正常模式或於伺服器執行。"
+        "下載寫作助理遇到困難。若為隱私模式，請嘗試一般瀏覽模式或於伺服器執行。"
       ],
       "Problem downloading the writing assistant. Please try again.": [
-        "下載寫作助手時出現問題。請稍後再試。"
+        "下載寫作助理時出現問題。請稍後再試。"
       ],
       "Problem loading the writing assistant to your device. Please try again.": [
         "在您的裝置載入寫作助手時出現問題。請稍後再試。"
@@ -6654,7 +6675,7 @@
         "清除瀏覽器資料也會停用此裝置上的訊息內容搜尋。所有訊息都將必須再次下載才能搜尋。"
       ],
       "Clears browser data (including downloaded messages, …)": [
-        "清除瀏覽器資料(包含已下載的訊息，…)"
+        "清除瀏覽器資料（包含已下載的訊息等）"
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "按一下「重新傳送驗證碼」向 ${ strong } 傳送新的驗證碼。如此手機號碼不正確，請按一下「編輯」作出修正。"
@@ -6966,7 +6987,7 @@
         "請於${ mailLink }登入以取得更多資訊或移除限制。"
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
-        "於任何時間存取電子郵件和優化的移動端使用體驗，下載我們的${ androidAppLink }或${ iosAppLink }。"
+        "隨時隨地使用電子郵件與最佳化的行動裝置體驗，請下載我們的${ androidAppLink }或${ iosAppLink }。"
       ],
       "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
         "為強化安全性，您可設定密碼短語。此密碼短語不會包含在行事曆邀請中，請記得另行與賓客分享。"
@@ -7116,7 +7137,7 @@
         "正在初始化 ..."
       ],
       "Insert image": [
-        "插入影像"
+        "插入圖像"
       ],
       "Insert link": [
         "插入連結"
@@ -7566,7 +7587,7 @@
         "請記得更新您此次修改至密碼管理器或是另外保存好您的登入資訊"
       ],
       "Removes all data associated with this app (including downloaded messages, …)": [
-        "請刪除這應用程式與相關資料(包括已下載訊息…)"
+        "刪除與此應用程式相關的所有資料（包括已下載的訊息等）"
       ],
       "Reporting a message as a phishing attempt will send the message to us, so we can analyze it and improve our filters. This means that we will be able to see the contents of the message in full.": [
         "檢舉一封郵件帶有網路釣魚的企圖，將會把郵件傳送給我們，讓我們可以分析郵件並改進我們的篩選。這意味我們將能夠完全飽覽郵件的內容。"
@@ -7821,7 +7842,7 @@
         "驗證過程將開新瀏覽器索引標籤。請停用任何使用中的彈出視窗攔截程式。"
       ],
       "The writing assistant needs to finish downloading before it can be used.": [
-        "在寫作助手就緒前，我們需要先完成下載。"
+        "在寫作助理就緒前，我們需要先完成下載。"
       ],
       "Themes can give your inbox a new look.": [
         "主題視覺讓您的收件匣煥然一新。"
@@ -8494,6 +8515,9 @@
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } 個席次"
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "新增 ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ]
     },
     "info": {
@@ -11417,7 +11441,7 @@
         "透過桌面應用程式享受更快，更專注的信件體驗"
       ],
       "For anytime access to email and optimized mobile experience, download our ${ mobileAppAppStoreLink } or ${ mobileAppGooglePlayLink } app.": [
-        "於任何時間存取電子郵件和優化的移動端使用體驗，下載我們的${ mobileAppAppStoreLink }或${ mobileAppGooglePlayLink }應用程式。"
+        "隨時隨地使用電子郵件與最佳化的行動裝置體驗，請下載我們的${ mobileAppAppStoreLink }或${ mobileAppGooglePlayLink }應用程式。"
       ],
       "Get notified if your password is compromised.": [
         "獲得提醒，當您的密碼處於危害。"
@@ -15110,6 +15134,9 @@
       ],
       "Keep this banner hidden?": [
         "保持隱藏此橫幅？"
+      ],
+      "Disconnected from Gmail": [
+        "與 Gmail 中斷連線"
       ]
     },
     "Today icon tooltip in mini calendar": {
