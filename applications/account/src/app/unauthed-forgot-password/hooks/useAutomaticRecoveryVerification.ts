@@ -4,6 +4,7 @@ import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import useLoading from '@proton/hooks/useLoading';
 import { type ValidateResetTokenResponse, validateResetToken } from '@proton/shared/lib/api/reset';
 
+import { useResetPasswordTelemetry } from '../../reset/resetPasswordTelemetry';
 import { DeviceRecoveryLevel } from '../actions';
 import type { UnauthedForgotPasswordStateMachine } from '../state-machine/UnauthedForgotPasswordStateMachine';
 import { useMachineWizard } from '../wizard/MachineWizardProvider';
@@ -18,6 +19,7 @@ export const useAutomaticRecoveryVerification = ({ onPreSubmit, onStartAuth, onS
     const [loading, withLoading] = useLoading();
     const { send } = useMachineWizard<typeof UnauthedForgotPasswordStateMachine>();
     const errorHandler = useErrorHandler();
+    const { sendResetPasswordMethodValidated } = useResetPasswordTelemetry({ variant: 'B' });
 
     const silentApi = useSilentApi();
 
@@ -36,7 +38,7 @@ export const useAutomaticRecoveryVerification = ({ onPreSubmit, onStartAuth, onS
                     const resetResponse = await silentApi<ValidateResetTokenResponse>(
                         validateResetToken(username, token)
                     );
-
+                    sendResetPasswordMethodValidated({ step: 'entry', method: 'mnemonic' });
                     send({
                         type: 'token.prefilled',
                         payload: {
