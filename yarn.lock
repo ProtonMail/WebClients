@@ -11729,6 +11729,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@proton/vpn@workspace:packages/vpn"
   dependencies:
+    "@proton/account": "workspace:^"
     "@proton/atoms": "workspace:^"
     "@proton/colors": "workspace:^"
     "@proton/components": "workspace:^"
