@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import { useEffect, useState } from 'react';
 
 import { useSelector } from '@xstate/react';
@@ -20,8 +21,13 @@ import { reauthBySmsVerification } from '@proton/shared/lib/api/verify';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { numberValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
-import { initiateVerification, verifyCode } from '../../../../containers/securityCheckup/verification/verification';
+import {
+    initiateVerification,
+    sendNewCode,
+    verifyCode,
+} from '../../../../containers/securityCheckup/verification/verification';
 import { getSMSVerificationCodeText } from '../../../../content/helper';
+import { useRequestNewVerificationCode } from '../../../../unauthed-forgot-password/hooks/useRequestNewVerificationCode';
 import { useVerifyOwnershipWithPhoneActorRef } from '../../UnauthedLost2FAContainer';
 
 type VerificationResult = Awaited<ReturnType<typeof initiateVerification>>;
@@ -35,7 +41,7 @@ const VerifyCodeStep = ({ verificationResult }: { verificationResult: Verificati
     const api = useApi();
 
     const [code, setCode] = useState('');
-    const [codeError, setCodeError] = useState('');
+    const [hasInvalidCodeError, setHasInvalidCodeError] = useState<ReactNode | null>(null);
     const [submittingCode, withSubmittingCode] = useLoading();
 
     const handleError = useErrorHandler();
@@ -44,7 +50,17 @@ const VerifyCodeStep = ({ verificationResult }: { verificationResult: Verificati
 
     const recoveryPhoneElement = <b key="recovery-phone">{verificationDataResult.ChallengeDestination}</b>;
 
-    const invalidCodeError = c('Safety review').t`Invalid code`;
+    const handleResend = () => {
+        setCode('');
+        setHasInvalidCodeError(null);
+        return sendNewCode({ api, method: 'phone', token });
+    };
+
+    const { RequestNewCodeModal, InvalidCodeErrorMessage, AssistiveText } = useRequestNewVerificationCode({
+        recoveryMethod: 'phone',
+        value: verificationDataResult.ChallengeDestination,
+        onResend: handleResend,
+    });
 
     const handleSubmitCode = async (code: string) => {
         try {
@@ -63,7 +79,7 @@ const VerifyCodeStep = ({ verificationResult }: { verificationResult: Verificati
             const { code } = getApiError(error);
 
             if (code === API_CUSTOM_ERROR_CODES.TOKEN_INVALID) {
-                setCodeError(invalidCodeError);
+                setHasInvalidCodeError(InvalidCodeErrorMessage);
                 return;
             }
 
@@ -95,14 +111,16 @@ const VerifyCodeStep = ({ verificationResult }: { verificationResult: Verificati
                 value={code}
                 onValue={(value: string) => {
                     setCode(value);
-                    setCodeError('');
+                    setHasInvalidCodeError('');
                 }}
-                error={validator([
-                    requiredValidator(code),
-                    numberValidator(code),
-                    code.length !== 6 ? c('Error').t`Enter 6 digits` : '',
-                    codeError,
-                ])}
+                error={
+                    validator([
+                        requiredValidator(code),
+                        numberValidator(code),
+                        code.length !== 6 ? c('Error').t`Enter 6 digits` : '',
+                    ]) || hasInvalidCodeError
+                }
+                assistiveText={AssistiveText}
             />
             <Button size="large" color="danger" type="submit" fullWidth loading={submittingCode} className="mb-2 mt-4">
                 {c('Action').t`Disable`}
@@ -110,6 +128,7 @@ const VerifyCodeStep = ({ verificationResult }: { verificationResult: Verificati
             <Button size="large" fullWidth onClick={() => send({ type: 'try another way' })}>
                 {c('Action').t`Verify another way`}
             </Button>
+            {RequestNewCodeModal}
         </Form>
     );
 };
