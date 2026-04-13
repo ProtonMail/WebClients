@@ -238,6 +238,20 @@ export const isBookingURL = (urlString: string) => {
     }
 };
 
+export const isBornPrivateURL = (urlString: string) => {
+    try {
+        const url = new URL(urlString);
+        if (getAppURL().account !== url.origin) {
+            return false;
+        }
+
+        // Match born private url patterns
+        return /^\/born-private/i.test(url.pathname);
+    } catch (error) {
+        return false;
+    }
+};
+
 const isElectronPrintingURL = (url: string): [isPrintUrl: boolean, isValidPrint: boolean] => {
     if (!url.startsWith(PRINT_DATA_URL_PREFIX)) {
         return [false, false];
