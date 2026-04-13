@@ -1,6 +1,6 @@
-import { isCategoryLabel, isCustomLabelOrFolder, isStringHumanLabelID } from '@proton/mail/helpers/location';
+import { isCustomLabelOrFolder, isStringHumanLabelID } from '@proton/mail/helpers/location';
 import type { EmailListDisplayTime } from '@proton/metrics/types/web_mail_performance_email_list_display_time_histogram_v1.schema';
-import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import type { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
 
@@ -33,10 +33,6 @@ export const getPageSizeString = (settings: MailSettings | undefined) => {
 export const getLabelID = (labelID: string): SupportedLabelID | 'custom' => {
     if (isCustomLabelOrFolder(labelID)) {
         return 'custom';
-    }
-
-    if (isCategoryLabel(labelID)) {
-        return MAILBOX_LABEL_IDS.INBOX;
     }
 
     return labelID as SupportedLabelID;
