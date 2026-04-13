@@ -44,7 +44,10 @@ export const B2COnboarding = ({ flagValue }: Props) => {
 
     return (
         <>
-            <div className="m-4 p-4 bg-norm rounded-lg shadow max-w-custom" style={{ '--max-w-custom': '36.25rem' }}>
+            <div
+                className="m-4 h-auto p-4 bg-norm rounded-lg shadow max-w-custom shrink-0"
+                style={{ '--max-w-custom': '36.25rem' }}
+            >
                 <h2 className="text-semibold text-rg mb-2">{c('Title').t`Introducing email categories`}</h2>
                 <p className="m-0 color-weak">{c('Label')
                     .t`No more missing important messages! These now show up under ${primaryCopy}. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.`}</p>
