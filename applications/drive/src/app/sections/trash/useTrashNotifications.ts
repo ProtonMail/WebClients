@@ -2,13 +2,12 @@ import { c, msgid } from 'ttag';
 
 import { useConfirmActionModal, useNotifications } from '@proton/components';
 
-import { useErrorHandler } from '../../store/_utils';
+import { showAggregatedErrorNotification } from '../../utils/errorHandling/errorNotifications';
 import { useListNotifications } from '../../utils/useListNotifications';
 
 export const useTrashNotifications = () => {
     const { createSuccessMessage } = useListNotifications();
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
-    const { showAggregatedErrorNotification } = useErrorHandler();
     const { createNotification } = useNotifications();
 
     const createTrashRestoreNotification = (
@@ -28,11 +27,11 @@ export const useTrashNotifications = () => {
             undoAction
         );
 
-        showAggregatedErrorNotification(Object.values(failureItems), (errors) => {
-            return errors.length === 1
-                ? errors[0].error
-                : `${failureItems.length} items failed to be restored from trash`;
-        });
+        showAggregatedErrorNotification(
+            Object.values(failureItems),
+            (error) => error.error,
+            () => `${failureItems.length} items failed to be restored from trash`
+        );
     };
 
     const createTrashDeleteNotification = (
@@ -51,12 +50,9 @@ export const useTrashNotifications = () => {
         );
 
         showAggregatedErrorNotification(
-            Object.values(failureItems).map((failureItem) => failureItem.error),
-            (errors) => {
-                return errors.length === 1
-                    ? errors[0].error
-                    : `${failureItems.length} items failed to be deleted from trash`;
-            }
+            Object.values(failureItems),
+            (error) => error.error,
+            () => `${failureItems.length} items failed to be deleted from trash`
         );
     };
 
