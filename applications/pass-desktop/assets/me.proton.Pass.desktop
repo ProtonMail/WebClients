@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Proton Pass
+GenericName=Password Manager
+Comment=Open-source and secure identity manager.
+Exec=start-proton-pass %U
+Icon=me.proton.Pass
+Terminal=false
+Type=Application
+Categories=Utility;
+StartupWMClass=Proton Pass
+StartupNotify=true
