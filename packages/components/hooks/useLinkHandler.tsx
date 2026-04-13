@@ -5,15 +5,17 @@ import { c } from 'ttag';
 
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { PROTON_DOMAINS } from '@proton/shared/lib/constants';
+import { PROTON_DOMAINS, SSO_PATHS } from '@proton/shared/lib/constants';
+import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import { getSecondLevelDomain, isSubDomain } from '@proton/shared/lib/helpers/url';
 import type { MailSettings } from '@proton/shared/lib/interfaces';
 import { CONFIRM_LINK } from '@proton/shared/lib/mail/mailSettings';
 import isTruthy from '@proton/utils/isTruthy';
 
 import LinkConfirmationModal from '../components/notifications/LinkConfirmationModal/LinkConfirmationModal';
+import { openLinkInBrowser } from '../containers/desktop/openExternalLink';
 import { getHostname, isExternal, punycodeUrl } from '../helpers/url';
-import useHandler from './useHandler';
+import { useHandler } from './useHandler';
 
 // Reference : Angular/src/app/utils/directives/linkHandler.js
 
@@ -46,7 +48,6 @@ export const useLinkHandler: UseLinkHandler = (
     const [link, setLink] = useState<string>();
     const [linkConfirmationModalProps, setLinkConfirmationModalOpen, renderLinkConfirmationModal] = useModalState();
 
-    // eslint-disable-next-line @typescript-eslint/no-misused-promises
     const handleClick = useHandler(async (event: Event) => {
         const originalTarget = event.target as Element;
         const target = originalTarget.closest('a') || originalTarget.closest('area');
@@ -63,6 +64,18 @@ export const useLinkHandler: UseLinkHandler = (
                     .t`This message may contain some links URL that cannot be properly opened by your current browser.`,
                 type: 'error',
             });
+        }
+
+        // In Electron mail, born-private links must open in the browser (child account creation is not supported in the app)
+        if (isElectronMail) {
+            try {
+                if (new URL(src.encoded).pathname.startsWith(SSO_PATHS.BORN_PRIVATE)) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    openLinkInBrowser(src.encoded);
+                    return;
+                }
+            } catch {}
         }
 
         // We only handle anchor that begins with `mailto:`
@@ -126,10 +139,8 @@ export const useLinkHandler: UseLinkHandler = (
             return;
         }
 
-        // eslint-disable-next-line @typescript-eslint/no-misused-promises
         wrapperRef.current?.addEventListener('click', handleClick, false);
         return () => {
-            // eslint-disable-next-line @typescript-eslint/no-misused-promises
             wrapperRef.current?.removeEventListener('click', handleClick, false);
         };
     }, [startListening, wrapperRef.current]);
