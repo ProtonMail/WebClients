@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import { c } from 'ttag';
 
 import { ReferralInvitesContextProvider } from '@proton/components/containers/referral/ReferralInvitesContext';
@@ -6,12 +8,19 @@ import FAQ from '@proton/components/containers/referral/drawer/Faq';
 import Footer from '@proton/components/containers/referral/drawer/Footer';
 import { FriendsSection } from '@proton/components/containers/referral/drawer/FriendsSection';
 import InviteShareLink from '@proton/components/containers/referral/drawer/InviteShareLink';
+import { useReferralTelemetry } from '@proton/components/containers/referral/hooks/useReferralTelemetry';
 
 import type { SelectedDrawerOption } from '../DrawerView';
 import DrawerView from '../DrawerView';
 import DrawerAppScrollContainer from '../shared/DrawerAppScrollContainer';
 
 const DrawerReferralView = () => {
+    const { sendDrawerAppView } = useReferralTelemetry();
+
+    useEffect(() => {
+        sendDrawerAppView();
+    }, [sendDrawerAppView]);
+
     const tab: SelectedDrawerOption = {
         text: c('Referral').t`Invite friends. Get credits.`,
         value: 'referral',

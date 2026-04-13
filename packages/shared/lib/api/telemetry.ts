@@ -8,6 +8,7 @@ export enum TelemetryMeasurementGroups {
     accountRecoverySettings = 'account.web.recovery_settings',
     accountResetPassword = 'account.web.reset_password',
     accountDashboard = 'account.web.dashboard',
+    referralDiscover = 'any.web.referral_discover',
     alwaysOnUpsell = 'any.web.always_on_upsell',
     calendarEncryptedSearch = 'calendar.web.encrypted_search',
     calendarIcsSurgery = 'calendar.web.ics_surgery',
@@ -208,6 +209,19 @@ export enum TelemetryResetPasswordEvents {
     method_validated = 'method_validated',
     success = 'success',
     failure = 'failure',
+}
+
+export enum TelemetryReferralDiscoverEvents {
+    top_bar_button_view = 'top_bar_button_view',
+    top_bar_button_click = 'top_bar_button_click',
+    top_bar_spotlight_cta_click = 'top_bar_spotlight_cta_click',
+    settings_spotlight_view = 'settings_spotlight_view',
+    referral_page_view = 'referral_page_view',
+    drawer_app_view = 'drawer_app_view',
+    copy_link_drawer = 'copy_link_drawer',
+    copy_link_page = 'copy_link_page',
+    share = 'share',
+    send_email_invite = 'send_email_invite',
 }
 
 export enum TelemetryKeyTransparencyErrorEvents {
@@ -437,6 +451,7 @@ export type TelemetryEvents =
     | TelemetryAccountDashboardEvents
     | TelemetryRecoverySettingsEvents
     | TelemetryResetPasswordEvents
+    | TelemetryReferralDiscoverEvents
     | TelemetryKeyTransparencyErrorEvents
     | TelemetryMailEvents
     | TelemetryMailListEvents

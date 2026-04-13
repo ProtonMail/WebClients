@@ -64,6 +64,7 @@ import NonPrivateRecoverySection from '@proton/components/containers/account/Non
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 import DashboardComparePlansCTA from '@proton/components/containers/payments/subscription/YourPlanSectionV2/DashboardComparePlansCTA';
 import SignInWithAnotherDeviceSettings from '@proton/components/containers/recovery/SignInWithAnotherDeviceSettings';
+import ReferralPageTelemetry from '@proton/components/containers/referral/components/ReferralPageTelemetry';
 import { RewardSection } from '@proton/components/containers/referral/rewards/RewardSection';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
@@ -270,6 +271,7 @@ const AccountSettingsRouter = ({
             </Route>
             {getIsSectionAvailable(referral) && (
                 <Route path={getSectionPath(path, referral)}>
+                    <ReferralPageTelemetry />
                     <ReferralInvitesContextProvider>
                         <PrivateMainSettingsArea config={referral}>
                             <InviteSection />
