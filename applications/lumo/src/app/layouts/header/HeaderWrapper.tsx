@@ -5,13 +5,15 @@ import { c } from 'ttag';
 import { Href } from '@proton/atoms/Href/Href';
 import { Hamburger } from '@proton/components';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useLumoPlan } from '../../providers/LumoPlanProvider';
 import { useSidebar } from '../../providers/SidebarProvider';
+import LumoB2BUpsellLink from '../../upsells/components/B2BUpsellLink';
 import { getIsMobileDevice } from '../../util/device';
+import { getMarketingUrl } from '../../util/marketingUrls';
 import LumoLogoHeader from './LumoLogo';
-import LumoB2BUpsellLink from "../../upsells/components/B2BUpsellLink";
 
 const HeaderRightSide = ({ children }: { children: React.ReactNode }) => {
     return <div className="flex flex-nowrap items-center gap-4 no-print">{children}</div>;
@@ -30,6 +32,7 @@ interface HeaderWrapperProps {
 }
 export const HeaderWrapper = ({ children }: HeaderWrapperProps) => {
     const isGuest = useIsGuest();
+    const showNewMarketingLinks = useFlag('LumoNewMarketingLinks');
     const { isVisible: isSideMenuOpen, toggle: toggleSideMenu } = useSidebar();
     const { isSmallScreen } = useSidebar();
     const { showForBusinessLink } = useLumoPlan();
@@ -48,9 +51,10 @@ export const HeaderWrapper = ({ children }: HeaderWrapperProps) => {
                                 <LumoLogoHeader />
                             </li>
                             <li className="pt-1 ml-5 no-print">
-                                <Href href="/about" className="inline-flex py-3 px-4 color-weak text-no-decoration">{c(
-                                    'collider_2025: Top nav link'
-                                ).t`About`}</Href>
+                                <Href
+                                    href={showNewMarketingLinks ? getMarketingUrl('/lumo') : '/about'}
+                                    className="inline-flex py-3 px-4 color-weak text-no-decoration"
+                                >{c('collider_2025: Top nav link').t`About`}</Href>
                             </li>
                             <li className="pt-1 no-print">
                                 <Href
