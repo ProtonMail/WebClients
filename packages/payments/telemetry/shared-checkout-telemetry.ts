@@ -84,6 +84,31 @@ export function reportAddLumo({ context }: { context: PaymentTelemetryContext })
 // #endregion
 
 // ============================================================================
+// #region reportAddMeet
+// ============================================================================
+
+/** Event name mapping for Add Meet events */
+export const ADD_MEET_CONTEXT_MAPPING = getMapping('add_meet');
+
+/**
+ * Reports when user interacts with the "Add Meet" button for the first time.
+ *
+ * **When to call:** First time user clicks/interacts with Add Meet button in a session.
+ * **Purpose:** Track interest in the Meet addon.
+ *
+ * @param context - The checkout context where the interaction occurred
+ *
+ * @example
+ * reportAddMeet({ context: 'subscription-modification' });
+ * // Sends: subscription_modification_add_meet
+ */
+export function reportAddMeet({ context }: { context: PaymentTelemetryContext }) {
+    const eventName = ADD_MEET_CONTEXT_MAPPING[context] ?? 'unknown_context_add_meet';
+    telemetry.sendCustomEvent(eventName);
+}
+// #endregion
+
+// ============================================================================
 // #region reportPayment
 // ============================================================================
 

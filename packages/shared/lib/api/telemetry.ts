@@ -84,6 +84,7 @@ export enum TelemetrySubscriptionModalEvents {
     payment = 'payment',
     cancelledOnSameDay = 'cancelled_on_same_day',
     addLumo = 'add_lumo',
+    addMeet = 'add_meet',
 }
 
 export enum TelemetryMailTrial2024UpsellModal {
