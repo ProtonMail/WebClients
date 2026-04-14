@@ -4,7 +4,14 @@ import type { Invoice, Subscription } from '@proton/payments';
  * specifies the keys we're consuming
  * in the extension sagas for now */
 import type { EventItemUpdate } from '@proton/shared/lib/helpers/updateCollection';
-import type { Address, Organization, User, UserSettings } from '@proton/shared/lib/interfaces';
+import type {
+    Address,
+    GroupMember,
+    GroupMembershipReturn,
+    Organization,
+    User,
+    UserSettings,
+} from '@proton/shared/lib/interfaces';
 import type { AuthDeviceOutput } from '@proton/shared/lib/keys/device';
 
 export enum ChannelType {
@@ -35,6 +42,7 @@ export type UserEvent = {
     Subscription?: Subscription;
     User?: User;
     UserSettings?: UserSettings;
+    GroupMembers?: GroupMemberEvent[];
 };
 
 export type AddressEvent = {
@@ -46,3 +54,9 @@ export type AddressEvent = {
 export type ShareEventPayload =
     | { type: ShareEventType.SHARE_DISABLED; shareId: string }
     | { type: ShareEventType.ITEMS_DELETED; shareId: string; itemIds: string[] };
+
+export type GroupMemberEvent = {
+    ID: string;
+    Action: EventActions;
+    GroupMember: GroupMember & GroupMembershipReturn;
+};
