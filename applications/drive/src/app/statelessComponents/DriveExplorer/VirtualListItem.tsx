@@ -25,6 +25,7 @@ interface VirtualListItemProps {
     getDragMoveControls?: (uid: string) => DragMoveControls;
     isMultiSelectionDisabled?: boolean;
     showCheckboxColumn?: boolean;
+    hideSelectionHighlight?: boolean;
     contextMenuControls?: ContextMenuControls;
 }
 
@@ -41,6 +42,7 @@ export function VirtualListItem({
     getDragMoveControls,
     isMultiSelectionDisabled,
     showCheckboxColumn,
+    hideSelectionHighlight,
     contextMenuControls,
 }: VirtualListItemProps) {
     const isLoadingRow = loading && virtualItem.index === totalItemCount;
@@ -84,6 +86,7 @@ export function VirtualListItem({
             dragMoveControls={itemId ? getDragMoveControls?.(itemId) : undefined}
             isMultiSelectionDisabled={isMultiSelectionDisabled}
             showCheckboxColumn={showCheckboxColumn}
+            hideSelectionHighlight={hideSelectionHighlight}
             contextMenuControls={contextMenuControls}
         />
     );

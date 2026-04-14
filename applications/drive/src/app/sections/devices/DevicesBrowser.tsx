@@ -107,6 +107,7 @@ export function DevicesBrowser({ onRename, onRemove }: Props) {
                 onRemove={onRemove}
             />
             <DriveExplorer
+                hideSelectionHighlight
                 itemIds={sortedItemUids}
                 layout={layout}
                 cells={cells}
