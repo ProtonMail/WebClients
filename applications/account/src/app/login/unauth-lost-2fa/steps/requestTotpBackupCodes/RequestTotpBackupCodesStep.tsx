@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { useSelector } from '@xstate/react';
 import { c } from 'ttag';
@@ -10,6 +10,7 @@ import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
 import { useTotpBackupCodesActorRef } from '../../UnauthedLost2FAContainer';
 import type { TotpBackupCodesActorRef } from '../../state-machine/totpBackupCodeMachine';
+import { useUnauthedLost2FATelemetry } from '../../useUnauthedLost2FATelemetry';
 
 const RequestCodes = ({ actorRef }: { actorRef: TotpBackupCodesActorRef }) => {
     const { send } = actorRef;
@@ -54,6 +55,17 @@ const RequestCodes = ({ actorRef }: { actorRef: TotpBackupCodesActorRef }) => {
 
 export const RequestTotpBackupCodesStep = () => {
     const totpBackupCodesActorRef = useTotpBackupCodesActorRef();
+
+    const requestBackupCode = useSelector(totpBackupCodesActorRef, (s) => s.matches('request backup code'));
+
+    const { sendStepLoad } = useUnauthedLost2FATelemetry();
+    useEffect(() => {
+        if (!requestBackupCode) {
+            return;
+        }
+
+        sendStepLoad('request totp backup codes');
+    }, [requestBackupCode]);
 
     return <RequestCodes actorRef={totpBackupCodesActorRef} />;
 };
