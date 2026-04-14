@@ -10,6 +10,37 @@ export const useTrashNotifications = () => {
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
     const { createNotification } = useNotifications();
 
+    const createTrashedItemsNotifications = (
+        successItems: { name: string; uid: string }[],
+        failureItems: { uid: string; error: string }[],
+        undoAction?: () => Promise<void>
+    ) => {
+        createSuccessMessage(
+            successItems,
+            (name: string) => c('Notification').t`"${name}" moved to trash`,
+            (numberOfItems: number) =>
+                c('Notification').ngettext(
+                    msgid`${numberOfItems} item moved to trash`,
+                    `${numberOfItems} items moved to trash`,
+                    numberOfItems
+                ),
+            undoAction
+        );
+
+        showAggregatedErrorNotification(
+            Object.values(failureItems),
+            () => c('Notification').t`"${name}" failed to be moved to trash`,
+            () => {
+                const numberOfItems = failureItems.length;
+                return c('Notification').ngettext(
+                    msgid`${numberOfItems} item failed to be moved to trash`,
+                    `${numberOfItems} items failed to be moved to trash`,
+                    numberOfItems
+                );
+            }
+        );
+    };
+
     const createTrashRestoreNotification = (
         successItems: { name: string; uid: string }[],
         failureItems: { uid: string; error: string }[],
@@ -82,6 +113,7 @@ export const useTrashNotifications = () => {
     };
 
     return {
+        createTrashedItemsNotifications,
         createTrashRestoreNotification,
         createTrashDeleteNotification,
         createDeleteConfirmModal,
