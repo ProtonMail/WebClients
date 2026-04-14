@@ -19,7 +19,7 @@ export const RewardsCreditDisclaimer = ({ referrals }: Props) => {
     return (
         <Banner variant="info" className="mb-6">
             {c('Info')
-                .t`The referral credit can be awarded up to 2 months after your friend's trial ended, and if your friend subscribed to a plan.`}{' '}
+                .t`The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.`}{' '}
             <Href href={getKnowledgeBaseUrl('/referral-program')}>{c('Link').t`Learn more`}</Href>
         </Banner>
     );
