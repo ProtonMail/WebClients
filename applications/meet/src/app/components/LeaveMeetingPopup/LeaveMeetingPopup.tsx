@@ -101,7 +101,7 @@ export const LeaveMeetingPopup = () => {
                 {isLargerThanMd ? c('Action').t`Leave` : <IcMeetPhone className="shrink-0" size={8} />}
             </Button>
             <Dropdown
-                className="meet-radius"
+                className="leave-meeting-popup meet-radius"
                 isOpen={popupState[PopUpControls.LeaveMeeting]}
                 anchorRef={anchorRef}
                 onClose={handleClose}
@@ -115,7 +115,7 @@ export const LeaveMeetingPopup = () => {
                     </div>
 
                     <Button
-                        className="end-meeting-for-all-button border-none rounded-full w-full py-4"
+                        className="danger border-none rounded-full w-full py-4 text-semibold"
                         onClick={() => {
                             setEndingMeeting(true);
 
@@ -131,7 +131,7 @@ export const LeaveMeetingPopup = () => {
                         {c('Action').t`End meeting for all`}
                     </Button>
                     <Button
-                        className="leave-meeting-button border-none rounded-full w-full py-4"
+                        className="secondary border-none rounded-full w-full py-4 text-semibold"
                         onClick={() => {
                             const action = isLocalScreenShare
                                 ? PopUpControls.ScreenShareLeaveWarning
@@ -144,7 +144,7 @@ export const LeaveMeetingPopup = () => {
                     </Button>
                     {allowNewHostAssignment && totalParticipantCount > 1 && (
                         <Button
-                            className="assign-new-host-button border-none rounded-full w-full py-4"
+                            className="secondary border-none rounded-full w-full py-4 text-semibold"
                             onClick={() => {
                                 dispatch(toggleSideBarState(MeetingSideBars.AssignHost));
                                 handleClose();
