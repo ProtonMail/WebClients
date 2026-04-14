@@ -4013,6 +4013,9 @@
       "${ failureItems.length } item failed to be moved": [
         "No s'ha pogut moure ${ failureItems.length } element",
         "No s'han pogut moure ${ failureItems.length } elements"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "No s'han pogut carregar les dades de la subscripció. Torneu-ho a provar més tard."
       ]
     },
     "error": {
@@ -10419,6 +10422,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "La vostra subscripció ja té un descompte aplicat. Canviar a aquesta nova promoció implica que el descompte actual ja no s'aplicarà."
+      ],
+      "Edit billing address": [
+        "Edita l'adreça de facturació"
       ]
     },
     "Payments.Error": {
