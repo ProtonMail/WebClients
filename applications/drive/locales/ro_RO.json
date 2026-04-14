@@ -884,7 +884,7 @@
         "Solicitare funcție"
       ],
       "Request new code": [
-        "Solicitare cod nou"
+        "Solicitați un cod nou"
       ],
       "Resend code": [
         "Retrimitere cod"
@@ -9871,6 +9871,11 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "Adresa ${ BRAND_NAME } este gata de utilizare"
+      ],
+      "${ errors.length } item failed to be deleted": [
+        "Articole care nu s-au put șterge: ${ errors.length }",
+        "Articole care nu s-au put șterge: ${ errors.length }",
+        "Articole care nu s-au put șterge: ${ errors.length }"
       ]
     },
     "Notification for duplicate filenames in the current upload": {

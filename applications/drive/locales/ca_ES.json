@@ -9755,6 +9755,10 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "La vostra adreça de ${ BRAND_NAME } ja està a punt per fer-se servir"
+      ],
+      "${ errors.length } item failed to be deleted": [
+        "No s'ha pogut eliminar ${ errors.length } element",
+        "No s'han pogut eliminar ${ errors.length } elements"
       ]
     },
     "Notification for duplicate filenames in the current upload": {

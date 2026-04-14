@@ -10041,6 +10041,12 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "Vaša adresa ${ BRAND_NAME } je pripravená na použitie"
+      ],
+      "${ errors.length } item failed to be deleted": [
+        "${ errors.length } položku sa nepodarilo vymazať",
+        "${ errors.length } položky sa nepodarilo vymazať",
+        "${ errors.length } položiek sa nepodarilo vymazať",
+        "${ errors.length } položiek sa nepodarilo vymazať"
       ]
     },
     "Notification for duplicate filenames in the current upload": {

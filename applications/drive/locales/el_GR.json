@@ -4017,7 +4017,7 @@
     },
     "error": {
       "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
-        "Παρακαλώ συνδεθείτε με μια διεύθυνση Gmail που ήδη προωθεί στο ${ MAIL_APP_NAME }"
+        "Παρακαλούμε συνδεθείτε με μια διεύθυνση Gmail που ήδη προωθεί στο ${ MAIL_APP_NAME }"
       ],
       "Please sign in with the same Gmail address you originally connected": [
         "Παρακαλούμε συνδεθείτε με την ίδια διεύθυνση Gmail που συνδεθήκατε αρχικά."
@@ -9695,6 +9695,10 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "Η διεύθυνσή σας ${ BRAND_NAME } είναι έτοιμη για χρήση"
+      ],
+      "${ errors.length } item failed to be deleted": [
+        "${ errors.length } στοιχείο απέτυχε να διαγραφεί",
+        "${ errors.length } στοιχεία απέτυχαν να διαγραφούν"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
