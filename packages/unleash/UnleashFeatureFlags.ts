@@ -324,6 +324,7 @@ enum LumoFeatureFlag {
     LumoSmoothedRendering = 'LumoSmoothedRendering',
     LumoImageTools = 'LumoImageTools',
     LumoAPIKeyManagement = 'LumoAPIKeyManagement',
+    LumoNewMarketingLinks = 'LumoNewMarketingLinks',
 }
 
 export type FeatureFlag =
