@@ -4013,6 +4013,9 @@
       "${ failureItems.length } item failed to be moved": [
         "Αποτυχία μετακίνησης ${ failureItems.length } στοιχείου",
         "Αποτυχία μετακίνησης ${ failureItems.length } στοιχείων"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Αποτυχία φόρτωσης δεδομένων συνδρομής. Παρακαλούμε δοκιμάστε ξανά αργότερα."
       ]
     },
     "error": {
@@ -10359,6 +10362,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Η συνδρομή σας έχει ήδη μια υπάρχουσα έκπτωση. Η μετάβαση σε αυτή τη νέα προσφορά σημαίνει ότι η υπάρχουσα έκπτωση δε θα ισχύει πλέον."
+      ],
+      "Edit billing address": [
+        "Επεξεργασία διεύθυνσης χρέωσης"
       ]
     },
     "Payments.Error": {

@@ -4013,6 +4013,9 @@
       "${ failureItems.length } item failed to be moved": [
         "${ failureItems.length } element kunne ikke flyttes",
         "${ failureItems.length } elementer kunne ikke flyttes"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Kunne ikke indlæse abonnementsdata. Prøv igen senere."
       ]
     },
     "error": {
@@ -10346,6 +10349,9 @@
       ],
       "VAT reverse charge mechanism applies.": [
         "Omvendt betalingspligt gælder."
+      ],
+      "Edit billing address": [
+        "Rediger faktureringsadresse"
       ]
     },
     "Payments.Error": {

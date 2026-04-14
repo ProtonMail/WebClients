@@ -3061,6 +3061,9 @@
       ],
       "We can't access ${ boldEmails } anymore.": [
         "Vi kan inte komma åt ${ boldEmails } längre."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Om du vill fortsätta ta emot och skicka Gmail-meddelanden i ${ BRAND_NAME }, återanslut dina konton."
       ]
     },
     "description": {
@@ -3971,6 +3974,12 @@
       "${ failureItems.length } item failed to be moved": [
         "${ failureItems.length } objekt misslyckades att flyttas",
         "${ failureItems.length } objekt misslyckades att flyttas"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Misslyckades med att ladda prenumerationsdata. Försök igen senare."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Något gick fel vid hämtning av tillgängliga domäner"
       ]
     },
     "error": {
