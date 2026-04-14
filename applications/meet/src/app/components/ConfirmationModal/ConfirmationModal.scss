@@ -11,7 +11,7 @@ im.$media-expressions: $media-expressions;
 	.modal-two-dialog {
 		backdrop-filter: blur(14px);
 		animation: none;
-		background: rgb(26 26 40 / 0.6);
+		background: var(--transparent-background);
 		inline-size: 90%;
 
 		@include im.media('>medium') {
