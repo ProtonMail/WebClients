@@ -84,7 +84,7 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
     const billingAddressHook = useBillingAddress({
         onBillingAddressChange: payments.selectFullBillingAddress,
         initialBillingAddress: payments.paymentStatus
-            ? getBillingAddressFromPaymentStatus(payments.paymentStatus)
+            ? getBillingAddressFromPaymentStatus(payments.paymentStatus, { shouldRestoreZipCode: true })
             : undefined,
         paymentFacade,
         telemetryContext: payments.telemetryContext,

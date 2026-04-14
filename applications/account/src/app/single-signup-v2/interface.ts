@@ -100,6 +100,7 @@ export interface SignupModelV2 {
     signupTokenMode?: boolean;
     loadingDependencies: boolean;
     disableCurrencySelector?: boolean;
+    initialBillingAddress: BillingAddressExtended;
 }
 
 export type ActionResponse =

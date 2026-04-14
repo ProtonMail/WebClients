@@ -494,7 +494,7 @@ const SingleSignupContainer = ({
                 plans,
                 preferredCurrency,
                 billingAddress: {
-                    ...getBillingAddressFromPaymentStatus(paymentStatus),
+                    ...getBillingAddressFromPaymentStatus(paymentStatus, { shouldRestoreZipCode: true }),
                     Company: signupParameters.orgName,
                     FirstName: signupParameters.firstName,
                     LastName: signupParameters.lastName,

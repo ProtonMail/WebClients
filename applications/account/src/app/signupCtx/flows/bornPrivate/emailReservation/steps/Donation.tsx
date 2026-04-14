@@ -277,7 +277,7 @@ const Donation = ({ formData, onBack, onDonationSuccess }: DonationProps) => {
     const taxCountry = useTaxCountry({
         onBillingAddressChange: payments.selectFullBillingAddress,
         initialBillingAddress: payments.paymentStatus
-            ? getBillingAddressFromPaymentStatus(payments.paymentStatus)
+            ? getBillingAddressFromPaymentStatus(payments.paymentStatus, { shouldRestoreZipCode: true })
             : undefined,
         paymentFacade,
         telemetryContext: payments.telemetryContext,
