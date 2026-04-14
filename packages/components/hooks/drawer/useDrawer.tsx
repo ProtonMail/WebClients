@@ -134,15 +134,13 @@ export const DrawerProvider = ({
     // Is the DrawerSidebar displayed or not (we can hide the drawer with a setting)
     const [showDrawerSidebar, setShowDrawerSidebar] = useState<boolean | undefined>(defaultShowDrawerSidear);
 
-    const [requestsAbortControllers, setRequestsAbortControllers] = useState<
-        { id: string; abortController: AbortController }[]
-    >([]);
+    const requestsAbortControllersRef = useRef<{ id: string; abortController: AbortController }[]>([]);
 
     const { setDrawerLocalStorageKey } = useDrawerLocalStorage(iframeSrcMap, drawerSidebarMounted, appInView);
 
     const removeAbortController = (id: string) => {
-        setRequestsAbortControllers((requestsAbortControllers) =>
-            requestsAbortControllers.filter((controller) => controller.id === id)
+        requestsAbortControllersRef.current = requestsAbortControllersRef.current.filter(
+            (controller) => controller.id !== id
         );
     };
 
@@ -262,10 +260,10 @@ export const DrawerProvider = ({
                             if (hasAbortController) {
                                 const abortController = new AbortController();
 
-                                setRequestsAbortControllers((requestsAbortControllers) => [
-                                    ...requestsAbortControllers,
+                                requestsAbortControllersRef.current = [
+                                    ...requestsAbortControllersRef.current,
                                     { id, abortController },
-                                ]);
+                                ];
 
                                 updatedArgs = {
                                     ...arg,
@@ -336,7 +334,7 @@ export const DrawerProvider = ({
                 case DRAWER_EVENTS.ABORT_REQUEST:
                     const { id } = event.data.payload;
 
-                    const controller = requestsAbortControllers.find(
+                    const controller = requestsAbortControllersRef.current.find(
                         (controller) => controller.id === id
                     )?.abortController;
 
