@@ -5,7 +5,7 @@ import { defaultNameCellConfig } from '../../commonDriveExplorerCells/NameCell';
 import type { SearchResultItemUI } from './store';
 
 export const defaultSort = {
-    sortField: SortField.location,
+    sortField: SortField.name,
     direction: SORT_DIRECTION.ASC,
     sortConfig: defaultNameCellConfig.sortConfig,
 };
