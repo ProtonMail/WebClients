@@ -252,6 +252,9 @@
       "Continue on web": [
         "Pokračovat na webu"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Pokračujte na ${ planOrAppName }"
+      ],
       "Continue transfers": [
         "Pokračovat v přenosech"
       ],
@@ -561,6 +564,9 @@
       "Go to settings": [
         "Přejít do nastavení"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Rozumím"
       ],
@@ -809,6 +815,9 @@
       ],
       "Reconnect": [
         "Obnovit připojení"
+      ],
+      "Reconnect to Gmail": [
+        "Znovu se připojit ke službě Gmail"
       ],
       "Recover data": [
         "Obnovit data"
@@ -1326,6 +1335,12 @@
         "${ seats } ${ LUMO_APP_NAME } licence",
         "${ seats } ${ LUMO_APP_NAME } licencí",
         "${ seats } ${ LUMO_APP_NAME } licencí"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } licence",
+        "${ seats } ${ MEET_APP_NAME } licence",
+        "${ seats } ${ MEET_APP_NAME } licencí",
+        "${ seats } ${ MEET_APP_NAME } licencí"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } licence asistenta psaní",
@@ -3064,6 +3079,12 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Použijte tohoto průvodce, aby vaše organizace začala okamžitě využívat výhody špičkového ekosystému šifrování a ochrany soukromí ${ BRAND_NAME }."
       ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Nyní nemůžeme přistupovat k ${ boldEmails }."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Je nám líto, že odcházíte. Pokud máte chvilku, oceníme, pokud nám sdělíte důvod zrušení. Vaše zpětná vazba pomáhá vylepšovat ${ BRAND_NAME } pro všechny."
+      ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Pomocí skupin kontaktů můžete jedním kliknutím odeslat e-maily všem členům skupiny."
       ],
@@ -3332,6 +3353,12 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Můžete se také podívat na to, co říká naše ${ statusPageLink }"
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } položku se nepodařilo přesunout",
+        "${ failureItems.length } položky se nepodařilo přesunout",
+        "${ failureItems.length } položek se nepodařilo přesunout",
+        "${ failureItems.length } položek se nepodařilo přesunout"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } je vaše uživatelské jméno. Pro vytvoření ${ emailAddress } jděte prosím do Nastavení > Identita a adresy > Krátká doména (pm.me)"
       ],
@@ -3581,6 +3608,9 @@
       "Invalid code": [
         "Neplatný kód"
       ],
+      "Invalid coupon": [
+        "Neplatný kupón"
+      ],
       "Invalid email address": [
         "Neplatná e-mailová adresa"
       ],
@@ -3691,6 +3721,9 @@
       ],
       "Please activate your search again": [
         "Prosím, aktivujte znovu vyhledávání"
+      ],
+      "Please complete the billing details": [
+        "Prosím, doplňte fakturační údaje"
       ],
       "Please enter a valid postal code": [
         "Zadejte prosím platné poštovní směrovací číslo"
@@ -3829,6 +3862,9 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimální objem kreditu, který lze přidat je ${ price }"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Minimální výše daru je ${ price }"
       ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "Nová revize původního souboru ještě nebyla nahrána, zkuste to prosím později"
@@ -5043,6 +5079,9 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } obsahuje ${ BRAND_NAME } asistenta psaní Scribe"
       ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } licencí"
+      ],
       "${ normalizedProgress }% completed": [
         "${ normalizedProgress } % dokončeno"
       ],
@@ -5223,6 +5262,9 @@
       "Ad targeting": [
         "Cílení reklamy"
       ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Přidat ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
       "Address copied to clipboard": [
         "Adresa zkopírována do schránky"
       ],
@@ -5357,6 +5399,9 @@
       ],
       "Calendar side panel": [
         "Postranní panel kalendáře"
+      ],
+      "Can view only": [
+        "Může pouze zobrazovat"
       ],
       "Can't move a folder into itself": [
         "Složku nelze přesunout do sebe"
@@ -5963,6 +6008,24 @@
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "Většina veřejných sítí Wi-Fi je bezpečná, ale některé nejsou dostatečně zabezpečené a vystavují vás kybernetickým hrozbám. VPN šifruje váš provoz a chrání vás."
+      ],
+      "Move ${ dragCount } item": [
+        "Přesunout ${ dragCount } položku",
+        "Přesunout ${ dragCount } položky",
+        "Přesunout ${ dragCount } položek",
+        "Přesunout ${ dragCount } položek"
+      ],
+      "Move ${ fileCount } file": [
+        "Přesunout ${ fileCount } soubor",
+        "Přesunout ${ fileCount } soubory",
+        "Přesunout ${ fileCount } souborů",
+        "Přesunout ${ fileCount } souborů"
+      ],
+      "Move ${ folderCount } folder": [
+        "Přesunout ${ folderCount } složku",
+        "Přesunout ${ folderCount } složky",
+        "Přesunout ${ folderCount } složek",
+        "Přesunout ${ folderCount } složek"
       ],
       "Moving files": [
         "Přesouvání souborů"
@@ -6933,6 +6996,9 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Pokud službu zrušíte před ${ trialEndsOnFormatted }, nebudou vám účtovány žádné poplatky."
       ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Kreditovou odměnu obdržíte 1 měsíc poté, co si váš přítel předplatí roční plán, a 2 měsíce poté, co si předplatí měsíční plán."
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Poté vám bude každý ${ renewCycle } měsíc účtováno ${ renewAmountStr }. Zrušit můžete kdykoli.",
         "Poté vám bude každé ${ renewCycle } měsíce účtováno ${ renewAmountStr }. Zrušit můžete kdykoli.",
@@ -7324,6 +7390,9 @@
       "Contacts": [
         "Kontakty"
       ],
+      "Continue cancelling": [
+        "Pokračovat ve zrušení"
+      ],
       "Copy": [
         "Kopírovat"
       ],
@@ -7512,6 +7581,9 @@
       ],
       "Last 3 months only": [
         "Pouze poslední 3 měsíce"
+      ],
+      "Last 6 months only": [
+        "Pouze posledních 6 měsíců"
       ],
       "Last month only": [
         "Pouze minulý měsíc"
@@ -7761,6 +7833,9 @@
       ],
       "Uploaded by": [
         "Nahrál(a)"
+      ],
+      "User opted in": [
+        "Uživatel souhlasil"
       ],
       "Username": [
         "Uživatelské jméno"
@@ -8084,6 +8159,17 @@
         "za ${ price }"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } licencí"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME } licence",
+        "${ seats } ${ MEET_APP_NAME } licence",
+        "${ seats } ${ MEET_APP_NAME } licencí",
+        "${ seats } ${ MEET_APP_NAME } licencí"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: Důvěrné videokonference pro důležité konverzace"
@@ -8141,6 +8227,20 @@
         "Až ${ n } účastníci",
         "Až ${ n } účastníků",
         "Až ${ n } účastníků"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videokonference, ${ n } účastník",
+        "Videokonference, ${ n } účastníci",
+        "Videokonference, ${ n } účastníků",
+        "Videokonference, ${ n } účastníků"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "včetně ${ seats } licence",
+        "včetně ${ seats } licencí",
+        "včetně ${ seats } licencí",
+        "včetně ${ seats } licencí"
       ]
     },
     "Message": {
@@ -8600,6 +8700,15 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Všechny základní služby ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "Plánování schůzek"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Plánování schůzek pomocí ${ n } rezervační stránky",
+        "Plánování schůzek pomocí ${ n } rezervačních stránek",
+        "Plánování schůzek pomocí ${ n } rezervačních stránek",
+        "Plánování schůzek pomocí ${ n } rezervačních stránek"
+      ],
       "Auto-delete Spam and Trash": [
         "Automatické smazání obsahu složek spam a koš"
       ],
@@ -8650,6 +8759,9 @@
       ],
       "Data breach monitoring": [
         "Monitorování narušení bezpečnosti dat"
+      ],
+      "Data retention policies": [
+        "Zásady uchovávání dat"
       ],
       "Dedicated servers optimized for streaming": [
         "Dedikované servery optimalizované pro streamování"
@@ -8761,6 +8873,9 @@
       ],
       "Priority support & live chat": [
         "Přednostní podpora a živý chat"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Soukromý chat s AI (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "Soukromé zálohování fotek"
@@ -8917,6 +9032,9 @@
         "Sdílení trezoru až se ${ n } osobami",
         "Sdílení trezoru až s ${ n } osobami",
         "Sdílení trezoru až s ${ n } osobami"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN s blokováním reklam a ochranou proti malware"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Prohledáváme dark web a kontrolujeme, zda nedošlo k úniku vašich adres nebo aliasů ${ BRAND_NAME }, pokud něco najdeme, okamžitě vás upozorníme."
@@ -9466,12 +9584,6 @@
         "${ numberOfItems } položky trvale odstraněny z koše",
         "${ numberOfItems } položek trvale odstraněno z koše",
         "${ numberOfItems } položek trvale odstraněno z koše"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "${ numberOfItems } položku se nepodařilo smazat",
-        "${ numberOfItems } položky se nepodařilo smazat",
-        "${ numberOfItems } položek se nepodařilo smazat",
-        "${ numberOfItems } položek se nepodařilo smazat"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems } položku se nepodařilo trvale odstranit z koše",
@@ -10545,6 +10657,9 @@
       "Anderson": [
         "Příjmení"
       ],
+      "Anything you'd like us to know": [
+        "Cokoliv, co bychom měli vědět"
+      ],
       "Anytown": [
         "Město"
       ],
@@ -10554,11 +10669,17 @@
       "Company name": [
         "Název společnosti"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "E.g., ": [
         "Např., "
       ],
       "Email": [
         "E-mail"
+      ],
+      "Enter a name": [
+        "Zadejte název"
       ],
       "Enter a new file name": [
         "Zadejte nový název souboru"
@@ -10761,6 +10882,11 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Oficiální e-mail od ${ BRAND_NAME }"
+      ]
+    },
+    "Provider option": {
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {
@@ -12528,6 +12654,9 @@
       "Check for malicious files": [
         "Kontrola škodlivých souborů"
       ],
+      "Choose a provider": [
+        "Vybrat poskytovatele"
+      ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "Získejte vaši ${ MAIL_APP_NAME } adresu"
       ],
@@ -12593,6 +12722,9 @@
       ],
       "Currency": [
         "Měna"
+      ],
+      "Custom": [
+        "Vlastní"
       ],
       "Customize and confirm": [
         "Přizpůsobit a potvrdit"
@@ -12689,6 +12821,9 @@
       ],
       "Discard changes?": [
         "Zahodit změny?"
+      ],
+      "Disconnected from Gmail": [
+        "Odpojeno od služby Gmail"
       ],
       "Downgrade account": [
         "Snížit úroveň účtu"
@@ -13121,6 +13256,9 @@
       ],
       "Restore your files": [
         "Obnovit soubory"
+      ],
+      "Reverse charge not supported": [
+        "Funkce přenesení daňové povinnosti není podporována"
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Uložit na později na ${ DRIVE_APP_NAME }"

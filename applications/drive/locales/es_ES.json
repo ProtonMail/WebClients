@@ -815,6 +815,9 @@
       "Refer a friend": [
         "Recomendar a un amigo"
       ],
+      "Refetch index": [
+        "Actualizar el índice"
+      ],
       "Refresh the page": [
         "Actualizar la página"
       ],
@@ -5037,6 +5040,9 @@
       "${ speed }/s": [
         "${ speed }/s"
       ],
+      "${ state.result.entries.length } entries": [
+        "${ state.result.entries.length } entradas"
+      ],
       "${ storage } storage": [
         "${ storage } de almacenamiento"
       ],
@@ -5708,6 +5714,9 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "En el siguiente paso, podrás enviar un depósito con una dirección Bitcoin."
       ],
+      "Index is empty.": [
+        "El índice está vacío."
+      ],
       "Indexing in progress": [
         "Indexación en curso"
       ],
@@ -6190,6 +6199,9 @@
       "Search enabled. You may now close this dialogue and search for files and folders.": [
         "Búsqueda activada. Ya puedes cerrar esta ventana y buscar archivos y carpetas."
       ],
+      "Search module is not available.": [
+        "El módulo de búsqueda no está disponible."
+      ],
       "Select a destination folder": [
         "Selecciona una carpeta de destino"
       ],
@@ -6575,6 +6587,9 @@
       ],
       "Unsupported file": [
         "Archivo no admitido"
+      ],
+      "Unsupported file type for Photos": [
+        "Formato de archivo no compatible con Fotos"
       ],
       "Untitled": [
         "Sin título"
@@ -7334,6 +7349,9 @@
       "Enter device name": [
         "Introduce el nombre del dispositivo"
       ],
+      "Environment compatible": [
+        "Entorno compatible"
+      ],
       "Expired": [
         "Expirado"
       ],
@@ -7402,6 +7420,12 @@
       ],
       "Include message and file name in invite email": [
         "Incluir el mensaje y nombre del archivo en el correo de invitación"
+      ],
+      "Index kinds": [
+        "Tipos de índice"
+      ],
+      "Initial indexing": [
+        "Indexación inicial"
       ],
       "Integrated 2FA authenticator": [
         "Autenticador de 2FA integrado"
@@ -7502,6 +7526,9 @@
       "Other": [
         "Otros"
       ],
+      "Outdated version": [
+        "Versión obsoleta"
+      ],
       "Password": [
         "Contraseña"
       ],
@@ -7570,6 +7597,9 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Ginebra"
+      ],
+      "Searchable": [
+        "Se pueden realizar búsquedas"
       ],
       "Select type of abuse": [
         "Selecciona el tipo de abuso."
@@ -7682,6 +7712,9 @@
       "Uploaded by": [
         "Cargado por"
       ],
+      "User opted in": [
+        "El usuario ha aceptado"
+      ],
       "Username": [
         "Nombre de usuario"
       ],
@@ -7690,6 +7723,9 @@
       ],
       "Viewer": [
         "Lector"
+      ],
+      "Visible columns:": [
+        "Columnas visibles:"
       ],
       "Vulnerable": [
         "Vulnerable"
@@ -9385,10 +9421,6 @@
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } elemento eliminado permanentemente de la papelera",
         "${ numberOfItems } elementos eliminados permanentemente de la papelera"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "Error al eliminar ${ numberOfItems } elemento",
-        "Error al eliminar ${ numberOfItems } elementos"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "Error al eliminar ${ numberOfItems } elemento permanentemente de la papelera",
@@ -12635,6 +12667,9 @@
       "Gift": [
         "Regalo"
       ],
+      "Global": [
+        "Global"
+      ],
       "Groups": [
         "Grupos"
       ],
@@ -12945,6 +12980,9 @@
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Guardarlo para después en ${ DRIVE_APP_NAME }"
+      ],
+      "Search": [
+        "Buscar"
       ],
       "Search results": [
         "Resultados de búsqueda"
