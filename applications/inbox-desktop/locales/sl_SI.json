@@ -6,7 +6,7 @@
   "contexts": {
     "App menu": {
       "\"Restart and profile now\" will restart the app immediately and capture a startup profile.\n\n\"Profile on next launch\" will profile the next time you open the app. Use this to measure startup speed after a reboot.": [
-        "\"Ponovni zagon in profil zdaj\" bo takoj ponovno zagnal aplikacijo in ustvaril profil zagona.\n\n\"Profil ob naslednjem zagonu\" bo ustvaril profil ob naslednjem odprtju aplikacije. Uporabite to za merjenje hitrosti zagona po ponovnem zagonu."
+        "\"Znova zaženi in nastavi profil zdaj\" bo takoj ponovno zagnal aplikacijo in ustvaril profil zagona.\n\n\"Profil ob naslednjem zagonu\" bo ustvaril profil ob naslednjem odprtju aplikacije. Uporabite to za merjenje hitrosti zagona po ponovnem zagonu."
       ],
       "About ${ MAIL_APP_NAME }": [
         "Vizitka ${ MAIL_APP_NAME }"
@@ -27,7 +27,7 @@
         "Zapri okno"
       ],
       "Collect startup performance data": [
-        "Zbirajte podatke o uspešnosti ob zagonu"
+        "Zbirajte podatke o uspešnosti zagona"
       ],
       "Copy": [
         "Kopiraj"
@@ -81,7 +81,7 @@
         "Ponovno naloži"
       ],
       "Restart and profile now": [
-        "Znova zaženi in profiliraj zdaj"
+        "Znova zaženi in nastavi profil zdaj"
       ],
       "Restart with logging": [
         "Ponovni zagon z beleženjem"
@@ -108,7 +108,7 @@
         "Nehaj govoriti"
       ],
       "These logs help us diagnose issues. The app will restart to apply the change.": [
-        "Ti dnevniki nam pomagajo pri diagnosticiranju težav. Aplikacija se bo ponovno zagnala, da se sprememba uporabi."
+        "Ti dnevniki nam pomagajo pri ugotavljanju težav. Aplikacija se bo ponovno zagnala, da se sprememba uporabi."
       ],
       "This will measure how long the app takes to start and save a report to your logs folder.": [
         "To bo merilo, kako dolgo aplikacija potrebuje za zagon, in shranilo poročilo v vašo mapo z dnevniki."
