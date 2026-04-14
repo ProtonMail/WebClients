@@ -794,11 +794,17 @@
       "Reconnect": [
         "Riconnetti"
       ],
+      "Reconnect to Gmail": [
+        "Riconnetti a Gmail"
+      ],
       "Recover data": [
         "Recupera dati"
       ],
       "Refer a friend": [
         "Invita un amico"
+      ],
+      "Refetch index": [
+        "Ricarica indice"
       ],
       "Refresh the page": [
         "Aggiorna la pagina"
@@ -2940,6 +2946,15 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Semplifica la sincronizzazione e la pianificazione con i calendari condivisi."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Questo può succedere se i permessi sono stati rimossi o la tua password è cambiata."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Per continuare a ricevere e inviare messaggi Gmail in ${ BRAND_NAME }, per favore riconnetti il tuo account."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Per continuare a ricevere e inviare messaggi Gmail in ${ BRAND_NAME }, per favore riconnetti i tuoi account."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Per garantire la massima sicurezza possibile per il tuo account, imposta una frase di recupero."
       ],
@@ -2960,6 +2975,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Usa questa guida per fare in modo che la tua organizzazione tragga rapidamente vantaggio dalla crittografia e dall'ecosistema di privacy leader del settore di ${ BRAND_NAME }."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Non possiamo più accedere a ${ boldEmails }."
       ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Con i gruppi di contatti, puoi inviare email a tutte le persone nel gruppo con un solo click."
@@ -3229,6 +3247,10 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Puoi anche controllare il nostro ${ statusPageLink }"
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "Spostamento di ${ failureItems.length } elemento non riuscito",
+        "Spostamento di ${ failureItems.length } elementi non riuscito"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } è il tuo nome utente. Per creare ${ emailAddress }, vai su Impostazioni > Identità e indirizzi > Dominio breve (pm.me)"
       ],
@@ -3240,6 +3262,9 @@
       ],
       "Account does not exist": [
         "L'account non esiste"
+      ],
+      "Address could not be added.": [
+        "Impossibile aggiungere l'indirizzo."
       ],
       "Address primary private key not found": [
         "Chiave privata primaria indirizzo non trovata"
@@ -3664,6 +3689,15 @@
       ],
       "Something went wrong during folder listing": [
         "Qualcosa è andato storto durante l'elenco delle cartelle"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Si è verificato un errore durante il recupero dei domini disponibili"
+      ],
+      "Something went wrong with search. Please try again later.": [
+        "Qualcosa è andato storto con la ricerca. Riprova più tardi."
+      ],
+      "Something went wrong with search: Not enough storage space.": [
+        "Qualcosa è andato storto durante la ricerca: spazio di archiviazione insufficiente."
       ],
       "Something went wrong. Please try again.": [
         "Qualcosa è andato storto. Riprova."
@@ -4706,6 +4740,11 @@
         "Seleziona ${ boldExport } per esportare il calendario come file ICS."
       ]
     },
+    "Import provider": {
+      "More import options": [
+        "Altre opzioni di importazione"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } su ${ totalContacts } contatti non saranno importati. Clicca per i dettagli"
@@ -4906,6 +4945,9 @@
       ],
       "${ speed }/s": [
         "${ speed }/s"
+      ],
+      "${ state.result.entries.length } entries": [
+        "${ state.result.entries.length } voci"
       ],
       "${ storage } storage": [
         "${ storage } di archiviazione"
@@ -5363,6 +5405,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Garantisci comunicazioni completamente private e crittografate. Richiedi ora il tuo indirizzo email ${ BRAND_NAME } gratuito."
       ],
+      "Enter code": [
+        "Inserisci il codice"
+      ],
       "Enter password": [
         "Inserisci la password"
       ],
@@ -5499,6 +5544,9 @@
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "Se disponi di uno di questi, passa alle impostazioni dell'account ${ BRAND_NAME } per iniziare il processo di sblocco."
       ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Se hai perso l'accesso alla tua app di autenticazione, puoi usare 1 dei 16 codici di recupero di backup forniti quando hai configurato l'autenticazione a due fattori. ${ learnMoreLink }"
+      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Se procedi con il downgrade, perderai l'accesso alle funzionalità a pagamento di ${ MAIL_APP_NAME } e ${ VPN_APP_NAME }."
       ],
@@ -5536,6 +5584,9 @@
       "In the next step, you’ll be able to submit a deposit using a Bitcoin address.": [
         "Nel passaggio successivo, sarai in grado di inviare un deposito utilizzando un indirizzo Bitcoin."
       ],
+      "Index is empty.": [
+        "Indice vuoto."
+      ],
       "Indexing items ${ esProgress } out of ${ totalProgressToShow }": [
         "Indicizzazione elemento ${ esProgress } di ${ totalProgressToShow }"
       ],
@@ -5559,6 +5610,9 @@
       ],
       "Internet connection restored.": [
         "Connessione Internet ripristinata."
+      ],
+      "Invitation confirmed": [
+        "Invito confermato"
       ],
       "Invite link copied": [
         "Link di invito copiato"
@@ -5701,6 +5755,18 @@
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "La maggior parte delle reti WiFi pubbliche sono sicure, ma alcune sono carenti di sicurezza, esponendoti a minacce informatiche. Una VPN crittografa il tuo traffico, mantenendoti protetto."
+      ],
+      "Move ${ dragCount } item": [
+        "Sposta ${ dragCount } elemento",
+        "Sposta ${ dragCount } elementi"
+      ],
+      "Move ${ fileCount } file": [
+        "Sposta ${ fileCount } file",
+        "Sposta ${ fileCount } file"
+      ],
+      "Move ${ folderCount } folder": [
+        "Sposta ${ folderCount } cartella",
+        "Sposta ${ folderCount } cartelle"
       ],
       "Moving files": [
         "Spostamento dei file in corso"
@@ -6005,6 +6071,9 @@
       ],
       "Search Enabled": [
         "Ricerca Abilitata"
+      ],
+      "Search module is not available.": [
+        "Modulo di ricerca non disponibile."
       ],
       "Select a destination folder": [
         "Seleziona una cartella di destinazione"
@@ -6382,6 +6451,9 @@
       ],
       "Unsupported file": [
         "File non supportato"
+      ],
+      "Unsupported file type for Photos": [
+        "Tipo di file non supportato per Foto"
       ],
       "Untitled": [
         "Senza titolo"
@@ -7108,6 +7180,9 @@
       "Enter device name": [
         "Inserisci il nome del dispositivo"
       ],
+      "Environment compatible": [
+        "Ambiente compatibile"
+      ],
       "Expired": [
         "Scaduto"
       ],
@@ -7173,6 +7248,12 @@
       ],
       "Include message and file name in invite email": [
         "Includi il messaggio e il nome del file nell'email di invito"
+      ],
+      "Index kinds": [
+        "Tipi di indice"
+      ],
+      "Initial indexing": [
+        "Indicizzazione iniziale"
       ],
       "Integrated 2FA authenticator": [
         "Autenticatore 2FA integrato"
@@ -7270,6 +7351,9 @@
       "Other": [
         "Altro"
       ],
+      "Outdated version": [
+        "Versione obsoleta"
+      ],
       "Password": [
         "Password"
       ],
@@ -7335,6 +7419,9 @@
       ],
       "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva": [
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
+      ],
+      "Searchable": [
+        "Ricercabile"
       ],
       "Select type of abuse": [
         "Selezione tipo di abuso"
@@ -7441,6 +7528,9 @@
       "Uploaded by": [
         "Caricato da"
       ],
+      "User opted in": [
+        "Utente ha accettato"
+      ],
       "Username": [
         "Nome utente"
       ],
@@ -7449,6 +7539,9 @@
       ],
       "Viewer": [
         "Visualizzatore"
+      ],
+      "Visible columns:": [
+        "Colonne visibili:"
       ],
       "Vulnerable": [
         "Vulnerabile"
@@ -7751,6 +7844,12 @@
       ],
       "for ${ price }": [
         "per ${ price }"
+      ]
+    },
+    "meet_2025: Addon": {
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } licenza ${ MEET_APP_NAME }",
+        "${ seats } licenze ${ MEET_APP_NAME }"
       ]
     },
     "meet_2025: Feature": {
@@ -8272,6 +8371,13 @@
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Tutti i servizi ${ BRAND_NAME } di base (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "Appointment scheduling": [
+        "Pianificazione degli appuntamenti"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Pianificazione appuntamenti con ${ n } pagina di prenotazione",
+        "Pianificazione di appuntamenti con ${ n } pagine di prenotazione"
       ],
       "Auto-delete Spam and Trash": [
         "Eliminazione automatica dello spam e dal cestino"
@@ -9096,10 +9202,6 @@
         "${ numberOfItems } elemento eliminato definitivamente dal cestino",
         "${ numberOfItems } elementi eliminati definitivamente dal cestino"
       ],
-      "${ numberOfItems } item failed to be deleted": [
-        "Eliminazione di ${ numberOfItems } elemento non riuscita",
-        "Eliminazione di ${ numberOfItems } elementi non riuscita"
-      ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "Eliminazione definitiva di ${ numberOfItems } elemento dal cestino non riuscita",
         "Eliminazione definitiva di ${ numberOfItems } elementi dal cestino non riuscita"
@@ -9310,6 +9412,9 @@
       ],
       "You stopped sharing this item": [
         "Hai interrotto la condivisione di questo elemento"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Il tuo indirizzo ${ BRAND_NAME } è pronto per l'uso"
       ],
       "Your old files will be deleted in 72 hours": [
         "I tuoi vecchi file verranno eliminati entro 72 ore"
@@ -12120,6 +12225,9 @@
       "Discard changes?": [
         "Annullare le modifiche?"
       ],
+      "Disconnected from Gmail": [
+        "Disconnesso da Gmail"
+      ],
       "Downgrade account": [
         "Effettua il downgrade dell'account"
       ],
@@ -12242,6 +12350,9 @@
       ],
       "Gift": [
         "Regalo"
+      ],
+      "Global": [
+        "Globale"
       ],
       "Groups": [
         "Gruppi"
@@ -12547,6 +12658,9 @@
       ],
       "Save it for later in ${ DRIVE_APP_NAME }": [
         "Salva per dopo in ${ DRIVE_APP_NAME }"
+      ],
+      "Search": [
+        "Cerca"
       ],
       "Search results": [
         "Risultati di ricerca"

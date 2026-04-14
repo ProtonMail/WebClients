@@ -809,6 +809,9 @@
       "Reconnect": [
         "Yeniden bağlan"
       ],
+      "Reconnect to Gmail": [
+        "Gmail bağlantısını yeniden kur"
+      ],
       "Recover data": [
         "Verileri kurtar"
       ],
@@ -816,7 +819,7 @@
         "Arkadaşınıza önerin"
       ],
       "Refetch index": [
-        "Dizini yeniden getir"
+        "Dizini yeniden al"
       ],
       "Refresh the page": [
         "Sayfayı yenile"
@@ -3020,6 +3023,15 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Paylaşılan takvimler ile zamanlamayı eşitlemeyi ve planlamayı kolaylaştırın."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Bu durum izinler kaldırılmışsa veya parolanız değiştirilmişse ortaya çıkabilir."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "${ BRAND_NAME } üzerinden Gmail iletilerini almayı ve göndermeyi sürdürmek için lütfen hesabınızı yeniden bağlayın."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "${ BRAND_NAME } üzerinden Gmail iletilerini almayı ve göndermeyi sürdürmek için lütfen hesaplarınızı yeniden bağlayın."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Hesabınızda olabilecek en yüksek güvenliğini sağlamak için bir kurtarma ifadesi belirleyin."
       ],
@@ -3040,6 +3052,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Kuruluşunuzun, ${ BRAND_NAME } sektör lideri şifreleme ve gizlilik ekosisteminden hemen yararlanmasını sağlamak için bu rehberi kullanın."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Artık ${ boldEmails } adresine erişemiyoruz."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Aramızdan ayrıldığınız için üzgünüz. Vakit ayırıp iptal etme nedeninizi paylaşırsanız çok seviniriz. Geri bildiriminiz ${ BRAND_NAME } hizmetlerini herkes için daha iyi yapmamıza yardımcı olur."
@@ -3313,8 +3328,8 @@
         "${ errorMessage }. Ayrıca ${ statusPageLink }na da bakabilirsiniz"
       ],
       "${ failureItems.length } item failed to be moved": [
-        "${ failureItems.length } öğe taşınamadı",
-        "${ failureItems.length } öğe taşınamadı"
+        "${ failureItems.length } öge taşınamadı",
+        "${ failureItems.length } öge taşınamadı"
       ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "Kullanıcı adınız: ${ user.Name }. ${ emailAddress } oluşturmak için lütfen Ayarlar > Kimlik ve adresler > Kısa etki alanı (pm.me) bölümüne gidin."
@@ -3327,6 +3342,9 @@
       ],
       "Account does not exist": [
         "Hesap bulunamadı"
+      ],
+      "Address could not be added.": [
+        "Adres eklenemedi."
       ],
       "Address primary private key not found": [
         "Adresin birincil kişisel anahtarı bulunamadı"
@@ -3772,6 +3790,9 @@
       ],
       "Something went wrong during folder listing": [
         "Klasör listelenirken bir sorun çıktı"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Kullanılabilecek etki alanları alınırken bir sorun çıktı"
       ],
       "Something went wrong with search. Please try again later.": [
         "Arama sırasında bir sorun çıktı. Lütfen bir süre sonra yeniden deneyin."
@@ -5053,7 +5074,7 @@
         "${ speed }/s"
       ],
       "${ state.result.entries.length } entries": [
-        "${ state.result.entries.length } girdi"
+        "${ state.result.entries.length } kayıt"
       ],
       "${ storage } storage": [
         "${ storage } depolama alanı"
@@ -5548,7 +5569,7 @@
         "Tümüyle güvenli ve şifrelenmiş iletişim sağlayın. Ücretsiz ${ BRAND_NAME } e-posta adresinizi şimdi alın."
       ],
       "Enter code": [
-        "Kodu girin"
+        "Kodu yazın"
       ],
       "Enter password": [
         "Parolayı yazın"
@@ -5767,6 +5788,9 @@
       ],
       "Internet connection restored.": [
         "İnternet bağlantısı yeniden kuruldu."
+      ],
+      "Invitation confirmed": [
+        "Davet kabul edildi"
       ],
       "Invite link copied": [
         "Davet bağlantısı kopyalandı"
@@ -6625,7 +6649,7 @@
         "Dosya desteklenmiyor"
       ],
       "Unsupported file type for Photos": [
-        "Fotoğraflar için desteklenmeyen dosya türü"
+        "Fotoğraflar için dosya türü desteklenmiyor"
       ],
       "Untitled": [
         "Adlandırılmamış"
@@ -7383,7 +7407,7 @@
         "Aygıt adını yazın"
       ],
       "Environment compatible": [
-        "Çevre uyumlu"
+        "Ortam ile uyumlu"
       ],
       "Expired": [
         "Geçerlilik süresi dolmuş"
@@ -7458,7 +7482,7 @@
         "Dizin türleri"
       ],
       "Initial indexing": [
-        "İlk dizinleme"
+        "İlk dizin oluşturma"
       ],
       "Integrated 2FA authenticator": [
         "Bütünleşik iki adımlı kimlik doğrulayıcı"
@@ -7560,7 +7584,7 @@
         "Diğer"
       ],
       "Outdated version": [
-        "Eski sürüm"
+        "Sürüm eski"
       ],
       "Password": [
         "Parola"
@@ -7632,7 +7656,7 @@
         "Route de la Galaise 32, 1228 Plan-les-Ouates, Geneva"
       ],
       "Searchable": [
-        "Arama yapılabilir"
+        "Aranabilir"
       ],
       "Select type of abuse": [
         "Kötüye kullanım türünü seçin"
@@ -7746,7 +7770,7 @@
         "Yükleyen"
       ],
       "User opted in": [
-        "Kullanıcı onay verdi"
+        "Kullanıcı katıldı"
       ],
       "Username": [
         "Kullanıcı adı"
@@ -8567,6 +8591,13 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Tüm temel ${ BRAND_NAME } hizmetleri (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "Randevu planlama"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "${ n } rezervasyon sayfası ile randevu planlama",
+        "${ n } rezervasyon sayfası ile randevu planlama"
+      ],
       "Auto-delete Spam and Trash": [
         "İstenmeyenleri ve çöpü otomatik olarak boşaltma"
       ],
@@ -9366,6 +9397,10 @@
         "${ errors.length } öge kopyalanamadı",
         "${ errors.length } öge kopyalanamadı"
       ],
+      "${ errors.length } item failed to be deleted": [
+        "${ errors.length } öğe silinemedi",
+        "${ errors.length } öğe silinemedi"
+      ],
       "${ errors.length } item failed to be trashed": [
         "${ errors.length } öge çöpe atılamadı",
         "${ errors.length } öge çöpe atılamadı"
@@ -9401,10 +9436,6 @@
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } öge çöp kutusundan kalıcı olarak silindi",
         "${ numberOfItems } öge çöp kutusundan kalıcı olarak silindi"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "${ numberOfItems } öge silinemedi",
-        "${ numberOfItems } öge silinemedi"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems } öge çöp kutusundan kalıcı olarak silinemedi",
@@ -9622,6 +9653,9 @@
       ],
       "You stopped sharing this item": [
         "Bu ögeyi paylaşmayı durdurdunuz"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "${ BRAND_NAME } adresiniz kullanılmaya hazır"
       ],
       "Your old files will be deleted in 72 hours": [
         "Eski dosyalarınız 72 saat içinde silinecek"
@@ -12523,6 +12557,9 @@
       ],
       "Discard changes?": [
         "Değişiklikler silinsin mi?"
+      ],
+      "Disconnected from Gmail": [
+        "Gmail bağlantısı kesildi"
       ],
       "Downgrade account": [
         "Hesap tarifesini düşür"
