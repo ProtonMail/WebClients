@@ -698,6 +698,9 @@
       "Reconnect": [
         "Yeniden bağlan"
       ],
+      "Reconnect to Gmail": [
+        "Gmail bağlantısını yeniden kur"
+      ],
       "Reconnect to Zoom": [
         "Zoom ile yeniden bağlantı kur"
       ],
@@ -3153,6 +3156,15 @@
       "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
         "Bu işlem birkaç dakika sürebilir. Bu arada ${ CALENDAR_APP_NAME } uygulamasını her zamanki gibi kullanmayı sürdürebilirsiniz."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Bu durum izinler kaldırılmışsa veya parolanız değiştirilmişse ortaya çıkabilir."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "${ BRAND_NAME } üzerinden Gmail iletilerini almayı ve göndermeyi sürdürmek için lütfen hesabınızı yeniden bağlayın."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "${ BRAND_NAME } üzerinden Gmail iletilerini almayı ve göndermeyi sürdürmek için lütfen hesaplarınızı yeniden bağlayın."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Hesabınızda olabilecek en yüksek güvenliğini sağlamak için bir kurtarma ifadesi belirleyin."
       ],
@@ -3170,6 +3182,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Kuruluşunuzun, ${ BRAND_NAME } sektör lideri şifreleme ve gizlilik ekosisteminden hemen yararlanmasını sağlamak için bu rehberi kullanın."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Artık ${ boldEmails } adresine erişemiyoruz."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Aramızdan ayrıldığınız için üzgünüz. Vakit ayırıp iptal etme nedeninizi paylaşırsanız çok seviniriz. Geri bildiriminiz ${ BRAND_NAME } hizmetlerini herkes için daha iyi yapmamıza yardımcı olur."
@@ -3511,6 +3526,9 @@
       ],
       "Account does not exist": [
         "Hesap bulunamadı"
+      ],
+      "Address could not be added.": [
+        "Adres eklenemedi."
       ],
       "Address primary private key not found": [
         "Adresin birincil kişisel anahtarı bulunamadı"
@@ -3935,6 +3953,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Bazı etiket adlarınız ${ MAIL_APP_NAME } tarafından izin verilen en fazla karakter sayısı sınırını aşıyor. Lütfen bu adları düzenlemek için içe aktarma işlemini özelleştirin."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Kullanılabilecek etki alanları alınırken bir sorun çıktı"
       ],
       "Something went wrong. Please try again.": [
         "Bir sorun çıktı. Lütfen yeniden deneyin."
@@ -5518,7 +5539,7 @@
         "Tümüyle güvenli ve şifrelenmiş iletişim sağlayın. Ücretsiz ${ BRAND_NAME } e-posta adresinizi şimdi alın."
       ],
       "Enter code": [
-        "Kodu girin"
+        "Kodu yazın"
       ],
       "Enter the code from your authenticator app": [
         "Kimlik doğrulama uygulamanızdan alacağınız kodu yazın"
@@ -7160,7 +7181,7 @@
         "İkincil saat dilimi"
       ],
       "Securely share parts of your schedule through a booking page you can send to anyone.": [
-        "Programınızın belirli bölümlerini istediğiniz kişiye gönderebileceğiniz bir randevu sayfası üzerinden güvenle paylaşın."
+        "Programınızın parçalarını istediğiniz kişiye gönderebileceğiniz bir randevu sayfası üzerinden güvenle paylaşın."
       ],
       "Show others when I'm busy": [
         "Meşgul olduğum zamanlar başkalarına görüntülensin"
@@ -8070,6 +8091,13 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Tüm temel ${ BRAND_NAME } hizmetleri (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "Randevu planlama"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "${ n } rezervasyon sayfası ile randevu planlama",
+        "${ n } rezervasyon sayfası ile randevu planlama"
+      ],
       "Auto-delete Spam and Trash": [
         "İstenmeyenleri ve çöpü otomatik olarak boşaltma"
       ],
@@ -8840,6 +8868,9 @@
       ],
       "Passphrase copied to clipboard": [
         "Parola ifadesi panoya kopyalandı"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "${ BRAND_NAME } adresiniz kullanılmaya hazır"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11873,6 +11904,9 @@
       ],
       "Discard changes?": [
         "Değişiklikler silinsin mi?"
+      ],
+      "Disconnected from Gmail": [
+        "Gmail bağlantısı kesildi"
       ],
       "Does not repeat": [
         "Yinelenmiyor"
