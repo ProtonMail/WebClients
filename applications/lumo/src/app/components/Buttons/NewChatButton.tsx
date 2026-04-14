@@ -14,7 +14,7 @@ import { useGuestChatHandler } from '../../hooks/useGuestChatHandler';
 import { useGhostChat } from '../../providers/GhostChatProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { setNativeGhostMode } from '../../remote/nativeComposerBridgeHelpers';
-import { GuestChatDisclaimerModal } from '../Modals/GuestChatDisclaimerModal';
+import { GuestChatDisclaimerModal } from '../Guest/GuestChatDisclaimerModal';
 
 // Hook to manage delayed text rendering for smooth animations
 // const useDelayedTextVisibility = (isCollapsed: boolean) => {

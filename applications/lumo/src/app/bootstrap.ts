@@ -26,10 +26,12 @@ import { getPrimaryKey } from '@proton/shared/lib/keys';
 import { telemetry } from '@proton/shared/lib/telemetry';
 import noop from '@proton/utils/noop';
 
+import { GUEST_MIGRATION_STORAGE_KEYS } from './constants/guestMigration';
 import { DbApi } from './indexedDb/db';
 import locales from './locales';
 import { createLumoListenerMiddleware } from './redux/listeners';
 import { rootSaga } from './redux/sagas';
+import { importGuestDataRequest } from './redux/slices/guestMigration';
 import type { LumoSaga, LumoSagaContext, LumoState } from './redux/store';
 import { extendStore, setupStore } from './redux/store';
 import { setStoreRef } from './redux/storeRef';
@@ -39,6 +41,58 @@ import { LUMO_ELIGIBILITY } from './types';
 import { initializeConsoleOverride } from './util/logging';
 import { type UserAndAddressKeys, initializeLumoBackground, initializeLumoCritical } from './util/lumoBootstrap';
 import { lumoTelemetryConfig } from './util/telemetryConfig';
+
+const checkForGuestMigration = async (dispatch: any) => {
+    try {
+        const storedData = localStorage.getItem(GUEST_MIGRATION_STORAGE_KEYS.MIGRATION_DATA);
+        if (!storedData) return null;
+
+        // Import decryption function
+        const { decryptGuestData, clearGuestEncryptionKey } = await import('./utils/guestEncryption');
+
+        // Decrypt the stored data
+        const guestData = await decryptGuestData(storedData);
+
+        // Check if data is recent (within last 15 minutes to avoid stale data)
+        const isRecent = Date.now() - guestData.timestamp < 15 * 60 * 1000;
+        if (!isRecent) {
+            console.log('Guest migration data is stale, ignoring');
+            localStorage.removeItem(GUEST_MIGRATION_STORAGE_KEYS.MIGRATION_DATA);
+            clearGuestEncryptionKey();
+            return null;
+        }
+
+        console.log('Found guest migration data, importing...', {
+            conversation: guestData.conversation?.id,
+            messages: Object.keys(guestData.messages || {}).length,
+            activeConversationId: guestData.activeConversationId,
+        });
+
+        dispatch(importGuestDataRequest(guestData));
+
+        // Clean up after successful dispatch
+        localStorage.removeItem(GUEST_MIGRATION_STORAGE_KEYS.MIGRATION_DATA);
+        clearGuestEncryptionKey();
+
+        // Store the conversation ID for post-load navigation
+        if (guestData.activeConversationId) {
+            sessionStorage.setItem(GUEST_MIGRATION_STORAGE_KEYS.POST_MIGRATION_NAV, guestData.activeConversationId);
+        }
+
+        return guestData.activeConversationId;
+    } catch (error) {
+        console.error('Failed to process guest migration data:', error);
+        localStorage.removeItem(GUEST_MIGRATION_STORAGE_KEYS.MIGRATION_DATA);
+        // Clean up encryption key if decryption failed
+        try {
+            const { clearGuestEncryptionKey } = await import('./utils/guestEncryption');
+            clearGuestEncryptionKey();
+        } catch (e) {
+            console.error('Failed to clear guest encryption key:', e);
+        }
+        return null;
+    }
+};
 
 export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; signal?: AbortSignal }) => {
     // Check if there are any existing sessions on lumo.proton.me, if not redirect to lumo.proton.me/guest where user then has the option to signin
@@ -165,6 +219,9 @@ export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; s
             if (result?.eligibility === LUMO_ELIGIBILITY.Eligible) {
                 await dispatch(initializeLumoBackground(uid));
             }
+
+            // Check for guest migration data after sagas are running
+            await checkForGuestMigration(dispatch);
         };
 
         // We need to await the critical operations (for waitlist to work correctly) and dispatch background operations

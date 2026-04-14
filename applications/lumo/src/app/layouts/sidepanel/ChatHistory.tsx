@@ -6,7 +6,7 @@ import { c } from 'ttag';
 import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 
 import ChatHistorySkeleton from '../../components/ChatHistorySkeleton';
-import { ChatHistoryGuestUserUpsell } from '../../components/ChatHistoryUpsell.tsx/ChatHistoryUpsell';
+import { ChatHistoryGuestUserUpsell } from '../../components/Guest/ChatHistoryUpsell.tsx/ChatHistoryUpsell';
 import { useLumoUserSettings } from '../../hooks';
 import { useLumoPlan } from '../../hooks/useLumoPlan';
 import { useConversation } from '../../providers/ConversationProvider';

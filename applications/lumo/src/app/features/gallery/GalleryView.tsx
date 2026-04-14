@@ -9,7 +9,7 @@ import lumoImageLight from '@proton/styles/assets/img/lumo/lumo-image-light.svg'
 import { ComposerComponent } from '../../components/Composer/ComposerComponent';
 import { useFileHandling } from '../../components/Composer/hooks/useFileHandling';
 import { useNativeComposerVisibilityApi } from '../../components/Composer/hooks/useNativeComposerVisibilityApi';
-import { GuestSignInState } from '../../components/GuestSignInState/GuestSignInState';
+import { GuestSignInState } from '../../components/Guest/GuestSignInState/GuestSignInState';
 import { LazyLottie } from '../../components/LazyLottie';
 import type { DrawingMode } from '../../features/drawingcanvas/types';
 import type { HandleSendMessage } from '../../hooks/useLumoActions';

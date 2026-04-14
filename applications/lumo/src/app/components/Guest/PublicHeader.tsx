@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Href } from '@proton/atoms/Href/Href';
-import { SettingsLink } from '@proton/components';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
+import { CreateFreeAccountButton } from '../../components/Guest/CreateFreeAccountLink/CreateFreeAccountLink';
+import { SignInButton } from '../../components/Guest/SignInLink';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { getIsMobileDevice } from '../../util/device';
 
@@ -15,7 +15,6 @@ export const PublicHeader = () => {
     const isMobileDevice = getIsMobileDevice();
 
     return (
-        // <HeaderWrapper>
         <header className="hidden md:flex flex-nowrap justify-end items-center gap-2 p-3">
             {isGuest && !isMobileDevice && (
                 <li className="ml-auto hidden lg:inline-flex no-print">
@@ -24,12 +23,8 @@ export const PublicHeader = () => {
                     </Href>
                 </li>
             )}
-            <ButtonLike as={SettingsLink} path="/signup" shape="solid">
-                {c('collider_2025: Link').t`Create a free account`}
-            </ButtonLike>
-            <ButtonLike as={SettingsLink} path="" shape="solid" color="weak">{c('collider_2025: Link')
-                .t`Sign in`}</ButtonLike>
+            <CreateFreeAccountButton />
+            <SignInButton color="weak" shape="solid" />
         </header>
-        // </HeaderWrapper>
     );
 };

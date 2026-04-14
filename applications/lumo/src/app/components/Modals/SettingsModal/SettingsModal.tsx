@@ -33,10 +33,10 @@ import type { Conversation, Message, SpaceId } from '../../../types';
 import { LumoSettingsPanelUpsell } from '../../../upsells';
 import { getInitials } from '../../../util/username';
 import LumoThemeButton from '../../Buttons/LumoThemeButton';
-import CreateFreeAccountLink from '../../CreateFreeAccountLink/CreateFreeAccountLink';
 import { IndexingStatusBanner } from '../../Files/DriveBrowser/IndexingStatusBanner';
+import { CreateFreeAccountLink } from '../../Guest/CreateFreeAccountLink/CreateFreeAccountLink';
+import { SignInButton } from '../../Guest/SignInLink';
 import { LumoLogoThemeAware } from '../../Icons/LumoLogoThemeAware';
-import { SignInLinkButton } from '../../Links/SignInLink';
 import DeleteAllButton from './DeleteAllButton';
 import { PaidSubscriptionPanel } from './PaidSubscriptionPanel';
 import PersonalizationPanel from './PersonalizationPanel';
@@ -428,7 +428,7 @@ const AccountSettingsPanelGuest = () => {
                     c('collider_2025: Description')
                         .jt`Sign in to access your account and unlock more features. Don't have one? ${createLink}`
                 }
-                button={<SignInLinkButton color="weak" shape="outline" />}
+                button={<SignInButton color="weak" shape="outline" />}
             />
         </div>
     );

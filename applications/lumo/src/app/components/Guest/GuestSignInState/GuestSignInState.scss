@@ -1,0 +1,62 @@
+// ── Guest sign-in state ────────────────────────────────────────────────────────
+// Centred, full-height layout used wherever a feature requires authentication.
+// Drop this component inside any flex-column container with flex: 1.
+
+.guest-signin-state {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding-block: 40px;
+	padding-inline: 24px;
+	min-block-size: 0;
+}
+
+.guest-signin-state__icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-block-end: 20px;
+
+	img {
+		max-inline-size: 100%;
+		block-size: auto;
+	}
+}
+
+.guest-signin-state__title {
+	font-size: 20px;
+	font-weight: 600;
+	color: var(--text-norm);
+	margin-block: 0 10px;
+	margin-inline: 0;
+}
+
+.guest-signin-state__description {
+	font-size: 14px;
+	color: var(--text-weak);
+	margin: 0;
+	max-inline-size: 380px;
+	line-height: 1.5;
+}
+
+.guest-signin-state__actions {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 8px;
+	margin-block-start: 20px;
+	inline-size: 100%;
+	max-inline-size: 20rem;
+}
+
+.guest-signin-state__footer {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	margin-block-start: 16px;
+	font-size: 0.8125rem;
+	color: var(--text-weak);
+}

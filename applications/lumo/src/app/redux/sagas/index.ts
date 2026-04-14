@@ -138,6 +138,7 @@ import {
     softDeleteConversationFromLocal,
     softDeleteConversationFromRemote,
 } from './conversations';
+import { guestMigrationSaga } from './guestMigration';
 import { considerSavingIdMapToIdb } from './idmap';
 import {
     deserializeMessageSaga,
@@ -608,6 +609,9 @@ export function* rootSaga(opts?: { crashIfErrors: boolean }) {
         function*() { yield takeEvery(addMasterKey, initAppSaga)},
         function*() { yield takeEvery(reloadReduxRequest, reloadRedux) },
         function*() { yield takeEvery(unloadReduxRequest, unloadRedux) },
+        
+        // Guest migration saga
+        guestMigrationSaga,
     ]);
     // @formatter:on
 
