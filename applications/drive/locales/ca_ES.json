@@ -5789,6 +5789,9 @@
       "Internet connection restored.": [
         "S'ha restaurat la connexió a Internet."
       ],
+      "Invitation confirmed": [
+        "Invitació confirmada"
+      ],
       "Invite link copied": [
         "S'ha copiat l'enllaç de la invitació."
       ],
@@ -9454,6 +9457,10 @@
         "No s'ha pogut copiar ${ errors.length } element",
         "No s'han pogut copiar ${ errors.length } elements"
       ],
+      "${ errors.length } item failed to be deleted": [
+        "No s'ha pogut eliminar ${ errors.length } element",
+        "No s'han pogut eliminar ${ errors.length } elements"
+      ],
       "${ errors.length } item failed to be trashed": [
         "No s'ha pogut moure ${ errors.length } element a la paperera",
         "No s'han pogut moure ${ errors.length } element a la paperera"
@@ -9489,10 +9496,6 @@
       "${ numberOfItems } item deleted permanently from trash": [
         "S'ha eliminat ${ numberOfItems } element permanentment de la paperera",
         "S'han eliminat ${ numberOfItems } elements permanentment de la paperera"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "No s'ha pogut eliminar ${ numberOfItems } element.",
-        "No s'han pogut eliminar ${ numberOfItems } elements."
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "No s'ha pogut eliminar ${ numberOfItems } element permanentment de la paperera",
