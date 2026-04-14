@@ -39,7 +39,7 @@ import { Sidebar } from './Sidebar';
 const MainSwitch: FC = () => {
     const isSSO = useSelector(selectIsSSO);
     const { interactive } = usePopupContext();
-    const { url } = useExtensionContext();
+    const { tabUrl } = useExtensionContext();
     const { lock, logout } = useExtensionClient();
     const { viewportWidth } = useActiveBreakpoint();
     const { status } = useAppState();
@@ -67,7 +67,7 @@ const MainSwitch: FC = () => {
                             onLock={lock}
                             onLogout={logout}
                             interactive={interactive}
-                            origin={url ? resolveSubdomain(url) : null}
+                            origin={tabUrl ? resolveSubdomain(tabUrl) : null}
                         />
                         <div id="pass-layout" className="flex items-center justify-center flex-nowrap w-full h-full">
                             {match && <Router match={match} {...rest} />}

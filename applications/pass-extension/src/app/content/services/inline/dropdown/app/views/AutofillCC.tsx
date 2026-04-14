@@ -31,7 +31,6 @@ import noop from '@proton/utils/noop';
 type Props = Extract<DropdownActions, { action: DropdownAction.AUTOFILL_CC }>;
 
 export const AutofillCC: FC<Props> = (payload) => {
-    const { origin } = payload;
     const { visible } = useIFrameAppState();
     const controller = useIFrameAppController();
     const [state, setState] = useMountedState<MaybeNull<AutofillCCResult>>(null);
@@ -95,13 +94,7 @@ export const AutofillCC: FC<Props> = (payload) => {
                         onClick={() => {
                             controller.forwardMessage({
                                 type: InlinePortMessageType.AUTOFILL_ACTION,
-                                payload: {
-                                    ...payload,
-                                    itemId,
-                                    shareId,
-                                    crossFrame: true,
-                                    type: 'creditCard',
-                                },
+                                payload: { ...payload, itemId, shareId, type: 'creditCard' },
                             });
                             controller.close({ userAction: true });
                         }}
@@ -123,7 +116,7 @@ export const AutofillCC: FC<Props> = (payload) => {
                     <PauseListDropdown
                         criteria="Autofill"
                         dense
-                        hostname={origin}
+                        hostname={payload.origin}
                         label={c('Action').t`Do not suggest on this website`}
                     />
                 }

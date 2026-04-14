@@ -162,11 +162,12 @@ export const createFormHandles = (options: DetectedForm): FormHandle => {
         }),
 
         reconciliate: withContext((ctx, formType, fields) => {
-            /** Attach the form tracker only to the top frame.
-             * FIXME: supporting cross-frame autosave */
-            if (ctx?.mainFrame && !formHandle.tracker) {
+            if (!formHandle.tracker) {
                 formHandle.tracker = createFormTracker(formHandle);
-                formHandle.tracker.attach();
+                /** Sub-frames only support manual autosave prompts for now: skip
+                 * attach effects until reconciliation is wired up in iframes.
+                 * NOTE: remove this guard when full iframe autosave is supported. */
+                if (ctx?.mainFrame) formHandle.tracker.attach();
             }
 
             let didChange = formType !== formHandle.formType;

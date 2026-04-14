@@ -34,7 +34,7 @@ import noop from '@proton/utils/noop';
 
 type Props = Extract<DropdownActions, { action: DropdownAction.AUTOFILL_LOGIN }>;
 
-export const AutofillLogin: FC<Props> = ({ origin, startsWith }) => {
+export const AutofillLogin: FC<Props> = ({ startsWith, action, ...payload }) => {
     const { settings, visible } = useIFrameAppState();
     const controller = useIFrameAppController();
 
@@ -111,21 +111,13 @@ export const AutofillLogin: FC<Props> = ({ origin, startsWith }) => {
                                       icon: 'user',
                                       url: settings.loadDomainImages ? url : undefined,
                                   }}
-                                  onClick={() =>
-                                      sendMessage.onSuccess(
-                                          contentScriptMessage({
-                                              type: WorkerMessageType.AUTOFILL_LOGIN,
-                                              payload: { shareId, itemId },
-                                          }),
-                                          ({ userIdentifier, password }) => {
-                                              controller.forwardMessage({
-                                                  type: InlinePortMessageType.AUTOFILL_LOGIN,
-                                                  payload: { userIdentifier, password },
-                                              });
-                                              controller.close({ userAction: true });
-                                          }
-                                      )
-                                  }
+                                  onClick={() => {
+                                      controller.forwardMessage({
+                                          type: InlinePortMessageType.AUTOFILL_ACTION,
+                                          payload: { ...payload, type: 'login', itemId, shareId },
+                                      });
+                                      controller.close({ userAction: true });
+                                  }}
                               />
                           );
                       }),
@@ -144,7 +136,7 @@ export const AutofillLogin: FC<Props> = ({ origin, startsWith }) => {
                     <PauseListDropdown
                         criteria="Autofill"
                         dense
-                        hostname={origin}
+                        hostname={payload.frameOrigin}
                         label={c('Action').t`Do not suggest on this website`}
                     />
                 }

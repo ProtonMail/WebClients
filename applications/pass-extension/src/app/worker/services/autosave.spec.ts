@@ -47,6 +47,7 @@ describe('AutosaveService [worker]', () => {
             type: 'login',
             updatedAt: -1,
             submittedAt: -1,
+            frameId: 0,
         };
 
         test('should prompt for new item if no match', () => {

@@ -1,4 +1,4 @@
-import { type FC, useCallback, useEffect, useState } from 'react';
+import { type FC, useEffect, useState } from 'react';
 
 import type { DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { DropdownHeader } from 'proton-pass-extension/app/content/services/inline/dropdown/app/components/DropdownHeader';
@@ -33,7 +33,7 @@ const isValidAliasOptions = (options: AliasState['aliasOptions']): options is Al
 
 const getInitialLoadingText = (): string => c('Info').t`Generating alias...`;
 
-export const AutosuggestEmail: FC<Props> = ({ origin, prefix, aliasCreationDisabled }) => {
+export const AutosuggestEmail: FC<Props> = ({ action, aliasCreationDisabled, prefix, ...payload }) => {
     const controller = useIFrameAppController();
     const { onTelemetry } = usePassCore();
 
@@ -45,7 +45,7 @@ export const AutosuggestEmail: FC<Props> = ({ origin, prefix, aliasCreationDisab
     const [loadingText, setLoadingText] = useMountedState<MaybeNull<string>>(getInitialLoadingText());
     const [error, setError] = useMountedState<MaybeNull<string>>(null);
 
-    const requestAliasOptions = useCallback(async () => {
+    const requestAliasOptions = async () => {
         try {
             setLoadingText(getInitialLoadingText());
             setError(null);
@@ -61,47 +61,51 @@ export const AutosuggestEmail: FC<Props> = ({ origin, prefix, aliasCreationDisab
         } finally {
             setLoadingText(null);
         }
-    }, []);
+    };
 
-    const createAlias = useCallback(
-        async ({ suffixes, mailboxes }: AliasOptions) => {
-            const defaultSuffix = suffixes[0];
+    const autofillEmail = (email: string) => {
+        controller.forwardMessage({
+            type: InlinePortMessageType.AUTOFILL_ACTION,
+            payload: {
+                ...payload,
+                type: 'email',
+                value: email,
+            },
+        });
+        controller.close({ userAction: true });
+    };
 
-            setLoadingText(c('Info').t`Creating alias...`);
-            const aliasEmail = `${prefix}${defaultSuffix.suffix}`;
-            try {
-                await sendMessage.onSuccess(
-                    contentScriptMessage({
-                        type: WorkerMessageType.ALIAS_CREATE,
-                        payload: {
-                            origin,
-                            alias: {
-                                prefix,
-                                mailboxes: [mailboxes[0]],
-                                signedSuffix: defaultSuffix.signedSuffix,
-                                aliasEmail,
-                            },
+    const createAlias = async ({ suffixes, mailboxes }: AliasOptions) => {
+        const defaultSuffix = suffixes[0];
+
+        setLoadingText(c('Info').t`Creating alias...`);
+        const aliasEmail = `${prefix}${defaultSuffix.suffix}`;
+        try {
+            await sendMessage.onSuccess(
+                contentScriptMessage({
+                    type: WorkerMessageType.ALIAS_CREATE,
+                    payload: {
+                        origin: payload.origin,
+                        alias: {
+                            prefix,
+                            mailboxes: [mailboxes[0]],
+                            signedSuffix: defaultSuffix.signedSuffix,
+                            aliasEmail,
                         },
-                    }),
-                    (response) => {
-                        if (response.ok) {
-                            controller.forwardMessage({
-                                type: InlinePortMessageType.AUTOFILL_EMAIL,
-                                payload: { email: aliasEmail },
-                            });
-
-                            onTelemetry(TelemetryEventName.AutosuggestAliasCreated, {}, {});
-                            controller.close({ userAction: true });
-                        } else setError(response.error ?? null);
-                    }
-                );
-            } catch {
-            } finally {
-                setLoadingText(null);
-            }
-        },
-        [origin]
-    );
+                    },
+                }),
+                (response) => {
+                    if (response.ok) {
+                        onTelemetry(TelemetryEventName.AutosuggestAliasCreated, {}, {});
+                        autofillEmail(aliasEmail);
+                    } else setError(response.error ?? null);
+                }
+            );
+        } catch {
+        } finally {
+            setLoadingText(null);
+        }
+    };
 
     useEffect(() => {
         sendMessage
@@ -128,7 +132,7 @@ export const AutosuggestEmail: FC<Props> = ({ origin, prefix, aliasCreationDisab
                     <PauseListDropdown
                         criteria="Autosuggest"
                         dense
-                        hostname={origin}
+                        hostname={payload.frameOrigin}
                         label={c('Action').t`Do not suggest on this website`}
                     />
                 }
@@ -146,13 +150,7 @@ export const AutosuggestEmail: FC<Props> = ({ origin, prefix, aliasCreationDisab
                         )
                     }
                     icon={{ type: 'icon', icon: 'envelope' }}
-                    onClick={() => {
-                        controller.forwardMessage({
-                            type: InlinePortMessageType.AUTOFILL_EMAIL,
-                            payload: { email: userEmail },
-                        });
-                        controller.close({ userAction: true });
-                    }}
+                    onClick={() => autofillEmail(userEmail)}
                 />
             )}
             {!aliasCreationDisabled && (

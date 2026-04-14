@@ -53,7 +53,7 @@ export const validateAction = withContext<(field: FieldHandle, action: DropdownA
                 return features?.AutosuggestPassword ?? false;
             case DropdownAction.AUTOFILL_CC:
                 /** Block CC autofill action on insecure protocols */
-                if (!ctx?.getExtensionContext()?.url?.isSecure) return false;
+                if (!ctx?.getExtensionContext()?.frameUrl?.isSecure) return false;
                 return Boolean(features?.CreditCard) && validateCCField(field);
         }
     }

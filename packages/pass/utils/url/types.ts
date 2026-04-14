@@ -1,4 +1,4 @@
-import type { MaybeNull, RequiredNonNull, TabId } from '@proton/pass/types';
+import type { MaybeNull } from '@proton/pass/types';
 
 export type ParsedUrl = {
     /* domain without suffix */
@@ -30,6 +30,3 @@ export type SanitizedUrl = {
     port: MaybeNull<string>;
     url: string;
 };
-
-export type ParsedSenderUrl = RequiredNonNull<ParsedUrl, 'domain' | 'protocol'>;
-export type ParsedSender = { tabId: TabId; url: ParsedSenderUrl };

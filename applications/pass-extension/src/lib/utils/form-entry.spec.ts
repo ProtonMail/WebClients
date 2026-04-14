@@ -20,6 +20,7 @@ const getMockFormSubmission = (status: FormEntryStatus, type: FormType, data?: F
     submittedAt: -1,
     type,
     updatedAt: -1,
+    frameId: 0,
 });
 
 describe('Form entry utils', () => {
