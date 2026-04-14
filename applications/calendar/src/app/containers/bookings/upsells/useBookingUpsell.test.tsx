@@ -198,19 +198,9 @@ describe('useBookingUpsell', () => {
         });
 
         it('should return no limit for member with meet add-on within limit', () => {
+            mockUseUser.mockReturnValue([{ isMember: true, hasPaidMeet: true }] as any);
             mockUseOrganization.mockReturnValue([{ PlanName: PLANS.FAMILY }, false] as any);
             mockUseInternalBooking.mockReturnValue([{ bookingPages: getBookingPagesArray(2) }] as any);
-            mockUseSubscription.mockReturnValue([
-                {
-                    Plans: [
-                        {
-                            Type: PLAN_TYPES.ADDON,
-                            PlanName: ADDON_NAMES.MEET_FAMILY,
-                            Name: ADDON_NAMES.MEET_FAMILY,
-                        },
-                    ],
-                },
-            ] as any);
 
             const { result } = renderHook(() => useBookingUpsell());
             const limits = result.current.shouldShowLimitModal();
