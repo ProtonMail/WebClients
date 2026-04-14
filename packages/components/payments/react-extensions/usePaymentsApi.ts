@@ -43,7 +43,7 @@ import {
     VatReverseChargeNotSupportedError,
     WrongBillingAddressError,
 } from '@proton/payments/core/errors';
-import type { CheckSubscriptionRequestOptions } from '@proton/payments/core/interface';
+import type { CheckSubscriptionRequestOptions, GetFullBillingAddressOptions } from '@proton/payments/core/interface';
 import { useStore } from '@proton/redux-shared-store/sharedProvider';
 import { APPS } from '@proton/shared/lib/constants';
 import type { Api } from '@proton/shared/lib/interfaces';
@@ -154,8 +154,15 @@ function billingAddressFallback(fullBillingAddress: FullBillingAddress): FullBil
     return fullBillingAddress;
 }
 
-export const getFullBillingAddress = async (api: Api): Promise<FullBillingAddress> => {
+export const getFullBillingAddress = async (
+    api: Api,
+    { withFallback }: GetFullBillingAddressOptions
+): Promise<FullBillingAddress> => {
     const fullBillingAddress = await api<FullBillingAddress>(queryFullBillingAddress());
+    if (!withFallback) {
+        return fullBillingAddress;
+    }
+
     return billingAddressFallback(fullBillingAddress);
 };
 
@@ -388,8 +395,10 @@ export const usePaymentsApi = (
             return multiCheckCache.getByPlans(plans);
         };
 
-        const innerGetFullBillingAddress = async (): Promise<FullBillingAddress> => {
-            return getFullBillingAddress(api);
+        const innerGetFullBillingAddress = async (
+            options: GetFullBillingAddressOptions = { withFallback: true }
+        ): Promise<FullBillingAddress> => {
+            return getFullBillingAddress(api, options);
         };
 
         const innerUpdateFullBillingAddress = async (fullBillingAddress: FullBillingAddress) => {

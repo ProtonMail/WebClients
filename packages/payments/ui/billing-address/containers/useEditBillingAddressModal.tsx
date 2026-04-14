@@ -6,6 +6,8 @@ import { usePaymentsApi } from '@proton/components/payments/react-extensions/use
 import { useLoadingByKey } from '@proton/hooks/useLoading';
 
 import type { FullBillingAddress } from '../../../core/billing-address/billing-address';
+import type { TaxCountryHook } from '../hooks/useTaxCountry';
+import type { VatNumberHook } from '../hooks/useVatNumber';
 import { EditBillingAddressModal, type EditBillingAdressModalInputs } from './EditBillingAddress';
 
 export class FetchBillingAddressError extends Error {
@@ -46,6 +48,8 @@ export const useEditBillingAddressModal = () => {
     const openBillingAddressModal = async (
         props: Pick<EditBillingAdressModalInputs, 'subscription' | 'paymentsApi'> & {
             loadingKey: string;
+            taxCountry?: TaxCountryHook;
+            vatNumber?: VatNumberHook;
         }
     ): Promise<FullBillingAddress> => {
         const { loadingKey, ...rest } = props;
@@ -59,10 +63,15 @@ export const useEditBillingAddressModal = () => {
             return Promise.reject(error);
         }
 
-        return showEditBillingAddressModal({
+        const result = await showEditBillingAddressModal({
             ...rest,
             initialFullBillingAddress: fullBillingAddressBackend,
         });
+
+        void props.vatNumber?.vatUpdatedInModal(result.VatId ?? undefined);
+        props.taxCountry?.billingAddressChangedInModal(result.BillingAddress);
+
+        return result;
     };
 
     return {

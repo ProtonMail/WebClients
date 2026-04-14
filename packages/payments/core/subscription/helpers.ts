@@ -950,7 +950,7 @@ type SubscriptionActions = (
  * For example, if user has mobile Lumo subscription then it's possible to add a web subscription (canModify == true
  * allows using the subscription modal). However it's not possible to cancel the mobile subscription on web.
  */
-export function getAvailableSubscriptionActions(subscription: Subscription): SubscriptionActions {
+export function getAvailableSubscriptionActions(subscription: Subscription | FreeSubscription): SubscriptionActions {
     const modificationAllowed = canModify(subscription);
     const managedExternally = isManagedExternally(subscription);
 

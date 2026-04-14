@@ -1,7 +1,5 @@
-import { c } from 'ttag';
-
-import useNotifications from '@proton/components/hooks/useNotifications';
 import type { User } from '@proton/shared/lib/interfaces';
+import noop from '@proton/utils/noop';
 
 import type { FreeSubscription } from '../../../core/interface';
 import type { Subscription } from '../../../core/subscription/interface';
@@ -20,24 +18,15 @@ interface Props {
 
 export const TaxFields = ({ user, taxCountry, vatNumber, subscription }: Props) => {
     const { editBillingAddressModal, openBillingAddressModal, loadingByKey } = useEditBillingAddressModal();
-    const { createNotification } = useNotifications();
 
-    const onEditClick = async (loadingKey: string) => {
-        try {
-            const fullBillingAddress = await openBillingAddressModal({
-                paymentsApi: taxCountry?.paymentsApi,
-                loadingKey,
-                subscription,
-            });
-
-            createNotification({
-                type: 'success',
-                text: c('Success').t`Billing information updated`,
-            });
-
-            void vatNumber?.vatUpdatedInModal(fullBillingAddress.VatId ?? undefined);
-            taxCountry?.billingAddressChangedInModal(fullBillingAddress.BillingAddress);
-        } catch {}
+    const onEditClick = (loadingKey: string) => {
+        openBillingAddressModal({
+            paymentsApi: taxCountry?.paymentsApi,
+            loadingKey,
+            subscription,
+            taxCountry,
+            vatNumber,
+        }).catch(noop);
     };
 
     const billingCountryLoadingKey = 'billingCountry';
