@@ -111,6 +111,7 @@ export const ActionsDropdown = ({ volumeId, selectedItems, role, canShareSingleI
                     selectedItems.map((item) => ({
                         uid: generateNodeUid(item.volumeId, item.linkId),
                         parentUid: generateNodeUid(item.volumeId, item.parentLinkId),
+                        name: item.name,
                     }))
                 ),
         },

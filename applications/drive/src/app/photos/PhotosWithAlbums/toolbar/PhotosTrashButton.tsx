@@ -8,6 +8,7 @@ import clsx from '@proton/utils/clsx';
 
 import { useTrashActions } from '../../../sections/commonActions/useTrashActions';
 import type { LinkInfo } from '../../../store';
+import { getNodeNameFallback } from '../../../utils/sdk/getNodeName';
 
 interface Props {
     selectedLinks: LinkInfo[];
@@ -32,7 +33,7 @@ const PhotosTrashButton = ({ selectedLinks, showIconOnly, dropDownMenuButton }: 
                             parentUid: link.parentLinkId
                                 ? generateNodeUid(link.volumeId, link.parentLinkId)
                                 : undefined,
-                            name: link.name,
+                            name: link.name ?? getNodeNameFallback(),
                         }))
                     )
                 )
