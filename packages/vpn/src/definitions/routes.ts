@@ -263,12 +263,6 @@ const routesDefinition: NavDefinition<VpnNavContext> = {
                     to: '/downloads',
                     icon: 'arrow-down-line',
                 },
-                {
-                    id: 'my-vpn.configurations',
-                    label: () => c('Title').t`Configurations`,
-                    to: '/configurations',
-                    icon: 'key',
-                },
             ],
         },
     ],
