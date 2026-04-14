@@ -2,6 +2,8 @@ import type { TreeEventScopeId } from '../../shared/types';
 import type { CoreNodeFields } from './indexEntry';
 import { CORE_ATTRIBUTE_NAMES, createIndexEntry, extractExtension } from './indexEntry';
 
+const okAuthor = (email: string) => ({ ok: true as const, value: email });
+
 const makeNode = (overrides?: Partial<CoreNodeFields>): CoreNodeFields => ({
     uid: 'node-uid-1',
     name: 'document.pdf',
@@ -9,6 +11,10 @@ const makeNode = (overrides?: Partial<CoreNodeFields>): CoreNodeFields => ({
     creationTime: new Date('2025-01-15T10:00:00Z'),
     modificationTime: new Date('2025-02-20T14:30:00Z'),
     mediaType: 'application/pdf',
+    keyAuthor: okAuthor('creator@proton.me'),
+    activeRevisionContentAuthor: okAuthor('uploader@proton.me'),
+    activeRevisionCreationTime: new Date('2025-02-20T14:30:00Z'),
+    activeRevisionStorageSize: 1024,
     ...overrides,
 });
 
