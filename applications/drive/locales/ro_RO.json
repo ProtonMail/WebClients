@@ -893,7 +893,7 @@
         "Solicitare funcție"
       ],
       "Request new code": [
-        "Solicitare cod nou"
+        "Solicitați un cod nou"
       ],
       "Resend code": [
         "Retrimitere cod"
@@ -3348,6 +3348,11 @@
       ],
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage } Puteți verifica situația și pe ${ statusPageLink }."
+      ],
+      "${ failureItems.length } item failed to be moved": [
+        "Articole care nu s-au putut muta: ${ failureItems.length }",
+        "Articole care nu s-au putut muta: ${ failureItems.length }",
+        "Articole care nu s-au putut muta: ${ failureItems.length }"
       ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "Numele de utilizator este ${ user.Name }. Pentru a crea adresa ${ emailAddress }, accesați Setări > Identitate și adrese > Domeniu scurt (pm.me)"
@@ -5873,6 +5878,9 @@
       ],
       "Internet connection restored.": [
         "Conexiunea la internet a revenit."
+      ],
+      "Invitation confirmed": [
+        "Invitație confirmată"
       ],
       "Invite link copied": [
         "Legătura de invitare a fost copiată."
@@ -8721,6 +8729,14 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Toate serviciile de bază ale ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "Planificare întâlniri"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Planificare întâlniri cu ${ n } pagină de programări",
+        "Planificare întâlniri cu ${ n } pagini de programări",
+        "Planificare întâlniri cu ${ n } de pagini de programări"
+      ],
       "Auto-delete Spam and Trash": [
         "Ștergere automată mesaje nedorite și din gunoi"
       ],
@@ -9533,6 +9549,11 @@
         "Articole care nu s-au putut copia: ${ errors.length }",
         "Articole care nu s-au putut copia: ${ errors.length }"
       ],
+      "${ errors.length } item failed to be deleted": [
+        "Articole care nu s-au put șterge: ${ errors.length }",
+        "Articole care nu s-au put șterge: ${ errors.length }",
+        "Articole care nu s-au put șterge: ${ errors.length }"
+      ],
       "${ errors.length } item failed to be trashed": [
         "Articole care nu s-au putut șterge: ${ errors.length }",
         "Articole care nu s-au putut șterge: ${ errors.length }",
@@ -9577,11 +9598,6 @@
         "S-a eliminat permanent un element din «Gunoi».",
         "S-au eliminat definitiv ${ numberOfItems } articole din «Gunoi».",
         "S-au eliminat definitiv ${ numberOfItems } de articole din «Gunoi»."
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "Eșuare ștergere articole: ${ numberOfItems }",
-        "Eșuare ștergere articole: ${ numberOfItems }",
-        "Eșuare ștergere articole: ${ numberOfItems }"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "Un element nu a putut fi eliminat definitiv din «Gunoi».",

@@ -809,6 +809,9 @@
       "Reconnect": [
         "Koble til på nytt"
       ],
+      "Reconnect to Gmail": [
+        "Koble til Gmail på nytt"
+      ],
       "Recover data": [
         "Gjenopprett data"
       ],
@@ -3020,6 +3023,15 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Forenkle synkronisering og planlegging med delte kalendere."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Dette kan skje hvis tillatelser ble fjernet eller passordet ditt ble endret."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "For å fortsette å motta og sende Gmail-meldinger i ${ BRAND_NAME }, må du koble til kontoen din på nytt."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "For å fortsette å motta og sende Gmail-meldinger i ${ BRAND_NAME }, må du koble til kontoene dine på nytt."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "For å sikre høyest mulig sikkerhet for kontoen din, angi en gjenopprettingsfrase."
       ],
@@ -3040,6 +3052,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Bruk denne veiledningen for å hjelpe organisasjonen din med å dra nytte av ${ BRAND_NAME }s bransjeledende kryptering og personvernøkosystem."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Vi får ikke lenger tilgang til ${ boldEmails }."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Vi beklager at du forlater oss. Hvis du har et øyeblikk, setter vi stor pris på å høre hvorfor du ønsker å avbryte abonnementet. Tilbakemeldingen din hjelper oss med å gjøre ${ BRAND_NAME } bedre for alle."
@@ -3312,6 +3327,10 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kan også sjekke vår ${ statusPageLink }"
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } element kunne ikke flyttes",
+        "${ failureItems.length } elementer kunne ikke flyttes"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } er ditt brukernavn. For å opprette ${ emailAddress }, gå til Innstillinger > Identitet og adresser > Kort domene (pm.me)"
       ],
@@ -3323,6 +3342,9 @@
       ],
       "Account does not exist": [
         "Kontoen finnes ikke"
+      ],
+      "Address could not be added.": [
+        "Adressen kunne ikke legges til."
       ],
       "Address primary private key not found": [
         "Adresse til primærprivatnøkkel ikke funnet"
@@ -3768,6 +3790,9 @@
       ],
       "Something went wrong during folder listing": [
         "Noe gikk galt under mappeopplisting"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Noe gikk galt under henting av tilgjengelige domener"
       ],
       "Something went wrong with search. Please try again later.": [
         "Noe gikk galt. Prøv på nytt senere."
@@ -5758,6 +5783,9 @@
       "Internet connection restored.": [
         "Internettilkobling gjenopprettet."
       ],
+      "Invitation confirmed": [
+        "Invitasjon bekreftet"
+      ],
       "Invite link copied": [
         "Invitasjonskobling kopiert"
       ],
@@ -5899,6 +5927,18 @@
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "De fleste offentlige WiFi-nettverk er trygge, men noen mangler sikkerhet, noe som utsetter deg for cybertrusler. Et VPN krypterer trafikken din og holder deg beskyttet."
+      ],
+      "Move ${ dragCount } item": [
+        "Flytt ${ dragCount } element",
+        "Flytt ${ dragCount } elementer"
+      ],
+      "Move ${ fileCount } file": [
+        "Flytt ${ fileCount } fil",
+        "Flytt ${ fileCount } filer"
+      ],
+      "Move ${ folderCount } folder": [
+        "Flytt ${ folderCount } mappe",
+        "Flytt ${ folderCount } mapper"
       ],
       "Moving files": [
         "Flytter filer"
@@ -8602,6 +8642,13 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Alle grunnleggende ${ BRAND_NAME }-tjenester (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "Avtaleplanlegging"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Avtaleplanlegging med ${ n } bestillingsside",
+        "Avtaleplanlegging med ${ n } bestillingssider"
+      ],
       "Auto-delete Spam and Trash": [
         "Slett automatisk elementer i søppelpost og papirkurv"
       ],
@@ -9401,6 +9448,10 @@
         "${ errors.length } element kunne ikke kopieres",
         "${ errors.length } elementer kunne ikke kopieres"
       ],
+      "${ errors.length } item failed to be deleted": [
+        "${ errors.length } element ble ikke slettet",
+        "${ errors.length } elementer ble ikke slettet"
+      ],
       "${ errors.length } item failed to be trashed": [
         "${ errors.length } element kunne ikke legges i papirkurven",
         "${ errors.length } elementer kunne ikke legges i papirkurven"
@@ -9436,10 +9487,6 @@
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } element slettet permanent fra papirkurven",
         "${ numberOfItems } elementer slettet permanent fra papirkurven"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "${ numberOfItems } element ble ikke slettet",
-        "${ numberOfItems } elementer ble ikke slettet"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems } element kunne ikke slettes permanent fra papirkurven",
@@ -9657,6 +9704,9 @@
       ],
       "You stopped sharing this item": [
         "Du stoppet å dele dette elementet"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Din ${ BRAND_NAME }-adresse er klar til bruk"
       ],
       "Your old files will be deleted in 72 hours": [
         "Dine gamle filer blir slettet om 72 timer"
@@ -12558,6 +12608,9 @@
       ],
       "Discard changes?": [
         "Forkaste endringer?"
+      ],
+      "Disconnected from Gmail": [
+        "Frakoblet fra Gmail"
       ],
       "Downgrade account": [
         "Nedgrader kontoen"

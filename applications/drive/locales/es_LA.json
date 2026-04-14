@@ -5789,6 +5789,9 @@
       "Internet connection restored.": [
         "Conexión a internet restaurada."
       ],
+      "Invitation confirmed": [
+        "Invitación confirmada"
+      ],
       "Invite link copied": [
         "Enlace de la invitación copiado"
       ],
@@ -9454,6 +9457,10 @@
         "Error al copiar ${ errors.length } elemento",
         "Error al copiar ${ errors.length } elementos"
       ],
+      "${ errors.length } item failed to be deleted": [
+        "Error al eliminar ${ errors.length } elemento",
+        "Error al eliminar ${ errors.length } elementos"
+      ],
       "${ errors.length } item failed to be trashed": [
         "Error al mover ${ errors.length } elemento a la papelera",
         "Error al mover ${ errors.length } elementos a la papelera"
@@ -9489,10 +9496,6 @@
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } elemento eliminado permanentemente de la papelera",
         "${ numberOfItems } elementos eliminados permanentemente de la papelera"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "Error al eliminar ${ numberOfItems } elemento",
-        "Error al eliminar ${ numberOfItems } elementos"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "Error al eliminar ${ numberOfItems } elemento permanentemente de la papelera",

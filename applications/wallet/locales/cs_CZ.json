@@ -94,6 +94,9 @@
       "Continue": [
         "Pokračovat"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Pokračujte na ${ planOrAppName }"
+      ],
       "Copy address": [
         "Kopírovat adresu"
       ],
@@ -470,6 +473,12 @@
         "${ seats } ${ LUMO_APP_NAME } licence",
         "${ seats } ${ LUMO_APP_NAME } licencí",
         "${ seats } ${ LUMO_APP_NAME } licencí"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } licence",
+        "${ seats } ${ MEET_APP_NAME } licence",
+        "${ seats } ${ MEET_APP_NAME } licencí",
+        "${ seats } ${ MEET_APP_NAME } licencí"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } licence asistenta psaní",
@@ -2173,6 +2182,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Použijte tohoto průvodce, aby vaše organizace začala okamžitě využívat výhody špičkového ekosystému šifrování a ochrany soukromí ${ BRAND_NAME }."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Je nám líto, že odcházíte. Pokud máte chvilku, oceníme, pokud nám sdělíte důvod zrušení. Vaše zpětná vazba pomáhá vylepšovat ${ BRAND_NAME } pro všechny."
       ]
     },
     "Discover": {
@@ -2338,6 +2350,9 @@
       "Invalid code": [
         "Neplatný kód"
       ],
+      "Invalid coupon": [
+        "Neplatný kupón"
+      ],
       "Invalid expiration date": [
         "Neplatné datum expirace"
       ],
@@ -2373,6 +2388,9 @@
       ],
       "Payment process not supported": [
         "Platební proces není podporován"
+      ],
+      "Please complete the billing details": [
+        "Prosím, doplňte fakturační údaje"
       ],
       "Please enter a valid postal code": [
         "Zadejte prosím platné poštovní směrovací číslo"
@@ -2421,6 +2439,9 @@
       ],
       "The minimum amount of credit that can be added is ${ price }": [
         "Minimální objem kreditu, který lze přidat je ${ price }"
+      ],
+      "The minimum donation amount is ${ price }": [
+        "Minimální výše daru je ${ price }"
       ],
       "The passphrases do not match": [
         "Hesla se neshodují"
@@ -2716,6 +2737,9 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } obsahuje ${ BRAND_NAME } asistenta psaní Scribe"
       ],
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } licencí"
+      ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Doživotní nabídka ${ PASS_SHORT_APP_NAME } nemá cenu za obnovení, jedná se o jednorázovou platbu za doživotní přístup k ${ PASS_SHORT_APP_NAME }."
       ],
@@ -2760,6 +2784,9 @@
       ],
       "Account successfully updated": [
         "Účet byl úspěšně aktualizován"
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Přidat ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
       "Address copied to clipboard": [
         "Adresa zkopírována do schránky"
@@ -3309,6 +3336,9 @@
       "Company name": [
         "Název společnosti"
       ],
+      "Continue cancelling": [
+        "Pokračovat ve zrušení"
+      ],
       "Copy": [
         "Kopírovat"
       ],
@@ -3588,6 +3618,17 @@
         "za ${ price }"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } licencí"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME } licence",
+        "${ seats } ${ MEET_APP_NAME } licence",
+        "${ seats } ${ MEET_APP_NAME } licencí",
+        "${ seats } ${ MEET_APP_NAME } licencí"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: Důvěrné videokonference pro důležité konverzace"
@@ -3645,6 +3686,20 @@
         "Až ${ n } účastníci",
         "Až ${ n } účastníků",
         "Až ${ n } účastníků"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videokonference, ${ n } účastník",
+        "Videokonference, ${ n } účastníci",
+        "Videokonference, ${ n } účastníků",
+        "Videokonference, ${ n } účastníků"
+      ]
+    },
+    "meet_2025: Info": {
+      "${ seats } seat included": [
+        "včetně ${ seats } licence",
+        "včetně ${ seats } licencí",
+        "včetně ${ seats } licencí",
+        "včetně ${ seats } licencí"
       ]
     },
     "New Label form": {
@@ -3848,6 +3903,15 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Všechny základní služby ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "Plánování schůzek"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Plánování schůzek pomocí ${ n } rezervační stránky",
+        "Plánování schůzek pomocí ${ n } rezervačních stránek",
+        "Plánování schůzek pomocí ${ n } rezervačních stránek",
+        "Plánování schůzek pomocí ${ n } rezervačních stránek"
+      ],
       "Auto-delete Spam and Trash": [
         "Automatické smazání obsahu složek spam a koš"
       ],
@@ -3898,6 +3962,9 @@
       ],
       "Data breach monitoring": [
         "Monitorování narušení bezpečnosti dat"
+      ],
+      "Data retention policies": [
+        "Zásady uchovávání dat"
       ],
       "Dedicated servers optimized for streaming": [
         "Dedikované servery optimalizované pro streamování"
@@ -4006,6 +4073,9 @@
       ],
       "Priority support & live chat": [
         "Přednostní podpora a živý chat"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Soukromý chat s AI (${ LUMO_APP_NAME })"
       ],
       "Recover previous file versions": [
         "Obnova předchozích verzí souborů"
@@ -4144,6 +4214,9 @@
         "Sdílení trezoru až se ${ n } osobami",
         "Sdílení trezoru až s ${ n } osobami",
         "Sdílení trezoru až s ${ n } osobami"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN s blokováním reklam a ochranou proti malware"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Prohledáváme dark web a kontrolujeme, zda nedošlo k úniku vašich adres nebo aliasů ${ BRAND_NAME }, pokud něco najdeme, okamžitě vás upozorníme."
@@ -4962,6 +5035,9 @@
       "Anderson": [
         "Příjmení"
       ],
+      "Anything you'd like us to know": [
+        "Cokoliv, co bychom měli vědět"
+      ],
       "Anytown": [
         "Město"
       ],
@@ -4971,8 +5047,14 @@
       "Confirm passphrase or leave empty": [
         "Potvrďte heslo nebo nechte prázdné"
       ],
+      "Cortex Inc.": [
+        "Cortex Inc."
+      ],
       "E.g., ": [
         "Např., "
+      ],
+      "Enter a name": [
+        "Zadejte název"
       ],
       "Enter a passphrase or leave empty": [
         "Zadejte heslo nebo nechte prázdné"
@@ -5062,6 +5144,11 @@
       ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Navýšit na ${ upsellPlanTitle }"
+      ]
+    },
+    "Provider option": {
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "QRCode Reader": {
@@ -5692,6 +5779,9 @@
       ],
       "Request new code": [
         "Poslat nový kód"
+      ],
+      "Reverse charge not supported": [
+        "Funkce přenesení daňové povinnosti není podporována"
       ],
       "Select a plan": [
         "Vyberte tarif"

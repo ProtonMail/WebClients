@@ -620,6 +620,9 @@
       "Keep my subscription": [
         "Behåll min prenumeration"
       ],
+      "Learn about recovery options": [
+        "Lär dig om återställningsalternativ"
+      ],
       "Learn more": [
         "Lär dig mer"
       ],
@@ -928,6 +931,9 @@
       ],
       "Send my username": [
         "Skicka mitt användarnamn"
+      ],
+      "Send new code": [
+        "Skicka ny kod"
       ],
       "Send new invite": [
         "Skicka ny inbjudan"
@@ -6794,6 +6800,9 @@
       "Drop to import": [
         "Släpp för att importera"
       ],
+      "Due to end-to-end encryption, you can reset your password, but ${ DataLockedText } until you use a ${ DataRecoveryOptionsLink }:": [
+        "På grund av end-to-end-kryptering kan du återställa ditt lösenord, men ${ DataLockedText } tills du använder en ${ DataRecoveryOptionsLink }:"
+      ],
       "Each code can only be used once": [
         "Varje kod kan endast användas en gång"
       ],
@@ -6962,6 +6971,9 @@
       "Friends and family": [
         "Vänner och familj"
       ],
+      "From there, they can request emergency access to your account by clicking **Request access.**": [
+        "Därifrån kan de begära nödåtkomst till ditt konto genom att klicka på **Begär åtkomst.**"
+      ],
       "Gateway couldn't be deleted. Please try again": [
         "Gateway kunde inte tas bort. Försök igen"
       ],
@@ -7051,6 +7063,9 @@
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Om du har en presentkod, ange den nedan för att tillämpa din rabatt."
+      ],
+      "If you have emergency contacts, get in touch with them, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed.**": [
+        "Om du har nödkontakter, kontakta dem för att se om de kan hjälpa. Efter att ha begärt nödåtkomst till ditt konto kommer de att kunna ändra ditt lösenord åt dig **efter att väntetiden för åtkomst har passerat.**"
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Om du förlorar din tvåfaktorsaktiverade enhet kan dessa koder användas istället för den 6-siffriga tvåfaktorsautentiseringskoden för att logga in på ditt konto. Varje kod kan bara användas en gång."
@@ -8256,6 +8271,9 @@
       ],
       "Vault updated": [
         "Valv uppdaterat"
+      ],
+      "Verification code sent.": [
+        "Verifieringskod skickad."
       ],
       "Verification may take a few minutes.": [
         "Verifiering kan ta några minuter."
@@ -10363,6 +10381,17 @@
       ],
       "Sign in to access your ${ appName } account": [
         "Logga in för att komma åt ditt ${ appName }-konto"
+      ]
+    },
+    "Missing feature": {
+      "Continue cancelling": [
+        "Fortsätt avbryta"
+      ],
+      "Explore the latest news": [
+        "Utforska de senaste nyheterna"
+      ],
+      "Submit your ideas": [
+        "Skicka dina idéer"
       ]
     },
     "Modal title": {
@@ -13313,9 +13342,6 @@
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Om du tappar dina inloggningsuppgifter och behöver återställa ditt konto **är det absolut nödvändigt** att du har både en **kontoåterställnings- och dataåterställningsmetod** på plats, annars kanske du inte kommer åt din e-post, kontakter, filer eller lösenord."
       ],
-      "Invalid code": [
-        "Ogiltig kod"
-      ],
       "Review account safety": [
         "Granska kontosäkerhet"
       ],
@@ -15611,6 +15637,9 @@
       "Are you sure?": [
         "Är du säker?"
       ],
+      "Ask your emergency contacts for help": [
+        "Be dina nödkontakter om hjälp"
+      ],
       "Auto-deletion is active": [
         "Automatisk borttagning är aktivt"
       ],
@@ -16292,6 +16321,9 @@
       ],
       "Request new code": [
         "Begär ny kod"
+      ],
+      "Request new code?": [
+        "Begär ny kod?"
       ],
       "Request sent": [
         "Begäran skickad"

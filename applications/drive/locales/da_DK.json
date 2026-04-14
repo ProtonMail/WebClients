@@ -3327,6 +3327,10 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kan også tjekke vores ${ statusPageLink }"
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } element kunne ikke flyttes",
+        "${ failureItems.length } elementer kunne ikke flyttes"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } er dit brugernavn. For at oprette ${ emailAddress } skal du gå til Indstillinger > Identitet og adresser > Kort domæne (pm.me)"
       ],
@@ -5784,6 +5788,9 @@
       ],
       "Internet connection restored.": [
         "Internetforbindelse genoprettet."
+      ],
+      "Invitation confirmed": [
+        "Invitation bekræftet"
       ],
       "Invite link copied": [
         "Invitationslink kopieret"
@@ -8584,6 +8591,13 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Alle grundlæggende ${ BRAND_NAME }-tjenester (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "Mødebooking"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Mødebooking med ${ n } bookingside",
+        "Mødebooking med ${ n } bookingsider"
+      ],
       "Auto-delete Spam and Trash": [
         "Slet automatisk elementer i Spam og Papirkurven"
       ],
@@ -9383,6 +9397,10 @@
         "${ errors.length } element kunne ikke kopieres",
         "${ errors.length } elementer kunne ikke kopieres"
       ],
+      "${ errors.length } item failed to be deleted": [
+        "${ errors.length } element kunne ikke slettes",
+        "${ errors.length } elementer kunne ikke slettes"
+      ],
       "${ errors.length } item failed to be trashed": [
         "${ errors.length } element kunne ikke flyttes til papirkurven",
         "${ errors.length } elementer kunne ikke flyttes til papirkurven"
@@ -9418,10 +9436,6 @@
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } element permanent slettet fra papirkurven",
         "${ numberOfItems } elementer permanent slettet fra papirkurven"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "${ numberOfItems } element kunne ikke slettes",
-        "${ numberOfItems } elementer kunne ikke slettes"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems } element kunne ikke fjernes permanent fra papirkurven",

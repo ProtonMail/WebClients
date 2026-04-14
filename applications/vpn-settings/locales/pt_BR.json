@@ -929,6 +929,9 @@
       "Send my username": [
         "Enviar meu nome de usuário"
       ],
+      "Send new code": [
+        "Enviar novo código"
+      ],
       "Send new invite": [
         "Enviar um novo convite"
       ],
@@ -2024,6 +2027,9 @@
       ],
       "Verify your domain to start a migration": [
         "Verifique seu domínio para iniciar uma migração"
+      ],
+      "We were unable to verify the installation, please check that you have installed it in your Google Workspace account and try again.": [
+        "Não foi possível verificar a instalação. Verifique se você a instalou na sua conta do Google Workspace e tente novamente."
       ],
       "What are you migrating?": [
         "O que você está migrando?"
@@ -3438,6 +3444,9 @@
     "Delete group prompt": {
       "Are you sure you want to delete this group?": [
         "Você tem certeza de que deseja excluir esse grupo?"
+      ],
+      "Please note that if you delete the group ${ displayGroupName }, it will be permanently removed.": [
+        "Observe que, se você excluir o grupo ${ displayGroupName }, esse será removido permanentemente."
       ]
     },
     "Delinquent modal title": {
@@ -3584,6 +3593,10 @@
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Você agora pode enviar e-mails da ${ BRAND_NAME } usando este endereço."
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "Seu plano suporta ${ MAX_SYNC_FREE_USER } endereço do Gmail.",
+        "Seu plano suporta ${ MAX_SYNC_FREE_USER } endereços do Gmail."
       ],
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Seu plano suporta um total de ${ MAX_SYNC_PAID_USER } endereço do Gmail",
@@ -4450,6 +4463,9 @@
       ],
       "Primary address key is not decrypted.": [
         "A chave do endereço principal não está descriptografada."
+      ],
+      "Private users can be added to group once they've signed in for the first time: ${ displayedNames }": [
+        "Usuários privados podem ser adicionados ao grupo depois que iniciarem sessão pela primeira vez: ${ displayedNames }"
       ],
       "Process aborted": [
         "Processo abortado"
@@ -6824,6 +6840,9 @@
       "Enter new password for user ${ userName }.": [
         "Digite a nova senha para o usuário ${ userName }."
       ],
+      "Enter the 12-word recovery phrase associated with your account.": [
+        "Digite a frase de recuperação de 12 palavras associada à sua conta."
+      ],
       "Enter the code from your authenticator app": [
         "Insira o código do seu aplicativo de autenticação."
       ],
@@ -7676,6 +7695,9 @@
       "Securing your account": [
         "Protegendo sua conta"
       ],
+      "Select a group to view its members and settings.": [
+        "Selecione um grupo para ver seus membros e configurações."
+      ],
       "Select one or multiple user affiliations": [
         "Selecione uma ou várias afiliações de usuário"
       ],
@@ -7957,6 +7979,9 @@
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Esta mensagem não chegará à equipe de suporte, se você tiver um problema com nossos serviços ou precisar de maiores ações de nossa parte ${ supportLink }."
       ],
+      "This password is used to login to your ${ BRAND_NAME } account": [
+        "Essa senha é usada para iniciar sessão na sua conta da ${ BRAND_NAME }"
+      ],
       "This service is not available to users signing in with single sign-on.": [
         "Este serviço não está disponível para usuários que iniciam sessão com o início de sessão único."
       ],
@@ -8202,6 +8227,9 @@
       ],
       "Vault updated": [
         "Cofre atualizado"
+      ],
+      "Verification code sent.": [
+        "Código de verificação enviado."
       ],
       "Verification may take a few minutes.": [
         "A verificação pode levar alguns minutos."
@@ -8517,6 +8545,9 @@
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Você precisará de um endereço da ${ BRAND_NAME } para usar o ${ MAIL_APP_NAME } e ${ CALENDAR_APP_NAME }"
+      ],
+      "You will not be asked for a one-time code or a security key.": [
+        "Você não precisará de um código único ou chave de segurança."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Em breve você será redirecionado para o PayPal para verificar seu pagamento."
@@ -10340,6 +10371,23 @@
         "Inicie sessão para acessar sua conta ${ appName }"
       ]
     },
+    "Missing feature": {
+      "Continue cancelling": [
+        "Continuar cancelamento"
+      ],
+      "Explore the latest news": [
+        "Explore as últimas notícias"
+      ],
+      "Make your voice heard": [
+        "Faça sua voz ser ouvida"
+      ],
+      "Request a feature or vote on ideas from other users in our feedback forum.": [
+        "Solicite um recurso ou vote nas ideias de outros usuários em nosso fórum de comentários."
+      ],
+      "See how ${ BRAND_NAME } apps are evolving with your feedback.": [
+        "Veja como os aplicativos da ${ BRAND_NAME } estão evoluindo graças aos seus comentários."
+      ]
+    },
     "Modal title": {
       "How to import calendars from another service": [
         "Como importar calendários de outro serviço"
@@ -10619,6 +10667,13 @@
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Todos os serviços básicos da ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "Appointment scheduling": [
+        "Agendamento de compromissos"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Agendamento de compromissos com ${ n } página de agendamento",
+        "Agendamento de compromissos com ${ n } página de agendamentos"
       ],
       "Apps for": [
         "Aplicativos para"
@@ -13305,9 +13360,6 @@
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Se você perder seus detalhes de login e precisar redefinir sua conta, é **imprescindível** que você tenha um **método de recuperação de conta e de recuperação de dados** em vigor, caso contrário, talvez não consiga acessar nenhum de seus e-mails, contatos, arquivos ou senhas."
-      ],
-      "Invalid code": [
-        "O código não é válido."
       ],
       "Review account safety": [
         "Revise a segurança da conta"
@@ -16283,6 +16335,9 @@
       "Request new code": [
         "Solicitar um novo código"
       ],
+      "Request new code?": [
+        "Solicitar novo código?"
+      ],
       "Request sent": [
         "Pedido enviado"
       ],
@@ -16333,6 +16388,9 @@
       ],
       "Select data to import": [
         "Selecionar dados para importar"
+      ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Enviar e receber e-mails do Gmail usando o ${ MAIL_APP_NAME }"
       ],
       "Send email reminders?": [
         "Enviar lembretes por e-mail?"

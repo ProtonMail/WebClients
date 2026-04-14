@@ -620,6 +620,9 @@
       "Keep my subscription": [
         "Bevar mit abonnement"
       ],
+      "Learn about recovery options": [
+        "Lær mere om muligheder for gendannelse"
+      ],
       "Learn more": [
         "Få mere at vide"
       ],
@@ -851,6 +854,9 @@
       "Return to sign in": [
         "Returnér til login"
       ],
+      "Return to sign-in": [
+        "Tilbage til login"
+      ],
       "Review": [
         "Gennemse"
       ],
@@ -925,6 +931,9 @@
       ],
       "Send my username": [
         "Send mit brugernavn"
+      ],
+      "Send new code": [
+        "Send en ny kode"
       ],
       "Send new invite": [
         "Send ny invitation"
@@ -1069,6 +1078,9 @@
       ],
       "Try another method": [
         "Prøv en anden metode"
+      ],
+      "Try another way": [
+        "Prøv en anden måde"
       ],
       "Try for free": [
         "Prøv gratis"
@@ -6076,6 +6088,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe-skriveassistent"
       ],
+      "${ BRAND_NAME } will send a verification code to ${ phoneNumber }. Standard message rates may apply.": [
+        "${ BRAND_NAME } sender en bekræftelseskode til ${ phoneNumber }. Standard SMS-takster gælder."
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }s krypteringsteknologi betyder, at ingen kan få adgang til din adgangskode - ikke engang os."
       ],
@@ -6093,6 +6108,9 @@
       "${ countriesCount } country enabled": [
         "${ countriesCount } land aktiveret",
         "${ countriesCount } lande aktiveret"
+      ],
+      "${ DataLockedText }, but recoverable with your ${ RecoveryContactsLink }:": [
+        "${ DataLockedText }, men kan gendannes med dine ${ RecoveryContactsLink }:"
       ],
       "${ discountPercent }% discount": [
         "${ discountPercent }% rabat"
@@ -6475,6 +6493,12 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Et e-mailalias fungerer som en e-mailadresse, men reducerer spam og holder din faktiske e-mailadresse og identitet skjult."
       ],
+      "An email with a verification code was just sent to ${ emailAddress }. If you can’t find the message in your inbox, please check your spam folder.": [
+        "En e-mail med en bekræftelseskode blev netop sendt til ${ emailAddress }. Hvis du ikke kan finde beskeden i din indbakke skal du tjekke din spam-mappe."
+      ],
+      "An SMS with a verification code was just sent to ${ phoneNumber }.": [
+        "En SMS med en bekræftelseskode blev netop sendt til ${ phoneNumber }."
+      ],
       "and": [
         "og"
       ],
@@ -6550,6 +6574,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Før du anmoder om en ny bekræftelseskode, bør du tjekke din spam-mappe samt kontrollere, at ${ strong } er den korrekte adresse."
       ],
+      "Before sending a new verification code, check your spam folder for ${ EmailOrPhoneNumber }.": [
+        "Tjek din spammappe for ${ EmailOrPhoneNumber } før der sendes en ny bekræftelseskode."
+      ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
         "Før du kan modtage e-mails for dine brugerdomæne-adresser hos ${ MAIL_APP_NAME }, skal du tilføje følgende MX-poster i din DNS-konsol (som kan findes på platformen, hvor du købte dit brugerdomæne). Du kan finde et eksempel og nogle nyttige tips ${ kbLink }."
       ],
@@ -6570,6 +6597,15 @@
       ],
       "By leaving now, changes may not be saved": [
         "Afbryder du nu, gemmes ændringerne måske ikke"
+      ],
+      "Can you access your active session?": [
+        "Kan du tilgå din aktive session?"
+      ],
+      "Can you access your active web session in another browser?": [
+        "Kan du tilgå din aktive web-session i en anden browser?"
+      ],
+      "Can you reach out to your contact?": [
+        "Kan du kontakte dine nødkontakt?"
       ],
       "Cancel": [
         "Annuller"
@@ -6740,6 +6776,9 @@
         "Sletter ${ deletedServerCount } gateway-server",
         "Sletter ${ deletedServerCount } gateway-servere"
       ],
+      "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
+        "Afhængigt af dine indstillinger, kan du få adgang med det samme eller efter en bestemt **venteperiode.**"
+      ],
       "Did you know?": [
         "Vidste du det?"
       ],
@@ -6830,6 +6869,9 @@
       ],
       "Drop to import": [
         "Slip for at importere"
+      ],
+      "Due to end-to-end encryption, you can reset your password, but ${ DataLockedText } until you use a ${ DataRecoveryOptionsLink }:": [
+        "På grund af end-to-end-kryptering kan du nulstille din adgangskode, men ${ DataLockedText } indtil du bruger en ${ DataRecoveryOptionsLink }:"
       ],
       "Each code can only be used once": [
         "Hver kode kan kun bruges én gang"
@@ -7020,6 +7062,9 @@
       "Get ${ AUTHENTICATOR_APP_NAME } for all your devices.": [
         "Få ${ AUTHENTICATOR_APP_NAME } til alle dine enheder."
       ],
+      "Get in touch with your emergency contacts, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed**.": [
+        "Kontakt dine nødkontakter for at se om de kan hjælpe. Efter at de har anmodet om nødadgang til din konto vil de kunne ændre din adgangskode for dig **efter at ventetiden på nødadgang er gået**."
+      ],
       "Get notified if your password or other personal data was leaked. ${ learnMoreLinkNoBreach }": [
         "Få besked, hvis din adgangskode eller øvrige personlige data er blevet lækket. ${ learnMoreLinkNoBreach }"
       ],
@@ -7059,11 +7104,17 @@
       "How to perform a signed-in reset": [
         "Sådan udføres en nulstilling når du er logget ind"
       ],
+      "How your emergency contact can change your password for you:": [
+        "Sådan kan din nødkontakt ændre din adgangskode for dig:"
+      ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Identitetsudbyderens offentlige nøgle til at underskrive godkendelsespåstande. Der bør være et sted, hvor man kan downloade eller kopiere certifikatets hash fra identitetsudbyderen. Du skal bare indsætte certifikatets hash i tekstområdets felt."
       ],
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Hvis en anden administrator ændrede denne adgangskode, må du bede dem om den nye Organisationsadgangskode."
+      ],
+      "If possible, when signing in, use a device or a browser where you’ve signed in before.": [
+        "Hvis det er muligt, så brug en enhed eller browser hvor du har tidligere har været logget ind, når du logger ind."
       ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Hvis dette skyldes en gammel nulstilling af adgangskoden, kan du forhindre, at meddelelsen vises igen"
@@ -7094,6 +7145,9 @@
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Hvis du har en gavekode, skal du indtaste den nedenfor for at anvende din rabat."
+      ],
+      "If you have emergency contacts, get in touch with them, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed.**": [
+        "Hvis du har nødkontakter kan du kontakte dem for at se om de kan hjælpe. Efter at de har anmodet om nødadgang til din konto, vil de kunne ændre din adgangskode for dig **efter at ventiden på nødadgang er gået.**"
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Mister du din tofaktoraktiverede enhed, kan disse koder benyttes i stedet for den 6-cifrede tofaktorgodkendelseskode til at logge ind på din konto. Hver kode kan kun benyttes én gang."
@@ -7182,6 +7236,9 @@
       ],
       "Internet connection restored.": [
         "Internetforbindelse genoprettet."
+      ],
+      "Invalid code. ${ RequestNewCodeLink } and try again.": [
+        "Ugyldig kode. ${ RequestNewCodeLink } og prøv igen."
       ],
       "Invite deleted": [
         "Invitation slettet"
@@ -7469,6 +7526,9 @@
       "On": [
         "Til"
       ],
+      "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
+        "Når der er blevet givet adgang til din konto, kan de få adgang til dine **gendannelsesindstillinger** og **ændre din ${ ACCOUNT_APP_NAME }-adgangskode** for dig."
+      ],
       "Once you reset your password:": [
         "Når du nulstiller din adgangskode:"
       ],
@@ -7679,6 +7739,12 @@
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Anbefales på betroede enheder. ${ keepMeSignedInLearnMoreLink }"
+      ],
+      "Recovery contacts": [
+        "Gendannelseskontakter"
+      ],
+      "Recovery file": [
+        "Gendannelsesfil"
       ],
       "Recovery file downloaded": [
         "Gendannelsesfil downloadet"
@@ -8204,6 +8270,9 @@
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Prøv ${ productName } helt uden risiko – hvis du af en eller anden grund ombestemmer dig, får du fuld refusion. Helt uden spørgsmål fra os."
       ],
+      "Try recovering your account from a **device or browser where you have signed in before**, as it may be possible from there:": [
+        "Prøv at gendanne din konto fra en **enhed eller browser, hvor du har været logget ind før**, da det derfra måske er muligt:"
+      ],
       "Two-factor authentication": [
         "Tofaktorgodkendelse"
       ],
@@ -8218,6 +8287,9 @@
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Kan ikke verificere signaturen for gendannelsesfilen. Kontakt venligst support."
+      ],
+      "Unfortunately there is no recovery method available for this account.": [
+        "Der er desværre ingen tilgængelig gendannelsesmetode for denne konto."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Desværre er der ingen gendannelsesmetode gemt for denne konto."
@@ -8311,6 +8383,9 @@
       ],
       "Vault updated": [
         "Boks opdateret"
+      ],
+      "Verification code sent.": [
+        "Bekræftelseskode sendt."
       ],
       "Verification may take a few minutes.": [
         "Bekræftelsen kan tage et par minutter."
@@ -8413,6 +8488,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Vi vil sende en ny verifikationskode til ${ strong }"
+      ],
+      "Web sessions detected:": [
+        "Websessioner fundet:"
       ],
       "Week": [
         "Uge"
@@ -8551,6 +8629,9 @@
       ],
       "You can now reset your password to regain access to your account.": [
         "Du kan nu nulstille din adgangskode for igen at få adgang til din konto."
+      ],
+      "You can now reset your password to regain access to your account. **This will disable 2-factor authentication.**": [
+        "Du kan nu nulstille din adgangskode for at få adgang til din konto igen. **Dette deaktiverer 2-faktor-godkendelse.**"
       ],
       "You can now return to the application to continue": [
         "Du kan nu vende tilbage til applikationen for at fortsætte"
@@ -8707,6 +8788,12 @@
       "Your email will only be used for this one-time verification.": [
         "Din e-mail vil kun blive brugt til denne engangsbekræftelse."
       ],
+      "Your encrypted data will be locked": [
+        "Din krypterede data vil blive låst"
+      ],
+      "your encrypted data will be locked": [
+        "din krypterede data vil blive låst"
+      ],
       "Your feedback": [
         "Din feedback"
       ],
@@ -8730,6 +8817,9 @@
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "Din næste faktureringsdato er ${ renewalTime }. Du kan annullere når som helst. Kontakt support, hvis du har brug for en øjeblikkelig ændring af dit abonnement."
+      ],
+      "Your old password": [
+        "Din gamle adgangskode"
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Din organisation bruger single sign-on (SSO). Tryk på Log ind for at fortsætte med din SSO-udbyder."
@@ -9274,6 +9364,9 @@
       ],
       "Enabled": [
         "Aktiveret"
+      ],
+      "Enter code": [
+        "Indtast kode"
       ],
       "Enter name or email address": [
         "Tilføj navn eller e-mailadresse"
@@ -9912,11 +10005,20 @@
       "Common sign up issues": [
         "Almindelige tilmeldingsproblemer"
       ],
+      "contacts’ assistance": [
+        "hjælp fra kontakter"
+      ],
       "Create account": [
         "Opret konto"
       ],
       "Create an alias": [
         "Opret et alias."
+      ],
+      "data recovery option": [
+        "metode til datagendannelse"
+      ],
+      "Details": [
+        "Detaljer"
       ],
       "Don't have access to your 2FA?": [
         "Har du ikke adgang til din 2FA?"
@@ -10740,6 +10842,13 @@
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Alle grundlæggende ${ BRAND_NAME }-tjenester (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "Appointment scheduling": [
+        "Mødebooking"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Mødebooking med ${ n } bookingside",
+        "Mødebooking med ${ n } bookingsider"
       ],
       "Apps for": [
         "Apps til"
@@ -13424,9 +13533,6 @@
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Hvis du mister dine adgangsoplysninger og har brug for at nulstille din konto, **er det afgørende**, at du har både **konto- og datagendannelsesmetode** på plads, ellers kan du måske ikke tilgå nogen af dine e-mails, kontakter, filer eller adgangskoder."
       ],
-      "Invalid code": [
-        "Ugyldig kode"
-      ],
       "Review account safety": [
         "Gennemgå kontoens sikkerhed"
       ],
@@ -15722,6 +15828,9 @@
       "Are you sure?": [
         "Er du sikker?"
       ],
+      "Ask your emergency contacts for help": [
+        "Spørg dine nødkontakter om hjælp"
+      ],
       "Auto-deletion is active": [
         "Automatisk sletning er aktiv"
       ],
@@ -15733,6 +15842,9 @@
       ],
       "Bring your Gmail into ${ MAIL_APP_NAME }": [
         "Flyt din Gmail ind i ${ MAIL_APP_NAME }"
+      ],
+      "Can you access your session in the browser?": [
+        "Kan du tilgå din session i browseren?"
       ],
       "Can you reach out to your emergency contacts?": [
         "Kan du kontakte dine nødkontakter?"
@@ -16404,6 +16516,9 @@
       "Request new code": [
         "Anmod om ny kode"
       ],
+      "Request new code?": [
+        "Anmod om ny kode?"
+      ],
       "Request sent": [
         "Anmodning sendt"
       ],
@@ -16594,6 +16709,9 @@
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "Prøv ${ AUTHENTICATOR_APP_NAME }"
       ],
+      "Try changing your password in your active web session": [
+        "Prøv at ændre din adgangskode i din aktive web-session"
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Slå ${ DARK_WEB_MONITORING_NAME } til"
       ],
@@ -16665,6 +16783,9 @@
       ],
       "Verification failed": [
         "Bekræftelse mislykkedes"
+      ],
+      "Verify it’s you": [
+        "Bekræft at det er dig"
       ],
       "Verifying your card...": [
         "Bekræfter dit kort..."
@@ -17255,6 +17376,9 @@
       ],
       "Remember to share the user's sign in details with them.": [
         "Husk at dele brugerens login-oplysninger med dem."
+      ],
+      "Roles and permissions": [
+        "Roller og tilladelser"
       ],
       "Save": [
         "Gem"
