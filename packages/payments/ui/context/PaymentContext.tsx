@@ -380,6 +380,15 @@ export const PaymentsContextProvider = ({
                 },
             });
 
+            // We don't want to update billing address if the payment is forbidden for any other reason apart from the
+            // selection of a free plan. This is mostly a safery measure for now and subject for re-evaluation in the
+            // future - maybe we don't need to be that cautious and we may update the billing address in all cases.
+            if (paymentForbiddenReason.reason === 'paid-plan-required') {
+                setState({
+                    billingAddress: newBillingAddress,
+                });
+            }
+
             return newCheckResult;
         }
 
