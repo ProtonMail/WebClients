@@ -1,5 +1,6 @@
 import type { DriveEvent, MaybeNode, NodeEvent } from '@protontech/drive-sdk';
 
+import type { NodeEntity } from '@proton/drive';
 import { NodeType } from '@proton/drive';
 import { Expression, Func, TermValue } from '@proton/proton-foundation-search';
 
@@ -11,7 +12,7 @@ import type { TreeEventScopeId } from '../../../shared/types';
 import type { IndexReader } from '../../index/IndexReader';
 import type { IndexKind } from '../../index/IndexRegistry';
 import type { IndexEntry } from '../indexEntry';
-import { type CoreNodeFields, createIndexEntry } from '../indexEntry';
+import { createIndexEntry, toCoreNodeFields } from '../indexEntry';
 import type { TaskContext } from '../tasks/BaseTask';
 import { IndexPopulatorTask } from '../tasks/CoreTasks/IndexPopulatorTask';
 import { RemoveTreeEventScopeIdTask } from '../tasks/CoreTasks/RemoveTreeEventScopeIdTask';
@@ -278,9 +279,9 @@ export abstract class IndexPopulator {
         Logger.info(`${this.getUid()}: removed node ${nodeUid} and ${descendantCount} descendants`);
     }
 
-    protected createEntryForNode(node: CoreNodeFields, parentPath: string): IndexEntry {
+    protected createEntryForNode(node: NodeEntity, parentPath: string): IndexEntry {
         return createIndexEntry({
-            node,
+            node: toCoreNodeFields(node),
             treeEventScopeId: this.treeEventScopeId,
             parentPath,
             indexPopulatorId: this.indexPopulatorId,

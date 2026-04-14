@@ -1,3 +1,4 @@
+import type { Author, NodeEntity } from '@proton/drive';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 
 import type { TreeEventScopeId } from '../../shared/types';
@@ -30,6 +31,11 @@ export interface CoreNodeFields {
     sharedBy?: string;
     isShared?: boolean;
     isSharedPublicly?: boolean;
+    keyAuthor?: Author;
+    trashTime?: Date;
+    activeRevisionContentAuthor?: Author;
+    activeRevisionCreationTime?: Date;
+    activeRevisionStorageSize?: number;
 }
 
 /**
@@ -53,6 +59,11 @@ export const CORE_ATTRIBUTE_NAMES = [
     'sharedBy',
     'isShared',
     'isSharedPublicly',
+    'keyAuthor',
+    'activeRevisionContentAuthor',
+    'activeRevisionCreationTime',
+    'activeRevisionStorageSize',
+    'trashTime',
 ] as const;
 
 type CoreAttributeName = (typeof CORE_ATTRIBUTE_NAMES)[number];
@@ -72,6 +83,32 @@ export interface CreateIndexEntryParams<N extends string = string> {
     indexPopulatorVersion: number;
     indexPopulatorGeneration: number;
     additionalAttributes?: { name: N extends CoreAttributeName ? never : N; value: AttributeValue }[];
+}
+
+function resolveAuthor(author: Author): string {
+    if (author.ok) {
+        return author.value ?? '';
+    }
+    return author.error.claimedAuthor ?? '';
+}
+
+export function toCoreNodeFields(node: NodeEntity): CoreNodeFields {
+    return {
+        uid: node.uid,
+        name: node.name,
+        type: node.type,
+        creationTime: node.creationTime,
+        modificationTime: node.modificationTime,
+        mediaType: node.mediaType,
+        sharedBy: undefined,
+        isShared: node.isShared,
+        isSharedPublicly: node.isSharedPublicly,
+        keyAuthor: node.keyAuthor,
+        trashTime: node.trashTime,
+        activeRevisionContentAuthor: node.activeRevision?.contentAuthor,
+        activeRevisionCreationTime: node.activeRevision?.creationTime,
+        activeRevisionStorageSize: node.activeRevision?.storageSize,
+    };
 }
 
 export function extractExtension(filename: string): string {
@@ -110,6 +147,23 @@ export function createIndexEntry<N extends string>(params: CreateIndexEntryParam
             { name: 'sharedBy', value: { kind: 'tag', value: node.sharedBy || '' } },
             { name: 'isShared', value: { kind: 'boolean', value: node.isShared ?? false } },
             { name: 'isSharedPublicly', value: { kind: 'boolean', value: node.isSharedPublicly ?? false } },
+            { name: 'keyAuthor', value: { kind: 'tag', value: node.keyAuthor ? resolveAuthor(node.keyAuthor) : '' } },
+            {
+                name: 'activeRevisionContentAuthor',
+                value: {
+                    kind: 'tag',
+                    value: node.activeRevisionContentAuthor ? resolveAuthor(node.activeRevisionContentAuthor) : '',
+                },
+            },
+            {
+                name: 'activeRevisionCreationTime',
+                value: { kind: 'integer', value: BigInt(node.activeRevisionCreationTime?.getTime() ?? 0) },
+            },
+            {
+                name: 'activeRevisionStorageSize',
+                value: { kind: 'integer', value: BigInt(node.activeRevisionStorageSize ?? 0) },
+            },
+            { name: 'trashTime', value: { kind: 'integer', value: BigInt(node.trashTime?.getTime() ?? 0) } },
             ...(additionalAttributes ?? []),
         ],
     };
