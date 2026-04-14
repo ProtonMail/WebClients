@@ -29,12 +29,12 @@ import {
 import { getIsB2BAudienceFromPlan, isForbiddenModification } from '../plan/helpers';
 import type { PlansMap, SubscriptionPlan } from '../plan/interface';
 import { getPlanFromIDs } from '../planIDs';
-import { isFreeSubscription } from '../type-guards';
+import { isFreeSubscription, isPaidSubscription } from '../type-guards';
 import { Renew, SubscriptionPlatform, TaxInclusive, TrialType } from './constants';
 import { FREE_PLAN } from './freePlans';
 import type { Subscription, SubscriptionCheckForbiddenReason, SubscriptionEstimation } from './interface';
 
-export function getPlan(subscription: Subscription | FreeSubscription | undefined, service?: PLAN_SERVICES) {
+export function getPlan(subscription: MaybeFreeSubscription, service?: PLAN_SERVICES) {
     const result = (subscription?.Plans || []).find(
         ({ Services, Type }) => Type === PLAN_TYPES.PLAN && (service === undefined ? true : hasBit(Services, service))
     );
@@ -44,13 +44,13 @@ export function getPlan(subscription: Subscription | FreeSubscription | undefine
     return result;
 }
 
-export function hasLifetimeCoupon(subscription: Subscription | FreeSubscription | undefined) {
+export function hasLifetimeCoupon(subscription: MaybeFreeSubscription) {
     return subscription?.CouponCode === COUPON_CODES.LIFETIME;
 }
 
 export function getSubscriptionPlanTitle(
     user: UserModel,
-    subscription: Subscription | FreeSubscription | undefined
+    subscription: MaybeFreeSubscription
 ): {
     planTitle?: string;
     planName?: PLANS;
@@ -78,7 +78,7 @@ export function getSubscriptionPlanTitle(
 
 export function getSubscriptionPlanTitles(
     user: UserModel,
-    subscription: Subscription | FreeSubscription | undefined
+    subscription: MaybeFreeSubscription
 ): ReturnType<typeof getSubscriptionPlanTitle>[] {
     if (isFreeSubscription(subscription)) {
         return [getSubscriptionPlanTitle(user, subscription)];
@@ -116,19 +116,19 @@ export const getHas2025OfferCoupon = (coupon: string | undefined | null): boolea
     return blackFriday2025Discounts.has(coupon?.toUpperCase());
 };
 
-type MaybeFreeSubscription = Subscription | FreeSubscription | undefined;
+export type MaybeFreeSubscription = Subscription | FreeSubscription | undefined;
 
 export const getAddons = (subscription: Subscription | undefined) =>
     (subscription?.Plans || []).filter(({ Type }) => Type === PLAN_TYPES.ADDON);
 export const hasAddons = (subscription: Subscription | undefined) =>
     (subscription?.Plans || []).some(({ Type }) => Type === PLAN_TYPES.ADDON);
 
-export const getPlanName = (subscription: Subscription | FreeSubscription | undefined, service?: PLAN_SERVICES) => {
+export const getPlanName = (subscription: MaybeFreeSubscription, service?: PLAN_SERVICES) => {
     const plan = getPlan(subscription, service);
     return plan?.Name;
 };
 
-export const getPlanTitle = (subscription: Subscription | FreeSubscription | undefined) => {
+export const getPlanTitle = (subscription: MaybeFreeSubscription) => {
     const plan = getPlan(subscription);
     return hasLifetimeCoupon(subscription) ? LIFETIME_PLAN_TITLE : plan?.Title;
 };
@@ -156,12 +156,12 @@ export const hasSomeAddonOrPlan = (
     return (subscription?.Plans || []).some(({ Name }) => Name === addonName);
 };
 
-export const hasMigrationDiscount = (subscription?: Subscription | FreeSubscription) => {
+export const hasMigrationDiscount = (subscription: MaybeFreeSubscription) => {
     return subscription?.CouponCode?.startsWith('MIGRATION');
 };
 
 export const isManagedExternally = (
-    subscription: Subscription | FreeSubscription | Pick<Subscription, 'External'> | undefined | null
+    subscription: MaybeFreeSubscription | Pick<Subscription, 'External'> | null
 ): boolean => {
     if (!subscription || isFreeSubscription(subscription)) {
         return false;
@@ -181,9 +181,7 @@ export const getSubscriptionsArray = (subscription: Subscription): Subscription[
 /**
  * returns true if any of the multisubs is managed externally
  */
-export function isAnyManagedExternally(
-    subscriptions: Subscription[] | Subscription | FreeSubscription | undefined | null
-): boolean {
+export function isAnyManagedExternally(subscriptions: Subscription[] | MaybeFreeSubscription | null): boolean {
     if (!subscriptions || isFreeSubscription(subscriptions)) {
         return false;
     }
@@ -267,7 +265,7 @@ export const hasPlanWithAIAssistantIncluded = (subscription: MaybeFreeSubscripti
 export const hasAllProductsB2CPlan = (subscription: MaybeFreeSubscription) =>
     hasDuo(subscription) || hasFamily(subscription) || hasBundle(subscription) || hasVisionary(subscription);
 
-export const getUpgradedPlan = (subscription: Subscription | undefined, app: ProductParam) => {
+export const getUpgradedPlan = (subscription: MaybeFreeSubscription, app: ProductParam) => {
     if (hasFree(subscription)) {
         switch (app) {
             case APPS.PROTONPASS:
@@ -287,7 +285,7 @@ export const getUpgradedPlan = (subscription: Subscription | undefined, app: Pro
     return PLANS.BUNDLE;
 };
 
-export const hasLumoMobileSubscription = (subscription?: MaybeFreeSubscription) => {
+export const hasLumoMobileSubscription = (subscription: MaybeFreeSubscription) => {
     if (!subscription || isFreeSubscription(subscription)) {
         return false;
     }
@@ -305,7 +303,7 @@ export const hasLumoMobileSubscription = (subscription?: MaybeFreeSubscription) 
     return false;
 };
 
-export const getCanAccessFamilyPlans = (subscription?: MaybeFreeSubscription) => {
+export const getCanAccessFamilyPlans = (subscription: MaybeFreeSubscription) => {
     return !hasLumoMobileSubscription(subscription);
 };
 
@@ -326,7 +324,7 @@ const getCanAccessDuoPlanCondition: Set<PLANS | ADDON_NAMES> = new Set([
     PLANS.BUNDLE_PRO_2024,
 ]);
 
-export const getCanSubscriptionAccessDuoPlan = (subscription?: MaybeFreeSubscription) => {
+export const getCanSubscriptionAccessDuoPlan = (subscription: MaybeFreeSubscription) => {
     if (hasLumoMobileSubscription(subscription)) {
         return false;
     }
@@ -335,21 +333,21 @@ export const getCanSubscriptionAccessDuoPlan = (subscription?: MaybeFreeSubscrip
 };
 
 const getCanAccessPassFamilyPlanCondition: Set<PLANS | ADDON_NAMES> = new Set([PLANS.PASS]);
-export const getCanSubscriptionAccessPassFamilyPlan = (subscription?: MaybeFreeSubscription) => {
+export const getCanSubscriptionAccessPassFamilyPlan = (subscription: MaybeFreeSubscription) => {
     return (
         hasFree(subscription) || subscription?.Plans?.some(({ Name }) => getCanAccessPassFamilyPlanCondition.has(Name))
     );
 };
 
-export const getIsB2BAudienceFromSubscription = (subscription: Subscription | FreeSubscription | undefined) => {
+export const getIsB2BAudienceFromSubscription = (subscription: MaybeFreeSubscription) => {
     return !!subscription?.Plans?.some(({ Name }) => getIsB2BAudienceFromPlan(Name));
 };
 
-export const getIsFamilyAudienceFromSubscription = (subscription: Subscription | FreeSubscription | undefined) => {
+export const getIsFamilyAudienceFromSubscription = (subscription: MaybeFreeSubscription) => {
     return hasDuo(subscription) || hasFamily(subscription) || hasPassFamily(subscription);
 };
 
-export const getAudienceFromSubscription = (subscription: Subscription | FreeSubscription | undefined): Audience => {
+export const getAudienceFromSubscription = (subscription: MaybeFreeSubscription): Audience => {
     if (getIsB2BAudienceFromSubscription(subscription)) {
         return Audience.B2B;
     } else if (getIsFamilyAudienceFromSubscription(subscription)) {
@@ -424,7 +422,7 @@ export const getPlanIDs = (subscription: MaybeFreeSubscription | null): PlanIDs 
     }, {});
 };
 
-export const isTrial = (subscription: Subscription | FreeSubscription | undefined, plan?: PLANS): boolean => {
+export const isTrial = (subscription: MaybeFreeSubscription, plan?: PLANS): boolean => {
     if (isFreeSubscription(subscription) || !subscription) {
         return false;
     }
@@ -438,14 +436,11 @@ export const isTrial = (subscription: Subscription | FreeSubscription | undefine
     return trial && getPlanName(subscription) === plan;
 };
 
-export function isB2BTrial(
-    subscription: Subscription | FreeSubscription | undefined,
-    organization: Organization | undefined
-): boolean {
+export function isB2BTrial(subscription: MaybeFreeSubscription, organization: Organization | undefined): boolean {
     return isTrial(subscription) && !!organization?.IsBusiness;
 }
 
-export const isReferralTrial = (subscription: Subscription | FreeSubscription | undefined) => {
+export const isReferralTrial = (subscription: MaybeFreeSubscription) => {
     if (isFreeSubscription(subscription) || !subscription) {
         return false;
     }
@@ -453,7 +448,7 @@ export const isReferralTrial = (subscription: Subscription | FreeSubscription | 
     return isTrial(subscription) && subscription.TrialType === TrialType.ReferralProgram;
 };
 
-export const isExFamilyTrial = (subscription: Subscription | FreeSubscription | undefined) => {
+export const isExFamilyTrial = (subscription: MaybeFreeSubscription) => {
     if (isFreeSubscription(subscription) || !subscription) {
         return false;
     }
@@ -464,15 +459,15 @@ export const isExFamilyTrial = (subscription: Subscription | FreeSubscription | 
 const autoRenewTrialPlans: Set<PLANS | ADDON_NAMES> = new Set([PLANS.VPN2024, PLANS.BUNDLE]);
 
 // Remove the plan check once subscription.Renew is correctly set
-export const isAutoRenewTrial = (subscription: Subscription | undefined) => {
+export const isAutoRenewTrial = (subscription: MaybeFreeSubscription) => {
     return (
         // (isTrial(subscription) && subscription?.Renew) ||
         isTrial(subscription) && subscription?.Plans?.some((plan) => autoRenewTrialPlans.has(plan.Name))
     );
 };
 
-export const isTrialRenewing = (subscription: Subscription | undefined) => {
-    return isTrial(subscription) && subscription?.Renew;
+export const isTrialRenewing = (subscription: MaybeFreeSubscription) => {
+    return isTrial(subscription) && isPaidSubscription(subscription) && subscription.Renew;
 };
 
 export const isTrialExpired = (subscription: Subscription | undefined) => {
@@ -496,7 +491,7 @@ export const willTrialExpireInLessThan1Week = (subscription: Subscription | unde
 
 export const getHasMemberCapablePlan = (
     organization: Organization | undefined,
-    subscription: Subscription | undefined
+    subscription: MaybeFreeSubscription
 ) => {
     const supportedAddons = getSupportedAddons(getPlanIDs(subscription));
     return (organization?.MaxMembers || 0) > 1 || (Object.keys(supportedAddons) as ADDON_NAMES[]).some(isMemberAddon);
@@ -523,8 +518,8 @@ export const getValidAudience = (audience: string | undefined | null): Audience 
     return getValidAudienceCondition.find((realAudience) => realAudience === audience);
 };
 
-export const hasCustomCycle = (subscription?: Subscription) => {
-    if (!subscription) {
+export const hasCustomCycle = (subscription: MaybeFreeSubscription) => {
+    if (!subscription || isFreeSubscription(subscription)) {
         return false;
     }
     return customCycles.includes(subscription.Cycle);
@@ -577,7 +572,7 @@ export const getHasCoupon = (subscription: Subscription | undefined, coupon: str
     return [subscription?.CouponCode, subscription?.UpcomingSubscription?.CouponCode].includes(coupon);
 };
 
-export function isCancellableOnlyViaSupport(subscription: Subscription | undefined) {
+export function isCancellableOnlyViaSupport(subscription: MaybeFreeSubscription) {
     if (isTrial(subscription)) {
         // Always allow canceling trials without contacting support
         return false;
@@ -604,7 +599,7 @@ export function isCancellableOnlyViaSupport(subscription: Subscription | undefin
  * immediately. Note that B2B subscriptions also have "Cancel subscription" button, but it behaves differently, so
  * we don't consider B2B subscriptions cancellable for the purpose of this function.
  */
-export const hasCancellablePlan = (subscription: Subscription | undefined) => {
+export const hasCancellablePlan = (subscription: MaybeFreeSubscription) => {
     return !isCancellableOnlyViaSupport(subscription);
 };
 
@@ -639,7 +634,7 @@ export function isTaxExclusive(checkResponse?: Pick<SubscriptionEstimation, 'Tax
 
 export const PASS_LAUNCH_OFFER = 'passlaunch';
 
-export function hasPassLaunchOffer(subscription: Subscription | FreeSubscription | undefined): boolean {
+export function hasPassLaunchOffer(subscription: MaybeFreeSubscription): boolean {
     if (!subscription || isFreeSubscription(subscription)) {
         return false;
     }
@@ -653,7 +648,7 @@ export function hasPassLaunchOffer(subscription: Subscription | FreeSubscription
 
 export function isSameCycle(
     subscriptionLeft: Subscription | FreeSubscription,
-    subscriptionRight: Subscription | FreeSubscription | undefined
+    subscriptionRight: MaybeFreeSubscription
 ) {
     return subscriptionLeft.Cycle === subscriptionRight?.Cycle;
 }
@@ -698,7 +693,10 @@ export function isUpcomingSubscriptionUnpaid(subscription: Subscription): boolea
     );
 }
 
-export function getRenewalTime(subscription: Subscription): number {
+export function getRenewalTime(subscription: Subscription): number;
+export function getRenewalTime(subscription: FreeSubscription): undefined;
+export function getRenewalTime(subscription: Subscription | FreeSubscription): number | undefined;
+export function getRenewalTime(subscription: Subscription | FreeSubscription): number | undefined {
     const current = subscription;
     const upcoming = subscription.UpcomingSubscription;
     const latestSubscription = upcoming ?? current;
@@ -898,7 +896,7 @@ export function isDangerouslyAllowedSubscriptionEstimation(
 }
 
 export function isSubscriptionCheckForbidden(
-    subscription: Subscription | FreeSubscription | null | undefined,
+    subscription: MaybeFreeSubscription | null,
     estimationParameters: SubscriptionCheckForbiddenEstimationParameters
 ): boolean {
     return isSubscriptionCheckForbiddenWithReason(subscription, estimationParameters).forbidden;
@@ -913,7 +911,7 @@ function isMobileMultiSubSupported(subscription: Subscription) {
     return hasLumo(subscription);
 }
 
-export function canModify(subscription: Subscription | FreeSubscription | null | undefined) {
+export function canModify(subscription: MaybeFreeSubscription | null) {
     return (
         !subscription ||
         isFreeSubscription(subscription) ||
@@ -997,6 +995,7 @@ export const getIsVPNPassPromotion = (coupon: string | undefined, currency: Curr
 };
 
 interface FreeSubscriptionResult {
+    isFree: true;
     subscriptionExpiresSoon: false;
     renewDisabled: false;
     renewEnabled: true;
@@ -1004,6 +1003,7 @@ interface FreeSubscriptionResult {
 }
 
 type SubscriptionResult = {
+    isFree: false;
     renewDisabled: boolean;
     renewEnabled: boolean;
     planName: string;
@@ -1018,21 +1018,27 @@ type SubscriptionResult = {
       }
 );
 
-export function subscriptionExpires(): FreeSubscriptionResult;
+export const isFreeSubscriptionResult = (
+    subscriptionResult: SubscriptionResult | FreeSubscriptionResult
+): subscriptionResult is FreeSubscriptionResult => {
+    return subscriptionResult.isFree;
+};
+
 export function subscriptionExpires(subscription: undefined | null, cancelled?: boolean): FreeSubscriptionResult;
 export function subscriptionExpires(subscription: FreeSubscription, cancelled?: boolean): FreeSubscriptionResult;
 export function subscriptionExpires(subscription: Subscription | undefined, cancelled?: boolean): SubscriptionResult;
 export function subscriptionExpires(subscription: Subscription, cancelled?: boolean): SubscriptionResult;
 export function subscriptionExpires(
-    subscription: Subscription | FreeSubscription | undefined | null,
+    subscription: MaybeFreeSubscription | null,
     cancelled?: boolean
 ): FreeSubscriptionResult | SubscriptionResult;
 export function subscriptionExpires(
-    subscription?: Subscription | FreeSubscription | undefined | null,
+    subscription: MaybeFreeSubscription | null,
     cancelled = false
 ): FreeSubscriptionResult | SubscriptionResult {
     if (!subscription || isFreeSubscription(subscription)) {
         return {
+            isFree: true,
             subscriptionExpiresSoon: false,
             renewDisabled: false,
             renewEnabled: true,
@@ -1056,6 +1062,7 @@ export function subscriptionExpires(
 
     if (subscriptionExpiresSoon) {
         return {
+            isFree: false,
             subscriptionExpiresSoon,
             renewDisabled,
             renewEnabled,
@@ -1064,6 +1071,7 @@ export function subscriptionExpires(
         };
     } else {
         return {
+            isFree: false,
             subscriptionExpiresSoon,
             renewDisabled,
             renewEnabled,

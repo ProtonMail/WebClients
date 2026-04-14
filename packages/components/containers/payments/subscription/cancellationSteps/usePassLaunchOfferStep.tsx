@@ -1,5 +1,6 @@
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
+import { isPaidSubscription } from '@proton/payments/core/type-guards';
 
 import PassLaunchOfferDowngradeModal from '../../PassLaunchOfferDowngradeModal';
 import type { CancellationStep, CancellationStepConfig } from './types';
@@ -8,7 +9,7 @@ export const usePassLaunchOfferStep = ({ canShow }: CancellationStepConfig): Can
     const [subscription] = useSubscription();
     const [passLaunchOfferModal, showPassLaunchOfferModal] = useModalTwoPromise();
 
-    const modal = subscription
+    const modal = isPaidSubscription(subscription)
         ? passLaunchOfferModal(({ onResolve, onReject, ...props }) => {
               return (
                   <PassLaunchOfferDowngradeModal

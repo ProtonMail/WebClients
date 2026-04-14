@@ -19,7 +19,9 @@ describe('CalendarLimitReachedModal', () => {
         it('should render correct prompt', async () => {
             const onClose = jest.fn();
             const user = { isFree: true } as UserModel;
-            render(<CalendarLimitReachedModal user={user} open onClose={onClose} isFreeUser />);
+            render(
+                <CalendarLimitReachedModal user={user} open onClose={onClose} isFreeUser subscription={undefined} />
+            );
 
             expect(screen.getByRole('heading', { level: 1, name: /Cannot add more calendars/ }));
 
@@ -45,7 +47,15 @@ describe('CalendarLimitReachedModal', () => {
         it('should render correct prompt', async () => {
             const onClose = jest.fn();
             const user = { isPaid: true } as UserModel;
-            render(<CalendarLimitReachedModal user={user} open onClose={onClose} isFreeUser={false} />);
+            render(
+                <CalendarLimitReachedModal
+                    user={user}
+                    open
+                    onClose={onClose}
+                    isFreeUser={false}
+                    subscription={undefined}
+                />
+            );
 
             expect(screen.getByRole('heading', { level: 1, name: /Cannot add more calendars/ }));
 

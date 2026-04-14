@@ -9,7 +9,7 @@ import SettingsLink from '@proton/components/components/link/SettingsLink';
 import useSettingsLink from '@proton/components/components/link/useSettingsLink';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import { useTrialOnlyPaymentMethods } from '@proton/components/hooks/useTrialOnlyPaymentMethods';
-import type { ADDON_NAMES } from '@proton/payments';
+import type { ADDON_NAMES, FreeSubscription } from '@proton/payments';
 import {
     type Subscription,
     canModify,
@@ -30,6 +30,7 @@ import {
     isTrialRenewing,
     willTrialExpireInLessThan1Week,
 } from '@proton/payments/core/subscription/helpers';
+import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
 import type { Address, Organization, UserModel, VPNServersCountData } from '@proton/shared/lib/interfaces';
@@ -61,7 +62,7 @@ import { StorageSection } from './storage/StorageSection';
 interface CurrentPlanInfoSectionProps {
     app: APP_NAMES;
     user: UserModel;
-    subscription: Subscription;
+    subscription: Subscription | FreeSubscription;
     organization: Organization | undefined;
     serversCount: VPNServersCountData | undefined;
     addresses: Address[] | undefined;
@@ -74,10 +75,10 @@ const AddonSection = ({
     maxMembers,
 }: {
     user: UserModel;
-    subscription: Subscription;
+    subscription: Subscription | FreeSubscription;
     maxMembers: number;
 }) => {
-    const addons = getAddons(subscription);
+    const addons = isPaidSubscription(subscription) ? getAddons(subscription) : [];
 
     const addonTitles = addons.map((addon) =>
         getAddonDashboardTitle(addon.Name as ADDON_NAMES, addon.Quantity, maxMembers)
@@ -100,7 +101,7 @@ const AddonSection = ({
     return null;
 };
 
-const TrialInfoBadge = ({ subscription }: { subscription: Subscription }) => {
+const TrialInfoBadge = ({ subscription }: { subscription: Subscription | FreeSubscription }) => {
     if (!isTrial(subscription)) {
         return null;
     }
@@ -119,7 +120,7 @@ const PlanNameSection = ({
 }: {
     app: APP_NAMES;
     user: UserModel;
-    subscription: Subscription;
+    subscription: Subscription | FreeSubscription;
     maxMembers: number;
 }) => {
     const { planTitle, planName } = getSubscriptionPlanTitle(user, subscription);
@@ -229,6 +230,7 @@ export const CurrentPlanInfoSection = ({
     const cta = (() => {
         if (
             (!isAutoRenewTrial(subscription) &&
+                isPaidSubscription(subscription) &&
                 willTrialExpireInLessThan1Week(subscription) &&
                 subscriptionExpiresSoon) ||
             (isExFamilyTrial(subscription) && !hasTrialPaymentMethods)

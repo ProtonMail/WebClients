@@ -25,6 +25,8 @@ import type {
     V5PaymentToken,
     V5Payments,
 } from './interface';
+import type { MaybeFreeSubscription } from './subscription/helpers';
+import type { Subscription } from './subscription/interface';
 
 export function isCardPayment(payment: CardPayment | undefined): payment is CardPayment {
     return payment?.Type === PAYMENT_METHOD_TYPES.CARD && !!payment?.Details;
@@ -144,6 +146,9 @@ export function isFreeSubscription(obj: any): obj is FreeSubscription {
     return !!obj && obj.isFreeSubscription && Object.keys(obj).filter((key) => obj[key] !== undefined).length === 1;
 }
 
+export function isPaidSubscription(subscription: MaybeFreeSubscription): subscription is Subscription {
+    return !!subscription && !isFreeSubscription(subscription);
+}
 export function isTransaction(obj: any): obj is Transaction {
     return !!obj && !!obj.TransactionID;
 }

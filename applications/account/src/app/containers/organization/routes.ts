@@ -4,7 +4,6 @@ import type { SectionConfig, SidebarConfig } from '@proton/components';
 import { canUseGroups } from '@proton/components';
 import { isScribeSupported } from '@proton/components/helpers/assistant';
 import {
-    type Subscription,
     getHasExternalMemberCapableB2BPlan,
     getHasMemberCapablePlan,
     getHasVpnB2BPlan,
@@ -18,6 +17,7 @@ import {
     planSupportsSSO,
     upsellPlanSSO,
 } from '@proton/payments';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { hasMeet, hasMeetBusiness } from '@proton/payments/core/subscription/helpers';
 import { appSupportsSSO } from '@proton/shared/lib/apps/apps';
 import {
@@ -41,7 +41,7 @@ interface Props {
     app: APP_NAMES;
     user: UserModel;
     organization?: OrganizationExtended;
-    subscription?: Subscription;
+    subscription: MaybeFreeSubscription;
     canDisplayB2BLogsVPN: boolean;
     isUserGroupsFeatureEnabled: boolean;
     isUserGroupsNoCustomDomainEnabled: boolean;

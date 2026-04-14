@@ -5,6 +5,7 @@ import useConfig from '@proton/components/hooks/useConfig';
 import type { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
 import { CYCLE, type PLANS, canModify, hasMigrationDiscount } from '@proton/payments';
+import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import type { FeatureFlag } from '@proton/unleash/Flags';
@@ -20,7 +21,12 @@ interface Props {
     offerTimestampFlag: FeatureCode;
 }
 
-export const useMonthlyUpsellEligibility = ({ eligiblePlan, allowedApps, offerFlag, offerTimestampFlag }: Props) => {
+export const useMonthlyUpsellEligibility = ({
+    eligiblePlan,
+    allowedApps,
+    offerFlag,
+    offerTimestampFlag,
+}: Props): boolean => {
     const config = useConfig();
     const [subscription] = useSubscription();
     const flag = useFlag(offerFlag);
@@ -40,11 +46,13 @@ export const useMonthlyUpsellEligibility = ({ eligiblePlan, allowedApps, offerFl
     const isMonthlyBilled = subscription?.Cycle === CYCLE.MONTHLY;
     const isNextSubscriptionYearly = subscription.UpcomingSubscription?.Cycle === CYCLE.YEARLY;
 
-    const isEligiblePlan = subscription.Plans?.some(({ Name }) => Name === eligiblePlan);
+    const isEligiblePlan = !!subscription.Plans?.some(({ Name }) => Name === eligiblePlan);
     const isMigratedUser = hasMigrationDiscount(subscription);
 
     const canModifySubscription = canModify(subscription);
-    const isInEligbilityWindow = isInWindow(differenceInDays(Date.now(), fromUnixTime(subscription.PeriodStart)));
+    const isInEligbilityWindow =
+        isPaidSubscription(subscription) &&
+        isInWindow(differenceInDays(Date.now(), fromUnixTime(subscription.PeriodStart)));
 
     return (
         isValidApp &&

@@ -10,7 +10,7 @@ import {
     getSubscriptionExpiresDaysLeft,
     getSubscriptionExpiresText,
 } from '@proton/components/containers/payments/subscription/helpers/subscriptionExpires';
-import { subscriptionExpires } from '@proton/payments';
+import { isFreeSubscription, subscriptionExpires } from '@proton/payments';
 import { SECOND } from '@proton/shared/lib/constants';
 import isBetween from '@proton/utils/isBetween';
 
@@ -64,6 +64,11 @@ const OutgoingSubscriptionExpiredBanner = () => {
 
 const OutgoingSubscriptionExpiresBanner = () => {
     const [subscription] = useSubscription();
+
+    if (isFreeSubscription(subscription)) {
+        return null;
+    }
+
     const { subscriptionExpiresSoon, planName, expirationDate } = subscriptionExpires(subscription);
     if (!subscriptionExpiresSoon || !subscription) {
         return null;

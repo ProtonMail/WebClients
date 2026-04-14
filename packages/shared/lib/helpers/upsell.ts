@@ -1,4 +1,5 @@
-import { type COUPON_CODES, type CYCLE, PLANS, type Subscription, getPlan } from '@proton/payments';
+import { type COUPON_CODES, type CYCLE, PLANS, getPlan } from '@proton/payments';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import type { APP_NAMES, UPSELL_COMPONENT, UPSELL_FEATURE } from '@proton/shared/lib/constants';
 import { APPS, APP_UPSELL_REF_PATH } from '@proton/shared/lib/constants';
 import type { Audience, UserModel } from '@proton/shared/lib/interfaces';
@@ -30,7 +31,7 @@ export const getUpgradePath = ({
 }: {
     user?: UserModel;
     plan?: PLANS;
-    subscription?: Subscription;
+    subscription?: MaybeFreeSubscription;
     audience?: Audience;
     app?: APP_NAMES;
     target?: 'compare' | 'checkout';

@@ -2,15 +2,15 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import Tabs from '@proton/components/components/tabs/Tabs';
+import { Tabs } from '@proton/components/components/tabs/Tabs';
 import {
-    type Subscription,
     getIsB2BAudienceFromPlan,
     hasAnyB2bBundle,
     hasPassBusiness,
+    hasVPNPassProfessional,
     hasVpnBusiness,
-    hasVPNPassProfessional
 } from '@proton/payments';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
 import type { OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
@@ -26,7 +26,7 @@ import ActivityMonitorEvents from './ActivityMonitorEvents';
 interface Props {
     user: UserModel;
     organization?: OrganizationExtended;
-    subscription?: Subscription;
+    subscription: MaybeFreeSubscription;
 }
 
 const canViewB2BActivityMonitor = (user: UserModel, organization?: OrganizationExtended) => {
@@ -49,16 +49,15 @@ const useCanViewB2BOrganization = (user: UserModel, organization?: OrganizationE
 
 const useCanViewGatewayMonitor = (
     user: UserModel,
-    organization?: OrganizationExtended,
-    subscription?: Subscription
+    subscription: MaybeFreeSubscription,
+    organization?: OrganizationExtended
 ) => {
     const isAdmin = user.isAdmin && user.isSelf;
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
     const hasOrganization = hasOrganizationSetup(organization);
     const canHaveOrganization = !user.isMember && !!organization && isAdmin;
-    const hasPlanWithEventLogging = hasVpnBusiness(subscription)
-        || hasAnyB2bBundle(subscription)
-        || hasVPNPassProfessional(subscription);
+    const hasPlanWithEventLogging =
+        hasVpnBusiness(subscription) || hasAnyB2bBundle(subscription) || hasVPNPassProfessional(subscription);
     const canDisplayB2BLogsVPN = useFlag('B2BLogsVPN');
 
     return (
@@ -69,7 +68,11 @@ const useCanViewGatewayMonitor = (
     );
 };
 
-const useCanViewPassMonitor = (user: UserModel, organization?: OrganizationExtended, subscription?: Subscription) => {
+const useCanViewPassMonitor = (
+    user: UserModel,
+    subscription: MaybeFreeSubscription,
+    organization?: OrganizationExtended
+) => {
     const isAdmin = user.isAdmin && user.isSelf;
     const hasOrganizationKey = hasOrganizationSetupWithKeys(organization);
     const hasOrganization = hasOrganizationSetup(organization);
@@ -94,11 +97,11 @@ const ActivityMonitorDashboard = ({ user, organization, subscription }: Props) =
             title: c('Organization').t`Organization`,
             content: <OrganizationEvents />,
         },
-        useCanViewGatewayMonitor(user, organization, subscription) && {
+        useCanViewGatewayMonitor(user, subscription, organization) && {
             title: c('VPN Gateways').t`VPN Gateways`,
             content: <VPNEvents />,
         },
-        useCanViewPassMonitor(user, organization, subscription) && {
+        useCanViewPassMonitor(user, subscription, organization) && {
             title: PASS_APP_NAME,
             content: <PassEvents />,
         },

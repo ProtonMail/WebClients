@@ -3,13 +3,13 @@ import { c } from 'ttag';
 import type { ThemeColor } from '@proton/colors/types';
 import type { SectionConfig } from '@proton/components';
 import {
-    type Subscription,
     getHasVpnB2BPlan,
     hasCancellablePlan,
     hasLumo,
     isCancellableOnlyViaSupport,
     isManagedExternally,
 } from '@proton/payments';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { BRAND_NAME, DARK_WEB_MONITORING_NAME, PROTON_SENTINEL_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 import { getIsAccountRecoveryAvailable } from '@proton/shared/lib/helpers/recovery';
 import type { OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
@@ -19,7 +19,7 @@ import type { VPNDashboardVariant } from '@proton/unleash/UnleashFeatureFlagsVar
 
 interface Arguments {
     user: UserModel;
-    subscription?: Subscription;
+    subscription: MaybeFreeSubscription;
     showVPNDashboard: boolean;
     showVPNDashboardVariant: VPNDashboardVariant | 'disabled' | undefined;
     isB2BTrial: boolean;

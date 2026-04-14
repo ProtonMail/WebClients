@@ -29,6 +29,7 @@ import {
     isTrialExpired,
     willTrialExpireInLessThan1Week,
 } from '@proton/payments';
+import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
@@ -348,6 +349,10 @@ const ReferralTopBanner = ({ app }: { app: APP_NAMES }) => {
     const autoRenewalAction = <TrialInfoActionButton key="opt-out-trial-action-button" />;
 
     const action = isAutoRenewTrial(subscription) ? autoRenewalAction : nonAutoRenewalAction;
+
+    if (isFreeSubscription(subscription)) {
+        return null;
+    }
 
     const isExpired = isTrialExpired(subscription);
 

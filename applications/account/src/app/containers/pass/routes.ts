@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import type { SectionConfig } from '@proton/components';
-import type { Subscription } from '@proton/payments';
 import { hasAnyB2bBundle, hasPassBusiness, hasVPNPassProfessional } from '@proton/payments';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { hasOrganizationSetup, hasOrganizationSetupWithKeys } from '@proton/shared/lib/helpers/organization';
@@ -12,7 +12,7 @@ interface Props {
     app: APP_NAMES;
     user: UserModel;
     organization?: Organization;
-    subscription?: Subscription;
+    subscription: MaybeFreeSubscription;
     canDisplayB2BLogsPass?: boolean;
     canDisplayPassReports?: boolean;
 }
