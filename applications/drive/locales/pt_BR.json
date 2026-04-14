@@ -3979,6 +3979,13 @@
       ],
       "Something went wrong while fetching available domains": [
         "Ocorreu um erro ao buscar os domínios disponíveis"
+      ],
+      "${ failureItems.length } item failed to be moved": [
+        "Erro ao mover ${ failureItems.length } item",
+        "Erro ao mover ${ failureItems.length } itens"
+      ],
+      "Failed to change permissions settings": [
+        "Falha ao alterar as configurações de permissões"
       ]
     },
     "error": {
@@ -7022,6 +7029,9 @@
       ],
       "Search module is not available.": [
         "Módulo de pesquisa não disponível"
+      ],
+      "Invitation confirmed": [
+        "Convite confirmado"
       ]
     },
     "info": {
@@ -9697,6 +9707,10 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "Seu endereço da ${ BRAND_NAME } está pronto para uso"
+      ],
+      "${ errors.length } item failed to be deleted": [
+        "${ errors.length } item não foi excluído",
+        "${ errors.length } itens não foram excluídos"
       ]
     },
     "Notification for duplicate filenames in the current upload": {

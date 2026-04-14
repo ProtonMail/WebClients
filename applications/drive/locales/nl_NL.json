@@ -3988,6 +3988,10 @@
       ],
       "Something went wrong with search: Not enough storage space.": [
         "Er ging iets mis met zoeken: Onvoldoende opslagruimte."
+      ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } item kon niet verplaatst worden",
+        "${ failureItems.length } items konden niet verplaatst worden"
       ]
     },
     "error": {
@@ -7017,6 +7021,15 @@
       ],
       "Unsupported file type for Photos": [
         "Bestandstype wordt niet ondersteund voor Foto's"
+      ],
+      "Enter code": [
+        "Voer code in"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Als u de toegang tot uw authenticatie-app bent kwijtgeraakt, kunt u 1 van de 16 back-up herstelcodes gebruiken die zijn verstrekt toen u tweestapsverificatie instelde. ${ learnMoreLink }"
+      ],
+      "Invitation confirmed": [
+        "Uitnodiging bevestigd"
       ]
     },
     "info": {
@@ -8869,6 +8882,13 @@
       ],
       "VPN with ad-blocker and malware protection": [
         "VPN met advertentieblokkering en bescherming tegen malware"
+      ],
+      "Appointment scheduling": [
+        "Afspraak plannen"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Afspraakplanning met ${ n } boekingspagina",
+        "Afspraakplanning met ${ n } boekingspagina's"
       ]
     },
     "new_plans: feature highlight": {
@@ -9628,6 +9648,10 @@
       ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" gedeeld"
+      ],
+      "${ errors.length } item failed to be deleted": [
+        "${ errors.length } item kon niet worden verwijderd",
+        "${ errors.length } items konden niet verwijderd worden"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
