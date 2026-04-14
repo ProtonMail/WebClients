@@ -3,7 +3,10 @@ import { memo } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcClockRotateLeft } from '@proton/icons/icons/IcClockRotateLeft';
+import { IcFolderArrowIn } from '@proton/icons/icons/IcFolderArrowIn';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
+import { IcTrashCross } from '@proton/icons/icons/IcTrashCross';
 import { useBulkSelection } from '@proton/pass/components/Bulk/BulkSelectionState';
 import { bulkSelectionDTO } from '@proton/pass/components/Bulk/utils';
 import { useItemsActions } from '@proton/pass/components/Item/ItemActionsProvider';
@@ -29,7 +32,7 @@ export const BulkActions = memo((props: Props) => {
                 title={c('Action').t`Bulk restore items from trash`}
                 className="flex flex-nowrap gap-2 grow-0 text-sm text-semibold"
             >
-                <Icon name="clock-rotate-left" className="shrink-0" />
+                <IcClockRotateLeft className="shrink-0" />
                 <span className="text-ellipsis hidden xl:block">{c('Action').t`Restore`}</span>
             </Button>
             <Button
@@ -41,7 +44,7 @@ export const BulkActions = memo((props: Props) => {
                 title={c('Action').t`Bulk delete items from trash`}
                 className="flex flex-nowrap gap-2 grow-0 text-sm text-semibold"
             >
-                <Icon name="trash-cross" className="shrink-0" />
+                <IcTrashCross className="shrink-0" />
                 <span className="text-ellipsis hidden xl:block">{c('Action').t`Delete`}</span>
             </Button>
         </>
@@ -56,7 +59,7 @@ export const BulkActions = memo((props: Props) => {
                 title={c('Action').t`Bulk move items to another vault`}
                 className="flex flex-nowrap gap-2 grow-0 text-sm text-semibold"
             >
-                <Icon name="folder-arrow-in" className="shrink-0" />
+                <IcFolderArrowIn className="shrink-0" />
                 <span className="text-ellipsis hidden xl:block">{c('Action').t`Move`}</span>
             </Button>
             <Button
@@ -68,7 +71,7 @@ export const BulkActions = memo((props: Props) => {
                 title={c('Action').t`Bulk move items to trash`}
                 className="flex flex-nowrap gap-2 grow-0 text-sm text-semibold"
             >
-                <Icon name="trash" className="shrink-0" />
+                <IcTrash className="shrink-0" />
                 <span className="text-ellipsis hidden xl:block">{c('Action').t`Trash`}</span>
             </Button>
         </>

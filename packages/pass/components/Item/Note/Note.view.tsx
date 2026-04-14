@@ -3,7 +3,7 @@ import type { FC } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcSquares } from '@proton/icons/icons/IcSquares';
 import { FileAttachmentsContentView } from '@proton/pass/components/FileAttachments/FileAttachmentsView';
 import { ItemHistoryStats } from '@proton/pass/components/Item/History/ItemHistoryStats';
 import { NoteContent } from '@proton/pass/components/Item/Note/Note.content';
@@ -37,7 +37,7 @@ export const NoteView: FC<ItemViewProps<'note'>> = (itemViewProps) => {
                               disabled={revision.optimistic}
                               title={c('Action').t`Copy to clipboard`}
                           >
-                              <Icon name="squares" alt={c('Action').t`Copy to clipboard`} size={5} />
+                              <IcSquares alt={c('Action').t`Copy to clipboard`} size={5} />
                           </Button>,
                       ]
                     : []

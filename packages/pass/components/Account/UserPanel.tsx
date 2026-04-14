@@ -1,7 +1,7 @@
 import type { FC, ReactNode } from 'react';
 
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcStar } from '@proton/icons/icons/IcStar';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
 import type { UserPassPlan } from '@proton/pass/types/api/plan';
 import clsx from '@proton/utils/clsx';
@@ -31,7 +31,7 @@ export const UserPanel: FC<Props> = ({ actions, email, name, organization, plan,
                         className="flex flex-nowrap gap-1 items-center text-sm text-ellipsis"
                         style={{ color: 'var(--interaction-norm)' }}
                     >
-                        <Icon name="star" className="shrink-0" size={3} color="var(--interaction-norm)" />
+                        <IcStar className="shrink-0" size={3} color="var(--interaction-norm)" />
                         <span className="text-ellipsis">
                             {planName}
                             {organization && ` · ${organization}`}

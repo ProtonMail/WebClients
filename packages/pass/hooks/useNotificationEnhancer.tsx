@@ -4,8 +4,8 @@ import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
-import Icon from '@proton/components/components/icon/Icon';
 import NotificationButton from '@proton/components/containers/notifications/NotificationButton';
+import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { AccountPath } from '@proton/pass/constants';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
@@ -25,7 +25,7 @@ const ReactivateLink: FC<NotificationEnhancerOptions> = ({ onLink }) => {
             className="text-semibold"
             onClick={() => onLink(`${SSO_URL}/encryption-keys`)}
         >
-            {c('Action').t`Learn more`} <Icon name="arrow-out-square" />{' '}
+            {c('Action').t`Learn more`} <IcArrowOutSquare />{' '}
         </InlineLinkButton>
     );
 };

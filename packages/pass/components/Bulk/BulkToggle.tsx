@@ -5,7 +5,7 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Kbd } from '@proton/atoms/Kbd/Kbd';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcCheckmarkTriple } from '@proton/icons/icons/IcCheckmarkTriple';
 import { useBulkActions } from '@proton/pass/components/Bulk/BulkSelectionActions';
 import { useBulkEnabled } from '@proton/pass/components/Bulk/BulkSelectionState';
 import { metaKey } from '@proton/shared/lib/helpers/browser';
@@ -41,7 +41,7 @@ export const BulkToggle = memo(({ disabled }: Props) => {
                     c('Action').t`Cancel`
                 ) : (
                     <>
-                        <Icon name="checkmark-triple" className="shrink-0" />
+                        <IcCheckmarkTriple className="shrink-0" />
                         <span className="text-ellipsis hidden xl:block">{c('Action').t`Multiple select`}</span>
                     </>
                 )}

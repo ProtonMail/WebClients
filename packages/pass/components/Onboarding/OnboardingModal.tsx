@@ -5,11 +5,11 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Step } from '@proton/atoms/Stepper/Step';
 import { Stepper } from '@proton/atoms/Stepper/Stepper';
-import Icon from '@proton/components/components/icon/Icon';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import { PassIconLogo } from '@proton/pass/components/Layout/Logo/PassIconLogo';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { wait } from '@proton/shared/lib/helpers/promise';
@@ -49,7 +49,7 @@ export const OnboardingModal: FC<ModalProps> = ({ size = 'xlarge', ...props }) =
     const backButton =
         step > 0 ? (
             <Button className="mr-auto z-1" icon pill shape="ghost" onClick={() => onStep(-1)}>
-                <Icon name="arrow-left" />
+                <IcArrowLeft />
             </Button>
         ) : undefined;
 

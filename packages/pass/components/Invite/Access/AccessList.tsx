@@ -3,7 +3,7 @@ import type { FC, ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcUsersPlus } from '@proton/icons/icons/IcUsersPlus';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { ShareMember } from '@proton/pass/components/Invite/Member/ShareMember';
 import { PendingExistingMember, PendingNewMember } from '@proton/pass/components/Invite/Member/SharePendingMember';
@@ -70,7 +70,7 @@ export const AccessList: FC<Props> = ({
                                 onClick={onInvite}
                                 disabled={inviteDisabled}
                             >
-                                <Icon name="users-plus" className="mr-4" />
+                                <IcUsersPlus className="mr-4" />
                                 {c('Action').t`Invite more...`}
                             </Button>
                         </OrganizationPolicyTooltip>

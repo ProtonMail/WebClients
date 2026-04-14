@@ -4,8 +4,8 @@ import { useSelector } from 'react-redux';
 import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
-import Icon from '@proton/components/components/icon/Icon';
 import Option from '@proton/components/components/option/Option';
+import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 import { FeatureFlag } from '@proton/pass/components/Core/WithFeatureFlag';
 import { FileAttachmentsFieldEdit } from '@proton/pass/components/FileAttachments/FileAttachmentsFieldEdit';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
@@ -201,7 +201,7 @@ export const AliasEdit: FC<ItemEditViewProps<'alias'>> = ({ share, revision, onC
                                 >
                                     {!loading ? (
                                         <span className="mt-1 text-xs color-weak flex items-center gap-1">
-                                            <Icon name="exclamation-circle" size={4} />
+                                            <IcExclamationCircle size={4} />
                                             <span className="text-pre-wrap flex-1">{c('Info')
                                                 .t`You cannot change the mailboxes for this alias.`}</span>
                                         </span>
