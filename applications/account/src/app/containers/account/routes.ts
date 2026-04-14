@@ -7,7 +7,6 @@ import {
 import type { ThemeColor } from '@proton/colors';
 import type { SectionConfig } from '@proton/components';
 import {
-    type Subscription,
     getHasExternalMemberCapableB2BPlan,
     getHasVpnB2BPlan,
     getIsConsumerPassPlan,
@@ -16,6 +15,7 @@ import {
     isCancellableOnlyViaSupport,
     isManagedExternally,
 } from '@proton/payments';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import {
     APPS,
     type APP_NAMES,
@@ -96,7 +96,7 @@ function getV1DashboardSections(
     isB2BTrial: boolean,
     isMember: boolean,
     cancellablePlan: boolean,
-    subscription: Subscription | undefined,
+    subscription: MaybeFreeSubscription,
     cancellableOnlyViaSupport: boolean,
     hasExternalMemberCapableB2BPlan: boolean,
     showBusinessActivation: boolean
@@ -205,7 +205,7 @@ export const getAccountAppRoutes = ({
     app: APP_NAMES;
     user: UserModel;
     addresses?: Address[];
-    subscription?: Subscription;
+    subscription: MaybeFreeSubscription;
     isDataRecoveryAvailable: boolean;
     isRecoveryContactsEnabled: boolean;
     isSessionRecoveryAvailable: boolean;

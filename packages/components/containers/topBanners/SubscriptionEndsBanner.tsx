@@ -7,6 +7,7 @@ import Time from '@proton/components/components/time/Time';
 import { REACTIVATE_SOURCE } from '@proton/components/containers/payments/subscription/cancellationFlow/useCancellationTelemetry';
 import { getReactivateSubscriptionAction } from '@proton/components/containers/payments/subscription/helpers/subscriptionExpires';
 import { SubscriptionPlatform, subscriptionExpires } from '@proton/payments';
+import { isFreeSubscriptionResult } from '@proton/payments/core/subscription/helpers';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import { useHideBanner } from './SubscriptionEndsBannerHelpers';
@@ -14,11 +15,17 @@ import TopBanner from './TopBanner';
 
 const SubscriptionEndsBanner = ({ app }: { app: APP_NAMES }) => {
     const [subscription] = useSubscription();
-    const { subscriptionExpiresSoon, planName, expirationDate } = subscriptionExpires(subscription);
 
-    const shouldHideBanner = useHideBanner(app, subscription, subscriptionExpiresSoon, expirationDate);
+    const subscriptionExpiresResult = subscriptionExpires(subscription);
 
-    if (!subscription) {
+    const shouldHideBanner = useHideBanner(
+        app,
+        subscription,
+        subscriptionExpiresResult.subscriptionExpiresSoon,
+        subscriptionExpiresResult.expirationDate
+    );
+
+    if (!subscription || isFreeSubscriptionResult(subscriptionExpiresResult)) {
         return null;
     }
 
@@ -28,9 +35,11 @@ const SubscriptionEndsBanner = ({ app }: { app: APP_NAMES }) => {
 
     const byDate = (
         <Time format="PPP" key="subscription-end">
-            {expirationDate}
+            {subscriptionExpiresResult.expirationDate}
         </Time>
     );
+
+    const planName = subscriptionExpiresResult.planName;
 
     const reactivateLinkData = getReactivateSubscriptionAction(subscription, REACTIVATE_SOURCE.banners);
 

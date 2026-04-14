@@ -9,6 +9,7 @@ import type { ThemeColor } from '@proton/colors/types';
 import AppsLogos from '@proton/components/components/appsLogos/AppsLogos';
 import Info from '@proton/components/components/link/Info';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
+import type { FreeSubscription } from '@proton/payments';
 import { type Subscription, hasAllProductsB2CPlan, hasDrive, hasDrive1TB, hasFree, hasMail } from '@proton/payments';
 import {
     APPS,
@@ -185,13 +186,13 @@ interface DashboardStorageSection {
     tooltip: ReactNode;
     usedSpace: number;
     graphColor: ThemeColor;
-    shouldRender: (app: APP_NAMES, subscription: Subscription) => boolean;
+    shouldRender: (app: APP_NAMES, subscription: Subscription | FreeSubscription) => boolean;
 }
 
 export function getDashboardStorageSections(
     organization: Organization | undefined,
     user: UserModel,
-    subscription: Subscription,
+    subscription: Subscription | FreeSubscription,
     isSheetsEnabled: boolean
 ): DashboardStorageSection[] {
     const isFree = hasFree(subscription);
@@ -305,7 +306,7 @@ export const StorageSection = ({
 }: {
     app: APP_NAMES;
     user: UserModel;
-    subscription: Subscription;
+    subscription: Subscription | FreeSubscription;
     organization: Organization | undefined;
 }) => {
     const isSheetsEnabled = useFlag('DocsSheetsEnabled');

@@ -12,6 +12,7 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import useAppTitle from '@proton/components/hooks/useAppTitle';
 import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import { PLANS } from '@proton/payments';
+import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 
@@ -75,7 +76,9 @@ export const CancellationReminderSection = ({ app }: Props) => {
         const isSubscriptionReminderFlow = !isUpsellEnabled || !config.upsellPlan;
 
         const hasCancelledOnSameDayHeSubscribed =
-            subscription?.CreateTime && isBefore(new Date(), addDays(fromUnixTime(subscription.CreateTime), 1));
+            isPaidSubscription(subscription) &&
+            subscription?.CreateTime &&
+            isBefore(new Date(), addDays(fromUnixTime(subscription.CreateTime), 1));
         const { status } = await cancelSubscription({
             subscriptionReminderFlow: isSubscriptionReminderFlow,
             upsellPlanId: config.upsellPlan,

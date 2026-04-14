@@ -11,15 +11,15 @@ import SettingsLink from '@proton/components/components/link/SettingsLink';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
-import PersonalCalendarModal from '@proton/components/containers/calendar/calendarModal/personalCalendarModal/PersonalCalendarModal';
-import ExportModal from '@proton/components/containers/calendar/exportModal/ExportModal';
+import { PersonalCalendarModal } from '@proton/components/containers/calendar/calendarModal/personalCalendarModal/PersonalCalendarModal';
+import { ExportModal } from '@proton/components/containers/calendar/exportModal/ExportModal';
 import CalendarsSection from '@proton/components/containers/calendar/settings/CalendarsSection';
 import { getNextDefaultCalendar } from '@proton/components/containers/calendar/settings/defaultCalendar';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { useModalsMap } from '@proton/components/hooks/useModalsMap';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import type { Subscription } from '@proton/payments';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { removeCalendar, updateCalendarUserSettings } from '@proton/shared/lib/api/calendars';
 import { getProbablyActiveCalendars } from '@proton/shared/lib/calendar/calendar';
 import { getCalendarsLimitReachedText } from '@proton/shared/lib/calendar/calendarLimits';
@@ -49,7 +49,7 @@ type ModalsMap = {
 interface Props {
     addresses: Address[];
     user: UserModel;
-    subscription?: Subscription;
+    subscription: MaybeFreeSubscription;
     myCalendars: VisualCalendar[];
     defaultCalendar?: VisualCalendar;
     isCalendarsLimitReached: boolean;

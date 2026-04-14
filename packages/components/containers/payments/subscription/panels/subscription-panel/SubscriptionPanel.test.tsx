@@ -18,6 +18,7 @@ describe('SubscriptionPanel', () => {
         user: buildUser(),
         vpnServers: defaultVPNServers,
         upsells: [],
+        subscription: undefined,
     };
 
     it('should not render if user cannot pay', () => {

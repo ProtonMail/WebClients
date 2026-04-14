@@ -4,7 +4,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import Prompt from '@proton/components/components/prompt/Prompt';
-import type { Subscription } from '@proton/payments';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { getCalendarsLimitReachedText } from '@proton/shared/lib/calendar/calendarLimits';
 import { getCalendarsSettingsPath } from '@proton/shared/lib/calendar/settingsRoutes';
 import { APP_UPSELL_REF_PATH, CALENDAR_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
@@ -16,7 +16,7 @@ interface Props {
     open?: boolean;
     isFreeUser: boolean;
     user: UserModel;
-    subscription?: Subscription;
+    subscription: MaybeFreeSubscription;
 }
 
 const CalendarLimitReachedModal = ({ open, onClose, isFreeUser, user, subscription }: Props) => {

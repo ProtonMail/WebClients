@@ -13,7 +13,7 @@ import { useContactEmailsCache } from '@proton/components/containers/contacts/Co
 import useCalendarShareInvitationActions from '@proton/components/hooks/useCalendarShareInvitationActions';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
-import type { Subscription } from '@proton/payments';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getHasUserReachedCalendarsLimit } from '@proton/shared/lib/calendar/calendarLimits';
 import { ShareCalendarSignatureVerificationError } from '@proton/shared/lib/calendar/sharing/shareProton/ShareCalendarSignatureVerificationError';
@@ -28,7 +28,7 @@ export interface SharedCalendarModalOwnProps {
     addresses: Address[];
     calendars: VisualCalendar[];
     user: UserModel;
-    subscription?: Subscription;
+    subscription: MaybeFreeSubscription;
     invitation: CalendarMemberInvitation;
 }
 
@@ -77,6 +77,7 @@ const ShareCalendarInvitationModal = ({ addresses, calendars, user, subscription
         if (e instanceof ShareCalendarSignatureVerificationError) {
             const { errors } = e;
             errors?.forEach((error) => {
+                // eslint-disable-next-line no-console
                 console.error(error);
             });
             setIsSignatureVerificationErrorModalOpen(true);

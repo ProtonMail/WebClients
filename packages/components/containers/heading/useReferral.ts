@@ -10,6 +10,7 @@ import useConfig from '@proton/components/hooks/useConfig';
 import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { FeatureCode } from '@proton/features/interface';
 import useFeature from '@proton/features/useFeature';
+import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import { APPS, SECOND } from '@proton/shared/lib/constants';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
 
@@ -22,7 +23,9 @@ export const useReferral = (location: ReturnType<typeof useLocation>) => {
     const { feature: referralProgramFeature } = useFeature(FeatureCode.ReferralProgram);
 
     const subscriptionStartedThirtyDaysAgo =
-        !!subscription?.PeriodStart && new Date() > addDays(fromUnixTime(subscription.PeriodStart), 30);
+        isPaidSubscription(subscription) &&
+        !!subscription.PeriodStart &&
+        new Date() > addDays(fromUnixTime(subscription.PeriodStart), 30);
     const {
         show: showSpotlight,
         onDisplayed: onDisplayedSpotlight,

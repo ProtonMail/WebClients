@@ -28,7 +28,7 @@ import {
 } from '@proton/components';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 import AccessControlSettingsSection from '@proton/components/containers/organization/accessControl/AccessControlSettingsSection';
-import type { Subscription } from '@proton/payments';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
 
@@ -52,7 +52,7 @@ const OrganizationSettingsRouter = ({
     organizationAppRoutes: ReturnType<typeof getOrganizationAppRoutes>;
     user: UserModel;
     organization?: OrganizationExtended;
-    subscription?: Subscription;
+    subscription: MaybeFreeSubscription;
     onOpenChat?: () => void;
 }) => {
     const onceRef = useRef(false);

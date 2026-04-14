@@ -4,8 +4,8 @@ import DriveLogo from '@proton/components/components/logo/DriveLogo';
 import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
-import type { Subscription } from '@proton/payments';
 import { PLANS, PLAN_NAMES, hasFree } from '@proton/payments';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { APPS, DOCS_APP_NAME, DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
 import type { DashboardMoreInfoSection } from '../../../shared/DashboardMoreInfoSection/DashboardMoreInfoSection';
@@ -19,7 +19,7 @@ import safeguard from './illustrations/safeguard.svg';
 import shareFiles from './illustrations/share-files.svg';
 
 interface Props {
-    subscription: Subscription | undefined;
+    subscription: MaybeFreeSubscription;
 }
 
 const DriveGetMoreSection = ({ subscription }: Props) => {

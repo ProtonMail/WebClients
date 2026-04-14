@@ -14,6 +14,7 @@ import {
     PLAN_NAMES,
     getPlanIDs,
     getPlanTitle,
+    isFreeSubscription,
     isTrial,
     isTrialExpired,
     willTrialExpireInLessThan1Week,
@@ -136,7 +137,7 @@ const TrialEndsActionButtonSwitcher = ({ fromApp }: { fromApp: APP_NAMES }) => {
 
 const LegacyReferralTopBanner = ({ fromApp }: { fromApp: APP_NAMES }) => {
     const [subscription, loadingSubscription] = useSubscription();
-    if (loadingSubscription) {
+    if (loadingSubscription || isFreeSubscription(subscription)) {
         return null;
     }
 

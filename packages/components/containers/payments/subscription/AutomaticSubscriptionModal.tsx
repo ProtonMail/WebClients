@@ -18,7 +18,7 @@ import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subsc
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
 import useLoad from '@proton/components/hooks/useLoad';
 import { useCurrencies } from '@proton/components/payments/client-extensions/useCurrencies';
-import type { PLANS } from '@proton/payments';
+import type { FreeSubscription, PLANS } from '@proton/payments';
 import {
     CURRENCIES,
     type Currency,
@@ -42,7 +42,7 @@ import { getEligibility } from './subscriptionEligbility';
 const getParameters = (
     search: string,
     plans: Plan[],
-    subscription: Subscription,
+    subscription: Subscription | FreeSubscription,
     user: UserModel,
     getPreferredCurrency: ReturnType<typeof useCurrencies>['getPreferredCurrency'],
     paymentStatus: PaymentStatus

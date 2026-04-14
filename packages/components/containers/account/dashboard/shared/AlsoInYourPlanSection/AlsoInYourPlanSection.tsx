@@ -24,6 +24,7 @@ import {
     hasFreeOrPlus,
     hasVPN2024,
 } from '@proton/payments';
+import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
 
@@ -57,7 +58,10 @@ const AlsoInYourPlanSection = ({
         return <Loader />;
     }
 
-    const plansMap = getPlansMap(plans, subscription.Currency, false);
+    const plan =
+        planName && isPaidSubscription(subscription)
+            ? getPlansMap(plans, subscription.Currency, false)[planName]
+            : freePlan;
 
     const sectionSubtitleCopy = () => {
         const planTitlePlusMaybeBrand = planName === PLANS.FREE ? `${BRAND_NAME} ${planTitle}` : planTitle;
@@ -83,7 +87,7 @@ const AlsoInYourPlanSection = ({
             value={{
                 app,
                 freePlan,
-                plan: planName ? plansMap[planName] : freePlan,
+                plan,
                 isBundlePlan: hasAllProductsB2CPlan(subscription),
             }}
         >
