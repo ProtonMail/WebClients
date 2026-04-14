@@ -45,6 +45,19 @@ describe('Zoom location helpers', () => {
         expect(dataDescription).toStrictEqual(expectData);
     });
 
+    it('should format personal meetings with dots in the path and a password', () => {
+        const location = 'https://us02web.zoom.us/my/john.doe?pwd=aBcDeFgHiJkLmNoPqRsTuVwXyZ123456';
+        const data = getZoomDataFromLocation(location);
+
+        expect(data).toStrictEqual({
+            service: 'zoom',
+            meetingUrl: 'https://us02web.zoom.us/my/john.doe?pwd=aBcDeFgHiJkLmNoPqRsTuVwXyZ123456',
+            meetingId: 'john.doe',
+            joiningInstructions: undefined,
+            password: 'aBcDeFgHiJkLmNoPqRsTuVwXyZ123456',
+        });
+    });
+
     it('should format the personal meetings', () => {
         const location = 'https://us02web.zoom.us/j/protonCustom';
         const dataLocation = getZoomDataFromLocation(location);
