@@ -27,7 +27,6 @@ import {
     DEFAULT_CYCLE,
     PAYMENT_METHOD_TYPES,
     PLANS,
-    getBillingAddressFromPaymentStatus,
     getHas2025OfferCoupon,
     getIsB2BAudienceFromPlan,
     getPlanIDs,
@@ -37,6 +36,7 @@ import {
 } from '@proton/payments';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { VatReverseChargeErrorModal } from '@proton/payments/ui/billing-address/containers/VatReverseChargeErrorModal';
+import { loadInitialBillingAddress } from '@proton/payments/ui/helpers/load-initial-billing-address';
 import { checkReferrer } from '@proton/shared/lib/api/core/referrals';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 // eslint-disable-next-line no-restricted-imports
@@ -548,13 +548,18 @@ const SingleSignupContainerV2 = ({
 
             const paymentsApi = getPaymentsApi(silentApi);
 
-            const [{ plans, freePlan }, paymentMethodStatus] = await Promise.all([
-                getPlans({ api: silentApi }),
-                getPaymentStatus({ api: silentApi }),
-            ]);
+            const [{ plans, freePlan }, { paymentStatus, billingAddress: savedOrDetectedBillingInformation }] =
+                await Promise.all([
+                    getPlans({ api: silentApi }),
+                    loadInitialBillingAddress({
+                        getPaymentStatus: () => getPaymentStatus({ api: silentApi }),
+                        getFullBillingAddress: paymentsApi.getFullBillingAddress,
+                        isAuthenticated: !!resumedSession?.UID,
+                    }),
+                ]);
 
             const currency = getPreferredCurrency({
-                paymentStatus: paymentMethodStatus,
+                paymentStatus,
                 plans: getAccessiblePlans({
                     planCards,
                     audience,
@@ -596,13 +601,16 @@ const SingleSignupContainerV2 = ({
 
             void getVPNServersCountData(silentApi).then((vpnServersCountData) => setModelDiff({ vpnServersCountData }));
 
-            const billingAddress = {
-                ...getBillingAddressFromPaymentStatus(paymentMethodStatus),
-                Company: modifiedSignupParameters.orgName,
-                FirstName: modifiedSignupParameters.firstName,
-                LastName: modifiedSignupParameters.lastName,
-                Address: modifiedSignupParameters.streetAddress,
-                City: modifiedSignupParameters.city,
+            const initialBillingAddress = {
+                ...savedOrDetectedBillingInformation,
+                // If the initial billing address loaded from the current user already has the extra data (Company,
+                // City, etc) then the input paramters have to be ignored, because inline editing of billing address
+                // isn't possible. Instead, user has to open the edit billing address modal.
+                Company: savedOrDetectedBillingInformation.Company ?? modifiedSignupParameters.orgName,
+                FirstName: savedOrDetectedBillingInformation.FirstName ?? modifiedSignupParameters.firstName,
+                LastName: savedOrDetectedBillingInformation.LastName ?? modifiedSignupParameters.lastName,
+                Address: savedOrDetectedBillingInformation.Address ?? modifiedSignupParameters.streetAddress,
+                City: savedOrDetectedBillingInformation.City ?? modifiedSignupParameters.city,
             };
 
             const [
@@ -636,7 +644,7 @@ const SingleSignupContainerV2 = ({
                         currency,
                         cycle,
                         coupon,
-                        billingAddress,
+                        billingAddress: initialBillingAddress,
                         trial: signupTrial,
                         ValidateBillingAddress: true,
                         VatId: modifiedSignupParameters.vatNumber,
@@ -651,7 +659,7 @@ const SingleSignupContainerV2 = ({
                     // if plan parameters are defined, we assume we won't be showing the plan cards
                     // and that we won't need to fetch the subscription data from the API call with each coupon
                     coupon: planParameters.defined ? null : coupon,
-                    billingAddress,
+                    billingAddress: initialBillingAddress,
                 }),
             ]);
 
@@ -718,11 +726,12 @@ const SingleSignupContainerV2 = ({
                 subscriptionDataCycleMapping,
                 referralData,
                 inviteData: signupParameters.invite?.type === 'generic' ? signupParameters.invite.data : undefined,
-                paymentStatus: paymentMethodStatus,
+                paymentStatus,
                 subscriptionData: { ...subscriptionData, vatNumber: modifiedSignupParameters.vatNumber },
                 cache: undefined,
                 source: signupParameters.source,
                 loadingDependencies: false,
+                initialBillingAddress,
             });
 
             if (session?.resumedSessionResult.User) {
@@ -754,7 +763,7 @@ const SingleSignupContainerV2 = ({
             }
             void measure({
                 event: TelemetryAccountSignupEvents.bePaymentMethods,
-                dimensions: getPaymentMethodsAvailable(paymentMethodStatus.VendorStates),
+                dimensions: getPaymentMethodsAvailable(paymentStatus.VendorStates),
             });
         };
 

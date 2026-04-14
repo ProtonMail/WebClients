@@ -54,17 +54,15 @@ export const getUpsellConfig = ({
 }: Omit<GetUpsellConfigProps, 'plan'> & {
     appName: APP_NAMES;
     planIDs?: PlanIDs;
-    openSubscriptionModal: OpenSubscriptionModalCallback;
+    openSubscriptionModal: OpenSubscriptionModalCallback | undefined;
     subscription: Subscription | undefined;
     user: UserModel;
     /** Override final config before opening subscription modal */
     configOverride?: (config: OpenCallbackProps) => void;
 }): { upgradePath: string; onUpgrade?: () => void } => {
-    const hasSubscriptionModal = openSubscriptionModal !== noop;
-
     const hasInAppPayments = APPS_WITH_IN_APP_PAYMENTS.has(appName);
 
-    if (hasSubscriptionModal && hasInAppPayments && upsellRef && !preventInApp) {
+    if (openSubscriptionModal && hasInAppPayments && upsellRef && !preventInApp) {
         const subscriptionCallBackProps: OpenCallbackProps = {
             coupon,
             cycle,

@@ -81,7 +81,7 @@ const PlansSectionInner = ({ app }: Props) => {
     const searchParams = getSearchParams(location.search);
     const [audience, setAudience] = useState(searchParams.audience || Audience.B2C);
 
-    const [open] = useSubscriptionModal();
+    const [openSubscriptionModal] = useSubscriptionModal();
     const isLoading =
         loadingPlans ||
         loadingSubscription ||
@@ -113,7 +113,7 @@ const PlansSectionInner = ({ app }: Props) => {
 
         const plan = getPlanFromPlanIDs(plansMap, newPlanIDs);
 
-        open({
+        openSubscriptionModal({
             defaultSelectedProductPlans: selectedProductPlans,
             planIDs: newPlanIDs,
             step: SUBSCRIPTION_STEPS.CHECKOUT,
@@ -194,7 +194,7 @@ const PlansSectionInner = ({ app }: Props) => {
                             openLinkInBrowser(getAppHref(`mail/upgrade`, APPS.PROTONACCOUNT));
                             return;
                         }
-                        open({
+                        openSubscriptionModal({
                             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
                             defaultAudience: audience,
                             defaultSelectedProductPlans: selectedProductPlans,

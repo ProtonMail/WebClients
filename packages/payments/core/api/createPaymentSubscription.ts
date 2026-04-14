@@ -290,7 +290,6 @@ export const createPaymentSubscription = async (
     reportWrongBillingAddress(data);
 
     try {
-        reportWrongBillingAddress(data);
         const createSubscriptionResponse = await api<{ Subscription: Subscription }>(createSubscriptionQueryConfig);
 
         checkoutTelemetry.reportPayment({

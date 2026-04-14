@@ -358,6 +358,10 @@ export type GetPlansData = {
     currency?: Currency;
 };
 
+export type GetFullBillingAddressOptions = {
+    withFallback: boolean;
+};
+
 export interface PaymentsApi {
     checkSubscription: (
         data: CheckSubscriptionData,
@@ -370,7 +374,7 @@ export interface PaymentsApi {
 
     paymentStatus: () => Promise<PaymentStatus>;
 
-    getFullBillingAddress: () => Promise<FullBillingAddress>;
+    getFullBillingAddress: (options?: GetFullBillingAddressOptions) => Promise<FullBillingAddress>;
     updateFullBillingAddress: (fullBillingAddress: FullBillingAddress) => Promise<void>;
     updateInvoiceBillingAddress: (invoiceId: string, fullBillingAddress: FullBillingAddress) => Promise<void>;
     getInvoiceBillingAddress: (invoiceId: string) => Promise<FullBillingAddress>;

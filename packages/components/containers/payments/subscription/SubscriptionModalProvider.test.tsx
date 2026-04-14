@@ -89,8 +89,8 @@ it('should render <SubscriptionContainer> with B2B default audience if it was se
         expect(openSubscriptionModal).toBeDefined();
     });
 
-    act(() => {
-        openSubscriptionModal({ defaultAudience: Audience.B2B } as any);
+    await act(async () => {
+        await openSubscriptionModal({ defaultAudience: Audience.B2B } as any);
     });
 
     expect(SubscriptionContainer).toHaveBeenCalledWith(
@@ -122,8 +122,8 @@ it('should render <SubscriptionContainer> with B2B default audience if plan is a
         expect(openSubscriptionModal).toBeDefined();
     });
 
-    act(() => {
-        openSubscriptionModal({ plan: PLANS.BUNDLE_PRO } as any);
+    await act(async () => {
+        await openSubscriptionModal({ plan: PLANS.BUNDLE_PRO } as any);
     });
 
     expect(SubscriptionContainer).toHaveBeenCalledWith(
@@ -163,8 +163,8 @@ it('should render <SubscriptionContainer> with B2B default audience if subscript
         expect(openSubscriptionModal).toBeDefined();
     });
 
-    act(() => {
-        openSubscriptionModal({} as any);
+    await act(async () => {
+        await openSubscriptionModal({} as any);
     });
 
     expect(SubscriptionContainer).toHaveBeenCalledWith(
@@ -196,8 +196,8 @@ it('should render <SubscriptionContainer> with FAMILY default audience if it is 
         expect(openSubscriptionModal).toBeDefined();
     });
 
-    act(() => {
-        openSubscriptionModal({ defaultAudience: Audience.FAMILY } as any);
+    await act(async () => {
+        await openSubscriptionModal({ defaultAudience: Audience.FAMILY } as any);
     });
 
     expect(SubscriptionContainer).toHaveBeenCalledWith(
