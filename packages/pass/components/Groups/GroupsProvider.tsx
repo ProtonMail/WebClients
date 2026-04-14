@@ -66,7 +66,7 @@ export const GroupsProvider: FC<Props> = ({ children }) => {
 
     const onShowMembers = useCallback(
         (event: MouseEvent, groupId: GroupId) => {
-            if ((groupsMembers[groupId]?.total ?? 0) > 0) {
+            if ((groupsMembers[groupId]?.members.length ?? 0) > 0) {
                 event.stopPropagation();
                 event.preventDefault();
                 setModalOpen(groupId);
