@@ -1,4 +1,4 @@
-import React, { type PropsWithChildren, useRef } from 'react';
+import { type PropsWithChildren, useRef } from 'react';
 
 import { c } from 'ttag';
 
@@ -15,7 +15,7 @@ import SidebarList from '@proton/components/components/sidebar/SidebarList';
 import SidebarNav from '@proton/components/components/sidebar/SidebarNav';
 import { useVisibilityTracker } from '@proton/components/components/visibility/useVisibilityTracker';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
-import type { Subscription } from '@proton/payments/index';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { APPS } from '@proton/shared/lib/constants';
 import type { OrganizationExtended } from '@proton/shared/lib/interfaces';
 import { telemetry } from '@proton/shared/lib/telemetry';
@@ -135,7 +135,7 @@ const TrackableSidebar = ({
     organizationRoutes,
 }: {
     organization: OrganizationExtended | undefined;
-    subscription: Subscription | undefined;
+    subscription: MaybeFreeSubscription;
 } & Props) => {
     const [user] = useUser();
     const adminSidebarFeature = useB2BAdminSidebarFeature({ user, subscription, organization });

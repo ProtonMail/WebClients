@@ -6,7 +6,7 @@ import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
-import { PLANS, getRenewalTime } from '@proton/payments';
+import { PLANS, getRenewalTime, isFreeSubscription } from '@proton/payments';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
 import useEventManager from '../../../../hooks/useEventManager';
@@ -22,7 +22,7 @@ export const CancelRedirectionModal = ({ planName, plan, ...props }: Props) => {
     const eventManager = useEventManager();
     const [subscription] = useSubscription();
 
-    if (!subscription) {
+    if (!subscription || isFreeSubscription(subscription)) {
         return null;
     }
 

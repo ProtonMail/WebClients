@@ -12,7 +12,7 @@ import {
     getSubscriptionExpiresText,
 } from '@proton/components/containers/payments/subscription/helpers/subscriptionExpires';
 import useConfig from '@proton/components/hooks/useConfig';
-import { hasDeprecatedVPN, hasVPN2024, subscriptionExpires } from '@proton/payments';
+import { hasDeprecatedVPN, hasVPN2024, isFreeSubscription, subscriptionExpires } from '@proton/payments';
 import { getAppShortName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
@@ -20,7 +20,12 @@ import { APPS } from '@proton/shared/lib/constants';
 const SubscriptionEndsBannerV2 = ({ app }: { app: APP_NAMES }) => {
     const { APP_NAME } = useConfig();
     const [subscription] = useSubscription();
-    const { subscriptionExpiresSoon, planName, expirationDate } = subscriptionExpires(subscription!);
+
+    if (isFreeSubscription(subscription)) {
+        return null;
+    }
+
+    const { subscriptionExpiresSoon, planName, expirationDate } = subscriptionExpires(subscription);
 
     if (!([APPS.PROTONACCOUNT, APPS.PROTONVPN_SETTINGS] as APP_NAMES[]).includes(APP_NAME)) {
         return null;

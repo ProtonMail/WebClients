@@ -17,7 +17,7 @@ import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { useModalsMap } from '@proton/components/hooks/useModalsMap';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import type { Subscription } from '@proton/payments';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { removeCalendar } from '@proton/shared/lib/api/calendars';
 import { getCalendarsLimitReachedText } from '@proton/shared/lib/calendar/calendarLimits';
 import { APP_UPSELL_REF_PATH, CALENDAR_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
@@ -52,7 +52,7 @@ export interface OtherCalendarsSectionProps extends ComponentPropsWithoutRef<'di
     holidaysDirectory?: HolidaysDirectoryCalendar[];
     unknownCalendars: VisualCalendar[];
     addresses: Address[];
-    subscription?: Subscription;
+    subscription: MaybeFreeSubscription;
     user: UserModel;
     canAdd: boolean;
     isCalendarsLimitReached: boolean;
@@ -140,7 +140,7 @@ const OtherCalendarsSection = ({
                 </Button>
                 <Button
                     color="norm"
-                    data-test-id="calendar-setting-page:add-calendar"
+                    data-testid="calendar-setting-page:add-calendar"
                     disabled={!canAdd}
                     onClick={handleCreate}
                 >

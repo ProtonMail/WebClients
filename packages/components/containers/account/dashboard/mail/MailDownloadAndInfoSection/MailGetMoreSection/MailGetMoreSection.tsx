@@ -2,8 +2,8 @@ import { c } from 'ttag';
 
 import MailLogo from '@proton/components/components/logo/MailLogo';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import type { Subscription } from '@proton/payments';
 import { PLANS, PLAN_NAMES, hasFree } from '@proton/payments';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import { getBlogURL } from '@proton/shared/lib/helpers/url';
 
@@ -18,7 +18,7 @@ import manageInbox from './illustrations/manage-inbox.svg';
 import manageSubscription from './illustrations/manage-subscriptions.svg';
 
 interface Props {
-    subscription: Subscription | undefined;
+    subscription: MaybeFreeSubscription;
 }
 
 export const MailGetMoreSection = ({ subscription }: Props) => {

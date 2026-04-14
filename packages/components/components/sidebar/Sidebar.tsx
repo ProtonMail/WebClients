@@ -10,7 +10,7 @@ import SettingsLink from '@proton/components/components/link/SettingsLink';
 import { getMeterColor } from '@proton/components/components/progress/Meter';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useConfig from '@proton/components/hooks/useConfig';
-import type { Subscription } from '@proton/payments';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
@@ -44,7 +44,7 @@ const Storage = ({
     appSpace: ReturnType<typeof getAppSpace>;
     app: APP_NAMES;
     user: UserModel;
-    subscription?: Subscription;
+    subscription: MaybeFreeSubscription;
     version?: ReactNode;
     wavyMeter?: boolean;
 }) => {

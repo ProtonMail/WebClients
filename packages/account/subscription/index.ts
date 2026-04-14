@@ -7,7 +7,7 @@ import {
     original,
 } from '@reduxjs/toolkit';
 
-import { FREE_SUBSCRIPTION, type Subscription, getSubscription } from '@proton/payments';
+import { FREE_SUBSCRIPTION, type FreeSubscription, type Subscription, getSubscription } from '@proton/payments';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import type { CacheType } from '@proton/redux-utilities';
 import {
@@ -36,7 +36,7 @@ enum ValueType {
 }
 
 export interface SubscriptionState extends UserState {
-    [name]: ModelState<Subscription> & { meta: { type: ValueType } };
+    [name]: ModelState<Subscription | FreeSubscription> & { meta: { type: ValueType } };
 }
 
 type SliceState = SubscriptionState[typeof name];
@@ -118,8 +118,11 @@ const slice = createSlice({
             }
 
             if (action.payload.Subscription) {
+                // When a Subscription event is received, the value is always a real Subscription (not free)
+                const currentValue = state.value as unknown as Subscription;
+
                 const events = action.payload.Subscription;
-                const eventsSubscription = updateObject(state.value, events);
+                const eventsSubscription = updateObject(currentValue, events);
 
                 /**
                  * There are two possible cases in the events: UpcomingSubscription created and UpcomingSubscription deleted.
@@ -138,7 +141,7 @@ const slice = createSlice({
                 state.value = formatSubscription(
                     eventsSubscription,
                     eventsSubscription.UpcomingSubscription || undefined,
-                    state.value.SecondarySubscriptions
+                    currentValue.SecondarySubscriptions
                 );
                 state.error = undefined;
                 state.meta.type = ValueType.complete;

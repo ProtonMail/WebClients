@@ -1,4 +1,4 @@
-import type { Subscription } from '@proton/payments/index';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { getHasVpnB2BPlan, hasAnyB2bBundle } from '@proton/payments/index';
 import type { OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
 
@@ -9,7 +9,7 @@ export const isB2BAdmin = ({
 }: {
     user: UserModel;
     organization?: OrganizationExtended;
-    subscription?: Subscription;
+    subscription: MaybeFreeSubscription;
 }) => {
     const isAdmin = user.isAdmin && user.isSelf;
     const canHaveOrganization = !user.isMember && !!organization && isAdmin;
