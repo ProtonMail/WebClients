@@ -416,10 +416,11 @@ export const ProtonMeetContainer = ({
         hasAnotherAdmin,
     } = isLocalParticipantAdmin(participantsMap, room.localParticipant);
 
-    const shareLink = `${window.location.origin}${getMeetingLink(
-        meetingDetails.meetingId,
-        meetingDetails.meetingPassword
-    )}`;
+    const shareLink = `${window.location.origin}${
+        meetingDetails.meetingId && meetingDetails.meetingPassword
+            ? getMeetingLink(meetingDetails.meetingId, meetingDetails.meetingPassword)
+            : window.location.pathname
+    }`;
 
     // Check if joining own personal meeting room
     const isPersonalRoom = !isGuest && personalMeeting?.MeetingLinkName === token;
