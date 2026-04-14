@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
 import { Input } from '@proton/atoms/Input/Input';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 
 const meta: Meta<typeof Input> = {
     title: 'Atoms/Input',
@@ -45,7 +45,7 @@ export const WithError: Story = {
 
 export const WithPrefix: Story = {
     args: {
-        prefix: <Icon name="magnifier" />,
+        prefix: <IcMagnifier />,
     },
 };
 export const WithSuffix: Story = {

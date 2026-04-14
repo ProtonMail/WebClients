@@ -5,7 +5,6 @@ import type { Meta, StoryObj } from '@storybook/react-webpack5';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Form from '@proton/components/components/form/Form';
-import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import RadioGroup from '@proton/components/components/input/RadioGroup';
 import BasicModal from '@proton/components/components/modalTwo/BasicModal';
@@ -17,6 +16,8 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useModalState, { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
+import { IcQuestionCircle } from '@proton/icons/icons/IcQuestionCircle';
 
 const loremIpsum =
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium unde, blanditiis rem accusamus obcaecati enim amet, voluptatibus nemo facilis illum aut itaque in? Deleniti iure amet qui vero, blanditiis quos?';
@@ -197,12 +198,12 @@ export const WithHeaderActions: Story = {
                             actions={[
                                 <Tooltip title="Get help" key="help">
                                     <Button icon shape="ghost">
-                                        <Icon name="question-circle" />
+                                        <IcQuestionCircle />
                                     </Button>
                                 </Tooltip>,
                                 <Tooltip title="Refresh" key="refresh">
                                     <Button icon shape="ghost">
-                                        <Icon name="arrows-rotate" />
+                                        <IcArrowsRotate />
                                     </Button>
                                 </Tooltip>,
                             ]}
