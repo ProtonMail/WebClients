@@ -698,6 +698,9 @@
       "Reconnect": [
         "Koble til på nytt"
       ],
+      "Reconnect to Gmail": [
+        "Koble til Gmail på nytt"
+      ],
       "Reconnect to Zoom": [
         "Koble til Zoom på nytt"
       ],
@@ -3153,6 +3156,15 @@
       "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
         "Dette kan ta noen få minutter. I mellomtiden kan du fortsette å bruke ${ CALENDAR_APP_NAME } som vanlig."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Dette kan skje hvis tillatelser ble fjernet eller passordet ditt ble endret."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "For å fortsette å motta og sende Gmail-meldinger i ${ BRAND_NAME }, må du koble til kontoen din på nytt."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "For å fortsette å motta og sende Gmail-meldinger i ${ BRAND_NAME }, må du koble til kontoene dine på nytt."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "For å sikre høyest mulig sikkerhet for kontoen din, angi en gjenopprettingsfrase."
       ],
@@ -3170,6 +3182,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Bruk denne veiledningen for å hjelpe organisasjonen din med å dra nytte av ${ BRAND_NAME }s bransjeledende kryptering og personvernøkosystem."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Vi får ikke lenger tilgang til ${ boldEmails }."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Vi beklager at du forlater oss. Hvis du har et øyeblikk, setter vi stor pris på å høre hvorfor du ønsker å avbryte abonnementet. Tilbakemeldingen din hjelper oss med å gjøre ${ BRAND_NAME } bedre for alle."
@@ -3511,6 +3526,9 @@
       ],
       "Account does not exist": [
         "Kontoen finnes ikke"
+      ],
+      "Address could not be added.": [
+        "Adressen kunne ikke legges til."
       ],
       "Address primary private key not found": [
         "Adresse til primærprivatnøkkel ikke funnet"
@@ -3935,6 +3953,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Noen av dine etikettnavn overskrider ${ MAIL_APP_NAME }s maksimale tegngrense.Tilpass importen for å redigere disse navnene."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Noe gikk galt under henting av tilgjengelige domener"
       ],
       "Something went wrong. Please try again.": [
         "Noe gikk galt. Forsøk igjen."
@@ -8061,6 +8082,13 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Alle grunnleggende ${ BRAND_NAME }-tjenester (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "Avtaleplanlegging"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Avtaleplanlegging med ${ n } bestillingsside",
+        "Avtaleplanlegging med ${ n } bestillingssider"
+      ],
       "Auto-delete Spam and Trash": [
         "Slett automatisk elementer i søppelpost og papirkurv"
       ],
@@ -8831,6 +8859,9 @@
       ],
       "Passphrase copied to clipboard": [
         "Passfrase kopiert til utklippstavlen"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Din ${ BRAND_NAME }-adresse er klar til bruk"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -11864,6 +11895,9 @@
       ],
       "Discard changes?": [
         "Forkaste endringer?"
+      ],
+      "Disconnected from Gmail": [
+        "Frakoblet fra Gmail"
       ],
       "Does not repeat": [
         "Gjentas ikke"

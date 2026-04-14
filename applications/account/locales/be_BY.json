@@ -984,6 +984,9 @@
       "Later": [
         "Пазней"
       ],
+      "Learn about recovery options": [
+        "Даведацца аб варыянтах аднаўлення"
+      ],
       "Learn more": [
         "Даведацца больш"
       ],
@@ -1308,6 +1311,9 @@
       "Return to sign in": [
         "Вярнуцца да ўваходу"
       ],
+      "Return to sign-in": [
+        "Вярнуцца да ўваходу"
+      ],
       "Review": [
         "Паглядзець"
       ],
@@ -1419,6 +1425,9 @@
       "Send my username": [
         "Адправіць маё імя карыстальніка"
       ],
+      "Send new code": [
+        "Адправіць новы код"
+      ],
       "Send new invite": [
         "Адправіць новае запрашэнне"
       ],
@@ -1525,7 +1534,7 @@
         "Прапусціць"
       ],
       "Skip verification": [
-        "Прапусціць праверку"
+        "Прапусціць спраўджанне"
       ],
       "Sort": [
         "Сартаваць"
@@ -2674,7 +2683,7 @@
         "Даведайцеся, як уключыць ${ VPN_APP_NAME } на вашым маршрутызатары."
       ],
       "Learn how to make account sharing simple for any family member.": [
-        "Даведайцеся, як спрасціць абагульванне ўліковага запісу для ўсіх членаў сям'і."
+        "Даведайцеся, як спрасціць абагульванне ўліковага запісу для ўсіх удзельнікаў сям'і."
       ],
       "Learn how to share a single item, an encrypted link or a vault through ${ PASS_APP_NAME }.": [
         "Даведайцеся, як абагуліць асобны элемент, зашыфраваную спасылку або сховішча праз ${ PASS_APP_NAME }."
@@ -6771,13 +6780,13 @@
         "Пратэрмінавана"
       ],
       "Failed loading group members": [
-        "Збой загрузкі членаў групы"
+        "Збой загрузкі ўдзельнікаў групы"
       ],
       "Failed to activate your address. Please try again.": [
         "Не ўдалося актываваць ваш адрас. Паспрабуйце яшчэ раз."
       ],
       "Failed to add group member": [
-        "Не ўдалося дадаць члена групы"
+        "Не ўдалося дадаць удзельніка групы"
       ],
       "Failed to get active sessions. Please ${ refresh } or try again later.": [
         "Не ўдалося атрымаць актыўныя сеансы. ${ refresh } або паспрабуйце яшчэ раз пазней."
@@ -9243,6 +9252,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe памочнік у напісанні"
       ],
+      "${ BRAND_NAME } will send a verification code to ${ phoneNumber }. Standard message rates may apply.": [
+        "${ BRAND_NAME } адправіць код спраўджання на нумар тэлефона ${ phoneNumber }. Могуць прымяняцца стандартныя тарыфы за паведамленні."
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Тэхналогія шыфравання ${ BRAND_NAME } азначае, што ніхто не зможа атрымаць доступ да вашага пароля - нават мы."
       ],
@@ -9675,6 +9687,9 @@
         "Дадаць сервер (${ availableAddedCount } даступны)",
         "Дадаць сервер (${ availableAddedCount } даступны)"
       ],
+      "Add users by name or email to this group.": [
+        "Дадайце карыстальнікаў па імі або электроннай пошце ў гэту групу."
+      ],
       "Add video conferencing links to calendar invitations": [
         "Дадаванне спасылак на відэаканферэнцыі ў запрашэнні календара"
       ],
@@ -9993,6 +10008,9 @@
       "Can you access your active session?": [
         "Ці ёсць у вас доступ да актыўнага сеанса?"
       ],
+      "Can you access your active web session in another browser?": [
+        "Ці можаце вы атрымаць доступ да актыўнага сеанса ў іншым браўзеры?"
+      ],
       "Can you reach out to your contact?": [
         "Вы можаце звязацца са сваімі кантактамі?"
       ],
@@ -10017,6 +10035,9 @@
       "Check the status of imports and forwarding.": [
         "Праверка статусу імпартавання і перасылкі."
       ],
+      "Check your network and try again.": [
+        "Праверце сваю сетку і паспрабуйце зноў."
+      ],
       "Choose a plan that works best for you.": [
         "Выберыце тарыфны план, які найлепш вам пасуе."
       ],
@@ -10028,6 +10049,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Націсніце \"Запытаць новы код\", каб атрымаць новы код спраўджання на ${ strong }. Калі нумар тэлефона з'яўляецца няправільным, то неабходна націснуць \"Рэдагаваць\" для яго выпраўлення."
+      ],
+      "Click 'Trouble signing in?' on your TV to follow the alternative steps.": [
+        "Націсніце \"Праблемы з уваходам?\" на сваім тэлевізары, каб выканаць альтэрнатыўныя крокі."
       ],
       "Click **Request password reset** and follow the prompts.": [
         "Націсніце **Запытаць скіданне пароля** і выконвайце інструкцыі."
@@ -10043,9 +10067,6 @@
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Узнагарода \"Выбар рэдакцыі CNET\" з рэйтынгам 8,4 з 10"
-      ],
-      "Code expired": [
-        "Тэрмін дзеяння кода завяршыўся"
       ],
       "Coming soon": [
         "Неўзабаве з'явіцца"
@@ -10671,6 +10692,9 @@
       "How it works": [
         "Як гэта працуе"
       ],
+      "How to perform a signed-in reset": [
+        "Як выканаць скід уваходу ў сістэму"
+      ],
       "How your emergency contact can change your password for you:": [
         "Якім чынам ваш экстранны кантакт можа змяніць ваш пароль:"
       ],
@@ -10700,6 +10724,9 @@
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Вы зможаце выкарыстоўваць наступныя клавішы для хуткіх дзеянняў або пераходу ў іншыя прагляды, калі спалучэнні клавіш уключаны. Спалучэнне ${ metaKey } + K уключана заўсёды."
+      ],
+      "If possible, when signing in, use a device or a browser where you’ve signed in before.": [
+        "Па магчымасці, пры ўваходзе выкарыстоўвайце прыладу або браўзер, у якіх вы ўжо ўваходзілі да гэтага."
       ],
       "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
         "Вам будзе паўторна адпраўлены ваўчар актывацыі, калі ўведзены вамі адрас электроннай пошты выкарыстоўваўся для рэзервацыі дзіцячага адраса электроннай пошты."
@@ -10737,8 +10764,14 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "Калі ў вас ёсць падарункавы код, то вы можаце прымяніць яго ніжэй для атрымання скідкі."
       ],
+      "If you have emergency contacts, get in touch with them, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed.**": [
+        "Звярніцеся да сваіх экстранных кантактаў з просьбай дапамагчы вам. Пасля запыту экстраннага доступу да вашага ўліковага запісу яны змогуць змяніць пароль для вас **пасля таго, як час чакання доступу міне**."
+      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Калі вы згубіце сваю прыладу двухфактарнай аўтэнтыфікацыі, то гэтыя коды могуць быць выкарыстаны замест 6-значнага кода двухфактарнай аўтэнтыфікацыі, каб увайсці ў ваш уліковы запіс. Кожны код можна выкарыстаць толькі адзін раз."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Вы можаце выкарыстаць 1 з 16 рэзервовых кодаў аднаўлення, якія вы атрымалі пры наладжванні двухфактарнай аўтэнтыфікацыі, калі вы страцілі доступ да вашай праграмы аўтэнтыфікацыі. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Калі вы працягніце паніжэнне свайго тарыфнага плана, то страціце доступ да платных функцый ${ MAIL_APP_NAME } і ${ VPN_APP_NAME }."
@@ -10853,6 +10886,9 @@
       ],
       "Internet connection restored.": [
         "Падключэнне да інтэрнэту адноўлена."
+      ],
+      "Invalid code. ${ RequestNewCodeLink } and try again.": [
+        "Памылковы код. ${ RequestNewCodeLink } і паспрабуйце зноў."
       ],
       "Invitation link expired": [
         "Запрашальная спасылка пратэрмінавана"
@@ -11220,6 +11256,9 @@
       "On Ubuntu?": [
         "Карыстаецеся Ubuntu?"
       ],
+      "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
+        "Яны змогуць атрымаць доступ да вашых налад **Аднаўлення** і **змяніць пароль у ${ ACCOUNT_APP_NAME }** для вас пасля таго, як будзе атрыманы доступ да вашага ўліковага запісу."
+      ],
       "Once you reset your password:": [
         "Пасля скідання вашага пароля:"
       ],
@@ -11501,6 +11540,9 @@
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Рэкамендавана на давераных прыладах. ${ keepMeSignedInLearnMoreLink }"
+      ],
+      "Recovery contacts": [
+        "Кантакты для аднаўлення"
       ],
       "Recovery file": [
         "Файл аднаўлення"
@@ -12198,6 +12240,9 @@
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Паспрабуйце ${ productName } абсалютна нічым не рызыкуючы. Вы атрымаеце поўнае вяртанне грашовых сродкаў, калі па нейкай прычыне зменіце сваё меркаванне. Без ніякіх пытанняў."
       ],
+      "Try recovering your account from a **device or browser where you have signed in before**, as it may be possible from there:": [
+        "Паспрабуйце аднавіць свой уліковы запіс з **прылады або браўзера, дзе вы раней уваходзілі ў сістэму**, бо адтуль гэта можа спрацаваць:"
+      ],
       "Two-factor authentication": [
         "Двухфактарная аўтэнтыфікацыя"
       ],
@@ -12212,6 +12257,9 @@
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Немагчыма спраўдзіць подпіс файла аднаўлення. Звярніцеся ў службу падтрымкі."
+      ],
+      "Unfortunately there is no recovery method available for this account.": [
+        "На жаль, для гэтага ўліковага запісу адсутнічаюць даступныя спосабы аднаўлення."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "На жаль, для гэтага ўліковага запісу адсутнічаюць спосабы аднаўлення."
@@ -12326,6 +12374,9 @@
       ],
       "Vault updated": [
         "Сховішча абноўлена"
+      ],
+      "Verification code sent.": [
+        "Код спраўджання адпраўлены."
       ],
       "Verification link expired": [
         "Праверачная спасылка пратэрмінавана"
@@ -12653,6 +12704,9 @@
       ],
       "You can now reset your password to regain access to your account.": [
         "Цяпер вы можаце скінуць пароль, каб аднавіць доступ да вашага ўліковага запісу."
+      ],
+      "You can now reset your password to regain access to your account. **This will disable 2-factor authentication.**": [
+        "Цяпер вы можаце скінуць пароль, каб аднавіць доступ да вашага ўліковага запісу. **Гэта адключыць двухфактарную аўтэнтыфікацыю.**"
       ],
       "You can now return to the application to continue": [
         "Цяпер вы можаце вярнуцца да праграмы, каб працягнуць"
@@ -14140,6 +14194,9 @@
       "End weekday": [
         "Апошні будні дзень"
       ],
+      "Enter code": [
+        "Увядзіце код"
+      ],
       "Enter name or email address": [
         "Увядзіце імя або адрас электроннай пошты"
       ],
@@ -15222,11 +15279,17 @@
       "Common sign up issues": [
         "Распаўсюджаныя праблемы рэгістрацыі"
       ],
+      "contacts’ assistance": [
+        "дапамога ад кантактаў"
+      ],
       "Create account": [
         "Стварыць уліковы запіс"
       ],
       "Create an alias": [
         "Стварыць псеўданім"
+      ],
+      "data recovery option": [
+        "параметр аднаўлення даных"
       ],
       "Details": [
         "Падрабязнасці"
@@ -16504,6 +16567,15 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Усе базавыя сэрвісы ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "Планаванне сустрэч"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Планіруйце сустрэчы з ${ n } старонкай браніравання",
+        "Планіруйце сустрэчы з ${ n } старонкай браніравання",
+        "Планіруйце сустрэчы з ${ n } старонкамі браніравання",
+        "Планіруйце сустрэчы з ${ n } старонкамі браніравання"
+      ],
       "Apps for": [
         "Праграмы для"
       ],
@@ -17126,7 +17198,7 @@
         "Стварайце да ${ n } календароў або дадавайце календары ад сяброў, сям'і, калег і арганізацый"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
-        "Стварайце да ${ n } адрасоў электроннай пошты/псеўданімаў, якія вы можаце прызначыць членам сям'і. Выкарыстоўвайце іх для ідэнтычнасці ў інтэрнэце, напрыклад, JankaPakupnik@${ domain } для ўліковых запісаў пакупак."
+        "Стварайце да ${ n } адрасоў электроннай пошты/псеўданімаў, якія вы можаце прызначыць удзельнікам сям'і. Выкарыстоўвайце іх для ідэнтычнасці ў інтэрнэце, напрыклад, JankaPakupnik@${ domain } для ўліковых запісаў пакупак."
       ],
       "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
         "Карыстальніцкія дамены для псеўданімаў, дадатковыя паштовыя скрыні, магчымасць адпраўляць лісты з псеўданімаў і многае іншае"
@@ -20362,7 +20434,7 @@
         "Ваш камплект аднаўлення зададзены"
       ],
       "Your recovery methods": [
-        "Вашы метады аднаўлення"
+        "Вашы спосабы аднаўлення"
       ],
       "Your recovery phone": [
         "Ваш нумар тэлефона для аднаўлення"
@@ -21193,6 +21265,9 @@
       "Bundle": [
         "Камплект"
       ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "Выберыце бяспечны адрас ${ MAIL_APP_NAME }, каб пачаць працу"
+      ],
       "Collaborative document editing": [
         "Сумеснае рэдагаванне дакументаў"
       ],
@@ -21550,7 +21625,7 @@
         "Інтэграваная электронная пошта, каляндар, файлавае сховішча і VPN"
       ],
       "ISO 27001 certified": [
-        "Сертыфікавана згодна са стандартам ISO 27001"
+        "Сертыфікавана па ISO 27001"
       ],
       "Mail, calendar, file storage, and VPN included": [
         "Уключае пошту, каляндар, сховішча файлаў і VPN"
@@ -23296,7 +23371,7 @@
         "Імпартаванне"
       ],
       "Invitation email": [
-        "Электронны ліст запрашэння"
+        "Ліст запрашэння"
       ],
       "List": [
         "Спіс"
@@ -23768,6 +23843,9 @@
       "Close": [
         "Закрыць"
       ],
+      "Code expired": [
+        "Код пратэрмінаваны"
+      ],
       "Collaborate on documents": [
         "Сумесная праца над дакументамі"
       ],
@@ -23824,6 +23902,9 @@
       ],
       "Continue with partial import?": [
         "Працягнуць частковае імпартаванне?"
+      ],
+      "Couldn't sign in": [
+        "Не атрымалася ўвайсці"
       ],
       "Couldn’t create accounts": [
         "Немагчыма стварыць уліковыя запісы"
@@ -24694,6 +24775,9 @@
       ],
       "Request new code": [
         "Запытаць новы код"
+      ],
+      "Request new code?": [
+        "Запытаць новы код?"
       ],
       "Request sent": [
         "Запыт адпраўлены"
@@ -26241,7 +26325,7 @@
         "Звышхуткі і прыватны VPN"
       ],
       "You're Invited.": [
-        "Вы запрошаны"
+        "Вы запрошаны."
       ]
     },
     "wallet_signup_2024:app-switcher": {

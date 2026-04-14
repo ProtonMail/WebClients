@@ -6082,9 +6082,6 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe-Schreibassistent"
       ],
-      "${ BRAND_NAME } will send a verification code to ${ RedactedPhoneNumber }. Standard message rates may apply.": [
-        "${ BRAND_NAME } sendet einen Bestätigungscode an ${ RedactedPhoneNumber }. Es können Standardgebühren für Nachrichten anfallen."
-      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }'s Verschlüsselungstechnologie bedeutet, dass keiner Zugriff auf dein Passwort hat - nicht einmal wir."
       ],
@@ -8371,6 +8368,9 @@
       ],
       "Vault updated": [
         "Tresor aktualisiert"
+      ],
+      "Verification code sent.": [
+        "Bestätigungscode gesendet."
       ],
       "Verification may take a few minutes.": [
         "Die Verifizierung kann einige Minuten dauern."
@@ -13517,9 +13517,6 @@
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Wenn du deine Anmeldedaten verlierst und dein Konto zurücksetzen musst, **ist es unerlässlich**, dass du eine **Methode zur Wiederherstellung des Kontos und der Daten** festgelegt hast, da du sonst möglicherweise nicht mehr auf deine E-Mails, Kontakte, Dateien oder Passwörter zugreifen kannst."
-      ],
-      "Invalid code": [
-        "Ungültiger Code"
       ],
       "Review account safety": [
         "Überprüfung der Kontosicherheit"

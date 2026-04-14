@@ -596,6 +596,9 @@
       "Keep my subscription": [
         "Pidä tilaukseni"
       ],
+      "Learn about recovery options": [
+        "Tutustu palautusvaihtoehtoihin"
+      ],
       "Learn more": [
         "Lue lisää"
       ],
@@ -898,6 +901,9 @@
       ],
       "Send my username": [
         "Lähetä käyttäjätunnukseni"
+      ],
+      "Send new code": [
+        "Lähetä uusi koodi"
       ],
       "Send new invite": [
         "Lähetä uusi kutsu"
@@ -5706,8 +5712,8 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe kirjoitusavustaja"
       ],
-      "${ BRAND_NAME } will send a verification code to ${ RedactedPhoneNumber }. Standard message rates may apply.": [
-        "${ BRAND_NAME } lähettää vahvistuskoodin numeroon ${ RedactedPhoneNumber }. Viesteistä saatetaan veloittaa tavanomaiset viestimaksut."
+      "${ BRAND_NAME } will send a verification code to ${ phoneNumber }. Standard message rates may apply.": [
+        "${ BRAND_NAME } lähettää vahvistuskoodin numeroon ${ phoneNumber }. Viesteistä saatetaan veloittaa tavanomaiset viestimaksut."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }in salaustekniikan ansioista kukaan ei voi päästä käsiksi salasanaasi - emme edes me."
@@ -6128,6 +6134,9 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Ennen kuin pyydät uuden vahvistuskoodin, tarkista roskapostikansiosi ja varmista, että osoite ${ strong } on oikea."
+      ],
+      "Before sending a new verification code, check your spam folder for ${ EmailOrPhoneNumber }.": [
+        "Tarkista roskapostikansiosi ennen uuden vahvistuskoodin lähettämistä ${ EmailOrPhoneNumber }."
       ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
         "Ennen kuin voit vastaanottaa sähköpostia räätälöityyn verkkotunnuksesi ${ MAIL_APP_NAME }, sinun täytyy lisätä seuraavat kaksi MX-tietuetta DNS-hallinnassasi (löytyy alustalta, josta hankit verkkotunnuksesi). Esimerkki ja joitakin vinkkejä löytyy ${ kbLink }."
@@ -6728,6 +6737,9 @@
       ],
       "Internet connection restored.": [
         "Internet-yhteys on palautettu."
+      ],
+      "Invalid code. ${ RequestNewCodeLink } and try again.": [
+        "Virheellinen koodi. ${ RequestNewCodeLink } ja yritä uudelleen."
       ],
       "Invite deleted": [
         "Kutsu poistettiin"
@@ -7776,6 +7788,9 @@
       ],
       "Vault updated": [
         "Holvia muokattiin"
+      ],
+      "Verification code sent.": [
+        "Vahvistuskoodi lähetettiin."
       ],
       "Verification may take a few minutes.": [
         "Vahvistus saattaa kestää muutamia minuutteja."
@@ -9728,6 +9743,38 @@
         "Löydä ${ BRAND_NAME }-tilisi käyttäjätunnus"
       ]
     },
+    "Missing feature": {
+      "Check out the latest product updates": [
+        "Tutustu uusimpiin tuotepäivityksiin"
+      ],
+      "Continue cancelling": [
+        "Jatka perumista"
+      ],
+      "Explore the latest news": [
+        "Tutustu uusimpiin uutisiin"
+      ],
+      "Keep current plan": [
+        "Pidä nykyinen tilauksesi"
+      ],
+      "Make your voice heard": [
+        "Saat äänesi kuuluviin"
+      ],
+      "Request a feature": [
+        "Pyydä ominaisuutta"
+      ],
+      "Request a feature or vote on ideas from other users in our feedback forum.": [
+        "Pyydä uutta ominaisuutta tai äänestä muiden käyttäjien ideoista palautefoorumillamme."
+      ],
+      "See how ${ BRAND_NAME } apps are evolving with your feedback.": [
+        "Katso, miten ${ BRAND_NAME } -sovellukset kehittyvät palautteesi ansiosta."
+      ],
+      "Submit your ideas": [
+        "Jätä oma ideasi!"
+      ],
+      "Your feedback helps us improve. Whether you've spotted a bug, want a new feature, or think something could work differently, we'd love to hear from you.": [
+        "Palautteesi auttaa meitä parantamaan palvelua. Olitpa sitten havainnut virheen, toivoisit uutta ominaisuutta tai ajattelet, että jokin asia voisi toimia toisin, kuulisimme mielellämme mielipiteesi."
+      ]
+    },
     "Modal title": {
       "How to import calendars from another service": [
         "Miten kalenterit tuodaan muista palveluista"
@@ -10000,6 +10047,13 @@
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Kaikki ${ BRAND_NAME } -peruspalvelut (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "Appointment scheduling": [
+        "Ajanvaraus"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Ajanvaraus ${ n } -varaussivulla",
+        "Ajanvaraus ${ n } -varaussivulla"
       ],
       "Auto-delete Spam and Trash": [
         "Roskapostin ja roskakorin automaattinen tyhjennys"
@@ -12450,9 +12504,6 @@
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Jos kadotat kirjautumistietosi ja joudut nollaamaan tilisi, **on erittäin tärkeää**, että olet määrittänyt **tilin ja tietojen palautustavat**, tai et välttämättä pääse käsiksi sähköposteihisi, yhteystietoihisi, tiedostoihisi tai salasanoihisi."
-      ],
-      "Invalid code": [
-        "Virheellinen koodi"
       ],
       "Review account safety": [
         "Tarkista tiliturvallisuus"
@@ -15314,6 +15365,9 @@
       ],
       "Request new code": [
         "Pyydä uusi koodi"
+      ],
+      "Request new code?": [
+        "Pyydä uusi koodi?"
       ],
       "Request sent": [
         "Pyyntö lähetetty"

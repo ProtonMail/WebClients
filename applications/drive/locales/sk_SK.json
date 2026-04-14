@@ -5969,6 +5969,9 @@
       "Internet connection restored.": [
         "Pripojenie k internetu obnovené."
       ],
+      "Invitation confirmed": [
+        "Pozvánka bola potvrdená"
+      ],
       "Invite link copied": [
         "Pozývací odkaz skopírovaný"
       ],
@@ -8864,6 +8867,15 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Všetky základné služby ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "Plánovanie schôdzok"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Plánovanie schôdzok s ${ n } rezervačnou stránkou",
+        "Plánovanie schôdzok s ${ n } rezervačnými stránkami",
+        "Plánovanie schôdzok s ${ n } rezervačnými stránkami",
+        "Plánovanie schôdzok s ${ n } rezervačnými stránkami"
+      ],
       "Auto-delete Spam and Trash": [
         "Automatické mazanie nevyžiadanej pošty a koša"
       ],
@@ -9689,6 +9701,12 @@
         "${ errors.length } položiek sa nepodarilo skopírovať",
         "${ errors.length } položiek sa nepodarilo skopírovať"
       ],
+      "${ errors.length } item failed to be deleted": [
+        "${ errors.length } položku sa nepodarilo vymazať",
+        "${ errors.length } položky sa nepodarilo vymazať",
+        "${ errors.length } položiek sa nepodarilo vymazať",
+        "${ errors.length } položiek sa nepodarilo vymazať"
+      ],
       "${ errors.length } item failed to be trashed": [
         "${ errors.length } položku sa nepodarilo odstrániť",
         "${ errors.length } položky sa nepodarilo odstrániť",
@@ -9742,12 +9760,6 @@
         "${ numberOfItems } položky natrvalo odstránené z koša",
         "${ numberOfItems } položiek natrvalo odstránených z koša",
         "${ numberOfItems } položky natrvalo odstránených z koša"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "${ numberOfItems } položku sa nepodarilo vymazať",
-        "${ numberOfItems } položky sa nepodarilo vymazať",
-        "${ numberOfItems } položiek sa nepodarilo vymazať",
-        "${ numberOfItems } položiek sa nepodarilo vymazať"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems } položku sa nepodarilo natrvalo odstrániť z koša",

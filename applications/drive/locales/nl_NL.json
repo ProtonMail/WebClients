@@ -3312,6 +3312,10 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. U kunt ook onze ${ statusPageLink } bekijken"
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } item kon niet verplaatst worden",
+        "${ failureItems.length } items konden niet verplaatst worden"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } is uw gebruikersnaam. Om ${ emailAddress } aan te maken gaat u naar Instellingen > Identiteit en adressen > Kort domein (pm.me)"
       ],
@@ -5543,6 +5547,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Zorg voor volledig privé en versleutelde communicatie. Vraag nu uw gratis ${ BRAND_NAME }-e-mailadres aan."
       ],
+      "Enter code": [
+        "Voer code in"
+      ],
       "Enter password": [
         "Vul login wachtwoord in"
       ],
@@ -5688,6 +5695,9 @@
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "Als u een van deze heeft, ga dan verder naar ${ BRAND_NAME }-account instelling om het deblokkeer proces voort te zetten."
       ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Als u de toegang tot uw authenticatie-app bent kwijtgeraakt, kunt u 1 van de 16 back-up herstelcodes gebruiken die zijn verstrekt toen u tweestapsverificatie instelde. ${ learnMoreLink }"
+      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Als u doorgaat met de downgrade, verliest u toegang tot betaalde functies van ${ MAIL_APP_NAME } en ${ VPN_APP_NAME }."
       ],
@@ -5757,6 +5767,9 @@
       ],
       "Internet connection restored.": [
         "Internetverbinding hersteld."
+      ],
+      "Invitation confirmed": [
+        "Uitnodiging bevestigd"
       ],
       "Invite link copied": [
         "Link met uitnodiging gekopieerd"
@@ -8545,6 +8558,13 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Alle basisdiensten van ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "Afspraak plannen"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Afspraakplanning met ${ n } boekingspagina",
+        "Afspraakplanning met ${ n } boekingspagina's"
+      ],
       "Auto-delete Spam and Trash": [
         "Spam en Prullenbak automatisch verwijderen"
       ],
@@ -9344,6 +9364,10 @@
         "${ errors.length } item kon niet worden gekopieerd",
         "${ errors.length } items konden niet gekopieerd worden"
       ],
+      "${ errors.length } item failed to be deleted": [
+        "${ errors.length } item kon niet worden verwijderd",
+        "${ errors.length } items konden niet verwijderd worden"
+      ],
       "${ errors.length } item failed to be trashed": [
         "${ errors.length } item kon niet in de prullenbak worden geplaatst",
         "${ errors.length } items konden niet naar de prullenbak worden verplaatst"
@@ -9379,10 +9403,6 @@
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } item permanent verwijderd uit de prullenbak",
         "${ numberOfItems } items permanent verwijderd uit de prullenbak"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "${ numberOfItems } item kon niet worden verwijderd",
-        "${ numberOfItems } items konden niet verwijderd worden"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems }\" item kon niet permanent verwijderd worden uit prullenbak",

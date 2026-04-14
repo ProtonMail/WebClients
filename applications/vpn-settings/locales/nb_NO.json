@@ -203,6 +203,12 @@
       "Connect apps and devices": [
         "Koble til apper og enheter"
       ],
+      "Connect Gmail address": [
+        "Koble til Gmail-adresse"
+      ],
+      "Connect to Gmail": [
+        "Koble til Gmail"
+      ],
       "Connect to video conferencing": [
         "Koble til videokonferanser"
       ],
@@ -226,6 +232,9 @@
       ],
       "Continue to ${ planOrAppName }": [
         "Fortsett til ${ planOrAppName }"
+      ],
+      "Continue to sign in": [
+        "Fortsett med innloggingen"
       ],
       "Continue with this password": [
         "Fortsett med dette passordet"
@@ -346,6 +355,9 @@
       ],
       "Discard Changes": [
         "Forkast endringer"
+      ],
+      "Disconnect": [
+        "Koble fra"
       ],
       "Discover ${ planName }": [
         "Oppdag ${ planName }"
@@ -560,6 +572,9 @@
       "Hide plan features": [
         "Skjul planfunksjoner"
       ],
+      "I don't have my phrase": [
+        "Jeg har ikke gjenopprettingsfrasen min"
+      ],
       "Import": [
         "Importer"
       ],
@@ -686,6 +701,9 @@
       "Or": [
         "Eller"
       ],
+      "Or remove forwarding address": [
+        "Eller fjern videresendingsadressen"
+      ],
       "Or use a different Gmail address": [
         "Eller bruk en annen Gmail-adresse"
       ],
@@ -715,6 +733,9 @@
       ],
       "Reconnect": [
         "Koble til på nytt"
+      ],
+      "Reconnect to Gmail": [
+        "Koble til Gmail på nytt"
       ],
       "Recover data": [
         "Gjenopprett data"
@@ -1114,6 +1135,9 @@
       ],
       "Verify account": [
         "Verifiser konto"
+      ],
+      "Verify another way": [
+        "Bekreft på en annen måte"
       ],
       "Verify code": [
         "Verifiser kode"
@@ -3390,6 +3414,9 @@
     "Delete group prompt": {
       "Are you sure you want to delete this group?": [
         "Er du sikker på at du vil slette denne gruppen?"
+      ],
+      "Please note that if you delete the group ${ displayGroupName }, it will be permanently removed.": [
+        "Vær oppmerksom på at hvis du sletter gruppen ${ displayGroupName }, vil den bli permanent fjernet."
       ]
     },
     "Delinquent modal title": {
@@ -3409,6 +3436,9 @@
       ],
       "Automatically forward incoming email to another email address.": [
         "Videresend automatisk innkommende e-post til en annen e-postadresse."
+      ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Blokker Googles mulighet til å profilere deg. Gmail kan ikke se hva du gjør i ${ MAIL_APP_NAME }"
       ],
       "Configure this first to activate your organization and customize your email address.": [
         "Konfigurer dette først for å aktivere organisasjonen din og tilpasse e-postadressen din."
@@ -3439,6 +3469,9 @@
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "Synkroniser filer enkelt til skyen fra datamaskinen din, og få tilgang til dem fra mobilenheten din."
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "E-poster sendt til ${ connectedAddressText } vil nå vises i ${ MAIL_APP_NAME }."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Aktiver ${ PROTON_SENTINEL_NAME } for å få tilgang til disse funksjonene"
@@ -3491,14 +3524,36 @@
       "Let's you instantly add meeting links to your event invitations.": [
         "Lar deg umiddelbart legge til møtekoblinger i hendelsesinvitasjonene dine."
       ],
+      "No ads. No trackers.": [
+        "Ingen annonser. Ingen sporere."
+      ],
       "No one in your organization can connect to shared servers.": [
         "Ingen i organisasjonen kan koble til delte tjenere."
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "Les, svar og hold deg oppdatert på Gmail fra ${ MAIL_APP_NAME }"
       ],
       "Set up accounts for all users and invite them to join ${ BRAND_NAME }.": [
         "Konfigurer kontoer for alle brukere og inviter dem til å bli med i ${ BRAND_NAME }."
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Forenkle synkronisering og planlegging med delte kalendere."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Dette kan skje hvis tillatelser ble fjernet eller passordet ditt ble endret."
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "For å koble til en annen Gmail-adresse, fjern ekstra Gmail-adresser som videresender til ${ BRAND_NAME }."
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "For å koble til opptil ${ MAX_SYNC_PAID_USER } Gmail-adresse, oppgrader til ${ planName }.",
+        "For å koble til opptil ${ MAX_SYNC_PAID_USER } Gmail-adresser, oppgrader til ${ planName }."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "For å fortsette å motta og sende Gmail-meldinger i ${ BRAND_NAME }, må du koble til kontoen din på nytt."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "For å fortsette å motta og sende Gmail-meldinger i ${ BRAND_NAME }, må du koble til kontoene dine på nytt."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "For å importere via en CSV- og VCF-fil, forsikre deg om at filen ikke overskrider ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ maxContactString } kontakter. Hvis filen er større, del den opp i mindre filer. ${ learnMoreLink }."
@@ -3512,14 +3567,57 @@
       "Track the status and activity of your referrals": [
         "Spor statusen og aktiviteten til vervingene dine"
       ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "Oppgrader til ${ planName } for å koble til opptil ${ MAX_SYNC_PAID_USER } kontoer"
+      ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Bruk denne veiledningen for å hjelpe organisasjonen din med å dra nytte av ${ BRAND_NAME }s bransjeledende kryptering og personvernøkosystem."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Vi får ikke lenger tilgang til ${ boldEmails }."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "Vi henter inn de gamle e-postene og kobler Gmail-kontoen din til ${ MAIL_APP_NAME }, slik at nye meldinger vises automatisk."
+      ],
+      "We've started importing your email from Gmail. We'll let you know when it's done.": [
+        "Vi har begynt å importere e-posten din fra Gmail. Vi gir deg beskjed når det er ferdig."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Vi beklager at du forlater oss. Hvis du har et øyeblikk, setter vi stor pris på å høre hvorfor du ønsker å avbryte abonnementet. Tilbakemeldingen din hjelper oss med å gjøre ${ BRAND_NAME } bedre for alle."
       ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Du har allerede en Gmail-adresse som videresender til ${ MAIL_APP_NAME }. Koble den til nedenfor for å sende og motta e-poster direkte fra ${ MAIL_APP_NAME }."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Du har allerede Gmail-adresser som videresender til ${ MAIL_APP_NAME }. Koble til én nedenfor for å sende og motta e-poster direkte fra ${ MAIL_APP_NAME }."
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kan importere hendelser i iCal-format (ICS fil). Filen kan ha en maks størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og ha opp til ${ MAX_IMPORT_EVENTS_STRING } hendelser. Hvis filen er større, må du dele den opp i flere mindre filer."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Du kan nå sende e-poster fra ${ BRAND_NAME } ved å bruke denne adressen."
+      ],
+      "You can still login with this address and re-connect at any time.": [
+        "Du kan fortsatt logge på med denne adressen og koble til igjen når som helst."
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "Du videresender ${ numAddressesOrSync } Gmail-adresse til ${ MAIL_APP_NAME }.",
+        "Du videresender ${ numAddressesOrSync } Gmail-adresser til ${ MAIL_APP_NAME }."
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "Du har koblet til ${ MAX_SYNC_PAID_USER } Gmail-adresse. For å legge til en til, må du først deaktivere en av de tilkoblede kontoene dine.",
+        "Du har koblet til ${ MAX_SYNC_PAID_USER } Gmail-adresser. For å legge til en til, må du først deaktivere en av de tilkoblede kontoene dine."
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "Du har koblet én ekstern kontoadresse til ${ MAIL_APP_NAME }."
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "Planen din støtter ${ MAX_SYNC_FREE_USER } Gmail-adresse.",
+        "Planen din støtter ${ MAX_SYNC_FREE_USER } Gmail-adresser."
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "Planen din støtter totalt ${ MAX_SYNC_PAID_USER } Gmail-adresse",
+        "Planen din støtter totalt ${ MAX_SYNC_PAID_USER } Gmail-adresser"
       ]
     },
     "description": {
@@ -4048,6 +4146,12 @@
       "A group with this name already exists": [
         "En gruppe med dette navnet eksisterer allerede."
       ],
+      "Address could not be added.": [
+        "Adressen kunne ikke legges til."
+      ],
+      "Address is already added to your account": [
+        "Adressen er allerede lagt til i kontoen din"
+      ],
       "Address primary private key not found": [
         "Adresse til primærprivatnøkkel ikke funnet"
       ],
@@ -4175,6 +4279,9 @@
       ],
       "Incorrect password": [
         "Feil passord"
+      ],
+      "Incorrect recovery code. Please try again.": [
+        "Ugyldig gjenopprettingskode. Prøv igjen."
       ],
       "Incorrect second password. Please try again.": [
         "Feil andre passord. Prøv på nytt."
@@ -4414,6 +4521,12 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Noen av dine etikettnavn overskrider ${ MAIL_APP_NAME }s maksimale tegngrense.Tilpass importen for å redigere disse navnene."
+      ],
+      "Something went wrong while creating the address": [
+        "Noe gikk galt ved oppretting av adressen"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Noe gikk galt under henting av tilgjengelige domener"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Noe gikk galt, ${ refresh } siden for å fortsette. Hvis du fortsatt ser denne feilmeldingen kan du kontakte vårt ${ supportTeam }."
@@ -5423,6 +5536,11 @@
       ],
       "Services": [
         "Tjenester"
+      ]
+    },
+    "Group detail label": {
+      "Group address:": [
+        "Gruppeadresse:"
       ]
     },
     "Group member count": {
@@ -6436,6 +6554,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klikk \"be om ny kode\" for å få en ny verifiseringskode sendt til ${ strong }. Hvis dette telefonnummeret er feil, klikker du \"rediger\" for å rette det opp."
       ],
+      "Click **Request password reset** and follow the prompts.": [
+        "Klikk på **Be om tilbakestilling av passord** og følg veiledningen."
+      ],
       "Close this screen to exit.": [
         "Lukk dette skjermbildet for å avslutte."
       ],
@@ -6546,6 +6667,9 @@
       ],
       "Data recoverable on this device": [
         "Data kan gjenopprettes på denne enheten"
+      ],
+      "Data recoverable with recovery phrase": [
+        "Data kan gjenopprettes med gjenopprettingsfrase"
       ],
       "dedicated servers": [
         "dedikerte tjenere"
@@ -6876,6 +7000,9 @@
       "High Priority": [
         "Høy prioritet"
       ],
+      "How to perform a signed-in reset": [
+        "Slik utfører du en tilbakestilling mens du er pålogget"
+      ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Identitetsleverandørens offentlige nøkkel for å signere godkjenningsdeklarasjoner. Det bør være et sted å laste ned eller kopiere sertifikatnummeret fra identitetsleverandøren. Bare lim inn sertifikathashen i tekstfeltfeltet."
       ],
@@ -6890,6 +7017,9 @@
       ],
       "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
         "Hvis du er logget på et annet sted, kan du kanskje ${ signedInPasswordResetLink }."
+      ],
+      "If you are signed in to a ${ BRAND_NAME } web app in **another browser**, you may be able to perform a password reset from your active session.": [
+        "Hvis du er logget på en ${ BRAND_NAME }-nettapp i **en annen nettleser**, kan du kanskje tilbakestille passordet fra den aktive økten."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Hvis du mener det er en feil, kontakt oss ${ contactLink }."
@@ -7524,6 +7654,9 @@
       "Resend verification email": [
         "Send verifiserings-e-post på nytt"
       ],
+      "Resetting your password in your active web session will ensure **your encrypted data will remain accessible** after you change your password.": [
+        "Ved å tilbakestille passordet ditt i den aktive nettøkten vil sikre at **de krypterte dataene dine forblir tilgjengelige** etter at du har endret passordet."
+      ],
       "Restore": [
         "Gjenopprett"
       ],
@@ -7931,6 +8064,12 @@
       "To fight spam and abuse, please verify you are human.": [
         "For å bekjempe søppelpost og misbruk må du bekrefte at du er et menneske."
       ],
+      "To help keep your account safe, we want to make sure it's really you trying to sign in.": [
+        "For å holde kontoen din trygg, vil vi forsikre oss om at det virkelig er du som prøver å logge på."
+      ],
+      "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
+        "For å holde kontoen din trygg, vil vi forsikre oss om at det virkelig er du som prøver å logge på."
+      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "For å importere hendelser, først opprett en kalender i ${ CALENDAR_APP_NAME }. Dette er hvor hendelsene vil vises etter importen."
       ],
@@ -8081,6 +8220,9 @@
       "Vault updated": [
         "Hvelv oppdatert"
       ],
+      "Verification code sent.": [
+        "Verifiseringskode sendt."
+      ],
       "Verification may take a few minutes.": [
         "Verifisering kan ta noen minutter."
       ],
@@ -8128,6 +8270,9 @@
       ],
       "We couldn’t process your payment.": [
         "Vi kunne ikke behandle betalingen din."
+      ],
+      "We detected you are already signed in to a ${ BRAND_NAME } web app on **another browser**. You may be able to perform a password reset from your active session.": [
+        "Vi har oppdaget at du allerede er logget på en ${ BRAND_NAME }-nettapp i **en annen nettleser**. Du kan kanskje tilbakestille passordet fra den aktive økten."
       ],
       "We generated a strong password for you": [
         "Vi genererte et sterkt passord for deg"
@@ -8315,8 +8460,14 @@
       "You can now access and manage the account as an administrator.": [
         "Du kan nå få tilgang til og behandle kontoen som en administrator."
       ],
+      "You can now reset your password to regain access to your account.": [
+        "Du kan nå tilbakestille passordet ditt for å få tilgang til kontoen igjen."
+      ],
       "You can now return to the application to continue": [
         "Du kan nå gå tilbake til programmet for å fortsette"
+      ],
+      "You can now sign in to your account again.": [
+        "Du kan nå logge på kontoen din igjen."
       ],
       "You can only have one chat instance open at a time. Please close previous conversations before starting a new one.": [
         "Du kan kun ha én chat-instans åpen om gangen. Lukk tidligere samtaler før du starter en ny."
@@ -8392,6 +8543,9 @@
       ],
       "You will need a ${ BRAND_NAME } address to use ${ MAIL_APP_NAME } and ${ CALENDAR_APP_NAME }": [
         "Du vil behøve en ${ BRAND_NAME }-adresse for å bruke ${ MAIL_APP_NAME } og ${ CALENDAR_APP_NAME }"
+      ],
+      "You will not be asked for a one-time code or a security key.": [
+        "Du vil ikke bli bedt om en engangskode eller en sikkerhetsnøkkel."
       ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du vil snart bli omdirigert til PayPal for å bekrefte betalingen."
@@ -9373,6 +9527,9 @@
       ],
       "Second password": [
         "Andre passord"
+      ],
+      "Select which Gmail address to connect": [
+        "Velg hvilken Gmail-adresse du vil koble til"
       ],
       "Send crash reports": [
         "Send krasjrapporter"
@@ -10483,6 +10640,13 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Alle grunnleggende ${ BRAND_NAME }-tjenester (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "Avtaleplanlegging"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Avtaleplanlegging med ${ n } bestillingsside",
+        "Avtaleplanlegging med ${ n } bestillingssider"
+      ],
       "Apps for": [
         "Apper for"
       ],
@@ -11429,6 +11593,9 @@
       ],
       "Two-factor authentication is not required anymore": [
         "Tofaktorautentisering kreves ikke lenger"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Din ${ BRAND_NAME }-adresse er klar til bruk"
       ],
       "Zoom video conferencing settings have been updated": [
         "Videokonferanseinnstillinger for Zoom er oppdatert"
@@ -13162,9 +13329,6 @@
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Hvis du mister påloggingsinformasjonen din og trenger å tilbakestille kontoen din, **er det viktig** at du har både en **kontogjenopprettings- og datagjenopprettingsmetode** på plass, ellers kan det hende du ikke får tilgang til noen av e-postene, kontaktene, filene eller passordene dine."
-      ],
-      "Invalid code": [
-        "Ugyldig kode"
       ],
       "Review account safety": [
         "Gjennomgå kontosikkerhet"
@@ -15446,8 +15610,14 @@
       "Apply gift code": [
         "Legg til gavekode"
       ],
+      "Are you already signed in to ${ BRAND_NAME } in a browser?": [
+        "Er du allerede logget på ${ BRAND_NAME } i en nettleser?"
+      ],
       "Are you sure you want to close the preview?": [
         "Er du sikker på at du vil lukke forhåndsvisningen?"
+      ],
+      "Are you sure you want to disconnect this address?": [
+        "Er du sikker på at du vil koble fra denne adressen?"
       ],
       "Are you sure?": [
         "Er du sikker?"
@@ -15460,6 +15630,12 @@
       ],
       "Block trackers and malware": [
         "Blokkér sporere og skadelig programvare"
+      ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Ta med Gmail til ${ MAIL_APP_NAME }"
+      ],
+      "Can you reach out to your emergency contacts?": [
+        "Kan du kontakte nødkontaktene dine?"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Avbryt ${ MAIL_SHORT_APP_NAME }-abonnement"
@@ -15559,6 +15735,9 @@
       ],
       "Couldn’t create accounts": [
         "Kunne ikke opprette kontoer"
+      ],
+      "Couldn’t recover your account": [
+        "Kunne ikke gjenopprette kontoen din"
       ],
       "Coupon": [
         "Kupong"
@@ -15697,6 +15876,9 @@
       "Discard changes?": [
         "Forkaste endringer?"
       ],
+      "Disconnected from Gmail": [
+        "Frakoblet fra Gmail"
+      ],
       "Dismiss setup checklist": [
         "Avvis sjekkliste for oppsett"
       ],
@@ -15741,6 +15923,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Rediger gateway ${ currentName }"
+      ],
+      "Edit group": [
+        "Rediger gruppe"
       ],
       "Edit invoice note": [
         "Rediger fakturanota"
@@ -16140,6 +16325,9 @@
       "Select data to import": [
         "Velg data for import"
       ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Send og motta Gmail ved å bruke ${ MAIL_APP_NAME }"
+      ],
       "Send email reminders?": [
         "Sende e-postpåminnelser?"
       ],
@@ -16371,6 +16559,9 @@
       ],
       "WireGuard configuration": [
         "WireGuard-konfigurering"
+      ],
+      "You are all set": [
+        "Du er klar"
       ],
       "You can now create unlimited folders and labels": [
         "Du kan nå opprette ubegrenset antall mapper og etiketter"
@@ -16872,6 +17063,9 @@
       ]
     },
     "user_modal": {
+      "Add delegated roles to a user to grant them only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
+        "Legg til delegerte roller til en bruker for å gi dem bare de spesifikke tillatelsene de trenger, slik at full administratorrettighet holdes separat og miljøet ditt er sikkert."
+      ],
       "Add multiple users": [
         "Legg til flere brukere"
       ],
@@ -16899,6 +17093,9 @@
       "Email": [
         "E-post"
       ],
+      "General": [
+        "Generelt"
+      ],
       "Invitation email": [
         "E-postinvitasjon"
       ],
@@ -16913,6 +17110,9 @@
       ],
       "Remember to share the user's sign in details with them.": [
         "Husk å dele brukerens påloggingsinformasjon med dem."
+      ],
+      "Save": [
+        "Lagre"
       ],
       "Send invite link via email instead": [
         "Send invitasjonskobling via e-post i stedet"

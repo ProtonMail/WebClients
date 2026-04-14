@@ -5772,6 +5772,9 @@
       "Internet connection restored.": [
         "La connexion internet est rétablie."
       ],
+      "Invitation confirmed": [
+        "Invitation confirmée"
+      ],
       "Invite link copied": [
         "Le lien de l'invitation a été copié."
       ],
@@ -8631,6 +8634,13 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Tous les services de base de ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "Planification de rendez-vous"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Planification de rendez-vous avec ${ n } page de réservation",
+        "Planification de rendez-vous avec ${ n } pages de réservation"
+      ],
       "Auto-delete Spam and Trash": [
         "Suppression automatique des indésirables/spam et de la corbeille"
       ],
@@ -9430,6 +9440,10 @@
         "${ errors.length } l'élément n'a pas pu être copié",
         "${ errors.length } les éléments n'ont pas pu être copiés"
       ],
+      "${ errors.length } item failed to be deleted": [
+        "${ errors.length } élément n'a pas pu être supprimé",
+        "${ errors.length } éléments n'ont pas pu être supprimés"
+      ],
       "${ errors.length } item failed to be trashed": [
         "${ errors.length } élément n'a pas pu être mis à la corbeille",
         "${ errors.length } éléments n'ont pas pu être mis à la corbeille"
@@ -9465,10 +9479,6 @@
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } élément a été définitivement supprimé du dossier Corbeille.",
         "${ numberOfItems } éléments ont été définitivement supprimés du dossier Corbeille."
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "${ numberOfItems } élément n'a pas été supprimé.",
-        "${ numberOfItems } éléments n'ont pas été supprimés."
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems } élément n'a pu être définitivement supprimé du dossier Corbeille.",

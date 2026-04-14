@@ -804,6 +804,9 @@
       "Reconnect": [
         "重新连接"
       ],
+      "Reconnect to Gmail": [
+        "重新连接 Gmail"
+      ],
       "Recover data": [
         "恢复数据"
       ],
@@ -2998,6 +3001,15 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "使用共享日历简化同步和日程安排。"
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "如果权限被移除或密码被更改，可能会发生此情况。"
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "若要继续在 ${ BRAND_NAME } 中接收和发送 Gmail 邮件，请重新连接您的账户。"
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "若要继续在 ${ BRAND_NAME } 中接收和发送 Gmail 邮件，请重新连接您的账户。"
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "为了使您的账户受到最高安全保护，请设置恢复短语。"
       ],
@@ -3018,6 +3030,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "使用本指南，让您的组织迅速受益于 ${ BRAND_NAME } 行业领先的加密和隐私生态系统。"
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "我们无法再访问 ${ boldEmails }。"
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "很遗憾看到您离开。如果您有时间，我们希望了解您取消的原因。您的反馈有助于我们改进 ${ BRAND_NAME }，让产品变得更好。"
@@ -3290,6 +3305,9 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }，或查看我们的${ statusPageLink }"
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } 个项目移动失败"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } 是您的用户名。要创建 ${ emailAddress }，请进入设置 > 身份和地址 > 短域 (pm.me)"
       ],
@@ -3301,6 +3319,9 @@
       ],
       "Account does not exist": [
         "账户不存在"
+      ],
+      "Address could not be added.": [
+        "无法添加地址！"
       ],
       "Address primary private key not found": [
         "找不到地址主私钥"
@@ -3739,6 +3760,9 @@
       ],
       "Something went wrong during folder listing": [
         "列出文件夹内容时出错"
+      ],
+      "Something went wrong while fetching available domains": [
+        "获取可用域名时出错"
       ],
       "Something went wrong with search. Please try again later.": [
         "搜索时出现问题，请稍后重试。"
@@ -5456,6 +5480,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "确保完全私密且加密的通信。立即认领您的免费 ${ BRAND_NAME } 邮箱地址。"
       ],
+      "Enter code": [
+        "输入代码"
+      ],
       "Enter password": [
         "输入密码"
       ],
@@ -5600,6 +5627,9 @@
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "如果您有其中之一，请继续进行 ${ BRAND_NAME } 账户设置以开始解锁过程。"
       ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "如果您无法访问验证器应用，可以使用设置 2FA 时提供的 16 个备用恢复码之一。${ learnMoreLink }"
+      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "降级账户后您将不能再使用 ${ MAIL_APP_NAME } 和 ${ VPN_APP_NAME } 的收费功能。"
       ],
@@ -5668,6 +5698,9 @@
       ],
       "Internet connection restored.": [
         "网络连接已恢复。"
+      ],
+      "Invitation confirmed": [
+        "邀请已确认"
       ],
       "Invite link copied": [
         "邀请链接已复制"
@@ -5809,6 +5842,15 @@
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "大多数公共 WiFi 网络都是安全的，但部分网络缺乏防护措施，使您面临网络威胁。通过 VPN 加密技术，您的网络活动将获得全程保护。"
+      ],
+      "Move ${ dragCount } item": [
+        "移动 ${ dragCount } 项"
+      ],
+      "Move ${ fileCount } file": [
+        "移动 ${ fileCount } 个文件"
+      ],
+      "Move ${ folderCount } folder": [
+        "移动 ${ folderCount } 个文件夹"
       ],
       "Moving files": [
         "正在移动文件"
@@ -8408,6 +8450,12 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "所有基本 ${ BRAND_NAME } 服务 (${ MAIL_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "预约安排"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "使用 ${ n } 个预约页面进行日程安排"
+      ],
       "Auto-delete Spam and Trash": [
         "自动清理垃圾邮件和回收站"
       ],
@@ -9221,9 +9269,6 @@
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } 个项目已从回收站永久删除"
       ],
-      "${ numberOfItems } item failed to be deleted": [
-        "${ numberOfItems } 项目删除失败"
-      ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems }\" 个项目从回收站永久删除失败"
       ],
@@ -9424,6 +9469,9 @@
       ],
       "You stopped sharing this item": [
         "您已停止共享此项目"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "您的 ${ BRAND_NAME } 地址已准备就绪"
       ],
       "Your old files will be deleted in 72 hours": [
         "您的旧文件将在 72 小时内删除"
@@ -12169,6 +12217,9 @@
       ],
       "Discard changes?": [
         "放弃更改？"
+      ],
+      "Disconnected from Gmail": [
+        "已断开与 Gmail 的连接"
       ],
       "Downgrade account": [
         "降级账户"

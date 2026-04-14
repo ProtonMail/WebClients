@@ -1438,6 +1438,11 @@
         "Rotation de la clé de chiffrement de groupe pour une sécurité optimale"
       ]
     },
+    "Display name": {
+      "Loading…": [
+        "Chargement en cours…"
+      ]
+    },
     "emergency_access": {
       "Trusted contact": [
         "Contacts de confiance"
@@ -1557,6 +1562,9 @@
       ],
       "The meeting password is incorrect": [
         "Le mot de passe de la réunion est erroné."
+      ],
+      "The meeting password is invalid": [
+        "Le mot de passe de la réunion n'est pas valide"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Ce champ dépasse le maximum de ${ maximumLength } caractères."
@@ -1844,6 +1852,9 @@
       "End Meeting for everyone?": [
         "Mettre fin à la réunion pour tout le monde ?"
       ],
+      "End the meeting for everyone?": [
+        "Mettre fin à la réunion pour tout le monde ?"
+      ],
       "End-to-end encryption is active for audio and video.": [
         "Le chiffrement de bout en bout est actif pour l'audio et la vidéo."
       ],
@@ -1919,8 +1930,11 @@
       "Learn more": [
         "En savoir plus"
       ],
-      "Leaving will stop your screen sharing. Do you want to continue?": [
-        "En quittant, vous mettrez fin au partage d'écran. Voulez-vous continuer ?"
+      "Leave meeting and stop sharing?": [
+        "Quitter la réunion et arrêter le partage ?"
+      ],
+      "Leaving the meeting will stop your screen sharing.": [
+        "Quitter la réunion arrêtera votre partage d'écran."
       ],
       "Left ${ roomNameLabel }": [
         "A quitté ${ roomNameLabel }"
@@ -2180,6 +2194,9 @@
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
         "Cette réunion a été ouverte dans l'application de bureau ${ MEET_APP_NAME }."
       ],
+      "This will end the meeting for all participants and stop your screen sharing.": [
+        "Ceci mettra fin à la réunion pour tous les participants et arrêtera le partage de votre écran."
+      ],
       "This will end the meeting for all participants.": [
         "Ceci mettra fin à la réunion pour tous les participants."
       ],
@@ -2272,6 +2289,9 @@
       ],
       "You were removed from the meeting": [
         "Vous avez été retiré de la réunion"
+      ],
+      "You will leave the meeting. Others will continue.": [
+        "Vous quitterez la réunion. Les autres continueront."
       ],
       "You've been invited to join a secure meeting. Confirm your name and click below to enter.": [
         "Vous venez de recevoir une invitation pour participer à une réunion sécurisée. Confirmez votre nom et cliquez ci-dessous pour vous connecter."
