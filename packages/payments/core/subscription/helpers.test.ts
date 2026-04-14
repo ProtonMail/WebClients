@@ -192,8 +192,9 @@ describe('isSubscriptionUnchanged', () => {
 
 describe('isSubscriptionCheckForbidden', () => {
     it('returns false when subscription is null or undefined', () => {
-        expect(isSubscriptionCheckForbidden(null, { planIDs: {}, cycle: CYCLE.MONTHLY })).toBe(false);
-        expect(isSubscriptionCheckForbidden(undefined, { planIDs: {}, cycle: CYCLE.MONTHLY })).toBe(false);
+        const planIDs = { [PLANS.MAIL]: 1 };
+        expect(isSubscriptionCheckForbidden(null, { planIDs, cycle: CYCLE.MONTHLY })).toBe(false);
+        expect(isSubscriptionCheckForbidden(undefined, { planIDs, cycle: CYCLE.MONTHLY })).toBe(false);
     });
 
     it('returns true when selected plan is same as current with no upcoming subscription', () => {
@@ -311,7 +312,7 @@ describe('isSubscriptionCheckForbidden', () => {
 
     it('returns false for free subscription', () => {
         const freeSubscription = FREE_SUBSCRIPTION;
-        const planIDs = {};
+        const planIDs = { [PLANS.MAIL]: 1 };
 
         expect(isSubscriptionCheckForbidden(freeSubscription, { planIDs, cycle: CYCLE.MONTHLY })).toBe(false);
     });
@@ -553,6 +554,18 @@ describe('isSubscriptionCheckForbidden', () => {
             ).toBe(true);
         }
     );
+
+    it('returns true when planIDs are empty', () => {
+        expect(isSubscriptionCheckForbidden(null, { planIDs: {}, cycle: CYCLE.MONTHLY })).toBe(true);
+    });
+
+    it('returns true when FREE plan is selected', () => {
+        expect(isSubscriptionCheckForbidden(null, { planIDs: { [PLANS.FREE]: 1 }, cycle: CYCLE.MONTHLY })).toBe(true);
+    });
+
+    it('returns true when all plan quantities are zero', () => {
+        expect(isSubscriptionCheckForbidden(null, { planIDs: { [PLANS.MAIL]: 0 }, cycle: CYCLE.MONTHLY })).toBe(true);
+    });
 });
 
 describe('isSubscriptionCheckForbiddenWithReason', () => {
@@ -568,6 +581,73 @@ describe('isSubscriptionCheckForbiddenWithReason', () => {
                 reason: 'possibly-invalid-coupon',
             }
         );
+    });
+
+    it('should return paid-plan-required when planIDs are empty', () => {
+        const subscription = buildSubscription({ planIDs: { [PLANS.MAIL]: 1 }, cycle: CYCLE.MONTHLY, currency: 'USD' });
+
+        expect(isSubscriptionCheckForbiddenWithReason(subscription, { planIDs: {}, cycle: CYCLE.MONTHLY })).toEqual({
+            forbidden: true,
+            reason: 'paid-plan-required',
+        });
+    });
+
+    it('should return paid-plan-required when all plan quantities are zero', () => {
+        const subscription = buildSubscription({ planIDs: { [PLANS.MAIL]: 1 }, cycle: CYCLE.MONTHLY, currency: 'USD' });
+
+        expect(
+            isSubscriptionCheckForbiddenWithReason(subscription, {
+                planIDs: { [PLANS.MAIL]: 0 },
+                cycle: CYCLE.MONTHLY,
+            })
+        ).toEqual({
+            forbidden: true,
+            reason: 'paid-plan-required',
+        });
+    });
+
+    it('should return paid-plan-required when FREE plan is selected', () => {
+        const subscription = buildSubscription({ planIDs: { [PLANS.MAIL]: 1 }, cycle: CYCLE.MONTHLY, currency: 'USD' });
+
+        expect(
+            isSubscriptionCheckForbiddenWithReason(subscription, {
+                planIDs: { [PLANS.FREE]: 1 },
+                cycle: CYCLE.MONTHLY,
+            })
+        ).toEqual({
+            forbidden: true,
+            reason: 'paid-plan-required',
+        });
+    });
+
+    it('should return paid-plan-required when planIDs are empty even without a subscription', () => {
+        expect(isSubscriptionCheckForbiddenWithReason(null, { planIDs: {}, cycle: CYCLE.MONTHLY })).toEqual({
+            forbidden: true,
+            reason: 'paid-plan-required',
+        });
+    });
+
+    it('should return paid-plan-required when planIDs have negative quantities', () => {
+        expect(
+            isSubscriptionCheckForbiddenWithReason(null, {
+                planIDs: { [PLANS.MAIL]: -1 },
+                cycle: CYCLE.MONTHLY,
+            })
+        ).toEqual({
+            forbidden: true,
+            reason: 'paid-plan-required',
+        });
+    });
+
+    it('should not return paid-plan-required when a valid paid plan is selected', () => {
+        expect(
+            isSubscriptionCheckForbiddenWithReason(null, {
+                planIDs: { [PLANS.MAIL]: 1 },
+                cycle: CYCLE.MONTHLY,
+            })
+        ).toEqual({
+            forbidden: false,
+        });
     });
 });
 
