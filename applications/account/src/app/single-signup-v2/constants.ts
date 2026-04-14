@@ -87,4 +87,5 @@ export const defaultSignupModel: SignupModelV2 = {
     optimistic: {},
     vpnServersCountData: defaultVPNServersCountData,
     loadingDependencies: true,
+    initialBillingAddress: DEFAULT_TAX_BILLING_ADDRESS,
 };
