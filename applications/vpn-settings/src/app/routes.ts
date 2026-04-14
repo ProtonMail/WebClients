@@ -381,14 +381,6 @@ export const getRoutes = ({
                     text: c('Title').t`${VPN_APP_NAME} clients`,
                     id: 'protonvpn-clients',
                 },
-            ],
-        },
-        configurations: {
-            id: 'downloads',
-            text: c('Title').t`Configurations`,
-            to: '/configurations',
-            icon: 'key',
-            subsections: [
                 {
                     text: c('Title').t`WireGuard configuration`,
                     id: 'wireguard-configuration',

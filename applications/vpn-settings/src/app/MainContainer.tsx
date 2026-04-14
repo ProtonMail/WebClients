@@ -82,8 +82,8 @@ import SSODomainUnverifiedBanner from '@proton/components/containers/account/sso
 import { getIsSectionAvailable, getRoutePaths } from '@proton/components/containers/layout/helper';
 import DashboardComparePlansCTA from '@proton/components/containers/payments/subscription/YourPlanSectionV2/DashboardComparePlansCTA';
 import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/cancellationFlow/helper';
-import { useReferralUserEligible } from '@proton/components/containers/referral/hooks/useReferralUserEligible';
 import ReferralPageTelemetry from '@proton/components/containers/referral/components/ReferralPageTelemetry';
+import { useReferralUserEligible } from '@proton/components/containers/referral/hooks/useReferralUserEligible';
 import { RewardSection } from '@proton/components/containers/referral/rewards/RewardSection';
 import LiveChatZendesk, { getIsSelfChat } from '@proton/components/containers/zendesk/LiveChatZendesk';
 import type { ZendeskRef } from '@proton/components/containers/zendesk/helper';
@@ -409,24 +409,6 @@ const MainContainer: FunctionComponent = () => {
                             <Route path={vpnRoutes.downloads.to}>
                                 <PrivateMainSettingsArea config={vpnRoutes.downloads}>
                                     <ProtonVPNClientsSection />
-                                </PrivateMainSettingsArea>
-                            </Route>
-                            <Route path="/configurations">
-                                <PrivateMainSettingsArea
-                                    config={{
-                                        text: c('Title').t`Configurations`,
-                                        subsections: [
-                                            {
-                                                text: c('Title').t`WireGuard configuration`,
-                                                id: 'wireguard-configuration',
-                                            },
-                                            {
-                                                text: c('Title').t`OpenVPN configuration files`,
-                                                id: 'openvpn-configuration-files',
-                                            },
-                                        ],
-                                    }}
-                                >
                                     <WireGuardConfigurationSection />
                                     <OpenVPNConfigurationSection />
                                 </PrivateMainSettingsArea>
