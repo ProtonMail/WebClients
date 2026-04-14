@@ -2,7 +2,9 @@ import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
 import { VerticalStep, VerticalStepStatusEnum } from '@proton/atoms/VerticalSteps/VerticalStep';
 import { VerticalSteps } from '@proton/atoms/VerticalSteps/VerticalSteps';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcBell } from '@proton/icons/icons/IcBell';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
+import { IcLock } from '@proton/icons/icons/IcLock';
 
 const meta: Meta<typeof VerticalSteps> = {
     title: 'Atoms/VerticalSteps',
@@ -26,19 +28,19 @@ export const Default: Story = {
     render: () => (
         <VerticalSteps>
             <VerticalStep
-                icon={<Icon name="checkmark" className="m-auto" size={4} />}
+                icon={<IcCheckmark className="m-auto" size={4} />}
                 title="Step 1"
                 description="Description for Step 1"
                 status={VerticalStepStatusEnum.Passed}
             />
             <VerticalStep
-                icon={<Icon name="lock" className="m-auto" size={4} />}
+                icon={<IcLock className="m-auto" size={4} />}
                 title="Step 2"
                 description="Description for Step 2"
                 status={VerticalStepStatusEnum.Done}
             />
             <VerticalStep
-                icon={<Icon name="bell" className="m-auto" size={4} />}
+                icon={<IcBell className="m-auto" size={4} />}
                 title="Step 3"
                 description="Description for Step 3"
                 status={VerticalStepStatusEnum.Next}
@@ -55,7 +57,7 @@ export const AllStatuses: Story = {
                 .map((status) => (
                     <VerticalStep
                         key={status}
-                        icon={<Icon name="checkmark" className="m-auto" size={4} />}
+                        icon={<IcCheckmark className="m-auto" size={4} />}
                         title={`Status: ${status}`}
                         description="Description"
                         status={status}
@@ -69,7 +71,7 @@ export const WithTitleNotBold: Story = {
     render: () => (
         <VerticalSteps>
             <VerticalStep
-                icon={<Icon name="checkmark" className="m-auto" size={4} />}
+                icon={<IcCheckmark className="m-auto" size={4} />}
                 title="Step"
                 description="Description"
                 status={VerticalStepStatusEnum.Next}

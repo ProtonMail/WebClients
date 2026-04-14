@@ -6,6 +6,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
 import { ButtonGroup, Icon, Mark } from '@proton/components';
 import iconSvg from '@proton/icons/assets/sprite-icons.svg';
+import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import type { IconName } from '@proton/icons/types';
 
 const meta: Meta = {
@@ -48,7 +49,7 @@ export const Default: Story = {
             <>
                 <div className="flex flex-nowrap gap-4">
                     <Input
-                        prefix={<Icon name="magnifier" />}
+                        prefix={<IcMagnifier />}
                         placeholder={`Search ${primaryIconNames.length} icons by name…`}
                         value={search}
                         onChange={({ target: { value } }) => setSearch(value)}

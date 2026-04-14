@@ -2,12 +2,15 @@ import { useMemo, useRef, useState } from 'react';
 
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
-import Icon from '@proton/components/components/icon/Icon';
 import LabelStack from '@proton/components/components/labelStack/LabelStack';
 import Option from '@proton/components/components/option/Option';
 import SearchableSelect from '@proton/components/components/selectTwo/SearchableSelect';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { IcBrandAndroid } from '@proton/icons/icons/IcBrandAndroid';
+import { IcBrandApple } from '@proton/icons/icons/IcBrandApple';
+import { IcBrandChrome } from '@proton/icons/icons/IcBrandChrome';
+import { IcBrandLinux } from '@proton/icons/icons/IcBrandLinux';
 
 const meta: Meta<typeof SelectTwo> = {
     title: 'Components/Select',
@@ -158,16 +161,16 @@ export const WithRichOptionContent: Story = {
         return (
             <SelectTwo value={value} onChange={({ value: v }) => setValue(v)}>
                 <Option title="android" value="android">
-                    <Icon name="brand-android" /> android
+                    <IcBrandAndroid /> android
                 </Option>
                 <Option title="apple" value="apple">
-                    <Icon name="brand-apple" /> apple
+                    <IcBrandApple /> apple
                 </Option>
                 <Option title="linux" value="linux">
-                    <Icon name="brand-linux" /> linux
+                    <IcBrandLinux /> linux
                 </Option>
                 <Option title="chrome" value="chrome">
-                    <Icon name="brand-chrome" /> chrome
+                    <IcBrandChrome /> chrome
                 </Option>
             </SelectTwo>
         );
