@@ -5,7 +5,7 @@ import { Form, FormikProvider } from 'formik';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcInfoCircleFilled } from '@proton/icons/icons/IcInfoCircleFilled';
 import { ProgressModal } from '@proton/pass/components/FileAttachments/ProgressModal';
 import { ImportForm } from '@proton/pass/components/Import/ImportForm';
 import { ImportVaultsPickerModal } from '@proton/pass/components/Import/ImportVaultsPickerModal';
@@ -59,7 +59,7 @@ export const Import: FC = () => {
     if (!canCreateItem) {
         return (
             <Card className="flex items-center flex-nowrap w-full gap-3" type="primary">
-                <Icon name="info-circle-filled" size={5} className="shrink-0 mt-0.5" />
+                <IcInfoCircleFilled size={5} className="shrink-0 mt-0.5" />
                 <span>{c('Info').t`You need a vault with edit permission before you can import items.`}</span>
             </Card>
         );

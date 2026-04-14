@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { CardContent, type CardContentProps } from '@proton/pass/components/Layout/Card/CardContent';
 import clsx from '@proton/utils/clsx';
 
@@ -54,7 +54,7 @@ export const ButtonCard: FC<ButtonCardProps> = ({ actions, disabled, title, subt
                     <div className="flex shrink-0 gap-1">
                         {actions}
                         {onClick && !disabled && (
-                            <Icon name="chevron-right" size={5} className={type ? 'color-strong' : 'color-weak'} />
+                            <IcChevronRight size={5} className={type ? 'color-strong' : 'color-weak'} />
                         )}
                     </div>
                 }

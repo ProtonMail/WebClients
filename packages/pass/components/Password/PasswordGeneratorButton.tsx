@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import type { ButtonProps } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
 import { SubTheme } from '@proton/pass/components/Layout/Theme/types';
 
 import { usePasswordGeneratorAction } from './PasswordGeneratorAction';
@@ -33,7 +33,7 @@ export const PasswordGeneratorButton = memo(({ onSubmit, type, ...rest }: Props)
             onClick={handleOnClick}
             {...rest}
         >
-            <Icon name="arrows-rotate" size={5} />
+            <IcArrowsRotate size={5} />
         </Button>
     );
 });

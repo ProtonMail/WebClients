@@ -5,7 +5,7 @@ import { useFormik } from 'formik';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcPencil } from '@proton/icons/icons/IcPencil';
 import { ItemCreatePanel } from '@proton/pass/components/Layout/Panel/ItemCreatePanel';
 import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
 import type { ItemNewViewProps } from '@proton/pass/components/Views/types';
@@ -27,7 +27,7 @@ const FORM_ID = 'new-custom';
 
 const StartFromScratch: FC<{ onClick: () => void }> = ({ onClick }) => (
     <Button pill color="norm" onClick={onClick} className="ui-violet flex flex-nowrap gap-2">
-        <Icon name="pencil" className="shrink-0" />
+        <IcPencil className="shrink-0" />
         <span className="text-ellipsis">{c('Action').t`Start from scratch`}</span>
     </Button>
 );

@@ -3,8 +3,8 @@ import type { FC } from 'react';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { IcPaperPlane } from '@proton/icons/icons/IcPaperPlane';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { FieldBox } from '@proton/pass/components/Form/Field/Layout/FieldBox';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
@@ -108,7 +108,7 @@ export const AliasContactCard: FC<Props> = ({ contact }) => {
                                 title={c('Action').t`Send email`}
                                 onClick={() => onLink(mailtoHref, { replace: true })}
                             >
-                                <Icon name="paper-plane" />
+                                <IcPaperPlane />
                             </Button>
                         )}
                         <QuickActionsDropdown

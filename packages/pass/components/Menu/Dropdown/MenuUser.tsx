@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { useSelector } from 'react-redux';
 
-import Icon from '@proton/components/components/icon/Icon';
+import { IcStar } from '@proton/icons/icons/IcStar';
 import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
 import { UpsellRef } from '@proton/pass/constants';
 import { isPaidPlan } from '@proton/pass/lib/user/user.predicates';
@@ -17,7 +17,7 @@ export const MenuUser = memo(() => {
         <>
             <div className="flex items-center justify-space-between flex-nowrap gap-2 py-2 px-4">
                 <span className={clsx('flex items-center flex-nowrap', isPaidPlan(passPlan) && 'ui-orange')}>
-                    <Icon name="star" className="mr-3" color="var(--interaction-norm)" />
+                    <IcStar className="mr-3" color="var(--interaction-norm)" />
                     <span className="text-left">
                         <div className="text-sm text-ellipsis">{user?.Email}</div>
                         <div className="text-sm" style={{ color: 'var(--interaction-norm)' }}>

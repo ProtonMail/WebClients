@@ -3,7 +3,7 @@ import { useSelector, useStore } from 'react-redux';
 
 import { c } from 'ttag';
 
-import Icon from '@proton/components/components/icon/Icon';
+import { IcPinAngled } from '@proton/icons/icons/IcPinAngled';
 import { PINNED_ITEM_MAX_WIDTH_PX, PinnedItem } from '@proton/pass/components/Item/Pinned/PinnedItem';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
@@ -40,7 +40,7 @@ const PinnedItemBarContent = memo(({ sort, onSelect }: Props) => {
     return items.length === 0 ? null : (
         <div className="pass-pinned-items-list flex flex-auto w-full shrink-0 flex-1 items-center flex-nowrap py-1 px-3 border-bottom border-weak">
             <span className="flex items-center justify-center flex-nowrap text-sm text-no-wrap shrink-0 pr-4 border-right border-weak mr-2">
-                <Icon name="pin-angled" className="ml-1 mr-2" />
+                <IcPinAngled className="ml-1 mr-2" />
                 {
                     // translator: "Pinned" is followed by the number of pinned items
                     c('Title').t`Pinned (${items.length})`

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
@@ -88,7 +88,7 @@ export const BreachGroupRowActions: FC<MonitorTableRow> = (row) => {
             onClick={(evt) => evt.stopPropagation()}
         >
             <Button pill size="small" shape="ghost" type="button">
-                <Icon name="chevron-right" />
+                <IcChevronRight />
             </Button>
         </Link>
     );

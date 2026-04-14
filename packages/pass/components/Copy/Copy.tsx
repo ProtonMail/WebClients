@@ -6,7 +6,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import type { ButtonProps } from '@proton/atoms/Button/Button';
 import type { ButtonLikeShape } from '@proton/atoms/Button/ButtonLike';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcSquares } from '@proton/icons/icons/IcSquares';
 import { useCopyToClipboard } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
 
 type Props = ButtonProps & {
@@ -29,7 +29,7 @@ export const Copy: FC<Props> = ({ children, value, onCopy, tooltipText, shape = 
     return (
         <Tooltip title={tooltipText || c('Label').t`Copy`}>
             <Button icon color="weak" shape={shape} {...rest} onClick={handleClick}>
-                {children || <Icon name="squares" alt={c('Label').t`Copy`} />}
+                {children || <IcSquares alt={c('Label').t`Copy`} />}
             </Button>
         </Tooltip>
     );
