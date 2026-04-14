@@ -1775,6 +1775,12 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Return to sign-in": [
+        "Volver al inicio de sesión"
+      ],
+      "Try another way": [
+        "Intentar de otra manera"
       ]
     },
     "action": {
@@ -4872,7 +4878,7 @@
         "Disponible con ${ title }"
       ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
-        "Bloquee la capacidad de Google de perfilarle. ${ MAIL_APP_NAME } no puede ver lo que usted hace en Gmail"
+        "Bloquee la capacidad de Google de perfilarle. Gmail no puede ver lo que usted hace en ${ MAIL_APP_NAME }."
       ],
       "Bring over email, calendar events, and contacts from another provider.": [
         "Traiga correos electrónicos, eventos de calendario y contactos desde otro proveedor."
@@ -5032,7 +5038,7 @@
         "Ya tiene una dirección de Gmail que reenvía a ${ MAIL_APP_NAME }. Conéctela a continuación para enviar y recibir correos electrónicos directamente desde ${ MAIL_APP_NAME }."
       ],
       "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
-        "Usted ya tiene direcciones de Gmail reenviando a ${ MAIL_APP_NAME }. Conecte una a continuación para enviar y recibir correos electrónicos directamente desde ${ MAIL_APP_NAME }."
+        "Ya tiene direcciones de Gmail reenviando a ${ MAIL_APP_NAME }. Conecte una a continuación para enviar y recibir correos electrónicos directamente desde ${ MAIL_APP_NAME }."
       ],
       "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
         "Puede personalizar la lista de dominios donde ciertas funciones automáticas en la extensión del navegador ${ PASS_APP_NAME } (completado automático, sugerencia automática, guardado automático) no deberían de ejecutarse."
@@ -5053,8 +5059,8 @@
         "Ya no podrá usar ${ address.Email } para recibir y enviar correos electrónicos en ${ BRAND_NAME }. Tenga en cuenta también que los mensajes enviados a esta dirección desde ${ BRAND_NAME } ya no estarán cifrados de extremo a extremo."
       ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
-        "Usted está reenviando ${ numAddressesOrSync } dirección de Gmail a ${ MAIL_APP_NAME }.",
-        "Usted está reenviando ${ numAddressesOrSync } direcciones de Gmail a ${ MAIL_APP_NAME }."
+        "Está reenviando ${ numAddressesOrSync } dirección de Gmail a ${ MAIL_APP_NAME }.",
+        "Está reenviando ${ numAddressesOrSync } direcciones de Gmail a ${ MAIL_APP_NAME }."
       ],
       "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
         "Ha conectado ${ MAX_SYNC_PAID_USER } dirección de Gmail. Para agregar otra, primero desactive una de sus cuentas conectadas.",
@@ -12720,6 +12726,36 @@
       ],
       "Zoom meeting": [
         "reunión de Zoom"
+      ],
+      "Can you access your active session?": [
+        "¿Puede acceder a su sesión activa?"
+      ],
+      "Can you access your active web session in another browser?": [
+        "¿Puede acceder a su sesión activa en otro navegador?"
+      ],
+      "Due to end-to-end encryption, you can reset your password, but ${ DataLockedText } until you use a ${ DataRecoveryOptionsLink }:": [
+        "Debido al cifrado de extremo a extremo, puede restablecer la contraseña, pero ${ DataLockedText } hasta que use una ${ DataRecoveryOptionsLink }:"
+      ],
+      "If possible, when signing in, use a device or a browser where you’ve signed in before.": [
+        "Si es posible, al iniciar sesión, use un dispositivo o navegador en el que ya haya iniciado sesión antes."
+      ],
+      "If you have emergency contacts, get in touch with them, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed.**": [
+        "Si tiene contactos de emergencia, contáctese con ellos para ver si pueden ayudar. Después de solicitar el acceso de emergencia a su cuenta, podrán cambiar la contraseña por usted **una vez transcurrido el tiempo de espera para el acceso.**"
+      ],
+      "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
+        "Una vez que se haya concedido el acceso a su cuenta, podrán acceder a sus ajustes de **Recuperación** y **cambiar la contraseña de ${ ACCOUNT_APP_NAME }** por usted."
+      ],
+      "Recovery contacts": [
+        "Contactos de recuperación"
+      ],
+      "Try recovering your account from a **device or browser where you have signed in before**, as it may be possible from there:": [
+        "Intente recuperar su cuenta desde un **dispositivo o navegador en el que haya iniciado sesión antes**, ya que es posible que pueda hacerlo desde allí:"
+      ],
+      "Unfortunately there is no recovery method available for this account.": [
+        "Lamentablemente no hay ningún método de recuperación disponible para esta cuenta."
+      ],
+      "You can now reset your password to regain access to your account. **This will disable 2-factor authentication.**": [
+        "Ahora puede restablecer la contraseña para recuperar el acceso a su cuenta. **Esto desactivará la autenticación de dos factores.**"
       ]
     },
     "info": {
@@ -14751,6 +14787,9 @@
       ],
       "ZIP code": [
         "Código postal"
+      ],
+      "Enter code": [
+        "Ingresar código"
       ]
     },
     "label": {
@@ -15150,6 +15189,9 @@
       ],
       "What’s this?": [
         "¿Qué es esto?"
+      ],
+      "data recovery option": [
+        "opción de recuperación de datos"
       ]
     },
     "Link (Scribe)": {
@@ -15720,7 +15762,7 @@
         "Mantener el plan actual"
       ],
       "Make your voice heard": [
-        "Haga oír tu voz"
+        "Haga oír su voz"
       ],
       "Request a feature": [
         "Solicitar una función"
@@ -21129,6 +21171,9 @@
       ],
       "You’re invited to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
         "Le invitamos a unirse a más de 100 millones de personas que eligen mantener el control de sus datos con el ecosistema cifrado de ${ BRAND_NAME }."
+      ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "Elija una dirección segura de ${ MAIL_APP_NAME } para empezar"
       ]
     },
     "Signup label": {
@@ -23607,7 +23652,7 @@
         "¿Descartar cambios?"
       ],
       "Disconnected from Gmail": [
-        "Desconectado de Gmail"
+        "Sin conexión a Gmail"
       ],
       "Display name and signature": [
         "Nombre a mostrar y firma"
