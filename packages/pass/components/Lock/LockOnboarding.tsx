@@ -3,7 +3,7 @@ import type { FC } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcPassLock } from '@proton/icons/icons/IcPassLock';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { LobbyLayout } from '@proton/pass/components/Layout/Lobby/LobbyLayout';
 import { LockSetup } from '@proton/pass/components/Settings/LockSetup';
@@ -19,7 +19,7 @@ export const LockOnboarding: FC<Props> = ({ onCancel }) => (
             style={{ '--anime-delay': '250ms' }}
         >
             <div className="flex gap-3 justify-center text-semibold">
-                <Icon name="pass-lock" size={10} className="md:block hidden" />
+                <IcPassLock size={10} className="md:block hidden" />
                 <span>{c('Info').t`Your organization requires you to secure your access to ${PASS_APP_NAME}`}</span>
             </div>
 

@@ -5,11 +5,11 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { PassModal } from '@proton/pass/components/Layout/Modal/PassModal';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import { isShareVisible } from '@proton/pass/lib/shares/share.predicates';
@@ -50,7 +50,7 @@ const VaultItem = ({ vault, checked, onChange, isLast }: ItemProps) => {
                 icon={vault.content.display.icon}
             />
             <span className="flex-1 text-ellipsis">{vault.content.name}</span>
-            {vault.shared && <Icon name="users" {...ICON_PROPS} />}
+            {vault.shared && <IcUsers {...ICON_PROPS} />}
         </Checkbox>
     );
 };

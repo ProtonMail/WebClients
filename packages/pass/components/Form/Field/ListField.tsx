@@ -6,10 +6,10 @@ import { FieldArray } from 'formik';
 import debounce from 'lodash/debounce';
 
 import type { Input } from '@proton/atoms/Input/Input';
-import Icon from '@proton/components/components/icon/Icon';
 import type { InputFieldProps } from '@proton/components/components/v2/field/InputField';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useCombinedRefs from '@proton/hooks/useCombinedRefs';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import type { IconName } from '@proton/icons/types';
 import { useStatefulRef } from '@proton/pass/hooks/useStatefulRef';
 import type { Unpack } from '@proton/pass/types';
@@ -257,7 +257,7 @@ export const ListField = <
 
             {renderError && errors.filter(truthy).length > 0 && form.dirty && (
                 <div className="field-two-assist flex flex-nowrap items-start mt-4">
-                    <Icon name="exclamation-circle-filled" className="shrink-0 mr-1" />
+                    <IcExclamationCircleFilled className="shrink-0 mr-1" />
                     <span>{renderError(errors)}</span>
                 </div>
             )}

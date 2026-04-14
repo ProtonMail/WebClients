@@ -5,7 +5,8 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcPaperClip } from '@proton/icons/icons/IcPaperClip';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { ConfirmationPrompt } from '@proton/pass/components/Confirmation/ConfirmationPrompt';
 import { UpsellingContext } from '@proton/pass/components/Upsell/UpsellingProvider';
 import { UpsellRef } from '@proton/pass/constants';
@@ -42,7 +43,7 @@ export const FileAttachmentsSummary: FC<FileSummaryHeaderProps> = ({
         <div>
             <div className="flex justify-space-between items-center p-4 gap-4">
                 <div className="shrink-0">
-                    <Icon name="paper-clip" className="m-auto color-weak" />
+                    <IcPaperClip className="m-auto color-weak" />
                 </div>
                 <div className="flex-1 flex-column text-left">
                     <div className="text-ellipsis">{c('Pass_file_attachments').t`Attachments`}</div>
@@ -74,7 +75,7 @@ export const FileAttachmentsSummary: FC<FileSummaryHeaderProps> = ({
                             title={c('Pass_file_attachments').t`Remove all files`}
                             disabled={deleteDisabled || loading}
                         >
-                            <Icon name="trash" alt={c('Pass_file_attachments').t`Remove all files`} size={5} />
+                            <IcTrash alt={c('Pass_file_attachments').t`Remove all files`} size={5} />
                         </Button>
                     </div>
                 )}

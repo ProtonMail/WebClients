@@ -4,8 +4,8 @@ import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
@@ -57,7 +57,7 @@ export const VaultEdit: FC<Props> = ({ vault, onSuccess, ...modalProps }) => {
                                     onClick={modalProps.onClose}
                                     disabled={editVault.loading}
                                 >
-                                    <Icon className="modal-close-icon" name="cross-big" alt={c('Action').t`Close`} />
+                                    <IcCrossBig className="modal-close-icon" alt={c('Action').t`Close`} />
                                 </Button>,
                                 <Button
                                     key="modal-submit-button"

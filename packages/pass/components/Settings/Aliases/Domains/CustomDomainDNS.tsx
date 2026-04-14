@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcInfoCircleFilled } from '@proton/icons/icons/IcInfoCircleFilled';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { useRequest } from '@proton/pass/hooks/useRequest';
 import { verifyCustomDomain } from '@proton/pass/store/actions';
@@ -81,7 +81,7 @@ export const CustomDomainDNS = ({ domainID }: Props) => {
 
                             {!domain.OwnershipVerified && index === 0 && (
                                 <Card className="my-5 p-1 flex flex-nowrap gap-2 text-sm" type="danger">
-                                    <Icon name="info-circle-filled" size={4} className="shrink-0" />
+                                    <IcInfoCircleFilled size={4} className="shrink-0" />
                                     <span> {c('Error').t`A domain ownership must be verified first.`}</span>
                                 </Card>
                             )}

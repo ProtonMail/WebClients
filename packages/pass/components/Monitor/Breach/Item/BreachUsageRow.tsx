@@ -1,9 +1,9 @@
 import type { FC, MouseEvent } from 'react';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
 import TableCell from '@proton/components/components/table/TableCell';
 import TableRow from '@proton/components/components/table/TableRow';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { SafeItemIcon } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { useSelectItem } from '@proton/pass/components/Navigation/NavigationActions';
 import { isTrashed } from '@proton/pass/lib/items/item.predicates';
@@ -33,7 +33,7 @@ export const BreachUsageRow: FC<Props> = ({ item }) => {
             <TableCell>
                 <div className="flex justify-end">
                     <Button pill size="small" shape="ghost" type="button" onClick={handleClick}>
-                        <Icon name="chevron-right" />
+                        <IcChevronRight />
                     </Button>
                 </div>
             </TableCell>
