@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import Alert from '@proton/components/components/alert/Alert';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcLink } from '@proton/icons/icons/IcLink';
 import { ConfirmationModal } from '@proton/pass/components/Confirmation/ConfirmationModal';
 import { Copy } from '@proton/pass/components/Copy/Copy';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
@@ -59,7 +59,7 @@ export const SecureLinkCard: FC<Props> = ({
             >
                 <div className="flex flex-nowrap items-center justify-space-between">
                     <IconBox mode="icon" size={3} pill={false} style={{ backgroundColor: 'var(--interaction-weak)' }}>
-                        <Icon name="link" size={3} className="absolute inset-center" />
+                        <IcLink size={3} className="absolute inset-center" />
                     </IconBox>
 
                     <div className="flex-1 px-4">

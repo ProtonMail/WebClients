@@ -4,8 +4,8 @@ import { useSelector } from 'react-redux';
 import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
+import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
 import { SidebarModal } from '@proton/pass/components/Layout/Modal/SidebarModal';
 import { Panel } from '@proton/pass/components/Layout/Panel/Panel';
 import { PanelHeader } from '@proton/pass/components/Layout/Panel/PanelHeader';
@@ -35,7 +35,7 @@ export const PasswordHistoryModal: FC<ModalProps> = (props) => {
                                 shape="solid"
                                 onClick={props.onClose}
                             >
-                                <Icon className="modal-close-icon" name="chevron-left" alt={c('Action').t`Back`} />
+                                <IcChevronLeft className="modal-close-icon" alt={c('Action').t`Back`} />
                             </Button>,
                             <Button
                                 key="clear-modal-button"

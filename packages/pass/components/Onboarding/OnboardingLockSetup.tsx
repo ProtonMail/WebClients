@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import Icon from '@proton/components/components/icon/Icon';
 import RadioGroup from '@proton/components/components/input/RadioGroup';
+import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import type { IconName } from '@proton/icons/types';
 import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { LockTTLField } from '@proton/pass/components/Lock/LockTTLField';
@@ -79,7 +80,7 @@ export const OnboardingLockSetup: FC = () => {
                             <Icon name={icon} size={6} />
                             <div className={clsx('flex-1 px-4', lock.mode === value && 'text-bold')}>{label}</div>
                             {lock.mode === value && (
-                                <Icon name="checkmark-circle-filled" size={6} color="var(--interaction-norm)" />
+                                <IcCheckmarkCircleFilled size={6} color="var(--interaction-norm)" />
                             )}
                             {needsUpgrade && <PassPlusPromotionButton />}
                         </div>

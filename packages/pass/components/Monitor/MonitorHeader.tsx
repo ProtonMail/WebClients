@@ -3,7 +3,7 @@ import { type RouteChildrenProps, Switch } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import Icon from '@proton/components/components/icon/Icon';
+import { IcPassShieldMonitoringOk } from '@proton/icons/icons/IcPassShieldMonitoringOk';
 import { Breadcrumb } from '@proton/pass/components/Layout/Breadcrumbs/Breadcrumb';
 import { type BreadcrumbRoute, BreadcrumbSwitch } from '@proton/pass/components/Layout/Breadcrumbs/BreadcrumbSwitch';
 import { getLocalPath, subPath } from '@proton/pass/components/Navigation/routing';
@@ -29,7 +29,7 @@ export const MonitorHeader: FC<RouteChildrenProps> = ({ match }) => {
     return (
         match && (
             <div className="flex items-center gap-1 py-1">
-                <Icon name="pass-shield-monitoring-ok" className="shrink-0" />
+                <IcPassShieldMonitoringOk className="shrink-0" />
                 <Breadcrumb
                     first
                     active={match?.isExact ?? false}

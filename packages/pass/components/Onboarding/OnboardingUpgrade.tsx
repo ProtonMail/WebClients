@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
 import RadioGroup from '@proton/components/components/input/RadioGroup';
 import CalendarLogo from '@proton/components/components/logo/CalendarLogo';
 import DriveLogo from '@proton/components/components/logo/DriveLogo';
@@ -18,6 +17,8 @@ import TableCell from '@proton/components/components/table/TableCell';
 import TableHeader from '@proton/components/components/table/TableHeader';
 import TableHeaderCell from '@proton/components/components/table/TableHeaderCell';
 import TableRow from '@proton/components/components/table/TableRow';
+import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { useAuthStore } from '@proton/pass/components/Core/AuthStoreProvider';
 import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { useOnboarding } from '@proton/pass/components/Onboarding/OnboardingProvider';
@@ -56,7 +57,7 @@ type FeaturesTable = {
     }[];
 };
 
-const CheckIcon = () => <Icon name="checkmark-circle-filled" size={4} />;
+const CheckIcon = () => <IcCheckmarkCircleFilled size={4} />;
 const InfiniteIcon = () => <div className="text-lg">∞</div>;
 
 const getTableContent = (freeCcFlag: boolean): Record<AvailablePlans, FeaturesTable> => ({
@@ -267,9 +268,7 @@ export const Description: FC = () => {
                                     {label}
                                 </div>
                             </div>
-                            {selected === value && (
-                                <Icon name="chevron-right" size={4} color="var(--interaction-weak)" />
-                            )}
+                            {selected === value && <IcChevronRight size={4} color="var(--interaction-weak)" />}
                         </div>
                     ),
                 }))}
