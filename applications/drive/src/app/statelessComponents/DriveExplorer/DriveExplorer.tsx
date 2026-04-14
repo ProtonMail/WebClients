@@ -191,6 +191,14 @@ export interface DriveExplorerProps {
     showCheckboxColumn?: boolean;
 
     /**
+     * When true, selected rows do not show the `bg-strong` highlight.
+     * Useful in contexts where selection is functional but visual effect is unwanted.
+     *
+     * @default false
+     */
+    hideSelectionHighlight?: boolean;
+
+    /**
      * Context menu controls for showing/hiding context menu.
      *
      * @example
@@ -251,6 +259,7 @@ const DriveExplorer = ({
     getDragMoveControls,
     isMultiSelectionDisabled,
     showCheckboxColumn = true,
+    hideSelectionHighlight = false,
     contextMenuControls,
 }: DriveExplorerProps) => {
     const resolvedConditions: DriveExplorerConditions = {
@@ -344,6 +353,7 @@ const DriveExplorer = ({
                     isMultiSelectionDisabled={isMultiSelectionDisabled}
                     getDragMoveControls={getDragMoveControls}
                     showCheckboxColumn={showCheckboxColumn}
+                    hideSelectionHighlight={hideSelectionHighlight}
                     contextMenuControls={contextMenuControls}
                 />
             ) : (
@@ -359,6 +369,7 @@ const DriveExplorer = ({
                     getDragMoveControls={getDragMoveControls}
                     isMultiSelectionDisabled={isMultiSelectionDisabled}
                     showCheckboxColumn={showCheckboxColumn}
+                    hideSelectionHighlight={hideSelectionHighlight}
                     contextMenuControls={contextMenuControls}
                 />
             )}
