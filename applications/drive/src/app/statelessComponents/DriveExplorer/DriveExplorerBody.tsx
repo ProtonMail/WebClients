@@ -68,7 +68,7 @@ export const DriveExplorerBody = ({
                 <div
                     className="w-full relative h-custom"
                     style={{
-                        '--h-custom': virtualizer.getTotalSize(),
+                        '--h-custom': `${virtualizer.getTotalSize()}px`,
                     }}
                 >
                     <Table
@@ -80,7 +80,7 @@ export const DriveExplorerBody = ({
                         )}
                         borderWeak
                         style={{
-                            '--h-custom': virtualizer.getTotalSize(),
+                            '--h-custom': `${virtualizer.getTotalSize()}px`,
                         }}
                     >
                         <TableBody>
