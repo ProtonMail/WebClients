@@ -620,6 +620,9 @@
       "Keep my subscription": [
         "Conserver mon abonnement"
       ],
+      "Learn about recovery options": [
+        "En savoir plus sur les options de récupération"
+      ],
       "Learn more": [
         "En savoir plus"
       ],
@@ -928,6 +931,9 @@
       ],
       "Send my username": [
         "Envoyer mon nom d'utilisateur"
+      ],
+      "Send new code": [
+        "Envoyer un nouveau code"
       ],
       "Send new invite": [
         "Envoyer une nouvelle invitation"
@@ -6073,8 +6079,8 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Assistant d'écriture ${ BRAND_NAME } Scribe"
       ],
-      "${ BRAND_NAME } will send a verification code to ${ RedactedPhoneNumber }. Standard message rates may apply.": [
-        "${ BRAND_NAME } enverra un code de vérification à ${ RedactedPhoneNumber }. Des tarifs de message standard peuvent s'appliquer."
+      "${ BRAND_NAME } will send a verification code to ${ phoneNumber }. Standard message rates may apply.": [
+        "${ BRAND_NAME } enverra un code de vérification au ${ phoneNumber }. Les tarifs habituels des SMS peuvent s'appliquer."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Avec la technologie de chiffrement de ${ BRAND_NAME }, personne ne peut accéder à votre mot de passe, pas même nous."
@@ -6558,6 +6564,9 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Avant de demander un nouveau code de vérification, nous vous recommandons de vérifier votre dossier indésirables/spam et de vous assurer que l'adresse ${ strong } est correcte."
+      ],
+      "Before sending a new verification code, check your spam folder for ${ EmailOrPhoneNumber }.": [
+        "Avant d'envoyer un nouveau code de vérification, vérifiez si ${ EmailOrPhoneNumber } se trouve dans votre dossier indésirables/spam."
       ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
         "Avant de recevoir des messages sur les adresses de votre domaine personnalisé sur ${ MAIL_APP_NAME }, vous devez ajouter les deux enregistrements MX suivants dans votre console DNS (qui se trouve sur la plateforme du fournisseur chez lequel vous avez acheté le domaine personnalisé). Le lien suivant vous fournira un exemple et quelques astuces utiles ${ kbLink }."
@@ -7212,6 +7221,9 @@
       ],
       "Internet connection restored.": [
         "La connexion internet est rétablie."
+      ],
+      "Invalid code. ${ RequestNewCodeLink } and try again.": [
+        "Le code n'est pas valide. ${ RequestNewCodeLink } et réessayez."
       ],
       "Invite deleted": [
         "L'invitation a été supprimée."
@@ -8356,6 +8368,9 @@
       ],
       "Vault updated": [
         "Le coffre-fort a été mis à jour."
+      ],
+      "Verification code sent.": [
+        "Le code de vérification a été envoyé."
       ],
       "Verification may take a few minutes.": [
         "La vérification peut prendre quelques minutes."
@@ -10533,6 +10548,38 @@
         "Connectez-vous pour accéder à votre compte ${ appName }"
       ]
     },
+    "Missing feature": {
+      "Check out the latest product updates": [
+        "Découvrez les dernières mises à jour de produit"
+      ],
+      "Continue cancelling": [
+        "Continuer l'annulation"
+      ],
+      "Explore the latest news": [
+        "Explorer les dernières actualités"
+      ],
+      "Keep current plan": [
+        "Garder l'abonnement actuel"
+      ],
+      "Make your voice heard": [
+        "Faites entendre votre voix"
+      ],
+      "Request a feature": [
+        "Demander une fonctionnalité"
+      ],
+      "Request a feature or vote on ideas from other users in our feedback forum.": [
+        "Demandez une fonctionnalité ou votez pour des idées d'autres utilisateurs sur notre forum de commentaires."
+      ],
+      "See how ${ BRAND_NAME } apps are evolving with your feedback.": [
+        "Découvrez comment les applications ${ BRAND_NAME } évoluent grâce à vos retours."
+      ],
+      "Submit your ideas": [
+        "Soumettez vos idées"
+      ],
+      "Your feedback helps us improve. Whether you've spotted a bug, want a new feature, or think something could work differently, we'd love to hear from you.": [
+        "Vos commentaires nous aident à nous améliorer. Que vous ayez repéré un bug, que vous souhaitiez une nouvelle fonctionnalité ou que vous pensiez que quelque chose pourrait être fait différemment, nous aimerions avoir votre avis."
+      ]
+    },
     "Modal title": {
       "How to import calendars from another service": [
         "Comment importer des calendriers depuis un autre service"
@@ -10812,6 +10859,13 @@
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Tous les services de base de ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "Appointment scheduling": [
+        "Planification de rendez-vous"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Planification de rendez-vous avec ${ n } page de réservation",
+        "Planification de rendez-vous avec ${ n } pages de réservation"
       ],
       "Apps for": [
         "Applications pour"
@@ -13495,9 +13549,6 @@
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Si vous perdez vos informations de connexion et devez réinitialiser votre compte, **vous devez** avoir à la fois **une méthode de récupération de données et une méthode de récupération de compte**. Dans le cas contraire, vous pourriez ne pas pouvoir accéder à vos courriels, contacts, fichiers ou mots de passe."
-      ],
-      "Invalid code": [
-        "Le code n’est pas valide."
       ],
       "Review account safety": [
         "Vérifier la sécurité du compte"
@@ -16472,6 +16523,9 @@
       ],
       "Request new code": [
         "Demander un nouveau code"
+      ],
+      "Request new code?": [
+        "Demander un nouveau code ?"
       ],
       "Request sent": [
         "La demande a été envoyée."

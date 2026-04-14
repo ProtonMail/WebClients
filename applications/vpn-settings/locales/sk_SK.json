@@ -620,6 +620,9 @@
       "Keep my subscription": [
         "Ponechať moje predplatné"
       ],
+      "Learn about recovery options": [
+        "Zistite viac o možnostiach obnovy"
+      ],
       "Learn more": [
         "Zistiť viac"
       ],
@@ -928,6 +931,9 @@
       ],
       "Send my username": [
         "Poslať moje používateľské meno"
+      ],
+      "Send new code": [
+        "Poslať nový kód"
       ],
       "Send new invite": [
         "Odoslať novú pozvánku"
@@ -6202,8 +6208,8 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe, asistent písania"
       ],
-      "${ BRAND_NAME } will send a verification code to ${ RedactedPhoneNumber }. Standard message rates may apply.": [
-        "${ BRAND_NAME } odošle overovací kód na číslo ${ RedactedPhoneNumber }. Môžu sa účtovať štandardné poplatky za správy."
+      "${ BRAND_NAME } will send a verification code to ${ phoneNumber }. Standard message rates may apply.": [
+        "${ BRAND_NAME } odošle overovací kód na číslo ${ phoneNumber }. Môžu sa účtovať štandardné poplatky za správy."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Šifrovacia technológia ${ BRAND_NAME } znamená, že nikto nemá prístup k vášmu heslu – dokonca ani my."
@@ -6753,6 +6759,9 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Pred vyžiadaním nového overovacieho kódu skontrolujte priečinok spam a skontrolujte, či je adresa ${ strong } správna."
+      ],
+      "Before sending a new verification code, check your spam folder for ${ EmailOrPhoneNumber }.": [
+        "Pred odoslaním nového overovacieho kódu skontrolujte priečinok so spamom pre ${ EmailOrPhoneNumber }."
       ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
         "Než budete môcť prijímať emaily na adresy svojej vlastnej domény v službe ${ MAIL_APP_NAME }, je potrebné pridať nasledujúce dva MX záznamy do DNS konzoly (nachádza sa na platforme, kde ste zakúpili vlastnú doménu). Príklad a niekoľko užitočných tipov nájdete ${ kbLink }."
@@ -7425,6 +7434,9 @@
       ],
       "Internet connection restored.": [
         "Pripojenie k internetu obnovené."
+      ],
+      "Invalid code. ${ RequestNewCodeLink } and try again.": [
+        "Neplatný kód. ${ RequestNewCodeLink } a skúste to znova."
       ],
       "Invite deleted": [
         "Pozvánka vymazaná"
@@ -8589,6 +8601,9 @@
       ],
       "Vault updated": [
         "Trezor bol aktualizovaný"
+      ],
+      "Verification code sent.": [
+        "Overovací kód bol odoslaný."
       ],
       "Verification may take a few minutes.": [
         "Overenie môže trvať niekoľko minút."
@@ -11143,6 +11158,15 @@
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Všetky základné služby ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "Appointment scheduling": [
+        "Plánovanie schôdzok"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Plánovanie schôdzok s ${ n } rezervačnou stránkou",
+        "Plánovanie schôdzok s ${ n } rezervačnými stránkami",
+        "Plánovanie schôdzok s ${ n } rezervačnými stránkami",
+        "Plánovanie schôdzok s ${ n } rezervačnými stránkami"
       ],
       "Apps for": [
         "Aplikácie pre"
@@ -13790,9 +13814,6 @@
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Ak stratíte prihlasovacie údaje a potrebujete obnoviť svoj účet, **je nevyhnutné**, aby ste mali k dispozícii metódu **obnovenia účtu aj obnovenia údajov**, inak sa môže stať, že nebudete mať prístup k žiadnym svojim emailom, kontaktom, súborom alebo heslám."
-      ],
-      "Invalid code": [
-        "Neplatný kód"
       ],
       "Review account safety": [
         "Skontrolovať bezpečnosť účtu"
@@ -16896,6 +16917,9 @@
       ],
       "Request new code": [
         "Vyžiadať nový kód"
+      ],
+      "Request new code?": [
+        "Vyžiadať nový kód?"
       ],
       "Request sent": [
         "Požiadavka odoslaná"
