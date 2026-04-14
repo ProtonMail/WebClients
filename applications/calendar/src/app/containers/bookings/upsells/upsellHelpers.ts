@@ -20,7 +20,7 @@ export const hasUserReachPlanLimit = (
         return true;
     }
 
-    // If the user has a addon we use this to determine the plan name and the assosciated limits
+    // If the user has an addon, we use this to determine the plan name and the associated limits
     const planName = meetAddon ? meetAddon.Name : organization?.PlanName;
     switch (planName) {
         // Those plans have the maximum number of booking pages
@@ -45,7 +45,7 @@ export const hasUserReachPlanLimit = (
         case PLANS.MEET_BUSINESS:
         case PLANS.MEET:
             return pageCount >= MAX_BOOKING_PAGES;
-        // Those plans have 1 booking page and are upsell to budlebiz2025
+        // Those plans have 1 booking page and are upsell to bundlebiz2025
         case PLANS.MAIL:
         case PLANS.BUNDLE:
         case PLANS.DUO:
@@ -60,21 +60,55 @@ export const hasUserReachPlanLimit = (
 
 /**
  * Checks the eligibility of the organisation members for a booking limit based on their subscription and bookings pages.
- * The logic is simple for the moment, any organisation member with a paid meet access can create up to MAX_BOOKING_PAGES bookings.
  *
- * This logic might change when adding support for other subscription plans.
- * The logic might need to be based on plan name to get the limits.
+ * Any meet add-on, or Mail B2B org plan: members get MAX_BOOKING_PAGES (25).
+ * Mail B2C org plans without add-on: members get MAX_BOOKING_PAGE_MAIL_PAID (1).
+ * All other cases: members are fully blocked (limit is 0).
  */
-export const hasOrgMemberReachedBookingLimit = (user: UserModel, bookingsPages?: InternalBookingPage[]): boolean => {
+export const hasOrgMemberReachedBookingLimit = (
+    bookingsPages?: InternalBookingPage[],
+    organization?: OrganizationExtended,
+    meetAddon?: SubscriptionPlan
+): boolean => {
     if (!bookingsPages) {
         return false;
     }
 
-    if (!user.hasPaidMeet) {
-        return bookingsPages.length >= 1;
+    const planName = meetAddon ? meetAddon.Name : organization?.PlanName;
+    switch (planName) {
+        // Any meet add-on, or Mail B2B org plan: members get MAX_BOOKING_PAGES
+        case ADDON_NAMES.MEET_VPN2024:
+        case ADDON_NAMES.MEET_LUMO:
+        case ADDON_NAMES.MEET_DRIVE:
+        case ADDON_NAMES.MEET_PASS:
+        case ADDON_NAMES.MEET_DRIVE_1TB:
+        case ADDON_NAMES.MEET_VPN_PASS_BUNDLE:
+        case ADDON_NAMES.MEET_MAIL:
+        case ADDON_NAMES.MEET_BUNDLE:
+        case ADDON_NAMES.MEET_MAIL_PRO:
+        case ADDON_NAMES.MEET_DUO:
+        case ADDON_NAMES.MEET_FAMILY:
+        case ADDON_NAMES.MEET_MAIL_BUSINESS:
+        case ADDON_NAMES.MEET_BUNDLE_PRO:
+        case PLANS.VISIONARY:
+        case PLANS.MAIL_BUSINESS:
+        case PLANS.BUNDLE_PRO:
+        case PLANS.BUNDLE_PRO_2024:
+        case PLANS.BUNDLE_BIZ_2025:
+        case PLANS.MEET_BUSINESS:
+        case PLANS.MEET:
+            return bookingsPages.length >= MAX_BOOKING_PAGES;
+        // Mail B2C org plans without meet add-on: members get MAX_BOOKING_PAGE_MAIL_PAID
+        case PLANS.MAIL:
+        case PLANS.BUNDLE:
+        case PLANS.DUO:
+        case PLANS.FAMILY:
+        case PLANS.MAIL_PRO:
+            return bookingsPages.length >= MAX_BOOKING_PAGE_MAIL_PAID;
+        // All other plans: members are fully blocked
+        default:
+            return true;
     }
-
-    return bookingsPages.length >= MAX_BOOKING_PAGES;
 };
 
 export const hasUserReachBookingsLimit = (bookingsPages?: InternalBookingPage[]): boolean => {
