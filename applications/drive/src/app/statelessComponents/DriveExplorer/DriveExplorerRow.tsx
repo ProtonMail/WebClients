@@ -31,6 +31,7 @@ interface DriveExplorerRowProps {
     isMultiSelectionDisabled?: boolean;
     className?: string;
     showCheckboxColumn?: boolean;
+    hideSelectionHighlight?: boolean;
     contextMenuControls?: ContextMenuControls;
 }
 
@@ -46,6 +47,7 @@ export const DriveExplorerRow = ({
     dragMoveControls,
     isMultiSelectionDisabled,
     showCheckboxColumn = true,
+    hideSelectionHighlight = false,
     contextMenuControls,
 }: DriveExplorerRowProps) => {
     const isSelected = selection?.selectedItems.has(itemId) ?? false;
@@ -117,7 +119,7 @@ export const DriveExplorerRow = ({
                 ref={rowRef}
                 className={clsx(
                     'flex user-select-none group-hover-opacity-container',
-                    (isSelected || dragMoveControls?.isActiveDropTarget) && 'bg-strong',
+                    ((!hideSelectionHighlight && isSelected) || dragMoveControls?.isActiveDropTarget) && 'bg-strong',
                     dragging && 'opacity-50',
                     className
                 )}
@@ -126,6 +128,7 @@ export const DriveExplorerRow = ({
                 onClick={handleClick}
                 onDoubleClick={handleDoubleClick}
                 onContextMenu={handleContextMenu}
+                onFocus={hideSelectionHighlight ? (e) => e.currentTarget.blur() : undefined}
                 onKeyDown={handleKeyDown}
                 onDragStart={handleDragStart}
                 onDragEnd={handleDragEnd}

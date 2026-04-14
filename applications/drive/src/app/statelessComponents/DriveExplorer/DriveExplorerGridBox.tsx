@@ -28,6 +28,7 @@ interface DriveExplorerGridBoxProps {
     isMultiSelectionDisabled?: boolean;
     dragMoveControls?: DragMoveControls;
     showCheckboxColumn?: boolean;
+    hideSelectionHighlight?: boolean;
     contextMenuControls?: ContextMenuControls;
 }
 
@@ -41,6 +42,7 @@ export const DriveExplorerGridBox = ({
     isMultiSelectionDisabled,
     dragMoveControls,
     showCheckboxColumn = true,
+    hideSelectionHighlight = false,
     contextMenuControls,
 }: DriveExplorerGridBoxProps) => {
     const rowRef = useRef<HTMLDivElement>(null);
@@ -114,9 +116,11 @@ export const DriveExplorerGridBox = ({
                 ref={rowRef}
                 className={clsx(
                     'relative bg-norm overflow-hidden flex flex-column text-left rounded border group-hover-opacity-container',
-                    (isSelected || dragMoveControls?.isActiveDropTarget) && 'border-primary',
+                    ((!hideSelectionHighlight && isSelected) || dragMoveControls?.isActiveDropTarget) &&
+                        'border-primary',
                     dragging && 'opacity-50'
                 )}
+                onFocus={hideSelectionHighlight ? (e) => e.currentTarget.blur() : undefined}
                 onMouseDown={handleMouseDown}
                 onClick={handleClick}
                 onDoubleClick={handleDoubleClick}
