@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcEmoji } from '@proton/icons/icons/IcEmoji';
 
 const meta: Meta = {
     title: 'CSS Utilities/Hiding Disabling Content',
@@ -54,7 +54,7 @@ export const Screenreaders: Story = {
     render: () => (
         <div className="p-7 bg-weak">
             <Button>
-                <Icon name="emoji" />
+                <IcEmoji />
                 <span className="sr-only">I'm hidden but will be vocalized when using a screen reader</span>
             </Button>
         </div>
