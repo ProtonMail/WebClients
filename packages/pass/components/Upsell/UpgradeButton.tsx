@@ -7,7 +7,7 @@ import type { ButtonLikeSize } from '@proton/atoms/Button/ButtonLike';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { PromotionButton } from '@proton/components/components/button/PromotionButton';
 import type { PromotionButtonProps } from '@proton/components/components/button/PromotionButton/PromotionButton';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
 import type { IconSize } from '@proton/icons/types';
 import type { UpsellRef } from '@proton/pass/constants';
 import { useNavigateToUpgrade } from '@proton/pass/hooks/useNavigateToUpgrade';
@@ -76,7 +76,7 @@ export const UpgradeButton: FC<UpgradeButtonProps> = ({
             {...rest}
         >
             {label || c('Action').t`Upgrade`}
-            {!gradient && <Icon className="ml-2" name="arrow-out-square" size={iconSize} />}
+            {!gradient && <IcArrowOutSquare className="ml-2" size={iconSize} />}
         </ButtonComponent>
     );
 };

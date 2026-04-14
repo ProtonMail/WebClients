@@ -2,12 +2,12 @@ import type { FC } from 'react';
 import { Link, useHistory, useParams } from 'react-router-dom';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
 import TableCell from '@proton/components/components/table/TableCell';
 import TableRow from '@proton/components/components/table/TableRow';
 import ReadableDate from '@proton/components/containers/credentialLeak/ReadableDate';
 import { getBreachIcon } from '@proton/components/containers/credentialLeak/helpers';
 import type { FetchedBreaches } from '@proton/components/containers/credentialLeak/models';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 
 type Props = { breach: FetchedBreaches };
@@ -35,7 +35,7 @@ export const BreachListRow: FC<Props> = ({ breach: { id, name, publishedAt, seve
                 <div className="flex justify-end">
                     <Link to={breachHref} onClick={(evt) => evt.stopPropagation()}>
                         <Button pill size="small" shape="ghost" type="button">
-                            <Icon name="chevron-right" />
+                            <IcChevronRight />
                         </Button>
                     </Link>
                 </div>

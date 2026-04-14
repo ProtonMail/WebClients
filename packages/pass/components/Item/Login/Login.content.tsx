@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { ExtraFieldsControl } from '@proton/pass/components/Form/Field/Control/ExtraFieldsControl';
 import { OTPValueControl } from '@proton/pass/components/Form/Field/Control/OTPValueControl';
 import { ValueControl } from '@proton/pass/components/Form/Field/Control/ValueControl';
@@ -57,7 +57,7 @@ export const LoginContent: FC<ItemContentProps<'login'>> = ({ revision, secureLi
                             label={`${c('Label').t`Passkey`} • ${passkey.domain}`}
                             value={passkey.userName}
                             onClick={() => setPasskey(passkey)}
-                            actions={[<Icon className="mt-3" name="chevron-right" size={3} />]}
+                            actions={[<IcChevronRight className="mt-3" size={3} />]}
                             className="pass-value-control--standout"
                         />
                     </FieldsetCluster>

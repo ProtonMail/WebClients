@@ -3,8 +3,9 @@ import { memo } from 'react';
 import { useSelector } from 'react-redux';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import Icon from '@proton/components/components/icon/Icon';
 import Marks from '@proton/components/components/text/Marks';
+import { IcPinAngledFilled } from '@proton/icons/icons/IcPinAngledFilled';
+import { IcUsersFilled } from '@proton/icons/icons/IcUsersFilled';
 import { IconBox } from '@proton/pass/components/Layout/Icon/IconBox';
 import { ItemIcon, ItemIconIndicators, SafeItemIcon } from '@proton/pass/components/Layout/Icon/ItemIcon';
 import { itemTypeToSubThemeClassName } from '@proton/pass/components/Layout/Theme/types';
@@ -129,11 +130,7 @@ export const ItemsListItem = memo(
                                             )}
                                             style={{ '--bottom-custom': '-6px', '--right-custom': '-6px' }}
                                         >
-                                            <Icon
-                                                name="pin-angled-filled"
-                                                size={2.75}
-                                                className="absolute inset-center"
-                                            />
+                                            <IcPinAngledFilled size={2.75} className="absolute inset-center" />
                                         </IconBox>
                                     )}
                                 </>
@@ -152,7 +149,7 @@ export const ItemsListItem = memo(
                                 <span className="text-ellipsis">
                                     <Marks chunks={matchChunks(heading, search)}>{heading}</Marks>
                                 </span>
-                                {shared && <Icon name="users-filled" size={3.5} className="shrink-0" />}
+                                {shared && <IcUsersFilled size={3.5} className="shrink-0" />}
                             </span>
                             <div
                                 className={clsx([

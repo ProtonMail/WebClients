@@ -4,7 +4,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { UserStorage } from '@proton/pass/components/Account/UserStorage';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { MonitorButton } from '@proton/pass/components/Menu/Monitor/MonitorButton';
@@ -57,7 +58,7 @@ export const MenuSidebar: FC<Props> = ({ onLock, onLogout, userPanel }) => {
                                 disabled={vaultCreationDisabled}
                             >
                                 <span className="block text-ellipsis">{c('Label').t`Vaults`}</span>
-                                <Icon name="plus" alt={c('Action').t`Create a new vault`} className="shrink-0" />
+                                <IcPlus alt={c('Action').t`Create a new vault`} className="shrink-0" />
                             </Button>
                         </OrganizationPolicyTooltip>
                         <VaultMenu />
@@ -118,7 +119,7 @@ export const MenuSidebar: FC<Props> = ({ onLock, onLogout, userPanel }) => {
                                     onClick={() => openSettings?.()}
                                     title={c('Action').t`Settings`}
                                 >
-                                    <Icon name="cog-wheel" alt={c('Action').t`Settings`} />
+                                    <IcCogWheel alt={c('Action').t`Settings`} />
                                 </Button>
                             )
                         ) : (

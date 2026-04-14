@@ -3,8 +3,8 @@ import { useSelector } from 'react-redux';
 
 import { c } from 'ttag';
 
-import Icon from '@proton/components/components/icon/Icon';
 import Option from '@proton/components/components/option/Option';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import type { VaultIconName } from '@proton/pass/components/Vault/VaultIcon';
 import { VaultIcon } from '@proton/pass/components/Vault/VaultIcon';
 import type { ShareItem } from '@proton/pass/store/reducers';
@@ -72,8 +72,7 @@ export const VaultPicker: FC<VaultPickerProps> = ({ legacy, vaults, ...props }) 
                                 />
                                 <span className="flex-1 text-ellipsis">{content.name}</span>
                                 {shared && (
-                                    <Icon
-                                        name="users"
+                                    <IcUsers
                                         color={`var(${selected ? '--interaction-norm-contrast' : '--text-weak'})`}
                                         size={3.5}
                                     />

@@ -5,7 +5,7 @@ import { Field, Form, type FormikContextType, FormikProvider } from 'formik';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcInfoCircleFilled } from '@proton/icons/icons/IcInfoCircleFilled';
 import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { RadioGroupField } from '@proton/pass/components/Form/Field/RadioGroupField';
 import { ToggleField } from '@proton/pass/components/Form/Field/ToggleField';
@@ -89,7 +89,7 @@ export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
                     <Card className="mb-4 p-1 flex flex-column flex-nowrap gap-2 text-sm" type="primary">
                         {warnings.map((text, idx) => (
                             <div key={`warning-${idx}`} className={'flex items-start flex-nowrap w-full gap-2'}>
-                                <Icon name="info-circle-filled" size={3} className="shrink-0 mt-0.5" />
+                                <IcInfoCircleFilled size={3} className="shrink-0 mt-0.5" />
                                 <span>{text}</span>
                             </div>
                         ))}
@@ -125,7 +125,7 @@ export const ExportForm: FC<ExporterProps> = ({ form, loading = false }) => {
                         {form.values.fileAttachments && form.values.format === ExportFormat.PGP && (
                             <Card className="my-4 p-1 text-sm" type="warning">
                                 <div className={'flex items-start flex-nowrap w-full gap-2'}>
-                                    <Icon name="info-circle-filled" size={3} className="shrink-0 mt-0.5" />
+                                    <IcInfoCircleFilled size={3} className="shrink-0 mt-0.5" />
                                     <span>{c('Pass_file_attachments')
                                         .t`The exported file attachments will not be encrypted.`}</span>
                                 </div>

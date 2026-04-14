@@ -2,7 +2,7 @@ import type { FC } from 'react';
 
 import ContextMenuButton from '@proton/components/components/contextMenu/ContextMenuButton';
 import ContextSeparator from '@proton/components/components/contextMenu/ContextSeparator';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcPassLock } from '@proton/icons/icons/IcPassLock';
 import type { IconName } from '@proton/icons/types';
 import { useContextMenu } from '@proton/pass/components/ContextMenu/ContextMenuProvider';
 import { useCopyToClipboard } from '@proton/pass/components/Settings/Clipboard/ClipboardProvider';
@@ -50,7 +50,7 @@ export const ContextMenuContent: FC<Props> = ({ elements }) => {
                 name={
                     <>
                         {element.name}
-                        {element.lock === true && <Icon name="pass-lock" size={3.5} className="ml-1.5" />}
+                        {element.lock === true && <IcPassLock size={3.5} className="ml-1.5" />}
                     </>
                 }
                 action={() => handleAction(element)}

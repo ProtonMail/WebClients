@@ -4,8 +4,8 @@ import { Form, FormikProvider, useFormik } from 'formik';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
+import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
 import { Field } from '@proton/pass/components/Form/Field/Field';
 import { FieldsetCluster } from '@proton/pass/components/Form/Field/Layout/FieldsetCluster';
 import { TextField } from '@proton/pass/components/Form/Field/TextField';
@@ -52,7 +52,7 @@ export const AliasContactCreate: FC<Props> = ({ onClose }) => {
                                     onClick={onClose}
                                     title={c('Action').t`Cancel`}
                                 >
-                                    <Icon name="chevron-left" alt={c('Action').t`Cancel`} />
+                                    <IcChevronLeft alt={c('Action').t`Cancel`} />
                                 </Button>,
                                 <Button
                                     color="norm"
