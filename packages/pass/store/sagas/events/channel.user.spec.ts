@@ -38,9 +38,9 @@ describe('`onUserRefreshed`', () => {
 
     test('should trigger full sync when user keys are updated', async () => {
         /** Missing local userKeys */
-        PassCrypto.getContext.mockReturnValue({ userKeys: [{ ID: 'key1' }] });
+        PassCrypto.getContext.mockReturnValue({ userKeys: [{ ID: 'key1' }], addresses });
 
-        const saga = sagaSetup({ user: { addresses: addresses } });
+        const saga = sagaSetup({ user: { addresses } });
         const task = runSaga(saga.options, onUserRefreshed, user, keyPassword);
         await task.toPromise();
 
@@ -50,9 +50,9 @@ describe('`onUserRefreshed`', () => {
 
     test('should not trigger full sync when keys are unchanged', async () => {
         /** All active keys already present */
-        PassCrypto.getContext.mockReturnValue({ userKeys: [{ ID: 'key1' }, { ID: 'key2' }] });
+        PassCrypto.getContext.mockReturnValue({ userKeys: [{ ID: 'key1' }, { ID: 'key2' }], addresses });
 
-        const saga = sagaSetup({ user: { addresses: addresses } });
+        const saga = sagaSetup({ user: { addresses } });
         const task = runSaga(saga.options, onUserRefreshed, user, keyPassword);
         await task.toPromise();
 
@@ -61,10 +61,10 @@ describe('`onUserRefreshed`', () => {
     });
 
     test('should handle crypto hydration errors gracefully', async () => {
-        PassCrypto.getContext.mockReturnValue({ userKeys: [{ ID: 'key1' }] });
+        PassCrypto.getContext.mockReturnValue({ userKeys: [{ ID: 'key1' }], addresses });
         PassCrypto.hydrate.mockRejectedValue(new Error('Hydration failed'));
 
-        const saga = sagaSetup({ user: { addresses: addresses } });
+        const saga = sagaSetup({ user: { addresses } });
         const task = runSaga(saga.options, onUserRefreshed, user, keyPassword);
         await task.toPromise();
 
