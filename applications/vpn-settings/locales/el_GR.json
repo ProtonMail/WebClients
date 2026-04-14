@@ -620,6 +620,9 @@
       "Keep my subscription": [
         "Διατηρήστε την συνδρομή μου"
       ],
+      "Learn about recovery options": [
+        "Μάθετε για τις επιλογές ανάκτησης"
+      ],
       "Learn more": [
         "Μάθετε περισσότερα"
       ],
@@ -928,6 +931,9 @@
       ],
       "Send my username": [
         "Αποστολή του ονόματος χρήστη μου"
+      ],
+      "Send new code": [
+        "Αποστολή νέου κωδικού"
       ],
       "Send new invite": [
         "Αποστολή νέας πρόσκλησης"
@@ -4722,7 +4728,7 @@
     },
     "error": {
       "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
-        "Παρακαλώ συνδεθείτε με μια διεύθυνση Gmail που ήδη προωθεί στο ${ MAIL_APP_NAME }"
+        "Παρακαλούμε συνδεθείτε με μια διεύθυνση Gmail που ήδη προωθεί στο ${ MAIL_APP_NAME }"
       ],
       "Please sign in with the same Gmail address you originally connected": [
         "Παρακαλούμε συνδεθείτε με την ίδια διεύθυνση Gmail που συνδεθήκατε αρχικά."
@@ -6082,8 +6088,8 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe βοηθός γραφής"
       ],
-      "${ BRAND_NAME } will send a verification code to ${ RedactedPhoneNumber }. Standard message rates may apply.": [
-        "Η ${ BRAND_NAME } θα στείλει έναν κωδικό επαλήθευσης στο ${ RedactedPhoneNumber }. Ενδέχεται να ισχύουν οι τυπικές χρεώσεις μηνυμάτων."
+      "${ BRAND_NAME } will send a verification code to ${ phoneNumber }. Standard message rates may apply.": [
+        "Η ${ BRAND_NAME } θα στείλει έναν κωδικό επαλήθευσης στο ${ phoneNumber }. Ενδέχεται να ισχύουν οι τυπικές χρεώσεις μηνυμάτων."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Η τεχνολογία κρυπτογράφησης του ${ BRAND_NAME } σημαίνει ότι κανείς δεν μπορεί να έχει πρόσβαση στον κωδικό πρόσβασής σας - ούτε καν εμείς."
@@ -6567,6 +6573,9 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Πριν αιτηθείτε νέο κωδικό επαλήθευσης, ελέγξτε τον φάκελό σας Ενοχλητικά και ότι η ${ strong } είναι η σωστή διεύθυνση."
+      ],
+      "Before sending a new verification code, check your spam folder for ${ EmailOrPhoneNumber }.": [
+        "Πριν στείλετε έναν νέο κωδικό επαλήθευσης, ελέγξτε τον φάκελο ανεπιθύμητης αλληλογραφίας σας για ${ EmailOrPhoneNumber }."
       ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
         "Για να μπορέσετε να λαμβάνετε μηνύματα ηλεκτρονικού ταχυδρομείου για τις διευθύνσεις προσαρμοσμένου τομέα σας στο ${ MAIL_APP_NAME }, πρέπει να προσθέσετε τις ακόλουθες δύο εγγραφές MX στην κονσόλα DNS (που βρίσκεται στην πλατφόρμα όπου αγοράσατε τον προσαρμοσμένο τομέα). Μπορείτε να βρείτε ένα παράδειγμα και μερικές χρήσιμες συμβουλές ${ kbLink }."
@@ -7227,6 +7236,9 @@
       ],
       "Internet connection restored.": [
         "Η σύνδεση στο διαδίκτυο αποκαταστάθηκε."
+      ],
+      "Invalid code. ${ RequestNewCodeLink } and try again.": [
+        "Άκυρος κωδικός. ${ RequestNewCodeLink } και δοκιμάστε ξανά."
       ],
       "Invite deleted": [
         "Η πρόσκληση διαγράφηκε"
@@ -8371,6 +8383,9 @@
       ],
       "Vault updated": [
         "Η κρύπτη ενημερώθηκε"
+      ],
+      "Verification code sent.": [
+        "Ο κωδικός επαλήθευσης στάλθηκε."
       ],
       "Verification may take a few minutes.": [
         "Η επαλήθευση μπορεί να πάρει μερικά λεπτά."
@@ -10546,6 +10561,38 @@
       ],
       "Sign in to access your ${ appName } account": [
         "Συνδεθείτε για να αποκτήσετε πρόσβαση στον ${ appName } λογαριασμό σας"
+      ]
+    },
+    "Missing feature": {
+      "Check out the latest product updates": [
+        "Δείτε τις τελευταίες ενημερώσεις προϊόντων"
+      ],
+      "Continue cancelling": [
+        "Συνέχεια ακύρωσης"
+      ],
+      "Explore the latest news": [
+        "Εξερευνήστε τα τελευταία νέα"
+      ],
+      "Keep current plan": [
+        "Διατηρήστε το τρέχον σχέδιο"
+      ],
+      "Make your voice heard": [
+        "Κάντε τη φωνή σας να ακουστεί"
+      ],
+      "Request a feature": [
+        "Αίτηση νέας δυνατότητας"
+      ],
+      "Request a feature or vote on ideas from other users in our feedback forum.": [
+        "Ζητήστε μια λειτουργία ή ψηφίστε ιδέες από άλλους χρήστες στο φόρουμ ανατροφοδότησής μας."
+      ],
+      "See how ${ BRAND_NAME } apps are evolving with your feedback.": [
+        "Δείτε πώς οι εφαρμογές ${ BRAND_NAME } εξελίσσονται με τα σχόλιά σας."
+      ],
+      "Submit your ideas": [
+        "Υποβάλετε τις ιδέες σας"
+      ],
+      "Your feedback helps us improve. Whether you've spotted a bug, want a new feature, or think something could work differently, we'd love to hear from you.": [
+        "Τα σχόλιά σας μας βοηθούν να βελτιωθούμε. Είτε έχετε εντοπίσει κάποιο σφάλμα, θέλετε μια νέα λειτουργία, είτε πιστεύετε ότι κάτι θα μπορούσε να λειτουργήσει διαφορετικά, θα χαρούμε να ακούσουμε από εσάς."
       ]
     },
     "Modal title": {
@@ -13421,9 +13468,6 @@
       ],
       "If you lose your login details and need to reset your account, **it’s imperative** that you have both an **account recovery and data recovery method** in place, otherwise you might not be able to access any of your emails, contacts, files or passwords.": [
         "Εάν χάσετε τα στοιχεία σύνδεσής σας και πρέπει να επαναφέρετε τον λογαριασμό σας, **είναι επιτακτική ανάγκη** να έχετε εφαρμόσει μια **μέθοδο ανάκτησης λογαριασμού και ανάκτησης δεδομένων**, διαφορετικά ενδέχεται να μην μπορείτε να αποκτήσετε πρόσβαση σε κανένα από τα μηνύματα ηλεκτρονικού ταχυδρομείου, τις επαφές, τα αρχεία ή τους κωδικούς πρόσβασής σας."
-      ],
-      "Invalid code": [
-        "Μη έγκυρος κωδικός"
       ],
       "Review account safety": [
         "Έλεγχος ασφάλειας λογαριασμού"
@@ -16407,6 +16451,9 @@
       ],
       "Request new code": [
         "Αίτηση νέου κωδικού"
+      ],
+      "Request new code?": [
+        "Αίτηση νέου κωδικού;"
       ],
       "Request sent": [
         "Το αίτημα εστάλη"

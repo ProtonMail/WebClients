@@ -984,6 +984,9 @@
       "Later": [
         "Αργότερα"
       ],
+      "Learn about recovery options": [
+        "Μάθετε για τις επιλογές ανάκτησης"
+      ],
       "Learn more": [
         "Μάθετε περισσότερα"
       ],
@@ -1421,6 +1424,9 @@
       ],
       "Send my username": [
         "Αποστολή του ονόματος χρήστη μου"
+      ],
+      "Send new code": [
+        "Αποστολή νέου κωδικού"
       ],
       "Send new invite": [
         "Αποστολή νέας πρόσκλησης"
@@ -7233,7 +7239,7 @@
     },
     "error": {
       "Please sign in with a Gmail address that already forwards to ${ MAIL_APP_NAME }": [
-        "Παρακαλώ συνδεθείτε με μια διεύθυνση Gmail που ήδη προωθεί στο ${ MAIL_APP_NAME }"
+        "Παρακαλούμε συνδεθείτε με μια διεύθυνση Gmail που ήδη προωθεί στο ${ MAIL_APP_NAME }"
       ],
       "Please sign in with the same Gmail address you originally connected": [
         "Παρακαλούμε συνδεθείτε με την ίδια διεύθυνση Gmail που συνδεθήκατε αρχικά."
@@ -9094,8 +9100,8 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe βοηθός γραφής"
       ],
-      "${ BRAND_NAME } will send a verification code to ${ RedactedPhoneNumber }. Standard message rates may apply.": [
-        "Η ${ BRAND_NAME } θα στείλει έναν κωδικό επαλήθευσης στο ${ RedactedPhoneNumber }. Ενδέχεται να ισχύουν οι τυπικές χρεώσεις μηνυμάτων."
+      "${ BRAND_NAME } will send a verification code to ${ phoneNumber }. Standard message rates may apply.": [
+        "Η ${ BRAND_NAME } θα στείλει έναν κωδικό επαλήθευσης στο ${ phoneNumber }. Ενδέχεται να ισχύουν οι τυπικές χρεώσεις μηνυμάτων."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Η τεχνολογία κρυπτογράφησης του ${ BRAND_NAME } σημαίνει ότι κανείς δεν μπορεί να έχει πρόσβαση στον κωδικό πρόσβασής σας - ούτε καν εμείς."
@@ -9751,6 +9757,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Πριν αιτηθείτε νέο κωδικό επαλήθευσης, ελέγξτε τον φάκελό σας Ενοχλητικά και ότι η ${ strong } είναι η σωστή διεύθυνση."
       ],
+      "Before sending a new verification code, check your spam folder for ${ EmailOrPhoneNumber }.": [
+        "Πριν στείλετε έναν νέο κωδικό επαλήθευσης, ελέγξτε τον φάκελο ανεπιθύμητης αλληλογραφίας σας για ${ EmailOrPhoneNumber }."
+      ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
         "Για να μπορέσετε να λαμβάνετε μηνύματα ηλεκτρονικού ταχυδρομείου για τις διευθύνσεις προσαρμοσμένου τομέα σας στο ${ MAIL_APP_NAME }, πρέπει να προσθέσετε τις ακόλουθες δύο εγγραφές MX στην κονσόλα DNS (που βρίσκεται στην πλατφόρμα όπου αγοράσατε τον προσαρμοσμένο τομέα). Μπορείτε να βρείτε ένα παράδειγμα και μερικές χρήσιμες συμβουλές ${ kbLink }."
       ],
@@ -9814,6 +9823,9 @@
       "Check the status of imports and forwarding.": [
         "Ελέγξτε την κατάσταση των εισαγωγών και της προώθησης."
       ],
+      "Check your network and try again.": [
+        "Ελέγξτε το δίκτυό σας και δοκιμάστε ξανά."
+      ],
       "Choose a plan that works best for you.": [
         "Επιλέξτε το πλάνο που σας ταιριάζει καλύτερα."
       ],
@@ -9825,6 +9837,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Κάντε κλικ στην επιλογή \"Αίτηση νέου κωδικού\" για να σταλεί ένας νέος κωδικός επαλήθευσης στο ${ strong }. Εάν αυτός ο αριθμός τηλεφώνου είναι εσφαλμένος, κάντε κλικ στο \"Επεξεργασία\" για να τον διορθώσετε."
+      ],
+      "Click 'Trouble signing in?' on your TV to follow the alternative steps.": [
+        "Κάντε κλικ στην επιλογή \"Πρόβλημα σύνδεσης;\" στην τηλεόρασή σας για να ακολουθήσετε τα εναλλακτικά βήματα."
       ],
       "Click **Request password reset** and follow the prompts.": [
         "Κάντε κλικ στο **Αίτηση επαναφοράς κωδικού** και ακολουθήστε τις οδηγίες."
@@ -9840,9 +9855,6 @@
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Βραβείο επιλογής συντακτών CNET με βαθμολογία 8,4 στα 10"
-      ],
-      "Code expired": [
-        "Ο κωδικός έληξε"
       ],
       "Coming soon": [
         "Έρχεται σύντομα"
@@ -10651,6 +10663,9 @@
       ],
       "Internet connection restored.": [
         "Η σύνδεση στο διαδίκτυο αποκαταστάθηκε."
+      ],
+      "Invalid code. ${ RequestNewCodeLink } and try again.": [
+        "Άκυρος κωδικός. ${ RequestNewCodeLink } και δοκιμάστε ξανά."
       ],
       "Invitation link expired": [
         "Ο σύνδεσμος πρόσκλησης έληξε"
@@ -12114,6 +12129,9 @@
       ],
       "Vault updated": [
         "Η κρύπτη ενημερώθηκε"
+      ],
+      "Verification code sent.": [
+        "Ο κωδικός επαλήθευσης στάλθηκε."
       ],
       "Verification link expired": [
         "Ο σύνδεσμος επαλήθευσης έληξε"
@@ -15725,6 +15743,38 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Συνδεθείτε στον λογαριασμό σας ${ BRAND_NAME } για να αποκτήσετε πρόσβαση σε όλες τις κρυπτογραφημένες υπηρεσίες του ${ BRAND_NAME }, όπως ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } και περισσότερα. Δεν έχετε λογαριασμό; Δημιουργήστε ένα ΔΩΡΕΑΝ."
+      ]
+    },
+    "Missing feature": {
+      "Check out the latest product updates": [
+        "Δείτε τις τελευταίες ενημερώσεις προϊόντων"
+      ],
+      "Continue cancelling": [
+        "Συνέχεια ακύρωσης"
+      ],
+      "Explore the latest news": [
+        "Εξερευνήστε τα τελευταία νέα"
+      ],
+      "Keep current plan": [
+        "Διατηρήστε το τρέχον σχέδιο"
+      ],
+      "Make your voice heard": [
+        "Κάντε τη φωνή σας να ακουστεί"
+      ],
+      "Request a feature": [
+        "Αίτηση νέας δυνατότητας"
+      ],
+      "Request a feature or vote on ideas from other users in our feedback forum.": [
+        "Ζητήστε μια λειτουργία ή ψηφίστε ιδέες από άλλους χρήστες στο φόρουμ ανατροφοδότησής μας."
+      ],
+      "See how ${ BRAND_NAME } apps are evolving with your feedback.": [
+        "Δείτε πώς οι εφαρμογές ${ BRAND_NAME } εξελίσσονται με τα σχόλιά σας."
+      ],
+      "Submit your ideas": [
+        "Υποβάλετε τις ιδέες σας"
+      ],
+      "Your feedback helps us improve. Whether you've spotted a bug, want a new feature, or think something could work differently, we'd love to hear from you.": [
+        "Τα σχόλιά σας μας βοηθούν να βελτιωθούμε. Είτε έχετε εντοπίσει κάποιο σφάλμα, θέλετε μια νέα λειτουργία, είτε πιστεύετε ότι κάτι θα μπορούσε να λειτουργήσει διαφορετικά, θα χαρούμε να ακούσουμε από εσάς."
       ]
     },
     "Modal title": {
@@ -23242,6 +23292,9 @@
       "Close": [
         "Κλείσιμο"
       ],
+      "Code expired": [
+        "Ο κωδικός έληξε"
+      ],
       "Collaborate on documents": [
         "Συνεργαστείτε σε έγγραφα"
       ],
@@ -23298,6 +23351,9 @@
       ],
       "Continue with partial import?": [
         "Συνέχιση με μερική εισαγωγή;"
+      ],
+      "Couldn't sign in": [
+        "Αδυναμίας σύνδεσης"
       ],
       "Couldn’t create accounts": [
         "Αποτυχία δημιουργίας λογαριασμών"
@@ -24160,6 +24216,9 @@
       ],
       "Request new code": [
         "Αίτηση νέου κωδικού"
+      ],
+      "Request new code?": [
+        "Αίτηση νέου κωδικού;"
       ],
       "Request sent": [
         "Το αίτημα εστάλη"

@@ -315,6 +315,12 @@
       "Connect apps and devices": [
         "连接应用和设备"
       ],
+      "Connect Gmail address": [
+        "连接 Gmail 地址"
+      ],
+      "Connect to Gmail": [
+        "连接 Gmail"
+      ],
       "Connect to video conferencing": [
         "连接至视频会议"
       ],
@@ -330,6 +336,9 @@
       "Contact support": [
         "联系客服"
       ],
+      "Contact Support Center": [
+        "联系支持中心"
+      ],
       "Contact us": [
         "联系我们"
       ],
@@ -344,6 +353,9 @@
       ],
       "Continue to ${ planOrAppName }": [
         "继续使用 ${ planOrAppName }"
+      ],
+      "Continue to sign in": [
+        "继续登录"
       ],
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "继续使用 ${ nameToDisplay } ${ maybeEmailInBrackets }"
@@ -552,6 +564,9 @@
       "Discard Changes": [
         "放弃更改"
       ],
+      "Disconnect": [
+        "断开连接"
+      ],
       "Discover ${ planName }": [
         "探索 ${ planName }"
       ],
@@ -695,6 +710,9 @@
       ],
       "Encrypt and export": [
         "加密并导出"
+      ],
+      "Enter code": [
+        "输入代码"
       ],
       "Explore ${ target }": [
         "探索 ${ target }"
@@ -878,6 +896,21 @@
       ],
       "Hide plan features": [
         "隐藏计划功能"
+      ],
+      "I don't have my 2FA device": [
+        "我没有 2FA 设备"
+      ],
+      "I don't have my key": [
+        "我没有密钥"
+      ],
+      "I don't have my phrase": [
+        "我没有恢复短语"
+      ],
+      "I don’t have my backup codes": [
+        "我没有备用码"
+      ],
+      "I don’t have my phone": [
+        "我没有手机"
       ],
       "Ignore": [
         "忽略"
@@ -1098,6 +1131,9 @@
       "Or": [
         "或"
       ],
+      "Or remove forwarding address": [
+        "或者移除转发地址"
+      ],
       "Or use a different Gmail address": [
         "或使用其他 Gmail 地址"
       ],
@@ -1142,6 +1178,12 @@
       ],
       "Reconnect": [
         "重新连接"
+      ],
+      "Reconnect to Gmail": [
+        "重新连接 Gmail"
+      ],
+      "Recover account": [
+        "恢复账户"
       ],
       "Recover data": [
         "恢复数据"
@@ -1265,6 +1307,9 @@
       ],
       "Return to sign in": [
         "返回登录界面"
+      ],
+      "Return to sign-in": [
+        "返回登录"
       ],
       "Review": [
         "评论"
@@ -1551,6 +1596,9 @@
       "Try another method": [
         "更换验证方式"
       ],
+      "Try another way": [
+        "尝试其他方式"
+      ],
       "Try for free": [
         "免费试用"
       ],
@@ -1664,6 +1712,9 @@
       ],
       "Verify account": [
         "验证账户"
+      ],
+      "Verify another way": [
+        "使用其他方式验证"
       ],
       "Verify code": [
         "验证码"
@@ -4743,6 +4794,14 @@
     "Delete group prompt": {
       "Are you sure you want to delete this group?": [
         "确定要删除这个群组吗？"
+      ],
+      "Please note that if you delete the group ${ displayGroupName }, it will be permanently removed.": [
+        "请注意，如果您删除 ${ displayGroupName } 分组，它将被永久移除！"
+      ]
+    },
+    "Delete group prompt with email": {
+      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
+        "请注意，如果您删除群组 ${ displayGroupName }（地址为 ${ displayGroupAddressEmail }），您将无法再使用该地址接收邮件！"
       ]
     },
     "Delinquent modal title": {
@@ -4781,6 +4840,9 @@
       "Available with ${ title }": [
         "随 ${ title } 可用"
       ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "阻止 Google 对您进行用户画像分析。Gmail 无法查看您在 ${ MAIL_APP_NAME } 中的操作"
+      ],
       "Bring over email, calendar events, and contacts from another provider.": [
         "导入来自其他提供商的电子邮件、日历日程和联系人。"
       ],
@@ -4807,6 +4869,9 @@
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "轻松地将文件从桌面同步到云端，并从移动设备访问它们。"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "发送到 ${ connectedAddressText } 的电子邮件现在将显示在 ${ MAIL_APP_NAME } 中。"
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "开启 ${ PROTON_SENTINEL_NAME } 即可使用这些功能"
@@ -4862,8 +4927,14 @@
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "在邮件末尾展现您的独特品牌，而非我们的统一标识。"
       ],
+      "No ads. No trackers.": [
+        "无广告、无追踪。"
+      ],
       "No one in your organization can connect to shared servers.": [
         "组织内任何人都不能连接共享服务器。"
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "在 ${ MAIL_APP_NAME } 中阅读、回复并随时处理 Gmail 邮件"
       ],
       "Send a code to your recovery email or phone": [
         "将验证码发送至您的恢复邮箱或手机号码"
@@ -4877,6 +4948,21 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "使用共享日历简化同步和日程安排。"
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "如果权限被移除或密码被更改，可能会发生此情况。"
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "若要连接其他 Gmail 地址，请移除转发到 ${ BRAND_NAME } 的多余 Gmail 地址。"
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "如要连接多达 ${ MAX_SYNC_PAID_USER } 个 Gmail 地址，请升级到 ${ planName }。"
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "若要继续在 ${ BRAND_NAME } 中接收和发送 Gmail 邮件，请重新连接您的账户。"
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "若要继续在 ${ BRAND_NAME } 中接收和发送 Gmail 邮件，请重新连接您的账户。"
+      ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "如需通过 CSV 和 VCF 文件导入，请确保文件不超过 ${ MAX_IMPORT_FILE_SIZE_STRING } 或 ${ maxContactString } 位联系人。如果文件较大，请将其拆分成更小的文件。${ learnMoreLink }."
       ],
@@ -4889,14 +4975,32 @@
       "Track the status and activity of your referrals": [
         "实时跟踪已发出的邀请动态"
       ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "升级到 ${ planName } 最多可连接 ${ MAX_SYNC_PAID_USER } 个账户"
+      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "升级后，除现有邮箱地址外，还可以获得一个更短、更易记的 ${ activatePmUser } 邮箱地址。"
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "使用本指南，让您的组织迅速受益于 ${ BRAND_NAME } 行业领先的加密和隐私生态系统。"
       ],
+      "We can't access ${ boldEmails } anymore.": [
+        "我们无法再访问 ${ boldEmails }。"
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "我们将导入您的旧电子邮件并将 Gmail 连接到 ${ MAIL_APP_NAME }，以便新邮件自动显示。"
+      ],
+      "We've started importing your email from Gmail. We'll let you know when it's done.": [
+        "我们已开始从 Gmail 导入您的电子邮件，完成后将通知您。"
+      ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "很遗憾看到您离开。如果您有时间，我们希望了解您取消的原因。您的反馈有助于我们改进 ${ BRAND_NAME }，让产品变得更好。"
+      ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "您已有一个 Gmail 地址转发到 ${ MAIL_APP_NAME }。请在下方连接该地址，以便直接从 ${ MAIL_APP_NAME } 收发电子邮件。"
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "您已有 Gmail 地址转发到 ${ MAIL_APP_NAME }。请在下方连接其中一个地址，以便直接从 ${ MAIL_APP_NAME } 收发电子邮件。"
       ],
       "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
         "您可以自定义一个域名列表，${ PASS_APP_NAME } 浏览器扩展程序（自动填充、自动建议、自动保存）的特定自动功能不应在这些域名上运行。"
@@ -4906,6 +5010,30 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "您可以导入 iCal 格式（. ics 文件）的日程。文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且日程总数上限为 ${ MAX_IMPORT_EVENTS_STRING }。若您的文件超出限制，请先拆分成较小的文件。"
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "您现在可以使用此地址从 ${ BRAND_NAME } 发送电子邮件。"
+      ],
+      "You can still login with this address and re-connect at any time.": [
+        "您仍可以使用此地址登录，并随时重新连接。"
+      ],
+      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
+        "您将无法再使用 ${ address.Email } 在 ${ BRAND_NAME } 中接收和发送邮件。另请注意，来自 ${ BRAND_NAME } 发送到此地址的消息将不再采用端到端加密！"
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "您正在将 ${ numAddressesOrSync } 个 Gmail 地址转发到 ${ MAIL_APP_NAME }。"
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "您已连接了 ${ MAX_SYNC_PAID_USER } 个 Gmail 地址。若要添加另一个地址，请先禁用其中一个已连接的账户。"
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "您已将 1 个外部账户地址连接到 ${ MAIL_APP_NAME }。"
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "您的套餐支持 ${ MAX_SYNC_FREE_USER } 个 Gmail 地址。"
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "您的套餐总共支持 ${ MAX_SYNC_PAID_USER } 个 Gmail 地址"
       ]
     },
     "description": {
@@ -6384,6 +6512,12 @@
       "Address cannot be yours": [
         "地址不能是您自己的地址"
       ],
+      "Address could not be added.": [
+        "无法添加地址！"
+      ],
+      "Address is already added to your account": [
+        "地址已添加到您的账户"
+      ],
       "Address primary private key not found": [
         "找不到地址主私钥"
       ],
@@ -6566,6 +6700,9 @@
       ],
       "Incorrect password": [
         "密码错误"
+      ],
+      "Incorrect recovery code. Please try again.": [
+        "恢复码错误，请重试。"
       ],
       "Incorrect second password. Please try again.": [
         "二级密码错误，请重试。"
@@ -6851,6 +6988,12 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "部分标签名称超过了 ${ MAIL_APP_NAME } 的字数限制，请在导入内容中予以更改。"
+      ],
+      "Something went wrong while creating the address": [
+        "创建地址时出错"
+      ],
+      "Something went wrong while fetching available domains": [
+        "获取可用域名时出错"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "发生错误，请${ refresh }后重试。若仍出现此错误，请联系我们的${ supportTeam }。"
@@ -8171,6 +8314,14 @@
         "服务"
       ]
     },
+    "Group detail label": {
+      "Description:": [
+        "描述："
+      ],
+      "Group address:": [
+        "群组地址："
+      ]
+    },
     "Group member count": {
       "${ memberCount } member": [
         "${ memberCount } 位成员"
@@ -8882,6 +9033,9 @@
       "${ countriesCount } country enabled": [
         "${ countriesCount } 国家/地区已启用"
       ],
+      "${ DataLockedText }, but recoverable with your ${ RecoveryContactsLink }:": [
+        "${ DataLockedText }，但可通过 ${ RecoveryContactsLink } 恢复："
+      ],
       "${ discountPercent }% discount": [
         "${ discountPercent }% 折扣"
       ],
@@ -9218,6 +9372,9 @@
       "Add server (${ availableAddedCount } available)": [
         "添加服务器（有 ${ availableAddedCount } 台可用）"
       ],
+      "Add users by name or email to this group.": [
+        "按姓名或邮箱添加用户到此群组。"
+      ],
       "Add video conferencing links to calendar invitations": [
         "为日历邀请添加视频会议链接"
       ],
@@ -9311,6 +9468,9 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "邮箱别名类似邮箱地址，但是可以用于减少垃圾邮件并隐藏您的真实邮箱地址和身份信息。"
       ],
+      "An email with a verification code was just sent to ${ emailAddress }. If you can’t find the message in your inbox, please check your spam folder.": [
+        "包含验证码的邮件已发送至 ${ emailAddress }。如果您在收件箱中未找到该邮件，请检查垃圾邮件文件夹。"
+      ],
       "An error occurred while communicating with **${ applicationName }**": [
         "与**${ applicationName }**沟通出现错误"
       ],
@@ -9322,6 +9482,9 @@
       ],
       "An import is paused because your storage is almost full.": [
         "由于存储空间几乎已满，导入已暂停。"
+      ],
+      "An SMS with a verification code was just sent to ${ phoneNumber }.": [
+        "包含验证码的短信已发送至 ${ phoneNumber }！"
       ],
       "and": [
         "并"
@@ -9394,6 +9557,9 @@
       ],
       "Are you sure you want to sort your labels alphabetically?": [
         "您确定要按字母顺序排序您的标签吗？"
+      ],
+      "Ask them to sign in to their ${ ACCOUNT_APP_NAME } in the browser, and go to **Settings → All settings → Recovery → Emergency access→ People who trust me.**": [
+        "让他们在浏览器中登录 ${ ACCOUNT_APP_NAME }，然后转到**设置 → 所有设置 → 恢复 → 紧急访问 → 信任我的人**。"
       ],
       "Ask your organization admin to setup Gateways.": [
         "要求您的组织管理员设置网关。"
@@ -9506,6 +9672,15 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "分享此日历的全部事件详情，即表示您同意授权 ${ BRAND_NAME } 访问此日历的加密信息。"
       ],
+      "Can you access your active session?": [
+        "您能否访问当前活跃的会话？"
+      ],
+      "Can you access your active web session in another browser?": [
+        "您能否在其他浏览器中访问当前活跃的网页会话？"
+      ],
+      "Can you reach out to your contact?": [
+        "您能否联系您的联系人？"
+      ],
       "Cancel": [
         "取消"
       ],
@@ -9539,6 +9714,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "点击“请求新验证码”将发送到 ${ strong }。如果此电话号码不正确，请点击“编辑”。"
       ],
+      "Click **Request password reset** and follow the prompts.": [
+        "请点击**请求重置密码**并按照提示操作！"
+      ],
       "Click the icon to open it anytime.": [
         "点击图标即可随时打开。"
       ],
@@ -9550,9 +9728,6 @@
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "CNET 编辑选择奖，评分 8.4 分（满分 10 分）"
-      ],
-      "Code expired": [
-        "代码已过期"
       ],
       "Coming soon": [
         "即将推出"
@@ -9571,6 +9746,9 @@
       ],
       "Connection data will be available in around 1 hour.": [
         "连接数据将在 1 小时左右可用。"
+      ],
+      "Contact our Customer Support team to disable two-factor authentication for your account, or recover your account another way.": [
+        "联系我们的客户支持团队以禁用您账户的 2FA，或通过其他方式恢复您的账户。"
       ],
       "Continue": [
         "继续"
@@ -9686,6 +9864,9 @@
       "Data recoverable on this device": [
         "此设备上的数据可能被恢复"
       ],
+      "Data recoverable with recovery phrase": [
+        "通过恢复短语恢复数据"
+      ],
       "dedicated servers": [
         "专用服务器"
       ],
@@ -9715,6 +9896,9 @@
       ],
       "Deleting ${ deletedServerCount } gateway server": [
         "正在删除 ${ deletedServerCount } 台网关服务器"
+      ],
+      "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
+        "根据您的设置，他们可能立即获得访问权限，或需要经过指定的**等待期**！"
       ],
       "Did you know?": [
         "您知道吗？"
@@ -9815,6 +9999,9 @@
       "Drop to import": [
         "拖至此处即可导入"
       ],
+      "Due to end-to-end encryption, you can reset your password, but ${ DataLockedText } until you use a ${ DataRecoveryOptionsLink }:": [
+        "由于端到端加密，您可以重置密码，但 ${ DataLockedText }，直到您使用 ${ DataRecoveryOptionsLink }："
+      ],
       "Each code can only be used once": [
         "每个恢复码只能使用一次"
       ],
@@ -9914,11 +10101,17 @@
       "Enter a password to finalize your ${ BRAND_NAME } Account and start using ${ VPN_APP_NAME } across all your devices!": [
         "输入密码完成您的 ${ BRAND_NAME } 账户设置，即可在所有设备上使用 ${ VPN_APP_NAME } 服务！"
       ],
+      "Enter code": [
+        "输入代码"
+      ],
       "Enter key manually instead": [
         "手动输入密钥"
       ],
       "Enter new password for user ${ userName }.": [
         "输入用户 ${ userName } 的新密码。"
+      ],
+      "Enter the 12-word recovery phrase associated with your account.": [
+        "请输入与您的账户关联的 12 字恢复短语！"
       ],
       "Enter the code from your authenticator app": [
         "请输入身份验证应用中的验证码"
@@ -10064,6 +10257,9 @@
       "Friends and family": [
         "亲友推荐"
       ],
+      "From there, they can request emergency access to your account by clicking **Request access.**": [
+        "他们可以在其中点击**请求访问**来请求对您账户的紧急访问。"
+      ],
       "Gateway couldn't be deleted. Please try again": [
         "网关删除失败，请重试"
       ],
@@ -10084,6 +10280,9 @@
       ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "创建 ${ BRAND_NAME } 账户并接受邀请即可查看。"
+      ],
+      "Get in touch with your emergency contacts, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed**.": [
+        "联系您的紧急联系人，看看他们是否能提供帮助。在请求紧急访问您的账户后，他们可以在**等待期结束后**为您更改密码！"
       ],
       "Get it on Google Play": [
         "前往 Google Play 下载"
@@ -10142,6 +10341,12 @@
       "How it works": [
         "如何运作"
       ],
+      "How to perform a signed-in reset": [
+        "如何执行已登录状态下的重置？"
+      ],
+      "How your emergency contact can change your password for you:": [
+        "您的紧急联系人如何为您更改密码："
+      ],
       "IBAN: ${ formattedIBAN }": [
         "IBAN：${ formattedIBAN }"
       ],
@@ -10169,6 +10374,9 @@
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "如果启用了键盘快捷键，可以使用以下按键进行快速操作或跳转到不同视图。${ metaKey } + K 始终处于启用状态。"
       ],
+      "If possible, when signing in, use a device or a browser where you’ve signed in before.": [
+        "如果可以，请在登录时使用之前登录过的设备或浏览器。"
+      ],
       "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
         "如果您输入的邮箱曾用于预留儿童邮箱地址，我们将重新发送激活凭证。"
       ],
@@ -10183,6 +10391,9 @@
       ],
       "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
         "如果您在其他地方登录，您可能可以使用 ${ signedInPasswordResetLink }。"
+      ],
+      "If you are signed in to a ${ BRAND_NAME } web app in **another browser**, you may be able to perform a password reset from your active session.": [
+        "如果您在**其他浏览器**中登录了 ${ BRAND_NAME } 网页应用，则可以通过当前活动会话重置密码。"
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "如有异议，请点击${ contactLink }联系我们。"
@@ -10202,8 +10413,14 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "如果您有礼品码，可以在此处使用。"
       ],
+      "If you have emergency contacts, get in touch with them, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed.**": [
+        "如果您有紧急联系人，请联系他们，看看是否能提供帮助。在请求紧急访问您的账户后，他们可以在**等待期结束后**为您更改密码！"
+      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "如果您丢失了启用双因素身份验证的设备，可以使用这些代码代替 6 位双因素身份验证代码来登录您的账户。每个代码只能使用一次。"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "如果您无法访问验证器应用，可以使用设置 2FA 时提供的 16 个备用恢复码之一。${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "降级账户后您将不能再使用 ${ MAIL_APP_NAME } 和 ${ VPN_APP_NAME } 的收费功能。"
@@ -10619,11 +10836,17 @@
       "No folder selected": [
         "未选择文件夹"
       ],
+      "No forwarding history.": [
+        "暂无转发历史！"
+      ],
       "No gateways": [
         "没有网关"
       ],
       "No Gateways yet": [
         "尚无网关"
+      ],
+      "No import history.": [
+        "暂无导入历史"
       ],
       "No label selected": [
         "未选择标签"
@@ -10670,6 +10893,9 @@
       "On Ubuntu?": [
         "使用的是 Ubuntu 系统？"
       ],
+      "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
+        "当您的账户访问权限被授予后，他们可以访问您的**恢复**设置并为您**更改 ${ ACCOUNT_APP_NAME } 密码**！"
+      ],
       "Once you reset your password:": [
         "当你重置密码后："
       ],
@@ -10687,6 +10913,9 @@
       ],
       "Open the guide for recommended actions and helpful links.": [
         "打开指南并查看推荐操作和实用链接。"
+      ],
+      "Open your active session in the browser, and go to **Settings → All settings → Recovery → Password reset settings.**": [
+        "在浏览器中打开您的活动会话，然后转到**设置 → 所有设置 → 恢复 → 密码重置设置**。"
       ],
       "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
         "打开您的扩展程序的 Safari 设置，并验证是否为 ${ BRAND_NAME } 域名启用了网站权限"
@@ -10937,6 +11166,12 @@
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "建议仅在可信设备上勾选。${ keepMeSignedInLearnMoreLink }"
       ],
+      "Recovery contacts": [
+        "恢复联系人"
+      ],
+      "Recovery file": [
+        "恢复文件"
+      ],
       "Recovery file downloaded": [
         "恢复文件已下载"
       ],
@@ -10945,6 +11180,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "只要不选择删除，账户数据恢复信息就会一直保存在此设备上。"
+      ],
+      "Recovery phrase": [
+        "恢复短语"
       ],
       "Recovery phrase copied to clipboard": [
         "恢复短语已复制到剪贴板"
@@ -10991,6 +11229,9 @@
       "Resend verification email": [
         "重新发送验证邮件"
       ],
+      "Resetting your password in your active web session will ensure **your encrypted data will remain accessible** after you change your password.": [
+        "在活动网页会话中重置密码将确保您更改密码后**加密数据仍然可访问**！"
+      ],
       "Restore": [
         "还原"
       ],
@@ -11032,6 +11273,9 @@
       ],
       "Securing your account": [
         "确保账户安全"
+      ],
+      "Select a group to view its members and settings.": [
+        "请选择一个群组以查看其成员和设置！"
       ],
       "Select one or multiple user affiliations": [
         "选择一个或多个用户的隶属关系"
@@ -11164,6 +11408,9 @@
       ],
       "Something went wrong. Please try again or contact customer support.": [
         "出错了。请重试或联系客户支持。"
+      ],
+      "Something went wrong. Please try again.": [
+        "发生错误，请稍后再试。"
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "指定允许使用 SAML SSO 进行身份验证的域。"
@@ -11423,6 +11670,9 @@
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "如果您对我们的服务有任何问题，或需要我们采取进一步行动，该信息将不会发送到支持团队， ${ supportLink }。"
       ],
+      "This password is used to login to your ${ BRAND_NAME } account": [
+        "此密码用于登录您的 ${ BRAND_NAME } 账户"
+      ],
       "This service is not available to users signing in with single sign-on.": [
         "使用单点登录的用户无法使用此服务。"
       ],
@@ -11537,6 +11787,12 @@
       "To fight spam and abuse, please verify you are human.": [
         "为了防止垃圾邮件和滥用行为，请进行人机验证。"
       ],
+      "To help keep your account safe, we want to make sure it's really you trying to sign in.": [
+        "为保障您的账户安全，我们需要确认确实是您本人在尝试登录！"
+      ],
+      "To help keep your account safe, we want to make sure it’s really you trying to sign in.": [
+        "为保障您的账户安全，我们需要确认确实是您本人在尝试登录！"
+      ],
       "To import events, first create a calendar in ${ CALENDAR_APP_NAME }. This is where the events will appear after the import.": [
         "导入日程需要先在 ${ CALENDAR_APP_NAME } 中创建日历，作为日程导入后的存放位置。"
       ],
@@ -11591,6 +11847,9 @@
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "试用 ${ productName } 完全无风险 - 如果你因任何原因改变主意，你将获得全额退款。无任何问题。"
       ],
+      "Try recovering your account from a **device or browser where you have signed in before**, as it may be possible from there:": [
+        "尝试从**之前登录过的设备或浏览器**恢复您的账户，因为那里可能可以恢复："
+      ],
       "Two-factor authentication": [
         "双因素身份验证"
       ],
@@ -11605,6 +11864,9 @@
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "无法验证恢复文件签名，请联系支持人员。"
+      ],
+      "Unfortunately there is no recovery method available for this account.": [
+        "很遗憾，此账户没有可用的恢复方式！"
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "很不幸，此账户没有设置恢复密码的方式。"
@@ -11720,6 +11982,9 @@
       "Vault updated": [
         "保险库已更新"
       ],
+      "Verification code sent.": [
+        "验证码已发送。"
+      ],
       "Verification link expired": [
         "验证链接已过期"
       ],
@@ -11783,6 +12048,9 @@
       "We couldn’t process your payment.": [
         "我们未能处理您的支付。"
       ],
+      "We detected you are already signed in to a ${ BRAND_NAME } web app on **another browser**. You may be able to perform a password reset from your active session.": [
+        "我们检测到您已在**其他浏览器**中登录了 ${ BRAND_NAME } 网页应用，您可以通过当前活动会话重置密码！"
+      ],
       "We generated a strong password for you": [
         "我们为您生成了一个强密码"
       ],
@@ -11836,6 +12104,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "我们将向 ${ strong } 发送新的验证码"
+      ],
+      "Web sessions detected:": [
+        "检测到网页会话："
       ],
       "Web URL": [
         "网址"
@@ -12020,8 +12291,17 @@
       "You can now close this window.": [
         "您现在可以关闭此窗口了。"
       ],
+      "You can now reset your password to regain access to your account.": [
+        "您现在可以重置密码以重新获得账户的访问权限！"
+      ],
+      "You can now reset your password to regain access to your account. **This will disable 2-factor authentication.**": [
+        "您现在可以重置密码以重新获得对您账户的访问权限。**这将禁用 2FA**！"
+      ],
       "You can now return to the application to continue": [
         "您现在可以返回到应用程序以继续"
+      ],
+      "You can now sign in to your account again.": [
+        "您现在可以重新登录您的账户啦！"
       ],
       "You can turn on notifications to get alerts when new email messages arrive in this folder.": [
         "您可以开启通知功能，以便在新邮件到达此文件夹时获得提醒。"
@@ -12128,6 +12408,12 @@
       "You will NOT be able to decrypt any messages, files, and other data encrypted with this key. All data signed with this key will no longer be verified by ${ BRAND_NAME } applications.": [
         "您将无法解密任何用此密钥加密的消息、文件和其他数据。所有用此密钥签名的数据将不再被 ${ BRAND_NAME } 应用程序验证。"
       ],
+      "You will not be asked for a one-time code or a security key.": [
+        "系统不会要求您提供一次性代码或安全密钥！"
+      ],
+      "You will regain complete or partial access to your encrypted data.": [
+        "您将重新获得对加密数据的完全或部分访问权限。"
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "即将为您转至 PayPal 确认支付。"
       ],
@@ -12200,6 +12486,12 @@
       "Your email will only be used for this one-time verification.": [
         "您的邮箱将只会用于此一次性验证。"
       ],
+      "Your encrypted data will be locked": [
+        "您的加密数据将被锁定"
+      ],
+      "your encrypted data will be locked": [
+        "您的加密数据将被锁定"
+      ],
       "Your files will be encrypted and then saved": [
         "文件会加密保存"
       ],
@@ -12226,6 +12518,9 @@
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "下次账单日期为 ${ renewalTime }，您可以随时取消。如需立即更改套餐，请联系支持人员。"
+      ],
+      "Your old password": [
+        "您的旧密码"
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "您的组织使用单点登录 (SSO)。按下登录以使用 SSO 登录。"
@@ -13449,6 +13744,12 @@
       "End weekday": [
         "结束日期"
       ],
+      "Enter code": [
+        "输入代码"
+      ],
+      "Enter name or email address": [
+        "请输入用户名或邮箱地址"
+      ],
       "Enter password": [
         "输入密码"
       ],
@@ -13604,6 +13905,9 @@
       ],
       "Interval": [
         "验证码更新周期"
+      ],
+      "Invite people": [
+        "邀请他人"
       ],
       "Invite via email": [
         "通过电子邮件邀请"
@@ -14003,6 +14307,9 @@
       ],
       "Select Linux platform": [
         "选择 Linux 平台"
+      ],
+      "Select which Gmail address to connect": [
+        "请选择要连接的 Gmail 地址"
       ],
       "Send auto-reply": [
         "自动回复"
@@ -14516,11 +14823,20 @@
       "Common sign up issues": [
         "常见注册问题"
       ],
+      "contacts’ assistance": [
+        "联系人协助"
+      ],
       "Create account": [
         "创建账户"
       ],
       "Create an alias": [
         "创建别名"
+      ],
+      "data recovery option": [
+        "数据恢复选项"
+      ],
+      "Details": [
+        "详细信息"
       ],
       "Don't have access to your 2FA?": [
         "无法使用 2FA？"
@@ -15693,6 +16009,12 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "所有基本 ${ BRAND_NAME } 服务 (${ MAIL_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "预约安排"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "使用 ${ n } 个预约页面进行日程安排"
+      ],
       "Apps for": [
         "应用程序用于"
       ],
@@ -16675,6 +16997,9 @@
       ],
       "Two-factor authentication is not required anymore": [
         "双因素身份验证已设为非必需"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "您的 ${ BRAND_NAME } 地址已准备就绪"
       ],
       "Zoom video conferencing settings have been updated": [
         "Zoom 视频会议设置已更新"
@@ -20103,6 +20428,12 @@
       "${ FREE_PASS_ALIASES } hide-my-email alias to fight spam": [
         "适用于打击垃圾邮件的 ${ FREE_PASS_ALIASES } Hide-my-email 别名邮箱"
       ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "适用于打击垃圾邮件的 ${ FREE_PASS_ALIASES } Hide-my-email 别名邮箱"
+      ],
+      "${ MAIL_SHORT_APP_NAME } Free": [
+        "${ MAIL_SHORT_APP_NAME } Free"
+      ],
       "${ maxAddresses } address": [
         "${ maxAddresses } 个地址"
       ],
@@ -20187,6 +20518,9 @@
       "Bundle": [
         "套装"
       ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "请选择安全的 ${ MAIL_APP_NAME } 地址以开始使用"
+      ],
       "Collaborative document editing": [
         "协作文档编辑"
       ],
@@ -20250,6 +20584,9 @@
       "Gifted by **${ referrerName }**": [
         "由 **${ referrerName }** 赠送"
       ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "使用 ${ MAIL_APP_NAME } 保护您的通话隐私"
+      ],
       "Manage user access": [
         "管理用户访问"
       ],
@@ -20274,6 +20611,9 @@
       "Password manager for all your devices": [
         "适用于所有设备的密码管理器"
       ],
+      "Password-protected messages": [
+        "消息密码保护"
+      ],
       "Pick a service to get started.": [
         "请选择一个服务开始使用！"
       ],
@@ -20297,6 +20637,9 @@
       ],
       "Secure ${ VPN_CONNECTIONS } device at a time": [
         "同时保护 ${ VPN_CONNECTIONS } 台设备"
+      ],
+      "Secure calendar": [
+        "安全日历"
       ],
       "Secure file sharing": [
         "安全文件共享"
@@ -20406,6 +20749,9 @@
       "use your own email.": [
         "使用您自己的邮箱。"
       ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "遍布 ${ vpnServersCountData.free.countries } 个国家/地区的 VPN 服务器"
+      ],
       "VPN with servers in ${ vpnServersCountData.free.countries } country": [
         "遍布 ${ vpnServersCountData.free.countries } 个国家/地区的 VPN 服务器"
       ],
@@ -20417,6 +20763,9 @@
       ],
       "You are all set": [
         "一切就绪"
+      ],
+      "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
+        "您的账户包含 ${ MAIL_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME } 和 ${ LUMO_SHORT_APP_NAME } 免费功能的访问权限。"
       ],
       "Your plan": [
         "您的套餐"
@@ -22459,6 +22808,9 @@
       "An address for each role": [
         "每个角色的地址"
       ],
+      "An error occurred": [
+        "发生错误"
+      ],
       "Annual": [
         "年付"
       ],
@@ -22480,14 +22832,23 @@
       "Apply gift code": [
         "使用礼品码"
       ],
+      "Are you already signed in to ${ BRAND_NAME } in a browser?": [
+        "您是否已在浏览器中登录 ${ BRAND_NAME }？"
+      ],
       "Are you sure you want to close the preview?": [
         "确定要关闭预览吗？"
       ],
       "Are you sure you want to close?": [
         "确定要关闭吗？"
       ],
+      "Are you sure you want to disconnect this address?": [
+        "您确定要断开此地址的连接吗？"
+      ],
       "Are you sure?": [
         "是否确定？"
+      ],
+      "Ask your emergency contacts for help": [
+        "向您的紧急联系人寻求帮助"
       ],
       "Auto-deletion is active": [
         "自动删除已启用"
@@ -22510,8 +22871,17 @@
       "Bridge for ${ platform }": [
         "适用于 ${ platform } 的 Bridge"
       ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "将您的 Gmail 导入 ${ MAIL_APP_NAME }"
+      ],
       "Browser extensions": [
         "浏览器扩展"
+      ],
+      "Can you access your session in the browser?": [
+        "您能否访问浏览器中的会话？"
+      ],
+      "Can you reach out to your emergency contacts?": [
+        "您能联系到您的紧急联系人吗？"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "取消 ${ MAIL_SHORT_APP_NAME } 订阅"
@@ -22633,6 +23003,9 @@
       "Couldn’t create accounts": [
         "无法创建账户"
       ],
+      "Couldn’t recover your account": [
+        "无法恢复您的账户"
+      ],
       "Coupon": [
         "优惠券"
       ],
@@ -22647,6 +23020,9 @@
       ],
       "Create Gateway": [
         "创建网关"
+      ],
+      "Create group": [
+        "创建群组"
       ],
       "Create multiple user accounts": [
         "创建多个账户"
@@ -22819,6 +23195,9 @@
       "Discard changes?": [
         "放弃更改？"
       ],
+      "Disconnected from Gmail": [
+        "已断开与 Gmail 的连接"
+      ],
       "Display name and signature": [
         "称呼与落款"
       ],
@@ -22881,6 +23260,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "编辑网关 ${ currentName }"
+      ],
+      "Edit group": [
+        "编辑群组"
       ],
       "Edit invoice note": [
         "编辑发票备注"
@@ -23422,6 +23804,9 @@
       "Reconnect your account": [
         "重新连接账户"
       ],
+      "Recover account": [
+        "恢复账户"
+      ],
       "Recover data": [
         "恢复数据"
       ],
@@ -23547,6 +23932,9 @@
       ],
       "Select when you want this notification to be sent": [
         "选择您希望发送该通知的时间"
+      ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "使用 ${ MAIL_APP_NAME } 收发 Gmail 邮件"
       ],
       "Send email reminders?": [
         "发送电子邮件提醒？"
@@ -23740,11 +24128,17 @@
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "体验 ${ AUTHENTICATOR_APP_NAME }"
       ],
+      "Try changing your password in your active web session": [
+        "尝试在您当前活跃的网页会话中更改密码"
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "启用 ${ DARK_WEB_MONITORING_NAME }"
       ],
       "Two-factor authentication": [
         "双因素身份验证"
+      ],
+      "Two-factor authentication disabled": [
+        "2FA 已禁用"
       ],
       "Two-factor authentication enforcement": [
         "执行双因素身份验证"
@@ -23794,6 +24188,9 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "使用 ${ VPN_SHORT_APP_NAME } 保护隐私"
       ],
+      "Use backup recovery code": [
+        "使用备用恢复码"
+      ],
       "User": [
         "用户"
       ],
@@ -23814,6 +24211,9 @@
       ],
       "Verification failed": [
         "验证失败"
+      ],
+      "Verify it’s you": [
+        "验证您的身份"
       ],
       "Verifying your card...": [
         "正在验证您的银行卡..."
@@ -23865,6 +24265,9 @@
       ],
       "WireGuard configuration": [
         "WireGuard 配置"
+      ],
+      "You are all set": [
+        "一切就绪"
       ],
       "You can now create unlimited folders and labels": [
         "您现在可以创建无限的文件夹和标签"
@@ -24615,6 +25018,9 @@
       ]
     },
     "user_modal": {
+      "Add delegated roles to a user to grant them only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
+        "为用户添加委派角色，仅授予他们所需的特定权限，从而将完全管理员权限分开并保护您的环境安全。"
+      ],
       "Add multiple users": [
         "批量添加用户"
       ],
@@ -24642,6 +25048,9 @@
       "Email": [
         "邮箱地址"
       ],
+      "General": [
+        "常规"
+      ],
       "Invitation email": [
         "邀请邮件"
       ],
@@ -24656,6 +25065,12 @@
       ],
       "Remember to share the user's sign in details with them.": [
         "请记住与他们分享用户的登录详细信息。"
+      ],
+      "Roles and permissions": [
+        "角色与权限"
+      ],
+      "Save": [
+        "保存"
       ],
       "Send invite link via email instead": [
         "通过电子邮件发送邀请链接"

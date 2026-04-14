@@ -5545,6 +5545,9 @@
       "Internet connection restored.": [
         "Internet-yhteys on palautettu."
       ],
+      "Invitation confirmed": [
+        "Kutsu vahvistettu"
+      ],
       "Invite link copied": [
         "Kutsulinkki kopioitiin"
       ],
@@ -8207,6 +8210,13 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Kaikki ${ BRAND_NAME } -peruspalvelut (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "Ajanvaraus"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Ajanvaraus ${ n } -varaussivulla",
+        "Ajanvaraus ${ n } -varaussivulla"
+      ],
       "Auto-delete Spam and Trash": [
         "Roskapostin ja roskakorin automaattinen tyhjennys"
       ],
@@ -8981,6 +8991,10 @@
         "${ count } kohteen salauksen purku epäonnistui",
         "${ count } kohteen salauksen purku epäonnistui"
       ],
+      "${ errors.length } item failed to be deleted": [
+        "${ errors.length } kohteen poisto epäonnistui",
+        "${ errors.length } kohteen poisto epäonnistui"
+      ],
       "${ nbFailures } photo could not be removed from \"${ albumLink.name }\"": [
         "${ nbFailures } valokuvaa ei voitu poistaa albumista \"${ albumLink.name }\"",
         "${ nbFailures } valokuvaa ei voitu poistaa albumista \"${ albumLink.name }\""
@@ -9008,10 +9022,6 @@
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } kohde poistettiin roskakorista pysyvästi",
         "${ numberOfItems } kohdetta poistettiin roskakorista pysyvästi"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "${ numberOfItems } kohteen poisto epäonnistui",
-        "${ numberOfItems } kohteen poisto epäonnistui"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "${ numberOfItems } kohteen pysyvä poisto roskakorista epäonnistui",

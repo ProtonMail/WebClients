@@ -1084,7 +1084,7 @@
         "Зарэгістравацца"
       ],
       "Skip verification": [
-        "Прапусціць праверку"
+        "Прапусціць спраўджанне"
       ],
       "Start": [
         "Пачаць"
@@ -3543,7 +3543,7 @@
         "Знешнія запрашэнні часова адключаны. Паспрабуйце яшчэ раз пазней."
       ],
       "Failed loading group members": [
-        "Збой загрузкі членаў групы"
+        "Збой загрузкі ўдзельнікаў групы"
       ],
       "Failed to change permissions settings": [
         "Не ўдалося змяніць налады дазволаў"
@@ -5894,6 +5894,9 @@
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "Калі ў вас ёсць што-небудзь з гэтага, перайдзіце ў налады ўліковага запісу ${ BRAND_NAME }, каб працягнуць працэс разблакіроўкі."
       ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Вы можаце выкарыстаць 1 з 16 рэзервовых кодаў аднаўлення, якія вы атрымалі пры наладжванні двухфактарнай аўтэнтыфікацыі, калі вы страцілі доступ да вашай праграмы аўтэнтыфікацыі. ${ learnMoreLink }"
+      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Калі вы працягніце паніжэнне свайго тарыфнага плана, то страціце доступ да платных функцый ${ MAIL_APP_NAME } і ${ VPN_APP_NAME }."
       ],
@@ -5965,6 +5968,9 @@
       ],
       "Internet connection restored.": [
         "Падключэнне да інтэрнэту адноўлена."
+      ],
+      "Invitation confirmed": [
+        "Запрашэнне пацверджана"
       ],
       "Invite link copied": [
         "Запрашальная спасылка скапіявана"
@@ -8912,6 +8918,15 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Усе базавыя сэрвісы ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "Планаванне сустрэч"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Планіруйце сустрэчы з ${ n } старонкай браніравання",
+        "Планіруйце сустрэчы з ${ n } старонкай браніравання",
+        "Планіруйце сустрэчы з ${ n } старонкамі браніравання",
+        "Планіруйце сустрэчы з ${ n } старонкамі браніравання"
+      ],
       "Auto-delete Spam and Trash": [
         "Аўтавыдаленне спаму і смецця"
       ],
@@ -9440,7 +9455,7 @@
         "Стварайце да ${ n } календароў або дадавайце календары ад сяброў, сям'і, калег і арганізацый"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
-        "Стварайце да ${ n } адрасоў электроннай пошты/псеўданімаў, якія вы можаце прызначыць членам сям'і. Выкарыстоўвайце іх для ідэнтычнасці ў інтэрнэце, напрыклад, JankaPakupnik@${ domain } для ўліковых запісаў пакупак."
+        "Стварайце да ${ n } адрасоў электроннай пошты/псеўданімаў, якія вы можаце прызначыць удзельнікам сям'і. Выкарыстоўвайце іх для ідэнтычнасці ў інтэрнэце, напрыклад, JankaPakupnik@${ domain } для ўліковых запісаў пакупак."
       ],
       "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
         "Карыстальніцкія дамены для псеўданімаў, дадатковыя паштовыя скрыні, магчымасць адпраўляць лісты з псеўданімаў і многае іншае"
@@ -9737,6 +9752,12 @@
         "Не ўдалося скапіяваць ${ errors.length } элементаў",
         "Не ўдалося скапіяваць ${ errors.length } элементаў"
       ],
+      "${ errors.length } item failed to be deleted": [
+        "Не ўдалося выдаліць ${ errors.length } элемент",
+        "Не ўдалося выдаліць ${ errors.length } элементы",
+        "Не ўдалося выдаліць ${ errors.length } элементаў",
+        "Не ўдалося выдаліць ${ errors.length } элементаў"
+      ],
       "${ errors.length } item failed to be trashed": [
         "Не ўдалося выдаліць ${ errors.length } элемент",
         "Не ўдалося выдаліць ${ errors.length } элементы",
@@ -9790,12 +9811,6 @@
         "${ numberOfItems } элементы незваротна выдалены са сметніцы",
         "${ numberOfItems } элементаў незваротна выдалены са сметніцы",
         "${ numberOfItems } элементы незваротна выдалены са сметніцы"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "Не ўдалося выдаліць ${ numberOfItems } элемент",
-        "Не ўдалося выдаліць ${ numberOfItems } элементы",
-        "Не ўдалося выдаліць ${ numberOfItems } элементаў",
-        "Не ўдалося выдаліць ${ numberOfItems } элементаў"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "Не ўдалося незваротна выдаліць са сметніцы ${ numberOfItems } элемент",

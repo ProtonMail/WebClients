@@ -3315,6 +3315,10 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Você também pode conferir nossa ${ statusPageLink }"
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "Erro ao mover ${ failureItems.length } item",
+        "Erro ao mover ${ failureItems.length } itens"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } é seu nome de usuário. Para criar um ${ emailAddress }, vá para Configurações > Identidade e endereços > Domínio curto (pm.me)"
       ],
@@ -3478,6 +3482,9 @@
       ],
       "Failed loading group members": [
         "Falha ao carregar membros do grupo"
+      ],
+      "Failed to change permissions settings": [
+        "Falha ao alterar as configurações de permissões"
       ],
       "Failed to copy photo to album": [
         "Erro ao copiar a foto para o álbum"
@@ -5757,6 +5764,9 @@
       ],
       "Internet connection restored.": [
         "Conexão com a internet restaurada."
+      ],
+      "Invitation confirmed": [
+        "Convite confirmado"
       ],
       "Invite link copied": [
         "Link de convite copiado"
@@ -8599,6 +8609,13 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Todos os serviços básicos da ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "Agendamento de compromissos"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Agendamento de compromissos com ${ n } página de agendamento",
+        "Agendamento de compromissos com ${ n } página de agendamentos"
+      ],
       "Auto-delete Spam and Trash": [
         "Excluir conteúdo de Spam e Lixeira de forma automática"
       ],
@@ -9398,6 +9415,10 @@
         "Erro ao copiar ${ errors.length } item",
         "Erro ao copiar ${ errors.length } itens"
       ],
+      "${ errors.length } item failed to be deleted": [
+        "${ errors.length } item não foi excluído",
+        "${ errors.length } itens não foram excluídos"
+      ],
       "${ errors.length } item failed to be trashed": [
         "Erro ao carregar ${ errors.length } item para a lixeira",
         "Erro ao carregar ${ errors.length } itens para a lixeira"
@@ -9433,10 +9454,6 @@
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } item excluído permanentemente da lixeira",
         "${ numberOfItems } itens excluídos permanentemente da lixeira"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "${ numberOfItems } item não foi excluído",
-        "${ numberOfItems } itens não foram excluídos"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "Erro ao excluir permanentemente ${ numberOfItems } arquivo da lixeira",

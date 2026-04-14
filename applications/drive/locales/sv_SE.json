@@ -3312,6 +3312,10 @@
       "${ errorMessage }. You can also check our ${ statusPageLink }": [
         "${ errorMessage }. Du kan också kontrollera vår ${ statusPageLink }"
       ],
+      "${ failureItems.length } item failed to be moved": [
+        "${ failureItems.length } objekt misslyckades att flyttas",
+        "${ failureItems.length } objekt misslyckades att flyttas"
+      ],
       "${ user.Name } is your username. To create ${ emailAddress }, please go to Settings > Identity and addresses > Short domain (pm.me)": [
         "${ user.Name } är ditt användarnamn. För att skapa ${ emailAddress }, gå till Inställningar > Identitet och adresser > Kort domän (pm.me)"
       ],
@@ -5727,6 +5731,9 @@
       ],
       "Internet connection restored.": [
         "Internetanslutning återställd."
+      ],
+      "Invitation confirmed": [
+        "Inbjudan bekräftad"
       ],
       "Invite link copied": [
         "Inbjudningslänk kopierad"
@@ -9368,10 +9375,6 @@
       "${ numberOfItems } item deleted permanently from trash": [
         "${ numberOfItems } objekt har tagits bort permanent från papperskorg",
         "${ numberOfItems } objekt har tagits bort permanent från papperskorg"
-      ],
-      "${ numberOfItems } item failed to be deleted": [
-        "${ numberOfItems } objekt misslyckades att tas bort",
-        "${ numberOfItems } objekt misslyckades att tas bort"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "“${ numberOfItems }“ fil misslyckades att tas bort permanent från papperskorgen",

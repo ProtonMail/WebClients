@@ -1053,6 +1053,9 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } 個 ${ LUMO_APP_NAME } 授權席次"
       ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } 授權"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats }撰寫幫手就位"
       ],
@@ -1735,6 +1738,9 @@
     "Checkout row": {
       "${ users } user": [
         "${ users } 位使用者"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "${ cycle } 個月小計"
       ],
       "Total": [
         "總共"
@@ -4954,6 +4960,9 @@
       ],
       "Ad targeting": [
         "廣告目標鎖定"
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "新增 ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
       "Added and removed participants will be notified about all the events in this series.": [
         "已加入及已移除的參與者將獲通知此一系列中的全部事件。"
@@ -11136,6 +11145,9 @@
       ],
       "Discard changes?": [
         "捨棄變更？"
+      ],
+      "Disconnected from Gmail": [
+        "與 Gmail 中斷連線"
       ],
       "Does not repeat": [
         "不重複"

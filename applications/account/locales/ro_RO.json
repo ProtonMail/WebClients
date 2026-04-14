@@ -903,8 +903,14 @@
       "I don't have my key": [
         "Nu am cheia mea"
       ],
+      "I don't have my phrase": [
+        "Nu am fraza de recuperare"
+      ],
       "I don’t have my backup codes": [
         "Nu am codurile de rezervă"
+      ],
+      "I don’t have my phone": [
+        "Nu am telefonul"
       ],
       "Ignore": [
         "Ignorare"
@@ -977,6 +983,9 @@
       ],
       "Later": [
         "Mai târziu"
+      ],
+      "Learn about recovery options": [
+        "Aflați despre opțiunile de recuperare"
       ],
       "Learn more": [
         "Detalii"
@@ -1258,7 +1267,7 @@
         "Solicitare funcție"
       ],
       "Request new code": [
-        "Solicitare cod nou"
+        "Solicitați un cod nou"
       ],
       "Requires a verified recovery email address": [
         "Necesită o adresă de e-mail de recuperare verificată"
@@ -1301,6 +1310,9 @@
       ],
       "Return to sign in": [
         "Revenire la autentificare"
+      ],
+      "Return to sign-in": [
+        "Revenire la conectare"
       ],
       "Review": [
         "Revizuire"
@@ -1412,6 +1424,9 @@
       ],
       "Send my username": [
         "Trimiteți-mi numele de utilizator"
+      ],
+      "Send new code": [
+        "Trimitere cod nou"
       ],
       "Send new invite": [
         "Trimitere invitație nouă"
@@ -1586,6 +1601,9 @@
       ],
       "Try another method": [
         "Încercaţi o altă metodă"
+      ],
+      "Try another way": [
+        "Încercați altă metodă"
       ],
       "Try for free": [
         "Încercați gratis"
@@ -4844,6 +4862,14 @@
     "Delete group prompt": {
       "Are you sure you want to delete this group?": [
         "Ștergeți acest grup?"
+      ],
+      "Please note that if you delete the group ${ displayGroupName }, it will be permanently removed.": [
+        "Rețineți că dacă ștergeți grupul ${ displayGroupName }, acesta va fi eliminat permanent."
+      ]
+    },
+    "Delete group prompt with email": {
+      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
+        "Rețineți că, dacă ștergeți grupul ${ displayGroupName } (cu adresa ${ displayGroupAddressEmail }), nu veți mai putea primi mesaje folosind adresa acestuia."
       ]
     },
     "Delinquent modal title": {
@@ -8426,6 +8452,14 @@
         "Servicii"
       ]
     },
+    "Group detail label": {
+      "Description:": [
+        "Descriere:"
+      ],
+      "Group address:": [
+        "Adresă grup:"
+      ]
+    },
     "Group member count": {
       "${ memberCount } member": [
         "${ memberCount } membru",
@@ -9142,6 +9176,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "Asistent de scriere ${ BRAND_NAME } Scribe"
       ],
+      "${ BRAND_NAME } will send a verification code to ${ phoneNumber }. Standard message rates may apply.": [
+        "${ BRAND_NAME } va trimite un cod de verificare la ${ phoneNumber }. Se pot aplica tarife standard pentru mesaje."
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Tehnologia de criptare ${ BRAND_NAME } semnifică faptul că nimeni nu vă poate accesa parola - nici măcar noi."
       ],
@@ -9162,6 +9199,9 @@
         "Țări activate: ${ countriesCount }",
         "Țări activate: ${ countriesCount }",
         "Țări activate: ${ countriesCount }"
+      ],
+      "${ DataLockedText }, but recoverable with your ${ RecoveryContactsLink }:": [
+        "${ DataLockedText }, dar se pot recupera apelând la un ${ RecoveryContactsLink }:"
       ],
       "${ discountPercent }% discount": [
         "Reducere ${ discountPercent }%"
@@ -9547,6 +9587,9 @@
         "Adăugare server (${ availableAddedCount } disponibile)",
         "Adăugare server (${ availableAddedCount } disponibile)"
       ],
+      "Add users by name or email to this group.": [
+        "Adăugați utilizatori după nume sau e-mail la acest grup."
+      ],
       "Add video conferencing links to calendar invitations": [
         "Adăugați legături de conferință video la invitațiile din calendar."
       ],
@@ -9652,6 +9695,9 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Un alias de e-mail funcționează ca o adresă de e-mail, dar reduce mesajele nedorite și vă păstrează adresa de e-mail și identitatea reală ascunse."
       ],
+      "An email with a verification code was just sent to ${ emailAddress }. If you can’t find the message in your inbox, please check your spam folder.": [
+        "Un mesaj cu un cod de verificare a fost trimis la ${ emailAddress }. Dacă nu găsiți mesajul în mesajele primite, verificați și în folderul de mesaje nedorite."
+      ],
       "An error occurred while communicating with **${ applicationName }**": [
         "A apărut o eroare în timpul comunicării cu **${ applicationName }**."
       ],
@@ -9663,6 +9709,9 @@
       ],
       "An import is paused because your storage is almost full.": [
         "O importare este suspendată deoarece spațiul de stocare este aproape plin."
+      ],
+      "An SMS with a verification code was just sent to ${ phoneNumber }.": [
+        "Un SMS cu un cod de verificare tocmai a fost trimis la ${ phoneNumber }."
       ],
       "and": [
         "și"
@@ -9735,6 +9784,9 @@
       ],
       "Are you sure you want to sort your labels alphabetically?": [
         "Sortați etichetele alfabetic?"
+      ],
+      "Ask them to sign in to their ${ ACCOUNT_APP_NAME } in the browser, and go to **Settings → All settings → Recovery → Emergency access→ People who trust me.**": [
+        "Spuneți-le să se conecteze la ${ ACCOUNT_APP_NAME } în navigatorul web și să acceseze **Setări → Toate setările → Recuperare → Acces de urgență → Persoane care au încredere în mine.**"
       ],
       "Ask your organization admin to setup Gateways.": [
         "Solicitați administratorului organizației să seteze porțile de acces."
@@ -9814,6 +9866,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Înainte de a solicita un cod nou de verificare, verificați-vă folderul de mesaje nedorite și verificați dacă ${ strong } este adresa corectă."
       ],
+      "Before sending a new verification code, check your spam folder for ${ EmailOrPhoneNumber }.": [
+        "Înainte de a trimite un nou cod de verificare, verificați în folderul de mesaje nedorite pentru ${ EmailOrPhoneNumber }."
+      ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
         "Înainte de a putea primi e-mailuri pentru adresele de domeniu personale la ${ MAIL_APP_NAME }, trebuie să adăugați următoarele două înregistrări MX în consola DNS (situată pe platforma de unde ați achiziționat domeniul personalizat). Puteți găsi un exemplu și câteva sfaturi utile ${ kbLink }."
       ],
@@ -9847,6 +9902,15 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Partajând toate detaliile evenimentului din acest calendar, sunteți de acord să permiteți accesul ${ BRAND_NAME } la aceste informații criptate din calendar."
       ],
+      "Can you access your active session?": [
+        "Vă puteți accesa sesiunea activă?"
+      ],
+      "Can you access your active web session in another browser?": [
+        "Vă puteți accesa sesiunea web activă într-un alt navigator web?"
+      ],
+      "Can you reach out to your contact?": [
+        "Puteți lua legătura cu persoana de contact?"
+      ],
       "Cancel": [
         "Anulare"
       ],
@@ -9868,6 +9932,9 @@
       "Check the status of imports and forwarding.": [
         "Consultați starea importărilor și transferărilor."
       ],
+      "Check your network and try again.": [
+        "Verificați rețeaua și reîncercați."
+      ],
       "Choose a plan that works best for you.": [
         "Alegeți un plan care vi se potrivește cel mai bine."
       ],
@@ -9880,6 +9947,12 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Faceți clic pe «Solicitare cod nou» pentru a primi un cod nou de verificare trimis la ${ strong }. Dacă această acest număr de telefon nu este corect, apăsați pe «Editare» pentru a-l corecta."
       ],
+      "Click 'Trouble signing in?' on your TV to follow the alternative steps.": [
+        "Apăsați pe „Probleme la conectare?” pe TV pentru a urma pașii alternativi."
+      ],
+      "Click **Request password reset** and follow the prompts.": [
+        "Apăsați pe **Solicitare resetare parolă** și urmați instrucțiunile."
+      ],
       "Click the icon to open it anytime.": [
         "Faceți clic pe pictogramă pentru deschide aplicația."
       ],
@@ -9891,9 +9964,6 @@
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Premiul pentru alegerea editorilor CNET cu o evaluare de 8,4 din 10"
-      ],
-      "Code expired": [
-        "Codul a expirat"
       ],
       "Coming soon": [
         "În curând"
@@ -10036,6 +10106,9 @@
       "Data recoverable on this device": [
         "Datele recuperabile pe acest dispozitiv"
       ],
+      "Data recoverable with recovery phrase": [
+        "Date recuperabile cu fraza de recuperare"
+      ],
       "dedicated servers": [
         "servere dedicate"
       ],
@@ -10067,6 +10140,9 @@
         "Servere poartă de acces care se șterg: ${ deletedServerCount }",
         "Servere poartă de acces care se șterg: ${ deletedServerCount }",
         "Servere poartă de acces care se șterg: ${ deletedServerCount }"
+      ],
+      "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
+        "În funcție de setările actuale, aceștia pot primi acces imediat sau după o **perioadă de așteptare** desemnată."
       ],
       "Did you know?": [
         "Știați că?"
@@ -10168,6 +10244,9 @@
       ],
       "Drop to import": [
         "Plasare pentru importare"
+      ],
+      "Due to end-to-end encryption, you can reset your password, but ${ DataLockedText } until you use a ${ DataRecoveryOptionsLink }:": [
+        "Datorită criptării bilaterale, vă puteți reseta parola, dar ${ DataLockedText } până când folosiți ${ DataRecoveryOptionsLink }:"
       ],
       "Each code can only be used once": [
         "Fiecare cod poate fi folosit doar o dată."
@@ -10276,6 +10355,9 @@
       ],
       "Enter new password for user ${ userName }.": [
         "Introduceți noua parolă pentru utilizatorul ${ userName }."
+      ],
+      "Enter the 12-word recovery phrase associated with your account.": [
+        "Introduceți fraza de recuperare de 12 cuvinte asociată contului."
       ],
       "Enter the code from your authenticator app": [
         "Introduceți codul din aplicația Authenticator."
@@ -10421,6 +10503,9 @@
       "Friends and family": [
         "Prieteni și familie"
       ],
+      "From there, they can request emergency access to your account by clicking **Request access.**": [
+        "De acolo, ei pot solicita acces de urgență la contul dvs. făcând clic pe **Solicitare acces.**"
+      ],
       "Gateway couldn't be deleted. Please try again": [
         "Poarta de acces nu a putut fi ștearsă. Reîncercați."
       ],
@@ -10441,6 +10526,9 @@
       ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Obțineți acces creând un cont ${ BRAND_NAME } și acceptând invitația."
+      ],
+      "Get in touch with your emergency contacts, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed**.": [
+        "Luați legătura cu contactele de urgență pentru a vedea dacă vă pot ajuta. După solicitarea accesului de urgență la contul personal, acestea vor putea să vă schimbe parola **după ce a trecut timpul de așteptare pentru acces**."
       ],
       "Get it on Google Play": [
         "Descărcare din Magazin Play"
@@ -10499,6 +10587,12 @@
       "How it works": [
         "Cum funcționează"
       ],
+      "How to perform a signed-in reset": [
+        "Cum se efectuează o resetare când v-ați conectat"
+      ],
+      "How your emergency contact can change your password for you:": [
+        "Cum vă poate reseta parola contactul de urgență:"
+      ],
       "IBAN: ${ formattedIBAN }": [
         "IBAN: ${ formattedIBAN }"
       ],
@@ -10526,6 +10620,9 @@
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Dacă sunt activate combinațiile de taste, puteți utiliza următoarele taste pentru acțiuni rapide sau pentru a trece la diferite vizualizări. ${ metaKey } + K este întotdeauna activată."
       ],
+      "If possible, when signing in, use a device or a browser where you’ve signed in before.": [
+        "Dacă este posibil, la conectare, folosiți un dispozitiv sau un navigator web pe care v-ați mai conectat anterior."
+      ],
       "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
         "Dacă adresa de e-mail introdusă a fost folosită pentru a rezerva adresa de e-mail a unui copil, se va retrimite cuponul de activare."
       ],
@@ -10540,6 +10637,9 @@
       ],
       "If you are signed in somewhere else, you may be able to ${ signedInPasswordResetLink }.": [
         "Dacă v-ați conectat în altă parte, puteți să ${ signedInPasswordResetLink }."
+      ],
+      "If you are signed in to a ${ BRAND_NAME } web app in **another browser**, you may be able to perform a password reset from your active session.": [
+        "Dacă v-ați conectat la o aplicație web ${ BRAND_NAME } într-un **alt navigator web**, este posibil să puteți reseta parola din sesiunea activă."
       ],
       "If you believe this is in error, please contact us ${ contactLink }.": [
         "Dacă credeți că acest lucru este o eroare, contactați-ne la ${ contactLink }."
@@ -10558,6 +10658,9 @@
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Dacă aveți un cod cadou, introduceți-l mai jos pentru a aplica reducerea."
+      ],
+      "If you have emergency contacts, get in touch with them, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed.**": [
+        "Dacă aveți contacte de urgență, luați legătura cu ele pentru a vedea dacă vă pot ajuta. După solicitarea accesului de urgență la cont, acestea vor putea să vă schimbe parola **după ce timpul de așteptare pentru acces a trecut**."
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Dacă vă pierdeți dispozitivul pentru autentificarea cu doi factori (A2F), puteți folosi aceste coduri în locul celor 6 cifre pentru autentificarea cu doi factori pentru a vă conecta la cont. Fiecare cod e de unică folosință."
@@ -10676,6 +10779,9 @@
       ],
       "Internet connection restored.": [
         "Conexiunea la internet a revenit."
+      ],
+      "Invalid code. ${ RequestNewCodeLink } and try again.": [
+        "Cod nevalid. ${ RequestNewCodeLink } și reîncercați."
       ],
       "Invitation link expired": [
         "Legătura web a invitației a expirat."
@@ -11042,6 +11148,9 @@
       "On Ubuntu?": [
         "Pe Ubuntu?"
       ],
+      "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
+        "După ce a fost acordat accesul la cont, aceștia vă pot accesa setările de **Recuperare** și vă **schimbe parola ${ ACCOUNT_APP_NAME }**."
+      ],
       "Once you reset your password:": [
         "După ce veți reseta parola:"
       ],
@@ -11059,6 +11168,9 @@
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Deschideți ghidul pentru acțiuni recomandate și legături web utile."
+      ],
+      "Open your active session in the browser, and go to **Settings → All settings → Recovery → Password reset settings.**": [
+        "Deschideți sesiunea activă în navigaorul web și accesați **Setări → Toate setările → Recuperare → Setări de resetare parolă.**"
       ],
       "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
         "Deschideți setările Safari pentru extensie și verificați dacă permisiunile de site sunt activate pentru domeniile ${ BRAND_NAME }."
@@ -11317,6 +11429,12 @@
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Recomandat pe dispozitivele de încredere. ${ keepMeSignedInLearnMoreLink }"
       ],
+      "Recovery contacts": [
+        "Contacte de recuperare"
+      ],
+      "Recovery file": [
+        "Fișier de recuperare"
+      ],
       "Recovery file downloaded": [
         "Fișier de recuperare descărcat"
       ],
@@ -11325,6 +11443,9 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informațiile de recuperare vor rămâne pe acest dispozitiv până când le selectați să fie șterse."
+      ],
+      "Recovery phrase": [
+        "Frază de recuperare"
       ],
       "Recovery phrase copied to clipboard": [
         "Fraza de recuperare a fost copiată în memorie."
@@ -11371,6 +11492,9 @@
       "Resend verification email": [
         "Retrimitere e-mail de verificare"
       ],
+      "Resetting your password in your active web session will ensure **your encrypted data will remain accessible** after you change your password.": [
+        "Resetarea parolei în sesiunea web activă vă asigură **că datele criptate vă vor rămâne accesibile** după schimbarea parolei."
+      ],
       "Restore": [
         "Restaurare"
       ],
@@ -11412,6 +11536,9 @@
       ],
       "Securing your account": [
         "Securizare cont"
+      ],
+      "Select a group to view its members and settings.": [
+        "Selectați un grup pentru a vizualiza membrii și setările acestuia."
       ],
       "Select one or multiple user affiliations": [
         "Selectați una sau mai multe afilieri pentru utilizatori."
@@ -11995,6 +12122,9 @@
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Încercați ${ productName } fără riscuri - dacă din orice motiv vă răzgândiți, veți primi o rambursare completă. Fără întrebări."
       ],
+      "Try recovering your account from a **device or browser where you have signed in before**, as it may be possible from there:": [
+        "Încercați să vă recuperați contul de pe un **dispozitiv sau navigator web pe care v-ați conectat anterior**, deoarece este posibil să reușiți de acolo:"
+      ],
       "Two-factor authentication": [
         "Autentificare cu doi factori"
       ],
@@ -12009,6 +12139,9 @@
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Nu se poate verifica semnătura fișierului de recuperare. Contactați serviciul de asistență."
+      ],
+      "Unfortunately there is no recovery method available for this account.": [
+        "Din păcate nu există nicio metodă de recuperare disponibilă pentru acest cont."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Din păcate nu există nicio metodă de recuperare salvată pentru acest cont."
@@ -12124,6 +12257,9 @@
       "Vault updated": [
         "Seiful a fost actualizat."
       ],
+      "Verification code sent.": [
+        "Codul de verificare a fost trimis."
+      ],
       "Verification link expired": [
         "Legătura de verificare a expirat."
       ],
@@ -12187,6 +12323,9 @@
       "We couldn’t process your payment.": [
         "Nu vi s-a putut procesa plata."
       ],
+      "We detected you are already signed in to a ${ BRAND_NAME } web app on **another browser**. You may be able to perform a password reset from your active session.": [
+        "Am detectat că deja v-ați conectat la o aplicație web ${ BRAND_NAME } într-un **alt navigator web**. Este posibil să puteți reseta parola din sesiunea activă."
+      ],
       "We generated a strong password for you": [
         "Vi s-a generat o parolă puternică"
       ],
@@ -12240,6 +12379,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Se va trimite trimite un nou cod de verificare la ${ strong }."
+      ],
+      "Web sessions detected:": [
+        "Sesiune web detectată:"
       ],
       "Web URL": [
         "Adresa URL"
@@ -12436,6 +12578,12 @@
       "You can now close this window.": [
         "Acum puteți închide această fereastră."
       ],
+      "You can now reset your password to regain access to your account.": [
+        "Acum vă puteți reseta parola pentru a redobândi accesul la contul personal."
+      ],
+      "You can now reset your password to regain access to your account. **This will disable 2-factor authentication.**": [
+        "Acum puteți reseta parola pentru a redobândi accesul la cont. **Aceasta va dezactiva autentificarea cu doi factori.**"
+      ],
       "You can now return to the application to continue": [
         "Puteți reveni la aplicație pentru a continua"
       ],
@@ -12556,6 +12704,9 @@
       "You will not be asked for a one-time code or a security key.": [
         "Nu vi se va solicita un cod de unică folosință sau o cheie de securitate."
       ],
+      "You will regain complete or partial access to your encrypted data.": [
+        "Veți recăpăta acces complet sau parțial la datele personale criptate."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Pentru verificarea plății se va deschide o filă către PayPal."
       ],
@@ -12632,6 +12783,12 @@
       "Your email will only be used for this one-time verification.": [
         "Adresa va fi folosită doar pentru această verificare unică."
       ],
+      "Your encrypted data will be locked": [
+        "Datele criptate vor fi blocate"
+      ],
+      "your encrypted data will be locked": [
+        "datele criptate vor fi blocate"
+      ],
       "Your files will be encrypted and then saved": [
         "Fișierele vor fi criptate și apoi salvate."
       ],
@@ -12658,6 +12815,9 @@
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "Următoarea dată de facturare este ${ renewalTime }. Puteți anula oricând. Contactați asistența dacă aveți nevoie de o schimbare imediată a planului."
+      ],
+      "Your old password": [
+        "Parola veche"
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Organizația dvs. utilizează conectarea unică (SSO). Apăsați pe Conectare pentru a continua cu furnizorul propriu de conectare unică (SSO)."
@@ -13897,6 +14057,12 @@
       "End weekday": [
         "Ultima zi a săptămânii"
       ],
+      "Enter code": [
+        "Introduceți codul"
+      ],
+      "Enter name or email address": [
+        "Introduceți numele sau adresa de e-mail"
+      ],
       "Enter password": [
         "Introduceți parola"
       ],
@@ -14052,6 +14218,9 @@
       ],
       "Interval": [
         "Interval"
+      ],
+      "Invite people": [
+        "Invitați persoane"
       ],
       "Invite via email": [
         "Invitați prin e-mail"
@@ -14971,11 +15140,20 @@
       "Common sign up issues": [
         "Probleme comune de înregistrare"
       ],
+      "contacts’ assistance": [
+        "contact de recuperare"
+      ],
       "Create account": [
         "Creare cont"
       ],
       "Create an alias": [
         "Creați un alias"
+      ],
+      "data recovery option": [
+        "opțiunea de recuperare a datelor"
+      ],
+      "Details": [
+        "Detalii"
       ],
       "Don't have access to your 2FA?": [
         "Nu aveți acces la A2F?"
@@ -16215,6 +16393,14 @@
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Toate serviciile de bază ale ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "Appointment scheduling": [
+        "Planificare întâlniri"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Planificare întâlniri cu ${ n } pagină de programări",
+        "Planificare întâlniri cu ${ n } pagini de programări",
+        "Planificare întâlniri cu ${ n } de pagini de programări"
       ],
       "Apps for": [
         "Aplicații pentru"
@@ -20829,6 +21015,12 @@
         "${ FREE_PASS_ALIASES } aliasuri hide-my-email pentru a combate mesajele nedorite",
         "${ FREE_PASS_ALIASES } de aliasuri hide-my-email pentru a combate mesajele nedorite"
       ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } de aliasuri hide-my-email pentru a combate mesajele nedorite"
+      ],
+      "${ MAIL_SHORT_APP_NAME } Free": [
+        "${ MAIL_SHORT_APP_NAME } Free"
+      ],
       "${ maxAddresses } address": [
         "${ maxAddresses } adresă",
         "${ maxAddresses } adrese",
@@ -20933,6 +21125,9 @@
       "Bundle": [
         "Pachet"
       ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "Alegeți o adresă securizată ${ MAIL_APP_NAME } pentru a începe"
+      ],
       "Collaborative document editing": [
         "Editare colaborativă de documente"
       ],
@@ -20996,6 +21191,9 @@
       "Gifted by **${ referrerName }**": [
         "Oferit de **${ referrerName }**"
       ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "Păstrați-vă conversațiile private cu ${ MAIL_APP_NAME }"
+      ],
       "Manage user access": [
         "Gestionare acces utilizatori"
       ],
@@ -21019,6 +21217,9 @@
       ],
       "Password manager for all your devices": [
         "Manager de parole pentru toate dispozitivele deținute"
+      ],
+      "Password-protected messages": [
+        "Mesaje protejate prin parolă"
       ],
       "Pick a service to get started.": [
         "Alegeți un serviciu pentru a începe."
@@ -21045,6 +21246,9 @@
         "Dispozitive securizate simultan: ${ VPN_CONNECTIONS }",
         "Dispozitive securizate simultan: ${ VPN_CONNECTIONS }",
         "Dispozitive securizate simultan: ${ VPN_CONNECTIONS }"
+      ],
+      "Secure calendar": [
+        "Calendar securizat"
       ],
       "Secure file sharing": [
         "Partajare securizată fișiere"
@@ -21154,6 +21358,9 @@
       "use your own email.": [
         "utilizați propriul e-mail."
       ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "VPN cu servere în ${ vpnServersCountData.free.countries } țări"
+      ],
       "VPN with servers in ${ vpnServersCountData.free.countries } country": [
         "Țări servere VPN: ${ vpnServersCountData.free.countries }",
         "Țări servere VPN: ${ vpnServersCountData.free.countries }",
@@ -21167,6 +21374,9 @@
       ],
       "You are all set": [
         "Totul este pregătit"
+      ],
+      "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
+        "Contul actual include acces la funcții gratuite în ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } și ${ LUMO_SHORT_APP_NAME }."
       ],
       "Your plan": [
         "Planul actual"
@@ -23331,6 +23541,9 @@
       "Apply gift code": [
         "Aplicare cod cadou"
       ],
+      "Are you already signed in to ${ BRAND_NAME } in a browser?": [
+        "V-ați conectat deja la ${ BRAND_NAME } într-un navigator web?"
+      ],
       "Are you sure you want to close the preview?": [
         "Închideți examinarea?"
       ],
@@ -23342,6 +23555,9 @@
       ],
       "Are you sure?": [
         "Confirmați?"
+      ],
+      "Ask your emergency contacts for help": [
+        "Cereți ajutor de la contactele de urgență"
       ],
       "Auto-deletion is active": [
         "Ștergerea automată este activă"
@@ -23369,6 +23585,12 @@
       ],
       "Browser extensions": [
         "Extensii navigator web"
+      ],
+      "Can you access your session in the browser?": [
+        "Vă puteți accesa sesiunea din navigatorul web?"
+      ],
+      "Can you reach out to your emergency contacts?": [
+        "Poți contacta persoanele de contact de urgență?"
       ],
       "Cancel ${ MAIL_SHORT_APP_NAME } subscription": [
         "Anulare abonare ${ MAIL_SHORT_APP_NAME }"
@@ -23430,6 +23652,9 @@
       "Close": [
         "Închidere"
       ],
+      "Code expired": [
+        "Codul a expirat"
+      ],
       "Collaborate on documents": [
         "Colaborați la documente"
       ],
@@ -23487,8 +23712,14 @@
       "Continue with partial import?": [
         "Continuați cu importarea parțială?"
       ],
+      "Couldn't sign in": [
+        "Nu s-a putut conecta"
+      ],
       "Couldn’t create accounts": [
         "Nu s-au putut crea conturi"
+      ],
+      "Couldn’t recover your account": [
+        "Nu vi s-a putut recupera contul."
       ],
       "Coupon": [
         "Cupon"
@@ -23506,6 +23737,9 @@
       ],
       "Create Gateway": [
         "Creare poartă de acces"
+      ],
+      "Create group": [
+        "Creare grup"
       ],
       "Create multiple user accounts": [
         "Creare conturi multiple de utilizatori"
@@ -23745,6 +23979,9 @@
       ],
       "Edit Gateway ${ currentName }": [
         "Editare poartă de acces ${ currentName }"
+      ],
+      "Edit group": [
+        "Editare grup"
       ],
       "Edit invoice note": [
         "Editare observații factură"
@@ -24290,6 +24527,9 @@
       "Reconnect your account": [
         "Reconectați-vă contul"
       ],
+      "Recover account": [
+        "Recuperare cont"
+      ],
       "Recover data": [
         "Recuperare date"
       ],
@@ -24340,6 +24580,9 @@
       ],
       "Request new code": [
         "Solicitare cod nou"
+      ],
+      "Request new code?": [
+        "Solicitați un cod nou?"
       ],
       "Request sent": [
         "Solicitare trimisă"
@@ -24613,6 +24856,9 @@
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "Încercați ${ AUTHENTICATOR_APP_NAME }"
       ],
+      "Try changing your password in your active web session": [
+        "Încercați să vă schimbați parola în sesiunea web activă"
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Activare ${ DARK_WEB_MONITORING_NAME }"
       ],
@@ -24693,6 +24939,9 @@
       ],
       "Verification failed": [
         "Verificarea a eșuat"
+      ],
+      "Verify it’s you": [
+        "Verificați-vă autenticitatea"
       ],
       "Verifying your card...": [
         "Verificare card..."
@@ -25501,6 +25750,9 @@
       ]
     },
     "user_modal": {
+      "Add delegated roles to a user to grant them only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
+        "Adăugați roluri delegate unui utilizator pentru a-i acorda doar permisiunile specifice de care are nevoie, păstrând puterea de administrator complet separată și mediul securizat."
+      ],
       "Add multiple users": [
         "Adăugare utilizatori multipli"
       ],
@@ -25528,6 +25780,9 @@
       "Email": [
         "E-mail"
       ],
+      "General": [
+        "General"
+      ],
       "Invitation email": [
         "E-mail de invitare"
       ],
@@ -25542,6 +25797,12 @@
       ],
       "Remember to share the user's sign in details with them.": [
         "Aveți grijă să furnizați utilizatorilor detaliile lor de autentificare."
+      ],
+      "Roles and permissions": [
+        "Roluri și permisiuni"
+      ],
+      "Save": [
+        "Salvare"
       ],
       "Send invite link via email instead": [
         "Trimiteți în schimb legătura web de invitație prin e-mail"
