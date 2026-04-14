@@ -66,30 +66,22 @@ export const hasUserReachPlanLimit = (
  * All other cases: members are fully blocked (limit is 0).
  */
 export const hasOrgMemberReachedBookingLimit = (
+    user: UserModel,
     bookingsPages?: InternalBookingPage[],
-    organization?: OrganizationExtended,
-    meetAddon?: SubscriptionPlan
+    organization?: OrganizationExtended
 ): boolean => {
     if (!bookingsPages) {
         return false;
     }
 
-    const planName = meetAddon ? meetAddon.Name : organization?.PlanName;
+    // If any meet addon: members get MAX_BOOKING_PAGES
+    if (user.hasPaidMeet) {
+        return bookingsPages.length >= MAX_BOOKING_PAGES;
+    }
+
+    const planName = organization?.PlanName;
     switch (planName) {
-        // Any meet add-on, or Mail B2B org plan: members get MAX_BOOKING_PAGES
-        case ADDON_NAMES.MEET_VPN2024:
-        case ADDON_NAMES.MEET_LUMO:
-        case ADDON_NAMES.MEET_DRIVE:
-        case ADDON_NAMES.MEET_PASS:
-        case ADDON_NAMES.MEET_DRIVE_1TB:
-        case ADDON_NAMES.MEET_VPN_PASS_BUNDLE:
-        case ADDON_NAMES.MEET_MAIL:
-        case ADDON_NAMES.MEET_BUNDLE:
-        case ADDON_NAMES.MEET_MAIL_PRO:
-        case ADDON_NAMES.MEET_DUO:
-        case ADDON_NAMES.MEET_FAMILY:
-        case ADDON_NAMES.MEET_MAIL_BUSINESS:
-        case ADDON_NAMES.MEET_BUNDLE_PRO:
+        // Mail B2B org plan: members get MAX_BOOKING_PAGES
         case PLANS.VISIONARY:
         case PLANS.MAIL_BUSINESS:
         case PLANS.BUNDLE_PRO:
