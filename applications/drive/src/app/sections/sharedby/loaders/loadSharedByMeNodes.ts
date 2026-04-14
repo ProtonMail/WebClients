@@ -12,7 +12,7 @@ import { getOldestShareCreationTime } from '../utils/getOldestShareCreationTime'
 
 type Drive = Pick<ProtonDriveClient, 'iterateSharedNodes' | 'getSharingInfo' | 'getNode' | 'iterateNodes'>;
 
-const fetchSharedByMeNodes = async (abortSignal: AbortSignal, drive: Drive) => {
+const fetchSharedByMeNodes = async (abortSignal: AbortSignal, drive: Drive): Promise<Set<string>> => {
     const { onItemsLoadedToState, onFinished } = driveMetrics.drivePerformance.startDataLoad('sharedByMe');
     const loadedUids = new Set<string>();
     for await (const sharedByMeMaybeNode of drive.iterateSharedNodes(abortSignal)) {
@@ -66,8 +66,8 @@ const fetchSharedByMeNodes = async (abortSignal: AbortSignal, drive: Drive) => {
             handleSdkError(e);
         }
     }
-    useSharedByMeStore.getState().cleanupStaleItems(loadedUids);
     onFinished();
+    return loadedUids;
 };
 
 export const loadSharedByMeNodes = async (abortSignal: AbortSignal) => {
@@ -77,10 +77,12 @@ export const loadSharedByMeNodes = async (abortSignal: AbortSignal) => {
     }
     setLoading(true);
     try {
-        await Promise.all([
+        const [driveUids, photosUids] = await Promise.all([
             fetchSharedByMeNodes(abortSignal, getDrive()),
             fetchSharedByMeNodes(abortSignal, getDriveForPhotos()),
         ]);
+        const allLoadedUids = new Set([...driveUids, ...photosUids]);
+        useSharedByMeStore.getState().cleanupStaleItems(allLoadedUids);
     } catch (e) {
         handleSdkError(e, {
             showNotification: true,
