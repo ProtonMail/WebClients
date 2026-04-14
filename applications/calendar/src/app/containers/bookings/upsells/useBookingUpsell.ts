@@ -24,7 +24,7 @@ export const useBookingUpsell = () => {
         const bookingPageNumber = bookings?.bookingPages?.length || 0;
         const meetAddon = getAddons(subscription).find(({ Name }) => isMeetAddon(Name));
         const hasUserReachedPlanLimit = user.isMember
-            ? hasOrgMemberReachedBookingLimit(user, bookings?.bookingPages)
+            ? hasOrgMemberReachedBookingLimit(bookings?.bookingPages, organization, meetAddon)
             : hasUserReachPlanLimit(user, bookingPageNumber, organization, meetAddon);
 
         return {

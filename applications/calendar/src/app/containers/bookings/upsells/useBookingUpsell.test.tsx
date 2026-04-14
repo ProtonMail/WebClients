@@ -172,8 +172,13 @@ describe('useBookingUpsell', () => {
     });
 
     describe('organisation member limit testing', () => {
-        it('should return no limit reached when member of paid mail has no booking pages', () => {
-            mockUseUser.mockReturnValue([{ hasPaidMail: true, hasPaidMeet: false, isMember: true }] as any);
+        beforeEach(() => {
+            mockUseUser.mockReturnValue([{ isMember: true }] as any);
+            mockUseSubscription.mockReturnValue([] as any);
+        });
+
+        it('should return no limit for Mail B2B member with no booking pages', () => {
+            mockUseOrganization.mockReturnValue([{ PlanName: PLANS.BUNDLE_BIZ_2025 }, false] as any);
             mockUseInternalBooking.mockReturnValue([{ bookingPages: [] }] as any);
 
             const { result } = renderHook(() => useBookingUpsell());
@@ -182,18 +187,8 @@ describe('useBookingUpsell', () => {
             expect(limits).toEqual({ planLimitReached: false, bookingPageLimitReached: false });
         });
 
-        it('should return no limit reached when member of paid meet has booking pages within limit', () => {
-            mockUseUser.mockReturnValue([{ hasPaidMail: false, hasPaidMeet: true, isMember: true }] as any);
-            mockUseInternalBooking.mockReturnValue([{ bookingPages: getBookingPagesArray(2) }] as any);
-
-            const { result } = renderHook(() => useBookingUpsell());
-            const limits = result.current.shouldShowLimitModal();
-
-            expect(limits).toEqual({ planLimitReached: false, bookingPageLimitReached: false });
-        });
-
-        it('should return booking limit reached when member of paid mail and booking pages exceed limit', () => {
-            mockUseUser.mockReturnValue([{ hasPaidMail: true, hasPaidMeet: false, isMember: true }] as any);
+        it('should return bookingPageLimitReached for Mail B2B member at absolute limit', () => {
+            mockUseOrganization.mockReturnValue([{ PlanName: PLANS.BUNDLE_BIZ_2025 }, false] as any);
             mockUseInternalBooking.mockReturnValue([{ bookingPages: getBookingPagesArray(MAX_BOOKING_PAGES) }] as any);
 
             const { result } = renderHook(() => useBookingUpsell());
@@ -202,8 +197,29 @@ describe('useBookingUpsell', () => {
             expect(limits).toEqual({ planLimitReached: false, bookingPageLimitReached: true });
         });
 
-        it('should return plan limit reached when member has created one booking page', () => {
-            mockUseUser.mockReturnValue([{ hasPaidMail: false, hasPaidMeet: false, isMember: true }] as any);
+        it('should return no limit for member with meet add-on within limit', () => {
+            mockUseOrganization.mockReturnValue([{ PlanName: PLANS.FAMILY }, false] as any);
+            mockUseInternalBooking.mockReturnValue([{ bookingPages: getBookingPagesArray(2) }] as any);
+            mockUseSubscription.mockReturnValue([
+                {
+                    Plans: [
+                        {
+                            Type: PLAN_TYPES.ADDON,
+                            PlanName: ADDON_NAMES.MEET_FAMILY,
+                            Name: ADDON_NAMES.MEET_FAMILY,
+                        },
+                    ],
+                },
+            ] as any);
+
+            const { result } = renderHook(() => useBookingUpsell());
+            const limits = result.current.shouldShowLimitModal();
+
+            expect(limits).toEqual({ planLimitReached: false, bookingPageLimitReached: false });
+        });
+
+        it('should return planLimitReached for Mail B2C member at plan limit', () => {
+            mockUseOrganization.mockReturnValue([{ PlanName: PLANS.FAMILY }, false] as any);
             mockUseInternalBooking.mockReturnValue([{ bookingPages: getBookingPagesArray(1) }] as any);
 
             const { result } = renderHook(() => useBookingUpsell());
@@ -212,14 +228,24 @@ describe('useBookingUpsell', () => {
             expect(limits).toEqual({ planLimitReached: true, bookingPageLimitReached: false });
         });
 
-        it('should return plan limit not reached when member has no booking pages', () => {
-            mockUseUser.mockReturnValue([{ hasPaidMail: false, hasPaidMeet: false, isMember: true }] as any);
+        it('should return no limit for Mail B2C member with no booking pages', () => {
+            mockUseOrganization.mockReturnValue([{ PlanName: PLANS.FAMILY }, false] as any);
             mockUseInternalBooking.mockReturnValue([{ bookingPages: [] }] as any);
 
             const { result } = renderHook(() => useBookingUpsell());
             const limits = result.current.shouldShowLimitModal();
 
             expect(limits).toEqual({ planLimitReached: false, bookingPageLimitReached: false });
+        });
+
+        it('should return planLimitReached for member on non-mail plan with no booking pages', () => {
+            mockUseOrganization.mockReturnValue([{ PlanName: PLANS.VPN_BUSINESS }, false] as any);
+            mockUseInternalBooking.mockReturnValue([{ bookingPages: [] }] as any);
+
+            const { result } = renderHook(() => useBookingUpsell());
+            const limits = result.current.shouldShowLimitModal();
+
+            expect(limits).toEqual({ planLimitReached: true, bookingPageLimitReached: false });
         });
     });
 });
