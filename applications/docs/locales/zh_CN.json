@@ -594,6 +594,9 @@
       "Reconnect": [
         "重新连接"
       ],
+      "Reconnect to Gmail": [
+        "重新连接 Gmail"
+      ],
       "Recover data": [
         "恢复数据"
       ],
@@ -2490,6 +2493,15 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "使用共享日历简化同步和日程安排。"
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "如果权限被移除或密码被更改，可能会发生此情况。"
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "若要继续在 ${ BRAND_NAME } 中接收和发送 Gmail 邮件，请重新连接您的账户。"
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "若要继续在 ${ BRAND_NAME } 中接收和发送 Gmail 邮件，请重新连接您的账户。"
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "为了使您的账户受到最高安全保护，请设置恢复短语。"
       ],
@@ -2510,6 +2522,9 @@
       ],
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "使用本指南，让您的组织迅速受益于 ${ BRAND_NAME } 行业领先的加密和隐私生态系统。"
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "我们无法再访问 ${ boldEmails }。"
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "很遗憾看到您离开。如果您有时间，我们希望了解您取消的原因。您的反馈有助于我们改进 ${ BRAND_NAME }，让产品变得更好。"
@@ -2777,6 +2792,9 @@
       ],
       "Account does not exist": [
         "账户不存在"
+      ],
+      "Address could not be added.": [
+        "无法添加地址！"
       ],
       "Address primary private key not found": [
         "找不到地址主私钥"
@@ -3071,6 +3089,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "部分标签名称超过了 ${ MAIL_APP_NAME } 的字数限制，请在导入内容中予以更改。"
+      ],
+      "Something went wrong while fetching available domains": [
+        "获取可用域名时出错"
       ],
       "Something went wrong. Please try again.": [
         "出错了，请再试一次。"
@@ -4415,6 +4436,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "确保完全私密且加密的通信。立即认领您的免费 ${ BRAND_NAME } 邮箱地址。"
       ],
+      "Enter code": [
+        "输入代码"
+      ],
       "Enter password": [
         "输入密码"
       ],
@@ -4531,6 +4555,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若邮件没有出现在收件箱中，请检查其是否被归为垃圾邮件。"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "如果您无法访问验证器应用，可以使用设置 2FA 时提供的 16 个备用恢复码之一。${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "降级账户后您将不能再使用 ${ MAIL_APP_NAME } 和 ${ VPN_APP_NAME } 的收费功能。"
@@ -6549,6 +6576,12 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "所有基本 ${ BRAND_NAME } 服务 (${ MAIL_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "预约安排"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "使用 ${ n } 个预约页面进行日程安排"
+      ],
       "Auto-delete Spam and Trash": [
         "自动清理垃圾邮件和回收站"
       ],
@@ -7478,6 +7511,9 @@
       ],
       "You stopped sharing this item": [
         "您已停止共享此项目"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "您的 ${ BRAND_NAME } 地址已准备就绪"
       ],
       "Your settings failed to be saved": [
         "您的设置保存失败"
@@ -9317,6 +9353,9 @@
       ],
       "Discard changes?": [
         "放弃更改？"
+      ],
+      "Disconnected from Gmail": [
+        "已断开与 Gmail 的连接"
       ],
       "Docs": [
         "文档"

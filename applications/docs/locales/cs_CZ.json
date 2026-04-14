@@ -207,6 +207,9 @@
       "Continue import": [
         "Pokračovat v importu"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Pokračujte na ${ planOrAppName }"
+      ],
       "Continue with Google": [
         "Pokračovat skrze Google"
       ],
@@ -408,6 +411,9 @@
       "Go to label": [
         "Přejít na štítek"
       ],
+      "Google": [
+        "Google"
+      ],
       "Got it": [
         "Rozumím"
       ],
@@ -593,6 +599,9 @@
       ],
       "Reconnect": [
         "Obnovit připojení"
+      ],
+      "Reconnect to Gmail": [
+        "Znovu se připojit ke službě Gmail"
       ],
       "Recover data": [
         "Obnovit data"
@@ -939,6 +948,12 @@
         "${ seats } ${ LUMO_APP_NAME } licence",
         "${ seats } ${ LUMO_APP_NAME } licencí",
         "${ seats } ${ LUMO_APP_NAME } licencí"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } licence",
+        "${ seats } ${ MEET_APP_NAME } licence",
+        "${ seats } ${ MEET_APP_NAME } licencí",
+        "${ seats } ${ MEET_APP_NAME } licencí"
       ],
       "${ seats } writing assistant seat": [
         "${ seats } licence asistenta psaní",
@@ -2544,6 +2559,12 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "Použijte tohoto průvodce, aby vaše organizace začala okamžitě využívat výhody špičkového ekosystému šifrování a ochrany soukromí ${ BRAND_NAME }."
       ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Nyní nemůžeme přistupovat k ${ boldEmails }."
+      ],
+      "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
+        "Je nám líto, že odcházíte. Pokud máte chvilku, oceníme, pokud nám sdělíte důvod zrušení. Vaše zpětná vazba pomáhá vylepšovat ${ BRAND_NAME } pro všechny."
+      ],
       "With contact groups, you can send emails to everyone in the group with one click.": [
         "Pomocí skupin kontaktů můžete jedním kliknutím odeslat e-maily všem členům skupiny."
       ],
@@ -2963,6 +2984,9 @@
       ],
       "Incorrect username": [
         "Nesprávné uživatelské jméno"
+      ],
+      "Invalid coupon": [
+        "Neplatný kupón"
       ],
       "Invalid email address": [
         "Neplatná e-mailová adresa"
@@ -5370,6 +5394,9 @@
       "You won't be charged if you cancel before ${ trialEndsOnFormatted }.": [
         "Pokud službu zrušíte před ${ trialEndsOnFormatted }, nebudou vám účtovány žádné poplatky."
       ],
+      "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
+        "Kreditovou odměnu obdržíte 1 měsíc poté, co si váš přítel předplatí roční plán, a 2 měsíce poté, co si předplatí měsíční plán."
+      ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Poté vám bude každý ${ renewCycle } měsíc účtováno ${ renewAmountStr }. Zrušit můžete kdykoli.",
         "Poté vám bude každé ${ renewCycle } měsíce účtováno ${ renewAmountStr }. Zrušit můžete kdykoli.",
@@ -5657,6 +5684,9 @@
       "Contacts": [
         "Kontakty"
       ],
+      "Continue cancelling": [
+        "Pokračovat ve zrušení"
+      ],
       "Copy": [
         "Kopírovat"
       ],
@@ -5788,6 +5818,9 @@
       ],
       "Last 3 months only": [
         "Pouze poslední 3 měsíce"
+      ],
+      "Last 6 months only": [
+        "Pouze posledních 6 měsíců"
       ],
       "Last month only": [
         "Pouze minulý měsíc"
@@ -6215,6 +6248,17 @@
         "Doplněk s bezplatnou zkušební verzí"
       ]
     },
+    "meet_2025: Addon": {
+      "${ MEET_APP_NAME } seats": [
+        "${ MEET_APP_NAME } licencí"
+      ],
+      "${ seats } ${ MEET_APP_NAME } seat": [
+        "${ seats } ${ MEET_APP_NAME } licence",
+        "${ seats } ${ MEET_APP_NAME } licence",
+        "${ seats } ${ MEET_APP_NAME } licencí",
+        "${ seats } ${ MEET_APP_NAME } licencí"
+      ]
+    },
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: Důvěrné videokonference pro důležité konverzace"
@@ -6272,6 +6316,12 @@
         "Až ${ n } účastníci",
         "Až ${ n } účastníků",
         "Až ${ n } účastníků"
+      ],
+      "Video meetings, ${ n } participant": [
+        "Videokonference, ${ n } účastník",
+        "Videokonference, ${ n } účastníci",
+        "Videokonference, ${ n } účastníků",
+        "Videokonference, ${ n } účastníků"
       ]
     },
     "Message": {
@@ -6731,6 +6781,15 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Všechny základní služby ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "Plánování schůzek"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Plánování schůzek pomocí ${ n } rezervační stránky",
+        "Plánování schůzek pomocí ${ n } rezervačních stránek",
+        "Plánování schůzek pomocí ${ n } rezervačních stránek",
+        "Plánování schůzek pomocí ${ n } rezervačních stránek"
+      ],
       "Auto-delete Spam and Trash": [
         "Automatické smazání obsahu složek spam a koš"
       ],
@@ -6781,6 +6840,9 @@
       ],
       "Data breach monitoring": [
         "Monitorování narušení bezpečnosti dat"
+      ],
+      "Data retention policies": [
+        "Zásady uchovávání dat"
       ],
       "Dedicated servers optimized for streaming": [
         "Dedikované servery optimalizované pro streamování"
@@ -6892,6 +6954,9 @@
       ],
       "Priority support & live chat": [
         "Přednostní podpora a živý chat"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Soukromý chat s AI (${ LUMO_APP_NAME })"
       ],
       "Private photo backup": [
         "Soukromé zálohování fotek"
@@ -7048,6 +7113,9 @@
         "Sdílení trezoru až se ${ n } osobami",
         "Sdílení trezoru až s ${ n } osobami",
         "Sdílení trezoru až s ${ n } osobami"
+      ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN s blokováním reklam a ochranou proti malware"
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Prohledáváme dark web a kontrolujeme, zda nedošlo k úniku vašich adres nebo aliasů ${ BRAND_NAME }, pokud něco najdeme, okamžitě vás upozorníme."
@@ -8150,6 +8218,9 @@
       "A way to contact you": [
         "Způsob, jak vás kontaktovat"
       ],
+      "Anything you'd like us to know": [
+        "Cokoliv, co bychom měli vědět"
+      ],
       "Choose password": [
         "Zvolte heslo"
       ],
@@ -8158,6 +8229,9 @@
       ],
       "Email": [
         "E-mail"
+      ],
+      "Enter a name": [
+        "Zadejte název"
       ],
       "Enter a new folder name": [
         "Zadejte nový název složky"
@@ -8300,6 +8374,11 @@
       ],
       "Official email from ${ BRAND_NAME }": [
         "Oficiální e-mail od ${ BRAND_NAME }"
+      ]
+    },
+    "Provider option": {
+      "Yahoo": [
+        "Yahoo"
       ]
     },
     "q1campaign: Action": {
@@ -9687,6 +9766,9 @@
       "Change password": [
         "Změnit heslo"
       ],
+      "Choose a provider": [
+        "Vybrat poskytovatele"
+      ],
       "Claim your ${ MAIL_APP_NAME } address": [
         "Získejte vaši ${ MAIL_APP_NAME } adresu"
       ],
@@ -9734,6 +9816,9 @@
       ],
       "Currency": [
         "Měna"
+      ],
+      "Custom": [
+        "Vlastní"
       ],
       "Customize and confirm": [
         "Přizpůsobit a potvrdit"
@@ -9794,6 +9879,9 @@
       ],
       "Discard changes?": [
         "Zahodit změny?"
+      ],
+      "Disconnected from Gmail": [
+        "Odpojeno od služby Gmail"
       ],
       "Docs": [
         "Docs"
