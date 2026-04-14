@@ -1252,7 +1252,7 @@
         "Continuar con ${ planOrAppName }"
       ],
       "Refetch index": [
-        "Volver a cargar índice"
+        "Actualizar el índice"
       ],
       "Reconnect to Gmail": [
         "Volver a conectar a Gmail"
@@ -9755,6 +9755,10 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "Su dirección de ${ BRAND_NAME } está lista para usarse"
+      ],
+      "${ errors.length } item failed to be deleted": [
+        "Error al eliminar ${ errors.length } elemento",
+        "Error al eliminar ${ errors.length } elementos"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -13388,7 +13392,7 @@
         "Búsqueda"
       ],
       "Disconnected from Gmail": [
-        "Desconectado de Gmail"
+        "Sin conexión a Gmail"
       ]
     },
     "Today icon tooltip in mini calendar": {

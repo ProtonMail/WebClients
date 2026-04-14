@@ -1069,7 +1069,7 @@
         "Зарэгістравацца"
       ],
       "Skip verification": [
-        "Прапусціць праверку"
+        "Прапусціць спраўджанне"
       ],
       "Start": [
         "Пачаць"
@@ -10098,6 +10098,12 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "Ваш адрас ${ BRAND_NAME } гатовы да выкарыстання"
+      ],
+      "${ errors.length } item failed to be deleted": [
+        "Не ўдалося выдаліць ${ errors.length } элемент",
+        "Не ўдалося выдаліць ${ errors.length } элементы",
+        "Не ўдалося выдаліць ${ errors.length } элементаў",
+        "Не ўдалося выдаліць ${ errors.length } элементаў"
       ]
     },
     "Notification for duplicate filenames in the current upload": {

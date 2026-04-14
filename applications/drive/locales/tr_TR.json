@@ -9695,6 +9695,10 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "${ BRAND_NAME } adresiniz kullanılmaya hazır"
+      ],
+      "${ errors.length } item failed to be deleted": [
+        "${ errors.length } öğe silinemedi",
+        "${ errors.length } öğe silinemedi"
       ]
     },
     "Notification for duplicate filenames in the current upload": {

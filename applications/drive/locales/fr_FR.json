@@ -9735,6 +9735,10 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "Votre adresse ${ BRAND_NAME } est prête à être utilisée"
+      ],
+      "${ errors.length } item failed to be deleted": [
+        "${ errors.length } élément n'a pas pu être supprimé",
+        "${ errors.length } éléments n'ont pas pu être supprimés"
       ]
     },
     "Notification for duplicate filenames in the current upload": {

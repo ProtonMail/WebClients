@@ -9276,6 +9276,10 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "${ BRAND_NAME } -osoitteesi on valmis käytettäväksi"
+      ],
+      "${ errors.length } item failed to be deleted": [
+        "${ errors.length } kohteen poisto epäonnistui",
+        "${ errors.length } kohteen poisto epäonnistui"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
