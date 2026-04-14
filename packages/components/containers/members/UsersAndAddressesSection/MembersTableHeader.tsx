@@ -23,7 +23,10 @@ export const MembersTableHeader = ({
 }) => {
     return (
         <div className="mb-4 flex items-start">
-            <div className="flex items-center mb-2 gap-2 mr-4">
+            <div className="mb-2 w-full lg:w-custom" style={{ '--lg-w-custom': '24em' }}>
+                {searchInput}
+            </div>
+            <div className="flex items-center mb-2 gap-2 ml-0 lg:ml-auto">
                 {!meta.showAddAddress ? (
                     <>
                         {meta.hasSetupActiveOrganizationWithKeys && (
@@ -78,9 +81,6 @@ export const MembersTableHeader = ({
                         ) : null}
                     </>
                 )}
-            </div>
-            <div className="ml-0 lg:ml-auto mb-2 w-full lg:w-custom" style={{ '--lg-w-custom': '24em' }}>
-                {searchInput}
             </div>
         </div>
     );

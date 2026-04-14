@@ -110,13 +110,15 @@ export const MembersTable = ({
                             <Avatar className="shrink-0 text-rg" color="weak">
                                 {getInitials(memberName)}
                             </Avatar>
-                            <div
-                                className="text-ellipsis shrink"
+                            <button
+                                type="button"
+                                className="text-ellipsis shrink link align-baseline"
                                 data-testid="users-and-addresses-table:memberName"
                                 title={memberName}
+                                onClick={() => actions.handleEditUser(member)}
                             >
                                 {memberName}
-                            </div>
+                            </button>
                         </div>
                         <div className="flex items-center gap-1">
                             {(() => {
@@ -283,7 +285,7 @@ export const MembersTable = ({
     return (
         <Table hasActions responsive="cards" data-testid="users-and-addresses-table">
             <thead>
-                <tr>
+                <tr className="bg-weak">
                     <UsersAndAddressesSectionHeader
                         showFeaturesColumn={meta.showFeaturesColumn}
                         useEmail={meta.useEmail}
