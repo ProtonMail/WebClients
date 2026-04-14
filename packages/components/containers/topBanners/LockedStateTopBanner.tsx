@@ -4,7 +4,8 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
-import { PLANS, type Subscription, getPlan } from '@proton/payments';
+import { PLANS, getPlanName } from '@proton/payments';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, BRAND_NAME, DRIVE_SHORT_APP_NAME, MAIL_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
@@ -71,7 +72,7 @@ const StorageBannerCTA = ({
     type,
 }: {
     user: UserModel;
-    subscription: Subscription | undefined;
+    subscription: MaybeFreeSubscription;
     upsellRef: string | undefined;
     plan: PLANS;
     type: UserLockedFlags;
@@ -118,13 +119,13 @@ const getBannerTypeFromLockedFlags = (lockedFlags: number): UserLockedFlags | nu
 interface Props {
     app: APP_NAMES;
     user: UserModel;
-    subscription: Subscription | undefined;
+    subscription: MaybeFreeSubscription;
     upsellRef: string | undefined;
     lockedFlags: number;
 }
 
 export const LockedStateTopBanner = ({ app, user, subscription, upsellRef, lockedFlags }: Props) => {
-    const planName = getPlan(subscription)?.Name;
+    const planName = getPlanName(subscription);
     let plan = planName;
     if (plan === undefined) {
         plan = app === APPS.PROTONDRIVE ? PLANS.DRIVE : PLANS.MAIL;

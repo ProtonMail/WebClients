@@ -3,7 +3,6 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import useDashboardPaymentFlow from '@proton/components/hooks/useDashboardPaymentFlow';
 import {
-    type Subscription,
     getHasPassB2BPlan,
     getIsB2BAudienceFromSubscription,
     hasCustomCycle,
@@ -12,6 +11,7 @@ import {
     isManagedExternally,
     isTrial,
 } from '@proton/payments';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { UserModel } from '@proton/shared/lib/interfaces';
@@ -25,7 +25,7 @@ export const ActionButtons = ({
     app,
 }: {
     user: UserModel;
-    subscription?: Subscription;
+    subscription: MaybeFreeSubscription;
     app: APP_NAMES;
 }) => {
     const [openSubscriptionModal] = useSubscriptionModal();

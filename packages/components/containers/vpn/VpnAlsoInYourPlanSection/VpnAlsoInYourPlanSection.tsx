@@ -194,7 +194,7 @@ export const VpnAlsoInYourPlanSection = ({ app }: { app: APP_NAMES }) => {
 
     const currency = subscription.Currency || user?.Currency || 'USD';
 
-    const plansMap = getPlansMap(plans, subscription.Currency, false);
+    const plansMap = getPlansMap(plans, currency, false);
     const bundle = getPlanByName(plansResult?.plans ?? [], plan, currency);
     const planPricePerCycle = getPricePerCycle(bundle, CYCLE.YEARLY) ?? 0;
 

@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import { defineNavigation } from '@proton/nav/api';
 import type { NavContext } from '@proton/nav/types/models';
 import type { NavDefinition, NavItemDefinition } from '@proton/nav/types/nav';
-import type { Subscription } from '@proton/payments/index';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import {
     hasAnyB2bBundle,
     hasVPNPassProfessional,
@@ -19,7 +19,7 @@ import type { FeatureFlag } from '@proton/unleash/UnleashFeatureFlags';
 import { isB2BAdmin } from '../functions/isB2BAdmin';
 
 type VpnNavContext = {
-    subscription?: Subscription;
+    subscription: MaybeFreeSubscription;
     notifications?: Record<NavItemDefinition<NavContext>['id'], any>;
     isB2BAdmin: boolean;
     canHaveOrganization: boolean;
@@ -279,7 +279,7 @@ type Args = {
     user: NavContext['user'];
     organization?: NavContext['organization'];
     notifications?: Record<NavItemDefinition<NavContext>['id'], any>;
-    subscription?: Subscription;
+    subscription: MaybeFreeSubscription;
     flags?: Partial<Record<FeatureFlag, boolean>>;
 };
 

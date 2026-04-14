@@ -1,4 +1,5 @@
-import { CYCLE, PLANS, type Subscription } from '@proton/payments';
+import { CYCLE, PLANS } from '@proton/payments';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 
@@ -19,7 +20,7 @@ import { POST_SIGNUP_GO_UNLIMITED_ACCOUNT_AGE } from './interface';
 
 interface EligiblityProps {
     user: UserModel;
-    subscription?: Subscription;
+    subscription: MaybeFreeSubscription;
     protonConfig: ProtonConfig;
     parentApp?: (typeof APPS)[keyof typeof APPS];
 }

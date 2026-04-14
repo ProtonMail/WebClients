@@ -23,7 +23,7 @@ describe('onboarding helpers', () => {
             } as Subscription;
 
             expect(canShowB2BOnboardingButton(subscription)).toBeFalse();
-            expect(canShowB2BOnboardingButton()).toBeFalse();
+            expect(canShowB2BOnboardingButton(undefined)).toBeFalse();
         });
     });
 });

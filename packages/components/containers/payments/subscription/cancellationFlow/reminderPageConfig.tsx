@@ -1,4 +1,5 @@
-import { PLANS, type Subscription, getPlan } from '@proton/payments';
+import { PLANS, getPlan } from '@proton/payments';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import { getBundleConfig } from './config/bundle';
@@ -17,7 +18,7 @@ export const getReminderPageConfig = ({
     subscription,
 }: {
     app?: APP_NAMES;
-    subscription?: Subscription;
+    subscription: MaybeFreeSubscription;
 }): PlanConfig | null => {
     const plan = getPlan(subscription);
 

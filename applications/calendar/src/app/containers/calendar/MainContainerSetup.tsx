@@ -4,8 +4,8 @@ import { Redirect, Route, Switch } from 'react-router';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { useCalendarUserSettings } from '@proton/calendar/calendarUserSettings/hooks';
 import ContactEmailsProvider from '@proton/components/containers/contacts/ContactEmailsProvider';
-import useCalendarsInfoListener from '@proton/components/containers/eventManager/calendar/useCalendarsInfoListener';
-import type { Subscription } from '@proton/payments';
+import { useCalendarsInfoListener } from '@proton/components/containers/eventManager/calendar/useCalendarsInfoListener';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import {
     DEFAULT_CALENDAR_USER_SETTINGS,
     getPreferredActiveWritableCalendar,
@@ -38,7 +38,7 @@ interface Props {
     calendars: VisualCalendar[];
     addresses: Address[];
     user: UserModel;
-    subscription?: Subscription;
+    subscription: MaybeFreeSubscription;
     drawerView?: VIEWS;
     hasReactivatedCalendarsRef: React.MutableRefObject<boolean>;
 }

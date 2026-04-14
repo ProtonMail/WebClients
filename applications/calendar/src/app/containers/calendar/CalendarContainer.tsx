@@ -11,7 +11,7 @@ import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useApi from '@proton/components/hooks/useApi';
 import useAppTitle from '@proton/components/hooks/useAppTitle';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import type { Subscription } from '@proton/payments';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { getInvitation } from '@proton/shared/lib/api/calendars';
 import { getIsCalendarWritable } from '@proton/shared/lib/calendar/calendar';
 import { MAXIMUM_DATE_UTC, MINIMUM_DATE_UTC, VIEWS } from '@proton/shared/lib/calendar/constants';
@@ -106,7 +106,7 @@ interface Props {
     setCustomTzid: (tzid: string) => void;
     drawerView?: VIEWS;
     user: UserModel;
-    subscription?: Subscription;
+    subscription: MaybeFreeSubscription;
     addresses: Address[];
     activeAddresses: Address[];
     visibleCalendars: VisualCalendar[];

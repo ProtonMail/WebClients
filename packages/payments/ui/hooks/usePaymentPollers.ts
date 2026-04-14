@@ -6,6 +6,8 @@ import { useGetUser } from '@proton/account/user/hooks';
 import { CacheType } from '@proton/redux-utilities';
 
 import { Renew } from '../../core/subscription/constants';
+import type { Subscription } from '../../core/subscription/interface';
+import { isFreeSubscription } from '../../core/type-guards';
 import { usePollCondition } from './usePollCondition';
 
 export const usePaymentPollers = () => {
@@ -54,9 +56,17 @@ export const usePaymentPollers = () => {
     };
 
     const createSubscriptionRenewEnabledPoller = () => {
+        const initialSubscriptionPromise = getSubscription();
+
         const pollSubscriptionRenewEnabled = async () => {
+            const initialSubscription = await initialSubscriptionPromise;
+
+            if (isFreeSubscription(initialSubscription)) {
+                return false;
+            }
+
             return poll(async () => {
-                return (await getSubscription({ cache: CacheType.None })).Renew === Renew.Enabled;
+                return ((await getSubscription({ cache: CacheType.None })) as Subscription).Renew === Renew.Enabled;
             });
         };
 

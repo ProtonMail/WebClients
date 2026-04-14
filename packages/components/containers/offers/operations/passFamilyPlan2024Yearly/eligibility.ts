@@ -1,10 +1,11 @@
-import { PLANS, type Subscription, canModify } from '@proton/payments';
+import { PLANS, canModify } from '@proton/payments';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS } from '@proton/shared/lib/constants';
 import type { ProtonConfig, UserModel } from '@proton/shared/lib/interfaces';
 
 interface Props {
-    subscription?: Subscription;
+    subscription: MaybeFreeSubscription;
     user: UserModel;
     protonConfig: ProtonConfig;
 }
