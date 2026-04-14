@@ -5,6 +5,7 @@ import { useModalTwoPromise } from '@proton/components/components/modalTwo/useMo
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import { FREE_PLAN, type PLANS, getPlan, getRenewalTime } from '@proton/payments';
+import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 
 import { getShortPlan } from '../../features/plan';
@@ -37,7 +38,7 @@ export const useHighlightPlanDowngradeStep = ({ canShow }: CancellationStepConfi
             return;
         }
 
-        if (!subscription) {
+        if (!isPaidSubscription(subscription)) {
             return;
         }
 

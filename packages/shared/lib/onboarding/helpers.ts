@@ -1,12 +1,13 @@
 import { fromUnixTime, isBefore } from 'date-fns';
 
-import type { Subscription } from '@proton/payments';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
+import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import { addDays } from '@proton/shared/lib/date-fns-utc';
 
 import { B2B_ONBOARDING_SHOW_BUTTON_INTERVAL } from './constants';
 
-export const canShowB2BOnboardingButton = (subscription?: Subscription) => {
-    const subscriptionStart = subscription?.CreateTime ? fromUnixTime(subscription?.CreateTime) : 0;
+export const canShowB2BOnboardingButton = (subscription: MaybeFreeSubscription) => {
+    const subscriptionStart = isPaidSubscription(subscription) ? fromUnixTime(subscription.CreateTime) : 0;
     const hideB2bOnboardingDate = subscriptionStart
         ? addDays(subscriptionStart, B2B_ONBOARDING_SHOW_BUTTON_INTERVAL)
         : null;

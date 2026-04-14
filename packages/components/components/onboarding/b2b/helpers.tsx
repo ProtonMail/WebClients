@@ -10,7 +10,8 @@ import type {
 } from '@proton/components/components/onboarding/b2b/interface';
 import canUseGroups from '@proton/components/containers/organization/groups/canUseGroups';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
-import { type Subscription, getPlan } from '@proton/payments';
+import { getPlan } from '@proton/payments';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import {
     APPS,
     type APP_NAMES,
@@ -49,7 +50,7 @@ import vpnImg from '@proton/styles/assets/img/onboarding/b2b/img-b2b-vpn.svg';
 import isTruthy from '@proton/utils/isTruthy';
 
 export const getFeatures = (
-    subscription: Subscription | undefined,
+    subscription: MaybeFreeSubscription,
     onClickCTA?: (item: B2BFeaturesID) => Promise<void>
 ): B2BOnboardingFeature[] => {
     const plan = getPlan(subscription)?.Name;

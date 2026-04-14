@@ -1,6 +1,6 @@
 import { useDeclarativeLocalState, useLocalState, useRecoveryNotification } from '@proton/components/index';
 import type { NavResolved } from '@proton/nav/types/nav';
-import type { Subscription } from '@proton/payments/index';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import type { OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash/useFlag';
 
@@ -27,7 +27,7 @@ const useKillableFeature = (key: string) => {
 
 type Args = {
     user: UserModel;
-    subscription?: Subscription;
+    subscription: MaybeFreeSubscription;
     organization?: OrganizationExtended;
 };
 

@@ -4,14 +4,14 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import PlusToPlusUpsell from '@proton/components/containers/payments/subscription/PlusToPlusUpsell';
 import { useVisionaryDowngradeWarningModal } from '@proton/components/containers/payments/subscription/VisionaryDowngradeWarningModal';
 import { getAllowedCycles } from '@proton/components/containers/payments/subscription/helpers';
-import type { Currency, Cycle, PlanIDs } from '@proton/payments/core/interface';
+import type { Currency, Cycle, FreeSubscription, PlanIDs } from '@proton/payments/core/interface';
 import type { Plan, PlansMap } from '@proton/payments/core/plan/interface';
 import { getIsPlanTransitionForbidden } from '@proton/payments/core/subscription/forbidden-plan-transition';
 import type { Subscription } from '@proton/payments/core/subscription/interface';
 import noop from '@proton/utils/noop';
 
 interface Props {
-    subscription: Subscription;
+    subscription: Subscription | FreeSubscription;
     cycle: Cycle;
     plansMap: PlansMap;
     planIDs: PlanIDs;

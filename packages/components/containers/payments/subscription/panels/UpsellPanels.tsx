@@ -2,7 +2,8 @@ import { c } from 'ttag';
 
 import type { ButtonLikeShape } from '@proton/atoms/Button/ButtonLike';
 import Time from '@proton/components/components/time/Time';
-import { PLANS, PLAN_NAMES, type Subscription, hasBundle } from '@proton/payments';
+import { PLANS, PLAN_NAMES, hasBundle } from '@proton/payments';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { isReferralTrial } from '@proton/payments/core/subscription/helpers';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import isTruthy from '@proton/utils/isTruthy';
@@ -13,7 +14,7 @@ import UpsellPriceV1 from './components/UpsellPriceV1';
 
 interface Props {
     upsells: Upsell[];
-    subscription: Subscription;
+    subscription: MaybeFreeSubscription;
 }
 
 const UpsellPanels = ({ upsells, subscription }: Props) => {

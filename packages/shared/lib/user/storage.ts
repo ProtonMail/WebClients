@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { ThemeColor } from '@proton/colors/types';
-import { PLANS, type Subscription, getHasMailB2BPlan, hasVisionary } from '@proton/payments';
+import { PLANS, getHasMailB2BPlan, hasVisionary } from '@proton/payments';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 
 import type { APP_NAMES } from '../constants';
 import { APPS } from '../constants';
@@ -67,12 +68,22 @@ export enum SpaceState {
     Danger,
 }
 
+const getSpaceDetailsType = (danger: boolean, warning: boolean) => {
+    if (danger) {
+        return SpaceState.Danger;
+    }
+    if (warning) {
+        return SpaceState.Warning;
+    }
+    return SpaceState.Good;
+};
+
 export const getSpaceDetails = (usedSpace: number, maxSpace: number) => {
     const data = getData(usedSpace, maxSpace);
     const danger = data.percentage >= 100;
     const warning = data.percentage >= 80 && data.percentage < 100;
     return {
-        type: danger ? SpaceState.Danger : warning ? SpaceState.Warning : SpaceState.Good,
+        type: getSpaceDetailsType(danger, warning),
         ...data,
     };
 };
@@ -95,7 +106,7 @@ export const getAppSpace = (options: ReturnType<typeof getSpace>, app: APP_NAMES
     return { usedSpace: options.usedBaseSpace, maxSpace: options.maxBaseSpace };
 };
 
-export const getCanAddStorage = ({ user, subscription }: { user: UserModel; subscription?: Subscription }) => {
+export const getCanAddStorage = ({ user, subscription }: { user: UserModel; subscription: MaybeFreeSubscription }) => {
     if (!subscription) {
         return false;
     }
