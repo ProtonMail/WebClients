@@ -288,6 +288,9 @@
       "Connect apps and devices": [
         "连接应用和设备"
       ],
+      "Connect to Gmail": [
+        "连接 Gmail"
+      ],
       "Connect to video conferencing": [
         "连接至视频会议"
       ],
@@ -1023,6 +1026,9 @@
       "Open navigation": [
         "打开导航栏"
       ],
+      "Or remove forwarding address": [
+        "或者移除转发地址"
+      ],
       "Or use a different Gmail address": [
         "或使用其他 Gmail 地址"
       ],
@@ -1097,6 +1103,9 @@
       ],
       "Reconnect": [
         "重新连接"
+      ],
+      "Reconnect to Gmail": [
+        "重新连接 Gmail"
       ],
       "Recover data": [
         "恢复数据"
@@ -4027,6 +4036,9 @@
       "Automatically sort your incoming messages before they reach your inbox.": [
         "在邮件到达收件箱前自动分类。"
       ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "阻止 Google 对您进行用户画像分析。Gmail 无法查看您在 ${ MAIL_APP_NAME } 中的操作"
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "首先进行配置，以激活您的组织并自定义您的邮箱地址。"
       ],
@@ -4053,6 +4065,9 @@
       ],
       "Easily sync files to the cloud from your desktop and access them from your mobile device.": [
         "轻松地将文件从桌面同步到云端，并从移动设备访问它们。"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "发送到 ${ connectedAddressText } 的电子邮件现在将显示在 ${ MAIL_APP_NAME } 中。"
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "建议在组织内使用双因素身份验证以提高安全性。"
@@ -4096,11 +4111,20 @@
       "New emails from ${ senderEmailAddress } won't be delivered and will be permanently deleted.": [
         "来自 ${ senderEmailAddress } 的新邮件将被直接删除，不再送达。"
       ],
+      "No ads. No trackers.": [
+        "无广告、无追踪。"
+      ],
       "No folders": [
         "无文件夹"
       ],
       "No labels": [
         "无标签"
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "在 ${ MAIL_APP_NAME } 中阅读、回复并随时处理 Gmail 邮件"
+      ],
+      "Send and receive Gmail correspondence directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "直接在 ${ MAIL_APP_NAME } 中收发 Gmail 邮件。请在 ${ addressesSettingsLink } 中连接您的地址。"
       ],
       "Separate different aspects of your life with multiple email addresses and unlock more premium features when you upgrade.": [
         "升级账户即可使用多个邮箱地址隔离工作与生活中的各项事务，还可解锁更多高级功能。"
@@ -4116,6 +4140,21 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "使用共享日历简化同步和日程安排。"
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "如果权限被移除或密码被更改，可能会发生此情况。"
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "若要连接其他 Gmail 地址，请移除转发到 ${ BRAND_NAME } 的多余 Gmail 地址。"
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "如要连接多达 ${ MAX_SYNC_PAID_USER } 个 Gmail 地址，请升级到 ${ planName }。"
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "若要继续在 ${ BRAND_NAME } 中接收和发送 Gmail 邮件，请重新连接您的账户。"
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "若要继续在 ${ BRAND_NAME } 中接收和发送 Gmail 邮件，请重新连接您的账户。"
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "若要继续使用写作助手，请将其添加到您的订阅中。"
@@ -4138,6 +4177,9 @@
       "Turn on email tracker protection to prevent advertisers and others from tracking your location and online activity.": [
         "开启邮件跟踪防护，避免广告商等第三方监视您的地理位置和网络轨迹。"
       ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "升级到 ${ planName } 最多可连接 ${ MAX_SYNC_PAID_USER } 个账户"
+      ],
       "Upgrade to get ${ activatePmUser } for a shorter, easy-to-remember email address in addition to your current one.": [
         "升级后，除现有邮箱地址外，还可以获得一个更短、更易记的 ${ activatePmUser } 邮箱地址。"
       ],
@@ -4150,8 +4192,17 @@
       "Use this guide to get your organization promptly benefiting from ${ BRAND_NAME }'s industry-leading encryption and privacy ecosystem.": [
         "使用本指南，让您的组织迅速受益于 ${ BRAND_NAME } 行业领先的加密和隐私生态系统。"
       ],
+      "We can't access ${ boldEmails } anymore.": [
+        "我们无法再访问 ${ boldEmails }。"
+      ],
       "We didn't find any known trackers and tracking URLs in this email.": [
         "我们未在此邮件中发现任何跟踪器与跟踪链接。"
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "我们将导入您的旧电子邮件并将 Gmail 连接到 ${ MAIL_APP_NAME }，以便新邮件自动显示。"
+      ],
+      "We've started importing your email from Gmail. We'll let you know when it's done.": [
+        "我们已开始从 Gmail 导入您的电子邮件，完成后将通知您。"
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "很遗憾看到您离开。如果您有时间，我们希望了解您取消的原因。您的反馈有助于我们改进 ${ BRAND_NAME }，让产品变得更好。"
@@ -4165,17 +4216,44 @@
       "With custom snooze, you can hide emails and set them to reappear at a better time.": [
         "有了自定义邮件推迟功能，您可以隐藏邮件并让其在更好的时间再次出现。"
       ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "您已有一个 Gmail 地址转发到 ${ MAIL_APP_NAME }。请在下方连接该地址，以便直接从 ${ MAIL_APP_NAME } 收发电子邮件。"
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "您已有 Gmail 地址转发到 ${ MAIL_APP_NAME }。请在下方连接其中一个地址，以便直接从 ${ MAIL_APP_NAME } 收发电子邮件。"
+      ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "您可以导入 iCal 格式（. ics 文件）的日程。文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且日程总数上限为 ${ MAX_IMPORT_EVENTS_STRING }。若您的文件超出限制，请先拆分成较小的文件。"
       ],
       "You can mark for deletion the contacts that you do not want neither to merge nor to keep. Deletion will only take place after the merge button is clicked": [
         "您可以选择稍后删除既不想合并也不想保留的联系人，点击合并按钮后他们就会被删除"
       ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "您现在可以使用此地址从 ${ BRAND_NAME } 发送电子邮件。"
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "您正在将 ${ numAddressesOrSync } 个 Gmail 地址转发到 ${ MAIL_APP_NAME }。"
+      ],
+      "You're forwarding emails from ${ forwardingCount } Gmail address. By connecting it, you'll be able to both receive and reply in ${ MAIL_APP_NAME }": [
+        "您正在转发来自 ${ forwardingCount } 个 Gmail 地址的电子邮件。连接它们后，您将能够在 ${ MAIL_APP_NAME } 中同时收发邮件。"
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "您已连接了 ${ MAX_SYNC_PAID_USER } 个 Gmail 地址。若要添加另一个地址，请先禁用其中一个已连接的账户。"
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "您已将 1 个外部账户地址连接到 ${ MAIL_APP_NAME }。"
+      ],
       "Your account and data recovery methods are set and 2FA is enabled.": [
         "您的账户和数据恢复方法均已设置，并且已启用 2FA。"
       ],
       "Your account and data recovery methods are set.": [
         "您的账户恢复方式已设置。"
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "您的套餐支持 ${ MAX_SYNC_FREE_USER } 个 Gmail 地址。"
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "您的套餐总共支持 ${ MAX_SYNC_PAID_USER } 个 Gmail 地址"
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已创建了 10 个别名。使用 ${ BRAND_NAME }  Unlimited，获得无限别名和 500 GB 的存储空间。"
@@ -4491,6 +4569,12 @@
       ],
       "Add at least one condition": [
         "至少添加一个条件"
+      ],
+      "Address could not be added.": [
+        "无法添加地址！"
+      ],
+      "Address is already added to your account": [
+        "地址已添加到您的账户"
       ],
       "Address primary private key not found": [
         "找不到地址主私钥"
@@ -4935,6 +5019,12 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "部分标签名称超过了 ${ MAIL_APP_NAME } 的字数限制，请在导入内容中予以更改。"
+      ],
+      "Something went wrong while creating the address": [
+        "创建地址时出错"
+      ],
+      "Something went wrong while fetching available domains": [
+        "获取可用域名时出错"
       ],
       "Something went wrong. Please try again.": [
         "出错了，请再试一次。"
@@ -7105,6 +7195,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "确保完全私密且加密的通信。立即认领您的免费 ${ BRAND_NAME } 邮箱地址。"
       ],
+      "Enter code": [
+        "输入代码"
+      ],
       "Enter the code from your authenticator app": [
         "请输入身份验证应用中的验证码"
       ],
@@ -7249,6 +7342,9 @@
       "If you don't find the email in your inbox, please check your spam folder.": [
         "若邮件没有出现在收件箱中，请检查其是否被归为垃圾邮件。"
       ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "如果您无法访问验证器应用，可以使用设置 2FA 时提供的 16 个备用恢复码之一。${ learnMoreLink }"
+      ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "降级账户后您将不能再使用 ${ MAIL_APP_NAME } 和 ${ VPN_APP_NAME } 的收费功能。"
       ],
@@ -7331,7 +7427,7 @@
         "初始化中..."
       ],
       "Insert image": [
-        "插入图片"
+        "插入图像"
       ],
       "Insert link": [
         "插入链接"
@@ -9641,6 +9737,9 @@
       "Search in": [
         "搜索范围"
       ],
+      "Select which Gmail address to connect": [
+        "请选择要连接的 Gmail 地址"
+      ],
       "Send auto-reply": [
         "自动回复"
       ],
@@ -10721,6 +10820,12 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "所有基本 ${ BRAND_NAME } 服务 (${ MAIL_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "预约安排"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "使用 ${ n } 个预约页面进行日程安排"
+      ],
       "Auto-delete Spam and Trash": [
         "自动清理垃圾邮件和回收站"
       ],
@@ -11496,6 +11601,9 @@
       ],
       "Trial started": [
         "试用已开始"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "您的 ${ BRAND_NAME } 地址已准备就绪"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -14594,6 +14702,9 @@
       "Block sender": [
         "屏蔽发件人"
       ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "将您的 Gmail 导入 ${ MAIL_APP_NAME }"
+      ],
       "Built for privacy": [
         "专为隐私而打造"
       ],
@@ -14755,6 +14866,9 @@
       ],
       "Desktop": [
         "桌面版"
+      ],
+      "Disconnected from Gmail": [
+        "已断开与 Gmail 的连接"
       ],
       "Discover your subscription benefits": [
         "了解您的订阅优惠"
@@ -15263,6 +15377,9 @@
       "Self-destruct message": [
         "自动销毁邮件"
       ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "使用 ${ MAIL_APP_NAME } 收发 Gmail 邮件"
+      ],
       "Send email": [
         "发送邮件"
       ],
@@ -15428,6 +15545,9 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "使用 ${ VPN_SHORT_APP_NAME } 保护隐私"
       ],
+      "Use Gmail securely in ${ MAIL_APP_NAME }": [
+        "在 ${ MAIL_APP_NAME } 中安全地使用 Gmail"
+      ],
       "Verification error": [
         "签名校验失败"
       ],
@@ -15472,6 +15592,9 @@
       ],
       "When is it most important to use a VPN?": [
         "什么时候最需要使用 VPN 呢？"
+      ],
+      "You are all set": [
+        "一切就绪"
       ],
       "You can now create unlimited folders and labels": [
         "您现在可以创建无限的文件夹和标签"
