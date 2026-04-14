@@ -192,7 +192,7 @@ const AutomaticSubscriptionModal = () => {
     const location = useLocation();
     // const protonConfig = useConfig();
 
-    const [openSubscriptionModal, loadingModal] = useSubscriptionModal();
+    const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const [plansResult, loadingPlans] = usePlans();
     const plans = plansResult?.plans;
     const [subscription, loadingSubscription] = useSubscription();
@@ -215,7 +215,7 @@ const AutomaticSubscriptionModal = () => {
             !subscription ||
             loadingPlans ||
             loadingSubscription ||
-            loadingModal ||
+            loadingSubscriptionModal ||
             loadingPaymentStatus ||
             !paymentStatus
         ) {
@@ -346,7 +346,7 @@ const AutomaticSubscriptionModal = () => {
 
             openSubscriptionModal(openProps);
         }
-    }, [loadingPlans, loadingSubscription, loadingModal, location.search]);
+    }, [loadingPlans, loadingSubscription, loadingSubscriptionModal, location.search]);
 
     const tmp = tmpProps.current;
 

@@ -4,7 +4,7 @@ import { paymentStatusThunk } from '@proton/account/paymentStatus';
 import { plansThunk } from '@proton/account/plans';
 import { subscriptionThunk } from '@proton/account/subscription';
 import { userThunk } from '@proton/account/user';
-import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
+import { useOptionalSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import type { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
 import useConfig from '@proton/components/hooks/useConfig';
 import { useCurrencies } from '@proton/components/payments/client-extensions';
@@ -43,7 +43,7 @@ const useUpsellModalConfig = ({ upsellRef, preventInAppPayment, onSubscribed, st
     const { APP_NAME } = useConfig();
     const [config, setConfig] = useState<UpsellModalConfig | null>(null);
     const { paymentsApi } = usePaymentsApi();
-    const [openSubscriptionModal] = useSubscriptionModal();
+    const [openSubscriptionModal] = useOptionalSubscriptionModal();
     const dispatch = useDispatch();
     const getFlag = useGetFlag();
     const { getPreferredCurrency } = useCurrencies();

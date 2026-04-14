@@ -1,17 +1,23 @@
-import { type ElementType, type ReactNode, useMemo } from 'react';
+import { type ReactNode, useMemo } from 'react';
 
+import { c } from 'ttag';
+
+import { BannerVariants } from '@proton/atoms/Banner/Banner';
 import { Button, type ButtonProps } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import { InfoBanner } from '@proton/components/containers/payments/subscription/confirm-button/InfoBanner';
 import useConfig from '@proton/components/hooks/useConfig';
 import type { PaymentFacade } from '@proton/components/payments/client-extensions';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import clsx from '@proton/utils/clsx';
 import isFunction from '@proton/utils/isFunction';
+import noop from '@proton/utils/noop';
 
 import { PAYMENT_METHOD_TYPES } from '../../core/constants';
 import type { PlainPaymentMethodType } from '../../core/interface';
 import type { PaymentTelemetryContext } from '../../telemetry/helpers';
 import { checkoutTelemetry } from '../../telemetry/telemetry';
+import { useEditBillingAddressModal } from '../billing-address/containers/useEditBillingAddressModal';
 import type { TaxCountryHook } from '../billing-address/hooks/useTaxCountry';
 import type { VatNumberHook } from '../billing-address/hooks/useVatNumber';
 import { ApplePayButton } from './ApplePayButton';
@@ -30,7 +36,6 @@ type Props = {
     children: ReactNode;
     paymentFacade: PaymentFacade;
     suffix?: ReactNode | ((type: PlainPaymentMethodType | undefined) => ReactNode);
-    as?: ElementType;
     paypalClassName?: string;
     formInvalid?: boolean;
     onClick?: (payload: PayButtonOnClickPayload) => void;
@@ -58,7 +63,6 @@ export const PayButton = ({
     children,
     paymentFacade,
     suffix,
-    as: Component = Button,
     className: classNameProp,
     paypalClassName,
     formInvalid,
@@ -68,6 +72,7 @@ export const PayButton = ({
     ...rest
 }: Props) => {
     const { APP_NAME } = useConfig();
+    const { editBillingAddressModal, openBillingAddressModal } = useEditBillingAddressModal();
 
     const suffixElement = useMemo(() => {
         if (isFunction(suffix)) {
@@ -104,6 +109,37 @@ export const PayButton = ({
      * {@link useVatNumber} are not applicable, and we need to skip them
      */
     const mustCheckVatNumberErrors = vatNumber && !vatNumber?.shouldEditInModal;
+
+    if (!taxCountry.billingAddressStatus.valid) {
+        return (
+            <>
+                {taxCountry.billingAddressErrorMessage ? (
+                    <InfoBanner variant={BannerVariants.DANGER}>{taxCountry.billingAddressErrorMessage}</InfoBanner>
+                ) : null}
+                <Button
+                    type="button"
+                    className={classNameProp}
+                    onClick={async (event) => {
+                        event.preventDefault();
+                        event.stopPropagation();
+
+                        openBillingAddressModal({
+                            subscription: paymentFacade.subscription,
+                            paymentsApi: taxCountry.paymentsApi,
+                            loadingKey: 'editBillingAddress',
+                            taxCountry,
+                            vatNumber,
+                        }).catch(noop);
+                    }}
+                    {...rest}
+                >
+                    {c('Payments').t`Edit billing address`}
+                </Button>
+                {suffixElement}
+                {editBillingAddressModal}
+            </>
+        );
+    }
 
     const submitButton = (() => {
         const isChargebeePaypal = paymentFacade.selectedMethodValue === PAYMENT_METHOD_TYPES.CHARGEBEE_PAYPAL;
@@ -153,7 +189,7 @@ export const PayButton = ({
             );
         } else {
             return (
-                <Component
+                <Button
                     type="submit"
                     disabled={submitButtonDisabled}
                     className={className}
@@ -163,7 +199,7 @@ export const PayButton = ({
                     {...rest}
                 >
                     {children}
-                </Component>
+                </Button>
             );
         }
     })();

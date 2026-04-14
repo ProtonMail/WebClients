@@ -2,7 +2,8 @@ import { getBillingAddressFromPaymentStatus } from './billing-address/billing-ad
 import type { PaymentStatus } from './interface';
 
 export function normalizePaymentMethodStatus(status: PaymentStatus): PaymentStatus {
-    const normalized = getBillingAddressFromPaymentStatus(status) as PaymentStatus;
+    // Do not restore ZIP code when payment status is simply loaded. This must be decided on level of components.
+    const normalized = getBillingAddressFromPaymentStatus(status, { shouldRestoreZipCode: false }) as PaymentStatus;
 
     const keys = Object.keys(normalized.VendorStates) as (keyof PaymentStatus['VendorStates'])[];
 

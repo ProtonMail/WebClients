@@ -19,6 +19,7 @@ import { useEditBillingAddressModal } from '@proton/payments/ui/billing-address/
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
+import noop from '@proton/utils/noop';
 
 import { useEditInvoiceModal } from './EditBillingAddress/useEditInvoiceModal';
 import InvoiceGroup from './InvoiceGroup';
@@ -111,7 +112,8 @@ const InvoicesSection = ({ app }: { app: APP_NAMES }) => {
                     text: c('Action').t`Edit billing address`,
                     'data-testid': 'editBillingAddress',
                     key: 'editBillingAddress',
-                    onClick: () => openBillingAddressModal({ loadingKey: editBillingAddressLoadingKey, subscription }),
+                    onClick: () =>
+                        openBillingAddressModal({ loadingKey: editBillingAddressLoadingKey, subscription }).catch(noop),
                     loading: loadingByKey[editBillingAddressLoadingKey],
                 },
                 {

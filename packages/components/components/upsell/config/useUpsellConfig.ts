@@ -1,6 +1,6 @@
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { useSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
+import { useOptionalSubscriptionModal } from '@proton/components/containers/payments/subscription/SubscriptionModalProvider';
 import useConfig from '@proton/components/hooks/useConfig';
 
 import { type GetUpsellConfigProps, getUpsellConfig } from './getUpsellConfig';
@@ -21,7 +21,7 @@ const useUpsellConfig = ({
 }: GetUpsellConfigProps): { upgradePath: string; onUpgrade?: () => void } => {
     const [user] = useUser();
     const [subscription] = useSubscription();
-    const [openSubscriptionModal] = useSubscriptionModal();
+    const [openSubscriptionModal] = useOptionalSubscriptionModal();
     const { APP_NAME: appName } = useConfig();
 
     return getUpsellConfig({

@@ -10,7 +10,10 @@ import noop from '@proton/utils/noop';
 
 import { openLinkInBrowser } from '../../desktop/openExternalLink';
 import { useHasInboxDesktopInAppPayments } from '../../desktop/useHasInboxDesktopInAppPayments';
-import { type OpenCallbackProps, useSubscriptionModal } from '../../payments/subscription/SubscriptionModalProvider';
+import {
+    type OpenCallbackProps,
+    useOptionalSubscriptionModal,
+} from '../../payments/subscription/SubscriptionModalProvider';
 import { SUBSCRIPTION_STEPS } from '../../payments/subscription/constants';
 import getOfferRedirectionParams from '../helpers/getOfferRedirectionParams';
 import type { Deal, Offer } from '../interface';
@@ -21,16 +24,15 @@ const useSelectDeal = (callback?: () => void) => {
     const goToSettingsLink = useSettingsLink();
     const hasInboxDesktopInAppPayments = useHasInboxDesktopInAppPayments();
 
-    const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
+    const [openSubscriptionModal, loadingSubscriptionModal] = useOptionalSubscriptionModal();
 
     const handleOnSelectDeal = (offer: Offer, deal: Deal, currency: Currency) => {
         // Open the in-app purchase modal if available
         const hasInAppPayment =
             APPS_WITH_IN_APP_PAYMENTS.has(APP_NAME) && (!isElectronMail || hasInboxDesktopInAppPayments);
         const plan = getPlanNameFromIDs(deal.planIDs);
-        const hasSubscriptionModal = openSubscriptionModal !== noop;
 
-        if (hasSubscriptionModal && hasInAppPayment && !loadingSubscriptionModal && plan) {
+        if (openSubscriptionModal && hasInAppPayment && !loadingSubscriptionModal && plan) {
             const subscriptionParams: OpenCallbackProps = {
                 plan,
                 currency,

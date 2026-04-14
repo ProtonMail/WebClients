@@ -38,6 +38,8 @@ import {
     getUpgradedPlan,
     getValidCycle,
 } from '@proton/payments';
+import type { BillingAddressExtended } from '@proton/payments/core/billing-address/billing-address';
+import { loadInitialBillingAddress } from '@proton/payments/ui/helpers/load-initial-billing-address';
 import { getApiError, getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import {
@@ -137,6 +139,7 @@ const SubscribeAccount = ({
     const [organization, loadingOrganization] = useOrganization();
     const [error, setError] = useState({ title: '', message: '', error: '' });
     const [paymentStatus, setPaymentStatus] = useState<PaymentStatus>();
+    const [initialBillingAddress, setInitialBillingAddress] = useState<BillingAddressExtended>();
     const { paymentsApi } = usePaymentsApi();
 
     const canEdit = canPay(user);
@@ -147,8 +150,13 @@ const SubscribeAccount = ({
 
     useEffect(() => {
         async function run() {
-            const status = await paymentsApi.paymentStatus();
-            setPaymentStatus(status);
+            const { paymentStatus, billingAddress } = await loadInitialBillingAddress({
+                getPaymentStatus: paymentsApi.paymentStatus,
+                getFullBillingAddress: paymentsApi.getFullBillingAddress,
+                isAuthenticated: true,
+            });
+            setPaymentStatus(paymentStatus);
+            setInitialBillingAddress(billingAddress);
         }
 
         void run();
@@ -160,7 +168,8 @@ const SubscribeAccount = ({
         loadingSubscription ||
         loadingPlans ||
         loadingOrganization ||
-        !paymentStatus
+        !paymentStatus ||
+        !initialBillingAddress
     ) {
         return loader;
     }
@@ -383,6 +392,7 @@ const SubscribeAccount = ({
                                     onUnsubscribed={handleSuccess}
                                     onCancel={handleClose}
                                     paymentStatus={paymentStatus}
+                                    initialBillingAddress={initialBillingAddress}
                                     onCheck={(data) => {
                                         // If the initial check completes, it's handled by the container itself
                                         if (data.model.initialCheckComplete) {
