@@ -11,13 +11,15 @@ import {
     userEvent,
     userRefresh,
 } from '@proton/pass/store/actions';
+import { getGroup } from '@proton/pass/store/actions/creators/groups';
 import { getOrganizationSettings } from '@proton/pass/store/actions/creators/organization';
 import type { HydratedUserState } from '@proton/pass/store/reducers';
 import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import { SyncType } from '@proton/pass/store/sagas/client/sync';
 import { selectAllAddresses, selectLatestEventId, selectUser, selectUserPlan, selectUserSettings } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { Api, MaybeNull, PassPlanResponse, UserEvent } from '@proton/pass/types';
+import { EventActions } from '@proton/pass/types';
+import type { Api, Maybe, MaybeNull, PassPlanResponse, UserEvent } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { notIn } from '@proton/pass/utils/fp/predicates';
 import { logId, logger } from '@proton/pass/utils/logger';
@@ -29,18 +31,19 @@ import { eventChannelFactory } from './channel.factory';
 import { channelEvents, channelInitalize } from './channel.worker';
 import type { EventChannel } from './types';
 
-/** Hydrates crypto context on user refresh to capture key or address changes.
- * If user keys changed, triggers a full sync to update share accessibility. */
-export function* onUserRefreshed(user: User, keyPassword?: string) {
+/** Hydrates crypto context whenever user or address keys may have changed.
+ * Reads user and addresses from Redux (always up-to-date after userEvent dispatch).
+ * Triggers a full sync if user keys changed to update share accessibility. */
+export function* onUserRefreshed(eventUser: Maybe<User>, keyPassword?: string) {
     try {
         if (!keyPassword) throw new Error('User refresh without `keyPassword`');
 
+        const user: User = eventUser ?? (yield select(selectUser));
         const localUserKeyIds = (PassCrypto.getContext().userKeys ?? []).map(prop('ID'));
         const activeUserKeys = user.Keys.filter(({ Active }) => Active === 1);
         const keysUpdated = activeUserKeys.length !== localUserKeyIds.length || activeUserKeys.some(({ ID }) => notIn(localUserKeyIds)(ID));
 
-        /** NOTE: by the time this is executed, addresses are synced via the
-         * `userEvent` action (see: packages/pass/store/reducers/user.ts) */
+        /* Refresh addresses that may have changed (including address keys) */
         const addresses: Address[] = yield select(selectAllAddresses);
         yield PassCrypto.hydrate({ user, keyPassword, addresses, clear: false });
 
@@ -75,7 +78,6 @@ function* onUserEvent(
         logger.info(`[ServerEvents::User] event ${logId(event.EventID!)}`);
     }
 
-    const { User: user } = event;
     const keyPassword = getAuthStore().getPassword();
 
     if (event.Refresh) {
@@ -95,7 +97,20 @@ function* onUserEvent(
         if (Locale !== userSettings?.Locale) yield onLocaleUpdated?.(Locale);
     }
 
-    if (user) yield call(onUserRefreshed, user, keyPassword);
+    if (event.GroupMembers) {
+        const addresses: Address[] = yield select(selectAllAddresses);
+        const ownAddressIds = new Set(addresses.map(({ ID }) => ID));
+
+        for (const { Action, GroupMember } of event.GroupMembers ?? []) {
+            if (Action !== EventActions.DELETE && ownAddressIds.has(GroupMember.AddressID)) {
+                yield put(getGroup.intent(GroupMember.GroupID));
+            }
+        }
+    }
+
+    if (event.User || event.Addresses) {
+        yield call(onUserRefreshed, event.User, keyPassword);
+    }
 
     const planChanged =
         (event.User && event.User.Subscribed !== cachedUser?.Subscribed) ||
