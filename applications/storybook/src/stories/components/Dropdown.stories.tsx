@@ -13,11 +13,11 @@ import DropdownButton from '@proton/components/components/dropdown/DropdownButto
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
-import Icon from '@proton/components/components/icon/Icon';
 import RadioGroup from '@proton/components/components/input/RadioGroup';
 import Option from '@proton/components/components/option/Option';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 
 const meta: Meta<typeof Dropdown> = {
     title: 'Components/Dropdown',
@@ -182,7 +182,7 @@ export const Size: Story = {
                         <CollapsibleHeader
                             suffix={
                                 <CollapsibleHeaderIconButton>
-                                    <Icon name="chevron-down" />
+                                    <IcChevronDown />
                                 </CollapsibleHeaderIconButton>
                             }
                         >
