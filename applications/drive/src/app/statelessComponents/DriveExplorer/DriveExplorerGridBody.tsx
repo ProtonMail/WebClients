@@ -109,7 +109,7 @@ export const DriveExplorerGridBody = ({
                 <div
                     className="w-full h-custom relative"
                     style={{
-                        '--h-custom': virtualizer.getTotalSize(),
+                        '--h-custom': `${virtualizer.getTotalSize()}px`,
                     }}
                 >
                     {rect &&
