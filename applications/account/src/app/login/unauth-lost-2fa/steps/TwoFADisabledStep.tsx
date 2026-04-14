@@ -1,14 +1,22 @@
+import { useEffect } from 'react';
+
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 
 import { useUnauthLost2FA } from '../UnauthedLost2FAContainer';
+import { useUnauthedLost2FATelemetry } from '../useUnauthedLost2FATelemetry';
 
 export const TwoFADisabledStep = () => {
     const { useUnauthLost2FAActorRef } = useUnauthLost2FA();
     const actorRef = useUnauthLost2FAActorRef();
     const { send } = actorRef;
+
+    const { sendStepLoad } = useUnauthedLost2FATelemetry();
+    useEffect(() => {
+        sendStepLoad('2fa-disabled');
+    }, []);
 
     return (
         <div>

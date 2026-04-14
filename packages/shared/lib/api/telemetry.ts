@@ -7,6 +7,7 @@ export enum TelemetryMeasurementGroups {
     accountSecurityCheckup = 'account.web.security_checkup',
     accountRecoverySettings = 'account.web.recovery_settings',
     accountResetPassword = 'account.web.reset_password',
+    accountUnauthLost2FA = 'account.web.unauth_lost_2fa',
     accountDashboard = 'account.web.dashboard',
     referralDiscover = 'any.web.referral_discover',
     alwaysOnUpsell = 'any.web.always_on_upsell',
@@ -224,6 +225,11 @@ export enum TelemetryReferralDiscoverEvents {
     copy_link_page = 'copy_link_page',
     share = 'share',
     send_email_invite = 'send_email_invite',
+}
+
+export enum TelemetryUnauthLost2FAEvents {
+    step_load = 'step_load',
+    flow_outcome = 'flow_outcome',
 }
 
 export enum TelemetryKeyTransparencyErrorEvents {
@@ -491,7 +497,8 @@ export type TelemetryEvents =
     | TelemetryUnlimitedToDuoOffer
     | TelemetryListSetting
     | TelemetryAppSwitcher
-    | TelemetryESMigrationToolEvents;
+    | TelemetryESMigrationToolEvents
+    | TelemetryUnauthLost2FAEvents;
 
 export interface TelemetryReport {
     measurementGroup: TelemetryMeasurementGroups;
