@@ -913,6 +913,9 @@
       "Later": [
         "Myöhemmin"
       ],
+      "Learn about recovery options": [
+        "Tutustu palautusvaihtoehtoihin"
+      ],
       "Learn more": [
         "Lue lisää"
       ],
@@ -1323,6 +1326,9 @@
       ],
       "Send my username": [
         "Lähetä käyttäjätunnukseni"
+      ],
+      "Send new code": [
+        "Lähetä uusi koodi"
       ],
       "Send new invite": [
         "Lähetä uusi kutsu"
@@ -7910,8 +7916,8 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe kirjoitusavustaja"
       ],
-      "${ BRAND_NAME } will send a verification code to ${ RedactedPhoneNumber }. Standard message rates may apply.": [
-        "${ BRAND_NAME } lähettää vahvistuskoodin numeroon ${ RedactedPhoneNumber }. Viesteistä saatetaan veloittaa tavanomaiset viestimaksut."
+      "${ BRAND_NAME } will send a verification code to ${ phoneNumber }. Standard message rates may apply.": [
+        "${ BRAND_NAME } lähettää vahvistuskoodin numeroon ${ phoneNumber }. Viesteistä saatetaan veloittaa tavanomaiset viestimaksut."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }in salaustekniikan ansioista kukaan ei voi päästä käsiksi salasanaasi - emme edes me."
@@ -8447,6 +8453,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Ennen kuin pyydät uuden vahvistuskoodin, tarkista roskapostikansiosi ja varmista, että osoite ${ strong } on oikea."
       ],
+      "Before sending a new verification code, check your spam folder for ${ EmailOrPhoneNumber }.": [
+        "Tarkista roskapostikansiosi ennen uuden vahvistuskoodin lähettämistä ${ EmailOrPhoneNumber }."
+      ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
         "Ennen kuin voit vastaanottaa sähköpostia räätälöityyn verkkotunnuksesi ${ MAIL_APP_NAME }, sinun täytyy lisätä seuraavat kaksi MX-tietuetta DNS-hallinnassasi (löytyy alustalta, josta hankit verkkotunnuksesi). Esimerkki ja joitakin vinkkejä löytyy ${ kbLink }."
       ],
@@ -8507,6 +8516,9 @@
       "Check the status of imports and forwarding.": [
         "Tarkista tuontien ja ohjausten tila."
       ],
+      "Check your network and try again.": [
+        "Tarkista verkkoyhteytesi ja yritä uudelleen."
+      ],
       "Choose a plan that works best for you.": [
         "Valitse tilaus, joka sopii sinulle parhaiten."
       ],
@@ -8519,6 +8531,9 @@
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Paina \"Pyydä uusi koodi\" saadaksesi uuden vahvistuskoodin numeroon ${ strong }. Jos numero on väärin, korjaa se painamalla \"Muokkaa\"."
       ],
+      "Click 'Trouble signing in?' on your TV to follow the alternative steps.": [
+        "Napsauta televisiossasi kohtaa ”Ongelmia kirjautumisessa?”, jotta voit seurata vaihtoehtoisia ohjeita."
+      ],
       "Click **Request password reset** and follow the prompts.": [
         "Napsauta **Pyydä salasanan nollausta** ja noudata ohjeita."
       ],
@@ -8530,9 +8545,6 @@
       ],
       "Cloud storage, integrated with ${ DOCS_APP_NAME }": [
         "Pilvitallennus, integroitu ${ DOCS_APP_NAME } kanssa"
-      ],
-      "Code expired": [
-        "Koodi vanhentunut"
       ],
       "Coming soon": [
         "Tulossa pian"
@@ -9239,6 +9251,9 @@
       ],
       "Internet connection restored.": [
         "Internet-yhteys on palautettu."
+      ],
+      "Invalid code. ${ RequestNewCodeLink } and try again.": [
+        "Virheellinen koodi. ${ RequestNewCodeLink } ja yritä uudelleen."
       ],
       "Invitation link expired": [
         "Kutsulinkki on vanhentunut"
@@ -10513,6 +10528,9 @@
       ],
       "Vault updated": [
         "Holvia muokattiin"
+      ],
+      "Verification code sent.": [
+        "Vahvistuskoodi lähetettiin."
       ],
       "Verification link expired": [
         "Vahvistuslinkki on vanhentunut"
@@ -13666,6 +13684,38 @@
         "Kirjaudu sisään ${ BRAND_NAME } -tilillesi käyttääksesi kaikkia salattuja ${ BRAND_NAME }-palveluita, kuten mm. ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } ja ${ CALENDAR_SHORT_APP_NAME }. Eikö sinulla ole tiliä? Luo sellainen ILMAISEKSI."
       ]
     },
+    "Missing feature": {
+      "Check out the latest product updates": [
+        "Tutustu uusimpiin tuotepäivityksiin"
+      ],
+      "Continue cancelling": [
+        "Jatka perumista"
+      ],
+      "Explore the latest news": [
+        "Tutustu uusimpiin uutisiin"
+      ],
+      "Keep current plan": [
+        "Pidä nykyinen tilauksesi"
+      ],
+      "Make your voice heard": [
+        "Saat äänesi kuuluviin"
+      ],
+      "Request a feature": [
+        "Pyydä ominaisuutta"
+      ],
+      "Request a feature or vote on ideas from other users in our feedback forum.": [
+        "Pyydä uutta ominaisuutta tai äänestä muiden käyttäjien ideoista palautefoorumillamme."
+      ],
+      "See how ${ BRAND_NAME } apps are evolving with your feedback.": [
+        "Katso, miten ${ BRAND_NAME } -sovellukset kehittyvät palautteesi ansiosta."
+      ],
+      "Submit your ideas": [
+        "Jätä oma ideasi!"
+      ],
+      "Your feedback helps us improve. Whether you've spotted a bug, want a new feature, or think something could work differently, we'd love to hear from you.": [
+        "Palautteesi auttaa meitä parantamaan palvelua. Olitpa sitten havainnut virheen, toivoisit uutta ominaisuutta tai ajattelet, että jokin asia voisi toimia toisin, kuulisimme mielellämme mielipiteesi."
+      ]
+    },
     "Modal title": {
       "Add public holidays": [
         "Lisää yleiset vapaapäivät"
@@ -14125,6 +14175,13 @@
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Kaikki ${ BRAND_NAME } -peruspalvelut (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "Appointment scheduling": [
+        "Ajanvaraus"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Ajanvaraus ${ n } -varaussivulla",
+        "Ajanvaraus ${ n } -varaussivulla"
       ],
       "Auto-delete Spam and Trash": [
         "Roskapostin ja roskakorin automaattinen tyhjennys"
@@ -20547,6 +20604,9 @@
       "Close": [
         "Sulje"
       ],
+      "Code expired": [
+        "Koodi vanhentui"
+      ],
       "Collaborate on documents": [
         "Yhteiskäytä dokumentteja"
       ],
@@ -20603,6 +20663,9 @@
       ],
       "Continue with partial import?": [
         "Jatketaanko osittaista tuontia?"
+      ],
+      "Couldn't sign in": [
+        "Kirjautuminen ei onnistu"
       ],
       "Couldn’t create accounts": [
         "Tilejä ei voitu luoda"
@@ -21369,6 +21432,9 @@
       ],
       "Request new code": [
         "Pyydä uusi koodi"
+      ],
+      "Request new code?": [
+        "Pyydä uusi koodi?"
       ],
       "Request sent": [
         "Pyyntö lähetetty"
