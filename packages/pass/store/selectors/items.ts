@@ -21,7 +21,6 @@ import type {
 } from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array/first';
 import { and, not } from '@proton/pass/utils/fp/predicates';
-import isEqual from '@proton/shared/lib/helpers/isDeepEqual';
 import isTruthy from '@proton/utils/isTruthy';
 
 const { asIfNotFailed, asIfNotOptimistic } = withOptimisticItemsByShareId.selectors;
@@ -50,14 +49,8 @@ export const selectVisibleLoginItems = selectItemsFactory('login', true);
 export const selectAllAliasItems = selectItemsFactory('alias', false);
 export const selectVisibleAliasItems = selectItemsFactory('alias', true);
 
-export const selectVisibleNonTrashedSshKeyItems = createSelector(
-    selectItemsFactory('sshKey', true),
-    (items) => items.filter(not(isTrashed)),
-    {
-        memoizeOptions: {
-            resultEqualityCheck: isEqual,
-        },
-    }
+export const selectVisibleNonTrashedSshKeyItems = createSelector(selectItemsFactory('sshKey', true), (items) =>
+    items.filter(not(isTrashed))
 );
 
 export const itemsFromSelection =

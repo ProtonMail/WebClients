@@ -67,6 +67,34 @@ export const asyncLock = <F extends (...args: any[]) => Promise<any>>(fn: F, opt
     };
 };
 
+/** Similar to asyncLock but keeps only the latest call instead of deduplicating to the pending one. */
+export const asyncLatest = <F extends (...args: any[]) => Promise<any>>(fn: F, options?: AsyncLockOptions<F>) => {
+    const running = new Map<string, boolean>();
+    const pending = new Map<string, Parameters<F>>();
+
+    const run = async (...args: Parameters<F>): Promise<void> => {
+        const key = options?.key?.(...args) ?? '';
+        if (running.get(key)) {
+            pending.set(key, args);
+            return;
+        }
+
+        running.set(key, true);
+        try {
+            await fn(...args);
+        } finally {
+            running.set(key, false);
+            const next = pending.get(key);
+            if (next !== undefined) {
+                pending.delete(key);
+                void run(...next);
+            }
+        }
+    };
+
+    return run;
+};
+
 type AsyncQueueOptions<F extends (...args: any[]) => Promise<any>> = AsyncLockOptions<F>;
 
 export const asyncQueue = <F extends (...args: any[]) => Promise<any>>(fn: F, options?: AsyncQueueOptions<F>) => {

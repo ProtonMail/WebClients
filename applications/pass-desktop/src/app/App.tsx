@@ -13,6 +13,7 @@ import { logStore } from 'proton-pass-web/lib/logger';
 import { monitor } from 'proton-pass-web/lib/monitor';
 import { settings } from 'proton-pass-web/lib/settings';
 import { spotlightProxy as spotlight } from 'proton-pass-web/lib/spotlight';
+import { sshAgent } from 'proton-pass-web/lib/ssh-agent';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
 import { getTheme } from 'proton-pass-web/lib/theme';
 
@@ -56,7 +57,6 @@ import { PASS_CONFIG, SENTRY_CONFIG } from '../lib/env';
 import { useDesktopContextMenu } from '../lib/hooks/useDesktopContextMenu';
 import { installStorageFlush } from '../lib/storage/storage.view';
 import { ExtensionUnlock } from './ExtensionUnlock';
-import { SshAgentProvider } from './Views/SshAgent/SshAgentProvider';
 import { WelcomeScreen } from './Views/WelcomeScreen/WelcomeScreen';
 import { isFirstLaunch } from './firstLaunch';
 import locales from './locales';
@@ -79,6 +79,8 @@ exposePassCrypto(createPassCrypto(core, store));
 
 sentry({ config: PASS_CONFIG, sentryConfig: SENTRY_CONFIG });
 connectivity.init();
+
+sshAgent?.init(store.getState);
 
 export const getPassCoreProps = (): PassCoreProviderProps => ({
     config: PASS_CONFIG,
@@ -168,7 +170,6 @@ export const App = () => {
                                                                 </Portal>
                                                             </ExtensionUnlock>
                                                         </ContextMenuProvider>
-                                                        <SshAgentProvider />
                                                     </StoreProvider>
                                                 </AuthServiceProvider>
                                             </AuthSwitchProvider>
