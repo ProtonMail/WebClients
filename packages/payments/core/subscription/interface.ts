@@ -164,5 +164,5 @@ export type SubscriptionCheckForbiddenReason =
       }
     | {
           forbidden: true;
-          reason: 'already-subscribed' | 'already-subscribed-externally' | 'offer-not-available';
+          reason: 'already-subscribed' | 'already-subscribed-externally' | 'offer-not-available' | 'paid-plan-required';
       };

@@ -28,7 +28,7 @@ import {
 } from '../plan/addons';
 import { getIsB2BAudienceFromPlan, isForbiddenModification } from '../plan/helpers';
 import type { PlansMap, SubscriptionPlan } from '../plan/interface';
-import { getPlanFromIDs } from '../planIDs';
+import { getPlanFromIDs, hasFreePlanIDs } from '../planIDs';
 import { isFreeSubscription, isPaidSubscription } from '../type-guards';
 import { Renew, SubscriptionPlatform, TaxInclusive, TrialType } from './constants';
 import { FREE_PLAN } from './freePlans';
@@ -769,6 +769,13 @@ export function isSubscriptionCheckForbiddenWithReason(
     estimationParameters: SubscriptionCheckForbiddenEstimationParameters
 ): SubscriptionCheckForbiddenReason {
     const { planIDs, cycle } = estimationParameters;
+
+    if (hasFreePlanIDs(planIDs)) {
+        return {
+            forbidden: true,
+            reason: 'paid-plan-required',
+        };
+    }
 
     const codes: string[] = (() => {
         if (estimationParameters.Codes) {
