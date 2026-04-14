@@ -2,6 +2,7 @@ import type { FC } from 'react';
 import { useCallback, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
+import { sshAgent } from 'proton-pass-web/lib/ssh-agent';
 import { c } from 'ttag';
 
 import Checkbox from '@proton/components/components/input/Checkbox';
@@ -15,164 +16,146 @@ import { selectPassPlan } from '@proton/pass/store/selectors';
 import { selectVisibleNonTrashedSshKeyItems } from '@proton/pass/store/selectors/items';
 import { type Maybe, SpotlightMessage } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
+import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';
 import { logger } from '@proton/pass/utils/logger';
 import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants';
-import noop from '@proton/utils/noop';
 
 import { SSHAgentInstructionsModal } from './SSHAgentInstructionsModal';
 
-export const SshAgent: FC = DESKTOP_BUILD
-    ? () => {
-          const { createNotification } = useNotifications();
-          const sshKeys = useSelector(selectVisibleNonTrashedSshKeyItems);
-          const instructionsSpotlight = useSpotlightFor(SpotlightMessage.SSH_AGENT_INSTRUCTIONS);
+const SshAgentDesktop: FC = () => {
+    const { createNotification } = useNotifications();
+    const sshKeys = useSelector(selectVisibleNonTrashedSshKeyItems);
+    const instructionsSpotlight = useSpotlightFor(SpotlightMessage.SSH_AGENT_INSTRUCTIONS);
 
-          const [socketPath, setSocketPath] = useState<Maybe<string>>(undefined);
-          const [modal, setModal] = useState<{ show: true; hideFooter: boolean } | { show: false }>({
-              show: false,
-          });
-          const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
+    const [socketPath, setSocketPath] = useState<Maybe<string>>(undefined);
+    const [modal, setModal] = useState<{ show: true; hideFooter: boolean } | { show: false }>({
+        show: false,
+    });
+    const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
 
-          const enabled = Boolean(socketPath);
+    const [loading, setLoading] = useState(false);
+    const enabled = Boolean(socketPath);
+    const bridge = window.ctxBridge!;
 
-          const { getSshAgentStatus, setSshKeyItems, stopSshAgent, startSshAgent, setSshAgentSettingEnabled } =
-              window.ctxBridge!;
+    const updateStatus = useCallback(async () => {
+        try {
+            const status = await bridge.getSshAgentStatus();
+            setSocketPath(status.socketPath);
+        } catch (error) {
+            logger.error('[SSH agent] Could not get status:', error);
+            setSocketPath(undefined);
+        }
+    }, []);
 
-          const updateStatus = useCallback(async () => {
-              try {
-                  const status = await getSshAgentStatus();
-                  setSocketPath(status.socketPath);
-              } catch (error) {
-                  logger.error('[SSH agent] Could not get status:', error);
-                  setSocketPath(undefined);
-              }
-          }, []);
+    const handleSshAgentToggle = async () => {
+        setLoading(true);
+        try {
+            if (enabled) {
+                await bridge.setSshAgentSettingEnabled(false);
+                await sshAgent?.stop();
+                await updateStatus();
+                createNotification({ text: c('Success').t`SSH agent successfully stopped` });
+            } else {
+                await sshAgent?.start();
+                await sshAgent?.sync(sshKeys);
+                await updateStatus();
+                await bridge.setSshAgentSettingEnabled(true);
+                createNotification({ text: c('Success').t`SSH agent successfully started` });
+                if (instructionsSpotlight.open) {
+                    setModal({ show: true, hideFooter: false });
+                }
+            }
+        } catch (error) {
+            const errorMessage = getErrorMessage(error);
+            createNotification({
+                text: enabled
+                    ? c('Error').t`Failed to stop SSH agent: ${errorMessage}`
+                    : c('Error').t`Failed to start SSH agent: ${errorMessage}`,
+                type: 'error',
+            });
+            logger.error(`[SSH agent] Could not toggle`, error);
+        } finally {
+            setLoading(false);
+        }
+    };
 
-          const handleStartAgent = async () => {
-              try {
-                  await startSshAgent();
-                  logger.info('[SSH agent] Started');
+    const handleModalCancel = async () => {
+        setModal({ show: false });
+        await bridge.setSshAgentSettingEnabled(false);
+        await sshAgent?.stop();
+        await updateStatus();
+    };
 
-                  if (sshKeys.length > 0) {
-                      await setSshKeyItems(sshKeys);
-                      logger.info('[SSH agent] Keys sent');
+    const handleModalClose = () => setModal({ show: false });
+
+    const handleModalDone = (dontShowAgain?: boolean) => {
+        handleModalClose();
+        if (dontShowAgain) instructionsSpotlight.close();
+    };
+
+    const handleInfoClick = () => setModal({ show: true, hideFooter: true });
+
+    useEffect(() => {
+        void updateStatus();
+    }, [updateStatus]);
+
+    return (
+        <SettingsPanel
+            title={c('Title').t`SSH Agent`}
+            {...(isFreePlan
+                ? {
+                      contentClassname: 'opacity-50 py-4',
+                      actions: [
+                          <UpgradeButton upsellRef={UpsellRef.SSH_AGENT} inline className="text-sm" key="upgrade" />,
+                      ],
+                      subTitle: c('Warning').t`SSH agent requires using SSH keys, which is not available in your plan.`,
                   }
+                : {})}
+        >
+            <div className="flex flex-column gap-2">
+                <div className="flex items-start items-center gap-2">
+                    <Checkbox
+                        id="ssh-agent-checkbox"
+                        checked={enabled}
+                        onChange={handleSshAgentToggle}
+                        loading={loading}
+                        // Free plan should never have this enabled in the first place, but still
+                        // allow user to disable (e.g after downgrade)
+                        disabled={isFreePlan && !enabled}
+                    />
+                    <div className="flex-1">
+                        <div className="flex items-center gap-1">
+                            <label htmlFor="ssh-agent-checkbox" className="cursor-pointer">
+                                {c('Label').t`Use ${PASS_APP_NAME} as SSH agent`}
+                            </label>
+                            <InfoButton onClick={handleInfoClick} />
+                        </div>
+                        <span className="block color-weak text-sm">
+                            {c('Info').t`${PASS_APP_NAME} will use the SSH keys saved in your vaults.`}
+                        </span>
+                    </div>
+                </div>
+                {sshKeys.length === 0 && (
+                    <div className="text-sm color-weak">
+                        {c('Info')
+                            .t`No SSH keys found in ${PASS_SHORT_APP_NAME}. Create SSH key items to use with the agent.`}
+                    </div>
+                )}
+                {modal.show && (
+                    <SSHAgentInstructionsModal
+                        socketPath={socketPath}
+                        onClose={handleModalClose}
+                        onCancel={handleModalCancel}
+                        onDone={handleModalDone}
+                        hideFooter={modal.hideFooter}
+                    />
+                )}
+            </div>
+        </SettingsPanel>
+    );
+};
 
-                  await updateStatus();
-                  createNotification({ text: c('Notification').t`SSH agent successfully started` });
-              } catch (error) {
-                  createNotification({
-                      text: c('Notification').t`Failed to start SSH agent: ${error}`,
-                      type: 'error',
-                  });
-                  logger.error('[SSH agent] Could not be started:', error);
-              }
-          };
-
-          const handleStopAgent = async () => {
-              try {
-                  await stopSshAgent();
-                  await updateStatus();
-                  createNotification({ text: c('Notification').t`SSH agent successfully stopped` });
-              } catch (error) {
-                  createNotification({
-                      text: c('Notification').t`Failed to stop SSH agent: ${error}`,
-                      type: 'error',
-                  });
-                  logger.error('[SSH agent] Could not be stopped:', error);
-              }
-          };
-
-          const handleSshAgentToggle = async () => {
-              if (enabled) {
-                  await handleStopAgent();
-                  await setSshAgentSettingEnabled(false);
-              } else {
-                  await handleStartAgent();
-                  await setSshAgentSettingEnabled(true);
-                  if (instructionsSpotlight.open) {
-                      setModal({ show: true, hideFooter: false });
-                  }
-              }
-          };
-
-          const handleModalCancel = async () => {
-              setModal({ show: false });
-              await handleStopAgent();
-              await setSshAgentSettingEnabled(false);
-          };
-
-          const handleModalClose = () => setModal({ show: false });
-
-          const handleModalDone = (dontShowAgain?: boolean) => {
-              handleModalClose();
-              if (dontShowAgain) instructionsSpotlight.close();
-          };
-
-          const handleInfoClick = () => setModal({ show: true, hideFooter: true });
-
-          useEffect(() => {
-              void updateStatus();
-          }, [updateStatus]);
-
-          return (
-              <SettingsPanel
-                  title={c('Title').t`SSH Agent`}
-                  {...(isFreePlan
-                      ? {
-                            contentClassname: 'opacity-50 py-4',
-                            actions: [
-                                <UpgradeButton
-                                    upsellRef={UpsellRef.SSH_AGENT}
-                                    inline
-                                    className="text-sm"
-                                    key="upgrade"
-                                />,
-                            ],
-                            subTitle: c('Warning')
-                                .t`SSH agent requires using SSH keys, which is not available in your plan.`,
-                        }
-                      : {})}
-              >
-                  <div className="flex flex-column gap-2">
-                      <div className="flex items-start items-center gap-2">
-                          <Checkbox
-                              id="ssh-agent-checkbox"
-                              checked={enabled}
-                              onChange={handleSshAgentToggle}
-                              // Free plan should never have this enabled in the first place, but still
-                              // allow user to disable just in case SshAgentProvider.tsx failed to auto-disable it
-                              disabled={isFreePlan && !enabled}
-                          />
-                          <div className="flex-1">
-                              <div className="flex items-center gap-1">
-                                  <label htmlFor="ssh-agent-checkbox" className="cursor-pointer">
-                                      {c('Label').t`Use ${PASS_APP_NAME} as SSH agent`}
-                                  </label>
-                                  <InfoButton onClick={handleInfoClick} />
-                              </div>
-                              <span className="block color-weak text-sm">
-                                  {c('Info').t`${PASS_APP_NAME} will use the SSH keys saved in your vaults.`}
-                              </span>
-                          </div>
-                      </div>
-                      {sshKeys.length === 0 && (
-                          <div className="text-sm color-weak">
-                              {c('Info')
-                                  .t`No SSH keys found in ${PASS_SHORT_APP_NAME}. Create SSH key items to use with the agent.`}
-                          </div>
-                      )}
-                      {modal.show && (
-                          <SSHAgentInstructionsModal
-                              socketPath={socketPath}
-                              onClose={handleModalClose}
-                              onCancel={handleModalCancel}
-                              onDone={handleModalDone}
-                              hideFooter={modal.hideFooter}
-                          />
-                      )}
-                  </div>
-              </SettingsPanel>
-          );
-      }
-    : noop;
+export const SshAgent: FC = () => {
+    if (!DESKTOP_BUILD) return null;
+    return <SshAgentDesktop />;
+};
