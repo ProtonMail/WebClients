@@ -629,7 +629,7 @@ const Step1 = ({
             });
         },
         initialBillingAddress: {
-            ...getBillingAddressFromPaymentStatus(model.paymentStatus),
+            ...getBillingAddressFromPaymentStatus(model.paymentStatus, { shouldRestoreZipCode: true }),
             Company: signupParameters.orgName ?? '',
             City: signupParameters.city ?? '',
             Address: signupParameters.streetAddress ?? '',

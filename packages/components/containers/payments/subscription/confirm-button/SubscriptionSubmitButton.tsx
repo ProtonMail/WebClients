@@ -144,15 +144,10 @@ export const SubscriptionSubmitButton = ({
         </InfoBanner>
     ) : null;
 
-    const billingAddressWarning = taxCountry.billingAddressErrorMessage ? (
-        <InfoBanner variant={BannerVariants.DANGER}>{taxCountry.billingAddressErrorMessage}</InfoBanner>
-    ) : null;
-
     const paymentWarnings = (
         <>
             {discountLossWarning}
             {visionaryWarning}
-            {billingAddressWarning}
         </>
     );
 

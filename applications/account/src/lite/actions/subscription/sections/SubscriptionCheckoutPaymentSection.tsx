@@ -16,7 +16,6 @@ import type { PaymentMethodType, PaymentProcessorHook } from '@proton/payments';
 import {
     DisplayablePaymentError,
     SubscriptionMode,
-    getBillingAddressFromPaymentStatus,
     getPaymentsVersion,
     hasPlanIDs,
     isSubscriptionCheckForbiddenWithReason,
@@ -55,7 +54,6 @@ const SubscriptionCheckoutPaymentSection = ({
     const {
         subscription,
         checkoutUi,
-        paymentStatus,
         billingAddress,
         selectFullBillingAddress,
         plansMap,
@@ -73,7 +71,7 @@ const SubscriptionCheckoutPaymentSection = ({
 
     const billingAddressHook = useBillingAddress({
         onBillingAddressChange: selectFullBillingAddress,
-        initialBillingAddress: paymentStatus ? getBillingAddressFromPaymentStatus(paymentStatus) : undefined,
+        initialBillingAddress: billingAddress,
         paymentFacade,
         telemetryContext,
         selectedPlanName: planName,

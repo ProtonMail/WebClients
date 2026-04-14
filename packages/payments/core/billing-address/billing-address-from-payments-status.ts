@@ -48,19 +48,39 @@ function restorePartialCanadianPostalCode(normalized: BillingAddress): void {
 
 /**
  * Implements a set of fallbacks in case the backend doesn't return the complete billing address.
+ *
+ * @param shouldRestoreZipCode - Whether to restore the ZIP code if it is missing. ZIP code can be missing in two cases:
+ * 1) if it's a signup flow, and the ZIP code detection didn't work properly (payment status endpoint didn't return it)
+ * 2) there is a cohort of existing US/CA users who are supposed to have ZIP code, but they still don't have it. It's
+ *    not expected behavior, but FE needs to recover from it.
+ *
+ * Case 1: user is unauthenticated - pass shouldRestoreZipCode: true, because in this case we will make the checkout
+ * smoother, while nothing in the UI will break.
+ *
+ * Case 2: user is authenticated - pass shouldRestoreZipCode: false, because otherwise UI can be inconsistent. For
+ * example, if ZIP code is restored then the billing country selector displays the restored ZIP code. However since the
+ * `subscription/check` endpoint is stateful and reads the previously saved billing address, it can return an error that
+ * the ZIP code is invalid/missing. The solution is not to do optimistic ZIP code restoration in this case.
  */
-export function getBillingAddressFromPaymentStatus(billingAddress: BillingAddress): BillingAddress {
+export function getBillingAddressFromPaymentStatus(
+    billingAddress: BillingAddress,
+    { shouldRestoreZipCode }: { shouldRestoreZipCode: boolean }
+): BillingAddress {
     const normalized = { ...billingAddress };
 
     restoreDefaultsIfCountryIsMissing(normalized);
     restoreState(normalized);
-    restoreZipCode(normalized);
-    restorePartialCanadianPostalCode(normalized);
-
+    if (shouldRestoreZipCode) {
+        restoreZipCode(normalized);
+        restorePartialCanadianPostalCode(normalized);
+    }
     return normalized;
 }
 
-export function getFullBillingAddressFromPaymentStatus(paymentStatus: PaymentStatus): FullBillingAddress {
+export function getFullBillingAddressFromPaymentStatus(
+    paymentStatus: PaymentStatus,
+    { shouldRestoreZipCode }: { shouldRestoreZipCode: boolean }
+): FullBillingAddress {
     const CountryCode = paymentStatus.CountryCode;
     const State = paymentStatus.State;
     const ZipCode = paymentStatus.ZipCode;
@@ -73,8 +93,10 @@ export function getFullBillingAddressFromPaymentStatus(paymentStatus: PaymentSta
 
     restoreDefaultsIfCountryIsMissing(BillingAddress);
     restoreState(BillingAddress);
-    restoreZipCode(BillingAddress);
-    restorePartialCanadianPostalCode(BillingAddress);
+    if (shouldRestoreZipCode) {
+        restoreZipCode(BillingAddress);
+        restorePartialCanadianPostalCode(BillingAddress);
+    }
 
     const fullBillingAddress: FullBillingAddress = {
         BillingAddress,

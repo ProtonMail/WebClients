@@ -51,7 +51,6 @@ import {
     SubscriptionMode,
     captureWrongPlanIDs,
     captureWrongPlanName,
-    getBillingAddressFromPaymentStatus,
     getCheckoutModifiers,
     getFreeCheckResult,
     getHas2025OfferCoupon,
@@ -252,7 +251,7 @@ export interface SubscriptionContainerProps {
     telemetryFlow?: TelemetryPaymentFlow;
     render: (renderProps: RenderProps) => ReactNode;
     subscription: Subscription | FreeSubscription;
-    organization: Organization;
+    organization: Organization | undefined;
     plans: Plan[];
     freePlan: FreePlanDefault;
     mode?: 'upsell-modal';
@@ -266,6 +265,7 @@ export interface SubscriptionContainerProps {
     showShortPlan?: boolean;
     // Skip plan transition check if they are handled externally
     skipPlanTransitionChecks?: boolean;
+    initialBillingAddress: BillingAddress;
 }
 
 const SubscriptionContainerInner = ({
@@ -302,6 +302,7 @@ const SubscriptionContainerInner = ({
     paymentStatus,
     showShortPlan,
     skipPlanTransitionChecks,
+    initialBillingAddress,
 }: SubscriptionContainerProps) => {
     const defaultMaximumCycle = getMaximumCycleForApp(app);
     const maximumCycle = maybeMaximumCycle ?? defaultMaximumCycle;
@@ -420,7 +421,7 @@ const SubscriptionContainerInner = ({
             coupon: maybeCoupon || subscription.CouponCode || undefined,
             planIDs,
             initialCheckComplete: false,
-            taxBillingAddress: getBillingAddressFromPaymentStatus(paymentStatus),
+            taxBillingAddress: initialBillingAddress,
             paymentForbiddenReason: { forbidden: false },
         };
 
@@ -1297,7 +1298,8 @@ const SubscriptionContainerInner = ({
 
     const billingAddressHook = useBillingAddress({
         onBillingAddressChange: handleBillingAddressChange,
-        initialBillingAddress: getBillingAddressFromPaymentStatus(paymentStatus),
+        initialBillingAddress,
+        isAuthenticated: true,
         paymentFacade,
         telemetryContext,
         paymentsApi,

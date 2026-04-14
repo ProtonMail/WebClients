@@ -7,7 +7,15 @@ import { buildSubscription } from '@proton/testing/builders';
 import { type Props, SubscriptionSubmitButton } from './SubscriptionSubmitButton';
 
 jest.mock('@proton/payments/ui', () => ({
-    PayButton: ({ children, ...props }: any) => (
+    PayButton: ({
+        children,
+        taxCountry: _taxCountry,
+        vatNumber: _vatNumber,
+        paymentFacade: _paymentFacade,
+        product: _product,
+        telemetryContext: _telemetryContext,
+        ...props
+    }: any) => (
         <button type="button" {...props}>
             {children}
         </button>
@@ -93,21 +101,5 @@ describe('SubscriptionSubmitButton', () => {
         });
 
         expect(screen.getByText('Confirm')).toBeInTheDocument();
-    });
-
-    it('should display billing address error banner when taxCountry has an error message', () => {
-        renderButton({
-            taxCountry: { billingAddressErrorMessage: 'Please select billing country' } as any,
-        });
-
-        expect(screen.getByText('Please select billing country')).toBeInTheDocument();
-    });
-
-    it('should not display billing address error banner when taxCountry has no error message', () => {
-        renderButton({
-            taxCountry: { billingAddressErrorMessage: undefined } as any,
-        });
-
-        expect(screen.queryByText(/billing/i)).not.toBeInTheDocument();
     });
 });
