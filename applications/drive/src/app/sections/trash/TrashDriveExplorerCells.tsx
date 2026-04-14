@@ -52,7 +52,7 @@ export const getTrashCells = ({ viewportWidth }: { viewportWidth: Breakpoints['v
         },
     },
     {
-        ...{ ...defaultLocationCellConfig, className: 'w-1/5' },
+        ...defaultLocationCellConfig,
         disabled: !viewportWidth['>=large'],
         render: (uid) => {
             const LocationCellComponent = () => {
