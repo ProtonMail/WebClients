@@ -8,6 +8,7 @@ import { B2BEvents } from 'proton-pass-web/lib/b2b';
 import { deletePassDB } from 'proton-pass-web/lib/database';
 import { logStore } from 'proton-pass-web/lib/logger';
 import { spotlight } from 'proton-pass-web/lib/spotlight';
+import { sshAgent } from 'proton-pass-web/lib/ssh-agent';
 import { clearUserLocalData, localGarbageCollect } from 'proton-pass-web/lib/storage';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
 import { getThemeForLocalID } from 'proton-pass-web/lib/theme';
@@ -467,6 +468,8 @@ export const createAuthService = ({
 
             const sessionState = JSON.stringify(data ?? redirect.data);
             sessionStorage.setItem(getStateKey(state), sessionState);
+            /** Clear SSH keys when navigating to SSO */
+            if (sshAgent?.enabled) void sshAgent.sync([]);
             window.location.replace(url);
         },
 
