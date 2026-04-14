@@ -1,3 +1,4 @@
+import type { NotificationRequest } from 'proton-pass-extension/app/content/services/inline/notification/notification.app';
 import type { ClusterFrame } from 'proton-pass-extension/app/worker/services/autofill.cc';
 import type { AutofillActionDTO, AutofillRequest, AutofillResult } from 'proton-pass-extension/types/autofill';
 import type {
@@ -39,10 +40,10 @@ import type { Notification } from '@proton/pass/store/actions/enhancers/notifica
 import type { FeatureFlagState, VaultShareItem } from '@proton/pass/store/reducers';
 import type { ProxiedSettings } from '@proton/pass/store/reducers/settings';
 import type { ShareId } from '@proton/pass/types/crypto/pass-types';
-import type { AliasOptions } from '@proton/pass/types/data/alias';
+import type { AliasOptionsResult } from '@proton/pass/types/data/alias';
 import type { B2BEvent } from '@proton/pass/types/data/b2b';
 import type { FileTransferErrorDTO, FileTransferWriteDTO } from '@proton/pass/types/data/files';
-import type { ItemContent, SelectedItem, UniqueItem } from '@proton/pass/types/data/items';
+import type { UniqueItem } from '@proton/pass/types/data/items';
 import type { AliasCreateRequest } from '@proton/pass/types/data/items.dto';
 import type { TelemetryEventDTO } from '@proton/pass/types/data/telemetry';
 import type { Maybe, MaybeNull, Result } from '@proton/pass/types/utils/index';
@@ -54,12 +55,7 @@ import type {
 } from '@proton/pass/types/worker/autofill';
 import type { AutosaveRequest } from '@proton/pass/types/worker/autosave';
 import type { LoginItemPreview } from '@proton/pass/types/worker/data';
-import type {
-    AutosaveFormEntry,
-    FormCredentials,
-    FormStatusPayload,
-    FormSubmitPayload,
-} from '@proton/pass/types/worker/form';
+import type { AutosaveFormEntry, FormStatusPayload, FormSubmitPayload } from '@proton/pass/types/worker/form';
 import type { OtpCode, OtpRequest } from '@proton/pass/types/worker/otp';
 import type { ClientEndpoint, ClientInitResult, EndpointContext, TabId } from '@proton/pass/types/worker/runtime';
 import type { SpotlightMessage } from '@proton/pass/types/worker/spotlight';
@@ -101,11 +97,9 @@ export enum WorkerMessageType {
     AUTH_PULL_FORK = 'AUTH_PULL_FORK',
     AUTH_UNLOCK = 'AUTH_UNLOCK',
 
-    AUTOFILL_CC = 'AUTOFILL_CC',
+    AUTOFILL_ACTION = 'AUTOFILL_ACTION',
     AUTOFILL_CC_QUERY = 'AUTOFILL_CC_QUERY',
-    AUTOFILL_IDENTITY = 'AUTOFILL_IDENTITY',
     AUTOFILL_IDENTITY_QUERY = 'AUTOFILL_IDENTITY_QUERY',
-    AUTOFILL_LOGIN = 'AUTOFILL_LOGIN',
     AUTOFILL_LOGIN_QUERY = 'AUTOFILL_LOGIN_QUERY',
     AUTOFILL_OTP_CHECK = 'AUTOFILL_OTP_CHECK',
     AUTOFILL_SEQUENCE = 'AUTOFILL_SEQUENCE',
@@ -114,6 +108,7 @@ export enum WorkerMessageType {
     AUTOSAVE_REQUEST = 'AUTOSAVE_REQUEST',
     AUTOSUGGEST_ALIAS = 'AUTOSUGGEST_ALIAS',
     AUTOSUGGEST_PASSWORD = 'AUTOSUGGEST_PASSWORD',
+
     B2B_EVENT = 'B2B_EVENT',
     CLIENT_INIT = 'CLIENT_INIT',
     CLIPBOARD_AUTOCLEAR = 'CLIPBOARD_AUTOCLEAR',
@@ -142,6 +137,7 @@ export enum WorkerMessageType {
     INLINE_DROPDOWN_OPENED = 'INLINE_DROPDOWN_OPENED',
     INLINE_DROPDOWN_STATE = 'INLINE_DROPDOWN_STATE',
     INLINE_DROPDOWN_TOGGLE = 'INLINE_DROPDOWN_TOGGLE',
+    INLINE_NOTIFICATION_OPEN = 'INLINE_NOTIFICATION_OPEN',
     INLINE_ICON_SHIFT = 'INLINE_ICON_SHIFT',
     INLINE_ICON_ATTACHED = 'INLINE_ICON_ATTACHED',
 
@@ -206,12 +202,10 @@ export type AuthInitMessage = { type: WorkerMessageType.AUTH_INIT; options: Auth
 export type AuthOfflineSwitchMessage = { type: WorkerMessageType.AUTH_OFFLINE_SWITCH };
 export type AuthPullForkMessage = WithPayload<WorkerMessageType.AUTH_PULL_FORK, { selector: string }>;
 export type AuthUnlockMessage = WithPayload<WorkerMessageType.AUTH_UNLOCK, UnlockDTO>;
-export type AutofillCCMessage = WithPayload<WorkerMessageType.AUTOFILL_CC, AutofillActionDTO>;
 
+export type AutofillActionMessage = WithPayload<WorkerMessageType.AUTOFILL_ACTION, AutofillActionDTO>;
 export type AutofillCCQueryMessage = { type: WorkerMessageType.AUTOFILL_CC_QUERY };
-export type AutofillIdentityMessage = WithPayload<WorkerMessageType.AUTOFILL_IDENTITY, SelectedItem>;
 export type AutofillIdentityQueryMessage = { type: WorkerMessageType.AUTOFILL_IDENTITY_QUERY };
-export type AutofillLoginMessage = WithPayload<WorkerMessageType.AUTOFILL_LOGIN, SelectedItem>;
 export type AutofillLoginQueryMessage = WithPayload<WorkerMessageType.AUTOFILL_LOGIN_QUERY, AutofillOptions>;
 export type AutofillOTPCheckMessage = { type: WorkerMessageType.AUTOFILL_OTP_CHECK };
 export type AutofillPasswordOptionsMessage = { type: WorkerMessageType.AUTOSUGGEST_PASSWORD };
@@ -259,6 +253,7 @@ export type InlineDropdownStateMessage = { type: WorkerMessageType.INLINE_DROPDO
 export type InlineDropdownToggleMessage = WithPayload<WorkerMessageType.INLINE_DROPDOWN_TOGGLE, DropdownOpenDTO>;
 export type InlineIconAttachedMessage = WithPayload<WorkerMessageType.INLINE_ICON_ATTACHED, FrameField>;
 export type InlineIconShiftMessage = WithPayload<WorkerMessageType.INLINE_ICON_SHIFT, IconShiftRequest>;
+export type InlineNotificationMessage = WithPayload<WorkerMessageType.INLINE_NOTIFICATION_OPEN, NotificationRequest>;
 
 export type LoadContentScriptMessage = { type: WorkerMessageType.LOAD_CONTENT_SCRIPT };
 export type LocaleUpdatedMessage = WithPayload<WorkerMessageType.LOCALE_UPDATED, { locale: string }>;
@@ -310,11 +305,9 @@ export type WorkerMessage =
     | AuthOfflineSwitchMessage
     | AuthPullForkMessage
     | AuthUnlockMessage
-    | AutofillCCMessage
+    | AutofillActionMessage
     | AutofillCCQueryMessage
-    | AutofillIdentityMessage
     | AutofillIdentityQueryMessage
-    | AutofillLoginMessage
     | AutofillLoginQueryMessage
     | AutofillOTPCheckMessage
     | AutofillPasswordOptionsMessage
@@ -355,6 +348,7 @@ export type WorkerMessage =
     | InlineDropdownToggleMessage
     | InlineIconAttachedMessage
     | InlineIconShiftMessage
+    | InlineNotificationMessage
     | LoadContentScriptMessage
     | LocaleUpdatedMessage
     | LogEventMessage
@@ -399,11 +393,7 @@ export type MaybeMessage<T> = MessageSuccess<T> | MessageFailure;
 type WorkerMessageResponseMap = {
     [WorkerMessageType.ACCOUNT_FORK]: { payload: ExtensionForkResultPayload };
     [WorkerMessageType.ALIAS_CREATE]: Result;
-    [WorkerMessageType.ALIAS_OPTIONS]: Result<{
-        options: AliasOptions;
-        needsUpgrade: boolean;
-        aliasCreationDisabled: boolean;
-    }>;
+    [WorkerMessageType.ALIAS_OPTIONS]: Result<AliasOptionsResult>;
     [WorkerMessageType.AUTH_CHECK]: Result<{ locked: boolean }, {}>;
     [WorkerMessageType.AUTH_CONFIRM_PASSWORD]: Result;
     [WorkerMessageType.AUTH_INIT]: AppState;
@@ -411,9 +401,7 @@ type WorkerMessageResponseMap = {
     [WorkerMessageType.AUTH_UNLOCK]: Result;
     [WorkerMessageType.AUTOFILL_CC_QUERY]: AutofillCCResult;
     [WorkerMessageType.AUTOFILL_IDENTITY_QUERY]: AutofillIdentityResult;
-    [WorkerMessageType.AUTOFILL_IDENTITY]: ItemContent<'identity'>;
     [WorkerMessageType.AUTOFILL_LOGIN_QUERY]: AutofillLoginResult;
-    [WorkerMessageType.AUTOFILL_LOGIN]: FormCredentials;
     [WorkerMessageType.AUTOFILL_OTP_CHECK]: { shouldPrompt: false } | ({ shouldPrompt: true } & LoginItemPreview);
     [WorkerMessageType.AUTOFILL_SEQUENCE]: AutofillResult;
     [WorkerMessageType.AUTOSUGGEST_ALIAS]: { aliasCreationDisabled: boolean };

@@ -1,11 +1,9 @@
 import { parse } from 'tldts';
-import type { Runtime } from 'webextension-polyfill';
 
 import type { MaybeNull } from '@proton/pass/types';
 
 import { sanitizeURL } from './sanitize';
-import type { ParsedSender, ParsedUrl } from './types';
-import { isSupportedSenderUrl } from './utils';
+import type { ParsedUrl } from './types';
 
 export const generateDomainCombinations = function* (domain: string, subdomain?: MaybeNull<string>) {
     if (!subdomain) {
@@ -72,18 +70,4 @@ export const parseUrl = (url?: string, customPrivateDomains?: MaybeNull<Set<stri
         isPrivate: isPrivate ?? subdomain !== null,
         isSecure: check.url.startsWith('https://'),
     };
-};
-
-/* Safely parses the sender information, providing compatibility
- * for non-Chromium browsers: if available, uses the MessageSender origin
- * property for enhanced protection against compromised renderer spoofing. */
-export const parseSender = (sender: Runtime.MessageSender): ParsedSender => {
-    const origin = (sender as any)?.origin;
-    const { url, tab } = sender;
-    const parsedUrl = parseUrl(origin ?? url ?? '');
-    const tabId = tab?.id;
-
-    if (!isSupportedSenderUrl(parsedUrl) || !tabId) throw new Error('Unsupported sender');
-
-    return { tabId, url: parsedUrl };
 };

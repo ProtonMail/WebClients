@@ -3,7 +3,7 @@ import type { MaybeNull, RequiredNonNull } from '@proton/pass/types/utils';
 import type { URLComponents } from '@proton/pass/utils/url/types';
 
 import type { WithAutosavePrompt } from './autosave';
-import type { TabId } from './runtime';
+import type { FrameId, TabId } from './runtime';
 
 export enum FormEntryStatus {
     STAGING,
@@ -36,6 +36,10 @@ export type FormEntry<T extends FormEntryStatus = FormEntryStatus> = FormEntryBa
     status: T;
     submittedAt: MaybeNull<number>;
     updatedAt: number;
+    /** Stored for future cross-frame autosave reconciliation. The tracker
+     * currently keys entries by tab ID only; frameId is not used for lookup
+     * until sub-frame field clustering is implemented. */
+    frameId: FrameId;
 };
 
 export type AutosaveFormEntry<T extends FormEntryStatus = FormEntryStatus> = WithAutosavePrompt<FormEntry<T>>;

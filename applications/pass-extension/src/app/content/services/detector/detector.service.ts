@@ -20,7 +20,7 @@ import type { DetectionRulesMatch } from '@proton/pass/lib/extension/rules/types
 import type { Callback, MaybeNull } from '@proton/pass/types/utils/index';
 import { compareDomNodes } from '@proton/pass/utils/dom/sort';
 import { prop } from '@proton/pass/utils/fp/lens';
-import { truthy } from '@proton/pass/utils/fp/predicates';
+import { notIn, truthy } from '@proton/pass/utils/fp/predicates';
 import { liftSort } from '@proton/pass/utils/fp/sort';
 import { logger } from '@proton/pass/utils/logger';
 import { DOM_SETTLE_MS } from '@proton/pass/utils/time/next-tick';
@@ -34,8 +34,8 @@ const DETECTION_TIE_TRESHOLD = 0.01;
 
 type DetectorConfig = {
     root: HTMLElement | Document;
-    fieldTypes?: FieldType[];
-    formTypes?: FormType[];
+    excludedFieldTypes?: FieldType[];
+    excludedFormTypes?: FormType[];
     onBottleneck?: (data: { detectionTime: number; hostname: string }) => void;
 };
 
@@ -162,11 +162,14 @@ export const createDetectorService = (config: DetectorConfig) => {
     );
 
     const predictAll = guard((options?: { excludedFieldTypes?: FieldType[] }) => {
-        const fieldSubTypes = fieldTypes.filter((type) => !options?.excludedFieldTypes?.includes(type));
+        const excludedFormTypes = config.excludedFormTypes ?? [];
+        const excludedFieldTypes = (options?.excludedFieldTypes ?? []).concat(config.excludedFieldTypes ?? []);
+        const tForms = formTypes.filter(notIn(excludedFormTypes));
+        const tFields = fieldTypes.filter(notIn(excludedFieldTypes));
 
         const boundRuleset = ruleset.against(config.root);
-        const formPredictions = predictForms(config.formTypes ?? formTypes, boundRuleset);
-        const fieldPredictions = predictFields(config.fieldTypes ?? fieldSubTypes, boundRuleset);
+        const formPredictions = predictForms(tForms, boundRuleset);
+        const fieldPredictions = predictFields(tFields, boundRuleset);
         const fieldMap = groupFields(formPredictions, fieldPredictions);
 
         const forms = formPredictions.map(({ fnode: formFNode, type: formType }) => {

@@ -1,6 +1,6 @@
-import { DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { DROPDOWN_WIDTH } from 'proton-pass-extension/app/content/constants.static';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
+import { resolveOriginScope } from 'proton-pass-extension/app/content/services/inline/dropdown/dropdown.utils';
 import { getFrameAttributes } from 'proton-pass-extension/app/content/utils/frame';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
@@ -9,7 +9,6 @@ import { createStyleParser, getComputedHeight, getComputedWidth } from '@proton/
 import { maxAgeMemoize } from '@proton/pass/utils/fp/memo';
 import { createAsyncQueue } from '@proton/pass/utils/fp/promises';
 import { createListenerStore } from '@proton/pass/utils/listener/factory';
-import { resolveDomain, resolveSubdomain } from '@proton/pass/utils/url/utils';
 import noop from '@proton/utils/noop';
 
 import type { DropdownHandler } from './dropdown.abstract';
@@ -35,13 +34,8 @@ export const createDropdownRelayHandler = (): DropdownHandler => {
             if (req.type === 'frame') return;
 
             const { fieldId, frameId, formId } = req.field;
-
-            const origin = (() => {
-                /** IFrames with `about:blank` inherit parent document origin.
-                 * TODO: Use parent frame's resolved origin for these edge cases. */
-                const url = ctx?.getExtensionContext()?.url;
-                if (url) return req.action === DropdownAction.AUTOFILL_CC ? resolveDomain(url) : resolveSubdomain(url);
-            })();
+            const url = ctx?.getExtensionContext()?.frameUrl;
+            const origin = url ? resolveOriginScope(req, url) : null;
 
             if (!origin) return;
 

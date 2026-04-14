@@ -1,3 +1,4 @@
+import { NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { withContext } from 'proton-pass-extension/app/worker/context/inject';
 import { withSender } from 'proton-pass-extension/lib/message/message-broker';
@@ -280,6 +281,26 @@ export const createInlineService = () => {
 
             if (!res) throw new Error('No responder');
             return res;
+        })
+    );
+
+    WorkerMessageBroker.registerMessage(
+        WorkerMessageType.INLINE_NOTIFICATION_OPEN,
+        withSender(async ({ payload }, tabId) => {
+            if (payload.action !== NotificationAction.AUTOSAVE) throw new Error('Unallowed inline request');
+
+            await browser.tabs
+                .sendMessage(
+                    tabId,
+                    backgroundMessage({
+                        type: WorkerMessageType.INLINE_NOTIFICATION_OPEN,
+                        payload,
+                    }),
+                    { frameId: 0 }
+                )
+                .catch(noop);
+
+            return true;
         })
     );
 
