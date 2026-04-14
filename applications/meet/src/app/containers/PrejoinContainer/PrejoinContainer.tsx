@@ -129,13 +129,13 @@ export const PrejoinContainer = ({
     };
 
     return (
-        <div className="h-full overflow-y-auto relative">
-            {roomId && !isGuest && <OpenDesktopAppBanner meetingLink={shareLink} />}
+        <div className="h-full overflow-y-auto relative flex flex-column flex-nowrap">
+            {!isGuest && <OpenDesktopAppBanner meetingLink={shareLink} />}
             {isLoading && <div className="w-full h-full absolute top-0 left-0 z-up" />}
-            <div className="absolute w-full meet-container-padding-x">
+            <div className="w-full meet-container-padding-x shrink-0">
                 <PageHeader showAppSwitcher={false} isInstantJoin={isInstantJoin} />
             </div>
-            <div className="prejoin-container flex flex-column md:flex-row flex-nowrap w-full md:items-center md:justify-center meet-container-padding-x">
+            <div className="prejoin-container flex flex-column md:flex-row md:items-center md:justify-center w-full meet-container-padding-x">
                 <div
                     className={clsx(
                         'prejoin-container-content w-full md:w-custom xl:w-custom flex flex-column flex-nowrap lg:flex-row gap-2 *:min-size-auto md:items-center px-2 md:px-4',
@@ -190,7 +190,7 @@ export const PrejoinContainer = ({
                     )}
                 </div>
             </div>
-            <div className="prejoin-footer text-sm color-hint text-center py-3 px-4">
+            <div className="prejoin-footer text-sm color-hint text-center py-3 px-4 shrink-0">
                 {(() => {
                     const termsLink = (
                         <Href className="color-hint" key="terms" href={getTermsURL(APPS.PROTONMEET)}>
