@@ -11,11 +11,7 @@ export const getGroups = requestActionsFactory<void, GroupsResponse, unknown>('g
     failure: { prepare: (error, payload) => ({ payload, error }) },
 });
 
-export const getGroup = requestActionsFactory<string, Group, unknown>('groups::get')({
-    key: identity,
-    success: { config: { maxAge: 15 * UNIX_MINUTE, data: null, hot: true } },
-    failure: { prepare: (error, payload) => ({ payload, error }) },
-});
+export const getGroup = requestActionsFactory<string, Group, unknown>('groups::get')({ key: identity });
 
 export const getGroupMembers = requestActionsFactory<string, GroupMembersResponse>('groups::members')({
     key: identity,
