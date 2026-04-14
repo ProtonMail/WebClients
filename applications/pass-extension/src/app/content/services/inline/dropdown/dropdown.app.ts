@@ -1,13 +1,12 @@
 import type { DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { DROPDOWN_IFRAME_SRC } from 'proton-pass-extension/app/content/constants.runtime';
 import { DROPDOWN_MIN_HEIGHT, DROPDOWN_WIDTH } from 'proton-pass-extension/app/content/constants.static';
-import { withContext } from 'proton-pass-extension/app/content/context/context';
 import { type InlineAppHandler, createInlineApp } from 'proton-pass-extension/app/content/services/inline/inline.app';
 import type { InlineCloseOptions } from 'proton-pass-extension/app/content/services/inline/inline.messages';
 import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';
 import type { PopoverController } from 'proton-pass-extension/app/content/services/inline/inline.popover';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
-import type { AutofillActionDTO, WithAutofillOrigin } from 'proton-pass-extension/types/autofill';
+import type { WithAutofillOrigin } from 'proton-pass-extension/types/autofill';
 import type { Coords } from 'proton-pass-extension/types/inline';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
@@ -150,100 +149,15 @@ export const createDropdown = (popover: PopoverController): DropdownApp => {
         }
     });
 
-    /* On a login autofill request - resolve the credentials via
-     * worker communication and autofill the parent form of the
-     * field the current dropdown is attached to. */
-    iframe.registerMessageHandler(
-        InlinePortMessageType.AUTOFILL_LOGIN,
-        withContext(async (ctx, { payload }) => {
-            const target = anchor.current;
-            if (target?.type !== 'field') return;
-
-            const form = target.field.getFormHandle();
-            if (!form) return;
-
-            await ctx?.service.autofill.autofillLogin(form, payload);
-            target.field.focus({ preventAction: true });
-        }),
-        { userAction: true }
-    );
-
-    /* For a password auto-suggestion - the password will have
-     * been generated in the injected iframe and passed in clear
-     * text through the secure extension port channel */
-    iframe.registerMessageHandler(
-        InlinePortMessageType.AUTOFILL_GENERATED_PW,
-        withContext(async (ctx, { payload }) => {
-            const target = anchor.current;
-            if (target?.type !== 'field') return;
-
-            const form = target.field.getFormHandle();
-            if (!form) return;
-
-            const prompt = ctx?.getSettings().autosave.passwordSuggest;
-            await ctx?.service.autofill.autofillPassword(form, payload.password);
-            target.field.focus({ preventAction: true });
-
-            form.tracker
-                ?.processForm({ submit: false, partial: true })
-                .then((res) => res && prompt && ctx.service.autosave.prompt(res))
-                .catch(noop);
-        }),
-        { userAction: true }
-    );
-
-    /* When suggesting an alias on a register form, the alias will
-     * only be created upon user action - this avoids creating
-     * aliases everytime the injected iframe dropdown is opened */
-    iframe.registerMessageHandler(
-        InlinePortMessageType.AUTOFILL_EMAIL,
-        withContext(async (ctx, { payload }) => {
-            const target = anchor.current;
-            if (target?.type !== 'field') return;
-
-            await ctx?.service.autofill.autofillEmail(target.field, payload.email);
-            target.field.focus({ preventAction: true });
-            void target.field.getFormHandle()?.tracker?.processForm({ submit: false, partial: true });
-        }),
-        { userAction: true }
-    );
-
-    iframe.registerMessageHandler(
-        InlinePortMessageType.AUTOFILL_IDENTITY,
-        withContext(async (ctx, { payload }) => {
-            const target = anchor.current;
-            if (target?.type !== 'field') return;
-
-            await ctx?.service.autofill.autofillIdentity(target.field, payload);
-            target.field.focus({ preventAction: true });
-        }),
-        { userAction: true }
-    );
-
-    const validateAutofillAction = withContext<(payload: AutofillActionDTO) => AutofillActionDTO>((ctx, payload) => {
-        if (payload.type === 'creditCard') {
-            /** Optimize cross-frame detection for credit card autofill. If the
-             * target form exists in the top frame and contains no iframes, we can
-             * safely mark this as a same-frame operation. */
-            const form = ctx?.service.formManager.getFormById(payload.formId);
-            if (form && !form.hasFrameFields()) payload.crossFrame = false;
-        }
-
-        return payload;
-    });
-
     iframe.registerMessageHandler(
         InlinePortMessageType.AUTOFILL_ACTION,
         async ({ payload }) => {
-            switch (payload.type) {
-                case 'creditCard':
-                    return sendMessage(
-                        contentScriptMessage({
-                            type: WorkerMessageType.AUTOFILL_CC,
-                            payload: validateAutofillAction(payload),
-                        })
-                    );
-            }
+            return sendMessage(
+                contentScriptMessage({
+                    type: WorkerMessageType.AUTOFILL_ACTION,
+                    payload,
+                })
+            );
         },
         { userAction: true }
     );

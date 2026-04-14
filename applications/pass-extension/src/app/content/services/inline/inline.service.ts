@@ -77,6 +77,10 @@ export const createInlineService = ({
         registry.attachDropdown();
     };
 
+    const onNotificationOpen: FrameMessageHandler<WorkerMessageType.INLINE_NOTIFICATION_OPEN> = ({ payload }) => {
+        notification.open(payload);
+    };
+
     return {
         init: () => {
             registry.init();
@@ -85,6 +89,7 @@ export const createInlineService = ({
             channel.register(WorkerMessageType.INLINE_DROPDOWN_CLOSE, onDropdownClose);
             channel.register(WorkerMessageType.INLINE_DROPDOWN_STATE, onDropdownState);
             channel.register(WorkerMessageType.INLINE_DROPDOWN_ATTACH, onDropdownAttach);
+            channel.register(WorkerMessageType.INLINE_NOTIFICATION_OPEN, onNotificationOpen);
         },
 
         setTheme: registry.setTheme,
@@ -98,6 +103,7 @@ export const createInlineService = ({
             channel.unregister(WorkerMessageType.INLINE_DROPDOWN_CLOSE, onDropdownClose);
             channel.unregister(WorkerMessageType.INLINE_DROPDOWN_STATE, onDropdownState);
             channel.unregister(WorkerMessageType.INLINE_DROPDOWN_ATTACH, onDropdownAttach);
+            channel.unregister(WorkerMessageType.INLINE_NOTIFICATION_OPEN, onNotificationOpen);
         },
 
         sync: withContext((ctx) => {
