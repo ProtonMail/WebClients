@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import Icon from '@proton/components/components/icon/Icon';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import type { IconName, IconSize } from '@proton/icons/types';
 import { isDisabledAliasItem } from '@proton/pass/lib/items/item.predicates';
 import { selectCanLoadDomainImages } from '@proton/pass/store/selectors';
@@ -162,12 +163,7 @@ type ItemIconIndicatorsProps = { size: IconSize; loading: boolean; error: boolea
 export const ItemIconIndicators: FC<ItemIconIndicatorsProps> = ({ size, loading, error }) => {
     if (error) {
         return (
-            <Icon
-                className="absolute inset-center"
-                color="var(--signal-warning)"
-                name="exclamation-circle-filled"
-                size={size}
-            />
+            <IcExclamationCircleFilled className="absolute inset-center" color="var(--signal-warning)" size={size} />
         );
     }
 

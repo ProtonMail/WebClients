@@ -5,6 +5,7 @@ import { c, msgid } from 'ttag';
 
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import Icon from '@proton/components/components/icon/Icon';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import type { IconName } from '@proton/icons/types';
 import { useInviteActions } from '@proton/pass/components/Invite/InviteProvider';
 import { useItemsActions } from '@proton/pass/components/Item/ItemActionsProvider';
@@ -148,8 +149,7 @@ export const VaultMenuItem = memo(
                         style={{ color: 'var(--text-weak)' }}
                     >
                         {notification && (
-                            <Icon
-                                name="exclamation-circle-filled"
+                            <IcExclamationCircleFilled
                                 size={4}
                                 className="absolute top-custom right-custom"
                                 style={{

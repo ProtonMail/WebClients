@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { CardContent, type CardContentProps } from '@proton/pass/components/Layout/Card/CardContent';
 import clsx from '@proton/utils/clsx';
 
@@ -20,7 +20,7 @@ export const RevisionItem: FC<Props> = ({ onClick, ...cardProps }) => {
             onClick={onClick}
         >
             <CardContent {...cardProps} className="py-1" />
-            {onClick && <Icon name="chevron-right" size={5} className="color-weak" />}
+            {onClick && <IcChevronRight size={5} className="color-weak" />}
         </Button>
     );
 };

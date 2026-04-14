@@ -8,9 +8,9 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Dropzone from '@proton/components/components/dropzone/Dropzone';
-import Icon from '@proton/components/components/icon/Icon';
 import FileInput from '@proton/components/components/input/FileInput';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare';
 import { useOnline } from '@proton/pass/components/Core/ConnectivityProvider';
 import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { WithPaidUser } from '@proton/pass/components/Core/WithPaidUser';
@@ -237,7 +237,7 @@ export const FileAttachmentsField: FC<Props> = WithPaidUser(
                                             fullWidth
                                         >
                                             {c('Pass_file_attachments').t`Open new window to upload files`}
-                                            <Icon name="arrow-within-square" className="shrink-0" />
+                                            <IcArrowWithinSquare className="shrink-0" />
                                         </Button>
                                     </div>
                                 </Tooltip>

@@ -3,7 +3,8 @@ import { type CSSProperties, type ComponentPropsWithoutRef, type FC, useState } 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import clsx from '@proton/utils/clsx';
 
 import './Carousel.scss';
@@ -46,10 +47,10 @@ export const Carousel: FC<CarouselProps> = ({ steps, className, textClassName, t
 
             <div className="pass-carousel--nav">
                 <Button shape="solid" onClick={() => onStepChange(-1)}>
-                    <Icon name="chevron-left" alt={c('Action').t`Previous`} />
+                    <IcChevronLeft alt={c('Action').t`Previous`} />
                 </Button>
                 <Button shape="solid" onClick={() => onStepChange(1)}>
-                    <Icon name="chevron-right" alt={c('Action').t`Next`} />
+                    <IcChevronRight alt={c('Action').t`Next`} />
                 </Button>
             </div>
         </div>

@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import CoreHeader from '@proton/components/components/header/Header';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import type { HeaderProps } from '@proton/pass/components/Header/types';
 import { MenuDropdown } from '@proton/pass/components/Menu/Dropdown/MenuDropdown';
 import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
@@ -25,7 +25,7 @@ export const HeaderSettings = memo((props: HeaderProps) => {
                     shape="solid"
                     onClick={() => navigate(getLocalPath())}
                 >
-                    <Icon className="modal-close-icon" name="arrow-left" size={3.5} alt={c('Action').t`Close`} />
+                    <IcArrowLeft className="modal-close-icon" size={3.5} alt={c('Action').t`Close`} />
                 </Button>
                 <h5 className="text-bold">{c('Title').t`Settings`}</h5>
             </div>

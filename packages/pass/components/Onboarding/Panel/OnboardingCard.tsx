@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
 import { Checkmark } from '@proton/pass/components/Onboarding/Panel/Checkmark';
 import { OnboardingIcon } from '@proton/pass/components/Onboarding/Panel/OnboardingIcon';
 import clsx from '@proton/utils/clsx';
@@ -42,7 +42,7 @@ export const OnboardingCard: FC<OnboardingCardProps> = ({
 
             <div className="flex flex-column gap-1 py-2 text-left">
                 <div className="text-lg text-bold">
-                    {title} <Icon name="arrow-right" />
+                    {title} <IcArrowRight />
                 </div>
                 <div className="color-weak">{description}</div>
             </div>

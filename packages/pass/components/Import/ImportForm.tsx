@@ -8,8 +8,8 @@ import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButto
 import AttachedFile from '@proton/components/components/attachedFile/AttachedFile';
 import Bordered from '@proton/components/components/container/Bordered';
 import Dropzone from '@proton/components/components/dropzone/Dropzone';
-import Icon from '@proton/components/components/icon/Icon';
 import FileInput from '@proton/components/components/input/FileInput';
+import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
 import { ImportIcon } from '@proton/pass/components/Import/ImportIcon';
 import { Card } from '@proton/pass/components/Layout/Card/Card';
 import { UpgradeButton } from '@proton/pass/components/Upsell/UpgradeButton';
@@ -104,7 +104,7 @@ export const ImportForm: FC<Pick<ImportFormContext, 'form' | 'dropzone' | 'busy'
                                 {c('Action').t`How do I export my data from ${
                                     PROVIDER_INFO_MAP[form.values.provider].title
                                 }?`}
-                                <Icon className="ml-2" name="arrow-out-square" />
+                                <IcArrowOutSquare className="ml-2" />
                             </Href>
                         )}
                     </div>
