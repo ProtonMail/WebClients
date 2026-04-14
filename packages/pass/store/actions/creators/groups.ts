@@ -13,7 +13,6 @@ export const getGroups = requestActionsFactory<void, GroupsResponse, void>('grou
 
 export const getGroup = requestActionsFactory<string, Group, void>('groups::get')({
     key: identity,
-    success: sessionRequest(15 * UNIX_MINUTE),
 });
 
 export const getGroupMembers = requestActionsFactory<string, GroupMembersResponse>('groups::members')({
