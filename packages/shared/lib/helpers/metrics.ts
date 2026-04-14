@@ -1,4 +1,5 @@
-import { type Subscription, getIsB2BAudienceFromSubscription, getPlanName, isFreeSubscription } from '@proton/payments';
+import { getIsB2BAudienceFromSubscription, getPlanName, isFreeSubscription } from '@proton/payments';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { UserModel, UserSettings } from '@proton/shared/lib/interfaces';
 
@@ -104,7 +105,7 @@ export const sendTelemetryReport = async ({
 interface SendTelemetryReportWithBaseDimensionArgs extends SendTelemetryReportArgs {
     api: Api;
     user: UserModel;
-    subscription?: Subscription;
+    subscription: MaybeFreeSubscription;
     userSettings?: UserSettings;
     silence?: boolean;
 }

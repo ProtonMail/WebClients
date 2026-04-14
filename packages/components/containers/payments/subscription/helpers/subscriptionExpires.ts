@@ -1,7 +1,9 @@
 import { differenceInDays, fromUnixTime } from 'date-fns';
 import { c, msgid } from 'ttag';
 
+import type { FreeSubscription } from '@proton/payments';
 import { type Subscription, SubscriptionPlatform, isManagedExternally } from '@proton/payments';
+import { isPaidSubscription } from '@proton/payments/core/type-guards';
 
 /**
  * Generates a subscription expiration message based on the plan name and the number of days left.
@@ -44,10 +46,10 @@ export const getSubscriptionExpiresDaysLeft = (expirationDate: number, now: Date
  *          relative path to the subscription management page.
  */
 export const getReactivateSubscriptionAction = (
-    subscription: Subscription,
+    subscription: Subscription | FreeSubscription,
     source?: string
 ): { type: 'external'; platform: SubscriptionPlatform; href: string } | { type: 'internal'; path: string } => {
-    if (isManagedExternally(subscription)) {
+    if (isPaidSubscription(subscription) && isManagedExternally(subscription)) {
         if (subscription.External === SubscriptionPlatform.Android) {
             return {
                 type: 'external',

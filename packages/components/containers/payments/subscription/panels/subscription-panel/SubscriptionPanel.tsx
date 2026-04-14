@@ -11,7 +11,6 @@ import Time from '@proton/components/components/time/Time';
 import LearnMoreModal from '@proton/components/containers/topBanners/LearnMoreModal';
 import {
     Renew,
-    type Subscription,
     getHasVpnB2BPlan,
     getIsB2BAudienceFromSubscription,
     getIsPassB2BPlan,
@@ -30,7 +29,9 @@ import {
     hasVpnBusiness,
     isTrial,
 } from '@proton/payments';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { getHasVpnOnlyB2BPlan, hasMeetBusiness } from '@proton/payments/core/subscription/helpers';
+import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import { useIsB2BTrial } from '@proton/payments/ui';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, DRIVE_SHORT_APP_NAME, FREE_VPN_CONNECTIONS, MAIL_SHORT_APP_NAME } from '@proton/shared/lib/constants';
@@ -78,7 +79,7 @@ import { SubscriptionItems } from './SubscriptionItems';
 interface Props {
     app: APP_NAMES;
     user: UserModel;
-    subscription?: Subscription;
+    subscription: MaybeFreeSubscription;
     organization?: Organization;
     vpnServers: VPNServersCountData;
     addresses?: Address[];
@@ -496,7 +497,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
     );
 
     const b2bTrialLearnMore = (() => {
-        const trialCancelled = subscription?.Renew === Renew.Disabled;
+        const trialCancelled = isPaidSubscription(subscription) && subscription.Renew === Renew.Disabled;
         if (!isB2BTrial || trialCancelled) {
             return null;
         }

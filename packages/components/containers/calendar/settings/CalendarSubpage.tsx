@@ -17,7 +17,7 @@ import PrivateMainArea from '@proton/components/containers/layout/PrivateMainAre
 import { PrivateMainSettingsAreaBase } from '@proton/components/containers/layout/PrivateMainSettingsArea';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import type { Subscription } from '@proton/payments';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { getAllMembers, getCalendarInvitations } from '@proton/shared/lib/api/calendars';
 import { getIsOwnedCalendar, getIsPersonalCalendar } from '@proton/shared/lib/calendar/calendar';
 import { MEMBER_PERMISSIONS } from '@proton/shared/lib/calendar/permissions';
@@ -41,7 +41,7 @@ interface Props {
     defaultCalendar?: VisualCalendar;
     addresses?: Address[];
     user: UserModel;
-    subscription?: Subscription;
+    subscription: MaybeFreeSubscription;
 }
 
 const CalendarSubpage = ({

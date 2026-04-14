@@ -9,6 +9,8 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { type FreeSubscription, type Subscription, SubscriptionPlatform, isFreeSubscription } from '@proton/payments';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
+import { isPaidSubscription } from '@proton/payments/core/type-guards';
 
 interface InAppPurchaseModalProps extends ModalProps {
     subscription: Subscription | FreeSubscription;
@@ -25,14 +27,14 @@ export function getSubscriptionManagerName(externalCode: SubscriptionPlatform): 
     return '';
 }
 
-export const InAppText = ({ subscription }: { subscription: Subscription | undefined }) => {
+export const InAppText = ({ subscription }: { subscription: MaybeFreeSubscription }) => {
     const subscriptions = (
         <span className="text-bold" key="subscriptions">{c('Subscription change warning').t`Subscriptions`}</span>
     );
 
     let firstLine: string;
     let secondLine: string | string[];
-    if (subscription?.External === SubscriptionPlatform.Android) {
+    if (isPaidSubscription(subscription) && subscription.External === SubscriptionPlatform.Android) {
         firstLine = c('Subscription change warning')
             .t`Your plan was purchased using an Android app. So to make changes to your plan or update your payment details, you’ll need to go to the Google Play Store.`;
         secondLine = c('Subscription change warning')

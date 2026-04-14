@@ -14,7 +14,7 @@ import ShareCalendarModal from '@proton/components/containers/calendar/shareProt
 import CalendarShareUrlSection from '@proton/components/containers/calendar/shareURL/CalendarShareUrlSection';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import type { Subscription } from '@proton/payments';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import { removeInvitation, removeMember } from '@proton/shared/lib/api/calendars';
 import { CALENDAR_SETTINGS_SECTION_ID, MAX_CALENDAR_MEMBERS } from '@proton/shared/lib/calendar/constants';
 import { filterOutAcceptedInvitations } from '@proton/shared/lib/calendar/sharing/shareProton/shareProton';
@@ -57,7 +57,7 @@ interface CalendarShareSectionProps {
     calendar: VisualCalendar;
     addresses: Address[];
     user: UserModel;
-    subscription?: Subscription;
+    subscription: MaybeFreeSubscription;
     isLoading: boolean;
     invitations: CalendarMemberInvitation[];
     members: CalendarMember[];

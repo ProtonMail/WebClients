@@ -13,6 +13,7 @@ import TimeRemaining from '@proton/components/components/timeRemaining/TimeRemai
 import useConfig from '@proton/components/hooks/useConfig';
 import { Renew, isTrial } from '@proton/payments';
 import { isReferralTrial } from '@proton/payments/core/subscription/helpers';
+import { isPaidSubscription } from '@proton/payments/core/type-guards';
 import { useIsB2BTrial } from '@proton/payments/ui';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';
@@ -38,7 +39,7 @@ const B2BTrialTopBanner = () => {
     }, [location.search, setModal]);
 
     const trialEndsOn = subscription?.PeriodEnd;
-    const trialCancelled = subscription?.Renew === Renew.Disabled;
+    const trialCancelled = isPaidSubscription(subscription) && subscription.Renew === Renew.Disabled;
 
     if (!trialEndsOn || closed || trialCancelled) {
         return null;

@@ -23,6 +23,7 @@ import { IcUserFilled } from '@proton/icons/icons/IcUserFilled';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { IcVault } from '@proton/icons/icons/IcVault';
 import { IcVideoCamera } from '@proton/icons/icons/IcVideoCamera';
+import type { FreeSubscription } from '@proton/payments';
 import { type Subscription, getRenewalTime, subscriptionExpires } from '@proton/payments';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS, FREE_VPN_CONNECTIONS } from '@proton/shared/lib/constants';
@@ -86,7 +87,7 @@ export const ServersSection = ({ organization, app }: { organization?: Organizat
     );
 };
 
-export const BillingDateSection = ({ subscription }: { subscription: Subscription }) => {
+export const BillingDateSection = ({ subscription }: { subscription: Subscription | FreeSubscription }) => {
     const { renewDisabled } = subscriptionExpires(subscription);
 
     const subscriptionPeriodEnd = getRenewalTime(subscription);

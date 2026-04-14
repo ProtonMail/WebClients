@@ -1,8 +1,8 @@
-import { PLANS, type Subscription } from '@proton/payments';
-import { isTrial } from '@proton/payments';
+import { PLANS, isTrial } from '@proton/payments';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 
 interface Props {
-    subscription?: Subscription;
+    subscription: MaybeFreeSubscription;
 }
 
 export const getIsEligible = ({ subscription }: Props) => {

@@ -4,10 +4,10 @@ import {
     type AmountAndCurrency,
     CYCLE,
     type FullPlansMap,
-    type Subscription,
+    getPlanName,
     isFreeSubscription,
 } from '@proton/payments';
-import { getPlanName } from '@proton/payments';
+import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
 import type { Member, Organization } from '@proton/shared/lib/interfaces';
 import { isOrganization, isSuperAdmin } from '@proton/shared/lib/organization/helper';
 
@@ -32,7 +32,7 @@ export const getAIAddonMonthlyPrice = (
 };
 
 export const getIsB2CUserAbleToRunScribe = (
-    subscription: Subscription | undefined,
+    subscription: MaybeFreeSubscription,
     organization: Organization | undefined,
     member: Member | undefined
 ) => {

@@ -12,18 +12,10 @@ import { buildSubscription } from '@proton/testing/builders';
 import { PLANS_MAP } from '@proton/testing/data';
 
 describe('subscriptionExpires()', () => {
-    it('should handle the case when subscription is not loaded yet', () => {
-        expect(subscriptionExpires()).toEqual({
-            subscriptionExpiresSoon: false,
-            renewDisabled: false,
-            renewEnabled: true,
-            expirationDate: null,
-        });
-    });
-
     it('should handle the case when subscription is free', () => {
         expect(subscriptionExpires(FREE_SUBSCRIPTION as any)).toEqual({
             subscriptionExpiresSoon: false,
+            isFree: true,
             renewDisabled: false,
             renewEnabled: true,
             expirationDate: null,
@@ -34,6 +26,7 @@ describe('subscriptionExpires()', () => {
         expect(subscriptionExpires(buildSubscription())).toEqual({
             subscriptionExpiresSoon: false,
             planName: 'Proton Unlimited',
+            isFree: false,
             renewDisabled: false,
             renewEnabled: true,
             expirationDate: null,
@@ -48,6 +41,7 @@ describe('subscriptionExpires()', () => {
         expect(subscriptionExpires(subscription)).toEqual({
             subscriptionExpiresSoon: true,
             planName: 'Proton Unlimited',
+            isFree: false,
             renewDisabled: true,
             renewEnabled: false,
             expirationDate: subscription.PeriodEnd,
@@ -64,6 +58,7 @@ describe('subscriptionExpires()', () => {
         expect(subscriptionExpires(subscription)).toEqual({
             subscriptionExpiresSoon: true,
             planName: 'Proton Unlimited',
+            isFree: false,
             renewDisabled: true,
             renewEnabled: false,
             expirationDate: upcoming.PeriodEnd,
@@ -80,6 +75,7 @@ describe('subscriptionExpires()', () => {
         expect(subscriptionExpires(subscription)).toEqual({
             subscriptionExpiresSoon: false,
             planName: 'Proton Unlimited',
+            isFree: false,
             renewDisabled: false,
             renewEnabled: true,
             expirationDate: null,
@@ -92,6 +88,7 @@ describe('subscriptionExpires()', () => {
         });
         expect(subscriptionExpires(subscription)).toEqual({
             subscriptionExpiresSoon: true,
+            isFree: false,
             renewDisabled: true,
             renewEnabled: false,
             expirationDate: subscription.PeriodEnd,
@@ -101,6 +98,7 @@ describe('subscriptionExpires()', () => {
         expect(subscriptionExpires(subscription, true)).toEqual({
             subscriptionExpiresSoon: true,
             renewDisabled: true,
+            isFree: false,
             renewEnabled: false,
             expirationDate: subscription.PeriodEnd,
             planName: 'Proton Unlimited',

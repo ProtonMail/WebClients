@@ -15,7 +15,7 @@ import SidebarListItemHeaderLink from '@proton/components/components/sidebar/Sid
 import SimpleSidebarListItemHeader from '@proton/components/components/sidebar/SimpleSidebarListItemHeader';
 import CalendarLimitReachedModal from '@proton/components/containers/calendar/CalendarLimitReachedModal';
 import HolidaysCalendarModal from '@proton/components/containers/calendar/calendarModal/holidaysCalendarModal/HolidaysCalendarModal';
-import PersonalCalendarModal from '@proton/components/containers/calendar/calendarModal/personalCalendarModal/PersonalCalendarModal';
+import { PersonalCalendarModal } from '@proton/components/containers/calendar/calendarModal/personalCalendarModal/PersonalCalendarModal';
 import SubscribedCalendarModal from '@proton/components/containers/calendar/calendarModal/subscribedCalendarModal/SubscribedCalendarModal';
 import useLocalState from '@proton/components/hooks/useLocalState';
 import { useLoadingByKey } from '@proton/hooks/useLoading';
@@ -176,7 +176,12 @@ export const MyCalendars = ({ myCalendars, calendars, holidaysCalendars, dropdow
                 <HolidaysCalendarModal {...holidaysCalModal} holidaysCalendars={holidaysCalendars} />
             )}
             {renderLimitReachedModal && (
-                <CalendarLimitReachedModal user={user} {...limitReachedModal} isFreeUser={!user.hasPaidMail} />
+                <CalendarLimitReachedModal
+                    subscription={undefined}
+                    user={user}
+                    {...limitReachedModal}
+                    isFreeUser={!user.hasPaidMail}
+                />
             )}
             {renderCalModal && (
                 <PersonalCalendarModal
