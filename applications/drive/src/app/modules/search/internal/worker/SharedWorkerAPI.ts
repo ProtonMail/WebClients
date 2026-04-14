@@ -114,7 +114,13 @@ export class SharedWorkerAPI {
 
             const treeSubscriptionRegistry = await TreeSubscriptionRegistry.create(clientContext.bridge, db);
             this.searcher = new SearchQueryExecutor(this.indexRegistry, db);
-            this.indexer = new IndexerTaskQueue(this.indexRegistry, clientContext.bridge, db, treeSubscriptionRegistry);
+            this.indexer = new IndexerTaskQueue(
+                clientContext.userId,
+                this.indexRegistry,
+                clientContext.bridge,
+                db,
+                treeSubscriptionRegistry
+            );
 
             this.stateChannel = createSearchModuleStateUpdateChannel(clientContext.userId);
 

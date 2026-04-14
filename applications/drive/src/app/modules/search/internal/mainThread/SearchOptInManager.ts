@@ -1,5 +1,6 @@
 import { Logger } from '../shared/Logger';
 import { SearchDB } from '../shared/SearchDB';
+import { hasLegacyEncryptedSearchDb } from '../shared/encryptedSearchUtils';
 import type { SearchModuleStateUpdateChannel } from '../shared/searchModuleStateUpdateChannel';
 import { createSearchModuleStateUpdateChannel } from '../shared/searchModuleStateUpdateChannel';
 import type { UserId } from '../shared/types';
@@ -9,6 +10,7 @@ import type { UserId } from '../shared/types';
  *
  * - Reads/writes opt-in state to IndexedDB via SearchDB.
  * - Broadcasts changes to all tabs via the shared search state BroadcastChannel.
+ * - Checks for prior opt-in approval from the legacy encrypted-search DB.
  */
 export class SearchOptInManager {
     private dbPromise: Promise<SearchDB> | null = null;
@@ -25,7 +27,22 @@ export class SearchOptInManager {
 
     async isOptedIn(): Promise<boolean> {
         const db = await this.getDb();
-        return db.isOptedIn();
+        const optedIn = await db.isOptedIn();
+        if (optedIn) {
+            return true;
+        }
+
+        const hasLegacySearchOptin = await hasLegacyEncryptedSearchDb(this.userId);
+        if (hasLegacySearchOptin) {
+            // TODO: instrument
+            Logger.info('SearchOptInManager: auto-opting in from legacy search');
+            // NOTE: The user is opt-in. The legacy DB will be deleted after the
+            // initial indexing of the new search is done.
+            await this.optIn();
+            return true;
+        }
+
+        return false;
     }
 
     async optIn(): Promise<void> {
