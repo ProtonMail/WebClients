@@ -14,6 +14,14 @@ import { CleanUpStaleBlobsTask } from './CleanUpStaleBlobsTask';
 
 setupRealSearchLibraryWasm();
 
+jest.mock('../../../../shared/errors', () => {
+    const actual = jest.requireActual('../../../../shared/errors');
+    return {
+        ...actual,
+        sendErrorReportForSearch: jest.fn(),
+    };
+});
+
 /** Drive the cleanup iterator with real blob loading and count Tracked events. */
 async function getTrackedBlobCount(engine: Engine, blobStore: IndexBlobStore): Promise<number> {
     let count = 0;
