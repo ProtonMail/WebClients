@@ -3836,6 +3836,9 @@
       "${ failureItems.length } item failed to be moved": [
         "${ failureItems.length } kohteen siirto epäonnistui",
         "${ failureItems.length } kohteen siirto epäonnistui"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Tilaustietoja ei voitu ladata. Yritä myöhemmin uudelleen."
       ]
     },
     "error": {
@@ -9871,6 +9874,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Tilauksessasi on jo olemassa oleva alennus. Siirtyminen tähän uuteen kampanjaan tarkoittaa, että aiempaa alennusta ei enää käytetä."
+      ],
+      "Edit billing address": [
+        "Muokkaa laskutusosoitetta"
       ]
     },
     "Payments.Error": {
