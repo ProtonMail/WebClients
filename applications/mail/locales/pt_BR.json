@@ -1502,8 +1502,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança",
-        "Chaves de confiança"
+        "Chave de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -4228,6 +4227,10 @@
       ],
       "Your account and data recovery methods are set.": [
         "Sua conta e métodos de recuperação de dados estão definidos."
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "Seu plano suporta ${ MAX_SYNC_FREE_USER } endereço do Gmail.",
+        "Seu plano suporta ${ MAX_SYNC_FREE_USER } endereços do Gmail."
       ],
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Seu plano suporta um total de ${ MAX_SYNC_PAID_USER } endereço do Gmail",
@@ -7490,7 +7493,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir link"
@@ -10939,6 +10943,13 @@
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Todos os serviços básicos da ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "Appointment scheduling": [
+        "Agendamento de compromissos"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Agendamento de compromissos com ${ n } página de agendamento",
+        "Agendamento de compromissos com ${ n } página de agendamentos"
       ],
       "Auto-delete Spam and Trash": [
         "Excluir conteúdo de Spam e Lixeira de forma automática"
@@ -15689,6 +15700,9 @@
       ],
       "Self-destruct message": [
         "Mensagem autodestrutiva"
+      ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Enviar e receber e-mails do Gmail usando o ${ MAIL_APP_NAME }"
       ],
       "Send email": [
         "Enviar e-mail"
