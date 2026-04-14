@@ -23,7 +23,7 @@ import { getLabelName } from '../../helpers/labels';
 import { isConversationMode } from '../../helpers/mailSettings';
 import { extractSearchParameters } from '../../helpers/mailboxUrl';
 import { useDeepMemo } from '../../hooks/useDeepMemo';
-import { contextTotal, taskRunningInLabel } from '../../store/elements/elementsSelectors';
+import { contextTotal, loadedEmpty, taskRunningInLabel } from '../../store/elements/elementsSelectors';
 import EmptyView from './EmptyView/EmptyView';
 import ProtonPassPlaceholder from './ProtonPassPlaceholder';
 
@@ -62,16 +62,20 @@ const SelectionPane = ({ labelID, mailSettings, location, checkedIDs = [], onChe
 
     const isCustomLabel = testIsCustomLabel(labelID, labels);
     const total = useMailSelector(contextTotal) || 0;
+    const isLoadedEmpty = useMailSelector(loadedEmpty);
     const checkeds = checkedIDs.length;
 
     const count = checkeds || total;
     const labelName = useMemo(() => {
         if (count === 0) {
+            if (!isLoadedEmpty) {
+                return getLabelName(labelID, labels, folders);
+            }
             return c('Info').t`No messages found`;
         }
 
         return getLabelName(labelID, labels, folders);
-    }, [labelID, labels, folders, count]);
+    }, [labelID, labels, folders, count, isLoadedEmpty]);
 
     const searchParameters = useDeepMemo<SearchParameters>(() => extractSearchParameters(appLocation), [appLocation]);
     const isSearch = testIsSearch(searchParameters);
@@ -189,7 +193,7 @@ const SelectionPane = ({ labelID, mailSettings, location, checkedIDs = [], onChe
         }
     };
 
-    if (isSearch && total === 0) {
+    if (isSearch && isLoadedEmpty) {
         return <EmptyView isSearch isUnread={false} labelID={labelID} isTaskRunningInLabel={!!taskIsRunningInLabel} />;
     }
 
@@ -219,7 +223,7 @@ const SelectionPane = ({ labelID, mailSettings, location, checkedIDs = [], onChe
                     {labelName}
                 </h1>
             )}
-            {text && <p className="my-2 color-weak text-keep-space">{text}</p>}
+            <p className="my-2 color-weak text-keep-space">{text}&nbsp;</p>
             {checkeds > 0 && <Button onClick={handleClearSelection}>{c('Action').t`Clear selection`}</Button>}
         </SelectionPaneWrapper>
     );
