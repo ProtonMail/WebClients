@@ -1441,6 +1441,11 @@
         "En iyi güvenliği sağlamak için grup şifreleme anahtarı değiştiriliyor"
       ]
     },
+    "Display name": {
+      "Loading…": [
+        "Yükleniyor…"
+      ]
+    },
     "emergency_access": {
       "Trusted contact": [
         "Güvenilir kişi"
@@ -1560,6 +1565,9 @@
       ],
       "The meeting password is incorrect": [
         "Görüşme parolası yanlış"
+      ],
+      "The meeting password is invalid": [
+        "Toplantı parolası geçersiz"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Bu alan için izin verilen en fazla ${ maximumLength } karakter uzunluğu aşıldı."
@@ -1725,6 +1733,12 @@
       "${ MEET_APP_NAME } needs WebRTC to run. Please update your browser or device to a version that supports WebRTC, try a different browser, or disable any extensions that might be blocking it.": [
         "${ MEET_APP_NAME } uygulamasının çalışması için WebRTC gereklidir. Lütfen tarayıcınızı veya aygıtınızı WebRTC hizmetini destekleyen bir sürüme güncelleyin, farklı bir tarayıcı kullanmayı deneyin veya hizmeti engelleyebilecek tüm eklentileri kapatın."
       ],
+      "${ participantName } and ${ otherParticipantsCount } others are recording": [
+        "${ participantName } ve ${ otherParticipantsCount } kişi kaydediyor"
+      ],
+      "${ participantName } is recording": [
+        "${ participantName } kaydediyor"
+      ],
       "${ presenterName } (you) is presenting": [
         "${ presenterName } (siz) sunum yapıyorsunuz"
       ],
@@ -1852,6 +1866,9 @@
       "End Meeting for everyone?": [
         "Görüşme herkes için sonlandırılsın mı?"
       ],
+      "End the meeting for everyone?": [
+        "Görüşme herkes için sonlandırılsın mı?"
+      ],
       "End-to-end encryption is active for audio and video.": [
         "Ses ve görüntü uçtan uca şifreleme ile korunuyor."
       ],
@@ -1862,7 +1879,7 @@
         "Bu sohbet uçtan uca şifreleniyor."
       ],
       "Enter code": [
-        "Kodu girin"
+        "Kodu yazın"
       ],
       "Enter the code from your authenticator app": [
         "Kimlik doğrulama uygulamanızdan alacağınız kodu yazın"
@@ -1930,8 +1947,11 @@
       "Learn more": [
         "Ayrıntılı bilgi alın"
       ],
-      "Leaving will stop your screen sharing. Do you want to continue?": [
-        "Ayrılmanız ekran paylaşımınızı durduraca. İlerlemek istiyor musunuz?"
+      "Leave meeting and stop sharing?": [
+        "Görüşmeden ayrılıp paylaşımı durdurmak istiyor musunuz?"
+      ],
+      "Leaving the meeting will stop your screen sharing.": [
+        "Görüşmeden ayrıldığınızda ekran paylaşımınız sona erecek."
       ],
       "Left ${ roomNameLabel }": [
         "${ roomNameLabel } odasından ayrıl"
@@ -2092,6 +2112,12 @@
       "Record your meetings": [
         "Görüşmelerinizi kaydedin"
       ],
+      "Recording": [
+        "Kaydediliyor"
+      ],
+      "Recording in progress": [
+        "Kayıt sürüyor"
+      ],
       "Recording saved": [
         "Görüşme kaydedildi"
       ],
@@ -2185,6 +2211,9 @@
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
         "Bu görüşme ${ MEET_APP_NAME } bilgisayar uygulamasında açıldı."
       ],
+      "This will end the meeting for all participants and stop your screen sharing.": [
+        "Bu işlem görüşmeyi tüm katılımcılar için sonlandırır ve ekran paylaşımınızı durdurur."
+      ],
       "This will end the meeting for all participants.": [
         "Bu işlem görüşmeyi tüm katılımcılar için sonlandıracak."
       ],
@@ -2277,6 +2306,9 @@
       ],
       "You were removed from the meeting": [
         "Görüşmeden çıkarıldınız"
+      ],
+      "You will leave the meeting. Others will continue.": [
+        "Siz toplantıdan ayrılacaksınız. Diğerleri devam edecek."
       ],
       "You've been invited to join a secure meeting. Confirm your name and click below to enter.": [
         "Güvenli bir görüşmeye davet edildiniz. Adınızı onaylayın ve katılmak için aşağıya tıklayın."

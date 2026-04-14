@@ -1441,6 +1441,11 @@
         "Rotando la clave de cifrado del grupo para mejor seguridad"
       ]
     },
+    "Display name": {
+      "Loading…": [
+        "Cargando…"
+      ]
+    },
     "emergency_access": {
       "Trusted contact": [
         "Contacto de confianza"
@@ -1560,6 +1565,9 @@
       ],
       "The meeting password is incorrect": [
         "La contraseña de la reunión es incorrecta"
+      ],
+      "The meeting password is invalid": [
+        "La contraseña de la reunión no es válida"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Este campo excede el máximo de ${ maximumLength } caracteres."
@@ -1856,6 +1864,9 @@
         "Editar dirección de correo"
       ],
       "End Meeting for everyone?": [
+        "¿Finalizar reunión para todos?"
+      ],
+      "End the meeting for everyone?": [
         "¿Finalizar la reunión para todos?"
       ],
       "End-to-end encryption is active for audio and video.": [
@@ -1936,8 +1947,11 @@
       "Learn more": [
         "Más información"
       ],
-      "Leaving will stop your screen sharing. Do you want to continue?": [
-        "Al salir detendrá su pantalla compartida. ¿Desea continuar?"
+      "Leave meeting and stop sharing?": [
+        "¿Salir de la reunión y dejar de compartir?"
+      ],
+      "Leaving the meeting will stop your screen sharing.": [
+        "Al abandonar la reunión detendrá el uso compartido de su pantalla."
       ],
       "Left ${ roomNameLabel }": [
         "Salió de ${ roomNameLabel }"
@@ -2196,6 +2210,9 @@
       ],
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
         "Esta reunión fue abierta en la aplicación de escritorio de ${ MEET_APP_NAME }."
+      ],
+      "This will end the meeting for all participants and stop your screen sharing.": [
+        "Esto finalizará la reunión para todos los participantes y detendrá el uso compartido de su pantalla."
       ],
       "This will end the meeting for all participants.": [
         "Esto finalizará la reunión a todos los participantes."
