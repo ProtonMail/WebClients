@@ -439,6 +439,7 @@ export const RenderBlocks = ({
                         handleLinkClick={handleLinkClick}
                         toolCallResults={null}
                         sourcesContainerRef={sourcesContainerRef}
+                        messageContentContainerRef={messageContentContainerRef}
                     />
                 );
             })}
