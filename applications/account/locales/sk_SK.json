@@ -984,6 +984,9 @@
       "Later": [
         "Neskôr"
       ],
+      "Learn about recovery options": [
+        "Zistite viac o možnostiach obnovy"
+      ],
       "Learn more": [
         "Zistiť viac"
       ],
@@ -1421,6 +1424,9 @@
       ],
       "Send my username": [
         "Poslať moje používateľské meno"
+      ],
+      "Send new code": [
+        "Poslať nový kód"
       ],
       "Send new invite": [
         "Odoslať novú pozvánku"
@@ -9246,8 +9252,8 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe, asistent písania"
       ],
-      "${ BRAND_NAME } will send a verification code to ${ RedactedPhoneNumber }. Standard message rates may apply.": [
-        "${ BRAND_NAME } odošle overovací kód na číslo ${ RedactedPhoneNumber }. Môžu sa účtovať štandardné poplatky za správy."
+      "${ BRAND_NAME } will send a verification code to ${ phoneNumber }. Standard message rates may apply.": [
+        "${ BRAND_NAME } odošle overovací kód na číslo ${ phoneNumber }. Môžu sa účtovať štandardné poplatky za správy."
       ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "Šifrovacia technológia ${ BRAND_NAME } znamená, že nikto nemá prístup k vášmu heslu – dokonca ani my."
@@ -9969,6 +9975,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Pred vyžiadaním nového overovacieho kódu skontrolujte priečinok spam a skontrolujte, či je adresa ${ strong } správna."
       ],
+      "Before sending a new verification code, check your spam folder for ${ EmailOrPhoneNumber }.": [
+        "Pred odoslaním nového overovacieho kódu skontrolujte priečinok so spamom pre ${ EmailOrPhoneNumber }."
+      ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
         "Než budete môcť prijímať emaily na adresy svojej vlastnej domény v službe ${ MAIL_APP_NAME }, je potrebné pridať nasledujúce dva MX záznamy do DNS konzoly (nachádza sa na platforme, kde ste zakúpili vlastnú doménu). Príklad a niekoľko užitočných tipov nájdete ${ kbLink }."
       ],
@@ -10032,6 +10041,9 @@
       "Check the status of imports and forwarding.": [
         "Skontrolujte stav importov a preposielania."
       ],
+      "Check your network and try again.": [
+        "Skontrolujte svoju sieť a skúste to znova."
+      ],
       "Choose a plan that works best for you.": [
         "Vyberte si plán, ktorý vám najviac vyhovuje."
       ],
@@ -10043,6 +10055,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Kliknite na \"Požiadať o nový kód\" pre zaslanie nového overovacieho kódu na ${ strong }. Ak je toto telefónne číslo nesprávne, kliknite na tlačidlo \"Upraviť\" pre jeho opravu."
+      ],
+      "Click 'Trouble signing in?' on your TV to follow the alternative steps.": [
+        "Kliknite na „Problémy s prihlásením?“ na vašej TV a postupujte podľa alternatívnych krokov."
       ],
       "Click **Request password reset** and follow the prompts.": [
         "Kliknite na **Požiadať o obnovenie hesla** a postupujte podľa pokynov."
@@ -10058,9 +10073,6 @@
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "Ocenenie CNET editors choice s hodnotením 8,4 z 10"
-      ],
-      "Code expired": [
-        "Kód vypršal"
       ],
       "Coming soon": [
         "Už čoskoro"
@@ -10883,6 +10895,9 @@
       ],
       "Internet connection restored.": [
         "Pripojenie k internetu obnovené."
+      ],
+      "Invalid code. ${ RequestNewCodeLink } and try again.": [
+        "Neplatný kód. ${ RequestNewCodeLink } a skúste to znova."
       ],
       "Invitation link expired": [
         "Pozývací odkaz vypršal"
@@ -12368,6 +12383,9 @@
       ],
       "Vault updated": [
         "Trezor bol aktualizovaný"
+      ],
+      "Verification code sent.": [
+        "Overovací kód bol odoslaný."
       ],
       "Verification link expired": [
         "Overovací odkaz vypršal"
@@ -16557,6 +16575,15 @@
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Všetky základné služby ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "Appointment scheduling": [
+        "Plánovanie schôdzok"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Plánovanie schôdzok s ${ n } rezervačnou stránkou",
+        "Plánovanie schôdzok s ${ n } rezervačnými stránkami",
+        "Plánovanie schôdzok s ${ n } rezervačnými stránkami",
+        "Plánovanie schôdzok s ${ n } rezervačnými stránkami"
       ],
       "Apps for": [
         "Aplikácie pre"
@@ -23825,6 +23852,9 @@
       "Close": [
         "Zatvoriť"
       ],
+      "Code expired": [
+        "Kód vypršal"
+      ],
       "Collaborate on documents": [
         "Spolupráca na dokumentoch"
       ],
@@ -23881,6 +23911,9 @@
       ],
       "Continue with partial import?": [
         "Pokračovať s čiastočným importom?"
+      ],
+      "Couldn't sign in": [
+        "Nie je možné sa prihlásiť"
       ],
       "Couldn’t create accounts": [
         "Nepodarilo sa vytvoriť účty"
@@ -24751,6 +24784,9 @@
       ],
       "Request new code": [
         "Vyžiadať nový kód"
+      ],
+      "Request new code?": [
+        "Vyžiadať nový kód?"
       ],
       "Request sent": [
         "Požiadavka odoslaná"

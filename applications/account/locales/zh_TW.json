@@ -1468,6 +1468,9 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } 個 ${ LUMO_APP_NAME } 授權席次"
       ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } 授權"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats }撰寫幫手就位"
       ],
@@ -2293,6 +2296,9 @@
     "Checkout row": {
       "${ users } user": [
         "${ users } 位使用者"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "${ cycle } 個月小計"
       ],
       "Total": [
         "總共"
@@ -3756,6 +3762,9 @@
       "Let's you instantly add meeting links to your event invitations.": [
         "讓您可以立即新增會議連結到您的活動邀請。"
       ],
+      "No ads. No trackers.": [
+        "無廣告。無追蹤器。"
+      ],
       "No one in your organization can connect to shared servers.": [
         "於您的組織內無人可連接至於共享伺服器"
       ],
@@ -3764,6 +3773,9 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "透過共享行事曆以簡化同步和排程"
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "若連接至多 ${ MAX_SYNC_PAID_USER } Gmail 位址,升級至 ${ planName } 方案。"
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "匯入 CSV 或 VCF 檔，請確保檔案大小不超過 ${ MAX_IMPORT_FILE_SIZE_STRING }，或聯絡人數不超過 ${ maxContactString }。如果檔案超過此限制，請將其分成比較小的檔案。 ${ learnMoreLink }"
@@ -3782,6 +3794,15 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "您可以使用 iCal 格式 (ICS 檔案) 匯入事件。檔案大小上限為 ${ MAX_IMPORT_FILE_SIZE_STRING }，上限為 ${ MAX_IMPORT_EVENTS_STRING } 個事件。若您的檔案超出此限，請將其分割為較小的檔案。"
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "您正在轉寄 ${ numAddressesOrSync } Gmail 位址至 ${ MAIL_APP_NAME }，"
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "您的帳號支援 ${ MAX_SYNC_FREE_USER } Gmail 位址。"
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "您的帳號支援最多 ${ MAX_SYNC_PAID_USER } Gmail 位址"
       ]
     },
     "description": {
@@ -6694,6 +6715,9 @@
       "active": [
         "啟用"
       ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "新增 ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
+      ],
       "add a recovery method": [
         "加入復原方式"
       ],
@@ -8607,6 +8631,9 @@
       ],
       "Vault updated": [
         "保管庫已更新"
+      ],
+      "Verification code sent.": [
+        "驗證碼寄送。"
       ],
       "Verification link expired": [
         "驗證連結已過期"
@@ -17026,6 +17053,9 @@
       ],
       "Discard changes?": [
         "捨棄變更？"
+      ],
+      "Disconnected from Gmail": [
+        "與 Gmail 中斷連線"
       ],
       "Display name and signature": [
         "顯示名稱與簽名"

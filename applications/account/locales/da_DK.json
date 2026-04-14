@@ -909,6 +909,9 @@
       "I don’t have my backup codes": [
         "Jeg har ikke mine backup-koder"
       ],
+      "I don’t have my phone": [
+        "Jeg har ikke min telefon"
+      ],
       "Ignore": [
         "Ignorer"
       ],
@@ -980,6 +983,9 @@
       ],
       "Later": [
         "Senere"
+      ],
+      "Learn about recovery options": [
+        "Lær mere om muligheder for gendannelse"
       ],
       "Learn more": [
         "Få mere at vide"
@@ -1305,6 +1311,9 @@
       "Return to sign in": [
         "Returnér til login"
       ],
+      "Return to sign-in": [
+        "Tilbage til login"
+      ],
       "Review": [
         "Gennemse"
       ],
@@ -1415,6 +1424,9 @@
       ],
       "Send my username": [
         "Send mit brugernavn"
+      ],
+      "Send new code": [
+        "Send en ny kode"
       ],
       "Send new invite": [
         "Send ny invitation"
@@ -1589,6 +1601,9 @@
       ],
       "Try another method": [
         "Prøv en anden metode"
+      ],
+      "Try another way": [
+        "Prøv en anden måde"
       ],
       "Try for free": [
         "Prøv gratis"
@@ -9088,6 +9103,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe-skriveassistent"
       ],
+      "${ BRAND_NAME } will send a verification code to ${ phoneNumber }. Standard message rates may apply.": [
+        "${ BRAND_NAME } sender en bekræftelseskode til ${ phoneNumber }. Standard SMS-takster gælder."
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }s krypteringsteknologi betyder, at ingen kan få adgang til din adgangskode - ikke engang os."
       ],
@@ -9105,6 +9123,9 @@
       "${ countriesCount } country enabled": [
         "${ countriesCount } land aktiveret",
         "${ countriesCount } lande aktiveret"
+      ],
+      "${ DataLockedText }, but recoverable with your ${ RecoveryContactsLink }:": [
+        "${ DataLockedText }, men kan gendannes med dine ${ RecoveryContactsLink }:"
       ],
       "${ discountPercent }% discount": [
         "${ discountPercent }% rabat"
@@ -9568,6 +9589,9 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Et e-mailalias fungerer som en e-mailadresse, men reducerer spam og holder din faktiske e-mailadresse og identitet skjult."
       ],
+      "An email with a verification code was just sent to ${ emailAddress }. If you can’t find the message in your inbox, please check your spam folder.": [
+        "En e-mail med en bekræftelseskode blev netop sendt til ${ emailAddress }. Hvis du ikke kan finde beskeden i din indbakke skal du tjekke din spam-mappe."
+      ],
       "An error occurred while communicating with **${ applicationName }**": [
         "Fejl opstod i kommunikationen med **${ applicationName }**"
       ],
@@ -9579,6 +9603,9 @@
       ],
       "An import is paused because your storage is almost full.": [
         "En import er sat på pause, fordi der næsten ikke er mere lagerplads."
+      ],
+      "An SMS with a verification code was just sent to ${ phoneNumber }.": [
+        "En SMS med en bekræftelseskode blev netop sendt til ${ phoneNumber }."
       ],
       "and": [
         "og"
@@ -9733,6 +9760,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Før du anmoder om en ny bekræftelseskode, bør du tjekke din spam-mappe samt kontrollere, at ${ strong } er den korrekte adresse."
       ],
+      "Before sending a new verification code, check your spam folder for ${ EmailOrPhoneNumber }.": [
+        "Tjek din spammappe for ${ EmailOrPhoneNumber } før der sendes en ny bekræftelseskode."
+      ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
         "Før du kan modtage e-mails for dine brugerdomæne-adresser hos ${ MAIL_APP_NAME }, skal du tilføje følgende MX-poster i din DNS-konsol (som kan findes på platformen, hvor du købte dit brugerdomæne). Du kan finde et eksempel og nogle nyttige tips ${ kbLink }."
       ],
@@ -9766,6 +9796,15 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Ved at dele alle detaljer om begivenheden i denne kalender, accepterer du at give ${ BRAND_NAME } adgang til denne kalenders krypterede oplysninger."
       ],
+      "Can you access your active session?": [
+        "Kan du tilgå din aktive session?"
+      ],
+      "Can you access your active web session in another browser?": [
+        "Kan du tilgå din aktive web-session i en anden browser?"
+      ],
+      "Can you reach out to your contact?": [
+        "Kan du kontakte dine nødkontakt?"
+      ],
       "Cancel": [
         "Annuller"
       ],
@@ -9787,6 +9826,9 @@
       "Check the status of imports and forwarding.": [
         "Kontrollér status for import og videresendelse."
       ],
+      "Check your network and try again.": [
+        "Kontrollér din netværksforbindelse og prøv igen."
+      ],
       "Choose a plan that works best for you.": [
         "Vælg et abonnement, der passer bedst til dig."
       ],
@@ -9798,6 +9840,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klik på \"Anmod om ny kode\" for at få en ny bekræftelseskode sendt til ${ strong }. Hvis dette telefonnummer er forkert, skal du klikke på \"Redigér\" for at rette det."
+      ],
+      "Click 'Trouble signing in?' on your TV to follow the alternative steps.": [
+        "Tryk på 'Problemer med at logge på?' på dit TV og følg de alternative trin."
       ],
       "Click **Request password reset** and follow the prompts.": [
         "Klik på **Anmod om nulstilling af adgangskode** og følg vejledningen."
@@ -9813,9 +9858,6 @@
       ],
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "CNET editors choice award med en bedømmelse på 8,4 ud af 10"
-      ],
-      "Code expired": [
-        "Koden er udløbet"
       ],
       "Coming soon": [
         "Kommer snart"
@@ -9989,6 +10031,9 @@
         "Sletter ${ deletedServerCount } gateway-server",
         "Sletter ${ deletedServerCount } gateway-servere"
       ],
+      "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
+        "Afhængigt af dine indstillinger, kan du få adgang med det samme eller efter en bestemt **venteperiode.**"
+      ],
       "Did you know?": [
         "Vidste du det?"
       ],
@@ -10088,6 +10133,9 @@
       ],
       "Drop to import": [
         "Slip for at importere"
+      ],
+      "Due to end-to-end encryption, you can reset your password, but ${ DataLockedText } until you use a ${ DataRecoveryOptionsLink }:": [
+        "På grund af end-to-end-kryptering kan du nulstille din adgangskode, men ${ DataLockedText } indtil du bruger en ${ DataRecoveryOptionsLink }:"
       ],
       "Each code can only be used once": [
         "Hver kode kan kun bruges én gang"
@@ -10368,6 +10416,9 @@
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Få adgang ved at oprette en ${ BRAND_NAME } konto og acceptere invitationen."
       ],
+      "Get in touch with your emergency contacts, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed**.": [
+        "Kontakt dine nødkontakter for at se om de kan hjælpe. Efter at de har anmodet om nødadgang til din konto vil de kunne ændre din adgangskode for dig **efter at ventetiden på nødadgang er gået**."
+      ],
       "Get it on Google Play": [
         "Hent den på Google Play"
       ],
@@ -10428,6 +10479,9 @@
       "How to perform a signed-in reset": [
         "Sådan udføres en nulstilling når du er logget ind"
       ],
+      "How your emergency contact can change your password for you:": [
+        "Sådan kan din nødkontakt ændre din adgangskode for dig:"
+      ],
       "IBAN: ${ formattedIBAN }": [
         "IBAN: ${ formattedIBAN }"
       ],
@@ -10454,6 +10508,9 @@
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Hvis tastaturgenveje er aktiveret, kan du bruge følgende taster til hurtige handlinger eller til at springe til forskellige visninger. ${ metaKey } + K er altid aktiveret."
+      ],
+      "If possible, when signing in, use a device or a browser where you’ve signed in before.": [
+        "Hvis det er muligt, så brug en enhed eller browser hvor du har tidligere har været logget ind, når du logger ind."
       ],
       "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
         "Hvis den e-mail, du indtastede, blev brugt til at reservere et barns e-mailadresse, gensender vi aktiveringsværdikuponen."
@@ -10490,6 +10547,9 @@
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Hvis du har en gavekode, skal du indtaste den nedenfor for at anvende din rabat."
+      ],
+      "If you have emergency contacts, get in touch with them, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed.**": [
+        "Hvis du har nødkontakter kan du kontakte dem for at se om de kan hjælpe. Efter at de har anmodet om nødadgang til din konto, vil de kunne ændre din adgangskode for dig **efter at ventiden på nødadgang er gået.**"
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Mister du din tofaktoraktiverede enhed, kan disse koder benyttes i stedet for den 6-cifrede tofaktorgodkendelseskode til at logge ind på din konto. Hver kode kan kun benyttes én gang."
@@ -10606,6 +10666,9 @@
       ],
       "Internet connection restored.": [
         "Internetforbindelse genoprettet."
+      ],
+      "Invalid code. ${ RequestNewCodeLink } and try again.": [
+        "Ugyldig kode. ${ RequestNewCodeLink } og prøv igen."
       ],
       "Invitation link expired": [
         "Invitationslinket er udløbet"
@@ -10971,6 +11034,9 @@
       "On Ubuntu?": [
         "På Ubuntu?"
       ],
+      "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
+        "Når der er blevet givet adgang til din konto, kan de få adgang til dine **gendannelsesindstillinger** og **ændre din ${ ACCOUNT_APP_NAME }-adgangskode** for dig."
+      ],
       "Once you reset your password:": [
         "Når du nulstiller din adgangskode:"
       ],
@@ -11244,6 +11310,12 @@
       ],
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Anbefales på betroede enheder. ${ keepMeSignedInLearnMoreLink }"
+      ],
+      "Recovery contacts": [
+        "Gendannelseskontakter"
+      ],
+      "Recovery file": [
+        "Gendannelsesfil"
       ],
       "Recovery file downloaded": [
         "Gendannelsesfil downloadet"
@@ -11926,6 +11998,9 @@
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Prøv ${ productName } helt uden risiko – hvis du af en eller anden grund ombestemmer dig, får du fuld refusion. Helt uden spørgsmål fra os."
       ],
+      "Try recovering your account from a **device or browser where you have signed in before**, as it may be possible from there:": [
+        "Prøv at gendanne din konto fra en **enhed eller browser, hvor du har været logget ind før**, da det derfra måske er muligt:"
+      ],
       "Two-factor authentication": [
         "Tofaktorgodkendelse"
       ],
@@ -11940,6 +12015,9 @@
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Kan ikke verificere signaturen for gendannelsesfilen. Kontakt venligst support."
+      ],
+      "Unfortunately there is no recovery method available for this account.": [
+        "Der er desværre ingen tilgængelig gendannelsesmetode for denne konto."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Desværre er der ingen gendannelsesmetode gemt for denne konto."
@@ -12054,6 +12132,9 @@
       ],
       "Vault updated": [
         "Boks opdateret"
+      ],
+      "Verification code sent.": [
+        "Bekræftelseskode sendt."
       ],
       "Verification link expired": [
         "Bekræftelseslink er udløbet"
@@ -12174,6 +12255,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Vi vil sende en ny verifikationskode til ${ strong }"
+      ],
+      "Web sessions detected:": [
+        "Websessioner fundet:"
       ],
       "Web URL": [
         "Webadresse"
@@ -12366,6 +12450,9 @@
       ],
       "You can now reset your password to regain access to your account.": [
         "Du kan nu nulstille din adgangskode for igen at få adgang til din konto."
+      ],
+      "You can now reset your password to regain access to your account. **This will disable 2-factor authentication.**": [
+        "Du kan nu nulstille din adgangskode for at få adgang til din konto igen. **Dette deaktiverer 2-faktor-godkendelse.**"
       ],
       "You can now return to the application to continue": [
         "Du kan nu vende tilbage til applikationen for at fortsætte"
@@ -12561,6 +12648,12 @@
       "Your email will only be used for this one-time verification.": [
         "Din e-mail vil kun blive brugt til denne engangsbekræftelse."
       ],
+      "Your encrypted data will be locked": [
+        "Din krypterede data vil blive låst"
+      ],
+      "your encrypted data will be locked": [
+        "din krypterede data vil blive låst"
+      ],
       "Your files will be encrypted and then saved": [
         "Din filer vil blive krypteret og derefter gemt"
       ],
@@ -12587,6 +12680,9 @@
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "Din næste faktureringsdato er ${ renewalTime }. Du kan annullere når som helst. Kontakt support, hvis du har brug for en øjeblikkelig ændring af dit abonnement."
+      ],
+      "Your old password": [
+        "Din gamle adgangskode"
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Din organisation bruger single sign-on (SSO). Tryk på Log ind for at fortsætte med din SSO-udbyder."
@@ -13818,6 +13914,9 @@
       "End weekday": [
         "Sidste ugedag"
       ],
+      "Enter code": [
+        "Indtast kode"
+      ],
       "Enter name or email address": [
         "Tilføj navn eller e-mailadresse"
       ],
@@ -14896,11 +14995,20 @@
       "Common sign up issues": [
         "Almindelige tilmeldingsproblemer"
       ],
+      "contacts’ assistance": [
+        "hjælp fra kontakter"
+      ],
       "Create account": [
         "Opret konto"
       ],
       "Create an alias": [
         "Opret et alias."
+      ],
+      "data recovery option": [
+        "metode til datagendannelse"
+      ],
+      "Details": [
+        "Detaljer"
       ],
       "Don't have access to your 2FA?": [
         "Har du ikke adgang til din 2FA?"
@@ -16106,6 +16214,13 @@
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Alle grundlæggende ${ BRAND_NAME }-tjenester (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
+      ],
+      "Appointment scheduling": [
+        "Mødebooking"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Mødebooking med ${ n } bookingside",
+        "Mødebooking med ${ n } bookingsider"
       ],
       "Apps for": [
         "Apps til"
@@ -20768,6 +20883,9 @@
       "Bundle": [
         "Pakke"
       ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "Vælg en sikker ${ MAIL_APP_NAME }-adresse for at komme i gang"
+      ],
       "Collaborative document editing": [
         "Redigering af samarbejdsdokumenter"
       ],
@@ -20831,6 +20949,9 @@
       "Gifted by **${ referrerName }**": [
         "Givet af **${ referrerName }**"
       ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "Hold dine samtaler private med ${ MAIL_APP_NAME }"
+      ],
       "Manage user access": [
         "Administrer brugeradgang"
       ],
@@ -20882,6 +21003,9 @@
       "Secure ${ VPN_CONNECTIONS } device at a time": [
         "Beskyt ${ VPN_CONNECTIONS } enhed ad gangen",
         "Beskyt ${ VPN_CONNECTIONS } enheder ad gangen"
+      ],
+      "Secure calendar": [
+        "Sikker kalender"
       ],
       "Secure file sharing": [
         "Sikker fildeling"
@@ -20990,6 +21114,9 @@
       ],
       "use your own email.": [
         "brug din egen e-mail."
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "VPN med servere i ${ vpnServersCountData.free.countries } lande"
       ],
       "VPN with servers in ${ vpnServersCountData.free.countries } country": [
         "VPN med servere i ${ vpnServersCountData.free.countries } land",
@@ -23136,6 +23263,9 @@
       "Are you sure?": [
         "Er du sikker?"
       ],
+      "Ask your emergency contacts for help": [
+        "Spørg dine nødkontakter om hjælp"
+      ],
       "Auto-deletion is active": [
         "Automatisk sletning er aktiv"
       ],
@@ -23162,6 +23292,9 @@
       ],
       "Browser extensions": [
         "Browserudvidelser"
+      ],
+      "Can you access your session in the browser?": [
+        "Kan du tilgå din session i browseren?"
       ],
       "Can you reach out to your emergency contacts?": [
         "Kan du kontakte dine nødkontakter?"
@@ -23226,6 +23359,9 @@
       "Close": [
         "Luk"
       ],
+      "Code expired": [
+        "Koden er udløbet"
+      ],
       "Collaborate on documents": [
         "Arbejd sammen om dokumenter"
       ],
@@ -23282,6 +23418,9 @@
       ],
       "Continue with partial import?": [
         "Fortsæt med delvis import?"
+      ],
+      "Couldn't sign in": [
+        "Login mislykkedes"
       ],
       "Couldn’t create accounts": [
         "Kunne ikke oprette konti"
@@ -24145,6 +24284,9 @@
       "Request new code": [
         "Anmod om ny kode"
       ],
+      "Request new code?": [
+        "Anmod om ny kode?"
+      ],
       "Request sent": [
         "Anmodning sendt"
       ],
@@ -24416,6 +24558,9 @@
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "Prøv ${ AUTHENTICATOR_APP_NAME }"
       ],
+      "Try changing your password in your active web session": [
+        "Prøv at ændre din adgangskode i din aktive web-session"
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Slå ${ DARK_WEB_MONITORING_NAME } til"
       ],
@@ -24496,6 +24641,9 @@
       ],
       "Verification failed": [
         "Bekræftelse mislykkedes"
+      ],
+      "Verify it’s you": [
+        "Bekræft at det er dig"
       ],
       "Verifying your card...": [
         "Bekræfter dit kort..."
@@ -25349,6 +25497,9 @@
       ],
       "Remember to share the user's sign in details with them.": [
         "Husk at dele brugerens login-oplysninger med dem."
+      ],
+      "Roles and permissions": [
+        "Roller og tilladelser"
       ],
       "Save": [
         "Gem"

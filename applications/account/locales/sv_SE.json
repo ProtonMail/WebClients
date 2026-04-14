@@ -984,6 +984,9 @@
       "Later": [
         "Senare"
       ],
+      "Learn about recovery options": [
+        "Lär dig om återställningsalternativ"
+      ],
       "Learn more": [
         "Lär dig mer"
       ],
@@ -1421,6 +1424,9 @@
       ],
       "Send my username": [
         "Skicka mitt användarnamn"
+      ],
+      "Send new code": [
+        "Skicka ny kod"
       ],
       "Send new invite": [
         "Skicka ny inbjudan"
@@ -9743,9 +9749,6 @@
       "CNET editors choice award with a rating of 8.4 out of 10": [
         "CNET-redaktionens valpris med ett betyg på 8,4 av 10"
       ],
-      "Code expired": [
-        "Kod löpt ut"
-      ],
       "Coming soon": [
         "Kommer snart"
       ],
@@ -10015,6 +10018,9 @@
       "Drop to import": [
         "Släpp för att importera"
       ],
+      "Due to end-to-end encryption, you can reset your password, but ${ DataLockedText } until you use a ${ DataRecoveryOptionsLink }:": [
+        "På grund av end-to-end-kryptering kan du återställa ditt lösenord, men ${ DataLockedText } tills du använder en ${ DataRecoveryOptionsLink }:"
+      ],
       "Each code can only be used once": [
         "Varje kod kan endast användas en gång"
       ],
@@ -10270,6 +10276,9 @@
       "Friends and family": [
         "Vänner och familj"
       ],
+      "From there, they can request emergency access to your account by clicking **Request access.**": [
+        "Därifrån kan de begära nödåtkomst till ditt konto genom att klicka på **Begär åtkomst.**"
+      ],
       "Gateway couldn't be deleted. Please try again": [
         "Gateway kunde inte tas bort. Försök igen"
       ],
@@ -10407,6 +10416,9 @@
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Om du har en presentkod, ange den nedan för att tillämpa din rabatt."
+      ],
+      "If you have emergency contacts, get in touch with them, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed.**": [
+        "Om du har nödkontakter, kontakta dem för att se om de kan hjälpa. Efter att ha begärt nödåtkomst till ditt konto kommer de att kunna ändra ditt lösenord åt dig **efter att väntetiden för åtkomst har passerat.**"
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Om du förlorar din tvåfaktorsaktiverade enhet kan dessa koder användas istället för den 6-siffriga tvåfaktorsautentiseringskoden för att logga in på ditt konto. Varje kod kan bara användas en gång."
@@ -11947,6 +11959,9 @@
       ],
       "Vault updated": [
         "Valv uppdaterat"
+      ],
+      "Verification code sent.": [
+        "Verifieringskod skickad."
       ],
       "Verification link expired": [
         "Verifieringslänk löpt ut"
@@ -15486,6 +15501,17 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Logga in på ditt ${ BRAND_NAME }-konto för att komma åt alla krypterade ${ BRAND_NAME }-tjänster som ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } och mer. Har du inget konto? Skapa ett GRATIS."
+      ]
+    },
+    "Missing feature": {
+      "Continue cancelling": [
+        "Fortsätt avbryta"
+      ],
+      "Explore the latest news": [
+        "Utforska de senaste nyheterna"
+      ],
+      "Submit your ideas": [
+        "Skicka dina idéer"
       ]
     },
     "Modal title": {
@@ -20828,6 +20854,9 @@
       "You are all set": [
         "Du är klar"
       ],
+      "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
+        "Ditt konto inkluderar åtkomst till gratis funktioner i ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } och ${ LUMO_SHORT_APP_NAME }."
+      ],
       "Your plan": [
         "Ditt paket"
       ],
@@ -22957,6 +22986,9 @@
       "Are you sure?": [
         "Är du säker?"
       ],
+      "Ask your emergency contacts for help": [
+        "Be dina nödkontakter om hjälp"
+      ],
       "Auto-deletion is active": [
         "Automatisk borttagning är aktivt"
       ],
@@ -23050,6 +23082,9 @@
       "Close": [
         "Stäng"
       ],
+      "Code expired": [
+        "Kod löpt ut"
+      ],
       "Collaborate on documents": [
         "Samarbeta på dokument"
       ],
@@ -23106,6 +23141,9 @@
       ],
       "Continue with partial import?": [
         "Fortsätta med delimport?"
+      ],
+      "Couldn't sign in": [
+        "Kunde inte logga in"
       ],
       "Couldn’t create accounts": [
         "Kunde inte skapa konton"
@@ -23971,6 +24009,9 @@
       ],
       "Request new code": [
         "Begär ny kod"
+      ],
+      "Request new code?": [
+        "Begär ny kod?"
       ],
       "Request sent": [
         "Begäran skickad"
