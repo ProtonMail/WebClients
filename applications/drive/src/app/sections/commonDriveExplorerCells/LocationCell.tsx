@@ -21,7 +21,7 @@ export function LocationCell({ location, className }: LocationCellProps) {
 export const defaultLocationCellConfig: CellDefinitionConfig = {
     id: 'location',
     headerText: c('Label').t`Location`,
-    className: 'w-1/3',
+    className: 'w-1/5',
     testId: 'column-location',
     sortField: SortField.location,
     sortConfig: [{ field: SortField.location, comparator: stringComparator }],
