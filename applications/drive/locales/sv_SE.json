@@ -9645,6 +9645,10 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "Din ${ BRAND_NAME }-adress är redo att användas"
+      ],
+      "${ errors.length } item failed to be deleted": [
+        "${ errors.length } objekt misslyckades att tas bort",
+        "${ errors.length } objekt misslyckades att tas bort"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
