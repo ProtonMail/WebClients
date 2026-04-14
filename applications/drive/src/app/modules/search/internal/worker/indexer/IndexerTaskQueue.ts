@@ -2,8 +2,10 @@ import { getNodeEntity } from '../../../../../utils/sdk/getNodeEntity';
 import type { MainThreadBridge } from '../../mainThread/MainThreadBridge';
 import { Logger } from '../../shared/Logger';
 import type { SearchDB } from '../../shared/SearchDB';
+import { deleteLegacyEncryptedSearchDb } from '../../shared/encryptedSearchUtils';
 import type { PermanentErrorKind } from '../../shared/errors';
 import { classifyPermanentError, isAbortError, sendErrorReportForSearch } from '../../shared/errors';
+import type { UserId } from '../../shared/types';
 import { brandTreeEventScopeId } from '../../shared/types';
 import type { IndexRegistry } from '../index/IndexRegistry';
 import type { TreeSubscriptionRegistry } from './TreeSubscriptionRegistry';
@@ -58,6 +60,7 @@ export class IndexerTaskQueue {
     private stateListeners = new Set<IndexerStateListener>();
 
     constructor(
+        private readonly userId: UserId,
         private readonly indexRegistry: IndexRegistry,
         private readonly bridge: MainThreadBridge,
         private readonly db: SearchDB,
@@ -129,6 +132,11 @@ export class IndexerTaskQueue {
                         this.enqueue(task);
                     }
                     this.postBootstrapTasks = [];
+
+                    // Clean up legacy encrypted-search DB now that initial indexing is done.
+                    deleteLegacyEncryptedSearchDb(this.userId).catch((error: unknown) => {
+                        sendErrorReportForSearch(error);
+                    });
 
                     // Wire registry → task queue: registry decides *when*, queue creates the task.
                     this.treeSubscriptionRegistry.startIncrementalUpdateScheduling((registration) =>
