@@ -841,6 +841,9 @@
       "${ seats } ${ LUMO_APP_NAME } seat": [
         "${ seats } 個 ${ LUMO_APP_NAME } 授權席次"
       ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } 授權"
+      ],
       "${ seats } writing assistant seat": [
         "${ seats }撰寫幫手就位"
       ],
@@ -8796,6 +8799,9 @@
       ],
       "Discard changes?": [
         "捨棄變更？"
+      ],
+      "Disconnected from Gmail": [
+        "與 Gmail 中斷連線"
       ],
       "Docs": [
         "Docs"

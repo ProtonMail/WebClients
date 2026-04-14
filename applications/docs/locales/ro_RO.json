@@ -649,7 +649,7 @@
         "Solicitare funcție"
       ],
       "Request new code": [
-        "Solicitare cod nou"
+        "Solicitați un cod nou"
       ],
       "Resend code": [
         "Retrimitere cod"
@@ -6778,6 +6778,14 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Toate serviciile de bază ale ${ BRAND_NAME } (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "Planificare întâlniri"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Planificare întâlniri cu ${ n } pagină de programări",
+        "Planificare întâlniri cu ${ n } pagini de programări",
+        "Planificare întâlniri cu ${ n } de pagini de programări"
+      ],
       "Auto-delete Spam and Trash": [
         "Ștergere automată mesaje nedorite și din gunoi"
       ],
@@ -7578,9 +7586,9 @@
         "S-au eliminat definitiv ${ numberOfItems } de articole din «Gunoi»."
       ],
       "${ numberOfItems } item failed to be deleted": [
-        "Eșuare ștergere articole: ${ numberOfItems }",
-        "Eșuare ștergere articole: ${ numberOfItems }",
-        "Eșuare ștergere articole: ${ numberOfItems }"
+        "Articole care nu s-au put șterge: ${ numberOfItems }",
+        "Articole care nu s-au put șterge: ${ numberOfItems }",
+        "Articole care nu s-au put șterge: ${ numberOfItems }"
       ],
       "${ numberOfItems } item failed to be deleted permanently from trash": [
         "Un element nu a putut fi eliminat definitiv din «Gunoi».",
