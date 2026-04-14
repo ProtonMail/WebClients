@@ -1,18 +1,16 @@
 import type { Meta, StoryObj } from '@storybook/react-webpack5';
 
-import Icon from '@proton/components/components/icon/Icon';
+import { IcArrowUp } from '@proton/icons/icons/IcArrowUp';
+import { IcBrandProtonMail } from '@proton/icons/icons/IcBrandProtonMail';
 
-const meta: Meta<typeof Icon> = {
+const meta: Meta<typeof IcBrandProtonMail> = {
     title: 'Components/Icon',
-    args: {
-        name: 'brand-proton-mail',
-    },
-    component: Icon,
+    component: IcBrandProtonMail,
     parameters: {
         docs: {
             description: {
                 component:
-                    'Icon component renders SVG icons from the Proton icon set. Supports different sizes, colors, and rotation. Icons inherit the parent text color by default.',
+                    'Icons from @proton/icons (for example IcBrandProtonMail) render SVG icons from the Proton icon set. They support sizes, className, and standard SVG attributes. Icons inherit the parent text color by default.',
             },
         },
     },
@@ -21,7 +19,7 @@ const meta: Meta<typeof Icon> = {
 
 export default meta;
 
-type Story = StoryObj<typeof Icon>;
+type Story = StoryObj<typeof IcBrandProtonMail>;
 
 export const Default: Story = {};
 
@@ -29,7 +27,7 @@ export const AllSizes: Story = {
     render: () => (
         <div className="flex items-end gap-4">
             {([3, 4, 6, 10, 12] as const).map((size) => (
-                <Icon key={size} name="brand-proton-mail" size={size} />
+                <IcBrandProtonMail key={size} size={size} />
             ))}
         </div>
     ),
@@ -44,13 +42,13 @@ export const WithColors: Story = {
             <div>
                 <div className="flex items-end justify-center gap-4 mb-4">
                     {sizes.map((size) => (
-                        <Icon key={size} name="brand-proton-mail" size={size} />
+                        <IcBrandProtonMail key={size} size={size} />
                     ))}
                 </div>
                 {colors.map((color) => (
                     <div key={color} className="flex items-end justify-center gap-4 mb-4">
                         {sizes.map((size) => (
-                            <Icon key={size} name="brand-proton-mail" size={size} className={`color-${color}`} />
+                            <IcBrandProtonMail key={size} size={size} className={`color-${color}`} />
                         ))}
                     </div>
                 ))}
@@ -60,23 +58,18 @@ export const WithColors: Story = {
 };
 
 export const Rotated: Story = {
-    args: {
-        name: 'arrow-up',
-        rotate: 45,
-    },
+    render: () => <IcArrowUp style={{ transform: 'rotate(45deg)' }} />,
 };
 
 export const WithAlt: Story = {
     args: {
-        name: 'brand-proton-mail',
         alt: 'Proton Mail icon',
     },
 };
 
 export const CustomColor: Story = {
     args: {
-        name: 'brand-proton-mail',
-        color: 'rgb(107, 76, 217)',
+        style: { color: 'rgb(107, 76, 217)' },
         size: 10,
     },
 };
