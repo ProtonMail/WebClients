@@ -4,7 +4,7 @@ import 'fake-indexeddb/auto';
 
 import { createMockNodeEntity } from '../../../../../utils/test/nodeEntity';
 import { SearchDB } from '../../shared/SearchDB';
-import type { TreeEventScopeId } from '../../shared/types';
+import type { TreeEventScopeId, UserId } from '../../shared/types';
 import { FakeMainThreadBridge } from '../../testing/FakeMainThreadBridge';
 import { setupRealSearchLibraryWasm } from '../../testing/setupRealSearchLibraryWasm';
 import { IndexRegistry } from '../index/IndexRegistry';
@@ -86,6 +86,17 @@ class IndexerStateStream {
     }
 }
 
+/** Yield to the event loop until `predicate` returns true (max ~50 ticks). */
+async function waitForCondition(predicate: () => boolean | Promise<boolean>, maxTicks = 50): Promise<void> {
+    for (let i = 0; i < maxTicks; i++) {
+        if (await predicate()) {
+            return;
+        }
+        await new Promise((resolve) => setTimeout(resolve, 50));
+    }
+    throw new Error('waitForCondition: timed out');
+}
+
 describe('IndexerTaskQueue', () => {
     let db: SearchDB;
     let bridge: FakeMainThreadBridge;
@@ -113,7 +124,8 @@ describe('IndexerTaskQueue', () => {
         treeSubRegistry = await TreeSubscriptionRegistry.create(bridge.asBridge(), db);
     });
 
-    const createQueue = () => new IndexerTaskQueue(indexRegistry, bridge.asBridge(), db, treeSubRegistry);
+    const createQueue = () =>
+        new IndexerTaskQueue('test-user' as UserId, indexRegistry, bridge.asBridge(), db, treeSubRegistry);
 
     it('bootstrap: transitions through expected states', async () => {
         const queue = createQueue();
@@ -214,14 +226,40 @@ describe('IndexerTaskQueue', () => {
         // after the 5s cooldown. Use fast_forward which just advances the cursor.
         bridge.emitEvent(SCOPE_ID, { type: 'fast_forward', eventId: 'evt-2' } as any);
 
-        // Advance past the cooldown and flush microtasks so the task queue processes the enqueued task.
+        // Advance past the cooldown so the debounced enqueueOnce fires.
         await jest.advanceTimersByTimeAsync(5_000);
 
         jest.useRealTimers();
 
-        // The subscription cursor should have advanced, proving the task ran.
+        // Wait for the processLoop to execute the enqueued IncrementalUpdateTask.
         const reg = treeSubRegistry.getAllRegistrations()[0];
-        expect(reg.lastEventId).toBe('evt-2');
+        await waitForCondition(() => reg.lastEventId === 'evt-2');
+
+        queue.stop();
+    });
+
+    it('deletes legacy encrypted-search DB after bootstrap', async () => {
+        // Create a legacy DB for the test user.
+        const legacyRequest = indexedDB.open('ES:test-user:DB', 1);
+        const legacyDb = await new Promise<IDBDatabase>((resolve) => {
+            legacyRequest.onsuccess = () => resolve(legacyRequest.result);
+        });
+        legacyDb.close();
+
+        const databases = await indexedDB.databases();
+        expect(databases.some(({ name }) => name === 'ES:test-user:DB')).toBe(true);
+
+        const queue = createQueue();
+        const state = new IndexerStateStream(queue);
+        queue.start().catch(() => {});
+
+        await state.waitForSearchable();
+
+        // Deletion is fire-and-forget; yield to let it complete.
+        await waitForCondition(async () => {
+            const dbs = await indexedDB.databases();
+            return !dbs.some(({ name }) => name === 'ES:test-user:DB');
+        });
 
         queue.stop();
     });

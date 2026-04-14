@@ -22,6 +22,14 @@ jest.mock('../shared/Logger', () => ({
     Logger: { info: jest.fn(), warn: jest.fn(), error: jest.fn(), listenForWorkerLogs: jest.fn() },
 }));
 
+jest.mock('../shared/errors', () => {
+    const actual = jest.requireActual('../shared/errors');
+    return {
+        ...actual,
+        sendErrorReportForSearch: jest.fn(),
+    };
+});
+
 // Stub SharedWorker with an accessor for the name passed at construction.
 let createdWorkers: { name: string | undefined }[] = [];
 (globalThis as any).SharedWorker = class {
