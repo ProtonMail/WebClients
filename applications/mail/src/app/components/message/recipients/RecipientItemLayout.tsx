@@ -1,5 +1,5 @@
-import type { MouseEvent, ReactNode, RefObject } from 'react';
-import { useMemo, useRef } from 'react';
+import type { ReactNode, Ref } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 
 import { c } from 'ttag';
 
@@ -28,7 +28,7 @@ interface Props {
     icon?: ReactNode;
     isLoading?: boolean;
     dropdownContent?: ReactNode;
-    dropdrownAnchorRef: RefObject<HTMLButtonElement>;
+    dropdrownAnchorRef: Ref<HTMLElement>;
     dropdownToggle?: () => void;
     isDropdownOpen?: boolean;
     /**
@@ -75,7 +75,7 @@ const RecipientItemLayout = ({
     const { highlightMetadata, shouldHighlight, esStatus } = useEncryptedSearchContext();
     const highlightData = shouldHighlight();
 
-    const rootRef = useRef<HTMLSpanElement>(null);
+    const rootRef = useRef<HTMLAnchorElement>(null);
 
     const breakPoints = useActiveBreakpoint();
     const isSmallViewport = breakPoints.viewportWidth['<=small'];
@@ -96,7 +96,7 @@ const RecipientItemLayout = ({
         [address, highlightData]
     );
 
-    const combinedRef = useCombinedRefs(dropdrownAnchorRef, rootRef);
+    const combinedRef = useCombinedRefs<HTMLAnchorElement>(dropdrownAnchorRef as Ref<HTMLAnchorElement>, rootRef);
 
     // To have an ellipsis, we need to display the button as a span
     // We had to add hotkeys to make it accessible with keyboard
@@ -104,6 +104,7 @@ const RecipientItemLayout = ({
         [
             'Enter',
             (e) => {
+                e.preventDefault();
                 if (showDropdown) {
                     e.stopPropagation();
                     dropdownToggle?.();
@@ -113,6 +114,7 @@ const RecipientItemLayout = ({
         [
             KeyboardKey.Spacebar,
             (e) => {
+                e.preventDefault();
                 if (showDropdown) {
                     e.stopPropagation();
                     dropdownToggle?.();
@@ -121,27 +123,38 @@ const RecipientItemLayout = ({
         ],
     ]);
 
-    const handleClick = (event: MouseEvent) => {
-        if (document.getSelection()?.isCollapsed && showDropdown) {
-            event.stopPropagation();
-            dropdownToggle?.();
+    // Use a native click listener directly on the element so that stopPropagation
+    // prevents useLinkHandler (which listens on a parent wrapper) from intercepting the mailto: href
+    useEffect(() => {
+        const el = rootRef.current;
+        if (!el) {
+            return;
         }
-    };
+
+        const handleClick = (event: Event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            if (document.getSelection()?.isCollapsed && showDropdown) {
+                dropdownToggle?.();
+            }
+        };
+
+        el.addEventListener('click', handleClick);
+        return () => el.removeEventListener('click', handleClick);
+    }, [showDropdown, dropdownToggle]);
 
     // translator: Example: More details about "Jack <email>"
     const labelMessageRecipientButton = c('Action').t`More details about ${ariaLabelTitle}`;
 
-    // had to use span instead of button, otherwise ellipsis can't work
+    const emailAddress = recipientOrGroup?.recipient?.Address;
+
     return (
-        // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/prefer-tag-over-role
-        <span
+        <a
+            href={emailAddress ? `mailto:${emailAddress}` : undefined}
             className={clsx([
-                'inline-flex items-center flex-nowrap message-recipient-item max-w-full cursor-pointer',
+                'inline-flex items-center flex-nowrap message-recipient-item max-w-full cursor-pointer color-inherit text-no-decoration',
                 isLoading && 'flex-1',
             ])}
-            role="button"
-            tabIndex={0}
-            onClick={handleClick}
             ref={combinedRef}
             aria-label={labelMessageRecipientButton}
             aria-expanded={isDropdownOpen}
@@ -196,7 +209,7 @@ const RecipientItemLayout = ({
                 </span>
             </span>
             {showDropdown && dropdownContent}
-        </span>
+        </a>
     );
 };
 
