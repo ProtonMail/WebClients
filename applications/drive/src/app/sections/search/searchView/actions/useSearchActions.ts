@@ -85,7 +85,7 @@ export const useSearchActions = () => {
         const items = uids
             .map(getSearchResultItem)
             .filter(isTruthy)
-            .map((item) => ({ uid: item.nodeUid, parentUid: item.parentUid, type: item.type }));
+            .map((item) => ({ uid: item.nodeUid, parentUid: item.parentUid, type: item.type, name: item.name }));
 
         const itemsByDrive = Map.groupBy(items, (item) => getDrivePerNodeType(item.type));
         await Promise.all([...itemsByDrive.entries()].map(([drive, items]) => trashItems(drive, items)));
