@@ -53,19 +53,30 @@ export const InviteRecommendations: FC<InviteRecommendationsProps> = (props) => 
     const suggestions = useMemo(() => {
         const displayed = (() => {
             if (organization !== null && view === organization.name) {
-                const groupSuggestions = organizationGroups.map((group) => ({ email: group.email, isGroup: true }));
-                const membersSuggestions = organization.emails.map((email) => ({ email, isGroup: false }));
+                const groupSuggestions = organizationGroups.map((group) => ({
+                    email: group.email,
+                    isGroup: true,
+                    groupName: group.name,
+                }));
+                const membersSuggestions = organization.emails.map((email) => ({
+                    email,
+                    isGroup: false,
+                    groupName: undefined,
+                }));
                 return [...groupSuggestions, ...membersSuggestions];
             }
-            return suggested.map(({ email, isGroup }) => ({ email, isGroup }));
+            return suggested.map(({ email, isGroup }) => ({ email, isGroup, groupName: undefined }));
         })();
 
         const startsWith = props.autocomplete.toLowerCase();
 
         return isEmptyString(startsWith)
             ? displayed
-            : displayed.filter(({ email }) => email.toLowerCase().startsWith(startsWith));
-    }, [suggested, organization, view, props.autocomplete]);
+            : displayed.filter(
+                  ({ email, groupName }) =>
+                      email.toLowerCase().startsWith(startsWith) || groupName?.toLowerCase().startsWith(startsWith)
+              );
+    }, [suggested, organization, organizationGroups, view, props.autocomplete]);
 
     const loading = loadingSuggestions || loadingOrganization;
     /** Add an extra row for the loading placeholder */
