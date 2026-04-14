@@ -20,9 +20,9 @@ import { changeConversationTitle, pushConversationRequest } from '../../../redux
 import { type Conversation, type Message, getProjectInfo } from '../../../types';
 import LumoNavbarUpsell from '../../../upsells/composed/LumoNavbarUpsell';
 import { sendConversationEditTitleEvent } from '../../../util/telemetry';
-import FavoritesUpsellPrompt from '../../Buttons/FavoritesUpsellPrompt';
 import LumoButton from '../../Buttons/LumoButton';
 import { NewChatButtonHeader } from '../../Buttons/NewChatButton';
+import FavoritesUpsellPrompt from '../../Guest/FavoritesUpsellPrompt';
 
 import './ConversationHeader.scss';
 

@@ -1,15 +1,14 @@
 import { type ReactNode, lazy } from 'react';
 
+import { PublicHeader } from '../components/Guest/PublicHeader';
 import HighLoadWarning from '../components/Notifications/HighLoadWarning';
+import { useGuestMigrationNotification } from '../components/useGuestMigrationNotification';
 import { useKeyboardShortcuts } from '../hooks/useKeyboardShortcuts';
 import { GhostChatProvider } from '../providers/GhostChatProvider';
 import { useIsGuest } from '../providers/IsGuestProvider';
 import { SearchModalProvider, useSearchModal } from '../providers/SearchModalProvider';
 import { SidebarProvider } from '../providers/SidebarProvider';
-import { PublicHeader } from './header/PublicHeader';
 import LumoSidebar from './sidebar/LumoSidebar';
-
-// import { PublicHeader } from './header/PublicHeader';
 
 export type ActivePanel = 'chatHistory' | 'favoriteChats' | null;
 
@@ -21,11 +20,11 @@ const MainLayoutContent = ({ children }: Props) => {
     // const { isSmallScreen } = useSidebar();
     const { openSearchModal } = useSearchModal();
     const isGuest = useIsGuest();
+    useGuestMigrationNotification();
 
 
     // Set up keyboard shortcuts
     useKeyboardShortcuts({ onOpenSearch: openSearchModal });
-    // const HeaderComponent = isGuest ? PublicHeader : PrivateHeader;
 
     return (
         <div className="relative reset4print flex flex-row h-full w-full overflow-hidden">

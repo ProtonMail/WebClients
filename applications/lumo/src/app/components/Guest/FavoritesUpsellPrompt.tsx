@@ -1,12 +1,11 @@
 import { c } from 'ttag';
 
-import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import type { ModalProps } from '@proton/components/index';
-import { SettingsLink } from '@proton/components/index';
 import Prompt from '@proton/components/components/prompt/Prompt';
+import type { ModalProps } from '@proton/components/index';
 import lumoCatFavorite from '@proton/styles/assets/img/lumo/lumo-cat-favorite.svg';
 
-import { SignInLinkButton } from '../Links/SignInLink';
+import { CreateFreeAccountButton } from './CreateFreeAccountLink/CreateFreeAccountLink';
+import { SignInButton } from './SignInLink';
 
 const FavoritesUpsellPrompt = ({ ...modalProps }: ModalProps) => {
     // const footnote = c('collider_2025: Link').jt`Already have an account? ${(<SignInLink />)}`;
@@ -15,10 +14,8 @@ const FavoritesUpsellPrompt = ({ ...modalProps }: ModalProps) => {
         <Prompt
             {...modalProps}
             buttons={[
-                <ButtonLike as={SettingsLink} className="w-full" shape="solid" color="norm" path="/signup">{c(
-                    'collider_2025: Upsell'
-                ).t`Create free account`}</ButtonLike>,
-                <SignInLinkButton className="w-full" color="weak" shape="outline" />,
+                <CreateFreeAccountButton color="norm" shape="solid" className="w-full" />,
+                <SignInButton className="w-full" color="weak" shape="outline" />,
             ]}
         >
             <div className="flex flex-column gap-2">

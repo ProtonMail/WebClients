@@ -19,7 +19,6 @@ import { parseFileReferences } from '../../../../../util/fileReferences';
 import { getMimeTypeFromExtension } from '../../../../../util/filetypes';
 import { sendMessageEditEvent } from '../../../../../util/telemetry';
 import { AttachmentFileCard } from '../../../../Files/Common';
-import { LazyProgressiveMarkdownRenderer } from '../../../../LumoMarkdown/LazyMarkdownComponents';
 import SiblingSelector from '../../../../SiblingSelector';
 import useCollapsibleMessageContent from '../useCollapsibleMessageContent';
 import MessageEditor from './MessageEditor';

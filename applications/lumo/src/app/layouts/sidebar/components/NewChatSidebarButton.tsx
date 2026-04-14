@@ -5,7 +5,7 @@ import { c } from 'ttag';
 
 import { metaKey } from '@proton/shared/lib/helpers/browser';
 
-import { GuestChatDisclaimerModal } from '../../../components/Modals/GuestChatDisclaimerModal';
+import { GuestChatDisclaimerModal } from '../../../components/Guest/GuestChatDisclaimerModal';
 import { useGuestChatHandler } from '../../../hooks/useGuestChatHandler';
 import { useGhostChat } from '../../../providers/GhostChatProvider';
 import { useIsGuest } from '../../../providers/IsGuestProvider';

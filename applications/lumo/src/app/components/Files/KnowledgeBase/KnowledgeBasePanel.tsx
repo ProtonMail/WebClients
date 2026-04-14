@@ -24,11 +24,11 @@ import { type Attachment, type Message, getProjectInfo } from '../../../types';
 import type { DriveDocument } from '../../../types/documents';
 import { getMimeTypeFromExtension } from '../../../util/filetypes';
 import { useNativeComposerVisibilityApi } from '../../Composer/hooks/useNativeComposerVisibilityApi';
+import { KnowledgeBaseGuestDriveUpsell } from '../../Guest/KnowledgeBaseGuestDriveUpsell';
 import { FilePreviewPanel } from '../Common/FilePreviewPanel';
 import { DriveBrowser } from '../DriveBrowser';
 import { KnowledgeBaseContextProgressBar } from './KnowledgeBaseContextProgressBar';
 import { KnowledgeBaseFileItem } from './KnowledgeBaseFileItem';
-import { KnowledgeBaseGuestDriveUpsell } from './KnowledgeBaseGuestDriveUpsell';
 
 const MEDIUM_SCREEN_BREAK = 1024;
 

@@ -1,14 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
-import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { InputFieldTwo, SettingsLink, TextAreaTwo } from '@proton/components/index';
+import { InputFieldTwo, TextAreaTwo } from '@proton/components/index';
 import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight';
-import { IcLock } from '@proton/icons/icons/IcLock';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { IcSliders } from '@proton/icons/icons/IcSliders';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
@@ -28,6 +26,7 @@ import {
     updatePersonalizationSettings,
 } from '../../../redux/slices/personalization';
 import { safeLogger } from '../../../util/safeLogger';
+import { GuestSignInState } from '../../Guest/GuestSignInState/GuestSignInState';
 
 import './PersonalizationPanel.scss';
 
@@ -286,36 +285,13 @@ const PersonalizationPanel = () => {
             <div className="personalization-content">
                 {isGuest ? (
                     // Guest user: Show sign-in prompt
-                    <div className="text-center py-6">
-                        <IcSliders className="mb-4" size={6} />
-
-                        <h3 className="text-bold mb-2">
-                            {c('collider_2025: Personalization').t`Personalize your ${LUMO_SHORT_APP_NAME} experience`}
-                        </h3>
-
-                        <p className="color-weak mb-4 px-4">
-                            {c('collider_2025: Personalization')
-                                .t`Sign in or create a free account to customize how ${LUMO_SHORT_APP_NAME} interacts with you. Set your preferences, communication style, and more.`}
-                        </p>
-
-                        <div
-                            className="flex flex-column items-center gap-2 max-w-custom mx-auto"
-                            style={{ '--max-w-custom': '20rem' }}
-                        >
-                            <ButtonLike as={SettingsLink} color="norm" shape="solid" path="/signup" className="w-full">
-                                {c('collider_2025: Link').t`Create a free account`}
-                            </ButtonLike>
-
-                            <ButtonLike as={SettingsLink} path="" shape="outline" color="weak" className="w-full">
-                                {c('collider_2025: Link').t`Sign in`}
-                            </ButtonLike>
-                        </div>
-
-                        <p className="text-sm color-weak mt-4">
-                            <IcLock size={3} className="mr-1" />
-                            {c('collider_2025: Info').t`Your information is zero-access encrypted`}
-                        </p>
-                    </div>
+                    <GuestSignInState
+                        icon={<IcSliders size={6} />}
+                        title={c('collider_2025: Personalization')
+                            .t`Personalize your ${LUMO_SHORT_APP_NAME} experience`}
+                        description={c('collider_2025: Personalization')
+                            .t`Sign in or create a free account to customize how ${LUMO_SHORT_APP_NAME} interacts with you. Set your preferences, communication style, and more.`}
+                    />
                 ) : (
                     // Authenticated user: Show personalization form
                     <>
