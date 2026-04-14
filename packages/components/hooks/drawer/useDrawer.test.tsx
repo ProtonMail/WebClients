@@ -63,9 +63,9 @@ const fireMessage = async (data: object, origin = 'https://calendar.proton.me') 
     });
 };
 
-const createWrapper = (defaultShowDrawerSidear?: boolean) => {
+const createWrapper = (defaultShowDrawerSidebar?: boolean) => {
     const DrawerProviderWrapper = ({ children }: { children: ReactNode }) => (
-        <DrawerProvider defaultShowDrawerSidear={defaultShowDrawerSidear}>{children}</DrawerProvider>
+        <DrawerProvider defaultShowDrawerSidebar={defaultShowDrawerSidebar}>{children}</DrawerProvider>
     );
     return DrawerProviderWrapper;
 };

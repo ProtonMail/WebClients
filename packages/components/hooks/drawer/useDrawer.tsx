@@ -112,10 +112,10 @@ export default function useDrawer() {
 
 export const DrawerProvider = ({
     children,
-    defaultShowDrawerSidear,
+    defaultShowDrawerSidebar,
 }: {
     children: ReactNode;
-    defaultShowDrawerSidear?: boolean;
+    defaultShowDrawerSidebar?: boolean;
 }) => {
     const authentication = useAuthentication();
     const api = useApi();
@@ -132,7 +132,7 @@ export const DrawerProvider = ({
     // Is the sidebar mounted, we need this to get the drawer width
     const [drawerSidebarMounted, setDrawerSidebarMounted] = useState(false);
     // Is the DrawerSidebar displayed or not (we can hide the drawer with a setting)
-    const [showDrawerSidebar, setShowDrawerSidebar] = useState<boolean | undefined>(defaultShowDrawerSidear);
+    const [showDrawerSidebar, setShowDrawerSidebar] = useState<boolean | undefined>(defaultShowDrawerSidebar);
 
     const requestsAbortControllersRef = useRef<{ id: string; abortController: AbortController }[]>([]);
 

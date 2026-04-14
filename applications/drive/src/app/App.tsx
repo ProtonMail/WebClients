@@ -103,7 +103,7 @@ const App = () => {
                                     <CompatRouter>
                                         <EventManagerProvider eventManager={extraThunkArguments.eventManager}>
                                             <ApiProvider api={extraThunkArguments.api}>
-                                                <DrawerProvider defaultShowDrawerSidear={state.showDrawerSidebar}>
+                                                <DrawerProvider defaultShowDrawerSidebar={state.showDrawerSidebar}>
                                                     <ErrorBoundary
                                                         big
                                                         component={<StandardErrorPage big />}
