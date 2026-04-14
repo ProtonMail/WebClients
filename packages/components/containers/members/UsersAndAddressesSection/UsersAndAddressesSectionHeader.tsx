@@ -30,9 +30,9 @@ const UsersAndAddressesSectionHeader = ({ useEmail, showFeaturesColumn }: Props)
         {
             key: 'role',
             node: (
-                <div className="flex gap-2 flex *:flex items-center">
+                <div className="inline-flex gap-2 items-center">
                     <span>{c('Title header for members table').t`Role`}</span>
-                    <span className="hidden md:inline">
+                    <span className="hidden md:inline-flex items-center">
                         <Info title={adminTooltipText()} url={getKnowledgeBaseUrl('/user-roles')} />
                     </span>
                 </div>
