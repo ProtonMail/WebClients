@@ -4792,6 +4792,9 @@
       ],
       "Zero keys reactivated": [
         "Нуль ключоў паўторна актывавана"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Не ўдалося загрузіць даныя падпіскі. Паспрабуйце яшчэ раз пазней."
       ]
     },
     "error": {
@@ -9105,6 +9108,12 @@
       ],
       "Zoom meeting": [
         "сустрэчу па Zoom"
+      ],
+      "Before sending a new verification code, check your spam folder for ${ EmailOrPhoneNumber }.": [
+        "Праверце сваю папку са спамам для ${ EmailOrPhoneNumber } перад тым, як адпраўляць новы код спраўджання."
+      ],
+      "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
+        "Узнагарода па рэферальнай праграме ў выглядзе крэдытаў можа быць атрымана на працягу 2 месяцаў пасля завяршэння пробнага перыяду вашага сябра, і толькі калі ваш сябар падпісаўся на тарыфны план."
       ]
     },
     "info": {
@@ -12981,6 +12990,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Ваша падпіска мае бягучую скідку. Пераход на гэту новую акцыю азначае, што ранейшая скідка больш не будзе ўжывацца."
+      ],
+      "Edit billing address": [
+        "Рэдагаваць адрас аплаты"
       ]
     },
     "Payments.Error": {
@@ -18148,6 +18160,38 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Пасля паспяховага спраўджання не выдаляйце гэты запіс TXT, бо ён неабходны для пацвярджэння таго, што вы з'яўляецеся ўладальнікам дамена."
+      ]
+    },
+    "Missing feature": {
+      "Check out the latest product updates": [
+        "Праверыць наяўнасць апошніх абнаўленняў"
+      ],
+      "Continue cancelling": [
+        "Працягнуць скасаванне"
+      ],
+      "Explore the latest news": [
+        "Даведайцеся аб апошніх навінах"
+      ],
+      "Keep current plan": [
+        "Пакінуць бягучы тарыфны план"
+      ],
+      "Make your voice heard": [
+        "Выкажыце сваё меркаванне"
+      ],
+      "Request a feature": [
+        "Запытаць функцыю"
+      ],
+      "Request a feature or vote on ideas from other users in our feedback forum.": [
+        "Запытайце функцыю або прагаласуйце за ідэі іншых карыстальнікаў на нашым форуме з водгукамі."
+      ],
+      "See how ${ BRAND_NAME } apps are evolving with your feedback.": [
+        "Паглядзіце як праграмы ${ BRAND_NAME } эвалюцыяніруюць з дапамогай вашых водгукаў."
+      ],
+      "Submit your ideas": [
+        "Адпраўляйце свае ідэі"
+      ],
+      "Your feedback helps us improve. Whether you've spotted a bug, want a new feature, or think something could work differently, we'd love to hear from you.": [
+        "Вашы водгукі дапамагаюць нам станавіцца лепш. Калі вы выявілі памылку, хочаце атрымаць новую функцыю, або не разумееце чаму тая або іншая функцыя працуе менавіта так, а не па іншаму, то наша каманда будзе рада пачуць ваша меркаванне."
       ]
     }
   }
