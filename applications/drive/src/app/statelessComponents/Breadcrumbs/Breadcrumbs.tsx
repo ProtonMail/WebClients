@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import type { BreadcrumbInfo } from '@proton/components/index';
 import { CollapsingBreadcrumbs, Loader, useNotifications } from '@proton/components/index';
+import truncate from '@proton/utils/truncate';
 
 import { SignatureIcon } from '../../components/SignatureIcon';
 import type { BreadcrumbsEvents, CrumbDefinition } from './types';
@@ -29,13 +30,13 @@ export const Breadcrumbs = ({ crumbs, loading, events, createHandleItemDrop }: B
         const handleItemDrop = createHandleItemDrop ? createHandleItemDrop(nodeUid) : undefined;
         return {
             key: crumb.uid,
-            text: crumb.name,
+            text: truncate(crumb.name, 30),
             richText: (
                 <span className="flex items-center flex-nowrap flex-1">
                     {crumb.haveSignatureIssues && (
                         <SignatureIcon haveSignatureIssues={crumb.haveSignatureIssues} isFile={false} />
                     )}
-                    <span className="text-pre text-ellipsis">{crumb.name}</span>
+                    <span className="text-pre text-ellipsis">{truncate(crumb.name, 30)}</span>
                 </span>
             ),
             collapsedText: crumb.name,
