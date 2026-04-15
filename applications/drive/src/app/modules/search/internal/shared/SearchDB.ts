@@ -17,6 +17,7 @@ export interface IndexPopulatorState {
     uid: string;
     done: boolean;
     generation: number;
+    version: number;
 }
 
 interface SearchDBSchema extends DBSchema {
