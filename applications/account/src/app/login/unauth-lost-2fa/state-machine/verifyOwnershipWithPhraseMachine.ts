@@ -1,9 +1,8 @@
 import { type ActorRefFrom, assign, setup } from 'xstate';
 
-type Result = 'no-phrase-method' | '2fa-disabled' | 'skipped' | 'error';
+type Result = '2fa-disabled' | 'skipped' | 'error';
 
 interface MachineContext {
-    hasRecoveryPhrase: boolean;
     result: Result | null;
 }
 
@@ -15,24 +14,16 @@ export const verifyOwnershipWithPhraseMachine = setup({
     types: {
         context: {} as MachineContext,
         events: {} as MachineEvent,
-        input: {} as { hasRecoveryPhrase: boolean },
         output: {} as { result: Result },
-    },
-    guards: {
-        hasRecoveryPhrase: ({ context }) => context.hasRecoveryPhrase,
     },
 }).createMachine({
     id: 'verifyOwnershipWithPhrase',
-    initial: 'validating',
-    context: ({ input }) => ({
-        hasRecoveryPhrase: input.hasRecoveryPhrase,
+    initial: 'verify phrase',
+    context: {
         result: null,
-    }),
+    },
     output: ({ context }): { result: Result } => ({ result: context.result! }),
     states: {
-        validating: {
-            always: [{ guard: 'hasRecoveryPhrase', target: 'verify phrase' }, { target: 'no phrase method' }],
-        },
         'verify phrase': {
             on: {
                 '2fa disabled': {
@@ -45,10 +36,6 @@ export const verifyOwnershipWithPhraseMachine = setup({
                     target: 'error',
                 },
             },
-        },
-        'no phrase method': {
-            type: 'final',
-            entry: assign({ result: 'no-phrase-method' }),
         },
         '2fa disabled': {
             type: 'final',
