@@ -9,7 +9,6 @@ import {
     DropdownButton,
     DropdownMenu,
     DropdownMenuButton,
-    Icon,
     SidebarListItem,
     SidebarListItemButton,
     SidebarListItemContent,
@@ -20,6 +19,8 @@ import {
     usePopperAnchor,
     useToggle,
 } from '@proton/components';
+import { IcCogDrawer } from '@proton/icons/icons/IcCogDrawer';
+import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import clsx from '@proton/utils/clsx';
 import type { IWasmApiWalletData } from '@proton/wallet/types';
 
@@ -85,7 +86,7 @@ const WalletsSidebarListItem = ({ wallet, onAddWalletAccount, theme, apiWalletsD
                                     setWalletPreferencesModalState(true);
                                 }}
                             >
-                                <Icon alt={c('Action').t`Edit`} name="cog-drawer" size={4} />
+                                <IcCogDrawer alt={c('Action').t`Edit`} size={4} />
                             </CoreButton>
                         )
                     }
@@ -186,7 +187,7 @@ export const WalletsSidebarList = ({
                     size="small"
                     disabled={loadingApiWalletsData}
                 >
-                    <Icon size={2.5} name="three-dots-vertical" alt={c('Action').t`More options`} />
+                    <IcThreeDotsVertical size={2.5} alt={c('Action').t`More options`} />
                 </DropdownButton>
                 <Dropdown
                     isOpen={isOpen}

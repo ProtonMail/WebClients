@@ -7,11 +7,11 @@ import {
     CollapsibleContent,
     CollapsibleHeader,
     CollapsibleHeaderIconButton,
-    Icon,
     type ModalOwnProps,
     Prompt,
     useNotifications,
 } from '@proton/components';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
@@ -93,7 +93,7 @@ export const ExtendedPublicKeyModal = ({ accountLabel, xpub, descriptor, index, 
                     onClick={() => setIsXpub(!isXPub)}
                     suffix={
                         <CollapsibleHeaderIconButton className="color-weak" onClick={() => setIsXpub(!isXPub)}>
-                            <Icon name="chevron-down" />
+                            <IcChevronDown />
                         </CollapsibleHeaderIconButton>
                     }
                 >

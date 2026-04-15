@@ -3,7 +3,9 @@ import { Redirect, useParams } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { Icon, useModalState, useNotifications } from '@proton/components';
+import { useModalState, useNotifications } from '@proton/components';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
+import { IcCogDrawer } from '@proton/icons/icons/IcCogDrawer';
 import { MINUTE } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
@@ -112,7 +114,7 @@ export const WalletContainer = () => {
                                     setWalletPreferencesModalState(true);
                                 }}
                             >
-                                <Icon alt={c('Action').t`Edit`} name="cog-drawer" size={5} />
+                                <IcCogDrawer alt={c('Action').t`Edit`} size={5} />
                             </CoreButton>
 
                             {isNarrow && <ThemeButton />}
@@ -128,7 +130,7 @@ export const WalletContainer = () => {
                                 }}
                             >
                                 {c('Wallet header').t`Secure your wallet`}
-                                <Icon alt={c('Action').t`Secure your wallet`} name="chevron-right" className="ml-2" />
+                                <IcChevronRight alt={c('Action').t`Secure your wallet`} className="ml-2" />
                             </Button>
                             <InvitesButton walletAccount={firstWalletAccount} />
                             <UpgradeButton />

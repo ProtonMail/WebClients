@@ -8,8 +8,10 @@ import DropdownButton from '@proton/components/components/dropdown/DropdownButto
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
-import Icon from '@proton/components/components/icon/Icon';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
+import { IcBrandBitcoin } from '@proton/icons/icons/IcBrandBitcoin';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
+import { IcChevronUp } from '@proton/icons/icons/IcChevronUp';
 import clsx from '@proton/utils/clsx';
 import { COMPUTE_BITCOIN_UNIT } from '@proton/wallet/constants/bitcoin';
 import { useUserWalletSettings, useWalletAccountExchangeRate } from '@proton/wallet/store/hooks';
@@ -75,7 +77,7 @@ export const WalletAccountItem = ({
     return (
         <div className="flex flex-row w-full flex-nowrap justify-space-between items-center text-sm gap-4">
             <div className="flex flex-row flex-nowrap items-center">
-                {withIcon && <Icon name={'brand-bitcoin'} className="mr-1 shrink-0" />}
+                {withIcon && <IcBrandBitcoin className="mr-1 shrink-0" />}
                 <div style={{ whiteSpace: 'nowrap' }} className="overflow-hidden text-ellipsis">
                     {walletAccount.Label}
                 </div>
@@ -203,9 +205,7 @@ export const WalletAccountSelector = ({
                 <div className="flex flex-column">
                     <div className="flex flex-row flex-nowrap w-full justify-space-between items-center mb-3">
                         <div className="text-semibold text-ellipsis">{wallet.Name}</div>
-                        <div>
-                            <Icon name={isOpen ? 'chevron-up' : 'chevron-down'} />
-                        </div>
+                        <div>{isOpen ? <IcChevronUp /> : <IcChevronDown />}</div>
                     </div>
 
                     <WalletAccountItem walletAccount={account} accountChainData={selectedAccountChainData} />
