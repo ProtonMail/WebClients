@@ -11,3 +11,7 @@ export const CERT_PROTON_ME = [
     "35Dx28/uzN3LeltkCBQ8RHK0tlNSa2kCpCRGNp34Gxc=", // Hot backup
     "qYIukVc63DEITct8sFT7ebIq5qsWmuscaIKeJx+5J5A=", // Cold backup
 ];
+
+export const CERT_LIVEKIT_PROTON_ME = [
+    "ygMJLA0xwmvZTpNAgS4N9el7PhjVGn8TCxRZ78Ps50M=", // Primary
+];
