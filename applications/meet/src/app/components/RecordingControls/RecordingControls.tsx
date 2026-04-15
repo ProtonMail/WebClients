@@ -119,20 +119,10 @@ const RecordingControlsInternal = () => {
 
     const handleStopAndDownload = async () => {
         setShowStopRecordingConfirmation(false);
-        try {
-            await downloadRecording();
-            createNotification({
-                text: c('Info').t`Recording saved`,
-                type: 'success',
-            });
-            clearInterval(durationIntervalRef.current);
-            setDuration(0);
-        } catch (error) {
-            createNotification({
-                text: c('Error').t`Failed to save recording`,
-                type: 'error',
-            });
-        }
+        await downloadRecording();
+
+        clearInterval(durationIntervalRef.current);
+        setDuration(0);
     };
 
     const handleStopRecordingConfirmation = () => {
