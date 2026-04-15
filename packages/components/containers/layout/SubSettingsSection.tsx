@@ -4,14 +4,12 @@ import { Link, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { DashboardCard } from '@proton/atoms/DashboardCard/DashboardCard';
-import { DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
-import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
-import { DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
-import Icon from '@proton/components/components/icon/Icon';
+import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
+import { DashboardGrid, DashboardGridSectionHeader } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import ProtonBadge from '@proton/components/components/protonBadge/ProtonBadge';
 import SettingsSectionTitle from '@proton/components/containers/account/SettingsSectionTitle';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { IcLink } from '@proton/icons/icons/IcLink';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
@@ -78,7 +76,7 @@ const SubSettingsSection = ({
             aria-hidden="true"
             tabIndex={-1}
         >
-            <Icon name="link" />
+            <IcLink />
         </Link>
     );
 

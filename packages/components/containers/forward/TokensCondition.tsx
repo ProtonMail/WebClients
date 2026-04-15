@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 
 import { c } from 'ttag';
 
-import Icon from '@proton/components/components/icon/Icon';
+import { IcCross } from '@proton/icons/icons/IcCross';
 
 import type { Condition } from '../filters/interfaces';
 
@@ -26,7 +26,7 @@ const Token = ({ index, value, onRemove }: TokenProps) => {
                     title={c('email_forwarding_2023: Action').t`Remove “${value}”`}
                     onClick={() => onRemove(index)}
                 >
-                    <Icon name="cross" size={2.75} />
+                    <IcCross size={2.75} />
                     <span className="sr-only">{c('email_forwarding_2023: Action').t`Remove “${value}”`}</span>
                 </button>
             </span>

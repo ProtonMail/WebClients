@@ -2,7 +2,6 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import Icon from '@proton/components/components/icon/Icon';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
@@ -12,6 +11,7 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import StripedItem from '@proton/components/components/stripedList/StripedItem';
 import { StripedList } from '@proton/components/components/stripedList/StripedList';
 import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 
 import type { ConfirmationModal } from './interface';
 import useCancellationTelemetry from './useCancellationTelemetry';
@@ -46,7 +46,7 @@ const CancelConfirmationModal = ({
             <ModalTwoContent className="mb-6">
                 <div className="flex flex-nowrap flex-row">
                     <div className="shrink-0 mr-2">
-                        <Icon name="exclamation-circle-filled" className="color-danger" />
+                        <IcExclamationCircleFilled className="color-danger" />
                     </div>
                     <div className="flex-1">{description}</div>
                 </div>

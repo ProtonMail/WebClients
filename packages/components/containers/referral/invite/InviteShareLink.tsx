@@ -5,8 +5,8 @@ import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { IcSquares } from '@proton/icons/icons/IcSquares';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
@@ -53,7 +53,7 @@ const InviteShareLink = ({ className }: { className?: string }) => {
                         noDisabledStyles
                     >
                         <span className="flex flex-nowrap items-center">
-                            <Icon name="squares" className="mr-2 shrink-0" /> {c('Button').t`Copy`}
+                            <IcSquares className="mr-2 shrink-0" /> {c('Button').t`Copy`}
                         </span>
                     </Button>
                 </div>

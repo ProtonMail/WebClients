@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Href } from '@proton/atoms/Href/Href';
-import Icon from '@proton/components/components/icon/Icon';
 import Loader from '@proton/components/components/loader/Loader';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';
@@ -21,6 +20,7 @@ import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { getBreaches, updateBreachEmailNotificationsState, updateBreachState } from '@proton/shared/lib/api/breaches';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { disableBreachAlert, enableBreachAlert } from '@proton/shared/lib/api/settings';
@@ -218,10 +218,10 @@ const CredentialLeakSection = () => {
 
     useEffect(() => {
         if (viewingBreach === firstBreach && isFirstItemUnread && hasBeenInteractedWith) {
-            markAsOpenBreach();
+            void markAsOpenBreach();
         } else {
             if (viewingBreach !== firstBreach && viewingBreach.resolvedState === BREACH_STATE.UNREAD) {
-                markAsOpenBreach();
+                void markAsOpenBreach();
             }
         }
     }, [viewingBreach, hasBeenInteractedWith]);
@@ -292,10 +292,7 @@ const CredentialLeakSection = () => {
                                                 className="flex flex-nowrap color-danger p-4 rounded"
                                                 style={{ backgroundColor: 'var(--signal-danger-minor-2)' }}
                                             >
-                                                <Icon
-                                                    name="exclamation-circle-filled"
-                                                    className="shrink-0 mt-0.5 mr-2"
-                                                />
+                                                <IcExclamationCircleFilled className="shrink-0 mt-0.5 mr-2" />
                                                 <span className="flex-1">
                                                     {getUpsellText(sample, total, learnMoreLinkBreach, true)}
                                                 </span>

@@ -5,10 +5,10 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Icon from '@proton/components/components/icon/Icon';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
 import useConfig from '@proton/components/hooks/useConfig';
 import useEventManager from '@proton/components/hooks/useEventManager';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import {
     closeDrawerFromChildApp,
     getIsDrawerPostMessage,
@@ -162,7 +162,7 @@ const DrawerAppHeader = ({
                                 shape="ghost"
                                 onClick={() => handleToggleIFrame()}
                             >
-                                <Icon name="cross-big" size={4} alt={c('Action').t`Close`} />
+                                <IcCrossBig size={4} alt={c('Action').t`Close`} />
                             </Button>
                         </Tooltip>
                     </div>

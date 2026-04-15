@@ -6,7 +6,8 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Scroll } from '@proton/atoms/Scroll/Scroll';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcArrowOutFromRectangle } from '@proton/icons/icons/IcArrowOutFromRectangle';
+import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import { AccessType } from '@proton/shared/lib/authentication/accessType';
 import type { ActiveSessionLite } from '@proton/shared/lib/authentication/persistedSessionHelper';
 import { getSessionDisplayData } from '@proton/shared/lib/authentication/sessionDisplay';
@@ -40,9 +41,7 @@ const AccountSessionsSwitcher = ({
                     shape="ghost"
                     size="small"
                     type="button"
-                    content={
-                        <Icon name="three-dots-vertical" size={4} alt={c('Action').t`More options for accounts`} />
-                    }
+                    content={<IcThreeDotsVertical size={4} alt={c('Action').t`More options for accounts`} />}
                     icon
                     data-testid="sessions:other-accounts:more"
                     hasCaret={false}
@@ -52,7 +51,7 @@ const AccountSessionsSwitcher = ({
                         onClick={onSignOut}
                         data-testid="sessions:other-accounts:more:signout-all"
                     >
-                        <Icon name="arrow-out-from-rectangle" className="shrink-0" />
+                        <IcArrowOutFromRectangle className="shrink-0" />
                         {c('Action').t`Sign out of all accounts`}
                     </DropdownMenuButton>
                     {addAccountButtonDropdown}

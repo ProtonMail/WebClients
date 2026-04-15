@@ -5,8 +5,8 @@ import { c } from 'ttag';
 import ColorSelector from '@proton/components/components/color/ColorSelector';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
 import { FONT_COLORNAMES } from '@proton/components/components/editor/constants';
-import Icon from '@proton/components/components/icon/Icon';
-import Tabs from '@proton/components/components/tabs/Tabs';
+import { Tabs } from '@proton/components/components/tabs/Tabs';
+import { IcCircleHalfFilled } from '@proton/icons/icons/IcCircleHalfFilled';
 import { COMPOSER_TOOLBAR_ICON_SIZE } from '@proton/shared/lib/constants';
 
 import ToolbarDropdown from './ToolbarDropdown';
@@ -36,7 +36,7 @@ const ToolbarColorsDropdown = ({ fontColor, bgColor, setFontColor, setBgColor }:
     return (
         <ToolbarDropdown
             dropdownSize={{ maxWidth: DropdownSizeUnit.Viewport, maxHeight: DropdownSizeUnit.Viewport }}
-            content={<Icon name="circle-half-filled" size={COMPOSER_TOOLBAR_ICON_SIZE} alt={c('Action').t`Color`} />}
+            content={<IcCircleHalfFilled size={COMPOSER_TOOLBAR_ICON_SIZE} alt={c('Action').t`Color`} />}
             className="shrink-0"
             data-testid="editor-font-color"
             title={c('Action').t`Color`}

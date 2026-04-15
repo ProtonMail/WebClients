@@ -5,11 +5,11 @@ import { c, msgid } from 'ttag';
 
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
-import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import Label from '@proton/components/components/label/Label';
 import Info from '@proton/components/components/link/Info';
 import { useNow } from '@proton/components/hooks/useNow';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import type { CountryOptions } from '@proton/payments/core/countries';
 import { useIsB2BTrial } from '@proton/payments/ui';
 import { SECOND } from '@proton/shared/lib/constants';
@@ -207,7 +207,7 @@ export const GatewayCountrySelection = ({
                 </p>
                 {!isTrial && (
                     <div className="flex flex-nowrap mb-4 rounded p-2 bg-weak">
-                        <Icon name="info-circle" className="shrink-0" />
+                        <IcInfoCircle className="shrink-0" />
                         <div className="ml-2">
                             {c('Info')
                                 .t`We recommend adding servers in different locations (one per city) to maximize redundancy.`}
@@ -244,7 +244,7 @@ export const GatewayCountrySelection = ({
             </div>
             {isTrial && (
                 <div className="flex flex-nowrap mb-4 rounded p-2 bg-weak">
-                    <Icon name="info-circle" className="shrink-0" />
+                    <IcInfoCircle className="shrink-0" />
                     <div className="ml-2">{c('Info').t`Your free trial includes 1 dedicated server.`}</div>
                 </div>
             )}

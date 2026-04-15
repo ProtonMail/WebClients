@@ -6,10 +6,10 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import AutocompleteList from '@proton/components/components/autocomplete/AutocompleteList';
 import { useAutocomplete, useAutocompleteFilter } from '@proton/components/components/autocomplete/useAutocomplete';
-import Icon from '@proton/components/components/icon/Icon';
 import Option from '@proton/components/components/option/Option';
 import Marks from '@proton/components/components/text/Marks';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import { isValidHttpUrl } from '@proton/shared/lib/helpers/url';
 import type { EduGainOrganization } from '@proton/shared/lib/interfaces';
 
@@ -87,7 +87,7 @@ const EduGainAutocomplete = ({ organizationData, organizationValue, setOrganizat
                 suffix={
                     inputValue && (
                         <Button icon size="small" shape="ghost" title={c('Label').t`Remove`} onClick={clearInput}>
-                            <Icon name="cross" />
+                            <IcCross />
                         </Button>
                     )
                 }

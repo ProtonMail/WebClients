@@ -2,8 +2,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import Icon from '@proton/components/components/icon/Icon';
 import SettingsSectionTitle from '@proton/components/containers/account/SettingsSectionTitle';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import clsx from '@proton/utils/clsx';
 
@@ -17,7 +17,7 @@ const RecoverDataCard = ({ onDismiss, onReactivate, className }: Props) => {
     return (
         <div className={clsx('rounded border p-8 max-w-custom', className)} style={{ '--max-w-custom': '46em' }}>
             <SettingsSectionTitle className="h3 flex items-center flex-nowrap">
-                <Icon className="shrink-0 color-danger" name="exclamation-circle-filled" size={4.5} />
+                <IcExclamationCircleFilled className="shrink-0 color-danger" size={4.5} />
                 <span className="ml-2">{c('Title').t`Data locked`}</span>
             </SettingsSectionTitle>
             <p>{c('Info').t`It appears some of your data is encrypted and locked.`}</p>

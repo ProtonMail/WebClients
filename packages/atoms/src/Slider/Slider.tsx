@@ -7,9 +7,9 @@ import type {
 import { useRef, useState } from 'react';
 
 import type { ThemeColorUnion } from '@proton/colors';
-import Icon from '@proton/components/components/icon/Icon';
 import { useRightToLeft } from '@proton/components/containers/rightToLeft/useRightToLeft';
 import useSynchronizingState from '@proton/hooks/useSynchronizingState';
+import { IcArrowsLeftRight } from '@proton/icons/icons/IcArrowsLeftRight';
 import clamp from '@proton/utils/clamp';
 import clsx from '@proton/utils/clsx';
 import percentage from '@proton/utils/percentage';
@@ -280,6 +280,7 @@ export const Slider = ({
     const valueInPercent = percentage(interval, clampedInternalValue - min);
 
     return (
+        // eslint-disable-next-line jsx-a11y/no-static-element-interactions
         <div
             dir={rtl ? 'rtl' : 'ltr'}
             ref={rootRef}
@@ -351,7 +352,7 @@ export const Slider = ({
                         onInput={handleInputInput}
                         {...rest}
                     />
-                    <Icon name="arrows-left-right" />
+                    <IcArrowsLeftRight />
                 </ButtonLike>
             </Tooltip>
         </div>

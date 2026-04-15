@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Href } from '@proton/atoms/Href/Href';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import physicalKey from '@proton/styles/assets/img/illustrations/physical-key.svg';
@@ -20,7 +20,7 @@ const AuthSecurityKeyContent = ({ error }: { error?: boolean }) => {
             </div>
             {error && (
                 <div className="mt-4">
-                    <Banner className="mb-3" variant="norm" icon={<Icon name="exclamation-circle" />}>
+                    <Banner className="mb-3" variant="norm" icon={<IcExclamationCircle />}>
                         {c('fido2: Error')
                             .t`Something went wrong authenticating with your security key. Please try again.`}
                     </Banner>

@@ -4,11 +4,11 @@ import { forwardRef, useCallback, useMemo, useRef, useState } from 'react';
 import type { Input } from '@proton/atoms/Input/Input';
 import AutocompleteList from '@proton/components/components/autocomplete/AutocompleteList';
 import { useAutocomplete, useAutocompleteFilter } from '@proton/components/components/autocomplete/useAutocomplete';
-import Icon from '@proton/components/components/icon/Icon';
 import Option from '@proton/components/components/option/Option';
 import Marks from '@proton/components/components/text/Marks';
-import InputField from '@proton/components/components/v2/field/InputField';
+import { InputField } from '@proton/components/components/v2/field/InputField';
 import { useCombinedRefs } from '@proton/hooks';
+import { IcCircleFilled } from '@proton/icons/icons/IcCircleFilled';
 import { canonicalizeEmail } from '@proton/shared/lib/helpers/email';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
@@ -256,8 +256,7 @@ const AddressesAutocompleteTwo = forwardRef<HTMLInputElement, Props>(
                             >
                                 {option.type === 'group' ? (
                                     <div className="flex flex-nowrap *:items-center">
-                                        <Icon
-                                            name="circle-filled"
+                                        <IcCircleFilled
                                             color={option.value.Color}
                                             size={3}
                                             className="mr-2 shrink-0 self-center my-auto"

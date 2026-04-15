@@ -1,10 +1,11 @@
-import type { IconProps } from '@proton/components/components/icon/Icon';
-import Icon from '@proton/components/components/icon/Icon';
+import type { ComponentProps } from 'react';
+
+import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight';
 import clsx from '@proton/utils/clsx';
 
 import './ReloadSpinner.scss';
 
-interface Props extends Omit<IconProps, 'name'> {
+interface Props extends ComponentProps<typeof IcArrowRotateRight> {
     refreshing?: boolean;
     onRefresh?: () => void;
 }
@@ -19,9 +20,8 @@ const ReloadSpinner = ({ className, refreshing = false, onRefresh, ...rest }: Pr
         onRefresh?.();
     };
     return (
-        <Icon
+        <IcArrowRotateRight
             onClick={handleClick}
-            name="arrow-rotate-right"
             className={clsx([className, refreshing && 'location-refresh-rotate keep-motion'])}
             {...rest}
         />

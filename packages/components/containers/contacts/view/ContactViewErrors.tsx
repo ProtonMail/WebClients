@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 import { CRYPTO_PROCESSING_TYPES } from '@proton/shared/lib/contacts/constants';
 import type { CryptoProcessingError } from '@proton/shared/lib/contacts/decrypt';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -90,7 +90,7 @@ const ContactViewErrors = ({
     if (error instanceof Error) {
         return (
             <div className="bg-danger rounded p-2 mt-4 flex flex-nowrap items-center">
-                <Icon name="exclamation-circle" className="shrink-0 my-auto" />
+                <IcExclamationCircle className="shrink-0 my-auto" />
                 <span className="flex-1 py-2">
                     {c('Warning').t`The contact data is corrupted and cannot be displayed.`}
                 </span>
@@ -125,7 +125,7 @@ const ContactViewErrors = ({
 
     return (
         <div className={clsx([bgColor, 'rounded p-2 mt-4 flex flex-nowrap items-center'])}>
-            <Icon name="exclamation-circle" className="shrink-0 my-auto" />
+            <IcExclamationCircle className="shrink-0 my-auto" />
             <span className="flex-1 py-2">
                 <span className="mr-2">{text}</span>
                 <Href

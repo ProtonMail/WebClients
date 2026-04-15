@@ -1,7 +1,6 @@
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import clsx from '@proton/utils/clsx';
-
-import Icon from '../icon/Icon';
 
 const getStepIcon = (isCurrentStep: boolean, isFutureStep: boolean) => {
     if (isCurrentStep) {
@@ -12,7 +11,7 @@ const getStepIcon = (isCurrentStep: boolean, isFutureStep: boolean) => {
         return null;
     }
 
-    return <Icon size={6} className="color-success" name="checkmark" />;
+    return <IcCheckmark size={6} className="color-success" />;
 };
 
 /**

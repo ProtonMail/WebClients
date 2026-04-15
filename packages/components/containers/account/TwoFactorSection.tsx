@@ -8,12 +8,15 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { Pill } from '@proton/atoms/Pill/Pill';
-import ButtonGroup from '@proton/components/components/button/ButtonGroup';
-import Icon from '@proton/components/components/icon/Icon';
+import { ButtonGroup } from '@proton/components/components/button/ButtonGroup';
 import Info from '@proton/components/components/link/Info';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import useConfig from '@proton/components/hooks/useConfig';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
+import { IcPen } from '@proton/icons/icons/IcPen';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { getHasFIDO2Support } from '@proton/shared/lib/authentication/twoFactor';
 import { APPS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
@@ -179,12 +182,12 @@ const TwoFactorSection = () => {
                                         }}
                                         className="flex flex-nowrap items-center"
                                     >
-                                        <Icon name="plus" className="mr-2" />
+                                        <IcPlus className="mr-2" />
                                         {c('fido2: Action').t`New security key`}
                                     </Button>
                                 ) : (
                                     <div className="flex gap-2 items-center flex-nowrap rounded bg-weak border p-2">
-                                        <Icon name="info-circle" size={4} className="shrink-0" />
+                                        <IcInfoCircle size={4} className="shrink-0" />
                                         <p className="m-0">
                                             {c('fido2: Info').ngettext(
                                                 msgid`You've reached the maximum of ${maxSecurityKeyLength} security key.`,
@@ -229,7 +232,7 @@ const TwoFactorSection = () => {
                                                         setEditSecurityKeyModal(true);
                                                     }}
                                                 >
-                                                    <Icon name="pen" />
+                                                    <IcPen />
                                                 </Button>
                                                 <Button
                                                     icon
@@ -241,7 +244,7 @@ const TwoFactorSection = () => {
                                                         setRemoveSecurityKeyModal(true);
                                                     }}
                                                 >
-                                                    <Icon name="trash" />
+                                                    <IcTrash />
                                                 </Button>
                                             </ButtonGroup>
                                         </div>

@@ -1,7 +1,7 @@
 import { Fragment, useMemo } from 'react';
 
-import Icon from '@proton/components/components/icon/Icon';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { omit } from '@proton/shared/lib/helpers/object';
 import clsx from '@proton/utils/clsx';
 
@@ -69,7 +69,7 @@ const CollapsingBreadcrumbs = ({ breadcrumbs, className }: Props) => {
                         )}
                         {!isLast && (
                             <li className="rtl:mirror shrink-0" aria-hidden="true">
-                                <Icon size={4} name="chevron-right" />
+                                <IcChevronRight size={4} />
                             </li>
                         )}
                     </Fragment>

@@ -1,5 +1,6 @@
-import Icon from '@proton/components/components/icon/Icon';
 import Loader from '@proton/components/components/loader/Loader';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import clsx from '@proton/utils/clsx';
 
 import Progress from './Progress';
@@ -23,15 +24,17 @@ const DynamicProgress = ({
     partialSuccess,
     ...rest
 }: Props) => {
+    // eslint-disable-next-line no-nested-ternary
     const { icon, progressClassname = '' } = loading
         ? {
               icon: <Loader />,
           }
-        : success
+        : // eslint-disable-next-line no-nested-ternary
+          success
           ? {
                 icon: (
                     <span className="inline-flex bg-success rounded-50 p-2">
-                        <Icon name="checkmark" size={6} />
+                        <IcCheckmark size={6} />
                     </span>
                 ),
                 progressClassname: 'progress-bar--success',
@@ -40,7 +43,7 @@ const DynamicProgress = ({
             ? {
                   icon: (
                       <span className="inline-flex bg-warning rounded-50 p-2">
-                          <Icon name="cross" size={6} />
+                          <IcCross size={6} />
                       </span>
                   ),
                   progressClassname: 'progress-bar--warning',
@@ -48,7 +51,7 @@ const DynamicProgress = ({
             : {
                   icon: (
                       <span className="inline-flex bg-danger rounded-50 p-2">
-                          <Icon name="cross" size={6} />
+                          <IcCross size={6} />
                       </span>
                   ),
                   progressClassname: 'progress-bar--error',

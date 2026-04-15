@@ -3,7 +3,6 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import Icon from '@proton/components/components/icon/Icon';
 import AppLink from '@proton/components/components/link/AppLink';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
@@ -12,6 +11,8 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { useKeyTransparencyContext } from '@proton/components/containers/keyTransparency/useKeyTransparencyContext';
 import useConfig from '@proton/components/hooks/useConfig';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
+import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 import {
     AddressAuditStatus,
     type AddressAuditWarningDetails,
@@ -45,7 +46,7 @@ const SelfAuditResults = ({ selfAuditResult }: { selfAuditResult: SelfAuditResul
         if (selfAuditResult.error.tooManyRetries) {
             return (
                 <div className="flex flex-nowrap">
-                    <Icon name="exclamation-circle" className="shrink-0 mr-2 mt-0.5 color-warning" />
+                    <IcExclamationCircle className="shrink-0 mr-2 mt-0.5 color-warning" />
                     <span className="flex-1 text-break">{c('loc_nightly: Key transparency details')
                         .t`Key verification was interrupted too many times, there might be a technical issue preventing ${appName} from verifying your keys.`}</span>
                 </div>
@@ -115,7 +116,7 @@ const SelfAuditResults = ({ selfAuditResult }: { selfAuditResult: SelfAuditResul
                     <p>{failedAddressAuditMessage}</p>
                     <ul className="unstyled">
                         <li className="flex flex-nowrap" key={email}>
-                            <Icon name="exclamation-circle" className="shrink-0 mr-2 mt-0.5 color-danger" />
+                            <IcExclamationCircle className="shrink-0 mr-2 mt-0.5 color-danger" />
                             <strong className="flex-1 text-break">{email}</strong>
                         </li>
                     </ul>
@@ -140,7 +141,7 @@ const SelfAuditResults = ({ selfAuditResult }: { selfAuditResult: SelfAuditResul
                     <p>{addressAuditWarningMessage(warningDetails!)}</p>
                     <ul className="unstyled">
                         <li className="flex flex-nowrap" key={email}>
-                            <Icon name="exclamation-circle" className="shrink-0 mr-2 mt-0.5 color-warning" />
+                            <IcExclamationCircle className="shrink-0 mr-2 mt-0.5 color-warning" />
                             <strong className="flex-1 text-break">{email}</strong>
                         </li>
                     </ul>
@@ -165,7 +166,7 @@ const SelfAuditResults = ({ selfAuditResult }: { selfAuditResult: SelfAuditResul
                     <p>{failedLSAuditMessage}</p>
                     <ul className="unstyled">
                         <li className="flex flex-nowrap" key={email}>
-                            <Icon name="exclamation-circle" className="shrink-0 mr-2 mt-0.5 color-danger" />
+                            <IcExclamationCircle className="shrink-0 mr-2 mt-0.5 color-danger" />
                             <strong className="flex-1 text-break">{email}</strong>
                         </li>
                     </ul>
@@ -187,7 +188,7 @@ const SelfAuditResults = ({ selfAuditResult }: { selfAuditResult: SelfAuditResul
                     <p>{message}</p>
                     <ul className="unstyled">
                         <li className="flex flex-nowrap" key={email}>
-                            <Icon name="exclamation-circle" className="shrink-0 mr-2 mt-0.5 color-danger" />
+                            <IcExclamationCircle className="shrink-0 mr-2 mt-0.5 color-danger" />
                             <strong className="flex-1 text-break">{email}</strong>
                         </li>
                     </ul>
@@ -216,7 +217,7 @@ const SelfAuditResults = ({ selfAuditResult }: { selfAuditResult: SelfAuditResul
                 <ul className="unstyled">
                     {successEmails.map((email) => (
                         <li className="flex flex-nowrap" key={email}>
-                            <Icon name="checkmark" className="shrink-0 mr-2 mt-0.5 color-success" />
+                            <IcCheckmark className="shrink-0 mr-2 mt-0.5 color-success" />
                             <strong className="flex-1 text-break">{email}</strong>
                         </li>
                     ))}

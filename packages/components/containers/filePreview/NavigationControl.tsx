@@ -3,7 +3,8 @@ import type { RefObject } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 
 import { useHotkeys } from '../../hooks/useHotkeys';
 
@@ -51,7 +52,7 @@ const NavigationControl = ({ current, total, rootRef, onNext, onPrev }: Props) =
                 title={c('Action').t`Previous`}
                 data-testid="file-preview:navigation:prev"
             >
-                <Icon name="chevron-left" size={4} alt={c('Action').t`Previous`} />
+                <IcChevronLeft size={4} alt={c('Action').t`Previous`} />
             </Button>
             <span className="mx-2">
                 <span data-testid="preview:current-attachment">{current}</span>
@@ -67,7 +68,7 @@ const NavigationControl = ({ current, total, rootRef, onNext, onPrev }: Props) =
                 title={c('Action').t`Next`}
                 data-testid="file-preview:navigation:next"
             >
-                <Icon name="chevron-right" size={4} alt={c('Action').t`Next`} />
+                <IcChevronRight size={4} alt={c('Action').t`Next`} />
             </Button>
         </div>
     );

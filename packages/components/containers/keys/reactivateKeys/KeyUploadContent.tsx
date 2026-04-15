@@ -4,13 +4,13 @@ import { c } from 'ttag';
 
 import type { ButtonProps } from '@proton/atoms/Button/Button';
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableRow from '@proton/components/components/table/TableRow';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { CryptoProxy } from '@proton/crypto';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 import type { ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
 import removeItem from '@proton/utils/removeIndex';
 import uniqueBy from '@proton/utils/uniqueBy';
@@ -140,7 +140,7 @@ export const KeyUploadContent = ({
                                                     onClick={() => removeUploadedKey(key)}
                                                     disabled={disabled}
                                                 >
-                                                    <Icon name="trash" alt={c('Label').t`Delete`} />
+                                                    <IcTrash alt={c('Label').t`Delete`} />
                                                 </Button>
                                             </div>,
                                         ]}

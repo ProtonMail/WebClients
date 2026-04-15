@@ -4,8 +4,8 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import Icon from '@proton/components/components/icon/Icon';
 import { FeatureCode, useFeature } from '@proton/features';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import { getIsB2BAudienceFromPlan } from '@proton/payments';
 import { PASS_APP_NAME } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
@@ -41,7 +41,7 @@ const AliasPromotionSection = () => {
         <>
             <div className="relative">
                 <Button shape="ghost" icon className="absolute right-0 top-0 mr-2 mt-2" onClick={handleClose}>
-                    <Icon name="cross-big" />
+                    <IcCrossBig alt={c('Action').t`Close`} />
                 </Button>
             </div>
             <div className="flex flex-column items-center text-center rounded-lg p-6 alias-promotion-section">

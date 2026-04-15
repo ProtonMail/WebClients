@@ -1,7 +1,7 @@
 import type { HTMLAttributes, ReactNode, ThHTMLAttributes } from 'react';
 
-import Icon from '@proton/components/components/icon/Icon';
 import TableCell from '@proton/components/components/table/TableCell';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
@@ -16,21 +16,11 @@ interface SortingTableCellHeaderProps {
 export const SortingTableCellHeader = ({ content, onClick = noop, direction }: SortingTableCellHeaderProps) => {
     return (
         <div className="flex-nowrap inline-flex *:self-center">
-            <span
-                tabIndex={0}
-                role="button"
-                className="link mr-2"
-                onClick={onClick}
-                onKeyDown={(e) => {
-                    if (e.key === 'Enter') {
-                        onClick();
-                    }
-                }}
-            >
+            <button type="button" className="link mr-2" onClick={onClick}>
                 {content}
-            </span>
+            </button>
             {direction === ASC || direction === DESC ? (
-                <Icon name="chevron-down" className={`shrink-0 ${direction === DESC ? '' : 'rotateX-180'}`} />
+                <IcChevronDown className={`shrink-0 ${direction === DESC ? '' : 'rotateX-180'}`} />
             ) : null}
         </div>
     );

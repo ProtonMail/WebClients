@@ -3,8 +3,8 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
 import useDocumentTitle from '@proton/components/hooks/useDocumentTitle';
+import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight';
 import { isElectronMail } from '@proton/shared/lib/helpers/desktop';
 import clsx from '@proton/utils/clsx';
 
@@ -47,7 +47,7 @@ const StandardLoadErrorPage = ({ errorMessage }: Props) => {
                 )}
                 <div className="mt-8">
                     <Button onClick={() => window.location.reload()}>
-                        <Icon name="arrow-rotate-right" />
+                        <IcArrowRotateRight />
                         <span className="ml-4">{c('Action').t`Refresh the page`}</span>
                     </Button>
                 </div>

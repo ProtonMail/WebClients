@@ -5,7 +5,7 @@ import { differenceInMilliseconds } from 'date-fns';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight';
 import { HOUR } from '@proton/shared/lib/constants';
 import { getItem, setItem } from '@proton/shared/lib/helpers/storage';
 import errorImg from '@proton/styles/assets/img/errors/error-generic.svg';
@@ -60,7 +60,7 @@ export const GenericErrorDisplay = ({
                         <div className="text-weak text-rg">{line1}</div>
                         <div className="mt-8">
                             <Button onClick={() => window.location.reload()}>
-                                <Icon name="arrow-rotate-right" />
+                                <IcArrowRotateRight />
                                 <span className="ml-4">{c('Action').t`Refresh the page`}</span>
                             </Button>
                         </div>

@@ -12,7 +12,6 @@ import CollapsibleHeader from '@proton/components/components/collapsible/Collaps
 import CollapsibleHeaderIconButton from '@proton/components/components/collapsible/CollapsibleHeaderIconButton';
 import Field from '@proton/components/components/container/Field';
 import Row from '@proton/components/components/container/Row';
-import Icon from '@proton/components/components/icon/Icon';
 import Label from '@proton/components/components/label/Label';
 import Info from '@proton/components/components/link/Info';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
@@ -24,6 +23,7 @@ import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { useDispatch } from '@proton/redux-shared-store';
 import getPublicKeysEmailHelper from '@proton/shared/lib/api/helpers/getPublicKeysEmailHelper';
@@ -350,7 +350,7 @@ const ContactEmailSettingsModal = ({ contactID, vCardContact, emailProperty, ...
                         <CollapsibleHeader
                             suffix={
                                 <CollapsibleHeaderIconButton onClick={() => setShowPgpSettings(!showPgpSettings)}>
-                                    <Icon name="chevron-down" />
+                                    <IcChevronDown />
                                 </CollapsibleHeaderIconButton>
                             }
                             disableFullWidth

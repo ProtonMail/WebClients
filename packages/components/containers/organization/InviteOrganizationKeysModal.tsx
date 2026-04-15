@@ -6,7 +6,6 @@ import { type MemberKeyPayload, getMemberKeyPayloads, setAdminRoles } from '@pro
 import { getKTUserContext } from '@proton/account/kt/actions';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import Icon from '@proton/components/components/icon/Icon';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
@@ -17,6 +16,7 @@ import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { useLoading } from '@proton/hooks';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { useDispatch } from '@proton/redux-shared-store';
 import type { EnhancedMember } from '@proton/shared/lib/interfaces';
 import { getMemberEmailOrName } from '@proton/shared/lib/keys/memberHelper';
@@ -116,10 +116,7 @@ export const InviteOrganizationKeysModal = ({ members, ...rest }: Props) => {
                                     <div className="bg-weak w-full border pl-3 pr-4 py-3 rounded-lg ">
                                         <div className="flex items-start flex-nowrap gap-2">
                                             <div className="flex justify-start items-start shrink-0 pt-0.5">
-                                                <Icon
-                                                    name="exclamation-circle-filled"
-                                                    className="color-danger shrink-0"
-                                                />
+                                                <IcExclamationCircleFilled className="color-danger shrink-0" />
                                             </div>
                                             <span>
                                                 {c('passwordless')
