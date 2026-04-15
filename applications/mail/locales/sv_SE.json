@@ -4261,6 +4261,19 @@
       ],
       "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
         "Du har redan Gmail-adresser som vidarebefordras till ${ MAIL_APP_NAME }. Anslut en nedan för att skicka och ta emot e-post direkt från ${ MAIL_APP_NAME }."
+      ],
+      "Send and receive Gmail correspondence directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "Skicka och ta emot Gmail-korrespondens direkt i ${ MAIL_APP_NAME }. Anslut din adress i ${ addressesSettingsLink }."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Om du vill fortsätta ta emot och skicka Gmail-meddelanden i ${ BRAND_NAME }, återanslut dina konton."
+      ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Du har redan en Gmail-adress som vidarebefordras till ${ MAIL_APP_NAME }. Anslut den nedan för att skicka och ta emot e-post direkt från ${ MAIL_APP_NAME }."
+      ],
+      "You're forwarding emails from ${ forwardingCount } Gmail address. By connecting it, you'll be able to both receive and reply in ${ MAIL_APP_NAME }": [
+        "Du vidarebefordrar e-postmeddelanden från ${ forwardingCount } Gmail-adress. Genom att ansluta den kommer du att kunna både ta emot och svara i ${ MAIL_APP_NAME }",
+        "Du vidarebefordrar e-postmeddelanden från ${ forwardingCount } Gmail-adresser. Genom att ansluta dem kan du både ta emot och svara i ${ MAIL_APP_NAME }"
       ]
     },
     "description": {
@@ -5215,6 +5228,12 @@
       ],
       "Something went wrong while creating the address": [
         "Något gick fel när adressen skapades"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Misslyckades med att ladda prenumerationsdata. Försök igen senare."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Något gick fel vid hämtning av tillgängliga domäner"
       ]
     },
     "error": {
