@@ -4,7 +4,6 @@ import { useEffect } from 'react';
 import { c } from 'ttag';
 
 import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
-import Alert from '@proton/components/components/alert/Alert';
 import Loader from '@proton/components/components/loader/Loader';
 import Price from '@proton/components/components/price/Price';
 import PayPalInfoMessage from '@proton/components/containers/payments/PayPalInfoMessage';
@@ -173,8 +172,8 @@ export const PaymentsNoApi = ({
             </Price>
         );
         return (
-            <Alert className="mb-4" type="error">{c('Error')
-                .jt`The minimum amount of credit that can be added is ${price}`}</Alert>
+            <Banner className="mb-4" variant={BannerVariants.DANGER}>{c('Error')
+                .jt`The minimum amount of credit that can be added is ${price}`}</Banner>
         );
     }
 
@@ -185,7 +184,10 @@ export const PaymentsNoApi = ({
                 {minDonationAmount}
             </Price>
         );
-        return <Alert className="mb-4" type="error">{c('Error').jt`The minimum donation amount is ${price}`}</Alert>;
+        return (
+            <Banner className="mb-4" variant={BannerVariants.DANGER}>{c('Error')
+                .jt`The minimum donation amount is ${price}`}</Banner>
+        );
     }
 
     if (loading) {
