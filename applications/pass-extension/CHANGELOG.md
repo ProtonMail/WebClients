@@ -1,3 +1,10 @@
+### Version 1.36.1
+
+- Fix autofill from non-writable vaults for free users
+- Fix group share manager actions
+- Fix group share decryption edge-case
+- Improve group sharing UI
+
 ### Version 1.36.0
 
 - New design for passkey autosave
@@ -5,7 +12,7 @@
 - Improve importers
 - Take into account B2B Policy for secure link
 - Take into account B2B Policy for email alias
-- Group sharing
+- Group sharing (behind feature flag)
 
 ### Version 1.35.0
 
