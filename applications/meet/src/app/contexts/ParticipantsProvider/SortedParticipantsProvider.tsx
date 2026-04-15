@@ -1,6 +1,6 @@
 import { createContext, useCallback, useContext, useEffect, useMemo } from 'react';
 
-import { useLocalParticipant, useParticipants, useRoomContext } from '@livekit/components-react';
+import { useParticipants, useRoomContext } from '@livekit/components-react';
 import type { LocalParticipant, RemoteParticipant } from 'livekit-client';
 import { RoomEvent } from 'livekit-client';
 
@@ -59,6 +59,11 @@ export const SortedParticipantsProvider = ({ children }: { children: React.React
         dispatch(resetSortedParticipants());
     }, [dispatch]);
 
+    const handleConnected = useCallback(() => {
+        // Set local participant identity as soon as is connected to the room
+        dispatch(setLocalParticipantIdentity(room.localParticipant.identity));
+    }, [dispatch, room.localParticipant.identity]);
+
     const raisedHands = useMeetSelector(selectRaisedHands);
 
     useEffect(() => {
@@ -70,26 +75,19 @@ export const SortedParticipantsProvider = ({ children }: { children: React.React
         raisedHands,
     ]);
 
-    const { localParticipant } = useLocalParticipant();
-
-    // Store local participant identity as soon as it is available
-    useEffect(() => {
-        if (localParticipant.identity) {
-            dispatch(setLocalParticipantIdentity(localParticipant.identity));
-        }
-    }, [localParticipant.identity, dispatch]);
-
     useEffect(() => {
         room.on(RoomEvent.ActiveSpeakersChanged, throttledUpdateSortedParticipants);
         room.on(RoomEvent.ParticipantDisconnected, handleParticipantDisconnected);
         room.on(RoomEvent.Disconnected, handleDisconnected);
+        room.on(RoomEvent.Connected, handleConnected);
 
         return () => {
             room.off(RoomEvent.ActiveSpeakersChanged, throttledUpdateSortedParticipants);
             room.off(RoomEvent.ParticipantDisconnected, handleParticipantDisconnected);
             room.off(RoomEvent.Disconnected, handleDisconnected);
+            room.off(RoomEvent.Connected, handleConnected);
         };
-    }, [throttledUpdateSortedParticipants, handleDisconnected, handleParticipantDisconnected, room]);
+    }, [throttledUpdateSortedParticipants, handleConnected, handleDisconnected, handleParticipantDisconnected, room]);
 
     return <ParticipantsMapContext.Provider value={participantsMap}>{children}</ParticipantsMapContext.Provider>;
 };
