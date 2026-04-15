@@ -136,7 +136,9 @@ function DirectoryTreeBranch({
                             <IcChevronUp className="border border-norm rounded-50" />
                         </button>
                     )}
-                    <span data-testid="directorytree-item-name">{item.name}</span>
+                    <div className="flex-1 min-w-0 text-ellipsis" data-testid="directorytree-item-name">
+                        {item.name}
+                    </div>
                 </div>
             </div>
 
