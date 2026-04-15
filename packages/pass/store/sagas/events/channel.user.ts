@@ -18,8 +18,8 @@ import { withRevalidate } from '@proton/pass/store/request/enhancers';
 import { SyncType } from '@proton/pass/store/sagas/client/sync';
 import { selectAllAddresses, selectLatestEventId, selectUser, selectUserPlan, selectUserSettings } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
+import type { Api, MaybeNull, PassPlanResponse, UserEvent } from '@proton/pass/types';
 import { EventActions } from '@proton/pass/types';
-import type { Api, Maybe, MaybeNull, PassPlanResponse, UserEvent } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { notIn } from '@proton/pass/utils/fp/predicates';
 import { logId, logger } from '@proton/pass/utils/logger';
@@ -34,11 +34,13 @@ import type { EventChannel } from './types';
 /** Hydrates crypto context whenever user or address keys may have changed.
  * Reads user and addresses from Redux (always up-to-date after userEvent dispatch).
  * Triggers a full sync if user keys changed to update share accessibility. */
-export function* onUserRefreshed(eventUser: Maybe<User>, keyPassword?: string) {
+export function* onUserRefreshed(eventUser?: User, keyPassword?: string) {
     try {
-        if (!keyPassword) throw new Error('User refresh without `keyPassword`');
+        if (!keyPassword) throw new Error('[UserRefresh] missing `keyPassword`');
 
-        const user: User = eventUser ?? (yield select(selectUser));
+        const user: MaybeNull<User> = eventUser ?? (yield select(selectUser));
+        if (!user) throw new Error('[UserRefresh] no user');
+
         const localUserKeyIds = (PassCrypto.getContext().userKeys ?? []).map(prop('ID'));
         const activeUserKeys = user.Keys.filter(({ Active }) => Active === 1);
         const keysUpdated = activeUserKeys.length !== localUserKeyIds.length || activeUserKeys.some(({ ID }) => notIn(localUserKeyIds)(ID));
@@ -81,7 +83,7 @@ function* onUserEvent(
     const keyPassword = getAuthStore().getPassword();
 
     if (event.Refresh) {
-        const data: HydratedUserState = yield getUserData(extensionId);
+        const data: HydratedUserState = yield call(getUserData, extensionId);
         yield put(userRefresh(data));
         yield call(onUserRefreshed, data.user, keyPassword);
         return;
@@ -108,9 +110,7 @@ function* onUserEvent(
         }
     }
 
-    if (event.User || event.Addresses) {
-        yield call(onUserRefreshed, event.User, keyPassword);
-    }
+    if (event.User || event.Addresses) yield call(onUserRefreshed, event.User, keyPassword);
 
     const planChanged =
         (event.User && event.User.Subscribed !== cachedUser?.Subscribed) ||
