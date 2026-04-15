@@ -8,6 +8,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import { usePhotosWithAlbums } from '../../photos/PhotosStore/PhotosWithAlbumsProvider';
 import { sendErrorReport } from '../../utils/errorHandling';
 import { ValidationError } from '../../utils/errorHandling/ValidationError';
+import { getEllipsedName } from '../../utils/intl/getEllipsedName';
 import useDevicesActions from '../_devices/useDevicesActions';
 import { useLinkActions, useLinksActions } from '../_links';
 import { useShareActions, useShareUrl } from '../_shares';
@@ -49,20 +50,24 @@ export default function useActions() {
         parentLinkId: string,
         newName: string
     ): Promise<string> => {
-        const name = safeName(newName);
-
+        const unsafeEllipsedName = getEllipsedName(newName);
+        const ellipsedName = safeName(unsafeEllipsedName);
         return link
             .createFolder(abortSignal, shareId, parentLinkId, newName)
             .then((id: string) => {
                 createNotification({
-                    text: <span className="text-pre-wrap">{c('Notification').jt`"${name}" created successfully`}</span>,
+                    text: (
+                        <span className="text-pre-wrap">{c('Notification')
+                            .jt`"${ellipsedName}" created successfully`}</span>
+                    ),
                 });
                 return id;
             })
             .catch((e) => {
                 showErrorNotification(
                     e,
-                    <span className="text-pre-wrap">{c('Notification').jt`"${name}" failed to be created`}</span>
+                    <span className="text-pre-wrap">{c('Notification')
+                        .jt`"${ellipsedName}" failed to be created`}</span>
                 );
                 throw e;
             });
@@ -82,18 +87,23 @@ export default function useActions() {
             () => {}
         );
 
-        const name = safeName(newName);
+        const unsafeEllipsedName = getEllipsedName(newName);
+        const ellipsedName = safeName(unsafeEllipsedName);
         await controls
             .start()
             .then(() => {
                 createNotification({
-                    text: <span className="text-pre-wrap">{c('Notification').jt`"${name}" created successfully`}</span>,
+                    text: (
+                        <span className="text-pre-wrap">{c('Notification')
+                            .jt`"${ellipsedName}" created successfully`}</span>
+                    ),
                 });
             })
             .catch((e) => {
                 showErrorNotification(
                     e,
-                    <span className="text-pre-wrap">{c('Notification').jt`"${name}" failed to be created`}</span>
+                    <span className="text-pre-wrap">{c('Notification')
+                        .jt`"${ellipsedName}" failed to be created`}</span>
                 );
                 throw e;
             });
