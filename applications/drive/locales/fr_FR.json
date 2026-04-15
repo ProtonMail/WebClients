@@ -4010,6 +4010,9 @@
       "${ failureItems.length } item failed to be moved": [
         "${ failureItems.length } élément n'a pas pu être déplacé.",
         "${ failureItems.length } éléments n'ont pas pu être déplacés."
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Les données d'abonnement n'ont pas pu être chargées. Veuillez réessayer plus tard."
       ]
     },
     "error": {
@@ -10399,6 +10402,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Votre abonnement bénéficie actuellement d'une réduction existante. Le passage à cette nouvelle promotion signifie que la réduction existante ne sera plus appliquée."
+      ],
+      "Edit billing address": [
+        "Modifier l'adresse de facturation"
       ]
     },
     "Payments.Error": {
