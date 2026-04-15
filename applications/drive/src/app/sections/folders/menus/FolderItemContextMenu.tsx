@@ -30,7 +30,7 @@ export function FolderItemContextMenu({
     open,
     close,
     actions,
-    canShareSingleItem,
+    canShareSelectedItem,
     children,
 }: {
     anchorRef: React.RefObject<HTMLElement>;
@@ -43,7 +43,7 @@ export function FolderItemContextMenu({
     volumeId: string;
     selectedItems: FolderViewItem[];
     actions: FolderActions;
-    canShareSingleItem: boolean;
+    canShareSelectedItem: boolean;
     children?: React.ReactNode;
 }) {
     const selectedItem = selectedItems.length > 0 ? selectedItems[0] : undefined;
@@ -56,7 +56,7 @@ export function FolderItemContextMenu({
         }))
     );
 
-    const canCopyPublicLink = canShareSingleItem && selectedItem?.isSharedPublicly;
+    const canCopyPublicLink = canShareSelectedItem && selectedItem?.isSharedPublicly;
 
     const openInDocs = useOpenInDocs(selectedItem);
     const hasPreviewAvailable =
@@ -86,7 +86,7 @@ export function FolderItemContextMenu({
             )}
             <DownloadButton type="context" selectedItems={selectedItems} onClick={downloadItems} close={close} />
             {canCopyPublicLink && <CopyLinkContextButton getPublicLinkInfo={getPublicLinkInfo} close={close} />}
-            {canShareSingleItem && <ShareLinkButton type="context" onClick={showSharingModal} close={close} />}
+            {canShareSelectedItem && <ShareLinkButton type="context" onClick={showSharingModal} close={close} />}
             <ContextSeparator />
             {permissions.canMove ? (
                 <MoveButton type="context" selectedItems={selectedItems} close={close} onClick={showMoveModal} />
