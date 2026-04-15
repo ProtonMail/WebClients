@@ -28,7 +28,7 @@ export const FolderViewBreadcrumbs = ({ nodeUid, createHandleItemDrop }: FolderV
             createHandleItemDrop={createHandleItemDrop}
             events={{
                 onBreadcrumbItemClick: async (nodeUid: string) => {
-                    void navigateToNodeUid(nodeUid);
+                    void navigateToNodeUid(nodeUid, drive);
                 },
             }}
         />
