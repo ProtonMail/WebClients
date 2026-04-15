@@ -64,4 +64,7 @@ export interface ValidateResetTokenResponse {
     PasswordMode: PASSWORD_MODE;
     DelegatedAccesses: DelegatedAccessSummary[];
     Sessions: ExistingSession[];
+    '2FA': {
+        Enabled: number;
+    };
 }
