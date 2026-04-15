@@ -12,8 +12,10 @@ import {
     useModalState,
     usePopperAnchor,
 } from '@proton/components';
-import Icon from '@proton/components/components/icon/Icon';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
+import { IcKey } from '@proton/icons/icons/IcKey';
+import { IcPassTrash } from '@proton/icons/icons/IcPassTrash';
+import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import type { IWasmApiWalletData } from '@proton/wallet/types';
 
 import { Input } from '../../atoms';
@@ -90,12 +92,7 @@ export const AccountPreferences = ({ wallet, walletAccount, otherWallets, should
                             size="small"
                             disabled={isLoadingLabelUpdate}
                         >
-                            <Icon
-                                size={4}
-                                name="three-dots-vertical"
-                                className="color-weak"
-                                alt={c('Action').t`More options`}
-                            />
+                            <IcThreeDotsVertical size={4} className="color-weak" alt={c('Action').t`More options`} />
                         </DropdownButton>
                         <Dropdown
                             isOpen={isOpen}
@@ -116,7 +113,7 @@ export const AccountPreferences = ({ wallet, walletAccount, otherWallets, should
                                 >
                                     {c('Wallet preference').t`Show public key (XPUB)`}
                                     <div className="flex ml-2">
-                                        <Icon name="key" />
+                                        <IcKey />
                                     </div>
                                 </DropdownMenuButton>
                                 <DropdownMenuButton
@@ -129,7 +126,7 @@ export const AccountPreferences = ({ wallet, walletAccount, otherWallets, should
                                 >
                                     {c('Wallet preference').t`Delete account`}
                                     <div className="flex ml-2">
-                                        <Icon name="pass-trash" />
+                                        <IcPassTrash />
                                     </div>
                                 </DropdownMenuButton>
                             </DropdownMenu>

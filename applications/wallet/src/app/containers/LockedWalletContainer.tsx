@@ -4,7 +4,8 @@ import { Redirect, useParams } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { Alert, Icon, useModalState } from '@proton/components';
+import { Alert, useModalState } from '@proton/components';
+import { IcPassTrash } from '@proton/icons/icons/IcPassTrash';
 
 import { CoreButton } from '../atoms';
 import { WalletDeletionModal } from '../components/WalletDeletionModal';
@@ -52,7 +53,7 @@ export const LockedWalletContainer = () => {
                                 setWalletDeletionModalState(true);
                             }}
                         >
-                            <Icon name="pass-trash" className="color-hint" alt={c('Action').t`Delete`} size={5} />
+                            <IcPassTrash className="color-hint" alt={c('Action').t`Delete`} size={5} />
                         </CoreButton>
                     </div>
 

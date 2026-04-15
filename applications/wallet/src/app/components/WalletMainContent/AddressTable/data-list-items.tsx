@@ -5,8 +5,10 @@ import { c } from 'ttag';
 import type { WasmAccount, WasmAddressDetails, WasmApiWalletAccount } from '@proton/andromeda';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Copy, ModalTwo, ModalTwoContent, ModalTwoHeader, useModalState, useNotifications } from '@proton/components';
-import Icon from '@proton/components/components/icon/Icon';
 import QRCode from '@proton/components/components/image/QRCode';
+import { IcBrandBitcoin } from '@proton/icons/icons/IcBrandBitcoin';
+import { IcLockPenFilled } from '@proton/icons/icons/IcLockPenFilled';
+import { IcQrCode } from '@proton/icons/icons/IcQrCode';
 import clsx from '@proton/utils/clsx';
 import { useUserWalletSettings, useWalletAccountExchangeRate } from '@proton/wallet/store/hooks';
 
@@ -61,7 +63,7 @@ export const AddressDataListItem = ({
                         {address ? `${address.address}` : 'bc1qplaceholderplaceholderplaceholder'}
                         {highlighted && (
                             <Tooltip title={c('Info').t`This address is for Bitcoin via Email`}>
-                                <Icon name="brand-bitcoin" className="ml-2 color-hint" />
+                                <IcBrandBitcoin className="ml-2 color-hint" />
                             </Tooltip>
                         )}
                         <Tooltip title={c('Label').t`Show QRCode`}>
@@ -72,7 +74,7 @@ export const AddressDataListItem = ({
                                 title={c('Action').t`Show QRCode`}
                                 onClick={handleOpenQrCode}
                             >
-                                <Icon name="qr-code" className="color-hint" />
+                                <IcQrCode className="color-hint" />
                             </CoreButtonLike>
                         </Tooltip>
                         <Copy
@@ -91,7 +93,7 @@ export const AddressDataListItem = ({
                                     title={c('Action').t`Sign message`}
                                     onClick={handleOpenSignMessage}
                                 >
-                                    <Icon name="lock-pen-filled" className="color-hint" />
+                                    <IcLockPenFilled className="color-hint" />
                                 </CoreButtonLike>
                             </Tooltip>
                         )}

@@ -9,16 +9,17 @@ import {
     type WasmApiWalletAccount,
 } from '@proton/andromeda';
 import type { ButtonProps } from '@proton/atoms/Button/Button';
-import { Icon, useModalState, useNotifications } from '@proton/components';
+import { useModalState, useNotifications } from '@proton/components';
 import { useLoading } from '@proton/hooks/index';
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import { SECOND } from '@proton/shared/lib/constants';
 import walletDownloadDark from '@proton/styles/assets/img/wallet/wallet-download-dark.png';
 import walletDownload from '@proton/styles/assets/img/wallet/wallet-download.png';
 import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
+import { useWalletAccountExchangeRate } from '@proton/wallet/store/hooks';
 import type { IWasmApiWalletData, WalletChainDataByWalletId } from '@proton/wallet/types';
 import { WalletThemeOption } from '@proton/wallet/utils/theme';
-import { useWalletAccountExchangeRate } from '@proton/wallet/store/hooks';
 
 import { Button, CoreButton, Modal, Select } from '../../atoms';
 import { useBitcoinBlockchainContext } from '../../contexts';
@@ -146,11 +147,7 @@ export const ExportStatementButton = ({ apiWalletData, apiAccount, ...rest }: Pr
                 disabled={loadingExchangeRate || rest.disabled}
                 onClick={() => setExportModal(true)}
             >
-                <Icon
-                    alt={c('Account statement').t`Download transactions`}
-                    name="arrow-down-line"
-                    size={isNarrow ? 4 : 5}
-                />
+                <IcArrowDownLine alt={c('Account statement').t`Download transactions`} size={isNarrow ? 4 : 5} />
             </CoreButton>
 
             {renderExportModal && (
