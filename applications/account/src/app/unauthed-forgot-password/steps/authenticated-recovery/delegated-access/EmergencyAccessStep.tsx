@@ -45,7 +45,7 @@ export const EmergencyAccessStep = () => {
             />
             <Content>
                 <p className="mt-0">
-                    {resetResponse
+                    {resetResponse && emergencyContacts
                         ? getBoldFormattedText(
                               c('Info')
                                   .t`Get in touch with your emergency contacts, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed**.`
