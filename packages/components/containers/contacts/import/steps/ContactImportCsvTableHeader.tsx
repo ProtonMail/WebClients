@@ -1,8 +1,9 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
 import TableCell from '@proton/components/components/table/TableCell';
+import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 
 interface Props {
     disabledPrevious: boolean;
@@ -31,10 +32,10 @@ const ContactImportCsvTableHeader = ({
                         <span className="self-center my-auto mr-2">{c('TableHeader').t`Values`}</span>
                         <span className="flex flex-nowrap">
                             <Button icon disabled={disabledPrevious} onClick={onPrevious}>
-                                <Icon name="chevron-left" className="shrink-0" />
+                                <IcChevronLeft className="shrink-0" />
                             </Button>
                             <Button icon disabled={disabledNext} onClick={onNext}>
-                                <Icon name="chevron-right" className="shrink-0" />
+                                <IcChevronRight className="shrink-0" />
                             </Button>
                         </span>
                     </div>

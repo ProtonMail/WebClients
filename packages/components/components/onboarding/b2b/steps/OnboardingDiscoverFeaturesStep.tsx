@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import B2BOnboardingFeatureItem from '@proton/components/components/onboarding/b2b/B2BOnboardingFeatureItem';
@@ -12,6 +11,7 @@ import { getFeatures, getSections } from '@proton/components/components/onboardi
 import type { B2BFeaturesID } from '@proton/components/components/onboarding/b2b/interface';
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
+import { IcArrowDown } from '@proton/icons/icons/IcArrowDown';
 import { TelemetryB2BOnboardingEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
@@ -100,7 +100,7 @@ const OnboardingDiscoverFeaturesStep = ({ onClose }: Props) => {
                             onClick={() => setExpanded(true)}
                         >
                             {c('Action').t`Show more`}
-                            <Icon name="arrow-down" />
+                            <IcArrowDown />
                         </Button>
                     </div>
                 )}

@@ -7,7 +7,6 @@ import { generatePqcAddressKeys, generatePqcUserKey, optInToPqc } from '@proton/
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import Label from '@proton/components/components/label/Label';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
@@ -22,6 +21,7 @@ import { useIsDeviceRecoveryAvailable, useIsDeviceRecoveryEnabled } from '@proto
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useRecoverySecrets from '@proton/components/hooks/useRecoverySecrets';
 import useLoading from '@proton/hooks/useLoading';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { useOutgoingAddressForwardings } from '@proton/mail/store/forwarding/hooks';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
@@ -203,7 +203,7 @@ const PostQuantumOptInModal = ({ ...rest }: Props) => {
                             </div>
                             {hasOutgoingE2EEForwardingsAcrossAddresses && (
                                 <div className="border border-weak rounded-lg p-4 flex flex-nowrap items-center mb-3 mt-4">
-                                    <Icon name="exclamation-circle-filled" className="shrink-0 color-warning" />
+                                    <IcExclamationCircleFilled className="shrink-0 color-warning" />
                                     <p className="text-sm color-weak flex-1 pl-4 my-0">
                                         {getBoldFormattedText(
                                             c('Info')
@@ -214,7 +214,7 @@ const PostQuantumOptInModal = ({ ...rest }: Props) => {
                             )}
                             {model.hadManualRecoveryMethodBeforeOptIn && (
                                 <div className="border border-weak rounded-lg p-4 flex flex-nowrap items-center mb-3 mt-4">
-                                    <Icon name="exclamation-circle-filled" className="shrink-0 color-warning" />
+                                    <IcExclamationCircleFilled className="shrink-0 color-warning" />
                                     <p className="text-sm color-weak flex-1 pl-4 my-0">
                                         {getBoldFormattedText(
                                             c('Info')
@@ -230,7 +230,7 @@ const PostQuantumOptInModal = ({ ...rest }: Props) => {
                                     borderColor: 'var(--signal-danger-minor-2)',
                                 }}
                             >
-                                <Icon name="exclamation-circle-filled" className="shrink-0 color-danger" />
+                                <IcExclamationCircleFilled className="shrink-0 color-danger" />
                                 <p className="text-sm color-weak flex-1 pl-4 my-0">
                                     {getBoldFormattedText(
                                         c('PQC compatibility warning')

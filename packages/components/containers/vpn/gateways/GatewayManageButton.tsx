@@ -4,8 +4,12 @@ import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import Icon from '@proton/components/components/icon/Icon';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
+import { IcPen } from '@proton/icons/icons/IcPen';
+import { IcServers } from '@proton/icons/icons/IcServers';
+import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 
 import type { Gateway } from './Gateway';
 import type { GatewayLogical } from './GatewayLogical';
@@ -57,7 +61,7 @@ export const GatewayManageButton = ({
                 title={c('Title').t`Open actions dropdown`}
                 size="small"
             >
-                <Icon name="three-dots-vertical" />
+                <IcThreeDotsVertical />
             </DropdownButton>
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close} originalPlacement="bottom-end">
                 <DropdownMenu>
@@ -68,7 +72,7 @@ export const GatewayManageButton = ({
                         onClick={renameGateway(logical.ID, logical.Name.replace(/#\d+$/, '').replace(/-\d+$/, ''))}
                         title={c('Title').t`Rename the gateway`}
                     >
-                        <Icon name="pen" className="mr-2" />
+                        <IcPen className="mr-2" />
                         {c('Action').t`Edit name`}
                     </DropdownMenuButton>
                     <DropdownMenuButton
@@ -78,7 +82,7 @@ export const GatewayManageButton = ({
                         onClick={editGatewayServers(gateway, logical)}
                         title={c('Title').t`Edit the list of servers of the gateway`}
                     >
-                        <Icon name="servers" className="mr-2" />
+                        <IcServers className="mr-2" />
                         {c('Action').t`Edit servers`}
                     </DropdownMenuButton>
                     <DropdownMenuButton
@@ -88,7 +92,7 @@ export const GatewayManageButton = ({
                         onClick={editGatewayUsers(gateway, logical)}
                         title={c('Title').t`Edit who can access the gateway`}
                     >
-                        <Icon name="users" className="mr-2" />
+                        <IcUsers className="mr-2" />
                         {c('Action').t`Edit users`}
                     </DropdownMenuButton>
                     {!deleted && (
@@ -100,7 +104,7 @@ export const GatewayManageButton = ({
                                 onClick={deleteGateway}
                                 title={deleteServerTitle}
                             >
-                                <Icon name="trash" className="mr-2" />
+                                <IcTrash className="mr-2" />
                                 {c('Action').t`Delete`}
                             </DropdownMenuButton>
                         </>

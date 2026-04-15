@@ -4,7 +4,6 @@ import { c } from 'ttag';
 
 import { importKeysThunk } from '@proton/account/addressKeys/importKeysActions';
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
@@ -15,6 +14,7 @@ import getPausedForwardingNotice from '@proton/components/containers/keys/change
 import { type ProcessedKey, useProcessKey } from '@proton/components/containers/keys/importKeys/useProcessKey';
 import SelectKeyFiles from '@proton/components/containers/keys/shared/SelectKeyFiles';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
+import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
@@ -121,7 +121,7 @@ Please also note that the public key corresponding to this private key will be p
                         </div>
                         {hasOutgoingE2EEForwardings ? (
                             <div className="border rounded-lg p-4 flex flex-nowrap items-center mb-3 mt-4">
-                                <Icon name="exclamation-circle" className="shrink-0 color-warning" />
+                                <IcExclamationCircle className="shrink-0 color-warning" />
                                 <p className="text-sm color-weak flex-1 pl-4 my-0">{pausedForwardingNotice}</p>
                             </div>
                         ) : null}

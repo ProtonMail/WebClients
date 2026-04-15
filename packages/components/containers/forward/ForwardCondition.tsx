@@ -2,9 +2,9 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Icon from '@proton/components/components/icon/Icon';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 
 import { COMPARATORS, TYPES, getComparatorLabels, getConditionTypeLabels } from '../filters/constants';
 import type { Condition, ConditionComparator } from '../filters/interfaces';
@@ -122,7 +122,7 @@ const ForwardCondition = ({
                                 onClick={() => onDelete()}
                                 icon
                             >
-                                <Icon name="trash" alt={c('email_forwarding_2023: Action').t`Delete this condition`} />
+                                <IcTrash alt={c('email_forwarding_2023: Action').t`Delete this condition`} />
                             </Button>
                         </Tooltip>
                     </div>

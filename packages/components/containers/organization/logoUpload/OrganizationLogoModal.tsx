@@ -8,7 +8,6 @@ import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import Dropzone from '@proton/components/components/dropzone/Dropzone';
 import Form from '@proton/components/components/form/Form';
-import Icon from '@proton/components/components/icon/Icon';
 import FileInput from '@proton/components/components/input/FileInput';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Modal from '@proton/components/components/modalTwo/Modal';
@@ -19,7 +18,10 @@ import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
+import { IcArrowUpLine } from '@proton/icons/icons/IcArrowUpLine';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
+import { IcCross } from '@proton/icons/icons/IcCross';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import metrics, { observeApiError } from '@proton/metrics';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { CacheType } from '@proton/redux-utilities';
@@ -279,13 +281,13 @@ const OrganizationLogoModal = ({ onClose, organization, app, ...rest }: Props) =
                         </div>
                     )}
                     <Button onClick={removeLogo} shape="ghost" size="small" icon className="top-0 right-0 absolute">
-                        <Icon name="cross" />
+                        <IcCross />
                     </Button>
                 </div>
             );
         }
 
-        return <Icon name="arrow-up-line" />;
+        return <IcArrowUpLine />;
     };
 
     const DropzoneContent = () => {
@@ -380,7 +382,7 @@ const OrganizationLogoModal = ({ onClose, organization, app, ...rest }: Props) =
                 </Dropzone>
                 {error && (
                     <p className="text-sm text-semibold color-danger my-1 flex items-center">
-                        <Icon name="exclamation-circle-filled" className="shrink-0 mr-1" />
+                        <IcExclamationCircleFilled className="shrink-0 mr-1" />
                         <span>{error}</span>
                     </p>
                 )}

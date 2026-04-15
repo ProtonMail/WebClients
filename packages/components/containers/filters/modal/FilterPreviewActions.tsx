@@ -2,8 +2,8 @@ import { Fragment } from 'react';
 
 import { c } from 'ttag';
 
-import Icon from '@proton/components/components/icon/Icon';
 import LabelStack from '@proton/components/components/labelStack/LabelStack';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { toMap } from '@proton/shared/lib/helpers/object';
 import type { Folder } from '@proton/shared/lib/interfaces/Folder';
 import type { Label } from '@proton/shared/lib/interfaces/Label';
@@ -85,6 +85,7 @@ const FilterPreviewActions = ({ isOpen, toggleOpen, labels, folders, model }: Pr
                 : folders.find((f) => f.Path === actions.moveTo.folder)?.Name;
 
             const folderElement = isOpen ? (
+                // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
                 <span className="inline-flex flex-row items-center condition-token mb-2 max-w-full" role="listitem">
                     <span className="text-ellipsis text-no-decoration" title={selectedFolder}>
                         {selectedFolder}
@@ -108,6 +109,7 @@ const FilterPreviewActions = ({ isOpen, toggleOpen, labels, folders, model }: Pr
 
         if (actions.markAs.read || actions.markAs.starred) {
             const readElement = isOpen ? (
+                // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
                 <span className="inline-flex flex-row items-center condition-token mb-2 max-w-full" role="listitem">
                     <span className="text-ellipsis text-no-decoration">{c('Filter preview').t`read`}</span>
                 </span>
@@ -115,6 +117,7 @@ const FilterPreviewActions = ({ isOpen, toggleOpen, labels, folders, model }: Pr
                 <strong>{c('Filter preview').t`read`}</strong>
             );
             const starredElement = isOpen ? (
+                // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
                 <span className="inline-flex flex-row items-center condition-token mb-2 max-w-full" role="listitem">
                     <span className="text-ellipsis text-no-decoration">{c('Filter preview').t`starred`}</span>
                 </span>
@@ -148,6 +151,7 @@ const FilterPreviewActions = ({ isOpen, toggleOpen, labels, folders, model }: Pr
 
         if (actions.autoReply) {
             const label = isOpen ? (
+                // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
                 <span className="inline-flex flex-row items-center condition-token mb-2 max-w-full" role="listitem">
                     <span className="text-no-decoration max-w-custom" style={{ '--max-w-custom': 'inherit' }}>
                         {LABELS_ACTION.autoReply}
@@ -171,6 +175,7 @@ const FilterPreviewActions = ({ isOpen, toggleOpen, labels, folders, model }: Pr
         return isOpen ? (
             <div className="pt-2 max-w-full">
                 {actionsRows.map((action, i) => (
+                    // eslint-disable-next-line react/no-array-index-key
                     <div key={`preview-action-${i}`}>
                         {i === 0 ? c('Label').t`Then` : c('Label').t`And`}
                         {` `}
@@ -181,6 +186,7 @@ const FilterPreviewActions = ({ isOpen, toggleOpen, labels, folders, model }: Pr
         ) : (
             <div className="max-w-full text-ellipsis" title={title}>
                 {actionsRows.map((action, i) => (
+                    // eslint-disable-next-line react/no-array-index-key
                     <span key={`preview-action-${i}`}>
                         {i === 0 ? c('Label').t`Then` : ` ${c('Label').t`and`}`}
                         {` `}
@@ -195,7 +201,7 @@ const FilterPreviewActions = ({ isOpen, toggleOpen, labels, folders, model }: Pr
         <div className="border-bottom mb-8">
             <div className="flex flex-nowrap flex-column md:flex-row align-items-center py-4 gap-4">
                 <button type="button" className="w-full md:w-1/4 text-left" onClick={toggleOpen}>
-                    <Icon name="chevron-down" className={clsx([isOpen && 'rotateX-180'])} />
+                    <IcChevronDown className={clsx([isOpen && 'rotateX-180'])} />
                     <span className="ml-2">{c('Label').t`Actions`}</span>
                 </button>
                 <div className="flex flex-column w-full">{actionsRenderer}</div>

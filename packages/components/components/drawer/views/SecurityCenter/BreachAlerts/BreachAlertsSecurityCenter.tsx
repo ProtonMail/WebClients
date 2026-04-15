@@ -6,7 +6,6 @@ import { useUser } from '@proton/account/user/hooks';
 import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Href } from '@proton/atoms/Href/Href';
-import Icon from '@proton/components/components/icon/Icon';
 import Loader from '@proton/components/components/loader/Loader';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';
@@ -28,6 +27,7 @@ import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
+import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { baseUseDispatch, baseUseSelector } from '@proton/react-redux-store';
 import { getBreaches, updateBreachState } from '@proton/shared/lib/api/breaches';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -243,7 +243,7 @@ const BreachAlertsSecurityCenter = () => {
                             </h3>
                             {count === 0 ? (
                                 <div className="drawerAppSection shadow-norm px-4 py-3 rounded-lg w-full flex flex-nowrap gap-2">
-                                    <Icon name="checkmark-circle-filled" className="color-success shrink-0" alt="" />
+                                    <IcCheckmarkCircleFilled className="color-success shrink-0" alt="" />
                                     <p className="m-0 color-weak text-left flex-1 text-sm">{c('Title')
                                         .t`No breaches detected`}</p>
                                 </div>
@@ -258,7 +258,7 @@ const BreachAlertsSecurityCenter = () => {
                                                 key={breach.id}
                                                 onClick={() => {
                                                     if (isUnread(breach.resolvedState)) {
-                                                        markAsOpened(breach);
+                                                        void markAsOpened(breach);
                                                         dispatch(decreaseUnreadBreachCount());
                                                     }
                                                     setSelectedBreachID(breach.id);

@@ -2,10 +2,10 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import Alert from '@proton/components/components/alert/Alert';
-import Icon from '@proton/components/components/icon/Icon';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
+import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 
 interface Props {
     model: {
@@ -25,7 +25,7 @@ const ContactMergeErrorContent = ({ model, onClose }: Props) => {
             <ModalTwoHeader title={c('Title').t`Contact Details`} />
             <ModalTwoContent>
                 <Alert type="warning">
-                    <Icon name="exclamation-circle" className="mr-4" />
+                    <IcExclamationCircle className="mr-4" />
                     <span className="mr-4">{error}</span>
                 </Alert>
             </ModalTwoContent>

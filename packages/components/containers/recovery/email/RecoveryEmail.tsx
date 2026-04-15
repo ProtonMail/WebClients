@@ -6,13 +6,14 @@ import { c } from 'ttag';
 import { userSettingsActions, userSettingsThunk } from '@proton/account/userSettings';
 import { Button } from '@proton/atoms/Button/Button';
 import type { Input } from '@proton/atoms/Input/Input';
-import Icon from '@proton/components/components/icon/Icon';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
+import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { useDispatch } from '@proton/redux-shared-store';
 import { CacheType } from '@proton/redux-utilities';
 import { updateEmail, updateResetEmail } from '@proton/shared/lib/api/settings';
@@ -163,10 +164,7 @@ const RecoveryEmail = ({
                             email.Value &&
                             (email.Status !== SETTINGS_STATUS.VERIFIED ? (
                                 <>
-                                    <Icon
-                                        className="color-danger shrink-0 aligntop mr-1"
-                                        name="exclamation-circle-filled"
-                                    />
+                                    <IcExclamationCircleFilled className="color-danger shrink-0 aligntop mr-1" />
                                     <span className="color-norm mr-2">{c('Recovery Email')
                                         .t`Email address not yet verified.`}</span>
                                     <button
@@ -181,10 +179,7 @@ const RecoveryEmail = ({
                                 </>
                             ) : (
                                 <>
-                                    <Icon
-                                        className="color-success shrink-0 aligntop mr-1"
-                                        name="checkmark-circle-filled"
-                                    />
+                                    <IcCheckmarkCircleFilled className="color-success shrink-0 aligntop mr-1" />
                                     <span className="mr-2">{c('Recovery Email')
                                         .t`Email address has been verified.`}</span>
                                 </>

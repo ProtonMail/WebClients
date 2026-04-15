@@ -5,9 +5,9 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
 import Copy from '@proton/components/components/button/Copy';
-import Icon from '@proton/components/components/icon/Icon';
 import Loader from '@proton/components/components/loader/Loader';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 
 export const MnemonicPhraseStepContent = ({
@@ -37,7 +37,7 @@ export const MnemonicPhraseStepContent = ({
                     </p>
 
                     <p className="color-warning">
-                        <Icon className="mr-2 float-left mt-1" name="exclamation-circle-filled" />
+                        <IcExclamationCircleFilled className="mr-2 float-left mt-1" />
 
                         {c('Info')
                             .t`Please keep it safe. You'll need it to access your account and decrypt your data in case of a password reset.`}

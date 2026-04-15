@@ -11,7 +11,6 @@ import { useGetOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
-import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
@@ -29,6 +28,7 @@ import useBeforeUnload from '@proton/components/hooks/useBeforeUnload';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
+import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import { getHasVpnB2BPlan } from '@proton/payments';
 import { useDispatch } from '@proton/redux-shared-store';
 import { getIsOfflineError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
@@ -431,7 +431,7 @@ const CreateUserAccountsModal = ({
                             className="max-w-custom"
                             style={{ '--max-w-custom': '16.875rem' }}
                             placeholder={c('Placeholder').t`Search`}
-                            prefix={<Icon name="magnifier" alt={c('Action').t`Search`} />}
+                            prefix={<IcMagnifier alt={c('Action').t`Search`} />}
                             value={searchValue}
                             onValue={setSearchValue}
                         />
@@ -447,6 +447,7 @@ const CreateUserAccountsModal = ({
                                     onChange={handleSelectAllFilteredOptionsClick}
                                 />,
                                 <div>{c('TableHeader').t`Name`}</div>,
+                                // eslint-disable-next-line no-nested-ternary
                                 ...(expectedCsvConfig.mode === CreateMemberMode.Password
                                     ? expectedCsvConfig.multipleAddresses
                                         ? [

@@ -7,9 +7,8 @@ import { createDomain, syncDomain } from '@proton/account/domains/actions';
 import { useCustomDomains } from '@proton/account/domains/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import ButtonGroup from '@proton/components/components/button/ButtonGroup';
+import { ButtonGroup } from '@proton/components/components/button/ButtonGroup';
 import Form from '@proton/components/components/form/Form';
-import Icon from '@proton/components/components/icon/Icon';
 import RoundedIcon from '@proton/components/components/icon/RoundedIcon';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
@@ -21,6 +20,7 @@ import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useStep from '@proton/components/hooks/useStep';
 import { useLoading } from '@proton/hooks';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { useDispatch } from '@proton/redux-shared-store';
 import type { Domain, DomainAddress } from '@proton/shared/lib/interfaces';
 import {
@@ -93,7 +93,7 @@ const renderDKIMIcon = (dkimState: Domain['DKIM']['State']) => {
                     title={c('Tooltip')
                         .t`We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.`}
                 >
-                    <Icon size={6} className="mr-1 md:mr-2 p-1 md:p-0" name="exclamation-circle-filled" />
+                    <IcExclamationCircleFilled size={6} className="mr-1 md:mr-2 p-1 md:p-0" />
                 </Tooltip>
             );
         }

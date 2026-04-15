@@ -2,13 +2,13 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import Icon from '@proton/components/components/icon/Icon';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Modal from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
+import { IcSpeechBubble } from '@proton/icons/icons/IcSpeechBubble';
 import { PLANS, PLAN_NAMES } from '@proton/payments';
 
 import AuthenticatedBugModal from '../support/AuthenticatedBugModal';
@@ -41,7 +41,7 @@ const FreeUserLiveChatModal = ({ open, onExit, onClose }: Props) => {
                 <ModalHeader />
                 <ModalContent className="flex flex-column items-center mb-8">
                     <div className="flex flex-row justify-center items-center p-4 rounded-full bg-weak">
-                        <Icon name="speech-bubble" size={5} className="color-primary" />
+                        <IcSpeechBubble size={5} className="color-primary" />
                     </div>
                     <h3 className="text-3xl color-primary text-center mt-4 mb-1">
                         {c('Live Chat Modal').t`Live chat is available with ${planName}`}

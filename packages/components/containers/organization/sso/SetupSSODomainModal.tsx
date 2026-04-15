@@ -6,7 +6,6 @@ import { c } from 'ttag';
 import { createDomain, syncDomain } from '@proton/account/domains/actions';
 import { Button } from '@proton/atoms/Button/Button';
 import Form from '@proton/components/components/form/Form';
-import Icon from '@proton/components/components/icon/Icon';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Modal from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
@@ -16,6 +15,7 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useLoading from '@proton/hooks/useLoading';
+import { IcGlobe } from '@proton/icons/icons/IcGlobe';
 import metrics, { observeApiError } from '@proton/metrics';
 import { useDispatch } from '@proton/redux-shared-store';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
@@ -96,7 +96,7 @@ const SetupSSODomainModal = ({ onContinue, onDomainAdded, onClose, ssoAppInfo, .
                         </div>
                         <InputFieldTwo
                             id="domain"
-                            prefix={<Icon name="globe" />}
+                            prefix={<IcGlobe />}
                             label={c('Label').t`Allowed domain`}
                             placeholder={c('Label').t`e.g. example.com`}
                             error={validator([requiredValidator(domainName)])}

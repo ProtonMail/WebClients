@@ -7,7 +7,7 @@ import { c, msgid } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import genAccentShades from '@proton/colors/gen-accent-shades';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcPenSquare } from '@proton/icons/icons/IcPenSquare';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
@@ -67,6 +67,7 @@ const ContactGroupRow = ({
             : c('Info').ngettext(msgid`${addressCount} email address`, `${addressCount} email addresses`, addressCount);
 
     return (
+        // eslint-disable-next-line jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events
         <div
             key={ID}
             style={style}
@@ -109,7 +110,7 @@ const ContactGroupRow = ({
                     <div className="contact-item-hover-action-buttons">
                         <Tooltip title={c('Action').t`Compose`}>
                             <Button color="weak" shape="ghost" icon onClick={handleCompose}>
-                                <Icon name="pen-square" alt={c('Action').t`Compose`} />
+                                <IcPenSquare alt={c('Action').t`Compose`} />
                             </Button>
                         </Tooltip>
                     </div>

@@ -3,7 +3,7 @@ import type { ReactElement } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
 import { IDP_TYPE } from '@proton/shared/lib/interfaces';
 
 import edugain from '../idp-logos/edugain.svg';
@@ -55,7 +55,7 @@ const idpOptions: readonly IDPOptions[] = [
         name: IDP_NAME.OTHER,
         translatedName: () => c('Label').t`Other`,
         type: IDP_TYPE.DEFAULT,
-        logo: <Icon name="three-dots-horizontal" size={8} />,
+        logo: <IcThreeDotsHorizontal size={8} />,
     },
 ];
 

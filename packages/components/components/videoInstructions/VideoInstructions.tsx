@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import Icon from '@proton/components/components/icon/Icon';
+import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight';
 import clsx from '@proton/utils/clsx';
 
 import './VideoInstructions.scss';
@@ -22,7 +22,7 @@ const VideoInstructions = ({ children, ...rest }: React.ComponentPropsWithoutRef
 
     const replayVideo = () => {
         setVideoEnded(false);
-        videoRef.current?.play();
+        void videoRef.current?.play();
     };
 
     return (
@@ -49,7 +49,7 @@ const VideoInstructions = ({ children, ...rest }: React.ComponentPropsWithoutRef
                 ])}
                 onClick={replayVideo}
             >
-                <Icon name="arrow-rotate-right" size={14} color="white" alt={c('Video control').t`Replay video`} />
+                <IcArrowRotateRight size={14} color="white" alt={c('Video control').t`Replay video`} />
             </button>
         </div>
     );

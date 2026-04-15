@@ -8,6 +8,7 @@ import Meter from '@proton/components/components/progress/Meter';
 import StripedItem from '@proton/components/components/stripedList/StripedItem';
 import { StripedList } from '@proton/components/components/stripedList/StripedList';
 import { getHighSpeedVPNConnectionsText } from '@proton/components/containers/payments/features/vpn';
+import { IcStorage } from '@proton/icons/icons/IcStorage';
 import type { IconName } from '@proton/icons/types';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import type { Address, Organization, UserModel } from '@proton/shared/lib/interfaces';
@@ -71,7 +72,7 @@ const UsagePanel = ({ addresses, calendars, organization, user, children }: Prop
     return (
         <Panel title={c('new_plans: Title').t`Your account's usage`} data-testid="your-account-usage">
             <StripedList>
-                <StripedItem left={<Icon className="color-success" name="storage" size={5} />}>
+                <StripedItem left={<IcStorage className="color-success" size={5} />}>
                     <span id="usedSpaceLabel" className="block">{c('new_plans: Label')
                         .t`${humanUsedSpace} of ${humanMaxSpace}`}</span>
                     <Meter

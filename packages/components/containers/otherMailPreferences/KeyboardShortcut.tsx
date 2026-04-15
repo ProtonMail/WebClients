@@ -1,12 +1,12 @@
 import { c } from 'ttag';
 
-import Icon from '@proton/components/components/icon/Icon';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
 import SettingsLayoutLeft from '@proton/components/containers/account/SettingsLayoutLeft';
 import SettingsLayoutRight from '@proton/components/containers/account/SettingsLayoutRight';
 import ShortcutsToggle from '@proton/components/containers/general/ShortcutsToggle';
 import MailShortcutsModal from '@proton/components/containers/mail/MailShortcutsModal';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 
 export const KeyboardShortcut = () => {
     const [mailShortcutsProps, setMailShortcutsModalOpen] = useModalState();
@@ -25,9 +25,8 @@ export const KeyboardShortcut = () => {
                                 setMailShortcutsModalOpen(true);
                             }}
                         >
-                            <Icon
+                            <IcInfoCircle
                                 className="color-primary"
-                                name="info-circle"
                                 alt={c('Action').t`More info: Keyboard shortcuts`}
                                 size={4}
                             />

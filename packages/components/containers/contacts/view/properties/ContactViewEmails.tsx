@@ -3,8 +3,9 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Copy from '@proton/components/components/button/Copy';
-import Icon from '@proton/components/components/icon/Icon';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { getSortedProperties } from '@proton/shared/lib/contacts/properties';
 import type { ContactEmail, ContactGroup } from '@proton/shared/lib/interfaces/contacts';
 import type { VCardContact } from '@proton/shared/lib/interfaces/contacts/VCard';
@@ -104,7 +105,7 @@ const ContactViewEmails = ({
                                                     onClick={handleSettings}
                                                     data-testid={`${email.value}:email-settings`}
                                                 >
-                                                    <Icon name="cog-wheel" alt={c('Action').t`Email settings`} />
+                                                    <IcCogWheel alt={c('Action').t`Email settings`} />
                                                 </Button>
                                             </Tooltip>
                                         )}
@@ -119,7 +120,7 @@ const ContactViewEmails = ({
                                             onUpgrade={onUpgrade}
                                             data-testid={`${email.value}:groups-dropdown`}
                                         >
-                                            <Icon name="users" alt={c('Action').t`Contact group`} />
+                                            <IcUsers alt={c('Action').t`Contact group`} />
                                         </ContactGroupDropdown>
                                     </>
                                 )}

@@ -2,8 +2,10 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import Icon from '@proton/components/components/icon/Icon';
 import type { MethodsHook } from '@proton/components/payments/react-extensions';
+import { IcClock } from '@proton/icons/icons/IcClock';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
+import { IcShield } from '@proton/icons/icons/IcShield';
 import { type Currency, PAYMENT_METHOD_TYPES, type PlanIDs, isLifetimePlanSelected } from '@proton/payments';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 
@@ -65,7 +67,7 @@ const Checkout = ({
                 {renewNotice && (
                     <div className="flex flex-nowrap color-weak">
                         <span className="shrink-0 mr-2">
-                            <Icon name="info-circle" size={4} />
+                            <IcInfoCircle size={4} />
                         </span>
                         <span className="flex-1" data-testid="checkout:renew-notice">
                             {renewNotice}
@@ -74,7 +76,7 @@ const Checkout = ({
                 )}
                 <div className="flex flex-nowrap color-weak my-2">
                     <span className="shrink-0 mr-2">
-                        <Icon name="shield" />
+                        <IcShield />
                     </span>
                     <span className="flex-1">{c('Info')
                         .t`Payments are protected with TLS encryption and Swiss privacy laws.`}</span>
@@ -82,7 +84,7 @@ const Checkout = ({
                 {hasGuarantee && (
                     <div className="flex flex-nowrap color-weak">
                         <span className="shrink-0 mr-2">
-                            <Icon name="clock" />
+                            <IcClock />
                         </span>
                         <span className="flex-1">{c('Info').t`30-day money-back guarantee.`}</span>
                     </div>

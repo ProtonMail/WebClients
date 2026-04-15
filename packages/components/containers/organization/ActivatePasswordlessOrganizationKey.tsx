@@ -10,7 +10,6 @@ import { useOrganizationKey } from '@proton/account/organizationKey/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import Icon from '@proton/components/components/icon/Icon';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
@@ -21,6 +20,8 @@ import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { useLoading } from '@proton/hooks';
+import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
+import { IcInfoCircleFilled } from '@proton/icons/icons/IcInfoCircleFilled';
 import { useDispatch } from '@proton/redux-shared-store';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
@@ -109,7 +110,7 @@ const ActivatePasswordlessOrganizationKey = ({ onResetKeys, ...rest }: Props) =>
                         return (
                             <>
                                 {intro}
-                                {getCard(<Icon name="checkmark-circle-filled" className="color-success" />)}
+                                {getCard(<IcCheckmarkCircleFilled className="color-success" />)}
                                 <div className="mt-2 color-weak">
                                     {c('passwordless')
                                         .t`We have verified the authenticity of this sender and invitation.`}
@@ -125,7 +126,7 @@ const ActivatePasswordlessOrganizationKey = ({ onResetKeys, ...rest }: Props) =>
                     return (
                         <>
                             {intro}
-                            {getCard(<Icon name="info-circle-filled" className="color-danger" />)}
+                            {getCard(<IcInfoCircleFilled className="color-danger" />)}
                             <div className="mt-2 color-danger">
                                 {c('passwordless')
                                     .t`We couldn't verify the security of this sender's address key. Sometimes there is a delay in updating the sender's information. Try again later. If you do not trust the validity of this invitation or sender, contact ${BRAND_NAME} Customer Support.`}

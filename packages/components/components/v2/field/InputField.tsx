@@ -6,8 +6,8 @@ import { isFocusable } from 'tabbable';
 import { Input } from '@proton/atoms/Input/Input';
 import { Tooltip, TooltipTypeEnum } from '@proton/atoms/Tooltip/Tooltip';
 import { FormContext } from '@proton/components/components/form/Form';
-import Icon from '@proton/components/components/icon/Icon';
 import useInstance from '@proton/hooks/useInstance';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import type { PolymorphicForwardRefExoticComponent, PolymorphicPropsWithRef } from '@proton/react-polymorphic-types';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
@@ -112,13 +112,13 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
 
     const errorElement = error && typeof error !== 'boolean' && (
         <>
-            <Icon name="exclamation-circle-filled" className="shrink-0 mr-1" />
+            <IcExclamationCircleFilled className="shrink-0 mr-1" />
             <span data-testid={dataTestId ? `error-${dataTestId}` : undefined}>{error}</span>
         </>
     );
     const warningElement = warning && typeof warning !== 'boolean' && (
         <>
-            <Icon name="exclamation-circle-filled" className="shrink-0 mr-1" />
+            <IcExclamationCircleFilled className="shrink-0 mr-1" />
             <span data-testid={dataTestId ? `warning-${dataTestId}` : undefined}>{warning}</span>
         </>
     );
@@ -143,7 +143,7 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
                         isOpen={isTooltipOpen}
                     >
                         <span className="flex shrink-0 p-1">
-                            <Icon name="exclamation-circle-filled" className={iconClassName} />
+                            <IcExclamationCircleFilled className={iconClassName} />
                         </span>
                     </Tooltip>
                 );
@@ -188,6 +188,7 @@ const InputFieldBase = <E extends ElementType = typeof defaultElement>(
                     {hintElement}
                 </label>
             ) : (
+                // eslint-disable-next-line jsx-a11y/label-has-associated-control
                 <label htmlFor={id} ref={labelRef} className="hidden" />
             )}
             <div className={classes.inputContainer}>
