@@ -1,14 +1,17 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { useRoomContext, useTracks } from '@livekit/components-react';
-import type { LocalParticipant, RemoteParticipant } from 'livekit-client';
 import { RemoteTrackPublication, RoomEvent, Track } from 'livekit-client';
+import { c } from 'ttag';
 
+import { useNotifications } from '@proton/components';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
-import { useMeetDispatch } from '@proton/meet/store/hooks';
+import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { selectParticipantDecryptedNameMap } from '@proton/meet/store/slices/meetingInfo';
 import { addParticipantRecording, removeParticipantRecording } from '@proton/meet/store/slices/recordingStatusSlice';
 import { useFlag } from '@proton/unleash/useFlag';
 
+import { useSortedPagedParticipants } from '../../contexts/ParticipantsProvider/SortedParticipantsProvider';
 import { RecordingStatus } from '../../types';
 import { calculateGridLayout } from '../../utils/calculateGridLayout';
 import { useIsLargerThanMd } from '../useIsLargerThanMd';
@@ -31,16 +34,17 @@ const CANVAS_HEIGHT = 1080;
 
 const { mimeType, extension } = getRecordingDetails();
 
-export function useMeetingRecorder(
-    participantDecryptedNameMap: Record<string, string>,
-    pagedParticipants: (RemoteParticipant | LocalParticipant)[]
-) {
+export function useMeetingRecorder() {
     const isMeetMultipleRecordingEnabled = useFlag('MeetMultipleRecording');
 
     const room = useRoomContext();
     const dispatch = useMeetDispatch();
     const isLargerThanMd = useIsLargerThanMd();
     const { reportMeetError } = useMeetErrorReporting();
+    const { createNotification } = useNotifications();
+
+    const pagedParticipants = useSortedPagedParticipants();
+    const participantDecryptedNameMap = useMeetSelector(selectParticipantDecryptedNameMap);
 
     const isNarrowHeight = useIsNarrowHeight();
 
@@ -468,10 +472,11 @@ export function useMeetingRecorder(
                 if (event.data.size > 0 && workerStorageRef.current) {
                     chunkCount++;
                     const writePromise = workerStorageRef.current.addChunk(event.data).catch((error) => {
-                        reportMeetError('Failed to store chunk in OPFS', {
+                        reportMeetError('MeetingRecording Error: Failed to store chunk in OPFS', {
                             context: {
                                 chunkNumber: chunkCount,
                                 error: error instanceof Error ? error.message : String(error),
+                                name: error?.name,
                             },
                         });
 
@@ -490,7 +495,7 @@ export function useMeetingRecorder(
 
             mediaRecorder.onerror = (event) => {
                 const error = (event as ErrorEvent).error;
-                reportMeetError('MediaRecorder error', {
+                reportMeetError('MeetingRecording Error: MediaRecorder error', {
                     context: {
                         message: error?.message ?? 'Unknown MediaRecorder error',
                         name: error?.name,
@@ -525,9 +530,10 @@ export function useMeetingRecorder(
 
             void publishRecordingStatus(RecordingStatus.Started);
         } catch (error) {
-            reportMeetError('Failed to start recording', {
+            reportMeetError('MeetingRecording Error: Failed to start recording', {
                 context: {
                     error: error instanceof Error ? error.message : String(error),
+                    name: error instanceof Error ? error.name : 'UnknownError',
                 },
             });
 
@@ -537,109 +543,134 @@ export function useMeetingRecorder(
         }
     });
 
+    const stopMediaRecorder = async (mediaRecorder: MediaRecorder): Promise<void> => {
+        return new Promise((resolve, reject) => {
+            mediaRecorder.onstop = () => {
+                resolve();
+            };
+
+            mediaRecorder.onerror = (event) => {
+                reject(event.error);
+            };
+
+            mediaRecorder.stop();
+        });
+    };
+
     const stopRecording = useStableCallback(async () => {
-        return new Promise<Blob | null>(async (resolve) => {
-            const mediaRecorder = mediaRecorderRef.current;
+        try {
+            if (mediaRecorderRef.current && recordingState.isRecording) {
+                let blob: Blob | null = null;
 
-            if (mediaRecorder && recordingState.isRecording) {
-                mediaRecorder.onstop = async () => {
-                    let blob: Blob | null = null;
-
-                    await Promise.allSettled(Array.from(pendingChunkWrites.current));
-                    pendingChunkWrites.current.clear();
-
-                    if (!workerStorageRef.current) {
-                        resolve(null);
-
-                        return;
-                    }
-
-                    try {
-                        const file = await workerStorageRef.current.getFile();
-
-                        if (file.type && file.type !== '') {
-                            blob = file;
-                        } else {
-                            blob = file.slice(0, file.size, mimeType);
-                        }
-                    } catch (error) {
-                        reportMeetError('Failed to retrieve file from OPFS', {
-                            context: {
-                                error: error instanceof Error ? error.message : String(error),
-                            },
-                        });
-
-                        // eslint-disable-next-line no-console
-                        console.error('Failed to retrieve file from OPFS:', error);
-                    }
-
-                    stopAllFrameCaptures();
-                    stopRendererWorker();
-                    cleanUpAudioResources();
-                    cleanUpVisibilityListener();
-
-                    setRecordingState({
-                        isRecording: false,
-                        recordedChunks: [],
-                    });
-
-                    if (isMeetMultipleRecordingEnabled) {
-                        dispatch(removeParticipantRecording(room.localParticipant.identity));
-                    }
-
-                    resolve(blob);
-                };
-
-                mediaRecorder.stop();
-
+                await stopMediaRecorder(mediaRecorderRef.current);
                 void publishRecordingStatus(RecordingStatus.Stopped);
+
+                await Promise.allSettled(Array.from(pendingChunkWrites.current));
+                pendingChunkWrites.current.clear();
+
+                if (!workerStorageRef.current) {
+                    throw new Error('Worker storage not found');
+                }
+
+                const file = await workerStorageRef.current.getFile();
+
+                if (file.type && file.type !== '') {
+                    blob = file;
+                } else {
+                    blob = file.slice(0, file.size, mimeType);
+                }
+
+                return blob;
             } else {
                 if (workerStorageRef.current) {
                     workerStorageRef.current.terminate();
                     workerStorageRef.current = null;
                 }
-                resolve(null);
+
+                return null;
             }
-        });
-    });
-
-    const downloadRecording = useStableCallback(async () => {
-        if (!recordingState.isRecording) {
-            return;
-        }
-
-        const blob = await stopRecording();
-
-        if (!blob || blob.size === 0) {
-            reportMeetError('Recording download failed: empty or missing blob', {
-                context: {
-                    blobExists: !!blob,
-                    blobSize: blob?.size ?? 0,
-                },
-            });
-
-            return;
-        }
-
-        try {
-            // Download file from OPFS
-            const url = URL.createObjectURL(blob);
-
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = `meeting-recording-${new Date().toISOString()}.${extension}`;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
         } catch (error) {
-            reportMeetError('Failed to download recording', {
+            reportMeetError('MeetingRecording Error: Failed to stop recording', {
                 context: {
                     error: error instanceof Error ? error.message : String(error),
+                    name: error instanceof Error ? error.name : 'UnknownError',
                 },
             });
 
             // eslint-disable-next-line no-console
-            console.error('Failed to download recording:', error);
+            console.error('Failed to stop recording:', error);
+
+            throw error;
+        } finally {
+            // We always cleanup state even if the recording failed
+            stopAllFrameCaptures();
+            stopRendererWorker();
+            cleanUpAudioResources();
+            cleanUpVisibilityListener();
+
+            setRecordingState({
+                isRecording: false,
+                recordedChunks: [],
+            });
+
+            if (isMeetMultipleRecordingEnabled) {
+                dispatch(removeParticipantRecording(room.localParticipant.identity));
+            }
+        }
+    });
+
+    const downloadRecording = useStableCallback(async () => {
+        try {
+            if (!recordingState.isRecording) {
+                return;
+            }
+
+            const blob = await stopRecording();
+
+            if (!blob || blob.size === 0) {
+                reportMeetError('MeetingRecording Error: Recording download failed: empty or missing blob', {
+                    context: {
+                        blobExists: !!blob,
+                        blobSize: blob?.size ?? 0,
+                    },
+                });
+
+                throw new Error('Recording download failed: empty or missing blob');
+            }
+
+            try {
+                // Download file from OPFS
+                const url = URL.createObjectURL(blob);
+
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `meeting-recording-${new Date().toISOString()}.${extension}`;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            } catch (error) {
+                reportMeetError('MeetingRecording Error: Failed to download recording', {
+                    context: {
+                        error: error instanceof Error ? error.message : String(error),
+                        name: error instanceof Error ? error.name : 'UnknownError',
+                    },
+                });
+
+                // eslint-disable-next-line no-console
+                console.error('Failed to download recording:', error);
+
+                throw error;
+            }
+
+            createNotification({
+                text: c('Info').t`Recording saved`,
+                type: 'success',
+            });
+        } catch (error) {
+            createNotification({
+                text: c('Error').t`Failed to save recording`,
+                type: 'error',
+            });
         }
     });
 
@@ -783,7 +814,6 @@ export function useMeetingRecorder(
     return {
         recordingState,
         startRecording,
-        stopRecording,
         downloadRecording,
     };
 }
