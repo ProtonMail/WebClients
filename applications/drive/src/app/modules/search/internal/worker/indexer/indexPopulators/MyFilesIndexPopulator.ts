@@ -17,7 +17,12 @@ export class MyFilesIndexPopulator extends NodeTreeIndexPopulator {
     }
 
     static async create(treeEventScopeId: TreeEventScopeId, db: SearchDB): Promise<MyFilesIndexPopulator> {
-        const state = await MyFilesIndexPopulator.loadOrCreateState(POPULATOR_ID, treeEventScopeId, db);
+        const state = await MyFilesIndexPopulator.loadOrCreateState(
+            POPULATOR_ID,
+            treeEventScopeId,
+            db,
+            CURRENT_VERSION
+        );
         return new MyFilesIndexPopulator(treeEventScopeId, state.generation);
     }
 
