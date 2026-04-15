@@ -5,8 +5,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Icon from '@proton/components/components/icon/Icon';
 import Loader from '@proton/components/components/loader/Loader';
+import { IcCrossCircle } from '@proton/icons/icons/IcCrossCircle';
 
 import LoadRemoteImageBanner from '../../containers/banner/LoadRemoteImageBanner';
 import useLoadContactImage from '../../hooks/useLoadContactImage';
@@ -42,7 +42,7 @@ const RemoteImage = ({ src, text = c('Action').t`Load image`, autoLoad = false, 
             {display === 'loadDirectFailed' && (
                 <div className="border rounded bg-norm mb-0 flex justify-center items-center p-4">
                     <Tooltip title={c('Tooltip').t`The image could not be loaded`}>
-                        <Icon name="cross-circle" size={6} className="color-danger" />
+                        <IcCrossCircle size={6} className="color-danger" />
                     </Tooltip>
                 </div>
             )}

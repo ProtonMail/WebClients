@@ -9,6 +9,8 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import Option from '@proton/components/components/option/Option';
 import SearchableSelect from '@proton/components/components/selectTwo/SearchableSelect';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
+import { IcFolder } from '@proton/icons/icons/IcFolder';
 import type { IconName } from '@proton/icons/types';
 import { buildTreeview, formatFolderName, hasReachedFolderLimit } from '@proton/shared/lib/helpers/folder';
 import type { Folder, FolderWithSubFolders } from '@proton/shared/lib/interfaces/Folder';
@@ -123,8 +125,7 @@ const FilterActionsFormFolderRow = ({ folders, actions, handleUpdateActions }: P
             selectedFolder = moveTo?.folder.split('/').map((f: string, i: number) => (
                 <Fragment key={f}>
                     {i !== 0 && (
-                        <Icon
-                            name="chevron-down"
+                        <IcChevronDown
                             className="ml-2"
                             style={{
                                 transform: 'rotate(-90deg)',
@@ -132,7 +133,7 @@ const FilterActionsFormFolderRow = ({ folders, actions, handleUpdateActions }: P
                         />
                     )}
                     <span className={clsx(['max-w-full flex-nowrap inline-flex items-center', i !== 0 && 'ml-2'])}>
-                        <Icon name="folder" className="mr-2" />
+                        <IcFolder className="mr-2" />
                         <span className="text-ellipsis" title={f}>
                             {f}
                         </span>
@@ -150,7 +151,7 @@ const FilterActionsFormFolderRow = ({ folders, actions, handleUpdateActions }: P
             data-testid="filter-modal:folder-row"
         >
             <button type="button" className="w-full md:w-1/4 text-left" onClick={toggleSection}>
-                <Icon name="chevron-down" className={clsx([isOpen && 'rotateX-180'])} />
+                <IcChevronDown className={clsx([isOpen && 'rotateX-180'])} />
                 <span className={clsx(['ml-2', actions.error && 'color-danger'])}>{c('Label').t`Move to`}</span>
             </button>
             <div className="flex flex-column flex-nowrap w-full">

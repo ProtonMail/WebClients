@@ -3,7 +3,6 @@ import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
-import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
 import TreeViewContainer from '@proton/components/components/treeview/TreeViewContainer';
 import TreeViewItem from '@proton/components/components/treeview/TreeViewItem';
@@ -11,6 +10,8 @@ import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { useLoading } from '@proton/hooks';
+import { IcArrowsCross } from '@proton/icons/icons/IcArrowsCross';
+import { IcDots } from '@proton/icons/icons/IcDots';
 import { orderFolders, updateLabel } from '@proton/shared/lib/api/labels';
 import { ROOT_FOLDER } from '@proton/shared/lib/constants';
 import { getParents, order } from '@proton/shared/lib/helpers/folder';
@@ -33,7 +34,7 @@ const Header = ({ isSmallViewport }: HeaderProps) => {
     return (
         <div className="flex flex-nowrap w-full border-bottom pb-2 treeview-header">
             <span className="text-bold flex-1">
-                {isSmallViewport ? null : <Icon name="arrows-cross" className="mr-4" />}
+                {isSmallViewport ? null : <IcArrowsCross className="mr-4" />}
                 {c('Header').t`Folders`}
             </span>
             <span className="w-custom hidden md:flex items-center gap-2" style={{ '--w-custom': '10em' }}>
@@ -157,7 +158,7 @@ const FolderTreeViewList = ({ items = [] }: Props) => {
                                 >
                                     <div className="treeview-item-name flex flex-nowrap items-center flex-1">
                                         {viewportWidth['<=small'] ? null : (
-                                            <Icon name="dots" className="mr-4 shrink-0 cursor-grab color-hint" />
+                                            <IcDots className="mr-4 shrink-0 cursor-grab color-hint" />
                                         )}
                                         <FolderIcon
                                             className="mr-2 shrink-0"

@@ -6,7 +6,6 @@ import { useUserSettings } from '@proton/account';
 import { addAddressKeyAction } from '@proton/account/addressKeys/addAddressKeyAction';
 import { addUserKeyAction } from '@proton/account/userKeys/addUserKeyAction';
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
@@ -17,6 +16,7 @@ import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import type { AlgorithmInfo } from '@proton/crypto';
 import useLoading from '@proton/hooks/useLoading';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS, KEYGEN_TYPES } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces/Address';
@@ -84,7 +84,7 @@ const AddKeyModal = ({ existingAlgorithms, target, ...rest }: Props) => {
     const exists = getAlgorithmExists(existingAlgorithms, keyGenConfig);
     const maybeExistsNotice = exists && (
         <div className="border border-weak rounded-lg p-4 flex flex-nowrap items-center mb-3 mt-4">
-            <Icon name="exclamation-circle-filled" className="shrink-0 color-danger" />
+            <IcExclamationCircleFilled className="shrink-0 color-danger" />
             <p className="text-sm color-weak flex-1 pl-4 my-0">
                 {getBoldFormattedText(
                     c('Key generation')
@@ -150,10 +150,7 @@ const AddKeyModal = ({ existingAlgorithms, target, ...rest }: Props) => {
                                         {maybeExistsNotice}
                                         {target.type === 'address' && target.hasOutgoingE2EEForwardings && (
                                             <div className="border border-weak rounded-lg p-4 flex flex-nowrap items-center mb-3 mt-4">
-                                                <Icon
-                                                    name="exclamation-circle-filled"
-                                                    className="shrink-0 color-warning"
-                                                />
+                                                <IcExclamationCircleFilled className="shrink-0 color-warning" />
                                                 <p className="text-sm color-weak flex-1 pl-4 my-0">
                                                     {pausedForwardingNotice}
                                                 </p>

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import Icon from '@proton/components/components/icon/Icon';
+import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
 
 interface Props {
     show: boolean | undefined;
@@ -10,7 +10,7 @@ interface Props {
 const BlockquoteToggle = ({ show = false, onClick = () => {} }: Props) =>
     show ? (
         <button className="proton-toggle-button" type="button" onClick={onClick} id="ellipsis">
-            <Icon name="three-dots-horizontal" size={3.5} className="m-auto" />
+            <IcThreeDotsHorizontal size={3.5} className="m-auto" />
             <span className="proton-sr-only">{c('Info').t`Show original message`}</span>
         </button>
     ) : null;

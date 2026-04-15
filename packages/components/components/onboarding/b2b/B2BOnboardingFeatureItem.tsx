@@ -1,7 +1,6 @@
 import { Href } from '@proton/atoms/Href/Href';
 import type { B2BOnboardingFeature } from '@proton/components/components/onboarding/b2b/interface';
-
-import Icon from '../../icon/Icon';
+import { IcArrowOutSquare } from '@proton/icons/icons/IcArrowOutSquare';
 
 interface Props {
     feature: B2BOnboardingFeature;
@@ -19,7 +18,7 @@ const B2BOnboardingFeatureItem = ({ feature }: Props) => {
                         href={feature.kb.link}
                         className="inline-flex flex-nowrap items-start color-weak gap-1 relative z-up"
                     >
-                        <Icon name="arrow-out-square" className="mt-0.5" /> {feature.kb.title}
+                        <IcArrowOutSquare className="mt-0.5" /> {feature.kb.title}
                     </Href>
                 )}
             </div>

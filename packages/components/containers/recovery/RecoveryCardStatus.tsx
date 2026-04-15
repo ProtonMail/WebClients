@@ -1,6 +1,6 @@
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import Icon from '@proton/components/components/icon/Icon';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
+import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
 
 import RecoveryStatusIcon from './RecoveryStatusIcon';
 import RecoveryStatusText from './RecoveryStatusText';
@@ -39,7 +39,7 @@ const RecoveryCardStatus = ({ type, statusText, callToActions: items = [] }: Rec
                                     size="small"
                                     title={text}
                                 >
-                                    <Icon name="arrow-right" alt={text} />
+                                    <IcArrowRight alt={text} />
                                 </ButtonLike>
                             </li>
                         );

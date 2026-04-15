@@ -1,7 +1,9 @@
 import { c } from 'ttag';
 
-import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
+import { IcEye } from '@proton/icons/icons/IcEye';
+import { IcStar } from '@proton/icons/icons/IcStar';
 import clsx from '@proton/utils/clsx';
 
 import type { Actions } from '../interfaces';
@@ -43,13 +45,13 @@ const FilterActionsFormMarkAsRow = ({ actions, handleUpdateActions }: Props) => 
             <div>
                 {markAs?.read && (
                     <span className="inline-flex items-center mr-8">
-                        <Icon name="eye" className="mr-2" />
+                        <IcEye className="mr-2" />
                         {c('Label').t`Read`}
                     </span>
                 )}
                 {markAs?.starred && (
                     <span className="inline-flex items-center">
-                        <Icon name="star" className="mr-2" />
+                        <IcStar className="mr-2" />
                         {c('Label').t`Starred`}
                     </span>
                 )}
@@ -63,7 +65,7 @@ const FilterActionsFormMarkAsRow = ({ actions, handleUpdateActions }: Props) => 
             data-testid="filter-modal:mark-as-row"
         >
             <button type="button" className="w-full md:w-1/4 text-left" onClick={toggleSection}>
-                <Icon name="chevron-down" className={clsx([isOpen && 'rotateX-180'])} />
+                <IcChevronDown className={clsx([isOpen && 'rotateX-180'])} />
                 <span className={clsx(['ml-2', actions.error && 'color-danger'])}>{c('Label').t`Mark as`}</span>
             </button>
             <div className="flex flex-column w-full">

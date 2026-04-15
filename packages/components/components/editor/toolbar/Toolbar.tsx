@@ -4,10 +4,19 @@ import { Suspense, lazy } from 'react';
 import { c } from 'ttag';
 
 import { Vr } from '@proton/atoms/Vr/Vr';
-import ButtonGroup from '@proton/components/components/button/ButtonGroup';
-import Icon from '@proton/components/components/icon/Icon';
+import { ButtonGroup } from '@proton/components/components/button/ButtonGroup';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
+import { IcEraser } from '@proton/icons/icons/IcEraser';
+import { IcFileImage } from '@proton/icons/icons/IcFileImage';
+import { IcLink } from '@proton/icons/icons/IcLink';
+import { IcListBullets } from '@proton/icons/icons/IcListBullets';
+import { IcListNumbers } from '@proton/icons/icons/IcListNumbers';
+import { IcTextBold } from '@proton/icons/icons/IcTextBold';
+import { IcTextItalic } from '@proton/icons/icons/IcTextItalic';
+import { IcTextQuote } from '@proton/icons/icons/IcTextQuote';
+import { IcTextStrikethrough } from '@proton/icons/icons/IcTextStrikethrough';
+import { IcTextUnderline } from '@proton/icons/icons/IcTextUnderline';
 import { COMPOSER_TOOLBAR_ICON_SIZE } from '@proton/shared/lib/constants';
 import type { MailSettings, UserSettings } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
@@ -91,12 +100,7 @@ const Toolbar = ({
                     title={c('Action').t`Bold`}
                     data-testid="editor-bold"
                 >
-                    <Icon
-                        name="text-bold"
-                        size={COMPOSER_TOOLBAR_ICON_SIZE}
-                        className="m-auto"
-                        alt={c('Action').t`Bold`}
-                    />
+                    <IcTextBold size={COMPOSER_TOOLBAR_ICON_SIZE} className="m-auto" alt={c('Action').t`Bold`} />
                 </ToolbarButton>
                 <ToolbarButton
                     onClick={config.italic.toggle}
@@ -105,12 +109,7 @@ const Toolbar = ({
                     title={c('Action').t`Italic`}
                     data-testid="editor-italic"
                 >
-                    <Icon
-                        name="text-italic"
-                        size={COMPOSER_TOOLBAR_ICON_SIZE}
-                        className="m-auto"
-                        alt={c('Action').t`Italic`}
-                    />
+                    <IcTextItalic size={COMPOSER_TOOLBAR_ICON_SIZE} className="m-auto" alt={c('Action').t`Italic`} />
                 </ToolbarButton>
                 <ToolbarButton
                     onClick={config.underline.toggle}
@@ -119,8 +118,7 @@ const Toolbar = ({
                     title={c('Action').t`Underline`}
                     data-testid="editor-underline"
                 >
-                    <Icon
-                        name="text-underline"
+                    <IcTextUnderline
                         size={COMPOSER_TOOLBAR_ICON_SIZE}
                         className="m-auto"
                         alt={c('Action').t`Underline`}
@@ -133,8 +131,7 @@ const Toolbar = ({
                     title={c('Action').t`Strikethrough`}
                     data-testid="editor-strikethrough"
                 >
-                    <Icon
-                        name="text-strikethrough"
+                    <IcTextStrikethrough
                         size={COMPOSER_TOOLBAR_ICON_SIZE}
                         className="m-auto"
                         alt={c('Action').t`Strikethrough`}
@@ -150,8 +147,7 @@ const Toolbar = ({
                         title={c('Action').t`Unordered list`}
                         data-testid="editor-unordered-list"
                     >
-                        <Icon
-                            name="list-bullets"
+                        <IcListBullets
                             size={COMPOSER_TOOLBAR_ICON_SIZE}
                             className="m-auto rtl:mirror"
                             alt={c('Action').t`Unordered list`}
@@ -164,8 +160,7 @@ const Toolbar = ({
                         title={c('Action').t`Ordered list`}
                         data-testid="editor-ordered-list"
                     >
-                        <Icon
-                            name="list-numbers"
+                        <IcListNumbers
                             size={COMPOSER_TOOLBAR_ICON_SIZE}
                             className="m-auto rtl:mirror"
                             alt={c('Action').t`Ordered list`}
@@ -194,12 +189,7 @@ const Toolbar = ({
                         title={c('Action').t`Quote`}
                         data-testid="editor-quote"
                     >
-                        <Icon
-                            name="text-quote"
-                            size={COMPOSER_TOOLBAR_ICON_SIZE}
-                            className="m-auto"
-                            alt={c('Action').t`Quote`}
-                        />
+                        <IcTextQuote size={COMPOSER_TOOLBAR_ICON_SIZE} className="m-auto" alt={c('Action').t`Quote`} />
                     </ToolbarButton>
                     <ToolbarButton
                         onClick={config.link.showModal}
@@ -207,12 +197,7 @@ const Toolbar = ({
                         title={c('Action').t`Insert link`}
                         data-testid="editor-insert-link"
                     >
-                        <Icon
-                            name="link"
-                            size={COMPOSER_TOOLBAR_ICON_SIZE}
-                            className="m-auto"
-                            alt={c('Action').t`Insert link`}
-                        />
+                        <IcLink size={COMPOSER_TOOLBAR_ICON_SIZE} className="m-auto" alt={c('Action').t`Insert link`} />
                     </ToolbarButton>
                     <ToolbarButton
                         onClick={config.formatting.clear}
@@ -220,8 +205,7 @@ const Toolbar = ({
                         title={c('Action').t`Clear all formatting`}
                         data-testid="editor-clear-formatting"
                     >
-                        <Icon
-                            name="eraser"
+                        <IcEraser
                             size={COMPOSER_TOOLBAR_ICON_SIZE}
                             className="m-auto"
                             alt={c('Action').t`Clear all formatting`}
@@ -235,8 +219,7 @@ const Toolbar = ({
                                 className="shrink-0"
                                 title={c('Action').t`Insert image`}
                             >
-                                <Icon
-                                    name="file-image"
+                                <IcFileImage
                                     size={COMPOSER_TOOLBAR_ICON_SIZE}
                                     className="m-auto"
                                     alt={c('Action').t`Insert image`}

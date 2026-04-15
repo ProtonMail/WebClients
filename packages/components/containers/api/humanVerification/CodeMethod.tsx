@@ -6,8 +6,8 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
 import { Href } from '@proton/atoms/Href/Href';
-import Icon from '@proton/components/components/icon/Icon';
 import { useLoading } from '@proton/hooks';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
@@ -153,7 +153,7 @@ const CodeMethod = ({
                     </Text>
                     <Card bordered={false} rounded={true} className="mb-6 flex gap-2">
                         <div className="shrink-0">
-                            <Icon name="info-circle" className="color-primary" />
+                            <IcInfoCircle className="color-primary" />
                         </div>
                         <div className="flex-1">
                             {c('Info').t`A phone number can only be used to verify one ${BRAND_NAME} account`}

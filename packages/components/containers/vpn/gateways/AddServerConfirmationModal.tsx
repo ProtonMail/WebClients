@@ -2,13 +2,13 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import Form from '@proton/components/components/form/Form';
-import Icon from '@proton/components/components/icon/Icon';
 import Label from '@proton/components/components/label/Label';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import type { ModalStateProps } from '@proton/components/components/modalTwo/useModalState';
+import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
 import type { CountryOptions } from '@proton/payments/core/countries';
 
 import { CountryFlagAndName } from './CountryFlagAndName';
@@ -64,7 +64,7 @@ const AddServerConfirmationModal = ({ totalQuantities, countryOptions, onSubmitD
                     })}
                 </>
                 <div className="flex flex-nowrap mb-4 rounded p-2 bg-weak">
-                    <Icon name="exclamation-triangle-filled" className="color-warning shrink-0" />
+                    <IcExclamationTriangleFilled className="color-warning shrink-0" />
                     <div className="ml-2">
                         {c('Info')
                             .t`It takes 10 days to change a server's country, so make sure your selection is correct.`}

@@ -11,12 +11,14 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
-import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import SearchInput from '@proton/components/components/input/SearchInput';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
-import { useContactGroups } from '@proton/mail/store/labels/hooks';
+import { IcCircleFilled } from '@proton/icons/icons/IcCircleFilled';
+import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
+import { useContactGroups } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import {
     getContactGroupsDelayedSaveChanges,
@@ -255,7 +257,7 @@ const ContactGroupDropdown = ({
                                     data-prevent-arrow-navigation
                                     disabled={!canCreateNewGroup}
                                 >
-                                    <Icon name="users" alt={c('Action').t`Create a new contact group`} /> +
+                                    <IcUsers alt={c('Action').t`Create a new contact group`} /> +
                                 </Button>
                             </div>
                         </Tooltip>
@@ -286,12 +288,7 @@ const ContactGroupDropdown = ({
                                                 indeterminate={model[ID] === INDETERMINATE}
                                                 onChange={handleCheck(ID)}
                                             >
-                                                <Icon
-                                                    name="circle-filled"
-                                                    className="ml-1 mr-2 shrink-0"
-                                                    size={4}
-                                                    color={Color}
-                                                />
+                                                <IcCircleFilled className="ml-1 mr-2 shrink-0" size={4} color={Color} />
                                                 <span className="flex-1 text-ellipsis" title={Name}>
                                                     <Mark value={keyword}>{Name}</Mark>
                                                 </span>
@@ -303,7 +300,7 @@ const ContactGroupDropdown = ({
                         ) : null}
                         {!filteredContactGroups.length && keyword ? (
                             <div className="w-full flex flex-nowrap items-center py-2 px-4">
-                                <Icon name="exclamation-circle" className="mr-2" />
+                                <IcExclamationCircle className="mr-2" />
                                 {c('Info').t`No group found`}
                             </div>
                         ) : null}

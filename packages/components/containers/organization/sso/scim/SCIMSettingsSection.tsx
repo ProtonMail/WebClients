@@ -7,7 +7,6 @@ import { c } from 'ttag';
 import type { SamlState } from '@proton/account';
 import { disableSCIMAction, setupSCIMAction } from '@proton/account/samlSSO/actions';
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import SettingsLayout from '@proton/components/containers/account/SettingsLayout';
@@ -18,6 +17,9 @@ import SettingsSectionWide from '@proton/components/containers/account/SettingsS
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
+import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight';
+import { IcEyeSlash } from '@proton/icons/icons/IcEyeSlash';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { baseUseDispatch } from '@proton/react-redux-store';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
@@ -45,7 +47,7 @@ const PreReq = ({ data, action }: { data: ReactNode; action?: ReactNode }) => {
     return (
         <div className="rounded border bg-weak p-4 flex justify-space-between gap-2 items-center lg:flex-nowrap">
             <div className="flex gap-2 items-start flex-nowrap">
-                <Icon name="info-circle" className="shrink-0" />
+                <IcInfoCircle className="shrink-0" />
                 <p className="m-0">{data}</p>
             </div>
             {action}
@@ -180,7 +182,7 @@ const SCIMSettingsSection = ({ domain, onShowVerifyDomain, hasSsoConfig, scimInf
                                     </SettingsLayoutLeft>
                                     <SettingsLayoutRight className="w-full">
                                         <div className="flex items-center gap-2 mb-4 mt-2">
-                                            <Icon name="eye-slash" className="shrink-0" />
+                                            <IcEyeSlash className="shrink-0" />
                                             <p className="m-0">{c('scim: Info')
                                                 .t`For security reasons, the token is hidden`}</p>
                                         </div>
@@ -196,7 +198,7 @@ const SCIMSettingsSection = ({ domain, onShowVerifyDomain, hasSsoConfig, scimInf
                                                 onClick={() => setRegenerateSCIMModalOpen(true)}
                                                 loading={loadingSCIM}
                                             >
-                                                <Icon name="arrow-rotate-right" className="shrink-0 mr-1" />
+                                                <IcArrowRotateRight className="shrink-0 mr-1" />
                                                 {c('scim: Action').t`Generate new token`}
                                             </Button>
                                         </div>

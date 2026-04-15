@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 import physicalKey from '@proton/styles/assets/img/illustrations/physical-key.svg';
 
 interface Props {
@@ -32,7 +32,7 @@ const RegisterSecurityKeyContent = ({ loading, error, checkbox }: Props) => {
             {checkbox && <div className="mt-2">{checkbox}</div>}
             {error && (
                 <div className="mt-4">
-                    <Banner className="mb-3" variant="norm" icon={<Icon name="exclamation-circle" />}>
+                    <Banner className="mb-3" variant="norm" icon={<IcExclamationCircle />}>
                         {c('fido2: Error').t`Something went wrong registering your security key. Please try again.`}
                     </Banner>
                 </div>

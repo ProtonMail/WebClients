@@ -1,7 +1,7 @@
-import Icon from '@proton/components/components/icon/Icon';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 
 export const PostSignupOneDollarCheck = (
     <span className="rounded-full bg-norm shadow-lifted flex items-center justify-center w-6 h-6">
-        <Icon name="checkmark" size={3} />
+        <IcCheckmark size={3} />
     </span>
 );

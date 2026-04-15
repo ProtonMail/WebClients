@@ -3,10 +3,10 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { useZoomOAuth } from '@proton/calendar/zoomIntegration/useZoomOAuth';
-import Badge from '@proton/components/components/badge/Badge';
-import Icon from '@proton/components/components/icon/Icon';
+import { Badge } from '@proton/components/components/badge/Badge';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import ZoomUpsellModal from '@proton/components/components/upsell/modals/ZoomUpsellModal';
+import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 import ZoomLogo from '@proton/styles/assets/img/brand/zoom.svg';
 
 import { SupportedProviders } from './interface';
@@ -50,7 +50,7 @@ export const ProviderAction = ({ provider, connected }: { provider: SupportedPro
             return (
                 <>
                     <Button size="small" onClick={() => zoomUpsellModal.openModal(true)} className="sm:ml-auto">
-                        <Icon name="upgrade" className="mr-1" />
+                        <IcUpgrade className="mr-1" />
                         {c('Action').t`Connect`}
                     </Button>
                     {zoomUpsellModal.render && <ZoomUpsellModal modalProps={zoomUpsellModal.modalProps} />}

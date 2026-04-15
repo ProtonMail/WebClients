@@ -4,8 +4,9 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
+import { IcPenSquare } from '@proton/icons/icons/IcPenSquare';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 import type { Recipient, SimpleMap } from '@proton/shared/lib/interfaces';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 
@@ -76,7 +77,7 @@ const ContactsWidgetGroupsToolbar = ({
                             disabled={noContactInSelected}
                             data-testid="contacts:compose-contact-group"
                         >
-                            <Icon name="pen-square" alt={c('Action').t`Compose`} />
+                            <IcPenSquare alt={c('Action').t`Compose`} />
                         </Button>
                     </Tooltip>
                 ) : null}
@@ -93,7 +94,7 @@ const ContactsWidgetGroupsToolbar = ({
                         disabled={noSelection}
                         data-testid="contacts:delete-contact-group"
                     >
-                        <Icon name="trash" alt={deleteText} />
+                        <IcTrash alt={deleteText} />
                     </Button>
                 </Tooltip>
             </div>

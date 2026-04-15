@@ -1,4 +1,5 @@
-import Icon from '@proton/components/components/icon/Icon';
+import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
+import { IcCrossCircleFilled } from '@proton/icons/icons/IcCrossCircleFilled';
 import type { Domain } from '@proton/shared/lib/interfaces';
 import { DOMAIN_STATE } from '@proton/shared/lib/interfaces';
 
@@ -10,9 +11,9 @@ export interface Props {
 
 const DomainName = ({ domain }: Props) => {
     const ICONS = {
-        [DOMAIN_STATE_DEFAULT]: <Icon className="color-danger shrink-0" type="error" name="cross-circle-filled" />,
-        [DOMAIN_STATE_VERIFIED]: <Icon className="color-success shrink-0" name="checkmark-circle-filled" />,
-        [DOMAIN_STATE_WARN]: <Icon className="color-warning shrink-0" type="warning" name="cross-circle-filled" />,
+        [DOMAIN_STATE_DEFAULT]: <IcCrossCircleFilled className="color-danger shrink-0" type="error" />,
+        [DOMAIN_STATE_VERIFIED]: <IcCheckmarkCircleFilled className="color-success shrink-0" />,
+        [DOMAIN_STATE_WARN]: <IcCrossCircleFilled className="color-warning shrink-0" type="warning" />,
     };
 
     return (

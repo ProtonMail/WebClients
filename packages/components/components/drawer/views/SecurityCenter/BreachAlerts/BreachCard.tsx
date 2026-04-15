@@ -1,8 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
 import { getBreachIcon } from '@proton/components/containers/credentialLeak/helpers';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import clsx from '@proton/utils/clsx';
 
 import './BreachCard.scss';
@@ -64,7 +64,7 @@ const BreachCard = ({ name, email, password, onClick, style, severity, unread }:
                         )}
                     </span>
                     <span className="flex-0 flex self-stretch color-weak shrink-0">
-                        <Icon name="chevron-right" className="my-auto group-hover:opacity-100" />
+                        <IcChevronRight className="my-auto group-hover:opacity-100" />
                     </span>
                 </span>
             </Button>

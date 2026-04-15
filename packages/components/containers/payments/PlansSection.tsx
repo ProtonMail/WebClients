@@ -8,7 +8,6 @@ import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
 import Loader from '@proton/components/components/loader/Loader';
 import useApi from '@proton/components/hooks/useApi';
 import useLoad from '@proton/components/hooks/useLoad';
@@ -16,6 +15,7 @@ import useVPNServersCount from '@proton/components/hooks/useVPNServersCount';
 import { useAutomaticCurrency } from '@proton/components/payments/client-extensions';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
 import { useLoading } from '@proton/hooks';
+import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
 import {
     type Currency,
     type Cycle,
@@ -113,7 +113,7 @@ const PlansSectionInner = ({ app }: Props) => {
 
         const plan = getPlanFromPlanIDs(plansMap, newPlanIDs);
 
-        openSubscriptionModal({
+        void openSubscriptionModal({
             defaultSelectedProductPlans: selectedProductPlans,
             planIDs: newPlanIDs,
             step: SUBSCRIPTION_STEPS.CHECKOUT,
@@ -194,7 +194,7 @@ const PlansSectionInner = ({ app }: Props) => {
                             openLinkInBrowser(getAppHref(`mail/upgrade`, APPS.PROTONACCOUNT));
                             return;
                         }
-                        openSubscriptionModal({
+                        void openSubscriptionModal({
                             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
                             defaultAudience: audience,
                             defaultSelectedProductPlans: selectedProductPlans,
@@ -205,7 +205,7 @@ const PlansSectionInner = ({ app }: Props) => {
                     }}
                 >
                     {c('Action').t`View plans details`}
-                    <Icon name="arrow-right" className="ml-2 rtl:mirror" />
+                    <IcArrowRight className="ml-2 rtl:mirror" />
                 </Button>
             )}
         </>

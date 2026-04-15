@@ -2,7 +2,7 @@ import { forwardRef } from 'react';
 
 import { c } from 'ttag';
 
-import Icon from '@proton/components/components/icon/Icon';
+import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 
 import type { TopNavbarListItemButtonProps } from './TopNavbarListItemButton';
 import TopNavbarListItemButton from './TopNavbarListItemButton';
@@ -17,7 +17,7 @@ const TopNavbarListItemSearchButtonBase = (
             ref={ref}
             as="button"
             type="button"
-            icon={<Icon name="magnifier" />}
+            icon={<IcMagnifier />}
             title={c('Header').t`Search`}
             text={c('Header').t`Search`}
         />

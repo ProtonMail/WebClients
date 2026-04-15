@@ -9,9 +9,15 @@ import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import Icon from '@proton/components/components/icon/Icon';
 import Checkbox from '@proton/components/components/input/Checkbox';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
+import { IcArrowUpAndRightBig } from '@proton/icons/icons/IcArrowUpAndRightBig';
+import { IcArrowUpFromSquare } from '@proton/icons/icons/IcArrowUpFromSquare';
+import { IcEnvelope } from '@proton/icons/icons/IcEnvelope';
+import { IcThreeDotsHorizontal } from '@proton/icons/icons/IcThreeDotsHorizontal';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
+import { IcUsersMerge } from '@proton/icons/icons/IcUsersMerge';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -109,7 +115,7 @@ const ContactsWidgetToolbar = ({
                             title={c('Action').t`Compose`}
                             data-testid="contacts:compose"
                         >
-                            <Icon name="envelope" alt={c('Action').t`Compose`} />
+                            <IcEnvelope alt={c('Action').t`Compose`} />
                         </Button>
                     </Tooltip>
                 )}
@@ -128,7 +134,7 @@ const ContactsWidgetToolbar = ({
                     size="small"
                     icon
                 >
-                    <Icon name="users" alt={c('Action').t`Add to group`} />
+                    <IcUsers alt={c('Action').t`Add to group`} />
                 </ContactGroupDropdown>
                 {customActions.map((action) => action.render({ contactList, noSelection, onClose, selected }))}
                 <Tooltip title={deleteText}>
@@ -142,7 +148,7 @@ const ContactsWidgetToolbar = ({
                         title={deleteText}
                         data-testid="contacts:delete-contacts"
                     >
-                        <Icon name="trash" alt={deleteText} />
+                        <IcTrash alt={deleteText} />
                     </Button>
                 </Tooltip>
                 <>
@@ -159,7 +165,7 @@ const ContactsWidgetToolbar = ({
                             ref={anchorRef}
                             aria-expanded={isOpen}
                         >
-                            <Icon name="three-dots-horizontal" alt={c('Action').t`More actions`} />
+                            <IcThreeDotsHorizontal alt={c('Action').t`More actions`} />
                         </DropdownButton>
                     </Tooltip>
                     <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
@@ -171,7 +177,7 @@ const ContactsWidgetToolbar = ({
                                 title={c('Action').t`Merge contacts`}
                                 disabled={!canMerge}
                             >
-                                <Icon name="users-merge" className="mr-2" alt={c('Action').t`Merge contacts`} />
+                                <IcUsersMerge className="mr-2" alt={c('Action').t`Merge contacts`} />
                                 <span className="flex-1 my-auto">{c('Action').t`Merge contacts`}</span>
                             </DropdownMenuButton>
                             <div className="dropdown-item-hr" key="hr-1" />
@@ -184,8 +190,7 @@ const ContactsWidgetToolbar = ({
                                         title={c('Action').t`Forward as attachment`}
                                         disabled={noSelection}
                                     >
-                                        <Icon
-                                            name="arrow-up-and-right-big"
+                                        <IcArrowUpAndRightBig
                                             className="mr-2"
                                             alt={c('Action').t`Forward as attachment`}
                                         />
@@ -201,11 +206,7 @@ const ContactsWidgetToolbar = ({
                                 title={c('Action').t`Export selection as .vcf`}
                                 disabled={noSelection}
                             >
-                                <Icon
-                                    name="arrow-up-from-square"
-                                    className="mr-2"
-                                    alt={c('Action').t`Export selection as .vcf`}
-                                />
+                                <IcArrowUpFromSquare className="mr-2" alt={c('Action').t`Export selection as .vcf`} />
                                 <span className="flex-1 my-auto">{c('Action').t`Export selection as .vcf`}</span>
                             </DropdownMenuButton>
                         </DropdownMenu>

@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
-import Icon from '@proton/components/components/icon/Icon';
 import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
+import { IcArrowDown } from '@proton/icons/icons/IcArrowDown';
+import { IcArrowUp } from '@proton/icons/icons/IcArrowUp';
 import clsx from '@proton/utils/clsx';
 
 import type { PlanCardFeatureDefinition } from '../features/interface';
@@ -27,7 +28,7 @@ const SubscriptionCancelPlan = ({ name, features, downgrade = false, className }
                 </span>
             </div>
             <PlanCardFeatureList
-                icon={downgrade ? <Icon name="arrow-up" className="color-success" /> : <Icon name="arrow-down" />}
+                icon={downgrade ? <IcArrowUp className="color-success" /> : <IcArrowDown />}
                 features={features}
             />
         </div>

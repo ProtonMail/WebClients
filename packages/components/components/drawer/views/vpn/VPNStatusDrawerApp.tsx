@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
+import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
 import { getCountryOptions, getLocalizedCountryByAbbr } from '@proton/payments/core/countries';
 import type { ConnectionInformationResult } from '@proton/shared/lib/api/core/connection-information';
 import { VPN_APP_NAME } from '@proton/shared/lib/constants';
@@ -35,7 +35,7 @@ const VPNStatusDrawerApp = ({ userSettings, connectionInformation }: Props) => {
                             <span className="text-semibold block">**.***.***.**</span>
                         </div>
                         <div className="shrink-0 flex">
-                            <Icon name="arrow-right" className="my-auto" />
+                            <IcArrowRight className="my-auto" />
                         </div>
                         <div className="flex-1 text-center">
                             <span className="text-sm block color-weak mb-0.5">{c('Info').t`VPN IP`}</span>
