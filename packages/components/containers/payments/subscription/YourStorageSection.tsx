@@ -5,7 +5,6 @@ import { c } from 'ttag';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import Icon from '@proton/components/components/icon/Icon';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import CalendarLogo from '@proton/components/components/logo/CalendarLogo';
 import DriveLogo from '@proton/components/components/logo/DriveLogo';
@@ -16,6 +15,7 @@ import Meter from '@proton/components/components/progress/Meter';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import { PromotionBanner } from '@proton/components/containers/banner/PromotionBanner';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import {
     APPS,
@@ -71,7 +71,7 @@ const StorageCard = ({
             <div className="pb-4">
                 <div className="text-lg mb-2 flex items-center gap-1">
                     {getBoldFormattedText(c('storage_split: info').t`**${humanUsedSpace}** of ${humanMaxSpace}`)}
-                    {value >= 100 && <Icon name="exclamation-circle-filled" className="color-danger shrink-0" />}
+                    {value >= 100 && <IcExclamationCircleFilled className="color-danger shrink-0" />}
                 </div>
                 <Meter thin aria-hidden="true" value={value} />
             </div>

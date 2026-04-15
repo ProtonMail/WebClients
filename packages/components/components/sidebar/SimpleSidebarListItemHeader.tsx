@@ -1,7 +1,7 @@
 import type { ReactNode, Ref } from 'react';
 import { useRef } from 'react';
 
-import Icon from '@proton/components/components/icon/Icon';
+import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
@@ -93,8 +93,7 @@ const SimpleSidebarListItemHeader = ({
                 >
                     {hasCaret && (
                         <span className={clsx('shrink-0', collapsed && 'flex m-auto')}>
-                            <Icon
-                                name="chevron-down-filled"
+                            <IcChevronDownFilled
                                 className={clsx(['navigation-icon--expand', !toggle && 'rotateZ-270'])}
                             />
                         </span>

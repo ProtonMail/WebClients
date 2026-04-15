@@ -10,7 +10,6 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { ThemeColor } from '@proton/colors/types';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
-import Icon from '@proton/components/components/icon/Icon';
 import AppLink from '@proton/components/components/link/AppLink';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import AccountSessionsSwitcher from '@proton/components/containers/heading/AccountSessionsSwitcher';
@@ -20,6 +19,9 @@ import { SecurityCheckup } from '@proton/components/containers/heading/SecurityC
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import useConfig from '@proton/components/hooks/useConfig';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
+import { IcPassShieldOk } from '@proton/icons/icons/IcPassShieldOk';
+import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { ForkType } from '@proton/shared/lib/authentication/fork';
 import { APPS, APPS_CONFIGURATION, BRAND_NAME } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
@@ -192,7 +194,7 @@ const AddAccountButton = ({
             )}
             {...commonProps}
         >
-            <Icon name="plus" className="shrink-0" />
+            <IcPlus className="shrink-0" />
             {copy}
         </a>
     );
@@ -271,9 +273,9 @@ const UserDropdownContent = () => {
                                 'relative p-2 flex flex-nowrap items-center justify-center gap-2 text-sm'
                             )}
                         >
-                            <Icon className="shrink-0" name="pass-shield-ok" size={6} />
+                            <IcPassShieldOk className="shrink-0" size={6} />
                             <div>{c('Safety review').t`Review account safety`}</div>
-                            <Icon className="shrink-0 rtl:mirror" name="chevron-right" size={4} />
+                            <IcChevronRight className="shrink-0 rtl:mirror" size={4} />
                         </AppLink>
                     );
                 }}

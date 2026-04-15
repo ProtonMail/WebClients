@@ -1,6 +1,7 @@
 import { c, msgid } from 'ttag';
 
-import Icon from '@proton/components/components/icon/Icon';
+import { IcBrandProtonVpn } from '@proton/icons/icons/IcBrandProtonVpn';
+import { IcFilingCabinet } from '@proton/icons/icons/IcFilingCabinet';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 import type { Member, Organization } from '@proton/shared/lib/interfaces';
 
@@ -17,7 +18,7 @@ const MemberFeatures = ({ member, organization }: Props) => {
             {(organization?.MaxSpace || 0) > 0 ? (
                 <span className="mb-2 flex flex-nowrap">
                     <span className="shrink-0 flex mt-0.5">
-                        <Icon name="filing-cabinet" />
+                        <IcFilingCabinet />
                     </span>
                     <span className="flex-1 pl-1" data-testid="users-and-addresses-table:storage">
                         {humanSize({ bytes: UsedSpace, unit: 'GB' })} / {humanSize({ bytes: MaxSpace, unit: 'GB' })}
@@ -27,7 +28,7 @@ const MemberFeatures = ({ member, organization }: Props) => {
             {(organization?.MaxVPN || 0) > 0 ? (
                 <span className="flex flex-nowrap">
                     <span className="shrink-0 flex mt-0.5">
-                        <Icon name="brand-proton-vpn" />
+                        <IcBrandProtonVpn />
                     </span>
                     <span className="flex-1 pl-1" data-testid="users-and-addresses-table:vpnConnections">
                         {c('Feature').ngettext(msgid`${MaxVPN} VPN connection`, `${MaxVPN} VPN connections`, MaxVPN)}

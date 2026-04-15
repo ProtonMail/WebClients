@@ -6,7 +6,6 @@ import { c } from 'ttag';
 
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Href } from '@proton/atoms/Href/Href';
-import Icon from '@proton/components/components/icon/Icon';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { Pagination, usePaginationAsync } from '@proton/components/components/pagination';
 import TimeIntl from '@proton/components/components/time/TimeIntl';
@@ -16,6 +15,7 @@ import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
+import { IcEye } from '@proton/icons/icons/IcEye';
 import { getCountryOptions } from '@proton/payments/core/countries';
 import { getVPNLogDownload, getVPNLogs, getVpnEventTypes } from '@proton/shared/lib/api/b2bevents';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
@@ -320,7 +320,7 @@ export const VPNEvents = () => {
 
         return (
             <div className="flex flex-row items-center">
-                <Icon name="eye" />
+                <IcEye />
                 <span className="ml-2">{timeOfEvent}</span>
             </div>
         );

@@ -1,6 +1,6 @@
-import Icon from '@proton/components/components/icon/Icon';
 import CustomLogo from '@proton/components/components/logo/CustomLogo';
 import Logo from '@proton/components/components/logo/Logo';
+import { IcAppSwitch } from '@proton/icons/icons/IcAppSwitch';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import './SidebarPreview.scss';
@@ -55,7 +55,7 @@ const SidebarPreview = ({ imageUrl, organizationName, organizationNameDataTestId
                 className="w-custom flex items-center justify-center shrink-0 ratio-square"
                 style={{ '--w-custom': '2.25rem' }}
             >
-                <Icon name="app-switch" className="shrink-0" style={{ color: colors[variant].icon }} size={6} />
+                <IcAppSwitch className="shrink-0" style={{ color: colors[variant].icon }} size={6} />
             </div>
         </div>
     );

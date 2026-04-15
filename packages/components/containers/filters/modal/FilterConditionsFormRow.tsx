@@ -5,12 +5,14 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Icon from '@proton/components/components/icon/Icon';
 import Input from '@proton/components/components/input/Input';
 import Radio from '@proton/components/components/input/Radio';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
+import { IcCross } from '@proton/icons/icons/IcCross';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 import clsx from '@proton/utils/clsx';
 
 import { COMPARATORS, TYPES, getComparatorLabels, getConditionTypeLabels } from '../constants';
@@ -145,7 +147,7 @@ const FilterConditionsFormRow = ({
                     {token}
                 </span>
                 <button type="button" className="flex shrink-0 ml-2" onClick={() => onRemoveToken(i)}>
-                    <Icon name="cross" size={2.75} />
+                    <IcCross size={2.75} />
                     <span className="sr-only">{c('Action').t`Remove this label`}</span>
                 </button>
             </span>
@@ -208,6 +210,7 @@ const FilterConditionsFormRow = ({
             const comparatorLabel = getComparatorLabels(comparator);
             const values = condition?.values?.map((v, i) => {
                 return i > 0 ? (
+                    // eslint-disable-next-line react/no-array-index-key
                     <Fragment key={`${v}${i}`}>
                         {` `}
                         {c('Label').t`or`}
@@ -215,6 +218,7 @@ const FilterConditionsFormRow = ({
                         <strong>{v}</strong>
                     </Fragment>
                 ) : (
+                    // eslint-disable-next-line react/no-array-index-key
                     <strong key={`${v}${i}`}>{v}</strong>
                 );
             });
@@ -249,7 +253,7 @@ const FilterConditionsFormRow = ({
                 data-testid={`filter-modal:condition-${conditionIndex}`}
             >
                 <button type="button" className={clsx(['w-1/4 text-left'])} onClick={toggleSection}>
-                    <Icon name="chevron-down" className={clsx([isOpen && 'rotateX-180'])} />
+                    <IcChevronDown className={clsx([isOpen && 'rotateX-180'])} />
                     <span className={clsx(['ml-2', condition.error && 'color-danger'])}>{label}</span>
                 </button>
                 <div className={clsx(['flex flex-column w-full'])}>
@@ -306,7 +310,7 @@ const FilterConditionsFormRow = ({
                     <div className="shrink-0">
                         <Tooltip title={c('Action').t`Delete`}>
                             <Button onClick={() => handleDelete(conditionIndex)} icon>
-                                <Icon name="trash" alt={c('Action').t`Delete`} />
+                                <IcTrash alt={c('Action').t`Delete`} />
                             </Button>
                         </Tooltip>
                     </div>

@@ -8,8 +8,8 @@ import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownButton from '@proton/components/components/dropdown/DropdownButton';
 import type { DropdownButtonProps } from '@proton/components/components/dropdown/DropdownButton';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
-import Icon from '@proton/components/components/icon/Icon';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
+import { IcCircleFilled } from '@proton/icons/icons/IcCircleFilled';
 import { ACCENT_COLORS_MAP, getColorName } from '@proton/shared/lib/colors';
 import { omit } from '@proton/shared/lib/helpers/object';
 import clsx from '@proton/utils/clsx';
@@ -69,9 +69,8 @@ const ColorPicker = ({ color = '#5252CC', onChange, displayColorName = true, onC
             >
                 <span className="flex-1 text-left flex flex-nowrap items-center gap-2">
                     <span className="sr-only">{c('info').t`Selected color:`}</span>
-                    <Icon
+                    <IcCircleFilled
                         className="shrink-0"
-                        name="circle-filled"
                         size={7}
                         color={iconColor}
                         alt={displayColorName ? undefined : colorName}

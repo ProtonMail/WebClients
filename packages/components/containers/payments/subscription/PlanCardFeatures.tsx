@@ -16,6 +16,8 @@ import WalletLogo from '@proton/components/components/logo/WalletLogo';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
+import { IcCross } from '@proton/icons/icons/IcCross';
+import { IcFire } from '@proton/icons/icons/IcFire';
 import type { IconSize } from '@proton/icons/types';
 import { PLANS } from '@proton/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
@@ -59,7 +61,7 @@ const FeatureList = ({
                 }
 
                 if (feature.highlight && highlight) {
-                    return <Icon size={iconSize} name="fire" className="color-warning" />;
+                    return <IcFire size={iconSize} className="color-warning" />;
                 }
 
                 if (feature.included) {
@@ -74,7 +76,7 @@ const FeatureList = ({
                     );
                 }
 
-                return <Icon size={iconSize} name="cross" className="mt-0.5" />;
+                return <IcCross size={iconSize} className="mt-0.5" />;
             })();
 
             return (

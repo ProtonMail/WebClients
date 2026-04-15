@@ -7,8 +7,8 @@ import { genAccentShades } from '@proton/colors';
 import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import Icon from '@proton/components/components/icon/Icon';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
+import { IcCrossSmall } from '@proton/icons/icons/IcCrossSmall';
 import clsx from '@proton/utils/clsx';
 
 import type { LabelDescription } from './LabelStack';
@@ -90,7 +90,7 @@ const LabelStackItem = ({ label, showDelete = false, showDropdown = false }: Pro
                     title={`${c('Action').t`Remove`} ${label.title}`}
                     data-testid="label-item:close-button"
                 >
-                    <Icon name="cross-small" className="label-stack-item-delete-icon" alt={c('Action').t`Remove`} />
+                    <IcCrossSmall className="label-stack-item-delete-icon" alt={c('Action').t`Remove`} />
                 </button>
             )}
 

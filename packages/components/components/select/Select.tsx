@@ -1,9 +1,9 @@
 import type { DetailedHTMLProps, OptionHTMLAttributes, Ref, SelectHTMLAttributes } from 'react';
 import { forwardRef, useState } from 'react';
 
-import Icon from '@proton/components/components/icon/Icon';
 import useInput from '@proton/components/components/input/useInput';
 import ErrorZone from '@proton/components/components/text/ErrorZone';
+import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
 import clsx from '@proton/utils/clsx';
 import generateUID from '@proton/utils/generateUID';
 
@@ -42,6 +42,7 @@ const buildGroupedOptions = (options: OptionProps[] = []) => {
                 }, {})
             ).map(([group, options], index) => {
                 return (
+                    // eslint-disable-next-line react/no-array-index-key
                     <optgroup key={`optionGroup_${index}`} label={group}>
                         {buildOptions(options, `optionGroup_${index}`)}
                     </optgroup>
@@ -100,7 +101,7 @@ const Select = forwardRef<HTMLSelectElement, Props>(
                         >
                             {hasGroup ? buildGroupedOptions(options) : buildOptions(options)}
                         </select>
-                        <Icon name="chevron-down-filled" className="absolute pointer-events-none right-icon" />
+                        <IcChevronDownFilled className="absolute pointer-events-none right-icon" />
                     </span>
 
                     {hasError && <ErrorZone id={uid}>{error}</ErrorZone>}
@@ -109,5 +110,7 @@ const Select = forwardRef<HTMLSelectElement, Props>(
         );
     }
 );
+
+Select.displayName = 'Select';
 
 export default Select;

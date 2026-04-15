@@ -6,10 +6,10 @@ import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { ProtonLoader } from '@proton/atoms/ProtonLoader/ProtonLoader';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Icon from '@proton/components/components/icon/Icon';
 import TextLoader from '@proton/components/components/loader/TextLoader';
 import useConfig from '@proton/components/hooks/useConfig';
 import useDocumentTitle from '@proton/components/hooks/useDocumentTitle';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { closeDrawerFromChildApp, getIsAuthorizedApp } from '@proton/shared/lib/drawer/helpers';
@@ -67,7 +67,7 @@ const LoaderPage = ({ documentTitle = '', text, loaderClassName = '' }: Props) =
                 <div className="header pl-4 flex justify-end items-center">
                     <Tooltip title={c('Action').t`Close`}>
                         <Button icon color="weak" shape="ghost" onClick={handleCloseIFrame}>
-                            <Icon name="cross-big" size={4} />
+                            <IcCrossBig alt={c('Action').t`Close`} size={4} />
                         </Button>
                     </Tooltip>
                 </div>

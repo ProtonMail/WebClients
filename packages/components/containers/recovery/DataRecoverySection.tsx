@@ -8,7 +8,6 @@ import { userSettingsThunk } from '@proton/account/userSettings';
 import { useGetUserSettings, useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Toggle from '@proton/components/components/toggle/Toggle';
@@ -20,6 +19,7 @@ import useHasOutdatedRecoveryFile from '@proton/components/hooks/useHasOutdatedR
 import useIsMnemonicAvailable from '@proton/components/hooks/useIsMnemonicAvailable';
 import useRecoverySecrets from '@proton/components/hooks/useRecoverySecrets';
 import { useLoading } from '@proton/hooks';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import { CacheType } from '@proton/redux-utilities';
 import { updateDeviceRecovery } from '@proton/shared/lib/api/settingsRecovery';
@@ -165,11 +165,7 @@ export const DataRecoverySection = () => {
                         <>
                             {user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED && (
                                 <p className="color-danger">
-                                    <Icon
-                                        className="mr-2 float-left mt-1"
-                                        name="exclamation-circle-filled"
-                                        size={3.5}
-                                    />
+                                    <IcExclamationCircleFilled className="mr-2 float-left mt-1" size={3.5} />
                                     {c('Warning')
                                         .t`Your recovery phrase is outdated. It can't recover new data if you reset your password again.`}
                                 </p>
@@ -298,11 +294,7 @@ export const DataRecoverySection = () => {
                             </SettingsLayout>
                             {hasOutdatedRecoveryFile && (
                                 <p className="color-danger flex flex-nowrap">
-                                    <Icon
-                                        className="mr-2 shrink-0 mt-0.5"
-                                        name="exclamation-circle-filled"
-                                        size={3.5}
-                                    />
+                                    <IcExclamationCircleFilled className="mr-2 shrink-0 mt-0.5" size={3.5} />
                                     <span className="flex-1">{c('Warning')
                                         .t`Your recovery file is outdated. It can't recover new data if you reset your password again.`}</span>
                                 </p>

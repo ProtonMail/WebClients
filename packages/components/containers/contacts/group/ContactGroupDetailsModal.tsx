@@ -3,11 +3,15 @@ import { c, msgid } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Icon from '@proton/components/components/icon/Icon';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
-import { useContactGroups } from '@proton/mail/store/labels/hooks';
+import { IcArrowUpFromSquare } from '@proton/icons/icons/IcArrowUpFromSquare';
+import { IcPen } from '@proton/icons/icons/IcPen';
+import { IcPenSquare } from '@proton/icons/icons/IcPenSquare';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
+import { useContactGroups } from '@proton/mail/store/labels/hooks';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
@@ -94,7 +98,7 @@ const ContactGroupDetailsModal = ({
                 <div className="mr-2">
                     <Tooltip title={c('Action').t`Compose`}>
                         <Button color="weak" shape="ghost" icon onClick={() => handleComposeSingle(recipient)}>
-                            <Icon name="pen-square" alt={c('Action').t`Compose`} />
+                            <IcPenSquare alt={c('Action').t`Compose`} />
                         </Button>
                     </Tooltip>
                 </div>
@@ -111,7 +115,7 @@ const ContactGroupDetailsModal = ({
                             style={{ backgroundColor: group?.Color ?? '', '--w-custom': '2.125rem' }}
                             className="rounded w-custom text-center shrink-0"
                         >
-                            <Icon color="white" name="users" />
+                            <IcUsers color="white" />
                         </span>
                         <span className="text-ellipsis" title={group?.Name}>
                             {group?.Name}
@@ -129,7 +133,7 @@ const ContactGroupDetailsModal = ({
                             className="inline-flex ml-2"
                             data-testid="group-summary:edit"
                         >
-                            <Icon name="pen" alt={c('Action').t`Edit`} />
+                            <IcPen alt={c('Action').t`Edit`} />
                         </Button>
                     </Tooltip>,
                     <Tooltip title={c('Action').t`Export contact group`}>
@@ -142,7 +146,7 @@ const ContactGroupDetailsModal = ({
                             className="inline-flex ml-2"
                             data-testid="group-summary:export"
                         >
-                            <Icon name="arrow-up-from-square" alt={c('Action').t`Export contact group`} />
+                            <IcArrowUpFromSquare alt={c('Action').t`Export contact group`} />
                         </Button>
                     </Tooltip>,
                     <Tooltip title={c('Action').t`Delete`}>
@@ -155,7 +159,7 @@ const ContactGroupDetailsModal = ({
                             className="inline-flex ml-2"
                             data-testid="group-summary:delete"
                         >
-                            <Icon name="trash" alt={c('Action').t`Delete`} />
+                            <IcTrash alt={c('Action').t`Delete`} />
                         </Button>
                     </Tooltip>,
                 ]}
@@ -192,7 +196,7 @@ const ContactGroupDetailsModal = ({
                         disabled={loading}
                         className="inline-flex justify-center"
                     >
-                        <Icon name="pen-square" className="self-center mr-2" alt={c('Action').t`New message`} />
+                        <IcPenSquare className="self-center mr-2" alt={c('Action').t`New message`} />
                         {c('Action').t`New message`}
                     </Button>
                 )}

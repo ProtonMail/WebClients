@@ -1,4 +1,5 @@
 import Icon from '@proton/components/components/icon/Icon';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import type { AuthLog } from '@proton/shared/lib/authlog';
 import { AuthLogStatus } from '@proton/shared/lib/authlog';
 import clsx from '@proton/utils/clsx';
@@ -12,7 +13,7 @@ interface Props {
 const getIcon = (status: AuthLogStatus, isB2B: boolean) => {
     switch (status) {
         case AuthLogStatus.Attempt:
-            return <Icon className="align-text-bottom color-warning" name="exclamation-circle-filled" />;
+            return <IcExclamationCircleFilled className="align-text-bottom color-warning" />;
         case AuthLogStatus.Failure:
             return (
                 <Icon

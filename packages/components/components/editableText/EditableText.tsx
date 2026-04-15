@@ -4,6 +4,8 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import Icon from '@proton/components/components/icon/Icon';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
@@ -63,7 +65,7 @@ const EditableText = ({
                         <Input autoFocus value={inputValue} onChange={handleChangeInputValue} {...rest} />
                     </div>
                     <Button icon type="submit" className="ml-2" title={c('Action').t`Confirm`}>
-                        <Icon name="checkmark" alt={c('Action').t`Confirm`} />
+                        <IcCheckmark alt={c('Action').t`Confirm`} />
                     </Button>
                 </>
             )}
@@ -76,7 +78,7 @@ const EditableText = ({
                 className="ml-2"
                 title={c('Action').t`Close`}
             >
-                <Icon name="cross" alt={c('Action').t`Close`} />
+                <IcCross alt={c('Action').t`Close`} />
             </Button>
         </form>
     ) : (

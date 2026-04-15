@@ -4,9 +4,9 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import clsx from '@proton/utils/clsx';
-
-import Icon from '../icon/Icon';
 
 import './UncontainedWrapper.scss';
 
@@ -69,7 +69,7 @@ const UncontainedWrapper = ({ children, className, innerClassName, ...rest }: Un
                 <div className="uncontained-wrapper-prev-button-container absolute left-0 z-up bg-norm shrink-0">
                     <Tooltip title={c('Action').t`Display previous`}>
                         <Button shape="ghost" icon onClick={() => scroll(-1)}>
-                            <Icon name="chevron-left" className="rtl:mirror" alt={c('Action').t`Display previous`} />
+                            <IcChevronLeft className="rtl:mirror" alt={c('Action').t`Display previous`} />
                         </Button>
                     </Tooltip>
                 </div>
@@ -86,7 +86,7 @@ const UncontainedWrapper = ({ children, className, innerClassName, ...rest }: Un
                 <div className="uncontained-wrapper-next-button-container absolute z-up bg-norm shrink-0">
                     <Tooltip title={c('Action').t`Display next`}>
                         <Button shape="ghost" icon onClick={() => scroll(1)}>
-                            <Icon name="chevron-right" className="rtl:mirror" alt={c('Action').t`Display next`} />
+                            <IcChevronRight className="rtl:mirror" alt={c('Action').t`Display next`} />
                         </Button>
                     </Tooltip>
                 </div>
