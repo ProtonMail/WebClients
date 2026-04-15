@@ -1,6 +1,7 @@
 import { c, msgid } from 'ttag';
 
 import { showAggregatedErrorNotification } from '../../utils/errorHandling/errorNotifications';
+import { getEllipsedName } from '../../utils/intl/getEllipsedName';
 import { useListNotifications } from '../../utils/useListNotifications';
 
 /**
@@ -16,11 +17,14 @@ export const useCopiedItemsNotification = () => {
     ) => {
         createSuccessMessage(
             copies,
-            (name: string) => c('Notification').t`"${name}" successfully copied`,
+            (name: string) => {
+                const ellipsedName = getEllipsedName(name);
+                return c('Notification').t`"${ellipsedName}" copied`;
+            },
             (numberOfItems: number) =>
                 c('Notification').ngettext(
-                    msgid`${numberOfItems} item successfully copied`,
-                    `${numberOfItems} items successfully copied`,
+                    msgid`${numberOfItems} item copied`,
+                    `${numberOfItems} items copied`,
                     numberOfItems
                 ),
             undoAction
@@ -41,7 +45,10 @@ export const useCopiedItemsNotification = () => {
     const showUndoCopyNotification = (deletedCopies: { name: string; uid: string }[], errors: { error: string }[]) => {
         createSuccessMessage(
             deletedCopies,
-            (name: string) => c('Notification').t`Copy of "${name}" moved to trash`,
+            (name: string) => {
+                const ellipsedName = getEllipsedName(name);
+                return c('Notification').t`Copy of "${ellipsedName}" moved to trash`;
+            },
             (numberOfItems: number) =>
                 c('Notification').ngettext(
                     msgid`${numberOfItems} copied item moved to trash`,
