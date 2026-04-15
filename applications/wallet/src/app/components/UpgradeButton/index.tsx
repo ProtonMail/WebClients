@@ -2,8 +2,8 @@ import { c } from 'ttag';
 
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
-import { Icon } from '@proton/components';
 import useUid from '@proton/components/hooks/useUid';
+import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 
 import { Button } from '../../atoms';
 import { useUpsellModal } from '../../hooks/useUpsellModal';
@@ -28,9 +28,8 @@ export const UpgradeButton = () => {
             className="my-2 button-lighter button-promotion button-promotion--icon-gradient ml-2"
             onClick={openUpsellModal}
         >
-            <Icon
+            <IcUpgrade
                 alt={c('Action').t`Upgrade`}
-                name="upgrade"
                 className="mr-2"
                 size={5}
                 style={{ fill: `url(#${uid}) var(--text-norm)` }}

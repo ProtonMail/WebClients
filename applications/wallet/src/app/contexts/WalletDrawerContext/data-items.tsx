@@ -7,12 +7,16 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import type { WasmApiExchangeRate, WasmNetwork } from '@proton/andromeda';
 import { Href } from '@proton/atoms/Href/Href';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Icon, Info, MiddleEllipsis, useModalState } from '@proton/components';
+import { Info, MiddleEllipsis, useModalState } from '@proton/components';
+import { IcBolt } from '@proton/icons/icons/IcBolt';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
+import { IcPencil } from '@proton/icons/icons/IcPencil';
+import { IcPlusCircle } from '@proton/icons/icons/IcPlusCircle';
 import { SECOND } from '@proton/shared/lib/constants';
 import clsx from '@proton/utils/clsx';
-import type { TransactionData } from '@proton/wallet/types';
 import { COMPUTE_BITCOIN_UNIT } from '@proton/wallet/constants/bitcoin';
 import { useUserWalletSettings } from '@proton/wallet/store/hooks';
+import type { TransactionData } from '@proton/wallet/types';
 
 import { Button, ButtonLike, CoreButton } from '../../atoms';
 import { MaybeHiddenAmount } from '../../atoms/MaybeHiddenAmount';
@@ -112,7 +116,7 @@ export const RecipientsDataItem = ({
                                     </div>
                                 )}
 
-                                <Icon className="ml-2 shrink-0" name="chevron-right" />
+                                <IcChevronRight className="ml-2 shrink-0" />
                             </button>
                         </li>
                     );
@@ -149,7 +153,7 @@ export const SendersDataItem = ({ tx, onClickEditSender }: TxDataListItemProps &
                         data-testid="modal:edit"
                         onClick={() => onClickEditSender()}
                     >
-                        <Icon name="pencil" size={5} alt={c('Action').t`Edit`} />
+                        <IcPencil size={5} alt={c('Action').t`Edit`} />
                     </CoreButton>
                 </Tooltip>
             )}
@@ -216,7 +220,7 @@ export const StatusDataItem = ({ tx, onBoost }: TxDataListItemProps & { onBoost:
                             setBoostTransactionModal(true);
                         }}
                     >
-                        {c('Wallet transaction').t`Boost priority`} <Icon className="ml-1" name="bolt" />
+                        {c('Wallet transaction').t`Boost priority`} <IcBolt className="ml-1" />
                     </Button>
 
                     {renderBoostTransactionModal && tx && (
@@ -248,7 +252,7 @@ export const NoteDataItem = ({ tx, onClick }: TxDataListItemProps & { onClick: (
                                 data-testid="modal:edit"
                                 onClick={() => onClick(tx)}
                             >
-                                <Icon name="pencil" size={5} alt={c('Action').t`Edit`} />
+                                <IcPencil size={5} alt={c('Action').t`Edit`} />
                             </CoreButton>
                         </Tooltip>
                     </>
@@ -267,7 +271,7 @@ export const NoteDataItem = ({ tx, onClick }: TxDataListItemProps & { onClick: (
                             }
                         }}
                     >
-                        <Icon name="plus-circle" className="mr-1" />
+                        <IcPlusCircle className="mr-1" />
                         {c('Wallet transaction').t`Add note`}
                     </CoreButton>
                 )}

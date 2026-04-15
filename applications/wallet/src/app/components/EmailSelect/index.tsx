@@ -5,7 +5,8 @@ import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcBrandBitcoin } from '@proton/icons/icons/IcBrandBitcoin';
+import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 import { ANONYMOUS_SENDER_ADDRESS_ID } from '@proton/wallet/constants/wallet';
 
 import { Select } from '../../atoms';
@@ -44,14 +45,14 @@ export const EmailSelect = ({ value, onChange, extraOptions }: Props) => {
 
         return walletAccountEmails?.includes(option.Email) ? (
             <Tooltip title={c('Wallet invite').t`This email can receive Bitcoin via Email`}>
-                <Icon name="brand-bitcoin" className="ml-auto color-hint" />
+                <IcBrandBitcoin className="ml-auto color-hint" />
             </Tooltip>
         ) : (
             <Tooltip
                 title={c('Wallet invite')
                     .t`Warning: the recipient will not be able to send Bitcoin via Email to this email.`}
             >
-                <Icon name="exclamation-circle" className="ml-auto color-hint" />
+                <IcExclamationCircle className="ml-auto color-hint" />
             </Tooltip>
         );
     };

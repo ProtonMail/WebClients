@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Icon } from '@proton/components';
+import { IcNote } from '@proton/icons/icons/IcNote';
+import { IcSpeechBubble } from '@proton/icons/icons/IcSpeechBubble';
 
 interface Props {
     handleClick: () => void;
@@ -24,7 +25,7 @@ export const NoteOrMessage = ({ handleClick, value, type }: Props) => {
                         '--h-custom': '2rem',
                     }}
                 >
-                    <Icon name={type === 'message' ? 'speech-bubble' : 'note'} className="m-auto" />
+                    {type === 'message' ? <IcSpeechBubble className="m-auto" /> : <IcNote className="m-auto" />}
                 </div>
                 <div className="flex flex-column gap-1 text-left">
                     <span className="color-weak">

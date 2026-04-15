@@ -6,6 +6,7 @@ import type { WasmApiExchangeRate, WasmNetwork } from '@proton/andromeda';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Icon } from '@proton/components';
 import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import type { IconName } from '@proton/icons/types';
 import { COMPUTE_BITCOIN_UNIT, MIN_FEE_RATE, PriorityTargetBlock } from '@proton/wallet/constants/bitcoin';
 import { useUserWalletSettings } from '@proton/wallet/store/hooks';
@@ -108,7 +109,7 @@ export const FeesModal = ({
                                 modalProps.onClose?.();
                             }}
                         >
-                            <Icon className="modal-close-icon" name="cross-big" alt={c('Action').t`Close`} />
+                            <IcCrossBig className="modal-close-icon" alt={c('Action').t`Close`} />
                         </CoreButton>
                     </Tooltip>
                 </div>

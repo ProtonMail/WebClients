@@ -5,15 +5,15 @@ import { c } from 'ttag';
 
 import type { WasmApiCountry } from '@proton/andromeda';
 import { Href } from '@proton/atoms/Href/Href';
-import { Icon } from '@proton/components';
 import CountrySelect from '@proton/components/components/country/CountrySelect';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { WALLET_APP_NAME } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
-import { WalletThemeOption } from '@proton/wallet/utils/theme';
 import { useCountriesByProvider } from '@proton/wallet/store/hooks';
+import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
-import { Button, SearchableSelect } from '../../../atoms';
 import type { CoreSearchableSelectProps } from '../../../atoms';
+import { Button, SearchableSelect } from '../../../atoms';
 import { ModalParagraph } from '../../../atoms/ModalParagraph';
 import { useWalletTheme } from '../../Layout/Theme/WalletThemeProvider';
 
@@ -31,19 +31,13 @@ export const Location = ({ onConfirm }: Props) => {
     const allCountryOptions = allCountries.map((country) => ({ countryCode: country.Code, countryName: country.Name }));
 
     const rampLink = (
-        <Href href="https://rampnetwork.com" key="eslint-autofix-BBCFBB">{c('bitcoin buy').t`Ramp Network`}</Href>
+        <Href href="https://rampnetwork.com" key="ramp-network-link">{c('bitcoin buy').t`Ramp Network`}</Href>
     );
-    const banxaLink = <Href href="https://banxa.com" key="eslint-autofix-86BACE">{c('bitcoin buy').t`Banxa`}</Href>;
-    const moonpayLink = (
-        <Href href="https://moonpay.com" key="eslint-autofix-905EE8">{c('bitcoin buy').t`MoonPay`}</Href>
-    );
-    const binanceLink = (
-        <Href href="https://binance.com" key="eslint-autofix-C5DDB6">{c('bitcoin buy').t`Binance`}</Href>
-    );
-    const coinbaseLink = (
-        <Href href="https://coinbase.com" key="eslint-autofix-97ECDE">{c('bitcoin buy').t`Coinbase`}</Href>
-    );
-    const krakenLink = <Href href="https://kraken.com" key="eslint-autofix-BE2CAD">{c('bitcoin buy').t`Kraken`}</Href>;
+    const banxaLink = <Href href="https://banxa.com" key="banxa-link">{c('bitcoin buy').t`Banxa`}</Href>;
+    const moonpayLink = <Href href="https://moonpay.com" key="moonpay-link">{c('bitcoin buy').t`MoonPay`}</Href>;
+    const binanceLink = <Href href="https://binance.com" key="binance-link">{c('bitcoin buy').t`Binance`}</Href>;
+    const coinbaseLink = <Href href="https://coinbase.com" key="coinbase-link">{c('bitcoin buy').t`Coinbase`}</Href>;
+    const krakenLink = <Href href="https://kraken.com" key="kraken-link">{c('bitcoin buy').t`Kraken`}</Href>;
     const isAztecoEnabled = useFlag('WalletAztecoWeb');
 
     return (
@@ -97,7 +91,7 @@ export const Location = ({ onConfirm }: Props) => {
                 {errorMessage && (
                     <div className="field-two--invalid mt-3">
                         <div className="field-two--invalid field-two-assist flex flex-nowrap items-start">
-                            <Icon name="exclamation-circle-filled" className="color-danger shrink-0 mr-1" size={4} />
+                            <IcExclamationCircleFilled className="color-danger shrink-0 mr-1" size={4} />
                             <span data-testid="error-country-select">{errorMessage}</span>
                         </div>
                     </div>
