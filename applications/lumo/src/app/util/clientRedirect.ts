@@ -9,8 +9,8 @@ const LEGACY_MARKETING_PAGES: Record<string, string> = {
     '/business': '/business/lumo',
     '/legal/terms': '/lumo/terms',
     '/legal/privacy': '/lumo/privacy-policy',
-    '/black-friday': 'lumo/black-friday',
-    '/download': 'lumo/download',
+    '/black-friday': '/lumo/black-friday',
+    '/download': '/lumo/download',
 };
 
 /**
