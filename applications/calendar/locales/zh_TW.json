@@ -1076,6 +1076,9 @@
       ],
       "Writing assistant seats": [
         "撰寫幫手就位"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } 授權"
       ]
     },
     "Alarm notification": {
@@ -1741,6 +1744,9 @@
       ],
       "Total for ${ n } month": [
         " ${ n } 個月總計"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "${ cycle } 個月小計"
       ]
     },
     "Collapsible tooltip": {
@@ -6172,6 +6178,9 @@
       ],
       "You’ll still be able to view your own account data, but all user accounts will be removed from your organization.": [
         "您仍可瀏覽您的帳號資料，但所有使用者帳號將被從貴組織移除。"
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "新增 ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ]
     },
     "info": {
@@ -11643,6 +11652,9 @@
       ],
       "Your shorter address is now ready": [
         "您的短地址已完成"
+      ],
+      "Disconnected from Gmail": [
+        "與 Gmail 中斷連線"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

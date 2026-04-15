@@ -1021,6 +1021,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "您的桌面应用免费试用将在 ${ formattedEndDate }结束。 ${ upgradeButton }"
+      ],
+      "Reconnect to Gmail": [
+        "重新连接 Gmail"
       ]
     },
     "action": {
@@ -3166,6 +3169,18 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已创建了 10 个别名。使用 ${ BRAND_NAME }  Unlimited，获得无限别名和 500 GB 的存储空间。"
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "如果权限被移除或密码被更改，可能会发生此情况。"
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "若要继续在 ${ BRAND_NAME } 中接收和发送 Gmail 邮件，请重新连接您的账户。"
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "若要继续在 ${ BRAND_NAME } 中接收和发送 Gmail 邮件，请重新连接您的账户。"
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "我们无法再访问 ${ boldEmails }。"
       ]
     },
     "description": {
@@ -4022,6 +4037,12 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "您的 Zoom 连接已过期，请重新连接以继续。"
+      ],
+      "Address could not be added.": [
+        "无法添加地址！"
+      ],
+      "Something went wrong while fetching available domains": [
+        "获取可用域名时出错"
       ]
     },
     "error": {
@@ -6451,6 +6472,12 @@
       ],
       "You’ve reached the limit of booking slots (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })": [
         "您已达到预约时段数量上限 (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
+      ],
+      "Enter code": [
+        "输入代码"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "如果您无法访问验证器应用，可以使用设置 2FA 时提供的 16 个备用恢复码之一。${ learnMoreLink }"
       ]
     },
     "info": {
@@ -7178,6 +7205,9 @@
       ],
       "Zoom meeting": [
         "Zoom 会议"
+      ],
+      "Securely share parts of your schedule through a booking page you can send to anyone.": [
+        "通过可发送给任何人的预约页面，安全地分享您的日程安排部分内容。"
       ]
     },
     "label": {
@@ -8244,6 +8274,12 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我们会扫描暗网，检查您的 ${ BRAND_NAME } 地址或别名是否被泄露，一旦发现任何情况，我们会立即提醒您。"
+      ],
+      "Appointment scheduling": [
+        "预约安排"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "使用 ${ n } 个预约页面进行日程安排"
       ]
     },
     "new_plans: feature highlight": {
@@ -8692,6 +8728,9 @@
       ],
       "Passphrase copied to clipboard": [
         "将密码短语复制到剪贴板"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "您的 ${ BRAND_NAME } 地址已准备就绪"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -12071,6 +12110,9 @@
       ],
       "Your shorter address is now ready": [
         "您的较短地址现已准备就绪"
+      ],
+      "Disconnected from Gmail": [
+        "已断开与 Gmail 的连接"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

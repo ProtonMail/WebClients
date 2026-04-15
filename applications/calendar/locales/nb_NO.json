@@ -1025,6 +1025,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Den gratis prøveperioden for skrivebordsappen avsluttes ${ formattedEndDate }. ${ upgradeButton }"
+      ],
+      "Reconnect to Gmail": [
+        "Koble til Gmail på nytt"
       ]
     },
     "action": {
@@ -3194,6 +3197,18 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede opprettet 10 aliaser. Få ubegrensede aliaser og 500 GB lagringsplass med ${ BRAND_NAME } Unlimited."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Dette kan skje hvis tillatelser ble fjernet eller passordet ditt ble endret."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "For å fortsette å motta og sende Gmail-meldinger i ${ BRAND_NAME }, må du koble til kontoen din på nytt."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "For å fortsette å motta og sende Gmail-meldinger i ${ BRAND_NAME }, må du koble til kontoene dine på nytt."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Vi får ikke lenger tilgang til ${ boldEmails }."
       ]
     },
     "description": {
@@ -4062,6 +4077,15 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Zoom-tilkoblingen har utløpt. Koble til på nytt for å fortsette."
+      ],
+      "Address could not be added.": [
+        "Adressen kunne ikke legges til."
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Kunne ikke laste inn abonnementsdata. Prøv på nytt senere."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Noe gikk galt under henting av tilgjengelige domener"
       ]
     },
     "error": {
@@ -8378,6 +8402,13 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skanner det mørke nettet for å sjekke om ${ BRAND_NAME }-adressene eller aliasene dine har blitt lekket, og varsler deg umiddelbart hvis vi finner noe."
+      ],
+      "Appointment scheduling": [
+        "Avtaleplanlegging"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Avtaleplanlegging med ${ n } bestillingsside",
+        "Avtaleplanlegging med ${ n } bestillingssider"
       ]
     },
     "new_plans: feature highlight": {
@@ -8831,6 +8862,9 @@
       ],
       "Passphrase copied to clipboard": [
         "Passfrase kopiert til utklippstavlen"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Din ${ BRAND_NAME }-adresse er klar til bruk"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9545,6 +9579,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Abonnementet ditt har for øyeblikket en eksisterende rabatt. Hvis du flytter til denne nye kampanjen, vil den eksisterende rabatten ikke lenger gjelde."
+      ],
+      "Edit billing address": [
+        "Rediger faktureringsadresse"
       ]
     },
     "Payments.Error": {
@@ -12393,6 +12430,9 @@
       ],
       "Your shorter address is now ready": [
         "Den kortere adressen din er nå klar"
+      ],
+      "Disconnected from Gmail": [
+        "Frakoblet fra Gmail"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

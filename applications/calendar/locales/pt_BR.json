@@ -3197,9 +3197,6 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Você já criou 10 aliases. Obtenha aliases ilimitados e 500 GB de armazenamento com ${ BRAND_NAME } Unlimited."
-      ],
-      "We can't access ${ boldEmails } anymore.": [
-        "Não podemos mais acessar o ${ boldEmails }."
       ]
     },
     "description": {
@@ -4071,12 +4068,6 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Sua conexão do Zoom expirou. Reconecte-se para continuar."
-      ],
-      "Company name or personal name is required": [
-        "É necessário informar o nome da empresa ou o nome pessoal"
-      ],
-      "Something went wrong while fetching available domains": [
-        "Ocorreu um erro ao buscar os domínios disponíveis"
       ]
     },
     "error": {
@@ -8396,6 +8387,13 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Rastreamos a dark web para verificar se seus endereços ou aliases ${ BRAND_NAME } sofreram vazamento e alertarmos você imediatamente se encontrarmos alguma coisa."
+      ],
+      "Appointment scheduling": [
+        "Agendamento de compromissos"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Agendamento de compromissos com ${ n } página de agendamento",
+        "Agendamento de compromissos com ${ n } página de agendamentos"
       ]
     },
     "new_plans: feature highlight": {
@@ -9865,9 +9863,6 @@
       ],
       "ZIP code": [
         "CEP"
-      ],
-      "Anything you'd like us to know": [
-        "Algo que você gostaria que soubéssemos?"
       ]
     },
     "Placeholder for contact group name": {

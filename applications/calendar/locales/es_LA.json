@@ -4083,6 +4083,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Su conexión de Zoom ha expirado. Vuelva a conectarse para continuar."
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Error al cargar los datos de la suscripción. Intente más tarde."
       ]
     },
     "error": {
@@ -8415,13 +8418,6 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la dark web para verificar si sus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarle de inmediato si encontramos algo."
-      ],
-      "Appointment scheduling": [
-        "Programación de citas"
-      ],
-      "Appointment scheduling with ${ n } booking page": [
-        "Programación de citas con ${ n } página de reservas",
-        "Programación de citas con ${ n } páginas de reservas"
       ]
     },
     "new_plans: feature highlight": {
@@ -9592,6 +9588,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Su suscripción actualmente tiene un descuento. Cambiar a esta promoción nueva significa que el descuento existente ya no se aplicará."
+      ],
+      "Edit billing address": [
+        "Editar dirección de facturación"
       ]
     },
     "Payments.Error": {
@@ -11913,7 +11912,7 @@
         "¿Descartar cambios?"
       ],
       "Disconnected from Gmail": [
-        "Desconectado de Gmail"
+        "Sin conexión a Gmail"
       ],
       "Does not repeat": [
         "No se repite"
