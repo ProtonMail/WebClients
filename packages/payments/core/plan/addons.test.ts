@@ -45,6 +45,15 @@ describe('getSupportedAddons', () => {
             expect(result).toEqual(expected);
         });
 
+        it('should return correct addons for PLANS.VPN_PASS_BUNDLE', () => {
+            const planIDs: PlanIDs = { [PLANS.VPN_PASS_BUNDLE]: 1 };
+            const result = getSupportedAddons(planIDs);
+            const expected: SupportedAddons = {
+                [ADDON_NAMES.MEET_VPN_PASS_BUNDLE]: true,
+            };
+            expect(result).toEqual(expected);
+        });
+
         it('should return correct addons for PLANS.PASS_FAMILY', () => {
             const planIDs: PlanIDs = { [PLANS.PASS_FAMILY]: 1 };
             const result = getSupportedAddons(planIDs);
@@ -279,7 +288,7 @@ describe('getSupportedAddons', () => {
     });
 
     describe('Plans without supported addons', () => {
-        it.each([PLANS.FREE, PLANS.VPN, PLANS.DRIVE_LITE, PLANS.VISIONARY, PLANS.VPN_PASS_BUNDLE, PLANS.PASS_LIFETIME])(
+        it.each([PLANS.FREE, PLANS.VPN, PLANS.DRIVE_LITE, PLANS.VISIONARY, PLANS.PASS_LIFETIME])(
             'should return empty object for %s',
             (plan) => {
                 const planIDs: PlanIDs = { [plan]: 1 };
@@ -356,6 +365,7 @@ describe('getSupportedAddons', () => {
                 PLANS.LUMO,
                 PLANS.DUO,
                 PLANS.MEET,
+                PLANS.VPN_PASS_BUNDLE,
                 // B2B plans
                 PLANS.MAIL_PRO,
                 PLANS.MAIL_BUSINESS,
