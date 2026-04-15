@@ -23,8 +23,9 @@ export const Breadcrumbs = ({ crumbs, loading, events, createHandleItemDrop }: B
         return <Loader className="py-2 px-3" />;
     }
 
-    const breadcrumbs: BreadcrumbInfo[] = crumbs.map((crumb) => {
+    const breadcrumbs: BreadcrumbInfo[] = crumbs.map((crumb, index) => {
         const nodeUid = crumb.uid;
+        const isLast = index === crumbs.length - 1;
         const handleItemDrop = createHandleItemDrop ? createHandleItemDrop(nodeUid) : undefined;
         return {
             key: crumb.uid,
@@ -38,7 +39,7 @@ export const Breadcrumbs = ({ crumbs, loading, events, createHandleItemDrop }: B
                 </span>
             ),
             collapsedText: crumb.name,
-            onClick: crumb.customOnItemClick ?? (() => events.onBreadcrumbItemClick(nodeUid)),
+            onClick: isLast ? undefined : (crumb.customOnItemClick ?? (() => events.onBreadcrumbItemClick(nodeUid))),
 
             highlighted: crumb.supportDropOperations && handleItemDrop && crumb.uid === dropTarget,
             onDragLeave: () => {
