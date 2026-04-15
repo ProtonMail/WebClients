@@ -10,6 +10,7 @@ import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriv
 
 import { formatLinkName, useDriveEventManager, validateLinkNameField } from '../../store';
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
+import { getEllipsedName } from '../../utils/intl/getEllipsedName';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 
 type Drive = Pick<ProtonDriveClient, 'createFolder' | 'getNode'>;
@@ -85,9 +86,10 @@ export const useCreateFolderModalState = ({
                 drive
             );
             onSuccess?.({ uid: node.uid, parentUid: node.parentUid, nodeId, name });
+            const ellipsedName = getEllipsedName(name);
             createNotification({
                 type: 'success',
-                text: c('Notification').jt`"${name}" created successfully`,
+                text: c('Notification').jt`"${ellipsedName}" created successfully`,
             });
 
             onClose();
