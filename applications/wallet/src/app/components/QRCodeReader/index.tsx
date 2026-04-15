@@ -7,8 +7,10 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { Icon, useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
+import { IcArrowsSwitch } from '@proton/icons/icons/IcArrowsSwitch';
+import { IcCamera } from '@proton/icons/icons/IcCamera';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 
 interface Props {
@@ -123,8 +125,8 @@ const QRCodeReader = ({ onScan, onError }: Props) => {
             {!loadingCam && isMobile() && (
                 <Button icon shape="solid" onClick={() => handleSwitchCamera()}>
                     <span>
-                        <Icon name={'camera'} size={5} />
-                        <Icon name={'arrows-switch'} className={'ml-2'} size={5} />
+                        <IcCamera size={5} />
+                        <IcArrowsSwitch className={'ml-2'} size={5} />
                     </span>
                 </Button>
             )}

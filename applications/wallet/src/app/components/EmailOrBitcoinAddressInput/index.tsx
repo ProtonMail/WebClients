@@ -6,8 +6,12 @@ import { c } from 'ttag';
 import type { WasmNetwork } from '@proton/andromeda';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Dropdown, DropdownSizeUnit, Icon } from '@proton/components';
+import { Dropdown, DropdownSizeUnit } from '@proton/components';
 import { verticalPopperPlacements } from '@proton/components/components/popper/utils';
+import { IcArrowLeftAndDown } from '@proton/icons/icons/IcArrowLeftAndDown';
+import { IcCrossCircleFilled } from '@proton/icons/icons/IcCrossCircleFilled';
+import { IcLightbulb } from '@proton/icons/icons/IcLightbulb';
+import { IcQrCode } from '@proton/icons/icons/IcQrCode';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import type { SimpleMap } from '@proton/shared/lib/interfaces/utils';
@@ -128,7 +132,7 @@ export const EmailOrBitcoinAddressInput = ({
                                                     onRemoveRecipient(recipient);
                                                 }}
                                             >
-                                                <Icon name="cross-circle-filled" className="color-primary" size={4} />
+                                                <IcCrossCircleFilled className="color-primary" size={4} />
                                             </CoreButton>
                                         )
                                     }
@@ -150,7 +154,7 @@ export const EmailOrBitcoinAddressInput = ({
                         className="rounded-full bg-weak w-custom h-custom flex mr-4"
                         style={{ '--h-custom': '2.5rem', '--w-custom': '2.5rem' }}
                     >
-                        <Icon name="lightbulb" size={5} className="m-auto" />
+                        <IcLightbulb size={5} className="m-auto" />
                     </div>
                     <span className="block color-weak">{c('Wallet send')
                         .t`Try adding an email address to start sending Bitcoin!`}</span>
@@ -222,9 +226,8 @@ export const EmailOrBitcoinAddressInput = ({
                                                 setQrCodeModal(true);
                                             }}
                                         >
-                                            <Icon
+                                            <IcQrCode
                                                 className="color-weak"
-                                                name="qr-code"
                                                 size={5}
                                                 alt={c('Bitcoin send').t`Open QR code reader`}
                                             />
@@ -241,9 +244,8 @@ export const EmailOrBitcoinAddressInput = ({
                                         handleAddRecipientFromInput(input);
                                     }}
                                 >
-                                    <Icon
+                                    <IcArrowLeftAndDown
                                         className="color-weak"
-                                        name="arrow-left-and-down"
                                         size={5}
                                         alt={c('Bitcoin send').t`Add recipient`}
                                     />

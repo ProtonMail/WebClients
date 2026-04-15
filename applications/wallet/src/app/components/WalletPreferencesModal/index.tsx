@@ -8,10 +8,11 @@ import {
     CollapsibleContent,
     CollapsibleHeader,
     CollapsibleHeaderIconButton,
-    Icon,
     useNotifications,
 } from '@proton/components';
 import InputFieldStackedGroup from '@proton/components/components/inputFieldStacked/InputFieldStackedGroup';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
+import { IcWallet } from '@proton/icons/icons/IcWallet';
 import type { IWasmApiWalletData } from '@proton/wallet/types';
 
 import { Button, Input, Modal, Select, SelectOption } from '../../atoms';
@@ -77,7 +78,7 @@ export const WalletPreferencesModal = ({ wallet, otherWallets, theme, ...modalPr
                                     className="rounded-full flex p-3"
                                     style={{ background: 'var(--interaction-norm-minor-2)' }}
                                 >
-                                    <Icon name="wallet" style={{ color: 'var(--interaction-norm-major-1)' }}></Icon>
+                                    <IcWallet style={{ color: 'var(--interaction-norm-major-1)' }}></IcWallet>
                                 </div>
                             }
                         />
@@ -130,7 +131,7 @@ export const WalletPreferencesModal = ({ wallet, otherWallets, theme, ...modalPr
                             className="color-weak"
                             suffix={
                                 <CollapsibleHeaderIconButton className="color-weak">
-                                    <Icon name="chevron-down" />
+                                    <IcChevronDown />
                                 </CollapsibleHeaderIconButton>
                             }
                         >

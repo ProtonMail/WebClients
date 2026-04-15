@@ -6,9 +6,9 @@ import {
     CollapsibleContent,
     CollapsibleHeader,
     CollapsibleHeaderIconButton,
-    Icon,
     useModalState,
 } from '@proton/components';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { Button } from '../../../atoms';
@@ -36,7 +36,7 @@ export const WalletReceiveExtraContent = ({ account, onClose }: Props) => {
                         className="color-weak"
                         suffix={
                             <CollapsibleHeaderIconButton className="color-weak">
-                                <Icon name="chevron-down" />
+                                <IcChevronDown />
                             </CollapsibleHeaderIconButton>
                         }
                     >

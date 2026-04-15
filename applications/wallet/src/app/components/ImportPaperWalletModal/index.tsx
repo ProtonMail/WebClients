@@ -7,21 +7,16 @@ import { useUserKeys } from '@proton/account/userKeys/hooks';
 import { WasmAccountSweeper, type WasmApiWalletAccount, type WasmBitcoinUnit, type WasmPsbt } from '@proton/andromeda';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import {
-    Icon,
-    MiddleEllipsis,
-    type ModalStateProps,
-    Prompt,
-    useModalState,
-    useModalStateWithData,
-} from '@proton/components';
+import { MiddleEllipsis, type ModalStateProps, Prompt, useModalState, useModalStateWithData } from '@proton/components';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
+import { IcQrCode } from '@proton/icons/icons/IcQrCode';
 import walletBitcoinDark from '@proton/styles/assets/img/wallet/wallet-bitcoin-dark.jpg';
 import walletBitcoin from '@proton/styles/assets/img/wallet/wallet-bitcoin.jpg';
-import { WalletThemeOption } from '@proton/wallet/utils/theme';
 import { COMPUTE_BITCOIN_UNIT, MIN_FEE_RATE, PriorityTargetBlock } from '@proton/wallet/constants/bitcoin';
 import { useExchangeRate, useUserWalletSettings } from '@proton/wallet/store/hooks';
+import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
 import { Button, CoreButton, Input } from '../../atoms';
 import { MaybeHiddenAmount } from '../../atoms/MaybeHiddenAmount';
@@ -300,9 +295,8 @@ export const ImportPaperWalletModal = ({ account, onClose, onCloseDrawer, ...mod
                                             setQrCodeModal(true);
                                         }}
                                     >
-                                        <Icon
+                                        <IcQrCode
                                             className="color-weak"
-                                            name="qr-code"
                                             size={5}
                                             alt={c('Bitcoin send').t`Open QR code reader`}
                                         />
@@ -405,7 +399,7 @@ export const ImportPaperWalletModal = ({ account, onClose, onCloseDrawer, ...mod
                                                 <MiddleEllipsis text={publicAddress} className="w-2/3 text-lg my-1" />
                                             </Tooltip>
                                         </div>
-                                        <Icon className="ml-2 shrink-0" name="chevron-right" />
+                                        <IcChevronRight className="ml-2 shrink-0" />
                                     </button>
                                 </div>
                                 <hr className="my-4 sweep-paper-wallet-hr" />

@@ -4,7 +4,8 @@ import compact from 'lodash/compact';
 import { c } from 'ttag';
 
 import type { WasmTransactionDetails } from '@proton/andromeda';
-import { Icon, useModalStateWithData } from '@proton/components';
+import { useModalStateWithData } from '@proton/components';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import arrowReceiveDarkSvg from '@proton/styles/assets/img/illustrations/arrow-receive-dark.svg';
 import arrowReceiveSvg from '@proton/styles/assets/img/illustrations/arrow-receive.svg';
@@ -176,7 +177,7 @@ export const WalletTransactionDataDrawer = ({
             ) : (
                 <div>
                     <CoreButton shape="ghost" size="small" className="color-hint" onClick={() => setShowMore(true)}>
-                        {c('Wallet transaction').t`View more`} <Icon name="chevron-down" size={3} />
+                        {c('Wallet transaction').t`View more`} <IcChevronDown size={3} />
                     </CoreButton>
                 </div>
             )}

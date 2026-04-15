@@ -11,11 +11,12 @@ import {
     CollapsibleHeader,
     CollapsibleHeaderIconButton,
     DropdownSizeUnit,
-    Icon,
     ModalTwoFooter,
     PasswordInputTwo,
     useModalState,
 } from '@proton/components';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
+import { IcWallet } from '@proton/icons/icons/IcWallet';
 import { useUserWalletSettings } from '@proton/wallet/store/hooks';
 
 import { Button, CoreButton, Input, Modal } from '../../atoms';
@@ -97,7 +98,7 @@ export const WalletCreationModal = ({ theme, isFirstCreation, onWalletCreate, ..
                                     className="rounded-full flex p-3"
                                     style={{ background: 'var(--interaction-norm-minor-2)' }}
                                 >
-                                    <Icon name="wallet" style={{ color: 'var(--interaction-norm-major-1)' }}></Icon>
+                                    <IcWallet style={{ color: 'var(--interaction-norm-major-1)' }}></IcWallet>
                                 </div>
                             }
                             label={c('Wallet setup').t`Name`}
@@ -136,7 +137,7 @@ export const WalletCreationModal = ({ theme, isFirstCreation, onWalletCreate, ..
                             className="mb-4 color-weak"
                             suffix={
                                 <CollapsibleHeaderIconButton className="color-weak">
-                                    <Icon name="chevron-down" />
+                                    <IcChevronDown />
                                 </CollapsibleHeaderIconButton>
                             }
                         >{c('Wallet setup').t`Add a passphrase (optional)`}</CollapsibleHeader>

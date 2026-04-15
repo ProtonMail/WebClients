@@ -4,7 +4,7 @@ import { c } from 'ttag';
 
 import { type WasmApiWalletAccount, WasmKeychainKind } from '@proton/andromeda';
 import { Input } from '@proton/atoms/Input/Input';
-import { Icon } from '@proton/components';
+import { IcArrowsSwitch } from '@proton/icons/icons/IcArrowsSwitch';
 import clsx from '@proton/utils/clsx';
 import type { IWasmApiWalletData } from '@proton/wallet/types';
 
@@ -82,7 +82,7 @@ export const AddressTableWrapper = ({ selectorOrTitle, apiWalletData, apiAccount
                                 disabled={loading}
                                 onClick={() => sync(true)}
                             >
-                                <Icon name="arrows-switch" size={4} alt={c('Address list').t`Toggle keychain`} />
+                                <IcArrowsSwitch size={4} alt={c('Address list').t`Toggle keychain`} />
                             </CoreButton>
                         ) : (
                             <Button
@@ -96,11 +96,7 @@ export const AddressTableWrapper = ({ selectorOrTitle, apiWalletData, apiAccount
                                 {keychain === WasmKeychainKind.External
                                     ? c('Wallet header').t`View change addresses`
                                     : c('Wallet header').t`View receive addresses`}
-                                <Icon
-                                    name="arrows-switch"
-                                    className="ml-2"
-                                    alt={c('Address list').t`Toggle keychain`}
-                                />
+                                <IcArrowsSwitch className="ml-2" alt={c('Address list').t`Toggle keychain`} />
                             </Button>
                         )}
                     </div>

@@ -5,14 +5,17 @@ import { c } from 'ttag';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Href } from '@proton/atoms/Href/Href';
-import { Icon, SettingsLink } from '@proton/components';
+import { SettingsLink } from '@proton/components';
+import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
+import { IcCircle } from '@proton/icons/icons/IcCircle';
 import { useDispatch } from '@proton/redux-shared-store';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
-import type { IWasmApiWalletData } from '@proton/wallet/types';
 import { useWalletApi } from '@proton/wallet/contexts';
 import { disableWalletShowRecovery } from '@proton/wallet/store/slices';
+import type { IWasmApiWalletData } from '@proton/wallet/types';
 
 import { type DiscoverArticle, articles } from '../../constants/discover';
 import { getThemeForWallet } from '../../utils';
@@ -34,9 +37,9 @@ const ChecklistItem = ({ text, done, onClick, path }: ChecklistItemProps) => {
 
     const content = (
         <>
-            <Icon className="mr-4" name={done ? 'circle-filled' : 'circle'} size={6} />
+            {done ? <IcCheckmarkCircleFilled size={6} className="mr-4" /> : <IcCircle size={6} className="mr-4" />}
             <span className={clsx(done && 'text-strike')}>{text}</span>
-            <Icon className="ml-auto" name="chevron-right" />
+            <IcChevronRight className="ml-auto" />
         </>
     );
 
