@@ -25,6 +25,7 @@ import { useErrorHandler } from '../../store/_utils';
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { ValidationError } from '../../utils/errorHandling/ValidationError';
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
+import { getEllipsedName } from '../../utils/intl/getEllipsedName';
 import { safeWrap } from '../../utils/safeWrap';
 import { usePhotosStore } from '../usePhotos.store';
 
@@ -245,15 +246,16 @@ export const useCreateAlbum = () => {
             linkId: string,
             name: string
         ): Promise<string> => {
+            const ellipsedName = getEllipsedName(name);
             try {
                 const id = await createAlbum(abortSignal, volumeId, shareId, linkId, name);
                 createNotification({
-                    text: c('Notification').t`"${name}" created successfully`,
+                    text: c('Notification').t`"${ellipsedName}" created successfully`,
                     preWrap: true,
                 });
                 return id;
             } catch (e) {
-                showErrorNotification(e, safeWrap(c('Notification').t`"${name}" failed to be created`));
+                showErrorNotification(e, safeWrap(c('Notification').t`"${ellipsedName}" failed to be created`));
                 throw e;
             }
         },
