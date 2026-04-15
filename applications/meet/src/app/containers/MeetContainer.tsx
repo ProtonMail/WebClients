@@ -3,11 +3,7 @@ import { createContext, useContext, useEffect, useLayoutEffect, useMemo } from '
 import type { ConnectionState } from 'livekit-client';
 
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
-import {
-    resetMeetingInfo,
-    selectParticipantDecryptedNameMap,
-    setMeetingInfo,
-} from '@proton/meet/store/slices/meetingInfo';
+import { resetMeetingInfo, setMeetingInfo } from '@proton/meet/store/slices/meetingInfo';
 import { selectTotalParticipantCount } from '@proton/meet/store/slices/sortedParticipantsSlice';
 import { isSafari } from '@proton/shared/lib/helpers/browser';
 
@@ -16,7 +12,6 @@ import { DebugOverlay, useDebugOverlay } from '../components/DebugOverlay/DebugO
 import { MeetingBody } from '../components/MeetingBody/MeetingBody';
 import { MeetContext } from '../contexts/MeetContext';
 import { MeetingRecorderContext } from '../contexts/MeetingRecorderContext';
-import { useSortedPagedParticipants } from '../contexts/ParticipantsProvider/SortedParticipantsProvider';
 import { useCurrentScreenShare } from '../hooks/useCurrentScreenShare';
 import { useMeetingRecorder } from '../hooks/useMeetingRecorder/useMeetingRecorder';
 import { useStableCallback } from '../hooks/useStableCallback';
@@ -143,14 +138,9 @@ export const MeetContainer = ({
         };
     }, [dispatch]);
 
-    const pagedParticipants = useSortedPagedParticipants();
     const totalParticipantCount = useMeetSelector(selectTotalParticipantCount);
-    const participantDecryptedNameMap = useMeetSelector(selectParticipantDecryptedNameMap);
 
-    const { recordingState, startRecording, stopRecording, downloadRecording } = useMeetingRecorder(
-        participantDecryptedNameMap,
-        pagedParticipants
-    );
+    const { recordingState, startRecording, downloadRecording } = useMeetingRecorder();
 
     const leaveWithStopRecording = useStableCallback(async () => {
         await downloadRecording();
@@ -199,10 +189,9 @@ export const MeetContainer = ({
         () => ({
             recordingState,
             startRecording,
-            stopRecording,
             downloadRecording,
         }),
-        [recordingState, startRecording, stopRecording, downloadRecording]
+        [recordingState, startRecording, downloadRecording]
     );
 
     return (
