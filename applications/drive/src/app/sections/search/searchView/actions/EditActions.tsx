@@ -24,7 +24,7 @@ interface BaseEditActionsProps {
     onShare: (uid: string) => void;
     onTrash: (uids: string[]) => void;
     onMove: (uids: string[]) => void;
-    onGoToParent: (parentNodeUid: string) => void;
+    onGoToParent: (uid: string, parentNodeUid: string) => void;
     onShowRevisions: (uid: string) => void;
     onOpenDocsOrSheets: (uid: string, openInDocs: OpenInDocsType) => void;
 }
@@ -98,7 +98,10 @@ export function EditActions({
             {itemChecker.canGoToParent && (
                 <>
                     {separator}
-                    <GoToButton onClick={() => onGoToParent(itemChecker.parentNodeUid)} {...extraProps} />
+                    <GoToButton
+                        onClick={() => onGoToParent(itemChecker.firstItemUid, itemChecker.parentNodeUid)}
+                        {...extraProps}
+                    />
                 </>
             )}
         </>
