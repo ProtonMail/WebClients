@@ -34,7 +34,7 @@ export abstract class IndexPopulator {
 
         // Schema version of this populator's output. Bumped when the shape of
         // indexed attributes changes, so stale entries can be detected and re-indexed.
-        protected version: number,
+        readonly version: number,
 
         // Scan generation counter. Bumped on each full re-index.
         // Used to GC leftover entries from the previous scan.
@@ -51,13 +51,15 @@ export abstract class IndexPopulator {
     protected static async loadOrCreateState(
         indexPopulatorId: string,
         treeEventScopeId: TreeEventScopeId,
-        db: SearchDB
+        db: SearchDB,
+        currentVersion: number
     ) {
         const uid = IndexPopulator.buildUid(indexPopulatorId, treeEventScopeId);
-        let state = await db.getPopulatorState(uid);
+        const state = await db.getPopulatorState(uid);
         if (!state) {
-            state = { uid, done: false, generation: 1 };
-            await db.putPopulatorState(state);
+            const newState = { uid, done: false, generation: 1, version: currentVersion };
+            await db.putPopulatorState(newState);
+            return newState;
         }
         return state;
     }
@@ -66,8 +68,31 @@ export abstract class IndexPopulator {
         return IndexPopulator.buildUid(this.indexPopulatorId, this.treeEventScopeId);
     }
 
+    getVersion(): number {
+        return this.version;
+    }
+
     getGeneration(): number {
         return this.generation;
+    }
+
+    async hasUpToDateVersion(db: SearchDB): Promise<boolean> {
+        const state = await db.getPopulatorState(this.getUid());
+        return state?.version === this.version;
+    }
+
+    async isDone(db: SearchDB): Promise<boolean> {
+        const state = await db.getPopulatorState(this.getUid());
+        return state?.done === true;
+    }
+
+    async markAsNotDone(db: SearchDB): Promise<void> {
+        const state = await db.getPopulatorState(this.getUid());
+        if (!state?.done) {
+            return;
+        }
+        const bumpedGeneration = state.generation + 1;
+        await db.putPopulatorState({ ...state, done: false, generation: bumpedGeneration });
     }
 
     abstract visitAndProduceIndexEntries(ctx: TaskContext): AsyncIterableIterator<IndexEntry>;
@@ -109,6 +134,7 @@ export abstract class IndexPopulator {
                         uid: this.getUid(),
                         done: false,
                         generation: this.generation,
+                        version: this.version,
                     });
 
                     ctx.enqueueOnce(new IndexPopulatorTask(this, false /* isBootstrap */));

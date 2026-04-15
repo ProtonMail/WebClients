@@ -234,7 +234,7 @@ export class IndexerTaskQueue {
         });
     }
 
-    private async createTasks(): Promise<{ bootstrapTasks: BaseTask[]; postBootstrapTasks: BaseTask[] }> {
+    protected async createTasks(): Promise<{ bootstrapTasks: BaseTask[]; postBootstrapTasks: BaseTask[] }> {
         const maybeNode = await this.bridge.driveSdk.getMyFilesRootFolder();
         const { node: rootNode } = getNodeEntity(maybeNode);
         const scopeId = brandTreeEventScopeId(rootNode.treeEventScopeId);

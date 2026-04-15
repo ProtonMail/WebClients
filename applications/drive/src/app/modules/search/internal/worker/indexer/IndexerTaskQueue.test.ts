@@ -7,10 +7,12 @@ import { SearchDB } from '../../shared/SearchDB';
 import type { TreeEventScopeId, UserId } from '../../shared/types';
 import { FakeMainThreadBridge } from '../../testing/FakeMainThreadBridge';
 import { setupRealSearchLibraryWasm } from '../../testing/setupRealSearchLibraryWasm';
-import { IndexRegistry } from '../index/IndexRegistry';
+import { IndexKind, IndexRegistry } from '../index/IndexRegistry';
 import type { IndexerState } from './IndexerTaskQueue';
 import { IndexerTaskQueue } from './IndexerTaskQueue';
 import { TreeSubscriptionRegistry } from './TreeSubscriptionRegistry';
+import { NodeTreeIndexPopulator } from './indexPopulators/NodeTreeIndexPopulator';
+import { IndexPopulatorTask } from './tasks/CoreTasks/IndexPopulatorTask';
 
 setupRealSearchLibraryWasm();
 
@@ -262,6 +264,47 @@ describe('IndexerTaskQueue', () => {
         });
 
         queue.stop();
+    });
+
+    it('re-indexes when populator version changed since last run', async () => {
+        // Seed DB with a done state at version 1.
+        await db.putPopulatorState({ uid: `myfiles:${SCOPE_ID}`, done: true, generation: 1, version: 1 });
+
+        // Create a queue whose populator reports version 2.
+        class VersionedPopulator extends NodeTreeIndexPopulator {
+            constructor(scopeId: TreeEventScopeId) {
+                super(scopeId, IndexKind.MAIN, 'myfiles', 2 /* version */, 1 /* generation */);
+            }
+
+            protected async getRootNodeUid(): Promise<string> {
+                return 'root-uid';
+            }
+        }
+
+        class TestableQueue extends IndexerTaskQueue {
+            protected override async createTasks() {
+                const populator = new VersionedPopulator(SCOPE_ID);
+                return {
+                    bootstrapTasks: [new IndexPopulatorTask(populator, true)],
+                    postBootstrapTasks: [],
+                };
+            }
+        }
+
+        const queue = new TestableQueue('test-user' as UserId, indexRegistry, bridge.asBridge(), db, treeSubRegistry);
+        const state = new IndexerStateStream(queue);
+        queue.start().catch(() => {});
+
+        // If version check works, the queue re-indexes (isIndexing) then becomes searchable.
+        await state.waitForSearchable();
+        queue.stop();
+
+        // Verify that it went through reindexing.
+        expect(state.history.some((s) => s.isIndexing)).toBe(true);
+
+        const persisted = await db.getPopulatorState(`myfiles:${SCOPE_ID}`);
+        expect(persisted?.done).toBe(true);
+        expect(persisted?.version).toBe(2);
     });
 
     it('permanent error: sets permanentError on quota exceeded', async () => {
