@@ -123,21 +123,21 @@ describe('SearchDB', () => {
         });
 
         it('stores and retrieves populator state', async () => {
-            const state = { uid: 'pop-1', done: true, generation: 3 };
+            const state = { uid: 'pop-1', done: true, generation: 3, version: 1 };
             await db.putPopulatorState(state);
             expect(await db.getPopulatorState('pop-1')).toEqual(state);
         });
 
         it('getAllPopulatorStates returns all', async () => {
-            await db.putPopulatorState({ uid: 'pop-1', done: true, generation: 1 });
-            await db.putPopulatorState({ uid: 'pop-2', done: false, generation: 2 });
+            await db.putPopulatorState({ uid: 'pop-1', done: true, generation: 1, version: 1 });
+            await db.putPopulatorState({ uid: 'pop-2', done: false, generation: 2, version: 1 });
 
             const all = await db.getAllPopulatorStates();
             expect(all).toHaveLength(2);
         });
 
         it('deletes a populator state', async () => {
-            await db.putPopulatorState({ uid: 'pop-1', done: true, generation: 1 });
+            await db.putPopulatorState({ uid: 'pop-1', done: true, generation: 1, version: 1 });
             await db.deletePopulatorState('pop-1');
             expect(await db.getPopulatorState('pop-1')).toBeUndefined();
         });
@@ -160,7 +160,7 @@ describe('SearchDB', () => {
 
             // Insert some data in default db:
             await db.putIndexBlob(['main', 'blob-1'], new ArrayBuffer(4));
-            await db.putPopulatorState({ uid: 'pop-1', done: false, generation: 2 });
+            await db.putPopulatorState({ uid: 'pop-1', done: false, generation: 2, version: 1 });
             const scope = '123' as TreeEventScopeId;
             const sub = { treeEventScopeId: scope, lastEventId: 'evt-5', lastEventIdTime: 1000 };
             await db.putSubscription(sub);

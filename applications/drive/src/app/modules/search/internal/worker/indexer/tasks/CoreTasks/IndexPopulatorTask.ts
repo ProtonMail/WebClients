@@ -32,9 +32,14 @@ export class IndexPopulatorTask extends BaseTask {
         // Always register tree subscription (needed for live events even if scan is done).
         await ctx.treeSubscriptionRegistry.register(populator.treeEventScopeId, populator, lastEventId, Date.now());
 
-        // Check persisted state — skip traversal if already done.
-        const persisted = await ctx.db.getPopulatorState(populator.getUid());
-        if (persisted?.done) {
+        // Version mismatch: schema changed — mark not-done so we re-index.
+        if (!(await populator.hasUpToDateVersion(ctx.db))) {
+            Logger.info(`${populator.getUid()}: version changed, marking as not done`);
+            await populator.markAsNotDone(ctx.db);
+        }
+
+        // Skip traversal if already done.
+        if (await populator.isDone(ctx.db)) {
             Logger.info(`${populator.getUid()}: already done, skipping`);
             return;
         }
@@ -65,6 +70,7 @@ export class IndexPopulatorTask extends BaseTask {
             uid: populator.getUid(),
             done: true,
             generation: populator.getGeneration(),
+            version: populator.getVersion(),
         });
     }
 }
