@@ -112,7 +112,10 @@ export const getSupportedAddons = (planIDs: PlanIDs): SupportedAddons => {
 
     const supported: SupportedAddons = {};
     for (const addon of Object.values(ADDON_NAMES)) {
-        if (addon.includes(planName)) {
+        // Addons are in the format `${ADDON_PREFIXES}-${PLAN_NAME}`
+        // Not splitting could result in incorrect matching such as `vpnpass2023` matching `pass2023`
+        const addonPlan = addon.split('-')[1];
+        if (addonPlan === planName) {
             supported[addon] = true;
         }
     }

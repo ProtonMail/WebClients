@@ -319,12 +319,12 @@ export const BookingsProvider = ({ children }: { children: ReactNode }) => {
     const openBookingSidebarCreation = (currentDate: Date) => {
         const userReachedBookingLimit = shouldShowLimitModal();
 
-        if (userReachedBookingLimit.booking) {
+        if (userReachedBookingLimit.bookingPageLimitReached) {
             setLimitModalOpen(true);
             return;
         }
 
-        if (userReachedBookingLimit.plan) {
+        if (userReachedBookingLimit.planLimitReached) {
             if (user.canPay) {
                 setUpsellModalOpen(true);
             } else {
