@@ -4,7 +4,7 @@ import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
 import { useActiveBreakpoint } from '@proton/components';
-import { NodeType, getDriveForPhotos, getDrivePerNodeType, splitNodeUid } from '@proton/drive';
+import { NodeType, getDrivePerNodeType } from '@proton/drive';
 import { loadThumbnail } from '@proton/drive/modules/thumbnails';
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { isNativeProtonDocsAppFile } from '@proton/shared/lib/helpers/mimetype';
@@ -34,7 +34,7 @@ export const SharedByMe = () => {
     const contextMenuAnchorRef = useRef<HTMLDivElement>(null);
 
     const { layout } = useUserSettings();
-    const { navigateToAlbum, navigateToNodeUid } = useDriveNavigation();
+    const { navigateToNodeUid } = useDriveNavigation();
     const isSDKPreviewEnabled = useFlagsDriveSDKPreview();
     const { previewModal, showPreviewModal } = useDrivePreviewModal();
 
@@ -100,19 +100,8 @@ export const SharedByMe = () => {
                     type: openInDocsInfo?.type,
                     openBehavior: 'tab',
                 });
-            }
-        }
-
-        if (storeItem.type === NodeType.Album) {
-            const photosDeprecatedShareId = await getDriveForPhotos()
-                .getMyPhotosRootFolder()
-                .then((rootNode) => (rootNode.ok ? rootNode.value.deprecatedShareId : undefined));
-            const { nodeId } = splitNodeUid(storeItem.nodeUid);
-            if (!photosDeprecatedShareId) {
                 return;
             }
-            navigateToAlbum(photosDeprecatedShareId, nodeId);
-            return;
         }
 
         if ((storeItem.type === NodeType.File || storeItem.type === NodeType.Photo) && isSDKPreviewEnabled) {
@@ -124,7 +113,7 @@ export const SharedByMe = () => {
             return;
         }
 
-        await navigateToNodeUid(storeItem.nodeUid);
+        await navigateToNodeUid(storeItem.nodeUid, getDrivePerNodeType(storeItem.type));
     };
 
     const isEmpty = hasEverLoaded && !isLoading && sortedItemUids.size === 0;

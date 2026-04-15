@@ -2,7 +2,6 @@ import type { MaybeNode, Result } from '@proton/drive/index';
 
 type DriveClient = {
     getNode: (uid: string) => Promise<MaybeNode>;
-    getMyFilesRootFolder?: () => Promise<MaybeNode>;
 };
 
 const getParentUid = (node: MaybeNode): string | undefined => {
