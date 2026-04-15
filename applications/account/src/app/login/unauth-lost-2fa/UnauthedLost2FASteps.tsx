@@ -12,6 +12,7 @@ import { TwoFADisabledStep } from './steps/TwoFADisabledStep';
 import { RequestTotpBackupCodesStep } from './steps/requestTotpBackupCodes/RequestTotpBackupCodesStep';
 import { VerifyOwnershipWithEmailStep } from './steps/verifyOwnershipWithEmail/VerifyOwnershipWithEmailStep';
 import { VerifyOwnershipWithPhoneStep } from './steps/verifyOwnershipWithPhone/VerifyOwnershipWithPhoneStep';
+import { VerifyOwnershipWithPhraseStep } from './steps/verifyOwnershipWithPhrase/VerifyOwnershipWithPhraseStep';
 
 export interface UnauthedLost2FAStepsProps {
     render: Render;
@@ -45,6 +46,10 @@ export const UnauthedLost2FASteps = ({ render, toApp, username }: UnauthedLost2F
         });
     }
 
+    if (snapshot.matches('totp backup code provided')) {
+        return <LoaderPage />;
+    }
+
     if (snapshot.matches('verify ownership with email')) {
         return renderStepLayout({
             title: c('Title').t`Disable two-factor authentication?`,
@@ -59,8 +64,11 @@ export const UnauthedLost2FASteps = ({ render, toApp, username }: UnauthedLost2F
         });
     }
 
-    if (snapshot.matches('totp backup code provided')) {
-        return <LoaderPage />;
+    if (snapshot.matches('verify ownership with phrase')) {
+        return renderStepLayout({
+            title: c('Title').t`Disable two-factor authentication?`,
+            content: <VerifyOwnershipWithPhraseStep username={username} />,
+        });
     }
 
     if (snapshot.matches('2fa-disabled')) {
@@ -83,7 +91,8 @@ export const UnauthedLost2FASteps = ({ render, toApp, username }: UnauthedLost2F
 
     if (
         snapshot.matches('phone ownership verification error') ||
-        snapshot.matches('email ownership verification error')
+        snapshot.matches('email ownership verification error') ||
+        snapshot.matches('phrase ownership verification error')
     ) {
         return renderStepLayout({ title: c('Title').t`An error occurred`, content: <ErrorStep /> });
     }
