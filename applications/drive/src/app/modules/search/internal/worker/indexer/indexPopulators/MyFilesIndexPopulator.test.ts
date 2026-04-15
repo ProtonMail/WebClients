@@ -34,7 +34,7 @@ describe('MyFilesIndexPopulator', () => {
     });
 
     it('create() initializes with generation from DB when state exists', async () => {
-        await db.putPopulatorState({ uid: `myfiles:${SCOPE_ID}`, done: true, generation: 3 });
+        await db.putPopulatorState({ uid: `myfiles:${SCOPE_ID}`, done: true, generation: 3, version: 1 });
         const populator = await MyFilesIndexPopulator.create(SCOPE_ID, db);
         expect(populator.getGeneration()).toBe(3);
     });
