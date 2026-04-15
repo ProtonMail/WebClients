@@ -8,7 +8,6 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import ContextMenu from '@proton/components/components/contextMenu/ContextMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
-import Icon from '@proton/components/components/icon/Icon';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Spotlight from '@proton/components/components/spotlight/Spotlight';
 import useSpotlightShow from '@proton/components/components/spotlight/useSpotlightShow';
@@ -20,6 +19,7 @@ import useConfig from '@proton/components/hooks/useConfig';
 import useSpotlightOnFeature from '@proton/components/hooks/useSpotlightOnFeature';
 import { useFeature } from '@proton/features/index';
 import { FeatureCode } from '@proton/features/interface';
+import { IcBuildings } from '@proton/icons/icons/IcBuildings';
 import { getIsB2BAudienceFromPlan } from '@proton/payments';
 import { TelemetryB2BOnboardingEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { SECOND } from '@proton/shared/lib/constants';
@@ -135,7 +135,7 @@ const TopNavbarB2BOnboardingButton = () => {
                         title={c('Title').t`Org setup`}
                         className={clsx('topnav-org-setup', viewportWidth['<=medium'] && 'button-for-icon')}
                         onClick={() => setOnboardingModal(true)}
-                        icon={<Icon name="buildings" />}
+                        icon={<IcBuildings />}
                         text={c('Title').t`Org setup`}
                         ref={anchorRef}
                         onContextMenu={handleContextMenu}

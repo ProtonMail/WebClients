@@ -6,7 +6,6 @@ import { useAddresses } from '@proton/account/addresses/hooks';
 import { useUserKeys } from '@proton/account/userKeys/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Icon from '@proton/components/components/icon/Icon';
 import Loader from '@proton/components/components/loader/Loader';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
@@ -15,8 +14,11 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useConfig from '@proton/components/hooks/useConfig';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { useContactGroups } from '@proton/mail/store/labels/hooks';
+import { IcArrowUpFromSquare } from '@proton/icons/icons/IcArrowUpFromSquare';
+import { IcPen } from '@proton/icons/icons/IcPen';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { useContact } from '@proton/mail/store/contacts/contactHooks';
+import { useContactGroups } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { APPS } from '@proton/shared/lib/constants';
 import { CRYPTO_PROCESSING_TYPES } from '@proton/shared/lib/contacts/constants';
@@ -156,7 +158,7 @@ const ContactDetailsModal = ({
                             className="inline-flex ml-2"
                             data-testid="contact-details:edit"
                         >
-                            <Icon name="pen" alt={c('Action').t`Edit`} />
+                            <IcPen alt={c('Action').t`Edit`} />
                         </Button>
                     </Tooltip>,
                     <Tooltip title={c('Action').t`Export`}>
@@ -168,7 +170,7 @@ const ContactDetailsModal = ({
                             className="inline-flex ml-2"
                             data-testid="contact-details:export"
                         >
-                            <Icon name="arrow-up-from-square" alt={c('Action').t`Export`} />
+                            <IcArrowUpFromSquare alt={c('Action').t`Export`} />
                         </Button>
                     </Tooltip>,
                     <Tooltip title={c('Action').t`Delete`}>
@@ -180,7 +182,7 @@ const ContactDetailsModal = ({
                             className="inline-flex ml-2"
                             data-testid="contact-details:delete"
                         >
-                            <Icon name="trash" alt={c('Action').t`Delete`} />
+                            <IcTrash alt={c('Action').t`Delete`} />
                         </Button>
                     </Tooltip>,
                 ]}

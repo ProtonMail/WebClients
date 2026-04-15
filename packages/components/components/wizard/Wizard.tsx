@@ -1,4 +1,4 @@
-import Icon from '@proton/components/components/icon/Icon';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
 import clsx from '@proton/utils/clsx';
 
 interface Props {
@@ -22,15 +22,14 @@ const Wizard = ({ step = 0, steps = [], hideText = false }: Props) => {
                 {steps.map((text = '', index) => {
                     return (
                         <li
+                            // eslint-disable-next-line react/no-array-index-key
                             key={index.toString()}
                             className={clsx(['wizard-item', index < step && 'is-complete'])}
                             aria-current={index === step ? 'step' : undefined}
                             title={text}
                         >
                             <span className="wizard-marker flex">
-                                {index < step && (
-                                    <Icon name="checkmark" size={3} className="z-up m-auto wizard-marker-icon" />
-                                )}
+                                {index < step && <IcCheckmark size={3} className="z-up m-auto wizard-marker-icon" />}
                             </span>
                         </li>
                     );

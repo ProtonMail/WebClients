@@ -5,7 +5,6 @@ import { c } from 'ttag';
 
 import { userSettingsActions } from '@proton/account/userSettings';
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import PhoneInput from '@proton/components/components/v2/phone/LazyPhoneInput';
@@ -13,6 +12,8 @@ import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
+import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { useDispatch } from '@proton/redux-shared-store';
 import { updatePhone } from '@proton/shared/lib/api/settings';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
@@ -145,10 +146,7 @@ const RecoveryPhone = ({
                             phone.Value &&
                             (phone.Status !== SETTINGS_STATUS.VERIFIED ? (
                                 <>
-                                    <Icon
-                                        className="color-danger shrink-0 aligntop mr-1"
-                                        name="exclamation-circle-filled"
-                                    />
+                                    <IcExclamationCircleFilled className="color-danger shrink-0 aligntop mr-1" />
                                     <span className="color-norm mr-2">{c('Recovery Phone')
                                         .t`Phone number not yet verified.`}</span>
                                     <button
@@ -163,10 +161,7 @@ const RecoveryPhone = ({
                                 </>
                             ) : (
                                 <>
-                                    <Icon
-                                        className="color-success shrink-0 aligntop mr-1"
-                                        name="checkmark-circle-filled"
-                                    />
+                                    <IcCheckmarkCircleFilled className="color-success shrink-0 aligntop mr-1" />
                                     <span className="mr-2">{c('Recovery Phone')
                                         .t`Phone number has been verified.`}</span>
                                 </>

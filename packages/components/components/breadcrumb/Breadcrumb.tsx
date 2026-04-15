@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { Fragment } from 'react';
 
-import Icon from '@proton/components/components/icon/Icon';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import clsx from '@proton/utils/clsx';
 
 interface Props {
@@ -41,7 +41,7 @@ const Breadcrumb = ({ list, current = 0, onClick, className, getIsDisabled }: Pr
                         </li>
                         {!isLast && (
                             <li aria-hidden="true" className="inline-flex color-disabled">
-                                <Icon size={3.5} className="shrink-0 m-auto" name="chevron-right" />
+                                <IcChevronRight size={3.5} className="shrink-0 m-auto" />
                             </li>
                         )}
                     </Fragment>

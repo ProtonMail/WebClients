@@ -4,10 +4,12 @@ import { useOrganization } from '@proton/account/organization/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { PanelHeader } from '@proton/atoms/Panel/PanelHeader';
 import Copy from '@proton/components/components/button/Copy';
-import Icon from '@proton/components/components/icon/Icon';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
+import { IcPencil } from '@proton/icons/icons/IcPencil';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
+import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
 import { KEY_FLAG } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import type { Group } from '@proton/shared/lib/interfaces';
@@ -76,7 +78,7 @@ const ViewGroup = ({
                                 key="button-add-user"
                                 onClick={() => addUsersToGroupModal.openModal(true)}
                             >
-                                <Icon className="shrink-0 mr-2" name="user-plus" alt={c('Action').t`Add user`} />
+                                <IcUserPlus className="shrink-0 mr-2" alt={c('Action').t`Add user`} />
                                 <span>{c('Action').t`Add user`}</span>
                             </Button>,
                             <Button
@@ -89,7 +91,7 @@ const ViewGroup = ({
                                 }}
                                 title={c('Action').t`Edit group`}
                             >
-                                <Icon name="pencil" alt={c('Action').t`Edit group`} />
+                                <IcPencil alt={c('Action').t`Edit group`} />
                             </Button>,
                             <Button
                                 shape="outline"
@@ -100,7 +102,7 @@ const ViewGroup = ({
                                 }}
                                 title={c('Action').t`Delete group`}
                             >
-                                <Icon name="trash" alt={c('Action').t`Delete group`} />
+                                <IcTrash alt={c('Action').t`Delete group`} />
                             </Button>,
                         ]}
                     />

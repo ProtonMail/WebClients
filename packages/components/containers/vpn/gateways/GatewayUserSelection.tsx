@@ -6,12 +6,13 @@ import { Href } from '@proton/atoms/Href/Href';
 import { Input } from '@proton/atoms/Input/Input';
 import Field from '@proton/components/components/container/Field';
 import Row from '@proton/components/components/container/Row';
-import Icon from '@proton/components/components/icon/Icon';
 import Option from '@proton/components/components/option/Option';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
+import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
+import { IcUsersFilled } from '@proton/icons/icons/IcUsersFilled';
 import { SERVER_FEATURES } from '@proton/shared/lib/constants';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 
@@ -152,7 +153,7 @@ export const GatewayUserSelection = ({ users, groups, model, changeModel }: Prop
                 <div className="my-4 w-full">
                     <Input
                         placeholder={c('Action').t`Search`}
-                        prefix={<Icon name="magnifier" />}
+                        prefix={<IcMagnifier />}
                         className="pl-0"
                         value={searchQuery}
                         onChange={({ target }) => setSearchQuery(target.value)}
@@ -219,7 +220,7 @@ export const GatewayUserSelection = ({ users, groups, model, changeModel }: Prop
                                     onSelectEntity={onSelectGroup}
                                     checked={checked}
                                     entity={group}
-                                    avatar={<Icon name="users-filled"></Icon>}
+                                    avatar={<IcUsersFilled />}
                                     description={c('Label').ngettext(
                                         msgid`${group.UserCount} user`,
                                         `${group.UserCount} users`,

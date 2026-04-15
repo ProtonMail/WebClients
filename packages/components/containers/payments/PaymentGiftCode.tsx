@@ -5,9 +5,10 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Input } from '@proton/atoms/Input/Input';
-import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
 import useToggle from '@proton/components/hooks/useToggle';
+import { IcGift } from '@proton/icons/icons/IcGift';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 
 interface Props {
     loading?: boolean;
@@ -41,7 +42,7 @@ const PaymentGiftCode = ({ giftCodeRef, giftCode = '', onApply, loading }: Props
         return (
             <div className="flex items-center">
                 <span className="flex-1 flex-nowrap items-center">
-                    <Icon name="gift" className="mr-2 mb-1 shrink-0" />
+                    <IcGift className="mr-2 mb-1 shrink-0" />
                     <code>{getFormattedGiftCode(giftCode)}</code>
                 </span>
                 <Button
@@ -51,7 +52,7 @@ const PaymentGiftCode = ({ giftCodeRef, giftCode = '', onApply, loading }: Props
                     onClick={() => onApply('')}
                     title={c('Action').t`Remove gift code`}
                 >
-                    <Icon name="trash" alt={c('Action').t`Remove gift code`} />
+                    <IcTrash alt={c('Action').t`Remove gift code`} />
                 </Button>
             </div>
         );

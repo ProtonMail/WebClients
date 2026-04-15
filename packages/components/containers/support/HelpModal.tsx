@@ -2,10 +2,13 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import Icon from '@proton/components/components/icon/Icon';
 import Modal, { type ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
+import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare';
+import { IcBug } from '@proton/icons/icons/IcBug';
+import { IcLightbulb } from '@proton/icons/icons/IcLightbulb';
+import { IcQuestionCircle } from '@proton/icons/icons/IcQuestionCircle';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 
@@ -35,7 +38,7 @@ const HelpModal = ({ APP_NAME, onOpenBugModal, ...rest }: Props) => {
                             data-testid="userdropdown:help:link:open-bug-modal"
                             onClick={onOpenBugModal}
                         >
-                            <Icon name="bug" className="shrink-0" />
+                            <IcBug className="shrink-0" />
                             <span>{c('Action').t`Report a problem`}</span>
                         </Button>
                     </li>
@@ -49,9 +52,9 @@ const HelpModal = ({ APP_NAME, onOpenBugModal, ...rest }: Props) => {
                             target="_blank"
                             data-testid="userdropdown:help:link:request-feature"
                         >
-                            <Icon name="lightbulb" className="shrink-0" />
+                            <IcLightbulb className="shrink-0" />
                             <span>{c('Action').t`Request a feature`}</span>
-                            <Icon name="arrow-within-square" className="ml-auto shrink-0 color-hint" />
+                            <IcArrowWithinSquare className="ml-auto shrink-0 color-hint" />
                         </ButtonLike>
                     </li>
                     <li className="py-2">
@@ -68,9 +71,9 @@ const HelpModal = ({ APP_NAME, onOpenBugModal, ...rest }: Props) => {
                             target="_blank"
                             data-testid="userdropdown:help:link:question"
                         >
-                            <Icon name="question-circle" className="shrink-0" />
+                            <IcQuestionCircle className="shrink-0" />
                             {c('Action').t`Help and resources`}
-                            <Icon name="arrow-within-square" className="ml-auto shrink-0 color-hint" />
+                            <IcArrowWithinSquare className="ml-auto shrink-0 color-hint" />
                         </ButtonLike>
                     </li>
                 </ul>

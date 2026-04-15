@@ -2,12 +2,12 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import Icon from '@proton/components/components/icon/Icon';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Modal from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
+import { IcInfoCircleFilled } from '@proton/icons/icons/IcInfoCircleFilled';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 
 import ReadonlyFieldWithCopy from '../ReadonlyFieldWithCopy';
@@ -51,7 +51,7 @@ const SetupSCIMModal = ({ onClose, token, type, baseUrl, ssoAppInfo, ...rest }: 
                 )}
                 <ReadonlyFieldWithCopy label={c('scim: Label').t`SCIM token`} value={token} />
                 <div className="rounded border p-4 flex flex-nowrap gap-2">
-                    <Icon name="info-circle-filled" className="color-danger shrink-0" />
+                    <IcInfoCircleFilled className="color-danger shrink-0" />
                     <p className="m-0">
                         <b>{c('scim: Info').t`Make sure you copy the above SCIM token now.`}</b>{' '}
                         {c('scim: Info')
