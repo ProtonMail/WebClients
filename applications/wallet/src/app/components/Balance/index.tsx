@@ -3,8 +3,8 @@ import { useRef } from 'react';
 import { c } from 'ttag';
 
 import type { WasmApiWalletAccount } from '@proton/andromeda';
-import { Icon } from '@proton/components';
-import type { IWasmApiWalletData } from '@proton/wallet/types';
+import { IcEye } from '@proton/icons/icons/IcEye';
+import { IcEyeSlash } from '@proton/icons/icons/IcEyeSlash';
 import { COMPUTE_BITCOIN_UNIT } from '@proton/wallet/constants/bitcoin';
 import {
     useHideAmounts,
@@ -13,6 +13,7 @@ import {
     useWalletDispatch,
 } from '@proton/wallet/store/hooks';
 import { toggleHideAmounts } from '@proton/wallet/store/slices';
+import type { IWasmApiWalletData } from '@proton/wallet/types';
 
 import { CoreButton } from '../../atoms';
 import { MaybeHiddenAmount } from '../../atoms/MaybeHiddenAmount';
@@ -77,7 +78,11 @@ export const Balance = ({ apiWalletData, apiAccount, disabled }: Props) => {
                             aria-pressed={hideAmounts}
                             onClick={() => dispatch(toggleHideAmounts())}
                         >
-                            <Icon name={hideAmounts ? 'eye' : 'eye-slash'} alt={c('Action').t`Show balance`} size={6} />
+                            {hideAmounts ? (
+                                <IcEye alt={c('Action').t`Show balance`} size={6} />
+                            ) : (
+                                <IcEyeSlash alt={c('Action').t`Show balance`} size={6} />
+                            )}
                         </CoreButton>
                     )}
                 </div>

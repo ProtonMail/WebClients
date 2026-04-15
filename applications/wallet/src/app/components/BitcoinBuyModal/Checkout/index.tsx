@@ -7,7 +7,7 @@ import type { WasmGatewayProvider, WasmPaymentMethod } from '@proton/andromeda';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Icon } from '@proton/components';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
 
 import { VOLT_WEBSITE } from '../../../constants/buy';
@@ -121,7 +121,7 @@ export const Checkout = ({
                         data-testid="modal:close"
                         onClick={onBack}
                     >
-                        <Icon className="modal-close-icon" name="cross-big" alt={c('Action').t`Close`} />
+                        <IcCrossBig className="modal-close-icon" alt={c('Action').t`Close`} />
                     </Button>
                 </Tooltip>
 
