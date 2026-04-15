@@ -1,4 +1,5 @@
-import { PLANS } from '@proton/payments';
+import type { SubscriptionPlan } from '@proton/payments';
+import { ADDON_NAMES, PLANS } from '@proton/payments';
 import type { OrganizationExtended, UserModel } from '@proton/shared/lib/interfaces';
 
 import type { InternalBookingPage } from '../../../store/internalBooking/interface';
@@ -11,16 +12,31 @@ import { MAX_BOOKING_PAGES, MAX_BOOKING_PAGE_MAIL_FREE, MAX_BOOKING_PAGE_MAIL_PA
 export const hasUserReachPlanLimit = (
     user: UserModel,
     pageCount: number,
-    organization?: OrganizationExtended
+    organization?: OrganizationExtended,
+    meetAddon?: SubscriptionPlan
 ): boolean => {
     // Users not paying for Mail or Meet get no booking pages
     if (!user.hasPaidMail && !user.hasPaidMeet) {
         return true;
     }
 
-    const planName = organization?.PlanName;
+    // If the user has an addon, we use this to determine the plan name and the associated limits
+    const planName = meetAddon ? meetAddon.Name : organization?.PlanName;
     switch (planName) {
         // Those plans have the maximum number of booking pages
+        case ADDON_NAMES.MEET_VPN2024:
+        case ADDON_NAMES.MEET_LUMO:
+        case ADDON_NAMES.MEET_DRIVE:
+        case ADDON_NAMES.MEET_PASS:
+        case ADDON_NAMES.MEET_DRIVE_1TB:
+        case ADDON_NAMES.MEET_VPN_PASS_BUNDLE:
+        case ADDON_NAMES.MEET_MAIL:
+        case ADDON_NAMES.MEET_BUNDLE:
+        case ADDON_NAMES.MEET_MAIL_PRO:
+        case ADDON_NAMES.MEET_DUO:
+        case ADDON_NAMES.MEET_FAMILY:
+        case ADDON_NAMES.MEET_MAIL_BUSINESS:
+        case ADDON_NAMES.MEET_BUNDLE_PRO:
         case PLANS.VISIONARY:
         case PLANS.MAIL_BUSINESS:
         case PLANS.BUNDLE_PRO:
@@ -29,7 +45,7 @@ export const hasUserReachPlanLimit = (
         case PLANS.MEET_BUSINESS:
         case PLANS.MEET:
             return pageCount >= MAX_BOOKING_PAGES;
-        // Those plans have 1 booking page and are upsell to budlebiz2025
+        // Those plans have 1 booking page and are upsell to bundlebiz2025
         case PLANS.MAIL:
         case PLANS.BUNDLE:
         case PLANS.DUO:
@@ -39,6 +55,51 @@ export const hasUserReachPlanLimit = (
         // Any unhandled case will be limited at 0 booking pages
         default:
             return pageCount >= MAX_BOOKING_PAGE_MAIL_FREE;
+    }
+};
+
+/**
+ * Checks the eligibility of the organisation members for a booking limit based on their subscription and bookings pages.
+ *
+ * Any meet add-on, or Mail B2B org plan: members get MAX_BOOKING_PAGES (25).
+ * Mail B2C org plans without add-on: members get MAX_BOOKING_PAGE_MAIL_PAID (1).
+ * All other cases: members are fully blocked (limit is 0).
+ */
+export const hasOrgMemberReachedBookingLimit = (
+    user: UserModel,
+    bookingsPages?: InternalBookingPage[],
+    organization?: OrganizationExtended
+): boolean => {
+    if (!bookingsPages) {
+        return false;
+    }
+
+    // If any meet addon: members get MAX_BOOKING_PAGES
+    if (user.hasPaidMeet) {
+        return bookingsPages.length >= MAX_BOOKING_PAGES;
+    }
+
+    const planName = organization?.PlanName;
+    switch (planName) {
+        // Mail B2B org plan: members get MAX_BOOKING_PAGES
+        case PLANS.VISIONARY:
+        case PLANS.MAIL_BUSINESS:
+        case PLANS.BUNDLE_PRO:
+        case PLANS.BUNDLE_PRO_2024:
+        case PLANS.BUNDLE_BIZ_2025:
+        case PLANS.MEET_BUSINESS:
+        case PLANS.MEET:
+            return bookingsPages.length >= MAX_BOOKING_PAGES;
+        // Mail B2C org plans without meet add-on: members get MAX_BOOKING_PAGE_MAIL_PAID
+        case PLANS.MAIL:
+        case PLANS.BUNDLE:
+        case PLANS.DUO:
+        case PLANS.FAMILY:
+        case PLANS.MAIL_PRO:
+            return bookingsPages.length >= MAX_BOOKING_PAGE_MAIL_PAID;
+        // All other plans: members are fully blocked
+        default:
+            return true;
     }
 };
 
