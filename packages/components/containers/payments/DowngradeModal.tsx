@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
+import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
-import Alert from '@proton/components/components/alert/Alert';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import { MAIL_APP_NAME, VPN_APP_NAME } from '@proton/shared/lib/constants';
@@ -35,7 +35,7 @@ const DowngradeModal = ({ hasMail, hasVpn, onConfirm, onClose, ...rest }: Downgr
             data-testid="confirm-downgrade-modal"
             {...rest}
         >
-            <Alert className="mb-4" type="error">
+            <Banner className="mb-4" variant={BannerVariants.DANGER}>
                 {(() => {
                     if (hasBundle) {
                         return c('Info')
@@ -50,8 +50,8 @@ const DowngradeModal = ({ hasMail, hasVpn, onConfirm, onClose, ...rest }: Downgr
                     return c('Info')
                         .t`If you proceed with the downgrade, you will lose access to ${VPN_APP_NAME} paid features.`;
                 })()}
-            </Alert>
-            <Alert type="warning">
+            </Banner>
+            <Banner variant={BannerVariants.WARNING}>
                 {[
                     hasMail &&
                         c('Info')
@@ -60,7 +60,7 @@ const DowngradeModal = ({ hasMail, hasVpn, onConfirm, onClose, ...rest }: Downgr
                 ]
                     .filter(Boolean)
                     .join(' ')}
-            </Alert>
+            </Banner>
         </Prompt>
     );
 };
