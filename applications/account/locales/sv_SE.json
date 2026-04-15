@@ -5018,6 +5018,12 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Ditt paket stöder totalt ${ MAX_SYNC_PAID_USER } Gmail-adress",
         "Ditt paket stöder ett totalt antal av ${ MAX_SYNC_PAID_USER } Gmail-adresser"
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Om du vill fortsätta ta emot och skicka Gmail-meddelanden i ${ BRAND_NAME }, återanslut dina konton."
+      ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Du har redan en Gmail-adress som vidarebefordras till ${ MAIL_APP_NAME }. Anslut den nedan för att skicka och ta emot e-post direkt från ${ MAIL_APP_NAME }."
       ]
     },
     "description": {
@@ -6456,6 +6462,9 @@
       ],
       "Your recovery contacts should be people you know and can contact easily.": [
         "Dina återställningskontakter bör vara personer du känner och lätt kan kontakta."
+      ],
+      "You will no longer be able to help ${ user } recover their data after they reset their password.": [
+        "Du kommer inte längre kunna hjälpa ${ user } att återställa deras data efter att de har återställt deras lösenord."
       ]
     },
     "Empty group name": {
@@ -7152,6 +7161,12 @@
       ],
       "Zero keys reactivated": [
         "Noll nycklar återaktiverade"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Misslyckades med att ladda prenumerationsdata. Försök igen senare."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Något gick fel vid hämtning av tillgängliga domäner"
       ]
     },
     "error": {
@@ -12548,6 +12563,18 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
+      ],
+      "Check your network and try again.": [
+        "Kontrollera ditt nätverk och försök igen."
+      ],
+      "Click 'Trouble signing in?' on your TV to follow the alternative steps.": [
+        "Klicka på ”Problem att logga in?” på din TV för att följa de alternativa stegen."
+      ],
+      "Invalid code. ${ RequestNewCodeLink } and try again.": [
+        "Ogiltig kod. ${ RequestNewCodeLink } och försök igen."
+      ],
+      "You will regain complete or partial access to your encrypted data.": [
+        "Du kommer återfå fullständig eller delvis åtkomst till dina krypterade data."
       ]
     },
     "info": {
@@ -15512,6 +15539,24 @@
       ],
       "Submit your ideas": [
         "Skicka dina idéer"
+      ],
+      "Check out the latest product updates": [
+        "Kolla in de senaste produktuppdateringarna"
+      ],
+      "Keep current plan": [
+        "Behåll nuvarande paket"
+      ],
+      "Make your voice heard": [
+        "Gör din röst hörd"
+      ],
+      "Request a feature": [
+        "Begär en funktion"
+      ],
+      "Request a feature or vote on ideas from other users in our feedback forum.": [
+        "Begär en funktion eller rösta på idéer från andra användare i vårt forum för feedback."
+      ],
+      "See how ${ BRAND_NAME } apps are evolving with your feedback.": [
+        "Se hur ${ BRAND_NAME }-appar utvecklas med din feedback."
       ]
     },
     "Modal title": {
@@ -18402,6 +18447,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Din prenumeration har för närvarande en befintlig rabatt. Att flytta till denna nya kampanj innebär att den befintliga rabatten inte längre kommer att tillämpas."
+      ],
+      "Edit billing address": [
+        "Redigera faktureringsadress"
       ]
     },
     "Payments.Error": {
@@ -20862,6 +20910,9 @@
       ],
       "Your trial": [
         "Din provperiod"
+      ],
+      "${ MAIL_SHORT_APP_NAME } Free": [
+        "${ MAIL_SHORT_APP_NAME } Free"
       ]
     },
     "Signup label": {

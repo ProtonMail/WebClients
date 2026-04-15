@@ -1748,6 +1748,24 @@
       ],
       "Zoom out": [
         "Zoom ut"
+      ],
+      "Enter code": [
+        "Skriv inn koden"
+      ],
+      "I don't have my key": [
+        "Jeg har ikke nøkkelen min"
+      ],
+      "I don’t have my backup codes": [
+        "Jeg har ikke reservekodene mine"
+      ],
+      "I don’t have my phone": [
+        "Jeg har ikke mobilen min"
+      ],
+      "Recover account": [
+        "Gjenopprett konto"
+      ],
+      "Send new code": [
+        "Send ny kode"
       ]
     },
     "action": {
@@ -5035,6 +5053,9 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Planen din støtter totalt ${ MAX_SYNC_PAID_USER } Gmail-adresse",
         "Planen din støtter totalt ${ MAX_SYNC_PAID_USER } Gmail-adresser"
+      ],
+      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
+        "Du vil ikke lenger kunne bruke ${ address.Email } til å motta og sende e-poster i ${ BRAND_NAME }. Merk også at meldinger sendt til denne adressen fra ${ BRAND_NAME } ikke lenger vil bli ende-til-ende-kryptert."
       ]
     },
     "description": {
@@ -7194,6 +7215,9 @@
       ],
       "Zero keys reactivated": [
         "Null nøkler aktivert på nytt"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Kunne ikke laste inn abonnementsdata. Prøv på nytt senere."
       ]
     },
     "error": {
@@ -8348,6 +8372,9 @@
     "Group detail label": {
       "Group address:": [
         "Gruppeadresse:"
+      ],
+      "Description:": [
+        "Beskrivelse:"
       ]
     },
     "Group member count": {
@@ -12589,6 +12616,63 @@
       ],
       "Zoom meeting": [
         "Zoom-møte"
+      ],
+      "${ BRAND_NAME } will send a verification code to ${ phoneNumber }. Standard message rates may apply.": [
+        "${ BRAND_NAME } sender en bekreftelseskode til ${ phoneNumber }. Standard meldingstakster kan gjelde."
+      ],
+      "An email with a verification code was just sent to ${ emailAddress }. If you can’t find the message in your inbox, please check your spam folder.": [
+        "En e-post med en bekreftelseskode ble nettopp sendt til ${ emailAddress }. Hvis du ikke finner meldingen i innboksen, kan du sjekke søppelpostmappen."
+      ],
+      "An SMS with a verification code was just sent to ${ phoneNumber }.": [
+        "En SMS med en bekreftelseskode ble nettopp sendt til ${ phoneNumber }."
+      ],
+      "Ask them to sign in to their ${ ACCOUNT_APP_NAME } in the browser, and go to **Settings → All settings → Recovery → Emergency access→ People who trust me.**": [
+        "Be dem om å logge på ${ ACCOUNT_APP_NAME }-kontoen i nettleseren, og gå til **Innstillinger → Alle innstillinger → Gjenoppretting → Nødtilgang → Personer som stoler på meg.**"
+      ],
+      "Before sending a new verification code, check your spam folder for ${ EmailOrPhoneNumber }.": [
+        "Før du sender en ny bekreftelseskode, sjekk søppelpostmappen for ${ EmailOrPhoneNumber }"
+      ],
+      "Can you reach out to your contact?": [
+        "Kan du kontakte kontakten din?"
+      ],
+      "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
+        "Avhengig av innstillingene dine kan de få tilgang umiddelbart, eller etter en angitt **ventetid**."
+      ],
+      "Enter the 12-word recovery phrase associated with your account.": [
+        "Skriv inn gjenopprettingsfrasen på 12 ord som er knyttet til kontoen din."
+      ],
+      "From there, they can request emergency access to your account by clicking **Request access.**": [
+        "Derfra kan de be om nødtilgang til kontoen din ved å klikke på **Be om tilgang**."
+      ],
+      "Get in touch with your emergency contacts, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed**.": [
+        "Ta kontakt med nødkontaktene dine for å se om de kan hjelpe. Etter at de har bedt om nødtilgang til kontoen din, vil de kunne endre passordet ditt for deg **etter at ventetiden for tilgang er over**."
+      ],
+      "How your emergency contact can change your password for you:": [
+        "Slik kan nødkontakten endre passordet ditt for deg:"
+      ],
+      "No forwarding history.": [
+        "Ingen videresendingshistorikk."
+      ],
+      "Open your active session in the browser, and go to **Settings → All settings → Recovery → Password reset settings.**": [
+        "Åpne den aktive økten i nettleseren, og gå til **Innstillinger → Alle innstillinger → Gjenoppretting → Innstillinger for tilbakestilling av passord.**"
+      ],
+      "Select a group to view its members and settings.": [
+        "Velg en gruppe for å se medlemmene og innstillingene."
+      ],
+      "This password is used to login to your ${ BRAND_NAME } account": [
+        "Dette passordet brukes til å logge inn på ${ BRAND_NAME }-kontoen din"
+      ],
+      "Web sessions detected:": [
+        "Nettøkter oppdaget:"
+      ],
+      "You will regain complete or partial access to your encrypted data.": [
+        "Du vil få tilbake full eller delvis tilgang til dine krypterte data."
+      ],
+      "Your encrypted data will be locked": [
+        "Dine krypterte data vil bli låst"
+      ],
+      "your encrypted data will be locked": [
+        "dine krypterte data vil bli låst"
       ]
     },
     "info": {
@@ -14614,6 +14698,12 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Enter name or email address": [
+        "Skrin inn navn eller e-postadresse"
+      ],
+      "Invite people": [
+        "Inviter folk"
       ]
     },
     "label": {
@@ -15007,6 +15097,12 @@
       ],
       "What’s this?": [
         "Hva er det der?"
+      ],
+      "contacts’ assistance": [
+        "kontakthjelp"
+      ],
+      "Details": [
+        "Detaljer"
       ]
     },
     "Link (Scribe)": {
@@ -18458,6 +18554,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Abonnementet ditt har for øyeblikket en eksisterende rabatt. Hvis du flytter til denne nye kampanjen, vil den eksisterende rabatten ikke lenger gjelde."
+      ],
+      "Edit billing address": [
+        "Rediger faktureringsadresse"
       ]
     },
     "Payments.Error": {
@@ -20945,6 +21044,15 @@
       ],
       "You’re invited to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
         "Du er invitert til å bli med over 100 millioner mennesker som valgte å beholde kontrollen over dataene sine med ${ BRAND_NAME }s krypterte økosystem."
+      ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "Hold samtalene dine private med ${ MAIL_APP_NAME }"
+      ],
+      "Secure calendar": [
+        "Sikker kalender"
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "VPN med servere i ${ vpnServersCountData.free.countries } land"
       ]
     },
     "Signup label": {
@@ -24510,6 +24618,36 @@
       ],
       "Your subscriptions": [
         "Dine abonnementer"
+      ],
+      "Ask your emergency contacts for help": [
+        "Be nødkontaktene dine om hjelp"
+      ],
+      "Can you access your session in the browser?": [
+        "Har du tilgang til økten din i nettleseren?"
+      ],
+      "Code expired": [
+        "Koden er utløpt"
+      ],
+      "Couldn't sign in": [
+        "Kunne ikke logge på"
+      ],
+      "Recover account": [
+        "Gjenopprett konto"
+      ],
+      "Request new code?": [
+        "Be om en ny kode?"
+      ],
+      "Try changing your password in your active web session": [
+        "Prøv å endre passordet ditt i den aktive nettøkten"
+      ],
+      "Two-factor authentication disabled": [
+        "Tofaktorautentisering deaktivert"
+      ],
+      "Use backup recovery code": [
+        "Bruk sikkerhetskopi av gjenopprettingskode"
+      ],
+      "Verify it’s you": [
+        "Bekreft at det er deg"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -25954,6 +26092,32 @@
       ],
       "Yearly, ${ untilString }": [
         "Årlig, ${ untilString }"
+      ]
+    },
+    "Missing feature": {
+      "Check out the latest product updates": [
+        "Sjekk de siste produktoppdateringene"
+      ],
+      "Continue cancelling": [
+        "Fortsett avbestillingen"
+      ],
+      "Explore the latest news": [
+        "Utforsk de siste nyhetene"
+      ],
+      "Keep current plan": [
+        "Behold gjeldende plan"
+      ],
+      "Make your voice heard": [
+        "Få din stemme hørt"
+      ],
+      "Request a feature": [
+        "Foreslå ny funksjon"
+      ],
+      "Request a feature or vote on ideas from other users in our feedback forum.": [
+        "Be om en funksjon eller stem på ideer fra andre brukere i tilbakemeldingsforumet vårt."
+      ],
+      "See how ${ BRAND_NAME } apps are evolving with your feedback.": [
+        "Se hvordan ${ BRAND_NAME }-appene utvikler seg med tilbakemeldingene dine."
       ]
     }
   }

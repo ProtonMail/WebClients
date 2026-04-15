@@ -7235,6 +7235,9 @@
       ],
       "Zero keys reactivated": [
         "Nul nøgler genaktiveret"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Kunne ikke indlæse abonnementsdata. Prøv igen senere."
       ]
     },
     "error": {
@@ -12756,6 +12759,9 @@
       ],
       "Zoom meeting": [
         "Zoom-møde"
+      ],
+      "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
+        "Kreditten for en henvisning kan tildeles op til 2 måneder efter din vens prøveperiode udløb, og kun hvis din ven tegnede et abonnement."
       ]
     },
     "info": {
@@ -18643,6 +18649,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Dit abonnement har i øjeblikket en eksisterende rabat. Ved at skifte til denne nye kampagne vil den eksisterende rabat ikke længere blive anvendt."
+      ],
+      "Edit billing address": [
+        "Rediger faktureringsadresse"
       ]
     },
     "Payments.Error": {
@@ -26190,6 +26199,38 @@
       ],
       "Yearly, ${ untilString }": [
         "Årligt, ${ untilString }"
+      ]
+    },
+    "Missing feature": {
+      "Check out the latest product updates": [
+        "Se de seneste produktopdateringer"
+      ],
+      "Continue cancelling": [
+        "Fortsæt annullering"
+      ],
+      "Explore the latest news": [
+        "Udforsk de seneste nyheder"
+      ],
+      "Keep current plan": [
+        "Behold nuværende abonnement"
+      ],
+      "Make your voice heard": [
+        "Gør din stemme hørt"
+      ],
+      "Request a feature": [
+        "Anmod om en funktion"
+      ],
+      "Request a feature or vote on ideas from other users in our feedback forum.": [
+        "Anmod om en funktion eller stem på idéer fra andre brugere i vores feedback forum."
+      ],
+      "See how ${ BRAND_NAME } apps are evolving with your feedback.": [
+        "Se hvordan ${ BRAND_NAME } apps udvikler sig fra din feedback."
+      ],
+      "Submit your ideas": [
+        "Send dine idéer ind"
+      ],
+      "Your feedback helps us improve. Whether you've spotted a bug, want a new feature, or think something could work differently, we'd love to hear from you.": [
+        "Din feedback hjælper os med at blive bedre. Uanset om du har opdaget en fejl, ønsker en ny funktion, eller tror at noget kunne fungere bedre på en anden måde, så vil vi rigtig gerne høre fra dig."
       ]
     }
   }
