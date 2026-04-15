@@ -34,7 +34,11 @@ const Header = ({ center, className, right, title, belowTitle, subTitle, onBack,
                 </div>
             ) : null}
             {belowTitle}
-            {subTitle ? <div className="mt-2 color-weak">{subTitle}</div> : null}
+            {subTitle ? (
+                <div className="mt-2 color-weak" data-testid="public-main-header:subtitle">
+                    {subTitle}
+                </div>
+            ) : null}
         </div>
     );
 };
