@@ -2,7 +2,7 @@ import type { PropsWithChildren } from 'react';
 
 import { c } from 'ttag';
 
-import Alert from '@proton/components/components/alert/Alert';
+import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
 import Price from '@proton/components/components/price/Price';
 import { type Currency, PAYMENT_METHOD_TYPES, type PlainPaymentMethodType } from '@proton/payments';
 import {
@@ -29,14 +29,16 @@ const PayPalView = ({ amount, currency, method, children }: PropsWithChildren<Pr
         );
 
         return (
-            <Alert className="mb-4" type="error">
+            <Banner className="mb-4" variant={BannerVariants.DANGER}>
                 {c('Error').jt`Amount below minimum (${minimumAmount}).`}
-            </Alert>
+            </Banner>
         );
     }
 
     if (amount > getMaxCreditAmount(currency)) {
-        return <Alert className="mb-4" type="error">{c('Error').t`Amount above the maximum.`}</Alert>;
+        return (
+            <Banner className="mb-4" variant={BannerVariants.DANGER}>{c('Error').t`Amount above the maximum.`}</Banner>
+        );
     }
 
     return children;
