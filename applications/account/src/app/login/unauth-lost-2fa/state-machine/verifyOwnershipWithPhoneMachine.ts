@@ -1,9 +1,8 @@
 import { type ActorRefFrom, assign, setup } from 'xstate';
 
-type Result = 'no-phone-method' | '2fa-disabled' | 'skipped' | 'error';
+type Result = '2fa-disabled' | 'skipped' | 'error';
 
 interface MachineContext {
-    hasRecoveryPhone: boolean;
     result: Result | null;
 }
 
@@ -15,24 +14,16 @@ export const verifyOwnershipWithPhoneMachine = setup({
     types: {
         context: {} as MachineContext,
         events: {} as MachineEvent,
-        input: {} as { hasRecoveryPhone: boolean },
         output: {} as { result: Result },
-    },
-    guards: {
-        hasRecoveryPhone: ({ context }) => context.hasRecoveryPhone,
     },
 }).createMachine({
     id: 'verifyOwnershipWithPhone',
-    initial: 'validating',
-    context: ({ input }) => ({
-        hasRecoveryPhone: input.hasRecoveryPhone,
+    initial: 'verify code',
+    context: {
         result: null,
-    }),
+    },
     output: ({ context }): { result: Result } => ({ result: context.result! }),
     states: {
-        validating: {
-            always: [{ guard: 'hasRecoveryPhone', target: 'verify code' }, { target: 'no phone method' }],
-        },
         'verify code': {
             on: {
                 '2fa disabled': {
@@ -45,10 +36,6 @@ export const verifyOwnershipWithPhoneMachine = setup({
                     target: 'error',
                 },
             },
-        },
-        'no phone method': {
-            type: 'final',
-            entry: assign({ result: 'no-phone-method' }),
         },
         '2fa disabled': {
             type: 'final',
