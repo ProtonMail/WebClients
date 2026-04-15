@@ -16,7 +16,7 @@ interface BaseSearchActionsProps {
     onRename: (uid: string) => void;
     onTrash: (uids: string[]) => void;
     onMove: (uids: string[]) => void;
-    onGoToParent: (parentNodeUid: string) => void;
+    onGoToParent: (uid: string, parentNodeUid: string) => void;
     onShowRevisions: (uid: string) => void;
     onOpenDocsOrSheets: (uid: string, openInDocs: OpenInDocsType) => void;
     onShare: (uid: string) => void;
