@@ -5141,6 +5141,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Uw zoekopdracht leverde te veel resultaten op. Verfijn uw zoekopdracht en probeer het opnieuw."
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Kon de gegevens van je abonnement niet laden, probeer het later opnieuw."
       ]
     },
     "error": {
@@ -8884,6 +8887,12 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "U bent slechts een paar klikken verwijderd van een overzichtelijke inbox"
+      ],
+      "Enter code": [
+        "Voer code in"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Als u de toegang tot uw authenticatie-app bent kwijtgeraakt, kunt u 1 van de 16 back-up herstelcodes gebruiken die zijn verstrekt toen u tweestapsverificatie instelde. ${ learnMoreLink }"
       ]
     },
     "info": {
@@ -11216,6 +11225,13 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "We scannen het dark web om te controleren of uw ${ BRAND_NAME } adressen of aliassen zijn gelekt en waarschuwen u onmiddellijk wanneer we iets vinden."
+      ],
+      "Appointment scheduling": [
+        "Afspraak plannen"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Afspraakplanning met ${ n } boekingspagina",
+        "Afspraakplanning met ${ n } boekingspagina's"
       ]
     },
     "new_plans: feature highlight": {
@@ -12344,6 +12360,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Uw abonnement heeft momenteel een bestaande korting. Overstappen naar deze nieuwe promotie betekent dat de bestaande korting niet langer wordt toegepast."
+      ],
+      "Edit billing address": [
+        "Factuuradres bewerken"
       ]
     },
     "Payments.Error": {

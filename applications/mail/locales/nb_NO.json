@@ -1688,6 +1688,15 @@
       ],
       "Zoom out": [
         "Zoom ut"
+      ],
+      "Connect to Gmail": [
+        "Koble til Gmail"
+      ],
+      "Or remove forwarding address": [
+        "Eller fjern videresendingsadressen"
+      ],
+      "Reconnect to Gmail": [
+        "Koble til Gmail på nytt"
       ]
     },
     "action": {
@@ -4206,6 +4215,81 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har allerede opprettet 10 aliaser. Få ubegrensede aliaser og 500 GB lagringsplass med ${ BRAND_NAME } Unlimited."
+      ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Blokker Googles mulighet til å profilere deg. Gmail kan ikke se hva du gjør i ${ MAIL_APP_NAME }"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "E-poster sendt til ${ connectedAddressText } vil nå vises i ${ MAIL_APP_NAME }."
+      ],
+      "No ads. No trackers.": [
+        "Ingen annonser. Ingen sporere."
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "Les, svar og hold deg oppdatert på Gmail fra ${ MAIL_APP_NAME }"
+      ],
+      "Send and receive Gmail correspondence directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "Send og motta Gmail-korrespondanse direkte i ${ MAIL_APP_NAME }. Koble til adressen din i ${ addressesSettingsLink }."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Dette kan skje hvis tillatelser ble fjernet eller passordet ditt ble endret."
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "For å koble til en annen Gmail-adresse, fjern ekstra Gmail-adresser som videresender til ${ BRAND_NAME }."
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "For å koble til opptil ${ MAX_SYNC_PAID_USER } Gmail-adresse, oppgrader til ${ planName }.",
+        "For å koble til opptil ${ MAX_SYNC_PAID_USER } Gmail-adresser, oppgrader til ${ planName }."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "For å fortsette å motta og sende Gmail-meldinger i ${ BRAND_NAME }, må du koble til kontoen din på nytt."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "For å fortsette å motta og sende Gmail-meldinger i ${ BRAND_NAME }, må du koble til kontoene dine på nytt."
+      ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "Oppgrader til ${ planName } for å koble til opptil ${ MAX_SYNC_PAID_USER } kontoer"
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Vi får ikke lenger tilgang til ${ boldEmails }."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "Vi henter inn de gamle e-postene og kobler Gmail-kontoen din til ${ MAIL_APP_NAME }, slik at nye meldinger vises automatisk."
+      ],
+      "We've started importing your email from Gmail. We'll let you know when it's done.": [
+        "Vi har begynt å importere e-posten din fra Gmail. Vi gir deg beskjed når det er ferdig."
+      ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Du har allerede en Gmail-adresse som videresender til ${ MAIL_APP_NAME }. Koble den til nedenfor for å sende og motta e-poster direkte fra ${ MAIL_APP_NAME }."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Du har allerede Gmail-adresser som videresender til ${ MAIL_APP_NAME }. Koble til én nedenfor for å sende og motta e-poster direkte fra ${ MAIL_APP_NAME }."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Du kan nå sende e-poster fra ${ BRAND_NAME } ved å bruke denne adressen."
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "Du videresender ${ numAddressesOrSync } Gmail-adresse til ${ MAIL_APP_NAME }.",
+        "Du videresender ${ numAddressesOrSync } Gmail-adresser til ${ MAIL_APP_NAME }."
+      ],
+      "You're forwarding emails from ${ forwardingCount } Gmail address. By connecting it, you'll be able to both receive and reply in ${ MAIL_APP_NAME }": [
+        "Du videresender e-poster fra ${ forwardingCount } Gmail-adresse. Ved å koble den til, vil du kunne både motta og svare i ${ MAIL_APP_NAME }",
+        "Du videresender e-poster fra ${ forwardingCount } Gmail-adresser. Ved å koble dem til, vil du kunne både motta og svare i ${ MAIL_APP_NAME }"
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "Du har koblet til ${ MAX_SYNC_PAID_USER } Gmail-adresse. For å legge til en til, må du først deaktivere en av de tilkoblede kontoene dine.",
+        "Du har koblet til ${ MAX_SYNC_PAID_USER } Gmail-adresser. For å legge til en til, må du først deaktivere en av de tilkoblede kontoene dine."
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "Du har koblet én ekstern kontoadresse til ${ MAIL_APP_NAME }."
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "Planen din støtter ${ MAX_SYNC_FREE_USER } Gmail-adresse.",
+        "Planen din støtter ${ MAX_SYNC_FREE_USER } Gmail-adresser."
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "Planen din støtter totalt ${ MAX_SYNC_PAID_USER } Gmail-adresse",
+        "Planen din støtter totalt ${ MAX_SYNC_PAID_USER } Gmail-adresser"
       ]
     },
     "description": {
@@ -5149,6 +5233,21 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Søket samsvarte med for mange resultater. Begrens søket, og prøv på nytt."
+      ],
+      "Address could not be added.": [
+        "Adressen kunne ikke legges til."
+      ],
+      "Address is already added to your account": [
+        "Adressen er allerede lagt til i kontoen din"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Kunne ikke laste inn abonnementsdata. Prøv på nytt senere."
+      ],
+      "Something went wrong while creating the address": [
+        "Noe gikk galt ved oppretting av adressen"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Noe gikk galt under henting av tilgjengelige domener"
       ]
     },
     "error": {
@@ -9969,6 +10068,9 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Select which Gmail address to connect": [
+        "Velg hvilken Gmail-adresse du vil koble til"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11224,6 +11326,13 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skanner det mørke nettet for å sjekke om ${ BRAND_NAME }-adressene eller aliasene dine har blitt lekket, og varsler deg umiddelbart hvis vi finner noe."
+      ],
+      "Appointment scheduling": [
+        "Avtaleplanlegging"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Avtaleplanlegging med ${ n } bestillingsside",
+        "Avtaleplanlegging med ${ n } bestillingssider"
       ]
     },
     "new_plans: feature highlight": {
@@ -11693,6 +11802,9 @@
       ],
       "Trial started": [
         "Prøveperiode startet"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Din ${ BRAND_NAME }-adresse er klar til bruk"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -12364,6 +12476,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Abonnementet ditt har for øyeblikket en eksisterende rabatt. Hvis du flytter til denne nye kampanjen, vil den eksisterende rabatten ikke lenger gjelde."
+      ],
+      "Edit billing address": [
+        "Rediger faktureringsadresse"
       ]
     },
     "Payments.Error": {
@@ -15898,6 +16013,21 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategorier kommer!"
+      ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Ta med Gmail til ${ MAIL_APP_NAME }"
+      ],
+      "Disconnected from Gmail": [
+        "Frakoblet fra Gmail"
+      ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "Send og motta Gmail ved å bruke ${ MAIL_APP_NAME }"
+      ],
+      "Use Gmail securely in ${ MAIL_APP_NAME }": [
+        "Bruk Gmail sikkert i ${ MAIL_APP_NAME }"
+      ],
+      "You are all set": [
+        "Du er klar"
       ]
     },
     "Today icon tooltip in mini calendar": {

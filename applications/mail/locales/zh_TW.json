@@ -1745,6 +1745,9 @@
       ],
       "Writing assistant seats": [
         "撰寫幫手就位"
+      ],
+      "${ seats } ${ MEET_APP_NAME } license": [
+        "${ seats } ${ MEET_APP_NAME } 授權"
       ]
     },
     "Alert": {
@@ -2548,6 +2551,9 @@
       ],
       "Total for ${ n } month": [
         " ${ n } 個月總計"
+      ],
+      "Subtotal for ${ cycle } month": [
+        "${ cycle } 個月小計"
       ]
     },
     "Collapsible tooltip": {
@@ -4074,6 +4080,21 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "您已經創建10個別名。${ BRAND_NAME }無限版可獲得無限別名和500GB的儲存容量。"
+      ],
+      "No ads. No trackers.": [
+        "無廣告。無追蹤器。"
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "若連接至多 ${ MAX_SYNC_PAID_USER } Gmail 位址,升級至 ${ planName } 方案。"
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "您正在轉寄 ${ numAddressesOrSync } Gmail 位址至 ${ MAIL_APP_NAME }，"
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "您的帳號支援 ${ MAX_SYNC_FREE_USER } Gmail 位址。"
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "您的帳號支援最多 ${ MAX_SYNC_PAID_USER } Gmail 位址"
       ]
     },
     "description": {
@@ -8493,6 +8514,9 @@
       ],
       "You’re just a few clicks away from a clutter-free inbox": [
         "輕點幾下滑鼠，即可擁有整潔的收件匣"
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "新增 ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ]
     },
     "info": {
@@ -15101,6 +15125,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ 分類功能即將推出！"
+      ],
+      "Disconnected from Gmail": [
+        "與 Gmail 中斷連線"
       ]
     },
     "Today icon tooltip in mini calendar": {

@@ -1188,7 +1188,7 @@
         "Solicitare funcție"
       ],
       "Request new code": [
-        "Solicitare cod nou"
+        "Solicitați un cod nou"
       ],
       "Resend code": [
         "Retrimitere cod"
@@ -5291,6 +5291,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Căutarea a găsit prea multe rezultate. Vă rugăm să limitați căutarea și să reîncercați."
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Eșuare la încărcarea datelor abonamentului. Reîncercați mai târziu."
       ]
     },
     "error": {
@@ -11527,6 +11530,14 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Scanăm internetul ascuns pentru a verifica dacă adresele sau aliasurile ${ BRAND_NAME } v-au fost divulgate și vă avertizăm imediat dacă găsim ceva."
+      ],
+      "Appointment scheduling": [
+        "Planificare întâlniri"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Planificare întâlniri cu ${ n } pagină de programări",
+        "Planificare întâlniri cu ${ n } pagini de programări",
+        "Planificare întâlniri cu ${ n } de pagini de programări"
       ]
     },
     "new_plans: feature highlight": {
@@ -12682,6 +12693,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Abonamentul actual are în prezent o reducere existentă. Trecerea la această nouă promoție înseamnă că reducerea curentă nu va mai fi aplicată."
+      ],
+      "Edit billing address": [
+        "Editați adresa de facturare"
       ]
     },
     "Payments.Error": {

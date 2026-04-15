@@ -5105,6 +5105,9 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Haullasi löytyi liikaa tuloksia. Rajoita hakua ja yritä uudelleen."
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Tilaustietoja ei voitu ladata. Yritä myöhemmin uudelleen."
       ]
     },
     "error": {
@@ -11029,6 +11032,13 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skannaamme pimeää verkkoa tarkistaaksemme, onko ${ BRAND_NAME } -osoitteesi tai -aliaksesi vuotaneet ja hälytämme välittömästi, jos löydämme jotain."
+      ],
+      "Appointment scheduling": [
+        "Ajanvaraus"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Ajanvaraus ${ n } -varaussivulla",
+        "Ajanvaraus ${ n } -varaussivulla"
       ]
     },
     "new_plans: feature highlight": {
@@ -12091,6 +12101,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Tilauksessasi on jo olemassa oleva alennus. Siirtyminen tähän uuteen kampanjaan tarkoittaa, että aiempaa alennusta ei enää käytetä."
+      ],
+      "Edit billing address": [
+        "Muokkaa laskutusosoitetta"
       ]
     },
     "Payments.Error": {

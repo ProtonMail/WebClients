@@ -1688,6 +1688,15 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Connect to Gmail": [
+        "Gmail bağlantısı kur"
+      ],
+      "Or remove forwarding address": [
+        "Ya da iletme adresini kaldırın"
+      ],
+      "Reconnect to Gmail": [
+        "Gmail bağlantısını yeniden kur"
       ]
     },
     "action": {
@@ -4209,6 +4218,78 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
+      ],
+      "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
+        "Google tarafından profilinizin çıkarılmasını engelleyin. Gmail ${ MAIL_APP_NAME } üzerinde yaptıklarınızı göremez"
+      ],
+      "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
+        "${ connectedAddressText } adresine gönderilen e-postalar artık ${ MAIL_APP_NAME } üzerinde görünecek."
+      ],
+      "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } üzerinden Gmail e-postalarını okuyun, yanıtlayın ve güncel kalın"
+      ],
+      "Send and receive Gmail correspondence directly in ${ MAIL_APP_NAME }. Connect your address in ${ addressesSettingsLink }.": [
+        "Gmail yazışmalarınızı doğrudan ${ MAIL_APP_NAME } üzerinden gönderip alın. ${ addressesSettingsLink } üzerinden adresinizi bağlayın."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Bu durum izinler kaldırılmışsa veya parolanız değiştirilmişse ortaya çıkabilir."
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "Başka bir Gmail adresi bağlamak için ${ BRAND_NAME } adresine iletilen diğer Gmail adreslerini kaldırın."
+      ],
+      "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
+        "${ MAX_SYNC_PAID_USER } taneye kadar Gmail adresini bağlamak için ${ planName } tarifesine yükseltin.",
+        "${ MAX_SYNC_PAID_USER } taneye kadar Gmail adresini bağlamak için ${ planName } tarifesine yükseltin."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "${ BRAND_NAME } üzerinden Gmail iletilerini almayı ve göndermeyi sürdürmek için lütfen hesabınızı yeniden bağlayın."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "${ BRAND_NAME } üzerinden Gmail iletilerini almayı ve göndermeyi sürdürmek için lütfen hesaplarınızı yeniden bağlayın."
+      ],
+      "Upgrade to ${ planName } to connect up to ${ MAX_SYNC_PAID_USER } accounts": [
+        "${ planName } tarifesine geçerek ${ MAX_SYNC_PAID_USER } taneye kadar hesap bağlayın"
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Artık ${ boldEmails } adresine erişemiyoruz."
+      ],
+      "We'll bring in your old emails and connect your Gmail to ${ MAIL_APP_NAME } so new messages appear automatically": [
+        "Eski e-postalarınızı aktaracağız ve ${ MAIL_APP_NAME } ile Gmail hesabınızı bağlayacağız. Böylece yeni iletiler otomatik olarak görünecek"
+      ],
+      "We've started importing your email from Gmail. We'll let you know when it's done.": [
+        "Gmail üzerindeki e-postalarınızı içe aktarmaya başladık. Tamamlandığında bilgi vereceğiz."
+      ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "${ MAIL_APP_NAME } üzerine iletilen bir Gmail adresiniz zaten var. E-postaları doğrudan ${ MAIL_APP_NAME } üzerinden göndermek ve almak için aşağıdan bağlantı kurun."
+      ],
+      "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "${ MAIL_APP_NAME } üzerine iletilen Gmail adresleriniz zaten var. Aşağıdakilerden birini bağlayarak e-postalarınızı doğrudan ${ MAIL_APP_NAME } üzerinden gönderip alabilirsiniz."
+      ],
+      "You can now send emails from ${ BRAND_NAME } using this address.": [
+        "Artık bu adresi kullanarak ${ BRAND_NAME } üzerinden e-posta gönderebilirsiniz."
+      ],
+      "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
+        "${ numAddressesOrSync } Gmail adresini ${ MAIL_APP_NAME } üzerine iletiyorsunuz.",
+        "${ numAddressesOrSync } Gmail adresini ${ MAIL_APP_NAME } üzerine iletiyorsunuz."
+      ],
+      "You're forwarding emails from ${ forwardingCount } Gmail address. By connecting it, you'll be able to both receive and reply in ${ MAIL_APP_NAME }": [
+        "${ forwardingCount } Gmail adresinden e-postaları iletiyorsunuz. Bu adresi ${ MAIL_APP_NAME } uygulamasına bağlayarak e-postaları alabilir ve yanıtlayabilirsiniz.",
+        "${ forwardingCount } Gmail adresinden e-postaları iletiyorsunuz. Bu adresleri ${ MAIL_APP_NAME } uygulamasına bağlayarak e-postaları alabilir ve yanıtlayabilirsiniz."
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "${ MAX_SYNC_PAID_USER } Gmail adresi bağladınız. Başka bir adres eklemek için önce bağlı hesaplarınızdan birini kullanımdan kaldırın.",
+        "${ MAX_SYNC_PAID_USER } Gmail adresi bağladınız. Başka bir adres eklemek için önce bağlı hesaplarınızdan birini kullanımdan kaldırın."
+      ],
+      "You've connected one external account address to ${ MAIL_APP_NAME }.": [
+        "${ MAIL_APP_NAME } uygulamasına bir dış hesap adresi bağladınız."
+      ],
+      "Your plan supports ${ MAX_SYNC_FREE_USER } Gmail address.": [
+        "Tarifenizde ${ MAX_SYNC_FREE_USER } Gmail adresi destekleniyor.",
+        "Tarifenizde ${ MAX_SYNC_FREE_USER } Gmail adresi destekleniyor."
+      ],
+      "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
+        "Tarifenizde toplam ${ MAX_SYNC_PAID_USER } Gmail adresi destekleniyor",
+        "Tarifenizde toplam ${ MAX_SYNC_PAID_USER } Gmail adresi destekleniyor"
       ]
     },
     "description": {
@@ -5152,6 +5233,21 @@
       ],
       "Your search matched too many results. Please limit your search and try again.": [
         "Aramanız çok fazla sonuç döndürdü. Lütfen aramanızı sınırlandırıp yeniden deneyin."
+      ],
+      "Address could not be added.": [
+        "Adres eklenemedi."
+      ],
+      "Address is already added to your account": [
+        "Adres hesabınıza zaten eklenmiş"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Abonelik verileri yüklenemedi. Lütfen daha sonra tekrar deneyin."
+      ],
+      "Something went wrong while creating the address": [
+        "Adres oluşturulurken bir sorun çıktı"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Kullanılabilecek etki alanları alınırken bir sorun çıktı"
       ]
     },
     "error": {
@@ -7225,7 +7321,7 @@
         "Tümüyle güvenli ve şifrelenmiş iletişim sağlayın. Ücretsiz ${ BRAND_NAME } e-posta adresinizi şimdi alın."
       ],
       "Enter code": [
-        "Kodu girin"
+        "Kodu yazın"
       ],
       "Enter the code from your authenticator app": [
         "Kimlik doğrulama uygulamanızdan alacağınız kodu yazın"
@@ -9978,6 +10074,9 @@
       ],
       "ZIP code": [
         "Posta kodu"
+      ],
+      "Select which Gmail address to connect": [
+        "Hangi Gmail adresine bağlanılacağını seçin"
       ]
     },
     "Label (begin date/advanced search)": {
@@ -11233,6 +11332,13 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } adreslerinizin veya takma adlarınızın sızıp sızmadığını denetlemek için karanlık ağı tararız ve herhangi bir şey bulursak sizi hemen uyarırız."
+      ],
+      "Appointment scheduling": [
+        "Randevu planlama"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "${ n } rezervasyon sayfası ile randevu planlama",
+        "${ n } rezervasyon sayfası ile randevu planlama"
       ]
     },
     "new_plans: feature highlight": {
@@ -11702,6 +11808,9 @@
       ],
       "Trial started": [
         "Deneme süresi başladı"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "${ BRAND_NAME } adresiniz kullanılmaya hazır"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -12373,6 +12482,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Aboneliğinizde şu anda uygulanan bir indirim var. Yeni indirime geçmek bu indirimin artık uygulanmayacağı anlamına gelir."
+      ],
+      "Edit billing address": [
+        "Fatura adresini düzenle"
       ]
     },
     "Payments.Error": {
@@ -15907,6 +16019,21 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategoriler özelliği geliyor!"
+      ],
+      "Bring your Gmail into ${ MAIL_APP_NAME }": [
+        "Gmail e-postalarınızı ${ MAIL_APP_NAME } üzerine taşıyın"
+      ],
+      "Disconnected from Gmail": [
+        "Gmail bağlantısı kesildi"
+      ],
+      "Send and receive Gmail using ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } ile Gmail gönderin ve alın"
+      ],
+      "Use Gmail securely in ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } üzerinden güvenle Gmail kullanın"
+      ],
+      "You are all set": [
+        "Artık hazırsınız"
       ]
     },
     "Today icon tooltip in mini calendar": {
