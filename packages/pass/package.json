@@ -5,6 +5,7 @@
     "sideEffects": false,
     "scripts": {
         "check-types": "tsc",
+        "cherry": "scripts/cherry.sh",
         "docs:build": "yarn workspace @proton/pass-docs build",
         "docs:dev": "yarn workspace @proton/pass-docs dev",
         "generate:api-types": "API=${API:-proton.black} ./utils/openapi/index.ts \"https://${API}/api/internal/doc?page=pass\" > ./types/api/pass.ts",
