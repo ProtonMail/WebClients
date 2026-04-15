@@ -7,11 +7,11 @@ import {
     AuthenticatedBugModal,
     Hamburger,
     Header,
-    Icon,
     TopBanner,
     useActiveBreakpoint,
     useModalState,
 } from '@proton/components';
+import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 
 import { CoreButton } from '../../atoms';
 import { useBitcoinBlockchainContext } from '../../contexts';
@@ -71,7 +71,7 @@ const WalletHeader = ({
                             return (
                                 <TopBanner className="bg-danger">
                                     <div className="flex flex-row items-center justify-center gap-2">
-                                        <Icon name="exclamation-circle" />
+                                        <IcExclamationCircle />
                                         <span className="block">{syncingError}</span>
                                         <CoreButton
                                             shape="underline"
@@ -88,14 +88,18 @@ const WalletHeader = ({
                             return (
                                 <TopBanner className="h-full bg-primary color-invert">
                                     <div className="w-full h-full flex flex-row justify-center items-center">
-                                        <Icon name="exclamation-circle" className="mr-2" size={4} />
+                                        <IcExclamationCircle className="mr-2" size={4} />
                                         <span className="block text-semibold mr-1">
-                                            {needPassphrase
-                                                ? c('Wallet header').t`This wallet needs a passphrase to be used.`
-                                                : canUseWallet
-                                                  ? c('Wallet header').t`The passphrase is incorrect. Please try again.`
-                                                  : c('Wallet header')
-                                                        .t`We are having trouble opening your wallet. Please refresh the page or try again later.`}
+                                            {
+                                                // eslint-disable-next-line no-nested-ternary
+                                                needPassphrase
+                                                    ? c('Wallet header').t`This wallet needs a passphrase to be used.`
+                                                    : canUseWallet
+                                                      ? c('Wallet header')
+                                                            .t`The passphrase is incorrect. Please try again.`
+                                                      : c('Wallet header')
+                                                            .t`We are having trouble opening your wallet. Please refresh the page or try again later.`
+                                            }
                                         </span>
                                         {canUseWallet && (
                                             <CoreButton

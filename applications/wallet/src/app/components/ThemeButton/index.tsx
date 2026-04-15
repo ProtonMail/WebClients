@@ -1,8 +1,9 @@
-import { Icon } from '@proton/components';
+import { IcMoon } from '@proton/icons/icons/IcMoon';
+import { IcSun } from '@proton/icons/icons/IcSun';
 import { useFlag } from '@proton/unleash/useFlag';
-import { WalletThemeOption } from '@proton/wallet/utils/theme';
 import { useWalletDispatch } from '@proton/wallet/store/hooks';
 import { themeChange } from '@proton/wallet/store/slices';
+import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
 import { CoreButton } from '../../atoms';
 import { useWalletTheme } from '../Layout/Theme/WalletThemeProvider';
@@ -32,7 +33,7 @@ const ThemeButton = () => {
                 }
             }}
         >
-            <Icon name={theme === WalletThemeOption.WalletDark ? 'sun' : 'moon'} size={5} />
+            {theme === WalletThemeOption.WalletDark ? <IcSun size={5} /> : <IcMoon size={5} />}
         </CoreButton>
     );
 };

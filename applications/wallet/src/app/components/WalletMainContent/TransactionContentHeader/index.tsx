@@ -3,7 +3,9 @@ import { c } from 'ttag';
 import type { WasmApiWalletAccount } from '@proton/andromeda';
 import { WasmSortOrder } from '@proton/andromeda';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Icon } from '@proton/components';
+import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
+import { IcListArrowDown } from '@proton/icons/icons/IcListArrowDown';
+import { IcListArrowUp } from '@proton/icons/icons/IcListArrowUp';
 import type { IWasmApiWalletData } from '@proton/wallet/types';
 
 import { CoreButton } from '../../../atoms';
@@ -49,11 +51,7 @@ export const TransactionContentHeader = ({ apiWalletData, apiAccount, onSortChan
                         disabled={isSyncingWalletData || isCoolingDown}
                         onClick={() => handleClickSync()}
                     >
-                        <Icon
-                            name="arrows-rotate"
-                            size={isNarrow ? 4 : 5}
-                            alt={c('Wallet transactions list').t`Sync`}
-                        />
+                        <IcArrowsRotate size={isNarrow ? 4 : 5} alt={c('Wallet transactions list').t`Sync`} />
                     </CoreButton>
                 </div>
             </Tooltip>
@@ -67,17 +65,9 @@ export const TransactionContentHeader = ({ apiWalletData, apiAccount, onSortChan
                 onClick={() => onSortChange(sortOrder === WasmSortOrder.Asc ? WasmSortOrder.Desc : WasmSortOrder.Asc)}
             >
                 {sortOrder === WasmSortOrder.Asc ? (
-                    <Icon
-                        alt={c('Wallet transactions list').t`Descending order`}
-                        name="list-arrow-down"
-                        size={isNarrow ? 4 : 5}
-                    />
+                    <IcListArrowDown alt={c('Wallet transactions list').t`Descending order`} size={isNarrow ? 4 : 5} />
                 ) : (
-                    <Icon
-                        alt={c('Wallet transactions list').t`Ascending order`}
-                        name="list-arrow-up"
-                        size={isNarrow ? 4 : 5}
-                    />
+                    <IcListArrowUp alt={c('Wallet transactions list').t`Ascending order`} size={isNarrow ? 4 : 5} />
                 )}
             </CoreButton>
             <ExportStatementButton

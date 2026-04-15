@@ -9,13 +9,14 @@ import {
     CollapsibleContent,
     CollapsibleHeader,
     CollapsibleHeaderIconButton,
-    Icon,
     TextAreaTwo,
     useNotifications,
 } from '@proton/components';
 import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
 import type { SelectChangeEvent } from '@proton/components/components/selectTwo/select';
 import useLoading from '@proton/hooks/useLoading';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import walletPenDark from '@proton/styles/assets/img/wallet/wallet-pen-dark.png';
 import walletPen from '@proton/styles/assets/img/wallet/wallet-pen.png';
@@ -112,7 +113,7 @@ export const SignMessageModal = ({ account, address, ...modalProps }: Props) => 
                         className="color-weak"
                         suffix={
                             <CollapsibleHeaderIconButton className="color-weak">
-                                <Icon name="chevron-down" />
+                                <IcChevronDown />
                             </CollapsibleHeaderIconButton>
                         }
                     >
@@ -140,7 +141,7 @@ export const SignMessageModal = ({ account, address, ...modalProps }: Props) => 
                                     <div className="flex flex-row items-center py-2">
                                         {getLabelBySigningType(opt as WasmSigningType)}
                                         <Tooltip title={getDescriptionBySigningType(opt as WasmSigningType)}>
-                                            <Icon name="info-circle" className="ml-auto color-hint" />
+                                            <IcInfoCircle className="ml-auto color-hint" />
                                         </Tooltip>
                                     </div>
                                 ),

@@ -3,9 +3,10 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import type { ModalOwnProps } from '@proton/components';
-import { AuthModal, Icon, Prompt } from '@proton/components';
+import { AuthModal, Prompt } from '@proton/components';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import useConfig from '@proton/components/hooks/useConfig';
+import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare';
 import { unlockPasswordChanges } from '@proton/shared/lib/api/user';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import type { IWasmApiWalletData } from '@proton/wallet/types';
@@ -63,7 +64,7 @@ export const WalletDeletionModal = ({ wallet, ...modalProps }: Props) => {
                         color="info"
                     >
                         {c('Title').t`Go to settings and recovery keys`}
-                        <Icon alt={c('Action').t`Go to settings`} name="arrow-within-square" className="ml-2" />
+                        <IcArrowWithinSquare alt={c('Action').t`Go to settings`} className="ml-2" />
                     </ButtonLike>
                 ) : (
                     <Button
@@ -94,30 +95,33 @@ export const WalletDeletionModal = ({ wallet, ...modalProps }: Props) => {
                     {wallet.IsNotDecryptable ? headerWithoutWalletName : headerWithWalletName}
                 </h1>
 
-                {balance > 0 ? (
-                    <ModalParagraph>
-                        <p className="color-danger mb-0">{c('Wallet setup')
-                            .t`This wallet seems to still have assets.`}</p>
-                        <p>
-                            {c('Wallet setup')
-                                .t`Please transfer your bitcoins to another wallet before deleting. Deleting this wallet will remove all its data from ${BRAND_NAME}'s servers. You can recover this wallet at a later stage using the seed phrase.`}
-                        </p>
-                    </ModalParagraph>
-                ) : wallet.IsNotDecryptable ? (
-                    <ModalParagraph>
-                        <p>
-                            {c('Wallet setup')
-                                .t`Deleting this wallet will remove all its data from ${BRAND_NAME}'s servers. You can recover the wallet by reactivating the keys used during wallet creation in your account.`}
-                        </p>
-                    </ModalParagraph>
-                ) : (
-                    <ModalParagraph>
-                        <p>
-                            {c('Wallet setup')
-                                .t`Deleting this wallet will remove all its data from ${BRAND_NAME}'s servers. You can recover the wallet at a later stage using the seed phrase.`}
-                        </p>
-                    </ModalParagraph>
-                )}
+                {
+                    // eslint-disable-next-line no-nested-ternary
+                    balance > 0 ? (
+                        <ModalParagraph>
+                            <p className="color-danger mb-0">{c('Wallet setup')
+                                .t`This wallet seems to still have assets.`}</p>
+                            <p>
+                                {c('Wallet setup')
+                                    .t`Please transfer your bitcoins to another wallet before deleting. Deleting this wallet will remove all its data from ${BRAND_NAME}'s servers. You can recover this wallet at a later stage using the seed phrase.`}
+                            </p>
+                        </ModalParagraph>
+                    ) : wallet.IsNotDecryptable ? (
+                        <ModalParagraph>
+                            <p>
+                                {c('Wallet setup')
+                                    .t`Deleting this wallet will remove all its data from ${BRAND_NAME}'s servers. You can recover the wallet by reactivating the keys used during wallet creation in your account.`}
+                            </p>
+                        </ModalParagraph>
+                    ) : (
+                        <ModalParagraph>
+                            <p>
+                                {c('Wallet setup')
+                                    .t`Deleting this wallet will remove all its data from ${BRAND_NAME}'s servers. You can recover the wallet at a later stage using the seed phrase.`}
+                            </p>
+                        </ModalParagraph>
+                    )
+                }
             </div>
         </Prompt>
     );

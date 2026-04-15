@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcChevronLeft } from '@proton/icons/icons/IcChevronLeft';
+import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 
 interface Props {
     canGoNext: boolean;
@@ -20,9 +21,9 @@ export const SimplePaginator = ({ onNext, onPrev, canGoNext, canGoPrev, disabled
                 icon
                 title={c('Action').t`Previous`}
                 size="small"
-                className="mx-1"
+                className="mx-1 rtl:mirror"
             >
-                <Icon name="chevron-left" alt={c('Action').t`Previous`} />
+                <IcChevronLeft alt={c('Action').t`Previous`} />
             </Button>
             <Button
                 onClick={() => onNext()}
@@ -30,9 +31,9 @@ export const SimplePaginator = ({ onNext, onPrev, canGoNext, canGoPrev, disabled
                 icon
                 title={c('Action').t`Next`}
                 size="small"
-                className="mx-1"
+                className="mx-1 rtl:mirror"
             >
-                <Icon name="chevron-right" alt={c('Action').t`Next`} />
+                <IcChevronRight alt={c('Action').t`Next`} />
             </Button>
         </div>
     );

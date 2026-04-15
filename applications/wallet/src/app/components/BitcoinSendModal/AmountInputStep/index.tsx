@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import type { WasmApiExchangeRate, WasmApiWalletAccount } from '@proton/andromeda';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Icon } from '@proton/components';
+import { IcCrossCircleFilled } from '@proton/icons/icons/IcCrossCircleFilled';
 import { WalletThemeOption } from '@proton/wallet/utils/theme';
 
 import { Button, CoreButton } from '../../../atoms';
@@ -131,8 +131,7 @@ export const AmountInputStep = ({ txBuilderHelpers, btcAddressMap, onBack, accou
                                         }
                                     >
                                         <Tooltip title={c('Wallet send').t`Remove email`}>
-                                            <Icon
-                                                name="cross-circle-filled"
+                                            <IcCrossCircleFilled
                                                 alt={c('Wallet send').t`Remove email`}
                                                 className="color-primary"
                                             />

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Icon } from '@proton/components';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import clsx from '@proton/utils/clsx';
 
 interface Props {
@@ -22,7 +22,7 @@ export const DrawerHeader = ({ title, bg, onClose }: Props) => {
                     data-testid="modal:close"
                     onClick={onClose}
                 >
-                    <Icon className="modal-close-icon" name="cross-big" alt={c('Action').t`Close`} />
+                    <IcCrossBig className="modal-close-icon" alt={c('Action').t`Close`} />
                 </Button>
             </div>
         </div>

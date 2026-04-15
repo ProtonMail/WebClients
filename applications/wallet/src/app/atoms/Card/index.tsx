@@ -3,7 +3,8 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import { Icon } from '@proton/components';
+import { IcCross } from '@proton/icons/icons/IcCross';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import clsx from '@proton/utils/clsx';
 
 import { useResponsiveContainerContext } from '../../contexts/ResponsiveContainerContext';
@@ -35,7 +36,7 @@ const Card = ({ type = 'info', children, onClose }: CardProps) => {
                 classesMap[type]
             )}
         >
-            {!isNarrow && <Icon name="exclamation-circle-filled" size={7} className="color-danger w-1/5" />}
+            {!isNarrow && <IcExclamationCircleFilled size={7} className="color-danger w-1/5" />}
             <div className="grow">
                 <div className={clsx('flex flex-column w-full')}>
                     <div className={clsx('w-full flex')}>{children}</div>
@@ -43,7 +44,7 @@ const Card = ({ type = 'info', children, onClose }: CardProps) => {
             </div>
             {onClose && (
                 <Button icon shape="ghost" size="medium" className="shrink-0 rounded-full" onClick={onClose}>
-                    <Icon className="modal-close-icon" name="cross" alt={c('Action').t`Close`} />
+                    <IcCross className="modal-close-icon" alt={c('Action').t`Close`} />
                 </Button>
             )}
         </div>

@@ -7,12 +7,13 @@ import Collapsible from '@proton/components/components/collapsible/Collapsible';
 import CollapsibleContent from '@proton/components/components/collapsible/CollapsibleContent';
 import CollapsibleHeader from '@proton/components/components/collapsible/CollapsibleHeader';
 import CollapsibleHeaderIconButton from '@proton/components/components/collapsible/CollapsibleHeaderIconButton';
-import Icon from '@proton/components/components/icon/Icon';
 import type { ModalOwnProps } from '@proton/components/components/modalTwo/Modal';
 import useLoading from '@proton/hooks/useLoading';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import type { IWasmApiWalletData } from '@proton/wallet/types';
 import { BASE_INDEX_OPTIONS, SCRIPT_TYPES } from '@proton/wallet/constants/bitcoin';
+import type { IWasmApiWalletData } from '@proton/wallet/types';
 
 import { Button, CoreButtonLike, Input, Modal, Select } from '../../atoms';
 import { ModalParagraph } from '../../atoms/ModalParagraph';
@@ -72,7 +73,7 @@ export const WalletAccountCreationModal = ({ apiWalletData, theme, ...modalProps
                     className="color-weak"
                     suffix={
                         <CollapsibleHeaderIconButton className="color-weak">
-                            <Icon name="chevron-down" />
+                            <IcChevronDown />
                         </CollapsibleHeaderIconButton>
                     }
                 >{c('Wallet account').t`Advanced settings`}</CollapsibleHeader>
@@ -97,7 +98,7 @@ export const WalletAccountCreationModal = ({ apiWalletData, theme, ...modalProps
                                     <div className="flex flex-row items-center py-2">
                                         {getLabelByScriptType(opt as WasmScriptType)}
                                         <Tooltip title={getDescriptionByScriptType(opt as WasmScriptType)}>
-                                            <Icon name="info-circle" className="ml-auto color-hint" />
+                                            <IcInfoCircle className="ml-auto color-hint" />
                                         </Tooltip>
                                     </div>
                                 ),
