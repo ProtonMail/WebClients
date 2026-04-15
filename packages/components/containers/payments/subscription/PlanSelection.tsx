@@ -297,7 +297,7 @@ export function useAccessiblePlans({
             plansMap[PLANS.MAIL];
 
         const canChangeToLumoPlus = !hasLumoAddon(subscription) && !hasVisionary(subscription);
-        const showPlusPlan = plusPlan.Name !== PLANS.LUMO || canChangeToLumoPlus;
+        const showPlusPlan = plusPlan?.Name !== PLANS.LUMO || canChangeToLumoPlus;
 
         IndividualPlans = filterPlans([
             hasFreePlan ? FREE_PLAN : null,
