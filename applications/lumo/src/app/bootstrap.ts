@@ -36,11 +36,19 @@ import { setStoreRef } from './redux/storeRef';
 import { extraThunkArguments } from './redux/thunk';
 import { LumoApi } from './remote/api';
 import { LUMO_ELIGIBILITY } from './types';
+import { handleLegacyUrlRedirect } from './util/clientRedirect';
 import { initializeConsoleOverride } from './util/logging';
 import { type UserAndAddressKeys, initializeLumoBackground, initializeLumoCritical } from './util/lumoBootstrap';
 import { lumoTelemetryConfig } from './util/telemetryConfig';
 
 export const bootstrapApp = async ({ config, signal }: { config: ProtonConfig; signal?: AbortSignal }) => {
+    // Handle client-side redirects from old lumo.proton.me URLs FIRST, before any other logic.
+    // Unleash can't gate this — the client isn't initialized until later in bootstrap, and by
+    // then the marketing page may have already rendered. TODO: https://protonag.atlassian.net/browse/LUMO-489
+    if (handleLegacyUrlRedirect()) {
+        return; // bootstrapApp returns void; AuthApp's existing !result guard handles this
+    }
+
     // Check if there are any existing sessions on lumo.proton.me, if not redirect to lumo.proton.me/guest where user then has the option to signin
     const accountSessions = readAccountSessions();
     if (!accountSessions) {

@@ -38,6 +38,7 @@ import type { LumoStore } from '../../redux/store';
 import { extendStore, setupStore } from '../../redux/store';
 import { setStoreRef } from '../../redux/storeRef';
 import { extraThunkArguments } from '../../redux/thunk';
+import { handleLegacyUrlRedirect } from '../../util/clientRedirect';
 import { initializeConsoleOverride } from '../../util/logging';
 import { lumoTelemetryConfig } from '../../util/telemetryConfig';
 
@@ -56,7 +57,14 @@ const defaultState: {
     error: undefined,
 };
 
-const bootstrapApp = async () => {
+const bootstrapApp = async (): Promise<{ store: LumoStore } | null> => {
+    // Handle client-side redirects from old lumo.proton.me URLs FIRST, before any other logic.
+    // Unleash can't gate this — the client isn't initialized until later in bootstrap, and by
+    // then the marketing page may have already rendered. TODO: https://protonag.atlassian.net/browse/LUMO-489
+    if (handleLegacyUrlRedirect()) {
+        return null;
+    }
+
     const api = createApi({ config });
     const authentication = createAuthentication({ initialAuth: false });
     init({ config, authentication, locales });
@@ -111,7 +119,13 @@ const GuestApp = () => {
     useEffectOnce(() => {
         void (async () => {
             try {
-                const { store } = await bootstrapApp();
+                const result = await bootstrapApp();
+
+                if (!result) {
+                    return; // redirect in progress, initial loader shows while page navigates away
+                }
+
+                const { store } = result;
                 setState({
                     store,
                 });
