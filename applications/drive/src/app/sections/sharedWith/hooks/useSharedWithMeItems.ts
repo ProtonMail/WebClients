@@ -2,7 +2,7 @@ import { useCallback, useEffect } from 'react';
 
 import { useShallow } from 'zustand/react/shallow';
 
-import { NodeType, getDrive, getDriveForPhotos, getDrivePerNodeType, splitNodeUid } from '@proton/drive';
+import { NodeType, getDrive, getDriveForPhotos, getDrivePerNodeType } from '@proton/drive';
 import { loadThumbnail } from '@proton/drive/modules/thumbnails';
 import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { isNativeProtonDocsAppFile } from '@proton/shared/lib/helpers/mimetype';
@@ -19,7 +19,7 @@ import { ItemType, useSharedWithMeStore } from '../useSharedWithMe.store';
 import { useBookmarksActions } from './useBookmarksActions';
 
 export const useSharedWithMeItems = () => {
-    const { navigateToNodeUid, navigateToAlbum } = useDriveNavigation();
+    const { navigateToNodeUid } = useDriveNavigation();
     const { openBookmark } = useBookmarksActions();
     const { layout } = useUserSettings();
     const {
@@ -126,7 +126,6 @@ export const useSharedWithMeItems = () => {
             }
             document.getSelection()?.removeAllRanges();
 
-            const { nodeId } = splitNodeUid(item.nodeUid);
             if (item.mediaType && isNativeProtonDocsAppFile(item.mediaType)) {
                 const openInDocsInfo = getOpenInDocsInfo(item.mediaType);
                 if (openInDocsInfo) {
@@ -140,11 +139,6 @@ export const useSharedWithMeItems = () => {
                 }
             }
 
-            if (item.type === NodeType.Album) {
-                navigateToAlbum(item.shareId, nodeId);
-                return;
-            }
-
             if ((item.type === NodeType.File || item.type === NodeType.Photo) && isSDKPreviewEnabled) {
                 showPreviewModal({
                     drive: getDrivePerNodeType(item.type),
@@ -154,16 +148,9 @@ export const useSharedWithMeItems = () => {
                 return;
             }
 
-            await navigateToNodeUid(item.nodeUid);
+            await navigateToNodeUid(item.nodeUid, getDrivePerNodeType(item.type));
         },
-        [
-            navigateToNodeUid,
-            openBookmark,
-            navigateToAlbum,
-            getSharedWithMeStoreItem,
-            isSDKPreviewEnabled,
-            showPreviewModal,
-        ]
+        [navigateToNodeUid, openBookmark, getSharedWithMeStoreItem, isSDKPreviewEnabled, showPreviewModal]
     );
 
     const isEmpty = hasEverLoaded && !isLoading && itemUidsSize === 0;
