@@ -1025,6 +1025,9 @@
       ],
       "Your desktop app free trial ends on ${ formattedEndDate }. ${ upgradeButton }": [
         "Bilgisayar uygulamasını ücretsiz deneme süreniz ${ formattedEndDate } tarihinde sona erecek. ${ upgradeButton }"
+      ],
+      "Reconnect to Gmail": [
+        "Gmail bağlantısını yeniden kur"
       ]
     },
     "action": {
@@ -3194,6 +3197,18 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Zaten 10 takma ad oluşturmuşsunuz. Sınırsız sayıda takma ad oluşturabilmek ve 500 GB depolama alanı edinmek için ${ BRAND_NAME } Limited tarifesine geçin."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "Bu durum izinler kaldırılmışsa veya parolanız değiştirilmişse ortaya çıkabilir."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "${ BRAND_NAME } üzerinden Gmail iletilerini almayı ve göndermeyi sürdürmek için lütfen hesabınızı yeniden bağlayın."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "${ BRAND_NAME } üzerinden Gmail iletilerini almayı ve göndermeyi sürdürmek için lütfen hesaplarınızı yeniden bağlayın."
+      ],
+      "We can't access ${ boldEmails } anymore.": [
+        "Artık ${ boldEmails } adresine erişemiyoruz."
       ]
     },
     "description": {
@@ -4065,6 +4080,15 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Zoom bağlantınızın geçerlilik süresi dolmuş. İlerlemek için lütfen yeniden bağlantı kurun."
+      ],
+      "Address could not be added.": [
+        "Adres eklenemedi."
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Abonelik verileri yüklenemedi. Lütfen daha sonra tekrar deneyin."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Kullanılabilecek etki alanları alınırken bir sorun çıktı"
       ]
     },
     "error": {
@@ -6553,7 +6577,7 @@
         "Rezervasyon aralığı sayısı sınırına ulaştınız (${ numberOfSlots }/${ MAX_BOOKING_SLOTS })"
       ],
       "Enter code": [
-        "Kodu girin"
+        "Kodu yazın"
       ],
       "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
         "Kimlik doğrulama uygulamanıza erişemiyorsanız iki adımlı doğrulamayı kurarken size verilen 16 yedek kurtarma kodundan birini kullanabilirsiniz. ${ learnMoreLink }"
@@ -7295,7 +7319,7 @@
         "Zoom görüşmesi"
       ],
       "Securely share parts of your schedule through a booking page you can send to anyone.": [
-        "Programınızın belirli bölümlerini istediğiniz kişiye gönderebileceğiniz bir randevu sayfası üzerinden güvenle paylaşın."
+        "Programınızın parçalarını istediğiniz kişiye gönderebileceğiniz bir randevu sayfası üzerinden güvenle paylaşın."
       ]
     },
     "label": {
@@ -8402,6 +8426,13 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } adreslerinizin veya takma adlarınızın sızıp sızmadığını denetlemek için karanlık ağı tararız ve herhangi bir şey bulursak sizi hemen uyarırız."
+      ],
+      "Appointment scheduling": [
+        "Randevu planlama"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "${ n } rezervasyon sayfası ile randevu planlama",
+        "${ n } rezervasyon sayfası ile randevu planlama"
       ]
     },
     "new_plans: feature highlight": {
@@ -8855,6 +8886,9 @@
       ],
       "Passphrase copied to clipboard": [
         "Parola ifadesi panoya kopyalandı"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "${ BRAND_NAME } adresiniz kullanılmaya hazır"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9569,6 +9603,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Aboneliğinizde şu anda uygulanan bir indirim var. Yeni indirime geçmek bu indirimin artık uygulanmayacağı anlamına gelir."
+      ],
+      "Edit billing address": [
+        "Fatura adresini düzenle"
       ]
     },
     "Payments.Error": {
@@ -12420,6 +12457,9 @@
       ],
       "Your shorter address is now ready": [
         "Daha kısa adresiniz hazır"
+      ],
+      "Disconnected from Gmail": [
+        "Gmail bağlantısı kesildi"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {

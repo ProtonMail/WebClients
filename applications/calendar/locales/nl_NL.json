@@ -4065,6 +4065,9 @@
       ],
       "Your Zoom connection has expired. Please reconnect to continue.": [
         "Uw Zoom-verbinding is verlopen. Verbind opnieuw om door te gaan."
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Kon de gegevens van je abonnement niet laden, probeer het later opnieuw."
       ]
     },
     "error": {
@@ -6546,6 +6549,12 @@
       ],
       "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
         "Voeg ${ PLAN_NAMES[PLANS.MEET_BUSINESS] } toe"
+      ],
+      "Enter code": [
+        "Voer code in"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Als u de toegang tot uw authenticatie-app bent kwijtgeraakt, kunt u 1 van de 16 back-up herstelcodes gebruiken die zijn verstrekt toen u tweestapsverificatie instelde. ${ learnMoreLink }"
       ]
     },
     "info": {
@@ -7282,6 +7291,9 @@
       ],
       "Zoom meeting": [
         "Zoom-vergadering"
+      ],
+      "Securely share parts of your schedule through a booking page you can send to anyone.": [
+        "Deel delen van uw agenda veilig via een boekingspagina die u naar iedereen kunt verzenden."
       ]
     },
     "label": {
@@ -8388,6 +8400,13 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "We scannen het dark web om te controleren of uw ${ BRAND_NAME } adressen of aliassen zijn gelekt en waarschuwen u onmiddellijk wanneer we iets vinden."
+      ],
+      "Appointment scheduling": [
+        "Afspraak plannen"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Afspraakplanning met ${ n } boekingspagina",
+        "Afspraakplanning met ${ n } boekingspagina's"
       ]
     },
     "new_plans: feature highlight": {
@@ -9555,6 +9574,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Uw abonnement heeft momenteel een bestaande korting. Overstappen naar deze nieuwe promotie betekent dat de bestaande korting niet langer wordt toegepast."
+      ],
+      "Edit billing address": [
+        "Factuuradres bewerken"
       ]
     },
     "Payments.Error": {

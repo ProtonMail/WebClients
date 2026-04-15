@@ -879,7 +879,7 @@
         "Прапусціць"
       ],
       "Skip verification": [
-        "Прапусціць праверку"
+        "Прапусціць спраўджанне"
       ],
       "Start import": [
         "Пачаць імпартаванне"
@@ -1056,7 +1056,7 @@
         "Абагуліць з карыстальнікамі ${ BRAND_NAME }"
       ],
       "Share with anyone": [
-        "Абагуліць з усімі"
+        "Абагуліць з кім заўгодна"
       ]
     },
     "Actions message": {
@@ -3727,7 +3727,7 @@
         "Падзея не знойдзена"
       ],
       "Failed loading group members": [
-        "Збой загрузкі членаў групы"
+        "Збой загрузкі ўдзельнікаў групы"
       ],
       "Failed to add existing ${ MEET_APP_NAME } video conference": [
         "Не ўдалося дадаць існуючую відэаканферэнцыю ${ MEET_APP_NAME }"
@@ -4166,6 +4166,9 @@
       ],
       "Something went wrong while fetching available domains": [
         "Нешта пайшло не так пры атрыманні даступных даменаў"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Не ўдалося загрузіць даныя падпіскі. Паспрабуйце яшчэ раз пазней."
       ]
     },
     "error": {
@@ -6757,6 +6760,9 @@
       ],
       "Enter code": [
         "Увядзіце код"
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Вы можаце выкарыстаць 1 з 16 рэзервовых кодаў аднаўлення, якія вы атрымалі пры наладжванні двухфактарнай аўтэнтыфікацыі, калі вы страцілі доступ да вашай праграмы аўтэнтыфікацыі. ${ learnMoreLink }"
       ]
     },
     "info": {
@@ -7659,7 +7665,7 @@
         "Мае календары"
       ],
       "Other calendars": [
-        "Іншыя прагляды"
+        "Іншыя календары"
       ],
       "Pay invoice": [
         "Аплаціць рахунак"
@@ -8688,6 +8694,15 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Наша сістэма сканіруе цёмную сетку для праверкі на прадмет уцечкі адрасоў і псеўданімаў ${ BRAND_NAME }. Вы неадкладна будзеце апавешчаны ў выпадку, калі нешта будзе выяўлена."
+      ],
+      "Appointment scheduling": [
+        "Планаванне сустрэч"
+      ],
+      "Appointment scheduling with ${ n } booking page": [
+        "Планіруйце сустрэчы з ${ n } старонкай браніравання",
+        "Планіруйце сустрэчы з ${ n } старонкай браніравання",
+        "Планіруйце сустрэчы з ${ n } старонкамі браніравання",
+        "Планіруйце сустрэчы з ${ n } старонкамі браніравання"
       ]
     },
     "new_plans: feature highlight": {
@@ -8892,7 +8907,7 @@
         "Стварайце да ${ n } календароў або дадавайце календары ад сяброў, сям'і, калег і арганізацый"
       ],
       "Create up to ${ n } email addresses/aliases that you can assign to family members. Use them for online identities, e.g., JohnShopper@${ domain } for shopping accounts.": [
-        "Стварайце да ${ n } адрасоў электроннай пошты/псеўданімаў, якія вы можаце прызначыць членам сям'і. Выкарыстоўвайце іх для ідэнтычнасці ў інтэрнэце, напрыклад, JankaPakupnik@${ domain } для ўліковых запісаў пакупак."
+        "Стварайце да ${ n } адрасоў электроннай пошты/псеўданімаў, якія вы можаце прызначыць удзельнікам сям'і. Выкарыстоўвайце іх для ідэнтычнасці ў інтэрнэце, напрыклад, JankaPakupnik@${ domain } для ўліковых запісаў пакупак."
       ],
       "Custom domains for aliases, additional mailboxes, the ability to send emails from aliases, and more": [
         "Карыстальніцкія дамены для псеўданімаў, дадатковыя паштовыя скрыні, магчымасць адпраўляць лісты з псеўданімаў і многае іншае"
@@ -9932,6 +9947,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Ваша падпіска мае бягучую скідку. Пераход на гэту новую акцыю азначае, што ранейшая скідка больш не будзе ўжывацца."
+      ],
+      "Edit billing address": [
+        "Рэдагаваць адрас аплаты"
       ]
     },
     "Payments.Error": {
