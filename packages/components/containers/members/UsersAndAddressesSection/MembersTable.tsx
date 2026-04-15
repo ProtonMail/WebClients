@@ -3,7 +3,6 @@ import { c } from 'ttag';
 import { selectUnprivatizationState } from '@proton/account/members/unprivatizeMembers';
 import { Avatar } from '@proton/atoms/Avatar/Avatar';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
@@ -12,6 +11,7 @@ import TableRow from '@proton/components/components/table/TableRow';
 import { getUser2FATagProps } from '@proton/components/containers/members/UsersAndAddressesSection/helper';
 import type { UseUserMemberActions } from '@proton/components/containers/members/UsersAndAddressesSection/useMemberActions';
 import useConfig from '@proton/components/hooks/useConfig';
+import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
 import { baseUseSelector } from '@proton/react-redux-store';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
 import { hasMailProduct } from '@proton/shared/lib/helpers/organization';
@@ -142,10 +142,7 @@ export const MembersTable = ({
                                                             .t`Could not enable administrator access: ${error}`}
                                                         openDelay={0}
                                                     >
-                                                        <Icon
-                                                            name="exclamation-triangle-filled"
-                                                            className="color-danger"
-                                                        />
+                                                        <IcExclamationTriangleFilled className="color-danger" />
                                                     </Tooltip>
                                                 );
                                             })()}

@@ -4,12 +4,13 @@ import { usePaymentMethods } from '@proton/account/paymentMethods/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import type { ButtonProps } from '@proton/atoms/Button/Button';
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
 import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSection from '@proton/components/containers/account/SettingsSection';
 import useConfig from '@proton/components/hooks/useConfig';
+import { IcBrandPaypal } from '@proton/icons/icons/IcBrandPaypal';
+import { IcCreditCard } from '@proton/icons/icons/IcCreditCard';
 import {
     MethodStorage,
     PAYMENT_METHOD_TYPES,
@@ -28,7 +29,7 @@ import PaymentMethodsTable from './PaymentMethodsTable';
 const AddPaypalButton = ({ onClick, ...rest }: ButtonProps) => {
     return (
         <Button shape="outline" onClick={onClick} {...rest}>
-            <Icon name="brand-paypal" className="mr-2" />
+            <IcBrandPaypal className="mr-2" />
             <span>{c('Action').t`Add PayPal`}</span>
         </Button>
     );
@@ -83,7 +84,7 @@ const PaymentMethodsSection = ({ app }: { app: APP_NAMES }) => {
                         setCreditCardModalOpen(true);
                     }}
                 >
-                    <Icon name="credit-card" className="mr-2" />
+                    <IcCreditCard className="mr-2" />
                     <span>{c('Action').t`Add credit / debit card`}</span>
                 </Button>
                 {canAddPaypalV5 && (

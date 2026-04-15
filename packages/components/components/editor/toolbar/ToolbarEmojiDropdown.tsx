@@ -6,7 +6,7 @@ import { Picker } from 'emoji-mart';
 import { c } from 'ttag';
 
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcEmoji } from '@proton/icons/icons/IcEmoji';
 import { COMPOSER_TOOLBAR_ICON_SIZE } from '@proton/shared/lib/constants';
 import { getClosestLocaleCode } from '@proton/shared/lib/i18n/helper';
 import { locales } from '@proton/shared/lib/i18n/locales';
@@ -93,7 +93,7 @@ const ToolbarEmojiDropdown = ({ onInsert, openRef, className, userSettings }: Pr
         <ToolbarDropdown
             ref={dropdownRef}
             dropdownSize={{ maxWidth: DropdownSizeUnit.Viewport, maxHeight: DropdownSizeUnit.Viewport }}
-            content={<Icon name="emoji" size={COMPOSER_TOOLBAR_ICON_SIZE} alt={c('Action').t`Emoji`} />}
+            content={<IcEmoji size={COMPOSER_TOOLBAR_ICON_SIZE} alt={c('Action').t`Emoji`} />}
             className={clsx(['shrink-0', className])}
             title={c('Action').t`Emoji`}
             autoClose={false}

@@ -3,7 +3,6 @@ import type { ChangeEvent, Dispatch, SetStateAction } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
 import FileInput from '@proton/components/components/input/FileInput';
 import Info from '@proton/components/components/link/Info';
 import Table from '@proton/components/components/table/Table';
@@ -11,6 +10,7 @@ import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
 import TableRow from '@proton/components/components/table/TableRow';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { MAX_SIZE_SCREENSHOT } from '@proton/shared/lib/constants';
 import { resize, toBlob } from '@proton/shared/lib/helpers/image';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
@@ -140,7 +140,7 @@ const AttachScreenshot = ({ id, screenshots, setScreenshots, uploading, setUploa
                                             shape="outline"
                                             onClick={() => removeUploadedScreenShot(screenshot)}
                                         >
-                                            <Icon name="trash" alt={c('Label').t`Delete`} />
+                                            <IcTrash alt={c('Label').t`Delete`} />
                                         </Button>
                                     </TableCell>
                                 </TableRow>

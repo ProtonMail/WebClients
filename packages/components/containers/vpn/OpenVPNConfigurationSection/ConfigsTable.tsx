@@ -6,13 +6,15 @@ import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Icon from '@proton/components/components/icon/Icon';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
 import TableRow from '@proton/components/components/table/TableRow';
 import useApi from '@proton/components/hooks/useApi';
+import { IcArrowRightArrowLeft } from '@proton/icons/icons/IcArrowRightArrowLeft';
+import { IcBrandTor } from '@proton/icons/icons/IcBrandTor';
+import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 import { PLANS } from '@proton/payments';
 import type { CountryOptions } from '@proton/payments/core/countries';
 import { getVPNServerConfig } from '@proton/shared/lib/api/vpn';
@@ -46,7 +48,7 @@ const ServerDown = () => (
     <span className="ml-2">
         <Tooltip title={c('Info').t`Server is currently down`}>
             <div className="flex inline-flex *:self-center">
-                <Icon className="color-danger" size={5} name="exclamation-circle" />
+                <IcExclamationCircle className="color-danger" size={5} />
             </div>
         </Tooltip>
     </span>
@@ -55,7 +57,7 @@ const ServerDown = () => (
 export const P2PIcon = () => (
     <span className="mx-2">
         <Tooltip title={c('Info').t`P2P`}>
-            <Icon name="arrow-right-arrow-left" size={4.5} className="rounded bg-strong p-1" />
+            <IcArrowRightArrowLeft size={4.5} className="rounded bg-strong p-1" />
         </Tooltip>
     </span>
 );
@@ -63,7 +65,7 @@ export const P2PIcon = () => (
 export const TorIcon = () => (
     <span className="mx-2">
         <Tooltip title={c('Info').t`Tor`}>
-            <Icon name="brand-tor" size={4.5} className="rounded bg-strong p-1" />
+            <IcBrandTor size={4.5} className="rounded bg-strong p-1" />
         </Tooltip>
     </span>
 );

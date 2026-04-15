@@ -9,11 +9,11 @@ import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import DrawerAppHeadline from '@proton/components/components/drawer/views/shared/DrawerAppHeadline';
 import DrawerAppSection from '@proton/components/components/drawer/views/shared/DrawerAppSection';
-import Icon from '@proton/components/components/icon/Icon';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import Loader from '@proton/components/components/loader/Loader';
 import useConfig from '@proton/components/hooks/useConfig';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { IcSquares } from '@proton/icons/icons/IcSquares';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 
 import { useReferralTelemetry } from '../hooks/useReferralTelemetry';
@@ -73,7 +73,7 @@ const InviteShareLink = () => {
                         className="shrink-0"
                         size="small"
                     >
-                        <Icon name="squares" className="shrink-0" alt={c('Info').t`Copy your referral link`} />
+                        <IcSquares className="shrink-0" alt={c('Info').t`Copy your referral link`} />
                     </Button>
                 </div>
             </DrawerAppSection>

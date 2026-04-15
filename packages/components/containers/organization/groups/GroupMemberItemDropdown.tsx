@@ -14,7 +14,6 @@ import Dropdown from '@proton/components/components/dropdown/Dropdown';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
-import Icon from '@proton/components/components/icon/Icon';
 import usePopperAnchor from '@proton/components/components/popper/usePopperAnchor';
 import useApi from '@proton/components/hooks/useApi';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
@@ -240,7 +239,7 @@ const GroupMemberItemDropdown = ({ groupMember, member, group, canOnlyDelete, ca
                 liClassName="py-0"
             >
                 <span className="flex items-center mr-14">{c('Action').t`Group owner`}</span>
-                {isGroupOwner ? <Icon className="color-primary" name="checkmark" /> : null}
+                {isGroupOwner ? <IcCheckmark className="color-primary" /> : null}
             </DropdownMenuButton>
         ),
         // Resume membership / Resend invitation / Revoke invitation

@@ -3,7 +3,7 @@ import type { MouseEventHandler } from 'react';
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcCrossSmall } from '@proton/icons/icons/IcCrossSmall';
 import { MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
@@ -42,7 +42,7 @@ const InviteSendEmailRecipient = ({ protonDomains, recipient, onDeleteRecipient,
             </Tooltip>
             <Tooltip title={c('Action').t`Remove`}>
                 <button type="button" onClick={onDeleteRecipient} className="flex shrink-0 px-1 interactive">
-                    <Icon name="cross-small" className="m-auto" alt={c('Action').t`Remove`} />
+                    <IcCrossSmall className="m-auto" alt={c('Action').t`Remove`} />
                 </button>
             </Tooltip>
         </div>

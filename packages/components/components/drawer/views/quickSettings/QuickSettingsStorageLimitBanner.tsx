@@ -1,9 +1,9 @@
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import Icon from '@proton/components/components/icon/Icon';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import useConfig from '@proton/components/hooks/useConfig';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import {
     DRIVE_SHORT_APP_NAME,
     MAIL_SHORT_APP_NAME,
@@ -80,7 +80,7 @@ const QuickSettingsStorageLimitBanner = () => {
             >
                 <div className="flex gap-2">
                     <div className="shrink-0">
-                        <Icon name="exclamation-circle-filled" className="color-danger" />
+                        <IcExclamationCircleFilled className="color-danger" />
                     </div>
                     <div className="flex-1 text-left">{title}</div>
                 </div>

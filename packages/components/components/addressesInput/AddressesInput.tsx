@@ -4,7 +4,7 @@ import { forwardRef } from 'react';
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import clsx from '@proton/utils/clsx';
 
 interface AddressesInputItemProps extends ComponentPropsWithoutRef<'div'> {
@@ -60,7 +60,7 @@ export const AddressesInputItem = forwardRef<HTMLDivElement, AddressesInputItemP
                         onClick={onRemove}
                         type="button"
                     >
-                        <Icon name="cross" size={3} className="m-auto" />
+                        <IcCross size={3} className="m-auto" />
                         <span className="sr-only">{c('Action').t`Remove`}</span>
                     </button>
                 </Tooltip>
@@ -95,6 +95,7 @@ const AddressesInput = forwardRef<HTMLDivElement, AddressesInputProps>(function 
     ref
 ) {
     return (
+        // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
         <div className={clsx(['w-full flex-1 relative', className])} ref={ref} onClick={onClick}>
             <div
                 className={clsx(['flex *:min-size-auto flex-1', autocompleteContainerClassName])}

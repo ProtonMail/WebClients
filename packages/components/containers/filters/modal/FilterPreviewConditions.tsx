@@ -2,7 +2,7 @@ import { Fragment, useMemo } from 'react';
 
 import { c } from 'ttag';
 
-import Icon from '@proton/components/components/icon/Icon';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import clsx from '@proton/utils/clsx';
 
 import { getComparatorLabels, getConditionTypeLabels } from '../constants';
@@ -24,6 +24,7 @@ const FilterPreviewConditions = ({ isOpen, toggleOpen, model }: Props) => {
             if (cond.type === ConditionType.ATTACHMENTS) {
                 const label = getConditionLabel(cond);
                 const attachment = isOpen ? (
+                    // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
                     <span
                         key={`filter_preview_${label}`}
                         className="inline-flex flex-row items-center condition-token mb-2 max-w-full"
@@ -52,7 +53,9 @@ const FilterPreviewConditions = ({ isOpen, toggleOpen, model }: Props) => {
 
             const values = cond?.values?.map((v, i) => {
                 const value = isOpen ? (
+                    // eslint-disable-next-line jsx-a11y/prefer-tag-over-role
                     <span
+                        // eslint-disable-next-line react/no-array-index-key
                         key={`${v}${i}`}
                         className="inline-flex flex-row items-center condition-token mb-2 max-w-full"
                         role="listitem"
@@ -62,9 +65,11 @@ const FilterPreviewConditions = ({ isOpen, toggleOpen, model }: Props) => {
                         </span>
                     </span>
                 ) : (
+                    // eslint-disable-next-line react/no-array-index-key
                     <strong key={`${v}${i}`}>{v}</strong>
                 );
                 return i > 0 ? (
+                    // eslint-disable-next-line react/no-array-index-key
                     <Fragment key={`preview_condition_${v}${i}`}>
                         {` `}
                         {c('Label').t`or`}
@@ -100,6 +105,7 @@ const FilterPreviewConditions = ({ isOpen, toggleOpen, model }: Props) => {
         return isOpen ? (
             <div className="pt-2 max-w-full">
                 {conditionsRows.map((cond, i) => (
+                    // eslint-disable-next-line react/no-array-index-key
                     <div key={`preview-condition-${i}`}>
                         {i === 0 ? ifLabel : operator}
                         {` `}
@@ -110,6 +116,7 @@ const FilterPreviewConditions = ({ isOpen, toggleOpen, model }: Props) => {
         ) : (
             <div className="pt-2 max-w-full text-ellipsis" title={title}>
                 {conditionsRows.map((cond, i) => (
+                    // eslint-disable-next-line react/no-array-index-key
                     <span key={`preview-condition-${i}`}>
                         {i === 0 ? ifLabel : <span className="ml-1">{operator.toLowerCase()}</span>}
                         {` `}
@@ -124,7 +131,7 @@ const FilterPreviewConditions = ({ isOpen, toggleOpen, model }: Props) => {
         <div className="border-bottom">
             <div className="flex flex-nowrap flex-column md:flex-row align-items-center py-4 gap-4">
                 <button type="button" className="w-full md:w-1/4 text-left" onClick={toggleOpen}>
-                    <Icon name="chevron-down" className={clsx([isOpen && 'rotateX-180'])} />
+                    <IcChevronDown className={clsx([isOpen && 'rotateX-180'])} />
                     <span className="ml-2">{c('Label').t`Conditions`}</span>
                 </button>
                 <div className="flex flex-column w-full">{conditionsRenderer}</div>

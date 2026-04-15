@@ -4,7 +4,6 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import Form from '@proton/components/components/form/Form';
-import Icon from '@proton/components/components/icon/Icon';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
@@ -16,6 +15,8 @@ import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
 import TableRow from '@proton/components/components/table/TableRow';
+import { IcPlusCircleFilled } from '@proton/icons/icons/IcPlusCircleFilled';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { MAX_IPS_ADDON } from '@proton/payments';
 import { type CountryOptions, getLocalizedCountryByAbbr } from '@proton/payments/core/countries';
 import range from '@proton/utils/range';
@@ -272,7 +273,7 @@ const GatewayServersModal = ({
                                             : []),
                                         ...(showLoad ? [getFormattedLoad(logical.Servers)] : []),
                                         <Button icon size="small" key="delete" onClick={handleDelete(logical)}>
-                                            <Icon name="trash" />
+                                            <IcTrash />
                                         </Button>,
                                     ]}
                                 />
@@ -345,7 +346,7 @@ const GatewayServersModal = ({
                                         ...(showIP ? ['-'] : []),
                                         ...(showLoad ? ['-'] : []),
                                         <Button icon size="small" key="delete" onClick={handleDelete(logical)}>
-                                            <Icon name="trash" />
+                                            <IcTrash />
                                         </Button>,
                                     ]}
                                 />
@@ -382,7 +383,7 @@ const GatewayServersModal = ({
                                                         decreaseQuantities({ [locationId]: 1 });
                                                     }}
                                                 >
-                                                    <Icon name="trash" />
+                                                    <IcTrash />
                                                 </Button>,
                                             ]}
                                         />
@@ -393,7 +394,7 @@ const GatewayServersModal = ({
                     </Table>
                     {availableAddedCount >= 1 ? (
                         <Button shape="ghost" className="color-primary" onClick={addServers}>
-                            <Icon name="plus-circle-filled" className="mr-2" />
+                            <IcPlusCircleFilled className="mr-2" />
                             {c('Info').ngettext(
                                 msgid`Add server (${availableAddedCount} available)`,
                                 `Add server (${availableAddedCount} available)`,
@@ -410,7 +411,7 @@ const GatewayServersModal = ({
                                     rest.onClose?.();
                                 }}
                             >
-                                <Icon name="plus-circle-filled" className="mr-2" />
+                                <IcPlusCircleFilled className="mr-2" />
                                 {c('Action').t`Get more servers`}
                             </Button>
                         )

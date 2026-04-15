@@ -12,7 +12,6 @@ import { Href } from '@proton/atoms/Href/Href';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Badge } from '@proton/components/components/badge/Badge';
-import Icon from '@proton/components/components/icon/Icon';
 import AppLink from '@proton/components/components/link/AppLink';
 import Info from '@proton/components/components/link/Info';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
@@ -22,7 +21,9 @@ import useConfig from '@proton/components/hooks/useConfig';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useSessionRecoveryState } from '@proton/components/hooks/useSessionRecoveryState';
 import useLoading from '@proton/hooks/useLoading';
+import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { postVerifySend } from '@proton/shared/lib/api/verify';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
@@ -213,8 +214,7 @@ const UsernameSection = ({ app }: Props) => {
                                     <div className="flex">
                                         {primaryAddress.Email}
                                         <Tooltip title={c('Tooltip').t`Verified email address`} openDelay={0}>
-                                            <Icon
-                                                name="checkmark-circle-filled"
+                                            <IcCheckmarkCircleFilled
                                                 size={4}
                                                 className="ml-2 color-success self-center"
                                             />
@@ -245,8 +245,7 @@ const UsernameSection = ({ app }: Props) => {
                                             <div>{primaryAddress.Email}</div>
                                         )}
                                         <div className="flex">
-                                            <Icon
-                                                name="exclamation-circle-filled"
+                                            <IcExclamationCircleFilled
                                                 size={4}
                                                 className="mr-1 color-danger self-center"
                                             />

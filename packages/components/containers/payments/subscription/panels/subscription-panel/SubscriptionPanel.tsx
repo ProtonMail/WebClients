@@ -2,13 +2,13 @@ import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { Badge } from '@proton/components/components/badge/Badge';
-import Icon from '@proton/components/components/icon/Icon';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Meter from '@proton/components/components/progress/Meter';
 import StripedItem from '@proton/components/components/stripedList/StripedItem';
 import { StripedList } from '@proton/components/components/stripedList/StripedList';
 import Time from '@proton/components/components/time/Time';
 import LearnMoreModal from '@proton/components/containers/topBanners/LearnMoreModal';
+import { IcStorage } from '@proton/icons/icons/IcStorage';
 import {
     Renew,
     getHasVpnB2BPlan,
@@ -118,7 +118,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
             const humanUsedSpace = humanSize({ bytes: UsedSpace });
             const humanMaxSpace = humanSize({ bytes: MaxSpace });
             return (
-                <StripedItem left={<Icon className="color-success" name="storage" size={5} />}>
+                <StripedItem left={<IcStorage className="color-success" size={5} />}>
                     <span className="block">{c('Label').t`${humanUsedSpace} of ${humanMaxSpace}`}</span>
                     <Meter className="my-4" aria-hidden="true" value={Math.ceil(percentage(MaxSpace, UsedSpace))} />
                 </StripedItem>
@@ -130,7 +130,7 @@ const SubscriptionPanel = ({ app, vpnServers, subscription, organization, user, 
         const humanMaxSpace = humanSize({ bytes: space.maxBaseSpace + space.maxDriveSpace, unit: 'GB', fraction: 0 });
 
         return (
-            <StripedItem left={<Icon className="color-success" name="storage" size={5} />}>
+            <StripedItem left={<IcStorage className="color-success" size={5} />}>
                 <span>{humanMaxSpace}</span>
                 <div className="text-sm">
                     {maxBaseSpace} {MAIL_SHORT_APP_NAME} + {maxDriveSpace} {DRIVE_SHORT_APP_NAME}

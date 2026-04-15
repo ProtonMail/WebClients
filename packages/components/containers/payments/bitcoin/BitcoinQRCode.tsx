@@ -1,8 +1,8 @@
 import type { ComponentProps } from 'react';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import Icon from '@proton/components/components/icon/Icon';
 import QRCode from '@proton/components/components/image/QRCode';
+import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle';
 import clsx from '@proton/utils/clsx';
 
 import './BitcoinQRCode.scss';
@@ -27,9 +27,7 @@ const BitcoinQRCode = ({
         <div className="border rounded relative p-6">
             <QRCode value={url} className={clsx(className, blurred)} {...rest} />
             {status === 'pending' && <CircleLoader size="medium" className="absolute inset-center" />}
-            {status === 'confirmed' && (
-                <Icon name="checkmark-circle" size={9} className="absolute inset-center color-success" />
-            )}
+            {status === 'confirmed' && <IcCheckmarkCircle size={9} className="absolute inset-center color-success" />}
         </div>
     );
 };

@@ -7,7 +7,6 @@ import { signInWithAnotherDevicePush } from '@proton/account/signInWithAnotherDe
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import Form from '@proton/components/components/form/Form';
-import Icon from '@proton/components/components/icon/Icon';
 import Modal, { type ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
@@ -20,6 +19,7 @@ import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import useLoading from '@proton/hooks/useLoading';
+import { IcLightbulb } from '@proton/icons/icons/IcLightbulb';
 import metrics from '@proton/metrics';
 import observeApiError from '@proton/metrics/lib/observeApiError';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
@@ -94,7 +94,7 @@ const SignInWithAnotherDeviceModal = (props: Props) => {
                         <div className="p-3 border border-weak rounded">
                             <div className="flex gap-2 flex-nowrap items-center">
                                 <div className="shrink-0">
-                                    <Icon name="lightbulb" />
+                                    <IcLightbulb />
                                 </div>
                                 <div className="flex-1 text-bold">{c('edm').t`Security tips`}</div>
                             </div>

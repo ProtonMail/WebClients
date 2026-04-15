@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
 
 import { isChainedForwarding } from './forwardHelper';
 
@@ -19,8 +19,7 @@ const WarningChainedForwarding = ({ chainedEmails, forwardEmail }: Props) => {
             title={c('email_forwarding_2023: Forwarding tooltip')
                 .t`Emails forwarded to you are excluded and will not be forwarded.`}
         >
-            <Icon
-                name="exclamation-triangle-filled"
+            <IcExclamationTriangleFilled
                 className="mr-2 color-warning"
                 alt={c('email_forwarding_2023: Warning').t`Warning`}
             />

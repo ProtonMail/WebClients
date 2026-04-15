@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcExclamationCircle } from '@proton/icons/icons/IcExclamationCircle';
 import { GROUP_MEMBER_TYPE } from '@proton/shared/lib/interfaces';
 
 // based on the Info component - packages/components/components/link/Info.tsx
@@ -20,7 +20,7 @@ const UserIsExternalIcon = ({ groupMemberType }: { groupMemberType: GROUP_MEMBER
 
     return (
         <Tooltip title={tooltipMessage} openDelay={0} closeDelay={250} longTapDelay={0} originalPlacement="top">
-            <Icon name="exclamation-circle" className="shrink-0 color-warning" />
+            <IcExclamationCircle className="shrink-0 color-warning" />
         </Tooltip>
     );
 };

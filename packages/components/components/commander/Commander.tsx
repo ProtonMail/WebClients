@@ -11,6 +11,7 @@ import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import Mark from '@proton/components/components/text/Mark';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
+import { IcMagnifier } from '@proton/icons/icons/IcMagnifier';
 import type { IconName } from '@proton/icons/types';
 import { normalize } from '@proton/shared/lib/helpers/string';
 import clsx from '@proton/utils/clsx';
@@ -114,7 +115,7 @@ const Commander = ({ onClose, list, ...rest }: Props) => {
                         value={value}
                         onChange={handleChange}
                         onKeyDown={handleKeyDown}
-                        prefix={<Icon name="magnifier" size={4.5} alt={c('action').t`Search messages`} />}
+                        prefix={<IcMagnifier size={4.5} alt={c('action').t`Search messages`} />}
                         suffix={
                             <Button
                                 type="button"

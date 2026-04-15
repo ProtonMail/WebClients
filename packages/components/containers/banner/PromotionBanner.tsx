@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -107,7 +107,7 @@ export const PromotionBanner = ({
                     className="shrink-0 ml-2 mr-1 my-auto"
                     title={c('Action').t`Close`}
                 >
-                    <Icon name="cross" alt={c('Action').t`Close`} />
+                    <IcCross alt={c('Action').t`Close`} />
                 </Button>
             )}
         </div>

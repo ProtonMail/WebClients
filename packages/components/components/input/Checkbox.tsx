@@ -1,8 +1,9 @@
 import type { InputHTMLAttributes, LabelHTMLAttributes, Ref } from 'react';
 import { forwardRef, useEffect, useRef } from 'react';
 
-import Icon from '@proton/components/components/icon/Icon';
 import { useCombinedRefs } from '@proton/hooks';
+import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
+import { IcMinus } from '@proton/icons/icons/IcMinus';
 import clsx from '@proton/utils/clsx';
 
 export interface CheckboxProps extends InputHTMLAttributes<HTMLInputElement> {
@@ -90,9 +91,9 @@ const Checkbox = (
             />
             <span className="checkbox-fakecheck" style={{ borderColor, background: backgroundColor, color }}>
                 {indeterminate === false ? (
-                    <Icon className="checkbox-fakecheck-img" size={4} name="checkmark" color={color} />
+                    <IcCheckmark className="checkbox-fakecheck-img" size={4} color={color} />
                 ) : (
-                    <Icon className="checkbox-fakecheck-img color-disabled" size={4} name="minus" />
+                    <IcMinus className="checkbox-fakecheck-img color-disabled" size={4} />
                 )}
             </span>
             {children}

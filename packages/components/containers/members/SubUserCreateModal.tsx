@@ -20,7 +20,6 @@ import { Button } from '@proton/atoms/Button/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { DropdownSizeUnit } from '@proton/components/components/dropdown/utils';
-import Icon from '@proton/components/components/icon/Icon';
 import Info from '@proton/components/components/link/Info';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Modal from '@proton/components/components/modalTwo/Modal';
@@ -38,6 +37,7 @@ import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useSilentApi } from '@proton/components/hooks/useSilentApi';
 import { useLoading } from '@proton/hooks';
+import { IcInfoCircleFilled } from '@proton/icons/icons/IcInfoCircleFilled';
 import { getHasVpnB2BPlan, hasDuo, hasFamily, hasVisionary } from '@proton/payments';
 import { useDispatch } from '@proton/redux-shared-store';
 import {
@@ -457,7 +457,7 @@ const SubUserCreateModal = ({
                                     {adminTooltipText()}{' '}
                                     {passwordlessMode && model.private && model.admin && (
                                         <Tooltip title={getPrivateAdminError()} openDelay={0}>
-                                            <Icon className="color-danger ml-2" name="info-circle-filled" />
+                                            <IcInfoCircleFilled className="color-danger ml-2" />
                                         </Tooltip>
                                     )}
                                 </>

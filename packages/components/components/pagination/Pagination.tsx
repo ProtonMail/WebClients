@@ -1,11 +1,12 @@
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
-import ButtonGroup from '@proton/components/components/button/ButtonGroup';
+import { ButtonGroup } from '@proton/components/components/button/ButtonGroup';
 import DropdownMenu from '@proton/components/components/dropdown/DropdownMenu';
 import DropdownMenuButton from '@proton/components/components/dropdown/DropdownMenuButton';
 import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdown';
-import Icon from '@proton/components/components/icon/Icon';
+import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
+import { IcArrowRight } from '@proton/icons/icons/IcArrowRight';
 
 interface Props {
     total: number;
@@ -65,7 +66,7 @@ const Pagination = ({
                     onClick={onPrevious}
                     title={c('Title').t`Previous`}
                 >
-                    <Icon name="arrow-left" />
+                    <IcArrowLeft />
                 </Button>
             ) : null}
             <SimpleDropdown as={Button} title={c('Title').t`Open pagination`} content={page}>
@@ -79,7 +80,7 @@ const Pagination = ({
                     onClick={onNext}
                     title={c('Title').t`Next`}
                 >
-                    <Icon name="arrow-right" />
+                    <IcArrowRight />
                 </Button>
             ) : null}
         </ButtonGroup>

@@ -13,7 +13,6 @@ import { Href } from '@proton/atoms/Href/Href';
 import Details from '@proton/components/components/container/Details';
 import Row from '@proton/components/components/container/Row';
 import Summary from '@proton/components/components/container/Summary';
-import Icon from '@proton/components/components/icon/Icon';
 import Radio from '@proton/components/components/input/Radio';
 import Info from '@proton/components/components/link/Info';
 import { useModalTwoPromise, useModalTwoStatic } from '@proton/components/components/modalTwo/useModalTwo';
@@ -29,6 +28,7 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import useUserVPN from '@proton/components/hooks/useUserVPN';
 import useVPNLogicals from '@proton/components/hooks/useVPNLogicals';
 import { TextAreaTwo } from '@proton/components/index';
+import { IcCross } from '@proton/icons/icons/IcCross';
 import { getCountryOptions, getLocalizedCountryByAbbr } from '@proton/payments/core/countries';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import { readableTime } from '@proton/shared/lib/helpers/time';
@@ -658,8 +658,7 @@ const WireGuardConfigurationSection = () => {
                                                             c('Action').t`Revoke ${name}`
                                                         }
                                                     >
-                                                        <Icon
-                                                            name="cross"
+                                                        <IcCross
                                                             size={3}
                                                             className="label-stack-item-delete-icon"
                                                             alt={c('Action').t`Revoke`}

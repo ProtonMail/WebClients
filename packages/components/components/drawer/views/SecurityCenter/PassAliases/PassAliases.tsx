@@ -4,13 +4,13 @@ import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import Icon from '@proton/components/components/icon/Icon';
 import Loader from '@proton/components/components/loader/Loader';
 import { useModalStateObject } from '@proton/components/components/modalTwo/useModalState';
 import ErrorBoundary from '@proton/components/containers/app/ErrorBoundary';
 import { GenericErrorDisplay } from '@proton/components/containers/error/GenericError';
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
+import { IcArrowWithinSquare } from '@proton/icons/icons/IcArrowWithinSquare';
 import { encodeFilters } from '@proton/pass/components/Navigation/routing';
 import { PassErrorCode } from '@proton/pass/lib/api/errors';
 import { PassBridgeProvider } from '@proton/pass/lib/bridge/PassBridgeProvider';
@@ -87,8 +87,7 @@ const PassAliases = () => {
                             target="_blank"
                         >
                             {c('Security Center').t`All aliases`}
-                            <Icon
-                                name="arrow-within-square"
+                            <IcArrowWithinSquare
                                 className="ml-1"
                                 alt={c('Security Center (link to Pass App)').t`(will open ${PASS_APP_NAME})`}
                             />

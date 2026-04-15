@@ -3,13 +3,14 @@ import { c, msgid } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
 import Form from '@proton/components/components/form/Form';
-import Icon from '@proton/components/components/icon/Icon';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Modal from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
+import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 import { type FreePlanDefault, type FreeSubscription, PLANS, type PlansMap, type Subscription } from '@proton/payments';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
@@ -34,8 +35,7 @@ export interface HighlightPlanDowngradeModalOwnProps {
 }
 
 interface HighlightPlanDowngradeModalProps
-    extends Omit<ModalProps<typeof Form>, 'onSubmit'>,
-        HighlightPlanDowngradeModalOwnProps {
+    extends Omit<ModalProps<typeof Form>, 'onSubmit'>, HighlightPlanDowngradeModalOwnProps {
     onConfirm: () => void;
 }
 
@@ -129,7 +129,7 @@ const HighlightPlanDowngradeModal = ({
                                         }}
                                     >
                                         <div className="shrink-0">
-                                            <Icon name="exclamation-circle-filled" className="color-danger" />
+                                            <IcExclamationCircleFilled className="color-danger" />
                                         </div>
                                         <div className="flex-1">
                                             {c('Info')
@@ -179,7 +179,7 @@ const HighlightPlanDowngradeModal = ({
                 {!storageError && daysRemaining > 0 && (
                     <Card className="mb-6 mt-8 flex flex-row flex-nowrap gap-1" rounded>
                         <div className="shrink-0">
-                            <Icon name="hourglass" />
+                            <IcHourglass />
                         </div>
                         <div>
                             {planTimeRemainingString}{' '}

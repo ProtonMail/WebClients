@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import Icon from '@proton/components/components/icon/Icon';
 import TopNavbarListItemButton from '@proton/components/components/topnavbar/TopNavbarListItemButton';
+import { IcSpeechBubble } from '@proton/icons/icons/IcSpeechBubble';
 
 interface Props {
     onClick: () => void;
@@ -14,7 +14,7 @@ const TopNavbarListItemFeedbackButton = ({ onClick }: Props) => {
             type="button"
             title={c('Title').t`Send feedback`}
             onClick={onClick}
-            icon={<Icon name="speech-bubble" />}
+            icon={<IcSpeechBubble />}
             text={c('Title').t`Feedback`}
         />
     );

@@ -4,8 +4,8 @@ import { c, msgid } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import Icon from '@proton/components/components/icon/Icon';
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { IcChevronDown } from '@proton/icons/icons/IcChevronDown';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import type { PartialMemberAddress } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
@@ -120,7 +120,7 @@ const MemberAddresses = ({ addresses = [] }: MemberAddressesProps) => {
                                 )
                             }
                         </span>
-                        <Icon size={3} className="ml-1" name="chevron-down" />
+                        <IcChevronDown size={3} className="ml-1" />
                     </Button>
                 </li>
             );
