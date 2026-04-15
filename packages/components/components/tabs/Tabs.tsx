@@ -76,7 +76,11 @@ export const Tabs = ({
     const scale = selectedTabRect && containerTabRect && (selectedTabRect?.width || 0) / (containerTabRect?.width || 1);
     const width = selectedTabRect && `${selectedTabRect?.width || 0}px`;
     const offset =
-        selectedTabRect && (isRTL ? -1 : 1) * Math.abs((selectedTabRect?.x || 0) - (containerTabRect?.x || 0));
+        selectedTabRect &&
+        containerTabRect &&
+        (isRTL
+            ? selectedTabRect.x + selectedTabRect.width - (containerTabRect.x + containerTabRect.width)
+            : selectedTabRect.x - containerTabRect.x);
     const translate = offset && `${offset}px`;
 
     useLayoutEffect(() => {
