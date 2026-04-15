@@ -1,29 +1,42 @@
 import { useOrganization } from '@proton/account/organization/hooks';
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
+import { getAddons, isFreeSubscription, isMeetAddon } from '@proton/payments';
 
 import { useInternalBooking } from '../../../store/internalBooking/bookingsHook';
-import { hasUserReachBookingsLimit, hasUserReachPlanLimit } from './upsellHelpers';
+import { hasOrgMemberReachedBookingLimit, hasUserReachBookingsLimit, hasUserReachPlanLimit } from './upsellHelpers';
 
 export const useBookingUpsell = () => {
-    const [user] = useUser();
+    const [user, loadingUser] = useUser();
     const [bookings] = useInternalBooking();
+    const [subscription, loadingSubscription] = useSubscription();
     const [organization, loadingOrganization] = useOrganization();
 
     const shouldShowLimitModal = () => {
-        const bookingsPages = bookings?.bookingPages;
-        const hasUserReachedPlanLimit = hasUserReachPlanLimit(user, bookingsPages?.length || 0, organization);
-        const hasUserReachedBookingLimit = hasUserReachBookingsLimit(bookingsPages);
+        const hasUserReachedBookingLimit = hasUserReachBookingsLimit(bookings?.bookingPages);
+        if (hasUserReachedBookingLimit) {
+            return {
+                planLimitReached: false,
+                bookingPageLimitReached: true,
+            };
+        }
 
-        // This is made to make sure that if both are true, we only show the booking limit reached modal
-        const areBothTrue = hasUserReachedPlanLimit && hasUserReachedBookingLimit;
+        const bookingPageNumber = bookings?.bookingPages?.length || 0;
+        const meetAddon = getAddons(isFreeSubscription(subscription) ? undefined : subscription).find(({ Name }) =>
+            isMeetAddon(Name)
+        );
+        const hasUserReachedPlanLimit = user.isMember
+            ? hasOrgMemberReachedBookingLimit(user, bookings?.bookingPages, organization)
+            : hasUserReachPlanLimit(user, bookingPageNumber, organization, meetAddon);
+
         return {
-            plan: hasUserReachedPlanLimit && !areBothTrue,
-            booking: hasUserReachedBookingLimit || areBothTrue,
+            planLimitReached: hasUserReachedPlanLimit,
+            bookingPageLimitReached: false,
         };
     };
 
     return {
         shouldShowLimitModal,
-        loadingLimits: loadingOrganization,
+        loadingLimits: loadingOrganization || loadingUser || loadingSubscription,
     };
 };
