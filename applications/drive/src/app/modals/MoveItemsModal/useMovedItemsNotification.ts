@@ -3,6 +3,7 @@ import { c, msgid } from 'ttag';
 import { useNotifications } from '@proton/components';
 
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
+import { getEllipsedName } from '../../utils/intl/getEllipsedName';
 import { useListNotifications } from '../../utils/useListNotifications';
 
 export const useMovedItemsNotification = () => {
@@ -16,11 +17,14 @@ export const useMovedItemsNotification = () => {
     ) => {
         createSuccessMessage(
             successItems,
-            (name: string) => c('Notification').t`"${name}" successfully moved`,
+            (name: string) => {
+                const ellipsedName = getEllipsedName(name);
+                return c('Notification').t`"${ellipsedName}" moved`;
+            },
             (numberOfItems: number) =>
                 c('Notification').ngettext(
-                    msgid`${numberOfItems} item successfully moved`,
-                    `${numberOfItems} items successfully moved`,
+                    msgid`${numberOfItems} item moved`,
+                    `${numberOfItems} items moved`,
                     numberOfItems
                 ),
             undoAction

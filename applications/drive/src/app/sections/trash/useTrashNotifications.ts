@@ -3,6 +3,7 @@ import { c, msgid } from 'ttag';
 import { useConfirmActionModal, useNotifications } from '@proton/components';
 
 import { showAggregatedErrorNotification } from '../../utils/errorHandling/errorNotifications';
+import { getEllipsedName } from '../../utils/intl/getEllipsedName';
 import { useListNotifications } from '../../utils/useListNotifications';
 
 export const useTrashNotifications = () => {
@@ -48,7 +49,10 @@ export const useTrashNotifications = () => {
     ) => {
         createSuccessMessage(
             successItems,
-            (name: string) => c('Notification').t`"${name}" restored from trash`,
+            (name: string) => {
+                const ellipsedName = getEllipsedName(name);
+                return c('Notification').t`"${ellipsedName}" restored from trash`;
+            },
             (numberOfItems: number) =>
                 c('Notification').ngettext(
                     msgid`${numberOfItems} item restored from trash`,
@@ -71,7 +75,10 @@ export const useTrashNotifications = () => {
     ) => {
         createSuccessMessage(
             successItems,
-            (name: string) => c('Notification').t`"${name}" deleted permanently from trash`,
+            (name: string) => {
+                const ellipsedName = getEllipsedName(name);
+                return c('Notification').t`"${ellipsedName}" deleted permanently from trash`;
+            },
             (numberOfItems: number) =>
                 c('Notification').ngettext(
                     msgid`${numberOfItems} item deleted permanently from trash`,
