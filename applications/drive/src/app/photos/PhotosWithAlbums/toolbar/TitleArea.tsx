@@ -8,6 +8,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 
 import useNavigate from '../../../hooks/drive/useNavigate';
+import { getEllipsedName } from '../../../utils/intl/getEllipsedName';
 import { AlbumsPageTypes, usePhotoLayoutStore } from '../../../zustand/photos/layout.store';
 import { PhotosClearSelectionButton } from '../components/PhotosClearSelectionButton';
 import { usePhotosSelection } from '../hooks/usePhotosSelection';
@@ -99,7 +100,7 @@ export const TitleArea = ({
             </>
         );
     }
-
+    const ellipsedAlbumName = getEllipsedName(albumName ?? '');
     return (
         <>
             {selectedCount > 0 && (
@@ -132,7 +133,8 @@ export const TitleArea = ({
                             navigateToAlbum(albumShareId, albumLinkId);
                         }}
                     >
-                        <IcArrowLeft className="mr-2 shrink-0" /> {c('Action').t`Go back to album “${albumName}“`}
+                        <IcArrowLeft className="mr-2 shrink-0" />{' '}
+                        {c('Action').t`Go back to album “${ellipsedAlbumName}“`}
                     </Button>
                 ) : (
                     <ToolbarLeftActionsGallery

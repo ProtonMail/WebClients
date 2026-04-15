@@ -3,6 +3,7 @@ import { c, msgid } from 'ttag';
 import { type useConfirmActionModal, useNotifications } from '@proton/components';
 import { getPlatformFriendlyDateForFileName } from '@proton/shared/lib/docs/utils/getPlatformFriendlyDateForFileName';
 
+import { getEllipsedName } from '../../utils/intl/getEllipsedName';
 import { useAnonymousUploadAuthStore } from '../../zustand/upload/anonymous-auth.store';
 import { usePublicLinkActions, usePublicLinksActions, usePublicLinksListing } from '../_links';
 import useLinksState from '../_links/useLinksState';
@@ -34,19 +35,23 @@ export function usePublicActions() {
         parentLinkId: string,
         name: string
     ): Promise<string> => {
+        const ellipsedName = getEllipsedName(name);
         return publicLink
             .createFolder(abortSignal, { token, parentLinkId, name })
             .then(async (id: string) => {
                 await publicLinksListing.loadChildren(abortSignal, token, parentLinkId, false);
                 createNotification({
-                    text: <span className="text-pre-wrap">{c('Notification').t`"${name}" created successfully`}</span>,
+                    text: (
+                        <span className="text-pre-wrap">{c('Notification')
+                            .t`"${ellipsedName}" created successfully`}</span>
+                    ),
                 });
                 return id;
             })
             .catch((e) => {
                 showErrorNotification(
                     e,
-                    <span className="text-pre-wrap">{c('Notification').t`"${name}" failed to be created`}</span>
+                    <span className="text-pre-wrap">{c('Notification').t`"${ellipsedName}" failed to be created`}</span>
                 );
                 throw e;
             });
