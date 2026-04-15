@@ -122,7 +122,8 @@ export function FolderBrowser({
         useSelectionStore.getState().setAllItemIds(new Set(sortedItemUids));
     }, [sortedItemUids]);
 
-    const canShareSingleItem = selectedItems.length === 1 ? selectedItems[0].effectiveRole === MemberRole.Admin : false;
+    const canShareSelectedItem =
+        selectedItems.length === 1 ? selectedItems[0].effectiveRole === MemberRole.Admin : false;
 
     // Close context menu when navigating to a different folder
     useEffect(() => {
@@ -180,7 +181,7 @@ export function FolderBrowser({
             uploadFile={uploadFile}
             uploadFolder={uploadFolder}
             showOptionsForNoSelection={showToolbarOptionsForNoSelection}
-            canShareSingleItem={canShareSingleItem}
+            canShareSelectedItem={canShareSelectedItem}
         />
     );
 
@@ -305,7 +306,7 @@ export function FolderBrowser({
                 open={contextMenu.open}
                 position={contextMenu.position}
                 actions={actions}
-                canShareSingleItem={canShareSingleItem}
+                canShareSelectedItem={canShareSelectedItem}
             />
             <DriveExplorer
                 itemIds={sortedItemUids}

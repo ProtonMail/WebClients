@@ -36,7 +36,7 @@ interface Props {
     uploadFile: FolderUploadFile;
     uploadFolder: FolderUploadFolder;
     showOptionsForNoSelection?: boolean;
-    canShareSingleItem: boolean;
+    canShareSelectedItem: boolean;
 }
 
 export const FolderToolbar = ({
@@ -45,22 +45,23 @@ export const FolderToolbar = ({
     uploadFile,
     uploadFolder,
     showOptionsForNoSelection = true,
-    canShareSingleItem,
+    canShareSelectedItem,
 }: Props) => {
     const isDesktop = !getDevice()?.type;
     const { viewportWidth } = useActiveBreakpoint();
     const isEditEnabled = useIsEditEnabled();
     const selectedItemIds = useSelectionStore(useShallow((state) => state.selectedItemIds));
-    const { items, permissions, role } = useFolderStore(
+    const { items, permissions, role, isRoot } = useFolderStore(
         useShallow((state) => ({
             permissions: state.permissions,
             items: state.items,
             role: state.role,
+            isRoot: state.folder?.isRoot,
         }))
     );
     const itemsList = Array.from(items.values());
     const selectedItems = getSelectedItems(itemsList, Array.from(selectedItemIds));
-
+    const canShareCurrentFolder = permissions.canShare || permissions.canShareNode;
     const {
         showPreviewModal,
         showRenameModal,
@@ -104,9 +105,8 @@ export const FolderToolbar = ({
                             <Vr />
                         </>
                     ) : null}
-
-                    {canShareSingleItem && <ShareToolbarButton onClick={showFileSharingModal} />}
-                    {canShareSingleItem && <ShareLinkButton type="toolbar" onClick={showSharingModal} />}
+                    {canShareCurrentFolder && isRoot && <ShareToolbarButton onClick={showFileSharingModal} />}
+                    {canShareCurrentFolder && !isRoot && <ShareLinkButton type="toolbar" onClick={showSharingModal} />}
                 </>
             );
         }
@@ -122,11 +122,11 @@ export const FolderToolbar = ({
                         volumeId={volumeId}
                         selectedItems={selectedItems}
                         role={role}
-                        canShareSingleItem={canShareSingleItem}
+                        canShareSelectedItem={canShareSelectedItem}
                     />
                 ) : (
                     <>
-                        {canShareSingleItem && (
+                        {canShareSelectedItem && (
                             <>
                                 <ShareLinkButton type="toolbar" onClick={showSharingModal} />
                                 <Vr />
