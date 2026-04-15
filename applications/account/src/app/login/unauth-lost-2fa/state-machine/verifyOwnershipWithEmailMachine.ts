@@ -1,9 +1,8 @@
 import { type ActorRefFrom, assign, setup } from 'xstate';
 
-type Result = 'no-email-method' | '2fa-disabled' | 'skipped' | 'error';
+type Result = '2fa-disabled' | 'skipped' | 'error';
 
 interface MachineContext {
-    hasRecoveryEmail: boolean;
     result: Result | null;
 }
 
@@ -15,24 +14,16 @@ export const verifyOwnershipWithEmailMachine = setup({
     types: {
         context: {} as MachineContext,
         events: {} as MachineEvent,
-        input: {} as { hasRecoveryEmail: boolean },
         output: {} as { result: Result },
-    },
-    guards: {
-        hasRecoveryEmail: ({ context }) => context.hasRecoveryEmail,
     },
 }).createMachine({
     id: 'verifyOwnershipWithEmail',
-    initial: 'validating',
-    context: ({ input }) => ({
-        hasRecoveryEmail: input.hasRecoveryEmail,
+    initial: 'verify code',
+    context: {
         result: null,
-    }),
+    },
     output: ({ context }): { result: Result } => ({ result: context.result! }),
     states: {
-        validating: {
-            always: [{ guard: 'hasRecoveryEmail', target: 'verify code' }, { target: 'no email method' }],
-        },
         'verify code': {
             on: {
                 '2fa disabled': {
@@ -45,10 +36,6 @@ export const verifyOwnershipWithEmailMachine = setup({
                     target: 'error',
                 },
             },
-        },
-        'no email method': {
-            type: 'final',
-            entry: assign({ result: 'no-email-method' }),
         },
         '2fa disabled': {
             type: 'final',

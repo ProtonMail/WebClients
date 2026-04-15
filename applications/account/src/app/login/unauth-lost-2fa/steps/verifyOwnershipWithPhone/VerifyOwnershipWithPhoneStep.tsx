@@ -134,11 +134,13 @@ const VerifyCodeStep = ({ verificationResult }: { verificationResult: Verificati
     );
 };
 
-export const VerifyOwnershipWithPhoneStep = () => {
-    const actorRef = useVerifyOwnershipWithPhoneActorRef();
+const VerifyOwnershipWithPhoneStepContent = ({
+    actorRef,
+}: {
+    actorRef: NonNullable<ReturnType<typeof useVerifyOwnershipWithPhoneActorRef>>;
+}) => {
     const { send } = actorRef;
 
-    const validating = useSelector(actorRef, (s) => s.matches('validating'));
     const verifyCodeStep = useSelector(actorRef, (s) => s.matches('verify code'));
 
     const { sendStepLoad } = useUnauthedLost2FATelemetry();
@@ -178,7 +180,7 @@ export const VerifyOwnershipWithPhoneStep = () => {
         void sendCode();
     }, [actorRef.getSnapshot().value]);
 
-    if (validating || !verificationResult) {
+    if (!verificationResult) {
         return <Loader />;
     }
 
@@ -187,4 +189,14 @@ export const VerifyOwnershipWithPhoneStep = () => {
     }
 
     return null;
+};
+
+export const VerifyOwnershipWithPhoneStep = () => {
+    const actorRef = useVerifyOwnershipWithPhoneActorRef();
+
+    if (!actorRef) {
+        return null;
+    }
+
+    return <VerifyOwnershipWithPhoneStepContent actorRef={actorRef} />;
 };
