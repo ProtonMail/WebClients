@@ -5,7 +5,6 @@ import type { MeetingRecordingState } from '../hooks/useMeetingRecorder/types';
 export interface MeetingRecorderContextType {
     recordingState: MeetingRecordingState;
     startRecording: () => Promise<void>;
-    stopRecording: () => Promise<Blob | null>;
     downloadRecording: () => Promise<void>;
 }
 
@@ -15,7 +14,6 @@ const defaultValues: MeetingRecorderContextType = {
         recordedChunks: [],
     },
     startRecording: () => Promise.resolve(),
-    stopRecording: () => Promise.resolve(null),
     downloadRecording: () => Promise.resolve(),
 };
 
