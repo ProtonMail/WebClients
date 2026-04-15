@@ -84,5 +84,5 @@ echo "  NOT in $MAIN_BRANCH:     $(grep -c MISSING /tmp/results.txt)"
 echo ""
 echo "Commits to cherry-pick:"
 grep MISSING /tmp/results.txt | awk '{print $1}' | while read hash; do
-  git log --oneline -1 $hash
+  git --no-pager log --oneline -1 $hash
 done
