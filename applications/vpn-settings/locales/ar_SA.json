@@ -461,9 +461,6 @@
       "Fit to window": [
         "ملاءمة للنافذة"
       ],
-      "Forgot password?": [
-        "هل نسيت كلمة المرور؟"
-      ],
       "Forgot recovery method?": [
         "هل نسيت طريقة الاسترداد؟"
       ],
@@ -6813,12 +6810,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "أدخل عنوان البريد الإلكتروني أو اسم المستخدم لحساب ${ BRAND_NAME } الخاص بك."
       ],
-      "Enter your own password (as organization admin).": [
-        "أدخل كلمة المرور الخاصة بك (كمسؤول للمؤسسة)."
-      ],
-      "Enter your own password (as trusted contact).": [
-        "أدخل كلمة مرورك الخاصة (كجهة اتصال موثوق بها)."
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "أدخل بريدك الإلكتروني الخاص بالاسترداد وسنرسل لك اسم المستخدم أو البريد الإلكتروني الخاص بك."
       ],
@@ -6827,6 +6818,9 @@
       ],
       "Enter your recovery phrase to change your password now.": [
         "أدخل عبارة الاسترداد الخاصة بك لتتمكن من تغيير كلمة المرور."
+      ],
+      "Enter your recovery phrase to verify your identity and disable two-factor authentication.": [
+        "أدخل عبارة الاسترداد الخاصة بك للتحقق من هويتك وتعطيل المصادقة الثنائية."
       ],
       "Everything in ${ planOrAppName }": [
         "كل شيء في ${ planOrAppName }"
@@ -7536,9 +7530,6 @@
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "موصى به على الأجهزة الموثوقة ${ keepMeSignedInLearnMoreLink }"
       ],
-      "Recovery file": [
-        "ملف الاسترداد"
-      ],
       "Recovery file downloaded": [
         "تم تنزيل ملف الاسترداد"
       ],
@@ -7547,9 +7538,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "ستبقى معلومات الاسترداد على هذا الجهاز ما لم تحدد حذفها."
-      ],
-      "Recovery phrase": [
-        "عبارة الاسترداد"
       ],
       "Recovery phrase copied to clipboard": [
         "تم نسخ عبارة الاسترداد في الحافظة"
@@ -7845,9 +7833,6 @@
       ],
       "The name will be visible to your users while they are signed in.": [
         "سيكون الاسم مرئيًا للمستخدمين أثناء تسجيل دخولهم."
-      ],
-      "The referral credit can be awarded up to 2 months after your friend's trial ended, and if your friend subscribed to a plan.": [
-        "يمكن منح رصيد الإحالة خلال مدة تصل إلى شهرين بعد انتهاء الفترة التجريبية لصديقك، وذلك إذا اشترك صديقك في إحدى الخطط."
       ],
       "The securest way to browse, stream, and be online.": [
         "الطريقة المضمونة لتصفح الإنترنت، المشاهدة، و البقاء متصلاً."
@@ -8392,9 +8377,6 @@
       "You can now reset your password to regain access to your account.": [
         "يمكنك الآن إعادة تعيين كلمة المرور لاستعادة الوصول إلى حسابك."
       ],
-      "You can now reset your password to regain access to your account. **This will disable 2-factor authentication.**": [
-        "يمكنك الآن إعادة تعيين كلمة المرور الخاصة بك لاستعادة الوصول إلى حسابك. **سيعطيل هذا المصادقة الثنائية. **"
-      ],
       "You can now return to the application to continue": [
         "يمكنك الآن العودة إلى التطبيق للمتابعة"
       ],
@@ -8579,9 +8561,6 @@
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "تاريخ الفوترة التالي هو ${ renewalTime }. يمكنك الإلغاء في أي وقت. يرجى الاتصال بالدعم إذا كنت بحاجة إلى تغيير فوري في الخطة."
-      ],
-      "Your old password": [
-        "كلمة المرور القديمة الخاصة بك"
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "تستخدم مؤسستك تسجيل الدخول الأحادي (SSO). اضغط على تسجيل الدخول للمتابعة مع موفر خدمة SSO الخاص بك."
@@ -9629,12 +9608,6 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "نعم، أريد حذف هذا الحساب وجميع بياناته نهائيًا."
       ],
-      "Your password (admin)": [
-        "كلمة المرور الخاصة بك (المشرف)"
-      ],
-      "Your password (trusted contact)": [
-        "كلمة مرورك (جهة اتصال موثوق بها)"
-      ],
       "ZIP code": [
         "الرمز البريدي"
       ]
@@ -10640,6 +10613,9 @@
       ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "جميع خدمات ${ BRAND_NAME } الأساسية (${ MAIL_SHORT_APP_NAME }، و${ VPN_SHORT_APP_NAME }، و${ PASS_SHORT_APP_NAME })"
+      ],
+      "Appointment scheduling": [
+        "جدولة المواعيد"
       ],
       "Apps for": [
         "تطبيقات لـ"
@@ -14412,9 +14388,6 @@
       "Share the confirmation code with your administrator": [
         "شارك رمز التأكيد مع المسؤول"
       ],
-      "Sign in": [
-        "تسجيل الدخول"
-      ],
       "Sign in to your organization": [
         "تسجيل الدخول إلى مؤسستك"
       ],
@@ -14471,9 +14444,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "سيتعين عليك إنشاء مستخدمين جدد يدويًا لإضافتهم إلى مؤسستك."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "سيُعاد توجيهك إلى مزود خدمة الدخول الموحد (SSO) التابع للطرف الثالث."
       ],
       "Your SSO configuration will be deleted.": [
         "سيُحذف تكوين SSO الخاص بك."
@@ -15202,9 +15172,6 @@
       ],
       "Billing details updated": [
         "تم تحديث تفاصيل الفوترة"
-      ],
-      "Billing information updated": [
-        "تم تحديث معلومات الفوترة"
       ],
       "Canceling import": [
         "جارٍ إلغاء الاستيراد"
@@ -16114,9 +16081,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "أدخل تفاصيل حساب ${ BRAND_NAME } للانضمام إلى برنامج ${ app } التجريبي"
-      ],
-      "Enter your password": [
-        "أدخل كلمة مرورك"
       ],
       "Error": [
         "خلل"

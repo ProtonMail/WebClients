@@ -544,9 +544,6 @@
       "Go back": [
         "Înapoi"
       ],
-      "Go back to album “${ albumName }“": [
-        "Înapoi la albumul „${ albumName }“"
-      ],
       "Go to ${ planOrAppName }": [
         "Accesare ${ planOrAppName }"
       ],
@@ -3546,6 +3543,9 @@
       ],
       "Failed to load signature details, please try again later": [
         "Nu s-au putut încărca detaliile semnăturii, reîncercați mai târziu."
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Eșuare la încărcarea datelor abonamentului. Reîncercați mai târziu."
       ],
       "Failed to load the STL preview": [
         "Nu s-a putut încărca examinarea STL."
@@ -9485,35 +9485,11 @@
       "\"${ fileName }\" shared": [
         "„${ fileName }” s-a partajat"
       ],
-      "\"${ name }\" created successfully": [
-        "„${ name }” a fost creat cu succes."
-      ],
-      "\"${ name }\" deleted": [
-        "S-a șters „${ name }”"
-      ],
       "\"${ name }\" deleted permanently": [
         "„${ name }” s-a șters permanent."
       ],
-      "\"${ name }\" deleted permanently from trash": [
-        "„${ name }” a fost eliminat permanent din «Gunoi»."
-      ],
-      "\"${ name }\" failed to be created": [
-        "„${ name }” nu a putut fi creat."
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "Nu s-a putut șterge „${ name }”"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "„${ name }” nu a putut fi eliminat definitiv din «Gunoi»."
-      ],
-      "\"${ name }\" failed to be moved": [
-        "„${ name }” nu a putut fi mutat."
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "„${ name }” nu a putut fi mutat în «Gunoi»."
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "„${ name }” nu a putut fi restaurat din «Gunoi»."
       ],
       "\"${ name }\" failed to be saved": [
         "„${ name }” nu s-a putut salva."
@@ -9521,17 +9497,8 @@
       "\"${ name }\" moved to trash": [
         "„${ name }” a fost mutat în «Gunoi»."
       ],
-      "\"${ name }\" restored from trash": [
-        "„${ name }” a fost restaurat din «Gunoi»."
-      ],
       "\"${ name }\" saved successfully": [
         "„${ name }” a fost salvat."
-      ],
-      "\"${ name }\" successfully copied": [
-        "„${ name }” s-a copiat."
-      ],
-      "\"${ name }\" successfully moved": [
-        "„${ name }” a fost mutat cu succes."
       ],
       "\"${ newName }\" failed to be renamed": [
         "„${ newName }” nu a reușit să fie redenumit."
@@ -9629,11 +9596,6 @@
         "${ numberOfItems } articole au fost restaurate din «Gunoi».",
         "${ numberOfItems } de articole au fost restaurate din «Gunoi»."
       ],
-      "${ numberOfItems } item successfully copied": [
-        "Articole copiate: ${ numberOfItems }",
-        "Articole copiate: ${ numberOfItems }",
-        "Articole copiate: ${ numberOfItems }"
-      ],
       "${ numberOfItems } item successfully moved": [
         "Un element a fost mutat cu succes.",
         "${ numberOfItems } articole au fost mutate cu succes.",
@@ -9674,9 +9636,6 @@
       ],
       "Contact group updated": [
         "Grup de contacte actualizat"
-      ],
-      "Copy of \"${ name }\" moved to trash": [
-        "Copia lui „${ name }” a fost mutată în gunoi."
       ],
       "Device failed to be removed": [
         "Dispozitivul nu a reușit să fie îndepărtat"
@@ -10387,6 +10346,9 @@
       ],
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "În acest timp, nu vă veți putea modifica sau anula abonamentul. Vă rugăm să așteptați până când plata este finalizată înainte de a încerca orice modificare. Vă mulțumim pentru răbdare."
+      ],
+      "Edit billing address": [
+        "Editați adresa de facturare"
       ],
       "Got it": [
         "Am înțeles"
@@ -12240,9 +12202,6 @@
       ],
       "Billing details updated": [
         "Detaliile de facturare s-au actualizat"
-      ],
-      "Billing information updated": [
-        "Informațiile de facturare s-au actualizat."
       ],
       "Canceling import": [
         "Se anulează importarea"

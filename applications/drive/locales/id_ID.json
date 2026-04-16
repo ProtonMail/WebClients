@@ -519,9 +519,6 @@
       "Go back": [
         "Kembali"
       ],
-      "Go back to album “${ albumName }“": [
-        "Kembali ke album \"${ albumName }\""
-      ],
       "Go to ${ planOrAppName }": [
         "Buka ${ planOrAppName }"
       ],
@@ -8749,35 +8746,11 @@
       ]
     },
     "Notification": {
-      "\"${ name }\" created successfully": [
-        "\"${ name }\" berhasil dibuat"
-      ],
-      "\"${ name }\" deleted": [
-        "\"${ name }\" dihapus"
-      ],
       "\"${ name }\" deleted permanently": [
         "\"${ name }\" dihapus secara permanen"
       ],
-      "\"${ name }\" deleted permanently from trash": [
-        "\"${ name }\" dihapus secara permanen dari sampah"
-      ],
-      "\"${ name }\" failed to be created": [
-        "\"${ name }\" gagal dibuat"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "\"${ name }\" gagal dihapus"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "\"${ name }\" gagal untuk dihapus secara permanen dari sampah"
-      ],
-      "\"${ name }\" failed to be moved": [
-        "\"${ name }\" gagal dipindahkan"
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "\"${ name }\" gagal dipindahkan ke sampah"
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "\"${ name }\" gagal untuk dipulihkan dari sampah"
       ],
       "\"${ name }\" failed to be saved": [
         "\"${ name }\" gagal disimpan"
@@ -8785,17 +8758,8 @@
       "\"${ name }\" moved to trash": [
         "\"${ name }\" dipindahkan ke sampah"
       ],
-      "\"${ name }\" restored from trash": [
-        "\"${ name }\" dipulihkan dari sampah"
-      ],
       "\"${ name }\" saved successfully": [
         "\"${ name }\" berhasil disimpan"
-      ],
-      "\"${ name }\" successfully copied": [
-        "\"${ name }\" berhasil disalin"
-      ],
-      "\"${ name }\" successfully moved": [
-        "\"${ name }\" berhasil dipindahkan"
       ],
       "\"${ newName }\" failed to be renamed": [
         "Nama \"${ newName }\" gagal diubah"
@@ -8854,9 +8818,6 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } item dipulihkan dari sampah"
       ],
-      "${ numberOfItems } item successfully copied": [
-        "${ numberOfItems } item berhasil disalin"
-      ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } item berhasil dipindahkan"
       ],
@@ -8895,9 +8856,6 @@
       ],
       "Contact group updated": [
         "Grup kontak telah diperbarui"
-      ],
-      "Copy of \"${ name }\" moved to trash": [
-        "Salinan \"${ name }\" dipindahkan ke sampah"
       ],
       "Device failed to be removed": [
         "Perangkat gagal dihapus"

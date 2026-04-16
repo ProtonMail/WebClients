@@ -3685,6 +3685,9 @@
       "Failed to load OAuth modal.": [
         "Kunne ikke laste inn oauth-modal."
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Kunne ikke laste inn abonnementsdata. Prøv på nytt senere."
+      ],
       "Failed to open to contact": [
         "Kontakten kunne ikke åpnes."
       ],
@@ -5538,6 +5541,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Sikre fullstendig privat og kryptert kommunikasjon. Gjør krav på din gratis ${ BRAND_NAME }-e-postadresse nå."
       ],
+      "Enter code": [
+        "Skriv inn koden"
+      ],
       "Enter the code from your authenticator app": [
         "Skriv inn koden fra autentiseringsappen"
       ],
@@ -5643,6 +5649,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Hvis du ikke finner e-posten i innboksen, sjekk søppelpostmappen din."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Hvis du mistet tilgangen til autentiseringsappen din, kan du bruke én av de 16 sikkerhetskopi-gjenopprettingskodene du fikk da du konfigurerte tofaktorautentisering. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Hvis du fortsetter med nedgraderingen, vil du miste tilgang til de betalte funksjonene til ${ MAIL_APP_NAME } og ${ VPN_APP_NAME }."
@@ -7173,6 +7182,9 @@
       ],
       "Secondary time zone": [
         "Sekundærtidssone"
+      ],
+      "Securely share parts of your schedule through a booking page you can send to anyone.": [
+        "Del deler av timeplanen din sikkert via en bestillingsside du kan sende til hvem som helst."
       ],
       "Show others when I'm busy": [
         "Vis andre når jeg er opptatt"
@@ -9463,6 +9475,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "I løpet av denne tiden vil du ikke kunne endre eller kansellere abonnementet ditt. Vent til betalingen er fullført før du prøver å gjøre noen endringer. Takk for tålmodigheten."
       ],
+      "Edit billing address": [
+        "Rediger faktureringsadresse"
+      ],
       "Got it": [
         "Skjønner"
       ],
@@ -11340,9 +11355,6 @@
       ],
       "Billing details updated": [
         "Faktureringsinformasjon oppdatert"
-      ],
-      "Billing information updated": [
-        "Faktureringsinformasjon er oppdatert"
       ],
       "Booking page created": [
         "Bestillingsside opprettet"

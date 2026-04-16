@@ -2300,6 +2300,9 @@
       "Error connecting to the Bitcoin API.": [
         "Fel vid anslutning till Bitcoin API."
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Misslyckades med att ladda prenumerationsdata. Försök igen senare."
+      ],
       "Incorrect username": [
         "Felaktigt användarnamn"
       ],
@@ -4641,6 +4644,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Under denna tid kommer du inte att kunna ändra eller säga upp din prenumeration. Vänta tills din betalning är slutförd innan du försöker göra några ändringar. Tack för ditt tålamod."
       ],
+      "Edit billing address": [
+        "Redigera faktureringsadress"
+      ],
       "Got it": [
         "Jag förstår"
       ],
@@ -5367,9 +5373,6 @@
     "Success": {
       "Billing details updated": [
         "Faktureringsuppgifterna har uppdaterats"
-      ],
-      "Billing information updated": [
-        "Faktureringsinformation uppdaterad"
       ],
       "Code sent to ${ methodTo }": [
         "Kod skickad till ${ methodTo }"

@@ -196,9 +196,6 @@
       "Carbon Copy": [
         "Kopya"
       ],
-      "Change password": [
-        "Parolayı değiştir"
-      ],
       "Change sorting": [
         "Sıralamayı değiştir"
       ],
@@ -1502,7 +1499,8 @@
         "Güven"
       ],
       "Trust key": [
-        "Anahtara güven"
+        "Güvenilen anahtar",
+        "Güvenilen anahtarlar"
       ],
       "Trust public key": [
         "Herkese açık anahtara güven"
@@ -4763,6 +4761,9 @@
       "Failed to encrypt attachment. Please try again.": [
         "Ek dosya şifrelenemedi. Lütfen yeniden deneyin."
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Abonelik verileri yüklenemedi. Lütfen daha sonra tekrar deneyin."
+      ],
       "Failed to load the STL preview": [
         "STL ön izlemesi yüklenemedi"
       ],
@@ -7555,8 +7556,7 @@
         "Hazırlanıyor…"
       ],
       "Insert image": [
-        "Görsel ekle",
-        "Görseller ekle"
+        "Görsel ekle"
       ],
       "Insert link": [
         "Bağlantı ekle"
@@ -12366,6 +12366,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Bu süre boyunca aboneliğinizi değiştiremez veya iptal edemezsiniz. Değişiklik yapmadan önce lütfen ödeme işleminizin tamamlanmasını bekleyin. Anlayışınız için teşekkür ederiz."
       ],
+      "Edit billing address": [
+        "Fatura adresini düzenle"
+      ],
       "Got it": [
         "Anladım"
       ],
@@ -14555,9 +14558,6 @@
       "Billing details updated": [
         "Fatura bilgileri güncellendi"
       ],
-      "Billing information updated": [
-        "Fatura bilgileri güncellendi"
-      ],
       "Canceling import": [
         "İçe aktarma iptal ediliyor"
       ],
@@ -15011,9 +15011,6 @@
       ],
       "Account security": [
         "Hesap güvenliği"
-      ],
-      "Account temporarily locked": [
-        "Hesap geçici olarak kilitlendi"
       ],
       "Action all conversations": [
         "Tüm yazışmalara uygula"
