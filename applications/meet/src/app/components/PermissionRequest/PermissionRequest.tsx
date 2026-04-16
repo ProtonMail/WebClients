@@ -5,28 +5,32 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { requestPermission, selectActiveCameraId } from '@proton/meet/store/slices/deviceManagementSlice';
 import {
     PermissionPromptStatus,
     selectPermissionPromptStatus,
     setPermissionPromptStatus,
 } from '@proton/meet/store/slices/uiStateSlice';
+import { isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
-import { useRequestPermission } from '../../hooks/useRequestPermission';
 
 import './PermissionRequest.scss';
 
 export const PermissionRequest = () => {
     const dispatch = useMeetDispatch();
     const permissionPromptStatus = useMeetSelector(selectPermissionPromptStatus);
+    const activeCameraId = useMeetSelector(selectActiveCameraId);
 
-    const { toggleVideo, toggleAudio, handleDevicePermissionChange } = useMediaManagementContext();
-
-    const requestDevicePermission = useRequestPermission();
+    const { toggleVideo, toggleAudio } = useMediaManagementContext();
 
     const askForPermission = async (deviceType: 'audio' | 'video') => {
         try {
-            const permission = await requestDevicePermission(deviceType === 'video' ? 'camera' : 'microphone');
+            const permissionType = deviceType === 'video' ? 'camera' : 'microphone';
+            const cameraDeviceId = isSafari() ? activeCameraId : undefined;
+            const permission = await dispatch(
+                requestPermission(permissionType, permissionType === 'camera' ? cameraDeviceId : undefined)
+            );
 
             if (permission !== 'granted') {
                 return;
@@ -40,28 +44,26 @@ export const PermissionRequest = () => {
 
             if (firstDevice) {
                 if (deviceType === 'audio') {
-                    void toggleAudio({ audioDeviceId: firstDevice.deviceId });
+                    await toggleAudio({ audioDeviceId: firstDevice.deviceId });
                 } else {
-                    void toggleVideo({ videoDeviceId: firstDevice.deviceId });
+                    await toggleVideo({ videoDeviceId: firstDevice.deviceId });
                 }
+                // In Firefox, enumerateDevices() only returns labels when there is an
+                // active stream. The synthetic devicechange fired by the permission
+                // onchange handler fires before the stream is ready, so the device
+                // list ends up empty. Re-dispatching after the toggle ensures that
+                // LiveKit's observer re-enumerates while the stream is active.
+                navigator.mediaDevices?.dispatchEvent?.(new Event('devicechange'));
             }
-
-            handleDevicePermissionChange({
-                [deviceType === 'video' ? 'camera' : 'microphone']: 'granted',
-            });
 
             return true;
         } catch (err: any) {
-            handleDevicePermissionChange({
-                [deviceType === 'video' ? 'camera' : 'microphone']: 'denied',
-            });
-
             if (err.name === 'NotAllowedError' || err.name === 'PermissionDeniedError') {
                 return false;
             }
             throw err;
         } finally {
-            setPermissionPromptStatus(PermissionPromptStatus.CLOSED);
+            dispatch(setPermissionPromptStatus(PermissionPromptStatus.CLOSED));
         }
     };
 

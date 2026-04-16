@@ -1,9 +1,20 @@
-import { c } from 'ttag';
-
 import { DEFAULT_DEVICE_ID } from '../constants';
-import type { DeviceState } from '../types';
 
-export const filterDevices = (devices: MediaDeviceInfo[]) => {
+export interface SerializableDeviceInfo {
+    deviceId: string;
+    groupId: string;
+    kind: MediaDeviceKind;
+    label: string;
+}
+
+export const toSerializableDevice = (device: MediaDeviceInfo): SerializableDeviceInfo => ({
+    deviceId: device.deviceId,
+    groupId: device.groupId,
+    kind: device.kind,
+    label: device.label,
+});
+
+export const filterDevices = <T extends SerializableDeviceInfo>(devices: T[]): T[] => {
     return devices
         .filter(
             (d) =>
@@ -17,14 +28,15 @@ export const filterDevices = (devices: MediaDeviceInfo[]) => {
         });
 };
 
-export const getDefaultLabel = (systemDefault: MediaDeviceInfo | null) => {
-    return systemDefault ? c('Info').t`Default - ${systemDefault.label}` : c('Info').t`Default`;
-};
+export interface CheckmarkDeviceState {
+    useSystemDefault: boolean;
+    preferredAvailable: boolean;
+}
 
 export const shouldShowDeviceCheckmark = (
     deviceId: string,
     activeDeviceId: string,
-    deviceState: DeviceState
+    deviceState: CheckmarkDeviceState
 ): boolean => {
     const isCurrentlyActiveDevice = deviceId === activeDeviceId;
     const isUsingSpecificDevice = !deviceState.useSystemDefault;
@@ -33,7 +45,7 @@ export const shouldShowDeviceCheckmark = (
     return isCurrentlyActiveDevice && isUsingSpecificDevice && isPreferredDeviceAvailable;
 };
 
-export const shouldShowSystemDefaultCheckmark = (deviceState: DeviceState): boolean => {
+export const shouldShowSystemDefaultCheckmark = (deviceState: CheckmarkDeviceState): boolean => {
     const userSelectedSystemDefault = deviceState.useSystemDefault;
     const preferredDeviceNoLongerAvailable = !deviceState.preferredAvailable;
 
@@ -44,11 +56,20 @@ export const isDefaultDevice = (deviceId: string | null): boolean => {
     return deviceId === DEFAULT_DEVICE_ID;
 };
 
-export const resolveDevice = (
+export const getDefaultDevice = <T extends SerializableDeviceInfo>(devices: T[]): T | null => {
+    const defaultDevice = devices.find((d) => isDefaultDevice(d.deviceId));
+    if (defaultDevice) {
+        const duplicated = devices.find((d) => d.groupId === defaultDevice.groupId && !isDefaultDevice(d.deviceId));
+        return duplicated ?? filterDevices(devices)[0] ?? devices[0] ?? null;
+    }
+    return filterDevices(devices)[0] ?? devices[0] ?? null;
+};
+
+export const resolveDevice = <T extends SerializableDeviceInfo>(
     deviceId: string,
-    devices: MediaDeviceInfo[],
-    systemDefault: MediaDeviceInfo
-): MediaDeviceInfo => {
+    devices: T[],
+    systemDefault: T
+): T => {
     const userSelectedSystemDefault = isDefaultDevice(deviceId);
 
     if (userSelectedSystemDefault) {

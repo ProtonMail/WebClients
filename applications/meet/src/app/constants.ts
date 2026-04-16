@@ -2,8 +2,6 @@ export const JOIN_TITLE_TIMEOUT = 2000;
 
 export const NOTIFICATION_PARTICIPANT_LIMIT = 10;
 
-export const DEFAULT_DEVICE_ID = 'default';
-
 export const MEETING_LOCKED_ERROR_CODE = 2502;
 
 export const PIP_PREVIEW_ITEM_WIDTH = 480;

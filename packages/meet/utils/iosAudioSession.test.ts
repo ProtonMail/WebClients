@@ -5,7 +5,7 @@ import {
     isAudioSessionAvailable,
     setAudioSessionType,
     withIOSAudioSessionWorkaround,
-} from './ios-audio-session';
+} from './iosAudioSession';
 
 describe('ios-audio-session', () => {
     describe('isAudioSessionAvailable', () => {

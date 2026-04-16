@@ -7,6 +7,11 @@ import { useNotifications } from '@proton/components';
 import { type ReportMeetError, useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectChatMessages } from '@proton/meet/store/slices/chatAndReactionsSlice';
+import {
+    selectMicrophonePermission,
+    selectSelectedCameraId,
+    selectSelectedMicrophoneId,
+} from '@proton/meet/store/slices/deviceManagementSlice';
 import { selectMeetSettings } from '@proton/meet/store/slices/settings';
 import { isChromiumBased, isFirefox, isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 
@@ -58,8 +63,11 @@ export function usePictureInPicture({
 
     const sortedParticipants = useSortedParticipants();
 
-    const { toggleVideo, toggleAudio, isVideoEnabled, isAudioEnabled, selectedMicrophoneId, selectedCameraId } =
-        useMediaManagementContext();
+    const selectedMicrophoneId = useMeetSelector(selectSelectedMicrophoneId);
+    const selectedCameraId = useMeetSelector(selectSelectedCameraId);
+    const hasMicrophonePermission = useMeetSelector(selectMicrophonePermission) === 'granted';
+
+    const { toggleVideo, toggleAudio, isVideoEnabled, isAudioEnabled } = useMediaManagementContext();
 
     const { pipEnabled } = useMeetSelector(selectMeetSettings);
 
@@ -302,7 +310,7 @@ export function usePictureInPicture({
     useEffect(() => {
         const currentMediaStatus = isVideoEnabled || isAudioEnabled;
 
-        if (!isChromiumBased() || isMobile() || currentMediaStatus || !pipEnabled) {
+        if (!isChromiumBased() || isMobile() || currentMediaStatus || !pipEnabled || !hasMicrophonePermission) {
             return;
         }
 
@@ -340,7 +348,7 @@ export function usePictureInPicture({
                 silentStream.getTracks().forEach((track) => track.stop());
             }
         };
-    }, [room, isVideoEnabled, isAudioEnabled, pipEnabled, reportMeetError]);
+    }, [room, isVideoEnabled, isAudioEnabled, pipEnabled, reportMeetError, hasMicrophonePermission]);
 
     return {
         startPiP,

@@ -5,10 +5,17 @@ import type { LocalParticipant, LocalTrackPublication, LocalVideoTrack } from 'l
 import { ConnectionState, RoomEvent, Track } from 'livekit-client';
 import debounce from 'lodash/debounce';
 
+import { DEFAULT_DEVICE_ID } from '@proton/meet/constants';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
+import { useMeetSelector } from '@proton/meet/store/hooks';
+import {
+    selectActiveCameraId,
+    selectCameraState,
+    selectCameras,
+    selectInitialCameraState,
+} from '@proton/meet/store/slices/deviceManagementSlice';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 
-import { DEFAULT_DEVICE_ID } from '../../../constants';
 import { useStableCallback } from '../../../hooks/useStableCallback';
 import type { BackgroundBlurProcessor } from '../../../processors/background-processor/MulticlassBackgroundProcessor';
 import {
@@ -25,14 +32,12 @@ const getVideoTrackPublications = (localParticipant: LocalParticipant) => {
     );
 };
 
-export const useVideoToggle = (
-    activeCameraDeviceId: string,
-    switchActiveDevice: SwitchActiveDevice,
-    initialCameraState: boolean,
-    systemDefaultCamera: MediaDeviceInfo,
-    cameras: MediaDeviceInfo[]
-) => {
+export const useVideoToggle = (switchActiveDevice: SwitchActiveDevice) => {
     const { reportMeetError: reportError } = useMeetErrorReporting();
+    const activeCameraDeviceId = useMeetSelector(selectActiveCameraId);
+    const initialCameraState = useMeetSelector(selectInitialCameraState);
+    const cameras = useMeetSelector(selectCameras);
+    const cameraState = useMeetSelector(selectCameraState);
     const room = useRoomContext();
     const { isCameraEnabled, localParticipant } = useLocalParticipant();
 
@@ -91,7 +96,7 @@ export const useVideoToggle = (
                 recoveringFromError = false,
             } = params;
 
-            const deviceId = videoDeviceId === DEFAULT_DEVICE_ID ? systemDefaultCamera.deviceId : videoDeviceId;
+            const deviceId = videoDeviceId === DEFAULT_DEVICE_ID ? cameraState.systemDefault?.deviceId : videoDeviceId;
 
             if (toggleInProgress.current || !deviceId) {
                 return;
