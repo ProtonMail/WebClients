@@ -1,3 +1,4 @@
+export type { SerializableDeviceInfo } from '@proton/meet/utils/deviceUtils';
 export { MeetingSideBars, PopUpControls, PermissionPromptStatus } from '@proton/meet/store/slices/uiStateSlice';
 
 export enum LoadingState {
@@ -28,13 +29,7 @@ export type SwitchActiveDevice = (params: {
     preserveDefaultDevice?: boolean;
 }) => Promise<void>;
 
-export interface DeviceState {
-    systemDefault: MediaDeviceInfo | null;
-    systemDefaultLabel: string;
-    useSystemDefault: boolean;
-    preferredAvailable: boolean;
-    preferredDevice: MediaDeviceInfo | null;
-}
+export type { SliceDeviceState as DeviceState } from '@proton/meet/store/slices/deviceManagementSlice';
 
 export enum RecordingStatus {
     Started = 'started',
