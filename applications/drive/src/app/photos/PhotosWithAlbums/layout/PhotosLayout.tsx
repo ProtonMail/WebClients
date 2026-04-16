@@ -6,6 +6,7 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { Loader, TopBanner, useConfirmActionModal, useModalStateObject, useNotifications } from '@proton/components';
 import { generateNodeUid, getDriveForPhotos, splitNodeUid } from '@proton/drive';
+import { useSharingModal } from '@proton/drive/modules/sharingModal';
 import { uploadManager } from '@proton/drive/modules/upload';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
@@ -16,7 +17,6 @@ import ToolbarRow from '../../../components/sections/ToolbarRow/ToolbarRow';
 import UploadDragDrop from '../../../components/uploads/UploadDragDrop/UploadDragDrop';
 import useNavigate from '../../../hooks/drive/useNavigate';
 import { useDetailsModal } from '../../../modals/DetailsModal';
-import { useSharingModal } from '../../../modals/SharingModal/SharingModal';
 import { usePhotosPreviewModal } from '../../../modals/preview';
 import { type OnFileUploadSuccessCallbackData, type PhotoLink, useSharedWithMeActions } from '../../../store';
 import { useLinkActions, useLinksActions } from '../../../store/_links';

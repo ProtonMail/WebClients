@@ -1,11 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import { c } from 'ttag';
-
-import { useUser } from '@proton/account/user/hooks';
-import type { ModalStateProps } from '@proton/components';
-import { useNotifications } from '@proton/components';
-import type { DegradedNode, ProtonDriveClient } from '@proton/drive';
+import type { DegradedNode, ProtonDriveClient } from '@protontech/drive-sdk';
 import {
     MemberRole,
     type NodeEntity,
@@ -13,10 +8,13 @@ import {
     NonProtonInvitationState,
     type ShareNodeSettings,
     type ShareResult,
-    splitInvitationUid,
-    splitNodeUid,
-} from '@proton/drive';
-import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
+} from '@protontech/drive-sdk';
+import { splitInvitationUid, splitNodeUid } from '@protontech/drive-sdk/dist/internal/uids';
+import { c } from 'ttag';
+
+import { useUser } from '@proton/account/user/hooks';
+import type { ModalStateProps } from '@proton/components';
+import { useNotifications } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
@@ -24,21 +22,25 @@ import { APPS } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 
-import { useFlagsDriveDocsPublicSharing } from '../../flags/useFlagsDriveDocsPublicSharing';
-import { useFlagsDriveSharingAdminPermissions } from '../../flags/useFlagsDriveSharingAdminPermissions';
-import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
-import { getNodeAncestry } from '../../utils/sdk/getNodeAncestry';
-import { getNodeEffectiveRole } from '../../utils/sdk/getNodeEffectiveRole';
-import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
-import { getNodeName } from '../../utils/sdk/getNodeName';
-import type { DriveWithSharing } from '../preview/interface';
+import { BusDriverEventName, getBusDriver } from '../../../internal/BusDriver';
+import { useFlagsDriveDocsPublicSharing } from '../../../internal/flags/useFlagsDriveDocsPublicSharing';
+import { useFlagsDriveSharingAdminPermissions } from '../../../internal/flags/useFlagsDriveSharingAdminPermissions';
+import { handleDriveError } from '../../../internal/handleDriveError';
+import { getNodeAncestry } from '../../../internal/sdkUtils/getNodeAncestry';
+import { getNodeEffectiveRole } from '../../../internal/sdkUtils/getNodeEffectiveRole';
+import { getNodeName } from '../../../internal/sdkUtils/getNodeName';
 import { getDisplayName } from './DirectSharing/helpers/userNames';
 import type { SharingModalViewProps } from './SharingModalView';
 import { type DirectMember, MemberType } from './interfaces';
 
+type Drive = Pick<
+    ProtonDriveClient,
+    'getNode' | 'getSharingInfo' | 'unshareNode' | 'resendInvitation' | 'shareNode' | 'convertNonProtonInvitation'
+>;
+
 export type SharingModalInnerProps = {
     nodeUid: string;
-    drive: DriveWithSharing;
+    drive: Drive;
 };
 
 export type UseSharingModalProps = ModalStateProps & SharingModalInnerProps;
@@ -139,7 +141,7 @@ export const useSharingModalState = ({
                 );
             }
         } catch (e) {
-            handleSdkError(e, { fallbackMessage: c('Error').t`Failed to unshare node`, extra: { nodeUid } });
+            handleDriveError(e, { fallbackMessage: c('Error').t`Failed to unshare node`, extra: { nodeUid } });
         }
     };
 
@@ -151,7 +153,7 @@ export const useSharingModalState = ({
             createNotification({ text: c('Notification').t`The link to your item was deleted` });
             await updateSharingState(updatedShareResult);
         } catch (e) {
-            handleSdkError(e, {
+            handleDriveError(e, {
                 fallbackMessage: c('Error').t`The link to your item failed to be deleted`,
                 extra: { nodeUid },
             });
@@ -168,7 +170,7 @@ export const useSharingModalState = ({
 
             await updateSharingState(updatedShareResult);
         } catch (e) {
-            handleSdkError(e, {
+            handleDriveError(e, {
                 fallbackMessage: c('Error').t`Failed to create public share node`,
                 extra: { nodeUid },
             });
@@ -208,7 +210,7 @@ export const useSharingModalState = ({
 
             await updateSharingState(updatedShareResult);
         } catch (e) {
-            handleSdkError(e, {
+            handleDriveError(e, {
                 fallbackMessage: c('Error').t`Failed to update public share node`,
                 extra: { nodeUid },
             });
@@ -230,7 +232,7 @@ export const useSharingModalState = ({
 
             await updateSharingState(updatedShareResult);
         } catch (e) {
-            handleSdkError(e, {
+            handleDriveError(e, {
                 fallbackMessage: c('Error').t`Failed to update direct share node`,
                 extra: { nodeUid },
             });
@@ -243,7 +245,7 @@ export const useSharingModalState = ({
             await updateSharingState(updatedShareResult);
             createNotification({ text: c('Notification').t`You stopped sharing this item` });
         } catch (e) {
-            handleSdkError(e, {
+            handleDriveError(e, {
                 fallbackMessage: c('Error').t`Stopping the sharing of this item has failed`,
                 extra: { nodeUid },
             });
@@ -255,7 +257,7 @@ export const useSharingModalState = ({
             await drive.resendInvitation(nodeUid, invitationUid);
             createNotification({ type: 'info', text: c('Notification').t`Invitation's email was sent again` });
         } catch (e) {
-            handleSdkError(e, {
+            handleDriveError(e, {
                 fallbackMessage: c('Error').t`Failed to resend invitation`,
                 extra: { nodeUid, invitationUid },
             });
@@ -280,13 +282,16 @@ export const useSharingModalState = ({
                                 );
                             }
                         } catch (e) {
-                            handleSdkError(e);
+                            handleDriveError(e);
                         }
                     }
                     setSharingInfo({ ...sharingResult, protonInvitations, nonProtonInvitations });
                 }
             } catch (e) {
-                handleSdkError(e, { fallbackMessage: c('Error').t`Failed to fetch sharing info`, extra: { nodeUid } });
+                handleDriveError(e, {
+                    fallbackMessage: c('Error').t`Failed to fetch sharing info`,
+                    extra: { nodeUid },
+                });
             }
         };
         const fetchNodeInfo = async () => {
@@ -309,7 +314,7 @@ export const useSharingModalState = ({
                     setIsResharing(!isMyFile);
                 }
             } catch (e) {
-                handleSdkError(e, { fallbackMessage: c('Error').t`Failed to fetch node`, extra: { nodeUid } });
+                handleDriveError(e, { fallbackMessage: c('Error').t`Failed to fetch node`, extra: { nodeUid } });
             }
         };
         void withLoading(Promise.all([fetchSharingInfo(), fetchNodeInfo()]));
@@ -442,6 +447,6 @@ async function isShareInMyFiles(nodeUid: string, drive: ProtonDriveClient): Prom
         return false;
     }
     // If node has "membership" it means it is a direct share
-    const { node: shareTopmostParent } = getNodeEntity(firstAncestor);
+    const shareTopmostParent = firstAncestor.ok ? firstAncestor.value : firstAncestor.error;
     return !Boolean(shareTopmostParent.membership);
 }

@@ -1,12 +1,12 @@
 import { useConfirmActionModal } from '@proton/components';
 import { NodeType, getDrivePerNodeType } from '@proton/drive';
+import { useSharingModal } from '@proton/drive/modules/sharingModal';
 import type { OpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 
 import { useSharingActions } from '../../../hooks/drive/useSharingActions';
 import { downloadManager } from '../../../managers/download/DownloadManager';
 import { useDetailsModal } from '../../../modals/DetailsModal';
 import { useRenameModal } from '../../../modals/RenameModal';
-import { useSharingModal } from '../../../modals/SharingModal/SharingModal';
 import { useDrivePreviewModal } from '../../../modals/preview';
 import { openDocsOrSheetsDocument } from '../../../utils/docs/openInDocs';
 import { useSharedByMeStore } from '../useSharedByMe.store';

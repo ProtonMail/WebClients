@@ -1,7 +1,8 @@
 import { c } from 'ttag';
 
+import type { useSharingModal } from '@proton/drive/modules/sharingModal';
+
 import type { useFileSharingModal } from '../../../../modals/SelectLinkToShareModal';
-import type { useSharingModal } from '../../../../modals/SharingModal/SharingModal';
 import ContextMenuButton from '../ContextMenuButton';
 
 interface Props {

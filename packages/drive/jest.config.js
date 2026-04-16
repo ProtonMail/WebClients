@@ -24,6 +24,9 @@ module.exports = {
         ],
     },
     testEnvironment: '@proton/jest-env',
-    moduleNameMapper: {},
+    moduleNameMapper: {
+        '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm)$': '@proton/components/__mocks__/fileMock.js',
+        '\\.(css|scss|less)$': '@proton/components/__mocks__/styleMock.js',
+    },
     reporters: ['default'],
 };

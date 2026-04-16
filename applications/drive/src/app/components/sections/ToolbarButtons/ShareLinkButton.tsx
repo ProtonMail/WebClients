@@ -2,9 +2,8 @@ import { c } from 'ttag';
 
 import { ToolbarButton } from '@proton/components';
 import { generateNodeUid, getDrive } from '@proton/drive';
+import { useSharingModal } from '@proton/drive/modules/sharingModal';
 import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
-
-import { useSharingModal } from '../../../modals/SharingModal/SharingModal';
 
 interface Props {
     volumeId: string;
