@@ -1256,6 +1256,9 @@
       ],
       "Reconnect to Gmail": [
         "Torneu a connectar-vos a Gmail"
+      ],
+      "Go back to album “${ ellipsedAlbumName }“": [
+        "Torneu a l'àlbum \"${ ellipsedAlbumName }\""
       ]
     },
     "Action: Docs": {
@@ -9762,6 +9765,53 @@
       "${ errors.length } item failed to be deleted": [
         "No s'ha pogut eliminar ${ errors.length } element",
         "No s'han pogut eliminar ${ errors.length } elements"
+      ],
+      "\"${ ellipsedName }\" copied": [
+        "S'ha copiat \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "S'ha creat \"${ ellipsedName }\" correctament"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "S'ha eliminat \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "S'ha eliminat permanentment \"${ ellipsedName }\" de la paperera"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "No s'ha pogut crear \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "No s'ha pogut eliminar \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "No s'ha pogut eliminar permanentment \"${ ellipsedName }\" de la paperera"
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "No s'ha pogut moure \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "No s'ha pogut restaurar \"${ ellipsedName }\" de la paperera"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "S'ha mogut \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "S'ha restaurat \"${ ellipsedName }\" de la paperera"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "S'ha mogut \"${ ellipsedName }\" correctament"
+      ],
+      "${ numberOfItems } item copied": [
+        "S'ha copiat ${ numberOfItems } element",
+        "S'han copiat ${ numberOfItems } elements"
+      ],
+      "${ numberOfItems } item moved": [
+        "S'ha mogut ${ numberOfItems } element",
+        "S'han mogut ${ numberOfItems } elements"
+      ],
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "La còpia de \"${ ellipsedName }\" s'ha mogut a la paperera"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10424,7 +10474,7 @@
         "La vostra subscripció ja té un descompte aplicat. Canviar a aquesta nova promoció implica que el descompte actual ja no s'aplicarà."
       ],
       "Edit billing address": [
-        "Edita l'adreça de facturació"
+        "Editar l'adreça de facturació"
       ]
     },
     "Payments.Error": {

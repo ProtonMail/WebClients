@@ -9711,6 +9711,41 @@
       "${ errors.length } item failed to be deleted": [
         "${ errors.length } item não foi excluído",
         "${ errors.length } itens não foram excluídos"
+      ],
+      "\"${ ellipsedName }\" copied": [
+        "\"${ ellipsedName }\" copiado"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "\"${ ellipsedName }\" detectado"
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "\"${ ellipsedName }\" excluído permanentemente da lixeira"
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "\"${ ellipsedName }\" falhou ao ser movido"
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "Falha ao restaurar \"${ ellipsedName }\" da lixeira"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" movido"
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "\"${ ellipsedName }\" restaurado da lixeira"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "\"${ ellipsedName }\" movido"
+      ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems } item copiado",
+        "${ numberOfItems } itens copiados"
+      ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } item movido",
+        "${ numberOfItems } itens movidos"
+      ],
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "Cópia de \"${ ellipsedName }\" movido para a lixeira"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10374,6 +10409,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Sua assinatura atualmente tem um desconto existente. Mudar para esta nova promoção significa que o desconto atual não será mais aplicado."
+      ],
+      "Edit billing address": [
+        "Editar o endereço de cobrança"
       ]
     },
     "Payments.Error": {

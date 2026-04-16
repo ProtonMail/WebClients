@@ -1256,6 +1256,9 @@
       ],
       "Reconnect to Gmail": [
         "Επανασύνδεση στο Gmail"
+      ],
+      "Go back to album “${ ellipsedAlbumName }“": [
+        "Επιστροφή στο άλμπουμ “${ ellipsedAlbumName }“"
       ]
     },
     "Action: Docs": {
@@ -9702,6 +9705,53 @@
       "${ errors.length } item failed to be deleted": [
         "${ errors.length } στοιχείο απέτυχε να διαγραφεί",
         "${ errors.length } στοιχεία απέτυχαν να διαγραφούν"
+      ],
+      "\"${ ellipsedName }\" copied": [
+        "Το \"${ ellipsedName }\" αντιγράφηκε"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "Το \"${ ellipsedName }\" δημιουργήθηκε επιτυχώς"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "Το \"${ ellipsedName }\" διαγράφηκε"
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "Το \"${ ellipsedName }\" διαγράφηκε οριστικά από τα Διαγραμμένα"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "Αποτυχία δημιουργίας του \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "Αποτυχία διαγραφής του \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "Αποτυχία οριστικής διαγραφής του \"${ ellipsedName }\" από τα Διαγραμμένα"
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "Αποτυχία μετακίνησης του \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "Αποτυχία επαναφοράς του \"${ ellipsedName }\" από τα Διαγραμμένα"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "Το \"${ ellipsedName }\" μετακινήθηκε"
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "Το \"${ ellipsedName }\" επαναφέρθηκε από τα Διαγραμμένα"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "Επιτυχής μετακίνηση του \"${ ellipsedName }\""
+      ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems } στοιχείο αντιγράφηκε",
+        "${ numberOfItems } στοιχεία αντιγράφηκαν"
+      ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } στοιχείο μετακινήθηκε",
+        "${ numberOfItems } στοιχεία μετακινήθηκαν"
+      ],
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "Αντίγραφο του \"${ ellipsedName }\" μετακινήθηκε στον κάδο απορριμμάτων"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
