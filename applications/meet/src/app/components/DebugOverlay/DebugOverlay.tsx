@@ -13,11 +13,18 @@ import { c } from 'ttag';
 import { Button } from '@proton/atoms/Button/Button';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { useMeetSelector } from '@proton/meet/store/hooks';
+import {
+    selectCameras,
+    selectMicrophones,
+    selectSelectedAudioOutputId,
+    selectSelectedCameraId,
+    selectSelectedMicrophoneId,
+    selectSpeakers,
+} from '@proton/meet/store/slices/deviceManagementSlice';
 import { selectParticipantDecryptedNameMap, selectRoomName } from '@proton/meet/store/slices/meetingInfo';
+import type { SerializableDeviceInfo } from '@proton/meet/utils/deviceUtils';
 import { getBrowser, getOS } from '@proton/shared/lib/helpers/browser';
 import { useFlag } from '@proton/unleash/useFlag';
-
-import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 
 import './DebugOverlay.scss';
 
@@ -163,9 +170,9 @@ interface LocalParticipantDebugInfo extends ParticipantDebugInfo {
     selectedSpeaker: string;
     isCameraActive: boolean;
     isMicrophoneActive: boolean;
-    availableCameras: { deviceId: string; label: string }[];
-    availableMicrophones: { deviceId: string; label: string }[];
-    availableSpeakers: { deviceId: string; label: string }[];
+    availableCameras: Pick<SerializableDeviceInfo, 'deviceId' | 'label'>[];
+    availableMicrophones: Pick<SerializableDeviceInfo, 'deviceId' | 'label'>[];
+    availableSpeakers: Pick<SerializableDeviceInfo, 'deviceId' | 'label'>[];
 }
 
 interface LocalParticipantReportInfo extends ParticipantReportInfo {
@@ -177,9 +184,9 @@ interface LocalParticipantReportInfo extends ParticipantReportInfo {
     selectedSpeakerLabel: string;
     isCameraActive: boolean;
     isMicrophoneActive: boolean;
-    availableCameras: { deviceId: string; label: string }[];
-    availableMicrophones: { deviceId: string; label: string }[];
-    availableSpeakers: { deviceId: string; label: string }[];
+    availableCameras: Pick<SerializableDeviceInfo, 'deviceId' | 'label'>[];
+    availableMicrophones: Pick<SerializableDeviceInfo, 'deviceId' | 'label'>[];
+    availableSpeakers: Pick<SerializableDeviceInfo, 'deviceId' | 'label'>[];
     browser: string;
     os: string;
 }
@@ -333,9 +340,9 @@ const getLocalParticipantDebugInfo = (
     selectedSpeakerId: string,
     isCameraActive: boolean,
     isMicrophoneActive: boolean,
-    cameras: MediaDeviceInfo[],
-    microphones: MediaDeviceInfo[],
-    speakers: MediaDeviceInfo[]
+    cameras: SerializableDeviceInfo[],
+    microphones: SerializableDeviceInfo[],
+    speakers: SerializableDeviceInfo[]
 ): LocalParticipantDebugInfo => {
     const publications: PublicationInfo[] = [];
 
@@ -385,9 +392,9 @@ const getLocalParticipantReportInfo = async (
     selectedSpeakerId: string,
     isCameraActive: boolean,
     isMicrophoneActive: boolean,
-    cameras: MediaDeviceInfo[],
-    microphones: MediaDeviceInfo[],
-    speakers: MediaDeviceInfo[]
+    cameras: SerializableDeviceInfo[],
+    microphones: SerializableDeviceInfo[],
+    speakers: SerializableDeviceInfo[]
 ): Promise<LocalParticipantReportInfo> => {
     const publications: PublicationWithStats[] = [];
 
@@ -455,8 +462,12 @@ export const DebugOverlay = ({ isOpen, onClose }: DebugOverlayProps) => {
     const remoteParticipants = useRemoteParticipants();
     const roomName = useMeetSelector(selectRoomName);
     const participantDecryptedNameMap = useMeetSelector(selectParticipantDecryptedNameMap);
-    const { cameras, microphones, speakers, selectedCameraId, selectedMicrophoneId, selectedAudioOutputDeviceId } =
-        useMediaManagementContext();
+    const cameras = useMeetSelector(selectCameras);
+    const microphones = useMeetSelector(selectMicrophones);
+    const speakers = useMeetSelector(selectSpeakers);
+    const selectedCameraId = useMeetSelector(selectSelectedCameraId);
+    const selectedMicrophoneId = useMeetSelector(selectSelectedMicrophoneId);
+    const selectedAudioOutputDeviceId = useMeetSelector(selectSelectedAudioOutputId);
 
     const [localInfo, setLocalInfo] = useState<LocalParticipantDebugInfo | null>(null);
     const [remoteInfos, setRemoteInfos] = useState<ParticipantDebugInfo[]>([]);

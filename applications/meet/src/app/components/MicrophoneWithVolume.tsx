@@ -1,6 +1,8 @@
 import type { IconProps } from '@proton/components/components/icon/Icon';
 import { IcMeetMicrophone } from '@proton/icons/icons/IcMeetMicrophone';
 import type { IconSize } from '@proton/icons/types';
+import { useMeetSelector } from '@proton/meet/store/hooks';
+import { selectInitialAudioState } from '@proton/meet/store/slices/deviceManagementSlice';
 
 import { useMediaManagementContext } from '../contexts/MediaManagementProvider/MediaManagementContext';
 import { useMicrophoneVolume, useMicrophoneVolumeDirect } from '../hooks/useMicrophoneVolume';
@@ -55,7 +57,7 @@ export const MicrophoneWithVolumeWithMicrophoneState = ({ size }: Pick<IconProps
 };
 
 export const MicrophoneWithVolumeWithMicrophoneStateDirect = ({ size }: Pick<IconProps, 'size'>) => {
-    const { initialAudioState } = useMediaManagementContext();
+    const initialAudioState = useMeetSelector(selectInitialAudioState);
     const volume = useMicrophoneVolumeDirect(initialAudioState, VOLUME_UPDATE_THROTTLE_MS);
 
     return <MicrophoneWithVolume size={size as IconSize} volume={volume} />;

@@ -6,13 +6,13 @@ import { Button } from '@proton/atoms/Button/Button';
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { IcCross } from '@proton/icons/icons/IcCross';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import { selectCameras, selectMicrophones } from '@proton/meet/store/slices/deviceManagementSlice';
 import {
     PermissionPromptStatus,
     selectNoDeviceDetected,
     setNoDeviceDetected,
 } from '@proton/meet/store/slices/uiStateSlice';
 
-import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 
 export const NoDeviceDetectedInfo = () => {
@@ -21,7 +21,8 @@ export const NoDeviceDetectedInfo = () => {
 
     const noDeviceDetected = useMeetSelector(selectNoDeviceDetected);
 
-    const { microphones, cameras } = useMediaManagementContext();
+    const microphones = useMeetSelector(selectMicrophones);
+    const cameras = useMeetSelector(selectCameras);
 
     const isLargerThanMd = useIsLargerThanMd();
 
