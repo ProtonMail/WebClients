@@ -1,10 +1,16 @@
 import { type RefObject, useMemo } from 'react';
 
 import type { PopperPosition } from '@proton/components/components/popper/interface';
+import { useMeetSelector } from '@proton/meet/store/hooks';
+import {
+    selectCameraState,
+    selectCameras,
+    selectSelectedCameraId,
+} from '@proton/meet/store/slices/deviceManagementSlice';
+import { filterDevices } from '@proton/meet/utils/deviceUtils';
 
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useDeviceLoading } from '../../hooks/useDeviceLoading';
-import { filterDevices } from '../../utils/device-utils';
 import { VideoSettingsDropdown } from './VideoSettingsDropdown';
 
 interface VideoSettingsProps {
@@ -14,13 +20,10 @@ interface VideoSettingsProps {
 }
 
 export function VideoSettings({ anchorRef, onClose, anchorPosition }: VideoSettingsProps) {
-    const {
-        selectedCameraId: videoDeviceId,
-        toggleVideo,
-        cameras,
-        isVideoEnabled,
-        cameraState,
-    } = useMediaManagementContext();
+    const videoDeviceId = useMeetSelector(selectSelectedCameraId);
+    const cameras = useMeetSelector(selectCameras);
+    const cameraState = useMeetSelector(selectCameraState);
+    const { toggleVideo, isVideoEnabled } = useMediaManagementContext();
 
     const { isLoading, withLoading } = useDeviceLoading();
 

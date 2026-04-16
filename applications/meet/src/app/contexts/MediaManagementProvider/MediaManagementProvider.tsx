@@ -1,70 +1,75 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 
-import { useMediaDeviceSelect, useRoomContext } from '@livekit/components-react';
+import { useRoomContext } from '@livekit/components-react';
 import type { LocalTrack } from 'livekit-client';
 import { ConnectionState, RoomEvent, Track } from 'livekit-client';
 import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useMeetErrorReporting } from '@proton/meet';
+import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import {
+    selectActiveAudioOutputId,
+    selectActiveCameraId,
+    selectActiveMicrophoneId,
+    selectCameraPermission,
+    selectCameraState,
+    selectInitialAudioState,
+    selectInitialCameraState,
+    selectMicrophonePermission,
+    selectMicrophoneState,
+    selectPreferredCameraId,
+    selectPreferredMicrophoneId,
+    selectPreferredSpeakerId,
+    selectSelectedAudioOutputId,
+    selectSelectedCameraId,
+    selectSelectedMicrophoneId,
+    selectSpeakerState,
+    setInitialAudioState,
+    setInitialCameraState,
+    setPreferredDevice,
+} from '@proton/meet/store/slices/deviceManagementSlice';
+import { setAudioSessionType } from '@proton/meet/utils/iosAudioSession';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import { wait } from '@proton/shared/lib/helpers/promise';
 
+import { useDeviceData } from '../../hooks/bridges/useDeviceData';
 import { useStableCallback } from '../../hooks/useStableCallback';
 import { preloadBackgroundProcessorAssets } from '../../processors/background-processor/createBackgroundProcessor';
-import type { DeviceState, SwitchActiveDevice } from '../../types';
+import type { SwitchActiveDevice } from '../../types';
 import { supportsSetSinkId } from '../../utils/browser';
-import { setAudioSessionType } from '../../utils/ios-audio-session';
 import { MediaManagementContext } from './MediaManagementContext';
 import { useAudioToggle } from './mediaToggle/useAudioToggle';
 import { useVideoToggle } from './mediaToggle/useVideoToggle';
 import { useCameraPreview } from './useCameraPreview';
 import { useDevicePermissionChangeListener } from './useDevicePermissionChangeListener';
-import { useDevices } from './useDevices';
 import { useDynamicDeviceHandling } from './useDynamicDeviceHandling';
 import { useMicrophoneVolumeAnalysis } from './useMicrophoneVolumeAnalysis';
-
-const getSelectedDeviceId = (deviceState: DeviceState, activeDeviceId: string) => {
-    return deviceState.preferredAvailable && deviceState.preferredDevice?.deviceId
-        ? deviceState.preferredDevice.deviceId
-        : activeDeviceId;
-};
 
 export const MediaManagementProvider = ({ children }: { children: React.ReactNode }) => {
     const room = useRoomContext();
     const { createNotification } = useNotifications();
     const { reportMeetError } = useMeetErrorReporting();
+    const dispatch = useMeetDispatch();
 
-    const [initialCameraState, setInitialCameraState] = useState<boolean>(false);
-    const [initialAudioState, setInitialAudioState] = useState<boolean>(false);
+    const initialCameraState = useMeetSelector(selectInitialCameraState);
+    const initialAudioState = useMeetSelector(selectInitialAudioState);
 
-    const { activeDeviceId: activeMicrophoneDeviceId } = useMediaDeviceSelect({
-        kind: 'audioinput',
-    });
-    const { activeDeviceId: activeAudioOutputDeviceId } = useMediaDeviceSelect({
-        kind: 'audiooutput',
-    });
-    const { activeDeviceId: activeCameraDeviceId } = useMediaDeviceSelect({
-        kind: 'videoinput',
-    });
+    const activeMicrophoneDeviceId = useMeetSelector(selectActiveMicrophoneId);
+    const activeAudioOutputDeviceId = useMeetSelector(selectActiveAudioOutputId);
+    const activeCameraDeviceId = useMeetSelector(selectActiveCameraId);
 
-    const {
-        microphones,
-        cameras,
-        speakers,
-        cameraState,
-        microphoneState,
-        speakerState,
-        setPreferredDevice,
-        getDefaultDevice,
-    } = useDevices();
-    const [devicePermissions, setDevicePermissions] = useState<{
-        camera?: PermissionState;
-        microphone?: PermissionState;
-    }>({
-        camera: 'prompt',
-        microphone: 'prompt',
-    });
+    const selectedCameraId = useMeetSelector(selectSelectedCameraId);
+    const selectedMicrophoneId = useMeetSelector(selectSelectedMicrophoneId);
+    const selectedAudioOutputDeviceId = useMeetSelector(selectSelectedAudioOutputId);
+
+    const cameraState = useMeetSelector(selectCameraState);
+    const microphoneState = useMeetSelector(selectMicrophoneState);
+    const speakerState = useMeetSelector(selectSpeakerState);
+
+    const preferredCameraId = useMeetSelector(selectPreferredCameraId);
+    const preferredMicrophoneId = useMeetSelector(selectPreferredMicrophoneId);
+    const preferredSpeakerId = useMeetSelector(selectPreferredSpeakerId);
 
     const { getMicrophoneVolumeAnalysis, initializeMicrophoneVolumeAnalysis, cleanupMicrophoneVolumeAnalysis } =
         useMicrophoneVolumeAnalysis();
@@ -99,9 +104,9 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
             }
 
             const toSave = isSystemDefaultDevice ? null : deviceId;
-            setPreferredDevice(toSave, deviceType);
+            dispatch(setPreferredDevice({ kind: deviceType, deviceId: toSave }));
         },
-        [activeAudioOutputDeviceId, activeCameraDeviceId, activeMicrophoneDeviceId, room, setPreferredDevice]
+        [activeAudioOutputDeviceId, activeCameraDeviceId, activeMicrophoneDeviceId, room, dispatch]
     );
 
     const {
@@ -112,21 +117,9 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
         isVideoEnabled,
         facingMode,
         isBackgroundBlurSupported,
-    } = useVideoToggle(
-        activeCameraDeviceId,
-        switchActiveDevice,
-        initialCameraState,
-        cameraState.systemDefault!,
-        cameras
-    );
+    } = useVideoToggle(switchActiveDevice);
 
-    const { toggleAudio, noiseFilter, toggleNoiseFilter, isAudioEnabled } = useAudioToggle(
-        activeMicrophoneDeviceId,
-        switchActiveDevice,
-        initialAudioState,
-        microphoneState.systemDefault!,
-        microphones
-    );
+    const { toggleAudio, noiseFilter, toggleNoiseFilter, isAudioEnabled } = useAudioToggle(switchActiveDevice);
 
     const { handlePreviewCameraToggle, cleanupCameraPreview, cleanupPreviewTrack } = useCameraPreview({
         selectedCameraId: activeCameraDeviceId,
@@ -136,29 +129,30 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
         room,
     });
 
-    const selectedCameraId = getSelectedDeviceId(cameraState, activeCameraDeviceId);
-    const selectedMicrophoneId = getSelectedDeviceId(microphoneState, activeMicrophoneDeviceId);
-    const selectedAudioOutputDeviceId = getSelectedDeviceId(speakerState, activeAudioOutputDeviceId);
+    const cameraPermission = useMeetSelector(selectCameraPermission);
+    const microphonePermission = useMeetSelector(selectMicrophonePermission);
 
-    const handleDevicePermissionChange = (permissions: { camera?: PermissionState; microphone?: PermissionState }) => {
-        if (permissions.camera === 'denied') {
+    useEffect(() => {
+        if (cameraPermission === 'denied') {
             if (room.state === ConnectionState.Connected) {
                 void room.localParticipant.setCameraEnabled(false);
             } else {
-                setInitialCameraState(false);
+                dispatch(setInitialCameraState(false));
             }
         }
-        if (permissions.microphone === 'denied') {
+    }, [cameraPermission, room, dispatch]);
+
+    useEffect(() => {
+        if (microphonePermission === 'denied') {
             if (room.state === ConnectionState.Connected) {
                 void room.localParticipant.setMicrophoneEnabled(false);
             } else {
-                setInitialAudioState(false);
+                dispatch(setInitialAudioState(false));
             }
         }
-        setDevicePermissions((prevPermissions) => ({ ...prevPermissions, ...permissions }));
-    };
+    }, [microphonePermission, room, dispatch]);
 
-    const initializeCamera = async (initialCameraState: boolean) => {
+    const initializeCamera = async (camState: boolean) => {
         try {
             // Always publish the video track (and mute if camera is off at join) so E2EE transforms are set up
             // as part of the initial SDP offer rather than a post-connect renegotiation.
@@ -177,7 +171,7 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
             // If the user joined with camera off, mute the track immediately.
             // The track stays published in the SFU so E2EE transforms remain attached,
             // avoiding the renegotiation race when the user enables camera later.
-            if (!initialCameraState) {
+            if (!camState) {
                 const videoPublication = [...room.localParticipant.videoTrackPublications.values()].find(
                     (pub) => pub.source === Track.Source.Camera
                 );
@@ -191,11 +185,10 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
         }
     };
 
-    const initializeMicrophone = async (initialAudioState: boolean) => {
+    const initializeMicrophone = async (audioState: boolean) => {
         try {
             setAudioSessionType('auto');
 
-            // Always create and publish the track for faster unmuting
             const audioConstraints = {
                 autoGainControl: true,
                 echoCancellation: true,
@@ -207,7 +200,7 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
             setAudioSessionType('play-and-record');
 
             // If starting muted, mute the track (keeps it published but silent)
-            if (!initialAudioState) {
+            if (!audioState) {
                 const audioPublication = [...room.localParticipant.audioTrackPublications.values()].find(
                     (pub) => pub.kind === Track.Kind.Audio && pub.source !== Track.Source.ScreenShare
                 );
@@ -232,9 +225,9 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
         }
     };
 
-    const initializeAudioOutput = async (initialAudioOutputState: boolean) => {
+    const initializeAudioOutput = async (audioOutputState: boolean) => {
         try {
-            if (initialAudioOutputState) {
+            if (audioOutputState) {
                 await switchActiveDevice({
                     deviceType: 'audiooutput',
                     deviceId: selectedAudioOutputDeviceId,
@@ -257,7 +250,8 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
 
             const results = await Promise.allSettled([
                 initializeCamera(initialCameraState),
-                initializeMicrophone(initialAudioState),
+                // Do not initialize microphone if permission is not granted
+                microphonePermission === 'granted' ? initializeMicrophone(initialAudioState) : Promise.resolve(),
                 initializeAudioOutput(true),
             ]);
 
@@ -309,19 +303,14 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
         }
     };
 
-    useDevicePermissionChangeListener(handleDevicePermissionChange, activeCameraDeviceId);
+    useDeviceData();
+
+    useDevicePermissionChangeListener(activeCameraDeviceId);
 
     useDynamicDeviceHandling({
         toggleAudio,
         toggleVideo,
-        activeMicrophoneDeviceId,
-        activeAudioOutputDeviceId,
-        activeCameraDeviceId,
         switchActiveDevice,
-        cameraState,
-        microphoneState,
-        speakerState,
-        getDefaultDevice,
     });
 
     const initializedDevices = useRef({
@@ -331,37 +320,43 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
     });
 
     useEffect(() => {
-        if (!initializedDevices.current.video && cameraState.preferredDevice?.deviceId) {
+        const cameraInitDeviceId = preferredCameraId ?? cameraState.systemDefault?.deviceId;
+        if (!initializedDevices.current.video && cameraInitDeviceId) {
             void switchActiveDevice({
                 deviceType: 'videoinput',
-                deviceId: cameraState.preferredDevice.deviceId,
+                deviceId: cameraInitDeviceId,
                 isSystemDefaultDevice: cameraState.useSystemDefault,
             });
             initializedDevices.current.video = true;
         }
 
-        if (!initializedDevices.current.audio && microphoneState.preferredDevice?.deviceId) {
+        const microphoneInitDeviceId = preferredMicrophoneId ?? microphoneState.systemDefault?.deviceId;
+        if (!initializedDevices.current.audio && microphoneInitDeviceId) {
             void switchActiveDevice({
                 deviceType: 'audioinput',
-                deviceId: microphoneState.preferredDevice.deviceId,
+                deviceId: microphoneInitDeviceId,
                 isSystemDefaultDevice: microphoneState.useSystemDefault,
             });
             initializedDevices.current.audio = true;
         }
 
-        if (!initializedDevices.current.audioOutput && speakerState.preferredDevice?.deviceId) {
+        const speakerInitDeviceId = preferredSpeakerId ?? speakerState.systemDefault?.deviceId;
+        if (!initializedDevices.current.audioOutput && speakerInitDeviceId) {
             void switchActiveDevice({
                 deviceType: 'audiooutput',
-                deviceId: speakerState.preferredDevice.deviceId,
+                deviceId: speakerInitDeviceId,
                 isSystemDefaultDevice: speakerState.useSystemDefault,
             });
             initializedDevices.current.audioOutput = true;
         }
     }, [
         switchActiveDevice,
-        cameraState.preferredDevice?.deviceId,
-        microphoneState.preferredDevice?.deviceId,
-        speakerState.preferredDevice?.deviceId,
+        preferredCameraId,
+        preferredMicrophoneId,
+        preferredSpeakerId,
+        cameraState.systemDefault?.deviceId,
+        microphoneState.systemDefault?.deviceId,
+        speakerState.systemDefault?.deviceId,
     ]);
 
     const cleanupPreviews = useStableCallback(async () => {
@@ -443,20 +438,6 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
             value={{
                 handlePreviewCameraToggle,
                 cleanupPreviewTrack,
-                devicePermissions,
-                handleDevicePermissionChange,
-                microphones,
-                cameras,
-                speakers,
-                defaultCamera: cameraState.preferredDevice,
-                defaultMicrophone: microphoneState.preferredDevice,
-                defaultSpeaker: speakerState.preferredDevice,
-                cameraState,
-                microphoneState,
-                speakerState,
-                selectedCameraId,
-                selectedMicrophoneId,
-                selectedAudioOutputDeviceId,
                 isVideoEnabled,
                 isAudioEnabled,
                 facingMode,
@@ -468,10 +449,6 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
                 noiseFilter,
                 toggleNoiseFilter,
                 handleRotateCamera,
-                initialCameraState,
-                initialAudioState,
-                setInitialCameraState,
-                setInitialAudioState,
                 switchActiveDevice,
                 initializeDevices,
                 getMicrophoneVolumeAnalysis,

@@ -3,6 +3,12 @@ import { useEffect, useRef, useState } from 'react';
 import { useLocalParticipant } from '@livekit/components-react';
 import { Track } from 'livekit-client';
 
+import { useMeetSelector } from '@proton/meet/store/hooks';
+import {
+    selectMicrophonePermission,
+    selectSelectedMicrophoneId,
+} from '@proton/meet/store/slices/deviceManagementSlice';
+
 import { useMediaManagementContext } from '../contexts/MediaManagementProvider/MediaManagementContext';
 
 const calculateRms = (data: Uint8Array<ArrayBuffer>): number => {
@@ -17,12 +23,10 @@ const calculateRms = (data: Uint8Array<ArrayBuffer>): number => {
 };
 
 export const useMicrophoneVolumeDirect = (isMicOn: boolean, throttleMs: number = 100) => {
-    const {
-        getMicrophoneVolumeAnalysis,
-        initializeMicrophoneVolumeAnalysis,
-        cleanupMicrophoneVolumeAnalysis,
-        selectedMicrophoneId,
-    } = useMediaManagementContext();
+    const { getMicrophoneVolumeAnalysis, initializeMicrophoneVolumeAnalysis, cleanupMicrophoneVolumeAnalysis } =
+        useMediaManagementContext();
+    const selectedMicrophoneId = useMeetSelector(selectSelectedMicrophoneId);
+    const micPermission = useMeetSelector(selectMicrophonePermission);
     const [volume, setVolume] = useState(0);
     const rafRef = useRef<number | null>(null);
     const lastUpdateRef = useRef<number>(0);
@@ -30,7 +34,7 @@ export const useMicrophoneVolumeDirect = (isMicOn: boolean, throttleMs: number =
     const deviceIdRef = useRef<string | null>(null);
 
     useEffect(() => {
-        if (!isMicOn) {
+        if (!isMicOn || micPermission !== 'granted') {
             setVolume(0);
             cleanupMicrophoneVolumeAnalysis();
             return;
@@ -90,6 +94,7 @@ export const useMicrophoneVolumeDirect = (isMicOn: boolean, throttleMs: number =
         return cleanup;
     }, [
         isMicOn,
+        micPermission,
         throttleMs,
         selectedMicrophoneId,
         getMicrophoneVolumeAnalysis,

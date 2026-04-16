@@ -7,12 +7,13 @@ import { useActiveBreakpoint } from '@proton/components';
 import type { PopperPosition } from '@proton/components/components/popper/interface';
 import useLoading from '@proton/hooks/useLoading';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
+import { DEFAULT_DEVICE_ID } from '@proton/meet/constants';
+import type { SliceDeviceState } from '@proton/meet/store/slices/deviceManagementSlice';
+import type { SerializableDeviceInfo } from '@proton/meet/utils/deviceUtils';
+import { shouldShowDeviceCheckmark, shouldShowSystemDefaultCheckmark } from '@proton/meet/utils/deviceUtils';
 
 import { OptionButton } from '../../atoms/OptionButton/OptionButton';
-import { DEFAULT_DEVICE_ID } from '../../constants';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
-import type { DeviceState } from '../../types';
-import { shouldShowDeviceCheckmark, shouldShowSystemDefaultCheckmark } from '../../utils/device-utils';
 import { BackgroundBlurToggle } from '../BackgroundBlurToggle';
 import { DeviceSettingsDropdown } from '../DeviceSettingsDropdown';
 
@@ -20,8 +21,8 @@ interface VideoSettingsDropdownProps {
     anchorRef: RefObject<HTMLButtonElement>;
     handleCameraChange: (deviceId: string) => Promise<void>;
     videoDeviceId: string | null;
-    cameraState: DeviceState;
-    cameras: MediaDeviceInfo[];
+    cameraState: SliceDeviceState;
+    cameras: SerializableDeviceInfo[];
     onClose: () => void;
     anchorPosition?: PopperPosition;
     isCameraLoading: (deviceId: string) => boolean;
