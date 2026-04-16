@@ -1,5 +1,6 @@
 import { SCREEN_SHARE_PAGE_SIZE } from '@proton/meet/constants';
 
+import { RECORDING_FPS } from './constants';
 import {
     PROFILE_COLORS,
     drawParticipantBorder,
@@ -9,7 +10,6 @@ import {
 } from './drawingUtils';
 import { createMediaStreamTrackProcessor } from './utils';
 
-const FPS = 30;
 const GAP = 11;
 const BORDER_RADIUS = 28;
 const SIDEBAR_WIDTH = 320;
@@ -361,7 +361,7 @@ function startRenderLoop() {
     };
 
     render();
-    state.renderInterval = setInterval(render, 1000 / FPS) as unknown as number;
+    state.renderInterval = setInterval(render, 1000 / RECORDING_FPS) as unknown as number;
 }
 
 function stopRenderLoop() {
@@ -395,6 +395,9 @@ async function startTrackCaptureInWorker(trackData: TrackCaptureData) {
 
     state.trackProcessors.set(trackId, { reader, participantIdentity });
 
+    const minFrameInterval = 1000 / RECORDING_FPS;
+    let lastProcessedTime = 0;
+
     const pump = async () => {
         try {
             while (state.trackProcessors.has(trackId)) {
@@ -404,6 +407,14 @@ async function startTrackCaptureInWorker(trackData: TrackCaptureData) {
                 }
 
                 if (frame) {
+                    const now = performance.now();
+                    const timeSinceLastFrame = now - lastProcessedTime;
+
+                    if (timeSinceLastFrame < minFrameInterval) {
+                        frame.close();
+                        continue;
+                    }
+
                     try {
                         // Convert to ImageBitmap for rendering
                         const bitmap = await createImageBitmap(frame);
@@ -414,6 +425,7 @@ async function startTrackCaptureInWorker(trackData: TrackCaptureData) {
                             cleanupFrame(oldFrame);
                         }
                         state.videoFrames.set(participantIdentity, bitmap);
+                        lastProcessedTime = now;
                     } catch (err) {
                         frame.close();
                     }
@@ -445,6 +457,7 @@ self.onmessage = (event: MessageEvent<RenderWorkerMessage>) => {
                 state.ctx = canvas.getContext('2d', {
                     alpha: false,
                     desynchronized: true,
+                    willReadFrequently: false,
                 });
                 if (state.ctx) {
                     state.ctx.fillStyle = '#1a1a28';
