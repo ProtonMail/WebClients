@@ -1,11 +1,12 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 
+import type { ShareResult } from '@protontech/drive-sdk';
 import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { type ShareResult, useDrive } from '@proton/drive';
 
-import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
+import { useDrive } from '../../../index';
+import { handleDriveError } from '../../../internal/handleDriveError';
 
 const EditorsManageAccessContext = createContext<{
     editorsManageAccess: boolean;
@@ -50,7 +51,7 @@ export function EditorsManageAccessContextProvider({
                 });
             }
         } catch (error) {
-            handleSdkError(error, {
+            handleDriveError(error, {
                 fallbackMessage: c('Error').t`Failed to change permissions settings`,
                 extra: { nodeUid },
             });

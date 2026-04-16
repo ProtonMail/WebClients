@@ -6,10 +6,9 @@ import { useNotifications } from '@proton/components';
 import { CryptoProxy } from '@proton/crypto';
 import { canonicalizeInternalEmail, validateEmailAddress } from '@proton/shared/lib/helpers/email';
 
-import { useFlagsDriveDirectSharing } from '../../../flags/useFlagsDriveDirectSharing';
-// TODO: Prevent using it when we will be able to manage with sdk.
-import { useGetPublicKeysForEmail } from '../../../store';
+import { useFlagsDriveDirectSharing } from '../../../../internal/flags/useFlagsDriveDirectSharing';
 import { ShareInviteeValidationError, VALIDATION_ERROR_TYPES } from './helpers/ShareInviteeValidationError';
+import { useGetPublicKeysForEmail } from './helpers/useGetPublicKeysForEmail';
 import type { ShareInvitee } from './interfaces';
 
 /**

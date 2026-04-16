@@ -1,6 +1,7 @@
 import type { MouseEvent } from 'react';
 import { useMemo, useState } from 'react';
 
+import { MemberRole, type ShareNodeSettings } from '@protontech/drive-sdk';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
@@ -16,20 +17,19 @@ import {
 } from '@proton/components';
 import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
 import { useTheme } from '@proton/components/containers/themes/ThemeProvider';
-import { MemberRole, type ShareNodeSettings } from '@proton/drive';
 import useLoading from '@proton/hooks/useLoading';
 import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
 import { IcLockFilled } from '@proton/icons/icons/IcLockFilled';
 
-import ModalContentLoader from '../../components/modals/ModalContentLoader';
-import { useFlagsDriveDirectSharing } from '../../flags/useFlagsDriveDirectSharing';
-import { useFlagsDrivePublicSharing } from '../../flags/useFlagsDrivePublicSharing';
+import { useFlagsDriveDirectSharing } from '../../../internal/flags/useFlagsDriveDirectSharing';
+import { useFlagsDrivePublicSharing } from '../../../internal/flags/useFlagsDrivePublicSharing';
 import { DirectSharingAutocomplete } from './DirectSharing/DirectSharingAutocomplete';
 import { DirectSharingFooter } from './DirectSharing/DirectSharingFooter';
 import { DirectSharingInviteMessage } from './DirectSharing/DirectSharingInviteMessage';
 import { DirectSharingListing } from './DirectSharing/DirectSharingListing';
 import { useShareInvitees } from './DirectSharing/useShareInvitees';
 import ErrorState from './ErrorState';
+import ModalContentLoader from './ModalContentLoader';
 import { PublicSharing } from './PublicSharing/PublicSharing';
 import { useSharingSettingsModal } from './SharingSettingsModal';
 import type { DirectMember, DirectSharingRole } from './interfaces';

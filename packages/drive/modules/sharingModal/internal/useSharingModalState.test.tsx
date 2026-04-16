@@ -1,27 +1,20 @@
+import { MemberRole, type NodeEntity, NodeType, type Result, generateNodeUid } from '@protontech/drive-sdk';
+import { splitInvitationUid, splitNodeUid } from '@protontech/drive-sdk/dist/internal/uids';
 import { waitFor } from '@testing-library/react';
 import { act, renderHook } from '@testing-library/react-hooks';
 import { when } from 'jest-when';
 
 import { useUser } from '@proton/account/user/hooks';
 import { useNotifications } from '@proton/components';
-import {
-    MemberRole,
-    type NodeEntity,
-    NodeType,
-    type Result,
-    generateNodeUid,
-    splitInvitationUid,
-    splitNodeUid,
-} from '@proton/drive';
-import { getBusDriver } from '@proton/drive/internal/BusDriver';
 import useLoading from '@proton/hooks/useLoading';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS } from '@proton/shared/lib/constants';
 import { textToClipboard } from '@proton/shared/lib/helpers/browser';
 import type { UserModel } from '@proton/shared/lib/interfaces';
 
-import { useFlagsDriveDocsPublicSharing } from '../../flags/useFlagsDriveDocsPublicSharing';
-import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
+import { getBusDriver } from '../../../internal/BusDriver';
+import { useFlagsDriveDocsPublicSharing } from '../../../internal/flags/useFlagsDriveDocsPublicSharing';
+import { handleDriveError } from '../../../internal/handleDriveError';
 import { type DirectMember, MemberType } from './interfaces';
 import { useSharingModalState } from './useSharingModalState';
 
@@ -111,16 +104,17 @@ const mockedTextToClipboard = jest.mocked(textToClipboard);
 
 jest.mock('@proton/account/user/hooks');
 jest.mock('@proton/components');
-jest.mock('@proton/drive/index');
 jest.mock('@proton/hooks/useLoading');
 jest.mock('@proton/shared/lib/apps/helper');
 jest.mock('@proton/shared/lib/helpers/browser');
-jest.mock('../../flags/useFlagsDriveDocsPublicSharing');
-jest.mock('../../utils/errorHandling/handleSdkError');
-jest.mock('@proton/drive/internal/BusDriver');
+jest.mock('../../../internal/flags/useFlagsDriveDocsPublicSharing');
+jest.mock('../../../internal/handleDriveError');
+jest.mock('../../../internal/BusDriver');
 jest.mock('@proton/mail/store/contactEmails/hooks', () => ({
     useContactEmails: jest.fn(() => [[]]),
 }));
+jest.mock('@protontech/drive-sdk');
+jest.mock('@protontech/drive-sdk/dist/internal/uids');
 
 const { useContactEmails } = require('@proton/mail/store/contactEmails/hooks');
 const mockedUseContactEmails = jest.mocked(useContactEmails);
@@ -149,7 +143,7 @@ const expectedDirectMembers: DirectMember[] = [
 describe('useSharingModalState', () => {
     const mockBusEmit = jest.fn();
 
-    const mockHandleError = jest.mocked(handleSdkError);
+    const mockHandleError = jest.mocked(handleDriveError);
 
     beforeEach(() => {
         mockedUseUser.mockReturnValue([mockUser, false]);

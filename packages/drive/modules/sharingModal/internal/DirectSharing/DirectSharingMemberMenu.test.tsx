@@ -1,8 +1,8 @@
+import { MemberRole, NonProtonInvitationState } from '@protontech/drive-sdk';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { usePopperAnchor } from '@proton/components';
-import { MemberRole, NonProtonInvitationState } from '@proton/drive';
 import useLoading from '@proton/hooks/useLoading';
 
 import type { DirectSharingRole } from '../interfaces';

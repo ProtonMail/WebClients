@@ -1,6 +1,6 @@
+import { MemberRole, type NonProtonInvitationState } from '@protontech/drive-sdk';
 import { c } from 'ttag';
 
-import { MemberRole, type NonProtonInvitationState } from '@proton/drive';
 import noop from '@proton/utils/noop';
 
 import { DropdownMenuItem } from '../../DropdownMenuItem';
