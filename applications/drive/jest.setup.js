@@ -30,6 +30,24 @@ global.ResizeObserver = jest.fn().mockImplementation(() => ({
     disconnect: jest.fn(),
 }));
 
+class MockIntersectionObserver {
+    constructor(callback, options) {
+        this.callback = callback;
+        this.options = options;
+    }
+
+    observe = jest.fn();
+    unobserve = jest.fn();
+    disconnect = jest.fn();
+
+    // helper to trigger intersection manually
+    trigger(entries) {
+        this.callback(entries, this);
+    }
+}
+
+global.IntersectionObserver = MockIntersectionObserver;
+
 global.BroadcastChannel = jest.fn().mockImplementation(() => ({
     postMessage: jest.fn(),
     close: jest.fn(),
