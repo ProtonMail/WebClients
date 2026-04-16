@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton } from '@proton/components';
+import { ToolbarButton } from '@proton/components';
+import { IcEye } from '@proton/icons/icons/IcEye';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import useOpenPreview from '../../useOpenPreview';
@@ -25,7 +26,7 @@ const PreviewButton = ({ selectedBrowserItems }: Props) => {
     return (
         <ToolbarButton
             title={c('Action').t`Preview`}
-            icon={<Icon name="eye" alt={c('Action').t`Preview`} />}
+            icon={<IcEye alt={c('Action').t`Preview`} />}
             onClick={() => {
                 if (selectedBrowserItems.length) {
                     openPreview(selectedBrowserItems[0].rootShareId, selectedBrowserItems[0].linkId);

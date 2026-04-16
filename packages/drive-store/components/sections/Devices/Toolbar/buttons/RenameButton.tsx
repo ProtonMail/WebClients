@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton } from '@proton/components';
+import { ToolbarButton } from '@proton/components';
+import { IcPenSquare } from '@proton/icons/icons/IcPenSquare';
 
 import type { Device } from '../../../../../store';
 import { useRenameDeviceModal } from '../../../../modals/RenameDeviceModal';
@@ -23,7 +24,7 @@ const RenameButton = ({ selectedDevices }: Props) => {
         <>
             <ToolbarButton
                 title={c('Action').t`Rename`}
-                icon={<Icon name="pen-square" />}
+                icon={<IcPenSquare />}
                 onClick={() => showRenameDeviceModal({ device: selectedDevices[0] })}
                 data-testid="toolbar-rename"
             />
