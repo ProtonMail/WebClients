@@ -539,8 +539,8 @@
       "Go back": [
         "Retour"
       ],
-      "Go back to album “${ albumName }“": [
-        "Retourner à l’album « ${ albumName } »"
+      "Go back to album “${ ellipsedAlbumName }“": [
+        "Retourner à l’album « ${ ellipsedAlbumName } »"
       ],
       "Go to ${ planOrAppName }": [
         "Accéder à ${ planOrAppName }"
@@ -3518,6 +3518,9 @@
       ],
       "Failed to load signature details, please try again later": [
         "Les informations de la signature n'ont pas pu être chargées. Veuillez réessayer plus tard."
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Les données d'abonnement n'ont pas pu être chargées. Veuillez réessayer plus tard."
       ],
       "Failed to load the STL preview": [
         "Le chargement de l’aperçu STL n'a pas abouti."
@@ -9375,38 +9378,50 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" copied": [
+        "« ${ ellipsedName } » a été copié"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "« ${ ellipsedName } » a été créé."
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "« ${ ellipsedName } » a été supprimé"
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "« ${ ellipsedName } » a été définitivement supprimé de la Corbeille"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "« ${ ellipsedName } » n'a pas pu être créé."
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "La suppression de « ${ ellipsedName } » n'a pas abouti."
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "« ${ ellipsedName } » n'a pu être définitivement supprimé de la Corbeille."
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "« ${ ellipsedName } » n'a pas pu être déplacé."
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "« ${ ellipsedName } » n'a pas pu être restauré depuis la Corbeille."
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "« ${ ellipsedName } » a été déplacé"
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "« ${ ellipsedName } » a été restauré depuis la Corbeille."
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "« ${ ellipsedName } » a été déplacé"
+      ],
       "\"${ fileName }\" shared": [
         "« ${ fileName } » partagé"
-      ],
-      "\"${ name }\" created successfully": [
-        "« ${ name } » a été créé."
-      ],
-      "\"${ name }\" deleted": [
-        "« ${ name } » a été supprimé."
       ],
       "\"${ name }\" deleted permanently": [
         "« ${ name } » a été définitivement supprimé."
       ],
-      "\"${ name }\" deleted permanently from trash": [
-        "« ${ name } » a été définitivement supprimé du dossier Corbeille."
-      ],
-      "\"${ name }\" failed to be created": [
-        "« ${ name } » n'a pas pu être créé."
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "La suppression de « ${ name } » n'a pas abouti."
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "« ${ name } » n'a pu être définitivement supprimé du dossier Corbeille."
-      ],
-      "\"${ name }\" failed to be moved": [
-        "« ${ name } » n'a pas pu être déplacé."
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "« ${ name } » n'a pas pu être déplacé dans le dossier Corbeille."
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "« ${ name } » n'a pas pu être restauré depuis le dossier Corbeille."
       ],
       "\"${ name }\" failed to be saved": [
         "« ${ name } » n'a pas pu être enregistré."
@@ -9414,17 +9429,8 @@
       "\"${ name }\" moved to trash": [
         "« ${ name } » a été déplacé dans le dossier Corbeille."
       ],
-      "\"${ name }\" restored from trash": [
-        "« ${ name } » a été restauré depuis le dossier Corbeille."
-      ],
       "\"${ name }\" saved successfully": [
         "« ${ name } » a été enregistré."
-      ],
-      "\"${ name }\" successfully copied": [
-        "« ${ name } » a été copié."
-      ],
-      "\"${ name }\" successfully moved": [
-        "« ${ name } » a été déplacé."
       ],
       "\"${ newName }\" failed to be renamed": [
         "« ${ newName } » n'a pas pu être renommé."
@@ -9468,6 +9474,10 @@
         "${ numberOfItems } élément copié a été déplacé dans la corbeille",
         "${ numberOfItems } éléments copiés ont été déplacés dans la corbeille"
       ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems } élément a été copié",
+        "${ numberOfItems } éléments ont été copiés"
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } élément supprimé",
         "${ numberOfItems } éléments supprimés"
@@ -9496,6 +9506,10 @@
         "${ numberOfItems } élément n'a pas pu être restauré depuis le dossier Corbeille.",
         "${ numberOfItems } éléments n'ont pas pu être restaurés depuis le dossier Corbeille."
       ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } élément a été déplacé",
+        "${ numberOfItems } éléments ont été déplacés"
+      ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } élément a été déplacé dans le dossier Corbeille.",
         "${ numberOfItems } éléments ont été déplacés dans le dossier Corbeille."
@@ -9503,10 +9517,6 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } élément a été restauré depuis le dossier Corbeille.",
         "${ numberOfItems } éléments ont été restaurés depuis le dossier Corbeille."
-      ],
-      "${ numberOfItems } item successfully copied": [
-        "${ numberOfItems } élément a été copié",
-        "${ numberOfItems } éléments ont été copiés"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } élément a été déplacé.",
@@ -9548,8 +9558,8 @@
       "Contact group updated": [
         "Le groupe de contacts a été mis à jour."
       ],
-      "Copy of \"${ name }\" moved to trash": [
-        "\"${ name }\" a été déplacé dans la Corbeille"
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "La copie de « ${ ellipsedName } » a été déplacée dans la Corbeille"
       ],
       "Device failed to be removed": [
         "L'appareil n'a pas pu être retiré."
@@ -10251,6 +10261,9 @@
       ],
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Pendant cette période, vous ne pourrez pas modifier ou annuler votre abonnement. Veuillez attendre que votre paiement soit terminé avant de tenter toute modification. Merci pour votre patience."
+      ],
+      "Edit billing address": [
+        "Modifier l'adresse de facturation"
       ],
       "Got it": [
         "J'ai compris"
@@ -12047,9 +12060,6 @@
         "L'alias a été enregistré et copié."
       ],
       "Billing details updated": [
-        "Les informations de facturation ont été mises à jour."
-      ],
-      "Billing information updated": [
         "Les informations de facturation ont été mises à jour."
       ],
       "Canceling import": [

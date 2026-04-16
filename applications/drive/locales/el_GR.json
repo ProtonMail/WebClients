@@ -539,8 +539,8 @@
       "Go back": [
         "Επιστροφή"
       ],
-      "Go back to album “${ albumName }“": [
-        "Επιστροφή στο άλμπουμ “${ albumName }“"
+      "Go back to album “${ ellipsedAlbumName }“": [
+        "Επιστροφή στο άλμπουμ “${ ellipsedAlbumName }“"
       ],
       "Go to ${ planOrAppName }": [
         "Πηγαίνετε στο ${ planOrAppName }"
@@ -3521,6 +3521,9 @@
       ],
       "Failed to load signature details, please try again later": [
         "Αποτυχία φόρτωσης λεπτομερειών υπογραφής, παρακαλούμε δοκιμάστε ξανά αργότερα"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Αποτυχία φόρτωσης δεδομένων συνδρομής. Παρακαλούμε δοκιμάστε ξανά αργότερα."
       ],
       "Failed to load the STL preview": [
         "Αποτυχία φόρτωσης της προεπισκόπησης STL"
@@ -9332,38 +9335,50 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" copied": [
+        "Το \"${ ellipsedName }\" αντιγράφηκε"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "Το \"${ ellipsedName }\" δημιουργήθηκε επιτυχώς"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "Το \"${ ellipsedName }\" διαγράφηκε"
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "Το \"${ ellipsedName }\" διαγράφηκε οριστικά από τα Διαγραμμένα"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "Αποτυχία δημιουργίας του \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "Αποτυχία διαγραφής του \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "Αποτυχία οριστικής διαγραφής του \"${ ellipsedName }\" από τα Διαγραμμένα"
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "Αποτυχία μετακίνησης του \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "Αποτυχία επαναφοράς του \"${ ellipsedName }\" από τα Διαγραμμένα"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "Το \"${ ellipsedName }\" μετακινήθηκε"
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "Το \"${ ellipsedName }\" επαναφέρθηκε από τα Διαγραμμένα"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "Επιτυχής μετακίνηση του \"${ ellipsedName }\""
+      ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" κοινοποιήθηκε"
-      ],
-      "\"${ name }\" created successfully": [
-        "Το \"${ name }\" δημιουργήθηκε επιτυχώς"
-      ],
-      "\"${ name }\" deleted": [
-        "\"${ name }\" διαγράφηκε"
       ],
       "\"${ name }\" deleted permanently": [
         "\"${ name }\" διαγράφηκε οριστικά"
       ],
-      "\"${ name }\" deleted permanently from trash": [
-        "Το \"${ name }\" διαγράφηκε οριστικά από τα Διαγραμμένα"
-      ],
-      "\"${ name }\" failed to be created": [
-        "Αποτυχία δημιουργίας του \"${ name }\""
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "\"${ name }\" απέτυχε να διαγραφεί"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "Αποτυχία οριστικής διαγραφής του \"${ name }\" από τα Διαγραμμένα"
-      ],
-      "\"${ name }\" failed to be moved": [
-        "Αποτυχία μετακίνησης του \"${ name }\""
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "Αποτυχία μετακίνησης του \"${ name }\" στα Διαγραμμένα"
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "Αποτυχία επαναφοράς του \"${ name }\" από τα Διαγραμμένα"
       ],
       "\"${ name }\" failed to be saved": [
         "Το \"${ name }\" απέτυχε να αποθηκευτεί"
@@ -9371,17 +9386,8 @@
       "\"${ name }\" moved to trash": [
         "Το \"${ name }\" μετακινήθηκε στα Διαγραμμένα"
       ],
-      "\"${ name }\" restored from trash": [
-        "Το \"${ name }\" επαναφέρθηκε από τα Διαγραμμένα"
-      ],
       "\"${ name }\" saved successfully": [
         "Το \"${ name }\" αποθηκεύτηκε με επιτυχία"
-      ],
-      "\"${ name }\" successfully copied": [
-        "\"${ name }\" αντιγράφηκε επιτυχώς"
-      ],
-      "\"${ name }\" successfully moved": [
-        "Επιτυχής μετακίνηση του \"${ name }\""
       ],
       "\"${ newName }\" failed to be renamed": [
         "Αποτυχία μετονομασίας σε \"${ newName }\""
@@ -9425,6 +9431,10 @@
         "${ numberOfItems } αντιγραμμένο στοιχείο μετακινήθηκε στον κάδο απορριμμάτων",
         "${ numberOfItems } αντιγραμμένα στοιχεία μετακινήθηκαν στον κάδο απορριμμάτων"
       ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems } στοιχείο αντιγράφηκε",
+        "${ numberOfItems } στοιχεία αντιγράφηκαν"
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } στοιχείο διαγράφηκε",
         "${ numberOfItems } στοιχεία διαγράφηκαν"
@@ -9453,6 +9463,10 @@
         "Αποτυχία επαναφοράς ${ numberOfItems } στοιχείου από τα Διαγραμμένα",
         "Αποτυχία επαναφοράς ${ numberOfItems } στοιχείων από τα Διαγραμμένα"
       ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } στοιχείο μετακινήθηκε",
+        "${ numberOfItems } στοιχεία μετακινήθηκαν"
+      ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } στοιχείο μετακινήθηκε στα Διαγραμμένα",
         "${ numberOfItems } στοιχεία μετακινήθηκαν στα Διαγραμμένα"
@@ -9460,10 +9474,6 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } στοιχείο επαναφέρθηκε από τα Διαγραμμένα",
         "${ numberOfItems } στοιχεία επαναφέρθηκαν από τα Διαγραμμένα"
-      ],
-      "${ numberOfItems } item successfully copied": [
-        "${ numberOfItems } στοιχείο αντιγράφηκε επιτυχώς",
-        "${ numberOfItems } στοιχεία αντιγράφηκαν επιτυχώς"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } στοιχείο μετακινήθηκε επιτυχώς",
@@ -9505,8 +9515,8 @@
       "Contact group updated": [
         "Η ομάδα επαφών ενημερώθηκε"
       ],
-      "Copy of \"${ name }\" moved to trash": [
-        "Αντίγραφο του \"${ name }\" μετακινήθηκε στον κάδο απορριμμάτων"
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "Αντίγραφο του \"${ ellipsedName }\" μετακινήθηκε στον κάδο απορριμμάτων"
       ],
       "Device failed to be removed": [
         "Αποτυχία αφαίρεσης συσκευής"
@@ -10208,6 +10218,9 @@
       ],
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Κατά τη διάρκεια αυτής της περιόδου, δε θα μπορείτε να τροποποιήσετε ή να ακυρώσετε τη συνδρομή σας. Παρακαλούμε περιμένετε μέχρι να ολοκληρωθεί η πληρωμή σας πριν επιχειρήσετε οποιεσδήποτε αλλαγές. Σας ευχαριστούμε για την υπομονή σας."
+      ],
+      "Edit billing address": [
+        "Επεξεργασία διεύθυνσης χρέωσης"
       ],
       "Got it": [
         "Το κατάλαβα"
@@ -11920,9 +11933,6 @@
         "Το ψευδώνυμο αποθηκεύτηκε και αντιγράφηκε"
       ],
       "Billing details updated": [
-        "Τα στοιχεία χρέωσης ενημερώθηκαν"
-      ],
-      "Billing information updated": [
         "Τα στοιχεία χρέωσης ενημερώθηκαν"
       ],
       "Canceling import": [

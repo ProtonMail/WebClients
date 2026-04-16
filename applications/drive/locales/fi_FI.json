@@ -249,6 +249,9 @@
       "Continue on web": [
         "Jatka verkkosovelluksessa"
       ],
+      "Continue to ${ planOrAppName }": [
+        "Jatka sovellukseen ${ planOrAppName }"
+      ],
       "Continue transfers": [
         "Jatka siirtoja"
       ],
@@ -536,8 +539,8 @@
       "Go back": [
         "Takaisin"
       ],
-      "Go back to album “${ albumName }“": [
-        "Palaa albumiin \"${ albumName }\""
+      "Go back to album “${ ellipsedAlbumName }“": [
+        "Palaa albumiin \"${ ellipsedAlbumName }\""
       ],
       "Go to ${ planOrAppName }": [
         "Avaa ${ planOrAppName }"
@@ -1290,6 +1293,9 @@
         "${ ips } oma VPN-palvelin",
         "${ ips } omaa VPN-palvelinta"
       ],
+      "${ LUMO_APP_NAME } AI license": [
+        "${ LUMO_APP_NAME }-tekoälylisenssi"
+      ],
       "${ price } per dedicated server": [
         "${ price }/oma palvelin"
       ],
@@ -1376,6 +1382,12 @@
       ]
     },
     "b2b_trials_2025_Info": {
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews every ${ renewCycle } months. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Kun kokeilu päättyy ${ formattedDate1 }, siitä tulee maksullinen tilaus, joka uusiutuu automaattisesti ${ renewCycle } kuukauden välein. Sinua ei veloiteta, jos peruutat tilauksen ennen ${ formattedDate2 }."
+      ],
+      "After the trial ends on ${ formattedDate1 }, it will become a paid subscription that auto-renews monthly. You won’t be charged if you cancel before ${ formattedDate2 }.": [
+        "Kun kokeilu päättyy ${ formattedDate1 }, siitä tulee maksullinen tilaus, joka uusiutuu automaattisesti kuukausittain. Sinua ei veloiteta, jos peruutat tilauksen ennen ${ formattedDate2 }."
+      ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
         "Voit saada enintään ${ TRIAL_MAX_DEDICATED_IPS } omaa palvelinta kokeilujakson aikana."
       ],
@@ -1401,6 +1413,11 @@
       ],
       "Keep subscription": [
         "Pidä tilaus"
+      ]
+    },
+    "b2b_trials_Title": {
+      "Your free trial ends in ${ timeRemaining }": [
+        "Ilmainen kokeilusi päättyy ${ timeRemaining }"
       ]
     },
     "Badge": {
@@ -1512,6 +1529,18 @@
       ],
       "3 TB data storage": [
         "3 Tt tallennustilaa"
+      ],
+      "Block ads, trackers, and malware": [
+        "Estä mainoksia, seurantoja ja haittaohjelmia"
+      ],
+      "Built-in 2FA authenticator": [
+        "Sisäänrakennettu kaksivaiheinen todentaja"
+      ],
+      "Connect 10 devices at once": [
+        "Yhdistä 10 laitetta samanaikaisesti"
+      ],
+      "Unlimited daily chats": [
+        "Rajattomasti päivittäisiä keskusteluja"
       ]
     },
     "Billing cycle option": {
@@ -1531,6 +1560,9 @@
       ],
       "Annually": [
         "Vuotuinen"
+      ],
+      "Billed monthly": [
+        "Laskutetaan kuukausittain"
       ],
       "Lifetime": [
         "Elinikäinen"
@@ -2800,6 +2832,11 @@
         "${ MAIL_APP_NAME }ille"
       ]
     },
+    "customer_support.feature.meet": {
+      "For ${ MEET_APP_NAME }": [
+        "Hintaan ${ MEET_APP_NAME }"
+      ]
+    },
     "customer_support.feature.pass": {
       "For ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }ille"
@@ -3369,6 +3406,9 @@
       "Failed to load signature details, please try again later": [
         "Allekirjoituksen tietojen lataaminen epäonnistui, yritä myöhemmin uudelleen."
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Tilaustietoja ei voitu ladata. Yritä myöhemmin uudelleen."
+      ],
       "Failed to load the STL preview": [
         "STL-esikatselun lataus epäonnistui"
       ],
@@ -3689,6 +3729,9 @@
       "The minimum amount of credit that can be added is ${ price }": [
         "Lisättävien krediittien vähimmäissumma on ${ price }"
       ],
+      "The minimum donation amount is ${ price }": [
+        "Lahjoituksen vähimmäismäärä on ${ price }"
+      ],
       "The new revision of original file is not uploaded yet, please try again later": [
         "Alkuperäisen tiedoston uutta versiota ei ole vielä tallennettu. Yritä myöhemmin uudelleen"
       ],
@@ -3778,6 +3821,9 @@
       ],
       "We were not able to load some invitations": [
         "Joitain kutsuja ei voitu ladata"
+      ],
+      "We were not able to load some items shared with you": [
+        "Emme voineet ladata joitain kanssasi jaettuja kohteita"
       ],
       "We were not able to load some of your saved shared links": [
         "Joitakin tallennettuja jaettuja linkkejäsi ei voitu ladata."
@@ -4219,7 +4265,15 @@
         "Salamannopea"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Jotain meni pieleen suojausavaimellasi tunnistauduttaessa. Yritä uudelleen."
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Liitä ${ BRAND_NAME }-tiliisi liitetty suojausavain."
+      ],
       "Security key": [
         "Suojausavain"
       ]
@@ -4676,6 +4730,11 @@
         "Valitse ${ boldExport } viedäksesi kalenterin ICS-tiedostona."
       ]
     },
+    "Import provider": {
+      "More import options": [
+        "Lisää tuontiasetuksia"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded }/${ totalContacts } yhteystietoa ei tuoda. Näytä tiedot painamalla tästä."
@@ -4804,6 +4863,9 @@
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } sisältää ${ BRAND_NAME } Scribe-kirjoitusavustajan"
+      ],
+      "${ normalizedProgress }% completed": [
+        "${ normalizedProgress }/ suoritettu"
       ],
       "${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Elinikäisellä ${ PASS_SHORT_APP_NAME }-sopimuksella ei ole uudistushintaa, vaan se on kertaluonteinen maksu ${ PASS_SHORT_APP_NAME }in elinikäisestä käyttöoikeudesta."
@@ -4957,6 +5019,9 @@
       ],
       "Ad targeting": [
         "Mainosten kohdentaminen"
+      ],
+      "Add ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }": [
+        "Lisää ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
       "Address copied to clipboard": [
         "Osoite kopioitiin leikepöydälle"
@@ -5379,6 +5444,9 @@
       "Everything in ${ planOrAppName }": [
         "Kaikki ${ planOrAppName }-tilauksesta"
       ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Kaikki ${ planOrAppName } -tilaukseen kuuluva, sekä:"
+      ],
       "Expired": [
         "Voimassaolo päättynyt"
       ],
@@ -5426,6 +5494,9 @@
       ],
       "Folders you sync from your computer will appear here.": [
         "Tietokoneeltasi synkronoidut kansiot näkyvät tässä."
+      ],
+      "for ${ price }": [
+        "hintaan ${ price }"
       ],
       "For best results, avoid streaming and memory-intensive activities or split your upload into smaller batches.": [
         "Parasta lopputulosta varten, vältä suoratoistoa ja keskusmuistia kuormittavia toimintoja tai jaa tallennuksesi pienempiin eriin."
@@ -5759,6 +5830,9 @@
       "Number of dedicated servers in the organization": [
         "Organisaation omien palvelinten määrä"
       ],
+      "Number of dedicated VPN servers in the organization": [
+        "Organisaation omien VPN-palvelinten määrä"
+      ],
       "Numbers": [
         "Numerot"
       ],
@@ -6069,6 +6143,9 @@
       "Shared with me": [
         "Jaettu minulle"
       ],
+      "Shared with you": [
+        "Jaettu kanssasi"
+      ],
       "Signature cannot be validated due to network error, please try again later.": [
         "Allekirjoitusta ei voida verkkovirheen vuoksi vahvistaa. Yritä myöhemmin uudelleen."
       ],
@@ -6141,6 +6218,9 @@
       ],
       "Temporarily unavailable. Please check back later.": [
         "Tilapäisesti pois käytöstä. Yritä myöhemmin uudelleen."
+      ],
+      "Thank you for choosing ${ BRAND_NAME } to secure your organization.": [
+        "Kiitos että valitsit ${ BRAND_NAME }n turvataksesi organisaatiosi."
       ],
       "Thank you for subscribing. Secure browsing starts now.": [
         "Kiitos tilauksestasi. Suojattu selaaminen alkaa nyt."
@@ -6250,6 +6330,12 @@
       ],
       "This will replace the existing file with the folder": [
         "Tämä korvaa olemassa olevan tiedoston kansiolla"
+      ],
+      "This will replace the existing folder or file with the file": [
+        "Tämä korvaa olemassa olevan kansion tai tiedoston tiedostolla"
+      ],
+      "This will replace the existing folder or file with the folder": [
+        "Tämä korvaa olemassa olevan kansion tai tiedoston kansiolla"
       ],
       "This will replace the existing folder with the file": [
         "Tämä korvaa olemassa olevan kansion tiedostolla"
@@ -6437,6 +6523,9 @@
       "VPN IP": [
         "VPN:n IP-osoite"
       ],
+      "Waiting": [
+        "Odotetaan"
+      ],
       "Want to sync files faster?": [
         "Haluatko synkronoida tiedostot nopeammin?"
       ],
@@ -6590,6 +6679,9 @@
       "You cannot undo this action.": [
         "Et voi kumota toimintoa."
       ],
+      "You don't have permission to copy files to this folder.": [
+        "Sinulla ei ole lupaa kopioida tiedostoja tähän kansioon."
+      ],
       "You get notified if your password or other data was leaked from a third-party service.": [
         "Saat ilmoituksen, jos salasanasi tai muita tietojasi on vuotanut muista palveluista."
       ],
@@ -6703,6 +6795,9 @@
       ],
       "Your login information will not be saved after the import is completed.": [
         "Kirjautumistietojasi ei säilytetä tuonnin päätyttyä."
+      ],
+      "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
+        "Seuraava laskutuspäiväsi on ${ renewalTime }. Voit peruuttaa milloin tahansa."
       ],
       "Your online activity is protected": [
         "Verkkotoimintasi on suojattu"
@@ -7783,6 +7878,9 @@
       "Screen-sharing": [
         "Näytön jakaminen"
       ],
+      "Unlimited meetings per day": [
+        "Rajattomasti tapaamisia päivässä"
+      ],
       "Up to ${ n } meeting per day": [
         "Enintään ${ n } kokous pävässä",
         "Enintään ${ n } kokousta pävässä"
@@ -8207,6 +8305,9 @@
       "Advanced alias features (powered by SimpleLogin)": [
         "Edistyneet aliastoiminnot (SimpleLoginin tarjoama)"
       ],
+      "All ${ BRAND_NAME } products and features": [
+        "Kaikki ${ BRAND_NAME }n tuotteet ja ominaisuudet"
+      ],
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "Kaikki ${ BRAND_NAME } -peruspalvelut (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })"
       ],
@@ -8319,6 +8420,9 @@
       "GDPR data processing agreement": [
         "GDPR-tietojenkäsittelysopimus"
       ],
+      "Generate emails with a prompt": [
+        "Luo sähköposteja kehoitteella"
+      ],
       "Group management (coming soon)": [
         "Ryhmien hallinta (tulossa pian)"
       ],
@@ -8373,6 +8477,9 @@
       ],
       "Priority support & live chat": [
         "Ensisijainen tuki ja live-chat"
+      ],
+      "Private AI Chat (${ LUMO_APP_NAME })": [
+        "Yksityinen (${ LUMO_APP_NAME }) –tekoälykeskustelu"
       ],
       "Private photo backup": [
         "Yksityinen kuvien varmuuskopiointi"
@@ -8520,6 +8627,9 @@
         "Holvin jakaminen enintään ${ n } henkilölle",
         "Holvin jakaminen enintään ${ n } henkilölle"
       ],
+      "VPN with ad-blocker and malware protection": [
+        "VPN mainos- ja haittaohjelmaestolla"
+      ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skannaamme pimeää verkkoa tarkistaaksemme, onko ${ BRAND_NAME } -osoitteesi tai -aliaksesi vuotaneet ja hälytämme välittömästi, jos löydämme jotain."
       ]
@@ -8556,6 +8666,9 @@
     "new_plans: info": {
       "${ brand } ending in ${ last4 }": [
         "${ brand }, päättyy ${ last4 }"
+      ],
+      "1 TB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
+        "1 Tt pilvitallennustilaa, jolla voit tallentaa, synkronoida ja jakaa tiedostoja helposti. Suojattu päästä päähän -salauksella."
       ],
       "200 GB of cloud storage that lets you store, sync and share files easily. Secured by end-to-end encryption.": [
         "200 Gt pilvitallennustilaa jolla voit säilyttää, synkronoida ja jakaa tiedostoja helposti. Suojattu päästä päähän -salauksella."
@@ -8607,6 +8720,9 @@
       ],
       "Protect sensitive business information and collaborate securely.": [
         "Suojaa arkaluonteiset yritystiedot ja yhteiskäytä turvallisesti."
+      ],
+      "Protect your family with all premium features of ${ plusTitle } for 6 users.": [
+        "Suojaa perheesi kaikilla ${ plusTitle } premium-ominaisuuksilla kuudelle käyttäjälle."
       ],
       "Protect your family’s privacy with all ${ BRAND_NAME } services combined.": [
         "Suojaa perheesi yksityisyyttä kaikkien ${ BRAND_NAME } -palveluiden yhdistelmällä."
@@ -8933,38 +9049,50 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" copied": [
+        "\"${ ellipsedName }\" kopioitu"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "\"${ ellipsedName }\" luotiin"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "\"${ ellipsedName }\" poistettiin"
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "\"${ ellipsedName }\" poistettiin roskakorista pysyvästi"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "Kohteen \"${ ellipsedName }\" luonti epäonnistui"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "Kohteen \"${ ellipsedName }\" poisto epäonnistui"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "Kohteen \"${ ellipsedName }\" pysyvä poisto roskakorista epäonnistui"
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "Kohteen \"${ ellipsedName }\" siirto epäonnistui"
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "Kohteen \"${ ellipsedName }\" palautus roskakorista epäonnistui"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" siirretty"
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "\"${ ellipsedName }\" palautettiin roskakorista"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "\"${ ellipsedName }\" siirrettiin"
+      ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" jaettiin"
-      ],
-      "\"${ name }\" created successfully": [
-        "\"${ name }\" luotiin"
-      ],
-      "\"${ name }\" deleted": [
-        "\"${ name }\" poistettiin"
       ],
       "\"${ name }\" deleted permanently": [
         "\"${ name }\" poistettu pysyvästi"
       ],
-      "\"${ name }\" deleted permanently from trash": [
-        "\"${ name }\" poistettiin roskakorista pysyvästi"
-      ],
-      "\"${ name }\" failed to be created": [
-        "Kohteen \"${ name }\" luonti epäonnistui"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "Kohteen \"${ name }\" poisto epäonnistui"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "Kohteen \"${ name }\" pysyvä poisto roskakorista epäonnistui"
-      ],
-      "\"${ name }\" failed to be moved": [
-        "Kohteen \"${ name }\" siirto epäonnistui"
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "Kohteen \"${ name }\" siirto roskakoriin epäonnistui"
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "Kohteen \"${ name }\" palautus roskakorista epäonnistui"
       ],
       "\"${ name }\" failed to be saved": [
         "Kohteen \"${ name }\" tallennus epäonnistui"
@@ -8972,14 +9100,8 @@
       "\"${ name }\" moved to trash": [
         "\"${ name }\" siirrettiin roskakoriin"
       ],
-      "\"${ name }\" restored from trash": [
-        "\"${ name }\" palautettiin roskakorista"
-      ],
       "\"${ name }\" saved successfully": [
         "\"${ name }\" tallennettiin"
-      ],
-      "\"${ name }\" successfully moved": [
-        "\"${ name }\" siirrettiin"
       ],
       "\"${ newName }\" failed to be renamed": [
         "Kohteen \"${ newName }\" uudelleennimeäminen epäonnistui"
@@ -8990,6 +9112,10 @@
       "${ count } item failed to be decrypted": [
         "${ count } kohteen salauksen purku epäonnistui",
         "${ count } kohteen salauksen purku epäonnistui"
+      ],
+      "${ errors.length } item failed to be copied": [
+        "${ errors.length } kohteen kopiointi epäonnistui",
+        "${ errors.length } kohteiden kopiointi epäonnistui"
       ],
       "${ errors.length } item failed to be deleted": [
         "${ errors.length } kohteen poisto epäonnistui",
@@ -9010,6 +9136,14 @@
       "${ nbSuccesses } photo have been removed from \"${ albumLink.name }\"": [
         "${ nbSuccesses } valokuva poistettiin albumista \"${ albumLink.name }\"",
         "${ nbSuccesses } valokuvaa poistettiin albumista \"${ albumLink.name }\""
+      ],
+      "${ numberOfItems } copied item moved to trash": [
+        "${ numberOfItems } kopioitu kohde siirrettiin roskakoriin",
+        "${ numberOfItems } kopioidut kohteet siirrettiin roskakoriin"
+      ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems } kohde kopioitu",
+        "${ numberOfItems } kohdetta kopioitu"
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } kohde poistettu",
@@ -9038,6 +9172,10 @@
       "${ numberOfItems } item failed to be restored from trash": [
         "${ numberOfItems } kohteen palautus roskakorista epäonnistui",
         "${ numberOfItems } kohteen palautus roskakorista epäonnistui"
+      ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } kohde siirretty",
+        "${ numberOfItems } kohdetta siirretty"
       ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } kohde siirrettiin roskakoriin",
@@ -9069,6 +9207,9 @@
       "Album renamed successfully": [
         "Albumi nimettiin uudelleen"
       ],
+      "All items deleted permanently from trash": [
+        "Kaikki kohteet poistettu pysyvästi roskakorista"
+      ],
       "An invitation has been sent": [
         "Kutsu on lähetetty"
       ],
@@ -9083,6 +9224,9 @@
       ],
       "Contact group updated": [
         "Yhteystietoryhmä päivitettiin"
+      ],
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "Kopio tiedostosta \"${ ellipsedName }\" siirrettiin roskakoriin"
       ],
       "Device failed to be removed": [
         "Laitteen poisto epäonnistui"
@@ -9357,6 +9501,9 @@
       ],
       "Storage": [
         "Tallennustila"
+      ],
+      "Ultrafast VPN servers in 110+ countries": [
+        "Huippunopeat VPN-yhteydet yli 110 maassa"
       ]
     },
     "Onboarding": {
@@ -9516,6 +9663,12 @@
       ]
     },
     "Onboarding Trial": {
+      "Cancel anytime before ${ cancelDate }.": [
+        "Peru koska tahansa ennen ${ cancelDate }."
+      ],
+      "Cancel anytime before then.": [
+        "Peruuta koska vain ennen sitä."
+      ],
       "contact our support team": [
         "ota yhteyttä tukeen"
       ],
@@ -9695,6 +9848,9 @@
       ]
     },
     "Payments": {
+      "${ formattedPrice } (excl. tax)": [
+        "${ formattedPrice } (poislukien VAT)"
+      ],
       "${ rate }% tax: ${ taxAmountElement }": [
         "${ rate }% vero: ${ taxAmountElement }"
       ],
@@ -9718,6 +9874,9 @@
       ],
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Et voi muuttaa tai peruuttaa tilaustasi tänä aikana. Odota, kunnes maksusi on suoritettu, ennen kuin yrität tehdä muutoksia. Kiitos kärsivällisyydestäsi."
+      ],
+      "Edit billing address": [
+        "Muokkaa laskutusosoitetta"
       ],
       "Got it": [
         "Selvä"
@@ -9895,6 +10054,9 @@
       ]
     },
     "Payments.Saved payment method details": {
+      "Apple Pay - card ending in ${ paymentMethod.Details.Last4 }": [
+        "Apple Pay - kortti, jonka viimeiset numerot ovat ${ paymentMethod.Details.Last4 }"
+      ],
       "Google Pay - card ending in ${ paymentMethod.Details.Last4 }": [
         "Google Pay - kortti, jonka viimeiset numerot ovat ${ paymentMethod.Details.Last4 }"
       ]
@@ -10105,6 +10267,9 @@
       ]
     },
     "plus_block": {
+      "More ${ BRAND_NAME } services.${ br }One easy subscription.": [
+        "Lisää ${ BRAND_NAME }in palveluita.${ br }Yksi helppo tilaus."
+      ],
       "Upgrade to ${ upsellPlanTitle }": [
         "Päivitä ${ upsellPlanTitle } -tilaukseen"
       ]
@@ -10178,6 +10343,9 @@
       ],
       "Google Workspace": [
         "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
       ],
       "Outlook": [
         "Outlook"
@@ -10482,6 +10650,18 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Sinulla on ${ timeRemaining.inDays } päivä aikaa nollata salasanasi.",
         "Sinulla on ${ timeRemaining.inDays } päivää aikaa nollata salasanasi."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Sinulla on ${ timeRemaining.inHours } tunti aikaa nollata salasanasi.",
+        "Sinulla on ${ timeRemaining.inHours } tuntia aikaa nollata salasanasi."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Sinulla on ${ timeRemaining.inMinutes } minuutti aikaa nollata salasanasi.",
+        "Sinulla on ${ timeRemaining.inMinutes } minuuttia aikaa nollata salasanasi."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Sinulla on ${ timeRemaining.inSeconds } sekunti aikaa nollata salasanasi.",
+        "Sinulla on ${ timeRemaining.inSeconds } sekuntia aikaa nollata salasanasi."
       ]
     },
     "session_recovery:available:link": {
@@ -10616,6 +10796,9 @@
       ],
       "Open in ${ appName }": [
         "Avaa ${ appName } -sovelluksessa"
+      ],
+      "Open in ${ appName } (Beta)": [
+        "Avaa ${ appName } sovelluksessa (Beta)"
       ]
     },
     "Signing preference for emails": {
@@ -10709,6 +10892,9 @@
     "specialoffer: Link": {
       "Browse securely": [
         "Selaa turvallisesti"
+      ],
+      "Do more with ${ BRAND_NAME }": [
+        "Tee enemmäm ${ BRAND_NAME }lla"
       ],
       "Get unlimited aliases": [
         "Hanki aliaksia rajattomasti"
@@ -10807,6 +10993,9 @@
     "specialoffer: Title": {
       "Access content on streaming services worldwide": [
         "Maailmanlaajuinen pääsy suoratoistopalveluihin"
+      ],
+      "Get unlimited aliases to protect your identity and reduce spam": [
+        "Hanki rajattomasti aliaksia suojellaksesi henkilöllisyyttäsi ja vähentääksesi roskapostia."
       ],
       "Upgrade and save more with 2 years of ${ planName }": [
         "Päivitä tilauksesi ja säästä enemmän kahden vuoden ${ planName } -tilauksella"
@@ -11436,9 +11625,6 @@
       "Billing details updated": [
         "Laskutustiedot päivitetty"
       ],
-      "Billing information updated": [
-        "Laskutustiedot päivitetty"
-      ],
       "Canceling import": [
         "Perutaan tuontia"
       ],
@@ -11723,6 +11909,9 @@
       "Addresses": [
         "Osoitteet"
       ],
+      "Advanced details": [
+        "Tarkemmat yksityiskohdat"
+      ],
       "Album": [
         "Albumi"
       ],
@@ -11940,8 +12129,14 @@
       "Diagnostics": [
         "Diagnostiikka"
       ],
+      "Digital signature partially verified. This file was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Sähköinen allekirjoitus vahvistettu osittain. Tämä tiedosto on luotu julkisella jakolinkillä sellaisen käyttäjän toimesta, jolla ei ole ${ BRAND_NAME } -tiliä, joten hänen henkilöllisyyttään ei voida vahvistaa."
+      ],
       "Digital signature partially verified. This folder was created using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
         "Sähköinen allekirjoitus vahvistettu osittain. Tämä kansio on luotu julkisella jakolinkillä sellaisen käyttäjän toimesta, jolla ei ole ${ BRAND_NAME } -tiliä, joten hänen henkilöllisyyttään ei voida vahvistaa."
+      ],
+      "Digital signature partially verified. This folder was uploaded using a publicly accessible share link by a user without a ${ BRAND_NAME } account, so their identity cannot be verified.": [
+        "Sähköinen allekirjoitus vahvistettu osittain. Tämä kansio on jaettu julkisella jakolinkillä sellaisen käyttäjän toimesta, jolla ei ole ${ BRAND_NAME } -tiliä, joten hänen henkilöllisyyttään ei voida vahvistaa."
       ],
       "Discard": [
         "Hylätään"
@@ -12599,6 +12794,12 @@
       ],
       "We couldn’t verify that <strong>${ emailAddress }</strong> created this file.": [
         "Emme pystyneet vahvistamaan, että <strong>${ emailAddress }</strong> loi tämän tiedoston."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> created this folder.": [
+        "Emme pystyneet vahvistamaan, että <strong>${ emailAddress }</strong> loi tämän kansion."
+      ],
+      "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this file.": [
+        "Emme pystyneet vahvistamaan, että <strong>${ emailAddress }</strong> latasi tämän tiedoston."
       ],
       "We couldn’t verify that an anonymous user created this file.": [
         "Emme pystyneet vahvistamaan, että nimetön käyttäjä loi tämän tiedoston."

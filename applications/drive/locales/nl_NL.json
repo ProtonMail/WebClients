@@ -539,8 +539,8 @@
       "Go back": [
         "Ga terug"
       ],
-      "Go back to album “${ albumName }“": [
-        "Ga terug naar album “${ albumName }“"
+      "Go back to album “${ ellipsedAlbumName }“": [
+        "Ga terug naar album “${ ellipsedAlbumName }“"
       ],
       "Go to ${ planOrAppName }": [
         "Ga naar ${ planOrAppName }"
@@ -3504,6 +3504,9 @@
       "Failed to load signature details, please try again later": [
         "Kon details van de handtekening worden geladen, probeer het later opnieuw"
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Kon de gegevens van uw abonnement niet laden, probeer het later opnieuw."
+      ],
       "Failed to load the STL preview": [
         "Fout bij het laden van de STL-preview"
       ],
@@ -5912,6 +5915,18 @@
       ],
       "Most public WiFi networks are safe, but some lack security, exposing you to cyber threats. A VPN encrypts your traffic, keeping you protected.": [
         "De meeste openbare wifi-netwerken zijn veilig, maar sommige zijn onveilig, waardoor u wordt blootgesteld aan cyberbedreigingen. Een VPN versleutelt uw verkeer en houdt u beschermd."
+      ],
+      "Move ${ dragCount } item": [
+        "Verplaats ${ dragCount } item",
+        "Verplaats ${ dragCount } items"
+      ],
+      "Move ${ fileCount } file": [
+        "Verplaats ${ fileCount } bestand",
+        "Verplaats ${ fileCount } bestanden"
+      ],
+      "Move ${ folderCount } folder": [
+        "Verplaats ${ folderCount } map",
+        "Verplaats ${ folderCount } mappen"
       ],
       "Moving files": [
         "Bestanden verplaatsen"
@@ -9299,38 +9314,50 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" copied": [
+        "\"${ ellipsedName }\" gekopieerd"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "\"${ ellipsedName }\" succesvol aangemaakt"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "\"${ ellipsedName }\" verwijderd"
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "\"${ ellipsedName }\" permanent verwijderd uit de prullenbak"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "\"${ ellipsedName }\" kon niet aangemaakt worden"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "\"${ ellipsedName }\" kon niet verwijderd worden"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "\"${ ellipsedName }\" kon niet permanent verwijderd worden uit prullenbak"
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "\"${ ellipsedName }\" kon niet verplaatst worden"
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "\"${ ellipsedName }\" kon niet hersteld worden uit prullenbak"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" verplaatst"
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "\"${ ellipsedName }\" hersteld uit de prullenbak"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "\"${ ellipsedName }\" succesvol verplaatst"
+      ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" gedeeld"
-      ],
-      "\"${ name }\" created successfully": [
-        "\"${ name }\" succesvol aangemaakt"
-      ],
-      "\"${ name }\" deleted": [
-        "\"${ name }\" verwijderd"
       ],
       "\"${ name }\" deleted permanently": [
         "\"${ name }\" permanent verwijderd"
       ],
-      "\"${ name }\" deleted permanently from trash": [
-        "\"${ name }\" permanent verwijderd uit de prullenbak"
-      ],
-      "\"${ name }\" failed to be created": [
-        "\"${ name }\" kon niet aangemaakt worden"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "\"${ name }\" kon niet verwijderd worden"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "\"${ name }\" konden niet permanent verwijderd worden uit prullenbak"
-      ],
-      "\"${ name }\" failed to be moved": [
-        "\"${ name }\" kon niet verplaatst worden"
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "\"${ name }\" kon niet verplaatst worden naar prullenbak"
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "\"${ name }\" kon niet hersteld worden uit prullenbak"
       ],
       "\"${ name }\" failed to be saved": [
         "\"${ name }\" kon niet worden opgeslagen"
@@ -9338,17 +9365,8 @@
       "\"${ name }\" moved to trash": [
         "\"${ name }\" verplaatst naar de prullenbak"
       ],
-      "\"${ name }\" restored from trash": [
-        "\"${ name }\" uit de prullenbak hersteld"
-      ],
       "\"${ name }\" saved successfully": [
         "\"${ name }\" succesvol aangemaakt"
-      ],
-      "\"${ name }\" successfully copied": [
-        "\"${ name }\" succesvol gekopieerd"
-      ],
-      "\"${ name }\" successfully moved": [
-        "\"${ name }\" succesvol verplaatst"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\" kon niet worden hernoemd"
@@ -9392,6 +9410,10 @@
         "${ numberOfItems } gekopieerd item verplaatst naar de prullenbak",
         "${ numberOfItems } gekopieerde items verplaatst naar de prullenbak"
       ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems } item gekopieerd",
+        "${ numberOfItems } items gekopieerd"
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } item verwijderd",
         "${ numberOfItems } items verwijderd"
@@ -9420,6 +9442,10 @@
         "${ numberOfItems } item kon niet hersteld worden uit prullenbak",
         "${ numberOfItems } items konden niet hersteld worden uit prullenbak"
       ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } item verplaatst",
+        "${ numberOfItems } items verplaatst"
+      ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } item verplaatst naar de prullenbak",
         "${ numberOfItems } items verplaatst naar de prullenbak"
@@ -9427,10 +9453,6 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } item hersteld uit prullenbak",
         "${ numberOfItems } items hersteld uit prullenbak"
-      ],
-      "${ numberOfItems } item successfully copied": [
-        "${ numberOfItems } item succesvol gekopieerd",
-        "${ numberOfItems } items succesvol gekopieerd"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } item succesvol verplaatst",
@@ -9472,8 +9494,8 @@
       "Contact group updated": [
         "Contactgroep bijgewerkt"
       ],
-      "Copy of \"${ name }\" moved to trash": [
-        "Kopie van \"${ name }\" verplaatst naar de prullenbak"
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "Kopie van \"${ ellipsedName }\" verplaatst naar de prullenbak"
       ],
       "Device failed to be removed": [
         "Apparaat kon niet worden verwijderd"
@@ -10172,6 +10194,9 @@
       ],
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Gedurende deze periode kunt u uw abonnement niet wijzigen of annuleren. Wacht tot uw betaling is voltooid voordat u wijzigingen aanbrengt. Bedankt voor uw geduld."
+      ],
+      "Edit billing address": [
+        "Factuuradres bewerken"
       ],
       "Got it": [
         "Begrepen"
@@ -11980,9 +12005,6 @@
         "Alias opgeslagen en gekopieerd"
       ],
       "Billing details updated": [
-        "Factuurgegevens bijgewerkt"
-      ],
-      "Billing information updated": [
         "Factuurgegevens bijgewerkt"
       ],
       "Canceling import": [

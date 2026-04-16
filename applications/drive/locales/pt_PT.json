@@ -470,9 +470,6 @@
       "Go back": [
         "Voltar"
       ],
-      "Go back to album “${ albumName }“": [
-        "Voltar ao álbum «${ albumName }»"
-      ],
       "Go to ${ planOrAppName }": [
         "Ir para ${ planOrAppName }"
       ],
@@ -8138,32 +8135,8 @@
       ]
     },
     "Notification": {
-      "\"${ name }\" created successfully": [
-        "\"${ name }\" criado"
-      ],
-      "\"${ name }\" deleted": [
-        "«${ name }» foi eliminado."
-      ],
-      "\"${ name }\" deleted permanently from trash": [
-        "\"${ name }\" permanentemente eliminado do lixo"
-      ],
-      "\"${ name }\" failed to be created": [
-        "Erro ao criar \"${ name }\""
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "Erro ao eliminar «${ name }»"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "Erro ao eliminar \"${ name }\" permanentemente do lixo"
-      ],
-      "\"${ name }\" failed to be moved": [
-        "Erro ao mover \"${ name }\""
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "Erro ao mover \"${ name }\" para o lixo"
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "Erro ao restaurar \"${ name }\" do lixo"
       ],
       "\"${ name }\" failed to be saved": [
         "Erro ao guardar \"${ name }\""
@@ -8171,14 +8144,8 @@
       "\"${ name }\" moved to trash": [
         "\"${ name }\" movido para o lixo"
       ],
-      "\"${ name }\" restored from trash": [
-        "\"${ name }\" restaurado do lixo"
-      ],
       "\"${ name }\" saved successfully": [
         "\"${ name }\" guardado"
-      ],
-      "\"${ name }\" successfully moved": [
-        "\"${ name }\" movido"
       ],
       "\"${ newName }\" failed to be renamed": [
         "Erro ao renomear \"${ newName }\""

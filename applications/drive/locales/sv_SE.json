@@ -539,9 +539,6 @@
       "Go back": [
         "Gå tillbaka"
       ],
-      "Go back to album “${ albumName }“": [
-        "Gå tillbaka till album “${ albumName }“"
-      ],
       "Go to ${ planOrAppName }": [
         "Gå till ${ planOrAppName }"
       ],
@@ -3020,6 +3017,9 @@
       "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
         "För att fortsätta ta emot och skicka Gmail-meddelanden i ${ BRAND_NAME }, återanslut ditt konto."
       ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Om du vill fortsätta ta emot och skicka Gmail-meddelanden i ${ BRAND_NAME }, återanslut dina konton."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "För att säkerställa högsta möjliga säkerhet för ditt konto, ställ in en återställningsfras."
       ],
@@ -3507,6 +3507,9 @@
       "Failed to load signature details, please try again later": [
         "Misslyckades att ladda signaturdetaljer, försök igen senare"
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Misslyckades med att ladda prenumerationsdata. Försök igen senare."
+      ],
       "Failed to load the STL preview": [
         "Misslyckades att ladda STL-förhandsgranskningen"
       ],
@@ -3763,6 +3766,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Vissa av dina etikettnamn överskrider ${ MAIL_APP_NAME }s maximalt antal tillåtna tecken. Anpassa importen för att redigera dessa namn."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Något gick fel vid hämtning av tillgängliga domäner"
       ],
       "Something went wrong with search. Please try again later.": [
         "Något gick fel med sökning. Försök igen senare."
@@ -9275,38 +9281,44 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" copied": [
+        "”${ ellipsedName }” kopierad"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "”${ ellipsedName }” borttaget"
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "”${ ellipsedName }” togs bort permanent från papperskorg"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "“${ ellipsedName }“ misslyckades att tas bort"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "”${ ellipsedName }” misslyckades att tas bort permanent från papperskorg"
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "”${ ellipsedName }” misslyckades att flyttas"
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "”${ ellipsedName }” misslyckades att återställas från papperskorg"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "”${ ellipsedName }” flyttad"
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "”${ ellipsedName }” återställd från papperskorg"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "”${ ellipsedName }” flyttades utan problem"
+      ],
       "\"${ fileName }\" shared": [
         "”${ fileName }” delad"
-      ],
-      "\"${ name }\" created successfully": [
-        "“${ name }“ skapades utan problem"
-      ],
-      "\"${ name }\" deleted": [
-        "“${ name }“ borttagen"
       ],
       "\"${ name }\" deleted permanently": [
         "“${ name }“ borttaget permanent"
       ],
-      "\"${ name }\" deleted permanently from trash": [
-        "“${ name }“ togs bort permanent från papperskorg"
-      ],
-      "\"${ name }\" failed to be created": [
-        "“${ name }“ misslyckades att skapas"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "“${ name }“ misslyckades att tas bort"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "“${ name }“ misslyckades att tas bort permanent från papperskorg"
-      ],
-      "\"${ name }\" failed to be moved": [
-        "“${ name }“ misslyckades att flyttas"
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "“${ name }“ misslyckades att flyttas till papperskorg"
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "“${ name }“ misslyckades att återställas från papperskorg"
       ],
       "\"${ name }\" failed to be saved": [
         "”${ name }” kunde inte sparas"
@@ -9314,17 +9326,8 @@
       "\"${ name }\" moved to trash": [
         "“${ name }“ flyttades till papperskorgen"
       ],
-      "\"${ name }\" restored from trash": [
-        "“${ name }“ återställd från papperskorg"
-      ],
       "\"${ name }\" saved successfully": [
         "”${ name }” har sparats"
-      ],
-      "\"${ name }\" successfully copied": [
-        "”${ name }” kopierades"
-      ],
-      "\"${ name }\" successfully moved": [
-        "“${ name }“ flyttades utan problem"
       ],
       "\"${ newName }\" failed to be renamed": [
         "“${ newName }“ misslyckades att namnändras"
@@ -9339,6 +9342,10 @@
       "${ errors.length } item failed to be copied": [
         "${ errors.length } objekt misslyckades att kopieras",
         "${ errors.length } objekt misslyckades att kopieras"
+      ],
+      "${ errors.length } item failed to be deleted": [
+        "${ errors.length } objekt misslyckades att tas bort",
+        "${ errors.length } objekt misslyckades att tas bort"
       ],
       "${ errors.length } item failed to be trashed": [
         "${ errors.length } objekt misslyckades att flyttas till papperskorg",
@@ -9363,6 +9370,10 @@
       "${ numberOfItems } copied item moved to trash": [
         "${ numberOfItems } kopierat objekt flyttades till papperskorg",
         "${ numberOfItems } kopierade objekt flyttades till papperskorg"
+      ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems } objekt kopierat",
+        "${ numberOfItems } objekt kopierade"
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } objekt borttaget",
@@ -9392,6 +9403,10 @@
         "“${ numberOfItems }“ fil misslyckades att återställas från papperskorgen",
         "“${ numberOfItems }“ filer misslyckades att återställas från papperskorgen"
       ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } objekt flyttat",
+        "${ numberOfItems } objekt flyttade"
+      ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } objekt flyttades till papperskorgen",
         "${ numberOfItems } objekt flyttades till papperskorgen"
@@ -9399,10 +9414,6 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } objekt återställdes från papperskorg",
         "${ numberOfItems } objekt återställdes från papperskorg"
-      ],
-      "${ numberOfItems } item successfully copied": [
-        "${ numberOfItems } objekt kopierades",
-        "${ numberOfItems } objekt kopierades"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } objekt har flyttats",
@@ -9444,8 +9455,8 @@
       "Contact group updated": [
         "Kontaktgrupp uppdaterad"
       ],
-      "Copy of \"${ name }\" moved to trash": [
-        "Kopia av “${ name }“ flyttades till papperskorg"
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "Kopia av “${ ellipsedName }“ flyttades till papperskorg"
       ],
       "Device failed to be removed": [
         "Enhet kunde inte tas bort"
@@ -10147,6 +10158,9 @@
       ],
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Under denna tid kommer du inte att kunna ändra eller säga upp din prenumeration. Vänta tills din betalning är slutförd innan du försöker göra några ändringar. Tack för ditt tålamod."
+      ],
+      "Edit billing address": [
+        "Redigera faktureringsadress"
       ],
       "Got it": [
         "Jag förstår"
@@ -11947,9 +11961,6 @@
       ],
       "Billing details updated": [
         "Faktureringsuppgifterna har uppdaterats"
-      ],
-      "Billing information updated": [
-        "Faktureringsinformation uppdaterad"
       ],
       "Canceling import": [
         "Avbryter import"
