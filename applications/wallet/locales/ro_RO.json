@@ -2325,6 +2325,9 @@
       "Error connecting to the Bitcoin API.": [
         "Eroare de conectare la Bitcoin API."
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Eșuare la încărcarea datelor abonamentului. Reîncercați mai târziu."
+      ],
       "Incorrect username": [
         "Nume de utilizator incorect."
       ],
@@ -4771,6 +4774,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "În acest timp, nu vă veți putea modifica sau anula abonamentul. Vă rugăm să așteptați până când plata este finalizată înainte de a încerca orice modificare. Vă mulțumim pentru răbdare."
       ],
+      "Edit billing address": [
+        "Editați adresa de facturare"
+      ],
       "Got it": [
         "Am înțeles"
       ],
@@ -5523,9 +5529,6 @@
     "Success": {
       "Billing details updated": [
         "Detaliile de facturare s-au actualizat"
-      ],
-      "Billing information updated": [
-        "Informațiile de facturare s-au actualizat."
       ],
       "Code sent to ${ methodTo }": [
         "Cod trimis la ${ methodTo }"
