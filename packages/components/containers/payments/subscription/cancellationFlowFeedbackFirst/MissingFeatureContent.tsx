@@ -7,10 +7,9 @@ import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getBlogURL } from '@proton/shared/lib/helpers/url';
+import bell from '@proton/styles/assets/img/illustrations/bell.svg';
+import inkPen from '@proton/styles/assets/img/illustrations/ink-pen.svg';
 import clsx from '@proton/utils/clsx';
-
-import bell from './assets/img-bell.svg';
-import pencil from './assets/img-pencil.svg';
 
 interface Props {
     onKeepPlan: () => void;
@@ -20,7 +19,7 @@ interface Props {
 export const MissingFeatureContent = ({ onKeepPlan, onContinueCancelling }: Props) => {
     const cards = [
         {
-            image: bell,
+            image: inkPen,
             title: c('Missing feature').t`Submit your ideas`,
             description: c('Missing feature')
                 .t`Request a feature or vote on ideas from other users in our feedback forum.`,
@@ -28,7 +27,7 @@ export const MissingFeatureContent = ({ onKeepPlan, onContinueCancelling }: Prop
             ctaHref: 'https://protonmail.uservoice.com/',
         },
         {
-            image: pencil,
+            image: bell,
             title: c('Missing feature').t`Check out the latest product updates`,
             description: c('Missing feature').t`See how ${BRAND_NAME} apps are evolving with your feedback.`,
             ctaText: c('Missing feature').t`Explore the latest news`,
