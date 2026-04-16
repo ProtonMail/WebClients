@@ -5,14 +5,69 @@ import { sendErrorReport } from '../../../../utils/errorHandling';
 import { getNotificationsManager } from '../../../notifications';
 import { Logger } from './Logger';
 
-export function sendErrorReportForSearch(error: Error | unknown, additionalContext?: Partial<ScopeContext>) {
-    sendErrorReport(error, {
+// Sentry is not installed on the sharedworker.
+// This channel is used to forward errors from the sharedworker to the main thread for Sentry reporting.
+const ERROR_CHANNEL = 'search-module-errors';
+const isWorker = typeof SharedWorkerGlobalScope !== 'undefined';
+
+/** Errror payload sent over BroadcastChannel from the SharedWorker to the main thread. */
+type WorkerErrorMessage = {
+    error: Error;
+    context: Partial<ScopeContext>;
+};
+
+/**
+ * Logs a search error and reports it to Sentry.
+ *
+ * Automatically calls Logger.error() with the provided message, so callers
+ * don't need to log separately.
+ *
+ * In the SharedWorker, errors are forwarded to the main thread via BroadcastChannel
+ * because Sentry is only initialized on the main thread.
+ * Call `listenForWorkerErrors()` once on the main thread to subscribe.
+ */
+export function sendErrorReportForSearch(
+    message: string,
+    error: Error | unknown,
+    additionalContext?: Partial<ScopeContext>
+) {
+    Logger.error(message, error);
+
+    // Normalize into a proper Error and build a shared Sentry context
+    // so both the worker (BroadcastChannel) and main-thread paths report identical metadata.
+    const normalizedError = error instanceof Error ? error : new Error(String(error));
+    const context: Partial<ScopeContext> = {
         ...additionalContext,
-        tags: {
-            component: 'search',
-            ...additionalContext?.tags,
-        },
-    });
+        extra: { message, ...additionalContext?.extra },
+        tags: { component: 'search', ...additionalContext?.tags },
+    };
+
+    if (isWorker) {
+        try {
+            const channel = new BroadcastChannel(ERROR_CHANNEL);
+            channel.postMessage({ error: normalizedError, context } satisfies WorkerErrorMessage);
+            channel.close();
+        } catch (e) {
+            // BroadcastChannel can fail if the worker is shutting down.
+            Logger.error('Failed to forward error report via BroadcastChannel', e);
+        }
+        return;
+    }
+
+    sendErrorReport(normalizedError, context);
+}
+
+/**
+ * Call once on the main thread to forward worker error reports to Sentry.
+ */
+export function listenForWorkerErrors() {
+    if (isWorker) {
+        return;
+    }
+    const channel = new BroadcastChannel(ERROR_CHANNEL);
+    channel.onmessage = (e: MessageEvent<WorkerErrorMessage>) => {
+        sendErrorReport(e.data.error, e.data.context);
+    };
 }
 
 export function isAbortError(e: unknown): boolean {
@@ -169,8 +224,7 @@ export function tryCatchWithNotification<T>(fn: () => T | Promise<T>): () => Pro
         try {
             return await fn();
         } catch (error) {
-            Logger.error('Search error', error);
-            sendErrorReportForSearch(error);
+            sendErrorReportForSearch('Search error', error);
 
             // TODO: Handle more error types.
             const text = isQuotaExceededError(error)
