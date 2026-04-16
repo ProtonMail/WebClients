@@ -8,6 +8,20 @@ import { IcMeetCameraOff } from '@proton/icons/icons/IcMeetCameraOff';
 import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
 import { IcMeetRotateCamera } from '@proton/icons/icons/IcMeetRotateCamera';
 import type { IconSize } from '@proton/icons/types';
+import { useMeetSelector } from '@proton/meet/store/hooks';
+import {
+    selectCameraPermission,
+    selectCameraState,
+    selectCameras,
+    selectInitialCameraState,
+    selectMicrophonePermission,
+    selectMicrophoneState,
+    selectMicrophones,
+    selectSpeakerState,
+    selectSpeakers,
+} from '@proton/meet/store/slices/deviceManagementSlice';
+import type { SerializableDeviceInfo } from '@proton/meet/utils/deviceUtils';
+import { filterDevices, isDefaultDevice, resolveDevice } from '@proton/meet/utils/deviceUtils';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 import clsx from '@proton/utils/clsx';
 
@@ -16,7 +30,6 @@ import { useMediaManagementContext } from '../../contexts/MediaManagementProvide
 import { useDeviceLoading } from '../../hooks/useDeviceLoading';
 import { useIsLargerThanMd } from '../../hooks/useIsLargerThanMd';
 import { supportsSetSinkId } from '../../utils/browser';
-import { filterDevices, isDefaultDevice, resolveDevice } from '../../utils/device-utils';
 import { getParticipantDisplayColorsByIndex } from '../../utils/participantDisplayColors/getParticipantDisplayColorsByIndex';
 import { AudioSettingsDropdown } from '../AudioSettings/AudioSettingsDropdown';
 import { DeviceSelect } from '../DeviceSelect/DeviceSelect';
@@ -32,15 +45,12 @@ interface DeviceSettingsProps {
     isMicrophoneEnabled: boolean;
     onCameraToggle: () => void;
     onMicrophoneToggle: () => void;
-    cameras: MediaDeviceInfo[];
-    microphones: MediaDeviceInfo[];
-    speakers: MediaDeviceInfo[];
     selectedCameraId: string;
     selectedMicrophoneId: string;
     selectedAudioOutputDeviceId: string;
-    onCameraChange: (camera: MediaDeviceInfo, isDefaultDevice: boolean) => Promise<void>;
-    onMicrophoneChange: (microphone: MediaDeviceInfo, isDefaultDevice: boolean) => Promise<void>;
-    onAudioOutputDeviceChange: (speaker: MediaDeviceInfo, isDefaultDevice: boolean) => Promise<void>;
+    onCameraChange: (camera: SerializableDeviceInfo, isDefaultDevice: boolean) => Promise<void>;
+    onMicrophoneChange: (microphone: SerializableDeviceInfo, isDefaultDevice: boolean) => Promise<void>;
+    onAudioOutputDeviceChange: (speaker: SerializableDeviceInfo, isDefaultDevice: boolean) => Promise<void>;
     displayName: string;
     colorIndex: number;
     isLoading: boolean;
@@ -53,9 +63,6 @@ export const DeviceSettings = ({
     isMicrophoneEnabled,
     onCameraToggle,
     onMicrophoneToggle,
-    cameras,
-    microphones,
-    speakers,
     selectedCameraId,
     selectedMicrophoneId,
     selectedAudioOutputDeviceId,
@@ -66,15 +73,16 @@ export const DeviceSettings = ({
     colorIndex,
     isLoading,
 }: DeviceSettingsProps) => {
-    const {
-        devicePermissions: { camera, microphone },
-        handleRotateCamera,
-        initialCameraState,
-        facingMode,
-        cameraState,
-        microphoneState,
-        speakerState,
-    } = useMediaManagementContext();
+    const camera = useMeetSelector(selectCameraPermission);
+    const microphone = useMeetSelector(selectMicrophonePermission);
+    const initialCameraState = useMeetSelector(selectInitialCameraState);
+    const cameraState = useMeetSelector(selectCameraState);
+    const microphoneState = useMeetSelector(selectMicrophoneState);
+    const speakerState = useMeetSelector(selectSpeakerState);
+    const cameras = useMeetSelector(selectCameras);
+    const microphones = useMeetSelector(selectMicrophones);
+    const speakers = useMeetSelector(selectSpeakers);
+    const { handleRotateCamera, facingMode } = useMediaManagementContext();
 
     const noCameraPermission = camera !== 'granted';
     const noMicrophonePermission = microphone !== 'granted';

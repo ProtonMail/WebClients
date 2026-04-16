@@ -1,11 +1,20 @@
 import { type RefObject, useMemo } from 'react';
 
 import type { PopperPosition } from '@proton/components/components/popper/interface';
+import { useMeetSelector } from '@proton/meet/store/hooks';
+import {
+    selectMicrophoneState,
+    selectMicrophones,
+    selectSelectedAudioOutputId,
+    selectSelectedMicrophoneId,
+    selectSpeakerState,
+    selectSpeakers,
+} from '@proton/meet/store/slices/deviceManagementSlice';
+import { filterDevices, isDefaultDevice } from '@proton/meet/utils/deviceUtils';
 
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
 import { useDeviceLoading } from '../../hooks/useDeviceLoading';
 import { supportsSetSinkId } from '../../utils/browser';
-import { filterDevices, isDefaultDevice } from '../../utils/device-utils';
 import { AudioSettingsDropdown } from './AudioSettingsDropdown';
 
 interface AudioSettingsProps {
@@ -15,17 +24,13 @@ interface AudioSettingsProps {
 }
 
 export const AudioSettings = ({ anchorRef, onClose, anchorPosition }: AudioSettingsProps) => {
-    const {
-        selectedMicrophoneId: audioDeviceId,
-        selectedAudioOutputDeviceId: audioOutputDeviceId,
-        microphoneState,
-        speakerState,
-        toggleAudio,
-        microphones,
-        speakers,
-        switchActiveDevice,
-        isAudioEnabled,
-    } = useMediaManagementContext();
+    const audioDeviceId = useMeetSelector(selectSelectedMicrophoneId);
+    const audioOutputDeviceId = useMeetSelector(selectSelectedAudioOutputId);
+    const microphoneState = useMeetSelector(selectMicrophoneState);
+    const speakerState = useMeetSelector(selectSpeakerState);
+    const microphones = useMeetSelector(selectMicrophones);
+    const speakers = useMeetSelector(selectSpeakers);
+    const { toggleAudio, switchActiveDevice, isAudioEnabled } = useMediaManagementContext();
 
     const { isLoading, withLoading } = useDeviceLoading();
 
