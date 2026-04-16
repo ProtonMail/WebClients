@@ -536,9 +536,6 @@
       "Go back": [
         "უკან დაბრუნება"
       ],
-      "Go back to album “${ albumName }“": [
-        "დაბრუნება ალბომზე \"${ albumName }\""
-      ],
       "Go to ${ planOrAppName }": [
         "${ planOrAppName }-ზე გადასვლა"
       ],
@@ -8922,35 +8919,11 @@
       ]
     },
     "Notification": {
-      "\"${ name }\" created successfully": [
-        "${ name } წარმატებით შეიქმნა"
-      ],
-      "\"${ name }\" deleted": [
-        "\"${ name }\" წაიშალა"
-      ],
       "\"${ name }\" deleted permanently": [
         "\"${ name }\" სამუდამოდ წაიშალა"
       ],
-      "\"${ name }\" deleted permanently from trash": [
-        "\"${ name }\" ნაგვის ყუთიდან წარმატებით წაიშალა"
-      ],
-      "\"${ name }\" failed to be created": [
-        "\"${ name }\"-ის შექმნის შეცდომა"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "\"${ name }\"-ის წაშლის შეცდომა"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "\"${ name }\"-ის ნაგვიდან წაშლის შეცდომა"
-      ],
-      "\"${ name }\" failed to be moved": [
-        "\"${ name }\"-ის გადატანის შეცდომა"
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "\"${ name }\"-ის ნაგავის ყუთში გადატანის შეცდომა"
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "\"${ name }\"-ის ნაგვის ყუთიდან აღდგენის შეცდომა"
       ],
       "\"${ name }\" failed to be saved": [
         "\"${ name }\"-ის შენახვის შეცდომა"
@@ -8958,17 +8931,8 @@
       "\"${ name }\" moved to trash": [
         "\"${ name }\" ნაგვის ყუთში ჩავარდა"
       ],
-      "\"${ name }\" restored from trash": [
-        "\"${ name }\" აღდგენილია ნაგვის ყუთიდან"
-      ],
       "\"${ name }\" saved successfully": [
         "${ name } წარმატებით იქნა შენახული"
-      ],
-      "\"${ name }\" successfully copied": [
-        "\"${ name }\" წარმატებით დაკოპირდა"
-      ],
-      "\"${ name }\" successfully moved": [
-        "\"${ name }\" გადატანა წარმატებულია"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\"-ის გადარქმევის შეცდომა"
@@ -9044,10 +9008,6 @@
         "${ numberOfItems } ელემენტი აღდგენილია ნაგვის ყუთიდან",
         "${ numberOfItems } ელემენტი აღდგენილია ნაგვის ყუთიდან"
       ],
-      "${ numberOfItems } item successfully copied": [
-        "${ numberOfItems } ელემენტი წარმატებით დაკოპირდა",
-        "${ numberOfItems } ელემენტი წარმატებით დაკოპირდა"
-      ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } ელემენტის გადატანა წარმატებულია",
         "${ numberOfItems } ელემენტის გადატანა წარმატებულია"
@@ -9087,9 +9047,6 @@
       ],
       "Contact group updated": [
         "კონტაქტების ჯგუფი განახლდა"
-      ],
-      "Copy of \"${ name }\" moved to trash": [
-        "\"${ name }\"-ის ასლი გადატანილია ნაგვის ყუთში"
       ],
       "Device failed to be removed": [
         "მოწყობილობის წაშლის შეცდომა"
@@ -11382,9 +11339,6 @@
       ],
       "Billing details updated": [
         "გადახდის დეტალები განახლდა"
-      ],
-      "Billing information updated": [
-        "ბილინგის ინფორმაცია განახლდა"
       ],
       "Canceling import": [
         "შემოტანის გაუქმება"

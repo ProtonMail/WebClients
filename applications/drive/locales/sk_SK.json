@@ -549,9 +549,6 @@
       "Go back": [
         "Späť"
       ],
-      "Go back to album “${ albumName }“": [
-        "Späť na album „${ albumName }“"
-      ],
       "Go to ${ planOrAppName }": [
         "Prejsť do ${ planOrAppName }"
       ],
@@ -3571,6 +3568,9 @@
       ],
       "Failed to load signature details, please try again later": [
         "Nepodarilo sa načítať podrobnosti podpisu, skúste to neskôr"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Načítanie údajov o predplatnom sa nepodarilo. Skúste to neskôr, prosím."
       ],
       "Failed to load the STL preview": [
         "Načítanie STL náhľadu zlyhalo"
@@ -9632,38 +9632,50 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" copied": [
+        "\"${ ellipsedName }\" skopírovaný"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "„${ ellipsedName }“ úspešne vytvorené"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "\"${ ellipsedName }\" vymazaný"
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "„${ ellipsedName }“ trvalo zmazané z koša"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "„${ ellipsedName }“ sa nepodarilo vytvoriť"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "\"${ ellipsedName }\" sa nepodarilo vymazať"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "„${ ellipsedName }“ sa nepodarilo trvalo zmazať z koša"
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "„${ ellipsedName }“ sa nepodarilo presunúť"
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "„${ ellipsedName }“ sa nepodarilo obnoviť z koša"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" presunutý"
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "„${ ellipsedName }“ obnovené z koša"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "„${ ellipsedName }“ úspešne presunuté"
+      ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" zdieľané"
-      ],
-      "\"${ name }\" created successfully": [
-        "„${ name }“ úspešne vytvorené"
-      ],
-      "\"${ name }\" deleted": [
-        "\"${ name } bol vymazaný"
       ],
       "\"${ name }\" deleted permanently": [
         "\"${ name }\" natrvalo vymazaná"
       ],
-      "\"${ name }\" deleted permanently from trash": [
-        "„${ name }“ trvalo zmazané z koša"
-      ],
-      "\"${ name }\" failed to be created": [
-        "„${ name }“ sa nepodarilo vytvoriť"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "\"${ name }\" sa nepodarilo vymazať"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "„${ name }“ sa nepodarilo trvalo zmazať z koša"
-      ],
-      "\"${ name }\" failed to be moved": [
-        "„${ name }“ sa nepodarilo presunúť"
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "„${ name }“ sa nepodarilo presunúť do koša"
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "„${ name }“ sa nepodarilo obnoviť z koša"
       ],
       "\"${ name }\" failed to be saved": [
         "„${ name }“ sa nepodarilo uložiť"
@@ -9671,17 +9683,8 @@
       "\"${ name }\" moved to trash": [
         "„${ name }“ presunuté do koša"
       ],
-      "\"${ name }\" restored from trash": [
-        "„${ name }“ obnovené z koša"
-      ],
       "\"${ name }\" saved successfully": [
         "„${ name }“ úspešne uložené"
-      ],
-      "\"${ name }\" successfully copied": [
-        "„${ name }“ úspešne skopírované"
-      ],
-      "\"${ name }\" successfully moved": [
-        "„${ name }“ úspešne presunuté"
       ],
       "\"${ newName }\" failed to be renamed": [
         "„${ newName }“ sa nepodarilo premenovať"
@@ -9743,6 +9746,12 @@
         "${ numberOfItems } skopírovaných položiek presunutých do koša",
         "${ numberOfItems } skopírovaných položiek presunutých do koša"
       ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems } položka skopírovaná",
+        "${ numberOfItems } položky skopírované",
+        "${ numberOfItems } položiek skopírovaných",
+        "${ numberOfItems } položiek skopírovaných"
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } položka vymazaná",
         "${ numberOfItems } položky vymazané",
@@ -9785,6 +9794,12 @@
         "${ numberOfItems } položiek sa nepodarilo obnoviť z koša",
         "${ numberOfItems } položiek sa nepodarilo obnoviť z koša"
       ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } položka presunutá",
+        "${ numberOfItems } položky presunuté",
+        "${ numberOfItems } položiek presunutých",
+        "${ numberOfItems } položiek presunutých"
+      ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } položka presunutá do koša",
         "${ numberOfItems } položky presunuté do koša",
@@ -9796,12 +9811,6 @@
         "${ numberOfItems } položky obnovené z koša",
         "${ numberOfItems } položiek obnovených z koša",
         "${ numberOfItems } položiek obnovených z koša"
-      ],
-      "${ numberOfItems } item successfully copied": [
-        "${ numberOfItems } položka bola úspešne skopírovaná",
-        "${ numberOfItems } položky boli úspešne skopírované",
-        "${ numberOfItems } položiek bolo úspešne skopírovaných",
-        "${ numberOfItems } položiek bolo úspešne skopírovaných"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } položka bola úspešne presunutá",
@@ -9845,8 +9854,8 @@
       "Contact group updated": [
         "Skupina kontaktov bola aktualizovaná"
       ],
-      "Copy of \"${ name }\" moved to trash": [
-        "Kópia „${ name }“ presunutá do koša"
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "Kópia „${ ellipsedName }“ presunutá do koša"
       ],
       "Device failed to be removed": [
         "Zariadenie sa nepodarilo odstrániť"
@@ -10566,6 +10575,9 @@
       ],
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Počas tohto obdobia nebudete môcť upraviť ani zrušiť svoje predplatné. Pred pokusom o akékoľvek zmeny počkajte, kým bude vaša platba dokončená. Ďakujeme vám za vašu trpezlivosť."
+      ],
+      "Edit billing address": [
+        "Upraviť fakturačnú adresu"
       ],
       "Got it": [
         "Rozumiem"
@@ -12366,9 +12378,6 @@
         "Alias ​​uložený a skopírovaný"
       ],
       "Billing details updated": [
-        "Fakturačné údaje aktualizované"
-      ],
-      "Billing information updated": [
         "Fakturačné údaje aktualizované"
       ],
       "Canceling import": [

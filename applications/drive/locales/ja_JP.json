@@ -534,9 +534,6 @@
       "Go back": [
         "もどる"
       ],
-      "Go back to album “${ albumName }“": [
-        "アルバム「${ albumName }」に戻る"
-      ],
       "Go to ${ planOrAppName }": [
         "${ planOrAppName }へ移動"
       ],
@@ -9060,35 +9057,11 @@
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" を共有しました"
       ],
-      "\"${ name }\" created successfully": [
-        "「${ name }」が正常に作成されました。"
-      ],
-      "\"${ name }\" deleted": [
-        "「${ name }」が削除されました"
-      ],
       "\"${ name }\" deleted permanently": [
         "「${ name }」が完全に削除されました"
       ],
-      "\"${ name }\" deleted permanently from trash": [
-        "「${ name }」がごみ箱から完全に削除されました"
-      ],
-      "\"${ name }\" failed to be created": [
-        "\"${ name }\" の作成に失敗しました"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "「${ name }」の削除に失敗しました"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "「${ name }」のごみ箱からの完全な削除に失敗しました"
-      ],
-      "\"${ name }\" failed to be moved": [
-        "「${ name }」の移動に失敗しました"
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "「${ name }」のごみ箱への移動に失敗しました"
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "「${ name }」のごみ箱からの復元に失敗しました"
       ],
       "\"${ name }\" failed to be saved": [
         "「${ name }」の保存に失敗しました"
@@ -9096,17 +9069,8 @@
       "\"${ name }\" moved to trash": [
         "「${ name }」がごみ箱に移動されました"
       ],
-      "\"${ name }\" restored from trash": [
-        "「${ name }」がごみ箱から復元されました"
-      ],
       "\"${ name }\" saved successfully": [
         "「${ name }」を正常にを保存しました"
-      ],
-      "\"${ name }\" successfully copied": [
-        "「${ name }」が正常にコピーされました"
-      ],
-      "\"${ name }\" successfully moved": [
-        "「${ name }」が正常に移動されました"
       ],
       "\"${ newName }\" failed to be renamed": [
         "「${ newName }」に名前を変更できませんでした"
@@ -9165,9 +9129,6 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems }件のアイテムをごみ箱から復元しました"
       ],
-      "${ numberOfItems } item successfully copied": [
-        "${ numberOfItems } 個のアイテムが正常にコピーされました"
-      ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } 件のアイテムが正常に移動されました"
       ],
@@ -9206,9 +9167,6 @@
       ],
       "Contact group updated": [
         "連絡先グループが更新されました"
-      ],
-      "Copy of \"${ name }\" moved to trash": [
-        "「${ name }」のコピーがごみ箱に移動されました"
       ],
       "Device failed to be removed": [
         "デバイスの削除に失敗しました"
@@ -11657,9 +11615,6 @@
       ],
       "Billing details updated": [
         "請求の詳細が更新されました"
-      ],
-      "Billing information updated": [
-        "請求情報が更新されました"
       ],
       "Canceling import": [
         "インポートをキャンセル中"
