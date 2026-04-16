@@ -2312,6 +2312,9 @@
       "Error connecting to the Bitcoin API.": [
         "Bitcoin API yazılımı ile bağlantı kurulurken sorun çıktı."
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Abonelik verileri yüklenemedi. Lütfen daha sonra tekrar deneyin."
+      ],
       "Incorrect username": [
         "Kullanıcı adı yanlış"
       ],
@@ -4707,6 +4710,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Bu süre boyunca aboneliğinizi değiştiremez veya iptal edemezsiniz. Değişiklik yapmadan önce lütfen ödeme işleminizin tamamlanmasını bekleyin. Anlayışınız için teşekkür ederiz."
       ],
+      "Edit billing address": [
+        "Fatura adresini düzenle"
+      ],
       "Got it": [
         "Anladım"
       ],
@@ -5441,9 +5447,6 @@
     },
     "Success": {
       "Billing details updated": [
-        "Fatura bilgileri güncellendi"
-      ],
-      "Billing information updated": [
         "Fatura bilgileri güncellendi"
       ],
       "Code sent to ${ methodTo }": [
