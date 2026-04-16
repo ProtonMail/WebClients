@@ -23,6 +23,6 @@ export interface AuthenticatedDocControllerInterface {
   squashEverythingInBaseCommit(): Promise<Result<boolean>>
   trashDocument(): Promise<void>
   downloadAllUpdatesAsZip(): Promise<void>
-  downloadUpdatesInformation(): Promise<void>
+  downloadUpdatesInformation(ydoc?: unknown): Promise<void>
   downloadObfuscatedUpdates(): Promise<void>
 }
