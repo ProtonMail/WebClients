@@ -2312,6 +2312,9 @@
       "Error connecting to the Bitcoin API.": [
         "Error al connectar a l'API de Bitcoin."
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "No s'han pogut carregar les dades de la subscripció. Torneu-ho a provar més tard."
+      ],
       "Incorrect username": [
         "Nom d'usuari incorrecte"
       ],
@@ -4707,6 +4710,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durant aquest temps, no podreu modificar ni cancel·lar la vostra subscripció. Espereu fins que s'hagi completat el pagament abans d'intentar qualsevol canvi. Gràcies per la vostra paciència."
       ],
+      "Edit billing address": [
+        "Editar l'adreça de facturació"
+      ],
       "Got it": [
         "Fet"
       ],
@@ -5442,9 +5448,6 @@
     "Success": {
       "Billing details updated": [
         "S'han actualitzat els detalls de facturació."
-      ],
-      "Billing information updated": [
-        "S'ha actualitzat la informació de facturació"
       ],
       "Code sent to ${ methodTo }": [
         "Codi enviat a ${ methodTo }"
