@@ -4,11 +4,10 @@ import { Button } from '@proton/atoms/Button/Button';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
+import lifeRing from '@proton/styles/assets/img/illustrations/life-ring.svg';
+import stethoscope from '@proton/styles/assets/img/illustrations/stethoscope.svg';
 
-import accounts from '@proton/styles/assets/img/illustrations/accounts.svg';
-import envelopeAddress from '@proton/styles/assets/img/illustrations/envelope-address.svg';
 import { CallToActionBanner } from './components/CallToActionBanner';
 
 interface Props {
@@ -16,33 +15,31 @@ interface Props {
     onContinueCancelling: () => void;
 }
 
-export const DifferentAccountContent = ({ onKeepPlan, onContinueCancelling }: Props) => {
+export const BugOrQualityIssueContent = ({ onKeepPlan, onContinueCancelling }: Props) => {
     const cards = [
         {
-            image: accounts,
-            title: c('Title').t`Already have multiple accounts?`,
-            description: c('Description')
-                .t`You can merge addresses into one main ${BRAND_NAME} account using our support guide.`,
-            ctaText: c('Link').t`Learn how`,
-            ctaHref: getKnowledgeBaseUrl('/combine-accounts'),
+            image: stethoscope,
+            title: c('Title').t`Troubleshoot your issue`,
+            description: c('Description').t`Most issues can be solved in a few minutes with our step-by-step guides.`,
+            ctaText: c('Link').t`Visit our support site`,
+            ctaHref: getKnowledgeBaseUrl('/mail'),
         },
         {
-            image: envelopeAddress,
-            title: c('Title').t`Create new addresses easily`,
-            description: c('Description')
-                .t`Add extra addresses to your account or use Hide My Email aliases to keep your inbox private.`,
-            ctaText: c('Link').t`Manage addresses`,
-            ctaHref: '/mail/identity-addresses',
+            image: lifeRing,
+            title: c('Title').t`Get direct support`,
+            description: c('Description').t`Still need help? Our support team is here for you.`,
+            ctaText: c('Link').t`Contact support`,
+            ctaHref: getKnowledgeBaseUrl('/contact'),
         },
     ];
 
     return (
         <>
-            <ModalTwoHeader title={c('Title').t`Use one account for all your addresses`} titleClassName="text-4xl" />
+            <ModalTwoHeader title={c('Title').t`Get help with an issue`} titleClassName="text-4xl" />
             <ModalTwoContent>
                 <p className="color-norm">
-                    {c('Description')
-                        .t`You can manage multiple ${BRAND_NAME} addresses from a single account, without switching. Aliases and address management tools help keep everything in one inbox.`}
+                    {c('Get help')
+                        .t`Many issues can be resolved quickly with our help guides. If you need more support, our team is here to help.`}
                 </p>
 
                 <div className="border border-weak rounded-lg overflow-hidden mt-8">
@@ -63,10 +60,10 @@ export const DifferentAccountContent = ({ onKeepPlan, onContinueCancelling }: Pr
             </ModalTwoContent>
             <ModalTwoFooter className="flex justify-end gap-2">
                 <Button shape="outline" color="weak" onClick={onKeepPlan}>
-                    {c('Action').t`Keep current plan`}
+                    {c('Get help').t`Keep current plan`}
                 </Button>
                 <Button color="danger" onClick={onContinueCancelling}>
-                    {c('Action').t`Continue cancelling`}
+                    {c('Get help').t`Continue cancelling`}
                 </Button>
             </ModalTwoFooter>
         </>
