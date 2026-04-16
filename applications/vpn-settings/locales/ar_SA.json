@@ -1150,6 +1150,9 @@
       ],
       "Zoom out": [
         "تصغير"
+      ],
+      "Forgot password?": [
+        "هل نسيت كلمة المرور؟"
       ]
     },
     "action": {
@@ -8617,6 +8620,12 @@
       ],
       "Zoom meeting": [
         "اجتماع Zoom"
+      ],
+      "Enter your own password (as organization admin).": [
+        "أدخل كلمة المرور الخاصة بك (كمسؤول للمؤسسة)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "أدخل كلمة مرورك الخاصة (كجهة اتصال موثوق بها)."
       ]
     },
     "info": {
@@ -9610,6 +9619,12 @@
       ],
       "ZIP code": [
         "الرمز البريدي"
+      ],
+      "Your password (admin)": [
+        "كلمة المرور الخاصة بك (المشرف)"
+      ],
+      "Your password (trusted contact)": [
+        "كلمة مرورك (جهة اتصال موثوق بها)"
       ]
     },
     "label": {
@@ -14447,6 +14462,12 @@
       ],
       "Your SSO configuration will be deleted.": [
         "سيُحذف تكوين SSO الخاص بك."
+      ],
+      "Sign in": [
+        "تسجيل الدخول"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "سيُعاد توجيهك إلى مزود خدمة الدخول الموحد (SSO) التابع للطرف الثالث."
       ]
     },
     "sso: auth device state": {
@@ -16708,6 +16729,9 @@
       ],
       "Your subscriptions": [
         "اشتراكاتك"
+      ],
+      "Enter your password": [
+        "أدخل كلمة مرورك"
       ]
     },
     "Title for payment methods table": {
