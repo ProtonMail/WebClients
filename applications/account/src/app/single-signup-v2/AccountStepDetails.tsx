@@ -17,6 +17,7 @@ import {
 } from '@proton/components';
 import SelectTwo from '@proton/components/components/selectTwo/SelectTwo';
 import { IcCheckmarkCircle } from '@proton/icons/icons/IcCheckmarkCircle';
+import type { StrictPlan } from '@proton/payments';
 import { PLANS } from '@proton/payments';
 import { TelemetryAccountSignupEvents } from '@proton/shared/lib/api/telemetry';
 import { BRAND_NAME, CALENDAR_APP_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
@@ -60,6 +61,8 @@ interface Props {
     emailDescription?: ReactNode;
     hideEmailLabel?: boolean;
     onFormValidChange: (isValid: boolean) => void;
+    defaultEmail?: string;
+    currentPlan?: StrictPlan;
 }
 
 const AccountStepDetails = ({
@@ -75,6 +78,8 @@ const AccountStepDetails = ({
     emailDescription,
     hideEmailLabel = false,
     onFormValidChange,
+    defaultEmail,
+    currentPlan,
 }: Props) => {
     const {
         state,
@@ -103,6 +108,20 @@ const AccountStepDetails = ({
     const variant = useVariant('InboxBringYourOwnEmailSignup');
     const hasAccessToBYOE =
         (variant.name === 'Light' || variant.name === 'Bold') && state.signupTypes.has(SignupType.BringYourOwnEmail);
+
+    useEffect(() => {
+        if (
+            currentPlan?.Name === PLANS.FREE &&
+            defaultEmail &&
+            asyncStates.email.state === AsyncValidationStateValue.Success
+        ) {
+            // No submit handler provided
+            if (!onSubmit) {
+                return;
+            }
+            onSubmit();
+        }
+    }, [asyncStates.email.state]);
 
     useImperativeHandle(accountStepDetailsRef, () => ({
         validate: () => {
