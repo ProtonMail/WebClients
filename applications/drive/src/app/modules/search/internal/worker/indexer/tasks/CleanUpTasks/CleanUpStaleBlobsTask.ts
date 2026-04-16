@@ -30,7 +30,7 @@ export class CleanUpStaleBlobsTask extends BaseTask {
                 await this.cleanUpInstance(instance, ctx);
             } catch (e) {
                 // Non-critical: log and continue to the next engine.
-                sendErrorReportForSearch(e, {
+                sendErrorReportForSearch(`CleanUpStaleBlobsTask: failed for engine <${instance.indexKind}>`, e, {
                     tags: { indexKind: instance.indexKind },
                 });
                 continue;
@@ -44,8 +44,7 @@ export class CleanUpStaleBlobsTask extends BaseTask {
         const cleanup = engine.cleanup();
         if (!cleanup) {
             const error = new Error(`CleanUpStaleBlobsTask: skipping engine <${indexKind}> (write lock busy)`);
-            Logger.warn(error.message);
-            sendErrorReportForSearch(error);
+            sendErrorReportForSearch(error.message, error);
             return;
         }
 
