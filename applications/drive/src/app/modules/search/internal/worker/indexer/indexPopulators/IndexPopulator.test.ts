@@ -61,8 +61,8 @@ const makeDriveEvent = (type: string, eventId: string, extra: Record<string, unk
  * We only test incremental update logic here.
  */
 class TestPopulator extends IndexPopulator {
-    constructor(generation = 1) {
-        super(SCOPE_ID, IndexKind.MAIN, 'test-pop', 1, generation);
+    constructor() {
+        super(SCOPE_ID, IndexKind.MAIN, 'test-pop', 1);
     }
 
     async *visitAndProduceIndexEntries(_ctx: TaskContext): AsyncIterableIterator<IndexEntry> {
@@ -647,14 +647,14 @@ describe('IndexPopulator', () => {
         });
 
         it('bumps generation on tree_refresh and persists state', async () => {
-            const populator = new TestPopulator(/* generation */ 1);
+            const populator = new TestPopulator();
             const ctx = await buildCtx();
 
             const events: DriveEvent[] = [makeDriveEvent('tree_refresh', 'tr-1')];
 
             await populator.processIncrementalUpdates(events, ctx);
 
-            expect(populator.getGeneration()).toBe(2);
+            expect(await populator.getGeneration(db)).toBe(2);
 
             const state = await db.getPopulatorState(populator.getUid());
             expect(state?.done).toBe(false);

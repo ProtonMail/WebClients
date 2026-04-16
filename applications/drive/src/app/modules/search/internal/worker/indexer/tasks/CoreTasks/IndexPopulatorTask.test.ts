@@ -23,8 +23,8 @@ const makeMaybeNode = (overrides: Partial<NodeEntity> = {}): MaybeNode =>
     ({ ok: true, value: createMockNodeEntity(overrides) }) as unknown as MaybeNode;
 
 class TestPopulator extends NodeTreeIndexPopulator {
-    constructor(version = 1, generation = 1) {
-        super(SCOPE_ID, IndexKind.MAIN, 'test-pop', version, generation);
+    constructor(version = 1) {
+        super(SCOPE_ID, IndexKind.MAIN, 'test-pop', version);
     }
 
     protected async getRootNodeUid(): Promise<string> {
@@ -131,7 +131,10 @@ describe('IndexPopulatorTask', () => {
     });
 
     it('re-indexes when persisted state is done but version changed', async () => {
-        const populator = new TestPopulator(2);
+        // Simulate new index populator with a new version #2
+        const populator = new TestPopulator(2 /* version */);
+
+        // Simulate that the version #1 for this populator already ran successfully
         await db.putPopulatorState({ uid: populator.getUid(), done: true, generation: 1, version: 1 });
 
         const ctx = await buildCtx();
@@ -142,9 +145,9 @@ describe('IndexPopulatorTask', () => {
         const results = await findDocumentsByTag(instance.indexReader, 'indexPopulatorId', 'test-pop');
         expect(results).toHaveLength(2);
 
-        // Persisted state should reflect the new version.
+        // Persisted state should reflect the new version and bumped generation.
         const state = await db.getPopulatorState(populator.getUid());
-        expect(state).toEqual({ uid: populator.getUid(), done: true, generation: 1, version: 2 });
+        expect(state).toEqual({ uid: populator.getUid(), done: true, generation: 2, version: 2 });
     });
 
     it('re-indexes when persisted state has no version (legacy DB)', async () => {

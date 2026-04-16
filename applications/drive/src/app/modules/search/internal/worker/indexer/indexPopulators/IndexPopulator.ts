@@ -34,30 +34,17 @@ export abstract class IndexPopulator {
 
         // Schema version of this populator's output. Bumped when the shape of
         // indexed attributes changes, so stale entries can be detected and re-indexed.
-        readonly version: number,
-
-        // Scan generation counter. Bumped on each full re-index.
-        // Used to GC leftover entries from the previous scan.
-        // Example:
-        //  — Tree refresh
-        //  - If the user change the configuration of a given indexpopulator (e.g. deactivate file content from indexing)
-        protected generation: number
+        readonly version: number
     ) {}
 
     static buildUid(indexPopulatorId: string, treeEventScopeId: TreeEventScopeId): string {
         return `${indexPopulatorId}:${treeEventScopeId}`;
     }
 
-    protected static async loadOrCreateState(
-        indexPopulatorId: string,
-        treeEventScopeId: TreeEventScopeId,
-        db: SearchDB,
-        currentVersion: number
-    ) {
-        const uid = IndexPopulator.buildUid(indexPopulatorId, treeEventScopeId);
-        const state = await db.getPopulatorState(uid);
+    private async ensureState(db: SearchDB) {
+        const state = await db.getPopulatorState(this.getUid());
         if (!state) {
-            const newState = { uid, done: false, generation: 1, version: currentVersion };
+            const newState = { uid: this.getUid(), done: false, generation: 1, version: this.version };
             await db.putPopulatorState(newState);
             return newState;
         }
@@ -72,27 +59,31 @@ export abstract class IndexPopulator {
         return this.version;
     }
 
-    getGeneration(): number {
-        return this.generation;
+    // Generation counter. Bumped each time we make the populator dirty (e.g. not done) and reindex itself.
+    // It's used to GC leftover entries from the index by previous generations.
+    // Example:
+    //  — Tree refresh (we mark the whole index dirty for this index populator)
+    //  - If the user change the configuration of a given indexpopulator (e.g. deactivate file content from indexing, disable
+    //    an index populator, etc)
+    async getGeneration(db: SearchDB): Promise<number> {
+        const state = await this.ensureState(db);
+        return state.generation;
     }
 
     async hasUpToDateVersion(db: SearchDB): Promise<boolean> {
-        const state = await db.getPopulatorState(this.getUid());
-        return state?.version === this.version;
+        const state = await this.ensureState(db);
+        return state.version === this.version;
     }
 
     async isDone(db: SearchDB): Promise<boolean> {
-        const state = await db.getPopulatorState(this.getUid());
-        return state?.done === true;
+        const state = await this.ensureState(db);
+        return state.done === true;
     }
 
     async markAsNotDone(db: SearchDB): Promise<void> {
-        const state = await db.getPopulatorState(this.getUid());
-        if (!state?.done) {
-            return;
-        }
-        const bumpedGeneration = state.generation + 1;
-        await db.putPopulatorState({ ...state, done: false, generation: bumpedGeneration });
+        const state = await this.ensureState(db);
+        const nextGeneration = state.generation + 1;
+        await db.putPopulatorState({ ...state, done: false, generation: nextGeneration });
     }
 
     abstract visitAndProduceIndexEntries(ctx: TaskContext): AsyncIterableIterator<IndexEntry>;
@@ -126,17 +117,9 @@ export abstract class IndexPopulator {
 
                 case 'tree_refresh':
                     Logger.info(
-                        `${this.getUid()}: TreeRefresh, bumped to generation ${this.generation}, request new indexing.`
+                        `${this.getUid()}: TreeRefresh, marking index populator as not done to request new indexing.`
                     );
-                    this.generation++;
-                    // Persist the bumped generation as not-done so the next execute() re-indexes.
-                    await ctx.db.putPopulatorState({
-                        uid: this.getUid(),
-                        done: false,
-                        generation: this.generation,
-                        version: this.version,
-                    });
-
+                    await this.markAsNotDone(ctx.db);
                     ctx.enqueueOnce(new IndexPopulatorTask(this, false /* isBootstrap */));
                     // Return early to give a chance to the above task to be processed first.
                     // Remaining events will be processed in next incremental update.
@@ -166,14 +149,15 @@ export abstract class IndexPopulator {
 
     async processNodeMutation(event: NodeEvent, ctx: TaskContext): Promise<void> {
         Logger.info(`${this.getUid()}: processNodeMutation ${event.type} for node ${event.nodeUid}`);
+        const generation = await this.getGeneration(ctx.db);
 
         switch (event.type) {
             case 'node_created':
-                await this.handleNodeCreated(event, ctx);
+                await this.handleNodeCreated(event, ctx, generation);
                 break;
 
             case 'node_updated':
-                await this.handleNodeUpdated(event, ctx);
+                await this.handleNodeUpdated(event, ctx, generation);
                 break;
 
             case 'node_deleted':
@@ -184,7 +168,8 @@ export abstract class IndexPopulator {
 
     private async handleNodeCreated(
         event: Extract<NodeEvent, { isTrashed: boolean }>,
-        ctx: TaskContext
+        ctx: TaskContext,
+        generation: number
     ): Promise<void> {
         if (event.isTrashed) {
             Logger.info(`${this.getUid()}: skipping trashed node_created for ${event.nodeUid}`);
@@ -203,7 +188,7 @@ export abstract class IndexPopulator {
             throw parentPathResult.error;
         }
 
-        const entry = this.createEntryForNode(node, parentPathResult.parentPath);
+        const entry = this.createEntryForNode(node, parentPathResult.parentPath, generation);
 
         const { indexWriter } = await ctx.indexRegistry.get(this.indexKind, ctx.db);
         const session = indexWriter.startWriteSession();
@@ -218,7 +203,8 @@ export abstract class IndexPopulator {
 
     private async handleNodeUpdated(
         event: Extract<NodeEvent, { isTrashed: boolean }>,
-        ctx: TaskContext
+        ctx: TaskContext,
+        generation: number
     ): Promise<void> {
         // Case: event update: trashed
         if (event.isTrashed) {
@@ -237,7 +223,7 @@ export abstract class IndexPopulator {
             throw parentPathResult.error;
         }
 
-        const entry = this.createEntryForNode(node, parentPathResult.parentPath);
+        const entry = this.createEntryForNode(node, parentPathResult.parentPath, generation);
 
         // Remove old entry + descendants, then insert the updated entry and
         // re-index the subtree (if folder) — all in a single write session.
@@ -260,7 +246,8 @@ export abstract class IndexPopulator {
                 const subtreeEntries = this.walkFolderTreeFromSdk(
                     event.nodeUid,
                     `${parentPathResult.parentPath}/${event.nodeUid}`,
-                    ctx
+                    ctx,
+                    generation
                 );
                 for await (const subtreeEntry of subtreeEntries) {
                     session.insert(subtreeEntry);
@@ -305,14 +292,14 @@ export abstract class IndexPopulator {
         Logger.info(`${this.getUid()}: removed node ${nodeUid} and ${descendantCount} descendants`);
     }
 
-    protected createEntryForNode(node: NodeEntity, parentPath: string): IndexEntry {
+    protected createEntryForNode(node: NodeEntity, parentPath: string, generation: number): IndexEntry {
         return createIndexEntry({
             node: toCoreNodeFields(node),
             treeEventScopeId: this.treeEventScopeId,
             parentPath,
             indexPopulatorId: this.indexPopulatorId,
             indexPopulatorVersion: this.version,
-            indexPopulatorGeneration: this.generation,
+            indexPopulatorGeneration: generation,
         });
     }
 
@@ -347,7 +334,8 @@ export abstract class IndexPopulator {
     protected async *walkFolderTreeFromSdk(
         rootFolderUid: string,
         rootParentPath: string,
-        ctx: TaskContext
+        ctx: TaskContext,
+        generation: number
     ): AsyncIterableIterator<IndexEntry> {
         const queue: { folderUid: string; parentPath: string }[] = [
             { folderUid: rootFolderUid, parentPath: rootParentPath },
@@ -376,7 +364,7 @@ export abstract class IndexPopulator {
                     continue;
                 }
 
-                yield this.createEntryForNode(node, item.parentPath);
+                yield this.createEntryForNode(node, item.parentPath, generation);
 
                 if (node.type === NodeType.Folder) {
                     queue.push({ folderUid: node.uid, parentPath: `${item.parentPath}/${node.uid}` });

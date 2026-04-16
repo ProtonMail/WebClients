@@ -162,6 +162,11 @@ export class SearchModule {
         });
     }
 
+    /** Trigger a re-index for a specific populator by UID. */
+    async reindexPopulator(uid: string): Promise<void> {
+        await this.workerClient.reindexPopulator(uid);
+    }
+
     /** Clear all search data and stop the search module. */
     async reset(): Promise<void> {
         await this.workerClient.reset();

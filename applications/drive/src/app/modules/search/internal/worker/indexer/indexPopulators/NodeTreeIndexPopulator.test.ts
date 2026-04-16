@@ -14,11 +14,8 @@ const makeMaybeNode = (overrides: Partial<NodeEntity> = {}): MaybeNode =>
     ({ ok: true, value: createMockNodeEntity(overrides) }) as unknown as MaybeNode;
 
 class TestNodeTreePopulator extends NodeTreeIndexPopulator {
-    constructor(
-        private readonly rootUid: string,
-        generation = 1
-    ) {
-        super(SCOPE_ID, IndexKind.MAIN, 'test-populator', 1, generation);
+    constructor(private readonly rootUid: string) {
+        super(SCOPE_ID, IndexKind.MAIN, 'test-populator', 1);
     }
 
     protected async getRootNodeUid(): Promise<string> {
@@ -194,12 +191,12 @@ describe('NodeTreeIndexPopulator integration', () => {
     it('sets correct indexPopulatorGeneration', async () => {
         bridge.setChildren('root', [makeMaybeNode({ uid: 'file-1', name: 'doc.pdf', type: 'file' as any })]);
 
-        const populator = new TestNodeTreePopulator('root', 5 /* generation */);
+        const populator = new TestNodeTreePopulator('root');
         const ctx = makeTaskContext({ bridge: bridge.asBridge() });
         const entries = await collectEntries(populator.visitAndProduceIndexEntries(ctx));
 
         const attr = entries[0].attributes.find((a) => a.name === 'indexPopulatorGeneration');
-        expect(attr?.value).toEqual({ kind: 'integer', value: BigInt(5) });
+        expect(attr?.value).toEqual({ kind: 'integer', value: BigInt(1) });
     });
 
     it('indexes nodes without indexable filenames using fallback name', async () => {

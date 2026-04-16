@@ -6,6 +6,7 @@ import { createMockNodeEntity } from '../../../../../utils/test/nodeEntity';
 import { SearchDB } from '../../shared/SearchDB';
 import type { TreeEventScopeId, UserId } from '../../shared/types';
 import { FakeMainThreadBridge } from '../../testing/FakeMainThreadBridge';
+import { findDocuments } from '../../testing/indexHelpers';
 import { setupRealSearchLibraryWasm } from '../../testing/setupRealSearchLibraryWasm';
 import { IndexKind, IndexRegistry } from '../index/IndexRegistry';
 import type { IndexerState } from './IndexerTaskQueue';
@@ -273,7 +274,7 @@ describe('IndexerTaskQueue', () => {
         // Create a queue whose populator reports version 2.
         class VersionedPopulator extends NodeTreeIndexPopulator {
             constructor(scopeId: TreeEventScopeId) {
-                super(scopeId, IndexKind.MAIN, 'myfiles', 2 /* version */, 1 /* generation */);
+                super(scopeId, IndexKind.MAIN, 'myfiles', 2 /* version */);
             }
 
             protected async getRootNodeUid(): Promise<string> {
@@ -305,6 +306,126 @@ describe('IndexerTaskQueue', () => {
         const persisted = await db.getPopulatorState(`myfiles:${SCOPE_ID}`);
         expect(persisted?.done).toBe(true);
         expect(persisted?.version).toBe(2);
+    });
+
+    it('tree_refresh bumps generation and re-indexes entries with new generation', async () => {
+        const queue = createQueue();
+        const state = new IndexerStateStream(queue);
+        queue.start().catch(() => {});
+
+        await state.waitForSearchable();
+
+        // Verify initial indexing produced entries at generation 1.
+        const instance = await indexRegistry.get(IndexKind.MAIN, db);
+        const gen1Results = await findDocuments(instance.indexReader, { indexPopulatorGeneration: BigInt(1) });
+        expect(gen1Results).toHaveLength(2);
+
+        const populatorBefore = await db.getPopulatorState(`myfiles:${SCOPE_ID}`);
+        expect(populatorBefore?.done).toBe(true);
+        expect(populatorBefore?.generation).toBe(1);
+
+        // Emit a tree_refresh event to trigger generation bump.
+        jest.useFakeTimers();
+        bridge.emitEvent(SCOPE_ID, { type: 'tree_refresh', eventId: 'evt-2' } as any);
+        await jest.advanceTimersByTimeAsync(5_000);
+        jest.useRealTimers();
+
+        // Wait for re-indexing to complete (state goes back to not-indexing after the re-index).
+        await waitForCondition(async () => {
+            const s = await db.getPopulatorState(`myfiles:${SCOPE_ID}`);
+            return s?.done === true && s?.generation === 2;
+        });
+
+        queue.stop();
+
+        // Verify generation was bumped and entries were re-indexed at generation 2.
+        const populatorAfter = await db.getPopulatorState(`myfiles:${SCOPE_ID}`);
+        expect(populatorAfter?.done).toBe(true);
+        expect(populatorAfter?.generation).toBe(2);
+
+        const gen2Results = await findDocuments(instance.indexReader, { indexPopulatorGeneration: BigInt(2) });
+        expect(gen2Results).toHaveLength(2);
+    });
+
+    it('version change bumps generation from persisted state', async () => {
+        // Seed DB with a done state at version 1, generation 3 (simulating prior bumps).
+        await db.putPopulatorState({ uid: `myfiles:${SCOPE_ID}`, done: true, generation: 3, version: 1 });
+
+        class VersionedPopulator extends NodeTreeIndexPopulator {
+            constructor(scopeId: TreeEventScopeId) {
+                super(scopeId, IndexKind.MAIN, 'myfiles', 2 /* version */);
+            }
+
+            protected async getRootNodeUid(): Promise<string> {
+                return 'root-uid';
+            }
+        }
+
+        class TestableQueue extends IndexerTaskQueue {
+            protected override async createTasks() {
+                const populator = new VersionedPopulator(SCOPE_ID);
+                return {
+                    bootstrapTasks: [new IndexPopulatorTask(populator, true)],
+                    postBootstrapTasks: [],
+                };
+            }
+        }
+
+        const queue = new TestableQueue('test-user' as UserId, indexRegistry, bridge.asBridge(), db, treeSubRegistry);
+        const state = new IndexerStateStream(queue);
+        queue.start().catch(() => {});
+
+        await state.waitForSearchable();
+        queue.stop();
+
+        // Generation should have incremented from 3 → 4 due to version mismatch.
+        const persisted = await db.getPopulatorState(`myfiles:${SCOPE_ID}`);
+        expect(persisted?.done).toBe(true);
+        expect(persisted?.generation).toBe(4);
+        expect(persisted?.version).toBe(2);
+
+        // All entries should carry the bumped generation.
+        const instance = await indexRegistry.get(IndexKind.MAIN, db);
+        const gen4Results = await findDocuments(instance.indexReader, { indexPopulatorGeneration: BigInt(4) });
+        expect(gen4Results).toHaveLength(2);
+
+        const gen3Results = await findDocuments(instance.indexReader, { indexPopulatorGeneration: BigInt(3) });
+        expect(gen3Results).toHaveLength(0);
+    });
+
+    it('tree_refresh re-indexes entries replacing old generation with new', async () => {
+        const queue = createQueue();
+        const state = new IndexerStateStream(queue);
+        queue.start().catch(() => {});
+
+        await state.waitForSearchable();
+
+        const instance = await indexRegistry.get(IndexKind.MAIN, db);
+
+        // Initial entries at generation 1.
+        const gen1Before = await findDocuments(instance.indexReader, { indexPopulatorGeneration: BigInt(1) });
+        expect(gen1Before).toHaveLength(2);
+
+        // Trigger tree_refresh to bump generation.
+        jest.useFakeTimers();
+        bridge.emitEvent(SCOPE_ID, { type: 'tree_refresh', eventId: 'evt-2' } as any);
+        await jest.advanceTimersByTimeAsync(5_000);
+        jest.useRealTimers();
+
+        await waitForCondition(async () => {
+            const s = await db.getPopulatorState(`myfiles:${SCOPE_ID}`);
+            return s?.done === true && s?.generation === 2;
+        });
+
+        queue.stop();
+
+        // Entries are re-indexed at generation 2 (same document IDs, overwritten in-place).
+        const gen2Results = await findDocuments(instance.indexReader, { indexPopulatorGeneration: BigInt(2) });
+        expect(gen2Results).toHaveLength(2);
+
+        // Generation 1 entries no longer exist (replaced by the re-index).
+        const gen1After = await findDocuments(instance.indexReader, { indexPopulatorGeneration: BigInt(1) });
+        expect(gen1After).toHaveLength(0);
     });
 
     it('permanent error: sets permanentError on quota exceeded', async () => {
