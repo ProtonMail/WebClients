@@ -196,9 +196,6 @@
       "Carbon Copy": [
         "Copia"
       ],
-      "Change password": [
-        "Canvia la contrasenya"
-      ],
       "Change sorting": [
         "Canvia l'ordenació"
       ],
@@ -1502,7 +1499,8 @@
         "De confiança"
       ],
       "Trust key": [
-        "Marca com a clau de confiança"
+        "Clau de confiança",
+        "Claus de confiança"
       ],
       "Trust public key": [
         "Confia en la clau pública"
@@ -4763,6 +4761,9 @@
       "Failed to encrypt attachment. Please try again.": [
         "No s'ha pogut xifrar el fitxer adjunt. Torneu-ho a provar."
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "No s'han pogut carregar les dades de la subscripció. Torneu-ho a provar més tard."
+      ],
       "Failed to load the STL preview": [
         "No s'ha pogut carregar la previsualització STL."
       ],
@@ -7555,8 +7556,7 @@
         "S'està inicialitzant…"
       ],
       "Insert image": [
-        "Insereix una imatge",
-        "Insereix imatges"
+        "Insereix una imatge"
       ],
       "Insert link": [
         "Insereix un enllaç"
@@ -12366,6 +12366,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durant aquest temps, no podreu modificar ni cancel·lar la vostra subscripció. Espereu fins que s'hagi completat el pagament abans d'intentar qualsevol canvi. Gràcies per la vostra paciència."
       ],
+      "Edit billing address": [
+        "Editar l'adreça de facturació"
+      ],
       "Got it": [
         "Fet"
       ],
@@ -14459,9 +14462,6 @@
       "Billing details updated": [
         "S'han actualitzat els detalls de facturació."
       ],
-      "Billing information updated": [
-        "S'ha actualitzat la informació de facturació"
-      ],
       "Canceling import": [
         "S'està cancel·lant la importació"
       ],
@@ -14915,9 +14915,6 @@
       ],
       "Account security": [
         "Seguretat del compte"
-      ],
-      "Account temporarily locked": [
-        "El compte s'ha bloquejat temporalment"
       ],
       "Action all conversations": [
         "S'aplicarà a totes les converses"

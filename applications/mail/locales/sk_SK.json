@@ -198,9 +198,6 @@
       "Carbon Copy": [
         "Kópia"
       ],
-      "Change password": [
-        "Zmeniť heslo"
-      ],
       "Change sorting": [
         "Zmeniť triedenie"
       ],
@@ -1510,7 +1507,10 @@
         "Dôverovať"
       ],
       "Trust key": [
-        "Dôveryhodný kľúč"
+        "Dôveryhodný kľúč",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče",
+        "Dôveryhodné kľúče"
       ],
       "Trust public key": [
         "Dôverovať verejnému kľúču"
@@ -4837,6 +4837,9 @@
       "Failed to encrypt attachment. Please try again.": [
         "Zlyhalo rozšifrovanie správy, skúste to znova."
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Načítanie údajov o predplatnom sa nepodarilo. Skúste to neskôr, prosím."
+      ],
       "Failed to load the STL preview": [
         "Načítanie STL náhľadu zlyhalo"
       ],
@@ -7811,10 +7814,7 @@
         "Inicializácia…"
       ],
       "Insert image": [
-        "Vložiť obrázok",
-        "Vložiť obrázky",
-        "Vložiť obrázky",
-        "Vložiť obrázky"
+        "Vložiť obrázok"
       ],
       "Insert link": [
         "Vložiť odkaz"
@@ -12776,6 +12776,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Počas tohto obdobia nebudete môcť upraviť ani zrušiť svoje predplatné. Pred pokusom o akékoľvek zmeny počkajte, kým bude vaša platba dokončená. Ďakujeme vám za vašu trpezlivosť."
       ],
+      "Edit billing address": [
+        "Upraviť fakturačnú adresu"
+      ],
       "Got it": [
         "Rozumiem"
       ],
@@ -15013,9 +15016,6 @@
       "Billing details updated": [
         "Fakturačné údaje aktualizované"
       ],
-      "Billing information updated": [
-        "Fakturačné údaje aktualizované"
-      ],
       "Canceling import": [
         "Prebieha zrušenie importu"
       ],
@@ -15505,9 +15505,6 @@
       ],
       "Account security": [
         "Zabezpečenie účtu"
-      ],
-      "Account temporarily locked": [
-        "Účet dočasne zablokovaný"
       ],
       "Action all conversations": [
         "Akcia všetkých konverzácií"
