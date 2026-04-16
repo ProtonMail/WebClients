@@ -37,8 +37,7 @@ export class IncrementalUpdateTask extends BaseTask {
             if (isPermanentError(e)) {
                 throw e;
             }
-            Logger.error(`Uncaught incremental update error for <${populatorUid}>`, e);
-            sendErrorReportForSearch(e);
+            sendErrorReportForSearch(`Uncaught incremental update error for <${populatorUid}>`, e);
         } finally {
             ctx.treeSubscriptionRegistry.markIncrementalUpdateComplete(registration);
         }

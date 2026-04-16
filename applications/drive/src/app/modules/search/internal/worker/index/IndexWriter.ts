@@ -1,7 +1,6 @@
 import type { Engine, Execution, Write } from '@proton/proton-foundation-search';
 import { Document, Value, WriteEventKind } from '@proton/proton-foundation-search';
 
-import { Logger } from '../../shared/Logger';
 import { InvalidIndexerState, SearchLibraryError, sendErrorReportForSearch } from '../../shared/errors';
 import type { AttributeValue, IndexEntry } from '../indexer/indexEntry';
 import type { IndexBlobStore } from './IndexBlobStore';
@@ -97,8 +96,7 @@ export class WriteSession {
                         break;
                     default:
                         const error = new Error(`WriteSession: unexpected Write event kind <${event.kind()}>`);
-                        Logger.error(error.message, error);
-                        sendErrorReportForSearch(error);
+                        sendErrorReportForSearch(error.message, error);
 
                         event.free();
                         break;
