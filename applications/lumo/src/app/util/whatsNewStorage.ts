@@ -1,25 +1,11 @@
-import { getLocalIDFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
-
 import type { FeatureFlag } from '../redux/slices/featureFlags';
+import { readScopedLocalStorageJson, writeScopedLocalStorageJson } from './lumoScopedLocalStorage';
 
 const WHATS_NEW_KEY = 'lumo-whats-new';
 
-const getStorageKey = (): string => {
-    const localID = getLocalIDFromPathname(window.location.pathname);
-    return localID !== undefined ? `${WHATS_NEW_KEY}:${localID}` : WHATS_NEW_KEY;
-};
-
 export const getSeenFeatureFlags = (): FeatureFlag[] => {
-    try {
-        const stored = localStorage.getItem(getStorageKey());
-        if (stored) {
-            const parsed = JSON.parse(stored);
-            return Array.isArray(parsed) ? parsed : [];
-        }
-    } catch {
-        // If parsing fails, return empty array
-    }
-    return [];
+    const parsed = readScopedLocalStorageJson<unknown>(WHATS_NEW_KEY, []);
+    return Array.isArray(parsed) ? parsed : [];
 };
 
 export const hasSeenFeatureFlag = (id: string, versionId: string): boolean => {
@@ -44,7 +30,7 @@ export const markFeatureFlagAsSeen = (id: string, versionId: string, wasDeclined
                 dismissedAt: Date.now(),
                 wasDeclined,
             });
-            localStorage.setItem(getStorageKey(), JSON.stringify(seenFlags));
+            writeScopedLocalStorageJson(WHATS_NEW_KEY, seenFlags);
         }
     } catch {
         // Fail silently if localStorage is unavailable
