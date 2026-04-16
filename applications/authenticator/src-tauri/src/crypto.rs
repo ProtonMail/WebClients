@@ -1,4 +1,4 @@
-use rand::{TryRng, rngs::SysRng};
+use rand::{rngs::SysRng, TryRng};
 
 const KEY_LENGTH: usize = 32;
 
