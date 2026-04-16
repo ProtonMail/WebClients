@@ -4075,6 +4075,9 @@
         "${ failureItems.length } položky sa nepodarilo presunúť",
         "${ failureItems.length } položiek sa nepodarilo presunúť",
         "${ failureItems.length } položiek sa nepodarilo presunúť"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Načítanie údajov o predplatnom sa nepodarilo. Skúste to neskôr, prosím."
       ]
     },
     "error": {
@@ -10047,6 +10050,57 @@
         "${ errors.length } položky sa nepodarilo vymazať",
         "${ errors.length } položiek sa nepodarilo vymazať",
         "${ errors.length } položiek sa nepodarilo vymazať"
+      ],
+      "\"${ ellipsedName }\" copied": [
+        "\"${ ellipsedName }\" skopírovaný"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "„${ ellipsedName }“ úspešne vytvorené"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "\"${ ellipsedName }\" vymazaný"
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "„${ ellipsedName }“ trvalo zmazané z koša"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "„${ ellipsedName }“ sa nepodarilo vytvoriť"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "\"${ ellipsedName }\" sa nepodarilo vymazať"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "„${ ellipsedName }“ sa nepodarilo trvalo zmazať z koša"
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "„${ ellipsedName }“ sa nepodarilo presunúť"
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "„${ ellipsedName }“ sa nepodarilo obnoviť z koša"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" presunutý"
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "„${ ellipsedName }“ obnovené z koša"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "„${ ellipsedName }“ úspešne presunuté"
+      ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems } položka skopírovaná",
+        "${ numberOfItems } položky skopírované",
+        "${ numberOfItems } položiek skopírovaných",
+        "${ numberOfItems } položiek skopírovaných"
+      ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } položka presunutá",
+        "${ numberOfItems } položky presunuté",
+        "${ numberOfItems } položiek presunutých",
+        "${ numberOfItems } položiek presunutých"
+      ],
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "Kópia „${ ellipsedName }“ presunutá do koša"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10721,6 +10775,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Vaše predplatné má v súčasnosti platnú zľavu. Prechodom na túto novú akciu sa existujúca zľava prestane uplatňovať."
+      ],
+      "Edit billing address": [
+        "Upraviť fakturačnú adresu"
       ]
     },
     "Payments.Error": {
