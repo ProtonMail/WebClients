@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { FilePreview, Loader, NavigationControl } from '@proton/components';
 import { generateNodeUid, getDrive, splitNodeUid } from '@proton/drive';
+import { useSharingModal } from '@proton/drive/modules/sharingModal';
 import { HTTP_STATUS_CODE } from '@proton/shared/lib/constants';
 import { getCanAdmin } from '@proton/shared/lib/drive/permissions';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
@@ -17,7 +18,6 @@ import { useFlagsDriveSheet } from '../flags/useFlagsDriveSheet';
 import { useActiveShare } from '../hooks/drive/useActiveShare';
 import useDriveNavigation from '../hooks/drive/useNavigate';
 import { useDetailsModal } from '../modals/DetailsModal';
-import { useSharingModal } from '../modals/SharingModal/SharingModal';
 import { Preview } from '../modals/preview';
 import { useActions, useFileView } from '../store';
 import { useOpenInDocs } from '../store/_documents';

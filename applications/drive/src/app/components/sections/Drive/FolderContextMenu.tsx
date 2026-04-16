@@ -3,6 +3,7 @@ import * as React from 'react';
 
 import { ContextMenu, ContextSeparator } from '@proton/components';
 import { generateNodeUid } from '@proton/drive/index';
+import { useSharingModal } from '@proton/drive/modules/sharingModal';
 import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 import { getCanAdmin, getCanWrite } from '@proton/shared/lib/drive/permissions';
 
@@ -10,7 +11,6 @@ import { useActiveShare } from '../../../hooks/drive/useActiveShare';
 import { useCreateFileModal } from '../../../modals/CreateFileModal';
 import { useCreateFolderModal } from '../../../modals/CreateFolderModal';
 import { useFileSharingModal } from '../../../modals/SelectLinkToShareModal';
-import { useSharingModal } from '../../../modals/SharingModal/SharingModal';
 import { useDocumentActions, useFileUploadInput, useFolderUploadInput } from '../../../store';
 import { useDriveDocsFeatureFlag, useIsSheetsEnabled } from '../../../store/_documents';
 import type { ContextMenuProps } from '../../FileBrowser/interface';

@@ -1,11 +1,11 @@
 import { useRef } from 'react';
 
+import { MemberRole } from '@protontech/drive-sdk';
 import { c } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { SUBSCRIPTION_STEPS, Toggle, useConfig, useSettingsLink, useUpsellConfig } from '@proton/components';
-import { MemberRole } from '@proton/drive';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { IcFormTextboxPassword } from '@proton/icons/icons/IcFormTextboxPassword';
 import { IcGlobe } from '@proton/icons/icons/IcGlobe';
@@ -17,8 +17,8 @@ import { getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
 import drivePlusUpgrade from '@proton/styles/assets/img/drive/drive-plus-upsell-banner.svg';
 import clsx from '@proton/utils/clsx';
 
-import { useDriveUpsellModal } from '../../DriveUpsellModal';
 import { CopyPublicLink } from './CopyPublicLink';
+import { useDriveUpsellModal } from './DriveUpsellModal';
 import { usePublickLinkSettingsModal } from './PublicLinkSettingsModal';
 import { PublicRoleDropdownMenu } from './PublicRoleDropdownMenu';
 

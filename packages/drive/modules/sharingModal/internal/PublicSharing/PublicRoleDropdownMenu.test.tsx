@@ -1,8 +1,8 @@
+import { MemberRole } from '@protontech/drive-sdk';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { usePopperAnchor } from '@proton/components/index';
-import { MemberRole } from '@proton/drive/index';
 import useLoading from '@proton/hooks/useLoading';
 
 import { PublicRoleDropdownMenu } from './PublicRoleDropdownMenu';

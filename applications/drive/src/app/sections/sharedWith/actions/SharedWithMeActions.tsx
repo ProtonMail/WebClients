@@ -1,8 +1,8 @@
 import type { useConfirmActionModal } from '@proton/components';
+import type { useSharingModal } from '@proton/drive/modules/sharingModal';
 
 import type { useDetailsModal } from '../../../modals/DetailsModal';
 import type { useFilesDetailsModal } from '../../../modals/FilesDetailsModal';
-import type { useSharingModal } from '../../../modals/SharingModal/SharingModal';
 import type { useDrivePreviewModal } from '../../../modals/preview';
 import type { DirectShareItem, SharedWithMeItem } from '../useSharedWithMe.store';
 import { BookmarkActions } from './BookmarkActions';

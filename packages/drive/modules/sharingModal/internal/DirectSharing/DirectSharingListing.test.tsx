@@ -1,7 +1,6 @@
+import { MemberRole, NonProtonInvitationState } from '@protontech/drive-sdk';
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-
-import { MemberRole, NonProtonInvitationState } from '@proton/drive';
 
 import type { DirectMember } from '../interfaces';
 import { MemberType } from '../interfaces';

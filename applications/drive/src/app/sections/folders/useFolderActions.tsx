@@ -1,4 +1,5 @@
 import { generateNodeUid, getDrive, useDrive } from '@proton/drive';
+import { useSharingModal } from '@proton/drive/modules/sharingModal';
 import { uploadManager } from '@proton/drive/modules/upload';
 
 import { useUploadInput } from '../../hooks/drive/useUploadInput';
@@ -11,7 +12,6 @@ import { useMoveItemsModal } from '../../modals/MoveItemsModal';
 import { useRenameModal } from '../../modals/RenameModal';
 import { useRevisionsModal } from '../../modals/RevisionsModal';
 import { useFileSharingModal } from '../../modals/SelectLinkToShareModal';
-import { useSharingModal } from '../../modals/SharingModal/SharingModal';
 import { useDrivePreviewModal } from '../../modals/preview';
 import { createDocument } from '../../utils/docs/openInDocs';
 import { isPreviewOrFallbackAvailable } from '../../utils/isPreviewOrFallbackAvailable';
