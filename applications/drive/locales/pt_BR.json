@@ -539,9 +539,6 @@
       "Go back": [
         "Voltar"
       ],
-      "Go back to album “${ albumName }“": [
-        "Voltar para o álbum \"${ albumName }\""
-      ],
       "Go to ${ planOrAppName }": [
         "Acesse o ${ planOrAppName }"
       ],
@@ -9350,38 +9347,38 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" copied": [
+        "\"${ ellipsedName }\" copiado"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "\"${ ellipsedName }\" detectado"
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "\"${ ellipsedName }\" excluído permanentemente da lixeira"
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "\"${ ellipsedName }\" falhou ao ser movido"
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "Falha ao restaurar \"${ ellipsedName }\" da lixeira"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" movido"
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "\"${ ellipsedName }\" restaurado da lixeira"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "\"${ ellipsedName }\" movido"
+      ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" compartilhado"
-      ],
-      "\"${ name }\" created successfully": [
-        "\"${ name }\" criado"
-      ],
-      "\"${ name }\" deleted": [
-        "\"${ name }\" excluído"
       ],
       "\"${ name }\" deleted permanently": [
         "\"${ name } excluído permanentemente"
       ],
-      "\"${ name }\" deleted permanently from trash": [
-        "\"${ name }\" excluído permanentemente da lixeira"
-      ],
-      "\"${ name }\" failed to be created": [
-        "Não foi possível criar \"${ name }\"."
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "\"${ name }\" não foi excluído"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "Não foi possível excluir \"${ name }\" permanentemente da lixeira."
-      ],
-      "\"${ name }\" failed to be moved": [
-        "Não foi possível mover \"${ name }\"."
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "Não foi possível mover \"${ name }\" para a lixeira."
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "Erro ao restaurar \"${ name }\" da lixeira"
       ],
       "\"${ name }\" failed to be saved": [
         "Não foi possível salvar \"${ name }\"."
@@ -9389,17 +9386,8 @@
       "\"${ name }\" moved to trash": [
         "\"${ name }\" movido para a lixeira"
       ],
-      "\"${ name }\" restored from trash": [
-        "\"${ name }\" restaurado da lixeira"
-      ],
       "\"${ name }\" saved successfully": [
         "\"${ name }\" salvo"
-      ],
-      "\"${ name }\" successfully copied": [
-        "\"${ name }\" copiado"
-      ],
-      "\"${ name }\" successfully moved": [
-        "\"${ name }\" movido"
       ],
       "\"${ newName }\" failed to be renamed": [
         "Não foi possível mudar o nome de \"${ newName }\"."
@@ -9443,6 +9431,10 @@
         "${ numberOfItems } item copiado para a lixeira",
         "${ numberOfItems } itens copiados para a lixeira"
       ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems } item copiado",
+        "${ numberOfItems } itens copiados"
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } item excluído",
         "${ numberOfItems } itens excluídos"
@@ -9471,6 +9463,10 @@
         "Erro ao restaurar ${ numberOfItems } arquivo da lixeira",
         "Erro ao restaurar ${ numberOfItems } arquivos da lixeira"
       ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } item movido",
+        "${ numberOfItems } itens movidos"
+      ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } item movido para a lixeira",
         "${ numberOfItems } itens movidos para a lixeira"
@@ -9478,10 +9474,6 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } item restaurado da lixeira",
         "${ numberOfItems } itens restaurados da lixeira"
-      ],
-      "${ numberOfItems } item successfully copied": [
-        "${ numberOfItems } item copiado",
-        "${ numberOfItems } itens copiados"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } item movido",
@@ -9523,8 +9515,8 @@
       "Contact group updated": [
         "O grupo de contatos foi atualizado"
       ],
-      "Copy of \"${ name }\" moved to trash": [
-        "Cópia de \"${ name }\" movido para a lixeira"
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "Cópia de \"${ ellipsedName }\" movido para a lixeira"
       ],
       "Device failed to be removed": [
         "Erro ao remover o dispositivo"
@@ -10232,6 +10224,9 @@
       ],
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durante esse período, você não poderá modificar ou cancelar sua assinatura. Aguarde até que seu pagamento seja concluído antes de tentar qualquer alteração. Obrigado pela sua paciência."
+      ],
+      "Edit billing address": [
+        "Editar o endereço de cobrança"
       ],
       "Got it": [
         "Entendi"
@@ -12038,9 +12033,6 @@
       ],
       "Billing details updated": [
         "Os detalhes de faturamento forem atualizados"
-      ],
-      "Billing information updated": [
-        "As informações de faturamento foram atualizadas"
       ],
       "Canceling import": [
         "Cancelando a importação"

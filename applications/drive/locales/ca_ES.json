@@ -539,8 +539,8 @@
       "Go back": [
         "Torna enrere"
       ],
-      "Go back to album “${ albumName }“": [
-        "Torna a l'àlbum «${ albumName }»"
+      "Go back to album “${ ellipsedAlbumName }“": [
+        "Torneu a l'àlbum \"${ ellipsedAlbumName }\""
       ],
       "Go to ${ planOrAppName }": [
         "Aneu a ${ planOrAppName }"
@@ -3521,6 +3521,9 @@
       ],
       "Failed to load signature details, please try again later": [
         "No s'han pogut carregar els detalls de la signatura, torneu-ho a provar més tard."
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "No s'han pogut carregar les dades de la subscripció. Torneu-ho a provar més tard."
       ],
       "Failed to load the STL preview": [
         "No s'ha pogut carregar la previsualització STL."
@@ -9392,38 +9395,50 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" copied": [
+        "S'ha copiat \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "S'ha creat \"${ ellipsedName }\" correctament"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "S'ha eliminat \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "S'ha eliminat permanentment \"${ ellipsedName }\" de la paperera"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "No s'ha pogut crear \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "No s'ha pogut eliminar \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "No s'ha pogut eliminar permanentment \"${ ellipsedName }\" de la paperera"
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "No s'ha pogut moure \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "No s'ha pogut restaurar \"${ ellipsedName }\" de la paperera"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "S'ha mogut \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "S'ha restaurat \"${ ellipsedName }\" de la paperera"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "S'ha mogut \"${ ellipsedName }\" correctament"
+      ],
       "\"${ fileName }\" shared": [
         "S'ha compartit \"${ fileName }\""
-      ],
-      "\"${ name }\" created successfully": [
-        "S'ha creat \"${ name }\""
-      ],
-      "\"${ name }\" deleted": [
-        "S'ha eliminat «${ name }»."
       ],
       "\"${ name }\" deleted permanently": [
         "S'ha eliminat \"${ name }\" permanentment"
       ],
-      "\"${ name }\" deleted permanently from trash": [
-        "S'ha eliminat \"${ name }\" de manera permanent de la paperera"
-      ],
-      "\"${ name }\" failed to be created": [
-        "No s'ha pogut crear \"${ name }\""
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "No s'ha pogut eliminar «${ name }»."
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "No s'ha pogut eliminar ${ name } de manera permanent de la paperera"
-      ],
-      "\"${ name }\" failed to be moved": [
-        "No s'ha pogut moure \"${ name }\""
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "No s'ha pogut moure \"${ name }\" a la paperera."
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "No s'ha pogut restaurar ${ name } de la paperera."
       ],
       "\"${ name }\" failed to be saved": [
         "No s'ha pogut desar \"${ name }\""
@@ -9431,17 +9446,8 @@
       "\"${ name }\" moved to trash": [
         "S'ha mogut «${ name }» a la paperera"
       ],
-      "\"${ name }\" restored from trash": [
-        "S'ha restaurat \"${ name }\" de la paperera"
-      ],
       "\"${ name }\" saved successfully": [
         "S'ha desat \"${ name }\""
-      ],
-      "\"${ name }\" successfully copied": [
-        "«${ name }» s'ha copiat correctament"
-      ],
-      "\"${ name }\" successfully moved": [
-        "\"S'ha mogut ${ name }"
       ],
       "\"${ newName }\" failed to be renamed": [
         "No s'ha pogut canviar el nom de \"${ newName }\""
@@ -9485,6 +9491,10 @@
         "S'ha mogut ${ numberOfItems } element copiat a la paperera",
         "S'han mogut ${ numberOfItems } elements copiats a la paperera"
       ],
+      "${ numberOfItems } item copied": [
+        "S'ha copiat ${ numberOfItems } element",
+        "S'han copiat ${ numberOfItems } elements"
+      ],
       "${ numberOfItems } item deleted": [
         "S'ha eliminat ${ numberOfItems } element",
         "S'han eliminat ${ numberOfItems } elements"
@@ -9513,6 +9523,10 @@
         "No s'ha pogut restaurar ${ numberOfItems } element de la paperera",
         "No s'han pogut restaurar ${ numberOfItems } elements de la paperera"
       ],
+      "${ numberOfItems } item moved": [
+        "S'ha mogut ${ numberOfItems } element",
+        "S'han mogut ${ numberOfItems } elements"
+      ],
       "${ numberOfItems } item moved to trash": [
         "S'ha mogut ${ numberOfItems } element a la paperera",
         "S'han mogut ${ numberOfItems } elements a la paperera"
@@ -9520,10 +9534,6 @@
       "${ numberOfItems } item restored from trash": [
         "S'ha restaurat ${ numberOfItems } element de la paperera",
         "S'han restaurat ${ numberOfItems } elements de la paperera"
-      ],
-      "${ numberOfItems } item successfully copied": [
-        "S'ha copiat correctament ${ numberOfItems } element",
-        "S'han copiat correctament ${ numberOfItems } elements"
       ],
       "${ numberOfItems } item successfully moved": [
         "S'ha mogut ${ numberOfItems } element",
@@ -9565,8 +9575,8 @@
       "Contact group updated": [
         "Grup de contactes actualitzat"
       ],
-      "Copy of \"${ name }\" moved to trash": [
-        "La còpia de \"${ name }\" s'ha mogut a la paperera"
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "La còpia de \"${ ellipsedName }\" s'ha mogut a la paperera"
       ],
       "Device failed to be removed": [
         "No s'ha pogut esborrar el dispositiu."
@@ -10268,6 +10278,9 @@
       ],
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durant aquest temps, no podreu modificar ni cancel·lar la vostra subscripció. Espereu fins que s'hagi completat el pagament abans d'intentar qualsevol canvi. Gràcies per la vostra paciència."
+      ],
+      "Edit billing address": [
+        "Editar l'adreça de facturació"
       ],
       "Got it": [
         "Fet"
@@ -11981,9 +11994,6 @@
       ],
       "Billing details updated": [
         "S'han actualitzat els detalls de facturació."
-      ],
-      "Billing information updated": [
-        "S'ha actualitzat la informació de facturació"
       ],
       "Canceling import": [
         "S'està cancel·lant la importació"

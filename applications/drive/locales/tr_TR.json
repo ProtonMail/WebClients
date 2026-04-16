@@ -539,8 +539,8 @@
       "Go back": [
         "Geri dön"
       ],
-      "Go back to album “${ albumName }“": [
-        "“${ albumName }” albümüne dön"
+      "Go back to album “${ ellipsedAlbumName }“": [
+        "“${ ellipsedAlbumName }” albümüne geri dön"
       ],
       "Go to ${ planOrAppName }": [
         "${ planOrAppName } uygulamasına git"
@@ -3521,6 +3521,9 @@
       ],
       "Failed to load signature details, please try again later": [
         "İmza ayrıntıları yüklenemedi. Lütfen bir süre sonra yeniden deneyin"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Abonelik verileri yüklenemedi. Lütfen daha sonra tekrar deneyin."
       ],
       "Failed to load the STL preview": [
         "STL ön izlemesi yüklenemedi"
@@ -9332,38 +9335,50 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" copied": [
+        "\"${ ellipsedName }\" kopyalandı"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "\"${ ellipsedName }\" başarıyla oluşturuldu"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "\"${ ellipsedName }\" silindi"
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "\"${ ellipsedName }\" çöp kutusundan kalıcı olarak silindi"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "\"${ ellipsedName }\" oluşturulamadı"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "\"${ ellipsedName }\" silinemedi"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "\"${ ellipsedName }\" çöp kutusundan kalıcı olarak silinemedi"
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "\"${ ellipsedName }\" taşınamadı"
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "\"${ ellipsedName }\" çöp kutusundan geri yüklenemedi"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" taşındı"
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "\"${ ellipsedName }\" çöp kutusundan geri yüklendi"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "\"${ ellipsedName }\" başarıyla taşındı"
+      ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" paylaşıldı"
-      ],
-      "\"${ name }\" created successfully": [
-        "\"${ name }\" eklendi"
-      ],
-      "\"${ name }\" deleted": [
-        "\"${ name }\" silindi"
       ],
       "\"${ name }\" deleted permanently": [
         "“${ name }” kalıcı olarak silindi"
       ],
-      "\"${ name }\" deleted permanently from trash": [
-        "\"${ name }\" çöp kutusundan kalıcı olarak silindi"
-      ],
-      "\"${ name }\" failed to be created": [
-        "\"${ name }\" eklenemedi"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "\"${ name }\" silinemedi"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "\"${ name } çöp kutusundan kalıcı olarak silinemedi"
-      ],
-      "\"${ name }\" failed to be moved": [
-        "\"${ name }\" taşınamadı"
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "\"${ name }\" çöpe atılamadı"
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "\"${ name }\" çöpten çıkarılamadı"
       ],
       "\"${ name }\" failed to be saved": [
         "\"${ name }\" kaydedilemedi"
@@ -9371,17 +9386,8 @@
       "\"${ name }\" moved to trash": [
         "\"${ name }\" çöpe atıldı"
       ],
-      "\"${ name }\" restored from trash": [
-        "\"${ name }\" çöpten çıkarıldı"
-      ],
       "\"${ name }\" saved successfully": [
         "\"${ name }\" kaydedildi"
-      ],
-      "\"${ name }\" successfully copied": [
-        "\"${ name }\" kopyalandı"
-      ],
-      "\"${ name }\" successfully moved": [
-        "\"${ name }\" taşındı"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\" yeniden adlandırılamadı"
@@ -9425,6 +9431,10 @@
         "${ numberOfItems } kopyalanan öge çöpe atıldı",
         "${ numberOfItems } kopyalanan öge çöpe atıldı"
       ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems } öğe kopyalandı",
+        "${ numberOfItems } öğe kopyalandı"
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } öge silindi",
         "${ numberOfItems } öge silindi"
@@ -9453,6 +9463,10 @@
         "${ numberOfItems } öge çöpten çıkarılamadı",
         "${ numberOfItems } öge çöpten çıkarılamadı"
       ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } öğe taşındı",
+        "${ numberOfItems } öğe taşındı"
+      ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } öge çöpe atıldı",
         "${ numberOfItems } öge çöpe atıldı"
@@ -9460,10 +9474,6 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } öge çöpten çıkarıldı",
         "${ numberOfItems } öge çöpten çıkarıldı"
-      ],
-      "${ numberOfItems } item successfully copied": [
-        "${ numberOfItems } öge kopyalandı",
-        "${ numberOfItems } öge kopyalandı"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } öge taşındı",
@@ -9505,8 +9515,8 @@
       "Contact group updated": [
         "Kişi grubu güncellendi"
       ],
-      "Copy of \"${ name }\" moved to trash": [
-        "\"${ name }\" kopyası çöpe atıldı"
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "\"${ ellipsedName }\" dosyasının bir kopyası çöp kutusuna taşındı"
       ],
       "Device failed to be removed": [
         "Aygıt kaldırılamadı"
@@ -10208,6 +10218,9 @@
       ],
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Bu süre boyunca aboneliğinizi değiştiremez veya iptal edemezsiniz. Değişiklik yapmadan önce lütfen ödeme işleminizin tamamlanmasını bekleyin. Anlayışınız için teşekkür ederiz."
+      ],
+      "Edit billing address": [
+        "Fatura adresini düzenle"
       ],
       "Got it": [
         "Anladım"
@@ -12016,9 +12029,6 @@
         "Takma ad kaydedildi ve kopyalandı"
       ],
       "Billing details updated": [
-        "Fatura bilgileri güncellendi"
-      ],
-      "Billing information updated": [
         "Fatura bilgileri güncellendi"
       ],
       "Canceling import": [

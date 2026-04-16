@@ -7564,32 +7564,8 @@
       ]
     },
     "Notification": {
-      "\"${ name }\" created successfully": [
-        "\"${ name }\" успішно створено"
-      ],
-      "\"${ name }\" deleted": [
-        "\"${ name }\" видалено"
-      ],
-      "\"${ name }\" deleted permanently from trash": [
-        "\"${ name }\" видалено зі смітника остаточно"
-      ],
-      "\"${ name }\" failed to be created": [
-        "\"${ name }\" не вдалося створити"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "\"${ name }\" не вдалося видалити"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "\"${ name }\" не вдалося остаточно видалити зі смітника"
-      ],
-      "\"${ name }\" failed to be moved": [
-        "\"${ name }\" не вдалося перемістити"
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "\"${ name }\" не вдалося перемістити до смітника"
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "\"${ name }\" не вдалося відновити зі смітника"
       ],
       "\"${ name }\" failed to be saved": [
         "Не вдалося зберегти \"${ name }\""
@@ -7597,14 +7573,8 @@
       "\"${ name }\" moved to trash": [
         "\"${ name }\" переміщено до смітника"
       ],
-      "\"${ name }\" restored from trash": [
-        "\"${ name }\" відновлено зі смітника"
-      ],
       "\"${ name }\" saved successfully": [
         "\"${ name }\" успішно збережено"
-      ],
-      "\"${ name }\" successfully moved": [
-        "\"${ name }\" успішно переміщено"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\" не вдалося перейменувати"
