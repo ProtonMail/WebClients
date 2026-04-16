@@ -69,7 +69,7 @@ export class IndexPopulatorTask extends BaseTask {
         await ctx.db.putPopulatorState({
             uid: populator.getUid(),
             done: true,
-            generation: populator.getGeneration(),
+            generation: await populator.getGeneration(ctx.db),
             version: populator.getVersion(),
         });
     }

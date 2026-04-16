@@ -78,6 +78,14 @@ export class SharedWorkerAPI {
         this.clientsCoordinator.clearActiveClient();
     }
 
+    async reindexPopulator(uid: string): Promise<void> {
+        if (!this.indexer) {
+            Logger.warn('SharedWorkerAPI: reindexPopulator called but no indexer available');
+            return;
+        }
+        await this.indexer.reindexPopulator(uid);
+    }
+
     async search(query: SearchQuery, onEvent?: (event: WorkerSearchResultEvent) => void): Promise<void> {
         if (!this.searcher) {
             Logger.warn('SharedWorkerAPI: search called but no searcher available');

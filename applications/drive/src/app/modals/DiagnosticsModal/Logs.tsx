@@ -27,8 +27,8 @@ function LogsView({ logs, downloadLogs }: Props) {
                     </tr>
                 </thead>
                 <tbody>
-                    {logs.map((log) => (
-                        <tr key={log.message + log.time.toISOString()}>
+                    {logs.map((log, index) => (
+                        <tr key={`${index}-${log.time.toISOString()}`}>
                             <td>{log.time.toLocaleTimeString()}</td>
                             <td>
                                 <Badge type={getLevelColor(log.level)}>{log.level}</Badge>
