@@ -21,6 +21,7 @@ const MainLayoutContent = ({ children }: Props) => {
     const { openSearchModal } = useSearchModal();
     const isGuest = useIsGuest();
 
+
     // Set up keyboard shortcuts
     useKeyboardShortcuts({ onOpenSearch: openSearchModal });
     const HeaderComponent = isGuest ? PublicHeader : PrivateHeader;
