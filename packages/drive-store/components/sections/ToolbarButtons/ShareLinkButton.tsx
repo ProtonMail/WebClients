@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton } from '@proton/components';
+import { ToolbarButton } from '@proton/components';
+import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
 
 import { useLinkSharingModal } from '../../modals/ShareLinkModal/ShareLinkModal';
 
@@ -15,7 +16,7 @@ const ShareLinkButton = ({ shareId, linkId }: Props) => {
         <>
             <ToolbarButton
                 title={c('Action').t`Share`}
-                icon={<Icon name="user-plus" alt={c('Action').t`Share`} />}
+                icon={<IcUserPlus alt={c('Action').t`Share`} />}
                 onClick={() => showLinkSharingModal({ shareId, linkId })}
                 data-testid="toolbar-share-link"
             />
