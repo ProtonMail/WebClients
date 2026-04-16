@@ -128,7 +128,6 @@ import SubscriptionCheckout from './modal-components/SubscriptionCheckout';
 import SubscriptionThanks from './modal-components/SubscriptionThanks';
 import { canShowGiftCodeInput } from './modal-components/helpers/canShowGiftCodeInput';
 import { showLumoAddonCustomizer } from './modal-components/helpers/showLumoAddonCustomizer';
-import { showMeetAddonCustomizer } from './modal-components/helpers/showMeetAddonCustomizer';
 import { PostSubscriptionModalLoadingContent } from './postSubscription/modals/PostSubscriptionModalsComponents';
 import useSubscriptionModalTelemetry from './useSubscriptionModalTelemetry';
 
@@ -491,7 +490,6 @@ const SubscriptionContainerInner = ({
         planIDs: model.planIDs,
         cycle: model.cycle,
     });
-    const meetAddonEnabled = meetAddonFlag && showMeetAddonCustomizer({ subscription });
 
     const [selectedProductPlans, setSelectedProductPlans] = useState(
         defaultSelectedProductPlans ||
@@ -1485,7 +1483,7 @@ const SubscriptionContainerInner = ({
                                             <ProtonPlanCustomizer
                                                 scribeAddonEnabled={scribeEnabled.paymentsEnabled}
                                                 lumoAddonEnabled={lumoAddonEnabled}
-                                                meetAddonEnabled={meetAddonEnabled}
+                                                meetAddonEnabled={meetAddonFlag}
                                                 loading={blockAccountSizeSelector}
                                                 currency={model.currency}
                                                 cycle={model.cycle}
