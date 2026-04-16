@@ -485,9 +485,6 @@
       "Fit to window": [
         "Па памеры акна"
       ],
-      "Forgot password?": [
-        "Забылі пароль?"
-      ],
       "Forgot recovery method?": [
         "Забылі спосаб аднаўлення?"
       ],
@@ -4340,6 +4337,9 @@
       "Failed to load OAuth modal.": [
         "Не ўдалося загрузіць акно OAuth."
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Не ўдалося загрузіць даныя падпіскі. Паспрабуйце яшчэ раз пазней."
+      ],
       "Failed to load the STL preview": [
         "Не ўдалося загрузіць папярэдні прагляд STL"
       ],
@@ -6235,6 +6235,9 @@
         "${ countriesCount } краін уключаны",
         "${ countriesCount } краін уключаны"
       ],
+      "${ DataLockedText }, but recoverable with your ${ RecoveryContactsLink }:": [
+        "${ DataLockedText }, але іх можна аднавіць з дапамогай вашых ${ RecoveryContactsLink }:"
+      ],
       "${ discountPercent }% discount": [
         "скідка ${ discountPercent }%"
       ],
@@ -6489,6 +6492,9 @@
       ],
       "**Sync codes** to all your devices": [
         "**Сінхранізуйце коды** з усімі вашымі прыладамі"
+      ],
+      "**This will disable 2-factor authentication.**": [
+        "**Гэта дзеянне прывядзе да адключэння двухфактарнай аўтэнтыфікацыі.**"
       ],
       "+ ${ invisibleCount } More": [
         "+ яшчэ ${ invisibleCount }",
@@ -6756,6 +6762,9 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Перад запытам новага кода спраўджання праверце папку са спамам, а таксама ці правільна ўказаны адрас ${ strong }."
+      ],
+      "Before sending a new verification code, check your spam folder for ${ EmailOrPhoneNumber }.": [
+        "Праверце сваю папку са спамам для ${ EmailOrPhoneNumber } перад тым, як адпраўляць новы код спраўджання."
       ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
         "Каб вы змаглі атрымліваць электронныя лісты для адрасоў вашага карыстальніцкага дамена ў ${ MAIL_APP_NAME }, вам трэба дадаць наступныя два запісы MX у кансоль DNS (якая размешчана на той платформе, дзе вы набылі карыстальніцкі дамен). Тут вы можаце знайсці прыклад і некалькі карысных парад ${ kbLink }."
@@ -7170,12 +7179,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Увядзіце ваш уліковы запіс электроннай пошты ${ BRAND_NAME } або імя карыстальніка."
-      ],
-      "Enter your own password (as organization admin).": [
-        "Увядзіце свой пароль (адміністратара арганізацыі)."
-      ],
-      "Enter your own password (as trusted contact).": [
-        "Увядзіце свой пароль (як давераны кантакт)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Увядзіце адрас электроннай пошты, які вы выкарыстоўваеце для аднаўлення доступу, і мы адправім вам ваша імя карыстальніка або адрас электроннай пошты."
@@ -7660,6 +7663,9 @@
       "New sidebar": [
         "Новая бакавая панэль"
       ],
+      "New sidebar layout": [
+        "Новы макет бакавой панэлі"
+      ],
       "New user invited to organization": [
         "Новы карыстальнік запрошаны ў арганізацыю"
       ],
@@ -7936,12 +7942,6 @@
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Рэкамендавана на давераных прыладах. ${ keepMeSignedInLearnMoreLink }"
       ],
-      "Recovery contacts": [
-        "Кантакты для аднаўлення"
-      ],
-      "Recovery file": [
-        "Файл аднаўлення"
-      ],
       "Recovery file downloaded": [
         "Файлы аднаўлення спампаваны"
       ],
@@ -7950,9 +7950,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Інфармацыя з аднаўленнем застанецца на гэтай прыладзе пакуль вы не выдаліце яе."
-      ],
-      "Recovery phrase": [
-        "Фраза аднаўлення"
       ],
       "Recovery phrase copied to clipboard": [
         "Фраза аднаўлення скапіявана ў буфер абмену"
@@ -8272,8 +8269,8 @@
       "The name will be visible to your users while they are signed in.": [
         "Гэта імя ўбачаць вашы карыстальнікі, калі яны ўвойдуць у сістэму."
       ],
-      "The referral credit can be awarded up to 2 months after your friend's trial ended, and if your friend subscribed to a plan.": [
-        "Узнагарода па рэферальнай праграме ў выглядзе крэдытаў можа быць атрымана на працягу 2 месяцаў пасля завяршэння пробнага перыяду вашага сябра, і калі ваш сябар падпісаўся на тарыфны план."
+      "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
+        "Узнагарода па рэферальнай праграме ў выглядзе крэдытаў можа быць атрымана на працягу 2 месяцаў пасля завяршэння пробнага перыяду вашага сябра, і толькі калі ваш сябар падпісаўся на тарыфны план."
       ],
       "The securest way to browse, stream, and be online.": [
         "Самы бяспечны спосаб для прагляду старонак у інтэрнэце і трансляцый."
@@ -8445,6 +8442,9 @@
       ],
       "To proceed, we must verify the request.": [
         "Для працягу, неабходна спраўдзіць запыт."
+      ],
+      "To regain access to your account and data, enter the 12-word recovery phrase associated with your account.": [
+        "Увядзіце фразу аднаўлення з 12 слоў, якая звязана з вашым уліковым запісам. Гэта дзеянне дазволіць аднавіць доступ да вашага ўліковага запісу і яго даных."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Для абароны вашага падключэння да інтэрнэту, вам неабходна спампаваць і ўсталяваць праграму ${ VPN_APP_NAME } для вашай прылады і падключыцца да сервера."
@@ -8848,9 +8848,6 @@
       "You can now reset your password to regain access to your account.": [
         "Цяпер вы можаце скінуць пароль, каб аднавіць доступ да вашага ўліковага запісу."
       ],
-      "You can now reset your password to regain access to your account. **This will disable 2-factor authentication.**": [
-        "Цяпер вы можаце скінуць пароль, каб аднавіць доступ да вашага ўліковага запісу. **Гэта адключыць двухфактарную аўтэнтыфікацыю.**"
-      ],
       "You can now return to the application to continue": [
         "Цяпер вы можаце вярнуцца да праграмы, каб працягнуць"
       ],
@@ -9045,9 +9042,6 @@
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "Наступная дата спагнання адбудзецца ${ renewalTime }. Скасаваць можна ў любы час. Звяжыцеся са службай падтрымкі, калі вы запатрабавалі неадкладную змену тарыфнага плана."
-      ],
-      "Your old password": [
-        "Ваш стары пароль"
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Ваша арганізацыя выкарыстоўвае адзіны ўваход (SSO). Націсніце кнопку \"Увайсці\", каб працягнуць уваход з вашым пастаўшчыком SSO."
@@ -10102,12 +10096,6 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Так, я хачу незваротна выдаліць гэты ўліковы запіс і ўсе яго даныя."
       ],
-      "Your password (admin)": [
-        "Ваш пароль (admin)"
-      ],
-      "Your password (trusted contact)": [
-        "Ваш пароль (давераны кантакт)"
-      ],
       "ZIP code": [
         "Паштовы індэкс"
       ]
@@ -10833,6 +10821,38 @@
       ],
       "Sign in to access your ${ appName } account": [
         "Увайсці, каб атрымаць доступ да свайго ўліковага запісу ${ appName }"
+      ]
+    },
+    "Missing feature": {
+      "Check out the latest product updates": [
+        "Праверыць наяўнасць апошніх абнаўленняў"
+      ],
+      "Continue cancelling": [
+        "Працягнуць скасаванне"
+      ],
+      "Explore the latest news": [
+        "Даведайцеся аб апошніх навінах"
+      ],
+      "Keep current plan": [
+        "Пакінуць бягучы тарыфны план"
+      ],
+      "Make your voice heard": [
+        "Выкажыце сваё меркаванне"
+      ],
+      "Request a feature": [
+        "Запытаць функцыю"
+      ],
+      "Request a feature or vote on ideas from other users in our feedback forum.": [
+        "Запытайце функцыю або прагаласуйце за ідэі іншых карыстальнікаў на нашым форуме з водгукамі."
+      ],
+      "See how ${ BRAND_NAME } apps are evolving with your feedback.": [
+        "Паглядзіце як праграмы ${ BRAND_NAME } эвалюцыяніруюць з дапамогай вашых водгукаў."
+      ],
+      "Submit your ideas": [
+        "Адпраўляйце свае ідэі"
+      ],
+      "Your feedback helps us improve. Whether you've spotted a bug, want a new feature, or think something could work differently, we'd love to hear from you.": [
+        "Вашы водгукі дапамагаюць нам станавіцца лепш. Калі вы выявілі памылку, хочаце атрымаць новую функцыю, або не разумееце чаму тая або іншая функцыя працуе менавіта так, а не па іншаму, то наша каманда будзе рада пачуць ваша меркаванне."
       ]
     },
     "Modal title": {
@@ -12843,6 +12863,9 @@
       ],
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "У вас больш не будзе магчымасці змяніць або скасаваць сваю падпіску пачынаючы з гэтага моманту. Пачакайце, пакуль завершыцца аплата перад тым, як спрабаваць зрабіць нейкія змяненні. Дзякуй за ваша цярпенне."
+      ],
+      "Edit billing address": [
+        "Рэдагаваць адрас аплаты"
       ],
       "Got it": [
         "Зразумела"
@@ -14884,9 +14907,6 @@
       "Share the confirmation code with your administrator": [
         "Абагуліць код пацвярджэння з вашым адміністратарам"
       ],
-      "Sign in": [
-        "Уваход"
-      ],
       "Sign in to your organization": [
         "Увайсці ў сваю арганізацыю"
       ],
@@ -14946,9 +14966,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Вам давядзецца стварыць новых карыстальнікаў уручную, каб дадаць іх у вашу арганізацыю."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Вы будзеце перанакіраваны ў вашага старонняга пастаўшчыка SSO."
       ],
       "Your SSO configuration will be deleted.": [
         "Ваша канфігурацыя SSO будзе выдалена."
@@ -15640,9 +15657,6 @@
       "Billing details updated": [
         "Плацежныя падрабязнасці абноўлены"
       ],
-      "Billing information updated": [
-        "Плацежная інфармацыя абноўлена"
-      ],
       "Canceling import": [
         "Скасаванне імпартавання"
       ],
@@ -16285,9 +16299,6 @@
       "Collaborate on documents": [
         "Сумесная праца над дакументамі"
       ],
-      "Configurations": [
-        "Канфігурацыі"
-      ],
       "Confirm": [
         "Пацвердзіць"
       ],
@@ -16578,9 +16589,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Увядзіце падрабязнасці вашага ўліковага запісу ${ BRAND_NAME }, каб далучыцца да бэта-праграмы ${ app }"
-      ],
-      "Enter your password": [
-        "Увядзіце свой пароль"
       ],
       "Error": [
         "Памылка"

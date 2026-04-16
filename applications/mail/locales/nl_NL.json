@@ -196,9 +196,6 @@
       "Carbon Copy": [
         "CC"
       ],
-      "Change password": [
-        "Wachtwoord wijzigen"
-      ],
       "Change sorting": [
         "Sortering wijzigen"
       ],
@@ -1493,7 +1490,8 @@
         "Vertrouwen"
       ],
       "Trust key": [
-        "Vertrouwde sleutel"
+        "Sleutel vertrouwen",
+        "Sleutels vertrouwen"
       ],
       "Trust public key": [
         "Publieke sleutel vertrouwen"
@@ -4665,6 +4663,9 @@
       "Failed to encrypt attachment. Please try again.": [
         "Fout tijdens het versleutelen van de bijlage. Probeer opnieuw."
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Kon de gegevens van uw abonnement niet laden, probeer het later opnieuw."
+      ],
       "Failed to load the STL preview": [
         "Fout bij het laden van de STL-preview"
       ],
@@ -7451,8 +7452,7 @@
         "Initialiseren..."
       ],
       "Insert image": [
-        "Afbeelding toevoegen",
-        "Afbeeldingen toevoegen"
+        "Afbeelding invoegen"
       ],
       "Insert link": [
         "Koppeling invoegen"
@@ -12244,6 +12244,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Gedurende deze periode kunt u uw abonnement niet wijzigen of annuleren. Wacht tot uw betaling is voltooid voordat u wijzigingen aanbrengt. Bedankt voor uw geduld."
       ],
+      "Edit billing address": [
+        "Factuuradres bewerken"
+      ],
       "Got it": [
         "Begrepen"
       ],
@@ -14433,9 +14436,6 @@
       "Billing details updated": [
         "Factuurgegevens bijgewerkt"
       ],
-      "Billing information updated": [
-        "Factuurgegevens bijgewerkt"
-      ],
       "Canceling import": [
         "Importeren annuleren"
       ],
@@ -14889,9 +14889,6 @@
       ],
       "Account security": [
         "Accountbeveiliging"
-      ],
-      "Account temporarily locked": [
-        "Account tijdelijk geblokkeerd"
       ],
       "Action all conversations": [
         "Toepassen op alle gesprekken"

@@ -492,9 +492,6 @@
       "Go back": [
         "Pojdi nazaj"
       ],
-      "Go back to album “${ albumName }“": [
-        "Nazaj na album '${ albumName }'"
-      ],
       "Go to ${ planOrAppName }": [
         "Pojdi na ${ planOrAppName }"
       ],
@@ -9012,35 +9009,11 @@
       ]
     },
     "Notification": {
-      "\"${ name }\" created successfully": [
-        "»${ name }« je bil uspešno ustvarjen"
-      ],
-      "\"${ name }\" deleted": [
-        "'${ name }' izbrisano"
-      ],
       "\"${ name }\" deleted permanently": [
         "\"${ name }\" trajno izbrisan"
       ],
-      "\"${ name }\" deleted permanently from trash": [
-        "\"${ name } je trajno izbrisan iz smetnjaka"
-      ],
-      "\"${ name }\" failed to be created": [
-        "»${ name }« ni bilo mogoče ustvariti"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "${ name } ni bilo mogoče izbrisati"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "\"${ name } ni bilo mogoče trajno izbrisati iz smetnjaka"
-      ],
-      "\"${ name }\" failed to be moved": [
-        "»${ name }« ni bilo mogoče premakniti"
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "»${ name }« ni bilo mogoče premakniti v smetnjak"
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "\"${ name } ni bilo mogoče obnoviti iz smetnjaka"
       ],
       "\"${ name }\" failed to be saved": [
         "»${ name }« ni bilo mogoče shraniti"
@@ -9048,17 +9021,8 @@
       "\"${ name }\" moved to trash": [
         "»${ name }« premaknjen v smetnjak"
       ],
-      "\"${ name }\" restored from trash": [
-        "\"${ name } obnovljen iz smetnjaka"
-      ],
       "\"${ name }\" saved successfully": [
         "»${ name }« je uspešno shranjen"
-      ],
-      "\"${ name }\" successfully copied": [
-        "\"${ name }\" je bil uspešno kopiran"
-      ],
-      "\"${ name }\" successfully moved": [
-        "»${ name }« je uspešno premaknjen"
       ],
       "\"${ newName }\" failed to be renamed": [
         "»${ newName }« ni bilo mogoče preimenovati"
@@ -9155,9 +9119,6 @@
       ],
       "Contact group updated": [
         "Skupina stikov posodobljena"
-      ],
-      "Copy of \"${ name }\" moved to trash": [
-        "Kopija \"${ name }\" je bila premaknjena v smetnjak"
       ],
       "Device failed to be removed": [
         "Naprave ni bilo mogoče odstraniti"
@@ -11322,9 +11283,6 @@
       ],
       "Alias saved and copied": [
         "Vzdevek shranjen in kopiran"
-      ],
-      "Billing information updated": [
-        "Informacije o plačilu posodobljene"
       ],
       "Canceling import": [
         "Preklicevanje uvoza"

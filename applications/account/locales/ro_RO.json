@@ -6748,6 +6748,9 @@
       "Failed to load OAuth modal.": [
         "Eșuare încărcare panou modal OAuth."
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Eșuare la încărcarea datelor abonamentului. Reîncercați mai târziu."
+      ],
       "Failed to load the STL preview": [
         "Nu s-a putut încărca examinarea STL."
       ],
@@ -11429,12 +11432,6 @@
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Recomandat pe dispozitivele de încredere. ${ keepMeSignedInLearnMoreLink }"
       ],
-      "Recovery contacts": [
-        "Contacte de recuperare"
-      ],
-      "Recovery file": [
-        "Fișier de recuperare"
-      ],
       "Recovery file downloaded": [
         "Fișier de recuperare descărcat"
       ],
@@ -11443,9 +11440,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informațiile de recuperare vor rămâne pe acest dispozitiv până când le selectați să fie șterse."
-      ],
-      "Recovery phrase": [
-        "Frază de recuperare"
       ],
       "Recovery phrase copied to clipboard": [
         "Fraza de recuperare a fost copiată în memorie."
@@ -11867,7 +11861,7 @@
       "The name will be visible to your users while they are signed in.": [
         "Numele va fi vizibil utilizatorilor când sunt conectați."
       ],
-      "The referral credit can be awarded up to 2 months after your friend's trial ended, and if your friend subscribed to a plan.": [
+      "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
         "Creditul de recomandare poate fi acordat până la două luni după încheierea perioadei de probare pentru persoana recomandată și dacă aceasta s-a abonat la un plan."
       ],
       "The securest way to browse, stream, and be online.": [
@@ -12581,9 +12575,6 @@
       "You can now reset your password to regain access to your account.": [
         "Acum vă puteți reseta parola pentru a redobândi accesul la contul personal."
       ],
-      "You can now reset your password to regain access to your account. **This will disable 2-factor authentication.**": [
-        "Acum puteți reseta parola pentru a redobândi accesul la cont. **Aceasta va dezactiva autentificarea cu doi factori.**"
-      ],
       "You can now return to the application to continue": [
         "Puteți reveni la aplicație pentru a continua"
       ],
@@ -12815,9 +12806,6 @@
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "Următoarea dată de facturare este ${ renewalTime }. Puteți anula oricând. Contactați asistența dacă aveți nevoie de o schimbare imediată a planului."
-      ],
-      "Your old password": [
-        "Parola veche"
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Organizația dvs. utilizează conectarea unică (SSO). Apăsați pe Conectare pentru a continua cu furnizorul propriu de conectare unică (SSO)."
@@ -15908,6 +15896,38 @@
         "Conectați-vă la contul ${ BRAND_NAME } pentru a accesa toate serviciile ${ BRAND_NAME } criptate, cum ar fi ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } și altele. NU aveți un cont? Creați unul GRATUIT."
       ]
     },
+    "Missing feature": {
+      "Check out the latest product updates": [
+        "Consultați ultimele actualizări ale produsului"
+      ],
+      "Continue cancelling": [
+        "Continuare anulare"
+      ],
+      "Explore the latest news": [
+        "Explorați ultimele știri"
+      ],
+      "Keep current plan": [
+        "Păstrare plan curent"
+      ],
+      "Make your voice heard": [
+        "Făceți-vă vocea auzită"
+      ],
+      "Request a feature": [
+        "Solicitare funcție"
+      ],
+      "Request a feature or vote on ideas from other users in our feedback forum.": [
+        "Solicitați o funcție sau votați o idee de la alt utilizator în forumul nostru pentru feedback."
+      ],
+      "See how ${ BRAND_NAME } apps are evolving with your feedback.": [
+        "Vedeți cum aplicațiile ${ BRAND_NAME } evoluează pe baza feedback-ului dvs."
+      ],
+      "Submit your ideas": [
+        "Trimiteți o sugestie"
+      ],
+      "Your feedback helps us improve. Whether you've spotted a bug, want a new feature, or think something could work differently, we'd love to hear from you.": [
+        "Feedback-ul dvs. ne ajută să ne îmbunătățim. Indiferent dacă ați observat o eroare, doriți o funcție nouă sau credeți că ceva ar putea funcționa diferit, ne-ar plăcea să vă auzim părerea."
+      ]
+    },
     "Modal title": {
       "Add public holidays": [
         "Adăugare sărbători publice"
@@ -18713,6 +18733,9 @@
       ],
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "În acest timp, nu vă veți putea modifica sau anula abonamentul. Vă rugăm să așteptați până când plata este finalizată înainte de a încerca orice modificare. Vă mulțumim pentru răbdare."
+      ],
+      "Edit billing address": [
+        "Editați adresa de facturare"
       ],
       "Got it": [
         "Am înțeles"
@@ -22813,9 +22836,6 @@
       ],
       "Billing details updated": [
         "Detaliile de facturare s-au actualizat"
-      ],
-      "Billing information updated": [
-        "Informațiile de facturare s-au actualizat."
       ],
       "Calendar added. It might take a few minutes to sync.": [
         "Calendarul a fost adăugat. Sincronizarea ar putea dura câteva minute."

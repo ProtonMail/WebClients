@@ -530,9 +530,6 @@
       "Go back": [
         "Torna indietro"
       ],
-      "Go back to album “${ albumName }“": [
-        "Torna all'album “${ albumName }“"
-      ],
       "Go to ${ planOrAppName }": [
         "Vai a ${ planOrAppName }"
       ],
@@ -9104,35 +9101,11 @@
       ]
     },
     "Notification": {
-      "\"${ name }\" created successfully": [
-        "\"${ name }\" creato con successo"
-      ],
-      "\"${ name }\" deleted": [
-        "\"${ name }\" eliminato"
-      ],
       "\"${ name }\" deleted permanently": [
         "\"${ name }\" eliminato definitivamente"
       ],
-      "\"${ name }\" deleted permanently from trash": [
-        "\"${ name }\" eliminato definitivamente dal cestino"
-      ],
-      "\"${ name }\" failed to be created": [
-        "Creazione di \"${ name }\" non riuscita"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "Eliminazione di \"${ name }\" non riuscita"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "Eliminazione definitiva di \"${ name }\" dal cestino non riuscita"
-      ],
-      "\"${ name }\" failed to be moved": [
-        "Spostamento di \"${ name }\" non riuscito"
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "Spostamento di \"${ name }\" nel cestino non riuscito"
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "Ripristino di \"${ name }\" dal cestino non riuscito"
       ],
       "\"${ name }\" failed to be saved": [
         "Salvataggio di \"${ name }\" non riuscito"
@@ -9140,17 +9113,8 @@
       "\"${ name }\" moved to trash": [
         "\"${ name }\" spostato nel cestino"
       ],
-      "\"${ name }\" restored from trash": [
-        "\"${ name }\" ripristinato dal cestino"
-      ],
       "\"${ name }\" saved successfully": [
         "\"${ name }\" salvato con successo"
-      ],
-      "\"${ name }\" successfully copied": [
-        "\"${ name }\" copiato correttamente"
-      ],
-      "\"${ name }\" successfully moved": [
-        "\"${ name }\" spostato correttamente"
       ],
       "\"${ newName }\" failed to be renamed": [
         "Rinominazione di \"${ newName }\" non riuscita"
@@ -9226,10 +9190,6 @@
         "${ numberOfItems } oggetto ripristinato dal cestino",
         "${ numberOfItems } oggetti ripristinati dal cestino"
       ],
-      "${ numberOfItems } item successfully copied": [
-        "${ numberOfItems } elemento copiato con successo",
-        "${ numberOfItems } elementi copiati con successo"
-      ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } elemento spostato con successo",
         "${ numberOfItems } elementi spostati con successo"
@@ -9269,9 +9229,6 @@
       ],
       "Contact group updated": [
         "Gruppo di contatti aggiornato"
-      ],
-      "Copy of \"${ name }\" moved to trash": [
-        "Copia di \"${ name }\" spostata nel cestino"
       ],
       "Device failed to be removed": [
         "Rimozione del dispositivo non riuscita"

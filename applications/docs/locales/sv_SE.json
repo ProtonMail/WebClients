@@ -2507,6 +2507,9 @@
       "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
         "För att fortsätta ta emot och skicka Gmail-meddelanden i ${ BRAND_NAME }, återanslut ditt konto."
       ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Om du vill fortsätta ta emot och skicka Gmail-meddelanden i ${ BRAND_NAME }, återanslut dina konton."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "För att säkerställa högsta möjliga säkerhet för ditt konto, ställ in en återställningsfras."
       ],
@@ -2908,6 +2911,9 @@
       "Failed to copy photo to album": [
         "Misslyckades att kopiera foto till album"
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Misslyckades med att ladda prenumerationsdata. Försök igen senare."
+      ],
       "Failed to open to contact": [
         "Misslyckades att öppna kontakt"
       ],
@@ -3095,6 +3101,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Vissa av dina etikettnamn överskrider ${ MAIL_APP_NAME }s maximalt antal tillåtna tecken. Anpassa importen för att redigera dessa namn."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Något gick fel vid hämtning av tillgängliga domäner"
       ],
       "Something went wrong. Please try again.": [
         "Något gick fel. Försök igen."

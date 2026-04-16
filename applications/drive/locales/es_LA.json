@@ -539,8 +539,8 @@
       "Go back": [
         "Regresar"
       ],
-      "Go back to album “${ albumName }“": [
-        "Regresar al álbum «${ albumName }»"
+      "Go back to album “${ ellipsedAlbumName }“": [
+        "Regresar al álbum «${ ellipsedAlbumName }»"
       ],
       "Go to ${ planOrAppName }": [
         "Acceda a ${ planOrAppName }"
@@ -819,7 +819,7 @@
         "Referir una amistad"
       ],
       "Refetch index": [
-        "Volver a cargar índice"
+        "Actualizar el índice"
       ],
       "Refresh the page": [
         "Refrescar la página"
@@ -3521,6 +3521,9 @@
       ],
       "Failed to load signature details, please try again later": [
         "Error al obtener los detalles de firma, intente más tarde"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Error al cargar los datos de la suscripción. Intente más tarde."
       ],
       "Failed to load the STL preview": [
         "Error al cargar la vista previa de STL"
@@ -9392,38 +9395,50 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" copied": [
+        "«${ ellipsedName }» copiado"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "«${ ellipsedName }» creado con éxito"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "«${ ellipsedName }» eliminado"
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "«${ ellipsedName }» eliminado permanentemente de la papelera"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "Error al crear «${ ellipsedName }»"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "Error al eliminar «${ ellipsedName }»"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "Error al eliminar «${ ellipsedName }» permanentemente de la papelera"
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "Error al mover «${ ellipsedName }»"
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "Error al restaurar «${ ellipsedName }» de la papelera"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "«${ ellipsedName }» movido"
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "«${ ellipsedName }» restaurado de la papelera"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "«${ ellipsedName }» movido con éxito"
+      ],
       "\"${ fileName }\" shared": [
         "«${ fileName }» compartido"
-      ],
-      "\"${ name }\" created successfully": [
-        "\"${ name }\" creado"
-      ],
-      "\"${ name }\" deleted": [
-        "«${ name }» está eliminado."
       ],
       "\"${ name }\" deleted permanently": [
         "\"${ name }\" eliminado de forma permanente"
       ],
-      "\"${ name }\" deleted permanently from trash": [
-        "\"${ name }\" eliminado permanentemente de la papelera"
-      ],
-      "\"${ name }\" failed to be created": [
-        "Error al crear \"${ name }\""
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "Error al eliminar «${ name }»"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "Error al eliminar \"${ name }\" permanentemente de la papelera"
-      ],
-      "\"${ name }\" failed to be moved": [
-        "Error al mover \"${ name }\""
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "Error al mover \"${ name }\" a la papelera"
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "Error al restaurar \"${ name }\" de la papelera"
       ],
       "\"${ name }\" failed to be saved": [
         "Error al guardar \"${ name }\""
@@ -9431,17 +9446,8 @@
       "\"${ name }\" moved to trash": [
         "\"${ name }\" movido a la papelera"
       ],
-      "\"${ name }\" restored from trash": [
-        "\"${ name }\" restaurado de la papelera"
-      ],
       "\"${ name }\" saved successfully": [
         "\"${ name }\" guardado"
-      ],
-      "\"${ name }\" successfully copied": [
-        "«${ name }» copiado con éxito"
-      ],
-      "\"${ name }\" successfully moved": [
-        "\"${ name }\" movido"
       ],
       "\"${ newName }\" failed to be renamed": [
         "Error al renombrar \"${ newName }\""
@@ -9485,6 +9491,10 @@
         "${ numberOfItems } elemento copiado movido a la papelera",
         "${ numberOfItems } elementos copiados movidos a la papelera"
       ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems } elemento copiado",
+        "${ numberOfItems } elementos copiados"
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } elemento eliminado",
         "${ numberOfItems } elementos eliminados"
@@ -9513,6 +9523,10 @@
         "Error al restaurar ${ numberOfItems } elemento de la papelera",
         "Error al restaurar ${ numberOfItems } elementos de la papelera"
       ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } elemento movido",
+        "${ numberOfItems } elementos movidos"
+      ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } elemento movido a la papelera",
         "${ numberOfItems } elementos movidos a la papelera"
@@ -9520,10 +9534,6 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } elemento restaurado de la papelera",
         "${ numberOfItems } elementos restaurados de la papelera"
-      ],
-      "${ numberOfItems } item successfully copied": [
-        "${ numberOfItems } elemento copiado con éxito",
-        "${ numberOfItems } elementos copiados con éxito"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } elemento movido",
@@ -9565,8 +9575,8 @@
       "Contact group updated": [
         "Grupo de contactos actualizado"
       ],
-      "Copy of \"${ name }\" moved to trash": [
-        "Copia de «${ name }» movido a la papelera"
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "Copia de «${ ellipsedName }» movida a la papelera"
       ],
       "Device failed to be removed": [
         "Error al eliminar el dispositivo"
@@ -10268,6 +10278,9 @@
       ],
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durante este tiempo no podrá modificar o cancelar su suscripción. Por favor, espere hasta que su pago se complete antes de intentar cualquier cambio. Gracias por su paciencia."
+      ],
+      "Edit billing address": [
+        "Editar dirección de facturación"
       ],
       "Got it": [
         "Entiendo"
@@ -12078,9 +12091,6 @@
       "Billing details updated": [
         "Detalles de facturación actualizados"
       ],
-      "Billing information updated": [
-        "Información de facturación actualizada"
-      ],
       "Canceling import": [
         "Cancelando la importación"
       ],
@@ -12619,7 +12629,7 @@
         "¿Descartar cambios?"
       ],
       "Disconnected from Gmail": [
-        "Desconectado de Gmail"
+        "Sin conexión a Gmail"
       ],
       "Downgrade account": [
         "Pasar a un plan inferior"

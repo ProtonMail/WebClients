@@ -485,9 +485,6 @@
       "Fit to window": [
         "Ajustar a la ventana"
       ],
-      "Forgot password?": [
-        "¿Olvidó su contraseña?"
-      ],
       "Forgot recovery method?": [
         "¿Método de recuperación olvidado?"
       ],
@@ -854,6 +851,9 @@
       "Return to sign in": [
         "Volver al inicio de sesión"
       ],
+      "Return to sign-in": [
+        "Volver al inicio de sesión"
+      ],
       "Review": [
         "Revisar"
       ],
@@ -972,7 +972,7 @@
         "Compartir"
       ],
       "Share feedback": [
-        "Comparte tus comentarios:"
+        "Comparta sus comentarios:"
       ],
       "Share via link": [
         "Compartir con un enlace"
@@ -1075,6 +1075,9 @@
       ],
       "Try another method": [
         "Intente otro método"
+      ],
+      "Try another way": [
+        "Intentar de otra manera"
       ],
       "Try for free": [
         "Probarlo gratis"
@@ -3473,7 +3476,7 @@
         "Reenvíe automáticamente el correo electrónico entrante a otra dirección de correo electrónico."
       ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
-        "Bloquee la capacidad de Google de perfilarle. ${ MAIL_APP_NAME } no puede ver lo que usted hace en Gmail"
+        "Bloquee la capacidad de Google de perfilarle. Gmail no puede ver lo que usted hace en ${ MAIL_APP_NAME }."
       ],
       "Configure this first to activate your organization and customize your email address.": [
         "Configure esto primero para activar su organización y personalizar su dirección de correo electrónico."
@@ -3624,7 +3627,7 @@
         "Ya tiene una dirección de Gmail que reenvía a ${ MAIL_APP_NAME }. Conéctela a continuación para enviar y recibir correos electrónicos directamente desde ${ MAIL_APP_NAME }."
       ],
       "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
-        "Usted ya tiene direcciones de Gmail reenviando a ${ MAIL_APP_NAME }. Conecte una a continuación para enviar y recibir correos electrónicos directamente desde ${ MAIL_APP_NAME }."
+        "Ya tiene direcciones de Gmail reenviando a ${ MAIL_APP_NAME }. Conecte una a continuación para enviar y recibir correos electrónicos directamente desde ${ MAIL_APP_NAME }."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puede importar eventos en formato iCal (archivos ICS). El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener hasta ${ MAX_IMPORT_EVENTS_STRING } eventos.\nSi el archivo es más grande, debe dividirlo en archivos más pequeños."
@@ -3639,8 +3642,8 @@
         "Ya no podrá usar ${ address.Email } para recibir y enviar correos electrónicos en ${ BRAND_NAME }. Tenga en cuenta también que los mensajes enviados a esta dirección desde ${ BRAND_NAME } ya no estarán cifrados de extremo a extremo."
       ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
-        "Usted está reenviando ${ numAddressesOrSync } dirección de Gmail a ${ MAIL_APP_NAME }.",
-        "Usted está reenviando ${ numAddressesOrSync } direcciones de Gmail a ${ MAIL_APP_NAME }."
+        "Está reenviando ${ numAddressesOrSync } dirección de Gmail a ${ MAIL_APP_NAME }.",
+        "Está reenviando ${ numAddressesOrSync } direcciones de Gmail a ${ MAIL_APP_NAME }."
       ],
       "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
         "Ha conectado ${ MAX_SYNC_PAID_USER } dirección de Gmail. Para agregar otra, primero desactive una de sus cuentas conectadas.",
@@ -4269,6 +4272,9 @@
       ],
       "Failed to load OAuth modal.": [
         "Error al cargar la ventana OAuth"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Error al cargar los datos de la suscripción. Intente más tarde."
       ],
       "Failed to load the STL preview": [
         "Error al cargar la vista previa de STL"
@@ -6319,6 +6325,9 @@
       "**Sync codes** to all your devices": [
         "**Sincronizar códigos** en todos los dispositivos"
       ],
+      "**This will disable 2-factor authentication.**": [
+        "**Esto desactivará la autenticación de dos factores.**"
+      ],
       "+ ${ invisibleCount } More": [
         "+${ invisibleCount } más",
         "+${ invisibleCount } más"
@@ -6592,6 +6601,12 @@
       "By leaving now, changes may not be saved": [
         "Al salir ahora, los cambios podrían no ser guardados"
       ],
+      "Can you access your active session?": [
+        "¿Puede acceder a su sesión activa?"
+      ],
+      "Can you access your active web session in another browser?": [
+        "¿Puede acceder a su sesión activa en otro navegador?"
+      ],
       "Can you reach out to your contact?": [
         "¿Puede contactarse con su contacto?"
       ],
@@ -6858,6 +6873,9 @@
       "Drop to import": [
         "Suelte aquí para importar"
       ],
+      "Due to end-to-end encryption, you can reset your password, but ${ DataLockedText } until you use a ${ DataRecoveryOptionsLink }:": [
+        "Debido al cifrado de extremo a extremo, puede restablecer la contraseña, pero ${ DataLockedText } hasta que use una ${ DataRecoveryOptionsLink }:"
+      ],
       "Each code can only be used once": [
         "Cada código solo puede usarse una vez"
       ],
@@ -6969,12 +6987,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Ingrese la dirección de correo o usuario de ${ BRAND_NAME }."
       ],
-      "Enter your own password (as organization admin).": [
-        "Ingrese su propia contraseña (como administrador de la organización)."
-      ],
-      "Enter your own password (as trusted contact).": [
-        "Ingrese su propia contraseña (como contacto de confianza)."
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Ingrese la dirección de correo electrónico de recuperación y le enviaremos el nombre de usuario o dirección de correo."
       ],
@@ -6983,6 +6995,9 @@
       ],
       "Enter your recovery phrase to change your password now.": [
         "Ingrese la frase de recuperación para cambiar la contraseña."
+      ],
+      "Enter your recovery phrase to verify your identity and disable two-factor authentication.": [
+        "Ingrese su frase de recuperación para verificar su identidad y desactivar la autenticación de dos factores."
       ],
       "Everything in ${ planOrAppName }": [
         "Todo en ${ planOrAppName }"
@@ -7098,6 +7113,9 @@
       "If another administrator changed this password, you will need to ask them for the new Organization Password.": [
         "Si otro administrador cambió esta contraseña, necesita pedir la contraseña nueva de la organización."
       ],
+      "If possible, when signing in, use a device or a browser where you’ve signed in before.": [
+        "Si es posible, al iniciar sesión, use un dispositivo o navegador en el que ya haya iniciado sesión antes."
+      ],
       "If this is due to an old password reset, you can stop the message from showing again": [
         "Si esto se debe a un restablecimiento de contraseña anterior, puede evitar que el mensaje se vuelva a mostrar"
       ],
@@ -7127,6 +7145,9 @@
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Si tiene un código de regalo, ingréselo abajo para aplicar el descuento."
+      ],
+      "If you have emergency contacts, get in touch with them, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed.**": [
+        "Si tiene contactos de emergencia, contáctese con ellos para ver si pueden ayudar. Después de solicitar el acceso de emergencia a su cuenta, podrán cambiar la contraseña por usted **una vez transcurrido el tiempo de espera para el acceso.**"
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Si pierde el dispositivo activado para dos factores, estos códigos pueden usarse en lugar del código de autenticación de dos factores de 6 dígitos para iniciar sesión en la cuenta. Cada código solo se puede usar una vez."
@@ -7505,6 +7526,9 @@
       "On": [
         "Activado"
       ],
+      "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
+        "Una vez que se haya concedido el acceso a su cuenta, podrán acceder a sus ajustes de **Recuperación** y **cambiar la contraseña de ${ ACCOUNT_APP_NAME }** por usted."
+      ],
       "Once you reset your password:": [
         "Luego de restablecer la contraseña:"
       ],
@@ -7716,9 +7740,6 @@
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Recomendado en dispositivos de confianza. ${ keepMeSignedInLearnMoreLink }"
       ],
-      "Recovery file": [
-        "Archivo de recuperación"
-      ],
       "Recovery file downloaded": [
         "Archivo de recuperación descargado"
       ],
@@ -7727,9 +7748,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "La información de recuperación se mantendrá en este dispositivo a menos que la elimine."
-      ],
-      "Recovery phrase": [
-        "Frase de recuperación"
       ],
       "Recovery phrase copied to clipboard": [
         "Frase recuperación copiada al portapapeles"
@@ -8039,8 +8057,8 @@
       "The name will be visible to your users while they are signed in.": [
         "El nombre será visible para sus usuarios mientras inicien sesión."
       ],
-      "The referral credit can be awarded up to 2 months after your friend's trial ended, and if your friend subscribed to a plan.": [
-        "El crédito por referencia puede otorgarse hasta 2 meses después de que finalice la prueba de su amistad, y si su amistad se suscribió a un plan."
+      "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
+        "El crédito por referencia puede otorgarse hasta 2 meses después de que finalice la prueba de su amistad, solo si su amistad se suscribió a un plan."
       ],
       "The securest way to browse, stream, and be online.": [
         "La manera más segura de navegar, transmitir y estar en línea."
@@ -8213,6 +8231,9 @@
       "To proceed, we must verify the request.": [
         "Debemos verificar la solicitud para continuar."
       ],
+      "To regain access to your account and data, enter the 12-word recovery phrase associated with your account.": [
+        "Para recuperar el acceso a su cuenta y datos, ingrese la frase de recuperación de 12 palabras asociada a su cuenta."
+      ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Para asegurar la conexión a internet, descargue e instale la aplicación ${ VPN_APP_NAME } en el dispositivo y conéctese a un servidor."
       ],
@@ -8243,6 +8264,9 @@
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Pruebe ${ productName } totalmente sin riesgos. Si por cualquier motivo cambia de opinión, recibirá un reembolso completo. Sin preguntas."
       ],
+      "Try recovering your account from a **device or browser where you have signed in before**, as it may be possible from there:": [
+        "Intente recuperar su cuenta desde un **dispositivo o navegador en el que haya iniciado sesión antes**, ya que es posible que pueda hacerlo desde allí:"
+      ],
       "Two-factor authentication": [
         "Autenticación de dos factores"
       ],
@@ -8257,6 +8281,9 @@
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "No se pudo verificar la firma del archivo de recuperación. Contacte con soporte."
+      ],
+      "Unfortunately there is no recovery method available for this account.": [
+        "Lamentablemente no hay ningún método de recuperación disponible para esta cuenta."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Lamentablemente no hay ningún método de recuperación guardado para esta cuenta."
@@ -8781,9 +8808,6 @@
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "Su próxima fecha de facturación es el ${ renewalTime }. Puede cancelar en cualquier momento. Póngase en contacto con el servicio de asistencia si necesita cambiar de plan de inmediato."
-      ],
-      "Your old password": [
-        "Su contraseña anterior"
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "la organización usa el inicio de sesión único (SSO). Presione iniciar sesión para continuar con el proveedor de SSO."
@@ -9329,6 +9353,9 @@
       "Enabled": [
         "Activada"
       ],
+      "Enter code": [
+        "Ingresar código"
+      ],
       "Enter name or email address": [
         "Ingrese nombre o dirección de correo"
       ],
@@ -9819,12 +9846,6 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Sí, quiero eliminar permanentemente esta cuenta y todos los datos."
       ],
-      "Your password (admin)": [
-        "Su contraseña (admin)"
-      ],
-      "Your password (trusted contact)": [
-        "Su contraseña (contacto de confianza)"
-      ],
       "ZIP code": [
         "Código postal"
       ]
@@ -9974,6 +9995,9 @@
       ],
       "Create an alias": [
         "Crear un alias"
+      ],
+      "data recovery option": [
+        "opción de recuperación de datos"
       ],
       "Details": [
         "Detalles"
@@ -10535,7 +10559,7 @@
         "Mantener el plan actual"
       ],
       "Make your voice heard": [
-        "Haga oír tu voz"
+        "Haga oír su voz"
       ],
       "Request a feature": [
         "Solicitar una función"
@@ -12495,6 +12519,9 @@
       ],
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durante este tiempo no podrá modificar o cancelar su suscripción. Por favor, espere hasta que su pago se complete antes de intentar cualquier cambio. Gracias por su paciencia."
+      ],
+      "Edit billing address": [
+        "Editar dirección de facturación"
       ],
       "Got it": [
         "Entiendo"
@@ -14552,9 +14579,6 @@
       "Share the confirmation code with your administrator": [
         "Comparta el código de confirmación con su administrador"
       ],
-      "Sign in": [
-        "Iniciar sesión"
-      ],
       "Sign in to your organization": [
         "Iniciar sesión en la organización"
       ],
@@ -14614,9 +14638,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Tendrá que crear los nuevos usuarios manualmente para agregarlos a su organización."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Se le redirigirá a su proveedor de SSO de terceros."
       ],
       "Your SSO configuration will be deleted.": [
         "Se eliminará su configuración de SSO."
@@ -15262,9 +15283,6 @@
       "Billing details updated": [
         "Detalles de facturación actualizados"
       ],
-      "Billing information updated": [
-        "Información de facturación actualizada"
-      ],
       "Canceling import": [
         "Cancelando la importación"
       ],
@@ -15893,9 +15911,6 @@
       "Collaborate on documents": [
         "Colabore en documentos"
       ],
-      "Configurations": [
-        "Configuraciones"
-      ],
       "Confirm": [
         "Confirmar"
       ],
@@ -16085,7 +16100,7 @@
         "¿Descartar cambios?"
       ],
       "Disconnected from Gmail": [
-        "Desconectado de Gmail"
+        "Sin conexión a Gmail"
       ],
       "Dismiss setup checklist": [
         "Descartar lista de configuración"
@@ -16182,9 +16197,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Ingrese los detalles de la cuenta de ${ BRAND_NAME } para unirse al programa Beta de ${ app }"
-      ],
-      "Enter your password": [
-        "Ingrese su contraseña"
       ],
       "Error": [
         "Error"

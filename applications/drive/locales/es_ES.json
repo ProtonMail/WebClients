@@ -539,9 +539,6 @@
       "Go back": [
         "Regresar"
       ],
-      "Go back to album “${ albumName }“": [
-        "Volver al álbum «${ albumName }»"
-      ],
       "Go to ${ planOrAppName }": [
         "Accede a ${ planOrAppName }"
       ],
@@ -9324,35 +9321,11 @@
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" compartido"
       ],
-      "\"${ name }\" created successfully": [
-        "\"Se ha creado ${ name }\"."
-      ],
-      "\"${ name }\" deleted": [
-        "«${ name }» está eliminado."
-      ],
       "\"${ name }\" deleted permanently": [
         "\"${ name }\" se ha eliminado de forma permanente"
       ],
-      "\"${ name }\" deleted permanently from trash": [
-        "Se ha eliminado permanentemente \"${ name }\" de la papelera."
-      ],
-      "\"${ name }\" failed to be created": [
-        "Error al crear \"${ name }\""
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "Error al eliminar «${ name }»"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "Error al eliminar \"${ name }\" permanentemente de la papelera"
-      ],
-      "\"${ name }\" failed to be moved": [
-        "Error al mover \"${ name }\""
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "Error al mover \"${ name }\" a la papelera"
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "Error al restaurar \"${ name }\" de la papelera"
       ],
       "\"${ name }\" failed to be saved": [
         "Error al guardar \"${ name }\""
@@ -9360,17 +9333,8 @@
       "\"${ name }\" moved to trash": [
         "\"${ name }\" se ha movido a la papelera."
       ],
-      "\"${ name }\" restored from trash": [
-        "\"${ name }\" se ha restaurado de la papelera."
-      ],
       "\"${ name }\" saved successfully": [
         "Se ha guardado \"${ name }\"."
-      ],
-      "\"${ name }\" successfully copied": [
-        "\"${ name }\" se ha copiado"
-      ],
-      "\"${ name }\" successfully moved": [
-        "\"${ name }\" se ha movido."
       ],
       "\"${ newName }\" failed to be renamed": [
         "Error al renombrar \"${ newName }\""
@@ -9446,10 +9410,6 @@
         "${ numberOfItems } elemento restaurado de la papelera",
         "${ numberOfItems } elementos restaurados de la papelera"
       ],
-      "${ numberOfItems } item successfully copied": [
-        "${ numberOfItems } elemento copiado",
-        "${ numberOfItems } elementos copiados"
-      ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } elemento movido",
         "${ numberOfItems } elementos movidos"
@@ -9489,9 +9449,6 @@
       ],
       "Contact group updated": [
         "Grupo de contactos actualizado"
-      ],
-      "Copy of \"${ name }\" moved to trash": [
-        "Copia de \\\"${ name }\\\" se ha movido a la papelera."
       ],
       "Device failed to be removed": [
         "Error al eliminar el dispositivo"
@@ -11999,9 +11956,6 @@
       ],
       "Billing details updated": [
         "Se han actualizado los datos de facturación."
-      ],
-      "Billing information updated": [
-        "Información de facturación actualizada"
       ],
       "Canceling import": [
         "Cancelando la importación"

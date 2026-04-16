@@ -539,8 +539,8 @@
       "Go back": [
         "Gå tilbake"
       ],
-      "Go back to album “${ albumName }“": [
-        "Gå tilbake til albumet \"${ albumName }\""
+      "Go back to album “${ ellipsedAlbumName }“": [
+        "Gå tilbake til albumet \"${ ellipsedAlbumName }\""
       ],
       "Go to ${ planOrAppName }": [
         "Gå til ${ planOrAppName }"
@@ -3522,6 +3522,9 @@
       "Failed to load signature details, please try again later": [
         "Kunne ikke laste inn signaturdetaljer, prøv igjen senere"
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Kunne ikke laste inn abonnementsdata. Prøv på nytt senere."
+      ],
       "Failed to load the STL preview": [
         "Kan ikke laste inn STL-forhåndsvisningen"
       ],
@@ -5568,6 +5571,9 @@
       "Ensure fully private and encrypted communication. Claim your free ${ BRAND_NAME } email address now.": [
         "Sikre fullstendig privat og kryptert kommunikasjon. Gjør krav på din gratis ${ BRAND_NAME }-e-postadresse nå."
       ],
+      "Enter code": [
+        "Skriv inn koden"
+      ],
       "Enter password": [
         "Skriv inn passord"
       ],
@@ -5712,6 +5718,9 @@
       ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "Hvis du har en av disse, fortsett til ${ BRAND_NAME }-kontoinnstilling for å starte prosessen med å fjerne blokkeringen."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Hvis du mistet tilgangen til autentiseringsappen din, kan du bruke én av de 16 sikkerhetskopi-gjenopprettingskodene du fikk da du konfigurerte tofaktorautentisering. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Hvis du fortsetter med nedgraderingen, vil du miste tilgang til de betalte funksjonene til ${ MAIL_APP_NAME } og ${ VPN_APP_NAME }."
@@ -9383,38 +9392,50 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" copied": [
+        "\"${ ellipsedName }\" kopiert"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "\"${ ellipsedName }\" opprettet"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "\"${ ellipsedName }\" slettet"
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "\"${ ellipsedName }\" slettet permanent fra papirkurven"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "\"${ ellipsedName }\" kunne ikke opprettes"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "\"${ ellipsedName } ble ikke slettet"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "\"${ ellipsedName }\" kunne ikke slettes permanent fra papirkurven"
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "\"${ ellipsedName }\" kunne ikke flyttes"
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "\"${ ellipsedName }\" kunne ikke gjenopprettes fra papirkurven"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" flyttet"
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "\"${ ellipsedName }\" gjenopprettet fra papirkurven"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "\"${ ellipsedName }\" flyttet"
+      ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }}\" delt"
-      ],
-      "\"${ name }\" created successfully": [
-        "\"${ name }\" opprettet"
-      ],
-      "\"${ name }\" deleted": [
-        "\"${ name }\" slettet"
       ],
       "\"${ name }\" deleted permanently": [
         "\"${ name }\" slettet permanent"
       ],
-      "\"${ name }\" deleted permanently from trash": [
-        "\"${ name }\" slettet permanent fra papirkurven"
-      ],
-      "\"${ name }\" failed to be created": [
-        "\"${ name }\" kunne ikke opprettes"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "\"${ name } ble ikke slettet"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "\"${ name }\" kunne ikke slettes permanent fra papirkurven."
-      ],
-      "\"${ name }\" failed to be moved": [
-        "\"${ name }\" kunne ikke flyttes"
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "\"${ name }\" kunne ikke flyttes til papirkurven"
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "\"${ name }\" kunne ikke gjenopprettes fra papirkurven"
       ],
       "\"${ name }\" failed to be saved": [
         "\"${ name }\" kunne ikke lagres"
@@ -9422,17 +9443,8 @@
       "\"${ name }\" moved to trash": [
         "\"${ name }\" flyttet til papirkurven"
       ],
-      "\"${ name }\" restored from trash": [
-        "\"${ name }\" gjenopprettet fra papirkurven"
-      ],
       "\"${ name }\" saved successfully": [
         "\"${ name }\" lagret"
-      ],
-      "\"${ name }\" successfully copied": [
-        "\"${ name }\" kopiert"
-      ],
-      "\"${ name }\" successfully moved": [
-        "\"${ name }\" flyttet"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\" kunne ikke gis nytt navn"
@@ -9476,6 +9488,10 @@
         "${ numberOfItems } kopiert element flyttet til papirkurven",
         "${ numberOfItems } kopierte elementer flyttet til papirkurven"
       ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems } element kopiert",
+        "${ numberOfItems } elementer kopiert"
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } element slettet",
         "${ numberOfItems } elementer slettet"
@@ -9504,6 +9520,10 @@
         "${ numberOfItems } element kunne ikke gjenopprettes fra papirkurven",
         "${ numberOfItems } elementer kunne ikke gjenopprettes fra papirkurven"
       ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } element flyttet",
+        "${ numberOfItems } elementer flyttet"
+      ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } element flyttet til papirkurven",
         "${ numberOfItems } elementer flyttet til papirkurven"
@@ -9511,10 +9531,6 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } element gjenopprettet fra papirkurven",
         "${ numberOfItems } elementer gjenopprettet fra papirkurven"
-      ],
-      "${ numberOfItems } item successfully copied": [
-        "${ numberOfItems } element kopiert",
-        "${ numberOfItems } elementer kopiert"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } element flyttet",
@@ -9556,8 +9572,8 @@
       "Contact group updated": [
         "Kontaktgruppe oppdatert"
       ],
-      "Copy of \"${ name }\" moved to trash": [
-        "Kopi av \"${ name }\" flyttet til papirkurven"
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "Kopi av \"${ ellipsedName }\" flyttet til papirkurven"
       ],
       "Device failed to be removed": [
         "Enhet kunne ikke fjernes"
@@ -10259,6 +10275,9 @@
       ],
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "I løpet av denne tiden vil du ikke kunne endre eller kansellere abonnementet ditt. Vent til betalingen er fullført før du prøver å gjøre noen endringer. Takk for tålmodigheten."
+      ],
+      "Edit billing address": [
+        "Rediger faktureringsadresse"
       ],
       "Got it": [
         "Skjønner"
@@ -12068,9 +12087,6 @@
       ],
       "Billing details updated": [
         "Faktureringsinformasjon oppdatert"
-      ],
-      "Billing information updated": [
-        "Faktureringsinformasjon er oppdatert"
       ],
       "Canceling import": [
         "Avbryter import"

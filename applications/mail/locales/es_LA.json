@@ -196,9 +196,6 @@
       "Carbon Copy": [
         "Con copia"
       ],
-      "Change password": [
-        "Cambiar contraseña"
-      ],
       "Change sorting": [
         "Cambiar orden"
       ],
@@ -1502,7 +1499,8 @@
         "Confiar"
       ],
       "Trust key": [
-        "Confiar clave"
+        "Confiar clave",
+        "Confiar claves"
       ],
       "Trust public key": [
         "Confiar clave pública"
@@ -4062,7 +4060,7 @@
         "Ordene automáticamente sus mensajes entrantes antes de que lleguen a su bandeja de entrada."
       ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
-        "Bloquee la capacidad de Google de perfilarle. ${ MAIL_APP_NAME } no puede ver lo que usted hace en Gmail"
+        "Bloquee la capacidad de Google de perfilarle. Gmail no puede ver lo que usted hace en ${ MAIL_APP_NAME }."
       ],
       "Configure this first to activate your organization and customize your email address.": [
         "Configure esto primero para activar su organización y personalizar su dirección de correo electrónico."
@@ -4247,7 +4245,7 @@
         "Ya tiene una dirección de Gmail que reenvía a ${ MAIL_APP_NAME }. Conéctela a continuación para enviar y recibir correos electrónicos directamente desde ${ MAIL_APP_NAME }."
       ],
       "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
-        "Usted ya tiene direcciones de Gmail reenviando a ${ MAIL_APP_NAME }. Conecte una a continuación para enviar y recibir correos electrónicos directamente desde ${ MAIL_APP_NAME }."
+        "Ya tiene direcciones de Gmail reenviando a ${ MAIL_APP_NAME }. Conecte una a continuación para enviar y recibir correos electrónicos directamente desde ${ MAIL_APP_NAME }."
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puede importar eventos en formato iCal (archivos ICS). El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener hasta ${ MAX_IMPORT_EVENTS_STRING } eventos.\nSi el archivo es más grande, debe dividirlo en archivos más pequeños."
@@ -4259,8 +4257,8 @@
         "Ahora puede enviar correos electrónicos desde ${ BRAND_NAME } usando esta dirección."
       ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
-        "Usted está reenviando ${ numAddressesOrSync } dirección de Gmail a ${ MAIL_APP_NAME }.",
-        "Usted está reenviando ${ numAddressesOrSync } direcciones de Gmail a ${ MAIL_APP_NAME }."
+        "Está reenviando ${ numAddressesOrSync } dirección de Gmail a ${ MAIL_APP_NAME }.",
+        "Está reenviando ${ numAddressesOrSync } direcciones de Gmail a ${ MAIL_APP_NAME }."
       ],
       "You're forwarding emails from ${ forwardingCount } Gmail address. By connecting it, you'll be able to both receive and reply in ${ MAIL_APP_NAME }": [
         "Está reenviando correos electrónicos de ${ forwardingCount } dirección de Gmail. Al conectarla, podrá recibir y responder en ${ MAIL_APP_NAME }.",
@@ -4762,6 +4760,9 @@
       ],
       "Failed to encrypt attachment. Please try again.": [
         "Error al cifrar el adjunto. Intente nuevamente."
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Error al cargar los datos de la suscripción. Intente más tarde."
       ],
       "Failed to load the STL preview": [
         "Error al cargar la vista previa de STL"
@@ -7555,8 +7556,7 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Insertar imagen",
-        "Insertar imágenes"
+        "Insertar imagen"
       ],
       "Insert link": [
         "Insertar enlace"
@@ -12366,6 +12366,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durante este tiempo no podrá modificar o cancelar su suscripción. Por favor, espere hasta que su pago se complete antes de intentar cualquier cambio. Gracias por su paciencia."
       ],
+      "Edit billing address": [
+        "Editar dirección de facturación"
+      ],
       "Got it": [
         "Entiendo"
       ],
@@ -14555,9 +14558,6 @@
       "Billing details updated": [
         "Detalles de facturación actualizados"
       ],
-      "Billing information updated": [
-        "Información de facturación actualizada"
-      ],
       "Canceling import": [
         "Cancelando la importación"
       ],
@@ -15012,9 +15012,6 @@
       "Account security": [
         "Seguridad de la cuenta"
       ],
-      "Account temporarily locked": [
-        "Cuenta temporalmente bloqueada"
-      ],
       "Action all conversations": [
         "Acción en todas las conversaciones"
       ],
@@ -15265,7 +15262,7 @@
         "Escritorio"
       ],
       "Disconnected from Gmail": [
-        "Desconectado de Gmail"
+        "Sin conexión a Gmail"
       ],
       "Discover your subscription benefits": [
         "Descubra los beneficios de su suscripción"

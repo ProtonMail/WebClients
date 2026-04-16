@@ -2052,10 +2052,6 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
-      "Moving an item to another vault will erase its secure links.": [
-        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
-        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
-      ],
       "Moving items": [
         "Flytter elementer"
       ],
@@ -2516,6 +2512,9 @@
       ],
       "This will reject the device **${ name }** that tried signing into your ${ BRAND_NAME } account on **${ date }**.": [
         "Dette vil avvise enheten **${ name }** som prøvde å logge på ${ BRAND_NAME }-kontoen din den **${ date }**."
+      ],
+      "To configure shortcuts, go to about:addons in Firefox and select \"Manage Extension Shortcuts\"": [
+        "For å konfigurere snarveier, gå til about:addons i Firefox og velg \"Administrer utvidelsessnarveier\"."
       ],
       "To keep receiving emails transfer these aliases to a different mailbox:": [
         "Hvis du vil fortsette å motta e-post, flytter du disse aliasene til en annen postboks:"
