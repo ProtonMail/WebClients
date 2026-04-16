@@ -1371,6 +1371,8 @@ const Step1 = ({
                                                     </>
                                                 );
                                             }}
+                                            defaultEmail={defaultEmail}
+                                            currentPlan={selectedPlan}
                                         />
                                     </AccountFormDataContextProvider>
                                 </div>
