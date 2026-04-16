@@ -1,6 +1,6 @@
 import { useModalTwoStatic } from '@proton/components';
 
-import { withHoc } from '../../hooks/withHoc';
+import { withHoc } from '../../../../../internal/withHoc';
 import { DriveUpsellModalView, type DriveUpsellModalViewProps } from './DriveUpsellModalView';
 import {
     type DriveUpsellModalProps,

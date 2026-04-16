@@ -4,6 +4,7 @@ import { c } from 'ttag';
 
 import { Dropdown, DropdownMenu, DropdownMenuButton, Icon, ToolbarButton, usePopperAnchor } from '@proton/components';
 import { MemberRole, generateNodeUid, getDrive } from '@proton/drive/index';
+import { useSharingModal } from '@proton/drive/modules/sharingModal';
 import { IcChevronDownFilled } from '@proton/icons/icons/IcChevronDownFilled';
 import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
@@ -13,7 +14,6 @@ import { useDetailsModal } from '../../../modals/DetailsModal';
 import { useFilesDetailsModal } from '../../../modals/FilesDetailsModal';
 import { useMoveItemsModal } from '../../../modals/MoveItemsModal';
 import { useRenameModal } from '../../../modals/RenameModal';
-import { useSharingModal } from '../../../modals/SharingModal/SharingModal';
 import { useTrashActions } from '../../commonActions/useTrashActions';
 
 export const toNodeUidsHelper = <T extends { volumeId: string; linkId: string }>(items: T[]): string[] =>

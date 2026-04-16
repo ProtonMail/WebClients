@@ -1,10 +1,10 @@
 import { c } from 'ttag';
 
 import { ToolbarButton } from '@proton/components';
+import { useSharingModal } from '@proton/drive/modules/sharingModal';
 import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
 
 import { useFileSharingModal } from '../../../modals/SelectLinkToShareModal';
-import { useSharingModal } from '../../../modals/SharingModal/SharingModal';
 
 const ShareButton = () => {
     const [fileSharingModal, showFileSharingModal] = useFileSharingModal();

@@ -5,12 +5,12 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { useConfirmActionModal } from '@proton/components';
 import { getDrivePerNodeType } from '@proton/drive';
+import { useSharingModal } from '@proton/drive/modules/sharingModal';
 import { uploadManager, useUploadQueueStore } from '@proton/drive/modules/upload';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
 import { useDownloadContainsDocumentsModal } from '../../components/modals/DownloadContainsDocumentsModal';
 import { DownloadManager } from '../../managers/download/DownloadManager';
-import { useSharingModal } from '../../modals/SharingModal/SharingModal';
 import { useSignatureIssueModal } from '../../modals/SignatureIssueModal';
 import { IssueStatus, useDownloadManagerStore } from '../../zustand/download/downloadManager.store';
 import { isCancellable, isRetryable } from './transferStatus';

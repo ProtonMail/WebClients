@@ -1,10 +1,10 @@
+import { NonProtonInvitationState } from '@protontech/drive-sdk';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { UserAvatar } from '@proton/atoms/UserAvatar/UserAvatar';
 import { useSortedList } from '@proton/components';
-import { NonProtonInvitationState } from '@proton/drive';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { findUserAddress } from '@proton/shared/lib/helpers/address';

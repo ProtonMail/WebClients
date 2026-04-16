@@ -1,10 +1,10 @@
 import { renderHook } from '@testing-library/react';
 
 import { useConfirmActionModal } from '@proton/components';
+import { useSharingModal } from '@proton/drive/modules/sharingModal';
 import { uploadManager } from '@proton/drive/modules/upload';
 
 import { DownloadManager } from '../../managers/download/DownloadManager';
-import { useSharingModal } from '../../modals/SharingModal/SharingModal';
 import { BaseTransferStatus } from '../../zustand/download/downloadManager.store';
 import { useTransferManagerActions } from './useTransferManagerActions';
 import type { TransferManagerEntry } from './useTransferManagerState';
@@ -40,7 +40,7 @@ jest.mock('@proton/drive/modules/upload', () => {
     };
 });
 
-jest.mock('../../modals/SharingModal/SharingModal', () => {
+jest.mock('@proton/drive/modules/sharingModal', () => {
     return {
         useSharingModal: jest.fn(),
     };

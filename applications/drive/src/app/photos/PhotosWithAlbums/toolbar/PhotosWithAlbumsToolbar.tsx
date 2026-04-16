@@ -19,6 +19,7 @@ import {
     usePopperAnchor,
 } from '@proton/components';
 import { generateNodeUid, getDriveForPhotos } from '@proton/drive/index';
+import { useSharingModal } from '@proton/drive/modules/sharingModal';
 import useLoading from '@proton/hooks/useLoading';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
@@ -28,7 +29,6 @@ import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import { useSharingModal } from '../../../modals/SharingModal/SharingModal';
 import { ShareButton } from '../../../sections/commonButtons/ShareButton';
 import type {
     OnFileSkippedSuccessCallbackData,
