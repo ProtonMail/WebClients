@@ -1140,14 +1140,6 @@ export function notHigherThanAvailableOnBackend(planIDs: PlanIDs, plansMap: Plan
     return Math.min(cycle, maxCycle);
 }
 
-/**
- * If user already has mobile lumo subscription then they can't buy lumo addon.
- */
-export function canAddMeetAddon(_subscription: Subscription | FreeSubscription): boolean {
-    // Meet has no externally-managed (mobile IAP) subscription, so it can always be added.
-    return true;
-}
-
 export function canAddLumoAddon(subscription: Subscription | FreeSubscription): boolean {
     if (isFreeSubscription(subscription)) {
         return true;
