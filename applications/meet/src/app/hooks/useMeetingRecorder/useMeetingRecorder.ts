@@ -32,7 +32,13 @@ import { WorkerRecordingStorage } from './workerStorage';
 const CANVAS_WIDTH = 1920;
 const CANVAS_HEIGHT = 1080;
 
-const { mimeType, extension } = getRecordingDetails();
+let mimeType: string;
+let extension: string;
+
+void getRecordingDetails().then((result) => {
+    mimeType = result.mimeType;
+    extension = result.extension;
+});
 
 export function useMeetingRecorder() {
     const isMeetMultipleRecordingEnabled = useFlag('MeetMultipleRecording');
@@ -412,6 +418,20 @@ export function useMeetingRecorder() {
         return { stream: destination.stream };
     };
 
+    const startMediaRecorder = (mediaRecorder: MediaRecorder): Promise<void> => {
+        return new Promise((resolve, reject) => {
+            mediaRecorder.onerror = (event) => {
+                reject(event.error);
+            };
+
+            mediaRecorder.onstart = () => {
+                resolve();
+            };
+
+            mediaRecorder.start(500);
+        });
+    };
+
     const startRecording = useStableCallback(async () => {
         try {
             if (workerStorageRef.current) {
@@ -493,20 +513,7 @@ export function useMeetingRecorder() {
                 }
             };
 
-            mediaRecorder.onerror = (event) => {
-                const error = (event as ErrorEvent).error;
-                reportMeetError('MeetingRecording Error: MediaRecorder error', {
-                    context: {
-                        message: error?.message ?? 'Unknown MediaRecorder error',
-                        name: error?.name,
-                    },
-                });
-
-                // eslint-disable-next-line no-console
-                console.error('MediaRecorder error:', event);
-            };
-
-            mediaRecorder.start(500);
+            await startMediaRecorder(mediaRecorder);
             mediaRecorderRef.current = mediaRecorder;
 
             updateAudioSources();
