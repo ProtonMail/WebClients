@@ -52,8 +52,11 @@ tauri-plugin-window-state = "2.4.1"
 
 [target.'cfg(windows)'.dependencies]
 widestring = "1.2.1"
-windows-future = "0.3.2"
-windows = { version = "0.62.2", features = [
+# Both `windows` and `windows-future` are pinned to match the versions pulled
+# transitively by Tauri. Mismatched versions cause type conflicts (eg: HWND).
+# When bumping Tauri, check `cargo tree | grep windows` and update pins accordingly.
+windows-future = "0.2"
+windows = { version = "=0.61.3", features = [
   "Foundation",
   "Security_Credentials_UI",
   "Security_Cryptography",
