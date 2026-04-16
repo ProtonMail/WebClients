@@ -17,6 +17,7 @@ import { calculateGridLayout } from '../../utils/calculateGridLayout';
 import { useIsLargerThanMd } from '../useIsLargerThanMd';
 import { useIsNarrowHeight } from '../useIsNarrowHeight';
 import { useStableCallback } from '../useStableCallback';
+import { RECORDING_FPS } from './constants';
 import { MessageType } from './recordingWorkerTypes';
 import type { FrameReaderInfo, MeetingRecordingState, RecordingTrackInfo } from './types';
 import { useRecordingStatusPublish } from './useRecordingStatusPublish';
@@ -30,7 +31,6 @@ import { WorkerRecordingStorage } from './workerStorage';
 
 const CANVAS_WIDTH = 1920;
 const CANVAS_HEIGHT = 1080;
-const FPS = 30;
 
 const { mimeType, extension } = getRecordingDetails();
 
@@ -186,6 +186,9 @@ export function useMeetingRecorder() {
 
             const reader = processor.readable.getReader();
 
+            const minFrameInterval = 1000 / RECORDING_FPS;
+            let lastProcessedTime = 0;
+
             frameReadersRef.current.set(trackId, {
                 reader,
                 participantKey,
@@ -199,18 +202,35 @@ export function useMeetingRecorder() {
                             break;
                         }
 
-                        if (renderWorkerRef.current && frame) {
-                            // Convert to ImageBitmap for broader compatibility
-                            const bitmap = await createImageBitmap(frame);
-                            frame.close();
+                        if (frame) {
+                            const now = performance.now();
+                            const timeSinceLastFrame = now - lastProcessedTime;
 
-                            renderWorkerRef.current.postMessage(
-                                {
-                                    type: 'updateFrame',
-                                    frameData: { participantIdentity: participantKey, frame: bitmap },
-                                },
-                                [bitmap]
-                            );
+                            if (timeSinceLastFrame < minFrameInterval) {
+                                frame.close();
+                                continue;
+                            }
+
+                            if (renderWorkerRef.current) {
+                                try {
+                                    // Convert to ImageBitmap for broader compatibility
+                                    const bitmap = await createImageBitmap(frame);
+                                    frame.close();
+
+                                    renderWorkerRef.current.postMessage(
+                                        {
+                                            type: 'updateFrame',
+                                            frameData: { participantIdentity: participantKey, frame: bitmap },
+                                        },
+                                        [bitmap]
+                                    );
+                                    lastProcessedTime = now;
+                                } catch (err) {
+                                    frame.close();
+                                }
+                            } else {
+                                frame.close();
+                            }
                         }
                     }
                 } catch {
@@ -411,7 +431,7 @@ export function useMeetingRecorder() {
             canvas.width = CANVAS_WIDTH;
             canvas.height = CANVAS_HEIGHT;
 
-            const canvasStream = canvas.captureStream(FPS);
+            const canvasStream = canvas.captureStream(RECORDING_FPS);
 
             const worker = new Worker(new URL('./renderWorker.ts', import.meta.url), {
                 type: 'module',
@@ -440,7 +460,11 @@ export function useMeetingRecorder() {
 
             const combinedStream = new MediaStream(tracks);
 
-            const options = { mimeType };
+            const options: MediaRecorderOptions = {
+                mimeType,
+                videoBitsPerSecond: 2_000_000,
+                audioBitsPerSecond: 128_000,
+            };
             const mediaRecorder = new MediaRecorder(combinedStream, options);
 
             let chunkCount = 0;
@@ -482,7 +506,7 @@ export function useMeetingRecorder() {
                 console.error('MediaRecorder error:', event);
             };
 
-            mediaRecorder.start(100);
+            mediaRecorder.start(500);
             mediaRecorderRef.current = mediaRecorder;
 
             updateAudioSources();
