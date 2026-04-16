@@ -1,5 +1,5 @@
-import { Icon } from '@proton/components';
 import useUid from '@proton/components/hooks/useUid';
+import { IcUpgrade } from '@proton/icons/icons/IcUpgrade';
 import clsx from '@proton/utils/clsx';
 
 export const UpgradeIcon = ({ className }: { className?: string }) => {
@@ -8,9 +8,8 @@ export const UpgradeIcon = ({ className }: { className?: string }) => {
     return (
         <>
             {/* Taken from PromotionButton.tsx */}
-            <Icon
+            <IcUpgrade
                 data-testid="upgrade-icon"
-                name="upgrade"
                 className={clsx('shrink-0', className)}
                 style={{ fill: `url(#${uid}) var(--text-norm)` }}
             />

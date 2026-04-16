@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
-import { Icon } from '@proton/components';
+import { IcLockExclamationFilled } from '@proton/icons/icons/IcLockExclamationFilled';
 
 import type { SignatureIssues } from '../store';
 import { hasValidAnonymousSignature } from './hasValidAnonymousSignature';
@@ -36,7 +36,7 @@ export default function SignatureIcon({
 
     return (
         <Tooltip title={title}>
-            <Icon name="lock-exclamation-filled" className={className} />
+            <IcLockExclamationFilled className={className} />
         </Tooltip>
     );
 }
