@@ -6702,6 +6702,9 @@
       "Failed to load OAuth modal.": [
         "No s'ha pogut carregar la finestra OAuth."
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "No s'han pogut carregar les dades de la subscripció. Torneu-ho a provar més tard."
+      ],
       "Failed to load the STL preview": [
         "No s'ha pogut carregar la previsualització STL."
       ],
@@ -9385,6 +9388,9 @@
       "**Sync codes** to all your devices": [
         "**Sincronitzeu els codis** a tots els dispositius"
       ],
+      "**This will disable 2-factor authentication.**": [
+        "**Això desactivarà l'autenticació de doble factor.**"
+      ],
       "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
         "**Això desactivarà els reenviaments de correus electrònics xifrats d’extrem a extrem:** els podreu configurar de nou més tard."
       ],
@@ -10295,6 +10301,9 @@
       ],
       "Enter your recovery phrase to change your password now.": [
         "Introduïu la frase de recuperació per a canviar la contrasenya ara."
+      ],
+      "Enter your recovery phrase to verify your identity and disable two-factor authentication.": [
+        "Introduïu la vostra frase de recuperació per verificar la vostra identitat i desactiveu l'autenticació de doble factor."
       ],
       "Event invitations and responses will be sent in this language.": [
         "Les invitacions i respostes als esdeveniments s'enviaran en aquest idioma."
@@ -11308,12 +11317,6 @@
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Recomanat en dispositius de confiança. ${ keepMeSignedInLearnMoreLink }"
       ],
-      "Recovery contacts": [
-        "Contactes de recuperació"
-      ],
-      "Recovery file": [
-        "Fitxer de recuperació"
-      ],
       "Recovery file downloaded": [
         "S'ha descarregat el fitxer de recuperació"
       ],
@@ -11322,9 +11325,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "La informació de recuperació es mantindrà en aquest dispositiu llevat que escolliu eliminar-la."
-      ],
-      "Recovery phrase": [
-        "Frase de recuperació"
       ],
       "Recovery phrase copied to clipboard": [
         "Frase de recuperació copiada al porta-retalls"
@@ -11740,8 +11740,8 @@
       "The name will be visible to your users while they are signed in.": [
         "El nom serà visible per als vostres usuaris quan estiguin connectats."
       ],
-      "The referral credit can be awarded up to 2 months after your friend's trial ended, and if your friend subscribed to a plan.": [
-        "El crèdit per recomanació es pot concedir fins dos mesos després que hagi finalitzat la prova del vostre amic, i si aquest s'ha subscrit a un pla."
+      "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
+        "El crèdit per recomanació es pot concedir fins dos mesos després que hagi finalitzat la prova del vostre amic, i només si aquest s'ha subscrit a un pla."
       ],
       "The securest way to browse, stream, and be online.": [
         "La manera més segura de navegar, reproduir i estar en línia."
@@ -11955,6 +11955,9 @@
       ],
       "To proceed, we must verify the request.": [
         "Per a continuar, hem de verificar la sol·licitud."
+      ],
+      "To regain access to your account and data, enter the 12-word recovery phrase associated with your account.": [
+        "Per recuperar l'accés al vostre compte i a les vostres dades, introduïu la frase de recuperació de 12 paraules associada al vostre compte."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Per protegir la vostra connexió a internet, descarregueu i instal·leu l'aplicació de ${ VPN_APP_NAME } per al vostre dispositiu i connecteu a un servidor."
@@ -12448,9 +12451,6 @@
       "You can now reset your password to regain access to your account.": [
         "Ara podeu restablir la contrasenya per recuperar l'accés al vostre compte."
       ],
-      "You can now reset your password to regain access to your account. **This will disable 2-factor authentication.**": [
-        "Ara podeu restablir la contrasenya per recuperar l'accés al vostre compte. **Això desactivarà l'autenticació de doble factor**."
-      ],
       "You can now return to the application to continue": [
         "Ara podeu tornar a l'aplicació per continuar."
       ],
@@ -12677,9 +12677,6 @@
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "La pròxima data de facturació és el ${ renewalTime }. Podeu cancel·lar-ho en qualsevol moment. Poseu-vos en contacte amb el servei d'assistència si necessiteu un canvi de pla immediat."
-      ],
-      "Your old password": [
-        "La vostra contrasenya anterior"
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "La vostra organització utilitza un inici de sessió únic (SSO). Premeu Inicia la sessió per a continuar amb el vostre proveïdor SSO."
@@ -18541,6 +18538,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durant aquest temps, no podreu modificar ni cancel·lar la vostra subscripció. Espereu fins que s'hagi completat el pagament abans d'intentar qualsevol canvi. Gràcies per la vostra paciència."
       ],
+      "Edit billing address": [
+        "Editar l'adreça de facturació"
+      ],
       "Got it": [
         "Fet"
       ],
@@ -22469,9 +22469,6 @@
       ],
       "Billing details updated": [
         "S'han actualitzat els detalls de facturació."
-      ],
-      "Billing information updated": [
-        "S'ha actualitzat la informació de facturació"
       ],
       "Calendar added. It might take a few minutes to sync.": [
         "Calendari afegit. Pot trigar uns minuts a sincronitzar-se."

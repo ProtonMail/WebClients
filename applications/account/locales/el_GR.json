@@ -6702,6 +6702,9 @@
       "Failed to load OAuth modal.": [
         "Αποτυχία φόρτωσης του παράθυρου OAuth."
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Αποτυχία φόρτωσης δεδομένων συνδρομής. Παρακαλούμε δοκιμάστε ξανά αργότερα."
+      ],
       "Failed to load the STL preview": [
         "Αποτυχία φόρτωσης της προεπισκόπησης STL"
       ],
@@ -9385,6 +9388,9 @@
       "**Sync codes** to all your devices": [
         "**Συγχρονίστε τους κωδικούς** σε όλες τις συσκευές σας"
       ],
+      "**This will disable 2-factor authentication.**": [
+        "**Αυτό θα απενεργοποιήσει την ταυτοποίηση δύο παραγόντων.**"
+      ],
       "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
         "**Αυτό θα απενεργοποιήσει τις προωθήσεις email με διατερματική κρυπτογράφηση:** μπορείτε να τις ρυθμίσετε ξανά αργότερα."
       ],
@@ -10295,6 +10301,9 @@
       ],
       "Enter your recovery phrase to change your password now.": [
         "Εισαγάγετε τη φράση ανάκτησης για να αλλάξετε τον κωδικό πρόσβασής σας τώρα."
+      ],
+      "Enter your recovery phrase to verify your identity and disable two-factor authentication.": [
+        "Εισαγάγετε τη φράση ανάκτησης για να επαληθεύσετε την ταυτότητά σας και να απενεργοποιήσετε την ταυτοποίηση δύο παραγόντων."
       ],
       "Event invitations and responses will be sent in this language.": [
         "Οι προσκλήσεις συμβάντων και οι απαντήσεις θα στέλνονται σε αυτήν τη γλώσσα."
@@ -11308,12 +11317,6 @@
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Συνιστάται σε αξιόπιστες συσκευές. ${ keepMeSignedInLearnMoreLink }"
       ],
-      "Recovery contacts": [
-        "Επαφές ανάκτησης"
-      ],
-      "Recovery file": [
-        "Αρχείο ανάκτησης"
-      ],
       "Recovery file downloaded": [
         "Το αρχείο ανάκτησης κατέβηκε"
       ],
@@ -11322,9 +11325,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Οι πληροφορίες ανάκτησης θα παραμείνουν σε αυτήν τη συσκευή έως ότου επιλέξετε να τις διαγράψετε."
-      ],
-      "Recovery phrase": [
-        "Φράση ανάκτησης"
       ],
       "Recovery phrase copied to clipboard": [
         "Η φράση ανάκτησης αντιγράφηκε στο πρόχειρο"
@@ -11740,8 +11740,8 @@
       "The name will be visible to your users while they are signed in.": [
         "Το όνομα θα είναι ορατό στους χρήστες σας ενώ είναι συνδεδεμένοι."
       ],
-      "The referral credit can be awarded up to 2 months after your friend's trial ended, and if your friend subscribed to a plan.": [
-        "Η πίστωσή παραπομπής μπορεί να δοθεί μέχρι 2 μήνες μετά το τέλος της δοκιμαστικής περιόδου του φίλου σας, και εάν ο φίλος σας εγγράφηκε σε ένα πλάνο."
+      "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
+        "Η πίστωσή παραπομπής μπορεί να δοθεί μέχρι 2 μήνες μετά το τέλος της δοκιμαστικής περιόδου του φίλου σας, μόνο αν ο φίλος σας εγγράφηκε σε ένα πλάνο."
       ],
       "The securest way to browse, stream, and be online.": [
         "Ο πιο ασφαλής τρόπος περιήγησης, streaming και να είσαι online"
@@ -11955,6 +11955,9 @@
       ],
       "To proceed, we must verify the request.": [
         "Για να προχωρήσουμε, πρέπει να επαληθεύσουμε το αίτημα."
+      ],
+      "To regain access to your account and data, enter the 12-word recovery phrase associated with your account.": [
+        "Για να ανακτήσετε την πρόσβαση στον λογαριασμό και τα δεδομένα σας, εισαγάγετε τη φράση ανάκτησης 12 λέξεων που σχετίζεται με τον λογαριασμό σας."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Για διασφάλιση της σύνδεσής σας στο διαδίκτυο, κατεβάστε και εγκαταστήστε την εφαρμογή ${ VPN_APP_NAME } για τη συσκευή σας, και συνδεθείτε σε έναν διακομιστή."
@@ -12448,9 +12451,6 @@
       "You can now reset your password to regain access to your account.": [
         "Τώρα μπορείτε να επαναφέρετε τον κωδικό πρόσβασής σας για να ανακτήσετε την πρόσβαση στον λογαριασμό σας."
       ],
-      "You can now reset your password to regain access to your account. **This will disable 2-factor authentication.**": [
-        "Μπορείτε πλέον να επαναφέρετε τον κωδικό πρόσβασής σας για να ανακτήσετε την πρόσβαση στον λογαριασμό σας. **Αυτό θα απενεργοποιήσει την ταυτοποίηση 2 παραγόντων.**"
-      ],
       "You can now return to the application to continue": [
         "Τώρα μπορείτε να επιστρέψετε στην εφαρμογή για να συνεχίσετε"
       ],
@@ -12677,9 +12677,6 @@
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "Η επόμενη ημερομηνία χρέωσης είναι ${ renewalTime }. Μπορείτε να ακυρώσετε οποιαδήποτε στιγμή. Παρακαλούμε επικοινωνήστε με την υποστήριξη εάν χρειάζεστε άμεση αλλαγή πλάνου."
-      ],
-      "Your old password": [
-        "Ο παλιός κωδικός σας"
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Ο οργανισμός σας χρησιμοποιεί ενιαία πρόσβαση (SSO). Πατήστε Σύνδεση για να συνεχίσετε με τον πάροχο SSO σας."
@@ -18541,6 +18538,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Κατά τη διάρκεια αυτής της περιόδου, δε θα μπορείτε να τροποποιήσετε ή να ακυρώσετε τη συνδρομή σας. Παρακαλούμε περιμένετε μέχρι να ολοκληρωθεί η πληρωμή σας πριν επιχειρήσετε οποιεσδήποτε αλλαγές. Σας ευχαριστούμε για την υπομονή σας."
       ],
+      "Edit billing address": [
+        "Επεξεργασία διεύθυνσης χρέωσης"
+      ],
       "Got it": [
         "Το κατάλαβα"
       ],
@@ -22465,9 +22465,6 @@
         "Ο εφεδρικός κωδικός πρόσβασης ενημερώθηκε"
       ],
       "Billing details updated": [
-        "Τα στοιχεία χρέωσης ενημερώθηκαν"
-      ],
-      "Billing information updated": [
         "Τα στοιχεία χρέωσης ενημερώθηκαν"
       ],
       "Calendar added. It might take a few minutes to sync.": [

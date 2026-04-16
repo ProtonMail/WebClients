@@ -1311,6 +1311,9 @@
       "Return to sign in": [
         "Volver al inicio de sesión"
       ],
+      "Return to sign-in": [
+        "Volver al inicio de sesión"
+      ],
       "Review": [
         "Revisar"
       ],
@@ -1598,6 +1601,9 @@
       ],
       "Try another method": [
         "Intente otro método"
+      ],
+      "Try another way": [
+        "Intentar de otra manera"
       ],
       "Try for free": [
         "Probarlo gratis"
@@ -4872,7 +4878,7 @@
         "Disponible con ${ title }"
       ],
       "Block Google's ability to profile you. Gmail can't see what you do in ${ MAIL_APP_NAME }": [
-        "Bloquee la capacidad de Google de perfilarle. ${ MAIL_APP_NAME } no puede ver lo que usted hace en Gmail"
+        "Bloquee la capacidad de Google de perfilarle. Gmail no puede ver lo que usted hace en ${ MAIL_APP_NAME }."
       ],
       "Bring over email, calendar events, and contacts from another provider.": [
         "Traiga correos electrónicos, eventos de calendario y contactos desde otro proveedor."
@@ -5032,7 +5038,7 @@
         "Ya tiene una dirección de Gmail que reenvía a ${ MAIL_APP_NAME }. Conéctela a continuación para enviar y recibir correos electrónicos directamente desde ${ MAIL_APP_NAME }."
       ],
       "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
-        "Usted ya tiene direcciones de Gmail reenviando a ${ MAIL_APP_NAME }. Conecte una a continuación para enviar y recibir correos electrónicos directamente desde ${ MAIL_APP_NAME }."
+        "Ya tiene direcciones de Gmail reenviando a ${ MAIL_APP_NAME }. Conecte una a continuación para enviar y recibir correos electrónicos directamente desde ${ MAIL_APP_NAME }."
       ],
       "You can customize the list of domains where certain auto functions in ${ PASS_APP_NAME } browser extension (Autofill, Autosuggest, Autosave) should not be run.": [
         "Puede personalizar la lista de dominios donde ciertas funciones automáticas en la extensión del navegador ${ PASS_APP_NAME } (completado automático, sugerencia automática, guardado automático) no deberían de ejecutarse."
@@ -5053,8 +5059,8 @@
         "Ya no podrá usar ${ address.Email } para recibir y enviar correos electrónicos en ${ BRAND_NAME }. Tenga en cuenta también que los mensajes enviados a esta dirección desde ${ BRAND_NAME } ya no estarán cifrados de extremo a extremo."
       ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
-        "Usted está reenviando ${ numAddressesOrSync } dirección de Gmail a ${ MAIL_APP_NAME }.",
-        "Usted está reenviando ${ numAddressesOrSync } direcciones de Gmail a ${ MAIL_APP_NAME }."
+        "Está reenviando ${ numAddressesOrSync } dirección de Gmail a ${ MAIL_APP_NAME }.",
+        "Está reenviando ${ numAddressesOrSync } direcciones de Gmail a ${ MAIL_APP_NAME }."
       ],
       "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
         "Ha conectado ${ MAX_SYNC_PAID_USER } dirección de Gmail. Para agregar otra, primero desactive una de sus cuentas conectadas.",
@@ -6695,6 +6701,9 @@
       ],
       "Failed to load OAuth modal.": [
         "Error al cargar la ventana OAuth"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Error al cargar los datos de la suscripción. Intente más tarde."
       ],
       "Failed to load the STL preview": [
         "Error al cargar la vista previa de STL"
@@ -9382,6 +9391,9 @@
       "**Sync codes** to all your devices": [
         "**Sincronizar códigos** en todos los dispositivos"
       ],
+      "**This will disable 2-factor authentication.**": [
+        "**Esto desactivará la autenticación de dos factores.**"
+      ],
       "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
         "**Esto desactivará los reenvíos de correo con cifrado de extremo a extremo:** podrá volver a configurarlos más tarde."
       ],
@@ -9790,6 +9802,12 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Al compartir los detalles completos de este calendario, acepta otorgar acceso a ${ BRAND_NAME } a la información cifrada del calendario."
       ],
+      "Can you access your active session?": [
+        "¿Puede acceder a su sesión activa?"
+      ],
+      "Can you access your active web session in another browser?": [
+        "¿Puede acceder a su sesión activa en otro navegador?"
+      ],
       "Can you reach out to your contact?": [
         "¿Puede contactarse con su contacto?"
       ],
@@ -10122,6 +10140,9 @@
       "Drop to import": [
         "Suelte aquí para importar"
       ],
+      "Due to end-to-end encryption, you can reset your password, but ${ DataLockedText } until you use a ${ DataRecoveryOptionsLink }:": [
+        "Debido al cifrado de extremo a extremo, puede restablecer la contraseña, pero ${ DataLockedText } hasta que use una ${ DataRecoveryOptionsLink }:"
+      ],
       "Each code can only be used once": [
         "Cada código solo puede usarse una vez"
       ],
@@ -10283,6 +10304,9 @@
       ],
       "Enter your recovery phrase to change your password now.": [
         "Ingrese la frase de recuperación para cambiar la contraseña."
+      ],
+      "Enter your recovery phrase to verify your identity and disable two-factor authentication.": [
+        "Ingrese su frase de recuperación para verificar su identidad y desactivar la autenticación de dos factores."
       ],
       "Event invitations and responses will be sent in this language.": [
         "Las invitaciones a eventos y las confirmaciones de asistencia se enviarán en este idioma."
@@ -10494,6 +10518,9 @@
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Si los atajos de teclado están activados, podrá usar las siguientes teclas para acciones rápidas o saltar a diferentes vistas. El atajo ${ metaKey } +K está siempre activado."
       ],
+      "If possible, when signing in, use a device or a browser where you’ve signed in before.": [
+        "Si es posible, al iniciar sesión, use un dispositivo o navegador en el que ya haya iniciado sesión antes."
+      ],
       "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
         "Si el correo electrónico que ingresó se usó para reservar la dirección de correo de un menor, le volveremos a enviar el cupón de activación."
       ],
@@ -10529,6 +10556,9 @@
       ],
       "If you have a gift code, enter it below to apply your discount.": [
         "Si tiene un código de regalo, ingréselo abajo para aplicar el descuento."
+      ],
+      "If you have emergency contacts, get in touch with them, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed.**": [
+        "Si tiene contactos de emergencia, contáctese con ellos para ver si pueden ayudar. Después de solicitar el acceso de emergencia a su cuenta, podrán cambiar la contraseña por usted **una vez transcurrido el tiempo de espera para el acceso.**"
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Si pierde el dispositivo activado para dos factores, estos códigos pueden usarse en lugar del código de autenticación de dos factores de 6 dígitos para iniciar sesión en la cuenta. Cada código solo se puede usar una vez."
@@ -11013,6 +11043,9 @@
       "On Ubuntu?": [
         "¿En Ubuntu?"
       ],
+      "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
+        "Una vez que se haya concedido el acceso a su cuenta, podrán acceder a sus ajustes de **Recuperación** y **cambiar la contraseña de ${ ACCOUNT_APP_NAME }** por usted."
+      ],
       "Once you reset your password:": [
         "Luego de restablecer la contraseña:"
       ],
@@ -11287,9 +11320,6 @@
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Recomendado en dispositivos de confianza. ${ keepMeSignedInLearnMoreLink }"
       ],
-      "Recovery file": [
-        "Archivo de recuperación"
-      ],
       "Recovery file downloaded": [
         "Archivo de recuperación descargado"
       ],
@@ -11298,9 +11328,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "La información de recuperación se mantendrá en este dispositivo a menos que la elimine."
-      ],
-      "Recovery phrase": [
-        "Frase de recuperación"
       ],
       "Recovery phrase copied to clipboard": [
         "Frase recuperación copiada al portapapeles"
@@ -11716,8 +11743,8 @@
       "The name will be visible to your users while they are signed in.": [
         "El nombre será visible para sus usuarios mientras inicien sesión."
       ],
-      "The referral credit can be awarded up to 2 months after your friend's trial ended, and if your friend subscribed to a plan.": [
-        "El crédito por referencia puede otorgarse hasta 2 meses después de que finalice la prueba de su amistad, y si su amistad se suscribió a un plan."
+      "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
+        "El crédito por referencia puede otorgarse hasta 2 meses después de que finalice la prueba de su amistad, solo si su amistad se suscribió a un plan."
       ],
       "The securest way to browse, stream, and be online.": [
         "La manera más segura de navegar, transmitir y estar en línea."
@@ -11932,6 +11959,9 @@
       "To proceed, we must verify the request.": [
         "Debemos verificar la solicitud para continuar."
       ],
+      "To regain access to your account and data, enter the 12-word recovery phrase associated with your account.": [
+        "Para recuperar el acceso a su cuenta y datos, ingrese la frase de recuperación de 12 palabras asociada a su cuenta."
+      ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Para asegurar la conexión a internet, descargue e instale la aplicación ${ VPN_APP_NAME } en el dispositivo y conéctese a un servidor."
       ],
@@ -11971,6 +12001,9 @@
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Pruebe ${ productName } totalmente sin riesgos. Si por cualquier motivo cambia de opinión, recibirá un reembolso completo. Sin preguntas."
       ],
+      "Try recovering your account from a **device or browser where you have signed in before**, as it may be possible from there:": [
+        "Intente recuperar su cuenta desde un **dispositivo o navegador en el que haya iniciado sesión antes**, ya que es posible que pueda hacerlo desde allí:"
+      ],
       "Two-factor authentication": [
         "Autenticación de dos factores"
       ],
@@ -11985,6 +12018,9 @@
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "No se pudo verificar la firma del archivo de recuperación. Contacte con soporte."
+      ],
+      "Unfortunately there is no recovery method available for this account.": [
+        "Lamentablemente no hay ningún método de recuperación disponible para esta cuenta."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Lamentablemente no hay ningún método de recuperación guardado para esta cuenta."
@@ -12644,9 +12680,6 @@
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "Su próxima fecha de facturación es el ${ renewalTime }. Puede cancelar en cualquier momento. Póngase en contacto con el servicio de asistencia si necesita cambiar de plan de inmediato."
-      ],
-      "Your old password": [
-        "Su contraseña anterior"
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "la organización usa el inicio de sesión único (SSO). Presione iniciar sesión para continuar con el proveedor de SSO."
@@ -13878,6 +13911,9 @@
       "End weekday": [
         "Último día de la semana"
       ],
+      "Enter code": [
+        "Ingresar código"
+      ],
       "Enter name or email address": [
         "Ingrese nombre o dirección de correo"
       ],
@@ -14965,6 +15001,9 @@
       "Create an alias": [
         "Crear un alias"
       ],
+      "data recovery option": [
+        "opción de recuperación de datos"
+      ],
       "Details": [
         "Detalles"
       ],
@@ -15720,7 +15759,7 @@
         "Mantener el plan actual"
       ],
       "Make your voice heard": [
-        "Haga oír tu voz"
+        "Haga oír su voz"
       ],
       "Request a feature": [
         "Solicitar una función"
@@ -18502,6 +18541,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durante este tiempo no podrá modificar o cancelar su suscripción. Por favor, espere hasta que su pago se complete antes de intentar cualquier cambio. Gracias por su paciencia."
       ],
+      "Edit billing address": [
+        "Editar dirección de facturación"
+      ],
       "Got it": [
         "Entiendo"
       ],
@@ -20873,6 +20915,9 @@
       "Bundle": [
         "Paquete"
       ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "Elija una dirección segura de ${ MAIL_APP_NAME } para empezar"
+      ],
       "Collaborative document editing": [
         "Edición colaborativa de documentos"
       ],
@@ -22521,9 +22566,6 @@
       "Billing details updated": [
         "Detalles de facturación actualizados"
       ],
-      "Billing information updated": [
-        "Información de facturación actualizada"
-      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Calendario agregado. Puede tomar unos minutos en sincronizarse."
       ],
@@ -23607,7 +23649,7 @@
         "¿Descartar cambios?"
       ],
       "Disconnected from Gmail": [
-        "Desconectado de Gmail"
+        "Sin conexión a Gmail"
       ],
       "Display name and signature": [
         "Nombre a mostrar y firma"

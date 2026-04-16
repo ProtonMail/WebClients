@@ -4959,6 +4959,9 @@
       "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
         "För att fortsätta ta emot och skicka Gmail-meddelanden i ${ BRAND_NAME }, återanslut ditt konto."
       ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Om du vill fortsätta ta emot och skicka Gmail-meddelanden i ${ BRAND_NAME }, återanslut dina konton."
+      ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "För import via en CSV- och VCF-fil, se till att filen inte överstiger ${ MAX_IMPORT_FILE_SIZE_STRING } eller ${ maxContactString } kontakter. Om din fil är större, dela upp den i mindre filer. ${ learnMoreLink }."
       ],
@@ -4988,6 +4991,9 @@
       ],
       "We've started importing your email from Gmail. We'll let you know when it's done.": [
         "Vi har börjat importera din e-post från Gmail. Vi meddelar dig när det är klart."
+      ],
+      "You already have a Gmail address forwarding to ${ MAIL_APP_NAME }. Connect it below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
+        "Du har redan en Gmail-adress som vidarebefordras till ${ MAIL_APP_NAME }. Anslut den nedan för att skicka och ta emot e-post direkt från ${ MAIL_APP_NAME }."
       ],
       "You already have Gmail addresses forwarding to ${ MAIL_APP_NAME }. Connect one below to send and receive emails directly from ${ MAIL_APP_NAME }.": [
         "Du har redan Gmail-adresser som vidarebefordras till ${ MAIL_APP_NAME }. Anslut en nedan för att skicka och ta emot e-post direkt från ${ MAIL_APP_NAME }."
@@ -6426,6 +6432,9 @@
       "You will be notified when someone requests emergency access.": [
         "Du kommer bli aviserad när någon begär nödåtkomst."
       ],
+      "You will no longer be able to help ${ user } recover their data after they reset their password.": [
+        "Du kommer inte längre kunna hjälpa ${ user } att återställa deras data efter att de har återställt deras lösenord."
+      ],
       "You will no longer be able to request access to the account of ${ user } in case of an emergency.": [
         "Du kommer inte längre att kunna begära åtkomst till kontot för ${ user } i händelse av en nödsituation."
       ],
@@ -6630,6 +6639,9 @@
       ],
       "Failed to load OAuth modal.": [
         "Misslyckades att ladda OAuth-modal."
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Misslyckades med att ladda prenumerationsdata. Försök igen senare."
       ],
       "Failed to load the STL preview": [
         "Misslyckades att ladda STL-förhandsgranskningen"
@@ -6966,6 +6978,9 @@
       ],
       "Something went wrong while creating the address": [
         "Något gick fel när adressen skapades"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Något gick fel vid hämtning av tillgängliga domäner"
       ],
       "Something went wrong, please ${ refresh } in order to proceed. If you still see this error message please contact our ${ supportTeam }.": [
         "Något gick fel, ${ refresh } för att fortsätta. Om du fortfarande ser detta felmeddelande, kontakta vårt ${ supportTeam }."
@@ -9722,6 +9737,9 @@
       "Check the status of imports and forwarding.": [
         "Kontrollera status för importer och vidarebefordran."
       ],
+      "Check your network and try again.": [
+        "Kontrollera ditt nätverk och försök igen."
+      ],
       "Choose a plan that works best for you.": [
         "Välj ett paket som passar dig bäst."
       ],
@@ -9733,6 +9751,9 @@
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klicka på \"Begär ny kod\" för att få en ny verifieringskod skickad till ${ strong }. Om telefonnumret är felaktigt klickar du på \"Redigera\" för att korrigera det."
+      ],
+      "Click 'Trouble signing in?' on your TV to follow the alternative steps.": [
+        "Klicka på ”Problem att logga in?” på din TV för att följa de alternativa stegen."
       ],
       "Click **Request password reset** and follow the prompts.": [
         "Klicka på **Begär lösenordsåterställning** och följ anvisningarna."
@@ -10530,6 +10551,9 @@
       "Internet connection restored.": [
         "Internetanslutning återställd."
       ],
+      "Invalid code. ${ RequestNewCodeLink } and try again.": [
+        "Ogiltig kod. ${ RequestNewCodeLink } och försök igen."
+      ],
       "Invitation link expired": [
         "Inbjudningslänk löpt ut"
       ],
@@ -11153,9 +11177,6 @@
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Rekommenderas på betrodda enheter. ${ keepMeSignedInLearnMoreLink }"
       ],
-      "Recovery contacts": [
-        "Återställningskontakter"
-      ],
       "Recovery file downloaded": [
         "Återställningsfil nerladdad"
       ],
@@ -11164,9 +11185,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Återställningsinformation kommer finnas kvar på denna enhet om du inte väljer att ta bort den."
-      ],
-      "Recovery phrase": [
-        "Återställningsfras"
       ],
       "Recovery phrase copied to clipboard": [
         "Återställningsfras kopierad till urklipp"
@@ -12383,6 +12401,9 @@
       "You will not be asked for a one-time code or a security key.": [
         "Du kommer inte att tillfrågas om en engångskod eller en säkerhetsnyckel."
       ],
+      "You will regain complete or partial access to your encrypted data.": [
+        "Du kommer återfå fullständig eller delvis åtkomst till dina krypterade data."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du kommer snart att omdirigeras till PayPal för att verifiera din betalning."
       ],
@@ -12472,9 +12493,6 @@
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "Ditt nästa faktureringsdatum är ${ renewalTime }. Du kan avbryta när som helst. Kontakta support om du behöver ett omedelbart paketbyte."
-      ],
-      "Your old password": [
-        "Ditt gamla lösenord"
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Din organisation använder enkel inloggning (SSO). Tryck på “Logga in“ för att fortsätta med din SSO-leverantör."
@@ -15504,11 +15522,29 @@
       ]
     },
     "Missing feature": {
+      "Check out the latest product updates": [
+        "Kolla in de senaste produktuppdateringarna"
+      ],
       "Continue cancelling": [
         "Fortsätt avbryta"
       ],
       "Explore the latest news": [
         "Utforska de senaste nyheterna"
+      ],
+      "Keep current plan": [
+        "Behåll nuvarande paket"
+      ],
+      "Make your voice heard": [
+        "Gör din röst hörd"
+      ],
+      "Request a feature": [
+        "Begär en funktion"
+      ],
+      "Request a feature or vote on ideas from other users in our feedback forum.": [
+        "Begär en funktion eller rösta på idéer från andra användare i vårt forum för feedback."
+      ],
+      "See how ${ BRAND_NAME } apps are evolving with your feedback.": [
+        "Se hur ${ BRAND_NAME }-appar utvecklas med din feedback."
       ],
       "Submit your ideas": [
         "Skicka dina idéer"
@@ -18274,6 +18310,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Under denna tid kommer du inte att kunna ändra eller säga upp din prenumeration. Vänta tills din betalning är slutförd innan du försöker göra några ändringar. Tack för ditt tålamod."
       ],
+      "Edit billing address": [
+        "Redigera faktureringsadress"
+      ],
       "Got it": [
         "Jag förstår"
       ],
@@ -20512,6 +20551,9 @@
       "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
         "${ FREE_PASS_ALIASES } hide-my-email-alias för att bekämpa skräppost"
       ],
+      "${ MAIL_SHORT_APP_NAME } Free": [
+        "${ MAIL_SHORT_APP_NAME } Free"
+      ],
       "${ maxAddresses } address": [
         "${ maxAddresses } adress",
         "${ maxAddresses } adresser"
@@ -22253,9 +22295,6 @@
       ],
       "Billing details updated": [
         "Faktureringsuppgifterna har uppdaterats"
-      ],
-      "Billing information updated": [
-        "Faktureringsinformation uppdaterad"
       ],
       "Calendar added. It might take a few minutes to sync.": [
         "Kalender har lagts till. Det kan ta några minuter att synkronisera."
