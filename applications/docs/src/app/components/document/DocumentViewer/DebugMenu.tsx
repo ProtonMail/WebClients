@@ -19,8 +19,7 @@ import {
 } from '@proton/docs-core/lib/utils/document-update-compression'
 import { Tooltip } from '@proton/docs-shared/components/ui/ui'
 import * as Ariakit from '@ariakit/react'
-import type { UpdateTimelineEntry } from '@proton/docs-core/lib/utils/create-update-timeline'
-import { createUpdateTimelineEntry } from '@proton/docs-core/lib/utils/create-update-timeline'
+import { downloadUpdateTimeline } from '@proton/docs-core/lib/utils/create-update-timeline'
 
 const UpdateReplayTool = lazy(() => import('./UpdateReplayTool'))
 
@@ -132,12 +131,9 @@ export function DebugMenu({ docController, editorController, documentState, docu
     if (!baseCommit) {
       return
     }
-    const timelineEntries: UpdateTimelineEntry[] = []
     const JSZip = (await import('jszip')).default
     const zip = new JSZip()
     for (const message of baseCommit.messages) {
-      const entry = await createUpdateTimelineEntry(message)
-      timelineEntries.push(entry)
       const content = message.content
       if (isCompressedDocumentUpdate(content)) {
         const decompressed = decompressDocumentUpdate(content)
@@ -155,16 +151,8 @@ export function DebugMenu({ docController, editorController, documentState, docu
     zipLink.click()
     document.body.removeChild(zipLink)
     URL.revokeObjectURL(zipUrl)
-    const timelineJSON = JSON.stringify(timelineEntries, null, 2)
-    const timelineBlob = new Blob([timelineJSON], { type: 'application/json' })
-    const timelineUrl = URL.createObjectURL(timelineBlob)
-    const timelineLink = document.createElement('a')
-    timelineLink.href = timelineUrl
-    timelineLink.download = 'timeline.json'
-    document.body.appendChild(timelineLink)
-    timelineLink.click()
-    document.body.removeChild(timelineLink)
-    URL.revokeObjectURL(timelineUrl)
+    const yDocJSON = await editorController.getYDocAsJSON()
+    await downloadUpdateTimeline(baseCommit.messages, yDocJSON)
   }
 
   const isDocument = documentType === 'doc'
@@ -299,7 +287,13 @@ export function DebugMenu({ docController, editorController, documentState, docu
                   <Tooltip>Downloads all updates as a ZIP file</Tooltip>
                 </Ariakit.TooltipProvider>
               </Button>
-              <Button size="small" onClick={() => docController.downloadUpdatesInformation()}>
+              <Button
+                size="small"
+                onClick={async () => {
+                  const yDocJSON = await editorController.getYDocAsJSON()
+                  await docController.downloadUpdatesInformation(yDocJSON)
+                }}
+              >
                 Download update debug information
                 <Ariakit.TooltipProvider>
                   <Ariakit.TooltipAnchor render={<Icon name="info-circle" />} />
