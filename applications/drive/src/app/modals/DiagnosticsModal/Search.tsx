@@ -31,8 +31,10 @@ import type { SORT_DIRECTION } from '@proton/shared/lib/constants';
 import { SORT_DIRECTION as SORT } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
+import type { UseSearchModuleReturn } from '../../hooks/search/useSearchModule';
 import { useSearchModule } from '../../hooks/search/useSearchModule';
 import { IndexKind } from '../../modules/search';
+import type { IndexPopulatorState } from '../../modules/search/internal/shared/SearchDB';
 
 const ALL_INDEX_KINDS = Object.values(IndexKind);
 
@@ -182,6 +184,81 @@ async function removeFromIndex(userId: string, kind: IndexKind, identifier: stri
     }
 }
 
+// --- Populator states ---
+
+function PopulatorStates({ searchModule }: { searchModule: Extract<UseSearchModuleReturn, { isAvailable: true }> }) {
+    const [user] = useUser();
+    const [states, setStates] = useState<IndexPopulatorState[]>([]);
+    const [loading, setLoading] = useState(true);
+
+    const fetchStates = async () => {
+        setLoading(true);
+        try {
+            const db = await openSearchDB(user.ID);
+            try {
+                const all = await db.getAll('indexPopulatorStates');
+                setStates(all as IndexPopulatorState[]);
+            } finally {
+                db.close();
+            }
+        } catch {
+            setStates([]);
+        }
+        setLoading(false);
+    };
+
+    useEffect(() => {
+        void fetchStates();
+    }, [user.ID]);
+
+    const handleReindex = async (uid: string) => {
+        await searchModule.reindexPopulator(uid);
+        void fetchStates();
+    };
+
+    if (loading) {
+        return <CircleLoader />;
+    }
+
+    if (states.length === 0) {
+        return <p>{c('Info').t`No populator states found.`}</p>;
+    }
+
+    return (
+        <Table>
+            <TableHeader>
+                <tr>
+                    <th style={{ width: '80em' }}>UID</th>
+                    <th style={{ width: '5em' }}>Done</th>
+                    <th style={{ width: '8em' }}>Generation</th>
+                    <th style={{ width: '6em' }}>Version</th>
+                    <th style={{ width: '8em' }}>{c('Title').t`Actions`}</th>
+                </tr>
+            </TableHeader>
+            <TableBody>
+                {states.map((s) => (
+                    <TableRow
+                        key={s.uid}
+                        cells={[
+                            <code key="uid">{s.uid}</code>,
+                            <span key="done">{s.done ? 'Yes' : 'No'}</span>,
+                            <span key="gen">{s.generation}</span>,
+                            <span key="ver">{s.version}</span>,
+                            <Button
+                                key="action"
+                                size="small"
+                                onClick={() => {
+                                    void handleReindex(s.uid);
+                                }}
+                            >{c('Action').t`Re-index`}</Button>,
+                        ]}
+                    />
+                ))}
+            </TableBody>
+        </Table>
+    );
+}
+
 // --- Global tab ---
 
 function SearchGlobal() {
@@ -205,6 +282,9 @@ function SearchGlobal() {
                 value={typeof SharedWorker !== 'undefined' && typeof indexedDB !== 'undefined' ? 'Yes' : 'No'}
             />
             <InfoRow label={c('Label').t`Index kinds`} value={ALL_INDEX_KINDS.join(', ')} />
+
+            <h3 className="text-bold mt-4 mb-2">{c('Title').t`Index populators`}</h3>
+            <PopulatorStates searchModule={searchModule} />
         </>
     );
 }

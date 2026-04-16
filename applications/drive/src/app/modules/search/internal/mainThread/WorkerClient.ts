@@ -134,6 +134,10 @@ export class WorkerClient {
         void this.api.registerClient(this.userId, this.clientId, Comlink.proxy(this.bridge));
     }
 
+    async reindexPopulator(uid: string): Promise<void> {
+        await this.api.reindexPopulator(uid);
+    }
+
     async queryIndexerState(): Promise<IndexerState> {
         return this.api.queryIndexerState();
     }

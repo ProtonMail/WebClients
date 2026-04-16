@@ -12,6 +12,7 @@ export abstract class NodeTreeIndexPopulator extends IndexPopulator {
 
     async *visitAndProduceIndexEntries(ctx: TaskContext): AsyncIterableIterator<IndexEntry> {
         const rootNodeUid = await this.getRootNodeUid(ctx);
-        yield* this.walkFolderTreeFromSdk(rootNodeUid, '', ctx);
+        const generation = await this.getGeneration(ctx.db);
+        yield* this.walkFolderTreeFromSdk(rootNodeUid, '', ctx, generation);
     }
 }

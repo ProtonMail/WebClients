@@ -33,15 +33,15 @@ describe('MyFilesIndexPopulator', () => {
         bridge = new FakeMainThreadBridge();
     });
 
-    it('create() initializes with generation from DB when state exists', async () => {
+    it('getGeneration returns existing generation from DB', async () => {
         await db.putPopulatorState({ uid: `myfiles:${SCOPE_ID}`, done: true, generation: 3, version: 1 });
-        const populator = await MyFilesIndexPopulator.create(SCOPE_ID, db);
-        expect(populator.getGeneration()).toBe(3);
+        const populator = new MyFilesIndexPopulator(SCOPE_ID);
+        expect(await populator.getGeneration(db)).toBe(3);
     });
 
-    it('create() initializes with generation=1 when no state exists', async () => {
-        const populator = await MyFilesIndexPopulator.create(SCOPE_ID, db);
-        expect(populator.getGeneration()).toBe(1);
+    it('getGeneration returns 1 when no state exists (lazy init)', async () => {
+        const populator = new MyFilesIndexPopulator(SCOPE_ID);
+        expect(await populator.getGeneration(db)).toBe(1);
     });
 
     it('visitAndProduceIndexEntries yields entries from the tree', async () => {
@@ -58,8 +58,8 @@ describe('MyFilesIndexPopulator', () => {
             makeMaybeNode({ uid: 'file-2', name: 'notes.txt', type: 'file' as NodeType }),
         ]);
 
-        const populator = await MyFilesIndexPopulator.create(SCOPE_ID, db);
-        const ctx = makeTaskContext({ bridge: bridge.asBridge() });
+        const populator = new MyFilesIndexPopulator(SCOPE_ID);
+        const ctx = makeTaskContext({ bridge: bridge.asBridge(), db });
         const entries = await collectEntries(populator.visitAndProduceIndexEntries(ctx));
 
         expect(entries).toHaveLength(2);

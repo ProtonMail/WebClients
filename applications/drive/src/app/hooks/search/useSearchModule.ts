@@ -44,6 +44,8 @@ export type UseSearchModuleReturn =
           search: (query: SearchQuery) => AsyncGenerator<SearchResultItem>;
           // Clear all search-related data (DBs, caches, indexes).
           reset: () => Promise<void>;
+          // Trigger a re-index for a specific populator by UID.
+          reindexPopulator: (uid: string) => Promise<void>;
       };
 
 export const useSearchModule = (): UseSearchModuleReturn => {
@@ -146,6 +148,7 @@ export const useSearchModule = (): UseSearchModuleReturn => {
             },
             start: async () => searchModule.start(),
             reset: async () => searchModule.reset(),
+            reindexPopulator: async (uid: string) => searchModule.reindexPopulator(uid),
 
             search: (query: SearchQuery) => {
                 return searchModule.search(query);
