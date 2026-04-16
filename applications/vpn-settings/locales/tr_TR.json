@@ -485,9 +485,6 @@
       "Fit to window": [
         "Pencereye sığdır"
       ],
-      "Forgot password?": [
-        "Parolamı unuttum"
-      ],
       "Forgot recovery method?": [
         "Kurtarma yöntemi unutulsun mu?"
       ],
@@ -4276,6 +4273,9 @@
       "Failed to load OAuth modal.": [
         "OAuth penceresi yüklenemedi."
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Abonelik verileri yüklenemedi. Lütfen daha sonra tekrar deneyin."
+      ],
       "Failed to load the STL preview": [
         "STL ön izlemesi yüklenemedi"
       ],
@@ -6325,6 +6325,9 @@
       "**Sync codes** to all your devices": [
         "Tüm aygıtlarınızda **kodları eşitleyin**"
       ],
+      "**This will disable 2-factor authentication.**": [
+        "**Bu işlem iki aşamalı kimlik doğrulamayı devre dışı bırakacak.**"
+      ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } diğer",
         "+ ${ invisibleCount } diğer"
@@ -6984,12 +6987,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "${ BRAND_NAME } hesabınızın e-posta adresini ya da kullanıcı adını yazın."
       ],
-      "Enter your own password (as organization admin).": [
-        "Kendi parolanızı yazın (kuruluş yöneticisi olarak)."
-      ],
-      "Enter your own password (as trusted contact).": [
-        "Kendi parolanızı yazın (güvenilen kişi olarak)."
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Kurtarma e-posta adresinizi yazın. Size kullanıcı adınızı veya e-posta adresinizi göndereceğiz."
       ],
@@ -6998,6 +6995,9 @@
       ],
       "Enter your recovery phrase to change your password now.": [
         "Parolanızı değiştirmek için kurtarma ifadenizi yazın."
+      ],
+      "Enter your recovery phrase to verify your identity and disable two-factor authentication.": [
+        "Kimliğinizi doğrulamak ve iki adımlı doğrulamayı devre dışı bırakmak için kurtarma ifadenizi girin."
       ],
       "Everything in ${ planOrAppName }": [
         "${ planOrAppName } özelliklerinin tümü"
@@ -7740,12 +7740,6 @@
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Güvenilen aygıtlar üzerinde önerilir. ${ keepMeSignedInLearnMoreLink }"
       ],
-      "Recovery contacts": [
-        "Kurtarma kişileri"
-      ],
-      "Recovery file": [
-        "Kurtarma dosyası"
-      ],
       "Recovery file downloaded": [
         "Kurtarma dosyası indirildi"
       ],
@@ -7754,9 +7748,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Siz silmeyi seçmedikçe kurtarma bilgileri bu aygıt üzerinde kalacak."
-      ],
-      "Recovery phrase": [
-        "Kurtarma ifadesi"
       ],
       "Recovery phrase copied to clipboard": [
         "Kurtarma ifadesi panoya kopyalandı"
@@ -8066,8 +8057,8 @@
       "The name will be visible to your users while they are signed in.": [
         "Oturum açtıklarında kullanıcılarınıza görüntülenecek ad."
       ],
-      "The referral credit can be awarded up to 2 months after your friend's trial ended, and if your friend subscribed to a plan.": [
-        "Öneri kredisi arkadaşınızın deneme süresi sona erdiğinde bir tarifeye abone olmasıyla en fazla 2 ay sonra verilebilir."
+      "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
+        "Referans kredisi arkadaşınızın deneme süresi bittikten sonraki 2 aya kadar, arkadaşınız yalnızca bir tarifeye abone olduğu takdirde verilebilir."
       ],
       "The securest way to browse, stream, and be online.": [
         "İnternet üzerinde gezinmenin, yayın akışlarını izlemenin ve çevrim içi olmanın en güvenli yolu."
@@ -8239,6 +8230,9 @@
       ],
       "To proceed, we must verify the request.": [
         "İlerlemek için isteğinizi doğrulamalıyız."
+      ],
+      "To regain access to your account and data, enter the 12-word recovery phrase associated with your account.": [
+        "Hesabınıza ve verilerinize yeniden erişmek için hesabınızla ilişkili 12 kelimelik kurtarma ifadesini girin."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "İnternet bağlantınızı güvenli kılmak için aygıtınıza ${ VPN_APP_NAME } uygulamasını indirip kurun ve bir sunucuya bağlanın."
@@ -8630,9 +8624,6 @@
       "You can now reset your password to regain access to your account.": [
         "Artık hesabınıza yeniden erişmek için parolanızı sıfırlayabilirsiniz."
       ],
-      "You can now reset your password to regain access to your account. **This will disable 2-factor authentication.**": [
-        "Artık parolanızı sıfırlayarak hesabınıza yeniden erişebilirsiniz. **Bu işlem iki adımlı doğrulamayı kapatacak.**"
-      ],
       "You can now return to the application to continue": [
         "İlerlemek için uygulamaya dönebilirsiniz"
       ],
@@ -8817,9 +8808,6 @@
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "Sonraki ödemeniz ${ renewalTime } tarihinde. İstediğiniz zaman iptal edebilirsiniz. Tarifenizi acil olarak değiştirmeniz gerekiyorsa lütfen destek ekibiyle görüşün."
-      ],
-      "Your old password": [
-        "Eski parolanız"
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Kuruluşunuz tek oturum açma (SSO) kullanıyor. Tek oturum açma hizmeti sağlayıcınızı kullanmak için Oturum aç üzerine basın."
@@ -9857,12 +9845,6 @@
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Evet, bu hesabı ve tüm verilerini kalıcı olarak silmek istiyorum."
-      ],
-      "Your password (admin)": [
-        "Parolanız (yönetici)"
-      ],
-      "Your password (trusted contact)": [
-        "Parolanız (güvenilen kişi)"
       ],
       "ZIP code": [
         "Posta kodu"
@@ -12538,6 +12520,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Bu süre boyunca aboneliğinizi değiştiremez veya iptal edemezsiniz. Değişiklik yapmadan önce lütfen ödeme işleminizin tamamlanmasını bekleyin. Anlayışınız için teşekkür ederiz."
       ],
+      "Edit billing address": [
+        "Fatura adresini düzenle"
+      ],
       "Got it": [
         "Anladım"
       ],
@@ -14594,9 +14579,6 @@
       "Share the confirmation code with your administrator": [
         "Doğrulama kodunu yöneticiniz ile paylaşın"
       ],
-      "Sign in": [
-        "Oturum aç"
-      ],
       "Sign in to your organization": [
         "Kuruluşunuzda oturum açın"
       ],
@@ -14656,9 +14638,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Kuruluşunuza eklemek istediğiniz yeni kullanıcıları el ile oluşturmanız gerekecek."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Tek oturum açma hizmeti sağlayıcınıza yönlendirileceksiniz."
       ],
       "Your SSO configuration will be deleted.": [
         "Tek oturum açma yapılandırmanız silinecek"
@@ -15304,9 +15283,6 @@
       "Billing details updated": [
         "Fatura bilgileri güncellendi"
       ],
-      "Billing information updated": [
-        "Fatura bilgileri güncellendi"
-      ],
       "Canceling import": [
         "İçe aktarma iptal ediliyor"
       ],
@@ -15935,9 +15911,6 @@
       "Collaborate on documents": [
         "Belgeler üzerinde işbirliği yapın"
       ],
-      "Configurations": [
-        "Yapılandırmalar"
-      ],
       "Confirm": [
         "Onayla"
       ],
@@ -16224,9 +16197,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "${ app } Beta programına katılmak için ${ BRAND_NAME } hesabınızın bilgilerini yazın"
-      ],
-      "Enter your password": [
-        "Parolanızı yazın"
       ],
       "Error": [
         "Hata"
