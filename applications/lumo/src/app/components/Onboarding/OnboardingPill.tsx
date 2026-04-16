@@ -10,7 +10,7 @@ interface OnboardingPillProps {
 
 const OnboardingPill = ({ onClick }: OnboardingPillProps) => {
     return (
-        <div className="absolute bottom-0 right-0 mb-4 mr-4">
+        <div className="absolute bottom-0 right-0 mb-4 mr-4" style={{ zIndex: 100 }}>
             <Button
                 onClick={onClick}
                 shape="outline"
