@@ -116,9 +116,9 @@ export const FeedbackForm = ({ onClose, onSubmit }: Props) => {
         c('Option').t`Others couldn't hear me`,
     ];
     const videoOptions = [
-        c('Option').t`Video was breaking up`,
-        c('Option').t`Video was blurry`,
+        c('Option').t`Video quality was poor`,
         c('Option').t`I couldn't see others' video`,
+        c('Option').t`Others couldn't see my video`,
     ];
     const screenShareOptions = [
         c('Option').t`The presentation was blurry`,
