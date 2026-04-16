@@ -8,7 +8,6 @@ import { queryLatestVolumeEvent } from '@proton/shared/lib/api/drive/volume';
 import { useFlagsDriveFoundationSearch } from '../../flags/useFlagsDriveFoundationSearch';
 import type { SearchQuery, SearchResultItem } from '../../modules/search';
 import { SearchLatestEventIdProvider, SearchModule, type SearchModuleState } from '../../modules/search';
-import { Logger } from '../../modules/search/internal/shared/Logger';
 import { sendErrorReportForSearch } from '../../modules/search/internal/shared/errors';
 import { brandSearchUserId } from '../../modules/search/internal/shared/types';
 
@@ -98,10 +97,7 @@ export const useSearchModule = (): UseSearchModuleReturn => {
                     setSearchModuleState(module.getState());
                 }
             } catch (error) {
-                Logger.error('Error while creating Search module', error);
-                sendErrorReportForSearch(error, {
-                    extra: { context: 'Error while creating Search module' },
-                });
+                sendErrorReportForSearch('Error while creating Search module', error);
             }
         }
 

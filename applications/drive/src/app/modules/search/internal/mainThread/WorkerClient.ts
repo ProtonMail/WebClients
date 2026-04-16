@@ -2,6 +2,7 @@ import * as Comlink from 'comlink';
 
 import { createAsyncQueue } from '../../../../utils/asyncQueue';
 import { Logger } from '../shared/Logger';
+import { registerComlinkErrorTransferHandler } from '../shared/comlinkErrorTransferHandler';
 import {
     SearchWorkerDisconnectedError,
     SharedWorkerHeartbeatTimeout,
@@ -11,6 +12,11 @@ import type { ClientId, SearchQuery, SearchResultItem, UserId, WorkerSearchResul
 import type { SharedWorkerAPI } from '../worker/SharedWorkerAPI';
 import type { IndexerState } from '../worker/indexer/IndexerTaskQueue';
 import type { MainThreadBridge } from './MainThreadBridge';
+
+// Set-up comlink to propagate errors properly.
+// This must be called on both the main thread and the worker thread
+// so that custom error types survive serialization across the comlink boundary.
+registerComlinkErrorTransferHandler();
 
 const HEARTBEAT_INTERVAL = 3000;
 const HEARTBEAT_TIMEOUT = 5000;
@@ -76,9 +82,8 @@ export class WorkerClient {
                 ),
             ]);
         } catch (error) {
-            sendErrorReportForSearch(error);
             if (error instanceof SharedWorkerHeartbeatTimeout) {
-                Logger.error('WorkerClient: heartbeat timed out, reconnecting to sharedworker', error);
+                sendErrorReportForSearch('WorkerClient: heartbeat timed out, reconnecting to sharedworker', error);
                 this.connectionAbort.abort(new SearchWorkerDisconnectedError());
                 this.connectionAbort = new AbortController();
 
@@ -87,7 +92,7 @@ export class WorkerClient {
 
                 // TODO: Instrument sharedworker timeouts.
             } else {
-                Logger.error('Error while emitting hearbeat from worker client', error);
+                sendErrorReportForSearch('Error while emitting heartbeat from worker client', error);
                 // No need to recover, another heartbeat will be sent by the periodic timer.
             }
         }

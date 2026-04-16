@@ -102,12 +102,16 @@ export class ClientCoordinator {
                 this.disconnect(clientId);
                 // Clients normally disconnect via beforeunload in WorkerClient.
                 // Heartbeat timeout is a fallback — report so we can track how often it happens.
-                sendErrorReportForSearch(new Error('Search client disconnected by timeout'), {
-                    extra: {
-                        staleness: now - lastSeen,
-                        remainingClients: this.clients.size,
-                    },
-                });
+                sendErrorReportForSearch(
+                    'Search client disconnected by timeout',
+                    new Error('Search client disconnected by timeout'),
+                    {
+                        extra: {
+                            staleness: now - lastSeen,
+                            remainingClients: this.clients.size,
+                        },
+                    }
+                );
             }
         }
     }
