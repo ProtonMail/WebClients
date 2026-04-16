@@ -34,7 +34,7 @@ plugs:
   foo-install-cups:
     interface: content
     content: foo
-    default-provider: cups 
+    default-provider: cups
     target: $SNAP_DATA/foo
 
 apps:
@@ -46,7 +46,6 @@ apps:
     common-id: me.proton.Mail
     environment:
       TMPDIR: $XDG_RUNTIME_DIR
-      DISABLE_WAYLAND: 1
     plugs:
       - desktop
       - desktop-legacy
@@ -60,4 +59,4 @@ apps:
       - hardware-observe
       - u2f-devices
       - network
-      - cups 
+      - cups
