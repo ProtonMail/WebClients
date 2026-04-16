@@ -3147,6 +3147,9 @@
       "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
         "För att fortsätta ta emot och skicka Gmail-meddelanden i ${ BRAND_NAME }, återanslut ditt konto."
       ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Om du vill fortsätta ta emot och skicka Gmail-meddelanden i ${ BRAND_NAME }, återanslut dina konton."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "För att säkerställa högsta möjliga säkerhet för ditt konto, ställ in en återställningsfras."
       ],
@@ -3664,6 +3667,9 @@
       "Failed to load OAuth modal.": [
         "Misslyckades att ladda OAuth-modal."
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Misslyckades med att ladda prenumerationsdata. Försök igen senare."
+      ],
       "Failed to open to contact": [
         "Misslyckades att öppna kontakt"
       ],
@@ -3920,6 +3926,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Vissa av dina etikettnamn överskrider ${ MAIL_APP_NAME }s maximalt antal tillåtna tecken. Anpassa importen för att redigera dessa namn."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Något gick fel vid hämtning av tillgängliga domäner"
       ],
       "Something went wrong. Please try again.": [
         "Något gick fel. Försök igen."
@@ -9361,6 +9370,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Under denna tid kommer du inte att kunna ändra eller säga upp din prenumeration. Vänta tills din betalning är slutförd innan du försöker göra några ändringar. Tack för ditt tålamod."
       ],
+      "Edit billing address": [
+        "Redigera faktureringsadress"
+      ],
       "Got it": [
         "Jag förstår"
       ],
@@ -11229,9 +11241,6 @@
       ],
       "Billing details updated": [
         "Faktureringsuppgifterna har uppdaterats"
-      ],
-      "Billing information updated": [
-        "Faktureringsinformation uppdaterad"
       ],
       "Booking page created": [
         "Bokningssida skapad"
