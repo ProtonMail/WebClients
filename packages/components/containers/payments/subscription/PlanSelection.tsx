@@ -339,7 +339,11 @@ export function useAccessiblePlans({
         plansMap[bundleProPlan],
     ]);
 
-    const driveB2BPlans = filterPlans([plansMap[PLANS.DRIVE_BUSINESS], plansMap[bundleProPlan]]);
+    const driveB2BPlans = filterPlans([
+        plansMap[PLANS.DRIVE_BUSINESS],
+        plansMap[bundleProPlan],
+        plansMap[PLANS.BUNDLE_BIZ_2025],
+    ]);
 
     const walletB2BPlans = filterPlans([plansMap[bundleProPlan]]);
 
