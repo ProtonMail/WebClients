@@ -485,9 +485,6 @@
       "Fit to window": [
         "Ajustar na janela"
       ],
-      "Forgot password?": [
-        "Esqueceu sua senha?"
-      ],
       "Forgot recovery method?": [
         "Esqueceu um método de recuperação?"
       ],
@@ -619,6 +616,9 @@
       ],
       "Keep my subscription": [
         "Manter minha assinatura"
+      ],
+      "Learn about recovery options": [
+        "Saiba mais sobre as opções de recuperação"
       ],
       "Learn more": [
         "Saiba mais"
@@ -6508,6 +6508,9 @@
       "By leaving now, changes may not be saved": [
         "Ao sair agora, as alterações não podem ser salvas"
       ],
+      "Can you access your active session?": [
+        "Você pode acessar sua sessão ativa?"
+      ],
       "Cancel": [
         "Cancelar"
       ],
@@ -6873,12 +6876,6 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Entre seu e-mail ou nome de usuário da conta da ${ BRAND_NAME }."
       ],
-      "Enter your own password (as organization admin).": [
-        "Digite sua própria senha (como administrador da organização)."
-      ],
-      "Enter your own password (as trusted contact).": [
-        "Digite sua própria senha (como contato de confiança)."
-      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Digite o seu endereço de e-mail de recuperação e nós enviaremos o seu nome de usuário ou endereço de e-mail."
       ],
@@ -7107,6 +7104,9 @@
       ],
       "Internet connection restored.": [
         "Conexão com a internet restaurada."
+      ],
+      "Invalid code. ${ RequestNewCodeLink } and try again.": [
+        "Código invalido. ${ RequestNewCodeLink } e tente novamente."
       ],
       "Invite deleted": [
         "Convite excluído"
@@ -7602,12 +7602,6 @@
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Recomendado em dispositivos de confiança. ${ keepMeSignedInLearnMoreLink }"
       ],
-      "Recovery contacts": [
-        "Contatos de recuperação"
-      ],
-      "Recovery file": [
-        "Arquivo de recuperação"
-      ],
       "Recovery file downloaded": [
         "Arquivo de recuperação baixado"
       ],
@@ -7616,9 +7610,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "As informações de recuperação permanecerão neste dispositivo, a menos que você opte por excluí-las."
-      ],
-      "Recovery phrase": [
-        "Frase de recuperação"
       ],
       "Recovery phrase copied to clipboard": [
         "Frase de recuperação copiada para a área de transferência"
@@ -8330,6 +8321,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos um novo código de verificação para ${ strong }"
       ],
+      "Web sessions detected:": [
+        "Sessões web detectadas:"
+      ],
       "Week": [
         "Semana"
       ],
@@ -8628,9 +8622,6 @@
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "Sua próxima data de cobrança é ${ renewalTime }. Você pode cancelar a qualquer momento. Entre em contato com o suporte se precisar de uma mudança imediata de plano."
-      ],
-      "Your old password": [
-        "Sua senha antiga"
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Sua organização usa o login único (SSO). Pressione iniciar seção para continuar com seu provedor SSO."
@@ -9669,12 +9660,6 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Sim, eu quero excluir permanentemente esta conta e todos os seus dados."
       ],
-      "Your password (admin)": [
-        "Sua senha (admin)"
-      ],
-      "Your password (trusted contact)": [
-        "Sua senha (contato de confiança)"
-      ],
       "ZIP code": [
         "CEP"
       ]
@@ -10372,20 +10357,32 @@
       ]
     },
     "Missing feature": {
+      "Check out the latest product updates": [
+        "Veja as nossas últimas atualizações de produto"
+      ],
       "Continue cancelling": [
         "Continuar cancelamento"
       ],
       "Explore the latest news": [
         "Explore as últimas notícias"
       ],
+      "Keep current plan": [
+        "Manter plano atual"
+      ],
       "Make your voice heard": [
         "Faça sua voz ser ouvida"
+      ],
+      "Request a feature": [
+        "Solicitar um recurso"
       ],
       "Request a feature or vote on ideas from other users in our feedback forum.": [
         "Solicite um recurso ou vote nas ideias de outros usuários em nosso fórum de comentários."
       ],
       "See how ${ BRAND_NAME } apps are evolving with your feedback.": [
         "Veja como os aplicativos da ${ BRAND_NAME } estão evoluindo graças aos seus comentários."
+      ],
+      "Submit your ideas": [
+        "Envie suas ideias"
       ]
     },
     "Modal title": {
@@ -12336,6 +12333,9 @@
       ],
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durante esse período, você não poderá modificar ou cancelar sua assinatura. Aguarde até que seu pagamento seja concluído antes de tentar qualquer alteração. Obrigado pela sua paciência."
+      ],
+      "Edit billing address": [
+        "Editar o endereço de cobrança"
       ],
       "Got it": [
         "Entendi"
@@ -14390,9 +14390,6 @@
       "Share the confirmation code with your administrator": [
         "Compartilhe o código de confirmação com seu administrador"
       ],
-      "Sign in": [
-        "Iniciar sessão"
-      ],
       "Sign in to your organization": [
         "Iniciar sessão na sua organização."
       ],
@@ -14452,9 +14449,6 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Você terá que criar manualmente novos usuários para adicioná-los à sua organização."
-      ],
-      "You'll be redirected to your third-party SSO provider.": [
-        "Você será redirecionado para o seu provedor de SSO de terceiros."
       ],
       "Your SSO configuration will be deleted.": [
         "Sua configuração de SSO será excluída."
@@ -15100,9 +15094,6 @@
       "Billing details updated": [
         "Os detalhes de faturamento forem atualizados"
       ],
-      "Billing information updated": [
-        "As informações de faturamento foram atualizadas"
-      ],
       "Canceling import": [
         "Cancelando a importação"
       ],
@@ -15722,9 +15713,6 @@
       "Collaborate on documents": [
         "Colaborar em documentos"
       ],
-      "Configurations": [
-        "Configurações"
-      ],
       "Confirm": [
         "Confirmar"
       ],
@@ -16011,9 +15999,6 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Entre com sua conta da ${ BRAND_NAME } para participar do programa Beta do ${ app }"
-      ],
-      "Enter your password": [
-        "Digite sua senha"
       ],
       "Error": [
         "Erro"
@@ -16596,6 +16581,9 @@
       ],
       "Verification failed": [
         "Erro na verificação"
+      ],
+      "Verify it’s you": [
+        "Verifique se é você"
       ],
       "Verifying your card...": [
         "Verificando seu cartão..."
