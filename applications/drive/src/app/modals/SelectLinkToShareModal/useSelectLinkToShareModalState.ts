@@ -15,7 +15,7 @@ export type SelectLinkToShareModalInnerProps = {
 
 export type UseSelectLinkToShareModalStateProps = ModalStateProps & SelectLinkToShareModalInnerProps;
 
-const ABSTRACT_ROOT_TYPES = new Set(['files-root', 'devices-root', 'shares-root']);
+const ABSTRACT_ROOT_TYPES = new Set(['files-root', 'devices-root', 'shares-root', 'device']);
 
 /**
  * Creates isolated directory tree state for this modal.
