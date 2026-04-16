@@ -10,6 +10,14 @@ import { IcMeetMicrophone } from '@proton/icons/icons/IcMeetMicrophone';
 import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
 import { IcMeetSettings } from '@proton/icons/icons/IcMeetSettings';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
+import {
+    selectCameraPermission,
+    selectCameras,
+    selectMicrophonePermission,
+    selectMicrophones,
+    selectSelectedCameraId,
+    selectSelectedMicrophoneId,
+} from '@proton/meet/store/slices/deviceManagementSlice';
 import { selectIsScreenShare } from '@proton/meet/store/slices/meetingInfo';
 import { selectPage, selectPageCount, setPage } from '@proton/meet/store/slices/sortedParticipantsSlice';
 import {
@@ -74,21 +82,17 @@ export const ParticipantControls = () => {
         microphone: 'prompt',
     });
 
-    const {
-        devicePermissions: { camera: cameraPermission, microphone: microphonePermission },
-    } = useMediaManagementContext();
+    const cameraPermission = useMeetSelector(selectCameraPermission);
+    const microphonePermission = useMeetSelector(selectMicrophonePermission);
+    const microphones = useMeetSelector(selectMicrophones);
+    const cameras = useMeetSelector(selectCameras);
+    const audioDeviceId = useMeetSelector(selectSelectedMicrophoneId);
+    const videoDeviceId = useMeetSelector(selectSelectedCameraId);
 
     const hasCameraPermission = cameraPermission === 'granted';
     const hasMicrophonePermission = microphonePermission === 'granted';
 
-    const {
-        microphones,
-        cameras,
-        toggleVideo,
-        toggleAudio,
-        selectedMicrophoneId: audioDeviceId,
-        selectedCameraId: videoDeviceId,
-    } = useMediaManagementContext();
+    const { toggleVideo, toggleAudio } = useMediaManagementContext();
 
     // Closing popups with device selection options upon losing permissions
     useEffect(() => {

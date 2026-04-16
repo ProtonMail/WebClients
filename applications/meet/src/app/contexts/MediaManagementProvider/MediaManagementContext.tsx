@@ -2,34 +2,9 @@ import { createContext, useContext } from 'react';
 
 import debounce from 'lodash/debounce';
 
-import type { DeviceState, SwitchActiveDevice, ToggleVideoType } from '../../types';
-
-const DEFAULT_DEVICE_STATE: DeviceState = {
-    systemDefault: null,
-    systemDefaultLabel: '',
-    useSystemDefault: true,
-    preferredAvailable: false,
-    preferredDevice: null,
-};
+import type { SwitchActiveDevice, ToggleVideoType } from '../../types';
 
 export interface MediaManagementContextType {
-    devicePermissions: {
-        camera?: PermissionState;
-        microphone?: PermissionState;
-    };
-    handleDevicePermissionChange: (permissions: { camera?: PermissionState; microphone?: PermissionState }) => void;
-    cameras: MediaDeviceInfo[];
-    microphones: MediaDeviceInfo[];
-    speakers: MediaDeviceInfo[];
-    selectedCameraId: string;
-    selectedMicrophoneId: string;
-    selectedAudioOutputDeviceId: string;
-    defaultCamera: MediaDeviceInfo | null;
-    defaultMicrophone: MediaDeviceInfo | null;
-    defaultSpeaker: MediaDeviceInfo | null;
-    cameraState: DeviceState;
-    microphoneState: DeviceState;
-    speakerState: DeviceState;
     isVideoEnabled: boolean;
     isAudioEnabled: boolean;
     toggleVideo: ToggleVideoType;
@@ -48,13 +23,9 @@ export interface MediaManagementContextType {
     noiseFilter: boolean;
     toggleNoiseFilter: () => Promise<void>;
     handleRotateCamera: () => void;
-    initialCameraState: boolean;
-    initialAudioState: boolean;
-    setInitialCameraState: (initialCameraState: boolean) => void;
-    setInitialAudioState: (initialAudioState: boolean) => void;
+    facingMode: 'environment' | 'user';
     switchActiveDevice: SwitchActiveDevice;
     initializeDevices: (timeoutMs?: number) => Promise<void>;
-    facingMode: 'environment' | 'user';
     getMicrophoneVolumeAnalysis: () => {
         analyser: AnalyserNode | null;
         dataArray: Uint8Array<ArrayBuffer> | null;
@@ -66,23 +37,6 @@ export interface MediaManagementContextType {
 }
 
 const defaultValues: MediaManagementContextType = {
-    devicePermissions: {
-        camera: 'prompt',
-        microphone: 'prompt',
-    },
-    handleDevicePermissionChange: () => {},
-    microphones: [],
-    cameras: [],
-    speakers: [],
-    selectedCameraId: '',
-    selectedMicrophoneId: '',
-    selectedAudioOutputDeviceId: '',
-    defaultCamera: null,
-    defaultMicrophone: null,
-    defaultSpeaker: null,
-    cameraState: DEFAULT_DEVICE_STATE,
-    microphoneState: DEFAULT_DEVICE_STATE,
-    speakerState: DEFAULT_DEVICE_STATE,
     isVideoEnabled: false,
     isAudioEnabled: false,
     toggleVideo: () => Promise.resolve(undefined),
@@ -93,13 +47,9 @@ const defaultValues: MediaManagementContextType = {
     noiseFilter: false,
     toggleNoiseFilter: () => Promise.resolve(),
     handleRotateCamera: () => {},
-    initialCameraState: false,
-    initialAudioState: false,
-    setInitialCameraState: () => {},
-    setInitialAudioState: () => {},
+    facingMode: 'user',
     switchActiveDevice: () => Promise.resolve(),
     initializeDevices: () => Promise.resolve(),
-    facingMode: 'user',
     getMicrophoneVolumeAnalysis: () => ({
         analyser: null,
         dataArray: null,

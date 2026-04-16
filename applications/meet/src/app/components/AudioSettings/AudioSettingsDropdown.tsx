@@ -7,13 +7,14 @@ import { Card } from '@proton/atoms/Card/Card';
 import type { PopperPosition } from '@proton/components/components/popper/interface';
 import useActiveBreakpoint from '@proton/components/hooks/useActiveBreakpoint';
 import { IcCheckmark } from '@proton/icons/icons/IcCheckmark';
+import { DEFAULT_DEVICE_ID } from '@proton/meet/constants';
+import type { SliceDeviceState } from '@proton/meet/store/slices/deviceManagementSlice';
+import type { SerializableDeviceInfo } from '@proton/meet/utils/deviceUtils';
+import { shouldShowDeviceCheckmark, shouldShowSystemDefaultCheckmark } from '@proton/meet/utils/deviceUtils';
 import { isFirefox, isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { OptionButton } from '../../atoms/OptionButton/OptionButton';
-import { DEFAULT_DEVICE_ID } from '../../constants';
 import { useMediaManagementContext } from '../../contexts/MediaManagementProvider/MediaManagementContext';
-import type { DeviceState } from '../../types';
-import { shouldShowDeviceCheckmark, shouldShowSystemDefaultCheckmark } from '../../utils/device-utils';
 import { DeviceSettingsDropdown } from '../DeviceSettingsDropdown';
 import { NoiseCancellingToggle } from '../NoiseCancellingToggle';
 
@@ -25,10 +26,10 @@ interface AudioSettingsDropdownProps {
     handleOutputDeviceChange: (deviceId: string) => Promise<void>;
     audioDeviceId: string | null;
     activeOutputDeviceId: string | null;
-    microphoneState: DeviceState;
-    speakerState: DeviceState;
-    microphones: MediaDeviceInfo[];
-    speakers: MediaDeviceInfo[];
+    microphoneState: SliceDeviceState;
+    speakerState: SliceDeviceState;
+    microphones: SerializableDeviceInfo[];
+    speakers: SerializableDeviceInfo[];
     onClose: () => void;
     anchorPosition?: PopperPosition;
     isMicrophoneLoading: (deviceId: string) => boolean;
