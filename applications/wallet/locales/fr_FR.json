@@ -2309,6 +2309,9 @@
       "Error connecting to the Bitcoin API.": [
         "Une erreur s'est produite lors de la connexion à l'API Bitcoin."
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Les données d'abonnement n'ont pas pu être chargées. Veuillez réessayer plus tard."
+      ],
       "Incorrect username": [
         "Le nom d'utilisateur n'est pas correct."
       ],
@@ -4690,6 +4693,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Pendant cette période, vous ne pourrez pas modifier ou annuler votre abonnement. Veuillez attendre que votre paiement soit terminé avant de tenter toute modification. Merci pour votre patience."
       ],
+      "Edit billing address": [
+        "Modifier l'adresse de facturation"
+      ],
       "Got it": [
         "J'ai compris"
       ],
@@ -5424,9 +5430,6 @@
     },
     "Success": {
       "Billing details updated": [
-        "Les informations de facturation ont été mises à jour."
-      ],
-      "Billing information updated": [
         "Les informations de facturation ont été mises à jour."
       ],
       "Code sent to ${ methodTo }": [

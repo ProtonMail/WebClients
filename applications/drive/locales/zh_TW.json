@@ -8343,32 +8343,8 @@
       ]
     },
     "Notification": {
-      "\"${ name }\" created successfully": [
-        "「${ name }」已成功創建"
-      ],
-      "\"${ name }\" deleted": [
-        "\"${ name }\"已刪除"
-      ],
-      "\"${ name }\" deleted permanently from trash": [
-        "檔案 \"${ name }\" 已經從垃圾桶被永久刪除"
-      ],
-      "\"${ name }\" failed to be created": [
-        "「${ name }」創建失敗"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "\"${ name }\"創建失敗"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "檔案 \"${ name }\" 未能從垃圾桶中被永久刪除。"
-      ],
-      "\"${ name }\" failed to be moved": [
-        "「${ name }」移動失敗"
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "「${ name }」無法移動到垃圾桶"
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "檔案 \"${ name }\" 未能從垃圾中被復原"
       ],
       "\"${ name }\" failed to be saved": [
         "「${ name }」儲存失敗"
@@ -8376,17 +8352,8 @@
       "\"${ name }\" moved to trash": [
         "「${ name }」已移動到垃圾桶"
       ],
-      "\"${ name }\" restored from trash": [
-        "「${ name }」已從垃圾桶中還原"
-      ],
       "\"${ name }\" saved successfully": [
         "「${ name }」已成功儲存"
-      ],
-      "\"${ name }\" successfully copied": [
-        "「${ name }」已成功複製"
-      ],
-      "\"${ name }\" successfully moved": [
-        "「${ name }」已成功移動"
       ],
       "\"${ newName }\" failed to be renamed": [
         "「${ newName }」重新命名失敗"
@@ -8444,9 +8411,6 @@
       ],
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } 個項目已從垃圾桶中還原"
-      ],
-      "${ numberOfItems } item successfully copied": [
-        "${ numberOfItems } 個項目已成功複製"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } 個項目已成功移動"
@@ -10686,9 +10650,6 @@
       ],
       "Billing details updated": [
         "帳單詳情已更新"
-      ],
-      "Billing information updated": [
-        "繳費資訊已更新"
       ],
       "Canceling import": [
         "正在取消匯入"

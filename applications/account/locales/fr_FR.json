@@ -6699,6 +6699,9 @@
       "Failed to load OAuth modal.": [
         "Une erreur est survenue lors du chargement de la fenêtre OAuth."
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Les données d'abonnement n'ont pas pu être chargées. Veuillez réessayer plus tard."
+      ],
       "Failed to load the STL preview": [
         "Le chargement de l’aperçu STL n'a pas abouti."
       ],
@@ -9379,6 +9382,9 @@
       "**Sync codes** to all your devices": [
         "**Synchronisez les codes** sur tous vos appareils"
       ],
+      "**This will disable 2-factor authentication.**": [
+        "**Cela désactivera l’authentification à 2 facteurs.**"
+      ],
       "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
         "**Ceci va désactiver les transferts de messages chiffrés de bout en bout** : vous pourrez les configurer à nouveau plus tard."
       ],
@@ -10283,6 +10289,9 @@
       ],
       "Enter your recovery phrase to change your password now.": [
         "Entrez votre phrase de récupération pour changer votre mot de passe."
+      ],
+      "Enter your recovery phrase to verify your identity and disable two-factor authentication.": [
+        "Saisissez votre phrase de récupération pour vérifier votre identité et désactiver l'authentification à deux facteurs."
       ],
       "Event invitations and responses will be sent in this language.": [
         "Les invitations aux événements et les réponses seront envoyées dans cette langue."
@@ -11296,12 +11305,6 @@
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Recommandé sur les appareils de confiance. ${ keepMeSignedInLearnMoreLink }"
       ],
-      "Recovery contacts": [
-        "Contacts de récupération"
-      ],
-      "Recovery file": [
-        "Fichier de récupération"
-      ],
       "Recovery file downloaded": [
         "Le fichier de récupération a été téléchargé."
       ],
@@ -11310,9 +11313,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Les informations de récupération resteront sur cet appareil jusqu'à ce que vous demandiez à les supprimer."
-      ],
-      "Recovery phrase": [
-        "Phrase de récupération"
       ],
       "Recovery phrase copied to clipboard": [
         "La phrase de récupération est copiée dans le presse-papiers."
@@ -11728,8 +11728,8 @@
       "The name will be visible to your users while they are signed in.": [
         "Le nom sera visible par vos utilisateurs quand ils seront connectés."
       ],
-      "The referral credit can be awarded up to 2 months after your friend's trial ended, and if your friend subscribed to a plan.": [
-        "Le crédit de parrainage peut être accordé jusqu'à 2 mois après la fin de la période d'essai de votre ami, et si votre ami a souscrit à un abonnement."
+      "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
+        "Le crédit de parrainage peut être accordé jusqu'à 2 mois après la fin de la période d'essai de votre ami, seulement si votre ami a souscrit à un abonnement."
       ],
       "The securest way to browse, stream, and be online.": [
         "Le moyen le plus sûr de naviguer, de faire du streaming et d'être en ligne."
@@ -11943,6 +11943,9 @@
       ],
       "To proceed, we must verify the request.": [
         "Pour continuer, nous devons vérifier la demande."
+      ],
+      "To regain access to your account and data, enter the 12-word recovery phrase associated with your account.": [
+        "Pour retrouver l'accès à votre compte et à vos données, saisissez la phrase de récupération de 12 mots associée à votre compte."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Pour sécuriser votre connexion internet, téléchargez et installez l'application ${ VPN_APP_NAME } pour votre appareil et connectez-vous à un serveur."
@@ -12436,9 +12439,6 @@
       "You can now reset your password to regain access to your account.": [
         "Vous pouvez maintenant réinitialiser votre mot de passe pour retrouver l'accès à votre compte."
       ],
-      "You can now reset your password to regain access to your account. **This will disable 2-factor authentication.**": [
-        "Vous pouvez maintenant réinitialiser votre mot de passe pour retrouver l'accès à votre compte. **Ceci désactivera l'authentification à deux facteurs.**"
-      ],
       "You can now return to the application to continue": [
         "Vous pouvez maintenant revenir à l'application pour continuer."
       ],
@@ -12665,9 +12665,6 @@
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "Votre prochaine date de facturation est le ${ renewalTime }. Vous pouvez annuler à tout moment. Veuillez contacter le support si vous avez besoin d'un changement de plan immédiat."
-      ],
-      "Your old password": [
-        "Votre ancien mot de passe"
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Votre organisation utilise une authentification unique (SSO). Appuyez sur Se connecter pour continuer avec votre fournisseur d'authentification unique (SSO)."
@@ -18529,6 +18526,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Pendant cette période, vous ne pourrez pas modifier ou annuler votre abonnement. Veuillez attendre que votre paiement soit terminé avant de tenter toute modification. Merci pour votre patience."
       ],
+      "Edit billing address": [
+        "Modifier l'adresse de facturation"
+      ],
       "Got it": [
         "J'ai compris"
       ],
@@ -22540,9 +22540,6 @@
         "Le mot de passe de secours a été mis à jour."
       ],
       "Billing details updated": [
-        "Les informations de facturation ont été mises à jour."
-      ],
-      "Billing information updated": [
         "Les informations de facturation ont été mises à jour."
       ],
       "Calendar added. It might take a few minutes to sync.": [

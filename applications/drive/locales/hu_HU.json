@@ -494,9 +494,6 @@
       "Go back": [
         "Vissza"
       ],
-      "Go back to album “${ albumName }“": [
-        "Vissza az albumhoz: „${ albumName }”"
-      ],
       "Go to ${ planOrAppName }": [
         "Nyissa meg a ${ planOrAppName } alkalmazást"
       ],
@@ -8400,32 +8397,8 @@
       ]
     },
     "Notification": {
-      "\"${ name }\" created successfully": [
-        "\"${ name }\" sikeresen létrehozva"
-      ],
-      "\"${ name }\" deleted": [
-        "\"${ name } törölve"
-      ],
-      "\"${ name }\" deleted permanently from trash": [
-        "\"${ name }\" véglegesen törölve a lomtárból"
-      ],
-      "\"${ name }\" failed to be created": [
-        "\"${ name }\" létrehozása nem sikerült"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "\"${ name }\" törlése nem sikerült"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "\"${ name } fájl végleges törlése a lomtárból nem sikerült"
-      ],
-      "\"${ name }\" failed to be moved": [
-        "\"${ name }\" áthelyezése nem sikerült"
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "\"${ name }\" áthelyezése a lomtárba nem sikerült"
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "\"${ name } fájl visszaállítása a lomtárból nem sikerült"
       ],
       "\"${ name }\" failed to be saved": [
         "\"${ name }\" mentése nem sikerült"
@@ -8433,14 +8406,8 @@
       "\"${ name }\" moved to trash": [
         "\"${ name }\" áthelyezve a lomtárba"
       ],
-      "\"${ name }\" restored from trash": [
-        "\"${ name }\" visszaállítva a lomtárból"
-      ],
       "\"${ name }\" saved successfully": [
         "\"${ name }\" sikeresen mentve"
-      ],
-      "\"${ name }\" successfully moved": [
-        "\"${ name }\" sikeresen áthelyezve"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\" átnevezése nem sikerült"

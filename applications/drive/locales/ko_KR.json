@@ -534,9 +534,6 @@
       "Go back": [
         "뒤로 가기"
       ],
-      "Go back to album “${ albumName }“": [
-        "앨범 \"${ albumName }\"(으)로 돌아가기"
-      ],
       "Go to ${ planOrAppName }": [
         "${ planOrAppName }(으)로 이동"
       ],
@@ -9167,35 +9164,11 @@
       "\"${ fileName }\" shared": [
         "\"${ fileName }\"이(가) 공유됨"
       ],
-      "\"${ name }\" created successfully": [
-        "\"${ name }\"이(가) 성공적으로 생성되었습니다"
-      ],
-      "\"${ name }\" deleted": [
-        "\"${ name }\" 삭제됨"
-      ],
       "\"${ name }\" deleted permanently": [
         "\"${ name }\"이(가) 영구적으로 삭제되었습니다."
       ],
-      "\"${ name }\" deleted permanently from trash": [
-        "\"${ name }\" 이(가) 휴지통에서 완전히 삭제되었습니다"
-      ],
-      "\"${ name }\" failed to be created": [
-        "\"${ name }\"을(를) 생성할 수 없습니다"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "\"${ name }\" 삭제 실패"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "\"${ name }\" 가 휴지통에서 삭제를 실패했습니다"
-      ],
-      "\"${ name }\" failed to be moved": [
-        "\"${ name }\" 를 이동할 수 없습니다"
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "\"${ name }\" 를 휴지통으로 이동하는데 실패했습니다"
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "\"${ name }\"을(를) 휴지통에서 복구하는 데 실패했습니다"
       ],
       "\"${ name }\" failed to be saved": [
         "\"${ name }\"을(를) 생성할 수 없습니다"
@@ -9203,17 +9176,8 @@
       "\"${ name }\" moved to trash": [
         "\"${ name }\" 이(가) 휴지통으로 이동됨"
       ],
-      "\"${ name }\" restored from trash": [
-        "\"${ name }\" 이(가) 휴지통에서 복구되었습니다"
-      ],
       "\"${ name }\" saved successfully": [
         "\"${ name }\"이(가) 성공적으로 저장되었습니다"
-      ],
-      "\"${ name }\" successfully copied": [
-        "\"${ name }\"이(가) 성공적으로 복사되었습니다"
-      ],
-      "\"${ name }\" successfully moved": [
-        "\"${ name }\"이(가) 성공적으로 이동되었습니다"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\"의 이름을 변경할 수 없습니다"
@@ -9272,9 +9236,6 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems }개가 휴지통에서 복구되었습니다"
       ],
-      "${ numberOfItems } item successfully copied": [
-        "${ numberOfItems }개 항목이 성공적으로 복사되었습니다"
-      ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems }개가 성공적으로 삭제되었습니다"
       ],
@@ -9313,9 +9274,6 @@
       ],
       "Contact group updated": [
         "연락처 그룹 업데이트됨"
-      ],
-      "Copy of \"${ name }\" moved to trash": [
-        "\"${ name }\"의 사본이 휴지통으로 이동됨"
       ],
       "Device failed to be removed": [
         "기기 삭제 실패"
@@ -11773,9 +11731,6 @@
       ],
       "Billing details updated": [
         "청구 상세 정보가 업데이트되었습니다."
-      ],
-      "Billing information updated": [
-        "청구 정보 업데이트됨"
       ],
       "Canceling import": [
         "가져오기 취소 중"

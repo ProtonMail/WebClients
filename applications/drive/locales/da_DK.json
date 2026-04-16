@@ -539,8 +539,8 @@
       "Go back": [
         "Gå tilbage"
       ],
-      "Go back to album “${ albumName }“": [
-        "Gå tilbage til albummet “${ albumName }“"
+      "Go back to album “${ ellipsedAlbumName }“": [
+        "Gå tilbage til albummet “${ ellipsedAlbumName }“"
       ],
       "Go to ${ planOrAppName }": [
         "Gå til ${ planOrAppName }"
@@ -3521,6 +3521,9 @@
       ],
       "Failed to load signature details, please try again later": [
         "Kunne ikke indlæse signaturdetaljer, prøv igen senere"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Kunne ikke indlæse abonnementsdata. Prøv igen senere."
       ],
       "Failed to load the STL preview": [
         "Indlæsning af STL-forhåndsvisningen mislykkedes"
@@ -9332,38 +9335,50 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" copied": [
+        "\"${ ellipsedName }\" kopieret"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "\"${ ellipsedName }\" oprettet"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "\"${ ellipsedName }\" slettet"
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "\"${ ellipsedName }\" slettet permanent fra papirkurven"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "\"${ ellipsedName }\" kunne ikke oprettes"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "\"${ ellipsedName }\" kunne ikke slettes"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "\"${ ellipsedName }\" kunne ikke slettes permanent fra papirkurven"
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "\"${ ellipsedName }\" kunne ikke flyttes"
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "\"${ ellipsedName }\" kunne ikke gendannes fra papirkurv"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" flyttet"
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "\"${ ellipsedName }\" gendannet fra papirkurv"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "\"${ ellipsedName }\" blev flyttet"
+      ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" delt"
-      ],
-      "\"${ name }\" created successfully": [
-        "\"${ name }\" oprettet"
-      ],
-      "\"${ name }\" deleted": [
-        "\"${ name }\" slettet"
       ],
       "\"${ name }\" deleted permanently": [
         "\"${ name }\" slettet permanent"
       ],
-      "\"${ name }\" deleted permanently from trash": [
-        "\"${ name }\" permanent slettet fra papirkurven"
-      ],
-      "\"${ name }\" failed to be created": [
-        "\"${ name }\" kunne ikke oprettes"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "\"${ name }\" kunne ikke slettes"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "\"${ name }\" kunne ikke slettes permanent fra papirkurven"
-      ],
-      "\"${ name }\" failed to be moved": [
-        "\"${ name }\" kunne ikke flyttes"
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "\"${ name }\" kunne ikke flyttes til papirkurv"
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "\"${ name }\" kunne ikke gendannes fra papirkurv"
       ],
       "\"${ name }\" failed to be saved": [
         "\"${ name }\" kunne ikke gemmes"
@@ -9371,17 +9386,8 @@
       "\"${ name }\" moved to trash": [
         "\"${ name }\" flyttet til papirkurv"
       ],
-      "\"${ name }\" restored from trash": [
-        "\"${ name }\" gendannet fra papirkurv"
-      ],
       "\"${ name }\" saved successfully": [
         "\"${ name }\" gemt"
-      ],
-      "\"${ name }\" successfully copied": [
-        "\"${ name }\" blev kopieret"
-      ],
-      "\"${ name }\" successfully moved": [
-        "\"${ name }\" blev flyttet"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\" kunne ikke omdøbes"
@@ -9425,6 +9431,10 @@
         "${ numberOfItems } kopieret element flyttet til papirkurven",
         "${ numberOfItems } kopierede elementer flyttet til papirkurven"
       ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems } element kopieret",
+        "${ numberOfItems } elementer kopieret"
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } element slettet",
         "${ numberOfItems } elementer slettet"
@@ -9453,6 +9463,10 @@
         "${ numberOfItems } element kunne ikke gendannes fra papirkurven",
         "${ numberOfItems } elementer kunne ikke gendannes fra papirkurven"
       ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } element flyttet",
+        "${ numberOfItems } elementer flyttet"
+      ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } element flyttet til papirkurven",
         "${ numberOfItems } elementer flyttet til papirkurven"
@@ -9460,10 +9474,6 @@
       "${ numberOfItems } item restored from trash": [
         "${ numberOfItems } element gendannet fra papirkurven",
         "${ numberOfItems } elementer gendannet fra papirkurven"
-      ],
-      "${ numberOfItems } item successfully copied": [
-        "${ numberOfItems } element kopieret",
-        "${ numberOfItems } elementer kopieret"
       ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } element flyttet",
@@ -9505,8 +9515,8 @@
       "Contact group updated": [
         "Kontaktgruppe opdateret"
       ],
-      "Copy of \"${ name }\" moved to trash": [
-        "Kopi af \"${ name }\" flyttet til papirkurv"
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "Kopi af \"${ ellipsedName }\" flyttet til papirkurv"
       ],
       "Device failed to be removed": [
         "Det lykkedes ikke at fjerne enheden"
@@ -10208,6 +10218,9 @@
       ],
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Under denne periode vil du ikke kunne ændre eller annullere dit abonnement. Vent venligst indtil betalingen er gennemført før du forsøger at foretage ændringer. Tak for din tålmodighed."
+      ],
+      "Edit billing address": [
+        "Rediger faktureringsadresse"
       ],
       "Got it": [
         "Forstået"
@@ -12016,9 +12029,6 @@
         "Alias gemt og kopieret"
       ],
       "Billing details updated": [
-        "Faktureringsoplysninger opdateret"
-      ],
-      "Billing information updated": [
         "Faktureringsoplysninger opdateret"
       ],
       "Canceling import": [

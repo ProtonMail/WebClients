@@ -984,6 +984,9 @@
       "Later": [
         "Mais tarde"
       ],
+      "Learn about recovery options": [
+        "Saiba mais sobre as opções de recuperação"
+      ],
       "Learn more": [
         "Saiba mais"
       ],
@@ -9703,6 +9706,9 @@
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Ao compartilhar todas as informações do evento deste calendário, você aceita conceder a ${ BRAND_NAME } o acesso a estas informações criptografadas do calendário."
       ],
+      "Can you access your active session?": [
+        "Você pode acessar sua sessão ativa?"
+      ],
       "Cancel": [
         "Cancelar"
       ],
@@ -10528,6 +10534,9 @@
       "Internet connection restored.": [
         "Conexão com a internet restaurada."
       ],
+      "Invalid code. ${ RequestNewCodeLink } and try again.": [
+        "Código invalido. ${ RequestNewCodeLink } e tente novamente."
+      ],
       "Invitation link expired": [
         "Link de convite expirado"
       ],
@@ -11163,12 +11172,6 @@
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Recomendado em dispositivos de confiança. ${ keepMeSignedInLearnMoreLink }"
       ],
-      "Recovery contacts": [
-        "Contatos de recuperação"
-      ],
-      "Recovery file": [
-        "Arquivo de recuperação"
-      ],
       "Recovery file downloaded": [
         "Arquivo de recuperação baixado"
       ],
@@ -11177,9 +11180,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "As informações de recuperação permanecerão neste dispositivo, a menos que você opte por excluí-las."
-      ],
-      "Recovery phrase": [
-        "Frase de recuperação"
       ],
       "Recovery phrase copied to clipboard": [
         "Frase de recuperação copiada para a área de transferência"
@@ -12090,6 +12090,9 @@
       "We'll send a new verification code to ${ strong }": [
         "Enviaremos um novo código de verificação para ${ strong }"
       ],
+      "Web sessions detected:": [
+        "Sessões web detectadas:"
+      ],
       "Web URL": [
         "URL da Web"
       ],
@@ -12484,9 +12487,6 @@
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "Sua próxima data de cobrança é ${ renewalTime }. Você pode cancelar a qualquer momento. Entre em contato com o suporte se precisar de uma mudança imediata de plano."
-      ],
-      "Your old password": [
-        "Sua senha antiga"
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Sua organização usa o login único (SSO). Pressione iniciar seção para continuar com seu provedor SSO."
@@ -15550,20 +15550,32 @@
       ]
     },
     "Missing feature": {
+      "Check out the latest product updates": [
+        "Veja as nossas últimas atualizações de produto"
+      ],
       "Continue cancelling": [
         "Continuar cancelamento"
       ],
       "Explore the latest news": [
         "Explore as últimas notícias"
       ],
+      "Keep current plan": [
+        "Manter plano atual"
+      ],
       "Make your voice heard": [
         "Faça sua voz ser ouvida"
+      ],
+      "Request a feature": [
+        "Solicitar um recurso"
       ],
       "Request a feature or vote on ideas from other users in our feedback forum.": [
         "Solicite um recurso ou vote nas ideias de outros usuários em nosso fórum de comentários."
       ],
       "See how ${ BRAND_NAME } apps are evolving with your feedback.": [
         "Veja como os aplicativos da ${ BRAND_NAME } estão evoluindo graças aos seus comentários."
+      ],
+      "Submit your ideas": [
+        "Envie suas ideias"
       ]
     },
     "Modal title": {
@@ -18338,6 +18350,9 @@
       ],
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Durante esse período, você não poderá modificar ou cancelar sua assinatura. Aguarde até que seu pagamento seja concluído antes de tentar qualquer alteração. Obrigado pela sua paciência."
+      ],
+      "Edit billing address": [
+        "Editar o endereço de cobrança"
       ],
       "Got it": [
         "Entendi"
@@ -22352,9 +22367,6 @@
       "Billing details updated": [
         "Os detalhes de faturamento forem atualizados"
       ],
-      "Billing information updated": [
-        "As informações de faturamento foram atualizadas"
-      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Calendário adicionado. Pode levar alguns minutos para sincronizar."
       ],
@@ -24450,6 +24462,9 @@
       ],
       "Verification failed": [
         "Erro na verificação"
+      ],
+      "Verify it’s you": [
+        "Verifique se é você"
       ],
       "Verifying your card...": [
         "Verificando seu cartão..."

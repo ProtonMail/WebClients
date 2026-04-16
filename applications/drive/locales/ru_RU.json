@@ -465,9 +465,6 @@
       "Go back": [
         "Назад"
       ],
-      "Go back to album “${ albumName }“": [
-        "Вернуться к альбому “${ albumName }“"
-      ],
       "Go to ${ planOrAppName }": [
         "Перейти на ${ planOrAppName }"
       ],
@@ -8267,32 +8264,8 @@
       ]
     },
     "Notification": {
-      "\"${ name }\" created successfully": [
-        "\"${ name }\" успешно создано"
-      ],
-      "\"${ name }\" deleted": [
-        "\"${ name }\" удалён"
-      ],
-      "\"${ name }\" deleted permanently from trash": [
-        "\"${ name }\" безвозвратно удалено из корзины"
-      ],
-      "\"${ name }\" failed to be created": [
-        "Не удалось создать \"${ name }\""
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "Не удалось удалить \"${ name }\""
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "\"${ name }\" не удалось окончательно удалить из корзины"
-      ],
-      "\"${ name }\" failed to be moved": [
-        "Не удалось переместить \"${ name }\""
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "Не удалось переместить в корзину \"${ name }\""
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "Не удалось восстановить из корзины \"${ name }\""
       ],
       "\"${ name }\" failed to be saved": [
         "\"${ name }\" не удалось сохранить"
@@ -8300,14 +8273,8 @@
       "\"${ name }\" moved to trash": [
         "\"${ name }\" перемещено в корзину"
       ],
-      "\"${ name }\" restored from trash": [
-        "\"${ name }\" восстановлено из корзины"
-      ],
       "\"${ name }\" saved successfully": [
         "\"${ name }\" успешно сохранено"
-      ],
-      "\"${ name }\" successfully moved": [
-        "\"${ name }\" успешно перемещено"
       ],
       "\"${ newName }\" failed to be renamed": [
         "Не удалось переименовать \"${ newName }\""

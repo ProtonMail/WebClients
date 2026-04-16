@@ -6794,6 +6794,9 @@
       "Failed to load OAuth modal.": [
         "Nepodarilo sa načítať OAuth modal."
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Načítanie údajov o predplatnom sa nepodarilo. Skúste to neskôr, prosím."
+      ],
       "Failed to load the STL preview": [
         "Načítanie STL náhľadu zlyhalo"
       ],
@@ -9585,6 +9588,9 @@
       "**Sync codes** to all your devices": [
         "**Synchronizovať kódy** do všetkých vašich zariadení"
       ],
+      "**This will disable 2-factor authentication.**": [
+        "**Týmto sa deaktivuje dvojfaktorové overovanie.**"
+      ],
       "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
         "**Týmto sa deaktivuje end-to-end šifrované preposielanie emailov:** môžete ich neskôr znovu nastaviť."
       ],
@@ -11550,12 +11556,6 @@
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Odporúčané na dôveryhodných zariadeniach. ${ keepMeSignedInLearnMoreLink }"
       ],
-      "Recovery contacts": [
-        "Kontaktné osoby na obnovenie účtu"
-      ],
-      "Recovery file": [
-        "Súbor pre obnovenie"
-      ],
       "Recovery file downloaded": [
         "Súbor pre obnovenie bol stiahnutý"
       ],
@@ -11564,9 +11564,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Informácie o obnovení zostanú v tomto zariadení, pokiaľ nezvolíte ich odstránenie."
-      ],
-      "Recovery phrase": [
-        "Obnovovacia fráza"
       ],
       "Recovery phrase copied to clipboard": [
         "Obnovovacia fráza bola skopírovaná do schránky"
@@ -11994,8 +11991,8 @@
       "The name will be visible to your users while they are signed in.": [
         "Meno bude viditeľné pre vašich používateľov, keď budú prihlásení."
       ],
-      "The referral credit can be awarded up to 2 months after your friend's trial ended, and if your friend subscribed to a plan.": [
-        "Odmena za odporúčanie môže byť udelená do 2 mesiacov po skončení skúšobnej doby vášho priateľa, ak si váš priateľ predplatil niektorý z plánov."
+      "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
+        "Odmena za odporúčanie môže byť pripísaná najneskôr do 2 mesiacov po skončení skúšobnej doby vášho priateľa, a to len v prípade, že si váš priateľ predplatil niektorý z plánov"
       ],
       "The securest way to browse, stream, and be online.": [
         "Najbezpečnejší spôsob, ako prehliadať, streamovať a byť online."
@@ -12209,6 +12206,9 @@
       ],
       "To proceed, we must verify the request.": [
         "Pre pokračovanie musíme overiť vašu žiadosť"
+      ],
+      "To regain access to your account and data, enter the 12-word recovery phrase associated with your account.": [
+        "Na obnovenie prístupu k vášmu účtu a údajom zadajte 12-slovnú obnovovaciu frázu priradenú k vášmu účtu."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Ak chcete zabezpečiť svoje internetové pripojenie, stiahnite a nainštalujte si aplikáciu ${ VPN_APP_NAME } pre svoje zariadenie a pripojte sa k serveru."
@@ -12714,9 +12714,6 @@
       "You can now reset your password to regain access to your account.": [
         "Teraz si môžete obnoviť heslo a získať tak opäť prístup k svojmu účtu."
       ],
-      "You can now reset your password to regain access to your account. **This will disable 2-factor authentication.**": [
-        "Teraz si môžete obnoviť heslo a získať tak opäť prístup k svojmu účtu. **Týmto krokom sa deaktivuje dvojfaktorová autentifikácia.**"
-      ],
       "You can now return to the application to continue": [
         "Teraz sa môžete vrátiť do aplikácie a pokračovať"
       ],
@@ -12953,9 +12950,6 @@
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "Váš ďalší dátum fakturácie je ${ renewalTime }. Zrušiť môžete kedykoľvek. Ak potrebujete okamžitú zmenu plánu, kontaktujte podporu, prosím."
-      ],
-      "Your old password": [
-        "Vaše staré heslo"
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Vaša organizácia používa jednotné prihlásenie (SSO). Stlačte tlačidlo Prihlásiť sa a pokračujte prostredníctvom vášho poskytovateľa SSO."
@@ -16071,6 +16065,38 @@
         "Prihláste sa do svojho účtu ${ BRAND_NAME } a získajte prístup ku všetkým šifrovaným službám ${ BRAND_NAME }, ako sú ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } a ďalšie. Nemáte účet? Vytvorte si ho ZADARMO."
       ]
     },
+    "Missing feature": {
+      "Check out the latest product updates": [
+        "Pozrite si najnovšie aktualizácie produktov"
+      ],
+      "Continue cancelling": [
+        "Pokračovať v zrušení"
+      ],
+      "Explore the latest news": [
+        "Prezrite si posledné novinky"
+      ],
+      "Keep current plan": [
+        "Ponechať aktuálny plán"
+      ],
+      "Make your voice heard": [
+        "Dajte o sebe vedieť"
+      ],
+      "Request a feature": [
+        "Požiadať o zlepšenie"
+      ],
+      "Request a feature or vote on ideas from other users in our feedback forum.": [
+        "Požiadajte o novú funkciu alebo hlasujte za návrhy ostatných používateľov na našom fóre pre spätnú väzbu."
+      ],
+      "See how ${ BRAND_NAME } apps are evolving with your feedback.": [
+        "Pozrite sa, ako sa aplikácie ${ BRAND_NAME } vyvíjajú vďaka vašim pripomienkam."
+      ],
+      "Submit your ideas": [
+        "Pošlite nám svoje nápady"
+      ],
+      "Your feedback helps us improve. Whether you've spotted a bug, want a new feature, or think something could work differently, we'd love to hear from you.": [
+        "Vaše pripomienky nám pomáhajú zlepšovať sa. Či už ste narazili na chybu, chcete novú funkciu alebo si myslíte, že niečo by mohlo fungovať inak, radi si vypočujeme váš názor."
+      ]
+    },
     "Modal title": {
       "Add public holidays": [
         "Pridajte štátne sviatky"
@@ -18918,6 +18944,9 @@
       ],
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Počas tohto obdobia nebudete môcť upraviť ani zrušiť svoje predplatné. Pred pokusom o akékoľvek zmeny počkajte, kým bude vaša platba dokončená. Ďakujeme vám za vašu trpezlivosť."
+      ],
+      "Edit billing address": [
+        "Upraviť fakturačnú adresu"
       ],
       "Got it": [
         "Rozumiem"
@@ -22999,9 +23028,6 @@
         "Záložné heslo aktualizované"
       ],
       "Billing details updated": [
-        "Fakturačné údaje aktualizované"
-      ],
-      "Billing information updated": [
         "Fakturačné údaje aktualizované"
       ],
       "Calendar added. It might take a few minutes to sync.": [

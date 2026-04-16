@@ -6702,6 +6702,9 @@
       "Failed to load OAuth modal.": [
         "OAuth penceresi yüklenemedi."
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Abonelik verileri yüklenemedi. Lütfen daha sonra tekrar deneyin."
+      ],
       "Failed to load the STL preview": [
         "STL ön izlemesi yüklenemedi"
       ],
@@ -9385,6 +9388,9 @@
       "**Sync codes** to all your devices": [
         "Tüm aygıtlarınızda **kodları eşitleyin**"
       ],
+      "**This will disable 2-factor authentication.**": [
+        "**Bu işlem iki aşamalı kimlik doğrulamayı devre dışı bırakacak.**"
+      ],
       "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
         "**Bu işlem uçtan uca şifrelenmiş e-posta yönlendirmelerini kullanımdan kaldırır:** Bunları daha sonra yeniden ayarlayabilirsiniz."
       ],
@@ -10295,6 +10301,9 @@
       ],
       "Enter your recovery phrase to change your password now.": [
         "Parolanızı değiştirmek için kurtarma ifadenizi yazın."
+      ],
+      "Enter your recovery phrase to verify your identity and disable two-factor authentication.": [
+        "Kimliğinizi doğrulamak ve iki adımlı doğrulamayı devre dışı bırakmak için kurtarma ifadenizi girin."
       ],
       "Event invitations and responses will be sent in this language.": [
         "Etkinlik davetleri ve yanıtları bu dilde gönderilir."
@@ -11308,12 +11317,6 @@
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Güvenilen aygıtlar üzerinde önerilir. ${ keepMeSignedInLearnMoreLink }"
       ],
-      "Recovery contacts": [
-        "Kurtarma kişileri"
-      ],
-      "Recovery file": [
-        "Kurtarma dosyası"
-      ],
       "Recovery file downloaded": [
         "Kurtarma dosyası indirildi"
       ],
@@ -11322,9 +11325,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Siz silmeyi seçmedikçe kurtarma bilgileri bu aygıt üzerinde kalacak."
-      ],
-      "Recovery phrase": [
-        "Kurtarma ifadesi"
       ],
       "Recovery phrase copied to clipboard": [
         "Kurtarma ifadesi panoya kopyalandı"
@@ -11740,8 +11740,8 @@
       "The name will be visible to your users while they are signed in.": [
         "Oturum açtıklarında kullanıcılarınıza görüntülenecek ad."
       ],
-      "The referral credit can be awarded up to 2 months after your friend's trial ended, and if your friend subscribed to a plan.": [
-        "Öneri kredisi arkadaşınızın deneme süresi sona erdiğinde bir tarifeye abone olmasıyla en fazla 2 ay sonra verilebilir."
+      "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
+        "Referans kredisi arkadaşınızın deneme süresi bittikten sonraki 2 aya kadar, arkadaşınız yalnızca bir tarifeye abone olduğu takdirde verilebilir."
       ],
       "The securest way to browse, stream, and be online.": [
         "İnternet üzerinde gezinmenin, yayın akışlarını izlemenin ve çevrim içi olmanın en güvenli yolu."
@@ -11955,6 +11955,9 @@
       ],
       "To proceed, we must verify the request.": [
         "İlerlemek için isteğinizi doğrulamalıyız."
+      ],
+      "To regain access to your account and data, enter the 12-word recovery phrase associated with your account.": [
+        "Hesabınıza ve verilerinize yeniden erişmek için hesabınızla ilişkili 12 kelimelik kurtarma ifadesini girin."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "İnternet bağlantınızı güvenli kılmak için aygıtınıza ${ VPN_APP_NAME } uygulamasını indirip kurun ve bir sunucuya bağlanın."
@@ -12448,9 +12451,6 @@
       "You can now reset your password to regain access to your account.": [
         "Artık hesabınıza yeniden erişmek için parolanızı sıfırlayabilirsiniz."
       ],
-      "You can now reset your password to regain access to your account. **This will disable 2-factor authentication.**": [
-        "Artık parolanızı sıfırlayarak hesabınıza yeniden erişebilirsiniz. **Bu işlem iki adımlı doğrulamayı kapatacak.**"
-      ],
       "You can now return to the application to continue": [
         "İlerlemek için uygulamaya dönebilirsiniz"
       ],
@@ -12677,9 +12677,6 @@
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "Sonraki ödemeniz ${ renewalTime } tarihinde. İstediğiniz zaman iptal edebilirsiniz. Tarifenizi acil olarak değiştirmeniz gerekiyorsa lütfen destek ekibiyle görüşün."
-      ],
-      "Your old password": [
-        "Eski parolanız"
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Kuruluşunuz tek oturum açma (SSO) kullanıyor. Tek oturum açma hizmeti sağlayıcınızı kullanmak için Oturum aç üzerine basın."
@@ -18541,6 +18538,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Bu süre boyunca aboneliğinizi değiştiremez veya iptal edemezsiniz. Değişiklik yapmadan önce lütfen ödeme işleminizin tamamlanmasını bekleyin. Anlayışınız için teşekkür ederiz."
       ],
+      "Edit billing address": [
+        "Fatura adresini düzenle"
+      ],
       "Got it": [
         "Anladım"
       ],
@@ -22561,9 +22561,6 @@
         "Yedek parola güncellendi"
       ],
       "Billing details updated": [
-        "Fatura bilgileri güncellendi"
-      ],
-      "Billing information updated": [
         "Fatura bilgileri güncellendi"
       ],
       "Calendar added. It might take a few minutes to sync.": [

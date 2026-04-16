@@ -144,6 +144,9 @@
       "Cancel download": [
         "Anuluj pobieranie"
       ],
+      "Cancel downloads": [
+        "Anuluj pobieranie"
+      ],
       "Cancel subscription": [
         "Anuluj subskrypcję"
       ],
@@ -506,9 +509,6 @@
       ],
       "Go back": [
         "Wróć"
-      ],
-      "Go back to album “${ albumName }“": [
-        "Powrót do albumu “${ albumName }“"
       ],
       "Go to ${ planOrAppName }": [
         "Przejdź do ${ planOrAppName }"
@@ -5065,6 +5065,9 @@
       "Discover ProtectBuy logo": [
         "Logo Discover ProtectBuy"
       ],
+      "Done": [
+        "Gotowe"
+      ],
       "Don’t see anything? Remember to turn off pop-up blockers.": [
         "Nie widzisz nic? Wyłącz blokadę wyskakujących okien."
       ],
@@ -6186,6 +6189,9 @@
       ],
       "VPN IP": [
         "Adres IP VPN"
+      ],
+      "Waiting": [
+        "Oczekiwanie"
       ],
       "Want to sync files faster?": [
         "Chcesz szybciej synchronizować pliki?"
@@ -8697,32 +8703,8 @@
       ]
     },
     "Notification": {
-      "\"${ name }\" created successfully": [
-        "Folder \"${ name }\" został utworzony"
-      ],
-      "\"${ name }\" deleted": [
-        "Usunięto \"${ name }\""
-      ],
-      "\"${ name }\" deleted permanently from trash": [
-        "Element \"${ name }\" został trwale usunięty"
-      ],
-      "\"${ name }\" failed to be created": [
-        "Utworzenie folderu \"${ name }\" nie powiodło się"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "Usunięcie elementu \"${ name }\" nie powiodło się"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "Nie udało się trwale usunąć elementu \"${ name }\""
-      ],
-      "\"${ name }\" failed to be moved": [
-        "Przenoszenie elementu \"${ name }\" nie powiodło się"
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "Przenoszenie elementu \"${ name }\" do kosza nie powiodło się"
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "Przywrócenie elementu \"${ name } z kosza nie powiodło się"
       ],
       "\"${ name }\" failed to be saved": [
         "Nie udało się zapisać pliku \"${ name }\""
@@ -8730,14 +8712,8 @@
       "\"${ name }\" moved to trash": [
         "Element \"${ name }\" został przeniesiony do kosza"
       ],
-      "\"${ name }\" restored from trash": [
-        "Element \"${ name }\" został przywrócony z kosza"
-      ],
       "\"${ name }\" saved successfully": [
         "Plik \"${ name }\" został zapisany"
-      ],
-      "\"${ name }\" successfully moved": [
-        "Element \"${ name }\" został przeniesiony"
       ],
       "\"${ newName }\" failed to be renamed": [
         "Zmiana nazwy \"${ newName }\" nie powiodła się"

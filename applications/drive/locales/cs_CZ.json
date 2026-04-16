@@ -546,9 +546,6 @@
       "Go back": [
         "Zpět"
       ],
-      "Go back to album “${ albumName }“": [
-        "Zpět do alba “${ albumName }“"
-      ],
       "Go to ${ planOrAppName }": [
         "Jít do ${ planOrAppName }"
       ],
@@ -9465,35 +9462,11 @@
       ]
     },
     "Notification": {
-      "\"${ name }\" created successfully": [
-        "\"${ name }\" úspěšně vytvořen"
-      ],
-      "\"${ name }\" deleted": [
-        "\"${ name }\" smazáno"
-      ],
       "\"${ name }\" deleted permanently": [
         "\"${ name }\" trvale smazán"
       ],
-      "\"${ name }\" deleted permanently from trash": [
-        "\"${ name }\" trvale odstraněno z koše"
-      ],
-      "\"${ name }\" failed to be created": [
-        "\"${ name }\" se nepodařilo vytvořit"
-      ],
-      "\"${ name }\" failed to be deleted": [
-        "\"${ name }\" se nepodařilo smazat"
-      ],
-      "\"${ name }\" failed to be deleted permanently from trash": [
-        "\"${ name }\" se nepodařilo trvale smazat z koše"
-      ],
-      "\"${ name }\" failed to be moved": [
-        "\"${ name }\" se nepodařilo přesunout"
-      ],
       "\"${ name }\" failed to be moved to trash": [
         "\"${ name }\" se nepodařilo přesunout do koše"
-      ],
-      "\"${ name }\" failed to be restored from trash": [
-        "\"${ name }\" se nepodařilo obnovit z koše"
       ],
       "\"${ name }\" failed to be saved": [
         "\"${ name }\" se nepodařilo uložit"
@@ -9501,17 +9474,8 @@
       "\"${ name }\" moved to trash": [
         "\"${ name }\" přesunuto do koše"
       ],
-      "\"${ name }\" restored from trash": [
-        "\"${ name }\" obnoveno z koše"
-      ],
       "\"${ name }\" saved successfully": [
         "\"${ name }\" úspěšně uloženo"
-      ],
-      "\"${ name }\" successfully copied": [
-        "\"${ name }\" úspěšně zkopírováno"
-      ],
-      "\"${ name }\" successfully moved": [
-        "\"${ name }\" úspěšně přesunuto"
       ],
       "\"${ newName }\" failed to be renamed": [
         "\"${ newName }\" se nepodařilo přejmenovat"
@@ -9621,12 +9585,6 @@
         "${ numberOfItems } položek obnoveno z koše",
         "${ numberOfItems } položek obnoveno z koše"
       ],
-      "${ numberOfItems } item successfully copied": [
-        "${ numberOfItems } položka úspěšně zkopírována",
-        "${ numberOfItems } položky úspěšně zkopírovány",
-        "${ numberOfItems } položek úspěšně zkopírováno",
-        "${ numberOfItems } položek úspěšně zkopírováno"
-      ],
       "${ numberOfItems } item successfully moved": [
         "${ numberOfItems } položka úspěšně přesunuta",
         "${ numberOfItems } položky úspěšně přesunuty",
@@ -9668,9 +9626,6 @@
       ],
       "Contact group updated": [
         "Skupina kontaktů byla aktualizována"
-      ],
-      "Copy of \"${ name }\" moved to trash": [
-        "Kopie \"${ name }\" přesunuta do koše"
       ],
       "Device failed to be removed": [
         "Zařízení se nepodařilo odstranit"
@@ -12254,9 +12209,6 @@
       ],
       "Billing details updated": [
         "Fakturační údaje aktualizovány"
-      ],
-      "Billing information updated": [
-        "Informace o fakturaci aktualizovány"
       ],
       "Canceling import": [
         "Ruším import"
