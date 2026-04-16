@@ -324,6 +324,10 @@ enum LumoFeatureFlag {
     LumoSmoothedRendering = 'LumoSmoothedRendering',
     LumoImageTools = 'LumoImageTools',
     LumoAPIKeyManagement = 'LumoAPIKeyManagement',
+    LumoSurvey = 'LumoSurvey',
+    LumoSurveyFreeUsers = 'LumoSurveyFreeUsers',
+    LumoSurveyPaidUsers = 'LumoSurveyPaidUsers',
+    LumoSurveyGuestUsers = 'LumoSurveyGuestUsers',
     LumoNewMarketingLinks = 'LumoNewMarketingLinks',
 }
 
