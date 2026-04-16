@@ -7,8 +7,8 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
-import accounts from './assets/images/img-accounts.svg';
-import envelopeAddress from './assets/images/img-envelope-address.svg';
+import accounts from '@proton/styles/assets/img/illustrations/accounts.svg';
+import envelopeAddress from '@proton/styles/assets/img/illustrations/envelope-address.svg';
 import { CallToActionBanner } from './components/CallToActionBanner';
 
 interface Props {
