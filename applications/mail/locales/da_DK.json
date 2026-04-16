@@ -196,9 +196,6 @@
       "Carbon Copy": [
         "Karbonkopi"
       ],
-      "Change password": [
-        "Skift adgangskode"
-      ],
       "Change sorting": [
         "Skift sortering"
       ],
@@ -1502,7 +1499,8 @@
         "Hav tillid til"
       ],
       "Trust key": [
-        "Stol på nøgle"
+        "Betroet nøgle",
+        "Betroede nøgler"
       ],
       "Trust public key": [
         "Hav tillid til offentlig nøgle"
@@ -4763,6 +4761,9 @@
       "Failed to encrypt attachment. Please try again.": [
         "Kryptering af vedhæftning mislykkedes. Forsøg igen."
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Kunne ikke indlæse abonnementsdata. Prøv igen senere."
+      ],
       "Failed to load the STL preview": [
         "Indlæsning af STL-forhåndsvisningen mislykkedes"
       ],
@@ -7555,8 +7556,7 @@
         "Igangsætter..."
       ],
       "Insert image": [
-        "Indsæt billede",
-        "Indsæt billeder"
+        "Indsæt billede"
       ],
       "Insert link": [
         "Indsæt link"
@@ -12366,6 +12366,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Under denne periode vil du ikke kunne ændre eller annullere dit abonnement. Vent venligst indtil betalingen er gennemført før du forsøger at foretage ændringer. Tak for din tålmodighed."
       ],
+      "Edit billing address": [
+        "Rediger faktureringsadresse"
+      ],
       "Got it": [
         "Forstået"
       ],
@@ -14555,9 +14558,6 @@
       "Billing details updated": [
         "Faktureringsoplysninger opdateret"
       ],
-      "Billing information updated": [
-        "Faktureringsoplysninger opdateret"
-      ],
       "Canceling import": [
         "Annullerer import"
       ],
@@ -15011,9 +15011,6 @@
       ],
       "Account security": [
         "Kontosikkerhed"
-      ],
-      "Account temporarily locked": [
-        "Konto midlertidigt låst"
       ],
       "Action all conversations": [
         "Anvend på alle samtaler"

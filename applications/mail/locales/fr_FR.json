@@ -196,9 +196,6 @@
       "Carbon Copy": [
         "Copie carbone"
       ],
-      "Change password": [
-        "Changer le mot de passe"
-      ],
       "Change sorting": [
         "Modifier le tri"
       ],
@@ -1502,7 +1499,8 @@
         "Faire confiance"
       ],
       "Trust key": [
-        "Clé de confiance"
+        "Approuver la clé",
+        "Clés de confiance"
       ],
       "Trust public key": [
         "Approuver la clé publique"
@@ -4760,6 +4758,9 @@
       "Failed to encrypt attachment. Please try again.": [
         "La pièce jointe n'a pas pu être chiffrée. Nous vous invitons à réessayer."
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Les données d'abonnement n'ont pas pu être chargées. Veuillez réessayer plus tard."
+      ],
       "Failed to load the STL preview": [
         "Le chargement de l’aperçu STL n'a pas abouti."
       ],
@@ -7538,8 +7539,7 @@
         "Initialisation…"
       ],
       "Insert image": [
-        "Insérer une image",
-        "Insérer des images"
+        "Insérer une image"
       ],
       "Insert link": [
         "Insérer un lien"
@@ -12349,6 +12349,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Pendant cette période, vous ne pourrez pas modifier ou annuler votre abonnement. Veuillez attendre que votre paiement soit terminé avant de tenter toute modification. Merci pour votre patience."
       ],
+      "Edit billing address": [
+        "Modifier l'adresse de facturation"
+      ],
       "Got it": [
         "J'ai compris"
       ],
@@ -14526,9 +14529,6 @@
       "Billing details updated": [
         "Les informations de facturation ont été mises à jour."
       ],
-      "Billing information updated": [
-        "Les informations de facturation ont été mises à jour."
-      ],
       "Canceling import": [
         "Annulation de l'importation"
       ],
@@ -14982,9 +14982,6 @@
       ],
       "Account security": [
         "Sécurité du compte"
-      ],
-      "Account temporarily locked": [
-        "Compte temporairement verrouillé"
       ],
       "Action all conversations": [
         "Appliquer à toutes les conversations"

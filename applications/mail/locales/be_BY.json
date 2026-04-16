@@ -198,9 +198,6 @@
       "Carbon Copy": [
         "Копія"
       ],
-      "Change password": [
-        "Змяніць пароль"
-      ],
       "Change sorting": [
         "Змяніць сартаванне"
       ],
@@ -1510,7 +1507,10 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу"
+        "Давяраць ключу",
+        "Давяраць ключам",
+        "Давяраць ключам",
+        "Давяраць ключам"
       ],
       "Trust public key": [
         "Давяраць адкрытаму ключу"
@@ -4837,6 +4837,9 @@
       "Failed to encrypt attachment. Please try again.": [
         "Не ўдалося зашыфраваць далучэнне. Паспрабуйце яшчэ раз."
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Не ўдалося загрузіць даныя падпіскі. Паспрабуйце яшчэ раз пазней."
+      ],
       "Failed to load the STL preview": [
         "Не ўдалося загрузіць папярэдні прагляд STL"
       ],
@@ -7811,10 +7814,7 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс",
-        "Уставіць відарысы",
-        "Уставіць відарысы",
-        "Уставіць відарысы"
+        "Уставіць відарыс"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -12776,6 +12776,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "У вас больш не будзе магчымасці змяніць або скасаваць сваю падпіску пачынаючы з гэтага моманту. Пачакайце, пакуль завершыцца аплата перад тым, як спрабаваць зрабіць нейкія змяненні. Дзякуй за ваша цярпенне."
       ],
+      "Edit billing address": [
+        "Рэдагаваць адрас аплаты"
+      ],
       "Got it": [
         "Зразумела"
       ],
@@ -15013,9 +15016,6 @@
       "Billing details updated": [
         "Плацежныя падрабязнасці абноўлены"
       ],
-      "Billing information updated": [
-        "Плацежная інфармацыя абноўлена"
-      ],
       "Canceling import": [
         "Скасаванне імпартавання"
       ],
@@ -15505,9 +15505,6 @@
       ],
       "Account security": [
         "Бяспека ўліковага запісу"
-      ],
-      "Account temporarily locked": [
-        "Уліковы запіс часова заблакіраваны"
       ],
       "Action all conversations": [
         "Дзеянне да ўсіх размоў"

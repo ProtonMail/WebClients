@@ -196,9 +196,6 @@
       "Carbon Copy": [
         "Κοινοποίηση"
       ],
-      "Change password": [
-        "Αλλαγή κωδικού πρόσβασης"
-      ],
       "Change sorting": [
         "Αλλαγή ταξινόμησης"
       ],
@@ -1502,7 +1499,8 @@
         "Αξιόπιστο"
       ],
       "Trust key": [
-        "Εμπιστοσύνη στο κλειδί"
+        "Κλειδί Εμπιστοσύνης",
+        "Κλειδιά Εμπιστοσύνης"
       ],
       "Trust public key": [
         "Εμπιστοσύνη στο δημόσιο κλειδί"
@@ -4763,6 +4761,9 @@
       "Failed to encrypt attachment. Please try again.": [
         "Αποτυχία κρυπτογράφησης του συννημένου. Παρακαλούμε δοκιμάστε ξανά."
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Αποτυχία φόρτωσης δεδομένων συνδρομής. Παρακαλούμε δοκιμάστε ξανά αργότερα."
+      ],
       "Failed to load the STL preview": [
         "Αποτυχία φόρτωσης της προεπισκόπησης STL"
       ],
@@ -7555,8 +7556,7 @@
         "Προετοιμασία…"
       ],
       "Insert image": [
-        "Εισαγωγή εικόνας",
-        "Εισαγωγή εικόνων"
+        "Εισαγωγή εικόνας"
       ],
       "Insert link": [
         "Εισαγωγή συνδέσμου"
@@ -12366,6 +12366,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Κατά τη διάρκεια αυτής της περιόδου, δε θα μπορείτε να τροποποιήσετε ή να ακυρώσετε τη συνδρομή σας. Παρακαλούμε περιμένετε μέχρι να ολοκληρωθεί η πληρωμή σας πριν επιχειρήσετε οποιεσδήποτε αλλαγές. Σας ευχαριστούμε για την υπομονή σας."
       ],
+      "Edit billing address": [
+        "Επεξεργασία διεύθυνσης χρέωσης"
+      ],
       "Got it": [
         "Το κατάλαβα"
       ],
@@ -14459,9 +14462,6 @@
       "Billing details updated": [
         "Τα στοιχεία χρέωσης ενημερώθηκαν"
       ],
-      "Billing information updated": [
-        "Τα στοιχεία χρέωσης ενημερώθηκαν"
-      ],
       "Canceling import": [
         "Ακύρωση εισαγωγής"
       ],
@@ -14915,9 +14915,6 @@
       ],
       "Account security": [
         "Ασφάλεια λογαριασμού"
-      ],
-      "Account temporarily locked": [
-        "Ο λογαριασμός έχει κλειδωθεί προσωρινά"
       ],
       "Action all conversations": [
         "Εφαρμογή σε όλες τις συνομιλίες"
