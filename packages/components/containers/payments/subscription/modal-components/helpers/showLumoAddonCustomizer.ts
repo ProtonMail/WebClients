@@ -1,5 +1,5 @@
 import { isBF2025Offer } from '@proton/payments/core/checkout';
-import { canAddLumoAddon } from '@proton/payments/core/subscription/helpers';
+import { canAddLumoAddon, hasVPN2024 } from '@proton/payments/core/subscription/helpers';
 import {
     type CYCLE,
     type FreeSubscription,
@@ -25,6 +25,7 @@ export function showLumoAddonCustomizer({
 }): boolean {
     return (
         canAddLumoAddon(subscription) &&
+        (!hasVPN2024(subscription) || hasLumoAddonFromPlanIDs(planIDs)) &&
         ((!couponConfig?.hideLumoAddonBanner &&
             // Hides the Lumo Banner during loading
             !isBF2025Offer({ coupon: initialCoupon, planIDs, cycle })) ||
