@@ -6702,6 +6702,9 @@
       "Failed to load OAuth modal.": [
         "Kunne ikke indlæse OAuth modal."
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Kunne ikke indlæse abonnementsdata. Prøv igen senere."
+      ],
       "Failed to load the STL preview": [
         "Indlæsning af STL-forhåndsvisningen mislykkedes"
       ],
@@ -9388,6 +9391,9 @@
       "**Sync codes** to all your devices": [
         "**Synkroniser koder** med alle dine enheder"
       ],
+      "**This will disable 2-factor authentication.**": [
+        "**Dette deaktiverer 2-faktor-godkendelse.**"
+      ],
       "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
         "**Dette vil deaktivere end-to-end krypterede e-mail-videresendelser:** Du kan sætte dem op igen senere."
       ],
@@ -11311,12 +11317,6 @@
       "Recommended on trusted devices. ${ keepMeSignedInLearnMoreLink }": [
         "Anbefales på betroede enheder. ${ keepMeSignedInLearnMoreLink }"
       ],
-      "Recovery contacts": [
-        "Gendannelseskontakter"
-      ],
-      "Recovery file": [
-        "Gendannelsesfil"
-      ],
       "Recovery file downloaded": [
         "Gendannelsesfil downloadet"
       ],
@@ -11325,9 +11325,6 @@
       ],
       "Recovery information will remain on this device unless you select to delete it.": [
         "Gendannelsesoplysninger vil forblive på denne enhed, medmindre du vælger at slette dem."
-      ],
-      "Recovery phrase": [
-        "Gendannelsesssætning"
       ],
       "Recovery phrase copied to clipboard": [
         "Gendannelsessætning kopieret til udklipsholderen"
@@ -11743,8 +11740,8 @@
       "The name will be visible to your users while they are signed in.": [
         "Navnet vil være synligt for dine brugere, mens de er logget ind."
       ],
-      "The referral credit can be awarded up to 2 months after your friend's trial ended, and if your friend subscribed to a plan.": [
-        "Kreditten for en henvisning kan tildeles op til 2 måneder efter din vens prøveperiode udløb, og hvis din ven abonnerede på en plan."
+      "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
+        "Kreditten for en henvisning kan tildeles op til 2 måneder efter din vens prøveperiode udløb, og kun hvis din ven tegnede et abonnement."
       ],
       "The securest way to browse, stream, and be online.": [
         "Den sikreste måde at surfe, streame og være online på."
@@ -11958,6 +11955,9 @@
       ],
       "To proceed, we must verify the request.": [
         "For at fortsætte skal vi bekræfte anmodningen."
+      ],
+      "To regain access to your account and data, enter the 12-word recovery phrase associated with your account.": [
+        "Indtast gendannelsessætningen på 12 ord der er tilknyttet din konto for få adgangen til din konto og data tilbage."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "For at sikre din internetforbindelse, skal du downloade og installere ${ VPN_APP_NAME }-applikationen til din enhed og oprette forbindelse til en server."
@@ -12451,9 +12451,6 @@
       "You can now reset your password to regain access to your account.": [
         "Du kan nu nulstille din adgangskode for igen at få adgang til din konto."
       ],
-      "You can now reset your password to regain access to your account. **This will disable 2-factor authentication.**": [
-        "Du kan nu nulstille din adgangskode for at få adgang til din konto igen. **Dette deaktiverer 2-faktor-godkendelse.**"
-      ],
       "You can now return to the application to continue": [
         "Du kan nu vende tilbage til applikationen for at fortsætte"
       ],
@@ -12680,9 +12677,6 @@
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time. Please contact support if you require an immediate plan change.": [
         "Din næste faktureringsdato er ${ renewalTime }. Du kan annullere når som helst. Kontakt support, hvis du har brug for en øjeblikkelig ændring af dit abonnement."
-      ],
-      "Your old password": [
-        "Din gamle adgangskode"
       ],
       "Your organization uses single sign-on (SSO). Press Sign in to continue with your SSO provider.": [
         "Din organisation bruger single sign-on (SSO). Tryk på Log ind for at fortsætte med din SSO-udbyder."
@@ -15748,6 +15742,38 @@
         "Log ind på din ${ BRAND_NAME }-konto for at få adgang til alle krypterede ${ BRAND_NAME }-tjenester som ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } og meget mere. Har du ikke en konto? Opret en helt GRATIS."
       ]
     },
+    "Missing feature": {
+      "Check out the latest product updates": [
+        "Se de seneste produktopdateringer"
+      ],
+      "Continue cancelling": [
+        "Fortsæt annullering"
+      ],
+      "Explore the latest news": [
+        "Udforsk de seneste nyheder"
+      ],
+      "Keep current plan": [
+        "Behold nuværende abonnement"
+      ],
+      "Make your voice heard": [
+        "Gør din stemme hørt"
+      ],
+      "Request a feature": [
+        "Anmod om en funktion"
+      ],
+      "Request a feature or vote on ideas from other users in our feedback forum.": [
+        "Anmod om en funktion eller stem på idéer fra andre brugere i vores feedback forum."
+      ],
+      "See how ${ BRAND_NAME } apps are evolving with your feedback.": [
+        "Se hvordan ${ BRAND_NAME } apps udvikler sig fra din feedback."
+      ],
+      "Submit your ideas": [
+        "Send dine idéer ind"
+      ],
+      "Your feedback helps us improve. Whether you've spotted a bug, want a new feature, or think something could work differently, we'd love to hear from you.": [
+        "Din feedback hjælper os med at blive bedre. Uanset om du har opdaget en fejl, ønsker en ny funktion, eller tror at noget kunne fungere bedre på en anden måde, så vil vi rigtig gerne høre fra dig."
+      ]
+    },
     "Modal title": {
       "Add public holidays": [
         "Tilføj nationale helligdage"
@@ -18511,6 +18537,9 @@
       ],
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Under denne periode vil du ikke kunne ændre eller annullere dit abonnement. Vent venligst indtil betalingen er gennemført før du forsøger at foretage ændringer. Tak for din tålmodighed."
+      ],
+      "Edit billing address": [
+        "Rediger faktureringsadresse"
       ],
       "Got it": [
         "Forstået"
@@ -22532,9 +22561,6 @@
         "Backupadgangskode opdateret"
       ],
       "Billing details updated": [
-        "Faktureringsoplysninger opdateret"
-      ],
-      "Billing information updated": [
         "Faktureringsoplysninger opdateret"
       ],
       "Calendar added. It might take a few minutes to sync.": [
