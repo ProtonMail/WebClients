@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { FileIcon, Icon } from '@proton/components';
+import { FileIcon } from '@proton/components';
+import { IcAlbumFolder } from '@proton/icons/icons/IcAlbumFolder';
 import { isCompatibleCBZ } from '@proton/shared/lib/helpers/mimetype';
 import clsx from '@proton/utils/clsx';
 
@@ -22,7 +23,7 @@ export function GridViewItem({ item }: { item: DriveItem | TrashItem | SharedLin
     const IconComponent = (
         <>
             {item.albumProperties && (
-                <Icon name="album-folder" alt={c('Label').t`Album`} className="file-browser-grid-item--icon mr-2" />
+                <IcAlbumFolder alt={c('Label').t`Album`} className="file-browser-grid-item--icon mr-2" />
             )}
             {item.cachedThumbnailUrl && !item.albumProperties && (
                 <img

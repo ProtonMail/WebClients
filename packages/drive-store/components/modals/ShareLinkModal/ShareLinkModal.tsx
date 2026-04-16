@@ -8,7 +8,6 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import type { ModalStateProps } from '@proton/components';
 import {
     ContactEmailsProvider,
-    Icon,
     ModalTwo,
     ModalTwoContent,
     ModalTwoFooter,
@@ -16,6 +15,7 @@ import {
     useModalTwoStatic,
     useToggle,
 } from '@proton/components';
+import { IcCogWheel } from '@proton/icons/icons/IcCogWheel';
 import { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions';
 
 import type { ShareMember } from '../../../store';
@@ -206,7 +206,7 @@ function SharingModalInner({
                                           }
                                           data-testid="share-modal-settings"
                                       >
-                                          <Icon name="cog-wheel" />
+                                          <IcCogWheel />
                                       </Button>
                                   </Tooltip>,
                               ]

@@ -1,6 +1,7 @@
 import { c } from 'ttag';
 
-import { Icon, ToolbarButton } from '@proton/components';
+import { ToolbarButton } from '@proton/components';
+import { IcTrash } from '@proton/icons/icons/IcTrash';
 
 import type { Device } from '../../../../../store';
 import { useRemoveDeviceModal } from '../../../../modals/RemoveDeviceModal';
@@ -23,7 +24,7 @@ const Remove = ({ selectedDevices }: Props) => {
         <>
             <ToolbarButton
                 title={c('Action').t`Remove device`}
-                icon={<Icon name="trash" />}
+                icon={<IcTrash />}
                 onClick={() => showRemoveDeviceModal({ device: selectedDevices[0] })}
                 data-testid="toolbar-delete"
             />
