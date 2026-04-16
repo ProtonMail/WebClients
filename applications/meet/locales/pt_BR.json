@@ -1566,6 +1566,9 @@
       "The meeting password is incorrect": [
         "A senha da reunião está incorreta"
       ],
+      "The meeting password is invalid": [
+        "A senha da reunião está inválida"
+      ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Este campo excede o máximo de ${ maximumLength } caracteres."
       ],
@@ -1947,6 +1950,9 @@
       "Leave meeting and stop sharing?": [
         "Sair da reunião e parar de compartilhar?"
       ],
+      "Leaving the meeting will stop your screen sharing.": [
+        "Ao sair da reunião, o compartilhamento de tela será interrompido."
+      ],
       "Left ${ roomNameLabel }": [
         "Saiu de ${ roomNameLabel }"
       ],
@@ -2205,6 +2211,9 @@
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
         "Esta reunião foi aberta no aplicativo do ${ MEET_APP_NAME } para computador."
       ],
+      "This will end the meeting for all participants and stop your screen sharing.": [
+        "Isso encerrará a reunião para todos os participantes e interromperá o compartilhamento de tela."
+      ],
       "This will end the meeting for all participants.": [
         "Isso encerrará a reunião para todos os participantes."
       ],
@@ -2297,6 +2306,9 @@
       ],
       "You were removed from the meeting": [
         "Você foi removido da reunião"
+      ],
+      "You will leave the meeting. Others will continue.": [
+        "Você vai sair da reunião. Os outros vão continuar."
       ],
       "You've been invited to join a secure meeting. Confirm your name and click below to enter.": [
         "Você foi convidado(a) para entrar em uma reunião segura. Confirme seu nome e clique abaixo para entrar."
