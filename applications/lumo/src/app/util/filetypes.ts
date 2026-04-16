@@ -319,6 +319,13 @@ export const FILE_TYPE_CONFIGS: Record<string, FileTypeConfig> = {
         category: 'code',
         // No pandocFormat - processed as plain text
     },
+    matlab: {
+        extensions: ['m'],
+        mimeTypes: ['text/plain', 'text/x-matlab', 'text/x-mathematica'],
+        description: 'MATLAB/Mathematica File',
+        category: 'code',
+        // No pandocFormat - processed as plain text
+    },
     r: {
         extensions: ['r'],
         mimeTypes: ['text/plain'],
