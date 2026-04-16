@@ -30,8 +30,7 @@ import { decompressDocumentUpdate, isCompressedDocumentUpdate } from '../utils/d
 import { WebsocketConnectionEvent } from '../Realtime/WebsocketEvent/WebsocketConnectionEvent'
 import type { WebsocketConnectionEventPayloads } from '../Realtime/WebsocketEvent/WebsocketConnectionEventPayloads'
 import { obfuscateUpdate } from 'yjs'
-import type { UpdateTimelineEntry } from '../utils/create-update-timeline'
-import { createUpdateTimelineEntry } from '../utils/create-update-timeline'
+import { downloadUpdateTimeline } from '../utils/create-update-timeline'
 import { getBufferHash } from '../utils/hash'
 
 // This is part of a hack to make sure the name in the document sharing modal is updated when the document name changes.
@@ -492,28 +491,9 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
     void this.driveCompat.openMoveToFolderModal(this.documentState.getProperty('entitlements').nodeMeta)
   }
 
-  public async downloadUpdatesInformation() {
-    const entries: UpdateTimelineEntry[] = []
+  public async downloadUpdatesInformation(ydoc?: unknown) {
     const baseCommit = this.documentState.getProperty('baseCommit')
-    if (baseCommit) {
-      for (const message of baseCommit.messages) {
-        const info = await createUpdateTimelineEntry(message)
-        entries.push(info)
-      }
-    }
-    for (const update of this.receivedOrSentDUs) {
-      const info = await createUpdateTimelineEntry(update)
-      entries.push(info)
-    }
-    const json = JSON.stringify(entries, null, 2)
-    const blob = new Blob([json], { type: 'application/json' })
-    const url = URL.createObjectURL(blob)
-    const link = document.createElement('a')
-    link.href = url
-    link.download = 'updates-information.json'
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
+    await downloadUpdateTimeline([...(baseCommit?.messages ?? []), ...this.receivedOrSentDUs], ydoc)
   }
 
   public async downloadObfuscatedUpdates() {
