@@ -1,7 +1,9 @@
 import { c } from 'ttag';
 
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
-import { DropdownMenuButton, Icon, ToolbarButton } from '@proton/components';
+import { DropdownMenuButton, ToolbarButton } from '@proton/components';
+import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
+import { IcUsers } from '@proton/icons/icons/IcUsers';
 import clsx from '@proton/utils/clsx';
 
 import type { PhotoLink } from '../../../store';
@@ -33,7 +35,6 @@ const PhotosShareLinkButton = ({ selectedLink, showIconOnly, onClick, dropDownMe
 
     const sharedStatus = getSharedStatus(selectedLink);
     const hasSharedLink = !!selectedLink.shareUrl;
-    const iconName = sharedStatus === 'shared' ? 'users' : 'user-plus';
     const ButtonComp = dropDownMenuButton ? DropdownMenuButton : ToolbarButton;
 
     return (
@@ -44,7 +45,11 @@ const PhotosShareLinkButton = ({ selectedLink, showIconOnly, onClick, dropDownMe
                 data-testid={hasSharedLink ? 'toolbar-manage-link' : 'toolbar-share-link'}
                 className="inline-flex flex-nowrap flex-row items-center"
             >
-                <Icon name={iconName} className={clsx(!showIconOnly && 'mr-2')} />
+                {sharedStatus === 'shared' ? (
+                    <IcUsers className={clsx(!showIconOnly && 'mr-2')} />
+                ) : (
+                    <IcUserPlus className={clsx(!showIconOnly && 'mr-2')} />
+                )}
                 <span className={clsx(showIconOnly && 'sr-only')}>
                     {hasSharedLink ? c('Action').t`Manage link` : c('Action').t`Share`}
                 </span>

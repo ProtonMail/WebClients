@@ -1,6 +1,8 @@
 import { c } from 'ttag';
 
-import { Icon, Loader } from '@proton/components';
+import { Loader } from '@proton/components';
+import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
+import { IcLockFilled } from '@proton/icons/icons/IcLockFilled';
 
 import type { ShareInvitee } from '../../../../../store';
 
@@ -18,11 +20,7 @@ export const getAddressInputItemAttributes = ({ isLoading, error, email, isExter
         return {
             icon: (
                 <div className="flex items-center shrink-0 ml-2">
-                    <Icon
-                        name="exclamation-circle-filled"
-                        className="color-danger"
-                        data-testid="invite-address-error"
-                    />
+                    <IcExclamationCircleFilled className="color-danger" data-testid="invite-address-error" />
                 </div>
             ),
             iconTooltip: error.message,
@@ -35,7 +33,7 @@ export const getAddressInputItemAttributes = ({ isLoading, error, email, isExter
     return {
         icon: (
             <span className="inline-flex pl-2 shrink-0 my-auto">
-                <Icon size={4} name="lock-filled" className={'color-info'} data-testid="invite-address-ok" />
+                <IcLockFilled size={4} className={'color-info'} data-testid="invite-address-ok" />
             </span>
         ),
         iconTooltip: c('Tooltip').t`Shared with end-to-end encryption`,
