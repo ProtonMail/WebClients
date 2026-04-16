@@ -4,6 +4,8 @@ import type { LocalParticipant, RemoteParticipant, Track } from 'livekit-client'
 import type { RecordingTrackInfo } from './types';
 
 const mp4Codecs = [
+    'video/mp4;codecs=avc1.640028,mp4a.40.2',
+    'video/mp4;codecs=avc1.4D001E,mp4a.40.2',
     'video/mp4;codecs=h264,aac',
     'video/mp4;codecs=avc1.42E01E,mp4a.40.2',
     'video/mp4;codecs=avc1',
