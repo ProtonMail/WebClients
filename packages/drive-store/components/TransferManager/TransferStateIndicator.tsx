@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { Icon } from '@proton/components';
+import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import type { IconName } from '@proton/icons/types';
 import clsx from '@proton/utils/clsx';
 
@@ -121,7 +122,7 @@ const TransferStateIndicator = ({ transfer, type, speed }: Props) => {
                 {errorText && (
                     <Tooltip title={errorText} originalPlacement="top">
                         <span className="flex items-center mr-2">
-                            <Icon name="info-circle" />
+                            <IcInfoCircle />
                         </span>
                     </Tooltip>
                 )}
