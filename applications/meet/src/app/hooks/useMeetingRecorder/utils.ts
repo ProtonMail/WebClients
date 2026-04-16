@@ -20,23 +20,72 @@ const webmCodecs = [
     'video/webm',
 ];
 
-export const getRecordingDetails = () => {
+// Some codecs are detected as supported by MediaRecorder.isTypeSupported but when trying to use them, the browser throws an error.
+// This function tests if the codec is actually supported by creating a MediaRecorder instance and checking if it throws an error.
+const isCodecSupported = (codec: string): Promise<boolean> => {
+    return new Promise((resolve) => {
+        if (!MediaRecorder.isTypeSupported(codec)) {
+            resolve(false);
+            return;
+        }
+
+        const canvas = document.createElement('canvas');
+        canvas.width = 2;
+        canvas.height = 2;
+        const stream = canvas.captureStream(1);
+
+        let timeout: NodeJS.Timeout | undefined;
+
+        try {
+            const mediaRecorder = new MediaRecorder(stream, { mimeType: codec });
+
+            timeout = setTimeout(() => {
+                mediaRecorder.stop();
+                stream.getTracks().forEach((track) => track.stop());
+                resolve(true);
+            }, 2000);
+
+            mediaRecorder.onerror = () => {
+                stream.getTracks().forEach((track) => track.stop());
+                clearTimeout(timeout);
+                resolve(false);
+            };
+
+            mediaRecorder.ondataavailable = () => {
+                mediaRecorder.stop();
+                stream.getTracks().forEach((track) => track.stop());
+                clearTimeout(timeout);
+                resolve(true);
+            };
+
+            mediaRecorder.start(50);
+        } catch (error: any) {
+            stream.getTracks().forEach((track) => track.stop());
+            clearTimeout(timeout);
+            resolve(false);
+        }
+    });
+};
+
+export const getRecordingDetails = async () => {
     let selectedMimeType = 'video/webm';
     let selectedExtension = 'webm';
 
     for (const codec of mp4Codecs) {
-        if (MediaRecorder.isTypeSupported(codec)) {
+        if (await isCodecSupported(codec)) {
             selectedMimeType = codec;
             selectedExtension = 'mp4';
+
             break;
         }
     }
 
     if (selectedExtension !== 'mp4') {
         for (const codec of webmCodecs) {
-            if (MediaRecorder.isTypeSupported(codec)) {
+            if (await isCodecSupported(codec)) {
                 selectedMimeType = codec;
                 selectedExtension = 'webm';
+
                 break;
             }
         }
