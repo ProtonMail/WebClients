@@ -1,0 +1,134 @@
+@keyframes notif-slide-up {
+	from {
+		opacity: 0;
+		transform: translateY(16px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+@keyframes notif-slide-down {
+	from {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	to {
+		opacity: 0;
+		transform: translateY(16px);
+	}
+}
+
+.notif-enter {
+	animation: notif-slide-up 2.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.notif-exit {
+	animation: notif-slide-down 0.28s cubic-bezier(0.4, 0, 1, 1) both;
+}
+
+.notification-panel {
+	inline-size: 320px;
+	background: var(--background-norm);
+	border-radius: 12px;
+	padding-block: 16px 14px;
+	padding-inline: 18px;
+	box-sizing: border-box;
+	position: fixed;
+	inset-block-end: 10px;
+	inset-inline-end: 7px;
+	z-index: 1000;
+}
+
+.notification-panel-icon {
+	inline-size: 36;
+	block-size: 36;
+	flex-shrink: 0;
+	background: var(--background-weak);
+	border: 1px solid var(--border-weak);
+	border-radius: 8px;
+	display: flex;
+}
+
+.notification-panel-title {
+	font-size: 13px;
+	font-weight: 500;
+	color: var(--text-norm);
+}
+
+.notification-panel-title-new {
+	font-size: 11px;
+	font-weight: 500;
+	background: var(--optional-promotion-background-start);
+	color: var(--primary);
+	border-radius: 4px;
+	padding-block: 3px;
+	padding-inline: 7px;
+}
+
+.notif-action {
+	font-size: 13px;
+	padding-block: 5px;
+	padding-inline: 14px;
+	background: var(--primary);
+	color: white;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	font-weight: 500;
+	text-decoration: none;
+	display: inline-block;
+	transition: background 0.3s;
+}
+
+.notif-action:hover {
+	background: var(--interaction-norm-hover);
+	color: white;
+}
+
+.notif-dismiss {
+	font-size: 13px;
+	padding-block: 5px;
+	padding-inline: 14px;
+	background: transparent;
+	color: var(--text-weak);
+	border: 1px solid var(--border-weak);
+	border-radius: 8px;
+	cursor: pointer;
+	transition: background 0.15s;
+}
+
+.notif-dismiss:hover {
+	background: rgb(0 0 0 / 0.05);
+	color: var(--text-norm);
+}
+
+.notification-panel-text {
+	font-size: 13px;
+	color: var(--text-weak);
+	margin-block: 0 12px;
+	margin-inline: 0;
+	line-height: 1.5;
+}
+
+.notif-close {
+	position: absolute;
+	inset-block-start: 10px;
+	inset-inline-end: 12px;
+	background: none;
+	border: none;
+	cursor: pointer;
+	color: var(--text-weak);
+	font-size: 16px;
+	line-height: 1;
+	padding-block: 2px;
+	padding-inline: 4px;
+	border-radius: 4px;
+	transition: color 0.15s;
+}
+
+.notif-close:hover {
+	color: var(--text-norm);
+}
