@@ -36,9 +36,15 @@ export enum TelemetryEventName {
     PassMonitorItemDetailFromMissing2FA = 'pass_monitor.item_detail_from_missing_2fa',
     PassMonitorItemDetailFromReusedPassword = 'pass_monitor.item_detail_from_reused_password',
     PassMonitorItemDetailFromWeakPassword = 'pass_monitor.item_detail_from_weak_password',
+    PassInviteAccept = 'pass_invite.accept',
+    PassInviteCreate = 'pass_invite.create',
+    PassInviteDelete = 'pass_invite.delete',
+    PassInviteReject = 'pass_invite.reject',
     PassNotificationChangeStatus = 'pass_notifications.change_notification_status',
     PassNotificationCTAClick = 'pass_notifications.notification_cta_click',
     PassNotificationDisplay = 'pass_notifications.display_notification',
+    PassSecureLinkCreate = 'pass_secure_link.create',
+    PassSecureLinkDelete = 'pass_secure_link.delete',
     SearchClick = 'search.click',
     SearchTriggered = 'search.triggered',
     TwoFAAutofill = '2fa.autofill',
@@ -65,6 +71,11 @@ export enum TelemetryFieldType {
     totp = 'totp',
     note = 'note',
     customField = 'custom_field',
+}
+
+export enum TelemetryTargetType {
+    vault = 'vault',
+    item = 'item',
 }
 
 /** Telemetry payloads support only ints and strings */
@@ -104,6 +115,11 @@ type NotificationChangeDimensions = NotificationDimensions & { notificationStatu
 type AutofillDimensions = { location: 'source' | 'app' };
 type AutosaveDismissedDimensions = { dismissReason: 'not_now' | 'close' | 'disable'; modelVersion: string };
 type ErrorResumingSessionDimensions = { extensionBrowser: string; extensionReloadRequired: string };
+type TargetDimensions =
+    | { type: TelemetryTargetType.item; itemType: TelemetryItemType }
+    | { type: TelemetryTargetType.vault };
+type InviteDimensions = TargetDimensions & { extensionBrowser?: string };
+type SecureLinkDimensions = TargetDimensions & { extensionBrowser?: string };
 
 type TelemetryEvents =
     | BaseTelemetryEvent<TelemetryEventName.AutofillDisplay, {}, AutofillDimensions>
@@ -137,9 +153,15 @@ type TelemetryEvents =
     | BaseTelemetryEvent<TelemetryEventName.PassMonitorItemDetailFromMissing2FA>
     | BaseTelemetryEvent<TelemetryEventName.PassMonitorItemDetailFromReusedPassword>
     | BaseTelemetryEvent<TelemetryEventName.PassMonitorItemDetailFromWeakPassword>
+    | BaseTelemetryEvent<TelemetryEventName.PassInviteAccept, {}, InviteDimensions>
+    | BaseTelemetryEvent<TelemetryEventName.PassInviteCreate, {}, InviteDimensions>
+    | BaseTelemetryEvent<TelemetryEventName.PassInviteDelete, {}, InviteDimensions>
+    | BaseTelemetryEvent<TelemetryEventName.PassInviteReject, {}, Omit<InviteDimensions, 'itemType'>>
     | BaseTelemetryEvent<TelemetryEventName.PassNotificationChangeStatus, {}, NotificationChangeDimensions>
     | BaseTelemetryEvent<TelemetryEventName.PassNotificationCTAClick, {}, NotificationDimensions>
     | BaseTelemetryEvent<TelemetryEventName.PassNotificationDisplay, {}, NotificationDimensions>
+    | BaseTelemetryEvent<TelemetryEventName.PassSecureLinkCreate, {}, SecureLinkDimensions>
+    | BaseTelemetryEvent<TelemetryEventName.PassSecureLinkDelete, {}, SecureLinkDimensions>
     | BaseTelemetryEvent<TelemetryEventName.SearchClick>
     | BaseTelemetryEvent<TelemetryEventName.SearchTriggered>
     | BaseTelemetryEvent<TelemetryEventName.TwoFAAutofill>
