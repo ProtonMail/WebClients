@@ -52,8 +52,7 @@ const getStatusLabel = (entry: TransferManagerEntry): string | undefined => {
         [UploadStatus.ConflictFound]: c('Info').t`Waiting`,
         [UploadStatus.Waiting]: c('Info').t`Waiting`,
         [UploadStatus.ParentCancelled]: c('Info').t`Canceled`,
-        // TODO: Probably we do not want skipped but cancelled of the item. Makes more sense but need update on uploadManager
-        [UploadStatus.Skipped]: c('Info').t`Skipped`,
+        [UploadStatus.Skipped]: c('Info').t`Canceled`,
         [UploadStatus.PhotosDuplicate]: c('Info').t`Already in your library`,
         [UploadStatus.NotSupportedForPhotos]: c('Info').t`Unsupported file type for Photos`,
     };
@@ -74,6 +73,9 @@ const getItemIconByStatus = (entry: TransferManagerEntry) => {
         return <IcCrossCircle size={5} className="color-weak" />;
     }
     if (entry.status === UploadStatus.Skipped) {
+        return <IcCrossCircle size={5} className="color-weak" />;
+    }
+    if (entry.status === UploadStatus.ParentCancelled) {
         return <IcCrossCircle size={5} className="color-weak" />;
     }
     if (entry.status === BaseTransferStatus.Failed || entry.status === UploadStatus.NotSupportedForPhotos) {
