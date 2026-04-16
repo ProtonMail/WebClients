@@ -5,17 +5,20 @@ import { c } from 'ttag';
 import { acceptInvite } from '@proton/pass/lib/invites/invite.requests';
 import { requestItemsForShareId } from '@proton/pass/lib/items/item.requests';
 import { parseShareResponse } from '@proton/pass/lib/shares/share.parser';
+import { createTelemetryEvent } from '@proton/pass/lib/telemetry/utils';
 import { inviteAccept, startEventPolling, stopEventPolling } from '@proton/pass/store/actions';
 import { requestProgress } from '@proton/pass/store/request/actions';
 import type { RequestProgress } from '@proton/pass/store/request/types';
 import { selectInviteByToken } from '@proton/pass/store/selectors/invites';
 import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { Invite, ItemRevision, Maybe, Share, ShareGetResponse } from '@proton/pass/types';
+import { type Invite, type ItemRevision, type Maybe, type Share, type ShareGetResponse, ShareType } from '@proton/pass/types';
+import { TelemetryEventName, TelemetryItemType, TelemetryTargetType } from '@proton/pass/types/data/telemetry';
 import noop from '@proton/utils/noop';
 
 type AcceptInviteChannel = RequestProgress<ItemRevision[], null>;
 
 function* acceptInviteWorker(options: RootSagaOptions, action: ReturnType<typeof inviteAccept.intent>) {
+    const telemetry = options.getTelemetry();
     const {
         payload,
         meta: { request },
@@ -50,6 +53,15 @@ function* acceptInviteWorker(options: RootSagaOptions, action: ReturnType<typeof
                 const items = action.result;
                 yield put(inviteAccept.success(requestId, { inviteToken, share, items }));
                 options.onItemsUpdated?.();
+                const dimensions =
+                    invite.targetType === ShareType.Item && items[0]
+                        ? {
+                              type: TelemetryTargetType.item as const,
+                              itemType: TelemetryItemType[items[0].data.type],
+                              extensionBrowser: BUILD_TARGET,
+                          }
+                        : { type: TelemetryTargetType.vault as const, extensionBrowser: BUILD_TARGET };
+                void telemetry?.push(createTelemetryEvent(TelemetryEventName.PassInviteAccept, {}, dimensions));
             }
         }
     } catch (err) {
