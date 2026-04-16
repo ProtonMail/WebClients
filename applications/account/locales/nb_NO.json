@@ -336,6 +336,9 @@
       "Contact support": [
         "Kontakt brukerstøtte"
       ],
+      "Contact Support Center": [
+        "Kontakt kundestøttesenteret"
+      ],
       "Contact us": [
         "Kontakt oss"
       ],
@@ -708,6 +711,9 @@
       "Encrypt and export": [
         "Krypter og eksporter"
       ],
+      "Enter code": [
+        "Skriv inn koden"
+      ],
       "Explore ${ target }": [
         "Utforsk ${ target }"
       ],
@@ -891,8 +897,20 @@
       "Hide plan features": [
         "Skjul planfunksjoner"
       ],
+      "I don't have my 2FA device": [
+        "Jeg har ikke 2FA-enheten min"
+      ],
+      "I don't have my key": [
+        "Jeg har ikke nøkkelen min"
+      ],
       "I don't have my phrase": [
         "Jeg har ikke gjenopprettingsfrasen min"
+      ],
+      "I don’t have my backup codes": [
+        "Jeg har ikke reservekodene mine"
+      ],
+      "I don’t have my phone": [
+        "Jeg har ikke mobilen min"
       ],
       "Ignore": [
         "Ignorer"
@@ -965,6 +983,9 @@
       ],
       "Later": [
         "Senere"
+      ],
+      "Learn about recovery options": [
+        "Lær om gjenopprettingsalternativer"
       ],
       "Learn more": [
         "Lær mer"
@@ -1164,6 +1185,9 @@
       "Reconnect to Gmail": [
         "Koble til Gmail på nytt"
       ],
+      "Recover account": [
+        "Gjenopprett konto"
+      ],
       "Recover data": [
         "Gjenopprett data"
       ],
@@ -1287,6 +1311,9 @@
       "Return to sign in": [
         "Gå tilbake til pålogging"
       ],
+      "Return to sign-in": [
+        "Gå tilbake til pålogging"
+      ],
       "Review": [
         "Gjennomgå"
       ],
@@ -1397,6 +1424,9 @@
       ],
       "Send my username": [
         "Send mitt brukernavn"
+      ],
+      "Send new code": [
+        "Send ny kode"
       ],
       "Send new invite": [
         "Send ny invitasjon"
@@ -1571,6 +1601,9 @@
       ],
       "Try another method": [
         "Prøv annen metode"
+      ],
+      "Try another way": [
+        "Prøv en annen måte"
       ],
       "Try for free": [
         "Prøv gratis"
@@ -4803,6 +4836,11 @@
         "Vær oppmerksom på at hvis du sletter gruppen ${ displayGroupName }, vil den bli permanent fjernet."
       ]
     },
+    "Delete group prompt with email": {
+      "Please note that if you delete the group ${ displayGroupName } (with address ${ displayGroupAddressEmail }), you will no longer be able to receive emails using its address.": [
+        "Vær oppmerksom på at hvis du sletter gruppen ${ displayGroupName } (med adresse ${ displayGroupAddressEmail }), vil du ikke lenger kunne motta e-post ved hjelp av adressen."
+      ]
+    },
     "Delinquent modal title": {
       "Overdue invoice": [
         "Forfalt faktura"
@@ -5016,6 +5054,9 @@
       ],
       "You can still login with this address and re-connect at any time.": [
         "Du kan fortsatt logge på med denne adressen og koble til igjen når som helst."
+      ],
+      "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
+        "Du vil ikke lenger kunne bruke ${ address.Email } til å motta og sende e-poster i ${ BRAND_NAME }. Merk også at meldinger sendt til denne adressen fra ${ BRAND_NAME } ikke lenger vil bli ende-til-ende-kryptert."
       ],
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "Du videresender ${ numAddressesOrSync } Gmail-adresse til ${ MAIL_APP_NAME }.",
@@ -6660,6 +6701,9 @@
       ],
       "Failed to load OAuth modal.": [
         "Kunne ikke laste inn oauth-modal."
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Kunne ikke laste inn abonnementsdata. Prøv på nytt senere."
       ],
       "Failed to load the STL preview": [
         "Kan ikke laste inn STL-forhåndsvisningen"
@@ -8346,6 +8390,9 @@
       ]
     },
     "Group detail label": {
+      "Description:": [
+        "Beskrivelse:"
+      ],
       "Group address:": [
         "Gruppeadresse:"
       ]
@@ -9056,6 +9103,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "${ BRAND_NAME } Scribe skriveassistent"
       ],
+      "${ BRAND_NAME } will send a verification code to ${ phoneNumber }. Standard message rates may apply.": [
+        "${ BRAND_NAME } sender en bekreftelseskode til ${ phoneNumber }. Standard meldingstakster kan gjelde."
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME }s krypteringsteknologi betyr at ingen kan få tilgang til ditt passord - ikke engang vi."
       ],
@@ -9073,6 +9123,9 @@
       "${ countriesCount } country enabled": [
         "${ countriesCount } land aktivert",
         "${ countriesCount } land aktivert"
+      ],
+      "${ DataLockedText }, but recoverable with your ${ RecoveryContactsLink }:": [
+        "${ DataLockedText }, men kan gjenopprettes med ${ RecoveryContactsLink }:"
       ],
       "${ discountPercent }% discount": [
         "${ discountPercent }% rabatt"
@@ -9335,6 +9388,9 @@
       "**Sync codes** to all your devices": [
         "**Synkroniser koder** til alle enhetene dine"
       ],
+      "**This will disable 2-factor authentication.**": [
+        "**Dette vil deaktivere 2-faktor-autentisering.**"
+      ],
       "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
         "**Dette vil deaktivere ende-til-ende-krypterte e-postvideresendinger:** du kan sette dem opp igjen senere."
       ],
@@ -9433,6 +9489,9 @@
       "Add server (${ availableAddedCount } available)": [
         "Legg til tjener (${ availableAddedCount }) tilgjengelig",
         "Legg til tjenere (${ availableAddedCount }) tilgjengelige"
+      ],
+      "Add users by name or email to this group.": [
+        "Legg til brukere etter navn eller e-post i denne gruppen."
       ],
       "Add video conferencing links to calendar invitations": [
         "Legg til videokonferansekoblinger i kalenderinvitasjoner"
@@ -9533,6 +9592,9 @@
       "An email alias works like an email address, but reduces spam and keeps your actual email address and identity hidden.": [
         "Et e-postalias fungerer som en e-postadresse, men reduserer søppelpost og holder den faktiske e-postadressen og identiteten din skjult."
       ],
+      "An email with a verification code was just sent to ${ emailAddress }. If you can’t find the message in your inbox, please check your spam folder.": [
+        "En e-post med en bekreftelseskode ble nettopp sendt til ${ emailAddress }. Hvis du ikke finner meldingen i innboksen, kan du sjekke søppelpostmappen."
+      ],
       "An error occurred while communicating with **${ applicationName }**": [
         "Det oppstod en feil under kommunikasjon med **${ applicationName }**"
       ],
@@ -9544,6 +9606,9 @@
       ],
       "An import is paused because your storage is almost full.": [
         "En import er satt på pause fordi lagringsplassen din nesten er full."
+      ],
+      "An SMS with a verification code was just sent to ${ phoneNumber }.": [
+        "En SMS med en bekreftelseskode ble nettopp sendt til ${ phoneNumber }."
       ],
       "and": [
         "og"
@@ -9616,6 +9681,9 @@
       ],
       "Are you sure you want to sort your labels alphabetically?": [
         "Er du sikker på at du vil sortere etikettene dine alfabetisk?"
+      ],
+      "Ask them to sign in to their ${ ACCOUNT_APP_NAME } in the browser, and go to **Settings → All settings → Recovery → Emergency access→ People who trust me.**": [
+        "Be dem om å logge på ${ ACCOUNT_APP_NAME }-kontoen i nettleseren, og gå til **Innstillinger → Alle innstillinger → Gjenoppretting → Nødtilgang → Personer som stoler på meg.**"
       ],
       "Ask your organization admin to setup Gateways.": [
         "Be organisasjonsadministratoren om å konfigurere gateway-servere."
@@ -9695,6 +9763,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Før du ber om en ny verifiseringskode, sjekk søppelpostmappen din og sjekk at ${ strong } er riktig adresse."
       ],
+      "Before sending a new verification code, check your spam folder for ${ EmailOrPhoneNumber }.": [
+        "Før du sender en ny bekreftelseskode, sjekk søppelpostmappen for ${ EmailOrPhoneNumber }"
+      ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
         "Før du kan motta e-postmeldinger for de egendefinerte domeneadressene dine på ${ MAIL_APP_NAME }, må du legge til følgende to MX-poster i DNS-konsollen (som du finner på plattformen der du kjøpte det egendefinerte domenet). Du kan finne et eksempel og noen nyttige tips ${ kbLink }."
       ],
@@ -9727,6 +9798,15 @@
       ],
       "By sharing the full event details of this calendar, you accept to grant ${ BRAND_NAME } access to this calendar's encrypted information.": [
         "Ved å dele alle hendelsesdetaljene i denne kalenderen, godtar du å gi ${ BRAND_NAME } tilgang til denne kalenderens krypterte informasjon."
+      ],
+      "Can you access your active session?": [
+        "Har du tilgang til den aktive økten din?"
+      ],
+      "Can you access your active web session in another browser?": [
+        "Kan du få tilgang til den aktive nettøkten din i en annen nettleser?"
+      ],
+      "Can you reach out to your contact?": [
+        "Kan du kontakte kontakten din?"
       ],
       "Cancel": [
         "Avbryt"
@@ -9799,6 +9879,9 @@
       ],
       "Connection data will be available in around 1 hour.": [
         "Tilkoblingsdata vil være tilgjengelig om ca. 1 time."
+      ],
+      "Contact our Customer Support team to disable two-factor authentication for your account, or recover your account another way.": [
+        "Kontakt kundestøtteteamet vårt for å deaktivere tofaktorautentisering for kontoen din, eller gjenopprette kontoen din på en annen måte."
       ],
       "Continue": [
         "Fortsett"
@@ -9951,6 +10034,9 @@
         "Sletter ${ deletedServerCount } gateway-tjener",
         "Sletter ${ deletedServerCount } gateway-tjenere"
       ],
+      "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
+        "Avhengig av innstillingene dine kan de få tilgang umiddelbart, eller etter en angitt **ventetid**."
+      ],
       "Did you know?": [
         "Visste du at?"
       ],
@@ -10051,6 +10137,9 @@
       "Drop to import": [
         "Slipp for å importere"
       ],
+      "Due to end-to-end encryption, you can reset your password, but ${ DataLockedText } until you use a ${ DataRecoveryOptionsLink }:": [
+        "På grunn av ende-til-ende-kryptering kan du tilbakestille passordet ditt, men ${ DataLockedText } helt til du bruker en ${ DataRecoveryOptionsLink }:"
+      ],
       "Each code can only be used once": [
         "Hver kode kan bare brukes én gang"
       ],
@@ -10150,11 +10239,17 @@
       "Enter a password to finalize your ${ BRAND_NAME } Account and start using ${ VPN_APP_NAME } across all your devices!": [
         "Skriv inn et passord for å fullføre ${ BRAND_NAME }-kontoen din, og begynn å bruke ${ VPN_APP_NAME } på alle enhetene dine."
       ],
+      "Enter code": [
+        "Skriv inn koden"
+      ],
       "Enter key manually instead": [
         "Skriv inn nøkkel manuelt i stedet"
       ],
       "Enter new password for user ${ userName }.": [
         "Angi nytt passord for bruker ${ userName }."
+      ],
+      "Enter the 12-word recovery phrase associated with your account.": [
+        "Skriv inn gjenopprettingsfrasen på 12 ord som er knyttet til kontoen din."
       ],
       "Enter the code from your authenticator app": [
         "Skriv inn koden fra autentiseringsappen"
@@ -10300,6 +10395,9 @@
       "Friends and family": [
         "Venner og familie"
       ],
+      "From there, they can request emergency access to your account by clicking **Request access.**": [
+        "Derfra kan de be om nødtilgang til kontoen din ved å klikke på **Be om tilgang**."
+      ],
       "Gateway couldn't be deleted. Please try again": [
         "Gatewayen kunne ikke slettes. Prøv igjen"
       ],
@@ -10320,6 +10418,9 @@
       ],
       "Get access by creating a ${ BRAND_NAME } account and accepting the invitation.": [
         "Få tilgang ved å opprette en ${ BRAND_NAME }-konto og akseptere invitasjonen."
+      ],
+      "Get in touch with your emergency contacts, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed**.": [
+        "Ta kontakt med nødkontaktene dine for å se om de kan hjelpe. Etter at de har bedt om nødtilgang til kontoen din, vil de kunne endre passordet ditt for deg **etter at ventetiden for tilgang er over**."
       ],
       "Get it on Google Play": [
         "Hent den på Google Play"
@@ -10381,6 +10482,9 @@
       "How to perform a signed-in reset": [
         "Slik utfører du en tilbakestilling mens du er pålogget"
       ],
+      "How your emergency contact can change your password for you:": [
+        "Slik kan nødkontakten endre passordet ditt for deg:"
+      ],
       "IBAN: ${ formattedIBAN }": [
         "IBAN: ${ formattedIBAN }"
       ],
@@ -10407,6 +10511,9 @@
       ],
       "If keyboard shortcuts are enabled, you can use the following keys for quick actions or to jump to different views. ${ metaKey } + K is always enabled.": [
         "Hvis tastatursnarveier er aktivert, kan du bruke følgende taster for hurtighandlinger eller for å hoppe til forskjellige visninger. ${ metaKey } + K er alltid aktivert."
+      ],
+      "If possible, when signing in, use a device or a browser where you’ve signed in before.": [
+        "Hvis mulig, bruk en enhet eller en nettleser der du har logget på før når du logger på."
       ],
       "If the email you entered was used to reserve a child's email address, we'll resend the activation voucher.": [
         "Hvis e-posten du anga ble brukt til å reservere en e-postadresse for et barn, sender vi aktiveringskupongen på nytt."
@@ -10444,8 +10551,14 @@
       "If you have a gift code, enter it below to apply your discount.": [
         "Hvis du har en gavekode, skriv den inn nedenfor for å legge til rabatten din."
       ],
+      "If you have emergency contacts, get in touch with them, to see if they can help. After requesting emergency access to your account, they will be able to change your password for you **after the wait time for access has passed.**": [
+        "Hvis du har nødkontakter, ta kontakt med dem for å se om de kan hjelpe. Etter at de har bedt om nødtilgang til kontoen din, vil de kunne endre passordet ditt for deg **etter at ventetiden for tilgang er over.**"
+      ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Hvis du mister den tofaktoraktiverte enheten din, kan disse kodene brukes i stedet for den 6-sifrede tofaktorautentiseringskoden for å logge på kontoen din. Hver kode kan bare brukes én gang."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Hvis du mistet tilgangen til autentiseringsappen din, kan du bruke én av de 16 sikkerhetskopi-gjenopprettingskodene du fikk da du konfigurerte tofaktorautentisering. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Hvis du fortsetter med nedgraderingen, vil du miste tilgang til de betalte funksjonene til ${ MAIL_APP_NAME } og ${ VPN_APP_NAME }."
@@ -10556,6 +10669,9 @@
       ],
       "Internet connection restored.": [
         "Internettilkobling gjenopprettet."
+      ],
+      "Invalid code. ${ RequestNewCodeLink } and try again.": [
+        "Ugyldig kode. ${ RequestNewCodeLink } og prøv igjen."
       ],
       "Invitation link expired": [
         "Invitasjonskoblingen er utløpt"
@@ -10864,11 +10980,17 @@
       "No folder selected": [
         "Ingen mappe valgt"
       ],
+      "No forwarding history.": [
+        "Ingen videresendingshistorikk."
+      ],
       "No gateways": [
         "Ingen gateway-tjenere"
       ],
       "No Gateways yet": [
         "Ingen gateway-tjenere enda"
+      ],
+      "No import history.": [
+        "Ingen importhistorikk."
       ],
       "No label selected": [
         "Ingen etikett valgt"
@@ -10915,6 +11037,9 @@
       "On Ubuntu?": [
         "På Ubuntu?"
       ],
+      "Once access to your account has been granted, they can access your **Recovery** settings and **change your ${ ACCOUNT_APP_NAME } password** for you.": [
+        "Når tilgang til kontoen din er gitt, kan de få tilgang til **gjenopprettingsinnstillingene** dine og **endre ${ ACCOUNT_APP_NAME }-passordet** for deg."
+      ],
       "Once you reset your password:": [
         "Når du har tilbakestilt passordet:"
       ],
@@ -10932,6 +11057,9 @@
       ],
       "Open the guide for recommended actions and helpful links.": [
         "Åpne veiledningen for anbefalte handlinger og nyttige koblinger."
+      ],
+      "Open your active session in the browser, and go to **Settings → All settings → Recovery → Password reset settings.**": [
+        "Åpne den aktive økten i nettleseren, og gå til **Innstillinger → Alle innstillinger → Gjenoppretting → Innstillinger for tilbakestilling av passord.**"
       ],
       "Open your Safari settings for the extension and verify site permissions are enabled for ${ BRAND_NAME } domains": [
         "Åpne Safari-innstillingene for utvidelsen og kontroller at nettstedstillatelser er aktivert for ${ BRAND_NAME }-domener"
@@ -11285,6 +11413,9 @@
       "Securing your account": [
         "Sikrer kontoen din"
       ],
+      "Select a group to view its members and settings.": [
+        "Velg en gruppe for å se medlemmene og innstillingene."
+      ],
       "Select one or multiple user affiliations": [
         "Velg én eller flere brukertilknytninger"
       ],
@@ -11417,6 +11548,9 @@
       ],
       "Something went wrong. Please try again or contact customer support.": [
         "Noe gikk galt. Prøv igjen eller kontakt kundestøtte."
+      ],
+      "Something went wrong. Please try again.": [
+        "Noe gikk galt. Prøv på nytt."
       ],
       "Specify the domain which is allowed to authenticate with SAML SSO.": [
         "Spesifiser domenet som har tillatelse til å autentisere med SAML SSO."
@@ -11603,8 +11737,8 @@
       "The name will be visible to your users while they are signed in.": [
         "Navnet vil være synlig for brukerne dine mens de er innlogget."
       ],
-      "The referral credit can be awarded up to 2 months after your friend's trial ended, and if your friend subscribed to a plan.": [
-        "Vervekreditten kan tildeles opptil 2 måneder etter at vennens prøveperiode er avsluttet, og hvis vennen din abonnerte på en plan."
+      "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
+        "Vervekreditten kan kun tildeles opptil 2 måneder etter at vennens prøveperiode er avsluttet, hvis vennen din abonnerte på en plan."
       ],
       "The securest way to browse, stream, and be online.": [
         "Den tryggeste måten å surfe, strømme og være på nettet på."
@@ -11680,6 +11814,9 @@
       ],
       "This message won't reach the support team, if you have an issue with our service or need further action from our side ${ supportLink }.": [
         "Denne meldingen kommer ikke til brukerstøtteteamet, hvis du har et problem med tjenesten vår eller trenger ytterligere tiltak fra vår side ${ supportLink }."
+      ],
+      "This password is used to login to your ${ BRAND_NAME } account": [
+        "Dette passordet brukes til å logge inn på ${ BRAND_NAME }-kontoen din"
       ],
       "This service is not available to users signing in with single sign-on.": [
         "Denne tjenesten er ikke tilgjengelig for brukere som logger på med enkel pålogging."
@@ -11816,6 +11953,9 @@
       "To proceed, we must verify the request.": [
         "For å fortsette, må vi verifisere forespørselen."
       ],
+      "To regain access to your account and data, enter the 12-word recovery phrase associated with your account.": [
+        "For å få tilbake tilgang til kontoen og dataene dine, skriv inn gjenopprettingsfrasen på 12 ord som er knyttet til kontoen."
+      ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "For å sikre internettilkoblingen, last ned og installer ${ VPN_APP_NAME }-applikasjonen for din enhet og koble til en tjener."
       ],
@@ -11855,6 +11995,9 @@
       "Try ${ productName } totally risk free - if for any reason you change your mind, you'll receive a full refund. No questions asked.": [
         "Prøv ${ productName } helt risikofritt - hvis du av en eller annen grunn ombestemmer deg, vil du motta full refusjon. Ingen spørsmål."
       ],
+      "Try recovering your account from a **device or browser where you have signed in before**, as it may be possible from there:": [
+        "Prøv å gjenopprette kontoen din fra en **enhet eller nettleser der du har logget på før**, da det kan være mulig derfra:"
+      ],
       "Two-factor authentication": [
         "Tofaktorautentisering"
       ],
@@ -11869,6 +12012,9 @@
       ],
       "Unable to verify recovery file signature. Please contact support.": [
         "Ikke i stand til å verifisere gjenopprettingsfilsignatur. Kontakt kundestøtte."
+      ],
+      "Unfortunately there is no recovery method available for this account.": [
+        "Dessverre finnes det ingen gjenopprettingsmetode tilgjengelig for denne kontoen."
       ],
       "Unfortunately there is no recovery method saved for this account.": [
         "Dessverre er det ingen gjenopprettingsmetode lagret for denne kontoen."
@@ -12106,6 +12252,9 @@
       ],
       "We'll send a new verification code to ${ strong }": [
         "Vi vil sende en ny verifiseringskode til ${ strong }"
+      ],
+      "Web sessions detected:": [
+        "Nettøkter oppdaget:"
       ],
       "Web URL": [
         "Nettadresse"
@@ -12416,6 +12565,9 @@
       "You will not be asked for a one-time code or a security key.": [
         "Du vil ikke bli bedt om en engangskode eller en sikkerhetsnøkkel."
       ],
+      "You will regain complete or partial access to your encrypted data.": [
+        "Du vil få tilbake full eller delvis tilgang til dine krypterte data."
+      ],
       "You will soon be redirected to PayPal to verify your payment.": [
         "Du vil snart bli omdirigert til PayPal for å bekrefte betalingen."
       ],
@@ -12489,6 +12641,12 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "E-posten din vil kun bli brukt til denne engangsbekreftelsen."
+      ],
+      "Your encrypted data will be locked": [
+        "Dine krypterte data vil bli låst"
+      ],
+      "your encrypted data will be locked": [
+        "dine krypterte data vil bli låst"
       ],
       "Your files will be encrypted and then saved": [
         "Filene dine vil bli kryptert og deretter lagret"
@@ -13747,6 +13905,12 @@
       "End weekday": [
         "Slutt ukedag"
       ],
+      "Enter code": [
+        "Skriv inn koden"
+      ],
+      "Enter name or email address": [
+        "Skrin inn navn eller e-postadresse"
+      ],
       "Enter password": [
         "Skriv inn passord"
       ],
@@ -13902,6 +14066,9 @@
       ],
       "Interval": [
         "Intervall"
+      ],
+      "Invite people": [
+        "Inviter folk"
       ],
       "Invite via email": [
         "Inviter via e-post"
@@ -14819,11 +14986,20 @@
       "Common sign up issues": [
         "Vanlige registreringsutfordringer"
       ],
+      "contacts’ assistance": [
+        "kontakthjelp"
+      ],
       "Create account": [
         "Opprett konto"
       ],
       "Create an alias": [
         "Opprett et alias"
+      ],
+      "data recovery option": [
+        "alternativ for datagjenoppretting"
+      ],
+      "Details": [
+        "Detaljer"
       ],
       "Don't have access to your 2FA?": [
         "Har du ikke tilgang til din 2FA?"
@@ -15561,6 +15737,38 @@
       ],
       "Sign in to your ${ BRAND_NAME } Account to access all encrypted ${ BRAND_NAME } services such as ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, and more. Don't have an account? Create one for FREE.": [
         "Logg på din ${ BRAND_NAME }-konto for å få tilgang til alle krypterte ${ BRAND_NAME }-tjenester slik som ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } og mer. Har du ikke en konto? Opprett en GRATIS."
+      ]
+    },
+    "Missing feature": {
+      "Check out the latest product updates": [
+        "Sjekk de siste produktoppdateringene"
+      ],
+      "Continue cancelling": [
+        "Fortsett avbestillingen"
+      ],
+      "Explore the latest news": [
+        "Utforsk de siste nyhetene"
+      ],
+      "Keep current plan": [
+        "Behold gjeldende plan"
+      ],
+      "Make your voice heard": [
+        "Få din stemme hørt"
+      ],
+      "Request a feature": [
+        "Foreslå ny funksjon"
+      ],
+      "Request a feature or vote on ideas from other users in our feedback forum.": [
+        "Be om en funksjon eller stem på ideer fra andre brukere i tilbakemeldingsforumet vårt."
+      ],
+      "See how ${ BRAND_NAME } apps are evolving with your feedback.": [
+        "Se hvordan ${ BRAND_NAME }-appene utvikler seg med tilbakemeldingene dine."
+      ],
+      "Submit your ideas": [
+        "Send inn ideene dine"
+      ],
+      "Your feedback helps us improve. Whether you've spotted a bug, want a new feature, or think something could work differently, we'd love to hear from you.": [
+        "Tilbakemeldingen din hjelper oss med å forbedre oss. Enten du har oppdaget en feil, ønsker en ny funksjon eller tror noe kunne fungert annerledes, vil vi gjerne høre fra deg."
       ]
     },
     "Modal title": {
@@ -18327,6 +18535,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "I løpet av denne tiden vil du ikke kunne endre eller kansellere abonnementet ditt. Vent til betalingen er fullført før du prøver å gjøre noen endringer. Takk for tålmodigheten."
       ],
+      "Edit billing address": [
+        "Rediger faktureringsadresse"
+      ],
       "Got it": [
         "Skjønner"
       ],
@@ -20698,6 +20909,9 @@
       "Bundle": [
         "Pakke"
       ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "Velg en sikker ${ MAIL_APP_NAME }-adresse for å komme i gang"
+      ],
       "Collaborative document editing": [
         "Samarbeidende dokumentredigering"
       ],
@@ -20761,6 +20975,9 @@
       "Gifted by **${ referrerName }**": [
         "Gave fra **${ referrerName }**"
       ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "Hold samtalene dine private med ${ MAIL_APP_NAME }"
+      ],
       "Manage user access": [
         "Administrer brukertilgang"
       ],
@@ -20812,6 +21029,9 @@
       "Secure ${ VPN_CONNECTIONS } device at a time": [
         "Sikre ${ VPN_CONNECTIONS } enhet om gangen",
         "Sikre ${ VPN_CONNECTIONS } enheter om gangen"
+      ],
+      "Secure calendar": [
+        "Sikker kalender"
       ],
       "Secure file sharing": [
         "Sikker fildeling"
@@ -20920,6 +21140,9 @@
       ],
       "use your own email.": [
         "bruk din egen e-post."
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "VPN med servere i ${ vpnServersCountData.free.countries } land"
       ],
       "VPN with servers in ${ vpnServersCountData.free.countries } country": [
         "VPN med tjenere i ${ vpnServersCountData.free.countries } land",
@@ -22337,9 +22560,6 @@
       "Billing details updated": [
         "Faktureringsinformasjon oppdatert"
       ],
-      "Billing information updated": [
-        "Faktureringsinformasjon er oppdatert"
-      ],
       "Calendar added. It might take a few minutes to sync.": [
         "Kalender lagt til. Det kan ta noen minutter å synkronisere."
       ],
@@ -23027,6 +23247,9 @@
       "An address for each role": [
         "En adresse for hver rolle"
       ],
+      "An error occurred": [
+        "En feil oppstod"
+      ],
       "Annual": [
         "Årlig"
       ],
@@ -23063,6 +23286,9 @@
       "Are you sure?": [
         "Er du sikker?"
       ],
+      "Ask your emergency contacts for help": [
+        "Be nødkontaktene dine om hjelp"
+      ],
       "Auto-deletion is active": [
         "Auto-sletting er aktiv"
       ],
@@ -23089,6 +23315,9 @@
       ],
       "Browser extensions": [
         "Nettleserutvidelser"
+      ],
+      "Can you access your session in the browser?": [
+        "Har du tilgang til økten din i nettleseren?"
       ],
       "Can you reach out to your emergency contacts?": [
         "Kan du kontakte nødkontaktene dine?"
@@ -23153,6 +23382,9 @@
       "Close": [
         "Lukk"
       ],
+      "Code expired": [
+        "Koden er utløpt"
+      ],
       "Collaborate on documents": [
         "Samarbeid på dokumenter"
       ],
@@ -23210,6 +23442,9 @@
       "Continue with partial import?": [
         "Fortsette med delvis import?"
       ],
+      "Couldn't sign in": [
+        "Kunne ikke logge på"
+      ],
       "Couldn’t create accounts": [
         "Kunne ikke opprette kontoer"
       ],
@@ -23231,6 +23466,9 @@
       ],
       "Create Gateway": [
         "Opprett gateway"
+      ],
+      "Create group": [
+        "Opprett gruppe"
       ],
       "Create multiple user accounts": [
         "Opprett flere brukerkontoer"
@@ -24015,6 +24253,9 @@
       "Reconnect your account": [
         "Koble til kontoen din på nytt"
       ],
+      "Recover account": [
+        "Gjenopprett konto"
+      ],
       "Recover data": [
         "Gjenopprett data"
       ],
@@ -24065,6 +24306,9 @@
       ],
       "Request new code": [
         "Be om en ny kode"
+      ],
+      "Request new code?": [
+        "Be om en ny kode?"
       ],
       "Request sent": [
         "Forespørsel sendt"
@@ -24337,11 +24581,17 @@
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "Prøv ${ AUTHENTICATOR_APP_NAME }"
       ],
+      "Try changing your password in your active web session": [
+        "Prøv å endre passordet ditt i den aktive nettøkten"
+      ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Slå på ${ DARK_WEB_MONITORING_NAME }"
       ],
       "Two-factor authentication": [
         "Tofaktorautentisering"
+      ],
+      "Two-factor authentication disabled": [
+        "Tofaktorautentisering deaktivert"
       ],
       "Two-factor authentication enforcement": [
         "Håndhevelse av tofaktorautentisering"
@@ -24391,6 +24641,9 @@
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Bruk ${ VPN_SHORT_APP_NAME } for personvern"
       ],
+      "Use backup recovery code": [
+        "Bruk sikkerhetskopi av gjenopprettingskode"
+      ],
       "User": [
         "Bruker"
       ],
@@ -24411,6 +24664,9 @@
       ],
       "Verification failed": [
         "Bekreftelse mislyktes"
+      ],
+      "Verify it’s you": [
+        "Bekreft at det er deg"
       ],
       "Verifying your card...": [
         "Verifiserer kortet ditt..."
@@ -25264,6 +25520,9 @@
       ],
       "Remember to share the user's sign in details with them.": [
         "Husk å dele brukerens påloggingsinformasjon med dem."
+      ],
+      "Roles and permissions": [
+        "Roller og rettigheter"
       ],
       "Save": [
         "Lagre"
