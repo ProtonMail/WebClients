@@ -1256,6 +1256,9 @@
       ],
       "Reconnect to Gmail": [
         "Se reconnecter à Gmail"
+      ],
+      "Go back to album “${ ellipsedAlbumName }“": [
+        "Retourner à l’album « ${ ellipsedAlbumName } »"
       ]
     },
     "Action: Docs": {
@@ -9742,6 +9745,53 @@
       "${ errors.length } item failed to be deleted": [
         "${ errors.length } élément n'a pas pu être supprimé",
         "${ errors.length } éléments n'ont pas pu être supprimés"
+      ],
+      "\"${ ellipsedName }\" copied": [
+        "« ${ ellipsedName } » a été copié"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "« ${ ellipsedName } » a été créé."
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "« ${ ellipsedName } » a été supprimé"
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "« ${ ellipsedName } » a été définitivement supprimé de la Corbeille"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "« ${ ellipsedName } » n'a pas pu être créé."
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "La suppression de « ${ ellipsedName } » n'a pas abouti."
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "« ${ ellipsedName } » n'a pu être définitivement supprimé de la Corbeille."
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "« ${ ellipsedName } » n'a pas pu être déplacé."
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "« ${ ellipsedName } » n'a pas pu être restauré depuis la Corbeille."
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "« ${ ellipsedName } » a été déplacé"
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "« ${ ellipsedName } » a été restauré depuis la Corbeille."
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "« ${ ellipsedName } » a été déplacé"
+      ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems } élément a été copié",
+        "${ numberOfItems } éléments ont été copiés"
+      ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } élément a été déplacé",
+        "${ numberOfItems } éléments ont été déplacés"
+      ],
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "La copie de « ${ ellipsedName } » a été déplacée dans la Corbeille"
       ]
     },
     "Notification for duplicate filenames in the current upload": {

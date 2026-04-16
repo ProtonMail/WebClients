@@ -1253,6 +1253,9 @@
       ],
       "Refetch index": [
         "Opnieuw indexeren"
+      ],
+      "Go back to album “${ ellipsedAlbumName }“": [
+        "Ga terug naar album “${ ellipsedAlbumName }“"
       ]
     },
     "Action: Docs": {
@@ -3994,7 +3997,7 @@
         "${ failureItems.length } items konden niet verplaatst worden"
       ],
       "Failed to load subscription data. Please try again later.": [
-        "Kon de gegevens van je abonnement niet laden, probeer het later opnieuw."
+        "Kon de gegevens van uw abonnement niet laden, probeer het later opnieuw."
       ]
     },
     "error": {
@@ -7033,6 +7036,18 @@
       ],
       "Invitation confirmed": [
         "Uitnodiging bevestigd"
+      ],
+      "Move ${ dragCount } item": [
+        "Verplaats ${ dragCount } item",
+        "Verplaats ${ dragCount } items"
+      ],
+      "Move ${ fileCount } file": [
+        "Verplaats ${ fileCount } bestand",
+        "Verplaats ${ fileCount } bestanden"
+      ],
+      "Move ${ folderCount } folder": [
+        "Verplaats ${ folderCount } map",
+        "Verplaats ${ folderCount } mappen"
       ]
     },
     "info": {
@@ -9655,6 +9670,53 @@
       "${ errors.length } item failed to be deleted": [
         "${ errors.length } item kon niet worden verwijderd",
         "${ errors.length } items konden niet verwijderd worden"
+      ],
+      "\"${ ellipsedName }\" copied": [
+        "\"${ ellipsedName }\" gekopieerd"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "\"${ ellipsedName }\" succesvol aangemaakt"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "\"${ ellipsedName }\" verwijderd"
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "\"${ ellipsedName }\" permanent verwijderd uit de prullenbak"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "\"${ ellipsedName }\" kon niet aangemaakt worden"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "\"${ ellipsedName }\" kon niet verwijderd worden"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "\"${ ellipsedName }\" kon niet permanent verwijderd worden uit prullenbak"
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "\"${ ellipsedName }\" kon niet verplaatst worden"
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "\"${ ellipsedName }\" kon niet hersteld worden uit prullenbak"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" verplaatst"
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "\"${ ellipsedName }\" hersteld uit de prullenbak"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "\"${ ellipsedName }\" succesvol verplaatst"
+      ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems } item gekopieerd",
+        "${ numberOfItems } items gekopieerd"
+      ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } item verplaatst",
+        "${ numberOfItems } items verplaatst"
+      ],
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "Kopie van \"${ ellipsedName }\" verplaatst naar de prullenbak"
       ]
     },
     "Notification for duplicate filenames in the current upload": {

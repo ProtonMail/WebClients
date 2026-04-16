@@ -1268,6 +1268,9 @@
       ],
       "Reconnect to Gmail": [
         "Перападключыцца да Gmail"
+      ],
+      "Go back to album “${ ellipsedAlbumName }“": [
+        "Вярнуцца ў альбом “${ ellipsedAlbumName }“"
       ]
     },
     "Action: Docs": {
@@ -10107,6 +10110,57 @@
         "Не ўдалося выдаліць ${ errors.length } элементы",
         "Не ўдалося выдаліць ${ errors.length } элементаў",
         "Не ўдалося выдаліць ${ errors.length } элементаў"
+      ],
+      "\"${ ellipsedName }\" copied": [
+        "\"${ ellipsedName }\" скапіяваны"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "\"${ ellipsedName }\" паспяхова створаны"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "\"${ ellipsedName }\" выдалены"
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "\"${ ellipsedName }\" незваротна выдалены са сметніцы"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "Не ўдалося стварыць \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "Не ўдалося выдаліць \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "Не ўдалося незваротна выдаліць са сметніцы \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "Не ўдалося перамясціць \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "Не ўдалося аднавіць са сметніцы \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" перамешчаны"
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "\"${ ellipsedName }\" адноўлены са сметніцы"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "\"${ ellipsedName }\" паспяхова перамешчаны"
+      ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems } элемент скапіяваны",
+        "${ numberOfItems } элементы скапіяваны",
+        "${ numberOfItems } элементаў скапіяваны",
+        "${ numberOfItems } элементаў скапіяваны"
+      ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } элемент перамешчаны",
+        "${ numberOfItems } элементы перамешчаны",
+        "${ numberOfItems } элементаў перамешчаны",
+        "${ numberOfItems } элементаў перамешчаны"
+      ],
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "Копія \"${ ellipsedName }\" перамешчана ў сметніцу"
       ]
     },
     "Notification for duplicate filenames in the current upload": {

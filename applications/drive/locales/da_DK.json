@@ -1256,6 +1256,9 @@
       ],
       "Reconnect to Gmail": [
         "Genopret forbindelse til Gmail"
+      ],
+      "Go back to album “${ ellipsedAlbumName }“": [
+        "Gå tilbage til albummet “${ ellipsedAlbumName }“"
       ]
     },
     "Action: Docs": {
@@ -9689,6 +9692,53 @@
       "${ errors.length } item failed to be deleted": [
         "${ errors.length } element kunne ikke slettes",
         "${ errors.length } elementer kunne ikke slettes"
+      ],
+      "\"${ ellipsedName }\" copied": [
+        "\"${ ellipsedName }\" kopieret"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "\"${ ellipsedName }\" oprettet"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "\"${ ellipsedName }\" slettet"
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "\"${ ellipsedName }\" slettet permanent fra papirkurven"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "\"${ ellipsedName }\" kunne ikke oprettes"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "\"${ ellipsedName }\" kunne ikke slettes"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "\"${ ellipsedName }\" kunne ikke slettes permanent fra papirkurven"
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "\"${ ellipsedName }\" kunne ikke flyttes"
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "\"${ ellipsedName }\" kunne ikke gendannes fra papirkurv"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" flyttet"
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "\"${ ellipsedName }\" gendannet fra papirkurv"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "\"${ ellipsedName }\" blev flyttet"
+      ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems } element kopieret",
+        "${ numberOfItems } elementer kopieret"
+      ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } element flyttet",
+        "${ numberOfItems } elementer flyttet"
+      ],
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "Kopi af \"${ ellipsedName }\" flyttet til papirkurv"
       ]
     },
     "Notification for duplicate filenames in the current upload": {

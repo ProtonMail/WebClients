@@ -1256,6 +1256,9 @@
       ],
       "Reconnect to Gmail": [
         "Gmail bağlantısını yeniden kur"
+      ],
+      "Go back to album “${ ellipsedAlbumName }“": [
+        "“${ ellipsedAlbumName }” albümüne geri dön"
       ]
     },
     "Action: Docs": {
@@ -9702,6 +9705,53 @@
       "${ errors.length } item failed to be deleted": [
         "${ errors.length } öğe silinemedi",
         "${ errors.length } öğe silinemedi"
+      ],
+      "\"${ ellipsedName }\" copied": [
+        "\"${ ellipsedName }\" kopyalandı"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "\"${ ellipsedName }\" başarıyla oluşturuldu"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "\"${ ellipsedName }\" silindi"
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "\"${ ellipsedName }\" çöp kutusundan kalıcı olarak silindi"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "\"${ ellipsedName }\" oluşturulamadı"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "\"${ ellipsedName }\" silinemedi"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "\"${ ellipsedName }\" çöp kutusundan kalıcı olarak silinemedi"
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "\"${ ellipsedName }\" taşınamadı"
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "\"${ ellipsedName }\" çöp kutusundan geri yüklenemedi"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" taşındı"
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "\"${ ellipsedName }\" çöp kutusundan geri yüklendi"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "\"${ ellipsedName }\" başarıyla taşındı"
+      ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems } öğe kopyalandı",
+        "${ numberOfItems } öğe kopyalandı"
+      ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } öğe taşındı",
+        "${ numberOfItems } öğe taşındı"
+      ],
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "\"${ ellipsedName }\" dosyasının bir kopyası çöp kutusuna taşındı"
       ]
     },
     "Notification for duplicate filenames in the current upload": {

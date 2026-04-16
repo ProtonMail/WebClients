@@ -1256,6 +1256,9 @@
       ],
       "Reconnect to Gmail": [
         "Volver a conectar a Gmail"
+      ],
+      "Go back to album “${ ellipsedAlbumName }“": [
+        "Regresar al álbum «${ ellipsedAlbumName }»"
       ]
     },
     "Action: Docs": {
@@ -9762,6 +9765,53 @@
       "${ errors.length } item failed to be deleted": [
         "Error al eliminar ${ errors.length } elemento",
         "Error al eliminar ${ errors.length } elementos"
+      ],
+      "\"${ ellipsedName }\" copied": [
+        "«${ ellipsedName }» copiado"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "«${ ellipsedName }» creado con éxito"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "«${ ellipsedName }» eliminado"
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "«${ ellipsedName }» eliminado permanentemente de la papelera"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "Error al crear «${ ellipsedName }»"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "Error al eliminar «${ ellipsedName }»"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "Error al eliminar «${ ellipsedName }» permanentemente de la papelera"
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "Error al mover «${ ellipsedName }»"
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "Error al restaurar «${ ellipsedName }» de la papelera"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "«${ ellipsedName }» movido"
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "«${ ellipsedName }» restaurado de la papelera"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "«${ ellipsedName }» movido con éxito"
+      ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems } elemento copiado",
+        "${ numberOfItems } elementos copiados"
+      ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } elemento movido",
+        "${ numberOfItems } elementos movidos"
+      ],
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "Copia de «${ ellipsedName }» movida a la papelera"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
