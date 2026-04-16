@@ -11,7 +11,7 @@ use native_message::NativeMessage;
 use native_messaging::event_loop;
 use native_messaging::host::{NmError, Sender};
 use std::fs::{create_dir_all, remove_file};
-use std::path::PathBuf;
+use std::path::{Path, PathBuf};
 use std::sync::Arc;
 use tokio::sync::Mutex;
 use unlock::{intercept_unlock, Interception};
@@ -34,7 +34,7 @@ fn get_log_path() -> Result<PathBuf> {
     get_local_dir().map(|path| path.join("proton_pass_nm_host.log"))
 }
 
-fn cleanup_old_logs(log_path: &PathBuf) -> Result<()> {
+fn cleanup_old_logs(log_path: &Path) -> Result<()> {
     let path = PathBuf::from(format!("{}.old", log_path.to_string_lossy()));
     if path.exists() {
         remove_file(&path).map_err(|e| anyhow!(e))?;
