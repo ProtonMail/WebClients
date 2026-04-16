@@ -25,24 +25,28 @@ const OnboardingModal = ({ onClick, ...modalProps }: Props & ModalProps) => {
     const { isDarkLumoTheme } = useLumoTheme();
     const lumoCharacteristics = [
         {
+            key:0,
             title: c('collider_2025: Characteristic Title').t`Your chats are yours alone`,
             characteristic: c('collider_2025: Characteristic')
                 .t`We keep no logs of what you ask, or what ${LUMO_SHORT_APP_NAME} replies. Your chats can’t be seen, shared, or used to profile you. ${LUMO_SHORT_APP_NAME} saves nothing on our servers.`,
             img: isDarkLumoTheme ? firstIconDark : firstIcon,
         },
         {
+            key:1,
             title: c('collider_2025: Characteristic Title').t`Only you have access`,
             characteristic: c('collider_2025: Characteristic')
                 .t`Thanks to zero-access encryption, your saved conversations can only be decoded and read on your device. Neither ${BRAND_NAME} nor anyone else can see them.`,
             img: isDarkLumoTheme ? secondIconDark : secondIcon,
         },
         {
+            key:2,
             title: c('collider_2025: Characteristic Title').t`Tech that you can trust`,
             characteristic: c('collider_2025: Characteristic')
                 .t`${LUMO_SHORT_APP_NAME}’s code is fully open source, so anyone can independently verify that it’s private and secure—and that we never use your data to train the model.`,
             img: isDarkLumoTheme ? thirdIconDark : thirdIcon,
         },
         {
+            key:3,
             title: c('collider_2025: Characteristic Title').t`You’re in control`,
             characteristic: c('collider_2025: Characteristic')
                 .t`Your data isn’t shared with advertisers, governments, or anyone else. ${LUMO_SHORT_APP_NAME} is a European service subject to GDPR, so you can delete your data anytime.`,
@@ -79,7 +83,7 @@ const OnboardingModal = ({ onClick, ...modalProps }: Props & ModalProps) => {
                             .t`How does ${LUMO_SHORT_APP_NAME} keep our conversations confidential?`}</h2>
                         <div className="grid-auto-fill grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
                             {lumoCharacteristics.map((characteristic) => (
-                                <div className="flex-1 flex flex-column gap-2 flex-nowrap">
+                                <div key={characteristic.key} className="flex-1 flex flex-column gap-2 flex-nowrap">
                                     <div className="py-4">
                                         <img className="shrink-0" alt="" src={characteristic.img}></img>
                                     </div>

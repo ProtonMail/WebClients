@@ -3,24 +3,25 @@ import { useCallback, useRef, useState } from 'react';
 import { clsx } from 'clsx';
 
 import { LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
+import { isMobile } from '@proton/shared/lib/helpers/browser';
 
-import { LumoCat } from '../LumoAvatar';
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
 import type { HandleSendMessage } from '../../hooks/useLumoActions';
+import { HeaderWrapper } from '../../layouts/header/HeaderWrapper';
 import { useGhostChat } from '../../providers/GhostChatProvider';
 import { useIsGuest } from '../../providers/IsGuestProvider';
 import { useOnboardingContext } from '../../providers/OnboardingProvider';
 import type { Message } from '../../types';
-import { FilesManagementView } from '../Files';
-import { NewGhostChatButton } from '../Buttons/GhostChatButton/NewGhostChatButton';
-import WhatsNew from '../WhatsNew/WhatsNew';
-import { HeaderWrapper } from '../../layouts/header/HeaderWrapper';
 import LumoNavbarUpsell from '../../upsells/composed/LumoNavbarUpsell';
-import LumoMainText from './MainContainer/LumoMainText';
+import { NewGhostChatButton } from '../Buttons/GhostChatButton/NewGhostChatButton';
+import { ComposerComponent } from '../Composer/ComposerComponent';
+import { FilesManagementView } from '../Files';
+import { LumoCat } from '../LumoAvatar';
 import LumoOnboarding from '../Onboarding/LumoOnboarding';
+import WhatsNew from '../WhatsNew/WhatsNew';
+import LumoMainText from './MainContainer/LumoMainText';
 import { ThemedPromptSuggestion } from './MainContainer/PromptSuggestion';
 import TermsAndConditions from './MainContainer/TermsAndConditions';
-import { ComposerComponent } from '../Composer/ComposerComponent';
 
 import './MainContainer.scss';
 
@@ -35,12 +36,12 @@ const MainContainer = ({
 }) => {
     const { isOnboardingCompleted } = useOnboardingContext();
     const { isSmallScreen } = useIsLumoSmallScreen();
+    const isMobileOrSmallScreen = isMobile() || isSmallScreen;
     const filesContainerRef = useRef<HTMLDivElement>(null);
     const isGuest = useIsGuest();
     const [isEditorFocused, setIsEditorFocused] = useState(false);
     const [isEditorEmpty, setIsEditorEmpty] = useState(true);
     const [promptSuggestion, setPromptSuggestion] = useState<string | undefined>(undefined);
-
     // Files panel states
     const [openPanel, setOpenPanel] = useState<{
         type: 'files' | null;
@@ -138,7 +139,7 @@ const MainContainer = ({
                     />
                 </div>
                 <WhatsNew />
-                {!isSmallScreen && <LumoOnboarding />}
+                {!isMobileOrSmallScreen && <LumoOnboarding />}
             </div>
             {openPanel.type === 'files' && (
                 <FilesManagementView

@@ -13,6 +13,10 @@ import { useFlag } from '@proton/unleash/useFlag';
  * - whatsNew: Show "What's New" feature
  * - earlyAccess: Show early access features
  * - highLoad: Show high load warning
+ * - lumoSurvey: Legacy survey flag (deprecated)
+ * - lumoSurveyFreeUsers: Survey flag for free users
+ * - lumoSurveyPaidUsers: Survey flag for paid users
+ * - lumoSurveyGuestUsers: Survey flag for guest users
  */
 export const useLumoFlags = () => {
     const imageTools = useFlag('LumoImageTools');
@@ -21,9 +25,12 @@ export const useLumoFlags = () => {
     const specialTheme = useFlag('LumoSpecialTheme');
     const deactivateGuestMode = useFlag('LumoDeactivateGuestModeFrontend');
     const whatsNew = useFlag('WhatsNewV1p3');
-    const earlyAccess = useFlag('LumoEarlyAccess');
     const highLoad = useFlag('LumoHighLoad');
     const apiKeyManagement = useFlag('LumoAPIKeyManagement');
+    const lumoSurvey = useFlag('LumoSurvey');
+    const lumoSurveyFreeUsers = useFlag('LumoSurveyFreeUsers');
+    const lumoSurveyPaidUsers = useFlag('LumoSurveyPaidUsers');
+    const lumoSurveyGuestUsers = useFlag('LumoSurveyGuestUsers');
 
     return {
         imageTools,
@@ -32,8 +39,11 @@ export const useLumoFlags = () => {
         specialTheme,
         deactivateGuestMode,
         whatsNew,
-        earlyAccess,
         highLoad,
         apiKeyManagement,
+        lumoSurvey,
+        lumoSurveyFreeUsers,
+        lumoSurveyPaidUsers,
+        lumoSurveyGuestUsers,
     };
 };

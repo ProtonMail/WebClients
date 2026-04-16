@@ -11,16 +11,17 @@ import { useLumoSelector } from '../../redux/hooks';
 import type { ConversationError } from '../../redux/slices/meta/errors';
 import { selectConversationErrors, selectTierErrors } from '../../redux/slices/meta/errors';
 import type { Conversation, Message, RetryStrategy, SiblingInfo } from '../../types';
-import ErrorCard from '../Notifications/ErrorCard';
-import { FilesManagementView } from '../Files';
-import { RetryPanel } from '../RetryPanel';
+import UpsellCard from '../../upsells/components/UpsellCard';
 import { ComposerComponent } from '../Composer/ComposerComponent';
+import { FilesManagementView } from '../Files';
+import ErrorCard from '../Notifications/ErrorCard';
+import { RetryPanel } from '../RetryPanel';
+import { ConversationSurvey } from '../Survey/ConversationSurvey';
 import { ConversationHeader } from './messageChain/ConversationHeader';
 import { MessageChainComponent } from './messageChain/MessageChainComponent';
 import { WebSearchSourcesView } from './messageChain/message/toolCall/WebSearchSourcesView';
 
 import './ConversationComponent.scss';
-import UpsellCard from "../../upsells/components/UpsellCard";
 
 // Floating Retry Panel Component
 interface FloatingRetryPanelProps {
@@ -265,6 +266,7 @@ const ConversationComponent = ({
                         <ErrorCard error={conversationErrors[0]} index={0} onRetry={handleRetryGeneration} />
                     )}
                     {tierErrors.length > 0 && <UpsellCard error={tierErrors[0]} />}
+                    <ConversationSurvey isGenerating={isGenerating} />
                     <div
                         ref={composerContainerRef}
                         className="lumo-chat-item flex flex-column w-full md:w-2/3 mx-auto max-w-custom no-print"
