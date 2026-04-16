@@ -6,7 +6,7 @@ import { Version } from '@proton/shared/lib/helpers/version';
 
 import { Logger } from '../shared/Logger';
 import type { PersistentLatestEventIdProvider } from '../shared/PersistentLatestEventIdProvider';
-import { InvalidSearchModuleState } from '../shared/errors';
+import { InvalidSearchModuleState, listenForWorkerErrors } from '../shared/errors';
 import type { SearchModuleStateUpdateChannel } from '../shared/searchModuleStateUpdateChannel';
 import { createSearchModuleStateUpdateChannel } from '../shared/searchModuleStateUpdateChannel';
 import type { ClientId, SearchModuleState, SearchQuery, SearchResultItem, UserId } from '../shared/types';
@@ -83,6 +83,7 @@ export class SearchModule {
         this.optInManager = new SearchOptInManager(context.userId);
 
         Logger.listenForWorkerLogs();
+        listenForWorkerErrors();
     }
 
     static getOrCreate(context: SearchModuleContext): Promise<SearchModule> {

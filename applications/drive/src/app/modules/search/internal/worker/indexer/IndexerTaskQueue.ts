@@ -135,7 +135,7 @@ export class IndexerTaskQueue {
 
                     // Clean up legacy encrypted-search DB now that initial indexing is done.
                     deleteLegacyEncryptedSearchDb(this.userId).catch((error: unknown) => {
-                        sendErrorReportForSearch(error);
+                        sendErrorReportForSearch('Failed to delete legacy search DB', error);
                     });
 
                     // Wire registry → task queue: registry decides *when*, queue creates the task.
@@ -201,13 +201,13 @@ export class IndexerTaskQueue {
                 return;
             }
 
-            Logger.error(`IndexerTaskQueue: ${task.getUid()} failed`, e);
-
             const permanentErrorKind = classifyPermanentError(e);
             if (permanentErrorKind) {
                 // TODO: monitor in graphana
-                Logger.error(`Search permanent error ${permanentErrorKind}`, e);
-                sendErrorReportForSearch(e);
+                sendErrorReportForSearch(
+                    `IndexerTaskQueue: permanent error (${permanentErrorKind}) in ${task.getUid()}`,
+                    e
+                );
 
                 // Notify user of the search module for handling.
                 this.updateState({
@@ -220,10 +220,13 @@ export class IndexerTaskQueue {
             // TODO: monitor in graphana
             if (task instanceof IndexPopulatorTask) {
                 // TODO: Add a max re-enqueue counter in the task to avoid infinite bootstrap sequences.
-                Logger.warn(`IndexerTaskQueue: transient error on ${task.getUid()}, re-enqueuing`);
+                sendErrorReportForSearch(`IndexerTaskQueue: transient error on ${task.getUid()}, re-enqueuing`, e);
                 this.enqueueOnce(task);
             } else {
-                Logger.warn(`IndexerTaskQueue: transient error on ${task.getUid()}, will retry on next cycle`);
+                sendErrorReportForSearch(
+                    `IndexerTaskQueue: transient error on ${task.getUid()}, will retry on next cycle`,
+                    e
+                );
             }
         }
     }
