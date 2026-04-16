@@ -2,13 +2,13 @@ import { useCallback, useEffect, useMemo, useRef } from 'react';
 
 import { useActiveBreakpoint } from '@proton/components';
 import { generateNodeUid, getDrive } from '@proton/drive';
+import { useSharingModal } from '@proton/drive/modules/sharingModal';
 import { getCanAdmin } from '@proton/shared/lib/drive/permissions';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 
 import type { DriveFolder } from '../../../hooks/drive/useActiveShare';
 import useDriveDragMove from '../../../hooks/drive/useDriveDragMove';
 import useDriveNavigation from '../../../hooks/drive/useNavigate';
-import { useSharingModal } from '../../../modals/SharingModal/SharingModal';
 import type { EncryptedLink, LinkShareUrl, SignatureIssues, useFolderView } from '../../../store';
 import { useThumbnailsDownload } from '../../../store';
 import { useDocumentActions, useDriveDocsFeatureFlag } from '../../../store/_documents';

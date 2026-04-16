@@ -4,13 +4,13 @@ import { Vr } from '@proton/atoms/Vr/Vr';
 import { ContextSeparator } from '@proton/components';
 import type { useConfirmActionModal } from '@proton/components';
 import { MemberRole, getDrivePerNodeType, splitNodeUid } from '@proton/drive';
+import type { useSharingModal } from '@proton/drive/modules/sharingModal';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 import { isPreviewAvailable } from '@proton/shared/lib/helpers/preview';
 
 import { downloadManager } from '../../../managers/download/DownloadManager';
 import type { useDetailsModal } from '../../../modals/DetailsModal';
 import type { useFilesDetailsModal } from '../../../modals/FilesDetailsModal';
-import type { useSharingModal } from '../../../modals/SharingModal/SharingModal';
 import type { useDrivePreviewModal } from '../../../modals/preview';
 import { useOpenInDocs } from '../../../store/_documents';
 import { downloadDocument, openDocsOrSheetsDocument } from '../../../utils/docs/openInDocs';

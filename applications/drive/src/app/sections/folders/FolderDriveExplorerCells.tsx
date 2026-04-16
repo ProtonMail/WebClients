@@ -2,10 +2,10 @@ import { useShallow } from 'zustand/react/shallow';
 
 import type { Breakpoints } from '@proton/components';
 import { MemberRole, getDrive } from '@proton/drive';
+import { useSharingModal } from '@proton/drive/modules/sharingModal';
 import { useThumbnail } from '@proton/drive/modules/thumbnails';
 
 import { ShareIcon } from '../../components/sections/FileBrowser/ShareIcon';
-import { useSharingModal } from '../../modals/SharingModal/SharingModal';
 import { GridItemContent } from '../../statelessComponents/DriveExplorer/cells/gridComponents/GridItemContent';
 import { GridItemName } from '../../statelessComponents/DriveExplorer/cells/gridComponents/GridItemName';
 import type { CellDefinition, GridDefinition } from '../../statelessComponents/DriveExplorer/types';

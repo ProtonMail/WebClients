@@ -2,7 +2,6 @@ import { create } from 'zustand';
 
 import type { ModalStateReturnObj } from '@proton/components';
 
-import type { SharingModalInnerProps } from '../../modals/SharingModal/useSharingModalState';
 import type { DeleteAlbumModalProps } from '../../photos/PhotosModals/DeleteAlbumModal';
 
 export enum AlbumsPageTypes {
@@ -14,7 +13,8 @@ export enum AlbumsPageTypes {
     ALBUMSADDPHOTOS = 'ALBUMSADDPHOTOS',
 }
 interface Modals {
-    linkSharing?: (props: SharingModalInnerProps) => void;
+    // Sharing modal props should not be exposed, added `any` because this file will be removed soon
+    linkSharing?: (props: any) => void;
     deleteAlbum?: (props: DeleteAlbumModalProps) => void;
     createAlbum?: ModalStateReturnObj;
 }

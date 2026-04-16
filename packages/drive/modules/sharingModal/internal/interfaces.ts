@@ -1,4 +1,4 @@
-import type { MemberRole, NonProtonInvitation } from '@proton/drive';
+import type { MemberRole, NonProtonInvitation } from '@protontech/drive-sdk';
 
 export enum MemberType {
     Member = 'member',

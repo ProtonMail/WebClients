@@ -6,8 +6,8 @@ import type { PublicKeyReference } from '@proton/crypto';
 import { CryptoProxy } from '@proton/crypto';
 import noop from '@proton/utils/noop';
 
-import { useGetPublicKeysForEmail } from '../../../store';
 import { ShareInviteeValidationError, VALIDATION_ERROR_TYPES } from './helpers/ShareInviteeValidationError';
+import { useGetPublicKeysForEmail } from './helpers/useGetPublicKeysForEmail';
 import { useShareInvitees } from './useShareInvitees';
 
 // Internal and proton account
@@ -48,14 +48,14 @@ jest.mocked(useNotifications).mockReturnValue({
 jest.mock('@proton/crypto');
 const mockedImportPublicKey = jest.mocked(CryptoProxy.importPublicKey);
 
-jest.mock('../../../store/_user/useGetPublicKeysForEmail');
+jest.mock('./helpers/useGetPublicKeysForEmail');
 const mockedGetPrimaryPublicKey = jest.fn();
 jest.mocked(useGetPublicKeysForEmail).mockReturnValue({
     getPrimaryPublicKeyForEmail: mockedGetPrimaryPublicKey,
     getPublicKeysForEmail: jest.fn(),
 });
 
-jest.mock('../../../flags/useFlagsDriveDirectSharing', () => ({
+jest.mock('../../../../internal/flags/useFlagsDriveDirectSharing', () => ({
     useFlagsDriveDirectSharing: jest.fn().mockReturnValue({ isSharingExternalInviteDisabled: false }),
 }));
 
