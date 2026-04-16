@@ -9,6 +9,7 @@ import type { UserId } from '../../shared/types';
 import { brandTreeEventScopeId } from '../../shared/types';
 import type { IndexRegistry } from '../index/IndexRegistry';
 import type { TreeSubscriptionRegistry } from './TreeSubscriptionRegistry';
+import type { IndexPopulator } from './indexPopulators/IndexPopulator';
 import { MyFilesIndexPopulator } from './indexPopulators/MyFilesIndexPopulator';
 import type { BaseTask, TaskContext } from './tasks/BaseTask';
 import { CLEANUP_TASKS } from './tasks/CleanUpTasks/allCleanUpTasks';
@@ -43,6 +44,7 @@ export type IndexerStateListener = (state: IndexerState) => void;
 export class IndexerTaskQueue {
     private readonly treeSubscriptionRegistry: TreeSubscriptionRegistry;
 
+    private populators = new Map<string, IndexPopulator>();
     private queue: BaseTask[] = [];
     private stopped = false;
     private abortController = new AbortController();
@@ -94,6 +96,8 @@ export class IndexerTaskQueue {
         }
         this.pendingTimeouts.clear();
         this.treeSubscriptionRegistry.dispose();
+
+        this.populators.clear();
     }
 
     enqueue(task: BaseTask): void {
@@ -115,6 +119,17 @@ export class IndexerTaskQueue {
     onStateChange(listener: IndexerStateListener): () => void {
         this.stateListeners.add(listener);
         return () => this.stateListeners.delete(listener);
+    }
+
+    async reindexPopulator(uid: string): Promise<void> {
+        const populator = this.populators.get(uid);
+        if (!populator) {
+            Logger.warn(`IndexerTaskQueue: reindexPopulator called with unknown uid: ${uid}`);
+            return;
+        }
+        Logger.info(`IndexerTaskQueue: manually triggering re-index for ${uid}`);
+        await populator.markAsNotDone(this.db);
+        this.enqueueOnce(new IndexPopulatorTask(populator, false));
     }
 
     private async processLoop(): Promise<void> {
@@ -242,7 +257,8 @@ export class IndexerTaskQueue {
         const { node: rootNode } = getNodeEntity(maybeNode);
         const scopeId = brandTreeEventScopeId(rootNode.treeEventScopeId);
 
-        const myFilesPopulator = await MyFilesIndexPopulator.create(scopeId, this.db);
+        const myFilesPopulator = new MyFilesIndexPopulator(scopeId);
+        this.populators.set(myFilesPopulator.getUid(), myFilesPopulator);
 
         return {
             bootstrapTasks: [new IndexPopulatorTask(myFilesPopulator, true /* isBootstrap */)],
