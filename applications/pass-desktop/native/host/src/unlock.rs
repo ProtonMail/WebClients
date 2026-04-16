@@ -28,8 +28,8 @@ fn get_json_field(json_value: &Value, field_value: &str) -> Result<String> {
         .with_context(|| "Request userIdentifier field should be defined in type unlock")
 }
 
-pub async fn intercept_unlock(request: &String) -> Result<Interception> {
-    let json_value: Value = serde_json::from_str(&request)?;
+pub async fn intercept_unlock(request: &str) -> Result<Interception> {
+    let json_value: Value = serde_json::from_str(request)?;
     let type_value = json_value
         .get("type")
         .and_then(Value::as_str)
