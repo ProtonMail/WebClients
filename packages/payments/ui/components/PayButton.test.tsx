@@ -1,10 +1,11 @@
 import type { ReactNode } from 'react';
 
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, screen } from '@testing-library/react';
 
 import useConfig from '@proton/components/hooks/useConfig';
 import { APPS } from '@proton/shared/lib/constants';
 import { buildSubscription } from '@proton/testing/builders';
+import { renderWithProviders } from '@proton/testing/index';
 
 import { BILLING_ADDRESS_VALID } from '../../core/billing-address/billing-address';
 import { PAYMENT_METHOD_TYPES } from '../../core/constants';
@@ -82,12 +83,13 @@ function renderPayButton(
         children?: ReactNode;
         disabled?: boolean;
         onClick?: jest.Mock;
+        isAuthenticated?: boolean;
     } = {}
 ) {
     const taxCountry = options.taxCountry ?? createTaxCountry();
     const paymentFacade = options.paymentFacade ?? createPaymentFacade();
 
-    return render(
+    return renderWithProviders(
         <PayButton
             product="proton-mail"
             telemetryContext="subscription-modification"
@@ -96,6 +98,7 @@ function renderPayButton(
             vatNumber={options.vatNumber}
             disabled={options.disabled}
             onClick={options.onClick}
+            isAuthenticated={options.isAuthenticated ?? false}
             data-testid="pay-cta"
         >
             {options.children ?? 'Pay now'}
@@ -124,7 +127,7 @@ describe('PayButton', () => {
                 billingAddressErrorMessage: 'Please select billing country',
             });
 
-            renderPayButton({ taxCountry });
+            renderPayButton({ taxCountry, isAuthenticated: true });
 
             expect(screen.getByText('Please select billing country')).toBeInTheDocument();
             expect(screen.getByRole('button', { name: 'Edit billing address' })).toBeInTheDocument();
@@ -136,7 +139,7 @@ describe('PayButton', () => {
                 billingAddressErrorMessage: undefined,
             });
 
-            renderPayButton({ taxCountry });
+            renderPayButton({ taxCountry, isAuthenticated: true });
 
             expect(screen.queryByText('Please select billing country')).not.toBeInTheDocument();
             expect(screen.getByRole('button', { name: 'Edit billing address' })).toBeInTheDocument();
@@ -149,7 +152,7 @@ describe('PayButton', () => {
             });
             const paymentFacade = createPaymentFacade();
 
-            renderPayButton({ taxCountry, paymentFacade });
+            renderPayButton({ taxCountry, paymentFacade, isAuthenticated: true });
 
             fireEvent.click(screen.getByRole('button', { name: 'Edit billing address' }));
 

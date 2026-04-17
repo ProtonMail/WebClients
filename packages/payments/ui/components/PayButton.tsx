@@ -2,12 +2,14 @@ import { type ReactNode, useMemo } from 'react';
 
 import { c } from 'ttag';
 
+import { selectUser } from '@proton/account/user';
 import { BannerVariants } from '@proton/atoms/Banner/Banner';
 import { Button, type ButtonProps } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { InfoBanner } from '@proton/components/containers/payments/subscription/confirm-button/InfoBanner';
 import useConfig from '@proton/components/hooks/useConfig';
 import type { PaymentFacade } from '@proton/components/payments/client-extensions';
+import { useStore } from '@proton/redux-shared-store/sharedProvider';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import clsx from '@proton/utils/clsx';
 import isFunction from '@proton/utils/isFunction';
@@ -41,6 +43,7 @@ type Props = {
     onClick?: (payload: PayButtonOnClickPayload) => void;
     product: ProductParam;
     telemetryContext: PaymentTelemetryContext;
+    isAuthenticated?: boolean;
 } & ButtonProps;
 
 export type OfferUnavailableErrorMessage =
@@ -69,10 +72,14 @@ export const PayButton = ({
     onClick,
     product,
     telemetryContext,
+    isAuthenticated: isAuthenticatedProp,
     ...rest
 }: Props) => {
     const { APP_NAME } = useConfig();
     const { editBillingAddressModal, openBillingAddressModal } = useEditBillingAddressModal();
+
+    const store = useStore();
+    const isAuthenticated = isAuthenticatedProp ?? !!selectUser(store.getState())?.value;
 
     const suffixElement = useMemo(() => {
         if (isFunction(suffix)) {
@@ -110,12 +117,11 @@ export const PayButton = ({
      */
     const mustCheckVatNumberErrors = vatNumber && !vatNumber?.shouldEditInModal;
 
-    if (!taxCountry.billingAddressStatus.valid) {
+    if (isAuthenticated && (!taxCountry.billingAddressStatus.valid || !vatNumber?.vatFormValid)) {
+        const errorMessage = taxCountry.billingAddressErrorMessage || vatNumber?.vatFormErrorMessage;
         return (
             <>
-                {taxCountry.billingAddressErrorMessage ? (
-                    <InfoBanner variant={BannerVariants.DANGER}>{taxCountry.billingAddressErrorMessage}</InfoBanner>
-                ) : null}
+                {errorMessage ? <InfoBanner variant={BannerVariants.DANGER}>{errorMessage}</InfoBanner> : null}
                 <Button
                     type="button"
                     className={classNameProp}
