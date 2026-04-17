@@ -1,6 +1,6 @@
 import type { TreeEventScopeId } from '../../shared/types';
 import type { CoreNodeFields } from './indexEntry';
-import { CORE_ATTRIBUTE_NAMES, createIndexEntry, extractExtension } from './indexEntry';
+import { CORE_ATTRIBUTE_NAMES, createIndexEntry, extractExtension, normalizedFilenameForTag } from './indexEntry';
 
 const okAuthor = (email: string) => ({ ok: true as const, value: email });
 
@@ -33,6 +33,37 @@ describe('createIndexEntry', () => {
         expect(entry.documentId).toBe('node-uid-1');
     });
 
+    it('produces an index entry even if the filename strips to empty string', () => {
+        const entry = createIndexEntry({ ...defaultParams(), node: makeNode({ name: '...' }) });
+        expect(entry.documentId).toBe('node-uid-1');
+        const filename = entry.attributes.find((a) => a.name === 'filename')?.value;
+        expect(filename).toEqual({ kind: 'tag', value: '' });
+    });
+
+    it.each([
+        // [input filename, expected normalized filename]
+        ['a', 'a'],
+        ['#1.png', '1png'],
+        ['My file_name #1.png', 'myfilename1png'],
+        ['Report.PDF', 'reportpdf'],
+        ['hello world', 'helloworld'],
+        ['file (1).txt', 'file1txt'],
+        ['UPPERCASE', 'uppercase'],
+        ['MiXeD CaSe.Doc', 'mixedcasedoc'],
+        // i18n
+        ['café résumé.pdf', 'caférésumépdf'],
+        ['Ärzte-Bericht.pdf', 'ärzteberichtpdf'],
+        ['文件 #1.txt', '文件1txt'],
+        ['Résumé_final.pdf', 'résuméfinalpdf'],
+        ['日本語ファイル.doc', '日本語ファイルdoc'],
+        ['مستند.pdf', 'مستندpdf'],
+        ['Ñoño (copia).txt', 'ñoñocopiatxt'],
+    ])('normalizes filename %j to %j', (input, expected) => {
+        const entry = createIndexEntry({ ...defaultParams(), node: makeNode({ name: input }) });
+        const filename = entry.attributes.find((a) => a.name === 'filename')?.value;
+        expect(filename).toEqual({ kind: 'tag', value: expected });
+    });
+
     it('produces all core attributes', () => {
         const entry = createIndexEntry(defaultParams());
         const attrNames = entry.attributes.map((a) => a.name);
@@ -47,8 +78,8 @@ describe('createIndexEntry', () => {
         const attr = (name: string) => entry.attributes.find((a) => a.name === name)?.value;
 
         expect(attr('nodeUid')).toEqual({ kind: 'tag', value: 'node-uid-1' });
-        expect(attr('filename')).toEqual({ kind: 'tag', value: 'document.pdf' });
-        expect(attr('filenameText')).toEqual({ kind: 'text', value: 'document.pdf' });
+        expect(attr('filename')).toEqual({ kind: 'tag', value: 'documentpdf' });
+        expect(attr('filenameText')).toEqual({ kind: 'text', value: 'documentpdf' });
         expect(attr('path')).toEqual({ kind: 'tag', value: '/parent-uid-1/parent-uid-2' });
         expect(attr('treeEventScopeId')).toEqual({ kind: 'tag', value: 'scope-1' });
         expect(attr('indexPopulatorId')).toEqual({ kind: 'tag', value: 'populator-1' });
@@ -157,6 +188,34 @@ describe('createIndexEntry', () => {
     it('produces correct attribute count with no additional attributes', () => {
         const entry = createIndexEntry(defaultParams());
         expect(entry.attributes).toHaveLength(CORE_ATTRIBUTE_NAMES.length);
+    });
+});
+
+describe('normalizedFilename', () => {
+    it('strips special chars and lowercases', () => {
+        expect(normalizedFilenameForTag('My file_name #1.png')).toBe('myfilename1png');
+    });
+
+    it('preserves alphanumeric characters', () => {
+        expect(normalizedFilenameForTag('abc123')).toBe('abc123');
+    });
+
+    it('returns empty for only special chars', () => {
+        expect(normalizedFilenameForTag('# . _ -')).toBe('');
+    });
+
+    it('lowercases all characters', () => {
+        expect(normalizedFilenameForTag('Report.PDF')).toBe('reportpdf');
+    });
+
+    it('preserves non-ASCII letters (i18n)', () => {
+        expect(normalizedFilenameForTag('café résumé')).toBe('caférésumé');
+        expect(normalizedFilenameForTag('Ärzte-Bericht.pdf')).toBe('ärzteberichtpdf');
+    });
+
+    it('preserves CJK and Cyrillic characters', () => {
+        expect(normalizedFilenameForTag('文件 #1.txt')).toBe('文件1txt');
+        expect(normalizedFilenameForTag('документ.pdf')).toBe('документpdf');
     });
 });
 

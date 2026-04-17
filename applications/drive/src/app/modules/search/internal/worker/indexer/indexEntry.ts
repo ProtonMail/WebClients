@@ -115,6 +115,35 @@ export function extractExtension(filename: string): string {
     return splitExtension(filename)[1].toLowerCase();
 }
 
+/**
+ * Strip all non-alphanumeric characters from a string.
+ * Search library WASM tokenizer will use any special characters (space, #, _, -, (,), ., ...
+ * as a token delimiter) which makes matching filenames quite impossible if
+ * they are pack with those e.g. "My file_name #1.png" will be tokenized.
+ *
+ * Ideally we should be able to not consider these special characters for search
+ * tokenization in filenames but this is not supported.
+ * See issue:  See issue: https://protonag.atlassian.net/browse/DRVWEB-5345
+ *
+ * For now, we normalize filenames by stripping all special characters at indexing
+ * and querying time. This allow to match complex filename like "My file_name #1.png"
+ * but we don't support special character querying. For that example, "My file_name #1.png" will
+ * ne stripped down to "Myfilename1png".
+ *
+ * Note: We use unicode replace to make sure this replace is i18n friendly.
+ */
+const stripSpecialChars = (s: string): string => s.replace(/[^\p{L}\p{N}]/gu, '');
+
+/**
+ * Normalize a filename for "tag" indexing: strip special chars + lowercase.
+ * We use lowercase since querying tag attributes is case sensitive: So we will normalize to lowercase
+ * When feeding the index and normalize queries (using the same utility) before querying the
+ * index.
+ * Searching over "text" attribute is not case sensitive so we don't need to lowercase the index value like
+ * for "tag"s.
+ */
+export const normalizedFilenameForTag = (s: string): string => stripSpecialChars(s).toLowerCase();
+
 export function createIndexEntry<N extends string>(params: CreateIndexEntryParams<N>): IndexEntry {
     const {
         node,
@@ -131,10 +160,12 @@ export function createIndexEntry<N extends string>(params: CreateIndexEntryParam
         attributes: [
             { name: 'nodeUid', value: { kind: 'tag', value: node.uid } },
             { name: 'nodeType', value: { kind: 'tag', value: node.type } },
-            // Filename as tag
-            { name: 'filename', value: { kind: 'tag', value: node.name } },
-            // Filename as a fuzzy string to allow trigram matching but only for query above 3 characters
-            { name: 'filenameText', value: { kind: 'text', value: node.name } },
+            // Filename as tag — normalized (lowercase, special chars stripped) for
+            // case-insensitive substring matching via *query* wildcard patterns.
+            { name: 'filename', value: { kind: 'tag', value: normalizedFilenameForTag(node.name) } },
+            // Filename as text — special chars stripped so the text processor sees
+            // concatenated alphanumeric tokens for trigram / fuzzy matching. Not case sensitive.
+            { name: 'filenameText', value: { kind: 'text', value: stripSpecialChars(node.name) } },
             { name: 'path', value: { kind: 'tag', value: parentPath } },
             { name: 'treeEventScopeId', value: { kind: 'tag', value: treeEventScopeId } },
             { name: 'indexPopulatorId', value: { kind: 'tag', value: indexPopulatorId } },
