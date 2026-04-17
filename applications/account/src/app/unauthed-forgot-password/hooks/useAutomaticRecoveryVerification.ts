@@ -26,6 +26,7 @@ export const useAutomaticRecoveryVerification = ({ onPreSubmit, onStartAuth, onS
     useSearchParamsEffect((params) => {
         const username = params.get('username');
         const token = params.get('token');
+        const variant = params.get('variant');
 
         /**
          * Automatic token validation reset
@@ -54,7 +55,7 @@ export const useAutomaticRecoveryVerification = ({ onPreSubmit, onStartAuth, onS
             };
             void withLoading(run());
 
-            return new URLSearchParams();
+            return new URLSearchParams(variant ? { variant } : undefined);
         }
 
         /**
@@ -68,7 +69,7 @@ export const useAutomaticRecoveryVerification = ({ onPreSubmit, onStartAuth, onS
                 },
             });
             onSuccess(username);
-            return new URLSearchParams();
+            return new URLSearchParams(variant ? { variant } : undefined);
         }
     }, []);
 
