@@ -1,19 +1,25 @@
 import { MemberRole, NonProtonInvitationState } from '@protontech/drive-sdk';
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { usePopperAnchor } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
+import noop from '@proton/utils/noop';
 
 import type { DirectSharingRole } from '../interfaces';
+import { useEditorsManageAccessContext } from '../useEditorsManageAccess';
 import { DirectSharingMemberMenu } from './DirectSharingMemberMenu';
 
 jest.mock('@proton/components/components/popper/usePopperAnchor');
 jest.mock('@proton/hooks/useLoading');
+jest.mock('@proton/utils/noop');
 jest.mock('@proton/unleash/useFlag', () => jest.fn(() => false));
+jest.mock('../useEditorsManageAccess');
 
 const mockedUsePopperAnchor = jest.mocked(usePopperAnchor);
 const mockedUseLoading = jest.mocked(useLoading);
+const mockedNoop = jest.mocked(noop);
+const mockedUseEditorsManageAccessContext = jest.mocked(useEditorsManageAccessContext);
 
 const defaultUsePopperAnchorProps = {
     anchorRef: { current: null },
@@ -41,6 +47,10 @@ describe('DirectSharingMemberMenu', () => {
         jest.clearAllMocks();
         mockedUsePopperAnchor.mockReturnValue(defaultUsePopperAnchorProps);
         mockedUseLoading.mockReturnValue(defaultUseLoadingProps as any);
+        mockedUseEditorsManageAccessContext.mockReturnValue({
+            editorsManageAccess: false,
+            changeManageAccess: jest.fn(),
+        });
     });
 
     it('renders with default viewer role', () => {
@@ -137,5 +147,47 @@ describe('DirectSharingMemberMenu', () => {
         await user.click(editorOption);
 
         expect(onChangeRole).toHaveBeenCalledWith(MemberRole.Editor);
+    });
+
+    it('does not call onChangeRole when transitioning from the same role', async () => {
+        mockedUsePopperAnchor.mockReturnValueOnce({ ...defaultUsePopperAnchorProps, isOpen: true });
+        const onChangeRole = jest.fn();
+        render(<DirectSharingMemberMenu {...defaultProps} onChangeRole={onChangeRole} />);
+
+        await user.click(screen.getByText('Viewer'));
+
+        expect(onChangeRole).not.toHaveBeenCalled();
+        expect(mockedNoop).toHaveBeenCalled();
+    });
+
+    it('has checkmark next to "viewer" if current role is viewer', async () => {
+        mockedUsePopperAnchor.mockReturnValueOnce({ ...defaultUsePopperAnchorProps, isOpen: true });
+        render(<DirectSharingMemberMenu {...defaultProps} selectedRole={MemberRole.Viewer} />);
+
+        const viewerButton = screen.getByText('Viewer').closest('button');
+        expect(within(viewerButton!).getByTestId('item-checkmark')).toBeInTheDocument();
+        const editorButton = screen.getByText('Editor').closest('button');
+        expect(within(editorButton!).queryByTestId('item-checkmark')).not.toBeInTheDocument();
+    });
+
+    it('has checkmark next to "editor" if current role is editor', async () => {
+        mockedUsePopperAnchor.mockReturnValueOnce({ ...defaultUsePopperAnchorProps, isOpen: true });
+        render(<DirectSharingMemberMenu {...defaultProps} selectedRole={MemberRole.Editor} />);
+
+        const viewerButton = screen.getByText('Viewer').closest('button');
+        expect(within(viewerButton!).queryByTestId('item-checkmark')).not.toBeInTheDocument();
+        const editorButton = screen.getByText('Editor').closest('button');
+        expect(within(editorButton!).getByTestId('item-checkmark')).toBeInTheDocument();
+    });
+
+    it('when editors can manage access show different label', async () => {
+        mockedUsePopperAnchor.mockReturnValueOnce({ ...defaultUsePopperAnchorProps, isOpen: true });
+        mockedUseEditorsManageAccessContext.mockReturnValueOnce({
+            editorsManageAccess: true,
+            changeManageAccess: jest.fn(),
+        });
+        render(<DirectSharingMemberMenu {...defaultProps} />);
+
+        expect(screen.getByText('Can edit and manage access')).toBeInTheDocument();
     });
 });
