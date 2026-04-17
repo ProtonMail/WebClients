@@ -2,15 +2,12 @@ import type { ReactNode } from 'react';
 
 import { c } from 'ttag';
 
-import type { MethodsHook } from '@proton/components/payments/react-extensions';
 import { IcClock } from '@proton/icons/icons/IcClock';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { IcShield } from '@proton/icons/icons/IcShield';
-import { type Currency, PAYMENT_METHOD_TYPES, type PlanIDs, isLifetimePlanSelected } from '@proton/payments';
-import type { UserModel } from '@proton/shared/lib/interfaces';
+import type { Currency } from '@proton/payments';
 
 import CurrencySelector from './CurrencySelector';
-import type { CouponConfigRendered } from './subscription/coupon-config/useCouponConfig';
 
 export interface Props {
     currencies: readonly Currency[];
@@ -21,10 +18,7 @@ export interface Props {
     hasGuarantee?: boolean;
     description?: ReactNode;
     renewNotice: ReactNode;
-    paymentMethods: MethodsHook;
-    user: UserModel;
-    planIDs: PlanIDs;
-    couponConfig?: CouponConfigRendered;
+    disableCurrencySelector: boolean | undefined;
 }
 
 const Checkout = ({
@@ -36,17 +30,8 @@ const Checkout = ({
     hasGuarantee,
     description,
     renewNotice,
-    paymentMethods,
-    user,
-    planIDs,
-    couponConfig,
+    disableCurrencySelector,
 }: Props) => {
-    const isSepaDirectDebit = paymentMethods.selectedMethod?.type === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT;
-    const isLifetimeWithCredits = user.Credit > 0 && isLifetimePlanSelected(planIDs);
-
-    const disableCurrencySelector =
-        isSepaDirectDebit || isLifetimeWithCredits || couponConfig?.disableCurrencySelector || loading;
-
     return (
         <div className="p-6">
             <div className="flex flex-nowrap mb-5">
