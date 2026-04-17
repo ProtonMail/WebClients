@@ -34,7 +34,7 @@ export const MenuSidebar: FC<Props> = ({ onLock, onLogout, userPanel }) => {
     const menu = useMenuItems();
     const vaultActions = useVaultActions();
     const { vaultCreationDisabled } = useVaultCreationPolicy();
-    const { openSettings, popup } = usePassCore();
+    const { popup } = usePassCore();
 
     return (
         <div className="flex flex-column flex-nowrap justify-space-between flex-1 overflow-auto">
@@ -109,18 +109,7 @@ export const MenuSidebar: FC<Props> = ({ onLock, onLogout, userPanel }) => {
                     <div className="flex justify-space-between items-center flex-nowrap gap-1 pl-3 pr-5">
                         {userPanel}
                         {EXTENSION_BUILD ? (
-                            popup?.expanded && (
-                                <Button
-                                    icon
-                                    shape="ghost"
-                                    size="small"
-                                    className="shrink-0"
-                                    onClick={() => openSettings?.()}
-                                    title={c('Action').t`Settings`}
-                                >
-                                    <Icon name="cog-wheel" alt={c('Action').t`Settings`} />
-                                </Button>
-                            )
+                            popup?.expanded && <MenuActions onLogout={onLogout} />
                         ) : (
                             <MenuActions onLogout={onLogout} />
                         )}
