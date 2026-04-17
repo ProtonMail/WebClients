@@ -25,6 +25,6 @@ export const DropdownMenuItem = ({
                 <p className="text-left color-weak text-sm">{description}</p>
             </div>
         </span>
-        {isSelected ? <IcCheckmark /> : null}
+        {isSelected ? <IcCheckmark data-testid="item-checkmark" /> : null}
     </DropdownMenuButton>
 );
