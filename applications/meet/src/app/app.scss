@@ -372,6 +372,13 @@ $profile-colors:
 			filter: blur(8rem);
 			z-index: -1;
 			pointer-events: none;
+
+			// Firefox renders the glow effect differently, needs some manual adjustments
+			@supports (-moz-appearance: none) {
+				border-radius: 50%;
+				transform: scale(1.9);
+				opacity: 0.125;
+			}
 		}
 
 		&::before {
