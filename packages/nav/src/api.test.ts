@@ -149,6 +149,24 @@ describe('defineNavigation — nested children', () => {
         expect(nav.items[0].children).toBeUndefined();
     });
 
+    it('preserves prefix after resolver updates `to`', () => {
+        const definition: NavDefinition = {
+            items: [
+                {
+                    id: 'account',
+                    label: 'Account',
+                    to: '/account',
+                    resolver: (_i, _c, { update }) => update({ to: '/new-account' }),
+                },
+            ],
+        };
+        const nav = defineNavigation({
+            definition,
+            context: makeContext({ id: 'u1', email: 'user@example.com' }, '/prefix'),
+        });
+        expect(nav.items[0].to).toBe('/prefix/new-account');
+    });
+
     it('resolves very deep nesting', () => {
         const definition: NavDefinition = {
             items: [
