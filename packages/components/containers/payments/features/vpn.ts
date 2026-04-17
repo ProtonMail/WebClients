@@ -142,7 +142,7 @@ export const getVPNSpeed = (type: 'medium' | 'highest', highlight?: boolean): Pl
 };
 
 export const getStreamingText = () => {
-    return c('new_plans: feature').t`Dedicated servers optimized for streaming`;
+    return c('new_plans: feature').t`Dedicated servers optimized for speed`;
 };
 
 export const getStreaming = (included: boolean, highlight?: boolean): PlanCardFeatureDefinition => {
