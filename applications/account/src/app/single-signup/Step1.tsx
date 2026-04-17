@@ -933,10 +933,12 @@ const Step1 = ({
     };
 
     const getUpsellToggle = () => {
-        const hasUpsellVPNPassBundleToggle = upsellToVPNPassBundle || options.planIDs[PLANS.VPN_PASS_BUNDLE];
+        const hasVpnPassBundle = options.planIDs[PLANS.VPN_PASS_BUNDLE];
+        // Hide toggle during vpn promo for vpnpass2023
+        const hasUpsellVPNPassBundleToggle = upsellToVPNPassBundle;
 
         if (hasUpsellVPNPassBundleToggle) {
-            const hasPlanSelected = !!options.planIDs[PLANS.VPN_PASS_BUNDLE] && options.cycle === CYCLE.YEARLY;
+            const hasPlanSelected = !!hasVpnPassBundle && options.cycle === CYCLE.YEARLY;
             return (
                 <VPNPassUpsellToggle
                     view={hasPlanSelected && !toggleUpsell?.from ? 'included' : undefined}
