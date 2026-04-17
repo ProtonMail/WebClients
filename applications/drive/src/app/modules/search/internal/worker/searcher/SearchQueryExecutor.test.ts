@@ -5,6 +5,7 @@ import { SearchDB } from '../../shared/SearchDB';
 import { collectResults, indexDocuments, makeTestIndexEntry } from '../../testing/indexHelpers';
 import { setupRealSearchLibraryWasm } from '../../testing/setupRealSearchLibraryWasm';
 import { IndexKind, IndexRegistry } from '../index/IndexRegistry';
+import { normalizedFilenameForTag } from '../indexer/indexEntry';
 import { SearchQueryExecutor, setActiveEnginesForTests } from './SearchQueryExecutor';
 
 setupRealSearchLibraryWasm();
@@ -36,15 +37,30 @@ describe('SearchQueryExecutor integration', () => {
 
         const main = await registry.get(IndexKind.MAIN, db);
         await indexDocuments(main.indexWriter, [
-            makeTestIndexEntry('file-1', { filename: { kind: 'text', value: 'file_1.txt' } }),
-            makeTestIndexEntry('file-2', { filename: { kind: 'text', value: 'file_2.jpeg' } }),
-            makeTestIndexEntry('folder-1', { filename: { kind: 'text', value: 'folder_1' } }),
+            makeTestIndexEntry('file-1', {
+                filename: { kind: 'tag', value: normalizedFilenameForTag('file_1.txt') },
+                filenameText: { kind: 'text', value: normalizedFilenameForTag('file_1.txt') },
+            }),
+            makeTestIndexEntry('file-2', {
+                filename: { kind: 'tag', value: normalizedFilenameForTag('file_2.jpeg') },
+                filenameText: { kind: 'text', value: normalizedFilenameForTag('file_2.jpeg') },
+            }),
+            makeTestIndexEntry('folder-1', {
+                filename: { kind: 'tag', value: normalizedFilenameForTag('folder_1') },
+                filenameText: { kind: 'text', value: normalizedFilenameForTag('folder_1') },
+            }),
         ]);
 
         const photos = await registry.get(PHOTOS, db);
         await indexDocuments(photos.indexWriter, [
-            makeTestIndexEntry('file-3', { filename: { kind: 'text', value: 'file_3.mpeg' } }),
-            makeTestIndexEntry('file-2', { filename: { kind: 'text', value: 'file_2.jpeg' } }),
+            makeTestIndexEntry('file-3', {
+                filename: { kind: 'tag', value: normalizedFilenameForTag('file_3.mpeg') },
+                filenameText: { kind: 'text', value: normalizedFilenameForTag('file_3.mpeg') },
+            }),
+            makeTestIndexEntry('file-2', {
+                filename: { kind: 'tag', value: normalizedFilenameForTag('file_2.jpeg') },
+                filenameText: { kind: 'text', value: normalizedFilenameForTag('file_2.jpeg') },
+            }),
         ]);
 
         const results = await collectResults(executor.performSearch({ filename: 'file' }));
@@ -65,8 +81,8 @@ describe('SearchQueryExecutor integration', () => {
     describe('filename matching', () => {
         const indexFileEntry = (id: string, name: string) =>
             makeTestIndexEntry(id, {
-                filename: { kind: 'tag', value: name },
-                filenameText: { kind: 'text', value: name },
+                filename: { kind: 'tag', value: normalizedFilenameForTag(name) },
+                filenameText: { kind: 'text', value: normalizedFilenameForTag(name) },
             });
 
         it('returns empty when index is empty', async () => {
@@ -126,6 +142,7 @@ describe('SearchQueryExecutor integration', () => {
             const results = await collectResults(executor.performSearch({ filename: 'ab' }));
             const ids = results.map((r) => r.nodeUid);
             expect(ids).toContain('file-1');
+            // 'file_2.txt' normalizes to 'file2txt' which does not contain 'ab'
             expect(ids).not.toContain('file-2');
         });
 
@@ -149,6 +166,60 @@ describe('SearchQueryExecutor integration', () => {
             const results = await collectResults(executor.performSearch({ filename: 'file' }));
             const ids = results.map((r) => r.nodeUid);
             expect(ids).toContain('file-1');
+        });
+
+        it('matches case-insensitively', async () => {
+            await indexDocs(indexFileEntry('file-1', 'Report.pdf'), indexFileEntry('file-2', 'notes.txt'));
+
+            for (const query of ['Report', 'report', 'REPORT']) {
+                const results = await collectResults(executor.performSearch({ filename: query }));
+                const ids = results.map((r) => r.nodeUid);
+                expect(ids).toContain('file-1');
+                expect(ids).not.toContain('file-2');
+            }
+        });
+
+        it('matches query with spaces across word boundaries', async () => {
+            await indexDocs(indexFileEntry('file-1', 'My file_name #1.png'), indexFileEntry('file-2', 'other.txt'));
+
+            const results = await collectResults(executor.performSearch({ filename: 'My file' }));
+            const ids = results.map((r) => r.nodeUid);
+            expect(ids).toContain('file-1');
+            expect(ids).not.toContain('file-2');
+        });
+
+        it('matches query with special characters like #', async () => {
+            await indexDocs(indexFileEntry('file-1', 'My file_name #1.png'), indexFileEntry('file-2', 'other.txt'));
+
+            const results = await collectResults(executor.performSearch({ filename: '#1' }));
+            const ids = results.map((r) => r.nodeUid);
+            expect(ids).toContain('file-1');
+            expect(ids).not.toContain('file-2');
+        });
+
+        it('returns nothing for pure-special-char query', async () => {
+            await indexDocs(indexFileEntry('file-1', 'My file_name #1.png'));
+
+            const results = await collectResults(executor.performSearch({ filename: '#' }));
+            expect(results).toHaveLength(0);
+        });
+
+        it('matches full filename with mixed special chars and spaces', async () => {
+            await indexDocs(indexFileEntry('file-1', 'My file_name #1.png'), indexFileEntry('file-2', 'other.txt'));
+
+            const results = await collectResults(executor.performSearch({ filename: 'My file_name #1.png' }));
+            const ids = results.map((r) => r.nodeUid);
+            expect(ids).toContain('file-1');
+            expect(ids).not.toContain('file-2');
+        });
+
+        it('can fuzzy search', async () => {
+            await indexDocs(indexFileEntry('file-1', 'My file_name #1.png'), indexFileEntry('file-2', 'other.txt'));
+
+            const results = await collectResults(executor.performSearch({ filename: 'My file_name #2.png' }));
+            const ids = results.map((r) => r.nodeUid);
+            expect(ids).toContain('file-1');
+            expect(ids).not.toContain('file-2');
         });
     });
 });

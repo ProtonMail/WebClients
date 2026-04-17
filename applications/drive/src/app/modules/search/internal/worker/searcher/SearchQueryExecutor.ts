@@ -2,8 +2,9 @@ import type { Query } from '@proton/proton-foundation-search';
 import { Expression, Func, TermValue } from '@proton/proton-foundation-search';
 
 import type { SearchDB } from '../../shared/SearchDB';
-import type { AttributeFilter, SearchQuery, SearchResultItem } from '../../shared/types';
+import type { SearchQuery, SearchResultItem } from '../../shared/types';
 import { IndexKind, type IndexRegistry } from '../index/IndexRegistry';
+import { normalizedFilenameForTag } from '../indexer/indexEntry';
 
 // TODO: Rename to indices instead of engines.
 let activeEngines: IndexKind[] = [IndexKind.MAIN];
@@ -44,29 +45,54 @@ export class SearchQueryExecutor {
      * attribute filters (e.g. nodeType, indexPopulatorGeneration).
      */
     private buildFilenameSearchQuery(query: SearchQuery, wasmQuery: Query): Query {
-        // Exact substring match on the raw filename tag (*query*) — handles short tokens
-        // and special characters that the text processor would drop or stem.
-        const tagMatch = Expression.attr('filename', Func.Matches, TermValue.wild().then(query.filename).wildcard());
-        // Fuzzy match on the tokenized filename text (query*) — handles stemming and
-        // trigram matching for queries of 3+ characters.
-        const textMatch = Expression.attr('filenameText', Func.Matches, TermValue.text(query.filename).wildcard());
-        let expr = textMatch.or(tagMatch);
-        if (query.filters) {
-            for (const [name, attrValue] of Object.entries(query.filters)) {
-                expr = expr.and(Expression.attr(name, Func.Equals, this.toTermValue(attrValue)));
-            }
+        // Normalize query the same way we normalized at index time:
+        // strip all non-alphanumeric characters and lowercase.
+        const normalized = normalizedFilenameForTag(query.filename);
+        const hasFilename = normalized.length > 0;
+        const hasFilters = query.filters && Object.keys(query.filters).length > 0;
+
+        // Guard: a pure-special-char query (e.g. "#") with no filters normalizes
+        // to empty. Returning an unfiltered query would match everything — return
+        // nothing instead.
+        if (!hasFilename && !hasFilters) {
+            return wasmQuery;
         }
 
+        const filenameExpr = this.buildFilenameExpression(normalized);
+        const filterExprs = this.buildFilterExpressions(query.filters);
+        const allExprs = [filenameExpr, ...filterExprs].filter((e): e is Expression => e !== undefined);
+
+        const expr = allExprs.reduce((acc, e) => acc.and(e));
         return wasmQuery.withStructuredExpression(expr);
     }
 
-    private toTermValue(value: AttributeFilter): TermValue {
-        if (typeof value === 'string') {
-            return TermValue.text(value);
+    private buildFilenameExpression(normalized: string): Expression | undefined {
+        if (normalized.length === 0) {
+            return undefined;
         }
-        if (typeof value === 'bigint') {
-            return TermValue.int(value);
+        // Substring match on the normalized tag (*query*) — works for any length
+        // including short (< 3 char) queries, special chars, and mixed case.
+        const tagMatch = Expression.attr('filename', Func.Matches, TermValue.wild().then(normalized).wildcard());
+        // Fuzzy trigram match on the stripped text (query*) — adds relevance scoring
+        // for longer queries via the text processor.
+        const textMatch = Expression.attr('filenameText', Func.Matches, TermValue.text(normalized).wildcard());
+        return textMatch.or(tagMatch);
+    }
+
+    private buildFilterExpressions(filters: SearchQuery['filters']): Expression[] {
+        if (!filters) {
+            return [];
         }
-        return TermValue.bool(value);
+        return Object.entries(filters).map(([name, value]) => {
+            let term: TermValue;
+            if (typeof value === 'string') {
+                term = TermValue.text(value);
+            } else if (typeof value === 'bigint') {
+                term = TermValue.int(value);
+            } else {
+                term = TermValue.bool(value);
+            }
+            return Expression.attr(name, Func.Equals, term);
+        });
     }
 }
