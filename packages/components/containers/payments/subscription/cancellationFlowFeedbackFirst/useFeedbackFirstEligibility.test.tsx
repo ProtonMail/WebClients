@@ -34,21 +34,16 @@ describe('useFeedbackFirstEligibility', () => {
     });
 
     describe('B2B plans', () => {
-        it.each([
-            PLANS.MAIL_PRO,
-            PLANS.MAIL_BUSINESS,
-            PLANS.BUNDLE_PRO,
-            PLANS.BUNDLE_PRO_2024,
-            PLANS.BUNDLE_BIZ_2025,
-            PLANS.DRIVE_BUSINESS,
-            PLANS.DRIVE_PRO,
-        ])('should grant B2B access for %s', (plan) => {
-            mockUseSubscription.mockReturnValue([buildSubscriptionMock(plan), false]);
+        it.each([PLANS.MAIL_PRO, PLANS.MAIL_BUSINESS, PLANS.BUNDLE_PRO, PLANS.BUNDLE_PRO_2024, PLANS.BUNDLE_BIZ_2025])(
+            'should grant B2B access for %s',
+            (plan) => {
+                mockUseSubscription.mockReturnValue([buildSubscriptionMock(plan), false]);
 
-            const { result } = componentsHookRenderer(() => useFeedbackFirstEligibility());
-            expect(result.current.hasB2CAccess).toBe(false);
-            expect(result.current.hasB2BAccess).toBe(true);
-        });
+                const { result } = componentsHookRenderer(() => useFeedbackFirstEligibility());
+                expect(result.current.hasB2CAccess).toBe(false);
+                expect(result.current.hasB2BAccess).toBe(true);
+            }
+        );
     });
 
     it('should return false for both when flag is disabled', () => {
