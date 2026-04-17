@@ -52,9 +52,13 @@ function resolveItem<TContext extends NavContext>(
                 return null;
             case 'update': {
                 const { meta: patchMeta, ...patchRest } = action.patch;
+                const isToPatched = 'to' in patchRest;
+                const prefixedTo = context.prefix ? `${context.prefix}${patchRest.to}` : patchRest.to;
+                const patchedTo = isToPatched ? prefixedTo : resolved.to;
                 resolved = {
                     ...resolved,
                     ...patchRest,
+                    to: patchedTo,
                     ...(patchMeta !== undefined && {
                         meta: { ...resolved.meta, ...patchMeta },
                     }),
