@@ -1250,6 +1250,12 @@
       ],
       "Reconnect to Gmail": [
         "Mit Gmail wieder verbinden"
+      ],
+      "Go back to album “${ ellipsedAlbumName }“": [
+        "Zurück zum Album „${ ellipsedAlbumName }“"
+      ],
+      "Re-index": [
+        "Index neu erstellen"
       ]
     },
     "Action: Docs": {
@@ -4007,6 +4013,9 @@
       "${ failureItems.length } item failed to be moved": [
         "${ failureItems.length } Eintrag konnte nicht verschoben werden",
         "${ failureItems.length } Einträge konnten nicht verschoben werden"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Abonnementsdaten konnten nicht geladen werden. Bitte versuche es später nochmals."
       ]
     },
     "error": {
@@ -7065,6 +7074,9 @@
       "Move ${ folderCount } folder": [
         "${ folderCount } Ordner verschieben",
         "${ folderCount } Ordner verschieben"
+      ],
+      "Invitation confirmed": [
+        "Einladung bestätigt"
       ]
     },
     "info": {
@@ -9743,6 +9755,57 @@
       ],
       "Your ${ BRAND_NAME } address is ready to use": [
         "Deine ${ BRAND_NAME }-E-Mail-Adresse ist einsatzbereit"
+      ],
+      "\"${ ellipsedName }\" copied": [
+        "\"${ ellipsedName }\" kopiert"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "„${ ellipsedName }“ erfolgreich erstellt"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "\"${ ellipsedName }\" gelöscht"
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "„${ ellipsedName }“ dauerhaft aus dem Papierkorb gelöscht"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "\"${ ellipsedName }\" konnte nicht erstellt werden"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "\"${ ellipsedName }\" konnte nicht gelöscht werden"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "\"${ ellipsedName }\" konnte nicht dauerhaft aus dem Papierkorb gelöscht werden"
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "„${ ellipsedName }“ konnte nicht verschoben werden"
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "\"${ ellipsedName }\" konnte nicht aus dem Papierkorb wiederhergestellt werden"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" verschoben"
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "„${ ellipsedName }“ aus dem Papierkorb wiederhergestellt"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "„${ ellipsedName }“ erfolgreich verschoben"
+      ],
+      "${ errors.length } item failed to be deleted": [
+        "${ errors.length } Eintrag konnte nicht gelöscht werden",
+        "${ errors.length } Einträge konnten nicht gelöscht werden"
+      ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems } Eintrag kopiert",
+        "${ numberOfItems } Einträge kopiert"
+      ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } Eintrag verschoben",
+        "${ numberOfItems } Einträge verschoben"
+      ],
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "Kopie von \"${ ellipsedName }\" in den Papierkorb verschoben"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10403,6 +10466,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Dein Abonnement hat derzeit einen bestehenden Rabatt. Der Wechsel zu dieser neuen Aktion bedeutet, dass der bestehende Rabatt nicht länger angewendet wird."
+      ],
+      "Edit billing address": [
+        "Rechnungsadresse bearbeiten"
       ]
     },
     "Payments.Error": {

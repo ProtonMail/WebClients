@@ -1256,6 +1256,9 @@
       ],
       "Reconnect to Gmail": [
         "Återanslut till Gmail"
+      ],
+      "Go back to album “${ ellipsedAlbumName }“": [
+        "Gå tillbaka till album “${ ellipsedAlbumName }“"
       ]
     },
     "Action: Docs": {
@@ -9699,6 +9702,12 @@
       ],
       "Copy of \"${ ellipsedName }\" moved to trash": [
         "Kopia av “${ ellipsedName }“ flyttades till papperskorg"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "”${ ellipsedName }” skapades utan problem"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "“${ ellipsedName }“ misslyckades att skapas"
       ]
     },
     "Notification for duplicate filenames in the current upload": {

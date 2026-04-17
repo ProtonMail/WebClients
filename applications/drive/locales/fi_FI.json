@@ -1253,6 +1253,9 @@
       ],
       "Go back to album “${ ellipsedAlbumName }“": [
         "Palaa albumiin \"${ ellipsedAlbumName }\""
+      ],
+      "Re-index": [
+        "Indeksoi uudelleen"
       ]
     },
     "Action: Docs": {
@@ -6844,6 +6847,9 @@
       ],
       "Your next billing date is ${ renewalTime }. You can cancel at any time.": [
         "Seuraava laskutuspäiväsi on ${ renewalTime }. Voit peruuttaa milloin tahansa."
+      ],
+      "No populator states found.": [
+        "Populaattorimääritteitä ei löytynyt."
       ]
     },
     "info": {
@@ -12928,6 +12934,9 @@
       ],
       "We couldn’t verify that <strong>${ emailAddress }</strong> uploaded this file.": [
         "Emme pystyneet vahvistamaan, että <strong>${ emailAddress }</strong> latasi tämän tiedoston."
+      ],
+      "Index populators": [
+        "Indeksin täyttäjät"
       ]
     },
     "Today icon tooltip in mini calendar": {
