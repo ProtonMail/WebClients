@@ -32,6 +32,10 @@
             "matchPackageNames": ["/playwright/"]
         },
         {
+            "groupName": "msw",
+            "matchPackageNames": ["/msw/"]
+        },
+        {
             "groupName": "Typescript",
             "matchPackageNames": ["typescript"]
         },
