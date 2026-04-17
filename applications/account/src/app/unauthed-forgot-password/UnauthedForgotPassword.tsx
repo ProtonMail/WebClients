@@ -11,7 +11,6 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import Layout from '../public/Layout';
 import Main from '../public/Main';
-import PublicHelpLink from '../public/PublicHelpLink';
 import { useResetPasswordTelemetry } from '../reset/resetPasswordTelemetry';
 import { UnauthedForgotPasswordWizard } from './UnauthedForgotPasswordWizard';
 import {
@@ -60,12 +59,7 @@ export const UnauthedForgotPassword = ({
     const handleBackStep = () => send({ type: 'decision.back' });
 
     return (
-        <Layout
-            toApp={toApp}
-            hasDecoration={snapshot.value === 'entry'}
-            onBack={handleBackStep}
-            bottomRight={<PublicHelpLink />}
-        >
+        <Layout toApp={toApp} hasDecoration={snapshot.value === 'entry'} onBack={handleBackStep}>
             <Main>
                 <UnauthedForgotPasswordWizard
                     actorRef={actorRef}
