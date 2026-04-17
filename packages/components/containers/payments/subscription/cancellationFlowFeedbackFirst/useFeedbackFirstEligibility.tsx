@@ -6,8 +6,6 @@ import {
     hasBundlePro2024,
     hasDrive,
     hasDrive1TB,
-    hasDriveBusiness,
-    hasDrivePro,
     hasDuo,
     hasFamily,
     hasMail,
@@ -31,9 +29,7 @@ export const useFeedbackFirstEligibility = () => {
             hasMailBusiness(subscription) ||
             hasBundlePro(subscription) ||
             hasBundlePro2024(subscription) ||
-            hasBundleBiz2025(subscription) ||
-            hasDriveBusiness(subscription) ||
-            hasDrivePro(subscription)
+            hasBundleBiz2025(subscription)
         ) {
             return true;
         }
