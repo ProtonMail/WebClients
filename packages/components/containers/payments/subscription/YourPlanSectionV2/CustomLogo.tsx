@@ -25,6 +25,7 @@ import passFree from './logo/plan-pass-free-light.svg';
 import passLifetime from './logo/plan-pass-lifetime.svg';
 import passPro from './logo/plan-pass-pro.svg';
 import pass from './logo/plan-pass.svg';
+import visionary from './logo/plan-visionary.svg';
 import vpnBusiness from './logo/plan-vpn-business.svg';
 import vpnFree from './logo/plan-vpn-free.svg';
 import vpnPassBundleDark from './logo/plan-vpn-pass-bundle-dark.svg';
@@ -34,34 +35,38 @@ import vpn from './logo/plan-vpn.svg';
 import workspacePremium from './logo/plan-workspace-premium.svg';
 import workspace from './logo/plan-workspace.svg';
 
+export type CustomLogoPlanName =
+    | PLANS.VPN2024
+    | PLANS.MAIL
+    | PLANS.MAIL_PRO
+    | PLANS.MAIL_BUSINESS
+    | PLANS.PASS
+    | PLANS.DRIVE
+    | PLANS.DRIVE_1TB
+    | PLANS.BUNDLE
+    | PLANS.BUNDLE_PRO
+    | PLANS.DUO
+    | PLANS.FAMILY
+    | PLANS.VISIONARY
+    | PLANS.VPN_BUSINESS
+    | PLANS.BUNDLE_PRO_2024
+    | PLANS.BUNDLE_BIZ_2025
+    | PLANS.MEET_BUSINESS
+    | PLANS.VPN_PASS_BUNDLE
+    | PLANS.PASS_FAMILY
+    | PLANS.PASS_LIFETIME
+    | PLANS.PASS_PRO
+    | PLANS.PASS_BUSINESS
+    | PLANS.VPN_PASS_BUNDLE_BUSINESS
+    | PLANS.LUMO
+    | PLANS.LUMO_BUSINESS
+    | PLANS.VPN_PRO
+    | PLANS.DRIVE_PRO
+    | PLANS.DRIVE_BUSINESS;
+
 interface Props extends ComponentPropsWithoutRef<'img'> {
     app?: APP_NAMES;
-    planName?:
-        | PLANS.VPN2024
-        | PLANS.MAIL
-        | PLANS.MAIL_PRO
-        | PLANS.MAIL_BUSINESS
-        | PLANS.PASS
-        | PLANS.DRIVE
-        | PLANS.BUNDLE
-        | PLANS.BUNDLE_PRO
-        | PLANS.DUO
-        | PLANS.FAMILY
-        | PLANS.VPN_BUSINESS
-        | PLANS.BUNDLE_PRO_2024
-        | PLANS.BUNDLE_BIZ_2025
-        | PLANS.MEET_BUSINESS
-        | PLANS.VPN_PASS_BUNDLE
-        | PLANS.PASS_FAMILY
-        | PLANS.PASS_LIFETIME
-        | PLANS.PASS_PRO
-        | PLANS.PASS_BUSINESS
-        | PLANS.VPN_PASS_BUNDLE_BUSINESS
-        | PLANS.LUMO
-        | PLANS.LUMO_BUSINESS
-        | PLANS.VPN_PRO
-        | PLANS.DRIVE_PRO
-        | PLANS.DRIVE_BUSINESS;
+    planName?: CustomLogoPlanName;
     size?: number;
     dark?: boolean;
 }
@@ -76,6 +81,9 @@ const CustomLogo = ({ planName, app, size, dark, ...rest }: Props) => {
     if (planName === PLANS.DRIVE) {
         return <img {...rest} src={drive} width={size} alt="" />;
     }
+    if (planName === PLANS.DRIVE_1TB) {
+        return <img {...rest} src={drive} width={size} alt="" />;
+    }
     if (planName === PLANS.PASS) {
         return <img {...rest} src={pass} width={size} alt="" />;
     }
@@ -87,6 +95,9 @@ const CustomLogo = ({ planName, app, size, dark, ...rest }: Props) => {
     }
     if (planName === PLANS.FAMILY) {
         return <img {...rest} src={family} width={size} alt="" />;
+    }
+    if (planName === PLANS.VISIONARY) {
+        return <img {...rest} src={visionary} width={size} alt="" />;
     }
     if (planName === PLANS.PASS_FAMILY) {
         return <img {...rest} src={passFamily} width={size} alt="" />;
