@@ -1499,8 +1499,7 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
+        "Lita på nyckel"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -1694,6 +1693,9 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Change password": [
+        "Ändra lösenord"
       ]
     },
     "action": {
@@ -4271,6 +4273,10 @@
       ],
       "You’ve already created 10 aliases. Get unlimited aliases and 500 GB of storage with ${ BRAND_NAME } Unlimited.": [
         "Du har redan skapat 10 alias. Skaffa obegränsat antal alias och 500 GB lagringsutrymme med ${ BRAND_NAME } Unlimited."
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "Du har anslutit ${ MAX_SYNC_PAID_USER } Gmail‑adress. För att lägga till en till, inaktivera först ett av dina anslutna konton.",
+        "Du har anslutit ${ MAX_SYNC_PAID_USER } Gmail‑adresser. För att lägga till en till, inaktivera först ett av dina anslutna konton."
       ]
     },
     "description": {
@@ -7516,7 +7522,8 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild"
+        "Infoga bild",
+        "Infoga bilder"
       ],
       "Insert link": [
         "Infoga länk"
@@ -15924,6 +15931,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategorier kommer!"
+      ],
+      "Account temporarily locked": [
+        "Konto tillfälligt låst"
       ]
     },
     "Today icon tooltip in mini calendar": {

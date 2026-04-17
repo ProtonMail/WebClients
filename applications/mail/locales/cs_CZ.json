@@ -1504,10 +1504,7 @@
         "Důvěřovat"
       ],
       "Trust key": [
-        "Důvěřovat klíči",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům",
-        "Důvěřovat klíčům"
+        "Důvěřovat klíči"
       ],
       "Trust public key": [
         "Důvěřovat veřejnému klíči"
@@ -1703,6 +1700,9 @@
       ],
       "Zoom out": [
         "Oddálit"
+      ],
+      "Change password": [
+        "Změnit heslo"
       ]
     },
     "action": {
@@ -4214,10 +4214,10 @@
         "Pro připojení jiné adresy Gmail odeberte další adresy Gmail přeposílané na ${ BRAND_NAME }."
       ],
       "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
-        "Chcete-li připojit až ${ MAX_SYNC_PAID_USER } adresu Gmail, upgradujte na ${ planName }.",
-        "Chcete-li připojit až ${ MAX_SYNC_PAID_USER } adresy Gmail, upgradujte na ${ planName }.",
-        "Chcete-li připojit až ${ MAX_SYNC_PAID_USER } adres Gmail, upgradujte na ${ planName }.",
-        "Chcete-li připojit až ${ MAX_SYNC_PAID_USER } adres Gmail, upgradujte na ${ planName }."
+        "Chcete-li připojit ${ MAX_SYNC_PAID_USER } adresu Gmail, navyšte na ${ planName }.",
+        "Chcete-li připojit až ${ MAX_SYNC_PAID_USER } adresy Gmail, navyšte na ${ planName }.",
+        "Chcete-li připojit až ${ MAX_SYNC_PAID_USER } adres Gmail, navyšte na ${ planName }.",
+        "Chcete-li připojit až ${ MAX_SYNC_PAID_USER } adres Gmail, navyšte na ${ planName }."
       ],
       "To continue to use the writing assistant, add it to your subscription.": [
         "Pro pokračování v používání asistenta psaní, ho přidejte k vašemu předplatnému."
@@ -4296,7 +4296,7 @@
       ],
       "You're forwarding emails from ${ forwardingCount } Gmail address. By connecting it, you'll be able to both receive and reply in ${ MAIL_APP_NAME }": [
         "Přeposíláte e-maily z ${ forwardingCount } adresy Gmail. Jejím připojením budete moci přijímat i odpovídat v aplikaci ${ MAIL_APP_NAME }",
-        "Přeposíláte e-maily z ${ forwardingCount } adres Gmail. Jejím připojením budete moci přijímat i odpovídat v aplikaci ${ MAIL_APP_NAME }",
+        "Přeposíláte e-maily ze ${ forwardingCount } adres Gmail. Jejím připojením budete moci přijímat i odpovídat v aplikaci ${ MAIL_APP_NAME }",
         "Přeposíláte e-maily z ${ forwardingCount } adres Gmail. Jejím připojením budete moci přijímat i odpovídat v aplikaci ${ MAIL_APP_NAME }",
         "Přeposíláte e-maily z ${ forwardingCount } adres Gmail. Jejím připojením budete moci přijímat i odpovídat v aplikaci ${ MAIL_APP_NAME }"
       ],
@@ -7731,7 +7731,10 @@
         "Inicializace..."
       ],
       "Insert image": [
-        "Vložit obrázek"
+        "Vložit obrázek",
+        "Vložit obrázky",
+        "Vložit obrázky",
+        "Vložit obrázky"
       ],
       "Insert link": [
         "Vložit odkaz"
@@ -16466,6 +16469,9 @@
       ],
       "✨ Categories are coming!": [
         "✨ Kategorie se blíží!"
+      ],
+      "Account temporarily locked": [
+        "Účet dočasně uzamčen"
       ]
     },
     "Today icon tooltip in mini calendar": {
