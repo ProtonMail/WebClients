@@ -1256,6 +1256,9 @@
       ],
       "Reconnect to Gmail": [
         "Reconectar ao Gmail"
+      ],
+      "Go back to album “${ ellipsedAlbumName }“": [
+        "Voltar para o álbum \"${ ellipsedAlbumName }\""
       ]
     },
     "Action: Docs": {
@@ -3986,6 +3989,9 @@
       ],
       "Failed to change permissions settings": [
         "Falha ao alterar as configurações de permissões"
+      ],
+      "Something went wrong with search. Please try again later.": [
+        "Ocorreu um erro com a pesquisa. Tente novamente mais tarde."
       ]
     },
     "error": {
@@ -9746,6 +9752,15 @@
       ],
       "Copy of \"${ ellipsedName }\" moved to trash": [
         "Cópia de \"${ ellipsedName }\" movido para a lixeira"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "\"${ ellipsedName }\" criado com sucesso"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "\"${ ellipsedName }\" falhou ao ser criado"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "\"${ ellipsedName }\" falhou ao ser excluído permanentemente da lixeira"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
