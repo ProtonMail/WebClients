@@ -59,7 +59,7 @@ import { SignupType } from '../../signup/interfaces';
 import type { BenefitItem } from '../Benefits';
 import Benefits from '../Benefits';
 import FeatureListPlanCardSubSection from '../FeatureListPlanCardSubSection';
-import LetsTalkGenericSubSection from '../LetsTalkGenericSubsection';
+import LetsTalkSubSection from '../LetsTalkSubsection';
 import { planCardFeatureProps } from '../PlanCardSelector';
 import SignupHeaderV2 from '../SignupHeaderV2';
 import {
@@ -281,6 +281,7 @@ export const getMailConfiguration = ({
     signupParameters,
     canUseBYOE,
     isNewB2BPlanEnabled,
+    vpnServersCountData,
 }: {
     freePlan: FreePlanDefault;
     audience: Audience.B2B | Audience.B2C;
@@ -378,7 +379,14 @@ export const getMailConfiguration = ({
                 guarantee: true,
             },
             {
-                subsection: <LetsTalkGenericSubSection app="mail" signupParameters={signupParameters} />,
+                subsection: (
+                    <LetsTalkSubSection
+                        app="mail"
+                        signupParameters={signupParameters}
+                        mode="text"
+                        vpnServersCountData={vpnServersCountData}
+                    />
+                ),
                 type: 'standard' as const,
                 guarantee: true,
                 interactive: false as const,
