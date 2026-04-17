@@ -1,6 +1,8 @@
 import type { Author, NodeEntity } from '@proton/drive';
 import { splitExtension } from '@proton/shared/lib/helpers/file';
 
+import { Logger } from '../../shared/Logger';
+import { MAX_SEARCHABLE_FILENAME_LENGTH } from '../../shared/config';
 import type { TreeEventScopeId } from '../../shared/types';
 
 // Attribute value variants that the search library WASM understands.
@@ -155,6 +157,15 @@ export function createIndexEntry<N extends string>(params: CreateIndexEntryParam
         additionalAttributes,
     } = params;
 
+    let strippedFilenameForTextAttribute = stripSpecialChars(node.name);
+    if (strippedFilenameForTextAttribute.length > MAX_SEARCHABLE_FILENAME_LENGTH) {
+        Logger.error(
+            `Filename exceeds max searchable length (${strippedFilenameForTextAttribute.length}/${MAX_SEARCHABLE_FILENAME_LENGTH})`
+        );
+        // Let's still index the first MAX_SEARCHABLE_FILENAME_LENGTH characters.
+        strippedFilenameForTextAttribute = strippedFilenameForTextAttribute.slice(0, MAX_SEARCHABLE_FILENAME_LENGTH);
+    }
+
     return {
         documentId: node.uid,
         attributes: [
@@ -165,7 +176,7 @@ export function createIndexEntry<N extends string>(params: CreateIndexEntryParam
             { name: 'filename', value: { kind: 'tag', value: normalizedFilenameForTag(node.name) } },
             // Filename as text — special chars stripped so the text processor sees
             // concatenated alphanumeric tokens for trigram / fuzzy matching. Not case sensitive.
-            { name: 'filenameText', value: { kind: 'text', value: stripSpecialChars(node.name) } },
+            { name: 'filenameText', value: { kind: 'text', value: strippedFilenameForTextAttribute } },
             { name: 'path', value: { kind: 'tag', value: parentPath } },
             { name: 'treeEventScopeId', value: { kind: 'tag', value: treeEventScopeId } },
             { name: 'indexPopulatorId', value: { kind: 'tag', value: indexPopulatorId } },
