@@ -18,7 +18,6 @@ import {
     type PaymentMethodType,
     type PaymentProcessorType,
     type PaymentStatus,
-    type PaymentsVersion,
     type PlainPaymentMethodType,
     type PlanIDs,
     type SavedPaymentMethod,
@@ -26,6 +25,7 @@ import {
     type SubscriptionEstimation,
     SubscriptionMode,
 } from '@proton/payments';
+import type { PaymentsVersion } from '@proton/payments/core/api/api';
 import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import type { PaymentStage } from '@proton/payments/telemetry/shared-checkout-telemetry';

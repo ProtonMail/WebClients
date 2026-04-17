@@ -9,21 +9,23 @@ import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
 import { usePreferredPlansMap } from '@proton/components/hooks/usePreferredPlansMap';
 import {
-    type CheckSubscriptionData,
     type MultiCheckOptions,
     type PaymentStatus,
     type PaymentsApi,
-    type PaymentsVersion,
     type SubscriptionEstimation,
     SubscriptionMode,
     captureWrongPlanIDs,
-    getPaymentMethodStatus,
     getPlanName,
     getPlansMap,
     isLifetimePlanSelected,
     isSubscriptionCheckForbidden,
 } from '@proton/payments';
 import { PAYMENTS_API_ERROR_CODES } from '@proton/payments/core/api-error-codes';
+import {
+    type CheckSubscriptionData,
+    type PaymentsVersion,
+    getPaymentMethodStatus,
+} from '@proton/payments/core/api/api';
 import {
     putFullBillingAddress,
     putInvoiceBillingAddress,

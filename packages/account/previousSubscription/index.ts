@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { type LatestSubscription, getLatestCancelledSubscription } from '@proton/payments';
+import type { LatestSubscription } from '@proton/payments';
+import { getLatestCancelledSubscription } from '@proton/payments/core/api/api';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { createAsyncModelThunk, handleAsyncModel, previousSelector } from '@proton/redux-utilities';
 

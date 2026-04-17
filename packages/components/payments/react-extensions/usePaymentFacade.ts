@@ -21,7 +21,6 @@ import type {
     PaymentStatus,
     PaymentVerificator,
     PaymentVerificatorV5,
-    PaymentsVersion,
     PlainPaymentMethodType,
     PlanIDs,
     SavedPaymentMethod,
@@ -29,14 +28,12 @@ import type {
 } from '@proton/payments';
 import {
     PAYMENT_METHOD_TYPES,
-    buyCredit,
     isExistingPaymentMethod,
-    payInvoice,
-    setPaymentMethodV5,
     useApplePay,
     useGooglePay,
     useSepaCurrencyOverride,
 } from '@proton/payments';
+import { type PaymentsVersion, buyCredit, payInvoice, setPaymentMethodV5 } from '@proton/payments/core/api/api';
 import { createPaymentSubscription } from '@proton/payments/core/api/createPaymentSubscription';
 import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';

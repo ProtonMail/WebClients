@@ -9,13 +9,9 @@ import { ProtonPlanCustomizer, getHasPlanCustomizer } from '@proton/components/c
 import { usePaymentFacade } from '@proton/components/payments/client-extensions';
 import useLoading from '@proton/hooks/useLoading';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
-import {
-    PAYMENT_METHOD_TYPES,
-    type PaymentProcessorHook,
-    getBillingAddressFromPaymentStatus,
-    getPaymentsVersion,
-    getPlanFromPlanIDs,
-} from '@proton/payments';
+import { PAYMENT_METHOD_TYPES, type PaymentProcessorHook, getPlanFromPlanIDs } from '@proton/payments';
+import { getPaymentsVersion } from '@proton/payments/core/api/api';
+import { getBillingAddressFromPaymentStatus } from '@proton/payments/core/billing-address/billing-address-from-payments-status';
 import { PayButton, usePaymentOptimistic } from '@proton/payments/ui';
 import { useBillingAddress } from '@proton/payments/ui/billing-address/hooks/useBillingAddress';
 import { APPS } from '@proton/shared/lib/constants';

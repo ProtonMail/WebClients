@@ -1,6 +1,6 @@
 import { useUser } from '@proton/account/user/hooks';
 import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
-import type { FeedbackDowngradeData } from '@proton/payments';
+import type { FeedbackDowngradeData } from '@proton/payments/core/api/api';
 
 import type { FeedbackDowngradeResult } from '../FeedbackDowngradeModal';
 import FeedbackDowngradeModal, { isKeepSubscription } from '../FeedbackDowngradeModal';

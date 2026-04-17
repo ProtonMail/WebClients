@@ -6,16 +6,8 @@ import {
     organizationDefaultResponse,
     plansDefaultResponse,
 } from '@proton/components/hooks/helpers/test';
-import {
-    CYCLE,
-    type CheckSubscriptionData,
-    type Currency,
-    FREE_PLAN,
-    PAYMENT_METHOD_TYPES,
-    PLANS,
-    type Plan,
-    getPlansMap,
-} from '@proton/payments';
+import { CYCLE, type Currency, FREE_PLAN, PAYMENT_METHOD_TYPES, PLANS, type Plan, getPlansMap } from '@proton/payments';
+import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
 import { DEFAULT_TAX_BILLING_ADDRESS } from '@proton/payments/core/billing-address/billing-address';
 import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';

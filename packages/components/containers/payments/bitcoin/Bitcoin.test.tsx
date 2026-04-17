@@ -1,12 +1,7 @@
 import { act, render, waitFor } from '@testing-library/react';
 
-import {
-    type Currency,
-    PAYMENT_METHOD_TYPES,
-    PAYMENT_TOKEN_STATUS,
-    createTokenV5,
-    getTokenStatusV5,
-} from '@proton/payments';
+import { type Currency, PAYMENT_METHOD_TYPES, PAYMENT_TOKEN_STATUS } from '@proton/payments';
+import { createTokenV5, getTokenStatusV5 } from '@proton/payments/core/api/api';
 import type { Api } from '@proton/shared/lib/interfaces';
 import { addApiMock, apiMock, applyHOCs, flushPromises, withNotifications } from '@proton/testing';
 
