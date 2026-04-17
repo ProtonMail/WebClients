@@ -237,7 +237,9 @@ export abstract class IndexPopulator {
             for await (const id of this.findIndexedDescendants(event.nodeUid, indexReader)) {
                 session.remove(id);
             }
-            session.insert(entry);
+            if (entry) {
+                session.insert(entry);
+            }
 
             // Re-index the entire subtree from SDK if this is a folder.
             // This handles both moved folders (stale paths) and un-trashed folders

@@ -411,6 +411,13 @@ const COLUMNS: ColumnDef[] = [
         render: (entry) => attr(entry, 'filename'),
     },
     {
+        key: 'filenameText',
+        label: 'filenameText',
+        defaultVisible: true,
+        sortValue: (e) => attr(e, 'filenameText'),
+        render: (entry) => attr(entry, 'filenameText'),
+    },
+    {
         key: 'path',
         label: 'path',
         defaultVisible: true,
