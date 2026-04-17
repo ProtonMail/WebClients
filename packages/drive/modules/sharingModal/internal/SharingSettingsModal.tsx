@@ -1,10 +1,10 @@
-import { type ChangeEvent, useState } from 'react';
+import { useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import type { ModalProps } from '@proton/components';
-import { Checkbox, ModalTwo, ModalTwoContent, useConfirmActionModal, useModalTwoStatic } from '@proton/components';
+import { ModalTwo, ModalTwoContent, Toggle, useConfirmActionModal, useModalTwoStatic } from '@proton/components';
 import { ModalHeaderCloseButton } from '@proton/components/components/modalTwo/ModalHeader';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 
@@ -28,10 +28,10 @@ const SharingSettingsModal = ({
 
     const [isLoading, setIsLoading] = useState(false);
     const { editorsManageAccess, changeManageAccess } = useEditorsManageAccessContext();
-    const toggleCheckbox = async (event: ChangeEvent<HTMLInputElement>) => {
+    const toggleManageAccess = async () => {
         setIsLoading(true);
         try {
-            await changeManageAccess(event.target.checked);
+            await changeManageAccess(!editorsManageAccess);
         } finally {
             // Error already caught in changeManageAccess
             setIsLoading(false);
@@ -52,7 +52,7 @@ const SharingSettingsModal = ({
         <>
             <ModalTwo as="form" size="large" onClose={onClose} onExit={onExit} open={open} fullscreenOnMobile>
                 <div
-                    className="modal-two-header flex items-center justify-space-between flex-nowrap border-bottom border-weak px-8 py-3 m-0 mb-5"
+                    className="flex items-center justify-space-between flex-nowrap border-bottom border-weak px-8 py-3 mb-5"
                     data-testid="modal-two-header"
                 >
                     <div className="flex items-center flex-nowrap gap-2">
@@ -78,7 +78,12 @@ const SharingSettingsModal = ({
                                     <span className="color-weak">{c('Label')
                                         .t`Allow editors to change permissions and share`}</span>
                                 </div>
-                                <Checkbox checked={editorsManageAccess} onChange={toggleCheckbox} loading={isLoading} />
+                                <Toggle
+                                    id="SharingSettingsModal"
+                                    checked={editorsManageAccess}
+                                    onChange={toggleManageAccess}
+                                    loading={isLoading}
+                                />
                             </div>
                             <hr className="my-5 bg-weak" />
                         </>
