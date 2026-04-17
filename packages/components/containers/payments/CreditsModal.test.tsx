@@ -1,7 +1,8 @@
 import { fireEvent, render, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { PAYMENT_TOKEN_STATUS, buyCredit, createTokenV4 } from '@proton/payments';
+import { PAYMENT_TOKEN_STATUS } from '@proton/payments';
+import { buyCredit, createTokenV4 } from '@proton/payments/core/api/api';
 import { APPS } from '@proton/shared/lib/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import {

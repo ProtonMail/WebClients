@@ -1,4 +1,5 @@
-import type { Invoice, PaymentsVersion } from '@proton/payments';
+import type { Invoice } from '@proton/payments';
+import type { PaymentsVersion } from '@proton/payments/core/api/api';
 
 export function getInvoicePaymentsVersion(invoice?: Invoice): PaymentsVersion {
     if (!invoice) {

@@ -9,8 +9,8 @@ import TableHeader from '@proton/components/components/table/TableHeader';
 import TableRow from '@proton/components/components/table/TableRow';
 import Time from '@proton/components/components/time/Time';
 import useApi from '@proton/components/hooks/useApi';
-import { getInvoicePDF } from '@proton/payments';
 import type { Invoice } from '@proton/payments';
+import { getInvoicePDF } from '@proton/payments/core/api/api';
 import { type APP_NAMES, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 

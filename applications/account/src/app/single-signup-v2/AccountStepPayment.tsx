@@ -24,10 +24,10 @@ import {
     type Plan,
     SubscriptionMode,
     getIsB2BAudienceFromPlan,
-    getPaymentsVersion,
     isV5PaymentToken,
     v5PaymentTokenToLegacyPaymentToken,
 } from '@proton/payments';
+import { getPaymentsVersion } from '@proton/payments/core/api/api';
 import type { FullBillingAddressFlat } from '@proton/payments/core/billing-address/billing-address';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import { PayButton } from '@proton/payments/ui';

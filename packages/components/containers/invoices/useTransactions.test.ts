@@ -1,6 +1,7 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 
-import { InvoiceOwner, TransactionState, TransactionType, queryTransactions } from '@proton/payments';
+import { InvoiceOwner, TransactionState, TransactionType } from '@proton/payments';
+import { queryTransactions } from '@proton/payments/core/api/api';
 import { addApiMock, hookWrapper, withApi } from '@proton/testing';
 
 import useTransactions from './useTransactions';

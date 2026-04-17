@@ -1,6 +1,7 @@
 import { renderHook } from '@testing-library/react-hooks';
 
-import { type CheckSubscriptionData, PLANS } from '@proton/payments';
+import { PLANS } from '@proton/payments';
+import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
 import { APPS } from '@proton/shared/lib/constants';
 import {
     addApiMock,

@@ -27,10 +27,10 @@ import {
     type PaymentProcessorHook,
     type PaymentStatus,
     type PlainPaymentMethodType,
-    getPaymentsVersion,
     isFreeSubscription,
 } from '@proton/payments';
 import { getMaxBitcoinAmount, getMinBitcoinAmount, getMinCreditAmount } from '@proton/payments/core/amount-limits';
+import { getPaymentsVersion } from '@proton/payments/core/api/api';
 import { ChargebeePaypalButton } from '@proton/payments/ui';
 import { usePaymentPollers } from '@proton/payments/ui/hooks/usePaymentPollers';
 import { CacheType } from '@proton/redux-utilities';

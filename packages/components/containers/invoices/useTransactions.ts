@@ -1,9 +1,6 @@
-import {
-    type InvoiceOwner,
-    type Transaction,
-    type TransactionResponse,
-    queryTransactions,
-} from '@proton/payments';
+import { queryTransactions } from '@proton/payments/core/api/api';
+import type { InvoiceOwner } from '@proton/payments/core/constants';
+import type { Transaction, TransactionResponse } from '@proton/payments/core/interface';
 import { displayTransactionState, displayTransactionType } from '@proton/payments/core/transactions';
 
 import { usePaginationAsync } from '../../components/pagination';

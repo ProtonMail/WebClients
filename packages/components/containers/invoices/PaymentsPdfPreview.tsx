@@ -3,7 +3,8 @@ import { forwardRef, useImperativeHandle, useRef, useState } from 'react';
 
 import useApi from '@proton/components/hooks/useApi';
 import type { Invoice, Transaction } from '@proton/payments';
-import { isTransaction, getInvoicePDF, getTransactionPDF } from '@proton/payments';
+import { isTransaction } from '@proton/payments';
+import { getInvoicePDF, getTransactionPDF } from '@proton/payments/core/api/api';
 
 import FilePreview from '../filePreview/FilePreview';
 import NavigationControl from '../filePreview/NavigationControl';

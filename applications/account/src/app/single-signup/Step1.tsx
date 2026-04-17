@@ -48,15 +48,15 @@ import {
     type StrictPlan,
     SubscriptionMode,
     TRIAL_DURATION_DAYS,
-    getBillingAddressFromPaymentStatus,
     getHas2025OfferCoupon,
-    getPaymentsVersion,
     getPlanFromPlanIDs,
     getPlanNameFromIDs,
     isV5PaymentToken,
     v5PaymentTokenToLegacyPaymentToken,
 } from '@proton/payments';
+import { getPaymentsVersion } from '@proton/payments/core/api/api';
 import type { FullBillingAddressFlat } from '@proton/payments/core/billing-address/billing-address';
+import { getBillingAddressFromPaymentStatus } from '@proton/payments/core/billing-address/billing-address-from-payments-status';
 import { type PaymentsCheckoutUI, getCheckoutUi, getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import type {

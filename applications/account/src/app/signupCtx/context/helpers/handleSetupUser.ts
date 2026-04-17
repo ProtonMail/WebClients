@@ -4,12 +4,12 @@ import {
     type Cycle,
     type ExtendedTokenPayment,
     type FreeSubscription,
-    type PaymentsVersion,
     type PlanIDs,
     type Subscription,
     type SubscriptionEstimation,
     hasFreePlanIDs,
 } from '@proton/payments';
+import type { PaymentsVersion } from '@proton/payments/core/api/api';
 import { createPaymentSubscription } from '@proton/payments/core/api/createPaymentSubscription';
 import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
