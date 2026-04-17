@@ -424,7 +424,17 @@ describe('useVatNumber', () => {
             const { result } = renderHook(() => useVatNumber(defaultProps({ isAuthenticated: false })));
 
             await act(async () => {
-                await result.current.vatUpdatedInModal('MODAL-VAT');
+                await result.current.vatUpdatedInModal({
+                    VatId: 'MODAL-VAT',
+                    BillingAddress: {
+                        CountryCode: 'DE',
+                        Company: 'MODAL-COMPANY',
+                        FirstName: 'MODAL-FIRST-NAME',
+                        LastName: 'MODAL-LAST-NAME',
+                        Address: 'MODAL-ADDRESS',
+                        City: 'MODAL-CITY',
+                    },
+                });
             });
 
             expect(result.current.vatNumber).toBe('MODAL-VAT');
@@ -434,7 +444,17 @@ describe('useVatNumber', () => {
             const { result } = renderHook(() => useVatNumber(defaultProps({ isAuthenticated: false })));
 
             await act(async () => {
-                await result.current.vatUpdatedInModal(undefined);
+                await result.current.vatUpdatedInModal({
+                    VatId: undefined,
+                    BillingAddress: {
+                        CountryCode: 'DE',
+                        Company: 'MODAL-COMPANY',
+                        FirstName: 'MODAL-FIRST-NAME',
+                        LastName: 'MODAL-LAST-NAME',
+                        Address: 'MODAL-ADDRESS',
+                        City: 'MODAL-CITY',
+                    },
+                });
             });
 
             expect(result.current.vatNumber).toBe('');
@@ -447,7 +467,17 @@ describe('useVatNumber', () => {
             );
 
             await act(async () => {
-                await result.current.vatUpdatedInModal('MODAL-VAT');
+                await result.current.vatUpdatedInModal({
+                    VatId: 'MODAL-VAT',
+                    BillingAddress: {
+                        CountryCode: 'DE',
+                        Company: 'MODAL-COMPANY',
+                        FirstName: 'MODAL-FIRST-NAME',
+                        LastName: 'MODAL-LAST-NAME',
+                        Address: 'MODAL-ADDRESS',
+                        City: 'MODAL-CITY',
+                    },
+                });
             });
 
             expect(onVatUpdated).toHaveBeenCalledTimes(1);
@@ -458,7 +488,17 @@ describe('useVatNumber', () => {
             const { result } = renderHook(() => useVatNumber(defaultProps({ isAuthenticated: false, onVatUpdated })));
 
             await act(async () => {
-                await result.current.vatUpdatedInModal('MODAL-VAT');
+                await result.current.vatUpdatedInModal({
+                    VatId: 'MODAL-VAT',
+                    BillingAddress: {
+                        CountryCode: 'DE',
+                        Company: 'MODAL-COMPANY',
+                        FirstName: 'MODAL-FIRST-NAME',
+                        LastName: 'MODAL-LAST-NAME',
+                        Address: 'MODAL-ADDRESS',
+                        City: 'MODAL-CITY',
+                    },
+                });
             });
 
             expect(onVatUpdated).not.toHaveBeenCalled();
@@ -475,7 +515,17 @@ describe('useVatNumber', () => {
             });
 
             await act(async () => {
-                await result.current.vatUpdatedInModal('NEW-VAT');
+                await result.current.vatUpdatedInModal({
+                    VatId: 'NEW-VAT',
+                    BillingAddress: {
+                        CountryCode: 'DE',
+                        Company: 'MODAL-COMPANY',
+                        FirstName: 'MODAL-FIRST-NAME',
+                        LastName: 'MODAL-LAST-NAME',
+                        Address: 'MODAL-ADDRESS',
+                        City: 'MODAL-CITY',
+                    },
+                });
             });
 
             expect(onVatUpdated).toHaveBeenCalledWith('NEW-VAT');

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { c } from 'ttag';
 
@@ -15,6 +15,7 @@ import noop from '@proton/utils/noop';
 import type {
     BillingAddressExtended,
     BillingAddressExtraProperties,
+    FullBillingAddress,
     FullBillingAddressFlat,
 } from '../../../core/billing-address/billing-address';
 import type { ADDON_NAMES, PLANS } from '../../../core/constants';
@@ -72,18 +73,25 @@ export const useVatNumber = ({
 
     const isB2BPlan = getIsB2BAudienceFromPlan(selectedPlanName);
 
+    const [, forceRender] = useState(0);
+    const triggerRerender = () => forceRender((prev) => prev + 1);
+
     const enableVatNumber = isB2BPlan;
     const [vatNumber, setVatNumber] = useState(initialVatNumber ?? '');
-    const [billingAddressExtra, setBillingAddressExtra] = useState<BillingAddressExtraProperties>({
+    const billingAddressExtraRef = useRef<BillingAddressExtraProperties>({
         ...INITIAL_BILLING_ADDRESS_EXTRA,
         ...pick(
             initialBillingAddress ?? ({} as BillingAddressExtraProperties),
             Object.keys(INITIAL_BILLING_ADDRESS_EXTRA) as (keyof BillingAddressExtraProperties)[]
         ),
     });
+    const setBillingAddressExtra = (billingAddressExtra: BillingAddressExtraProperties) => {
+        billingAddressExtraRef.current = billingAddressExtra;
+        triggerRerender();
+    };
 
     const [unauthenticatedCollapsed, setUnauthenticatedCollapsed] = useState(
-        !Object.values(billingAddressExtra).some(isTruthy)
+        !Object.values(billingAddressExtraRef.current).some(isTruthy)
     );
 
     const fetchVatNumber = async () => {
@@ -115,7 +123,7 @@ export const useVatNumber = ({
             CountryCode: taxCountry.selectedCountryCode,
             State: taxCountry.federalStateCode,
             ZipCode: taxCountry.zipCode,
-            ...billingAddressExtra,
+            ...billingAddressExtraRef.current,
             VatId: newVatNumber,
         };
 
@@ -147,11 +155,16 @@ export const useVatNumber = ({
         value: BillingAddressExtraProperties[K]
     ) => {
         const updated: BillingAddressExtraProperties = {
-            ...billingAddressExtra,
+            ...billingAddressExtraRef.current,
             [field]: value ? value : undefined,
         };
         setBillingAddressExtra(updated);
         handleBillingAddressChange(updated);
+    };
+
+    const updateBillingAddressFields = (billingAddressExtra: BillingAddressExtraProperties) => {
+        setBillingAddressExtra(billingAddressExtra);
+        handleBillingAddressChange(billingAddressExtra);
     };
 
     useEffect(() => {
@@ -162,8 +175,9 @@ export const useVatNumber = ({
         }
     }, [taxCountry.selectedCountryCode, isB2BPlan]);
 
-    const vatUpdatedInModal = async (vatNumber: string | undefined) => {
-        const newVatNumber = vatNumber ?? '';
+    const vatUpdatedInModal = async (fullBillingAddress: FullBillingAddress) => {
+        const newVatNumber = fullBillingAddress.VatId ?? '';
+        updateBillingAddressFields(fullBillingAddress.BillingAddress);
         handleVatNumberChange(newVatNumber);
         if (isAuthenticated) {
             await onVatUpdated?.(newVatNumber);
@@ -177,7 +191,7 @@ export const useVatNumber = ({
             CountryCode: taxCountry.selectedCountryCode,
             State: taxCountry.federalStateCode,
             ZipCode: taxCountry.zipCode,
-            ...billingAddressExtra,
+            ...billingAddressExtraRef.current,
             VatId: vatNumber,
         },
         showExtendedBillingAddressForm
@@ -187,7 +201,7 @@ export const useVatNumber = ({
     const vatFormErrorMessage = !vatFormValid ? c('Error').t`Please complete the billing details` : undefined;
 
     return {
-        ...billingAddressExtra,
+        ...billingAddressExtraRef.current,
         setCompany: (value: string) => updateBillingAddressField('Company', value),
         setFirstName: (value: string) => updateBillingAddressField('FirstName', value),
         setLastName: (value: string) => updateBillingAddressField('LastName', value),
