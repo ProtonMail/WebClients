@@ -4,7 +4,8 @@ import { usePaymentStatus } from '@proton/account/paymentStatus/hooks';
 import { usePlans } from '@proton/account/plans/hooks';
 import { useCurrencies } from '@proton/components/payments/client-extensions';
 import { usePaymentsApi } from '@proton/components/payments/react-extensions/usePaymentsApi';
-import { CYCLE, type CheckSubscriptionData, PLANS, type SubscriptionEstimation } from '@proton/payments';
+import { CYCLE, PLANS, type SubscriptionEstimation } from '@proton/payments';
+import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
 
 interface UseDriveFreePromoProps {
     codes: string[] | undefined;

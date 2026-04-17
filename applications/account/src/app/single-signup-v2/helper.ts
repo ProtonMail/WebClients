@@ -31,12 +31,10 @@ import {
     getIsB2BAudienceFromPlan,
     getIsPlanTransitionForbidden,
     getNormalCycleFromCustomCycle,
-    getPaymentMethods,
     getPlan,
     getPlanFromPlanIDs,
     getPlanNameFromIDs,
     getPrice,
-    getSubscription,
     hasPlanIDs,
     isForbiddenLumoPlus,
     isForbiddenModification,
@@ -46,6 +44,7 @@ import {
     isValidPlanName,
     switchPlan,
 } from '@proton/payments';
+import { getPaymentMethods, getSubscription } from '@proton/payments/core/api/api';
 import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
 import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import { VatReverseChargeNotSupportedError } from '@proton/payments/core/errors';

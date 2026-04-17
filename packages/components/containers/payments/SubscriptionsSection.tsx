@@ -28,7 +28,6 @@ import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCirc
 import {
     Renew,
     type Subscription,
-    changeRenewState,
     getRenewalTime,
     getSubscriptionPlanTitle,
     hasLifetimeCoupon,
@@ -36,6 +35,7 @@ import {
     isUpcomingSubscriptionUnpaid,
     subscriptionExpires,
 } from '@proton/payments';
+import { changeRenewState } from '@proton/payments/core/api/api';
 import {
     isAddonDowngrade,
     isReferralTrial,

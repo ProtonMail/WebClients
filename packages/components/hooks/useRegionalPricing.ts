@@ -1,9 +1,5 @@
-import {
-    type CheckSubscriptionData,
-    type Currency,
-    type SubscriptionEstimation,
-    isMainCurrency,
-} from '@proton/payments';
+import { type Currency, type SubscriptionEstimation, isMainCurrency } from '@proton/payments';
+import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
 import { getCheckoutUi, getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import type { CheckSubscriptionRequestOptions } from '@proton/payments/core/interface';
 

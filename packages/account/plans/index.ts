@@ -8,10 +8,9 @@ import {
     type Plan,
     getAvailableCurrencies,
     getDefaultMainCurrency,
-    getFreePlan,
     isRegionalCurrency,
-    queryPlans,
 } from '@proton/payments';
+import { getFreePlan, queryPlans } from '@proton/payments/core/api/api';
 import { NEW_BATCH_CURRENCIES_FEATURE_FLAG } from '@proton/payments/core/currencies';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import {
