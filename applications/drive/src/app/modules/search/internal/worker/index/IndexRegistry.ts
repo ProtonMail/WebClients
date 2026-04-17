@@ -1,7 +1,8 @@
 import type { Engine, InitOutput } from '@proton/proton-foundation-search';
-import init, { Engine as SearchLibraryWasmEngine } from '@proton/proton-foundation-search';
+import init, { ProcessorConfig, Engine as SearchLibraryWasmEngine } from '@proton/proton-foundation-search';
 
 import type { SearchDB } from '../../shared/SearchDB';
+import { MAX_SEARCHABLE_FILENAME_LENGTH } from '../../shared/config';
 import type { IndexKind } from '../../shared/types';
 import { IndexBlobStore } from './IndexBlobStore';
 import { IndexReader } from './IndexReader';
@@ -36,7 +37,8 @@ export class IndexRegistry {
         }
         await (wasmInit ??= init());
 
-        const engine = SearchLibraryWasmEngine.builder().build();
+        const config = new ProcessorConfig().withMaxLength(MAX_SEARCHABLE_FILENAME_LENGTH);
+        const engine = SearchLibraryWasmEngine.builder().withBuiltinProcessor(config).build();
         const blobStore = new IndexBlobStore(kind, db);
         const indexWriter = new IndexWriter(engine, blobStore);
         const indexReader = new IndexReader(engine, blobStore);
