@@ -67,7 +67,7 @@ import { SignupType } from '../../signup/interfaces';
 import type { BenefitItem } from '../Benefits';
 import Benefits from '../Benefits';
 import FeatureListPlanCardSubSection from '../FeatureListPlanCardSubSection';
-import LetsTalkSubsection from '../LetsTalkSubsection';
+import LetsTalkSubSection from '../LetsTalkSubsection';
 import { planCardFeatureProps } from '../PlanCardSelector';
 import SignupHeaderV2 from '../SignupHeaderV2';
 import {
@@ -566,7 +566,12 @@ export const getPassConfiguration = ({
             },
             {
                 subsection: (
-                    <LetsTalkSubsection vpnServersCountData={vpnServersCountData} signupParameters={signupParameters} />
+                    <LetsTalkSubSection
+                        app="pass"
+                        signupParameters={signupParameters}
+                        mode="text"
+                        vpnServersCountData={vpnServersCountData}
+                    />
                 ),
                 type: 'standard' as const,
                 guarantee: true,
