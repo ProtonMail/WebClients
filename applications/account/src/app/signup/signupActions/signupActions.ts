@@ -4,7 +4,8 @@ import { EASY_SWITCH_SOURCES, OAUTH_PROVIDER } from '@proton/activation/src/inte
 import type { AppIntent } from '@proton/components/containers/login/interface';
 import { createPreAuthKTVerifier } from '@proton/key-transparency/shared';
 import type { Subscription } from '@proton/payments';
-import { type PaymentsVersion, SubscriptionMode, hasPlanIDs } from '@proton/payments';
+import { SubscriptionMode, hasPlanIDs } from '@proton/payments';
+import type { PaymentsVersion } from '@proton/payments/core/api/api';
 import { createPaymentSubscription } from '@proton/payments/core/api/createPaymentSubscription';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import { getAllAddresses, updateAddress } from '@proton/shared/lib/api/addresses';

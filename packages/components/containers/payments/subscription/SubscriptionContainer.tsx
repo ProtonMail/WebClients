@@ -28,7 +28,6 @@ import type { WebPaymentsSubscriptionStepsTotal } from '@proton/metrics/types/we
 import {
     type AddonGuard,
     Audience,
-    type CheckSubscriptionData,
     type Currency,
     type Cycle,
     DisplayablePaymentError,
@@ -44,21 +43,18 @@ import {
     type PlainPaymentMethodType,
     type Plan,
     type PlanIDs,
-    ProrationMode,
     type Subscription,
     type SubscriptionCheckForbiddenReason,
     type SubscriptionEstimation,
     SubscriptionMode,
     captureWrongPlanIDs,
     captureWrongPlanName,
-    getCheckoutModifiers,
     getFreeCheckResult,
     getHas2025OfferCoupon,
     getIsB2BAudienceFromPlan,
     getIsB2BAudienceFromSubscription,
     getIsPlanTransitionForbidden,
     getMaximumCycleForApp,
-    getPaymentsVersion,
     getPlanCurrencyFromPlanIDs,
     getPlanFromPlanIDs,
     getPlanIDs,
@@ -72,8 +68,10 @@ import {
     shouldPassIsTrial as shouldPassIsTrialPayments,
     switchPlan,
 } from '@proton/payments';
+import { type CheckSubscriptionData, ProrationMode, getPaymentsVersion } from '@proton/payments/core/api/api';
 import type { BillingAddress, BillingAddressExtended } from '@proton/payments/core/billing-address/billing-address';
 import { getIsCustomCycle, getOptimisticCheckResult } from '@proton/payments/core/checkout';
+import { getCheckoutModifiers } from '@proton/payments/core/checkout-modifiers';
 import { VatReverseChargeNotSupportedError } from '@proton/payments/core/errors';
 import { computeOptimisticSubscriptionMode } from '@proton/payments/core/optimisticSubscriptionMode';
 import { InvalidChargebeeCardDataError } from '@proton/payments/core/payment-processors/chargebeeCardPayment';

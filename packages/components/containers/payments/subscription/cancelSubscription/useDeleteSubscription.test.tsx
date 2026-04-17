@@ -2,7 +2,7 @@ import { componentsHookRenderer } from '@proton/components/containers/contacts/t
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { type FeedbackDowngradeData, deleteSubscription } from '@proton/payments';
+import { type FeedbackDowngradeData, deleteSubscription } from '@proton/payments/core/api/api';
 
 import { useCancellationLoadingStep } from '../cancellationSteps/useCancellationLoadingStep';
 import { useDeleteSubscription } from './useDeleteSubscription';

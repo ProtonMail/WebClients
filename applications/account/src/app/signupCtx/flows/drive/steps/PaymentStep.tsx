@@ -13,11 +13,11 @@ import { IcShield } from '@proton/icons/icons/IcShield';
 import {
     PAYMENT_METHOD_TYPES,
     type PaymentProcessorHook,
-    getBillingAddressFromPaymentStatus,
     getIsB2BAudienceFromPlan,
-    getPaymentsVersion,
     getPlanFromPlanIDs,
 } from '@proton/payments';
+import { getPaymentsVersion } from '@proton/payments/core/api/api';
+import { getBillingAddressFromPaymentStatus } from '@proton/payments/core/billing-address/billing-address-from-payments-status';
 import { PayButton, usePaymentOptimistic } from '@proton/payments/ui';
 import { useBillingAddress } from '@proton/payments/ui/billing-address/hooks/useBillingAddress';
 import { APPS } from '@proton/shared/lib/constants';

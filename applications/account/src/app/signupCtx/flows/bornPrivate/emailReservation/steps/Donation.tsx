@@ -11,9 +11,9 @@ import PaymentWrapper from '@proton/components/containers/payments/PaymentWrappe
 import { type OnChargeable, usePaymentFacade } from '@proton/components/payments/client-extensions';
 import useLoading from '@proton/hooks/useLoading';
 import type { Currency, PaymentProcessorHook } from '@proton/payments';
-import { getBillingAddressFromPaymentStatus } from '@proton/payments';
 import { getMinDonationAmount } from '@proton/payments/core/amount-limits';
 import type { BillingAddress } from '@proton/payments/core/billing-address/billing-address';
+import { getBillingAddressFromPaymentStatus } from '@proton/payments/core/billing-address/billing-address-from-payments-status';
 import { PAYMENT_METHOD_TYPES } from '@proton/payments/core/constants';
 import { normalizePostalCode } from '@proton/payments/postal-codes/format';
 import { useTaxCountry } from '@proton/payments/ui';
