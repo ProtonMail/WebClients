@@ -508,6 +508,7 @@ const AccountStepPayment = ({
                                 disabled={model.subscriptionData.checkResult.optimistic}
                                 product={app}
                                 telemetryContext={telemetryContext}
+                                isAuthenticated={isAuthenticated}
                                 {...buttonProps}
                             >
                                 {isBitcoin ? c('pass_signup_2023: Action').t`Continue with Bitcoin` : cta}

@@ -68,7 +68,7 @@ export const useEditBillingAddressModal = () => {
             initialFullBillingAddress: fullBillingAddressBackend,
         });
 
-        void props.vatNumber?.vatUpdatedInModal(result.VatId ?? undefined);
+        void props.vatNumber?.vatUpdatedInModal(result);
         props.taxCountry?.billingAddressChangedInModal(result.BillingAddress);
 
         return result;
