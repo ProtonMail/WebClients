@@ -15,7 +15,7 @@ impl super::BiometricsTrait for Biometrics {
             LAContext::new()
                 .canEvaluatePolicy_error(LAPolicy::DeviceOwnerAuthenticationWithBiometrics)
                 .map(|()| true)
-                .map_err(|e| Error::msg(e))
+                .map_err(Error::msg)
         }
     }
 
