@@ -28,6 +28,7 @@ import { type APP_NAMES, BRAND_NAME, MAIL_APP_NAME, SECOND } from '@proton/share
 import { getNonEmptyErrorMessage } from '@proton/shared/lib/helpers/error';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import type { Api } from '@proton/shared/lib/interfaces';
+import { useFlag } from '@proton/unleash/useFlag';
 import noop from '@proton/utils/noop';
 
 import type { Paths } from '../../content/helper';
@@ -62,6 +63,9 @@ const SignInWithAnotherDeviceContainer = ({ api, toApp, paths, onLogin, onStartA
     const getKtActivation = useGetAccountKTActivation();
     const errorHandler = useErrorHandler();
     const restartRef = useRef<null | (() => Promise<void>)>(null);
+
+    const unauthedForgotPasswordEnabled = useFlag('UnauthedForgotPassword');
+    const resetPath = unauthedForgotPasswordEnabled ? `${paths.reset}?variant=b` : paths.reset;
 
     const history = useHistory();
     const backToSignIn = () => history.push(paths.login);
@@ -228,7 +232,7 @@ const SignInWithAnotherDeviceContainer = ({ api, toApp, paths, onLogin, onStartA
                             </ol>
                             <Href href={getKnowledgeBaseUrl('/qr-code-sign-in')}>{c('Link').t`Learn more`}</Href>
                         </div>
-                        <ButtonLike size="large" as={Link} to={paths.reset} color="weak" fullWidth>
+                        <ButtonLike size="large" as={Link} to={resetPath} color="weak" fullWidth>
                             {c('Action').t`I don’t have my phone`}
                         </ButtonLike>
                     </div>
