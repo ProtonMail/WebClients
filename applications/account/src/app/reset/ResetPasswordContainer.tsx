@@ -386,10 +386,10 @@ const ResetPasswordContainer = ({
                                 shape="ghost"
                                 color="norm"
                                 size="large"
-                                href={getKnowledgeBaseUrl('/common-login-problems')}
+                                href={getKnowledgeBaseUrl('/set-account-recovery-methods#recover-account')}
                                 fullWidth
                             >
-                                {c('Link').t`Common sign in issues`}
+                                {c('Link').t`Account recovery explained`}
                             </ButtonLike>
                         </form>
                     </Content>
@@ -413,10 +413,10 @@ const ResetPasswordContainer = ({
                                 shape="ghost"
                                 color="norm"
                                 size="large"
-                                href={getKnowledgeBaseUrl('/common-login-problems')}
+                                href={getKnowledgeBaseUrl('/set-account-recovery-methods#recover-account')}
                                 fullWidth
                             >
-                                {c('Link').t`Common sign in issues`}
+                                {c('Link').t`Account recovery explained`}
                             </ButtonLike>
                         </form>
                     </Content>
