@@ -5,12 +5,15 @@ import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { CalendarLogo, DriveLogo, LumoLogo, MailLogo, PassLogo, VpnLogo } from '@proton/components';
 import { getCalendarAppFeature } from '@proton/components/containers/payments/features/calendar';
 import { getDriveAppFeature } from '@proton/components/containers/payments/features/drive';
+import type { PlanCardFeatureDefinition } from '@proton/components/containers/payments/features/interface';
 import { getLumoAppFeature } from '@proton/components/containers/payments/features/lumo';
 import { getMailAppFeature } from '@proton/components/containers/payments/features/mail';
 import { getPassAppFeature } from '@proton/components/containers/payments/features/pass';
 import { getVPNAppFeature } from '@proton/components/containers/payments/features/vpn';
+import { PlanCardFeatureList } from '@proton/components/containers/payments/subscription/PlanCardFeatures';
 import {
     APPS,
+    BRAND_NAME,
     CALENDAR_APP_NAME,
     CALENDAR_SHORT_APP_NAME,
     DRIVE_APP_NAME,
@@ -26,22 +29,36 @@ import {
 } from '@proton/shared/lib/constants';
 import { getStaticURL } from '@proton/shared/lib/helpers/url';
 import type { VPNServersCountData } from '@proton/shared/lib/interfaces';
-import isTruthy from '@proton/utils/isTruthy';
+
+const getFeatures = (): PlanCardFeatureDefinition[] => {
+    const features = [
+        { key: 'allProtonServices', text: c('new_plans: feature').t`All ${BRAND_NAME} services` },
+        { key: 'tailored', text: c('new_plans: feature').t`Tailored to your needs` },
+        { key: 'accountManager', text: c('new_plans: feature').t`Dedicated account manager` },
+    ];
+    return features.map((feature) => ({
+        text: feature.text,
+        included: true,
+    }));
+};
 
 const LetsTalkSubSection = ({
-    vpnServersCountData,
+    app,
     signupParameters,
-    showLumoLogo = false,
+    vpnServersCountData,
+    mode,
 }: {
-    vpnServersCountData: VPNServersCountData;
+    app: 'mail' | 'drive' | 'pass' | 'lumo';
     signupParameters?: { trial?: boolean };
-    showLumoLogo?: boolean;
+    vpnServersCountData: VPNServersCountData;
+    mode: 'text' | 'logos';
 }) => {
     const logoSize = 8;
+
     return (
         <div className="flex flex-column gap-4 w-full">
             <div className="text-left text-sm">
-                {c('pass_signup_2023: Info').t`Tailored made solutions for larger organizations with custom needs.`}
+                {c('drive_signup_2024: Info').t`Tailored made solutions for larger organizations with custom needs`}
             </div>
             <ButtonLike
                 as="a"
@@ -49,61 +66,68 @@ const LetsTalkSubSection = ({
                 color="norm"
                 fullWidth
                 pill
-                href={getStaticURL('/business/contact?pd=pass&int=enterprise&ref=appdashboard')}
+                href={getStaticURL(`/business/contact?pd=${app}&int=enterprise&ref=appdashboard`)}
                 target="_blank"
             >
-                {signupParameters?.trial
-                    ? c('pass_signup_2023: Action').t`Contact us`
-                    : c('pass_signup_2023: Action').t`Request trial`}
+                {signupParameters?.trial ? c('signup: Action').t`Contact us` : c('signup: Action').t`Request trial`}
             </ButtonLike>
-            <div className="flex justify-center flex-nowrap gap-2 text-center">
-                {[
-                    {
-                        app: APPS.PROTONMAIL,
-                        title: MAIL_APP_NAME,
-                        shortTitle: MAIL_SHORT_APP_NAME,
-                        logo: <MailLogo variant="glyph-only" size={logoSize} />,
-                        tooltip: getMailAppFeature().tooltip,
-                    },
-                    {
-                        app: APPS.PROTONCALENDAR,
-                        title: CALENDAR_APP_NAME,
-                        shortTitle: CALENDAR_SHORT_APP_NAME,
-                        logo: <CalendarLogo variant="glyph-only" size={logoSize} />,
-                        tooltip: getCalendarAppFeature().tooltip,
-                    },
-                    {
-                        app: APPS.PROTONDRIVE,
-                        title: DRIVE_APP_NAME,
-                        shortTitle: DRIVE_SHORT_APP_NAME,
-                        logo: <DriveLogo variant="glyph-only" size={logoSize} />,
-                        tooltip: getDriveAppFeature().tooltip,
-                    },
-                    {
-                        app: APPS.PROTONVPN_SETTINGS,
-                        title: VPN_APP_NAME,
-                        shortTitle: VPN_SHORT_APP_NAME,
-                        logo: <VpnLogo variant="glyph-only" size={logoSize} />,
-                        tooltip: getVPNAppFeature({ serversCount: vpnServersCountData }).tooltip,
-                    },
-                    {
-                        app: APPS.PROTONPASS,
-                        title: PASS_APP_NAME,
-                        shortTitle: PASS_SHORT_APP_NAME,
-                        logo: <PassLogo variant="glyph-only" size={logoSize} />,
-                        tooltip: getPassAppFeature().tooltip,
-                    },
-                    showLumoLogo && {
-                        app: APPS.PROTONLUMO,
-                        title: LUMO_APP_NAME,
-                        shortTitle: LUMO_SHORT_APP_NAME,
-                        logo: <LumoLogo variant="glyph-only" size={logoSize} />,
-                        tooltip: getLumoAppFeature().tooltip,
-                    },
-                ]
-
-                    .filter(isTruthy)
-                    .map(({ title, shortTitle, logo, tooltip }) => {
+            {mode === 'text' && (
+                <PlanCardFeatureList
+                    odd={false}
+                    margin={false}
+                    iconSize={4}
+                    tooltip={false}
+                    className="text-sm gap-1"
+                    itemClassName="color-weak"
+                    features={getFeatures()}
+                />
+            )}
+            {mode === 'logos' && (
+                <div className="flex justify-center flex-nowrap gap-2 text-center">
+                    {[
+                        {
+                            app: APPS.PROTONMAIL,
+                            title: MAIL_APP_NAME,
+                            shortTitle: MAIL_SHORT_APP_NAME,
+                            logo: <MailLogo variant="glyph-only" size={logoSize} />,
+                            tooltip: getMailAppFeature().tooltip,
+                        },
+                        {
+                            app: APPS.PROTONCALENDAR,
+                            title: CALENDAR_APP_NAME,
+                            shortTitle: CALENDAR_SHORT_APP_NAME,
+                            logo: <CalendarLogo variant="glyph-only" size={logoSize} />,
+                            tooltip: getCalendarAppFeature().tooltip,
+                        },
+                        {
+                            app: APPS.PROTONDRIVE,
+                            title: DRIVE_APP_NAME,
+                            shortTitle: DRIVE_SHORT_APP_NAME,
+                            logo: <DriveLogo variant="glyph-only" size={logoSize} />,
+                            tooltip: getDriveAppFeature().tooltip,
+                        },
+                        {
+                            app: APPS.PROTONVPN_SETTINGS,
+                            title: VPN_APP_NAME,
+                            shortTitle: VPN_SHORT_APP_NAME,
+                            logo: <VpnLogo variant="glyph-only" size={logoSize} />,
+                            tooltip: getVPNAppFeature({ serversCount: vpnServersCountData }).tooltip,
+                        },
+                        {
+                            app: APPS.PROTONPASS,
+                            title: PASS_APP_NAME,
+                            shortTitle: PASS_SHORT_APP_NAME,
+                            logo: <PassLogo variant="glyph-only" size={logoSize} />,
+                            tooltip: getPassAppFeature().tooltip,
+                        },
+                        {
+                            app: APPS.PROTONLUMO,
+                            title: LUMO_APP_NAME,
+                            shortTitle: LUMO_SHORT_APP_NAME,
+                            logo: <LumoLogo variant="glyph-only" size={logoSize} />,
+                            tooltip: getLumoAppFeature().tooltip,
+                        },
+                    ].map(({ title, shortTitle, logo, tooltip }) => {
                         return (
                             <Tooltip key={title} title={tooltip} openDelay={0} closeDelay={0}>
                                 <div title={title}>
@@ -113,7 +137,8 @@ const LetsTalkSubSection = ({
                             </Tooltip>
                         );
                     })}
-            </div>
+                </div>
+            )}
         </div>
     );
 };

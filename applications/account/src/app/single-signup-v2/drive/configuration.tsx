@@ -23,14 +23,14 @@ import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedTex
 import { CYCLE, type FreePlanDefault, PLANS, type Plan, type PlansMap } from '@proton/payments';
 import { MAX_CALENDARS_FREE } from '@proton/shared/lib/calendar/constants';
 import { APPS, BRAND_NAME, DRIVE_APP_NAME, DRIVE_SHORT_APP_NAME, SSO_PATHS } from '@proton/shared/lib/constants';
-import { Audience } from '@proton/shared/lib/interfaces';
+import { Audience, type VPNServersCountData } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { SignupType } from '../../signup/interfaces';
 import type { BenefitItem } from '../Benefits';
 import Benefits from '../Benefits';
 import FeatureListPlanCardSubSection from '../FeatureListPlanCardSubSection';
-import LetsTalkGenericSubSection from '../LetsTalkGenericSubsection';
+import LetsTalkSubSection from '../LetsTalkSubsection';
 import { planCardFeatureProps } from '../PlanCardSelector';
 import SignupHeaderV2 from '../SignupHeaderV2';
 import {
@@ -252,6 +252,7 @@ export const getDriveConfiguration = ({
     toApp,
     signupParameters,
     isNewB2BPlanEnabled,
+    vpnServersCountData,
 }: {
     hideFreePlan: boolean;
     audience: Audience.B2B | Audience.B2C;
@@ -263,6 +264,7 @@ export const getDriveConfiguration = ({
     toApp: typeof APPS.PROTONDRIVE | typeof APPS.PROTONDOCS;
     signupParameters?: { trial?: boolean };
     isNewB2BPlanEnabled: boolean;
+    vpnServersCountData: VPNServersCountData;
 }): SignupConfiguration => {
     const logo = <DriveLogo />;
     const title = c('drive_signup_2024: Info').t`Secure cloud storage that gives you control of your data`;
@@ -328,7 +330,14 @@ export const getDriveConfiguration = ({
                 guarantee: true,
             },
             {
-                subsection: <LetsTalkGenericSubSection app="drive" signupParameters={signupParameters} />,
+                subsection: (
+                    <LetsTalkSubSection
+                        app="drive"
+                        signupParameters={signupParameters}
+                        mode="text"
+                        vpnServersCountData={vpnServersCountData}
+                    />
+                ),
                 type: 'standard' as const,
                 guarantee: true,
                 interactive: false as const,

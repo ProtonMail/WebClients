@@ -248,9 +248,10 @@ export const getLumoConfiguration = ({
             {
                 subsection: (
                     <LetsTalkSubSection
+                        app="lumo"
                         vpnServersCountData={vpnServersCountData}
                         signupParameters={signupParameters}
-                        showLumoLogo={true}
+                        mode="logos"
                     />
                 ),
                 type: 'standard' as const,

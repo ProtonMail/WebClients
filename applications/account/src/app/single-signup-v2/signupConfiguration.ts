@@ -49,6 +49,7 @@ export const getSignupConfiguration = ({
             toApp,
             signupParameters,
             isNewB2BPlanEnabled,
+            vpnServersCountData,
         });
     }
     if (toApp === APPS.PROTONMAIL || toApp === APPS.PROTONCALENDAR) {
