@@ -3,14 +3,13 @@ import { useEffect, useState } from 'react';
 import { useLoading } from '@proton/hooks';
 import {
     type AmountAndCurrency,
-    type CardModel,
     CardPaymentProcessor,
     type CardPaymentProcessorState,
     type ChargeablePaymentParameters,
     type PaymentVerificator,
-    getErrors,
 } from '@proton/payments';
 import type { PaymentProcessorHook } from '@proton/payments';
+import { type CardModel, getErrors } from '@proton/payments/core/cardDetails';
 import type { Api } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 

@@ -7,7 +7,8 @@ import {
     original,
 } from '@reduxjs/toolkit';
 
-import { FREE_SUBSCRIPTION, type FreeSubscription, type Subscription, getSubscription } from '@proton/payments';
+import { FREE_SUBSCRIPTION, type FreeSubscription, type Subscription } from '@proton/payments';
+import { getSubscription } from '@proton/payments/core/api/api';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import type { CacheType } from '@proton/redux-utilities';
 import {

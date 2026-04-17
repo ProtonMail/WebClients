@@ -16,10 +16,10 @@ import type { PaymentMethodType, PaymentProcessorHook } from '@proton/payments';
 import {
     DisplayablePaymentError,
     SubscriptionMode,
-    getPaymentsVersion,
     hasPlanIDs,
     isSubscriptionCheckForbiddenWithReason,
 } from '@proton/payments';
+import { getPaymentsVersion } from '@proton/payments/core/api/api';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { useBillingAddress } from '@proton/payments/ui/billing-address/hooks/useBillingAddress';
 import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/payments/ui/components/RenewalNotice';
