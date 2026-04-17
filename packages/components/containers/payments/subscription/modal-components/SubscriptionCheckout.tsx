@@ -37,6 +37,7 @@ import type { CouponConfigRendered } from '../coupon-config/useCouponConfig';
 import { AddonTooltip } from './helpers/AddonTooltip';
 import CheckoutRow from './helpers/CheckoutRow';
 import { PlanDescription } from './helpers/PlanDescription';
+import { getDisableCurrencySelector } from './helpers/getDisableCurrencySelector';
 import { getWhatsIncluded } from './helpers/included';
 import { show30DaysMoneyBackGuarantee } from './helpers/show30DaysMoneyBackGuarantee';
 
@@ -118,6 +119,7 @@ const SubscriptionCheckout = ({
     }
 
     const list = getWhatsIncluded({ planIDs, plansMap, vpnServers, freePlan });
+    const disableCurrencySelector = getDisableCurrencySelector(paymentMethods, user, planIDs, couponConfig, loading);
 
     const perMonthSuffix = <span className="color-weak text-sm">{c('Suffix').t`/month`}</span>;
 
@@ -358,11 +360,8 @@ const SubscriptionCheckout = ({
                 paymentForbiddenReason,
             })}
             description={showPlanDescription ? <PlanDescription list={list} /> : null}
-            paymentMethods={paymentMethods}
-            planIDs={planIDs}
-            user={user}
+            disableCurrencySelector={disableCurrencySelector}
             renewNotice={checkoutView.render('renewalNotice')}
-            couponConfig={couponConfig}
         >
             {/* Plan header: title + discount badge + billing cycle */}
             <div className="mb-4 flex flex-column">
