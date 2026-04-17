@@ -1,7 +1,6 @@
 import type { Location } from 'history';
 
 import {
-    type CheckSubscriptionData,
     type Currency,
     type Cycle,
     PLANS,
@@ -11,6 +10,7 @@ import {
     getFreeCheckResult,
     hasPlanIDs,
 } from '@proton/payments';
+import type { CheckSubscriptionData } from '@proton/payments/core/api/api';
 import type { BillingAddressExtended } from '@proton/payments/core/billing-address/billing-address';
 import { getAutoCoupon } from '@proton/payments/core/subscription/helpers';
 import { SSO_PATHS } from '@proton/shared/lib/constants';

@@ -12,7 +12,7 @@ import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
-import { buyCredit, validateCredit } from '@proton/payments';
+import { buyCredit, validateCredit } from '@proton/payments/core/api/api';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 
 const GiftCodeSection = () => {
@@ -51,7 +51,7 @@ const GiftCodeSection = () => {
                 onSubmit={(e) => {
                     e.preventDefault();
                     if (onFormSubmit()) {
-                        withLoading(submit());
+                        void withLoading(submit());
                     }
                 }}
             >

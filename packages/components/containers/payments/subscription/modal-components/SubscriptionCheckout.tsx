@@ -11,7 +11,7 @@ import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader'
 import useConfig from '@proton/components/hooks/useConfig';
 import { type PaymentFacade, useCurrencies } from '@proton/components/payments/client-extensions';
 import type { MethodsHook } from '@proton/components/payments/react-extensions';
-import type { CheckoutModifiers, FreeSubscription, SubscriptionCheckForbiddenReason } from '@proton/payments';
+import type { FreeSubscription, SubscriptionCheckForbiddenReason } from '@proton/payments';
 import {
     type Currency,
     type Cycle,
@@ -23,6 +23,7 @@ import {
     type Subscription,
     getPlanFromPlanIDs,
 } from '@proton/payments';
+import type { CheckoutModifiers } from '@proton/payments/core/checkout-modifiers';
 import type { SubscriptionEstimation } from '@proton/payments/core/subscription/interface';
 import type { TaxCountryHook } from '@proton/payments/ui';
 import { createCheckoutView } from '@proton/payments/ui/headless-checkout/checkout-view';
