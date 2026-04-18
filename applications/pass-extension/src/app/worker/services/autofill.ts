@@ -6,7 +6,7 @@ import type { AutofillableFrame } from 'proton-pass-extension/lib/utils/frames';
 import { getAutofillableFrames } from 'proton-pass-extension/lib/utils/frames';
 import { setPopupIconBadge } from 'proton-pass-extension/lib/utils/popup';
 import { isContentScriptPort } from 'proton-pass-extension/lib/utils/port';
-import type { AutofillActionDTO, AutofillRequest, AutofillSequence } from 'proton-pass-extension/types/autofill';
+import type { AutofillRequest, AutofillSequence } from 'proton-pass-extension/types/autofill';
 import type { FrameFormsResult } from 'proton-pass-extension/types/frames';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
@@ -61,14 +61,14 @@ type AutofillServiceState = {
 export const createAutoFillService = () => {
     const state: AutofillServiceState = { privateDomains: null, rules: null };
 
-    /** Guards sub-frame content-script injection. Gated only on the global
-     * killswitch: per-type user settings (eg: `autofill.cc`) are enforced
-     * per-handler, not at injection time. Feature flags are resolved via the
-     * service rather than redux state so this remains safe when the extension
-     * is locked and the store is empty. */
+    /** Avoids reading feature flags and settings from redux state which may
+     * be absent when the extension is locked. Iframe autofill is enabled when
+     * any active autofill type requires it: login credentials or credit cards. */
     const iframeAutofillEnabled = withContext<() => Promise<boolean>>(async (ctx) => {
+        const { autofill } = await ctx.service.settings.resolve();
         const { features } = await ctx.service.featureFlags.resolve();
-        return Boolean(!features.PassIFrameKillswitch);
+        if (features.PassIFrameKillswitch) return false;
+        return Boolean((features.PassCreditCardWebAutofill && autofill.cc) || autofill.login);
     });
 
     const init = withContext(async (ctx) => {
@@ -208,129 +208,6 @@ export const createAutoFillService = () => {
             )
         );
 
-    const onAutofillLogin = async (payload: AutofillActionDTO<'login'>, tabId: TabId) => {
-        const { fieldId, formId, frameId, itemId, shareId } = payload;
-        const credentials = getCredentials(payload);
-        if (!credentials) throw new Error('AutofillLogin: no credentials');
-
-        await sendTabMessage(
-            backgroundMessage({
-                type: WorkerMessageType.AUTOFILL_SEQUENCE,
-                payload: {
-                    status: 'fill',
-                    type: 'login',
-                    credentials,
-                    field: { fieldId, frameId, formId },
-                    itemId,
-                    shareId,
-                },
-            }),
-            { tabId, frameId }
-        );
-
-        return true;
-    };
-
-    const onAutofillIdentity = async (payload: AutofillActionDTO<'identity'>, tabId: TabId) => {
-        const { fieldId, formId, frameId, itemId, shareId } = payload;
-        const identity = getIdentity(payload);
-        if (!identity) throw new Error('AutofillIdentity: no identity');
-
-        await sendTabMessage(
-            backgroundMessage({
-                type: WorkerMessageType.AUTOFILL_SEQUENCE,
-                payload: {
-                    status: 'fill',
-                    type: 'identity',
-                    identity,
-                    field: { fieldId, frameId, formId },
-                    itemId,
-                    shareId,
-                },
-            }),
-            { tabId, frameId }
-        );
-
-        return true;
-    };
-
-    const onAutofillCreditCard = async (payload: AutofillActionDTO<'creditCard'>, tabId: TabId) => {
-        const item = getCreditCard(payload);
-        if (!item) throw new Error('AutofillCreditCard: no card');
-
-        const { itemId, shareId } = payload;
-        const { frameOrigin, frameId, fieldId, formId } = payload;
-        const refocus = { fieldId, formId, frameId };
-
-        /** Collect autofilled field types across frames to avoid duplicate autofill
-         * attempts. Frames are ordered by sender frame origin to start the autofill
-         * sequence from the source field. */
-        const autofilledFields = new Set<CCFieldType>();
-        const autofillableFrames = await getAutofillableFrames(tabId, frameOrigin, frameId);
-        const frames = Array.from(autofillableFrames.values());
-
-        await onAutofillSequenceUpdate({ status: 'start' }, tabId, frames);
-        const frameFields = await resolveCCFormFields(autofillableFrames, tabId, payload);
-
-        /** Process each cluster sequentially, building up the set of autofilled fields.
-         * Generates frame-specific autofill data that respects cross-origin restrictions
-         * and previously filled fields, then tracks which fields were successfully filled
-         * for use in subsequent frames. */
-        for (const { frameId, fields } of frameFields) {
-            const frame = autofillableFrames.get(frameId);
-            if (!frame) continue;
-
-            const data = intoAutofillableCCItem(item, autofilledFields, frame.crossOrigin);
-            const request = { status: 'fill', type: 'creditCard', data, fields, itemId, shareId } as const;
-            const [res] = await onAutofillSequenceUpdate(request, tabId, [frame]);
-            if (res && res.ok && res.type === 'creditCard') res.autofilled.forEach((t) => autofilledFields.add(t));
-        }
-
-        await onAutofillSequenceUpdate({ status: 'completed', refocus }, tabId, frames);
-
-        return true;
-    };
-
-    const onAutofillEmail = async (payload: AutofillActionDTO<'email'>, tabId: TabId) => {
-        const { fieldId, formId, frameId, value } = payload;
-        if (!value) throw new Error('AutofillEmail: no email');
-
-        await sendTabMessage(
-            backgroundMessage({
-                type: WorkerMessageType.AUTOFILL_SEQUENCE,
-                payload: {
-                    status: 'fill',
-                    type: 'email',
-                    email: value,
-                    field: { fieldId, frameId, formId },
-                },
-            }),
-            { tabId, frameId }
-        );
-
-        return true;
-    };
-
-    const onAutofillPassword = async (payload: AutofillActionDTO<'password'>, tabId: TabId) => {
-        const { fieldId, formId, frameId, value } = payload;
-        if (!value) throw new Error('AutofillPassword: no password');
-
-        await sendTabMessage(
-            backgroundMessage({
-                type: WorkerMessageType.AUTOFILL_SEQUENCE,
-                payload: {
-                    status: 'fill',
-                    type: 'password',
-                    password: value,
-                    field: { fieldId, frameId, formId },
-                },
-            }),
-            { tabId, frameId }
-        );
-
-        return true;
-    };
-
     WorkerMessageBroker.registerMessage(
         WorkerMessageType.AUTOFILL_LOGIN_QUERY,
         onContextReady(async ({ getState }, { payload }, sender) => {
@@ -392,29 +269,67 @@ export const createAutoFillService = () => {
     );
 
     WorkerMessageBroker.registerMessage(
-        WorkerMessageType.AUTOFILL_ACTION,
-        onContextReady(async (_, { payload }, sender) => {
-            const tabId = sender.tab?.id;
-            if (!tabId) throw new Error('AutofillAction: no tab ID');
+        WorkerMessageType.AUTOFILL_LOGIN,
+        onContextReady(async (_, message) => {
+            const credentials = getCredentials(message.payload);
+            if (!credentials) throw new Error('Could not get credentials for autofill request');
+            return credentials;
+        })
+    );
 
-            switch (payload.type) {
-                case 'login':
-                    return onAutofillLogin(payload, tabId);
-                case 'identity':
-                    return onAutofillIdentity(payload, tabId);
-                case 'email':
-                    return onAutofillEmail(payload, tabId);
-                case 'creditCard':
-                    return onAutofillCreditCard(payload, tabId);
-                case 'password':
-                    return onAutofillPassword(payload, tabId);
-            }
+    WorkerMessageBroker.registerMessage(
+        WorkerMessageType.AUTOFILL_IDENTITY,
+        onContextReady(async (_, message) => {
+            const identity = getIdentity(message.payload);
+            if (!identity) throw new Error('Could not get identity for autofill request');
+            return identity;
         })
     );
 
     WorkerMessageBroker.registerMessage(WorkerMessageType.WEBSITE_RULES_REQUEST, (_, sender) => ({
         rules: state.rules && sender.url ? matchRules(state.rules, new URL(sender.url)) : null,
     }));
+
+    WorkerMessageBroker.registerMessage(
+        WorkerMessageType.AUTOFILL_CC,
+        onContextReady(async (_, { payload }, sender) => {
+            const tabId = sender.tab?.id;
+            const item = getCreditCard(payload);
+            if (!(item && tabId)) throw new Error('Could not get credit card for autofill request');
+
+            const { itemId, shareId } = payload;
+            const { frameOrigin, frameId, fieldId, formId } = payload;
+            const refocus = { fieldId, formId, frameId };
+
+            /** Collect autofilled field types across frames to avoid duplicate autofill
+             * attempts. Frames are ordered by sender frame origin to start the autofill
+             * sequence from the source field. */
+            const autofilledFields = new Set<CCFieldType>();
+            const autofillableFrames = await getAutofillableFrames(tabId, frameOrigin, frameId);
+            const frames = Array.from(autofillableFrames.values());
+
+            await onAutofillSequenceUpdate({ status: 'start' }, tabId, frames);
+            const frameFields = await resolveCCFormFields(autofillableFrames, tabId, payload);
+
+            /** Process each cluster sequentially, building up the set of autofilled fields.
+             * Generates frame-specific autofill data that respects cross-origin restrictions
+             * and previously filled fields, then tracks which fields were successfully filled
+             * for use in subsequent frames. */
+            for (const { frameId, fields } of frameFields) {
+                const frame = autofillableFrames.get(frameId);
+                if (!frame) continue;
+
+                const data = intoAutofillableCCItem(item, autofilledFields, frame.crossOrigin);
+                const request = { status: 'fill', type: 'creditCard', data, fields, itemId, shareId } as const;
+                const [res] = await onAutofillSequenceUpdate(request, tabId, [frame]);
+                if (res && res.type === 'creditCard') res.autofilled.forEach((type) => autofilledFields.add(type));
+            }
+
+            await onAutofillSequenceUpdate({ status: 'completed', refocus }, tabId, frames);
+
+            return true;
+        })
+    );
 
     /* onUpdated will be triggered every time a tab has been loaded with a new url :
      * update the badge count accordingly. `ensureReady` is used in place instead of
