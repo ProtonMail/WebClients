@@ -18,13 +18,18 @@ import { useMemoSelector } from '@proton/pass/hooks/useMemoSelector';
 import { useSelectItemAction } from '@proton/pass/hooks/useSelectItemAction';
 import { useTelemetryEvent } from '@proton/pass/hooks/useTelemetryEvent';
 import { itemEq } from '@proton/pass/lib/items/item.predicates';
-import { getItemKey } from '@proton/pass/lib/items/item.utils';
+import { getItemKey, sortItems } from '@proton/pass/lib/items/item.utils';
 import { selectSelectedItems } from '@proton/pass/store/selectors';
 import type { ItemRevision, UniqueItem } from '@proton/pass/types';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';
 
 type InterpolationItem = { type: 'divider'; label: string } | { type: 'item'; item: ItemRevision };
-type Interpolation = { interpolation: InterpolationItem[]; interpolationIndexes: number[]; sliceAt: number };
+type Interpolation = {
+    interpolation: InterpolationItem[];
+    interpolationIndexes: number[];
+    sliceAt: number;
+    sorted: ItemRevision[];
+};
 
 const getLabel = (count: number) => c('Title').ngettext(msgid`Reused ${count} time`, `Reused ${count} times`, count);
 const interpolateDuplicates = (groups: UniqueItem[][], items: ItemRevision[]): Interpolation =>
@@ -32,15 +37,19 @@ const interpolateDuplicates = (groups: UniqueItem[][], items: ItemRevision[]): I
         (acc, group) => {
             const start = acc.sliceAt;
             const end = acc.sliceAt + group.length;
-            const slice = items.slice(start, end).map<InterpolationItem>((item) => ({ type: 'item', item }));
+            const slice = sortItems('titleASC')(items.slice(start, end));
 
+            acc.sorted.push(...slice);
             acc.interpolationIndexes.push(acc.interpolation.length);
-            acc.interpolation.push({ type: 'divider', label: getLabel(group.length) }, ...slice);
+            acc.interpolation.push(
+                { type: 'divider', label: getLabel(group.length) },
+                ...slice.map<InterpolationItem>((item) => ({ type: 'item', item }))
+            );
             acc.sliceAt = end;
 
             return acc;
         },
-        { interpolation: [], interpolationIndexes: [], sliceAt: 0 }
+        { interpolation: [], interpolationIndexes: [], sliceAt: 0, sorted: [] }
     );
 
 export const DuplicatePasswords: FC = () => {
@@ -56,12 +65,12 @@ export const DuplicatePasswords: FC = () => {
     const { close } = useContextMenu();
     const { item: contextMenuItem, onContextMenu } = useItemContextMenu();
 
-    const { interpolation, interpolationIndexes } = useMemo(
+    const { interpolation, interpolationIndexes, sorted } = useMemo(
         () => interpolateDuplicates(duplicates.data, items),
-        [items, duplicatedData]
+        [items, duplicates.data]
     );
 
-    useAutoSelect(items);
+    useAutoSelect(sorted);
     useTelemetryEvent(TelemetryEventName.PassMonitorDisplayReusedPasswords, {}, {})([]);
 
     const onSelect = useCallback((item: ItemRevision) => {
