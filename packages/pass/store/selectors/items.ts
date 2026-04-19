@@ -1,7 +1,7 @@
 import { createSelector } from '@reduxjs/toolkit';
 
 import { hasEmail, isActive, isItemType, isPinned, isTrashed } from '@proton/pass/lib/items/item.predicates';
-import { filterItemsByUserIdentifier, flattenItemsByShareId } from '@proton/pass/lib/items/item.utils';
+import { filterItemsByUserIdentifier, flattenItemsByShareId, sortItems } from '@proton/pass/lib/items/item.utils';
 import selectFailedAction from '@proton/pass/store/optimistic/selectors/select-failed-action';
 import { unwrapOptimisticState } from '@proton/pass/store/optimistic/utils/transformers';
 import type { ItemsByShareId } from '@proton/pass/store/reducers/items';
@@ -10,7 +10,15 @@ import { SelectorError } from '@proton/pass/store/selectors/errors';
 import { createVisibilityFilterSelector } from '@proton/pass/store/selectors/shares';
 import { createUncachedSelector } from '@proton/pass/store/selectors/utils';
 import type { State } from '@proton/pass/store/types';
-import type { ItemRevision, ItemRevisionWithOptimistic, ItemType, Maybe, MaybeNull, SelectedItem } from '@proton/pass/types';
+import type {
+    ItemRevision,
+    ItemRevisionWithOptimistic,
+    ItemSortFilter,
+    ItemType,
+    Maybe,
+    MaybeNull,
+    SelectedItem,
+} from '@proton/pass/types';
 import { first } from '@proton/pass/utils/array/first';
 import { and } from '@proton/pass/utils/fp/predicates';
 import isTruthy from '@proton/utils/isTruthy';
@@ -46,8 +54,11 @@ export const itemsFromSelection =
     (items: ItemsByShareId): ItemRevision[] =>
         selection.map(({ shareId, itemId }) => items?.[shareId]?.[itemId]).filter(isTruthy);
 
-export const selectSelectedItems = (selection: SelectedItem[]) =>
-    createSelector([selectItemsState], (items) => itemsFromSelection(selection)(items));
+export const selectSelectedItems = (selection: SelectedItem[], sortOn?: ItemSortFilter) =>
+    createSelector([selectItemsState], (items) => {
+        const result = itemsFromSelection(selection)(items);
+        return sortOn ? sortItems(sortOn)(result) : result;
+    });
 
 export const selectNonOptimisticItem =
     <T extends ItemType = ItemType>(shareId: string, itemId: string) =>

@@ -28,7 +28,7 @@ export const ExcludedItems: FC = () => {
     const selectItem = useSelectItemAction();
 
     const { excluded } = useMonitor();
-    const items = useMemoSelector(selectSelectedItems, [excluded.data]);
+    const items = useMemoSelector(selectSelectedItems, [excluded.data, 'titleASC']);
     const selectedItem = useSelectedItem();
     const { close } = useContextMenu();
     const { item: contextMenuItem, onContextMenu } = useItemContextMenu();
