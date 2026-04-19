@@ -31,7 +31,7 @@ export const WeakPasswords: FC = () => {
     const selectItem = useSelectItemAction();
 
     const { insecure } = useMonitor();
-    const items = useMemoSelector(selectSelectedItems, [insecure.data]);
+    const items = useMemoSelector(selectSelectedItems, [insecure.data, 'titleASC']);
     const selectedItem = useSelectedItem();
     const { close } = useContextMenu();
     const { item: contextMenuItem, onContextMenu } = useItemContextMenu();

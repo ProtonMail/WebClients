@@ -31,7 +31,7 @@ export const Missing2FAs: FC = () => {
     const selectItem = useSelectItemAction();
 
     const { missing2FAs } = useMonitor();
-    const items = useMemoSelector(selectSelectedItems, [missing2FAs.data]);
+    const items = useMemoSelector(selectSelectedItems, [missing2FAs.data, 'titleASC']);
     const selectedItem = useSelectedItem();
     const { close } = useContextMenu();
     const { item: contextMenuItem, onContextMenu } = useItemContextMenu();
