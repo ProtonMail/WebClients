@@ -1781,6 +1781,12 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ],
+      "Continue cancelling": [
+        "Continuer l'annulation"
+      ],
+      "Keep current plan": [
+        "Conserver l'abonnement actuel"
       ]
     },
     "action": {
@@ -5073,6 +5079,15 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Votre abonnement prend en charge un total de ${ MAX_SYNC_PAID_USER } adresse Gmail",
         "Votre abonnement prend en charge un total de ${ MAX_SYNC_PAID_USER } adresses Gmail"
+      ],
+      "Add extra addresses to your account or use Hide My Email aliases to keep your inbox private.": [
+        "Ajoutez des adresses supplémentaires à votre compte ou utilisez des alias Hide My Email pour garder votre boîte de réception privée."
+      ],
+      "You can manage multiple ${ BRAND_NAME } addresses from a single account, without switching. Aliases and address management tools help keep everything in one inbox.": [
+        "Vous pouvez gérer plusieurs adresses ${ BRAND_NAME } depuis un seul compte, sans changer. Les outils de gestion d'alias et d'adresses aident à garder tout dans une seule boîte de réception."
+      ],
+      "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
+        "Vous pouvez fusionner des adresses en un unique compte ${ BRAND_NAME } en utilisant notre guide support."
       ]
     },
     "description": {
@@ -13837,7 +13852,7 @@
         "Ne plus demander"
       ],
       "Don't keep versions": [
-        "Ne pas conserver les versions"
+        "Ne pas garder les versions"
       ],
       "Don't show this again": [
         "Ne plus afficher"
@@ -15174,6 +15189,18 @@
       ],
       "What’s this?": [
         "Qu'est-ce que c'est ?"
+      ],
+      "Account recovery explained": [
+        "Récupération de compte expliquée"
+      ],
+      "Contact support": [
+        "Contacter le support"
+      ],
+      "Learn how": [
+        "Découvrir comment"
+      ],
+      "Manage addresses": [
+        "Gérer les adresses"
       ]
     },
     "Link (Scribe)": {
@@ -16584,6 +16611,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Nous analysons le dark web et vérifions si vos adresses ou vos alias ${ BRAND_NAME } ont été divulgués et nous vous informons immédiatement des résultats."
+      ],
+      "Dedicated servers optimized for speed": [
+        "Serveurs dédiés optimisés pour la vitesse"
       ]
     },
     "new_plans: feature highlight": {
@@ -24748,6 +24778,18 @@
       ],
       "Your subscriptions": [
         "Vos abonnements"
+      ],
+      "Already have multiple accounts?": [
+        "Vous avez déjà plusieurs comptes ?"
+      ],
+      "Create new addresses easily": [
+        "Créez des nouvelles adresses facilement"
+      ],
+      "Get help with an issue": [
+        "Obtenir de l'aide pour un problème."
+      ],
+      "Use one account for all your addresses": [
+        "Utilisez un seul compte pour toutes vos adresses"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -26195,6 +26237,14 @@
       ],
       "Yearly, ${ untilString }": [
         "Chaque année, ${ untilString }"
+      ]
+    },
+    "Get help": {
+      "Continue cancelling": [
+        "Continuer l'annulation"
+      ],
+      "Keep current plan": [
+        "Conserver l'abonnement actuel"
       ]
     }
   }

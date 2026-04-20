@@ -1492,6 +1492,9 @@
       ],
       "Zoom out": [
         "Pomanjšaj"
+      ],
+      "Create free account now": [
+        "Ustvarite brezplačen račun zdaj"
       ]
     },
     "action": {
@@ -6813,6 +6816,9 @@
     "Header for table": {
       "Token name": [
         "Ime žetona"
+      ],
+      "Email address": [
+        "E-poštni naslov"
       ]
     },
     "Heading": {
@@ -15710,6 +15716,9 @@
       ],
       "Your recovery phone number is:": [
         "Vaša telefonska številka za obnovitev je:"
+      ],
+      "Email address": [
+        "E-poštni naslov"
       ]
     },
     "saml: Action": {
@@ -16470,6 +16479,54 @@
       ],
       "You’re invited to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
         "Vabljeni, da se pridružite več kot 100 milijonom ljudi, ki so se odločili obdržati nadzor nad svojimi podatki s šifriranim ekosistemom ${ BRAND_NAME }."
+      ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } e-poštnih vzdevkov hide-my-email za zaščito pred neželeno pošto"
+      ],
+      "${ totalDriveStorageSize } cloud storage for files and photos": [
+        "${ totalDriveStorageSize } shrambe v oblaku za datoteke in fotografije"
+      ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "Za začetek izberite varen e-poštni naslov v storitvi ${ MAIL_APP_NAME }"
+      ],
+      "Collaborative documents and spreadsheets": [
+        "Dokumenti in preglednice za sodelovanje"
+      ],
+      "Encrypted email with ${ totalMailStorageSize } storage": [
+        "Šifrirana e-pošta z ${ totalMailStorageSize } shrambe"
+      ],
+      "Every free account comes with:": [
+        "Vsak brezplačen račun vključuje:"
+      ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "Ohranite svoje pogovore zasebne z ${ MAIL_APP_NAME }"
+      ],
+      "Password manager for all your devices": [
+        "Upravitelj gesel za vse vaše naprave"
+      ],
+      "Password-protected messages": [
+        "Sporočila, zaščitena z geslom"
+      ],
+      "Private AI assistant with encrypted chat history": [
+        "Zasebni pomočnik z umetno inteligenco in šifrirano zgodovino klepetov"
+      ],
+      "Secure calendar": [
+        "Varen koledar"
+      ],
+      "Sign up to get everything ${ BRAND_NAME } has to offer": [
+        "Registrirajte se in pridobite vse, kar ponuja ${ BRAND_NAME }"
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "VPN s strežniki v ${ vpnServersCountData.free.countries } državah"
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
+        "VPN s strežniki v ${ vpnServersCountData.free.countries } državi",
+        "VPN s strežniki v ${ vpnServersCountData.free.countries } državah",
+        "VPN s strežniki v ${ vpnServersCountData.free.countries } državah",
+        "VPN s strežniki v ${ vpnServersCountData.free.countries } državah"
+      ],
+      "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
+        "Vaš račun vključuje dostop do brezplačnih funkcij v ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } in ${ LUMO_SHORT_APP_NAME }."
       ]
     },
     "Signup label": {
@@ -19538,6 +19595,9 @@
       ],
       "Your subscriptions": [
         "Vaše naročnine"
+      ],
+      "Free": [
+        "Brezplačno"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -20672,6 +20732,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Letno, ${ untilString }"
+      ]
+    },
+    "meet_2025: Info": {
+      "Secure calendar": [
+        "Varen koledar"
       ]
     }
   }

@@ -1390,6 +1390,9 @@
       ],
       "Zoom out": [
         "Уменьшить масштаб"
+      ],
+      "Create free account now": [
+        "Создайте бесплатный аккаунт прямо сейчас"
       ]
     },
     "action": {
@@ -14714,6 +14717,9 @@
       ],
       "Your recovery phone number is:": [
         "Номер телефона для восстановления доступа:"
+      ],
+      "Email address": [
+        "Адрес электронной почты"
       ]
     },
     "saml: Action": {
@@ -15512,6 +15518,54 @@
       ],
       "Your plan": [
         "Ваш тариф"
+      ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } псевдонимов hide-my-email для борьбы со спамом"
+      ],
+      "${ totalDriveStorageSize } cloud storage for files and photos": [
+        "Облачное хранилище объёмом ${ totalDriveStorageSize } для файлов и фотографий"
+      ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "Выберите защищенный адрес ${ MAIL_APP_NAME }, чтобы начать"
+      ],
+      "Collaborative documents and spreadsheets": [
+        "Документы и электронные таблицы для совместной работы"
+      ],
+      "Encrypted email with ${ totalMailStorageSize } storage": [
+        "Зашифрованная электронная почта и ${ totalMailStorageSize } хранилища"
+      ],
+      "Every free account comes with:": [
+        "Каждый бесплатный аккаунт включает:"
+      ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "Сохраняйте свои цепочки писем конфиденциальными с ${ MAIL_APP_NAME }"
+      ],
+      "Password manager for all your devices": [
+        "Менеджер паролей для всех ваших устройств"
+      ],
+      "Password-protected messages": [
+        "Сообщения, защищенные паролем"
+      ],
+      "Private AI assistant with encrypted chat history": [
+        "Конфиденциальный ИИ-помощник с зашифрованной историей чатов"
+      ],
+      "Secure calendar": [
+        "Защищенный календарь"
+      ],
+      "Sign up to get everything ${ BRAND_NAME } has to offer": [
+        "Зарегистрируйтесь, чтобы получить всё, что предлагает ${ BRAND_NAME }"
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "VPN с серверами в ${ vpnServersCountData.free.countries } странах"
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
+        "VPN с серверами в ${ vpnServersCountData.free.countries } стране",
+        "VPN с серверами в ${ vpnServersCountData.free.countries } странах",
+        "VPN с серверами в ${ vpnServersCountData.free.countries } странах",
+        "VPN с серверами в ${ vpnServersCountData.free.countries } странах"
+      ],
+      "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
+        "Ваш аккаунт предоставляет доступ к бесплатным функциям в ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } и ${ LUMO_SHORT_APP_NAME }."
       ]
     },
     "Signup label": {
@@ -18577,6 +18631,9 @@
       ],
       "Your subscriptions": [
         "Ваши подписки"
+      ],
+      "Free": [
+        "Бесплатный"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -19807,6 +19864,16 @@
       ],
       "Yearly, ${ untilString }": [
         "Ежегодно ${ untilString }"
+      ]
+    },
+    "Header for table": {
+      "Email address": [
+        "Адрес электронной почты"
+      ]
+    },
+    "meet_2025: Info": {
+      "Secure calendar": [
+        "Защищенный календарь"
       ]
     }
   }

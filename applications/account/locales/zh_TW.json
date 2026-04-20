@@ -1416,6 +1416,9 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Create free account now": [
+        "立即建立免費帳號"
       ]
     },
     "action": {
@@ -3803,6 +3806,9 @@
       ],
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "您的帳號支援最多 ${ MAX_SYNC_PAID_USER } Gmail 位址"
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "若要連線至不同的 Gmail 位址、移除額外的 轉寄至 ${ BRAND_NAME } 的Gmail 位址。"
       ]
     },
     "description": {
@@ -11136,6 +11142,9 @@
     "meet_2025: Info": {
       "${ seats } seat included": [
         "包含 ${ seats } 座席"
+      ],
+      "Secure calendar": [
+        "安全行事曆"
       ]
     },
     "Member action": {
@@ -11956,6 +11965,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我們會掃描暗網去檢查你的${ BRAND_NAME }地址或别名是否被外洩，並且在發現任何問題時立即通知你。"
+      ],
+      "Appointment scheduling": [
+        "預定排定中"
       ]
     },
     "new_plans: feature highlight": {
@@ -14414,6 +14426,9 @@
       ],
       "Your recovery phone number is:": [
         "您的復原電話號碼:"
+      ],
+      "Email address": [
+        "電子郵件地址"
       ]
     },
     "saml: Action": {
@@ -15044,6 +15059,51 @@
       ],
       "Your plan": [
         "您的方案"
+      ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "用於對抗垃圾郵件的 ${ FREE_PASS_ALIASES } 個 hide-my-email 別名"
+      ],
+      "${ totalDriveStorageSize } cloud storage for files and photos": [
+        "${ totalDriveStorageSize } 雲端儲存空間，可存放檔案和相片"
+      ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "選擇一個安全的 ${ MAIL_APP_NAME } 位址即可開始使用"
+      ],
+      "Collaborative documents and spreadsheets": [
+        "協作文件與試算表"
+      ],
+      "Encrypted email with ${ totalMailStorageSize } storage": [
+        "具備 ${ totalMailStorageSize } 儲存空間的加密電子郵件"
+      ],
+      "Every free account comes with:": [
+        "每個免費帳號都包含："
+      ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "使用 ${ MAIL_APP_NAME }，讓您的對話保持私有"
+      ],
+      "Password manager for all your devices": [
+        "適用於所有裝置的密碼管理程式"
+      ],
+      "Password-protected messages": [
+        "受密碼保護的訊息"
+      ],
+      "Private AI assistant with encrypted chat history": [
+        "聊天記錄已加密的私有 AI 助理"
+      ],
+      "Secure calendar": [
+        "安全行事曆"
+      ],
+      "Sign up to get everything ${ BRAND_NAME } has to offer": [
+        "註冊即可享有 ${ BRAND_NAME } 提供的一切"
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "在 ${ vpnServersCountData.free.countries } 個國家設有伺服器的 VPN"
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
+        "在 ${ vpnServersCountData.free.countries } 個國家設有伺服器的 VPN"
+      ],
+      "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
+        "您的帳號可存取 ${ MAIL_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME } 和 ${ LUMO_SHORT_APP_NAME } 的免費功能。"
       ]
     },
     "Signup label": {
@@ -17956,6 +18016,9 @@
       ],
       "Your subscriptions": [
         "您的訂購授權"
+      ],
+      "Reverse charge not supported": [
+        "不支援倒退修改"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -18885,6 +18948,11 @@
       ],
       "Yearly, ${ untilString }": [
         "每年，${ untilString }"
+      ]
+    },
+    "Header for table": {
+      "Email address": [
+        "電子郵件地址"
       ]
     }
   }

@@ -985,7 +985,7 @@
         "Daha sonra"
       ],
       "Learn about recovery options": [
-        "Kurtarma seçenekleri hakkında bilgi edinin"
+        "Kurtarma seçenekleri ile ilgili bilgi alın"
       ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
@@ -1781,6 +1781,12 @@
       ],
       "Zoom out": [
         "Uzaklaştır"
+      ],
+      "Continue cancelling": [
+        "İptal etmeyi sürdür"
+      ],
+      "Keep current plan": [
+        "Geçerli tarifede kal"
       ]
     },
     "action": {
@@ -5076,6 +5082,21 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Tarifenizde toplam ${ MAX_SYNC_PAID_USER } Gmail adresi destekleniyor",
         "Tarifenizde toplam ${ MAX_SYNC_PAID_USER } Gmail adresi destekleniyor"
+      ],
+      "Add extra addresses to your account or use Hide My Email aliases to keep your inbox private.": [
+        "Hesabınıza yeni adresler ekleyin veya gelen kutunuzu gizli tutmak için e-posta takma adları kullanın."
+      ],
+      "Most issues can be solved in a few minutes with our step-by-step guides.": [
+        "Adım adım rehberlerimiz ile çoğu sorun birkaç dakika içinde çözülebilir."
+      ],
+      "Still need help? Our support team is here for you.": [
+        "Hâlâ yardım gerekiyor mu? Destek ekibimiz size yardımcı olmaya hazır."
+      ],
+      "You can manage multiple ${ BRAND_NAME } addresses from a single account, without switching. Aliases and address management tools help keep everything in one inbox.": [
+        "Oturumları kapatıp açmak gerekmeden, tek bir hesap üzerinde birden fazla ${ BRAND_NAME } adresini yönetebilirsiniz. Takma adlar ve adres yönetimi araçları her şeyin tek bir gelen kutusunda düzenli kalmasını sağlar."
+      ],
+      "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
+        "Destek rehberimizi kullanarak adresleri tek bir ana ${ BRAND_NAME } hesabında birleştirebilirsiniz."
       ]
     },
     "description": {
@@ -6703,7 +6724,7 @@
         "OAuth penceresi yüklenemedi."
       ],
       "Failed to load subscription data. Please try again later.": [
-        "Abonelik verileri yüklenemedi. Lütfen daha sonra tekrar deneyin."
+        "Abonelik verileri yüklenemedi. Lütfen bir süre sonra yeniden deneyin."
       ],
       "Failed to load the STL preview": [
         "STL ön izlemesi yüklenemedi"
@@ -9389,7 +9410,7 @@
         "Tüm aygıtlarınızda **kodları eşitleyin**"
       ],
       "**This will disable 2-factor authentication.**": [
-        "**Bu işlem iki aşamalı kimlik doğrulamayı devre dışı bırakacak.**"
+        "**Bu işlem iki adımlı doğrulamayı kapatacak.**"
       ],
       "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
         "**Bu işlem uçtan uca şifrelenmiş e-posta yönlendirmelerini kullanımdan kaldırır:** Bunları daha sonra yeniden ayarlayabilirsiniz."
@@ -9764,7 +9785,7 @@
         "Yeni bir doğrulama kodu istemeden önce İstenmeyen kutunuza bakın ve ${ strong } adresinin doğru olduğundan emin olun."
       ],
       "Before sending a new verification code, check your spam folder for ${ EmailOrPhoneNumber }.": [
-        "Yeni bir doğrulama kodu göndermeden önce ${ EmailOrPhoneNumber } için istenmeyen klasörünüzü kontrol edin."
+        "Yeni bir doğrulama kodu göndermeden önce ${ EmailOrPhoneNumber } için istenmeyen klasörünüze bakın."
       ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
         "${ MAIL_APP_NAME } adresindeki özel etki alan adreslerinizle e-posta alabilmeniz için, aşağıdaki iki MX kaydını DNS panonuza (özel etki alanınızı kiraladığınız yerde bulunur) eklemeniz gerekir. Bir örneği ve bazı yararlı ipuçlarını şurada bulabilirsiniz: ${ kbLink }."
@@ -9830,7 +9851,7 @@
         "İçe aktarma ve iletme durumunu denetleyin."
       ],
       "Check your network and try again.": [
-        "Ağınızı kontrol edin ve tekrar deneyin."
+        "Ağınızı denetleyip ve yeniden deneyin."
       ],
       "Choose a plan that works best for you.": [
         "Size en uygun tarifeyi seçin."
@@ -9845,7 +9866,7 @@
         "Yeni bir doğrulama kodunun ${ strong } numarasına gönderilmesi için \"Yeni kod iste\" üzerine tıklayın. Bu telefon numarası yanlışsa düzeltmek için \"Düzenle\" üzerine tıklayın."
       ],
       "Click 'Trouble signing in?' on your TV to follow the alternative steps.": [
-        "Alternatif adımları izlemek için TV'nizdeki 'Oturum açamıyor musunuz?' seçeneğine tıklayın."
+        "Alternatif adımları izlemek için TV üzerinde 'Oturum açamıyor musunuz?' seçeneğine tıklayın."
       ],
       "Click **Request password reset** and follow the prompts.": [
         "**Parola sıfırlama isteği** üzerine tıklayın ve yönergeleri izleyin."
@@ -10303,7 +10324,7 @@
         "Parolanızı değiştirmek için kurtarma ifadenizi yazın."
       ],
       "Enter your recovery phrase to verify your identity and disable two-factor authentication.": [
-        "Kimliğinizi doğrulamak ve iki adımlı doğrulamayı devre dışı bırakmak için kurtarma ifadenizi girin."
+        "Kimliğinizi doğrulamak ve iki adımlı doğrulamayı kapatmak için kurtarma ifadenizi yazın."
       ],
       "Event invitations and responses will be sent in this language.": [
         "Etkinlik davetleri ve yanıtları bu dilde gönderilir."
@@ -10674,7 +10695,7 @@
         "İnternet bağlantısı yeniden kuruldu."
       ],
       "Invalid code. ${ RequestNewCodeLink } and try again.": [
-        "Geçersiz kod. ${ RequestNewCodeLink } ve tekrar deneyin."
+        "Kod geçersiz. ${ RequestNewCodeLink } ve yeniden deneyin."
       ],
       "Invitation link expired": [
         "Davet bağlantısının geçerlilik süresi dolmuş"
@@ -11741,7 +11762,7 @@
         "Oturum açtıklarında kullanıcılarınıza görüntülenecek ad."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
-        "Referans kredisi arkadaşınızın deneme süresi bittikten sonraki 2 aya kadar, arkadaşınız yalnızca bir tarifeye abone olduğu takdirde verilebilir."
+        "Referans kredisi, yalnızca arkadaşınız deneme süresi bittikten sonraki 2 ay içinde bir tarifeye abone olursa verilebilir."
       ],
       "The securest way to browse, stream, and be online.": [
         "İnternet üzerinde gezinmenin, yayın akışlarını izlemenin ve çevrim içi olmanın en güvenli yolu."
@@ -11957,7 +11978,7 @@
         "İlerlemek için isteğinizi doğrulamalıyız."
       ],
       "To regain access to your account and data, enter the 12-word recovery phrase associated with your account.": [
-        "Hesabınıza ve verilerinize yeniden erişmek için hesabınızla ilişkili 12 kelimelik kurtarma ifadesini girin."
+        "Hesabınıza ve verilerinize yeniden erişmek için hesabınızın 12 sözcükten oluşan kurtarma ifadesini yazın."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "İnternet bağlantınızı güvenli kılmak için aygıtınıza ${ VPN_APP_NAME } uygulamasını indirip kurun ve bir sunucuya bağlanın."
@@ -15186,6 +15207,21 @@
       ],
       "What’s this?": [
         "Bu nedir?"
+      ],
+      "Account recovery explained": [
+        "Hesap kurtarma ile ilgili bilgiler"
+      ],
+      "Contact support": [
+        "Destek ekibimizle görüşün"
+      ],
+      "Learn how": [
+        "Nasıl yapıldığını öğrenin"
+      ],
+      "Manage addresses": [
+        "Adres yönetimi"
+      ],
+      "Visit our support site": [
+        "Destek sitemizi ziyaret edin"
       ]
     },
     "Link (Scribe)": {
@@ -15744,25 +15780,25 @@
     },
     "Missing feature": {
       "Check out the latest product updates": [
-        "En son ürün güncellemelerine göz atın"
+        "Son ürün güncellemelerine göz atın"
       ],
       "Continue cancelling": [
-        "İptal etmeye devam et"
+        "İptal etmeyi sürdür"
       ],
       "Explore the latest news": [
-        "En son haberleri keşfedin"
+        "Son haberleri öğrenin"
       ],
       "Keep current plan": [
-        "Mevcut tarifeyi koru"
+        "Geçerli tarifede kal"
       ],
       "Make your voice heard": [
         "Sesinizi duyurun"
       ],
       "Request a feature": [
-        "Özellik talep et"
+        "Özellik isteyin"
       ],
       "Request a feature or vote on ideas from other users in our feedback forum.": [
-        "Geri bildirim forumumuzda bir özellik talebinde bulunabilir veya diğer kullanıcıların fikirlerine oy verebilirsiniz."
+        "Geri bildirim formu ile özellik isteğinde bulunabilir veya diğer kullanıcı fikirlerine oy verebilirsiniz."
       ],
       "See how ${ BRAND_NAME } apps are evolving with your feedback.": [
         "Geri bildirimlerinizle ${ BRAND_NAME } uygulamalarının nasıl geliştiğini görün."
@@ -15771,7 +15807,7 @@
         "Fikirlerinizi gönderin"
       ],
       "Your feedback helps us improve. Whether you've spotted a bug, want a new feature, or think something could work differently, we'd love to hear from you.": [
-        "Geri bildirimleriniz kendimizi geliştirmemize yardımcı oluyor. İster bir hata fark etmiş olun, ister yeni bir özellik isteyin ya da bir şeylerin daha farklı işleyebileceğini düşünün görüşlerinizi duymayı çok isteriz."
+        "Geri bildirimleriniz kendimizi geliştirmemize yardımcı oluyor. Bir hata fark etmiş, yeni bir özellik istiyor ya da bir şeylerin daha farklı olabileceğini düşünüyor olabilirsiniz. Görüşlerinizi duymayı çok isteriz."
       ]
     },
     "Modal title": {
@@ -16596,6 +16632,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "${ BRAND_NAME } adreslerinizin veya takma adlarınızın sızıp sızmadığını denetlemek için karanlık ağı tararız ve herhangi bir şey bulursak sizi hemen uyarırız."
+      ],
+      "Dedicated servers optimized for speed": [
+        "Hız için ayarlanmış özel sunucular"
       ]
     },
     "new_plans: feature highlight": {
@@ -23386,7 +23425,7 @@
         "Kapat"
       ],
       "Code expired": [
-        "Kodun süresi doldu"
+        "Kodun süresi dolmuş"
       ],
       "Collaborate on documents": [
         "Belgeler üzerinde işbirliği yapın"
@@ -24769,6 +24808,24 @@
       ],
       "Your subscriptions": [
         "Abonelikleriniz"
+      ],
+      "Already have multiple accounts?": [
+        "Zaten birden fazla hesabınız mı var?"
+      ],
+      "Create new addresses easily": [
+        "Yeni adresleri kolayca oluşturun"
+      ],
+      "Get direct support": [
+        "Doğrudan destek alın"
+      ],
+      "Get help with an issue": [
+        "Bir sorunla ilgili yardım alın"
+      ],
+      "Troubleshoot your issue": [
+        "Sorununuzu giderin"
+      ],
+      "Use one account for all your addresses": [
+        "Tüm adresleriniz için tek bir hesap kullanın"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -26216,6 +26273,17 @@
       ],
       "Yearly, ${ untilString }": [
         "Yılda bir, ${ untilString }"
+      ]
+    },
+    "Get help": {
+      "Continue cancelling": [
+        "İptal etmeyi sürdür"
+      ],
+      "Keep current plan": [
+        "Geçerli tarifede kal"
+      ],
+      "Many issues can be resolved quickly with our help guides. If you need more support, our team is here to help.": [
+        "Yardım rehberlerimiz ile birçok sorunu hızlı bir şekilde çözebilirsiniz. Daha fazla destek gerekirse ekibimiz size seve seve yardımcı olur."
       ]
     }
   }

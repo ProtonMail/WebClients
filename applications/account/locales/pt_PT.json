@@ -14632,6 +14632,9 @@
       ],
       "Your recovery phone number is:": [
         "O seu número de telefone de recuperação é:"
+      ],
+      "Email address": [
+        "Endereço de e-mail"
       ]
     },
     "saml: Action": {
@@ -15482,6 +15485,33 @@
       ],
       "Your trial": [
         "Seu período de teste"
+      ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } alias hide-my-email para combater o spam"
+      ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "Escolha um endereço seguro do ${ MAIL_APP_NAME } para começar"
+      ],
+      "Collaborative documents and spreadsheets": [
+        "Documentos e folhas de cálculo colaborativos"
+      ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "Mantenha as suas conversas privadas com ${ MAIL_APP_NAME }"
+      ],
+      "Password-protected messages": [
+        "Mensagens protegidas por palavra-passe"
+      ],
+      "Private AI assistant with encrypted chat history": [
+        "Assistente de IA privado com histórico de conversas encriptado"
+      ],
+      "Secure calendar": [
+        "Calendário seguro"
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "VPN com servidores em ${ vpnServersCountData.free.countries } países"
+      ],
+      "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
+        "A sua conta permite aceder às funcionalidades gratuitas de ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } e ${ LUMO_SHORT_APP_NAME }."
       ]
     },
     "Signup label": {
@@ -18510,6 +18540,9 @@
       ],
       "Your subscriptions": [
         "As suas subscrições"
+      ],
+      "Free": [
+        "Gratuito"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -19669,6 +19702,16 @@
       ],
       "Yearly, ${ untilString }": [
         "Anualmente, ${ untilString }"
+      ]
+    },
+    "Header for table": {
+      "Email address": [
+        "Endereço de e-mail"
+      ]
+    },
+    "meet_2025: Info": {
+      "Secure calendar": [
+        "Calendário seguro"
       ]
     }
   }

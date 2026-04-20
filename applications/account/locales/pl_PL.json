@@ -15792,6 +15792,9 @@
       ],
       "Your recovery phone number is:": [
         "Twój numer pomocniczy:"
+      ],
+      "Email address": [
+        "Adres e-mail"
       ]
     },
     "saml: Action": {
@@ -16689,6 +16692,33 @@
       ],
       "Your trial": [
         "Twoja wersja próbna"
+      ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } aliasów hide-my-email do walki ze spamem"
+      ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "Wybierz bezpieczny adres ${ MAIL_APP_NAME }, aby rozpocząć"
+      ],
+      "Collaborative documents and spreadsheets": [
+        "Dokumenty i arkusze kalkulacyjne do współpracy"
+      ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "Dzięki ${ MAIL_APP_NAME } Twoje wątki pozostaną prywatne"
+      ],
+      "Password-protected messages": [
+        "Wiadomości chronione hasłem"
+      ],
+      "Private AI assistant with encrypted chat history": [
+        "Prywatny asystent AI z zaszyfrowaną historią czatu"
+      ],
+      "Secure calendar": [
+        "Bezpieczny kalendarz"
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "VPN z serwerami w ${ vpnServersCountData.free.countries } krajach"
+      ],
+      "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
+        "Twoje konto obejmuje dostęp do bezpłatnych funkcji w ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ LUMO_SHORT_APP_NAME }."
       ]
     },
     "Signup label": {
@@ -19850,6 +19880,9 @@
       ],
       "Your subscriptions": [
         "Twoja subskrypcja"
+      ],
+      "Free": [
+        "Darmowy"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -21120,6 +21153,11 @@
       ],
       "Yearly, ${ untilString }": [
         "Co rok, ${ untilString }"
+      ]
+    },
+    "meet_2025: Info": {
+      "Secure calendar": [
+        "Bezpieczny kalendarz"
       ]
     }
   }

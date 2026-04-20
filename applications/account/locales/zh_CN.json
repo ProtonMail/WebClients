@@ -1775,6 +1775,18 @@
       ],
       "Zoom out": [
         "缩小"
+      ],
+      "Continue cancelling": [
+        "继续取消"
+      ],
+      "Keep current plan": [
+        "保留当前套餐"
+      ],
+      "Learn about recovery options": [
+        "了解恢复选项"
+      ],
+      "Send new code": [
+        "发送新验证码"
       ]
     },
     "action": {
@@ -5034,6 +5046,21 @@
       ],
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "您的套餐总共支持 ${ MAX_SYNC_PAID_USER } 个 Gmail 地址"
+      ],
+      "Add extra addresses to your account or use Hide My Email aliases to keep your inbox private.": [
+        "向您的账户添加额外地址或使用“隐藏我的邮箱”别名来保护收件箱隐私！"
+      ],
+      "Most issues can be solved in a few minutes with our step-by-step guides.": [
+        "大多数问题可通过我们的分步指南在几分钟内解决！"
+      ],
+      "Still need help? Our support team is here for you.": [
+        "仍需要帮助？我们的支持团队随时为您服务。"
+      ],
+      "You can manage multiple ${ BRAND_NAME } addresses from a single account, without switching. Aliases and address management tools help keep everything in one inbox.": [
+        "您可以通过一个账户管理多个 ${ BRAND_NAME } 地址，无需切换账户。别名和地址管理工具有助于将所有内容整合在同一个收件箱中。"
+      ],
+      "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
+        "您可以按照我们的支持指南将多个地址合并到一个主要的 ${ BRAND_NAME } 账户中！"
       ]
     },
     "description": {
@@ -7180,6 +7207,9 @@
       ],
       "Zero keys reactivated": [
         "未重新激活任何密钥"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "加载订阅数据失败，请稍后重试。"
       ]
     },
     "error": {
@@ -12575,6 +12605,33 @@
       ],
       "Zoom meeting": [
         "Zoom 会议"
+      ],
+      "${ BRAND_NAME } will send a verification code to ${ phoneNumber }. Standard message rates may apply.": [
+        "${ BRAND_NAME } 将向 ${ phoneNumber } 发送验证码，这可能产生标准短信费用。"
+      ],
+      "**This will disable 2-factor authentication.**": [
+        "**这将禁用 2FA！**"
+      ],
+      "Before sending a new verification code, check your spam folder for ${ EmailOrPhoneNumber }.": [
+        "在发送新的验证码之前，请检查垃圾邮件文件夹中是否有来自 ${ EmailOrPhoneNumber } 的邮件！"
+      ],
+      "Check your network and try again.": [
+        "请检查网络后重试！"
+      ],
+      "Click 'Trouble signing in?' on your TV to follow the alternative steps.": [
+        "在电视上点击“登录遇到问题？”并按照替代步骤操作！"
+      ],
+      "Enter your recovery phrase to verify your identity and disable two-factor authentication.": [
+        "请输入您的恢复短语以验证身份并禁用您的 2FA！"
+      ],
+      "Invalid code. ${ RequestNewCodeLink } and try again.": [
+        "验证码无效。${ RequestNewCodeLink } 并重试。"
+      ],
+      "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
+        "推荐奖励可在您朋友的试用期结束后的 2 个月内发放，前提是您的朋友已订阅套餐。"
+      ],
+      "To regain access to your account and data, enter the 12-word recovery phrase associated with your account.": [
+        "若要重新获得对您账户和数据的访问权限，请输入与您账户关联的 12 词恢复短语。"
       ]
     },
     "info": {
@@ -15002,6 +15059,21 @@
       ],
       "What’s this?": [
         "这是什么？"
+      ],
+      "Account recovery explained": [
+        "账户恢复详解"
+      ],
+      "Contact support": [
+        "联系支持"
+      ],
+      "Learn how": [
+        "了解详情"
+      ],
+      "Manage addresses": [
+        "管理地址"
+      ],
+      "Visit our support site": [
+        "访问我们的支持网站"
       ]
     },
     "Link (Scribe)": {
@@ -16338,6 +16410,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我们会扫描暗网，检查您的 ${ BRAND_NAME } 地址或别名是否被泄露，一旦发现任何情况，我们会立即提醒您。"
+      ],
+      "Dedicated servers optimized for speed": [
+        "专为速度优化的专用服务器"
       ]
     },
     "new_plans: feature highlight": {
@@ -18390,6 +18465,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "您当前的订阅已享有一个现有折扣，转用此新促销意味着现有折扣将不再适用。"
+      ],
+      "Edit billing address": [
+        "编辑账单地址"
       ]
     },
     "Payments.Error": {
@@ -24292,6 +24370,33 @@
       ],
       "Your subscriptions": [
         "您的账户等级"
+      ],
+      "Already have multiple accounts?": [
+        "已有多个账户？"
+      ],
+      "Code expired": [
+        "验证码已过期"
+      ],
+      "Couldn't sign in": [
+        "无法登录"
+      ],
+      "Create new addresses easily": [
+        "轻松创建新的地址"
+      ],
+      "Get direct support": [
+        "获取直接支持"
+      ],
+      "Get help with an issue": [
+        "获取帮助"
+      ],
+      "Request new code?": [
+        "重新发送验证码？"
+      ],
+      "Troubleshoot your issue": [
+        "排查问题"
+      ],
+      "Use one account for all your addresses": [
+        "使用一个账户管理所有地址"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -25691,6 +25796,49 @@
       ],
       "Yearly, ${ untilString }": [
         "每一年，${ untilString }"
+      ]
+    },
+    "Get help": {
+      "Continue cancelling": [
+        "继续取消"
+      ],
+      "Keep current plan": [
+        "保留当前套餐"
+      ],
+      "Many issues can be resolved quickly with our help guides. If you need more support, our team is here to help.": [
+        "许多问题可以通过我们的帮助指南快速解决。如果您需要更多支持，我们的团队随时为您服务。"
+      ]
+    },
+    "Missing feature": {
+      "Check out the latest product updates": [
+        "查看最新产品更新"
+      ],
+      "Continue cancelling": [
+        "继续取消"
+      ],
+      "Explore the latest news": [
+        "查看最新资讯"
+      ],
+      "Keep current plan": [
+        "保留当前套餐"
+      ],
+      "Make your voice heard": [
+        "让您的声音被听见"
+      ],
+      "Request a feature": [
+        "功能建议"
+      ],
+      "Request a feature or vote on ideas from other users in our feedback forum.": [
+        "请在我们的反馈论坛中提交功能请求或为其他用户的创意投票！"
+      ],
+      "See how ${ BRAND_NAME } apps are evolving with your feedback.": [
+        "了解 ${ BRAND_NAME } 应用如何根据您的反馈不断进步。"
+      ],
+      "Submit your ideas": [
+        "提交建议"
+      ],
+      "Your feedback helps us improve. Whether you've spotted a bug, want a new feature, or think something could work differently, we'd love to hear from you.": [
+        "您的反馈帮助我们改进。无论您发现了错误、想要新功能，还是觉得某些地方可以改进，我们都非常乐意听取您的意见。"
       ]
     }
   }

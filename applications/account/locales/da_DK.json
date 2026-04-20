@@ -1781,6 +1781,12 @@
       ],
       "Zoom out": [
         "Zoom ud"
+      ],
+      "Continue cancelling": [
+        "Fortsæt annullering"
+      ],
+      "Keep current plan": [
+        "Behold nuværende abonnement"
       ]
     },
     "action": {
@@ -5076,6 +5082,21 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Dit abonnement understøtter i alt ${ MAX_SYNC_PAID_USER } Gmail-adresse",
         "Dit abonnement understøtter i alt ${ MAX_SYNC_PAID_USER } Gmail-adresser"
+      ],
+      "Add extra addresses to your account or use Hide My Email aliases to keep your inbox private.": [
+        "Tilføj ekstra adresser til din konto eller brug Hide-My-Email-aliasser for at holde din inbox privat."
+      ],
+      "Most issues can be solved in a few minutes with our step-by-step guides.": [
+        "De fleste problemer kan løses på nogle få minutter med vores trinvise vejledninger."
+      ],
+      "Still need help? Our support team is here for you.": [
+        "Har du stadig brug for hjælp? Vores supportteam er her for at hjælpe."
+      ],
+      "You can manage multiple ${ BRAND_NAME } addresses from a single account, without switching. Aliases and address management tools help keep everything in one inbox.": [
+        "Du kan administrere flere ${ BRAND_NAME }-adresser fra en enkelt konto, uden at skulle skifte. Aliasser og værktøjer til administration af e-mail-adresser hjælper med at holde alting i én indbakke."
+      ],
+      "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
+        "Du kan flette adresser ind i en primær ${ BRAND_NAME }-konto ved at bruge vores support-vejledning."
       ]
     },
     "description": {
@@ -12056,7 +12077,7 @@
         "Opgradér for at beholde dine ${ planTitle }-fordele."
       ],
       "Upgrade to unlock": [
-        "Opgrader for at låse op"
+        "Opgradér for at låse op"
       ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "Opgrader for at låse op for ${ monitorLink }."
@@ -12750,6 +12771,9 @@
       ],
       "Zoom meeting": [
         "Zoom-møde"
+      ],
+      "Enter your recovery phrase to verify your identity and disable two-factor authentication.": [
+        "Indtast din gendannelsessætning for at bekræfte din identitet og deaktivere to-faktor-godkendelse."
       ]
     },
     "info": {
@@ -15186,6 +15210,18 @@
       ],
       "What’s this?": [
         "Hvad er dette?"
+      ],
+      "Contact support": [
+        "Kontakt support"
+      ],
+      "Learn how": [
+        "Lær hvordan"
+      ],
+      "Manage addresses": [
+        "Administrer adresser"
+      ],
+      "Visit our support site": [
+        "Besøg vores supportside"
       ]
     },
     "Link (Scribe)": {
@@ -16596,6 +16632,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi scanner det mørke web for at tjekke, om dine ${ BRAND_NAME }-adresser eller aliasser er blevet lækket, og giver dig straks besked, hvis vi finder noget."
+      ],
+      "Dedicated servers optimized for speed": [
+        "Dedikerede hastighedsoptimerede servere"
       ]
     },
     "new_plans: feature highlight": {
@@ -24769,6 +24808,24 @@
       ],
       "Your subscriptions": [
         "Dine abonnementer"
+      ],
+      "Already have multiple accounts?": [
+        "Har du allerede flere konti?"
+      ],
+      "Create new addresses easily": [
+        "Opret nemt nye adresser"
+      ],
+      "Get direct support": [
+        "Få direkte support"
+      ],
+      "Get help with an issue": [
+        "Få hjælp til et problem"
+      ],
+      "Troubleshoot your issue": [
+        "Fejlfind dit problem"
+      ],
+      "Use one account for all your addresses": [
+        "Brug én konto til alle dine adresser"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -26216,6 +26273,17 @@
       ],
       "Yearly, ${ untilString }": [
         "Årligt, ${ untilString }"
+      ]
+    },
+    "Get help": {
+      "Continue cancelling": [
+        "Fortsæt annullering"
+      ],
+      "Keep current plan": [
+        "Behold nuværende abonnement"
+      ],
+      "Many issues can be resolved quickly with our help guides. If you need more support, our team is here to help.": [
+        "Mange problemer kan løses hurtigt med vores hjælpe-vejledninger. Hvis du har brug for mere support, står vores team klar til at hjælpe."
       ]
     }
   }

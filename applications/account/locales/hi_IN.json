@@ -1261,6 +1261,9 @@
       ],
       "Zoom out": [
         "ज़ूम कम करें"
+      ],
+      "Create free account now": [
+        "अभी मुफ्त खाता बनाएँ"
       ]
     },
     "action": {
@@ -1871,6 +1874,9 @@
       "Total for ${ n } month": [
         "${ n } महीने के लिए कुल",
         "${ n } महीनों के लिए कुल"
+      ],
+      "Total": [
+        "कुल"
       ]
     },
     "Checkout summary": {
@@ -8015,6 +8021,9 @@
       ],
       "Zoom meeting": [
         "ज़ूम मीटिंग"
+      ],
+      "Sign in": [
+        "साइनइन करें"
       ]
     },
     "info": {
@@ -12576,6 +12585,9 @@
       ],
       "Your recovery phone number is:": [
         "आपका रिकवरी फोन नंबर है:"
+      ],
+      "Email address": [
+        "ईमेल पता"
       ]
     },
     "saml: Action": {
@@ -13163,6 +13175,55 @@
       ],
       "Your plan": [
         "आपका प्लान"
+      ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "स्पैम से बचाव के लिए ${ FREE_PASS_ALIASES } hide-my-email ईमेल नकली-नाम"
+      ],
+      "${ totalDriveStorageSize } cloud storage for files and photos": [
+        "फ़ाइलों और फ़ोटो के लिए ${ totalDriveStorageSize } क्लाउड स्टोरेज"
+      ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "शुरू करने के लिए एक सुरक्षित ${ MAIL_APP_NAME } पता चुनें"
+      ],
+      "Collaborative documents and spreadsheets": [
+        "सहयोगात्मक दस्तावेज़ और स्प्रेडशीट"
+      ],
+      "Encrypted email with ${ totalMailStorageSize } storage": [
+        "${ totalMailStorageSize } स्टोरेज के साथ एन्क्रिप्टेड ईमेल"
+      ],
+      "Every free account comes with:": [
+        "हर मुफ्त खाते में यह शामिल है:"
+      ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } के साथ अपनी बातचीत निजी रखें"
+      ],
+      "Password manager for all your devices": [
+        "आपके सभी डिवाइसों के लिए पासवर्ड मैनेजर"
+      ],
+      "Password-protected messages": [
+        "पासवर्ड-सुरक्षित संदेश"
+      ],
+      "Private AI assistant with encrypted chat history": [
+        "एन्क्रिप्ट किए गए चैट इतिहास वाला निजी AI सहायक"
+      ],
+      "Secure calendar": [
+        "सुरक्षित कैलेंडर"
+      ],
+      "Sign up to get everything ${ BRAND_NAME } has to offer": [
+        "${ BRAND_NAME } की सभी सुविधाएँ पाने के लिए साइनअप करें"
+      ],
+      "Total": [
+        "कुल"
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "${ vpnServersCountData.free.countries } देशों में सर्वरों वाला VPN"
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
+        "${ vpnServersCountData.free.countries } देश में सर्वरों वाला VPN",
+        "${ vpnServersCountData.free.countries } देशों में सर्वरों वाला VPN"
+      ],
+      "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
+        "आपके खाते में ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } और ${ LUMO_SHORT_APP_NAME } की मुफ्त खासियतों तक एक्सेस शामिल है।"
       ]
     },
     "Signup label": {
@@ -15690,6 +15751,9 @@
       ],
       "Your subscriptions": [
         "आपकी सदस्यता"
+      ],
+      "Free": [
+        "मुफ्त"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -16767,6 +16831,16 @@
       ],
       "Yearly, ${ untilString }": [
         "वार्षिक, ${ untilString }"
+      ]
+    },
+    "Header for table": {
+      "Email address": [
+        "ईमेल पता"
+      ]
+    },
+    "meet_2025: Info": {
+      "Secure calendar": [
+        "सुरक्षित कैलेंडर"
       ]
     }
   }

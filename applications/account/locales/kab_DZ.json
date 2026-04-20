@@ -1031,6 +1031,9 @@
       ],
       "Zoom out": [
         "Semẓi"
+      ],
+      "Create free account now": [
+        "Snulfu-d amiḍan ilelli tura"
       ]
     },
     "action": {
@@ -3875,6 +3878,9 @@
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "Tesɛiḍ yakan amiḍan? ${ signIn }"
+      ],
+      "Already have an account? ${ signIn } or ${ switchAccount }": [
+        "Tesɛiḍ yakan amiḍan? ${ signIn } neɣ ${ switchAccount }"
       ]
     },
     "Go to sign up": {
@@ -5542,6 +5548,9 @@
       ],
       "Your voucher for your reserved ${ BRAND_NAME } email address: ${ reservedEmail }": [
         "Abun-inek·inem i tansa n yimayl ${ BRAND_NAME } yettwaḥerzen: ${ reservedEmail }"
+      ],
+      "Sign in": [
+        "Kcem"
       ]
     },
     "info": {
@@ -8525,6 +8534,9 @@
       ],
       "Your recovery email address is:": [
         "Tansa-k·m n yimayl n tririt d:"
+      ],
+      "Email address": [
+        "Tansa n yimayl"
       ]
     },
     "saml: Action": {
@@ -8793,6 +8805,52 @@
       ],
       "Your plan": [
         "Aɣawas-ik·im"
+      ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } n yismawen-is hide-my-email mgal spam"
+      ],
+      "${ totalDriveStorageSize } cloud storage for files and photos": [
+        "Aklas n usigna n ${ totalDriveStorageSize } i yifuyla d tugniwin"
+      ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "Fren tansa taɣelsant n ${ MAIL_APP_NAME } akken ad tebduḍ"
+      ],
+      "Collaborative documents and spreadsheets": [
+        "Isemliyen n uttekki d tikaṛḍiwin n usiḍen"
+      ],
+      "Encrypted email with ${ totalMailStorageSize } storage": [
+        "Imayl yettwawgelhen s waklas n ${ totalMailStorageSize }"
+      ],
+      "Every free account comes with:": [
+        "Yal amiḍan ilelli yesɛa:"
+      ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "Ḥrez idiwenniten-ik d usligen s ${ MAIL_APP_NAME }"
+      ],
+      "Password manager for all your devices": [
+        "Amsefrak n password i yibenkan-ik akk"
+      ],
+      "Password-protected messages": [
+        "Izen yettwammestnen s wawal uffir"
+      ],
+      "Private AI assistant with encrypted chat history": [
+        "Amallal IA uslig s umezruy n udiwenni yettwawgelhen"
+      ],
+      "Secure calendar": [
+        "Aɣawas aɣelsan"
+      ],
+      "Sign up to get everything ${ BRAND_NAME } has to offer": [
+        "Jerred akken ad tesɛuḍ akk ayen i d-yettak ${ BRAND_NAME }"
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "VPN s yiqeddacen deg ${ vpnServersCountData.free.countries } tmura"
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
+        "VPN s yiqeddacen deg ${ vpnServersCountData.free.countries } tmurt",
+        "VPN s yiqeddacen deg ${ vpnServersCountData.free.countries } tmura"
+      ],
+      "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
+        "Amiḍan-ik yesɛa anekcum ɣer timahilin tilelliyin deg ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } akked ${ LUMO_SHORT_APP_NAME }."
       ]
     },
     "Signup label": {
@@ -10405,6 +10463,9 @@
       ],
       "Your subscriptions": [
         "Imultaɣen-ik"
+      ],
+      "Free": [
+        "Ilelli"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -11100,6 +11161,16 @@
       ],
       "Yearly, ${ untilString }": [
         "S useggas, ${ untilString }"
+      ]
+    },
+    "Header for table": {
+      "Email address": [
+        "Tansa n yimayl"
+      ]
+    },
+    "meet_2025: Info": {
+      "Secure calendar": [
+        "Aɣawas aɣelsan"
       ]
     }
   }

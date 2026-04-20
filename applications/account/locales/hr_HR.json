@@ -1099,6 +1099,9 @@
       ],
       "Zoom out": [
         "Smanji"
+      ],
+      "Create free account now": [
+        "Izradite besplatni korisnički račun odmah"
       ]
     },
     "Action for user session": {
@@ -6371,6 +6374,9 @@
       ],
       "Zoom meeting": [
         "Sastanak na Zoomu"
+      ],
+      "Sign in": [
+        "Prijava"
       ]
     },
     "info": {
@@ -10164,6 +10170,9 @@
       ],
       "Your recovery phone is set": [
         "Vaš broj za oporavak je postavljen"
+      ],
+      "Email address": [
+        "E-pošta"
       ]
     },
     "saml: Action": {
@@ -10648,6 +10657,47 @@
       ],
       "Your trial": [
         "Vaš probni period"
+      ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } hide-my-email pseudonima za zaštitu od neželjene pošte"
+      ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "Odaberite sigurnu ${ MAIL_APP_NAME } adresu da biste započeli"
+      ],
+      "Collaborative documents and spreadsheets": [
+        "Dokumenti i proračunske tablice za suradnju"
+      ],
+      "Every free account comes with:": [
+        "Svaki besplatni korisnički račun uključuje:"
+      ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "Neka vaši razgovori ostanu privatni uz ${ MAIL_APP_NAME }"
+      ],
+      "Password manager for all your devices": [
+        "Upravitelj lozinkama za sve vaše uređaje"
+      ],
+      "Password-protected messages": [
+        "Poruke zaštićene lozinkom"
+      ],
+      "Private AI assistant with encrypted chat history": [
+        "Privatni AI asistent sa šifriranom poviješću razgovora"
+      ],
+      "Secure calendar": [
+        "Siguran kalendar"
+      ],
+      "Sign up to get everything ${ BRAND_NAME } has to offer": [
+        "Registrirajte se kako biste dobili sve što ${ BRAND_NAME } nudi"
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "VPN s poslužiteljima u ${ vpnServersCountData.free.countries } zemalja"
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
+        "VPN s poslužiteljima u ${ vpnServersCountData.free.countries } zemlji",
+        "VPN s poslužiteljima u ${ vpnServersCountData.free.countries } zemlje",
+        "VPN s poslužiteljima u ${ vpnServersCountData.free.countries } zemalja"
+      ],
+      "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
+        "Vaš korisnički račun uključuje pristup besplatnim značajkama u ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ LUMO_SHORT_APP_NAME }."
       ]
     },
     "Signup label": {
@@ -12622,6 +12672,9 @@
       ],
       "Your subscriptions": [
         "Vaše pretplate"
+      ],
+      "Free": [
+        "Besplatni plan"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13499,6 +13552,16 @@
       ],
       "Yearly, ${ untilString }": [
         "Godišnje, ${ untilString }"
+      ]
+    },
+    "Header for table": {
+      "Email address": [
+        "E-pošta"
+      ]
+    },
+    "meet_2025: Info": {
+      "Secure calendar": [
+        "Siguran kalendar"
       ]
     }
   }

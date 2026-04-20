@@ -4757,6 +4757,12 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puedes importar eventos en formato iCal (archivos ICS). El archivo puede tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener hasta ${ MAX_IMPORT_EVENTS_STRING } eventos. Si tu archivo es más grande, debes dividirlo en archivos más pequeños."
+      ],
+      "Most issues can be solved in a few minutes with our step-by-step guides.": [
+        "La mayoría de los problemas se resuelven en cuestión de minutos con nuestras guías paso a paso."
+      ],
+      "Still need help? Our support team is here for you.": [
+        "¿Aún necesitas ayuda? Nuestro equipo de asistencia está aquí para ayudarte."
       ]
     },
     "description": {
@@ -14198,6 +14204,15 @@
       ],
       "What’s this?": [
         "¿Qué es esto?"
+      ],
+      "Account recovery explained": [
+        "Explicación de la recuperación de cuenta"
+      ],
+      "Contact support": [
+        "Contacte con Soporte"
+      ],
+      "Visit our support site": [
+        "Visita nuestro centro de ayuda"
       ]
     },
     "Link (Scribe)": {
@@ -15553,6 +15568,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la red oscura para verificar si tus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarte de inmediato si encontramos algo."
+      ],
+      "Dedicated servers optimized for speed": [
+        "Servidores dedicados optimizados para la velocidad"
       ]
     },
     "new_plans: feature highlight": {
@@ -19967,6 +19985,27 @@
       ],
       "You’re invited to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
         "Te invitamos a unirte a más de 100 millones de personas que eligen mantener el control de sus datos con el ecosistema cifrado de ${ BRAND_NAME }."
+      ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } alias de hide-my-email para combatir el spam"
+      ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "Elige una dirección segura de ${ MAIL_APP_NAME } para empezar"
+      ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "Mantén tus conversaciones privadas con ${ MAIL_APP_NAME }"
+      ],
+      "Password-protected messages": [
+        "Mensajes protegidos con contraseña"
+      ],
+      "Secure calendar": [
+        "Calendario seguro"
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "VPN con servidores en ${ vpnServersCountData.free.countries } países"
+      ],
+      "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
+        "Tu cuenta incluye acceso a las funciones gratuitas de ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } y ${ LUMO_SHORT_APP_NAME }."
       ]
     },
     "Signup label": {
@@ -23422,6 +23461,15 @@
       ],
       "Your subscriptions": [
         "Tus suscripciones"
+      ],
+      "Get direct support": [
+        "Obtén asistencia directa"
+      ],
+      "Get help with an issue": [
+        "Obtén ayuda con un problema"
+      ],
+      "Troubleshoot your issue": [
+        "Soluciona tu problema"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -24766,6 +24814,17 @@
       ],
       "Yearly, ${ untilString }": [
         "Cada año hasta ${ untilString }"
+      ]
+    },
+    "Get help": {
+      "Continue cancelling": [
+        "Continuar cancelando"
+      ],
+      "Keep current plan": [
+        "Mantener el plan actual"
+      ],
+      "Many issues can be resolved quickly with our help guides. If you need more support, our team is here to help.": [
+        "Muchos problemas se pueden resolver rápidamente con nuestras guías de ayuda. Si necesitas más asistencia, nuestro equipo está aquí para ayudarte."
       ]
     }
   }

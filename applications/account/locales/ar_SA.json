@@ -1524,6 +1524,12 @@
       ],
       "Zoom out": [
         "تصغير"
+      ],
+      "Continue cancelling": [
+        "استمر في الإلغاء"
+      ],
+      "Keep current plan": [
+        "حافظ على الخطة الحالية"
       ]
     },
     "action": {
@@ -4399,6 +4405,15 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "يمكنك استيراد الأحداث بتنسيق iCal (ملف ICS). يجب أن يكون حجم الملف الأقصى ${ MAX_IMPORT_FILE_SIZE_STRING } ويحتوي على ما يصل إلى ${ MAX_IMPORT_EVENTS_STRING } حدثًا. إذا كان ملفك أكبر، فيرجى تقسيمه إلى ملفات أصغر."
+      ],
+      "Add extra addresses to your account or use Hide My Email aliases to keep your inbox private.": [
+        "أضف عناوين إضافية إلى حسابك أو استخدم الأسماء المستعارة لإخفاء بريدي الإلكتروني للحفاظ على خصوصية صندوق الوارد الخاص بك."
+      ],
+      "You can manage multiple ${ BRAND_NAME } addresses from a single account, without switching. Aliases and address management tools help keep everything in one inbox.": [
+        "يمكنك إدارة عدة عناوين ${ BRAND_NAME } من حساب واحد دون الحاجة إلى التبديل. تساعد العناوين البديلة وأدوات إدارة العناوين على إبقاء كل شيء في صندوق وارد واحد."
+      ],
+      "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
+        "يمكنك دمج العناوين في حساب رئيسي واحد على ${ BRAND_NAME } باستخدام دليل الدعم الخاص بنا."
       ]
     },
     "description": {
@@ -13330,6 +13345,12 @@
       ],
       "What’s this?": [
         "ما هذا؟"
+      ],
+      "Learn how": [
+        "تعلم كيف"
+      ],
+      "Manage addresses": [
+        "إدارة العناوين"
       ]
     },
     "Link label": {
@@ -13677,6 +13698,9 @@
     "meet_2025: Info": {
       "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
         "يمكنك الحصول على ما يصل إلى ${ TRIAL_MAX_MEET_SEATS } من مقاعد ${ MEET_SHORT_APP_NAME } خلال فترة التجربة."
+      ],
+      "Secure calendar": [
+        "تقويم آمن"
       ]
     },
     "Member action": {
@@ -18892,6 +18916,15 @@
       ],
       "You’re invited to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
         "أنت مدعو للانضمام إلى أكثر من 100 مليون شخص اختاروا البقاء مسيطرين على بياناتهم ضمن منظومة ${ BRAND_NAME } المُشفّرة."
+      ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "يُرجى اختيار عنوان آمن على ${ MAIL_APP_NAME } للبدء"
+      ],
+      "Collaborative documents and spreadsheets": [
+        "مستندات وجداول بيانات تعاونية"
+      ],
+      "Private AI assistant with encrypted chat history": [
+        "مساعد ذكاء اصطناعي خاص مع سجل محادثات مشفر"
       ]
     },
     "Signup label": {
@@ -22371,6 +22404,15 @@
       ],
       "Your subscriptions": [
         "اشتراكاتك"
+      ],
+      "Already have multiple accounts?": [
+        "هل لديك بالفعل حسابات متعددة؟"
+      ],
+      "Create new addresses easily": [
+        "قم بإنشاء عناوين جديدة بسهولة"
+      ],
+      "Use one account for all your addresses": [
+        "استخدم حسابا واحدا لجميع عناوينك"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -23746,6 +23788,11 @@
       ],
       "Yearly, ${ untilString }": [
         "سنويًا، ${ untilString }"
+      ]
+    },
+    "Header for table": {
+      "Email address": [
+        "عنوان البريد الإلكتروني"
       ]
     }
   }

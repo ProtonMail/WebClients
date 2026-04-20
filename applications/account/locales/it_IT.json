@@ -1739,6 +1739,12 @@
       ],
       "Zoom out": [
         "Zoom indietro"
+      ],
+      "Continue cancelling": [
+        "Procedi con la cancellazione"
+      ],
+      "Keep current plan": [
+        "Mantieni il piano corrente"
       ]
     },
     "action": {
@@ -4902,6 +4908,15 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Il tuo piano supporta un totale di ${ MAX_SYNC_PAID_USER } indirizzi Gmail",
         "Il tuo piano supporta un totale di ${ MAX_SYNC_PAID_USER } indirizzi Gmail"
+      ],
+      "Add extra addresses to your account or use Hide My Email aliases to keep your inbox private.": [
+        "Aggiungi indirizzi extra al tuo account e utilizza la funzione Nascondi i miei alias email per mantere la tua posta principale privata."
+      ],
+      "You can manage multiple ${ BRAND_NAME } addresses from a single account, without switching. Aliases and address management tools help keep everything in one inbox.": [
+        "Puoi gestire multipli${ BRAND_NAME } indirizzi da un singolo account, senza cambiare. La gestione degli strumenti degli alias e indirizzi aiutano a mantere tutti nella posta principale."
+      ],
+      "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
+        "Puoi unire più indirizzi in un unico account principale ${ BRAND_NAME } utilizzando la nostra guida di supporto."
       ]
     },
     "description": {
@@ -12081,6 +12096,24 @@
       ],
       "Zoom meeting": [
         "Meeting Zoom"
+      ],
+      "**This will disable 2-factor authentication.**": [
+        "**Questo disabilità l'autenticazione a due fattori **"
+      ],
+      "Enter your recovery phrase to verify your identity and disable two-factor authentication.": [
+        "Inserisci la tua frase di recupero per verificare la tua identità e disattivare l’autenticazione a due fattori."
+      ],
+      "Professional": [
+        "Professionale"
+      ],
+      "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
+        "Il credito di referral può essere assegnato fino a 2 mesi dopo la fine del periodo di prova del tuo amico, solo se il tuo amico ha sottoscritto un abbonamento."
+      ],
+      "To regain access to your account and data, enter the 12-word recovery phrase associated with your account.": [
+        "Per riottenere l’accesso al tuo account e ai tuoi dati, inserisci la frase di recupero di 12 parole associata al tuo account."
+      ],
+      "With a ${ boldProfessionalPlan } plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
+        "Con il piano ${ boldProfessionalPlan }, puoi acquistare ${ boldDedicatedServers } per la tua organizzazione e configurare ${ boldGateways } per controllare quali utenti possono accedervi."
       ]
     },
     "info": {
@@ -14463,6 +14496,15 @@
       ],
       "What’s this?": [
         "Cos'è questo?"
+      ],
+      "Account recovery explained": [
+        "Recupero dell’account spiegato"
+      ],
+      "Learn how": [
+        "Scopri come"
+      ],
+      "Manage addresses": [
+        "Gestisci gli indirizzi"
       ]
     },
     "Link (Scribe)": {
@@ -23683,6 +23725,15 @@
       ],
       "Your subscriptions": [
         "I tuoi abbonamenti"
+      ],
+      "Already have multiple accounts?": [
+        "Hai giá molti account?"
+      ],
+      "Create new addresses easily": [
+        "Crea nuovi indirizzi facilmente"
+      ],
+      "Use one account for all your addresses": [
+        "Usa un account per tutte le tue password"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -25112,6 +25163,38 @@
       ],
       "Yearly, ${ untilString }": [
         "Ogni anno, ${ untilString }"
+      ]
+    },
+    "Missing feature": {
+      "Check out the latest product updates": [
+        "Scopri gli ultimi aggiornamenti del prodotto."
+      ],
+      "Continue cancelling": [
+        "Continua la cancellazione"
+      ],
+      "Explore the latest news": [
+        "Esplora le ultime novitá"
+      ],
+      "Keep current plan": [
+        "Mantieni il piano attuale"
+      ],
+      "Make your voice heard": [
+        "Fai sentire la tua voce"
+      ],
+      "Request a feature": [
+        "Richiedi una funionalità"
+      ],
+      "Request a feature or vote on ideas from other users in our feedback forum.": [
+        "Richiedi una funzionalità o vota le idee di altri utenti nel nostro forum di feedback."
+      ],
+      "See how ${ BRAND_NAME } apps are evolving with your feedback.": [
+        "Scopri come le app di ${ BRAND_NAME } si stanno evolvendo grazie al tuo feedback."
+      ],
+      "Submit your ideas": [
+        "Invia le tue idee"
+      ],
+      "Your feedback helps us improve. Whether you've spotted a bug, want a new feature, or think something could work differently, we'd love to hear from you.": [
+        "Il tuo feedback ci aiuta a migliorare. Che tu abbia individuato un bug, voglia una nuova funzionalità o pensi che qualcosa possa funzionare diversamente, saremo felici di ascoltarti."
       ]
     }
   }

@@ -331,7 +331,7 @@
         "Conectado"
       ],
       "Contact sales": [
-        "Contactarse con el equipo de ventas"
+        "Contactar con ventas"
       ],
       "Contact support": [
         "Contactar con soporte"
@@ -1781,6 +1781,12 @@
       ],
       "Zoom out": [
         "Alejar"
+      ],
+      "Continue cancelling": [
+        "Continuar cancelación"
+      ],
+      "Keep current plan": [
+        "Mantener el plan actual"
       ]
     },
     "action": {
@@ -5076,6 +5082,21 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Su plan admite un total de ${ MAX_SYNC_PAID_USER } dirección de Gmail",
         "Su plan soporta un total de ${ MAX_SYNC_PAID_USER } direcciones de Gmail"
+      ],
+      "Add extra addresses to your account or use Hide My Email aliases to keep your inbox private.": [
+        "Añada direcciones adicionales a su cuenta o use alias de Hide My Email para mantener su bandeja de entrada privada."
+      ],
+      "Most issues can be solved in a few minutes with our step-by-step guides.": [
+        "La mayoría de los problemas se resuelven en cuestión de minutos con nuestras guías paso a paso."
+      ],
+      "Still need help? Our support team is here for you.": [
+        "¿Aún necesita ayuda? Nuestro equipo de soporte está aquí para ayudarle."
+      ],
+      "You can manage multiple ${ BRAND_NAME } addresses from a single account, without switching. Aliases and address management tools help keep everything in one inbox.": [
+        "Puede gestionar múltiples direcciones de ${ BRAND_NAME } desde una sola cuenta, sin intercambiar. Las herramientas de gestión de alias y direcciones le ayudan a mantener todo en una sola bandeja de entrada."
+      ],
+      "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
+        "Puede combinar direcciones en una cuenta principal de ${ BRAND_NAME } usando nuestra guia."
       ]
     },
     "description": {
@@ -15189,6 +15210,21 @@
       ],
       "What’s this?": [
         "¿Qué es esto?"
+      ],
+      "Account recovery explained": [
+        "Recuperación de cuenta explicada"
+      ],
+      "Contact support": [
+        "Contactar con soporte"
+      ],
+      "Learn how": [
+        "Más información"
+      ],
+      "Manage addresses": [
+        "Gestione las direcciones"
+      ],
+      "Visit our support site": [
+        "Visite nuestro sitio de soporte"
       ]
     },
     "Link (Scribe)": {
@@ -16599,6 +16635,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Escaneamos la dark web para verificar si sus direcciones o alias de ${ BRAND_NAME } han sido filtrados y alertarle de inmediato si encontramos algo."
+      ],
+      "Dedicated servers optimized for speed": [
+        "Servidores dedicados optimizados para velocidad"
       ]
     },
     "new_plans: feature highlight": {
@@ -24772,6 +24811,24 @@
       ],
       "Your subscriptions": [
         "Sus suscripciones"
+      ],
+      "Already have multiple accounts?": [
+        "¿Ya tiene múltiples cuentas?"
+      ],
+      "Create new addresses easily": [
+        "Crear nueva dirección facilmente"
+      ],
+      "Get direct support": [
+        "Obtenga asistencia directa"
+      ],
+      "Get help with an issue": [
+        "Obtenga ayuda con un problema"
+      ],
+      "Troubleshoot your issue": [
+        "Solucione su problema"
+      ],
+      "Use one account for all your addresses": [
+        "Use una cuenta para todas sus direcciones"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -26219,6 +26276,17 @@
       ],
       "Yearly, ${ untilString }": [
         "Cada año hasta ${ untilString }"
+      ]
+    },
+    "Get help": {
+      "Continue cancelling": [
+        "Continuar cancelación"
+      ],
+      "Keep current plan": [
+        "Mantener el plan actual"
+      ],
+      "Many issues can be resolved quickly with our help guides. If you need more support, our team is here to help.": [
+        "Muchos problemas se pueden resolver rápidamente con nuestras guías de ayuda. Si necesita más soporte, nuestro equipo está aquí para ayudarle."
       ]
     }
   }

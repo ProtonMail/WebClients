@@ -1781,6 +1781,12 @@
       ],
       "Zoom out": [
         "Diminuir zoom"
+      ],
+      "Continue cancelling": [
+        "Continuar cancelamento"
+      ],
+      "Keep current plan": [
+        "Manter plano atual"
       ]
     },
     "action": {
@@ -12560,6 +12566,21 @@
       ],
       "Zoom meeting": [
         "Reunião no Zoom"
+      ],
+      "**This will disable 2-factor authentication.**": [
+        "**Isso desativará a autenticação de 2 fatores.**"
+      ],
+      "Before sending a new verification code, check your spam folder for ${ EmailOrPhoneNumber }.": [
+        "Antes de enviar um novo código de verificação, verifique a pasta de spam de ${ EmailOrPhoneNumber }"
+      ],
+      "How your emergency contact can change your password for you:": [
+        "Como seu contato de emergência pode alterar sua senha por você:"
+      ],
+      "You can now reset your password to regain access to your account.": [
+        "Você pode redefinir sua senha agora para recuperar o acesso à sua conta."
+      ],
+      "Your encrypted data will be locked": [
+        "Seus dados criptografados ficarão bloqueados"
       ]
     },
     "info": {
@@ -14993,6 +15014,24 @@
       ],
       "What’s this?": [
         "O que é isso?"
+      ],
+      "Account recovery explained": [
+        "Explicação sobre a recuperação de conta."
+      ],
+      "Contact support": [
+        "Contatar o suporte"
+      ],
+      "contacts’ assistance": [
+        "assistência de contatos"
+      ],
+      "Learn how": [
+        "Saiba como"
+      ],
+      "Manage addresses": [
+        "Gerenciar endereços"
+      ],
+      "Visit our support site": [
+        "Visite nosso site de suporte"
       ]
     },
     "Link (Scribe)": {
@@ -20975,6 +21014,12 @@
       ],
       "You’re invited to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
         "Junte-se a mais de 100 milhões de pessoas que escolheram manter o controle sobre seus dados com o ecossistema criptografado da ${ BRAND_NAME }."
+      ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "Escolha um endereço seguro do ${ MAIL_APP_NAME } para começar"
+      ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "Mantenha suas conversas privadas com ${ MAIL_APP_NAME }"
       ]
     },
     "Signup label": {
@@ -24567,6 +24612,21 @@
       ],
       "Your subscriptions": [
         "Suas assinaturas"
+      ],
+      "Already have multiple accounts?": [
+        "Já tem várias contas?"
+      ],
+      "Create new addresses easily": [
+        "Crie endereços com facilidade"
+      ],
+      "Get direct support": [
+        "Obtenha suporte direto"
+      ],
+      "Get help with an issue": [
+        "Obter ajuda com um problema"
+      ],
+      "Try changing your password in your active web session": [
+        "Tente alterar sua senha na sua sessão ativa na web"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -26002,6 +26062,14 @@
       ],
       "Yearly, ${ untilString }": [
         "Anualmente, ${ untilString }"
+      ]
+    },
+    "Get help": {
+      "Continue cancelling": [
+        "Continuar cancelamento"
+      ],
+      "Keep current plan": [
+        "Manter plano atual"
       ]
     }
   }

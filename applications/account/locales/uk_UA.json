@@ -1267,6 +1267,9 @@
       ],
       "Zoom out": [
         "Зменшити"
+      ],
+      "Create free account now": [
+        "Створіть безплатний обліковий запис зараз"
       ]
     },
     "action": {
@@ -8532,6 +8535,9 @@
       ],
       "Zoom meeting": [
         "зустріч у Zoom"
+      ],
+      "Sign in": [
+        "Увійти"
       ]
     },
     "info": {
@@ -13491,6 +13497,9 @@
       ],
       "Your recovery phone number is:": [
         "Ваш номер телефону для відновлення:"
+      ],
+      "Email address": [
+        "Адреса електронної пошти"
       ]
     },
     "saml: Action": {
@@ -14221,6 +14230,48 @@
       ],
       "Your plan": [
         "Ваш тарифний план"
+      ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } псевдонімів hide-my-email для боротьби зі спамом"
+      ],
+      "${ totalDriveStorageSize } cloud storage for files and photos": [
+        "${ totalDriveStorageSize } хмарного сховища для файлів і фото"
+      ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "Виберіть захищену адресу в ${ MAIL_APP_NAME }, щоб розпочати"
+      ],
+      "Collaborative documents and spreadsheets": [
+        "Документи й електронні таблиці для спільної роботи"
+      ],
+      "Encrypted email with ${ totalMailStorageSize } storage": [
+        "Зашифрована електронна пошта зі сховищем обсягом ${ totalMailStorageSize }"
+      ],
+      "Every free account comes with:": [
+        "Кожен безплатний обліковий запис містить:"
+      ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "Зберігайте приватність своїх розмов із ${ MAIL_APP_NAME }"
+      ],
+      "Password manager for all your devices": [
+        "Менеджер паролів для всіх ваших пристроїв"
+      ],
+      "Password-protected messages": [
+        "Повідомлення, захищені паролем"
+      ],
+      "Private AI assistant with encrypted chat history": [
+        "Приватний ШІ-помічник із зашифрованою історією чату"
+      ],
+      "Secure calendar": [
+        "Захищений календар"
+      ],
+      "Sign up to get everything ${ BRAND_NAME } has to offer": [
+        "Зареєструйтеся, щоб отримати все, що пропонує ${ BRAND_NAME }"
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "VPN із серверами в ${ vpnServersCountData.free.countries } країнах"
+      ],
+      "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
+        "Ваш обліковий запис надає доступ до безплатних функцій у ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } і ${ LUMO_SHORT_APP_NAME }."
       ]
     },
     "Signup label": {
@@ -17122,6 +17173,9 @@
       ],
       "Your subscriptions": [
         "Ваші передплати"
+      ],
+      "Free": [
+        "Безплатний"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -18277,6 +18331,16 @@
       ],
       "Yearly, ${ untilString }": [
         "Щороку, ${ untilString }"
+      ]
+    },
+    "Header for table": {
+      "Email address": [
+        "Адреса електронної пошти"
+      ]
+    },
+    "meet_2025: Info": {
+      "Secure calendar": [
+        "Захищений календар"
       ]
     }
   }

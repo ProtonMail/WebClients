@@ -1411,6 +1411,9 @@
       ],
       "Zoom out": [
         "Távolítás"
+      ],
+      "Create free account now": [
+        "Hozzon létre most egy ingyenes fiókot"
       ]
     },
     "action": {
@@ -9303,6 +9306,9 @@
       ],
       "Zoom meeting": [
         "Zoom találkozót"
+      ],
+      "Sign in": [
+        "Bejelentkezés"
       ]
     },
     "info": {
@@ -14712,6 +14718,9 @@
       ],
       "Your recovery phone number is:": [
         "Helyreállítási telefonszáma:"
+      ],
+      "Email address": [
+        "E-mail cím"
       ]
     },
     "saml: Action": {
@@ -15483,6 +15492,52 @@
       ],
       "Your plan": [
         "Az ön csomagja"
+      ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } hide-my-email e-mail álnév a levélszemét ellen"
+      ],
+      "${ totalDriveStorageSize } cloud storage for files and photos": [
+        "${ totalDriveStorageSize } felhőtárhely fájlokhoz és fotókhoz"
+      ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "Válasszon egy biztonságos ${ MAIL_APP_NAME }-címet a kezdéshez"
+      ],
+      "Collaborative documents and spreadsheets": [
+        "Közösen szerkeszthető dokumentumok és táblázatok"
+      ],
+      "Encrypted email with ${ totalMailStorageSize } storage": [
+        "Titkosított e-mail ${ totalMailStorageSize } tárhellyel"
+      ],
+      "Every free account comes with:": [
+        "Minden ingyenes fiókhoz jár:"
+      ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "Tartsa privátan beszélgetéseit a ${ MAIL_APP_NAME } segítségével"
+      ],
+      "Password manager for all your devices": [
+        "Jelszókezelő minden eszközéhez"
+      ],
+      "Password-protected messages": [
+        "Jelszóval védett üzenetek"
+      ],
+      "Private AI assistant with encrypted chat history": [
+        "Privát AI-asszisztens titkosított csevegési előzményekkel"
+      ],
+      "Secure calendar": [
+        "Biztonságos naptár"
+      ],
+      "Sign up to get everything ${ BRAND_NAME } has to offer": [
+        "Regisztráljon, hogy mindent kihasználhasson, amit a ${ BRAND_NAME } kínál"
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "VPN ${ vpnServersCountData.free.countries } országban található szerverekkel"
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
+        "VPN ${ vpnServersCountData.free.countries } országban található szerverekkel",
+        "VPN ${ vpnServersCountData.free.countries } országban található szerverekkel"
+      ],
+      "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
+        "A fiókja hozzáférést biztosít a ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } és ${ LUMO_SHORT_APP_NAME } ingyenes funkcióihoz."
       ]
     },
     "Signup label": {
@@ -18497,6 +18552,9 @@
       ],
       "Your subscriptions": [
         "Előfizetések"
+      ],
+      "Free": [
+        "Ingyenes"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -19652,6 +19710,16 @@
       ],
       "Yearly, ${ untilString }": [
         "Évente, ${ untilString }"
+      ]
+    },
+    "Header for table": {
+      "Email address": [
+        "E-mail cím"
+      ]
+    },
+    "meet_2025: Info": {
+      "Secure calendar": [
+        "Biztonságos naptár"
       ]
     }
   }
