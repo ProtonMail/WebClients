@@ -141,4 +141,8 @@ export class SearchDB {
         const tx = this.db.transaction(storeNames, 'readwrite');
         await Promise.all([...storeNames.map((name) => tx.objectStore(name).clear()), tx.done]);
     }
+
+    close(): void {
+        this.db.close();
+    }
 }
