@@ -1,17 +1,16 @@
-import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
 import type { Breakpoints } from '@proton/components';
 import { useThumbnail } from '@proton/drive/modules/thumbnails';
 
-import { SortField } from '../../modules/sorting/types';
 import { GridItemContent } from '../../statelessComponents/DriveExplorer/cells/gridComponents/GridItemContent';
 import { GridItemName } from '../../statelessComponents/DriveExplorer/cells/gridComponents/GridItemName';
 import type { CellDefinition, GridDefinition } from '../../statelessComponents/DriveExplorer/types';
+import { DateCell } from '../commonDriveExplorerCells/DateCell';
 import { LocationCell, defaultLocationCellConfig } from '../commonDriveExplorerCells/LocationCell';
-import { ModifiedCell, defaultModifiedCellConfig } from '../commonDriveExplorerCells/ModifiedCell';
 import { NameCell, defaultNameCellConfig } from '../commonDriveExplorerCells/NameCell';
 import { SizeCell, defaultSizeCellConfig } from '../commonDriveExplorerCells/SizeCell';
+import { deletedTimeCellConfig } from './driveExplorerCells/deletedTimeCellConfig';
 import { useTrashStore } from './useTrash.store';
 
 export const getTrashCells = ({ viewportWidth }: { viewportWidth: Breakpoints['viewportWidth'] }): CellDefinition[] => [
@@ -67,13 +66,7 @@ export const getTrashCells = ({ viewportWidth }: { viewportWidth: Breakpoints['v
         },
     },
     {
-        ...{
-            ...defaultModifiedCellConfig,
-            id: 'deleted',
-            headerText: c('Label').t`Deleted`,
-            className: 'w-1/6',
-            sortField: SortField.trashedTime,
-        },
+        ...deletedTimeCellConfig,
         disabled: !viewportWidth['>=large'],
         render: (uid) => {
             const TrashedDateCellComponent = () => {
@@ -81,7 +74,7 @@ export const getTrashCells = ({ viewportWidth }: { viewportWidth: Breakpoints['v
                 if (!trashTime) {
                     return null;
                 }
-                return <ModifiedCell modifiedTime={trashTime} />;
+                return <DateCell date={trashTime} />;
             };
             return <TrashedDateCellComponent />;
         },
