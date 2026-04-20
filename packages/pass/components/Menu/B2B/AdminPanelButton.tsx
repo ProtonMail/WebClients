@@ -1,12 +1,10 @@
 import type { FC } from 'react';
 
-import { c } from 'ttag';
-
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
+import { AdminPanelLabel } from '@proton/pass/components/Menu/B2B/AdminPanelLabel';
 import { AccountPath } from '@proton/pass/constants';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
 import type { Organization } from '@proton/shared/lib/interfaces';
-import capitalize from '@proton/utils/capitalize';
 import clsx from '@proton/utils/clsx';
 
 export const AdminPanelButton: FC<Organization> = ({ Name, UsedMembers, MaxMembers }) => {
@@ -18,19 +16,7 @@ export const AdminPanelButton: FC<Organization> = ({ Name, UsedMembers, MaxMembe
             icon="users"
             className={clsx('rounded', configured ? 'py-3' : 'py-2')}
             ellipsis
-            label={
-                <div className="flex flex-column flex-nowrap">
-                    <span className="text-ellipsis">{c('Action').t`Admin panel`}</span>
-                    {configured && (
-                        <div className="flex flex-row flex-nowrap gap-1 color-weak text-sm">
-                            <span className="text-ellipsis">{capitalize(Name)}</span>
-                            <span className="shrink-0">
-                                ({UsedMembers}/{MaxMembers})
-                            </span>
-                        </div>
-                    )}
-                </div>
-            }
+            label={<AdminPanelLabel Name={Name} UsedMembers={UsedMembers} MaxMembers={MaxMembers} />}
             onClick={navigateToOrganization}
             parentClassName="mx-3"
         />
