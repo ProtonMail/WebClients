@@ -196,6 +196,7 @@ const ChangePasswordModal = ({
                     api,
                     newPassword: inputs.newPassword,
                     persistPasswordScope: mode === MODES.SWITCH_TWO_PASSWORD,
+                    disable2FA,
                 })
             );
 
