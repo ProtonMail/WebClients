@@ -4,6 +4,7 @@ import defaultConfig from '@proton/eslint-config-proton/all';
 import { createBarrelConfig } from '@proton/eslint-config-proton/barrel';
 
 export default defineConfig([
+    { ignores: ['native/target/**'] },
     defaultConfig,
     createBarrelConfig(),
     {
