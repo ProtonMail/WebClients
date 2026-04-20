@@ -1255,7 +1255,7 @@
         "Zurück zum Album „${ ellipsedAlbumName }“"
       ],
       "Re-index": [
-        "Index neu erstellen"
+        "Neu indexieren"
       ]
     },
     "Action: Docs": {
@@ -7077,6 +7077,9 @@
       ],
       "Invitation confirmed": [
         "Einladung bestätigt"
+      ],
+      "No populator states found.": [
+        "Kein Status zu den Index-Generatoren gefunden"
       ]
     },
     "info": {
@@ -8993,6 +8996,9 @@
       "Appointment scheduling with ${ n } booking page": [
         "Terminplanung mit ${ n } Buchungsseite",
         "Terminplanung mit ${ n } Buchungsseiten"
+      ],
+      "Dedicated servers optimized for speed": [
+        "Dedizierte Server, optimiert für hohe Geschwindigkeit"
       ]
     },
     "new_plans: feature highlight": {
@@ -13443,6 +13449,9 @@
       ],
       "Disconnected from Gmail": [
         "Von Gmail getrennt"
+      ],
+      "Index populators": [
+        "Index-Generatoren"
       ]
     },
     "Today icon tooltip in mini calendar": {
