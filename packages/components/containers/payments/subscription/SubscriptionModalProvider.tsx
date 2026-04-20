@@ -21,9 +21,9 @@ import {
     fixPlanIDs,
     fixPlanName,
 } from '@proton/payments/index';
+import { tracePaymentError } from '@proton/payments/sentry/capture';
 import { loadInitialBillingAddress } from '@proton/payments/ui/helpers/load-initial-billing-address';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Organization } from '@proton/shared/lib/interfaces';
 
 import { useRedirectToAccountApp } from '../../desktop/useRedirectToAccountApp';
@@ -178,10 +178,11 @@ const SubscriptionModalProvider = ({ children, app, onClose }: Props) => {
         try {
             await withLoadingData(preloadSubscriptionModalData());
         } catch (error) {
-            captureMessage('Payments: Failed to load subscription data', {
-                level: 'error',
+            tracePaymentError(error, {
+                tags: {
+                    component: 'SubscriptionModalProvider',
+                },
                 extra: {
-                    error,
                     ...subscriptionModalProps,
                 },
             });

@@ -76,6 +76,7 @@ import { VatReverseChargeNotSupportedError } from '@proton/payments/core/errors'
 import { computeOptimisticSubscriptionMode } from '@proton/payments/core/optimisticSubscriptionMode';
 import { InvalidChargebeeCardDataError } from '@proton/payments/core/payment-processors/chargebeeCardPayment';
 import { getAutoCoupon } from '@proton/payments/core/subscription/helpers';
+import { tracePaymentError } from '@proton/payments/sentry/capture';
 import type { SubscriptionModificationStepTelemetry } from '@proton/payments/telemetry/helpers';
 import type { EstimationChangePayload } from '@proton/payments/telemetry/shared-checkout-telemetry';
 import type { SubscriptionModificationChangeAudienceTelemetry } from '@proton/payments/telemetry/subscription-container';
@@ -90,9 +91,7 @@ import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/plans';
 import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Organization, RequireOnly, UserModel } from '@proton/shared/lib/interfaces';
-import { getSentryError } from '@proton/shared/lib/keys';
 import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
@@ -1214,9 +1213,11 @@ const SubscriptionContainerInner = ({
                     creditCardDetailsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
                 }
 
-                const error = getSentryError(e);
-                if (error) {
-                    const context = {
+                tracePaymentError(e, {
+                    tags: {
+                        component: 'subscription-container',
+                    },
+                    extra: {
                         app,
                         step: model.step,
                         cycle: model.cycle,
@@ -1230,12 +1231,8 @@ const SubscriptionContainerInner = ({
                         paymentMethodValue: paymentFacade.selectedMethodValue,
                         paymentsVersion: getPaymentsVersion(),
                         tokenDidntHaveEmail,
-                    };
-                    captureMessage('Payments: failed to handle subscription', {
-                        level: 'error',
-                        extra: { error, context },
-                    });
-                }
+                    },
+                });
             }
         });
 
