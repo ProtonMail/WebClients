@@ -55,6 +55,8 @@ interface MeetingBodyProps {
     setShowReconnectedMessage: React.Dispatch<React.SetStateAction<boolean>>;
     setLiveKitConnectionState: React.Dispatch<React.SetStateAction<ConnectionState | null>>;
     isDisconnected: boolean;
+    isReconnecting: boolean;
+    mlsRetrying: boolean;
 }
 
 export const MeetingBody = ({
@@ -66,6 +68,8 @@ export const MeetingBody = ({
     setShowReconnectedMessage,
     setLiveKitConnectionState,
     isDisconnected,
+    isReconnecting,
+    mlsRetrying,
 }: MeetingBodyProps) => {
     useMeetingInitialisation();
 
@@ -186,7 +190,19 @@ export const MeetingBody = ({
                     >{c('Banner')
                         .t`Connected via TURN relay mode due to your network restrictions. This may increase latency and affect call quality.`}</TopBanner>
                 )}
-                {!isDisconnected &&
+                {isReconnecting && (
+                    <TopBanner className="bg-warning meet-radius">
+                        {c('Info').t`Connection lost. Reconnecting…`}
+                    </TopBanner>
+                )}
+                {!isReconnecting && mlsRetrying && (
+                    <TopBanner className="bg-warning meet-radius">
+                        {c('Info').t`Connection issue detected. Attempting to recover…`}
+                    </TopBanner>
+                )}
+                {!isReconnecting &&
+                    !mlsRetrying &&
+                    !isDisconnected &&
                     (liveKitConnectionState === ConnectionState.SignalReconnecting ||
                         liveKitConnectionState === ConnectionState.Reconnecting ||
                         showReconnectedMessage) && (
