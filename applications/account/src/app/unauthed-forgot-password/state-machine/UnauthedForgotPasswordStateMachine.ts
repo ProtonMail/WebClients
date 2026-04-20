@@ -106,7 +106,6 @@ export const UnauthedForgotPasswordStateMachine = setup({
         hasFullDeviceRecovery: ({ context: { deviceRecoveryLevel } }) =>
             deviceRecoveryLevel === DeviceRecoveryLevel.FULL,
         hasResetResponse: ({ context }) => !!context.resetResponse,
-        hasValidatedMnemonicData: ({ context }) => !!context.mnemonicData,
         hasOtherLoggedInSessions: ({ context }) => !!context.resetResponse && context.resetResponse.Sessions.length > 0,
         hasSocialContacts: ({ context }) =>
             context.delegatedAccessContacts?.some(({ Types }) => hasBit(Types, DelegatedAccessTypeEnum.SocialRecovery)),
@@ -349,9 +348,6 @@ export const UnauthedForgotPasswordStateMachine = setup({
                 },
                 confirmPhrase: {
                     on: {
-                        'decision.back': {
-                            target: 'enterPhrase',
-                        },
                         'decision.confirm': {
                             target: '#forgotPassword.setNewPassword',
                         },
@@ -388,8 +384,8 @@ export const UnauthedForgotPasswordStateMachine = setup({
                         },
                         'decision.back': [
                             {
-                                guard: 'hasValidatedMnemonicData',
-                                target: '#forgotPassword.mnemonicRecovery.confirmPhrase',
+                                guard: 'hasMnemonic',
+                                target: '#forgotPassword.mnemonicRecovery.enterPhrase',
                             },
                             {
                                 target: '#forgotPassword.entry',
