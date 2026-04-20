@@ -2,6 +2,8 @@ import { desktopLockAdapterFactory } from '@proton/pass/lib/auth/lock/desktop/ad
 import * as logicExtension from '@proton/pass/lib/auth/lock/desktop/logic.extension';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { createAuthStore } from '@proton/pass/lib/auth/store';
+import { getMessageForNativeMessageError } from '@proton/pass/lib/native-messaging/errors';
+import { NativeMessageErrorType } from '@proton/pass/types';
 import createStore from '@proton/shared/lib/helpers/store';
 
 jest.mock('@proton/pass/lib/auth/lock/desktop/logic.extension');
@@ -70,7 +72,9 @@ describe('DesktopLock adapter', () => {
     describe('unlock', () => {
         test('should throw if no verifier is stored', async () => {
             const { adapter } = setupAdapter();
-            await expect(adapter.unlock('')).rejects.toThrow('No desktop lock verifier found');
+            await expect(adapter.unlock('')).rejects.toThrow(
+                getMessageForNativeMessageError(NativeMessageErrorType.DESKTOP_LOCK_NOT_CONFIGURED)
+            );
             expect(unlockMessage).not.toHaveBeenCalled();
         });
 
