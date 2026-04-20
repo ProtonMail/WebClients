@@ -132,6 +132,9 @@ export enum FeatureCode {
     // Lumo
     LumoSmoothedRendering = 'LumoSmoothedRendering',
 
+    // Admin Roles
+    AdminRolesOnboardingModal = 'AdminRolesOnboardingModal',
+
     // NPS
     NPSFeedbackDesktopCalendar = 'NPSFeedbackDesktopCalendar',
     NPSFeedbackDesktopMail = 'NPSFeedbackDesktopMail',
