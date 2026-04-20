@@ -1288,6 +1288,18 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Uw PIN-code is verwijderd door een andere ${ PASS_APP_NAME }-client"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "De desktop-app van ${ PASS_APP_NAME } is vergrendeld, deze moet ontgrendeld worden."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "De desktop-app van ${ PASS_APP_NAME } is niet geïnstalleerd."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "De desktop-app van ${ PASS_APP_NAME } reageert niet, draait deze wel?"
+      ],
+      "Unknown error.": [
+        "Onbekende fout."
       ]
     },
     "Error message": {
@@ -1929,7 +1941,8 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
+        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
       ],
       "Moving items": [
         "Items verplaatsen"
