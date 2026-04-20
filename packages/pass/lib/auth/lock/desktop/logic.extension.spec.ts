@@ -31,12 +31,12 @@ describe('sendSetupLockSecretMessage', () => {
         ).rejects.toMatchObject({ name: NativeMessageErrorType.SETUP_LOCK_SECRET_INVALID_RESPONSE });
     });
 
-    test('should throw SETUP_LOCK_SECRET_INVALID_RESPONSE if userIdentifier in response does not match', async () => {
+    test('should throw ACCOUNT_MISMATCH if userIdentifier in response does not match', async () => {
         const nativeMessaging = makeNativeMessaging({ ...validResponse, userIdentifier: 'other-user' });
 
         await expect(
             sendSetupLockSecretMessage(nativeMessaging as any, makeAuthStore() as any, lockSecret)
-        ).rejects.toMatchObject({ name: NativeMessageErrorType.SETUP_LOCK_SECRET_INVALID_RESPONSE });
+        ).rejects.toMatchObject({ name: NativeMessageErrorType.ACCOUNT_MISMATCH });
     });
 
     test('should propagate DESKTOP_APP_LOCKED as a NativeMessageError without wrapping it', async () => {
