@@ -18,12 +18,16 @@ declare global {
         disconnectionEvent: {
             disconnection_handler: () => Promise<void>;
         };
+        mlsSyncStateChangeEvent: {
+            on_mls_sync_state_changed: (state: number, failedReason?: number) => Promise<void>;
+        };
     }
 }
 
 interface SetupWasmDependenciesParameters {
     getGroupKeyInfo: () => Promise<{ key: string; epoch: bigint }>;
     onNewGroupKeyInfo: (key: string, epoch: bigint) => Promise<void>;
+    onMlsSyncStateChanged?: (state: number, failedReason?: number) => void;
 }
 
 // Store interval ID to allow cleanup
@@ -37,9 +41,15 @@ export const cleanupWasmDependencies = () => {
         clearInterval(keyPollIntervalId);
         keyPollIntervalId = null;
     }
+    window.newGroupKeyEvent = { new_group_key_for: async () => {} };
+    window.mlsSyncStateChangeEvent = { on_mls_sync_state_changed: async () => {} };
 };
 
-export const setupWasmDependencies = ({ getGroupKeyInfo, onNewGroupKeyInfo }: SetupWasmDependenciesParameters) => {
+export const setupWasmDependencies = ({
+    getGroupKeyInfo,
+    onNewGroupKeyInfo,
+    onMlsSyncStateChanged,
+}: SetupWasmDependenciesParameters) => {
     let lastEpoch: bigint | undefined;
 
     // Clear existing interval if setupWasmDependencies was called before, generally happened when user joins the meeting multiple times
@@ -60,6 +70,12 @@ export const setupWasmDependencies = ({ getGroupKeyInfo, onNewGroupKeyInfo }: Se
     window.disconnectionEvent = {
         disconnection_handler: async function () {
             // Empty function for now
+        },
+    };
+    // Initialize window.mlsSyncStateChangeEvent
+    window.mlsSyncStateChangeEvent = {
+        on_mls_sync_state_changed: async function (state: number, failedReason?: number) {
+            onMlsSyncStateChanged?.(state, failedReason);
         },
     };
 
