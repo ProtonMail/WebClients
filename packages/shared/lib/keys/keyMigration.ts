@@ -4,13 +4,11 @@ import { getMemberKeys } from '@proton/shared/lib/keys/memberKeys';
 import noop from '@proton/utils/noop';
 
 import { queryScopes } from '../api/auth';
-import { getApiError, getIsConnectionIssue } from '../api/helpers/apiErrorHelper';
 import { migrateAddressKeysRoute } from '../api/keys';
 import { migrateMembersAddressKeysRoute } from '../api/memberKeys';
 import { getAllMemberAddresses, getAllMembers, getMember } from '../api/members';
 import { getOrganizationKeys } from '../api/organization';
 import { MEMBER_PRIVATE, USER_ROLES } from '../constants';
-import { ApiError } from '../fetch/ApiError';
 import type {
     Address,
     Api,
@@ -31,26 +29,6 @@ import { getDecryptedUserKeysHelper } from './getDecryptedUserKeys';
 import { getPrimaryKey } from './getPrimaryKey';
 import type { OnSKLPublishSuccess } from './signedKeyList';
 import { createSignedKeyListForMigration } from './signedKeyList';
-
-export const getSentryError = (error: any): any => {
-    // Only interested in api errors where the API gave a valid error response, or run time errors.
-    if (error instanceof ApiError) {
-        const { message, code } = getApiError(error);
-        return message && code >= 400 && code < 500 ? message : null;
-    }
-    if (
-        !error ||
-        error.ignore ||
-        getIsConnectionIssue(error) ||
-        error.message === 'Failed to fetch' ||
-        error.message === 'Load failed' ||
-        error.message === 'Operation aborted' ||
-        error.name === 'AbortError'
-    ) {
-        return;
-    }
-    return error;
-};
 
 export const getHasMigratedAddressKey = ({ Token, Signature }: { Token?: string; Signature?: string }): boolean => {
     return !!Token && !!Signature;
@@ -147,7 +125,7 @@ export function getAddressKeysMigration({
                         privateKeyArmored,
                         ID,
                         Flags,
-                        Primary
+                        Primary,
                     };
                 })
             );
@@ -157,7 +135,7 @@ export function getAddressKeysMigration({
                     privateKey,
                     publicKey: await toPublicKeyReference(privateKey),
                     Flags,
-                    Primary
+                    Primary,
                 }))
             );
             const [signedKeyList, onSKLPublishSuccess] = await createSignedKeyListForMigration({

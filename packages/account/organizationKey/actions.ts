@@ -19,7 +19,7 @@ import {
 } from '@proton/shared/lib/api/organization';
 import { KEYGEN_CONFIGS, KEYGEN_TYPES, MEMBER_PRIVATE, MEMBER_ROLE } from '@proton/shared/lib/constants';
 import { getIsAddressConfirmed, getIsAddressEnabled } from '@proton/shared/lib/helpers/address';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import { captureMessage, getSentryError } from '@proton/shared/lib/helpers/sentry';
 import type {
     Address,
     Api,
@@ -49,7 +49,6 @@ import {
     getPrimaryKey,
     getReEncryptedPublicMemberTokensPayloadLegacy,
     getReEncryptedPublicMemberTokensPayloadV2,
-    getSentryError,
     getVerifiedPublicKeys,
     reencryptAddressKeyTokenUsingOrgKey,
     splitKeys,
