@@ -9,9 +9,10 @@ import { ShareIcon } from '../../components/sections/FileBrowser/ShareIcon';
 import { GridItemContent } from '../../statelessComponents/DriveExplorer/cells/gridComponents/GridItemContent';
 import { GridItemName } from '../../statelessComponents/DriveExplorer/cells/gridComponents/GridItemName';
 import type { CellDefinition, GridDefinition } from '../../statelessComponents/DriveExplorer/types';
-import { ModifiedCell, defaultModifiedCellConfig } from '../commonDriveExplorerCells/ModifiedCell';
+import { DateCell } from '../commonDriveExplorerCells/DateCell';
 import { NameCell, defaultNameCellConfig } from '../commonDriveExplorerCells/NameCell';
 import { SizeCell, defaultSizeCellConfig } from '../commonDriveExplorerCells/SizeCell';
+import { defaultModifiedTimeCellConfig } from '../commonDriveExplorerCells/modifiedTimeCellConfig';
 import { useFolderStore } from './useFolder.store';
 
 export const getFolderCells = ({
@@ -56,7 +57,7 @@ export const getFolderCells = ({
         },
     },
     {
-        ...defaultModifiedCellConfig,
+        ...defaultModifiedTimeCellConfig,
         disabled: !viewportWidth['>=large'],
         render: (uid) => {
             const ModifiedCellComponent = () => {
@@ -64,7 +65,7 @@ export const getFolderCells = ({
                 if (!fileModifyTime) {
                     return null;
                 }
-                return <ModifiedCell modifiedTime={fileModifyTime} />;
+                return <DateCell date={fileModifyTime} />;
             };
             return <ModifiedCellComponent />;
         },
