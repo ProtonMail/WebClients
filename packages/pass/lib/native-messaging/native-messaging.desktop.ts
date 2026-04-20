@@ -15,6 +15,7 @@ export const sendNativeMessageResponse: SendNativeMessageResponse = async (respo
 export const listenNativeMessage = <Type extends NativeMessageType>(
     type: Type,
     isReady: boolean,
+    userId: string,
     callback: (request: NativeMessageRequestForType<Type>, messageId: string) => void
 ) => {
     return window.ctxBridge?.onNmRequest(async (payload) => {
@@ -31,7 +32,22 @@ export const listenNativeMessage = <Type extends NativeMessageType>(
             );
         }
 
-        const request = await payloadToMessage(payload, 'extension');
+        /** Check for account mismatch before attempting decryption.
+         * userIdentifier format is `${localID}-${userId}`, so we check the suffix. */
+        if ('encrypted' in payload && payload.userIdentifier && !payload.userIdentifier.endsWith(`-${userId}`)) {
+            return sendNativeMessageResponse(
+                { type: payload.type, error: NativeMessageErrorType.ACCOUNT_MISMATCH },
+                payload.messageId
+            );
+        }
+
+        const request = await payloadToMessage(payload, 'extension').catch(() => null);
+        if (request === null) {
+            return sendNativeMessageResponse(
+                { type: payload.type, error: NativeMessageErrorType.NATIVE_MESSAGE_DECRYPTION_FAILED },
+                payload.messageId
+            );
+        }
 
         if (request.type === type) {
             callback(request as NativeMessageRequestForType<Type>, payload.messageId);
