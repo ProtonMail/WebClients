@@ -1350,6 +1350,33 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Votre code PIN a été retiré par un autre client de ${ PASS_APP_NAME }."
+      ],
+      "Biometric authentication failed.": [
+        "L'authentification biométrique a échoué."
+      ],
+      "Desktop lock is not configured.": [
+        "Le verrouillage du bureau n'est pas configuré."
+      ],
+      "Desktop lock secret does not match.": [
+        "Le secret de verrouillage du bureau ne correspond pas."
+      ],
+      "Desktop lock secret not found.": [
+        "Secret de verrouillage du bureau introuvable."
+      ],
+      "Desktop lock setup failed.": [
+        "La configuration du verrouillage du bureau a échoué."
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "La communication cryptée avec l'application de bureau ${ PASS_APP_NAME } a échoué."
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "L'application de bureau ${ PASS_APP_NAME } n'a pas répondu à temps."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "L'application de bureau ${ PASS_APP_NAME } est connectée avec un compte différent."
+      ],
+      "Unknown error.": [
+        "Erreur inconnue"
       ]
     },
     "Error message": {
