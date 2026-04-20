@@ -473,7 +473,7 @@ export const createAuthService = (api: Api, authStore: AuthStore) => {
                 const booted = clientBooted(ctx.getState().status);
                 logger.info(`[AuthService] session lock alarm detected [booted=${booted}]`);
                 await ctx.service.storage.local.setItem('forceLock', true);
-                if (booted) return authService.lock(LockMode.SESSION, { soft: false });
+                if (booted) return authService.lock(authStore.getLockMode(), { soft: false });
                 else return authService.init({ forceLock: true, retryable: false });
             })
         );

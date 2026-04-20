@@ -116,6 +116,8 @@ export const unlock = requestActionsFactory<UnlockDTO, LockMode, LockMode>('auth
                             }
                         }
                         return c('Error').t`Unlock failure`;
+                    case LockMode.DESKTOP:
+                        return getErrorMessage(error, c('Error').t`Unlock failure`);
                     default:
                         return c('Error').t`Unlock failure`;
                 }

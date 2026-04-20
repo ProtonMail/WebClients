@@ -116,7 +116,7 @@ export const SAFARI_MESSAGE_KEY = 'application.id';
 export const SAFARI_URL_SCHEME = 'proton-pass:';
 export const BIOMETRICS_KEY = 'offlineKey_biometrics';
 export const PASS_DESKTOP_NATIVE_MESSAGE_KEY = 'me.proton.pass.nm';
-export const PASS_DESKTOP_NATIVE_MESSAGE_TIMEOUT = 10_000;
+export const PASS_DESKTOP_NATIVE_MESSAGE_TIMEOUT = 30_000;
 
 /** Default feature flag states : These values are used as a
  * fallback if the feature flag endpoint is unavailable.
