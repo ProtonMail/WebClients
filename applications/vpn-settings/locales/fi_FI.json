@@ -1189,6 +1189,9 @@
       ],
       "Zoom out": [
         "Loitonna"
+      ],
+      "Forgot password?": [
+        "Unohditko salasanasi?"
       ]
     },
     "action": {
@@ -8297,6 +8300,12 @@
       ],
       "Zoom meeting": [
         "Zoom-kokousta"
+      ],
+      "Enter your own password (as organization admin).": [
+        "Syötä oma salasanasi (organisaation ylläpitäjänä)."
+      ],
+      "Enter your recovery phrase to verify your identity and disable two-factor authentication.": [
+        "Syötä palautuslauseesi henkilöllisyytesi vahvistamiseksi ja kaksivaiheisen todennuksen poistamiseksi käytöstä."
       ]
     },
     "info": {
@@ -9233,6 +9242,9 @@
       ],
       "ZIP code": [
         "Postinumero"
+      ],
+      "Your password (admin)": [
+        "Salasanasi (ylläpitäjä)"
       ]
     },
     "label": {
@@ -9539,6 +9551,9 @@
       ],
       "What’s this?": [
         "Mikä tämä on?"
+      ],
+      "Account recovery explained": [
+        "Tilin palauttaminen selitettynä"
       ]
     },
     "Link (Scribe)": {
@@ -10474,6 +10489,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skannaamme pimeää verkkoa tarkistaaksemme, onko ${ BRAND_NAME } -osoitteesi tai -aliaksesi vuotaneet ja hälytämme välittömästi, jos löydämme jotain."
+      ],
+      "Dedicated servers optimized for speed": [
+        "Nopeudelle optimoidut dedikoidut palvelimet"
       ]
     },
     "new_plans: feature highlight": {
@@ -13694,6 +13712,12 @@
       ],
       "Your SSO configuration will be deleted.": [
         "SSO-määrityksesi poistetaan."
+      ],
+      "Sign in": [
+        "Kirjaudu sisään"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Sinut ohjataan kolmannen osapuolen SSO- palveluntarjoajaan."
       ]
     },
     "sso: auth device state": {
@@ -15812,6 +15836,9 @@
       ],
       "Your subscriptions": [
         "Tilauksesi"
+      ],
+      "Enter your password": [
+        "Syötä salasanasi"
       ]
     },
     "Title for payment methods table": {

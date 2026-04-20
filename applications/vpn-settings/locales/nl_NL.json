@@ -1201,6 +1201,15 @@
       ],
       "Zoom out": [
         "Zoom uit"
+      ],
+      "Continue cancelling": [
+        "Doorgaan met annuleren"
+      ],
+      "Forgot password?": [
+        "Wachtwoord vergeten?"
+      ],
+      "Keep current plan": [
+        "Huidig plan behouden"
       ]
     },
     "action": {
@@ -3564,6 +3573,21 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "U kunt afspraken importeren in iCal formaat (. ics-bestand). Het bestand moet een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en mag maximaal ${ MAX_IMPORT_EVENTS_STRING } afspraken bevatten. Als uw bestand groter is, splitst u het op in kleinere bestanden."
+      ],
+      "Add extra addresses to your account or use Hide My Email aliases to keep your inbox private.": [
+        "Voeg extra e-mailadressen toe aan je account of gebruik de functie 'Mijn e-mailadres verbergen' om je inbox privé te houden."
+      ],
+      "Most issues can be solved in a few minutes with our step-by-step guides.": [
+        "De meeste problemen kunnen binnen enkele minuten worden opgelost met onze stapsgewijze handleidingen."
+      ],
+      "Still need help? Our support team is here for you.": [
+        "Heb je nog steeds hulp nodig? Ons supportteam staat voor je klaar."
+      ],
+      "You can manage multiple ${ BRAND_NAME } addresses from a single account, without switching. Aliases and address management tools help keep everything in one inbox.": [
+        "U kunt meerdere ${ BRAND_NAME }-adressen beheren vanuit één account, zonder te hoeven wisselen. Aliassen en adresbeheertools zorgen ervoor dat alles overzichtelijk in één inbox blijft."
+      ],
+      "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
+        "U kunt adressen samenvoegen tot één primair ${ BRAND_NAME } account met behulp van onze ondersteuningsgids."
       ]
     },
     "description": {
@@ -6487,7 +6511,7 @@
         "Door nu te verlaten, worden wijzigingen mogelijk niet opgeslagen"
       ],
       "Can you reach out to your contact?": [
-        "Gelieve contact op te nemen met uw contactpersonen voor noodgevallen?"
+        "Kunt u contact opnemen met uw contactpersoon?"
       ],
       "Cancel": [
         "Annuleren"
@@ -7409,7 +7433,7 @@
         "Open de handleiding voor aanbevolen acties en nuttige koppelingen."
       ],
       "Open your active session in the browser, and go to **Settings → All settings → Recovery → Password reset settings.**": [
-        "Open je actieve sessie in de browser en ga naar **Instellingen → Alle instellingen → Herstel → Instellingen voor wachtwoordherstel.**"
+        "Open uw actieve sessie in de browser en ga naar **Instellingen → Alle instellingen → Herstel → Instellingen voor wachtwoordherstel.**"
       ],
       "or ${ selectFileButton }": [
         "of ${ selectFileButton }"
@@ -7755,7 +7779,7 @@
         "Uw organisatie wordt aangemaakt"
       ],
       "Share your thoughts...": [
-        "Deel je ideeën..."
+        "Deel uw ideeën..."
       ],
       "Shared ${ vaultLink } deleted": [
         "Gedeelde ${ vaultLink } verwijderd"
@@ -8724,6 +8748,12 @@
       ],
       "Zoom meeting": [
         "Zoom meeting"
+      ],
+      "Enter your own password (as organization admin).": [
+        "Voer uw eigen wachtwoord in (als organisatiebeheerder)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Voer uw eigen wachtwoord in (als vertrouwd contact)."
       ]
     },
     "info": {
@@ -9703,6 +9733,12 @@
       ],
       "ZIP code": [
         "Postcode"
+      ],
+      "Your password (admin)": [
+        "Uw wachtwoord (beheerder)"
+      ],
+      "Your password (trusted contact)": [
+        "Uw wachtwoord (vertrouwd contact)"
       ]
     },
     "label": {
@@ -10009,6 +10045,18 @@
       ],
       "What’s this?": [
         "Wat is dit?"
+      ],
+      "Contact support": [
+        "Contact support"
+      ],
+      "Learn how": [
+        "Leer hoe"
+      ],
+      "Manage addresses": [
+        "Adressen beheren"
+      ],
+      "Visit our support site": [
+        "Bezoek onze ondersteuningswebsite."
       ]
     },
     "Link (Scribe)": {
@@ -14490,6 +14538,12 @@
       ],
       "Your SSO configuration will be deleted.": [
         "Uw SSO-configuratie wordt verwijderd."
+      ],
+      "Sign in": [
+        "Inloggen"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "U wordt doorgestuurd naar uw derde partij SSO-provider."
       ]
     },
     "sso: auth device state": {
@@ -16697,6 +16751,27 @@
       ],
       "Your subscriptions": [
         "Uw abonnementen"
+      ],
+      "Already have multiple accounts?": [
+        "Hebt u al meerdere accounts?"
+      ],
+      "Create new addresses easily": [
+        "Maak eenvoudig nieuwe adressen aan"
+      ],
+      "Enter your password": [
+        "Voer uw wachtwoord in"
+      ],
+      "Get direct support": [
+        "Ontvang directe ondersteuning"
+      ],
+      "Get help with an issue": [
+        "Krijg hulp bij een probleem"
+      ],
+      "Troubleshoot your issue": [
+        "Los uw probleem op"
+      ],
+      "Use one account for all your addresses": [
+        "Gebruik één account voor al uw adressen."
       ]
     },
     "Title for payment methods table": {
@@ -17564,6 +17639,17 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Na een succesvolle verificatie mag u dit TXT-record niet verwijderen, omdat het nodig is om te bevestigen dat u de eigenaar van het domein blijft."
+      ]
+    },
+    "Get help": {
+      "Continue cancelling": [
+        "Doorgaan met annuleren"
+      ],
+      "Keep current plan": [
+        "Huidig plan behouden"
+      ],
+      "Many issues can be resolved quickly with our help guides. If you need more support, our team is here to help.": [
+        "Veel problemen kunnen snel worden opgelost met behulp van onze handleidingen. Mocht u meer ondersteuning nodig hebben, dan staat ons team voor u klaar."
       ]
     }
   }

@@ -1150,6 +1150,15 @@
       ],
       "Zoom out": [
         "تصغير"
+      ],
+      "Continue cancelling": [
+        "استمر في الإلغاء"
+      ],
+      "Forgot password?": [
+        "هل نسيت كلمة المرور؟"
+      ],
+      "Keep current plan": [
+        "حافظ على الخطة الحالية"
       ]
     },
     "action": {
@@ -3383,6 +3392,15 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "يمكنك استيراد الأحداث بتنسيق iCal (ملف ICS). يجب أن يكون حجم الملف الأقصى ${ MAX_IMPORT_FILE_SIZE_STRING } ويحتوي على ما يصل إلى ${ MAX_IMPORT_EVENTS_STRING } حدثًا. إذا كان ملفك أكبر، فيرجى تقسيمه إلى ملفات أصغر."
+      ],
+      "Add extra addresses to your account or use Hide My Email aliases to keep your inbox private.": [
+        "أضف عناوين إضافية إلى حسابك أو استخدم الأسماء المستعارة لإخفاء بريدي الإلكتروني للحفاظ على خصوصية صندوق الوارد الخاص بك."
+      ],
+      "You can manage multiple ${ BRAND_NAME } addresses from a single account, without switching. Aliases and address management tools help keep everything in one inbox.": [
+        "يمكنك إدارة عدة عناوين ${ BRAND_NAME } من حساب واحد دون الحاجة إلى التبديل. تساعد العناوين البديلة وأدوات إدارة العناوين على إبقاء كل شيء في صندوق وارد واحد."
+      ],
+      "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
+        "يمكنك دمج العناوين في حساب رئيسي واحد على ${ BRAND_NAME } باستخدام دليل الدعم الخاص بنا."
       ]
     },
     "description": {
@@ -8617,6 +8635,12 @@
       ],
       "Zoom meeting": [
         "اجتماع Zoom"
+      ],
+      "Enter your own password (as organization admin).": [
+        "أدخل كلمة المرور الخاصة بك (كمسؤول للمؤسسة)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "أدخل كلمة مرورك الخاصة (كجهة اتصال موثوق بها)."
       ]
     },
     "info": {
@@ -9610,6 +9634,12 @@
       ],
       "ZIP code": [
         "الرمز البريدي"
+      ],
+      "Your password (admin)": [
+        "كلمة المرور الخاصة بك (المشرف)"
+      ],
+      "Your password (trusted contact)": [
+        "كلمة مرورك (جهة اتصال موثوق بها)"
       ]
     },
     "label": {
@@ -9920,6 +9950,12 @@
       ],
       "What’s this?": [
         "ما هذا؟"
+      ],
+      "Learn how": [
+        "تعلم كيف"
+      ],
+      "Manage addresses": [
+        "إدارة العناوين"
       ]
     },
     "Live Chat Modal": {
@@ -14447,6 +14483,12 @@
       ],
       "Your SSO configuration will be deleted.": [
         "سيُحذف تكوين SSO الخاص بك."
+      ],
+      "Sign in": [
+        "تسجيل الدخول"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "سيُعاد توجيهك إلى مزود خدمة الدخول الموحد (SSO) التابع للطرف الثالث."
       ]
     },
     "sso: auth device state": {
@@ -16708,6 +16750,18 @@
       ],
       "Your subscriptions": [
         "اشتراكاتك"
+      ],
+      "Already have multiple accounts?": [
+        "هل لديك بالفعل حسابات متعددة؟"
+      ],
+      "Create new addresses easily": [
+        "قم بإنشاء عناوين جديدة بسهولة"
+      ],
+      "Enter your password": [
+        "أدخل كلمة مرورك"
+      ],
+      "Use one account for all your addresses": [
+        "استخدم حسابا واحدا لجميع عناوينك"
       ]
     },
     "Title for payment methods table": {

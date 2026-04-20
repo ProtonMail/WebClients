@@ -1222,6 +1222,15 @@
       ],
       "Zoom out": [
         "Паменшыць"
+      ],
+      "Continue cancelling": [
+        "Працягнуць скасаванне"
+      ],
+      "Forgot password?": [
+        "Забылі пароль?"
+      ],
+      "Keep current plan": [
+        "Пакінуць бягучы тарыфны план"
       ]
     },
     "action": {
@@ -3717,6 +3726,21 @@
         "Ваш тарыфны план агулам падтрымлівае ${ MAX_SYNC_PAID_USER } адрасы Gmail",
         "Ваш тарыфны план у сукупнасці падтрымлівае ${ MAX_SYNC_PAID_USER } адрасоў Gmail",
         "Ваш тарыфны план у сукупнасці падтрымлівае ${ MAX_SYNC_PAID_USER } адрасоў Gmail"
+      ],
+      "Add extra addresses to your account or use Hide My Email aliases to keep your inbox private.": [
+        "Дадайце дадатковыя адрасы да вашага ўліковага запісу або выкарыстоўвайце псеўданімы Hide My Email, каб захаваць прыватнасць сваёй паштовай скрыні."
+      ],
+      "Most issues can be solved in a few minutes with our step-by-step guides.": [
+        "Большасць праблем могуць быць вырашаны за некалькіх хвілін з дапамогай нашых пакрокавых дапаможнікаў."
+      ],
+      "Still need help? Our support team is here for you.": [
+        "Усё яшчэ патрэбная дапамога? Наша каманда падтрымкі заўсёды побач."
+      ],
+      "You can manage multiple ${ BRAND_NAME } addresses from a single account, without switching. Aliases and address management tools help keep everything in one inbox.": [
+        "Вы можаце кіраваць некалькі адрасамі ${ BRAND_NAME } з аднаго ўліковага запісу без неабходнасці пераключэння паміж імі. Псеўданімы і інструмент кіравання адрасамі дапаможа захоўваць усё ў адной паштовай скрыні."
+      ],
+      "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
+        "Вы можаце аб'яднаць адрасы ў адзін галоўны ўліковы запіс ${ BRAND_NAME } выкарыстоўваючы наш дапаможнік па аказанні падтрымкі."
       ]
     },
     "description": {
@@ -4713,7 +4737,7 @@
         "Гэта назва для меткі недаступна. Выберыце іншую назву."
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
-        "Вам неабходна аднавіць прывілеі адміністратара, каб ствараць уліковыя запісы непрыватных карыстальнікаў і атрымліваць доступ да іх."
+        "Вам неабходна аднавіць правы адміністратара, каб ствараць уліковыя запісы непрыватных карыстальнікаў і атрымліваць доступ да іх."
       ],
       "Too many requests. Please try again after ${ date }": [
         "Занадта шмат запытаў. Паспрабуйце яшчэ раз пасля ${ date }"
@@ -9099,6 +9123,18 @@
       ],
       "Zoom meeting": [
         "сустрэчу па Zoom"
+      ],
+      "Due to end-to-end encryption, you can reset your password, but ${ DataLockedText } until you use a ${ DataRecoveryOptionsLink }:": [
+        "З прычыны скразнога шыфравання вы можаце скінуць свой пароль, але ${ DataLockedText } да таго часу, пакуль вы выкарыстаеце ${ DataRecoveryOptionsLink }:"
+      ],
+      "Enter your own password (as organization admin).": [
+        "Увядзіце свой пароль (адміністратара арганізацыі)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Увядзіце свой пароль (як давераны кантакт)."
+      ],
+      "Enter your recovery phrase to verify your identity and disable two-factor authentication.": [
+        "Увядзіце сваю фраза аднаўлення, каб спраўдзіць сваю ідэнтычнасць і адключыць двухфактарную аўтэнтыфікацыю."
       ]
     },
     "info": {
@@ -10098,6 +10134,12 @@
       ],
       "ZIP code": [
         "Паштовы індэкс"
+      ],
+      "Your password (admin)": [
+        "Ваш пароль (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Ваш пароль (давераны кантакт)"
       ]
     },
     "label": {
@@ -10409,6 +10451,21 @@
       ],
       "What’s this?": [
         "Што гэта?"
+      ],
+      "Account recovery explained": [
+        "Тлумачэнне аднаўлення ўліковага запісу"
+      ],
+      "Contact support": [
+        "Звязацца са службай падтрымкі"
+      ],
+      "Learn how": [
+        "Даведацца як"
+      ],
+      "Manage addresses": [
+        "Кіраванне адрасамі"
+      ],
+      "Visit our support site": [
+        "Наведаць наш сайт падтрымкі"
       ]
     },
     "Link (Scribe)": {
@@ -11532,6 +11589,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Наша сістэма сканіруе цёмную сетку для праверкі на прадмет уцечкі адрасоў і псеўданімаў ${ BRAND_NAME }. Вы неадкладна будзеце апавешчаны ў выпадку, калі нешта будзе выяўлена."
+      ],
+      "Dedicated servers optimized for speed": [
+        "Вылучаныя серверы аптымізаваныя для хуткасці"
       ]
     },
     "new_plans: feature highlight": {
@@ -12778,10 +12838,10 @@
         "Актывуйце ключ арганізацыі, каб уключыць правы адміністратара ў вашым уліковым запісе."
       ],
       "Use a data recovery method or reset the organization key to restore administrator privileges.": [
-        "Скарыстайце спосабам аднаўлення даных або скіньце ключ арганізацыі, каб аднавіць прывілеі адміністратара."
+        "Скарыстайце спосабам аднаўлення даных або скіньце ключ арганізацыі, каб аднавіць правы адміністратара."
       ],
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
-        "Скарыстайце спосабам аднаўлення даных, звяжыцеся з іншым адміністратарам або скіньце ключ арганізацыі, каб аднавіць прывілеі адміністратара."
+        "Скарыстайце спосабам аднаўлення даных, звяжыцеся з іншым адміністратарам або скіньце ключ арганізацыі, каб аднавіць правы адміністратара."
       ],
       "We couldn't verify the authenticity of this identity.": [
         "Немагчыма спраўдзіць аўтэнтыфікацыю гэтай ідэнтычнасці."
@@ -14969,6 +15029,12 @@
       ],
       "Your SSO configuration will be deleted.": [
         "Ваша канфігурацыя SSO будзе выдалена."
+      ],
+      "Sign in": [
+        "Уваход"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Вы будзеце перанакіраваны ў вашага старонняга пастаўшчыка SSO."
       ]
     },
     "sso: auth device state": {
@@ -17261,6 +17327,27 @@
       ],
       "Your subscriptions": [
         "Вашы падпіскі"
+      ],
+      "Already have multiple accounts?": [
+        "У вас некалькі ўліковых запісаў?"
+      ],
+      "Create new addresses easily": [
+        "Лёгкае стварэнне новых адрасоў"
+      ],
+      "Enter your password": [
+        "Увядзіце свой пароль"
+      ],
+      "Get direct support": [
+        "Атрымаць непасрэдную дапамогу"
+      ],
+      "Get help with an issue": [
+        "Атрымаць дапамогу па праблеме"
+      ],
+      "Troubleshoot your issue": [
+        "Выпраўленне непаладкі"
+      ],
+      "Use one account for all your addresses": [
+        "Выкарыстанне аднаго ўліковага запісу для ўсіх вашых адрасоў"
       ]
     },
     "Title for payment methods table": {
@@ -18156,6 +18243,17 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Пасля паспяховага спраўджання не выдаляйце гэты запіс TXT, бо ён неабходны для пацвярджэння таго, што вы з'яўляецеся ўладальнікам дамена."
+      ]
+    },
+    "Get help": {
+      "Continue cancelling": [
+        "Працягнуць скасаванне"
+      ],
+      "Keep current plan": [
+        "Пакінуць бягучы тарыфны план"
+      ],
+      "Many issues can be resolved quickly with our help guides. If you need more support, our team is here to help.": [
+        "Большасць праблем могуць быць хутка вырашаны з дапамогай нашых дапаможнікаў. Наша каманда заўсёды гатова дапамагчы, калі вы не можаце вырашыць праблему самастойна."
       ]
     }
   }

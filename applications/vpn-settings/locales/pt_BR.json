@@ -1222,6 +1222,15 @@
       ],
       "Zoom out": [
         "Diminuir zoom"
+      ],
+      "Continue cancelling": [
+        "Continuar cancelamento"
+      ],
+      "Forgot password?": [
+        "Esqueceu sua senha?"
+      ],
+      "Keep current plan": [
+        "Manter plano atual"
       ]
     },
     "action": {
@@ -8677,6 +8686,30 @@
       ],
       "Zoom meeting": [
         "Reunião no Zoom"
+      ],
+      "**This will disable 2-factor authentication.**": [
+        "**Isso desativará a autenticação de 2 fatores.**"
+      ],
+      "Before sending a new verification code, check your spam folder for ${ EmailOrPhoneNumber }.": [
+        "Antes de enviar um novo código de verificação, verifique a pasta de spam de ${ EmailOrPhoneNumber }"
+      ],
+      "Enter your own password (as organization admin).": [
+        "Digite sua própria senha (como administrador da organização)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Digite sua própria senha (como contato de confiança)."
+      ],
+      "How your emergency contact can change your password for you:": [
+        "Como seu contato de emergência pode alterar sua senha por você:"
+      ],
+      "Thanks - your feedback was sent.": [
+        "Obrigado - seu feedback foi enviado."
+      ],
+      "You can now reset your password to regain access to your account.": [
+        "Você pode redefinir sua senha agora para recuperar o acesso à sua conta."
+      ],
+      "Your encrypted data will be locked": [
+        "Seus dados criptografados ficarão bloqueados"
       ]
     },
     "info": {
@@ -9662,6 +9695,12 @@
       ],
       "ZIP code": [
         "CEP"
+      ],
+      "Your password (admin)": [
+        "Sua senha (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Sua senha (contato de confiança)"
       ]
     },
     "label": {
@@ -9968,6 +10007,24 @@
       ],
       "What’s this?": [
         "O que é isso?"
+      ],
+      "Account recovery explained": [
+        "Explicação sobre a recuperação de conta."
+      ],
+      "Contact support": [
+        "Contatar o suporte"
+      ],
+      "contacts’ assistance": [
+        "assistência de contatos"
+      ],
+      "Learn how": [
+        "Saiba como"
+      ],
+      "Manage addresses": [
+        "Gerenciar endereços"
+      ],
+      "Visit our support site": [
+        "Visite nosso site de suporte"
       ]
     },
     "Link (Scribe)": {
@@ -14452,6 +14509,12 @@
       ],
       "Your SSO configuration will be deleted.": [
         "Sua configuração de SSO será excluída."
+      ],
+      "Sign in": [
+        "Iniciar sessão"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Você será redirecionado para o seu provedor de SSO de terceiros."
       ]
     },
     "sso: auth device state": {
@@ -16659,6 +16722,24 @@
       ],
       "Your subscriptions": [
         "Suas assinaturas"
+      ],
+      "Already have multiple accounts?": [
+        "Já tem várias contas?"
+      ],
+      "Create new addresses easily": [
+        "Crie endereços com facilidade"
+      ],
+      "Enter your password": [
+        "Digite sua senha"
+      ],
+      "Get direct support": [
+        "Obtenha suporte direto"
+      ],
+      "Get help with an issue": [
+        "Obter ajuda com um problema"
+      ],
+      "Try changing your password in your active web session": [
+        "Tente alterar sua senha na sua sessão ativa na web"
       ]
     },
     "Title for payment methods table": {
@@ -17520,6 +17601,14 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Após uma verificação bem sucedida, não remova este registro TXT, pois ele é necessário para confirmar que você continua sendo proprietário do domínio."
+      ]
+    },
+    "Get help": {
+      "Continue cancelling": [
+        "Continuar cancelamento"
+      ],
+      "Keep current plan": [
+        "Manter plano atual"
       ]
     }
   }

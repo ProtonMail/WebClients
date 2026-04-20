@@ -1216,6 +1216,21 @@
       ],
       "Zoom out": [
         "Verkleinern"
+      ],
+      "Continue cancelling": [
+        "Kündigung fortsetzen"
+      ],
+      "Forgot password?": [
+        "Passwort vergessen?"
+      ],
+      "Keep current plan": [
+        "Aktuelles Abonnement beibehalten"
+      ],
+      "Learn about recovery options": [
+        "Erfahre mehr über die Wiederherstellungsmöglichkeiten"
+      ],
+      "Send new code": [
+        "Neuen Code senden"
       ]
     },
     "action": {
@@ -3653,6 +3668,21 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Dein Abonnement unterstützt insgesamt ${ MAX_SYNC_PAID_USER } Gmail-Adresse",
         "Dein Abonnement unterstützt insgesamt ${ MAX_SYNC_PAID_USER } Gmail-Adressen"
+      ],
+      "Add extra addresses to your account or use Hide My Email aliases to keep your inbox private.": [
+        "Füge deinem Konto weitere E-Mail-Adressen hinzu oder nutze die Hide-My-E-Mail-Aliase, um deinen Posteingang privat zu halten."
+      ],
+      "Most issues can be solved in a few minutes with our step-by-step guides.": [
+        "Die meisten Probleme lassen sich mit unseren Schritt-für-Schritt-Anleitungen in wenigen Minuten lösen."
+      ],
+      "Still need help? Our support team is here for you.": [
+        "Brauchst du noch Hilfe? Unser Support-Team ist für dich da."
+      ],
+      "You can manage multiple ${ BRAND_NAME } addresses from a single account, without switching. Aliases and address management tools help keep everything in one inbox.": [
+        "Du kannst mehrere ${ BRAND_NAME }-E-Mail-Adressen über ein einziges Konto verwalten, ohne hin- und herwechseln zu müssen. Dank Aliasen und Tools zur E-Mail-Adressverwaltung bleibt alles in einem Posteingang."
+      ],
+      "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
+        "Mithilfe unserer Support-Anleitung kannst du E-Mail-Adressen in einem einzigen ${ BRAND_NAME }-Hauptkonto zusammenführen."
       ]
     },
     "description": {
@@ -4715,6 +4745,9 @@
       ],
       "Zero keys reactivated": [
         "Kein Schüssel wiederhergestellt"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Abonnementsdaten konnten nicht geladen werden. Bitte versuche es später nochmals."
       ]
     },
     "error": {
@@ -8833,6 +8866,33 @@
       ],
       "Zoom meeting": [
         "Zoom-Meeting"
+      ],
+      "${ BRAND_NAME } will send a verification code to ${ phoneNumber }. Standard message rates may apply.": [
+        "${ BRAND_NAME } sendet einen Bestätigungscode an ${ phoneNumber }. Es können die üblichen Gebühren für Nachrichten anfallen."
+      ],
+      "**This will disable 2-factor authentication.**": [
+        "**Dies deaktiviert die 2-Faktor-Authentifizierung.**"
+      ],
+      "Before sending a new verification code, check your spam folder for ${ EmailOrPhoneNumber }.": [
+        "Bevor wir einen neuen Bestätigungscode senden, überprüfe bitte deinen Spam-Ordner unter ${ EmailOrPhoneNumber }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Eigenes Passwort (als Organisationsadministrator) eingeben."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Gib dein eigenes Passwort ein (als vertrauenswürdiger Kontakt)."
+      ],
+      "Enter your recovery phrase to verify your identity and disable two-factor authentication.": [
+        "Gib deine Wiederherstellungsphrase ein, um deine Identität zu bestätigen und die Zwei-Faktor-Authentifizierung zu deaktivieren."
+      ],
+      "Invalid code. ${ RequestNewCodeLink } and try again.": [
+        "Ungültiger Code. ${ RequestNewCodeLink } und versuche es erneut."
+      ],
+      "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
+        "Die Gutschrift für die Empfehlung wird bis zu zwei Monate nach Ende der Testphase der von dir empfohlenen Person gutgeschrieben, sofern diese ein Abonnement abgeschlossen hat."
+      ],
+      "To regain access to your account and data, enter the 12-word recovery phrase associated with your account.": [
+        "Um wieder Zugriff auf dein Konto und deine Daten zu erhalten, gib bitte die 12-Wort-Wiederherstellungsphrase ein, die deinem Konto zugeordnet ist."
       ]
     },
     "info": {
@@ -9818,6 +9878,12 @@
       ],
       "ZIP code": [
         "Postleitzahl"
+      ],
+      "Your password (admin)": [
+        "Dein Passwort (Admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Dein Passwort (vertrauenswürdiger Kontakt)"
       ]
     },
     "label": {
@@ -10127,6 +10193,21 @@
       ],
       "What’s this?": [
         "Was ist das?"
+      ],
+      "Account recovery explained": [
+        "Erläuterung zur Kontowiederherstellung"
+      ],
+      "Contact support": [
+        "Support kontaktieren"
+      ],
+      "Learn how": [
+        "Erfahre, wie"
+      ],
+      "Manage addresses": [
+        "E-Mail-Adressen verwalten"
+      ],
+      "Visit our support site": [
+        "Unsere Support-Seite besuchen"
       ]
     },
     "Link (Scribe)": {
@@ -11144,6 +11225,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Wir scannen das Dark Web, um zu überprüfen, ob deine ${ BRAND_NAME }-Adressen oder Aliasse veröffentlicht wurden, und benachrichtigen dich sofort, wenn wir etwas finden."
+      ],
+      "Dedicated servers optimized for speed": [
+        "Dedizierte Server, optimiert für hohe Geschwindigkeit"
       ]
     },
     "new_plans: feature highlight": {
@@ -12583,6 +12667,9 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Dein Abonnement hat derzeit einen bestehenden Rabatt. Der Wechsel zu dieser neuen Aktion bedeutet, dass der bestehende Rabatt nicht länger angewendet wird."
+      ],
+      "Edit billing address": [
+        "Rechnungsadresse bearbeiten"
       ]
     },
     "Payments.Error": {
@@ -14576,6 +14663,12 @@
       ],
       "Your SSO configuration will be deleted.": [
         "Deine SSO-Konfiguration wird gelöscht."
+      ],
+      "Sign in": [
+        "Anmelden"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Du wirst zu deinem SSO-Anbieter weitergeleitet."
       ]
     },
     "sso: auth device state": {
@@ -16795,6 +16888,30 @@
       ],
       "Your subscriptions": [
         "Deine Abonnements"
+      ],
+      "Already have multiple accounts?": [
+        "Hast du bereits mehrere Konten?"
+      ],
+      "Create new addresses easily": [
+        "Neue E-Mail-Adressen einfach erstellen"
+      ],
+      "Enter your password": [
+        "Passwort eingeben"
+      ],
+      "Get direct support": [
+        "Direkte Unterstützung erhalten"
+      ],
+      "Get help with an issue": [
+        "Hilfe bei einem Problem erhalten"
+      ],
+      "Request new code?": [
+        "Neuen Code anfordern?"
+      ],
+      "Troubleshoot your issue": [
+        "Dein Problem beheben"
+      ],
+      "Use one account for all your addresses": [
+        "Verwende ein einziges Konto für alle deine E-Mail-Adressen"
       ]
     },
     "Title for payment methods table": {
@@ -17662,6 +17779,49 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Entferne keinesfalls diesen TXT-Eintrag nach der erfolgreichen Verifizierung. Dieser Eintrag wird dazu benötigt, zu bestätigen, dass du weiterhin der Eigentümer der Domain bist."
+      ]
+    },
+    "Get help": {
+      "Continue cancelling": [
+        "Kündigung fortsetzen"
+      ],
+      "Keep current plan": [
+        "Aktuelles Abonnement beibehalten"
+      ],
+      "Many issues can be resolved quickly with our help guides. If you need more support, our team is here to help.": [
+        "Viele Probleme lassen sich mithilfe unserer Anleitungen schnell lösen. Wenn du weitere Unterstützung benötigst, steht dir unser Team gerne zur Verfügung."
+      ]
+    },
+    "Missing feature": {
+      "Check out the latest product updates": [
+        "Entdecke die neusten Produkte-Updates"
+      ],
+      "Continue cancelling": [
+        "Kündigung fortsetzen"
+      ],
+      "Explore the latest news": [
+        "Entdecke die neusten Nachrichten"
+      ],
+      "Keep current plan": [
+        "Aktuelles Abonnement beibehalten"
+      ],
+      "Make your voice heard": [
+        "Sag deine Meinung"
+      ],
+      "Request a feature": [
+        "Funktion vorschlagen"
+      ],
+      "Request a feature or vote on ideas from other users in our feedback forum.": [
+        "Schlage in unserem Feedback-Forum eine Funktion vor oder stimme über Vorschläge anderer Nutzer ab."
+      ],
+      "See how ${ BRAND_NAME } apps are evolving with your feedback.": [
+        "Sehen, wie ${ BRAND_NAME }-Apps sich mit deinem Feedback entwickeln"
+      ],
+      "Submit your ideas": [
+        "Deine Ideen einreichen"
+      ],
+      "Your feedback helps us improve. Whether you've spotted a bug, want a new feature, or think something could work differently, we'd love to hear from you.": [
+        "Dein Feedback hilft uns, uns zu verbessern. Egal, ob du einen Fehler entdeckt hast, eine neue Funktion wünschst oder der Meinung bist, dass etwas anders funktionieren könnte – wir freuen uns über deine Rückmeldung."
       ]
     }
   }

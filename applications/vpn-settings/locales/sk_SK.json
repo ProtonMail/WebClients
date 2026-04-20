@@ -1222,6 +1222,15 @@
       ],
       "Zoom out": [
         "Oddialiť"
+      ],
+      "Continue cancelling": [
+        "Pokračovať v zrušení"
+      ],
+      "Forgot password?": [
+        "Zabudli ste heslo?"
+      ],
+      "Keep current plan": [
+        "Ponechať aktuálny plán"
       ]
     },
     "action": {
@@ -3717,6 +3726,21 @@
         "Váš plán podporuje celkom ${ MAX_SYNC_PAID_USER } Gmailové adresy",
         "Váš plán podporuje celkom ${ MAX_SYNC_PAID_USER } Gmailových adries",
         "Váš plán podporuje celkom ${ MAX_SYNC_PAID_USER } Gmailových adries"
+      ],
+      "Add extra addresses to your account or use Hide My Email aliases to keep your inbox private.": [
+        "Pridajte do svojho účtu ďalšie emailové adresy alebo využite aliasy služby Hide My Email, aby ste si zachovali súkromie vo svojej doručenej pošte."
+      ],
+      "Most issues can be solved in a few minutes with our step-by-step guides.": [
+        "Väčšinu problémov je možné vyriešiť za pár minút pomocou našich podrobných návodov."
+      ],
+      "Still need help? Our support team is here for you.": [
+        "Stále potrebujete pomoc? Náš tím podpory je vám k dispozícii."
+      ],
+      "You can manage multiple ${ BRAND_NAME } addresses from a single account, without switching. Aliases and address management tools help keep everything in one inbox.": [
+        "Z jedného účtu môžete spravovať viacero ${ BRAND_NAME } adries bez toho, aby ste museli medzi nimi prepínať. Aliasy a nástroje na správu adries vám pomôžu mať všetko na jednom mieste v doručenej pošte."
+      ],
+      "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
+        "Adresy môžete zlúčiť do jedného hlavného ${ BRAND_NAME } účtu podľa nášho návodu."
       ]
     },
     "description": {
@@ -9102,6 +9126,15 @@
       ],
       "Zoom meeting": [
         "Zoom míting"
+      ],
+      "Enter your own password (as organization admin).": [
+        "Zadajte vlastné heslo (ako správca organizácie)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Zadajte vlastné heslo (ako dôveryhodný kontakt)."
+      ],
+      "Enter your recovery phrase to verify your identity and disable two-factor authentication.": [
+        "Zadajte svoju obnovovaciu frázu, aby ste potvrdili svoju identitu a deaktivovali dvojstupňové overenie."
       ]
     },
     "info": {
@@ -10101,6 +10134,12 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Your password (admin)": [
+        "Vaše heslo (správca)"
+      ],
+      "Your password (trusted contact)": [
+        "Vaše heslo (dôveryhodný kontakt)"
       ]
     },
     "label": {
@@ -10412,6 +10451,18 @@
       ],
       "What’s this?": [
         "Čo je to?"
+      ],
+      "Contact support": [
+        "Kontaktovať podporu"
+      ],
+      "Learn how": [
+        "Zistiť ako"
+      ],
+      "Manage addresses": [
+        "Spravovať adresy"
+      ],
+      "Visit our support site": [
+        "Navštívte našu stránku podpory"
       ]
     },
     "Link (Scribe)": {
@@ -14972,6 +15023,12 @@
       ],
       "Your SSO configuration will be deleted.": [
         "Vaše nastavenie SSO bude vymazané."
+      ],
+      "Sign in": [
+        "Prihlásiť sa"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Presmerujeme vás na poskytovateľa SSO tretej strany."
       ]
     },
     "sso: auth device state": {
@@ -17264,6 +17321,27 @@
       ],
       "Your subscriptions": [
         "Vaše predplatné"
+      ],
+      "Already have multiple accounts?": [
+        "Už máte viacero účtov?"
+      ],
+      "Create new addresses easily": [
+        "Jednoduché vytváranie nových adries"
+      ],
+      "Enter your password": [
+        "Zadajte svoje heslo"
+      ],
+      "Get direct support": [
+        "Získajte priamu podporu"
+      ],
+      "Get help with an issue": [
+        "Získajte pomoc s problémom"
+      ],
+      "Troubleshoot your issue": [
+        "Vyriešte svoj problém"
+      ],
+      "Use one account for all your addresses": [
+        "Používajte jeden účet pre všetky svoje adresy"
       ]
     },
     "Title for payment methods table": {
@@ -18159,6 +18237,17 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Po úspešnom overení prosím neodstraňujte tento TXT záznam, je potrebný pre potvrdenie, že stále používate svoju doménu."
+      ]
+    },
+    "Get help": {
+      "Continue cancelling": [
+        "Pokračovať v zrušení"
+      ],
+      "Keep current plan": [
+        "Ponechať aktuálny plán"
+      ],
+      "Many issues can be resolved quickly with our help guides. If you need more support, our team is here to help.": [
+        "Mnohé problémy je možné rýchlo vyriešiť pomocou našich návodov. Ak potrebujete ďalšiu pomoc, náš tím je vám k dispozícii."
       ]
     }
   }

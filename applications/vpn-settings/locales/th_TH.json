@@ -1135,6 +1135,9 @@
       ],
       "Zoom out": [
         "ขยายออก"
+      ],
+      "Forgot password?": [
+        "ลืมรหัสผ่าน?"
       ]
     },
     "action": {
@@ -7876,6 +7879,12 @@
       ],
       "Zoom meeting": [
         "การประชุมผ่าน Zoom"
+      ],
+      "Enter your own password (as organization admin).": [
+        "ป้อนรหัสผ่านของคุณเอง (ในฐานะผู้ดูแลระบบองค์กร)"
+      ],
+      "Enter your own password (as trusted contact).": [
+        "ป้อนรหัสผ่านของคุณเอง (ในฐานะผู้ติดต่อที่เชื่อถือได้)"
       ]
     },
     "info": {
@@ -8821,6 +8830,12 @@
       ],
       "ZIP code": [
         "รหัสไปรษณีย์"
+      ],
+      "Your password (admin)": [
+        "รหัสผ่านของคุณ (สำหรับผู้บริหารบัญชี หรือ admin)"
+      ],
+      "Your password (trusted contact)": [
+        "รหัสผ่านของคุณ (ผู้ติดต่อที่เชื่อถือได้)"
       ]
     },
     "label": {
@@ -13154,6 +13169,12 @@
       ],
       "Your SSO configuration will be deleted.": [
         "การกำหนดค่า SSO จะถูกลบ"
+      ],
+      "Sign in": [
+        "เข้าสู่ระบบ"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "คุณจะถูกเปลี่ยนเส้นทางไปยังผู้ให้บริการ SSO บุคคลที่สามของคุณ"
       ]
     },
     "sso: auth device state": {
@@ -15174,6 +15195,9 @@
       ],
       "Your subscriptions": [
         "การสมัครสมาชิกของคุณ"
+      ],
+      "Enter your password": [
+        "ป้อนรหัสผ่าน"
       ]
     },
     "Title for payment methods table": {

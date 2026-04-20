@@ -1087,6 +1087,9 @@
       ],
       "Zoom out": [
         "縮小"
+      ],
+      "Forgot password?": [
+        "忘記密碼?"
       ]
     },
     "action": {
@@ -3015,6 +3018,9 @@
       ],
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "您的帳號支援最多 ${ MAX_SYNC_PAID_USER } Gmail 位址"
+      ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "若要連線至不同的 Gmail 位址、移除額外的 轉寄至 ${ BRAND_NAME } 的Gmail 位址。"
       ]
     },
     "description": {
@@ -7226,6 +7232,9 @@
       ],
       "Zoom meeting": [
         "Zoom 會議"
+      ],
+      "Enter your own password (as organization admin).": [
+        "輸入您的個人密碼 (組織機構管理員身份)。"
       ]
     },
     "info": {
@@ -8094,6 +8103,12 @@
       ],
       "ZIP code": [
         "郵遞區號"
+      ],
+      "Your password (admin)": [
+        "您的密碼（管理員）"
+      ],
+      "Your password (trusted contact)": [
+        "您的密碼 (信任的內容)"
       ]
     },
     "label": {
@@ -9199,6 +9214,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "我們會掃描暗網去檢查你的${ BRAND_NAME }地址或别名是否被外洩，並且在發現任何問題時立即通知你。"
+      ],
+      "Appointment scheduling": [
+        "預定排定中"
       ]
     },
     "new_plans: feature highlight": {
@@ -11993,6 +12011,12 @@
       ],
       "Your SSO configuration will be deleted.": [
         "您的單一登入配置將被刪除。"
+      ],
+      "Sign in": [
+        "登入"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "您將被重新導向至您的第三方單一登入提供者。"
       ]
     },
     "sso: auth device state": {
@@ -13873,6 +13897,12 @@
       ],
       "Your subscriptions": [
         "您的訂購授權"
+      ],
+      "Enter your password": [
+        "輸入您的密碼"
+      ],
+      "Reverse charge not supported": [
+        "不支援倒退修改"
       ]
     },
     "Title for payment methods table": {

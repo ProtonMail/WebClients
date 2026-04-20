@@ -1222,6 +1222,15 @@
       ],
       "Zoom out": [
         "Zooma ut"
+      ],
+      "Continue cancelling": [
+        "Fortsätt avbryta"
+      ],
+      "Forgot password?": [
+        "Glömt lösenord?"
+      ],
+      "Keep current plan": [
+        "Behåll nuvarande paket"
       ]
     },
     "action": {
@@ -3631,6 +3640,22 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Ditt paket stöder totalt ${ MAX_SYNC_PAID_USER } Gmail-adress",
         "Ditt paket stöder ett totalt antal av ${ MAX_SYNC_PAID_USER } Gmail-adresser"
+      ],
+      "Most issues can be solved in a few minutes with our step-by-step guides.": [
+        "De flesta problem kan lösas på några minuter med våra steg-för-steg-guider."
+      ],
+      "Still need help? Our support team is here for you.": [
+        "Behöver du fortfarande hjälp? Vårt supportteam finns här för dig."
+      ],
+      "You can manage multiple ${ BRAND_NAME } addresses from a single account, without switching. Aliases and address management tools help keep everything in one inbox.": [
+        "Du kan hantera flera ${ BRAND_NAME }-adresser från ett enda konto, utan att byta. Alias ​​och adresshanteringsverktyg hjälper till att hålla allt i en inkorg."
+      ],
+      "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
+        "Du kan slå samman adresser till ett huvudkonto för ${ BRAND_NAME } med hjälp av vår supportguide."
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "Du har anslutit ${ MAX_SYNC_PAID_USER } Gmail‑adress. För att lägga till en till, inaktivera först ett av dina anslutna konton.",
+        "Du har anslutit ${ MAX_SYNC_PAID_USER } Gmail‑adresser. För att lägga till en till, inaktivera först ett av dina anslutna konton."
       ]
     },
     "description": {
@@ -8728,6 +8753,18 @@
       ],
       "Zoom meeting": [
         "Zoom-möte"
+      ],
+      "**This will disable 2-factor authentication.**": [
+        "**Detta kommer inaktivera tvåfaktorsautentisering.**"
+      ],
+      "Enter your own password (as organization admin).": [
+        "Ange ditt eget lösenord (som organisationsadministratör)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Ange ditt eget lösenord (som betrodd kontakt)."
+      ],
+      "Enter your recovery phrase to verify your identity and disable two-factor authentication.": [
+        "Ange din återställningsfras för att verifiera din identitet och inaktivera tvåfaktorsautentisering."
       ]
     },
     "info": {
@@ -9710,6 +9747,12 @@
       ],
       "ZIP code": [
         "Postnummer"
+      ],
+      "Your password (admin)": [
+        "Ditt lösenord (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Ditt lösenord (betrodd kontakt)"
       ]
     },
     "label": {
@@ -10013,6 +10056,24 @@
       ],
       "What’s this?": [
         "Vad är detta?"
+      ],
+      "Account recovery explained": [
+        "Förklaring av kontoåterställning"
+      ],
+      "Contact support": [
+        "Kontakta support"
+      ],
+      "data recovery option": [
+        "alternativ för dataåterställning"
+      ],
+      "Learn how": [
+        "Lär dig hur"
+      ],
+      "Manage addresses": [
+        "Hantera adresser"
+      ],
+      "Visit our support site": [
+        "Besök vår supportwebbplats"
       ]
     },
     "Link (Scribe)": {
@@ -10404,6 +10465,9 @@
       ],
       "Submit your ideas": [
         "Skicka dina idéer"
+      ],
+      "Your feedback helps us improve. Whether you've spotted a bug, want a new feature, or think something could work differently, we'd love to hear from you.": [
+        "Din feedback hjälper oss att förbättra oss. Oavsett om du har upptäckt ett fel, vill ha en ny funktion eller tror att något skulle kunna fungera annorlunda vill vi gärna att du berättar för oss."
       ]
     },
     "Modal title": {
@@ -14448,6 +14512,12 @@
       ],
       "Your SSO configuration will be deleted.": [
         "Din SSO-konfiguration kommer att tas bort."
+      ],
+      "Sign in": [
+        "Logga in"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Du kommer omdirigeras till din tredjeparts SSO-leverantör."
       ]
     },
     "sso: auth device state": {
@@ -16658,6 +16728,27 @@
       ],
       "Your subscriptions": [
         "Din prenumeration"
+      ],
+      "Already have multiple accounts?": [
+        "Har du redan flera konton?"
+      ],
+      "Create new addresses easily": [
+        "Skapa nya adresser enkelt"
+      ],
+      "Enter your password": [
+        "Ange ditt lösenord"
+      ],
+      "Get direct support": [
+        "Skaffa direkt support"
+      ],
+      "Get help with an issue": [
+        "Skaffa hjälp med ett problem"
+      ],
+      "Troubleshoot your issue": [
+        "Felsök ditt problem"
+      ],
+      "Use one account for all your addresses": [
+        "Använd ett konto för alla dina adresser"
       ]
     },
     "Title for payment methods table": {
@@ -17182,6 +17273,9 @@
       ],
       "Writing assistant": [
         "Skrivassistent"
+      ],
+      "Add delegated roles to a user to grant them only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
+        "Lägg till delegerade roller till en användare för att bevilja ge dem de specifika behörigheter de behöver, vilket håller fullständig administratörsbehörighet separat och din miljö säker."
       ]
     },
     "Users table: badge": {
@@ -17510,6 +17604,17 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Efter lyckad verifiering, ta inte bort denna TXT-post eftersom den behövs för att bekräfta att du fortsätter att äga domänen."
+      ]
+    },
+    "Get help": {
+      "Continue cancelling": [
+        "Fortsätt avbryta"
+      ],
+      "Keep current plan": [
+        "Behåll nuvarande paket"
+      ],
+      "Many issues can be resolved quickly with our help guides. If you need more support, our team is here to help.": [
+        "Många problem kan lösas snabbt med våra hjälpguider. Om du behöver mer support finns vårt team här för att hjälpa till."
       ]
     }
   }

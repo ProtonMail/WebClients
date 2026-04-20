@@ -1222,6 +1222,15 @@
       ],
       "Zoom out": [
         "Micșorare"
+      ],
+      "Continue cancelling": [
+        "Continuare anulare"
+      ],
+      "Forgot password?": [
+        "Ați uitat parola?"
+      ],
+      "Keep current plan": [
+        "Păstrez planul curent"
       ]
     },
     "action": {
@@ -3688,6 +3697,21 @@
         "Planul actual permite maxim ${ MAX_SYNC_PAID_USER } adresă Gmail",
         "Planul actual permite maxim ${ MAX_SYNC_PAID_USER } adrese Gmail",
         "Planul actual permite maxim ${ MAX_SYNC_PAID_USER } de adrese Gmail"
+      ],
+      "Add extra addresses to your account or use Hide My Email aliases to keep your inbox private.": [
+        "Adăugați adrese suplimentare în contul personal sau utilizați aliasurile „hide my e-mail” pentru a vă păstra contul privat."
+      ],
+      "Most issues can be solved in a few minutes with our step-by-step guides.": [
+        "Majoritatea problemelor pot fi rezolvate în câteva minute cu ajutorul ghidurilor noastre pas cu pas."
+      ],
+      "Still need help? Our support team is here for you.": [
+        "Încă aveți nevoie de ajutor? Echipa noastră de asistență este aici să vă ajute."
+      ],
+      "You can manage multiple ${ BRAND_NAME } addresses from a single account, without switching. Aliases and address management tools help keep everything in one inbox.": [
+        "Puteți gestiona mai multe adrese ${ BRAND_NAME } dintr-un singur cont, fără a schimba contul. Aliasurile și instrumentele de gestionare a adreselor ajută la păstrarea tuturor mesajelor într-un singur cont."
+      ],
+      "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
+        "Puteți îmbina adresele într-un singur cont principal ${ BRAND_NAME } folosind ghidul nostru de asistență."
       ]
     },
     "description": {
@@ -8975,6 +8999,21 @@
       ],
       "Zoom meeting": [
         "o întâlnire pe Zoom"
+      ],
+      "**This will disable 2-factor authentication.**": [
+        "**Aceasta va dezactiva autentificarea cu doi factori.**"
+      ],
+      "Enter your own password (as organization admin).": [
+        "Introduceți parola (ca administrator al organizației)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Introduceți parola (ca și contact aprobat)."
+      ],
+      "Enter your recovery phrase to verify your identity and disable two-factor authentication.": [
+        "Introduceți fraza de recuperare pe a vă verifica identitatea și dezactiva autentificarea cu doi factori."
+      ],
+      "To regain access to your account and data, enter the 12-word recovery phrase associated with your account.": [
+        "Pentru a vă recăpăta accesul la cont și date, introduceți fraza de recuperare din 12 cuvinte asociată contului."
       ]
     },
     "info": {
@@ -9967,6 +10006,12 @@
       ],
       "ZIP code": [
         "Cod poștal"
+      ],
+      "Your password (admin)": [
+        "Parola dvs. (administrator)"
+      ],
+      "Your password (trusted contact)": [
+        "Parola dvs. (contact aprobat)"
       ]
     },
     "label": {
@@ -10277,6 +10322,21 @@
       ],
       "What’s this?": [
         "Ce este asta?"
+      ],
+      "Account recovery explained": [
+        "Recuperarea contului explicată"
+      ],
+      "Contact support": [
+        "Contactați asistența"
+      ],
+      "Learn how": [
+        "Aflați cum"
+      ],
+      "Manage addresses": [
+        "Gestionare adrese"
+      ],
+      "Visit our support site": [
+        "Vizitați pagina de ajutor"
       ]
     },
     "Link (Scribe)": {
@@ -11363,6 +11423,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Scanăm internetul ascuns pentru a verifica dacă adresele sau aliasurile ${ BRAND_NAME } v-au fost divulgate și vă avertizăm imediat dacă găsim ceva."
+      ],
+      "Dedicated servers optimized for speed": [
+        "Servere dedicate optimizate pentru viteză"
       ]
     },
     "new_plans: feature highlight": {
@@ -14847,6 +14910,12 @@
       ],
       "Your SSO configuration will be deleted.": [
         "Configurarea pentru autentificarea unică (SSO) va fi ștearsă."
+      ],
+      "Sign in": [
+        "Conectare"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Pagina va fi redirecționată spre furnizorul autentificării unice (SSO)."
       ]
     },
     "sso: auth device state": {
@@ -17104,6 +17173,27 @@
       ],
       "Your subscriptions": [
         "Abonamente personale"
+      ],
+      "Already have multiple accounts?": [
+        "Aveți deja conturi multiple?"
+      ],
+      "Create new addresses easily": [
+        "Creați ușor adrese"
+      ],
+      "Enter your password": [
+        "Introduceți parola"
+      ],
+      "Get direct support": [
+        "Obțineți asistență directă"
+      ],
+      "Get help with an issue": [
+        "Obțineți ajutor cu o problemă"
+      ],
+      "Troubleshoot your issue": [
+        "Depanați problema"
+      ],
+      "Use one account for all your addresses": [
+        "Folosiți un cont pentru toate adresele"
       ]
     },
     "Title for payment methods table": {
@@ -17985,6 +18075,17 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "După reușirea verificării, nu eliminați această înregistrare TXT deoarece este necesară pentru a confirma că dețineți domeniul în continuare."
+      ]
+    },
+    "Get help": {
+      "Continue cancelling": [
+        "Continuare anulare"
+      ],
+      "Keep current plan": [
+        "Păstrez planul curent"
+      ],
+      "Many issues can be resolved quickly with our help guides. If you need more support, our team is here to help.": [
+        "Multe probleme pot fi rezolvate rapid cu ajutorul ghidurilor noastre de asistență. Dacă aveți nevoie de mai mult sprijin, echipa noastră este aici pentru a vă ajute."
       ]
     }
   }

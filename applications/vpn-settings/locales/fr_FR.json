@@ -1222,6 +1222,15 @@
       ],
       "Zoom out": [
         "Zoom arrière"
+      ],
+      "Continue cancelling": [
+        "Continuer l'annulation"
+      ],
+      "Forgot password?": [
+        "Mot de passe oublié ?"
+      ],
+      "Keep current plan": [
+        "Conserver l'abonnement actuel"
       ]
     },
     "action": {
@@ -3656,6 +3665,15 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Votre abonnement prend en charge un total de ${ MAX_SYNC_PAID_USER } adresse Gmail",
         "Votre abonnement prend en charge un total de ${ MAX_SYNC_PAID_USER } adresses Gmail"
+      ],
+      "Add extra addresses to your account or use Hide My Email aliases to keep your inbox private.": [
+        "Ajoutez des adresses supplémentaires à votre compte ou utilisez des alias Hide My Email pour garder votre boîte de réception privée."
+      ],
+      "You can manage multiple ${ BRAND_NAME } addresses from a single account, without switching. Aliases and address management tools help keep everything in one inbox.": [
+        "Vous pouvez gérer plusieurs adresses ${ BRAND_NAME } depuis un seul compte, sans changer. Les outils de gestion d'alias et d'adresses aident à garder tout dans une seule boîte de réception."
+      ],
+      "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
+        "Vous pouvez fusionner des adresses en un unique compte ${ BRAND_NAME } en utilisant notre guide support."
       ]
     },
     "description": {
@@ -8848,6 +8866,12 @@
       ],
       "Zoom meeting": [
         "réunion Zoom"
+      ],
+      "Enter your own password (as organization admin).": [
+        "Entrez votre propre mot de passe (en tant qu'administrateur de l'organisation)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Saisissez votre propre mot de passe (en tant que contacts de confiance)."
       ]
     },
     "info": {
@@ -9833,6 +9857,12 @@
       ],
       "ZIP code": [
         "Code postal"
+      ],
+      "Your password (admin)": [
+        "Votre mot de passe (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Votre mot de passe (contacts de confiance)"
       ]
     },
     "label": {
@@ -10142,6 +10172,18 @@
       ],
       "What’s this?": [
         "Qu'est-ce que c'est ?"
+      ],
+      "Account recovery explained": [
+        "Récupération de compte expliquée"
+      ],
+      "Contact support": [
+        "Contacter le support"
+      ],
+      "Learn how": [
+        "Découvrir comment"
+      ],
+      "Manage addresses": [
+        "Gérer les adresses"
       ]
     },
     "Link (Scribe)": {
@@ -11191,6 +11233,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Nous analysons le dark web et vérifions si vos adresses ou vos alias ${ BRAND_NAME } ont été divulgués et nous vous informons immédiatement des résultats."
+      ],
+      "Dedicated servers optimized for speed": [
+        "Serveurs dédiés optimisés pour la vitesse"
       ]
     },
     "new_plans: feature highlight": {
@@ -14617,6 +14662,12 @@
       ],
       "Your SSO configuration will be deleted.": [
         "La configuration de votre authentification unique (SSO) sera supprimée."
+      ],
+      "Sign in": [
+        "Se connecter"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Vous allez être redirigé vers votre service tiers d'authentification unique."
       ]
     },
     "sso: auth device state": {
@@ -16839,6 +16890,21 @@
       ],
       "Your subscriptions": [
         "Vos abonnements"
+      ],
+      "Already have multiple accounts?": [
+        "Vous avez déjà plusieurs comptes ?"
+      ],
+      "Create new addresses easily": [
+        "Créez des nouvelles adresses facilement"
+      ],
+      "Enter your password": [
+        "Saisissez votre mot de passe"
+      ],
+      "Get help with an issue": [
+        "Obtenir de l'aide pour un problème."
+      ],
+      "Use one account for all your addresses": [
+        "Utilisez un seul compte pour toutes vos adresses"
       ]
     },
     "Title for payment methods table": {
@@ -17706,6 +17772,14 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Une fois la vérification réussie, ne retirez pas cet enregistrement TXT : il est nécessaire pour confirmer que vous restez propriétaire du domaine."
+      ]
+    },
+    "Get help": {
+      "Continue cancelling": [
+        "Continuer l'annulation"
+      ],
+      "Keep current plan": [
+        "Conserver l'abonnement actuel"
       ]
     }
   }

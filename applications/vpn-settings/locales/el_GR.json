@@ -1222,6 +1222,15 @@
       ],
       "Zoom out": [
         "Σμίκρυνση"
+      ],
+      "Continue cancelling": [
+        "Συνέχεια ακύρωσης"
+      ],
+      "Forgot password?": [
+        "Ξεχάσατε τον κωδικό πρόσβασης;"
+      ],
+      "Keep current plan": [
+        "Διατηρήστε το τρέχον σχέδιο"
       ]
     },
     "action": {
@@ -3659,6 +3668,21 @@
       "Your plan supports a total of ${ MAX_SYNC_PAID_USER } Gmail address": [
         "Το πλάνο σας υποστηρίζει συνολικά ${ MAX_SYNC_PAID_USER } διεύθυνση Gmail",
         "Το πλάνο σας υποστηρίζει συνολικά ${ MAX_SYNC_PAID_USER } διευθύνσεις Gmail"
+      ],
+      "Add extra addresses to your account or use Hide My Email aliases to keep your inbox private.": [
+        "Προσθέστε επιπλέον διευθύνσεις στον λογαριασμό σας ή χρησιμοποιήστε ψευδώνυμα Hide My Email για να κρατήσετε το εισερχόμενο σας ιδιωτικό."
+      ],
+      "Most issues can be solved in a few minutes with our step-by-step guides.": [
+        "Τα περισσότερα προβλήματα μπορούν να λυθούν σε λίγα λεπτά με τους αναλυτικούς οδηγούς μας."
+      ],
+      "Still need help? Our support team is here for you.": [
+        "Χρειάζεστε ακόμα βοήθεια; Η ομάδα υποστήριξής μας είναι εδώ για εσάς."
+      ],
+      "You can manage multiple ${ BRAND_NAME } addresses from a single account, without switching. Aliases and address management tools help keep everything in one inbox.": [
+        "Μπορείτε να διαχειρίζεστε πολλαπλές διευθύνσεις ${ BRAND_NAME } από έναν μόνο λογαριασμό, χωρίς εναλλαγή. Τα ψευδώνυμα και τα εργαλεία διαχείρισης διευθύνσεων βοηθούν να κρατάτε τα πάντα σε ένα μόνο φάκελο εισερχομένων."
+      ],
+      "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
+        "Μπορείτε να συγχωνεύσετε διευθύνσεις σε έναν κύριο λογαριασμό ${ BRAND_NAME } χρησιμοποιώντας τον οδηγό υποστήριξής μας."
       ]
     },
     "description": {
@@ -8863,6 +8887,12 @@
       ],
       "Zoom meeting": [
         "Σύσκεψη Zoom"
+      ],
+      "Enter your own password (as organization admin).": [
+        "Εισάγετε τον κωδικό πρόσβασής σας (ως διαχειριστής οργανισμού)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Εισάγετε τον κωδικό πρόσβασής σας (ως έμπιστη επαφή)."
       ]
     },
     "info": {
@@ -9848,6 +9878,12 @@
       ],
       "ZIP code": [
         "Τ.Κ."
+      ],
+      "Your password (admin)": [
+        "Ο κωδικός σας (διαχειριστής)"
+      ],
+      "Your password (trusted contact)": [
+        "Ο κωδικός πρόσβασής σας (έμπιστη επαφή)"
       ]
     },
     "label": {
@@ -10157,6 +10193,21 @@
       ],
       "What’s this?": [
         "Τι είναι αυτό;"
+      ],
+      "Account recovery explained": [
+        "Επεξήγηση της ανάκτησης λογαριασμού"
+      ],
+      "Contact support": [
+        "Επικοινωνήστε με την υποστήριξη"
+      ],
+      "Learn how": [
+        "Μάθετε πώς"
+      ],
+      "Manage addresses": [
+        "Διαχείριση διευθύνσεων"
+      ],
+      "Visit our support site": [
+        "Επισκεφθείτε τον ιστότοπο υποστήριξής μας"
       ]
     },
     "Link (Scribe)": {
@@ -11206,6 +11257,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Σαρώνουμε τον σκοτεινό ιστό για να ελέγξουμε εάν οι διευθύνσεις ή τα ψευδώνυμά σας ${ BRAND_NAME } έχουν διαρρεύσει και σας ειδοποιούμε αμέσως αν βρούμε κάτι."
+      ],
+      "Dedicated servers optimized for speed": [
+        "Αποκλειστικοί διακομιστές βελτιστοποιημένοι για ταχύτητα"
       ]
     },
     "new_plans: feature highlight": {
@@ -14545,6 +14599,12 @@
       ],
       "Your SSO configuration will be deleted.": [
         "Η διαμόρφωση SSO θα διαγραφεί."
+      ],
+      "Sign in": [
+        "Σύνδεση"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Θα ανακατευθυνθείτε στον τρίτο πάροχο SSO."
       ]
     },
     "sso: auth device state": {
@@ -16767,6 +16827,27 @@
       ],
       "Your subscriptions": [
         "Οι συνδρομές σας"
+      ],
+      "Already have multiple accounts?": [
+        "Έχετε ήδη πολλούς λογαριασμούς;"
+      ],
+      "Create new addresses easily": [
+        "Δημιουργήστε νέες διευθύνσεις εύκολα"
+      ],
+      "Enter your password": [
+        "Εισάγετε τον κωδικό πρόσβασης σας"
+      ],
+      "Get direct support": [
+        "Λάβετε άμεση υποστήριξη"
+      ],
+      "Get help with an issue": [
+        "Λάβετε βοήθεια για ένα πρόβλημα"
+      ],
+      "Troubleshoot your issue": [
+        "Αντιμετωπίστε το πρόβλημά σας"
+      ],
+      "Use one account for all your addresses": [
+        "Χρησιμοποιήστε έναν λογαριασμό για όλες τις διευθύνσεις σας"
       ]
     },
     "Title for payment methods table": {
@@ -17634,6 +17715,17 @@
     "Warning for domain modal": {
       "After successful verification, do not remove this TXT record as it is needed to confirm that you continue to own the domain.": [
         "Μετά την επιτυχή επαλήθευση, μην καταργήσετε αυτήν την εγγραφή TXT, διότι απαιτείται για να επιβεβαιώσετε ότι συνεχίζετε να είστε ο ιδιοκτήτης του τομέα."
+      ]
+    },
+    "Get help": {
+      "Continue cancelling": [
+        "Συνέχεια ακύρωσης"
+      ],
+      "Keep current plan": [
+        "Διατηρήστε το τρέχον σχέδιο"
+      ],
+      "Many issues can be resolved quickly with our help guides. If you need more support, our team is here to help.": [
+        "Πολλά προβλήματα μπορούν να επιλυθούν γρήγορα με τους οδηγούς βοήθειάς μας. Εάν χρειάζεστε περισσότερη υποστήριξη, η ομάδα μας είναι εδώ για να σας βοηθήσει."
       ]
     }
   }
