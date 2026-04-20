@@ -29,10 +29,17 @@ export const messageToPayload = async <Mes extends NativeMessage>(
 ): Promise<NativeMessagePayload<Mes>> => {
     if (message.encrypt) {
         try {
-            const { type, encrypt, ...payload } = message;
-            const encrypted = await PassCrypto.encryptForNativeMessaging(payload, sender);
+            const { type, encrypt, ...data } = message;
+            const encrypted = await PassCrypto.encryptForNativeMessaging(data, sender);
             const serverTime = getServerTime().getTime();
-            return { type, messageId, encrypted, serverTime } as NativeMessagePayload<Mes>;
+            const { userIdentifier } = data as { userIdentifier?: string };
+            return {
+                type,
+                messageId,
+                encrypted,
+                serverTime,
+                ...(userIdentifier && { userIdentifier }),
+            } as NativeMessagePayload<Mes>;
         } catch (error) {
             throw new NativeMessageError(NativeMessageErrorType.NATIVE_MESSAGE_ENCRYPTION_FAILED);
         }

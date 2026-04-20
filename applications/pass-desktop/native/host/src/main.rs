@@ -1,19 +1,19 @@
 mod ipc;
+mod native_message;
 mod unlock;
 
 use anyhow::{anyhow, Context, Result};
 use dirs::data_local_dir;
 use ftail::Ftail;
-use ipc::{call_ipc, connect_to_ipc, Ipc};
-use log::error;
+use ipc::{forward_to_ipc, Ipc};
 use log::{info, LevelFilter};
+use native_message::NativeMessage;
 use native_messaging::event_loop;
 use native_messaging::host::{NmError, Sender};
 use std::fs::{create_dir_all, remove_file};
 use std::path::{Path, PathBuf};
 use std::sync::Arc;
-use std::time::Duration;
-use tokio::time::timeout;
+use tokio::sync::Mutex;
 use unlock::{intercept_unlock, Interception};
 
 fn ensure_local_dir() -> Result<()> {
@@ -42,14 +42,15 @@ fn cleanup_old_logs(log_path: &Path) -> Result<()> {
     Ok(())
 }
 
-async fn handle_message(request: String, send: Sender, ipc: Ipc) -> Result<()> {
-    info!("Request received");
+async fn handle_message(request: String, send: Sender, ipc: Arc<Mutex<Option<Ipc>>>) -> Result<()> {
+    let msg = NativeMessage::try_from(request.as_str())?;
 
-    let response = match intercept_unlock(&request).await? {
-        Interception::Intercepted(message) => message,
-        Interception::Continue => timeout(Duration::from_secs(10), call_ipc(ipc, request))
-            .await
-            .with_context(|| "Timeout on IPC with Desktop App")??,
+    info!("Request received {:?}", &msg);
+
+    let response = match intercept_unlock(&msg).await {
+        Ok(Interception::Intercepted(message)) => message,
+        Ok(Interception::Continue) => forward_to_ipc(request, ipc, &msg).await?,
+        Err(e) => e.to_response(&msg)?,
     };
 
     send.send(&response).await?;
@@ -69,13 +70,15 @@ async fn main() -> Result<()> {
 
     info!("Proton Pass Native Messaging host is starting...");
 
-    let ipc = connect_to_ipc().await?;
+    // Share ipc connection but lazily connect and reconnect on failure
+    // So if we only need to get secrets, we don't need to connect at all
+    let ipc = Arc::new(Mutex::new(None::<Ipc>));
 
     event_loop(move |req: String, sender: Sender| {
         let ipc = Arc::clone(&ipc);
         async move {
             if let Err(e) = handle_message(req, sender, ipc).await {
-                error!("Native Messaging handle message failed: {:?}", e);
+                log::error!("Native Messaging handle message failed: {:?}", e);
             }
             Ok::<(), NmError>(())
         }
