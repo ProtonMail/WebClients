@@ -18,8 +18,6 @@ import { usePaymentFacade } from '@proton/components/payments/client-extensions'
 import { useLoading } from '@proton/hooks';
 import { CacheType } from '@proton/redux-utilities';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { getSentryError } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
 import { getPaymentsVersion, setPaymentMethodV4, setPaymentMethodV5, updatePaymentMethod } from '../../core/api/api';
@@ -28,6 +26,7 @@ import { Autopay, PAYMENT_METHOD_TYPES } from '../../core/constants';
 import type { PaymentMethodCardDetails } from '../../core/interface';
 import { isV5PaymentToken } from '../../core/type-guards';
 import { v5PaymentTokenToLegacyPaymentToken } from '../../core/utils';
+import { tracePaymentError } from '../../sentry/capture';
 import { ChargebeeCreditCardWrapper } from '../components/ChargebeeWrapper';
 import { usePaymentPollers } from '../hooks/usePaymentPollers';
 
@@ -120,21 +119,18 @@ const EditCardModal = ({
         try {
             await paymentFacade.selectedProcessor?.processPaymentToken();
         } catch (e) {
-            const error = getSentryError(e);
-            if (error) {
-                const context = {
+            tracePaymentError(e, {
+                tags: {
+                    component: 'edit-card-modal',
+                },
+                extra: {
                     hasExistingCard: !!existingCard,
                     renewState,
                     paymentMethodId,
                     processorType: paymentFacade.selectedProcessor?.meta.type,
                     paymentsVersion: getPaymentsVersion(),
-                };
-
-                captureMessage('Payments: failed to add card', {
-                    level: 'error',
-                    extra: { error, context },
-                });
-            }
+                },
+            });
         }
     };
 
