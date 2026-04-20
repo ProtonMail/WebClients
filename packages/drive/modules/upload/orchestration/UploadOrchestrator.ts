@@ -172,7 +172,6 @@ export class UploadOrchestrator {
 
         uploadLogDebug('executeTask start', {
             uploadId: task.uploadId,
-            name: task.name,
             activePreparingFilesAfterReserve: this.capacityManager.getCurrentLoad().activePreparingFiles,
         });
 
