@@ -1,5 +1,5 @@
 import { Logger } from '../shared/Logger';
-import { SearchDB } from '../shared/SearchDB';
+import type { SearchDB } from '../shared/SearchDB';
 import { hasLegacyEncryptedSearchDb } from '../shared/encryptedSearchUtils';
 import type { SearchModuleStateUpdateChannel } from '../shared/searchModuleStateUpdateChannel';
 import { createSearchModuleStateUpdateChannel } from '../shared/searchModuleStateUpdateChannel';
@@ -13,20 +13,17 @@ import type { UserId } from '../shared/types';
  * - Checks for prior opt-in approval from the legacy encrypted-search DB.
  */
 export class SearchOptInManager {
-    private dbPromise: Promise<SearchDB> | null = null;
     private channel: SearchModuleStateUpdateChannel;
 
-    constructor(private readonly userId: UserId) {
+    constructor(
+        private readonly userId: UserId,
+        private readonly dbPromise: Promise<SearchDB>
+    ) {
         this.channel = createSearchModuleStateUpdateChannel(userId);
     }
 
-    private getDb(): Promise<SearchDB> {
-        this.dbPromise ??= SearchDB.open(this.userId);
-        return this.dbPromise;
-    }
-
     async isOptedIn(): Promise<boolean> {
-        const db = await this.getDb();
+        const db = await this.dbPromise;
         const optedIn = await db.isOptedIn();
         if (optedIn) {
             return true;
@@ -46,7 +43,7 @@ export class SearchOptInManager {
     }
 
     async optIn(): Promise<void> {
-        const db = await this.getDb();
+        const db = await this.dbPromise;
         await db.setOptedIn();
         Logger.info('SearchOptInManager: opted in');
         this.channel.postMessage({ isUserOptIn: true });

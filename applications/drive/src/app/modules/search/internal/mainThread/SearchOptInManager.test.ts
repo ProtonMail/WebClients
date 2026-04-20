@@ -1,6 +1,7 @@
 import { IDBFactory } from 'fake-indexeddb';
 import 'fake-indexeddb/auto';
 
+import { SearchDB } from '../shared/SearchDB';
 import { createSearchModuleStateUpdateChannel } from '../shared/searchModuleStateUpdateChannel';
 import type { UserId } from '../shared/types';
 import { FakeBroadcastChannel } from '../testing/FakeBroadcastChannel';
@@ -34,13 +35,13 @@ async function createLegacyESDB(userId: string): Promise<void> {
 describe('SearchOptInManager', () => {
     describe('isOptedIn', () => {
         it('returns false by default', async () => {
-            const manager = new SearchOptInManager(USER_ID);
+            const manager = new SearchOptInManager(USER_ID, SearchDB.open(USER_ID));
             expect(await manager.isOptedIn()).toBe(false);
             manager.dispose();
         });
 
         it('returns true after optIn', async () => {
-            const manager = new SearchOptInManager(USER_ID);
+            const manager = new SearchOptInManager(USER_ID, SearchDB.open(USER_ID));
             await manager.optIn();
             expect(await manager.isOptedIn()).toBe(true);
             manager.dispose();
@@ -51,7 +52,7 @@ describe('SearchOptInManager', () => {
         it('auto-opts in when legacy ES database exists', async () => {
             await createLegacyESDB(USER_ID);
 
-            const manager = new SearchOptInManager(USER_ID);
+            const manager = new SearchOptInManager(USER_ID, SearchDB.open(USER_ID));
             expect(await manager.isOptedIn()).toBe(true);
             manager.dispose();
         });
@@ -59,7 +60,7 @@ describe('SearchOptInManager', () => {
         it('persists opt-in so legacy check is not needed on next load', async () => {
             await createLegacyESDB(USER_ID);
 
-            const manager1 = new SearchOptInManager(USER_ID);
+            const manager1 = new SearchOptInManager(USER_ID, SearchDB.open(USER_ID));
             expect(await manager1.isOptedIn()).toBe(true);
             manager1.dispose();
 
@@ -69,19 +70,19 @@ describe('SearchOptInManager', () => {
                 request.onsuccess = () => resolve();
             });
 
-            const manager2 = new SearchOptInManager(USER_ID);
+            const manager2 = new SearchOptInManager(USER_ID, SearchDB.open(USER_ID));
             expect(await manager2.isOptedIn()).toBe(true);
             manager2.dispose();
         });
 
         it('does not auto-opt in when no legacy DB exists', async () => {
-            const manager = new SearchOptInManager(USER_ID);
+            const manager = new SearchOptInManager(USER_ID, SearchDB.open(USER_ID));
             expect(await manager.isOptedIn()).toBe(false);
             manager.dispose();
         });
 
         it('skips legacy check when already opted in', async () => {
-            const manager = new SearchOptInManager(USER_ID);
+            const manager = new SearchOptInManager(USER_ID, SearchDB.open(USER_ID));
             await manager.optIn();
 
             const databasesSpy = jest.spyOn(indexedDB, 'databases');
@@ -99,7 +100,7 @@ describe('SearchOptInManager', () => {
             const listener = jest.fn();
             stateChannel.onmessage = (ev) => listener(ev.data);
 
-            const manager = new SearchOptInManager(USER_ID);
+            const manager = new SearchOptInManager(USER_ID, SearchDB.open(USER_ID));
             await manager.isOptedIn();
 
             expect(listener).toHaveBeenCalledWith({ isUserOptIn: true });
@@ -111,25 +112,25 @@ describe('SearchOptInManager', () => {
 
     describe('DB persistence', () => {
         it('opt-in survives a new manager instance', async () => {
-            const manager1 = new SearchOptInManager(USER_ID);
+            const manager1 = new SearchOptInManager(USER_ID, SearchDB.open(USER_ID));
             expect(await manager1.isOptedIn()).toBe(false);
             await manager1.optIn();
             expect(await manager1.isOptedIn()).toBe(true);
             manager1.dispose();
 
-            const manager2 = new SearchOptInManager(USER_ID);
+            const manager2 = new SearchOptInManager(USER_ID, SearchDB.open(USER_ID));
             expect(await manager2.isOptedIn()).toBe(true);
             manager2.dispose();
         });
 
         it('opt-in is stored per user', async () => {
-            const manager1 = new SearchOptInManager(USER_ID);
+            const manager1 = new SearchOptInManager(USER_ID, SearchDB.open(USER_ID));
             expect(await manager1.isOptedIn()).toBe(false);
             await manager1.optIn();
             expect(await manager1.isOptedIn()).toBe(true);
             manager1.dispose();
 
-            const manager2 = new SearchOptInManager('other-user' as UserId);
+            const manager2 = new SearchOptInManager('other-user' as UserId, SearchDB.open('other-user'));
             expect(await manager2.isOptedIn()).toBe(false);
             manager2.dispose();
         });
@@ -137,7 +138,7 @@ describe('SearchOptInManager', () => {
 
     describe('cross-tab broadcast via state update channel', () => {
         it('optIn broadcasts { isUserOptIn: true } on the state update channel', async () => {
-            const manager = new SearchOptInManager(USER_ID);
+            const manager = new SearchOptInManager(USER_ID, SearchDB.open(USER_ID));
             const stateChannel = createSearchModuleStateUpdateChannel(USER_ID);
             const listener = jest.fn();
             stateChannel.onmessage = (ev) => listener(ev.data);
@@ -151,7 +152,7 @@ describe('SearchOptInManager', () => {
         });
 
         it('does not broadcast to channels for different users', async () => {
-            const manager = new SearchOptInManager(USER_ID);
+            const manager = new SearchOptInManager(USER_ID, SearchDB.open(USER_ID));
             const otherChannel = createSearchModuleStateUpdateChannel('other-user' as UserId);
             const listener = jest.fn();
             otherChannel.onmessage = (ev) => listener(ev.data);
