@@ -7,7 +7,7 @@ import { queryLatestVolumeEvent } from '@proton/shared/lib/api/drive/volume';
 
 import { useFlagsDriveFoundationSearch } from '../../flags/useFlagsDriveFoundationSearch';
 import type { SearchQuery, SearchResultItem } from '../../modules/search';
-import { SearchLatestEventIdProvider, SearchModule, type SearchModuleState } from '../../modules/search';
+import { SearchModule, type SearchModuleState } from '../../modules/search';
 import { sendErrorReportForSearch } from '../../modules/search/internal/shared/errors';
 import { brandSearchUserId } from '../../modules/search/internal/shared/types';
 
@@ -76,17 +76,12 @@ export const useSearchModule = (): UseSearchModuleReturn => {
         async function init() {
             try {
                 const userId = brandSearchUserId(user.ID);
-                const latestEventIdProvider = new SearchLatestEventIdProvider(userId);
-                const driveClientForSearchEvents = createSearchDriveInstance({
-                    latestEventIdProvider,
-                });
 
                 const module = await SearchModule.getOrCreate({
                     appVersion: APP_VERSION,
                     userId,
                     driveClient: drive,
-                    driveClientForSearchEvents,
-                    latestEventIdProvider,
+                    createSearchDriveInstance,
                     fetchLastEventIdForTreeScopeId: (treeEventScopeId, abortSignal) =>
                         api<{ EventID: string; Code: number }>({
                             ...queryLatestVolumeEvent(treeEventScopeId),

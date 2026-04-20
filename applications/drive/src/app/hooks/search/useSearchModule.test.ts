@@ -29,7 +29,7 @@ jest.mock('../../modules/search/internal/mainThread/AppVersionGuard', () => ({
 
 jest.mock('../../modules/search/internal/shared/errors', () => {
     const actual = jest.requireActual('../../modules/search/internal/shared/errors');
-    return { ...actual, sendErrorReportForSearch: jest.fn() };
+    return { ...actual, sendErrorReportForSearch: jest.fn(), listenForWorkerErrors: jest.fn() };
 });
 
 jest.mock('../../modules/search/internal/shared/Logger', () => ({

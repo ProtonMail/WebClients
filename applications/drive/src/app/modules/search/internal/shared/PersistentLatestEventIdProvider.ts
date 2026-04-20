@@ -1,6 +1,6 @@
 import type { LatestEventIdProvider } from '@protontech/drive-sdk';
 
-import { SearchDB } from './SearchDB';
+import type { SearchDB } from './SearchDB';
 import type { TreeEventScopeId } from './types';
 import { brandTreeEventScopeId } from './types';
 
@@ -8,27 +8,19 @@ import { brandTreeEventScopeId } from './types';
  * Persists event cursor positions to IndexedDB (via SearchDB) so the Drive SDK
  * can resume polling from the correct event ID after a page reload.
  *
- * Opens its own SearchDB connection lazily. IndexedDB handles concurrent
- * connections from main thread and SharedWorker.
+ * Receives a shared SearchDB promise — does not open its own connection.
  */
 export class PersistentLatestEventIdProvider implements LatestEventIdProvider {
-    private dbPromise: Promise<SearchDB> | null = null;
-
-    constructor(private readonly userId: string) {}
-
-    private getDb(): Promise<SearchDB> {
-        this.dbPromise ??= SearchDB.open(this.userId);
-        return this.dbPromise;
-    }
+    constructor(private readonly dbPromise: Promise<SearchDB>) {}
 
     async getLatestEventId(treeEventScopeId: string): Promise<string | null> {
-        const db = await this.getDb();
+        const db = await this.dbPromise;
         const sub = await db.getSubscription(brandTreeEventScopeId(treeEventScopeId) as TreeEventScopeId);
         return sub?.lastEventId ?? null;
     }
 
     async saveLatestEventId(treeEventScopeId: TreeEventScopeId, eventId: string): Promise<void> {
-        const db = await this.getDb();
+        const db = await this.dbPromise;
         await db.putSubscription({
             treeEventScopeId,
             lastEventId: eventId,
