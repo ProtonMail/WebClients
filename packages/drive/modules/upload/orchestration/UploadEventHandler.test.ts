@@ -237,7 +237,6 @@ describe('UploadEventHandler', () => {
 
             expect(uploadLogError).toHaveBeenCalledWith('File upload failed', error, {
                 uploadId: 'task123',
-                fileName: 'test-file.pdf',
             });
         });
 
@@ -444,7 +443,6 @@ describe('UploadEventHandler', () => {
 
             expect(uploadLogError).toHaveBeenCalledWith('Folder creation failed', error, {
                 uploadId: 'task123',
-                folderName: 'My Folder',
             });
         });
     });
