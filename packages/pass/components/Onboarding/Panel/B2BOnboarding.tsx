@@ -43,7 +43,7 @@ export const B2BOnboarding: FC = () => {
                 imageSrc: onboardingImport,
                 title: c('Title').t`Import your data`,
                 description: c('Info').t`Bring your existing passwords into ${PASS_APP_NAME}.`,
-                onClick: () => openSettings?.('import'),
+                onClick: () => openSettings('import'),
                 actionDone: vaultImported,
             },
             {

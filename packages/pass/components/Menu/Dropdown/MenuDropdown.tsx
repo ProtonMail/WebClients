@@ -115,7 +115,7 @@ export const MenuDropdown: FC<Props> = ({ onLock, onLogout, interactive }) => {
                     />
 
                     <DropdownMenuButton
-                        onClick={withAppMenuClose(() => openSettings?.())}
+                        onClick={withAppMenuClose(() => openSettings())}
                         label={c('Label').t`Settings`}
                         icon={'cog-wheel'}
                         className="pt-1.5 pb-1.5"

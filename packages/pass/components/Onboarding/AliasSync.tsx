@@ -44,7 +44,7 @@ export const AliasSync: FC<BaseSpotlightMessage> = ({ onClose = noop }) => {
                         color="norm"
                         size="small"
                         className="text-sm px-3"
-                        onClick={pipe(onClose, () => openSettings?.('aliases'))}
+                        onClick={pipe(onClose, () => openSettings('aliases'))}
                         disabled={!online}
                     >
                         {c('Action').ngettext(msgid`Sync alias`, `Sync aliases`, aliasCount)}
