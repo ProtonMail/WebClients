@@ -16,11 +16,25 @@ export const getMessageForNativeMessageError = (error: NativeMessageErrorType) =
             return c('Error').t`The ${PASS_APP_NAME} desktop app is not responding, is it running?`;
         case NativeMessageErrorType.NATIVE_MESSAGE_ENCRYPTION_FAILED:
         case NativeMessageErrorType.NATIVE_MESSAGE_DECRYPTION_FAILED:
-            return c('Error').t`Encryption communication for desktop unlock failed.`;
+            return c('Error').t`Encrypted communication with ${PASS_APP_NAME} desktop app failed.`;
         case NativeMessageErrorType.DESKTOP_APP_LOCKED:
             return c('Error').t`The ${PASS_APP_NAME} desktop app is locked, it must be unlocked.`;
+        case NativeMessageErrorType.TIMEOUT:
+            return c('Error').t`The ${PASS_APP_NAME} desktop app did not respond in time.`;
+        case NativeMessageErrorType.SETUP_LOCK_SECRET_INVALID_RESPONSE:
+            return c('Error').t`Desktop lock setup failed.`;
+        case NativeMessageErrorType.SECRET_NOT_FOUND:
+            return c('Error').t`Desktop lock secret not found.`;
+        case NativeMessageErrorType.BIOMETRICS_FAILED:
+            return c('Error').t`Biometric authentication failed.`;
+        case NativeMessageErrorType.DESKTOP_LOCK_NOT_CONFIGURED:
+            return c('Error').t`Desktop lock is not configured.`;
+        case NativeMessageErrorType.SECRET_MISMATCH:
+            return c('Error').t`Desktop lock secret does not match.`;
+        case NativeMessageErrorType.ACCOUNT_MISMATCH:
+            return c('Error').t`The ${PASS_APP_NAME} desktop app is signed in with a different account.`;
         default:
-            return c('Error').t`Unknown error`;
+            return c('Error').t`Unknown error.`;
     }
 };
 
