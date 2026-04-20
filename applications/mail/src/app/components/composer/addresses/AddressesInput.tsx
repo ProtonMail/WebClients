@@ -256,7 +256,7 @@ const AddressesInput = ({
             >
                 <div
                     className={clsx([
-                        'flex-1 flex flex-wrap max-w-full max-h-full gap-1 my-1 relative',
+                        'flex-1 flex flex-wrap max-w-full h-auto gap-1 relative',
                         editorHasTwoLines ? 'my-2' : 'my-1',
                     ])}
                     ref={containerRef}
