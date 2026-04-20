@@ -40,14 +40,11 @@ export const sessionRecoveryChangePassword = ({
 
             /**
              * This is the case for a user who does not have any keys set-up.
-             * They will be in 2-password mode, but not have any keys.
-             * Changing to one-password mode or mailbox password is not allowed.
-             * It's not handled better because it's a rare case.
+             * This should never happen for a user who initiates a session recovery change password flow, because
+             * it is only available to users who have setup keys.
              */
             if (userKeysList.length === 0) {
-                throw new Error(
-                    c('session_recovery:available:error').t`Please generate keys before you try to change your password`
-                );
+                throw new Error('Changing password through session recovery is disabled for users without keys');
             }
 
             const hasMigratedAddressKeys = getHasMigratedAddressKeys(addresses);
