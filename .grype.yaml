@@ -139,6 +139,21 @@ ignore:
           name: stdlib
           type: go-module
           version: go1.18.8
+    - vulnerability: CVE-2026-27143
+      package:
+          name: stdlib
+          type: go-module
+          version: go1.15.5
+    - vulnerability: CVE-2026-27143
+      package:
+          name: stdlib
+          type: go-module
+          version: go1.18.8
+    - vulnerability: CVE-2026-27143
+      package:
+          name: stdlib
+          type: go-module
+          version: go1.26.1
     ### Npm
     - vulnerability: GHSA-phwq-j96m-2c2q
       package:
