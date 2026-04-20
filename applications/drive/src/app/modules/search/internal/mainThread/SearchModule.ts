@@ -1,11 +1,12 @@
-import type { ProtonDriveClient } from '@protontech/drive-sdk';
+import type { LatestEventIdProvider, ProtonDriveClient } from '@protontech/drive-sdk';
 import { v4 as uuidv4 } from 'uuid';
 
 import { getBrowser, isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 import { Version } from '@proton/shared/lib/helpers/version';
 
 import { Logger } from '../shared/Logger';
-import type { PersistentLatestEventIdProvider } from '../shared/PersistentLatestEventIdProvider';
+import { PersistentLatestEventIdProvider } from '../shared/PersistentLatestEventIdProvider';
+import { SearchDB } from '../shared/SearchDB';
 import { InvalidSearchModuleState, listenForWorkerErrors } from '../shared/errors';
 import type { SearchModuleStateUpdateChannel } from '../shared/searchModuleStateUpdateChannel';
 import { createSearchModuleStateUpdateChannel } from '../shared/searchModuleStateUpdateChannel';
@@ -21,8 +22,7 @@ export type SearchModuleContext = {
     appVersion: string;
     userId: UserId;
     driveClient: ProtonDriveClient;
-    driveClientForSearchEvents: ProtonDriveClient;
-    latestEventIdProvider: PersistentLatestEventIdProvider;
+    createSearchDriveInstance: (params: { latestEventIdProvider: LatestEventIdProvider }) => ProtonDriveClient;
     fetchLastEventIdForTreeScopeId: FetchLastEventIdForTreeScopeId;
 };
 
@@ -49,6 +49,10 @@ export class SearchModule {
     private workerClient: WorkerClient;
     private optInManager: SearchOptInManager;
 
+    // The only SearchDB connection for the main thread.
+    // The search sharedworker will have its own instance too.
+    private searchDbPromise: Promise<SearchDB>;
+
     private constructor(context: SearchModuleContext) {
         if (!SearchModule.isEnvironmentCompatible()) {
             throw new InvalidSearchModuleState('Incompatible environment for SearchModule');
@@ -60,10 +64,15 @@ export class SearchModule {
 
         const clientId = uuidv4() as ClientId;
 
+        this.searchDbPromise = SearchDB.open(context.userId);
+
+        const latestEventIdProvider = new PersistentLatestEventIdProvider(this.searchDbPromise);
+        const driveClientForSearchEvents = context.createSearchDriveInstance({ latestEventIdProvider });
+
         const bridge = new MainThreadBridge(
             context.driveClient,
-            context.driveClientForSearchEvents,
-            context.latestEventIdProvider,
+            driveClientForSearchEvents,
+            latestEventIdProvider,
             context.fetchLastEventIdForTreeScopeId
         );
         this.workerClient = new WorkerClient(context.userId, context.appVersion, clientId, bridge);
@@ -80,7 +89,7 @@ export class SearchModule {
             this.setState({ ...this.state, ...patch });
         };
 
-        this.optInManager = new SearchOptInManager(context.userId);
+        this.optInManager = new SearchOptInManager(context.userId, this.searchDbPromise);
 
         Logger.listenForWorkerLogs();
         listenForWorkerErrors();
@@ -108,7 +117,7 @@ export class SearchModule {
                     ...indexerState,
                 });
 
-                new AppVersionGuard(context.userId, () => SearchModule.instance?.deactivate());
+                new AppVersionGuard(context.userId, async () => SearchModule.instance?.deactivate());
 
                 return SearchModule.instance;
             })().catch((error) => {
@@ -148,7 +157,10 @@ export class SearchModule {
         this.stateUpdateListeners.forEach((cb) => cb(state));
     }
 
-    private deactivate(): void {
+    private async deactivate(): Promise<void> {
+        const searchDb = await this.searchDbPromise;
+        searchDb.close();
+
         this.workerClient.dispose();
         this.updateChannel.close();
         this.optInManager.dispose();
