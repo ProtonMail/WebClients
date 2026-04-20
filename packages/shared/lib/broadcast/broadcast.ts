@@ -59,4 +59,6 @@ const broadcast = <T>(message: T) => {
     }
 };
 
+export const isWebView = getClient() !== 'web';
+
 export default broadcast;
