@@ -1350,6 +1350,27 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Un altre client de ${ PASS_APP_NAME } ha eliminat el codi PIN"
+      ],
+      "Biometric authentication failed.": [
+        "L'autenticació biomètrica ha fallat."
+      ],
+      "Desktop lock is not configured.": [
+        "El bloqueig de l'escriptori no està configurat."
+      ],
+      "Desktop lock secret not found.": [
+        "No s'ha trobat la contrasenya de bloqueig de l'escriptori."
+      ],
+      "Desktop lock setup failed.": [
+        "La configuració del bloqueig d'escriptori ha fallat."
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "La comunicació xifrada amb l'aplicació d'escriptori ${ PASS_APP_NAME } ha fallat."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "S'ha iniciat sessió a l'aplicació d'escriptori ${ PASS_APP_NAME }amb un compte diferent."
+      ],
+      "Unknown error.": [
+        "Hi ha hagut un error desconegut."
       ]
     },
     "Error message": {
