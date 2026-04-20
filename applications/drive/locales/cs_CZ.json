@@ -1252,13 +1252,28 @@
         "Oddálit"
       ],
       "Continue to ${ planOrAppName }": [
-        "Pokračujte na ${ planOrAppName }"
+        "Pokračovat na ${ planOrAppName }"
       ],
       "Google": [
         "Google"
       ],
       "Reconnect to Gmail": [
-        "Znovu se připojit ke službě Gmail"
+        "Znovu připojit ke Gmail"
+      ],
+      "Change my access": [
+        "Změnit můj přístup"
+      ],
+      "Go back to album “${ ellipsedAlbumName }“": [
+        "Zpět do alba “${ ellipsedAlbumName }“"
+      ],
+      "Re-index": [
+        "Znovu indexovat"
+      ],
+      "Refetch index": [
+        "Znovu načíst index"
+      ],
+      "Remove my access": [
+        "Odebrat můj přístup"
       ]
     },
     "Action: Docs": {
@@ -3098,10 +3113,19 @@
         "Vytvořili jste již 10 aliasů. Získejte neomezený počet aliasů a 500 GB úložného prostoru s ${ BRAND_NAME } Unlimited."
       ],
       "We can't access ${ boldEmails } anymore.": [
-        "Nyní nemůžeme přistupovat k ${ boldEmails }."
+        "Již nemáme přístup k ${ boldEmails }."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Je nám líto, že odcházíte. Pokud máte chvilku, oceníme, pokud nám sdělíte důvod zrušení. Vaše zpětná vazba pomáhá vylepšovat ${ BRAND_NAME } pro všechny."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "K tomu může dojít, pokud byla oprávnění odebrána nebo pokud jste změnili heslo."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Chcete-li i nadále přijímat a odesílat zprávy Gmailu v aplikaci ${ BRAND_NAME }, znovu prosím propojte svůj účet."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Chcete-li i nadále přijímat a odesílat zprávy Gmailu v aplikaci ${ BRAND_NAME }, znovu prosím propojte své účty."
       ]
     },
     "description": {
@@ -4021,6 +4045,39 @@
       ],
       "The minimum donation amount is ${ price }": [
         "Minimální výše daru je ${ price }"
+      ],
+      "Address could not be added.": [
+        "Adresa nemohla být přidána."
+      ],
+      "Cannot find move target": [
+        "Nelze najít cíl přesunu"
+      ],
+      "Company name or personal name is required": [
+        "Je nutné zadat název společnosti nebo jméno osoby"
+      ],
+      "Failed to change permissions settings": [
+        "Změna nastavení oprávnění se nezdařila"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Nepodařilo se načíst údaje o předplatném. Zkuste to prosím později."
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "U tohoto tarifu není podporován režim přenesení daňové povinnosti"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Při vyhledávání volných domén došlo k chybě"
+      ],
+      "Something went wrong with search. Please try again later.": [
+        "Při vyhledávání došlo k chybě. Zkuste to prosím později."
+      ],
+      "Something went wrong with search: Not enough storage space.": [
+        "Při vyhledávání došlo k chybě: Nedostatek úložného prostoru."
+      ],
+      "We were not able to load the file history": [
+        "Nepodařilo se nám načíst historii souborů"
+      ],
+      "Wrong billing address": [
+        "Nesprávná fakturační adresa"
       ]
     },
     "error": {
@@ -7138,7 +7195,76 @@
         "Přesunout ${ folderCount } složek"
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
-        "Kreditovou odměnu obdržíte 1 měsíc poté, co si váš přítel předplatí roční plán, a 2 měsíce poté, co si předplatí měsíční plán."
+        "Odměnu v podobě kreditů získáte 1 měsíc poté, co si vaši přátelé předplatí roční tarif, a 2 měsíce poté, co si předplatí měsíční tarif."
+      ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } je řešení pro videokonference s koncovým šifrováním. Přidejte si jej do svého tarifu a pořádejte bezpečné schůzky."
+      ],
+      "${ state.result.entries.length } entries": [
+        "${ state.result.entries.length } vstupů"
+      ],
+      "A new version of ${ DRIVE_APP_NAME } is available. Please reload to continue using search.": [
+        "Je k dispozici nová verze aplikace ${ DRIVE_APP_NAME }. Pro pokračování ve vyhledávání stránku znovu načtěte."
+      ],
+      "Can edit": [
+        "Může upravovat"
+      ],
+      "Can edit and manage access": [
+        "Může upravovat a spravovat přístup"
+      ],
+      "Can view and edit": [
+        "Může zobrazovat a upravovat"
+      ],
+      "Can't write into folder": [
+        "Nelze zapisovat do složky"
+      ],
+      "Choose your service to connect with": [
+        "Vyberte si službu, ke které se chcete připojit"
+      ],
+      "Clear all search data": [
+        "Vymazat všechny údaje o vyhledávání"
+      ],
+      "Clears browser data related to the search.": [
+        "Vymaže data prohlížeče související s vyhledáváním."
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Vše v ${ planOrAppName } plus:"
+      ],
+      "for ${ price }": [
+        "za ${ price }"
+      ],
+      "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
+        "Pokud se odeberete, ztratíte přístup k souboru „${ fileName }“ a nebudete jej moci znovu otevřít, dokud vám jej jeho vlastník nesdílí."
+      ],
+      "Index is empty.": [
+        "Index je prázdný."
+      ],
+      "Indexing in progress": [
+        "Probíhá indexování"
+      ],
+      "Invitation confirmed": [
+        "Pozvánka potvrzena"
+      ],
+      "Search enabled. You may now close this dialogue and search for files and folders.": [
+        "Vyhledávání aktivováno. Nyní můžete toto dialogové okno zavřít a vyhledávat soubory a složky."
+      ],
+      "Search module is not available.": [
+        "Modul vyhledávání není dostupný."
+      ],
+      "To enable truly search, we need to index your files locally. You can still use ${ DRIVE_APP_NAME } normally - we'll let you know when indexing is done.": [
+        "Abychom mohli zajistit plnohodnotné vyhledávání, musíme vaše soubory indexovat lokálně. Aplikaci ${ DRIVE_APP_NAME } můžete zatím používat jako obvykle – dáme vám vědět, až bude indexování hotové."
+      ],
+      "Unsupported file type for Photos": [
+        "Nepodporovaný typ souboru pro Fotky"
+      ],
+      "Update required": [
+        "Vyžadována aktualizace"
+      ],
+      "You won’t be able to share \"${ fileName }\" after changing access to viewer. Only the owner can change your access again.": [
+        "Po změně oprávnění na „prohlížení“ již nebudete moci sdílet soubor „${ fileName }“. Oprávnění může znovu změnit pouze vlastník."
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Váš účet je v současné době nastaven tak, aby využíval režim přenesení daňové povinnosti. Tento režim není u vybraného tarifu podporován. Chcete-li pokračovat, odstraňte DIČ z fakturační adresy nebo vyberte jiný tarif."
       ]
     },
     "info": {
@@ -7901,13 +8027,43 @@
         "PSČ"
       ],
       "Continue cancelling": [
-        "Pokračovat ve zrušení"
+        "Pokračovat v rušení"
       ],
       "Last 6 months only": [
         "Pouze posledních 6 měsíců"
       ],
       "User opted in": [
-        "Uživatel souhlasil"
+        "Uživatel se přihlásil"
+      ],
+      "Additional comments": [
+        "Další komentáře"
+      ],
+      "Emails (last 6 months)": [
+        "E-maily (posledních 6 měsíců)"
+      ],
+      "Environment compatible": [
+        "Šetrné k životnímu prostředí"
+      ],
+      "Index kinds": [
+        "Druhy indexů"
+      ],
+      "Initial indexing": [
+        "Začínám indexovat"
+      ],
+      "Main reason for cancelling": [
+        "Hlavní důvod zrušení"
+      ],
+      "Outdated version": [
+        "Stará verze"
+      ],
+      "Searchable": [
+        "Vyhledatelný"
+      ],
+      "Skip feedback": [
+        "Přeskočit zpětnou vazbu"
+      ],
+      "Visible columns:": [
+        "Viditelné sloupce:"
       ]
     },
     "Label for contact group color": {
@@ -8246,6 +8402,9 @@
         "Videokonference, ${ n } účastníci",
         "Videokonference, ${ n } účastníků",
         "Videokonference, ${ n } účastníků"
+      ],
+      "Hosts can record meetings locally on their computers": [
+        "Organizátoři mohou schůzky nahrávat lokálně na svých počítačích"
       ]
     },
     "Message": {
@@ -9043,6 +9202,9 @@
       ],
       "VPN with ad-blocker and malware protection": [
         "VPN s blokováním reklam a ochranou proti malware"
+      ],
+      "Dedicated servers optimized for speed": [
+        "Dedikované servery optimalizované pro rychlost"
       ]
     },
     "new_plans: feature highlight": {
@@ -9859,6 +10021,75 @@
       ],
       "Your settings have been changed successfully": [
         "Vaše nastavení bylo úspěšně změněno"
+      ],
+      "\"${ ellipsedName }\" copied": [
+        "\"${ ellipsedName }\" zkopírována"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "Složka \"${ ellipsedName }\" úspěšně vytvořena"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "\"${ ellipsedName } byl smazán"
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "\"${ ellipsedName }\" trvale odstraněno z koše"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "\"${ ellipsedName }\" se nepodařilo vytvořit"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "\"${ ellipsedName }\" se nepodařilo smazat"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "\"${ ellipsedName }\" se nepodařilo trvale smazat z koše"
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "\"${ ellipsedName }\" se nepodařilo přesunout"
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "\"${ ellipsedName }\" se nepodařilo obnovit z koše"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" přesunuta"
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "\"${ ellipsedName }\" obnoveno z koše"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "\"${ ellipsedName }\" úspěšně přesunuto"
+      ],
+      "\"${ fileName }\" shared": [
+        "\"${ fileName }\" sdíleno"
+      ],
+      "${ errors.length } item failed to be deleted": [
+        "${ errors.length } položku se nepodařilo smazat",
+        "${ errors.length } položky se nepodařilo smazat",
+        "${ errors.length } položek se nepodařilo smazat",
+        "${ errors.length } položek se nepodařilo smazat"
+      ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems } položka zkopírována",
+        "${ numberOfItems } položky zkopírovány",
+        "${ numberOfItems } položek zkopírováno",
+        "${ numberOfItems } položek zkopírováno"
+      ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } položka přesunuta",
+        "${ numberOfItems } položky přesunuty",
+        "${ numberOfItems } položek přesunuto",
+        "${ numberOfItems } položek přesunuto"
+      ],
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "Kopie \"${ ellipsedName }\" přesunuta do koše"
+      ],
+      "Setting updated. Editors can change permissions and share.": [
+        "Nastavení aktualizováno. Editoři mohou měnit oprávnění a sdílet."
+      ],
+      "Setting updated. Editors can't change permissions or share.": [
+        "Nastavení aktualizováno. Editoři nemohou měnit oprávnění nebo sdílet."
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Vaše adresa ${ BRAND_NAME } je připravena k použití"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -10530,6 +10761,12 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Vaše předplatné má v současné době platnou slevu. Přechodem na tuto novou akci bude stávající sleva zrušena."
+      ],
+      "Edit billing address": [
+        "Upravit fakturační adresu"
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Platí mechanismus přenesení daňové povinnosti."
       ]
     },
     "Payments.Error": {
@@ -10801,7 +11038,10 @@
         "Cortex Inc."
       ],
       "Enter a name": [
-        "Zadejte název"
+        "Zadejte jméno"
+      ],
+      "Select a provider": [
+        "Vybrat poskytovatele"
       ]
     },
     "Placeholder for contact group name": {
@@ -11681,6 +11921,9 @@
       ],
       "pending": [
         "čeká na vyřízení"
+      ],
+      "user joined": [
+        "uživatel se připojil"
       ]
     },
     "Storage": {
@@ -13586,6 +13829,27 @@
       ],
       "Reverse charge not supported": [
         "Funkce přenesení daňové povinnosti není podporována"
+      ],
+      "Change access to viewer?": [
+        "Změnit přístup k prohlížeči?"
+      ],
+      "Global": [
+        "Globální"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Načtěte svá data do ${ BRAND_NAME }"
+      ],
+      "Remove your access?": [
+        "Odebrat váš přístup?"
+      ],
+      "Search": [
+        "Hledat"
+      ],
+      "Select data to import": [
+        "Vyberte data k importu"
+      ],
+      "Share \"${ fileName }\"": [
+        "Sdílet \"${ fileName }\""
       ]
     },
     "Today icon tooltip in mini calendar": {
@@ -13680,6 +13944,12 @@
       ],
       "We have sent them an invite to access the item.": [
         "Poslali jsme jim pozvánku k přístupu k položce."
+      ],
+      "Change shared item settings": [
+        "Změnit nastavení sdílených položek"
+      ],
+      "New!": [
+        "Nové!"
       ]
     },
     "tooltip": {
@@ -13934,6 +14204,9 @@
         "${ seats } ${ MEET_APP_NAME } licence",
         "${ seats } ${ MEET_APP_NAME } licencí",
         "${ seats } ${ MEET_APP_NAME } licencí"
+      ],
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } licence"
       ]
     },
     "meet_2025: Info": {
@@ -13942,11 +14215,34 @@
         "včetně ${ seats } licencí",
         "včetně ${ seats } licencí",
         "včetně ${ seats } licencí"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Můžete mít až ${ TRIAL_MAX_MEET_SEATS } licencí ${ MEET_SHORT_APP_NAME } během zkušební doby."
       ]
     },
     "Provider option": {
       "Yahoo": [
         "Yahoo"
+      ],
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Ostatní"
+      ],
+      "Outlook": [
+        "Outlook"
+      ]
+    },
+    "Import provider": {
+      "More import options": [
+        "Další možnosti importu"
       ]
     }
   }
