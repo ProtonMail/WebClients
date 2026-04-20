@@ -1258,10 +1258,10 @@
         "Gmail bağlantısını yeniden kur"
       ],
       "Go back to album “${ ellipsedAlbumName }“": [
-        "“${ ellipsedAlbumName }” albümüne geri dön"
+        "“${ ellipsedAlbumName }” albümüne dön"
       ],
       "Re-index": [
-        "Yeniden dizinle"
+        "Dizini yeniden oluştur"
       ]
     },
     "Action: Docs": {
@@ -4021,7 +4021,7 @@
         "Kullanılabilecek etki alanları alınırken bir sorun çıktı"
       ],
       "Failed to load subscription data. Please try again later.": [
-        "Abonelik verileri yüklenemedi. Lütfen daha sonra tekrar deneyin."
+        "Abonelik verileri yüklenemedi. Lütfen bir süre sonra yeniden deneyin."
       ]
     },
     "error": {
@@ -7085,7 +7085,7 @@
         "Davet kabul edildi"
       ],
       "No populator states found.": [
-        "Hiçbir doldurucu durumu bulunamadı."
+        "Herhangi bir doldurucu durumu bulunamadı."
       ]
     },
     "info": {
@@ -8945,6 +8945,9 @@
       "Appointment scheduling with ${ n } booking page": [
         "${ n } rezervasyon sayfası ile randevu planlama",
         "${ n } rezervasyon sayfası ile randevu planlama"
+      ],
+      "Dedicated servers optimized for speed": [
+        "Hız için ayarlanmış özel sunucular"
       ]
     },
     "new_plans: feature highlight": {
@@ -9709,14 +9712,14 @@
         "${ BRAND_NAME } adresiniz kullanılmaya hazır"
       ],
       "${ errors.length } item failed to be deleted": [
-        "${ errors.length } öğe silinemedi",
-        "${ errors.length } öğe silinemedi"
+        "${ errors.length } öge silinemedi",
+        "${ errors.length } öge silinemedi"
       ],
       "\"${ ellipsedName }\" copied": [
         "\"${ ellipsedName }\" kopyalandı"
       ],
       "\"${ ellipsedName }\" created successfully": [
-        "\"${ ellipsedName }\" başarıyla oluşturuldu"
+        "\"${ ellipsedName }\" eklendi"
       ],
       "\"${ ellipsedName }\" deleted": [
         "\"${ ellipsedName }\" silindi"
@@ -9737,27 +9740,27 @@
         "\"${ ellipsedName }\" taşınamadı"
       ],
       "\"${ ellipsedName }\" failed to be restored from trash": [
-        "\"${ ellipsedName }\" çöp kutusundan geri yüklenemedi"
+        "\"${ ellipsedName }\" çöpten çıkarılamadı"
       ],
       "\"${ ellipsedName }\" moved": [
         "\"${ ellipsedName }\" taşındı"
       ],
       "\"${ ellipsedName }\" restored from trash": [
-        "\"${ ellipsedName }\" çöp kutusundan geri yüklendi"
+        "\"${ ellipsedName }\" çöpten çıkarıldı"
       ],
       "\"${ ellipsedName }\" successfully moved": [
-        "\"${ ellipsedName }\" başarıyla taşındı"
+        "\"${ ellipsedName }\" taşındı"
       ],
       "${ numberOfItems } item copied": [
-        "${ numberOfItems } öğe kopyalandı",
-        "${ numberOfItems } öğe kopyalandı"
+        "${ numberOfItems } öge kopyalandı",
+        "${ numberOfItems } öge kopyalandı"
       ],
       "${ numberOfItems } item moved": [
-        "${ numberOfItems } öğe taşındı",
-        "${ numberOfItems } öğe taşındı"
+        "${ numberOfItems } öge taşındı",
+        "${ numberOfItems } öge taşındı"
       ],
       "Copy of \"${ ellipsedName }\" moved to trash": [
-        "\"${ ellipsedName }\" dosyasının bir kopyası çöp kutusuna taşındı"
+        "\"${ ellipsedName }\" kopyası çöpe atıldı"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
