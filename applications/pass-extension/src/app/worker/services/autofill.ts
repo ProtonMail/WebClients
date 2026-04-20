@@ -61,14 +61,14 @@ type AutofillServiceState = {
 export const createAutoFillService = () => {
     const state: AutofillServiceState = { privateDomains: null, rules: null };
 
-    /** Avoids reading feature flags and settings from redux state which may
-     * be absent when the extension is locked. Iframe autofill is enabled when
-     * any active autofill type requires it: login credentials or credit cards. */
+    /** Guards sub-frame content-script injection. Gated only on the global
+     * killswitch: per-type user settings (eg: `autofill.cc`) are enforced
+     * per-handler, not at injection time. Feature flags are resolved via the
+     * service rather than redux state so this remains safe when the extension
+     * is locked and the store is empty. */
     const iframeAutofillEnabled = withContext<() => Promise<boolean>>(async (ctx) => {
-        const { autofill } = await ctx.service.settings.resolve();
         const { features } = await ctx.service.featureFlags.resolve();
-        if (features.PassIFrameKillswitch) return false;
-        return Boolean((features.PassCreditCardWebAutofill && autofill.cc) || autofill.login);
+        return Boolean(!features.PassIFrameKillswitch);
     });
 
     const init = withContext(async (ctx) => {
