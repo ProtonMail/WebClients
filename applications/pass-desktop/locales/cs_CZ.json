@@ -1348,6 +1348,18 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Váš kód PIN byl odstraněn jiným klientem ${ PASS_APP_NAME }"
+      ],
+      "Encryption communication for desktop unlock failed.": [
+        "Šifrování komunikace pro odemknutí desktopové aplikace se nezdařilo."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "Aplikace ${ PASS_APP_NAME } pro stolní počítače je uzamčena, je třeba ji odemknout."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "Desktopová aplikace ${ PASS_APP_NAME } není nainstalována."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "Desktopová aplikace ${ PASS_APP_NAME } nereaguje. Je spuštěná?"
       ]
     },
     "Error message": {
@@ -2705,6 +2717,27 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Vaše organizace vyžaduje, abyste zabezpečili svůj přístup k ${ PASS_APP_NAME }"
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } si přeje sdílet položku se skupinou ${ name }."
+      ],
+      "Enabling desktop auto-lock": [
+        "Zapnutí automatického zamykání plochy"
+      ],
+      "invites the group ${ name } to access items in": [
+        "pozve skupinu ${ name } k přístupu k položkám v"
+      ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Tato funkce vyžaduje, aby byla během instalace nainstalována a spuštěna desktopová aplikace ${ PASS_APP_NAME }."
+      ],
+      "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Nyní můžete pomocí záložního hesla přistupovat k aplikaci ${ PASS_SHORT_APP_NAME } v režimu offline"
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Nyní můžete pomocí svého dodatečného hesla přistupovat k aplikaci ${ PASS_SHORT_APP_NAME } v režimu offline"
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Nyní můžete pomocí svého druhého hesla přistupovat k aplikaci ${ PASS_SHORT_APP_NAME } v režimu offline"
       ]
     },
     "Keyboard key": {
