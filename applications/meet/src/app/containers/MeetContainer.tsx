@@ -58,6 +58,9 @@ interface MeetContainerProps {
     showReconnectedMessage: boolean;
     setShowReconnectedMessage: React.Dispatch<React.SetStateAction<boolean>>;
     setLiveKitConnectionState: React.Dispatch<React.SetStateAction<ConnectionState | null>>;
+    isReconnecting: boolean;
+    mlsRetrying: boolean;
+    onSimulateReconnection: () => void;
 }
 
 export const MeetContainer = ({
@@ -87,6 +90,9 @@ export const MeetContainer = ({
     showReconnectedMessage,
     setShowReconnectedMessage,
     setLiveKitConnectionState,
+    isReconnecting,
+    mlsRetrying,
+    onSimulateReconnection,
 }: MeetContainerProps) => {
     const debugOverlay = useDebugOverlay();
     const dispatch = useMeetDispatch();
@@ -196,7 +202,11 @@ export const MeetContainer = ({
                 <MeetingRecorderContext.Provider value={meetingRecorderContextValue}>
                     <MeetContext.Provider value={meetContextValue}>
                         {debugOverlay.isOpen && (
-                            <DebugOverlay isOpen={debugOverlay.isOpen} onClose={debugOverlay.close} />
+                            <DebugOverlay
+                                isOpen={debugOverlay.isOpen}
+                                onClose={debugOverlay.close}
+                                onSimulateReconnection={onSimulateReconnection}
+                            />
                         )}
                         <MeetingBody
                             screenShareTrack={screenShareTrack}
@@ -207,6 +217,8 @@ export const MeetContainer = ({
                             setShowReconnectedMessage={setShowReconnectedMessage}
                             setLiveKitConnectionState={setLiveKitConnectionState}
                             isDisconnected={isDisconnected}
+                            isReconnecting={isReconnecting}
+                            mlsRetrying={mlsRetrying}
                         />
                     </MeetContext.Provider>
                     <AutoCloseMeetingModal participantCount={totalParticipantCount} onLeave={handleLeave} />
