@@ -194,9 +194,8 @@ const Verify = () => {
             onLoaded={handleLoaded}
             onClose={handleClose}
             onError={(e) => {
-                setError(true);
                 handleError(e);
-                // Also sends out a loaded message for clients that don't handle the error message to display the error screen.
+                // Also sends out a loaded message for clients that don't handle the error message.
                 handleLoaded();
             }}
             methods={methods}

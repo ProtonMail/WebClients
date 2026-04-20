@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import type { CreateNotificationOptions } from '@proton/components';
@@ -8,6 +9,7 @@ import {
     ModalsProvider,
     NotificationsChildren,
     NotificationsHijack,
+    NotificationsProvider,
     PreventLeaveProvider,
     RightToLeftProvider,
     ThemeProvider,
@@ -16,6 +18,7 @@ import useInstance from '@proton/hooks/useInstance';
 import Icons from '@proton/icons/Icons';
 import { ProtonStoreProvider } from '@proton/redux-shared-store/sharedProvider';
 import createApi from '@proton/shared/lib/api/createApi';
+import { isWebView } from '@proton/shared/lib/broadcast';
 
 import Verify from './Verify';
 import broadcast, { MessageType } from './broadcast';
@@ -24,18 +27,22 @@ import { setupStore } from './store/store';
 
 const api = createApi({ config, noErrorState: true });
 
+const handleNotificationCreate = (options: CreateNotificationOptions) => {
+    const { type = 'success', text } = options;
+    if (typeof text === 'string') {
+        broadcast({ type: MessageType.NOTIFICATION, payload: { type, text } });
+    }
+};
+
+const VerifyNotificationsProvider = ({ children }: { children: ReactNode }) =>
+    isWebView ? (
+        <NotificationsHijack onCreate={handleNotificationCreate}>{children}</NotificationsHijack>
+    ) : (
+        <NotificationsProvider>{children}</NotificationsProvider>
+    );
+
 const App = () => {
     const store = useInstance(setupStore);
-    const handleNotificationCreate = (options: CreateNotificationOptions) => {
-        const { type = 'success', text } = options;
-
-        if (typeof text === 'string') {
-            broadcast({
-                type: MessageType.NOTIFICATION,
-                payload: { type, text },
-            });
-        }
-    };
 
     return (
         <ConfigProvider config={config}>
@@ -44,7 +51,7 @@ const App = () => {
                     <Icons />
                     <ThemeProvider appName={config.APP_NAME}>
                         <PreventLeaveProvider>
-                            <NotificationsHijack onCreate={handleNotificationCreate}>
+                            <VerifyNotificationsProvider>
                                 <ModalsProvider>
                                     <ProtonStoreProvider store={store}>
                                         <ApiProvider api={api}>
@@ -54,7 +61,7 @@ const App = () => {
                                         </ApiProvider>
                                     </ProtonStoreProvider>
                                 </ModalsProvider>
-                            </NotificationsHijack>
+                            </VerifyNotificationsProvider>
                         </PreventLeaveProvider>
                     </ThemeProvider>
                 </RightToLeftProvider>

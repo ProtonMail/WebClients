@@ -59,7 +59,7 @@ const getOwnershipData = async ({
     const cache = cacheRef.current[method];
     if (cache.promise === undefined) {
         const promise = Promise.all([
-            api<VerificationDataResult>({ ...getVerificationDataRoute(token, method), silence: true }),
+            api<VerificationDataResult>(getVerificationDataRoute(token, method)),
             // Automatically send the code the first time.
             api<null>(sendVerificationCode(token, method)),
         ]);
