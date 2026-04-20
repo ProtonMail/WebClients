@@ -7,7 +7,7 @@ import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { getApiErrorMessage } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { unprivatizeMemberKeysRoute } from '@proton/shared/lib/api/members';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import { captureMessage, getSentryError } from '@proton/shared/lib/helpers/sentry';
 import type {
     EnhancedMember,
     Member,
@@ -18,7 +18,6 @@ import {
     UnprivatizationRevisionError,
     getIsMemberInAutomaticApproveState,
     getIsMemberInManualApproveState,
-    getSentryError,
     type getUnprivatizeMemberPayload,
     unprivatizeMemberHelper,
 } from '@proton/shared/lib/keys';

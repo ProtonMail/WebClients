@@ -1,5 +1,4 @@
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-
+import { capturePaymentMessage } from '../sentry/capture';
 import { PLANS, signupFlows } from './constants';
 import type { Invoice, PaymentMethodFlow, PlainPaymentMethodType, PlanIDs } from './interface';
 import { getPlanNameFromIDs } from './plan/helpers';
@@ -58,7 +57,7 @@ export function captureWrongPlanName(
 ) {
     try {
         if (planName === PLANS.VPN) {
-            captureMessage('Payments: wrong plan name', {
+            capturePaymentMessage('Payments: wrong plan name', {
                 level: 'warning',
                 extra: { planName, ...context },
             });
