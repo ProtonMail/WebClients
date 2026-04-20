@@ -13,6 +13,7 @@ import SettingsListItem from '@proton/components/components/sidebar/SettingsList
 import Sidebar from '@proton/components/components/sidebar/Sidebar';
 import SidebarList from '@proton/components/components/sidebar/SidebarList';
 import SidebarNav from '@proton/components/components/sidebar/SidebarNav';
+import { Tree } from '@proton/components/components/sidebar/nav/Tree';
 import { useVisibilityTracker } from '@proton/components/components/visibility/useVisibilityTracker';
 import { getIsSectionAvailable, getSectionPath } from '@proton/components/containers/layout/helper';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
@@ -20,7 +21,7 @@ import { APPS } from '@proton/shared/lib/constants';
 import type { OrganizationExtended } from '@proton/shared/lib/interfaces';
 import { telemetry } from '@proton/shared/lib/telemetry';
 import illustration from '@proton/styles/assets/img/illustrations/magic-wand-illustration.svg';
-import { FeedbackModal, Sidebar as SidebarB } from '@proton/vpn/components/Sidebar';
+import { FeedbackModal } from '@proton/vpn/components/Sidebar';
 import { useB2BAdminSidebarFeature } from '@proton/vpn/hooks/useB2BAdminSidebarFeature';
 
 import VpnSidebarVersion from './containers/VpnSidebarVersion';
@@ -140,6 +141,7 @@ const TrackableSidebar = ({
     const [user] = useUser();
     const adminSidebarFeature = useB2BAdminSidebarFeature({ user, subscription, organization });
     const isSidebarActive = adminSidebarFeature.enabled && adminSidebarFeature.sidebar.status;
+
     const trackingData = {
         user: user.ID,
         ...(organization ? { organization: organization.ID } : undefined),
@@ -157,7 +159,7 @@ const TrackableSidebar = ({
             {isSidebarActive ? (
                 <>
                     <SidebarNav className="overflow-auto">
-                        <SidebarB routes={adminSidebarFeature.routes} />
+                        <Tree routes={adminSidebarFeature.routes} />
                     </SidebarNav>
                     <SidebarToggle adminSidebarFeature={adminSidebarFeature} trackingData={trackingData} />
                 </>

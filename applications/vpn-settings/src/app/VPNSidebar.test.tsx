@@ -8,6 +8,7 @@ import * as subHooks from '@proton/account/subscription/hooks';
 import * as hooks from '@proton/account/user/hooks';
 import * as helper from '@proton/components/containers/layout/helper';
 import type { SectionConfig, SidebarConfig } from '@proton/components/index';
+import type { NavResolved } from '@proton/nav/types/nav';
 import * as adminHook from '@proton/vpn/hooks/useB2BAdminSidebarFeature';
 
 import { VPNSidebar } from './VPNSidebar';
@@ -111,12 +112,16 @@ describe('VPNSidebar', () => {
     });
 
     it('renders new sidebar when admin feature is enabled', () => {
+        const resolved: NavResolved = {
+            items: [{ id: 'admin', label: 'Admin', to: '/admin', children: undefined, icon: undefined, meta: {} }],
+        };
+
         (adminHook.useB2BAdminSidebarFeature as jest.Mock).mockReturnValue({
             enabled: true,
             sidebar: { status: true, toggle: jest.fn() },
             feedback: { isOn: true, setOff: jest.fn() },
             spotlight: { isOn: true, setOff: jest.fn() },
-            routes: { admin: { to: 'admin', text: 'Admin' } },
+            routes: resolved,
         });
 
         renderWithRouter(
@@ -127,7 +132,7 @@ describe('VPNSidebar', () => {
                 organizationRoutes={organizationRoutesMock}
             />
         );
-        expect(screen.getByTestId('admin-sidebar')).toBeInTheDocument();
+        expect(screen.getByTestId('sidebar')).toBeInTheDocument();
         expect(screen.getByText('New sidebar')).toBeInTheDocument();
         expect(screen.getByText('Share feedback')).toBeInTheDocument();
 
