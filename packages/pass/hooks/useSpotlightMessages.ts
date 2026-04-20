@@ -48,7 +48,7 @@ export const useSpotlightMessages = (extra: SpotlightMessageDefinition[] = []) =
                         action: {
                             label: c('Label').t`Create lock`,
                             type: 'button',
-                            onClick: () => openSettings?.('security'),
+                            onClick: () => openSettings('security'),
                         },
                     },
                     {
@@ -91,7 +91,7 @@ export const useSpotlightMessages = (extra: SpotlightMessageDefinition[] = []) =
                         action: {
                             label: c('Label').t`Need help?`,
                             type: 'button',
-                            onClick: () => openSettings?.('support'),
+                            onClick: () => openSettings('support'),
                         },
                     },
                     {
