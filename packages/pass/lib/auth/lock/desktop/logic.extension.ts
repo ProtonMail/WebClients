@@ -34,7 +34,10 @@ export const sendSetupLockSecretMessage = async (
         log('Received response from desktop');
 
         /** Lock secret and user key from response must match */
-        if (response.lockSecret !== lockSecret || response.userIdentifier !== userIdentifier) {
+        if (response.userIdentifier !== userIdentifier) {
+            throw new NativeMessageError(NativeMessageErrorType.ACCOUNT_MISMATCH);
+        }
+        if (response.lockSecret !== lockSecret) {
             throw new NativeMessageError(NativeMessageErrorType.SETUP_LOCK_SECRET_INVALID_RESPONSE);
         }
     } catch (error) {
