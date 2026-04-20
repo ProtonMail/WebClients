@@ -1288,6 +1288,18 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Seu código PIN foi removido por outro cliente ${ PASS_APP_NAME }"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "O aplicativo para área de trabalho do ${ PASS_APP_NAME } está bloqueado, precisa ser desbloqueado."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "O aplicativo para computador do ${ PASS_APP_NAME } não está instalado."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "O aplicativo para área de trabalho do ${ PASS_APP_NAME } não está respondendo, está em execução?"
+      ],
+      "Unknown error.": [
+        "Erro desconhecido."
       ]
     },
     "Error message": {
@@ -1929,7 +1941,8 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outra pasta apagará seus links seguros."
+        "Movendo um item para outro cofre apagará seu link seguro.",
+        "Movendo item para outro cofre apagará seus links seguros."
       ],
       "Moving items": [
         "Movendo itens"

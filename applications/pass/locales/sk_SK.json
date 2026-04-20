@@ -1298,6 +1298,42 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Váš PIN kód bol odstránený iným klientom ${ PASS_APP_NAME }"
+      ],
+      "Biometric authentication failed.": [
+        "Biometrické overenie zlyhalo."
+      ],
+      "Desktop lock is not configured.": [
+        "Zamknutie plochy nie je nakonfigurované."
+      ],
+      "Desktop lock secret does not match.": [
+        "Heslo na uzamknutie plochy sa nezhoduje."
+      ],
+      "Desktop lock secret not found.": [
+        "Nenašiel sa kód na uzamknutie plochy."
+      ],
+      "Desktop lock setup failed.": [
+        "Nastavenie uzamknutia pracovnej plochy sa nepodarilo."
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Šifrovaná komunikácia s desktopovou aplikáciou ${ PASS_APP_NAME } zlyhala."
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "Desktopová aplikácia ${ PASS_APP_NAME } neodpovedala včas."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "Aplikácia ${ PASS_APP_NAME } pre počítače je uzamknutá, musí byť odomknutá."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "Desktopová aplikácia ${ PASS_APP_NAME } nie je nainštalovaná."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "Desktopová aplikácia ${ PASS_APP_NAME } neodpovedá, je spustená?"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "V aplikácii ${ PASS_APP_NAME } pre počítače je prihlásený iný účet."
+      ],
+      "Unknown error.": [
+        "Neznámá chyba."
       ]
     },
     "Error message": {

@@ -1283,6 +1283,18 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "您的 PIN 码已被另一 ${ PASS_APP_NAME } 客户端删除"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "${ PASS_APP_NAME } 桌面应用已锁定，必须解锁！"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "未安装 ${ PASS_APP_NAME } 桌面应用！"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "${ PASS_APP_NAME } 桌面应用无响应，是否仍在运行？"
+      ],
+      "Unknown error.": [
+        "未知错误。"
       ]
     },
     "Error message": {
