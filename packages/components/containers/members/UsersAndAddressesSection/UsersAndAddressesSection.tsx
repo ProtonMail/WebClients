@@ -5,11 +5,13 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import SettingsParagraph from '@proton/components/containers/account/SettingsParagraph';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
 import DomainModal from '@proton/components/containers/domains/DomainModal';
+import { FeatureCode, useFeature } from '@proton/features';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import useOrganizationModals from '../../organization/useOrganizationModals';
 import useOrganizationUnprivatizationModals from '../../organization/useOrganizationUnprivatizationModals';
+import AdminRolesOnboardingModal from '../rolesAndPermissions/AdminRolesOnboardingModal';
 import { MembersLocal } from './MembersLocal';
 import { MembersRemote } from './MembersRemote';
 import UserAndAddressesSectionIntro from './UserAndAddressesSectionIntro';
@@ -21,7 +23,15 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
     const organizationUnprivatizationModals = useOrganizationUnprivatizationModals();
     const [organization] = useOrganization();
     const hasRemoteMembers = useFlag('MembersRemote');
+    const hasAdminRoles = useFlag('AdminRoleMVP');
     const [newDomainModalProps, setNewDomainModalOpen, renderNewDomain] = useModalState();
+    const {
+        feature: adminRolesModalFeature,
+        update: updateAdminRolesModal,
+        loading: adminRolesModalLoading,
+    } = useFeature(FeatureCode.AdminRolesOnboardingModal, hasAdminRoles);
+
+    const canShowAdminRolesModal = !adminRolesModalLoading && !!adminRolesModalFeature?.Value;
 
     return (
         <SettingsSectionWide>
@@ -39,6 +49,12 @@ const UsersAndAddressesSection = ({ app, onceRef }: { app: APP_NAMES; onceRef: M
                 <MembersLocal app={app} />
             )}
             {renderNewDomain && <DomainModal {...newDomainModalProps} />}
+            <AdminRolesOnboardingModal
+                open={canShowAdminRolesModal}
+                onClose={() => {
+                    void updateAdminRolesModal(false);
+                }}
+            />
         </SettingsSectionWide>
     );
 };
