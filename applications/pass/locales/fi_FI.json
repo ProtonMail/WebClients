@@ -1229,6 +1229,18 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "PIN-koodisi poistettiin toiselta ${ PASS_APP_NAME } -päätteeltä"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "${ PASS_APP_NAME } -työpöytäsovellus on lukittu; se on avattava."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "${ PASS_APP_NAME } -työpöytäsovellusta ei ole asennettu."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "${ PASS_APP_NAME } -työpöytäsovellus ei vastaa, onko se käynnissä?"
+      ],
+      "Unknown error.": [
+        "Tuntematon virhe."
       ]
     },
     "Error message": {

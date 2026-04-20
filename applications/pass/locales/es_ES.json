@@ -1288,6 +1288,18 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Se ha eliminado el código PIN desde otro cliente de ${ PASS_APP_NAME }."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "La aplicación de escritorio de ${ PASS_APP_NAME } está bloqueada; debes desbloquearla."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "La aplicación de escritorio ${ PASS_APP_NAME } no está instalada."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "La aplicación de escritorio ${ PASS_APP_NAME } no responde, ¿se está ejecutando?"
+      ],
+      "Unknown error.": [
+        "Error desconocido."
       ]
     },
     "Error message": {
@@ -1929,7 +1941,8 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra caja fuerte borrará sus enlaces seguros."
+        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros.",
+        "Mover elementos a otra caja fuerte eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo elementos"
