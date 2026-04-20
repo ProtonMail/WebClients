@@ -1,6 +1,5 @@
 import type { UnknownAction } from '@reduxjs/toolkit';
 import type { ThunkAction } from 'redux-thunk';
-import { c } from 'ttag';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities';
@@ -29,17 +28,23 @@ type RequiredState = UserState & AddressKeysState & OrganizationKeyState & UserS
  * @param api - The API
  * @param newPassword - The new login password
  * @param persistPasswordScope - Pass true in case more actions will be done after, for example changing the key password.
+ * @param disable2FA - Pass true for signed in password reset when 2FA should also be disabled.
  */
 export const changeLoginPassword = ({
     api,
     newPassword,
     persistPasswordScope,
+    disable2FA,
 }: {
     api: Api;
     newPassword: string;
     persistPasswordScope: boolean;
+    disable2FA: boolean;
 }): ThunkAction<Promise<void>, RequiredState, ProtonThunkArguments, UnknownAction> => {
-    return () => {
+    return async () => {
+        if (disable2FA) {
+            await api(disable2FAConfig({ PersistPasswordScope: true }));
+        }
         return srpVerify({
             api,
             credentials: {
@@ -78,14 +83,18 @@ export const changePassword = ({
                 dispatch(organizationKeyThunk()),
             ]);
 
-            /**
-             * This is the case for a user who does not have any keys set-up.
-             * They will be in 2-password mode, but not have any keys.
-             * Changing to one-password mode or mailbox password is not allowed.
-             * It's not handled better because it's a rare case.
-             */
-            if (userKeysList.length === 0) {
-                throw new Error(c('Error').t`Please generate keys before you try to change your password`);
+            // If the user has no generated keys, the user will by default be in two-password mode.
+            // However, in some flows, like session recovery, we override the mode to switch to "one-password" mode which would
+            // enter this function.
+            // This overrides that, where if the user has no generated keys, it forces a change of login password instead.
+            if (!userKeysList.length) {
+                if (!user.Keys.length) {
+                    return await dispatch(
+                        changeLoginPassword({ newPassword, api, persistPasswordScope: false, disable2FA })
+                    );
+                } else {
+                    throw new Error('Unable to decrypt user keys');
+                }
             }
 
             const { passphrase: keyPassword, salt: keySalt } = await generateKeySaltAndPassphrase(newPassword);
