@@ -5,9 +5,10 @@ import type {
     MessageBusResponse,
     PaymentIntent,
 } from '@proton/chargebee/lib';
-import { captureMessage, isProduction } from '@proton/shared/lib/helpers/sentry';
+import { isProduction } from '@proton/shared/lib/helpers/sentry';
 import type { Api } from '@proton/shared/lib/interfaces';
 
+import { capturePaymentMessage } from '../sentry/capture';
 import {
     type BackendPaymentIntent,
     type CreatePaymentIntentData,
@@ -257,28 +258,37 @@ async function getBin(handles: ChargebeeIframeHandles): Promise<string> {
 
         // this should be unreachable. I keep it for the time being to observe the behavior.
         if (binResponse.status === 'failure') {
-            captureMessage('Payments: BIN response failure', {
-                level: 'error' as const,
-                extra: {
-                    host: window.location.host,
-                    error: binResponse.error,
-                    originalError: binResponse?.error?.error,
-                    errorData: binResponse?.data,
+            const error = binResponse.error;
+            capturePaymentMessage(
+                'Payments: BIN response failure',
+                {
+                    level: 'error' as const,
+                    extra: {
+                        error,
+                        host: window.location.host,
+                        originalError: binResponse?.error?.error,
+                        errorData: binResponse?.data,
+                    },
                 },
-            });
+                error
+            );
 
             throw new Error(binResponse.error?.error ?? binResponse.error);
         }
     } catch (error: any) {
-        captureMessage('Payments: BIN response error', {
-            level: 'error' as const,
-            extra: {
-                host: window.location.host,
-                error,
-                originalError: error?.error,
-                errorData: error?.data,
+        capturePaymentMessage(
+            'Payments: BIN response error',
+            {
+                level: 'error' as const,
+                extra: {
+                    host: window.location.host,
+                    error,
+                    originalError: error?.error,
+                    errorData: error?.data,
+                },
             },
-        });
+            error
+        );
 
         throw error;
     }
@@ -294,7 +304,7 @@ async function getBin(handles: ChargebeeIframeHandles): Promise<string> {
     if (Bin === binFallback) {
         const message = `Payments: BIN problem. FallbackEnabled: ${allowBinFallback}`;
 
-        captureMessage(message, {
+        capturePaymentMessage(message, {
             level: allowBinFallback ? 'error' : 'warning',
             extra: {
                 Bin,
@@ -306,7 +316,7 @@ async function getBin(handles: ChargebeeIframeHandles): Promise<string> {
 
     if (!Bin) {
         // If this happens, then it most likely means that the current domain name isn't whitelisted in Chargebee.
-        captureMessage('Payments: BIN is not found.', {
+        capturePaymentMessage('Payments: BIN is not found.', {
             level: 'error',
             extra: {
                 host: window.location.host,

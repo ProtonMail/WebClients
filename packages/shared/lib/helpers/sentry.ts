@@ -15,6 +15,7 @@ import type { ErrorEvent, EventHint } from '@sentry/types/types/event';
 
 import { Availability, AvailabilityTypes } from '@proton/utils/availability';
 
+import { getApiError, getIsConnectionIssue } from '../api/helpers/apiErrorHelper';
 import { VPN_HOSTNAME } from '../constants';
 import { SHARE_GENERATED_PASSWORD_LENGTH } from '../drive/constants';
 import { ApiError } from '../fetch/ApiError';
@@ -347,6 +348,25 @@ export const captureMessage = (...args: Parameters<typeof sentryCaptureMessage>)
     if (!isLocalhost(self.location.host)) {
         sentryCaptureMessage(...args);
     }
+};
+
+export const getSentryError = (error: any): any => {
+    if (error instanceof ApiError) {
+        const { message, code } = getApiError(error);
+        return message && code >= 400 && code < 500 ? message : null;
+    }
+    if (
+        !error ||
+        error.ignore ||
+        getIsConnectionIssue(error) ||
+        error.message === 'Failed to fetch' ||
+        error.message === 'Load failed' ||
+        error.message === 'Operation aborted' ||
+        error.name === 'AbortError'
+    ) {
+        return;
+    }
+    return error;
 };
 
 export enum SentryMailInitiatives {

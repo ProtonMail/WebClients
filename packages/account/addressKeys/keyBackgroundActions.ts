@@ -1,20 +1,19 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
 import { serverTime, wasServerTimeEverUpdated } from '@proton/crypto';
-import { createKeyMigrationKTVerifier } from '@proton/key-transparency/shared';
 import { createKTVerifier } from '@proton/key-transparency/helpers';
+import { createKeyMigrationKTVerifier } from '@proton/key-transparency/shared';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { CacheType } from '@proton/redux-utilities';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { APPS } from '@proton/shared/lib/constants';
-import { captureMessage, traceError } from '@proton/shared/lib/helpers/sentry';
+import { captureMessage, getSentryError, traceError } from '@proton/shared/lib/helpers/sentry';
 import {
     activateMemberAddressKeys,
     generateAllPrivateMemberKeys,
     getAddressesWithKeysToActivate,
     getAddressesWithKeysToGenerate,
     getHasMigratedAddressKeys,
-    getSentryError,
     hasActiveKeysMismatch,
     migrateMemberAddressKeys,
     migrateUser,
