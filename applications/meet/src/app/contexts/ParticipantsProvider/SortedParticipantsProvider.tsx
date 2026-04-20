@@ -80,12 +80,14 @@ export const SortedParticipantsProvider = ({ children }: { children: React.React
         room.on(RoomEvent.ParticipantDisconnected, handleParticipantDisconnected);
         room.on(RoomEvent.Disconnected, handleDisconnected);
         room.on(RoomEvent.Connected, handleConnected);
+        room.on(RoomEvent.Reconnected, handleConnected);
 
         return () => {
             room.off(RoomEvent.ActiveSpeakersChanged, throttledUpdateSortedParticipants);
             room.off(RoomEvent.ParticipantDisconnected, handleParticipantDisconnected);
             room.off(RoomEvent.Disconnected, handleDisconnected);
             room.off(RoomEvent.Connected, handleConnected);
+            room.off(RoomEvent.Reconnected, handleConnected);
         };
     }, [throttledUpdateSortedParticipants, handleConnected, handleDisconnected, handleParticipantDisconnected, room]);
 
