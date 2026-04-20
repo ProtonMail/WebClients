@@ -58,6 +58,7 @@ import { getPaymentsVersion } from '@proton/payments/core/api/api';
 import type { FullBillingAddressFlat } from '@proton/payments/core/billing-address/billing-address';
 import { getBillingAddressFromPaymentStatus } from '@proton/payments/core/billing-address/billing-address-from-payments-status';
 import { type PaymentsCheckoutUI, getCheckoutUi, getOptimisticCheckResult } from '@proton/payments/core/checkout';
+import { tracePaymentError } from '@proton/payments/sentry/capture';
 import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
 import type {
     EstimationChangeAction,
@@ -75,8 +76,6 @@ import {
     VPN_APP_NAME,
     VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { getSentryError } from '@proton/shared/lib/keys';
 import { generatePassword } from '@proton/shared/lib/password';
 import { getVpnServers } from '@proton/shared/lib/vpn/features';
 import clsx from '@proton/utils/clsx';
@@ -902,9 +901,11 @@ const Step1 = ({
                     });
                 });
 
-                const error = getSentryError(e);
-                if (error) {
-                    const context = {
+                tracePaymentError(e, {
+                    tags: {
+                        component: 'single-signup-v1-Step1',
+                    },
+                    extra: {
                         mode,
                         selectedPlan,
                         selectedPlanName: selectedPlan.Name,
@@ -919,13 +920,8 @@ const Step1 = ({
                         paymentMethodValue: paymentFacade.selectedMethodValue,
                         subscriptionDataType: model.subscriptionData.type,
                         paymentsVersion: getPaymentsVersion(),
-                    };
-
-                    captureMessage('Payments: Failed to handle single-signup-v1', {
-                        level: 'error',
-                        extra: { error, context },
-                    });
-                }
+                    },
+                });
             }
         }
 

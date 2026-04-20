@@ -1,8 +1,8 @@
 import { type ProductParam, getProductHeaders } from '@proton/shared/lib/apps/product';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Api } from '@proton/shared/lib/interfaces';
 
+import { capturePaymentMessage } from '../../sentry/capture';
 import type { PaymentTelemetryContext } from '../../telemetry/helpers';
 import type { PaymentTelemetryPayload } from '../../telemetry/shared-checkout-telemetry';
 import { checkoutTelemetry } from '../../telemetry/telemetry';
@@ -225,21 +225,21 @@ function reportWrongBillingAddress(data: SubscribeData) {
         };
 
         if (!data?.BillingAddress?.CountryCode) {
-            captureMessage('Payments: missing CountryCode in billing address', {
+            capturePaymentMessage('Payments: missing CountryCode in billing address', {
                 level: 'warning',
                 extra,
             });
         }
 
         if (isCountryWithStates(data?.BillingAddress?.CountryCode) && !data?.BillingAddress?.State) {
-            captureMessage('Payments: missing State in billing address', {
+            capturePaymentMessage('Payments: missing State in billing address', {
                 level: 'warning',
                 extra,
             });
         }
 
         if (isCountryWithRequiredPostalCode(data?.BillingAddress?.CountryCode) && !data?.BillingAddress?.ZipCode) {
-            captureMessage('Payments: missing ZipCode in billing address', {
+            capturePaymentMessage('Payments: missing ZipCode in billing address', {
                 level: 'warning',
                 extra,
             });

@@ -51,9 +51,7 @@ import type { ThemeCode } from '@proton/components/payments/client-extensions';
 import type { ChargebeeCardProcessorHook } from '@proton/components/payments/react-extensions/useChargebeeCard';
 import type { ChargebeePaypalProcessorHook } from '@proton/components/payments/react-extensions/useChargebeePaypal';
 import type { ChargebeeDirectDebitProcessorHook } from '@proton/components/payments/react-extensions/useSepaDirectDebit';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { getApiSubdomainUrl } from '@proton/shared/lib/helpers/url';
-import { getSentryError } from '@proton/shared/lib/keys';
 import { ColorScheme } from '@proton/shared/lib/themes/constants';
 
 import {
@@ -69,6 +67,7 @@ import type {
 } from '../../core/interface';
 import type { ApplePayProcessorHook } from '../../core/payment-processors/useApplePay';
 import type { GooglePayProcessorHook } from '../../core/payment-processors/useGooglePay';
+import { capturePaymentMessage } from '../../sentry/capture';
 
 /**
  * Small helper to identify the messages sent to iframe.
@@ -773,18 +772,19 @@ export const useCbIframe = (): CbIframeHandles => {
     };
 
     useEffect(() => {
-        return events.onUnhandledError((e, rawError, messagePayload, checkpoints) => {
-            const error = getSentryError(e);
-            if (error) {
-                const context = {
-                    paymentsVersion: getPaymentsVersion(),
-                };
+        return events.onUnhandledError((error, rawError, messagePayload, checkpoints) => {
+            const context = {
+                paymentsVersion: getPaymentsVersion(),
+            };
 
-                captureMessage('Payments: Unhandled Chargebee error', {
+            capturePaymentMessage(
+                'Payments: Unhandled Chargebee error',
+                {
                     level: 'error',
                     extra: { error, context, rawError, messagePayload, checkpoints },
-                });
-            }
+                },
+                error
+            );
         });
     }, []);
 
@@ -1027,7 +1027,7 @@ export const ChargebeeIframe = ({
     useEffect(() => {
         loadingTimeoutRef.current = setTimeout(() => {
             if (!initialized) {
-                captureMessage('Payments: Chargebee iframe not loaded', {
+                capturePaymentMessage('Payments: Chargebee iframe not loaded', {
                     level: 'error',
                     extra: { type },
                 });

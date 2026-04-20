@@ -20,14 +20,13 @@ import {
     isSubscriptionCheckForbiddenWithReason,
 } from '@proton/payments';
 import { getPaymentsVersion } from '@proton/payments/core/api/api';
+import { tracePaymentError } from '@proton/payments/sentry/capture';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { useBillingAddress } from '@proton/payments/ui/billing-address/hooks/useBillingAddress';
 import { getCheckoutRenewNoticeTextFromCheckResult } from '@proton/payments/ui/components/RenewalNotice';
 import { usePayments } from '@proton/payments/ui/context/PaymentContext';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import { Audience } from '@proton/shared/lib/interfaces';
-import { getSentryError } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
 import { getCodesForSubscription } from '../helpers';
@@ -132,9 +131,11 @@ const SubscriptionCheckoutPaymentSection = ({
                 tokenDidntHaveEmail = true;
             }
 
-            const error = getSentryError(e);
-            if (error) {
-                const context = {
+            tracePaymentError(e, {
+                tags: {
+                    component: 'account-lite-subscription-checkout-payment-section',
+                },
+                extra: {
                     app: appName,
                     step: SUBSCRIPTION_STEPS.CHECKOUT,
                     cycle: cycle,
@@ -148,12 +149,8 @@ const SubscriptionCheckoutPaymentSection = ({
                     paymentMethodValue: paymentFacade.selectedMethodValue,
                     paymentsVersion: getPaymentsVersion(),
                     tokenDidntHaveEmail,
-                };
-                captureMessage('Payments: failed to handle subscription (Account Lite)', {
-                    level: 'error',
-                    extra: { error, context },
-                });
-            }
+                },
+            });
         }
     };
 

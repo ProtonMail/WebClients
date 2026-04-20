@@ -17,11 +17,10 @@ import {
 } from '@proton/payments';
 import { getPaymentsVersion } from '@proton/payments/core/api/api';
 import { getBillingAddressFromPaymentStatus } from '@proton/payments/core/billing-address/billing-address-from-payments-status';
+import { tracePaymentError } from '@proton/payments/sentry/capture';
 import { PayButton, usePaymentOptimistic } from '@proton/payments/ui';
 import { useBillingAddress } from '@proton/payments/ui/billing-address/hooks/useBillingAddress';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
-import { getSentryError } from '@proton/shared/lib/keys';
 import noop from '@proton/utils/noop';
 
 import { useSignup } from '../../../context/SignupContext';
@@ -105,9 +104,11 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
             try {
                 await processor.processPaymentToken();
             } catch (error) {
-                const sentryError = getSentryError(error);
-                if (sentryError) {
-                    const context = {
+                tracePaymentError(error, {
+                    tags: {
+                        component: 'referral-ctx-PaymentStep',
+                    },
+                    extra: {
                         currency: payments.options.currency,
                         amount: payments.checkResult.AmountDue,
                         processorType: processor.meta.type,
@@ -117,13 +118,8 @@ const PaymentStep = ({ onPaymentTokenProcessed, onBack }: Props) => {
                         plan: payments.selectedPlan,
                         planName: payments.selectedPlan.getPlanName(),
                         paymentsVersion: getPaymentsVersion(),
-                    };
-
-                    captureMessage(`Payments: Failed to handle ${signup.flowId}`, {
-                        level: 'error',
-                        extra: { error: sentryError, context },
-                    });
-                }
+                    },
+                });
             }
         }
 
