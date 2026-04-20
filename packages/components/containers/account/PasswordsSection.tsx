@@ -150,7 +150,8 @@ const PasswordsSection = () => {
                     availableRecoveryMethods={availableRecoveryMethods}
                     onBack={() => {
                         recoveryModal.onClose();
-                        setChangePasswordModalOpen(true);
+                        // On back, this should open the change password modal in the expected mode
+                        handleChangePassword(changePasswordMode);
                     }}
                     onInitiateSessionRecoveryClick={() => {
                         recoveryModal.onClose();
@@ -162,7 +163,15 @@ const PasswordsSection = () => {
             )}
             {renderChangePasswordAfterReauthModal && (
                 <ChangePasswordModal
-                    mode={MODES.CHANGE_ONE_PASSWORD_MODE}
+                    mode={
+                        // If the user has the two password option mode available (has user keys)
+                        // we force the user to change password in one password mode.
+                        hasTwoPasswordOption
+                            ? MODES.CHANGE_ONE_PASSWORD_MODE
+                            : // Otherwise, if the user does not have two password mode available,
+                              // we change it in the expected mode (login password)
+                              changePasswordMode
+                    }
                     signedInRecoveryFlow
                     {...changePasswordAfterReauthModal}
                 />
