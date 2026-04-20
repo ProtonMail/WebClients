@@ -25,11 +25,7 @@ export const ConfirmMnemonicPhraseRecovery = () => {
 
     return (
         <>
-            <Header
-                title={c('Title').t`Reset password?`}
-                subTitle={<UserNameWithIcon username={username} />}
-                onBack={() => send({ type: 'decision.back' })}
-            />
+            <Header title={c('Title').t`Reset password?`} subTitle={<UserNameWithIcon username={username} />} />
             <Content>
                 <div className="mb-4">
                     {c('Info').t`You can now reset your password to regain access to your account.`}{' '}
