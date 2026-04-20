@@ -6,10 +6,11 @@ import { useThumbnail } from '@proton/drive/modules/thumbnails';
 import { GridItemContent } from '../../../statelessComponents/DriveExplorer/cells/gridComponents/GridItemContent';
 import { GridItemName } from '../../../statelessComponents/DriveExplorer/cells/gridComponents/GridItemName';
 import type { CellDefinition, GridDefinition } from '../../../statelessComponents/DriveExplorer/types';
+import { DateCell } from '../../commonDriveExplorerCells/DateCell';
 import { LocationCell, defaultLocationCellConfig } from '../../commonDriveExplorerCells/LocationCell';
-import { ModifiedCell, defaultModifiedCellConfig } from '../../commonDriveExplorerCells/ModifiedCell';
 import { NameCell, defaultNameCellConfig } from '../../commonDriveExplorerCells/NameCell';
 import { SizeCell, defaultSizeCellConfig } from '../../commonDriveExplorerCells/SizeCell';
+import { defaultModifiedTimeCellConfig } from '../../commonDriveExplorerCells/modifiedTimeCellConfig';
 import { useSearchViewStore } from './store';
 
 export const getCellDefinitions = ({
@@ -57,7 +58,7 @@ export const getCellDefinitions = ({
         },
     },
     {
-        ...defaultModifiedCellConfig,
+        ...defaultModifiedTimeCellConfig,
         render: (uid) => {
             const ModifiedCellComponent = () => {
                 const item = useSearchViewStore(useShallow((state) => state.getSearchResultItem(uid)));
@@ -65,7 +66,7 @@ export const getCellDefinitions = ({
                     return null;
                 }
 
-                return <ModifiedCell modifiedTime={item.modificationTime} />;
+                return <DateCell date={item.modificationTime} />;
             };
             return <ModifiedCellComponent />;
         },
