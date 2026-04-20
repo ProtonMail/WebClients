@@ -18,19 +18,23 @@ import { displayGroupedNotification, displayNotification } from './notificationH
 
 const MAX_WINDOWS_NOTIFICATIONS = 3;
 
-const messageFilter = (event: MessageEvent, notifier: string[], categoryViewAccess: boolean): boolean => {
+export const messageFilter = (event: MessageEvent, notifier: string[]): boolean => {
     const { Action, Message } = event;
 
-    const messageHasInboxLabel = Message?.LabelIDs.includes(MAILBOX_LABEL_IDS.INBOX);
-    const areNotifationsEnabledForlabel = !!(messageHasInboxLabel && categoryViewAccess
-        ? Message?.LabelIDs.filter(isCategoryLabel).some((labelID) => notifier.includes(labelID))
-        : Message?.LabelIDs.some((labelID) => notifier.includes(labelID)));
+    const isMessageInInbox = Message?.LabelIDs.includes(MAILBOX_LABEL_IDS.INBOX);
+    const areNotificationsEnabledForLabel = !!Message?.LabelIDs.some((labelID) => {
+        if (isCategoryLabel(labelID)) {
+            return isMessageInInbox && notifier.includes(labelID);
+        } else {
+            return notifier.includes(labelID);
+        }
+    });
 
     return (
         !isImported(Message) &&
         Action === EVENT_ACTIONS.CREATE &&
         Message?.Unread === 1 &&
-        areNotifationsEnabledForlabel
+        areNotificationsEnabledForLabel
     );
 };
 
@@ -49,13 +53,11 @@ const useNewEmailNotification = (onOpenElement: () => void) => {
     const [folders = []] = useFolders();
     const { categoryViewAccess, activeCategoriesTabs } = useCategoriesData();
 
-    const notifier = [
-        MAILBOX_LABEL_IDS.INBOX,
-        MAILBOX_LABEL_IDS.STARRED,
-        ...folders.filter(({ Notify }) => Notify).map(({ ID }) => ID),
-    ];
+    const notifier = [MAILBOX_LABEL_IDS.STARRED, ...folders.filter(({ Notify }) => Notify).map(({ ID }) => ID)];
 
-    if (categoryViewAccess) {
+    if (!categoryViewAccess) {
+        notifier.push(MAILBOX_LABEL_IDS.INBOX);
+    } else {
         activeCategoriesTabs
             .filter((category) => category.notify)
             .forEach((category) => {
@@ -65,13 +67,11 @@ const useNewEmailNotification = (onOpenElement: () => void) => {
 
     // Regular messages notification
     useSubscribeEventManager(({ Messages = [] }: Event) => {
-        const notificationsToShow = Messages.filter((event) => messageFilter(event, notifier, categoryViewAccess)).map(
-            ({ Message }) => {
-                if (Message) {
-                    return Message;
-                }
+        const notificationsToShow = Messages.filter((event) => messageFilter(event, notifier)).map(({ Message }) => {
+            if (Message) {
+                return Message;
             }
-        ) as Message[];
+        }) as Message[];
 
         if (isWindows() && notificationsToShow.length > MAX_WINDOWS_NOTIFICATIONS) {
             void displayGroupedNotification({
