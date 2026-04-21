@@ -1205,6 +1205,15 @@
       "Something went wrong. Please sign in again.": [
         "Er is iets fout gegaan. Log opnieuw in."
       ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "De desktop-app van ${ PASS_APP_NAME } is vergrendeld, deze moet ontgrendeld worden."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "De desktop-app van ${ PASS_APP_NAME } is niet geïnstalleerd."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "De desktop-app van ${ PASS_APP_NAME } reageert niet, draait deze wel?"
+      ],
       "The session has expired. Please sign in again.": [
         "De sessie is verlopen. Log opnieuw in."
       ],
@@ -1228,6 +1237,9 @@
       ],
       "Unknown error": [
         "Onbekende fout"
+      ],
+      "Unknown error.": [
+        "Onbekende fout."
       ],
       "Unknown invite": [
         "Onbekende uitnodiging"

@@ -1215,6 +1215,15 @@
       "Something went wrong. Please sign in again.": [
         "Нешта пайшло не так. Увайдзіце яшчэ раз."
       ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "Праграма для камп'ютара для ${ PASS_APP_NAME } заблакіравана. Яе неабходна разблакіраваць."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "Праграма для камп'ютара ${ PASS_APP_NAME } не ўсталявана."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "Праграма для камп'ютара ${ PASS_APP_NAME } не адказвае. Пераканайцеся, што яна запушчана."
+      ],
       "The session has expired. Please sign in again.": [
         "Час сеансу пратэрмінаваны. Увайдзіце яшчэ раз."
       ],
@@ -1238,6 +1247,9 @@
       ],
       "Unknown error": [
         "Невядомая памылка"
+      ],
+      "Unknown error.": [
+        "Невядомая памылка."
       ],
       "Unknown invite": [
         "Невядомае запрашэнне"

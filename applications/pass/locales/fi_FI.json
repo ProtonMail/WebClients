@@ -1149,6 +1149,15 @@
       "Something went wrong. Please sign in again.": [
         "Jotain meni pieleen. Kirjaudu sisään uudelleen."
       ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "${ PASS_APP_NAME } -työpöytäsovellus on lukittu; se on avattava."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "${ PASS_APP_NAME } -työpöytäsovellusta ei ole asennettu."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "${ PASS_APP_NAME } -työpöytäsovellus ei vastaa, onko se käynnissä?"
+      ],
       "The session has expired. Please sign in again.": [
         "Istunto on erääntynyt. Kirjaudu sisään uudelleen."
       ],
@@ -1172,6 +1181,9 @@
       ],
       "Unknown error": [
         "Tuntematon virhe"
+      ],
+      "Unknown error.": [
+        "Tuntematon virhe."
       ],
       "Unknown invite": [
         "Tuntematon kutsu"
