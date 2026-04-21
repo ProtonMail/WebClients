@@ -5,6 +5,7 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Loader, useApi } from '@proton/components/index';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { telemetry } from '@proton/shared/lib/telemetry';
 
 import { isB2BAdmin } from '../../../functions/isB2BAdmin';
 import { TvSignInCompleted } from '../components/TvSignInCompleted';
@@ -12,6 +13,7 @@ import { TvSignInFailed } from '../components/TvSignInFailed';
 import type { FetchErrors } from '../types';
 import { forkSession } from '../utils/forkSession';
 import { getChildClientId } from '../utils/getChildClientId';
+import { getUserTier } from '../utils/getUserTier';
 
 enum ForkSessionStep {
     FETCHING_CODE,
@@ -38,7 +40,9 @@ export const TvContainerSignedIn = ({ code }: { code: string }) => {
             return;
         }
         if (code) {
-            forkSession(api, childClientId, code)
+            const tier = getUserTier(user);
+            telemetry.sendCustomEvent('tv_auth_initiated', { userTierAtInitiation: tier });
+            forkSession({ api, childClientId, code, payload: JSON.stringify({ InitialUserTier: tier }) })
                 .then(() => setStep(ForkSessionStep.DEVICE_CONNECTED))
                 .catch((error) => {
                     const { code } = getApiError(error);
