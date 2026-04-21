@@ -196,6 +196,9 @@
       "Carbon Copy": [
         "Kopie"
       ],
+      "Change password": [
+        "Passwort ändern"
+      ],
       "Change sorting": [
         "Reihenfolge ändern"
       ],
@@ -1499,8 +1502,7 @@
         "Vertrauen"
       ],
       "Trust key": [
-        "Schlüssel vertrauen",
-        "Schlüsseln vertrauen"
+        "Schlüssel vertrauen"
       ],
       "Trust public key": [
         "Öffentlichem Schlüssel vertrauen"
@@ -4761,6 +4763,9 @@
       "Failed to encrypt attachment. Please try again.": [
         "Der Anhang konnte nicht verschlüsselt werden. Bitte versuche es erneut."
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Abonnementsdaten konnten nicht geladen werden. Bitte versuche es später nochmals."
+      ],
       "Failed to load the STL preview": [
         "Das Laden der STL-Vorschau ist fehlgeschlagen"
       ],
@@ -7553,7 +7558,8 @@
         "Wird initialisiert…"
       ],
       "Insert image": [
-        "Bild einfügen"
+        "Bild einfügen",
+        "Bilder einfügen"
       ],
       "Insert link": [
         "Link einfügen"
@@ -11070,8 +11076,8 @@
       "Data retention policies": [
         "Aufbewahrungsrichtlinien für Daten"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Für Streaming optimierte dedizierte Server"
+      "Dedicated servers optimized for speed": [
+        "Dedizierte Server, optimiert für hohe Geschwindigkeit"
       ],
       "Desktop app": [
         "Desktop-App"
@@ -12363,6 +12369,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Während dieser Zeit kannst du dein Abonnement nicht ändern oder kündigen. Bitte warte, bis deine Zahlung abgeschlossen ist, bevor du versuchst, Änderungen vorzunehmen. Wir danken dir für deine Geduld."
       ],
+      "Edit billing address": [
+        "Rechnungsadresse bearbeiten"
+      ],
       "Got it": [
         "Verstanden"
       ],
@@ -13369,9 +13378,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Kontowiederherstellung für ältere Adressschlüssel ist nicht verfügbar"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Bitte generiere Schlüssel, bevor du versuchst dein Passwort zu ändern."
       ]
     },
     "session_recovery:available:info": {
@@ -15005,6 +15011,9 @@
       ],
       "Account security": [
         "Kontosicherheit"
+      ],
+      "Account temporarily locked": [
+        "Konto vorübergehend gesperrt"
       ],
       "Action all conversations": [
         "Auf alle Unterhaltungen anwenden"
