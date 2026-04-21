@@ -6,6 +6,7 @@ import { createSearchModuleStateUpdateChannel } from '../shared/searchModuleStat
 import type { ClientId, SearchQuery, UserId, WorkerSearchResultEvent } from '../shared/types';
 import type { ClientContext } from './ClientCoordinator';
 import { ClientCoordinator } from './ClientCoordinator';
+import { SearchIndexKeyManager } from './SearchIndexKeyManager';
 import { IndexRegistry } from './index/IndexRegistry';
 import type { IndexerState } from './indexer/IndexerTaskQueue';
 import { DEFAULT_INDEXER_STATE, IndexerTaskQueue } from './indexer/IndexerTaskQueue';
@@ -18,7 +19,7 @@ import { SearchQueryExecutor } from './searcher/SearchQueryExecutor';
  */
 export class SharedWorkerAPI {
     private clientsCoordinator = new ClientCoordinator();
-    private readonly indexRegistry = new IndexRegistry();
+    private indexRegistry: IndexRegistry | null = null;
     private db: SearchDB | null = null;
     private indexer: IndexerTaskQueue | null = null;
     private searcher: SearchQueryExecutor | null = null;
@@ -59,7 +60,7 @@ export class SharedWorkerAPI {
         this.indexer = null;
         this.searcher = null;
 
-        this.indexRegistry.disposeAll();
+        this.indexRegistry?.disposeAll();
 
         if (this.db) {
             await this.db.clear();
@@ -102,29 +103,46 @@ export class SharedWorkerAPI {
         if (newClientContext) {
             void this.onClientAvailable(newClientContext);
         } else {
-            this.indexer?.stop();
-            this.indexer = null;
-            this.searcher = null;
+            this.disposeInternals();
         }
     }
 
-    private async onClientAvailable(clientContext: ClientContext): Promise<void> {
-        Logger.info(`SharedWorkerAPI: onClientAvailable <${clientContext.clientId}>`);
-        // Stop existing indexer if running — bridge changed (tab swap).
-        if (this.indexer) {
-            this.indexer.stop();
-            this.indexer = null;
-            this.searcher = null;
+    private disposeInternals() {
+        this.indexer?.stop();
+        this.indexer = null;
+        this.searcher = null;
+        this.stateChannel?.close();
+        this.stateChannel = null;
+        this.indexRegistry?.disposeAll();
+        this.indexRegistry = null;
+    }
+
+    /**
+     * Lazily creates the IndexRegistry, resolving the crypto key on first call.
+     */
+    private async getRegistry(db: SearchDB, bridge: MainThreadBridge): Promise<IndexRegistry> {
+        if (this.indexRegistry) {
+            return this.indexRegistry;
         }
+
+        const { cryptoKey } = await SearchIndexKeyManager.getOrCreateKey(db, bridge);
+
+        this.indexRegistry = new IndexRegistry(cryptoKey);
+        return this.indexRegistry;
+    }
+
+    private async onClientAvailable(clientContext: ClientContext): Promise<void> {
+        this.disposeInternals();
 
         try {
             const db = await this.getDb(clientContext.userId);
+            const indexRegistry = await this.getRegistry(db, clientContext.bridge);
 
             const treeSubscriptionRegistry = await TreeSubscriptionRegistry.create(clientContext.bridge, db);
-            this.searcher = new SearchQueryExecutor(this.indexRegistry, db);
+            this.searcher = new SearchQueryExecutor(indexRegistry, db);
             this.indexer = new IndexerTaskQueue(
                 clientContext.userId,
-                this.indexRegistry,
+                indexRegistry,
                 clientContext.bridge,
                 db,
                 treeSubscriptionRegistry
