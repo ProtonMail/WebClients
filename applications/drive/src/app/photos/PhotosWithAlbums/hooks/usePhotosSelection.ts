@@ -4,6 +4,7 @@ import { useShallow } from 'zustand/react/shallow';
 
 import { AlbumsPageTypes, usePhotoLayoutStore } from '../../../zustand/photos/layout.store';
 import { usePhotoSelectionStore } from '../../../zustand/photos/selection.store';
+import type { PhotoItem } from '../../usePhotos.store';
 import type { PhotosLayoutOutletContext } from '../layout/PhotosLayout';
 
 type HandleSelectionArgs = {
@@ -39,7 +40,7 @@ export const usePhotosSelection = ({
 
     const { setSelected, clearSelection, isGroupSelected, isItemSelected, getSelectedItems } = usePhotoSelectionStore();
 
-    const selectedItems = getSelectedItems(data, map);
+    const selectedItems = getSelectedItems<PhotoItem>(data, map);
 
     const handleSelection = useCallback(
         (index: number, args: HandleSelectionArgs) => {
