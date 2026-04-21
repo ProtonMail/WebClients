@@ -6,21 +6,19 @@ import { getPrimaryPublicKeyForEmail } from '@proton/pass/lib/auth/address';
 import { createNewUserInvites, createUserInvites } from '@proton/pass/lib/invites/invite.requests';
 import type { InviteBatchResult } from '@proton/pass/lib/invites/invite.utils';
 import { concatInviteResults } from '@proton/pass/lib/invites/invite.utils';
-import {
-    inviteBatchCreateFailure,
-    inviteBatchCreateIntent,
-    inviteBatchCreateSuccess,
-} from '@proton/pass/store/actions';
+import { createTelemetryEvent } from '@proton/pass/lib/telemetry/utils';
+import { inviteBatchCreateFailure, inviteBatchCreateIntent, inviteBatchCreateSuccess } from '@proton/pass/store/actions';
 import { syncAccess } from '@proton/pass/store/actions/creators/polling';
-import { selectAccessMembers, selectPassPlan } from '@proton/pass/store/selectors';
+import { selectAccessMembers, selectItem, selectPassPlan } from '@proton/pass/store/selectors';
 import type { RootSagaOptions } from '@proton/pass/store/types';
-import type { Maybe } from '@proton/pass/types';
+import type { ItemRevision, Maybe } from '@proton/pass/types';
 import { UserPassPlan } from '@proton/pass/types/api/plan';
 import type { InviteMemberDTO, InviteUserDTO } from '@proton/pass/types/data/invites.dto';
+import { TelemetryEventName, TelemetryItemType, TelemetryTargetType } from '@proton/pass/types/data/telemetry';
 import { partition } from '@proton/pass/utils/array/partition';
 
 function* createInviteWorker(
-    { onNotification }: RootSagaOptions,
+    { onNotification, getTelemetry }: RootSagaOptions,
     { payload, meta: { request } }: ReturnType<typeof inviteBatchCreateIntent>
 ) {
     const count = payload.members.length;
@@ -74,6 +72,13 @@ function* createInviteWorker(
 
         yield put(inviteBatchCreateSuccess(request.id, { shareId, itemId, count: invitesCount }));
         yield put(syncAccess(payload));
+
+        const telemetry = getTelemetry();
+        const item: Maybe<ItemRevision> = itemId ? yield select(selectItem(shareId, itemId)) : undefined;
+        const dimensions = item
+            ? { type: TelemetryTargetType.item as const, itemType: TelemetryItemType[item.data.type], extensionBrowser: BUILD_TARGET }
+            : { type: TelemetryTargetType.vault as const, extensionBrowser: BUILD_TARGET };
+        void telemetry?.push(createTelemetryEvent(TelemetryEventName.PassInviteCreate, {}, dimensions));
     } catch (error: unknown) {
         yield put(inviteBatchCreateFailure(request.id, error, count));
     }
