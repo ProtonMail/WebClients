@@ -40,7 +40,7 @@ export const TVContainer = () => {
 
         try {
             setError('');
-            await forkSession(api, childClientId, code);
+            await forkSession({ api, childClientId, code });
             setStep(STEP.DEVICE_CONNECTED);
         } catch (error: any) {
             const { data: { Error = '' } = {} } = error;
