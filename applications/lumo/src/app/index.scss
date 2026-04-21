@@ -60,14 +60,6 @@ im.$media-expressions: $media-expressions;
 	}
 }
 
-.lumo-gradient-text {
-	font-family: Syne, Inter, system-ui, sans-serif;
-	color: #8b7cf6; /* Fallback color */
-	background: linear-gradient(135deg, #ffac2e 15.77%, #dd5dcc 38.4%, #1ba3fd 75.93%, #5325a2 99.84%);
-	background-clip: text;
-	-webkit-text-fill-color: transparent;
-}
-
 .sidebar {
 	background-color: var(--background-weak);
 
@@ -164,28 +156,6 @@ im.$media-expressions: $media-expressions;
 		backdrop-filter 0.3s ease-in-out;
 }
 
-// Smooth content transitions in sidebar
-.sidebar-content {
-	// Use hardware acceleration for content transitions
-	will-change: opacity;
-	backface-visibility: hidden;
-	transform: translateZ(0);
-
-	// Prevent layout thrashing during transitions
-	contain: layout style paint;
-
-	// Smooth content fade-in
-	transition: opacity 0.15s ease-in-out;
-
-	&.is-loading {
-		opacity: 0.9;
-	}
-
-	&.is-loaded {
-		opacity: 1;
-	}
-}
-
 .navigation-link.is-active {
 	color: var(--text-norm) !important;
 
@@ -233,10 +203,6 @@ im.$media-expressions: $media-expressions;
 	background-color: #ffffff0d;
 }
 
-.circle-chart-circle {
-	stroke: var(--primary);
-}
-
 .composer {
 	outline: none;
 	border: none;
@@ -255,14 +221,6 @@ im.$media-expressions: $media-expressions;
 	opacity: 0.8;
 }
 
-.timeline-unpinned {
-	background-color: #c5b7ff26;
-}
-
-.timeline-bar {
-	background-color: var(--border-norm);
-}
-
 .message-chain .assistant-msg:last-child {
 	margin-block-end: 0;
 }
@@ -273,14 +231,6 @@ im.$media-expressions: $media-expressions;
 
 #icons-root {
 	display: none;
-}
-
-.link-over-btn {
-	&:hover {
-		color: var(--primary-hover);
-	}
-
-	cursor: pointer;
 }
 
 @media print {
@@ -342,10 +292,6 @@ im.$media-expressions: $media-expressions;
 .new-label {
 	background-color: #8080ff;
 	color: white;
-}
-
-.no-border {
-	border: none !important;
 }
 
 .apps-dropdown-button,
