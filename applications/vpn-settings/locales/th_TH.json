@@ -449,6 +449,9 @@
       "Fit to window": [
         "พอดีกับหน้าต่าง"
       ],
+      "Forgot password?": [
+        "ลืมรหัสผ่าน?"
+      ],
       "Forgot recovery method?": [
         "ลืมวิธีการกู้คืน?"
       ],
@@ -3988,9 +3991,6 @@
       "Please fix the highlighted conflict to proceed.": [
         "โปรดแก้ไขข้อขัดแย้งตรงที่ไฮไลต์ไว้เพื่อที่จะดำเนินการต่อไป"
       ],
-      "Please generate keys before you try to change your password": [
-        "โปรดสร้างคีย์ก่อนที่คุณจะลองเปลี่ยนรหัสผ่านของคุณ"
-      ],
       "Please select a country": [
         "โปรดเลือกประเทศ"
       ],
@@ -6265,6 +6265,12 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "ป้อนที่อยู่อีเมลหรือชื่อผู้ใช้บัญชี ${ BRAND_NAME } ของคุณ"
+      ],
+      "Enter your own password (as organization admin).": [
+        "ป้อนรหัสผ่านของคุณเอง (ในฐานะผู้ดูแลระบบองค์กร)"
+      ],
+      "Enter your own password (as trusted contact).": [
+        "ป้อนรหัสผ่านของคุณเอง (ในฐานะผู้ติดต่อที่เชื่อถือได้)"
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "โปรดป้อนที่อยู่อีเมลที่ใช้กู้คืนบัญชีแล้วเราจะส่งชื่อผู้ใช้งานหรือที่อยู่อีเมลไปให้คุณ"
@@ -8819,6 +8825,12 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "ใช่ ฉันต้องการลบบัญชีนี้และข้อมูลที่เกี่ยวข้องทั้งหมดแบบถาวร"
       ],
+      "Your password (admin)": [
+        "รหัสผ่านของคุณ (สำหรับผู้บริหารบัญชี หรือ admin)"
+      ],
+      "Your password (trusted contact)": [
+        "รหัสผ่านของคุณ (ผู้ติดต่อที่เชื่อถือได้)"
+      ],
       "ZIP code": [
         "รหัสไปรษณีย์"
       ]
@@ -8949,9 +8961,6 @@
       ],
       "clearing your browser cache": [
         "กำลังล้างแคชในเบราว์เซอร์ของคุณ"
-      ],
-      "Common sign in issues": [
-        "ปัญหาในการลงชื่อเข้าใช้ที่พบบ่อย"
       ],
       "Common sign up issues": [
         "ปัญหาในการสมัครบัญชีที่พบบ่อย"
@@ -9720,9 +9729,6 @@
       ],
       "Dedicated servers and IP": [
         "เซิร์ฟเวอร์และ IP เฉพาะ"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "เซิร์ฟเวอร์เฉพาะที่ปรับให้เหมาะสมสำหรับการสตรีม"
       ],
       "Desktop app": [
         "แอปเดสก์ท็อป"
@@ -12382,9 +12388,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "การกู้คืนบัญชีไม่สามารถใช้ได้กับคีย์ที่อยู่รุ่นเก่า"
-      ],
-      "Please generate keys before you try to change your password": [
-        "โปรดสร้างคีย์ก่อนที่คุณจะลองเปลี่ยนรหัสผ่านของคุณ"
       ]
     },
     "session_recovery:available:info": {
@@ -13092,6 +13095,9 @@
       "Share the confirmation code with your administrator": [
         "แชร์รหัสยืนยันกับผู้ดูแลระบบ"
       ],
+      "Sign in": [
+        "เข้าสู่ระบบ"
+      ],
       "Sign in to your organization": [
         "ลงชื่อเข้าใช้องค์กร"
       ],
@@ -13151,6 +13157,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "จะต้องสร้างผู้ใช้ใหม่ด้วยตนเองเพื่อเพิ่มลงในองค์กร"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "คุณจะถูกเปลี่ยนเส้นทางไปยังผู้ให้บริการ SSO บุคคลที่สามของคุณ"
       ],
       "Your SSO configuration will be deleted.": [
         "การกำหนดค่า SSO จะถูกลบ"
@@ -14164,14 +14173,8 @@
       "Account recovery": [
         "กู้บัญชี"
       ],
-      "Account restricted": [
-        "บัญชีถูกจำกัด"
-      ],
       "Account suspended": [
         "บัญชีถูกระงับแล้ว"
-      ],
-      "Account temporarily locked": [
-        "บัญชีถูกล็อกชั่วคราว"
       ],
       "Action": [
         "การดำเนินการ"
@@ -14592,6 +14595,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "ป้อนรายละเอียดบัญชี ${ BRAND_NAME } ของคุณเพื่อเข้าร่วมโปรแกรม ${ app } เบต้า"
+      ],
+      "Enter your password": [
+        "ป้อนรหัสผ่าน"
       ],
       "Error": [
         "ข้อผิดพลาด"

@@ -426,6 +426,9 @@
       "Fit to window": [
         "Prilagodi oknu"
       ],
+      "Forgot password?": [
+        "Pozabljeno geslo?"
+      ],
       "Forgot recovery method?": [
         "Ste pozabili način obnovitve?"
       ],
@@ -3856,9 +3859,6 @@
         "Pred nadaljevanjem razrešite označene spore.",
         "Pred nadaljevanjem razrešite označene spore."
       ],
-      "Please generate keys before you try to change your password": [
-        "Preden poskusite spremeniti geslo, ustvarite ključe."
-      ],
       "Please select a country": [
         "Izberite državo."
       ],
@@ -6121,6 +6121,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Vnesi svoj e-poštni naslov ali uporabniško ime ${ BRAND_NAME } računa."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Vpišite vaše lastno geslo (kot skrbnik organizacije)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Vnesite svoj naslov za obnovitev računa in poslali vam bomo vaše uporabniško ime ali naslov e-pošte."
@@ -8478,6 +8481,9 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Da, želim trajno izbrisati ta račun in vse njegove podatke."
       ],
+      "Your password (admin)": [
+        "Vaše geslo (admin)"
+      ],
       "ZIP code": [
         "Poštna številka"
       ]
@@ -8603,9 +8609,6 @@
       ],
       "clearing your browser cache": [
         "izpraznitev predpomnilnika brskalnika"
-      ],
-      "Common sign in issues": [
-        "Pogoste težave pri vpisu"
       ],
       "Common sign up issues": [
         "Pogoste težave pri ustvarjanju računa."
@@ -9396,9 +9399,6 @@
       ],
       "Dedicated servers and IP": [
         "Namenski strežniki in IP"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "Namenski strežniki, optimirani za pretakanje"
       ],
       "Desktop app": [
         "Namizna aplikacija"
@@ -11714,9 +11714,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Obnovitev računa ni na voljo za podedovane naslovne ključe"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Preden poskusite spremeniti geslo, ustvarite ključe."
       ]
     },
     "session_recovery:available:info": {
@@ -12433,6 +12430,9 @@
       "Share the confirmation code with your administrator": [
         "Delite potrditveno kodo z vašim skrbnikom"
       ],
+      "Sign in": [
+        "Prijava"
+      ],
       "Sign in to your organization": [
         "Prijavite se v svojo organizacijo"
       ],
@@ -12468,6 +12468,9 @@
       ],
       "Yes, it was me": [
         "Da, bil sem jaz."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Preusmerjeni boste k ponudniku SSO tretje osebe."
       ]
     },
     "sso: auth device state": {
@@ -13487,14 +13490,8 @@
       "Account recovery": [
         "Obnovitev računa"
       ],
-      "Account restricted": [
-        "Račun je omejen"
-      ],
       "Account suspended": [
         "Račun je suspendiran"
-      ],
-      "Account temporarily locked": [
-        "Račun je začasno zaklenjen"
       ],
       "Action": [
         "Dejanje"
@@ -13888,6 +13885,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Vpišite podrobnosti vašega računa ${ BRAND_NAME } za vključitev v beta preizkuševalni program za ${ app }."
+      ],
+      "Enter your password": [
+        "Vnesite svoje geslo"
       ],
       "Error": [
         "Napaka"

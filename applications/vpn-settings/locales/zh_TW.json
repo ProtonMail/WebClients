@@ -437,6 +437,9 @@
       "Fit to window": [
         "貼齊視窗邊沿"
       ],
+      "Forgot password?": [
+        "忘記密碼?"
+      ],
       "Forgot recovery method?": [
         "忘記復原方法?"
       ],
@@ -2989,6 +2992,9 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "透過共享行事曆以簡化同步和排程"
       ],
+      "To connect a different Gmail address, remove extra Gmail addresses forwarding to ${ BRAND_NAME }.": [
+        "若要連線至不同的 Gmail 位址、移除額外的 轉寄至 ${ BRAND_NAME } 的Gmail 位址。"
+      ],
       "To connect up to ${ MAX_SYNC_PAID_USER } Gmail address, upgrade to ${ planName }.": [
         "若連接至多 ${ MAX_SYNC_PAID_USER } Gmail 位址,升級至 ${ planName } 方案。"
       ],
@@ -3643,9 +3649,6 @@
       ],
       "Please fix the highlighted conflict to proceed.": [
         "請先修正已標示的衝突以便繼續。"
-      ],
-      "Please generate keys before you try to change your password": [
-        "請在您試著改變您的密碼前生成金鑰"
       ],
       "Please select a country": [
         "請選擇一個國家"
@@ -5762,6 +5765,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "輸入您的 ${ BRAND_NAME } 帳號電郵位址或使用者名稱。"
+      ],
+      "Enter your own password (as organization admin).": [
+        "輸入您的個人密碼 (組織機構管理員身份)。"
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "請輸入您的復原電郵位址，我們將向您發送您的使用者名稱或電郵位址。"
@@ -8092,6 +8098,12 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "是的，我要永久刪除此帳號以及當中所有的資料。"
       ],
+      "Your password (admin)": [
+        "您的密碼（管理員）"
+      ],
+      "Your password (trusted contact)": [
+        "您的密碼 (信任的內容)"
+      ],
       "ZIP code": [
         "郵遞區號"
       ]
@@ -8212,9 +8224,6 @@
       ],
       "clearing your browser cache": [
         "清除瀏覽器快取"
-      ],
-      "Common sign in issues": [
-        "常見登入問題"
       ],
       "Common sign up issues": [
         "常見註冊問題"
@@ -8873,6 +8882,9 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "全部基於${ BRAND_NAME }的服務(${ MAIL_SHORT_APP_NAME },${ VPN_SHORT_APP_NAME },${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "預定排定中"
+      ],
       "Auto-delete Spam and Trash": [
         "自動清理垃圾郵件及垃圾桶"
       ],
@@ -8932,9 +8944,6 @@
       ],
       "Dedicated servers and IP": [
         "獨立的伺服器及 IP"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "針對影音串流優化的獨立伺服器"
       ],
       "Desktop app": [
         "桌面應用程式"
@@ -11263,9 +11272,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "帳號復原不適用於舊版位址密鑰組"
-      ],
-      "Please generate keys before you try to change your password": [
-        "請在您試著改變您的密碼前生成金鑰"
       ]
     },
     "session_recovery:available:info": {
@@ -11946,6 +11952,9 @@
       "Share the confirmation code with your administrator": [
         "與您的管理員分享確認碼"
       ],
+      "Sign in": [
+        "登入"
+      ],
       "Sign in to your organization": [
         "登入您的組織"
       ],
@@ -11990,6 +11999,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "您將需要手動建立新使用者以便重新加入至您的組織中。"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "您將被重新導向至您的第三方單一登入提供者。"
       ],
       "Your SSO configuration will be deleted.": [
         "您的單一登入配置將被刪除。"
@@ -12944,9 +12956,6 @@
       "Account recovery": [
         "帳號救援"
       ],
-      "Account restricted": [
-        "帳號已受限制"
-      ],
       "Account suspended": [
         "帳號已被停用"
       ],
@@ -13343,6 +13352,9 @@
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "輸入您的 ${ BRAND_NAME } 帳號詳細資訊以加入 ${ app } 體驗版方案"
       ],
+      "Enter your password": [
+        "輸入您的密碼"
+      ],
       "Error": [
         "錯誤"
       ],
@@ -13624,6 +13636,9 @@
       ],
       "Restore administrator privileges": [
         "恢復系統管理員權限"
+      ],
+      "Reverse charge not supported": [
+        "不支援倒退修改"
       ],
       "SAML authentication": [
         "SAML 驗證"

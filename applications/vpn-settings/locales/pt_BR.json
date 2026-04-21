@@ -230,6 +230,9 @@
       "Continue anyway": [
         "Continuar mesmo assim"
       ],
+      "Continue cancelling": [
+        "Continuar cancelamento"
+      ],
       "Continue import": [
         "Continuar importação"
       ],
@@ -485,6 +488,9 @@
       "Fit to window": [
         "Ajustar na janela"
       ],
+      "Forgot password?": [
+        "Esqueceu sua senha?"
+      ],
       "Forgot recovery method?": [
         "Esqueceu um método de recuperação?"
       ],
@@ -604,6 +610,9 @@
       ],
       "Invite user": [
         "Convidar usuário"
+      ],
+      "Keep current plan": [
+        "Manter plano atual"
       ],
       "Keep Editing": [
         "Continuar editando"
@@ -1442,6 +1451,47 @@
     "Admin": {
       "admin": [
         "administrador"
+      ]
+    },
+    "Admin roles onboarding": {
+      "3 new admin roles": [
+        "3 novas funções administrativas"
+      ],
+      "Admin roles": [
+        "Funções administrativas"
+      ],
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configure políticas de segurança, retenção de dados e infraestrutura de VPN, além de gerenciar registros de auditoria."
+      ],
+      "Delegate management with the appropriate admin role.": [
+        "Delegue o gerenciamento a um administrador com a função adequada."
+      ],
+      "Manage all users, groups, storage, security, billing, audit logs, and system configurations.": [
+        "Gerencie todos os usuários, grupos, armazenamento, segurança, faturamento, registros de auditoria e configurações do sistema."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gerencie usuários, grupos e espaço de armazenamento para todos os membros, atribuir funções e distribuir licenças."
+      ],
+      "New: Control admin access for individual users": [
+        "Novo: Controle acesso de administrador para usuários individuais"
+      ],
+      "Organization admin": [
+        "Adminsitrador da organização"
+      ],
+      "Organization admin:": [
+        "Adminsitrador da organização:"
+      ],
+      "Security admin": [
+        "Administrador de segurança"
+      ],
+      "Security admin:": [
+        "Administrador de segurança:"
+      ],
+      "User admin": [
+        "Adminsitrador de usuário"
+      ],
+      "User admin:": [
+        "Adminsitrador de usuário:"
       ]
     },
     "AdminRole_Info": {
@@ -4410,9 +4460,6 @@
         "Corrija o conflito em destaque para prosseguir.",
         "Corrija os conflitos em destaque para prosseguir."
       ],
-      "Please generate keys before you try to change your password": [
-        "Crie chaves antes de tentar alterar sua senha"
-      ],
       "Please select a country": [
         "Selecione um país"
       ],
@@ -5472,6 +5519,14 @@
         "${ BRAND_NAME }. Privacy by default."
       ]
     },
+    "Get help": {
+      "Continue cancelling": [
+        "Continuar cancelamento"
+      ],
+      "Keep current plan": [
+        "Manter plano atual"
+      ]
+    },
     "Gmail forwarding": {
       "Automatically forward": [
         "encaminhe automaticamente"
@@ -6247,6 +6302,9 @@
       "**Sync codes** to all your devices": [
         "**Sincronizar códigos** para todos os seus dispositivos"
       ],
+      "**This will disable 2-factor authentication.**": [
+        "**Isso desativará a autenticação de 2 fatores.**"
+      ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } mais",
         "+ ${ invisibleCount } mais"
@@ -6486,6 +6544,9 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de pedir um novo código de verificação, verifique sua pasta de spam e verifique que ${ strong } é o endereço correto."
+      ],
+      "Before sending a new verification code, check your spam folder for ${ EmailOrPhoneNumber }.": [
+        "Antes de enviar um novo código de verificação, verifique a pasta de spam de ${ EmailOrPhoneNumber }"
       ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
         "Antes de poder receber e-mails para seus endereços de domínio personalizados em ${ MAIL_APP_NAME }, você precisa adicionar os dois registros MX a seguir em seu console DNS (localizado na plataforma onde você comprou o domínio personalizado). Você pode encontrar um exemplo e algumas dicas úteis em ${ kbLink }."
@@ -6876,6 +6937,12 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Entre seu e-mail ou nome de usuário da conta da ${ BRAND_NAME }."
       ],
+      "Enter your own password (as organization admin).": [
+        "Digite sua própria senha (como administrador da organização)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Digite sua própria senha (como contato de confiança)."
+      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Digite o seu endereço de e-mail de recuperação e nós enviaremos o seu nome de usuário ou endereço de e-mail."
       ],
@@ -6983,6 +7050,9 @@
       ],
       "How to perform a signed-in reset": [
         "Como realizar uma redefinição com a sessão iniciada"
+      ],
+      "How your emergency contact can change your password for you:": [
+        "Como seu contato de emergência pode alterar sua senha por você:"
       ],
       "Identity provider’s public key to sign authentication assertions. There should be a place to download or copy the certificate hash from the identity provider. Just paste the certificate hash in the text area field.": [
         "Chave pública do provedor de identidade para assinar declarações de autenticação. Deve haver um local para baixar ou copiar o hash do certificado do provedor de identidade. Basta colar o hash do certificado no campo da área de texto."
@@ -7865,6 +7935,9 @@
       "Thank you for subscribing. Secure browsing starts now.": [
         "Obrigado por se inscrever. A navegação segura começa agora."
       ],
+      "Thanks - your feedback was sent.": [
+        "Obrigado - seu feedback foi enviado."
+      ],
       "Thanks for supporting our mission to build a better internet where privacy and freedom come first.": [
         "Obrigado por apoiar nossa missão em construir uma internet melhor onde a privacidade e a liberdade em primeiro lugar."
       ],
@@ -8459,6 +8532,9 @@
       "You can now access and manage the account as an administrator.": [
         "Você agora pode acessar e gerenciar a conta como um administrador."
       ],
+      "You can now reset your password to regain access to your account.": [
+        "Você pode redefinir sua senha agora para recuperar o acesso à sua conta."
+      ],
       "You can now return to the application to continue": [
         "Agora você pode retornar ao aplicativo para continuar"
       ],
@@ -8598,6 +8674,9 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Seu e-mail só será usado para essa verificação única."
+      ],
+      "Your encrypted data will be locked": [
+        "Seus dados criptografados ficarão bloqueados"
       ],
       "Your feedback": [
         "Seu comentário"
@@ -9660,6 +9739,12 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Sim, eu quero excluir permanentemente esta conta e todos os seus dados."
       ],
+      "Your password (admin)": [
+        "Sua senha (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Sua senha (contato de confiança)"
+      ],
       "ZIP code": [
         "CEP"
       ]
@@ -9780,6 +9865,9 @@
       ]
     },
     "Link": {
+      "Account recovery explained": [
+        "Explicação sobre a recuperação de conta."
+      ],
       "activity monitor": [
         "monitor de atividade"
       ],
@@ -9795,11 +9883,14 @@
       "clearing your browser cache": [
         "limpando o cache do seu navegador"
       ],
-      "Common sign in issues": [
-        "Problemas frequentes ao iniciar a sessão"
-      ],
       "Common sign up issues": [
         "Problemas frequentes ao se cadastrar"
+      ],
+      "Contact support": [
+        "Contatar o suporte"
+      ],
+      "contacts’ assistance": [
+        "assistência de contatos"
       ],
       "Create account": [
         "Criar conta"
@@ -9906,11 +9997,17 @@
       "if your data is leaked": [
         "se seus dados vazarem"
       ],
+      "Learn how": [
+        "Saiba como"
+      ],
       "Learn more": [
         "Saiba mais"
       ],
       "Learn more about data recovery": [
         "Saiba mais sobre a recuperação dos dados"
+      ],
+      "Manage addresses": [
+        "Gerenciar endereços"
       ],
       "Not activated": [
         "Não ativado"
@@ -9962,6 +10059,9 @@
       ],
       "visit our blog": [
         "visitar nosso blog"
+      ],
+      "Visit our support site": [
+        "Visite nosso site de suporte"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Qual é a diferença entre os protocolos UDP e TCP?"
@@ -10734,9 +10834,6 @@
       ],
       "Dedicated servers and IP": [
         "Servidores e IPs dedicados"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "Servidores dedicados otimizados para streaming"
       ],
       "Desktop app": [
         "Aplicativo para computador"
@@ -13634,9 +13731,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "A recuperação de conta não está disponível para chaves de endereço herdadas"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Gere chaves antes de tentar alterar sua senha"
       ]
     },
     "session_recovery:available:info": {
@@ -14390,6 +14484,9 @@
       "Share the confirmation code with your administrator": [
         "Compartilhe o código de confirmação com seu administrador"
       ],
+      "Sign in": [
+        "Iniciar sessão"
+      ],
       "Sign in to your organization": [
         "Iniciar sessão na sua organização."
       ],
@@ -14449,6 +14546,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Você terá que criar manualmente novos usuários para adicioná-los à sua organização."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Você será redirecionado para o seu provedor de SSO de terceiros."
       ],
       "Your SSO configuration will be deleted.": [
         "Sua configuração de SSO será excluída."
@@ -15526,14 +15626,8 @@
       "Account recovery": [
         "Recuperação de conta"
       ],
-      "Account restricted": [
-        "Conta restrita"
-      ],
       "Account suspended": [
         "Conta suspensa"
-      ],
-      "Account temporarily locked": [
-        "Conta temporariamente bloqueada"
       ],
       "Action": [
         "Ação"
@@ -15607,6 +15701,9 @@
       ],
       "Allocate storage": [
         "Alocar armazenamento"
+      ],
+      "Already have multiple accounts?": [
+        "Já tem várias contas?"
       ],
       "Also in your plan": [
         "Também no seu plano"
@@ -15782,6 +15879,9 @@
       ],
       "Create multiple user accounts": [
         "Criando múltiplas contas de usuários"
+      ],
+      "Create new addresses easily": [
+        "Crie endereços com facilidade"
       ],
       "Create new policy": [
         "Criar uma política"
@@ -16000,6 +16100,9 @@
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Entre com sua conta da ${ BRAND_NAME } para participar do programa Beta do ${ app }"
       ],
+      "Enter your password": [
+        "Digite sua senha"
+      ],
       "Error": [
         "Erro"
       ],
@@ -16048,6 +16151,12 @@
       ],
       "Get complete privacy coverage": [
         "Obtenha a cobertura completa de privacidade"
+      ],
+      "Get direct support": [
+        "Obtenha suporte direto"
+      ],
+      "Get help with an issue": [
+        "Obter ajuda com um problema"
       ],
       "Get more from your VPN": [
         "Obter mais da sua VPN"
@@ -16509,6 +16618,9 @@
       ],
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "Experimente ${ AUTHENTICATOR_APP_NAME }"
+      ],
+      "Try changing your password in your active web session": [
+        "Tente alterar sua senha na sua sessão ativa na web"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Ativar ${ DARK_WEB_MONITORING_NAME }"

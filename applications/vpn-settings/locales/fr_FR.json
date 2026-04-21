@@ -230,6 +230,9 @@
       "Continue anyway": [
         "Continuer quand même"
       ],
+      "Continue cancelling": [
+        "Continuer l'annulation"
+      ],
       "Continue import": [
         "Continuer l'importation"
       ],
@@ -485,6 +488,9 @@
       "Fit to window": [
         "Ajuster à la fenêtre"
       ],
+      "Forgot password?": [
+        "Mot de passe oublié ?"
+      ],
       "Forgot recovery method?": [
         "Méthode de récupération oubliée ?"
       ],
@@ -604,6 +610,9 @@
       ],
       "Invite user": [
         "Inviter un utilisateur"
+      ],
+      "Keep current plan": [
+        "Conserver l'abonnement actuel"
       ],
       "Keep Editing": [
         "Poursuivre les modifications"
@@ -1442,6 +1451,50 @@
     "Admin": {
       "admin": [
         "Administrateur"
+      ]
+    },
+    "Admin roles onboarding": {
+      "3 new admin roles": [
+        "3 nouveaux rôles d'administrateur"
+      ],
+      "Admin roles": [
+        "Rôles administrateur"
+      ],
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configurez les politiques de sécurité, la conservation des données et l’infrastructure VPN, et gérez les journaux d’audit."
+      ],
+      "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
+        "Déléguez la gestion en attribuant des rôles d’administrateur spécifiques. Donnez à chaque administrateur uniquement l’accès dont il a besoin. Cela suit le principe du moindre privilège, protégeant votre organisation contre les comptes compromis et les erreurs accidentelles."
+      ],
+      "Delegate management with the appropriate admin role.": [
+        "Déléguer la gestion avec le rôle d'administrateur approprié."
+      ],
+      "Manage all users, groups, storage, security, billing, audit logs, and system configurations.": [
+        "Gérez tous les utilisateurs, groupes, stockage, sécurité, facturation, journaux d'audit et configurations système."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gérez les utilisateurs, les groupes et le stockage de tous les membres, attribuez des rôles et attribuez des licences."
+      ],
+      "New: Control admin access for individual users": [
+        "Nouveau : Contrôlez l'accès administrateur pour les utilisateurs individuels"
+      ],
+      "Organization admin": [
+        "Administrateur de l'organisation"
+      ],
+      "Organization admin:": [
+        "Administrateur de l'organisation :"
+      ],
+      "Security admin": [
+        "Administrateur de sécurité"
+      ],
+      "Security admin:": [
+        "Administrateur de sécurité :"
+      ],
+      "User admin": [
+        "Administrateur des utilisateurs"
+      ],
+      "User admin:": [
+        "Administrateur des utilisateurs :"
       ]
     },
     "AdminRole_Info": {
@@ -3463,6 +3516,9 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } dans ${ DRIVE_APP_NAME } vous permet de travailler avec d'autres personnes dans un environnement chiffré et sécurisé."
       ],
+      "Add extra addresses to your account or use Hide My Email aliases to keep your inbox private.": [
+        "Ajoutez des adresses supplémentaires à votre compte ou utilisez des alias Hide My Email pour garder votre boîte de réception privée."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Ajoutez des dossiers et des fichiers à ${ DRIVE_APP_NAME } et invitez les membres de l’équipe à les consulter ou à les modifier."
       ],
@@ -3628,6 +3684,12 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Vous pouvez importer des événements au format iCal (fichier ICS). Le fichier peut avoir une taille maximale de ${ MAX_IMPORT_FILE_SIZE_STRING } et contenir jusqu'à ${ MAX_IMPORT_EVENTS_STRING } événements. Si votre fichier est plus volumineux, nous vous invitons à le diviser en plusieurs fichiers plus petits."
+      ],
+      "You can manage multiple ${ BRAND_NAME } addresses from a single account, without switching. Aliases and address management tools help keep everything in one inbox.": [
+        "Vous pouvez gérer plusieurs adresses ${ BRAND_NAME } depuis un seul compte, sans changer. Les outils de gestion d'alias et d'adresses aident à garder tout dans une seule boîte de réception."
+      ],
+      "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
+        "Vous pouvez fusionner des adresses en un unique compte ${ BRAND_NAME } en utilisant notre guide support."
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Vous pouvez désormais envoyer des e-mails depuis ${ BRAND_NAME } en utilisant cette adresse."
@@ -4475,9 +4537,6 @@
       "Please fix the highlighted conflict to proceed.": [
         "Corrigez le conflit en surbrillance pour continuer.",
         "Corrigez les conflits en surbrillance pour continuer."
-      ],
-      "Please generate keys before you try to change your password": [
-        "Générez des clés avant d'essayer de changer votre mot de passe."
       ],
       "Please select a country": [
         "Sélectionnez un pays"
@@ -5533,6 +5592,14 @@
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
         "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
+    "Get help": {
+      "Continue cancelling": [
+        "Continuer l'annulation"
+      ],
+      "Keep current plan": [
+        "Conserver l'abonnement actuel"
       ]
     },
     "Gmail forwarding": {
@@ -6971,6 +7038,12 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Saisissez l'adresse e-mail de votre compte ${ BRAND_NAME } ou votre nom d'utilisateur."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Entrez votre propre mot de passe (en tant qu'administrateur de l'organisation)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Saisissez votre propre mot de passe (en tant que contacts de confiance)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Saisissez votre adresse e-mail de récupération et nous vous enverrons votre nom d'utilisateur ou votre adresse e-mail."
@@ -9831,6 +9904,12 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Oui, je veux supprimer définitivement ce compte et toutes ses données."
       ],
+      "Your password (admin)": [
+        "Votre mot de passe (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Votre mot de passe (contacts de confiance)"
+      ],
       "ZIP code": [
         "Code postal"
       ]
@@ -9951,6 +10030,9 @@
       ]
     },
     "Link": {
+      "Account recovery explained": [
+        "Récupération de compte expliquée"
+      ],
       "activity monitor": [
         "surveillance des activités"
       ],
@@ -9966,11 +10048,11 @@
       "clearing your browser cache": [
         "videz le cache de votre navigateur"
       ],
-      "Common sign in issues": [
-        "Problèmes de connexion courants"
-      ],
       "Common sign up issues": [
         "Problèmes d'inscription courants"
+      ],
+      "Contact support": [
+        "Contacter le support"
       ],
       "contacts’ assistance": [
         "contact d'assistance"
@@ -10080,11 +10162,17 @@
       "if your data is leaked": [
         "si vos données sont divulguées"
       ],
+      "Learn how": [
+        "Découvrir comment"
+      ],
       "Learn more": [
         "En savoir plus"
       ],
       "Learn more about data recovery": [
         "En savoir plus sur la récupération des données"
+      ],
+      "Manage addresses": [
+        "Gérer les adresses"
       ],
       "Not activated": [
         "Non activé"
@@ -10912,8 +11000,8 @@
       "Dedicated servers and IP": [
         "Serveurs et IP dédiés"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Serveurs dédiés optimisés pour le streaming"
+      "Dedicated servers optimized for speed": [
+        "Serveurs dédiés optimisés pour la vitesse"
       ],
       "Desktop app": [
         "Application de bureau"
@@ -13811,9 +13899,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "La récupération des comptes n'est pas disponible pour les anciennes clés d'adresse."
-      ],
-      "Please generate keys before you try to change your password": [
-        "Générez des clés avant d'essayer de changer votre mot de passe."
       ]
     },
     "session_recovery:available:info": {
@@ -14555,6 +14640,9 @@
       "Share the confirmation code with your administrator": [
         "Partagez le code de confirmation avec votre administrateur."
       ],
+      "Sign in": [
+        "Se connecter"
+      ],
       "Sign in to your organization": [
         "Connectez-vous à votre organisation."
       ],
@@ -14614,6 +14702,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Vous devrez créer manuellement les nouveaux utilisateurs pour les ajouter à votre organisation."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Vous allez être redirigé vers votre service tiers d'authentification unique."
       ],
       "Your SSO configuration will be deleted.": [
         "La configuration de votre authentification unique (SSO) sera supprimée."
@@ -15691,14 +15782,8 @@
       "Account recovery": [
         "Récupération du compte"
       ],
-      "Account restricted": [
-        "Compte restreint"
-      ],
       "Account suspended": [
         "Compte suspendu"
-      ],
-      "Account temporarily locked": [
-        "Compte temporairement verrouillé"
       ],
       "Action": [
         "Action"
@@ -15772,6 +15857,9 @@
       ],
       "Allocate storage": [
         "Allouer le stockage"
+      ],
+      "Already have multiple accounts?": [
+        "Vous avez déjà plusieurs comptes ?"
       ],
       "Also in your plan": [
         "Également dans votre abonnement"
@@ -15956,6 +16044,9 @@
       ],
       "Create multiple user accounts": [
         "Créer plusieurs comptes utilisateurs"
+      ],
+      "Create new addresses easily": [
+        "Créez des nouvelles adresses facilement"
       ],
       "Create new policy": [
         "Créer une politique"
@@ -16174,6 +16265,9 @@
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Saisissez les informations de votre compte ${ BRAND_NAME } pour rejoindre le programme bêta de ${ app }."
       ],
+      "Enter your password": [
+        "Saisissez votre mot de passe"
+      ],
       "Error": [
         "Erreur"
       ],
@@ -16222,6 +16316,9 @@
       ],
       "Get complete privacy coverage": [
         "Bénéficiez d'une protection complète de la vie privée"
+      ],
+      "Get help with an issue": [
+        "Obtenir de l'aide pour un problème."
       ],
       "Get more from your VPN": [
         "Tirez le meilleur parti de votre VPN"
@@ -16746,6 +16843,9 @@
       ],
       "Use backup recovery code": [
         "Utiliser le code de récupération de sauvegarde"
+      ],
+      "Use one account for all your addresses": [
+        "Utilisez un seul compte pour toutes vos adresses"
       ],
       "User": [
         "Utilisateur"
