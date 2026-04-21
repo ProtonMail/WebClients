@@ -90,6 +90,9 @@
       "Apply": [
         "Použít"
       ],
+      "Ask me next time": [
+        "Zeptejte se mě příště"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Na jednu skupinu kontaktů je povolen maximálně ${ maxContacts } kontakt",
         "Na jednu skupinu kontaktů jsou povoleny maximálně ${ maxContacts } kontakty",
@@ -208,7 +211,7 @@
         "Pokračovat v importu"
       ],
       "Continue to ${ planOrAppName }": [
-        "Pokračujte na ${ planOrAppName }"
+        "Pokračovat na ${ planOrAppName }"
       ],
       "Continue with Google": [
         "Pokračovat skrze Google"
@@ -601,7 +604,7 @@
         "Obnovit připojení"
       ],
       "Reconnect to Gmail": [
-        "Znovu se připojit ke službě Gmail"
+        "Znovu připojit ke Gmail"
       ],
       "Recover data": [
         "Obnovit data"
@@ -680,6 +683,9 @@
       ],
       "Save changes": [
         "Uložit změny"
+      ],
+      "Save preferences": [
+        "Uložit předvolby"
       ],
       "Search": [
         "Vyhledat"
@@ -2538,6 +2544,15 @@
       "Simplify syncing and scheduling with shared calendars.": [
         "Zjednodušte synchronizaci a plánování pomocí sdílených kalendářů."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "K tomu může dojít, pokud byla oprávnění odebrána nebo pokud jste změnili heslo."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Chcete-li i nadále přijímat a odesílat zprávy Gmailu v aplikaci ${ BRAND_NAME }, znovu prosím propojte svůj účet."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Chcete-li i nadále přijímat a odesílat zprávy Gmailu v aplikaci ${ BRAND_NAME }, znovu prosím propojte své účty."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Chcete-li zajistit co nejvyšší zabezpečení účtu, nastavte frázi pro obnovení."
       ],
@@ -2560,7 +2575,7 @@
         "Použijte tohoto průvodce, aby vaše organizace začala okamžitě využívat výhody špičkového ekosystému šifrování a ochrany soukromí ${ BRAND_NAME }."
       ],
       "We can't access ${ boldEmails } anymore.": [
-        "Nyní nemůžeme přistupovat k ${ boldEmails }."
+        "Již nemáme přístup k ${ boldEmails }."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Je nám líto, že odcházíte. Pokud máte chvilku, oceníme, pokud nám sdělíte důvod zrušení. Vaše zpětná vazba pomáhá vylepšovat ${ BRAND_NAME } pro všechny."
@@ -2829,6 +2844,9 @@
       "Account does not exist": [
         "Účet neexistuje"
       ],
+      "Address could not be added.": [
+        "Adresa nemohla být přidána."
+      ],
       "Address primary private key not found": [
         "Primární soukromý klíč adresy nenalezen"
       ],
@@ -2942,6 +2960,9 @@
       ],
       "Failed to copy photo to album": [
         "Kopírování fotky do alba selhalo"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Nepodařilo se načíst údaje o předplatném. Zkuste to prosím později."
       ],
       "Failed to open to contact": [
         "Otevření kontaktu selhalo"
@@ -3111,6 +3132,9 @@
       "Request timed out": [
         "Vypršel časový limit žádosti"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "U tohoto tarifu není podporován režim přenesení daňové povinnosti"
+      ],
       "Search failed": [
         "Vyhledávání se nezdařilo"
       ],
@@ -3140,6 +3164,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Některé z vašich názvů štítků překračují maximální limit znaků v aplikaci ${ MAIL_APP_NAME }. Přizpůsobte prosím import a upravte tyto názvy."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Při vyhledávání volných domén došlo k chybě"
       ],
       "Something went wrong. Please try again.": [
         "Něco se pokazilo. Prosím, zkuste to znovu."
@@ -3263,6 +3290,9 @@
       ],
       "We couldn’t import this file into ${ SHEETS_APP_NAME }. You can try to copy and paste the contents into a new ${ SHEETS_APP_NAME }.": [
         "Tento soubor se nám nepodařilo importovat do aplikace ${ SHEETS_APP_NAME }. Můžete zkusit obsah zkopírovat a vložit do nového souboru ${ SHEETS_APP_NAME }."
+      ],
+      "Wrong billing address": [
+        "Nesprávná fakturační adresa"
       ],
       "You can't send a mail to more than ${ maxContacts } recipient": [
         "Nemůžete odeslat e-mail více než ${ maxContacts } příjemci najednou",
@@ -4122,6 +4152,11 @@
         "Chcete-li kalendář exportovat jako ICS soubor, vyberte ${ boldExport }."
       ]
     },
+    "Import provider": {
+      "More import options": [
+        "Další možnosti importu"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } z ${ totalContacts } kontaktů nebude importováno. Klikněte pro detaily"
@@ -4443,6 +4478,9 @@
       "Choose a plan that works best for you.": [
         "Vyberte tarif, který vám nejlépe vyhovuje."
       ],
+      "Choose your service to connect with": [
+        "Vyberte si službu, ke které se chcete připojit"
+      ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klikněte na \"Požádat o nový kód\" pro zaslání nového ověřovacího kódu na ${ strong }. Pokud je toto telefonní číslo nesprávné, klepněte na tlačítko \"Upravit\" pro jeho opravu."
       ],
@@ -4460,6 +4498,9 @@
       ],
       "Continue": [
         "Pokračovat"
+      ],
+      "Converting document...": [
+        "Převádění dokumentu..."
       ],
       "Copied to clipboard": [
         "Zkopírováno do schránky"
@@ -4512,11 +4553,17 @@
       "Creating link to folder": [
         "Vytváření odkazu na složku"
       ],
+      "Creating new document...": [
+        "Vytváření nového dokumentu..."
+      ],
       "Current plan": [
         "Aktuální tarif"
       ],
       "Current version": [
         "Současná verze"
+      ],
+      "Decrypting your document": [
+        "Dešifrování dokumentu"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Digitální podpis ověřen. Tento soubor byl bezpečně nahrán uživatelem ${ emailAddress }."
@@ -4605,6 +4652,12 @@
       "Enter your own password (as trusted contact).": [
         "Zadejte vlastní heslo (jako důvěryhodný kontakt)."
       ],
+      "Error converting document: ${ errorMessage }": [
+        "Chyba při převodu dokumentu: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Chyba při načítání dokumentu: ${ errorDetail }"
+      ],
       "Error Syncing": [
         "Chyba při synchronizaci"
       ],
@@ -4613,6 +4666,9 @@
       ],
       "Everything in ${ planOrAppName }": [
         "Vše v ${ planOrAppName }"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Vše v ${ planOrAppName } plus:"
       ],
       "Failed to generate a secure link. The reason is: ${ error }": [
         "Nepovedlo se vygenerovat bezpečený odkaz. Důvod: ${ error }"
@@ -4664,6 +4720,12 @@
       ],
       "Geoblocking": [
         "Zeměpisné blokování"
+      ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Získejte e-mailová upozornění na komentáře a návrhy přidané k vašim dokumentům."
+      ],
+      "Get Notified About Comments": [
+        "Dostávat upozornění na komentáře"
       ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Vlády a poskytovatelé internetových služeb mohou sledovat vaši online aktivitu. Skrytím vaší skutečné IP adresy a šifrováním vaší aktivity se vaše prohlížení stane soukromým."
@@ -4806,6 +4868,9 @@
       "Low Priority": [
         "Nízká priorita"
       ],
+      "Making a copy...": [
+        "Vytváření kopie..."
+      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Max. ${ MAX_SHARED_URL_PASSWORD_LENGTH } písmeno",
         "Max. ${ MAX_SHARED_URL_PASSWORD_LENGTH } písmena",
@@ -4838,6 +4903,9 @@
       ],
       "No contacts added yet": [
         "Doposud nebyly přidány žádné kontakty"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "URL neobsahuje žádný dokument. Vraťte se do ${ DRIVE_APP_NAME } a vyberte dokument."
       ],
       "No email address": [
         "Žádná e-mailová adresa"
@@ -5124,6 +5192,9 @@
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Vlastník této adresy deaktivoval koncové šifrování. Aby bylo možné na tuto adresu odesílat šifrované e-maily, musí vlastník znovu povolit koncové šifrování."
       ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "Zadaná adresa URL byla zřejmě nesprávně zkopírována ze služby Slack. Při kopírování dlouhých odkazů ze služby Slack klikněte na odkaz pravým tlačítkem myši a vyberte možnost \"Kopírovat odkaz\" namísto přímého kopírování zkráceného textu URL."
+      ],
       "There are no documents in the trash.": [
         "V koši nejsou žádné dokumenty."
       ],
@@ -5395,7 +5466,7 @@
         "Pokud službu zrušíte před ${ trialEndsOnFormatted }, nebudou vám účtovány žádné poplatky."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
-        "Kreditovou odměnu obdržíte 1 měsíc poté, co si váš přítel předplatí roční plán, a 2 měsíce poté, co si předplatí měsíční plán."
+        "Odměnu v podobě kreditů získáte 1 měsíc poté, co si vaši přátelé předplatí roční tarif, a 2 měsíce poté, co si předplatí měsíční tarif."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Poté vám bude každý ${ renewCycle } měsíc účtováno ${ renewAmountStr }. Zrušit můžete kdykoli.",
@@ -5618,6 +5689,9 @@
       "Add to group": [
         "Přidat do skupiny"
       ],
+      "Additional comments": [
+        "Další komentáře"
+      ],
       "Alias title": [
         "Název aliasu"
       ],
@@ -5685,7 +5759,7 @@
         "Kontakty"
       ],
       "Continue cancelling": [
-        "Pokračovat ve zrušení"
+        "Pokračovat v rušení"
       ],
       "Copy": [
         "Kopírovat"
@@ -5744,8 +5818,14 @@
       "Emails (last 3 months)": [
         "E-maily (poslední 3 měsíce)"
       ],
+      "Emails (last 6 months)": [
+        "E-maily (posledních 6 měsíců)"
+      ],
       "Emails (last month)": [
         "E-maily (poslední měsíc)"
+      ],
+      "Enable email notifications": [
+        "Povolit e-mailová upozornění"
       ],
       "Encrypt emails": [
         "Šifrovat e-maily"
@@ -5795,6 +5875,9 @@
       "Include application logs in bug report": [
         "Zahrnout logy aplikace do chybového hlášení"
       ],
+      "Include document name in notification": [
+        "Zahrnout název dokumentu do upozornění"
+      ],
       "Include message and file name in invite email": [
         "Zahrnout zprávu a název souboru v e-mailu s pozvánkou"
       ],
@@ -5833,6 +5916,9 @@
       ],
       "Main": [
         "Hlavní"
+      ],
+      "Main reason for cancelling": [
+        "Hlavní důvod zrušení"
       ],
       "Make editor": [
         "Nastavit editorem"
@@ -5938,6 +6024,9 @@
       ],
       "Sign emails": [
         "Podepsat e-maily"
+      ],
+      "Skip feedback": [
+        "Přeskočit zpětnou vazbu"
       ],
       "Skip file": [
         "Přeskočit soubor"
@@ -6249,6 +6338,9 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } licence"
+      ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } licencí"
       ],
@@ -6292,6 +6384,9 @@
       ],
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Sdílení obrazovky s koncovým šifrováním a dočasný chat během hovoru"
+      ],
+      "Hosts can record meetings locally on their computers": [
+        "Organizátoři mohou schůzky nahrávat lokálně na svých počítačích"
       ],
       "Meeting recording": [
         "Nahrávání schůzky"
@@ -6844,8 +6939,8 @@
       "Data retention policies": [
         "Zásady uchovávání dat"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Dedikované servery optimalizované pro streamování"
+      "Dedicated servers optimized for speed": [
+        "Dedikované servery optimalizované pro rychlost"
       ],
       "Desktop app": [
         "Desktopová aplikace"
@@ -7801,6 +7896,9 @@
       "You stopped sharing this item": [
         "Ukončili jste sdílení této položky"
       ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Vaše adresa ${ BRAND_NAME } je připravena k použití"
+      ],
       "Your settings failed to be saved": [
         "Vaše nastavení se nepodařilo uložit"
       ],
@@ -8231,7 +8329,7 @@
         "E-mail"
       ],
       "Enter a name": [
-        "Zadejte název"
+        "Zadejte jméno"
       ],
       "Enter a new folder name": [
         "Zadejte nový název složky"
@@ -8280,6 +8378,9 @@
       ],
       "Select": [
         "Vybrat"
+      ],
+      "Select a provider": [
+        "Vybrat poskytovatele"
       ],
       "Select a reason": [
         "Vyberte důvod"
@@ -8377,6 +8478,21 @@
       ]
     },
     "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Ostatní"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
       "Yahoo": [
         "Yahoo"
       ]
@@ -8693,9 +8809,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Obnovení účtu není k dispozici pro starší klíče adres"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Než se pokusíte změnit si heslo, vygenerujte si prosím klíče"
       ]
     },
     "session_recovery:available:info": {
@@ -8910,6 +9023,9 @@
       ]
     },
     "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Vytváření nové tabulky..."
+      ],
       "Detect automatically": [
         "Automaticky rozpoznat"
       ],
@@ -10018,6 +10134,9 @@
       "Import groups": [
         "Importovat skupiny"
       ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Načtěte svá data do ${ BRAND_NAME }"
+      ],
       "Information exposed in breach": [
         "Informace odhalené při úniku"
       ],
@@ -10146,6 +10265,9 @@
       ],
       "Select contact group": [
         "Vybrat skupinu kontaktů"
+      ],
+      "Select data to import": [
+        "Vyberte data k importu"
       ],
       "Select link expiration date": [
         "Vyberte datum pro vypršení platnosti odkazu"
