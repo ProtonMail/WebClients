@@ -942,6 +942,9 @@
       "Authentication failure: ${ message }": [
         "Kimlik doğrulanamadı: ${ message }"
       ],
+      "Biometric authentication failed.": [
+        "Biyometrik kimlik doğrulama başarısız oldu."
+      ],
       "Cannot create alias (${ error }).": [
         "Takma ad oluşturulamadı (${ error })."
       ],
@@ -997,6 +1000,18 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "\"${ payload.content.name }\" kasası silinemedi"
       ],
+      "Desktop lock is not configured.": [
+        "Masaüstü kilidi yapılandırılmamış."
+      ],
+      "Desktop lock secret does not match.": [
+        "Masaüstü kilit parolası eşleşmiyor."
+      ],
+      "Desktop lock secret not found.": [
+        "Masaüstü kilidi şifresi bulunamadı."
+      ],
+      "Desktop lock setup failed.": [
+        "Masaüstü kilidi kurulumu başarısız oldu."
+      ],
       "Detected ${ errors.length } corrupted csv row": [
         "${ errors.length } bozuk CSV satırı bulundu",
         "${ errors.length } bozuk CSV satırı bulundu"
@@ -1016,11 +1031,11 @@
       "Emptying trash failed": [
         "Çöp kutusu boşaltılamadı"
       ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "${ PASS_APP_NAME } masaüstü uygulamasıyla şifreli iletişim kurulamadı."
+      ],
       "Encrypted JSON not supported": [
         "Şifrelenmiş JSON desteklenmiyor"
-      ],
-      "Encryption communication for desktop unlock failed.": [
-        "Bilgisayar kilidini açmak için gereken şifrelenmiş iletişim kurulamadı."
       ],
       "Error reporting problem": [
         "Sorun bildirilirken sorun çıktı"
@@ -1259,6 +1274,9 @@
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
         "Bir sorun çıktı. Lütfen ${ PASS_APP_NAME } eklentisini yeniden yükleyin. Bu sorun günlüğe kaydedildi"
       ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "${ PASS_APP_NAME } masaüstü uygulaması zamanında yanıt vermedi."
+      ],
       "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
         "${ PASS_APP_NAME } bilgisayar uygulaması kilitli. Kilidin açılması gerekiyor."
       ],
@@ -1267,6 +1285,9 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
         "${ PASS_APP_NAME } bilgisayar uygulaması yanıt vermiyor. Çalışıyor mu?"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "${ PASS_APP_NAME } masaüstü uygulamasında farklı bir hesapla oturum açılmış."
       ],
       "The URL is in the list": [
         "Adres listede var"
@@ -1291,6 +1312,9 @@
       ],
       "Unknown error": [
         "Bilinmeyen sorun"
+      ],
+      "Unknown error.": [
+        "Bilinmeyen bir sorun çıktı."
       ],
       "Unknown invite": [
         "Davet bilinmiyor"
