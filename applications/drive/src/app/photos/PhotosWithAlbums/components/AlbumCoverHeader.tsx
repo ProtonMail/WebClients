@@ -1,22 +1,19 @@
 import { useEffect, useState } from 'react';
 
-import { fromUnixTime } from 'date-fns';
 import { c, msgid } from 'ttag';
 
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { UserAvatar } from '@proton/atoms/UserAvatar/UserAvatar';
-import { getDriveForPhotos } from '@proton/drive';
+import { MemberRole, getDriveForPhotos } from '@proton/drive';
 import { loadThumbnail, useThumbnail } from '@proton/drive/modules/thumbnails';
 import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import folderImages from '@proton/styles/assets/img/drive/folder-images.svg';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import { getNodeEntity } from '../../../utils/sdk/getNodeEntity';
-import type { DecryptedAlbum } from '../../PhotosStore/PhotosWithAlbumsProvider';
 import { useAlbumsStore } from '../../useAlbums.store';
 import { usePhotosStore } from '../../usePhotos.store';
 import { getContactNameAndEmail } from '../getContactNameAndEmail';
@@ -24,32 +21,31 @@ import { PhotosAddAlbumPhotosButton } from '../toolbar/PhotosAddAlbumPhotosButto
 import { AlbumMembers } from './AlbumMembers';
 
 interface AlbumCoverHeaderProps {
-    album: DecryptedAlbum;
+    nodeUid: string;
     onShare: () => void;
     photoCount: number;
     onAddAlbumPhotos: () => void;
 }
 
-export const AlbumCoverHeader = ({ album, photoCount, onShare, onAddAlbumPhotos }: AlbumCoverHeaderProps) => {
-    const driveAlbumsDisabled = useFlag('DriveAlbumsDisabled');
-    const coverNodeUid = useAlbumsStore((state) => state.currentAlbum?.coverNodeUid);
+export const AlbumCoverHeader = ({ nodeUid, photoCount, onShare, onAddAlbumPhotos }: AlbumCoverHeaderProps) => {
+    const album = useAlbumsStore((state) => state.albums.get(nodeUid));
     const [coverPhoto, setCoverPhoto] = useState<{ activeRevisionUid: string; isTrashed: boolean } | undefined>();
 
     const thumbnail = useThumbnail(coverPhoto?.activeRevisionUid);
     const thumbnailUrl = coverPhoto?.isTrashed ? undefined : thumbnail?.hdUrl || thumbnail?.sdUrl;
 
     useEffect(() => {
-        if (!coverNodeUid) {
+        if (!album?.coverNodeUid) {
             return;
         }
-        const cover = usePhotosStore.getState().getPhotoItem(coverNodeUid);
+        const cover = usePhotosStore.getState().getPhotoItem(album.coverNodeUid);
         if (cover?.additionalInfo?.activeRevisionUid) {
             // In case the cover is in the store that mean it's not trashed
             setCoverPhoto({ activeRevisionUid: cover.additionalInfo.activeRevisionUid, isTrashed: false });
         } else {
             // We do not want to load the cover in the store to prevent having it in timeline automatically
             void getDriveForPhotos()
-                .getNode(coverNodeUid)
+                .getNode(album.coverNodeUid)
                 .then((coverNode) => {
                     const { node } = getNodeEntity(coverNode);
                     if (node.activeRevision) {
@@ -60,30 +56,34 @@ export const AlbumCoverHeader = ({ album, photoCount, onShare, onAddAlbumPhotos 
                     }
                 });
         }
-    }, [coverNodeUid]);
+    }, [album?.coverNodeUid]);
 
     useEffect(() => {
-        if (!coverNodeUid || !coverPhoto?.activeRevisionUid) {
+        if (!album?.coverNodeUid || !coverPhoto?.activeRevisionUid) {
             return;
         }
 
         loadThumbnail(getDriveForPhotos(), {
-            nodeUid: coverNodeUid,
+            nodeUid: album.coverNodeUid,
             revisionUid: coverPhoto?.activeRevisionUid,
             thumbnailTypes: ['sd', 'hd'],
         });
-    }, [coverNodeUid, coverPhoto?.activeRevisionUid]);
+    }, [album?.coverNodeUid, coverPhoto?.activeRevisionUid]);
 
     const formattedDate = new Intl.DateTimeFormat(dateLocale.code, {
         dateStyle: 'long',
-    }).format(fromUnixTime(album.createTime));
+    }).format(album?.lastActivityTime);
     const [user] = useUser();
     const [contactEmails] = useContactEmails();
-    // signature email should always be defined, except in anonymous case, not supported yet in Albums
-    const signatureEmail = album.signatureEmail || album.nameSignatureEmail || user.Email;
+    if (!album) {
+        return null;
+    }
+    // TODO: DRVWEB-4974 - signatureEmail/nameSignatureEmail not yet available in AlbumSummary
+    const signatureEmail = album.ownedBy || user.Email;
     const { contactName, contactEmail } = getContactNameAndEmail(signatureEmail, contactEmails);
     const displayName = user.DisplayName || user.Name;
-    const showAddToAlbumButton = album.permissions.isOwner || album.permissions.isAdmin || album.permissions.isEditor;
+    const showAddToAlbumButton = album.directRole !== MemberRole.Viewer;
+    const isAdmin = album.directRole === MemberRole.Admin;
     const sharedByNameOrEmail = contactName || contactEmail;
 
     return (
@@ -103,7 +103,7 @@ export const AlbumCoverHeader = ({ album, photoCount, onShare, onAddAlbumPhotos 
                         // min between 512px and 1/4 of viewport width: okay for global and text zooms, also for super large viewports
                     }}
                     data-testid="cover-image"
-                    data-node-uid={coverNodeUid}
+                    data-node-uid={album?.coverNodeUid}
                 />
             ) : (
                 <span
@@ -129,15 +129,15 @@ export const AlbumCoverHeader = ({ album, photoCount, onShare, onAddAlbumPhotos 
                     </span>
                 </p>
                 <div className="flex flex-wrap flex-row gap-2" data-testid="cover-options">
-                    {album.permissions.isAdmin && (
+                    {isAdmin && (
                         <Tooltip title={displayName}>
                             <UserAvatar name={displayName} data-testid="user-avatar" />
                         </Tooltip>
                     )}
 
-                    {album.permissions.isAdmin && <AlbumMembers onShare={onShare} />}
+                    {isAdmin && <AlbumMembers onShare={onShare} />}
 
-                    {album.permissions.isAdmin && (
+                    {isAdmin && (
                         <Button
                             color="weak"
                             shape="solid"
@@ -151,14 +151,14 @@ export const AlbumCoverHeader = ({ album, photoCount, onShare, onAddAlbumPhotos 
                         </Button>
                     )}
 
-                    {!album.permissions.isAdmin && (
+                    {!isAdmin && (
                         <span className="color-weak mb-2 mt-1">
                             {c('Info').t`Shared by `}
                             <b>{sharedByNameOrEmail}</b>
                         </span>
                     )}
 
-                    {photoCount === 0 && !driveAlbumsDisabled && (
+                    {photoCount === 0 && (
                         <>{showAddToAlbumButton && <PhotosAddAlbumPhotosButton onClick={onAddAlbumPhotos} />}</>
                     )}
                 </div>

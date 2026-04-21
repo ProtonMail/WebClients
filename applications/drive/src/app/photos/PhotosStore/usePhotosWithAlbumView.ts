@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom-v5-compat';
 
 import { useShallow } from 'zustand/react/shallow';
@@ -6,22 +6,20 @@ import { useShallow } from 'zustand/react/shallow';
 import { generateNodeUid, getDriveForPhotos, splitNodeUid } from '@proton/drive/index';
 import { EVENT_TYPES } from '@proton/shared/lib/drive/constants';
 import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
+import isTruthy from '@proton/utils/isTruthy';
 
-import { useFlagsDriveSDKTransfer } from '../../flags/useFlagsDriveSDKTransfer';
 import { DownloadManager } from '../../managers/download/DownloadManager';
-import type { LinkDownload } from '../../store/_downloads';
-import { useDownloadProvider } from '../../store/_downloads';
 import type { DriveEvent, DriveEvents } from '../../store/_events';
-import { useDriveEventManager } from '../../store/_events';
 import { type DecryptedLink, useLinksListing } from '../../store/_links';
 import useLinksState from '../../store/_links/useLinksState';
 import { isPhotoGroup, sortWithCategories as legacySortWithCategories } from '../../store/_photos';
 import type { PhotoLink } from '../../store/_photos';
 import { useAbortSignal, useMemoArrayNoMatterTheOrder } from '../../store/_views/utils';
-import { sendErrorReport } from '../../utils/errorHandling';
-import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { AlbumsPageTypes, usePhotoLayoutStore } from '../../zustand/photos/layout.store';
+import { loadCurrentAlbum } from '../loaders/loadAlbum';
+import { loadAlbums, loadAllAlbums, loadSharedWithMeAlbums } from '../loaders/loadAlbums';
+import { loadTimelinePhotos } from '../loaders/loadPhotos';
 import { useAlbumsStore } from '../useAlbums.store';
 import { usePhotosStore } from '../usePhotos.store';
 import { getTagFilteredPhotos } from '../utils/getTagFilteredPhotos';
@@ -66,25 +64,15 @@ export function updateByEvents(
 
 export const usePhotosWithAlbumsView = () => {
     const { albumShareId, albumLinkId } = useParams<{ albumShareId?: string; albumLinkId?: string }>();
-    const eventsManager = useDriveEventManager();
-    const { getCachedChildren, loadLinksMeta } = useLinksListing();
-    const isSDKTransferEnabled = useFlagsDriveSDKTransfer({ isForPhotos: true });
+    const { getCachedChildren } = useLinksListing();
     const linkState = useLinksState();
     const {
         shareId,
         linkId,
-        isPhotosLoading,
-        isAlbumPhotosLoading,
         volumeId,
-        albums,
-        loadPhotos,
         initializePhotosView,
-        loadAlbums,
-        loadSharedWithMeAlbums,
         addAlbumPhotos,
-        loadAlbumPhotos,
         removePhotosFromCache,
-        updateAlbumsFromCache,
         addPhotoAsCover,
         removeAlbumPhotos,
         deleteAlbum,
@@ -92,39 +80,28 @@ export const usePhotosWithAlbumsView = () => {
         userAddressEmail,
         addNewAlbumPhotoToCache,
         removeTagsFromPhoto,
-        clearAlbumPhotos,
     } = usePhotosWithAlbums();
 
     const albumPhotoUids = useAlbumsStore(
-        (state): Set<string> => state.currentAlbum?.photoNodeUids ?? new Set<string>()
+        useShallow((state): Set<string> => state.currentAlbum?.photoNodeUids ?? new Set<string>())
+    );
+    const { albumsOrder, albumsMap, isAlbumsLoading } = useAlbumsStore(
+        useShallow((state) => ({
+            albumsOrder: state.albumsUids,
+            albumsMap: state.albums,
+            isAlbumsLoading: state.isLoadingList,
+        }))
     );
 
     const [selectedTags, setSelectedTags] = useState([-1]);
-    const processedEventIds = useRef<Set<string>>(new Set());
     const { currentPageType } = usePhotoLayoutStore(
         useShallow((state) => ({
             currentPageType: state.currentPageType,
         }))
     );
-    const { download } = useDownloadProvider();
-    const [isAlbumsLoading, setIsAlbumsLoading] = useState<boolean>(true);
+    const isPhotosLoading = usePhotosStore((state) => state.isLoading);
     const photos = usePhotosStore(useShallow((state) => state.photoItems));
     const photoTimelineUids = usePhotosStore(useShallow((state) => state.photoTimelineUids));
-
-    // Initialize the Photos shareId in LinksState so events can properly update it
-    // This fixes the issue where the first photo uploaded to an empty photos view doesn't appear:
-    // - Without this, when upload events arrive, LinksState doesn't recognize the Photos shareId
-    // - The event gets skipped (returns old state without adding the new photo)
-    // - The UI never updates to show the newly uploaded photo
-    // We must load at least the root link because addOrUpdate returns early with empty arrays
-    // Only do this when photos list is empty to avoid unnecessary API calls
-    const initializedShareRef = useRef<string | null>(null);
-    useEffect(() => {
-        if (volumeId && shareId && linkId && initializedShareRef.current !== shareId && photos.size === 0) {
-            void loadLinksMeta(new AbortController().signal, 'photos-init', shareId, [linkId]);
-            initializedShareRef.current = shareId;
-        }
-    }, [volumeId, shareId, linkId, loadLinksMeta, photos.size]);
 
     const abortSignal = useAbortSignal([shareId, linkId]);
     const cache = useMemo(() => {
@@ -144,35 +121,29 @@ export const usePhotosWithAlbumsView = () => {
         }
     });
 
-    useEffect(() => {
-        if (currentPageType === AlbumsPageTypes.GALLERY || currentPageType === AlbumsPageTypes.ALBUMS) {
-            clearAlbumPhotos();
-        }
-    }, [currentPageType]);
     // This will be flattened to contain categories and links
-    // The isPhotosEmpty needs to be decorelate from the photosViewData as it is connected to tag filtering
-    // isPhotosEmpty is based on the full unfiltered photos list
+    const isPhotosEmpty = useMemo(
+        () => !shareId || !linkId || !volumeId || (photoTimelineUids.size === 0 && !isPhotosLoading),
+        [shareId, linkId, volumeId, photoTimelineUids, isPhotosLoading]
+    );
+
     const {
         photosViewData,
         photoNodeUidToIndexMap,
         photoNodeUids,
-        isPhotosEmpty,
     }: {
         photosViewData: (MappedPhotoItem | string)[];
         photoNodeUidToIndexMap: Record<string, number>;
         photoNodeUids: string[];
-        isPhotosEmpty: boolean;
     } = useMemo(() => {
         if (!shareId || !linkId || !volumeId) {
             return {
                 photosViewData: [],
                 photoNodeUidToIndexMap: {},
                 photoNodeUids: [],
-                isPhotosEmpty: true,
             };
         }
 
-        const isPhotosEmpty = photoTimelineUids.size === 0 && !isPhotosLoading;
         const timelineItems = Array.from(photoTimelineUids).flatMap((uid) => {
             const item = photos.get(uid);
             return item ? [item] : [];
@@ -203,9 +174,8 @@ export const usePhotosWithAlbumsView = () => {
             photosViewData,
             photoNodeUidToIndexMap,
             photoNodeUids,
-            isPhotosEmpty,
         };
-    }, [photos, photoTimelineUids, linkId, shareId, volumeId, selectedTags, isPhotosLoading]);
+    }, [photos, photoTimelineUids, linkId, shareId, volumeId, selectedTags]);
 
     const { albumPhotosViewData, albumPhotosNodeUidToIndexMap, albumPhotosNodeUids } = useMemo(() => {
         if (!shareId || !linkId) {
@@ -272,80 +242,30 @@ export const usePhotosWithAlbumsView = () => {
         };
     }, [albumLinkId, albumPhotoUids, albumShareId, linkId, linkState, photos, shareId]);
 
-    const albumsView = useMemo(() => {
-        if (!albums || !albums.size) {
-            return Array.from(albums.values());
-        }
-        const albumsView = Array.from(albums.values()).map((album) => {
-            const cachedAlbum = linkState.getLink(album.rootShareId, album.linkId);
-            return {
-                ...album,
-                ...cachedAlbum?.decrypted,
-                // Preserve albumProperties from albums state — linkState may have stale coverLinkId
-                albumProperties: album.albumProperties,
-            };
-        });
-        return albumsView;
-    }, [albums, linkState]);
+    const albumsView = useMemo(
+        () => albumsOrder.map((uid) => albumsMap.get(uid)).filter(isTruthy),
+        [albumsOrder, albumsMap]
+    );
 
     useEffect(() => {
-        if (!volumeId || !shareId) {
-            return;
-        }
         const abortController = new AbortController();
 
-        if (
-            albumShareId &&
-            albumLinkId &&
-            currentPageType &&
-            [AlbumsPageTypes.ALBUMSGALLERY, AlbumsPageTypes.ALBUMS].includes(currentPageType)
-        ) {
-            setIsAlbumsLoading(true);
-            void Promise.all([
-                loadSharedWithMeAlbums(abortController.signal),
-                loadAlbums(abortController.signal),
-            ]).finally(() => {
-                setIsAlbumsLoading(false);
-                void loadAlbumPhotos(abortController.signal, albumShareId, albumLinkId);
-            });
-        } else {
-            // If loading /photos first, defer loading of albums after photos
-            void loadPhotos(abortController.signal).then(() => {
-                setIsAlbumsLoading(true);
-                void Promise.all([
-                    loadAlbums(abortController.signal),
-                    loadSharedWithMeAlbums(abortController.signal),
-                    // TODO: Temporary fix when you reload the page on AlbumsPageTypes.ALBUMSADDPHOTOS and you go back, you need albumPhotos
-                    albumShareId && albumLinkId
-                        ? loadAlbumPhotos(abortController.signal, albumShareId, albumLinkId)
-                        : undefined,
-                ]).finally(() => {
-                    setIsAlbumsLoading(false);
+        if (currentPageType && AlbumsPageTypes.ALBUMS === currentPageType) {
+            void loadAllAlbums(abortController.signal);
+        } else if (albumShareId && albumLinkId && AlbumsPageTypes.ALBUMSGALLERY === currentPageType) {
+            void getDriveForPhotos()
+                .getNodeUid(albumShareId, albumLinkId)
+                .then((currentAlbumNodeUid) => {
+                    void loadCurrentAlbum(currentAlbumNodeUid, abortController.signal);
                 });
-            });
+        } else if (AlbumsPageTypes.GALLERY === currentPageType || AlbumsPageTypes.ALBUMSADDPHOTOS === currentPageType) {
+            void loadTimelinePhotos(abortController.signal);
         }
 
         return () => {
             abortController.abort();
         };
-    }, [volumeId, shareId, albumLinkId, albumShareId, currentPageType]);
-
-    useEffect(() => {
-        if (!shareId) {
-            return;
-        }
-
-        const callbackId = eventsManager.eventHandlers.register((eventVolumeId, events, processedEventCounter) => {
-            if (eventVolumeId === volumeId && !processedEventIds.current.has(events.eventId)) {
-                processedEventIds.current.add(events.eventId);
-                updateByEvents(events, shareId, removePhotosFromCache, updateAlbumsFromCache, processedEventCounter);
-            }
-        });
-
-        return () => {
-            eventsManager.eventHandlers.unregister(callbackId);
-        };
-    }, [eventsManager.eventHandlers, shareId]);
+    }, [albumLinkId, albumShareId, currentPageType]);
 
     const loadPhotoLink = useCallback((shareId: string, linkId: string) => {
         if (!shareId || !linkId || !volumeId) {
@@ -372,131 +292,17 @@ export const usePhotosWithAlbumsView = () => {
         }
     }, []);
 
-    const refreshAlbums = useCallback(
-        (abortSignal: AbortSignal = new AbortController().signal) => {
-            if (!volumeId || !shareId) {
-                return;
-            }
-            return loadAlbums(abortSignal);
-        },
-        [volumeId, shareId, loadAlbums]
-    );
+    const refreshAlbums = useCallback((abortSignal: AbortSignal = new AbortController().signal) => {
+        return loadAlbums(abortSignal);
+    }, []);
 
-    const refreshSharedWithMeAlbums = useCallback(
-        (abortSignal: AbortSignal = new AbortController().signal) => {
-            if (!volumeId || !shareId) {
-                return;
-            }
-            return loadSharedWithMeAlbums(abortSignal);
-        },
-        [volumeId, shareId, loadSharedWithMeAlbums]
-    );
+    const refreshSharedWithMeAlbums = useCallback((abortSignal: AbortSignal = new AbortController().signal) => {
+        return loadSharedWithMeAlbums(abortSignal);
+    }, []);
 
-    const refreshAlbumPhotos = useCallback(
-        (albumLinkId: string) => {
-            if (!volumeId || !shareId || !albumShareId || !albumLinkId) {
-                return;
-            }
-            const abortController = new AbortController();
-            void loadAlbumPhotos(abortController.signal, albumShareId, albumLinkId);
-        },
-        [volumeId, shareId, albumShareId, loadAlbumPhotos]
-    );
-
-    /**
-     * A `PhotoLink` may not be fully loaded, so we need to preload all links in the cache
-     * first to request a download.
-     *
-     * @param linkIds List of Link IDs to preload
-     */
-    const requestDownload = useCallback(
-        async (linkIds: { linkId: string; shareId: string }[]) => {
-            const ac = new AbortController();
-
-            const result: { [key: string]: string[] } = {};
-            for (const item of linkIds) {
-                const { linkId, shareId: itemShareId } = item;
-                if (!result[itemShareId]) {
-                    result[itemShareId] = [];
-                }
-                result[itemShareId].push(linkId);
-            }
-
-            const metaLinks: DecryptedLink[] = [];
-            const relatedMetaLinks: DecryptedLink[] = [];
-
-            for (const shareId of Object.keys(result)) {
-                const meta = await loadLinksMeta(ac.signal, 'photos-download', shareId, result[shareId]);
-
-                if (meta.links.length === 0) {
-                    continue;
-                }
-
-                if (meta.errors.length > 0) {
-                    sendErrorReport(
-                        new EnrichedError('Failed to load links meta for download', {
-                            tags: {
-                                shareId,
-                            },
-                            extra: {
-                                linkIds: linkIds,
-                                errors: meta.errors,
-                            },
-                        })
-                    );
-
-                    return;
-                }
-
-                metaLinks.push(...meta.links);
-
-                const relatedLinkIds = metaLinks.flatMap(
-                    (link) => link.activeRevision?.photo?.relatedPhotosLinkIds || []
-                );
-
-                const relatedMeta = await loadLinksMeta(ac.signal, 'photos-related-download', shareId, relatedLinkIds);
-
-                if (relatedMeta.errors.length > 0) {
-                    sendErrorReport(
-                        new EnrichedError('Failed to load related links meta for download', {
-                            tags: {
-                                shareId,
-                            },
-                            extra: {
-                                linkIds: linkIds,
-                                errors: relatedMeta.errors,
-                            },
-                        })
-                    );
-
-                    return;
-                }
-
-                relatedMetaLinks.push(...relatedMeta.links);
-            }
-
-            const links: LinkDownload[] = [...metaLinks, ...relatedMetaLinks].map(
-                (link) =>
-                    ({
-                        ...link,
-                        shareId: link.rootShareId,
-                    }) satisfies LinkDownload
-            );
-
-            // if on album page and all links are selected, download the zip as the album name
-            const album = albumLinkId && links.length === albumPhotoUids.size ? albums.get(albumLinkId) : undefined;
-            if (isSDKTransferEnabled) {
-                // NOTE: only need metaLinks since the DownloadManager will hydrate the related photos
-                const nodeUids = metaLinks.map((link) => generateNodeUid(link.volumeId, link.linkId));
-                await DownloadManager.getInstance().downloadPhotos(nodeUids, album?.name);
-            } else {
-                await download(links, {
-                    zipName: album?.name ? `${album?.name}.zip` : undefined,
-                });
-            }
-        },
-        [albumLinkId, albumPhotoUids.size, albums, download, loadLinksMeta, isSDKTransferEnabled]
-    );
+    const requestDownload = useCallback(async (photosUids: string[]) => {
+        await DownloadManager.getInstance().downloadPhotos(photosUids);
+    }, []);
 
     const addAlbumPhoto = useCallback(
         (abortSignal: AbortSignal, albumShareId: string, albumLinkId: string, linkId: string) => {
@@ -515,15 +321,12 @@ export const usePhotosWithAlbumsView = () => {
         [addPhotoAsCover, albumLinkId]
     );
 
-    const handleSelectTag = useCallback(
-        async (abortSignal: AbortSignal, tags: PhotoTag[]) => {
-            setSelectedTags(tags);
-            if (!isPhotosLoading || tags.includes(PhotoTag.All)) {
-                return;
-            }
-        },
-        [isPhotosLoading]
-    );
+    const handleSelectTag = useCallback(async (abortSignal: AbortSignal, tags: PhotoTag[]) => {
+        setSelectedTags(tags);
+        if (!usePhotosStore.getState().isLoading || tags.includes(PhotoTag.All)) {
+            return;
+        }
+    }, []);
 
     return {
         volumeId,
@@ -541,9 +344,7 @@ export const usePhotosWithAlbumsView = () => {
         requestDownload,
         isPhotosLoading,
         isAlbumsLoading,
-        isAlbumPhotosLoading,
         refreshSharedWithMeAlbums,
-        refreshAlbumPhotos,
         refreshAlbums,
         addAlbumPhoto,
         addAlbumPhotos,

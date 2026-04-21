@@ -3,7 +3,6 @@ import { c } from 'ttag';
 import { useTheme } from '@proton/components';
 import folderImagesDark from '@proton/styles/assets/img/drive/empty-image-album-dark.webp';
 import folderImages from '@proton/styles/assets/img/drive/empty-image-album.webp';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import type { DecryptedAlbum } from '../../PhotosStore/PhotosWithAlbumsProvider';
 import { PhotosAddAlbumPhotosButton } from '../toolbar/PhotosAddAlbumPhotosButton';
@@ -14,7 +13,6 @@ interface AlbumEmptyViewProps {
 }
 
 export const AlbumEmptyView = ({ album, onAddAlbumPhotos }: AlbumEmptyViewProps) => {
-    const driveAlbumsDisabled = useFlag('DriveAlbumsDisabled');
     const theme = useTheme();
 
     const showAddToAlbumButton = album.permissions.isOwner || album.permissions.isAdmin || album.permissions.isEditor;
@@ -38,13 +36,11 @@ export const AlbumEmptyView = ({ album, onAddAlbumPhotos }: AlbumEmptyViewProps)
             <p className="color-weak my-0">{c('Action').t`This album is empty`}</p>
 
             <p className="mx-auto">
-                {!driveAlbumsDisabled && (
-                    <>
-                        {showAddToAlbumButton && (
-                            <PhotosAddAlbumPhotosButton buttonSize="medium" onClick={onAddAlbumPhotos} />
-                        )}
-                    </>
-                )}
+                <>
+                    {showAddToAlbumButton && (
+                        <PhotosAddAlbumPhotosButton buttonSize="medium" onClick={onAddAlbumPhotos} />
+                    )}
+                </>
             </p>
         </div>
     );

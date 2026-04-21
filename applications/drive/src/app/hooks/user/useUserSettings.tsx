@@ -22,7 +22,6 @@ export function useUserSettings() {
     const { isB2B } = useDrivePlan();
     const api = useApi();
     const driveB2BPhotosUpload = useFlag('DriveB2BPhotosUpload');
-    const driveAlbumsEnabled = !useFlag('DriveAlbumsDisabled');
 
     const sort = useMemo(() => parseSetting(userSettings.Sort), [userSettings.Sort]);
 
@@ -62,7 +61,7 @@ export function useUserSettings() {
         revisionRetentionDays: userSettings.RevisionRetentionDays,
         photoTags: userSettings.PhotoTags,
         photosEnabled: isPhotosEnabled,
-        photosWithAlbumsEnabled: isPhotosEnabled && driveAlbumsEnabled,
+        photosWithAlbumsEnabled: isPhotosEnabled,
         changeSort,
         changeLayout,
         changeB2BPhotosEnabled,

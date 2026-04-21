@@ -5,6 +5,7 @@ import { c, msgid } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
 import { Button } from '@proton/atoms/Button/Button';
+import { getDriveForPhotos, splitNodeUid } from '@proton/drive/index';
 import { IcArrowLeft } from '@proton/icons/icons/IcArrowLeft';
 
 import useNavigate from '../../../hooks/drive/useNavigate';
@@ -33,13 +34,13 @@ export const TitleArea = ({
     | 'albumPhotos'
     | 'albumPhotosNodeUidToIndexMap'
 >) => {
-    const { albumLinkId, albumShareId } = useParams<{ albumLinkId: string; albumShareId: string }>();
+    const { albumLinkId } = useParams<{ albumLinkId: string; albumShareId: string }>();
     const { currentPageType } = usePhotoLayoutStore(
         useShallow((state) => ({
             currentPageType: state.currentPageType,
         }))
     );
-    const { navigateToAlbums, navigateToAlbum, navigateToPhotos } = useNavigate();
+    const { navigateToAlbums, navigateToNodeUid, navigateToPhotos } = useNavigate();
 
     const { selectedItems, clearSelection } = usePhotosSelection({
         photos,
@@ -52,7 +53,7 @@ export const TitleArea = ({
         if (!albumLinkId) {
             return undefined;
         }
-        return albums.find((album) => album.linkId === albumLinkId);
+        return albums.find((album) => splitNodeUid(album.nodeUid).nodeId === albumLinkId);
     }, [albums, albumLinkId]);
 
     const selectedCount = selectedItems.length;
@@ -127,10 +128,9 @@ export const TitleArea = ({
                         className="inline-flex flex-nowrap flex-row text-semibold items-center"
                         data-testid="toolbar-go-back"
                         onClick={() => {
-                            if (!albumShareId || !albumLinkId) {
-                                return;
+                            if (album) {
+                                void navigateToNodeUid(album.nodeUid, getDriveForPhotos());
                             }
-                            navigateToAlbum(albumShareId, albumLinkId);
                         }}
                     >
                         <IcArrowLeft className="mr-2 shrink-0" />{' '}

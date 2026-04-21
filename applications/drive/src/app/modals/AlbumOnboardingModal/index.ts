@@ -8,7 +8,8 @@ import { useLoading } from '@proton/hooks';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { withHoc } from '../../hooks/withHoc';
-import { usePhotosWithAlbums } from '../../photos/PhotosStore/PhotosWithAlbumsProvider';
+import { loadAllAlbums } from '../../photos/loaders/loadAlbums';
+import { useAlbumsStore } from '../../photos/useAlbums.store';
 import { AlbumOnboardingModalView, type AlbumOnboardingModalViewProps } from './AlbumOnboardingModalView';
 import { useAlbumOnboardingModalState } from './useAlbumOnboardingModalState';
 
@@ -24,8 +25,8 @@ export const useAlbumOnboardingModal = () => {
     const [render, show] = useModalTwoStatic(AlbumOnboardingModal);
     const isFlagEnabled = useFlag('DriveAlbumOnboardingModal');
     const [alreadyShown, setAlreadyShown] = useLocalState(false, LS_KEY);
-    const { albums, loadAlbums } = usePhotosWithAlbums();
-    const [isLoading, withLoading] = useLoading(albums !== undefined);
+    const albums = useAlbumsStore((state) => state.albums);
+    const [isLoading, withLoading] = useLoading(true);
 
     const { viewportWidth } = useActiveBreakpoint();
     const isSmallViewport = viewportWidth['<=small'];
@@ -39,11 +40,11 @@ export const useAlbumOnboardingModal = () => {
     const showModal = allChecksPass && !isLoading && !albums?.size;
 
     useEffect(() => {
-        if (!allChecksPass || !loadAlbums) {
+        if (!allChecksPass) {
             return;
         }
         const abortController = new AbortController();
-        void withLoading(loadAlbums(abortController.signal));
+        void withLoading(loadAllAlbums(abortController.signal));
 
         return () => {
             abortController.abort();
