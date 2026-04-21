@@ -1494,12 +1494,6 @@
       "Failed to lock meeting": [
         "Görüşme kilitlenemedi"
       ],
-      "Failed to request permission for the camera. Please check your system permissions and try again. You might have to enable permissions manually, please refresh the page afterwards": [
-        "Mikrofona erişme izni isteği yapılamadı. Lütfen sistem izinlerinizi denetleyip yeniden deneyin. İzinleri el ile vermeniz gerekebilir. Ardından lütfen sayfayı yenileyin."
-      ],
-      "Failed to request permission for the microphone. Please check your system permissions and try again. You might have to enable permissions manually, please refresh the page afterwards": [
-        "Mikrofona erişme izni isteği yapılamadı. Lütfen sistem izinlerinizi denetleyip yeniden deneyin. İzinleri el ile vermeniz gerekebilir. Ardından lütfen sayfayı yenileyin."
-      ],
       "Failed to rotate personal meeting link": [
         "Kişisel görüşme bağlantısı değiştirilemedi"
       ],
@@ -1567,7 +1561,7 @@
         "Görüşme parolası yanlış"
       ],
       "The meeting password is invalid": [
-        "Toplantı parolası geçersiz"
+        "Görüşme parolası geçersiz"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Bu alan için izin verilen en fazla ${ maximumLength } karakter uzunluğu aşıldı."
@@ -1839,11 +1833,11 @@
       "Decrypting meetings...": [
         "Görüşmelerin şifresi çözülüyor..."
       ],
-      "Default": [
-        "Varsayılan"
-      ],
       "Default - ${ systemDefault.label }": [
         "Varsayılan - ${ systemDefault.label }"
+      ],
+      "Default - System Default": [
+        "Varsayılan - Sistem varsayılanı"
       ],
       "Delete event": [
         "Etkinliği sil"
@@ -2308,7 +2302,7 @@
         "Görüşmeden çıkarıldınız"
       ],
       "You will leave the meeting. Others will continue.": [
-        "Siz toplantıdan ayrılacaksınız. Diğerleri devam edecek."
+        "Siz görüşmeden ayrılacaksınız. Diğerleri kalacak."
       ],
       "You've been invited to join a secure meeting. Confirm your name and click below to enter.": [
         "Güvenli bir görüşmeye davet edildiniz. Adınızı onaylayın ve katılmak için aşağıya tıklayın."
@@ -2628,14 +2622,14 @@
       "Others couldn't hear me": [
         "Diğerleri beni duyamadı"
       ],
+      "Others couldn't see my video": [
+        "Diğerleri videomu göremedi"
+      ],
       "The presentation was blurry": [
         "Sunum bulanıktı"
       ],
-      "Video was blurry": [
-        "Görüntü bulanıktı"
-      ],
-      "Video was breaking up": [
-        "Görüntü takılıyordu"
+      "Video quality was poor": [
+        "Video kalitesi düşüktü"
       ]
     },
     "Placeholder": {

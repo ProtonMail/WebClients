@@ -1491,12 +1491,6 @@
       "Failed to lock meeting": [
         "La réunion n'a pas pu être verrouillée"
       ],
-      "Failed to request permission for the camera. Please check your system permissions and try again. You might have to enable permissions manually, please refresh the page afterwards": [
-        "La demande d'accès à la caméra n'a pas abouti. Veuillez vérifier les autorisations de votre système et réessayer. Vous devrez peut-être activer les autorisations manuellement, puis actualiser la page."
-      ],
-      "Failed to request permission for the microphone. Please check your system permissions and try again. You might have to enable permissions manually, please refresh the page afterwards": [
-        "La demande d'accès au microphone n'a pas abouti. Veuillez vérifier les permissions de votre système et réessayer. Vous devrez peut-être activer les permissions manuellement, puis actualiser la page."
-      ],
       "Failed to rotate personal meeting link": [
         "Échec du renouvellement du lien de réunion personnelle"
       ],
@@ -1828,11 +1822,11 @@
       "Decrypting meetings...": [
         "Déchiffrement des réunions..."
       ],
-      "Default": [
-        "Par défaut"
-      ],
       "Default - ${ systemDefault.label }": [
         "Par défaut ${ systemDefault.label }"
+      ],
+      "Default - System Default": [
+        "Par défaut - Paramètre par défaut du système"
       ],
       "Delete event": [
         "Supprimer l’événement"
@@ -2611,14 +2605,14 @@
       "Others couldn't hear me": [
         "Les autres ne m'entendaient pas"
       ],
+      "Others couldn't see my video": [
+        "Les autres ne pouvaient pas voir ma vidéo"
+      ],
       "The presentation was blurry": [
         "La présentation était floue"
       ],
-      "Video was blurry": [
-        "La vidéo était floue"
-      ],
-      "Video was breaking up": [
-        "La vidéo était hachée"
+      "Video quality was poor": [
+        "La qualité vidéo était médiocre."
       ]
     },
     "Placeholder": {
