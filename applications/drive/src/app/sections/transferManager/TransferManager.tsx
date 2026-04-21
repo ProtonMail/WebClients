@@ -8,6 +8,7 @@ import clsx from '@proton/utils/clsx';
 
 import type { AbuseReportPrefill } from '../../modals/ReportAbuseModal';
 import { useUploadConflictModal } from '../../modals/UploadConflictModal';
+import { DownloadIssueWatcher } from './connectedComponents/DownloadIssueWatcher';
 import { TransferManagerHeader } from './connectedComponents/TransferManagerHeader';
 import { TransferManagerList } from './connectedComponents/TransferManagerList';
 import { subscribeToUploadEvents } from './subscribeToUploadEvents';
@@ -123,6 +124,17 @@ export const TransferManager = ({
                     retryFailedTransfers={retryFailedTransfers}
                 />
 
+                {items
+                    .filter((entry) => entry.type === 'download')
+                    .map((entry) => (
+                        <DownloadIssueWatcher
+                            key={entry.id}
+                            entry={entry}
+                            cancelTransfer={cancelTransfer}
+                            showDocumentsModal={showDocumentsModal}
+                            showSignatureIssueModal={showSignatureIssueModal}
+                        />
+                    ))}
                 {!isMinimized && (
                     <div className="mt-3" data-testid="drive-transfers-manager:list">
                         <TransferManagerList
@@ -131,8 +143,6 @@ export const TransferManager = ({
                             share={share}
                             cancelTransfer={cancelTransfer}
                             retryTransfer={retryTransfer}
-                            showDocumentsModal={showDocumentsModal}
-                            showSignatureIssueModal={showSignatureIssueModal}
                             onReportAbuse={onReportAbuse}
                         />
                     </div>

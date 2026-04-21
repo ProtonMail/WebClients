@@ -6,7 +6,6 @@ import { useActiveBreakpoint, useElementRect } from '@proton/components';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 
 import type { AbuseReportPrefill } from '../../../modals/ReportAbuseModal';
-import type { useSignatureIssueModal } from '../../../modals/SignatureIssueModal';
 import type { TransferManagerEntry } from '../useTransferManagerState';
 import { TransferItem } from './TransferItem';
 
@@ -21,22 +20,11 @@ type RowData = {
     deprecatedRootShareId: string | undefined;
     cancelTransfer: (entry: TransferManagerEntry) => void;
     retryTransfer: (entry: TransferManagerEntry) => void;
-    showDocumentsModal: (props: { onSubmit: () => void; onCancel: () => void }) => void;
-    showSignatureIssueModal: ReturnType<typeof useSignatureIssueModal>['showSignatureIssueModal'];
     onReportAbuse?: (nodeUid: string, prefill?: AbuseReportPrefill) => void;
 };
 
 const TransferListRow = memo(({ index, style, data }: ListChildComponentProps<RowData>) => {
-    const {
-        items,
-        share,
-        deprecatedRootShareId,
-        cancelTransfer,
-        retryTransfer,
-        showDocumentsModal,
-        showSignatureIssueModal,
-        onReportAbuse,
-    } = data;
+    const { items, share, deprecatedRootShareId, cancelTransfer, retryTransfer, onReportAbuse } = data;
     const entry = items[index];
     // TODO: add conditional styling depending on some special cases like malaware detection
 
@@ -48,8 +36,6 @@ const TransferListRow = memo(({ index, style, data }: ListChildComponentProps<Ro
                 onReportAbuse={onReportAbuse}
                 cancelTransfer={cancelTransfer}
                 retryTransfer={retryTransfer}
-                showDocumentsModal={showDocumentsModal}
-                showSignatureIssueModal={showSignatureIssueModal}
             />
         </div>
     );
@@ -63,8 +49,6 @@ type TransferManagerListProps = {
     share: (entry: TransferManagerEntry) => void;
     cancelTransfer: (entry: TransferManagerEntry) => void;
     retryTransfer: (entry: TransferManagerEntry) => void;
-    showDocumentsModal: RowData['showDocumentsModal'];
-    showSignatureIssueModal: RowData['showSignatureIssueModal'];
     onReportAbuse?: (nodeUid: string, prefill?: AbuseReportPrefill) => void;
 };
 
@@ -74,8 +58,6 @@ export const TransferManagerList = ({
     share,
     cancelTransfer,
     retryTransfer,
-    showDocumentsModal,
-    showSignatureIssueModal,
     onReportAbuse,
 }: TransferManagerListProps) => {
     const listContainerRef = useRef<HTMLDivElement>(null);
@@ -109,8 +91,6 @@ export const TransferManagerList = ({
                             deprecatedRootShareId,
                             cancelTransfer,
                             retryTransfer,
-                            showDocumentsModal,
-                            showSignatureIssueModal,
                             onReportAbuse,
                         }}
                         itemSize={itemSize}
