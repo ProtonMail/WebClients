@@ -10,6 +10,13 @@ import { waitForSignatureIssueDecision } from './waitForUserDecision';
 export const addAndWaitForManifestIssueDecision = (downloadId: string, node: NodeEntity): Promise<UserDecision> => {
     const { addSignatureIssue, getQueueItem } = useDownloadManagerStore.getState();
     const item = getQueueItem(downloadId);
+
+    // Honor a blanket decision pre-set on the item, don't bother showing the modal or polling
+    const allDecision = item?.signatureIssueAllDecision;
+    if (allDecision === IssueStatus.Approved || allDecision === IssueStatus.Rejected) {
+        return Promise.resolve(allDecision);
+    }
+
     if (item && item.signatureIssues && Object.values(item.signatureIssues).length) {
         const decision = Object.values(item.signatureIssues)[0].issueStatus;
         return Promise.resolve(decision === IssueStatus.Approved ? IssueStatus.Approved : IssueStatus.Rejected);
@@ -49,7 +56,15 @@ export const addAndWaitForMetadataIssueDecision = (
     node: NodeEntity,
     error: UnverifiedAuthorError
 ): Promise<UserDecision> => {
-    useDownloadManagerStore.getState().addSignatureIssue(downloadId, {
+    const { addSignatureIssue, getQueueItem } = useDownloadManagerStore.getState();
+
+    // Honor a blanket decision pre-set on the item, don't show the modal or polling.
+    const allDecision = getQueueItem(downloadId)?.signatureIssueAllDecision;
+    if (allDecision === IssueStatus.Approved || allDecision === IssueStatus.Rejected) {
+        return Promise.resolve(allDecision);
+    }
+
+    addSignatureIssue(downloadId, {
         name: node.name,
         nodeType: node.type,
         message: error.error,
