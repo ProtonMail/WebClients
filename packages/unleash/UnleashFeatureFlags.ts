@@ -330,6 +330,7 @@ enum LumoFeatureFlag {
     LumoNativeComposerImage = 'LumoNativeComposerImage',
     LumoNativeComposerModelSelection = 'LumoNativeComposerModelSelection',
     LumoAPIKeyManagement = 'LumoAPIKeyManagement',
+    LumoShowNextPromptSuggestions = 'LumoShowNextPromptSuggestions',
     LumoSurvey = 'LumoSurvey',
     LumoSurveyFreeUsers = 'LumoSurveyFreeUsers',
     LumoSurveyPaidUsers = 'LumoSurveyPaidUsers',

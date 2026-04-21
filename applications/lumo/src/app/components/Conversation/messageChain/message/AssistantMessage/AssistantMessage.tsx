@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import { useModalStateObject } from '@proton/components';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
+import { useFlag } from '@proton/unleash/useFlag';
 
 import { useCopyNotification } from '../../../../../hooks/useCopyNotification';
 import type { HandleRegenerateMessage } from '../../../../../hooks/useLumoActions';
@@ -194,6 +195,7 @@ const AssistantMessage = ({
     const [currentLink, setCurrentLink] = useState<string>('');
     const markdownContainerRef = useRef<HTMLDivElement>(null);
     const retryButtonRef = useRef<HTMLButtonElement>(null);
+    const showNextPromptSuggestionEnabled = useFlag('LumoShowNextPromptSuggestions');
 
     // Get blocks for interleaved rendering
     const blocks = useMemo(
@@ -232,6 +234,9 @@ const AssistantMessage = ({
 
     // Hide message if it's loading and truly empty (no content, no tool calls)
     const shouldShow = !isLoading || hasContent || hasToolCall;
+
+    const shouldShowNextPromptSuggestions =
+        showNextPromptSuggestionEnabled && isLastMessage && isFinishedGenerating && !generationFailed;
 
     return (
         <>
@@ -287,12 +292,9 @@ const AssistantMessage = ({
                                         retryButtonRef={retryButtonRef}
                                     />
 
-                                    {isLastMessage &&
-                                    isFinishedGenerating &&
-                                    !generationFailed &&
-                                    message.suggestedQuestions?.length ? (
+                                    {shouldShowNextPromptSuggestions && message.suggestedQuestions && (
                                         <SuggestedQuestions questions={message.suggestedQuestions} />
-                                    ) : null}
+                                    )}
                                 </div>
                             )}
                         </div>
