@@ -219,7 +219,7 @@
         "Pokračovat v importu"
       ],
       "Continue to ${ planOrAppName }": [
-        "Pokračujte na ${ planOrAppName }"
+        "Pokračovat na ${ planOrAppName }"
       ],
       "Continue with Google": [
         "Pokračovat skrze Google"
@@ -705,7 +705,7 @@
         "Obnovit připojení"
       ],
       "Reconnect to Gmail": [
-        "Znovu se připojit ke službě Gmail"
+        "Znovu připojit ke Gmail"
       ],
       "Reconnect to Zoom": [
         "Znovu připojit k Zoomu"
@@ -3212,6 +3212,15 @@
       "This can take a few minutes. Meanwhile, you can continue using ${ CALENDAR_APP_NAME } as usual.": [
         "Může to trvat několik minut. Mezitím můžete ${ CALENDAR_APP_NAME } používat jak potřebujete."
       ],
+      "This may happen if permissions were removed or your password changed.": [
+        "K tomu může dojít, pokud byla oprávnění odebrána nebo pokud jste změnili heslo."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Chcete-li i nadále přijímat a odesílat zprávy Gmailu v aplikaci ${ BRAND_NAME }, znovu prosím propojte svůj účet."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Chcete-li i nadále přijímat a odesílat zprávy Gmailu v aplikaci ${ BRAND_NAME }, znovu prosím propojte své účty."
+      ],
       "To ensure highest possible security of your account, set a recovery phrase.": [
         "Chcete-li zajistit co nejvyšší zabezpečení účtu, nastavte frázi pro obnovení."
       ],
@@ -3231,7 +3240,7 @@
         "Použijte tohoto průvodce, aby vaše organizace začala okamžitě využívat výhody špičkového ekosystému šifrování a ochrany soukromí ${ BRAND_NAME }."
       ],
       "We can't access ${ boldEmails } anymore.": [
-        "Nyní nemůžeme přistupovat k ${ boldEmails }."
+        "Již nemáme přístup k ${ boldEmails }."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Je nám líto, že odcházíte. Pokud máte chvilku, oceníme, pokud nám sdělíte důvod zrušení. Vaše zpětná vazba pomáhá vylepšovat ${ BRAND_NAME } pro všechny."
@@ -3582,6 +3591,9 @@
       "Account does not exist": [
         "Účet neexistuje"
       ],
+      "Address could not be added.": [
+        "Adresa nemohla být přidána."
+      ],
       "Address primary private key not found": [
         "Primární soukromý klíč adresy nenalezen"
       ],
@@ -3635,6 +3647,9 @@
       ],
       "Checkout expired, please try again": [
         "Objednávka vypršela, zkuste to prosím znovu"
+      ],
+      "Company name or personal name is required": [
+        "Je nutné zadat název společnosti nebo jméno osoby"
       ],
       "Contact could not be saved": [
         "Kontakt se nepodařilo uložit"
@@ -3737,6 +3752,9 @@
       ],
       "Failed to load OAuth modal.": [
         "Nepodařilo se načíst modální okno OAuth."
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Nepodařilo se načíst údaje o předplatném. Zkuste to prosím později."
       ],
       "Failed to open to contact": [
         "Otevření kontaktu selhalo"
@@ -3984,6 +4002,9 @@
       "Request timed out": [
         "Vypršel časový limit žádosti"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "U tohoto tarifu není podporován režim přenesení daňové povinnosti"
+      ],
       "Self invitation not allowed": [
         "Vlastní pozvání není dovoleno"
       ],
@@ -4013,6 +4034,9 @@
       ],
       "Some of your label names exceed ${ MAIL_APP_NAME }'s maximum character limit. Please customize the import to edit these names.": [
         "Některé z vašich názvů štítků překračují maximální limit znaků v aplikaci ${ MAIL_APP_NAME }. Přizpůsobte prosím import a upravte tyto názvy."
+      ],
+      "Something went wrong while fetching available domains": [
+        "Při vyhledávání volných domén došlo k chybě"
       ],
       "Something went wrong. Please try again.": [
         "Něco se pokazilo. Prosím, zkuste to znovu."
@@ -4109,6 +4133,9 @@
       ],
       "Validation error": [
         "Chyba ověření"
+      ],
+      "Wrong billing address": [
+        "Nesprávná fakturační adresa"
       ],
       "You already added this holidays calendar": [
         "Tento kalendář svátků jste již přidali"
@@ -5103,6 +5130,11 @@
         "Chcete-li kalendář exportovat jako ICS soubor, vyberte ${ boldExport }."
       ]
     },
+    "Import provider": {
+      "More import options": [
+        "Další možnosti importu"
+      ]
+    },
     "Import warning": {
       "${ totalContactsDiscarded } out of ${ totalContacts } contacts will not be imported. Click for details": [
         "${ totalContactsDiscarded } z ${ totalContacts } kontaktů nebude importováno. Klikněte pro detaily"
@@ -5195,6 +5227,9 @@
       ],
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } obsahuje ${ BRAND_NAME } asistenta psaní Scribe"
+      ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } je řešení pro videokonference s koncovým šifrováním. Přidejte si jej do svého tarifu a pořádejte bezpečné schůzky."
       ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } licencí"
@@ -5499,6 +5534,9 @@
       "Choose a plan that works best for you.": [
         "Vyberte tarif, který vám nejlépe vyhovuje."
       ],
+      "Choose your service to connect with": [
+        "Vyberte si službu, ke které se chcete připojit"
+      ],
       "Clear data": [
         "Smazat data"
       ],
@@ -5700,6 +5738,9 @@
       "Everything in ${ planOrAppName }": [
         "Vše v ${ planOrAppName }"
       ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Vše v ${ planOrAppName } plus:"
+      ],
       "Existent and added participants will be notified.": [
         "Existující a přidaní účastníci budou upozorněni."
       ],
@@ -5723,6 +5764,9 @@
       ],
       "finance": [
         "finance"
+      ],
+      "for ${ price }": [
+        "za ${ price }"
       ],
       "For extra security, you can set a passphrase. It won’t be included in the calendar invite, remember to share it with your guests separately.": [
         "Pro zvýšení bezpečnosti můžete nastavit heslo. Nebude součástí pozvánky do kalendáře, nezapomeňte jej sdílet s hosty zvlášť."
@@ -6583,7 +6627,7 @@
         "Pokud službu zrušíte před ${ trialEndsOnFormatted }, nebudou vám účtovány žádné poplatky."
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
-        "Kreditovou odměnu obdržíte 1 měsíc poté, co si váš přítel předplatí roční plán, a 2 měsíce poté, co si předplatí měsíční plán."
+        "Odměnu v podobě kreditů získáte 1 měsíc poté, co si vaši přátelé předplatí roční tarif, a 2 měsíce poté, co si předplatí měsíční tarif."
       ],
       "You'll then be billed every ${ renewCycle } month at ${ renewAmountStr }. You can cancel at any time.": [
         "Poté vám bude každý ${ renewCycle } měsíc účtováno ${ renewAmountStr }. Zrušit můžete kdykoli.",
@@ -6608,6 +6652,9 @@
       ],
       "Your account has at least one overdue invoice. Your access will soon get restricted. ${ payInvoiceLink }": [
         "Váš účet má alespoň jednu fakturu po splatnosti. Váš přístup bude brzy omezen. ${ payInvoiceLink }"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Váš účet je v současné době nastaven tak, aby využíval režim přenesení daňové povinnosti. Tento režim není u vybraného tarifu podporován. Chcete-li pokračovat, odstraňte DIČ z fakturační adresy nebo vyberte jiný tarif."
       ],
       "Your address is disabled. A cancellation email cannot be sent to the event participants. Would you like to delete all events in this series anyway?": [
         "Vaše adresa je deaktivována. Účastníkům události nelze zaslat e-mail o zrušení. Chcete i přesto smazat všechny události této série?"
@@ -6916,6 +6963,9 @@
       "Add Zoom meeting": [
         "Přidat schůzku na Zoomu"
       ],
+      "Additional comments": [
+        "Další komentáře"
+      ],
       "Address": [
         "Adresa"
       ],
@@ -7007,7 +7057,7 @@
         "Kontakty"
       ],
       "Continue cancelling": [
-        "Pokračovat ve zrušení"
+        "Pokračovat v rušení"
       ],
       "Copy": [
         "Kopírovat"
@@ -7071,6 +7121,9 @@
       ],
       "Emails (last 3 months)": [
         "E-maily (poslední 3 měsíce)"
+      ],
+      "Emails (last 6 months)": [
+        "E-maily (posledních 6 měsíců)"
       ],
       "Emails (last month)": [
         "E-maily (poslední měsíc)"
@@ -7185,6 +7238,9 @@
       ],
       "Main": [
         "Hlavní"
+      ],
+      "Main reason for cancelling": [
+        "Hlavní důvod zrušení"
       ],
       "Manage categories": [
         "Zpravovat kategorie"
@@ -7315,6 +7371,9 @@
       "Secondary time zone": [
         "Sekundární časové pásmo"
       ],
+      "Securely share parts of your schedule through a booking page you can send to anyone.": [
+        "Bezpečně sdílejte části svého rozvrhu prostřednictvím rezervační stránky, kterou můžete poslat komukoli."
+      ],
       "Show others when I'm busy": [
         "Zobrazit ostatním kdy jsem zaneprázdněn"
       ],
@@ -7323,6 +7382,9 @@
       ],
       "Sign emails": [
         "Podepsat e-maily"
+      ],
+      "Skip feedback": [
+        "Přeskočit zpětnou vazbu"
       ],
       "Start date": [
         "Datum zahájení"
@@ -7731,6 +7793,9 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } licence"
+      ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } licencí"
       ],
@@ -7775,6 +7840,9 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Sdílení obrazovky s koncovým šifrováním a dočasný chat během hovoru"
       ],
+      "Hosts can record meetings locally on their computers": [
+        "Organizátoři mohou schůzky nahrávat lokálně na svých počítačích"
+      ],
       "Meeting recording": [
         "Nahrávání schůzky"
       ],
@@ -7812,6 +7880,9 @@
         "včetně ${ seats } licencí",
         "včetně ${ seats } licencí",
         "včetně ${ seats } licencí"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Můžete mít až ${ TRIAL_MAX_MEET_SEATS } licencí ${ MEET_SHORT_APP_NAME } během zkušební doby."
       ]
     },
     "Message": {
@@ -8336,8 +8407,8 @@
       "Data retention policies": [
         "Zásady uchovávání dat"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Dedikované servery optimalizované pro streamování"
+      "Dedicated servers optimized for speed": [
+        "Dedikované servery optimalizované pro rychlost"
       ],
       "Desktop app": [
         "Desktopová aplikace"
@@ -9074,6 +9145,9 @@
       ],
       "Passphrase copied to clipboard": [
         "Heslo zkopírováno do schránky"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Vaše adresa ${ BRAND_NAME } je připravena k použití"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9727,6 +9801,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Během této doby nebudete moci předplatné upravit ani zrušit. Než se pokusíte provést jakékoli změny, počkejte, dokud nebude platba dokončena. Děkujeme vám za trpělivost."
       ],
+      "Edit billing address": [
+        "Upravit fakturační adresu"
+      ],
       "Got it": [
         "Rozumím"
       ],
@@ -9828,6 +9905,9 @@
       ],
       "VAT number": [
         "DIČ"
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Platí mechanismus přenesení daňové povinnosti."
       ],
       "You already have a subscription to this plan.": [
         "Již máte předplatné tohoto tarifu."
@@ -10039,7 +10119,7 @@
         "E-mail pro potvrzení rezervace"
       ],
       "Enter a name": [
-        "Zadejte název"
+        "Zadejte jméno"
       ],
       "Enter a short description or additional info": [
         "Zadejte krátký popis nebo doplňující informace"
@@ -10121,6 +10201,9 @@
       ],
       "Select": [
         "Vybrat"
+      ],
+      "Select a provider": [
+        "Vybrat poskytovatele"
       ],
       "Select a reason": [
         "Vyberte důvod"
@@ -10259,6 +10342,21 @@
       ]
     },
     "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Ostatní"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
       "Yahoo": [
         "Yahoo"
       ]
@@ -10553,9 +10651,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Obnovení účtu není k dispozici pro starší klíče adres"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Než se pokusíte změnit si heslo, vygenerujte si prosím klíče"
       ]
     },
     "session_recovery:available:info": {
@@ -12409,6 +12504,9 @@
       "Import groups": [
         "Importovat skupiny"
       ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Načtěte svá data do ${ BRAND_NAME }"
+      ],
       "Information exposed in breach": [
         "Informace odhalené při úniku"
       ],
@@ -12570,6 +12668,9 @@
       ],
       "Select contact group": [
         "Vybrat skupinu kontaktů"
+      ],
+      "Select data to import": [
+        "Vyberte data k importu"
       ],
       "Select event end date": [
         "Vyberte datum konce události"
