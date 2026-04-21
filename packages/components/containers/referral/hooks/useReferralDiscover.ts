@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import { fromUnixTime } from 'date-fns';
@@ -58,15 +58,20 @@ export const useReferralDiscover = () => {
                 (isFreeUsersDiscoverFeatureActive && userIsFreeAndCreatedThirtyDaysAgo))
     );
 
-    const handleCloseSettingsSpotlight = useCallback(() => {
+    const onceRef = useRef(false);
+
+    const handleCloseSettingsSpotlight = useCallback(async () => {
         onCloseSettingsSpotlight();
-        void updateReferralSpotlightSettings(false);
+        if (!onceRef.current) {
+            onceRef.current = true;
+            void updateReferralSpotlightSettings(false);
+        }
     }, [onCloseSettingsSpotlight]);
 
     // Remove spotlight if user has seen referral page
     useEffect(() => {
         if (isFeatureActive && location?.pathname.includes('/referral')) {
-            handleCloseSettingsSpotlight();
+            void handleCloseSettingsSpotlight();
         }
     }, [location?.pathname, isFeatureActive]);
 
