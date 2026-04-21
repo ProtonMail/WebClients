@@ -1,9 +1,12 @@
 import { useEffect, useState } from 'react';
 
+import { useOrganization } from '@proton/account/organization/hooks';
+import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Loader, useApi } from '@proton/components/index';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
+import { isB2BAdmin } from '../../../functions/isB2BAdmin';
 import { TvSignInCompleted } from '../components/TvSignInCompleted';
 import { TvSignInFailed } from '../components/TvSignInFailed';
 import type { FetchErrors } from '../types';
@@ -23,7 +26,10 @@ export const TvContainerSignedIn = ({ code }: { code: string }) => {
     const [step, setStep] = useState<ForkSessionStep>(ForkSessionStep.FETCHING_CODE);
     const [error, setError] = useState<FetchErrors | undefined>(undefined);
     const [user] = useUser();
-    const isBusiness = user.isAdmin;
+    const [organization] = useOrganization();
+    const [subscription] = useSubscription();
+
+    const isBusiness = isB2BAdmin({ subscription, user, organization });
 
     useEffect(() => {
         if (isBusiness) {
