@@ -1,5 +1,6 @@
+import { CCFieldType } from '@protontech/autofill/types';
+
 import { MAX_ITEM_NAME_LENGTH } from '@proton/pass/constants';
-import { CCFieldType } from '@proton/pass/fathom/labels';
 import { itemBuilder } from '@proton/pass/lib/items/item.builder';
 import { createTestItem } from '@proton/pass/lib/items/item.test.utils';
 import type { Draft } from '@proton/pass/store/reducers/drafts';

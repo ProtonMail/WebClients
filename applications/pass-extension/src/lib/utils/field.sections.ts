@@ -1,6 +1,5 @@
+import { CCFieldType, FieldType, IdentityFieldType } from '@protontech/autofill/types';
 import type { AbstractField } from 'proton-pass-extension/types/field';
-
-import { CCFieldType, FieldType, IdentityFieldType } from '@proton/pass/fathom/labels';
 
 import { isCCField, isEmailField, isIdentityField } from './field';
 

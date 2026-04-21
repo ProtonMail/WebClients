@@ -1,3 +1,4 @@
+import { isShadowRoot } from '@protontech/autofill';
 import { DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { DROPDOWN_WIDTH } from 'proton-pass-extension/app/content/constants.static';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
@@ -6,7 +7,6 @@ import type { InlineCloseOptions } from 'proton-pass-extension/app/content/servi
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
-import { isShadowRoot } from '@proton/pass/fathom';
 import { deriveAliasPrefix } from '@proton/pass/lib/alias/alias.utils';
 import { clientStatusResolved } from '@proton/pass/lib/client';
 import type { Rect } from '@proton/pass/types/utils/dom';

@@ -1,3 +1,5 @@
+import { isVisible } from '@protontech/autofill';
+import type { FieldType, FormType } from '@protontech/autofill/types';
 import type { DropdownAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { AutofillOptions } from 'proton-pass-extension/app/content/services/autofill/autofill.utils';
@@ -9,8 +11,6 @@ import { getFrameID, getFrameParentVisibility } from 'proton-pass-extension/app/
 import type { AbstractField } from 'proton-pass-extension/types/field';
 import type { FrameField } from 'proton-pass-extension/types/frames';
 
-import { isVisible } from '@proton/pass/fathom';
-import type { FieldType, FormType } from '@proton/pass/fathom/labels';
 import type { MaybeNull } from '@proton/pass/types/utils/index';
 import { isActiveElement } from '@proton/pass/utils/dom/active-element';
 import { isInputElement } from '@proton/pass/utils/dom/predicates';

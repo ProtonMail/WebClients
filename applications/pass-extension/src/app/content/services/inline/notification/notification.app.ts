@@ -1,3 +1,5 @@
+import { flagAsIgnored, removeClassifierFlags } from '@protontech/autofill';
+import { FieldType } from '@protontech/autofill/types';
 import { NOTIFICATION_IFRAME_SRC, NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { NOTIFICATION_MIN_HEIGHT, NOTIFICATION_WIDTH } from 'proton-pass-extension/app/content/constants.static';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
@@ -8,8 +10,6 @@ import type { PopoverController } from 'proton-pass-extension/app/content/servic
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
-import { flagAsIgnored, removeClassifierFlags } from '@proton/pass/fathom';
-import { FieldType } from '@proton/pass/fathom/labels';
 import type { SelectedPasskey } from '@proton/pass/lib/passkeys/types';
 import type { AutosavePayload } from '@proton/pass/types/worker/autosave';
 import type { LoginItemPreview } from '@proton/pass/types/worker/data';

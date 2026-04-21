@@ -1,3 +1,4 @@
+import { FieldType } from '@protontech/autofill/types';
 import { createAutofillService } from 'proton-pass-extension/app/content/services/autofill/autofill.service';
 import { createAutosaveRelay } from 'proton-pass-extension/app/content/services/autosave/autosave.relay';
 import { createAutosaveService } from 'proton-pass-extension/app/content/services/autosave/autosave.service';

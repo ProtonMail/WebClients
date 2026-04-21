@@ -1,3 +1,5 @@
+import { clearDetectionCache } from '@protontech/autofill';
+import { FieldType } from '@protontech/autofill/types';
 import throttle from 'lodash/throttle';
 import { IFRAME_EXTENDED_AUTOFILL_FIELDS } from 'proton-pass-extension/app/content/constants.runtime';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
@@ -13,8 +15,7 @@ import {
 import { getFrameAttributes } from 'proton-pass-extension/app/content/utils/frame';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
-import { clearDetectionCache } from '@proton/pass/fathom';
-import { FieldType, fieldTypes } from '@proton/pass/fathom/labels';
+import { fieldTypes } from '@proton/pass/fathom/labels';
 import { isActiveElement } from '@proton/pass/utils/dom/active-element';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { logger } from '@proton/pass/utils/logger';

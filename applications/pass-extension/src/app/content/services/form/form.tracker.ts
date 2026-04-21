@@ -1,10 +1,10 @@
+import { isBtnCandidate, kButtonSubmitSelector } from '@protontech/autofill';
+import { FieldType } from '@protontech/autofill/types';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { FrameMessageHandler } from 'proton-pass-extension/app/content/services/client/client.channel';
 import { stage, stash, validateFormCredentials } from 'proton-pass-extension/lib/utils/form-entry';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
-import { isBtnCandidate, kButtonSubmitSelector } from '@proton/pass/fathom';
-import { FieldType } from '@proton/pass/fathom/labels';
 import type { MaybeNull } from '@proton/pass/types/utils/index';
 import type { AutosaveFormEntry, FormCredentials } from '@proton/pass/types/worker/form';
 import { first } from '@proton/pass/utils/array/first';

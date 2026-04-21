@@ -1,6 +1,6 @@
+import type { CCFieldType } from '@protontech/autofill/types';
 import type { FrameField } from 'proton-pass-extension/types/frames';
 
-import type { CCFieldType } from '@proton/pass/fathom/labels';
 import type { FormCredentials, Result } from '@proton/pass/types';
 import type { ItemContent, SelectedItem } from '@proton/pass/types/data/items';
 import type { CCItemData } from '@proton/pass/types/worker/data';

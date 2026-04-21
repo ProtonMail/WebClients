@@ -1,10 +1,10 @@
+import { CCFieldType, FieldType } from '@protontech/autofill/types';
 import throttle from 'lodash/throttle';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { ClientObserverEvent } from 'proton-pass-extension/app/content/services/client/client.observer';
 import { InlinePortMessageType } from 'proton-pass-extension/app/content/services/inline/inline.messages';
 import { isCCField } from 'proton-pass-extension/lib/utils/field';
 
-import { CCFieldType, FieldType } from '@proton/pass/fathom/labels';
 import type { MaybeNull } from '@proton/pass/types/utils/index';
 import { isActiveElement } from '@proton/pass/utils/dom/active-element';
 import { createRAFController } from '@proton/pass/utils/dom/raf';

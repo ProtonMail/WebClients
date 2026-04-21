@@ -1,7 +1,7 @@
+import type { HTMLFieldElement } from '@protontech/autofill';
+import type { FieldType } from '@protontech/autofill/types';
 import type { FieldElement } from 'proton-pass-extension/app/content/services/form/field';
 
-import type { HTMLFieldElement } from '@proton/pass/fathom';
-import type { FieldType } from '@proton/pass/fathom/labels';
 import { isActiveElement } from '@proton/pass/utils/dom/active-element';
 import { isInputElement, isSelectElement } from '@proton/pass/utils/dom/predicates';
 import { seq } from '@proton/pass/utils/fp/promises';
