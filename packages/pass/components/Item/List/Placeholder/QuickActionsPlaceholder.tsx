@@ -101,7 +101,7 @@ export const QuickActionsPlaceholder: FC = () => {
                 icon: 'arrow-up-line',
                 shape: 'outline',
                 label: c('Label').t`Import passwords`,
-                onClick: () => openSettings?.('import'),
+                onClick: () => openSettings('import'),
             },
         ];
 

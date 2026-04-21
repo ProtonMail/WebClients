@@ -90,7 +90,7 @@ export const AliasForm = <V extends AliasFormValues>({
     const handleSpotlightActionClick = () => {
         acknowledge(SpotlightMessage.ALIAS_DISCOVERY_MAILBOX);
         acknowledge(SpotlightMessage.ALIAS_DISCOVERY_DOMAIN);
-        openSettings?.('aliases');
+        openSettings('aliases');
     };
 
     const wrapperProps = {
