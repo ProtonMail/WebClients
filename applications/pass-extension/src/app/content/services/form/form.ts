@@ -1,3 +1,15 @@
+import {
+    getCCFieldType,
+    getIdentityFieldType,
+    isIFrameField,
+    isIgnored,
+    isVisibleForm,
+    kButtonSelector,
+    removeClassifierFlags,
+    shadowPiercingContains,
+} from '@protontech/autofill';
+import type { FormType } from '@protontech/autofill/types';
+import { FieldType, IdentityFieldType } from '@protontech/autofill/types';
 import debounce from 'lodash/debounce';
 import { FORM_TRACKER_CONFIG, NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
@@ -9,18 +21,6 @@ import type { ClusterFrameFormItem } from 'proton-pass-extension/app/worker/serv
 import { isCCField } from 'proton-pass-extension/lib/utils/field';
 import { resolveFieldSections } from 'proton-pass-extension/lib/utils/field.sections';
 
-import {
-    getCCFieldType,
-    getIdentityFieldType,
-    isIFrameField,
-    isIgnored,
-    isVisibleForm,
-    kButtonSelector,
-    removeClassifierFlags,
-    shadowPiercingContains,
-} from '@proton/pass/fathom';
-import type { FormType } from '@proton/pass/fathom/labels';
-import { FieldType, IdentityFieldType } from '@proton/pass/fathom/labels';
 import browser from '@proton/pass/lib/globals/browser';
 import type { Maybe } from '@proton/pass/types/utils/index';
 import { isActiveElement } from '@proton/pass/utils/dom/active-element';

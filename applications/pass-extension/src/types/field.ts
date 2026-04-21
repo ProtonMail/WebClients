@@ -1,4 +1,4 @@
-import type { CCFieldType, FieldType, IdentityFieldType } from '@proton/pass/fathom/labels';
+import type { CCFieldType, FieldType, IdentityFieldType } from '@protontech/autofill/types';
 
 export type FieldSubTypes = {
     [FieldType.CREDIT_CARD]: CCFieldType;

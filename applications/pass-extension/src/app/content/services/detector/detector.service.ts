@@ -1,21 +1,22 @@
+import {
+    clearDetectionCache,
+    createRulesetRegistry,
+    flagOverride,
+    flagSubtreeAsIgnored,
+    getTypeScore,
+    prepass,
+    shadowPiercingContains,
+    shouldRunClassifier,
+} from '@protontech/autofill';
+import { perceptronModelProvider } from '@protontech/autofill/models/perceptron';
+import type { FieldType } from '@protontech/autofill/types';
+import { FormType, fieldTypes, formTypes } from '@protontech/autofill/types';
+import type { Fnode } from '@protontech/fathom';
 import { MAX_MAX_DETECTION_TIME, MIN_MAX_DETECTION_TIME } from 'proton-pass-extension/app/content/constants.static';
 import { selectNodeFromPath } from 'proton-pass-extension/app/content/services/detector/detector.utils';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
-import {
-    clearDetectionCache,
-    flagOverride,
-    flagSubtreeAsIgnored,
-    getTypeScore,
-    prepass,
-    rulesetMaker,
-    shadowPiercingContains,
-    shouldRunClassifier,
-} from '@proton/pass/fathom';
-import type { Fnode } from '@proton/pass/fathom/fathom';
-import type { FieldType } from '@proton/pass/fathom/labels';
-import { FormType, fieldTypes, formTypes } from '@proton/pass/fathom/labels';
 import type { DetectionRulesMatch } from '@proton/pass/lib/extension/rules/types';
 import type { Callback, MaybeNull } from '@proton/pass/types/utils/index';
 import { compareDomNodes } from '@proton/pass/utils/dom/sort';
@@ -28,12 +29,13 @@ import { withMaxExecutionTime } from '@proton/pass/utils/time/performance';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import noop from '@proton/utils/noop';
 
-const ruleset = rulesetMaker();
+const registry = createRulesetRegistry({ perceptron: perceptronModelProvider });
+const ruleset = registry.make('perceptron');
 const NOOP_EL = document.createElement('form');
 const DETECTION_TIE_TRESHOLD = 0.01;
 
 type DetectorConfig = {
-    root: HTMLElement | Document;
+    root: Document;
     onBottleneck?: (data: { detectionTime: number; hostname: string }) => void;
 };
 

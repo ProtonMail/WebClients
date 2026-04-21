@@ -1,3 +1,5 @@
+import type { CCFieldType } from '@protontech/autofill/types';
+import { FormType } from '@protontech/autofill/types';
 import WorkerMessageBroker from 'proton-pass-extension/app/worker/channel';
 import { onContextReady, withContext } from 'proton-pass-extension/app/worker/context/inject';
 import { createBasicAuthController } from 'proton-pass-extension/app/worker/listeners/auth-required';
@@ -10,8 +12,6 @@ import type { AutofillActionDTO, AutofillRequest, AutofillSequence } from 'proto
 import type { FrameFormsResult } from 'proton-pass-extension/types/frames';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
-import type { CCFieldType } from '@proton/pass/fathom/labels';
-import { FormType } from '@proton/pass/fathom/labels';
 import { clientBooted } from '@proton/pass/lib/client';
 import { compileRules, matchRules, parseRules } from '@proton/pass/lib/extension/rules/rules';
 import type { CompiledRules } from '@proton/pass/lib/extension/rules/types';

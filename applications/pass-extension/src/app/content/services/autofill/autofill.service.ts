@@ -1,3 +1,4 @@
+import { CCFieldType, FieldType } from '@protontech/autofill/types';
 import { DropdownAction, NotificationAction } from 'proton-pass-extension/app/content/constants.runtime';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import type { ContentScriptContextFactoryOptions } from 'proton-pass-extension/app/content/context/factory';
@@ -11,7 +12,6 @@ import type { AutofillRequest, AutofillResult } from 'proton-pass-extension/type
 import type { FrameField } from 'proton-pass-extension/types/frames';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
-import { CCFieldType, FieldType } from '@proton/pass/fathom/labels';
 import { passwordSave } from '@proton/pass/store/actions/creators/password';
 import type { ItemContent } from '@proton/pass/types/data/items';
 import { TelemetryEventName } from '@proton/pass/types/data/telemetry';

@@ -1,7 +1,7 @@
+import { CCFieldType } from '@protontech/autofill/types';
 import { c, msgid } from 'ttag';
 
 import { MAX_ITEM_NAME_LENGTH } from '@proton/pass/constants';
-import { CCFieldType } from '@proton/pass/fathom/labels';
 import PassUI from '@proton/pass/lib/core/ui.proxy';
 import { parseOTPValue } from '@proton/pass/lib/otp/otp';
 import type { Draft } from '@proton/pass/store/reducers/drafts';

@@ -1,10 +1,10 @@
+import { isEditorFrame, isVisible } from '@protontech/autofill';
 import { withContext } from 'proton-pass-extension/app/content/context/context';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { getFrameScore } from 'proton-pass-extension/lib/utils/frames';
 import type { FrameAttributes } from 'proton-pass-extension/types/frames';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 
-import { isEditorFrame, isVisible } from '@proton/pass/fathom';
 import browser from '@proton/pass/lib/globals/browser';
 import type { Maybe } from '@proton/pass/types/utils/index';
 import type { FrameId } from '@proton/pass/types/worker/runtime';
