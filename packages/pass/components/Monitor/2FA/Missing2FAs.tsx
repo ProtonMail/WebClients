@@ -36,7 +36,7 @@ export const Missing2FAs: FC = () => {
     const { close } = useContextMenu();
     const { item: contextMenuItem, onContextMenu } = useItemContextMenu();
 
-    useAutoSelect(items);
+    useAutoSelect(items[0]);
     useTelemetryEvent(TelemetryEventName.PassMonitorDisplayMissing2FA, {}, {})([]);
 
     const onSelect = useCallback((item: ItemRevision) => {
