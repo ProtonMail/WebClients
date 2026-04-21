@@ -3,12 +3,20 @@ import { createSelector, createSlice } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
-import { isLinux } from '@proton/shared/lib/helpers/browser';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import { isLinux, isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 
 import { type SerializableDeviceInfo, getDefaultDevice } from '../../utils/deviceUtils';
 import { isAudioSessionAvailable, setAudioSessionType } from '../../utils/iosAudioSession';
 import type { MeetState } from '../rootReducer';
+
+export enum PermissionsModalType {
+    NONE = 'none',
+    PERMISSIONS_MODAL = 'permissionsModal',
+    PERMISSIONS_BLOCKED_MODAL = 'permissionsBlockedModal',
+    PERMISSIONS_BLOCKED_CAMERA_MODAL = 'permissionsBlockedCameraModal',
+    PERMISSIONS_BLOCKED_MICROPHONE_MODAL = 'permissionsBlockedMicrophoneModal',
+    PERMISSIONS_BLOCKED_SCREEN_SHARE_MODAL = 'permissionsBlockedScreenShareModal',
+}
 
 export interface DeviceManagementState {
     permissions: {
@@ -26,6 +34,9 @@ export interface DeviceManagementState {
     activeAudioOutputId: string;
     initialCameraState: boolean;
     initialAudioState: boolean;
+    uiModals: {
+        permissionsModal: PermissionsModalType;
+    };
 }
 
 export const deviceManagementInitialState: DeviceManagementState = {
@@ -44,6 +55,9 @@ export const deviceManagementInitialState: DeviceManagementState = {
     activeAudioOutputId: '',
     initialCameraState: false,
     initialAudioState: false,
+    uiModals: {
+        permissionsModal: PermissionsModalType.NONE,
+    },
 };
 
 type DeviceKind = 'audioinput' | 'audiooutput' | 'videoinput';
@@ -108,9 +122,27 @@ const slice = createSlice({
         setInitialAudioState: (state, action: PayloadAction<boolean>) => {
             state.initialAudioState = action.payload;
         },
+        dismissPermissionsModal: (state) => {
+            state.uiModals.permissionsModal = PermissionsModalType.NONE;
+        },
+        showPermissionsModal: (state, action: PayloadAction<{ modal: PermissionsModalType }>) => {
+            state.uiModals.permissionsModal = action.payload.modal;
+        },
         resetDeviceManagement: () => deviceManagementInitialState,
     },
 });
+
+export class PermissionBlockedError extends Error {}
+
+const AUTOREJECT_THRESHOLD_MS = 300;
+const MOBILE_SAFARI_AUTOREJECT_THRESHOLD_MS = 1000;
+
+const getAutoRejectThresholdMs = () => {
+    if (isMobile() && isSafari()) {
+        return MOBILE_SAFARI_AUTOREJECT_THRESHOLD_MS;
+    }
+    return AUTOREJECT_THRESHOLD_MS;
+};
 
 export const requestPermission =
     (
@@ -118,7 +150,8 @@ export const requestPermission =
         deviceId?: string
     ): ThunkAction<Promise<PermissionState>, MeetState, ProtonThunkArguments, UnknownAction> =>
     async (dispatch, getState) => {
-        const currentPermission = getState().deviceManagement.permissions[deviceType];
+        const permissions = getState().deviceManagement.permissions;
+        const currentPermission = permissions[deviceType];
         if (currentPermission === 'granted') {
             return 'granted';
         }
@@ -127,10 +160,7 @@ export const requestPermission =
         try {
             queryState = (await navigator.permissions.query({ name: deviceType as PermissionName }))?.state;
         } catch (err) {
-            captureMessage(`Failed to query permission for ${deviceType}`, {
-                level: 'error',
-                extra: { deviceType, error: err },
-            });
+            // Permissions API not supported — fall back to 'prompt'
         }
 
         if (queryState === 'granted') {
@@ -138,13 +168,14 @@ export const requestPermission =
             return 'granted';
         }
 
+        const start = performance.now();
         try {
             let stream: MediaStream;
 
             if (deviceType === 'microphone') {
                 setAudioSessionType('auto');
                 stream = await navigator.mediaDevices.getUserMedia({
-                    audio: isAudioSessionAvailable() || !deviceId ? true : { deviceId },
+                    audio: !isAudioSessionAvailable() && deviceId ? { deviceId } : true,
                 });
                 setAudioSessionType('play-and-record');
             } else {
@@ -157,10 +188,25 @@ export const requestPermission =
 
             dispatch(slice.actions.setPermissions({ [deviceType]: 'granted' }));
             return 'granted';
-        } catch (err) {
-            if (err instanceof Error && (err.name === 'NotAllowedError' || err.name === 'SecurityError')) {
-                dispatch(slice.actions.setPermissions({ [deviceType]: 'denied' }));
-                return 'denied';
+        } catch (error) {
+            const end = performance.now();
+            // If the permission request takes less than 300ms, the browser is blocking the permission request.
+            const arePermissionsBlocked = end - start < getAutoRejectThresholdMs();
+
+            if (error instanceof Error && (error.name === 'NotAllowedError' || error.name === 'SecurityError')) {
+                let actualState: PermissionState = 'denied';
+                try {
+                    actualState = (await navigator.permissions.query({ name: deviceType as PermissionName }))?.state;
+                } catch {
+                    // Permissions API not supported — fall back to 'denied'
+                }
+                dispatch(slice.actions.setPermissions({ [deviceType]: actualState }));
+
+                if (arePermissionsBlocked) {
+                    throw new PermissionBlockedError('Permissions are blocked by the browser');
+                }
+
+                return actualState;
             }
 
             dispatch(slice.actions.setPermissions({ [deviceType]: 'prompt' }));
@@ -188,6 +234,8 @@ export const selectActiveAudioOutputId = (state: MeetState) => state.deviceManag
 
 export const selectInitialCameraState = (state: MeetState) => state.deviceManagement.initialCameraState;
 export const selectInitialAudioState = (state: MeetState) => state.deviceManagement.initialAudioState;
+
+export const selectPermissionsModals = (state: MeetState) => state.deviceManagement.uiModals;
 
 const isDeviceAvailable = (devices: SerializableDeviceInfo[], deviceId: string | null): boolean =>
     !!devices.find((d) => d.deviceId === deviceId);
@@ -279,6 +327,8 @@ export const {
     setActiveDevice,
     setInitialCameraState,
     setInitialAudioState,
+    dismissPermissionsModal,
+    showPermissionsModal,
     resetDeviceManagement,
 } = slice.actions;
 
