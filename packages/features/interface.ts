@@ -140,4 +140,7 @@ export enum FeatureCode {
     NPSFeedbackDesktopMail = 'NPSFeedbackDesktopMail',
     NPSFeedbackWebCalendar = 'NPSFeedbackWebCalendar',
     NPSFeedbackWebMail = 'NPSFeedbackWebMail',
+
+    // Feedback First Cancellation Flow
+    CanUseFeedbackFirstCancellationOffer = 'CanUseFeedbackFirstCancellationOffer',
 }
