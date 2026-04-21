@@ -1494,12 +1494,6 @@
       "Failed to lock meeting": [
         "Vergrendelen van vergadering is mislukt"
       ],
-      "Failed to request permission for the camera. Please check your system permissions and try again. You might have to enable permissions manually, please refresh the page afterwards": [
-        "Het is niet gelukt om toegang te krijgen tot de camera. Controleer uw systeemrechten en probeer het opnieuw. Mogelijk moet u de rechten handmatig inschakelen. Vernieuw de pagina daarna."
-      ],
-      "Failed to request permission for the microphone. Please check your system permissions and try again. You might have to enable permissions manually, please refresh the page afterwards": [
-        "Het is niet gelukt om toegang te krijgen tot de microfoon. Controleer uw systeemrechten en probeer het opnieuw. Mogelijk moet u de rechten handmatig inschakelen. Vernieuw de pagina daarna."
-      ],
       "Failed to rotate personal meeting link": [
         "Roteren van de persoonlijke vergadering link is mislukt."
       ],
@@ -1833,11 +1827,11 @@
       "Decrypting meetings...": [
         "Vergaderingen ontsleutelen..."
       ],
-      "Default": [
-        "Standaard"
-      ],
       "Default - ${ systemDefault.label }": [
         "Standaard - ${ systemDefault.label }"
+      ],
+      "Default - System Default": [
+        "Standaard - Systeemstandaard"
       ],
       "Delete event": [
         "Verwijder afspraak"
@@ -2616,14 +2610,14 @@
       "Others couldn't hear me": [
         "Anderen konden mij niet horen"
       ],
+      "Others couldn't see my video": [
+        "Anderen konden mijn video niet zien"
+      ],
       "The presentation was blurry": [
         "De presentatie was wazig"
       ],
-      "Video was blurry": [
-        "Video was wazig"
-      ],
-      "Video was breaking up": [
-        "Video was aan het haperen"
+      "Video quality was poor": [
+        "De videokwaliteit was slecht"
       ]
     },
     "Placeholder": {

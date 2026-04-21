@@ -1441,6 +1441,11 @@
         "Rotierender Gruppen-Verschlüsselungsschlüssel für optimale Sicherheit"
       ]
     },
+    "Display name": {
+      "Loading…": [
+        "Wird geladen …"
+      ]
+    },
     "emergency_access": {
       "Trusted contact": [
         "Vertrauenswürdiger Kontakt"
@@ -1488,12 +1493,6 @@
       ],
       "Failed to lock meeting": [
         "Fehler beim Sperren des Meetings"
-      ],
-      "Failed to request permission for the camera. Please check your system permissions and try again. You might have to enable permissions manually, please refresh the page afterwards": [
-        "Die Berechtigung für das Nutzen der Kamera konnte nicht angefordert werden. Bitte überprüfen deine Systemberechtigungen und versuche es erneut. Möglicherweise musst du die Berechtigungen manuell aktivieren. Bitte aktualisiere anschließend die Seite."
-      ],
-      "Failed to request permission for the microphone. Please check your system permissions and try again. You might have to enable permissions manually, please refresh the page afterwards": [
-        "Die Berechtigung für das Nutzen des Mikrofons konnte nicht angefordert werden. Bitte überprüfe deine Systemberechtigungen und versuche es erneut. Möglicherweise musst du die Berechtigungen manuell aktivieren. Bitte aktualisiere anschließend die Seite."
       ],
       "Failed to rotate personal meeting link": [
         "Fehler beim Neugenerieren des persönlichen Meeting-Links"
@@ -1560,6 +1559,9 @@
       ],
       "The meeting password is incorrect": [
         "Das Meeting-Passwort ist falsch"
+      ],
+      "The meeting password is invalid": [
+        "Das Meeting-Passwort ist ungültig"
       ],
       "This field exceeds the maximum of ${ maximumLength } characters.": [
         "Das Feld überschreitet die maximale Länge von ${ maximumLength } Zeichen."
@@ -1831,11 +1833,11 @@
       "Decrypting meetings...": [
         "Meetings werden entschlüsselt..."
       ],
-      "Default": [
-        "Standard"
-      ],
       "Default - ${ systemDefault.label }": [
         "Standard – ${ systemDefault.label }"
+      ],
+      "Default - System Default": [
+        "Standard - Systemstandard"
       ],
       "Delete event": [
         "Termin löschen"
@@ -1854,6 +1856,12 @@
       ],
       "Edit email address": [
         "E-Mail-Adresse bearbeiten"
+      ],
+      "End Meeting for everyone?": [
+        "Meeting für alle beenden?"
+      ],
+      "End the meeting for everyone?": [
+        "Meeting für alle beenden?"
       ],
       "End-to-end encryption is active for audio and video.": [
         "Ende-zu-Ende-Verschlüsselung ist für Audio und Video aktiv."
@@ -1932,6 +1940,12 @@
       ],
       "Learn more": [
         "Mehr erfahren"
+      ],
+      "Leave meeting and stop sharing?": [
+        "Meeting verlassen und Teilen beenden?"
+      ],
+      "Leaving the meeting will stop your screen sharing.": [
+        "Bei Verlassen des Meetings wird das Teilen des Bildschirms beendet"
       ],
       "Left ${ roomNameLabel }": [
         "Hat ${ roomNameLabel } verlassen"
@@ -2191,6 +2205,9 @@
       "This meeting was opened in the ${ MEET_APP_NAME } desktop app.": [
         "Dieses Meeting wurde in der Desktop-App ${ MEET_APP_NAME } geöffnet."
       ],
+      "This will end the meeting for all participants and stop your screen sharing.": [
+        "Dies beendet das Meeting für alle Teilnehmer und beendet das Teilen des Bildschirms"
+      ],
       "This will end the meeting for all participants.": [
         "Dadurch wird das Meeting für alle Teilnehmer beendet."
       ],
@@ -2283,6 +2300,9 @@
       ],
       "You were removed from the meeting": [
         "Du wurdest aus dem Meeting entfernt"
+      ],
+      "You will leave the meeting. Others will continue.": [
+        "Du wirst das Meeting verlassen. Die andere werden fortfahren."
       ],
       "You've been invited to join a secure meeting. Confirm your name and click below to enter.": [
         "Du wurdest eingeladen, an einem sicheren Meeting teilzunehmen. Bestätige deinen Namen und klicke unten, um beizutreten."
@@ -2602,14 +2622,14 @@
       "Others couldn't hear me": [
         "Andere konnten mich nicht hören"
       ],
+      "Others couldn't see my video": [
+        "Andere konnten mein Video nicht sehen"
+      ],
       "The presentation was blurry": [
         "Die Präsentation war unscharf"
       ],
-      "Video was blurry": [
-        "Video war unscharf"
-      ],
-      "Video was breaking up": [
-        "Video war unterbrochen"
+      "Video quality was poor": [
+        "Die Videoqualität war schlecht"
       ]
     },
     "Placeholder": {
