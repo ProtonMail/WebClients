@@ -38,6 +38,7 @@ export const ConfirmationModal = ({
     return (
         <ModalTwo
             open={true}
+            onClose={onClose}
             rootClassName="confirmation-modal"
             size="small"
             className="large-meet-radius border border-norm overflow-y-auto"
