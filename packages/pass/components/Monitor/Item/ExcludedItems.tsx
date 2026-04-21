@@ -33,7 +33,7 @@ export const ExcludedItems: FC = () => {
     const { close } = useContextMenu();
     const { item: contextMenuItem, onContextMenu } = useItemContextMenu();
 
-    useAutoSelect(items);
+    useAutoSelect(items[0]);
     useTelemetryEvent(TelemetryEventName.PassMonitorDisplayExcludedItems, {}, {})([]);
 
     const onSelect = useCallback((item: ItemRevision) => {

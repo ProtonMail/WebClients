@@ -5,12 +5,12 @@ import { useSelectedItem } from '@proton/pass/components/Navigation/NavigationIt
 import { useItemScope } from '@proton/pass/components/Navigation/NavigationMatches';
 import { getNewItemRoute } from '@proton/pass/components/Navigation/routing';
 import { useSelectItemAction } from '@proton/pass/hooks/useSelectItemAction';
-import type { ItemRevision } from '@proton/pass/types';
+import type { ItemRevision, Maybe } from '@proton/pass/types';
 
 /** Auto-select first item when none selected. Monitor views use this
  * instead of `ItemsProvider` & `Autoselect` component flow.
  * FIXME: lift monitor items state to provider for unified flow. */
-export const useAutoSelect = (items: ItemRevision[]) => {
+export const useAutoSelect = (item: Maybe<ItemRevision>) => {
     const history = useHistory();
     const scope = useItemScope();
     const selectItem = useSelectItemAction();
@@ -19,10 +19,6 @@ export const useAutoSelect = (items: ItemRevision[]) => {
     useEffect(() => {
         const { pathname } = history.location;
         const validRoute = !matchPath(pathname, getNewItemRoute(undefined, scope));
-
-        if (validRoute && items.length > 0 && !selectedItem) {
-            const item = items[0];
-            selectItem(item, { scope, mode: 'replace' });
-        }
-    }, [scope, selectedItem, items]);
+        if (validRoute && item && !selectedItem) selectItem(item, { scope, mode: 'replace' });
+    }, [scope, selectedItem, item]);
 };

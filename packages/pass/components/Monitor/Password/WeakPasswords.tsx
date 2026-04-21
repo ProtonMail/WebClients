@@ -36,7 +36,7 @@ export const WeakPasswords: FC = () => {
     const { close } = useContextMenu();
     const { item: contextMenuItem, onContextMenu } = useItemContextMenu();
 
-    useAutoSelect(items);
+    useAutoSelect(items[0]);
     useTelemetryEvent(TelemetryEventName.PassMonitorDisplayWeakPasswords, {}, {})([]);
 
     const onSelect = useCallback((item: ItemRevision) => {
