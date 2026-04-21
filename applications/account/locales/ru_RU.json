@@ -320,6 +320,9 @@
       "Create folder": [
         "Создать папку"
       ],
+      "Create free account now": [
+        "Создайте бесплатный аккаунт прямо сейчас"
+      ],
       "Create Gateway": [
         "Создать Шлюз"
       ],
@@ -4696,9 +4699,6 @@
         "Пожалуйста, исправьте выделенные конфликты, чтобы продолжить.",
         "Пожалуйста, исправьте выделенные конфликты, чтобы продолжить."
       ],
-      "Please generate keys before you try to change your password": [
-        "Пожалуйста, сгенерируйте ключи, прежде чем пытаться изменить пароль"
-      ],
       "Please select a country": [
         "Выберите страну"
       ],
@@ -6149,6 +6149,11 @@
       ],
       "Value / Data / Points to": [
         "Значение / Данные / Указывает на"
+      ]
+    },
+    "Header for table": {
+      "Email address": [
+        "Адрес электронной почты"
       ]
     },
     "Heading": {
@@ -10968,9 +10973,6 @@
       "clearing your browser cache": [
         "очистка кеша браузера"
       ],
-      "Common sign in issues": [
-        "Частые проблемы при входе"
-      ],
       "Common sign up issues": [
         "Частые проблемы при регистрации"
       ],
@@ -11377,6 +11379,11 @@
       ],
       "This feature is temporarily unavailable": [
         "Эта функция временно недоступна"
+      ]
+    },
+    "meet_2025: Info": {
+      "Secure calendar": [
+        "Защищенный календарь"
       ]
     },
     "Member action": {
@@ -11981,9 +11988,6 @@
       ],
       "Dedicated servers and IP": [
         "Выделенные серверы и адреса IP"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "Выделенные серверы, оптимизированные для трансляций"
       ],
       "Desktop app": [
         "Приложение для настольного компьютера"
@@ -13332,9 +13336,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Contact us": [
-        "Связаться с нами"
-      ],
       "Continue": [
         "Продолжить"
       ],
@@ -13358,9 +13359,6 @@
       ],
       "Or ${ createANewAccount }": [
         "Или ${ createANewAccount }"
-      ],
-      "Request trial": [
-        "Запросить пробную версию"
       ],
       "Start using ${ appName }": [
         "Начните использовать ${ appName }"
@@ -13574,9 +13572,6 @@
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Начните использовать ${ PASS_APP_NAME }"
-      ],
-      "Tailored made solutions for larger organizations with custom needs.": [
-        "Специальные разработки для крупных организаций с индивидуальными потребностями."
       ],
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "Предложение выбранное вами, недоступно для подписчиков ${ currentPlanTitle }."
@@ -14520,6 +14515,9 @@
       "Download your Recovery Kit": [
         "Скачайте набор для восстановления"
       ],
+      "Email address": [
+        "Адрес электронной почты"
+      ],
       "Enable device-based recovery": [
         "Включить восстановление на основе устройств"
       ],
@@ -14955,9 +14953,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Восстановление аккаунта недоступно для устаревших адресных ключей"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Пожалуйста, сгенерируйте ключи, прежде чем пытаться изменить пароль"
       ]
     },
     "session_recovery:available:info": {
@@ -15336,6 +15331,9 @@
       "${ DRIVE_APP_NAME } for Business": [
         "${ DRIVE_APP_NAME } для Business"
       ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } псевдонимов hide-my-email для борьбы со спамом"
+      ],
       "${ maxAddresses } address": [
         "${ maxAddresses } адрес",
         "${ maxAddresses } адреса",
@@ -15353,6 +15351,9 @@
         "${ maxCalendars } календаря",
         "${ maxCalendars } календарей",
         "${ maxCalendars } календарей"
+      ],
+      "${ totalDriveStorageSize } cloud storage for files and photos": [
+        "Облачное хранилище объёмом ${ totalDriveStorageSize } для файлов и фотографий"
       ],
       "${ value } of secure storage": [
         "${ value } безопасного хранилища"
@@ -15387,8 +15388,14 @@
       "Billing Cycle": [
         "Платежный цикл"
       ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "Выберите защищенный адрес ${ MAIL_APP_NAME }, чтобы начать"
+      ],
       "Collaborative document editing": [
         "Совместное редактирование документов"
+      ],
+      "Collaborative documents and spreadsheets": [
+        "Документы и электронные таблицы для совместной работы"
       ],
       "Compare plans": [
         "Сравнить тарифы"
@@ -15405,11 +15412,17 @@
       "Create a ${ BRAND_NAME } Account": [
         "Создайте свой аккаунт ${ BRAND_NAME }"
       ],
+      "Encrypted email with ${ totalMailStorageSize } storage": [
+        "Зашифрованная электронная почта и ${ totalMailStorageSize } хранилища"
+      ],
       "Encrypted password manager": [
         "Зашифрованный менеджер паролей"
       ],
       "End-to-end encryption": [
         "Сквозное шифрование"
+      ],
+      "Every free account comes with:": [
+        "Каждый бесплатный аккаунт включает:"
       ],
       "Free": [
         "Free"
@@ -15419,6 +15432,9 @@
       ],
       "get a secure ${ MAIL_APP_NAME } address.": [
         "получить безопасный адрес ${ MAIL_APP_NAME }."
+      ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "Сохраняйте свои цепочки писем конфиденциальными с ${ MAIL_APP_NAME }"
       ],
       "Manage user access": [
         "Управляйте доступом пользователей"
@@ -15441,8 +15457,17 @@
       "Online documents": [
         "Онлайн-документы"
       ],
+      "Password manager for all your devices": [
+        "Менеджер паролей для всех ваших устройств"
+      ],
+      "Password-protected messages": [
+        "Сообщения, защищенные паролем"
+      ],
       "Pick your perfect plan": [
         "Выберите свой идеальный тариф"
+      ],
+      "Private AI assistant with encrypted chat history": [
+        "Конфиденциальный ИИ-помощник с зашифрованной историей чатов"
       ],
       "Recover previous file versions": [
         "Восстановить предыдущие версии файла"
@@ -15452,6 +15477,9 @@
       ],
       "Save ${ priceDifferenceString }": [
         "Сэкономьте ${ priceDifferenceString }"
+      ],
+      "Secure calendar": [
+        "Защищенный календарь"
       ],
       "Secure file sharing": [
         "Безопасный обмен файлами"
@@ -15473,6 +15501,9 @@
       ],
       "Share and collaborate of files": [
         "Делитесь файлами и работайте над ними совместно"
+      ],
+      "Sign up to get everything ${ BRAND_NAME } has to offer": [
+        "Зарегистрируйтесь, чтобы получить всё, что предлагает ${ BRAND_NAME }"
       ],
       "Sign up, protect your files": [
         "Зарегистрируйтесь, защитите свои файлы"
@@ -15507,8 +15538,20 @@
       "use your own email.": [
         "использовать свой адрес электронной почты."
       ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "VPN с серверами в ${ vpnServersCountData.free.countries } странах"
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
+        "VPN с серверами в ${ vpnServersCountData.free.countries } стране",
+        "VPN с серверами в ${ vpnServersCountData.free.countries } странах",
+        "VPN с серверами в ${ vpnServersCountData.free.countries } странах",
+        "VPN с серверами в ${ vpnServersCountData.free.countries } странах"
+      ],
       "Yearly": [
         "Ежегодно"
+      ],
+      "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
+        "Ваш аккаунт предоставляет доступ к бесплатным функциям в ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } и ${ LUMO_SHORT_APP_NAME }."
       ],
       "Your plan": [
         "Ваш тариф"
@@ -17875,6 +17918,9 @@
       ],
       "Forward emails": [
         "Пересылать электронные письма"
+      ],
+      "Free": [
+        "Бесплатный"
       ],
       "Gateway": [
         "Шлюз"

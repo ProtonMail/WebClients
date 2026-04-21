@@ -330,9 +330,6 @@
       "Connected": [
         "Tilkoblet"
       ],
-      "Contact sales": [
-        "Ta kontakt med salg"
-      ],
       "Contact support": [
         "Kontakt brukerstøtte"
       ],
@@ -348,6 +345,9 @@
       "Continue anyway": [
         "Fortsett likevel"
       ],
+      "Continue cancelling": [
+        "Fortsett avbestillingen"
+      ],
       "Continue import": [
         "Fortsett importen"
       ],
@@ -355,7 +355,7 @@
         "Fortsett til ${ planOrAppName }"
       ],
       "Continue to sign in": [
-        "Fortsett med innloggingen"
+        "Fortsett til pålogging"
       ],
       "Continue with ${ nameToDisplay } ${ maybeEmailInBrackets }": [
         "Fortsett med ${ nameToDisplay } ${ maybeEmailInBrackets }"
@@ -467,9 +467,6 @@
       ],
       "Delete account": [
         "Slett konto"
-      ],
-      "Delete and confirm": [
-        "Slett og bekreft"
       ],
       "Delete filter “${ Name }”": [
         "Slett filter “${ Name }”"
@@ -965,6 +962,9 @@
       ],
       "Keep categories": [
         "Behold kategorier"
+      ],
+      "Keep current plan": [
+        "Behold gjeldende plan"
       ],
       "Keep Editing": [
         "Fortsett å redigere"
@@ -1889,13 +1889,13 @@
         "${ users } brukere"
       ],
       "Dedicated VPN servers": [
-        "Dedikerte VPN-tjenere"
+        "Dedikerte VPN-servere"
       ],
       "Domains": [
         "Domener"
       ],
       "Servers": [
-        "Tjenere"
+        "Servere"
       ],
       "Users": [
         "Brukere"
@@ -2115,7 +2115,7 @@
         "Raskt og sikkert. Det føres ingen logger."
       ],
       "Run on ${ BRAND_NAME } servers": [
-        "Kjør på ${ BRAND_NAME }-tjenere"
+        "Kjør på ${ BRAND_NAME }-servere"
       ],
       "Run on device": [
         "Kjør på enhet"
@@ -2205,7 +2205,7 @@
         "Når du avbryter, vil din gratis prøveversjon ikke bli konvertert til et betalt abonnement, men du kan fortsatt dra nytte av planfordeler til slutten av prøveperioden. Etter det blir du nedgradert til ${ BRAND_NAME } Free-planen."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
-        "Du kan ha opptil ${ TRIAL_MAX_DEDICATED_IPS } dedikert tjener i prøveperioden."
+        "Du kan ha opptil ${ TRIAL_MAX_DEDICATED_IPS } dedikert server i prøveperioden."
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "Du kan ha opptil ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-lisenser i prøveperioden."
@@ -2394,7 +2394,7 @@
     },
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Få tilgang til blokkert innhold og surf privat. Inkluderer 8 500+ tjenere i 110+ land, 10 enheter, høyhastighetsstrømming, annonseblokkering og beskyttelse mot skadelig programvare, VPN Accelerator og mer."
+        "Få tilgang til blokkert innhold og surf privat. Inkluderer 8 500+ servere i 110+ land, 10 enheter, høyhastighetsstrømming, annonseblokkering og beskyttelse mot skadelig programvare, VPN Accelerator og mer."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Sikre pålogginger på alle dine enheter. Inkluderer ubegrenset antall hide-my-email-aliaser, deling, integrert 2FA, ${ DARK_WEB_MONITORING_NAME } og mer."
@@ -2428,7 +2428,7 @@
         "3 TB lagringsplass"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Få tilgang til 15 000+ tjenere i 120+ land"
+        "Få tilgang til 15 000+ servere i 120+ land"
       ],
       "Access advanced AI models": [
         "Få tilgang til avanserte KI-modeller"
@@ -4859,6 +4859,9 @@
       "A checked box means the feature is disabled.": [
         "En avmerket boks betyr at funksjonen er deaktivert."
       ],
+      "Add extra addresses to your account or use Hide My Email aliases to keep your inbox private.": [
+        "Legg til ekstra adresser i kontoen din, eller bruk Hide-my-email-aliaser for å holde innboksen din privat."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Legg til mapper og filer til ${ DRIVE_APP_NAME } og inviter teammedlemmer til å se eller redigere."
       ],
@@ -4964,6 +4967,9 @@
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "Gjør e-postbunnteksten din til din egen – vis frem din unike merkevare, ikke vår."
       ],
+      "Most issues can be solved in a few minutes with our step-by-step guides.": [
+        "De fleste problemer kan løses på få minutter med våre trinnvise veiledninger."
+      ],
       "No ads. No trackers.": [
         "Ingen annonser. Ingen sporere."
       ],
@@ -4984,6 +4990,9 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Forenkle synkronisering og planlegging med delte kalendere."
+      ],
+      "Still need help? Our support team is here for you.": [
+        "Trenger du fortsatt hjelp? Vårt støtteteam er her for deg."
       ],
       "This may happen if permissions were removed or your password changed.": [
         "Dette kan skje hvis tillatelser ble fjernet eller passordet ditt ble endret."
@@ -5048,6 +5057,12 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kan importere hendelser i iCal-format (ICS fil). Filen kan ha en maks størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og ha opp til ${ MAX_IMPORT_EVENTS_STRING } hendelser. Hvis filen er større, må du dele den opp i flere mindre filer."
+      ],
+      "You can manage multiple ${ BRAND_NAME } addresses from a single account, without switching. Aliases and address management tools help keep everything in one inbox.": [
+        "Du kan administrere flere ${ BRAND_NAME }-adresser fra én konto, uten å bytte. Aliaser og verktøy for adresseadministrasjon bidrar til å holde alt i én innboks."
+      ],
+      "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
+        "Du kan slå sammen adresser inn i en hovedkonto for ${ BRAND_NAME } ved hjelp av brukerstøtteveiledningen vår."
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Du kan nå sende e-poster fra ${ BRAND_NAME } ved å bruke denne adressen."
@@ -6733,7 +6748,7 @@
         "Dersom tiden på TV-en har utløpt, trykk på 'oppdater' og tast inn koden på nytt."
       ],
       "IMAP server is required": [
-        "IMAP-tjener kreves"
+        "IMAP-server kreves"
       ],
       "Impossible to create the gateway": [
         "Umulig å opprette gatewayen"
@@ -6940,9 +6955,6 @@
       "Please fix the highlighted conflict to proceed.": [
         "Løs den uthevede konflikten for å fortsette.",
         "Løs de uthevede konfliktene for å fortsette."
-      ],
-      "Please generate keys before you try to change your password": [
-        "Generer nøkler før du prøver å endre passordet."
       ],
       "Please select a country": [
         "Velg et land"
@@ -7896,7 +7908,7 @@
     },
     "familyOffer_2023:Tooltip": {
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Inkluderer 2700 tjenere i 65+ land, koble til opptil 10 enheter, få tilgang til verdensomspennende strømmetjenester, skadelig programvare- og annonseblokkering og mer."
+        "Inkluderer 2700 servere i 65+ land, koble til opptil 10 enheter, få tilgang til verdensomspennende strømmetjenester, skadelig programvare- og annonseblokkering og mer."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
         "Inkluderer støtte for 3 egendefinerte e-postdomener, 90 e-postadresser, ubegrensede hide-my-email-aliaser, kalenderdeling og mer."
@@ -8338,6 +8350,17 @@
       ],
       "Your desktop app free trial has ended": [
         "Den gratis prøveperioden for skrivebordsappen er avsluttet"
+      ]
+    },
+    "Get help": {
+      "Continue cancelling": [
+        "Fortsett avbestillingen"
+      ],
+      "Keep current plan": [
+        "Behold gjeldende plan"
+      ],
+      "Many issues can be resolved quickly with our help guides. If you need more support, our team is here to help.": [
+        "Mange problemer kan løses raskt med våre hjelpeguider. Hvis du trenger mer støtte, er teamet vårt her for å hjelpe."
       ]
     },
     "Get started checklist instructions": {
@@ -8853,13 +8876,13 @@
         "${ BRAND_NAME } kan ikke koble til kontoen din. Vennlist sørg for at:"
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } kan ikke koble til din eksterne konto. Kontroller at e-posttjenerdressen og portnummeret er riktige."
+        "${ BRAND_NAME } kan ikke koble til din eksterne konto. Kontroller at e-postserveradressen og portnummeret er riktige."
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
         "${ BRAND_NAME } kan ikke koble til den eksterne kontoen din. Sørg for at:"
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } kan ikke koble til Yahoo-kontoen din. Sørg for at e-posttjeneradressen og portnummeret stemmer."
+        "${ BRAND_NAME } kan ikke koble til Yahoo-kontoen din. Sørg for at e-postserveradressen og portnummeret stemmer."
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } kan ikke koble til Yahoo-kontoen din. Sørg for at:"
@@ -9130,9 +9153,6 @@
       "${ discountPercent }% discount": [
         "${ discountPercent }% rabatt"
       ],
-      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME } vil ikke lenger beholde tidligere versjoner av filene dine."
-      ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } er ugyldig"
       ],
@@ -9253,8 +9273,8 @@
         "${ providerFoldersNumLocalized } etiketter funnet i Gmail"
       ],
       "${ provisioningCounter } server is still being set up. This usually takes around ${ provisioningDuration }.": [
-        "${ provisioningCounter } tjener er fortsatt under oppsett. Dette tar vanligvis rundt ${ provisioningDuration }.",
-        "${ provisioningCounter } tjenere er fortsatt under oppsett. Dette tar vanligvis rundt ${ provisioningDuration }."
+        "${ provisioningCounter } server er fortsatt under oppsett. Dette tar vanligvis rundt ${ provisioningDuration }.",
+        "${ provisioningCounter } servere er fortsatt under oppsett. Dette tar vanligvis rundt ${ provisioningDuration }."
       ],
       "${ quarantine }: asking the recipient platforms to mark the unauthorized emails as spam or quarantine them.": [
         "${ quarantine }: ber mottakerplattformene om å merke de uautoriserte e-postene som søppelpost eller sette dem i karantene."
@@ -9439,7 +9459,7 @@
         "En bruker er en konto assosiert med et enkelt brukernavn, postboks og person"
       ],
       "Access 6,500+ high-speed servers on up to 10 devices to keep your browsing data safe. Available on ${ ios }, ${ android }, ${ appleTV }, and ${ desktop }.": [
-        "Få tilgang til 6,500+ høyhastighetstjenere på opptil 10 enheter for å holde nettleserdataene dine trygge. Tilgjengelig på ${ ios }, ${ android }, ${ appleTV } og ${ desktop }."
+        "Få tilgang til over 6500 høyhastighetsservere på opptil 10 enheter for å beskytte nettleserdataene dine. Tilgjengelig på ${ ios }, ${ android }, ${ appleTV } og ${ desktop }."
       ],
       "Access your passwords and protect your online identities seamlessly across your devices. Download and install the relevant ${ PASS_APP_NAME } apps and extensions.": [
         "Skaff deg tilgang til passordene dine og beskytt nettidentitetene sømløst på tvers av enhetene. Last ned og installer de relevante ${ PASS_APP_NAME }-appene og utvidelsene."
@@ -10013,7 +10033,7 @@
         "Dedikerte tjenere med dedikerte IP-adresser kan legges til private porttjenere for å muliggjøre finjustert tilgangskontroll."
       ],
       "Dedicated VPN servers": [
-        "Dedikerte VPN-tjenere"
+        "Dedikerte VPN-servere"
       ],
       "default email address": [
         "standard e-postadresse"
@@ -10035,7 +10055,7 @@
         "Sletter ${ deletedServerCount } gateway-tjenere"
       ],
       "Depending on your settings, they may receive access immediately, or after a designated **waiting period.**": [
-        "Avhengig av innstillingene dine kan de få tilgang umiddelbart, eller etter en angitt **ventetid**."
+        "Avhengig av innstillingene dine kan de få tilgang umiddelbart, eller etter angitt **ventetid**."
       ],
       "Did you know?": [
         "Visste du at?"
@@ -10302,6 +10322,9 @@
       "Enter your recovery phrase to change your password now.": [
         "Skriv inn gjenopprettingsfrasen for å endre passordet ditt nå."
       ],
+      "Enter your recovery phrase to verify your identity and disable two-factor authentication.": [
+        "Skriv inn gjenopprettingsfrasen din for å bekrefte identiteten og deaktivere tofaktorautentisering."
+      ],
       "Event invitations and responses will be sent in this language.": [
         "Hendelseinvitasjoner og svar vil bli sendt på dette språket."
       ],
@@ -10364,9 +10387,6 @@
       ],
       "for ${ price }": [
         "for ${ price }"
-      ],
-      "For a 10-year version history, please contact our sales team.": [
-        "Kontakt vårt salgsapparat for en 10-årig versjonshistorikk."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "For tilgang til e-post når som helst og optimalisert mobilopplevelse, last ned vår ${ androidAppLink } eller ${ iosAppLink }."
@@ -11014,7 +11034,7 @@
         "Antall dedikerte tjenere i organisasjonen"
       ],
       "Number of dedicated VPN servers in the organization": [
-        "Antall dedikerte VPN-tjenere i organisasjonen"
+        "Antall dedikerte VPN-servere i organisasjonen"
       ],
       "Number of items the user has access to (includes owned items + shared items)": [
         "Antall elementer brukeren har tilgang til (inkluderer egne elementer + delte elementer)"
@@ -11237,7 +11257,7 @@
         "Bruk en annen nettleser eller last ned filen."
       ],
       "Please wait till your changes are synced with the server.": [
-        "Vent til endringene dine er synkronisert med tjeneren."
+        "Vent til endringene dine er synkronisert med serveren."
       ],
       "Plus ${ numOfBreaches } more": [
         "Pluss ${ numOfBreaches } til"
@@ -11453,7 +11473,7 @@
         "Tjenerbelastning"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Tjenerne er utilgjengelige. Prøv på nytt om noen få minutter."
+        "Serverne er utilgjengelige. Prøv på nytt om noen få minutter."
       ],
       "Session timed out": [
         "Økten ble tidsavbrutt"
@@ -11833,12 +11853,6 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Denne verifiseringen kan ta opptil én time. Når bekreftelsen er fullført, må du ikke fjerne TXT-posten, siden det er nødvendig for å bekrefte at du fortsatt eier domenet."
       ],
-      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "Dette vil slette alle tidligere versjoner av filene dine som er eldre enn ${ rententionLabel }."
-      ],
-      "This will delete all previous versions of your files.": [
-        "Dette vil slette alle tidligere versjoner av filene dine."
-      ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Dette vil nekte tilgang til **${ email }**. Er du sikker på at du vil fortsette?"
       ],
@@ -12052,9 +12066,6 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Oppgrader for å beholde ${ planTitle } fordelene dine."
       ],
-      "Upgrade to unlock": [
-        "Oppgrader for å låse opp"
-      ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "Oppgrader for å låse opp ${ monitorLink }."
       ],
@@ -12156,9 +12167,6 @@
       ],
       "Version ${ version }": [
         "Versjon ${ version }"
-      ],
-      "Version history": [
-        "Versjonshistorikk"
       ],
       "Version number successfully copied to clipboard": [
         "Versjonsnummeret ble kopiert til utklippstavlen"
@@ -13845,9 +13853,6 @@
       "Don't ask again": [
         "Ikke spør igjen"
       ],
-      "Don't keep versions": [
-        "Ikke behold versjoner"
-      ],
       "Don't show this again": [
         "Ikke vis dette igjen"
       ],
@@ -14134,7 +14139,7 @@
         "Logo"
       ],
       "Mail Server (IMAP)": [
-        "E-posttjener (IMAP)"
+        "E-postserver (IMAP)"
       ],
       "Main": [
         "Hjem"
@@ -14953,6 +14958,9 @@
       "${ BRAND_NAME } Foundation's": [
         "Stiftelsen ${ BRAND_NAME }"
       ],
+      "Account recovery explained": [
+        "Forklaring av kontogjenoppretting"
+      ],
       "Activity log": [
         "Aktivitetslogg"
       ],
@@ -14980,11 +14988,11 @@
       "clearing your browser cache": [
         "tømmer hurtigbufferen til nettleseren"
       ],
-      "Common sign in issues": [
-        "Vanlige påloggingsutfordringer"
-      ],
       "Common sign up issues": [
         "Vanlige registreringsutfordringer"
+      ],
+      "Contact support": [
+        "Kontakt kundestøtte"
       ],
       "contacts’ assistance": [
         "kontakthjelp"
@@ -15103,11 +15111,17 @@
       "Import/export": [
         "Import/eksport"
       ],
+      "Learn how": [
+        "Lær hvordan"
+      ],
       "Learn more": [
         "Lær mer"
       ],
       "Learn more about data recovery": [
         "Lær mer om datagjenoppretting"
+      ],
+      "Manage addresses": [
+        "Administrer adresser"
       ],
       "Not activated": [
         "Ikke aktivert"
@@ -15174,6 +15188,9 @@
       ],
       "visit our blog": [
         "besøk bloggen vår"
+      ],
+      "Visit our support site": [
+        "Besøk hjelpesiden vår"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Hva er forskjellen mellom UDP- og TCP-protokoller?"
@@ -16311,8 +16328,8 @@
       "Dedicated servers and IP": [
         "Dedikerte tjenere og IP"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Dedikerte tjenere optimalisert for strømming"
+      "Dedicated servers optimized for speed": [
+        "Dedikerte servere optimalisert for hastighet"
       ],
       "Desktop app": [
         "Skrivebordsapp"
@@ -16472,8 +16489,8 @@
         "Send & motta invitasjoner"
       ],
       "Servers in ${ vpnServersCountData.paid.countries }+ country": [
-        "Tjenere i ${ vpnServersCountData.paid.countries }+ land",
-        "Tjenere i ${ vpnServersCountData.paid.countries }+ land"
+        "Servere i ${ vpnServersCountData.paid.countries }+ land",
+        "Servere i ${ vpnServersCountData.paid.countries }+ land"
       ],
       "Share files with no size limit": [
         "Del filer uten størrelsesbegrensning"
@@ -16853,7 +16870,7 @@
         "Egendefinerte domener for aliaser, ekstra postbokser, muligheten til å sende e-post fra aliaser og mer"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
-        "Dedikerte tjenere med dedikerte IP-adresser kan legges til private porttjenere for å muliggjøre finjustert tilgangskontroll"
+        "Dedikerte servere med dedikerte IP-adresser kan legges til private gateway-servere for å muliggjøre finjustert tilgangskontroll"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Forsvarer mot trusler til VPN-personvern ved å overføre internettrafikk gjennom flere tjenere."
@@ -17460,7 +17477,7 @@
         "Lagringsplass"
       ],
       "Ultrafast VPN servers in 110+ countries": [
-        "Ultraraske VPN-tjenere i 110+ land"
+        "Ultraraske VPN-servere i 110+ land"
       ],
       "Unlimited aliases to protect your identity": [
         "Ubegrenset med aliaser for å beskytte din identitet"
@@ -17986,9 +18003,6 @@
       "Buy now": [
         "Kjøp nå"
       ],
-      "Contact us": [
-        "Kontakt oss"
-      ],
       "Continue": [
         "Fortsett"
       ],
@@ -18015,9 +18029,6 @@
       ],
       "Or ${ createANewAccount }": [
         "Eller ${ createANewAccount }"
-      ],
-      "Request trial": [
-        "Be om prøveperiode"
       ],
       "Start using ${ appName }": [
         "Begynn å bruke ${ appName }"
@@ -18260,9 +18271,6 @@
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Begynn å bruke ${ PASS_APP_NAME }"
-      ],
-      "Tailored made solutions for larger organizations with custom needs.": [
-        "Skreddersydde løsninger for større organisasjoner med spesifikke sikkerhetsbehov."
       ],
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "Tilbudet du valgte er ikke tilgjengelig for ${ currentPlanTitle }-abonnenter."
@@ -20390,9 +20398,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Kontogjenoppretting ikke tilgjengelig for eldre adressenøkler."
-      ],
-      "Please generate keys before you try to change your password": [
-        "Generer nøkler før du prøver å endre passordet."
       ]
     },
     "session_recovery:available:info": {
@@ -20685,9 +20690,6 @@
       ]
     },
     "Setting": {
-      "Enable Photos section": [
-        "Aktiver Bilder-seksjonen"
-      ],
       "Get updates about comments via email": [
         "Få oppdateringer om kommentarer via e-post"
       ],
@@ -21515,7 +21517,7 @@
         "Skaff deg 500 GB til å lagre alle filene og bildene dine sikkert"
       ],
       "Get access to ultrafast VPN servers in 110+ countries": [
-        "Få tilgang til ultra-raske VPN-tjenere i 110+ land"
+        "Få tilgang til ultra-raske VPN-servere i 110+ land"
       ],
       "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
         "Få én plan som inkluderer alt, skaff deg ${ BRAND_NAME } Unlimited"
@@ -21535,10 +21537,10 @@
     },
     "specialoffer: Tooltip": {
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Få tilgang til blokkert innhold og surf privat. Inkluderer 1700 tjenere i 60+ land, høyeste VPN-hastighet, 10 VPN-forbindelser per bruker, verdensomspennende strømmetjenester, skadelig programvare- og annonseblokkering og mer."
+        "Få tilgang til blokkert innhold og surf privat. Inkluderer 1700 servere i 60+ land, høyeste VPN-hastighet, 10 VPN-forbindelser per bruker, verdensomspennende strømmetjenester, skadelig programvare- og annonseblokkering og mer."
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Få tilgang til blokkert innhold og surf privat. Inkluderer 1700 tjenere i 60+ land, høyeste VPN-hastighet, 10 VPN-forbindelser, verdensomspennende strømmetjenester, skadelig programvare- og annonseblokkering og mer."
+        "Få tilgang til blokkert innhold og surf privat. Inkluderer 1700 servere i 60+ land, høyeste VPN-hastighet, 10 VPN-forbindelser, verdensomspennende strømmetjenester, skadelig programvare- og annonseblokkering og mer."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Alle våre premiumtjenester med sine høyeste grenser: 100 e-postadresser, støtte for 10 tilpassede domener, ubegrensede hide-my-email-aliaser, kalenderdeling, kryptert skylagring + fildeling og mer."
@@ -22038,8 +22040,8 @@
         "${ BRAND_NAME } Scribe skriveassistent for ${ maxAi } brukere"
       ],
       "${ ipAddresses } dedicated server": [
-        "${ ipAddresses } dedikert tjener",
-        "${ ipAddresses } dedikerte tjenere"
+        "${ ipAddresses } dedikert server",
+        "${ ipAddresses } dedikerte servere"
       ],
       "${ n } calendar per user": [
         "${ n } kalender per bruker",
@@ -22874,7 +22876,7 @@
         "Opprett sikker påloggingsinformasjon på alle enhetene dine. Inkluderer ubegrensede aliaser, 20 hvelv, integrert 2FA, automatisk utfylling av kredittkort og mer."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Inkluderer 2950+ tjenere i 65+ land, koble til opptil 10 enheter, få tilgang til verdensomspennende strømmetjenester, skadelig programvare- og annonseblokkering og mer."
+        "Inkluderer 2950+ servere i 65+ land, koble til opptil 10 enheter, få tilgang til verdensomspennende strømmetjenester, skadelig programvare- og annonseblokkering og mer."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Inkluderer støtte for 1 egendefinert e-postdomene, 10 e-postadresser, 10 hide-my-email-aliaser, kalenderdeling og mer."
@@ -23235,6 +23237,9 @@
       "Allocate storage": [
         "Tildel lagring"
       ],
+      "Already have multiple accounts?": [
+        "Har du allerede flere kontoer?"
+      ],
       "Also in your plan": [
         "Også i planen din"
       ],
@@ -23473,6 +23478,9 @@
       "Create multiple user accounts": [
         "Opprett flere brukerkontoer"
       ],
+      "Create new addresses easily": [
+        "Opprett enkelt nye adresser"
+      ],
       "Create new policy": [
         "Opprett ny retningslinje"
       ],
@@ -23602,9 +23610,6 @@
       ],
       "Delete user?": [
         "Slett bruker?"
-      ],
-      "Delete version history?": [
-        "Slette versjonshistorikken?"
       ],
       "Deny access to user?": [
         "Nekte tilgang til bruker?"
@@ -23894,6 +23899,12 @@
       ],
       "Get complete privacy coverage": [
         "Få fullstendig personverndekning"
+      ],
+      "Get direct support": [
+        "Få direkte støtte"
+      ],
+      "Get help with an issue": [
+        "Få hjelp med et problem"
       ],
       "Get more from your cloud storage": [
         "Få mer ut av skylagringen din"
@@ -24578,6 +24589,9 @@
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "For å forhåndsvise dette regnearket, åpne det i ${ SHEETS_APP_NAME } eller last det ned."
       ],
+      "Troubleshoot your issue": [
+        "Feilsøk problemet ditt"
+      ],
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "Prøv ${ AUTHENTICATOR_APP_NAME }"
       ],
@@ -24643,6 +24657,9 @@
       ],
       "Use backup recovery code": [
         "Bruk sikkerhetskopi av gjenopprettingskode"
+      ],
+      "Use one account for all your addresses": [
+        "Bruk en konto for alle adressene dine"
       ],
       "User": [
         "Bruker"
@@ -25655,8 +25672,8 @@
         "${ n } enheter"
       ],
       "${ n } server": [
-        "${ n } tjener",
-        "${ n }+ tjenere"
+        "${ n } server",
+        "${ n }+ servere"
       ],
       "${ n } VPN connection": [
         "${ n } VPN-tilkobling",
@@ -25679,8 +25696,8 @@
         "Velger automatisk fra ${ numberOfCountries } land"
       ],
       "Servers in ${ numberOfCountries }+ country": [
-        "Tjenere i ${ numberOfCountries }+ land",
-        "Tjenere i ${ numberOfCountries }+ land"
+        "Servere i ${ numberOfCountries }+ land",
+        "Servere i ${ numberOfCountries }+ land"
       ]
     },
     "vpn_2step: discount": {
@@ -25739,7 +25756,7 @@
     },
     "vpn_2step: tooltip": {
       "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Tilgang til Secure Core-tjenere, raske P2P/BitTorrent-nedlastinger, Tor over VPN og mer."
+        "Tilgang til Secure Core-servere, raske P2P/BitTorrent-nedlastinger, Tor over VPN og mer."
       ]
     },
     "VPNClient": {
@@ -25933,7 +25950,7 @@
         "Dessverre er vi ikke på nett for øyeblikket. Fyll ut skjemaet nedenfor for å beskrive problemet ditt, så ser vi nærmere på det og tar kontakt når vi er tilbake på nettet."
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
-        "Vi kan ikke bekrefte e-posttjeneren. Hvis du klarérer den, kan du hoppe over denne verifiseringen."
+        "Vi kan ikke bekrefte e-postserveren. Hvis du klarérer den, kan du hoppe over denne verifiseringen."
       ],
       "We detected a problem with your DNS configuration. Please make sure your records match the instructions below. If the problem persists, we will have to switch DKIM signing off.": [
         "Vi oppdaget et problem med DNS-konfigurasjonen din. Sørg for at dine poster samsvarer med instruksjonene nedenfor. Hvis problemet vedvarer, vil vi bli nødt til å skru DKIM-signering av."

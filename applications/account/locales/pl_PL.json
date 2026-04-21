@@ -5067,9 +5067,6 @@
         "Popraw zaznaczone konflikty, aby kontynuować.",
         "Popraw zaznaczone konflikty, aby kontynuować."
       ],
-      "Please generate keys before you try to change your password": [
-        "Wygeneruj klucze, zanim spróbujesz zmienić hasło"
-      ],
       "Please select a country": [
         "Wybierz kraj"
       ],
@@ -11620,9 +11617,6 @@
       "clearing your browser cache": [
         "wyczyszczenie pamięci podręcznej przeglądarki"
       ],
-      "Common sign in issues": [
-        "Typowe problemy z logowaniem"
-      ],
       "Common sign up issues": [
         "Typowe problemy z rejestracją"
       ],
@@ -12052,6 +12046,11 @@
     "meet_2025: Feature": {
       "Screen-sharing": [
         "Udostępnianie ekranu"
+      ]
+    },
+    "meet_2025: Info": {
+      "Secure calendar": [
+        "Bezpieczny kalendarz"
       ]
     },
     "Member action": {
@@ -12677,9 +12676,6 @@
       ],
       "Dedicated servers and IP": [
         "Dedykowane serwery i adresy IP"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "Dedykowane serwery zoptymalizowane pod kątem streamingu"
       ],
       "Desktop app": [
         "Aplikacja desktopowa"
@@ -14115,9 +14111,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Contact us": [
-        "Skontaktuj się z nami"
-      ],
       "Continue": [
         "Kontynuuj"
       ],
@@ -14141,9 +14134,6 @@
       ],
       "Or ${ createANewAccount }": [
         "Lub ${ createANewAccount }"
-      ],
-      "Request trial": [
-        "Wersja próbna"
       ],
       "Start using ${ appName }": [
         "Zacznij korzystać z ${ appName }"
@@ -14363,9 +14353,6 @@
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Zacznij korzystać z ${ PASS_APP_NAME }"
-      ],
-      "Tailored made solutions for larger organizations with custom needs.": [
-        "Indywidualne rozwiązania dla większych organizacji o niestandardowych potrzebach"
       ],
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "Oferta nie jest dostępna dla subskrybentów planu ${ currentPlanTitle }."
@@ -15592,6 +15579,9 @@
       "Download your Recovery Kit": [
         "Pobierz zestaw odzyskiwania"
       ],
+      "Email address": [
+        "Adres e-mail"
+      ],
       "Enable device-based recovery": [
         "Włącz odzyskiwanie za pomocą zaufanego urządzenia"
       ],
@@ -16033,9 +16023,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Odzyskiwanie konta nie jest dostępne dla starszych kluczy adresu"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Wygeneruj klucze, zanim zmienisz hasło"
       ]
     },
     "session_recovery:available:info": {
@@ -16420,6 +16407,9 @@
         "${ FREE_PASS_ALIASES } aliasów hide-my-email do walki ze spamem",
         "${ FREE_PASS_ALIASES } aliasów hide-my-email do walki ze spamem"
       ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } aliasów hide-my-email do walki ze spamem"
+      ],
       "${ maxAddresses } address": [
         "${ maxAddresses } adres",
         "${ maxAddresses } adresy",
@@ -16507,8 +16497,14 @@
       "Bundle": [
         "Pakiet"
       ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "Wybierz bezpieczny adres ${ MAIL_APP_NAME }, aby rozpocząć"
+      ],
       "Collaborative document editing": [
         "Wspólne edytowanie dokumentów"
+      ],
+      "Collaborative documents and spreadsheets": [
+        "Dokumenty i arkusze kalkulacyjne do współpracy"
       ],
       "Compare plans": [
         "Porównaj plany"
@@ -16552,6 +16548,9 @@
       "Gifted by **${ referrerName }**": [
         "Prezent od **${ referrerName }**"
       ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "Dzięki ${ MAIL_APP_NAME } Twoje wątki pozostaną prywatne"
+      ],
       "Manage user access": [
         "Zarządzanie dostępem użytkownika"
       ],
@@ -16576,8 +16575,14 @@
       "Password manager for all your devices": [
         "Menedżer haseł dla wszystkich urządzeń"
       ],
+      "Password-protected messages": [
+        "Wiadomości chronione hasłem"
+      ],
       "Pick your perfect plan": [
         "Wybierz idealny plan"
+      ],
+      "Private AI assistant with encrypted chat history": [
+        "Prywatny asystent AI z zaszyfrowaną historią czatu"
       ],
       "Recover previous file versions": [
         "Odzyskaj poprzednie wersje pliku"
@@ -16593,6 +16598,9 @@
         "Ochrona ${ VPN_CONNECTIONS } urządzeń jednocześnie",
         "Ochrona ${ VPN_CONNECTIONS } urządzeń jednocześnie",
         "Ochrona ${ VPN_CONNECTIONS } urządzeń jednocześnie"
+      ],
+      "Secure calendar": [
+        "Bezpieczny kalendarz"
       ],
       "Secure file sharing": [
         "Bezpieczne udostępnianie pliku"
@@ -16672,6 +16680,9 @@
       "use your own email.": [
         "użyj własnego adresu."
       ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "VPN z serwerami w ${ vpnServersCountData.free.countries } krajach"
+      ],
       "VPN with servers in ${ vpnServersCountData.free.countries } country": [
         "VPN z serwerami w ${ vpnServersCountData.free.countries } kraju",
         "VPN z serwerami w ${ vpnServersCountData.free.countries } krajach",
@@ -16683,6 +16694,9 @@
       ],
       "Yearly": [
         "Rocznie"
+      ],
+      "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
+        "Twoje konto obejmuje dostęp do bezpłatnych funkcji w ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ LUMO_SHORT_APP_NAME }."
       ],
       "Your plan": [
         "Twój plan"
@@ -19103,6 +19117,9 @@
       ],
       "Forward emails": [
         "Przekieruj wiadomości"
+      ],
+      "Free": [
+        "Darmowy"
       ],
       "Gateway": [
         "Brama"

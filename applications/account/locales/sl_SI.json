@@ -341,6 +341,9 @@
       "Create folder": [
         "Ustvari mapo"
       ],
+      "Create free account now": [
+        "Ustvarite brezplačen račun zdaj"
+      ],
       "Create Gateway": [
         "Ustvari prehod"
       ],
@@ -5329,9 +5332,6 @@
         "Pred nadaljevanjem razrešite označene spore.",
         "Pred nadaljevanjem razrešite označene spore."
       ],
-      "Please generate keys before you try to change your password": [
-        "Preden poskusite spremeniti geslo, ustvarite ključe."
-      ],
       "Please select a country": [
         "Izberite državo."
       ],
@@ -6811,6 +6811,9 @@
       ]
     },
     "Header for table": {
+      "Email address": [
+        "E-poštni naslov"
+      ],
       "Token name": [
         "Ime žetona"
       ]
@@ -11764,9 +11767,6 @@
       "clearing your browser cache": [
         "izpraznitev predpomnilnika brskalnika"
       ],
-      "Common sign in issues": [
-        "Pogoste težave pri vpisu"
-      ],
       "Common sign up issues": [
         "Pogoste težave pri ustvarjanju računa."
       ],
@@ -12213,6 +12213,11 @@
         "Do ${ n } udeleženca",
         "Do ${ n } udeleženci",
         "Do ${ n } udeležencev"
+      ]
+    },
+    "meet_2025: Info": {
+      "Secure calendar": [
+        "Varen koledar"
       ]
     },
     "Member action": {
@@ -12850,9 +12855,6 @@
       ],
       "Dedicated servers and IP": [
         "Namenski strežniki in IP"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "Namenski strežniki, optimirani za pretakanje"
       ],
       "Desktop app": [
         "Namizna aplikacija"
@@ -14368,9 +14370,6 @@
       "Buy now": [
         "Kupi zdaj"
       ],
-      "Contact us": [
-        "Stopite v stik z nami"
-      ],
       "Continue": [
         "Nadaljuj"
       ],
@@ -14394,9 +14393,6 @@
       ],
       "Or ${ createANewAccount }": [
         "Ali ${ createANewAccount }"
-      ],
-      "Request trial": [
-        "Zahtevajte preizkus"
       ],
       "Start using ${ appName }": [
         "Začnite uporabljati ${ appName }"
@@ -14609,9 +14605,6 @@
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Začnite uporabljati ${ PASS_APP_NAME }"
-      ],
-      "Tailored made solutions for larger organizations with custom needs.": [
-        "Prilagojene rešitve za večje organizacije, ki potrebujejo storitve po meri."
       ],
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "Ponudba, ki ste jo izbrali, ni na voljo naročnikom paketa ${ currentPlanTitle }."
@@ -15576,6 +15569,9 @@
       "Download your Recovery Kit": [
         "Prenesite vaš komplet za obnovitev"
       ],
+      "Email address": [
+        "E-poštni naslov"
+      ],
       "Enable device-based recovery": [
         "Omogočite obnovitev na podlagi naprave"
       ],
@@ -15931,9 +15927,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Obnovitev računa ni na voljo za podedovane naslovne ključe"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Preden poskusite spremeniti geslo, ustvarite ključe."
       ]
     },
     "session_recovery:available:info": {
@@ -16312,6 +16305,9 @@
         "${ FREE_PASS_ALIASES } vzdevki hide-my-email",
         "${ FREE_PASS_ALIASES } vzdevki hide-my-email"
       ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } e-poštnih vzdevkov hide-my-email za zaščito pred neželeno pošto"
+      ],
       "${ maxAddresses } address": [
         "${ maxAddresses } naslov",
         "${ maxAddresses } naslova",
@@ -16338,6 +16334,9 @@
       ],
       "${ referrerName } is inviting you to join 100M+ people who chose to stay in control of their data with ${ BRAND_NAME }'s encrypted ecosystem.": [
         "${ referrerName } vas vabi, da se pridružite 100 milijonom+ ljudi, ki so se odločili obdržati nadzor nad svojimi podatki s šifriranim ekosistemom ${ BRAND_NAME }."
+      ],
+      "${ totalDriveStorageSize } cloud storage for files and photos": [
+        "${ totalDriveStorageSize } shrambe v oblaku za datoteke in fotografije"
       ],
       "${ value } of secure storage per user": [
         "${ value } varne shrambe na uporabnika"
@@ -16375,6 +16374,12 @@
       "Block ads, trackers, and malware": [
         "Blokiranje oglasov, sledilnikov in zlonamerne programske opreme"
       ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "Za začetek izberite varen e-poštni naslov v storitvi ${ MAIL_APP_NAME }"
+      ],
+      "Collaborative documents and spreadsheets": [
+        "Dokumenti in preglednice za sodelovanje"
+      ],
       "Compare plans": [
         "Primerjava paketov"
       ],
@@ -16387,14 +16392,23 @@
       "Custom email domain": [
         "E-poštna domena po meri"
       ],
+      "Encrypted email with ${ totalMailStorageSize } storage": [
+        "Šifrirana e-pošta z ${ totalMailStorageSize } shrambe"
+      ],
       "Encrypted password manager": [
         "Šifriran upravitelj gesel"
       ],
       "End-to-end encryption": [
         "Celovito šifriranje"
       ],
+      "Every free account comes with:": [
+        "Vsak brezplačen račun vključuje:"
+      ],
       "Free": [
         "Brezplačno"
+      ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "Ohranite svoje pogovore zasebne z ${ MAIL_APP_NAME }"
       ],
       "Monthly": [
         "Mesečno"
@@ -16405,8 +16419,17 @@
       "Online document editor": [
         "Spletni urejevalnik dokumentov"
       ],
+      "Password manager for all your devices": [
+        "Upravitelj gesel za vse vaše naprave"
+      ],
+      "Password-protected messages": [
+        "Sporočila, zaščitena z geslom"
+      ],
       "Pick a service to get started.": [
         "Izberite storitev za začetek."
+      ],
+      "Private AI assistant with encrypted chat history": [
+        "Zasebni pomočnik z umetno inteligenco in šifrirano zgodovino klepetov"
       ],
       "Promo applied – ${ discountItem.discountPercent }% off": [
         "Uporabljen promocijski popust – ${ discountItem.discountPercent }%"
@@ -16419,6 +16442,9 @@
       ],
       "Save ${ priceDifferenceString }": [
         "Prihranite ${ priceDifferenceString }"
+      ],
+      "Secure calendar": [
+        "Varen koledar"
       ],
       "Securely share files and photos": [
         "Varno delite datoteke in fotografije"
@@ -16434,6 +16460,9 @@
       ],
       "Set your password": [
         "Ustvarite geslo"
+      ],
+      "Sign up to get everything ${ BRAND_NAME } has to offer": [
+        "Registrirajte se in pridobite vse, kar ponuja ${ BRAND_NAME }"
       ],
       "Swiss-based": [
         "S sedežem v Švici"
@@ -16462,8 +16491,20 @@
       "Up to 6 users": [
         "Do šest uporabnikov"
       ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "VPN s strežniki v ${ vpnServersCountData.free.countries } državah"
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
+        "VPN s strežniki v ${ vpnServersCountData.free.countries } državi",
+        "VPN s strežniki v ${ vpnServersCountData.free.countries } državah",
+        "VPN s strežniki v ${ vpnServersCountData.free.countries } državah",
+        "VPN s strežniki v ${ vpnServersCountData.free.countries } državah"
+      ],
       "Yearly": [
         "Letno"
+      ],
+      "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
+        "Vaš račun vključuje dostop do brezplačnih funkcij v ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } in ${ LUMO_SHORT_APP_NAME }."
       ],
       "Your plan": [
         "Vaš paket"
@@ -18791,6 +18832,9 @@
       ],
       "Forwardings": [
         "Posredovanja"
+      ],
+      "Free": [
+        "Brezplačno"
       ],
       "Gateway": [
         "Prehod"

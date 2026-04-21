@@ -302,6 +302,9 @@
       "Create folder": [
         "Створити теку"
       ],
+      "Create free account now": [
+        "Створіть безплатний обліковий запис зараз"
+      ],
       "Create Gateway": [
         "Створити мережевий шлюз"
       ],
@@ -4141,9 +4144,6 @@
         "Виправте вказані проблеми, щоб продовжити.",
         "Виправте вказані проблеми, щоб продовжити."
       ],
-      "Please generate keys before you try to change your password": [
-        "Будь ласка, згенеруйте ключі перед зміною пароля"
-      ],
       "Please select a country": [
         "Виберіть країну"
       ],
@@ -5570,6 +5570,11 @@
       ],
       "Value / Data / Points to": [
         "Значення / Дані / Спрямування"
+      ]
+    },
+    "Header for table": {
+      "Email address": [
+        "Адреса електронної пошти"
       ]
     },
     "Heading": {
@@ -7674,6 +7679,9 @@
       ],
       "Show original message": [
         "Показати оригінальне повідомлення"
+      ],
+      "Sign in": [
+        "Увійти"
       ],
       "Sign in or create an account to continue.": [
         "Увійдіть або створіть обліковий запис, щоб продовжити."
@@ -10034,9 +10042,6 @@
       "clearing your browser cache": [
         "очищення кешу браузера"
       ],
-      "Common sign in issues": [
-        "Поширені проблеми з входом"
-      ],
       "Common sign up issues": [
         "Поширені проблеми з реєстрацією"
       ],
@@ -10389,6 +10394,11 @@
       ],
       "This feature is temporarily unavailable": [
         "Ця функція тимчасово недоступна"
+      ]
+    },
+    "meet_2025: Info": {
+      "Secure calendar": [
+        "Захищений календар"
       ]
     },
     "Member action": {
@@ -12255,9 +12265,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Contact us": [
-        "Зв'яжіться з нами"
-      ],
       "Continue": [
         "Продовжити"
       ],
@@ -12281,9 +12288,6 @@
       ],
       "Or ${ createANewAccount }": [
         "Або ${ createANewAccount }"
-      ],
-      "Request trial": [
-        "Запитати пробний період"
       ],
       "Start using ${ appName }": [
         "Почати використовувати ${ appName }"
@@ -12491,9 +12495,6 @@
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Почати використовувати ${ PASS_APP_NAME }"
-      ],
-      "Tailored made solutions for larger organizations with custom needs.": [
-        "Індивідуальні рішення для великих організацій з особливими потребами."
       ],
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "Вибрана пропозиція недоступна для користувачів тарифного плану ${ currentPlanTitle }."
@@ -13300,6 +13301,9 @@
       "Download your Recovery Kit": [
         "Завантажити ваш Набір відновлення"
       ],
+      "Email address": [
+        "Адреса електронної пошти"
+      ],
       "Enable device-based recovery": [
         "Увімкнути відновлення на основі пристрою"
       ],
@@ -13727,9 +13731,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Відновлення облікового запису недоступне для застарілих ключів адреси"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Згенеруйте ключі, перш ніж змінювати пароль"
       ]
     },
     "session_recovery:available:info": {
@@ -14105,6 +14106,9 @@
       ]
     },
     "Signup": {
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } псевдонімів hide-my-email для боротьби зі спамом"
+      ],
       "${ maxAddresses } address": [
         "${ maxAddresses } адреса",
         "${ maxAddresses } адреси",
@@ -14122,6 +14126,9 @@
         "${ maxCalendars } календарі",
         "${ maxCalendars } календарів",
         "${ maxCalendars } календар(і/ів)"
+      ],
+      "${ totalDriveStorageSize } cloud storage for files and photos": [
+        "${ totalDriveStorageSize } хмарного сховища для файлів і фото"
       ],
       "${ value } of secure storage per user": [
         "${ value } захищеного сховища для користувача"
@@ -14147,11 +14154,20 @@
       "Advanced account protection": [
         "Розширений захист облікового запису"
       ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "Виберіть захищену адресу в ${ MAIL_APP_NAME }, щоб розпочати"
+      ],
+      "Collaborative documents and spreadsheets": [
+        "Документи й електронні таблиці для спільної роботи"
+      ],
       "Continue with ${ PLAN_NAMES[plan] }": [
         "Продовжити з ${ PLAN_NAMES[plan] }"
       ],
       "Create a ${ BRAND_NAME } Account": [
         "Створіть обліковий запис ${ BRAND_NAME }"
+      ],
+      "Encrypted email with ${ totalMailStorageSize } storage": [
+        "Зашифрована електронна пошта зі сховищем обсягом ${ totalMailStorageSize }"
       ],
       "Encrypted password manager": [
         "Зашифрований менеджер паролів"
@@ -14159,8 +14175,14 @@
       "End-to-end encryption": [
         "Наскрізне шифрування"
       ],
+      "Every free account comes with:": [
+        "Кожен безплатний обліковий запис містить:"
+      ],
       "Free": [
         "Free"
+      ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "Зберігайте приватність своїх розмов із ${ MAIL_APP_NAME }"
       ],
       "Monthly": [
         "Щомісяця"
@@ -14171,6 +14193,15 @@
       "Online document editor": [
         "Онлайн редактор документів"
       ],
+      "Password manager for all your devices": [
+        "Менеджер паролів для всіх ваших пристроїв"
+      ],
+      "Password-protected messages": [
+        "Повідомлення, захищені паролем"
+      ],
+      "Private AI assistant with encrypted chat history": [
+        "Приватний ШІ-помічник із зашифрованою історією чату"
+      ],
       "Recover previous file versions": [
         "Відновити попередні версії файлів"
       ],
@@ -14179,6 +14210,9 @@
       ],
       "Save ${ priceDifferenceString }": [
         "Заощадьте ${ priceDifferenceString }"
+      ],
+      "Secure calendar": [
+        "Захищений календар"
       ],
       "Select ${ title }": [
         "Оберіть ${ title }"
@@ -14191,6 +14225,9 @@
       ],
       "Set your password": [
         "Встановіть свій пароль"
+      ],
+      "Sign up to get everything ${ BRAND_NAME } has to offer": [
+        "Зареєструйтеся, щоб отримати все, що пропонує ${ BRAND_NAME }"
       ],
       "The organization name will be visible to your users while they are signed in.": [
         "Ваші користувачі бачитимуть назву організації під час входу в систему."
@@ -14210,6 +14247,9 @@
       "Up to 6 users": [
         "До 6 користувачів"
       ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "VPN із серверами в ${ vpnServersCountData.free.countries } країнах"
+      ],
       "VPN with servers in ${ vpnServersCountData.free.countries } country": [
         "VPN із серверами в ${ vpnServersCountData.free.countries } країні",
         "VPN із серверами в ${ vpnServersCountData.free.countries } країнах",
@@ -14218,6 +14258,9 @@
       ],
       "Yearly": [
         "Щороку"
+      ],
+      "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
+        "Ваш обліковий запис надає доступ до безплатних функцій у ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } і ${ LUMO_SHORT_APP_NAME }."
       ],
       "Your plan": [
         "Ваш тарифний план"
@@ -16477,6 +16520,9 @@
       ],
       "Forward emails": [
         "Пересилання пошти"
+      ],
+      "Free": [
+        "Безплатний"
       ],
       "Gateway": [
         "Шлюз"

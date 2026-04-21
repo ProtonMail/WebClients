@@ -6610,9 +6610,6 @@
       "Please fix the highlighted conflict to proceed.": [
         "続行するためにハイライトされた競合を修正してください。"
       ],
-      "Please generate keys before you try to change your password": [
-        "パスワードを変更する前に鍵を生成してください"
-      ],
       "Please select a country": [
         "国を選択してください"
       ],
@@ -10857,6 +10854,9 @@
       "Show original message": [
         "元のメッセージを表示"
       ],
+      "Sign in": [
+        "サインイン"
+      ],
       "Sign in only": [
         "サインインのみ"
       ],
@@ -14166,9 +14166,6 @@
       "clearing your browser cache": [
         "ブラウザのキャッシュを消去"
       ],
-      "Common sign in issues": [
-        "一般的なサインインの問題"
-      ],
       "Common sign up issues": [
         "一般的なサインアップの問題"
       ],
@@ -15358,9 +15355,6 @@
       ],
       "Dedicated servers and IP": [
         "専用サーバーとIP"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "ストリーミングに最適化された専用サーバー"
       ],
       "Desktop app": [
         "デスクトップアプリ"
@@ -17004,9 +16998,6 @@
       "Buy now": [
         "今すぐ購入"
       ],
-      "Contact us": [
-        "私たちにご連絡ください"
-      ],
       "Continue": [
         "続ける"
       ],
@@ -17033,9 +17024,6 @@
       ],
       "Or ${ createANewAccount }": [
         "または ${ createANewAccount }"
-      ],
-      "Request trial": [
-        "トライアルをリクエストする"
       ],
       "Start using ${ appName }": [
         "${ appName } の使用を開始する"
@@ -17278,9 +17266,6 @@
       ],
       "Start using ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }を始めましょう"
-      ],
-      "Tailored made solutions for larger organizations with custom needs.": [
-        "カスタムニーズを持つ大規模組織向けにカスタマイズされたソリューション。"
       ],
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "選択したオファーは、${ currentPlanTitle } サブスクリプションには利用できません。"
@@ -19381,9 +19366,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "旧式のアドレスキーに対してはアカウントの回復が利用できません。"
-      ],
-      "Please generate keys before you try to change your password": [
-        "パスワードを変更する前に、キーを生成してください。"
       ]
     },
     "session_recovery:available:info": {
@@ -19781,6 +19763,9 @@
       "${ FREE_PASS_ALIASES } hide-my-email alias to fight spam": [
         "迷惑メールをなくすために${ FREE_PASS_ALIASES }件のHide-my-emailエイリアス"
       ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "迷惑メール対策用の hide-my-email エイリアス ${ FREE_PASS_ALIASES } 個"
+      ],
       "${ maxAddresses } address": [
         "${ maxAddresses } 件のアドレス"
       ],
@@ -19862,6 +19847,9 @@
       "Bundle": [
         "バンドル"
       ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "開始するには、安全な ${ MAIL_APP_NAME } アドレスを選択してください"
+      ],
       "Collaborative document editing": [
         "共同ドキュメント編集"
       ],
@@ -19925,6 +19913,9 @@
       "Gifted by **${ referrerName }**": [
         "**${ referrerName }**からのギフト"
       ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "${ MAIL_APP_NAME } で会話をプライベートに保ちましょう"
+      ],
       "Manage user access": [
         "ユーザーアクセスを管理"
       ],
@@ -19949,6 +19940,9 @@
       "Password manager for all your devices": [
         "あなたのすべてのデバイスのためのパスワードマネージャー"
       ],
+      "Password-protected messages": [
+        "パスワードで保護されたメッセージ"
+      ],
       "Pick a service to get started.": [
         "開始するにはサービスを選択してください。"
       ],
@@ -19969,6 +19963,9 @@
       ],
       "Secure ${ VPN_CONNECTIONS } device at a time": [
         "${ VPN_CONNECTIONS }台のデバイスを同時に保護"
+      ],
+      "Secure calendar": [
+        "安全性の高いカレンダー"
       ],
       "Secure file sharing": [
         "安全なファイル共有"
@@ -20072,6 +20069,9 @@
       "use your own email.": [
         "独自のメールアドレスを使用。"
       ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "${ vpnServersCountData.free.countries } か国にサーバーを備えたVPN"
+      ],
       "VPN with servers in ${ vpnServersCountData.free.countries } country": [
         "${ vpnServersCountData.free.countries }ヶ国にサーバーがあるVPN"
       ],
@@ -20080,6 +20080,9 @@
       ],
       "Yearly": [
         "毎年"
+      ],
+      "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
+        "お客様のアカウントには、${ MAIL_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME }、${ LUMO_SHORT_APP_NAME } の無料機能へのアクセスが含まれています。"
       ],
       "Your plan": [
         "現在のプラン"
