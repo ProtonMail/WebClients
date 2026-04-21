@@ -1,53 +1,34 @@
 import { c } from 'ttag';
 
-import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import { DropdownMenuButton, Icon, ToolbarButton } from '@proton/components';
 import clsx from '@proton/utils/clsx';
 
-import type { PhotoLink } from '../../../store';
-import { isDecryptedLink } from '../../../store/_photos/utils/isDecryptedLink';
-import { getSharedStatus } from '../../../utils/share';
+import type { PhotoItem } from '../../usePhotos.store';
 
 interface Props {
-    selectedLink: PhotoLink | undefined;
+    selectedPhoto: PhotoItem | undefined;
     showIconOnly: boolean;
     dropDownMenuButton?: boolean;
     onClick: () => void;
 }
 
-const PhotosShareLinkButton = ({ selectedLink, showIconOnly, onClick, dropDownMenuButton = false }: Props) => {
-    if (!selectedLink) {
+const PhotosShareLinkButton = ({ selectedPhoto, showIconOnly, onClick, dropDownMenuButton = false }: Props) => {
+    if (!selectedPhoto) {
         return null;
     }
 
-    if (!isDecryptedLink(selectedLink)) {
-        return (
-            <ToolbarButton
-                title={c('Action').t`Loading link`}
-                disabled
-                icon={<CircleLoader />}
-                data-testid="toolbar-share-link"
-            />
-        );
-    }
-
-    const sharedStatus = getSharedStatus(selectedLink);
-    const hasSharedLink = !!selectedLink.shareUrl;
-    const iconName = sharedStatus === 'shared' ? 'users' : 'user-plus';
     const ButtonComp = dropDownMenuButton ? DropdownMenuButton : ToolbarButton;
 
     return (
         <>
             <ButtonComp
-                title={hasSharedLink ? c('Action').t`Manage link` : c('Action').t`Get link`}
+                title={c('Action').t`Share`}
                 onClick={() => onClick()}
-                data-testid={hasSharedLink ? 'toolbar-manage-link' : 'toolbar-share-link'}
+                data-testid="toolbar-share-link"
                 className="inline-flex flex-nowrap flex-row items-center"
             >
-                <Icon name={iconName} className={clsx(!showIconOnly && 'mr-2')} />
-                <span className={clsx(showIconOnly && 'sr-only')}>
-                    {hasSharedLink ? c('Action').t`Manage link` : c('Action').t`Share`}
-                </span>
+                <Icon name="user-plus" className={clsx(!showIconOnly && 'mr-2')} />
+                <span className={clsx(showIconOnly && 'sr-only')}>{c('Action').t`Share`}</span>
             </ButtonComp>
         </>
     );

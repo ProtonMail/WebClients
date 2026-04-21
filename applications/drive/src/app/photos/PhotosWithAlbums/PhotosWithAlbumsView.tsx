@@ -8,7 +8,6 @@ import { Loader, useAppTitle } from '@proton/components';
 import { getDriveForPhotos } from '@proton/drive';
 import { loadThumbnail } from '@proton/drive/modules/thumbnails';
 import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import { useUserSettings } from '../../hooks/user';
 import { useShiftKey } from '../../hooks/util/useShiftKey';
@@ -24,7 +23,6 @@ import { enqueueAdditionalInfo } from './loaders/loadAdditionalInfo';
 
 export const PhotosWithAlbumsView = () => {
     useAppTitle(c('Title').t`Photos`);
-    const driveAlbumsDisabled = useFlag('DriveAlbumsDisabled');
 
     const {
         albumPhotos,
@@ -107,7 +105,7 @@ export const PhotosWithAlbumsView = () => {
                     }
                     isGroupSelected={isGroupSelected}
                     isItemSelected={isItemSelected}
-                    onFavorite={!driveAlbumsDisabled ? toggleFavorite : undefined}
+                    onFavorite={toggleFavorite}
                     isAddAlbumPhotosView={isAddAlbumPhotosView}
                     rootLinkId={linkId}
                     hasSelection={selectedItems.length > 0 || currentPageType === AlbumsPageTypes.ALBUMSADDPHOTOS}

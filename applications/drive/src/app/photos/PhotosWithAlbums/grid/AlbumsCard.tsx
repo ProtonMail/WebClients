@@ -1,7 +1,6 @@
 import type { CSSProperties, FC } from 'react';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 
-import { formatDuration } from 'date-fns';
 import { c, msgid } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
@@ -14,39 +13,27 @@ import {
     usePopperAnchor,
     useTheme,
 } from '@proton/components';
-import { generateNodeUid } from '@proton/drive/index';
-import { useThumbnail } from '@proton/drive/modules/thumbnails';
+import { getDriveForPhotos, splitNodeUid } from '@proton/drive/index';
+import { loadThumbnail, useThumbnail } from '@proton/drive/modules/thumbnails';
 import { IcPencil } from '@proton/icons/icons/IcPencil';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
 import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
-import { isVideo } from '@proton/shared/lib/helpers/mimetype';
-import { dateLocale } from '@proton/shared/lib/i18n';
 import folderImagesDark from '@proton/styles/assets/img/drive/empty-image-album-dark.webp';
 import folderImages from '@proton/styles/assets/img/drive/empty-image-album.webp';
-import playCircleFilledIcon from '@proton/styles/assets/img/drive/play-circle-filled.svg';
-import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { SignatureIcon } from '../../../components/SignatureIcon';
-import { getMimeTypeDescription } from '../../../components/sections/helpers';
-import { type DecryptedLink, isDecryptedLink } from '../../../store';
-import type { DecryptedAlbum } from '../../PhotosStore/PhotosWithAlbumsProvider';
+import { useAlbumsStore } from '../../useAlbums.store';
 import { usePhotosStore } from '../../usePhotos.store';
+import { enqueueAdditionalInfo } from '../loaders/loadAdditionalInfo';
 import { SharedAlbumDropdownButton } from './SharedAlbumDropdownButton';
-import { formatVideoDuration } from './formatVideoDuration';
 
 import './AlbumsCard.scss';
 
 type Props = {
-    album: DecryptedAlbum;
-    onRender: (coverNodeUid: string, domRef: React.MutableRefObject<unknown>) => void;
-    onRenderLoadedLink: (
-        coverNodeUid: string,
-        coverActiveRevisionUid: string,
-        domRef: React.MutableRefObject<unknown>
-    ) => void;
+    nodeUid: string;
     style: CSSProperties;
     onClick: () => void;
     onRename: () => void;
@@ -54,8 +41,7 @@ type Props = {
     onDelete: () => void;
 };
 
-const getAltText = ({ mimeType, name }: DecryptedLink) =>
-    `${c('Label').t`Album`} - ${getMimeTypeDescription(mimeType || '')} - ${name}`;
+const getAltText = (name: string) => `${c('Label').t`Album`} - ${name}`;
 
 interface AlbumDropdownButtonprops {
     onRename: () => void;
@@ -65,7 +51,6 @@ interface AlbumDropdownButtonprops {
 
 export const AlbumDropdownButton = ({ onShare, onRename, onDelete }: AlbumDropdownButtonprops) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
-    const driveAlbumsDisabled = useFlag('DriveAlbumsDisabled');
 
     return (
         <>
@@ -85,18 +70,16 @@ export const AlbumDropdownButton = ({ onShare, onRename, onDelete }: AlbumDropdo
             </DropdownButton>
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
                 <DropdownMenu>
-                    {!driveAlbumsDisabled && (
-                        <DropdownMenuButton
-                            onClick={(e) => {
-                                e.stopPropagation();
-                                onRename();
-                            }}
-                            className="text-left flex items-center flex-nowrap"
-                        >
-                            <IcPencil className="mr-2" />
-                            {c('Action').t`Rename album`}
-                        </DropdownMenuButton>
-                    )}
+                    <DropdownMenuButton
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            onRename();
+                        }}
+                        className="text-left flex items-center flex-nowrap"
+                    >
+                        <IcPencil className="mr-2" />
+                        {c('Action').t`Rename album`}
+                    </DropdownMenuButton>
 
                     <DropdownMenuButton
                         onClick={(e) => {
@@ -109,47 +92,44 @@ export const AlbumDropdownButton = ({ onShare, onRename, onDelete }: AlbumDropdo
                         {c('Action').t`Share album`}
                     </DropdownMenuButton>
 
-                    {!driveAlbumsDisabled && (
-                        <DropdownMenuButton
-                            onClick={(e) => {
-                                e.stopPropagation();
-                                onDelete();
-                            }}
-                            className="text-left flex items-center flex-nowrap"
-                        >
-                            <IcTrash className="mr-2" />
-                            {c('Action').t`Delete album`}
-                        </DropdownMenuButton>
-                    )}
+                    <DropdownMenuButton
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            onDelete();
+                        }}
+                        className="text-left flex items-center flex-nowrap"
+                    >
+                        <IcTrash className="mr-2" />
+                        {c('Action').t`Delete album`}
+                    </DropdownMenuButton>
                 </DropdownMenu>
             </Dropdown>
         </>
     );
 };
 
-export const AlbumsCard: FC<Props> = ({
-    style,
-    onRender,
-    onRenderLoadedLink,
-    album,
-    onClick,
-    onShare,
-    onRename,
-    onDelete,
-}) => {
+export const AlbumsCard: FC<Props> = ({ style, nodeUid, onClick, onShare, onRename, onDelete }) => {
     const [imageReady, setImageReady] = useState(false);
     const ref = useRef(null);
 
-    const isDecrypted = isDecryptedLink(album);
-
     const theme = useTheme();
-    const { sharedBy } = album;
-    const albumSharedLabel = album.sharedBy ? c('Info').t`Shared with you` : c('Info').t`Shared`;
-    const albumSharedTitle = album.sharedBy ? c('Info').t`Shared by ${sharedBy}` : c('Info').t`Shared by you`;
 
-    const coverNodeUid =
-        album.albumProperties?.coverLinkId && generateNodeUid(album.volumeId, album.albumProperties?.coverLinkId);
-
+    const { photoCount, coverNodeUid, name, isShared, isOwner, hasSignatureIssues, decprecatedShareId } =
+        useAlbumsStore(
+            useShallow((state) => {
+                const item = state.albums.get(nodeUid);
+                return {
+                    photoCount: item?.photoCount ?? 0,
+                    coverNodeUid: item?.coverNodeUid,
+                    name: item?.name,
+                    isShared: item?.isShared,
+                    isOwner: item?.isOwner,
+                    hasSignatureIssues: item?.hasSignatureIssues,
+                    decprecatedShareId: item?.deprecatedShareId,
+                };
+            })
+        );
+    const albumSharedLabel = isShared && isOwner ? c('Info').t`Shared` : c('Info').t`Shared with you`;
     const coverPhoto = usePhotosStore(
         useShallow((state) => {
             const item = coverNodeUid && state.getPhotoItem(coverNodeUid);
@@ -177,11 +157,16 @@ export const AlbumsCard: FC<Props> = ({
             return;
         }
         if (!coverPhoto?.activeRevisionUid) {
-            onRender(coverNodeUid, ref);
+            enqueueAdditionalInfo(coverNodeUid, () => Boolean(ref.current));
         } else {
-            onRenderLoadedLink(coverNodeUid, coverPhoto?.activeRevisionUid, ref);
+            loadThumbnail(getDriveForPhotos(), {
+                nodeUid: coverNodeUid,
+                revisionUid: coverPhoto.activeRevisionUid,
+                shouldLoad: () => Boolean(ref.current),
+                thumbnailTypes: ['sd', 'hd'],
+            });
         }
-    }, [coverNodeUid, coverPhoto?.activeRevisionUid, onRender, onRenderLoadedLink]);
+    }, [coverNodeUid, coverPhoto?.activeRevisionUid]);
 
     useEffect(() => {
         if (thumbnailUrl) {
@@ -206,8 +191,6 @@ export const AlbumsCard: FC<Props> = ({
         [onClick]
     );
 
-    // For translation context to be identical
-    const photoCount = album.photoCount;
     return (
         /* eslint-disable-next-line jsx-a11y/prefer-tag-over-role */
         <ButtonLike
@@ -217,105 +200,74 @@ export const AlbumsCard: FC<Props> = ({
             className={clsx(
                 'button-for-icon', // `aria-busy` buttons get extra padding, this avoids that
                 'relative albums-card p-0 rounded',
-                (isThumbnailLoading || !isDecrypted) && 'albums-card--loading'
+                isThumbnailLoading && 'albums-card--loading'
             )}
             data-testid="albums-card"
             onClick={onClick}
             onKeyDown={onKeyDown}
             tabIndex={0}
             role="button"
-            aria-busy={isThumbnailLoading || !isDecrypted}
+            aria-busy={isThumbnailLoading}
         >
-            {isDecrypted ? (
-                <>
-                    <div className={clsx('w-full h-full relative', isThumbnailLoading && 'hidden')}>
-                        {thumbnailUrl ? (
+            <>
+                <div className={clsx('w-full h-full relative', isThumbnailLoading && 'hidden')}>
+                    {thumbnailUrl ? (
+                        <img
+                            data-testid="albums-card-thumbnail"
+                            data-node-uid={coverNodeUid}
+                            src={thumbnailUrl}
+                            alt={getAltText(name ?? '')}
+                            className="w-full h-full albums-card-thumbnail"
+                        />
+                    ) : (
+                        <div className="flex items-center justify-center w-full h-full albums-card-thumbnail albums-card-thumbnail--empty">
                             <img
-                                data-testid="albums-card-thumbnail"
-                                data-node-uid={coverNodeUid}
-                                src={thumbnailUrl}
-                                alt={getAltText(album)}
-                                className="w-full h-full albums-card-thumbnail"
+                                src={theme.information.dark ? folderImagesDark : folderImages}
+                                alt=""
+                                width={80}
+                                className="m-auto"
                             />
-                        ) : (
-                            <div className="flex items-center justify-center w-full h-full albums-card-thumbnail albums-card-thumbnail--empty">
-                                <img
-                                    src={theme.information.dark ? folderImagesDark : folderImages}
-                                    alt=""
-                                    width={80}
-                                    className="m-auto"
-                                />
-                            </div>
-                        )}
-                        {(album.signatureIssues || album.isShared) && (
-                            <div className="absolute top-0 right-0 mr-2 mt-2 flex items-center gap-1">
-                                {album.signatureIssues && (
-                                    <SignatureIcon
-                                        isFile
-                                        haveSignatureIssues={!!album.signatureIssues}
-                                        className="color-danger"
-                                    />
-                                )}
-                                {album.isShared && (
-                                    <div className="albums-card-share-icon rounded-50 flex items-center justify-center">
-                                        <IcUsers color="white" size={3} />
-                                    </div>
-                                )}
-                            </div>
-                        )}
-                        {album.mimeType && isVideo(album.mimeType) && (
-                            <div className="w-full absolute bottom-0 flex justify-end items-center px-2 py-2 albums-card-video-info">
-                                {album.duration && (
-                                    <time
-                                        className="text-semibold mr-1"
-                                        dateTime={formatDuration(
-                                            { seconds: Math.floor(album.duration) },
-                                            {
-                                                locale: dateLocale,
-                                            }
-                                        )}
-                                    >
-                                        {formatVideoDuration(album.duration)}
-                                    </time>
-                                )}
-                                <img src={playCircleFilledIcon} alt="" />
-                            </div>
-                        )}
-                    </div>
-                    <div className="flex flex-row flex-nowrap mt-2 items-center">
-                        <div className="flex-1">
-                            <div
-                                className="text-left text-lg text-semibold text-ellipsis"
-                                title={album.name ? album.name : c('Info').t`Untitled`}
-                            >
-                                {album.name ? album.name : c('Info').t`Untitled`}
-                            </div>
-                            <div className="text-left mb-2 text color-weak text-semibold">
-                                {c('Info').ngettext(msgid`${photoCount} item`, `${photoCount} items`, photoCount)}
-                                {album.isShared && (
-                                    <span title={albumSharedTitle} className="ml-1">
-                                        ⋅ {albumSharedLabel}
-                                    </span>
-                                )}
+                        </div>
+                    )}
+                    {isShared && (
+                        <div className="absolute top-0 right-0 mr-2 mt-2 flex items-center gap-1">
+                            <SignatureIcon
+                                isFile={false}
+                                haveSignatureIssues={!!hasSignatureIssues}
+                                className="color-danger"
+                            />
+                            <div className="albums-card-share-icon rounded-50 flex items-center justify-center">
+                                <IcUsers color="white" size={3} />
                             </div>
                         </div>
-                        {album.permissions.isOwner && (
-                            <div className="shrink-0 mb-2">
-                                <AlbumDropdownButton onShare={onShare} onRename={onRename} onDelete={onDelete} />
-                            </div>
-                        )}
-                        {album.sharedBy && album.shareId && (
-                            <div className="shrink-0 mb-2">
-                                <SharedAlbumDropdownButton
-                                    volumeId={album.volumeId}
-                                    shareId={album.shareId}
-                                    linkId={album.linkId}
-                                />
-                            </div>
-                        )}
+                    )}
+                </div>
+                <div className="flex flex-row flex-nowrap mt-2 items-center">
+                    <div className="flex-1">
+                        <div className="text-left text-lg text-semibold text-ellipsis" title={name}>
+                            {name}
+                        </div>
+                        <div className="text-left mb-2 text color-weak text-semibold">
+                            {c('Info').ngettext(msgid`${photoCount} item`, `${photoCount} items`, photoCount)}
+                            {(isShared || !isOwner) && <span className="ml-1">⋅ {albumSharedLabel}</span>}
+                        </div>
                     </div>
-                </>
-            ) : null}
+                    {isOwner && (
+                        <div className="shrink-0 mb-2">
+                            <AlbumDropdownButton onShare={onShare} onRename={onRename} onDelete={onDelete} />
+                        </div>
+                    )}
+                    {!isOwner && decprecatedShareId && (
+                        <div className="shrink-0 mb-2">
+                            <SharedAlbumDropdownButton
+                                volumeId={splitNodeUid(nodeUid).volumeId}
+                                shareId={decprecatedShareId}
+                                linkId={splitNodeUid(nodeUid).nodeId}
+                            />
+                        </div>
+                    )}
+                </div>
+            </>
         </ButtonLike>
     );
 };

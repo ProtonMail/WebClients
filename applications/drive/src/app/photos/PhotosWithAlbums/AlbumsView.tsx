@@ -1,61 +1,49 @@
 import type { FC } from 'react';
-import React, { useCallback, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { useOutletContext } from 'react-router-dom-v5-compat';
 
 import { c } from 'ttag';
 import { useShallow } from 'zustand/react/shallow';
 
 import { Loader, useAppTitle, useModalStateObject, useNotifications } from '@proton/components';
-import { generateNodeUid, getDriveForPhotos } from '@proton/drive/index';
-import { loadThumbnail } from '@proton/drive/modules/thumbnails';
+import { getDriveForPhotos, splitNodeUid } from '@proton/drive';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 
 import useNavigate from '../../hooks/drive/useNavigate';
+import { getNotificationsManager } from '../../modules/notifications';
 import { AlbumTag } from '../../store';
 import { useLinksActions } from '../../store/_links';
 import { sendErrorReport } from '../../utils/errorHandling';
+import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { usePhotoLayoutStore } from '../../zustand/photos/layout.store';
-import { useRenameAlbum } from '../PhotosActions/Albums';
 import { RenameAlbumModal } from '../PhotosModals/RenameAlbumModal';
-import type { DecryptedAlbum } from '../PhotosStore/PhotosWithAlbumsProvider';
+import { refreshAlbumMetadata } from '../loaders/loadAlbum';
+import { type AlbumItem, useAlbumsStore } from '../useAlbums.store';
 import { AlbumsGrid } from './AlbumsGrid';
 import { AlbumsInvitations } from './AlbumsInvitations';
 import { EmptyAlbums } from './EmptyAlbums';
 import { EmptyTagView } from './EmptyTagView';
 import { AlbumsTags, type AlbumsTagsProps } from './components/Tags';
 import type { PhotosLayoutOutletContext } from './layout/PhotosLayout';
-import { enqueueAdditionalInfo } from './loaders/loadAdditionalInfo';
 
 import './BannerInvite.scss';
 
-const filterAlbums = (albums: DecryptedAlbum[], tag: AlbumTag): DecryptedAlbum[] => {
+const filterAlbums = (albums: AlbumItem[], tag: AlbumTag): AlbumItem[] => {
     if (tag === AlbumTag.Shared) {
-        return albums.filter((album) => album.sharingDetails?.shareId && album.permissions.isOwner);
+        return albums.filter((album) => album.isShared && album.isOwner);
     }
     if (tag === AlbumTag.MyAlbums) {
-        return albums.filter((album) => album.permissions.isOwner);
+        return albums.filter((album) => album.isOwner);
     }
     if (tag === AlbumTag.SharedWithMe) {
-        return albums.filter((album) => album.sharingDetails?.shareId && !album.permissions.isOwner);
+        return albums.filter((album) => !album.isOwner);
     }
     return albums;
 };
 
-export const stableSortAlbums = (albums: DecryptedAlbum[]): DecryptedAlbum[] => {
-    return albums.sort((a, b) => {
-        const timeCompare = b.createTime - a.createTime;
-        if (timeCompare !== 0) {
-            return timeCompare;
-        }
-        // Use asset id as a tiebreaker for equal create time (might happen for mass uploads)
-        return a.linkId.localeCompare(b.linkId);
-    });
-};
-
 export const AlbumsView: FC = () => {
     useAppTitle(c('Title').t`Albums`);
-    const { volumeId, shareId, linkId, albums, isAlbumsLoading, deleteAlbum, refreshSharedWithMeAlbums } =
-        useOutletContext<PhotosLayoutOutletContext>();
+    const { volumeId, shareId, linkId, deleteAlbum } = useOutletContext<PhotosLayoutOutletContext>();
 
     const { modals } = usePhotoLayoutStore(
         useShallow((state) => ({
@@ -63,52 +51,48 @@ export const AlbumsView: FC = () => {
         }))
     );
     const renameAlbumModal = useModalStateObject();
-    const renameAlbum = useRenameAlbum();
-    const [renameAlbumLinkId, setRenameAlbumLinkId] = useState<string>('');
+    const [renameAlbumNodeUid, setRenameAlbumNodeUid] = useState<string>('');
     const { transferPhotoLinks } = useLinksActions();
     const { createNotification } = useNotifications();
 
-    const { navigateToAlbum, navigateToAlbums } = useNavigate();
+    const { albumsUids, albumsMap, isAlbumsLoading } = useAlbumsStore(
+        useShallow((state) => ({
+            albumsUids: state.albumsUids,
+            albumsMap: state.albums,
+            isAlbumsLoading: state.isLoadingList,
+        }))
+    );
+
+    const { navigateToNodeUid, navigateToAlbums } = useNavigate();
     // TODO: Move tag selection to specific hook
     const [selectedTags, setSelectedTags] = useState<AlbumsTagsProps['selectedTags']>([AlbumTag.All]);
 
-    const handleItemRender = useCallback((nodeUid: string, domRef: React.MutableRefObject<unknown>) => {
-        enqueueAdditionalInfo(nodeUid, () => Boolean(domRef.current));
-    }, []);
-
-    const handleItemRenderLoadedLink = useCallback(
-        (nodeUid: string, activeRevisionUid: string, domRef: React.MutableRefObject<unknown>) => {
-            loadThumbnail(getDriveForPhotos(), {
-                nodeUid: nodeUid,
-                revisionUid: activeRevisionUid,
-                shouldLoad: () => Boolean(domRef.current),
-                thumbnailTypes: ['sd', 'hd'],
-            });
-        },
-        []
-    );
-
     const onRenameAlbum = useCallback(
         async (name: string) => {
-            if (!shareId || !volumeId || !renameAlbumLinkId) {
+            if (!renameAlbumNodeUid) {
                 return;
             }
             try {
-                const abortSignal = new AbortController().signal;
-                await renameAlbum(abortSignal, volumeId, shareId, renameAlbumLinkId, name);
+                // TODO: Move it somewhere else and use busDriver (issue with update condition)
+                await getDriveForPhotos().renameNode(renameAlbumNodeUid, name);
+                await refreshAlbumMetadata(renameAlbumNodeUid);
+                getNotificationsManager().createNotification({
+                    type: 'success',
+                    text: c('Notitication').t`Album renamed successfully`,
+                });
             } catch (e) {
-                sendErrorReport(e);
+                handleSdkError(e);
             } finally {
-                setRenameAlbumLinkId('');
+                setRenameAlbumNodeUid('');
             }
         },
-        [shareId, volumeId, renameAlbumLinkId, renameAlbum]
+        [renameAlbumNodeUid]
     );
 
     const handleDeleteAlbum = useCallback(
         async (
             abortSignal: AbortSignal,
-            album: DecryptedAlbum,
+            album: AlbumItem,
             { missingPhotosIds, force }: { missingPhotosIds?: string[]; force: boolean }
         ) => {
             if (!linkId || !volumeId || !shareId) {
@@ -120,7 +104,8 @@ export const AlbumsView: FC = () => {
                         abortSignal,
                         volumeId,
                         {
-                            shareId: album.rootShareId,
+                            // TODO: DRVWEB-4974 - use album rootShareId once available in AlbumItem
+                            shareId,
                             linkIds: missingPhotosIds,
                             newShareId: shareId,
                             newParentLinkId: linkId,
@@ -128,7 +113,7 @@ export const AlbumsView: FC = () => {
                         'delete_album'
                     );
                 }
-                await deleteAlbum(abortSignal, album.linkId, force);
+                await deleteAlbum(abortSignal, splitNodeUid(album.nodeUid).nodeId, force);
                 const albumName = album.name;
                 createNotification({
                     text: c('Info').t`${albumName} has been successfully deleted`,
@@ -163,7 +148,11 @@ export const AlbumsView: FC = () => {
     // In most cases, if user have all the photos in his library will mean there are no direct children inside the album
     // There is a fallback in the modal in case BE detect that some items are direct children of the album
     const onDeleteAlbum = useCallback(
-        async (album: DecryptedAlbum) => {
+        async (nodeUid: string) => {
+            const album = useAlbumsStore.getState().albums.get(nodeUid);
+            if (!album) {
+                return;
+            }
             const abortSignal = new AbortController().signal;
             void modals.deleteAlbum?.({
                 name: album.name,
@@ -178,11 +167,16 @@ export const AlbumsView: FC = () => {
         [modals, handleDeleteAlbum, navigateToAlbums]
     );
 
+    const albums = albumsUids.map((uid) => albumsMap.get(uid)).filter((a): a is AlbumItem => a !== undefined);
     const isAlbumsEmpty = !isAlbumsLoading && albums.length === 0;
-    // the sorting is just so we maintain some ordering
-    const filteredAlbums = stableSortAlbums(filterAlbums(albums, selectedTags[0]));
-
-    if (!volumeId || !shareId || !linkId || (isAlbumsLoading && !albums) || (isAlbumsLoading && albums.length === 0)) {
+    const filteredAlbums = filterAlbums(albums, selectedTags[0]);
+    const tagCounts: Partial<Record<AlbumTag, number>> = {
+        [AlbumTag.All]: albums.length,
+        [AlbumTag.MyAlbums]: filterAlbums(albums, AlbumTag.MyAlbums).length,
+        [AlbumTag.Shared]: filterAlbums(albums, AlbumTag.Shared).length,
+        [AlbumTag.SharedWithMe]: filterAlbums(albums, AlbumTag.SharedWithMe).length,
+    };
+    if (!volumeId || !shareId || !linkId || (isAlbumsLoading && albums.length === 0)) {
         return <Loader />;
     }
 
@@ -194,37 +188,37 @@ export const AlbumsView: FC = () => {
                     selectedTags={selectedTags}
                     tags={[AlbumTag.All, AlbumTag.MyAlbums, AlbumTag.Shared, AlbumTag.SharedWithMe]}
                     onTagSelect={setSelectedTags}
+                    counts={tagCounts}
+                    loading={isAlbumsLoading}
                 />
             )}
 
-            <AlbumsInvitations refreshSharedWithMeAlbums={refreshSharedWithMeAlbums} />
+            <AlbumsInvitations />
             {isSelectedTagEmtpy && <EmptyTagView tag={selectedTags[0]} />}
             {isAlbumsEmpty && <EmptyAlbums createAlbumModal={modals.createAlbum} />}
             {!isAlbumsEmpty && !isSelectedTagEmtpy && (
                 <AlbumsGrid
-                    data={filteredAlbums}
-                    onItemRender={handleItemRender}
-                    onItemRenderLoadedLink={handleItemRenderLoadedLink}
+                    data={filteredAlbums.map((album) => album.nodeUid)}
                     isLoading={isAlbumsLoading}
-                    onItemClick={(shareId, linkId) => {
-                        navigateToAlbum(shareId, linkId);
+                    onItemClick={(nodeUid) => {
+                        void navigateToNodeUid(nodeUid, getDriveForPhotos());
                     }}
-                    onItemShare={(linkId) => {
+                    onItemShare={(nodeUid) => {
                         modals.linkSharing?.({
-                            nodeUid: generateNodeUid(volumeId, linkId),
+                            nodeUid,
                             drive: getDriveForPhotos(),
                         });
                     }}
-                    onItemRename={(linkId) => {
-                        setRenameAlbumLinkId(linkId);
+                    onItemRename={(nodeUid) => {
+                        setRenameAlbumNodeUid(nodeUid);
                         renameAlbumModal.openModal(true);
                     }}
                     onItemDelete={onDeleteAlbum}
                 />
             )}
-            {renameAlbumLinkId && (
+            {renameAlbumNodeUid && (
                 <RenameAlbumModal
-                    initialName={filteredAlbums.find((album) => album.linkId === renameAlbumLinkId)?.name}
+                    initialName={filteredAlbums.find((album) => album.nodeUid === renameAlbumNodeUid)?.name}
                     renameAlbumModal={renameAlbumModal}
                     renameAlbum={onRenameAlbum}
                 />

@@ -23,7 +23,6 @@ import { dateLocale } from '@proton/shared/lib/i18n';
 import folderImagesDark from '@proton/styles/assets/img/drive/empty-image-album-dark.webp';
 import folderImages from '@proton/styles/assets/img/drive/empty-image-album.webp';
 import playCircleFilledIcon from '@proton/styles/assets/img/drive/play-circle-filled.svg';
-import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import SignatureIcon from '../../../components/SignatureIcon';
@@ -57,7 +56,6 @@ interface AlbumDropdownButtonprops {
 
 export const AlbumDropdownButton = ({ onShare, onRename, onDelete }: AlbumDropdownButtonprops) => {
     const { anchorRef, isOpen, toggle, close } = usePopperAnchor<HTMLButtonElement>();
-    const driveAlbumsDisabled = useFlag('DriveAlbumsDisabled');
 
     return (
         <>
@@ -77,18 +75,16 @@ export const AlbumDropdownButton = ({ onShare, onRename, onDelete }: AlbumDropdo
             </DropdownButton>
             <Dropdown isOpen={isOpen} anchorRef={anchorRef} onClose={close}>
                 <DropdownMenu>
-                    {!driveAlbumsDisabled && (
-                        <DropdownMenuButton
-                            onClick={(e) => {
-                                e.stopPropagation();
-                                onRename();
-                            }}
-                            className="text-left flex items-center flex-nowrap"
-                        >
-                            <IcPencil className="mr-2" />
-                            {c('Action').t`Rename album`}
-                        </DropdownMenuButton>
-                    )}
+                    <DropdownMenuButton
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            onRename();
+                        }}
+                        className="text-left flex items-center flex-nowrap"
+                    >
+                        <IcPencil className="mr-2" />
+                        {c('Action').t`Rename album`}
+                    </DropdownMenuButton>
 
                     <DropdownMenuButton
                         onClick={(e) => {
@@ -101,18 +97,16 @@ export const AlbumDropdownButton = ({ onShare, onRename, onDelete }: AlbumDropdo
                         {c('Action').t`Share album`}
                     </DropdownMenuButton>
 
-                    {!driveAlbumsDisabled && (
-                        <DropdownMenuButton
-                            onClick={(e) => {
-                                e.stopPropagation();
-                                onDelete();
-                            }}
-                            className="text-left flex items-center flex-nowrap"
-                        >
-                            <IcTrash className="mr-2" />
-                            {c('Action').t`Delete album`}
-                        </DropdownMenuButton>
-                    )}
+                    <DropdownMenuButton
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            onDelete();
+                        }}
+                        className="text-left flex items-center flex-nowrap"
+                    >
+                        <IcTrash className="mr-2" />
+                        {c('Action').t`Delete album`}
+                    </DropdownMenuButton>
                 </DropdownMenu>
             </Dropdown>
         </>

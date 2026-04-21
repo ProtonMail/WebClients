@@ -1,13 +1,8 @@
 import type { ModalStateReturnObj } from '@proton/components';
 
-import type {
-    OnFileSkippedSuccessCallbackData,
-    OnFileUploadSuccessCallbackData,
-    PhotoGridItem,
-    PhotoLink,
-} from '../../../store';
+import type { OnFileSkippedSuccessCallbackData, OnFileUploadSuccessCallbackData, PhotoGridItem } from '../../../store';
 import { AlbumsPageTypes } from '../../../zustand/photos/layout.store';
-import type { DecryptedAlbum } from '../../PhotosStore/PhotosWithAlbumsProvider';
+import type { PhotoItem } from '../../usePhotos.store';
 import { PhotosAddAlbumPhotosToolbar } from './PhotosAddAlbumPhotosToolbar';
 import { PhotosWithAlbumsToolbar } from './PhotosWithAlbumsToolbar';
 
@@ -21,14 +16,14 @@ interface ToolbarProps {
     uploadDisabled: boolean;
     canRemoveSelectedPhotos: boolean;
 
-    albums: PhotoGridItem[];
-    album: DecryptedAlbum | undefined;
+    albumsUid: string[];
+    albumUid: string | undefined;
     albumPhotos: PhotoGridItem[];
     photos: PhotoGridItem[];
-    selectedItems: PhotoLink[];
+    selectedItems: PhotoItem[];
 
     createAlbumModal: ModalStateReturnObj;
-    requestDownload: (linkIds: { linkId: string; shareId: string }[]) => Promise<void>;
+    requestDownload: (photosUids: string[]) => Promise<void>;
     onAddAlbumPhotos: () => Promise<void>;
     openAddPhotosToAlbumModal: () => void;
     openSharePhotosIntoAnAlbumModal: () => void;
@@ -55,8 +50,8 @@ export const Toolbar = ({
     selectedCount,
     uploadDisabled,
     canRemoveSelectedPhotos,
-    albums,
-    album,
+    albumsUid,
+    albumUid,
     albumPhotos,
     photos,
     selectedItems,
@@ -85,7 +80,7 @@ export const Toolbar = ({
                     volumeId={volumeId}
                     shareId={previewShareId}
                     linkId={uploadLinkId}
-                    data={albums}
+                    data={albumsUid}
                     selectedItems={[]}
                     requestDownload={requestDownload}
                     uploadDisabled={true}
@@ -112,7 +107,7 @@ export const Toolbar = ({
                     volumeId={volumeId}
                     shareId={previewShareId}
                     linkId={uploadLinkId}
-                    album={album}
+                    nodeUid={albumUid}
                     selectedItems={selectedItems}
                     onPreview={onPreview}
                     requestDownload={requestDownload}

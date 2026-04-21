@@ -1,31 +1,22 @@
 import type { FC, ReactNode } from 'react';
-import React, { useCallback, useMemo, useRef, useState } from 'react';
+import { useCallback, useMemo, useRef, useState } from 'react';
 
 import { Loader, useElementRect } from '@proton/components';
 import { rootFontSize } from '@proton/shared/lib/helpers/dom';
 
-import type { DecryptedAlbum } from '../PhotosStore/PhotosWithAlbumsProvider';
 import { AlbumsCard } from './grid/AlbumsCard';
 
 type AlbumsGridProps = {
-    data: DecryptedAlbum[];
-    onItemRender: (coverNodeUid: string, domRef: React.MutableRefObject<unknown>) => void;
-    onItemRenderLoadedLink: (
-        coverNodeUid: string,
-        coverActiveRevisionUid: string,
-        domRef: React.MutableRefObject<unknown>
-    ) => void;
+    data: string[];
     isLoading: boolean;
-    onItemClick: (shareId: string, linkId: string) => void;
-    onItemShare: (linkId: string) => void;
-    onItemRename: (linkId: string) => void;
-    onItemDelete: (album: DecryptedAlbum) => void;
+    onItemClick: (nodeUid: string) => void;
+    onItemShare: (nodeUid: string) => void;
+    onItemRename: (nodeUid: string) => void;
+    onItemDelete: (nodeUid: string) => void;
 };
 
 export const AlbumsGrid: FC<AlbumsGridProps> = ({
     data,
-    onItemRender,
-    onItemRenderLoadedLink,
     isLoading,
     onItemClick,
     onItemShare,
@@ -113,7 +104,7 @@ export const AlbumsGrid: FC<AlbumsGridProps> = ({
         // and not visually repetitive
         const animationOffset = Math.max(itemsPerLine === 7 ? 5 : 7, Math.round(itemsPerLine * 0.6));
 
-        data.forEach((item, i) => {
+        data.forEach((nodeUid, i) => {
             const x = currentX * (itemWidth + gap);
             const y = currentY;
             lastY = y;
@@ -121,21 +112,19 @@ export const AlbumsGrid: FC<AlbumsGridProps> = ({
             if (itemShouldRender(y, scrollPosition)) {
                 items.push(
                     <AlbumsCard
-                        key={`album-${item.linkId}-${item.rootShareId}`}
-                        album={item}
-                        onRender={onItemRender}
-                        onRenderLoadedLink={onItemRenderLoadedLink}
+                        key={`album-${nodeUid}`}
+                        nodeUid={nodeUid}
                         onClick={() => {
-                            onItemClick(item.rootShareId, item.linkId);
+                            onItemClick(nodeUid);
                         }}
                         onRename={() => {
-                            onItemRename(item.linkId);
+                            onItemRename(nodeUid);
                         }}
                         onShare={() => {
-                            onItemShare(item.linkId);
+                            onItemShare(nodeUid);
                         }}
                         onDelete={() => {
-                            onItemDelete(item);
+                            onItemDelete(nodeUid);
                         }}
                         style={{
                             position: 'absolute',
@@ -161,17 +150,7 @@ export const AlbumsGrid: FC<AlbumsGridProps> = ({
         };
 
         return [items, innerStyle];
-    }, [
-        data,
-        dimensions,
-        scrollPosition,
-        onItemClick,
-        onItemRender,
-        onItemRenderLoadedLink,
-        onItemShare,
-        onItemRename,
-        onItemDelete,
-    ]);
+    }, [data, dimensions, scrollPosition, onItemClick, onItemShare, onItemRename, onItemDelete]);
 
     return (
         <div className="mt-2 pt-4 px-4 overflow-auto outline-none--at-all" ref={containerRef} onScroll={handleScroll}>
