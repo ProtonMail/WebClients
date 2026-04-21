@@ -1210,6 +1210,15 @@
       "Something went wrong. Please sign in again.": [
         "Ceva nu a funcționat bine. Reconectați-vă."
       ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "Aplicația desktop ${ PASS_APP_NAME } este blocată, trebuie deblocată."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "Aplicația desktop ${ PASS_APP_NAME } nu este instalată."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "Aplicația desktop ${ PASS_APP_NAME } nu răspunde, rulează?"
+      ],
       "The session has expired. Please sign in again.": [
         "Sesiunea a expirat. Reconectați-vă."
       ],
@@ -1233,6 +1242,9 @@
       ],
       "Unknown error": [
         "Eroare necunoscută"
+      ],
+      "Unknown error.": [
+        "Eroare necunoscută."
       ],
       "Unknown invite": [
         "Invitație necunoscută."

@@ -857,6 +857,12 @@
       "Something went wrong": [
         "發生錯誤"
       ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "已鎖定 ${ PASS_APP_NAME } 桌面應用程式，必須將其解鎖。"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "尚未安裝${ PASS_APP_NAME } 桌面應用程式。"
+      ],
       "The session has expired. Please sign in again.": [
         "工作階段已逾期。請重新登入。"
       ],
@@ -874,6 +880,9 @@
       ],
       "Unknown error": [
         "未知錯誤"
+      ],
+      "Unknown error.": [
+        "未知的錯誤。"
       ],
       "Unknown invite": [
         "未知邀請"
