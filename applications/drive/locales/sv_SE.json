@@ -539,6 +539,9 @@
       "Go back": [
         "Gå tillbaka"
       ],
+      "Go back to album “${ ellipsedAlbumName }“": [
+        "Gå tillbaka till album “${ ellipsedAlbumName }“"
+      ],
       "Go to ${ planOrAppName }": [
         "Gå till ${ planOrAppName }"
       ],
@@ -799,6 +802,9 @@
       ],
       "Quit": [
         "Avsluta"
+      ],
+      "Re-index": [
+        "Indexera igen"
       ],
       "Re-sign": [
         "Återsignera"
@@ -8601,9 +8607,6 @@
       "Data breach monitoring": [
         "Dataintrångsövervakning"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Dedikerade servrar optimerade för streaming"
-      ],
       "Desktop app": [
         "Skrivbordsapp"
       ],
@@ -9284,11 +9287,17 @@
       "\"${ ellipsedName }\" copied": [
         "”${ ellipsedName }” kopierad"
       ],
+      "\"${ ellipsedName }\" created successfully": [
+        "”${ ellipsedName }” skapades utan problem"
+      ],
       "\"${ ellipsedName }\" deleted": [
         "”${ ellipsedName }” borttaget"
       ],
       "\"${ ellipsedName }\" deleted permanently from trash": [
         "”${ ellipsedName }” togs bort permanent från papperskorg"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "“${ ellipsedName }“ misslyckades att skapas"
       ],
       "\"${ ellipsedName }\" failed to be deleted": [
         "“${ ellipsedName }“ misslyckades att tas bort"
@@ -10929,9 +10938,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Kontoåterställning är inte tillgänglig för äldre adressnycklar"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Generera nycklar innan du försöker ändra ditt lösenord"
       ]
     },
     "session_recovery:available:info": {

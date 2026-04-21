@@ -534,6 +534,9 @@
       "Go back": [
         "返回"
       ],
+      "Go back to album “${ ellipsedAlbumName }“": [
+        "返回专辑“${ ellipsedAlbumName }”"
+      ],
       "Go to ${ planOrAppName }": [
         "前往 ${ planOrAppName }"
       ],
@@ -794,6 +797,9 @@
       ],
       "Quit": [
         "退出"
+      ],
+      "Re-index": [
+        "重新索引"
       ],
       "Re-sign": [
         "重新签名"
@@ -3494,6 +3500,9 @@
       "Failed to load signature details, please try again later": [
         "加载签名详情失败，请稍后重试"
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "加载订阅数据失败，请稍后重试。"
+      ],
       "Failed to load the STL preview": [
         "加载 STL 预览失败"
       ],
@@ -5884,6 +5893,9 @@
       ],
       "No payment is required at this time.": [
         "目前不需要支付。"
+      ],
+      "No populator states found.": [
+        "未找到填充器状态！"
       ],
       "No results found": [
         "未找到结果"
@@ -8507,8 +8519,8 @@
       "Data retention policies": [
         "数据保留策略"
       ],
-      "Dedicated servers optimized for streaming": [
-        "专为流媒体优化的专用服务器"
+      "Dedicated servers optimized for speed": [
+        "专为速度优化的专用服务器"
       ],
       "Desktop app": [
         "桌面应用"
@@ -9176,6 +9188,42 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" copied": [
+        "已复制“${ ellipsedName }”"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "“${ ellipsedName }”创建成功"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "${ ellipsedName }”已删除"
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "已从回收站彻底删除“${ ellipsedName }”"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "“${ ellipsedName }”创建失败"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "“${ ellipsedName }”删除失败"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "从回收站彻底删除“${ ellipsedName }”失败"
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "“${ ellipsedName }”移动失败"
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "从回收站恢复“${ ellipsedName }”失败"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "“${ ellipsedName }”已移动"
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "已从回收站恢复“${ ellipsedName }”"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "“${ ellipsedName }”移动成功"
+      ],
       "\"${ fileName }\" shared": [
         "“${ fileName }”已共享"
       ],
@@ -9206,6 +9254,9 @@
       "${ errors.length } item failed to be copied": [
         "${ errors.length } 个项目复制失败"
       ],
+      "${ errors.length } item failed to be deleted": [
+        "${ errors.length } 个项目删除失败"
+      ],
       "${ errors.length } item failed to be trashed": [
         "${ errors.length } 个项目移至回收站失败"
       ],
@@ -9223,6 +9274,9 @@
       ],
       "${ numberOfItems } copied item moved to trash": [
         "${ numberOfItems } 个已复制的项目已移至回收站"
+      ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems } 个项目已复制"
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } 项目已删除"
@@ -9244,6 +9298,9 @@
       ],
       "${ numberOfItems } item failed to be restored from trash": [
         "${ numberOfItems }\" 个项目从回收站还原失败"
+      ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } 个项目已移动"
       ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } 个项目已移动到回收站"
@@ -9289,6 +9346,9 @@
       ],
       "Contact group updated": [
         "群组已更改"
+      ],
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "“${ ellipsedName }”的副本已移至回收站"
       ],
       "Device failed to be removed": [
         "设备移除失败"
@@ -9982,6 +10042,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "在此期间，您将无法修改或取消订阅。请待付款完成后再尝试进行任何操作。感谢您的耐心等待。"
       ],
+      "Edit billing address": [
+        "编辑账单地址"
+      ],
       "Got it": [
         "了解"
       ],
@@ -10649,9 +10712,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "传统地址密钥无法恢复账户"
-      ],
-      "Please generate keys before you try to change your password": [
-        "更改密码前请先生成密钥"
       ]
     },
     "session_recovery:available:info": {
@@ -12352,6 +12412,9 @@
       ],
       "Import your data to ${ BRAND_NAME }": [
         "将您的数据导入到 ${ BRAND_NAME }"
+      ],
+      "Index populators": [
+        "索引填充器"
       ],
       "Information exposed in breach": [
         "数据外泄事件中泄露的信息"
