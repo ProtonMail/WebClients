@@ -676,6 +676,9 @@
       "Skip": [
         "Omet"
       ],
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Algú ha posat un element compartit a la vostra disposició a ${ PASS_APP_NAME }."
+      ],
       "Sort vault items": [
         "Ordena els elements de la caixa forta"
       ],
@@ -962,6 +965,9 @@
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "S'ha produït un error amb l'autenticació. Confirmeu la segona contrasenya per continuar amb l'exportació."
       ],
+      "Biometric authentication failed.": [
+        "L'autenticació biomètrica ha fallat."
+      ],
       "Cannot send invitation at the moment": [
         "Ara mateix no es pot enviar la invitació",
         "Ara mateix no es poden enviar invitacions"
@@ -1014,6 +1020,18 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "No s'ha pogut eliminar la caixa forta \"${ payload.content.name }\""
       ],
+      "Desktop lock is not configured.": [
+        "El bloqueig de l'escriptori no està configurat."
+      ],
+      "Desktop lock secret does not match.": [
+        "La contrasenya de bloqueig de l'escriptori no coincideix."
+      ],
+      "Desktop lock secret not found.": [
+        "No s'ha trobat la contrasenya de bloqueig de l'escriptori."
+      ],
+      "Desktop lock setup failed.": [
+        "La configuració del bloqueig d'escriptori ha fallat."
+      ],
       "Detected ${ errors.length } corrupted csv row": [
         "S'ha detectat ${ errors.length } fila CSV corrupta",
         "S'han detectat ${ errors.length } files CSV corruptes"
@@ -1033,11 +1051,11 @@
       "Emptying trash failed": [
         "No s'ha pogut buidar la paperera"
       ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "La comunicació xifrada amb l'aplicació d'escriptori ${ PASS_APP_NAME } ha fallat."
+      ],
       "Encrypted JSON not supported": [
         "El JSON xifrat no és compatible"
-      ],
-      "Encryption communication for desktop unlock failed.": [
-        "Ha fallat la comunicació de xifratge per al desbloqueig de l'escriptori."
       ],
       "Error reporting problem": [
         "S'ha produït un error en informar del problema"
@@ -1255,6 +1273,9 @@
       "Something went wrong. Please sign in again.": [
         "Alguna cosa ha anat malament. Torneu a iniciar la sessió."
       ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "L'aplicació d'escriptori ${ PASS_APP_NAME } no ha respost a temps."
+      ],
       "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
         "L'aplicació d'escriptori de ${ PASS_APP_NAME } està bloquejada, s'ha de desbloquejar."
       ],
@@ -1263,6 +1284,9 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
         "L'aplicació d'escriptori ${ PASS_APP_NAME } no respon, s'està executant?"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "S'ha iniciat sessió a l'aplicació d'escriptori ${ PASS_APP_NAME }amb un compte diferent."
       ],
       "The session has expired. Please sign in again.": [
         "La sessió ha caducat. Torneu a accedir."
@@ -1276,6 +1300,9 @@
       "Trashing item failed": [
         "No s'ha pogut moure l'element a la paperera"
       ],
+      "Try reaching out to the link owner.": [
+        "Intenteu contactar el propietari de l'enllaç."
+      ],
       "Unable to generate an OTP code for this item": [
         "No s'ha pogut generar un codi OTP per a aquest element"
       ],
@@ -1284,6 +1311,9 @@
       ],
       "Unknown error": [
         "Error desconegut"
+      ],
+      "Unknown error.": [
+        "Hi ha hagut un error desconegut."
       ],
       "Unknown invite": [
         "Invitació desconeguda"
@@ -3739,6 +3769,9 @@
       ],
       "Theme": [
         "Tema"
+      ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Aquest element és accessible fins a ${ date } o fins que s'arribi al límit de visualitzacions."
       ],
       "Tier/Level": [
         "Nivell"

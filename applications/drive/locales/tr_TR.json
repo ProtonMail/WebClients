@@ -540,7 +540,7 @@
         "Geri dön"
       ],
       "Go back to album “${ ellipsedAlbumName }“": [
-        "“${ ellipsedAlbumName }” albümüne geri dön"
+        "“${ ellipsedAlbumName }” albümüne dön"
       ],
       "Go to ${ planOrAppName }": [
         "${ planOrAppName } uygulamasına git"
@@ -802,6 +802,9 @@
       ],
       "Quit": [
         "Çıkış"
+      ],
+      "Re-index": [
+        "Dizini yeniden oluştur"
       ],
       "Re-sign": [
         "Yeniden imzala"
@@ -3523,7 +3526,7 @@
         "İmza ayrıntıları yüklenemedi. Lütfen bir süre sonra yeniden deneyin"
       ],
       "Failed to load subscription data. Please try again later.": [
-        "Abonelik verileri yüklenemedi. Lütfen daha sonra tekrar deneyin."
+        "Abonelik verileri yüklenemedi. Lütfen bir süre sonra yeniden deneyin."
       ],
       "Failed to load the STL preview": [
         "STL ön izlemesi yüklenemedi"
@@ -5984,6 +5987,9 @@
       ],
       "No payment is required at this time.": [
         "Şu anda herhangi bir ödeme gerekmiyor."
+      ],
+      "No populator states found.": [
+        "Herhangi bir doldurucu durumu bulunamadı."
       ],
       "No results found": [
         "Herhangi bir sonuç bulunamadı"
@@ -8655,8 +8661,8 @@
       "Data retention policies": [
         "Verileri tutma ilkeleri"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Yayın akışı izlemek için ayarlanmış özel sunucular"
+      "Dedicated servers optimized for speed": [
+        "Hız için ayarlanmış özel sunucular"
       ],
       "Desktop app": [
         "Bilgisayar uygulaması"
@@ -9339,7 +9345,7 @@
         "\"${ ellipsedName }\" kopyalandı"
       ],
       "\"${ ellipsedName }\" created successfully": [
-        "\"${ ellipsedName }\" başarıyla oluşturuldu"
+        "\"${ ellipsedName }\" eklendi"
       ],
       "\"${ ellipsedName }\" deleted": [
         "\"${ ellipsedName }\" silindi"
@@ -9360,16 +9366,16 @@
         "\"${ ellipsedName }\" taşınamadı"
       ],
       "\"${ ellipsedName }\" failed to be restored from trash": [
-        "\"${ ellipsedName }\" çöp kutusundan geri yüklenemedi"
+        "\"${ ellipsedName }\" çöpten çıkarılamadı"
       ],
       "\"${ ellipsedName }\" moved": [
         "\"${ ellipsedName }\" taşındı"
       ],
       "\"${ ellipsedName }\" restored from trash": [
-        "\"${ ellipsedName }\" çöp kutusundan geri yüklendi"
+        "\"${ ellipsedName }\" çöpten çıkarıldı"
       ],
       "\"${ ellipsedName }\" successfully moved": [
-        "\"${ ellipsedName }\" başarıyla taşındı"
+        "\"${ ellipsedName }\" taşındı"
       ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" paylaşıldı"
@@ -9404,8 +9410,8 @@
         "${ errors.length } öge kopyalanamadı"
       ],
       "${ errors.length } item failed to be deleted": [
-        "${ errors.length } öğe silinemedi",
-        "${ errors.length } öğe silinemedi"
+        "${ errors.length } öge silinemedi",
+        "${ errors.length } öge silinemedi"
       ],
       "${ errors.length } item failed to be trashed": [
         "${ errors.length } öge çöpe atılamadı",
@@ -9432,8 +9438,8 @@
         "${ numberOfItems } kopyalanan öge çöpe atıldı"
       ],
       "${ numberOfItems } item copied": [
-        "${ numberOfItems } öğe kopyalandı",
-        "${ numberOfItems } öğe kopyalandı"
+        "${ numberOfItems } öge kopyalandı",
+        "${ numberOfItems } öge kopyalandı"
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } öge silindi",
@@ -9464,8 +9470,8 @@
         "${ numberOfItems } öge çöpten çıkarılamadı"
       ],
       "${ numberOfItems } item moved": [
-        "${ numberOfItems } öğe taşındı",
-        "${ numberOfItems } öğe taşındı"
+        "${ numberOfItems } öge taşındı",
+        "${ numberOfItems } öge taşındı"
       ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } öge çöpe atıldı",
@@ -9516,7 +9522,7 @@
         "Kişi grubu güncellendi"
       ],
       "Copy of \"${ ellipsedName }\" moved to trash": [
-        "\"${ ellipsedName }\" dosyasının bir kopyası çöp kutusuna taşındı"
+        "\"${ ellipsedName }\" kopyası çöpe atıldı"
       ],
       "Device failed to be removed": [
         "Aygıt kaldırılamadı"
@@ -10998,9 +11004,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Eski adres anahtarları ile hesap kurtarma işlemi yapılamaz"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Lütfen parolanızı değiştirmeyi denemeden önce anahtarlar oluşturun"
       ]
     },
     "session_recovery:available:info": {
@@ -12749,6 +12752,9 @@
       ],
       "Import your data to ${ BRAND_NAME }": [
         "Verilerinizi ${ BRAND_NAME } içine aktarın"
+      ],
+      "Index populators": [
+        "Dizin doldurucuları"
       ],
       "Information exposed in breach": [
         "Veri sızıntısında açığa çıkan bilgiler"

@@ -230,6 +230,9 @@
       "Continue anyway": [
         "Yine de ilerle"
       ],
+      "Continue cancelling": [
+        "İptal etmeyi sürdür"
+      ],
       "Continue import": [
         "İçe aktarmayı sürdür"
       ],
@@ -485,6 +488,9 @@
       "Fit to window": [
         "Pencereye sığdır"
       ],
+      "Forgot password?": [
+        "Parolamı unuttum"
+      ],
       "Forgot recovery method?": [
         "Kurtarma yöntemi unutulsun mu?"
       ],
@@ -605,6 +611,9 @@
       "Invite user": [
         "Kullanıcı davet et"
       ],
+      "Keep current plan": [
+        "Geçerli tarifede kal"
+      ],
       "Keep Editing": [
         "Düzenlemeyi sürdür"
       ],
@@ -618,7 +627,7 @@
         "Aboneliğimi sürdür"
       ],
       "Learn about recovery options": [
-        "Kurtarma seçenekleri hakkında bilgi edinin"
+        "Kurtarma seçenekleri ile ilgili bilgi alın"
       ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
@@ -1442,6 +1451,50 @@
     "Admin": {
       "admin": [
         "Yönetici"
+      ]
+    },
+    "Admin roles onboarding": {
+      "3 new admin roles": [
+        "3 yeni yönetici rolü"
+      ],
+      "Admin roles": [
+        "Yönetici rolleri"
+      ],
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Güvenlik ilkelerini, veri saklama kurallarını ve VPN altyapısını yapılandırın ve denetim günlüklerini yönetin."
+      ],
+      "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
+        "Belirli yönetici rolleri atayarak yönetimi delege edin. Her yöneticiye yalnızca ihtiyaç duyduğu erişim yetkisini verin. Bu en az ayrıcalık ilkesini izleyerek kuruluşunuzu ele geçirilmiş hesaplardan ve kazara yapılan hatalardan korur."
+      ],
+      "Delegate management with the appropriate admin role.": [
+        "Yönetimi uygun yönetici rolüne devredin."
+      ],
+      "Manage all users, groups, storage, security, billing, audit logs, and system configurations.": [
+        "Tüm kullanıcıları, grupları, depolama alanını, güvenliği, faturalandırmayı, denetim günlüklerini ve sistem yapılandırmalarını yönetin."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Tüm üyeler için kullanıcıları, grupları ve depolama alanını yönetin, roller atayın ve lisansları tahsis edin."
+      ],
+      "New: Control admin access for individual users": [
+        "Yeni: Kullanıcı bazlı yönetici erişimi kontrolü"
+      ],
+      "Organization admin": [
+        "Kuruluş yöneticisi"
+      ],
+      "Organization admin:": [
+        "Kuruluş yöneticisi:"
+      ],
+      "Security admin": [
+        "Güvenlik yöneticisi"
+      ],
+      "Security admin:": [
+        "Güvenlik yöneticisi:"
+      ],
+      "User admin": [
+        "Kullanıcı yöneticisi"
+      ],
+      "User admin:": [
+        "Kullanıcı yöneticisi:"
       ]
     },
     "AdminRole_Info": {
@@ -3466,6 +3519,9 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME }, ${ DRIVE_APP_NAME } ile diğer kişilerle güvenli, şifrelenmiş bir ortamda birlikte çalışın."
       ],
+      "Add extra addresses to your account or use Hide My Email aliases to keep your inbox private.": [
+        "Hesabınıza yeni adresler ekleyin veya gelen kutunuzu gizli tutmak için e-posta takma adları kullanın."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "${ DRIVE_APP_NAME } üzerine klasörler ve dosyalar ekleyerek bunları görüntülemeleri veya düzenlemeleri için ekip arkadaşarınızı davet edin."
       ],
@@ -3562,6 +3618,9 @@
       "Let's you instantly add meeting links to your event invitations.": [
         "Etkinlik davetlerinize anında görüşme bağlantıları ekleyin."
       ],
+      "Most issues can be solved in a few minutes with our step-by-step guides.": [
+        "Adım adım rehberlerimiz ile çoğu sorun birkaç dakika içinde çözülebilir."
+      ],
       "No ads. No trackers.": [
         "Reklam yok. İzleyici yok."
       ],
@@ -3576,6 +3635,9 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Paylaşılan takvimler ile zamanlamayı eşitlemeyi ve planlamayı kolaylaştırın."
+      ],
+      "Still need help? Our support team is here for you.": [
+        "Hâlâ yardım gerekiyor mu? Destek ekibimiz size yardımcı olmaya hazır."
       ],
       "This may happen if permissions were removed or your password changed.": [
         "Bu durum izinler kaldırılmışsa veya parolanız değiştirilmişse ortaya çıkabilir."
@@ -3631,6 +3693,12 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Etkinlikleri iCal biçiminde içe aktarabilirsiniz (ICS dosyası).\nDosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_EVENTS_STRING } etkinlik kaydı içermelidir.\nDosyanız daha büyükse, daha küçük dosyalara bölün."
+      ],
+      "You can manage multiple ${ BRAND_NAME } addresses from a single account, without switching. Aliases and address management tools help keep everything in one inbox.": [
+        "Oturumları kapatıp açmak gerekmeden, tek bir hesap üzerinde birden fazla ${ BRAND_NAME } adresini yönetebilirsiniz. Takma adlar ve adres yönetimi araçları her şeyin tek bir gelen kutusunda düzenli kalmasını sağlar."
+      ],
+      "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
+        "Destek rehberimizi kullanarak adresleri tek bir ana ${ BRAND_NAME } hesabında birleştirebilirsiniz."
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Artık bu adresi kullanarak ${ BRAND_NAME } üzerinden e-posta gönderebilirsiniz."
@@ -4274,7 +4342,7 @@
         "OAuth penceresi yüklenemedi."
       ],
       "Failed to load subscription data. Please try again later.": [
-        "Abonelik verileri yüklenemedi. Lütfen daha sonra tekrar deneyin."
+        "Abonelik verileri yüklenemedi. Lütfen bir süre sonra yeniden deneyin."
       ],
       "Failed to load the STL preview": [
         "STL ön izlemesi yüklenemedi"
@@ -4478,9 +4546,6 @@
       "Please fix the highlighted conflict to proceed.": [
         "İlerlemek için lütfen vurgulanan çakışmayı düzeltin.",
         "İlerlemek için lütfen vurgulanan çakışmaları düzeltin."
-      ],
-      "Please generate keys before you try to change your password": [
-        "Lütfen parolanızı değiştirmeyi denemeden önce anahtarlar oluşturun"
       ],
       "Please select a country": [
         "Lütfen bir ülke seçin"
@@ -5544,6 +5609,17 @@
         "${ BRAND_NAME }. Gizlilik odaklı."
       ]
     },
+    "Get help": {
+      "Continue cancelling": [
+        "İptal etmeyi sürdür"
+      ],
+      "Keep current plan": [
+        "Geçerli tarifede kal"
+      ],
+      "Many issues can be resolved quickly with our help guides. If you need more support, our team is here to help.": [
+        "Yardım rehberlerimiz ile birçok sorunu hızlı bir şekilde çözebilirsiniz. Daha fazla destek gerekirse ekibimiz size seve seve yardımcı olur."
+      ]
+    },
     "Gmail forwarding": {
       "Automatically forward": [
         "Otomatik olarak"
@@ -6326,7 +6402,7 @@
         "Tüm aygıtlarınızda **kodları eşitleyin**"
       ],
       "**This will disable 2-factor authentication.**": [
-        "**Bu işlem iki aşamalı kimlik doğrulamayı devre dışı bırakacak.**"
+        "**Bu işlem iki adımlı doğrulamayı kapatacak.**"
       ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } diğer",
@@ -6578,7 +6654,7 @@
         "Yeni bir doğrulama kodu istemeden önce İstenmeyen kutunuza bakın ve ${ strong } adresinin doğru olduğundan emin olun."
       ],
       "Before sending a new verification code, check your spam folder for ${ EmailOrPhoneNumber }.": [
-        "Yeni bir doğrulama kodu göndermeden önce ${ EmailOrPhoneNumber } için istenmeyen klasörünüzü kontrol edin."
+        "Yeni bir doğrulama kodu göndermeden önce ${ EmailOrPhoneNumber } için istenmeyen klasörünüze bakın."
       ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
         "${ MAIL_APP_NAME } adresindeki özel etki alan adreslerinizle e-posta alabilmeniz için, aşağıdaki iki MX kaydını DNS panonuza (özel etki alanınızı kiraladığınız yerde bulunur) eklemeniz gerekir. Bir örneği ve bazı yararlı ipuçlarını şurada bulabilirsiniz: ${ kbLink }."
@@ -6987,6 +7063,12 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "${ BRAND_NAME } hesabınızın e-posta adresini ya da kullanıcı adını yazın."
       ],
+      "Enter your own password (as organization admin).": [
+        "Kendi parolanızı yazın (kuruluş yöneticisi olarak)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Kendi parolanızı yazın (güvenilen kişi olarak)."
+      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Kurtarma e-posta adresinizi yazın. Size kullanıcı adınızı veya e-posta adresinizi göndereceğiz."
       ],
@@ -6997,7 +7079,7 @@
         "Parolanızı değiştirmek için kurtarma ifadenizi yazın."
       ],
       "Enter your recovery phrase to verify your identity and disable two-factor authentication.": [
-        "Kimliğinizi doğrulamak ve iki adımlı doğrulamayı devre dışı bırakmak için kurtarma ifadenizi girin."
+        "Kimliğinizi doğrulamak ve iki adımlı doğrulamayı kapatmak için kurtarma ifadenizi yazın."
       ],
       "Everything in ${ planOrAppName }": [
         "${ planOrAppName } özelliklerinin tümü"
@@ -7238,7 +7320,7 @@
         "İnternet bağlantısı yeniden kuruldu."
       ],
       "Invalid code. ${ RequestNewCodeLink } and try again.": [
-        "Geçersiz kod. ${ RequestNewCodeLink } ve tekrar deneyin."
+        "Kod geçersiz. ${ RequestNewCodeLink } ve yeniden deneyin."
       ],
       "Invite deleted": [
         "Davet silindi"
@@ -8058,7 +8140,7 @@
         "Oturum açtıklarında kullanıcılarınıza görüntülenecek ad."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
-        "Referans kredisi arkadaşınızın deneme süresi bittikten sonraki 2 aya kadar, arkadaşınız yalnızca bir tarifeye abone olduğu takdirde verilebilir."
+        "Referans kredisi, yalnızca arkadaşınız deneme süresi bittikten sonraki 2 ay içinde bir tarifeye abone olursa verilebilir."
       ],
       "The securest way to browse, stream, and be online.": [
         "İnternet üzerinde gezinmenin, yayın akışlarını izlemenin ve çevrim içi olmanın en güvenli yolu."
@@ -8232,7 +8314,7 @@
         "İlerlemek için isteğinizi doğrulamalıyız."
       ],
       "To regain access to your account and data, enter the 12-word recovery phrase associated with your account.": [
-        "Hesabınıza ve verilerinize yeniden erişmek için hesabınızla ilişkili 12 kelimelik kurtarma ifadesini girin."
+        "Hesabınıza ve verilerinize yeniden erişmek için hesabınızın 12 sözcükten oluşan kurtarma ifadesini yazın."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "İnternet bağlantınızı güvenli kılmak için aygıtınıza ${ VPN_APP_NAME } uygulamasını indirip kurun ve bir sunucuya bağlanın."
@@ -9846,6 +9928,12 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Evet, bu hesabı ve tüm verilerini kalıcı olarak silmek istiyorum."
       ],
+      "Your password (admin)": [
+        "Parolanız (yönetici)"
+      ],
+      "Your password (trusted contact)": [
+        "Parolanız (güvenilen kişi)"
+      ],
       "ZIP code": [
         "Posta kodu"
       ]
@@ -9966,6 +10054,9 @@
       ]
     },
     "Link": {
+      "Account recovery explained": [
+        "Hesap kurtarma ile ilgili bilgiler"
+      ],
       "activity monitor": [
         "etkinlik izleyici"
       ],
@@ -9981,11 +10072,11 @@
       "clearing your browser cache": [
         "tarayıcınızın ön belleğini temizlemek"
       ],
-      "Common sign in issues": [
-        "Sık karşılaşılan oturum açma sorunları"
-      ],
       "Common sign up issues": [
         "Sık karşılaşılan hesap açma sorunları"
+      ],
+      "Contact support": [
+        "Destek ekibimizle görüşün"
       ],
       "contacts’ assistance": [
         "kişisinin yardımı"
@@ -10095,11 +10186,17 @@
       "if your data is leaked": [
         "Verileriniz sızarsa"
       ],
+      "Learn how": [
+        "Nasıl yapıldığını öğrenin"
+      ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
       ],
       "Learn more about data recovery": [
         "Veri kurtarma ile ilgili ayrıntılı bilgi alın"
+      ],
+      "Manage addresses": [
+        "Adres yönetimi"
       ],
       "Not activated": [
         "Kullanıma alınmamış"
@@ -10151,6 +10248,9 @@
       ],
       "visit our blog": [
         "günlüğümüzü ziyaret edin"
+      ],
+      "Visit our support site": [
+        "Destek sitemizi ziyaret edin"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "UDP ve TCP iletişim kuralları arasındaki fark nedir?"
@@ -10547,25 +10647,25 @@
     },
     "Missing feature": {
       "Check out the latest product updates": [
-        "En son ürün güncellemelerine göz atın"
+        "Son ürün güncellemelerine göz atın"
       ],
       "Continue cancelling": [
-        "İptal etmeye devam et"
+        "İptal etmeyi sürdür"
       ],
       "Explore the latest news": [
-        "En son haberleri keşfedin"
+        "Son haberleri öğrenin"
       ],
       "Keep current plan": [
-        "Mevcut tarifeyi koru"
+        "Geçerli tarifede kal"
       ],
       "Make your voice heard": [
         "Sesinizi duyurun"
       ],
       "Request a feature": [
-        "Özellik talep et"
+        "Özellik isteyin"
       ],
       "Request a feature or vote on ideas from other users in our feedback forum.": [
-        "Geri bildirim forumumuzda bir özellik talebinde bulunabilir veya diğer kullanıcıların fikirlerine oy verebilirsiniz."
+        "Geri bildirim formu ile özellik isteğinde bulunabilir veya diğer kullanıcı fikirlerine oy verebilirsiniz."
       ],
       "See how ${ BRAND_NAME } apps are evolving with your feedback.": [
         "Geri bildirimlerinizle ${ BRAND_NAME } uygulamalarının nasıl geliştiğini görün."
@@ -10574,7 +10674,7 @@
         "Fikirlerinizi gönderin"
       ],
       "Your feedback helps us improve. Whether you've spotted a bug, want a new feature, or think something could work differently, we'd love to hear from you.": [
-        "Geri bildirimleriniz kendimizi geliştirmemize yardımcı oluyor. İster bir hata fark etmiş olun, ister yeni bir özellik isteyin ya da bir şeylerin daha farklı işleyebileceğini düşünün görüşlerinizi duymayı çok isteriz."
+        "Geri bildirimleriniz kendimizi geliştirmemize yardımcı oluyor. Bir hata fark etmiş, yeni bir özellik istiyor ya da bir şeylerin daha farklı olabileceğini düşünüyor olabilirsiniz. Görüşlerinizi duymayı çok isteriz."
       ]
     },
     "Modal title": {
@@ -10927,8 +11027,8 @@
       "Dedicated servers and IP": [
         "Size ayrılmış sunucular ve IP adresleri"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Yayın akışı izlemek için ayarlanmış özel sunucular"
+      "Dedicated servers optimized for speed": [
+        "Hız için ayarlanmış özel sunucular"
       ],
       "Desktop app": [
         "Bilgisayar uygulaması"
@@ -13823,9 +13923,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Eski adres anahtarları ile hesap kurtarma işlemi yapılamaz"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Lütfen parolanızı değiştirmeyi denemeden önce anahtarlar oluşturun"
       ]
     },
     "session_recovery:available:info": {
@@ -14579,6 +14676,9 @@
       "Share the confirmation code with your administrator": [
         "Doğrulama kodunu yöneticiniz ile paylaşın"
       ],
+      "Sign in": [
+        "Oturum aç"
+      ],
       "Sign in to your organization": [
         "Kuruluşunuzda oturum açın"
       ],
@@ -14638,6 +14738,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Kuruluşunuza eklemek istediğiniz yeni kullanıcıları el ile oluşturmanız gerekecek."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Tek oturum açma hizmeti sağlayıcınıza yönlendirileceksiniz."
       ],
       "Your SSO configuration will be deleted.": [
         "Tek oturum açma yapılandırmanız silinecek"
@@ -15715,14 +15818,8 @@
       "Account recovery": [
         "Hesap kurtarma"
       ],
-      "Account restricted": [
-        "Hesap kısıtlandı"
-      ],
       "Account suspended": [
         "Hesap askıya alınmış"
-      ],
-      "Account temporarily locked": [
-        "Hesap geçici olarak kilitlendi"
       ],
       "Action": [
         "İşlem"
@@ -15796,6 +15893,9 @@
       ],
       "Allocate storage": [
         "Depolama alanını dağıt"
+      ],
+      "Already have multiple accounts?": [
+        "Zaten birden fazla hesabınız mı var?"
       ],
       "Also in your plan": [
         "Ayrıca tarifenizde şunlar bulunur"
@@ -15980,6 +16080,9 @@
       ],
       "Create multiple user accounts": [
         "Birkaç kullanıcı hesabı ekle"
+      ],
+      "Create new addresses easily": [
+        "Yeni adresleri kolayca oluşturun"
       ],
       "Create new policy": [
         "Yeni ilke oluştur"
@@ -16198,6 +16301,9 @@
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "${ app } Beta programına katılmak için ${ BRAND_NAME } hesabınızın bilgilerini yazın"
       ],
+      "Enter your password": [
+        "Parolanızı yazın"
+      ],
       "Error": [
         "Hata"
       ],
@@ -16246,6 +16352,12 @@
       ],
       "Get complete privacy coverage": [
         "Tam bir gizlilik paketi alın"
+      ],
+      "Get direct support": [
+        "Doğrudan destek alın"
+      ],
+      "Get help with an issue": [
+        "Bir sorunla ilgili yardım alın"
       ],
       "Get more from your VPN": [
         "VPN hizmetinizden fazlasını alın"
@@ -16708,6 +16820,9 @@
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Bu hesap tablosunu ön izlemek için ${ SHEETS_APP_NAME } uygulaması ile açın ya da indirin."
       ],
+      "Troubleshoot your issue": [
+        "Sorununuzu giderin"
+      ],
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "${ AUTHENTICATOR_APP_NAME } uygulamasını deneyin"
       ],
@@ -16770,6 +16885,9 @@
       ],
       "Use backup recovery code": [
         "Yedek kurtarma kodunu kullan"
+      ],
+      "Use one account for all your addresses": [
+        "Tüm adresleriniz için tek bir hesap kullanın"
       ],
       "User": [
         "Kullanıcı"

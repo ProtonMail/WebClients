@@ -1464,12 +1464,6 @@
       "Failed to lock meeting": [
         "Impossibile bloccare la riunione"
       ],
-      "Failed to request permission for the camera. Please check your system permissions and try again. You might have to enable permissions manually, please refresh the page afterwards": [
-        "Impossibile richiedere l'autorizzazione per la fotocamera. Controlla le autorizzazioni del tuo sistema e riprova. Potrebbe essere necessario attivarle manualmente, aggiorna la pagina in seguito."
-      ],
-      "Failed to request permission for the microphone. Please check your system permissions and try again. You might have to enable permissions manually, please refresh the page afterwards": [
-        "Impossibile richiedere l'autorizzazione per il microfono. Controlla le autorizzazioni di sistema e riprova. Potrebbe essere necessario attivarle manualmente; aggiorna la pagina in seguito."
-      ],
       "Failed to rotate personal meeting link": [
         "Impossibile reimpostare il link della riunione personale"
       ],
@@ -1774,9 +1768,6 @@
       "Decrypting meetings...": [
         "Decrittazione delle riunioni..."
       ],
-      "Default": [
-        "Predefinito"
-      ],
       "Default - ${ systemDefault.label }": [
         "Predefinito - ${ systemDefault.label }"
       ],
@@ -1929,6 +1920,9 @@
       ],
       "Meeting locked. No new participants can join.": [
         "Riunione bloccata. Nessun nuovo partecipante può unirsi."
+      ],
+      "Meeting recordings aren’t supported in Firefox.": [
+        "Le registrazioni delle riunioni non sono supportate in Firefox."
       ],
       "Meeting unlocked. Participants can join again.": [
         "Riunione sbloccata. I partecipanti possono unirsi di nuovo."
@@ -2502,12 +2496,6 @@
       ],
       "The presentation was blurry": [
         "La presentazione era sfocata."
-      ],
-      "Video was blurry": [
-        "Il video era poco definito"
-      ],
-      "Video was breaking up": [
-        "Il video si stava interrompendo"
       ]
     },
     "Placeholder": {
@@ -2606,6 +2594,9 @@
       ]
     },
     "Sort option": {
+      "Alphabetical (A–Z)": [
+        "Alfabetico (A-Z)"
+      ],
       "Newly created": [
         "Create recentemente"
       ],

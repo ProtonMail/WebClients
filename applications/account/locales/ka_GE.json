@@ -324,9 +324,6 @@
       "Connected": [
         "დაკავშირებულია"
       ],
-      "Contact sales": [
-        "გაყიდვებთან დაკავშირება"
-      ],
       "Contact support": [
         "კონტაქტი მხარდაჭერის გუნდთან"
       ],
@@ -452,9 +449,6 @@
       ],
       "Delete account": [
         "ანგარიშის წაშლა"
-      ],
-      "Delete and confirm": [
-        "წაშლა და დადასტურება"
       ],
       "Delete filter “${ Name }”": [
         "ფილტრის \"${ Name }\" წაშლა"
@@ -6482,9 +6476,6 @@
         "გასაგრძელებლად, გთხოვთ, შეასწოროთ გამოკვეთილი კონფლიქტი.",
         "გასაგრძელებლად, გთხოვთ, შეასწოროთ გამოკვეთილი კონფლიქტები."
       ],
-      "Please generate keys before you try to change your password": [
-        "პაროლის შეცვლამდე საჭიროა გასაღებების გენერაცია"
-      ],
       "Please select a country": [
         "აირჩიეთ ქვეყანა"
       ],
@@ -11199,9 +11190,6 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "ასწიეთ სატარიფო გეგმა ${ planTitle }-ის ფუნქციების შესანარჩუნებლად."
       ],
-      "Upgrade to unlock": [
-        "განსაბლოკად ასწიეთ ტარიფი"
-      ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "ასწიეთ თქვენი სატარიფო გეგმა ${ monitorLink }-ის ჩასართავად."
       ],
@@ -11291,9 +11279,6 @@
       ],
       "Version ${ version }": [
         "ვერსია ${ version }"
-      ],
-      "Version history": [
-        "ვერსიის ისტორია"
       ],
       "Version number successfully copied to clipboard": [
         "ვერსიის ნომერი წარმატებით დაკოპირდა ბუფერში"
@@ -12845,9 +12830,6 @@
       "Don't ask again": [
         "აღარ მკითხო"
       ],
-      "Don't keep versions": [
-        "ვერსიები არ შენარჩუნდება"
-      ],
       "Don't show this again": [
         "აღარ მაჩვენო"
       ],
@@ -13955,9 +13937,6 @@
       ],
       "clearing your browser cache": [
         "ბრაუზერის ქეშის გასუფთავება"
-      ],
-      "Common sign in issues": [
-        "შესვლის ზოგადი პრობლემები"
       ],
       "Common sign up issues": [
         "რეგისტრაციის ზოგადი პრობლემები"
@@ -15133,9 +15112,6 @@
       ],
       "Dedicated servers and IP": [
         "გამოყოფილი სერვერები და IP"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "სტრიმინგზე ოპტიმიზებული გამოყოფილი სერვერები"
       ],
       "Desktop app": [
         "კომპიუტერის აპი"
@@ -16786,9 +16762,6 @@
       "Buy now": [
         "ახლავე შეძენა"
       ],
-      "Contact us": [
-        "დაგვიკავშირდით"
-      ],
       "Continue": [
         "გაგრძელება"
       ],
@@ -16815,9 +16788,6 @@
       ],
       "Or ${ createANewAccount }": [
         "ან ${ createANewAccount }"
-      ],
-      "Request trial": [
-        "დროებითი ვერსიის გამოთხოვა"
       ],
       "Start using ${ appName }": [
         "${ appName }-ის გამოყენების დაწყება"
@@ -17051,9 +17021,6 @@
       ],
       "Start using ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME }-ის გამოყენების დაწყება"
-      ],
-      "Tailored made solutions for larger organizations with custom needs.": [
-        "ინდივიდუალური გადაწყვეტილებები დიდი ორგანიზაციებისთვის სპეციფიკური მოთხოვნებით."
       ],
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "შეთავაზება, რომელიც აირჩიეთ, მიუწვდომელია ${ currentPlanTitle }-ის გამომწერებისთვის."
@@ -18950,9 +18917,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "ანგარიშის აღდგენა მოძველებული მისამართის გასაღებებისთვის ხელმისაწვდომი არაა"
-      ],
-      "Please generate keys before you try to change your password": [
-        "პაროლის შეცვლამდე საჭიროა გასაღებების გენერაცია"
       ]
     },
     "session_recovery:available:info": {
@@ -19350,6 +19314,9 @@
         "${ FREE_PASS_ALIASES } hide-my-email-ის ფსევდონიმი სპამთან საბრძოლველად",
         "${ FREE_PASS_ALIASES } hide-my-email-ის ფსევდონიმი სპამთან საბრძოლველად"
       ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } hide-my-email ალიასი სპამის წინააღმდეგ საბრძოლველად"
+      ],
       "${ maxAddresses } address": [
         "${ maxAddresses } მისამართი",
         "${ maxAddresses } მისამართი"
@@ -19434,6 +19401,9 @@
       "Bundle": [
         "ნაკრები"
       ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "დასაწყებად აირჩიეთ უსაფრთხო ${ MAIL_APP_NAME } მისამართი"
+      ],
       "Collaborative document editing": [
         "კოლაბორაციული დოკუმენტის ჩასწორება"
       ],
@@ -19497,6 +19467,9 @@
       "Gifted by **${ referrerName }**": [
         "გაჩუქათ მომხმარებელმა **${ referrerName }**"
       ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "შეინარჩუნეთ თქვენი მიმოწერის პირადულობა ${ MAIL_APP_NAME }-ით"
+      ],
       "Manage user access": [
         "მომხმარებლის წვდომების მართვა"
       ],
@@ -19518,6 +19491,9 @@
       "Password manager for all your devices": [
         "პაროლების მმართველი ყველა თქვენი მოწყობილობისთვის"
       ],
+      "Password-protected messages": [
+        "პაროლით დაცული შეტყობინებები"
+      ],
       "Pick your perfect plan": [
         "აირჩიეთ საუკეთესო სატარიფო გეგმა თქვენთვის"
       ],
@@ -19536,6 +19512,9 @@
       "Secure ${ VPN_CONNECTIONS } device at a time": [
         "დაიცავით ${ VPN_CONNECTIONS } მოწყობილობა ერთდროულად",
         "დაიცავით ${ VPN_CONNECTIONS } მოწყობილობა ერთდროულად"
+      ],
+      "Secure calendar": [
+        "უსაფრთხო კალენდარი"
       ],
       "Secure file sharing": [
         "დაცული ფაილის გაზიარება"
@@ -19636,6 +19615,9 @@
       "use your own email.": [
         "გამოიყენეთ თქვენი საკუთარი ელფოსტა."
       ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "VPN ${ vpnServersCountData.free.countries } ქვეყანაში განთავსებული სერვერებით"
+      ],
       "VPN with servers in ${ vpnServersCountData.free.countries } country": [
         "VPN სერვერი ${ vpnServersCountData.free.countries } ქვეყანაში",
         "VPN სერვერი ${ vpnServersCountData.free.countries } ქვეყანაში"
@@ -19648,6 +19630,9 @@
       ],
       "You are all set": [
         "ყველაფერი მზადაა"
+      ],
+      "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
+        "თქვენი ანგარიში გაძლევთ წვდომას უფასო ფუნქციებზე შემდეგ აპებში: ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } და ${ LUMO_SHORT_APP_NAME }."
       ],
       "Your plan": [
         "თქვენი გეგმა"

@@ -218,6 +218,9 @@
       "Continue anyway": [
         "المتابعة على أي حال"
       ],
+      "Continue cancelling": [
+        "استمر في الإلغاء"
+      ],
       "Continue import": [
         "مواصلة الاستيراد"
       ],
@@ -461,6 +464,9 @@
       "Fit to window": [
         "ملاءمة للنافذة"
       ],
+      "Forgot password?": [
+        "هل نسيت كلمة المرور؟"
+      ],
       "Forgot recovery method?": [
         "هل نسيت طريقة الاسترداد؟"
       ],
@@ -565,6 +571,9 @@
       ],
       "Invite user": [
         "دعوة مستخدم"
+      ],
+      "Keep current plan": [
+        "حافظ على الخطة الحالية"
       ],
       "Keep Editing": [
         "متابعة التعديل"
@@ -1738,6 +1747,14 @@
       ]
     },
     "Billing cycle option": {
+      "${ n } years": [
+        "${ n } سنة",
+        "${ n } سنة",
+        "${ n } سنتان",
+        "${ n } سنوات",
+        "${ n } سنوات",
+        "${ n } سنوات"
+      ],
       "1 month": [
         "شهر واحد"
       ],
@@ -3264,6 +3281,9 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "يتيح لك ${ DOCS_SHORT_APP_NAME } في ${ DRIVE_APP_NAME } العمل مع الآخرين في بيئة آمنة ومشفّرة."
       ],
+      "Add extra addresses to your account or use Hide My Email aliases to keep your inbox private.": [
+        "أضف عناوين إضافية إلى حسابك أو استخدم الأسماء المستعارة لإخفاء بريدي الإلكتروني للحفاظ على خصوصية صندوق الوارد الخاص بك."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "أضف مجلدات وملفات إلى ${ DRIVE_APP_NAME } وادع أعضاء الفريق للعرض أو التعديل."
       ],
@@ -3383,6 +3403,12 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "يمكنك استيراد الأحداث بتنسيق iCal (ملف ICS). يجب أن يكون حجم الملف الأقصى ${ MAX_IMPORT_FILE_SIZE_STRING } ويحتوي على ما يصل إلى ${ MAX_IMPORT_EVENTS_STRING } حدثًا. إذا كان ملفك أكبر، فيرجى تقسيمه إلى ملفات أصغر."
+      ],
+      "You can manage multiple ${ BRAND_NAME } addresses from a single account, without switching. Aliases and address management tools help keep everything in one inbox.": [
+        "يمكنك إدارة عدة عناوين ${ BRAND_NAME } من حساب واحد دون الحاجة إلى التبديل. تساعد العناوين البديلة وأدوات إدارة العناوين على إبقاء كل شيء في صندوق وارد واحد."
+      ],
+      "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
+        "يمكنك دمج العناوين في حساب رئيسي واحد على ${ BRAND_NAME } باستخدام دليل الدعم الخاص بنا."
       ]
     },
     "description": {
@@ -4184,9 +4210,6 @@
         "يرجى إصلاح التعارضات المحددة للمتابعة.",
         "يرجى إصلاح التعارضات المحددة للمتابعة.",
         "يرجى إصلاح التعارضات المحددة للمتابعة."
-      ],
-      "Please generate keys before you try to change your password": [
-        "يجب إنشاء المفاتيح قبل محاولة تغيير كلمة المرور"
       ],
       "Please select a country": [
         "يُرجى اختيار دولة"
@@ -6809,6 +6832,12 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "أدخل عنوان البريد الإلكتروني أو اسم المستخدم لحساب ${ BRAND_NAME } الخاص بك."
+      ],
+      "Enter your own password (as organization admin).": [
+        "أدخل كلمة المرور الخاصة بك (كمسؤول للمؤسسة)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "أدخل كلمة مرورك الخاصة (كجهة اتصال موثوق بها)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "أدخل بريدك الإلكتروني الخاص بالاسترداد وسنرسل لك اسم المستخدم أو البريد الإلكتروني الخاص بك."
@@ -9608,6 +9637,12 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "نعم، أريد حذف هذا الحساب وجميع بياناته نهائيًا."
       ],
+      "Your password (admin)": [
+        "كلمة المرور الخاصة بك (المشرف)"
+      ],
+      "Your password (trusted contact)": [
+        "كلمة مرورك (جهة اتصال موثوق بها)"
+      ],
       "ZIP code": [
         "الرمز البريدي"
       ]
@@ -9747,9 +9782,6 @@
       "clearing your browser cache": [
         "مسح ذاكرة التخزين المؤقت للمتصفح"
       ],
-      "Common sign in issues": [
-        "المشكلات الشائعة في تسجيل الدخول"
-      ],
       "Common sign up issues": [
         "المشكلات الشائعة في تسجيل"
       ],
@@ -9858,11 +9890,17 @@
       "if your data is leaked": [
         "إذا تم تسريب بياناتك"
       ],
+      "Learn how": [
+        "تعلم كيف"
+      ],
       "Learn more": [
         "معرفة المزيد"
       ],
       "Learn more about data recovery": [
         "معرفة المزيد حول استعادة البيانات"
+      ],
+      "Manage addresses": [
+        "إدارة العناوين"
       ],
       "Not activated": [
         "غير مفعل"
@@ -10142,6 +10180,22 @@
     "meet_2025: Feature": {
       "${ MEET_APP_NAME }: Confidential video conferencing for the conversations that matter": [
         "${ MEET_APP_NAME }: مؤتمرات فيديو سرية للمحادثات التي تهمك"
+      ],
+      "${ n } active meetings at a time": [
+        "${ n } اجتماع نشط في الوقت نفسه",
+        "${ n } اجتماع نشط حاليا",
+        "${ n } اجتماعان نشطان في الوقت نفسه",
+        "${ n } اجتماعًا نشطًا في كل مرة",
+        "${ n } اجتماعات نشطة في وقت معين",
+        "${ n } اجتماعًا نشطًا في الوقت نفسه"
+      ],
+      "${ n } participants": [
+        "${ n } مشارك",
+        "${ n } مشارك",
+        "${ n } مشاركان",
+        "${ n } مشارك",
+        "${ n } مشاركًا",
+        "${ n } مشاركًا"
       ],
       "24 hours per meeting": [
         "24 ساعة لكل اجتماع"
@@ -10679,9 +10733,6 @@
       ],
       "Dedicated servers and IP": [
         "خوادم وعنوان IP مخصص"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "خوادم مخصصة ومحسّنة للبث"
       ],
       "Desktop app": [
         "تطبيق سطح المكتب"
@@ -13558,9 +13609,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "استرداد الحساب غير متاح لمفاتيح العناوين القديمة"
-      ],
-      "Please generate keys before you try to change your password": [
-        "يجب إنشاء المفاتيح قبل محاولة تغيير كلمة المرور"
       ]
     },
     "session_recovery:available:info": {
@@ -14388,6 +14436,9 @@
       "Share the confirmation code with your administrator": [
         "شارك رمز التأكيد مع المسؤول"
       ],
+      "Sign in": [
+        "تسجيل الدخول"
+      ],
       "Sign in to your organization": [
         "تسجيل الدخول إلى مؤسستك"
       ],
@@ -14444,6 +14495,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "سيتعين عليك إنشاء مستخدمين جدد يدويًا لإضافتهم إلى مؤسستك."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "سيُعاد توجيهك إلى مزود خدمة الدخول الموحد (SSO) التابع للطرف الثالث."
       ],
       "Your SSO configuration will be deleted.": [
         "سيُحذف تكوين SSO الخاص بك."
@@ -15611,14 +15665,8 @@
       "Account recovery": [
         "استرداد الحساب"
       ],
-      "Account restricted": [
-        "تم تقييد الحساب"
-      ],
       "Account suspended": [
         "تم تعليق الحساب"
-      ],
-      "Account temporarily locked": [
-        "الحساب مقفل مؤقتًا"
       ],
       "Action": [
         "الإجراء"
@@ -15696,6 +15744,9 @@
       ],
       "Allocate storage": [
         "تخصيص التخزين"
+      ],
+      "Already have multiple accounts?": [
+        "هل لديك بالفعل حسابات متعددة؟"
       ],
       "Also in your plan": [
         "في خطتك أيضاً"
@@ -15869,6 +15920,9 @@
       ],
       "Create multiple user accounts": [
         "إنشاء حسابات مستخدمين متعددة"
+      ],
+      "Create new addresses easily": [
+        "قم بإنشاء عناوين جديدة بسهولة"
       ],
       "Create new policy": [
         "إنشاء سياسة جديدة"
@@ -16081,6 +16135,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "أدخل تفاصيل حساب ${ BRAND_NAME } للانضمام إلى برنامج ${ app } التجريبي"
+      ],
+      "Enter your password": [
+        "أدخل كلمة مرورك"
       ],
       "Error": [
         "خلل"
@@ -16621,6 +16678,9 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "استخدم ${ VPN_SHORT_APP_NAME } لخصوصية البيانات"
+      ],
+      "Use one account for all your addresses": [
+        "استخدم حسابا واحدا لجميع عناوينك"
       ],
       "User": [
         "المستخدم"

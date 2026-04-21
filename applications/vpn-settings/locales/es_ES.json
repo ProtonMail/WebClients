@@ -467,6 +467,9 @@
       "Fit to window": [
         "Ajustar a la ventana"
       ],
+      "Forgot password?": [
+        "¿Contraseña olvidada?"
+      ],
       "Forgot recovery method?": [
         "¿Método de recuperación olvidado?"
       ],
@@ -3488,6 +3491,9 @@
       "Let's you instantly add meeting links to your event invitations.": [
         "Te permite añadir al instante enlaces de reunión a las invitaciones de tu evento."
       ],
+      "Most issues can be solved in a few minutes with our step-by-step guides.": [
+        "La mayoría de los problemas se resuelven en cuestión de minutos con nuestras guías paso a paso."
+      ],
       "No one in your organization can connect to shared servers.": [
         "Nadie en tu organización puede conectarse a servidores compartidos."
       ],
@@ -3496,6 +3502,9 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Simplifica la sincronización y la programación con calendarios compartidos."
+      ],
+      "Still need help? Our support team is here for you.": [
+        "¿Aún necesitas ayuda? Nuestro equipo de asistencia está aquí para ayudarte."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Para importar mediante un archivo CSV o VCF, asegúrate de que este no supere los ${ MAX_IMPORT_FILE_SIZE_STRING } o los ${ maxContactString } contactos. Si el archivo es más grande, divídelo en varios archivos más pequeños. ${ learnMoreLink }."
@@ -4321,9 +4330,6 @@
       "Please fix the highlighted conflict to proceed.": [
         "Arregla el conflicto resaltado para continuar.",
         "Arregla los conflictos resaltados para continuar."
-      ],
-      "Please generate keys before you try to change your password": [
-        "Genera claves antes de intentar cambiar tu contraseña."
       ],
       "Please select a country": [
         "Selecciona un país"
@@ -5370,6 +5376,17 @@
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
         "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
+    "Get help": {
+      "Continue cancelling": [
+        "Continuar cancelando"
+      ],
+      "Keep current plan": [
+        "Mantener el plan actual"
+      ],
+      "Many issues can be resolved quickly with our help guides. If you need more support, our team is here to help.": [
+        "Muchos problemas se pueden resolver rápidamente con nuestras guías de ayuda. Si necesitas más asistencia, nuestro equipo está aquí para ayudarte."
       ]
     },
     "Gmail forwarding": {
@@ -6743,6 +6760,12 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Introduce tu dirección de correo electrónico o usuario de ${ BRAND_NAME }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Introduce tu propia contraseña (como administrador de la organización)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Introduce tu propia contraseña (como contacto de confianza)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Introduce tu dirección de correo electrónico de recuperación y te enviaremos tu nombre de usuario o dirección de correo electrónico."
@@ -9474,6 +9497,12 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Sí, quiero eliminar permanentemente esta cuenta y todos sus datos."
       ],
+      "Your password (admin)": [
+        "Tu contraseña (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Tu contraseña (contacto de confianza)"
+      ],
       "ZIP code": [
         "Código postal"
       ]
@@ -9594,6 +9623,9 @@
       ]
     },
     "Link": {
+      "Account recovery explained": [
+        "Explicación de la recuperación de cuenta"
+      ],
       "activity monitor": [
         "monitor de actividad"
       ],
@@ -9609,11 +9641,11 @@
       "clearing your browser cache": [
         "limpiando la memoria caché de tu navegador"
       ],
-      "Common sign in issues": [
-        "Problemas comunes de inicio de sesión"
-      ],
       "Common sign up issues": [
         "Problemas comunes de registro"
+      ],
+      "Contact support": [
+        "Contacte con Soporte"
       ],
       "Create account": [
         "Crear cuenta"
@@ -9767,6 +9799,9 @@
       ],
       "visit our blog": [
         "visitar nuestro blog"
+      ],
+      "Visit our support site": [
+        "Visita nuestro centro de ayuda"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "¿Cuál es la diferencia entre los protocolos UDP y TCP?"
@@ -10488,8 +10523,8 @@
       "Dedicated servers and IP": [
         "Servidores e IP dedicados"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Servidores dedicados optimizados para streaming"
+      "Dedicated servers optimized for speed": [
+        "Servidores dedicados optimizados para la velocidad"
       ],
       "Desktop app": [
         "Aplicación de escritorio"
@@ -13372,9 +13407,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "La recuperación de la cuenta no está disponible para claves de direcciones heredadas."
-      ],
-      "Please generate keys before you try to change your password": [
-        "Genera claves antes de intentar cambiar tu contraseña."
       ]
     },
     "session_recovery:available:info": {
@@ -14128,6 +14160,9 @@
       "Share the confirmation code with your administrator": [
         "Comparte el código de confirmación con tu administrador."
       ],
+      "Sign in": [
+        "Iniciar sesión"
+      ],
       "Sign in to your organization": [
         "Iniciar sesión en tu organización"
       ],
@@ -14187,6 +14222,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Tendrás que crear los nuevos usuarios manualmente para añadirlos a tu organización."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Se te redirigirá a tu proveedor de SSO de terceros."
       ],
       "Your SSO configuration will be deleted.": [
         "Se eliminará tu configuración de SSO."
@@ -15264,14 +15302,8 @@
       "Account recovery": [
         "Recuperación de cuenta"
       ],
-      "Account restricted": [
-        "Cuenta restringida"
-      ],
       "Account suspended": [
         "Cuenta suspendida"
-      ],
-      "Account temporarily locked": [
-        "Cuenta temporalmente bloqueada"
       ],
       "Action": [
         "Acción"
@@ -15711,6 +15743,9 @@
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Introduce los detalles de tu cuenta de ${ BRAND_NAME } para unirte al programa Beta de ${ app }"
       ],
+      "Enter your password": [
+        "Introduce tu contraseña"
+      ],
       "Error": [
         "Error"
       ],
@@ -15759,6 +15794,12 @@
       ],
       "Get complete privacy coverage": [
         "Obtén una cobertura de privacidad completa"
+      ],
+      "Get direct support": [
+        "Obtén asistencia directa"
+      ],
+      "Get help with an issue": [
+        "Obtén ayuda con un problema"
       ],
       "Get more from your VPN": [
         "Obtén más de tu VPN"
@@ -16187,6 +16228,9 @@
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Para previsualizar esta hoja de cálculo, ábrela en ${ SHEETS_APP_NAME } o descárgala."
+      ],
+      "Troubleshoot your issue": [
+        "Soluciona tu problema"
       ],
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "Prueba ${ AUTHENTICATOR_APP_NAME }"

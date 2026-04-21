@@ -348,6 +348,9 @@
       "Continue anyway": [
         "Continuare așa"
       ],
+      "Continue cancelling": [
+        "Continuare anulare"
+      ],
       "Continue import": [
         "Continuare importare"
       ],
@@ -965,6 +968,9 @@
       ],
       "Keep categories": [
         "Păstrare categorii"
+      ],
+      "Keep current plan": [
+        "Păstrez planul curent"
       ],
       "Keep Editing": [
         "Continuare editare"
@@ -4890,6 +4896,9 @@
       "A checked box means the feature is disabled.": [
         "O casetă bifată înseamnă că funcția e dezactivată."
       ],
+      "Add extra addresses to your account or use Hide My Email aliases to keep your inbox private.": [
+        "Adăugați adrese suplimentare în contul personal sau utilizați aliasurile „hide my e-mail” pentru a vă păstra contul privat."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Adăugați foldere și fișiere în ${ DRIVE_APP_NAME } și invitați membrii echipei să le vadă sau să le editeze."
       ],
@@ -4995,6 +5004,9 @@
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "Personalizați-vă subsolul mesajelor — prezentați-vă marca proprie, nu a noastră."
       ],
+      "Most issues can be solved in a few minutes with our step-by-step guides.": [
+        "Majoritatea problemelor pot fi rezolvate în câteva minute cu ajutorul ghidurilor noastre pas cu pas."
+      ],
       "No ads. No trackers.": [
         "Fără reclame. Fără instrumente de urmărire."
       ],
@@ -5015,6 +5027,9 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Simplificați sincronizarea și programarea cu calendare partajate."
+      ],
+      "Still need help? Our support team is here for you.": [
+        "Încă aveți nevoie de ajutor? Echipa noastră de asistență este aici să vă ajute."
       ],
       "This may happen if permissions were removed or your password changed.": [
         "Acest lucru se poate întâmpla dacă permisiunile au fost eliminate sau parola a fost modificată."
@@ -5080,6 +5095,12 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puteți importa evenimente în format iCal (fișier ICS). Fișierul ar trebui să aibă dimensiunea maximă de ${ MAX_IMPORT_FILE_SIZE_STRING } și să aibă până la ${ MAX_IMPORT_EVENTS_STRING } evenimente. Dacă fișierul este mai mare, împărțiți-l în fișiere mai mici."
+      ],
+      "You can manage multiple ${ BRAND_NAME } addresses from a single account, without switching. Aliases and address management tools help keep everything in one inbox.": [
+        "Puteți gestiona mai multe adrese ${ BRAND_NAME } dintr-un singur cont, fără a schimba contul. Aliasurile și instrumentele de gestionare a adreselor ajută la păstrarea tuturor mesajelor într-un singur cont."
+      ],
+      "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
+        "Puteți îmbina adresele într-un singur cont principal ${ BRAND_NAME } folosind ghidul nostru de asistență."
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Puteți trimite acum mesaje de pe ${ BRAND_NAME } folosind această adresă."
@@ -6989,9 +7010,6 @@
         "Remediați conflictele evidențiate pentru a continua.",
         "Remediați conflictele evidențiate pentru a continua."
       ],
-      "Please generate keys before you try to change your password": [
-        "Generați cheile înainte de a vă schimba parola."
-      ],
       "Please select a country": [
         "Selectați o țară."
       ],
@@ -8406,6 +8424,17 @@
         "Perioada de încercare a aplicației desktop s-a încheiat"
       ]
     },
+    "Get help": {
+      "Continue cancelling": [
+        "Continuare anulare"
+      ],
+      "Keep current plan": [
+        "Păstrez planul curent"
+      ],
+      "Many issues can be resolved quickly with our help guides. If you need more support, our team is here to help.": [
+        "Multe probleme pot fi rezolvate rapid cu ajutorul ghidurilor noastre de asistență. Dacă aveți nevoie de mai mult sprijin, echipa noastră este aici pentru a vă ajute."
+      ]
+    },
     "Get started checklist instructions": {
       "${ appName } on App Store": [
         "${ appName } din App Store"
@@ -9488,6 +9517,9 @@
       "**Sync codes** to all your devices": [
         "**Vă sincronizați codurile** pe toate dispozitivele"
       ],
+      "**This will disable 2-factor authentication.**": [
+        "**Aceasta va dezactiva autentificarea cu doi factori.**"
+      ],
       "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
         "**Aceasta va dezactiva transferurile mesajelor criptate bilateral:** le veți putea configura din nou mai târziu."
       ],
@@ -10413,6 +10445,9 @@
       "Enter your recovery phrase to change your password now.": [
         "Introduceți acum fraza de recuperare pentru a vă modifica parola."
       ],
+      "Enter your recovery phrase to verify your identity and disable two-factor authentication.": [
+        "Introduceți fraza de recuperare pe a vă verifica identitatea și dezactiva autentificarea cu doi factori."
+      ],
       "Event invitations and responses will be sent in this language.": [
         "Invitațiile la evenimente și răspunsurile vor fi trimise în această limbă."
       ],
@@ -11056,7 +11091,7 @@
         "Denumiți noul folder și selectați folderul părinte în care doriți să îl puneți. Dacă nu selectaţi un folder părinte, acest folder nou va fi creat ca un folder de nivel superior."
       ],
       "NetShield is an ad-blocking feature from ${ VPN_APP_NAME } that protects your device from ads, trackers, and malware.": [
-        "NetShield este o funcție de blocare a reclamelor de la ${ VPN_APP_NAME } care vă protejează dispozitivul de reclame, programe de urmărire și malware."
+        "NetShield este o funcție de blocare a reclamelor de la ${ VPN_APP_NAME } care vă protejează dispozitivul de reclame, instrumente de urmărire și malware."
       ],
       "New": [
         "Nou"
@@ -12076,6 +12111,9 @@
       ],
       "To proceed, we must verify the request.": [
         "Pentru a continua, trebuie să verificăm solicitarea."
+      ],
+      "To regain access to your account and data, enter the 12-word recovery phrase associated with your account.": [
+        "Pentru a vă recăpăta accesul la cont și date, introduceți fraza de recuperare din 12 cuvinte asociată contului."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Pentru a vă securiza conexiunea la internet, descărcați și instalați aplicația ${ VPN_APP_NAME } pentru dispozitivul utilizat și conectați-vă la un server."
@@ -15095,6 +15133,9 @@
       "${ BRAND_NAME } Foundation's": [
         "Fundației ${ BRAND_NAME }"
       ],
+      "Account recovery explained": [
+        "Recuperarea contului explicată"
+      ],
       "Activity log": [
         "Jurnalul de activitate"
       ],
@@ -15122,11 +15163,11 @@
       "clearing your browser cache": [
         "golind bufferul navigatorului web"
       ],
-      "Common sign in issues": [
-        "Probleme comune de conectare"
-      ],
       "Common sign up issues": [
         "Probleme comune de înregistrare"
+      ],
+      "Contact support": [
+        "Contactați asistența"
       ],
       "contacts’ assistance": [
         "contact de recuperare"
@@ -15245,11 +15286,17 @@
       "Import/export": [
         "Importare/Exportare"
       ],
+      "Learn how": [
+        "Aflați cum"
+      ],
       "Learn more": [
         "Detalii"
       ],
       "Learn more about data recovery": [
         "Aflați mai multe despre recuperarea datelor"
+      ],
+      "Manage addresses": [
+        "Gestionare adrese"
       ],
       "Not activated": [
         "Neactivat"
@@ -15316,6 +15363,9 @@
       ],
       "visit our blog": [
         "vizitați blogul nostru"
+      ],
+      "Visit our support site": [
+        "Vizitați pagina de ajutor"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Care este diferenţa dintre protocoalele UDP şi TCP?"
@@ -16488,8 +16538,8 @@
       "Dedicated servers and IP": [
         "Servere și IP dedicate"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Servere dedicate optimizate pentru conținut transmis în flux"
+      "Dedicated servers optimized for speed": [
+        "Servere dedicate optimizate pentru viteză"
       ],
       "Desktop app": [
         "Aplicația desktop"
@@ -18184,9 +18234,6 @@
       "Buy now": [
         "Cumpărare"
       ],
-      "Contact us": [
-        "Contactați-ne"
-      ],
       "Continue": [
         "Continuare"
       ],
@@ -18213,9 +18260,6 @@
       ],
       "Or ${ createANewAccount }": [
         "Sau ${ createANewAccount }"
-      ],
-      "Request trial": [
-        "Solicitați o încercare"
       ],
       "Start using ${ appName }": [
         "Începeți să utilizați ${ appName }"
@@ -18458,9 +18502,6 @@
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Începeți să utilizați ${ PASS_APP_NAME }"
-      ],
-      "Tailored made solutions for larger organizations with custom needs.": [
-        "Soluții personalizate pentru organizații mai mari cu nevoi proprii."
       ],
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "Oferta selectată nu este disponibilă pentru cei abonați la ${ currentPlanTitle }."
@@ -20603,9 +20644,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Recuperarea contului nu este disponibilă pentru cheile vechi ale adreselor."
-      ],
-      "Please generate keys before you try to change your password": [
-        "Generați cheile înainte de a încerca să vă schimbați parola."
       ]
     },
     "session_recovery:available:info": {
@@ -23525,6 +23563,9 @@
       "Allocate storage": [
         "Alocare spațiu"
       ],
+      "Already have multiple accounts?": [
+        "Aveți deja conturi multiple?"
+      ],
       "Also in your plan": [
         "Disponibil și în planul actual"
       ],
@@ -23763,6 +23804,9 @@
       ],
       "Create multiple user accounts": [
         "Creare conturi multiple de utilizatori"
+      ],
+      "Create new addresses easily": [
+        "Creați ușor adrese"
       ],
       "Create new policy": [
         "Creare regulă"
@@ -24187,6 +24231,12 @@
       ],
       "Get complete privacy coverage": [
         "Obțineți o acoperire completă a intimității"
+      ],
+      "Get direct support": [
+        "Obțineți asistență directă"
+      ],
+      "Get help with an issue": [
+        "Obțineți ajutor cu o problemă"
       ],
       "Get more from your cloud storage": [
         "Obțineți mai mult de la stocarea în cloud"
@@ -24873,6 +24923,9 @@
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Pentru a examina această foaie de calcul, deschideți-o în ${ SHEETS_APP_NAME } sau descărcați-o."
       ],
+      "Troubleshoot your issue": [
+        "Depanați problema"
+      ],
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "Încercați ${ AUTHENTICATOR_APP_NAME }"
       ],
@@ -24938,6 +24991,9 @@
       ],
       "Use backup recovery code": [
         "Utilizare cod de recuperare de rezervă"
+      ],
+      "Use one account for all your addresses": [
+        "Folosiți un cont pentru toate adresele"
       ],
       "User": [
         "Utilizator"

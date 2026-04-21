@@ -230,6 +230,9 @@
       "Continue anyway": [
         "Fortsätt ändå"
       ],
+      "Continue cancelling": [
+        "Fortsätt avbryta"
+      ],
       "Continue import": [
         "Fortsätt import"
       ],
@@ -485,6 +488,9 @@
       "Fit to window": [
         "Passa till fönster"
       ],
+      "Forgot password?": [
+        "Glömt lösenord?"
+      ],
       "Forgot recovery method?": [
         "Glömt återställningsmetod?"
       ],
@@ -604,6 +610,9 @@
       ],
       "Invite user": [
         "Bjud in användare"
+      ],
+      "Keep current plan": [
+        "Behåll nuvarande paket"
       ],
       "Keep Editing": [
         "Fortsätt redigera"
@@ -1439,6 +1448,47 @@
     "Admin": {
       "admin": [
         "admin"
+      ]
+    },
+    "Admin roles onboarding": {
+      "3 new admin roles": [
+        "3 nya administratörsroller"
+      ],
+      "Admin roles": [
+        "Administratörsroller"
+      ],
+      "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
+        "Delegera hantering genom att tilldela specifika administratörsroller. Ge varje administratör endast den åtkomst de behöver. Detta följer principen om minsta möjliga behörighet och skyddar din organisation från komprometterade konton och oavsiktliga fel."
+      ],
+      "Delegate management with the appropriate admin role.": [
+        "Delegera hantering med lämplig administratörsroll."
+      ],
+      "Manage all users, groups, storage, security, billing, audit logs, and system configurations.": [
+        "Hantera alla användare, grupper, lagringsutrymme, säkerhet, fakturering, granskningsloggar och systemkonfigurationer."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Hantera användare, grupper och lagringsutrymme för alla medlemmar, tilldela roller och allokera licenser."
+      ],
+      "New: Control admin access for individual users": [
+        "Nytt: Kontrollera administratörsåtkomst för enskilda användare"
+      ],
+      "Organization admin": [
+        "Organisationsadministratör"
+      ],
+      "Organization admin:": [
+        "Organisationsadministratör:"
+      ],
+      "Security admin": [
+        "Säkerhetsadministratör"
+      ],
+      "Security admin:": [
+        "Säkerhetsadministratör:"
+      ],
+      "User admin": [
+        "Användaradministratör"
+      ],
+      "User admin:": [
+        "Användaradministratör:"
       ]
     },
     "AdminRole_Info": {
@@ -3544,6 +3594,9 @@
       "Let's you instantly add meeting links to your event invitations.": [
         "Låter dig omedelbart lägga till möteslänkar i dina händelseinbjudningar."
       ],
+      "Most issues can be solved in a few minutes with our step-by-step guides.": [
+        "De flesta problem kan lösas på några minuter med våra steg-för-steg-guider."
+      ],
       "No ads. No trackers.": [
         "Inga annonser. Inga spårare."
       ],
@@ -3558,6 +3611,9 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Förenkla synkronisering och schemaläggning med delade kalendrar."
+      ],
+      "Still need help? Our support team is here for you.": [
+        "Behöver du fortfarande hjälp? Vårt supportteam finns här för dig."
       ],
       "This may happen if permissions were removed or your password changed.": [
         "Detta kan hända om behörigheter togs bort eller ditt lösenord har ändrats."
@@ -3611,6 +3667,12 @@
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kan importera händelser i iCal-format (ICS-fil). Filen bör ha en maximal storlek på ${ MAX_IMPORT_FILE_SIZE_STRING } och ha upp till ${ MAX_IMPORT_EVENTS_STRING } händelser. Om din fil är större, dela upp den i mindre filer."
       ],
+      "You can manage multiple ${ BRAND_NAME } addresses from a single account, without switching. Aliases and address management tools help keep everything in one inbox.": [
+        "Du kan hantera flera ${ BRAND_NAME }-adresser från ett enda konto, utan att byta. Alias ​​och adresshanteringsverktyg hjälper till att hålla allt i en inkorg."
+      ],
+      "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
+        "Du kan slå samman adresser till ett huvudkonto för ${ BRAND_NAME } med hjälp av vår supportguide."
+      ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Du kan nu skicka e-post från ${ BRAND_NAME } med denna adress."
       ],
@@ -3620,6 +3682,10 @@
       "You're forwarding ${ numAddressesOrSync } Gmail address to ${ MAIL_APP_NAME }.": [
         "Du vidarebefordrar ${ numAddressesOrSync } Gmail-adress till ${ MAIL_APP_NAME }.",
         "Du vidarebefordrar ${ numAddressesOrSync } Gmail-adresser till ${ MAIL_APP_NAME }."
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "Du har anslutit ${ MAX_SYNC_PAID_USER } Gmail‑adress. För att lägga till en till, inaktivera först ett av dina anslutna konton.",
+        "Du har anslutit ${ MAX_SYNC_PAID_USER } Gmail‑adresser. För att lägga till en till, inaktivera först ett av dina anslutna konton."
       ],
       "You've connected one external account address to ${ MAIL_APP_NAME }.": [
         "Du har anslutit en extern kontoadress till ${ MAIL_APP_NAME }."
@@ -4444,9 +4510,6 @@
       "Please fix the highlighted conflict to proceed.": [
         "Åtgärda den markerade konflikten för att fortsätta.",
         "Åtgärda de markerade konflikterna för att fortsätta."
-      ],
-      "Please generate keys before you try to change your password": [
-        "Generera nycklar innan du försöker ändra ditt lösenord"
       ],
       "Please select a country": [
         "Välj ett land"
@@ -5507,6 +5570,17 @@
         "${ BRAND_NAME }. Privacy by default."
       ]
     },
+    "Get help": {
+      "Continue cancelling": [
+        "Fortsätt avbryta"
+      ],
+      "Keep current plan": [
+        "Behåll nuvarande paket"
+      ],
+      "Many issues can be resolved quickly with our help guides. If you need more support, our team is here to help.": [
+        "Många problem kan lösas snabbt med våra hjälpguider. Om du behöver mer support finns vårt team här för att hjälpa till."
+      ]
+    },
     "Gmail forwarding": {
       "Automatically forward": [
         "Automatiskt vidarebefordrad"
@@ -6276,6 +6350,9 @@
       "**Sync codes** to all your devices": [
         "**Synkronisera koder** till alla dina enheter"
       ],
+      "**This will disable 2-factor authentication.**": [
+        "**Detta kommer inaktivera tvåfaktorsautentisering.**"
+      ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } Mer",
         "+ ${ invisibleCount } Mer"
@@ -6923,6 +7000,12 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Ange e-postadressen eller användarnamnet för ditt ${ BRAND_NAME }-konto."
       ],
+      "Enter your own password (as organization admin).": [
+        "Ange ditt eget lösenord (som organisationsadministratör)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Ange ditt eget lösenord (som betrodd kontakt)."
+      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Ange din e-postadress för återställning så skickar vi dig ditt användarnamn eller e-postadress."
       ],
@@ -6931,6 +7014,9 @@
       ],
       "Enter your recovery phrase to change your password now.": [
         "Ange din återställningsfras för att ändra ditt lösenord nu."
+      ],
+      "Enter your recovery phrase to verify your identity and disable two-factor authentication.": [
+        "Ange din återställningsfras för att verifiera din identitet och inaktivera tvåfaktorsautentisering."
       ],
       "Everything in ${ planOrAppName }": [
         "Allt i ${ planOrAppName }"
@@ -9708,6 +9794,12 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Ja, jag vill permanent ta bort detta konto och alla dess data."
       ],
+      "Your password (admin)": [
+        "Ditt lösenord (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Ditt lösenord (betrodd kontakt)"
+      ],
       "ZIP code": [
         "Postnummer"
       ]
@@ -9828,6 +9920,9 @@
       ]
     },
     "Link": {
+      "Account recovery explained": [
+        "Förklaring av kontoåterställning"
+      ],
       "activity monitor": [
         "aktivitetsövervakare"
       ],
@@ -9843,17 +9938,20 @@
       "clearing your browser cache": [
         "rensar din webbläsares cache"
       ],
-      "Common sign in issues": [
-        "Vanliga inloggningsproblem"
-      ],
       "Common sign up issues": [
         "Vanliga registreringsproblem"
+      ],
+      "Contact support": [
+        "Kontakta support"
       ],
       "Create account": [
         "Skapa konto"
       ],
       "Create an alias": [
         "Skapa ett alias"
+      ],
+      "data recovery option": [
+        "alternativ för dataåterställning"
       ],
       "Details": [
         "Detaljer"
@@ -9951,11 +10049,17 @@
       "if your data is leaked": [
         "om dina uppgifter läcker ut"
       ],
+      "Learn how": [
+        "Lär dig hur"
+      ],
       "Learn more": [
         "Lär dig mer"
       ],
       "Learn more about data recovery": [
         "Lär dig mer om dataåterställning"
+      ],
+      "Manage addresses": [
+        "Hantera adresser"
       ],
       "Not activated": [
         "Inte aktiverad"
@@ -10007,6 +10111,9 @@
       ],
       "visit our blog": [
         "besöka vår blogg"
+      ],
+      "Visit our support site": [
+        "Besök vår supportwebbplats"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Vad är skillnaden mellan UDP- och TCP-protokoll?"
@@ -10404,6 +10511,9 @@
       ],
       "Submit your ideas": [
         "Skicka dina idéer"
+      ],
+      "Your feedback helps us improve. Whether you've spotted a bug, want a new feature, or think something could work differently, we'd love to hear from you.": [
+        "Din feedback hjälper oss att förbättra oss. Oavsett om du har upptäckt ett fel, vill ha en ny funktion eller tror att något skulle kunna fungera annorlunda vill vi gärna att du berättar för oss."
       ]
     },
     "Modal title": {
@@ -10745,9 +10855,6 @@
       ],
       "Dedicated servers and IP": [
         "Dedikerade servrar och IP"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "Dedikerade servrar optimerade för streaming"
       ],
       "Desktop app": [
         "Skrivbordsapp"
@@ -13630,9 +13737,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Kontoåterställning är inte tillgänglig för äldre adressnycklar"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Generera nycklar innan du försöker ändra ditt lösenord"
       ]
     },
     "session_recovery:available:info": {
@@ -14386,6 +14490,9 @@
       "Share the confirmation code with your administrator": [
         "Dela bekräftelsekoden med din administratör"
       ],
+      "Sign in": [
+        "Logga in"
+      ],
       "Sign in to your organization": [
         "Logga in på din organisation"
       ],
@@ -14445,6 +14552,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Du måste skapa nya användare manuellt för att lägga till dem till din organisation."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Du kommer omdirigeras till din tredjeparts SSO-leverantör."
       ],
       "Your SSO configuration will be deleted.": [
         "Din SSO-konfiguration kommer att tas bort."
@@ -15522,14 +15632,8 @@
       "Account recovery": [
         "Kontoåterställning"
       ],
-      "Account restricted": [
-        "Kontot begränsat"
-      ],
       "Account suspended": [
         "Konto avstängt"
-      ],
-      "Account temporarily locked": [
-        "Konto tillfälligt låst"
       ],
       "Action": [
         "Åtgärd"
@@ -15603,6 +15707,9 @@
       ],
       "Allocate storage": [
         "Allokera lagringsutrymme"
+      ],
+      "Already have multiple accounts?": [
+        "Har du redan flera konton?"
       ],
       "Also in your plan": [
         "Också i ditt paket"
@@ -15787,6 +15894,9 @@
       ],
       "Create multiple user accounts": [
         "Skapa flera användarkonton"
+      ],
+      "Create new addresses easily": [
+        "Skapa nya adresser enkelt"
       ],
       "Create new policy": [
         "Skapa ny policy"
@@ -16002,6 +16112,9 @@
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Ange dina kontodetaljer för ${ BRAND_NAME } för att gå med il ${ app } Beta-program"
       ],
+      "Enter your password": [
+        "Ange ditt lösenord"
+      ],
       "Error": [
         "Fel"
       ],
@@ -16050,6 +16163,12 @@
       ],
       "Get complete privacy coverage": [
         "Få fullständig integritetstäckning"
+      ],
+      "Get direct support": [
+        "Skaffa direkt support"
+      ],
+      "Get help with an issue": [
+        "Skaffa hjälp med ett problem"
       ],
       "Get more from your VPN": [
         "Få ut mer av din VPN"
@@ -16506,6 +16625,9 @@
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "För att förhandsgranska detta kalkylblad, öppna det i ${ SHEETS_APP_NAME } eller ladda ner det."
       ],
+      "Troubleshoot your issue": [
+        "Felsök ditt problem"
+      ],
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "Prova ${ AUTHENTICATOR_APP_NAME }"
       ],
@@ -16565,6 +16687,9 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Använd ${ VPN_SHORT_APP_NAME } för dataintegritet"
+      ],
+      "Use one account for all your addresses": [
+        "Använd ett konto för alla dina adresser"
       ],
       "User": [
         "Användare"
@@ -17117,6 +17242,9 @@
       ]
     },
     "user_modal": {
+      "Add delegated roles to a user to grant them only the specific permissions they need, keeping full-admin power separate and your environment secure.": [
+        "Lägg till delegerade roller till en användare för att bevilja ge dem de specifika behörigheter de behöver, vilket håller fullständig administratörsbehörighet separat och din miljö säker."
+      ],
       "Add multiple users": [
         "Lägg till flera användare"
       ],

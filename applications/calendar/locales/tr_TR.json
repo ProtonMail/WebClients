@@ -3686,7 +3686,7 @@
         "OAuth penceresi yüklenemedi."
       ],
       "Failed to load subscription data. Please try again later.": [
-        "Abonelik verileri yüklenemedi. Lütfen daha sonra tekrar deneyin."
+        "Abonelik verileri yüklenemedi. Lütfen bir süre sonra yeniden deneyin."
       ],
       "Failed to open to contact": [
         "Kişiye açılamadı"
@@ -8155,8 +8155,8 @@
       "Data retention policies": [
         "Verileri tutma ilkeleri"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Yayın akışı izlemek için ayarlanmış özel sunucular"
+      "Dedicated servers optimized for speed": [
+        "Hız için ayarlanmış özel sunucular"
       ],
       "Desktop app": [
         "Bilgisayar uygulaması"
@@ -10299,9 +10299,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Eski adres anahtarları ile hesap kurtarma işlemi yapılamaz"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Lütfen parolanızı değiştirmeyi denemeden önce anahtarlar oluşturun"
       ]
     },
     "session_recovery:available:info": {

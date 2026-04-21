@@ -1205,6 +1205,18 @@
       "Something went wrong. Please sign in again.": [
         "Es ist ein Fehler aufgetreten. Bitte melden Sie sich erneut an."
       ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "Die ${ PASS_APP_NAME }-Desktop-App ist gesperrt, sie muss entsperrt werden."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "Die ${ PASS_APP_NAME }-Desktop-App ist nicht installiert."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "Die ${ PASS_APP_NAME }-Desktop-App reagiert nicht. Läuft sie?"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "Die ${ PASS_APP_NAME }-Desktop-App ist mit einem anderen Konto angemeldet."
+      ],
       "The session has expired. Please sign in again.": [
         "Die Sitzung ist abgelaufen. Bitte melde dich erneut an."
       ],
@@ -1228,6 +1240,9 @@
       ],
       "Unknown error": [
         "Unbekannter Fehler"
+      ],
+      "Unknown error.": [
+        "Unbekannter Fehler."
       ],
       "Unknown invite": [
         "Unbekannte Einladung"

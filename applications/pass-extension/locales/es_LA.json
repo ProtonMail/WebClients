@@ -942,6 +942,9 @@
       "Authentication failure: ${ message }": [
         "Error de la autenticación: ${ message }"
       ],
+      "Biometric authentication failed.": [
+        "Error en la autenticación biométrica."
+      ],
       "Cannot create alias (${ error }).": [
         "No se puede crear el alias (${ error })."
       ],
@@ -997,6 +1000,18 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Error al eliminar la bóveda \"${ payload.content.name }\""
       ],
+      "Desktop lock is not configured.": [
+        "El bloqueo de escritorio no está configurado."
+      ],
+      "Desktop lock secret does not match.": [
+        "El secreto de bloqueo de escritorio no coincide."
+      ],
+      "Desktop lock secret not found.": [
+        "Secreto de bloqueo de escritorio no encontrado."
+      ],
+      "Desktop lock setup failed.": [
+        "Error en la configuración de bloqueo de escritorio."
+      ],
       "Detected ${ errors.length } corrupted csv row": [
         "Se detectó ${ errors.length } fila CSV dañada.",
         "Se detectaron ${ errors.length } filas CSV dañadas."
@@ -1016,11 +1031,11 @@
       "Emptying trash failed": [
         "Error al vaciar la papelera"
       ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Error en la comunicación cifrada con la aplicación de escritorio de ${ PASS_APP_NAME }."
+      ],
       "Encrypted JSON not supported": [
         "JSON cifrado no soportado"
-      ],
-      "Encryption communication for desktop unlock failed.": [
-        "Fallo en la comunicación de cifrado para desbloquear la app de escritorio."
       ],
       "Error reporting problem": [
         "Error al reportar el problema"
@@ -1259,6 +1274,9 @@
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
         "Ocurrió un error. Recargue la extensión ${ PASS_APP_NAME }. Este problema ha sido registrado."
       ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "La aplicación de escritorio ${ PASS_APP_NAME } no respondió a tiempo."
+      ],
       "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
         "La aplicación de escritorio de ${ PASS_APP_NAME } está bloqueada; debe desbloquearla."
       ],
@@ -1267,6 +1285,9 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
         "La aplicación de escritorio ${ PASS_APP_NAME } no responde, ¿se está ejecutando?"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "Se ha iniciado sesión en a aplicación de escritorio de ${ PASS_APP_NAME } con una cuenta diferente."
       ],
       "The URL is in the list": [
         "La URL está en la lista."
@@ -1291,6 +1312,9 @@
       ],
       "Unknown error": [
         "Error desconocido"
+      ],
+      "Unknown error.": [
+        "Error desconocido."
       ],
       "Unknown invite": [
         "Invitación desconocida"

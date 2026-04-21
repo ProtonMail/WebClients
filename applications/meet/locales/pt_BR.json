@@ -1494,12 +1494,6 @@
       "Failed to lock meeting": [
         "Falha ao bloquear reunião"
       ],
-      "Failed to request permission for the camera. Please check your system permissions and try again. You might have to enable permissions manually, please refresh the page afterwards": [
-        "Falha ao solicitar permissão para a câmera. Verifique as permissões do seu sistema e tente novamente. Talvez seja necessário ativar as permissões manualmente; atualize a página depois."
-      ],
-      "Failed to request permission for the microphone. Please check your system permissions and try again. You might have to enable permissions manually, please refresh the page afterwards": [
-        "Falha ao solicitar permissão para o microfone. Verifique as permissões do seu sistema e tente novamente. Talvez seja necessário habilitar as permissões manualmente; atualize a página depois."
-      ],
       "Failed to rotate personal meeting link": [
         "Não foi possível redefinir link de reunião pessoal"
       ],
@@ -1839,11 +1833,11 @@
       "Decrypting meetings...": [
         "Descriptografando reuniões..."
       ],
-      "Default": [
-        "Padrão"
-      ],
       "Default - ${ systemDefault.label }": [
         "Padrão - ${ systemDefault.label }"
+      ],
+      "Default - System Default": [
+        "Padrão - Padrão do sistema"
       ],
       "Delete event": [
         "Excluir evento"
@@ -2628,14 +2622,14 @@
       "Others couldn't hear me": [
         "Os outros não conseguiam me ouvir"
       ],
+      "Others couldn't see my video": [
+        "Outros não conseguiram ver meu vídeo"
+      ],
       "The presentation was blurry": [
         "A apresentação estava embaçada"
       ],
-      "Video was blurry": [
-        "O vídeo estava embaçado"
-      ],
-      "Video was breaking up": [
-        "O vídeo está falhando"
+      "Video quality was poor": [
+        "A qualidade do vídeo está ruim"
       ]
     },
     "Placeholder": {

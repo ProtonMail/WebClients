@@ -549,6 +549,9 @@
       "Go back": [
         "Späť"
       ],
+      "Go back to album “${ ellipsedAlbumName }“": [
+        "Späť na album „${ ellipsedAlbumName }“"
+      ],
       "Go to ${ planOrAppName }": [
         "Prejsť do ${ planOrAppName }"
       ],
@@ -809,6 +812,9 @@
       ],
       "Quit": [
         "Ukončiť"
+      ],
+      "Re-index": [
+        "Preindexovať"
       ],
       "Re-sign": [
         "Znovu podpísať"
@@ -6170,6 +6176,9 @@
       "No payment is required at this time.": [
         "Momentálne nie je nutná žiadna platba."
       ],
+      "No populator states found.": [
+        "Nenašli sa žiadne stavy pre populátor."
+      ],
       "No results found": [
         "Nenájdené žiadne výsledky"
       ],
@@ -8930,8 +8939,8 @@
       "Data retention policies": [
         "Zásady uchovávania údajov"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Dedikované servery optimalizované na streamovanie"
+      "Dedicated servers optimized for speed": [
+        "Dedikované servery optimalizované na rýchlosť"
       ],
       "Desktop app": [
         "Desktopová aplikácia"
@@ -11285,9 +11294,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Obnovenie účtu nie je k dispozícii pre staršie kľúče adries"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Pred pokusom o zmenu hesla vygenerujte kľúče, prosím"
       ]
     },
     "session_recovery:available:info": {
@@ -13132,6 +13138,9 @@
       ],
       "Import your data to ${ BRAND_NAME }": [
         "Importujte svoje dáta do ${ BRAND_NAME }"
+      ],
+      "Index populators": [
+        "Indexovať populátory"
       ],
       "Information exposed in breach": [
         "Informácie odhalené pri úniku"

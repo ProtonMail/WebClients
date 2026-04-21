@@ -479,13 +479,13 @@
         "${ users } brukere"
       ],
       "Dedicated VPN servers": [
-        "Dedikerte VPN-tjenere"
+        "Dedikerte VPN-servere"
       ],
       "Domains": [
         "Domener"
       ],
       "Servers": [
-        "Tjenere"
+        "Servere"
       ],
       "Users": [
         "Brukere"
@@ -553,7 +553,7 @@
         "Etter at prøveperioden avsluttes på ${ formattedDate1 }, vil den gå over til å bli et betalt abonnement som fornyes automatisk månedlig. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate2 }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
-        "Du kan ha opptil ${ TRIAL_MAX_DEDICATED_IPS } dedikert tjener i prøveperioden."
+        "Du kan ha opptil ${ TRIAL_MAX_DEDICATED_IPS } dedikert server i prøveperioden."
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "Du kan ha opptil ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-lisenser i prøveperioden."
@@ -2823,7 +2823,7 @@
         "Dedikerte tjenere"
       ],
       "Dedicated VPN servers": [
-        "Dedikerte VPN-tjenere"
+        "Dedikerte VPN-servere"
       ],
       "default email address": [
         "standard e-postadresse"
@@ -2973,7 +2973,7 @@
         "Antall dedikerte tjenere i organisasjonen"
       ],
       "Number of dedicated VPN servers in the organization": [
-        "Antall dedikerte VPN-tjenere i organisasjonen"
+        "Antall dedikerte VPN-servere i organisasjonen"
       ],
       "or discover other features:": [
         "eller oppdag andre funksjoner:"
@@ -3018,7 +3018,7 @@
         "SEPA-betalinger er ikke tilgjengelige for øyeblikket. Prøv igjen senere."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Tjenerne er utilgjengelige. Prøv på nytt om noen få minutter."
+        "Serverne er utilgjengelige. Prøv på nytt om noen få minutter."
       ],
       "Session timed out": [
         "Økten ble tidsavbrutt"
@@ -3910,8 +3910,8 @@
       "Data retention policies": [
         "Retningslinjer for dataoppbevaring"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Dedikerte tjenere optimalisert for strømming"
+      "Dedicated servers optimized for speed": [
+        "Dedikerte servere optimalisert for hastighet"
       ],
       "Desktop app": [
         "Skrivebordsapp"
@@ -4329,7 +4329,7 @@
         "Egendefinerte domener for aliaser, ekstra postbokser, muligheten til å sende e-post fra aliaser og mer"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
-        "Dedikerte tjenere med dedikerte IP-adresser kan legges til private porttjenere for å muliggjøre finjustert tilgangskontroll"
+        "Dedikerte servere med dedikerte IP-adresser kan legges til private gateway-servere for å muliggjøre finjustert tilgangskontroll"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Forsvarer mot trusler til VPN-personvern ved å overføre internettrafikk gjennom flere tjenere."
@@ -5840,8 +5840,8 @@
         "${ n } enheter"
       ],
       "${ n } server": [
-        "${ n } tjener",
-        "${ n }+ tjenere"
+        "${ n } server",
+        "${ n }+ servere"
       ],
       "${ n } VPN connection": [
         "${ n } VPN-tilkobling",
@@ -5864,8 +5864,8 @@
         "Velger automatisk fra ${ numberOfCountries } land"
       ],
       "Servers in ${ numberOfCountries }+ country": [
-        "Tjenere i ${ numberOfCountries }+ land",
-        "Tjenere i ${ numberOfCountries }+ land"
+        "Servere i ${ numberOfCountries }+ land",
+        "Servere i ${ numberOfCountries }+ land"
       ]
     },
     "vpn_2step: feature": {
@@ -5878,7 +5878,7 @@
     },
     "vpn_2step: tooltip": {
       "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Tilgang til Secure Core-tjenere, raske P2P/BitTorrent-nedlastinger, Tor over VPN og mer."
+        "Tilgang til Secure Core-servere, raske P2P/BitTorrent-nedlastinger, Tor over VPN og mer."
       ]
     },
     "Wallet": {

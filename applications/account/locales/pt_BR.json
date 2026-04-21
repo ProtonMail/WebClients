@@ -348,6 +348,9 @@
       "Continue anyway": [
         "Continuar mesmo assim"
       ],
+      "Continue cancelling": [
+        "Continuar cancelamento"
+      ],
       "Continue import": [
         "Continuar importação"
       ],
@@ -965,6 +968,9 @@
       ],
       "Keep categories": [
         "Manter categorias"
+      ],
+      "Keep current plan": [
+        "Manter plano atual"
       ],
       "Keep Editing": [
         "Continuar editando"
@@ -2016,6 +2022,47 @@
     "Admin": {
       "admin": [
         "administrador"
+      ]
+    },
+    "Admin roles onboarding": {
+      "3 new admin roles": [
+        "3 novas funções administrativas"
+      ],
+      "Admin roles": [
+        "Funções administrativas"
+      ],
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configure políticas de segurança, retenção de dados e infraestrutura de VPN, além de gerenciar registros de auditoria."
+      ],
+      "Delegate management with the appropriate admin role.": [
+        "Delegue o gerenciamento a um administrador com a função adequada."
+      ],
+      "Manage all users, groups, storage, security, billing, audit logs, and system configurations.": [
+        "Gerencie todos os usuários, grupos, armazenamento, segurança, faturamento, registros de auditoria e configurações do sistema."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gerencie usuários, grupos e espaço de armazenamento para todos os membros, atribuir funções e distribuir licenças."
+      ],
+      "New: Control admin access for individual users": [
+        "Novo: Controle acesso de administrador para usuários individuais"
+      ],
+      "Organization admin": [
+        "Adminsitrador da organização"
+      ],
+      "Organization admin:": [
+        "Adminsitrador da organização:"
+      ],
+      "Security admin": [
+        "Administrador de segurança"
+      ],
+      "Security admin:": [
+        "Administrador de segurança:"
+      ],
+      "User admin": [
+        "Adminsitrador de usuário"
+      ],
+      "User admin:": [
+        "Adminsitrador de usuário:"
       ]
     },
     "AdminRole_Info": {
@@ -6872,9 +6919,6 @@
         "Corrija o conflito em destaque para prosseguir.",
         "Corrija os conflitos em destaque para prosseguir."
       ],
-      "Please generate keys before you try to change your password": [
-        "Crie chaves antes de tentar alterar sua senha"
-      ],
       "Please select a country": [
         "Selecione um país"
       ],
@@ -8271,6 +8315,14 @@
         "Sua avaliação gratuita do aplicativo para computador terminou"
       ]
     },
+    "Get help": {
+      "Continue cancelling": [
+        "Continuar cancelamento"
+      ],
+      "Keep current plan": [
+        "Manter plano atual"
+      ]
+    },
     "Get started checklist instructions": {
       "${ appName } on App Store": [
         "${ appName } na App Store"
@@ -9310,6 +9362,9 @@
       "**Sync codes** to all your devices": [
         "**Sincronizar códigos** para todos os seus dispositivos"
       ],
+      "**This will disable 2-factor authentication.**": [
+        "**Isso desativará a autenticação de 2 fatores.**"
+      ],
       "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
         "**Isso desativará os encaminhamentos de e-mail criptografados de ponta a ponta:** você pode configurá-los novamente mais tarde."
       ],
@@ -9672,6 +9727,9 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Antes de pedir um novo código de verificação, verifique sua pasta de spam e verifique que ${ strong } é o endereço correto."
+      ],
+      "Before sending a new verification code, check your spam folder for ${ EmailOrPhoneNumber }.": [
+        "Antes de enviar um novo código de verificação, verifique a pasta de spam de ${ EmailOrPhoneNumber }"
       ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
         "Antes de poder receber e-mails para seus endereços de domínio personalizados em ${ MAIL_APP_NAME }, você precisa adicionar os dois registros MX a seguir em seu console DNS (localizado na plataforma onde você comprou o domínio personalizado). Você pode encontrar um exemplo e algumas dicas úteis em ${ kbLink }."
@@ -10251,9 +10309,6 @@
       "for ${ price }": [
         "por ${ price }"
       ],
-      "For a 10-year version history, please contact our sales team.": [
-        "Para obter um histórico de versões de 10 anos, entre em contato com nossa equipe de vendas."
-      ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Para ter acesso ao e-mail a qualquer momento e uma experiência otimizada em dispositivos móveis, baixe nosso app ${ androidAppLink } ou ${ iosAppLink }."
       ],
@@ -10361,6 +10416,9 @@
       ],
       "How to perform a signed-in reset": [
         "Como realizar uma redefinição com a sessão iniciada"
+      ],
+      "How your emergency contact can change your password for you:": [
+        "Como seu contato de emergência pode alterar sua senha por você:"
       ],
       "IBAN: ${ formattedIBAN }": [
         "IBAN: ${ formattedIBAN }"
@@ -12282,6 +12340,9 @@
       "You can now close this window.": [
         "Agora você pode fechar essa janela."
       ],
+      "You can now reset your password to regain access to your account.": [
+        "Você pode redefinir sua senha agora para recuperar o acesso à sua conta."
+      ],
       "You can now return to the application to continue": [
         "Agora você pode retornar ao aplicativo para continuar"
       ],
@@ -12460,6 +12521,9 @@
       ],
       "Your email will only be used for this one-time verification.": [
         "Seu e-mail só será usado para essa verificação única."
+      ],
+      "Your encrypted data will be locked": [
+        "Seus dados criptografados ficarão bloqueados"
       ],
       "Your files will be encrypted and then saved": [
         "Seus arquivos serão criptografados e depois salvos"
@@ -14766,6 +14830,9 @@
       "${ BRAND_NAME } Foundation's": [
         "Fundadores da ${ BRAND_NAME }"
       ],
+      "Account recovery explained": [
+        "Explicação sobre a recuperação de conta."
+      ],
       "Activity log": [
         "Registro de atividade"
       ],
@@ -14793,11 +14860,14 @@
       "clearing your browser cache": [
         "limpando o cache do seu navegador"
       ],
-      "Common sign in issues": [
-        "Problemas frequentes ao iniciar a sessão"
-      ],
       "Common sign up issues": [
         "Problemas frequentes ao se cadastrar"
+      ],
+      "Contact support": [
+        "Contatar o suporte"
+      ],
+      "contacts’ assistance": [
+        "assistência de contatos"
       ],
       "Create account": [
         "Criar conta"
@@ -14913,11 +14983,17 @@
       "Import/export": [
         "Importar/exportar"
       ],
+      "Learn how": [
+        "Saiba como"
+      ],
       "Learn more": [
         "Saiba mais"
       ],
       "Learn more about data recovery": [
         "Saiba mais sobre a recuperação dos dados"
+      ],
+      "Manage addresses": [
+        "Gerenciar endereços"
       ],
       "Not activated": [
         "Não ativado"
@@ -14984,6 +15060,9 @@
       ],
       "visit our blog": [
         "visitar nosso blog"
+      ],
+      "Visit our support site": [
+        "Visite nosso site de suporte"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Qual é a diferença entre os protocolos UDP e TCP?"
@@ -16120,9 +16199,6 @@
       ],
       "Dedicated servers and IP": [
         "Servidores e IPs dedicados"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "Servidores dedicados otimizados para streaming"
       ],
       "Desktop app": [
         "Aplicativo para computador"
@@ -17796,9 +17872,6 @@
       "Buy now": [
         "Comprar agora"
       ],
-      "Contact us": [
-        "Fale conosco"
-      ],
       "Continue": [
         "Continuar"
       ],
@@ -17825,9 +17898,6 @@
       ],
       "Or ${ createANewAccount }": [
         "Ou ${ createANewAccount }"
-      ],
-      "Request trial": [
-        "Solicitar avaliação"
       ],
       "Start using ${ appName }": [
         "Começar a usar o ${ appName }"
@@ -18070,9 +18140,6 @@
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Comece a usar o ${ PASS_APP_NAME }"
-      ],
-      "Tailored made solutions for larger organizations with custom needs.": [
-        "Soluções sob medida para organizações maiores com necessidades personalizadas."
       ],
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "A oferta selecionada não está disponível para assinantes de ${ currentPlanTitle }."
@@ -20203,9 +20270,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "A recuperação de conta não está disponível para chaves de endereço herdadas"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Gere chaves antes de tentar alterar sua senha"
       ]
     },
     "session_recovery:available:info": {
@@ -20722,6 +20786,9 @@
       "Bundle": [
         "Pacote"
       ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "Escolha um endereço seguro do ${ MAIL_APP_NAME } para começar"
+      ],
       "Collaborative document editing": [
         "Edição de documentos colaborativos"
       ],
@@ -20784,6 +20851,9 @@
       ],
       "Gifted by **${ referrerName }**": [
         "Oferecido por **${ referrerName }**"
+      ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "Mantenha suas conversas privadas com ${ MAIL_APP_NAME }"
       ],
       "Manage user access": [
         "Gerenciar o acesso de usuário"
@@ -23045,6 +23115,9 @@
       "Allocate storage": [
         "Alocar armazenamento"
       ],
+      "Already have multiple accounts?": [
+        "Já tem várias contas?"
+      ],
       "Also in your plan": [
         "Também no seu plano"
       ],
@@ -23273,6 +23346,9 @@
       ],
       "Create multiple user accounts": [
         "Criando múltiplas contas de usuários"
+      ],
+      "Create new addresses easily": [
+        "Crie endereços com facilidade"
       ],
       "Create new policy": [
         "Criar uma política"
@@ -23695,6 +23771,12 @@
       ],
       "Get complete privacy coverage": [
         "Obtenha a cobertura completa de privacidade"
+      ],
+      "Get direct support": [
+        "Obtenha suporte direto"
+      ],
+      "Get help with an issue": [
+        "Obter ajuda com um problema"
       ],
       "Get more from your cloud storage": [
         "Obtenha mais do seu armazenamento em nuvem"
@@ -24381,6 +24463,9 @@
       ],
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "Experimente ${ AUTHENTICATOR_APP_NAME }"
+      ],
+      "Try changing your password in your active web session": [
+        "Tente alterar sua senha na sua sessão ativa na web"
       ],
       "Turn on ${ DARK_WEB_MONITORING_NAME }": [
         "Ativar ${ DARK_WEB_MONITORING_NAME }"

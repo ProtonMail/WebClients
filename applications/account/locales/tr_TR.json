@@ -331,7 +331,7 @@
         "Bağlı"
       ],
       "Contact sales": [
-        "Satış ekibiyle görüşün"
+        "Satış departmanıyla iletişime geçin"
       ],
       "Contact support": [
         "Destek ekibimizle görüşün"
@@ -347,6 +347,9 @@
       ],
       "Continue anyway": [
         "Yine de ilerle"
+      ],
+      "Continue cancelling": [
+        "İptal etmeyi sürdür"
       ],
       "Continue import": [
         "İçe aktarmayı sürdür"
@@ -966,6 +969,9 @@
       "Keep categories": [
         "Kategorileri kullan"
       ],
+      "Keep current plan": [
+        "Geçerli tarifede kal"
+      ],
       "Keep Editing": [
         "Düzenlemeyi sürdür"
       ],
@@ -985,7 +991,7 @@
         "Daha sonra"
       ],
       "Learn about recovery options": [
-        "Kurtarma seçenekleri hakkında bilgi edinin"
+        "Kurtarma seçenekleri ile ilgili bilgi alın"
       ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
@@ -2016,6 +2022,50 @@
     "Admin": {
       "admin": [
         "Yönetici"
+      ]
+    },
+    "Admin roles onboarding": {
+      "3 new admin roles": [
+        "3 yeni yönetici rolü"
+      ],
+      "Admin roles": [
+        "Yönetici rolleri"
+      ],
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Güvenlik ilkelerini, veri saklama kurallarını ve VPN altyapısını yapılandırın ve denetim günlüklerini yönetin."
+      ],
+      "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
+        "Belirli yönetici rolleri atayarak yönetimi delege edin. Her yöneticiye yalnızca ihtiyaç duyduğu erişim yetkisini verin. Bu en az ayrıcalık ilkesini izleyerek kuruluşunuzu ele geçirilmiş hesaplardan ve kazara yapılan hatalardan korur."
+      ],
+      "Delegate management with the appropriate admin role.": [
+        "Yönetimi uygun yönetici rolüne devredin."
+      ],
+      "Manage all users, groups, storage, security, billing, audit logs, and system configurations.": [
+        "Tüm kullanıcıları, grupları, depolama alanını, güvenliği, faturalandırmayı, denetim günlüklerini ve sistem yapılandırmalarını yönetin."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Tüm üyeler için kullanıcıları, grupları ve depolama alanını yönetin, roller atayın ve lisansları tahsis edin."
+      ],
+      "New: Control admin access for individual users": [
+        "Yeni: Kullanıcı bazlı yönetici erişimi kontrolü"
+      ],
+      "Organization admin": [
+        "Kuruluş yöneticisi"
+      ],
+      "Organization admin:": [
+        "Kuruluş yöneticisi:"
+      ],
+      "Security admin": [
+        "Güvenlik yöneticisi"
+      ],
+      "Security admin:": [
+        "Güvenlik yöneticisi:"
+      ],
+      "User admin": [
+        "Kullanıcı yöneticisi"
+      ],
+      "User admin:": [
+        "Kullanıcı yöneticisi:"
       ]
     },
     "AdminRole_Info": {
@@ -4859,6 +4909,9 @@
       "A checked box means the feature is disabled.": [
         "Seçeneğin işaretlenmesi özelliğin kapatılmasını sağlar."
       ],
+      "Add extra addresses to your account or use Hide My Email aliases to keep your inbox private.": [
+        "Hesabınıza yeni adresler ekleyin veya gelen kutunuzu gizli tutmak için e-posta takma adları kullanın."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "${ DRIVE_APP_NAME } üzerine klasörler ve dosyalar ekleyerek bunları görüntülemeleri veya düzenlemeleri için ekip arkadaşarınızı davet edin."
       ],
@@ -4964,6 +5017,9 @@
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "E-posta alt bilginizi kendinize göre ayarlayın. Bizimki yerine kendi markanızı gösterin."
       ],
+      "Most issues can be solved in a few minutes with our step-by-step guides.": [
+        "Adım adım rehberlerimiz ile çoğu sorun birkaç dakika içinde çözülebilir."
+      ],
       "No ads. No trackers.": [
         "Reklam yok. İzleyici yok."
       ],
@@ -4984,6 +5040,9 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Paylaşılan takvimler ile zamanlamayı eşitlemeyi ve planlamayı kolaylaştırın."
+      ],
+      "Still need help? Our support team is here for you.": [
+        "Hâlâ yardım gerekiyor mu? Destek ekibimiz size yardımcı olmaya hazır."
       ],
       "This may happen if permissions were removed or your password changed.": [
         "Bu durum izinler kaldırılmışsa veya parolanız değiştirilmişse ortaya çıkabilir."
@@ -5048,6 +5107,12 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Etkinlikleri iCal biçiminde içe aktarabilirsiniz (ICS dosyası).\nDosya en fazla ${ MAX_IMPORT_FILE_SIZE_STRING } boyutunda olmalı ve en fazla ${ MAX_IMPORT_EVENTS_STRING } etkinlik kaydı içermelidir.\nDosyanız daha büyükse, daha küçük dosyalara bölün."
+      ],
+      "You can manage multiple ${ BRAND_NAME } addresses from a single account, without switching. Aliases and address management tools help keep everything in one inbox.": [
+        "Oturumları kapatıp açmak gerekmeden, tek bir hesap üzerinde birden fazla ${ BRAND_NAME } adresini yönetebilirsiniz. Takma adlar ve adres yönetimi araçları her şeyin tek bir gelen kutusunda düzenli kalmasını sağlar."
+      ],
+      "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
+        "Destek rehberimizi kullanarak adresleri tek bir ana ${ BRAND_NAME } hesabında birleştirebilirsiniz."
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Artık bu adresi kullanarak ${ BRAND_NAME } üzerinden e-posta gönderebilirsiniz."
@@ -6703,7 +6768,7 @@
         "OAuth penceresi yüklenemedi."
       ],
       "Failed to load subscription data. Please try again later.": [
-        "Abonelik verileri yüklenemedi. Lütfen daha sonra tekrar deneyin."
+        "Abonelik verileri yüklenemedi. Lütfen bir süre sonra yeniden deneyin."
       ],
       "Failed to load the STL preview": [
         "STL ön izlemesi yüklenemedi"
@@ -6940,9 +7005,6 @@
       "Please fix the highlighted conflict to proceed.": [
         "İlerlemek için lütfen vurgulanan çakışmayı düzeltin.",
         "İlerlemek için lütfen vurgulanan çakışmaları düzeltin."
-      ],
-      "Please generate keys before you try to change your password": [
-        "Lütfen parolanızı değiştirmeyi denemeden önce anahtarlar oluşturun"
       ],
       "Please select a country": [
         "Lütfen bir ülke seçin"
@@ -8340,6 +8402,17 @@
         "Bilgisayar uygulamasını ücretsiz deneme süreniz sona erdi"
       ]
     },
+    "Get help": {
+      "Continue cancelling": [
+        "İptal etmeyi sürdür"
+      ],
+      "Keep current plan": [
+        "Geçerli tarifede kal"
+      ],
+      "Many issues can be resolved quickly with our help guides. If you need more support, our team is here to help.": [
+        "Yardım rehberlerimiz ile birçok sorunu hızlı bir şekilde çözebilirsiniz. Daha fazla destek gerekirse ekibimiz size seve seve yardımcı olur."
+      ]
+    },
     "Get started checklist instructions": {
       "${ appName } on App Store": [
         "App Store üzerinde ${ appName }"
@@ -9131,7 +9204,7 @@
         "%${ discountPercent } indirim"
       ],
       "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME } artık dosyalarınızın önceki sürümlerini tutmayacak."
+        "${ DRIVE_APP_NAME } artık dosyalarınızın önceki sürümlerini saklamayacak."
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } geçersiz"
@@ -9389,7 +9462,7 @@
         "Tüm aygıtlarınızda **kodları eşitleyin**"
       ],
       "**This will disable 2-factor authentication.**": [
-        "**Bu işlem iki aşamalı kimlik doğrulamayı devre dışı bırakacak.**"
+        "**Bu işlem iki adımlı doğrulamayı kapatacak.**"
       ],
       "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
         "**Bu işlem uçtan uca şifrelenmiş e-posta yönlendirmelerini kullanımdan kaldırır:** Bunları daha sonra yeniden ayarlayabilirsiniz."
@@ -9764,7 +9837,7 @@
         "Yeni bir doğrulama kodu istemeden önce İstenmeyen kutunuza bakın ve ${ strong } adresinin doğru olduğundan emin olun."
       ],
       "Before sending a new verification code, check your spam folder for ${ EmailOrPhoneNumber }.": [
-        "Yeni bir doğrulama kodu göndermeden önce ${ EmailOrPhoneNumber } için istenmeyen klasörünüzü kontrol edin."
+        "Yeni bir doğrulama kodu göndermeden önce ${ EmailOrPhoneNumber } için istenmeyen klasörünüze bakın."
       ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
         "${ MAIL_APP_NAME } adresindeki özel etki alan adreslerinizle e-posta alabilmeniz için, aşağıdaki iki MX kaydını DNS panonuza (özel etki alanınızı kiraladığınız yerde bulunur) eklemeniz gerekir. Bir örneği ve bazı yararlı ipuçlarını şurada bulabilirsiniz: ${ kbLink }."
@@ -9830,7 +9903,7 @@
         "İçe aktarma ve iletme durumunu denetleyin."
       ],
       "Check your network and try again.": [
-        "Ağınızı kontrol edin ve tekrar deneyin."
+        "Ağınızı denetleyip ve yeniden deneyin."
       ],
       "Choose a plan that works best for you.": [
         "Size en uygun tarifeyi seçin."
@@ -9845,7 +9918,7 @@
         "Yeni bir doğrulama kodunun ${ strong } numarasına gönderilmesi için \"Yeni kod iste\" üzerine tıklayın. Bu telefon numarası yanlışsa düzeltmek için \"Düzenle\" üzerine tıklayın."
       ],
       "Click 'Trouble signing in?' on your TV to follow the alternative steps.": [
-        "Alternatif adımları izlemek için TV'nizdeki 'Oturum açamıyor musunuz?' seçeneğine tıklayın."
+        "Alternatif adımları izlemek için TV üzerinde 'Oturum açamıyor musunuz?' seçeneğine tıklayın."
       ],
       "Click **Request password reset** and follow the prompts.": [
         "**Parola sıfırlama isteği** üzerine tıklayın ve yönergeleri izleyin."
@@ -10303,7 +10376,7 @@
         "Parolanızı değiştirmek için kurtarma ifadenizi yazın."
       ],
       "Enter your recovery phrase to verify your identity and disable two-factor authentication.": [
-        "Kimliğinizi doğrulamak ve iki adımlı doğrulamayı devre dışı bırakmak için kurtarma ifadenizi girin."
+        "Kimliğinizi doğrulamak ve iki adımlı doğrulamayı kapatmak için kurtarma ifadenizi yazın."
       ],
       "Event invitations and responses will be sent in this language.": [
         "Etkinlik davetleri ve yanıtları bu dilde gönderilir."
@@ -10369,7 +10442,7 @@
         "${ price } karşılığında"
       ],
       "For a 10-year version history, please contact our sales team.": [
-        "10 yıllık sürüm geçmişine erişebilmek için lütfen satış ekibimizle görüşün."
+        "10 yıllık sürüm geçmişi hakkında bilgi almak için lütfen satış ekibimizle iletişime geçin."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "E-postanıza istediğiniz zaman erişebilmek ve iyi bir mobil deneyim için ${ androidAppLink } ya da ${ iosAppLink } uygulamamızı indirin."
@@ -10674,7 +10747,7 @@
         "İnternet bağlantısı yeniden kuruldu."
       ],
       "Invalid code. ${ RequestNewCodeLink } and try again.": [
-        "Geçersiz kod. ${ RequestNewCodeLink } ve tekrar deneyin."
+        "Kod geçersiz. ${ RequestNewCodeLink } ve yeniden deneyin."
       ],
       "Invitation link expired": [
         "Davet bağlantısının geçerlilik süresi dolmuş"
@@ -11741,7 +11814,7 @@
         "Oturum açtıklarında kullanıcılarınıza görüntülenecek ad."
       ],
       "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
-        "Referans kredisi arkadaşınızın deneme süresi bittikten sonraki 2 aya kadar, arkadaşınız yalnızca bir tarifeye abone olduğu takdirde verilebilir."
+        "Referans kredisi, yalnızca arkadaşınız deneme süresi bittikten sonraki 2 ay içinde bir tarifeye abone olursa verilebilir."
       ],
       "The securest way to browse, stream, and be online.": [
         "İnternet üzerinde gezinmenin, yayın akışlarını izlemenin ve çevrim içi olmanın en güvenli yolu."
@@ -11837,10 +11910,10 @@
         "Doğrulama işleminin tamamlanması bir saat kadar sürebilir. Doğrulama tamamlandıktan sonra da bu etki alanının sahibi olduğunuzu doğrulamayı sürdürmemiz gerektiğinden bu TXT kaydını kaldırmayın."
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "Bu işlem dosyalarınızın ${ rententionLabel } öncesindeki tüm sürümlerini silecek."
+        "Bu işlem dosyalarınızın ${ rententionLabel } tarihinden eski olan önceki tüm sürümleri silecek."
       ],
       "This will delete all previous versions of your files.": [
-        "Bu işlem dosyalarınızın tüm önceki sürümlerini silecek."
+        "Bu işlem dosyalarınızın önceki tüm sürümleri silecek."
       ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Bu işlem, **${ email }** hesabına erişme izni vermeyecek. İlerlemek istediğinize emin misiniz?"
@@ -11957,7 +12030,7 @@
         "İlerlemek için isteğinizi doğrulamalıyız."
       ],
       "To regain access to your account and data, enter the 12-word recovery phrase associated with your account.": [
-        "Hesabınıza ve verilerinize yeniden erişmek için hesabınızla ilişkili 12 kelimelik kurtarma ifadesini girin."
+        "Hesabınıza ve verilerinize yeniden erişmek için hesabınızın 12 sözcükten oluşan kurtarma ifadesini yazın."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "İnternet bağlantınızı güvenli kılmak için aygıtınıza ${ VPN_APP_NAME } uygulamasını indirip kurun ve bir sunucuya bağlanın."
@@ -12056,7 +12129,7 @@
         "${ planTitle } avantajlarınızı korumak için tarifenizi yükseltin."
       ],
       "Upgrade to unlock": [
-        "Kullanmak için tarifenizi yükseltin"
+        "Kilidi açmak için yükseltin"
       ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "${ monitorLink } özelliğine erişmek için tarifenizi yükseltin."
@@ -13849,7 +13922,7 @@
         "Bir daha sorma"
       ],
       "Don't keep versions": [
-        "Sürüm geçmişi tutulmasın"
+        "Sürümleri tutma"
       ],
       "Don't show this again": [
         "Bu bir daha görüntülenmesin"
@@ -14956,6 +15029,9 @@
       "${ BRAND_NAME } Foundation's": [
         "${ BRAND_NAME } Vakfı tarafından"
       ],
+      "Account recovery explained": [
+        "Hesap kurtarma ile ilgili bilgiler"
+      ],
       "Activity log": [
         "Etkinlik günlüğü"
       ],
@@ -14983,11 +15059,11 @@
       "clearing your browser cache": [
         "tarayıcınızın ön belleğini temizlemek"
       ],
-      "Common sign in issues": [
-        "Sık karşılaşılan oturum açma sorunları"
-      ],
       "Common sign up issues": [
         "Sık karşılaşılan hesap açma sorunları"
+      ],
+      "Contact support": [
+        "Destek ekibimizle görüşün"
       ],
       "contacts’ assistance": [
         "kişisinin yardımı"
@@ -15106,11 +15182,17 @@
       "Import/export": [
         "İçe/dışa aktarma"
       ],
+      "Learn how": [
+        "Nasıl yapıldığını öğrenin"
+      ],
       "Learn more": [
         "Ayrıntılı bilgi alın"
       ],
       "Learn more about data recovery": [
         "Veri kurtarma ile ilgili ayrıntılı bilgi alın"
+      ],
+      "Manage addresses": [
+        "Adres yönetimi"
       ],
       "Not activated": [
         "Kullanıma alınmamış"
@@ -15177,6 +15259,9 @@
       ],
       "visit our blog": [
         "günlüğümüzü ziyaret edin"
+      ],
+      "Visit our support site": [
+        "Destek sitemizi ziyaret edin"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "UDP ve TCP iletişim kuralları arasındaki fark nedir?"
@@ -15744,25 +15829,25 @@
     },
     "Missing feature": {
       "Check out the latest product updates": [
-        "En son ürün güncellemelerine göz atın"
+        "Son ürün güncellemelerine göz atın"
       ],
       "Continue cancelling": [
-        "İptal etmeye devam et"
+        "İptal etmeyi sürdür"
       ],
       "Explore the latest news": [
-        "En son haberleri keşfedin"
+        "Son haberleri öğrenin"
       ],
       "Keep current plan": [
-        "Mevcut tarifeyi koru"
+        "Geçerli tarifede kal"
       ],
       "Make your voice heard": [
         "Sesinizi duyurun"
       ],
       "Request a feature": [
-        "Özellik talep et"
+        "Özellik isteyin"
       ],
       "Request a feature or vote on ideas from other users in our feedback forum.": [
-        "Geri bildirim forumumuzda bir özellik talebinde bulunabilir veya diğer kullanıcıların fikirlerine oy verebilirsiniz."
+        "Geri bildirim formu ile özellik isteğinde bulunabilir veya diğer kullanıcı fikirlerine oy verebilirsiniz."
       ],
       "See how ${ BRAND_NAME } apps are evolving with your feedback.": [
         "Geri bildirimlerinizle ${ BRAND_NAME } uygulamalarının nasıl geliştiğini görün."
@@ -15771,7 +15856,7 @@
         "Fikirlerinizi gönderin"
       ],
       "Your feedback helps us improve. Whether you've spotted a bug, want a new feature, or think something could work differently, we'd love to hear from you.": [
-        "Geri bildirimleriniz kendimizi geliştirmemize yardımcı oluyor. İster bir hata fark etmiş olun, ister yeni bir özellik isteyin ya da bir şeylerin daha farklı işleyebileceğini düşünün görüşlerinizi duymayı çok isteriz."
+        "Geri bildirimleriniz kendimizi geliştirmemize yardımcı oluyor. Bir hata fark etmiş, yeni bir özellik istiyor ya da bir şeylerin daha farklı olabileceğini düşünüyor olabilirsiniz. Görüşlerinizi duymayı çok isteriz."
       ]
     },
     "Modal title": {
@@ -16314,8 +16399,8 @@
       "Dedicated servers and IP": [
         "Size ayrılmış sunucular ve IP adresleri"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Yayın akışı izlemek için ayarlanmış özel sunucular"
+      "Dedicated servers optimized for speed": [
+        "Hız için ayarlanmış özel sunucular"
       ],
       "Desktop app": [
         "Bilgisayar uygulaması"
@@ -17989,9 +18074,6 @@
       "Buy now": [
         "Satın al"
       ],
-      "Contact us": [
-        "Bizimle görüşün"
-      ],
       "Continue": [
         "İlerle"
       ],
@@ -18018,9 +18100,6 @@
       ],
       "Or ${ createANewAccount }": [
         "Ya da ${ createANewAccount }un"
-      ],
-      "Request trial": [
-        "Deneme isteğinde bulun"
       ],
       "Start using ${ appName }": [
         "${ appName } ile başla"
@@ -18263,9 +18342,6 @@
       ],
       "Start using ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } ile başla"
-      ],
-      "Tailored made solutions for larger organizations with custom needs.": [
-        "Özel gereksinimleri olan daha büyük kuruluşlar için isteğe göre hazırlanmış çözümler."
       ],
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "Seçtiğiniz teklif, ${ currentPlanTitle } abonelerine sunulmuyor."
@@ -20393,9 +20469,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Eski adres anahtarları ile hesap kurtarma işlemi yapılamaz"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Lütfen parolanızı değiştirmeyi denemeden önce anahtarlar oluşturun"
       ]
     },
     "session_recovery:available:info": {
@@ -20689,7 +20762,7 @@
     },
     "Setting": {
       "Enable Photos section": [
-        "Fotoğraflar bölümünü aç"
+        "Fotoğraflar bölümünü etkinleştir"
       ],
       "Get updates about comments via email": [
         "Yorum güncellemeleri e-posta ile bildirilsin"
@@ -23238,6 +23311,9 @@
       "Allocate storage": [
         "Depolama alanını dağıt"
       ],
+      "Already have multiple accounts?": [
+        "Zaten birden fazla hesabınız mı var?"
+      ],
       "Also in your plan": [
         "Ayrıca tarifenizde şunlar bulunur"
       ],
@@ -23386,7 +23462,7 @@
         "Kapat"
       ],
       "Code expired": [
-        "Kodun süresi doldu"
+        "Kodun süresi dolmuş"
       ],
       "Collaborate on documents": [
         "Belgeler üzerinde işbirliği yapın"
@@ -23475,6 +23551,9 @@
       ],
       "Create multiple user accounts": [
         "Birkaç kullanıcı hesabı ekle"
+      ],
+      "Create new addresses easily": [
+        "Yeni adresleri kolayca oluşturun"
       ],
       "Create new policy": [
         "Yeni ilke oluştur"
@@ -23897,6 +23976,12 @@
       ],
       "Get complete privacy coverage": [
         "Tam bir gizlilik paketi alın"
+      ],
+      "Get direct support": [
+        "Doğrudan destek alın"
+      ],
+      "Get help with an issue": [
+        "Bir sorunla ilgili yardım alın"
       ],
       "Get more from your cloud storage": [
         "Bulut depolama alanınızdan daha fazla yararlanın"
@@ -24581,6 +24666,9 @@
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Bu hesap tablosunu ön izlemek için ${ SHEETS_APP_NAME } uygulaması ile açın ya da indirin."
       ],
+      "Troubleshoot your issue": [
+        "Sorununuzu giderin"
+      ],
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "${ AUTHENTICATOR_APP_NAME } uygulamasını deneyin"
       ],
@@ -24646,6 +24734,9 @@
       ],
       "Use backup recovery code": [
         "Yedek kurtarma kodunu kullan"
+      ],
+      "Use one account for all your addresses": [
+        "Tüm adresleriniz için tek bir hesap kullanın"
       ],
       "User": [
         "Kullanıcı"
