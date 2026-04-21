@@ -188,6 +188,14 @@ const config: Configuration = {
     module: {
         strictExportPresence: true,
         rules: [
+            {
+                /** @protontech ML packages ship unbundled but are declared as ESM modules
+                 * in their package.json. Set `fullySpecified: false` so webpack allows
+                 * extensionless imports without throwing ESM resolution errors. */
+                test: /\.m?js$/,
+                include: /node_modules\/@protontech\/(autofill|ml-inference|fathom)/,
+                resolve: { fullySpecified: false },
+            },
             sideEffectsRule,
             zipJSRule,
             layeredJSLoaders,
