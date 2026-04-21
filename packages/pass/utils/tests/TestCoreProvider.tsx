@@ -33,6 +33,7 @@ export const TestCoreProvider: FC<PropsWithChildren> = ({ children }) => {
             onLink={noop}
             onTelemetry={noop}
             onB2BEvent={async () => false}
+            openSettings={noop}
             writeToClipboard={async () => false}
         >
             {children}
