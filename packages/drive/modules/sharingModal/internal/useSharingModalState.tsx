@@ -24,7 +24,6 @@ import { isProtonDocsDocument } from '@proton/shared/lib/helpers/mimetype';
 
 import { BusDriverEventName, getBusDriver } from '../../../internal/BusDriver';
 import { useFlagsDriveDocsPublicSharing } from '../../../internal/flags/useFlagsDriveDocsPublicSharing';
-import { useFlagsDriveSharingAdminPermissions } from '../../../internal/flags/useFlagsDriveSharingAdminPermissions';
 import { handleDriveError } from '../../../internal/handleDriveError';
 import { getNodeAncestry } from '../../../internal/sdkUtils/getNodeAncestry';
 import { getNodeEffectiveRole } from '../../../internal/sdkUtils/getNodeEffectiveRole';
@@ -71,8 +70,6 @@ export const useSharingModalState = ({
 }: UseSharingModalProps): SharingModalViewProps => {
     const [contactEmails] = useContactEmails();
 
-    const adminRoleEnabled = useFlagsDriveSharingAdminPermissions();
-
     const { createNotification } = useNotifications();
 
     const [user] = useUser();
@@ -91,12 +88,10 @@ export const useSharingModalState = ({
     const mediaType = getMediaType(nodeInfo);
     const isAlbum = nodeInfo?.type === NodeType.Album;
     const isPhoto = nodeInfo?.type === NodeType.Photo;
-    const notPhotoOrAlbum = !(isPhoto || isAlbum);
     const [isResharing, setIsResharing] = useState(false);
     const isPublicLinkEnabled = usePublicLinkEnabled({ isResharing, mediaType, isAlbum });
 
     const [roleOnParentNode, setRoleOnParentNode] = useState<MemberRole>();
-    const canChangePermissions = roleOnParentNode === MemberRole.Admin;
 
     const updateSharingState = async (updatedShareResult: ShareResult | undefined) => {
         const shareResult = updatedShareResult || defaultSharingInfo;
@@ -376,7 +371,7 @@ export const useSharingModalState = ({
         roleOnParentNode,
         fileName,
         mediaType,
-        showPermissionsCheckbox: adminRoleEnabled && canChangePermissions && notPhotoOrAlbum,
+        isPhotoOrAlbum: isPhoto || isAlbum,
         ownerDisplayName,
         ownerEmail,
         isLoading,
