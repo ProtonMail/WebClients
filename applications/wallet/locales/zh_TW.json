@@ -3384,6 +3384,9 @@
       "All basic ${ BRAND_NAME } services (${ MAIL_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME })": [
         "全部基於${ BRAND_NAME }的服務(${ MAIL_SHORT_APP_NAME },${ VPN_SHORT_APP_NAME },${ PASS_SHORT_APP_NAME })"
       ],
+      "Appointment scheduling": [
+        "預定排定中"
+      ],
       "Auto-delete Spam and Trash": [
         "自動清理垃圾郵件及垃圾桶"
       ],
@@ -3437,9 +3440,6 @@
       ],
       "Data retention policies": [
         "資料保留政策"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "針對影音串流優化的獨立伺服器"
       ],
       "Desktop app": [
         "桌面應用程式"
@@ -5006,6 +5006,9 @@
       ],
       "Request new code": [
         "重新傳送驗證碼"
+      ],
+      "Reverse charge not supported": [
+        "不支援倒退修改"
       ],
       "Select a plan": [
         "請選擇一個方案"
