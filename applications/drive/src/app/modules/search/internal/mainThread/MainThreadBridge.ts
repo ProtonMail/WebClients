@@ -1,7 +1,10 @@
 import type { DriveEvent, MaybeNode, NodeType } from '@protontech/drive-sdk';
 
+import type { DecryptedKey } from '@proton/shared/lib/interfaces';
+
 import { Logger } from '../shared/Logger';
 import type { TreeEventScopeId } from '../shared/types';
+import { CryptoProxyBridge } from './CryptoProxyBridge';
 
 export type FetchLastEventIdForTreeScopeId = (
     treeEventScopeId: string,
@@ -43,6 +46,7 @@ export interface DriveSdkBridgeInterface {
 export class MainThreadBridge {
     public readonly driveSdk: DriveSdkBridgeInterface;
     public readonly driveSdkForSearch: DriveSdkForSearchBridge;
+    public readonly cryptoProxyBridge: CryptoProxyBridge;
     private readonly fetchLastEventIdFn: FetchLastEventIdForTreeScopeId;
     private readonly latestEventIdProvider: EventIdStorage;
 
@@ -50,10 +54,12 @@ export class MainThreadBridge {
         driveClient: SdkDriveClient,
         driveClientForSearchEvents: SearchDriveClient,
         latestEventIdProvider: EventIdStorage,
-        fetchLastEventIdForTreeScopeId: FetchLastEventIdForTreeScopeId
+        fetchLastEventIdForTreeScopeId: FetchLastEventIdForTreeScopeId,
+        getUserKeys: () => Promise<DecryptedKey[]>
     ) {
         this.driveSdk = new DriveSdkBridge(driveClient);
         this.driveSdkForSearch = new DriveSdkForSearchBridge(driveClientForSearchEvents);
+        this.cryptoProxyBridge = new CryptoProxyBridge(getUserKeys);
         this.latestEventIdProvider = latestEventIdProvider;
         this.fetchLastEventIdFn = fetchLastEventIdForTreeScopeId;
 
