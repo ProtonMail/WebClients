@@ -1352,22 +1352,22 @@
         "Votre code PIN a été retiré par un autre client de ${ PASS_APP_NAME }."
       ],
       "Biometric authentication failed.": [
-        "L'authentification biométrique a échoué."
+        "L'authentification biométrique n'a pas abouti."
       ],
       "Desktop lock is not configured.": [
         "Le verrouillage du bureau n'est pas configuré."
       ],
       "Desktop lock secret does not match.": [
-        "Le secret de verrouillage du bureau ne correspond pas."
+        "Le mot de passe de verrouillage du bureau ne correspond pas."
       ],
       "Desktop lock secret not found.": [
-        "Secret de verrouillage du bureau introuvable."
+        "Le mot de passe de verrouillage du bureau est introuvable."
       ],
       "Desktop lock setup failed.": [
-        "La configuration du verrouillage du bureau a échoué."
+        "La configuration du verrouillage du bureau n'a pas abouti."
       ],
       "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
-        "La communication cryptée avec l'application de bureau ${ PASS_APP_NAME } a échoué."
+        "La communication chiffrée avec l'application de bureau ${ PASS_APP_NAME } n'a pas abouti."
       ],
       "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
         "L'application de bureau ${ PASS_APP_NAME } n'a pas répondu à temps."

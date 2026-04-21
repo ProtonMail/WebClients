@@ -1353,6 +1353,30 @@
       ],
       "Unknown error.": [
         "Error desconocido."
+      ],
+      "Biometric authentication failed.": [
+        "Error en la autenticación biométrica."
+      ],
+      "Desktop lock is not configured.": [
+        "El bloqueo de escritorio no está configurado."
+      ],
+      "Desktop lock secret does not match.": [
+        "El secreto de bloqueo de escritorio no coincide."
+      ],
+      "Desktop lock secret not found.": [
+        "Secreto de bloqueo de escritorio no encontrado."
+      ],
+      "Desktop lock setup failed.": [
+        "Error en la configuración de bloqueo de escritorio."
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Error en la comunicación cifrada con la aplicación de escritorio de ${ PASS_APP_NAME }."
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "La aplicación de escritorio ${ PASS_APP_NAME } no respondió a tiempo."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "Se ha iniciado sesión en a aplicación de escritorio de ${ PASS_APP_NAME } con una cuenta diferente."
       ]
     },
     "Error message": {
