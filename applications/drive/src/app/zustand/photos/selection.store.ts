@@ -43,6 +43,8 @@ interface PhotoSelectionState {
     isGroupSelected: (data: any[], groupIndex: number) => boolean | 'some';
     isItemSelected: (nodeUid: string) => boolean;
 
+    // data is typed as any[] because it can be either legacy PhotoGridItem[] or new PhotoItem[],
+    // callers must explicitly provide the type parameter T to get the correct return type.
     getSelectedItems: <T extends { nodeUid: string }>(data: any[], map: Record<string, number>) => T[];
 }
 

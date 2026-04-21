@@ -56,7 +56,12 @@ function useDriveNavigation() {
 
     // TODO: Convert to volume-based navigation instead of deprecated shareId.
     const navigateToNodeUid = useCallback(
-        async (nodeUid: string, drive: DriveClient, rPath?: string) => {
+        async (
+            nodeUid: string,
+            drive: DriveClient,
+            rPath?: string,
+            options?: { openShare?: boolean; addPhotos?: boolean }
+        ) => {
             const { nodeId: targetNodeLinkId } = splitNodeUid(nodeUid);
             // The shareId is on the top root node; we need to climb from the current node to get it.
             const ancestry = await getNodeAncestry(nodeUid, drive);
@@ -75,7 +80,7 @@ function useDriveNavigation() {
             const nodeType = getNodeEntity(destinationNode).node.type;
 
             if (nodeType === NodeType.Album) {
-                return navigateToAlbum(rootNodeSharedId, targetNodeLinkId);
+                return navigateToAlbum(rootNodeSharedId, targetNodeLinkId, options);
             }
 
             const isFile = nodeType === NodeType.File || nodeType === NodeType.Photo;

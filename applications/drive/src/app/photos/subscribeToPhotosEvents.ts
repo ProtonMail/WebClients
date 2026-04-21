@@ -1,8 +1,9 @@
 import { getDriveForPhotos } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 
+import { handleSdkError } from '../utils/errorHandling/handleSdkError';
 import { getNodeEntity } from '../utils/sdk/getNodeEntity';
-import { loadAlbum, refreshAlbumMetadata } from './loaders/loadAlbum';
+import { refreshAlbumMetadata } from './loaders/loadAlbum';
 import { useAlbumsStore } from './useAlbums.store';
 import { usePhotosStore } from './usePhotos.store';
 import { createPhotoItemsFromNode } from './utils/createPhotoItemsFromNode';
@@ -27,7 +28,7 @@ export const subscribeToPhotosEvents = () => {
             const isNewAlbumPhoto =
                 currentAlbumNodeUid &&
                 item.parentUid === currentAlbumNodeUid &&
-                !albumStore.currentAlbum?.photoNodeUids.has(item.uid);
+                !albumStore.currentAlbum?.photoNodeUids?.has(item.uid);
 
             if (isNewTimelinePhoto) {
                 timelineNodeUids.push(item.uid);
@@ -69,7 +70,7 @@ export const subscribeToPhotosEvents = () => {
         const timelineUids: string[] = [];
         const albumOnlyUids: string[] = [];
         for (const item of event.items) {
-            const inAlbum = albumStore.currentAlbum?.photoNodeUids.has(item.uid) ?? false;
+            const inAlbum = albumStore.currentAlbum?.photoNodeUids?.has(item.uid) ?? false;
             const isAlbumNode = albumStore.currentAlbum?.nodeUid == item.uid;
             // TODO: Update that as we probably can do it differently instead of loading the root
             const getIsInTimeline = async () =>
@@ -85,8 +86,7 @@ export const subscribeToPhotosEvents = () => {
             if (inAlbum) {
                 albumOnlyUids.push(item.uid);
             } else if (isAlbumNode) {
-                // TODO: We need to update the SDK to not have to re-iterate all photos on album update
-                void loadAlbum(item.uid);
+                void refreshAlbumMetadata(item.uid);
             } else {
                 timelineUids.push(item.uid);
             }
@@ -119,11 +119,19 @@ export const subscribeToPhotosEvents = () => {
     const deletedSubscription = getBusDriver().subscribe(BusDriverEventName.DELETED_NODES, handleRemovedNodes);
     const trashedSubscription = getBusDriver().subscribe(BusDriverEventName.TRASHED_NODES, handleRemovedNodes);
 
+    const acceptedInvitationsSubscription = getBusDriver().subscribe(
+        BusDriverEventName.ACCEPT_INVITATIONS,
+        async (event) => {
+            await Promise.all(event.uids.map((uid) => refreshAlbumMetadata(uid).catch((e) => handleSdkError(e))));
+        }
+    );
+
     return () => {
         createdSubscription();
         restoredSubscription();
         updatedSubscription();
         deletedSubscription();
         trashedSubscription();
+        acceptedInvitationsSubscription();
     };
 };

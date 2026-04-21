@@ -1,23 +1,28 @@
 import { c } from 'ttag';
+import { useShallow } from 'zustand/react/shallow';
 
 import { useTheme } from '@proton/components';
+import { MemberRole } from '@proton/drive';
 import folderImagesDark from '@proton/styles/assets/img/drive/empty-image-album-dark.webp';
 import folderImages from '@proton/styles/assets/img/drive/empty-image-album.webp';
-import { useFlag } from '@proton/unleash/useFlag';
 
-import type { DecryptedAlbum } from '../../PhotosStore/PhotosWithAlbumsProvider';
+import { useAlbumsStore } from '../../useAlbums.store';
 import { PhotosAddAlbumPhotosButton } from '../toolbar/PhotosAddAlbumPhotosButton';
 
 interface AlbumEmptyViewProps {
-    album: DecryptedAlbum;
+    nodeUid: string;
     onAddAlbumPhotos: () => void;
 }
 
-export const AlbumEmptyView = ({ album, onAddAlbumPhotos }: AlbumEmptyViewProps) => {
-    const driveAlbumsDisabled = useFlag('DriveAlbumsDisabled');
+export const AlbumEmptyView = ({ nodeUid, onAddAlbumPhotos }: AlbumEmptyViewProps) => {
     const theme = useTheme();
 
-    const showAddToAlbumButton = album.permissions.isOwner || album.permissions.isAdmin || album.permissions.isEditor;
+    const album = useAlbumsStore(useShallow((state) => state.albums.get(nodeUid)));
+
+    if (!album) {
+        return;
+    }
+    const showAddToAlbumButton = album.directRole !== MemberRole.Viewer;
     return (
         <div
             className="m-auto flex flex-column flex-nowrap *:min-size-auto shrink-0 max-w-custom text-center"
@@ -38,13 +43,7 @@ export const AlbumEmptyView = ({ album, onAddAlbumPhotos }: AlbumEmptyViewProps)
             <p className="color-weak my-0">{c('Action').t`This album is empty`}</p>
 
             <p className="mx-auto">
-                {!driveAlbumsDisabled && (
-                    <>
-                        {showAddToAlbumButton && (
-                            <PhotosAddAlbumPhotosButton buttonSize="medium" onClick={onAddAlbumPhotos} />
-                        )}
-                    </>
-                )}
+                {showAddToAlbumButton && <PhotosAddAlbumPhotosButton buttonSize="medium" onClick={onAddAlbumPhotos} />}
             </p>
         </div>
     );

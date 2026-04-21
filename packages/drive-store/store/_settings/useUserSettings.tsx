@@ -41,8 +41,6 @@ export function UserSettingsProvider({
     const { isB2B } = useDrivePlan();
     const api = useApi();
     const driveB2BPhotosUpload = useFlag('DriveB2BPhotosUpload');
-    const driveAlbumsDisabled = useFlag('DriveAlbumsDisabled');
-    const driveAlbumsEnabled = !driveAlbumsDisabled;
 
     const [userSettings, setUserSettings] = useState<UserSettings>(() => {
         const { UserSettings, Defaults } = initialDriveUserSettings;
@@ -99,7 +97,7 @@ export function UserSettingsProvider({
     }, []);
 
     const isPhotosEnabled = !isB2B || !driveB2BPhotosUpload || (driveB2BPhotosUpload && userSettings.B2BPhotosEnabled);
-    const isPhotosWithAlbumsEnabled = isPhotosEnabled && driveAlbumsEnabled;
+    const isPhotosWithAlbumsEnabled = isPhotosEnabled;
 
     const value = {
         sort,
