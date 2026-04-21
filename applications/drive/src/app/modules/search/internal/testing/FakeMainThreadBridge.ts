@@ -39,8 +39,14 @@ export class FakeMainThreadBridge {
             async (treeEventScopeId: string) => {
                 this.fetchedEventIdScopes.push(treeEventScopeId);
                 return this.fetchLastEventIdResult;
-            }
+            },
+            async () => []
         );
+
+        // Stub OpenPGP methods with a passthrough (no real CryptoProxy in tests).
+        this.bridge.cryptoProxyBridge.openpgpEncryptIndexKey = async (plaintext: string) => `fake-openpgp:${plaintext}`;
+        this.bridge.cryptoProxyBridge.openpgpDecryptIndexKey = async (armored: string) =>
+            armored.replace('fake-openpgp:', '');
     }
 
     /** Set the root node returned by getMyFilesRootFolder. */

@@ -4,6 +4,8 @@ import 'fake-indexeddb/auto';
 import { SearchDB } from './SearchDB';
 import type { TreeEventScopeId } from './types';
 
+const identity = async <T>(d: T) => d;
+
 describe('SearchDB', () => {
     let db: SearchDB;
 
@@ -21,54 +23,84 @@ describe('SearchDB', () => {
 
     describe('indexBlobs', () => {
         it('returns undefined for missing blob', async () => {
-            expect(await db.getIndexBlob(['main', 'missing'])).toBeUndefined();
+            expect(await db.getDecryptedIndexBlob(['main', 'missing'], identity)).toBeUndefined();
         });
 
         it('stores and retrieves a blob', async () => {
             const data = new ArrayBuffer(8);
-            await db.putIndexBlob(['main', 'blob-1'], data);
-            const result = await db.getIndexBlob(['main', 'blob-1']);
+            await db.putEncryptedIndexBlob(['main', 'blob-1'], data, identity);
+            const result = await db.getDecryptedIndexBlob(['main', 'blob-1'], identity);
             expect(result).toEqual(data);
         });
 
         it('isolates by indexKind', async () => {
             const data1 = new ArrayBuffer(4);
             const data2 = new ArrayBuffer(8);
-            await db.putIndexBlob(['main', 'blob-1'], data1);
-            await db.putIndexBlob(['photos', 'blob-1'], data2);
+            await db.putEncryptedIndexBlob(['main', 'blob-1'], data1, identity);
+            await db.putEncryptedIndexBlob(['photos', 'blob-1'], data2, identity);
 
-            expect(await db.getIndexBlob(['main', 'blob-1'])).toEqual(data1);
-            expect(await db.getIndexBlob(['photos', 'blob-1'])).toEqual(data2);
+            expect(await db.getDecryptedIndexBlob(['main', 'blob-1'], identity)).toEqual(data1);
+            expect(await db.getDecryptedIndexBlob(['photos', 'blob-1'], identity)).toEqual(data2);
         });
 
         it('isolates by blobName', async () => {
             const data1 = new ArrayBuffer(4);
             const data2 = new ArrayBuffer(8);
-            await db.putIndexBlob(['main', 'blob-a'], data1);
-            await db.putIndexBlob(['main', 'blob-b'], data2);
+            await db.putEncryptedIndexBlob(['main', 'blob-a'], data1, identity);
+            await db.putEncryptedIndexBlob(['main', 'blob-b'], data2, identity);
 
-            expect(await db.getIndexBlob(['main', 'blob-a'])).toEqual(data1);
-            expect(await db.getIndexBlob(['main', 'blob-b'])).toEqual(data2);
+            expect(await db.getDecryptedIndexBlob(['main', 'blob-a'], identity)).toEqual(data1);
+            expect(await db.getDecryptedIndexBlob(['main', 'blob-b'], identity)).toEqual(data2);
         });
 
         it('overwrites existing blob', async () => {
-            await db.putIndexBlob(['main', 'blob-1'], new ArrayBuffer(4));
+            await db.putEncryptedIndexBlob(['main', 'blob-1'], new ArrayBuffer(4), identity);
             const updated = new ArrayBuffer(16);
-            await db.putIndexBlob(['main', 'blob-1'], updated);
+            await db.putEncryptedIndexBlob(['main', 'blob-1'], updated, identity);
 
-            expect(await db.getIndexBlob(['main', 'blob-1'])).toEqual(updated);
+            expect(await db.getDecryptedIndexBlob(['main', 'blob-1'], identity)).toEqual(updated);
         });
 
         it('deletes a blob', async () => {
-            await db.putIndexBlob(['main', 'blob-1'], new ArrayBuffer(4));
+            await db.putEncryptedIndexBlob(['main', 'blob-1'], new ArrayBuffer(4), identity);
             await db.deleteIndexBlob(['main', 'blob-1']);
-            expect(await db.getIndexBlob(['main', 'blob-1'])).toBeUndefined();
+            expect(await db.getDecryptedIndexBlob(['main', 'blob-1'], identity)).toBeUndefined();
+        });
+
+        // Verify that putEncryptedIndexBlob actually passes data through the encrypt callback
+        // before persisting — not just storing plaintext.
+        it('applies encrypt when storing a blob', async () => {
+            const plaintext = new Uint8Array([1, 2, 3]).buffer as ArrayBuffer;
+            const prefix = new Uint8Array([0xee]);
+            const dummyEncryptThatPrependAByte = async (data: ArrayBuffer) =>
+                new Uint8Array([...prefix, ...new Uint8Array(data)]).buffer as ArrayBuffer;
+
+            await db.putEncryptedIndexBlob(['main', 'blob-1'], plaintext, dummyEncryptThatPrependAByte);
+
+            // Reading with identity exposes the raw stored bytes — should have the prefix
+            const raw = await db.getDecryptedIndexBlob(['main', 'blob-1'], identity);
+            expect(raw).toBeDefined();
+            expect(new Uint8Array(raw as ArrayBuffer)).toEqual(new Uint8Array([0xee, 1, 2, 3]));
+        });
+
+        // Verify that getDecryptedIndexBlob actually passes stored data through the decrypt
+        // callback before returning — not just returning raw ciphertext.
+        it('applies decrypt when reading a blob', async () => {
+            const plaintext = new Uint8Array([1, 2, 3]).buffer as ArrayBuffer;
+            await db.putEncryptedIndexBlob(['main', 'blob-1'], plaintext, identity);
+
+            // Strip the first byte
+            const dummyDecryptThatRemoveAByte = async (data: ArrayBuffer) => data.slice(1);
+
+            const result = await db.getDecryptedIndexBlob(['main', 'blob-1'], dummyDecryptThatRemoveAByte);
+            expect(result).toBeDefined();
+            expect(new Uint8Array(result as ArrayBuffer)).toEqual(new Uint8Array([2, 3]));
         });
 
         it('getAllIndexBlobKeys returns all keys', async () => {
-            await db.putIndexBlob(['main', 'a'], new ArrayBuffer(1));
-            await db.putIndexBlob(['main', 'b'], new ArrayBuffer(1));
-            await db.putIndexBlob(['photos', 'c'], new ArrayBuffer(1));
+            await db.putEncryptedIndexBlob(['main', 'a'], new ArrayBuffer(1), identity);
+            await db.putEncryptedIndexBlob(['main', 'b'], new ArrayBuffer(1), identity);
+            await db.putEncryptedIndexBlob(['photos', 'c'], new ArrayBuffer(1), identity);
 
             const keys = await db.getAllIndexBlobKeys();
             expect(keys).toHaveLength(3);
@@ -143,6 +175,43 @@ describe('SearchDB', () => {
         });
     });
 
+    describe('searchCryptoKey', () => {
+        it('returns undefined when no key is stored', async () => {
+            const result = await db.getSearchCryptoKey(identity);
+            expect(result).toBeUndefined();
+        });
+
+        it('round-trips a key through encrypt and decrypt', async () => {
+            const encrypt = async (plaintext: string) => `encrypted:${plaintext}`;
+            const decrypt = async (ciphertext: string) => ciphertext.replace('encrypted:', '');
+
+            await db.putSearchCryptoKey('my-secret-key', encrypt);
+            const result = await db.getSearchCryptoKey(decrypt);
+
+            expect(result).toBe('my-secret-key');
+        });
+
+        it('applies encrypt before storing', async () => {
+            const encrypt = async (plaintext: string) => `encrypted:${plaintext}`;
+
+            await db.putSearchCryptoKey('plain', encrypt);
+
+            // Reading with identity exposes the raw stored value
+            const raw = await db.getSearchCryptoKey(identity);
+            expect(raw).toBe('encrypted:plain');
+        });
+
+        it('applies decrypt when reading', async () => {
+            const encrypt = async (plaintext: string) => `encrypted:${plaintext}`;
+            const decrypt = async (ciphertext: string) => ciphertext.replace('encrypted:', '');
+
+            await db.putSearchCryptoKey('data', encrypt);
+            const result = await db.getSearchCryptoKey(decrypt);
+
+            expect(result).toBe('data');
+        });
+    });
+
     describe('userPreferences', () => {
         it('isOptedIn returns false by default', async () => {
             expect(await db.isOptedIn()).toBe(false);
@@ -159,7 +228,7 @@ describe('SearchDB', () => {
             const db2 = await SearchDB.open('other-user');
 
             // Insert some data in default db:
-            await db.putIndexBlob(['main', 'blob-1'], new ArrayBuffer(4));
+            await db.putEncryptedIndexBlob(['main', 'blob-1'], new ArrayBuffer(4), identity);
             await db.putPopulatorState({ uid: 'pop-1', done: false, generation: 2, version: 1 });
             const scope = '123' as TreeEventScopeId;
             const sub = { treeEventScopeId: scope, lastEventId: 'evt-5', lastEventIdTime: 1000 };

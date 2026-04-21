@@ -1,6 +1,7 @@
 import { IDBFactory } from 'fake-indexeddb';
 import 'fake-indexeddb/auto';
 
+import { generateAndImportKey } from '@proton/crypto/lib/subtle/aesGcm';
 import { Engine, Execution, Write, WriteEvent } from '@proton/proton-foundation-search';
 
 import { SearchDB } from '../../shared/SearchDB';
@@ -24,7 +25,8 @@ describe('IndexWriter integration', () => {
         indexedDB = new IDBFactory();
         db = await SearchDB.open('test-user');
         engine = Engine.builder().build();
-        blobStore = new IndexBlobStore(IndexKind.MAIN, db);
+        const cryptoKey = await generateAndImportKey();
+        blobStore = new IndexBlobStore(IndexKind.MAIN, db, cryptoKey);
         writer = new IndexWriter(engine, blobStore);
     });
 
