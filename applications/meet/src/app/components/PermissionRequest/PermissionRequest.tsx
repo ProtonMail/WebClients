@@ -5,7 +5,13 @@ import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
-import { requestPermission, selectActiveCameraId } from '@proton/meet/store/slices/deviceManagementSlice';
+import {
+    PermissionBlockedError,
+    PermissionsModalType,
+    requestPermission,
+    selectActiveCameraId,
+    showPermissionsModal,
+} from '@proton/meet/store/slices/deviceManagementSlice';
 import {
     PermissionPromptStatus,
     selectPermissionPromptStatus,
@@ -56,12 +62,24 @@ export const PermissionRequest = () => {
                 navigator.mediaDevices?.dispatchEvent?.(new Event('devicechange'));
             }
 
-            return true;
-        } catch (err: any) {
-            if (err.name === 'NotAllowedError' || err.name === 'PermissionDeniedError') {
-                return false;
+            return;
+        } catch (error: any) {
+            if (error.name === 'NotAllowedError' || error.name === 'PermissionDeniedError') {
+                return;
             }
-            throw err;
+            if (error instanceof PermissionBlockedError) {
+                dispatch(
+                    showPermissionsModal({
+                        modal:
+                            deviceType === 'video'
+                                ? PermissionsModalType.PERMISSIONS_BLOCKED_CAMERA_MODAL
+                                : PermissionsModalType.PERMISSIONS_BLOCKED_MICROPHONE_MODAL,
+                    })
+                );
+                return;
+            }
+
+            throw error;
         } finally {
             dispatch(setPermissionPromptStatus(PermissionPromptStatus.CLOSED));
         }

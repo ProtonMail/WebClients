@@ -39,6 +39,7 @@ import { preloadBackgroundProcessorAssets } from '../../processors/background-pr
 import type { SwitchActiveDevice } from '../../types';
 import { supportsSetSinkId } from '../../utils/browser';
 import { MediaManagementContext } from './MediaManagementContext';
+import { PermissionsModal } from './PermissionsModal/PermissionsModal';
 import { useAudioToggle } from './mediaToggle/useAudioToggle';
 import { useVideoToggle } from './mediaToggle/useVideoToggle';
 import { useCameraPreview } from './useCameraPreview';
@@ -249,7 +250,8 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
             await cleanupMicrophoneVolumeAnalysis();
 
             const results = await Promise.allSettled([
-                initializeCamera(initialCameraState),
+                // Do not initialize camera if permission is not granted
+                cameraPermission === 'granted' ? initializeCamera(initialCameraState) : Promise.resolve(),
                 // Do not initialize microphone if permission is not granted
                 microphonePermission === 'granted' ? initializeMicrophone(initialAudioState) : Promise.resolve(),
                 initializeAudioOutput(true),
@@ -305,7 +307,7 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
 
     useDeviceData();
 
-    useDevicePermissionChangeListener(activeCameraDeviceId);
+    const { permissionsLoading } = useDevicePermissionChangeListener();
 
     useDynamicDeviceHandling({
         toggleAudio,
@@ -456,6 +458,7 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
                 cleanupMicrophoneVolumeAnalysis,
             }}
         >
+            {!permissionsLoading && <PermissionsModal />}
             {children}
         </MediaManagementContext.Provider>
     );
