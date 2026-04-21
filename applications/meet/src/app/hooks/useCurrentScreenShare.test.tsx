@@ -1,9 +1,15 @@
+import type { ReactNode } from 'react';
+import { Provider } from 'react-redux';
+
 import { useLocalParticipant, useParticipants, useRoomContext, useTracks } from '@livekit/components-react';
+import { configureStore } from '@reduxjs/toolkit';
 import { renderHook } from '@testing-library/react';
 import { Track } from 'livekit-client';
 import type { Mock } from 'vitest';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
+import { deviceManagementReducer } from '@proton/meet/store/slices/deviceManagementSlice';
+import { ProtonStoreContext } from '@proton/react-redux-store';
 import { isMobile } from '@proton/shared/lib/helpers/browser';
 
 import { useCurrentScreenShare } from './useCurrentScreenShare';
@@ -51,6 +57,29 @@ vi.mock('@proton/components/hooks/useNotifications', () => ({
     }),
 }));
 
+vi.mock('@proton/meet/hooks/useMeetErrorReporting', () => ({
+    useMeetErrorReporting: vi.fn().mockReturnValue({
+        reportMeetError: vi.fn(),
+    }),
+}));
+
+const createTestStore = () =>
+    configureStore({
+        reducer: { ...deviceManagementReducer },
+    });
+
+type TestStore = ReturnType<typeof createTestStore>;
+
+const createWrapper = (store: TestStore) => {
+    return function Wrapper({ children }: { children: ReactNode }) {
+        return (
+            <Provider context={ProtonStoreContext} store={store}>
+                {children}
+            </Provider>
+        );
+    };
+};
+
 const originalMediaDevices = global.navigator.mediaDevices;
 const mockMediaStreamTrack = {
     removeEventListener: vi.fn(),
@@ -67,6 +96,20 @@ const useRoomContextMock = useRoomContext as Mock;
 const useTracksMock = useTracks as Mock;
 
 describe('useCurrentScreenShare', () => {
+    let store: TestStore;
+
+    const renderUseCurrentScreenShare = (props: Partial<Parameters<typeof useCurrentScreenShare>[0]> = {}) =>
+        renderHook(
+            () =>
+                useCurrentScreenShare({
+                    stopPiP: vi.fn(),
+                    startPiP: vi.fn(),
+                    preparePictureInPicture: vi.fn(),
+                    ...props,
+                }),
+            { wrapper: createWrapper(store) }
+        );
+
     beforeEach(() => {
         vi.clearAllMocks();
         // @ts-ignore
@@ -74,6 +117,8 @@ describe('useCurrentScreenShare', () => {
             ...global.navigator.mediaDevices,
             getDisplayMedia: mockGetDisplayMedia,
         };
+
+        store = createTestStore();
 
         // Set up default mocks
         useRoomContextMock.mockReturnValue(mockRoom);
@@ -93,9 +138,7 @@ describe('useCurrentScreenShare', () => {
         });
         useParticipantsMock.mockReturnValue([mockLocalParticipant]);
 
-        const { result } = renderHook(() =>
-            useCurrentScreenShare({ stopPiP: vi.fn(), startPiP: vi.fn(), preparePictureInPicture: vi.fn() })
-        );
+        const { result } = renderUseCurrentScreenShare();
 
         expect(result.current.isLocalScreenShare).toBe(true);
     });
@@ -112,9 +155,7 @@ describe('useCurrentScreenShare', () => {
         });
         useParticipantsMock.mockReturnValue([mockParticipant, mockLocalParticipant]);
 
-        const { result } = renderHook(() =>
-            useCurrentScreenShare({ stopPiP: vi.fn(), startPiP: vi.fn(), preparePictureInPicture: vi.fn() })
-        );
+        const { result } = renderUseCurrentScreenShare();
         expect(result.current.isLocalScreenShare).toBe(false);
     });
 
@@ -140,9 +181,7 @@ describe('useCurrentScreenShare', () => {
             },
         });
 
-        const { result } = renderHook(() =>
-            useCurrentScreenShare({ stopPiP: vi.fn(), startPiP: vi.fn(), preparePictureInPicture: vi.fn() })
-        );
+        const { result } = renderUseCurrentScreenShare();
         result.current.stopScreenShare();
 
         expect(setScreenShareEnabled).toHaveBeenCalledWith(false);
@@ -162,9 +201,7 @@ describe('useCurrentScreenShare', () => {
             createNotification,
         });
 
-        const { result } = renderHook(() =>
-            useCurrentScreenShare({ stopPiP: vi.fn(), startPiP: vi.fn(), preparePictureInPicture: vi.fn() })
-        );
+        const { result } = renderUseCurrentScreenShare();
 
         await result.current.startScreenShare();
 
@@ -207,9 +244,7 @@ describe('useCurrentScreenShare', () => {
             localParticipant: mockLocalParticipant,
         });
 
-        renderHook(() =>
-            useCurrentScreenShare({ stopPiP: vi.fn(), startPiP: vi.fn(), preparePictureInPicture: vi.fn() })
-        );
+        renderUseCurrentScreenShare();
 
         // Should subscribe to screen share publication
         expect(mockPublication1.setSubscribed).toHaveBeenCalledWith(true);
@@ -258,9 +293,7 @@ describe('useCurrentScreenShare', () => {
             localParticipant: mockLocalParticipant,
         });
 
-        renderHook(() =>
-            useCurrentScreenShare({ stopPiP: vi.fn(), startPiP: vi.fn(), preparePictureInPicture: vi.fn() })
-        );
+        renderUseCurrentScreenShare();
 
         // Should subscribe to all screen shares to ensure useTracks content is consistent
         expect(mockPublication1.setSubscribed).toHaveBeenCalledWith(true);
@@ -276,9 +309,7 @@ describe('useCurrentScreenShare', () => {
             localParticipant: mockLocalParticipant,
         });
 
-        renderHook(() =>
-            useCurrentScreenShare({ stopPiP: vi.fn(), startPiP: vi.fn(), preparePictureInPicture: vi.fn() })
-        );
+        renderUseCurrentScreenShare();
 
         // Get the trackPublished event handler
         const trackPublishedHandler = mockRoom.on.mock.calls.find((call) => call[0] === 'trackPublished')?.[1];
@@ -305,9 +336,7 @@ describe('useCurrentScreenShare', () => {
             localParticipant: mockLocalParticipant,
         });
 
-        renderHook(() =>
-            useCurrentScreenShare({ stopPiP: vi.fn(), startPiP: vi.fn(), preparePictureInPicture: vi.fn() })
-        );
+        renderUseCurrentScreenShare();
 
         // Get the trackPublished event handler
         const trackPublishedHandler = mockRoom.on.mock.calls.find((call) => call[0] === 'trackPublished')?.[1];
@@ -332,9 +361,7 @@ describe('useCurrentScreenShare', () => {
             localParticipant: mockLocalParticipant,
         });
 
-        const { unmount } = renderHook(() =>
-            useCurrentScreenShare({ stopPiP: vi.fn(), startPiP: vi.fn(), preparePictureInPicture: vi.fn() })
-        );
+        const { unmount } = renderUseCurrentScreenShare();
 
         expect(mockRoom.on).toHaveBeenCalledWith('trackPublished', expect.any(Function));
 
@@ -364,7 +391,7 @@ describe('useCurrentScreenShare', () => {
 
         const stopPiP = vi.fn();
 
-        renderHook(() => useCurrentScreenShare({ stopPiP, startPiP: vi.fn(), preparePictureInPicture: vi.fn() }));
+        renderUseCurrentScreenShare({ stopPiP });
 
         expect(mockTrack.on).toHaveBeenCalledWith('ended', stopPiP);
     });
@@ -390,9 +417,7 @@ describe('useCurrentScreenShare', () => {
 
         const stopPiP = vi.fn();
 
-        const { rerender } = renderHook(() =>
-            useCurrentScreenShare({ stopPiP, startPiP: vi.fn(), preparePictureInPicture: vi.fn() })
-        );
+        const { rerender } = renderUseCurrentScreenShare({ stopPiP });
 
         expect(mockTrack1.on).toHaveBeenCalledWith('ended', stopPiP);
 

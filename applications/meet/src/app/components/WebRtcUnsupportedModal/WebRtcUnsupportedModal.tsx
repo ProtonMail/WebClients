@@ -4,7 +4,7 @@ import { Button } from '@proton/atoms/Button/Button';
 import { ModalTwo, ModalTwoContent } from '@proton/components';
 import { MEET_APP_NAME } from '@proton/shared/lib/constants';
 import { isFirefox } from '@proton/shared/lib/helpers/browser';
-import warningIcon from '@proton/styles/assets/img/meet/warning-icon.png';
+import warningIcon from '@proton/styles/assets/img/meet/warning-icon.svg';
 import clsx from '@proton/utils/clsx';
 
 import './WebRtcUnsupportedModal.scss';
@@ -31,7 +31,7 @@ export const WebRtcUnsupportedModal = ({ onClose }: WebRtcUnsupportedModalProps)
                         className="mx-auto w-custom h-custom"
                         src={warningIcon}
                         alt=""
-                        style={{ '--w-custom': '7.5rem', '--h-custom': '7.5rem' }}
+                        style={{ '--w-custom': '5rem', '--h-custom': '5rem' }}
                     />
                     <div className="text-3xl text-semibold">{c('Info').t`Your browser or device isn’t supported`}</div>
                     <span className="flex gap-4 color-weak">

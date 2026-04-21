@@ -62,7 +62,11 @@ export const getDefaultDevice = <T extends SerializableDeviceInfo>(devices: T[])
         const duplicated = devices.find((d) => d.groupId === defaultDevice.groupId && !isDefaultDevice(d.deviceId));
         return duplicated ?? filterDevices(devices)[0] ?? devices[0] ?? null;
     }
-    return filterDevices(devices)[0] ?? devices[0] ?? null;
+    // Firefox (and other browsers without a synthetic "default" entry) return devices
+    // from enumerateDevices() in system-preference order, so the first one is the actual
+    // OS default. Preserve that order here instead of using filterDevices, which sorts
+    // alphabetically and would make the "Default - <label>" UI show the wrong device.
+    return devices[0] ?? null;
 };
 
 export const resolveDevice = <T extends SerializableDeviceInfo>(
