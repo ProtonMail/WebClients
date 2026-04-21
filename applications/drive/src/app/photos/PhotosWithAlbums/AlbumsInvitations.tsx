@@ -1,25 +1,41 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
 import { Button } from '@proton/atoms/Button/Button';
 import { MimeIcon, useConfirmActionModal } from '@proton/components';
-import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
+import { NodeType, type ProtonInvitationWithNode, getDriveForPhotos } from '@proton/drive/index';
+import useLoading from '@proton/hooks/useLoading';
 
-import { useInvitationsActions } from '../../store';
-import { useInvitationsListing } from '../../store/_invitations';
-import { sendErrorReport } from '../../utils/errorHandling';
+// TODO: Move that to common place
+import { useInvitationsActions } from '../../sections/sharedWith/hooks/useInvitationsActions';
+import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 
-export const AlbumsInvitations = ({ refreshSharedWithMeAlbums }: { refreshSharedWithMeAlbums: () => void }) => {
-    const { getCachedInvitations, loadInvitations } = useInvitationsListing();
+// TODO: Move that somewhere else, it's temporary
+const loadAlbumsInvitations = async (abortSignal: AbortSignal) => {
+    const invitations: ProtonInvitationWithNode[] = [];
+    for await (const invitation of getDriveForPhotos().iterateInvitations(abortSignal)) {
+        if (invitation.node.type !== NodeType.Album) {
+            continue;
+        }
+        invitations.push(invitation);
+    }
+    return invitations;
+};
+
+export const AlbumsInvitations = () => {
     const { acceptInvitation, rejectInvitation } = useInvitationsActions();
-    const cachedInvitations = getCachedInvitations();
     const [confirmModal, showConfirmModal] = useConfirmActionModal();
-    const invitations = cachedInvitations.filter((invitation) => invitation.link.type === LinkType.ALBUM);
-    useEffect(() => {
-        const abortController = new AbortController();
-        void loadInvitations(abortController.signal).catch(sendErrorReport);
+    const [invitations, setInvitations] = useState<ProtonInvitationWithNode[]>([]);
+    const [isAccepting, withIsAccepting] = useLoading(false);
 
+    useEffect(function initialLoadOfAlbumsInvitations() {
+        const abortController = new AbortController();
+        try {
+            void loadAlbumsInvitations(abortController.signal).then((newInvitations) => setInvitations(newInvitations));
+        } catch (e) {
+            handleSdkError(e);
+        }
         return () => {
             abortController.abort();
         };
@@ -30,15 +46,19 @@ export const AlbumsInvitations = ({ refreshSharedWithMeAlbums }: { refreshShared
                 <>
                     {invitations.map((invitation) => {
                         const email = (
-                            <span key={`span-${invitation.link.linkId}`} className="text-break">
-                                {invitation.share.creatorEmail}
+                            <span key={`span-${invitation.uid}`} className="text-break">
+                                {invitation.addedByEmail.ok
+                                    ? invitation.addedByEmail.value
+                                    : invitation.addedByEmail.error.claimedAuthor}
                             </span>
                         );
-                        const albumName = (
-                            <strong key={`strong-${invitation.link.linkId}`}>{invitation.decryptedLinkName}</strong>
-                        );
+                        const name = invitation.node.name.ok
+                            ? invitation.node.name.value
+                            : invitation.node.name.error.name;
+
+                        const albumName = <strong key={`strong-${invitation.uid}`}>{name}</strong>;
                         return (
-                            <div key={invitation.invitation.invitationId} className="banner-invite shrink-0">
+                            <div key={invitation.uid} className="banner-invite shrink-0">
                                 <div className="banner-invite-inner border border-info rounded m-2 py-1 px-2 flex flex-column md:flex-row flex-nowrap items-center *:min-size-auto">
                                     <div className="flex-1 flex flex-nowrap flex-row items-start py-0.5 mr-2">
                                         <span className="shrink-0 mr-2 p-0.5 ratio-square flex">
@@ -56,34 +76,45 @@ export const AlbumsInvitations = ({ refreshSharedWithMeAlbums }: { refreshShared
                                         <Button
                                             shape="solid"
                                             color="norm"
-                                            loading={invitation.isLocked}
-                                            disabled={invitation.isLocked}
+                                            loading={isAccepting}
                                             onClick={async (e) => {
                                                 e.stopPropagation();
-                                                await acceptInvitation(
-                                                    new AbortController().signal,
-                                                    invitation.invitation.invitationId
+                                                await withIsAccepting(
+                                                    acceptInvitation(
+                                                        invitation.node.uid,
+                                                        invitation.uid,
+                                                        invitation.node.type
+                                                    )
                                                 );
-                                                void refreshSharedWithMeAlbums();
+                                                setInvitations((prevInvitations) =>
+                                                    prevInvitations.filter(
+                                                        (prevInvitation) => prevInvitation.uid !== invitation.uid
+                                                    )
+                                                );
                                             }}
                                         >
                                             {c('Action').t`Join album`}
                                         </Button>
-                                        {!invitation.isLocked && (
-                                            <Button
-                                                shape="ghost"
-                                                color="norm"
-                                                onClick={(e) => {
-                                                    e.stopPropagation();
-                                                    void rejectInvitation(new AbortController().signal, {
-                                                        showConfirmModal,
-                                                        invitationId: invitation.invitation.invitationId,
-                                                    });
-                                                }}
-                                            >
-                                                {c('Action').t`Decline`}
-                                            </Button>
-                                        )}
+                                        <Button
+                                            shape="ghost"
+                                            color="norm"
+                                            onClick={async (e) => {
+                                                e.stopPropagation();
+                                                await rejectInvitation(showConfirmModal, {
+                                                    uid: invitation.node.uid,
+                                                    invitationUid: invitation.uid,
+                                                    name: name,
+                                                    type: invitation.node.type,
+                                                });
+                                                setInvitations((prevInvitations) =>
+                                                    prevInvitations.filter(
+                                                        (prevInvitation) => prevInvitation.uid === invitation.uid
+                                                    )
+                                                );
+                                            }}
+                                        >
+                                            {c('Action').t`Decline`}
+                                        </Button>
                                     </span>
                                 </div>
                             </div>

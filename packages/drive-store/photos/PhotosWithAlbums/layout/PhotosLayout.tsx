@@ -52,7 +52,6 @@ export const PhotosLayout = () => {
         States and Hooks
     */
     const isUploadDisabled = useFlag('DrivePhotosUploadDisabled');
-    const driveAlbumsDisabled = useFlag('DriveAlbumsDisabled');
     const { albumLinkId, albumShareId } = useParams<{ albumLinkId: string; albumShareId: string }>();
     const { pathname } = useLocation();
     const { createNotification } = useNotifications();
@@ -255,7 +254,6 @@ export const PhotosLayout = () => {
             try {
                 await refreshSharedWithMeAlbums(abortSignal);
             } catch (e) {
-                console.warn(e);
                 await refreshSharedWithMeAlbums(abortSignal);
             }
             navigateToAlbums();
@@ -647,10 +645,8 @@ export const PhotosLayout = () => {
             onDrop={currentPageType === AlbumsPageTypes.ALBUMSADDPHOTOS ? handleRedirectToAlbum : undefined}
             className="flex flex-column *:min-size-auto flex-nowrap flex-1"
         >
-            {driveAlbumsDisabled && (
-                <TopBanner className="bg-warning">{c('Info')
-                    .t`We are experiencing technical issues. Any albums related actions are temporarily disabled.`}</TopBanner>
-            )}
+            <TopBanner className="bg-warning">{c('Info')
+                .t`We are experiencing technical issues. Any albums related actions are temporarily disabled.`}</TopBanner>
 
             {/* TODO: Remove this hack when albums cache is fixed and refactored */}
             <PhotosRecoveryBanner onSucceed={refreshAlbums} />
@@ -675,7 +671,6 @@ export const PhotosLayout = () => {
                     onDetails={onShowDetails}
                     onSelectCover={
                         canChangeAlbumCoverInPreview &&
-                        !driveAlbumsDisabled &&
                         currentPageType === AlbumsPageTypes.ALBUMSGALLERY &&
                         album?.cover?.linkId !== previewItem.linkId
                             ? onSelectCoverPreview

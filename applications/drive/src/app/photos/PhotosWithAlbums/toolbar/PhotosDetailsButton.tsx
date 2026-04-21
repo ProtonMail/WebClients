@@ -1,27 +1,27 @@
 import { c } from 'ttag';
 
 import { DropdownMenuButton, ToolbarButton } from '@proton/components';
-import { generateNodeUid, getDriveForPhotos } from '@proton/drive';
+import { getDriveForPhotos } from '@proton/drive';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import clsx from '@proton/utils/clsx';
 
 import { useDetailsModal } from '../../../modals/DetailsModal';
 import { useFilesDetailsModal } from '../../../modals/FilesDetailsModal';
-import type { PhotoLink } from '../../../store';
+import type { PhotoItem } from '../../usePhotos.store';
 
 interface Props {
-    selectedLinks: PhotoLink[];
+    selectedPhotos: PhotoItem[];
     showIconOnly: boolean;
     dropDownMenuButton?: boolean;
 }
 
-const PhotosDetailsButton = ({ selectedLinks, showIconOnly, dropDownMenuButton = false }: Props) => {
+const PhotosDetailsButton = ({ selectedPhotos, showIconOnly, dropDownMenuButton = false }: Props) => {
     const { filesDetailsModal, showFilesDetailsModal } = useFilesDetailsModal();
     const { detailsModal, showDetailsModal } = useDetailsModal();
 
-    const link = selectedLinks[0];
+    const photo = selectedPhotos[0];
 
-    if (!link) {
+    if (!photo) {
         return null;
     }
 
@@ -32,14 +32,14 @@ const PhotosDetailsButton = ({ selectedLinks, showIconOnly, dropDownMenuButton =
             <ButtonComp
                 title={c('Action').t`Details`}
                 onClick={() => {
-                    if (selectedLinks.length === 1) {
+                    if (selectedPhotos.length === 1) {
                         void showDetailsModal({
                             drive: getDriveForPhotos(),
-                            nodeUid: generateNodeUid(selectedLinks[0].volumeId, selectedLinks[0].linkId),
+                            nodeUid: selectedPhotos[0].nodeUid,
                         });
                     } else {
                         void showFilesDetailsModal({
-                            nodeUids: selectedLinks.map((item) => generateNodeUid(item.volumeId, item.linkId)),
+                            nodeUids: selectedPhotos.map((photo) => photo.nodeUid),
                         });
                     }
                 }}

@@ -8,7 +8,6 @@ import { useShallow } from 'zustand/react/shallow';
 import { Loader, useAppTitle, useConfig } from '@proton/components';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import { LayoutSetting } from '@proton/shared/lib/interfaces/drive/userSettings';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import useNavigate from '../../hooks/drive/useNavigate';
 import { useOnItemRenderedMetrics } from '../../hooks/drive/useOnItemRenderedMetrics';
@@ -47,7 +46,6 @@ const useAppTitleUpdate = () => {
 
 export const PhotosWithAlbumsInsideAlbumView: FC = () => {
     useAppTitle(c('Title').t`Album`);
-    const driveAlbumsDisabled = useFlag('DriveAlbumsDisabled');
     const updateTitle = useAppTitleUpdate();
     const [searchParams, setSearchParams] = useSearchParams();
     const favoritePhotoToggle = useFavoritePhotoToggle();
@@ -179,7 +177,7 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
                     }
                     isGroupSelected={isGroupSelected}
                     isItemSelected={isItemSelected}
-                    onFavorite={!driveAlbumsDisabled ? addOrRemovePhotoToFavorite : undefined}
+                    onFavorite={addOrRemovePhotoToFavorite}
                     rootLinkId={linkId}
                 >
                     <AlbumCoverHeader
