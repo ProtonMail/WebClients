@@ -224,6 +224,9 @@
       "Continue anyway": [
         "Ga toch verder"
       ],
+      "Continue cancelling": [
+        "Doorgaan met annuleren"
+      ],
       "Continue import": [
         "Doorgaan met importeren"
       ],
@@ -476,6 +479,9 @@
       "Fit to window": [
         "Passend in venster"
       ],
+      "Forgot password?": [
+        "Wachtwoord vergeten?"
+      ],
       "Forgot recovery method?": [
         "Herstelmethode vergeten?"
       ],
@@ -595,6 +601,9 @@
       ],
       "Invite user": [
         "Gebruiker uitnodigen"
+      ],
+      "Keep current plan": [
+        "Huidig plan behouden"
       ],
       "Keep Editing": [
         "Doorgaan met bewerken"
@@ -3445,6 +3454,9 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "Met ${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } kunt u samenwerken met anderen in een veilige, versleutelde omgeving."
       ],
+      "Add extra addresses to your account or use Hide My Email aliases to keep your inbox private.": [
+        "Voeg extra e-mailadressen toe aan uw account of gebruik de functie 'Mijn e-mailadres verbergen' om uw inbox privé te houden."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Voeg mappen en bestanden toe aan ${ DRIVE_APP_NAME } en nodig teamleden uit om ze te bekijken of te bewerken."
       ],
@@ -3535,6 +3547,9 @@
       "Let's you instantly add meeting links to your event invitations.": [
         "Hiermee kunt u direct vergader koppelingen toevoegen aan uw afspraak uitnodigingen."
       ],
+      "Most issues can be solved in a few minutes with our step-by-step guides.": [
+        "De meeste problemen kunnen binnen enkele minuten worden opgelost met onze stapsgewijze handleidingen."
+      ],
       "No one in your organization can connect to shared servers.": [
         "Niemand in uw organisatie kan verbinding maken met gedeelde servers."
       ],
@@ -3543,6 +3558,9 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Vereenvoudig het synchroniseren en plannen met gedeelde agenda's."
+      ],
+      "Still need help? Our support team is here for you.": [
+        "Heeft u nog steeds hulp nodig? Ons supportteam staat voor u klaar."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Om te importeren via een CSV- en VCF-bestand, moet u ervoor zorgen dat het bestand niet groter is dan ${ MAX_IMPORT_FILE_SIZE_STRING } of niet meer dan ${ maxContactString } contacten bevat. Als uw bestand groter is, splits het dan op in kleinere bestanden. ${ learnMoreLink }."
@@ -3564,6 +3582,12 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "U kunt afspraken importeren in iCal formaat (. ics-bestand). Het bestand moet een maximale grootte hebben van ${ MAX_IMPORT_FILE_SIZE_STRING } en mag maximaal ${ MAX_IMPORT_EVENTS_STRING } afspraken bevatten. Als uw bestand groter is, splitst u het op in kleinere bestanden."
+      ],
+      "You can manage multiple ${ BRAND_NAME } addresses from a single account, without switching. Aliases and address management tools help keep everything in one inbox.": [
+        "U kunt meerdere ${ BRAND_NAME }-adressen beheren vanuit één account, zonder te hoeven wisselen. Aliassen en adresbeheertools zorgen ervoor dat alles overzichtelijk in één inbox blijft."
+      ],
+      "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
+        "U kunt adressen samenvoegen tot één primair ${ BRAND_NAME } account met behulp van onze ondersteuningsgids."
       ]
     },
     "description": {
@@ -4369,9 +4393,6 @@
       "Please fix the highlighted conflict to proceed.": [
         "Los het gemarkeerde conflict op om verder te gaan.",
         "Los de gemarkeerde conflicten op om verder te gaan."
-      ],
-      "Please generate keys before you try to change your password": [
-        "Genereer sleutels voordat u uw wachtwoord probeert te wijzigen"
       ],
       "Please select a country": [
         "Selecteer een land"
@@ -5427,6 +5448,17 @@
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
         "${ BRAND_NAME }. Privacy standaard"
+      ]
+    },
+    "Get help": {
+      "Continue cancelling": [
+        "Doorgaan met annuleren"
+      ],
+      "Keep current plan": [
+        "Huidig plan behouden"
+      ],
+      "Many issues can be resolved quickly with our help guides. If you need more support, our team is here to help.": [
+        "Veel problemen kunnen snel worden opgelost met behulp van onze handleidingen. Mocht u meer ondersteuning nodig hebben, dan staat ons team voor u klaar."
       ]
     },
     "Gmail forwarding": {
@@ -6487,7 +6519,7 @@
         "Door nu te verlaten, worden wijzigingen mogelijk niet opgeslagen"
       ],
       "Can you reach out to your contact?": [
-        "Gelieve contact op te nemen met uw contactpersonen voor noodgevallen?"
+        "Kunt u contact opnemen met uw contactpersoon?"
       ],
       "Cancel": [
         "Annuleren"
@@ -6862,6 +6894,12 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Voer het e-mailadres of de gebruikersnaam van uw ${ BRAND_NAME }-account in."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Voer uw eigen wachtwoord in (als organisatiebeheerder)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Voer uw eigen wachtwoord in (als vertrouwd contact)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Voer uw herstel-e-mailadres in en wij sturen u uw gebruikersnaam of e-mailadres."
@@ -7409,7 +7447,7 @@
         "Open de handleiding voor aanbevolen acties en nuttige koppelingen."
       ],
       "Open your active session in the browser, and go to **Settings → All settings → Recovery → Password reset settings.**": [
-        "Open je actieve sessie in de browser en ga naar **Instellingen → Alle instellingen → Herstel → Instellingen voor wachtwoordherstel.**"
+        "Open uw actieve sessie in de browser en ga naar **Instellingen → Alle instellingen → Herstel → Instellingen voor wachtwoordherstel.**"
       ],
       "or ${ selectFileButton }": [
         "of ${ selectFileButton }"
@@ -7755,7 +7793,7 @@
         "Uw organisatie wordt aangemaakt"
       ],
       "Share your thoughts...": [
-        "Deel je ideeën..."
+        "Deel uw ideeën..."
       ],
       "Shared ${ vaultLink } deleted": [
         "Gedeelde ${ vaultLink } verwijderd"
@@ -9701,6 +9739,12 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Ja, ik wil permanent mijn account inclusief alle gegevens verwijderen."
       ],
+      "Your password (admin)": [
+        "Uw wachtwoord (beheerder)"
+      ],
+      "Your password (trusted contact)": [
+        "Uw wachtwoord (vertrouwd contact)"
+      ],
       "ZIP code": [
         "Postcode"
       ]
@@ -9836,11 +9880,11 @@
       "clearing your browser cache": [
         "browsercache legen"
       ],
-      "Common sign in issues": [
-        "Veel voorkomende problemen bij aanmelden"
-      ],
       "Common sign up issues": [
         "Problemen met algemene registratie"
+      ],
+      "Contact support": [
+        "Contact support"
       ],
       "contacts’ assistance": [
         "hulp van contactpersonen"
@@ -9947,11 +9991,17 @@
       "if your data is leaked": [
         "als uw gegevens zijn gelekt"
       ],
+      "Learn how": [
+        "Leer hoe"
+      ],
       "Learn more": [
         "Meer informatie"
       ],
       "Learn more about data recovery": [
         "Meer informatie over dataherstel"
+      ],
+      "Manage addresses": [
+        "Adressen beheren"
       ],
       "Not activated": [
         "Niet geactiveerd"
@@ -10003,6 +10053,9 @@
       ],
       "visit our blog": [
         "onze blog bezoeken"
+      ],
+      "Visit our support site": [
+        "Bezoek onze ondersteuningswebsite."
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Wat is het verschil tussen UDP en TCP-protocollen?"
@@ -10778,9 +10831,6 @@
       ],
       "Dedicated servers and IP": [
         "Toegewijde servers en IP"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "Gereserveerde servers geoptimaliseerd voor streamen"
       ],
       "Desktop app": [
         "Desktop-app"
@@ -13672,9 +13722,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Accountherstel niet beschikbaar voor verouderde adressleutels"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Genereer sleutels voordat u uw wachtwoord probeert te wijzigen"
       ]
     },
     "session_recovery:available:info": {
@@ -14428,6 +14475,9 @@
       "Share the confirmation code with your administrator": [
         "Deel de bevestigingscode met uw beheerder"
       ],
+      "Sign in": [
+        "Inloggen"
+      ],
       "Sign in to your organization": [
         "Aanmelden bij uw organisatie"
       ],
@@ -14487,6 +14537,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "U moet handmatig nieuwe gebruikers aanmaken om ze toe te voegen aan uw organisatie."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "U wordt doorgestuurd naar uw derde partij SSO-provider."
       ],
       "Your SSO configuration will be deleted.": [
         "Uw SSO-configuratie wordt verwijderd."
@@ -15564,14 +15617,8 @@
       "Account recovery": [
         "Accountherstel"
       ],
-      "Account restricted": [
-        "Account beperkt"
-      ],
       "Account suspended": [
         "Account opgeschort"
-      ],
-      "Account temporarily locked": [
-        "Account tijdelijk geblokkeerd"
       ],
       "Action": [
         "Actie"
@@ -15645,6 +15692,9 @@
       ],
       "Allocate storage": [
         "Opslag toewijzen"
+      ],
+      "Already have multiple accounts?": [
+        "Heeft u al meerdere accounts?"
       ],
       "Also in your plan": [
         "Ook in uw abonnement"
@@ -15823,6 +15873,9 @@
       ],
       "Create multiple user accounts": [
         "Meerdere gebruikersaccounts aanmaken"
+      ],
+      "Create new addresses easily": [
+        "Maak eenvoudig nieuwe adressen aan"
       ],
       "Create new policy": [
         "Nieuwe policy aanmaken"
@@ -16038,6 +16091,9 @@
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Vul uw ${ BRAND_NAME }-account gegevens in om deel te nemen aan het ${ app } Bèta programma"
       ],
+      "Enter your password": [
+        "Voer uw wachtwoord in"
+      ],
       "Error": [
         "Fout"
       ],
@@ -16086,6 +16142,12 @@
       ],
       "Get complete privacy coverage": [
         "Krijg volledige privacy dekking"
+      ],
+      "Get direct support": [
+        "Ontvang directe ondersteuning"
+      ],
+      "Get help with an issue": [
+        "Krijg hulp bij een probleem"
       ],
       "Get more from your VPN": [
         "Haal meer uit uw VPN"
@@ -16545,6 +16607,9 @@
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Om een voorbeeld van dit rekenblad te bekijken, opent u het in ${ SHEETS_APP_NAME } of downloadt u het."
       ],
+      "Troubleshoot your issue": [
+        "Los uw probleem op"
+      ],
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "Probeer ${ AUTHENTICATOR_APP_NAME }"
       ],
@@ -16607,6 +16672,9 @@
       ],
       "Use backup recovery code": [
         "Gebruik back-up herstelcode"
+      ],
+      "Use one account for all your addresses": [
+        "Gebruik één account voor al uw adressen."
       ],
       "User": [
         "Gebruiker"

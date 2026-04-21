@@ -452,6 +452,9 @@
       "Fit to window": [
         "Sesuaikan dengan jendela"
       ],
+      "Forgot password?": [
+        "Lupa kata sandi?"
+      ],
       "Forgot recovery method?": [
         "Lupa metode pemulihan?"
       ],
@@ -4050,9 +4053,6 @@
       "Please fix the highlighted conflict to proceed.": [
         "Harap selesaikan permasalahan yang ada terlebih dahulu sebelum melanjutkan."
       ],
-      "Please generate keys before you try to change your password": [
-        "Harap buat kunci terlebih dahulu sebelum Anda mengubah kata sandi Anda"
-      ],
       "Please select a country": [
         "Silakan pilih negara"
       ],
@@ -6333,6 +6333,12 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Masukkan alamat email atau nama pengguna akun ${ BRAND_NAME } Anda."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Masukkan kata sandi Anda (selaku admin organisasi)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Masukkan kata sandi Anda (selaku kontak tepercaya)"
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Masukkan alamat email pemulihan Anda dan kami akan mengirimkan nama pengguna atau alamat email Anda."
@@ -8920,6 +8926,12 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Ya, saya ingin menghapus akun ini beserta seluruh data yang terkandung di dalamnya secara permanen."
       ],
+      "Your password (admin)": [
+        "Kata sandi Anda (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Kata sandi Anda (kontak tepercaya)"
+      ],
       "ZIP code": [
         "Kode pos"
       ]
@@ -9050,9 +9062,6 @@
       ],
       "clearing your browser cache": [
         "membersihkan cache browser Anda"
-      ],
-      "Common sign in issues": [
-        "Isu umum proses masuk"
       ],
       "Common sign up issues": [
         "Isu umum proses daftar"
@@ -9827,9 +9836,6 @@
       ],
       "Dedicated servers and IP": [
         "Server dan alamat IP khusus"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "Server khusus yang dioptimalkan untuk streaming"
       ],
       "Desktop app": [
         "Aplikasi desktop"
@@ -12518,9 +12524,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Pemulihan akun tidak tersedia untuk kunci alamat lawas"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Silakan hasilkan kunci sebelum Anda mencoba untuk mengubah kata sandi Anda"
       ]
     },
     "session_recovery:available:info": {
@@ -13228,6 +13231,9 @@
       "Share the confirmation code with your administrator": [
         "Bagikan kode konfirmasi ini dengan administrator Anda"
       ],
+      "Sign in": [
+        "Masuk"
+      ],
       "Sign in to your organization": [
         "Masuk ke organisasi Anda"
       ],
@@ -13287,6 +13293,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Anda akan perlu untuk membuat pengguna baru secara manual untuk menambahkan pengguna ini ke organisasi Anda."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Anda akan diarahkan ke penyedia SSO pihak ketiga Anda."
       ],
       "Your SSO configuration will be deleted.": [
         "Konfigurasi SSO Anda akan dihapus."
@@ -14314,14 +14323,8 @@
       "Account recovery": [
         "Pemulihan akun"
       ],
-      "Account restricted": [
-        "Akun dibatasi"
-      ],
       "Account suspended": [
         "Akun ditangguhkan"
-      ],
-      "Account temporarily locked": [
-        "Akun sementara terkunci"
       ],
       "Action": [
         "Tindakan"
@@ -14745,6 +14748,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Masukkan rincian Akun ${ BRAND_NAME } Anda untuk bergabung ke program Beta ${ app }"
+      ],
+      "Enter your password": [
+        "Masukkan kata sandi Anda"
       ],
       "Error": [
         "Kesalahan"

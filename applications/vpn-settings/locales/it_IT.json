@@ -224,6 +224,9 @@
       "Continue anyway": [
         "Continua comunque"
       ],
+      "Continue cancelling": [
+        "Procedi con la cancellazione"
+      ],
       "Continue import": [
         "Continua l'importazione"
       ],
@@ -467,6 +470,9 @@
       "Fit to window": [
         "Adatta alla finestra"
       ],
+      "Forgot password?": [
+        "Hai dimenticato la password?"
+      ],
       "Forgot recovery method?": [
         "Hai dimenticato il metodo di recupero?"
       ],
@@ -580,6 +586,9 @@
       ],
       "Invite user": [
         "Invita utente"
+      ],
+      "Keep current plan": [
+        "Mantieni il piano corrente"
       ],
       "Keep Editing": [
         "Continua a modificare"
@@ -3312,6 +3321,9 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } ti consente di lavorare insieme ad altri in un ambiente sicuro e crittografato."
       ],
+      "Add extra addresses to your account or use Hide My Email aliases to keep your inbox private.": [
+        "Aggiungi indirizzi extra al tuo account e utilizza la funzione Nascondi i miei alias email per mantere la tua posta principale privata."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Aggiungi cartelle e file a ${ DRIVE_APP_NAME } e invita i membri del team a visualizzare o modificare."
       ],
@@ -3462,6 +3474,12 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puoi importare eventi con il formato iCal (file ICS). Il file deve avere una dimensione massima di ${ MAX_IMPORT_FILE_SIZE_STRING } o fino a ${ MAX_IMPORT_EVENTS_STRING } eventi. Se il tuo file è più grande, dividilo in file più piccoli."
+      ],
+      "You can manage multiple ${ BRAND_NAME } addresses from a single account, without switching. Aliases and address management tools help keep everything in one inbox.": [
+        "Puoi gestire multipli${ BRAND_NAME } indirizzi da un singolo account, senza cambiare. La gestione degli strumenti degli alias e indirizzi aiutano a mantere tutti nella posta principale."
+      ],
+      "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
+        "Puoi unire più indirizzi in un unico account principale ${ BRAND_NAME } utilizzando la nostra guida di supporto."
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Ora puoi inviare email da ${ BRAND_NAME } utilizzando questo indirizzo."
@@ -4236,9 +4254,6 @@
       "Please fix the highlighted conflict to proceed.": [
         "Correggi il conflitto evidenziato per procedere.",
         "Correggi i conflitti evidenziati per procedere."
-      ],
-      "Please generate keys before you try to change your password": [
-        "Per favore genera le chiavi prima di provare a cambiare la tua password"
       ],
       "Please select a country": [
         "Seleziona un paese"
@@ -6041,6 +6056,9 @@
       "**Sync codes** to all your devices": [
         "**Sincronizza i codici** su tutti i tuoi dispositivi."
       ],
+      "**This will disable 2-factor authentication.**": [
+        "**Questo disabilità l'autenticazione a due fattori **"
+      ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } Altro",
         "+ ${ invisibleCount } Altri"
@@ -6670,6 +6688,12 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Inserisci l'indirizzo email o il nome utente del tuo account ${ BRAND_NAME }."
       ],
+      "Enter your own password (as organization admin).": [
+        "Inserisci la tua password (come amministratore dell'organizzazione)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Inserisci la tua password (come contatto attendibile)."
+      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Inserisci il tuo indirizzo email di recupero e ti invieremo il tuo nome utente o indirizzo email."
       ],
@@ -6678,6 +6702,9 @@
       ],
       "Enter your recovery phrase to change your password now.": [
         "Inserisci la tua frase di recupero per cambiare la tua password adesso."
+      ],
+      "Enter your recovery phrase to verify your identity and disable two-factor authentication.": [
+        "Inserisci la tua frase di recupero per verificare la tua identità e disattivare l’autenticazione a due fattori."
       ],
       "Everything in ${ planOrAppName }": [
         "Tutto in ${ planOrAppName }"
@@ -7351,6 +7378,9 @@
       "Private AI assistant": [
         "Assistente AI privato"
       ],
+      "Professional": [
+        "Professionale"
+      ],
       "Protected by Swiss privacy laws": [
         "Protezione dalle leggi svizzere sulla privacy"
       ],
@@ -7668,6 +7698,9 @@
       "The name will be visible to your users while they are signed in.": [
         "Il nome sarà visibile agli utenti durante l'accesso."
       ],
+      "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
+        "Il credito di referral può essere assegnato fino a 2 mesi dopo la fine del periodo di prova del tuo amico, solo se il tuo amico ha sottoscritto un abbonamento."
+      ],
       "The securest way to browse, stream, and be online.": [
         "Il modo più sicuro per navigare, trasmettere in streaming ed essere online."
       ],
@@ -7832,6 +7865,9 @@
       ],
       "To proceed, we must verify the request.": [
         "Per procedere dobbiamo verificare la richiesta."
+      ],
+      "To regain access to your account and data, enter the 12-word recovery phrase associated with your account.": [
+        "Per riottenere l’accesso al tuo account e ai tuoi dati, inserisci la frase di recupero di 12 parole associata al tuo account."
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Per proteggere la tua connessione a internet, scarica e installa l'applicazione ${ VPN_APP_NAME } per il tuo dispositivo e connettiti a un server."
@@ -8120,6 +8156,9 @@
       ],
       "With ${ AUTHENTICATOR_APP_NAME }, you can:": [
         "Con ${ AUTHENTICATOR_APP_NAME }, puoi:"
+      ],
+      "With a ${ boldProfessionalPlan } plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
+        "Con il piano ${ boldProfessionalPlan }, puoi acquistare ${ boldDedicatedServers } per la tua organizzazione e configurare ${ boldGateways } per controllare quali utenti possono accedervi."
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Con un indirizzo ${ BRAND_NAME } crittografato, puoi utilizzare tutti i servizi di ${ BRAND_NAME }"
@@ -9400,6 +9439,12 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Sì, voglio eliminare definitivamente questo account e tutti i suoi dati."
       ],
+      "Your password (admin)": [
+        "La tua password (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "La tua password (contatto attendibile)"
+      ],
       "ZIP code": [
         "Codice postale"
       ]
@@ -9520,6 +9565,9 @@
       ]
     },
     "Link": {
+      "Account recovery explained": [
+        "Recupero dell’account spiegato"
+      ],
       "activity monitor": [
         "monitor attività"
       ],
@@ -9534,9 +9582,6 @@
       ],
       "clearing your browser cache": [
         "cancellare la cache del browser"
-      ],
-      "Common sign in issues": [
-        "Problemi di accesso comuni"
       ],
       "Common sign up issues": [
         "Problemi di registrazione comuni"
@@ -9646,11 +9691,17 @@
       "if your data is leaked": [
         "se i tuoi dati vengono divulgati"
       ],
+      "Learn how": [
+        "Scopri come"
+      ],
       "Learn more": [
         "Scopri di più"
       ],
       "Learn more about data recovery": [
         "Scopri di più sul recupero dei dati"
+      ],
+      "Manage addresses": [
+        "Gestisci gli indirizzi"
       ],
       "Not activated": [
         "Non attivato"
@@ -10018,6 +10069,38 @@
         "Trova il nome utente del tuo account ${ BRAND_NAME }"
       ]
     },
+    "Missing feature": {
+      "Check out the latest product updates": [
+        "Scopri gli ultimi aggiornamenti del prodotto."
+      ],
+      "Continue cancelling": [
+        "Continua la cancellazione"
+      ],
+      "Explore the latest news": [
+        "Esplora le ultime novitá"
+      ],
+      "Keep current plan": [
+        "Mantieni il piano attuale"
+      ],
+      "Make your voice heard": [
+        "Fai sentire la tua voce"
+      ],
+      "Request a feature": [
+        "Richiedi una funionalità"
+      ],
+      "Request a feature or vote on ideas from other users in our feedback forum.": [
+        "Richiedi una funzionalità o vota le idee di altri utenti nel nostro forum di feedback."
+      ],
+      "See how ${ BRAND_NAME } apps are evolving with your feedback.": [
+        "Scopri come le app di ${ BRAND_NAME } si stanno evolvendo grazie al tuo feedback."
+      ],
+      "Submit your ideas": [
+        "Invia le tue idee"
+      ],
+      "Your feedback helps us improve. Whether you've spotted a bug, want a new feature, or think something could work differently, we'd love to hear from you.": [
+        "Il tuo feedback ci aiuta a migliorare. Che tu abbia individuato un bug, voglia una nuova funzionalità o pensi che qualcosa possa funzionare diversamente, saremo felici di ascoltarti."
+      ]
+    },
     "Modal title": {
       "How to import calendars from another service": [
         "Come importare i calendari da un altro servizio"
@@ -10360,9 +10443,6 @@
       ],
       "Dedicated servers and IP": [
         "Server e IP dedicati"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "Server dedicati ottimizzati per lo streaming"
       ],
       "Desktop app": [
         "Applicazione desktop"
@@ -13186,9 +13266,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Il recupero dell'account non è disponibile per le chiavi di indirizzo tradizionali"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Genera le chiavi prima di provare a modificare la password"
       ]
     },
     "session_recovery:available:info": {
@@ -13924,6 +14001,9 @@
       "Share the confirmation code with your administrator": [
         "Condividi il codice di conferma con il tuo amministratore"
       ],
+      "Sign in": [
+        "Accedi"
+      ],
       "Sign in to your organization": [
         "Accedi alla tua organizzazione"
       ],
@@ -13983,6 +14063,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Dovrai creare manualmente nuovi utenti per aggiungerli alla tua organizzazione."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Verrai reindirizzato al tuo provider SSO di terze parti."
       ],
       "Your SSO configuration will be deleted.": [
         "La tua configurazione SSO verrà eliminata."
@@ -15042,14 +15125,8 @@
       "Account recovery": [
         "Recupero dell'account"
       ],
-      "Account restricted": [
-        "Account limitato"
-      ],
       "Account suspended": [
         "Account sospeso"
-      ],
-      "Account temporarily locked": [
-        "Account temporaneamente bloccato"
       ],
       "Action": [
         "Azione"
@@ -15123,6 +15200,9 @@
       ],
       "Allocate storage": [
         "Alloca spazio"
+      ],
+      "Already have multiple accounts?": [
+        "Hai giá molti account?"
       ],
       "Also in your plan": [
         "Anche nel tuo piano"
@@ -15307,6 +15387,9 @@
       ],
       "Create multiple user accounts": [
         "Crea account utente multipli"
+      ],
+      "Create new addresses easily": [
+        "Crea nuovi indirizzi facilmente"
       ],
       "Create new policy": [
         "Crea una nuova policy"
@@ -15515,6 +15598,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Inserisci i dettagli del tuo account ${ BRAND_NAME } per partecipare al programma beta di ${ app }"
+      ],
+      "Enter your password": [
+        "Inserisci la tua password"
       ],
       "Error": [
         "Errore"
@@ -16064,6 +16150,9 @@
       ],
       "Use backup recovery code": [
         "Usa il codice di backup per il recupero"
+      ],
+      "Use one account for all your addresses": [
+        "Usa un account per tutte le tue password"
       ],
       "User": [
         "Utente"
