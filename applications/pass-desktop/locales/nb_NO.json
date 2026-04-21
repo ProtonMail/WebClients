@@ -676,6 +676,9 @@
       "Skip": [
         "Hopp over"
       ],
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Noen har delt et element med deg på ${ PASS_APP_NAME }."
+      ],
       "Sort vault items": [
         "Sorter hvelvelementer"
       ],
@@ -1036,9 +1039,6 @@
       "Encrypted JSON not supported": [
         "Kryptert JSON ikke støttet"
       ],
-      "Encryption communication for desktop unlock failed.": [
-        "Krypteringskommunikasjon for opplåsing av skrivebordsapp mislyktes."
-      ],
       "Error reporting problem": [
         "Problem med feilrapportering"
       ],
@@ -1276,6 +1276,9 @@
       "Trashing item failed": [
         "Sletting av element til papirkurv mislyktes"
       ],
+      "Try reaching out to the link owner.": [
+        "Prøv å kontakte eieren av koblingen."
+      ],
       "Unable to generate an OTP code for this item": [
         "Ikke i stand tl å generere en OTP-kode for dette elementet."
       ],
@@ -1284,6 +1287,9 @@
       ],
       "Unknown error": [
         "Ukjent feil"
+      ],
+      "Unknown error.": [
+        "Ukjent feil."
       ],
       "Unknown invite": [
         "Ukjent invitasjon"
@@ -2299,7 +2305,7 @@
         "Tjenerne er utilgjengelige"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Tjenerne er utilgjengelige. Prøv på nytt om noen få minutter."
+        "Serverne er utilgjengelige. Prøv på nytt om noen få minutter."
       ],
       "Session timed out": [
         "Økten ble tidsavbrutt"
@@ -3736,6 +3742,9 @@
       ],
       "Theme": [
         "Tema"
+      ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Dette elementet er tilgjengelig til ${ date } eller til visningsgrensen er nådd."
       ],
       "Tier/Level": [
         "Nivå"

@@ -676,6 +676,9 @@
       "Skip": [
         "Atla"
       ],
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Birisi sizinle ${ PASS_APP_NAME } üzerinde bir öge paylaştı."
+      ],
       "Sort vault items": [
         "Kasa ögelerini sırala"
       ],
@@ -962,6 +965,9 @@
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Kimlik doğrulanamadı. Dışa aktarma işlemini yapabilmek için ikinci parolanızı yazın"
       ],
+      "Biometric authentication failed.": [
+        "Biyometrik kimlik doğrulama başarısız oldu."
+      ],
       "Cannot send invitation at the moment": [
         "Davetiye şu anda gönderilemiyor",
         "Davetiyeler şu anda gönderilemiyor"
@@ -1014,6 +1020,18 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "\"${ payload.content.name }\" kasası silinemedi"
       ],
+      "Desktop lock is not configured.": [
+        "Masaüstü kilidi yapılandırılmamış."
+      ],
+      "Desktop lock secret does not match.": [
+        "Masaüstü kilit parolası eşleşmiyor."
+      ],
+      "Desktop lock secret not found.": [
+        "Masaüstü kilidi şifresi bulunamadı."
+      ],
+      "Desktop lock setup failed.": [
+        "Masaüstü kilidi kurulumu başarısız oldu."
+      ],
       "Detected ${ errors.length } corrupted csv row": [
         "${ errors.length } bozuk CSV satırı bulundu",
         "${ errors.length } bozuk CSV satırı bulundu"
@@ -1033,11 +1051,11 @@
       "Emptying trash failed": [
         "Çöp kutusu boşaltılamadı"
       ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "${ PASS_APP_NAME } masaüstü uygulamasıyla şifreli iletişim kurulamadı."
+      ],
       "Encrypted JSON not supported": [
         "Şifrelenmiş JSON desteklenmiyor"
-      ],
-      "Encryption communication for desktop unlock failed.": [
-        "Bilgisayar kilidini açmak için gereken şifrelenmiş iletişim kurulamadı."
       ],
       "Error reporting problem": [
         "Sorun bildirilirken sorun çıktı"
@@ -1255,6 +1273,9 @@
       "Something went wrong. Please sign in again.": [
         "Bir sorun çıktı. Lütfen yeniden oturum açın."
       ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "${ PASS_APP_NAME } masaüstü uygulaması zamanında yanıt vermedi."
+      ],
       "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
         "${ PASS_APP_NAME } bilgisayar uygulaması kilitli. Kilidin açılması gerekiyor."
       ],
@@ -1263,6 +1284,9 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
         "${ PASS_APP_NAME } bilgisayar uygulaması yanıt vermiyor. Çalışıyor mu?"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "${ PASS_APP_NAME } masaüstü uygulamasında farklı bir hesapla oturum açılmış."
       ],
       "The session has expired. Please sign in again.": [
         "Oturumun geçerlilik süresi dolmuş. Lütfen yeniden oturum açın."
@@ -1276,6 +1300,9 @@
       "Trashing item failed": [
         "Öge çöpe atılamadı"
       ],
+      "Try reaching out to the link owner.": [
+        "Bağlantının sahibiyle görüşmeyi deneyin."
+      ],
       "Unable to generate an OTP code for this item": [
         "Bu öge için tek kullanımlık parola üretilemedi"
       ],
@@ -1284,6 +1311,9 @@
       ],
       "Unknown error": [
         "Bilinmeyen sorun"
+      ],
+      "Unknown error.": [
+        "Bilinmeyen bir sorun çıktı."
       ],
       "Unknown invite": [
         "Davet bilinmiyor"
@@ -3739,6 +3769,9 @@
       ],
       "Theme": [
         "Tema"
+      ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Bu ögeye ${ date } tarihine kadar veya görüntüleme sayısı sınırına ulaşılana kadar erişilebilir."
       ],
       "Tier/Level": [
         "Sınıf/Düzey"
