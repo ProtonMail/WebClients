@@ -230,6 +230,9 @@
       "Continue anyway": [
         "仍然继续"
       ],
+      "Continue cancelling": [
+        "继续取消"
+      ],
       "Continue import": [
         "继续导入"
       ],
@@ -485,6 +488,9 @@
       "Fit to window": [
         "适应窗口大小"
       ],
+      "Forgot password?": [
+        "忘记密码？"
+      ],
       "Forgot recovery method?": [
         "忘记恢复方法？"
       ],
@@ -605,6 +611,9 @@
       "Invite user": [
         "邀请用户"
       ],
+      "Keep current plan": [
+        "保留当前套餐"
+      ],
       "Keep Editing": [
         "继续编辑"
       ],
@@ -616,6 +625,9 @@
       ],
       "Keep my subscription": [
         "保留订阅"
+      ],
+      "Learn about recovery options": [
+        "了解恢复选项"
       ],
       "Learn more": [
         "了解详情"
@@ -925,6 +937,9 @@
       ],
       "Send my username": [
         "发送我的用户名"
+      ],
+      "Send new code": [
+        "发送新验证码"
       ],
       "Send new invite": [
         "发送新邀请"
@@ -3436,6 +3451,9 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DRIVE_APP_NAME } 中的 ${ DOCS_SHORT_APP_NAME } 允许您在安全、加密的环境中与他人协同办公。"
       ],
+      "Add extra addresses to your account or use Hide My Email aliases to keep your inbox private.": [
+        "向您的账户添加额外地址或使用“隐藏我的邮箱”别名来保护收件箱隐私！"
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "在 ${ DRIVE_APP_NAME } 中添加文件夹和文件，并邀请团队成员查看或编辑。"
       ],
@@ -3532,6 +3550,9 @@
       "Let's you instantly add meeting links to your event invitations.": [
         "让您即时在活动邀请中添加会议链接。"
       ],
+      "Most issues can be solved in a few minutes with our step-by-step guides.": [
+        "大多数问题可通过我们的分步指南在几分钟内解决！"
+      ],
       "No ads. No trackers.": [
         "无广告、无追踪。"
       ],
@@ -3546,6 +3567,9 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "使用共享日历简化同步和日程安排。"
+      ],
+      "Still need help? Our support team is here for you.": [
+        "仍需要帮助？我们的支持团队随时为您服务。"
       ],
       "This may happen if permissions were removed or your password changed.": [
         "如果权限被移除或密码被更改，可能会发生此情况。"
@@ -3600,6 +3624,12 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "您可以导入 iCal 格式（. ics 文件）的日程。文件大小上限为 ${ MAX_IMPORT_FILE_SIZE_STRING }，且日程总数上限为 ${ MAX_IMPORT_EVENTS_STRING }。若您的文件超出限制，请先拆分成较小的文件。"
+      ],
+      "You can manage multiple ${ BRAND_NAME } addresses from a single account, without switching. Aliases and address management tools help keep everything in one inbox.": [
+        "您可以通过一个账户管理多个 ${ BRAND_NAME } 地址，无需切换账户。别名和地址管理工具有助于将所有内容整合在同一个收件箱中。"
+      ],
+      "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
+        "您可以按照我们的支持指南将多个地址合并到一个主要的 ${ BRAND_NAME } 账户中！"
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "您现在可以使用此地址从 ${ BRAND_NAME } 发送电子邮件。"
@@ -4235,6 +4265,9 @@
       "Failed to load OAuth modal.": [
         "无法加载 OAuth 模式。"
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "加载订阅数据失败，请稍后重试。"
+      ],
       "Failed to load the STL preview": [
         "加载 STL 预览失败"
       ],
@@ -4435,9 +4468,6 @@
       ],
       "Please fix the highlighted conflict to proceed.": [
         "请修复高亮的冲突以继续。"
-      ],
-      "Please generate keys before you try to change your password": [
-        "更改密码前请先生成密钥"
       ],
       "Please select a country": [
         "请选择国家/地区"
@@ -5485,6 +5515,17 @@
         "${ BRAND_NAME } - Privacy by default"
       ]
     },
+    "Get help": {
+      "Continue cancelling": [
+        "继续取消"
+      ],
+      "Keep current plan": [
+        "保留当前套餐"
+      ],
+      "Many issues can be resolved quickly with our help guides. If you need more support, our team is here to help.": [
+        "许多问题可以通过我们的帮助指南快速解决。如果您需要更多支持，我们的团队随时为您服务。"
+      ]
+    },
     "Gmail forwarding": {
       "Automatically forward": [
         "自动转发"
@@ -6019,6 +6060,9 @@
       "${ BRAND_NAME } Scribe writing assistant": [
         "写作助理 ${ BRAND_NAME } Scribe"
       ],
+      "${ BRAND_NAME } will send a verification code to ${ phoneNumber }. Standard message rates may apply.": [
+        "${ BRAND_NAME } 将向 ${ phoneNumber } 发送验证码，这可能产生标准短信费用。"
+      ],
       "${ BRAND_NAME }'s encryption technology means that nobody can access your password - not even us.": [
         "${ BRAND_NAME } 的前沿加密技术意味着没有人能够窃取您的密码，包括我们自己。"
       ],
@@ -6228,6 +6272,9 @@
       ],
       "**Sync codes** to all your devices": [
         "在所有设备之间**同步验证码**"
+      ],
+      "**This will disable 2-factor authentication.**": [
+        "**这将禁用 2FA！**"
       ],
       "+ ${ invisibleCount } More": [
         "+ ${ invisibleCount } 更多"
@@ -6468,6 +6515,9 @@
       ],
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "重新接收验证码前，请先检查垃圾邮件文件夹，并确认邮箱地址 ${ strong } 是否正确。"
+      ],
+      "Before sending a new verification code, check your spam folder for ${ EmailOrPhoneNumber }.": [
+        "在发送新的验证码之前，请检查垃圾邮件文件夹中是否有来自 ${ EmailOrPhoneNumber } 的邮件！"
       ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
         "您需要先前往 DNS 管理面板（在您购买该域名的平台上）添加以下两条 MX 记录，才能通过 ${ MAIL_APP_NAME } 的自有域名地址接收邮件。您可以在${ kbLink }查看示例及帮助信息。"
@@ -6871,6 +6921,12 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "请输入您的 ${ BRAND_NAME } 账户邮箱地址或用户名。"
       ],
+      "Enter your own password (as organization admin).": [
+        "请输入您自己的密码（作为组织管理员）。"
+      ],
+      "Enter your own password (as trusted contact).": [
+        "输入您自己的密码（作为可信联系人）"
+      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "输入您的密保邮箱，我们将发邮件告知您的用户名或邮箱地址。"
       ],
@@ -6879,6 +6935,9 @@
       ],
       "Enter your recovery phrase to change your password now.": [
         "输入找回密码需要的助记词。"
+      ],
+      "Enter your recovery phrase to verify your identity and disable two-factor authentication.": [
+        "请输入您的恢复短语以验证身份并禁用您的 2FA！"
       ],
       "Everything in ${ planOrAppName }": [
         "一切尽在 ${ planOrAppName }"
@@ -7116,6 +7175,9 @@
       ],
       "Internet connection restored.": [
         "网络连接已恢复。"
+      ],
+      "Invalid code. ${ RequestNewCodeLink } and try again.": [
+        "验证码无效。${ RequestNewCodeLink } 并重试。"
       ],
       "Invite deleted": [
         "邀请已被删除"
@@ -7924,6 +7986,9 @@
       "The name will be visible to your users while they are signed in.": [
         "您的用户在登录时将可以看到该名称。"
       ],
+      "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
+        "推荐奖励可在您朋友的试用期结束后的 2 个月内发放，前提是您的朋友已订阅套餐。"
+      ],
       "The securest way to browse, stream, and be online.": [
         "最安全的浏览、串流和冲浪方式。"
       ],
@@ -8094,6 +8159,9 @@
       ],
       "To proceed, we must verify the request.": [
         "继续操作之前，操作请求需要验证。"
+      ],
+      "To regain access to your account and data, enter the 12-word recovery phrase associated with your account.": [
+        "若要重新获得对您账户和数据的访问权限，请输入与您账户关联的 12 词恢复短语。"
       ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "增强互联网传输安全，下载安装 ${ VPN_APP_NAME } 应用程序，连接应用提供的服务器。"
@@ -9688,6 +9756,12 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "我确定要永久删除此账户及其所有数据。"
       ],
+      "Your password (admin)": [
+        "您的密码（管理员）"
+      ],
+      "Your password (trusted contact)": [
+        "您的密码（可信联系人）"
+      ],
       "ZIP code": [
         "邮政编码"
       ]
@@ -9807,6 +9881,9 @@
       ]
     },
     "Link": {
+      "Account recovery explained": [
+        "账户恢复详解"
+      ],
       "activity monitor": [
         "活动监视器"
       ],
@@ -9822,11 +9899,11 @@
       "clearing your browser cache": [
         "清除浏览器缓存"
       ],
-      "Common sign in issues": [
-        "常见登录问题"
-      ],
       "Common sign up issues": [
         "常见注册问题"
+      ],
+      "Contact support": [
+        "联系支持"
       ],
       "contacts’ assistance": [
         "联系人协助"
@@ -9936,11 +10013,17 @@
       "if your data is leaked": [
         "如果您的数据遭到泄露"
       ],
+      "Learn how": [
+        "了解详情"
+      ],
       "Learn more": [
         "了解详情"
       ],
       "Learn more about data recovery": [
         "详细了解数据恢复"
+      ],
+      "Manage addresses": [
+        "管理地址"
       ],
       "Not activated": [
         "尚未激活"
@@ -9992,6 +10075,9 @@
       ],
       "visit our blog": [
         "阅读我们的博客"
+      ],
+      "Visit our support site": [
+        "访问我们的支持网站"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "UDP 和 TCP 协议有何区别？"
@@ -10373,6 +10459,38 @@
         "登录以访问您的 ${ appName } 账户"
       ]
     },
+    "Missing feature": {
+      "Check out the latest product updates": [
+        "查看最新产品更新"
+      ],
+      "Continue cancelling": [
+        "继续取消"
+      ],
+      "Explore the latest news": [
+        "查看最新资讯"
+      ],
+      "Keep current plan": [
+        "保留当前套餐"
+      ],
+      "Make your voice heard": [
+        "让您的声音被听见"
+      ],
+      "Request a feature": [
+        "功能建议"
+      ],
+      "Request a feature or vote on ideas from other users in our feedback forum.": [
+        "请在我们的反馈论坛中提交功能请求或为其他用户的创意投票！"
+      ],
+      "See how ${ BRAND_NAME } apps are evolving with your feedback.": [
+        "了解 ${ BRAND_NAME } 应用如何根据您的反馈不断进步。"
+      ],
+      "Submit your ideas": [
+        "提交建议"
+      ],
+      "Your feedback helps us improve. Whether you've spotted a bug, want a new feature, or think something could work differently, we'd love to hear from you.": [
+        "您的反馈帮助我们改进。无论您发现了错误、想要新功能，还是觉得某些地方可以改进，我们都非常乐意听取您的意见。"
+      ]
+    },
     "Modal title": {
       "How to import calendars from another service": [
         "如何从其他服务导入日历"
@@ -10706,8 +10824,8 @@
       "Dedicated servers and IP": [
         "专用服务器和IP"
       ],
-      "Dedicated servers optimized for streaming": [
-        "专为流媒体优化的专用服务器"
+      "Dedicated servers optimized for speed": [
+        "专为速度优化的专用服务器"
       ],
       "Desktop app": [
         "桌面应用"
@@ -12283,6 +12401,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "在此期间，您将无法修改或取消订阅。请待付款完成后再尝试进行任何操作。感谢您的耐心等待。"
       ],
+      "Edit billing address": [
+        "编辑账单地址"
+      ],
       "Got it": [
         "了解"
       ],
@@ -13473,9 +13594,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "传统地址密钥无法恢复账户"
-      ],
-      "Please generate keys before you try to change your password": [
-        "更改密码前请先生成密钥"
       ]
     },
     "session_recovery:available:info": {
@@ -14203,6 +14321,9 @@
       "Share the confirmation code with your administrator": [
         "与您的管理员分享该验证码"
       ],
+      "Sign in": [
+        "登录"
+      ],
       "Sign in to your organization": [
         "登录到您的组织"
       ],
@@ -14262,6 +14383,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "您必须手动创建新用户，并将其添加到组织中。"
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "您将被重定向到您的第三方 SSO 提供商。"
       ],
       "Your SSO configuration will be deleted.": [
         "您的 SSO 配置将被删除。"
@@ -15310,14 +15434,8 @@
       "Account recovery": [
         "账户恢复"
       ],
-      "Account restricted": [
-        "账户受限"
-      ],
       "Account suspended": [
         "账号已被停用"
-      ],
-      "Account temporarily locked": [
-        "账户暂时锁定"
       ],
       "Action": [
         "操作"
@@ -15390,6 +15508,9 @@
       ],
       "Allocate storage": [
         "分配存储空间"
+      ],
+      "Already have multiple accounts?": [
+        "已有多个账户？"
       ],
       "Also in your plan": [
         "也在您的计划中"
@@ -15573,6 +15694,9 @@
       ],
       "Create multiple user accounts": [
         "创建多个账户"
+      ],
+      "Create new addresses easily": [
+        "轻松创建新的地址"
       ],
       "Create new policy": [
         "创建新策略"
@@ -15790,6 +15914,9 @@
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "输入您的 ${ BRAND_NAME } 账户详情以加入 ${ app } Beta 计划"
       ],
+      "Enter your password": [
+        "请输入您的密码"
+      ],
       "Error": [
         "失败"
       ],
@@ -15837,6 +15964,12 @@
       ],
       "Get complete privacy coverage": [
         "获取更全面的隐私保护"
+      ],
+      "Get direct support": [
+        "获取直接支持"
+      ],
+      "Get help with an issue": [
+        "获取帮助"
       ],
       "Get more from your VPN": [
         "从您的 VPN 获取更多信息"
@@ -16108,6 +16241,9 @@
       "Request new code": [
         "请求新验证码"
       ],
+      "Request new code?": [
+        "重新发送验证码？"
+      ],
       "Request sent": [
         "请求已发送"
       ],
@@ -16294,6 +16430,9 @@
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "要预览此电子表格，请在 ${ SHEETS_APP_NAME } 中打开或下载它。"
       ],
+      "Troubleshoot your issue": [
+        "排查问题"
+      ],
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "体验 ${ AUTHENTICATOR_APP_NAME }"
       ],
@@ -16356,6 +16495,9 @@
       ],
       "Use backup recovery code": [
         "使用备用恢复码"
+      ],
+      "Use one account for all your addresses": [
+        "使用一个账户管理所有地址"
       ],
       "User": [
         "用户"

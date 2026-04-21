@@ -230,6 +230,9 @@
       "Continue anyway": [
         "Continuar de todas formas"
       ],
+      "Continue cancelling": [
+        "Continuar cancelación"
+      ],
       "Continue import": [
         "Continuar importación"
       ],
@@ -485,6 +488,9 @@
       "Fit to window": [
         "Ajustar a la ventana"
       ],
+      "Forgot password?": [
+        "¿Olvidó su contraseña?"
+      ],
       "Forgot recovery method?": [
         "¿Método de recuperación olvidado?"
       ],
@@ -604,6 +610,9 @@
       ],
       "Invite user": [
         "Invitar usuario"
+      ],
+      "Keep current plan": [
+        "Mantener el plan actual"
       ],
       "Keep Editing": [
         "Seguir editando"
@@ -1442,6 +1451,50 @@
     "Admin": {
       "admin": [
         "administrador"
+      ]
+    },
+    "Admin roles onboarding": {
+      "3 new admin roles": [
+        "3 nuevos rol de administración"
+      ],
+      "Admin roles": [
+        "Roles de dadministración"
+      ],
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configure las políticas de seguridad, conservación de datos, e infraestructura VPN, y gestione registros de auditoría."
+      ],
+      "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
+        "Delegue la gestión al asignar roles de administración específicos. Brinde a cada administrador solo el acceso necesario. Esto cumple con el principio de privilegio mínimo, protegiendo su organización de cuentas comprometidas y errores acceidentales."
+      ],
+      "Delegate management with the appropriate admin role.": [
+        "Delegue la gestión con el rol de administración apropiado."
+      ],
+      "Manage all users, groups, storage, security, billing, audit logs, and system configurations.": [
+        "gestione todos los usuarios, grupos, almacenamiento, seguridad, facuración, registros de auditoría, y configuraciones del sistema."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gestione usuarios, grupo, y almacenamiento para topdos los miembros, asigne roles, y asigne licencias."
+      ],
+      "New: Control admin access for individual users": [
+        "Nuevo: Control de acceso administrativo para usuarios individuales"
+      ],
+      "Organization admin": [
+        "Administrador de la organización"
+      ],
+      "Organization admin:": [
+        "Administrador de la organización:"
+      ],
+      "Security admin": [
+        "Administrador de seguridad"
+      ],
+      "Security admin:": [
+        "Administrador de seguridad:"
+      ],
+      "User admin": [
+        "Usuario administrador"
+      ],
+      "User admin:": [
+        "Usuario administrador:"
       ]
     },
     "AdminRole_Info": {
@@ -3466,6 +3519,9 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } en ${ DRIVE_APP_NAME } le permite trabajar juntos en un entorno seguro y cifrado."
       ],
+      "Add extra addresses to your account or use Hide My Email aliases to keep your inbox private.": [
+        "Añada direcciones adicionales a su cuenta o use alias de Hide My Email para mantener su bandeja de entrada privada."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Agregue carpetas y archivos a ${ DRIVE_APP_NAME } e invite a los miembros del equipo a ver o editar."
       ],
@@ -3562,6 +3618,9 @@
       "Let's you instantly add meeting links to your event invitations.": [
         "Le permite agregar instantáneamente enlaces de reunión a las invitaciones de sus eventos."
       ],
+      "Most issues can be solved in a few minutes with our step-by-step guides.": [
+        "La mayoría de los problemas se resuelven en cuestión de minutos con nuestras guías paso a paso."
+      ],
       "No ads. No trackers.": [
         "Sin anuncios. Sin rastreadores."
       ],
@@ -3576,6 +3635,9 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Simplifique la sincronización y la programación con calendarios compartidos."
+      ],
+      "Still need help? Our support team is here for you.": [
+        "¿Aún necesita ayuda? Nuestro equipo de soporte está aquí para ayudarle."
       ],
       "This may happen if permissions were removed or your password changed.": [
         "Esto puede suceder si se eliminaron permisos o si cambió su contraseña."
@@ -3631,6 +3693,12 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puede importar eventos en formato iCal (archivos ICS). El archivo debe tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener hasta ${ MAX_IMPORT_EVENTS_STRING } eventos.\nSi el archivo es más grande, debe dividirlo en archivos más pequeños."
+      ],
+      "You can manage multiple ${ BRAND_NAME } addresses from a single account, without switching. Aliases and address management tools help keep everything in one inbox.": [
+        "Puede gestionar múltiples direcciones de ${ BRAND_NAME } desde una sola cuenta, sin intercambiar. Las herramientas de gestión de alias y direcciones le ayudan a mantener todo en una sola bandeja de entrada."
+      ],
+      "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
+        "Puede combinar direcciones en una cuenta principal de ${ BRAND_NAME } usando nuestra guia."
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Ahora puede enviar correos electrónicos desde ${ BRAND_NAME } usando esta dirección."
@@ -4478,9 +4546,6 @@
       "Please fix the highlighted conflict to proceed.": [
         "Solucione el conflicto resaltado para continuar.",
         "Solucione los conflictos resaltados para continuar."
-      ],
-      "Please generate keys before you try to change your password": [
-        "Genere claves antes de intentar cambiar la contraseña"
       ],
       "Please select a country": [
         "Seleccione un país"
@@ -5542,6 +5607,17 @@
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
         "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
+    "Get help": {
+      "Continue cancelling": [
+        "Continuar cancelación"
+      ],
+      "Keep current plan": [
+        "Mantener el plan actual"
+      ],
+      "Many issues can be resolved quickly with our help guides. If you need more support, our team is here to help.": [
+        "Muchos problemas se pueden resolver rápidamente con nuestras guías de ayuda. Si necesita más soporte, nuestro equipo está aquí para ayudarle."
       ]
     },
     "Gmail forwarding": {
@@ -6986,6 +7062,12 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Ingrese la dirección de correo o usuario de ${ BRAND_NAME }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Ingrese su propia contraseña (como administrador de la organización)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Ingrese su propia contraseña (como contacto de confianza)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Ingrese la dirección de correo electrónico de recuperación y le enviaremos el nombre de usuario o dirección de correo."
@@ -9846,6 +9928,12 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Sí, quiero eliminar permanentemente esta cuenta y todos los datos."
       ],
+      "Your password (admin)": [
+        "Su contraseña (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Su contraseña (contacto de confianza)"
+      ],
       "ZIP code": [
         "Código postal"
       ]
@@ -9966,6 +10054,9 @@
       ]
     },
     "Link": {
+      "Account recovery explained": [
+        "Recuperación de cuenta explicada"
+      ],
       "activity monitor": [
         "monitor de actividad"
       ],
@@ -9981,11 +10072,11 @@
       "clearing your browser cache": [
         "vaciar la caché del navegador"
       ],
-      "Common sign in issues": [
-        "Problemas comunes de inicio de sesión"
-      ],
       "Common sign up issues": [
         "Problemas comunes de registro"
+      ],
+      "Contact support": [
+        "Contactar con soporte"
       ],
       "contacts’ assistance": [
         "asistencia de contactos"
@@ -10095,11 +10186,17 @@
       "if your data is leaked": [
         "si sus datos son filtrados"
       ],
+      "Learn how": [
+        "Más información"
+      ],
       "Learn more": [
         "Más información"
       ],
       "Learn more about data recovery": [
         "Más información acerca de la recuperación de datos"
+      ],
+      "Manage addresses": [
+        "Gestione las direcciones"
       ],
       "Not activated": [
         "No activado"
@@ -10151,6 +10248,9 @@
       ],
       "visit our blog": [
         "visitar nuestro blog"
+      ],
+      "Visit our support site": [
+        "Visite nuestro sitio de soporte"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "¿Cuál es la diferencia entre los protocolos UDP y TCP?"
@@ -10927,8 +11027,8 @@
       "Dedicated servers and IP": [
         "Servidores e IP dedicados"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Servidores dedicados optimizados para streaming"
+      "Dedicated servers optimized for speed": [
+        "Servidores dedicados optimizados para velocidad"
       ],
       "Desktop app": [
         "App de escritorio"
@@ -13823,9 +13923,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "La recuperación de la cuenta no está disponible para claves de direcciones heredadas"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Genere claves antes de intentar cambiar la contraseña"
       ]
     },
     "session_recovery:available:info": {
@@ -14579,6 +14676,9 @@
       "Share the confirmation code with your administrator": [
         "Comparta el código de confirmación con su administrador"
       ],
+      "Sign in": [
+        "Iniciar sesión"
+      ],
       "Sign in to your organization": [
         "Iniciar sesión en la organización"
       ],
@@ -14638,6 +14738,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Tendrá que crear los nuevos usuarios manualmente para agregarlos a su organización."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Se le redirigirá a su proveedor de SSO de terceros."
       ],
       "Your SSO configuration will be deleted.": [
         "Se eliminará su configuración de SSO."
@@ -15715,14 +15818,8 @@
       "Account recovery": [
         "Recuperación de cuenta"
       ],
-      "Account restricted": [
-        "Cuenta restringida"
-      ],
       "Account suspended": [
         "Cuenta suspendida"
-      ],
-      "Account temporarily locked": [
-        "Cuenta temporalmente bloqueada"
       ],
       "Action": [
         "Acción"
@@ -15796,6 +15893,9 @@
       ],
       "Allocate storage": [
         "Asignar almacenamiento"
+      ],
+      "Already have multiple accounts?": [
+        "¿Ya tiene múltiples cuentas?"
       ],
       "Also in your plan": [
         "También en su plan"
@@ -15980,6 +16080,9 @@
       ],
       "Create multiple user accounts": [
         "Crear múltiples cuentas de usuario"
+      ],
+      "Create new addresses easily": [
+        "Crear nueva dirección facilmente"
       ],
       "Create new policy": [
         "Crear una política"
@@ -16198,6 +16301,9 @@
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Ingrese los detalles de la cuenta de ${ BRAND_NAME } para unirse al programa Beta de ${ app }"
       ],
+      "Enter your password": [
+        "Ingrese su contraseña"
+      ],
       "Error": [
         "Error"
       ],
@@ -16246,6 +16352,12 @@
       ],
       "Get complete privacy coverage": [
         "Obtenga una cobertura de privacidad completa"
+      ],
+      "Get direct support": [
+        "Obtenga asistencia directa"
+      ],
+      "Get help with an issue": [
+        "Obtenga ayuda con un problema"
       ],
       "Get more from your VPN": [
         "Obtenga más de su VPN"
@@ -16708,6 +16820,9 @@
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Para previsualizar esta hoja de cálculo, ábrala en ${ SHEETS_APP_NAME } o descárguela."
       ],
+      "Troubleshoot your issue": [
+        "Solucione su problema"
+      ],
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "Pruebe ${ AUTHENTICATOR_APP_NAME }"
       ],
@@ -16770,6 +16885,9 @@
       ],
       "Use backup recovery code": [
         "Usar código de recuperación de copia de seguridad"
+      ],
+      "Use one account for all your addresses": [
+        "Use una cuenta para todas sus direcciones"
       ],
       "User": [
         "Usuario"
