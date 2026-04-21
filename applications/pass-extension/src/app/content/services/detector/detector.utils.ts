@@ -5,7 +5,8 @@ import {
     selectFormCandidates,
     selectInputCandidates,
     shallowShadowQuerySelector,
-} from '@proton/pass/fathom';
+} from '@protontech/autofill';
+
 import type { MaybeNull } from '@proton/pass/types/utils/index';
 import { isFormElement, isHTMLElement, isInputElement, isValidInputElement } from '@proton/pass/utils/dom/predicates';
 import { and, not, or } from '@proton/pass/utils/fp/predicates';
