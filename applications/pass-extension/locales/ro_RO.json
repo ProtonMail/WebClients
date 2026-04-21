@@ -1365,6 +1365,30 @@
       ],
       "Unknown error.": [
         "Eroare necunoscută."
+      ],
+      "Biometric authentication failed.": [
+        "Autentificarea biometrică a eșuat."
+      ],
+      "Desktop lock is not configured.": [
+        "Blocarea desktopului nu este configurată."
+      ],
+      "Desktop lock secret does not match.": [
+        "Secretul de blocare al desktopului nu se potrivește."
+      ],
+      "Desktop lock secret not found.": [
+        "Secretul de blocare al desktopului nu a fost găsit."
+      ],
+      "Desktop lock setup failed.": [
+        "Configurarea blocării desktopului a eșuat."
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Comunicarea criptată cu aplicația desktop ${ PASS_APP_NAME } a eșuat."
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "Aplicația desktop ${ PASS_APP_NAME } nu a răspuns la timp."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "Aplicația desktop ${ PASS_APP_NAME } este conectată cu un cont diferit."
       ]
     },
     "Error message": {
