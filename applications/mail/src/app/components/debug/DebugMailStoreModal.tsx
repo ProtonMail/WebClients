@@ -15,12 +15,14 @@ import { useMailSelector } from 'proton-mail/store/hooks';
 interface Props extends ModalProps {}
 
 export const DebugMailStoreContextTotal = ({ ...rest }: Props) => {
-    const { createNotification } = useNotifications();
     const storeParams = useMailSelector(params);
     const total = useMailSelector(contextTotal);
     const length = useMailSelector(elementsLength);
+
     const [conversationCounts] = useConversationCounts();
     const [messageCounts] = useMessageCounts();
+
+    const { createNotification } = useNotifications();
 
     const data = {
         params: storeParams,
@@ -36,23 +38,13 @@ export const DebugMailStoreContextTotal = ({ ...rest }: Props) => {
 
     return (
         <ModalTwo {...rest} onClose={rest.onClose} size="large">
-            <ModalTwoHeader title="Debug — Mail store" />
-            <ModalTwoContent>
-                <pre
-                    style={{
-                        fontSize: '12px',
-                        overflowX: 'auto',
-                        whiteSpace: 'pre-wrap',
-                        wordBreak: 'break-all',
-                    }}
-                >
-                    {stringData}
-                </pre>
+            <ModalTwoHeader title="Mail debugging information" />
+            <ModalTwoContent className="bg-weak m-0 px-8 py-2">
+                <pre className="text-sm ">{stringData}</pre>
             </ModalTwoContent>
             <ModalTwoFooter>
                 <Copy
                     tooltipText={c('Info').t`Copy to clipboard`}
-                    shape="ghost"
                     value={stringData}
                     onCopy={() => {
                         createNotification({ text: c('Info').t`Copied to clipboard` });
