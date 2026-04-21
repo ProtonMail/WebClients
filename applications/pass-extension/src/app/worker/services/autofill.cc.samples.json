@@ -19,15 +19,30 @@
                     {
                         "formId": "93546be1",
                         "fields": [
-                            { "type": "field", "fieldId": "eb10e9d1", "fieldType": "cc", "fieldSubType": "cc:number" },
-                            { "type": "field", "fieldId": "3c4c82c6", "fieldType": "cc", "fieldSubType": "cc:cvc" },
+                            {
+                                "type": "field",
+                                "fieldId": "eb10e9d1",
+                                "fieldType": "credit-card",
+                                "fieldSubType": "cc:number"
+                            },
+                            {
+                                "type": "field",
+                                "fieldId": "3c4c82c6",
+                                "fieldType": "credit-card",
+                                "fieldSubType": "cc:cvc"
+                            },
                             {
                                 "type": "field",
                                 "fieldId": "eb316378",
-                                "fieldType": "cc",
+                                "fieldType": "credit-card",
                                 "fieldSubType": "cc:exp-month"
                             },
-                            { "type": "field", "fieldId": "32336fd7", "fieldType": "cc", "fieldSubType": "cc:exp-year" }
+                            {
+                                "type": "field",
+                                "fieldId": "32336fd7",
+                                "fieldType": "credit-card",
+                                "fieldSubType": "cc:exp-year"
+                            }
                         ]
                     }
                 ],
@@ -59,7 +74,12 @@
                     {
                         "formId": "2fa1a751",
                         "fields": [
-                            { "type": "field", "fieldId": "bda56c58", "fieldType": "cc", "fieldSubType": "cc:name" },
+                            {
+                                "type": "field",
+                                "fieldId": "bda56c58",
+                                "fieldType": "credit-card",
+                                "fieldSubType": "cc:name"
+                            },
                             {
                                 "type": "frame",
                                 "frameAttributes": {
@@ -81,9 +101,24 @@
                     {
                         "formId": "1c8b65b2",
                         "fields": [
-                            { "type": "field", "fieldId": "8bb4e5da", "fieldType": "cc", "fieldSubType": "cc:number" },
-                            { "type": "field", "fieldId": "217c7b4e", "fieldType": "cc", "fieldSubType": "cc:cvc" },
-                            { "type": "field", "fieldId": "2c3e3b8b", "fieldType": "cc", "fieldSubType": "cc:exp" }
+                            {
+                                "type": "field",
+                                "fieldId": "8bb4e5da",
+                                "fieldType": "credit-card",
+                                "fieldSubType": "cc:number"
+                            },
+                            {
+                                "type": "field",
+                                "fieldId": "217c7b4e",
+                                "fieldType": "credit-card",
+                                "fieldSubType": "cc:cvc"
+                            },
+                            {
+                                "type": "field",
+                                "fieldId": "2c3e3b8b",
+                                "fieldType": "credit-card",
+                                "fieldSubType": "cc:exp"
+                            }
                         ]
                     }
                 ],
@@ -157,8 +192,18 @@
                     {
                         "formId": "32fe822a",
                         "fields": [
-                            { "type": "field", "fieldId": "8d885283", "fieldType": "cc", "fieldSubType": "cc:number" },
-                            { "type": "field", "fieldId": "29f0aad5", "fieldType": "cc", "fieldSubType": "cc:exp" }
+                            {
+                                "type": "field",
+                                "fieldId": "8d885283",
+                                "fieldType": "credit-card",
+                                "fieldSubType": "cc:number"
+                            },
+                            {
+                                "type": "field",
+                                "fieldId": "29f0aad5",
+                                "fieldType": "credit-card",
+                                "fieldSubType": "cc:exp"
+                            }
                         ]
                     }
                 ],
@@ -238,9 +283,24 @@
                     {
                         "formId": "d6d9fe4a",
                         "fields": [
-                            { "type": "field", "fieldId": "bef6683a", "fieldType": "cc", "fieldSubType": "cc:number" },
-                            { "type": "field", "fieldId": "8899fdbe", "fieldType": "cc", "fieldSubType": "cc:exp" },
-                            { "type": "field", "fieldId": "1850802a", "fieldType": "cc", "fieldSubType": "cc:cvc" }
+                            {
+                                "type": "field",
+                                "fieldId": "bef6683a",
+                                "fieldType": "credit-card",
+                                "fieldSubType": "cc:number"
+                            },
+                            {
+                                "type": "field",
+                                "fieldId": "8899fdbe",
+                                "fieldType": "credit-card",
+                                "fieldSubType": "cc:exp"
+                            },
+                            {
+                                "type": "field",
+                                "fieldId": "1850802a",
+                                "fieldType": "credit-card",
+                                "fieldSubType": "cc:cvc"
+                            }
                         ]
                     }
                 ],
@@ -280,8 +340,18 @@
                                     "height": 28
                                 }
                             },
-                            { "type": "field", "fieldId": "d23050eb", "fieldType": "cc", "fieldSubType": "cc:exp" },
-                            { "type": "field", "fieldId": "5144cf49", "fieldType": "cc", "fieldSubType": "cc:name" },
+                            {
+                                "type": "field",
+                                "fieldId": "d23050eb",
+                                "fieldType": "credit-card",
+                                "fieldSubType": "cc:exp"
+                            },
+                            {
+                                "type": "field",
+                                "fieldId": "5144cf49",
+                                "fieldType": "credit-card",
+                                "fieldSubType": "cc:name"
+                            },
                             {
                                 "type": "frame",
                                 "frameAttributes": {
@@ -298,7 +368,12 @@
                     {
                         "formId": "867a6a75",
                         "fields": [
-                            { "type": "field", "fieldId": "9f613269", "fieldType": "cc", "fieldSubType": "cc:number" }
+                            {
+                                "type": "field",
+                                "fieldId": "9f613269",
+                                "fieldType": "credit-card",
+                                "fieldSubType": "cc:number"
+                            }
                         ]
                     }
                 ],
@@ -346,8 +421,18 @@
                                     "height": 28
                                 }
                             },
-                            { "type": "field", "fieldId": "d23050eb", "fieldType": "cc", "fieldSubType": "cc:exp" },
-                            { "type": "field", "fieldId": "5144cf49", "fieldType": "cc", "fieldSubType": "cc:name" },
+                            {
+                                "type": "field",
+                                "fieldId": "d23050eb",
+                                "fieldType": "credit-card",
+                                "fieldSubType": "cc:exp"
+                            },
+                            {
+                                "type": "field",
+                                "fieldId": "5144cf49",
+                                "fieldType": "credit-card",
+                                "fieldSubType": "cc:name"
+                            },
                             {
                                 "type": "frame",
                                 "frameAttributes": {
@@ -369,7 +454,12 @@
                     {
                         "formId": "1b2c9925",
                         "fields": [
-                            { "type": "field", "fieldId": "29fbb4b2", "fieldType": "cc", "fieldSubType": "cc:number" }
+                            {
+                                "type": "field",
+                                "fieldId": "29fbb4b2",
+                                "fieldType": "credit-card",
+                                "fieldSubType": "cc:number"
+                            }
                         ]
                     }
                 ],
@@ -387,7 +477,12 @@
                     {
                         "formId": "4e22babb",
                         "fields": [
-                            { "type": "field", "fieldId": "d1bc98be", "fieldType": "cc", "fieldSubType": "cc:cvc" }
+                            {
+                                "type": "field",
+                                "fieldId": "d1bc98be",
+                                "fieldType": "credit-card",
+                                "fieldSubType": "cc:cvc"
+                            }
                         ]
                     }
                 ],
@@ -441,7 +536,12 @@
                     {
                         "formId": "c0f9b5b8",
                         "fields": [
-                            { "type": "field", "fieldId": "e1b718ce", "fieldType": "cc", "fieldSubType": "cc:name" },
+                            {
+                                "type": "field",
+                                "fieldId": "e1b718ce",
+                                "fieldType": "credit-card",
+                                "fieldSubType": "cc:name"
+                            },
                             {
                                 "type": "frame",
                                 "frameAttributes": {
@@ -507,7 +607,12 @@
                     {
                         "formId": "13b37f22",
                         "fields": [
-                            { "type": "field", "fieldId": "fd17f733", "fieldType": "cc", "fieldSubType": "cc:number" }
+                            {
+                                "type": "field",
+                                "fieldId": "fd17f733",
+                                "fieldType": "credit-card",
+                                "fieldSubType": "cc:number"
+                            }
                         ]
                     }
                 ],
@@ -525,7 +630,12 @@
                     {
                         "formId": "a215f770",
                         "fields": [
-                            { "type": "field", "fieldId": "7426de9c", "fieldType": "cc", "fieldSubType": "cc:exp" }
+                            {
+                                "type": "field",
+                                "fieldId": "7426de9c",
+                                "fieldType": "credit-card",
+                                "fieldSubType": "cc:exp"
+                            }
                         ]
                     }
                 ],
@@ -543,7 +653,12 @@
                     {
                         "formId": "da74cc1e",
                         "fields": [
-                            { "type": "field", "fieldId": "d99c1644", "fieldType": "cc", "fieldSubType": "cc:cvc" }
+                            {
+                                "type": "field",
+                                "fieldId": "d99c1644",
+                                "fieldType": "credit-card",
+                                "fieldSubType": "cc:cvc"
+                            }
                         ]
                     }
                 ],
@@ -561,7 +676,12 @@
                     {
                         "formId": "d4cdf1ab",
                         "fields": [
-                            { "type": "field", "fieldId": "a3b2c650", "fieldType": "cc", "fieldSubType": "cc:number" }
+                            {
+                                "type": "field",
+                                "fieldId": "a3b2c650",
+                                "fieldType": "credit-card",
+                                "fieldSubType": "cc:number"
+                            }
                         ]
                     }
                 ],
@@ -579,7 +699,12 @@
                     {
                         "formId": "68946ccf",
                         "fields": [
-                            { "type": "field", "fieldId": "dba4916d", "fieldType": "cc", "fieldSubType": "cc:exp" }
+                            {
+                                "type": "field",
+                                "fieldId": "dba4916d",
+                                "fieldType": "credit-card",
+                                "fieldSubType": "cc:exp"
+                            }
                         ]
                     }
                 ],
@@ -623,8 +748,18 @@
                     {
                         "formId": "a6cf3634",
                         "fields": [
-                            { "type": "field", "fieldId": "977ecff9", "fieldType": "cc", "fieldSubType": "cc:number" },
-                            { "type": "field", "fieldId": "45a6aebd", "fieldType": "cc", "fieldSubType": "cc:cvc" }
+                            {
+                                "type": "field",
+                                "fieldId": "977ecff9",
+                                "fieldType": "credit-card",
+                                "fieldSubType": "cc:number"
+                            },
+                            {
+                                "type": "field",
+                                "fieldId": "45a6aebd",
+                                "fieldType": "credit-card",
+                                "fieldSubType": "cc:cvc"
+                            }
                         ]
                     },
                     {
@@ -663,7 +798,12 @@
                                     "height": 48
                                 }
                             },
-                            { "type": "field", "fieldId": "1e5e4645", "fieldType": "cc", "fieldSubType": "cc:name" }
+                            {
+                                "type": "field",
+                                "fieldId": "1e5e4645",
+                                "fieldType": "credit-card",
+                                "fieldSubType": "cc:name"
+                            }
                         ]
                     }
                 ],
@@ -674,7 +814,12 @@
                     {
                         "formId": "45899854",
                         "fields": [
-                            { "type": "field", "fieldId": "3a7d16cb", "fieldType": "cc", "fieldSubType": "cc:number" }
+                            {
+                                "type": "field",
+                                "fieldId": "3a7d16cb",
+                                "fieldType": "credit-card",
+                                "fieldSubType": "cc:number"
+                            }
                         ]
                     }
                 ],
@@ -692,7 +837,12 @@
                     {
                         "formId": "d8a53da1",
                         "fields": [
-                            { "type": "field", "fieldId": "532687bd", "fieldType": "cc", "fieldSubType": "cc:exp" }
+                            {
+                                "type": "field",
+                                "fieldId": "532687bd",
+                                "fieldType": "credit-card",
+                                "fieldSubType": "cc:exp"
+                            }
                         ]
                     }
                 ],
@@ -710,7 +860,12 @@
                     {
                         "formId": "9b42bb8c",
                         "fields": [
-                            { "type": "field", "fieldId": "328035e2", "fieldType": "cc", "fieldSubType": "cc:cvc" }
+                            {
+                                "type": "field",
+                                "fieldId": "328035e2",
+                                "fieldType": "credit-card",
+                                "fieldSubType": "cc:cvc"
+                            }
                         ]
                     }
                 ],
@@ -739,8 +894,18 @@
                     {
                         "formId": "d638e23a",
                         "fields": [
-                            { "type": "field", "fieldId": "a6747091", "fieldType": "cc", "fieldSubType": "cc:number" },
-                            { "type": "field", "fieldId": "e2b863e7", "fieldType": "cc", "fieldSubType": "cc:cvc" }
+                            {
+                                "type": "field",
+                                "fieldId": "a6747091",
+                                "fieldType": "credit-card",
+                                "fieldSubType": "cc:number"
+                            },
+                            {
+                                "type": "field",
+                                "fieldId": "e2b863e7",
+                                "fieldType": "credit-card",
+                                "fieldSubType": "cc:cvc"
+                            }
                         ]
                     }
                 ],
@@ -810,7 +975,12 @@
                                     "height": 36
                                 }
                             },
-                            { "type": "field", "fieldId": "1a1623f3", "fieldType": "cc", "fieldSubType": "cc:name" }
+                            {
+                                "type": "field",
+                                "fieldId": "1a1623f3",
+                                "fieldType": "credit-card",
+                                "fieldSubType": "cc:name"
+                            }
                         ]
                     }
                 ],
@@ -821,7 +991,12 @@
                     {
                         "formId": "19aa4710",
                         "fields": [
-                            { "type": "field", "fieldId": "fad289ca", "fieldType": "cc", "fieldSubType": "cc:number" }
+                            {
+                                "type": "field",
+                                "fieldId": "fad289ca",
+                                "fieldType": "credit-card",
+                                "fieldSubType": "cc:number"
+                            }
                         ]
                     }
                 ],
@@ -839,7 +1014,12 @@
                     {
                         "formId": "6c66189e",
                         "fields": [
-                            { "type": "field", "fieldId": "a57e8d2d", "fieldType": "cc", "fieldSubType": "cc:exp" }
+                            {
+                                "type": "field",
+                                "fieldId": "a57e8d2d",
+                                "fieldType": "credit-card",
+                                "fieldSubType": "cc:exp"
+                            }
                         ]
                     }
                 ],
@@ -857,7 +1037,12 @@
                     {
                         "formId": "27255072",
                         "fields": [
-                            { "type": "field", "fieldId": "b4c59d5f", "fieldType": "cc", "fieldSubType": "cc:cvc" }
+                            {
+                                "type": "field",
+                                "fieldId": "b4c59d5f",
+                                "fieldType": "credit-card",
+                                "fieldSubType": "cc:cvc"
+                            }
                         ]
                     }
                 ],
@@ -907,7 +1092,12 @@
                     {
                         "formId": "d696ff52",
                         "fields": [
-                            { "type": "field", "fieldId": "b896b1aa", "fieldType": "cc", "fieldSubType": "cc:number" }
+                            {
+                                "type": "field",
+                                "fieldId": "b896b1aa",
+                                "fieldType": "credit-card",
+                                "fieldSubType": "cc:number"
+                            }
                         ]
                     }
                 ],
@@ -918,7 +1108,12 @@
                     {
                         "formId": "5358104b",
                         "fields": [
-                            { "type": "field", "fieldId": "8329b4e1", "fieldType": "cc", "fieldSubType": "cc:cvc" }
+                            {
+                                "type": "field",
+                                "fieldId": "8329b4e1",
+                                "fieldType": "credit-card",
+                                "fieldSubType": "cc:cvc"
+                            }
                         ]
                     }
                 ],
@@ -929,7 +1124,12 @@
                     {
                         "formId": "3cdd4a28",
                         "fields": [
-                            { "type": "field", "fieldId": "b22cd546", "fieldType": "cc", "fieldSubType": "cc:exp" }
+                            {
+                                "type": "field",
+                                "fieldId": "b22cd546",
+                                "fieldType": "credit-card",
+                                "fieldSubType": "cc:exp"
+                            }
                         ]
                     }
                 ],
@@ -972,7 +1172,12 @@
                     {
                         "formId": "940b8101",
                         "fields": [
-                            { "type": "field", "fieldId": "6c98c294", "fieldType": "cc", "fieldSubType": "cc:number" }
+                            {
+                                "type": "field",
+                                "fieldId": "6c98c294",
+                                "fieldType": "credit-card",
+                                "fieldSubType": "cc:number"
+                            }
                         ]
                     }
                 ],
@@ -986,7 +1191,7 @@
                             {
                                 "type": "field",
                                 "fieldId": "2f858f8f",
-                                "fieldType": "cc",
+                                "fieldType": "credit-card",
                                 "fieldSubType": "cc:exp-month"
                             }
                         ]
@@ -999,7 +1204,12 @@
                     {
                         "formId": "1686dbee",
                         "fields": [
-                            { "type": "field", "fieldId": "faa45926", "fieldType": "cc", "fieldSubType": "cc:exp-year" }
+                            {
+                                "type": "field",
+                                "fieldId": "faa45926",
+                                "fieldType": "credit-card",
+                                "fieldSubType": "cc:exp-year"
+                            }
                         ]
                     }
                 ],
@@ -1010,7 +1220,12 @@
                     {
                         "formId": "70143f3e",
                         "fields": [
-                            { "type": "field", "fieldId": "dd9b1cb1", "fieldType": "cc", "fieldSubType": "cc:cvc" }
+                            {
+                                "type": "field",
+                                "fieldId": "dd9b1cb1",
+                                "fieldType": "credit-card",
+                                "fieldSubType": "cc:cvc"
+                            }
                         ]
                     }
                 ],
@@ -1026,7 +1241,12 @@
                     {
                         "formId": "74ba84b1",
                         "fields": [
-                            { "type": "field", "fieldId": "238fd93c", "fieldType": "cc", "fieldSubType": "cc:number" }
+                            {
+                                "type": "field",
+                                "fieldId": "238fd93c",
+                                "fieldType": "credit-card",
+                                "fieldSubType": "cc:number"
+                            }
                         ]
                     }
                 ],
@@ -1043,7 +1263,12 @@
                     {
                         "formId": "48dc2303",
                         "fields": [
-                            { "type": "field", "fieldId": "e8d41029", "fieldType": "cc", "fieldSubType": "cc:exp" }
+                            {
+                                "type": "field",
+                                "fieldId": "e8d41029",
+                                "fieldType": "credit-card",
+                                "fieldSubType": "cc:exp"
+                            }
                         ]
                     }
                 ],
@@ -1060,7 +1285,12 @@
                     {
                         "formId": "73539e18",
                         "fields": [
-                            { "type": "field", "fieldId": "b5f08a3a", "fieldType": "cc", "fieldSubType": "cc:cvc" }
+                            {
+                                "type": "field",
+                                "fieldId": "b5f08a3a",
+                                "fieldType": "credit-card",
+                                "fieldSubType": "cc:cvc"
+                            }
                         ]
                     }
                 ],
