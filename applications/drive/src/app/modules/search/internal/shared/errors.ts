@@ -188,6 +188,17 @@ export function isCorruptedDBError(e: unknown): boolean {
 export type PermanentErrorKind = 'quota_exceeded' | 'corrupted_db' | 'invalid_indexer_state' | 'search_library_error';
 
 /**
+ * Thrown when the user's OpenPGP keys are unavailable or cannot decrypt the stored
+ * search encryption key. Wraps the original error as `cause`.
+ */
+export class MissingUserKeyEncryptionError extends Error {
+    constructor(cause?: unknown) {
+        super('User encryption keys unavailable for search index', { cause });
+        this.name = 'MissingUserKeyEncryptionError';
+    }
+}
+
+/**
  * Returns true for errors that are unrecoverable and should permanently stop the
  * task processor. These errors require user intervention (free disk space, clear DB, etc).
  */

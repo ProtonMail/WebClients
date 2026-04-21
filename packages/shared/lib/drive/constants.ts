@@ -254,6 +254,7 @@ export enum DRIVE_SIGNATURE_CONTEXT {
     SHARE_MEMBER_INVITER = 'drive.share-member.inviter',
     SHARE_MEMBER_MEMBER = 'drive.share-member.member',
     SHARE_MEMBER_EXTERNAL_INVITATION = 'drive.share-member.external-invitation',
+    SEARCH_INDEX = 'drive.search.index',
 }
 
 export const SHARE_INVITE_MESSAGE_MAX_LENGTH = 500;

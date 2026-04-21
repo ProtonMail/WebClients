@@ -1,6 +1,8 @@
 import { IDBFactory } from 'fake-indexeddb';
 import 'fake-indexeddb/auto';
 
+import { generateAndImportKey } from '@proton/crypto/lib/subtle/aesGcm';
+
 import { SearchDB } from '../../../../shared/SearchDB';
 import type { TreeEventScopeId } from '../../../../shared/types';
 import { FakeMainThreadBridge } from '../../../../testing/FakeMainThreadBridge';
@@ -27,7 +29,8 @@ describe('PersistDataTask', () => {
         indexedDB = new IDBFactory();
         db = await SearchDB.open('test-user');
         bridge = new FakeMainThreadBridge();
-        indexRegistry = new IndexRegistry();
+        const cryptoKey = await generateAndImportKey();
+        indexRegistry = new IndexRegistry(cryptoKey);
         treeSubscriptionRegistry = await TreeSubscriptionRegistry.create(bridge.asBridge(), db);
     });
 

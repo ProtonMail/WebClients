@@ -397,7 +397,7 @@ describe('SharedWorkerAPI integration', () => {
     describe('Scenario: permanent error', () => {
         it('quota exceeded stops the indexer', async () => {
             // Simulate IDB quota exceeded when writing index blobs
-            jest.spyOn(SearchDB.prototype, 'putIndexBlob').mockRejectedValue(
+            jest.spyOn(SearchDB.prototype, 'putEncryptedIndexBlob').mockRejectedValue(
                 new DOMException('', 'QuotaExceededError')
             );
             // navigator.storage.estimate is called in the error handler for logging
