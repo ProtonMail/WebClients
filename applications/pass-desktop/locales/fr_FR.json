@@ -676,6 +676,9 @@
       "Skip": [
         "Ignorer"
       ],
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Quelqu'un a partagé un élément avec vous sur ${ PASS_APP_NAME }."
+      ],
       "Sort vault items": [
         "Trier les éléments du coffre-fort"
       ],
@@ -962,6 +965,9 @@
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "L'authentification n'a pas abouti. Confirmez votre second mot de passe pour continuer l'exportation."
       ],
+      "Biometric authentication failed.": [
+        "L'authentification biométrique n'a pas abouti."
+      ],
       "Cannot send invitation at the moment": [
         "L'envoi de l'invitation n'est pas possible pour le moment.",
         "L'envoi des invitations n'est pas possible pour le moment."
@@ -1014,6 +1020,18 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "La suppression du coffre-fort « ${ payload.content.name } » n'a pas abouti."
       ],
+      "Desktop lock is not configured.": [
+        "Le verrouillage du bureau n'est pas configuré."
+      ],
+      "Desktop lock secret does not match.": [
+        "Le mot de passe de verrouillage du bureau ne correspond pas."
+      ],
+      "Desktop lock secret not found.": [
+        "Le mot de passe de verrouillage du bureau est introuvable."
+      ],
+      "Desktop lock setup failed.": [
+        "La configuration du verrouillage du bureau n'a pas abouti."
+      ],
       "Detected ${ errors.length } corrupted csv row": [
         "${ errors.length } ligne CSV corrompue a été détectée.",
         "${ errors.length } lignes CSV corrompues ont été détectées."
@@ -1033,11 +1051,11 @@
       "Emptying trash failed": [
         "La corbeille n'a pas pu être vidée."
       ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "La communication chiffrée avec l'application de bureau ${ PASS_APP_NAME } n'a pas abouti."
+      ],
       "Encrypted JSON not supported": [
         "Le JSON chiffré n'est pas pris en charge."
-      ],
-      "Encryption communication for desktop unlock failed.": [
-        "Le chiffrement de la communication pour le déverrouillage de l'application de bureau n'a pas abouti."
       ],
       "Error reporting problem": [
         "Une erreur s'est produite pendant le signalement du bug."
@@ -1255,6 +1273,9 @@
       "Something went wrong. Please sign in again.": [
         "Une erreur s'est produite. Veuillez vous reconnecter."
       ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "L'application de bureau ${ PASS_APP_NAME } n'a pas répondu à temps."
+      ],
       "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
         "L'application de bureau ${ PASS_APP_NAME } est verrouillée, elle doit être déverrouillée."
       ],
@@ -1263,6 +1284,9 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
         "L'application de bureau ${ PASS_APP_NAME } ne répond pas, est-elle en cours d'exécution ?"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "L'application de bureau ${ PASS_APP_NAME } est connectée avec un compte différent."
       ],
       "The session has expired. Please sign in again.": [
         "La session a expiré. Nous vous invitons à vous reconnecter."
@@ -1276,6 +1300,9 @@
       "Trashing item failed": [
         "La suppression de l'élément n'a pas abouti."
       ],
+      "Try reaching out to the link owner.": [
+        "Essayez de contacter le propriétaire du lien."
+      ],
       "Unable to generate an OTP code for this item": [
         "Impossible de générer un mot de passe à usage unique (code OTP) pour cet élément."
       ],
@@ -1283,6 +1310,9 @@
         "Synchronisation impossible"
       ],
       "Unknown error": [
+        "Erreur inconnue"
+      ],
+      "Unknown error.": [
         "Erreur inconnue"
       ],
       "Unknown invite": [
@@ -3736,6 +3766,9 @@
       ],
       "Theme": [
         "Thème"
+      ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Cet élément est accessible jusqu'au ${ date } ou jusqu'à ce que la limite de visualisation soit atteinte."
       ],
       "Tier/Level": [
         "Niveau"

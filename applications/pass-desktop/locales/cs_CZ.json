@@ -676,6 +676,9 @@
       "Skip": [
         "Přeskočit"
       ],
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Někdo s vámi sdílel položku ${ PASS_APP_NAME }."
+      ],
       "Sort vault items": [
         "Seřadit položky trezoru"
       ],
@@ -1262,6 +1265,15 @@
       "Something went wrong. Please sign in again.": [
         "Něco se pokazilo. Přihlaste se prosím znovu."
       ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "Aplikace ${ PASS_APP_NAME } pro stolní počítače je uzamčena, je třeba ji odemknout."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "Desktopová aplikace ${ PASS_APP_NAME } není nainstalována."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "Desktopová aplikace ${ PASS_APP_NAME } nereaguje. Je spuštěná?"
+      ],
       "The session has expired. Please sign in again.": [
         "Platnost relace vypršela. Znovu se přihlaste."
       ],
@@ -1274,6 +1286,9 @@
       "Trashing item failed": [
         "Přesun do koše selhal"
       ],
+      "Try reaching out to the link owner.": [
+        "Zkuste kontaktovat vlastníka odkazu."
+      ],
       "Unable to generate an OTP code for this item": [
         "Nelze vygenerovat OTP kód pro tuto položku"
       ],
@@ -1282,6 +1297,9 @@
       ],
       "Unknown error": [
         "Neznámá chyba"
+      ],
+      "Unknown error.": [
+        "Neznámá chyba."
       ],
       "Unknown invite": [
         "Neznámá pozvánka"
@@ -1493,6 +1511,9 @@
       ],
       "${ inviterEmail } wants to share an item with a group you administer.": [
         "${ inviterEmail } chce sdílet položku se skupinou, kterou spravujete."
+      ],
+      "${ inviterEmail } wants to share an item with the group ${ name }.": [
+        "${ inviterEmail } si přeje sdílet položku se skupinou ${ name }."
       ],
       "${ inviterEmail } wants to share an item with you.": [
         "${ inviterEmail } chce s vámi sdílet položku."
@@ -1818,6 +1839,9 @@
       "Enabling biometrics lock failed": [
         "Povolování zamykání biometrií selhalo"
       ],
+      "Enabling desktop auto-lock": [
+        "Zapnutí automatického zamykání plochy"
+      ],
       "Enabling offline mode...": [
         "Povolování režimu offline..."
       ],
@@ -1943,6 +1967,9 @@
       ],
       "Invite successfully resent": [
         "Pozvánka byla úspěšně odeslána"
+      ],
+      "invites the group ${ name } to access items in": [
+        "pozve skupinu ${ name } k přístupu k položkám v"
       ],
       "invites you to access items in": [
         "vás zve k přístupu k položkám v"
@@ -2436,6 +2463,9 @@
       "This feature is currently experimental on Linux. Please ensure your system is up-to-date.": [
         "Tato funkce je v současné době na platformě Linux ve fázi testování. Ujistěte se, že je váš systém aktualizován."
       ],
+      "This feature requires the ${ PASS_APP_NAME } desktop app to be installed and running during setup.": [
+        "Tato funkce vyžaduje, aby byla během instalace nainstalována a spuštěna desktopová aplikace ${ PASS_APP_NAME }."
+      ],
       "This item is not currently shared with anyone. Invite people to share it with others.": [
         "Tato položka není v současné době s nikým sdílena. Pozvěte ostatní, se kterými ji chcete sdílet."
       ],
@@ -2603,6 +2633,15 @@
       ],
       "You can now use your ${ BRAND_NAME } password to access ${ PASS_SHORT_APP_NAME } offline": [
         "Nyní můžete použít své heslo ${ BRAND_NAME } pro přístup k ${ PASS_SHORT_APP_NAME } offline."
+      ],
+      "You can now use your backup password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Nyní můžete pomocí záložního hesla přistupovat k aplikaci ${ PASS_SHORT_APP_NAME } v režimu offline"
+      ],
+      "You can now use your extra password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Nyní můžete pomocí svého dodatečného hesla přistupovat k aplikaci ${ PASS_SHORT_APP_NAME } v režimu offline"
+      ],
+      "You can now use your second password to access ${ PASS_SHORT_APP_NAME } offline": [
+        "Nyní můžete pomocí svého druhého hesla přistupovat k aplikaci ${ PASS_SHORT_APP_NAME } v režimu offline"
       ],
       "You cannot change the mailboxes for this alias.": [
         "Nemůžete měnit e-mailové schránky tohoto aliasu."
@@ -3798,6 +3837,9 @@
       ],
       "Theme": [
         "Motiv"
+      ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Tato položka je přístupná do ${ date } nebo do dosažení limitu počtu zobrazení."
       ],
       "Tier/Level": [
         "Úroveň"

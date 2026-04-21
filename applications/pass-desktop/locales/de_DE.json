@@ -676,6 +676,9 @@
       "Skip": [
         "Überspringen"
       ],
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Jemand hat einen Eintrag über ${ PASS_APP_NAME } mit dir geteilt."
+      ],
       "Sort vault items": [
         "Tresoreinträge sortieren"
       ],
@@ -1036,9 +1039,6 @@
       "Encrypted JSON not supported": [
         "Verschlüsseltes JSON wird nicht unterstützt."
       ],
-      "Encryption communication for desktop unlock failed.": [
-        "Die Verschlüsselung der Kommunikation für die Desktop-Entsperrung ist fehlgeschlagen."
-      ],
       "Error reporting problem": [
         "Fehler beim Melden des Problems."
       ],
@@ -1264,6 +1264,9 @@
       "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
         "Die ${ PASS_APP_NAME }-Desktop-App reagiert nicht. Läuft sie?"
       ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "Die ${ PASS_APP_NAME }-Desktop-App ist mit einem anderen Konto angemeldet."
+      ],
       "The session has expired. Please sign in again.": [
         "Die Sitzung ist abgelaufen. Bitte melde dich erneut an."
       ],
@@ -1276,6 +1279,9 @@
       "Trashing item failed": [
         "Fehler beim Verschieben des Eintrags in den Papierkorb."
       ],
+      "Try reaching out to the link owner.": [
+        "Versuche, dich mit dem Eigentümer des Links in Verbindung zu setzen."
+      ],
       "Unable to generate an OTP code for this item": [
         "Es konnte kein OTP-Code für diesen Eintrag generiert werden."
       ],
@@ -1284,6 +1290,9 @@
       ],
       "Unknown error": [
         "Unbekannter Fehler"
+      ],
+      "Unknown error.": [
+        "Unbekannter Fehler."
       ],
       "Unknown invite": [
         "Unbekannte Einladung"
@@ -3736,6 +3745,9 @@
       ],
       "Theme": [
         "Farbschema"
+      ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Dieser Eintrag ist bis ${ date } oder bis zum Erreichen der Anzeigegrenze zugänglich."
       ],
       "Tier/Level": [
         "Stufe/Ebene"
