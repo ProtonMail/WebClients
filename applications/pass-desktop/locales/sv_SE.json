@@ -1350,6 +1350,18 @@
       ],
       "Unknown error.": [
         "Okänt fel."
+      ],
+      "Biometric authentication failed.": [
+        "Biometrisk autentisering misslyckades."
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Krypterad kommunikation med ${ PASS_APP_NAME }-appen för stationär dator misslyckades."
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "${ PASS_APP_NAME }-appen för stationär dator svarade inte i tid."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "${ PASS_APP_NAME }-appen för stationär dator är inloggad med ett annat konto."
       ]
     },
     "Error message": {
