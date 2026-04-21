@@ -948,6 +948,9 @@
       "Authentication failure: ${ message }": [
         "Zlyhanie overenia: ${ message }"
       ],
+      "Biometric authentication failed.": [
+        "Biometrické overenie zlyhalo."
+      ],
       "Cannot create alias (${ error }).": [
         "Nie je možné vytvoriť alias (${ error })."
       ],
@@ -1005,6 +1008,18 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Odstránenie trezoru \"${ payload.content.name }\" zlyhalo"
       ],
+      "Desktop lock is not configured.": [
+        "Zamknutie plochy nie je nakonfigurované."
+      ],
+      "Desktop lock secret does not match.": [
+        "Heslo na uzamknutie plochy sa nezhoduje."
+      ],
+      "Desktop lock secret not found.": [
+        "Nenašiel sa kód na uzamknutie plochy."
+      ],
+      "Desktop lock setup failed.": [
+        "Nastavenie uzamknutia pracovnej plochy sa nepodarilo."
+      ],
       "Detected ${ errors.length } corrupted csv row": [
         "Zistený ${ errors.length } poškodený riadok csv",
         "Zistené ${ errors.length } poškodené riadky csv",
@@ -1026,11 +1041,11 @@
       "Emptying trash failed": [
         "Vyprázdňovanie koša zlyhalo"
       ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Šifrovaná komunikácia s desktopovou aplikáciou ${ PASS_APP_NAME } zlyhala."
+      ],
       "Encrypted JSON not supported": [
         "Šifrovaný JSON nie je podporovaný"
-      ],
-      "Encryption communication for desktop unlock failed.": [
-        "''Odblokovanie pracovnej plochy pomocou šifrovanej komunikácie sa nepodarilo."
       ],
       "Error reporting problem": [
         "Chyba pri nahlasovaní problému"
@@ -1269,6 +1284,9 @@
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
         "Niečo sa pokazilo. Znovu, prosím, načítajte rozšírenie ${ PASS_APP_NAME }. Tento problém bol zaznamenaný."
       ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "Desktopová aplikácia ${ PASS_APP_NAME } neodpovedala včas."
+      ],
       "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
         "Aplikácia ${ PASS_APP_NAME } pre počítače je uzamknutá, musí byť odomknutá."
       ],
@@ -1277,6 +1295,9 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
         "Desktopová aplikácia ${ PASS_APP_NAME } neodpovedá, je spustená?"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "V aplikácii ${ PASS_APP_NAME } pre počítače je prihlásený iný účet."
       ],
       "The URL is in the list": [
         "URL je na zozname"
@@ -1301,6 +1322,9 @@
       ],
       "Unknown error": [
         "Neznáma chyba"
+      ],
+      "Unknown error.": [
+        "Neznámá chyba."
       ],
       "Unknown invite": [
         "Neznáma pozvánka"
