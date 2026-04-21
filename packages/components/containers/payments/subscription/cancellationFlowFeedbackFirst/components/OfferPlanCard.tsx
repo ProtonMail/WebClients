@@ -10,7 +10,7 @@ import type { Currency } from '@proton/payments';
 
 import type { OfferFeature } from '../config/offerConfig';
 
-interface Props {
+interface OfferPlanCardProps {
     planDisplayName: string;
     features: OfferFeature[];
     currency: Currency;
@@ -19,6 +19,7 @@ interface Props {
     cycleLabel: string;
     billingFootnote: ReactNode;
     onClaimOffer: () => void;
+    isLoading: boolean;
 }
 
 const OfferPlanCard = ({
@@ -30,7 +31,8 @@ const OfferPlanCard = ({
     cycleLabel,
     billingFootnote,
     onClaimOffer,
-}: Props) => {
+    isLoading,
+}: OfferPlanCardProps) => {
     const discountRate = Math.round((1 - discountedMonthly / normalMonthly) * 100);
     return (
         <div className="border border-primary rounded-xl p-6 h-full flex flex-column flex-1">
@@ -58,7 +60,7 @@ const OfferPlanCard = ({
                     {normalMonthly}
                 </Price>
             </div>
-            <Button color="norm" className="w-full" onClick={onClaimOffer}>
+            <Button color="norm" className="w-full" onClick={onClaimOffer} loading={isLoading}>
                 {c('Action').t`Claim offer`}
             </Button>
             <StripedList alternate="odd">
