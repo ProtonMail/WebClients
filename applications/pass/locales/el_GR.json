@@ -1300,6 +1300,30 @@
       ],
       "Unknown error.": [
         "Άγνωστο σφάλμα."
+      ],
+      "Biometric authentication failed.": [
+        "Ο βιομετρικός έλεγχος ταυτότητας απέτυχε."
+      ],
+      "Desktop lock is not configured.": [
+        "Το κλείδωμα της επιφάνειας εργασίας δεν έχει ρυθμιστεί."
+      ],
+      "Desktop lock secret does not match.": [
+        "Το μυστικό κλειδώματος επιφάνειας εργασίας δεν ταιριάζει."
+      ],
+      "Desktop lock secret not found.": [
+        "Το μυστικό κλειδώματος επιφάνειας εργασίας δε βρέθηκε."
+      ],
+      "Desktop lock setup failed.": [
+        "Το κλείδωμα της επιφάνειας εργασίας απέτυχε."
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Η κρυπτογραφημένη επικοινωνία με την εφαρμογή επιτραπέζιου υπολογιστή ${ PASS_APP_NAME } απέτυχε."
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "Η επιτραπέζια εφαρμογή ${ PASS_APP_NAME } δεν ανταποκρίθηκε εγκαίρως."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "Η εφαρμογή επιφάνειας εργασίας ${ PASS_APP_NAME } είναι συνδεδεμένη με διαφορετικό λογαριασμό."
       ]
     },
     "Error message": {
