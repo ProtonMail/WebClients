@@ -539,6 +539,9 @@
       "Go back": [
         "Zurück"
       ],
+      "Go back to album “${ ellipsedAlbumName }“": [
+        "Zurück zum Album „${ ellipsedAlbumName }“"
+      ],
       "Go to ${ planOrAppName }": [
         "Gehe zu ${ planOrAppName }"
       ],
@@ -799,6 +802,9 @@
       ],
       "Quit": [
         "Beenden"
+      ],
+      "Re-index": [
+        "Neu indexieren"
       ],
       "Re-sign": [
         "Neu signieren"
@@ -3513,6 +3519,9 @@
       "Failed to load signature details, please try again later": [
         "Signaturdetails konnten nicht geladen werden. Bitte versuche es später erneut."
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Abonnementsdaten konnten nicht geladen werden. Bitte versuche es später nochmals."
+      ],
       "Failed to load the STL preview": [
         "Das Laden der STL-Vorschau ist fehlgeschlagen"
       ],
@@ -5780,6 +5789,9 @@
       "Internet connection restored.": [
         "Internetverbindung wiederhergestellt."
       ],
+      "Invitation confirmed": [
+        "Einladung bestätigt"
+      ],
       "Invite link copied": [
         "Einladungslink kopiert"
       ],
@@ -5969,6 +5981,9 @@
       ],
       "No payment is required at this time.": [
         "Zu diesem Zeitpunkt ist keine Zahlung erforderlich."
+      ],
+      "No populator states found.": [
+        "Kein Status zu den Index-Generatoren gefunden"
       ],
       "No results found": [
         "Keine Ergebnisse gefunden"
@@ -8697,8 +8712,8 @@
       "Data retention policies": [
         "Aufbewahrungsrichtlinien für Daten"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Für Streaming optimierte dedizierte Server"
+      "Dedicated servers optimized for speed": [
+        "Dedizierte Server, optimiert für hohe Geschwindigkeit"
       ],
       "Desktop app": [
         "Desktop-App"
@@ -9377,6 +9392,42 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" copied": [
+        "\"${ ellipsedName }\" kopiert"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "„${ ellipsedName }“ erfolgreich erstellt"
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "\"${ ellipsedName }\" gelöscht"
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "„${ ellipsedName }“ dauerhaft aus dem Papierkorb gelöscht"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "\"${ ellipsedName }\" konnte nicht erstellt werden"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "\"${ ellipsedName }\" konnte nicht gelöscht werden"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "\"${ ellipsedName }\" konnte nicht dauerhaft aus dem Papierkorb gelöscht werden"
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "„${ ellipsedName }“ konnte nicht verschoben werden"
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "\"${ ellipsedName }\" konnte nicht aus dem Papierkorb wiederhergestellt werden"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "\"${ ellipsedName }\" verschoben"
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "„${ ellipsedName }“ aus dem Papierkorb wiederhergestellt"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "„${ ellipsedName }“ erfolgreich verschoben"
+      ],
       "\"${ fileName }\" shared": [
         "\"${ fileName }\" geteilt"
       ],
@@ -9409,6 +9460,10 @@
         "${ errors.length } Eintrag konnte nicht kopiert werden",
         "${ errors.length } Einträge konnten nicht kopiert werden"
       ],
+      "${ errors.length } item failed to be deleted": [
+        "${ errors.length } Eintrag konnte nicht gelöscht werden",
+        "${ errors.length } Einträge konnten nicht gelöscht werden"
+      ],
       "${ errors.length } item failed to be trashed": [
         "${ errors.length } Eintrag konnte nicht in den Papierkorb verschoben werden",
         "${ errors.length } Einträge konnten nicht in den Papierkorb verschoben werden"
@@ -9432,6 +9487,10 @@
       "${ numberOfItems } copied item moved to trash": [
         "${ numberOfItems } kopierter Eintrag wurde in den Papierkorb verschoben",
         "${ numberOfItems } kopierte Einträge wurden in den Papierkorb verschoben"
+      ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems } Eintrag kopiert",
+        "${ numberOfItems } Einträge kopiert"
       ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } Eintrag gelöscht",
@@ -9460,6 +9519,10 @@
       "${ numberOfItems } item failed to be restored from trash": [
         "${ numberOfItems } Element konnte nicht aus dem Papierkorb wiederhergestellt werden",
         "${ numberOfItems } Elemente konnten nicht aus dem Papierkorb wiederhergestellt werden"
+      ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } Eintrag verschoben",
+        "${ numberOfItems } Einträge verschoben"
       ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } Element wurde in den Papierkorb verschoben",
@@ -9508,6 +9571,9 @@
       ],
       "Contact group updated": [
         "Kontaktgruppe aktualisiert"
+      ],
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "Kopie von \"${ ellipsedName }\" in den Papierkorb verschoben"
       ],
       "Device failed to be removed": [
         "Gerät konnte nicht entfernt werden"
@@ -10209,6 +10275,9 @@
       ],
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Während dieser Zeit kannst du dein Abonnement nicht ändern oder kündigen. Bitte warte, bis deine Zahlung abgeschlossen ist, bevor du versuchst, Änderungen vorzunehmen. Wir danken dir für deine Geduld."
+      ],
+      "Edit billing address": [
+        "Rechnungsadresse bearbeiten"
       ],
       "Got it": [
         "Verstanden"
@@ -10986,9 +11055,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Kontowiederherstellung für ältere Adressschlüssel ist nicht verfügbar"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Bitte generiere Schlüssel, bevor du versuchst dein Passwort zu ändern."
       ]
     },
     "session_recovery:available:info": {
@@ -12737,6 +12803,9 @@
       ],
       "Import your data to ${ BRAND_NAME }": [
         "Deine Daten nach ${ BRAND_NAME } importieren"
+      ],
+      "Index populators": [
+        "Index-Generatoren"
       ],
       "Information exposed in breach": [
         "Informationen, die beim Datenleck offengelegt wurden"

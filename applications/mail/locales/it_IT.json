@@ -196,6 +196,9 @@
       "Carbon Copy": [
         "Copia conoscenza"
       ],
+      "Change password": [
+        "Cambia la password"
+      ],
       "Change sorting": [
         "Cambia ordinamento"
       ],
@@ -1488,10 +1491,6 @@
       ],
       "Trust": [
         "Considera attendibile"
-      ],
-      "Trust key": [
-        "chiave attendibile",
-        "chiavi attendibili"
       ],
       "Trust public key": [
         "Chiave pubblica attendibile"
@@ -7426,7 +7425,8 @@
         "Inizializzazione…"
       ],
       "Insert image": [
-        "Inserisci immagine"
+        "Inserisci immagine",
+        "Inserisci immagini"
       ],
       "Insert link": [
         "Inserisci link"
@@ -10890,9 +10890,6 @@
       "Data breach monitoring": [
         "Monitoraggio di violazioni di dati"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Server dedicati ottimizzati per lo streaming"
-      ],
       "Desktop app": [
         "Applicazione desktop"
       ],
@@ -13115,9 +13112,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Il recupero dell'account non è disponibile per le chiavi di indirizzo tradizionali"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Genera le chiavi prima di provare a modificare la password"
       ]
     },
     "session_recovery:available:info": {
@@ -14733,6 +14727,9 @@
       ],
       "Account security": [
         "Sicurezza dell'account"
+      ],
+      "Account temporarily locked": [
+        "Account temporaneamente bloccato"
       ],
       "Action all conversations": [
         "Applica a tutte le conversazioni"

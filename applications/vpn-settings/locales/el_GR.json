@@ -230,6 +230,9 @@
       "Continue anyway": [
         "Συνέχεια οπωσδήποτε"
       ],
+      "Continue cancelling": [
+        "Συνέχεια ακύρωσης"
+      ],
       "Continue import": [
         "Συνεχίστε την εισαγωγή"
       ],
@@ -485,6 +488,9 @@
       "Fit to window": [
         "Προσαρμογή στο παράθυρο"
       ],
+      "Forgot password?": [
+        "Ξεχάσατε τον κωδικό πρόσβασης;"
+      ],
       "Forgot recovery method?": [
         "Ξεχάσατε τη μέθοδο ανάκτησης;"
       ],
@@ -604,6 +610,9 @@
       ],
       "Invite user": [
         "Πρόσκληση χρήστη"
+      ],
+      "Keep current plan": [
+        "Διατηρήστε το τρέχον σχέδιο"
       ],
       "Keep Editing": [
         "Συνεχίστε την Επεξεργασία"
@@ -1442,6 +1451,50 @@
     "Admin": {
       "admin": [
         "διαχειριστής"
+      ]
+    },
+    "Admin roles onboarding": {
+      "3 new admin roles": [
+        "3 νέοι ρόλοι διαχειριστή"
+      ],
+      "Admin roles": [
+        "Ρόλοι διαχειριστών"
+      ],
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Διαμορφώστε πολιτικές ασφαλείας, διατήρηση δεδομένων και υποδομή VPN, και διαχειριστείτε τα αρχεία ελέγχου."
+      ],
+      "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
+        "Διαχειριστείτε την ανάθεση εξουσιών αναθέτοντας συγκεκριμένους ρόλους διαχειριστή. Δώστε σε κάθε διαχειριστή μόνο την πρόσβαση που χρειάζεται. Αυτό ακολουθεί την αρχή της ελάχιστης προνομίας, προστατεύοντας τον οργανισμό σας από παραβιασμένους λογαριασμούς και τυχαία σφάλματα."
+      ],
+      "Delegate management with the appropriate admin role.": [
+        "Διαχείριση εκπροσώπων με τον κατάλληλο ρόλο διαχειριστή."
+      ],
+      "Manage all users, groups, storage, security, billing, audit logs, and system configurations.": [
+        "Διαχειριστείτε όλους τους χρήστες, τις ομάδες, την αποθήκευση, την ασφάλεια, τη χρέωση, τα αρχεία ελέγχου και τις ρυθμίσεις του συστήματος."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Διαχειριστείτε χρήστες, ομάδες και χώρο αποθήκευσης για όλα τα μέλη, αναθέστε ρόλους και κατανεμήστε άδειες χρήσης."
+      ],
+      "New: Control admin access for individual users": [
+        "Νέο: Έλεγχος πρόσβασης διαχειριστή για μεμονωμένους χρήστες"
+      ],
+      "Organization admin": [
+        "Διαχειριστής οργανισμού"
+      ],
+      "Organization admin:": [
+        "Διαχειριστής οργανισμού:"
+      ],
+      "Security admin": [
+        "Διαχειριστής ασφαλείας"
+      ],
+      "Security admin:": [
+        "Διαχειριστής ασφαλείας:"
+      ],
+      "User admin": [
+        "Διαχειριστής χρηστών"
+      ],
+      "User admin:": [
+        "Διαχειριστής χρηστών:"
       ]
     },
     "AdminRole_Info": {
@@ -3466,6 +3519,9 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "Το ${ DOCS_SHORT_APP_NAME } στο ${ DRIVE_APP_NAME } σάς επιτρέπει να συνεργάζεστε με άλλους σε ένα ασφαλές, κρυπτογραφημένο περιβάλλον."
       ],
+      "Add extra addresses to your account or use Hide My Email aliases to keep your inbox private.": [
+        "Προσθέστε επιπλέον διευθύνσεις στον λογαριασμό σας ή χρησιμοποιήστε ψευδώνυμα Hide My Email για να κρατήσετε το εισερχόμενο σας ιδιωτικό."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Προσθέστε φακέλους και αρχεία στο ${ DRIVE_APP_NAME } και προσκαλέστε μέλη της ομάδας για προβολή ή επεξεργασία."
       ],
@@ -3562,6 +3618,9 @@
       "Let's you instantly add meeting links to your event invitations.": [
         "Σας επιτρέπει να προσθέτετε άμεσα συνδέσμους συσκέψεων στις προσκλήσεις εκδηλώσεων."
       ],
+      "Most issues can be solved in a few minutes with our step-by-step guides.": [
+        "Τα περισσότερα προβλήματα μπορούν να λυθούν σε λίγα λεπτά με τους αναλυτικούς οδηγούς μας."
+      ],
       "No ads. No trackers.": [
         "Χωρίς διαφημίσεις. Χωρίς ιχνηλάτες."
       ],
@@ -3576,6 +3635,9 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Απλοποιήστε τον συγχρονισμό και τον προγραμματισμό με τα κοινοποιημένα ημερολόγια."
+      ],
+      "Still need help? Our support team is here for you.": [
+        "Χρειάζεστε ακόμα βοήθεια; Η ομάδα υποστήριξής μας είναι εδώ για εσάς."
       ],
       "This may happen if permissions were removed or your password changed.": [
         "Αυτό μπορεί να συμβεί εάν τα δικαιώματα αφαιρέθηκαν ή αν άλλαξε ο κωδικός σας."
@@ -3631,6 +3693,12 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Μπορείτε να εισάγετε εκδηλώσεις σε μορφή iCal (ICS αρχείο).\nΤο αρχείο θα πρέπει να έχει μέγιστο μέγεθος ${ MAX_IMPORT_FILE_SIZE_STRING } και να έχει μέχρι και ${ MAX_IMPORT_EVENTS_STRING } εκδηλώσεις.\nΑν το αρχείο σας είναι μεγαλύτερο, παρακαλούμε να το χωρίσετε σε μικρότερα αρχεία."
+      ],
+      "You can manage multiple ${ BRAND_NAME } addresses from a single account, without switching. Aliases and address management tools help keep everything in one inbox.": [
+        "Μπορείτε να διαχειρίζεστε πολλαπλές διευθύνσεις ${ BRAND_NAME } από έναν μόνο λογαριασμό, χωρίς εναλλαγή. Τα ψευδώνυμα και τα εργαλεία διαχείρισης διευθύνσεων βοηθούν να κρατάτε τα πάντα σε ένα μόνο φάκελο εισερχομένων."
+      ],
+      "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
+        "Μπορείτε να συγχωνεύσετε διευθύνσεις σε έναν κύριο λογαριασμό ${ BRAND_NAME } χρησιμοποιώντας τον οδηγό υποστήριξής μας."
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Τώρα μπορείτε να στέλνετε μηνύματα ηλεκτρονικού ταχυδρομείου από το ${ BRAND_NAME } χρησιμοποιώντας αυτή τη διεύθυνση."
@@ -4478,9 +4546,6 @@
       "Please fix the highlighted conflict to proceed.": [
         "Παρακαλούμε επιλύστε την τονισμένη διένεξη προς συνέχιση.",
         "Παρακαλούμε επιλύστε τις τονισμένες διενέξεις προς συνέχιση."
-      ],
-      "Please generate keys before you try to change your password": [
-        "Πριν δοκιμάσετε την αλλαγή των κωδικών πρόσβασής σας, παρακαλούμε δημιουργήστε κλειδιά"
       ],
       "Please select a country": [
         "Παρακαλούμε επιλέξτε μια χώρα"
@@ -5542,6 +5607,17 @@
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
         "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
+    "Get help": {
+      "Continue cancelling": [
+        "Συνέχεια ακύρωσης"
+      ],
+      "Keep current plan": [
+        "Διατηρήστε το τρέχον σχέδιο"
+      ],
+      "Many issues can be resolved quickly with our help guides. If you need more support, our team is here to help.": [
+        "Πολλά προβλήματα μπορούν να επιλυθούν γρήγορα με τους οδηγούς βοήθειάς μας. Εάν χρειάζεστε περισσότερη υποστήριξη, η ομάδα μας είναι εδώ για να σας βοηθήσει."
       ]
     },
     "Gmail forwarding": {
@@ -6986,6 +7062,12 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Εισάγετε την ηλ. διεύθυνση ή το όνομα χρήστη του λογαριασμού σας ${ BRAND_NAME }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Εισάγετε τον κωδικό πρόσβασής σας (ως διαχειριστής οργανισμού)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Εισάγετε τον κωδικό πρόσβασής σας (ως έμπιστη επαφή)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Εισάγετε τη διεύθυνση email ανάκτησης σας και θα σας στείλουμε το όνομα χρήστη ή τη διεύθυνση ηλεκτρονικού ταχυδρομείου σας."
@@ -9846,6 +9928,12 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Ναι, θέλω να διαγράψω οριστικά αυτόν τον λογαριασμό και όλα τα δεδομένα του."
       ],
+      "Your password (admin)": [
+        "Ο κωδικός σας (διαχειριστής)"
+      ],
+      "Your password (trusted contact)": [
+        "Ο κωδικός πρόσβασής σας (έμπιστη επαφή)"
+      ],
       "ZIP code": [
         "Τ.Κ."
       ]
@@ -9966,6 +10054,9 @@
       ]
     },
     "Link": {
+      "Account recovery explained": [
+        "Επεξήγηση της ανάκτησης λογαριασμού"
+      ],
       "activity monitor": [
         "παρακολούθηση δραστηριότητας"
       ],
@@ -9981,11 +10072,11 @@
       "clearing your browser cache": [
         "εκκαθάριση της προσωρινής μνήμης του προγράμματος περιήγησης"
       ],
-      "Common sign in issues": [
-        "Συνήθη προβλήματα εισόδου"
-      ],
       "Common sign up issues": [
         "Συνήθη ζητήματα εγγραφής"
+      ],
+      "Contact support": [
+        "Επικοινωνήστε με την υποστήριξη"
       ],
       "contacts’ assistance": [
         "βοήθεια από την επαφή"
@@ -10095,11 +10186,17 @@
       "if your data is leaked": [
         "εάν τα δεδομένα σας υποστούν διαρρεύσει"
       ],
+      "Learn how": [
+        "Μάθετε πώς"
+      ],
       "Learn more": [
         "Μάθετε περισσότερα"
       ],
       "Learn more about data recovery": [
         "Μάθετε περισσότερα για την ανάκτηση δεδομένων"
+      ],
+      "Manage addresses": [
+        "Διαχείριση διευθύνσεων"
       ],
       "Not activated": [
         "Μη ενεργοποιημένο"
@@ -10151,6 +10248,9 @@
       ],
       "visit our blog": [
         "επισκεφθείτε το ιστολόγιό μας"
+      ],
+      "Visit our support site": [
+        "Επισκεφθείτε τον ιστότοπο υποστήριξής μας"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Ποια είναι η διαφορά μεταξύ των πρωτοκόλλων UDP και TCP;"
@@ -10927,8 +11027,8 @@
       "Dedicated servers and IP": [
         "Αποκλειστικοί διακομιστές και IP"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Αποκλειστικοί διακομιστές βελτιστοποιημένοι για ροή"
+      "Dedicated servers optimized for speed": [
+        "Αποκλειστικοί διακομιστές βελτιστοποιημένοι για ταχύτητα"
       ],
       "Desktop app": [
         "Εφαρμογή σταθερού υπολογιστή"
@@ -13727,9 +13827,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Η ανάκτηση λογαριασμού δεν είναι διαθέσιμη για κλειδιά διευθύνσεων παλαιού τύπου"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Πριν δοκιμάσετε την αλλαγή των κωδικών πρόσβασής σας, παρακαλούμε δημιουργήστε κλειδιά"
       ]
     },
     "session_recovery:available:info": {
@@ -14483,6 +14580,9 @@
       "Share the confirmation code with your administrator": [
         "Μοιραστείτε τον κωδικό επιβεβαίωσης με τον διαχειριστή σας"
       ],
+      "Sign in": [
+        "Σύνδεση"
+      ],
       "Sign in to your organization": [
         "Συνδεθήτε στον οργανισμό σας"
       ],
@@ -14542,6 +14642,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Για να προσθέσετε νέους χρήστες στον οργανισμό σας, θα πρέπει να τους δημιουργήσετε χειροκίνητα."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Θα ανακατευθυνθείτε στον τρίτο πάροχο SSO."
       ],
       "Your SSO configuration will be deleted.": [
         "Η διαμόρφωση SSO θα διαγραφεί."
@@ -15619,14 +15722,8 @@
       "Account recovery": [
         "Ανάκτηση λογαριασμού"
       ],
-      "Account restricted": [
-        "Ο λογαριασμός περιορίστηκε"
-      ],
       "Account suspended": [
         "Ο λογαριασμός έχει ανασταλεί"
-      ],
-      "Account temporarily locked": [
-        "Ο λογαριασμός έχει κλειδωθεί προσωρινά"
       ],
       "Action": [
         "Ενέργεια"
@@ -15700,6 +15797,9 @@
       ],
       "Allocate storage": [
         "Κατανομή αποθηκευτικού χώρου"
+      ],
+      "Already have multiple accounts?": [
+        "Έχετε ήδη πολλούς λογαριασμούς;"
       ],
       "Also in your plan": [
         "Επιπλέον στο πλάνο σας"
@@ -15884,6 +15984,9 @@
       ],
       "Create multiple user accounts": [
         "Δημιουργία πολλαπλών λογαριασμών χρηστών"
+      ],
+      "Create new addresses easily": [
+        "Δημιουργήστε νέες διευθύνσεις εύκολα"
       ],
       "Create new policy": [
         "Δημιουργία νέας πολιτικής"
@@ -16102,6 +16205,9 @@
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Εισαγάγετε τα στοιχεία του λογαριασμού σας ${ BRAND_NAME } για να συμμετάσχετε στο πρόγραμμα ${ app } Beta"
       ],
+      "Enter your password": [
+        "Εισάγετε τον κωδικό πρόσβασης σας"
+      ],
       "Error": [
         "Σφάλμα"
       ],
@@ -16150,6 +16256,12 @@
       ],
       "Get complete privacy coverage": [
         "Αποκτήστε πλήρη κάλυψη ιδιωτικότητας."
+      ],
+      "Get direct support": [
+        "Λάβετε άμεση υποστήριξη"
+      ],
+      "Get help with an issue": [
+        "Λάβετε βοήθεια για ένα πρόβλημα"
       ],
       "Get more from your VPN": [
         "Αποκτήστε περισσότερα από το VPN σας."
@@ -16612,6 +16724,9 @@
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Για να κάνετε προεπισκόπηση αυτού του υπολογιστικού φύλλου, ανοίξτε το στο ${ SHEETS_APP_NAME } ή κάντε λήψη του."
       ],
+      "Troubleshoot your issue": [
+        "Αντιμετωπίστε το πρόβλημά σας"
+      ],
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "Δοκιμάστε ${ AUTHENTICATOR_APP_NAME }"
       ],
@@ -16674,6 +16789,9 @@
       ],
       "Use backup recovery code": [
         "Χρησιμοποιήστε εφεδρικό κωδικό ανάκτησης"
+      ],
+      "Use one account for all your addresses": [
+        "Χρησιμοποιήστε έναν λογαριασμό για όλες τις διευθύνσεις σας"
       ],
       "User": [
         "Χρήστης"

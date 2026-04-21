@@ -335,6 +335,9 @@
       "Fit to window": [
         "Prilagodi prozoru"
       ],
+      "Forgot password?": [
+        "Zaboravili ste lozinku?"
+      ],
       "Forgot recovery method?": [
         "Zaboravili ste metodu oporavka?"
       ],
@@ -2745,9 +2748,6 @@
       ],
       "Please enable multi-user support before adding users to your organization.": [
         "Molimo vas da omogućite višekorisničku podršku prije dodavanja korisnika u vašu organizaciju."
-      ],
-      "Please generate keys before you try to change your password": [
-        "Molimo generirajte ključeve prije nego što pokušate promijeniti svoju lozinku"
       ],
       "Please select a country": [
         "Molimo odaberite državu"
@@ -5587,6 +5587,9 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Da, želim trajno izbrisati ovaj račun i sve njegove podatke."
       ],
+      "Your password (admin)": [
+        "Vaša lozinka (administrator)"
+      ],
       "ZIP code": [
         "Poštanski broj"
       ]
@@ -5695,9 +5698,6 @@
       ],
       "clearing your browser cache": [
         "čišćenje predmemorije preglednika"
-      ],
-      "Common sign in issues": [
-        "Najčešći problemi s prijavom"
       ],
       "Common sign up issues": [
         "Najčešći problemi s registracijom"
@@ -7475,11 +7475,6 @@
         "Ponovno postavljanje lozinke"
       ]
     },
-    "session_recovery:available:error": {
-      "Please generate keys before you try to change your password": [
-        "Molimo generirajte ključeve prije nego što pokušate promijeniti svoju lozinku"
-      ]
-    },
     "session_recovery:available:info": {
       "${ timeRemaining.inDays } day": [
         "${ timeRemaining.inDays } dan",
@@ -7901,6 +7896,9 @@
       "Share the confirmation code with your administrator": [
         "Podijelite kôd za potvrdu s Vašim administratorom"
       ],
+      "Sign in": [
+        "Prijavi se"
+      ],
       "Sign in to your organization": [
         "Prijavite se u vašu organizaciju"
       ],
@@ -7945,6 +7943,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Morat ćete ručno stvoriti nove korisnike kako biste ih dodali u svoju organizaciju."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Bit ćete preusmjereni na svog vanjskog pružatelja SSO usluga."
       ],
       "Your SSO configuration will be deleted.": [
         "Vaša SSO konfiguracija bit će izbrisana."
@@ -8536,9 +8537,6 @@
       "Account recovery": [
         "Oporavak računa"
       ],
-      "Account restricted": [
-        "Račun ograničen"
-      ],
       "Account suspended": [
         "Račun je suspendiran"
       ],
@@ -8808,6 +8806,9 @@
       ],
       "Email": [
         "E-pošta"
+      ],
+      "Enter your password": [
+        "Unesite lozinku"
       ],
       "Error": [
         "Pogreška"

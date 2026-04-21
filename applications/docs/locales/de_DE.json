@@ -2923,6 +2923,9 @@
       "Failed to copy photo to album": [
         "Das Kopieren des Fotos in das Album ist fehlgeschlagen"
       ],
+      "Failed to load subscription data. Please try again later.": [
+        "Abonnementsdaten konnten nicht geladen werden. Bitte versuche es später nochmals."
+      ],
       "Failed to open to contact": [
         "Fehler beim Öffnen des Kontakts"
       ],
@@ -6795,8 +6798,8 @@
       "Data retention policies": [
         "Aufbewahrungsrichtlinien für Daten"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Für Streaming optimierte dedizierte Server"
+      "Dedicated servers optimized for speed": [
+        "Dedizierte Server, optimiert für hohe Geschwindigkeit"
       ],
       "Desktop app": [
         "Desktop-App"
@@ -8585,9 +8588,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Kontowiederherstellung für ältere Adressschlüssel ist nicht verfügbar"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Bitte generiere Schlüssel, bevor du versuchst dein Passwort zu ändern."
       ]
     },
     "session_recovery:available:info": {

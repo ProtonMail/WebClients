@@ -803,6 +803,9 @@
       "Quit": [
         "Surt"
       ],
+      "Re-index": [
+        "Tornar a indexar"
+      ],
       "Re-sign": [
         "Tornar a signar"
       ],
@@ -5985,6 +5988,9 @@
       "No payment is required at this time.": [
         "En aquest moment no cal pagar cap pagament."
       ],
+      "No populator states found.": [
+        "No s'han trobat estats d'emplenament."
+      ],
       "No results found": [
         "No s'ha trobat cap resultat."
       ],
@@ -8715,8 +8721,8 @@
       "Data retention policies": [
         "Polítiques de conservació de dades"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Servidors dedicats optimitzats per a estríming"
+      "Dedicated servers optimized for speed": [
+        "Servidors dedicats optimitzats per més rapidesa"
       ],
       "Desktop app": [
         "Aplicació d'escriptori"
@@ -10962,9 +10968,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "La recuperació del compte no està disponible per a les claus d'adreces antigues"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Genereu claus abans d'intentar canviar la contrasenya"
       ]
     },
     "session_recovery:available:info": {
@@ -12713,6 +12716,9 @@
       ],
       "Import your data to ${ BRAND_NAME }": [
         "Importeu les dades a ${ BRAND_NAME }"
+      ],
+      "Index populators": [
+        "Emplenadors de l'índex"
       ],
       "Information exposed in breach": [
         "Informació exposada en la filtració"

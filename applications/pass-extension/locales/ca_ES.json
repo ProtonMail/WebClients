@@ -942,6 +942,9 @@
       "Authentication failure: ${ message }": [
         "S'ha produït un error d'autenticació: ${ message }"
       ],
+      "Biometric authentication failed.": [
+        "L'autenticació biomètrica ha fallat."
+      ],
       "Cannot create alias (${ error }).": [
         "No es pot crear l'àlies (${ error })."
       ],
@@ -997,6 +1000,18 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "No s'ha pogut eliminar la caixa forta \"${ payload.content.name }\""
       ],
+      "Desktop lock is not configured.": [
+        "El bloqueig de l'escriptori no està configurat."
+      ],
+      "Desktop lock secret does not match.": [
+        "La contrasenya de bloqueig de l'escriptori no coincideix."
+      ],
+      "Desktop lock secret not found.": [
+        "No s'ha trobat la contrasenya de bloqueig de l'escriptori."
+      ],
+      "Desktop lock setup failed.": [
+        "La configuració del bloqueig d'escriptori ha fallat."
+      ],
       "Detected ${ errors.length } corrupted csv row": [
         "S'ha detectat ${ errors.length } fila CSV corrupta",
         "S'han detectat ${ errors.length } files CSV corruptes"
@@ -1016,11 +1031,11 @@
       "Emptying trash failed": [
         "No s'ha pogut buidar la paperera"
       ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "La comunicació xifrada amb l'aplicació d'escriptori ${ PASS_APP_NAME } ha fallat."
+      ],
       "Encrypted JSON not supported": [
         "El JSON xifrat no és compatible"
-      ],
-      "Encryption communication for desktop unlock failed.": [
-        "Ha fallat la comunicació de xifratge per al desbloqueig de l'escriptori."
       ],
       "Error reporting problem": [
         "S'ha produït un error en informar del problema"
@@ -1259,6 +1274,9 @@
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
         "Alguna cosa ha anat malament. Torneu a carregar l'extensió ${ PASS_APP_NAME }. Aquest problema ha estat registrat"
       ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "L'aplicació d'escriptori ${ PASS_APP_NAME } no ha respost a temps."
+      ],
       "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
         "L'aplicació d'escriptori de ${ PASS_APP_NAME } està bloquejada, s'ha de desbloquejar."
       ],
@@ -1267,6 +1285,9 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
         "L'aplicació d'escriptori ${ PASS_APP_NAME } no respon, s'està executant?"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "S'ha iniciat sessió a l'aplicació d'escriptori ${ PASS_APP_NAME }amb un compte diferent."
       ],
       "The URL is in the list": [
         "L'URL és a la llista."
@@ -1291,6 +1312,9 @@
       ],
       "Unknown error": [
         "Error desconegut"
+      ],
+      "Unknown error.": [
+        "Hi ha hagut un error desconegut."
       ],
       "Unknown invite": [
         "Invitació desconeguda"

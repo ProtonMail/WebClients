@@ -196,6 +196,9 @@
       "Carbon Copy": [
         "Com cópia"
       ],
+      "Change password": [
+        "Alterar senha"
+      ],
       "Change sorting": [
         "Alterar ordenação"
       ],
@@ -1499,8 +1502,7 @@
         "Confiar"
       ],
       "Trust key": [
-        "Chave de confiança",
-        "Chaves de confiança"
+        "Chave de confiança"
       ],
       "Trust public key": [
         "Confiar na chave pública"
@@ -7491,7 +7493,8 @@
         "Inicializando…"
       ],
       "Insert image": [
-        "Inserir imagem"
+        "Inserir imagem",
+        "Inserir imagens"
       ],
       "Insert link": [
         "Inserir link"
@@ -11002,9 +11005,6 @@
       "Data retention policies": [
         "Políticas de retenção de dados"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Servidores dedicados otimizados para streaming"
-      ],
       "Desktop app": [
         "Aplicativo para computador"
       ],
@@ -13301,9 +13301,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "A recuperação de conta não está disponível para chaves de endereço herdadas"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Gere chaves antes de tentar alterar sua senha"
       ]
     },
     "session_recovery:available:info": {
@@ -14937,6 +14934,9 @@
       ],
       "Account security": [
         "Segurança da conta"
+      ],
+      "Account temporarily locked": [
+        "Conta temporariamente bloqueada"
       ],
       "Action all conversations": [
         "Ação em todas as conversas"

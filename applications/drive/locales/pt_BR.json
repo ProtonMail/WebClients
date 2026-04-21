@@ -539,6 +539,9 @@
       "Go back": [
         "Voltar"
       ],
+      "Go back to album “${ ellipsedAlbumName }“": [
+        "Voltar para o álbum \"${ ellipsedAlbumName }\""
+      ],
       "Go to ${ planOrAppName }": [
         "Acesse o ${ planOrAppName }"
       ],
@@ -3775,6 +3778,9 @@
       ],
       "Something went wrong while fetching available domains": [
         "Ocorreu um erro ao buscar os domínios disponíveis"
+      ],
+      "Something went wrong with search. Please try again later.": [
+        "Ocorreu um erro com a pesquisa. Tente novamente mais tarde."
       ],
       "Something went wrong. Please try again.": [
         "Ocorreu um erro. Tente novamente."
@@ -8667,9 +8673,6 @@
       "Data retention policies": [
         "Políticas de retenção de dados"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Servidores dedicados otimizados para streaming"
-      ],
       "Desktop app": [
         "Aplicativo para computador"
       ],
@@ -9350,11 +9353,20 @@
       "\"${ ellipsedName }\" copied": [
         "\"${ ellipsedName }\" copiado"
       ],
+      "\"${ ellipsedName }\" created successfully": [
+        "\"${ ellipsedName }\" criado com sucesso"
+      ],
       "\"${ ellipsedName }\" deleted": [
         "\"${ ellipsedName }\" detectado"
       ],
       "\"${ ellipsedName }\" deleted permanently from trash": [
         "\"${ ellipsedName }\" excluído permanentemente da lixeira"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "\"${ ellipsedName }\" falhou ao ser criado"
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "\"${ ellipsedName }\" falhou ao ser excluído permanentemente da lixeira"
       ],
       "\"${ ellipsedName }\" failed to be moved": [
         "\"${ ellipsedName }\" falhou ao ser movido"
@@ -11001,9 +11013,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "A recuperação de conta não está disponível para chaves de endereço herdadas"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Gere chaves antes de tentar alterar sua senha"
       ]
     },
     "session_recovery:available:info": {
