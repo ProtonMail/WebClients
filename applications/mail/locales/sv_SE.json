@@ -196,6 +196,9 @@
       "Carbon Copy": [
         "Kopia"
       ],
+      "Change password": [
+        "Ändra lösenord"
+      ],
       "Change sorting": [
         "Ändra sortering"
       ],
@@ -1499,8 +1502,7 @@
         "Lita på"
       ],
       "Trust key": [
-        "Lita på nyckel",
-        "Lita på nycklar"
+        "Lita på nyckel"
       ],
       "Trust public key": [
         "Lita på offentlig nyckel"
@@ -4251,6 +4253,10 @@
       "You're forwarding emails from ${ forwardingCount } Gmail address. By connecting it, you'll be able to both receive and reply in ${ MAIL_APP_NAME }": [
         "Du vidarebefordrar e-postmeddelanden från ${ forwardingCount } Gmail-adress. Genom att ansluta den kommer du att kunna både ta emot och svara i ${ MAIL_APP_NAME }",
         "Du vidarebefordrar e-postmeddelanden från ${ forwardingCount } Gmail-adresser. Genom att ansluta dem kan du både ta emot och svara i ${ MAIL_APP_NAME }"
+      ],
+      "You've connected ${ MAX_SYNC_PAID_USER } Gmail address. To add another, first disable one of your connected accounts.": [
+        "Du har anslutit ${ MAX_SYNC_PAID_USER } Gmail‑adress. För att lägga till en till, inaktivera först ett av dina anslutna konton.",
+        "Du har anslutit ${ MAX_SYNC_PAID_USER } Gmail‑adresser. För att lägga till en till, inaktivera först ett av dina anslutna konton."
       ],
       "You've connected one external account address to ${ MAIL_APP_NAME }.": [
         "Du har anslutit en extern kontoadress till ${ MAIL_APP_NAME }."
@@ -7516,7 +7522,8 @@
         "Initierar …"
       ],
       "Insert image": [
-        "Infoga bild"
+        "Infoga bild",
+        "Infoga bilder"
       ],
       "Insert link": [
         "Infoga länk"
@@ -10978,9 +10985,6 @@
       "Data breach monitoring": [
         "Dataintrångsövervakning"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Dedikerade servrar optimerade för streaming"
-      ],
       "Desktop app": [
         "Skrivbordsapp"
       ],
@@ -13277,9 +13281,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Kontoåterställning är inte tillgänglig för äldre adressnycklar"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Generera nycklar innan du försöker ändra ditt lösenord"
       ]
     },
     "session_recovery:available:info": {
@@ -14913,6 +14914,9 @@
       ],
       "Account security": [
         "Kontosäkerhet"
+      ],
+      "Account temporarily locked": [
+        "Konto tillfälligt låst"
       ],
       "Action all conversations": [
         "Åtgärda alla konversationer"

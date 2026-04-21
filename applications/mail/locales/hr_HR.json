@@ -143,6 +143,9 @@
       "Carbon Copy": [
         "Kopija"
       ],
+      "Change password": [
+        "Promjena lozinke"
+      ],
       "Change sorting": [
         "Promijeni sortiranje"
       ],
@@ -1117,6 +1120,9 @@
       ],
       "Trust": [
         "Vjeruj"
+      ],
+      "Trust key": [
+        "Ključ povjerenja"
       ],
       "Trust public key": [
         "Vjeruj javnom ključu"
@@ -4947,7 +4953,9 @@
         "Inicijalizacija…"
       ],
       "Insert image": [
-        "Umetni sliku"
+        "Umetni sliku",
+        "Umetni slike",
+        "Umetni slike"
       ],
       "Insert link": [
         "Umetni poveznicu"
@@ -8182,11 +8190,6 @@
       ],
       "Reset password": [
         "Ponovno postavljanje lozinke"
-      ]
-    },
-    "session_recovery:available:error": {
-      "Please generate keys before you try to change your password": [
-        "Molimo generirajte ključeve prije nego što pokušate promijeniti svoju lozinku"
       ]
     },
     "session_recovery:available:info": {
