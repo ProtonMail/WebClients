@@ -1205,6 +1205,15 @@
       "Something went wrong. Please sign in again.": [
         "Se ha producido un error. Inicia sesión de nuevo."
       ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "La aplicación de escritorio de ${ PASS_APP_NAME } está bloqueada; debes desbloquearla."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "La aplicación de escritorio ${ PASS_APP_NAME } no está instalada."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "La aplicación de escritorio ${ PASS_APP_NAME } no responde, ¿se está ejecutando?"
+      ],
       "The session has expired. Please sign in again.": [
         "Tu sesión ha expirado. Inicia sesión de nuevo."
       ],
@@ -1228,6 +1237,9 @@
       ],
       "Unknown error": [
         "Error desconocido"
+      ],
+      "Unknown error.": [
+        "Error desconocido."
       ],
       "Unknown invite": [
         "Invitación desconocida"

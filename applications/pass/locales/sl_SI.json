@@ -932,6 +932,15 @@
       "Something went wrong": [
         "Nekaj je šlo narobe"
       ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "Namizna aplikacija ${ PASS_APP_NAME } je zaklenjena, zato jo je treba odkleniti."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "Namizna aplikacija ${ PASS_APP_NAME } ni nameščena."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "Namizna aplikacija ${ PASS_APP_NAME } se ne odziva, ali je zagnana?"
+      ],
       "The session has expired. Please sign in again.": [
         "Seja je potekla. Prosimo, znova se prijavite."
       ],
@@ -952,6 +961,9 @@
       ],
       "Unknown error": [
         "Neznana napaka"
+      ],
+      "Unknown error.": [
+        "Neznana napaka."
       ],
       "Unknown invite": [
         "Neznano povabilo"
