@@ -91,10 +91,22 @@ export class DownloadManager {
     }
 
     resolveSignatureIssue(item: DownloadItem, issueName: string, decision: IssueStatus, applyAll?: boolean) {
-        const { updateDownloadItem, updateSignatureIssueStatus } = useDownloadManagerStore.getState();
+        const { updateDownloadItem, updateSignatureIssueStatus, getQueueItem } = useDownloadManagerStore.getState();
 
         if (applyAll) {
             updateDownloadItem(item.downloadId, { signatureIssueAllDecision: decision });
+            // Resolve every pending issue so the watcher doesn't cascade modals
+            // and each in-flight waitForSignatureIssueDecision polling loop can settle.
+            const issues = getQueueItem(item.downloadId)?.signatureIssues;
+            if (!issues) {
+                return;
+            }
+            for (const name of Object.keys(issues)) {
+                if (issues[name].issueStatus === IssueStatus.Detected) {
+                    updateSignatureIssueStatus(item.downloadId, name, decision);
+                }
+            }
+            return;
         }
         updateSignatureIssueStatus(item.downloadId, issueName, decision);
     }
