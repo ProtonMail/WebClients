@@ -942,6 +942,9 @@
       "Authentication failure: ${ message }": [
         "Autentiseringsfel: ${ message }"
       ],
+      "Biometric authentication failed.": [
+        "Biometrisk autentisering misslyckades."
+      ],
       "Cannot create alias (${ error }).": [
         "Kan inte skapa alias (${ error })."
       ],
@@ -1015,6 +1018,9 @@
       ],
       "Emptying trash failed": [
         "Tömning av papperskorgen misslyckades"
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Krypterad kommunikation med ${ PASS_APP_NAME }-appen för stationär dator misslyckades."
       ],
       "Encrypted JSON not supported": [
         "Krypterad JSON stöds inte"
@@ -1253,6 +1259,9 @@
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
         "Något gick fel. Ladda om tillägget ${ PASS_APP_NAME }. Detta problem har loggats"
       ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "${ PASS_APP_NAME }-appen för stationär dator svarade inte i tid."
+      ],
       "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
         "${ PASS_APP_NAME }-appen för stationär dator är låst, den måste vara upplåst."
       ],
@@ -1261,6 +1270,9 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
         "${ PASS_APP_NAME }-appen för stationär dator svarar inte, körs den?"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "${ PASS_APP_NAME }-appen för stationär dator är inloggad med ett annat konto."
       ],
       "The URL is in the list": [
         "URL:en finns i listan"
@@ -1285,6 +1297,9 @@
       ],
       "Unknown error": [
         "Okänt fel"
+      ],
+      "Unknown error.": [
+        "Okänt fel."
       ],
       "Unknown invite": [
         "Okänd inbjudan"
