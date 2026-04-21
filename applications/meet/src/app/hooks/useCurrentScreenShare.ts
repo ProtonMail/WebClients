@@ -7,7 +7,9 @@ import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
-import { isMobile, isSafari, isWindows } from '@proton/shared/lib/helpers/browser';
+import { useMeetDispatch } from '@proton/meet/store/hooks';
+import { PermissionsModalType, showPermissionsModal } from '@proton/meet/store/slices/deviceManagementSlice';
+import { isChrome, isMobile, isSafari, isWindows } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 
 import { screenShareQuality } from '../qualityConstants';
@@ -25,6 +27,8 @@ export function useCurrentScreenShare({
     const { reportMeetError } = useMeetErrorReporting();
     const { localParticipant } = useLocalParticipant();
 
+    const dispatch = useMeetDispatch();
+
     const notifications = useNotifications();
 
     const screenShareTrack = useTracks([Track.Source.ScreenShare])[0];
@@ -41,6 +45,7 @@ export function useCurrentScreenShare({
     });
 
     const startScreenShare = useStableCallback(async () => {
+        const start = performance.now();
         try {
             const isOnMobile = isMobile();
 
@@ -80,6 +85,9 @@ export function useCurrentScreenShare({
                 startPiP();
             }
         } catch (err: any) {
+            const end = performance.now();
+            const arePermissionsBlocked = end - start < 300;
+
             stopPiP();
 
             if (
@@ -88,6 +96,11 @@ export function useCurrentScreenShare({
                     'The request is not allowed by the user agent or the platform in the current context.' ||
                 (err.message === 'Could not start video source' && isElectronApp)
             ) {
+                if (arePermissionsBlocked && !isChrome() && !isElectronApp) {
+                    dispatch(
+                        showPermissionsModal({ modal: PermissionsModalType.PERMISSIONS_BLOCKED_SCREEN_SHARE_MODAL })
+                    );
+                }
                 return;
             }
 

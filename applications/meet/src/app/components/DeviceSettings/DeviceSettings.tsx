@@ -8,8 +8,12 @@ import { IcMeetCameraOff } from '@proton/icons/icons/IcMeetCameraOff';
 import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
 import { IcMeetRotateCamera } from '@proton/icons/icons/IcMeetRotateCamera';
 import type { IconSize } from '@proton/icons/types';
-import { useMeetSelector } from '@proton/meet/store/hooks';
+import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import {
+    PermissionBlockedError,
+    PermissionsModalType,
+    requestPermission,
+    selectActiveCameraId,
     selectCameraPermission,
     selectCameraState,
     selectCameras,
@@ -19,6 +23,7 @@ import {
     selectMicrophones,
     selectSpeakerState,
     selectSpeakers,
+    showPermissionsModal,
 } from '@proton/meet/store/slices/deviceManagementSlice';
 import type { SerializableDeviceInfo } from '@proton/meet/utils/deviceUtils';
 import { filterDevices, isDefaultDevice, resolveDevice } from '@proton/meet/utils/deviceUtils';
@@ -73,6 +78,8 @@ export const DeviceSettings = ({
     colorIndex,
     isLoading,
 }: DeviceSettingsProps) => {
+    const dispatch = useMeetDispatch();
+
     const camera = useMeetSelector(selectCameraPermission);
     const microphone = useMeetSelector(selectMicrophonePermission);
     const initialCameraState = useMeetSelector(selectInitialCameraState);
@@ -82,6 +89,7 @@ export const DeviceSettings = ({
     const cameras = useMeetSelector(selectCameras);
     const microphones = useMeetSelector(selectMicrophones);
     const speakers = useMeetSelector(selectSpeakers);
+    const activeCameraId = useMeetSelector(selectActiveCameraId);
     const { handleRotateCamera, facingMode } = useMediaManagementContext();
 
     const noCameraPermission = camera !== 'granted';
@@ -124,6 +132,36 @@ export const DeviceSettings = ({
             resolveDevice(deviceId, filteredCameras, cameraState.systemDefault!),
             isDefaultDevice(deviceId)
         );
+    };
+
+    const handleMicrophoneToggle = async () => {
+        if (microphoneHasWarning) {
+            try {
+                await dispatch(requestPermission('microphone'));
+            } catch (error) {
+                if (error instanceof PermissionBlockedError) {
+                    dispatch(
+                        showPermissionsModal({ modal: PermissionsModalType.PERMISSIONS_BLOCKED_MICROPHONE_MODAL })
+                    );
+                }
+            }
+        } else {
+            onMicrophoneToggle();
+        }
+    };
+
+    const handleCameraToggle = async () => {
+        if (cameraHasWarning) {
+            try {
+                await dispatch(requestPermission('camera', activeCameraId));
+            } catch (error) {
+                if (error instanceof PermissionBlockedError) {
+                    dispatch(showPermissionsModal({ modal: PermissionsModalType.PERMISSIONS_BLOCKED_CAMERA_MODAL }));
+                }
+            }
+        } else {
+            onCameraToggle();
+        }
     };
 
     let microphoneLabel;
@@ -233,7 +271,7 @@ export const DeviceSettings = ({
                 >
                     <CircleButton
                         className="border white-border"
-                        onClick={microphoneHasWarning ? undefined : onMicrophoneToggle}
+                        onClick={handleMicrophoneToggle}
                         IconComponent={
                             isMicrophoneEnabled
                                 ? ({ size }) => (
@@ -250,7 +288,7 @@ export const DeviceSettings = ({
 
                     <CircleButton
                         className="border white-border"
-                        onClick={cameraHasWarning ? undefined : onCameraToggle}
+                        onClick={handleCameraToggle}
                         IconComponent={isCameraEnabled ? IcMeetCamera : IcMeetCameraOff}
                         variant={'transparent'}
                         indicatorContent={cameraHasWarning ? '!' : undefined}
