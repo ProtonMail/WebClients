@@ -198,28 +198,40 @@ export const eventUpdatesPending = (
     state: Draft<ElementsState>,
     action: PayloadAction<undefined, string, { arg: EventUpdates }>
 ) => {
+    // Get the context total before any mutations are applied.
+    const countsBeforeAction = computeFilteredCounts(state);
+
     const { toCreate, toUpdate, toDelete } = action.meta.arg;
     toCreate.forEach((element) => {
-        state.elements[element.ID || ''] = element;
+        state.elements[element.ID] = element;
     });
+
     toUpdate.forEach((element) => {
-        const existingElement = state.elements[element.ID || ''];
+        const existingElement = state.elements[element.ID];
         if (existingElement) {
-            state.elements[element.ID || ''] = parseLabelIDsInEvent(existingElement, element);
+            state.elements[element.ID] = parseLabelIDsInEvent(existingElement, element);
         }
     });
+
     toDelete.forEach((elementID) => {
         delete state.elements[elementID];
     });
+
+    // Update the context total for all cached contexts based on the mutation caused by event-loop
+    updateContextTotal({ state, countsBeforeAction });
 };
 
 export const eventUpdatesFulfilled = (
     state: Draft<ElementsState>,
     action: PayloadAction<(Element | undefined)[], string, { arg: EventUpdates }>
 ) => {
+    const countsBeforeAction = computeFilteredCounts(state);
+
     action.payload.filter(isTruthy).forEach((element) => {
-        state.elements[element.ID || ''] = element;
+        state.elements[element.ID] = element;
     });
+
+    updateContextTotal({ state, countsBeforeAction });
 };
 
 export const addESResults = (state: Draft<ElementsState>, action: PayloadAction<ESResults>) => {
