@@ -3,6 +3,7 @@ import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/h
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import { getBundleConfig } from './config/bundle';
+import { getBundleBizConfig } from './config/bundleBiz';
 import { getBundleProConfig } from './config/bundlePro';
 import { getDrivePlusConfig } from './config/drivePlus';
 import { getDuoConfig } from './config/duo';
@@ -60,6 +61,10 @@ export const getReminderPageConfig = ({
 
     if (plan.Name === PLANS.BUNDLE_PRO_2024 || plan.Name === PLANS.BUNDLE_PRO) {
         return getBundleProConfig({ app, plan, subscription });
+    }
+
+    if (plan.Name === PLANS.BUNDLE_BIZ_2025) {
+        return getBundleBizConfig({ app, plan, subscription });
     }
 
     return null;
