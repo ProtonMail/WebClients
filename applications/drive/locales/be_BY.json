@@ -813,6 +813,9 @@
       "Quit": [
         "Выйсці"
       ],
+      "Re-index": [
+        "Пераіндэксаваць"
+      ],
       "Re-sign": [
         "Паўторна падпісаць"
       ],
@@ -6173,6 +6176,9 @@
       "No payment is required at this time.": [
         "У дадзены момант аплата не патрабуецца."
       ],
+      "No populator states found.": [
+        "Станы папулятара не знойдзены."
+      ],
       "No results found": [
         "Нічога не знойдзена"
       ],
@@ -8926,7 +8932,7 @@
       ],
       "Appointment scheduling with ${ n } booking page": [
         "Планіруйце сустрэчы з ${ n } старонкай браніравання",
-        "Планіруйце сустрэчы з ${ n } старонкай браніравання",
+        "Планіруйце сустрэчы з ${ n } старонкамі браніравання",
         "Планіруйце сустрэчы з ${ n } старонкамі браніравання",
         "Планіруйце сустрэчы з ${ n } старонкамі браніравання"
       ],
@@ -8984,8 +8990,8 @@
       "Data retention policies": [
         "Палітыка захоўвання даных"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Вылучаныя серверы аптымізаваныя для трансляцый"
+      "Dedicated servers optimized for speed": [
+        "Вылучаныя серверы аптымізаваныя для хуткасці"
       ],
       "Desktop app": [
         "Праграма для камп'ютара"
@@ -11339,9 +11345,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Аднаўленне ўліковага запісу недаступна для састарэлых адрасных ключоў"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Згенерыруйце ключы перад спробай змяніць пароль"
       ]
     },
     "session_recovery:available:info": {
@@ -13186,6 +13189,9 @@
       ],
       "Import your data to ${ BRAND_NAME }": [
         "Імпартуйце свае даныя ў ${ BRAND_NAME }"
+      ],
+      "Index populators": [
+        "Індэкс папулятараў"
       ],
       "Information exposed in breach": [
         "Звесткі, якія былі скампраметаваныя ў выніку парушэння"

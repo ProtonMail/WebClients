@@ -803,6 +803,9 @@
       "Quit": [
         "Salir"
       ],
+      "Re-index": [
+        "Reindexar"
+      ],
       "Re-sign": [
         "Volver a firmar"
       ],
@@ -5985,6 +5988,9 @@
       "No payment is required at this time.": [
         "No se requiere ningún pago en este momento."
       ],
+      "No populator states found.": [
+        "No se encontraron estados del proceso de indexación"
+      ],
       "No results found": [
         "No se encontraron resultados"
       ],
@@ -8715,8 +8721,8 @@
       "Data retention policies": [
         "Políticas de retención de datos"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Servidores dedicados optimizados para streaming"
+      "Dedicated servers optimized for speed": [
+        "Servidores dedicados optimizados para velocidad"
       ],
       "Desktop app": [
         "App de escritorio"
@@ -11058,9 +11064,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "La recuperación de la cuenta no está disponible para claves de direcciones heredadas"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Genere claves antes de intentar cambiar la contraseña"
       ]
     },
     "session_recovery:available:info": {
@@ -12809,6 +12812,9 @@
       ],
       "Import your data to ${ BRAND_NAME }": [
         "Importe sus datos a ${ BRAND_NAME }"
+      ],
+      "Index populators": [
+        "Generadores de índices"
       ],
       "Information exposed in breach": [
         "Información expuesta en la vulneración"

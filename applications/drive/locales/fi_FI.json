@@ -800,6 +800,9 @@
       "Quit": [
         "Sulje"
       ],
+      "Re-index": [
+        "Indeksoi uudelleen"
+      ],
       "Re-sign": [
         "Allekirjoita uudelleen"
       ],
@@ -5803,6 +5806,9 @@
       "No payment is required at this time.": [
         "Maksua ei nyt vaadita."
       ],
+      "No populator states found.": [
+        "Populaattorimääritteitä ei löytynyt."
+      ],
       "No results found": [
         "Tuloksia ei löytynyt"
       ],
@@ -8369,8 +8375,8 @@
       "Data breach monitoring": [
         "Tietomurtovalvonta"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Suoratoistoon optimoidut palvelimet"
+      "Dedicated servers optimized for speed": [
+        "Nopeudelle optimoidut dedikoidut palvelimet"
       ],
       "Desktop app": [
         "Työpöytäsovellus"
@@ -10610,9 +10616,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Tilin palautus ei ole käytetävissä vanhan tyyppisillä osoiteavaimilla"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Luo avaimet ennen kuin yrität vaihtaa salasanaasi"
       ]
     },
     "session_recovery:available:info": {
@@ -12322,6 +12325,9 @@
       ],
       "Import your data to ${ BRAND_NAME }": [
         "Tuo tietosi ${ BRAND_NAME }iin"
+      ],
+      "Index populators": [
+        "Indeksin täyttäjät"
       ],
       "Information exposed in breach": [
         "Tietomurrossa paljastuneet tiedot"
