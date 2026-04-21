@@ -42,6 +42,10 @@ jest.mock('@proton/account/user/hooks', () => ({
     useUser: () => [{ ID: 'test-user' }],
 }));
 
+jest.mock('@proton/account/userKeys/hooks', () => ({
+    useGetUserKeys: () => jest.fn().mockResolvedValue([]),
+}));
+
 jest.mock('@proton/components', () => ({
     useApi: () => jest.fn(),
     useConfig: () => ({ APP_VERSION: '1.0.0' }),

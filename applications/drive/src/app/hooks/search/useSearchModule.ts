@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 
 import { useUser } from '@proton/account/user/hooks';
+import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { useApi, useConfig } from '@proton/components';
 import { useDrive } from '@proton/drive';
 import { queryLatestVolumeEvent } from '@proton/shared/lib/api/drive/volume';
@@ -58,6 +59,7 @@ export const useSearchModule = (): UseSearchModuleReturn => {
 
     const [user] = useUser();
     const api = useApi();
+    const getUserKeys = useGetUserKeys();
 
     const [searchModule, setSearchModule] = useState<SearchModule | null>(null);
 
@@ -87,6 +89,7 @@ export const useSearchModule = (): UseSearchModuleReturn => {
                             ...queryLatestVolumeEvent(treeEventScopeId),
                             signal: abortSignal.signal,
                         }),
+                    getUserKeys,
                 });
 
                 if (!cancelled) {

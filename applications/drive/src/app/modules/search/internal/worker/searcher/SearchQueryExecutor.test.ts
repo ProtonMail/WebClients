@@ -1,6 +1,8 @@
 import { IDBFactory } from 'fake-indexeddb';
 import 'fake-indexeddb/auto';
 
+import { generateAndImportKey } from '@proton/crypto/lib/subtle/aesGcm';
+
 import { SearchDB } from '../../shared/SearchDB';
 import { collectResults, indexDocuments, makeTestIndexEntry } from '../../testing/indexHelpers';
 import { setupRealSearchLibraryWasm } from '../../testing/setupRealSearchLibraryWasm';
@@ -22,7 +24,8 @@ describe('SearchQueryExecutor integration', () => {
     beforeEach(async () => {
         indexedDB = new IDBFactory();
         db = await SearchDB.open('test-user');
-        registry = new IndexRegistry();
+        const cryptoKey = await generateAndImportKey();
+        registry = new IndexRegistry(cryptoKey);
         executor = new SearchQueryExecutor(registry, db);
     });
 

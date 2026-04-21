@@ -27,6 +27,8 @@ let wasmInit: Promise<InitOutput> | undefined;
 export class IndexRegistry {
     private readonly instances = new Map<IndexKind, IndexInstance>();
 
+    constructor(private readonly cryptoKey: CryptoKey) {}
+
     /**
      * Return the engine instance for the given kind, creating it if it doesn't exist yet.
      */
@@ -39,7 +41,7 @@ export class IndexRegistry {
 
         const config = new ProcessorConfig().withMaxLength(MAX_SEARCHABLE_FILENAME_LENGTH);
         const engine = SearchLibraryWasmEngine.builder().withBuiltinProcessor(config).build();
-        const blobStore = new IndexBlobStore(kind, db);
+        const blobStore = new IndexBlobStore(kind, db, this.cryptoKey);
         const indexWriter = new IndexWriter(engine, blobStore);
         const indexReader = new IndexReader(engine, blobStore);
         const instance: IndexInstance = { indexKind: kind, engine, blobStore, indexWriter, indexReader };
@@ -60,7 +62,7 @@ export class IndexRegistry {
     }
 
     disposeAll(): void {
-        for (const [kind] of this.instances) {
+        for (const kind of this.instances.keys()) {
             this.dispose(kind);
         }
     }
