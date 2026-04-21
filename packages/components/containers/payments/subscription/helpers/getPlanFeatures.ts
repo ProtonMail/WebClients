@@ -130,6 +130,13 @@ export const getPlanFeatures = (plan: PlanPlusBaseSpace) => {
 
     const features = {
         [PLANS.BUNDLE]: [emailStorage, emailAddress, customDomains, passwordManager, vpn, encryptedCloudStorage],
+        [PLANS.BUNDLE_PRO_2024]: [
+            storagePerUser,
+            customDomains,
+            appsAndFeatures,
+            sharedCalendar,
+            advancedAccountProtection,
+        ],
         [PLANS.FAMILY]: [storage, users, appsAndFeatures, protonScribe],
         [PLANS.FREE]: [emailStorage, emailAddress],
         [PLANS.MAIL]: [emailStorage, emailAddress, customDomains, foldersLabelsFilters, darkWebMonitoring],
