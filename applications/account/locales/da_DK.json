@@ -348,6 +348,9 @@
       "Continue anyway": [
         "Fortsæt alligevel"
       ],
+      "Continue cancelling": [
+        "Fortsæt annullering"
+      ],
       "Continue import": [
         "Fortsæt import"
       ],
@@ -965,6 +968,9 @@
       ],
       "Keep categories": [
         "Behold kategorier"
+      ],
+      "Keep current plan": [
+        "Behold nuværende abonnement"
       ],
       "Keep Editing": [
         "Fortsæt redigering"
@@ -4859,6 +4865,9 @@
       "A checked box means the feature is disabled.": [
         "Et afkrydset felt betyder, at funktionen er deaktiveret."
       ],
+      "Add extra addresses to your account or use Hide My Email aliases to keep your inbox private.": [
+        "Tilføj ekstra adresser til din konto eller brug Hide-My-Email-aliasser for at holde din inbox privat."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Tilføj mapper og filer til ${ DRIVE_APP_NAME } og inviter teammedlemmer til at se eller redigere."
       ],
@@ -4964,6 +4973,9 @@
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "Gør din e-mailsidefod til din egen – fremvis dit unikke brand, ikke vores."
       ],
+      "Most issues can be solved in a few minutes with our step-by-step guides.": [
+        "De fleste problemer kan løses på nogle få minutter med vores trinvise vejledninger."
+      ],
       "No ads. No trackers.": [
         "Ingen reklamer. Ingen trackere."
       ],
@@ -4984,6 +4996,9 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Forenkl synkronisering og planlægning med delte kalendere."
+      ],
+      "Still need help? Our support team is here for you.": [
+        "Har du stadig brug for hjælp? Vores supportteam er her for at hjælpe."
       ],
       "This may happen if permissions were removed or your password changed.": [
         "Dette kan ske hvis nogle tilladelser blev fjernet, eller din adgangskode blev ændret."
@@ -5048,6 +5063,12 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Du kan importere begivenheder i iCal format (ICS-fil). Denne fil skal have en maksimal størrelse på ${ MAX_IMPORT_FILE_SIZE_STRING } og have op til ${ MAX_IMPORT_EVENTS_STRING } begivenheder. Hvis din fil er større, skal du opdele den i mindre filer."
+      ],
+      "You can manage multiple ${ BRAND_NAME } addresses from a single account, without switching. Aliases and address management tools help keep everything in one inbox.": [
+        "Du kan administrere flere ${ BRAND_NAME }-adresser fra en enkelt konto, uden at skulle skifte. Aliasser og værktøjer til administration af e-mail-adresser hjælper med at holde alting i én indbakke."
+      ],
+      "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
+        "Du kan flette adresser ind i en primær ${ BRAND_NAME }-konto ved at bruge vores support-vejledning."
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Du kan nu sende e-mails fra ${ BRAND_NAME } med denne adresse."
@@ -6941,9 +6962,6 @@
         "Løs den fremhævede konflikt for at fortsætte.",
         "Løs de fremhævede konflikter for at fortsætte."
       ],
-      "Please generate keys before you try to change your password": [
-        "Generér nøgler, inden du forsøger at ændre din adgangskode"
-      ],
       "Please select a country": [
         "Vælg venligst et land"
       ],
@@ -8341,6 +8359,17 @@
       ],
       "Your desktop app free trial has ended": [
         "Din desktop app's gratis prøveperiode er slut"
+      ]
+    },
+    "Get help": {
+      "Continue cancelling": [
+        "Fortsæt annullering"
+      ],
+      "Keep current plan": [
+        "Behold nuværende abonnement"
+      ],
+      "Many issues can be resolved quickly with our help guides. If you need more support, our team is here to help.": [
+        "Mange problemer kan løses hurtigt med vores hjælpe-vejledninger. Hvis du har brug for mere support, står vores team klar til at hjælpe."
       ]
     },
     "Get started checklist instructions": {
@@ -10305,6 +10334,9 @@
       "Enter your recovery phrase to change your password now.": [
         "Indtast din gendannelsessætning for at ændre din adgangskode nu."
       ],
+      "Enter your recovery phrase to verify your identity and disable two-factor authentication.": [
+        "Indtast din gendannelsessætning for at bekræfte din identitet og deaktivere to-faktor-godkendelse."
+      ],
       "Event invitations and responses will be sent in this language.": [
         "Invitationer til begivenheder og svar vil blive afsendt på dette sprog."
       ],
@@ -12056,7 +12088,7 @@
         "Opgradér for at beholde dine ${ planTitle }-fordele."
       ],
       "Upgrade to unlock": [
-        "Opgrader for at låse op"
+        "Opgradér for at låse op"
       ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "Opgrader for at låse op for ${ monitorLink }."
@@ -14983,11 +15015,11 @@
       "clearing your browser cache": [
         "rydder din browser-cache"
       ],
-      "Common sign in issues": [
-        "Almindelige tegn på problemer"
-      ],
       "Common sign up issues": [
         "Almindelige tilmeldingsproblemer"
+      ],
+      "Contact support": [
+        "Kontakt support"
       ],
       "contacts’ assistance": [
         "hjælp fra kontakter"
@@ -15106,11 +15138,17 @@
       "Import/export": [
         "Import/eksport"
       ],
+      "Learn how": [
+        "Lær hvordan"
+      ],
       "Learn more": [
         "Få mere at vide"
       ],
       "Learn more about data recovery": [
         "Få mere at vide om datagendannelse"
+      ],
+      "Manage addresses": [
+        "Administrer adresser"
       ],
       "Not activated": [
         "Ikke aktiveret"
@@ -15177,6 +15215,9 @@
       ],
       "visit our blog": [
         "besøg vores blog"
+      ],
+      "Visit our support site": [
+        "Besøg vores supportside"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Hvad er forskellen mellem UDP- og TCP-protokollerne?"
@@ -16314,8 +16355,8 @@
       "Dedicated servers and IP": [
         "Dedikerede servere og IP"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Dedikerede servere optimeret til streaming"
+      "Dedicated servers optimized for speed": [
+        "Dedikerede hastighedsoptimerede servere"
       ],
       "Desktop app": [
         "Skrivebordsapp"
@@ -17989,9 +18030,6 @@
       "Buy now": [
         "Køb nu"
       ],
-      "Contact us": [
-        "Kontakt os"
-      ],
       "Continue": [
         "Fortsæt"
       ],
@@ -18018,9 +18056,6 @@
       ],
       "Or ${ createANewAccount }": [
         "Eller ${ createANewAccount }"
-      ],
-      "Request trial": [
-        "Anmod om prøveperiode"
       ],
       "Start using ${ appName }": [
         "Begynd at bruge ${ appName }"
@@ -18263,9 +18298,6 @@
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Begynd at bruge ${ PASS_APP_NAME }"
-      ],
-      "Tailored made solutions for larger organizations with custom needs.": [
-        "Skræddersyede løsninger til større organisationer med specialbehov."
       ],
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "Det valgte tilbud er ikke tilgængeligt for ${ currentPlanTitle }-abonnenter."
@@ -20393,9 +20425,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Kontogendannelse er ikke tilgængelig for ældre adressenøgler"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Generér nøgler, før du forsøger at ændre din adgangskode."
       ]
     },
     "session_recovery:available:info": {
@@ -23238,6 +23267,9 @@
       "Allocate storage": [
         "Tildel lagerplads"
       ],
+      "Already have multiple accounts?": [
+        "Har du allerede flere konti?"
+      ],
       "Also in your plan": [
         "Også i dit abonnement"
       ],
@@ -23475,6 +23507,9 @@
       ],
       "Create multiple user accounts": [
         "Opret flere brugerkonti"
+      ],
+      "Create new addresses easily": [
+        "Opret nemt nye adresser"
       ],
       "Create new policy": [
         "Opret ny politik"
@@ -23897,6 +23932,12 @@
       ],
       "Get complete privacy coverage": [
         "Få komplet privatlivsdækning"
+      ],
+      "Get direct support": [
+        "Få direkte support"
+      ],
+      "Get help with an issue": [
+        "Få hjælp til et problem"
       ],
       "Get more from your cloud storage": [
         "Få mere ud af din sky-lagring"
@@ -24581,6 +24622,9 @@
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Åbn dette regneark i ${ SHEETS_APP_NAME } eller download det for at forhåndsvise det."
       ],
+      "Troubleshoot your issue": [
+        "Fejlfind dit problem"
+      ],
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "Prøv ${ AUTHENTICATOR_APP_NAME }"
       ],
@@ -24646,6 +24690,9 @@
       ],
       "Use backup recovery code": [
         "Brug backup-gendannelseskode"
+      ],
+      "Use one account for all your addresses": [
+        "Brug én konto til alle dine adresser"
       ],
       "User": [
         "Bruger"

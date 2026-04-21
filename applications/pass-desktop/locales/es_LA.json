@@ -676,6 +676,9 @@
       "Skip": [
         "Omitir"
       ],
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Alguien compartió un elemento con usted en ${ PASS_APP_NAME }."
+      ],
       "Sort vault items": [
         "Ordenar elementos de la bóveda"
       ],
@@ -962,6 +965,9 @@
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Error con la autenticación. Confirme su segunda contraseña para continuar con la exportación."
       ],
+      "Biometric authentication failed.": [
+        "Error en la autenticación biométrica."
+      ],
       "Cannot send invitation at the moment": [
         "No se puede enviar la invitación por el momento",
         "No se pueden enviar las invitaciones por el momento"
@@ -1014,6 +1020,18 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Error al eliminar la bóveda \"${ payload.content.name }\""
       ],
+      "Desktop lock is not configured.": [
+        "El bloqueo de escritorio no está configurado."
+      ],
+      "Desktop lock secret does not match.": [
+        "El secreto de bloqueo de escritorio no coincide."
+      ],
+      "Desktop lock secret not found.": [
+        "Secreto de bloqueo de escritorio no encontrado."
+      ],
+      "Desktop lock setup failed.": [
+        "Error en la configuración de bloqueo de escritorio."
+      ],
       "Detected ${ errors.length } corrupted csv row": [
         "Se detectó ${ errors.length } fila CSV dañada.",
         "Se detectaron ${ errors.length } filas CSV dañadas."
@@ -1033,11 +1051,11 @@
       "Emptying trash failed": [
         "Error al vaciar la papelera"
       ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Error en la comunicación cifrada con la aplicación de escritorio de ${ PASS_APP_NAME }."
+      ],
       "Encrypted JSON not supported": [
         "JSON cifrado no soportado"
-      ],
-      "Encryption communication for desktop unlock failed.": [
-        "Fallo en la comunicación de cifrado para desbloquear la app de escritorio."
       ],
       "Error reporting problem": [
         "Error al reportar el problema"
@@ -1255,6 +1273,9 @@
       "Something went wrong. Please sign in again.": [
         "Ocurrió un error. Inicie sesión de nuevo."
       ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "La aplicación de escritorio ${ PASS_APP_NAME } no respondió a tiempo."
+      ],
       "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
         "La aplicación de escritorio de ${ PASS_APP_NAME } está bloqueada; debe desbloquearla."
       ],
@@ -1263,6 +1284,9 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
         "La aplicación de escritorio ${ PASS_APP_NAME } no responde, ¿se está ejecutando?"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "Se ha iniciado sesión en a aplicación de escritorio de ${ PASS_APP_NAME } con una cuenta diferente."
       ],
       "The session has expired. Please sign in again.": [
         "La sesión ha expirado. Inicie sesión de nuevo."
@@ -1276,6 +1300,9 @@
       "Trashing item failed": [
         "Error al eliminar el elemento"
       ],
+      "Try reaching out to the link owner.": [
+        "Intente comunicarse con el propietario del enlace."
+      ],
       "Unable to generate an OTP code for this item": [
         "No se puede generar un código OTP para este elemento"
       ],
@@ -1284,6 +1311,9 @@
       ],
       "Unknown error": [
         "Error desconocido"
+      ],
+      "Unknown error.": [
+        "Error desconocido."
       ],
       "Unknown invite": [
         "Invitación desconocida"
@@ -3736,6 +3766,9 @@
       ],
       "Theme": [
         "Tema"
+      ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Este elemento es accesible hasta el ${ date } o hasta que se alcance el límite de vistas."
       ],
       "Tier/Level": [
         "Nivel"

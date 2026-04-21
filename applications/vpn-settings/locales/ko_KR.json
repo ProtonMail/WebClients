@@ -476,6 +476,9 @@
       "Fit to window": [
         "창에 맞게"
       ],
+      "Forgot password?": [
+        "비밀번호를 잊어버리셨나요?"
+      ],
       "Forgot recovery method?": [
         "복구 방법을 잊으셨나요?"
       ],
@@ -4368,9 +4371,6 @@
       "Please fix the highlighted conflict to proceed.": [
         "계속하려면 표시된 충돌을 해결해 주세요."
       ],
-      "Please generate keys before you try to change your password": [
-        "비밀번호를 변경하기 전에 먼저 키를 생성해주세요"
-      ],
       "Please select a country": [
         "국가를 선택해주세요"
       ],
@@ -6746,6 +6746,12 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "${ BRAND_NAME } 계정 이메일 주소 및 사용자 이름을 입력하세요."
+      ],
+      "Enter your own password (as organization admin).": [
+        "사용자의 비밀번호 입력 (조직 관리자와 같음)"
+      ],
+      "Enter your own password (as trusted contact).": [
+        "사용자 고유의 비밀번호 입력 (신뢰할 수 있는 연락처로서)"
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "복구 이메일 주소를 입력하면 사용자 이름 또는 이메일 주소를 보내드립니다."
@@ -9480,6 +9486,12 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "네, 저는 완전히 이 계정과 모든 데이터를 지우고 싶습니다."
       ],
+      "Your password (admin)": [
+        "사용자의 비밀번호 (관리자)"
+      ],
+      "Your password (trusted contact)": [
+        "사용자 비밀번호 (신뢰할 수 있는 연락처)"
+      ],
       "ZIP code": [
         "우편번호"
       ]
@@ -9613,9 +9625,6 @@
       ],
       "clearing your browser cache": [
         "브라우저 캐시를 삭제하면"
-      ],
-      "Common sign in issues": [
-        "일반적인 로그인 문제"
       ],
       "Common sign up issues": [
         "일반적 회원가입 문제"
@@ -10482,9 +10491,6 @@
       ],
       "Dedicated servers and IP": [
         "전용 서버 및 IP"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "스트리밍에 최적화된 전용 서버"
       ],
       "Desktop app": [
         "데스크톱 앱"
@@ -13346,9 +13352,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "기존 주소 키를 계정 복구에 사용 할 수 없습니다."
-      ],
-      "Please generate keys before you try to change your password": [
-        "비밀번호를 변경하기 전에 먼저 키를 생성해주세요"
       ]
     },
     "session_recovery:available:info": {
@@ -14076,6 +14079,9 @@
       "Share the confirmation code with your administrator": [
         "관리자에게 확인 코드를 공유하세요"
       ],
+      "Sign in": [
+        "로그인"
+      ],
       "Sign in to your organization": [
         "조직에 로그인"
       ],
@@ -14135,6 +14141,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "새 사용자를 회원님의 조직에 추가하려면 직접 생성해야 합니다."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "서드 파티 SSO 제공자로 리다이렉트됩니다."
       ],
       "Your SSO configuration will be deleted.": [
         "SSO 구성 또한 삭제됩니다."
@@ -15183,14 +15192,8 @@
       "Account recovery": [
         "계정 복구"
       ],
-      "Account restricted": [
-        "계정 제한됨"
-      ],
       "Account suspended": [
         "계정이 정지되었습니다."
-      ],
-      "Account temporarily locked": [
-        "계정 일시 잠김"
       ],
       "Action": [
         "동작"
@@ -15635,6 +15638,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "${ app } 베타 프로그램에 참여하려면 ${ BRAND_NAME } 계정 상세 사항을 입력하세요."
+      ],
+      "Enter your password": [
+        "비밀번호를 입력하세요"
       ],
       "Error": [
         "오류"

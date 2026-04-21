@@ -449,6 +449,9 @@
       "Fit to window": [
         "Pagkasyahin sa window"
       ],
+      "Forgot password?": [
+        "Nakalimutan ang password?"
+      ],
       "Forgot recovery method?": [
         "Nakalimutan ang paraan ng pag-recover?"
       ],
@@ -4011,9 +4014,6 @@
         "Mangyaring ayusin ang naka-highlight na conflict upang magpatuloy.",
         "Mangyaring ayusin ang mga naka-highlight na conflict upang magpatuloy."
       ],
-      "Please generate keys before you try to change your password": [
-        "Mangyaring mag-generate muna ng mga key bago subukang palitan ang password"
-      ],
       "Please select a country": [
         "Mangyaring pumili ng bansa"
       ],
@@ -6342,6 +6342,12 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Ilagay ang email address o username ng iyong ${ BRAND_NAME } Account."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Ilagay ang sariling password (bilang admin ng organisasyon)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Ilagay ang sariling password (bilang pinagkakatiwalaang contact)."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Ilagay ang iyong recovery email address at ipapadala namin sa iyo ang iyong username o email address."
@@ -8925,6 +8931,12 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Oo, gusto kong permanenteng i-delete ang account na ito at lahat ng data nito."
       ],
+      "Your password (admin)": [
+        "Password (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Ang password (pinagkakatiwalaang contact)"
+      ],
       "ZIP code": [
         "ZIP code"
       ]
@@ -9056,9 +9068,6 @@
       ],
       "clearing your browser cache": [
         "pag-clear ng browser cache"
-      ],
-      "Common sign in issues": [
-        "Mga karaniwang isyu sa pag-sign in"
       ],
       "Common sign up issues": [
         "Mga karaniwang isyu sa pag-sign up"
@@ -9842,9 +9851,6 @@
       ],
       "Dedicated servers and IP": [
         "Mga dedicated server at IP"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "Mga dedikadong server na na-optimize para sa streaming"
       ],
       "Desktop app": [
         "Desktop app"
@@ -12525,9 +12531,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Hindi available ang pag-recover ng account para sa mga legacy address key"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Mangyaring mag-generate ng mga key bago subukang palitan ang password"
       ]
     },
     "session_recovery:available:info": {
@@ -13212,6 +13215,9 @@
       "Share the confirmation code with your administrator": [
         "I-share ang code ng kumpirmasyon sa iyong administrator"
       ],
+      "Sign in": [
+        "Mag-sign in"
+      ],
       "Sign in to your organization": [
         "Mag-sign in sa organisasyon"
       ],
@@ -13271,6 +13277,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Kakailanganin mong gumawa ng mga bagong user nang manu-mano upang maidagdag sila sa organisasyon."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Ire-redirect ka sa iyong third-party SSO provider."
       ],
       "Your SSO configuration will be deleted.": [
         "Ide-delete ang iyong configuration ng SSO."
@@ -14312,14 +14321,8 @@
       "Account recovery": [
         "Pag-recover ng account"
       ],
-      "Account restricted": [
-        "Limitado ang account"
-      ],
       "Account suspended": [
         "Nasuspinde ang account"
-      ],
-      "Account temporarily locked": [
-        "Pansamantalang naka-lock ang account"
       ],
       "Action": [
         "Aksyon"
@@ -14743,6 +14746,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Ilagay ang mga detalye ng iyong ${ BRAND_NAME } Account upang sumali sa ${ app } Beta program"
+      ],
+      "Enter your password": [
+        "Ilagay ang password"
       ],
       "Error": [
         "Error"

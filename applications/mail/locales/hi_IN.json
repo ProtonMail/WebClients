@@ -177,6 +177,9 @@
       "Carbon Copy": [
         "कार्बन कॉपी"
       ],
+      "Change password": [
+        "पासवर्ड बदलें"
+      ],
       "Chat with us": [
         "हमसे बात करें"
       ],
@@ -1161,10 +1164,6 @@
       "Trust": [
         "भरोसा करें"
       ],
-      "Trust key": [
-        "ट्रस्ट की",
-        "ट्रस्ट कीज़"
-      ],
       "Trust public key": [
         "सार्वजनिक कुंजी पर भरोसा करें"
       ],
@@ -1910,6 +1909,9 @@
       "${ users } user": [
         "${ users } यूज़र",
         "${ users } यूज़र"
+      ],
+      "Total": [
+        "कुल"
       ],
       "Total for ${ n } month": [
         "${ n } महीने के लिए कुल",
@@ -5449,9 +5451,6 @@
       ],
       "Inherited from parent folder": [
         "मूल फ़ोल्डर से इनहेरिट की गई"
-      ],
-      "Insert image": [
-        "तस्वीर डालें"
       ],
       "Insert link": [
         "लिंक डालें"
@@ -9177,11 +9176,6 @@
         "पासवर्ड रीसेट करें"
       ]
     },
-    "session_recovery:available:error": {
-      "Please generate keys before you try to change your password": [
-        "अपना पासवर्ड बदलने का प्रयास करने से पहले कृपया कुंजियाँ बनाएँ।"
-      ]
-    },
     "session_recovery:available:info": {
       "${ timeRemaining.inDays } day": [
         "${ timeRemaining.inDays } दिन",
@@ -10255,6 +10249,9 @@
       ],
       "Account security": [
         "खाते की सुरक्षा"
+      ],
+      "Account temporarily locked": [
+        "अकाउंट अस्थायी समय के लिए बंद किया गया है"
       ],
       "Add contact group name": [
         "संपर्क समूह का नाम जोड़ें"

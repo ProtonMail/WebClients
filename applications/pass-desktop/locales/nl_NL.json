@@ -676,6 +676,9 @@
       "Skip": [
         "Overslaan"
       ],
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Iemand heeft een item met u gedeeld op ${ PASS_APP_NAME }."
+      ],
       "Sort vault items": [
         "Sorteer kluisitems"
       ],
@@ -1036,9 +1039,6 @@
       "Encrypted JSON not supported": [
         "Versleutelde JSON niet ondersteund"
       ],
-      "Encryption communication for desktop unlock failed.": [
-        "Versleutelingscommunicatie voor desktop ontgrendeling mislukt."
-      ],
       "Error reporting problem": [
         "Fout bij melden van het probleem"
       ],
@@ -1276,6 +1276,9 @@
       "Trashing item failed": [
         "Item verwijderen mislukt"
       ],
+      "Try reaching out to the link owner.": [
+        "Probeer uit te reiken aan de eigenaar van de koppeling."
+      ],
       "Unable to generate an OTP code for this item": [
         "Kan geen OTP-code genereren voor dit item"
       ],
@@ -1284,6 +1287,9 @@
       ],
       "Unknown error": [
         "Onbekende fout"
+      ],
+      "Unknown error.": [
+        "Onbekende fout."
       ],
       "Unknown invite": [
         "Onbekende uitnodiging"
@@ -3739,6 +3745,9 @@
       ],
       "Theme": [
         "Thema"
+      ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Dit item is toegankelijk tot ${ date } of totdat de weergavelimiet is bereikt."
       ],
       "Tier/Level": [
         "Rang/Niveau"

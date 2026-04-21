@@ -1205,6 +1205,15 @@
       "Something went wrong. Please sign in again.": [
         "Noe gikk galt, logg inn på nytt."
       ],
+      "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
+        "Skrivebordsappen ${ PASS_APP_NAME } er låst, den må låses opp."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not installed.": [
+        "Skrivebordsappen ${ PASS_APP_NAME } er ikke installert."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
+        "Skrivebordsappen ${ PASS_APP_NAME } svarer ikke. Kjører den?"
+      ],
       "The session has expired. Please sign in again.": [
         "Økten er utløpt. Logg på nytt."
       ],
@@ -1228,6 +1237,9 @@
       ],
       "Unknown error": [
         "Ukjent feil"
+      ],
+      "Unknown error.": [
+        "Ukjent feil."
       ],
       "Unknown invite": [
         "Ukjent invitasjon"
@@ -2209,7 +2221,7 @@
         "Tjenerne er utilgjengelige"
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Tjenerne er utilgjengelige. Prøv på nytt om noen få minutter."
+        "Serverne er utilgjengelige. Prøv på nytt om noen få minutter."
       ],
       "Session timed out": [
         "Økten ble tidsavbrutt"

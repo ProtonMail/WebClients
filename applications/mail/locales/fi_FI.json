@@ -196,6 +196,9 @@
       "Carbon Copy": [
         "Kopio"
       ],
+      "Change password": [
+        "Vaihda salasana"
+      ],
       "Change sorting": [
         "Muuta lajittelua"
       ],
@@ -1494,10 +1497,6 @@
       ],
       "Trust": [
         "Luota"
-      ],
-      "Trust key": [
-        "Luota avaimeen",
-        "Luota avaimiin"
       ],
       "Trust public key": [
         "Luota julkiseen avaimeen"
@@ -7440,7 +7439,8 @@
         "Valmistellaan…"
       ],
       "Insert image": [
-        "Lisää kuva"
+        "Lisää kuva",
+        "Lisää kuvia"
       ],
       "Insert link": [
         "Lisää linkki"
@@ -10868,8 +10868,8 @@
       "Data breach monitoring": [
         "Tietomurtovalvonta"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Suoratoistoon optimoidut palvelimet"
+      "Dedicated servers optimized for speed": [
+        "Nopeudelle optimoidut dedikoidut palvelimet"
       ],
       "Desktop app": [
         "Työpöytäsovellus"
@@ -13081,9 +13081,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Tilin palautus ei ole käytetävissä vanhan tyyppisillä osoiteavaimilla"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Luo avaimet ennen kuin yrität vaihtaa salasanaasi"
       ]
     },
     "session_recovery:available:info": {

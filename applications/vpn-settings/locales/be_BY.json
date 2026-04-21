@@ -230,6 +230,9 @@
       "Continue anyway": [
         "Усё роўна працягнуць"
       ],
+      "Continue cancelling": [
+        "Працягнуць скасаванне"
+      ],
       "Continue import": [
         "Працягнуць імпартаванне"
       ],
@@ -485,6 +488,9 @@
       "Fit to window": [
         "Па памеры акна"
       ],
+      "Forgot password?": [
+        "Забылі пароль?"
+      ],
       "Forgot recovery method?": [
         "Забылі спосаб аднаўлення?"
       ],
@@ -604,6 +610,9 @@
       ],
       "Invite user": [
         "Запрасіць карыстальніка"
+      ],
+      "Keep current plan": [
+        "Пакінуць бягучы тарыфны план"
       ],
       "Keep Editing": [
         "Працягнуць рэдагаванне"
@@ -3514,6 +3523,9 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } у ${ DRIVE_APP_NAME } дазваляе вам працаваць разам з іншымі ўдзельнікамі ў бяспечным і зашыфраваным асяроддзі."
       ],
+      "Add extra addresses to your account or use Hide My Email aliases to keep your inbox private.": [
+        "Дадайце дадатковыя адрасы да вашага ўліковага запісу або выкарыстоўвайце псеўданімы Hide My Email, каб захаваць прыватнасць сваёй паштовай скрыні."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Дадайце папкі і файлы ў ${ DRIVE_APP_NAME } і запрасіце ўдзельнікаў каманды для прагляду або рэдагавання."
       ],
@@ -3610,6 +3622,9 @@
       "Let's you instantly add meeting links to your event invitations.": [
         "Дазваляе імгненна дадаваць спасылкі на сустрэчы ў вашыя запрашэнні на падзеі."
       ],
+      "Most issues can be solved in a few minutes with our step-by-step guides.": [
+        "Большасць праблем могуць быць вырашаны за некалькіх хвілін з дапамогай нашых пакрокавых дапаможнікаў."
+      ],
       "No ads. No trackers.": [
         "Без рэкламы і праграм сачэння"
       ],
@@ -3624,6 +3639,9 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Спрасціце сінхранізацыю і планаванне з дапамогай абагуленых календароў."
+      ],
+      "Still need help? Our support team is here for you.": [
+        "Усё яшчэ патрэбная дапамога? Наша каманда падтрымкі заўсёды побач."
       ],
       "This may happen if permissions were removed or your password changed.": [
         "Гэта магло адбыцца з-за таго, што дазволы былі выдалены або ваш пароль зменены."
@@ -3681,6 +3699,12 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Вы можаце імпартаваць падзеі ў фармаце iCal (файл ICS). Максімальна памер файла павінен быць ${ MAX_IMPORT_FILE_SIZE_STRING } і мець не больш за ${ MAX_IMPORT_EVENTS_STRING } падзей. Падзяліце свой файл на меншыя часткі, калі ён занадта вялікі."
+      ],
+      "You can manage multiple ${ BRAND_NAME } addresses from a single account, without switching. Aliases and address management tools help keep everything in one inbox.": [
+        "Вы можаце кіраваць некалькі адрасамі ${ BRAND_NAME } з аднаго ўліковага запісу без неабходнасці пераключэння паміж імі. Псеўданімы і інструмент кіравання адрасамі дапаможа захоўваць усё ў адной паштовай скрыні."
+      ],
+      "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
+        "Вы можаце аб'яднаць адрасы ў адзін галоўны ўліковы запіс ${ BRAND_NAME } выкарыстоўваючы наш дапаможнік па аказанні падтрымкі."
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Цяпер можна адпраўляць лісты з ${ BRAND_NAME } выкарыстоўваючы гэты адрас."
@@ -4547,9 +4571,6 @@
         "Выпраўце вылучаныя канфлікты, каб працягнуць.",
         "Выпраўце вылучаныя канфлікты, каб працягнуць."
       ],
-      "Please generate keys before you try to change your password": [
-        "Згенерыруйце ключы перад тым, як паспрабаваць змяніць пароль"
-      ],
       "Please select a country": [
         "Выберыце краіну"
       ],
@@ -4713,7 +4734,7 @@
         "Гэта назва для меткі недаступна. Выберыце іншую назву."
       ],
       "To create non-private user accounts and access their accounts, you'll need to restore your administrator privileges.": [
-        "Вам неабходна аднавіць прывілеі адміністратара, каб ствараць уліковыя запісы непрыватных карыстальнікаў і атрымліваць доступ да іх."
+        "Вам неабходна аднавіць правы адміністратара, каб ствараць уліковыя запісы непрыватных карыстальнікаў і атрымліваць доступ да іх."
       ],
       "Too many requests. Please try again after ${ date }": [
         "Занадта шмат запытаў. Паспрабуйце яшчэ раз пасля ${ date }"
@@ -5642,6 +5663,17 @@
     "Footer": {
       "${ BRAND_NAME }. Privacy by default.": [
         "${ BRAND_NAME }. Privacy by default."
+      ]
+    },
+    "Get help": {
+      "Continue cancelling": [
+        "Працягнуць скасаванне"
+      ],
+      "Keep current plan": [
+        "Пакінуць бягучы тарыфны план"
+      ],
+      "Many issues can be resolved quickly with our help guides. If you need more support, our team is here to help.": [
+        "Большасць праблем могуць быць хутка вырашаны з дапамогай нашых дапаможнікаў. Наша каманда заўсёды гатова дапамагчы, калі вы не можаце вырашыць праблему самастойна."
       ]
     },
     "Gmail forwarding": {
@@ -7069,6 +7101,9 @@
       "Drop to import": [
         "Перацягніце, каб імпартаваць"
       ],
+      "Due to end-to-end encryption, you can reset your password, but ${ DataLockedText } until you use a ${ DataRecoveryOptionsLink }:": [
+        "З прычыны скразнога шыфравання вы можаце скінуць свой пароль, але ${ DataLockedText } да таго часу, пакуль вы выкарыстаеце ${ DataRecoveryOptionsLink }:"
+      ],
       "Each code can only be used once": [
         "Кожны код можа выкарыстоўвацца толькі адзін раз"
       ],
@@ -7180,6 +7215,12 @@
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Увядзіце ваш уліковы запіс электроннай пошты ${ BRAND_NAME } або імя карыстальніка."
       ],
+      "Enter your own password (as organization admin).": [
+        "Увядзіце свой пароль (адміністратара арганізацыі)."
+      ],
+      "Enter your own password (as trusted contact).": [
+        "Увядзіце свой пароль (як давераны кантакт)."
+      ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Увядзіце адрас электроннай пошты, які вы выкарыстоўваеце для аднаўлення доступу, і мы адправім вам ваша імя карыстальніка або адрас электроннай пошты."
       ],
@@ -7188,6 +7229,9 @@
       ],
       "Enter your recovery phrase to change your password now.": [
         "Увядзіце фразу аднаўлення, каб змяніць пароль."
+      ],
+      "Enter your recovery phrase to verify your identity and disable two-factor authentication.": [
+        "Увядзіце сваю фраза аднаўлення, каб спраўдзіць сваю ідэнтычнасць і адключыць двухфактарную аўтэнтыфікацыю."
       ],
       "Everything in ${ planOrAppName }": [
         "Усё, што ўваходзіць у ${ planOrAppName }"
@@ -10096,6 +10140,12 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Так, я хачу незваротна выдаліць гэты ўліковы запіс і ўсе яго даныя."
       ],
+      "Your password (admin)": [
+        "Ваш пароль (admin)"
+      ],
+      "Your password (trusted contact)": [
+        "Ваш пароль (давераны кантакт)"
+      ],
       "ZIP code": [
         "Паштовы індэкс"
       ]
@@ -10218,6 +10268,9 @@
       ]
     },
     "Link": {
+      "Account recovery explained": [
+        "Тлумачэнне аднаўлення ўліковага запісу"
+      ],
       "activity monitor": [
         "манітор актыўнасці"
       ],
@@ -10233,11 +10286,11 @@
       "clearing your browser cache": [
         "ачыстка кэшу вашага браўзера"
       ],
-      "Common sign in issues": [
-        "Распаўсюджаныя праблемы ўваходу"
-      ],
       "Common sign up issues": [
         "Распаўсюджаныя праблемы рэгістрацыі"
+      ],
+      "Contact support": [
+        "Звязацца са службай падтрымкі"
       ],
       "contacts’ assistance": [
         "дапамога ад кантактаў"
@@ -10347,11 +10400,17 @@
       "if your data is leaked": [
         "пры ўцечцы вашых даных"
       ],
+      "Learn how": [
+        "Даведацца як"
+      ],
       "Learn more": [
         "Даведацца больш"
       ],
       "Learn more about data recovery": [
         "Даведацца больш аб аднаўленні даных"
+      ],
+      "Manage addresses": [
+        "Кіраванне адрасамі"
       ],
       "Not activated": [
         "Не актывавана"
@@ -10403,6 +10462,9 @@
       ],
       "visit our blog": [
         "наведваць наш блог"
+      ],
+      "Visit our support site": [
+        "Наведаць наш сайт падтрымкі"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Чым адрозніваюцца пратаколы UDP і TCP?"
@@ -11172,7 +11234,7 @@
       ],
       "Appointment scheduling with ${ n } booking page": [
         "Планіруйце сустрэчы з ${ n } старонкай браніравання",
-        "Планіруйце сустрэчы з ${ n } старонкай браніравання",
+        "Планіруйце сустрэчы з ${ n } старонкамі браніравання",
         "Планіруйце сустрэчы з ${ n } старонкамі браніравання",
         "Планіруйце сустрэчы з ${ n } старонкамі браніравання"
       ],
@@ -11239,8 +11301,8 @@
       "Dedicated servers and IP": [
         "Вылучаныя серверы і IP"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Вылучаныя серверы аптымізаваныя для трансляцый"
+      "Dedicated servers optimized for speed": [
+        "Вылучаныя серверы аптымізаваныя для хуткасці"
       ],
       "Desktop app": [
         "Праграма для камп'ютара"
@@ -12778,10 +12840,10 @@
         "Актывуйце ключ арганізацыі, каб уключыць правы адміністратара ў вашым уліковым запісе."
       ],
       "Use a data recovery method or reset the organization key to restore administrator privileges.": [
-        "Скарыстайце спосабам аднаўлення даных або скіньце ключ арганізацыі, каб аднавіць прывілеі адміністратара."
+        "Скарыстайце спосабам аднаўлення даных або скіньце ключ арганізацыі, каб аднавіць правы адміністратара."
       ],
       "Use a data recovery method, contact another administrator, or reset the organization key to restore administrator privileges.": [
-        "Скарыстайце спосабам аднаўлення даных, звяжыцеся з іншым адміністратарам або скіньце ключ арганізацыі, каб аднавіць прывілеі адміністратара."
+        "Скарыстайце спосабам аднаўлення даных, звяжыцеся з іншым адміністратарам або скіньце ключ арганізацыі, каб аднавіць правы адміністратара."
       ],
       "We couldn't verify the authenticity of this identity.": [
         "Немагчыма спраўдзіць аўтэнтыфікацыю гэтай ідэнтычнасці."
@@ -14099,9 +14161,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Аднаўленне ўліковага запісу недаступна для састарэлых адрасных ключоў"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Згенерыруйце ключы перад спробай змяніць пароль"
       ]
     },
     "session_recovery:available:info": {
@@ -14907,6 +14966,9 @@
       "Share the confirmation code with your administrator": [
         "Абагуліць код пацвярджэння з вашым адміністратарам"
       ],
+      "Sign in": [
+        "Уваход"
+      ],
       "Sign in to your organization": [
         "Увайсці ў сваю арганізацыю"
       ],
@@ -14966,6 +15028,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Вам давядзецца стварыць новых карыстальнікаў уручную, каб дадаць іх у вашу арганізацыю."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Вы будзеце перанакіраваны ў вашага старонняга пастаўшчыка SSO."
       ],
       "Your SSO configuration will be deleted.": [
         "Ваша канфігурацыя SSO будзе выдалена."
@@ -16101,14 +16166,8 @@
       "Account recovery": [
         "Аднаўленне ўліковага запісу"
       ],
-      "Account restricted": [
-        "Уліковы запіс абмежаваны"
-      ],
       "Account suspended": [
         "Уліковы запіс прыпынены"
-      ],
-      "Account temporarily locked": [
-        "Уліковы запіс часова заблакіраваны"
       ],
       "Action": [
         "Дзеянне"
@@ -16184,6 +16243,9 @@
       ],
       "Allocate storage": [
         "Вылучэнне аб'ёму ў сховішчы"
+      ],
+      "Already have multiple accounts?": [
+        "У вас некалькі ўліковых запісаў?"
       ],
       "Also in your plan": [
         "Ваш тарыфны план таксама ўключае"
@@ -16370,6 +16432,9 @@
       ],
       "Create multiple user accounts": [
         "Стварэнне некалькіх уліковых запісаў карыстальніка"
+      ],
+      "Create new addresses easily": [
+        "Лёгкае стварэнне новых адрасоў"
       ],
       "Create new policy": [
         "Стварэнне новай палітыкі"
@@ -16590,6 +16655,9 @@
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Увядзіце падрабязнасці вашага ўліковага запісу ${ BRAND_NAME }, каб далучыцца да бэта-праграмы ${ app }"
       ],
+      "Enter your password": [
+        "Увядзіце свой пароль"
+      ],
       "Error": [
         "Памылка"
       ],
@@ -16640,6 +16708,12 @@
       ],
       "Get complete privacy coverage": [
         "Атрымайце поўную абарону прыватнасці"
+      ],
+      "Get direct support": [
+        "Атрымаць непасрэдную дапамогу"
+      ],
+      "Get help with an issue": [
+        "Атрымаць дапамогу па праблеме"
       ],
       "Get more from your VPN": [
         "Атрымайце больш ад свайго VPN"
@@ -17106,6 +17180,9 @@
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Адкрыйце гэту электронную табліцу ў ${ SHEETS_APP_NAME } або спампуйце яе для папярэдняга прагляду."
       ],
+      "Troubleshoot your issue": [
+        "Выпраўленне непаладкі"
+      ],
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "Паспрабуйце ${ AUTHENTICATOR_APP_NAME }"
       ],
@@ -17168,6 +17245,9 @@
       ],
       "Use backup recovery code": [
         "Выкарыстанне рэзервовага кода аднаўлення"
+      ],
+      "Use one account for all your addresses": [
+        "Выкарыстанне аднаго ўліковага запісу для ўсіх вашых адрасоў"
       ],
       "User": [
         "Карыстальнік"

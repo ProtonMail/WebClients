@@ -676,6 +676,9 @@
       "Skip": [
         "Omitir"
       ],
+      "Someone shared an item with you on ${ PASS_APP_NAME }.": [
+        "Alguien ha compartido un elemento contigo en ${ PASS_APP_NAME }."
+      ],
       "Sort vault items": [
         "Ordenar los elementos de la caja fuerte"
       ],
@@ -1036,9 +1039,6 @@
       "Encrypted JSON not supported": [
         "JSON cifrado no soportado"
       ],
-      "Encryption communication for desktop unlock failed.": [
-        "Fallo en la comunicación de cifrado para desbloquear el escritorio."
-      ],
       "Error reporting problem": [
         "Error al notificar el problema"
       ],
@@ -1276,6 +1276,9 @@
       "Trashing item failed": [
         "Error al eliminar el elemento"
       ],
+      "Try reaching out to the link owner.": [
+        "Intenta comunicarte con el propietario del enlace."
+      ],
       "Unable to generate an OTP code for this item": [
         "No se puede generar un código OTP para este elemento."
       ],
@@ -1284,6 +1287,9 @@
       ],
       "Unknown error": [
         "Error desconocido"
+      ],
+      "Unknown error.": [
+        "Error desconocido."
       ],
       "Unknown invite": [
         "Invitación desconocida"
@@ -3739,6 +3745,9 @@
       ],
       "Theme": [
         "Tema"
+      ],
+      "This item is accessible until ${ date } or until the view limit is reached.": [
+        "Este elemento es accesible hasta el ${ date } o hasta que se alcance el límite de vistas."
       ],
       "Tier/Level": [
         "Nivel"

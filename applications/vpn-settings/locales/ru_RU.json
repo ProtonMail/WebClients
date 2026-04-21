@@ -417,6 +417,9 @@
       "Fit to window": [
         "Вписать в окно"
       ],
+      "Forgot password?": [
+        "Забыли пароль?"
+      ],
       "Forgot recovery method?": [
         "Забыли метод восстановления?"
       ],
@@ -3575,9 +3578,6 @@
         "Пожалуйста, исправьте выделенные конфликты, чтобы продолжить.",
         "Пожалуйста, исправьте выделенные конфликты, чтобы продолжить."
       ],
-      "Please generate keys before you try to change your password": [
-        "Пожалуйста, сгенерируйте ключи, прежде чем пытаться изменить пароль"
-      ],
       "Please select a country": [
         "Выберите страну"
       ],
@@ -5856,6 +5856,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account email address or username.": [
         "Введите электронный адрес вашего аккаунта или имя пользователя ${ BRAND_NAME }."
+      ],
+      "Enter your own password (as organization admin).": [
+        "Введите свой пароль как администратора организации."
       ],
       "Enter your recovery email address and we will send you your username or email address.": [
         "Введите адрес своей резервной электронной почты, и мы отправим вам ваше имя пользователя или адрес электронной почты."
@@ -8275,6 +8278,9 @@
       "Yes, I want to permanently delete this account and all its data.": [
         "Да, я хочу навсегда удалить этот аккаунт и все его данные."
       ],
+      "Your password (admin)": [
+        "Ваш пароль (admin)"
+      ],
       "ZIP code": [
         "Почтовый индекс"
       ]
@@ -8400,9 +8406,6 @@
       ],
       "clearing your browser cache": [
         "очистка кеша браузера"
-      ],
-      "Common sign in issues": [
-        "Частые проблемы при входе"
       ],
       "Common sign up issues": [
         "Частые проблемы при регистрации"
@@ -9120,9 +9123,6 @@
       ],
       "Dedicated servers and IP": [
         "Выделенные серверы и адреса IP"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "Выделенные серверы, оптимизированные для трансляций"
       ],
       "Desktop app": [
         "Приложение для настольного компьютера"
@@ -11398,9 +11398,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Восстановление аккаунта недоступно для устаревших адресных ключей"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Пожалуйста, сгенерируйте ключи, прежде чем пытаться изменить пароль"
       ]
     },
     "session_recovery:available:info": {
@@ -12138,6 +12135,9 @@
       "Share the confirmation code with your administrator": [
         "Сообщите код подтверждения своему администратору"
       ],
+      "Sign in": [
+        "Войти"
+      ],
       "Sign in to your organization": [
         "Войдите в свою организацию"
       ],
@@ -12194,6 +12194,9 @@
       ],
       "You will have to create new users manually to add them to your organization.": [
         "Вы должны будете создать новых пользователей вручную, чтобы добавить их в вашу организацию."
+      ],
+      "You'll be redirected to your third-party SSO provider.": [
+        "Вы будете перенаправлены на вашего стороннего провайдера SSO."
       ],
       "Your SSO configuration will be deleted.": [
         "Ваша конфигурация SSO будет удалена."
@@ -13249,9 +13252,6 @@
       "Account recovery": [
         "Восстановление аккаунта"
       ],
-      "Account restricted": [
-        "Аккаунт ограничен"
-      ],
       "Account suspended": [
         "Аккаунт временно заблокирован"
       ],
@@ -13653,6 +13653,9 @@
       ],
       "Enter your ${ BRAND_NAME } Account details to join the ${ app } Beta program": [
         "Введите информацию об аккаунте ${ BRAND_NAME }, чтобы присоединиться к программе \"Бета\" ${ app }"
+      ],
+      "Enter your password": [
+        "Введите пароль"
       ],
       "Error": [
         "Ошибка"

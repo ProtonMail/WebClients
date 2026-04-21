@@ -192,6 +192,9 @@
       "Carbon Copy": [
         "Kopija"
       ],
+      "Change password": [
+        "Spremeni geslo"
+      ],
       "Change sorting": [
         "Spremeni razvrščanje"
       ],
@@ -1450,10 +1453,7 @@
         "Zaupaj"
       ],
       "Trust key": [
-        "Ključ zaupanja",
-        "Ključa zaupanja",
-        "Ključi zaupanja",
-        "Ključev zaupanja"
+        "Zaupaj ključu"
       ],
       "Trust public key": [
         "Zaupaj javnemu ključu"
@@ -7383,7 +7383,10 @@
         "Zagon …"
       ],
       "Insert image": [
-        "Vstavi sliko"
+        "Vstavi sliko",
+        "Vstavi sliki",
+        "Vstavi slike",
+        "Vstavi slik"
       ],
       "Insert link": [
         "Vstavi povezavo"
@@ -10814,9 +10817,6 @@
       "Data breach monitoring": [
         "Spremljanje vdorov v podatke"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Namenski strežniki, optimirani za pretakanje"
-      ],
       "Desktop app": [
         "Namizna aplikacija"
       ],
@@ -12808,9 +12808,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Obnovitev računa ni na voljo za podedovane naslovne ključe"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Preden poskusite spremeniti geslo, ustvarite ključe."
       ]
     },
     "session_recovery:available:info": {
@@ -14511,6 +14508,9 @@
       ],
       "Account security": [
         "Varnost računa"
+      ],
+      "Account temporarily locked": [
+        "Račun je začasno zaklenjen"
       ],
       "Action all conversations": [
         "Udejanji za vse pogovore"

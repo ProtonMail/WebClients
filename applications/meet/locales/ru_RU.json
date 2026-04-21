@@ -1433,12 +1433,6 @@
       "Failed to lock meeting": [
         "Не удалось заблокировать встречу"
       ],
-      "Failed to request permission for the camera. Please check your system permissions and try again. You might have to enable permissions manually, please refresh the page afterwards": [
-        "Не удалось запросить разрешение для камеры. Проверьте настройки системы и повторите попытку. Возможно, вам придется включить разрешения вручную и обновить страницу"
-      ],
-      "Failed to request permission for the microphone. Please check your system permissions and try again. You might have to enable permissions manually, please refresh the page afterwards": [
-        "Не удалось запросить разрешение для микрофона. Проверьте настройки системы и повторите попытку. Возможно, вам придётся включить разрешения вручную и обновить страницу"
-      ],
       "Failed to rotate personal meeting link": [
         "Не удалось обновить ссылку на личную встречу"
       ],
@@ -1733,9 +1727,6 @@
       ],
       "Decrypting meetings...": [
         "Расшифровка встреч..."
-      ],
-      "Default": [
-        "По умолчанию"
       ],
       "Default - ${ systemDefault.label }": [
         "По умолчанию — ${ systemDefault.label }"
@@ -2410,12 +2401,6 @@
       ],
       "The presentation was blurry": [
         "Изображение презентации было размытым"
-      ],
-      "Video was blurry": [
-        "Видео было размытым"
-      ],
-      "Video was breaking up": [
-        "Видео прерывалось"
       ]
     },
     "Placeholder": {

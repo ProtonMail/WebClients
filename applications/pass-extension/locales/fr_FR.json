@@ -942,6 +942,9 @@
       "Authentication failure: ${ message }": [
         "L'authentification n'a pas abouti : ${ message }"
       ],
+      "Biometric authentication failed.": [
+        "L'authentification biométrique n'a pas abouti."
+      ],
       "Cannot create alias (${ error }).": [
         "La création de l'alias n'a pas abouti (${ error })."
       ],
@@ -997,6 +1000,18 @@
       "Deleting vault \"${ payload.content.name }\" failed": [
         "La suppression du coffre-fort « ${ payload.content.name } » n'a pas abouti."
       ],
+      "Desktop lock is not configured.": [
+        "Le verrouillage du bureau n'est pas configuré."
+      ],
+      "Desktop lock secret does not match.": [
+        "Le mot de passe de verrouillage du bureau ne correspond pas."
+      ],
+      "Desktop lock secret not found.": [
+        "Le mot de passe de verrouillage du bureau est introuvable."
+      ],
+      "Desktop lock setup failed.": [
+        "La configuration du verrouillage du bureau n'a pas abouti."
+      ],
       "Detected ${ errors.length } corrupted csv row": [
         "${ errors.length } ligne CSV corrompue a été détectée.",
         "${ errors.length } lignes CSV corrompues ont été détectées."
@@ -1016,11 +1031,11 @@
       "Emptying trash failed": [
         "La corbeille n'a pas pu être vidée."
       ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "La communication chiffrée avec l'application de bureau ${ PASS_APP_NAME } n'a pas abouti."
+      ],
       "Encrypted JSON not supported": [
         "Le JSON chiffré n'est pas pris en charge."
-      ],
-      "Encryption communication for desktop unlock failed.": [
-        "Le chiffrement de la communication pour le déverrouillage de l'application de bureau n'a pas abouti."
       ],
       "Error reporting problem": [
         "Une erreur s'est produite pendant le signalement du bug."
@@ -1259,6 +1274,9 @@
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
         "Une erreur s'est produite. Rechargez l'extension ${ PASS_APP_NAME }. Ce bug a été signalé."
       ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "L'application de bureau ${ PASS_APP_NAME } n'a pas répondu à temps."
+      ],
       "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
         "L'application de bureau ${ PASS_APP_NAME } est verrouillée, elle doit être déverrouillée."
       ],
@@ -1267,6 +1285,9 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
         "L'application de bureau ${ PASS_APP_NAME } ne répond pas, est-elle en cours d'exécution ?"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "L'application de bureau ${ PASS_APP_NAME } est connectée avec un compte différent."
       ],
       "The URL is in the list": [
         "L'URL est dans la liste."
@@ -1290,6 +1311,9 @@
         "Synchronisation impossible"
       ],
       "Unknown error": [
+        "Erreur inconnue"
+      ],
+      "Unknown error.": [
         "Erreur inconnue"
       ],
       "Unknown invite": [
