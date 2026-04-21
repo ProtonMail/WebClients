@@ -1,20 +1,27 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import { useMeetDispatch } from '@proton/meet/store/hooks';
-import { requestPermission, setPermissions } from '@proton/meet/store/slices/deviceManagementSlice';
-import { isSafari } from '@proton/shared/lib/helpers/browser';
+import {
+    PermissionsModalType,
+    setPermissions,
+    showPermissionsModal,
+} from '@proton/meet/store/slices/deviceManagementSlice';
+import { isFirefox } from '@proton/shared/lib/helpers/browser';
 
 /**
  * Permission listener that:
- * 1. Queries the Permissions API on mount
- * 2. Auto-requests permissions via the unified thunk if not already granted
- * 3. Sets up onchange listeners for ongoing permission changes
+ * 1. Queries the Permissions API on mount and syncs state to Redux
+ * 2. Sets up onchange listeners for ongoing permission changes
  *
- * Preserves workaround #17: dispatches a synthetic `devicechange` event when
+ * Dispatches a synthetic `devicechange` event when
  * permission transitions to 'granted' so LiveKit refreshes device labels.
+ *
+ * Permission requests are not triggered here — they are initiated by the user
+ * via the DevicesNeededConfirmation modal.
  */
-export const useDevicePermissionChangeListener = (cameraId?: string) => {
+export const useDevicePermissionChangeListener = () => {
     const dispatch = useMeetDispatch();
+    const [permissionsLoading, setPermissionsLoading] = useState(true);
 
     useEffect(() => {
         let cameraStatus: PermissionStatus | null = null;
@@ -29,12 +36,16 @@ export const useDevicePermissionChangeListener = (cameraId?: string) => {
 
                 dispatch(setPermissions({ camera: cameraStatus.state, microphone: micStatus.state }));
 
-                // Auto-request permissions on mount if not already granted
-                if (cameraStatus.state === 'prompt') {
-                    await dispatch(requestPermission('camera', isSafari() ? cameraId : undefined));
-                }
-                if (micStatus.state === 'prompt') {
-                    await dispatch(requestPermission('microphone'));
+                if (cameraStatus.state === 'prompt' || micStatus.state === 'prompt') {
+                    dispatch(showPermissionsModal({ modal: PermissionsModalType.PERMISSIONS_MODAL }));
+                } else if (cameraStatus.state === 'denied' && micStatus.state === 'denied') {
+                    dispatch(showPermissionsModal({ modal: PermissionsModalType.PERMISSIONS_BLOCKED_MODAL }));
+                } else if (cameraStatus.state === 'denied') {
+                    dispatch(showPermissionsModal({ modal: PermissionsModalType.PERMISSIONS_BLOCKED_CAMERA_MODAL }));
+                } else if (micStatus.state === 'denied') {
+                    dispatch(
+                        showPermissionsModal({ modal: PermissionsModalType.PERMISSIONS_BLOCKED_MICROPHONE_MODAL })
+                    );
                 }
 
                 // In Firefox, enumerateDevices() only returns device labels when
@@ -42,7 +53,7 @@ export const useDevicePermissionChangeListener = (cameraId?: string) => {
                 // permissions are already stored. We do a brief getUserMedia call to
                 // unlock labels and then dispatch devicechange so LiveKit re-enumerates.
                 const alreadyGranted = cameraStatus.state === 'granted' || micStatus.state === 'granted';
-                if (alreadyGranted) {
+                if (isFirefox() && alreadyGranted) {
                     try {
                         const constraints: MediaStreamConstraints = {
                             ...(micStatus.state === 'granted' && { audio: true }),
@@ -70,10 +81,10 @@ export const useDevicePermissionChangeListener = (cameraId?: string) => {
                     }
                 };
             } catch {
-                // Permissions API not supported — request directly
-                await dispatch(requestPermission('camera', isSafari() ? cameraId : undefined));
-                await dispatch(requestPermission('microphone'));
+                // Permissions API not supported — permission requests will be handled by DevicesNeededConfirmation
             }
+
+            setPermissionsLoading(false);
         };
 
         void setup();
@@ -87,4 +98,6 @@ export const useDevicePermissionChangeListener = (cameraId?: string) => {
             }
         };
     }, [dispatch]);
+
+    return { permissionsLoading };
 };
