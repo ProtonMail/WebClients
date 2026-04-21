@@ -324,9 +324,6 @@
       "Connected": [
         "Connesso"
       ],
-      "Contact sales": [
-        "Contatta il reparto vendite"
-      ],
       "Contact support": [
         "Contatta l'assistenza"
       ],
@@ -341,6 +338,9 @@
       ],
       "Continue anyway": [
         "Continua comunque"
+      ],
+      "Continue cancelling": [
+        "Procedi con la cancellazione"
       ],
       "Continue import": [
         "Continua l'importazione"
@@ -458,9 +458,6 @@
       ],
       "Delete account": [
         "Elimina account"
-      ],
-      "Delete and confirm": [
-        "Elimina e conferma"
       ],
       "Delete filter “${ Name }”": [
         "Elimina filtro “${ Name }”"
@@ -935,6 +932,9 @@
       ],
       "Keep categories": [
         "Mantieni le categorie"
+      ],
+      "Keep current plan": [
+        "Mantieni il piano corrente"
       ],
       "Keep Editing": [
         "Continua a modificare"
@@ -4688,6 +4688,9 @@
       "A checked box means the feature is disabled.": [
         "Una casella selezionata significa che la funzione è disabilitata."
       ],
+      "Add extra addresses to your account or use Hide My Email aliases to keep your inbox private.": [
+        "Aggiungi indirizzi extra al tuo account e utilizza la funzione Nascondi i miei alias email per mantere la tua posta principale privata."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Aggiungi cartelle e file a ${ DRIVE_APP_NAME } e invita i membri del team a visualizzare o modificare."
       ],
@@ -4874,6 +4877,12 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puoi importare eventi con il formato iCal (file ICS). Il file deve avere una dimensione massima di ${ MAX_IMPORT_FILE_SIZE_STRING } o fino a ${ MAX_IMPORT_EVENTS_STRING } eventi. Se il tuo file è più grande, dividilo in file più piccoli."
+      ],
+      "You can manage multiple ${ BRAND_NAME } addresses from a single account, without switching. Aliases and address management tools help keep everything in one inbox.": [
+        "Puoi gestire multipli${ BRAND_NAME } indirizzi da un singolo account, senza cambiare. La gestione degli strumenti degli alias e indirizzi aiutano a mantere tutti nella posta principale."
+      ],
+      "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
+        "Puoi unire più indirizzi in un unico account principale ${ BRAND_NAME } utilizzando la nostra guida di supporto."
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Ora puoi inviare email da ${ BRAND_NAME } utilizzando questo indirizzo."
@@ -6551,9 +6560,6 @@
       "Please fix the highlighted conflict to proceed.": [
         "Correggi il conflitto evidenziato per procedere.",
         "Correggi i conflitti evidenziati per procedere."
-      ],
-      "Please generate keys before you try to change your password": [
-        "Per favore genera le chiavi prima di provare a cambiare la tua password"
       ],
       "Please select a country": [
         "Seleziona un paese"
@@ -8696,9 +8702,6 @@
       "${ discountPercent }% discount": [
         "${ discountPercent }% di sconto"
       ],
-      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME } non conserverà più le versioni precedenti dei tuoi file."
-      ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } non è valido"
       ],
@@ -8932,6 +8935,9 @@
       ],
       "**Sync codes** to all your devices": [
         "**Sincronizza i codici** su tutti i tuoi dispositivi."
+      ],
+      "**This will disable 2-factor authentication.**": [
+        "**Questo disabilità l'autenticazione a due fattori **"
       ],
       "**This will disable end-to-end encrypted email forwardings:** you can set them up again later.": [
         "**Questo disabiliterà l’inoltro delle email con crittografia end-to-end: ** potrai configurarlo di nuovo in un secondo momento."
@@ -9796,6 +9802,9 @@
       "Enter your recovery phrase to change your password now.": [
         "Inserisci la tua frase di recupero per cambiare la tua password adesso."
       ],
+      "Enter your recovery phrase to verify your identity and disable two-factor authentication.": [
+        "Inserisci la tua frase di recupero per verificare la tua identità e disattivare l’autenticazione a due fattori."
+      ],
       "Event invitations and responses will be sent in this language.": [
         "Gli inviti e le risposte agli eventi verranno inviati in questa lingua."
       ],
@@ -9846,9 +9855,6 @@
       ],
       "finance": [
         "dati finanziari"
-      ],
-      "For a 10-year version history, please contact our sales team.": [
-        "Per una cronologia delle versioni di 10 anni, contatta il nostro team commerciale."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Per accedere in qualsiasi momento alla posta elettronica e ottimizzare l'esperienza mobile, scarica la nostra app ${ androidAppLink } o ${ iosAppLink }."
@@ -10693,6 +10699,9 @@
       "Private AI assistant": [
         "Assistente AI privato"
       ],
+      "Professional": [
+        "Professionale"
+      ],
       "Protect your account from quantum computing threats with quantum-resistant cryptographic keys.": [
         "Proteggi il tuo account dalle minacce del calcolo quantistico con chiavi crittografiche resistenti ai computer quantistici."
       ],
@@ -11122,6 +11131,9 @@
       "The name will be visible to your users while they are signed in.": [
         "Il nome sarà visibile agli utenti durante l'accesso."
       ],
+      "The referral credit can be awarded up to 2 months after your friend's trial ended, only if your friend subscribed to a plan.": [
+        "Il credito di referral può essere assegnato fino a 2 mesi dopo la fine del periodo di prova del tuo amico, solo se il tuo amico ha sottoscritto un abbonamento."
+      ],
       "The securest way to browse, stream, and be online.": [
         "Il modo più sicuro per navigare, trasmettere in streaming ed essere online."
       ],
@@ -11214,12 +11226,6 @@
       ],
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Questa verifica può richiedere fino a un'ora. Dopo la verifica, non rimuovere questo record TXT in quanto è necessario per confermare che tu continui a possedere il dominio."
-      ],
-      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "Si elimineranno tutte le versioni dei tuoi file precedenti a ${ rententionLabel }."
-      ],
-      "This will delete all previous versions of your files.": [
-        "Questo eliminerà tutte le versioni precedenti dei tuoi file."
       ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Ciò negherà l'accesso a **${ email }**. Sei sicuro di voler continuare?"
@@ -11329,6 +11335,9 @@
       "To proceed, we must verify the request.": [
         "Per procedere dobbiamo verificare la richiesta."
       ],
+      "To regain access to your account and data, enter the 12-word recovery phrase associated with your account.": [
+        "Per riottenere l’accesso al tuo account e ai tuoi dati, inserisci la frase di recupero di 12 parole associata al tuo account."
+      ],
       "To secure your internet connection, download and install the ${ VPN_APP_NAME } application for your device and connect to a server.": [
         "Per proteggere la tua connessione a internet, scarica e installa l'applicazione ${ VPN_APP_NAME } per il tuo dispositivo e connettiti a un server."
       ],
@@ -11418,9 +11427,6 @@
       ],
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Effettua l'upgrade per mantenere i tuoi ${ planTitle } vantaggi."
-      ],
-      "Upgrade to unlock": [
-        "Effettua l'upgrade per sbloccare"
       ],
       "Upgrade your plan to ${ firstPlanNames } or ${ lastPlanName } to get access to ${ PROTON_SENTINEL_NAME } for organizations.": [
         "Esegui l'upgrade al piano ${ firstPlanNames } o al piano ${ lastPlanName } per ottenere l'accesso a ${ PROTON_SENTINEL_NAME }."
@@ -11517,9 +11523,6 @@
       ],
       "Version ${ version }": [
         "Versione ${ version }"
-      ],
-      "Version history": [
-        "Cronologia delle versioni"
       ],
       "Version number successfully copied to clipboard": [
         "Numero di versione copiato con successo negli appunti"
@@ -11682,6 +11685,9 @@
       ],
       "With ${ AUTHENTICATOR_APP_NAME }, you can:": [
         "Con ${ AUTHENTICATOR_APP_NAME }, puoi:"
+      ],
+      "With a ${ boldProfessionalPlan } plan, you can purchase ${ boldDedicatedServers } for your organization, and set up ${ boldGateways } to control which users can access them.": [
+        "Con il piano ${ boldProfessionalPlan }, puoi acquistare ${ boldDedicatedServers } per la tua organizzazione e configurare ${ boldGateways } per controllare quali utenti possono accedervi."
       ],
       "With an encrypted ${ BRAND_NAME } address, you can use all ${ BRAND_NAME } services": [
         "Con un indirizzo ${ BRAND_NAME } crittografato, puoi utilizzare tutti i servizi di ${ BRAND_NAME }"
@@ -13155,9 +13161,6 @@
       "Don't ask again": [
         "Non chiederlo più"
       ],
-      "Don't keep versions": [
-        "Non conservare le versioni"
-      ],
       "Don't show this again": [
         "Non mostrare più"
       ],
@@ -14239,6 +14242,9 @@
       "${ BRAND_NAME } Foundation's": [
         "Fondazione ${ BRAND_NAME }"
       ],
+      "Account recovery explained": [
+        "Recupero dell’account spiegato"
+      ],
       "Activity log": [
         "Registro delle attività"
       ],
@@ -14265,9 +14271,6 @@
       ],
       "clearing your browser cache": [
         "cancellare la cache del browser"
-      ],
-      "Common sign in issues": [
-        "Problemi di accesso comuni"
       ],
       "Common sign up issues": [
         "Problemi di registrazione comuni"
@@ -14386,11 +14389,17 @@
       "Import/export": [
         "Importa/esporta"
       ],
+      "Learn how": [
+        "Scopri come"
+      ],
       "Learn more": [
         "Scopri di più"
       ],
       "Learn more about data recovery": [
         "Scopri di più sul recupero dei dati"
+      ],
+      "Manage addresses": [
+        "Gestisci gli indirizzi"
       ],
       "Not activated": [
         "Non attivato"
@@ -14936,6 +14945,38 @@
         "Accedi al tuo account ${ BRAND_NAME } per poter usufruire di tutti i servizi ${ BRAND_NAME } crittografati come ${ MAIL_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME } e molto altro. Non hai un account? Creane uno GRATUITAMENTE."
       ]
     },
+    "Missing feature": {
+      "Check out the latest product updates": [
+        "Scopri gli ultimi aggiornamenti del prodotto."
+      ],
+      "Continue cancelling": [
+        "Continua la cancellazione"
+      ],
+      "Explore the latest news": [
+        "Esplora le ultime novitá"
+      ],
+      "Keep current plan": [
+        "Mantieni il piano attuale"
+      ],
+      "Make your voice heard": [
+        "Fai sentire la tua voce"
+      ],
+      "Request a feature": [
+        "Richiedi una funionalità"
+      ],
+      "Request a feature or vote on ideas from other users in our feedback forum.": [
+        "Richiedi una funzionalità o vota le idee di altri utenti nel nostro forum di feedback."
+      ],
+      "See how ${ BRAND_NAME } apps are evolving with your feedback.": [
+        "Scopri come le app di ${ BRAND_NAME } si stanno evolvendo grazie al tuo feedback."
+      ],
+      "Submit your ideas": [
+        "Invia le tue idee"
+      ],
+      "Your feedback helps us improve. Whether you've spotted a bug, want a new feature, or think something could work differently, we'd love to hear from you.": [
+        "Il tuo feedback ci aiuta a migliorare. Che tu abbia individuato un bug, voglia una nuova funzionalità o pensi che qualcosa possa funzionare diversamente, saremo felici di ascoltarti."
+      ]
+    },
     "Modal title": {
       "Add public holidays": [
         "Aggiungi i giorni festivi"
@@ -15468,9 +15509,6 @@
       ],
       "Dedicated servers and IP": [
         "Server e IP dedicati"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "Server dedicati ottimizzati per lo streaming"
       ],
       "Desktop app": [
         "Applicazione desktop"
@@ -17129,9 +17167,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Contact us": [
-        "Contattaci"
-      ],
       "Continue": [
         "Continua"
       ],
@@ -17158,9 +17193,6 @@
       ],
       "Or ${ createANewAccount }": [
         "O ${ createANewAccount }"
-      ],
-      "Request trial": [
-        "Richiedi la prova gratuita"
       ],
       "Start using ${ appName }": [
         "Inizia a usare ${ appName }"
@@ -17400,9 +17432,6 @@
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Inizia a utilizzare ${ PASS_APP_NAME }"
-      ],
-      "Tailored made solutions for larger organizations with custom needs.": [
-        "Soluzioni su misura per organizzazioni più grandi con esigenze personalizzate."
       ],
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "L'offerta che hai selezionato non è disponibile per gli abbonati a ${ currentPlanTitle }."
@@ -19456,9 +19485,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Il recupero dell'account non è disponibile per le chiavi di indirizzo tradizionali"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Genera le chiavi prima di provare a modificare la password"
       ]
     },
     "session_recovery:available:info": {
@@ -19739,9 +19765,6 @@
       ]
     },
     "Setting": {
-      "Enable Photos section": [
-        "Abilita la sezione Foto"
-      ],
       "Get updates about comments via email": [
         "Ricevi aggiornamenti riguardo i commenti via email"
       ],
@@ -22182,6 +22205,9 @@
       "Allocate storage": [
         "Alloca spazio"
       ],
+      "Already have multiple accounts?": [
+        "Hai giá molti account?"
+      ],
       "Also in your plan": [
         "Anche nel tuo piano"
       ],
@@ -22414,6 +22440,9 @@
       "Create multiple user accounts": [
         "Crea account utente multipli"
       ],
+      "Create new addresses easily": [
+        "Crea nuovi indirizzi facilmente"
+      ],
       "Create new policy": [
         "Crea una nuova policy"
       ],
@@ -22543,9 +22572,6 @@
       ],
       "Delete user?": [
         "Vuoi eliminare l'utente?"
-      ],
-      "Delete version history?": [
-        "Eliminare la cronologia delle versioni?"
       ],
       "Deny access to user?": [
         "Negare l'accesso all'utente?"
@@ -23560,6 +23586,9 @@
       ],
       "Use backup recovery code": [
         "Usa il codice di backup per il recupero"
+      ],
+      "Use one account for all your addresses": [
+        "Usa un account per tutte le tue password"
       ],
       "User": [
         "Utente"

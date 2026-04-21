@@ -331,7 +331,7 @@
         "Connectat"
       ],
       "Contact sales": [
-        "Contacteu amb vendes"
+        "Contacteu amb l’equip de vendes"
       ],
       "Contact support": [
         "Contactar amb el suport"
@@ -347,6 +347,9 @@
       ],
       "Continue anyway": [
         "Continua igualment"
+      ],
+      "Continue cancelling": [
+        "Continueu amb la cancel·lació"
       ],
       "Continue import": [
         "Continuar importació"
@@ -469,7 +472,7 @@
         "Elimina el compte"
       ],
       "Delete and confirm": [
-        "Elimineu-lo i ho confirmeu"
+        "Elimineu-lo i confirmeu-ho"
       ],
       "Delete filter “${ Name }”": [
         "Voleu eliminar el filtre \"${ Name }\""
@@ -965,6 +968,9 @@
       ],
       "Keep categories": [
         "Conserveu les categories"
+      ],
+      "Keep current plan": [
+        "Mantingueu el pla actual"
       ],
       "Keep Editing": [
         "Continua editant"
@@ -2016,6 +2022,50 @@
     "Admin": {
       "admin": [
         "administrador"
+      ]
+    },
+    "Admin roles onboarding": {
+      "3 new admin roles": [
+        "3 nous rols d'administrador/a"
+      ],
+      "Admin roles": [
+        "Rols d'administrador/a"
+      ],
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configureu les polítiques de seguretat, la retenció de dades i la infraestructura VPN, i gestioneu els registres d'auditoria."
+      ],
+      "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
+        "Delegueu la gestió assignant rols d'administrador/a específics. Doneu a cada administrador només l'accés que necessiti. Això segueix el principi del mínim privilegi, de manera que protegiu la vostra organització de comptes de risc i d'errors accidentals."
+      ],
+      "Delegate management with the appropriate admin role.": [
+        "Delegueu la gestió amb el rol d'administrador/a adequat."
+      ],
+      "Manage all users, groups, storage, security, billing, audit logs, and system configurations.": [
+        "Gestioneu tots els usuaris, grups, emmagatzematge, seguretat, facturació, registres d'auditoria i configuracions del sistema."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gestioneu els usuaris, els grups i l'emmagatzematge de tots els membres, assigneu rols i adjudiqueu llicències."
+      ],
+      "New: Control admin access for individual users": [
+        "Nou: Controleu l'accés d'administració per a usuaris individuals"
+      ],
+      "Organization admin": [
+        "Administrador/a de l'organització"
+      ],
+      "Organization admin:": [
+        "Administrador/a de l'organització:"
+      ],
+      "Security admin": [
+        "Administrador/a de seguretat"
+      ],
+      "Security admin:": [
+        "Administrador/a de seguretat:"
+      ],
+      "User admin": [
+        "Administrador/a d'usuaris"
+      ],
+      "User admin:": [
+        "Administrador/a d'usuaris:"
       ]
     },
     "AdminRole_Info": {
@@ -4859,6 +4909,9 @@
       "A checked box means the feature is disabled.": [
         "Una casella marcada significa que la funció està desactivada."
       ],
+      "Add extra addresses to your account or use Hide My Email aliases to keep your inbox private.": [
+        "Afegiu adreces addicionals al vostre compte o utilitzeu àlies de Hide My Email per mantenir la vostra safata d'entrada privada."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Afegiu carpetes i fitxers al ${ DRIVE_APP_NAME } i convideu els membres de l'equip a veure'ls o a editar-los."
       ],
@@ -4964,6 +5017,9 @@
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "Personalitzeu el peu de pàgina del correu: mostreu la vostra marca única, no la nostra."
       ],
+      "Most issues can be solved in a few minutes with our step-by-step guides.": [
+        "La majoria de problemes es poden resoldre en pocs minuts amb les nostres guies pas a pas."
+      ],
       "No ads. No trackers.": [
         "Sense anuncis. Sense rastrejadors."
       ],
@@ -4984,6 +5040,9 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Simplifiqueu la sincronització i la programació amb calendaris compartits."
+      ],
+      "Still need help? Our support team is here for you.": [
+        "Encara necessiteu ajuda? El nostre equip de suport és a la vostra disposició."
       ],
       "This may happen if permissions were removed or your password changed.": [
         "Això podria passar si s'han suprimit els permisos o s'ha canviat la contrasenya."
@@ -5048,6 +5107,12 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Pots importar esdeveniments en format iCal (fitxer ICS).\nEl fitxer ha de tenir una mida màxima de ${ MAX_IMPORT_FILE_SIZE_STRING } i tenir fins a ${ MAX_IMPORT_EVENTS_STRING } esdeveniments. Si el fitxer és més gran, dividiu-lo en fitxers més petits."
+      ],
+      "You can manage multiple ${ BRAND_NAME } addresses from a single account, without switching. Aliases and address management tools help keep everything in one inbox.": [
+        "Podeu gestionar diverses adreces de ${ BRAND_NAME } des d'un sol compte, sense haver de canviar. Els àlies i les eines de gestió d'adreces us ajuden a mantenir-ho tot en una única safata d'entrada."
+      ],
+      "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
+        "Podeu combinar les adreces en un compte principal de ${ BRAND_NAME } mitjançant la nostra guia de suport."
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Ara ja podeu enviar correus electrònics des de ${ BRAND_NAME } utilitzant aquesta adreça."
@@ -6941,9 +7006,6 @@
         "Arregleu el conflicte ressaltat per continuar.",
         "Arregleu els conflictes ressaltats per continuar."
       ],
-      "Please generate keys before you try to change your password": [
-        "Genereu les claus abans d’intentar canviar la vostra contrasenya."
-      ],
       "Please select a country": [
         "Seleccioneu un país"
       ],
@@ -8338,6 +8400,17 @@
       ],
       "Your desktop app free trial has ended": [
         "Ha finalitzat la prova gratuïta de l'aplicació d'escriptori"
+      ]
+    },
+    "Get help": {
+      "Continue cancelling": [
+        "Continueu amb la cancel·lació"
+      ],
+      "Keep current plan": [
+        "Mantingueu el pla actual"
+      ],
+      "Many issues can be resolved quickly with our help guides. If you need more support, our team is here to help.": [
+        "Molts problemes es poden resoldre ràpidament amb les nostres guies d'ajuda. Si necessiteu més suport, el nostre equip és aquí per ajudar-vos."
       ]
     },
     "Get started checklist instructions": {
@@ -11837,7 +11910,7 @@
         "Aquesta verificació pot trigar fins a una hora. Després d'una verificació correcta, no suprimiu el registre TXT, ja que és necessari per confirmar que continueu sent el propietari del domini."
       ],
       "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "Això eliminarà totes les versions dels vostres fitxers anteriors a ${ rententionLabel }."
+        "Això eliminarà totes les versions anteriors dels vostres fitxers més antigues de ${ rententionLabel }."
       ],
       "This will delete all previous versions of your files.": [
         "Això eliminarà totes les versions anteriors dels vostres fitxers."
@@ -12056,7 +12129,7 @@
         "Actualitzeu el pla per conservar els vostres avantatges de ${ planTitle }."
       ],
       "Upgrade to unlock": [
-        "Milloreu el pla per desbloquejar"
+        "Milloreu de pla per desbloquejar"
       ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "Millora per activar ${ monitorLink }."
@@ -13849,7 +13922,7 @@
         "No tornis a preguntar"
       ],
       "Don't keep versions": [
-        "No guardeu les versions"
+        "No guardeu versions"
       ],
       "Don't show this again": [
         "No ho tornis a mostrar"
@@ -14956,6 +15029,9 @@
       "${ BRAND_NAME } Foundation's": [
         "De la Fundació ${ BRAND_NAME }"
       ],
+      "Account recovery explained": [
+        "Explicació de la recuperació del compte"
+      ],
       "Activity log": [
         "Registre d'activitats"
       ],
@@ -14983,11 +15059,11 @@
       "clearing your browser cache": [
         "buidar la memòria cau del navegador"
       ],
-      "Common sign in issues": [
-        "Problemes comuns d'inici de sessió"
-      ],
       "Common sign up issues": [
         "Problemes comuns de registre"
+      ],
+      "Contact support": [
+        "Contactar amb suport"
       ],
       "contacts’ assistance": [
         "assistència dels contactes"
@@ -15106,11 +15182,17 @@
       "Import/export": [
         "Importa/exporta"
       ],
+      "Learn how": [
+        "Apreneu-ne com"
+      ],
       "Learn more": [
         "Més informació"
       ],
       "Learn more about data recovery": [
         "Més informació sobre la recuperació de dades"
+      ],
+      "Manage addresses": [
+        "Gestioneu les adreces"
       ],
       "Not activated": [
         "No s'ha activat"
@@ -15177,6 +15259,9 @@
       ],
       "visit our blog": [
         "visitar el nostre blog"
+      ],
+      "Visit our support site": [
+        "Visiteu el nostre lloc de suport"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "Quina és la diferència entre els protocols UDP i TCP?"
@@ -16314,8 +16399,8 @@
       "Dedicated servers and IP": [
         "Servidors i IP dedicats"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Servidors dedicats optimitzats per a estríming"
+      "Dedicated servers optimized for speed": [
+        "Servidors dedicats optimitzats per més rapidesa"
       ],
       "Desktop app": [
         "Aplicació d'escriptori"
@@ -17989,9 +18074,6 @@
       "Buy now": [
         "Compreu-ho ara"
       ],
-      "Contact us": [
-        "Contacteu amb nosaltres"
-      ],
       "Continue": [
         "Continua"
       ],
@@ -18018,9 +18100,6 @@
       ],
       "Or ${ createANewAccount }": [
         "O ${ createANewAccount }"
-      ],
-      "Request trial": [
-        "Sol·liciteu una prova"
       ],
       "Start using ${ appName }": [
         "Comenceu a utilitzar ${ appName }"
@@ -18263,9 +18342,6 @@
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Comenceu a utilitzar ${ PASS_APP_NAME }"
-      ],
-      "Tailored made solutions for larger organizations with custom needs.": [
-        "Solucions a mida per a organitzacions més grans amb necessitats personalitzades."
       ],
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "L'oferta que heu seleccionat no està disponible per als subscriptors de ${ currentPlanTitle }."
@@ -20300,9 +20376,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "La recuperació del compte no està disponible per a les claus d'adreces antigues"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Genereu claus abans d'intentar canviar la contrasenya"
       ]
     },
     "session_recovery:available:info": {
@@ -23145,6 +23218,9 @@
       "Allocate storage": [
         "Assignar espai"
       ],
+      "Already have multiple accounts?": [
+        "Ja teniu diversos comptes?"
+      ],
       "Also in your plan": [
         "També al vostre pla"
       ],
@@ -23382,6 +23458,9 @@
       ],
       "Create multiple user accounts": [
         "Crea diversos comptes d'usuari"
+      ],
+      "Create new addresses easily": [
+        "Creeu noves adreces fàcilment"
       ],
       "Create new policy": [
         "Crea una política"
@@ -23804,6 +23883,12 @@
       ],
       "Get complete privacy coverage": [
         "Obteniu una cobertura de privadesa completa"
+      ],
+      "Get direct support": [
+        "Obtingueu suport directe"
+      ],
+      "Get help with an issue": [
+        "Obtingueu ajuda amb un problema"
       ],
       "Get more from your cloud storage": [
         "Traieu-ne més partit del vostre emmagatzematge al núvol"
@@ -24488,6 +24573,9 @@
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Per previsualitzar aquest full de càlcul, obriu-lo a ${ SHEETS_APP_NAME } o descarregueu-lo."
       ],
+      "Troubleshoot your issue": [
+        "Solucioneu el vostre problema"
+      ],
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "Proveu ${ AUTHENTICATOR_APP_NAME }"
       ],
@@ -24553,6 +24641,9 @@
       ],
       "Use backup recovery code": [
         "Utilitzeu el codi de recuperació de còpia de seguretat"
+      ],
+      "Use one account for all your addresses": [
+        "Utilitzeu un sol compte per totes les vostres adreces"
       ],
       "User": [
         "Usuari"

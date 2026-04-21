@@ -329,6 +329,9 @@
       "Create folder": [
         "Mappa létrehozása"
       ],
+      "Create free account now": [
+        "Hozzon létre most egy ingyenes fiókot"
+      ],
       "Create Gateway": [
         "Átjáró létrehozása"
       ],
@@ -4685,9 +4688,6 @@
         "Javítsa ki a megjelölt hibát a folytatáshoz.",
         "Javítsa ki a megjelölt hibákat a folytatáshoz."
       ],
-      "Please generate keys before you try to change your password": [
-        "Hozza létre a titkosítási kulcsokat mielőtt megváltoztatná a jelszavát"
-      ],
       "Please select a country": [
         "Kérjük, válasszon egy országot"
       ],
@@ -6126,6 +6126,11 @@
       ],
       "Value / Data / Points to": [
         "Érték / Adat / Cél cím"
+      ]
+    },
+    "Header for table": {
+      "Email address": [
+        "E-mail cím"
       ]
     },
     "Heading": {
@@ -8348,6 +8353,9 @@
       ],
       "Show original message": [
         "Eredeti üzenet megjelenítése"
+      ],
+      "Sign in": [
+        "Bejelentkezés"
       ],
       "Sign in or create an account to continue.": [
         "Jelentkezzen be vagy regisztráljon a folytatáshoz."
@@ -10924,9 +10932,6 @@
       "clearing your browser cache": [
         "böngésző gyorsítótárának ürítése"
       ],
-      "Common sign in issues": [
-        "Általános bejelentkezési problémák"
-      ],
       "Common sign up issues": [
         "Általános problémák a regisztrációval"
       ],
@@ -11341,6 +11346,11 @@
       ],
       "This feature is temporarily unavailable": [
         "Ez a funkció átmenetileg nem elérhető."
+      ]
+    },
+    "meet_2025: Info": {
+      "Secure calendar": [
+        "Biztonságos naptár"
       ]
     },
     "Member action": {
@@ -11918,9 +11928,6 @@
       ],
       "Dedicated servers and IP": [
         "Dedikált szerverek és IP"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "Dedikált, videózásra optimalizált szerverek"
       ],
       "Desktop app": [
         "Asztali alkalmazás"
@@ -13307,9 +13314,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Contact us": [
-        "Lépjen velünk kapcsolatba"
-      ],
       "Continue": [
         "Folytatás"
       ],
@@ -13333,9 +13337,6 @@
       ],
       "Or ${ createANewAccount }": [
         "Vagy ${ createANewAccount }"
-      ],
-      "Request trial": [
-        "Próbaváltozat kérése"
       ],
       "Start using ${ appName }": [
         "${ appName } használatának megkezdése"
@@ -13554,9 +13555,6 @@
       ],
       "Start using ${ PASS_APP_NAME }": [
         "${ PASS_APP_NAME } használatának megkezdése"
-      ],
-      "Tailored made solutions for larger organizations with custom needs.": [
-        "Testre szabott megoldások nagyobb szervezetek számára, egyedi biztonsági igényekkel."
       ],
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "A kiválasztott ajánlat nem elérhető a ${ currentPlanTitle } előfizetőknek."
@@ -14518,6 +14516,9 @@
       "Download your Recovery Kit": [
         "Helyreállító csomag letöltése"
       ],
+      "Email address": [
+        "E-mail cím"
+      ],
       "Enable device-based recovery": [
         "Eszköz alapú helyreállítás bekapcsolása"
       ],
@@ -14953,9 +14954,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "A fiók-visszaállítás nem érhető el régi című kulcsokhoz"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Hozza létre a titkosítási kulcsokat mielőtt megváltoztatná a jelszavát"
       ]
     },
     "session_recovery:available:info": {
@@ -15312,6 +15310,9 @@
       "${ DRIVE_APP_NAME } for Business": [
         "${ DRIVE_APP_NAME } for Business"
       ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } hide-my-email e-mail álnév a levélszemét ellen"
+      ],
       "${ maxAddresses } address": [
         "${ maxAddresses } cím",
         "${ maxAddresses } cím"
@@ -15323,6 +15324,9 @@
       "${ maxCalendars } calendar": [
         "${ maxCalendars } naptár",
         "${ maxCalendars } naptár"
+      ],
+      "${ totalDriveStorageSize } cloud storage for files and photos": [
+        "${ totalDriveStorageSize } felhőtárhely fájlokhoz és fotókhoz"
       ],
       "${ value } of secure storage": [
         "${ value } biztonságos tárhely"
@@ -15358,6 +15362,12 @@
       "Block ads, trackers, and malware": [
         "Hirdetések, trackerek és rosszindulatú programok blokkolása"
       ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "Válasszon egy biztonságos ${ MAIL_APP_NAME }-címet a kezdéshez"
+      ],
+      "Collaborative documents and spreadsheets": [
+        "Közösen szerkeszthető dokumentumok és táblázatok"
+      ],
       "Compare plans": [
         "Csomagok összehasonlítása"
       ],
@@ -15373,11 +15383,17 @@
       "Create a ${ BRAND_NAME } Account": [
         "${ BRAND_NAME } fiók létrehozása"
       ],
+      "Encrypted email with ${ totalMailStorageSize } storage": [
+        "Titkosított e-mail ${ totalMailStorageSize } tárhellyel"
+      ],
       "Encrypted password manager": [
         "Titkosított jelszókezelő"
       ],
       "End-to-end encryption": [
         "Végpontok közti titkosítás"
+      ],
+      "Every free account comes with:": [
+        "Minden ingyenes fiókhoz jár:"
       ],
       "Free": [
         "Ingyenes"
@@ -15387,6 +15403,9 @@
       ],
       "get a secure ${ MAIL_APP_NAME } address.": [
         "biztonságos ${ MAIL_APP_NAME } cím létrehozása."
+      ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "Tartsa privátan beszélgetéseit a ${ MAIL_APP_NAME } segítségével"
       ],
       "Manage user access": [
         "Felhasználói hozzáférés kezelése"
@@ -15409,8 +15428,17 @@
       "Online documents": [
         "Online dokumentumok"
       ],
+      "Password manager for all your devices": [
+        "Jelszókezelő minden eszközéhez"
+      ],
+      "Password-protected messages": [
+        "Jelszóval védett üzenetek"
+      ],
       "Pick your perfect plan": [
         "Válassza ki az Önnek tökéletes csomagot"
+      ],
+      "Private AI assistant with encrypted chat history": [
+        "Privát AI-asszisztens titkosított csevegési előzményekkel"
       ],
       "Recover previous file versions": [
         "Régebbi fájlverziók helyreállítása"
@@ -15420,6 +15448,9 @@
       ],
       "Save ${ priceDifferenceString }": [
         "Megtakarítás ${ priceDifferenceString }"
+      ],
+      "Secure calendar": [
+        "Biztonságos naptár"
       ],
       "Secure file sharing": [
         "Biztonságos fájlmegosztás"
@@ -15441,6 +15472,9 @@
       ],
       "Share and collaborate of files": [
         "Fájlok megosztása és közös használata"
+      ],
+      "Sign up to get everything ${ BRAND_NAME } has to offer": [
+        "Regisztráljon, hogy mindent kihasználhasson, amit a ${ BRAND_NAME } kínál"
       ],
       "Sign up, protect your files": [
         "Regisztráljon, védje meg fájljait"
@@ -15478,8 +15512,18 @@
       "use your own email.": [
         "saját e-mail használata."
       ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "VPN ${ vpnServersCountData.free.countries } országban található szerverekkel"
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
+        "VPN ${ vpnServersCountData.free.countries } országban található szerverekkel",
+        "VPN ${ vpnServersCountData.free.countries } országban található szerverekkel"
+      ],
       "Yearly": [
         "Évente"
+      ],
+      "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
+        "A fiókja hozzáférést biztosít a ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } és ${ LUMO_SHORT_APP_NAME } ingyenes funkcióihoz."
       ],
       "Your plan": [
         "Az ön csomagja"
@@ -17787,6 +17831,9 @@
       ],
       "Forward emails": [
         "E-mailek továbbítása"
+      ],
+      "Free": [
+        "Ingyenes"
       ],
       "Gateway": [
         "Átjáró"
