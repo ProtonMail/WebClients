@@ -132,10 +132,15 @@ const RecipientItemLayout = ({
         }
 
         const handleClick = (event: Event) => {
+            // Always prevent default to avoid opening the mailto: href
             event.preventDefault();
-            event.stopPropagation();
-            if (document.getSelection()?.isCollapsed && showDropdown) {
-                dropdownToggle?.();
+            if (showDropdown) {
+                // Stop propagation only when the dropdown is active, so that parent click handlers
+                // (e.g. expanding a collapsed message) still fire when showDropdown is false
+                event.stopPropagation();
+                if (document.getSelection()?.isCollapsed) {
+                    dropdownToggle?.();
+                }
             }
         };
 
