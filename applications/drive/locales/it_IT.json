@@ -530,6 +530,9 @@
       "Go back": [
         "Torna indietro"
       ],
+      "Go back to album “${ ellipsedAlbumName }“": [
+        "Ritorna all'album \"${ ellipsedAlbumName }\""
+      ],
       "Go to ${ planOrAppName }": [
         "Vai a ${ planOrAppName }"
       ],
@@ -784,6 +787,9 @@
       ],
       "Quit": [
         "Chiudi"
+      ],
+      "Re-index": [
+        "Re-indirizza"
       ],
       "Re-sign": [
         "Firma di nuovo"
@@ -5801,6 +5807,9 @@
       "No payment is required at this time.": [
         "Al momento non è richiesto alcun pagamento."
       ],
+      "No populator states found.": [
+        "Nessuno stato di popolazione trovato."
+      ],
       "No results found": [
         "Nessun risultato trovato"
       ],
@@ -8427,9 +8436,6 @@
       "Data breach monitoring": [
         "Monitoraggio di violazioni di dati"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Server dedicati ottimizzati per lo streaming"
-      ],
       "Desktop app": [
         "Applicazione desktop"
       ],
@@ -9101,6 +9107,42 @@
       ]
     },
     "Notification": {
+      "\"${ ellipsedName }\" copied": [
+        "\"${ ellipsedName }\" copiato"
+      ],
+      "\"${ ellipsedName }\" created successfully": [
+        "Creato con successo \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" deleted": [
+        "\"${ ellipsedName }\" rimosso"
+      ],
+      "\"${ ellipsedName }\" deleted permanently from trash": [
+        "Elimina \"${ ellipsedName }\" in modo permanente dal cestino"
+      ],
+      "\"${ ellipsedName }\" failed to be created": [
+        "É fallita la creazione di \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" failed to be deleted": [
+        "Fallita la rimozione di \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" failed to be deleted permanently from trash": [
+        "Fallita la rimozione permanente di \"${ ellipsedName }\" dal cestino"
+      ],
+      "\"${ ellipsedName }\" failed to be moved": [
+        "\"${ ellipsedName }\" fallito lo spostamento"
+      ],
+      "\"${ ellipsedName }\" failed to be restored from trash": [
+        "Fallito il ripristino di \"${ ellipsedName }\" dal cestino"
+      ],
+      "\"${ ellipsedName }\" moved": [
+        "Spostamento di \"${ ellipsedName }\""
+      ],
+      "\"${ ellipsedName }\" restored from trash": [
+        "Effettuato il ripristino di \"${ ellipsedName }\" dal cestino"
+      ],
+      "\"${ ellipsedName }\" successfully moved": [
+        "\"${ ellipsedName }\" rimosso con successo"
+      ],
       "\"${ name }\" deleted permanently": [
         "\"${ name }\" eliminato definitivamente"
       ],
@@ -9154,6 +9196,10 @@
         "${ numberOfItems } oggetto copiato spostato nel cestino",
         "${ numberOfItems } oggetti copiati spostati nel cestino"
       ],
+      "${ numberOfItems } item copied": [
+        "${ numberOfItems } oggetto copiato",
+        "${ numberOfItems } oggetti copiati"
+      ],
       "${ numberOfItems } item deleted": [
         "${ numberOfItems } elemento eliminato",
         "${ numberOfItems } elementi eliminati"
@@ -9181,6 +9227,10 @@
       "${ numberOfItems } item failed to be restored from trash": [
         "Ripristino di ${ numberOfItems } elemento dal cestino non riuscito",
         "Ripristino di ${ numberOfItems } elementi dal cestino non riuscito"
+      ],
+      "${ numberOfItems } item moved": [
+        "${ numberOfItems } oggetto spostato",
+        "${ numberOfItems } oggetti spostati"
       ],
       "${ numberOfItems } item moved to trash": [
         "${ numberOfItems } oggetto spostato nel cestino",
@@ -9229,6 +9279,9 @@
       ],
       "Contact group updated": [
         "Gruppo di contatti aggiornato"
+      ],
+      "Copy of \"${ ellipsedName }\" moved to trash": [
+        "Copia di \"${ ellipsedName }\" spostata nel cestino"
       ],
       "Device failed to be removed": [
         "Rimozione del dispositivo non riuscita"
@@ -10639,9 +10692,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Il recupero dell'account non è disponibile per le chiavi di indirizzo tradizionali"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Genera le chiavi prima di provare a modificare la password"
       ]
     },
     "session_recovery:available:info": {
@@ -12356,6 +12406,9 @@
       ],
       "Import groups": [
         "Importa gruppi"
+      ],
+      "Index populators": [
+        "Indice di popolamento"
       ],
       "Information exposed in breach": [
         "Informazioni esposte in caso di violazioni"
