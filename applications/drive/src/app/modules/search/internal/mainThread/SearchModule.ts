@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import { getBrowser, isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 import { Version } from '@proton/shared/lib/helpers/version';
+import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 
 import { Logger } from '../shared/Logger';
 import { PersistentLatestEventIdProvider } from '../shared/PersistentLatestEventIdProvider';
@@ -24,6 +25,7 @@ export type SearchModuleContext = {
     driveClient: ProtonDriveClient;
     createSearchDriveInstance: (params: { latestEventIdProvider: LatestEventIdProvider }) => ProtonDriveClient;
     fetchLastEventIdForTreeScopeId: FetchLastEventIdForTreeScopeId;
+    getUserKeys: () => Promise<DecryptedKey[]>;
 };
 
 export class SearchModule {
@@ -73,7 +75,8 @@ export class SearchModule {
             context.driveClient,
             driveClientForSearchEvents,
             latestEventIdProvider,
-            context.fetchLastEventIdForTreeScopeId
+            context.fetchLastEventIdForTreeScopeId,
+            context.getUserKeys
         );
         this.workerClient = new WorkerClient(context.userId, context.appVersion, clientId, bridge);
 

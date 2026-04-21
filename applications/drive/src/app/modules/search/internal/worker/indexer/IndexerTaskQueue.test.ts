@@ -2,6 +2,8 @@ import type { MaybeNode, NodeEntity, NodeType } from '@protontech/drive-sdk';
 import { IDBFactory } from 'fake-indexeddb';
 import 'fake-indexeddb/auto';
 
+import { generateAndImportKey } from '@proton/crypto/lib/subtle/aesGcm';
+
 import { createMockNodeEntity } from '../../../../../utils/test/nodeEntity';
 import { SearchDB } from '../../shared/SearchDB';
 import type { TreeEventScopeId, UserId } from '../../shared/types';
@@ -110,7 +112,8 @@ describe('IndexerTaskQueue', () => {
         indexedDB = new IDBFactory();
         db = await SearchDB.open('test-user');
         bridge = new FakeMainThreadBridge();
-        indexRegistry = new IndexRegistry();
+        const cryptoKey = await generateAndImportKey();
+        indexRegistry = new IndexRegistry(cryptoKey);
 
         const rootNode = makeMaybeNode({
             uid: 'root-uid',

@@ -1,6 +1,8 @@
 import { IDBFactory } from 'fake-indexeddb';
 import 'fake-indexeddb/auto';
 
+import { generateAndImportKey } from '@proton/crypto/lib/subtle/aesGcm';
+
 import { SearchDB } from '../../shared/SearchDB';
 import { setupRealSearchLibraryWasm } from '../../testing/setupRealSearchLibraryWasm';
 import { IndexKind, IndexRegistry } from './IndexRegistry';
@@ -14,7 +16,8 @@ describe('IndexRegistry integration', () => {
     beforeEach(async () => {
         indexedDB = new IDBFactory();
         db = await SearchDB.open('test-user');
-        registry = new IndexRegistry();
+        const cryptoKey = await generateAndImportKey();
+        registry = new IndexRegistry(cryptoKey);
     });
 
     it('get() creates an instance for a kind', async () => {
