@@ -5,10 +5,9 @@ import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
 import type { IconName } from '@proton/icons/types';
+import { usePassCore } from '@proton/pass/components/Core/PassCoreProvider';
 import { DropdownMenuButton } from '@proton/pass/components/Layout/Dropdown/DropdownMenuButton';
 import { QuickActionsDropdown } from '@proton/pass/components/Layout/Dropdown/QuickActionsDropdown';
-import { useNavigate } from '@proton/pass/components/Navigation/NavigationActions';
-import { getLocalPath } from '@proton/pass/components/Navigation/routing';
 import { useOrganization } from '@proton/pass/components/Organization/OrganizationProvider';
 import { AccountPath } from '@proton/pass/constants';
 import { useNavigateToAccount } from '@proton/pass/hooks/useNavigateToAccount';
@@ -28,7 +27,7 @@ type Props = {
 };
 
 export const MenuActions: FC<Props> = ({ onLogout }) => {
-    const navigate = useNavigate();
+    const { openSettings } = usePassCore();
     const { createNotification, clearNotifications } = useNotifications();
     const enhance = useNotificationEnhancer();
     const org = useOrganization();
@@ -79,7 +78,7 @@ export const MenuActions: FC<Props> = ({ onLogout }) => {
                         className="relative"
                         ellipsis={false}
                         icon={setting.icon}
-                        onClick={setting.onClick ?? (() => navigate(getLocalPath('settings'), { hash: setting.key }))}
+                        onClick={setting.onClick ?? (() => openSettings(setting.key))}
                         label={
                             <div className="flex items-center gap-3">
                                 <span className="flex-1 flex-nowrap">{setting.label}</span>
