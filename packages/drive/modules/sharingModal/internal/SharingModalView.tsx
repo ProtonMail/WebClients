@@ -23,6 +23,7 @@ import { IcLockFilled } from '@proton/icons/icons/IcLockFilled';
 
 import { useFlagsDriveDirectSharing } from '../../../internal/flags/useFlagsDriveDirectSharing';
 import { useFlagsDrivePublicSharing } from '../../../internal/flags/useFlagsDrivePublicSharing';
+import { useFlagsDriveSharingAdminPermissions } from '../../../internal/flags/useFlagsDriveSharingAdminPermissions';
 import { DirectSharingAutocomplete } from './DirectSharing/DirectSharingAutocomplete';
 import { DirectSharingFooter } from './DirectSharing/DirectSharingFooter';
 import { DirectSharingInviteMessage } from './DirectSharing/DirectSharingInviteMessage';
@@ -43,7 +44,7 @@ export interface SharingModalViewProps extends ModalStateProps {
     nodeUid: string;
     roleOnParentNode?: MemberRole;
     fileName: string;
-    showPermissionsCheckbox: boolean;
+    isPhotoOrAlbum: boolean;
     mediaType?: string;
     ownerEmail?: string;
     ownerDisplayName?: string;
@@ -89,7 +90,7 @@ export const SharingModalView = ({
     nodeUid,
     roleOnParentNode,
     fileName,
-    showPermissionsCheckbox,
+    isPhotoOrAlbum,
     mediaType,
     ownerEmail,
     ownerDisplayName,
@@ -110,6 +111,7 @@ export const SharingModalView = ({
 
     const { isDirectSharingDisabled } = useFlagsDriveDirectSharing();
     const { isPublicEditModeEnabled } = useFlagsDrivePublicSharing();
+    const adminRoleEnabled = useFlagsDriveSharingAdminPermissions();
 
     const [settingsModal, showSettingsModal] = useSharingSettingsModal();
     const [confirmModal, showConfirmRemoveYourself] = useConfirmActionModal();
@@ -133,7 +135,12 @@ export const SharingModalView = ({
         () => !invitees.length || !!invitees.find((invitee) => invitee.isLoading || invitee.error),
         [invitees]
     );
-    const isSettingsDisabled = publicLinkStateChanging || publicLinkUpdating || !(Boolean(publicLink?.url) || isShared);
+    const canChangePermissions = adminRoleEnabled && roleOnParentNode === MemberRole.Admin && !isPhotoOrAlbum;
+    const isSettingsDisabled =
+        publicLinkStateChanging ||
+        publicLinkUpdating ||
+        !(Boolean(publicLink?.url) || isShared) ||
+        !canChangePermissions;
     const isShareWithAnyoneLoading = publicLinkStateChanging || isLoading;
     const isClosedButtonDisabled = publicLinkStateChanging || publicLinkUpdating || isAdding;
 
@@ -259,7 +266,6 @@ export const SharingModalView = ({
                                                 await actions.stopSharing();
                                                 onClose();
                                             },
-                                            showPermissionsCheckbox,
                                         })
                                     }
                                     data-testid="share-modal-settings"
