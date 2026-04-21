@@ -198,6 +198,9 @@
       "Carbon Copy": [
         "Копія"
       ],
+      "Change password": [
+        "Змяніць пароль"
+      ],
       "Change sorting": [
         "Змяніць сартаванне"
       ],
@@ -1507,10 +1510,7 @@
         "Давяраць"
       ],
       "Trust key": [
-        "Давяраць ключу",
-        "Давяраць ключам",
-        "Давяраць ключам",
-        "Давяраць ключам"
+        "Давяраць ключу"
       ],
       "Trust public key": [
         "Давяраць адкрытаму ключу"
@@ -4320,7 +4320,7 @@
       ],
       "You're forwarding emails from ${ forwardingCount } Gmail address. By connecting it, you'll be able to both receive and reply in ${ MAIL_APP_NAME }": [
         "Вы перасылаеце лісты з ${ forwardingCount } адраса Gmail. Падключыўшы яго, вы зможаце як атрымліваць, так і адказваць у ${ MAIL_APP_NAME }.",
-        "Вы перасылаеце лісты з ${ forwardingCount } адраса Gmail. Падключыўшы іх, вы зможаце як атрымліваць, так і адказваць у ${ MAIL_APP_NAME }.",
+        "Вы перасылаеце лісты з ${ forwardingCount } адрасоў Gmail. Падключыўшы іх, вы зможаце як атрымліваць, так і адказваць у ${ MAIL_APP_NAME }.",
         "Вы перасылаеце лісты з ${ forwardingCount } адрасоў Gmail. Падключыўшы іх, вы зможаце як атрымліваць, так і адказваць у ${ MAIL_APP_NAME }.",
         "Вы перасылаеце лісты з ${ forwardingCount } адрасоў Gmail. Падключыўшы іх, вы зможаце як атрымліваць, так і адказваць у ${ MAIL_APP_NAME }."
       ],
@@ -7814,7 +7814,10 @@
         "Ініцыялізацыя…"
       ],
       "Insert image": [
-        "Уставіць відарыс"
+        "Уставіць відарыс",
+        "Уставіць відарысы",
+        "Уставіць відарысы",
+        "Уставіць відарысы"
       ],
       "Insert link": [
         "Уставіць спасылку"
@@ -11401,7 +11404,7 @@
       ],
       "Appointment scheduling with ${ n } booking page": [
         "Планіруйце сустрэчы з ${ n } старонкай браніравання",
-        "Планіруйце сустрэчы з ${ n } старонкай браніравання",
+        "Планіруйце сустрэчы з ${ n } старонкамі браніравання",
         "Планіруйце сустрэчы з ${ n } старонкамі браніравання",
         "Планіруйце сустрэчы з ${ n } старонкамі браніравання"
       ],
@@ -11459,8 +11462,8 @@
       "Data retention policies": [
         "Палітыка захоўвання даных"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Вылучаныя серверы аптымізаваныя для трансляцый"
+      "Dedicated servers optimized for speed": [
+        "Вылучаныя серверы аптымізаваныя для хуткасці"
       ],
       "Desktop app": [
         "Праграма для камп'ютара"
@@ -13727,9 +13730,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Аднаўленне ўліковага запісу недаступна для састарэлых адрасных ключоў"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Згенерыруйце ключы перад спробай змяніць пароль"
       ]
     },
     "session_recovery:available:info": {
@@ -15505,6 +15505,9 @@
       ],
       "Account security": [
         "Бяспека ўліковага запісу"
+      ],
+      "Account temporarily locked": [
+        "Уліковы запіс часова заблакіраваны"
       ],
       "Action all conversations": [
         "Дзеянне да ўсіх размоў"

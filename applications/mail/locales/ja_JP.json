@@ -195,6 +195,9 @@
       "Carbon Copy": [
         "カーボンコピー"
       ],
+      "Change password": [
+        "パスワードを変更"
+      ],
       "Change sorting": [
         "並べ替えの変更"
       ],
@@ -1490,9 +1493,6 @@
       ],
       "Trust": [
         "信頼する"
-      ],
-      "Trust key": [
-        "鍵を信頼する"
       ],
       "Trust public key": [
         "公開鍵を信頼"
@@ -7361,7 +7361,7 @@
         "初期化中…"
       ],
       "Insert image": [
-        "画像の挿入"
+        "画像を挿入"
       ],
       "Insert link": [
         "リンクを挿入"
@@ -10799,9 +10799,6 @@
       "Data retention policies": [
         "データ保持ポリシー"
       ],
-      "Dedicated servers optimized for streaming": [
-        "ストリーミングに最適化された専用サーバー"
-      ],
       "Desktop app": [
         "デスクトップアプリ"
       ],
@@ -13049,9 +13046,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "旧式のアドレスキーに対してはアカウントの回復が利用できません。"
-      ],
-      "Please generate keys before you try to change your password": [
-        "パスワードを変更する前に、キーを生成してください。"
       ]
     },
     "session_recovery:available:info": {
@@ -14614,6 +14608,9 @@
       ],
       "Account security": [
         "アカウントのセキュリティ"
+      ],
+      "Account temporarily locked": [
+        "アカウントが一時的にロックされています"
       ],
       "Action all conversations": [
         "すべての会話を操作"
