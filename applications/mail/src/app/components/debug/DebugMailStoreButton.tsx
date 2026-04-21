@@ -39,7 +39,11 @@ const DebugMailStoreButton = ({ showContextTotal = true }: Props) => {
 
     return (
         <>
-            <button type="button" onClick={() => setDebugModalOpen(true)}>
+            <button
+                type="button"
+                onClick={() => setDebugModalOpen(true)}
+                className="text-no-decoration color-weak text-sm m-0 mb-1"
+            >
                 {showContextTotal ? <>contextTotal: {count ?? '–'}</> : <>Show debug modal</>}
             </button>
             {renderDebugModal && <DebugMailStoreContextTotal {...debugModalProps} />}
