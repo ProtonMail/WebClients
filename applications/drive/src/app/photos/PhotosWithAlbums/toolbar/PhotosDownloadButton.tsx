@@ -8,21 +8,19 @@ import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
 import clsx from '@proton/utils/clsx';
 import noop from '@proton/utils/noop';
 
-import type { PhotoLink } from '../../../store';
+import type { PhotoItem } from '../../usePhotos.store';
 
 interface Props {
-    selectedLinks: PhotoLink[];
-    requestDownload: (linkIds: { linkId: string; shareId: string }[]) => Promise<void>;
+    selectedPhotos: PhotoItem[];
+    requestDownload: (photosUids: string[]) => Promise<void>;
     showIconOnly: boolean;
 }
 
-export const PhotosDownloadButton: FC<Props> = ({ requestDownload, selectedLinks, showIconOnly }) => {
+export const PhotosDownloadButton: FC<Props> = ({ requestDownload, selectedPhotos, showIconOnly }) => {
     const [loading, withLoading] = useLoading();
 
     const onClick = () => {
-        const linkIds = selectedLinks.map((link) => ({ linkId: link.linkId, shareId: link.rootShareId }));
-
-        withLoading(requestDownload(linkIds)).catch(noop);
+        withLoading(requestDownload(selectedPhotos.map((photo) => photo.nodeUid))).catch(noop);
     };
 
     return (

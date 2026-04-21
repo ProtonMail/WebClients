@@ -9,7 +9,6 @@ import { IcUserPlus } from '@proton/icons/icons/IcUserPlus';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import folderImages from '@proton/styles/assets/img/drive/folder-images.svg';
-import { useFlag } from '@proton/unleash/useFlag';
 
 import { getContactNameAndEmail } from '../../../components/modals/ShareLinkModal/DirectSharing/DirectSharingListing';
 import type { DecryptedAlbum } from '../../PhotosStore/PhotosWithAlbumsProvider';
@@ -33,7 +32,6 @@ export const AlbumCoverHeader = ({
     onShare,
     onAddAlbumPhotos,
 }: AlbumCoverHeaderProps) => {
-    const driveAlbumsDisabled = useFlag('DriveAlbumsDisabled');
     const formattedDate = new Intl.DateTimeFormat(dateLocale.code, {
         dateStyle: 'long',
     }).format(fromUnixTime(album.createTime));
@@ -118,7 +116,7 @@ export const AlbumCoverHeader = ({
                         </span>
                     )}
 
-                    {photoCount === 0 && !driveAlbumsDisabled && (
+                    {photoCount === 0 && (
                         <>{showAddToAlbumButton && <PhotosAddAlbumPhotosButton onClick={onAddAlbumPhotos} />}</>
                     )}
                 </div>
