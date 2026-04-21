@@ -107,8 +107,8 @@ const SideBySideTable = ({ leftHeader, rightHeader, features, headerClassName }:
                     return (
                         <TableRow key={label}>
                             <TableCell className="w-2/5">
-                                <span className="flex flex-nowrap flex-row items-center gap-2">
-                                    <span className="shrink-0">{icon}</span>
+                                <span className="flex flex-nowrap flex-row items-start gap-2">
+                                    <span className="shrink-0 flex mt-0.5">{icon}</span>
                                     <span className="flex-1">{label}</span>
                                 </span>
                             </TableCell>
