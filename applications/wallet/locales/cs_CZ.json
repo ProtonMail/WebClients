@@ -95,7 +95,7 @@
         "Pokračovat"
       ],
       "Continue to ${ planOrAppName }": [
-        "Pokračujte na ${ planOrAppName }"
+        "Pokračovat na ${ planOrAppName }"
       ],
       "Copy address": [
         "Kopírovat adresu"
@@ -2314,6 +2314,9 @@
       "Checkout expired, please try again": [
         "Objednávka vypršela, zkuste to prosím znovu"
       ],
+      "Company name or personal name is required": [
+        "Je nutné zadat název společnosti nebo jméno osoby"
+      ],
       "Contact could not be saved": [
         "Kontakt se nepodařilo uložit"
       ],
@@ -2334,6 +2337,9 @@
       ],
       "Error connecting to the Bitcoin API.": [
         "Chyba při připojování k Bitcoin API."
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Nepodařilo se načíst údaje o předplatném. Zkuste to prosím později."
       ],
       "Incorrect username": [
         "Nesprávné uživatelské jméno"
@@ -2422,6 +2428,9 @@
       "Request timed out": [
         "Vypršel časový limit žádosti"
       ],
+      "Reverse charge scheme is not supported for this plan": [
+        "U tohoto tarifu není podporován režim přenesení daňové povinnosti"
+      ],
       "Signature verification failed": [
         "Ověření podpisu selhalo"
       ],
@@ -2472,6 +2481,9 @@
       ],
       "Username must end with a letter or digit": [
         "Uživatelské jméno musí končit písmenem nebo číslicí"
+      ],
+      "Wrong billing address": [
+        "Nesprávná fakturační adresa"
       ]
     },
     "Error message": {
@@ -2737,6 +2749,9 @@
       "${ LUMO_APP_NAME } includes ${ BRAND_NAME } Scribe writing assistant": [
         "${ LUMO_APP_NAME } obsahuje ${ BRAND_NAME } asistenta psaní Scribe"
       ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } je řešení pro videokonference s koncovým šifrováním. Přidejte si jej do svého tarifu a pořádejte bezpečné schůzky."
+      ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } licencí"
       ],
@@ -2914,8 +2929,14 @@
       "Everything in ${ planOrAppName }": [
         "Vše v ${ planOrAppName }"
       ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Vše v ${ planOrAppName } plus:"
+      ],
       "Expired": [
         "Platnost vypršela"
+      ],
+      "for ${ price }": [
+        "za ${ price }"
       ],
       "Google Pay mark": [
         "Značka Google Pay"
@@ -3208,6 +3229,9 @@
       "Your ${ plan } subscription will be replaced with ${ PASS_SHORT_APP_NAME } Lifetime. The remaining balance of your subscription will be added to your account. ${ PASS_SHORT_APP_NAME } lifetime deal has no renewal price, it's a one-time payment for lifetime access to ${ PASS_SHORT_APP_NAME }.": [
         "Vaše předplatné ${ plan } bude nahrazeno doživotním předplatným ${ PASS_SHORT_APP_NAME }. Zbývající část předplatného bude připsána na váš účet. Doživotní nabídka ${ PASS_SHORT_APP_NAME } nemá cenu za obnovení, jedná se o jednorázovou platbu za doživotní přístup k ${ PASS_SHORT_APP_NAME }."
       ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Váš účet je v současné době nastaven tak, aby využíval režim přenesení daňové povinnosti. Tento režim není u vybraného tarifu podporován. Chcete-li pokračovat, odstraňte DIČ z fakturační adresy nebo vyberte jiný tarif."
+      ],
       "Your checkout has opened in a new tab. Please complete your payment there and return to this page when finished.": [
         "Vaše platba se otevřela na nové záložce. Dokončete prosím platbu tam a potom se vraťte na tuto stránku."
       ],
@@ -3276,6 +3300,9 @@
       "Account holder": [
         "Majitel účtu"
       ],
+      "Additional comments": [
+        "Další komentáře"
+      ],
       "Address": [
         "Adresa"
       ],
@@ -3337,7 +3364,7 @@
         "Název společnosti"
       ],
       "Continue cancelling": [
-        "Pokračovat ve zrušení"
+        "Pokračovat v rušení"
       ],
       "Copy": [
         "Kopírovat"
@@ -3399,6 +3426,9 @@
       "Main": [
         "Hlavní"
       ],
+      "Main reason for cancelling": [
+        "Hlavní důvod zrušení"
+      ],
       "Navigation": [
         "Navigace"
       ],
@@ -3446,6 +3476,9 @@
       ],
       "Sign message": [
         "Podepsat zprávu"
+      ],
+      "Skip feedback": [
+        "Přeskočit zpětnou vazbu"
       ],
       "Start date": [
         "Datum zahájení"
@@ -3619,6 +3652,9 @@
       ]
     },
     "meet_2025: Addon": {
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } licence"
+      ],
       "${ MEET_APP_NAME } seats": [
         "${ MEET_APP_NAME } licencí"
       ],
@@ -3663,6 +3699,9 @@
       "End-to-end encrypted screen sharing and ephemeral in-call chat": [
         "Sdílení obrazovky s koncovým šifrováním a dočasný chat během hovoru"
       ],
+      "Hosts can record meetings locally on their computers": [
+        "Organizátoři mohou schůzky nahrávat lokálně na svých počítačích"
+      ],
       "Meeting recording": [
         "Nahrávání schůzky"
       ],
@@ -3700,6 +3739,9 @@
         "včetně ${ seats } licencí",
         "včetně ${ seats } licencí",
         "včetně ${ seats } licencí"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Můžete mít až ${ TRIAL_MAX_MEET_SEATS } licencí ${ MEET_SHORT_APP_NAME } během zkušební doby."
       ]
     },
     "New Label form": {
@@ -3966,8 +4008,8 @@
       "Data retention policies": [
         "Zásady uchovávání dat"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Dedikované servery optimalizované pro streamování"
+      "Dedicated servers optimized for speed": [
+        "Dedikované servery optimalizované pro rychlost"
       ],
       "Desktop app": [
         "Desktopová aplikace"
@@ -4790,6 +4832,9 @@
       "During this time, you will not be able to modify or cancel your subscription. Please wait until your payment is completed before attempting any changes. Thank you for your patience.": [
         "Během této doby nebudete moci předplatné upravit ani zrušit. Než se pokusíte provést jakékoli změny, počkejte, dokud nebude platba dokončena. Děkujeme vám za trpělivost."
       ],
+      "Edit billing address": [
+        "Upravit fakturační adresu"
+      ],
       "Got it": [
         "Rozumím"
       ],
@@ -4891,6 +4936,9 @@
       ],
       "VAT number": [
         "DIČ"
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Platí mechanismus přenesení daňové povinnosti."
       ],
       "You already have a subscription to this plan.": [
         "Již máte předplatné tohoto tarifu."
@@ -5054,7 +5102,7 @@
         "Např., "
       ],
       "Enter a name": [
-        "Zadejte název"
+        "Zadejte jméno"
       ],
       "Enter a passphrase or leave empty": [
         "Zadejte heslo nebo nechte prázdné"
@@ -5091,6 +5139,9 @@
       ],
       "Select": [
         "Vybrat"
+      ],
+      "Select a provider": [
+        "Vybrat poskytovatele"
       ],
       "Select a reason": [
         "Vyberte důvod"
@@ -5147,6 +5198,21 @@
       ]
     },
     "Provider option": {
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Ostatní"
+      ],
+      "Outlook": [
+        "Outlook"
+      ],
       "Yahoo": [
         "Yahoo"
       ]
