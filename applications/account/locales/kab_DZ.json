@@ -231,6 +231,9 @@
       "Create folder": [
         "Snulfu-d akaram"
       ],
+      "Create free account now": [
+        "Snulfu-d amiḍan ilelli tura"
+      ],
       "Create Gateway": [
         "Rnu tanezgert"
       ],
@@ -3091,9 +3094,6 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Rme ma ulac aɣilif asefrek n ddeqs n yiseqdacen send ad ternuḍ iseqdacen ar tuddsa-ik."
       ],
-      "Please generate keys before you try to change your password": [
-        "Ttxil sirew-d tisura send ad tɛerḍeḍ ad tbeddeleḍ awal-inek n uɛeddi"
-      ],
       "Please select a country": [
         "Ttxil-k·m fren tamurt"
       ],
@@ -3875,6 +3875,9 @@
     "Go to sign in": {
       "Already have an account? ${ signIn }": [
         "Tesɛiḍ yakan amiḍan? ${ signIn }"
+      ],
+      "Already have an account? ${ signIn } or ${ switchAccount }": [
+        "Tesɛiḍ yakan amiḍan? ${ signIn } neɣ ${ switchAccount }"
       ]
     },
     "Go to sign up": {
@@ -4012,6 +4015,11 @@
       ],
       "Value / Data / Points to": [
         "Azal / Isefka / Ad iwehhi ar"
+      ]
+    },
+    "Header for table": {
+      "Email address": [
+        "Tansa n yimayl"
       ]
     },
     "Heading": {
@@ -5183,6 +5191,9 @@
       ],
       "Show original message": [
         "Sken izen anaṣli"
+      ],
+      "Sign in": [
+        "Kcem"
       ],
       "Sign in or create an account to continue.": [
         "Qqen neɣ rnu amiḍan i wakken ad tkemmleḍ."
@@ -6789,9 +6800,6 @@
       "clearing your browser cache": [
         "asfaḍ n tuffirt n iminig"
       ],
-      "Common sign in issues": [
-        "Uguren n tuqqna i d-yettuɣalen"
-      ],
       "Common sign up issues": [
         "Uguren n tuffɣa i d-yettuɣalen"
       ],
@@ -7031,6 +7039,11 @@
     "mailtrial2024: Info": {
       "Get ${ planTitle } for ${ discountedPriceElement }": [
         "Awi ${ planTitle } i ${ discountedPriceElement }"
+      ]
+    },
+    "meet_2025: Info": {
+      "Secure calendar": [
+        "Aɣawas aɣelsan"
       ]
     },
     "Member action": {
@@ -7964,9 +7977,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Contact us": [
-        "Nermes-aɣ-d"
-      ],
       "Continue": [
         "Kemmel"
       ],
@@ -8508,6 +8518,9 @@
       "Download ${ size }": [
         "Sader ${ size }"
       ],
+      "Email address": [
+        "Tansa n yimayl"
+      ],
       "Invalid code": [
         "Yir tangalt"
       ],
@@ -8593,11 +8606,6 @@
       ],
       "Reset password": [
         "Ales awennez n wawal uffir"
-      ]
-    },
-    "session_recovery:available:error": {
-      "Please generate keys before you try to change your password": [
-        "Ttxil sirew-d tisura send ad tɛerḍeḍ ad tbeddeleḍ awal-inek n uɛeddi"
       ]
     },
     "session_recovery:available:info": {
@@ -8718,6 +8726,9 @@
       ]
     },
     "Signup": {
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } n yismawen-is hide-my-email mgal spam"
+      ],
       "${ maxAddresses } address": [
         "${ maxAddresses } tansa",
         "${ maxAddresses } tansiwin"
@@ -8729,6 +8740,9 @@
       "${ maxCalendars } calendar": [
         "${ maxCalendars } uwitay",
         "${ maxCalendars } yiwitayen"
+      ],
+      "${ totalDriveStorageSize } cloud storage for files and photos": [
+        "Aklas n usigna n ${ totalDriveStorageSize } i yifuyla d tugniwin"
       ],
       "${ VPN_CONNECTIONS } high-speed VPN connection": [
         "${ VPN_CONNECTIONS } n tuqqna VPN s urured ɛlayen",
@@ -8746,14 +8760,29 @@
       "24 months": [
         "24 wayyuren"
       ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "Fren tansa taɣelsant n ${ MAIL_APP_NAME } akken ad tebduḍ"
+      ],
+      "Collaborative documents and spreadsheets": [
+        "Isemliyen n uttekki d tikaṛḍiwin n usiḍen"
+      ],
       "Continue with ${ PLAN_NAMES[plan] }": [
         "Kemmel s ${ PLAN_NAMES[plan] }"
+      ],
+      "Encrypted email with ${ totalMailStorageSize } storage": [
+        "Imayl yettwawgelhen s waklas n ${ totalMailStorageSize }"
       ],
       "End-to-end encryption": [
         "Awgelhen seg yixef ɣer yixef"
       ],
+      "Every free account comes with:": [
+        "Yal amiḍan ilelli yesɛa:"
+      ],
       "Free": [
         "Baṭel"
+      ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "Ḥrez idiwenniten-ik d usligen s ${ MAIL_APP_NAME }"
       ],
       "Monthly": [
         "S waggur"
@@ -8761,11 +8790,23 @@
       "Most popular": [
         "Ittwassen aṭas"
       ],
+      "Password manager for all your devices": [
+        "Amsefrak n password i yibenkan-ik akk"
+      ],
+      "Password-protected messages": [
+        "Izen yettwammestnen s wawal uffir"
+      ],
+      "Private AI assistant with encrypted chat history": [
+        "Amallal IA uslig s umezruy n udiwenni yettwawgelhen"
+      ],
       "Save ${ percentage }%": [
         "Sekles ${ percentage }%"
       ],
       "Save ${ priceDifferenceString }": [
         "Sekles ${ priceDifferenceString }"
+      ],
+      "Secure calendar": [
+        "Aɣawas aɣelsan"
       ],
       "Select ${ title }": [
         "Fren ${ title }"
@@ -8779,6 +8820,9 @@
       "Set your password": [
         "Sbadu awal-ik uffir"
       ],
+      "Sign up to get everything ${ BRAND_NAME } has to offer": [
+        "Jerred akken ad tesɛuḍ akk ayen i d-yettak ${ BRAND_NAME }"
+      ],
       "Total": [
         "Asemday"
       ],
@@ -8788,8 +8832,18 @@
       "Up to 6 users": [
         "Armi d 6 n iseqdacen"
       ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "VPN s yiqeddacen deg ${ vpnServersCountData.free.countries } tmura"
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
+        "VPN s yiqeddacen deg ${ vpnServersCountData.free.countries } tmurt",
+        "VPN s yiqeddacen deg ${ vpnServersCountData.free.countries } tmura"
+      ],
       "Yearly": [
         "S useggas"
+      ],
+      "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
+        "Amiḍan-ik yesɛa anekcum ɣer timahilin tilelliyin deg ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } akked ${ LUMO_SHORT_APP_NAME }."
       ],
       "Your plan": [
         "Aɣawas-ik·im"
@@ -9960,6 +10014,9 @@
       ],
       "Forgot password": [
         "Tettud awal uffir"
+      ],
+      "Free": [
+        "Ilelli"
       ],
       "Gateway": [
         "Tanezgert"

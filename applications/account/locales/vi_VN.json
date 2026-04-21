@@ -6428,9 +6428,6 @@
       "Please fix the highlighted conflict to proceed.": [
         "Vui lòng sửa xung đột được tô sáng để tiếp tục."
       ],
-      "Please generate keys before you try to change your password": [
-        "Hãy tạo các khóa trước khi bạn thử đổi mật khẩu"
-      ],
       "Please select a country": [
         "Vui lòng chọn một quốc gia"
       ],
@@ -13841,9 +13838,6 @@
       "clearing your browser cache": [
         "xóa bộ nhớ đệm trình duyệt"
       ],
-      "Common sign in issues": [
-        "Các vấn đề đăng nhập thường gặp"
-      ],
       "Common sign up issues": [
         "Các sự cố đăng ký thường gặp"
       ],
@@ -14989,9 +14983,6 @@
       ],
       "Dedicated servers and IP": [
         "Máy chủ và IP riêng biệt"
-      ],
-      "Dedicated servers optimized for streaming": [
-        "Máy chủ chuyên dụng tối ưu cho phát trực tuyến"
       ],
       "Desktop app": [
         "Ứng dụng cho máy tính để bàn"
@@ -16620,9 +16611,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Contact us": [
-        "Liên hệ với chúng tôi"
-      ],
       "Continue": [
         "Tiếp tục"
       ],
@@ -16649,9 +16637,6 @@
       ],
       "Or ${ createANewAccount }": [
         "Hoặc ${ createANewAccount }"
-      ],
-      "Request trial": [
-        "Yêu cầu bản dùng thử"
       ],
       "Start using ${ appName }": [
         "Bắt đầu sử dụng ${ appName }"
@@ -16891,9 +16876,6 @@
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Bắt đầu sử dụng ${ PASS_APP_NAME }"
-      ],
-      "Tailored made solutions for larger organizations with custom needs.": [
-        "Các giải pháp được thiết kế riêng cho các tổ chức lớn hơn với nhu cầu tùy chỉnh."
       ],
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "Ưu đãi bạn chọn không khả dụng cho người đăng ký ${ currentPlanTitle }."
@@ -18807,9 +18789,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "Khôi phục tài khoản không khả dụng cho các khóa địa chỉ cũ"
-      ],
-      "Please generate keys before you try to change your password": [
-        "Hãy tạo các khóa trước khi thử đổi mật khẩu"
       ]
     },
     "session_recovery:available:info": {
@@ -19187,6 +19166,9 @@
       "${ FREE_PASS_ALIASES } hide-my-email alias to fight spam": [
         "${ FREE_PASS_ALIASES } biệt danh hide-my-email để chống thư rác"
       ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } biệt danh email hide-my-email để chống thư rác"
+      ],
       "${ maxAddresses } address": [
         "${ maxAddresses } địa chỉ"
       ],
@@ -19262,6 +19244,9 @@
       "Bundle": [
         "Gói"
       ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "Chọn một địa chỉ ${ MAIL_APP_NAME } bảo mật để bắt đầu"
+      ],
       "Collaborative document editing": [
         "Chỉnh sửa tài liệu cộng tác"
       ],
@@ -19319,6 +19304,9 @@
       "Gifted by **${ referrerName }**": [
         "Được tặng bởi **${ referrerName }**"
       ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "Giữ các cuộc hội thoại luôn riêng tư với ${ MAIL_APP_NAME }"
+      ],
       "Manage user access": [
         "Quản lý quyền truy cập người dùng"
       ],
@@ -19343,6 +19331,9 @@
       "Password manager for all your devices": [
         "Trình quản lý mật khẩu cho tất cả thiết bị"
       ],
+      "Password-protected messages": [
+        "Thư được bảo vệ bằng mật khẩu"
+      ],
       "Pick your perfect plan": [
         "Chọn gói hoàn hảo cho bạn"
       ],
@@ -19360,6 +19351,9 @@
       ],
       "Secure ${ VPN_CONNECTIONS } device at a time": [
         "Bảo vệ ${ VPN_CONNECTIONS } thiết bị cùng lúc"
+      ],
+      "Secure calendar": [
+        "Lịch bảo mật"
       ],
       "Secure file sharing": [
         "Chia sẻ tệp bảo mật"
@@ -19457,6 +19451,9 @@
       "use your own email.": [
         "sử dụng email của riêng bạn."
       ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "VPN với máy chủ tại ${ vpnServersCountData.free.countries } quốc gia"
+      ],
       "VPN with servers in ${ vpnServersCountData.free.countries } country": [
         "VPN với máy chủ tại ${ vpnServersCountData.free.countries } quốc gia"
       ],
@@ -19465,6 +19462,9 @@
       ],
       "Yearly": [
         "Hàng năm"
+      ],
+      "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
+        "Tài khoản bao gồm quyền truy cập vào các tính năng miễn phí của ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } và ${ LUMO_SHORT_APP_NAME }."
       ],
       "Your plan": [
         "Gói của bạn"

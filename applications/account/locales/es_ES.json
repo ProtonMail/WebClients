@@ -310,9 +310,6 @@
       "Connected": [
         "Conectado"
       ],
-      "Contact sales": [
-        "Contactar con ventas"
-      ],
       "Contact support": [
         "Contactar con soporte"
       ],
@@ -426,9 +423,6 @@
       ],
       "Delete account": [
         "Eliminar la cuenta"
-      ],
-      "Delete and confirm": [
-        "Eliminar y confirmar"
       ],
       "Delete filter “${ Name }”": [
         "Eliminar el filtro \"${ Name }\""
@@ -4719,6 +4713,9 @@
       "Make your email footer your own — showcase your unique brand, not ours.": [
         "Personaliza el pie de página de tu correo electrónico - muestra tu propia marca, no la nuestra."
       ],
+      "Most issues can be solved in a few minutes with our step-by-step guides.": [
+        "La mayoría de los problemas se resuelven en cuestión de minutos con nuestras guías paso a paso."
+      ],
       "No one in your organization can connect to shared servers.": [
         "Nadie en tu organización puede conectarse a servidores compartidos."
       ],
@@ -4730,6 +4727,9 @@
       ],
       "Simplify syncing and scheduling with shared calendars.": [
         "Simplifica la sincronización y la programación con calendarios compartidos."
+      ],
+      "Still need help? Our support team is here for you.": [
+        "¿Aún necesitas ayuda? Nuestro equipo de asistencia está aquí para ayudarte."
       ],
       "To import via a CSV and VCF file, ensure the file does not exceed ${ MAX_IMPORT_FILE_SIZE_STRING } or ${ maxContactString } contacts. If your file is bigger, please split it into smaller files. ${ learnMoreLink }.": [
         "Para importar mediante un archivo CSV o VCF, asegúrate de que este no supere los ${ MAX_IMPORT_FILE_SIZE_STRING } o los ${ maxContactString } contactos. Si el archivo es más grande, divídelo en varios archivos más pequeños. ${ learnMoreLink }."
@@ -6483,9 +6483,6 @@
         "Arregla el conflicto resaltado para continuar.",
         "Arregla los conflictos resaltados para continuar."
       ],
-      "Please generate keys before you try to change your password": [
-        "Genera claves antes de intentar cambiar tu contraseña."
-      ],
       "Please select a country": [
         "Selecciona un país"
       ],
@@ -7850,6 +7847,17 @@
         "Tu prueba gratuita de la aplicación de escritorio ha finalizado."
       ]
     },
+    "Get help": {
+      "Continue cancelling": [
+        "Continuar cancelando"
+      ],
+      "Keep current plan": [
+        "Mantener el plan actual"
+      ],
+      "Many issues can be resolved quickly with our help guides. If you need more support, our team is here to help.": [
+        "Muchos problemas se pueden resolver rápidamente con nuestras guías de ayuda. Si necesitas más asistencia, nuestro equipo está aquí para ayudarte."
+      ]
+    },
     "Get started checklist instructions": {
       "${ appName } on App Store": [
         "${ appName } en App Store"
@@ -8591,9 +8599,6 @@
       ],
       "${ discountPercent }% discount": [
         "${ discountPercent }% de descuento"
-      ],
-      "${ DRIVE_APP_NAME } will no longer keep previous versions of your files.": [
-        "${ DRIVE_APP_NAME } dejará de guardar las versiones anteriores de tus archivos."
       ],
       "${ emailAddress } is invalid": [
         "${ emailAddress } no es válida."
@@ -9718,9 +9723,6 @@
       ],
       "for ${ price }": [
         "por ${ price }"
-      ],
-      "For a 10-year version history, please contact our sales team.": [
-        "Para obtener un historial de versiones de 10 años, ponte en contacto con nuestro equipo de ventas."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Para acceder a tu correo electrónico en cualquier momento y disfrutar de una experiencia móvil optimizada, descarga nuestra aplicación desde ${ androidAppLink } o ${ iosAppLink }."
@@ -11085,12 +11087,6 @@
       "This verification can take up to one hour. After successful verification, do not remove the TXT record as it is needed to confirm that you continue to own the domain.": [
         "Esta verificación puede tomar hasta una hora. Después de la verificación, no elimines el registro TXT, ya que se necesita para confirmar que continúas siendo el propietario del dominio."
       ],
-      "This will delete all previous versions of your files older than ${ rententionLabel }.": [
-        "Se eliminarán todas las versiones de tus archivos anteriores a ${ rententionLabel }."
-      ],
-      "This will delete all previous versions of your files.": [
-        "Se eliminarán todas las versiones anteriores de tus archivos."
-      ],
       "This will deny access to **${ email }**. Are you sure you want to continue?": [
         "Esto denegará el acceso a **${ email }**. ¿Estás seguro de que deseas continuar?"
       ],
@@ -11283,9 +11279,6 @@
       "Upgrade to keep your ${ planTitle } benefits.": [
         "Mejora para mantener tus beneficios de ${ planTitle }."
       ],
-      "Upgrade to unlock": [
-        "Pásate a un plan superior para desbloquear"
-      ],
       "Upgrade to unlock the ${ monitorLink }.": [
         "Pásate a un plan superior para desbloquear ${ monitorLink }."
       ],
@@ -11387,9 +11380,6 @@
       ],
       "Version ${ version }": [
         "Versión ${ version }"
-      ],
-      "Version history": [
-        "Historial de versiones"
       ],
       "Version number successfully copied to clipboard": [
         "El número de versión fue copiado en el portapapeles."
@@ -12941,9 +12931,6 @@
       "Don't ask again": [
         "No preguntar de nuevo"
       ],
-      "Don't keep versions": [
-        "No guardar versiones"
-      ],
       "Don't show this again": [
         "No mostrar esto de nuevo"
       ],
@@ -13983,6 +13970,9 @@
       "${ BRAND_NAME } Foundation's": [
         "de la Fundación ${ BRAND_NAME }"
       ],
+      "Account recovery explained": [
+        "Explicación de la recuperación de cuenta"
+      ],
       "Activity log": [
         "Registro de actividad"
       ],
@@ -14010,11 +14000,11 @@
       "clearing your browser cache": [
         "limpiando la memoria caché de tu navegador"
       ],
-      "Common sign in issues": [
-        "Problemas comunes de inicio de sesión"
-      ],
       "Common sign up issues": [
         "Problemas comunes de registro"
+      ],
+      "Contact support": [
+        "Contacte con Soporte"
       ],
       "Create account": [
         "Crear cuenta"
@@ -14189,6 +14179,9 @@
       ],
       "visit our blog": [
         "visitar nuestro blog"
+      ],
+      "Visit our support site": [
+        "Visita nuestro centro de ayuda"
       ],
       "What is the difference between UDP and TCP protocols?": [
         "¿Cuál es la diferencia entre los protocolos UDP y TCP?"
@@ -15271,8 +15264,8 @@
       "Dedicated servers and IP": [
         "Servidores e IP dedicados"
       ],
-      "Dedicated servers optimized for streaming": [
-        "Servidores dedicados optimizados para streaming"
+      "Dedicated servers optimized for speed": [
+        "Servidores dedicados optimizados para la velocidad"
       ],
       "Desktop app": [
         "Aplicación de escritorio"
@@ -16846,9 +16839,6 @@
       "Buy now": [
         "Comprar ahora"
       ],
-      "Contact us": [
-        "Contáctanos"
-      ],
       "Continue": [
         "Continuar"
       ],
@@ -16875,9 +16865,6 @@
       ],
       "Or ${ createANewAccount }": [
         "O ${ createANewAccount }"
-      ],
-      "Request trial": [
-        "Solicitar una prueba gratuita"
       ],
       "Start using ${ appName }": [
         "Comienza a utilizar ${ appName }"
@@ -17120,9 +17107,6 @@
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Comenzar con ${ PASS_APP_NAME }"
-      ],
-      "Tailored made solutions for larger organizations with custom needs.": [
-        "Soluciones a la medida para organizaciones más grandes con necesidades personalizadas."
       ],
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "La oferta que has seleccionado no se encuentra disponible para los suscriptores de ${ currentPlanTitle }."
@@ -19227,9 +19211,6 @@
     "session_recovery:available:error": {
       "Account recovery not available for legacy address keys": [
         "La recuperación de la cuenta no está disponible para claves de direcciones heredadas."
-      ],
-      "Please generate keys before you try to change your password": [
-        "Genera claves antes de intentar cambiar tu contraseña."
       ]
     },
     "session_recovery:available:info": {
@@ -19521,11 +19502,6 @@
         "Solicitud de restablecimiento de contraseña"
       ]
     },
-    "Setting": {
-      "Enable Photos section": [
-        "Activar la sección Fotos"
-      ]
-    },
     "Settings description": {
       "Keep your inbox organized with folders and labels. ${ learnMoreLink }": [
         "Organiza tu bandeja de entrada con carpetas y etiquetas. ${ learnMoreLink }"
@@ -19632,6 +19608,9 @@
         "${ FREE_PASS_ALIASES } alias de hide-my-email para combatir el spam",
         "${ FREE_PASS_ALIASES } alias de hide-my-email para combatir el spam"
       ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } alias de hide-my-email para combatir el spam"
+      ],
       "${ maxAddresses } address": [
         "${ maxAddresses } dirección",
         "${ maxAddresses } direcciones"
@@ -19726,6 +19705,9 @@
       "Bundle": [
         "Paquete"
       ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "Elige una dirección segura de ${ MAIL_APP_NAME } para empezar"
+      ],
       "Collaborative document editing": [
         "Edición colaborativa de documentos"
       ],
@@ -19789,6 +19771,9 @@
       "Gifted by **${ referrerName }**": [
         "Regalado por **${ referrerName }**"
       ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "Mantén tus conversaciones privadas con ${ MAIL_APP_NAME }"
+      ],
       "Manage user access": [
         "Administrar el acceso de los usuarios"
       ],
@@ -19812,6 +19797,9 @@
       ],
       "Password manager for all your devices": [
         "Gestor de contraseñas para todos tus dispositivos"
+      ],
+      "Password-protected messages": [
+        "Mensajes protegidos con contraseña"
       ],
       "Pick a service to get started.": [
         "Selecciona un servicio para empezar."
@@ -19837,6 +19825,9 @@
       "Secure ${ VPN_CONNECTIONS } device at a time": [
         "Protege ${ VPN_CONNECTIONS } dispositivo a la vez",
         "Protege ${ VPN_CONNECTIONS } dispositivos a la vez"
+      ],
+      "Secure calendar": [
+        "Calendario seguro"
       ],
       "Secure file sharing": [
         "Intercambio de archivos seguro"
@@ -19946,6 +19937,9 @@
       "use your own email.": [
         "usa tu propio correo electrónico."
       ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "VPN con servidores en ${ vpnServersCountData.free.countries } países"
+      ],
       "VPN with servers in ${ vpnServersCountData.free.countries } country": [
         "VPN con servidores en ${ vpnServersCountData.free.countries } país",
         "VPN con servidores en ${ vpnServersCountData.free.countries } países"
@@ -19958,6 +19952,9 @@
       ],
       "You are all set": [
         "Todo listo"
+      ],
+      "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
+        "Tu cuenta incluye acceso a las funciones gratuitas de ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } y ${ LUMO_SHORT_APP_NAME }."
       ],
       "Your plan": [
         "Tu plan"
@@ -22325,9 +22322,6 @@
       "Delete user?": [
         "¿Eliminar usuario?"
       ],
-      "Delete version history?": [
-        "¿Eliminar el historial de versiones?"
-      ],
       "Deny access to user?": [
         "¿Denegar acceso al usuario?"
       ],
@@ -22604,6 +22598,12 @@
       ],
       "Get complete privacy coverage": [
         "Obtén una cobertura de privacidad completa"
+      ],
+      "Get direct support": [
+        "Obtén asistencia directa"
+      ],
+      "Get help with an issue": [
+        "Obtén ayuda con un problema"
       ],
       "Get more from your cloud storage": [
         "Saca más provecho de tu almacenamiento en la nube"
@@ -23257,6 +23257,9 @@
       ],
       "To preview this spreadsheet, open it in ${ SHEETS_APP_NAME } or download it.": [
         "Para previsualizar esta hoja de cálculo, ábrela en ${ SHEETS_APP_NAME } o descárgala."
+      ],
+      "Troubleshoot your issue": [
+        "Soluciona tu problema"
       ],
       "Try ${ AUTHENTICATOR_APP_NAME }": [
         "Prueba ${ AUTHENTICATOR_APP_NAME }"

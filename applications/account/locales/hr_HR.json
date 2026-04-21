@@ -242,6 +242,9 @@
       "Create folder": [
         "Stvori mapu"
       ],
+      "Create free account now": [
+        "Izradite besplatni korisnički račun odmah"
+      ],
       "Create Gateway": [
         "Stvori pristupnik"
       ],
@@ -3600,9 +3603,6 @@
       "Please enable multi-user support before adding users to your organization.": [
         "Molimo vas da omogućite višekorisničku podršku prije dodavanja korisnika u vašu organizaciju."
       ],
-      "Please generate keys before you try to change your password": [
-        "Molimo generirajte ključeve prije nego što pokušate promijeniti svoju lozinku"
-      ],
       "Please select a country": [
         "Molimo odaberite državu"
       ],
@@ -4598,6 +4598,11 @@
       ],
       "Value / Data / Points to": [
         "Vrijednost / Podaci / Ukazuje na"
+      ]
+    },
+    "Header for table": {
+      "Email address": [
+        "E-pošta"
       ]
     },
     "Heading": {
@@ -5890,6 +5895,9 @@
       ],
       "Show original message": [
         "Prikaži originalnu poruku"
+      ],
+      "Sign in": [
+        "Prijava"
       ],
       "Signed up": [
         "Registriran/a"
@@ -7721,9 +7729,6 @@
       "clearing your browser cache": [
         "čišćenje predmemorije preglednika"
       ],
-      "Common sign in issues": [
-        "Najčešći problemi s prijavom"
-      ],
       "Common sign up issues": [
         "Najčešći problemi s registracijom"
       ],
@@ -7966,6 +7971,11 @@
     "Maintenance mode": {
       "This feature is temporarily unavailable": [
         "Ova značajka je privremeno nedostupna"
+      ]
+    },
+    "meet_2025: Info": {
+      "Secure calendar": [
+        "Siguran kalendar"
       ]
     },
     "Member action": {
@@ -9188,9 +9198,6 @@
       ]
     },
     "pass_signup_2023: Action": {
-      "Contact us": [
-        "Kontaktirajte nas"
-      ],
       "Continue": [
         "Nastavi"
       ],
@@ -9205,9 +9212,6 @@
       ],
       "Keep this plan": [
         "Zadržite ovaj plan"
-      ],
-      "Request trial": [
-        "Zatraži probu"
       ],
       "Start using ${ appName }": [
         "Započnite koristiti ${ appName }"
@@ -9339,9 +9343,6 @@
       ],
       "Start using ${ PASS_APP_NAME }": [
         "Započnite koristiti ${ PASS_APP_NAME }"
-      ],
-      "Tailored made solutions for larger organizations with custom needs.": [
-        "Rješenja po mjeri za veće organizacije s prilagođenim zahtjevima."
       ],
       "The offer you selected is not available for ${ currentPlanTitle } subscribers.": [
         "Ponuda koju ste odabrali nije dostupna za pretplatnike ${ currentPlanTitle }."
@@ -10054,6 +10055,9 @@
       "Download ${ size }": [
         "Preuzmi ${ size }"
       ],
+      "Email address": [
+        "E-pošta"
+      ],
       "Enable recovery by email": [
         "Omogući oporavak putem e-pošte"
       ],
@@ -10295,11 +10299,6 @@
         "Ponovno postavljanje lozinke"
       ]
     },
-    "session_recovery:available:error": {
-      "Please generate keys before you try to change your password": [
-        "Molimo generirajte ključeve prije nego što pokušate promijeniti svoju lozinku"
-      ]
-    },
     "session_recovery:available:info": {
       "${ timeRemaining.inDays } day": [
         "${ timeRemaining.inDays } dan",
@@ -10518,6 +10517,9 @@
       "${ DRIVE_APP_NAME } for Business": [
         "${ DRIVE_APP_NAME } za posao"
       ],
+      "${ FREE_PASS_ALIASES } hide-my-email aliases to fight spam": [
+        "${ FREE_PASS_ALIASES } hide-my-email pseudonima za zaštitu od neželjene pošte"
+      ],
       "${ totalDriveStorageSize } cloud storage for files and photos": [
         "${ totalDriveStorageSize } pohrane na oblaku za datoteke i fotografije"
       ],
@@ -10547,8 +10549,14 @@
       "Block ads, trackers, and malware": [
         "Blokirajte oglase, pratitelje i zlonamjerne programe"
       ],
+      "Choose a secure ${ MAIL_APP_NAME } address to get started": [
+        "Odaberite sigurnu ${ MAIL_APP_NAME } adresu da biste započeli"
+      ],
       "Collaborative document editing": [
         "Zajedničko uređivanje dokumenata"
+      ],
+      "Collaborative documents and spreadsheets": [
+        "Dokumenti i proračunske tablice za suradnju"
       ],
       "Compare plans": [
         "Usporedi pretplate"
@@ -10565,11 +10573,17 @@
       "End-to-end encryption": [
         "Krajnje šifriranje"
       ],
+      "Every free account comes with:": [
+        "Svaki besplatni korisnički račun uključuje:"
+      ],
       "Free": [
         "Free"
       ],
       "Free for ${ TRIAL_DURATION_DAYS } days": [
         "Besplatno ${ TRIAL_DURATION_DAYS } dana"
+      ],
+      "Keep your conversations private with ${ MAIL_APP_NAME }": [
+        "Neka vaši razgovori ostanu privatni uz ${ MAIL_APP_NAME }"
       ],
       "Monthly": [
         "Mjesečno"
@@ -10586,11 +10600,23 @@
       "Online document editor": [
         "Online uređivač dokumenata"
       ],
+      "Password manager for all your devices": [
+        "Upravitelj lozinkama za sve vaše uređaje"
+      ],
+      "Password-protected messages": [
+        "Poruke zaštićene lozinkom"
+      ],
+      "Private AI assistant with encrypted chat history": [
+        "Privatni AI asistent sa šifriranom poviješću razgovora"
+      ],
       "Save ${ percentage }%": [
         "Uštedite ${ percentage }%"
       ],
       "Save ${ priceDifferenceString }": [
         "Uštedite ${ priceDifferenceString }"
+      ],
+      "Secure calendar": [
+        "Siguran kalendar"
       ],
       "Select ${ title }": [
         "Odaberite ${ title }"
@@ -10606,6 +10632,9 @@
       ],
       "Set your password": [
         "Postavite svoju lozinku"
+      ],
+      "Sign up to get everything ${ BRAND_NAME } has to offer": [
+        "Registrirajte se kako biste dobili sve što ${ BRAND_NAME } nudi"
       ],
       "Sign up, protect your files": [
         "Registrirajte se, zaštitite svoje datoteke"
@@ -10640,8 +10669,19 @@
       "use your own email.": [
         "koristite svoju e-poštu"
       ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } countries": [
+        "VPN s poslužiteljima u ${ vpnServersCountData.free.countries } zemalja"
+      ],
+      "VPN with servers in ${ vpnServersCountData.free.countries } country": [
+        "VPN s poslužiteljima u ${ vpnServersCountData.free.countries } zemlji",
+        "VPN s poslužiteljima u ${ vpnServersCountData.free.countries } zemlje",
+        "VPN s poslužiteljima u ${ vpnServersCountData.free.countries } zemalja"
+      ],
       "Yearly": [
         "Godišnje"
+      ],
+      "Your account includes access to free features in ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } and ${ LUMO_SHORT_APP_NAME }.": [
+        "Vaš korisnički račun uključuje pristup besplatnim značajkama u ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ LUMO_SHORT_APP_NAME }."
       ],
       "Your plan": [
         "Vaša pretplata"
@@ -12092,6 +12132,9 @@
       ],
       "Forward emails": [
         "Preusmjeravanje poruka"
+      ],
+      "Free": [
+        "Besplatni plan"
       ],
       "Gateway": [
         "Pristupnik"
