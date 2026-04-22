@@ -1274,6 +1274,12 @@
       ],
       "Re-index": [
         "Пераіндэксаваць"
+      ],
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "Дадаць у \"${ name }\" (${ photoCount } фатаграфія)",
+        "Дадаць у \"${ name }\" (${ photoCount } фатаграфіі)",
+        "Дадаць у \"${ name }\" (${ photoCount } фатаграфій)",
+        "Дадаць у \"${ name }\" (${ photoCount } фатаграфій)"
       ]
     },
     "Action: Docs": {
@@ -12366,6 +12372,18 @@
       ],
       "Your own short @pm.me email alias": [
         "Кароткі псеўданім электроннай пошты @pm.me"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } і ${ LUMO_APP_NAME } з прэміяльнымі функцыямі"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Відэасустрэчы. Да ${ PAID_PREMIUM_MAX_PARTICIPANTS } удзельніка",
+        "Відэасустрэчы. Да ${ PAID_PREMIUM_MAX_PARTICIPANTS } удзельнікаў",
+        "Відэасустрэчы. Да ${ PAID_PREMIUM_MAX_PARTICIPANTS } удзельнікаў",
+        "Відэасустрэчы. Да ${ PAID_PREMIUM_MAX_PARTICIPANTS } удзельнікаў"
       ]
     },
     "subscription reminder": {
@@ -14228,6 +14246,11 @@
       ],
       "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
         "У вас можа быць да ${ TRIAL_MAX_MEET_SEATS } ліцэнзій ${ MEET_SHORT_APP_NAME } на працягу пробнага перыяду."
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "Альбом паспяхова перайменаваны"
       ]
     }
   }

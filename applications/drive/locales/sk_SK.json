@@ -1274,6 +1274,12 @@
       ],
       "Re-index": [
         "Preindexovať"
+      ],
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "Pridať do \"${ name }\" (${ photoCount } fotografiu)",
+        "Pridať do \"${ name }\" (${ photoCount } fotografie)",
+        "Pridať do \"${ name }\" (${ photoCount } fotografií)",
+        "Pridať do \"${ name }\" (${ photoCount } fotografií)"
       ]
     },
     "Action: Docs": {
@@ -12309,6 +12315,18 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastný skrátený emailový alias @pm.me"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent písania ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } a ${ LUMO_APP_NAME } s prémiovými funkciami"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Videokonferencie, s ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníkom",
+        "Videokonferencie, s ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníkmi",
+        "Videokonferencie, až s ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníkmi",
+        "Videokonferencie, až s ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníkmi"
       ]
     },
     "subscription reminder": {
@@ -14171,6 +14189,11 @@
       ],
       "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
         "Môžete mať až ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } miest počas skúšobného obdobia."
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "Album bol úspešne premenovaný"
       ]
     }
   }
