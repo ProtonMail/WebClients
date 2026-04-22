@@ -41,7 +41,7 @@ interface SidebarProviderProps {
     defaultMode?: SidebarMode;
 }
 
-export const SidebarProvider = ({ children, defaultMode = 'collapsed' }: SidebarProviderProps) => {
+export const SidebarProvider = ({ children, defaultMode = 'expanded' }: SidebarProviderProps) => {
     const { isSmallScreen } = useIsLumoSmallScreen();
     const { setGhostChatMode } = useGhostChat();
 
