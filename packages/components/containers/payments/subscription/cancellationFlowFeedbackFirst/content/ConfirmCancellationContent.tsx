@@ -4,8 +4,6 @@ import { c } from 'ttag';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Href } from '@proton/atoms/Href/Href';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import ModalTwo from '@proton/components/components/modalTwo/Modal';
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
@@ -19,12 +17,12 @@ import { IcPaperClip } from '@proton/icons/icons/IcPaperClip';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { dateLocale } from '@proton/shared/lib/i18n';
 
-interface Props extends ModalProps {
+interface Props {
     onKeepPlan: () => void;
     onCancelSubscription: () => void;
 }
 
-const ConfirmCancellationModal = ({ onKeepPlan, onCancelSubscription, ...modalProps }: Props) => {
+export const ConfirmCancellationContent = ({ onKeepPlan, onCancelSubscription }: Props) => {
     const [subscription] = useSubscription();
 
     const endDate = subscription?.PeriodEnd
@@ -40,7 +38,7 @@ const ConfirmCancellationModal = ({ onKeepPlan, onCancelSubscription, ...modalPr
     ];
 
     return (
-        <ModalTwo className="h-full" size="xlarge" {...modalProps} data-testid="confirm-cancellation-modal">
+        <>
             <ModalTwoHeader title={c('Confirm cancellation').t`Confirm cancellation`} />
             <ModalTwoContent>
                 <p>
@@ -75,8 +73,6 @@ const ConfirmCancellationModal = ({ onKeepPlan, onCancelSubscription, ...modalPr
                     {c('Confirm cancellation').t`Cancel subscription`}
                 </Button>
             </ModalTwoFooter>
-        </ModalTwo>
+        </>
     );
 };
-
-export default ConfirmCancellationModal;

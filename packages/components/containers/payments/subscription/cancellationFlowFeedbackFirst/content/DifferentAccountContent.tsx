@@ -9,7 +9,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import accounts from '@proton/styles/assets/img/illustrations/accounts.svg';
 import envelopeAddress from '@proton/styles/assets/img/illustrations/envelope-address.svg';
-import { CallToActionBanner } from './components/CallToActionBanner';
+import { CallToActionBanner } from '../components/CallToActionBanner';
 
 interface Props {
     onKeepPlan: () => void;
