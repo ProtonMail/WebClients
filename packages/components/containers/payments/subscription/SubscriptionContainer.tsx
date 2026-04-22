@@ -1,7 +1,6 @@
 import type { FormEvent, ReactNode, RefObject } from 'react';
 import { useEffect, useMemo, useRef, useState } from 'react';
 
-import isEqual from 'lodash/isEqual';
 import { c } from 'ttag';
 
 import { useGetOrganization } from '@proton/account/organization/hooks';
@@ -24,7 +23,6 @@ import type { TelemetryPaymentFlow } from '@proton/components/payments/client-ex
 import { useLoading } from '@proton/hooks';
 import { IcGift } from '@proton/icons/icons/IcGift';
 import metrics, { observeApiError } from '@proton/metrics';
-import type { WebPaymentsSubscriptionStepsTotal } from '@proton/metrics/types/web_payments_subscription_steps_total_v1.schema';
 import {
     type AddonGuard,
     Audience,
@@ -60,7 +58,6 @@ import {
     getPlansMap,
     hasDeprecatedVPN,
     hasPlanIDs,
-    isFreeSubscription,
     isSubscriptionCheckForbidden,
     shouldPassIsTrial as shouldPassIsTrialPayments,
     switchPlan,
@@ -73,8 +70,6 @@ import { computeOptimisticSubscriptionMode } from '@proton/payments/core/optimis
 import { InvalidChargebeeCardDataError } from '@proton/payments/core/payment-processors/chargebeeCardPayment';
 import { getAutoCoupon } from '@proton/payments/core/subscription/helpers';
 import { tracePaymentError } from '@proton/payments/sentry/capture';
-import type { SubscriptionModificationStepTelemetry } from '@proton/payments/telemetry/helpers';
-import type { EstimationChangePayload } from '@proton/payments/telemetry/shared-checkout-telemetry';
 import type { SubscriptionModificationChangeAudienceTelemetry } from '@proton/payments/telemetry/subscription-container';
 import { checkoutTelemetry } from '@proton/payments/telemetry/telemetry';
 import { useSubscriptionModificationChangeStepTelemetry } from '@proton/payments/telemetry/useSubscriptionModificationChangeStepTelemetry';
@@ -85,9 +80,9 @@ import { usePaymentPollers } from '@proton/payments/ui/hooks/usePaymentPollers';
 import { CacheType } from '@proton/redux-utilities';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/plans';
-import { APPS, type APP_NAMES } from '@proton/shared/lib/constants';
+import { APPS } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import type { Organization, RequireOnly, UserModel } from '@proton/shared/lib/interfaces';
+import type { Organization, UserModel } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
@@ -117,6 +112,13 @@ import { type SelectedProductPlans, getDefaultSelectedProductPlans } from './hel
 import { getAllowedCycles } from './helpers/getAllowedCycles';
 import { getInitialCycle } from './helpers/getInitialCycle';
 import { getInitialCheckoutStep } from './helpers/initialCheckoutStep';
+import {
+    type SubscriptionCheckoutMetricsOverrides,
+    getCommonTelemetryPayload,
+    getMetricsProps,
+    reportChangeTelemetry,
+    telemetryContext,
+} from './helpers/subscriptionTelemetry';
 import SubscriptionCheckout from './modal-components/SubscriptionCheckout';
 import SubscriptionThanks from './modal-components/SubscriptionThanks';
 import { canShowGiftCodeInput } from './modal-components/helpers/canShowGiftCodeInput';
@@ -126,10 +128,6 @@ import { getCodes, useSubscriptionContainerInnerCheck } from './useSubscriptionC
 import useSubscriptionModalTelemetry from './useSubscriptionModalTelemetry';
 
 import './SubscriptionContainer.scss';
-
-type Source = WebPaymentsSubscriptionStepsTotal['Labels']['source'];
-type FromPlan = WebPaymentsSubscriptionStepsTotal['Labels']['fromPlan'];
-type MetricsStep = WebPaymentsSubscriptionStepsTotal['Labels']['step'];
 
 export interface Model {
     step: SUBSCRIPTION_STEPS;
@@ -236,9 +234,7 @@ export interface SubscriptionContainerProps {
             | { model: Model; newModel: Model; type: 'error'; error: any }
             | { model: Model; newModel: Model; type: 'success'; result: SubscriptionEstimation }
     ) => void;
-    metrics: {
-        source: Source;
-    };
+    metrics: SubscriptionCheckoutMetricsOverrides;
     telemetryFlow?: TelemetryPaymentFlow;
     render: (renderProps: RenderProps) => ReactNode;
     subscription: Subscription | FreeSubscription;
@@ -297,14 +293,6 @@ const SubscriptionContainerInner = ({
 }: SubscriptionContainerProps) => {
     const defaultMaximumCycle = getMaximumCycleForApp(app);
     const maximumCycle = maybeMaximumCycle ?? defaultMaximumCycle;
-
-    const metricStepMap: Record<SUBSCRIPTION_STEPS, MetricsStep> = {
-        [SUBSCRIPTION_STEPS.NETWORK_ERROR]: 'network-error',
-        [SUBSCRIPTION_STEPS.PLAN_SELECTION]: 'plan-selection',
-        [SUBSCRIPTION_STEPS.CHECKOUT]: 'checkout',
-        [SUBSCRIPTION_STEPS.UPGRADE]: 'upgrade',
-        [SUBSCRIPTION_STEPS.THANKS]: 'thanks',
-    };
 
     const topRef = useRef<HTMLDivElement>(null);
     const api = useApi();
@@ -418,34 +406,6 @@ const SubscriptionContainerInner = ({
         return model;
     });
 
-    const telemetryContext = 'subscription-modification' as const;
-
-    const getCommonTelemetryPayload = (): {
-        userCurrency: Currency;
-        subscription: Subscription | FreeSubscription;
-        selectedCycle: Cycle;
-        selectedPlanIDs: PlanIDs;
-        selectedCurrency: Currency;
-        selectedCoupon: string | null | undefined;
-        selectedStep: SubscriptionModificationStepTelemetry;
-        build: APP_NAMES;
-        product: ProductParam;
-        context: typeof telemetryContext;
-    } => {
-        return {
-            userCurrency: user.Currency,
-            subscription,
-            selectedCycle: model.cycle,
-            selectedPlanIDs: model.planIDs,
-            selectedCurrency: model.currency,
-            selectedCoupon: model.coupon,
-            selectedStep: model.step === SUBSCRIPTION_STEPS.PLAN_SELECTION ? 'plan_selection' : 'checkout',
-            build: APP_NAME,
-            product: app,
-            context: telemetryContext,
-        };
-    };
-
     const [audience, setAudienceInner] = useState(() => {
         if ((plan && getIsB2BAudienceFromPlan(plan)) || getIsB2BAudienceFromSubscription(subscription)) {
             return Audience.B2B;
@@ -464,7 +424,14 @@ const SubscriptionContainerInner = ({
 
         checkoutTelemetry.subscriptionContainer.reportAudienceChange({
             audience: audienceTelemetry,
-            ...getCommonTelemetryPayload(),
+            ...getCommonTelemetryPayload({
+                user,
+                subscription,
+                model,
+                appName: APP_NAME,
+                app,
+                context: telemetryContext,
+            }),
         });
         setAudienceInner(newAudience);
     };
@@ -502,12 +469,7 @@ const SubscriptionContainerInner = ({
 
     const isAccountLiteApp = application === APPS.PROTONACCOUNTLITE;
 
-    const metricsProps = {
-        ...outerMetricsProps,
-        step: metricStepMap[model.step],
-        fromPlan: isFreeSubscription(subscription) ? 'free' : ('paid' as FromPlan),
-        application,
-    };
+    const metricsProps = getMetricsProps(outerMetricsProps, model.step, subscription, application);
 
     const checkoutModifiers = getCheckoutModifiers(checkResult);
 
@@ -835,33 +797,6 @@ const SubscriptionContainerInner = ({
         });
     };
 
-    const reportChangeTelemetry = ({ action, ...overrides }: RequireOnly<EstimationChangePayload, 'action'>) => {
-        const nonEmptyOverrides = Object.fromEntries(
-            Object.entries(overrides).filter(([_, value]) => value !== undefined)
-        );
-        const payload: EstimationChangePayload = {
-            action,
-            ...getCommonTelemetryPayload(),
-            paymentMethodType: paymentFacade.selectedMethodType,
-            paymentMethodValue: paymentFacade.selectedMethodValue,
-            ...nonEmptyOverrides,
-        };
-
-        checkoutTelemetry.reportSubscriptionEstimationChange(payload);
-    };
-
-    const reportPlanIDsIfChanged = (newlySelectedPlanIDs: PlanIDs) => {
-        const currentlySelectedPlanIDs = model.planIDs;
-        if (isEqual(newlySelectedPlanIDs, currentlySelectedPlanIDs)) {
-            return;
-        }
-
-        const currentlySelectedPlanName = getPlanNameFromIDs(currentlySelectedPlanIDs);
-        const newlySelectedPlanName = getPlanNameFromIDs(newlySelectedPlanIDs);
-        const action = currentlySelectedPlanName === newlySelectedPlanName ? 'addon_changed' : 'plan_changed';
-        reportChangeTelemetry({ action, selectedPlanIDs: newlySelectedPlanIDs });
-    };
-
     const [vatReverseChargeErrorModalProps, setVatReverseChargeErrorModal, renderVatReverseChargeErrorModal] =
         useModalState();
 
@@ -878,7 +813,6 @@ const SubscriptionContainerInner = ({
         callbacks: {
             runAdditionalChecks,
             shouldPassIsTrial,
-            reportPlanIDsIfChanged,
             onPlusToPlusTransition: (unlockPlan) => {
                 setPlusToPlusUpsell({ unlockPlan });
                 setUpsellModal(true);
@@ -894,13 +828,16 @@ const SubscriptionContainerInner = ({
             onVisionaryDowngradeHide: hideVisionaryDowngradeWarning,
             onCheck,
         },
+        telemetry: { APP_NAME, app, paymentFacade, user, context: telemetryContext },
     });
 
     useEffect(() => {
         captureWrongPlanIDs(maybePlanIDs, { source: 'SubscriptionModal/PlanIDs' });
         captureWrongPlanName(plan, { source: 'SubscriptionModal/PlanName' });
 
-        checkoutTelemetry.reportInitialization(getCommonTelemetryPayload());
+        checkoutTelemetry.reportInitialization(
+            getCommonTelemetryPayload({ user, subscription, model, appName: APP_NAME, app, context: telemetryContext })
+        );
     }, []);
 
     useSubscriptionModificationChangeStepTelemetry({
@@ -1011,7 +948,14 @@ const SubscriptionContainerInner = ({
             return;
         }
 
-        reportChangeTelemetry({ action: 'cycle_changed', selectedCycle: cycle });
+        reportChangeTelemetry(
+            paymentFacade,
+            { user, subscription, model, appName: APP_NAME, app, context: telemetryContext },
+            {
+                action: 'cycle_changed',
+                selectedCycle: cycle,
+            }
+        );
 
         const checkPromise = check({ ...model, cycle });
         void withBlockAccountSizeSelector(checkPromise);
@@ -1022,7 +966,14 @@ const SubscriptionContainerInner = ({
             return;
         }
 
-        reportChangeTelemetry({ action: 'coupon_changed', selectedCoupon: gift });
+        reportChangeTelemetry(
+            paymentFacade,
+            { user, subscription, model, appName: APP_NAME, app, context: telemetryContext },
+            {
+                action: 'coupon_changed',
+                selectedCoupon: gift,
+            }
+        );
 
         if (!gift) {
             const withoutGift = { ...model };
@@ -1050,7 +1001,14 @@ const SubscriptionContainerInner = ({
 
         const planCurrency = getPlanCurrencyFromPlanIDs(getPlansMap(plans, currency), model.planIDs) ?? currency;
 
-        reportChangeTelemetry({ action: 'currency_changed', selectedCurrency: currency });
+        reportChangeTelemetry(
+            paymentFacade,
+            { user, subscription, model, appName: APP_NAME, app, context: telemetryContext },
+            {
+                action: 'currency_changed',
+                selectedCurrency: currency,
+            }
+        );
 
         void check({ ...model, currency: planCurrency }, false, context?.paymentMethodType);
     };

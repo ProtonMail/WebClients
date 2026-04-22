@@ -7,6 +7,7 @@ import { useModalTwoPromise } from '@proton/components/components/modalTwo/useMo
 import { changeDefaultPaymentMethodBeforePayment } from '@proton/components/containers/payments/DefaultPaymentMethodMessage';
 import { useCancelSubscriptionFlow } from '@proton/components/containers/payments/subscription/cancelSubscription/useCancelSubscriptionFlow';
 import { SUBSCRIPTION_STEPS } from '@proton/components/containers/payments/subscription/constants';
+import { getMetricsProps } from '@proton/components/containers/payments/subscription/helpers/subscriptionTelemetry';
 import { useAvailableCurrenciesForPlan } from '@proton/components/containers/payments/subscription/modal-components/SubscriptionCheckout';
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
@@ -27,7 +28,6 @@ import type { PaymentProcessorType } from '@proton/payments/core/payment-process
 import { isLifetimePlanSelected } from '@proton/payments/core/plan/helpers';
 import { hasPlanIDs } from '@proton/payments/core/planIDs';
 import { SubscriptionMode } from '@proton/payments/core/subscription/constants';
-import { isFreeSubscription } from '@proton/payments/core/type-guards';
 import { usePayments } from '@proton/payments/ui/context/PaymentContext';
 import { usePaymentPollers } from '@proton/payments/ui/hooks/usePaymentPollers';
 import { getShouldCalendarPreventSubscripitionChange } from '@proton/shared/lib/calendar/plans';
@@ -37,11 +37,7 @@ import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import noop from '@proton/utils/noop';
 
 import { getCodesForSubscription } from './helpers';
-import type {
-    SubscriptionCheckoutMetricsOverrides,
-    SubscriptionCheckoutMetricsStep,
-    SubscriptionCheckoutMetricsUpgradeFromPlan,
-} from './interface';
+import type { SubscriptionCheckoutMetricsOverrides } from './interface';
 
 type SubscriptionContext = {
     operationsSubscriptionData: OperationsSubscriptionData;
@@ -124,14 +120,12 @@ const useSubscriptionCheckout = ({ onStepChange, onSubscribed, onUnsubscribed, m
             return showCalendarDowngradeModal();
         }
 
-        const metricsProps = {
-            ...metrics,
-            step: 'checkout' as SubscriptionCheckoutMetricsStep,
-            fromPlan: isFreeSubscription(subscription)
-                ? 'free'
-                : ('paid' as SubscriptionCheckoutMetricsUpgradeFromPlan),
-            application: getMetricsAppName(APP_NAME),
-        };
+        const metricsProps = getMetricsProps(
+            metrics,
+            SUBSCRIPTION_STEPS.CHECKOUT,
+            subscription,
+            getMetricsAppName(APP_NAME)
+        );
 
         try {
             const pollSubscription = createSubscriptionPoller();
