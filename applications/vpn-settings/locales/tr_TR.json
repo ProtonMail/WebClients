@@ -15237,6 +15237,16 @@
       ],
       "Your own short @pm.me email alias": [
         "Kendi kısa @pm.me e-posta takma adınız"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe yazma asistanı"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "Ücretli özelliklerle birlikte ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } ve ${ LUMO_APP_NAME }"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Görüntülü toplantılar, ${ PAID_PREMIUM_MAX_PARTICIPANTS } katılımcıya kadar",
+        "Görüntülü toplantılar, ${ PAID_PREMIUM_MAX_PARTICIPANTS } katılımcıya kadar"
       ]
     },
     "subscription reminder": {
@@ -17822,6 +17832,50 @@
       ],
       "Many issues can be resolved quickly with our help guides. If you need more support, our team is here to help.": [
         "Yardım rehberlerimiz ile birçok sorunu hızlı bir şekilde çözebilirsiniz. Daha fazla destek gerekirse ekibimiz size seve seve yardımcı olur."
+      ]
+    },
+    "Admin roles onboarding": {
+      "3 new admin roles": [
+        "3 yeni yönetici rolü"
+      ],
+      "Admin roles": [
+        "Yönetici rolleri"
+      ],
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Güvenlik ilkelerini, veri saklama kurallarını ve VPN altyapısını yapılandırın ve denetim günlüklerini yönetin."
+      ],
+      "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
+        "Belirli yönetici rolleri atayarak yönetimi delege edin. Her yöneticiye yalnızca ihtiyaç duyduğu erişim yetkisini verin. Bu en az ayrıcalık ilkesini izleyerek kuruluşunuzu ele geçirilmiş hesaplardan ve kazara yapılan hatalardan korur."
+      ],
+      "Delegate management with the appropriate admin role.": [
+        "Yönetimi uygun yönetici rolüne devredin."
+      ],
+      "Manage all users, groups, storage, security, billing, audit logs, and system configurations.": [
+        "Tüm kullanıcıları, grupları, depolama alanını, güvenliği, faturalandırmayı, denetim günlüklerini ve sistem yapılandırmalarını yönetin."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Tüm üyeler için kullanıcıları, grupları ve depolama alanını yönetin, roller atayın ve lisansları tahsis edin."
+      ],
+      "New: Control admin access for individual users": [
+        "Yeni: Kullanıcı bazlı yönetici erişimi kontrolü"
+      ],
+      "Organization admin": [
+        "Kuruluş yöneticisi"
+      ],
+      "Organization admin:": [
+        "Kuruluş yöneticisi:"
+      ],
+      "Security admin": [
+        "Güvenlik yöneticisi"
+      ],
+      "Security admin:": [
+        "Güvenlik yöneticisi:"
+      ],
+      "User admin": [
+        "Kullanıcı yöneticisi"
+      ],
+      "User admin:": [
+        "Kullanıcı yöneticisi:"
       ]
     }
   }

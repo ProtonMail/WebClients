@@ -15204,6 +15204,16 @@
       ],
       "Your own short @pm.me email alias": [
         "Votre propre alias d'adresse e-mail court @pm.me"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistant d'écriture ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, et ${ LUMO_APP_NAME } avec les fonctionnalités premium"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Vidéoconférences, jusqu'à ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant",
+        "Vidéoconférences, jusqu'à ${ PAID_PREMIUM_MAX_PARTICIPANTS } participants"
       ]
     },
     "subscription reminder": {
@@ -17780,6 +17790,50 @@
       ],
       "Keep current plan": [
         "Conserver l'abonnement actuel"
+      ]
+    },
+    "Admin roles onboarding": {
+      "3 new admin roles": [
+        "3 nouveaux rôles d'administrateur"
+      ],
+      "Admin roles": [
+        "Rôles administrateur"
+      ],
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configurez les politiques de sécurité, la conservation des données et l’infrastructure VPN, et gérez les journaux d’audit."
+      ],
+      "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
+        "Déléguez la gestion en attribuant des rôles d’administrateur spécifiques. Donnez à chaque administrateur uniquement l’accès dont il a besoin. Cela suit le principe du moindre privilège, protégeant votre organisation contre les comptes compromis et les erreurs accidentelles."
+      ],
+      "Delegate management with the appropriate admin role.": [
+        "Déléguer la gestion avec le rôle d'administrateur approprié."
+      ],
+      "Manage all users, groups, storage, security, billing, audit logs, and system configurations.": [
+        "Gérez tous les utilisateurs, groupes, stockage, sécurité, facturation, journaux d'audit et configurations système."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gérez les utilisateurs, les groupes et le stockage de tous les membres, attribuez des rôles et attribuez des licences."
+      ],
+      "New: Control admin access for individual users": [
+        "Nouveau : Contrôlez l'accès administrateur pour les utilisateurs individuels"
+      ],
+      "Organization admin": [
+        "Administrateur de l'organisation"
+      ],
+      "Organization admin:": [
+        "Administrateur de l'organisation :"
+      ],
+      "Security admin": [
+        "Administrateur de sécurité"
+      ],
+      "Security admin:": [
+        "Administrateur de sécurité :"
+      ],
+      "User admin": [
+        "Administrateur des utilisateurs"
+      ],
+      "User admin:": [
+        "Administrateur des utilisateurs :"
       ]
     }
   }

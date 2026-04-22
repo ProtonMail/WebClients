@@ -15205,6 +15205,16 @@
       ],
       "Your own short @pm.me email alias": [
         "Dein eigener kurzer @pm.me-E-Mail-Alias"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-Schreibassistent"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, und ${ LUMO_APP_NAME } mit Premium-Funktionen"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Video-Meetings, bis zu ${ PAID_PREMIUM_MAX_PARTICIPANTS } Teilnehmer",
+        "Video-Meetings, bis zu ${ PAID_PREMIUM_MAX_PARTICIPANTS } Teilnehmer"
       ]
     },
     "subscription reminder": {
@@ -17822,6 +17832,50 @@
       ],
       "Your feedback helps us improve. Whether you've spotted a bug, want a new feature, or think something could work differently, we'd love to hear from you.": [
         "Dein Feedback hilft uns, uns zu verbessern. Egal, ob du einen Fehler entdeckt hast, eine neue Funktion wünschst oder der Meinung bist, dass etwas anders funktionieren könnte – wir freuen uns über deine Rückmeldung."
+      ]
+    },
+    "Admin roles onboarding": {
+      "3 new admin roles": [
+        "3 neue Administratorenrollen"
+      ],
+      "Admin roles": [
+        "Administratorrollen"
+      ],
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Sicherheitsrichtlinien, Datenaufbewahrung und die VPN-Infrastruktur konfigurieren sowie die Prüfprotokolle verwalten."
+      ],
+      "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
+        "Verwaltungsaufgaben mit der Zuweisung bestimmter Administratorenrollen delegieren. Jedem Administrator nur den benötigten Zugriff gewähren. Dies folgt dem Prinzip der geringsten Rechte und schützt deine Organisation vor gehackten Konten und versehentlichen Fehlern."
+      ],
+      "Delegate management with the appropriate admin role.": [
+        "Verwaltungsaufgaben mit den geeigneten Administratorenrollen delegieren"
+      ],
+      "Manage all users, groups, storage, security, billing, audit logs, and system configurations.": [
+        "Alle Benutzer, Gruppen, Speicher, Sicherheits- und Abrechnungsdaten, Prüfprotokolle sowie Systemkonfigurationen verwalten."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Für alle Mitglieder Benutzer, Gruppen und Speicher verwalten sowie Rollen und Lizenzen zuweisen."
+      ],
+      "New: Control admin access for individual users": [
+        "Neu: Administrationsrechte für einzelne Benutzer kontrollieren"
+      ],
+      "Organization admin": [
+        "Organisationsadministrator"
+      ],
+      "Organization admin:": [
+        "Organisationsadministrator:"
+      ],
+      "Security admin": [
+        "Sicherheitsadministrator"
+      ],
+      "Security admin:": [
+        "Sicherheitsadministrator:"
+      ],
+      "User admin": [
+        "Benutzeradministrator"
+      ],
+      "User admin:": [
+        "Benutzeradministrator:"
       ]
     }
   }

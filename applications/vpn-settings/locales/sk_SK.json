@@ -10463,6 +10463,9 @@
       ],
       "Visit our support site": [
         "Navštívte našu stránku podpory"
+      ],
+      "Account recovery explained": [
+        "Vysvetlenie obnovy účtu"
       ]
     },
     "Link (Scribe)": {
@@ -11586,6 +11589,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Skenujeme dark web a kontrolujeme, či nedošlo k úniku vašich adries alebo aliasov ${ BRAND_NAME }, a ak niečo nájdeme, okamžite vás upozorníme."
+      ],
+      "Dedicated servers optimized for speed": [
+        "Dedikované servery optimalizované na rýchlosť"
       ]
     },
     "new_plans: feature highlight": {
@@ -15611,6 +15617,18 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastný skrátený emailový alias @pm.me"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent písania ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } a ${ LUMO_APP_NAME } s prémiovými funkciami"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Videokonferencie, s ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníkom",
+        "Videokonferencie, s ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníkmi",
+        "Videokonferencie, až s ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníkmi",
+        "Videokonferencie, až s ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníkmi"
       ]
     },
     "subscription reminder": {
@@ -18248,6 +18266,50 @@
       ],
       "Many issues can be resolved quickly with our help guides. If you need more support, our team is here to help.": [
         "Mnohé problémy je možné rýchlo vyriešiť pomocou našich návodov. Ak potrebujete ďalšiu pomoc, náš tím je vám k dispozícii."
+      ]
+    },
+    "Admin roles onboarding": {
+      "3 new admin roles": [
+        "3 nové správcovské pozície"
+      ],
+      "Admin roles": [
+        "Správcovské pozície"
+      ],
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Konfigurácia bezpečnostných politík, uchovávania údajov a infraštruktúry VPN a správa auditových záznamov."
+      ],
+      "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
+        "Spravujte delegovanie právomocí prideľovaním konkrétnych správcovských rolí. Každému správcovi poskytnite len tie prístupové práva, ktoré skutočne potrebuje. Týmto postupom sa riadite zásadou minimálnych oprávnení, čím chránite svoju organizáciu pred kompromitovanými účtami a náhodnými chybami."
+      ],
+      "Delegate management with the appropriate admin role.": [
+        "Delegujte správu pomocou príslušnej správcovskej pozície."
+      ],
+      "Manage all users, groups, storage, security, billing, audit logs, and system configurations.": [
+        "Spravujte všetkých používateľov, skupiny, úložisko, zabezpečenie, fakturáciu, auditové záznamy a systémové konfigurácie."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Správa používateľov, skupín a úložného priestoru pre všetkých členov, prideľovanie rolí a prideľovanie licencií."
+      ],
+      "New: Control admin access for individual users": [
+        "Novinka: Riadenie prístupových práv správcu pre jednotlivých používateľov"
+      ],
+      "Organization admin": [
+        "Správca organizácie"
+      ],
+      "Organization admin:": [
+        "Správca organizácie:"
+      ],
+      "Security admin": [
+        "Bezpečnostný správca"
+      ],
+      "Security admin:": [
+        "Bezpečnostný správca:"
+      ],
+      "User admin": [
+        "Správca používateľov"
+      ],
+      "User admin:": [
+        "Správca používateľov:"
       ]
     }
   }

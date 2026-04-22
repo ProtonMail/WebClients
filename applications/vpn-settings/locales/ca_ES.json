@@ -15144,6 +15144,16 @@
       ],
       "Your own short @pm.me email alias": [
         "El vostre propi àlies de correu electrònic curt @pm.me"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistent d'escriptura ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } i ${ LUMO_APP_NAME } amb característiques prèmium"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Reunions de vídeo de fins a ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant",
+        "Reunions de vídeo de fins a ${ PAID_PREMIUM_MAX_PARTICIPANTS } participants"
       ]
     },
     "subscription reminder": {
@@ -17729,6 +17739,50 @@
       ],
       "Many issues can be resolved quickly with our help guides. If you need more support, our team is here to help.": [
         "Molts problemes es poden resoldre ràpidament amb les nostres guies d'ajuda. Si necessiteu més suport, el nostre equip és aquí per ajudar-vos."
+      ]
+    },
+    "Admin roles onboarding": {
+      "3 new admin roles": [
+        "3 nous rols d'administrador/a"
+      ],
+      "Admin roles": [
+        "Rols d'administrador/a"
+      ],
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configureu les polítiques de seguretat, la retenció de dades i la infraestructura VPN, i gestioneu els registres d'auditoria."
+      ],
+      "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
+        "Delegueu la gestió assignant rols d'administrador/a específics. Doneu a cada administrador només l'accés que necessiti. Això segueix el principi del mínim privilegi, de manera que protegiu la vostra organització de comptes de risc i d'errors accidentals."
+      ],
+      "Delegate management with the appropriate admin role.": [
+        "Delegueu la gestió amb el rol d'administrador/a adequat."
+      ],
+      "Manage all users, groups, storage, security, billing, audit logs, and system configurations.": [
+        "Gestioneu tots els usuaris, grups, emmagatzematge, seguretat, facturació, registres d'auditoria i configuracions del sistema."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gestioneu els usuaris, els grups i l'emmagatzematge de tots els membres, assigneu rols i adjudiqueu llicències."
+      ],
+      "New: Control admin access for individual users": [
+        "Nou: Controleu l'accés d'administració per a usuaris individuals"
+      ],
+      "Organization admin": [
+        "Administrador/a de l'organització"
+      ],
+      "Organization admin:": [
+        "Administrador/a de l'organització:"
+      ],
+      "Security admin": [
+        "Administrador/a de seguretat"
+      ],
+      "Security admin:": [
+        "Administrador/a de seguretat:"
+      ],
+      "User admin": [
+        "Administrador/a d'usuaris"
+      ],
+      "User admin:": [
+        "Administrador/a d'usuaris:"
       ]
     }
   }

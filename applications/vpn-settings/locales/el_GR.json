@@ -15141,6 +15141,16 @@
       ],
       "Your own short @pm.me email alias": [
         "Το δικό σας σύντομο ψευδώνυμο @pm.me ηλεκτρονικού ταχυδρομείου"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe βοηθός γραφής"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } και ${ LUMO_APP_NAME } με premium χαρακτηριστικά"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Βιντεοκλήσεις, μέχρι και ${ PAID_PREMIUM_MAX_PARTICIPANTS } συμμετέχων",
+        "Βιντεοκλήσεις, μέχρι και ${ PAID_PREMIUM_MAX_PARTICIPANTS } συμμετέχοντες"
       ]
     },
     "subscription reminder": {
@@ -17726,6 +17736,50 @@
       ],
       "Many issues can be resolved quickly with our help guides. If you need more support, our team is here to help.": [
         "Πολλά προβλήματα μπορούν να επιλυθούν γρήγορα με τους οδηγούς βοήθειάς μας. Εάν χρειάζεστε περισσότερη υποστήριξη, η ομάδα μας είναι εδώ για να σας βοηθήσει."
+      ]
+    },
+    "Admin roles onboarding": {
+      "3 new admin roles": [
+        "3 νέοι ρόλοι διαχειριστή"
+      ],
+      "Admin roles": [
+        "Ρόλοι διαχειριστών"
+      ],
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Διαμορφώστε πολιτικές ασφαλείας, διατήρηση δεδομένων και υποδομή VPN, και διαχειριστείτε τα αρχεία ελέγχου."
+      ],
+      "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
+        "Διαχειριστείτε την ανάθεση εξουσιών αναθέτοντας συγκεκριμένους ρόλους διαχειριστή. Δώστε σε κάθε διαχειριστή μόνο την πρόσβαση που χρειάζεται. Αυτό ακολουθεί την αρχή της ελάχιστης προνομίας, προστατεύοντας τον οργανισμό σας από παραβιασμένους λογαριασμούς και τυχαία σφάλματα."
+      ],
+      "Delegate management with the appropriate admin role.": [
+        "Διαχείριση εκπροσώπων με τον κατάλληλο ρόλο διαχειριστή."
+      ],
+      "Manage all users, groups, storage, security, billing, audit logs, and system configurations.": [
+        "Διαχειριστείτε όλους τους χρήστες, τις ομάδες, την αποθήκευση, την ασφάλεια, τη χρέωση, τα αρχεία ελέγχου και τις ρυθμίσεις του συστήματος."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Διαχειριστείτε χρήστες, ομάδες και χώρο αποθήκευσης για όλα τα μέλη, αναθέστε ρόλους και κατανεμήστε άδειες χρήσης."
+      ],
+      "New: Control admin access for individual users": [
+        "Νέο: Έλεγχος πρόσβασης διαχειριστή για μεμονωμένους χρήστες"
+      ],
+      "Organization admin": [
+        "Διαχειριστής οργανισμού"
+      ],
+      "Organization admin:": [
+        "Διαχειριστής οργανισμού:"
+      ],
+      "Security admin": [
+        "Διαχειριστής ασφαλείας"
+      ],
+      "Security admin:": [
+        "Διαχειριστής ασφαλείας:"
+      ],
+      "User admin": [
+        "Διαχειριστής χρηστών"
+      ],
+      "User admin:": [
+        "Διαχειριστής χρηστών:"
       ]
     }
   }

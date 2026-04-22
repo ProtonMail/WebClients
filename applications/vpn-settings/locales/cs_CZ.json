@@ -201,7 +201,7 @@
         "Připojit aplikace a zařízení"
       ],
       "Connect to Gmail": [
-        "Připojit k Gmailu"
+        "Připojit ke Gmail"
       ],
       "Connect to video conferencing": [
         "Připojit se k videokonferenci"
@@ -1198,6 +1198,12 @@
       ],
       "Try another way": [
         "Zkuste to jinak"
+      ],
+      "Connect Gmail address": [
+        "Připojte svou Gmail adresu"
+      ],
+      "Continue to sign in": [
+        "Pokračujte v přihlášení"
       ]
     },
     "action": {
@@ -2023,7 +2029,7 @@
         "Nastavení"
       ],
       "Status": [
-        "Status"
+        "Stav"
       ],
       "Users migrated": [
         "Uživatelé migrováni"
@@ -2036,6 +2042,12 @@
       ],
       "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
         "Musíte udělit společnosti ${ BRAND_NAME } oprávnění ke kopírování vašich dat. Po udělení oprávnění se vraťte sem a pokračujte."
+      ],
+      "App installed": [
+        "Aplikace nainstalována"
+      ],
+      "Install app": [
+        "Nainstalujte aplikaci"
       ]
     },
     "Browser": {
@@ -3459,6 +3471,9 @@
     "Delete group prompt": {
       "Are you sure you want to delete this group?": [
         "Opravdu chcete smazat tuto skupinu?"
+      ],
+      "Please note that if you delete the group ${ displayGroupName }, it will be permanently removed.": [
+        "Upozorňujeme, že pokud skupinu ${ displayGroupName } smažete, bude trvale odebrána."
       ]
     },
     "Delinquent modal title": {
@@ -3651,7 +3666,7 @@
         "Přidejte do svého účtu další e-mailové adresy nebo využijte aliasy služby Hide My Email, abyste zachovali soukromí své doručené pošty."
       ],
       "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
-        "E-maily zaslané na adresu ${ connectedAddressText } se nyní budou zobrazovat v aplikaci ${ MAIL_APP_NAME }."
+        "E-maily odeslané na ${ connectedAddressText } se nyní budou zobrazovat v ${ MAIL_APP_NAME }."
       ],
       "Most issues can be solved in a few minutes with our step-by-step guides.": [
         "Většinu problémů lze vyřešit během několika minut pomocí našich podrobných návodů."
@@ -3676,6 +3691,9 @@
       ],
       "You will no longer be able to use ${ address.Email } to receive and send emails in ${ BRAND_NAME }. Also note that messages sent to this address from ${ BRAND_NAME } will no longer be end-to-end encrypted.": [
         "Na adrese ${ address.Email } již nebudete moci přijímat ani odesílat e-maily v rámci služby ${ BRAND_NAME }. Upozorňujeme také, že zprávy odeslané na tuto adresu ze služby ${ BRAND_NAME } již nebudou koncově šifrovány."
+      ],
+      "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
+        "Adresy můžete sloučit do jednoho hlavního účtu ${ BRAND_NAME } podle pokynů v našem návodu."
       ]
     },
     "description": {
@@ -8822,7 +8840,7 @@
         "Stáhnout ${ VPN_APP_NAME }"
       ],
       "Enter the 12-word recovery phrase associated with your account.": [
-        "Zadejte 12-slovnou frázi pro obnovení spojenou s vaším účtem."
+        "Zadejte 12slovnou frázi pro obnovení spojenou s vaším účtem."
       ],
       "Enter your own password (as organization admin).": [
         "Zadejte vlastní heslo (jako správce organizace)."
@@ -8943,6 +8961,21 @@
       ],
       "your encrypted data will be locked": [
         "vaše šifrovaná data budou uzamčena"
+      ],
+      "Before sending a new verification code, check your spam folder for ${ EmailOrPhoneNumber }.": [
+        "Než vám zašleme nový ověřovací kód, zkontrolujte prosím složku se spamem, zda se tam nenachází zpráva od ${ EmailOrPhoneNumber }."
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "Gateway deleted": [
+        "Brána smazána"
+      ],
+      "How to perform a signed-in reset": [
+        "Jak provést reset po přihlášení"
+      ],
+      "We detected you are already signed in to a ${ BRAND_NAME } web app on **another browser**. You may be able to perform a password reset from your active session.": [
+        "Zjistili jsme, že jste již přihlášeni do webové aplikace ${ BRAND_NAME } v **jiném prohlížeči**. Obnovení hesla můžete provést z aktuální relace."
       ]
     },
     "info": {
@@ -10265,6 +10298,12 @@
       ],
       "Visit our support site": [
         "Navštivte naše stránky podpory"
+      ],
+      "Account recovery explained": [
+        "Obnovení účtu vysvětleno"
+      ],
+      "Learn how": [
+        "Zjistit více"
       ]
     },
     "Link (Scribe)": {
@@ -11891,6 +11930,9 @@
       ],
       "Product updates": [
         "Aktualizace produktu"
+      ],
+      "Disabling this means you won't get in-app notifications about promotions, new features, new ${ BRAND_NAME } services, and reminders.": [
+        "Pokud tuto funkci deaktivujete, nebudete dostávat oznámení v aplikaci o akcích, nových funkcích, nových službách ${ BRAND_NAME } a připomenutích."
       ]
     },
     "Notification": {
@@ -13256,7 +13298,7 @@
         "Microsoft 365"
       ],
       "Other": [
-        "Ostatní"
+        "Další"
       ],
       "Outlook": [
         "Outlook"
@@ -15466,6 +15508,18 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastní krátký e-mailový alias @pm.me"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent psaní ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, a ${ LUMO_APP_NAME } s prémiovými funkcemi"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Videokonference, až pro ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníka",
+        "Videokonference, až pro ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníky",
+        "Videokonference, až pro ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníků",
+        "Videokonference, až pro ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníků"
       ]
     },
     "subscription reminder": {
@@ -17088,7 +17142,7 @@
         "Došlo k chybě"
       ],
       "Are you sure you want to disconnect this address?": [
-        "Opravdu chcete tuto adresu odpojit?"
+        "Opravdu chcete odpojit tuto adresu?"
       ],
       "Ask your emergency contacts for help": [
         "Požádejte své nouzové kontakty o pomoc"
@@ -17118,7 +17172,7 @@
         "Jak jste se o nás dozvěděli?"
       ],
       "Import your data to ${ BRAND_NAME }": [
-        "Načtěte svá data do ${ BRAND_NAME }"
+        "Importujte svá data do ${ BRAND_NAME }"
       ],
       "Organization and people": [
         "Organizace a lidé"
@@ -18100,13 +18154,24 @@
         "Požadavek na funkci"
       ],
       "See how ${ BRAND_NAME } apps are evolving with your feedback.": [
-        "Podívejte se, jak se ${ BRAND_NAME } aplikace vyvíjejí díky vaší zpětné vazbě."
+        "Podívejte se, jak se aplikace ${ BRAND_NAME } vyvíjejí díky vaší zpětné vazbě."
       ],
       "Submit your ideas": [
         "Zašlete nám své nápady"
       ],
       "Your feedback helps us improve. Whether you've spotted a bug, want a new feature, or think something could work differently, we'd love to hear from you.": [
         "Vaše zpětná vazba nám pomáhá zlepšovat se. Ať už jste narazili na chybu, přejete si novou funkci nebo si myslíte, že by něco mohlo fungovat jinak, rádi si váš názor vyslechneme."
+      ],
+      "Explore the latest news": [
+        "Prozkoumejte nejnovější zprávy"
+      ]
+    },
+    "Admin roles onboarding": {
+      "Manage all users, groups, storage, security, billing, audit logs, and system configurations.": [
+        "Spravujte všechny uživatele, skupiny, úložiště, zabezpečení, fakturaci, auditované logy a systémové konfigurace."
+      ],
+      "New: Control admin access for individual users": [
+        "Novinka: Řízení přístupových práv správce pro jednotlivé uživatele"
       ]
     }
   }
