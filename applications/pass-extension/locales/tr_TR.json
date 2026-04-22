@@ -2080,8 +2080,7 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
-        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
+        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -2793,6 +2792,9 @@
       ],
       "To configure shortcuts, go to about:addons in Firefox and select \"Manage Extension Shortcuts\"": [
         "Kısayolları yapılandırmak için Firefox üzerinde about:addons adresini açın ve ayarlar simgesine tıklayarak \"Eklenti kısayollarını yönet\" seçeneğine tıklayın"
+      ],
+      "Logging you out...": [
+        "Oturumunuz kapatılıyor..."
       ]
     },
     "Keyboard key": {

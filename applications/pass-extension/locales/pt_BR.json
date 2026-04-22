@@ -2053,8 +2053,7 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outro cofre apagará seu link seguro.",
-        "Movendo item para outro cofre apagará seus links seguros."
+        "Movendo um item para outro cofre apagará seu link seguro."
       ],
       "Moving items": [
         "Movendo itens"
@@ -2766,6 +2765,9 @@
       ],
       "To configure shortcuts, go to about:addons in Firefox and select \"Manage Extension Shortcuts\"": [
         "Para configurar atalhos, acesse about:addons no Firefox e selecione \"Gerenciar atalhos de extensões \""
+      ],
+      "Logging you out...": [
+        "Desconectando você..."
       ]
     },
     "Keyboard key": {
@@ -3155,7 +3157,7 @@
         "Esvaziar lixeira"
       ],
       "Enable offline access": [
-        "Ativar acesso off-line"
+        "Ativar o acesso off-line"
       ],
       "Enter email or username": [
         "Digite o e-mail ou nome de usuário"
