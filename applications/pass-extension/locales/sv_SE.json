@@ -1366,6 +1366,12 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
         "${ PASS_APP_NAME }-appen för stationär dator är inloggad med ett annat konto."
+      ],
+      "Desktop lock is not configured.": [
+        "Inställning av lås för stationär dator är inte konfigurerad."
+      ],
+      "Desktop lock setup failed.": [
+        "Inställning av lås för stationär dator misslyckades."
       ]
     },
     "Error message": {
@@ -2757,6 +2763,9 @@
       "Moving an item to another vault will erase its secure links.": [
         "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
         "Att flytta objekt till annat valv kommer radera deras säkra länkar."
+      ],
+      "Logging you out...": [
+        "Du loggas ut …"
       ]
     },
     "Keyboard key": {
