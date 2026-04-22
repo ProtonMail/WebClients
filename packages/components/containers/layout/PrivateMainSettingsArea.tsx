@@ -122,7 +122,11 @@ export const PrivateMainSettingsAreaBase = ({
             className={clsx(variant === 'card' && 'bg-lowered settings-cards', mainAreaClass)}
         >
             <div
-                className={clsx(variant === 'card' && 'w-full p-4 lg:p-6 xl:p-12 max-w-custom mr-auto', wrapperClass)}
+                className={clsx(
+                    variant === 'card' &&
+                        'w-full p-4 lg:pt-6 xl:pt-12 max-w-custom mx-0 lg:mx-4 xl:mx-6 xxl:mx-14 transition-spacings',
+                    wrapperClass
+                )}
                 style={{ '--max-w-custom': maxWidth, ...style }}
             >
                 {breadcrumbs && <div className="mt-6 md:mt-0">{breadcrumbs}</div>}

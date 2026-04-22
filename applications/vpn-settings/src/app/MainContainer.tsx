@@ -80,6 +80,7 @@ import {
 } from '@proton/components';
 import SSODomainUnverifiedBanner from '@proton/components/containers/account/sso/SSODomainUnverifiedBanner';
 import { getIsSectionAvailable, getRoutePaths } from '@proton/components/containers/layout/helper';
+import { SettingsCardMaxWidth } from '@proton/components/containers/layout/interface';
 import DashboardComparePlansCTA from '@proton/components/containers/payments/subscription/YourPlanSectionV2/DashboardComparePlansCTA';
 import { CANCEL_ROUTE } from '@proton/components/containers/payments/subscription/cancellationFlow/helper';
 import ReferralPageTelemetry from '@proton/components/containers/referral/components/ReferralPageTelemetry';
@@ -308,8 +309,8 @@ const MainContainer: FunctionComponent = () => {
                                     <PrivateMainSettingsArea
                                         config={vpnRoutes.dashboardV2}
                                         mainAreaClass="bg-lowered settings-cards"
-                                        wrapperClass="w-full p-4 lg:p-6 xl:p-12 max-w-custom mr-auto"
-                                        style={{ '--max-w-custom': '1500px' }}
+                                        wrapperClass="w-full p-4 lg:pt-6 xl:pt-12 max-w-custom mx-0 lg:mx-4 xl:mx-6 xxl:mx-14 transition-spacings"
+                                        style={{ '--max-w-custom': SettingsCardMaxWidth.Wide }}
                                     >
                                         <YourPlanSectionV2 app={app} />
                                         <YourPlanUpsellsSectionV2 app={app} />
@@ -325,8 +326,8 @@ const MainContainer: FunctionComponent = () => {
                                     <PrivateMainSettingsArea
                                         config={vpnRoutes.subscription}
                                         mainAreaClass="bg-lowered settings-cards"
-                                        wrapperClass="w-full p-4 lg:p-6 xl:p-12 max-w-custom mr-auto"
-                                        style={{ '--max-w-custom': '1500px' }}
+                                        wrapperClass="w-full p-4 lg:pt-6 xl:pt-12 max-w-custom mx-0 lg:mx-4 xl:mx-6 xxl:mx-14 transition-spacings"
+                                        style={{ '--max-w-custom': SettingsCardMaxWidth.Wide }}
                                     >
                                         <YourPlanSectionV2
                                             app={app}

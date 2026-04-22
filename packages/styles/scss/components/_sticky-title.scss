@@ -9,10 +9,6 @@
 	max-inline-size: 120ch; // avoid too long lines
 	margin-inline: auto auto;
 
-	&.mr-auto {
-		margin-inline-start: 0;
-	}
-
 	@include media('>xlarge') {
 		max-inline-size: 75vw;
 	}
