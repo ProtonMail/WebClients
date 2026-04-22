@@ -736,6 +736,15 @@ export const ProtonMeetContainer = ({
                 encryptedDisplayName: encryptedDisplayName,
             });
 
+            // The backend sets ExpirationTime on the meeting once the first participant joins (i.e. right here,
+            // triggered by getAccessDetails). If the cached response we fetched before getAccessDetails didn't
+            // have it yet, invalidate the cache so the next getCachedMeetingInfo call fetches a fresh response
+            // with the populated ExpirationTime. Otherwise the cached value is still accurate and we avoid an
+            // extra network round-trip.
+            if (!meetingInfo.MeetingInfo.ExpirationTime) {
+                meetingInfoRef.current = null;
+            }
+
             // get participants count from the API so we can know which joinType to use based on the participants count
             const participantsCountValue = (await getQueryParticipantsCount(meetingToken)) ?? 0;
 

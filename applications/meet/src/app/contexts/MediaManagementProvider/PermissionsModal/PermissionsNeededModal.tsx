@@ -11,7 +11,7 @@ import {
     selectMicrophonePermission,
     showPermissionsModal,
 } from '@proton/meet/store/slices/deviceManagementSlice';
-import { isSafari } from '@proton/shared/lib/helpers/browser';
+import { isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 import warningIcon from '@proton/styles/assets/img/meet/warning-icon.svg';
 
 import { ConfirmationModal } from '../../../components/ConfirmationModal/ConfirmationModal';
@@ -101,7 +101,17 @@ export const PermissionsNeededModal = () => {
                     className="mx-auto w-custom h-custom"
                     src={warningIcon}
                     alt=""
-                    style={{ '--w-custom': '5rem', '--h-custom': '5rem' }}
+                    style={
+                        isMobile()
+                            ? {
+                                  '--w-custom': '3rem',
+                                  '--h-custom': '3rem',
+                              }
+                            : {
+                                  '--w-custom': '5rem',
+                                  '--h-custom': '5rem',
+                              }
+                    }
                 />
             }
             title={title()}

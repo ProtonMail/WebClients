@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { isMobile } from '@proton/shared/lib/helpers/browser';
 import warningImg from '@proton/styles/assets/img/meet/warning-icon.svg';
 
 import { ConfirmationModal } from '../ConfirmationModal/ConfirmationModal';
@@ -21,7 +22,17 @@ export const LeaveMeetingWarningModal = ({ onClose, onConfirm, isHostOrAdmin }: 
                     src={warningImg}
                     className="w-custom h-custom mb-2"
                     alt=""
-                    style={{ '--w-custom': '5rem', '--h-custom': '5rem' }}
+                    style={
+                        isMobile()
+                            ? {
+                                  '--w-custom': '3rem',
+                                  '--h-custom': '3rem',
+                              }
+                            : {
+                                  '--w-custom': '5rem',
+                                  '--h-custom': '5rem',
+                              }
+                    }
                 />
             }
             title={c('Info').t`Are you sure you want to leave?`}

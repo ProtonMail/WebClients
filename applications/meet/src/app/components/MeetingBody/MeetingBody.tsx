@@ -11,6 +11,7 @@ import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
 import { IcMeetRotateCamera } from '@proton/icons/icons/IcMeetRotateCamera';
 import { useMeetSelector } from '@proton/meet/store/hooks';
 import { selectMeetingLink, selectParticipantName } from '@proton/meet/store/slices/meetingInfo';
+import { selectIsLocalScreenShare, selectIsScreenShare } from '@proton/meet/store/slices/screenShareStatusSlice';
 import { selectSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 import { isMobile, isSafari } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
@@ -46,8 +47,6 @@ import { Settings } from '../Settings/Settings';
 import './MeetingBody.scss';
 
 interface MeetingBodyProps {
-    isScreenShare: boolean;
-    isLocalScreenShare: boolean;
     screenShareTrack: TrackReference;
     screenShareParticipant?: Participant;
     isUsingTurnRelay: boolean;
@@ -59,8 +58,6 @@ interface MeetingBodyProps {
 }
 
 export const MeetingBody = ({
-    isScreenShare,
-    isLocalScreenShare,
     screenShareTrack,
     screenShareParticipant,
     isUsingTurnRelay,
@@ -88,6 +85,8 @@ export const MeetingBody = ({
     const { handleRotateCamera, isVideoEnabled } = useMediaManagementContext();
 
     const sideBarState = useMeetSelector(selectSideBarState);
+    const isScreenShare = useMeetSelector(selectIsScreenShare) && !!screenShareTrack;
+    const isLocalScreenShare = useMeetSelector(selectIsLocalScreenShare);
 
     const [bannerIsClosed, setBannerIsClosed] = useState(!isUsingTurnRelay);
 

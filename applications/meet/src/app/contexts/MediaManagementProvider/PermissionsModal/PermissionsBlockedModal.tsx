@@ -2,6 +2,7 @@ import { c } from 'ttag';
 
 import { useMeetDispatch } from '@proton/meet/store/hooks';
 import { dismissPermissionsModal } from '@proton/meet/store/slices/deviceManagementSlice';
+import { isMobile } from '@proton/shared/lib/helpers/browser';
 import blockedIcon from '@proton/styles/assets/img/meet/blocked-icon.svg';
 
 import { ConfirmationModal } from '../../../components/ConfirmationModal/ConfirmationModal';
@@ -20,7 +21,17 @@ export const PermissionsBlockedModal = () => {
                     className="mx-auto w-custom h-custom"
                     src={blockedIcon}
                     alt=""
-                    style={{ '--w-custom': '5rem', '--h-custom': '5rem' }}
+                    style={
+                        isMobile()
+                            ? {
+                                  '--w-custom': '3rem',
+                                  '--h-custom': '3rem',
+                              }
+                            : {
+                                  '--w-custom': '5rem',
+                                  '--h-custom': '5rem',
+                              }
+                    }
                 />
             }
             title={c('Title').t`Camera and microphone are blocked`}
