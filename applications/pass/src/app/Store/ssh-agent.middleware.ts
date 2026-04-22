@@ -13,7 +13,7 @@ const sshAgentListener = createListenerMiddleware<State>();
 sshAgentListener.startListening({
     actionCreator: stateDestroy,
     effect: () => {
-        if (sshAgent?.enabled) void sshAgent.sync([]);
+        void sshAgent?.clear();
     },
 });
 
@@ -25,7 +25,7 @@ sshAgentListener.startListening({
         const state = getState();
         const plan = selectPassPlan(state);
         const featureEnabled = selectFeatureFlag(PassFeature.PassDesktopSSHAgent)(state);
-        if (plan === UserPassPlan.FREE || !featureEnabled) void sshAgent.handleDowngrade();
+        if (plan === UserPassPlan.FREE || !featureEnabled) void sshAgent.stop();
     },
 });
 

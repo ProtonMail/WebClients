@@ -1,6 +1,9 @@
 import { Router } from 'react-router-dom';
 
 import { createHashHistory } from 'history';
+import { clipboard } from 'proton-pass-desktop/lib/clipboard';
+import { PASS_CONFIG, SENTRY_CONFIG } from 'proton-pass-desktop/lib/env';
+import { useDesktopContextMenu } from 'proton-pass-desktop/lib/hooks/useDesktopContextMenu';
 import { AppGuard } from 'proton-pass-web/app/AppGuard';
 import { AuthServiceProvider } from 'proton-pass-web/app/Auth/AuthServiceProvider';
 import { AuthSwitchProvider } from 'proton-pass-web/app/Auth/AuthSwitchProvider';
@@ -13,7 +16,6 @@ import { logStore } from 'proton-pass-web/lib/logger';
 import { monitor } from 'proton-pass-web/lib/monitor';
 import { settings } from 'proton-pass-web/lib/settings';
 import { spotlightProxy as spotlight } from 'proton-pass-web/lib/spotlight';
-import { sshAgent } from 'proton-pass-web/lib/ssh-agent';
 import { telemetry } from 'proton-pass-web/lib/telemetry';
 import { getTheme } from 'proton-pass-web/lib/theme';
 
@@ -52,9 +54,6 @@ import { pipe } from '@proton/pass/utils/fp/pipe';
 import createSecureSessionStorage from '@proton/shared/lib/authentication/createSecureSessionStorage';
 import sentry from '@proton/shared/lib/helpers/sentry';
 
-import { clipboard } from '../lib/clipboard';
-import { PASS_CONFIG, SENTRY_CONFIG } from '../lib/env';
-import { useDesktopContextMenu } from '../lib/hooks/useDesktopContextMenu';
 import { installStorageFlush } from '../lib/storage/storage.view';
 import { ExtensionUnlock } from './ExtensionUnlock';
 import { WelcomeScreen } from './Views/WelcomeScreen/WelcomeScreen';
@@ -79,8 +78,6 @@ exposePassCrypto(createPassCrypto(core, store));
 
 sentry({ config: PASS_CONFIG, sentryConfig: SENTRY_CONFIG });
 connectivity.init();
-
-sshAgent?.init(store.getState);
 
 export const getPassCoreProps = (): PassCoreProviderProps => ({
     config: PASS_CONFIG,
@@ -144,7 +141,7 @@ export const App = () => {
     useDesktopContextMenu();
 
     return (
-        <PassCoreProvider {...getPassCoreProps()} wasm>
+        <PassCoreProvider {...getPassCoreProps()} wasm bridge={window.ctxBridge}>
             <InlineIcons /> {/* Remove when enabling SRI in desktop */}
             <ErrorBoundary component={<StandardErrorPage big />}>
                 <NotificationsProvider>
