@@ -1363,6 +1363,27 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
         "Die ${ PASS_APP_NAME }-Desktop-App ist mit einem anderen Konto angemeldet."
+      ],
+      "Biometric authentication failed.": [
+        "Biometrische Authentifizierung fehlgeschlagen."
+      ],
+      "Desktop lock is not configured.": [
+        "Desktop-Sperre ist nicht eingerichtet."
+      ],
+      "Desktop lock secret does not match.": [
+        "Das Passwort für die Desktop-Sperre stimmt nicht überein."
+      ],
+      "Desktop lock secret not found.": [
+        "Passwort für die Desktop-Sperre nicht gefunden."
+      ],
+      "Desktop lock setup failed.": [
+        "Einrichten der Desktop-Sperre ist fehlgeschlagen."
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Verschlüsselte Kommunikation mit der ${ PASS_APP_NAME }-Desktop-App fehlgeschlagen."
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "Die ${ PASS_APP_NAME }-Desktop-App hat nicht zeitgerecht reagiert."
       ]
     },
     "Error message": {
@@ -2772,6 +2793,9 @@
       ],
       "To configure shortcuts, go to about:addons in Firefox and select \"Manage Extension Shortcuts\"": [
         "Um Tastenkombinationen zu konfigurieren, gehe in Firefox zu \"Erweiterungen & Themes\" und wähle \"Tastenkombinationen von Erweiterungen verwalten\""
+      ],
+      "Logging you out...": [
+        "Du wirst abgemeldet..."
       ]
     },
     "Keyboard key": {
