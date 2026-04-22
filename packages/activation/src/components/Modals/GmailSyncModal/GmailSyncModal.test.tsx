@@ -53,7 +53,7 @@ describe('GmailSyncModal', () => {
         screen.getByText('Automatically forward');
     });
 
-    it('should call onBYOEWithImportCallback', async () => {
+    it('should call onBYOECallback', async () => {
         const mockSyncCallback = jest.fn();
         const mockBYOEWithImportCallback = jest.fn();
 
@@ -63,7 +63,7 @@ describe('GmailSyncModal', () => {
                 source={EASY_SWITCH_SOURCES.ACCOUNT_WEB_SETTINGS}
                 hasAccessToBYOE
                 onSyncCallback={mockSyncCallback}
-                onBYOEWithImportCallback={mockBYOEWithImportCallback}
+                onBYOECallback={mockBYOEWithImportCallback}
             />
         );
 
