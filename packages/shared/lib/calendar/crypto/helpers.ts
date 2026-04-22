@@ -1,4 +1,4 @@
-import { CryptoProxy, type PrivateKeyReference, type SessionKey } from '@proton/crypto/lib';
+import { CryptoProxy, type PrivateKeyReference, type SessionKey } from '@protontech/crypto';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import type { VerificationPreferences } from '../../interfaces/VerificationPreferences';

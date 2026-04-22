@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import { isBigIntSupported, isGoodPrngAvailable, isWebCryptoAvailable } from '@proton/crypto/lib/compatibilityChecks';
+import { isBigIntSupported, isGoodPrngAvailable, isWebCryptoAvailable } from '@protontech/crypto/compatibilityChecks';
 import { isFirefoxWithBrokenX25519Support } from '@proton/shared/lib/helpers/browser';
 
 export type CompatibilityItem = {

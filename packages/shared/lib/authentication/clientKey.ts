@@ -1,4 +1,4 @@
-import { generateKey, importKey } from '@proton/crypto/lib/subtle/aesGcm';
+import { generateKey, importKey } from '@protontech/crypto/subtle/aesGcm.ts';
 
 export const getParsedClientKey = (value: string) => {
     return Uint8Array.fromBase64(value);

@@ -1,4 +1,4 @@
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 
 import { decryptUnsigned } from '../../lib/keys/driveKeys';
 

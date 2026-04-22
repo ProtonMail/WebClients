@@ -1,5 +1,5 @@
-import { decryptData, encryptData } from '@proton/crypto/lib/subtle/aesGcm';
-import { utf8StringToUint8Array, uint8ArrayToUtf8String } from '@proton/crypto/lib/utils';
+import { decryptData, encryptData } from '@protontech/crypto/subtle/aesGcm.ts';
+import { utf8StringToUint8Array, uint8ArrayToUtf8String } from '@protontech/crypto/utils';
 import { getClientKey } from '@proton/shared/lib/authentication/clientKey';
 
 import type { DecryptedCache, EncryptedCache } from './db';

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import { CryptoProxy } from '@proton/crypto/lib';
-import type { PublicKeyReference } from '@proton/crypto/lib';
+import { CryptoProxy } from '@protontech/crypto';
+import type { PublicKeyReference } from '@protontech/crypto';
 
 export const EXPIRATION_OPTIONS = [
     { value: '30', text: c('collider_2025: Option').t`30 days` },

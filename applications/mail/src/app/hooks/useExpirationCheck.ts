@@ -1,5 +1,5 @@
 import { useInterval } from '@proton/components/hooks/useHandler';
-import { serverTime } from '@proton/crypto';
+import { serverTime } from '@protontech/crypto';
 
 import { isExpired } from 'proton-mail/helpers/expiration';
 

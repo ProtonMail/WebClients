@@ -7,7 +7,7 @@ import useDrawerLocalStorage from '@proton/components/hooks/drawer/useDrawerLoca
 import useToggleDrawerApp from '@proton/components/hooks/drawer/useToggleDrawerApp';
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
-import { serverTime } from '@proton/crypto';
+import { serverTime } from '@protontech/crypto';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import { getAppFromHostname } from '@proton/shared/lib/apps/slugHelper';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';

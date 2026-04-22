@@ -1,5 +1,5 @@
-import type { CryptoApiInterface, PrivateKeyReference } from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
+import type { CryptoApiInterface, PrivateKeyReference } from '@protontech/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 
 import type { KeyCache } from './useKeysCache';

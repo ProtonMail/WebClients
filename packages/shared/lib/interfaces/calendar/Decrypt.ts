@@ -1,4 +1,4 @@
-import type { SessionKey } from '@proton/crypto';
+import type { SessionKey } from '@protontech/crypto';
 
 import type { EVENT_VERIFICATION_STATUS } from '../../calendar/constants';
 import type { Address } from '../Address';

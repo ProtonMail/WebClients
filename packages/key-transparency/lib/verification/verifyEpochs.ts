@@ -1,4 +1,4 @@
-import { CryptoProxy, serverTime } from '@proton/crypto';
+import { CryptoProxy, serverTime } from '@protontech/crypto';
 
 import { KT_ERROR_TYPE, throwKTError } from '../helpers/utils';
 import type { Epoch } from '../interfaces';

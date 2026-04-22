@@ -9,9 +9,9 @@ import {
     importWrappingKey,
     unwrapKey,
     wrapKey,
-} from '@proton/crypto/lib/subtle/aesGcm';
-import {computeSHA256} from '@proton/crypto/lib/subtle/hash';
-import {uint8ArrayToUtf8String, utf8StringToUint8Array} from '@proton/crypto/lib/utils';
+} from '@protontech/crypto/subtle/aesGcm.ts';
+import {computeSHA256} from '@protontech/crypto/subtle/hash.ts';
+import {uint8ArrayToUtf8String, utf8StringToUint8Array} from '@protontech/crypto/utils';
 
 import {type AdString, type Base64, type EncryptedData, isOldEncryptedData} from '../types';
 import type {AesGcmCryptoKey, AesKwCryptoKey} from './types';

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import type { AuthTypes } from '@proton/components/containers/login/interface';
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 import type { AuthResponse } from '@proton/shared/lib/authentication/interface';
 import { getTwoFactorTypes } from '@proton/shared/lib/authentication/twoFactor';
 import { type APP_NAMES, PASSWORD_MODE } from '@proton/shared/lib/constants';

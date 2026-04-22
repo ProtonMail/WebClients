@@ -1,4 +1,4 @@
-import { VERIFICATION_STATUS } from '@proton/crypto/lib/constants';
+import { VERIFICATION_STATUS } from '@protontech/crypto/constants';
 import { getIsConnectionIssue } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 
 import { sendErrorReport } from '../../utils/errorHandling';

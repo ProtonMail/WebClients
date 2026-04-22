@@ -12,12 +12,12 @@
   "dependencies": {
     "@lexical/yjs": "0.30.0",
     "@proton/components": "workspace:^",
-    "@proton/crypto": "workspace:^",
     "@proton/docs-proto": "workspace:^",
     "@proton/docs-shared": "workspace:^",
     "@proton/drive-store": "workspace:^",
     "@proton/shared": "workspace:^",
     "@proton/testing": "workspace:^",
+    "@protontech/crypto": "^2.0.1",
     "@testing-library/react": "^14.3.1",
     "@testing-library/react-hooks": "^8.0.1",
     "react": "^18.3.1",

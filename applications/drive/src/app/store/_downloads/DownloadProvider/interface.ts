@@ -1,4 +1,4 @@
-import type { VERIFICATION_STATUS } from '@proton/crypto';
+import type { VERIFICATION_STATUS } from '@protontech/crypto';
 
 import type { TransferMeta, TransferState } from '../../../components/TransferManager/transfer';
 import type { LinkDownload } from '../interface';

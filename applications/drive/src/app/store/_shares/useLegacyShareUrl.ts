@@ -1,7 +1,7 @@
 import { useApi, usePreventLeave } from '@proton/components';
-import type { SessionKey } from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
-import { utf8StringToUint8Array } from '@proton/crypto/lib/utils';
+import type { SessionKey } from '@protontech/crypto';
+import { CryptoProxy } from '@protontech/crypto';
+import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 import {
     queryCreateSharedLink,
     queryDeleteMultipleSharedLinks,

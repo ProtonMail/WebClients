@@ -104,10 +104,10 @@
     },
     "peerDependencies": {
         "@proton/cross-storage": "*",
-        "@proton/crypto": "*",
         "@proton/key-transparency": "*",
         "@proton/shared": "*",
         "@proton/srp": "*",
+        "@protontech/crypto": "^2.0.1",
         "date-fns": "^2.30.0"
     }
 }

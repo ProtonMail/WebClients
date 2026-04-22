@@ -1,6 +1,6 @@
 import '@proton/polyfill';
-import { CryptoProxy } from '@proton/crypto';
-import { Api as CryptoApi } from '@proton/crypto/lib/worker/api';
+import { CryptoProxy } from '@protontech/crypto';
+import { Api as CryptoApi } from '@protontech/crypto/proxy/endpoint/api.ts';
 
 // Initialize CryptoProxy using a non-worker endpoint
 CryptoProxy.setEndpoint(new CryptoApi(), (endpoint) => endpoint.clearKeyStore());

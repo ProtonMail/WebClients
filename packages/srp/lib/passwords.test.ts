@@ -1,4 +1,4 @@
-import { binaryStringToUint8Array } from '@proton/crypto/lib/utils';
+import { binaryStringToUint8Array } from '@protontech/crypto/utils';
 
 import { hashedResult0, hashedResult2, hashedResult4, watResult } from '../test/passwords.data';
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../test/setup';

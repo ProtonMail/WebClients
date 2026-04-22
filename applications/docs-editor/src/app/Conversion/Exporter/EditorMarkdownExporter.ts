@@ -1,4 +1,4 @@
-import { utf8StringToUint8Array } from '@proton/crypto/lib/utils'
+import { utf8StringToUint8Array } from '@protontech/crypto/utils'
 import { EditorExporter } from './EditorExporter'
 import { $convertToMarkdownString } from '@lexical/markdown'
 import { MarkdownTransformers } from '../../Tools/MarkdownTransformers'

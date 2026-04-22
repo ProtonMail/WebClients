@@ -1,6 +1,6 @@
 import type { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import type { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
-import type { PublicKeyReference, SessionKey } from '@proton/crypto';
+import type { PublicKeyReference, SessionKey } from '@protontech/crypto';
 import { syncMultipleEvents as syncMultipleEventsRoute } from '@proton/shared/lib/api/calendars';
 import { getHasSharedEventContent, getHasSharedKeyPacket } from '@proton/shared/lib/calendar/apiModels';
 import { DEFAULT_ATTENDEE_PERMISSIONS } from '@proton/shared/lib/calendar/constants';

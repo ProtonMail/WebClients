@@ -1,4 +1,4 @@
-import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference, PublicKeyReference } from '@protontech/crypto';
 import type { MESSAGE_ACTIONS } from '@proton/mail-renderer/constants';
 import type { Preparation } from '@proton/mail-renderer/helpers/transforms/transforms';
 import type { Api, KeyTransparencyVerificationResult, RequireSome, SimpleMap } from '@proton/shared/lib/interfaces';

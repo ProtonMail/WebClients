@@ -1,7 +1,7 @@
 import { CommentType } from '@proton/docs-shared'
 import { DecryptComment } from './DecryptComment'
 import { Result } from '@proton/docs-shared'
-import { VERIFICATION_STATUS } from '@proton/crypto'
+import { VERIFICATION_STATUS } from '@protontech/crypto'
 import type { CommentResponseDto } from '../Api/Types/CommentResponseDto'
 import type { DocumentKeys, PublicDocumentKeys } from '@proton/drive-store'
 import type { EncryptionContext } from '../Services/Encryption/EncryptionContext'

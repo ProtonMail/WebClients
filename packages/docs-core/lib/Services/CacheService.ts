@@ -9,7 +9,7 @@ import { Result } from '@proton/docs-shared'
 import type { DatabaseSchema } from '../Database/Schema'
 import type { IndexedDatabase } from '../Database/IndexedDB'
 import { Commit } from '@proton/docs-proto'
-import { utf8StringToUint8Array, uint8ArrayToUtf8String } from '@proton/crypto/lib/utils'
+import { utf8StringToUint8Array, uint8ArrayToUtf8String } from '@protontech/crypto/utils'
 
 type CachedValue = {
   encryptedValue: string

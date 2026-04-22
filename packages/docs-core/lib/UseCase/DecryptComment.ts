@@ -1,5 +1,5 @@
-import { uint8ArrayToUtf8String } from '@proton/crypto/lib/utils'
-import { VERIFICATION_STATUS } from '@proton/crypto'
+import { uint8ArrayToUtf8String } from '@protontech/crypto/utils'
+import { VERIFICATION_STATUS } from '@protontech/crypto'
 import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 import { type CommentVerificationResult, Result, ServerTime } from '@proton/docs-shared'
 import type { EncryptionService } from '../Services/Encryption/EncryptionService'

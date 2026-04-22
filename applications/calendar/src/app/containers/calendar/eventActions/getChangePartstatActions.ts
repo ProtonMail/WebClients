@@ -1,6 +1,6 @@
 import { getUnixTime } from 'date-fns';
 
-import { serverTime } from '@proton/crypto';
+import { serverTime } from '@protontech/crypto';
 import { toIcsPartstat } from '@proton/shared/lib/calendar/attendees';
 import { ICAL_ATTENDEE_STATUS } from '@proton/shared/lib/calendar/constants';
 import { getAttendeeToken, getHasAttendees } from '@proton/shared/lib/calendar/vcalHelper';

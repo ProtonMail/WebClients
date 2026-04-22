@@ -1,4 +1,4 @@
-import { CryptoProxy } from '@proton/crypto/lib';
+import { CryptoProxy } from '@protontech/crypto';
 import {
     queryCreateShareURLBookmark,
     queryDeleteShareURLBookmark,

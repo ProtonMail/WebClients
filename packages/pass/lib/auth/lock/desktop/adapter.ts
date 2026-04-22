@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { generateKey } from '@proton/crypto/lib/subtle/aesGcm';
+import { generateKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { sendSetupLockSecretMessage } from '@proton/pass/lib/auth/lock/desktop/logic.extension';
 import type { LockAdapterDesktop } from '@proton/pass/lib/auth/lock/types';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';

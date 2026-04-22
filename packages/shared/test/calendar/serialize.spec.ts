@@ -1,5 +1,5 @@
-import type { PublicKeyReference, SessionKey } from '@proton/crypto';
-import { CryptoProxy, toPublicKeyReference } from '@proton/crypto';
+import type { PublicKeyReference, SessionKey } from '@protontech/crypto';
+import { CryptoProxy, toPublicKeyReference } from '@protontech/crypto';
 import { getIsAllDay } from '@proton/shared/lib/calendar/veventHelper';
 import { ACCENT_COLORS_MAP } from '@proton/shared/lib/colors';
 import { omit } from '@proton/shared/lib/helpers/object';

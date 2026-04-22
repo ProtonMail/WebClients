@@ -1,7 +1,7 @@
 import { renderHook } from '@testing-library/react';
 import { act } from '@testing-library/react-hooks';
 
-import { generateKey, importKey } from '@proton/crypto/lib/subtle/aesGcm';
+import { generateKey, importKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testing';
 import { mockUseNotifications } from '@proton/testing/lib/vitest';
 import { mockUseApiWalletTransactionData, mockUseWalletApi, mockUseWalletDispatch } from '@proton/wallet/tests/mocks';

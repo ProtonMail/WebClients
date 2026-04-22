@@ -5,9 +5,9 @@ import type {
     PrivateKeyReference,
     PublicKeyReference,
     VERIFICATION_STATUS,
-} from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
-import { uint8ArrayToUtf8String } from '@proton/crypto/lib/utils';
+} from '@protontech/crypto';
+import { CryptoProxy } from '@protontech/crypto';
+import { uint8ArrayToUtf8String } from '@protontech/crypto/utils';
 import type { MessageErrors } from '@proton/mail/store/messages/messagesTypes';
 import { MIME_TYPES } from '@proton/shared/lib/constants';
 import type { Address } from '@proton/shared/lib/interfaces';

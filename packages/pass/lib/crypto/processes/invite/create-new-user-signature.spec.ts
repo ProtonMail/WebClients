@@ -1,4 +1,4 @@
-import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto/lib';
+import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 import { createPassCoreProxy } from '@proton/pass/lib/core/core.proxy';
 import type { PassCoreProxy } from '@proton/pass/lib/core/core.types';
 import {

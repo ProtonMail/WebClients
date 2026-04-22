@@ -1,4 +1,4 @@
-import { VERIFICATION_STATUS } from '@proton/crypto/lib/constants';
+import { VERIFICATION_STATUS } from '@protontech/crypto/constants';
 import { SupportedMimeTypes } from '@proton/shared/lib/drive/constants';
 import { PROTON_DOCS_DOCUMENT_MIMETYPE } from '@proton/shared/lib/helpers/mimetype';
 

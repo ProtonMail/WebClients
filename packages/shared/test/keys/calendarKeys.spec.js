@@ -1,4 +1,4 @@
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 
 import { decryptPassphrase } from '../../lib/calendar/crypto/keys/calendarKeys';
 import { DecryptableKey } from './keys.data';

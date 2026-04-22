@@ -1,11 +1,11 @@
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 
 export const setupCryptoProxy = async () => {
     try {
         const { Api: CryptoApi } = await import(
             /* webpackChunkName: "es-migration-tools-crypto-worker" */
-            '@proton/crypto/lib/worker/api'
+            '@protontech/crypto/proxy/endpoint/api.ts'
         );
 
         CryptoApi.init({});

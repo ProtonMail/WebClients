@@ -1,6 +1,5 @@
-import type { SessionKey } from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
-import { releaseCryptoProxy, setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testing';
+import type { SessionKey } from '@protontech/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 
 import {
     decryptMeetingName,
@@ -10,6 +9,7 @@ import {
     getCombinedPassword,
     prepareMeetingCryptoData,
 } from './cryptoUtils';
+import { releaseCryptoProxy, setupCryptoProxyForTesting } from './testUtils';
 
 vi.mock('@proton/shared/lib/srp', () => ({
     srpGetVerify: vi.fn().mockResolvedValue({

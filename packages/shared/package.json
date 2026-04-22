@@ -16,11 +16,11 @@
     "dependencies": {
         "@mattiasbuelens/web-streams-adapter": "0.1.0",
         "@proton/colors": "workspace:^",
-        "@proton/crypto": "workspace:^",
         "@proton/sanitize": "workspace:^",
         "@proton/srp": "workspace:^",
         "@proton/styles": "workspace:^",
         "@protontech/bip39": "^1.1.0",
+        "@protontech/crypto": "^2.0.1",
         "@protontech/mimemessage": "~v1.1.4",
         "@protontech/mutex-browser": "^1.0.5",
         "@protontech/telemetry": "^1.0.5",

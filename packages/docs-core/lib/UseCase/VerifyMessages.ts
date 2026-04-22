@@ -1,4 +1,4 @@
-import { VERIFICATION_STATUS } from '@proton/crypto'
+import { VERIFICATION_STATUS } from '@protontech/crypto'
 import type { UseCaseInterface } from '../Domain/UseCase/UseCaseInterface'
 import { Result } from '@proton/docs-shared'
 import type { EncryptionService } from '../Services/Encryption/EncryptionService'

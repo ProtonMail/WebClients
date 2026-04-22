@@ -7,7 +7,7 @@ import useDrawerLocalStorage from '@proton/components/hooks/drawer/useDrawerLoca
 import useToggleDrawerApp from '@proton/components/hooks/drawer/useToggleDrawerApp';
 import useApi from '@proton/components/hooks/useApi';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
-import { serverTime } from '@proton/crypto';
+import { serverTime } from '@protontech/crypto';
 import { getClientID } from '@proton/shared/lib/apps/helper';
 import {
     getDrawerAppFromURL,
@@ -26,7 +26,7 @@ jest.mock('@proton/components/hooks/drawer/useDrawerLocalStorage');
 jest.mock('@proton/components/hooks/drawer/useToggleDrawerApp');
 jest.mock('@proton/components/hooks/useApi');
 jest.mock('@proton/components/hooks/useAuthentication');
-jest.mock('@proton/crypto');
+jest.mock('@protontech/crypto');
 jest.mock('@proton/shared/lib/apps/helper');
 jest.mock('@proton/shared/lib/apps/slugHelper');
 jest.mock('@proton/shared/lib/authentication/persistedSessionStorage');

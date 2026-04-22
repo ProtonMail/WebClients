@@ -1,4 +1,4 @@
-import { CryptoProxy, toPublicKeyReference } from '@proton/crypto';
+import { CryptoProxy, toPublicKeyReference } from '@protontech/crypto';
 import { createPreAuthKTVerifier, resetSelfAudit } from '@proton/key-transparency/shared';
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { auth, authMnemonic, getMnemonicAuthInfo } from '@proton/shared/lib/api/auth';

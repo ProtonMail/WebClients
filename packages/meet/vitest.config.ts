@@ -8,6 +8,9 @@ export default defineConfig({
     test: {
         globals: true,
         environment: 'happy-dom',
+        deps: {
+            inline: ['@protontech/crypto'],
+        },
         poolOptions: {
             singleThread: true,
         },

@@ -1,5 +1,5 @@
-import type { ContextVerificationOptions, PublicKeyReference, SessionKey } from '@proton/crypto';
-import { CryptoProxy, type PrivateKeyReference, toPublicKeyReference } from '@proton/crypto';
+import type { ContextVerificationOptions, PublicKeyReference, SessionKey } from '@protontech/crypto';
+import { CryptoProxy, type PrivateKeyReference, toPublicKeyReference } from '@protontech/crypto';
 import { getDefaultKeyFlags } from '@proton/shared/lib/keys/keyFlags';
 import noop from '@proton/utils/noop';
 

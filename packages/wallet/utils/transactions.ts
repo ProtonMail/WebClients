@@ -1,5 +1,5 @@
 import type { WasmApiClients, WasmApiWalletTransaction, WasmTransactionDetails } from '@proton/andromeda';
-import type { PrivateKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference } from '@protontech/crypto';
 import { SECOND } from '@proton/shared/lib/constants';
 import type { DecryptedKey, SimpleMap } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';

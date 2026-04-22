@@ -1,6 +1,6 @@
 import { getUnixTime } from 'date-fns';
 
-import { serverTime } from '@proton/crypto';
+import { serverTime } from '@protontech/crypto';
 import type { MessageStateWithData, MessageWithOptionalBody } from '@proton/mail/store/messages/messagesTypes';
 import { TelemetryIcsSurgeryEvents, TelemetryMeasurementGroups } from '@proton/shared/lib/api/telemetry';
 import { generateAttendeeToken, getAttendeeEmail } from '@proton/shared/lib/calendar/attendees';

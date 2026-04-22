@@ -1,4 +1,4 @@
-import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@proton/crypto/lib/utils';
+import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/crypto/utils';
 import { zeroize } from '@proton/pass/utils/object/zero';
 
 const OBFS_SCHEME_VERSION = 2;

@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
+import type { PrivateKeyReference, PublicKeyReference } from '@protontech/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 import type { CachedOrganizationKey } from '@proton/shared/lib/interfaces';
 import { getFormattedAlgorithmName } from '@proton/shared/lib/keys';
 

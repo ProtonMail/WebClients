@@ -1,5 +1,5 @@
-import type { PrivateKeyReference, PublicKeyReference, VERIFICATION_STATUS } from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
+import type { PrivateKeyReference, PublicKeyReference, VERIFICATION_STATUS } from '@protontech/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
 import { decryptSigned } from '@proton/shared/lib/keys/driveKeys';
 

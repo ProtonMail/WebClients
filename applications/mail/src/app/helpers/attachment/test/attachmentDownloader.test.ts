@@ -1,4 +1,4 @@
-import { utf8StringToUint8Array } from '@proton/crypto/lib/utils';
+import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 import type { MessageKeys, MessageVerification } from '@proton/mail/store/messages/messagesTypes';
 import * as browser from '@proton/shared/lib/helpers/browser';
 import * as downloadFile from '@proton/shared/lib/helpers/downloadFile';

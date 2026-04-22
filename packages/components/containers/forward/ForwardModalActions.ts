@@ -8,7 +8,7 @@ import { getKTActivation } from '@proton/account/kt/actions';
 import { getPublicKeysForInboxThunk } from '@proton/account/publicKeys/publicKeysForInbox';
 import { userThunk } from '@proton/account/user';
 import { type UserKeysState, userKeysThunk } from '@proton/account/userKeys';
-import { CryptoProxy, type PublicKeyReference } from '@proton/crypto';
+import { CryptoProxy, type PublicKeyReference } from '@protontech/crypto';
 import { createKTVerifier } from '@proton/key-transparency/helpers';
 import type { ForwardModalKeyState } from '@proton/mail/store/forwarding/outgoingForwardingActions';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
