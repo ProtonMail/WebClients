@@ -1,4 +1,3 @@
-import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader';
 import clsx from '@proton/utils/clsx';
 
 import { getParticipantInitials } from '../../utils/getParticipantInitials';
@@ -58,14 +57,7 @@ export const ParticipantPlaceholder = ({
                     '--h-custom': `${sizeByViewSize[viewSize]}rem`,
                 }}
             >
-                {participantName ? (
-                    getParticipantInitials(participantName)
-                ) : (
-                    <CircleLoader
-                        className="color-primary w-custom h-custom"
-                        style={{ '--w-custom': '2rem', '--h-custom': '2rem' }}
-                    />
-                )}
+                {participantName && getParticipantInitials(participantName)}
             </div>
         </div>
     );

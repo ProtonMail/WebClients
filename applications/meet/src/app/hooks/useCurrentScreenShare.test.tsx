@@ -131,34 +131,6 @@ describe('useCurrentScreenShare', () => {
         vi.resetModules();
     });
 
-    it('should have isLocal true if the local participant is the one sharing the screen', () => {
-        useTracksMock.mockReturnValue(mockTracks);
-        useLocalParticipantMock.mockReturnValue({
-            localParticipant: mockLocalParticipant,
-        });
-        useParticipantsMock.mockReturnValue([mockLocalParticipant]);
-
-        const { result } = renderUseCurrentScreenShare();
-
-        expect(result.current.isLocalScreenShare).toBe(true);
-    });
-
-    it('should return false if the local participant is not the one sharing the screen', () => {
-        const mockParticipant = {
-            ...mockLocalParticipant,
-            identity: 'other-participant',
-        };
-
-        useTracksMock.mockReturnValue([{ ...mockTracks[0], participant: mockParticipant }]);
-        useLocalParticipantMock.mockReturnValue({
-            localParticipant: mockLocalParticipant,
-        });
-        useParticipantsMock.mockReturnValue([mockParticipant, mockLocalParticipant]);
-
-        const { result } = renderUseCurrentScreenShare();
-        expect(result.current.isLocalScreenShare).toBe(false);
-    });
-
     it('should allow for stopping the screen share', () => {
         const setScreenShareEnabled = vi.fn();
 
@@ -168,9 +140,6 @@ describe('useCurrentScreenShare', () => {
             setScreenShareEnabled,
         };
 
-        useLocalParticipantMock.mockReturnValue({
-            localParticipant: newLocalParticipant,
-        });
         useParticipantsMock.mockReturnValue([newLocalParticipant]);
 
         useRoomContextMock.mockReturnValue({
@@ -188,9 +157,6 @@ describe('useCurrentScreenShare', () => {
     });
 
     it('should show a notification if the screen share is not supported on mobile browsers', async () => {
-        useLocalParticipantMock.mockReturnValue({
-            localParticipant: mockLocalParticipant,
-        });
         useParticipantsMock.mockReturnValue([mockLocalParticipant]);
 
         (isMobile as Mock).mockReturnValue(true);
@@ -240,9 +206,6 @@ describe('useCurrentScreenShare', () => {
         };
 
         useRoomContextMock.mockReturnValue(roomWithParticipants);
-        useLocalParticipantMock.mockReturnValue({
-            localParticipant: mockLocalParticipant,
-        });
 
         renderUseCurrentScreenShare();
 
@@ -289,9 +252,6 @@ describe('useCurrentScreenShare', () => {
         };
 
         useRoomContextMock.mockReturnValue(roomWithParticipants);
-        useLocalParticipantMock.mockReturnValue({
-            localParticipant: mockLocalParticipant,
-        });
 
         renderUseCurrentScreenShare();
 
@@ -305,9 +265,6 @@ describe('useCurrentScreenShare', () => {
 
     it('should subscribe to newly published screen shares', () => {
         useRoomContextMock.mockReturnValue(mockRoom);
-        useLocalParticipantMock.mockReturnValue({
-            localParticipant: mockLocalParticipant,
-        });
 
         renderUseCurrentScreenShare();
 

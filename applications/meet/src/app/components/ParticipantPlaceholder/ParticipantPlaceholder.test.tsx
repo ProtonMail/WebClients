@@ -7,18 +7,6 @@ describe('ParticipantPlaceholder', () => {
     const backgroundColor = 'meet-background-1';
     const profileColor = 'profile-background-1';
 
-    it('renders loading spinner when participant name is not available', () => {
-        render(
-            <ParticipantPlaceholder
-                participantName={undefined}
-                backgroundColor={backgroundColor}
-                profileColor={profileColor}
-            />
-        );
-
-        expect(screen.getByTestId('circle-loader')).toBeInTheDocument();
-    });
-
     it('renders participant initials when participant name is available', () => {
         render(
             <ParticipantPlaceholder

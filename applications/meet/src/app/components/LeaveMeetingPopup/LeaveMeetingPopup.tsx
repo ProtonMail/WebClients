@@ -8,7 +8,7 @@ import usePopperAnchor from '@proton/components/components/popper/usePopperAncho
 import useLoading from '@proton/hooks/useLoading';
 import { IcMeetPhone } from '@proton/icons/icons/IcMeetPhone';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
-import { selectIsLocalScreenShare } from '@proton/meet/store/slices/meetingInfo';
+import { selectIsLocalScreenShare } from '@proton/meet/store/slices/screenShareStatusSlice';
 import { selectTotalParticipantCount } from '@proton/meet/store/slices/sortedParticipantsSlice';
 import {
     MeetingSideBars,

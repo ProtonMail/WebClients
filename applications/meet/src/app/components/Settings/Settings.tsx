@@ -3,7 +3,8 @@ import { c } from 'ttag';
 import Toggle from '@proton/components/components/toggle/Toggle';
 import { useLoading } from '@proton/hooks';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
-import { selectIsLocalScreenShare, selectPaidUser } from '@proton/meet/store/slices/meetingInfo';
+import { selectPaidUser } from '@proton/meet/store/slices/meetingInfo';
+import { selectIsLocalScreenShare } from '@proton/meet/store/slices/screenShareStatusSlice';
 import { selectMeetSettings, setDisableVideos, setPipEnabled, setSelfView } from '@proton/meet/store/slices/settings';
 import {
     MeetingSideBars,

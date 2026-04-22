@@ -4,6 +4,7 @@ import { meetAppStateReducer } from './meetAppStateSlice';
 import { meetingInfoReducer } from './meetingInfo';
 import { meetingsReducer } from './meetings';
 import { recordingStatusReducer } from './recordingStatusSlice';
+import { screenShareStatusReducer } from './screenShareStatusSlice';
 import { settingsReducer } from './settings';
 import { sortedParticipantsReducer } from './sortedParticipantsSlice';
 import { uiStateReducer } from './uiStateSlice';
@@ -24,6 +25,7 @@ export const meetReducers = {
     ...meetingsReducer,
     ...userSettingsReducer,
     ...recordingStatusReducer,
+    ...screenShareStatusReducer,
     ...settingsReducer,
     ...sortedParticipantsReducer,
     ...uiStateReducer,
