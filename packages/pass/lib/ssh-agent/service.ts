@@ -1,3 +1,4 @@
+import { getItemRevisionKey } from '@proton/pass/lib/items/item.utils';
 import type { ContextBridgeApi, Maybe, SSHKeyItem } from '@proton/pass/types';
 import { prop } from '@proton/pass/utils/fp/lens';
 import { asyncLatest } from '@proton/pass/utils/fp/promises';
@@ -19,16 +20,27 @@ export type SshAgentService = {
     readonly enabled: boolean;
 };
 
+type SSHAgentState = { enabled: boolean; keys: Set<string> };
+
 export const createSshAgentService = ({ bridge, datasource }: SshAgentServiceOptions): SshAgentService => {
-    const state = { enabled: false };
+    const state: SSHAgentState = { enabled: false, keys: new Set() };
 
     const sync = asyncLatest(async (signal, items: SSHKeyItem[]) => {
         if (state.enabled) {
             try {
                 const isRunning = Boolean((await bridge.getSshAgentStatus())?.socketPath);
+
                 if (signal.aborted || !isRunning) return;
+
+                const { keys } = state;
+                const skip = items.length === keys.size && items.every((i) => keys.has(getItemRevisionKey(i)));
+                if (skip) return;
+
                 if (items.length === 0) await bridge.removeAllSshKeys();
                 else await bridge.setSshKeyItems(items);
+
+                state.keys.clear();
+                items.forEach((item) => state.keys.add(getItemRevisionKey(item)));
             } catch (error) {
                 logger.warn('[SSH agent] sync failed', error);
             }
@@ -63,6 +75,7 @@ export const createSshAgentService = ({ bridge, datasource }: SshAgentServiceOpt
 
         stop: async () => {
             sync.cancel();
+            state.keys.clear();
             if (service.enabled) await setEnabled(false);
             await bridge.stopSshAgent();
         },
