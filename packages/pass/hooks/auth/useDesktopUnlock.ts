@@ -11,7 +11,7 @@ import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { NativeMessageError } from '@proton/pass/lib/native-messaging/errors';
 import { NativeMessageErrorType } from '@proton/pass/types';
 
-export const useDesktopUnlock = () => {
+export const useDesktopUnlock = ({ silentErrors } = { silentErrors: false }) => {
     const { getDesktopUnlockSecret } = usePassCore();
 
     const { createNotification } = useNotifications();
@@ -30,7 +30,7 @@ export const useDesktopUnlock = () => {
         ]).catch((err: Error) => {
             /** Show the error notification here — the adapter will receive an empty key,
              * throw a SilentError, and increment the retry count without a duplicate notification */
-            createNotification({ type: 'error', text: err.message });
+            if (!silentErrors) createNotification({ type: 'error', text: err.message });
             return '';
         });
 
@@ -46,9 +46,9 @@ export const useDesktopUnlock = () => {
     }, []);
 };
 
-export const useAutoDesktopUnlock = () => {
+export const useAutoDesktopUnlock = ({ silentErrors } = { silentErrors: false }) => {
     const [loading, setLoading] = useState(false);
-    const desktopUnlock = useDesktopUnlock();
+    const desktopUnlock = useDesktopUnlock({ silentErrors });
 
     const onUnlock = useCallback(async () => {
         try {
