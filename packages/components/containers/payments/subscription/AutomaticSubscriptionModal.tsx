@@ -346,7 +346,7 @@ const AutomaticSubscriptionModal = () => {
 
             openSubscriptionModal(openProps);
         }
-    }, [loadingPlans, loadingSubscription, loadingSubscriptionModal, location.search]);
+    }, [loadingPlans, loadingSubscription, loadingPaymentStatus, paymentStatus, subscription, user, location.search]);
 
     const tmp = tmpProps.current;
 
