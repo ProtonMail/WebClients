@@ -2,8 +2,8 @@ import { useSubscription } from '@proton/account/subscription/hooks';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { PLAN_NAMES, getPlanName, getPlanTitle } from '@proton/payments';
 
-import { CancelRedirectionModal } from '../cancellationFlow/CancelRedirectionModal';
-import { FeedbackFirstCancellation } from './FeedbackFirstCancellation';
+import { CancelRedirectionModal } from '../../cancellationFlow/CancelRedirectionModal';
+import { FeedbackFirstCancellation } from '../FeedbackFirstCancellation';
 
 export const useFeedbackFirstCancellationFlow = () => {
     const [modalProps, setModalOpen, renderModal] = useModalState();
