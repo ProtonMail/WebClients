@@ -64,10 +64,13 @@ export const Dropdown: FC<Props> = ({ initial = null }) => {
 
     useEffect(() => setState((prev) => (visible ? prev : null)), [visible]);
 
+    const desktopLocked = clientDesktopLocked(status);
+
     return (
+        // When desktop lock, allow height 0 because we only rely on auto unlock trigger
         <IFrameAppAutoSizer
-            className="min-h-custom bg-norm relative"
-            style={{ '--min-h-custom': `${DROPDOWN_MIN_HEIGHT}px` }}
+            className={desktopLocked ? undefined : 'min-h-custom bg-norm relative'}
+            style={desktopLocked ? undefined : { '--min-h-custom': `${DROPDOWN_MIN_HEIGHT}px` }}
         >
             <DropdownFocusController>
                 <Localized>

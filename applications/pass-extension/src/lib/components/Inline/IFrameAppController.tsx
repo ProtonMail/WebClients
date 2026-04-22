@@ -168,12 +168,10 @@ export const createIFrameAppController = (endpoint: IFrameEndpoint, onMessage: (
         },
 
         resize: (height) => {
-            if (height > 0) {
-                IFrameBridge.forwardMessage({
-                    type: InlinePortMessageType.IFRAME_DIMENSIONS,
-                    payload: { height },
-                });
-            }
+            IFrameBridge.forwardMessage({
+                type: InlinePortMessageType.IFRAME_DIMENSIONS,
+                payload: { height },
+            });
         },
     };
 
