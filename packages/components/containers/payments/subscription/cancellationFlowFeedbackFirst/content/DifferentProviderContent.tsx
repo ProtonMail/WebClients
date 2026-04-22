@@ -9,7 +9,6 @@ import SimpleDropdown from '@proton/components/components/dropdown/SimpleDropdow
 import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
-import { useFeedbackFirstEligibility } from '@proton/components/containers/payments/subscription/cancellationFlowFeedbackFirst/useFeedbackFirstEligibility';
 import { BRAND_NAME, MAIL_APP_NAME } from '@proton/shared/lib/constants';
 
 import { B2BStoryCards } from '../components/B2BStoryCards';
@@ -22,6 +21,7 @@ import {
     getDifferentProviderB2CConfig,
 } from '../config/differentProviderConfig';
 import type { Competitor } from '../config/differentProviderConfig';
+import { useFeedbackFirstEligibility } from '../hooks/useFeedbackFirstEligibility';
 
 interface Props {
     onKeepPlan: () => void;
