@@ -10,7 +10,6 @@ im.$media-expressions: $media-expressions;
 	block-size: 100%;
 	padding: 12px;
 	gap: 8px;
-	background-color: var(--background-weak);
 
 	// Add V2 list border and text styling
 	ul {
@@ -125,7 +124,7 @@ im.$media-expressions: $media-expressions;
 
 	// Expanded state - full input field styling
 	&:not(.collapsed) {
-		background-color: var(--background-weak);
+		// background-color: var(--background-norm);
 		border-color: var(--border-weak);
 		cursor: text;
 		transition-delay: 0s; // No delay when expanding

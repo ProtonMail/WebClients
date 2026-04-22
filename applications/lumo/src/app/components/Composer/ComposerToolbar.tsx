@@ -130,7 +130,7 @@ export const ComposerToolbar = ({
 }: ComposerToolbarProps) => {
     const toolsButtonRef = useRef<HTMLButtonElement>(null);
     const [showToolsMenu, setShowToolsMenu] = useState(false);
-    const { externalTools: isLumoToolingEnabled } = useLumoFlags();
+    const { imageTools: isImageToolsFlagEnabled, externalTools: isToolsFlagEnabled } = useLumoFlags();
     const [showCreateImageButton, setShowCreateImageButton] = useState(false);
 
     useNativeComposerImageApi();
@@ -153,7 +153,7 @@ export const ComposerToolbar = ({
         <div className="flex flex-row flex-nowrap items-center justify-space-between w-full mt-1">
             <div className="flex flex-row flex-nowrap items-center gap-1 pl-2">
                 <UploadMenuSection {...uploadSectionProps} />
-                {isLumoToolingEnabled && !showCreateImageButton && (
+                {isToolsFlagEnabled && !showCreateImageButton && (
                     <>
                         <Button
                             ref={toolsButtonRef}
@@ -204,7 +204,7 @@ export const ComposerToolbar = ({
                         <IcMicrophone size={6} />
                     </Button>
                 </div>
-                <ModelModeDropdown />
+                {isImageToolsFlagEnabled && <ModelModeDropdown />}
             </div>
         </div>
     );

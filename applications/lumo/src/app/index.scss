@@ -61,8 +61,6 @@ im.$media-expressions: $media-expressions;
 }
 
 .sidebar {
-	background-color: var(--background-weak);
-
 	// Smooth width transitions for desktop
 	transition:
 		inline-size 0.3s ease-in-out,

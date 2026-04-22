@@ -164,7 +164,7 @@ const LumoSidebarHeader = ({ isCollapsed }: { isCollapsed: boolean }) => {
     return (
         <div
             className={clsx('flex flex-row flex-nowrap items-center justify-space-between hidden md:flex', {
-                'px-5 py-2': !isCollapsed,
+                'px-5 py-3': !isCollapsed,
                 'px-0 pt-2 pb-0': isCollapsed,
             })}
         >
@@ -183,7 +183,7 @@ const LumoSidebar = () => {
             {isOverlay && <div className="sidebar-backdrop" onClick={toggle}></div>}
             <div
                 className={clsx(
-                    'sidebar h-full flex flex-nowrap flex-column no-print outline-none border-right border-top border-weak',
+                    'sidebar h-full flex flex-nowrap flex-column no-print outline-none border-right border-top border-weak bg-norm',
                     isCollapsed && 'sidebar--collapsed',
                     isOverlay && 'sidebar-expanded'
                 )}
