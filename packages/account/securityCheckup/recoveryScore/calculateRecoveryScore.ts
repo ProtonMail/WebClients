@@ -42,7 +42,6 @@ export const calculateRecoveryScore = (
 ): { score: number; maxScore: number; scoreItems: RecoveryScoreItem[] } => {
     const emailEnabled = getIsPerfectEmailState(state.securityState);
     const phoneEnabled = getIsPerfectPhoneState(state.securityState);
-    const hasPasswordResetOption = emailEnabled || phoneEnabled;
 
     const scoreItems: RecoveryScoreItem[] = [
         {
@@ -57,17 +56,17 @@ export const calculateRecoveryScore = (
         },
         {
             id: 'deviceRecovery',
-            isAvailable: hasPasswordResetOption && state.securityState.deviceRecovery.isAvailable,
+            isAvailable: state.securityState.deviceRecovery.isAvailable,
             isEnabled: getIsPerfectDeviceRecoveryState(state.securityState),
         },
         {
             id: 'recoveryFile',
-            isAvailable: hasPasswordResetOption && state.recoveryFile.isAvailable,
+            isAvailable: state.recoveryFile.isAvailable,
             isEnabled: state.recoveryFile.isEnabled,
         },
         {
             id: 'recoveryContacts',
-            isAvailable: hasPasswordResetOption && state.recoveryContacts.isAvailable,
+            isAvailable: state.recoveryContacts.isAvailable,
             isEnabled: state.recoveryContacts.isEnabled,
         },
         {
