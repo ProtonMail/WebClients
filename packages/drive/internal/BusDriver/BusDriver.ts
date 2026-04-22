@@ -1,6 +1,7 @@
 import type { DriveEvent } from '@protontech/drive-sdk';
 import type { EventSubscription } from '@protontech/drive-sdk/dist/internal/events/interface';
 
+import { wait } from '@proton/shared/lib/helpers/promise';
 import { getItem } from '@proton/shared/lib/helpers/storage';
 
 import { DriveEventType, getDrive, getDriveForPhotos } from '../..';
@@ -118,6 +119,25 @@ class BusDriver {
     }
 
     async emit(event: BusDriverEvent, driveClient: BusDriverClient): Promise<void> {
+        // Emit is called right away on the client side after the action is
+        // performed. The listeners might fetch the latest data from the server
+        // which is not replicated yet. We wait for a small delay that is not
+        // noticeable to the user and solves majority of the cases. It is not
+        // perfect and in the case of a longer delay, the user might see still
+        // a stale data. API event eventually fixes the issue.
+        // Example: transfer manager uploads file and emits the event, file
+        // browser processes the event by loading the node metadata to show
+        // the file in the list. However, the uploader just committed the file
+        // to the server and the file is still draft in replicas. Not waiting
+        // causes that the file is not visible and user needs to wait for the
+        // API event.
+        // 500ms looks as a good compromise, but can be tweaked if needed.
+        await wait(500);
+
+        await this.emitInternal(event, driveClient);
+    }
+
+    private async emitInternal(event: BusDriverEvent, driveClient: BusDriverClient): Promise<void> {
         const eventListeners = this.listeners.get(event.type) || [];
         const allEventListeners = this.listeners.get(BusDriverEventName.ALL) || [];
 
@@ -516,7 +536,7 @@ class BusDriver {
         try {
             switch (event.type) {
                 case DriveEventType.NodeCreated:
-                    await this.emit(
+                    await this.emitInternal(
                         {
                             type: BusDriverEventName.CREATED_NODES,
                             items: [
@@ -532,7 +552,7 @@ class BusDriver {
                     );
                     break;
                 case DriveEventType.NodeUpdated:
-                    await this.emit(
+                    await this.emitInternal(
                         {
                             type: BusDriverEventName.UPDATED_NODES,
                             items: [
@@ -548,10 +568,13 @@ class BusDriver {
                     );
                     break;
                 case DriveEventType.NodeDeleted:
-                    await this.emit({ type: BusDriverEventName.DELETED_NODES, uids: [event.nodeUid] }, driveClient);
+                    await this.emitInternal(
+                        { type: BusDriverEventName.DELETED_NODES, uids: [event.nodeUid] },
+                        driveClient
+                    );
                     break;
                 case DriveEventType.SharedWithMeUpdated:
-                    await this.emit({ type: BusDriverEventName.REFRESH_SHARED_WITH_ME }, driveClient);
+                    await this.emitInternal({ type: BusDriverEventName.REFRESH_SHARED_WITH_ME }, driveClient);
                     break;
             }
         } catch (error) {
