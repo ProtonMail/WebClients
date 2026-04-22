@@ -11,7 +11,7 @@ import { CacheType } from '@proton/redux-utilities';
 import type { CategoryLabelID } from '@proton/shared/lib/constants';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
 import { omit } from '@proton/shared/lib/helpers/object';
-import { captureMessage } from '@proton/shared/lib/helpers/sentry';
+import { SentryMailInitiatives, captureInitiativeMessage, captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { Label, MailSettings } from '@proton/shared/lib/interfaces';
 import { HUMAN_TO_LABEL_IDS, LABEL_IDS_TO_HUMAN } from '@proton/shared/lib/mail/constants';
 import type { MAIL_PAGE_SIZE } from '@proton/shared/lib/mail/mailSettings';
@@ -61,6 +61,9 @@ import { messageByID } from '../../store/messages/messagesSelectors';
 import type { MailState } from '../../store/store';
 import { useElementsEvents } from '../events/useElementsEvents';
 import { useExpirationCheck } from '../useExpirationCheck';
+
+const LOAD_ACTION_RATE_LIMIT_COUNT = 10;
+const LOAD_ACTION_RATE_LIMIT_WINDOW_MS = 10_000;
 
 const getParametersFromPath = (pathname: string) => {
     const customRoute = getCustomViewFromRoute(pathname);
@@ -177,6 +180,9 @@ export const useElements: UseElements = ({
     );
     const getConversationCounts = useGetConversationCounts();
     const getMessageCounts = useGetMessageCounts();
+
+    const loadActionTimestampRef = useRef<number[]>([]);
+    const loadRateLimitReportedRef = useRef(false);
 
     // Remove from cache expired elements
     useExpirationCheck(Object.values(elementsMap), (elements) => {
@@ -345,11 +351,37 @@ export const useElements: UseElements = ({
         // If we have actions pending OR select all actions pending, we don't want to load elements because it would cancel our optimistic updates
         const hasPendingActions = pendingActions > 0 || tasksRunning.labelIDs.includes(labelID);
 
+        // Check that the load action rate limit has not been exceeded and report it to Sentry if it has
+        const checkLoadActionRateLimit = () => {
+            const queue = loadActionTimestampRef.current;
+
+            const now = Date.now();
+            queue.push(now);
+
+            if (queue.length > LOAD_ACTION_RATE_LIMIT_COUNT) {
+                queue.shift();
+            }
+
+            const isQueueFull = queue.length >= LOAD_ACTION_RATE_LIMIT_COUNT;
+            const isOldestCallWithinWindow = now - queue[0] < LOAD_ACTION_RATE_LIMIT_WINDOW_MS;
+
+            if (!loadRateLimitReportedRef.current && isQueueFull && isOldestCallWithinWindow) {
+                loadRateLimitReportedRef.current = true;
+
+                captureInitiativeMessage(
+                    SentryMailInitiatives.MAIL_REDUX_ERRORS,
+                    'Elements load action rate limit exceeded'
+                );
+            }
+        };
+
         /**
          * To more load new elements, the user should either have `shouldLoadElements` true, no pending action AND not be in search,
          * OR change the page size for a bigger one (100 > 200)
          */
         if (shouldLoadElements && !hasPendingActions && !isSearch(search)) {
+            checkLoadActionRateLimit();
+
             void dispatch(
                 loadAction({
                     abortController: abortControllerRef.current,
