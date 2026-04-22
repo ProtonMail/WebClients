@@ -7,7 +7,7 @@ import { useDrive } from '@proton/drive';
 import { queryLatestVolumeEvent } from '@proton/shared/lib/api/drive/volume';
 
 import { useFlagsDriveFoundationSearch } from '../../flags/useFlagsDriveFoundationSearch';
-import type { SearchQuery, SearchResultItem } from '../../modules/search';
+import type { IndexPopulatorStatus, IndexingProgress, SearchQuery, SearchResultItem } from '../../modules/search';
 import { SearchModule, type SearchModuleState } from '../../modules/search';
 import { sendErrorReportForSearch } from '../../modules/search/internal/shared/errors';
 import { brandSearchUserId } from '../../modules/search/internal/shared/types';
@@ -34,6 +34,8 @@ export type UseSearchModuleReturn =
           isInitialIndexing: boolean;
           isSearchable: boolean;
           isRunningOutdatedVersion: boolean;
+          // Aggregated indexing progress across all populators.
+          indexingProgress: IndexingProgress;
 
           // Whether the user has opted in to the search experience.
           isUserOptIn: boolean;
@@ -138,6 +140,7 @@ export const useSearchModule = (): UseSearchModuleReturn => {
             isInitialIndexing: searchModuleState.isInitialIndexing,
             isSearchable: searchModuleState.isSearchable,
             isRunningOutdatedVersion: searchModuleState.isRunningOutdatedVersion,
+            indexingProgress: aggregateIndexingProgress(searchModuleState.indexPopulatorStatuses),
 
             isUserOptIn: searchModuleState.isUserOptIn,
             optIn: async () => {
@@ -156,3 +159,17 @@ export const useSearchModule = (): UseSearchModuleReturn => {
 
     return returnValue;
 };
+
+export const EMPTY_INDEXING_PROGRESS: IndexingProgress = { files: 0, folders: 0, albums: 0, photos: 0 };
+
+export function aggregateIndexingProgress(statuses: IndexPopulatorStatus[]): IndexingProgress {
+    return statuses.reduce<IndexingProgress>(
+        (acc, p) => ({
+            files: acc.files + p.progress.files,
+            folders: acc.folders + p.progress.folders,
+            albums: acc.albums + p.progress.albums,
+            photos: acc.photos + p.progress.photos,
+        }),
+        EMPTY_INDEXING_PROGRESS
+    );
+}

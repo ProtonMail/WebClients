@@ -73,6 +73,7 @@ export class SharedWorkerAPI {
             isIndexing: false,
             isSearchable: false,
             permanentError: null,
+            indexPopulatorStatuses: [],
         });
 
         // Clear active client so the next start() → registerClient triggers onClientAvailable.
@@ -89,7 +90,8 @@ export class SharedWorkerAPI {
 
     async search(query: SearchQuery, onEvent?: (event: WorkerSearchResultEvent) => void): Promise<void> {
         if (!this.searcher) {
-            Logger.warn('SharedWorkerAPI: search called but no searcher available');
+            // TODO: Handle error
+            Logger.error('SharedWorkerAPI: search called but no searcher available');
             onEvent?.({ type: 'done' });
             return;
         }
@@ -158,6 +160,7 @@ export class SharedWorkerAPI {
                     isIndexing: state.isIndexing,
                     isSearchable: state.isSearchable,
                     permanentError: state.permanentError,
+                    indexPopulatorStatuses: state.indexPopulatorStatuses,
                 });
             });
 
