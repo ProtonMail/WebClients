@@ -293,12 +293,19 @@ export const labelConversationsPending = (
             }
 
             // When moving out from INBOX, we need to remove messages from the category counts
-            // All messages from the conversation are in the category, so we have to reduce the number of messages
-            // that were in INBOX
-            const isTargetAFolder = isSystemFolder(destinationLabelID) || isCustomFolder(destinationLabelID, folders);
-            const isMovingOutFromInbox =
-                isTargetAFolder && destinationLabelID !== MAILBOX_LABEL_IDS.INBOX && numMessagesInInbox > 0;
-            if (isMovingOutFromInbox && isCategoryLabel(label.ID)) {
+            // All messages from the conversation are in the category, however the category counts only
+            // contains items that are in INBOX & in the category.
+            // So the amount of message we need to remove from the category count is actually the number of messages
+            // that will be moved from inbox.
+            const isTargetingAFolder =
+                isSystemFolder(destinationLabelID) || isCustomFolder(destinationLabelID, folders);
+            const isMovingOutOfInbox =
+                isTargetingAFolder && destinationLabelID !== MAILBOX_LABEL_IDS.INBOX && numMessagesInInbox > 0;
+            // TODO we need to check that the destination is compatible with inbox... sent | draft should not be accepted, TO IMPROVE
+            const canInboxMessageMove = ![MAILBOX_LABEL_IDS.DRAFTS, MAILBOX_LABEL_IDS.SENT].includes(
+                destinationLabelID as MAILBOX_LABEL_IDS
+            );
+            if (isMovingOutOfInbox && canInboxMessageMove && isCategoryLabel(label.ID)) {
                 messageCountState.Total = safeDecreaseCount(
                     messageCountState?.Total,
                     getContextNumMessages(conversation, MAILBOX_LABEL_IDS.INBOX)
@@ -307,6 +314,7 @@ export const labelConversationsPending = (
                     messageCountState?.Unread,
                     getContextNumUnread(conversation, MAILBOX_LABEL_IDS.INBOX)
                 );
+                return;
             }
 
             // Do not update counters when moving to STARRED, custom folders or a category
