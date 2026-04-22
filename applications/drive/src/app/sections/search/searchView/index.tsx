@@ -40,8 +40,16 @@ const SearchResultTitle = ({ loading, resultCount }: { loading: boolean; resultC
 export const SearchView = () => {
     const searchModel = useSearchViewModel();
 
-    const { isSearchAvailable, isSearchEnabled, isSearchable, startIndexing, isSearching, resultUids, refreshResults } =
-        searchModel;
+    const {
+        isSearchAvailable,
+        isSearchEnabled,
+        isSearchable,
+        startIndexing,
+        isSearching,
+        resultUids,
+        refreshResults,
+        indexingProgress,
+    } = searchModel;
 
     const contextMenuControls = useContextMenuStore();
     const contextMenuAnchorRef = useRef<HTMLDivElement>(null);
@@ -117,7 +125,13 @@ export const SearchView = () => {
 
     if (!isSearchEnabled || !isSearchable) {
         const isIndexingInProgress = isSearchEnabled && !isSearchable;
-        return <EnableSearchView optIn={startIndexing} isIndexingInProgress={isIndexingInProgress} />;
+        return (
+            <EnableSearchView
+                optIn={startIndexing}
+                isIndexingInProgress={isIndexingInProgress}
+                indexingProgress={indexingProgress}
+            />
+        );
     }
 
     if (!isSearching && resultUids.length === 0) {

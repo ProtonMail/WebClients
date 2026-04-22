@@ -6,6 +6,9 @@ import { Button } from '@proton/atoms/Button/Button';
 import { Dropdown, DropdownSizeUnit } from '@proton/components';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 
+import type { IndexingProgress } from '../../../modules/search';
+import { formatIndexingProgress } from '../formatIndexingProgress';
+
 interface Props {
     isOpen: boolean;
     anchorRef: React.RefObject<HTMLDivElement>;
@@ -14,62 +17,10 @@ interface Props {
     isSearchable: boolean;
     isInitialIndexing: boolean;
     isRunningOutdatedAppVersion: boolean;
+    indexingProgress: IndexingProgress;
 }
 
-const Content = ({
-    isSearchReady,
-    showProgress,
-    onClose,
-}: {
-    isSearchReady: boolean;
-    showProgress: boolean;
-    onClose: () => void;
-}) => {
-    return (
-        <div className="px-5 pt-5 pb-4">
-            <div>
-                <div className="flex">
-                    <span className="inline-flex text-bold text-lg">
-                        {isSearchReady ? c('Info').t`Search Enabled` : c('Info').t`Enabling drive search`}
-                    </span>
-                </div>
-                <p className="mb-0">
-                    {isSearchReady
-                        ? c('Info').t`Search enabled. You may now close this dialogue and search for files and folders.`
-                        : c('Info')
-                              .t`To enable truly search, we need to index your files locally. You can still use ${DRIVE_APP_NAME} normally - we'll let you know when indexing is done.`}
-                </p>
-            </div>
-            {/* TODO: Show nicer progress  */}
-            {showProgress && <p aria-live="polite">{c('Info').t`Indexing in progress`}&hellip;</p>}
-            <div className="flex justify-end mt-4">
-                <Button shape="ghost" color="norm" onClick={onClose}>{c('Action').t`Got it`}</Button>
-            </div>
-        </div>
-    );
-};
-
-const OutdatedAppVersionContent = () => {
-    return (
-        <div className="px-5 pt-5 pb-4">
-            <div>
-                <div className="flex">
-                    <span className="inline-flex text-bold text-lg">{c('Info').t`Update required`}</span>
-                </div>
-                <p className="mb-0">
-                    {c('Info')
-                        .t`A new version of ${DRIVE_APP_NAME} is available. Please reload to continue using search.`}
-                </p>
-            </div>
-            <div className="flex justify-end mt-4">
-                <Button shape="ghost" color="norm" onClick={() => window.location.reload()}>{c('Action')
-                    .t`Reload`}</Button>
-            </div>
-        </div>
-    );
-};
-
-export const SearchDropdown = ({
+export function SearchDropdown({
     isOpen,
     anchorRef,
     onClose,
@@ -77,7 +28,8 @@ export const SearchDropdown = ({
     isSearchable,
     isInitialIndexing,
     isRunningOutdatedAppVersion,
-}: Props) => {
+    indexingProgress,
+}: Props) {
     const showProgress = isInitialIndexing;
     const isSearchReady = isSearchable && !isInitialIndexing;
     return (
@@ -103,9 +55,78 @@ export const SearchDropdown = ({
                 {isRunningOutdatedAppVersion ? (
                     <OutdatedAppVersionContent />
                 ) : (
-                    <Content isSearchReady={isSearchReady} showProgress={showProgress} onClose={onClose} />
+                    <Content
+                        isSearchReady={isSearchReady}
+                        showProgress={showProgress}
+                        indexingProgress={indexingProgress}
+                        onClose={onClose}
+                    />
                 )}
             </Dropdown>
         </>
     );
-};
+}
+
+interface ContentProps {
+    isSearchReady: boolean;
+    showProgress: boolean;
+    indexingProgress: IndexingProgress;
+    onClose: () => void;
+}
+
+function Content({ isSearchReady, showProgress, indexingProgress, onClose }: ContentProps) {
+    return (
+        <div className="px-5 pt-5 pb-4">
+            <div>
+                <div className="flex">
+                    <span className="inline-flex text-bold text-lg">
+                        {isSearchReady ? c('Info').t`Search Enabled` : c('Info').t`Enabling drive search`}
+                    </span>
+                </div>
+                <p className="mb-0">
+                    {isSearchReady
+                        ? c('Info').t`Search enabled. You may now close this dialogue and search for files and folders.`
+                        : c('Info')
+                              .t`To enable truly search, we need to index your files locally. You can still use ${DRIVE_APP_NAME} normally - we'll let you know when indexing is done.`}
+                </p>
+            </div>
+            {showProgress && <IndexingProgressInfo progress={indexingProgress} isComplete={false} />}
+            {isSearchReady && <IndexingProgressInfo progress={indexingProgress} isComplete={true} />}
+            <div className="flex justify-end mt-4">
+                <Button shape="ghost" color="norm" onClick={onClose}>{c('Action').t`Got it`}</Button>
+            </div>
+        </div>
+    );
+}
+
+function OutdatedAppVersionContent() {
+    return (
+        <div className="px-5 pt-5 pb-4">
+            <div>
+                <div className="flex">
+                    <span className="inline-flex text-bold text-lg">{c('Info').t`Update required`}</span>
+                </div>
+                <p className="mb-0">
+                    {c('Info')
+                        .t`A new version of ${DRIVE_APP_NAME} is available. Please reload to continue using search.`}
+                </p>
+            </div>
+            <div className="flex justify-end mt-4">
+                <Button shape="ghost" color="norm" onClick={() => window.location.reload()}>{c('Action')
+                    .t`Reload`}</Button>
+            </div>
+        </div>
+    );
+}
+
+function IndexingProgressInfo({ progress, isComplete }: { progress: IndexingProgress; isComplete: boolean }) {
+    const message = formatIndexingProgress(progress, isComplete);
+    if (message === null) {
+        return null;
+    }
+    return (
+        <p aria-live="polite" className="mb-0 color-weak">
+            {message}
+        </p>
+    );
+}

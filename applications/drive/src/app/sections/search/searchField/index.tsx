@@ -123,6 +123,7 @@ const SearchFieldInner = ({ searchModule }: SearchFieldInnerProps) => {
                     isSearchable={searchModule.isSearchable}
                     isInitialIndexing={searchModule.isInitialIndexing}
                     isRunningOutdatedAppVersion={searchModule.isRunningOutdatedVersion}
+                    indexingProgress={searchModule.indexingProgress}
                 />
             </>
         </div>

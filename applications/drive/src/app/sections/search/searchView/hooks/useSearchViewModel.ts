@@ -103,6 +103,9 @@ export const useSearchViewModel = (): SearchViewModelAdapter => {
         isSearching,
         resultUids: currentResultUids,
         refreshResults: refresh,
+        indexingProgress: searchModule.isAvailable
+            ? searchModule.indexingProgress
+            : { files: 0, folders: 0, albums: 0, photos: 0 },
     };
 };
 
