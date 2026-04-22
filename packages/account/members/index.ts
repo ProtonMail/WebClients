@@ -13,10 +13,11 @@ import {
 import type { CoreEventV6Response } from '@proton/shared/lib/api/events';
 import { getIsMissingScopeError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { getAllMemberAddresses, getAllMembers } from '@proton/shared/lib/api/members';
+import { getMemberOrganizationRoles } from '@proton/shared/lib/api/organizationRoles';
 import { updateCollectionAsyncV6 } from '@proton/shared/lib/eventManager/updateCollectionAsyncV6';
 import { type UpdateCollectionV6, updateCollectionV6 } from '@proton/shared/lib/eventManager/updateCollectionV6';
 import updateCollection from '@proton/shared/lib/helpers/updateCollection';
-import type { Address, Api, EnhancedMember, Member, User } from '@proton/shared/lib/interfaces';
+import type { Address, Api, EnhancedMember, Member, User, UserOrganizationRole } from '@proton/shared/lib/interfaces';
 import { sortAddresses } from '@proton/shared/lib/mail/addresses';
 import { isAdmin } from '@proton/shared/lib/user/helpers';
 
@@ -114,6 +115,7 @@ const slice = createSlice({
                         ...b,
                         // In the event loop v6 we are always fetching individual members and get partial addresses
                         addressState: 'partial',
+                        roleState: 'stale',
                     }),
                 });
             }
@@ -159,9 +161,16 @@ const slice = createSlice({
                               Addresses: previousMember.Addresses,
                           }
                         : {};
+                const previousRoleState = previousMember.UserOrganizationRoles
+                    ? {
+                          roleState: 'stale' as const,
+                          UserOrganizationRoles: previousMember.UserOrganizationRoles,
+                      }
+                    : {};
                 const mergedValue: EnhancedMember = {
                     ...newMember,
                     ...previousAddressState,
+                    ...previousRoleState,
                 };
                 state.value[memberIndex] = mergedValue;
             }
@@ -183,6 +192,28 @@ const slice = createSlice({
             const member = getMemberFromState(state, action.payload.member);
             if (member) {
                 member.addressState = 'rejected';
+            }
+        },
+        memberRoleFetchPending: (state, action: PayloadAction<{ member: Member }>) => {
+            const member = getMemberFromState(state, action.payload.member);
+            if (member) {
+                member.roleState = 'pending';
+            }
+        },
+        memberRoleFetchFulfilled: (
+            state,
+            action: PayloadAction<{ member: Member; organizationRoles: UserOrganizationRole[] }>
+        ) => {
+            const member = getMemberFromState(state, action.payload.member);
+            if (member) {
+                member.roleState = 'full';
+                member.UserOrganizationRoles = action.payload.organizationRoles;
+            }
+        },
+        memberRoleFetchRejected: (state, action: PayloadAction<{ member: Member }>) => {
+            const member = getMemberFromState(state, action.payload.member);
+            if (member) {
+                member.roleState = 'rejected';
             }
         },
         setUnprivatizationState: (state, action: PayloadAction<UnprivatizationMemberState>) => {
@@ -363,6 +394,62 @@ export const getMemberAddresses = ({
             return result;
         } catch (e) {
             dispatch(slice.actions.memberFetchRejected({ member }));
+            throw e;
+        } finally {
+            map.delete(member.ID);
+        }
+    };
+};
+
+const getTemporaryRolePromiseMap = (() => {
+    let map: undefined | Map<string, Promise<UserOrganizationRole[]>>;
+    return () => {
+        if (!map) {
+            map = new Map();
+        }
+        return map;
+    };
+})();
+
+export const getMemberRoles = ({
+    member: targetMember,
+    retry,
+    cache,
+}: {
+    member: Member;
+    retry?: boolean;
+    cache?: CacheType;
+}): ThunkAction<Promise<UserOrganizationRole[]>, MembersState, ProtonThunkArguments, UnknownAction> => {
+    const map = getTemporaryRolePromiseMap();
+
+    return async (dispatch, getState, extra) => {
+        const member = getMemberFromState(selectMembers(getState()), targetMember);
+        if (!member) {
+            return [];
+        }
+        if (cache !== CacheType.None) {
+            if (member.roleState === 'full' && member.UserOrganizationRoles) {
+                return member.UserOrganizationRoles;
+            }
+            if (member.roleState === 'rejected' && !retry) {
+                return [];
+            }
+        }
+        const oldPromise = map.get(member.ID);
+        if (oldPromise) {
+            return oldPromise;
+        }
+        const promise = extra
+            .api<{ RoleAssignments: UserOrganizationRole[] }>(getMemberOrganizationRoles(member.ID))
+            .then(({ RoleAssignments }) => RoleAssignments);
+        try {
+            map.set(member.ID, promise);
+            dispatch(slice.actions.memberRoleFetchPending({ member }));
+            const result = await promise;
+            dispatch(slice.actions.memberRoleFetchFulfilled({ member, organizationRoles: result }));
+            return result;
+        } catch (e) {
+            dispatch(slice.actions.memberRoleFetchRejected({ member }));
             throw e;
         } finally {
             map.delete(member.ID);
