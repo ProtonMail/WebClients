@@ -1116,13 +1116,13 @@
         "${ users } brukere"
       ],
       "Dedicated VPN servers": [
-        "Dedikerte VPN-tjenere"
+        "Dedikerte VPN-servere"
       ],
       "Domains": [
         "Domener"
       ],
       "Servers": [
-        "Tjenere"
+        "Servere"
       ],
       "Users": [
         "Brukere"
@@ -1235,7 +1235,7 @@
         "Etter at prøveperioden avsluttes på ${ formattedDate1 }, vil den gå over til å bli et betalt abonnement som fornyes automatisk månedlig. Du vil ikke bli belastet hvis du avbryter før ${ formattedDate2 }."
       ],
       "You can have up to ${ TRIAL_MAX_DEDICATED_IPS } dedicated server during the trial period.": [
-        "Du kan ha opptil ${ TRIAL_MAX_DEDICATED_IPS } dedikert tjener i prøveperioden."
+        "Du kan ha opptil ${ TRIAL_MAX_DEDICATED_IPS } dedikert server i prøveperioden."
       ],
       "You can have up to ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME } seats during the trial period.": [
         "Du kan ha opptil ${ TRIAL_MAX_LUMO_SEATS } ${ LUMO_SHORT_APP_NAME }-lisenser i prøveperioden."
@@ -1346,7 +1346,7 @@
     },
     "BF2024: Tooltip": {
       "Access blocked content and browse privately. Includes 8,500+ servers across 110+ countries, 10 devices, high-speed streaming, ad-blocker and malware protection, VPN Accelerator and more.": [
-        "Få tilgang til blokkert innhold og surf privat. Inkluderer 8 500+ tjenere i 110+ land, 10 enheter, høyhastighetsstrømming, annonseblokkering og beskyttelse mot skadelig programvare, VPN Accelerator og mer."
+        "Få tilgang til blokkert innhold og surf privat. Inkluderer 8 500+ servere i 110+ land, 10 enheter, høyhastighetsstrømming, annonseblokkering og beskyttelse mot skadelig programvare, VPN Accelerator og mer."
       ],
       "Secure logins on all your devices. Includes unlimited hide-my-email aliases, sharing, integrated 2FA, ${ DARK_WEB_MONITORING_NAME } and more.": [
         "Sikre pålogginger på alle dine enheter. Inkluderer ubegrenset antall hide-my-email-aliaser, deling, integrert 2FA, ${ DARK_WEB_MONITORING_NAME } og mer."
@@ -1380,7 +1380,7 @@
         "3 TB lagringsplass"
       ],
       "Access 15,000+ servers in 120+ countries": [
-        "Få tilgang til 15 000+ tjenere i 120+ land"
+        "Få tilgang til 15 000+ servere i 120+ land"
       ],
       "Access advanced AI models": [
         "Få tilgang til avanserte KI-modeller"
@@ -3710,7 +3710,7 @@
         "Bildeopplasting mislyktes"
       ],
       "IMAP server is required": [
-        "IMAP-tjener kreves"
+        "IMAP-server kreves"
       ],
       "Incorrect username": [
         "Uriktig brukernavn"
@@ -4520,7 +4520,7 @@
     },
     "familyOffer_2023:Tooltip": {
       "Includes 2700 servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Inkluderer 2700 tjenere i 65+ land, koble til opptil 10 enheter, få tilgang til verdensomspennende strømmetjenester, skadelig programvare- og annonseblokkering og mer."
+        "Inkluderer 2700 servere i 65+ land, koble til opptil 10 enheter, få tilgang til verdensomspennende strømmetjenester, skadelig programvare- og annonseblokkering og mer."
       ],
       "Includes support for 3 custom email domains, 90 email addresses, unlimited hide-my-email aliases, calendar sharing and more.": [
         "Inkluderer støtte for 3 egendefinerte e-postdomener, 90 e-postadresser, ubegrensede hide-my-email-aliaser, kalenderdeling og mer."
@@ -4879,13 +4879,13 @@
         "${ BRAND_NAME } kan ikke koble til kontoen din. Vennlist sørg for at:"
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } kan ikke koble til din eksterne konto. Kontroller at e-posttjenerdressen og portnummeret er riktige."
+        "${ BRAND_NAME } kan ikke koble til din eksterne konto. Kontroller at e-postserveradressen og portnummeret er riktige."
       ],
       "${ BRAND_NAME } can't connect to your external account. Please make sure that:": [
         "${ BRAND_NAME } kan ikke koble til den eksterne kontoen din. Sørg for at:"
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that the mail server address and port number are correct.": [
-        "${ BRAND_NAME } kan ikke koble til Yahoo-kontoen din. Sørg for at e-posttjeneradressen og portnummeret stemmer."
+        "${ BRAND_NAME } kan ikke koble til Yahoo-kontoen din. Sørg for at e-postserveradressen og portnummeret stemmer."
       ],
       "${ BRAND_NAME } can't connect to your Yahoo account. Please make sure that:": [
         "${ BRAND_NAME } kan ikke koble til Yahoo-kontoen din. Sørg for at:"
@@ -5469,7 +5469,7 @@
         "Dedikerte tjenere"
       ],
       "Dedicated VPN servers": [
-        "Dedikerte VPN-tjenere"
+        "Dedikerte VPN-servere"
       ],
       "default email address": [
         "standard e-postadresse"
@@ -5859,7 +5859,7 @@
         "Antall dedikerte tjenere i organisasjonen"
       ],
       "Number of dedicated VPN servers in the organization": [
-        "Antall dedikerte VPN-tjenere i organisasjonen"
+        "Antall dedikerte VPN-servere i organisasjonen"
       ],
       "Numbers": [
         "Tall"
@@ -6032,7 +6032,7 @@
         "SEPA-betalinger er ikke tilgjengelige for øyeblikket. Prøv igjen senere."
       ],
       "Servers are unreachable. Please try again in a few minutes": [
-        "Tjenerne er utilgjengelige. Prøv på nytt om noen få minutter."
+        "Serverne er utilgjengelige. Prøv på nytt om noen få minutter."
       ],
       "Session timed out": [
         "Økten ble tidsavbrutt"
@@ -7048,7 +7048,7 @@
         "Plassering"
       ],
       "Mail Server (IMAP)": [
-        "E-posttjener (IMAP)"
+        "E-postserver (IMAP)"
       ],
       "Main": [
         "Hjem"
@@ -8418,6 +8418,9 @@
       ],
       "We scan the dark web to check if your ${ BRAND_NAME } addresses or aliases have been leaked and alert you immediately if we find anything.": [
         "Vi skanner det mørke nettet for å sjekke om ${ BRAND_NAME }-adressene eller aliasene dine har blitt lekket, og varsler deg umiddelbart hvis vi finner noe."
+      ],
+      "Dedicated servers optimized for speed": [
+        "Dedikerte servere optimalisert for hastighet"
       ]
     },
     "new_plans: feature highlight": {
@@ -8622,7 +8625,7 @@
         "Egendefinerte domener for aliaser, ekstra postbokser, muligheten til å sende e-post fra aliaser og mer"
       ],
       "Dedicated servers with dedicated IP addresses can be added to private gateways to enable fine-tuned access control": [
-        "Dedikerte tjenere med dedikerte IP-adresser kan legges til private porttjenere for å muliggjøre finjustert tilgangskontroll"
+        "Dedikerte servere med dedikerte IP-adresser kan legges til private gateway-servere for å muliggjøre finjustert tilgangskontroll"
       ],
       "Defends against the threat to VPN privacy by passing your internet traffic through multiple servers": [
         "Forsvarer mot trusler til VPN-personvern ved å overføre internettrafikk gjennom flere tjenere."
@@ -9155,7 +9158,7 @@
         "Lagringsplass"
       ],
       "Ultrafast VPN servers in 110+ countries": [
-        "Ultraraske VPN-tjenere i 110+ land"
+        "Ultraraske VPN-servere i 110+ land"
       ],
       "Unlimited aliases to protect your identity": [
         "Ubegrenset med aliaser for å beskytte din identitet"
@@ -10733,7 +10736,7 @@
         "Skaff deg 500 GB til å lagre alle filene og bildene dine sikkert"
       ],
       "Get access to ultrafast VPN servers in 110+ countries": [
-        "Få tilgang til ultra-raske VPN-tjenere i 110+ land"
+        "Få tilgang til ultra-raske VPN-servere i 110+ land"
       ],
       "Get one plan that includes it all, get ${ BRAND_NAME } Unlimited": [
         "Få én plan som inkluderer alt, skaff deg ${ BRAND_NAME } Unlimited"
@@ -10753,10 +10756,10 @@
     },
     "specialoffer: Tooltip": {
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections per user, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Få tilgang til blokkert innhold og surf privat. Inkluderer 1700 tjenere i 60+ land, høyeste VPN-hastighet, 10 VPN-forbindelser per bruker, verdensomspennende strømmetjenester, skadelig programvare- og annonseblokkering og mer."
+        "Få tilgang til blokkert innhold og surf privat. Inkluderer 1700 servere i 60+ land, høyeste VPN-hastighet, 10 VPN-forbindelser per bruker, verdensomspennende strømmetjenester, skadelig programvare- og annonseblokkering og mer."
       ],
       "Access blocked content and browse privately. Includes 1700 servers in 60+ countries, highest VPN speed, 10 VPN connections, worldwide streaming services, malware and ad-blocker, and more.": [
-        "Få tilgang til blokkert innhold og surf privat. Inkluderer 1700 tjenere i 60+ land, høyeste VPN-hastighet, 10 VPN-forbindelser, verdensomspennende strømmetjenester, skadelig programvare- og annonseblokkering og mer."
+        "Få tilgang til blokkert innhold og surf privat. Inkluderer 1700 servere i 60+ land, høyeste VPN-hastighet, 10 VPN-forbindelser, verdensomspennende strømmetjenester, skadelig programvare- og annonseblokkering og mer."
       ],
       "All our premium services with their highest limits: 100 email addresses, support for 10 custom domains, unlimited hide-my-email aliases, calendar sharing, encrypted cloud storage and file sharing, and more.": [
         "Alle våre premiumtjenester med sine høyeste grenser: 100 e-postadresser, støtte for 10 tilpassede domener, ubegrensede hide-my-email-aliaser, kalenderdeling, kryptert skylagring + fildeling og mer."
@@ -11536,7 +11539,7 @@
         "Opprett sikker påloggingsinformasjon på alle enhetene dine. Inkluderer ubegrensede aliaser, 20 hvelv, integrert 2FA, automatisk utfylling av kredittkort og mer."
       ],
       "Includes 2950+ servers in 65+ countries, connect up to 10 devices, access worldwide streaming services, malware and ad-blocker, and more.": [
-        "Inkluderer 2950+ tjenere i 65+ land, koble til opptil 10 enheter, få tilgang til verdensomspennende strømmetjenester, skadelig programvare- og annonseblokkering og mer."
+        "Inkluderer 2950+ servere i 65+ land, koble til opptil 10 enheter, få tilgang til verdensomspennende strømmetjenester, skadelig programvare- og annonseblokkering og mer."
       ],
       "Includes support for 1 custom email domain, 10 email addresses, 10 hide-my-email aliases, calendar sharing, and more.": [
         "Inkluderer støtte for 1 egendefinert e-postdomene, 10 e-postadresser, 10 hide-my-email-aliaser, kalenderdeling og mer."
@@ -12602,8 +12605,8 @@
         "${ n } enheter"
       ],
       "${ n } server": [
-        "${ n } tjener",
-        "${ n }+ tjenere"
+        "${ n } server",
+        "${ n }+ servere"
       ],
       "${ n } VPN connection": [
         "${ n } VPN-tilkobling",
@@ -12626,8 +12629,8 @@
         "Velger automatisk fra ${ numberOfCountries } land"
       ],
       "Servers in ${ numberOfCountries }+ country": [
-        "Tjenere i ${ numberOfCountries }+ land",
-        "Tjenere i ${ numberOfCountries }+ land"
+        "Servere i ${ numberOfCountries }+ land",
+        "Servere i ${ numberOfCountries }+ land"
       ]
     },
     "vpn_2step: feature": {
@@ -12640,7 +12643,7 @@
     },
     "vpn_2step: tooltip": {
       "Access to Secure Core servers, fast P2P/BitTorrent downloads, Tor over VPN, and more.": [
-        "Tilgang til Secure Core-tjenere, raske P2P/BitTorrent-nedlastinger, Tor over VPN og mer."
+        "Tilgang til Secure Core-servere, raske P2P/BitTorrent-nedlastinger, Tor over VPN og mer."
       ]
     },
     "wallet_signup_2024: Info": {
@@ -12736,7 +12739,7 @@
         "Dessverre er vi ikke på nett for øyeblikket. Fyll ut skjemaet nedenfor for å beskrive problemet ditt, så ser vi nærmere på det og tar kontakt når vi er tilbake på nettet."
       ],
       "We couldn't verify the mail server. If you trust it, you can skip this verification.": [
-        "Vi kan ikke bekrefte e-posttjeneren. Hvis du klarérer den, kan du hoppe over denne verifiseringen."
+        "Vi kan ikke bekrefte e-postserveren. Hvis du klarérer den, kan du hoppe over denne verifiseringen."
       ],
       "You will lose any customization you made so far.": [
         "Du vil miste enhver tilpasning du har gjort så langt."
