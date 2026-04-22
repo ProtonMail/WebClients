@@ -37,7 +37,6 @@ import { useGetStartedChecklist } from '../../containers/onboardingChecklist/pro
 import { ComposeTypes } from '../../hooks/composer/useCompose';
 import { layoutActions } from '../../store/layout/layoutSlice';
 import { selectLayoutIsExpanded } from '../../store/layout/layoutSliceSelectors';
-import DebugMailStoreButton from '../debug/DebugMailStoreButton';
 import OnboardingChecklistSidebar from '../onboarding/checklist/sidebar/OnboardingChecklistSidebar';
 import MailSidebarList from './MailSidebarList';
 import MailSidebarPrimaryButton from './MailSidebarPrimaryButton';
@@ -111,12 +110,7 @@ const MailSidebar = () => {
             primary={<MailSidebarPrimaryButton collapsed={collapsed} handleCompose={handleCompose} />}
             logo={logo}
             version={<AppVersion />}
-            preFooter={
-                <>
-                    <DebugMailStoreButton />
-                    <SidebarStorageUpsell app={APPS.PROTONMAIL} />
-                </>
-            }
+            preFooter={<SidebarStorageUpsell app={APPS.PROTONMAIL} />}
             collapsed={collapsed}
             showStorage={showSideBar}
             navigationRef={navigationRef}
