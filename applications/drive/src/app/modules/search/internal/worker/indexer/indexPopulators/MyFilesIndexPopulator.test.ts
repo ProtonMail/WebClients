@@ -34,7 +34,13 @@ describe('MyFilesIndexPopulator', () => {
     });
 
     it('getGeneration returns existing generation from DB', async () => {
-        await db.putPopulatorState({ uid: `myfiles:${SCOPE_ID}`, done: true, generation: 3, version: 1 });
+        await db.putPopulatorState({
+            uid: `myfiles:${SCOPE_ID}`,
+            done: true,
+            generation: 3,
+            version: 1,
+            progress: { files: 0, folders: 0, albums: 0, photos: 0 },
+        });
         const populator = new MyFilesIndexPopulator(SCOPE_ID);
         expect(await populator.getGeneration(db)).toBe(3);
     });
@@ -157,7 +163,13 @@ describe('MyFilesIndexPopulator', () => {
     });
 
     it('stamps scope, generation, and populator id on trashed entries', async () => {
-        await db.putPopulatorState({ uid: `myfiles:${SCOPE_ID}`, done: false, generation: 7, version: 2 });
+        await db.putPopulatorState({
+            uid: `myfiles:${SCOPE_ID}`,
+            done: false,
+            generation: 7,
+            version: 2,
+            progress: { files: 0, folders: 0, albums: 0, photos: 0 },
+        });
 
         const myFilesRootNideUid = 'root-uid';
         bridge.setMyFilesRootNode(

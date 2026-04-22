@@ -56,6 +56,7 @@ export class IndexPopulatorTask extends BaseTask {
             for await (const entry of populator.visitAndProduceIndexEntries(ctx)) {
                 ctx.signal.throwIfAborted();
                 session.insert(entry);
+                ctx.notifyIndexingProgress();
             }
             await session.commit();
         } catch (e) {
@@ -65,12 +66,7 @@ export class IndexPopulatorTask extends BaseTask {
             throw e;
         }
 
-        // Mark done in DB.
-        await ctx.db.putPopulatorState({
-            uid: populator.getUid(),
-            done: true,
-            generation: await populator.getGeneration(ctx.db),
-            version: populator.getVersion(),
-        });
+        // Mark done in DB and keep the populator's in-memory mirror in sync.
+        await populator.markAsDone(ctx.db);
     }
 }
