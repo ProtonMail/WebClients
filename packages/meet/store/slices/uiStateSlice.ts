@@ -45,7 +45,7 @@ export interface UIState {
 const initialState: UIState = {
     meetingReadyPopupOpen: false,
     emojiReactionPopupOpen: false,
-    showDuration: false,
+    showDuration: true,
     sideBarState: {
         [MeetingSideBars.Participants]: false,
         [MeetingSideBars.AssignHost]: false,
