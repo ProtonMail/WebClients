@@ -19,6 +19,7 @@ export interface SdkDriveClient {
     getMyFilesRootFolder(): Promise<MaybeNode>;
     getNode(nodeUid: string): Promise<MaybeNode>;
     iterateFolderChildren(parentNodeUid: string, filterOptions?: { type?: NodeType }): AsyncIterable<MaybeNode>;
+    iterateTrashedNodes(): AsyncIterable<MaybeNode>;
 }
 
 /** Subset of ProtonDriveClient used by DriveSdkForSearchBridge. */
@@ -38,6 +39,7 @@ export interface DriveSdkBridgeInterface {
     getMyFilesRootFolder(): Promise<MaybeNode>;
     getNode(nodeUid: string): Promise<MaybeNode>;
     iterateFolderChildren(parentNodeUid: string, filterOptions?: { type?: NodeType }): Promise<MaybeNode[]>;
+    iterateTrashedNodes(): Promise<MaybeNode[]>;
 }
 
 // Bridge for operations that require main-thread APIs (e.g. ProtonDriveClient).
@@ -95,6 +97,15 @@ export class DriveSdkBridge {
         Logger.info('MainThreadBridge: iterateFolderChildren');
         const nodes: MaybeNode[] = [];
         for await (const node of this.driveClient.iterateFolderChildren(parentNodeUid, filterOptions)) {
+            nodes.push(node);
+        }
+        return nodes;
+    }
+
+    async iterateTrashedNodes() {
+        Logger.info('MainThreadBridge: iterateTrashedNodes');
+        const nodes: MaybeNode[] = [];
+        for await (const node of this.driveClient.iterateTrashedNodes()) {
             nodes.push(node);
         }
         return nodes;
