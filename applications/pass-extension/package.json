@@ -31,6 +31,9 @@
     "dependencies": {
         "@proton/icons": "workspace:^",
         "@proton/pass": "workspace:^",
+        "@protontech/autofill": "0.0.36026908",
+        "@protontech/fathom": "0.0.36026908",
+        "@protontech/ml-inference": "0.0.36026908",
         "@redux-devtools/remote": "^0.9.5",
         "argon2id": "^1.0.1",
         "react-helmet": "^6.1.0",
