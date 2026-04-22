@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import { useApi } from '@proton/components';
-import type { SessionKey } from '@proton/crypto';
+import type { SessionKey } from '@protontech/crypto';
 import { updateMeetingPasswordCall } from '@proton/shared/lib/api/meet';
 import type { CreateMeetingResponse, CustomPasswordState } from '@proton/shared/lib/interfaces/Meet';
 import { srpGetVerify } from '@proton/shared/lib/srp';

@@ -1,4 +1,4 @@
-import type { PublicKeyReference } from '@proton/crypto';
+import type { PublicKeyReference } from '@protontech/crypto';
 
 import { CONTACT_CARD_TYPE } from '../../constants';
 import { CRYPTO_PROCESSING_TYPES } from '../../contacts/constants';

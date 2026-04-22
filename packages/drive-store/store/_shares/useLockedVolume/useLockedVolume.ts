@@ -7,8 +7,8 @@ import { useShallow } from 'zustand/react/shallow';
 import { useGetAddressKeys } from '@proton/account/addressKeys/hooks';
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { usePreventLeave } from '@proton/components';
-import type { PrivateKeyReference } from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
+import type { PrivateKeyReference } from '@protontech/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 import {
     queryDeleteLockedVolumes,
     queryGetDriveVolume,

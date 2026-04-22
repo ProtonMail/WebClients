@@ -4,8 +4,8 @@ import {
     mod,
     modExp,
     uint8ArrayToBigInt,
-} from '@proton/crypto/lib/bigInteger';
-import { uint8ArrayToBinaryString } from '@proton/crypto/lib/utils';
+} from '@protontech/crypto/bigInteger';
+import { uint8ArrayToBinaryString } from '@protontech/crypto/utils';
 import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 

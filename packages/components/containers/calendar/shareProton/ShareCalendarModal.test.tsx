@@ -7,7 +7,7 @@ import { CacheProvider } from '@proton/components/containers/cache/Provider';
 import useApi from '@proton/components/hooks/useApi';
 import useGetEncryptionPreferences from '@proton/components/hooks/useGetEncryptionPreferences';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import type { PublicKeyReference } from '@proton/crypto';
+import type { PublicKeyReference } from '@protontech/crypto';
 import { MIME_TYPES, PGP_SCHEMES } from '@proton/shared/lib/constants';
 import createCache from '@proton/shared/lib/helpers/cache';
 import type { EncryptionPreferences } from '@proton/shared/lib/mail/encryptionPreferences';

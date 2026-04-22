@@ -1,4 +1,4 @@
-import { CryptoProxy, serverTime } from '@proton/crypto';
+import { CryptoProxy, serverTime } from '@protontech/crypto';
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 import type { SaveSKLToLS } from '@proton/shared/lib/interfaces';
 

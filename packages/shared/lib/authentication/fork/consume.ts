@@ -1,4 +1,4 @@
-import { importKey } from '@proton/crypto/lib/subtle/aesGcm';
+import { importKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { getAuthAPI } from '@proton/shared/lib/api/helpers/customConfig';
 import getRandomString from '@proton/utils/getRandomString';
 import noop from '@proton/utils/noop';

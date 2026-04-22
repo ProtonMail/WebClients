@@ -12,7 +12,7 @@ import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference, PublicKeyReference } from '@protontech/crypto';
 import { useLoading } from '@proton/hooks';
 import { addContacts, getContact, updateContact } from '@proton/shared/lib/api/contacts';
 import { API_CODES, CONTACT_CARD_TYPE } from '@proton/shared/lib/constants';

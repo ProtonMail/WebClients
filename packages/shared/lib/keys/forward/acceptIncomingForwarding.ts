@@ -1,4 +1,4 @@
-import { CryptoProxy, type PrivateKeyReferenceV4 } from '@proton/crypto';
+import { CryptoProxy, type PrivateKeyReferenceV4 } from '@protontech/crypto';
 
 import { getAndVerifyApiKeys } from '../../api/helpers/getAndVerifyApiKeys';
 import type {

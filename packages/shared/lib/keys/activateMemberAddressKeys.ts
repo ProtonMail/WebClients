@@ -1,4 +1,4 @@
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 
 import { activateKeyRoute, activateKeyRouteV2 } from '../api/keys';
 import { MEMBER_PRIVATE } from '../constants';

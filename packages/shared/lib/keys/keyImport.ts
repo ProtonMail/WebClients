@@ -1,4 +1,4 @@
-import { CryptoProxy, type KeyInfo } from '@proton/crypto';
+import { CryptoProxy, type KeyInfo } from '@protontech/crypto';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { readFileAsString } from '../helpers/file';

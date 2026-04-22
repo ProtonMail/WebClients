@@ -1,4 +1,4 @@
-import type { PrivateKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference } from '@protontech/crypto';
 import { HARDWARE_CONCURRENCY } from '@proton/shared/lib/drive/constants';
 import { wait } from '@proton/shared/lib/helpers/promise';
 import type { ShareMapLink } from '@proton/shared/lib/interfaces/drive/link';

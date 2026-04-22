@@ -1,4 +1,4 @@
-import { updateServerTime } from '@proton/crypto/lib/serverTime';
+import { updateServerTime } from '@protontech/crypto/serverTime';
 import { API_CONCURRENCY_TRESHOLD } from '@proton/pass/constants';
 import { authStore } from '@proton/pass/lib/auth/store';
 import {

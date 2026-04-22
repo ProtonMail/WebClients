@@ -1,4 +1,4 @@
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 import { encryptData, generateKey, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { PassCryptoVaultError } from '@proton/pass/lib/crypto/utils/errors';
 import type { VaultCreateRequest } from '@proton/pass/types';

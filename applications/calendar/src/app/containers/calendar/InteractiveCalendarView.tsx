@@ -33,7 +33,7 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import usePreventCloseTab from '@proton/components/hooks/usePreventCloseTab';
 import useRelocalizeText from '@proton/components/hooks/useRelocalizeText';
 import useSendIcs from '@proton/components/hooks/useSendIcs';
-import { type SessionKey, serverTime } from '@proton/crypto';
+import { type SessionKey, serverTime } from '@protontech/crypto';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';
 import { useGetMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import {

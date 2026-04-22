@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { Href } from '@proton/atoms/Href/Href';
 import type { CompatibilityItem } from '@proton/components/containers/compatibilityCheck/compatibilityCheckHelper';
-import { isWebCryptoAvailable, isWebCryptoRsaSigningSupported } from '@proton/crypto/lib/compatibilityChecks';
+import { isWebCryptoAvailable, isWebCryptoRsaSigningSupported } from '@protontech/crypto/compatibilityChecks';
 import { getAppName } from '@proton/shared/lib/apps/helper';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { APPS } from '@proton/shared/lib/constants';

@@ -1,5 +1,5 @@
-import type { KeyReference, PublicKeyReference } from '@proton/crypto';
-import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
+import type { KeyReference, PublicKeyReference } from '@protontech/crypto';
+import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 import { KEY_FLAG } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
 import type {

@@ -1,5 +1,5 @@
 import { usePreventLeave } from '@proton/components';
-import { CryptoProxy } from '@proton/crypto/lib';
+import { CryptoProxy } from '@protontech/crypto';
 import { queryPublicCreateDocument } from '@proton/shared/lib/api/drive/documents';
 import { queryPublicCreateFolder } from '@proton/shared/lib/api/drive/folder';
 import { queryPublicRenameLink } from '@proton/shared/lib/api/drive/share';

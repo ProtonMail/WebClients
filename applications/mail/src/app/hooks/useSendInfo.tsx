@@ -7,7 +7,7 @@ import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useModalTwo } from '@proton/components/components/modalTwo/useModalTwo';
 import { useKeyTransparencyContext } from '@proton/components/containers/keyTransparency/useKeyTransparencyContext';
 import useGetEncryptionPreferences from '@proton/components/hooks/useGetEncryptionPreferences';
-import type { PublicKeyReference } from '@proton/crypto';
+import type { PublicKeyReference } from '@protontech/crypto';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import type { MessageState } from '@proton/mail/store/messages/messagesTypes';
 import { processApiRequestsSafe } from '@proton/shared/lib/api/helpers/safeApiRequests';

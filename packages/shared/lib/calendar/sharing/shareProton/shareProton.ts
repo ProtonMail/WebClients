@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { CryptoProxy, VERIFICATION_STATUS, serverTime } from '@proton/crypto';
+import { CryptoProxy, VERIFICATION_STATUS, serverTime } from '@protontech/crypto';
 import { getSignatureContext } from '@proton/shared/lib/calendar/crypto/helpers';
 import { ShareCalendarSignatureVerificationError } from '@proton/shared/lib/calendar/sharing/shareProton/ShareCalendarSignatureVerificationError';
 import type { GetEncryptionPreferences } from '@proton/shared/lib/interfaces/hooks/GetEncryptionPreferences';

@@ -1,4 +1,4 @@
-import type { PrivateKeyReferenceV4, PrivateKeyReferenceV6, PublicKeyReference } from '@proton/crypto';
+import type { PrivateKeyReferenceV4, PrivateKeyReferenceV6, PublicKeyReference } from '@protontech/crypto';
 
 import { KEY_FLAG } from '../constants';
 import { clearBit } from '../helpers/bitset';

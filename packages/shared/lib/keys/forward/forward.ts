@@ -1,4 +1,4 @@
-import { CryptoProxy, type MaybeArray, type PrivateKeyReference, type PublicKeyReference } from '@proton/crypto';
+import { CryptoProxy, type MaybeArray, type PrivateKeyReference, type PublicKeyReference } from '@protontech/crypto';
 
 interface UserID {
     name?: string;

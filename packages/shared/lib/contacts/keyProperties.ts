@@ -1,5 +1,5 @@
-import type { PublicKeyReference } from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
+import type { PublicKeyReference } from '@protontech/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 import isTruthy from '@proton/utils/isTruthy';
 
 import { MIME_TYPES, PGP_SCHEMES } from '../constants';

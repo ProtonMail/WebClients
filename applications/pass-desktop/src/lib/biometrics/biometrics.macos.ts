@@ -1,6 +1,6 @@
 import { systemPreferences } from 'electron';
 
-import { uint8ArrayToUtf8String } from '@proton/crypto/lib/utils';
+import { uint8ArrayToUtf8String } from '@protontech/crypto/utils';
 import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 
 import { biometric as macBiometrics } from '../../../native';

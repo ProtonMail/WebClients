@@ -1,4 +1,4 @@
-import type { PrivateKeyReferenceV4, PrivateKeyReferenceV6 } from '@proton/crypto';
+import type { PrivateKeyReferenceV4, PrivateKeyReferenceV6 } from '@protontech/crypto';
 
 import type { ActiveAddressKeysByVersion, ActiveKey, KeyPair } from '../interfaces';
 

@@ -1,5 +1,5 @@
 /* Inspired from packages/shared/lib/authentication/persistedSessionHelper.ts */
-import { utf8StringToUint8Array } from '@proton/crypto/lib/utils';
+import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 import { type OfflineConfig, getOfflineVerifier } from '@proton/pass/lib/cache/crypto';
 import type { Api, Maybe, MaybeNull } from '@proton/pass/types';
 import { getErrorMessage } from '@proton/pass/utils/errors/get-error-message';

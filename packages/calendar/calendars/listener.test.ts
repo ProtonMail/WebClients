@@ -31,7 +31,7 @@ const getCalendarModelState = (bootstrap: CalendarBootstrap) => {
     return { ...getModelState(bootstrap), loading: false };
 };
 
-jest.mock('@proton/crypto', () => {
+jest.mock('@protontech/crypto', () => {
     return {
         CryptoProxy: {},
     };

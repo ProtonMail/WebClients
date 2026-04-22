@@ -1,4 +1,4 @@
-import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
+import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@protontech/crypto';
 
 import type { SimpleMap } from '../interfaces';
 import type { AttendeeComment, VcalVeventComponent } from '../interfaces/calendar';

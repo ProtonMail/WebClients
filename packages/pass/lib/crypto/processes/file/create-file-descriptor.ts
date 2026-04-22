@@ -1,4 +1,4 @@
-import { generateKey } from '@proton/crypto/lib/subtle/aesGcm';
+import { generateKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { encryptData, importSymmetricKey } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import { PassCryptoError, PassCryptoFileError } from '@proton/pass/lib/crypto/utils/errors';
 import { PassEncryptionTag } from '@proton/pass/types';

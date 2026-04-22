@@ -1,4 +1,4 @@
-import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@proton/crypto/lib/utils';
+import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/crypto/utils';
 import { deobfuscate, obfuscate, obfuscateLegacy } from '@proton/pass/utils/obfuscate/xor';
 import { deserialize, serialize } from '@proton/pass/utils/object/serialize';
 

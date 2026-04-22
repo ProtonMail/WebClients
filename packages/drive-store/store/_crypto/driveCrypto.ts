@@ -1,4 +1,4 @@
-import { toPublicKeyReference } from '@proton/crypto';
+import { toPublicKeyReference } from '@protontech/crypto';
 import { ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import { canonicalizeInternalEmail } from '@proton/shared/lib/helpers/email';
 import type { Address } from '@proton/shared/lib/interfaces/Address';

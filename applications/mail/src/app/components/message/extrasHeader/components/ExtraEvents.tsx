@@ -10,8 +10,8 @@ import useGetCalendarEventRaw from '@proton/components/hooks/useGetCalendarEvent
 import { useGetCalendarInfo } from '@proton/components/hooks/useGetCalendarInfo';
 import { useGetCanonicalEmailsMap } from '@proton/components/hooks/useGetCanonicalEmailsMap';
 import useGetOrCreateCalendarAndSettings from '@proton/components/hooks/useGetOrCreateCalendarAndSettings';
-import { CryptoProxy } from '@proton/crypto';
-import { uint8ArrayToUtf8String } from '@proton/crypto/lib/utils';
+import { CryptoProxy } from '@protontech/crypto';
+import { uint8ArrayToUtf8String } from '@protontech/crypto/utils';
 import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
 import { useContactEmails } from '@proton/mail/store/contactEmails/hooks';

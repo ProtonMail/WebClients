@@ -1,4 +1,4 @@
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/test/crypto';
 import { EOClearAll, EOPassword, validID } from '../../../../helpers/test/eo/helpers';

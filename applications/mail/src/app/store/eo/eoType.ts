@@ -1,4 +1,4 @@
-import type { PublicKeyReference } from '@proton/crypto';
+import type { PublicKeyReference } from '@protontech/crypto';
 import type { Preparation } from '@proton/mail-renderer/helpers/transforms/transforms';
 import type {
     MessageErrors,

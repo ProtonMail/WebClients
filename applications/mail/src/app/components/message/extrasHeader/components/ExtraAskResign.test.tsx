@@ -2,7 +2,7 @@ import { act } from 'react';
 
 import { fireEvent, screen } from '@testing-library/react';
 
-import type { PublicKeyReference } from '@proton/crypto';
+import type { PublicKeyReference } from '@protontech/crypto';
 import type { MessageVerification } from '@proton/mail/store/messages/messagesTypes';
 
 import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../../helpers/test/crypto';

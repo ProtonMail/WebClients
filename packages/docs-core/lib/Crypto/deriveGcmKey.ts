@@ -1,6 +1,6 @@
-import type { SessionKey } from '@proton/crypto'
+import type { SessionKey } from '@protontech/crypto'
 import { HKDF_SALT_SIZE } from './Constants'
-import { deriveKey } from '@proton/crypto/lib/subtle/aesGcm'
+import { deriveKey } from '@protontech/crypto/subtle/aesGcm.ts'
 
 export async function deriveGcmKey(sessionKey: SessionKey, salt: Uint8Array<ArrayBuffer>, info: Uint8Array<ArrayBuffer>) {
   if (sessionKey.algorithm !== 'aes256') {

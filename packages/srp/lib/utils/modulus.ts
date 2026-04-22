@@ -1,5 +1,5 @@
-import type { PublicKeyReference } from '@proton/crypto';
-import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
+import type { PublicKeyReference } from '@protontech/crypto';
+import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 
 import { SRP_MODULUS_KEY } from '../constants';
 

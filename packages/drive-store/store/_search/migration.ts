@@ -11,7 +11,7 @@
 import type { IDBPTransaction } from 'idb';
 import { openDB } from 'idb';
 
-import type { PrivateKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference } from '@protontech/crypto';
 import {
     ES_MAX_ITEMS_PER_BATCH,
     INDEXEDDB_VERSION,

@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 import { getFileExtension, isImage, isRAWExtension, isRAWPhoto, isVideo } from '@proton/shared/lib/helpers/mimetype';
 import { traceError } from '@proton/shared/lib/helpers/sentry';
 import { getItem } from '@proton/shared/lib/helpers/storage';

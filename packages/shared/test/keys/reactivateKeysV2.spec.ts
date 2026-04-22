@@ -1,4 +1,4 @@
-import type { PrivateKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference } from '@protontech/crypto';
 
 import type { Address, Key, User, Address as tsAddress, User as tsUser } from '../../lib/interfaces';
 import {

@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
-import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
+import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@protontech/crypto';
+import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
 import { computeKeyPassword, generateKeySalt } from '@proton/srp';

@@ -1,6 +1,6 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 
-import { serverTime, wasServerTimeEverUpdated } from '@proton/crypto';
+import { serverTime, wasServerTimeEverUpdated } from '@protontech/crypto';
 import { createKTVerifier } from '@proton/key-transparency/helpers';
 import { createKeyMigrationKTVerifier } from '@proton/key-transparency/shared';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';

@@ -1,8 +1,8 @@
 import { AuthenticatorEncryptionTag } from 'proton-authenticator/lib/crypto';
 import logger from 'proton-authenticator/lib/logger';
 
-import { ARGON2_PARAMS, CryptoProxy } from '@proton/crypto/lib';
-import { decryptData, encryptData, generateKey, importKey } from '@proton/crypto/lib/subtle/aesGcm';
+import { ARGON2_PARAMS, CryptoProxy } from '@protontech/crypto';
+import { decryptData, encryptData, generateKey, importKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 
 type Argon2Params = (typeof ARGON2_PARAMS)[keyof typeof ARGON2_PARAMS];

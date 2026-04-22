@@ -1,7 +1,7 @@
 import { encodeBase64 as bcryptEncodeBase64, hash as bcryptHash } from 'bcryptjs';
 
-import { CryptoProxy } from '@proton/crypto';
-import { binaryStringToUint8Array, utf8StringToUint8Array } from '@proton/crypto/lib/utils';
+import { CryptoProxy } from '@protontech/crypto';
+import { binaryStringToUint8Array, utf8StringToUint8Array } from '@protontech/crypto/utils';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import { BCRYPT_PREFIX } from './constants';

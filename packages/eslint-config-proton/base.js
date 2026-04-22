@@ -217,7 +217,7 @@ export default defineConfig(
                     object: 'crypto',
                     property: 'subtle',
                     message:
-                        'Use helpers from `@proton/crypto/lib/subtle` instead of accessing the WebCrypto API directly.',
+                        'Use helpers from `@protontech/crypto/subtle` instead of accessing the WebCrypto API directly.',
                 },
             ],
 

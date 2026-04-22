@@ -1,4 +1,4 @@
-import { decryptData, encryptData, generateKey, importKey } from '@proton/crypto/lib/subtle/aesGcm';
+import { decryptData, encryptData, generateKey, importKey } from '@protontech/crypto/subtle/aesGcm.ts';
 
 import type { IndexKind } from './types';
 

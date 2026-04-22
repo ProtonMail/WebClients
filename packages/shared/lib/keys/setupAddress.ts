@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
 import type { AddressGeneration } from '@proton/components/containers/login/interface';
-import { utf8StringToUint8Array } from '@proton/crypto/lib/utils';
+import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';
 import type { ProductParam } from '@proton/shared/lib/apps/product';
 import { getRequiresAddress, getRequiresProtonAddress } from '@proton/shared/lib/authentication/apps';

@@ -1,7 +1,7 @@
 import log, { type Logger as LogLevelLogger } from 'loglevel';
 
-import { type AesGcmCryptoKey, decryptData, encryptData } from '@proton/crypto/lib/subtle/aesGcm';
-import { utf8StringToUint8Array, uint8ArrayToUtf8String } from '@proton/crypto/lib/utils';
+import { type AesGcmCryptoKey, decryptData, encryptData } from '@protontech/crypto/subtle/aesGcm.ts';
+import { utf8StringToUint8Array, uint8ArrayToUtf8String } from '@protontech/crypto/utils';
 import { DAY } from '@proton/shared/lib/constants';
 
 import {

@@ -1,4 +1,4 @@
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 import getRandomString from '@proton/utils/getRandomString';
 import isTruthy from '@proton/utils/isTruthy';
 

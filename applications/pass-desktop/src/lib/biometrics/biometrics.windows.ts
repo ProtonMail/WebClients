@@ -1,4 +1,4 @@
-import { KEY_LENGTH_BYTES } from '@proton/crypto/lib/subtle/aesGcm';
+import { KEY_LENGTH_BYTES } from '@protontech/crypto/subtle/aesGcm.ts';
 import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 
 import { biometric as winBiometrics } from '../../../native';

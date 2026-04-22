@@ -1,4 +1,4 @@
-import { CryptoProxy } from '@proton/crypto/lib';
+import { CryptoProxy } from '@protontech/crypto';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 import { computeKeyPassword } from '@proton/srp/lib';
 

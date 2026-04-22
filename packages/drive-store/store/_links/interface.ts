@@ -1,4 +1,4 @@
-import type { VERIFICATION_STATUS } from '@proton/crypto';
+import type { VERIFICATION_STATUS } from '@protontech/crypto';
 import type { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import type { LinkType } from '@proton/shared/lib/interfaces/drive/link';
 

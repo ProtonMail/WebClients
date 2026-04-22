@@ -1,5 +1,5 @@
-import { serverTime } from '@proton/crypto';
-import type { IndexKey } from '@proton/crypto/lib/subtle/ad-hoc/encryptedSearch';
+import { serverTime } from '@protontech/crypto';
+import type { IndexKey } from '@protontech/crypto/subtle/ad-hoc/encryptedSearch.ts';
 import { MINUTE } from '@proton/shared/lib/constants';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import isTruthy from '@proton/utils/isTruthy';

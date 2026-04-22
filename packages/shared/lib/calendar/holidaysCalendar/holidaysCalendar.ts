@@ -1,4 +1,4 @@
-import type { SessionKey } from '@proton/crypto';
+import type { SessionKey } from '@protontech/crypto';
 import { encryptPassphraseSessionKey, signPassphrase } from '@proton/shared/lib/calendar/crypto/keys/calendarKeys';
 import type { Address } from '@proton/shared/lib/interfaces';
 import type { CalendarNotificationSettings, HolidaysDirectoryCalendar } from '@proton/shared/lib/interfaces/calendar';

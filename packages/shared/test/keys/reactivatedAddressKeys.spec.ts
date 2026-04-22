@@ -1,4 +1,4 @@
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 
 import type { Key, Address as tsAddress, User as tsUser } from '../../lib/interfaces';
 import { getDecryptedAddressKeysHelper, getDecryptedUserKeysHelper } from '../../lib/keys';

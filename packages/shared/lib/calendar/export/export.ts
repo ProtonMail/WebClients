@@ -1,7 +1,7 @@
 import { fromUnixTime } from 'date-fns';
 import { c } from 'ttag';
 
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 import { withSupportedSequence } from '@proton/shared/lib/calendar/icsSurgery/vevent';
 import isTruthy from '@proton/utils/isTruthy';
 import partition from '@proton/utils/partition';

@@ -1,5 +1,5 @@
-import type { PrivateKeyReference, SessionKey } from '@proton/crypto';
-import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
+import type { PrivateKeyReference, SessionKey } from '@protontech/crypto';
+import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 import { queryShareMeta } from '@proton/shared/lib/api/drive/share';
 import type { ShareMeta } from '@proton/shared/lib/interfaces/drive/share';
 

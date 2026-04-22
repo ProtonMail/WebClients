@@ -1,11 +1,11 @@
-import { utf8StringToUint8Array } from '@proton/crypto/lib/utils';
+import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 import {
     KEY_LENGTH_BYTES,
     generateKey,
     decryptData as genericDecryptData,
     encryptData as genericEncryptData,
     importKey,
-} from '@proton/crypto/lib/subtle/aesGcm';
+} from '@protontech/crypto/subtle/aesGcm.ts';
 import type { PassEncryptionTag } from '@proton/pass/types';
 
 export { generateKey, importKey as importSymmetricKey, KEY_LENGTH_BYTES };

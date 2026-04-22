@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import type { PrivateKeyReference, SessionKey } from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
+import type { PrivateKeyReference, SessionKey } from '@protontech/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 import {
     queryDeleteFileRevision,
     queryPublicCreateFile,
