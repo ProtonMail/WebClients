@@ -196,8 +196,12 @@ const ConversationComponent = ({
             // Opening with a specific message filter
             setOpenPanel({ type: 'files', filterMessage: message });
         } else {
-            // Opening without a filter - explicitly clear any existing filter
-            setOpenPanel({ type: 'files', filterMessage: undefined });
+            // Opening without a filter - toggle: close if already open with no filter, otherwise open
+            setOpenPanel((prev) =>
+                prev.type === 'files' && !prev.filterMessage
+                    ? { type: null }
+                    : { type: 'files', filterMessage: undefined }
+            );
         }
     }, []);
 
