@@ -225,4 +225,27 @@ describe('SearchQueryExecutor integration', () => {
             expect(ids).not.toContain('file-2');
         });
     });
+
+    describe('trash exclusion', () => {
+        const indexFileEntry = (id: string, name: string, trash: { trashTime?: bigint } = {}) =>
+            makeTestIndexEntry(id, {
+                filename: { kind: 'tag', value: normalizedFilenameForTag(name) },
+                filenameText: { kind: 'text', value: normalizedFilenameForTag(name) },
+                ...(trash.trashTime !== undefined
+                    ? { trashTime: { kind: 'integer' as const, value: trash.trashTime } }
+                    : {}),
+            });
+
+        it('excludes self-trashed entries (trashTime > 0)', async () => {
+            await indexDocs(
+                indexFileEntry('file-1', 'report.pdf'),
+                indexFileEntry('file-2', 'report_trashed.pdf', { trashTime: 123n })
+            );
+
+            const results = await collectResults(executor.performSearch({ filename: 'report' }));
+            const ids = results.map((r) => r.nodeUid);
+            expect(ids).toContain('file-1');
+            expect(ids).not.toContain('file-2');
+        });
+    });
 });

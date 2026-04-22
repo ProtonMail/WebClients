@@ -6,6 +6,7 @@ export class FakeSdkDriveClient implements SdkDriveClient {
     private rootNode: MaybeNode | undefined;
     private nodes = new Map<string, MaybeNode>();
     private tree = new Map<string, MaybeNode[]>();
+    private trashedNodes: MaybeNode[] = [];
     private iterateError: Error | undefined;
 
     setNode(nodeUid: string, node: MaybeNode): void {
@@ -18,6 +19,10 @@ export class FakeSdkDriveClient implements SdkDriveClient {
 
     setChildren(parentUid: string, children: MaybeNode[]): void {
         this.tree.set(parentUid, children);
+    }
+
+    setTrashedNodes(nodes: MaybeNode[]): void {
+        this.trashedNodes = nodes;
     }
 
     setIterateFolderChildrenError(error: Error): void {
@@ -49,6 +54,12 @@ export class FakeSdkDriveClient implements SdkDriveClient {
         const children = this.tree.get(parentNodeUid) ?? [];
         for (const child of children) {
             yield child;
+        }
+    }
+
+    async *iterateTrashedNodes(): AsyncIterable<MaybeNode> {
+        for (const node of this.trashedNodes) {
+            yield node;
         }
     }
 }

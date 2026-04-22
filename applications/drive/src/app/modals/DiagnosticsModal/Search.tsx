@@ -395,7 +395,7 @@ type SortConfig = {
 
 type ColumnDef = {
     key: string;
-    label: string;
+    label: React.ReactNode;
     width?: string;
     render: (entry: ExportedEntry) => React.ReactNode;
     sortValue: (entry: ExportedEntry) => string | number;
@@ -571,10 +571,10 @@ const COLUMNS: ColumnDef[] = [
     {
         key: 'trashTime',
         label: 'trashTime',
-        width: '12em',
-        defaultVisible: false,
+        width: '8em',
+        defaultVisible: true,
         sortValue: (e) => Number(attr(e, 'trashTime')),
-        render: (entry) => formatTime(attr(entry, 'trashTime')),
+        render: (entry) => attr(entry, 'trashTime'),
     },
 ];
 
