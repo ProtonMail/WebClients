@@ -3,19 +3,14 @@ import { Link, useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { useGetAddresses } from '@proton/account/addresses/hooks';
-import { useGetUser } from '@proton/account/user/hooks';
-import { useGetUserKeys } from '@proton/account/userKeys/hooks';
-import { useGetUserSettings } from '@proton/account/userSettings/hooks';
+import { selectRecoveryFileData } from '@proton/account/recovery/recoveryFile';
+import { useUpdateRecoveryFile } from '@proton/account/recovery/useUpdateRecoveryFile';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
-import { useApi, useAuthentication, useSecurityCheckup } from '@proton/components';
+import { useSecurityCheckup } from '@proton/components';
 import useLoading from '@proton/hooks/useLoading';
-import { CacheType } from '@proton/redux-utilities';
-import { updateDeviceRecovery } from '@proton/shared/lib/api/settingsRecovery';
+import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME, SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
-import type { UserSettings } from '@proton/shared/lib/interfaces';
-import { syncDeviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecovery';
 
 import SecurityCheckupMain from '../../components/SecurityCheckupMain';
 import SecurityCheckupMainIcon from '../../components/SecurityCheckupMainIcon';
@@ -30,18 +25,12 @@ enum STEPS {
 const EnableDeviceRecoveryContainer = () => {
     const { securityState } = useSecurityCheckup();
     const { deviceRecovery } = securityState;
+    const recoveryFileData = useSelector(selectRecoveryFileData);
+    const updateRecoveryFile = useUpdateRecoveryFile(recoveryFileData);
 
     const history = useHistory();
 
     const [step, setStep] = useState(STEPS.ENABLE);
-
-    const api = useApi();
-    const authentication = useAuthentication();
-
-    const getUser = useGetUser();
-    const getUserKeys = useGetUserKeys();
-    const getAddresses = useGetAddresses();
-    const getUserSettings = useGetUserSettings();
 
     const [loading, withLoading] = useLoading();
 
@@ -51,23 +40,6 @@ const EnableDeviceRecoveryContainer = () => {
             return;
         }
     }, []);
-
-    const syncDeviceRecoveryHelper = async (partialUserSettings: Partial<UserSettings>) => {
-        const [user, userKeys, addresses, userSettings] = await Promise.all([
-            getUser(),
-            getUserKeys(),
-            getAddresses(),
-            getUserSettings(),
-        ]);
-        return syncDeviceRecovery({
-            api,
-            user,
-            addresses,
-            userSettings: { ...userSettings, ...partialUserSettings },
-            userKeys,
-            authentication,
-        });
-    };
 
     if (step === STEPS.SUCCESS) {
         return (
@@ -89,43 +61,43 @@ const EnableDeviceRecoveryContainer = () => {
     }
 
     const enableDeviceRecovery = async () => {
-        await api(updateDeviceRecovery({ DeviceRecovery: 1 }));
-        await syncDeviceRecoveryHelper({ DeviceRecovery: 1 });
-        await getUserSettings({ cache: CacheType.None });
-
+        await updateRecoveryFile.toggleDeviceRecovery(true);
         setStep(STEPS.SUCCESS);
     };
 
     return (
-        <SecurityCheckupMain>
-            <SecurityCheckupMainTitle prefix={<SecurityCheckupMainIcon icon={deviceIcon} color="danger" />}>
-                {c('Safety review').t`Enable device-based recovery`}
-            </SecurityCheckupMainTitle>
+        <>
+            {updateRecoveryFile.el}
+            <SecurityCheckupMain>
+                <SecurityCheckupMainTitle prefix={<SecurityCheckupMainIcon icon={deviceIcon} color="danger" />}>
+                    {c('Safety review').t`Enable device-based recovery`}
+                </SecurityCheckupMainTitle>
 
-            <div className="flex flex-column gap-4">
-                <div>
-                    {c('Safety review')
-                        .t`When you enable device-based recovery, ${BRAND_NAME} will store an encrypted backup keychain as a file in your browser’s web storage.`}
+                <div className="flex flex-column gap-4">
+                    <div>
+                        {c('Safety review')
+                            .t`When you enable device-based recovery, ${BRAND_NAME} will store an encrypted backup keychain as a file in your browser’s web storage.`}
+                    </div>
+
+                    <div>
+                        {c('Safety review')
+                            .t`If you forget your ${BRAND_NAME} password and need to reset it, the next time you sign in this device using your new password, full access to your ${BRAND_NAME} Account will be restored.`}
+                    </div>
+
+                    <div>{c('Safety review').t`You can disable this at any time.`}</div>
                 </div>
 
-                <div>
-                    {c('Safety review')
-                        .t`If you forget your ${BRAND_NAME} password and need to reset it, the next time you sign in this device using your new password, full access to your ${BRAND_NAME} Account will be restored.`}
-                </div>
-
-                <div>{c('Safety review').t`You can disable this at any time.`}</div>
-            </div>
-
-            <Button
-                className="mt-8"
-                onClick={() => withLoading(enableDeviceRecovery)}
-                loading={loading}
-                fullWidth
-                color="norm"
-            >
-                {c('Action').t`Enable device-based recovery`}
-            </Button>
-        </SecurityCheckupMain>
+                <Button
+                    className="mt-8"
+                    onClick={() => withLoading(enableDeviceRecovery)}
+                    loading={loading}
+                    fullWidth
+                    color="norm"
+                >
+                    {c('Action').t`Enable device-based recovery`}
+                </Button>
+            </SecurityCheckupMain>
+        </>
     );
 };
 

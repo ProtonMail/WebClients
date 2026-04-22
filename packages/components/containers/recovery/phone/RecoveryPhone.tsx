@@ -1,39 +1,30 @@
-import type { FormEvent, ReactNode } from 'react';
-import { useState } from 'react';
+import { type FormEvent, type ReactNode, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { userSettingsActions } from '@proton/account/userSettings';
 import { Button } from '@proton/atoms/Button/Button';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import PhoneInput from '@proton/components/components/v2/phone/LazyPhoneInput';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import useApi from '@proton/components/hooks/useApi';
-import useNotifications from '@proton/components/hooks/useNotifications';
-import useLoading from '@proton/hooks/useLoading';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
-import { useDispatch } from '@proton/redux-shared-store';
-import { updatePhone } from '@proton/shared/lib/api/settings';
-import type { UserSettings } from '@proton/shared/lib/interfaces';
-import { SETTINGS_STATUS } from '@proton/shared/lib/interfaces';
 import clsx from '@proton/utils/clsx';
 
 import type { InputFieldProps } from '../../../components/v2/field/InputField';
-import ConfirmRemovePhoneModal from './ConfirmRemovePhoneModal';
-import VerifyRecoveryPhoneModal from './VerifyRecoveryPhoneModal';
 
 interface RenderFormProps {
     className?: string;
     inputWidth?: string;
     onSubmit: (e: FormEvent<HTMLFormElement>) => void;
+    onReset: () => void;
     input: ReactNode;
     submitButtonProps: {
         type: 'submit';
         disabled: boolean;
         loading: boolean;
     };
+    onVerify: () => void;
+    onRemove: () => void;
 }
 
 const defaultRenderForm = ({ className, inputWidth, onSubmit, input, submitButtonProps }: RenderFormProps) => {
@@ -55,65 +46,45 @@ const defaultRenderForm = ({ className, inputWidth, onSubmit, input, submitButto
 };
 
 interface Props {
-    phone: UserSettings['Phone'];
-    hasReset: boolean;
+    phoneData: {
+        value: string;
+        isVerified: boolean;
+        hasReset: boolean;
+    };
     defaultCountry?: string;
     className?: string;
     inputWidth?: string;
-    onSuccess?: (updatedUserSettings: UserSettings) => void;
     autoFocus?: boolean;
     renderForm?: (props: RenderFormProps) => ReactNode;
-    inputProps?: Partial<Pick<InputFieldProps<typeof PhoneInput>, 'label'>>;
+    inputProps?: Partial<Pick<InputFieldProps<typeof PhoneInput>, 'label' | 'readOnly'>>;
     disableVerifyCta?: boolean;
-    persistPasswordScope?: boolean;
-    canSubmit?: (input: string) => boolean;
+    onSubmit: (input: string) => void;
+    onVerify: () => void;
+    loading: boolean;
 }
 
 const RecoveryPhone = ({
     renderForm = defaultRenderForm,
-    phone,
-    hasReset,
+    phoneData,
     defaultCountry,
     className,
     inputWidth,
-    onSuccess,
     autoFocus,
     inputProps,
     disableVerifyCta,
-    persistPasswordScope = false,
-    canSubmit,
+    onSubmit,
+    onVerify,
+    loading,
 }: Props) => {
-    const api = useApi();
-    const dispatch = useDispatch();
-    const [input, setInput] = useState(phone.Value || '');
-    const { createNotification } = useNotifications();
+    const [input, setInput] = useState(phoneData.value);
     const { onFormSubmit } = useFormErrors();
-    const [verifyRecoveryPhoneModal, setVerifyRecoveryPhoneModalOpen, renderVerifyRecoveryPhoneModal] = useModalState();
-    const [confirmModal, setConfirmModal, renderConfirmModal] = useModalState();
 
-    const [updatingPhone, withUpdatingPhone] = useLoading();
-
-    const confirmStep = !input && hasReset;
-    const loading = renderVerifyRecoveryPhoneModal || renderConfirmModal || updatingPhone;
-
-    const handleUpdatePhone = async () => {
-        const { UserSettings } = await api<{ UserSettings: UserSettings }>(
-            updatePhone({
-                Phone: input,
-                PersistPasswordScope: persistPasswordScope,
-            })
-        );
-        dispatch(userSettingsActions.set({ UserSettings }));
-        createNotification({ text: c('Success').t`Phone number updated` });
-        onSuccess?.(UserSettings);
-    };
+    useEffect(() => {
+        setInput(phoneData.value);
+    }, [phoneData.value]);
 
     return (
         <>
-            {renderConfirmModal && (
-                <ConfirmRemovePhoneModal {...confirmModal} onConfirm={() => withUpdatingPhone(handleUpdatePhone)} />
-            )}
-            {renderVerifyRecoveryPhoneModal && <VerifyRecoveryPhoneModal phone={phone} {...verifyRecoveryPhoneModal} />}
             {renderForm({
                 className,
                 inputWidth,
@@ -122,15 +93,11 @@ const RecoveryPhone = ({
                     if (!onFormSubmit()) {
                         return;
                     }
-                    if (canSubmit && !canSubmit(input)) {
-                        return;
-                    }
-                    if (confirmStep) {
-                        setConfirmModal(true);
-                    } else {
-                        void withUpdatingPhone(handleUpdatePhone);
-                    }
+                    onSubmit(input);
                 },
+                onReset: () => setInput(phoneData.value),
+                onVerify: () => onVerify(),
+                onRemove: () => onSubmit(''),
                 input: (
                     <InputFieldTwo
                         as={PhoneInput}
@@ -143,8 +110,8 @@ const RecoveryPhone = ({
                         aria-label={c('label').t`Recovery phone number`}
                         assistiveText={
                             !disableVerifyCta &&
-                            phone.Value &&
-                            (phone.Status !== SETTINGS_STATUS.VERIFIED ? (
+                            phoneData.value &&
+                            (!phoneData.isVerified ? (
                                 <>
                                     <IcExclamationCircleFilled className="color-danger shrink-0 aligntop mr-1" />
                                     <span className="color-norm mr-2">{c('Recovery Phone')
@@ -152,9 +119,9 @@ const RecoveryPhone = ({
                                     <button
                                         className="link"
                                         type="button"
-                                        onClick={() => setVerifyRecoveryPhoneModalOpen(true)}
+                                        onClick={() => onVerify()}
                                         aria-label={c('Recovery Phone')
-                                            .t`Verify this recovery phone number now: ${phone.Value}`}
+                                            .t`Verify this recovery phone number now: ${phoneData.value}`}
                                     >
                                         {c('Recovery Phone').t`Verify now`}
                                     </button>
@@ -172,7 +139,7 @@ const RecoveryPhone = ({
                 ),
                 submitButtonProps: {
                     type: 'submit',
-                    disabled: (phone.Value || '') === input,
+                    disabled: phoneData.value === input,
                     loading,
                 },
             })}

@@ -553,13 +553,22 @@ export { default as LabelsSection } from './containers/labels/LabelsSection';
 export { default as DeleteLabelModal } from './containers/labels/modals/DeleteLabelModal';
 export { default as EditLabelModal } from './containers/labels/modals/EditLabelModal';
 export type { LabelModel } from './containers/labels/modals/EditLabelModal';
-export type { SectionConfig, SettingsAreaConfig, SidebarConfig, SubSectionConfig } from './containers/layout/interface';
+export type {
+    SectionConfig,
+    SettingsAreaConfig,
+    SidebarConfig,
+    SubSectionConfig,
+    SubrouteConfig,
+    SubrouteGroup,
+} from './containers/layout/interface';
 export { default as PrivateMainArea } from './containers/layout/PrivateMainArea';
 export { default as PrivateMainAreaLoading } from './containers/layout/PrivateMainAreaLoading';
 export {
     default as PrivateMainSettingsArea,
     PrivateMainSettingsAreaBase,
 } from './containers/layout/PrivateMainSettingsArea';
+export { default as PrivateMainSubSettingsArea } from './containers/layout/PrivateMainSubSettingsArea';
+export { default as SettingsNavGroup } from './containers/layout/SettingsNavGroup';
 export { default as SubSettingsSection } from './containers/layout/SubSettingsSection';
 export { default as ComposerModeCards } from './containers/layouts/ComposerModeCards';
 export { default as DensityInjector } from './containers/layouts/DensityInjector';
@@ -784,7 +793,6 @@ export { default as useCache } from './hooks/useCache';
 export { default as useCalendarShareInvitationActions } from './hooks/useCalendarShareInvitationActions';
 export { default as useCalendarShareInvitations } from './hooks/useCalendarShareInvitations';
 export { default as useConfig } from './hooks/useConfig';
-export { useDeviceRecovery } from './hooks/useDeviceRecovery';
 export { default as useDragMove } from './hooks/useDragMove';
 export { default as useDragOver } from './hooks/useDragOver';
 export { default as useDropdownArrowNavigation } from './hooks/useDropdownArrowNavigation';
@@ -805,9 +813,7 @@ export type { Cancellable } from './hooks/useHandler';
 export { default as useHasSuspendedCounter } from './hooks/useHasSuspendedCounter';
 export { useHotkeys, type HotkeyTuple } from './hooks/useHotkeys';
 export { default as useIsClosing } from './hooks/useIsClosing';
-export { default as useIsDataRecoveryAvailable } from './hooks/useIsDataRecoveryAvailable';
 export { default as useIsInboxElectronApp } from './hooks/useIsInboxElectronApp';
-export { default as useIsMnemonicAvailable } from './hooks/useIsMnemonicAvailable';
 export { default as useKeyPress } from './hooks/useKeyPress';
 export { default as useLocalState } from './hooks/useLocalState';
 export { useDeclarativeLocalState } from './hooks/useDeclarativeLocalState';
@@ -821,7 +827,6 @@ export { PreventLeaveProvider, default as usePreventLeave } from './hooks/usePre
 export { default as useRecoveryNotification } from './hooks/useRecoveryNotification';
 export { default as useRelocalizeText } from './hooks/useRelocalizeText';
 export { default as useSearchParamsEffect } from './hooks/useSearchParamsEffect';
-export { useIsSessionRecoveryAvailable } from './hooks/useSessionRecovery';
 export { default as useShowThemeSelection } from './hooks/useShowThemeSelection';
 export { useMultiSortedList, default as useSortedList, useSortedListAsync } from './hooks/useSortedList';
 export type { SortConfig } from './hooks/useSortedList';

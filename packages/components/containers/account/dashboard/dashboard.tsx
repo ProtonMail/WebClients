@@ -32,7 +32,7 @@ const DashboardWrapper = ({ children, config }: PropsWithChildren<Props>) => {
         <PrivateMainSettingsArea
             config={config}
             mainAreaClass="bg-lowered settings-cards"
-            wrapperClass="w-full p-4 lg:p-6 xl:p-12 max-w-custom mx-auto"
+            wrapperClass="w-full p-4 lg:p-6 xl:p-12 max-w-custom mr-auto"
             style={{ '--max-w-custom': '93.75rem' }}
         >
             {children}

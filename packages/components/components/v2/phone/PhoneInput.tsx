@@ -144,6 +144,7 @@ const PhoneInputBase = (
             prefix={
                 <PhoneCountrySelect
                     embedded={embedded}
+                    disabled={rest.readOnly}
                     value={selectedValue}
                     options={countries}
                     onChange={(newSelectedValue) => {

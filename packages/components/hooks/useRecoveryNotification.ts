@@ -1,60 +1,33 @@
 import { c } from 'ttag';
 
-import { useAddresses } from '@proton/account/addresses/hooks';
-import { useUser } from '@proton/account/user/hooks';
+import { selectRecoveryNotification } from '@proton/account/recovery/recoveryNotification';
 import { ThemeColor } from '@proton/colors';
-import useIsRecoveryFileAvailable from '@proton/components/hooks/recoveryFile/useIsRecoveryFileAvailable';
-import useHasOutdatedRecoveryFile from '@proton/components/hooks/useHasOutdatedRecoveryFile';
 import { FeatureCode, useFeature } from '@proton/features';
-import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
-import { getLikelyHasKeysToReactivate } from '@proton/shared/lib/keys/getInactiveKeys';
+import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 
 import useSecurityCenter from '../components/drawer/views/SecurityCenter/useSecurityCenter';
-import { getOverallStatus } from '../containers/recovery/getOverallStatus';
-import useIsDataRecoveryAvailable from './useIsDataRecoveryAvailable';
-import useIsMnemonicAvailable from './useIsMnemonicAvailable';
-import useIsSentinelUser from './useIsSentinelUser';
-import useRecoveryStatus from './useRecoveryStatus';
 
 const useRecoveryNotification = (
     isLessInvasive: boolean,
     isQuickSettings?: boolean
 ): { path: string; text: string; color: ThemeColor } | undefined => {
-    const [user] = useUser();
-    const [addresses, loadingAddresses] = useAddresses();
     const isSecurityCenterEnabled = useSecurityCenter();
     const alreadyDisplayedInSecurityCenter = isSecurityCenterEnabled && isQuickSettings;
 
-    const [{ accountRecoveryStatus, dataRecoveryStatus, mnemonicIsSet }, loadingRecoveryStatus] = useRecoveryStatus();
-
-    const [isRecoveryFileAvailable, loadingIsRecoveryFileAvailable] = useIsRecoveryFileAvailable();
-    const [isMnemonicAvailable, loadingIsMnemonicAvailable] = useIsMnemonicAvailable();
-    const [isDataRecoveryAvailable, loadingIsDataRecoveryAvailable] = useIsDataRecoveryAvailable();
-    const hasOutdatedRecoveryFile = useHasOutdatedRecoveryFile();
-    const [{ isSentinelUser, hasMnemonic }, loadingIsSentinelUser] = useIsSentinelUser();
+    const { loading, overallStatus, mnemonicData, recoveryFileData, sentinelData, dataRecovery, hasKeysToReactivate } =
+        useSelector(selectRecoveryNotification);
 
     const { feature: hasDismissedRecoverDataCard } = useFeature(FeatureCode.DismissedRecoverDataCard);
-    const hasKeysToReactivate = getLikelyHasKeysToReactivate(user, addresses);
 
-    const overallStatus = getOverallStatus({ accountRecoveryStatus, dataRecoveryStatus, isDataRecoveryAvailable });
-
-    const loading =
-        loadingRecoveryStatus ||
-        loadingIsRecoveryFileAvailable ||
-        loadingIsMnemonicAvailable ||
-        loadingIsDataRecoveryAvailable ||
-        loadingIsSentinelUser ||
-        loadingAddresses;
     if (loading) {
         return;
     }
 
-    if (!isDataRecoveryAvailable) {
+    if (!dataRecovery.isDataRecoveryAvailable) {
         return;
     }
 
-    const hasOutdatedMnemonic = user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED;
-    if (isMnemonicAvailable && hasOutdatedMnemonic) {
+    if (mnemonicData.isMnemonicAvailable && mnemonicData.hasOutdatedMnemonic) {
         return {
             path: '/recovery#data',
             text: c('Action').t`Update recovery phrase`,
@@ -62,7 +35,11 @@ const useRecoveryNotification = (
         };
     }
 
-    if (isRecoveryFileAvailable && hasOutdatedRecoveryFile && !alreadyDisplayedInSecurityCenter) {
+    if (
+        recoveryFileData.isRecoveryFileAvailable &&
+        recoveryFileData.hasOutdatedRecoveryFile &&
+        !alreadyDisplayedInSecurityCenter
+    ) {
         return {
             path: '/recovery#data',
             text: c('Action').t`Update recovery file`,
@@ -82,8 +59,8 @@ const useRecoveryNotification = (
         };
     }
     // keeps account recovery notification dot consistent with mail security center for new recovery settings for sentinel users
-    if (isSentinelUser && !alreadyDisplayedInSecurityCenter) {
-        if (!hasMnemonic) {
+    if (sentinelData.isSentinelUser && !alreadyDisplayedInSecurityCenter) {
+        if (mnemonicData.isMnemonicAvailable && !mnemonicData.isMnemonicSet) {
             return {
                 path: '/recovery#data',
                 text: c('Action').t`Update recovery phrase`,
@@ -93,13 +70,11 @@ const useRecoveryNotification = (
         return;
     }
 
-    if (mnemonicIsSet || overallStatus === 'complete') {
+    if (mnemonicData.isMnemonicSet || overallStatus === 'complete') {
         return;
     }
 
-    const mnemonicCanBeSet =
-        user.MnemonicStatus === MNEMONIC_STATUS.ENABLED || user.MnemonicStatus === MNEMONIC_STATUS.PROMPT;
-    if (isMnemonicAvailable && mnemonicCanBeSet && !alreadyDisplayedInSecurityCenter) {
+    if (mnemonicData.isMnemonicAvailable && mnemonicData.mnemonicCanBeSet && !alreadyDisplayedInSecurityCenter) {
         return {
             path: '/recovery?action=generate-recovery-phrase',
             text: c('Action').t`Set recovery phrase`,
