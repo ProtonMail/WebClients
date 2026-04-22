@@ -1366,4 +1366,78 @@ describe('message counts - label conversations', () => {
             });
         });
     });
+
+    describe('Move out from INBOX', () => {
+        it('should remove the messages that were in INBOX from the category count', () => {
+            const conversation1 = {
+                ID: 'conversation1',
+                Labels: [
+                    {
+                        ID: MAILBOX_LABEL_IDS.INBOX,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 1,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ARCHIVE,
+                        ContextNumMessages: 2,
+                        ContextNumUnread: 1,
+                        ContextNumAttachments: 0,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALL_MAIL,
+                        ContextNumMessages: 4,
+                        ContextNumUnread: 3,
+                        ContextNumAttachments: 1,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
+                        ContextNumMessages: 4,
+                        ContextNumUnread: 3,
+                        ContextNumAttachments: 1,
+                    },
+                    {
+                        ID: MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS,
+                        ContextNumMessages: 4,
+                        ContextNumUnread: 3,
+                        ContextNumAttachments: 1,
+                    },
+                ] as ConversationLabel[],
+                NumMessages: 4,
+                NumUnread: 2,
+                NumAttachments: 1,
+            } as Conversation;
+
+            labelConversationsPending(state, {
+                type: 'mailbox/labelConversationPending',
+                payload: {
+                    conversations: [conversation1],
+                    sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
+                    destinationLabelID: MAILBOX_LABEL_IDS.ARCHIVE,
+                    labels: customLabels,
+                    folders: customFolders,
+                },
+            });
+
+            const updatedCounters = state.value as LabelCount[];
+
+            const inboxCount = updatedCounters.find((c) => c.LabelID === MAILBOX_LABEL_IDS.INBOX);
+            expect(inboxCount).toEqual({ LabelID: MAILBOX_LABEL_IDS.INBOX, Unread: 4, Total: 8 });
+
+            const archiveCount = updatedCounters.find((c) => c.LabelID === MAILBOX_LABEL_IDS.ARCHIVE);
+            expect(archiveCount).toEqual({ LabelID: MAILBOX_LABEL_IDS.ARCHIVE, Unread: 2, Total: 4 });
+
+            const transactionCount = updatedCounters.find((c) => c.LabelID === MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS);
+            expect(transactionCount).toEqual({ LabelID: MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS, Unread: 0, Total: 0 });
+
+            checkUpdatedCounters({
+                updatedCounters,
+                skippedLabelIDs: [
+                    MAILBOX_LABEL_IDS.INBOX,
+                    MAILBOX_LABEL_IDS.ARCHIVE,
+                    MAILBOX_LABEL_IDS.CATEGORY_TRANSACTIONS,
+                ],
+            });
+        });
+    });
 });
