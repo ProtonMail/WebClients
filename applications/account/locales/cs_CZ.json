@@ -313,7 +313,7 @@
         "Připojit aplikace a zařízení"
       ],
       "Connect to Gmail": [
-        "Připojit k Gmailu"
+        "Připojit ke Gmail"
       ],
       "Connect to video conferencing": [
         "Připojit se k videokonferenci"
@@ -1757,6 +1757,12 @@
       ],
       "Zoom out": [
         "Oddálit"
+      ],
+      "Connect Gmail address": [
+        "Připojte svou Gmail adresu"
+      ],
+      "Continue to sign in": [
+        "Pokračujte v přihlášení"
       ]
     },
     "action": {
@@ -2907,7 +2913,7 @@
         "Spustit migraci"
       ],
       "Status": [
-        "Status"
+        "Stav"
       ],
       "Transfer errors": [
         "Chyby přenosu"
@@ -2938,6 +2944,12 @@
       ],
       "You need to grant the permission for ${ BRAND_NAME } to copy your data. After accepting permissions, come back here to continue.": [
         "Musíte udělit společnosti ${ BRAND_NAME } oprávnění ke kopírování vašich dat. Po udělení oprávnění se vraťte sem a pokračujte."
+      ],
+      "App installed": [
+        "Aplikace nainstalována"
+      ],
+      "Install app": [
+        "Nainstalujte aplikaci"
       ]
     },
     "breadcrumb": {
@@ -4857,6 +4869,9 @@
     "Delete group prompt": {
       "Are you sure you want to delete this group?": [
         "Opravdu chcete smazat tuto skupinu?"
+      ],
+      "Please note that if you delete the group ${ displayGroupName }, it will be permanently removed.": [
+        "Upozorňujeme, že pokud skupinu ${ displayGroupName } smažete, bude trvale odebrána."
       ]
     },
     "Delete group prompt with email": {
@@ -4934,7 +4949,7 @@
         "Snadno synchronizujte soubory do cloudu z počítače a přistupujte k nim z mobilního zařízení."
       ],
       "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
-        "E-maily zaslané na adresu ${ connectedAddressText } se nyní budou zobrazovat v aplikaci ${ MAIL_APP_NAME }."
+        "E-maily odeslané na ${ connectedAddressText } se nyní budou zobrazovat v ${ MAIL_APP_NAME }."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Pro přístup k těmto funkcím povolte ${ PROTON_SENTINEL_NAME }"
@@ -5112,6 +5127,9 @@
         "Váš tarif podporuje celkem ${ MAX_SYNC_PAID_USER } adresy Gmail",
         "Váš tarif podporuje celkem ${ MAX_SYNC_PAID_USER } adres Gmail",
         "Váš tarif podporuje celkem ${ MAX_SYNC_PAID_USER } adres Gmail"
+      ],
+      "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
+        "Adresy můžete sloučit do jednoho hlavního účtu ${ BRAND_NAME } podle pokynů v našem návodu."
       ]
     },
     "description": {
@@ -9143,6 +9161,9 @@
       ],
       "Paused": [
         "Pozastaveno"
+      ],
+      "Undo in progress": [
+        "Vzetí zpět probíhá"
       ]
     },
     "Import type": {
@@ -10401,7 +10422,7 @@
         "Zadejte nové heslo pro uživatele ${ userName }."
       ],
       "Enter the 12-word recovery phrase associated with your account.": [
-        "Zadejte 12-slovnou frázi pro obnovení spojenou s vaším účtem."
+        "Zadejte 12slovnou frázi pro obnovení spojenou s vaším účtem."
       ],
       "Enter the code from your authenticator app": [
         "Zadejte kód z vaší ověřovací aplikace"
@@ -10732,7 +10753,7 @@
       ],
       "Import from ${ accounts } is temporarily delayed due to a bandwidth limit.": [
         "Import z ${ accounts } je dočasně pozastaven z důvodu omezení šířky pásma.",
-        "Importy z ${ accounts } jsou dočasně pozastaveny z důvodu omezení šířky pásma.",
+        "Importy ze ${ accounts } jsou dočasně pozastaveny z důvodu omezení šířky pásma.",
         "Importy z ${ accounts } jsou dočasně pozastaveny z důvodu omezení šířky pásma.",
         "Importy z ${ accounts } jsou dočasně pozastaveny z důvodu omezení šířky pásma."
       ],
@@ -12874,6 +12895,24 @@
       ],
       "Zoom meeting": [
         "schůzku na Zoomu"
+      ],
+      "Before sending a new verification code, check your spam folder for ${ EmailOrPhoneNumber }.": [
+        "Než vám zašleme nový ověřovací kód, zkontrolujte prosím složku se spamem, zda se tam nenachází zpráva od ${ EmailOrPhoneNumber }."
+      ],
+      "Facebook": [
+        "Facebook"
+      ],
+      "Gateway deleted": [
+        "Brána smazána"
+      ],
+      "How to perform a signed-in reset": [
+        "Jak provést reset po přihlášení"
+      ],
+      "If disabled, organization members won't be able to create new aliases. Existing aliases will remain active.": [
+        "Pokud bude tato funkce deaktivována, členové organizace nebudou moci vytvářet nové aliasy. Stávající aliasy zůstanou aktivní."
+      ],
+      "We detected you are already signed in to a ${ BRAND_NAME } web app on **another browser**. You may be able to perform a password reset from your active session.": [
+        "Zjistili jsme, že jste již přihlášeni do webové aplikace ${ BRAND_NAME } v **jiném prohlížeči**. Obnovení hesla můžete provést z aktuální relace."
       ]
     },
     "info": {
@@ -14921,6 +14960,9 @@
       ],
       "ZIP code": [
         "PSČ"
+      ],
+      "Allow secure link sharing": [
+        "Povolit sdílení bezpečných odkazů"
       ]
     },
     "label": {
@@ -15328,6 +15370,12 @@
       ],
       "What’s this?": [
         "Co je to?"
+      ],
+      "Account recovery explained": [
+        "Obnovení účtu vysvětleno"
+      ],
+      "Learn how": [
+        "Zjistit více"
       ]
     },
     "Link (Scribe)": {
@@ -15925,13 +15973,16 @@
         "Požadavek na funkci"
       ],
       "See how ${ BRAND_NAME } apps are evolving with your feedback.": [
-        "Podívejte se, jak se ${ BRAND_NAME } aplikace vyvíjejí díky vaší zpětné vazbě."
+        "Podívejte se, jak se aplikace ${ BRAND_NAME } vyvíjejí díky vaší zpětné vazbě."
       ],
       "Submit your ideas": [
         "Zašlete nám své nápady"
       ],
       "Your feedback helps us improve. Whether you've spotted a bug, want a new feature, or think something could work differently, we'd love to hear from you.": [
         "Vaše zpětná vazba nám pomáhá zlepšovat se. Ať už jste narazili na chybu, přejete si novou funkci nebo si myslíte, že by něco mohlo fungovat jinak, rádi si váš názor vyslechneme."
+      ],
+      "Explore the latest news": [
+        "Prozkoumejte nejnovější zprávy"
       ]
     },
     "Modal title": {
@@ -17377,6 +17428,9 @@
       ],
       "Product updates": [
         "Aktualizace produktu"
+      ],
+      "Disabling this means you won't get in-app notifications about promotions, new features, new ${ BRAND_NAME } services, and reminders.": [
+        "Pokud tuto funkci deaktivujete, nebudete dostávat oznámení v aplikaci o akcích, nových funkcích, nových službách ${ BRAND_NAME } a připomenutích."
       ]
     },
     "Notification": {
@@ -19509,7 +19563,7 @@
         "Microsoft 365"
       ],
       "Other": [
-        "Ostatní"
+        "Další"
       ],
       "Outlook": [
         "Outlook"
@@ -21507,6 +21561,9 @@
       ],
       "Your password": [
         "Vaše heslo"
+      ],
+      "Your email": [
+        "Váš e-mail"
       ]
     },
     "signup: Action": {
@@ -21619,7 +21676,7 @@
         "Vytvořit účet ${ BRAND_NAME }"
       ],
       "Create your ${ BRAND_NAME } account to schedule a meeting": [
-        "Vytvořte si váš ${ BRAND_NAME } účet a naplánujte si schůzku"
+        "Vytvořte svůj ${ BRAND_NAME } účet a naplánujte si schůzku"
       ],
       "Create your ${ BRAND_NAME } account to use your personal room": [
         "Vytvořte si ${ BRAND_NAME } účet a začněte využívat svůj osobní prostor"
@@ -22815,6 +22872,18 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastní krátký e-mailový alias @pm.me"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent psaní ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, a ${ LUMO_APP_NAME } s prémiovými funkcemi"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Videokonference, až pro ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníka",
+        "Videokonference, až pro ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníky",
+        "Videokonference, až pro ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníků",
+        "Videokonference, až pro ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníků"
       ]
     },
     "subscription reminder": {
@@ -23680,7 +23749,7 @@
         "Opravdu chcete zavřít editor filtrů?"
       ],
       "Are you sure you want to disconnect this address?": [
-        "Opravdu chcete tuto adresu odpojit?"
+        "Opravdu chcete odpojit tuto adresu?"
       ],
       "Are you sure?": [
         "Jste si jisti?"
@@ -24388,7 +24457,7 @@
         "Importovat přes ${ PRODUCT_NAMES.EASY_SWITCH }"
       ],
       "Import your data to ${ BRAND_NAME }": [
-        "Načtěte svá data do ${ BRAND_NAME }"
+        "Importujte svá data do ${ BRAND_NAME }"
       ],
       "Imports": [
         "Importy"
@@ -26700,6 +26769,14 @@
       ],
       "Yearly, ${ untilString }": [
         "Ročně, ${ untilString }"
+      ]
+    },
+    "Admin roles onboarding": {
+      "Manage all users, groups, storage, security, billing, audit logs, and system configurations.": [
+        "Spravujte všechny uživatele, skupiny, úložiště, zabezpečení, fakturaci, auditované logy a systémové konfigurace."
+      ],
+      "New: Control admin access for individual users": [
+        "Novinka: Řízení přístupových práv správce pro jednotlivé uživatele"
       ]
     }
   }

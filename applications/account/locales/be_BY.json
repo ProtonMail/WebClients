@@ -22941,6 +22941,18 @@
       ],
       "Your own short @pm.me email alias": [
         "Кароткі псеўданім электроннай пошты @pm.me"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } і ${ LUMO_APP_NAME } з прэміяльнымі функцыямі"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Відэасустрэчы. Да ${ PAID_PREMIUM_MAX_PARTICIPANTS } удзельніка",
+        "Відэасустрэчы. Да ${ PAID_PREMIUM_MAX_PARTICIPANTS } удзельнікаў",
+        "Відэасустрэчы. Да ${ PAID_PREMIUM_MAX_PARTICIPANTS } удзельнікаў",
+        "Відэасустрэчы. Да ${ PAID_PREMIUM_MAX_PARTICIPANTS } удзельнікаў"
       ]
     },
     "subscription reminder": {
@@ -26856,6 +26868,50 @@
       ],
       "Yearly, ${ untilString }": [
         "Штогод, ${ untilString }"
+      ]
+    },
+    "Admin roles onboarding": {
+      "3 new admin roles": [
+        "3 новыя ролі адміністратара"
+      ],
+      "Admin roles": [
+        "Ролі адміністратара"
+      ],
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Канфіграцыя палітык бяспекі, захоўванне даных, інфраструктура VPN і кіраванне журналамі аўдыта."
+      ],
+      "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
+        "Упаўнаважанае кіраванне з прызначэннем канкрэтных роляў адміністратару. Давайце кожнаму адміністратару толькі той доступ, які яму неабходны. Гэта адпавядае прынцыпу найменшых паўнамоцтваў, дазваляе абараніць вашу арганізацыю ад кампраметацыі ўліковых запісаў і выпадковых памылак."
+      ],
+      "Delegate management with the appropriate admin role.": [
+        "Упаўнаважанае кіраванне з адпаведнай роляй адміністратара"
+      ],
+      "Manage all users, groups, storage, security, billing, audit logs, and system configurations.": [
+        "Кіраванне ўсімі карыстальнікамі, групы, сховішча, бяспека, білінг, журналы аўдыту і сістэмныя канфігурацыі."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Кіраванне карыстальнікамі, групы, сховішча для ўсіх удзельнікаў, прызначэнне роляў і размеркаванне ліцэнзій."
+      ],
+      "New: Control admin access for individual users": [
+        "Новае: кантроль доступу адміністратара для індывідуальных карыстальнікаў"
+      ],
+      "Organization admin": [
+        "Адміністратар арганізацыі"
+      ],
+      "Organization admin:": [
+        "Адміністратар арганізацыі:"
+      ],
+      "Security admin": [
+        "Адміністратар бяспекі"
+      ],
+      "Security admin:": [
+        "Адміністратар бяспекі:"
+      ],
+      "User admin": [
+        "Адміністратар карыстальніка"
+      ],
+      "User admin:": [
+        "Адміністратар карыстальніка:"
       ]
     }
   }
