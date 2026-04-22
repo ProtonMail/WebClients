@@ -43,6 +43,7 @@ export class SearchQueryExecutor {
     /**
      * Build a wildcard match on the "filename" attribute, optionally ANDed with exact-match
      * attribute filters (e.g. nodeType, indexPopulatorGeneration).
+     * Excludes trashed files.
      */
     private buildFilenameSearchQuery(query: SearchQuery, wasmQuery: Query): Query {
         // Normalize query the same way we normalized at index time:
@@ -60,7 +61,10 @@ export class SearchQueryExecutor {
 
         const filenameExpr = this.buildFilenameExpression(normalized);
         const filterExprs = this.buildFilterExpressions(query.filters);
-        const allExprs = [filenameExpr, ...filterExprs].filter((e): e is Expression => e !== undefined);
+        const trashExclusionExpr = Expression.attr('trashTime', Func.Equals, TermValue.int(0n));
+        const allExprs = [filenameExpr, ...filterExprs, trashExclusionExpr].filter(
+            (e): e is Expression => e !== undefined
+        );
 
         const expr = allExprs.reduce((acc, e) => acc.and(e));
         return wasmQuery.withStructuredExpression(expr);

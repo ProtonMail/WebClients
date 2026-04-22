@@ -171,11 +171,6 @@ export abstract class IndexPopulator {
         ctx: TaskContext,
         generation: number
     ): Promise<void> {
-        if (event.isTrashed) {
-            Logger.info(`${this.getUid()}: skipping trashed node_created for ${event.nodeUid}`);
-            return;
-        }
-
         const maybeNode = await ctx.bridge.driveSdk.getNode(event.nodeUid);
         // getNodeEntity backfills undecryptable names with a placeholder,
         // so the node is always indexable even if the filename couldn't be decrypted.
@@ -206,13 +201,6 @@ export abstract class IndexPopulator {
         ctx: TaskContext,
         generation: number
     ): Promise<void> {
-        // Case: event update: trashed
-        if (event.isTrashed) {
-            Logger.info(`${this.getUid()}: node_updated with isTrashed, treating as delete for ${event.nodeUid}`);
-            await this.removeNodeAndDescendants(event.nodeUid, ctx);
-            return;
-        }
-
         const maybeNode = await ctx.bridge.driveSdk.getNode(event.nodeUid);
         const { node } = getNodeEntity(maybeNode);
         this.maybeWarnForUndecryptableNodeName(maybeNode, event.nodeUid);
@@ -237,14 +225,16 @@ export abstract class IndexPopulator {
             for await (const id of this.findIndexedDescendants(event.nodeUid, indexReader)) {
                 session.remove(id);
             }
-            if (entry) {
-                session.insert(entry);
-            }
+            session.insert(entry);
 
-            // Re-index the entire subtree from SDK if this is a folder.
-            // This handles both moved folders (stale paths) and un-trashed folders
-            // (descendants weren't in the index at all).
-            if (node.type === NodeType.Folder) {
+            // Re-index the entire subtree from SDK if this is a non-trashed folder.
+            // Handles moved folders (stale paths) and un-trashed folders (descendants
+            // weren't in the index). A trashed folder has no indexable descendants —
+            // we keep the folder itself but stop there.
+            // TODO(DRVWEB-5396): Classify diffs by whether they require a full descendant tree refresh.
+            //  - Structural changes (untrashing, path changes) should trigger a full subtree refresh;
+            //  - Non-structural updates (rename, revisions, etc.) should not.
+            if (!event.isTrashed && node.type === NodeType.Folder) {
                 const subtreeEntries = this.walkFolderTreeFromSdk(
                     event.nodeUid,
                     `${parentPathResult.parentPath}/${event.nodeUid}`,
@@ -305,7 +295,7 @@ export abstract class IndexPopulator {
         });
     }
 
-    private maybeWarnForUndecryptableNodeName(maybeNode: MaybeNode, nodeUid: string): void {
+    protected maybeWarnForUndecryptableNodeName(maybeNode: MaybeNode, nodeUid: string): void {
         const hasIndexableFilename = maybeNode.ok || (maybeNode.error.name && maybeNode.error.name.ok);
         if (!hasIndexableFilename) {
             Logger.warn(`${this.getUid()}: using fallback name for ${nodeUid}, no indexable filename`);
@@ -362,6 +352,8 @@ export abstract class IndexPopulator {
                 this.maybeWarnForUndecryptableNodeName(child, node.uid);
 
                 if (node.trashTime) {
+                    Logger.warn('Unexpected trashed node found while visiting folders');
+
                     // Skip trashed nodes and descendants.
                     continue;
                 }

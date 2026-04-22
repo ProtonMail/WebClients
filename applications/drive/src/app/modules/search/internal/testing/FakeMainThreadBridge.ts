@@ -64,6 +64,11 @@ export class FakeMainThreadBridge {
         this.fakeDriveClient.setChildren(parentUid, children);
     }
 
+    /** Set the list of trashed nodes returned by iterateTrashedNodes. */
+    setTrashedNodes(nodes: MaybeNode[]): void {
+        this.fakeDriveClient.setTrashedNodes(nodes);
+    }
+
     /** Make iterateFolderChildren throw the given error. */
     setIterateFolderChildrenError(error: Error): void {
         this.fakeDriveClient.setIterateFolderChildrenError(error);

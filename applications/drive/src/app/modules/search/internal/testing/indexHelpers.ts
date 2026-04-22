@@ -12,13 +12,20 @@ export async function indexDocuments(writer: IndexWriter, entries: IndexEntry[])
     await session.commit();
 }
 
-export const makeTestIndexEntry = (id: string, attributes: Record<string, AttributeValue> = {}): IndexEntry => ({
-    documentId: id,
-    attributes: [
-        { name: 'test', value: { kind: 'tag', value: 'test' } },
-        ...Object.entries(attributes).map(([name, value]) => ({ name, value })),
-    ],
-});
+export const makeTestIndexEntry = (id: string, attributes: Record<string, AttributeValue> = {}): IndexEntry => {
+    // No trash state by default
+    const defaults: Record<string, AttributeValue> = {
+        trashTime: { kind: 'integer', value: 0n },
+    };
+    const merged = { ...defaults, ...attributes };
+    return {
+        documentId: id,
+        attributes: [
+            { name: 'test', value: { kind: 'tag', value: 'test' } },
+            ...Object.entries(merged).map(([name, value]) => ({ name, value })),
+        ],
+    };
+};
 
 export async function findTestIndexEntries(reader: IndexReader): Promise<ReadResult[]> {
     return findDocumentsByTag(reader, 'test', 'test');
