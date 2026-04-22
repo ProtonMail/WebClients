@@ -8,7 +8,6 @@ import { InputFieldTwo } from '@proton/components';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { IcFolder } from '@proton/icons/icons/IcFolder';
 import { IcMonitor } from '@proton/icons/icons/IcMonitor';
-import { LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
 
 import { useConversationStar } from '../../../hooks/useConversationStar';
 import { HeaderWrapper } from '../../../layouts/header/HeaderWrapper';
@@ -18,7 +17,6 @@ import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
 import { selectAttachments, selectAttachmentsBySpaceId, selectSpaceById } from '../../../redux/selectors';
 import { changeConversationTitle, pushConversationRequest } from '../../../redux/slices/core/conversations';
 import { type Conversation, type Message, getProjectInfo } from '../../../types';
-import LumoNavbarUpsell from '../../../upsells/composed/LumoNavbarUpsell';
 import { sendConversationEditTitleEvent } from '../../../util/telemetry';
 import LumoButton from '../../Buttons/LumoButton';
 import { NewChatButtonHeader } from '../../Buttons/NewChatButton';
@@ -291,7 +289,6 @@ const ConversationHeaderComponent = ({ conversation, messageChain, onOpenFiles }
                 <div className="inline-flex flex-row flex-nowrap items-center justify-start">
                     <RenderTitle isEditing={isEditing} />
                 </div>
-                <LumoNavbarUpsell feature={LUMO_UPSELL_PATHS.TOP_NAVIGATION_BAR} />
 
                 <div className="flex flex-row items-center gap-1">
                     {!isGhostChatMode && (
