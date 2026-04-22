@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { useCallback, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { sshAgent } from 'proton-pass-web/lib/ssh-agent';
@@ -22,58 +22,46 @@ import { PASS_APP_NAME, PASS_SHORT_APP_NAME } from '@proton/shared/lib/constants
 
 import { SSHAgentInstructionsModal } from './SSHAgentInstructionsModal';
 
+type SSHModalState = { show: true; hideFooter: boolean } | { show: false };
+
 const SshAgentDesktop: FC = () => {
     const { createNotification } = useNotifications();
     const sshKeys = useSelector(selectVisibleNonTrashedSshKeyItems);
     const instructionsSpotlight = useSpotlightFor(SpotlightMessage.SSH_AGENT_INSTRUCTIONS);
 
     const [socketPath, setSocketPath] = useState<Maybe<string>>(undefined);
-    const [modal, setModal] = useState<{ show: true; hideFooter: boolean } | { show: false }>({
-        show: false,
-    });
+    const [modal, setModal] = useState<SSHModalState>({ show: false });
     const isFreePlan = useSelector(selectPassPlan) === UserPassPlan.FREE;
 
     const [loading, setLoading] = useState(false);
     const enabled = Boolean(socketPath);
-    const bridge = window.ctxBridge!;
 
-    const updateStatus = useCallback(async () => {
-        try {
-            const status = await bridge.getSshAgentStatus();
-            setSocketPath(status.socketPath);
-        } catch (error) {
-            logger.error('[SSH agent] Could not get status:', error);
-            setSocketPath(undefined);
-        }
-    }, []);
+    const updateSocketPath = async () => setSocketPath(await sshAgent?.socketPath);
 
     const handleSshAgentToggle = async () => {
         setLoading(true);
         try {
             if (enabled) {
-                await bridge.setSshAgentSettingEnabled(false);
                 await sshAgent?.stop();
-                await updateStatus();
+                setSocketPath(undefined);
                 createNotification({ text: c('Success').t`SSH agent successfully stopped` });
             } else {
                 await sshAgent?.start();
-                await sshAgent?.sync(sshKeys);
-                await updateStatus();
-                await bridge.setSshAgentSettingEnabled(true);
+                await sshAgent?.sync();
+                await updateSocketPath();
+
                 createNotification({ text: c('Success').t`SSH agent successfully started` });
-                if (instructionsSpotlight.open) {
-                    setModal({ show: true, hideFooter: false });
-                }
+                if (instructionsSpotlight.open) setModal({ show: true, hideFooter: false });
             }
         } catch (error) {
+            logger.error(`[SSH agent] Could not toggle`, error);
             const errorMessage = getErrorMessage(error);
             createNotification({
+                type: 'error',
                 text: enabled
                     ? c('Error').t`Failed to stop SSH agent: ${errorMessage}`
                     : c('Error').t`Failed to start SSH agent: ${errorMessage}`,
-                type: 'error',
             });
-            logger.error(`[SSH agent] Could not toggle`, error);
         } finally {
             setLoading(false);
         }
@@ -81,9 +69,8 @@ const SshAgentDesktop: FC = () => {
 
     const handleModalCancel = async () => {
         setModal({ show: false });
-        await bridge.setSshAgentSettingEnabled(false);
         await sshAgent?.stop();
-        await updateStatus();
+        setSocketPath(undefined);
     };
 
     const handleModalClose = () => setModal({ show: false });
@@ -96,8 +83,8 @@ const SshAgentDesktop: FC = () => {
     const handleInfoClick = () => setModal({ show: true, hideFooter: true });
 
     useEffect(() => {
-        void updateStatus();
-    }, [updateStatus]);
+        void updateSocketPath();
+    }, []);
 
     return (
         <SettingsPanel
