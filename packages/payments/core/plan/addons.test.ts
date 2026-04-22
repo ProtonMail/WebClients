@@ -209,6 +209,7 @@ describe('getSupportedAddons', () => {
                 [ADDON_NAMES.IP_VPN_BUSINESS]: true,
                 [ADDON_NAMES.LUMO_VPN_BUSINESS]: true,
                 [ADDON_NAMES.MEET_VPN_BUSINESS]: true,
+                [ADDON_NAMES.DOMAIN_VPN_BUSINESS]: true,
             };
             expect(result).toEqual(expected);
         });
