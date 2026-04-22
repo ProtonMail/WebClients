@@ -20,6 +20,7 @@ import { logger } from '@proton/pass/utils/logger';
 import { uniqueId } from '@proton/pass/utils/string/unique-id';
 
 const log = (...content: any[]) => logger.debug('[NativeMessaging]', ...content);
+const info = (...content: any[]) => logger.info('[NativeMessaging]', ...content);
 
 export type NativeMessagingService = {
     sendNativeMessageRequest: SendNativeMessageRequest;
@@ -44,7 +45,7 @@ export const createNativeMessagingService = (): NativeMessagingService => {
         );
         pendingRequests.forEach((req) => req.reject(error));
         pendingRequests.clear();
-        log('Disconnected', error);
+        info('Disconnected', error.name);
     };
 
     const onMessage = async (rawResponse: unknown) => {
@@ -69,7 +70,7 @@ export const createNativeMessagingService = (): NativeMessagingService => {
                 log('Received response');
                 pending.resolve(response as NativeMessageResponseForRequest<NativeMessageRequest>);
             } catch (error) {
-                log('Received response error', { responsePayload, error });
+                info('Received response error', (error as NativeMessageError).name);
                 pending.reject(error as NativeMessageError);
             }
         } catch (error) {
@@ -78,6 +79,8 @@ export const createNativeMessagingService = (): NativeMessagingService => {
     };
 
     const connect = () => {
+        info('Connecting', port !== null ? '(reusing port)' : '(new connection)');
+
         if (port !== null) {
             return port;
         }
@@ -93,7 +96,7 @@ export const createNativeMessagingService = (): NativeMessagingService => {
 
             return port;
         } catch (error) {
-            log('Connect native error', error);
+            info('Connect error', error instanceof Error ? error.message : error);
             throw error;
         }
     };
@@ -105,9 +108,15 @@ export const createNativeMessagingService = (): NativeMessagingService => {
     ) => {
         const requestPayload = await messageToPayload(request, messageId, 'extension');
 
-        log('Sending request');
+        info('Sending request', request.type);
 
-        port.postMessage(requestPayload);
+        try {
+            port.postMessage(requestPayload);
+        } catch {
+            const pending = pendingRequests.get(messageId);
+            pendingRequests.delete(messageId);
+            pending?.reject(new NativeMessageError(NativeMessageErrorType.HOST_NOT_RESPONDING));
+        }
     };
 
     const sendNativeMessageRequest: SendNativeMessageRequest = async <Req extends NativeMessageRequest>(request: Req) =>
@@ -115,6 +124,8 @@ export const createNativeMessagingService = (): NativeMessagingService => {
             const messageId = uniqueId();
             const timeoutId = setTimeout(() => {
                 pendingRequests.delete(messageId);
+                info('Request timed out');
+                port?.disconnect();
                 reject(new NativeMessageError(NativeMessageErrorType.TIMEOUT));
             }, PASS_DESKTOP_NATIVE_MESSAGE_TIMEOUT);
 
