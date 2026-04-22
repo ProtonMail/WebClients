@@ -14,6 +14,7 @@ import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 import type { Address } from '@proton/shared/lib/interfaces';
 import { getIsNonDefault, sortAddresses } from '@proton/shared/lib/mail/addresses';
 import { isMailVersionOlderThan } from '@proton/shared/lib/mobile/isMailVersionOlderThan';
+import { sanitizeMessage } from '@proton/sanitize/purify';
 import clsx from '@proton/utils/clsx';
 import move from '@proton/utils/move';
 
@@ -102,7 +103,7 @@ const MobileAddressSection = () => {
                         <div
                             className="mt-0.5"
                             id="signature"
-                            dangerouslySetInnerHTML={{ __html: firstAddress.Signature }}
+                            dangerouslySetInnerHTML={{ __html: sanitizeMessage(firstAddress.Signature) }}
                         />
                     </MobileSectionAction>
                 </>

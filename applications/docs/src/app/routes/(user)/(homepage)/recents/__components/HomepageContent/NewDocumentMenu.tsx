@@ -33,7 +33,7 @@ export function NewDocumentMenu({ className, ...rest }: Props) {
           />
         }
         // eslint-disable-next-line jsx-a11y/control-has-associated-label, jsx-a11y/anchor-has-content
-        render={<a href={getAppHref('/doc', APPS.PROTONDOCS, getLocalID())} target="_blank" />}
+        render={<a href={getAppHref('/doc', APPS.PROTONDOCS, getLocalID())} target="_blank" rel="noopener noreferrer" />}
         onClick={() => {
           application.metrics.reportHomepageTelemetry(TelemetryDocsHomepageEvents.document_created)
           setTimeout(updateRecentDocuments, REFRESH_AFTER_NEW_DOCUMENT)
@@ -53,7 +53,7 @@ export function NewDocumentMenu({ className, ...rest }: Props) {
             />
           }
           // eslint-disable-next-line jsx-a11y/control-has-associated-label, jsx-a11y/anchor-has-content
-          render={<a href={getAppHref('/sheet', APPS.PROTONDOCS, getLocalID())} target="_blank" />}
+          render={<a href={getAppHref('/sheet', APPS.PROTONDOCS, getLocalID())} target="_blank" rel="noopener noreferrer" />}
         >
           {c('sheets_2025:Action').t`New spreadsheet`}
         </MenuItem>
