@@ -9,8 +9,6 @@ use std::path::PathBuf;
 use std::sync::{Arc, Mutex};
 #[cfg(unix)]
 use tokio::net::UnixListener;
-#[cfg(unix)]
-use tokio_stream;
 #[cfg(windows)]
 use tokio_util::sync::CancellationToken;
 
@@ -120,7 +118,9 @@ impl SshAgentManager {
 
             let listener = UnixListener::bind(&socket_path)
                 .map_err(|e| anyhow::anyhow!("Failed to bind to socket {}: {}", socket_path.display(), e))?;
-            let agent_handler = PassSshAgent { is_unlocked_callback: Arc::new(is_unlocked_callback) };
+            let agent_handler = PassSshAgent {
+                is_unlocked_callback: Arc::new(is_unlocked_callback),
+            };
             let stream = tokio_stream::wrappers::UnixListenerStream::new(listener);
 
             tokio::spawn(async move {
@@ -133,7 +133,9 @@ impl SshAgentManager {
         #[cfg(windows)]
         let (task_handle, named_pipe_cancel_token) = {
             let pipe_path = socket_path.to_string_lossy().to_string();
-            let agent_handler = PassSshAgent { is_unlocked_callback: Arc::new(is_unlocked_callback) };
+            let agent_handler = PassSshAgent {
+                is_unlocked_callback: Arc::new(is_unlocked_callback),
+            };
             let stream = windows_named_pipe::NamedPipeListener::new(pipe_path)
                 .map_err(|e| anyhow::anyhow!("Failed to create named pipe listener: {}", e))?;
 
@@ -222,26 +224,31 @@ impl SshAgentManager {
 
     pub async fn remove_all_keys() -> Result<()> {
         let mut client = Self::connect_agent_client().await?;
+        let keys = TRACKED_KEYS.lock().unwrap().clone();
 
-        let keys_to_remove = {
-            let mut tracked = TRACKED_KEYS.lock().unwrap();
-            let keys = tracked.clone();
-            tracked.clear();
-            keys
-        };
-
-        if keys_to_remove.is_empty() {
+        if keys.is_empty() {
             return Ok(());
         }
 
-        // client.remove_all_identities() fails with "Agent failure" error
-        // (with either russh-keys = "0.49.2" or russh = "0.54.6")
-        // so we currently have to use client.remove_identity() instead
-        for key in keys_to_remove {
+        let mut removed = Vec::new();
+
+        for key in &keys {
+            // client.remove_all_identities() fails with "Agent failure" error
+            // (with either russh-keys = "0.49.2" or russh = "0.54.6")
+            // so we currently have to use client.remove_identity() instead
             if let Err(e) = client.remove_identity(&key.public_key).await {
                 eprintln!("Failed to remove a key: {}", e);
+            } else {
+                removed.push(&key.public_key);
             }
         }
+
+        // Edge-case: only clear keys that were successfully removed. Failed
+        // ones stay tracked for future cleanup if agent is still running.
+        TRACKED_KEYS
+            .lock()
+            .unwrap()
+            .retain(|k| !removed.contains(&&k.public_key));
 
         Ok(())
     }
