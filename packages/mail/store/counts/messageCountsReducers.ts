@@ -247,6 +247,7 @@ export const labelConversationsPending = (
     conversations.forEach((conversation) => {
         const numMessagesInConversation = conversation.NumMessages || 0;
         const numUnreadMessagesInConversation = conversation.NumUnread || 0;
+        const numMessagesInInbox = getContextNumMessages(conversation, MAILBOX_LABEL_IDS.INBOX);
 
         // DECREASE count in old locations
         conversation.Labels?.forEach((label) => {
@@ -289,6 +290,23 @@ export const labelConversationsPending = (
                     getContextNumUnread(conversation, label.ID)
                 );
                 return;
+            }
+
+            // When moving out from INBOX, we need to remove messages from the category counts
+            // All messages from the conversation are in the category, so we have to reduce the number of messages
+            // that were in INBOX
+            const isTargetAFolder = isSystemFolder(destinationLabelID) || isCustomFolder(destinationLabelID, folders);
+            const isMovingOutFromInbox =
+                isTargetAFolder && destinationLabelID !== MAILBOX_LABEL_IDS.INBOX && numMessagesInInbox > 0;
+            if (isMovingOutFromInbox && isCategoryLabel(label.ID)) {
+                messageCountState.Total = safeDecreaseCount(
+                    messageCountState?.Total,
+                    getContextNumMessages(conversation, MAILBOX_LABEL_IDS.INBOX)
+                );
+                messageCountState.Unread = safeDecreaseCount(
+                    messageCountState?.Unread,
+                    getContextNumUnread(conversation, MAILBOX_LABEL_IDS.INBOX)
+                );
             }
 
             // Do not update counters when moving to STARRED, custom folders or a category
@@ -368,7 +386,6 @@ export const labelConversationsPending = (
             return;
         }
 
-        const numMessagesInInbox = getContextNumMessages(conversation, MAILBOX_LABEL_IDS.INBOX);
         const numMessagesInAllSent = getContextNumMessages(conversation, MAILBOX_LABEL_IDS.ALL_SENT);
         const numMessagesInSent = getContextNumMessages(conversation, MAILBOX_LABEL_IDS.SENT);
         const numMessagesInAllDrafts = getContextNumMessages(conversation, MAILBOX_LABEL_IDS.ALL_DRAFTS);
