@@ -1,10 +1,11 @@
 import { c, msgid } from 'ttag';
 
+import { useSessionRecoveryGracePeriodHoursRemaining } from '@proton/account/recovery/sessionRecoveryHooks';
+import { selectSessionRecoveryData } from '@proton/account/recovery/sessionRecoverySelectors';
 import { Button } from '@proton/atoms/Button/Button';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
 import Prompt from '@proton/components/components/prompt/Prompt';
-import { useSessionRecoveryGracePeriodHoursRemaining } from '@proton/components/hooks/useSessionRecovery';
-import { useSessionRecoveryState } from '@proton/components/hooks/useSessionRecoveryState';
+import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { SessionRecoveryState } from '@proton/shared/lib/interfaces';
 
 const GracePeriodText = () => {
@@ -47,7 +48,7 @@ interface Props {
 }
 
 const SessionRecoverySignOutConfirmPrompt = ({ onClose, onSignOut, open }: Props) => {
-    const sessionRecoveryState = useSessionRecoveryState();
+    const { sessionRecoveryState } = useSelector(selectSessionRecoveryData);
 
     const passwordReset = (
         <SettingsLink key="password-reset-link" path="/account-password" onClick={onClose}>

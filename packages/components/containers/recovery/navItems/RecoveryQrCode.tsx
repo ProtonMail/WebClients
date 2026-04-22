@@ -1,9 +1,9 @@
 import { c } from 'ttag';
 
+import { useIsSentinelUser } from '@proton/account/recovery/sentinelHooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import SettingsNavItem from '@proton/components/containers/layout/SettingsNavItem';
 import { StatusBadge, StatusBadgeStatus } from '@proton/components/containers/layout/StatusBadge';
-import useIsSentinelUser from '@proton/components/hooks/useIsSentinelUser';
 import { IcQrCode } from '@proton/icons/icons/IcQrCode';
 import { IcShieldExclamationFilled } from '@proton/icons/icons/IcShieldExclamationFilled';
 import { BRAND_NAME } from '@proton/shared/lib/constants';

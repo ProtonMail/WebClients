@@ -10,7 +10,7 @@ import {
     getCanOutgoingDelegatedAccessRecoverStep1,
     getCanOutgoingDelegatedAccessRecoverStep2,
 } from '@proton/account/delegatedAccess/shared/outgoing/helper';
-import { useUser } from '@proton/account/user/hooks';
+import { selectMnemonicData } from '@proton/account/recovery/mnemonic';
 import { Button } from '@proton/atoms/Button/Button';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import ModalTwo from '@proton/components/components/modalTwo/Modal';
@@ -18,10 +18,9 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import { Tabs } from '@proton/components/components/tabs/Tabs';
-import useIsMnemonicAvailable from '@proton/components/hooks/useIsMnemonicAvailable';
+import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { pick } from '@proton/shared/lib/helpers/object';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
-import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 import { getInitialStates } from '@proton/shared/lib/keys/getInactiveKeys';
 import type {
     KeyReactivationRequest,
@@ -44,16 +43,13 @@ const InnerReactivateKeysModal = ({ userKeys, keyReactivationRequests, ...rest }
     const [keyReactivationStates] = useState<KeyReactivationRequestState[]>(() =>
         getInitialStates(keyReactivationRequests)
     );
-    const [user] = useUser();
     const [loading, setLoading] = useState(false);
-    const [isMnemonicAvailable] = useIsMnemonicAvailable();
+    const { mnemonicCanBeRegenerated, isMnemonicAvailable } = useSelector(selectMnemonicData);
     const delegatedAccessController = useOutgoingController();
 
     const [maybeId, setId] = useState<string | null>(null);
 
-    const showMnemonicTab =
-        isMnemonicAvailable &&
-        (user.MnemonicStatus === MNEMONIC_STATUS.SET || user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED);
+    const showMnemonicTab = isMnemonicAvailable && mnemonicCanBeRegenerated;
 
     const { showRecoveryContactsTab, canSomeContactRecoverStep2 } = (() => {
         const canSomeContactRecoverStep1 =

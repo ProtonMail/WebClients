@@ -1,5 +1,6 @@
-import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { selectAvailableRecoveryMethods } from '@proton/account/recovery/sessionRecoverySelectors';
 import SettingsSectionWide from '@proton/components/containers/account/SettingsSectionWide';
+import { useSelector } from '@proton/redux-shared-store';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 
 import { IncomingDelegatedAccessActions } from '../shared/IncomingDelegatedAccessActions';
@@ -12,17 +13,7 @@ import { OutgoingRecoveryContactParams } from './outgoing/OutgoingRecoveryContac
 import { OutgoingRecoveryContactSettings } from './outgoing/OutgoingRecoveryContactSettings';
 
 export const RecoveryContactSection = ({ app }: { app: APP_NAMES }) => {
-    const [userSettings] = useUserSettings();
-
-    const userHasNoAccountRecoveryMethodSet = Boolean(
-        userSettings &&
-        // If email reset is enabled and set
-        !(
-            (userSettings.Email.Reset && userSettings.Email.Value) ||
-            // If phone reset is enabled and set
-            (userSettings.Phone.Reset && userSettings.Phone.Value)
-        )
-    );
+    const { hasAccountRecoveryMethod } = useSelector(selectAvailableRecoveryMethods);
 
     return (
         <div className="pt-6">
@@ -30,9 +21,7 @@ export const RecoveryContactSection = ({ app }: { app: APP_NAMES }) => {
                 <OutgoingDelegatedAccessProvider>
                     <OutgoingDelegatedAccessActions />
                     <OutgoingRecoveryContactParams />
-                    <OutgoingRecoveryContactSettings
-                        userHasNoAccountRecoveryMethodSet={userHasNoAccountRecoveryMethodSet}
-                    />
+                    <OutgoingRecoveryContactSettings userHasNoAccountRecoveryMethodSet={!hasAccountRecoveryMethod} />
                 </OutgoingDelegatedAccessProvider>
             </SettingsSectionWide>
             <SettingsSectionWide>

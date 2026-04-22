@@ -1,25 +1,26 @@
 import { c } from 'ttag';
 
+import { useIsSentinelUser } from '@proton/account/recovery/sentinelHooks';
+import { selectSessionRecoveryData } from '@proton/account/recovery/sessionRecoverySelectors';
 import SettingsNavItem from '@proton/components/containers/layout/SettingsNavItem';
 import { StatusBadge, StatusBadgeStatus } from '@proton/components/containers/layout/StatusBadge';
-import useIsSentinelUser from '@proton/components/hooks/useIsSentinelUser';
-import { useIsSessionRecoveryEnabled } from '@proton/components/hooks/useSessionRecovery';
 import { IcLock } from '@proton/icons/icons/IcLock';
 import { IcShieldExclamationFilled } from '@proton/icons/icons/IcShieldExclamationFilled';
+import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 
 interface Props {
     to: string;
 }
 
 const SignedInResetBadge = () => {
-    const isEnabled = useIsSessionRecoveryEnabled();
+    const { isSessionRecoveryEnabled } = useSelector(selectSessionRecoveryData);
     const [{ isSentinelUser }, loadingIsSentinelUser] = useIsSentinelUser();
 
     if (loadingIsSentinelUser) {
         return <StatusBadge status={StatusBadgeStatus.Off} loading={true} />;
     }
 
-    if (isSentinelUser && isEnabled) {
+    if (isSentinelUser && isSessionRecoveryEnabled) {
         return (
             <StatusBadge
                 status={StatusBadgeStatus.Warning}
@@ -28,7 +29,7 @@ const SignedInResetBadge = () => {
             />
         );
     }
-    if (isEnabled) {
+    if (isSessionRecoveryEnabled) {
         return <StatusBadge status={StatusBadgeStatus.On} text={c('Status').t`On`} />;
     }
     return <StatusBadge status={StatusBadgeStatus.Off} text={c('Status').t`Off`} />;

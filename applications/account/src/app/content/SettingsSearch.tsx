@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { Input } from '@proton/atoms/Input/Input';
-import type { SubSectionConfig, SubrouteConfig, SubrouteGroup } from '@proton/components';
+import type { SectionConfig, SubSectionConfig, SubrouteConfig } from '@proton/components';
 import { AutocompleteList, Icon, Marks, Option, useAutocomplete, useAutocompleteFilter } from '@proton/components';
 import {
     getIsSectionAvailable,
@@ -72,7 +72,7 @@ const getSearchableItems = (routes: Routes, path: string, app: APP_NAMES): Searc
 
         const prefix = `/${getSlugFromApp(parentApp)}`;
 
-        return Object.values(parentRoute.routes).flatMap((sectionRoute) => {
+        return Object.values(parentRoute.routes).flatMap((sectionRoute: SectionConfig) => {
             if (!getIsSectionAvailable(sectionRoute)) {
                 return [];
             }
@@ -100,7 +100,7 @@ const getSearchableItems = (routes: Routes, path: string, app: APP_NAMES): Searc
 
             const allSubrouteConfigs = [
                 ...Object.values<SubrouteConfig>(sectionRoute.subroutes ?? {}),
-                ...(sectionRoute.subrouteGroups?.flatMap((g: SubrouteGroup) => Object.values(g.subroutes)) ?? []),
+                ...(Object.values(sectionRoute.subrouteGroups ?? {})?.flatMap((g) => Object.values(g.subroutes)) ?? []),
             ];
             const subrouteItems: SearchOption[] = allSubrouteConfigs.filter(getIsSubrouteAvailable).map(
                 (subroute): SearchOption => ({

@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import { selectAvailableRecoveryMethods } from '@proton/account/recovery/sessionRecoverySelectors';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
@@ -17,6 +18,7 @@ import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import { IcPen } from '@proton/icons/icons/IcPen';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
+import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { getHasFIDO2Support } from '@proton/shared/lib/authentication/twoFactor';
 import { APPS } from '@proton/shared/lib/constants';
 import { hasBit } from '@proton/shared/lib/helpers/bitset';
@@ -26,7 +28,6 @@ import { getHasWebAuthnSupport } from '@proton/shared/lib/webauthn/helper';
 import { getId } from '@proton/shared/lib/webauthn/id';
 import { Fido2CredentialFlags } from '@proton/shared/lib/webauthn/interface';
 
-import { useAvailableRecoveryMethods } from '../../hooks/useSessionRecovery';
 import LostTwoFAModal from './LostTwoFAModal';
 import SettingsLayout from './SettingsLayout';
 import SettingsLayoutLeft from './SettingsLayoutLeft';
@@ -63,8 +64,7 @@ const TwoFactorSection = () => {
 
     const registeredKeys = userSettings['2FA']?.RegisteredKeys || [];
 
-    const [availableRecoveryMethods] = useAvailableRecoveryMethods();
-    const hasRecoveryMethod = availableRecoveryMethods.length > 0;
+    const { availableRecoveryMethods, hasRecoveryMethod } = useSelector(selectAvailableRecoveryMethods);
 
     const handleChangeTOTP = () => {
         if (hasTOTPEnabled) {

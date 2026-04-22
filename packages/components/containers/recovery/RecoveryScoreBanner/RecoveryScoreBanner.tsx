@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useRecoveryScore } from '@proton/account/securityCheckup/recoveryScore/useRecoveryScore';
 import { Button } from '@proton/atoms/Button/Button';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
@@ -14,7 +15,6 @@ import {
     getRecoveryScoreHint,
     getRecoveryScoreState,
 } from './recoveryScoreState';
-import useRecoveryScore from './useRecoveryScore';
 
 import './RecoveryScoreBanner.scss';
 

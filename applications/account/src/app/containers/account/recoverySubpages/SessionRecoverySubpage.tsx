@@ -1,5 +1,10 @@
 import { c } from 'ttag';
 
+import { useIsSentinelUser } from '@proton/account/recovery/sentinelHooks';
+import {
+    selectAvailableRecoveryMethods,
+    selectSessionRecoveryData,
+} from '@proton/account/recovery/sessionRecoverySelectors';
 import { userSettingsThunk } from '@proton/account/userSettings';
 import { Button } from '@proton/atoms/Button/Button';
 import { DashboardCard, DashboardCardContent, DashboardCardDivider } from '@proton/atoms/DashboardCard/DashboardCard';
@@ -17,18 +22,12 @@ import InitiateSessionRecoveryModal from '@proton/components/containers/account/
 import ConfirmDisableSessionRecoveryModal from '@proton/components/containers/recovery/ConfirmDisableSessionRecoveryModal';
 import { useRecoverySettingsTelemetry } from '@proton/components/containers/recovery/recoverySettingsTelemetry';
 import useApi from '@proton/components/hooks/useApi';
-import useIsSentinelUser from '@proton/components/hooks/useIsSentinelUser';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import {
-    useAvailableRecoveryMethods,
-    useIsSessionRecoveryEnabled,
-    useIsSessionRecoveryInitiationAvailable,
-} from '@proton/components/hooks/useSessionRecovery';
 import useLoading from '@proton/hooks/useLoading';
 import { IcHourglass } from '@proton/icons/icons/IcHourglass';
 import { IcShieldExclamationFilled } from '@proton/icons/icons/IcShieldExclamationFilled';
 import metrics, { observeApiError } from '@proton/metrics';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { CacheType } from '@proton/redux-utilities';
 import { updateSessionAccountRecovery } from '@proton/shared/lib/api/sessionRecovery';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
@@ -55,10 +54,12 @@ export const SessionRecoverySubpage = () => {
         renderConfirmDisableSessionRecoveryModal,
     ] = useModalState();
 
-    const [availableRecoveryMethods, loadingUseHasRecoveryMethod] = useAvailableRecoveryMethods();
-    const hasRecoveryMethod = availableRecoveryMethods.length > 0;
-    const isSessionRecoveryEnabled = useIsSessionRecoveryEnabled();
-    const isSessionRecoveryInitiationAvailable = useIsSessionRecoveryInitiationAvailable();
+    const {
+        availableRecoveryMethods,
+        hasRecoveryMethod,
+        loading: loadingUseHasRecoveryMethod,
+    } = useSelector(selectAvailableRecoveryMethods);
+    const { isSessionRecoveryEnabled, isSessionRecoveryInitiationAvailable } = useSelector(selectSessionRecoveryData);
 
     const { createNotification } = useNotifications();
 

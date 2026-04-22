@@ -1,86 +1,49 @@
 import { c } from 'ttag';
 
-import { userThunk } from '@proton/account/user';
-import { useUser } from '@proton/account/user/hooks';
-import { userSettingsThunk } from '@proton/account/userSettings';
-import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { selectRecoveryFileData } from '@proton/account/recovery/recoveryFile';
+import { useUpdateRecoveryFile } from '@proton/account/recovery/useUpdateRecoveryFile';
 import { Button } from '@proton/atoms/Button/Button';
 import { DashboardCard, DashboardCardContent, DashboardCardDivider } from '@proton/atoms/DashboardCard/DashboardCard';
 import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { Href } from '@proton/atoms/Href/Href';
-import Loader from '@proton/components/components/loader/Loader';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import Prompt from '@proton/components/components/prompt/Prompt';
 import SettingsDescription, {
     SettingsDescriptionItem,
 } from '@proton/components/containers/account/SettingsDescription';
 import { SettingsToggleRow } from '@proton/components/containers/account/SettingsToggleRow';
-import { useRecoverySettingsTelemetry } from '@proton/components/containers/recovery/recoverySettingsTelemetry';
-import useIsRecoveryFileAvailable from '@proton/components/hooks/recoveryFile/useIsRecoveryFileAvailable';
-import useApi from '@proton/components/hooks/useApi';
-import { useSyncDeviceRecovery } from '@proton/components/hooks/useSyncDeviceRecovery';
 import { useLoading } from '@proton/hooks';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { CacheType } from '@proton/redux-utilities';
-import { updateDeviceRecovery } from '@proton/shared/lib/api/settingsRecovery';
+import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { getHasRecoveryMessage } from '@proton/shared/lib/recoveryFile/storage';
 
 import illustration from './assets/device-based-recovery.svg';
 import RecoveryWarning from './shared/RecoveryWarning';
 
 const DeviceBasedRecoverySubpage = () => {
-    const { sendRecoverySettingEnabled } = useRecoverySettingsTelemetry();
-    const [userSettings, loadingUserSettings] = useUserSettings();
-    const [user] = useUser();
-    const dispatch = useDispatch();
-    const api = useApi();
-
-    const syncDeviceRecoveryHelper = useSyncDeviceRecovery();
-    const [isRecoveryFileAvailable] = useIsRecoveryFileAvailable();
-
-    const isAvailableOnDevice = getHasRecoveryMessage(user.ID);
+    const recoveryFileData = useSelector(selectRecoveryFileData);
+    const updateRecoveryFile = useUpdateRecoveryFile(recoveryFileData);
 
     const [loadingDeviceRecovery, withLoadingDeviceRecovery] = useLoading();
     const [disableModalProps, setDisableModalOpen, renderDisableModal] = useModalState();
-
-    const handleChangeDeviceRecoveryToggle = async (checked: boolean) => {
-        const DeviceRecovery = Number(checked) as 0 | 1;
-        if (userSettings.DeviceRecovery === DeviceRecovery) {
-            return;
-        }
-        await api(updateDeviceRecovery({ DeviceRecovery }));
-        await syncDeviceRecoveryHelper({ DeviceRecovery });
-        await Promise.all([
-            dispatch(userThunk({ cache: CacheType.None })),
-            dispatch(userSettingsThunk({ cache: CacheType.None })),
-        ]);
-        if (checked) {
-            sendRecoverySettingEnabled({ setting: 'device_recovery' });
-        }
-    };
 
     const handleToggleChange = (checked: boolean) => {
         if (!checked) {
             setDisableModalOpen(true);
         } else {
-            void withLoadingDeviceRecovery(handleChangeDeviceRecoveryToggle(true));
+            void withLoadingDeviceRecovery(updateRecoveryFile.toggleDeviceRecovery(true));
         }
     };
 
-    if (!isRecoveryFileAvailable) {
+    if (!recoveryFileData.isRecoveryFileAvailable) {
         return null;
-    }
-
-    if (loadingUserSettings) {
-        return <Loader />;
     }
 
     const learnMoreLink = <Href key="learn" href={getKnowledgeBaseUrl('/')}>{c('Link').t`Learn more`}</Href>;
 
     return (
         <>
+            {updateRecoveryFile.el}
             <DashboardGrid>
                 <SettingsDescription
                     left={
@@ -108,12 +71,12 @@ const DeviceBasedRecoverySubpage = () => {
                             toggle={
                                 <SettingsToggleRow.Toggle
                                     loading={loadingDeviceRecovery}
-                                    checked={!!userSettings.DeviceRecovery}
+                                    checked={recoveryFileData.hasDeviceRecoveryEnabled}
                                     onChange={({ target: { checked } }) => handleToggleChange(checked)}
                                 />
                             }
                         />
-                        {isAvailableOnDevice && (
+                        {recoveryFileData.isAvailableOnDevice && (
                             <div className="fade-in">
                                 <DashboardCardDivider />
                                 <div className="flex items-center gap-2 flex-nowrap">
@@ -123,7 +86,7 @@ const DeviceBasedRecoverySubpage = () => {
                                 </div>
                             </div>
                         )}
-                        {!userSettings.DeviceRecovery && <RecoveryWarning />}
+                        {!recoveryFileData.hasDeviceRecoveryEnabled && <RecoveryWarning />}
                     </DashboardCardContent>
                 </DashboardCard>
             </DashboardGrid>
@@ -136,7 +99,7 @@ const DeviceBasedRecoverySubpage = () => {
                             color="danger"
                             onClick={() => {
                                 disableModalProps.onClose();
-                                void withLoadingDeviceRecovery(handleChangeDeviceRecoveryToggle(false));
+                                void withLoadingDeviceRecovery(updateRecoveryFile.toggleDeviceRecovery(false));
                             }}
                         >
                             {c('Action').t`Disable`}

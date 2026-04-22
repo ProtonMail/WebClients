@@ -4,7 +4,8 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { generatePqcAddressKeys, generatePqcUserKey, optInToPqc } from '@proton/account';
-import { useUser } from '@proton/account/user/hooks';
+import { selectMnemonicData } from '@proton/account/recovery/mnemonic';
+import { selectRecoveryFileData } from '@proton/account/recovery/recoveryFile';
 import { Button } from '@proton/atoms/Button/Button';
 import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import Checkbox from '@proton/components/components/input/Checkbox';
@@ -17,15 +18,13 @@ import ModalTwoContent from '@proton/components/components/modalTwo/ModalContent
 import ModalTwoFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalTwoHeader from '@proton/components/components/modalTwo/ModalHeader';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import { useIsDeviceRecoveryAvailable, useIsDeviceRecoveryEnabled } from '@proton/components/hooks/useDeviceRecovery';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
-import useRecoverySecrets from '@proton/components/hooks/useRecoverySecrets';
 import useLoading from '@proton/hooks/useLoading';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
 import { useOutgoingAddressForwardings } from '@proton/mail/store/forwarding/hooks';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
-import { ForwardingState, ForwardingType, MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
+import { ForwardingState, ForwardingType } from '@proton/shared/lib/interfaces';
 import noop from '@proton/utils/noop';
 
 import { getMailRouteTitles } from '../../account/constants/settingsRouteTitles';
@@ -50,17 +49,13 @@ interface Model {
 const PostQuantumOptInModal = ({ ...rest }: Props) => {
     const dispatch = useDispatch();
 
-    const [user] = useUser();
-    const canRevokeRecoveryFiles = useRecoverySecrets().length > 0;
-    const hasManualRecoveryMethod =
-        user.MnemonicStatus === MNEMONIC_STATUS.SET ||
-        (user.MnemonicStatus === MNEMONIC_STATUS.ENABLED && canRevokeRecoveryFiles);
+    const { isMnemonicSet } = useSelector(selectMnemonicData);
+    const { hasCurrentRecoveryFile } = useSelector(selectRecoveryFileData);
+    const hasManualRecoveryMethod = isMnemonicSet || hasCurrentRecoveryFile;
 
     const [outgoingAddressForwardings = [], loadingOutgoingAddressForwardings] = useOutgoingAddressForwardings();
-    const [isDeviceRecoveryAvailable, loadingDeviceRecovery] = useIsDeviceRecoveryAvailable();
-    const isDeviceRecoveryEnabled = useIsDeviceRecoveryEnabled();
 
-    const loadingDependencies = loadingOutgoingAddressForwardings || loadingDeviceRecovery;
+    const loadingDependencies = loadingOutgoingAddressForwardings;
     const [loading, withLoading] = useLoading();
     const [model, setModel] = useState<Model>({
         step: Step.CONFIRMATION,
@@ -103,7 +98,7 @@ const PostQuantumOptInModal = ({ ...rest }: Props) => {
 
     const handleGenerateUserKey = async () => {
         try {
-            await dispatch(generatePqcUserKey({ isDeviceRecoveryEnabled, isDeviceRecoveryAvailable }));
+            await dispatch(generatePqcUserKey());
             setModel((prev) => ({
                 step: Step.IN_PROGRESS_ADDRESS_KEYS,
                 hadManualRecoveryMethodBeforeOptIn: prev.hadManualRecoveryMethodBeforeOptIn,

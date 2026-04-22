@@ -10,14 +10,13 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { postVerifySend } from '@proton/shared/lib/api/verify';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
-import type { UserSettings } from '@proton/shared/lib/interfaces';
 
 export const getVerificationSentText = (address: string) => {
     return c('Email verification').t`Verification email sent to ${address}`;
 };
 
 interface Props extends ModalProps {
-    email: UserSettings['Email'];
+    email: string;
 }
 
 const VerifyRecoveryEmailModal = ({ email, onClose, ...rest }: Props) => {
@@ -32,7 +31,7 @@ const VerifyRecoveryEmailModal = ({ email, onClose, ...rest }: Props) => {
 
             createNotification({
                 type: 'success',
-                text: getVerificationSentText(email.Value),
+                text: getVerificationSentText(email),
             });
 
             onClose?.();
