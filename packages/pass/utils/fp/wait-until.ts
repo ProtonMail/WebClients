@@ -32,7 +32,7 @@ export const waitUntil = (cb: WaitUntilCallback, refresh: number, timeout: numbe
 
         const run = async () => {
             try {
-                if (cancel?.()) return reject();
+                if (cancel?.()) return reject(new Error('Canceled'));
                 else if (await check()) return resolve();
             } catch (err) {
                 reject(err);
@@ -42,7 +42,7 @@ export const waitUntil = (cb: WaitUntilCallback, refresh: number, timeout: numbe
         await run();
 
         if (!fulfilled) {
-            timer = setTimeout(reject, timeout);
+            timer = setTimeout(() => reject(new Error('Timeout')), timeout);
             interval = setInterval(run, refresh);
         }
     });
