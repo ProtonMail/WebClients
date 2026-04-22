@@ -2,7 +2,7 @@ import { useParticipants } from '@livekit/components-react';
 import { RoomEvent, VideoQuality } from 'livekit-client';
 
 import { useMeetSelector } from '@proton/meet/store/hooks';
-import { selectIsScreenShare } from '@proton/meet/store/slices/meetingInfo';
+import { selectIsScreenShare } from '@proton/meet/store/slices/screenShareStatusSlice';
 
 const updateOnlyOn = [
     RoomEvent.Connected,

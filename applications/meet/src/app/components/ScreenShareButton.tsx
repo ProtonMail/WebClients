@@ -2,14 +2,14 @@ import { c } from 'ttag';
 
 import { IcMeetScreenShare } from '@proton/icons/icons/IcMeetScreenShare';
 import { useMeetSelector } from '@proton/meet/store/hooks';
-import { selectIsSharingScreen } from '@proton/meet/store/slices/meetingInfo';
+import { selectIsLocalScreenShare } from '@proton/meet/store/slices/screenShareStatusSlice';
 
 import { CircleButton } from '../atoms/CircleButton/CircleButton';
 import { useMeetContext } from '../contexts/MeetContext';
 
 export const ScreenShareButton = () => {
     const { stopScreenShare, startScreenShare } = useMeetContext();
-    const isSharing = useMeetSelector(selectIsSharingScreen);
+    const isSharing = useMeetSelector(selectIsLocalScreenShare);
 
     const handleClick = () => {
         if (isSharing) {

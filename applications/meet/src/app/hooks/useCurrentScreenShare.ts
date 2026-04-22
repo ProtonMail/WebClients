@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { useLocalParticipant, useRoomContext, useTracks } from '@livekit/components-react';
+import { useRoomContext, useTracks } from '@livekit/components-react';
 import type { RemoteTrackPublication } from 'livekit-client';
 import { Track } from 'livekit-client';
 import { c } from 'ttag';
@@ -9,6 +9,7 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch } from '@proton/meet/store/hooks';
 import { PermissionsModalType, showPermissionsModal } from '@proton/meet/store/slices/deviceManagementSlice';
+import { setParticipantScreenShare } from '@proton/meet/store/slices/screenShareStatusSlice';
 import { isChrome, isMobile, isSafari, isWindows } from '@proton/shared/lib/helpers/browser';
 import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 
@@ -24,10 +25,8 @@ export function useCurrentScreenShare({
     startPiP: () => void;
     preparePictureInPicture: () => void;
 }) {
-    const { reportMeetError } = useMeetErrorReporting();
-    const { localParticipant } = useLocalParticipant();
-
     const dispatch = useMeetDispatch();
+    const { reportMeetError } = useMeetErrorReporting();
 
     const notifications = useNotifications();
 
@@ -35,14 +34,16 @@ export function useCurrentScreenShare({
 
     const screenShareParticipant = screenShareTrack?.participant;
 
-    const isLocalScreenShare = screenShareParticipant?.identity === localParticipant.identity;
-
     const room = useRoomContext();
 
     const stopScreenShare = useStableCallback(() => {
         stopPiP();
         void room.localParticipant.setScreenShareEnabled(false);
     });
+
+    useEffect(() => {
+        dispatch(setParticipantScreenShare(screenShareTrack?.participant?.identity));
+    }, [screenShareTrack?.participant?.identity]);
 
     const startScreenShare = useStableCallback(async () => {
         const start = performance.now();
@@ -163,8 +164,6 @@ export function useCurrentScreenShare({
     }, []);
 
     return {
-        isLocalScreenShare,
-        isScreenShare: !!screenShareTrack,
         screenShareParticipant: screenShareParticipant,
         screenShareTrack,
         stopScreenShare,
