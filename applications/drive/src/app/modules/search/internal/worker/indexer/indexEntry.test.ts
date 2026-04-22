@@ -96,6 +96,7 @@ describe('createIndexEntry', () => {
             kind: 'integer',
             value: BigInt(new Date('2025-02-20T14:30:00Z').getTime()),
         });
+        expect(attr('trashTime')).toEqual({ kind: 'integer', value: 0n });
     });
 
     it('appends additional attributes after core ones', () => {
