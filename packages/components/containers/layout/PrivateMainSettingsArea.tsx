@@ -1,5 +1,4 @@
-import type { ReactNode } from 'react';
-import { Children, cloneElement, isValidElement, useEffect, useRef } from 'react';
+import { Children, type ReactNode, cloneElement, isValidElement, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router';
 
 import SettingsPageTitle from '@proton/components/containers/account/SettingsPageTitle';
@@ -14,6 +13,7 @@ import SubSettingsSection from './SubSettingsSection';
 import { getIsSubsectionAvailable } from './helper';
 import { SettingsCardMaxWidth, SettingsLayoutVariant } from './interface';
 import type { SettingsAreaConfig } from './interface';
+import { useScrollRestoration } from './useScrollRestoration';
 
 interface PrivateMainSettingsAreaBaseProps {
     breadcrumbs?: ReactNode;
@@ -48,11 +48,7 @@ export const PrivateMainSettingsAreaBase = ({
 
     useAppTitle(title);
 
-    useEffect(() => {
-        if (mainAreaRef.current) {
-            mainAreaRef.current.scrollTop = 0;
-        }
-    }, [location.pathname]);
+    useScrollRestoration(mainAreaRef);
 
     useEffect(() => {
         const { hash } = location;
