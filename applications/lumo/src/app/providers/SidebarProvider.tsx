@@ -1,8 +1,11 @@
-import React, { createContext, useCallback, useContext, useMemo, useState } from 'react';
+import React, { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 
 import { useIsLumoSmallScreen } from '../hooks/useIsLumoSmallScreen';
 import { setNativeGhostMode } from '../remote/nativeComposerBridgeHelpers';
+import { readScopedLocalStorageJson, writeScopedLocalStorageJson } from '../util/lumoScopedLocalStorage';
 import { useGhostChat } from './GhostChatProvider';
+
+const SIDEBAR_MODE_STORAGE_KEY = 'lumo-sidebar-mode';
 
 /**
  * Small screens (≤768px): 'hidden' | 'overlay'
@@ -44,9 +47,16 @@ export const SidebarProvider = ({ children, defaultMode = 'collapsed' }: Sidebar
 
     // Screen-specific internal states
     const [smallScreenMode, setSmallScreenMode] = useState<SmallScreenMode>('hidden');
-    const [largeScreenMode, setLargeScreenMode] = useState<LargeScreenMode>(
-        defaultMode === 'hidden' ? 'collapsed' : (defaultMode as LargeScreenMode)
-    );
+    const [largeScreenMode, setLargeScreenMode] = useState<LargeScreenMode>(() => {
+        const fallback: LargeScreenMode = defaultMode === 'hidden' ? 'collapsed' : (defaultMode as LargeScreenMode);
+        const stored = readScopedLocalStorageJson<LargeScreenMode | null>(SIDEBAR_MODE_STORAGE_KEY, null);
+        return stored === 'collapsed' || stored === 'expanded' ? stored : fallback;
+    });
+
+    // Persist large screen mode so the sidebar state survives reloads.
+    useEffect(() => {
+        writeScopedLocalStorageJson(SIDEBAR_MODE_STORAGE_KEY, largeScreenMode);
+    }, [largeScreenMode]);
 
     // Compute the effective mode based on screen size
     const mode = useMemo((): SidebarMode => {
