@@ -28,7 +28,7 @@ import isTruthy from '@proton/utils/isTruthy';
 import shuffle from '@proton/utils/shuffle';
 
 import useCancellationTelemetry from '../cancellationFlow/useCancellationTelemetry';
-import { useFeedbackFirstEligibility } from '../cancellationFlowFeedbackFirst/useFeedbackFirstEligibility';
+import { useFeedbackFirstEligibility } from '../cancellationFlowFeedbackFirst/hooks/useFeedbackFirstEligibility';
 
 export enum SUBSCRIPTION_CANCELLATION_REASONS {
     DIFFERENT_ACCOUNT = 'DIFFERENT_ACCOUNT',
