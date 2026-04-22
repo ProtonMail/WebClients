@@ -176,15 +176,18 @@ export function* softDeleteConversationFromRemote({
 }): SagaIterator<any> {
     console.log('Saga triggered: softDeleteConversationFromRemote', localId);
     const dbApi: DbApi = yield getContext('dbApi');
-    yield put(deleteConversation(localId)); // Redux
+    // IDB first, then Redux: if the IDB write fails we don't want Redux and IDB
+    // to diverge (Redux-only deletion would leave a stale tombstone on reload).
     yield call([dbApi, dbApi.softDeleteConversation], localId, { dirty: false }); // IDB
+    yield put(deleteConversation(localId)); // Redux
 }
 
 export function* softDeleteConversationFromLocal({ payload: localId }: { payload: ConversationId }): SagaIterator<any> {
     console.log('Saga triggered: softDeleteConversationFromLocal', localId);
     const dbApi: DbApi = yield getContext('dbApi');
-    yield put(deleteConversation(localId)); // Redux
+    // IDB first, then Redux — see softDeleteConversationFromRemote for rationale.
     yield call([dbApi, dbApi.softDeleteConversation], localId, { dirty: true }); // IDB
+    yield put(deleteConversation(localId)); // Redux
 
     // Trigger push to sync deletion to server
     console.log(`softDeleteConversationFromLocal: triggering push for deleted conversation ${localId}`);

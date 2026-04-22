@@ -14,6 +14,8 @@ import {
     takeLeading,
 } from 'redux-saga/effects';
 
+import { traceError } from '@proton/shared/lib/helpers/sentry';
+
 import type { AesGcmCryptoKey } from '../../crypto/types';
 import {
     ASSET_STORE,
@@ -617,14 +619,28 @@ export function* rootSaga(opts?: { crashIfErrors: boolean }) {
 
     // @ts-ignore
     const rootWatcher = yield all(
-        watchers.map((w) =>
+        watchers.map((w, index) =>
             spawn(function* wrappedWatcher() {
                 while (true) {
                     try {
                         yield call(w);
                     } catch (err) {
                         if (crashIfErrors) throw err;
+                        // Previously these crashes were only console.error'd, which made
+                        // production issues invisible. Report to Sentry (no-op on localhost)
+                        // so watcher restarts are observable. The watcherIndex tag helps
+                        // correlate recurring crashes to a specific takeEvery binding.
                         console.error(`Watcher crashed, restarting`, err);
+                        try {
+                            traceError(err instanceof Error ? err : new Error(String(err)), {
+                                tags: {
+                                    source: 'lumo-saga-watcher',
+                                    watcherIndex: String(index),
+                                },
+                            });
+                        } catch {
+                            // Never let a reporting failure kill the watcher loop.
+                        }
                     }
                 }
             })

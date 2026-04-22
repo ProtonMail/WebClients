@@ -116,15 +116,20 @@ export function* deleteSpaceCascadeInRedux(spaceId: SpaceId): SagaIterator<any> 
 export function* softDeleteSpaceFromRemote({ payload: localId }: { payload: SpaceId }): SagaIterator<any> {
     console.log('Saga triggered: softDeleteSpaceFromRemote', localId);
     const dbApi: DbApi = yield getContext('dbApi');
-    yield call(deleteSpaceCascadeInRedux, localId);
+    // IDB cascade first, then Redux cascade. Otherwise a failing IDB write would
+    // leave Redux purged while IDB still holds the old data — on reload the state
+    // would reappear as a stale tombstone. deleteSpaceCascadeInRedux reads from
+    // Redux selectors, so running it after the IDB cascade is still correct.
     yield call([dbApi, dbApi.softDeleteSpaceCascade], localId, { dirty: false });
+    yield call(deleteSpaceCascadeInRedux, localId);
 }
 
 export function* softDeleteSpaceFromLocal({ payload: localId }: { payload: SpaceId }): SagaIterator<any> {
     console.log('Saga triggered: softDeleteSpaceFromLocal', localId);
     const dbApi: DbApi = yield getContext('dbApi');
-    yield call(deleteSpaceCascadeInRedux, localId);
+    // IDB cascade first, then Redux cascade — see softDeleteSpaceFromRemote.
     yield call([dbApi, dbApi.softDeleteSpaceCascade], localId, { dirty: true });
+    yield call(deleteSpaceCascadeInRedux, localId);
     yield put(pushSpaceRequest({ id: localId, priority: 'urgent' }));
 }
 

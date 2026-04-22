@@ -229,16 +229,18 @@ export function* deserializeAttachmentSaga(
 export function* softDeleteAttachmentFromRemote({ payload: localId }: { payload: AttachmentId }): SagaIterator<any> {
     console.log('Saga triggered: softDeleteAttachmentFromRemote', localId);
     const dbApi: DbApi = yield getContext('dbApi');
-    yield put(deleteAttachment(localId)); // Redux
+    // IDB first, then Redux: prevents Redux/IDB divergence if the IDB write fails.
     yield call([dbApi, dbApi.softDeleteAttachment], localId, { dirty: false }); // IDB
+    yield put(deleteAttachment(localId)); // Redux
     yield put(unindexAttachmentRequest({ id: localId })); // Index
 }
 
 export function* softDeleteAttachmentFromLocal({ payload: localId }: { payload: AttachmentId }): SagaIterator<any> {
     console.log('Saga triggered: softDeleteAttachmentFromLocal', localId);
     const dbApi: DbApi = yield getContext('dbApi');
-    yield put(deleteAttachment(localId)); // Redux
+    // IDB first, then Redux — see softDeleteAttachmentFromRemote for rationale.
     yield call([dbApi, dbApi.softDeleteAttachment], localId, { dirty: true }); // IDB
+    yield put(deleteAttachment(localId)); // Redux
     yield put(unindexAttachmentRequest({ id: localId })); // Index
 
     // Trigger push to sync deletion to server
