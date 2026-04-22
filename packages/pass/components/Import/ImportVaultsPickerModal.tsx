@@ -1,5 +1,5 @@
 import type { FC } from 'react';
-import { useCallback, useMemo } from 'react';
+import { useMemo } from 'react';
 import { useSelector } from 'react-redux';
 
 import { Form, FormikProvider, useFormik } from 'formik';
@@ -29,14 +29,22 @@ import { ImportVaultPickerOption } from './ImportVaultsPickerOption';
 
 type VaultPickerValue = ImportVault & { selected: boolean };
 type VaultsPickerFormValues = { vaults: VaultPickerValue[] };
+
 type ImportVaultsPickerProps = Omit<ModalProps, 'onSubmit'> & {
+    disabled: boolean;
     payload: ImportPayload;
     onSubmit: (payload: ImportPayload) => void;
 };
 
 const FORM_ID = 'vault-picker';
 
-export const ImportVaultsPickerModal: FC<ImportVaultsPickerProps> = ({ payload, onClose, onReset, onSubmit }) => {
+export const ImportVaultsPickerModal: FC<ImportVaultsPickerProps> = ({
+    disabled,
+    payload,
+    onClose,
+    onReset,
+    onSubmit,
+}) => {
     const writableVaults = useSelector(selectWritableVaults);
     const defaultVault = useSelector(selectDefaultVault);
     const { vaultLimit, vaultTotalCount } = useSelector(selectVaultLimits);
@@ -46,8 +54,8 @@ export const ImportVaultsPickerModal: FC<ImportVaultsPickerProps> = ({ payload, 
     const vaultCreationPolicyEnforced = vaultRemainingCount !== null;
     const safeVaultLimit = vaultCreationPolicyEnforced ? vaultTotalCount + vaultRemainingCount : vaultLimit;
 
-    const handleSubmit = useCallback(
-        (values: VaultsPickerFormValues) =>
+    const form = useFormik<VaultsPickerFormValues>({
+        onSubmit: (values) =>
             onSubmit({
                 vaults: values.vaults
                     .filter((vault) => vault.selected)
@@ -55,11 +63,6 @@ export const ImportVaultsPickerModal: FC<ImportVaultsPickerProps> = ({ payload, 
                 ignored: payload.ignored,
                 warnings: payload.warnings,
             }),
-        [onSubmit]
-    );
-
-    const form = useFormik<VaultsPickerFormValues>({
-        onSubmit: handleSubmit,
         initialValues: {
             vaults: payload.vaults.map(
                 (vault): VaultPickerValue => ({
@@ -160,7 +163,9 @@ export const ImportVaultsPickerModal: FC<ImportVaultsPickerProps> = ({ payload, 
                 <Button type="reset" shape="outline" onClick={onClose} color="danger" pill>
                     {c('Action').t`Cancel`}
                 </Button>
-                <Button type="submit" color="norm" form={FORM_ID} pill>{c('Action').t`Confirm`}</Button>
+                <Button type="submit" color="norm" form={FORM_ID} pill disabled={disabled}>
+                    {c('Action').t`Confirm`}
+                </Button>
             </ModalTwoFooter>
         </ModalTwo>
     );
