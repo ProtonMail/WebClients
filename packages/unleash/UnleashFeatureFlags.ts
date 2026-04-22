@@ -254,6 +254,7 @@ export enum MailFeatureFlag {
     PreventEventLoopCallOnCompose = 'PreventEventLoopCallOnCompose',
     FasterEncryptedSearchIndexing = 'FasterEncryptedSearchIndexing',
     EncryptedSearchMigrationSystem = 'EncryptedSearchMigrationSystem',
+    MailStoreDebugMode = 'MailStoreDebugMode',
 }
 
 enum AdminFeatureFlag {
