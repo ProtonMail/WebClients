@@ -9,6 +9,9 @@ import { createTimeoutError } from '../fetch/ApiError';
 import { getIsAuthorizedApp, getIsDrawerPostMessage, postMessageFromIframe } from './helpers';
 import { DRAWER_EVENTS, type SESSION_MESSAGE } from './interfaces';
 
+const MAX_READY_ATTEMPTS = 3;
+const READY_RETRY_INTERVAL = 3 * SECOND;
+
 export const resumeSessionDrawerApp = ({
     parentApp,
     localID: parentLocalID,
@@ -16,9 +19,9 @@ export const resumeSessionDrawerApp = ({
     parentApp: APP_NAMES;
     localID: number;
 }) => {
-    let timeout: ReturnType<typeof setTimeout> | undefined;
-
     return new Promise<ResumedSessionResult & { tag: SESSION_MESSAGE['payload']['tag'] }>((resolve, reject) => {
+        const timeouts: ReturnType<typeof setTimeout>[] = [];
+
         const handler = (event: MessageEvent) => {
             if (!getIsDrawerPostMessage(event)) {
                 return;
@@ -38,11 +41,9 @@ export const resumeSessionDrawerApp = ({
                     // Backwards compatiblity while both apps are being updated
                     persistedSession: maybePersistedSession,
                 } = event.data.payload;
-                window.removeEventListener('message', handler);
 
-                if (timeout) {
-                    clearTimeout(timeout);
-                }
+                timeouts.forEach(clearTimeout);
+                window.removeEventListener('message', handler);
 
                 const persistedSession: PersistedSession = maybePersistedSession ?? {
                     // This is a mock of the persisted session since the drawer isn't fully using it anyway.
@@ -71,22 +72,35 @@ export const resumeSessionDrawerApp = ({
             }
         };
 
-        postMessageFromIframe({ type: DRAWER_EVENTS.READY }, parentApp);
         window.addEventListener('message', handler);
 
-        // Resolve the promise if the parent app does not respond
-        timeout = setTimeout(() => {
-            captureMessage('Drawer iframe session timeout', {
-                level: 'info',
-                extra: {
-                    parentApp,
-                    isAuthorizedApp: getIsAuthorizedApp(parentApp || ''),
-                    locationOrigin: window.location.origin,
-                    locationHref: window.location.href,
-                },
-            });
+        // Send READY immediately, then retry at regular intervals in case the parent is missing it
+        postMessageFromIframe({ type: DRAWER_EVENTS.READY }, parentApp);
 
-            reject(createTimeoutError({}));
-        }, 10 * SECOND);
+        for (let attempt = 1; attempt < MAX_READY_ATTEMPTS; attempt++) {
+            timeouts.push(
+                setTimeout(() => {
+                    postMessageFromIframe({ type: DRAWER_EVENTS.READY }, parentApp);
+                }, attempt * READY_RETRY_INTERVAL)
+            );
+        }
+
+        // Reject after all attempts have been made
+        timeouts.push(
+            setTimeout(() => {
+                timeouts.forEach(clearTimeout);
+                window.removeEventListener('message', handler);
+                captureMessage('Drawer iframe session timeout', {
+                    level: 'info',
+                    extra: {
+                        parentApp,
+                        isAuthorizedApp: getIsAuthorizedApp(parentApp || ''),
+                        locationOrigin: window.location.origin,
+                        locationHref: window.location.href,
+                    },
+                });
+                reject(createTimeoutError({}));
+            }, MAX_READY_ATTEMPTS * READY_RETRY_INTERVAL)
+        );
     });
 };
