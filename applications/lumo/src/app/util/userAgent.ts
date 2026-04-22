@@ -11,9 +11,9 @@ export const canShowWebComposer = (nativeComposerEnabled: boolean): boolean => {
         const { version, platform } = appInfo;
 
         if (platform === 'ios') {
-            targetVersion = '2.0.0';
+            targetVersion = '1.4.0';
         } else if (platform === 'android') {
-            targetVersion = '2.0.0';
+            targetVersion = '1.4.0';
         }
 
         if (targetVersion && !isNativeVersionOlderThan(version, targetVersion)) {
