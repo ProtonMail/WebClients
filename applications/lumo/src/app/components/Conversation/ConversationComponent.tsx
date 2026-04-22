@@ -27,7 +27,6 @@ import { HtmlPreviewPanel } from '../HtmlPreview/HtmlPreviewPanel';
 import ErrorCard from '../Notifications/ErrorCard';
 import { RetryPanel } from '../RetryPanel';
 import { RightDrawer } from '../RightDrawer';
-import { RetryPanel } from '../RetryPanel';
 import { ConversationSurvey } from '../Survey/ConversationSurvey';
 import { ConversationHeader } from './messageChain/ConversationHeader';
 import { MessageChainComponent } from './messageChain/MessageChainComponent';
@@ -303,7 +302,7 @@ const ConversationComponent = ({
                         )}
                         {tierErrors.length > 0 && <UpsellCard error={tierErrors[0]} />}
                         <ConversationSurvey isGenerating={isGenerating} />
-                    <div
+                        <div
                             ref={composerContainerRef}
                             className="lumo-chat-item flex flex-column w-full md:w-2/3 mx-auto max-w-custom no-print"
                             style={{

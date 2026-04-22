@@ -2,20 +2,24 @@ import { c } from 'ttag';
 
 import { Href } from '@proton/atoms/Href/Href';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
+import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { useLumoPlan } from '../../../providers/LumoPlanProvider';
 import LumoB2BUpsellLink from '../../../upsells/components/B2BUpsellLink';
+import { getMarketingUrl } from '../../../util/marketingUrls';
 
 export const MainContainerBottomLinks = ({ className }: { className?: string }) => {
     const { showForBusinessLink } = useLumoPlan();
+    const showNewMarketingLinks = useFlag('LumoNewMarketingLinks');
 
     return (
         <ul className={clsx('unstyled flex flex-row items-center m-0 gap-2', className)}>
             <li className="pt-1 no-print">
-                <Href href="/about" className="inline-flex py-3 px-4 color-weak text-no-decoration">{c(
-                    'collider_2025: Top nav link'
-                ).t`About`}</Href>
+                <Href
+                    href={showNewMarketingLinks ? getMarketingUrl('/lumo') : '/about'}
+                    className="inline-flex py-3 px-4 color-weak text-no-decoration"
+                >{c('collider_2025: Top nav link').t`About`}</Href>
             </li>
             <li className="pt-1 no-print">
                 <Href href="https://proton.me" className="inline-flex py-3 px-4 color-weak text-no-decoration">{c(

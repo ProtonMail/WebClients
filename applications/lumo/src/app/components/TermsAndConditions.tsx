@@ -2,10 +2,10 @@ import { c } from 'ttag';
 
 import { InlineLinkButton } from '@proton/atoms/InlineLinkButton/InlineLinkButton';
 import { LUMO_SHORT_APP_NAME } from '@proton/shared/lib/constants';
-import clsx from '@proton/utils/clsx';
 import { useFlag } from '@proton/unleash/useFlag';
+import clsx from '@proton/utils/clsx';
 
-import { getMarketingUrl } from '../../../util/marketingUrls';
+import { getMarketingUrl } from '../util/marketingUrls';
 
 const TermsAndConditions = ({ className }: { className?: string }) => {
     const showNewMarketingLinks = useFlag('LumoNewMarketingLinks');
