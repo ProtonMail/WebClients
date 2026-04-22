@@ -468,8 +468,10 @@ export const createAuthService = ({
 
             const sessionState = JSON.stringify(data ?? redirect.data);
             sessionStorage.setItem(getStateKey(state), sessionState);
-            /** Clear SSH keys when navigating to SSO */
-            if (sshAgent?.enabled) void sshAgent.sync([]);
+
+            /** Clear SSH keys before navigating to SSO */
+            void sshAgent?.clear();
+
             window.location.replace(url);
         },
 

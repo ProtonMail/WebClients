@@ -47,7 +47,6 @@ import {
     selectFilters,
     selectLocale,
     selectUserSettings,
-    selectVisibleNonTrashedSshKeyItems,
 } from '@proton/pass/store/selectors';
 import { SpotlightMessage } from '@proton/pass/types';
 import { PassFeature } from '@proton/pass/types/api/features';
@@ -185,7 +184,7 @@ export const StoreProvider: FC<PropsWithChildren> = ({ children }) => {
                         });
                     }
 
-                    if (sshAgent?.enabled) void sshAgent.sync(selectVisibleNonTrashedSshKeyItems(store.getState()));
+                    void sshAgent?.sync();
                 }),
                 onSettingsUpdated: async (update) => {
                     await settings.sync(update, authStore.getLocalID());

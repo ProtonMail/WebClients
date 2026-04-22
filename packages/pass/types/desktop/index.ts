@@ -1,4 +1,5 @@
 import type {
+    AppState,
     ItemRevision,
     Maybe,
     MaybeNull,
@@ -25,6 +26,7 @@ export type ContextBridgeApi = {
     readFromClipboard: () => Promise<string>;
 
     navigate: (href: string) => Promise<void>;
+    setAppState: (state: AppState) => void;
 
     canCheckPresence: () => Promise<boolean>;
     checkPresence: (reason?: string) => Promise<void>;
@@ -59,10 +61,8 @@ export type ContextBridgeApi = {
     setSshKeyItems: (items: ItemRevision<'sshKey'>[]) => Promise<void>;
     removeAllSshKeys: () => Promise<void>;
     getSshAgentStatus: () => Promise<{ socketPath?: string }>;
-    getSshAgentSettingEnabled: () => Promise<boolean>;
-    setSshAgentSettingEnabled: (enabled: boolean) => Promise<void>;
-    setSshAgentAppReady: (isReady: boolean) => Promise<void>;
-    onSshAgentSettingChanged: (callback: (enabled: boolean) => void) => () => void;
+    getSshAgentSetting: () => Promise<boolean>;
+    setSshAgentSetting: (enabled: boolean) => Promise<void>;
 };
 
 export type DesktopTheme = 'dark' | 'light' | 'system';
