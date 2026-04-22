@@ -1,0 +1,29 @@
+@use '~@proton/styles/scss/lib/easing' as *;
+
+:root {
+	--transition-duration: 0.15s;
+	--transition-easing: #{easing(ease-in-out)};
+}
+
+.transition-all {
+	transition: all var(--transition-duration) var(--transition-easing);
+}
+
+.transition-spacings {
+	transition:
+		padding var(--transition-duration) var(--transition-easing),
+		margin var(--transition-duration) var(--transition-easing),
+		gap var(--transition-duration) var(--transition-easing);
+}
+
+.transition-margin {
+	transition: margin var(--transition-duration) var(--transition-easing);
+}
+
+.transition-padding {
+	transition: padding var(--transition-duration) var(--transition-easing);
+}
+
+.transition-gap {
+	transition: gap var(--transition-duration) var(--transition-easing);
+}
