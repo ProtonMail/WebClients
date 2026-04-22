@@ -3,7 +3,6 @@ import { useCallback, useRef, useState } from 'react';
 import { clsx } from 'clsx';
 
 import { LUMO_UPSELL_PATHS } from '@proton/shared/lib/constants';
-import { isMobile } from '@proton/shared/lib/helpers/browser';
 
 import { useIsLumoSmallScreen } from '../../hooks/useIsLumoSmallScreen';
 import type { HandleSendMessage } from '../../hooks/useLumoActions';
