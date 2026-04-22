@@ -26,6 +26,7 @@ import type { Competitor } from '../config/differentProviderConfig';
 interface Props {
     onKeepPlan: () => void;
     onContinueCancelling: () => void;
+    feedbackReason?: string;
 }
 
 interface CompetitorHeaderProps {
@@ -49,30 +50,44 @@ const CompetitorHeader = ({ competitors, competitor, onSelect }: CompetitorHeade
             }
         >
             <DropdownMenu>
-                {competitors.map((competitor: Competitor) => {
-                    return (
-                        <DropdownMenuButton
-                            key={c.name}
-                            className="flex items-center gap-2"
-                            onClick={() => {
-                                onSelect(competitor);
-                            }}
-                        >
-                            <img src={competitor.logo} alt="" width={16} height={16} />
-                            <span>{c.name}</span>
-                        </DropdownMenuButton>
-                    );
-                })}
+                {competitors
+                    .filter((c) => c.name !== competitor.name)
+                    .map((competitorOption: Competitor) => {
+                        return (
+                            <DropdownMenuButton
+                                key={competitorOption.name}
+                                className="flex items-center gap-2"
+                                onClick={() => {
+                                    onSelect(competitorOption);
+                                }}
+                            >
+                                <img src={competitorOption.logo} alt="" width={16} height={16} />
+                                <span>{competitorOption.name}</span>
+                            </DropdownMenuButton>
+                        );
+                    })}
             </DropdownMenu>
         </SimpleDropdown>
     );
 };
 
-export const DifferentProviderContent = ({ onKeepPlan, onContinueCancelling }: Props) => {
+export const DifferentProviderContent = ({ onKeepPlan, onContinueCancelling, feedbackReason }: Props) => {
     const { hasB2CAccess, hasB2BAccess } = useFeedbackFirstEligibility();
-    const [selectedCompetitor, setSelectedCompetitor] = useState<Competitor>(
-        hasB2CAccess ? B2C_COMPETITORS[0] : B2B_COMPETITORS[0]
-    );
+
+    const getInitialCompetitor = () => {
+        const competitorsList = hasB2CAccess ? B2C_COMPETITORS : B2B_COMPETITORS;
+
+        if (!feedbackReason) {
+            return competitorsList[0];
+        }
+
+        return (
+            competitorsList.find((competitor) => competitor.name.toLowerCase() === feedbackReason.toLowerCase()) ||
+            competitorsList[0]
+        );
+    };
+
+    const [selectedCompetitor, setSelectedCompetitor] = useState<Competitor>(getInitialCompetitor());
     const B2CConfig = getDifferentProviderB2CConfig();
     const B2BConfig = getDifferentProviderB2BConfig();
 

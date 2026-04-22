@@ -1,6 +1,8 @@
 /* eslint-disable jsx-a11y/prefer-tag-over-role */
 import type { ReactNode } from 'react';
 
+import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
+import Icon from '@proton/components/components/icon/Icon';
 import Table from '@proton/components/components/table/Table';
 import TableBody from '@proton/components/components/table/TableBody';
 import TableCell from '@proton/components/components/table/TableCell';
@@ -28,6 +30,7 @@ interface StackRowProps {
     icon?: ReactNode;
     label: string;
     value: string | ReactNode;
+    tooltip?: string;
 }
 
 export interface ComparisonFeatureRow {
@@ -35,16 +38,24 @@ export interface ComparisonFeatureRow {
     label: string;
     leftValue: string | ReactNode;
     rightValue: string | ReactNode;
+    tooltip?: string;
 }
 
-const StackRow = ({ icon, label, value }: StackRowProps) => {
+const StackRow = ({ icon, label, value, tooltip }: StackRowProps) => {
     return (
         <TableRow>
             <TableCell>
                 <div className="flex flex-row flex-nowrap gap-2">
                     {icon && <span className="flex shrink-0 items-start pt-0.5">{icon}</span>}
                     <div className="flex-1 flex flex-nowrap items-center justify-space-between gap-1">
-                        <span className="flex-1">{label}</span>
+                        <div className="flex flex-1 items-center gap-2">
+                            <span>{label}</span>
+                            {tooltip && (
+                                <Tooltip openDelay={200} title={tooltip}>
+                                    <Icon name="info-circle" className="color-primary shrink-0" />
+                                </Tooltip>
+                            )}
+                        </div>
                         <span className="shrink-0">{value}</span>
                     </div>
                 </div>
@@ -66,8 +77,8 @@ const StackedTables = ({ leftHeader, rightHeader, features, headerClassName }: I
                             {leftHeader}
                         </TableCell>
                     </TableRow>
-                    {features.map(({ icon, label, leftValue }) => {
-                        return <StackRow key={label} icon={icon} label={label} value={leftValue} />;
+                    {features.map(({ icon, label, leftValue, tooltip }) => {
+                        return <StackRow key={label} icon={icon} label={label} value={leftValue} tooltip={tooltip} />;
                     })}
                 </TableBody>
             </Table>
@@ -103,14 +114,21 @@ const SideBySideTable = ({ leftHeader, rightHeader, features, headerClassName }:
                         <span className={headerClassName}>{rightHeader}</span>
                     </TableCell>
                 </TableRow>
-                {features.map(({ icon, label, leftValue, rightValue }) => {
+                {features.map(({ icon, label, leftValue, rightValue, tooltip }) => {
                     return (
                         <TableRow key={label}>
                             <TableCell className="w-2/5">
-                                <span className="flex flex-nowrap flex-row items-start gap-2">
+                                <div className="flex flex-nowrap flex-row items-start gap-2">
                                     <span className="shrink-0 flex mt-0.5">{icon}</span>
-                                    <span className="flex-1">{label}</span>
-                                </span>
+                                    <div className="flex flex-1 items-center gap-2">
+                                        <span>{label}</span>
+                                        {tooltip && (
+                                            <Tooltip openDelay={200} title={tooltip}>
+                                                <Icon name="info-circle" className="color-primary shrink-0" />
+                                            </Tooltip>
+                                        )}
+                                    </div>
+                                </div>
                             </TableCell>
                             <TableCell className={`text-center ${CURRENT_PLAN_COLUMN_BG}`}>{leftValue}</TableCell>
                             <TableCell className="text-center">{rightValue}</TableCell>
