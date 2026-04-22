@@ -13,7 +13,7 @@ import { IcMeetScreenShare } from '@proton/icons/icons/IcMeetScreenShare';
 import { IcMeetSettings } from '@proton/icons/icons/IcMeetSettings';
 import { IcThreeDotsVertical } from '@proton/icons/icons/IcThreeDotsVertical';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
-import { selectIsSharingScreen } from '@proton/meet/store/slices/meetingInfo';
+import { selectIsLocalScreenShare } from '@proton/meet/store/slices/screenShareStatusSlice';
 import {
     MeetingSideBars,
     toggleSideBarState as toggleSideBarStateAction,
@@ -41,7 +41,7 @@ export const MenuButton = () => {
     };
 
     const { stopScreenShare, startScreenShare } = useMeetContext();
-    const isSharing = useMeetSelector(selectIsSharingScreen);
+    const isSharing = useMeetSelector(selectIsLocalScreenShare);
 
     const handleClickScreenShare = () => {
         if (isSharing) {

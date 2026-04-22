@@ -20,8 +20,6 @@ export interface MeetingInfoState {
     participantDecryptedNameMap: Record<string, string>;
     isFetchingParticipants: boolean;
     mlsGroupState: MLSGroupState | null;
-    isLocalScreenShare: boolean;
-    isScreenShare: boolean;
     keyRotationLogs: KeyRotationLog[];
 }
 
@@ -40,8 +38,6 @@ export const initialState: MeetingInfoState = {
     participantDecryptedNameMap: {},
     isFetchingParticipants: false,
     mlsGroupState: null,
-    isLocalScreenShare: false,
-    isScreenShare: false,
     keyRotationLogs: [],
 };
 
@@ -143,12 +139,16 @@ export const selectParticipantName = createSelector(
     [selectParticipantDecryptedNameMap, (_state: MeetState, identity: string) => identity],
     (participantDecryptedNameMap, identity) => participantDecryptedNameMap[identity] ?? ''
 );
+export const selectParticipantIsHost = createSelector(
+    [selectParticipantsMap, (_state: MeetState, identity: string) => identity],
+    (participantsMap, identity) => {
+        const participant = participantsMap[identity];
+
+        return Boolean(participant?.IsAdmin);
+    }
+);
 
 export const selectMlsGroupState = (state: MeetState) => state.meetingInfo.mlsGroupState;
-export const selectIsLocalScreenShare = (state: MeetState) => state.meetingInfo.isLocalScreenShare;
-export const selectIsScreenShare = (state: MeetState) => state.meetingInfo.isScreenShare;
-export const selectIsSharingScreen = (state: MeetState) =>
-    state.meetingInfo.isLocalScreenShare && state.meetingInfo.isScreenShare;
 export const selectKeyRotationLogs = (state: MeetState) => state.meetingInfo.keyRotationLogs;
 
 export const meetingInfoReducer = { meetingInfo: slice.reducer };

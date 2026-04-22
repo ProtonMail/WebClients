@@ -91,14 +91,11 @@ export const MeetContainer = ({
     const debugOverlay = useDebugOverlay();
     const dispatch = useMeetDispatch();
 
-    const {
-        isScreenShare,
-        isLocalScreenShare,
-        startScreenShare,
-        stopScreenShare,
-        screenShareParticipant,
-        screenShareTrack,
-    } = useCurrentScreenShare({ stopPiP, startPiP, preparePictureInPicture });
+    const { startScreenShare, stopScreenShare, screenShareParticipant, screenShareTrack } = useCurrentScreenShare({
+        stopPiP,
+        startPiP,
+        preparePictureInPicture,
+    });
 
     useLayoutEffect(() => {
         dispatch(
@@ -113,8 +110,6 @@ export const MeetContainer = ({
                 displayName,
                 passphrase,
                 isGuestAdmin,
-                isScreenShare,
-                isLocalScreenShare,
             })
         );
     }, [
@@ -129,8 +124,6 @@ export const MeetContainer = ({
         displayName,
         passphrase,
         isGuestAdmin,
-        isScreenShare,
-        isLocalScreenShare,
     ]);
 
     useEffect(() => {
@@ -206,8 +199,6 @@ export const MeetContainer = ({
                             <DebugOverlay isOpen={debugOverlay.isOpen} onClose={debugOverlay.close} />
                         )}
                         <MeetingBody
-                            isScreenShare={isScreenShare}
-                            isLocalScreenShare={isLocalScreenShare}
                             screenShareTrack={screenShareTrack}
                             screenShareParticipant={screenShareParticipant}
                             isUsingTurnRelay={isUsingTurnRelay}
