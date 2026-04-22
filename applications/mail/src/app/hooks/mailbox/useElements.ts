@@ -181,7 +181,7 @@ export const useElements: UseElements = ({
     const getConversationCounts = useGetConversationCounts();
     const getMessageCounts = useGetMessageCounts();
 
-    const loadActionTimestampRef = useRef<number[]>([]);
+    const loadActionTimestampRef = useRef<{ timestamp: number; labelID: string }[]>([]);
     const loadRateLimitReportedRef = useRef(false);
 
     // Remove from cache expired elements
@@ -352,20 +352,23 @@ export const useElements: UseElements = ({
         const hasPendingActions = pendingActions > 0 || tasksRunning.labelIDs.includes(labelID);
 
         // Check that the load action rate limit has not been exceeded and report it to Sentry if it has
-        const checkLoadActionRateLimit = () => {
+        const checkLoadActionRateLimit = (labelID: string) => {
             const queue = loadActionTimestampRef.current;
 
             const now = Date.now();
-            queue.push(now);
+            queue.push({ timestamp: now, labelID });
 
             if (queue.length > LOAD_ACTION_RATE_LIMIT_COUNT) {
                 queue.shift();
             }
 
-            const isQueueFull = queue.length >= LOAD_ACTION_RATE_LIMIT_COUNT;
-            const isOldestCallWithinWindow = now - queue[0] < LOAD_ACTION_RATE_LIMIT_WINDOW_MS;
+            const isQueueFull = queue.length === LOAD_ACTION_RATE_LIMIT_COUNT;
+            const isSameLabelID = queue.every((item) => item.labelID === labelID);
+            const isOldestCallWithinWindow = now - queue[0].timestamp < LOAD_ACTION_RATE_LIMIT_WINDOW_MS;
 
-            if (!loadRateLimitReportedRef.current && isQueueFull && isOldestCallWithinWindow) {
+            console.log('queue', queue);
+
+            if (!loadRateLimitReportedRef.current && isQueueFull && isSameLabelID && isOldestCallWithinWindow) {
                 loadRateLimitReportedRef.current = true;
 
                 captureInitiativeMessage(
@@ -380,7 +383,7 @@ export const useElements: UseElements = ({
          * OR change the page size for a bigger one (100 > 200)
          */
         if (shouldLoadElements && !hasPendingActions && !isSearch(search)) {
-            checkLoadActionRateLimit();
+            checkLoadActionRateLimit(labelID);
 
             void dispatch(
                 loadAction({
