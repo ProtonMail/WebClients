@@ -37,6 +37,10 @@ jest.mock('./helpers/getAllowedCycles', () => ({
     getAllowedCycles: jest.fn(),
 }));
 
+jest.mock('./helpers/subscriptionTelemetry', () => ({
+    reportPlanIDsIfChangedTelemetry: jest.fn(),
+}));
+
 function buildModel(overrides: Partial<Model> = {}): Model {
     return {
         step: SUBSCRIPTION_STEPS.CHECKOUT,
@@ -92,11 +96,17 @@ function buildDeps(
         callbacks: {
             runAdditionalChecks: jest.fn().mockResolvedValue(undefined),
             shouldPassIsTrial: jest.fn().mockReturnValue(false),
-            reportPlanIDsIfChanged: jest.fn(),
             onPlusToPlusTransition: jest.fn(),
             onVisionaryDowngradeWarning: jest.fn().mockResolvedValue(undefined),
             onVisionaryDowngradeHide: jest.fn(),
             onCheck: jest.fn(),
+        },
+        telemetry: {
+            user: {} as any,
+            APP_NAME: 'proton-mail' as any,
+            app: 'generic' as any,
+            paymentFacade: {} as any,
+            context: {} as any,
         },
         ...overrides,
     };
@@ -490,7 +500,6 @@ describe('useSubscriptionCheck', () => {
                 callbacks: {
                     runAdditionalChecks: jest.fn().mockResolvedValue(undefined),
                     shouldPassIsTrial: jest.fn().mockReturnValue(false),
-                    reportPlanIDsIfChanged: jest.fn(),
                     onPlusToPlusTransition: jest.fn(),
                     onVisionaryDowngradeWarning: jest.fn().mockRejectedValue(new Error('cancelled')),
                     onVisionaryDowngradeHide: jest.fn(),
@@ -582,7 +591,6 @@ describe('useSubscriptionCheck', () => {
                 callbacks: {
                     runAdditionalChecks: jest.fn().mockRejectedValue(new Error('additional check failed')),
                     shouldPassIsTrial: jest.fn().mockReturnValue(false),
-                    reportPlanIDsIfChanged: jest.fn(),
                     onPlusToPlusTransition: jest.fn(),
                     onVisionaryDowngradeWarning: jest.fn().mockResolvedValue(undefined),
                     onVisionaryDowngradeHide: jest.fn(),
