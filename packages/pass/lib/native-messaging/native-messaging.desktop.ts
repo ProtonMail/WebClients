@@ -15,18 +15,20 @@ export const sendNativeMessageResponse: SendNativeMessageResponse = async (respo
 export const listenNativeMessage = <Type extends NativeMessageType>(
     type: Type,
     isReady: boolean,
+    isLocked: boolean,
     userId: string,
     callback: (request: NativeMessageRequestForType<Type>, messageId: string) => void
 ) => {
     return window.ctxBridge?.onNmRequest(async (payload) => {
         log('Request received in view', payload.type);
 
-        /** If we receive an encrypted request while the app is locked, we return an error */
         if ('encrypted' in payload && !isReady) {
             return sendNativeMessageResponse(
                 {
                     type: NativeMessageType.SETUP_LOCK_SECRET,
-                    error: NativeMessageErrorType.DESKTOP_APP_LOCKED,
+                    error: isLocked
+                        ? NativeMessageErrorType.DESKTOP_APP_LOCKED
+                        : NativeMessageErrorType.DESKTOP_APP_NOT_LOGGED_IN,
                 },
                 payload.messageId
             );
