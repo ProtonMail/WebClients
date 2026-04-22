@@ -26,7 +26,7 @@ const getEmailState = (emailRecovery: ReturnType<typeof selectAccountRecovery>['
     if (!emailRecovery.hasReset) {
         return { type: 'off' };
     }
-    if (emailRecovery.isVerified) {
+    if (!emailRecovery.isVerified) {
         return { type: 'unverified', email: emailRecovery.value };
     }
     return { type: 'active', email: emailRecovery.value };
