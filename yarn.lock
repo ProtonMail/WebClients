@@ -11275,7 +11275,7 @@ __metadata:
   resolution: "@proton/pass-docs@workspace:packages/pass/docs/starlight"
   dependencies:
     "@astrojs/starlight": "npm:^0.38.2"
-    astro: "npm:^6.1.6"
+    astro: "npm:^6.1.8"
     astro-mermaid: "npm:^2.0.1"
     mermaid: "npm:^11.14.0"
     sharp: "npm:^0.34.5"
@@ -19656,7 +19656,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"astro@npm:^6.1.6":
+"astro@npm:^6.1.8":
   version: 6.1.8
   resolution: "astro@npm:6.1.8"
   dependencies:
