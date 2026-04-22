@@ -2,15 +2,14 @@ import { useRef } from 'react';
 
 import { c } from 'ttag';
 
+import type { PaymentFacade } from '@proton/components/payments/client-extensions';
 import { useLoading } from '@proton/hooks';
 import {
-    type Cycle,
     type FreeSubscription,
     type FullPlansMap,
     PAYMENT_METHOD_TYPES,
     type PlainPaymentMethodType,
     type Plan,
-    type PlanIDs,
     type Subscription,
     type SubscriptionEstimation,
     getFreeCheckResult,
@@ -24,13 +23,18 @@ import { ProrationMode } from '@proton/payments/core/api/api';
 import { getOptimisticCheckResult } from '@proton/payments/core/checkout';
 import { VatReverseChargeNotSupportedError } from '@proton/payments/core/errors';
 import { getAutoCoupon } from '@proton/payments/core/subscription/helpers';
+import type { PaymentTelemetryContext } from '@proton/payments/telemetry/helpers';
+import type { ProductParam } from '@proton/shared/lib/apps/product';
+import type { APP_NAMES } from '@proton/shared/lib/constants';
+import type { UserModel } from '@proton/shared/lib/interfaces';
 import isTruthy from '@proton/utils/isTruthy';
 
 import useNotifications from '../../../hooks/useNotifications';
 import { forceAddonsMinMaxConstraints } from '../planCustomizer/ProtonPlanCustomizer';
 import type { Model } from './SubscriptionContainer';
 import { SUBSCRIPTION_STEPS } from './constants';
-import { getAllowedCycles } from './helpers/getAllowedCycles';
+import { reportPlanIDsIfChangedTelemetry } from './helpers/subscriptionTelemetry';
+import { switchCycle } from './helpers/switchCycle';
 
 export const getCodes = ({ gift, coupon }: Pick<Model, 'gift' | 'coupon'>): string[] => [gift, coupon].filter(isTruthy);
 
@@ -78,24 +82,19 @@ export interface UseSubscriptionContainerInnerCheckProps {
             signal: AbortSignal
         ) => Promise<void>;
         shouldPassIsTrial: (newModel: Model, downgradeIsTrial: boolean) => boolean | undefined;
-        reportPlanIDsIfChanged: (planIDs: PlanIDs) => void;
         onCheck?: (
             data:
                 | { model: Model; newModel: Model; type: 'error'; error: any }
                 | { model: Model; newModel: Model; type: 'success'; result: SubscriptionEstimation }
         ) => void;
     } & PlanTransitionCallbacks;
-}
-
-function switchCycle(
-    preferredCycle: Cycle,
-    selectedPlanIDs: PlanIDs,
-    currency: Model['currency'],
-    subscription: Subscription | FreeSubscription,
-    plansMap: FullPlansMap
-): Cycle {
-    const allowedCycles = getAllowedCycles({ subscription, planIDs: selectedPlanIDs, plansMap, currency });
-    return allowedCycles.includes(preferredCycle) ? preferredCycle : allowedCycles[0];
+    telemetry: {
+        user: UserModel;
+        APP_NAME: APP_NAMES;
+        app: ProductParam;
+        paymentFacade: PaymentFacade;
+        context: PaymentTelemetryContext;
+    };
 }
 
 async function normalizeModel(newModel: Model, props: NormalizeModelProps): Promise<boolean> {
@@ -109,13 +108,16 @@ async function normalizeModel(newModel: Model, props: NormalizeModelProps): Prom
 
         if (planTransitionForbidden?.type === 'lumo-plus' || planTransitionForbidden?.type === 'meet-plus') {
             newModel.planIDs = planTransitionForbidden.newPlanIDs;
-            newModel.cycle = switchCycle(
-                props.subscription?.Cycle ?? newModel.cycle,
-                newModel.planIDs,
-                newModel.currency,
-                props.subscription,
-                props.plansMap
-            );
+            // since we are switching the plan, it's the same as switching the cycle manually, so we need to make sure
+            // that the cycle is allowed
+
+            newModel.cycle = switchCycle({
+                preferredCycle: props.subscription?.Cycle ?? newModel.cycle,
+                selectedPlanIDs: newModel.planIDs,
+                currency: newModel.currency,
+                subscription: props.subscription,
+                plansMap: props.plansMap,
+            });
         }
 
         if (planTransitionForbidden?.type === 'plus-to-plus') {
@@ -123,13 +125,13 @@ async function normalizeModel(newModel: Model, props: NormalizeModelProps): Prom
                 planTransitionForbidden.newPlanName ? props.plansMap[planTransitionForbidden.newPlanName] : undefined
             );
             newModel.planIDs = getPlanIDs(latestSubscription);
-            newModel.cycle = switchCycle(
-                newModel.cycle,
-                newModel.planIDs,
-                newModel.currency,
-                props.subscription,
-                props.plansMap
-            );
+            newModel.cycle = switchCycle({
+                preferredCycle: newModel.cycle,
+                selectedPlanIDs: newModel.planIDs,
+                currency: newModel.currency,
+                subscription: props.subscription,
+                plansMap: props.plansMap,
+            });
             newModel.step = props.currentStep;
         }
 
@@ -182,7 +184,8 @@ export function useSubscriptionContainerInnerCheck(props: UseSubscriptionContain
             paymentFacadeSelectedMethodType,
             refs: { plansMapRef, giftCodeRef },
             setters: { setCheckResult, setModel, setVatReverseChargeErrorModal },
-            callbacks: { runAdditionalChecks, shouldPassIsTrial, reportPlanIDsIfChanged, onCheck },
+            callbacks: { runAdditionalChecks, shouldPassIsTrial, onCheck },
+            telemetry,
         } = props;
 
         const copyNewModel: Model = {
@@ -208,7 +211,14 @@ export function useSubscriptionContainerInnerCheck(props: UseSubscriptionContain
             return;
         }
 
-        reportPlanIDsIfChanged(copyNewModel.planIDs);
+        reportPlanIDsIfChangedTelemetry(copyNewModel.planIDs, telemetry.paymentFacade, {
+            user: telemetry.user,
+            appName: telemetry.APP_NAME,
+            app: telemetry.app,
+            context: telemetry.context,
+            subscription,
+            model,
+        });
 
         const dontQueryCheck = copyNewModel.step === SUBSCRIPTION_STEPS.PLAN_SELECTION;
 
