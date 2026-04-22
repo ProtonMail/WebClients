@@ -32,9 +32,10 @@ const RECOVERY_STATE_CACHE_KEY = 'photos-recovery-state';
 
 export const usePhotosRecovery = ({ onSucceed }: { onSucceed?: () => void } = {}) => {
     const { shareId, linkId, volumeId, volumeType, deletePhotosShare } = usePhotosWithAlbums();
-    const { getRestoredPhotosShares, removeShares } = useSharesStore((state) => ({
+    const { getRestoredPhotosShares, removeShares, sharesRecord } = useSharesStore((state) => ({
         getRestoredPhotosShares: state.getRestoredPhotosShares,
         removeShares: state.removeShares,
+        sharesRecord: state.shares,
     }));
     const { getCachedChildren, getCachedTrashed, loadChildren } = useLinksListing();
     const { recoverPhotoLinks, moveLinks } = useLinksActions();
@@ -44,12 +45,15 @@ export const usePhotosRecovery = ({ onSucceed }: { onSucceed?: () => void } = {}
     const [restoredData, setRestoredData] = useState<{ links: DecryptedLink[]; shareId: string }[]>([]);
     const [restoredShares, setRestoredShares] = useState<Share[] | ShareWithKey[] | undefined>();
 
-    useEffect(() => {
-        const shares = getRestoredPhotosShares();
-        if (!isEqual(shares, restoredShares)) {
-            setRestoredShares(shares);
-        }
-    }, [getRestoredPhotosShares]);
+    useEffect(
+        function initRestoredPhotoShares() {
+            setRestoredShares((prev) => {
+                const next = getRestoredPhotosShares();
+                return isEqual(prev, next) ? prev : next;
+            });
+        },
+        [getRestoredPhotosShares, sharesRecord]
+    );
 
     const handleFailed = (e: Error) => {
         setState('FAILED');
