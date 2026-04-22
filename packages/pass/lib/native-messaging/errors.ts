@@ -22,17 +22,19 @@ export const getMessageForNativeMessageError = (error: NativeMessageErrorType) =
         case NativeMessageErrorType.TIMEOUT:
             return c('Error').t`The ${PASS_APP_NAME} desktop app did not respond in time.`;
         case NativeMessageErrorType.SETUP_LOCK_SECRET_INVALID_RESPONSE:
-            return c('Error').t`Desktop lock setup failed.`;
+            return c('Error').t`Biometric lock setup failed.`;
         case NativeMessageErrorType.SECRET_NOT_FOUND:
-            return c('Error').t`Desktop lock secret not found.`;
+            return c('Error').t`Biometric lock credentials not found.`;
         case NativeMessageErrorType.BIOMETRICS_FAILED:
             return c('Error').t`Biometric authentication failed.`;
         case NativeMessageErrorType.DESKTOP_LOCK_NOT_CONFIGURED:
-            return c('Error').t`Desktop lock is not configured.`;
+            return c('Error').t`Biometric lock is not configured.`;
         case NativeMessageErrorType.SECRET_MISMATCH:
-            return c('Error').t`Desktop lock secret does not match.`;
+            return c('Error').t`Biometric lock credentials do not match.`;
         case NativeMessageErrorType.ACCOUNT_MISMATCH:
             return c('Error').t`The ${PASS_APP_NAME} desktop app is signed in with a different account.`;
+        case NativeMessageErrorType.DESKTOP_APP_NOT_LOGGED_IN:
+            return c('Error').t`The ${PASS_APP_NAME} desktop app should be logged in.`;
         default:
             return c('Error').t`Unknown error.`;
     }

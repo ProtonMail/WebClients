@@ -10,6 +10,7 @@ import { NativeMessageError } from '@proton/pass/lib/native-messaging/errors';
 import type { NativeMessagingService } from '@proton/pass/lib/native-messaging/native-messaging.extension';
 import { NativeMessageErrorType, PassEncryptionTag } from '@proton/pass/types';
 import { SilentError } from '@proton/pass/utils/errors/errors';
+import { asyncLock } from '@proton/pass/utils/fp/promises';
 import { logger } from '@proton/pass/utils/logger';
 import { getEpoch } from '@proton/pass/utils/time/epoch';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
@@ -99,7 +100,7 @@ export const desktopLockAdapterFactory = (
             return { mode: adapter.type, locked: true };
         },
 
-        unlock: async (secret: string) => {
+        unlock: asyncLock(async (secret: string) => {
             logger.info(`[DesktopLock] unlocking session`);
 
             /** Get verifier in session or fail — configuration error, not an auth failure */
@@ -140,7 +141,7 @@ export const desktopLockAdapterFactory = (
             await adapter.check();
 
             return secret;
-        },
+        }),
     };
 
     return adapter;

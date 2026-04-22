@@ -36,6 +36,7 @@ impl fmt::Display for NativeMessage {
 #[derive(Debug)]
 pub enum NativeErrorCode {
     HostNotResponding,
+    DesktopAppNotLoggedIn,
     BiometricsFailed,
     SecretNotFound,
     Unknown,
@@ -45,6 +46,7 @@ impl fmt::Display for NativeErrorCode {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         let code = match self {
             Self::HostNotResponding => "HOST_NOT_RESPONDING",
+            Self::DesktopAppNotLoggedIn => "DESKTOP_APP_NOT_LOGGED_IN",
             Self::BiometricsFailed => "BIOMETRICS_FAILED",
             Self::SecretNotFound => "SECRET_NOT_FOUND",
             Self::Unknown => "UNKNOWN",

@@ -20,7 +20,7 @@ pub fn nm_install(binary_path: &String) -> std::io::Result<()> {
             "78272b6fa58f4a1abaac99321d503a20@proton.me".to_string(), // Firefox ID
         ],
         // Browsers list
-        &["chrome", "firefox", "edge"],
+        &["chrome", "chromium", "firefox", "edge", "brave", "vivaldi", "librewolf"],
         // Install scope
         Scope::User,
     )
