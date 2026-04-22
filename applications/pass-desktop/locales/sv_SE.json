@@ -1362,6 +1362,12 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
         "${ PASS_APP_NAME }-appen för stationär dator är inloggad med ett annat konto."
+      ],
+      "Desktop lock is not configured.": [
+        "Inställning av lås för stationär dator är inte konfigurerad."
+      ],
+      "Desktop lock setup failed.": [
+        "Inställning av lås för stationär dator misslyckades."
       ]
     },
     "Error message": {
@@ -5228,6 +5234,11 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Din prenumeration tillåter inte att du skapar flera valv. Alla objekt kommer att importeras till ditt första valv. För att importera till flera valv, uppgradera din prenumeration."
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "Skaffa ${ planName }"
       ]
     }
   }
