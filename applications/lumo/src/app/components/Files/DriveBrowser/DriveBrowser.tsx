@@ -74,8 +74,16 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
         },
         ref
     ) => {
-        const { isInitialized, error, getRootFolder, browseFolderChildren, downloadFile, uploadFile, createFolder } =
-            useDriveSDK();
+        const {
+            isInitialized,
+            error,
+            getRootFolder,
+            browseFolderChildren,
+            downloadFile,
+            uploadFile,
+            createFolder,
+            iterateSharedWithMe,
+        } = useDriveSDK();
         const { indexingStatus, isIndexing, indexedFolders } = useDriveFolderIndexing();
         const { setIndexingFile } = useDriveIndexing();
         const { createNotification } = useNotifications();
@@ -105,6 +113,12 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
             }
         }, [error]);
 
+        // Whether the current folder is the real "My Files" root (not a scoped initialFolderId).
+        // Shared-with-me items are only surfaced at this level, since they live outside the
+        // user's own volume and have no meaningful parent-child relationship with My Files.
+        const isAtMyFilesRoot =
+            !initialFolderId && !!rootFolderId && currentFolder?.nodeUid === rootFolderId;
+
         const handleRefresh = useCallback(async () => {
             if (!currentFolder) {
                 return;
@@ -117,14 +131,23 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
                 await new Promise((resolve) => setTimeout(resolve, 100));
 
                 const folderChildren = await browseFolderChildren(currentFolder.nodeUid, true);
-                setChildren(folderChildren);
+
+                if (isAtMyFilesRoot) {
+                    const sharedWithMe = await iterateSharedWithMe().catch((err) => {
+                        console.error('Failed to load shared-with-me nodes on refresh:', err);
+                        return [] as DriveNode[];
+                    });
+                    setChildren([...folderChildren, ...sharedWithMe]);
+                } else {
+                    setChildren(folderChildren);
+                }
             } catch (error) {
                 console.error('Failed to refresh folder:', error);
                 onError?.(error instanceof Error ? error : new Error('Failed to refresh folder'));
             } finally {
                 setIsRefreshing(false);
             }
-        }, [browseFolderChildren, currentFolder, onError]);
+        }, [browseFolderChildren, currentFolder, onError, isAtMyFilesRoot, iterateSharedWithMe]);
 
         // Refresh when window regains focus (user comes back to the tab)
         useEffect(() => {
@@ -170,13 +193,22 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
                     setBreadcrumbs(initialBreadcrumbs);
                     onBreadcrumbsChange?.(initialBreadcrumbs);
                 } else {
-                    // Start at root folder
+                    // Start at root folder. We also load items shared with the user here so
+                    // they show up alongside My Files (they live on separate volumes in the API
+                    // and aren't returned by iterateFolderChildren on the root).
                     setCurrentFolder(rootFolder);
                     const rootBreadcrumbs = [{ node: rootFolder, index: 0 }];
                     setBreadcrumbs(rootBreadcrumbs);
                     onBreadcrumbsChange?.(rootBreadcrumbs);
-                    const rootChildren = await browseFolderChildren(rootFolder.nodeUid);
-                    setChildren(rootChildren);
+
+                    const [rootChildren, sharedWithMe] = await Promise.all([
+                        browseFolderChildren(rootFolder.nodeUid),
+                        iterateSharedWithMe().catch((err) => {
+                            console.error('Failed to load shared-with-me nodes:', err);
+                            return [] as DriveNode[];
+                        }),
+                    ]);
+                    setChildren([...rootChildren, ...sharedWithMe]);
                 }
             } catch (err) {
                 console.error('Failed to initialize Drive browser:', err);
@@ -198,7 +230,7 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
             } finally {
                 setLoading(false);
             }
-        }, [getRootFolder, browseFolderChildren, onError, initialFolderId, initialFolderName]);
+        }, [getRootFolder, browseFolderChildren, onError, initialFolderId, initialFolderName, iterateSharedWithMe]);
 
         useEffect(() => {
             if (!isInitialized || error || initializedRef.current) {

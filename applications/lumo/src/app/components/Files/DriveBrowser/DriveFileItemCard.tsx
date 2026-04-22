@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { c } from 'ttag';
+
 import { Button } from '@proton/atoms/Button/Button';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import { FileIcon } from '@proton/components';
@@ -8,6 +10,7 @@ import { IcArrowsRotate } from '@proton/icons/icons/IcArrowsRotate';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
 import { IcFolderFilled } from '@proton/icons/icons/IcFolderFilled';
+import { IcUsersFilled } from '@proton/icons/icons/IcUsersFilled';
 
 import { getFileTypeDescription, getMimeTypeFromExtension } from '../../../util/filetypes';
 import { formatFileSize } from '../fileUtils';
@@ -35,6 +38,9 @@ export interface FileItemData {
     subtitle?: string;
     // Progress for downloads
     downloadProgress?: number;
+    // Shared-with-me metadata (item lives outside the user's own volume)
+    isSharedWithMe?: boolean;
+    sharedBy?: string;
 }
 
 export interface FileItemCardProps {
@@ -97,11 +103,33 @@ export const DriveFileItemCard: React.FC<FileItemCardProps> = ({
             onClick={isClickable ? onClick : undefined}
         >
             {/* File icon */}
-            <div className="shrink-0 mr-3">
+            <div className="shrink-0 mr-3 relative">
                 {file.type === NodeType.Folder ? (
                     <IcFolderFilled size={variant === 'simple' ? 10 : 6} className="color-warning" />
                 ) : (
                     <FileIcon mimeType={file.mediaType || detectedMimeType} size={variant === 'simple' ? 10 : 6} />
+                )}
+                {file.isSharedWithMe && (
+                    <Tooltip
+                        title={
+                            file.sharedBy
+                                ? c('collider_2025: Info').t`Shared with you by ${file.sharedBy}`
+                                : c('collider_2025: Info').t`Shared with you`
+                        }
+                    >
+                        <span
+                            className="absolute flex items-center justify-center rounded-full bg-norm"
+                            style={{
+                                bottom: -2,
+                                right: -2,
+                                width: 14,
+                                height: 14,
+                                boxShadow: '0 0 0 1px var(--background-norm)',
+                            }}
+                        >
+                            <IcUsersFilled size={3} className="color-primary" />
+                        </span>
+                    </Tooltip>
                 )}
             </div>
 
@@ -122,10 +150,18 @@ export const DriveFileItemCard: React.FC<FileItemCardProps> = ({
                 </span>
 
                 <div className="flex flex-row items-center gap-2 flex-nowrap">
-                    {(file.subtitle || file.type === NodeType.File) && (
-                        <span className={`color-weak shrink-0 text-xs`}>
-                            {file.subtitle || (file.type === NodeType.File ? fileTypeDescription : '')}
+                    {file.isSharedWithMe ? (
+                        <span className="color-primary shrink-0 text-xs">
+                            {file.sharedBy
+                                ? c('collider_2025: Info').t`Shared by ${file.sharedBy}`
+                                : c('collider_2025: Info').t`Shared with you`}
                         </span>
+                    ) : (
+                        (file.subtitle || file.type === NodeType.File) && (
+                            <span className={`color-weak shrink-0 text-xs`}>
+                                {file.subtitle || (file.type === NodeType.File ? fileTypeDescription : '')}
+                            </span>
+                        )
                     )}
 
                     {file.size && <span className={`color-weak shrink-0 text-xs`}>{formatFileSize(file.size)}</span>}

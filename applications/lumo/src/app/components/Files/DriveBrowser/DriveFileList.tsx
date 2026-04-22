@@ -50,6 +50,11 @@ export const DriveFileList: React.FC<DriveFileListProps> = ({
         if (a.type !== NodeType.Folder && b.type === NodeType.Folder) {
             return 1;
         }
+        // Push shared-with-me items to the bottom within their type group so the user's own
+        // content is surfaced first.
+        if (!!a.isSharedWithMe !== !!b.isSharedWithMe) {
+            return a.isSharedWithMe ? 1 : -1;
+        }
         // Within the same type, sort alphabetically by name (case-insensitive)
         return a.name.toLowerCase().localeCompare(b.name.toLowerCase());
     });
@@ -64,6 +69,8 @@ export const DriveFileList: React.FC<DriveFileListProps> = ({
                     size: child.size,
                     type: child.type,
                     downloadProgress: downloadingFile === child.nodeUid ? downloadProgress || undefined : undefined,
+                    isSharedWithMe: child.isSharedWithMe,
+                    sharedBy: child.sharedBy,
                 };
 
                 const fileExists = existingFiles.some((existing) => existing.filename === child.name);
