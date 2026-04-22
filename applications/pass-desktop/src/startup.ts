@@ -1,5 +1,6 @@
 import { setupIpcHandlers as autotype } from './lib/autotype';
 import biometrics from './lib/biometrics';
+import { setupIpcHandlers as client } from './lib/client';
 import { setupIpcHandlers as clipboard } from './lib/clipboard/clipboard.ipc';
 import contextMenu from './lib/context-menu';
 import { setupIpcHandlers as info } from './lib/install-info';
@@ -24,6 +25,7 @@ export const startup = async (app: Electron.App, ctx: PassElectronContext) => {
     biometrics(() => ctx.window);
     navigation(() => ctx.window);
     sessionStorage(() => ctx.session);
+    client();
     clipboard();
     info();
     theming();
