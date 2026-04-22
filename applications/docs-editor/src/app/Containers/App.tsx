@@ -92,6 +92,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
   const spreadsheetRef = useRef<SpreadsheetRef | null>(null)
   const latestSpreadsheetStateToLogRef = useRef<unknown>({})
   const [clonedEditorState, setClonedEditorState] = useState<EditorState>()
+  const [isEditorRefReady, setIsEditorRefReady] = useState(false)
 
   useEffect(() => {
     if (userMode !== EditorUserMode.Preview) {
@@ -107,7 +108,9 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
     return editorRef.current.registerUpdateListener(({ editorState }) => {
       setClonedEditorState(editorState.clone())
     })
-  }, [userMode])
+    // isEditorRefReady is included so the effect re-runs once the Lexical ref
+    // attaches, which can happen after userMode flips to Preview for viewers.
+  }, [userMode, isEditorRefReady])
 
   const updateFrameSize = useCallback(() => {
     if (!bridge || !editorRef.current) {
@@ -122,6 +125,7 @@ export function App({ documentType, systemMode, bridgeState }: AppProps) {
   const setEditorRef = useCallback(
     (instance: LexicalEditor | null) => {
       editorRef.current = instance
+      setIsEditorRefReady(!!instance)
 
       if (editorRef.current) {
         updateFrameSize()
