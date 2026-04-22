@@ -33,14 +33,29 @@ import {
     BRAND_NAME,
     DUO_MAX_USERS,
     FAMILY_MAX_USERS,
+    MAIL_APP_NAME,
     MAIL_SHORT_APP_NAME,
+    PASS_SHORT_APP_NAME,
     PROTON_SENTINEL_NAME,
+    VPN_SHORT_APP_NAME,
 } from '@proton/shared/lib/constants';
 import type { APP_NAMES } from '@proton/shared/lib/constants';
 import type { SizeUnits } from '@proton/shared/lib/helpers/humanSize';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
 import type { ComparisonFeatureRow } from '../components/ComparisonTable';
+
+const DRIVE_PLUS_NAME = 'Drive Plus';
+
+const getPremiumFeaturesIncludedB2CTooltip = () => {
+    return c('Tooltip')
+        .t`Includes custom email domains and unlimited hide-my-email aliases in ${MAIL_APP_NAME}, access to servers in 120+ countries in ${VPN_SHORT_APP_NAME}, built-in 2FA and secure sharing in ${PASS_SHORT_APP_NAME}, and more.`;
+};
+
+const getPremiumFeaturesIncludedB2BTooltip = () => {
+    return c('Tooltip')
+        .t`Includes professional email at @yourdomain.com, cloud storage with collaborative document editing, scheduling and video conferencing, password management, a secure ${VPN_SHORT_APP_NAME}, and more.`;
+};
 
 interface TemporaryNeedPlanConfig {
     currentPlanHeader: ReactNode;
@@ -175,6 +190,7 @@ const getBundleFeatures = ({ planMaxSpaceBytes, freeMaxBaseSpaceBytes }: PlanVal
                 />
             ),
             rightValue: <Dash />,
+            tooltip: getPremiumFeaturesIncludedB2CTooltip(),
         },
     ];
 };
@@ -253,6 +269,7 @@ const getDuoFeatures = ({ planMaxSpaceBytes, freeMaxBaseSpaceBytes }: PlanValues
                 />
             ),
             rightValue: <Dash />,
+            tooltip: getPremiumFeaturesIncludedB2CTooltip(),
         },
     ];
 };
@@ -301,6 +318,7 @@ const getFamilyFeatures = ({ planMaxSpaceBytes, freeMaxBaseSpaceBytes }: PlanVal
                 />
             ),
             rightValue: <Dash />,
+            tooltip: getPremiumFeaturesIncludedB2CTooltip(),
         },
     ];
 };
@@ -355,6 +373,7 @@ const getVisionaryFeatures = ({ planMaxSpaceBytes, freeMaxBaseSpaceBytes }: Plan
                 />
             ),
             rightValue: <Dash />,
+            tooltip: getPremiumFeaturesIncludedB2CTooltip(),
         },
     ];
 };
@@ -533,6 +552,7 @@ const getBundleProFeatures = ({ planMaxSpaceBytes, freeMaxBaseSpaceBytes }: Plan
                 />
             ),
             rightValue: <Dash />,
+            tooltip: getPremiumFeaturesIncludedB2BTooltip(),
         },
     ];
 };
@@ -582,6 +602,7 @@ const getWorkspaceFeatures = ({ planMaxSpaceBytes, freeMaxBaseSpaceBytes }: Plan
                 />
             ),
             rightValue: <Dash />,
+            tooltip: getPremiumFeaturesIncludedB2BTooltip(),
         },
     ];
 };
@@ -596,14 +617,14 @@ const getBundleSubtitle = (planTitle: string) => {
         .t`${planTitle} gives you access to all apps and premium features. Privacy is built-in so you can get on with it, knowing your data and identity are safe.`;
 };
 
-const getDrive200GBSubtitle = (planTitle: string) => {
+const getDrive200GBSubtitle = () => {
     return c('Subtitle')
-        .t`${planTitle} offers 200 GB storage for your files and photos. You are also eligible for yearly storage bonuses.`;
+        .t`${DRIVE_PLUS_NAME} offers 200 GB storage for your files and photos. You are also eligible for yearly storage bonuses.`;
 };
 
-const getDrive1TBSubtitle = (planTitle: string) => {
+const getDrive1TBSubtitle = () => {
     return c('Subtitle')
-        .t`${planTitle} offers 1 TB storage for your files and photos. You are also eligible for yearly storage bonuses.`;
+        .t`${DRIVE_PLUS_NAME} offers 1 TB storage for your files and photos. You are also eligible for yearly storage bonuses.`;
 };
 
 const getDuoSubtitle = (planTitle: string) => {
@@ -637,7 +658,11 @@ const getWorkspaceSubtitle = (planTitle: string) => {
 
 export const getTemporaryNeedConfig = (plan: Plan, freePlan: FreePlanDefault): TemporaryNeedPlanConfig | undefined => {
     const planTitle = plan.Title;
-    const planDisplayName = PLAN_NAMES[plan.Name as PLANS] ?? planTitle;
+    let planDisplayName = PLAN_NAMES[plan.Name as PLANS] ?? planTitle;
+
+    if (plan.Name === PLANS.DRIVE || plan.Name === PLANS.DRIVE_1TB) {
+        planDisplayName = DRIVE_PLUS_NAME;
+    }
 
     const values: PlanValues = {
         planMaxSpaceBytes: plan.MaxSpace,
@@ -697,13 +722,13 @@ export const getTemporaryNeedConfig = (plan: Plan, freePlan: FreePlanDefault): T
         [PLANS.DRIVE]: {
             currentPlanHeader: makePlanHeader(PLANS.DRIVE),
             freePlanHeader: driveFreePlanHeader,
-            subtitle: getDrive200GBSubtitle(planTitle),
+            subtitle: getDrive200GBSubtitle(),
             features: getDriveFeatures(values),
         },
         [PLANS.DRIVE_1TB]: {
             currentPlanHeader: makePlanHeader(PLANS.DRIVE),
             freePlanHeader: driveFreePlanHeader,
-            subtitle: getDrive1TBSubtitle(planTitle),
+            subtitle: getDrive1TBSubtitle(),
             features: getDriveFeatures(values),
         },
         [PLANS.DUO]: {

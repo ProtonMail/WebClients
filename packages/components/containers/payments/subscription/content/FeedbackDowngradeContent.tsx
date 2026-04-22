@@ -7,9 +7,6 @@ import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { CircledNumber } from '@proton/atoms/CircledNumber/CircledNumber';
-import Form from '@proton/components/components/form/Form';
-import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
-import Modal from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
@@ -26,12 +23,12 @@ import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
 import { maxLengthValidator, minLengthValidator, requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { UserModel } from '@proton/shared/lib/interfaces';
-import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 import shuffle from '@proton/utils/shuffle';
 
-import useCancellationTelemetry from './cancellationFlow/useCancellationTelemetry';
+import useCancellationTelemetry from '../cancellationFlow/useCancellationTelemetry';
+import { useFeedbackFirstEligibility } from '../cancellationFlowFeedbackFirst/useFeedbackFirstEligibility';
 
 export enum SUBSCRIPTION_CANCELLATION_REASONS {
     DIFFERENT_ACCOUNT = 'DIFFERENT_ACCOUNT',
@@ -66,24 +63,19 @@ export function isKeepSubscription(data: FeedbackDowngradeResult): data is KeepS
 
 export type FeedbackDowngradeResult = FeedbackDowngradeData | KeepSubscription;
 
-export type FeedbackDowngradeModalProps = Omit<ModalProps, 'onSubmit'> & {
+type FeedbackDowngradeContentProps = {
     user: UserModel;
+    onResolve: ModalTwoPromiseHandlers<FeedbackDowngradeResult>['onResolve'];
+    onClose?: () => void;
 };
 
-type PromiseHandlers = ModalTwoPromiseHandlers<FeedbackDowngradeResult>;
-
-const FeedbackDowngradeModal = ({
-    onResolve,
-    onClose,
-    user,
-    onReject,
-    ...rest
-}: FeedbackDowngradeModalProps & PromiseHandlers) => {
+const FeedbackDowngradeContent = ({ onResolve, onClose, user }: FeedbackDowngradeContentProps) => {
     const [subscription] = useSubscription();
     const [organization] = useOrganization();
     const isB2BTrial = useIsB2BTrial(subscription, organization);
     const { APP_NAME } = useConfig();
-    const feedbackFirstCancellationEnabled = useFlag('CancellationFlowFeedbackFirst');
+    const { hasB2CAccess, hasB2BAccess } = useFeedbackFirstEligibility();
+    const isEligibleForFeedbackFirst = hasB2CAccess || hasB2BAccess;
 
     const { isPaid } = user;
 
@@ -102,8 +94,10 @@ const FeedbackDowngradeModal = ({
     const [selectedProvider, setSelectedProvider] = useState('');
 
     const [randomisedOptions] = useState(() => {
+        const showVpnSpecificReasons = isVpnApp && !isEligibleForFeedbackFirst;
+
         const reasons: ReasonOption[] = [
-            !isVpnApp
+            !showVpnSpecificReasons
                 ? {
                       title: c('Downgrade account reason').t`I use a different ${BRAND_NAME} account`,
                       value: SUBSCRIPTION_CANCELLATION_REASONS.DIFFERENT_ACCOUNT,
@@ -111,7 +105,7 @@ const FeedbackDowngradeModal = ({
                 : undefined,
             isPaid
                 ? {
-                      title: isVpnApp
+                      title: showVpnSpecificReasons
                           ? c('Downgrade account reason').t`I found a cheaper VPN`
                           : c('Downgrade account reason').t`Subscription is too expensive`,
                       value: SUBSCRIPTION_CANCELLATION_REASONS.TOO_EXPENSIVE,
@@ -122,36 +116,36 @@ const FeedbackDowngradeModal = ({
                 value: SUBSCRIPTION_CANCELLATION_REASONS.MISSING_FEATURE,
             },
             {
-                title: isVpnApp
+                title: showVpnSpecificReasons
                     ? c('Downgrade account reason').t`The VPN is too slow`
                     : c('Downgrade account reason').t`Bugs or quality issue`,
                 value: SUBSCRIPTION_CANCELLATION_REASONS.QUALITY_ISSUE,
             },
-            isVpnApp
+            showVpnSpecificReasons
                 ? {
                       title: c('Downgrade account reason').t`It doesn't do what I need`,
                       value: SUBSCRIPTION_CANCELLATION_REASONS.STREAMING_SERVICE_UNSUPPORTED,
                   }
                 : undefined,
             {
-                title: isVpnApp
+                title: showVpnSpecificReasons
                     ? c('Downgrade account reason').t`I found a VPN with better features`
                     : c('Downgrade account reason').t`Switching to a different provider`,
                 value: SUBSCRIPTION_CANCELLATION_REASONS.SWITCHING_TO_DIFFERENT_SERVICE,
             },
             {
-                title: isVpnApp
+                title: showVpnSpecificReasons
                     ? c('Downgrade account reason').t`I only needed a VPN short-term`
                     : c('Downgrade account reason').t`Temporary need, may come back in the future`,
                 value: SUBSCRIPTION_CANCELLATION_REASONS.TEMPORARY,
             },
-            isVpnApp
+            showVpnSpecificReasons
                 ? {
                       title: c('Downgrade account reason').t`I have not managed to connect`,
                       value: SUBSCRIPTION_CANCELLATION_REASONS.VPN_CONNECTION_ISSUE,
                   }
                 : undefined,
-            isVpnApp
+            showVpnSpecificReasons
                 ? {
                       title: c('Downgrade account reason').t`I do not wish to share`,
                       value: SUBSCRIPTION_CANCELLATION_REASONS.NOT_WILLING_TO_SHARE,
@@ -193,6 +187,7 @@ const FeedbackDowngradeModal = ({
         value: model.ReasonDetails,
         className: 'border-weak rounded-lg mt-4',
         onValue: (value: string) => setModel((model) => ({ ...model, ReasonDetails: value })),
+        assistContainerClassName: 'mb-2',
     };
     const reasonDetails: ReasonDetail[] = [
         {
@@ -346,14 +341,7 @@ const FeedbackDowngradeModal = ({
     const continueCancellingText = c('Label').t`Continue cancelling`;
 
     return (
-        <Modal
-            as={Form}
-            onClose={handleKeepSubscription}
-            onSubmit={handleSubmit}
-            data-testid="help-improve"
-            size="xlarge"
-            {...rest}
-        >
+        <>
             <ModalHeader title={c('Downgrade modal exit survey title').t`Help us improve`} />
             <ModalContent>
                 <p className="mt-0 mb-10 color-weak" data-testid="feedback-reason-subtitle">
@@ -418,27 +406,27 @@ const FeedbackDowngradeModal = ({
                     </div>
                 </div>
             </ModalContent>
-            <ModalFooter className={clsx('gap-2', feedbackFirstCancellationEnabled && 'justify-end')}>
+            <ModalFooter className={clsx('gap-2', isEligibleForFeedbackFirst && 'justify-end')}>
                 <Button
                     data-testid="cancelFeedback"
-                    onClick={feedbackFirstCancellationEnabled ? handleSkipFeedback : handleKeepSubscription}
+                    onClick={isEligibleForFeedbackFirst ? handleSkipFeedback : handleKeepSubscription}
                     size="large"
                     className="rounded-lg"
                 >
-                    {feedbackFirstCancellationEnabled ? skipFeedbackText : cancelFeedbackText}
+                    {isEligibleForFeedbackFirst ? skipFeedbackText : cancelFeedbackText}
                 </Button>
                 <Button
                     data-testid="submitFeedback"
-                    type="submit"
-                    color={feedbackFirstCancellationEnabled ? 'danger' : submitFeedbackColor}
+                    onClick={handleSubmit}
+                    color={isEligibleForFeedbackFirst ? 'danger' : submitFeedbackColor}
                     size="large"
                     className="rounded-lg"
                 >
-                    {feedbackFirstCancellationEnabled ? continueCancellingText : submitFeedbackText}
+                    {isEligibleForFeedbackFirst ? continueCancellingText : submitFeedbackText}
                 </Button>
             </ModalFooter>
-        </Modal>
+        </>
     );
 };
 
-export default FeedbackDowngradeModal;
+export default FeedbackDowngradeContent;
