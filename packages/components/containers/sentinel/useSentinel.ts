@@ -1,8 +1,8 @@
-import { createSelector } from '@reduxjs/toolkit';
 import { c } from 'ttag';
 
-import { organizationThunk, selectOrganization } from '@proton/account/organization';
-import { selectUserSettings, userSettingsThunk } from '@proton/account/userSettings';
+import { organizationThunk } from '@proton/account/organization';
+import { selectOrganizationSentinel, selectUserSentinel } from '@proton/account/recovery/sentinelSelectors';
+import { userSettingsThunk } from '@proton/account/userSettings';
 import {
     disableHighSecurityOrganization,
     enableHighSecurityOrganization,
@@ -18,52 +18,10 @@ import {
     enableHighSecurity,
     updateSummaryEmailForHighSecurity,
 } from '@proton/shared/lib/api/settings';
-import {
-    ORGANIZATION_POLICY_ENFORCED,
-    PROTON_SENTINEL_NAME,
-    SETTINGS_PROTON_SENTINEL_STATE,
-} from '@proton/shared/lib/constants';
-import { isProtonSentinelEligible } from '@proton/shared/lib/helpers/userSettings';
+import { PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 import noop from '@proton/utils/noop';
 
 import { getDisabledString, getEnabledString } from '../credentialLeak/helpers';
-
-export const selectOrganizationSentinel = createSelector([selectOrganization], ({ value: organization }) => {
-    const orgSentinelEnforced = organization?.Settings.OrganizationPolicy.Enforced === ORGANIZATION_POLICY_ENFORCED.YES;
-    const orgSentinelValue = organization?.Settings.HighSecurity;
-    const orgSentinelEnabled = orgSentinelValue === SETTINGS_PROTON_SENTINEL_STATE.ENABLED;
-    const value = orgSentinelValue || SETTINGS_PROTON_SENTINEL_STATE.DISABLED;
-
-    return {
-        loading: organization === undefined,
-        eligible: orgSentinelEnforced || orgSentinelEnabled,
-        value,
-        checked: value === SETTINGS_PROTON_SENTINEL_STATE.ENABLED,
-        enforcedByOrganization: orgSentinelEnforced,
-    };
-});
-
-export const selectUserSentinel = createSelector(
-    [selectUserSettings, selectOrganization],
-    ({ value: userSettings }, { value: organization }) => {
-        const orgSentinelValue = organization?.Settings.HighSecurity;
-        const orgSentinelEnabled = orgSentinelValue === SETTINGS_PROTON_SENTINEL_STATE.ENABLED;
-
-        const userSentinelValue = userSettings?.HighSecurity.Value || SETTINGS_PROTON_SENTINEL_STATE.DISABLED;
-        const orgSentinelEnforced = userSettings?.OrganizationPolicy.Enforced === ORGANIZATION_POLICY_ENFORCED.YES;
-
-        const value = orgSentinelEnabled ? orgSentinelValue : userSentinelValue;
-
-        return {
-            loading: userSettings === undefined || organization === undefined,
-            eligible: Boolean(userSettings && isProtonSentinelEligible(userSettings)),
-            value,
-            checked: value === SETTINGS_PROTON_SENTINEL_STATE.ENABLED,
-            enforcedByOrganization: orgSentinelEnforced && orgSentinelEnabled,
-            notificationEmails: userSettings?.HighSecurity?.SummaryEmail,
-        };
-    }
-);
 
 export const useSentinel = (
     variant: 'user' | 'organization'

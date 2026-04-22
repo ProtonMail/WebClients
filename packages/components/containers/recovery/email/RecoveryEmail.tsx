@@ -1,23 +1,13 @@
-import type { ReactNode } from 'react';
-import { useState } from 'react';
+import { type FormEvent, type ReactNode, useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
-import { userSettingsActions, userSettingsThunk } from '@proton/account/userSettings';
 import { Button } from '@proton/atoms/Button/Button';
 import type { Input } from '@proton/atoms/Input/Input';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
 import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
-import useApi from '@proton/components/hooks/useApi';
-import useNotifications from '@proton/components/hooks/useNotifications';
-import useLoading from '@proton/hooks/useLoading';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
-import { useDispatch } from '@proton/redux-shared-store';
-import { CacheType } from '@proton/redux-utilities';
-import { updateEmail, updateResetEmail } from '@proton/shared/lib/api/settings';
-import { SETTINGS_PROTON_SENTINEL_STATE } from '@proton/shared/lib/constants';
 import { emailValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { UserSettings } from '@proton/shared/lib/interfaces';
 import { SETTINGS_STATUS } from '@proton/shared/lib/interfaces';
@@ -25,19 +15,20 @@ import clsx from '@proton/utils/clsx';
 import isTruthy from '@proton/utils/isTruthy';
 
 import type { InputFieldProps } from '../../../components/v2/field/InputField';
-import ConfirmRemoveEmailModal from './ConfirmRemoveEmailModal';
-import VerifyRecoveryEmailModal from './VerifyRecoveryEmailModal';
 
 interface RenderFormProps {
     className?: string;
     inputWidth?: string;
-    onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+    onSubmit: (e: FormEvent<HTMLFormElement>) => void;
+    onReset: () => void;
     input: ReactNode;
     submitButtonProps: {
         type: 'submit';
         disabled: boolean;
         loading: boolean;
     };
+    onVerify: () => void;
+    onRemove: () => void;
 }
 
 const defaultRenderForm = ({ className, inputWidth, onSubmit, input, submitButtonProps }: RenderFormProps) => {
@@ -59,100 +50,63 @@ const defaultRenderForm = ({ className, inputWidth, onSubmit, input, submitButto
 };
 
 interface Props {
-    email: UserSettings['Email'];
-    hasReset: boolean;
-    hasNotify: boolean;
+    emailData: {
+        value: string;
+        status: SETTINGS_STATUS;
+        hasReset: boolean;
+        hasNotify: boolean;
+    };
     className?: string;
     inputWidth?: string;
-    onSuccess?: (updatedUserSettings: UserSettings) => void;
+    onSuccess?: (data: { emailEnabled: boolean; updatedUserSettings: UserSettings }) => void;
     autoFocus?: boolean;
     renderForm?: (props: RenderFormProps) => ReactNode;
-    inputProps?: Partial<Pick<InputFieldProps<typeof Input>, 'label'>>;
+    inputProps?: Partial<Pick<InputFieldProps<typeof Input>, 'label' | 'readOnly' | 'placeholder'>>;
     disableVerifyCta?: boolean;
-    persistPasswordScope?: boolean;
-    canSubmit?: (input: string) => boolean;
+    onSubmit: (input: string) => void;
+    onVerify: () => void;
+    loading: boolean;
 }
 
 const RecoveryEmail = ({
     renderForm = defaultRenderForm,
-    email,
-    hasReset,
-    hasNotify,
+    emailData,
     className,
     inputWidth,
-    onSuccess,
     autoFocus,
     inputProps,
     disableVerifyCta,
-    persistPasswordScope = false,
-    canSubmit,
+    onSubmit,
+    onVerify,
+    loading,
 }: Props) => {
-    const api = useApi();
-    const dispatch = useDispatch();
-    const [input, setInput] = useState(email.Value || '');
-    const { createNotification } = useNotifications();
+    const [input, setInput] = useState(emailData.value);
     const { validator, onFormSubmit } = useFormErrors();
-    const [verifyRecoveryEmailModal, setVerifyRecoveryEmailModalOpen, renderVerifyRecoveryEmailModal] = useModalState();
-    const [confirmModal, setConfirmModal, renderConfirmModal] = useModalState();
-    const [updatingEmail, withUpdatingEmail] = useLoading();
 
-    const loading = renderVerifyRecoveryEmailModal || renderConfirmModal || updatingEmail;
-    const confirmStep = !input && (hasReset || hasNotify);
-
-    const handleUpdateEmail = async () => {
-        const { UserSettings } = await api<{ UserSettings: UserSettings }>(
-            updateEmail({
-                Email: input,
-                PersistPasswordScope: persistPasswordScope,
-            })
-        );
-
-        dispatch(userSettingsActions.set({ UserSettings }));
-
-        // TODO: temporarily included until BE takes care of it
-        if (UserSettings.HighSecurity.Value === SETTINGS_PROTON_SENTINEL_STATE.ENABLED) {
-            await api(updateResetEmail({ Reset: 0, PersistPasswordScope: persistPasswordScope }));
-            await dispatch(userSettingsThunk({ cache: CacheType.None }));
-        }
-
-        createNotification({ text: c('Success').t`Email updated` });
-        onSuccess?.(UserSettings);
-    };
+    useEffect(() => {
+        setInput(emailData.value);
+    }, [emailData.value]);
 
     return (
         <>
-            {renderConfirmModal && (
-                <ConfirmRemoveEmailModal
-                    hasReset={hasReset}
-                    hasNotify={hasNotify}
-                    {...confirmModal}
-                    onConfirm={() => withUpdatingEmail(handleUpdateEmail)}
-                />
-            )}
-            {renderVerifyRecoveryEmailModal && <VerifyRecoveryEmailModal email={email} {...verifyRecoveryEmailModal} />}
-
             {renderForm({
                 className,
                 inputWidth,
+                onVerify: () => onVerify(),
+                onRemove: () => onSubmit(''),
+                onReset: () => setInput(emailData.value),
                 onSubmit: (e) => {
                     e.preventDefault();
                     if (!onFormSubmit()) {
                         return;
                     }
-                    if (canSubmit && !canSubmit(input)) {
-                        return;
-                    }
-                    if (confirmStep) {
-                        setConfirmModal(true);
-                    } else {
-                        void withUpdatingEmail(handleUpdateEmail);
-                    }
+                    onSubmit(input);
                 },
                 input: (
                     <InputFieldTwo
                         type="email"
                         autoComplete="email"
-                        title={email.Value || ''}
+                        title={emailData.value}
                         autoFocus={autoFocus}
                         id="recovery-email-input"
                         disableChange={loading}
@@ -161,8 +115,8 @@ const RecoveryEmail = ({
                         onValue={setInput}
                         assistiveText={
                             !disableVerifyCta &&
-                            email.Value &&
-                            (email.Status !== SETTINGS_STATUS.VERIFIED ? (
+                            emailData.value &&
+                            (emailData.status !== SETTINGS_STATUS.VERIFIED ? (
                                 <>
                                     <IcExclamationCircleFilled className="color-danger shrink-0 aligntop mr-1" />
                                     <span className="color-norm mr-2">{c('Recovery Email')
@@ -170,9 +124,9 @@ const RecoveryEmail = ({
                                     <button
                                         className="link"
                                         type="button"
-                                        onClick={() => setVerifyRecoveryEmailModalOpen(true)}
+                                        onClick={() => onVerify()}
                                         aria-label={c('Recovery Email')
-                                            .t`Verify now this recovery email address: ${email.Value}`}
+                                            .t`Verify now this recovery email address: ${emailData.value}`}
                                     >
                                         {c('Recovery Email').t`Verify now`}
                                     </button>
@@ -191,7 +145,7 @@ const RecoveryEmail = ({
                 submitButtonProps: {
                     type: 'submit',
 
-                    disabled: (email.Value || '') === input,
+                    disabled: emailData.value === input,
                     loading,
                 },
             })}

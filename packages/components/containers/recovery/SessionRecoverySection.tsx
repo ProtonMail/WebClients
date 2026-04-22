@@ -1,5 +1,9 @@
 import { c } from 'ttag';
 
+import {
+    selectAvailableRecoveryMethods,
+    selectSessionRecoveryData,
+} from '@proton/account/recovery/sessionRecoverySelectors';
 import { userSettingsThunk } from '@proton/account/userSettings';
 import { Button } from '@proton/atoms/Button/Button';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
@@ -8,15 +12,10 @@ import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import metrics, { observeApiError } from '@proton/metrics';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { CacheType } from '@proton/redux-utilities';
 import { updateSessionAccountRecovery } from '@proton/shared/lib/api/sessionRecovery';
 
-import {
-    useAvailableRecoveryMethods,
-    useIsSessionRecoveryEnabled,
-    useIsSessionRecoveryInitiationAvailable,
-} from '../../hooks/useSessionRecovery';
 import ChangePasswordModal, { MODES } from '../account/ChangePasswordModal';
 import ReauthUsingRecoveryModal from '../account/ReauthUsingRecoveryModal';
 import SettingsLayout from '../account/SettingsLayout';
@@ -44,10 +43,12 @@ export const SessionRecoverySection = () => {
         renderConfirmDisableSessionRecoveryModal,
     ] = useModalState();
 
-    const [availableRecoveryMethods, loadingUseHasRecoveryMethod] = useAvailableRecoveryMethods();
-    const hasRecoveryMethod = availableRecoveryMethods.length > 0;
-    const isSessionRecoveryEnabled = useIsSessionRecoveryEnabled();
-    const isSessionRecoveryInitiationAvailable = useIsSessionRecoveryInitiationAvailable();
+    const {
+        availableRecoveryMethods,
+        hasRecoveryMethod,
+        loading: loadingUseHasRecoveryMethod,
+    } = useSelector(selectAvailableRecoveryMethods);
+    const { isSessionRecoveryEnabled, isSessionRecoveryInitiationAvailable } = useSelector(selectSessionRecoveryData);
 
     const { createNotification } = useNotifications();
 

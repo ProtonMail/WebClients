@@ -50,6 +50,7 @@ function buildDefaultParams(overrides?: Record<string, any>) {
         showMeetDashboardVariant: 'disabled' as const,
         hasPendingInvitations: false,
         isOLESEnabled: false,
+        isRecoverySettingsRedesignEnabled: false,
         ...overrides,
     };
 }

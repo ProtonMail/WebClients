@@ -3,6 +3,7 @@ import { Suspense, lazy } from 'react';
 import { c } from 'ttag';
 
 import { userSettingsActions } from '@proton/account';
+import { useUpdateAccountRecovery } from '@proton/account/recovery/useUpdateAccountRecovery';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import Info from '@proton/components/components/link/Info';
@@ -40,6 +41,7 @@ const MessagesGeneralSection = () => {
     const api = useApi();
     const dispatch = useDispatch();
     const { createNotification } = useNotifications();
+    const accountRecovery = useUpdateAccountRecovery();
 
     const showRecoveryEmailInput = !user.isPrivate;
     const canEnableDailyEmails = !!userSettings?.Email?.Value;
@@ -63,6 +65,7 @@ const MessagesGeneralSection = () => {
 
     return (
         <>
+            {accountRecovery.el}
             <SettingsSection>
                 <SettingsLayout>
                     <SettingsLayoutLeft>
@@ -87,12 +90,7 @@ const MessagesGeneralSection = () => {
                     </SettingsLayoutLeft>
                     <SettingsLayoutRight className="flex flex-1 items-center">
                         {!userLoading && showRecoveryEmailInput && (
-                            <RecoveryEmail
-                                className="mb-4 md:mb-0"
-                                email={userSettings.Email}
-                                hasReset={!!userSettings.Email.Reset}
-                                hasNotify={!!userSettings.Email.Notify}
-                            />
+                            <RecoveryEmail className="mb-4 md:mb-0" {...accountRecovery.recoveryEmail.props} />
                         )}
                         <div className="flex items-center">
                             <DailyEmailNotificationToggle

@@ -33,6 +33,7 @@ import {
     vpnServersCountReducer,
     welcomeFlagsReducer,
 } from '@proton/account';
+import { sessionRecoverySlice } from '@proton/account/recovery/sessionRecovery';
 import { featuresReducer } from '@proton/features';
 import { contactEmailsReducer } from '@proton/mail/store/contactEmails';
 import { contactsReducer } from '@proton/mail/store/contacts';
@@ -83,6 +84,7 @@ export const sharedReducers = {
     securityCheckup: securityCheckupSlice.reducer,
     features: featuresReducer.reducer,
     sessions: accountSessionsSlice.reducer,
+    sessionRecovery: sessionRecoverySlice.reducer,
 };
 
 export const sharedPersistReducer: Partial<{ [key in keyof typeof sharedReducers]: any }> = {

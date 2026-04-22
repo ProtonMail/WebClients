@@ -68,6 +68,7 @@ export const getRoutes = ({
     isOLESEnabled,
     isCategoryViewEnabled,
     isRolesAndPermissionsEnabled,
+    isRecoverySettingsRedesignEnabled,
 }: Arguments) => {
     return {
         account: getAccountAppRoutes({
@@ -101,6 +102,7 @@ export const getRoutes = ({
             showMeetDashboardVariant,
             hasPendingInvitations,
             isOLESEnabled,
+            isRecoverySettingsRedesignEnabled,
         }),
         mail: getMailAppRoutes({
             app,

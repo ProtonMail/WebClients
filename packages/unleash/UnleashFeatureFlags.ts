@@ -117,6 +117,7 @@ enum AccountFlag {
     CancellationFlowFeedbackFirst = 'CancellationFlowFeedbackFirst',
     BornPrivateEurope = 'BornPrivateEurope',
     B2BSidebarRefreshEnabled = 'B2BSidebarRefreshEnabled',
+    RecoverySettingsRedesign = 'RecoverySettingsRedesign',
     UnauthLost2FA = 'UnauthLost2FA',
     UnauthedForgotPassword = 'UnauthedForgotPassword',
 }
