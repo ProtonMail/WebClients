@@ -37,7 +37,6 @@ const MainContainer = ({
 }) => {
     const { isOnboardingCompleted } = useOnboardingContext();
     const { isSmallScreen } = useIsLumoSmallScreen();
-    const isMobileOrSmallScreen = isMobile() || isSmallScreen;
     const filesContainerRef = useRef<HTMLDivElement>(null);
     const isGuest = useIsGuest();
     const [isEditorFocused, setIsEditorFocused] = useState(false);
