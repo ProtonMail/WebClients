@@ -46,7 +46,7 @@ import type {
     TaskRunningInfo,
 } from './elementsTypes';
 import { getElementsToBypassFilter } from './helpers/elementBypassFilters';
-import { computeFilteredCounts, updateContextTotal } from './helpers/elementContextCount';
+import { computeContextTotals, updateContextTotals } from './helpers/elementContextCount';
 import { newRetry } from './helpers/elementQuery';
 
 export const globalReset = (state: Draft<ElementsState>) => {
@@ -198,8 +198,7 @@ export const eventUpdatesPending = (
     state: Draft<ElementsState>,
     action: PayloadAction<undefined, string, { arg: EventUpdates }>
 ) => {
-    // Get the context total before any mutations are applied.
-    const countsBeforeAction = computeFilteredCounts(state);
+    const countsBeforeAction = computeContextTotals(state);
 
     const { toCreate, toUpdate, toDelete } = action.meta.arg;
     toCreate.forEach((element) => {
@@ -217,21 +216,22 @@ export const eventUpdatesPending = (
         delete state.elements[elementID];
     });
 
-    // Update the context total for all cached contexts based on the mutation caused by event-loop
-    updateContextTotal({ state, countsBeforeAction });
+    const countsAfterAction = computeContextTotals(state);
+    updateContextTotals({ state, countsBeforeAction, countsAfterAction });
 };
 
 export const eventUpdatesFulfilled = (
     state: Draft<ElementsState>,
     action: PayloadAction<(Element | undefined)[], string, { arg: EventUpdates }>
 ) => {
-    const countsBeforeAction = computeFilteredCounts(state);
+    const countsBeforeAction = computeContextTotals(state);
 
     action.payload.filter(isTruthy).forEach((element) => {
         state.elements[element.ID] = element;
     });
 
-    updateContextTotal({ state, countsBeforeAction });
+    const countsAfterAction = computeContextTotals(state);
+    updateContextTotals({ state, countsBeforeAction, countsAfterAction });
 };
 
 export const addESResults = (state: Draft<ElementsState>, action: PayloadAction<ESResults>) => {
@@ -892,7 +892,7 @@ export const labelMessagesPending = (
     >
 ) => {
     const { messages, sourceLabelID, destinationLabelID, labels, folders } = action.meta.arg;
-    const countsBeforeAction = computeFilteredCounts(state);
+    const countsBeforeAction = computeContextTotals(state);
 
     messages.forEach((message) => {
         // Update conversation first because we need to have the initial state of the element
@@ -916,7 +916,8 @@ export const labelMessagesPending = (
         applyLabelToMessage(elementState, destinationLabelID, folders, labels);
     });
 
-    updateContextTotal({ state, countsBeforeAction });
+    const countsAfterAction = computeContextTotals(state);
+    updateContextTotals({ state, countsBeforeAction, countsAfterAction });
 };
 
 export const unlabelMessagesPending = (
@@ -936,7 +937,7 @@ export const unlabelMessagesPending = (
     >
 ) => {
     const { messages, destinationLabelID, labels } = action.meta.arg;
-    const countsBeforeAction = computeFilteredCounts(state);
+    const countsBeforeAction = computeContextTotals(state);
 
     messages.forEach((message) => {
         const conversationElementState = state.elements[message.ConversationID];
@@ -953,7 +954,8 @@ export const unlabelMessagesPending = (
         removeLabelFromMessage(elementState, destinationLabelID, labels);
     });
 
-    updateContextTotal({ state, countsBeforeAction });
+    const countsAfterAction = computeContextTotals(state);
+    updateContextTotals({ state, countsBeforeAction, countsAfterAction });
 };
 
 export const labelMessagesRejected = (
@@ -994,7 +996,7 @@ export const labelConversationsPending = (
     >
 ) => {
     const { conversations, sourceLabelID, destinationLabelID, labels, folders } = action.meta.arg;
-    const countsBeforeAction = computeFilteredCounts(state);
+    const countsBeforeAction = computeContextTotals(state);
 
     conversations.forEach((conversation) => {
         const conversationState = state.elements[conversation.ID];
@@ -1015,7 +1017,8 @@ export const labelConversationsPending = (
         });
     });
 
-    updateContextTotal({ state, countsBeforeAction });
+    const countsAfterAction = computeContextTotals(state);
+    updateContextTotals({ state, countsBeforeAction, countsAfterAction });
 };
 
 export const unlabelConversationsPending = (
@@ -1035,7 +1038,7 @@ export const unlabelConversationsPending = (
     >
 ) => {
     const { conversations, destinationLabelID, labels } = action.meta.arg;
-    const countsBeforeAction = computeFilteredCounts(state);
+    const countsBeforeAction = computeContextTotals(state);
 
     conversations.forEach((conversation) => {
         const conversationState = state.elements[conversation.ID];
@@ -1056,5 +1059,6 @@ export const unlabelConversationsPending = (
         });
     });
 
-    updateContextTotal({ state, countsBeforeAction });
+    const countsAfterAction = computeContextTotals(state);
+    updateContextTotals({ state, countsBeforeAction, countsAfterAction });
 };
