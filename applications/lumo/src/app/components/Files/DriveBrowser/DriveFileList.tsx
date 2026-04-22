@@ -74,12 +74,10 @@ export const DriveFileList: React.FC<DriveFileListProps> = ({
                 };
 
                 const fileExists = existingFiles.some((existing) => existing.filename === child.name);
-                const estimatedTooLargeForPreview = child.size && child.size > 4096 * 1024; // 1MB threshold
                 const exceedsFileSizeLimit = child.size && child.size > MAX_ASSET_SIZE;
 
                 const CheckmarkIcon = () => <IcCheckmarkCircle />;
                 const ErrorIcon = () => <IcExclamationTriangleFilled className="color-danger" size={4} />;
-                const WarningIcon = () => <IcExclamationTriangleFilled className="color-warning" size={4} />;
                 const ProgressIcon = () => (
                     <CircularProgress progress={fileData.downloadProgress || 0} size={16} className="text-primary" />
                 );
@@ -91,9 +89,6 @@ export const DriveFileList: React.FC<DriveFileListProps> = ({
                     }
                     if (exceedsFileSizeLimit) {
                         return ErrorIcon;
-                    }
-                    if (estimatedTooLargeForPreview) {
-                        return WarningIcon;
                     }
                     if (downloadingFile === child.nodeUid) {
                         return ProgressIcon;
@@ -112,9 +107,6 @@ export const DriveFileList: React.FC<DriveFileListProps> = ({
                                           const maxSize = humanSize({ bytes: MAX_ASSET_SIZE, unit: 'MB', fraction: 0 });
                                           return c('collider_2025: Info').t`Exceeds ${maxSize} limit`;
                                       }
-                                      if (estimatedTooLargeForPreview) {
-                                          return c('collider_2025: Info').t`File too large`;
-                                      }
                                       if (downloadingFile === child.nodeUid) {
                                           const progressPct = Math.round(fileData.downloadProgress || 0);
                                           return c('collider_2025: Info').t`Downloading (${progressPct}%)`;
@@ -123,25 +115,15 @@ export const DriveFileList: React.FC<DriveFileListProps> = ({
                                   })(),
                                   onClick: (e: React.MouseEvent) => {
                                       e.stopPropagation();
-                                      if (!fileExists && !exceedsFileSizeLimit && !estimatedTooLargeForPreview) {
+                                      if (!fileExists && !exceedsFileSizeLimit) {
                                           onFileClick(child);
                                       }
                                   },
                                   disabled:
-                                      downloadingFile === child.nodeUid ||
-                                      fileExists ||
-                                      exceedsFileSizeLimit ||
-                                      estimatedTooLargeForPreview,
+                                      downloadingFile === child.nodeUid || fileExists || exceedsFileSizeLimit,
                                   loading: downloadingFile === child.nodeUid,
                                   // eslint-disable-next-line no-nested-ternary
-                                  variant: fileExists
-                                      ? 'secondary'
-                                      : // eslint-disable-next-line no-nested-ternary
-                                        exceedsFileSizeLimit
-                                        ? 'danger'
-                                        : estimatedTooLargeForPreview
-                                          ? 'secondary'
-                                          : 'primary',
+                                  variant: fileExists ? 'secondary' : exceedsFileSizeLimit ? 'danger' : 'primary',
                               },
                           ]
                         : [];
@@ -156,7 +138,6 @@ export const DriveFileList: React.FC<DriveFileListProps> = ({
                         child.type === NodeType.File &&
                         !fileExists &&
                         !exceedsFileSizeLimit &&
-                        !estimatedTooLargeForPreview &&
                         !folderSelectionMode
                     ) {
                         onFileClick(child);

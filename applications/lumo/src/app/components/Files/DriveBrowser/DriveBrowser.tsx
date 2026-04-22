@@ -11,7 +11,7 @@ import useNotifications from '@proton/components/hooks/useNotifications';
 import { NodeType } from '@proton/drive';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
-import { MAX_ASSET_SIZE, MAX_FILE_SIZE } from '../../../constants';
+import { MAX_ASSET_SIZE } from '../../../constants';
 import { useDriveFolderIndexing } from '../../../hooks/useDriveFolderIndexing';
 import type { DriveNode } from '../../../hooks/useDriveSDK';
 import { useDriveSDK } from '../../../hooks/useDriveSDK';
@@ -290,9 +290,10 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
                     return;
                 }
 
-                // For adding files to KB (not linked folder mode), use asset size limit
-                // Linked folders can handle larger files since they're indexed directly
-                const sizeLimit = isLinkedFolder ? MAX_FILE_SIZE : MAX_ASSET_SIZE;
+                // All selected Drive files are downloaded + processed + indexed on the
+                // main thread, so enforce the same asset-size limit everywhere to avoid
+                // UI freezes on large files.
+                const sizeLimit = MAX_ASSET_SIZE;
 
                 // Check file size limit before downloading
                 if (file.size && file.size > sizeLimit) {
@@ -360,9 +361,10 @@ export const DriveBrowser = forwardRef<DriveBrowserHandle, DriveBrowserProps>(
 
                 for (const file of fileArray) {
                     try {
-                        // Check file size limit first
-                        if (file.size > MAX_FILE_SIZE) {
-                            const maxSizeFormatted = humanSize({ bytes: MAX_FILE_SIZE, unit: 'MB', fraction: 0 });
+                        // Uploaded files are processed + indexed immediately after upload,
+                        // so enforce the asset-size limit to avoid UI freezes.
+                        if (file.size > MAX_ASSET_SIZE) {
+                            const maxSizeFormatted = humanSize({ bytes: MAX_ASSET_SIZE, unit: 'MB', fraction: 0 });
                             const fileSizeFormatted = humanSize({ bytes: file.size, unit: 'MB', fraction: 1 });
                             createNotification({
                                 text: c('collider_2025: Error')

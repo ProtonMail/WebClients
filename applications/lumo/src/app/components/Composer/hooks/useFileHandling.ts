@@ -6,7 +6,7 @@ import { useNotifications } from '@proton/components';
 import { DRIVE_APP_NAME } from '@proton/shared/lib/constants';
 import humanSize from '@proton/shared/lib/helpers/humanSize';
 
-import { MAX_FILE_SIZE } from '../../../constants';
+import { MAX_ASSET_SIZE } from '../../../constants';
 import { useFileProcessing } from '../../../hooks';
 import { useLumoDispatch, useLumoSelector } from '../../../redux/hooks';
 import { selectSpaceByIdOptional } from '../../../redux/selectors';
@@ -46,8 +46,10 @@ export const useFileHandling = ({ messageChain, onShowDriveBrowser, spaceId, upl
 
     const validateFile = useCallback(
         (file: File): boolean => {
-            if (file.size > MAX_FILE_SIZE) {
-                const maxSizeFormatted = humanSize({ bytes: MAX_FILE_SIZE, unit: 'MB', fraction: 0 });
+            // All upload paths (including linked-drive) download, process and index the
+            // file, so the same asset-size limit applies everywhere to avoid UI freezes.
+            if (file.size > MAX_ASSET_SIZE) {
+                const maxSizeFormatted = humanSize({ bytes: MAX_ASSET_SIZE, unit: 'MB', fraction: 0 });
                 const fileSizeFormatted = humanSize({ bytes: file.size, unit: 'MB', fraction: 1 });
                 createNotification({
                     text: c('collider_2025: Error')
