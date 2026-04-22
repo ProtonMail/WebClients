@@ -215,7 +215,7 @@ export const ComposerEditorArea = ({
                             icon
                             className="rounded-full p-0 ratio-square border-0 w-custom"
                             size="small"
-                            style={{ inlineSize: '2.25rem' }}
+                            style={{ inlineSize: '2rem', transform: 'scale(1.125)', transformOrigin: 'center' }}
                             disabled={sendIsDisabled}
                             onClick={isGenerating ? onAbort : onSubmit}
                             color="norm"
