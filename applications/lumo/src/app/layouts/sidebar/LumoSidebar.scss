@@ -11,10 +11,7 @@ im.$media-expressions: $media-expressions;
 	padding: 12px;
 	gap: 8px;
 
-	// Add V2 list border and text styling
 	ul {
-		border-inline-start: 1px solid var(--border-weak);
-
 		span {
 			&.text-ellipsis {
 				color: var(--text-weak);
