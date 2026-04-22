@@ -1,4 +1,4 @@
-import type { AsyncCallback, MaybePromise } from '@proton/pass/types';
+import type { AsyncCallback, MaybeNull, MaybePromise } from '@proton/pass/types';
 import noop from '@proton/utils/noop';
 
 export type UnwrapPromise<T> = T extends any[]
@@ -67,32 +67,24 @@ export const asyncLock = <F extends (...args: any[]) => Promise<any>>(fn: F, opt
     };
 };
 
-/** Similar to asyncLock but keeps only the latest call instead of deduplicating to the pending one. */
-export const asyncLatest = <F extends (...args: any[]) => Promise<any>>(fn: F, options?: AsyncLockOptions<F>) => {
-    const running = new Map<string, boolean>();
-    const pending = new Map<string, Parameters<F>>();
+/** Wraps an async function so that calling it again cancels any in-flight invocation.
+ * The wrapped function receives an AbortSignal as its first argument: check it between
+ * awaits to short-circuit early. Returns { run, cancel } so callers can also abort. */
+export const asyncLatest = <A extends any[], T = void>(fn: (signal: AbortSignal, ...args: A) => Promise<T>) => {
+    let ctrl: MaybeNull<AbortController> = null;
 
-    const run = async (...args: Parameters<F>): Promise<void> => {
-        const key = options?.key?.(...args) ?? '';
-        if (running.get(key)) {
-            pending.set(key, args);
-            return;
-        }
-
-        running.set(key, true);
-        try {
-            await fn(...args);
-        } finally {
-            running.set(key, false);
-            const next = pending.get(key);
-            if (next !== undefined) {
-                pending.delete(key);
-                void run(...next);
-            }
-        }
+    const run = (...args: A): Promise<T> => {
+        ctrl?.abort();
+        ctrl = new AbortController();
+        return fn(ctrl.signal, ...args);
     };
 
-    return run;
+    const cancel = () => {
+        ctrl?.abort();
+        ctrl = null;
+    };
+
+    return { run, cancel };
 };
 
 type AsyncQueueOptions<F extends (...args: any[]) => Promise<any>> = AsyncLockOptions<F>;

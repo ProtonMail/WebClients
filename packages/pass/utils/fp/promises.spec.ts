@@ -1,4 +1,4 @@
-import { asyncLock, asyncQueue, awaiter, cancelable, unwrap } from './promises';
+import { asyncLatest, asyncLock, asyncQueue, awaiter, cancelable, unwrap } from './promises';
 
 type TestResolvers = { resolve: (val: number) => void; reject: (err: unknown) => void }[];
 
@@ -165,6 +165,87 @@ describe('promise', () => {
             expect(asyncFn).toHaveBeenCalledTimes(3);
             resolvers[2].resolve(2);
             await expect(job2).resolves.toEqual(2);
+        });
+    });
+
+    describe('asyncLatest', () => {
+        type LatestResolver = { resolve: () => void; signal: AbortSignal };
+        const resolvers: LatestResolver[] = [];
+        const effects: number[] = [];
+
+        const fn = jest.fn<Promise<void>, [AbortSignal, number]>(
+            (signal, value) =>
+                new Promise<void>((resolve) =>
+                    resolvers.push({
+                        resolve: () => {
+                            if (!signal.aborted) effects.push(value);
+                            resolve();
+                        },
+                        signal,
+                    })
+                )
+        );
+
+        beforeEach(() => {
+            resolvers.length = 0;
+            effects.length = 0;
+            fn.mockClear();
+        });
+
+        test('run executes the function and commits its effect', async () => {
+            const runner = asyncLatest(fn);
+            const job = runner.run(42);
+            resolvers[0].resolve();
+            await job;
+
+            expect(effects).toEqual([42]);
+        });
+
+        test('calling run again aborts the previous signal and only the latest effect commits', async () => {
+            const runner = asyncLatest(fn);
+            const job0 = runner.run(0);
+            const job1 = runner.run(1);
+
+            expect(resolvers[0].signal.aborted).toBe(true);
+            expect(resolvers[1].signal.aborted).toBe(false);
+
+            resolvers[0].resolve();
+            resolvers[1].resolve();
+            await Promise.all([job0, job1]);
+
+            expect(effects).toEqual([1]);
+        });
+
+        test('successive runs abort all prior signals', async () => {
+            const runner = asyncLatest(fn);
+            void runner.run(0);
+            void runner.run(1);
+            void runner.run(2);
+
+            expect(resolvers[0].signal.aborted).toBe(true);
+            expect(resolvers[1].signal.aborted).toBe(true);
+            expect(resolvers[2].signal.aborted).toBe(false);
+        });
+
+        test('cancel aborts the in-flight signal and suppresses the effect', async () => {
+            const runner = asyncLatest(fn);
+            const job = runner.run(0);
+            runner.cancel();
+            resolvers[0].resolve();
+            await job;
+
+            expect(effects).toEqual([]);
+        });
+
+        test('run after cancel starts fresh and commits its effect', async () => {
+            const runner = asyncLatest(fn);
+            void runner.run(0);
+            runner.cancel();
+            const job = runner.run(1);
+            resolvers[1].resolve();
+            await job;
+
+            expect(effects).toEqual([1]);
         });
     });
 
