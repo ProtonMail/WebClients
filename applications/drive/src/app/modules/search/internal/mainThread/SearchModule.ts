@@ -40,6 +40,7 @@ export class SearchModule {
         isSearchable: false,
         isRunningOutdatedVersion: false,
         permanentError: null,
+        indexPopulatorStatuses: [],
     };
 
     // Callbacks notified whenever the search module state changes (e.g. React hooks).
@@ -174,6 +175,7 @@ export class SearchModule {
             isSearchable: false,
             permanentError: null,
             isUserOptIn: false,
+            indexPopulatorStatuses: [],
         });
     }
 

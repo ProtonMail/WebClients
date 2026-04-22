@@ -8,7 +8,7 @@ import { getNodeEntity } from '../../../../../../utils/sdk/getNodeEntity';
 import { Logger } from '../../../shared/Logger';
 import type { SearchDB } from '../../../shared/SearchDB';
 import { SearchLibraryError } from '../../../shared/errors';
-import type { TreeEventScopeId } from '../../../shared/types';
+import type { IndexPopulatorStatus, IndexingProgress, TreeEventScopeId } from '../../../shared/types';
 import type { IndexReader } from '../../index/IndexReader';
 import type { IndexKind } from '../../index/IndexRegistry';
 import type { IndexEntry } from '../indexEntry';
@@ -37,6 +37,46 @@ export abstract class IndexPopulator {
         readonly version: number
     ) {}
 
+    // In memory indexing progress, only persisted in indexeddb when the
+    // indexing is completely done.
+    // TODO(DRVWEB-5185): Persist partial progress in DB when resumal indexing is being implemented.
+    private progress: IndexingProgress = { files: 0, folders: 0, albums: 0, photos: 0 };
+
+    async getStatus(db: SearchDB): Promise<IndexPopulatorStatus> {
+        const state = await this.ensureState(db);
+
+        if (state.done) {
+            return {
+                done: true,
+                // Indexing already done, return the persisted progress
+                progress: state.progress,
+            };
+        }
+
+        return {
+            done: false,
+            // Return in memory progress.
+            progress: this.progress,
+        };
+    }
+
+    private trackNodeIndexed(nodeType: NodeType): void {
+        switch (nodeType) {
+            case NodeType.File:
+                this.progress.files++;
+                break;
+            case NodeType.Folder:
+                this.progress.folders++;
+                break;
+            case NodeType.Album:
+                this.progress.albums++;
+                break;
+            case NodeType.Photo:
+                this.progress.photos++;
+                break;
+        }
+    }
+
     static buildUid(indexPopulatorId: string, treeEventScopeId: TreeEventScopeId): string {
         return `${indexPopulatorId}:${treeEventScopeId}`;
     }
@@ -44,7 +84,13 @@ export abstract class IndexPopulator {
     private async ensureState(db: SearchDB) {
         const state = await db.getPopulatorState(this.getUid());
         if (!state) {
-            const newState = { uid: this.getUid(), done: false, generation: 1, version: this.version };
+            const newState = {
+                uid: this.getUid(),
+                done: false,
+                generation: 1,
+                version: this.version,
+                progress: { files: 0, folders: 0, albums: 0, photos: 0 },
+            };
             await db.putPopulatorState(newState);
             return newState;
         }
@@ -83,7 +129,20 @@ export abstract class IndexPopulator {
     async markAsNotDone(db: SearchDB): Promise<void> {
         const state = await this.ensureState(db);
         const nextGeneration = state.generation + 1;
-        await db.putPopulatorState({ ...state, done: false, generation: nextGeneration });
+        await db.putPopulatorState({
+            ...state,
+            done: false,
+            generation: nextGeneration,
+            progress: { files: 0, folders: 0, albums: 0, photos: 0 },
+        });
+
+        // Reset in memory progress.
+        this.progress = { files: 0, folders: 0, albums: 0, photos: 0 };
+    }
+
+    async markAsDone(db: SearchDB): Promise<void> {
+        const state = await this.ensureState(db);
+        await db.putPopulatorState({ ...state, done: true, version: this.version, progress: this.progress });
     }
 
     abstract visitAndProduceIndexEntries(ctx: TaskContext): AsyncIterableIterator<IndexEntry>;
@@ -285,6 +344,7 @@ export abstract class IndexPopulator {
     }
 
     protected createEntryForNode(node: NodeEntity, parentPath: string, generation: number): IndexEntry {
+        this.trackNodeIndexed(node.type);
         return createIndexEntry({
             node: toCoreNodeFields(node),
             treeEventScopeId: this.treeEventScopeId,

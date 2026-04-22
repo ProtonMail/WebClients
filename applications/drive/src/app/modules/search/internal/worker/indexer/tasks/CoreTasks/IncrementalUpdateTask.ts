@@ -31,6 +31,7 @@ export class IncrementalUpdateTask extends BaseTask {
                     registration.collector.commit(processed);
                     registration.lastEventId = events[processed - 1].eventId;
                     registration.subscriptionTime = Date.now();
+                    ctx.notifyIndexingProgress();
                 }
             }
         } catch (e) {

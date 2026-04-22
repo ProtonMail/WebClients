@@ -1,7 +1,7 @@
 import type { DBSchema, IDBPDatabase } from 'idb';
 import { openDB } from 'idb';
 
-import type { TreeEventScopeId } from './types';
+import type { IndexingProgress, TreeEventScopeId } from './types';
 
 const DB_VERSION = 1;
 
@@ -15,9 +15,10 @@ export interface TreeEventScopeSubscription {
 
 export interface IndexPopulatorState {
     uid: string;
-    done: boolean;
     generation: number;
     version: number;
+    done: boolean;
+    progress: IndexingProgress;
 }
 
 interface SearchDBSchema extends DBSchema {
