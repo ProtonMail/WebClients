@@ -34,7 +34,6 @@ import {
     type FreePlanDefault,
     type FreeSubscription,
     type FullPlansMap,
-    PAYMENT_METHOD_TYPES,
     PLANS,
     type PaymentMethodType,
     type PaymentProcessorHook,
@@ -53,7 +52,6 @@ import {
     getHas2025OfferCoupon,
     getIsB2BAudienceFromPlan,
     getIsB2BAudienceFromSubscription,
-    getIsPlanTransitionForbidden,
     getMaximumCycleForApp,
     getPlanCurrencyFromPlanIDs,
     getPlanFromPlanIDs,
@@ -64,15 +62,13 @@ import {
     hasPlanIDs,
     isFreeSubscription,
     isSubscriptionCheckForbidden,
-    isSubscriptionCheckForbiddenWithReason,
     shouldPassIsTrial as shouldPassIsTrialPayments,
     switchPlan,
 } from '@proton/payments';
 import { type CheckSubscriptionData, ProrationMode, getPaymentsVersion } from '@proton/payments/core/api/api';
 import type { BillingAddress, BillingAddressExtended } from '@proton/payments/core/billing-address/billing-address';
-import { getIsCustomCycle, getOptimisticCheckResult } from '@proton/payments/core/checkout';
+import { getIsCustomCycle } from '@proton/payments/core/checkout';
 import { getCheckoutModifiers } from '@proton/payments/core/checkout-modifiers';
-import { VatReverseChargeNotSupportedError } from '@proton/payments/core/errors';
 import { computeOptimisticSubscriptionMode } from '@proton/payments/core/optimisticSubscriptionMode';
 import { InvalidChargebeeCardDataError } from '@proton/payments/core/payment-processors/chargebeeCardPayment';
 import { getAutoCoupon } from '@proton/payments/core/subscription/helpers';
@@ -126,6 +122,7 @@ import SubscriptionThanks from './modal-components/SubscriptionThanks';
 import { canShowGiftCodeInput } from './modal-components/helpers/canShowGiftCodeInput';
 import { showLumoAddonCustomizer } from './modal-components/helpers/showLumoAddonCustomizer';
 import { PostSubscriptionModalLoadingContent } from './postSubscription/modals/PostSubscriptionModalsComponents';
+import { getCodes, useSubscriptionContainerInnerCheck } from './useSubscriptionContainerInnerCheck';
 import useSubscriptionModalTelemetry from './useSubscriptionModalTelemetry';
 
 import './SubscriptionContainer.scss';
@@ -149,8 +146,6 @@ export interface Model {
 const BACK: Partial<{ [key in SUBSCRIPTION_STEPS]: SUBSCRIPTION_STEPS }> = {
     [SUBSCRIPTION_STEPS.CHECKOUT]: SUBSCRIPTION_STEPS.PLAN_SELECTION,
 };
-
-const getCodes = ({ gift, coupon }: Pick<Model, 'gift' | 'coupon'>): string[] => [gift, coupon].filter(isTruthy);
 
 /**
  * There is a problem with closures. If we use the regular useState for the preferred currency and then create
@@ -326,7 +321,6 @@ const SubscriptionContainerInner = ({
     const { APP_NAME } = useConfig();
 
     const [subscribing, withSubscribing] = useLoading();
-    const [loadingCheck, withLoadingCheck] = useLoading();
     const [blockCycleSelector, withBlockCycleSelector] = useLoading();
     const [blockAccountSizeSelector, withBlockAccountSizeSelector] = useLoading();
     const [loadingGift, withLoadingGift] = useLoading();
@@ -522,11 +516,7 @@ const SubscriptionContainerInner = ({
     const couponDescription = checkResult?.Coupon?.Description;
 
     const subscriptionCouponCode = subscription?.CouponCode;
-    const latestValidCouponCodeRef = useRef('');
-
     const giftCodeRef = useRef<HTMLInputElement>(null);
-
-    const abortControllerRef = useRef<AbortController>();
 
     const amount = model.step === SUBSCRIPTION_STEPS.CHECKOUT ? amountDue : 0;
 
@@ -845,84 +835,6 @@ const SubscriptionContainerInner = ({
         });
     };
 
-    const switchCycle = (preferredCycle: Cycle, selectedPlanIDs: PlanIDs, currency: Currency) => {
-        const allowedCycles = getAllowedCycles({
-            subscription,
-            planIDs: selectedPlanIDs,
-            plansMap: plansMapRef.current,
-            currency,
-        });
-
-        return allowedCycles.includes(preferredCycle) ? preferredCycle : allowedCycles[0];
-    };
-
-    const normalizeModelBeforeCheck = async (newModel: Model) => {
-        if (!skipPlanTransitionChecks) {
-            const planTransitionForbidden = getIsPlanTransitionForbidden({
-                subscription,
-                plansMap: plansMapRef.current,
-                planIDs: newModel.planIDs,
-            });
-            if (planTransitionForbidden?.type === 'lumo-plus') {
-                newModel.planIDs = planTransitionForbidden.newPlanIDs;
-                // since we are switching the plan, it's the same as switching the cycle manually, so we need to make sure
-                // that the cycle is allowed
-                newModel.cycle = switchCycle(
-                    subscription?.Cycle ?? newModel.cycle,
-                    newModel.planIDs,
-                    newModel.currency
-                );
-            }
-
-            if (planTransitionForbidden?.type === 'meet-plus') {
-                newModel.planIDs = planTransitionForbidden.newPlanIDs;
-                newModel.cycle = switchCycle(
-                    subscription?.Cycle ?? newModel.cycle,
-                    newModel.planIDs,
-                    newModel.currency
-                );
-            }
-
-            if (planTransitionForbidden?.type === 'plus-to-plus') {
-                setPlusToPlusUpsell({
-                    unlockPlan: planTransitionForbidden.newPlanName
-                        ? plansMapRef.current[planTransitionForbidden.newPlanName]
-                        : undefined,
-                });
-                setUpsellModal(true);
-                // In case this transition is disallowed, reset the plan IDs to the plan IDs of the current subscription
-                newModel.planIDs = getPlanIDs(latestSubscription);
-
-                // since we are switching the plan, it's the same as switching the cycle manually, so we need to make sure
-                // that the cycle is allowed
-                newModel.cycle = switchCycle(newModel.cycle, newModel.planIDs, newModel.currency);
-
-                // Also, reset the step to the previous step (so that it doesn't change from plan selection -> checkout)
-                newModel.step = model.step;
-                // Continue here with the rest of the steps so that we actually perform the rest of the call correctly (but just with reset plan ids)
-            }
-
-            if (planTransitionForbidden?.type === 'visionary-downgrade') {
-                try {
-                    // Throws an error in case if user rejects the change
-                    await showVisionaryDowngradeWarning();
-                } catch {
-                    onCancel?.();
-                    return;
-                }
-            } else {
-                hideVisionaryDowngradeWarning();
-            }
-        }
-        newModel.planIDs =
-            forceAddonsMinMaxConstraints({
-                selectedPlanIDs: newModel.planIDs,
-                plansMap: plansMapRef.current,
-                currency: newModel.currency,
-                subscription,
-            }) ?? newModel.planIDs;
-    };
-
     const reportChangeTelemetry = ({ action, ...overrides }: RequireOnly<EstimationChangePayload, 'action'>) => {
         const nonEmptyOverrides = Object.fromEntries(
             Object.entries(overrides).filter(([_, value]) => value !== undefined)
@@ -953,178 +865,36 @@ const SubscriptionContainerInner = ({
     const [vatReverseChargeErrorModalProps, setVatReverseChargeErrorModal, renderVatReverseChargeErrorModal] =
         useModalState();
 
-    const check = async (
-        newModel: Model = model,
-        wantToApplyNewGiftCode: boolean = false,
-        selectedMethod?: PlainPaymentMethodType
-    ): Promise<SubscriptionEstimation | undefined> => {
-        const copyNewModel: Model = {
-            ...newModel,
-            initialCheckComplete: true,
-            paymentForbiddenReason: { forbidden: false },
-        };
-
-        if (!hasPlanIDs(copyNewModel.planIDs)) {
-            setCheckResult(getFreeCheckResult(model.currency, model.cycle));
-            setModel(copyNewModel);
-            return;
-        }
-
-        await normalizeModelBeforeCheck(copyNewModel);
-        reportPlanIDsIfChanged(copyNewModel.planIDs);
-
-        const dontQueryCheck = copyNewModel.step === SUBSCRIPTION_STEPS.PLAN_SELECTION;
-
-        if (dontQueryCheck) {
-            setCheckResult({
-                ...getOptimisticCheckResult({
-                    plansMap: plansMapRef.current,
-                    cycle: copyNewModel.cycle,
-                    planIDs: copyNewModel.planIDs,
-                    currency: copyNewModel.currency,
-                }),
-                Currency: copyNewModel.currency,
-                PeriodEnd: 0,
-            });
-            setModel(copyNewModel);
-            return;
-        }
-
-        const paymentForbiddenReason = isSubscriptionCheckForbiddenWithReason(subscription, {
-            planIDs: copyNewModel.planIDs,
-            cycle: copyNewModel.cycle,
-            coupon: getCodes(copyNewModel).at(0),
-        });
-        if (paymentForbiddenReason.forbidden) {
-            setCheckResult({
-                ...getOptimisticCheckResult({
-                    plansMap: plansMapRef.current,
-                    cycle: copyNewModel.cycle,
-                    planIDs: copyNewModel.planIDs,
-                    currency: copyNewModel.currency,
-                }),
-                Currency: copyNewModel.currency,
-                PeriodEnd: 0,
-                AmountDue: 0,
-            });
-            setModel({
-                ...copyNewModel,
-                paymentForbiddenReason,
-            });
-            return;
-        }
-
-        const run = async () => {
-            try {
-                abortControllerRef.current?.abort();
-                abortControllerRef.current = new AbortController();
-
-                const coupon = getAutoCoupon({
-                    coupon: copyNewModel.coupon,
-                    planIDs: copyNewModel.planIDs,
-                    cycle: copyNewModel.cycle,
-                    currency: copyNewModel.currency,
-                });
-
-                // PAY-1822. To put it simply, this code removes all the previously applied coupons or gift codes
-                // if user re-enters the same coupon code as in the currently active subscription.
-                // We must do it because of backend limitations. The backend won't recognize the currently active
-                // subscription coupon if there is any other valid coupon in the request payload.
-                const codesArgument =
-                    !!subscriptionCouponCode && copyNewModel.gift === subscriptionCouponCode
-                        ? { coupon: subscriptionCouponCode }
-                        : { gift: copyNewModel.gift, coupon };
-
-                const Codes = getCodes(codesArgument);
-
-                // selectedMethod variable prevails over paymentFacade.selectedMethodType because it's passed in the
-                // onMethod change handler. So this variable changes before the paymentFacade.selectedMethodType is
-                // updated. We must take into account the case when user unselects SEPA, making selectedMethod not SEPA,
-                // while paymentFacade.selectedMethodType is still SEPA. In this case we want to call /check without
-                // ProrationMode == Exact.
-                const currentlySelectedMethod = selectedMethod ?? paymentFacade.selectedMethodType;
-
-                const checkPayload: CheckSubscriptionData = {
-                    Codes,
-                    Plans: copyNewModel.planIDs,
-                    Currency: copyNewModel.currency,
-                    Cycle: copyNewModel.cycle,
-                    BillingAddress: {
-                        CountryCode: copyNewModel.taxBillingAddress.CountryCode,
-                        State: copyNewModel.taxBillingAddress.State,
-                        ZipCode: copyNewModel.taxBillingAddress.ZipCode,
-                    },
-                    ProrationMode:
-                        currentlySelectedMethod === PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT
-                            ? ProrationMode.Exact
-                            : undefined,
-                    IsTrial: shouldPassIsTrial(newModel, false),
-                    ValidateBillingAddress: true,
-                };
-
-                const newCheckResult = await paymentsApi.checkSubscription(checkPayload, {
-                    signal: abortControllerRef.current.signal,
-                    silence: true,
-                    previousEstimation: checkResult,
-                });
-
+    const { check, loadingCheck } = useSubscriptionContainerInnerCheck({
+        model,
+        checkResult,
+        subscriptionCouponCode: subscriptionCouponCode ?? undefined,
+        subscription,
+        paymentsApi,
+        paymentFacadeSelectedMethodType: paymentFacade.selectedMethodType,
+        skipPlanTransitionChecks: skipPlanTransitionChecks ?? false,
+        refs: { plansMapRef, giftCodeRef },
+        setters: { setCheckResult, setModel, setVatReverseChargeErrorModal },
+        callbacks: {
+            runAdditionalChecks,
+            shouldPassIsTrial,
+            reportPlanIDsIfChanged,
+            onPlusToPlusTransition: (unlockPlan) => {
+                setPlusToPlusUpsell({ unlockPlan });
+                setUpsellModal(true);
+            },
+            onVisionaryDowngradeWarning: async () => {
                 try {
-                    await runAdditionalChecks(
-                        copyNewModel,
-                        checkPayload,
-                        newCheckResult,
-                        abortControllerRef.current.signal
-                    );
-                } catch {}
-
-                const { Gift = 0 } = newCheckResult;
-                const { Code = '' } = newCheckResult.Coupon || {}; // Coupon can equal null
-
-                if (wantToApplyNewGiftCode && copyNewModel.gift?.toLowerCase() !== Code.toLowerCase() && !Gift) {
-                    createNotification({ text: c('Error').t`Invalid code`, type: 'error' });
-                    giftCodeRef.current?.focus();
-
-                    // Don't update state with the errored check result. This is especially important for the "already-subscribed" case
-                    return checkResult;
+                    await showVisionaryDowngradeWarning();
+                } catch (e) {
+                    onCancel?.();
+                    throw e;
                 }
-
-                if (Code) {
-                    latestValidCouponCodeRef.current = Code;
-                }
-                copyNewModel.coupon = Code || subscriptionCouponCode || latestValidCouponCodeRef.current;
-
-                if (!Gift) {
-                    delete copyNewModel.gift;
-                }
-
-                setCheckResult(newCheckResult);
-                setModel(copyNewModel);
-                onCheck?.({ model, newModel: copyNewModel, type: 'success', result: newCheckResult });
-            } catch (error: any) {
-                if (error?.name === 'AbortError') {
-                    return;
-                }
-
-                if (error.name === 'OfflineError') {
-                    setModel({ ...model, step: SUBSCRIPTION_STEPS.NETWORK_ERROR });
-                }
-
-                if (error instanceof VatReverseChargeNotSupportedError) {
-                    setVatReverseChargeErrorModal(true);
-                    return;
-                }
-
-                onCheck?.({ model, newModel: copyNewModel, type: 'error', error });
-            }
-
-            return checkResult;
-        };
-
-        const checkPromise = run();
-        void withLoadingCheck(checkPromise);
-
-        return checkPromise;
-    };
+            },
+            onVisionaryDowngradeHide: hideVisionaryDowngradeWarning,
+            onCheck,
+        },
+    });
 
     useEffect(() => {
         captureWrongPlanIDs(maybePlanIDs, { source: 'SubscriptionModal/PlanIDs' });
