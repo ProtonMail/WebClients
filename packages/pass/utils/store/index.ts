@@ -1,4 +1,4 @@
-import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@proton/crypto/lib/utils';
+import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/crypto/utils';
 import type { Maybe, Store } from '@proton/pass/types';
 import { coalesce } from '@proton/pass/utils/fp/control';
 import { createPubSub } from '@proton/pass/utils/pubsub/factory';

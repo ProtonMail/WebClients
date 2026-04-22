@@ -1,4 +1,4 @@
-import { uint8ArrayToUtf8String } from '@proton/crypto/lib/utils'
+import { uint8ArrayToUtf8String } from '@protontech/crypto/utils'
 import type { ExporterRequiredCallbacks } from './EditorExporter'
 import { EditorTxtExporter } from './EditorTxtExporter'
 

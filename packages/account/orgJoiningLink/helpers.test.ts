@@ -2,7 +2,7 @@ import { SSO_PATHS } from '@proton/shared/lib/constants';
 
 import { getJoiningLinkHref, parseJoiningLinkConfig } from './helpers';
 
-jest.mock('@proton/crypto', () => ({}));
+jest.mock('@protontech/crypto', () => ({}));
 
 describe('getJoiningLinkHref', () => {
     it('produces valid URL', () => {

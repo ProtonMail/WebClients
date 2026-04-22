@@ -8,6 +8,14 @@ export default defineConfig({
     test: {
         globals: true,
         environment: 'happy-dom',
+        server: {
+            deps: {
+                /**
+                 * Declare TS node_modules to transform
+                 */
+                inline: ['@protontech/crypto'],
+            },
+        },
         reporters: [
             [
                 'default',

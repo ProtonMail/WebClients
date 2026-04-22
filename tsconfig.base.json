@@ -2,6 +2,7 @@
     "compilerOptions": {
         "allowJs": true,
         "esModuleInterop": true,
+        "allowImportingTsExtensions": true,
         "forceConsistentCasingInFileNames": true,
         "incremental": true,
         "jsx": "preserve",

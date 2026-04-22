@@ -1,6 +1,6 @@
 import { usePreventLeave } from '@proton/components';
-import type { PrivateKeyReference } from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
+import type { PrivateKeyReference } from '@protontech/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 import metrics from '@proton/metrics';
 import type { HttpsProtonMeDrivePhotosTransferToPhotoStreamHistogramV1SchemaJson } from '@proton/metrics/types/drive_photos_transfer_to_photo_stream_histogram_v1.schema';
 import {

@@ -1,5 +1,5 @@
-import type { PrivateKeyReference } from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
+import type { PrivateKeyReference } from '@protontech/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 
 import { CONTACT_CARD_TYPE } from '../constants';
 import type { ContactCard } from '../interfaces/contacts';

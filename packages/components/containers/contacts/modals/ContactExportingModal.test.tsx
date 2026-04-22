@@ -1,7 +1,7 @@
 import { fireEvent } from '@testing-library/react';
 
 import { getModelState } from '@proton/account/test';
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 import downloadFile from '@proton/shared/lib/helpers/downloadFile';
 import type { Contact } from '@proton/shared/lib/interfaces/contacts';
 import { addApiMock } from '@proton/testing/lib/api';

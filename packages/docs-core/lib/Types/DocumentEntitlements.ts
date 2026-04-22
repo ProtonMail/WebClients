@@ -4,7 +4,7 @@ import { isPublicNodeMeta } from '@proton/drive-store/lib/NodeMeta'
 import type { NodeMeta, PublicNodeMeta } from '@proton/drive-store/lib/NodeMeta'
 import type { SHARE_MEMBER_PERMISSIONS } from '@proton/shared/lib/drive/permissions'
 import { DocumentRole } from '@proton/docs-shared'
-import type { PrivateKeyReference } from '@proton/crypto'
+import type { PrivateKeyReference } from '@protontech/crypto'
 
 export type DocumentEntitlements = {
   keys: DocumentKeys

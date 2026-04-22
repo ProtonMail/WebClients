@@ -1,7 +1,7 @@
 import type { AuthenticatorEncryptionTag } from 'proton-authenticator/lib/crypto';
 
-import { decryptData, generateKey, importKey } from '@proton/crypto/lib/subtle/aesGcm';
-import { utf8StringToUint8Array } from '@proton/crypto/lib/utils';
+import { decryptData, generateKey, importKey } from '@protontech/crypto/subtle/aesGcm.ts';
+import { utf8StringToUint8Array } from '@protontech/crypto/utils';
 import { uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';
 
 import { defineEncryptedEntity } from './encryption';

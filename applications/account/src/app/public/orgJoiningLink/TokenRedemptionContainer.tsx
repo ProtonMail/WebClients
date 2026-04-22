@@ -1,6 +1,7 @@
 import { type FC, type FormEvent, type ReactNode, useEffect, useMemo, useRef, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 
+import type { PrivateKeyReference } from '@protontech/crypto';
 import { c } from 'ttag';
 
 import { parseJoiningLinkConfig } from '@proton/account/orgJoiningLink/helpers';
@@ -17,7 +18,6 @@ import {
 import { PasswordPolicySpotlight, usePasswordPolicyValidation } from '@proton/components/components/passwordPolicy';
 import PasswordStrengthIndicator from '@proton/components/components/passwordStrengthIndicator/PasswordStrengthIndicator';
 import useDocumentTitle from '@proton/components/hooks/useDocumentTitle';
-import type { PrivateKeyReference } from '@proton/crypto';
 import useLoading from '@proton/hooks/useLoading';
 import { getAllAddresses } from '@proton/shared/lib/api/addresses';
 import { redeemToken, verifyCode } from '@proton/shared/lib/api/authLoginLink';

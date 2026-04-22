@@ -1,5 +1,5 @@
-import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
+import type { PrivateKeyReference, PublicKeyReference } from '@protontech/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 import type { KeyRotationKeyPair } from '@proton/pass/types';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 

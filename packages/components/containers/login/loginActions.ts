@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { serverTime, wasServerTimeEverUpdated } from '@proton/crypto';
+import { serverTime, wasServerTimeEverUpdated } from '@protontech/crypto';
 import { createKeyMigrationKTVerifier, createPreAuthKTVerifier } from '@proton/key-transparency/shared';
 import { auth2FA, getInfo } from '@proton/shared/lib/api/auth';
 import { queryAvailableDomains } from '@proton/shared/lib/api/domains';

@@ -3,7 +3,7 @@ import { combineReducers } from '@reduxjs/toolkit';
 import { waitFor } from '@testing-library/react';
 
 import { getServerEvent } from '@proton/account/test/getServerEvent';
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { getTestStore } from '@proton/redux-shared-store/test';
 import type { UserModel } from '@proton/shared/lib/interfaces';
@@ -17,7 +17,7 @@ import { userKeysListener } from './listener';
 
 const mockedUserKeysThunk = jest.spyOn(module, 'userKeysThunk');
 jest.mock('@proton/srp', () => {});
-jest.mock('@proton/crypto', () => {
+jest.mock('@protontech/crypto', () => {
     return {
         CryptoProxy: {
             clearKey: jest.fn(),

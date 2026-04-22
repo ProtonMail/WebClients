@@ -2,7 +2,7 @@ import { c } from 'ttag';
 
 import { Banner, BannerVariants } from '@proton/atoms/Banner/Banner';
 import { TextLoader } from '@proton/components';
-import { VERIFICATION_STATUS } from '@proton/crypto';
+import { VERIFICATION_STATUS } from '@protontech/crypto';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 

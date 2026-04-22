@@ -3,7 +3,7 @@ import {
     type PrivateKeyReferenceV4,
     type PrivateKeyReferenceV6,
     toPublicKeyReference,
-} from '@proton/crypto';
+} from '@protontech/crypto';
 
 import { DEFAULT_KEYGEN_TYPE, KEYGEN_CONFIGS, KEYGEN_TYPES } from '../constants';
 import type { ActiveAddressKeysByVersion, ActiveKey } from '../interfaces';

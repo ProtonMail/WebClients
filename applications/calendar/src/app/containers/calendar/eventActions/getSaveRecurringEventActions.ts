@@ -1,5 +1,5 @@
 import type { useGetCalendarKeys } from '@proton/calendar/calendarBootstrap/keys';
-import type { PublicKeyReference } from '@proton/crypto';
+import type { PublicKeyReference } from '@protontech/crypto';
 import {
     getHasDefaultNotifications,
     getIsAutoAddedInvite,

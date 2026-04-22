@@ -1,6 +1,6 @@
 import { type Location, createBrowserHistory } from 'history';
 
-import { utf8StringToUint8Array, uint8ArrayToUtf8String } from '@proton/crypto/lib/utils';
+import { utf8StringToUint8Array, uint8ArrayToUtf8String } from '@protontech/crypto/utils';
 import { authStore } from '@proton/pass/lib/auth/store';
 import type { ItemFilters, ItemType, MaybeNull, Unpack } from '@proton/pass/types';
 import { partialMerge } from '@proton/pass/utils/object/merge';

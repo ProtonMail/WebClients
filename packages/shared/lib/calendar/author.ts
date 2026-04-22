@@ -1,4 +1,4 @@
-import type { PublicKeyReference } from '@proton/crypto';
+import type { PublicKeyReference } from '@protontech/crypto';
 import { captureMessage } from '@proton/shared/lib/helpers/sentry';
 import type { ContactEmail } from '@proton/shared/lib/interfaces/contacts';
 import type { GetVerificationPreferences } from '@proton/shared/lib/interfaces/hooks/GetVerificationPreferences';

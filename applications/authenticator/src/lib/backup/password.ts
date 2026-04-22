@@ -1,8 +1,8 @@
 import { AuthenticatorEncryptionTag } from 'proton-authenticator/lib/crypto';
 import { StorageKey } from 'proton-authenticator/lib/db/db';
 
-import { decryptData, encryptData } from '@proton/crypto/lib/subtle/aesGcm';
-import { utf8StringToUint8Array, uint8ArrayToUtf8String } from '@proton/crypto/lib/utils';
+import { decryptData, encryptData } from '@protontech/crypto/subtle/aesGcm.ts';
+import { utf8StringToUint8Array, uint8ArrayToUtf8String } from '@protontech/crypto/utils';
 import type { Maybe } from '@proton/pass/types';
 
 const BACKUP_PWD_KEY = 'backup_pw';

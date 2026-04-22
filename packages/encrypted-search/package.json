@@ -23,10 +23,10 @@
     },
     "dependencies": {
         "@proton/components": "workspace:^",
-        "@proton/crypto": "workspace:^",
         "@proton/i18n": "workspace:^",
         "@proton/shared": "workspace:^",
         "@proton/utils": "workspace:^",
+        "@protontech/crypto": "^2.0.1",
         "idb": "^8.0.3",
         "react": "^18.3.1",
         "ttag": "^1.8.12"

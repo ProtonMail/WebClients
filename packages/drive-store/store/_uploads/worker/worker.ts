@@ -1,7 +1,7 @@
 import { sha1 } from '@noble/hashes/sha1';
 import { getUnixTime } from 'date-fns';
 
-import type { PrivateKeyReference, SessionKey } from '@proton/crypto';
+import type { PrivateKeyReference, SessionKey } from '@protontech/crypto';
 import { FILE_CHUNK_SIZE } from '@proton/shared/lib/drive/constants';
 import {
     generateContentKeys,

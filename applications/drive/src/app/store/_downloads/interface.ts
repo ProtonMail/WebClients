@@ -1,4 +1,4 @@
-import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proton/crypto';
+import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@protontech/crypto';
 import type { DriveFileBlock, ScanResultItem } from '@proton/shared/lib/interfaces/drive/file';
 import type { SharedFileScan } from '@proton/shared/lib/interfaces/drive/sharing';
 

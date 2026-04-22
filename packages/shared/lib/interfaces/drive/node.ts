@@ -1,4 +1,4 @@
-import type { PrivateKeyReference, SessionKey } from '@proton/crypto';
+import type { PrivateKeyReference, SessionKey } from '@protontech/crypto';
 
 export interface NodeKeys {
     privateKey: PrivateKeyReference;

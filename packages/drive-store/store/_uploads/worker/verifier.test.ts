@@ -1,4 +1,4 @@
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 
 import { generateSessionKey, releaseCryptoProxy, setupCryptoProxyForTesting } from '../../../utils/test/crypto';
 import { createVerifier } from './verifier';

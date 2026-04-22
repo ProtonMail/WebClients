@@ -1,14 +1,14 @@
+import { CryptoProxy } from '@protontech/crypto';
 import { renderHook } from '@testing-library/react';
 import type { Mock } from 'vitest';
 
 import { useGetAddresses } from '@proton/account/addresses/hooks';
 import { useGetUserKeys } from '@proton/account/userKeys/hooks';
 import { useApi } from '@proton/components';
-import { CryptoProxy } from '@proton/crypto';
-import { releaseCryptoProxy, setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testing';
 import { ADDRESS_RECEIVE, ADDRESS_SEND, ADDRESS_STATUS } from '@proton/shared/lib/constants';
 import { CustomPasswordState } from '@proton/shared/lib/interfaces/Meet';
 
+import { releaseCryptoProxy, setupCryptoProxyForTesting } from '../utils/testUtils';
 import { useCreateMeeting } from './useCreateMeeting';
 
 vi.mock('@proton/shared/lib/srp', () => ({

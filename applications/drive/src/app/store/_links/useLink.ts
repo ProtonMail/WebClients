@@ -3,8 +3,8 @@ import { useRef } from 'react';
 import { fromUnixTime, isAfter } from 'date-fns';
 import { c } from 'ttag';
 
-import type { PrivateKeyReference, SessionKey } from '@proton/crypto';
-import { CryptoProxy, VERIFICATION_STATUS } from '@proton/crypto';
+import type { PrivateKeyReference, SessionKey } from '@protontech/crypto';
+import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 import { queryFileRevision, queryFileRevisionThumbnail } from '@proton/shared/lib/api/drive/files';
 import { queryGetLink } from '@proton/shared/lib/api/drive/link';
 import { RESPONSE_CODE } from '@proton/shared/lib/drive/constants';

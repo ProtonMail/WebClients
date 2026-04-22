@@ -15,8 +15,8 @@
         "test:watch": "yarn test --watch"
     },
     "dependencies": {
-        "@proton/crypto": "workspace:packages/crypto",
         "@proton/shared": "workspace:packages/shared",
+        "@protontech/crypto": "^2.0.1",
         "@types/react": "^18.3.28",
         "cross-env": "^10.1.0",
         "livekit-client": "2.18.6",

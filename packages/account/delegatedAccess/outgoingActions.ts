@@ -1,7 +1,7 @@
 import { type UnknownAction, miniSerializeError } from '@reduxjs/toolkit';
 import type { ThunkAction } from 'redux-thunk';
 
-import { CryptoProxy, type PrivateKeyReference, type PublicKeyReference } from '@proton/crypto';
+import { CryptoProxy, type PrivateKeyReference, type PublicKeyReference } from '@protontech/crypto';
 import { verifyAddressKeyToRecover } from '@proton/key-transparency/verification';
 import type { ProtonThunkArguments } from '@proton/redux-shared-store-types';
 import { previousSelector } from '@proton/redux-utilities/creator';

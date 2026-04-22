@@ -3,7 +3,7 @@ import { act } from 'react';
 import { renderHook } from '@testing-library/react';
 
 import { WasmTxBuilder } from '@proton/andromeda';
-import type { PublicKeyReference } from '@proton/crypto/lib';
+import type { PublicKeyReference } from '@protontech/crypto';
 import { setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testing';
 import type { Recipient } from '@proton/shared/lib/interfaces';
 import { mockUseNotifications } from '@proton/testing/lib/vitest';

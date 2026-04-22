@@ -1,6 +1,6 @@
 import { CURVE, Point } from '@noble/ed25519';
 
-import { CryptoProxy } from '@proton/crypto';
+import { CryptoProxy } from '@protontech/crypto';
 import mergeUint8Arrays from '@proton/utils/mergeUint8Arrays';
 
 import { CO_FACTOR, N, ptLen } from '../constants/constants';

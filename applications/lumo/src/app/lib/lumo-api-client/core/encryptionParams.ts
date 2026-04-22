@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 
-import { CryptoProxy } from '@proton/crypto/lib';
-import { exportKey, generateKey, importKey } from '@proton/crypto/lib/subtle/aesGcm';
+import { CryptoProxy } from '@protontech/crypto';
+import { exportKey, generateKey, importKey } from '@protontech/crypto/subtle/aesGcm.ts';
 
 import { encryptUint8Array } from '../../../crypto';
 import { decryptString, decryptUint8Array, encryptString } from './encryption';

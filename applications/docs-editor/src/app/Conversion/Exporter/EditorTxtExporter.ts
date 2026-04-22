@@ -1,5 +1,5 @@
 import { $getRoot } from 'lexical'
-import { utf8StringToUint8Array } from '@proton/crypto/lib/utils'
+import { utf8StringToUint8Array } from '@protontech/crypto/utils'
 import { EditorExporter } from './EditorExporter'
 
 export class EditorTxtExporter extends EditorExporter {

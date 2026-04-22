@@ -6,7 +6,7 @@ import { useGetUserSettings } from '@proton/account/userSettings/hooks';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import DecryptFileKeyModal from '@proton/components/containers/keys/shared/DecryptFileKeyModal';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { CryptoProxy, KeyCompatibilityLevel, type PrivateKeyReference } from '@proton/crypto';
+import { CryptoProxy, KeyCompatibilityLevel, type PrivateKeyReference } from '@protontech/crypto';
 import type { ArmoredKeyWithInfo } from '@proton/shared/lib/keys';
 
 const process = async (armoredKeyWithInfo: ArmoredKeyWithInfo, supportPgpV6Keys: boolean) => {

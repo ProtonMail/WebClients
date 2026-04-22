@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { CryptoProxy, type PrivateKeyReference, type PublicKeyReference, VERIFICATION_STATUS } from '@proton/crypto';
+import { CryptoProxy, type PrivateKeyReference, type PublicKeyReference, VERIFICATION_STATUS } from '@protontech/crypto';
 import type { DecryptedKey } from '@proton/shared/lib/interfaces';
 import type { User } from '@proton/shared/lib/interfaces/User';
 import isTruthy from '@proton/utils/isTruthy';

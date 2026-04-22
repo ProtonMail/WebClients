@@ -2,8 +2,14 @@
  * Guest data encryption utilities using Proton's shared crypto libraries
  * Provides temporary encryption for guest migration data without requiring user authentication
  */
-import { decryptData, encryptData, exportKey, generateAndImportKey, importKey } from '@proton/crypto/lib/subtle/aesGcm';
-import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@proton/crypto/lib/utils';
+import {
+    decryptData,
+    encryptData,
+    exportKey,
+    generateAndImportKey,
+    importKey,
+} from '@protontech/crypto/subtle/aesGcm.ts';
+import { uint8ArrayToUtf8String, utf8StringToUint8Array } from '@protontech/crypto/utils';
 
 import { GUEST_MIGRATION_STORAGE_KEYS } from '../constants/guestMigration';
 

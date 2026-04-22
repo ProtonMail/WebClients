@@ -1,5 +1,5 @@
-import type { AesGcmCryptoKey } from '@proton/crypto/lib/subtle/aesGcm';
-import { deriveKey } from '@proton/crypto/lib/subtle/aesGcm';
+import type { AesGcmCryptoKey } from '@protontech/crypto/subtle/aesGcm.ts';
+import { deriveKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import type { AuthStore } from '@proton/pass/lib/auth/store';
 import { decryptData, encryptData } from '@proton/pass/lib/crypto/utils/crypto-helpers';
 import type { ExportRequestOptions } from '@proton/pass/lib/export/types';

@@ -1,4 +1,4 @@
-import type { PrivateKeyReference, PublicKeyReference } from '@proton/crypto';
+import type { PrivateKeyReference, PublicKeyReference } from '@protontech/crypto';
 import type { CALENDAR_FLAGS } from '@proton/shared/lib/calendar/constants';
 import type { ApiResponse } from '@proton/shared/lib/interfaces';
 

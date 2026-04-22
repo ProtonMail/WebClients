@@ -1,7 +1,7 @@
 import { act, renderHook } from '@testing-library/react-hooks';
 import { verifyAllWhenMocksCalled, when } from 'jest-when';
 
-import { CryptoProxy } from '@proton/crypto/lib';
+import { CryptoProxy } from '@protontech/crypto';
 
 import { useBookmarks } from '../../_bookmarks/useBookmarks';
 import { useShare } from '../../_shares';
@@ -10,7 +10,7 @@ import useLinksState from '../useLinksState';
 import { useBookmarksLinksListing } from './useBookmarksLinksListing';
 import { useLinksListingHelpers } from './useLinksListingHelpers';
 
-jest.mock('@proton/crypto');
+jest.mock('@protontech/crypto');
 const mockedDecryptMessage = jest.mocked(CryptoProxy.decryptMessage);
 
 jest.mock('../../_bookmarks/useBookmarks');

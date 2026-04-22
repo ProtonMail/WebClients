@@ -1,6 +1,6 @@
-import type { SessionKey } from '@proton/crypto';
-import { CryptoProxy } from '@proton/crypto';
-import { deriveKey, exportKey, generateKey } from '@proton/crypto/lib/subtle/aesGcm';
+import type { SessionKey } from '@protontech/crypto';
+import { CryptoProxy } from '@protontech/crypto';
+import { deriveKey, exportKey, generateKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { getPrimaryCalendarKey } from '@proton/shared/lib/calendar/crypto/keys/helpers';
 import type {
     BookingPageCreationPayload,

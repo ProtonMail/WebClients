@@ -1,5 +1,6 @@
-import { CryptoProxy, type PrivateKeyReference, type PublicKeyReference } from '@proton/crypto';
-import { utf8StringToUint8Array } from '@proton/crypto/lib/utils';
+import { CryptoProxy, type PrivateKeyReference, type PublicKeyReference } from '@protontech/crypto';
+import { utf8StringToUint8Array } from '@protontech/crypto/utils';
+
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { APPS, SSO_PATHS } from '@proton/shared/lib/constants';
 import { stringToUint8Array, uint8ArrayToString } from '@proton/shared/lib/helpers/encoding';

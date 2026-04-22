@@ -1,4 +1,4 @@
-import { generateKey, importKey } from '@proton/crypto/lib/subtle/aesGcm';
+import { generateKey, importKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { sessionLockAdapterFactory } from '@proton/pass/lib/auth/lock/session/adapter';
 import { LockMode } from '@proton/pass/lib/auth/lock/types';
 import { encryptPersistedSessionWithKey } from '@proton/pass/lib/auth/session';

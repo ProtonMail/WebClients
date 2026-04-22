@@ -15,7 +15,7 @@ import {
     useModalTwoStatic,
 } from '@proton/components';
 import EllipsisLoader from '@proton/components/components/loader/EllipsisLoader';
-import { VERIFICATION_STATUS } from '@proton/crypto';
+import { VERIFICATION_STATUS } from '@protontech/crypto';
 import type { Revision } from '@proton/drive';
 import { InfoIconTooltip } from '@proton/drive/components/InfoIconTooltip';
 import { getNumAccessesTooltipMessage, getSizeTooltipMessage } from '@proton/shared/lib/drive/translations';

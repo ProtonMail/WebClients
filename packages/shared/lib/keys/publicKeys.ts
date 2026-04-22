@@ -1,7 +1,7 @@
 import { c } from 'ttag';
 
-import type { PublicKeyReference } from '@proton/crypto';
-import { CryptoProxy, serverTime } from '@proton/crypto';
+import type { PublicKeyReference } from '@protontech/crypto';
+import { CryptoProxy, serverTime } from '@protontech/crypto';
 
 import { KEY_FLAG, MIME_TYPES_MORE, PGP_SCHEMES_MORE, RECIPIENT_TYPES } from '../constants';
 import { hasBit } from '../helpers/bitset';

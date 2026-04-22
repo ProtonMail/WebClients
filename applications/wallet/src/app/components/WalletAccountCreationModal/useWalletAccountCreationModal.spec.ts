@@ -4,7 +4,7 @@ import { waitFor } from '@testing-library/react';
 import { renderHook } from '@testing-library/react-hooks';
 
 import { type WasmApiWalletAccount, WasmDerivationPath, WasmScriptType } from '@proton/andromeda';
-import { generateKey, importKey } from '@proton/crypto/lib/subtle/aesGcm';
+import { generateKey, importKey } from '@protontech/crypto/subtle/aesGcm.ts';
 import { setupCryptoProxyForTesting } from '@proton/pass/lib/crypto/utils/testing';
 import { mockUseNotifications, mockUseUserKeys } from '@proton/testing/lib/vitest';
 import { apiWalletAccountOneA, apiWalletAccountOneB, apiWalletsData } from '@proton/wallet/tests/fixtures';

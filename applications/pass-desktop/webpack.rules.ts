@@ -1,3 +1,5 @@
+import { resolve as resolvePath } from 'path';
+
 export default [
     // Add support for native node modules
     {
@@ -19,10 +21,18 @@ export default [
     },
     {
         test: /\.tsx?$/,
-        exclude: /(node_modules|\.webpack)/,
+        exclude: /(node_modules\/(?!.*(@protontech\/crypto))|\.webpack)/,
         use: {
             loader: 'ts-loader',
             options: {
+                /**
+                 * An absolute path is needed here so that ts-loader sticks to this
+                 * tsconfig file even for any TS entrypoing (incl. the TS node_modules).
+                 * With just a filename, it expects and loads the tsconfig relative to
+                 * each module's entrypoint otherwise.
+                 * See https://github.com/TypeStrong/ts-loader#configfile
+                 */
+                configFile: resolvePath('tsconfig.json'),
                 transpileOnly: true,
             },
         },

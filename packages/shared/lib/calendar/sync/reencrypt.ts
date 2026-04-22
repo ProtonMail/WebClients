@@ -1,4 +1,4 @@
-import type { SessionKey } from '@proton/crypto';
+import type { SessionKey } from '@protontech/crypto';
 
 import { upgradeP2PInvite } from '../../api/calendars';
 import type { Api } from '../../interfaces';
