@@ -28,6 +28,9 @@ const contextBridgeApi: ContextBridgeApi = {
     windowShow: () => invoke('window:show'),
     onWindowHide: (callback) => handler('window:hide', callback),
 
+    /** client */
+    setAppState: (state) => invoke('client:setAppState', state),
+
     /* system */
     onSystemWake: (callback) => handler('system:wake', callback),
 
