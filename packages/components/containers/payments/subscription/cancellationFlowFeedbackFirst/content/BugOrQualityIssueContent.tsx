@@ -8,7 +8,7 @@ import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import lifeRing from '@proton/styles/assets/img/illustrations/life-ring.svg';
 import stethoscope from '@proton/styles/assets/img/illustrations/stethoscope.svg';
 
-import { CallToActionBanner } from './components/CallToActionBanner';
+import { CallToActionBanner } from '../components/CallToActionBanner';
 
 interface Props {
     onKeepPlan: () => void;
