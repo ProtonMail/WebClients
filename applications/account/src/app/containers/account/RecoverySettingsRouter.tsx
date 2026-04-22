@@ -122,7 +122,7 @@ const RedesignRecoverySettingsRouter = ({ app, recovery, path }: Props) => {
                 >
                     <RecoveryContactSubpage
                         app={app}
-                        emailSubpagePath={getSubroutePath(recoveryPath, dataRecovery.subroutes.recoveryContacts)}
+                        emailSubpagePath={getSubroutePath(recoveryPath, passwordReset.subroutes.email)}
                     />
                 </PrivateMainSubSettingsArea>
             </Route>
