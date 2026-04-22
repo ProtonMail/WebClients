@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
@@ -8,6 +8,7 @@ import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { telemetry } from '@proton/shared/lib/telemetry';
 
 import { isB2BAdmin } from '../../../functions/isB2BAdmin';
+import { TvConfirmForkSession } from '../components/TvConfirmForkSession';
 import { TvSignInCompleted } from '../components/TvSignInCompleted';
 import { TvSignInFailed } from '../components/TvSignInFailed';
 import type { FetchErrors } from '../types';
@@ -16,6 +17,7 @@ import { getChildClientId } from '../utils/getChildClientId';
 import { getUserTier } from '../utils/getUserTier';
 
 enum ForkSessionStep {
+    CONFIRMATION,
     FETCHING_CODE,
     DEVICE_CONNECTED,
     DEVICE_CONNECTION_ERROR,
@@ -25,7 +27,7 @@ const childClientId = getChildClientId();
 
 export const TvContainerSignedIn = ({ code }: { code: string }) => {
     const api = useApi();
-    const [step, setStep] = useState<ForkSessionStep>(ForkSessionStep.FETCHING_CODE);
+    const [step, setStep] = useState<ForkSessionStep>(ForkSessionStep.CONFIRMATION);
     const [error, setError] = useState<FetchErrors | undefined>(undefined);
     const [user] = useUser();
     const [organization] = useOrganization();
@@ -33,7 +35,8 @@ export const TvContainerSignedIn = ({ code }: { code: string }) => {
 
     const isBusiness = isB2BAdmin({ subscription, user, organization });
 
-    useEffect(() => {
+    const onConfirm = () => {
+        setStep(ForkSessionStep.FETCHING_CODE);
         if (isBusiness) {
             setStep(ForkSessionStep.DEVICE_CONNECTION_ERROR);
             setError('business-user');
@@ -50,10 +53,11 @@ export const TvContainerSignedIn = ({ code }: { code: string }) => {
                     setStep(ForkSessionStep.DEVICE_CONNECTION_ERROR);
                 });
         }
-    }, []);
+    };
 
     return (
         <>
+            {step === ForkSessionStep.CONFIRMATION && <TvConfirmForkSession onConfirm={onConfirm} />}
             {step === ForkSessionStep.FETCHING_CODE && <Loader />}
             {step === ForkSessionStep.DEVICE_CONNECTED && <TvSignInCompleted />}
             {step === ForkSessionStep.DEVICE_CONNECTION_ERROR && error && <TvSignInFailed error={error} />}
