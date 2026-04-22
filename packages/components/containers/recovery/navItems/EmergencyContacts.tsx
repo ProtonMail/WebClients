@@ -2,11 +2,11 @@ import { c, msgid } from 'ttag';
 
 import { getFormattedCreateTime } from '@proton/account/delegatedAccess/emergencyContact/date';
 import { useOutgoingItems } from '@proton/account/delegatedAccess/shared/outgoing/useOutgoingItems';
+import { useIsSentinelUser } from '@proton/account/recovery/sentinelHooks';
 import { useUser } from '@proton/account/user/hooks';
 import SkeletonLoader from '@proton/components/components/skeletonLoader/SkeletonLoader';
 import SettingsNavItem from '@proton/components/containers/layout/SettingsNavItem';
 import { StatusBadge, StatusBadgeStatus } from '@proton/components/containers/layout/StatusBadge';
-import useIsSentinelUser from '@proton/components/hooks/useIsSentinelUser';
 import { IcUsers } from '@proton/icons/icons/IcUsers';
 import { hasPaidPass } from '@proton/shared/lib/user/helpers';
 

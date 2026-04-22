@@ -1,7 +1,7 @@
 import { useInactiveKeys } from '@proton/account';
+import { useIsSentinelUser } from '@proton/account/recovery/sentinelHooks';
 import { useUserKeys } from '@proton/account/userKeys/hooks';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
-import useIsSentinelUser from '@proton/components/hooks/useIsSentinelUser';
 import { FeatureCode, useFeature } from '@proton/features';
 
 import useSearchParamsEffect from '../../hooks/useSearchParamsEffect';

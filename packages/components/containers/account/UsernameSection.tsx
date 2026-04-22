@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
+import { selectSessionRecoveryData } from '@proton/account/recovery/sessionRecoverySelectors';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import { Card } from '@proton/atoms/Card/Card';
@@ -19,11 +20,11 @@ import { PromotionBanner } from '@proton/components/containers/banner/PromotionB
 import useApi from '@proton/components/hooks/useApi';
 import useConfig from '@proton/components/hooks/useConfig';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { useSessionRecoveryState } from '@proton/components/hooks/useSessionRecoveryState';
 import useLoading from '@proton/hooks/useLoading';
 import { IcCheckmarkCircleFilled } from '@proton/icons/icons/IcCheckmarkCircleFilled';
 import { IcChevronRight } from '@proton/icons/icons/IcChevronRight';
 import { IcExclamationCircleFilled } from '@proton/icons/icons/IcExclamationCircleFilled';
+import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { postVerifySend } from '@proton/shared/lib/api/verify';
 import { getAppHref } from '@proton/shared/lib/apps/helper';
 import { stripLocalBasenameFromPathname } from '@proton/shared/lib/authentication/pathnameHelper';
@@ -49,7 +50,6 @@ import clsx from '@proton/utils/clsx';
 import { getVerificationSentText } from '../../containers/recovery/email/VerifyRecoveryEmailModal';
 import getBoldFormattedText from '../../helpers/getBoldFormattedText';
 import useSearchParamsEffect from '../../hooks/useSearchParamsEffect';
-import { useIsSessionRecoveryAvailable } from '../../hooks/useSessionRecovery';
 import EditDisplayNameModal from './EditDisplayNameModal';
 import EditExternalAddressModal from './EditExternalAddressModal';
 import SettingsLayout from './SettingsLayout';
@@ -77,8 +77,7 @@ const UsernameSection = ({ app }: Props) => {
     const [modalProps, setModalOpen, renderModal] = useModalState();
     const [editAddressModalProps, setEditAddressModalOpen, renderEditAddressModal] = useModalState();
 
-    const [isSessionRecoveryAvailable] = useIsSessionRecoveryAvailable();
-    const sessionRecoveryStatus = useSessionRecoveryState();
+    const { isSessionRecoveryAvailable, sessionRecoveryState } = useSelector(selectSessionRecoveryData);
 
     const primaryAddress = addresses?.find(getIsAddressEnabled);
 
@@ -141,10 +140,10 @@ const UsernameSection = ({ app }: Props) => {
                 <EditExternalAddressModal {...editAddressModalProps} address={tmpAddress} />
             )}
             <SettingsSection>
-                {isSessionRecoveryAvailable && sessionRecoveryStatus === SessionRecoveryState.GRACE_PERIOD && (
+                {isSessionRecoveryAvailable && sessionRecoveryState === SessionRecoveryState.GRACE_PERIOD && (
                     <SessionRecoveryInProgressCard className="mb-6" />
                 )}
-                {isSessionRecoveryAvailable && sessionRecoveryStatus === SessionRecoveryState.INSECURE && (
+                {isSessionRecoveryAvailable && sessionRecoveryState === SessionRecoveryState.INSECURE && (
                     <PasswordResetAvailableCard className="mb-6" />
                 )}
                 {canSetupProtonAddress && (

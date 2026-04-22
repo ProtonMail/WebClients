@@ -3,43 +3,27 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { RecoveryMethodWarningModal } from '@proton/account/delegatedAccess/recoveryContact/RecoveryMethodWarningModal';
-import { getCanDisableRecovery } from '@proton/account/delegatedAccess/recoveryContact/getCanDisableRecovery';
-import { useOutgoingItems } from '@proton/account/delegatedAccess/shared/outgoing/useOutgoingItems';
-import { userSettingsThunk } from '@proton/account/userSettings';
-import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useIsSentinelUser } from '@proton/account/recovery/sentinelHooks';
+import { useUpdateAccountRecovery } from '@proton/account/recovery/useUpdateAccountRecovery';
 import { Button } from '@proton/atoms/Button/Button';
 import { DashboardCard, DashboardCardContent, DashboardCardDivider } from '@proton/atoms/DashboardCard/DashboardCard';
 import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { Href } from '@proton/atoms/Href/Href';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Loader from '@proton/components/components/loader/Loader';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
 import SettingsDescription, {
     SettingsDescriptionItem,
 } from '@proton/components/containers/account/SettingsDescription';
 import { SettingsToggleRow } from '@proton/components/containers/account/SettingsToggleRow';
 import { StatusBadge, StatusBadgeStatus } from '@proton/components/containers/layout/StatusBadge';
-import AuthModal from '@proton/components/containers/password/AuthModal';
-import type { AuthModalResult } from '@proton/components/containers/password/interface';
 import RecoveryEmail from '@proton/components/containers/recovery/email/RecoveryEmail';
-import { useRecoverySettingsTelemetry } from '@proton/components/containers/recovery/recoverySettingsTelemetry';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import useIsSentinelUser from '@proton/components/hooks/useIsSentinelUser';
-import useNotifications from '@proton/components/hooks/useNotifications';
-import { useLoading } from '@proton/hooks';
 import { IcPen } from '@proton/icons/icons/IcPen';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { IcShieldExclamationFilled } from '@proton/icons/icons/IcShieldExclamationFilled';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { CacheType } from '@proton/redux-utilities';
-import { updateResetEmail } from '@proton/shared/lib/api/settings';
 import { BRAND_NAME, PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { SETTINGS_STATUS } from '@proton/shared/lib/interfaces';
-import noop from '@proton/utils/noop';
 
 import illustration from './assets/recovery-email.svg';
 import SentinelWarning from './shared/SentinelWarning';
@@ -157,47 +141,21 @@ const RecoveryEmailVerificationStatus = ({
 };
 
 const RecoveryEmailSubpage = () => {
-    const { sendRecoverySettingEnabled } = useRecoverySettingsTelemetry();
-    const [userSettings, loadingUserSettings] = useUserSettings();
     const [{ isSentinelUser }, loadingIsSentinelUser] = useIsSentinelUser();
     const [isEditingRecoveryEmail, setIsEditingRecoveryEmail] = useState(false);
-    const dispatch = useDispatch();
-    const [loadingEmailReset, withLoadingEmailReset] = useLoading();
-    const { createNotification } = useNotifications();
-    const [authModal, showAuthModal] = useModalTwoPromise<{ config: any }, AuthModalResult>();
-    const outgoingItems = useOutgoingItems();
-    const canDisableRecovery = getCanDisableRecovery({
-        recoveryContacts: outgoingItems.items.recoveryContacts,
-        userSettings,
-    });
-    const [renderProps, showRecoveryContactWarning, renderModal] = useModalState();
+    const accountRecovery = useUpdateAccountRecovery();
 
-    if (loadingUserSettings || loadingIsSentinelUser) {
+    const { emailRecovery, loading } = accountRecovery.data;
+
+    if (loading || loadingIsSentinelUser) {
         return <Loader />;
     }
-
-    const handleChangePasswordEmailToggle = async (value: number) => {
-        if (value && !userSettings.Email.Value) {
-            return createNotification({
-                type: 'error',
-                text: c('Error').t`Please set a recovery email first`,
-            });
-        }
-        await showAuthModal({ config: updateResetEmail({ Reset: value }) });
-        await dispatch(userSettingsThunk({ cache: CacheType.None }));
-        if (value) {
-            sendRecoverySettingEnabled({ setting: 'recovery_by_email' });
-        }
-    };
 
     const learnMoreLink = <Href key="learn" href={getKnowledgeBaseUrl('/')}>{c('Link').t`Learn more`}</Href>;
 
     return (
         <>
-            {authModal(({ onResolve, onReject, ...props }) => (
-                <AuthModal {...props} scope="password" onCancel={onReject} onSuccess={onResolve} />
-            ))}
-            {renderModal && <RecoveryMethodWarningModal {...renderProps} />}
+            {accountRecovery.el}
             <DashboardGrid>
                 <SettingsDescription
                     left={
@@ -223,27 +181,20 @@ const RecoveryEmailSubpage = () => {
                     <DashboardCardContent>
                         <RecoveryEmail
                             disableVerifyCta
-                            autoStartVerificationFlowAfterSet
-                            persistPasswordScope // is this ok to do? otherwise sentinel users get double auth modal
-                            email={userSettings.Email}
-                            hasReset={!!userSettings.Email.Reset}
-                            hasNotify={!!userSettings.Email.Notify}
-                            canSubmit={(value) => {
-                                if (!value && !canDisableRecovery.canDisableEmail) {
-                                    showRecoveryContactWarning(true);
-                                    return false;
+                            {...accountRecovery.recoveryEmail.props}
+                            onSubmit={async (value) => {
+                                try {
+                                    await accountRecovery.recoveryEmail.handleChangeEmailValue({
+                                        value,
+                                        autoStartVerificationFlowAfterSet: true,
+                                    });
+                                } finally {
+                                    setIsEditingRecoveryEmail(false);
                                 }
-                                return true;
-                            }}
-                            onSuccess={(updatedUserSettings) => {
-                                if (!!updatedUserSettings.Email.Reset && !!updatedUserSettings.Email.Value) {
-                                    sendRecoverySettingEnabled({ setting: 'recovery_by_email' });
-                                }
-                                setIsEditingRecoveryEmail(false);
                             }}
                             inputProps={{
                                 label: c('Label').t`Your recovery email`,
-                                readOnly: !isEditingRecoveryEmail && !!userSettings.Email.Value,
+                                readOnly: !isEditingRecoveryEmail && !!emailRecovery.value,
                                 placeholder: c('Placeholder').t`example@domain.com`,
                             }}
                             renderForm={({ onSubmit, onReset, input, submitButtonProps, onVerify, onRemove }) => {
@@ -251,14 +202,14 @@ const RecoveryEmailSubpage = () => {
                                     <form onSubmit={onSubmit}>
                                         <RecoveryEmailInputRow
                                             input={input}
-                                            emailValue={userSettings.Email.Value}
+                                            emailValue={emailRecovery.value}
                                             isEditing={isEditingRecoveryEmail}
                                             onEdit={() => setIsEditingRecoveryEmail(true)}
                                             onRemove={onRemove}
                                         />
                                         <RecoveryEmailInputActions
                                             submitButtonProps={submitButtonProps}
-                                            emailValue={userSettings.Email.Value}
+                                            emailValue={emailRecovery.value}
                                             isEditing={isEditingRecoveryEmail}
                                             onKeep={() => {
                                                 onReset();
@@ -266,9 +217,9 @@ const RecoveryEmailSubpage = () => {
                                             }}
                                         />
                                         <RecoveryEmailVerificationStatus
-                                            emailValue={userSettings.Email.Value}
+                                            emailValue={emailRecovery.value}
                                             isEditing={isEditingRecoveryEmail}
-                                            isVerified={userSettings.Email.Status === SETTINGS_STATUS.VERIFIED}
+                                            isVerified={emailRecovery.isVerified}
                                             onVerify={onVerify}
                                         />
                                     </form>
@@ -276,7 +227,7 @@ const RecoveryEmailSubpage = () => {
                             }}
                         />
 
-                        {!!userSettings.Email.Value && (
+                        {!!emailRecovery.value && (
                             <div className="fade-in">
                                 <DashboardCardDivider />
                                 <SettingsToggleRow
@@ -300,31 +251,23 @@ const RecoveryEmailSubpage = () => {
                                     }
                                     toggle={
                                         <SettingsToggleRow.Toggle
-                                            loading={loadingEmailReset}
-                                            checked={!!userSettings.Email.Reset}
-                                            disabled={!userSettings.Email.Reset && isSentinelUser}
-                                            onChange={({ target: { checked } }) => {
-                                                if (!checked && !canDisableRecovery.canDisableEmail) {
-                                                    showRecoveryContactWarning(true);
-                                                    return;
-                                                }
-                                                return withLoadingEmailReset(
-                                                    handleChangePasswordEmailToggle(+checked).catch(noop)
-                                                );
-                                            }}
+                                            disabled={!emailRecovery.hasReset && isSentinelUser}
+                                            {...accountRecovery.recoveryEmail.toggleProps}
+                                            /* Overridden for new design */
+                                            checked={emailRecovery.hasReset}
                                         />
                                     }
                                 />
                             </div>
                         )}
 
-                        {!!userSettings.Email.Reset && !!userSettings.Email.Value && isSentinelUser && (
+                        {emailRecovery.enabled && isSentinelUser && (
                             <SentinelWarning
                                 text={c('Info')
                                     .t`To ensure the highest possible security of your account, disable **Recovery by recovery email**.`}
                             />
                         )}
-                        {!userSettings.Email.Value && isSentinelUser && (
+                        {!emailRecovery.value && isSentinelUser && (
                             <SentinelWarning text={c('Info').t`Add an email address in case we need to contact you`} />
                         )}
                     </DashboardCardContent>

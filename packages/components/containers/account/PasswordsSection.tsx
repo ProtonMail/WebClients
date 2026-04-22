@@ -2,6 +2,11 @@ import { useState } from 'react';
 
 import { c } from 'ttag';
 
+import { useSessionRecoveryLocalStorage } from '@proton/account/recovery/sessionRecoveryHooks';
+import {
+    selectAvailableRecoveryMethods,
+    selectSessionRecoveryData,
+} from '@proton/account/recovery/sessionRecoverySelectors';
 import { useUser } from '@proton/account/user/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms/Button/Button';
@@ -11,11 +16,11 @@ import useModalState from '@proton/components/components/modalTwo/useModalState'
 import Toggle from '@proton/components/components/toggle/Toggle';
 import ChangeBackupPasswordModal from '@proton/components/containers/account/ChangeBackupPasswordModal';
 import useSearchParamsEffect from '@proton/components/hooks/useSearchParamsEffect';
+import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 import { SETTINGS_PASSWORD_MODE } from '@proton/shared/lib/interfaces';
 import { getIsGlobalSSOAccount } from '@proton/shared/lib/keys';
 
-import { useAvailableRecoveryMethods, useIsSessionRecoveryInitiationAvailable } from '../../hooks/useSessionRecovery';
 import ChangePasswordModal, { MODES } from './ChangePasswordModal';
 import ReauthUsingRecoveryModal from './ReauthUsingRecoveryModal';
 import SettingsLayout from './SettingsLayout';
@@ -24,15 +29,13 @@ import SettingsLayoutRight from './SettingsLayoutRight';
 import SettingsSection from './SettingsSection';
 import InitiateSessionRecoveryModal from './sessionRecovery/InitiateSessionRecoveryModal';
 import PasswordResetAvailableAccountModal from './sessionRecovery/PasswordResetAvailableAccountModal';
-import { useSessionRecoveryLocalStorage } from './sessionRecovery/SessionRecoveryLocalStorageManager';
 
 const PasswordsSection = () => {
     const [user, loadingUser] = useUser();
     const [userSettings, loadingUserSettings] = useUserSettings();
 
-    const [availableRecoveryMethods] = useAvailableRecoveryMethods();
-    const hasRecoveryMethod = availableRecoveryMethods.length > 0;
-    const isSessionRecoveryInitiationAvailable = useIsSessionRecoveryInitiationAvailable();
+    const { availableRecoveryMethods, hasRecoveryMethod } = useSelector(selectAvailableRecoveryMethods);
+    const { isSessionRecoveryInitiationAvailable } = useSelector(selectSessionRecoveryData);
 
     const [tmpPasswordMode, setTmpPasswordMode] = useState<MODES>();
     const [changePasswordModal, setChangePasswordModalOpen, renderChangePasswordModal] = useModalState();

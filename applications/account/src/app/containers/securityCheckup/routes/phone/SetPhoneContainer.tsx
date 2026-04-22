@@ -2,7 +2,7 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useUpdateAccountRecovery } from '@proton/account/recovery/useUpdateAccountRecovery';
 import { Button } from '@proton/atoms/Button/Button';
 import { useMyCountry, useSecurityCheckup } from '@proton/components';
 import RecoveryPhone from '@proton/components/containers/recovery/phone/RecoveryPhone';
@@ -20,10 +20,10 @@ const SetPhoneContainer = () => {
     const { securityState } = useSecurityCheckup();
     const { phone } = securityState;
 
-    const [userSettings, loadingUserSettings] = useUserSettings();
+    const accountRecovery = useUpdateAccountRecovery();
     const defaultCountry = useMyCountry();
 
-    if (loadingUserSettings) {
+    if (accountRecovery.data.loading) {
         return <AccountLoaderPage />;
     }
 
@@ -38,12 +38,10 @@ const SetPhoneContainer = () => {
                     .t`You can use your recovery phone to regain access to your account if you forget your password.`}
             </div>
 
+            {accountRecovery.el}
             <RecoveryPhone
                 autoFocus
-                persistPasswordScope
                 defaultCountry={defaultCountry}
-                phone={userSettings.Phone}
-                hasReset={!!userSettings.Phone.Reset}
                 disableVerifyCta
                 inputProps={{ label: c('Safety review').t`Recovery phone number` }}
                 renderForm={({ onSubmit, input, submitButtonProps }) => {
@@ -57,7 +55,10 @@ const SetPhoneContainer = () => {
                         </form>
                     );
                 }}
-                onSuccess={() => {
+                {...accountRecovery.recoveryPhone.props}
+                onSubmit={async (value) => {
+                    await accountRecovery.recoveryPhone.handleChangePhoneValue({ value, persistPasswordScope: true });
+
                     if (phone.verified) {
                         history.push(SECURITY_CHECKUP_PATHS.ROOT);
                         return;

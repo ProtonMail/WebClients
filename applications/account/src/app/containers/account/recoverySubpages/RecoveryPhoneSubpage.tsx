@@ -1,52 +1,36 @@
-import type { ComponentPropsWithoutRef } from 'react';
+import type { ComponentPropsWithoutRef, ReactNode } from 'react';
 import { useState } from 'react';
 
 import { c } from 'ttag';
 
-import { RecoveryMethodWarningModal } from '@proton/account/delegatedAccess/recoveryContact/RecoveryMethodWarningModal';
-import { getCanDisableRecovery } from '@proton/account/delegatedAccess/recoveryContact/getCanDisableRecovery';
-import { useOutgoingItems } from '@proton/account/delegatedAccess/shared/outgoing/useOutgoingItems';
-import { userSettingsThunk } from '@proton/account/userSettings';
-import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useIsSentinelUser } from '@proton/account/recovery/sentinelHooks';
+import { useUpdateAccountRecovery } from '@proton/account/recovery/useUpdateAccountRecovery';
 import { Button } from '@proton/atoms/Button/Button';
 import { DashboardCard, DashboardCardContent, DashboardCardDivider } from '@proton/atoms/DashboardCard/DashboardCard';
 import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { Href } from '@proton/atoms/Href/Href';
 import { Tooltip } from '@proton/atoms/Tooltip/Tooltip';
 import Loader from '@proton/components/components/loader/Loader';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
-import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
 import SettingsDescription, {
     SettingsDescriptionItem,
 } from '@proton/components/containers/account/SettingsDescription';
 import { SettingsToggleRow } from '@proton/components/containers/account/SettingsToggleRow';
 import { StatusBadge, StatusBadgeStatus } from '@proton/components/containers/layout/StatusBadge';
-import AuthModal from '@proton/components/containers/password/AuthModal';
-import type { AuthModalResult } from '@proton/components/containers/password/interface';
 import RecoveryPhone from '@proton/components/containers/recovery/phone/RecoveryPhone';
-import { useRecoverySettingsTelemetry } from '@proton/components/containers/recovery/recoverySettingsTelemetry';
 import getBoldFormattedText from '@proton/components/helpers/getBoldFormattedText';
-import useIsSentinelUser from '@proton/components/hooks/useIsSentinelUser';
 import useMyCountry from '@proton/components/hooks/useMyCountry';
-import useNotifications from '@proton/components/hooks/useNotifications';
-import { useLoading } from '@proton/hooks';
 import { IcPen } from '@proton/icons/icons/IcPen';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
 import { IcShieldExclamationFilled } from '@proton/icons/icons/IcShieldExclamationFilled';
 import { IcTrash } from '@proton/icons/icons/IcTrash';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
-import { CacheType } from '@proton/redux-utilities';
-import { updateResetPhone } from '@proton/shared/lib/api/settings';
 import { BRAND_NAME, PROTON_SENTINEL_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { SETTINGS_STATUS } from '@proton/shared/lib/interfaces';
-import noop from '@proton/utils/noop';
 
 import illustration from './assets/recovery-phone.svg';
 import SentinelWarning from './shared/SentinelWarning';
 
 interface RecoveryPhoneInputRowProps {
-    input: React.ReactNode;
+    input: ReactNode;
     phoneValue: string;
     isEditing: boolean;
     onEdit: () => void;
@@ -158,48 +142,22 @@ const RecoveryPhoneVerificationStatus = ({
 };
 
 const RecoveryPhoneSubpage = () => {
-    const { sendRecoverySettingEnabled } = useRecoverySettingsTelemetry();
-    const [userSettings, loadingUserSettings] = useUserSettings();
     const [{ isSentinelUser }, loadingIsSentinelUser] = useIsSentinelUser();
     const [isEditingRecoveryPhone, setIsEditingRecoveryPhone] = useState(false);
-    const dispatch = useDispatch();
-    const [loadingPhoneReset, withLoadingPhoneReset] = useLoading();
-    const { createNotification } = useNotifications();
     const defaultCountry = useMyCountry();
-    const [authModal, showAuthModal] = useModalTwoPromise<{ config: any }, AuthModalResult>();
-    const outgoingItems = useOutgoingItems();
-    const canDisableRecovery = getCanDisableRecovery({
-        recoveryContacts: outgoingItems.items.recoveryContacts,
-        userSettings,
-    });
-    const [renderProps, showRecoveryContactWarning, renderModal] = useModalState();
+    const accountRecovery = useUpdateAccountRecovery();
 
-    if (loadingUserSettings || loadingIsSentinelUser) {
+    const { phoneRecovery, loading } = accountRecovery.data;
+
+    if (loading || loadingIsSentinelUser) {
         return <Loader />;
     }
-
-    const handleChangePasswordPhoneToggle = async (value: number) => {
-        if (value && !userSettings.Phone.Value) {
-            return createNotification({
-                type: 'error',
-                text: c('Error').t`Please set a recovery phone number first`,
-            });
-        }
-        await showAuthModal({ config: updateResetPhone({ Reset: value }) });
-        await dispatch(userSettingsThunk({ cache: CacheType.None }));
-        if (value) {
-            sendRecoverySettingEnabled({ setting: 'recovery_by_phone' });
-        }
-    };
 
     const learnMoreLink = <Href key="learn" href={getKnowledgeBaseUrl('/')}>{c('Link').t`Learn more`}</Href>;
 
     return (
         <>
-            {authModal(({ onResolve, onReject, ...props }) => (
-                <AuthModal {...props} scope="password" onCancel={onReject} onSuccess={onResolve} />
-            ))}
-            {renderModal && <RecoveryMethodWarningModal {...renderProps} />}
+            {accountRecovery.el}
             <DashboardGrid>
                 <SettingsDescription
                     left={
@@ -226,39 +184,34 @@ const RecoveryPhoneSubpage = () => {
                         <RecoveryPhone
                             defaultCountry={defaultCountry}
                             disableVerifyCta
-                            autoStartVerificationFlowAfterSet
-                            phone={userSettings.Phone}
-                            hasReset={!!userSettings.Phone.Reset}
-                            canSubmit={(value) => {
-                                if (!value && !canDisableRecovery.canDisablePhone) {
-                                    showRecoveryContactWarning(true);
-                                    return false;
+                            {...accountRecovery.recoveryPhone.props}
+                            onSubmit={async (value) => {
+                                try {
+                                    await accountRecovery.recoveryPhone.handleChangePhoneValue({
+                                        value,
+                                        autoStartVerificationFlowAfterSet: true,
+                                    });
+                                } finally {
+                                    setIsEditingRecoveryPhone(false);
                                 }
-                                return true;
-                            }}
-                            onSuccess={(updatedUserSettings) => {
-                                if (!!updatedUserSettings.Phone.Reset && !!updatedUserSettings.Phone.Value) {
-                                    sendRecoverySettingEnabled({ setting: 'recovery_by_phone' });
-                                }
-                                setIsEditingRecoveryPhone(false);
                             }}
                             inputProps={{
                                 label: c('Label').t`Your recovery phone number`,
-                                readOnly: !isEditingRecoveryPhone && !!userSettings.Phone.Value,
+                                readOnly: !isEditingRecoveryPhone && !!phoneRecovery.value,
                             }}
                             renderForm={({ onSubmit, onReset, input, submitButtonProps, onVerify, onRemove }) => {
                                 return (
                                     <form onSubmit={onSubmit}>
                                         <RecoveryPhoneInputRow
                                             input={input}
-                                            phoneValue={userSettings.Phone.Value}
+                                            phoneValue={phoneRecovery.value}
                                             isEditing={isEditingRecoveryPhone}
                                             onEdit={() => setIsEditingRecoveryPhone(true)}
                                             onRemove={onRemove}
                                         />
                                         <RecoveryPhoneInputActions
                                             submitButtonProps={submitButtonProps}
-                                            phoneValue={userSettings.Phone.Value}
+                                            phoneValue={phoneRecovery.value}
                                             isEditing={isEditingRecoveryPhone}
                                             onKeep={() => {
                                                 onReset();
@@ -266,9 +219,9 @@ const RecoveryPhoneSubpage = () => {
                                             }}
                                         />
                                         <RecoveryPhoneVerificationStatus
-                                            phoneValue={userSettings.Phone.Value}
+                                            phoneValue={phoneRecovery.value}
                                             isEditing={isEditingRecoveryPhone}
-                                            isVerified={userSettings.Phone.Status === SETTINGS_STATUS.VERIFIED}
+                                            isVerified={phoneRecovery.isVerified}
                                             onVerify={onVerify}
                                         />
                                     </form>
@@ -276,7 +229,7 @@ const RecoveryPhoneSubpage = () => {
                             }}
                         />
 
-                        {!!userSettings.Phone.Value && (
+                        {!!phoneRecovery.value && (
                             <div className="fade-in">
                                 <DashboardCardDivider />
                                 <SettingsToggleRow
@@ -300,31 +253,23 @@ const RecoveryPhoneSubpage = () => {
                                     }
                                     toggle={
                                         <SettingsToggleRow.Toggle
-                                            loading={loadingPhoneReset}
-                                            checked={!!userSettings.Phone.Reset && !!userSettings.Phone.Value}
-                                            disabled={!userSettings.Phone.Reset && isSentinelUser}
-                                            onChange={({ target: { checked } }) => {
-                                                if (!checked && !canDisableRecovery.canDisablePhone) {
-                                                    showRecoveryContactWarning(true);
-                                                    return;
-                                                }
-                                                return withLoadingPhoneReset(
-                                                    handleChangePasswordPhoneToggle(+checked).catch(noop)
-                                                );
-                                            }}
+                                            disabled={!phoneRecovery.hasReset && isSentinelUser}
+                                            {...accountRecovery.recoveryPhone.toggleProps}
+                                            /* Overridden for new design */
+                                            checked={phoneRecovery.hasReset}
                                         />
                                     }
                                 />
                             </div>
                         )}
 
-                        {!!userSettings.Phone.Reset && !!userSettings.Phone.Value && isSentinelUser && (
+                        {phoneRecovery.enabled && isSentinelUser && (
                             <SentinelWarning
                                 text={c('Info')
                                     .t`To ensure the highest possible security of your account, disable **Recovery by recovery phone**.`}
                             />
                         )}
-                        {!userSettings.Phone.Value && isSentinelUser && (
+                        {!phoneRecovery.value && isSentinelUser && (
                             <SentinelWarning text={c('Info').t`Add a phone number in case we need to contact you`} />
                         )}
                     </DashboardCardContent>

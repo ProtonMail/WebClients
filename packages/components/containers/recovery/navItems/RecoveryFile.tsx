@@ -1,24 +1,22 @@
 import { c } from 'ttag';
 
+import { selectRecoveryFileData } from '@proton/account/recovery/recoveryFile';
 import SettingsNavItem from '@proton/components/containers/layout/SettingsNavItem';
 import { StatusBadge, StatusBadgeStatus } from '@proton/components/containers/layout/StatusBadge';
-import useHasOutdatedRecoveryFile from '@proton/components/hooks/useHasOutdatedRecoveryFile';
-import useRecoverySecrets from '@proton/components/hooks/useRecoverySecrets';
 import { IcCode } from '@proton/icons/icons/IcCode';
+import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 
 interface Props {
     to: string;
 }
 
 const RecoveryFileBadge = () => {
-    const hasOutdatedRecoveryFile = useHasOutdatedRecoveryFile();
-    const recoverySecrets = useRecoverySecrets();
-    const hasRecoveryFile = recoverySecrets.length > 0;
+    const { hasOutdatedRecoveryFile, hasCurrentRecoveryFile } = useSelector(selectRecoveryFileData);
 
     if (hasOutdatedRecoveryFile) {
         return <StatusBadge status={StatusBadgeStatus.Warning} text={c('Status').t`Outdated`} />;
     }
-    if (hasRecoveryFile) {
+    if (hasCurrentRecoveryFile) {
         return <StatusBadge status={StatusBadgeStatus.On} text={c('Status').t`Saved`} />;
     }
     return <StatusBadge status={StatusBadgeStatus.Warning} text={c('Status').t`Not saved`} />;

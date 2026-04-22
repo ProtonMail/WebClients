@@ -36,7 +36,7 @@ interface OutgoingItemProps {
     meta: MetaIncomingDelegatedAccess;
 }
 
-const StatusCell = ({
+const getStatusCell = ({
     value: {
         parsedOutgoingDelegatedAccess: { isDisabled, recoverableAtDate },
 
@@ -76,25 +76,21 @@ const OutgoingItem = ({
     labels,
     value,
     value: {
-        parsedOutgoingDelegatedAccess: { contact, createdAtDate, isDisabled },
+        parsedOutgoingDelegatedAccess: { contact, createdAtDate },
         loading,
     },
     meta,
     meta: { canReEnable, canDelete, canRecoverStep1, canRecoverStep2 },
 }: OutgoingItemProps) => {
-    const hasStatusCell =
-        canRecoverStep2 || value.outgoingDelegatedAccess.State === DelegatedAccessStateEnum.Recoverable || isDisabled;
+    const statusCell = getStatusCell({ value, meta });
+    const hasStatusCell = Boolean(statusCell);
 
     return (
         <TableRow labels={labels}>
             <TableCell colSpan={hasStatusCell ? undefined : 2}>
                 <ContactCell {...contact} createdAtDate={createdAtDate} />
             </TableCell>
-            {hasStatusCell && (
-                <TableCell>
-                    <StatusCell value={value} meta={meta} />
-                </TableCell>
-            )}
+            {hasStatusCell && <TableCell>{statusCell}</TableCell>}
             <TableCell>
                 <div className="inline-flex">
                     <DropdownActions

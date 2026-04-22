@@ -2,12 +2,11 @@ import { useHistory } from 'react-router-dom';
 
 import { c } from 'ttag';
 
-import { useUserSettings } from '@proton/account/userSettings/hooks';
+import { useUpdateAccountRecovery } from '@proton/account/recovery/useUpdateAccountRecovery';
 import { Button } from '@proton/atoms/Button/Button';
 import { useSecurityCheckup } from '@proton/components';
 import RecoveryEmail from '@proton/components/containers/recovery/email/RecoveryEmail';
 import { SECURITY_CHECKUP_PATHS } from '@proton/shared/lib/constants';
-import type { UserSettings } from '@proton/shared/lib/interfaces';
 
 import AccountLoaderPage from '../../../../content/AccountLoaderPage';
 import SecurityCheckupMain from '../../components/SecurityCheckupMain';
@@ -16,36 +15,40 @@ import SecurityCheckupMainTitle from '../../components/SecurityCheckupMainTitle'
 import { emailIcon } from '../../methodIcons';
 
 const CommonRecoveryEmail = ({
-    userSettings,
+    accountRecovery,
     label,
     onSuccess,
 }: {
-    userSettings: UserSettings;
+    accountRecovery: ReturnType<typeof useUpdateAccountRecovery>;
     label: string;
     onSuccess: () => void;
 }) => {
     return (
-        <RecoveryEmail
-            autoFocus
-            persistPasswordScope
-            email={userSettings.Email}
-            hasReset={!!userSettings.Email.Reset}
-            hasNotify={!!userSettings.Email.Notify}
-            disableVerifyCta
-            inputProps={{ label }}
-            renderForm={({ onSubmit, input, submitButtonProps }) => {
-                return (
-                    <form onSubmit={onSubmit}>
-                        <div>{input}</div>
+        <>
+            {accountRecovery.el}
+            <RecoveryEmail
+                autoFocus
+                {...accountRecovery.recoveryEmail.props}
+                onSubmit={async (value) => {
+                    await accountRecovery.recoveryEmail.handleChangeEmailValue({ value, persistPasswordScope: true });
+                    onSuccess();
+                }}
+                disableVerifyCta
+                inputProps={{ label }}
+                renderForm={({ onSubmit, input, submitButtonProps }) => {
+                    return (
+                        <form onSubmit={onSubmit}>
+                            <div>{input}</div>
 
-                        <Button className="mt-4" fullWidth color="norm" {...submitButtonProps}>
-                            {c('Action').t`Add email address`}
-                        </Button>
-                    </form>
-                );
-            }}
-            onSuccess={onSuccess}
-        />
+                            <Button className="mt-4" fullWidth color="norm" {...submitButtonProps}>
+                                {c('Action').t`Add email address`}
+                            </Button>
+                        </form>
+                    );
+                }}
+                onSuccess={onSuccess}
+            />
+        </>
     );
 };
 
@@ -55,9 +58,9 @@ const SetEmailContainer = () => {
     const { securityState } = useSecurityCheckup();
     const { email } = securityState;
 
-    const [userSettings, loadingUserSettings] = useUserSettings();
+    const accountRecovery = useUpdateAccountRecovery();
 
-    if (loadingUserSettings) {
+    if (accountRecovery.data.loading) {
         return <AccountLoaderPage />;
     }
 
@@ -74,7 +77,7 @@ const SetEmailContainer = () => {
                 </div>
 
                 <CommonRecoveryEmail
-                    userSettings={userSettings}
+                    accountRecovery={accountRecovery}
                     label={c('Safety review').t`Email address`}
                     onSuccess={() => {
                         if (email.verified) {
@@ -101,7 +104,7 @@ const SetEmailContainer = () => {
             </div>
 
             <CommonRecoveryEmail
-                userSettings={userSettings}
+                accountRecovery={accountRecovery}
                 label={c('Safety review').t`Recovery email address`}
                 onSuccess={() => {
                     if (email.verified) {

@@ -1,33 +1,27 @@
 import { c } from 'ttag';
 
-import { useUserSettings } from '@proton/account/index';
-import { useUser } from '@proton/account/user/hooks';
+import { selectRecoveryFileData } from '@proton/account/recovery/recoveryFile';
 import SettingsNavItem from '@proton/components/containers/layout/SettingsNavItem';
 import { StatusBadge, StatusBadgeStatus } from '@proton/components/containers/layout/StatusBadge';
 import { IcDesktop } from '@proton/icons/icons/IcDesktop';
-import { getHasRecoveryMessage } from '@proton/shared/lib/recoveryFile/storage';
+import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 
-interface Props {
-    to: string;
-}
-
-const RecoveryDeviceBadge = () => {
-    const [userSettings, loadingUserSettings] = useUserSettings();
-
-    if (loadingUserSettings || !userSettings) {
+const RecoveryDeviceBadge = ({ recoveryFileData }: { recoveryFileData: ReturnType<typeof selectRecoveryFileData> }) => {
+    const { hasDeviceRecoveryEnabled, loading } = recoveryFileData;
+    if (loading) {
         return <StatusBadge status={StatusBadgeStatus.Off} loading={true} />;
     }
-
-    const isEnabled = !!userSettings.DeviceRecovery;
-    if (isEnabled) {
+    if (hasDeviceRecoveryEnabled) {
         return <StatusBadge status={StatusBadgeStatus.On} text={c('Status').t`On`} />;
     }
     return <StatusBadge status={StatusBadgeStatus.Off} text={c('Status').t`Off`} />;
 };
 
+interface Props {
+    to: string;
+}
 const RecoveryDevice = ({ to }: Props) => {
-    const [user] = useUser();
-    const isAvailableOnDevice = getHasRecoveryMessage(user.ID);
+    const recoveryFileData = useSelector(selectRecoveryFileData);
 
     return (
         <SettingsNavItem
@@ -38,8 +32,8 @@ const RecoveryDevice = ({ to }: Props) => {
                 .t`Save an encryption backup file in this browser to recover your data after a password reset`}
         >
             <span className="flex items-center gap-2">
-                <RecoveryDeviceBadge />
-                {isAvailableOnDevice && (
+                <RecoveryDeviceBadge recoveryFileData={recoveryFileData} />
+                {recoveryFileData.isAvailableOnDevice && (
                     <span className="text-sm color-weak">{c('Status').t`Available on this device`}</span>
                 )}
             </span>

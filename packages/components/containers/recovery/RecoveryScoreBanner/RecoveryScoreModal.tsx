@@ -1,5 +1,7 @@
 import { c } from 'ttag';
 
+import type { RecoveryScoreItemId } from '@proton/account/securityCheckup/recoveryScore/calculateRecoveryScore';
+import { useRecoveryScore } from '@proton/account/securityCheckup/recoveryScore/useRecoveryScore';
 import type { ModalProps } from '@proton/components/components/modalTwo/Modal';
 import Modal from '@proton/components/components/modalTwo/Modal';
 import ModalContent from '@proton/components/components/modalTwo/ModalContent';
@@ -12,7 +14,6 @@ import clsx from '@proton/utils/clsx';
 
 import SecureAccountButton from './SecureAccountButton';
 import { SCORE_TONE_CLASS, getRecoveryScoreTone } from './recoveryScoreState';
-import useRecoveryScore, { type RecoveryScoreItemId } from './useRecoveryScore';
 
 type RecoveryScoreModalItem = {
     id: RecoveryScoreItemId;

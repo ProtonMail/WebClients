@@ -1,7 +1,7 @@
 import type SecurityState from '@proton/shared/lib/interfaces/securityCheckup/SecurityState';
 
-import { calculateRecoveryScore } from './useRecoveryScore';
-import type { RecoveryScoreState } from './useRecoveryScore';
+import { calculateRecoveryScore } from './calculateRecoveryScore';
+import type { RecoveryScoreState } from './calculateRecoveryScore';
 
 const baseSecurityState: SecurityState = {
     phrase: { isAvailable: false, isSet: false, isOutdated: false },
