@@ -17,6 +17,7 @@ export enum NativeMessageErrorType {
     DESKTOP_LOCK_NOT_CONFIGURED = 'DESKTOP_LOCK_NOT_CONFIGURED',
     SECRET_MISMATCH = 'SECRET_MISMATCH',
     ACCOUNT_MISMATCH = 'ACCOUNT_MISMATCH',
+    DESKTOP_APP_NOT_LOGGED_IN = 'DESKTOP_APP_NOT_LOGGED_IN',
 }
 
 export type NativeMessageRequest = NativeMessageSetupLockSecretRequest | NativeMessageUnlockRequest;
