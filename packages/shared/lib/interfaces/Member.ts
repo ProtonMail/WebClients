@@ -2,6 +2,7 @@ import type { Address } from '@proton/shared/lib/interfaces/Address';
 
 import type { ADDRESS_STATUS, ADDRESS_TYPE, MEMBER_PRIVATE, MEMBER_ROLE, MEMBER_TYPE } from '../constants';
 import type { Key } from './Key';
+import type { UserOrganizationRole } from './OrganizationRole';
 
 export interface PartialMemberAddress {
     ID: string;
@@ -154,4 +155,7 @@ export type EnhancedMember = Member &
               addressState: 'full';
               Addresses: Address[];
           }
-    );
+    ) & {
+        roleState?: 'stale' | 'pending' | 'rejected' | 'full';
+        UserOrganizationRoles?: UserOrganizationRole[];
+    };
