@@ -1303,6 +1303,27 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
         "Die ${ PASS_APP_NAME }-Desktop-App ist mit einem anderen Konto angemeldet."
+      ],
+      "Biometric authentication failed.": [
+        "Biometrische Authentifizierung fehlgeschlagen."
+      ],
+      "Desktop lock is not configured.": [
+        "Desktop-Sperre ist nicht eingerichtet."
+      ],
+      "Desktop lock secret does not match.": [
+        "Das Passwort für die Desktop-Sperre stimmt nicht überein."
+      ],
+      "Desktop lock secret not found.": [
+        "Passwort für die Desktop-Sperre nicht gefunden."
+      ],
+      "Desktop lock setup failed.": [
+        "Einrichten der Desktop-Sperre ist fehlgeschlagen."
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Verschlüsselte Kommunikation mit der ${ PASS_APP_NAME }-Desktop-App fehlgeschlagen."
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "Die ${ PASS_APP_NAME }-Desktop-App hat nicht zeitgerecht reagiert."
       ]
     },
     "Error message": {
@@ -5064,6 +5085,11 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Dein Abonnement erlaubt es dir nicht, mehrere Tresore zu erstellen. Alle Einträge werden in deinen ersten Tresor importiert. Um in mehrere Tresore zu importieren, musst du dein Abonnement upgraden."
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "${ planName } holen"
       ]
     }
   }
