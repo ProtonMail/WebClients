@@ -14,7 +14,7 @@ export const getAddressSuggestedLocalPart = (
         .join(' ')
         .trim()
         .toLowerCase()
-        .replace(/[^a-z0-9-_\.\s+]/g, '')
+        .replace(/[^a-z0-9\s]/g, '')
         .replace(/\s+/g, '-');
 };
 
