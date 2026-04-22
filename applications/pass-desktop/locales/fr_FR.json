@@ -2698,6 +2698,9 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "Votre organisation vous demande de sécuriser votre accès à ${ PASS_APP_NAME }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Saisissez le code de vérification. Entrez ${ digit }."
       ]
     },
     "Keyboard key": {
@@ -5251,6 +5254,11 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Votre abonnement ne vous permet pas de créer plusieurs coffres-forts. Tous les éléments seront importés dans votre premier coffre-fort. Changez d'abonnement pour pouvoir importer dans plusieurs coffres-forts."
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "Obtenir ${ planName }"
       ]
     }
   }
