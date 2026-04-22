@@ -67,6 +67,7 @@ export type IconName =
     | 'arrows-up-and-left-big'
     | 'at'
     | 'backspace'
+    | 'password'
     | 'person-2'
     | 'person-filled-2'
     | 'percent'

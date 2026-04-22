@@ -3,6 +3,10 @@ import { useState } from 'react';
 
 import { c, msgid } from 'ttag';
 
+import {
+    useSessionRecoveryGracePeriodHoursRemaining,
+    useSessionRecoveryLocalStorage,
+} from '@proton/account/recovery/sessionRecoveryHooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import SettingsLink from '@proton/components/components/link/SettingsLink';
@@ -12,10 +16,8 @@ import ModalContent from '@proton/components/components/modalTwo/ModalContent';
 import ModalFooter from '@proton/components/components/modalTwo/ModalFooter';
 import ModalHeader from '@proton/components/components/modalTwo/ModalHeader';
 
-import { useSessionRecoveryGracePeriodHoursRemaining } from '../../../hooks/useSessionRecovery';
 import ConfirmSessionRecoveryCancellationModal from './ConfirmSessionRecoveryCancellationModal';
 import SessionRecoveryInProgressModalIllustration from './SessionRecoveryInProgressModalIllustration';
-import { useSessionRecoveryLocalStorage } from './SessionRecoveryLocalStorageManager';
 
 enum STEP {
     INFO,

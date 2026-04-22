@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { c } from 'ttag';
 
+import { selectAvailableRecoveryMethods } from '@proton/account/recovery/sessionRecoverySelectors';
 import { userThunk } from '@proton/account/user';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
@@ -15,13 +16,12 @@ import useApi from '@proton/components/hooks/useApi';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import useLoading from '@proton/hooks/useLoading';
 import metrics, { observeApiError } from '@proton/metrics';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { CacheType } from '@proton/redux-utilities';
 import { initiateSessionRecovery } from '@proton/shared/lib/api/sessionRecovery';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import noop from '@proton/utils/noop';
 
-import { useAvailableRecoveryMethods } from '../../../hooks/useSessionRecovery';
 import SessionRecoveryResetConfirmedPrompt from './SessionRecoveryResetConfirmedPrompt';
 import sessionRecoveryIllustration from './session-recovery-illustration.svg';
 
@@ -40,8 +40,7 @@ const InitiateSessionRecoveryModal = ({ confirmedStep = false, onUseRecoveryMeth
     const dispatch = useDispatch();
     const api = useApi();
     const { createNotification } = useNotifications();
-    const [availableRecoveryMethods] = useAvailableRecoveryMethods();
-    const hasRecoveryMethod = availableRecoveryMethods.length > 0;
+    const { hasRecoveryMethod } = useSelector(selectAvailableRecoveryMethods);
 
     const [step, setStep] = useState<STEP>(STEP.PROMPT);
 

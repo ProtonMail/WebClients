@@ -9,6 +9,8 @@ import { c } from 'ttag';
 
 import { useGroups } from '@proton/account/groups/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
+import { useIsDataRecoveryAvailable } from '@proton/account/recovery/dataRecovery';
+import { useIsSessionRecoveryAvailable } from '@proton/account/recovery/sessionRecoveryHooks';
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import AuthDevicesSettings from '@proton/account/sso/AuthDevicesSettings';
 import MembersAuthDevicesTopBanner from '@proton/account/sso/MembersAuthDevicesTopBanner';
@@ -72,8 +74,6 @@ import {
     YourPlanSectionV2,
     YourPlanUpsellsSectionV2,
     useActiveBreakpoint,
-    useIsDataRecoveryAvailable,
-    useIsSessionRecoveryAvailable,
     useModalState,
     useRecoveryNotification,
     useToggle,
@@ -308,7 +308,7 @@ const MainContainer: FunctionComponent = () => {
                                     <PrivateMainSettingsArea
                                         config={vpnRoutes.dashboardV2}
                                         mainAreaClass="bg-lowered settings-cards"
-                                        wrapperClass="w-full p-4 lg:p-6 xl:p-12 max-w-custom mx-auto"
+                                        wrapperClass="w-full p-4 lg:p-6 xl:p-12 max-w-custom mr-auto"
                                         style={{ '--max-w-custom': '1500px' }}
                                     >
                                         <YourPlanSectionV2 app={app} />
@@ -325,7 +325,7 @@ const MainContainer: FunctionComponent = () => {
                                     <PrivateMainSettingsArea
                                         config={vpnRoutes.subscription}
                                         mainAreaClass="bg-lowered settings-cards"
-                                        wrapperClass="w-full p-4 lg:p-6 xl:p-12 max-w-custom mx-auto"
+                                        wrapperClass="w-full p-4 lg:p-6 xl:p-12 max-w-custom mr-auto"
                                         style={{ '--max-w-custom': '1500px' }}
                                     >
                                         <YourPlanSectionV2

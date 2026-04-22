@@ -1,0 +1,61 @@
+.recovery-score-accent {
+	--recovery-score-accent-bg-default: color-mix(
+		in srgb,
+		var(--background-norm) 80%,
+		var(--recovery-score-accent-color)
+	);
+	--recovery-score-accent-bg-hover: color-mix(in srgb, var(--background-norm) 85%, var(--recovery-score-accent-color));
+	--recovery-score-accent-bg-active: color-mix(in srgb, var(--background-norm) 90%, var(--recovery-score-accent-color));
+	--recovery-score-accent-text-default: color-mix(in srgb, var(--text-norm) 60%, var(--recovery-score-accent-color));
+	--recovery-score-accent-text-hover: color-mix(in srgb, var(--text-norm) 65%, var(--recovery-score-accent-color));
+	--recovery-score-accent-text-active: color-mix(in srgb, var(--text-norm) 70%, var(--recovery-score-accent-color));
+}
+
+.recovery-score-accent-color-success {
+	--recovery-score-accent-color: var(--signal-success);
+}
+
+.recovery-score-accent-color-warning {
+	--recovery-score-accent-color: var(--signal-warning);
+}
+
+.recovery-score-accent-color-info {
+	--recovery-score-accent-color: var(--signal-info);
+}
+
+.recovery-score-accent-color-danger {
+	--recovery-score-accent-color: var(--signal-danger);
+}
+
+.recovery-score-banner-button {
+	--button-default-background-color: var(--recovery-score-accent-bg-default);
+	--button-hover-background-color: var(--recovery-score-accent-bg-hover);
+	--button-active-background-color: var(--recovery-score-accent-bg-active);
+	--button-default-text-color: var(--recovery-score-accent-text-default);
+	--button-hover-text-color: var(--recovery-score-accent-text-hover);
+	--button-active-text-color: var(--recovery-score-accent-text-active);
+}
+
+.recovery-score-banner-shield-button {
+	--recovery-score-banner-shield-button-shadow-color: color-mix(
+		in srgb,
+		transparent 75%,
+		var(--recovery-score-accent-color)
+	);
+
+	outline: none;
+	transition: filter 0.25s ease-in-out;
+	filter: drop-shadow(0 0 0 var(--recovery-score-banner-shield-button-shadow-color))
+		drop-shadow(0 0 0 var(--recovery-score-banner-shield-button-shadow-color)) brightness(1);
+
+	&:hover,
+	&:focus-visible {
+		filter: drop-shadow(1px 1px 8px var(--recovery-score-banner-shield-button-shadow-color))
+			drop-shadow(0 0 2px var(--recovery-score-banner-shield-button-shadow-color)) brightness(1.05);
+	}
+}
+
+.recovery-score-modal-pill {
+	background-color: var(--recovery-score-accent-bg-default);
+	color: var(--recovery-score-accent-text-default);
+}

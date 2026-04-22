@@ -11,6 +11,8 @@ import { getTrustedContactRoute } from '@proton/account/delegatedAccess/routes';
 import { useGroupMemberships } from '@proton/account/groupMemberships/hooks';
 import { useGroups } from '@proton/account/groups/hooks';
 import { useOrganization } from '@proton/account/organization/hooks';
+import { useIsDataRecoveryAvailable } from '@proton/account/recovery/dataRecovery';
+import { useIsSessionRecoveryAvailable } from '@proton/account/recovery/sessionRecoveryHooks';
 import { useReferralInfo } from '@proton/account/referralInfo/hooks';
 import AuthDevicesTopBanner from '@proton/account/sso/AuthDevicesTopBanner';
 import MembersAuthDevicesTopBanner from '@proton/account/sso/MembersAuthDevicesTopBanner';
@@ -33,10 +35,7 @@ import {
     TopNavbarUpsell,
     UserDropdown,
     useActiveBreakpoint,
-    useDeviceRecovery,
     useDrivePlan,
-    useIsDataRecoveryAvailable,
-    useIsSessionRecoveryAvailable,
     useOrganizationTheme,
     useRecoveryNotification,
     useShowThemeSelection,
@@ -193,6 +192,7 @@ const MainContainer = () => {
     const isCategoryViewEnabled = useFlag('CategoryView');
     const isRecoveryContactsEnabled = useFlag('SocialRecovery');
     const isRolesAndPermissionsEnabled = useFlag('AdminRoleMVP');
+    const isRecoverySettingsRedesignEnabled = useFlag('RecoverySettingsRedesign');
 
     const [referralInfo] = useReferralInfo();
 
@@ -296,13 +296,12 @@ const MainContainer = () => {
         isOLESEnabled,
         isCategoryViewEnabled,
         isRolesAndPermissionsEnabled,
+        isRecoverySettingsRedesignEnabled,
     });
 
     useEffect(() => {
         setExpand(false);
     }, [location.pathname, location.hash]);
-
-    useDeviceRecovery();
 
     /*
      * There's no logical app to return/go to from VPN settings since the
