@@ -8,8 +8,8 @@ import { NotificationHeader } from 'proton-pass-extension/app/content/services/i
 import type { NotificationRequest } from 'proton-pass-extension/app/content/services/inline/notification/notification.app';
 import { useIFrameAppController, useIFrameAppState } from 'proton-pass-extension/lib/components/Inline/IFrameApp';
 import { ListItem } from 'proton-pass-extension/lib/components/Inline/ListItem';
-import { WithPinUnlock } from 'proton-pass-extension/lib/components/Inline/PinUnlock';
 import { ScrollableItemsList } from 'proton-pass-extension/lib/components/Inline/ScrollableItemsList';
+import { WithUnlock } from 'proton-pass-extension/lib/components/Inline/WithUnlock';
 import { contentScriptMessage, sendMessage } from 'proton-pass-extension/lib/message/send-message';
 import { WorkerMessageType } from 'proton-pass-extension/types/messages';
 import { c } from 'ttag';
@@ -113,15 +113,14 @@ export const PasskeyGet: FC<Props> = (props) => {
                 <div className="shrink-0 px-1 text-sm">
                     {c('Info').t`Choose a saved passkey to sign-in to ${domain}`}
                 </div>
-                <WithPinUnlock>
+                <WithUnlock>
                     {(locked, input) =>
                         locked ? (
                             <Card className="flex flex-auto text-sm" type="primary">
                                 <div className="flex flex-column justify-center items-center gap-2 mb-2">
                                     <Icon name="lock-filled" size={6} />
                                     <span className="text-center block">
-                                        {c('Info')
-                                            .t`Unlock ${PASS_APP_NAME} with your PIN code to access your passkeys`}
+                                        {c('Info').t`Unlock ${PASS_APP_NAME} to access your passkeys`}
                                     </span>
                                 </div>
                                 {input}
@@ -130,7 +129,7 @@ export const PasskeyGet: FC<Props> = (props) => {
                             <PasskeyGetView {...props} />
                         )
                     }
-                </WithPinUnlock>
+                </WithUnlock>
             </div>
 
             <div className="shrink-0 px-1 text-xs color-weak">
