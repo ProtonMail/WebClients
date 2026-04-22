@@ -1,6 +1,6 @@
 import crypto from "node:crypto";
 import { Request } from "electron";
-import { CERT_LIVEKIT_PROTON_ME, CERT_PROTON_ME } from "../constants";
+import { CERT_PROTON_ME } from "../constants";
 import { isProdEnv } from "./isProdEnv";
 import { isHostAllowed } from "./urls/urlTests";
 import { mainLogger } from "./log";
@@ -10,10 +10,6 @@ export const checkKeys = (request: Request) => {
         // We dont do any verification for dev and testing environments
         if (!isProdEnv()) {
             return 0;
-        }
-
-        if (request.hostname.endsWith(".livekit.proton.me")) {
-            return hasLiveKitProtonMeCert(request) ? 0 : -2;
         }
 
         if (hasProtonMeCert(request)) {
@@ -26,16 +22,6 @@ export const checkKeys = (request: Request) => {
 
     return -3;
 };
-
-function hasLiveKitProtonMeCert(request: Request): boolean {
-    const pk = crypto.createPublicKey(request.validatedCertificate.data);
-    const hash = crypto
-        .createHash("sha256")
-        .update(pk.export({ type: "spki", format: "der" }))
-        .digest("base64");
-
-    return CERT_LIVEKIT_PROTON_ME.includes(hash);
-}
 
 function hasProtonMeCert(request: Request): boolean {
     const pk = crypto.createPublicKey(request.validatedCertificate.data);
@@ -55,19 +41,13 @@ export enum VerificationResult {
 
 export function verifyDownloadCertificate(request: Request, callback: (code: VerificationResult) => void) {
     const code = ((): VerificationResult => {
-        const hostname = request.hostname.replace(/^https:\/\//, "");
-
-        if (hostname !== "proton.me" && hostname !== "livekit.proton.me") {
+        if (request.hostname.replace(/^https:\/\//, "") !== "proton.me") {
             return VerificationResult.UseVerificationFromChromium;
         }
 
         // We dont do any verification for dev and testing environments
         if (!isProdEnv()) {
             return VerificationResult.Accept;
-        }
-
-        if (hostname === "livekit.proton.me") {
-            return hasLiveKitProtonMeCert(request) ? VerificationResult.Accept : VerificationResult.Reject;
         }
 
         if (!hasProtonMeCert(request)) {
