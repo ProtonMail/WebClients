@@ -1,26 +1,25 @@
-import { format, fromUnixTime } from 'date-fns';
+import { format } from 'date-fns';
 import { c } from 'ttag';
 
-import { useUserSettings } from '@proton/account/index';
-import { useUser } from '@proton/account/user/hooks';
+import { selectMnemonicData } from '@proton/account/recovery/mnemonic';
 import SettingsNavItem from '@proton/components/containers/layout/SettingsNavItem';
 import { StatusBadge, StatusBadgeStatus } from '@proton/components/containers/layout/StatusBadge';
 import { IcNote } from '@proton/icons/icons/IcNote';
+import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { dateLocale } from '@proton/shared/lib/i18n';
-import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 
 interface Props {
     to: string;
 }
 
 const RecoveryPhraseBadge = () => {
-    const [user] = useUser();
+    const { hasOutdatedMnemonic, isMnemonicSet } = useSelector(selectMnemonicData);
 
-    if (user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED) {
+    if (hasOutdatedMnemonic) {
         return <StatusBadge status={StatusBadgeStatus.Warning} text={c('Status').t`Outdated`} />;
     }
 
-    if (user.MnemonicStatus === MNEMONIC_STATUS.SET) {
+    if (isMnemonicSet) {
         return <StatusBadge status={StatusBadgeStatus.On} text={c('Status').t`On`} />;
     }
 
@@ -28,10 +27,8 @@ const RecoveryPhraseBadge = () => {
 };
 
 const RecoveryPhrase = ({ to }: Props) => {
-    const [userSettings] = useUserSettings();
-    const updateTime = userSettings.Mnemonic.UpdateTime;
-    const formattedUpdateDate =
-        updateTime != null && updateTime > 0 ? format(fromUnixTime(updateTime), 'PP', { locale: dateLocale }) : null;
+    const { updateTime } = useSelector(selectMnemonicData);
+    const formattedUpdateDate = updateTime !== null ? format(updateTime, 'PP', { locale: dateLocale }) : null;
 
     return (
         <SettingsNavItem

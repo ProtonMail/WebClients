@@ -56,7 +56,7 @@ export const getAllKeysReactivationRequests = ({
     return [userKeysReactivation, ...allAddressesKeys].filter(isTruthy);
 };
 
-export const getLikelyHasKeysToReactivate = (user: User, addresses?: Address[]) => {
+export const getLikelyHasKeysToReactivate = (user: User | undefined, addresses?: Address[]) => {
     return (
         user?.Keys?.some((Key) => !Key.Active) || addresses?.some((address) => address.Keys?.some((Key) => !Key.Active))
     );

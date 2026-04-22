@@ -1,10 +1,11 @@
 import { c } from 'ttag';
 
+import { downloadRecoveryFileThunk } from '@proton/account/recovery/recoveryFile';
 import type { ButtonProps } from '@proton/atoms/Button/Button';
 import { Button } from '@proton/atoms/Button/Button';
-import useDownloadRecoveryFile from '@proton/components/hooks/recoveryFile/useDownloadRecoveryFile';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks';
+import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
 
 import { useRecoverySettingsTelemetry } from './recoverySettingsTelemetry';
 
@@ -12,13 +13,14 @@ interface Props extends Omit<ButtonProps, 'onClick'> {}
 
 const ExportRecoveryFileButton = ({ children = c('Action').t`Download recovery file`, ...rest }: Props) => {
     const { sendRecoverySettingEnabled } = useRecoverySettingsTelemetry();
-    const downloadRecoveryFile = useDownloadRecoveryFile();
+    const dispatch = useDispatch();
+
     const [loading, withLoading] = useLoading();
     const { createNotification } = useNotifications();
 
     const handleClick = async () => {
         try {
-            await downloadRecoveryFile();
+            await dispatch(downloadRecoveryFileThunk());
             sendRecoverySettingEnabled({ setting: 'recovery_file_download' });
             createNotification({ text: c('Info').t`Recovery file downloaded` });
         } catch (error) {

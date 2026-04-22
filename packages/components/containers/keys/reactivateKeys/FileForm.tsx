@@ -3,12 +3,12 @@ import { useState } from 'react';
 import { c } from 'ttag';
 
 import { reactivateKeysThunk } from '@proton/account/addressKeys/reactivateKeysActions';
+import { selectRecoveryFileData } from '@proton/account/recovery/recoveryFile';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import { getKeyReactivationNotification } from '@proton/components/containers/keys/reactivateKeys/reactivateHelper';
 import useErrorHandler from '@proton/components/hooks/useErrorHandler';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import useRecoverySecrets from '@proton/components/hooks/useRecoverySecrets';
-import { useDispatch } from '@proton/redux-shared-store/sharedProvider';
+import { useDispatch, useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { requiredValidator } from '@proton/shared/lib/helpers/formValidators';
 import type { KeyReactivationRequestStateData } from '@proton/shared/lib/keys';
 import isTruthy from '@proton/utils/isTruthy';
@@ -73,10 +73,9 @@ export const FileForm = ({ keyReactivationStates, loading, onLoading, onClose }:
         }
     };
 
-    const recoverySecrets = useRecoverySecrets();
-    const recoveryFileAvailable = !!recoverySecrets.length;
+    const { recoverySecrets, canRevokeRecoveryFiles } = useSelector(selectRecoveryFileData);
 
-    const fileDescription = recoveryFileAvailable
+    const fileDescription = canRevokeRecoveryFiles
         ? c('Info').t`This is a recovery file or encryption key you may have previously saved.`
         : c('Info').t`This is an encryption key you may have previously saved.`;
 

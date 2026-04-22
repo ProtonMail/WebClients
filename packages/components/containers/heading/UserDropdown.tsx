@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { useAccountSessions } from '@proton/account/accountSessions';
 import { getLoginHref, getSwitchHref, handleSwitchAccountFork } from '@proton/account/accountSessions/sessionsHelper';
 import { useOrganization } from '@proton/account/organization/hooks';
+import { selectSessionRecoveryData } from '@proton/account/recovery/sessionRecoverySelectors';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import ConfirmSignOutModal, {
@@ -18,10 +19,10 @@ import { useReferral } from '@proton/components/containers/heading/useReferral';
 import AuthenticatedBugModal from '@proton/components/containers/support/AuthenticatedBugModal';
 import useAuthentication from '@proton/components/hooks/useAuthentication';
 import useConfig from '@proton/components/hooks/useConfig';
-import { useSessionRecoveryState } from '@proton/components/hooks/useSessionRecoveryState';
 import { useTrialOnlyPaymentMethods } from '@proton/components/hooks/useTrialOnlyPaymentMethods';
 import { getSubscriptionPlanTitles, isTrial } from '@proton/payments';
 import { useIsB2BTrial } from '@proton/payments/ui';
+import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import type { ForkType } from '@proton/shared/lib/authentication/fork';
 import { APPS, type APP_NAMES, SHARED_UPSELL_PATHS, UPSELL_COMPONENT } from '@proton/shared/lib/constants';
 import { hasInboxDesktopFeature } from '@proton/shared/lib/desktop/ipcHelpers';
@@ -29,7 +30,6 @@ import { isElectronApp } from '@proton/shared/lib/helpers/desktop';
 import { getShouldProcessLinkClick } from '@proton/shared/lib/helpers/dom';
 import { getInitials } from '@proton/shared/lib/helpers/string';
 import { addUpsellPath, getUpgradePath, getUpsellRefFromApp } from '@proton/shared/lib/helpers/upsell';
-import { SessionRecoveryState } from '@proton/shared/lib/interfaces';
 import { useFlag } from '@proton/unleash/useFlag';
 import isTruthy from '@proton/utils/isTruthy';
 
@@ -106,10 +106,7 @@ const UserDropdown = ({
         }
     }, []);
 
-    const sessionRecoveryState = useSessionRecoveryState();
-    const sessionRecoveryInitiated =
-        sessionRecoveryState === SessionRecoveryState.GRACE_PERIOD ||
-        sessionRecoveryState === SessionRecoveryState.INSECURE;
+    const { sessionRecoveryInitiated } = useSelector(selectSessionRecoveryData);
 
     const handleSignOutClick = (
         {

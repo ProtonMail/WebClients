@@ -21,16 +21,22 @@ import {
     userKeysListener,
     userSettingsListener,
 } from '@proton/account';
+import {
+    type SessionRecoverySliceReducerState,
+    sessionRecoveryListener,
+} from '@proton/account/recovery/sessionRecovery';
 import type { ProtonDispatch, ProtonThunkArguments } from '@proton/redux-shared-store-types';
 
 interface RequiredState
-    extends AddressKeysState,
+    extends
+        AddressKeysState,
         UserKeysState,
         UserSettingsState,
         OrganizationKeyState,
         UserInvitationsState,
         SecurityCheckupReduxState,
         GroupMembershipsState,
+        SessionRecoverySliceReducerState,
         KtState {}
 
 type AppStartListening = TypedStartListening<RequiredState, ProtonDispatch<any>, ProtonThunkArguments>;
@@ -47,4 +53,5 @@ export const startSharedListening = (startListening: AppStartListening) => {
     groupMembershipsListener(startListening);
     ktListener(startListening);
     keyBackgroundManagerListener(startListening);
+    sessionRecoveryListener(startListening);
 };

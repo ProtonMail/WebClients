@@ -56,7 +56,7 @@ const IncomingDelegatedAccessActions = ({
     );
 };
 
-const StatusCell = ({
+const getStatusCell = ({
     value: {
         parsedIncomingDelegatedAccess: { isDisabled },
         incomingDelegatedAccess,
@@ -84,27 +84,21 @@ const StatusCell = ({
 const IncomingItem = ({
     value,
     value: {
-        parsedIncomingDelegatedAccess: { contact, createdAtDate, isDisabled },
+        parsedIncomingDelegatedAccess: { contact, createdAtDate },
     },
     meta,
     labels,
     notify,
 }: IncomingItemProps) => {
-    const hasStatusCell =
-        (value.incomingDelegatedAccess.State === DelegatedAccessStateEnum.Recoverable &&
-            !value.incomingDelegatedAccess.RecoveryToken) ||
-        isDisabled;
+    const statusCell = getStatusCell({ value, meta });
+    const hasStatusCell = Boolean(statusCell);
 
     return (
         <TableRow labels={labels}>
             <TableCell colSpan={hasStatusCell ? undefined : 2}>
                 <ContactCell {...contact} createdAtDate={createdAtDate} />
             </TableCell>
-            {hasStatusCell && (
-                <TableCell>
-                    <StatusCell value={value} meta={meta} />
-                </TableCell>
-            )}
+            {hasStatusCell && <TableCell>{statusCell}</TableCell>}
             <TableCell>
                 <IncomingDelegatedAccessActions value={value} meta={meta} notify={notify} />
             </TableCell>

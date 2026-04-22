@@ -55,7 +55,7 @@ export interface SectionConfig extends SettingsAreaConfig {
     available?: boolean;
     notification?: ThemeColor;
     subroutes?: { [key: string]: SubrouteConfig };
-    subrouteGroups?: SubrouteGroup[];
+    subrouteGroups?: Record<string, SubrouteGroup>;
 }
 
 export interface SidebarConfig {

@@ -1,13 +1,13 @@
 import { format } from 'date-fns';
 import { c, msgid } from 'ttag';
 
+import { useSessionRecoveryGracePeriodHoursRemaining } from '@proton/account/recovery/sessionRecoveryHooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Button } from '@proton/atoms/Button/Button';
 import useModalState from '@proton/components/components/modalTwo/useModalState';
 import { dateLocale } from '@proton/shared/lib/i18n';
 import clsx from '@proton/utils/clsx';
 
-import { useSessionRecoveryGracePeriodHoursRemaining } from '../../../../hooks/useSessionRecovery';
 import ConfirmSessionRecoveryCancellationModal from '../ConfirmSessionRecoveryCancellationModal';
 import SessionRecoveryStatusTitle from './SessionRecoveryStatusTitle';
 import handWarningIcon from './hand-warning-icon.svg';

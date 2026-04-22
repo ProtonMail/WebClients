@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
-import { useUserSettings } from '@proton/account/index';
+import { selectAccountRecovery } from '@proton/account/recovery/accountRecovery';
+import { useIsSentinelUser } from '@proton/account/recovery/sentinelHooks';
 import SettingsNavItem from '@proton/components/containers/layout/SettingsNavItem';
-import useIsSentinelUser from '@proton/components/hooks/useIsSentinelUser';
 import { IcMobile } from '@proton/icons/icons/IcMobile';
 import { IcShieldExclamationFilled } from '@proton/icons/icons/IcShieldExclamationFilled';
-import { SETTINGS_STATUS } from '@proton/shared/lib/interfaces/UserSettings';
+import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 
 import { StatusBadge, StatusBadgeStatus } from '../../layout/StatusBadge';
 
@@ -19,28 +19,28 @@ type PhoneState =
     | { type: 'off' }
     | { type: 'active'; phone: string };
 
-const getPhoneState = (phone: { Value: string; Status: SETTINGS_STATUS; Reset: number }): PhoneState => {
-    if (!phone.Value) {
+const getPhoneState = (phoneRecovery: ReturnType<typeof selectAccountRecovery>['phoneRecovery']): PhoneState => {
+    if (!phoneRecovery.value) {
         return { type: 'no-phone' };
     }
-    if (phone.Reset === 0) {
+    if (!phoneRecovery.hasReset) {
         return { type: 'off' };
     }
-    if (phone.Status !== SETTINGS_STATUS.VERIFIED) {
-        return { type: 'unverified', phone: phone.Value };
+    if (!phoneRecovery.isVerified) {
+        return { type: 'unverified', phone: phoneRecovery.value };
     }
-    return { type: 'active', phone: phone.Value };
+    return { type: 'active', phone: phoneRecovery.value };
 };
 
 const RecoveryPhoneBadge = () => {
-    const [userSettings, loadingUserSettings] = useUserSettings();
+    const { phoneRecovery, loading } = useSelector(selectAccountRecovery);
     const [{ isSentinelUser }, loadingIsSentinelUser] = useIsSentinelUser();
 
-    if (loadingUserSettings || loadingIsSentinelUser || !userSettings) {
+    if (loading || loadingIsSentinelUser) {
         return <StatusBadge status={StatusBadgeStatus.Off} loading={true} />;
     }
 
-    const state = getPhoneState(userSettings.Phone);
+    const state = getPhoneState(phoneRecovery);
 
     if (isSentinelUser && (state.type === 'active' || state.type === 'unverified')) {
         return (

@@ -1,66 +1,29 @@
 import { c } from 'ttag';
 
-import { useUser } from '@proton/account/user/hooks';
+import { selectMnemonicData } from '@proton/account/recovery/mnemonic';
+import { useUpdateMnemonicRecovery } from '@proton/account/recovery/useUpdateMnemonicRecovery';
 import { Banner } from '@proton/atoms/Banner/Banner';
 import { Button } from '@proton/atoms/Button/Button';
 import { DashboardCard, DashboardCardContent, DashboardCardDivider } from '@proton/atoms/DashboardCard/DashboardCard';
 import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { Href } from '@proton/atoms/Href/Href';
-import useModalState from '@proton/components/components/modalTwo/useModalState';
 import SettingsDescription, {
     SettingsDescriptionItem,
 } from '@proton/components/containers/account/SettingsDescription';
 import { SettingsToggleRow } from '@proton/components/containers/account/SettingsToggleRow';
-import DisableMnemonicModal from '@proton/components/containers/mnemonic/DisableMnemonicModal';
-import GenerateMnemonicModal from '@proton/components/containers/mnemonic/GenerateMnemonicModal';
-import { useRecoverySettingsTelemetry } from '@proton/components/containers/recovery/recoverySettingsTelemetry';
-import useIsMnemonicAvailable from '@proton/components/hooks/useIsMnemonicAvailable';
-import useSearchParamsEffect from '@proton/components/hooks/useSearchParamsEffect';
 import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight';
 import { IcPlus } from '@proton/icons/icons/IcPlus';
+import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { BRAND_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
-import { MNEMONIC_STATUS } from '@proton/shared/lib/interfaces';
 
 import illustration from './assets/recovery-phrase.svg';
 
 const RecoveryPhraseSubpage = () => {
-    const { sendRecoverySettingEnabled } = useRecoverySettingsTelemetry();
-    const [user] = useUser();
+    const mnemonicData = useSelector(selectMnemonicData);
+    const updateMnemonicRecovery = useUpdateMnemonicRecovery(mnemonicData);
 
-    const [isMnemonicAvailable, loadingIsMnemonicAvailable] = useIsMnemonicAvailable();
-
-    const [disableMnemonicModal, setDisableMnemonicModalOpen, renderDisableMnemonicModal] = useModalState();
-    const [generateMnemonicModal, setGenerateMnemonicModalOpen, renderGenerateMnemonicModal] = useModalState();
-    const [generateMnemonicModalButton, setGenerateMnemonicModalButtonOpen, renderGenerateMnemonicModalButton] =
-        useModalState();
-
-    useSearchParamsEffect(
-        (params) => {
-            if (!isMnemonicAvailable) {
-                return;
-            }
-
-            const actionParam = params.get('action');
-            if (!actionParam) {
-                return;
-            }
-
-            if (actionParam === 'generate-recovery-phrase') {
-                if (user.MnemonicStatus === MNEMONIC_STATUS.SET || user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED) {
-                    setGenerateMnemonicModalButtonOpen(true);
-                } else {
-                    setGenerateMnemonicModalOpen(true);
-                }
-
-                params.delete('action');
-                return params;
-            }
-        },
-        [loadingIsMnemonicAvailable]
-    );
-
-    if (!isMnemonicAvailable) {
+    if (!mnemonicData.isMnemonicAvailable) {
         return null;
     }
 
@@ -68,21 +31,7 @@ const RecoveryPhraseSubpage = () => {
 
     return (
         <>
-            {renderDisableMnemonicModal && <DisableMnemonicModal {...disableMnemonicModal} />}
-            {renderGenerateMnemonicModalButton && (
-                <GenerateMnemonicModal
-                    confirmStep
-                    {...generateMnemonicModalButton}
-                    onSuccess={() => sendRecoverySettingEnabled({ setting: 'recovery_phrase' })}
-                />
-            )}
-            {renderGenerateMnemonicModal && (
-                <GenerateMnemonicModal
-                    {...generateMnemonicModal}
-                    onSuccess={() => sendRecoverySettingEnabled({ setting: 'recovery_phrase' })}
-                />
-            )}
-
+            {updateMnemonicRecovery.el}
             <DashboardGrid>
                 <SettingsDescription
                     left={
@@ -103,7 +52,7 @@ const RecoveryPhraseSubpage = () => {
                     }
                 />
 
-                {user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED && (
+                {mnemonicData.hasOutdatedMnemonic && (
                     <Banner variant="danger">
                         {c('Warning')
                             .t`Your recovery phrase is outdated. It can't recover new data if you reset your password again.`}
@@ -114,13 +63,11 @@ const RecoveryPhraseSubpage = () => {
                     <DashboardCardContent>
                         <h3 className="mb-0 text-rg text-semibold mb-2">{c('Title').t`Your recovery phrase`}</h3>
 
-                        {(user.MnemonicStatus === MNEMONIC_STATUS.DISABLED ||
-                            user.MnemonicStatus === MNEMONIC_STATUS.ENABLED ||
-                            user.MnemonicStatus === MNEMONIC_STATUS.PROMPT) && (
+                        {mnemonicData.createMnemonic && (
                             <div>
                                 <Button
                                     color="norm"
-                                    onClick={() => setGenerateMnemonicModalButtonOpen(true)}
+                                    onClick={() => updateMnemonicRecovery.updatePhrase()}
                                     className="inline-flex gap-2 items-center"
                                 >
                                     <IcPlus className="shrink-0" />
@@ -129,12 +76,12 @@ const RecoveryPhraseSubpage = () => {
                             </div>
                         )}
 
-                        {user.MnemonicStatus === MNEMONIC_STATUS.OUTDATED && (
+                        {mnemonicData.hasOutdatedMnemonic && (
                             <div>
                                 <Button
                                     color="norm"
                                     className="inline-flex gap-2 items-center"
-                                    onClick={() => setGenerateMnemonicModalButtonOpen(true)}
+                                    onClick={() => updateMnemonicRecovery.updatePhrase()}
                                 >
                                     <IcArrowRotateRight className="shrink-0" />
                                     {c('Action').t`Generate new phrase`}
@@ -142,12 +89,12 @@ const RecoveryPhraseSubpage = () => {
                             </div>
                         )}
 
-                        {user.MnemonicStatus === MNEMONIC_STATUS.SET && (
+                        {mnemonicData.isMnemonicSet && (
                             <div>
                                 <Button
                                     shape="outline"
                                     className="color-primary inline-flex gap-2 items-center"
-                                    onClick={() => setGenerateMnemonicModalButtonOpen(true)}
+                                    onClick={() => updateMnemonicRecovery.updatePhrase()}
                                 >
                                     <IcArrowRotateRight className="shrink-0" />
                                     {c('Action').t`Generate new recovery phrase`}
@@ -171,14 +118,10 @@ const RecoveryPhraseSubpage = () => {
                             }
                             toggle={
                                 <SettingsToggleRow.Toggle
-                                    loading={disableMnemonicModal.open || generateMnemonicModal.open}
-                                    checked={user.MnemonicStatus === MNEMONIC_STATUS.SET}
+                                    loading={updateMnemonicRecovery.toggleLoading}
+                                    checked={mnemonicData.isMnemonicSet}
                                     onChange={({ target: { checked } }) => {
-                                        if (checked) {
-                                            setGenerateMnemonicModalOpen(true);
-                                        } else {
-                                            setDisableMnemonicModalOpen(true);
-                                        }
+                                        updateMnemonicRecovery.updateToggle(checked);
                                     }}
                                 />
                             }

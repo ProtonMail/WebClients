@@ -1,11 +1,11 @@
 import { c } from 'ttag';
 
-import { useUserSettings } from '@proton/account/index';
+import { selectAccountRecovery } from '@proton/account/recovery/accountRecovery';
+import { useIsSentinelUser } from '@proton/account/recovery/sentinelHooks';
 import SettingsNavItem from '@proton/components/containers/layout/SettingsNavItem';
-import useIsSentinelUser from '@proton/components/hooks/useIsSentinelUser';
 import { IcEnvelope } from '@proton/icons/icons/IcEnvelope';
 import { IcShieldExclamationFilled } from '@proton/icons/icons/IcShieldExclamationFilled';
-import { SETTINGS_STATUS } from '@proton/shared/lib/interfaces/UserSettings';
+import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 
 import { StatusBadge, StatusBadgeStatus } from '../../layout/StatusBadge';
 
@@ -19,28 +19,28 @@ type EmailState =
     | { type: 'off' }
     | { type: 'active'; email: string };
 
-const getEmailState = (email: { Value: string; Status: SETTINGS_STATUS; Reset: number }): EmailState => {
-    if (!email.Value) {
+const getEmailState = (emailRecovery: ReturnType<typeof selectAccountRecovery>['emailRecovery']): EmailState => {
+    if (!emailRecovery.value) {
         return { type: 'no-email' };
     }
-    if (email.Reset === 0) {
+    if (!emailRecovery.hasReset) {
         return { type: 'off' };
     }
-    if (email.Status !== SETTINGS_STATUS.VERIFIED) {
-        return { type: 'unverified', email: email.Value };
+    if (emailRecovery.isVerified) {
+        return { type: 'unverified', email: emailRecovery.value };
     }
-    return { type: 'active', email: email.Value };
+    return { type: 'active', email: emailRecovery.value };
 };
 
 const RecoveryEmailBadge = () => {
-    const [userSettings, loadingUserSettings] = useUserSettings();
+    const { emailRecovery, loading } = useSelector(selectAccountRecovery);
     const [{ isSentinelUser }, loadingIsSentinelUser] = useIsSentinelUser();
 
-    if (loadingUserSettings || loadingIsSentinelUser || !userSettings) {
+    if (loading || loadingIsSentinelUser) {
         return <StatusBadge status={StatusBadgeStatus.Off} loading={true} />;
     }
 
-    const state = getEmailState(userSettings.Email);
+    const state = getEmailState(emailRecovery);
     if (isSentinelUser && (state.type === 'active' || state.type === 'unverified')) {
         return (
             <StatusBadge

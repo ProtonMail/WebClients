@@ -50,7 +50,14 @@ export interface DelegatedAccessState
 type SliceState = DelegatedAccessState[typeof name];
 
 export const selectIncomingDelegatedAccess = (state: DelegatedAccessState) => state[name].incomingDelegatedAccess;
-export const selectOutgoingDelegatedAccess = (state: DelegatedAccessState) => state[name].outgoingDelegatedAccess;
+export const selectOutgoingDelegatedAccess = (state: unknown) => {
+    // NOTE: We are forcing this type to allow this selector to be used in the standard ´useSelector` hook.
+    // This is needed because this reducer isn't defined in all the stores. It's only defined in the settings apps.
+    if (typeof state === 'object' && state !== null && !(name in state)) {
+        throw new Error(`${name} reducer not defined`);
+    }
+    return (state as DelegatedAccessState)[name].outgoingDelegatedAccess;
+};
 
 const initialState: SliceState = {
     incomingDelegatedAccess: getInitialModelState<IncomingDelegatedAccessOutput[]>(),

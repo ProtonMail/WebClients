@@ -5,10 +5,25 @@ import type { USER_ROLES } from '../constants';
 import type { Key } from './Key';
 
 export enum MNEMONIC_STATUS {
+    /** Mnemonic has been opted-out in the settings */
     DISABLED = 0,
+    /** Mnemonic is enabled but not set (requires user action) */
     ENABLED = 1,
+    /**
+     * Mnemonic is set but in an old state or compromised and needs to be reset
+     *
+     * In this case the mnemonic can still be used to recover some old keys (partial recovery data is still
+     * available) but not to fully reset an account, since we do not have the guarantee of having the latest user
+     * key available.
+     */
     OUTDATED = 2,
+    /**
+     * Mnemonic is OK
+     */
     SET = 3,
+    /**
+     * User should be prompted to enable the mnemonic - alias of 1 for FE
+     */
     PROMPT = 4,
 }
 

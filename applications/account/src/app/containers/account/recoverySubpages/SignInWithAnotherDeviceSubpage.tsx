@@ -1,5 +1,6 @@
 import { c } from 'ttag';
 
+import { useIsSentinelUser } from '@proton/account/recovery/sentinelHooks';
 import { userSettingsActions } from '@proton/account/userSettings';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { DashboardCard, DashboardCardContent } from '@proton/atoms/DashboardCard/DashboardCard';
@@ -14,7 +15,6 @@ import { SettingsToggleRow } from '@proton/components/containers/account/Setting
 import SignInWithAnotherDeviceModal from '@proton/components/containers/recovery/SignInWithAnotherDeviceModal';
 import { useRecoverySettingsTelemetry } from '@proton/components/containers/recovery/recoverySettingsTelemetry';
 import useApi from '@proton/components/hooks/useApi';
-import useIsSentinelUser from '@proton/components/hooks/useIsSentinelUser';
 import useNotifications from '@proton/components/hooks/useNotifications';
 import { useLoading } from '@proton/hooks/index';
 import { IcShieldExclamationFilled } from '@proton/icons/icons/IcShieldExclamationFilled';
