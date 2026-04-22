@@ -1262,6 +1262,10 @@
       ],
       "Re-index": [
         "Επαναδημιουργία ευρετηρίου"
+      ],
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "Προσθήκη στο \"${ name }\" (${ photoCount } φωτογραφία)",
+        "Προσθήκη στο \"${ name }\" (${ photoCount } φωτογραφίες)"
       ]
     },
     "Action: Docs": {
@@ -11871,6 +11875,16 @@
       ],
       "Your own short @pm.me email alias": [
         "Το δικό σας σύντομο ψευδώνυμο @pm.me ηλεκτρονικού ταχυδρομείου"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe βοηθός γραφής"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } και ${ LUMO_APP_NAME } με premium χαρακτηριστικά"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Βιντεοκλήσεις, μέχρι και ${ PAID_PREMIUM_MAX_PARTICIPANTS } συμμετέχων",
+        "Βιντεοκλήσεις, μέχρι και ${ PAID_PREMIUM_MAX_PARTICIPANTS } συμμετέχοντες"
       ]
     },
     "subscription reminder": {
@@ -13659,6 +13673,11 @@
       ],
       "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
         "Μπορείτε να έχετε έως και ${ TRIAL_MAX_MEET_SEATS } θέσεις ${ MEET_SHORT_APP_NAME } κατά τη διάρκεια της δοκιμαστικής περιόδου."
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "Το άλμπουμ μετονομάστηκε με επιτυχία"
       ]
     }
   }

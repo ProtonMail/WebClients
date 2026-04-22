@@ -1274,6 +1274,12 @@
       ],
       "Remove my access": [
         "Odebrat můj přístup"
+      ],
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "Přidat do \"${ name }\" (${ photoCount } fotka)",
+        "Přidat do \"${ name }\" (${ photoCount } fotky)",
+        "Přidat do \"${ name }\" (${ photoCount } fotek)",
+        "Přidat do \"${ name }\" (${ photoCount } fotek)"
       ]
     },
     "Action: Docs": {
@@ -4056,7 +4062,7 @@
         "Je nutné zadat název společnosti nebo jméno osoby"
       ],
       "Failed to change permissions settings": [
-        "Změna nastavení oprávnění se nezdařila"
+        "Změna nastavení oprávnění selhala"
       ],
       "Failed to load subscription data. Please try again later.": [
         "Nepodařilo se načíst údaje o předplatném. Zkuste to prosím později."
@@ -7222,10 +7228,10 @@
         "Vyberte si službu, ke které se chcete připojit"
       ],
       "Clear all search data": [
-        "Vymazat všechny údaje o vyhledávání"
+        "Vyčistit všechny údaje o vyhledávání"
       ],
       "Clears browser data related to the search.": [
-        "Vymaže data prohlížeče související s vyhledáváním."
+        "Vyčistí data prohlížeče související s vyhledáváním."
       ],
       "Everything in ${ planOrAppName }, plus:": [
         "Vše v ${ planOrAppName } plus:"
@@ -7234,7 +7240,7 @@
         "za ${ price }"
       ],
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
-        "Pokud se odeberete, ztratíte přístup k souboru „${ fileName }“ a nebudete jej moci znovu otevřít, dokud vám jej jeho vlastník nesdílí."
+        "Pokud se odeberete, ztratíte přístup k souboru \"${ fileName }\" a nebudete jej moci znovu otevřít, dokud vám jej jeho vlastník nenasdílí."
       ],
       "Index is empty.": [
         "Index je prázdný."
@@ -7243,7 +7249,7 @@
         "Probíhá indexování"
       ],
       "Invitation confirmed": [
-        "Pozvánka potvrzena"
+        "Pozvání potvrzeno"
       ],
       "Search enabled. You may now close this dialogue and search for files and folders.": [
         "Vyhledávání aktivováno. Nyní můžete toto dialogové okno zavřít a vyhledávat soubory a složky."
@@ -8045,10 +8051,10 @@
         "Šetrné k životnímu prostředí"
       ],
       "Index kinds": [
-        "Druhy indexů"
+        "Typy indexů"
       ],
       "Initial indexing": [
-        "Začínám indexovat"
+        "Počáteční indexace"
       ],
       "Main reason for cancelling": [
         "Hlavní důvod zrušení"
@@ -12382,6 +12388,18 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastní krátký e-mailový alias @pm.me"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent psaní ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, a ${ LUMO_APP_NAME } s prémiovými funkcemi"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Videokonference, až pro ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníka",
+        "Videokonference, až pro ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníky",
+        "Videokonference, až pro ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníků",
+        "Videokonference, až pro ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníků"
       ]
     },
     "subscription reminder": {
@@ -13837,7 +13855,7 @@
         "Globální"
       ],
       "Import your data to ${ BRAND_NAME }": [
-        "Načtěte svá data do ${ BRAND_NAME }"
+        "Importujte svá data do ${ BRAND_NAME }"
       ],
       "Remove your access?": [
         "Odebrat váš přístup?"
@@ -13949,7 +13967,7 @@
         "Změnit nastavení sdílených položek"
       ],
       "New!": [
-        "Nové!"
+        "Novinka!"
       ]
     },
     "tooltip": {
@@ -14234,7 +14252,7 @@
         "Microsoft 365"
       ],
       "Other": [
-        "Ostatní"
+        "Další"
       ],
       "Outlook": [
         "Outlook"
@@ -14243,6 +14261,11 @@
     "Import provider": {
       "More import options": [
         "Další možnosti importu"
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "Album úspěšně přejmenováno"
       ]
     }
   }
