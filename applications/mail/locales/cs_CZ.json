@@ -289,7 +289,7 @@
         "Připojit aplikace a zařízení"
       ],
       "Connect to Gmail": [
-        "Připojit k Gmailu"
+        "Připojit ke Gmail"
       ],
       "Connect to video conferencing": [
         "Připojit se k videokonferenci"
@@ -1709,6 +1709,9 @@
       ],
       "Or remove forwarding address": [
         "Nebo odebrat adresu přeposílání"
+      ],
+      "Copy": [
+        "Kopírovat"
       ]
     },
     "action": {
@@ -4337,7 +4340,7 @@
         "Vytvořili jste již 10 aliasů. Získejte neomezený počet aliasů a 500 GB úložného prostoru s ${ BRAND_NAME } Unlimited."
       ],
       "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
-        "E-maily zaslané na adresu ${ connectedAddressText } se nyní budou zobrazovat v aplikaci ${ MAIL_APP_NAME }."
+        "E-maily odeslané na ${ connectedAddressText } se nyní budou zobrazovat v ${ MAIL_APP_NAME }."
       ],
       "Read, reply, and stay on top of Gmail from within ${ MAIL_APP_NAME }": [
         "Čtěte, odpovídejte a mějte přehled o Gmailu přímo z aplikace ${ MAIL_APP_NAME }"
@@ -12367,7 +12370,7 @@
         "Chraňte své účty"
       ],
       "Choose a provider": [
-        "Vybrat poskytovatele"
+        "Zvolte poskytovatele"
       ],
       "Skip for now": [
         "Prozatím přeskočit"
@@ -12376,7 +12379,7 @@
         "Některé oblíbené služby"
       ],
       "Switch the services you use every day to your ${ BRAND_NAME } address for better security and privacy.": [
-        "Převeďte služby, které denně využíváte, na svou adresu ${ BRAND_NAME } a zajistěte si tak lepší bezpečnost a ochranu soukromí."
+        "Převeďte služby, které denně používáte na svou adresu ${ BRAND_NAME } a zajistěte si tak lepší zabezpečení a ochranu soukromí."
       ]
     },
     "Onboarding modal": {
@@ -13353,7 +13356,7 @@
         "Microsoft 365"
       ],
       "Other": [
-        "Ostatní"
+        "Další"
       ],
       "Outlook": [
         "Outlook"
@@ -14870,6 +14873,18 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastní krátký e-mailový alias @pm.me"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent psaní ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, a ${ LUMO_APP_NAME } s prémiovými funkcemi"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Videokonference, až pro ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníka",
+        "Videokonference, až pro ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníky",
+        "Videokonference, až pro ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníků",
+        "Videokonference, až pro ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníků"
       ]
     },
     "subscription reminder": {
@@ -16621,7 +16636,7 @@
         "Připojte svůj Gmail k aplikaci ${ MAIL_APP_NAME }"
       ],
       "Import your data to ${ BRAND_NAME }": [
-        "Načtěte svá data do ${ BRAND_NAME }"
+        "Importujte svá data do ${ BRAND_NAME }"
       ],
       "Select data to import": [
         "Vyberte data k importu"
