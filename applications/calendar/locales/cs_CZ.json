@@ -1029,13 +1029,13 @@
         "Bezplatná zkušební verze desktopové aplikace končí dne ${ formattedEndDate }. ${ upgradeButton }"
       ],
       "Continue to ${ planOrAppName }": [
-        "Pokračujte na ${ planOrAppName }"
+        "Pokračovat na ${ planOrAppName }"
       ],
       "Google": [
         "Google"
       ],
       "Reconnect to Gmail": [
-        "Znovu se připojit ke službě Gmail"
+        "Znovu připojit ke Gmail"
       ]
     },
     "action": {
@@ -3252,10 +3252,19 @@
         "Vytvořili jste již 10 aliasů. Získejte neomezený počet aliasů a 500 GB úložného prostoru s ${ BRAND_NAME } Unlimited."
       ],
       "We can't access ${ boldEmails } anymore.": [
-        "Nyní nemůžeme přistupovat k ${ boldEmails }."
+        "Již nemáme přístup k ${ boldEmails }."
       ],
       "We’re sorry to see you go. If you have a moment, we’d really appreciate hearing why you’d like to cancel. Your feedback helps us make ${ BRAND_NAME } better for everyone.": [
         "Je nám líto, že odcházíte. Pokud máte chvilku, oceníme, pokud nám sdělíte důvod zrušení. Vaše zpětná vazba pomáhá vylepšovat ${ BRAND_NAME } pro všechny."
+      ],
+      "This may happen if permissions were removed or your password changed.": [
+        "K tomu může dojít, pokud byla oprávnění odebrána nebo pokud jste změnili heslo."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your account.": [
+        "Chcete-li i nadále přijímat a odesílat zprávy Gmailu v aplikaci ${ BRAND_NAME }, znovu prosím propojte svůj účet."
+      ],
+      "To continue receiving and sending Gmail messages in ${ BRAND_NAME }, please reconnect your accounts.": [
+        "Chcete-li i nadále přijímat a odesílat zprávy Gmailu v aplikaci ${ BRAND_NAME }, znovu prosím propojte své účty."
       ]
     },
     "description": {
@@ -4139,6 +4148,24 @@
       ],
       "The minimum donation amount is ${ price }": [
         "Minimální výše daru je ${ price }"
+      ],
+      "Address could not be added.": [
+        "Adresa nemohla být přidána."
+      ],
+      "Company name or personal name is required": [
+        "Je nutné zadat název společnosti nebo jméno osoby"
+      ],
+      "Failed to load subscription data. Please try again later.": [
+        "Nepodařilo se načíst údaje o předplatném. Zkuste to prosím později."
+      ],
+      "Reverse charge scheme is not supported for this plan": [
+        "U tohoto tarifu není podporován režim přenesení daňové povinnosti"
+      ],
+      "Something went wrong while fetching available domains": [
+        "Při vyhledávání volných domén došlo k chybě"
+      ],
+      "Wrong billing address": [
+        "Nesprávná fakturační adresa"
       ]
     },
     "error": {
@@ -6700,7 +6727,22 @@
         "Přidat ${ PLAN_NAMES[PLANS.MEET_BUSINESS] }"
       ],
       "You'll receive the credit reward 1 month after your friend subscribes to a yearly plan, and 2 months after they subscribe to a monthly plan.": [
-        "Kreditovou odměnu obdržíte 1 měsíc poté, co si váš přítel předplatí roční plán, a 2 měsíce poté, co si předplatí měsíční plán."
+        "Odměnu v podobě kreditů získáte 1 měsíc poté, co si vaši přátelé předplatí roční tarif, a 2 měsíce poté, co si předplatí měsíční tarif."
+      ],
+      "${ MEET_APP_NAME } is an end-to-end encrypted video conferencing solution. Add it to your plan to host secure meetings.": [
+        "${ MEET_APP_NAME } je řešení pro videokonference s koncovým šifrováním. Přidejte si jej do svého tarifu a pořádejte bezpečné schůzky."
+      ],
+      "Choose your service to connect with": [
+        "Vyberte si službu, ke které se chcete připojit"
+      ],
+      "Everything in ${ planOrAppName }, plus:": [
+        "Vše v ${ planOrAppName } plus:"
+      ],
+      "for ${ price }": [
+        "za ${ price }"
+      ],
+      "Your account is currently configured to apply the reverse charge scheme. This is not supported for the selected plan. To proceed, either remove the VAT number from the billing address or select a different plan.": [
+        "Váš účet je v současné době nastaven tak, aby využíval režim přenesení daňové povinnosti. Tento režim není u vybraného tarifu podporován. Chcete-li pokračovat, odstraňte DIČ z fakturační adresy nebo vyberte jiný tarif."
       ]
     },
     "info": {
@@ -7430,10 +7472,25 @@
         "Schůzka na Zoomu"
       ],
       "Continue cancelling": [
-        "Pokračovat ve zrušení"
+        "Pokračovat v rušení"
       ],
       "Last 6 months only": [
         "Pouze posledních 6 měsíců"
+      ],
+      "Additional comments": [
+        "Další komentáře"
+      ],
+      "Emails (last 6 months)": [
+        "E-maily (posledních 6 měsíců)"
+      ],
+      "Main reason for cancelling": [
+        "Hlavní důvod zrušení"
+      ],
+      "Securely share parts of your schedule through a booking page you can send to anyone.": [
+        "Bezpečně sdílejte části svého rozvrhu prostřednictvím rezervační stránky, kterou můžete poslat komukoli."
+      ],
+      "Skip feedback": [
+        "Přeskočit zpětnou vazbu"
       ]
     },
     "label": {
@@ -7793,6 +7850,9 @@
         "Videokonference, ${ n } účastníci",
         "Videokonference, ${ n } účastníků",
         "Videokonference, ${ n } účastníků"
+      ],
+      "Hosts can record meetings locally on their computers": [
+        "Organizátoři mohou schůzky nahrávat lokálně na svých počítačích"
       ]
     },
     "Message": {
@@ -8592,6 +8652,9 @@
       ],
       "VPN with ad-blocker and malware protection": [
         "VPN s blokováním reklam a ochranou proti malware"
+      ],
+      "Dedicated servers optimized for speed": [
+        "Dedikované servery optimalizované pro rychlost"
       ]
     },
     "new_plans: feature highlight": {
@@ -9055,6 +9118,9 @@
       ],
       "Passphrase copied to clipboard": [
         "Heslo zkopírováno do schránky"
+      ],
+      "Your ${ BRAND_NAME } address is ready to use": [
+        "Vaše adresa ${ BRAND_NAME } je připravena k použití"
       ]
     },
     "Notification for duplicate filenames in the current upload": {
@@ -9830,6 +9896,12 @@
       ],
       "Your subscription currently has an existing discount. Moving to this new promotion means that the existing discount will no longer be applied.": [
         "Vaše předplatné má v současné době platnou slevu. Přechodem na tuto novou akci bude stávající sleva zrušena."
+      ],
+      "Edit billing address": [
+        "Upravit fakturační adresu"
+      ],
+      "VAT reverse charge mechanism applies.": [
+        "Platí mechanismus přenesení daňové povinnosti."
       ]
     },
     "Payments.Error": {
@@ -10122,7 +10194,10 @@
         "Cortex Inc."
       ],
       "Enter a name": [
-        "Zadejte název"
+        "Zadejte jméno"
+      ],
+      "Select a provider": [
+        "Vybrat poskytovatele"
       ]
     },
     "Placeholder for contact group name": {
@@ -11534,6 +11609,18 @@
       ],
       "Your own short @pm.me email alias": [
         "Váš vlastní krátký e-mailový alias @pm.me"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent psaní ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, a ${ LUMO_APP_NAME } s prémiovými funkcemi"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Videokonference, až pro ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníka",
+        "Videokonference, až pro ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníky",
+        "Videokonference, až pro ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníků",
+        "Videokonference, až pro ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníků"
       ]
     },
     "subscription reminder": {
@@ -12762,6 +12849,12 @@
       ],
       "Reverse charge not supported": [
         "Funkce přenesení daňové povinnosti není podporována"
+      ],
+      "Import your data to ${ BRAND_NAME }": [
+        "Importujte svá data do ${ BRAND_NAME }"
+      ],
+      "Select data to import": [
+        "Vyberte data k importu"
       ]
     },
     "Title (number of minutes/hours/days/weeks)": {
@@ -13434,6 +13527,9 @@
         "${ seats } ${ MEET_APP_NAME } licence",
         "${ seats } ${ MEET_APP_NAME } licencí",
         "${ seats } ${ MEET_APP_NAME } licencí"
+      ],
+      "${ MEET_APP_NAME } license": [
+        "${ MEET_APP_NAME } licence"
       ]
     },
     "meet_2025: Info": {
@@ -13442,11 +13538,34 @@
         "včetně ${ seats } licencí",
         "včetně ${ seats } licencí",
         "včetně ${ seats } licencí"
+      ],
+      "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
+        "Můžete mít až ${ TRIAL_MAX_MEET_SEATS } licencí ${ MEET_SHORT_APP_NAME } během zkušební doby."
       ]
     },
     "Provider option": {
       "Yahoo": [
         "Yahoo"
+      ],
+      "Gmail": [
+        "Gmail"
+      ],
+      "Google Workspace": [
+        "Google Workspace"
+      ],
+      "Microsoft 365": [
+        "Microsoft 365"
+      ],
+      "Other": [
+        "Další"
+      ],
+      "Outlook": [
+        "Outlook"
+      ]
+    },
+    "Import provider": {
+      "More import options": [
+        "Další možnosti importu"
       ]
     }
   }
