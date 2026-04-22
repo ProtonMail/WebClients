@@ -52,7 +52,6 @@ export interface BannerProps extends ComponentPropsWithoutRef<'div'> {
     noIcon?: boolean;
     action?: ReactElement<RestrictedButtonLikeProps>;
     link?: ReactElement<HrefProps>;
-    dismissible?: boolean;
     onDismiss?: () => void;
     largeRadius?: boolean;
 }
