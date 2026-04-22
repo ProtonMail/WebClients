@@ -292,16 +292,18 @@ export const labelConversationsPending = (
                 return;
             }
 
-            // When moving out from INBOX, we need to remove messages from the category counts
-            // All messages from the conversation are in the category, however the category counts only
-            // contains items that are in INBOX & in the category.
-            // So the amount of message we need to remove from the category count is actually the number of messages
-            // that will be moved from inbox.
+            /*
+             * When a conversation is moved to a folder, all items will move to the destination folder.
+             * All messages from the conversation are in the category, and the category counts only contains items
+             * that are in INBOX & in the category. So we cannot use category.ContextNumMessages
+             * Meaning that the amount of message we need to remove from the category count is actually
+             * the number of messages that will be moved from INBOX.
+             */
             const isTargetingAFolder =
                 isSystemFolder(destinationLabelID) || isCustomFolder(destinationLabelID, folders);
             const isMovingOutOfInbox =
                 isTargetingAFolder && destinationLabelID !== MAILBOX_LABEL_IDS.INBOX && numMessagesInInbox > 0;
-            // TODO we need to check that the destination is compatible with inbox... sent | draft should not be accepted, TO IMPROVE
+            // Messages that are in INBOX cannot move to DRAFTS or SENT (and a few other locations but they are not system folders, so we should be protected from them
             const canInboxMessageMove = ![MAILBOX_LABEL_IDS.DRAFTS, MAILBOX_LABEL_IDS.SENT].includes(
                 destinationLabelID as MAILBOX_LABEL_IDS
             );
