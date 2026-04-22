@@ -1256,6 +1256,10 @@
       ],
       "Re-index": [
         "Neu indexieren"
+      ],
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "Hinzufügen zu \"${ name }\" (${ photoCount } Foto)",
+        "Hinzufügen zu \"${ name }\" (${ photoCount } Fotos)"
       ]
     },
     "Action: Docs": {
@@ -12018,6 +12022,16 @@
       ],
       "Your own short @pm.me email alias": [
         "Dein eigener kurzer @pm.me-E-Mail-Alias"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-Schreibassistent"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, und ${ LUMO_APP_NAME } mit Premium-Funktionen"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Video-Meetings, bis zu ${ PAID_PREMIUM_MAX_PARTICIPANTS } Teilnehmer",
+        "Video-Meetings, bis zu ${ PAID_PREMIUM_MAX_PARTICIPANTS } Teilnehmer"
       ]
     },
     "subscription reminder": {
@@ -13806,6 +13820,11 @@
       ],
       "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
         "Du kannst während der Testphase bis zu ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME }-Lizenzen haben."
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "Album erfolgreich umbenannt"
       ]
     }
   }

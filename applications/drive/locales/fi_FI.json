@@ -1256,6 +1256,10 @@
       ],
       "Re-index": [
         "Indeksoi uudelleen"
+      ],
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "Lisää albumiin \"${ name }\" (${ photoCount } kuva)",
+        "Lisää albumiin \"${ name }\" (${ photoCount } kuvaa)"
       ]
     },
     "Action: Docs": {
@@ -11548,6 +11552,16 @@
       ],
       "Your own short @pm.me email alias": [
         "Oma lyhyt @pm.me-sähköpostialiaksesi"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe kirjoitusavustaja"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } ja ${ LUMO_APP_NAME } lisäominaisuuksilla"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Videokokoukset, enintään ${ PAID_PREMIUM_MAX_PARTICIPANTS } osallistuja",
+        "Videokokoukset, enintään ${ PAID_PREMIUM_MAX_PARTICIPANTS } osallistujaa"
       ]
     },
     "subscription reminder": {
@@ -13279,6 +13293,11 @@
     "fido2: Error": {
       "Something went wrong authenticating with your security key. Please try again.": [
         "Jotain meni pieleen suojausavaimellasi tunnistauduttaessa. Yritä uudelleen."
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "Albumi nimettiin uudelleen"
       ]
     }
   }
