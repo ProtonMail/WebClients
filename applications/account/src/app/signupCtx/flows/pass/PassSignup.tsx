@@ -33,7 +33,6 @@ enum Step {
 const PassSignup = () => {
     const signup = useSignup();
     const payments = usePaymentOptimistic();
-    const location = useLocation();
 
     const [step, setStep] = useState<Step>(Step.Signup);
     const [skippedCycle, setSkippedCycle] = useState(false);
@@ -45,9 +44,6 @@ const PassSignup = () => {
          */
         void payments.checkMultiplePlans([getPassPlusOfferPlan(payments.selectedPlan.currency)]);
     }, [payments.selectedPlan.currency]);
-
-    const searchParams = new URLSearchParams(location.search);
-    const cycleSelectorFlag = searchParams.has('cycle');
 
     return (
         <main className="pass-signup flex h-full overflow-auto">
@@ -66,7 +62,7 @@ const PassSignup = () => {
                     onContinue={async (payment: boolean, skipCycle = false) => {
                         setSkippedCycle(skipCycle);
                         if (payment) {
-                            if (cycleSelectorFlag && !skipCycle) {
+                            if (!skipCycle) {
                                 return setStep(Step.CycleSelector);
                             }
                             return setStep(Step.Payment);
@@ -85,7 +81,7 @@ const PassSignup = () => {
                         setStep(Step.InstallExtension);
                     }}
                     onBack={() => {
-                        if (cycleSelectorFlag && !skippedCycle) {
+                        if (!skippedCycle) {
                             return setStep(Step.CycleSelector);
                         }
                         setStep(Step.UpgradePlan);
