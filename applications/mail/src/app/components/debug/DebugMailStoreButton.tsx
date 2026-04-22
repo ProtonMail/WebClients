@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
-import { useModalState } from '@proton/components/index';
+import { useLocalState, useModalState } from '@proton/components/index';
 import { useFlag } from '@proton/unleash/useFlag';
 
 import { DebugMailStoreContextTotal } from 'proton-mail/components/debug/DebugMailStoreModal';
@@ -11,12 +11,12 @@ interface Props {
     showContextTotal?: boolean;
 }
 
-const DebugMailStoreButton = ({ showContextTotal = true }: Props) => {
+export const DebugMailStoreButton = ({ showContextTotal = true }: Props) => {
     const isDebugModeEnabled = useFlag('MailStoreDebugMode');
     const count = useMailSelector(contextTotal);
 
     const [debugModalProps, setDebugModalOpen, renderDebugModal] = useModalState();
-    const [showDebugButton, setShowDebugButton] = useState(false);
+    const [showDebugButton, setShowDebugButton] = useLocalState(false, 'proton-mail-debug');
 
     useEffect(() => {
         const handleKeyDown = (event: KeyboardEvent) => {
@@ -28,10 +28,11 @@ const DebugMailStoreButton = ({ showContextTotal = true }: Props) => {
         };
 
         window.addEventListener('keydown', handleKeyDown);
+
         return () => {
             window.removeEventListener('keydown', handleKeyDown);
         };
-    }, []);
+    }, [setShowDebugButton]);
 
     if (!isDebugModeEnabled || !showDebugButton) {
         return null;
@@ -39,16 +40,16 @@ const DebugMailStoreButton = ({ showContextTotal = true }: Props) => {
 
     return (
         <>
-            <button
-                type="button"
-                onClick={() => setDebugModalOpen(true)}
-                className="text-no-decoration color-weak text-sm m-0 mb-1"
-            >
-                {showContextTotal ? <>contextTotal: {count ?? '–'}</> : <>Show debug modal</>}
-            </button>
+            <div className="border-top pt-2 text-center w-full">
+                <button
+                    type="button"
+                    onClick={() => setDebugModalOpen(true)}
+                    className="text-no-decoration color-weak text-sm m-0"
+                >
+                    {showContextTotal ? <>contextTotal: {count ?? '–'}</> : <>Show debug modal</>}
+                </button>
+            </div>
             {renderDebugModal && <DebugMailStoreContextTotal {...debugModalProps} />}
         </>
     );
 };
-
-export default DebugMailStoreButton;
