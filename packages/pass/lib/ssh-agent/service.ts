@@ -1,89 +1,87 @@
-import { AppStateManager } from '@proton/pass/components/Core/AppStateManager';
-import { clientReady } from '@proton/pass/lib/client';
-import { selectVisibleNonTrashedSshKeyItems } from '@proton/pass/store/selectors';
-import type { State } from '@proton/pass/store/types';
-import type { ContextBridgeApi, ItemRevision, Maybe } from '@proton/pass/types';
+import type { ContextBridgeApi, Maybe, SSHKeyItem } from '@proton/pass/types';
+import { prop } from '@proton/pass/utils/fp/lens';
 import { asyncLatest } from '@proton/pass/utils/fp/promises';
 import { logger } from '@proton/pass/utils/logger';
 
 type SshAgentServiceOptions = {
     bridge: ContextBridgeApi;
+    datasource: () => SSHKeyItem[];
 };
 
 export type SshAgentService = {
     start: () => Promise<void>;
     stop: () => Promise<void>;
-    /* items passed as param to avoid circular dependency in ssh-agent.middleware.ts */
-    sync: (items: ItemRevision<'sshKey'>[]) => Promise<void>;
-    handleDowngrade: () => Promise<void>;
-    init: (getState: () => State) => void;
-    enabled: boolean;
+    /** Syncs SSH keys, if state is empty it will clear keys  */
+    sync: () => Promise<void>;
+    /** Force clear SSH keys */
+    clear: () => Promise<void>;
+    readonly socketPath: Promise<Maybe<string>>;
+    readonly enabled: boolean;
 };
 
-export const createSshAgentService = ({ bridge }: SshAgentServiceOptions): SshAgentService => {
-    const sync = asyncLatest(async (signal, items: ItemRevision<'sshKey'>[]) => {
-        try {
-            const isRunning = Boolean((await bridge.getSshAgentStatus())?.socketPath);
-            if (signal.aborted || !isRunning) return;
-            if (items.length === 0) await bridge.removeAllSshKeys();
-            else await bridge.setSshKeyItems(items);
-        } catch (error) {
-            logger.warn('[SSH agent] sync failed', error);
+export const createSshAgentService = ({ bridge, datasource }: SshAgentServiceOptions): SshAgentService => {
+    const state = { enabled: false };
+
+    const sync = asyncLatest(async (signal, items: SSHKeyItem[]) => {
+        if (state.enabled) {
+            try {
+                const isRunning = Boolean((await bridge.getSshAgentStatus())?.socketPath);
+                if (signal.aborted || !isRunning) return;
+                if (items.length === 0) await bridge.removeAllSshKeys();
+                else await bridge.setSshKeyItems(items);
+            } catch (error) {
+                logger.warn('[SSH agent] sync failed', error);
+            }
         }
     });
 
+    const setEnabled = async (enabled: boolean) => {
+        await bridge.setSshAgentSetting(enabled);
+        state.enabled = enabled;
+    };
+
     const service: SshAgentService = {
-        enabled: false,
+        get enabled() {
+            return state.enabled;
+        },
+
+        get socketPath() {
+            return bridge
+                .getSshAgentStatus()
+                .then(prop('socketPath'))
+                .catch((err) => {
+                    logger.error('[SSH agent] Could not get status:', err);
+                    return undefined;
+                });
+        },
 
         start: async () => {
-            const isRunning = Boolean((await bridge.getSshAgentStatus())?.socketPath);
-            if (!isRunning) await bridge.startSshAgent();
+            const running = Boolean(await service.socketPath);
+            if (!running) await bridge.startSshAgent();
+            if (!service.enabled) await setEnabled(true);
         },
 
         stop: async () => {
-            service.enabled = false;
             sync.cancel();
+            if (service.enabled) await setEnabled(false);
             await bridge.stopSshAgent();
         },
 
-        /** Sync SSH keys, if state is empty it will clear keys  */
-        sync: sync.run,
+        clear: () => sync.run([]),
 
-        handleDowngrade: async () => {
-            if (!service.enabled) return;
-            await bridge.setSshAgentSettingEnabled(false);
-            await service.stop();
-        },
-
-        init: (getState) => {
-            /** Start the agent early (before unlock) for a better UX so that
-             * SSH commands in the terminal will focus the window with the unlock screen.
-             * The setting is stored in electron-store and not redux store for this use-case. */
-            const maybeStart = async () => {
-                const settingEnabled = await bridge.getSshAgentSettingEnabled();
-                service.enabled = settingEnabled;
-                if (settingEnabled) void service.start();
-            };
-            void maybeStart();
-
-            bridge.onSshAgentSettingChanged((settingEnabled) => {
-                service.enabled = settingEnabled;
-            });
-
-            let prevReady: Maybe<boolean>;
-
-            AppStateManager.subscribe(async ({ status }) => {
-                const ready = clientReady(status);
-                if (ready === prevReady) return;
-                prevReady = ready;
-
-                if (service.enabled) {
-                    await service.sync(selectVisibleNonTrashedSshKeyItems(getState()));
-                    void bridge.setSshAgentAppReady(ready);
-                }
-            });
-        },
+        sync: () => sync.run(datasource()),
     };
+
+    /** Start the agent early (before unlock) for a better UX so that
+     * SSH commands in the terminal will focus the window with the unlock screen.
+     * The setting is stored in electron-store and not redux store for this use-case. */
+    const init = async () => {
+        const settingEnabled = await bridge.getSshAgentSetting();
+        state.enabled = settingEnabled;
+        if (settingEnabled) void service.start();
+    };
+
+    void init();
 
     return service;
 };
