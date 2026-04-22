@@ -8,7 +8,7 @@ import {
 } from '@proton/pass/types';
 import { logger } from '@proton/pass/utils/logger';
 
-const log = (...content: any[]) => logger.debug('[DesktopLock]', ...content);
+const info = (...content: any[]) => logger.info('[DesktopLock]', ...content);
 
 /** Must be unique enough to distinguish 2 extensions on 2 browsers with the same user */
 const getUserIdentifier = (authStore: AuthStore) => `${authStore.getLocalID()}-${authStore.getUserID()}`;
@@ -27,11 +27,11 @@ export const sendSetupLockSecretMessage = async (
             lockSecret,
             userIdentifier,
         };
-        log('Sending request to desktop');
+        info('Sending request to desktop');
 
         /** Encrypt, send to native messaging and decrypt response */
         const response = await nativeMessaging.sendNativeMessageRequest(request);
-        log('Received response from desktop');
+        info('Received response from desktop');
 
         /** Lock secret and user key from response must match */
         if (response.userIdentifier !== userIdentifier) {

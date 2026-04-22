@@ -66,7 +66,7 @@ pub async fn forward_to_ipc(request: String, ipc: Arc<Mutex<Option<Ipc>>>, msg: 
     if guard.is_none() {
         match connect_to_ipc().await {
             Ok(conn) => *guard = Some(conn),
-            Err(_) => return NativeMessageError::new(NativeErrorCode::HostNotResponding).to_response(msg),
+            Err(_) => return NativeMessageError::new(NativeErrorCode::DesktopAppNotLoggedIn).to_response(msg),
         }
     }
 
