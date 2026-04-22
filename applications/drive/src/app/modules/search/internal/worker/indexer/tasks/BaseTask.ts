@@ -17,6 +17,8 @@ export interface TaskContext {
     readonly enqueueOnce: (task: BaseTask) => void;
     /** Enqueue a task after a delay. The task is deduplicated by UID. */
     readonly enqueueDelayed: (task: BaseTask, delayMs: number) => void;
+    /** Request a broadcast of per-populator progress snapshots (throttled by the queue). */
+    readonly notifyIndexingProgress: () => void;
 }
 
 export abstract class BaseTask {

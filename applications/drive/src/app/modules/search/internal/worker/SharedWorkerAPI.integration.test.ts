@@ -424,6 +424,7 @@ describe('SharedWorkerAPI integration', () => {
                 isIndexing: false,
                 isSearchable: false,
                 permanentError: null,
+                indexPopulatorStatuses: [],
             });
         });
 
@@ -434,6 +435,40 @@ describe('SharedWorkerAPI integration', () => {
             const result = await api.queryIndexerState();
             expect(result.isSearchable).toBe(true);
             expect(result.isIndexing).toBe(false);
+        });
+    });
+
+    describe('Scenario: indexing progress broadcasts', () => {
+        it('broadcasts per-populator progress during bootstrap and reports done at the end', async () => {
+            await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
+            await state.waitForSearchable();
+
+            // While indexing, at least one broadcast should carry non-zero file/folder counts
+            // for the MyFiles populator. The complex tree has 5 non-trashed files and 4 non-trashed
+            // folders, so in-memory progress grows through the bootstrap loop.
+            const maxFilesSeen = Math.max(
+                ...state.history.map((msg) =>
+                    Math.max(0, ...(msg.indexPopulatorStatuses ?? []).map((s) => s.progress.files))
+                )
+            );
+            const maxFoldersSeen = Math.max(
+                ...state.history.map((msg) =>
+                    Math.max(0, ...(msg.indexPopulatorStatuses ?? []).map((s) => s.progress.folders))
+                )
+            );
+            expect(maxFilesSeen).toBeGreaterThan(0);
+            expect(maxFoldersSeen).toBeGreaterThan(0);
+
+            // After bootstrap the populator is registered, marked done, and the persisted
+            // progress reflects the exact non-trashed tree:
+            //   files   : notes.txt, report-q1.pdf, report-q2.pdf, old-report.pdf, vacation.jpg
+            //   folders : folder-projects, folder-photos, folder-empty, folder-archive
+            const result = await api.queryIndexerState();
+            expect(result.indexPopulatorStatuses).toHaveLength(1);
+            expect(result.indexPopulatorStatuses[0]).toEqual({
+                done: true,
+                progress: { files: 5, folders: 4, albums: 0, photos: 0 },
+            });
         });
     });
 

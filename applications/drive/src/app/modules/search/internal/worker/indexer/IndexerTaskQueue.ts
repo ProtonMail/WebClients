@@ -5,7 +5,7 @@ import type { SearchDB } from '../../shared/SearchDB';
 import { deleteLegacyEncryptedSearchDb } from '../../shared/encryptedSearchUtils';
 import type { PermanentErrorKind } from '../../shared/errors';
 import { classifyPermanentError, isAbortError, sendErrorReportForSearch } from '../../shared/errors';
-import type { UserId } from '../../shared/types';
+import type { IndexPopulatorStatus, UserId } from '../../shared/types';
 import { brandTreeEventScopeId } from '../../shared/types';
 import type { IndexRegistry } from '../index/IndexRegistry';
 import type { TreeSubscriptionRegistry } from './TreeSubscriptionRegistry';
@@ -23,6 +23,7 @@ export type IndexerState = {
     isIndexing: boolean;
     isSearchable: boolean;
     permanentError: PermanentErrorKind | null;
+    indexPopulatorStatuses: IndexPopulatorStatus[];
 };
 
 export const DEFAULT_INDEXER_STATE: IndexerState = {
@@ -30,7 +31,11 @@ export const DEFAULT_INDEXER_STATE: IndexerState = {
     isIndexing: false,
     isSearchable: false,
     permanentError: null,
+    indexPopulatorStatuses: [],
 };
+
+// How often the indexer task queue reports indexing progress to the main thread.
+const PROGRESS_NOTIFY_THROTTLE_MS = 300;
 
 export type IndexerStateListener = (state: IndexerState) => void;
 
@@ -58,8 +63,11 @@ export class IndexerTaskQueue {
         isIndexing: false,
         isSearchable: false,
         permanentError: null,
+        indexPopulatorStatuses: [],
     };
     private stateListeners = new Set<IndexerStateListener>();
+
+    private progressNotifyTimeout: ReturnType<typeof setTimeout> | null = null;
 
     constructor(
         private readonly userId: UserId,
@@ -95,9 +103,35 @@ export class IndexerTaskQueue {
             clearTimeout(timeout);
         }
         this.pendingTimeouts.clear();
+        if (this.progressNotifyTimeout) {
+            clearTimeout(this.progressNotifyTimeout);
+            this.progressNotifyTimeout = null;
+        }
         this.treeSubscriptionRegistry.dispose();
 
         this.populators.clear();
+    }
+
+    notifyIndexingProgress(): void {
+        if (this.progressNotifyTimeout) {
+            return;
+        }
+        this.progressNotifyTimeout = setTimeout(() => {
+            this.progressNotifyTimeout = null;
+            this.refreshIndexPopulatorStatuses().catch((err) =>
+                Logger.error('IndexerTaskQueue: refreshIndexPopulatorStatuses failed', err)
+            );
+        }, PROGRESS_NOTIFY_THROTTLE_MS);
+    }
+
+    private async refreshIndexPopulatorStatuses(): Promise<void> {
+        const statuses = await this.buildIndexPopulatorStatuses();
+        this.state = { ...this.state, indexPopulatorStatuses: statuses };
+        this.stateListeners.forEach((cb) => cb(this.state));
+    }
+
+    private buildIndexPopulatorStatuses(): Promise<IndexPopulatorStatus[]> {
+        return Promise.all([...this.populators.values()].map((p) => p.getStatus(this.db)));
     }
 
     enqueue(task: BaseTask): void {
@@ -121,6 +155,7 @@ export class IndexerTaskQueue {
         return () => this.stateListeners.delete(listener);
     }
 
+    // Force re-runnning an index populator - mostly used from debug UI currently.
     async reindexPopulator(uid: string): Promise<void> {
         const populator = this.populators.get(uid);
         if (!populator) {
@@ -138,8 +173,15 @@ export class IndexerTaskQueue {
         while (!this.stopped && !signal.aborted) {
             const task = this.queue.shift();
             if (!task) {
+                // Queue is draining — cancel any pending throttled progress refresh so it
+                // doesn't fire a late, redundant broadcast after `isSearchable: true`. The
+                // snapshot we're about to emit already carries the terminal status.
+                if (this.progressNotifyTimeout) {
+                    clearTimeout(this.progressNotifyTimeout);
+                    this.progressNotifyTimeout = null;
+                }
                 // All boostrap tasks are done, initial indexing/indexing is done.
-                this.updateState({ isInitialIndexing: false, isIndexing: false, isSearchable: true });
+                await this.updateState({ isInitialIndexing: false, isIndexing: false, isSearchable: true });
 
                 if (!this.bootstrapDone) {
                     this.bootstrapDone = true;
@@ -196,7 +238,11 @@ export class IndexerTaskQueue {
             indexRegistry: this.indexRegistry,
             treeSubscriptionRegistry: this.treeSubscriptionRegistry,
             signal,
-            markIndexing: () => this.updateState({ isIndexing: true }),
+            markIndexing: () => {
+                this.updateState({ isIndexing: true }).catch((err) =>
+                    Logger.error('IndexerTaskQueue: markIndexing updateState failed', err)
+                );
+            },
             enqueueOnce: (t: BaseTask) => this.enqueueOnce(t),
             enqueueDelayed: (t: BaseTask, delayMs: number) => {
                 const timeout = setTimeout(() => {
@@ -205,7 +251,12 @@ export class IndexerTaskQueue {
                 }, delayMs);
                 this.pendingTimeouts.add(timeout);
             },
-            markInitialIndexing: () => this.updateState({ isInitialIndexing: true }),
+            markInitialIndexing: () => {
+                this.updateState({ isInitialIndexing: true }).catch((err) =>
+                    Logger.error('IndexerTaskQueue: markInitialIndexing updateState failed', err)
+                );
+            },
+            notifyIndexingProgress: () => this.notifyIndexingProgress(),
         };
 
         try {
@@ -225,7 +276,7 @@ export class IndexerTaskQueue {
                 );
 
                 // Notify user of the search module for handling.
-                this.updateState({
+                await this.updateState({
                     permanentError: permanentErrorKind,
                 });
                 this.stop();
@@ -271,14 +322,20 @@ export class IndexerTaskQueue {
         };
     }
 
-    private updateState(patch: Partial<IndexerState>): void {
+    private async updateState(patch: Partial<IndexerState>): Promise<void> {
+        // Sync change detection before any DB work so redundant markIndexing/markInitialIndexing
+        // calls don't each trigger a populator read.
         const changed = Object.keys(patch).some(
             (k) => patch[k as keyof IndexerState] !== this.state[k as keyof IndexerState]
         );
         if (!changed) {
             return;
         }
-        this.state = { ...this.state, ...patch };
+        // Refresh populator statuses on every broadcast so consumers always see
+        // the latest `done` / progress values alongside whatever other field changed.
+        const statuses = await this.buildIndexPopulatorStatuses();
+        // Re-merge against the latest `this.state` (may have been mutated by a concurrent updateState).
+        this.state = { ...this.state, ...patch, indexPopulatorStatuses: statuses };
         this.stateListeners.forEach((cb) => cb(this.state));
     }
 }

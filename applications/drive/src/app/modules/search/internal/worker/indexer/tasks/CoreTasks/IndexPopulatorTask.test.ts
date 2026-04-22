@@ -80,7 +80,13 @@ describe('IndexPopulatorTask', () => {
 
     it('skips scan when persisted state says done', async () => {
         const populator = new TestPopulator();
-        await db.putPopulatorState({ uid: populator.getUid(), done: true, generation: 1, version: 1 });
+        await db.putPopulatorState({
+            uid: populator.getUid(),
+            done: true,
+            generation: 1,
+            version: 1,
+            progress: { files: 0, folders: 0, albums: 0, photos: 0 },
+        });
 
         const ctx = await buildCtx();
         await new IndexPopulatorTask(populator, true).execute(ctx);
@@ -138,7 +144,13 @@ describe('IndexPopulatorTask', () => {
         const populator = new TestPopulator(2 /* version */);
 
         // Simulate that the version #1 for this populator already ran successfully
-        await db.putPopulatorState({ uid: populator.getUid(), done: true, generation: 1, version: 1 });
+        await db.putPopulatorState({
+            uid: populator.getUid(),
+            done: true,
+            generation: 1,
+            version: 1,
+            progress: { files: 0, folders: 0, albums: 0, photos: 0 },
+        });
 
         const ctx = await buildCtx();
         await new IndexPopulatorTask(populator, false).execute(ctx);
@@ -150,7 +162,13 @@ describe('IndexPopulatorTask', () => {
 
         // Persisted state should reflect the new version and bumped generation.
         const state = await db.getPopulatorState(populator.getUid());
-        expect(state).toEqual({ uid: populator.getUid(), done: true, generation: 2, version: 2 });
+        expect(state).toEqual({
+            uid: populator.getUid(),
+            done: true,
+            generation: 2,
+            version: 2,
+            progress: { files: 2, folders: 0, albums: 0, photos: 0 },
+        });
     });
 
     it('re-indexes when persisted state has no version (legacy DB)', async () => {
@@ -173,6 +191,12 @@ describe('IndexPopulatorTask', () => {
         await new IndexPopulatorTask(populator, true /* isBootstrap */).execute(ctx);
 
         const state = await db.getPopulatorState(populator.getUid());
-        expect(state).toEqual({ uid: populator.getUid(), done: true, generation: 1, version: 1 });
+        expect(state).toEqual({
+            uid: populator.getUid(),
+            done: true,
+            generation: 1,
+            version: 1,
+            progress: { files: 2, folders: 0, albums: 0, photos: 0 },
+        });
     });
 });
