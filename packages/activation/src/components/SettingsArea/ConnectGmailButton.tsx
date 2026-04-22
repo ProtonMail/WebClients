@@ -41,13 +41,12 @@ const ConnectGmailButton = ({
 
     const [byoeSetupSuccessModal, setBYOESetupSuccessModal, renderBYOESetupSuccessModal] = useModalState();
 
-    const { hasAccessToBYOE, isInMaintenance, handleSyncCallback, handleBYOEWithImportCallback } =
-        useSetupGmailBYOEAddress({
-            showSuccessModal: (connectedAddress: string) => {
-                setConnectedAddress(connectedAddress);
-                setBYOESetupSuccessModal(true);
-            },
-        });
+    const { hasAccessToBYOE, isInMaintenance, handleBYOEWithImportCallback } = useSetupGmailBYOEAddress({
+        showSuccessModal: (connectedAddress: string) => {
+            setConnectedAddress(connectedAddress);
+            setBYOESetupSuccessModal(true);
+        },
+    });
     const { activeBYOEAddresses, forwardingList, isLoadingAddressesCount } = useBYOEAddressesCounts();
 
     const [syncModalProps, setSyncModalOpen, renderSyncModal] = useModalState();
@@ -106,8 +105,8 @@ const ConnectGmailButton = ({
             {renderSyncModal && (
                 <GmailSyncModal
                     noSkip
-                    onSyncCallback={hasAccessToBYOE ? handleSyncCallback : handleCloseForwardingModal}
-                    onBYOEWithImportCallback={handleBYOEWithImportCallback}
+                    onSyncCallback={handleCloseForwardingModal}
+                    onBYOECallback={handleBYOEWithImportCallback}
                     source={
                         hasAccessToBYOE
                             ? EASY_SWITCH_SOURCES.ACCOUNT_WEB_ADDRESSES_BYOE
