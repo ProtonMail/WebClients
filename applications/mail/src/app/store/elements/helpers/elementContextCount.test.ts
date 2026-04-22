@@ -9,7 +9,7 @@ import {
     setupMessage,
 } from 'proton-mail/store/elements/tests/elementsReducer.test.helpers';
 
-import { computeFilteredCounts, updateContextTotal } from './elementContextCount';
+import { computeContextTotals, updateContextTotals } from './elementContextCount';
 
 const messageOne = 'msg-1';
 const messageTwo = 'msg-2';
@@ -36,7 +36,7 @@ const makeState = (overrides: Record<string, any> = {}): Draft<ElementsState> =>
 describe('computeFilteredCounts', () => {
     it('returns an empty object when no contexts are cached', () => {
         const state = makeState({ elements: {}, total: {} });
-        expect(computeFilteredCounts(state)).toEqual({});
+        expect(computeContextTotals(state)).toEqual({});
     });
 
     it('returns 0 for all contexts when no elements are in state', () => {
@@ -48,7 +48,7 @@ describe('computeFilteredCounts', () => {
             total: { [inboxContext]: 10, [archiveContext]: 5 },
         });
 
-        expect(computeFilteredCounts(state)).toEqual({
+        expect(computeContextTotals(state)).toEqual({
             [inboxContext]: 0,
             [archiveContext]: 0,
         });
@@ -83,7 +83,7 @@ describe('computeFilteredCounts', () => {
             total: { [inboxContext]: 10, [archiveContext]: 5 },
         });
 
-        expect(computeFilteredCounts(state)).toEqual({
+        expect(computeContextTotals(state)).toEqual({
             [inboxContext]: 2,
             [archiveContext]: 1,
         });
@@ -116,7 +116,7 @@ describe('computeFilteredCounts', () => {
             total: { [inboxContext]: 5, [inboxUnreadContext]: 3, [inboxReadContext]: 2 },
         });
 
-        expect(computeFilteredCounts(state)).toEqual({
+        expect(computeContextTotals(state)).toEqual({
             [inboxContext]: 2,
             [inboxUnreadContext]: 1,
             [inboxReadContext]: 1,
@@ -158,7 +158,7 @@ describe('computeFilteredCounts', () => {
             },
         });
 
-        const counts = computeFilteredCounts(state);
+        const counts = computeContextTotals(state);
 
         // bypassFilter applies to currentUnreadContext: readMsg bypasses the unread filter
         expect(counts[currentUnreadContext]).toBe(2);
@@ -183,7 +183,8 @@ describe('updateContextTotal', () => {
 
         // Counts before and after are both 1 → total stays at 10
         const countsBeforeAction = { [inboxContext]: 1 };
-        updateContextTotal({ state, countsBeforeAction });
+        const countsAfterAction = { [inboxContext]: 1 };
+        updateContextTotals({ state, countsBeforeAction, countsAfterAction });
 
         expect(state.total[inboxContext]).toBe(10);
     });
@@ -199,7 +200,8 @@ describe('updateContextTotal', () => {
 
         // Before mutation there was 1 element in inbox, now there are 0
         const countsBeforeAction = { [inboxContext]: 1 };
-        updateContextTotal({ state, countsBeforeAction });
+        const countsAfterAction = { [inboxContext]: 0 };
+        updateContextTotals({ state, countsBeforeAction, countsAfterAction });
 
         expect(state.total[inboxContext]).toBe(9);
     });
@@ -219,7 +221,8 @@ describe('updateContextTotal', () => {
 
         // Before mutation there were 0 elements matching inbox, now there is 1
         const countsBeforeAction = { [inboxContext]: 0 };
-        updateContextTotal({ state, countsBeforeAction });
+        const countsAfterAction = { [inboxContext]: 1 };
+        updateContextTotals({ state, countsBeforeAction, countsAfterAction });
 
         expect(state.total[inboxContext]).toBe(11);
     });
@@ -247,7 +250,8 @@ describe('updateContextTotal', () => {
 
         // Before: 2 in inbox, 0 in archive. After: 1 in inbox, 1 in archive.
         const countsBeforeAction = { [inboxContext]: 2, [archiveContext]: 0 };
-        updateContextTotal({ state, countsBeforeAction });
+        const countsAfterAction = { [inboxContext]: 1, [archiveContext]: 1 };
+        updateContextTotals({ state, countsBeforeAction, countsAfterAction });
 
         expect(state.total[inboxContext]).toBe(9); // 10 - (2 - 1)
         expect(state.total[archiveContext]).toBe(6); // 5 - (0 - 1)
@@ -268,7 +272,8 @@ describe('updateContextTotal', () => {
 
         // countsBeforeAction has no entry for inboxContext (treated as 0)
         const countsBeforeAction: Record<string, number> = {};
-        updateContextTotal({ state, countsBeforeAction });
+        const countsAfterAction = { [inboxContext]: 1 };
+        updateContextTotals({ state, countsBeforeAction, countsAfterAction });
 
         // countBefore=0, countAfter=1 → total = 10 - (0 - 1) = 11
         expect(state.total[inboxContext]).toBe(11);
@@ -302,7 +307,8 @@ describe('updateContextTotal', () => {
 
         // Before: 2 unread messages. After read: only 1 unread message.
         const countsBeforeAction = { [inboxUnreadContext]: 2 };
-        updateContextTotal({ state, countsBeforeAction });
+        const countsAfterAction = { [inboxUnreadContext]: 1 };
+        updateContextTotals({ state, countsBeforeAction, countsAfterAction });
 
         expect(state.total[inboxUnreadContext]).toBe(4); // 5 - (2 - 1)
     });
