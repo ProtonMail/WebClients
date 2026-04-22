@@ -75,6 +75,7 @@ const defaultAdapter: ReturnType<typeof useSearchViewModel> = {
     isSearching: false,
     resultUids: [],
     refreshResults: jest.fn(),
+    indexingProgress: { files: 0, folders: 0, albums: 0, photos: 0 },
 };
 
 const withAdapter = (overrides: Partial<ReturnType<typeof useSearchViewModel>>) => {

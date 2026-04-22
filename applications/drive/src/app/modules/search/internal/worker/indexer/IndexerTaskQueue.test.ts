@@ -272,7 +272,13 @@ describe('IndexerTaskQueue', () => {
 
     it('re-indexes when populator version changed since last run', async () => {
         // Seed DB with a done state at version 1.
-        await db.putPopulatorState({ uid: `myfiles:${SCOPE_ID}`, done: true, generation: 1, version: 1 });
+        await db.putPopulatorState({
+            uid: `myfiles:${SCOPE_ID}`,
+            done: true,
+            generation: 1,
+            version: 1,
+            progress: { files: 0, folders: 0, albums: 0, photos: 0 },
+        });
 
         // Create a queue whose populator reports version 2.
         class VersionedPopulator extends NodeTreeIndexPopulator {
@@ -352,7 +358,13 @@ describe('IndexerTaskQueue', () => {
 
     it('version change bumps generation from persisted state', async () => {
         // Seed DB with a done state at version 1, generation 3 (simulating prior bumps).
-        await db.putPopulatorState({ uid: `myfiles:${SCOPE_ID}`, done: true, generation: 3, version: 1 });
+        await db.putPopulatorState({
+            uid: `myfiles:${SCOPE_ID}`,
+            done: true,
+            generation: 3,
+            version: 1,
+            progress: { files: 0, folders: 0, albums: 0, photos: 0 },
+        });
 
         class VersionedPopulator extends NodeTreeIndexPopulator {
             constructor(scopeId: TreeEventScopeId) {

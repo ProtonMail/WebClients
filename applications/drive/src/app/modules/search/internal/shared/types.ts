@@ -18,6 +18,18 @@ export const brandTreeEventScopeId = (id: string): TreeEventScopeId => {
     return id as TreeEventScopeId;
 };
 
+export type IndexingProgress = {
+    files: number;
+    folders: number;
+    albums: number;
+    photos: number;
+};
+
+export type IndexPopulatorStatus = {
+    done: boolean;
+    progress: IndexingProgress;
+};
+
 export type SearchModuleState = {
     // Whether the user has opted in to the search experience.
     isUserOptIn: boolean;
@@ -31,6 +43,8 @@ export type SearchModuleState = {
     isRunningOutdatedVersion: boolean;
     // If non-null, a permanent error has stopped the processor.
     permanentError: PermanentErrorKind | null;
+    // Per-populator status (progress, done, version) for UI and maintenance.
+    indexPopulatorStatuses: IndexPopulatorStatus[];
 };
 
 export type AttributeFilter = string | bigint | boolean;
