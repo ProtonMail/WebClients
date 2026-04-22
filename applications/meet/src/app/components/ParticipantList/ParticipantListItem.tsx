@@ -13,9 +13,7 @@ import { IcMeetMicrophoneOff } from '@proton/icons/icons/IcMeetMicrophoneOff';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { selectActiveReaction, selectParticipantHasRaisedHand } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { selectParticipantName } from '@proton/meet/store/slices/meetingInfo';
-import { selectIsParticipantRecording } from '@proton/meet/store/slices/recordingStatusSlice';
 import { disableParticipantVideo, enableParticipantVideo } from '@proton/meet/store/slices/settings';
-import { useFlag } from '@proton/unleash/useFlag';
 import clsx from '@proton/utils/clsx';
 
 import { SpeakingIndicator } from '../../atoms/SpeakingIndicator';
@@ -24,6 +22,7 @@ import { useParticipantDisplayColors } from '../../hooks/useParticipantDisplayCo
 import type { ToggleVideoType } from '../../types';
 import { getParticipantInitials } from '../../utils/getParticipantInitials';
 import { ParticipantHostControls } from '../ParticipantHostControls/ParticipantHostControls';
+import { ParticipantListItemStatus } from './ParticipantListItemStatus';
 
 interface ParticipantListItemProps {
     // Livekit participant
@@ -54,12 +53,7 @@ export const ParticipantListItem = memo(
         isLocalParticipantHost,
         toggleVideo,
     }: ParticipantListItemProps) => {
-        const isMeetMultipleRecordingEnabled = useFlag('MeetMultipleRecording');
-
         const participantName = useMeetSelector((state) => selectParticipantName(state, participant.identity));
-        const isParticipantRecording = useMeetSelector((state) =>
-            selectIsParticipantRecording(state, participant.identity)
-        );
 
         const dispatch = useMeetDispatch();
 
@@ -107,9 +101,7 @@ export const ParticipantListItem = memo(
                     <div className="text-ellipsis w-full" title={displayName}>
                         {displayName} {participant.isLocal ? c('Info').t`(You)` : null}
                     </div>
-                    {isParticipantRecording && isMeetMultipleRecordingEnabled && (
-                        <div className="text-sm color-hint w-full">{c('Info').t`Recording`}</div>
-                    )}
+                    <ParticipantListItemStatus participantIdentity={participant.identity} />
                 </div>
 
                 <div className="flex flex-nowrap items-center ml-auto gap-1 shrink-0">
