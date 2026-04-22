@@ -140,14 +140,14 @@ export class MetricHandler {
 
         if (metric.error !== 'network_error') {
             metrics.drive_sdk_upload_success_rate_total.increment({
-                volumeType: metric.volumeType || 'unknown',
+                volumeType: metric.volumeType,
                 status: !metric.error ? 'success' : 'failure',
             });
         }
 
         if (metric.error) {
             metrics.drive_sdk_upload_errors_total.increment({
-                volumeType: metric.volumeType || 'unknown',
+                volumeType: metric.volumeType,
                 type: metric.error,
             });
 
@@ -166,7 +166,7 @@ export class MetricHandler {
                 (!this.lastUploadError || this.lastUploadError.getTime() < Date.now() - REPORT_ERRORING_USERS_INTERVAL)
             ) {
                 metrics.drive_sdk_upload_erroring_users_total.increment({
-                    volumeType: metric.volumeType || 'unknown',
+                    volumeType: metric.volumeType,
                     userPlan: this.userPlan,
                 });
                 this.lastUploadError = new Date();
@@ -197,14 +197,14 @@ export class MetricHandler {
 
         if (metric.error !== 'network_error') {
             metrics.drive_sdk_download_success_rate_total.increment({
-                volumeType: metric.volumeType || 'unknown',
+                volumeType: metric.volumeType,
                 status: !metric.error ? 'success' : 'failure',
             });
         }
 
         if (metric.error) {
             metrics.drive_sdk_download_errors_total.increment({
-                volumeType: metric.volumeType || 'unknown',
+                volumeType: metric.volumeType,
                 type: metric.error,
             });
 
@@ -224,7 +224,7 @@ export class MetricHandler {
                     this.lastDownloadError.getTime() < Date.now() - REPORT_ERRORING_USERS_INTERVAL)
             ) {
                 metrics.drive_sdk_download_erroring_users_total.increment({
-                    volumeType: metric.volumeType || 'unknown',
+                    volumeType: metric.volumeType,
                     userPlan: this.userPlan,
                 });
                 this.lastDownloadError = new Date();
@@ -246,7 +246,7 @@ export class MetricHandler {
 
     private onDecryptionError(metric: MetricDecryptionErrorEvent) {
         metrics.drive_sdk_integrity_decryption_errors_total.increment({
-            volumeType: metric.volumeType || 'unknown',
+            volumeType: metric.volumeType,
             field: metric.field,
             fromBefore2024: this.getYesNoUnknown(metric.fromBefore2024),
         });
@@ -260,7 +260,7 @@ export class MetricHandler {
                     driveSdkMetricEvent: 'decryptionError',
                 },
                 extra: {
-                    volumeType: metric.volumeType || 'unknown',
+                    volumeType: metric.volumeType,
                     uid: metric.uid,
                     field: metric.field,
                     fromBefore2024: metric.fromBefore2024,
@@ -272,7 +272,7 @@ export class MetricHandler {
 
     private onVerificationError(metric: MetricVerificationErrorEvent) {
         metrics.drive_sdk_integrity_verification_errors_total.increment({
-            volumeType: metric.volumeType || 'unknown',
+            volumeType: metric.volumeType,
             field: metric.field,
             addressMatchingDefaultShare: this.getYesNoUnknown(metric.addressMatchingDefaultShare),
             fromBefore2024: this.getYesNoUnknown(metric.fromBefore2024),
@@ -283,13 +283,15 @@ export class MetricHandler {
         }
     }
 
-    private reportIntegrityErroringUsers(metric: MetricDecryptionErrorEvent | MetricVerificationErrorEvent) {
+    private reportIntegrityErroringUsers(
+        metric: MetricDecryptionErrorEvent | MetricVerificationErrorEvent | MetricBlockVerificationErrorEvent
+    ) {
         if (
             !this.lastIntegrityError ||
             this.lastIntegrityError.getTime() < Date.now() - REPORT_ERRORING_USERS_INTERVAL
         ) {
             metrics.drive_sdk_integrity_erroring_users_total.increment({
-                volumeType: metric.volumeType || 'unknown',
+                volumeType: 'volumeType' in metric ? metric.volumeType : 'unknown',
                 userPlan: this.userPlan,
             });
             this.lastIntegrityError = new Date();
@@ -300,6 +302,10 @@ export class MetricHandler {
         metrics.drive_sdk_integrity_block_verification_errors_total.increment({
             retryHelped: metric.retryHelped ? 'yes' : 'no',
         });
+
+        if (!metric.retryHelped) {
+            this.reportIntegrityErroringUsers(metric);
+        }
     }
 
     private onVolumeEventsSubscriptionsChanged(metric: MetricVolumeEventsSubscriptionsChangedEvent) {
