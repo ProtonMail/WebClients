@@ -21,6 +21,17 @@ export type SshAgentService = {
 };
 
 export const createSshAgentService = ({ bridge }: SshAgentServiceOptions): SshAgentService => {
+    const sync = asyncLatest(async (signal, items: ItemRevision<'sshKey'>[]) => {
+        try {
+            const isRunning = Boolean((await bridge.getSshAgentStatus())?.socketPath);
+            if (signal.aborted || !isRunning) return;
+            if (items.length === 0) await bridge.removeAllSshKeys();
+            else await bridge.setSshKeyItems(items);
+        } catch (error) {
+            logger.warn('[SSH agent] sync failed', error);
+        }
+    });
+
     const service: SshAgentService = {
         enabled: false,
 
@@ -31,24 +42,12 @@ export const createSshAgentService = ({ bridge }: SshAgentServiceOptions): SshAg
 
         stop: async () => {
             service.enabled = false;
+            sync.cancel();
             await bridge.stopSshAgent();
         },
 
         /** Sync SSH keys, if state is empty it will clear keys  */
-        sync: asyncLatest(async (items: ItemRevision<'sshKey'>[]) => {
-            try {
-                const isRunning = Boolean((await bridge.getSshAgentStatus())?.socketPath);
-                if (!isRunning) return;
-
-                if (items.length === 0) {
-                    await bridge.removeAllSshKeys();
-                } else {
-                    await bridge.setSshKeyItems(items);
-                }
-            } catch (error) {
-                logger.warn('[SSH agent] sync failed', error);
-            }
-        }),
+        sync: sync.run,
 
         handleDowngrade: async () => {
             if (!service.enabled) return;
