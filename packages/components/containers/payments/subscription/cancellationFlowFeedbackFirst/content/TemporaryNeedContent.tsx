@@ -14,7 +14,7 @@ import { B2BStoryCards } from '../components/B2BStoryCards';
 import { B2CStoryCards } from '../components/B2CStoryCards';
 import { ComparisonTable } from '../components/ComparisonTable';
 import { getTemporaryNeedConfig } from '../config/temporaryNeedConfig';
-import { useFeedbackFirstEligibility } from '../useFeedbackFirstEligibility';
+import { useFeedbackFirstEligibility } from '../hooks/useFeedbackFirstEligibility';
 
 interface Props {
     onKeepPlan: () => void;
