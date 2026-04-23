@@ -1,13 +1,25 @@
 import { getDrive, getDriveForPhotos } from '@proton/drive/index';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
+import { getNodeEffectiveRole } from '@proton/drive/internal/sdkUtils/getNodeEffectiveRole';
 import { uploadManager } from '@proton/drive/modules/upload';
+import { getNodeEntityFromMaybeNode } from '@proton/drive/modules/upload/utils/getNodeEntityFromMaybeNode';
 
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
+import { useTransferManagerStore } from './transferManager.store';
 
 export const subscribeToUploadEvents = (): (() => void) => {
     const busDriver = getBusDriver();
     uploadManager.subscribeToEvents('transfer-manager', async (event) => {
         if (event.type === 'file:complete') {
+            const client = event.isForPhotos ? getDriveForPhotos() : getDrive();
+
+            if (event.parentUid) {
+                const maybeNode = await client.getNode(event.parentUid);
+                const { node } = await getNodeEntityFromMaybeNode(maybeNode);
+                const role = await getNodeEffectiveRole(node, client);
+                useTransferManagerStore.getState().addItem(event.uploadId, { role, type: 'upload' });
+            }
+
             const photosRootNode = event.isForPhotos
                 ? getNodeEntity(await getDriveForPhotos().getMyPhotosRootFolder()).node
                 : undefined;
