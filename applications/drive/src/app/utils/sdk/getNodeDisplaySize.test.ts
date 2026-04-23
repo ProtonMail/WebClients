@@ -17,7 +17,7 @@ describe('getNodeDisplaySize', () => {
         storageSize: 2048,
         claimedSize: 1500,
         claimedModificationTime: new Date('2023-01-01'),
-        claimedDigests: { sha1: 'abc123' },
+        claimedDigests: { sha1: 'abc123', sha1Verified: false },
         claimedAdditionalMetadata: {},
     };
 
