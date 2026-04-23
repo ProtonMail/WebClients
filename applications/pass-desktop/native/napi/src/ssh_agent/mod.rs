@@ -5,6 +5,8 @@ use russh_keys::agent::client::{AgentClient, AgentStream};
 use russh_keys::agent::server::MessageType;
 use russh_keys::agent::Constraint;
 use russh_keys::{agent, ssh_key, PrivateKey, PublicKeyBase64};
+#[cfg(unix)]
+use std::os::unix::fs::{DirBuilderExt, PermissionsExt};
 use std::path::PathBuf;
 use std::sync::{Arc, Mutex};
 #[cfg(unix)]
@@ -111,6 +113,10 @@ impl SshAgentManager {
 
         #[cfg(unix)]
         let task_handle = {
+            if let Some(parent) = socket_path.parent() {
+                std::fs::DirBuilder::new().recursive(true).mode(0o700).create(parent)?;
+            }
+
             if socket_path.exists() {
                 println!("Removing existing socket file");
                 std::fs::remove_file(&socket_path)?;
@@ -118,6 +124,8 @@ impl SshAgentManager {
 
             let listener = UnixListener::bind(&socket_path)
                 .map_err(|e| anyhow::anyhow!("Failed to bind to socket {}: {}", socket_path.display(), e))?;
+
+            std::fs::set_permissions(&socket_path, std::fs::Permissions::from_mode(0o600))?;
             let agent_handler = PassSshAgent {
                 is_unlocked_callback: Arc::new(is_unlocked_callback),
             };
