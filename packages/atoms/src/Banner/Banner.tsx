@@ -5,6 +5,7 @@ import { c } from 'ttag';
 
 import type { ThemeColorUnion } from '@proton/colors/types';
 import { IcCross } from '@proton/icons/icons/IcCross';
+import { IcCrossBig } from '@proton/icons/icons/IcCrossBig';
 import { IcExclamationTriangleFilled } from '@proton/icons/icons/IcExclamationTriangleFilled';
 import { IcInfoCircle } from '@proton/icons/icons/IcInfoCircle';
 import clsx from '@proton/utils/clsx';
@@ -54,6 +55,11 @@ export interface BannerProps extends ComponentPropsWithoutRef<'div'> {
     link?: ReactElement<HrefProps>;
     onDismiss?: () => void;
     largeRadius?: boolean;
+    dismissibleIconBigger?: boolean;
+    /** temporary prop to make the banner opaque variant, we'll generalize this later */
+    opaqueVariant?: boolean;
+    contentWrapperClassName?: string;
+    borderless?: boolean;
 }
 
 const getDefaultIcon = (variant: BannerVariants) => {
@@ -108,7 +114,11 @@ export const Banner = ({
     action,
     link,
     className,
+    contentWrapperClassName,
     largeRadius = false,
+    dismissibleIconBigger = false,
+    opaqueVariant = false,
+    borderless = false,
     ...rest
 }: BannerProps) => {
     const handleDismiss = () => {
@@ -124,7 +134,11 @@ export const Banner = ({
             onClick={handleDismiss}
             title={c('Action').t`Dismiss`}
         >
-            <IcCross alt={c('Action').t`Dismiss`} />
+            {dismissibleIconBigger ? (
+                <IcCrossBig alt={c('Action').t`Dismiss`} />
+            ) : (
+                <IcCross alt={c('Action').t`Dismiss`} />
+            )}
         </Button>
     );
 
@@ -134,6 +148,8 @@ export const Banner = ({
                 `banner banner--${variant} w-full`,
                 BannerVariantsBordered.includes(variant as BannerVariants) ? 'border border-weak' : 'banner--no-border',
                 largeRadius ? 'rounded-lg' : 'rounded',
+                opaqueVariant ? 'banner--opaque-variant' : '',
+                borderless ? 'banner--transparent-border' : '',
                 className
             )}
             {...rest}
@@ -141,7 +157,7 @@ export const Banner = ({
             <div className="banner-inner p-1">
                 <div className="banner-main flex flex-nowrap gap-2 pl-1 py-1">
                     {!noIcon && icon && <BannerIcon icon={icon} />}
-                    <span>
+                    <span className={contentWrapperClassName}>
                         {children}
                         {link && <> {link}</>}
                     </span>
