@@ -24,6 +24,7 @@ import {
 } from '../../helpers/elements';
 import type { Conversation } from '../../models/conversation';
 import type { Element } from '../../models/element';
+import type { ConversationParams, ConversationResult } from '../conversations/conversationsTypes';
 import {
     applyLabelToConversation,
     applyLabelToConversationMessage,
@@ -1090,4 +1091,12 @@ export const unlabelConversationsPending = (
 
     const countsAfterAction = computeContextTotals(state);
     updateContextTotals({ state, countsBeforeAction, countsAfterAction });
+};
+
+export const loadConversationFulfilled = (
+    state: Draft<ElementsState>,
+    action: PayloadAction<ConversationResult, string, { arg: ConversationParams }>
+) => {
+    const { Conversation } = action.payload;
+    state.elements[Conversation.ID] = Conversation;
 };

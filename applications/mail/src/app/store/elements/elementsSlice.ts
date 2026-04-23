@@ -24,6 +24,7 @@ import {
     eventUpdates,
     invalidate,
     load,
+    loadConversation,
     manualFulfilled,
     manualPending,
     markAll,
@@ -58,6 +59,7 @@ import {
     labelConversationsPending,
     labelMessagesPending,
     labelMessagesRejected,
+    loadConversationFulfilled,
     loadFulfilled,
     loadPending,
     manualFulfilled as manualFulfilledReducer,
@@ -195,6 +197,8 @@ const elementsSlice = createSlice({
 
         builder.addCase(labelConversations.pending, labelConversationsPending);
         builder.addCase(unlabelConversations.pending, unlabelConversationsPending);
+
+        builder.addCase(loadConversation.fulfilled, loadConversationFulfilled);
     },
 });
 
