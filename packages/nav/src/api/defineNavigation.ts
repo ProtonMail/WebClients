@@ -1,7 +1,7 @@
-import { DuplicateNavIdError } from './errors';
-import type { NavContext } from './types/models';
-import type { NavArgs, NavItemDefinition, NavItemResolved, NavItemResolverActions, NavResolved } from './types/nav';
-import { unwrap } from './unwrap';
+import { DuplicateNavIdError } from '../errors';
+import type { NavContext } from '../types/models';
+import type { NavArgs, NavItemDefinition, NavItemResolved, NavItemResolverActions, NavResolved } from '../types/nav';
+import { unwrap } from '../unwrap';
 
 function collectIds(items: NavItemDefinition<any>[], seen: Set<string>): void {
     for (const item of items) {
@@ -75,11 +75,18 @@ function resolveItem<TContext extends NavContext>(
 
 /**
  * Builds a resolved nav tree from a definition object and a runtime context.
-
+ *
+ * The `definition` argument should be declared with `as const satisfies NavDefinition<YourContext>`
+ * to preserve literal types for use with `defineSearchOptions`.
+ *
+ * @example
+ * const definition = {
+ *     items: [...],
+ * } as const satisfies NavDefinition<AppContext>;
  * @example
  * const nav = defineNavigation<AppContext>({ definition, context });
  * @returns {NavResolved} NavResolved
- * @throws {DuplicateNavIdError} DuplicateNavIdError if any two items share the same `id` 
+ * @throws {DuplicateNavIdError} DuplicateNavIdError if any two items share the same `id`
  * anywhere in the definition tree
  */
 export function defineNavigation<TContext extends NavContext = NavContext>(args: NavArgs<TContext>): NavResolved {
