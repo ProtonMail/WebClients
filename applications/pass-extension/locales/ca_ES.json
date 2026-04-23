@@ -1384,6 +1384,21 @@
       ],
       "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
         "L'aplicació d'escriptori ${ PASS_APP_NAME } no ha respost a temps."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Les credencials del bloqueig biomètric no coincideixen."
+      ],
+      "Biometric lock credentials not found.": [
+        "No s'han trobat les credencials del bloqueig biomètric."
+      ],
+      "Biometric lock is not configured.": [
+        "El bloqueig biomètric no està configurat."
+      ],
+      "Biometric lock setup failed.": [
+        "Ha fallat la configuració del bloqueig biomètric."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "L'aplicació d'escriptori ${ PASS_APP_NAME } hauria de tenir la sessió iniciada."
       ]
     },
     "Error message": {
@@ -2080,7 +2095,8 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
+        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -2795,6 +2811,12 @@
       ],
       "Logging you out...": [
         "S'està tancant la sessió..."
+      ],
+      "Unlock ${ PASS_APP_NAME } to access your passkeys": [
+        "Desbloquegeu ${ PASS_APP_NAME } per accedir a les vostres claus d'accés"
+      ],
+      "Unlock ${ PASS_APP_NAME } to save this passkey": [
+        "Desbloquegeu ${ PASS_APP_NAME } per desar aquesta clau d'accés"
       ]
     },
     "Keyboard key": {

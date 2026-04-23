@@ -1384,6 +1384,21 @@
       ],
       "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
         "Die ${ PASS_APP_NAME }-Desktop-App hat nicht zeitgerecht reagiert."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Biometrische Anmeldedaten stimmen nicht überein."
+      ],
+      "Biometric lock credentials not found.": [
+        "Biometrischen Anmeldedaten nicht gefunden."
+      ],
+      "Biometric lock is not configured.": [
+        "Biometrische Sperre nicht konfiguriert."
+      ],
+      "Biometric lock setup failed.": [
+        "Einrichten der biometrischen Sperre fehlgeschlagen."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "Die ${ PASS_APP_NAME }-Desktop-App sollte angemeldet sein."
       ]
     },
     "Error message": {
@@ -2796,6 +2811,12 @@
       ],
       "Logging you out...": [
         "Du wirst abgemeldet..."
+      ],
+      "Unlock ${ PASS_APP_NAME } to access your passkeys": [
+        "${ PASS_APP_NAME } entsperren, um auf deine Passkeys zuzugreifen"
+      ],
+      "Unlock ${ PASS_APP_NAME } to save this passkey": [
+        "${ PASS_APP_NAME } entsperren, um diesen Passkey zu speichern"
       ]
     },
     "Keyboard key": {
