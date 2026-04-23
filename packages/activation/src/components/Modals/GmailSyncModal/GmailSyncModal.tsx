@@ -104,6 +104,7 @@ const GmailSyncModal = ({
                         RedirectUri,
                         Source: source,
                         errorNotification: getBYOEFailNotification(),
+                        Features: [EASY_SWITCH_FEATURES.BYOE],
                     })
                 );
                 const payload = res.type.endsWith('fulfilled') ? res?.payload : undefined;

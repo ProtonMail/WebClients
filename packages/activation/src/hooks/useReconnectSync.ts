@@ -84,6 +84,7 @@ const useReconnectSync = (address: Address) => {
                                 Source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_GRANT_PERMISSION_BYOE,
                                 expectedEmailAddress: { address: address.Email, type: 'reconnect' },
                                 successNotification: { text: c('action').t`Resuming forward` },
+                                Features: [EASY_SWITCH_FEATURES.BYOE],
                             })
                         );
                     });
@@ -123,6 +124,7 @@ const useReconnectSync = (address: Address) => {
                                 successNotification: { text: c('action').t`Resuming forward` },
                                 syncId: sync.id,
                                 importerId: sync.importerID,
+                                Features: [EASY_SWITCH_FEATURES.BYOE],
                             })
                         )
                     );
@@ -196,6 +198,7 @@ const useReconnectSync = (address: Address) => {
                                 RedirectUri,
                                 Source: EASY_SWITCH_SOURCES.ACCOUNT_WEB_RECONNECT_BYOE,
                                 expectedEmailAddress: { address: address.Email, type: 'reconnect' },
+                                Features: [EASY_SWITCH_FEATURES.BYOE],
                             })
                         );
 
