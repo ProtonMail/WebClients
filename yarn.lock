@@ -10865,7 +10865,7 @@ __metadata:
     "@proton/testing": "workspace:^"
     "@proton/unleash": "workspace:^"
     "@proton/utils": "workspace:^"
-    "@protontech/drive-sdk": "npm:^0.14.7"
+    "@protontech/drive-sdk": "npm:^0.14.8"
     "@testing-library/jest-dom": "npm:^6.9.1"
     "@testing-library/react": "npm:^15.0.7"
     "@testing-library/react-hooks": "npm:^8.0.1"
@@ -11810,14 +11810,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@protontech/drive-sdk@npm:^0.14.7":
-  version: 0.14.7
-  resolution: "@protontech/drive-sdk@npm:0.14.7"
+"@protontech/drive-sdk@npm:^0.14.8":
+  version: 0.14.8
+  resolution: "@protontech/drive-sdk@npm:0.14.8"
   dependencies:
     "@noble/hashes": "npm:^1.8.0"
     bcryptjs: "npm:^2.4.3"
     ttag: "npm:^1.8.7"
-  checksum: 10/a8b82aeb4af94fba359cd1d30ff19e8ee120f2ee9e7d9341bd29ad579cb7dc00fd47da25ecbd6705e49dea3ee91b5ed68f30937e8cc0ce2b545c5e59a406d1dc
+  checksum: 10/78992ae99f50a9d2a44fdfbfe51f075e688bcebc251c6f656bce5a93647856e124f8b709285e5981aef6eda18156d24e6cc8e4a3605d30a5467b933c65511f1c
   languageName: node
   linkType: hard
 

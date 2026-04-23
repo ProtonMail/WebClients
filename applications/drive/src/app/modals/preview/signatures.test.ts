@@ -31,6 +31,7 @@ describe('getContentSignatureIssueLabel', () => {
         claimedModificationTime: baseDate,
         claimedDigests: {
             sha1: 'abc123',
+            sha1Verified: false,
         },
         claimedAdditionalMetadata: {},
     };
