@@ -209,6 +209,10 @@ const SubscriptionCheckoutPaymentSection = ({
                         onPaymentMethodChange={(paymentMethod: PaymentMethodType) =>
                             handlePaymentMethodChange(paymentMethod)
                         }
+                        disablePaymentMethodChange={
+                            paymentFacade.processingPayment ||
+                            !!paymentFacade.selectedProcessor?.userInitiatedProcessing
+                        }
                     />
                 )}
                 <PaymentMethodForm

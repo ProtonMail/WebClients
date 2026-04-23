@@ -1,4 +1,4 @@
-import { renderHook } from '@testing-library/react';
+import { renderHook, waitFor } from '@testing-library/react';
 
 import { Autopay, type ChargebeeIframeEvents, PAYMENT_METHOD_TYPES, type SavedPaymentMethod } from '@proton/payments';
 import { apiMock } from '@proton/testing/index';
@@ -106,6 +106,40 @@ describe('useSavedChargebeeMethod', () => {
         expect(onBeforeSepaPayment).toHaveBeenCalled();
         expect(result.current.fetchingToken).toBe(false);
         expect(result.current.paymentProcessor?.fetchedPaymentToken).toBe(null);
+    });
+
+    describe('userInitiatedProcessing', () => {
+        it('starts as false', () => {
+            const { result } = setupHook();
+            expect(result.current.userInitiatedProcessing).toBe(false);
+        });
+
+        it('is true while processPaymentToken is pending and resets to false after success', async () => {
+            const { result } = setupHook();
+
+            mockPostV5Token({});
+            let resolveVerify: (value: any) => void = () => {};
+            const verifyPayment = jest.fn(() => new Promise((resolve) => (resolveVerify = resolve))) as any;
+            result.current.paymentProcessor!.verifyPayment = verifyPayment;
+
+            const promise = result.current.processPaymentToken();
+            await waitFor(() => expect(result.current.userInitiatedProcessing).toBe(true));
+
+            resolveVerify({ PaymentToken: 'verified-token', v: 5 });
+            await promise;
+            await waitFor(() => expect(result.current.userInitiatedProcessing).toBe(false));
+        });
+
+        it('resets to false when processPaymentToken fails', async () => {
+            const { result } = setupHook();
+
+            mockPostV5Token({});
+            const verifyPayment = jest.fn().mockRejectedValue(new Error('boom'));
+            result.current.paymentProcessor!.verifyPayment = verifyPayment;
+
+            await expect(result.current.processPaymentToken()).rejects.toThrow('boom');
+            expect(result.current.userInitiatedProcessing).toBe(false);
+        });
     });
 
     it('should verify payment token', async () => {
