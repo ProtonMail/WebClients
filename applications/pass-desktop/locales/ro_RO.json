@@ -1364,6 +1364,21 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Codul dvs. PIN a fost eliminat de către alt utilizator al ${ PASS_APP_NAME }."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Datele de blocare biometrice nu se potrivesc."
+      ],
+      "Biometric lock credentials not found.": [
+        "Datele de conectare biometrică nu au fost găsite."
+      ],
+      "Biometric lock is not configured.": [
+        "Blocarea biometrică nu este configurată."
+      ],
+      "Biometric lock setup failed.": [
+        "Setarea blocării biometrice a eșuat."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "Aplicația desktop ${ PASS_APP_NAME } trebuie să fie conectată."
       ]
     },
     "Error message": {
