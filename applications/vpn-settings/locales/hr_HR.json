@@ -5281,6 +5281,9 @@
       "Folder location": [
         "Lokacija mape"
       ],
+      "Free": [
+        "Free"
+      ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
       ],
@@ -5518,6 +5521,9 @@
       "State": [
         "Država"
       ],
+      "Storage": [
+        "Prostor za pohranu"
+      ],
       "Street address": [
         "Adresa"
       ],
@@ -5541,6 +5547,9 @@
       ],
       "Type": [
         "Vrsta"
+      ],
+      "Unlimited": [
+        "Neograničeno"
       ],
       "Upload 1 or more recovery files or encryption keys": [
         "Učitajte jednu ili više datoteka za oporavak ili ključeva za šifriranje"
@@ -7078,11 +7087,6 @@
         "Vaš put do slobode na mreži"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "kontaktirajte"
-      ]
-    },
     "Plans": {
       "${ months } month plan": [
         "${ months }-mjesečna pretplata",
@@ -7156,9 +7160,6 @@
       ],
       "Verify now": [
         "Potvrdi sada"
-      ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "Potvrdite sada ovu adresu e-pošte za oporavak: ${ email.Value }"
       ],
       "Verify recovery email?": [
         "Potvrditi adresu e-pošte za oporavak?"
@@ -8536,6 +8537,9 @@
       ],
       "Account recovery": [
         "Oporavak računa"
+      ],
+      "Account restricted": [
+        "Račun ograničen"
       ],
       "Account suspended": [
         "Račun je suspendiran"

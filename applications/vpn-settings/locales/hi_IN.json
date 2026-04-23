@@ -6799,6 +6799,9 @@
       "Folder location": [
         "फ़ोल्डर स्थान"
       ],
+      "Free": [
+        "Free"
+      ],
       "From: ${ fromEmail }": [
         "से: ${ fromEmail }"
       ],
@@ -7091,6 +7094,9 @@
       "State": [
         "राज्य"
       ],
+      "Storage": [
+        "स्टोरेज"
+      ],
       "Street address": [
         "राज्य / प्रांत की आवश्यकता है"
       ],
@@ -7120,6 +7126,9 @@
       ],
       "Type": [
         "प्रकार"
+      ],
+      "Unlimited": [
+        "असीमित"
       ],
       "Upload 1 or more encryption keys": [
         "1 या अधिक एन्क्रिप्शन कुंजियाँ अपलोड करें"
@@ -9185,11 +9194,6 @@
         "आपका ऑनलाइन स्वतंत्रता का द्वार"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "संपर्क करें"
-      ]
-    },
     "Plans": {
       "${ cycle } month": [
         "${ cycle } महीना",
@@ -9267,9 +9271,6 @@
       "Verify now": [
         "अभी सत्यापित करें"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "ये रिक्वरी ईमेल पता अभी सत्यापित करें: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "पुनर्प्राप्ति ईमेल सत्यापित करें?"
       ],
@@ -9309,9 +9310,6 @@
       ],
       "Verify recovery phone?": [
         "रिक्वरी फोन स्तयापित करें?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "ये रिकवरी फोन नंबर अभी सत्यापित करें: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "अपना ईमेल पता सत्यापित करने से खाते की सुरक्षा बढ़ जाती है और रिकवरी के लिए ज़्यादा विकल्प खुल जाते है।"
@@ -11041,6 +11039,9 @@
       ],
       "Account suspended": [
         "खाता निलंबित"
+      ],
+      "Account temporarily locked": [
+        "अकाउंट अस्थायी समय के लिए बंद किया गया है"
       ],
       "Action": [
         "कार्य"

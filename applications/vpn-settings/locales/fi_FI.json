@@ -8804,6 +8804,9 @@
       "Folder location": [
         "Kansion sijainti"
       ],
+      "Free": [
+        "Free"
+      ],
       "From: ${ fromEmail }": [
         "Lähettäjä: ${ fromEmail }"
       ],
@@ -9144,6 +9147,9 @@
       "State": [
         "Osavaltio"
       ],
+      "Storage": [
+        "Tallennustila"
+      ],
       "Street address": [
         "Katuosoite"
       ],
@@ -9176,6 +9182,9 @@
       ],
       "Type": [
         "Tyyppi"
+      ],
+      "Unlimited": [
+        "Unlimited"
       ],
       "Upload 1 or more encryption keys": [
         "Lataa yksi tai useita salausavaimia"
@@ -9233,6 +9242,9 @@
       ],
       "Why would you like to cancel?": [
         "Miksi haluat perua tilauksen?"
+      ],
+      "Yes": [
+        "Kyllä"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Kyllä, haluan poistaa tilin ja kaikki sen tiedot pysyvästi."
@@ -12168,11 +12180,6 @@
         "Porttisi verkkovapauteen"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "ole yhteydessä"
-      ]
-    },
     "Plans": {
       "${ cycle } month": [
         "${ cycle } kuukausi",
@@ -12372,9 +12379,6 @@
       "Verify now": [
         "Vahvista nyt"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "Vahvista tämä palautusosoite nyt: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "Vahvistetaanko palautusosoite?"
       ],
@@ -12414,9 +12418,6 @@
       ],
       "Verify recovery phone?": [
         "Vahvistetaanko palautusnumero?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "Vahvista tämä palautusnumero nyt: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Puhelinnumeron vahvistus parantaa tilisi suojausta ja mahdollistaa lisää palautusvaihtoehtoja."
@@ -13955,6 +13956,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe kirjoitusavustaja"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } ja ${ LUMO_APP_NAME } lisäominaisuuksilla"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ja ${ VPN_SHORT_APP_NAME } premium-ominaisuuksilla"
       ],
@@ -14209,6 +14216,10 @@
       ],
       "Version history": [
         "Versiohistoria"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Videokokoukset, enintään ${ PAID_PREMIUM_MAX_PARTICIPANTS } osallistuja",
+        "Videokokoukset, enintään ${ PAID_PREMIUM_MAX_PARTICIPANTS } osallistujaa"
       ],
       "Watch the interview": [
         "Katso haastattelu"
@@ -14753,6 +14764,9 @@
       ],
       "Account recovery": [
         "Tilin palautus"
+      ],
+      "Account restricted": [
+        "Tiliä on rajoitettu"
       ],
       "Account suspended": [
         "Tili on jäädytetty"

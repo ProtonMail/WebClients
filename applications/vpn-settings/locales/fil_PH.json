@@ -8498,6 +8498,9 @@
       "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
         "Para sa ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, at ${ SHEETS_SHORT_APP_NAME }."
       ],
+      "Free": [
+        "Libre"
+      ],
       "From: ${ fromEmail }": [
         "Mula sa: ${ fromEmail }"
       ],
@@ -8838,6 +8841,9 @@
       "State": [
         "Estado"
       ],
+      "Storage": [
+        "Storage"
+      ],
       "Street address": [
         "Street address"
       ],
@@ -8870,6 +8876,9 @@
       ],
       "Type": [
         "Uri"
+      ],
+      "Unlimited": [
+        "Walang limitasyon"
       ],
       "Upload 1 or more encryption keys": [
         "Mag-upload ng 1 o higit pang encryption key"
@@ -8927,6 +8936,9 @@
       ],
       "Why would you like to cancel?": [
         "Bakit mo gustong kanselahin?"
+      ],
+      "Yes": [
+        "Oo"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Oo, gusto kong permanenteng i-delete ang account na ito at lahat ng data nito."
@@ -11804,11 +11816,6 @@
         "Ang iyong gateway sa online na kalayaan."
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "kontakin"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "Lahat ng premium feature mula sa ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, at ${ PASS_SHORT_APP_NAME }."
@@ -11912,9 +11919,6 @@
       "Verify now": [
         "I-verify ngayon"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "I-verify na ngayon ang recovery email address na ito: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "I-verify ang recovery email?"
       ],
@@ -11954,9 +11958,6 @@
       ],
       "Verify recovery phone?": [
         "I-verify ang telepono para sa pag-recover?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "I-verify na ngayon ang recovery phone number na ito: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Ang pag-verify ng numero ng telepono ay nagpapataas ng seguridad ng account at nagbibigay ng karagdagang opsyon para sa pag-recover."
@@ -14321,8 +14322,14 @@
       "Account recovery": [
         "Pag-recover ng account"
       ],
+      "Account restricted": [
+        "Limitado ang account"
+      ],
       "Account suspended": [
         "Nasuspinde ang account"
+      ],
+      "Account temporarily locked": [
+        "Pansamantalang naka-lock ang account"
       ],
       "Action": [
         "Aksyon"

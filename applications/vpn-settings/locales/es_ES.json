@@ -221,6 +221,9 @@
       "Continue anyway": [
         "Continuar de todas formas"
       ],
+      "Continue cancelling": [
+        "Continuar cancelando"
+      ],
       "Continue import": [
         "Continuar la importación"
       ],
@@ -577,6 +580,9 @@
       ],
       "Invite user": [
         "Invitar usuario"
+      ],
+      "Keep current plan": [
+        "Mantener el plan actual"
       ],
       "Keep Editing": [
         "Seguir editando"
@@ -3401,6 +3407,9 @@
       "${ DOCS_SHORT_APP_NAME } in ${ DRIVE_APP_NAME } allows you to work together with others in a secure, encrypted environment.": [
         "${ DOCS_SHORT_APP_NAME } en ${ DRIVE_APP_NAME } te permite trabajar con otros en un entorno seguro y cifrado."
       ],
+      "Add extra addresses to your account or use Hide My Email aliases to keep your inbox private.": [
+        "Añade más direcciones a tu cuenta o utiliza alias de Ocultar mi correo para mantener la privacidad de tu bandeja de entrada."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Añade carpetas y archivos a ${ DRIVE_APP_NAME } e invita a los miembros del equipo a ver o editar."
       ],
@@ -3526,6 +3535,12 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puedes importar eventos en formato iCal (archivos ICS). El archivo puede tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener hasta ${ MAX_IMPORT_EVENTS_STRING } eventos. Si tu archivo es más grande, debes dividirlo en archivos más pequeños."
+      ],
+      "You can manage multiple ${ BRAND_NAME } addresses from a single account, without switching. Aliases and address management tools help keep everything in one inbox.": [
+        "Puedes gestionar varias direcciones de ${ BRAND_NAME } desde una sola cuenta, sin tener que cambiar de sesión. Los alias y las herramientas de gestión te ayudan a mantenerlo todo en una misma bandeja de entrada."
+      ],
+      "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
+        "Puedes unificar tus direcciones en una sola cuenta principal de ${ BRAND_NAME } siguiendo nuestra guía de ayuda."
       ]
     },
     "description": {
@@ -9055,6 +9070,9 @@
       "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
         "Para ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME } y ${ SHEETS_SHORT_APP_NAME }."
       ],
+      "Free": [
+        "Gratuito"
+      ],
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
       ],
@@ -9404,6 +9422,9 @@
       "State": [
         "Estado"
       ],
+      "Storage": [
+        "Almacenamiento"
+      ],
       "Street address": [
         "Nombre de la calle"
       ],
@@ -9436,6 +9457,9 @@
       ],
       "Type": [
         "Tipo"
+      ],
+      "Unlimited": [
+        "Sin límite"
       ],
       "Upload 1 or more encryption keys": [
         "Carga 1 o más claves de cifrado"
@@ -9493,6 +9517,9 @@
       ],
       "Why would you like to cancel?": [
         "¿Por qué quieres cancelar?"
+      ],
+      "Yes": [
+        "Sí"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Sí, quiero eliminar permanentemente esta cuenta y todos sus datos."
@@ -9743,11 +9770,17 @@
       "if your data is leaked": [
         "si tus datos son filtrados"
       ],
+      "Learn how": [
+        "Más información"
+      ],
       "Learn more": [
         "Más información"
       ],
       "Learn more about data recovery": [
         "Aprende más sobre recuperación de datos"
+      ],
+      "Manage addresses": [
+        "Gestiona tus direcciones"
       ],
       "Not activated": [
         "No activado"
@@ -12561,11 +12594,6 @@
         "La puerta a la libertad en línea"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "contactar"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "Todas las funciones prémium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } y ${ PASS_SHORT_APP_NAME }."
@@ -12785,9 +12813,6 @@
       "Verify now": [
         "Verificar ahora"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "Verifica ahora este correo electrónico de recuperación: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "¿Verificar el correo electrónico de recuperación?"
       ],
@@ -12827,9 +12852,6 @@
       ],
       "Verify recovery phone?": [
         "¿Verificar el teléfono de recuperación?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "Verifica ahora este número telefónico de recuperación: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Verificar tu número de teléfono aumenta la seguridad de tu cuenta y permite opciones de recuperación adicionales."
@@ -15302,8 +15324,14 @@
       "Account recovery": [
         "Recuperación de cuenta"
       ],
+      "Account restricted": [
+        "Cuenta restringida"
+      ],
       "Account suspended": [
         "Cuenta suspendida"
+      ],
+      "Account temporarily locked": [
+        "Cuenta temporalmente bloqueada"
       ],
       "Action": [
         "Acción"
@@ -15377,6 +15405,9 @@
       ],
       "Allocate storage": [
         "Asignar almacenamiento"
+      ],
+      "Already have multiple accounts?": [
+        "¿Ya tienes varias cuentas?"
       ],
       "Also in your plan": [
         "También en tu plan"
@@ -15534,6 +15565,9 @@
       ],
       "Create multiple user accounts": [
         "Crear varias cuentas de usuario"
+      ],
+      "Create new addresses easily": [
+        "Crea nuevas direcciones de forma sencilla"
       ],
       "Create new policy": [
         "Crear una política"
@@ -16285,6 +16319,9 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Usa ${ VPN_SHORT_APP_NAME } para la privacidad de los datos"
+      ],
+      "Use one account for all your addresses": [
+        "Utiliza una sola cuenta para todas tus direcciones"
       ],
       "User": [
         "Usuario"

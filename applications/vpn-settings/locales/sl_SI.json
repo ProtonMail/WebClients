@@ -6092,6 +6092,9 @@
       "Enhance your network security": [
         "Izboljšajte varnost omrežja"
       ],
+      "Enter code": [
+        "Vnesi kodo"
+      ],
       "Enter key manually instead": [
         "Vnesite ključ ročno"
       ],
@@ -6247,6 +6250,9 @@
       ],
       "If you lose your two-factor-enabled device, these codes can be used instead of the 6-digit two-factor authentication code to sign in to your account. Each code can only be used once.": [
         "Če izgubite svojo napravo z omogočenim dvojnim preverjanjem pristnosti, lahko te kode uporabite namesto 6-mestne kode za dvojno preverjanje pristnosti za prijavo v svoj račun. Vsako kodo lahko uporabite samo enkrat."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Če ste izgubili dostop do aplikacije za preverjanje pristnosti, lahko uporabite eno od 16. kod za obnovitev, ki ste jih prejeli ob nastavitvi dvojnega preverjanja pristnosti. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Če nadaljujete s podgradnjo, boste izgubili dostop do plačljivih funkcij ${ MAIL_APP_NAME } in ${ VPN_APP_NAME }."
@@ -8079,6 +8085,9 @@
       "Folder location": [
         "Mesto mape"
       ],
+      "Free": [
+        "Brezplačno"
+      ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
       ],
@@ -8397,6 +8406,9 @@
       "State": [
         "Država"
       ],
+      "Storage": [
+        "Shramba"
+      ],
       "Street address": [
         "Ulica"
       ],
@@ -8426,6 +8438,9 @@
       ],
       "Type": [
         "Vrsta"
+      ],
+      "Unlimited": [
+        "Neomejeno"
       ],
       "Upload 1 or more encryption keys": [
         "Naložite eno ali več šifrirnih ključev."
@@ -11225,11 +11240,6 @@
         "Varna e-pošta, ki ščiti vašo zasebnost"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "kontaktirajte"
-      ]
-    },
     "Plans": {
       "${ cycle } month": [
         "${ cycle } mesec",
@@ -11305,9 +11315,6 @@
       "Verify now": [
         "Preveri zdaj"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "Preverite zdaj ta e-poštni naslov za obnovitev: ${ email.Value }."
-      ],
       "Verify recovery email?": [
         "Preveri e-pošto za obnovitev?"
       ],
@@ -11347,9 +11354,6 @@
       ],
       "Verify recovery phone?": [
         "Preverite telefonsko številko za obnovitev?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "Preverite to obnovitveno telefonsko številko zdaj: ${ phone.Value }."
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Preverjanje telefonske številke povečuje varnost računa in zagotavlja dodatne možnosti za obnovitev računa."
@@ -13490,8 +13494,14 @@
       "Account recovery": [
         "Obnovitev računa"
       ],
+      "Account restricted": [
+        "Račun je omejen"
+      ],
       "Account suspended": [
         "Račun je suspendiran"
+      ],
+      "Account temporarily locked": [
+        "Račun je začasno zaklenjen"
       ],
       "Action": [
         "Dejanje"

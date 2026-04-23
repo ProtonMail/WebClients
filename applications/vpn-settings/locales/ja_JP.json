@@ -8774,6 +8774,9 @@
       "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
         "${ DRIVE_SHORT_APP_NAME }、${ DOCS_SHORT_APP_NAME }、${ SHEETS_SHORT_APP_NAME }向け。"
       ],
+      "Free": [
+        "Free"
+      ],
       "From: ${ fromEmail }": [
         "送信者: ${ fromEmail }"
       ],
@@ -9125,6 +9128,9 @@
       "State": [
         "州"
       ],
+      "Storage": [
+        "容量"
+      ],
       "Street address": [
         "番地"
       ],
@@ -9157,6 +9163,9 @@
       ],
       "Type": [
         "種類"
+      ],
+      "Unlimited": [
+        "無制限"
       ],
       "Upload 1 or more encryption keys": [
         "1 つ以上の暗号鍵をアップロード"
@@ -9214,6 +9223,9 @@
       ],
       "Why would you like to cancel?": [
         "なぜキャンセルしたいのですか？"
+      ],
+      "Yes": [
+        "はい"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "このアカウントとすべてのデータを完全に削除することに同意します。"
@@ -12188,11 +12200,6 @@
         "オンラインの自由への入り口です"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "お問い合わせ"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME }、${ PASS_SHORT_APP_NAME } のすべてのプレミアム機能。"
@@ -12410,9 +12417,6 @@
       "Verify now": [
         "今すぐ検証"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "この復旧用のメールアドレスを確認してください: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "回復用メールアドレスを検証しますか？"
       ],
@@ -12452,9 +12456,6 @@
       ],
       "Verify recovery phone?": [
         "回復用電話を検証しますか?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "この復旧用の電話番号を確認してください: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "電話番号を確認することでアカウントのセキュリティを向上させ、回復の追加設定のために利用できます。"
@@ -14846,8 +14847,14 @@
       "Account recovery": [
         "アカウントの回復"
       ],
+      "Account restricted": [
+        "アカウントが制限されています"
+      ],
       "Account suspended": [
         "アカウントが停止されました"
+      ],
+      "Account temporarily locked": [
+        "アカウントが一時的にロックされています"
       ],
       "Action": [
         "アクション"
