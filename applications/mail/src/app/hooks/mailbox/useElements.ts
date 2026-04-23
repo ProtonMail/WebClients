@@ -242,7 +242,10 @@ export const useElements: UseElements = ({
             categoryIDs.push(category);
 
             if (category === MAILBOX_LABEL_IDS.CATEGORY_DEFAULT) {
-                categoryIDs.push(...disabledCategoriesIDs);
+                // Hardcoding the value here is better than adding it to MAILBOX_LABEL_IDS.
+                // It makes the change less impacftul and easier to revert once the forum migration is complete
+                const forumLabelID = '23' as CategoryLabelID;
+                categoryIDs.push(...disabledCategoriesIDs, forumLabelID);
             }
         }
 
