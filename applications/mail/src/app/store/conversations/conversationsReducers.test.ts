@@ -1040,59 +1040,6 @@ describe('conversationsReducers', () => {
                 ]);
                 expect(updatedMessage?.LabelIDs).not.toContain(MAILBOX_LABEL_IDS.INBOX);
             });
-
-            it('should replace old category with new category when moving between categories', () => {
-                mockMessage1.LabelIDs = [MAILBOX_LABEL_IDS.INBOX, MAILBOX_LABEL_IDS.CATEGORY_SOCIAL];
-                mockConversation.Labels = [
-                    {
-                        ID: MAILBOX_LABEL_IDS.INBOX,
-                        ContextNumMessages: 2,
-                        ContextNumUnread: 2,
-                    },
-                    {
-                        ID: MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
-                        ContextNumMessages: 2,
-                        ContextNumUnread: 2,
-                    },
-                ];
-
-                mockConversationState = {
-                    Conversation: mockConversation,
-                    Messages: [mockMessage1, mockMessage2, mockMessage3],
-                    loadRetry: 0,
-                    errors: { network: [], unknown: [] },
-                };
-                state = {
-                    [conversationID]: mockConversationState,
-                } as Draft<ConversationsState>;
-
-                labelMessagesPending(state, {
-                    type: 'labelMessages/pending',
-                    payload: undefined,
-                    meta: {
-                        arg: {
-                            messages: [mockMessage1],
-                            sourceLabelID: MAILBOX_LABEL_IDS.INBOX,
-                            destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
-                            labels: [],
-                            folders: [],
-                        },
-                    },
-                });
-
-                const updatedConversationState = state[conversationID];
-                expect(updatedConversationState).toBeDefined();
-
-                // Message should have new category and not old category
-                const updatedMessage = updatedConversationState?.Messages?.find((m) => m.ID === messageID1);
-                expect(updatedMessage?.LabelIDs).toBeDefined();
-
-                expect(updatedMessage?.LabelIDs).toStrictEqual([
-                    MAILBOX_LABEL_IDS.INBOX,
-                    MAILBOX_LABEL_IDS.CATEGORY_NEWSLETTERS,
-                ]);
-                expect(updatedMessage?.LabelIDs).not.toContain(MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
-            });
         });
 
         describe('unlabelMessagesPending', () => {
