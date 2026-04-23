@@ -18,7 +18,7 @@ import { DocWillInitializeWithEmptyNodeEvent } from '../DocWillInitializeWithEmp
 import { GenerateUUID } from '../GenerateUuid'
 
 export enum DocUpdateOrigin {
-  InitialLoad = 'InitialLoad',
+  BaseCommit = 'BaseCommit',
 }
 
 /** How often to check if a presence broadcast is needed */
@@ -228,7 +228,7 @@ export class DocState extends Observable<string> implements DocStateInterface {
   // eslint-disable-next-line @protontech/enforce-uint8array-arraybuffer/enforce-uint8array-arraybuffer
   handleDocBeingUpdatedByLexical = (_update: Uint8Array<ArrayBufferLike>, origin: any) => {
     const update = _update as Uint8Array<ArrayBuffer> /* upcast Uint8Array<ArrayBuffer> to make TS happy */
-    const isNonUserInitiatedChange = origin === this || origin === DocUpdateOrigin.InitialLoad
+    const isNonUserInitiatedChange = origin === this || origin === DocUpdateOrigin.BaseCommit
     if (isNonUserInitiatedChange) {
       return
     }
