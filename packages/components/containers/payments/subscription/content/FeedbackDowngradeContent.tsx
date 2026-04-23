@@ -404,7 +404,6 @@ const FeedbackDowngradeContent = ({ onResolve, onClose, user }: FeedbackDowngrad
                 <Button
                     data-testid="cancelFeedback"
                     onClick={isEligibleForFeedbackFirst ? handleSkipFeedback : handleKeepSubscription}
-                    size="large"
                     className="rounded-lg"
                 >
                     {isEligibleForFeedbackFirst ? skipFeedbackText : cancelFeedbackText}
@@ -413,7 +412,6 @@ const FeedbackDowngradeContent = ({ onResolve, onClose, user }: FeedbackDowngrad
                     data-testid="submitFeedback"
                     onClick={handleSubmit}
                     color={isEligibleForFeedbackFirst ? 'danger' : submitFeedbackColor}
-                    size="large"
                     className="rounded-lg"
                 >
                     {isEligibleForFeedbackFirst ? continueCancellingText : submitFeedbackText}
