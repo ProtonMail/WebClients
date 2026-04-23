@@ -54,7 +54,7 @@ export const getRecoveryScoreState = (score: number): { label: string; tone: Rec
 
 export const getRecoveryScoreHint = (score: number) => {
     if (score <= 4) {
-        return c('Recovery score').t`Add options to avoid getting locked out of your account.`;
+        return c('Recovery score').t`Add more options to avoid getting locked out of your account.`;
     }
 
     if (score <= 6) {

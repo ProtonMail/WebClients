@@ -250,7 +250,7 @@ export const OutgoingEmergencyContactSettings = () => {
         return (
             <>
                 <OutgoingEmergencyContactBanners />
-                {controller.meta.emergencyContacts.hasAccess && (
+                {controller.meta.emergencyContacts.hasAccess && !controller.meta.emergencyContacts.hasReachedLimit && (
                     <div>
                         <Button
                             color="norm"

@@ -87,7 +87,9 @@ const RedesignRecoverySettingsRouter = ({ app, recovery, path }: Props) => {
                     variant={dataRecovery.subroutes.deviceRecovery.variant}
                     maxWidth={SettingsCardMaxWidth.Narrow}
                 >
-                    <DeviceBasedRecoverySubpage />
+                    <DeviceBasedRecoverySubpage
+                        emailSubpagePath={getSubroutePath(recoveryPath, passwordReset.subroutes.email)}
+                    />
                 </PrivateMainSubSettingsArea>
             </Route>
             <Route path={getSubroutePath(recoveryPath, dataRecovery.subroutes.backupFile)}>
@@ -98,7 +100,9 @@ const RedesignRecoverySettingsRouter = ({ app, recovery, path }: Props) => {
                     variant={dataRecovery.subroutes.backupFile.variant}
                     maxWidth={SettingsCardMaxWidth.Narrow}
                 >
-                    <RecoveryFileSubpage />
+                    <RecoveryFileSubpage
+                        emailSubpagePath={getSubroutePath(recoveryPath, passwordReset.subroutes.email)}
+                    />
                 </PrivateMainSubSettingsArea>
             </Route>
             <Route path={getSubroutePath(recoveryPath, advancedRecovery.subroutes.phrase)}>
