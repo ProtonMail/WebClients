@@ -16,13 +16,19 @@ interface Props {
     method: 'recovery-kit' | 'text';
     recoveryKitDownload: ReturnType<typeof useRecoveryKitDownload>;
     hasSentPayload: boolean;
+    cardClasses?: string;
 }
 
-const RecoveryKitAction = ({ recoveryPhrase, recoveryKitDownload, sendPayload, method, hasSentPayload }: Props) => {
+const RecoveryKitAction = ({
+    recoveryPhrase,
+    recoveryKitDownload,
+    sendPayload,
+    method,
+    hasSentPayload,
+    cardClasses = 'rounded-lg border border-solid border-norm shadow-raised bg-norm',
+}: Props) => {
     const { canDownloadRecoveryKit, downloadRecoveryKit, downloadingRecoveryKit, recoveryKitBlobToDownload } =
         recoveryKitDownload;
-
-    const cardClasses = 'rounded-lg border border-solid border-norm shadow-raised bg-norm';
 
     if (!canDownloadRecoveryKit || method === 'text') {
         /**
@@ -47,8 +53,8 @@ const RecoveryKitAction = ({ recoveryPhrase, recoveryKitDownload, sendPayload, m
             </div>
             <div className="flex-1">
                 <div className="text-lg text-bold">{c('RecoveryPhrase: Info').t`Download PDF`}</div>
-                <div className="color-hint">{RECOVERY_KIT_FILE_NAME}</div>
-                <div className="color-hint text-sm">{size}</div>
+                <div className="color-weak">{RECOVERY_KIT_FILE_NAME}</div>
+                <div className="color-weak text-sm">{size}</div>
             </div>
             <Button
                 color={hasSentPayload ? 'weak' : 'norm'}
