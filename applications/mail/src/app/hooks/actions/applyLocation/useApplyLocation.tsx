@@ -3,7 +3,7 @@ import { c } from 'ttag';
 import useApi from '@proton/components/hooks/useApi';
 import useEventManager from '@proton/components/hooks/useEventManager';
 import useNotifications from '@proton/components/hooks/useNotifications';
-import { isCustomFolder, isSystemFolder } from '@proton/mail/helpers/location';
+import { isCategoryLabel, isCustomFolder, isSystemFolder } from '@proton/mail/helpers/location';
 import { useFolders, useLabels } from '@proton/mail/store/labels/hooks';
 import { useMailSettings } from '@proton/mail/store/mailSettings/hooks';
 import { undoActions } from '@proton/shared/lib/api/mailUndoActions';
@@ -27,6 +27,7 @@ import { useMoveBackAction } from 'proton-mail/hooks/actions/moveBackAction/useM
 import { useCreateFilters } from 'proton-mail/hooks/actions/useCreateFilters';
 import { useGetConversation } from 'proton-mail/hooks/conversation/useConversation';
 import { useGetElementByID } from 'proton-mail/hooks/mailbox/useElements';
+import { load } from 'proton-mail/store/conversations/conversationsActions';
 import { useMailDispatch, useMailSelector } from 'proton-mail/store/hooks';
 import {
     labelConversations,
@@ -359,6 +360,38 @@ export const useApplyLocation = () => {
                     },
                 });
                 return Promise.resolve([]);
+            }
+
+            // Moving a message to a different category is difficult because we cannot predict the number of
+            // elements that are in the conversation, and that are in the category, and in inbox.
+            // To solve this issue, we fetch the conversation and we apply the move action on the conversation instead of the message.
+            if (isCategoryLabel(destinationLabelID)) {
+                const conversationIDs = unique(
+                    elements.filter(isElementMessage).map((element) => element.ConversationID)
+                );
+
+                await Promise.all(
+                    conversationIDs.map((id) =>
+                        dispatch(
+                            load({
+                                conversationID: id,
+                                messageID: undefined,
+                            })
+                        )
+                    )
+                );
+
+                const conversations = conversationIDs.map((id) => getElementByID(id)).filter(isTruthy);
+
+                return moveToFolder({
+                    elements: conversations,
+                    removeLabel,
+                    askUnsubscribe,
+                    destinationLabelID,
+                    showSuccessNotification,
+                    createFilters,
+                    type: APPLY_LOCATION_TYPES.MOVE,
+                });
             }
 
             const { payload } = await dispatchMessage({
