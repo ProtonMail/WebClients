@@ -1,11 +1,10 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 
-import type { ShareResult } from '@protontech/drive-sdk';
+import type { ProtonDriveClient, ShareResult } from '@protontech/drive-sdk';
 import { c } from 'ttag';
 
 import useNotifications from '@proton/components/hooks/useNotifications';
 
-import { useDrive } from '../../../index';
 import { handleDriveError } from '../../../internal/handleDriveError';
 
 const EditorsManageAccessContext = createContext<{
@@ -16,14 +15,14 @@ const EditorsManageAccessContext = createContext<{
 export function EditorsManageAccessContextProvider({
     nodeUid,
     sharingInfo,
+    drive,
     children,
 }: {
     nodeUid: string;
     sharingInfo: ShareResult;
+    drive: Pick<ProtonDriveClient, 'shareNode'>;
     children: React.ReactNode;
 }) {
-    const { drive } = useDrive();
-
     const { createNotification } = useNotifications();
 
     const [editorsManageAccess, setEditorsManageAccess] = useState(false);

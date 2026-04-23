@@ -1,7 +1,7 @@
 import type { MouseEvent } from 'react';
 import { useMemo, useState } from 'react';
 
-import { MemberRole, type ShareNodeSettings } from '@protontech/drive-sdk';
+import { MemberRole, type ProtonDriveClient, type ShareNodeSettings } from '@protontech/drive-sdk';
 import { c } from 'ttag';
 
 import { useAddresses } from '@proton/account/addresses/hooks';
@@ -41,6 +41,7 @@ import './SharingModalView.scss';
 export interface SharingModalViewProps extends ModalStateProps {
     isLoading: boolean;
 
+    drive: Pick<ProtonDriveClient, 'shareNode'>;
     nodeUid: string;
     roleOnParentNode?: MemberRole;
     fileName: string;
@@ -87,6 +88,7 @@ export const SharingModalView = ({
     onExit,
     open,
     isLoading,
+    drive,
     nodeUid,
     roleOnParentNode,
     fileName,
@@ -329,7 +331,7 @@ export const SharingModalView = ({
     };
 
     return (
-        <EditorsManageAccessContextProvider nodeUid={nodeUid} sharingInfo={sharingInfo}>
+        <EditorsManageAccessContextProvider nodeUid={nodeUid} sharingInfo={sharingInfo} drive={drive}>
             <ModalTwo
                 className="double-modal"
                 size="large"
