@@ -111,6 +111,8 @@ export const useSavedMethod = (
         processingToken,
         paymentProcessor,
         reset,
+        // Legacy payment method, we don't need implementing this.
+        userInitiatedProcessing: false,
         meta: {
             type: 'saved',
             data: savedMethod,

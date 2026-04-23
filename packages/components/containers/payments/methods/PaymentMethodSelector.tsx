@@ -25,6 +25,7 @@ interface Props {
     forceDropdown?: boolean;
     narrow?: boolean;
     showCardIcons?: boolean;
+    disabled?: boolean;
 }
 
 const PaymentMethodIcon = ({
@@ -63,6 +64,7 @@ const PaymentMethodSelector = ({
     forceDropdown,
     narrow,
     showCardIcons = false,
+    disabled,
 }: Props) => {
     if (options.length <= 1) {
         // Not helpful to show this if there's only a single option
@@ -95,6 +97,7 @@ const PaymentMethodSelector = ({
                                     className="mr-2"
                                     id={value}
                                     name="value"
+                                    disabled={disabled}
                                     checked={value === method}
                                     onChange={() => onChange(viewPaymentMethod)}
                                     data-testid={`payment-method-${value}`}
@@ -152,6 +155,7 @@ const PaymentMethodSelector = ({
         <SelectTwo
             id="select-method"
             value={method}
+            disabled={disabled}
             onChange={({ value }) => {
                 const viewPaymentMethod = options.find((option) => option.value === value);
                 if (viewPaymentMethod) {

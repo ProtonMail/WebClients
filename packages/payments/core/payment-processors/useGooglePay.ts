@@ -256,6 +256,10 @@ export const useGooglePay = (
         initialize,
         fetchingToken,
         googlePayIframeLoadedRef,
+        // We receive a notification that processing started from Chargebee rather than from actions of a user. Can be
+        // improved in the future by implementing better synchronization of state between the main app and the iframe
+        // wrapper.
+        userInitiatedProcessing: false,
         meta: {
             type: PAYMENT_METHOD_TYPES.GOOGLE_PAY,
         },

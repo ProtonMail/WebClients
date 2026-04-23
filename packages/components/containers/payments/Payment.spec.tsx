@@ -166,6 +166,8 @@ describe('Payment', () => {
                 currencyOverride={{ isCurrencyOverriden: false } as any}
                 showTaxCountry={true}
                 paymentComponentLoaded={jest.fn()}
+                selectedProcessor={undefined}
+                processingPayment={false}
             />
         );
     });
@@ -206,6 +208,8 @@ describe('Payment', () => {
                 currencyOverride={{ isCurrencyOverriden: false } as any}
                 showTaxCountry={true}
                 paymentComponentLoaded={jest.fn()}
+                selectedProcessor={undefined}
+                processingPayment={false}
             />
         );
 
@@ -289,6 +293,8 @@ describe('Payment', () => {
                 currencyOverride={{ isCurrencyOverriden: false } as any}
                 showTaxCountry={true}
                 paymentComponentLoaded={jest.fn()}
+                selectedProcessor={undefined}
+                processingPayment={false}
             />
         );
 
@@ -363,6 +369,8 @@ describe('Payment', () => {
                 currencyOverride={{ isCurrencyOverriden: false } as any}
                 showTaxCountry={true}
                 paymentComponentLoaded={jest.fn()}
+                selectedProcessor={undefined}
+                processingPayment={false}
             />
         );
 
@@ -406,6 +414,8 @@ describe('Payment', () => {
                 currencyOverride={{ isCurrencyOverriden: true } as any}
                 showTaxCountry={true}
                 paymentComponentLoaded={jest.fn()}
+                selectedProcessor={undefined}
+                processingPayment={false}
             />
         );
 
@@ -414,5 +424,70 @@ describe('Payment', () => {
                 'Your currency has been changed to euros (€) because SEPA bank transfers only support payments in euros.'
             )
         ).toBeInTheDocument();
+    });
+
+    describe('PaymentMethodSelector disabled state', () => {
+        const renderPayments = (overrides: { selectedProcessor?: any; processingPayment?: boolean } = {}) =>
+            render(
+                <WrappedPaymentsNoApi
+                    flow="subscription"
+                    onMethod={() => {}}
+                    method={PAYMENT_METHOD_TYPES.CARD}
+                    amount={1000}
+                    isAuthenticated={true}
+                    lastUsedMethod={lastUsedMethod}
+                    allMethods={allMethods}
+                    savedMethodInternal={undefined}
+                    loading={false}
+                    currency="USD"
+                    iframeHandles={
+                        {
+                            handles: {
+                                initializeSavedCreditCard: jest.fn(),
+                                getHeight: jest.fn().mockResolvedValue({ status: 'success', data: { height: 100 } }),
+                            },
+                            iframeRef: { current: null },
+                        } as any
+                    }
+                    chargebeeCard={null as any}
+                    chargebeePaypal={null as any}
+                    bitcoinChargebee={{} as any}
+                    user={undefined}
+                    directDebit={
+                        {
+                            customer: {} as any,
+                            bankAccount: {} as any,
+                        } as any
+                    }
+                    savedPaymentMethods={[]}
+                    currencyOverride={{ isCurrencyOverriden: false } as any}
+                    showTaxCountry={true}
+                    paymentComponentLoaded={jest.fn()}
+                    selectedProcessor={overrides.selectedProcessor}
+                    processingPayment={overrides.processingPayment ?? false}
+                />
+            );
+
+        it('is enabled by default', () => {
+            renderPayments();
+            expect(screen.getByTestId('payment-method-methodid1')).not.toBeDisabled();
+        });
+
+        it('is disabled when processingPayment is true', () => {
+            renderPayments({ processingPayment: true });
+            expect(screen.getByTestId('payment-method-methodid1')).toBeDisabled();
+        });
+
+        it('is disabled when selectedProcessor.userInitiatedProcessing is true', () => {
+            renderPayments({ selectedProcessor: { userInitiatedProcessing: true } as any });
+            expect(screen.getByTestId('payment-method-methodid1')).toBeDisabled();
+        });
+
+        it('remains enabled when processor is processing but not user-initiated', () => {
+            renderPayments({
+                selectedProcessor: { userInitiatedProcessing: false, processingToken: true } as any,
+            });
+            expect(screen.getByTestId('payment-method-methodid1')).not.toBeDisabled();
+        });
     });
 });

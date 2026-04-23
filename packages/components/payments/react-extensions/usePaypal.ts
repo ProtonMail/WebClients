@@ -118,6 +118,8 @@ export const usePaypal = (
         verificationError,
         disabled,
         isInitialState,
+        // Legacy payment method, we don't need implementing this.
+        userInitiatedProcessing: false,
         meta: {
             type: metaType,
         },
