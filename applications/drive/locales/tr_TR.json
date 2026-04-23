@@ -7090,6 +7090,34 @@
       ],
       "No populator states found.": [
         "Herhangi bir doldurucu durumu bulunamadı."
+      ],
+      "${ albums } album": [
+        "${ albums } albüm",
+        "${ albums } albüm"
+      ],
+      "${ files } file": [
+        "${ files } dosya",
+        "${ files } dosya"
+      ],
+      "${ folders } folder": [
+        "${ folders } klasör",
+        "${ folders } klasör"
+      ],
+      "${ photos } photo": [
+        "${ photos } fotoğraf",
+        "${ photos } fotoğraf"
+      ],
+      "Indexed ${ first }": [
+        "${ first } dizinlendi"
+      ],
+      "Indexed ${ first } and ${ second }": [
+        "${ first } ve ${ second } dizinlendi"
+      ],
+      "Indexed ${ first }, ${ second } and ${ third }": [
+        "${ first }, ${ second } ve ${ third } dizinlendi"
+      ],
+      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
+        "${ first }, ${ second }, ${ third } ve ${ fourth } dizinlendi"
       ]
     },
     "info": {
