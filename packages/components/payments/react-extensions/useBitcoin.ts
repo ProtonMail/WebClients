@@ -301,6 +301,9 @@ const useBitcoin = ({
         },
         ...holders,
         billingAddress,
+        // Not implementable for Bitcoin at all. The loading state can't be detected by our code, nor Chargebee's, since
+        // user does the transcation manually on blockchain outside of any PSP.
+        userInitiatedProcessing: false,
     };
 };
 

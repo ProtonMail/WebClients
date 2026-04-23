@@ -71,6 +71,7 @@ export const useSavedChargebeeMethod = (
     const [fetchingToken, withFetchingToken] = useLoading();
     const [verifyingToken, withVerifyingToken] = useLoading();
     const processingToken = fetchingToken || verifyingToken;
+    const [userInitiatedProcessing, withUserInitiatiatedProcessing] = useLoading();
 
     useEffect(() => {
         return () => paymentProcessor?.destroy();
@@ -115,17 +116,19 @@ export const useSavedChargebeeMethod = (
         withVerifyingToken(tokenPromise).catch(noop);
         return tokenPromise;
     };
-    const processPaymentToken = async () => {
-        if (!paymentProcessor?.fetchedPaymentToken) {
-            await fetchPaymentToken();
-        }
+    const processPaymentToken = () => {
+        return withUserInitiatiatedProcessing(async () => {
+            if (!paymentProcessor?.fetchedPaymentToken) {
+                await fetchPaymentToken();
+            }
 
-        try {
-            return await verifyPaymentToken();
-        } catch (error) {
-            reset();
-            throw error;
-        }
+            try {
+                return await verifyPaymentToken();
+            } catch (error) {
+                reset();
+                throw error;
+            }
+        });
     };
 
     return {
@@ -137,6 +140,7 @@ export const useSavedChargebeeMethod = (
         processingToken,
         paymentProcessor,
         reset,
+        userInitiatedProcessing,
         meta: {
             type: 'saved-chargebee',
             data: savedMethod,

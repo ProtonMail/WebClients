@@ -153,6 +153,8 @@ export const useCard = (
         paymentProcessor,
         processPaymentToken,
         processingToken,
+        // Legacy payment method, we don't need implementing this.
+        userInitiatedProcessing: false,
         reset,
         meta: {
             type: 'card',

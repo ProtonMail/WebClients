@@ -126,6 +126,10 @@ export const useChargebeePaypal = (
         processingToken,
         initialize,
         initializing,
+        // We receive a notification that processing started from Chargebee rather than from actions of a user. Can be
+        // improved in the future by implementing better synchronization of state between the main app and the iframe
+        // wrapper.
+        userInitiatedProcessing: false,
         meta: {
             type: 'chargebee-paypal',
         },
