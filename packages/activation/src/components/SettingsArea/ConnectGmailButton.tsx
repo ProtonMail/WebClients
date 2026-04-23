@@ -8,6 +8,8 @@ import { BYOESetupSuccessModal } from '@proton/activation/src/components/Modals/
 import { MAX_SYNC_FREE_USER, MAX_SYNC_PAID_USER } from '@proton/activation/src/constants';
 import useSetupGmailBYOEAddress from '@proton/activation/src/hooks/useSetupGmailBYOEAddress';
 import { EASY_SWITCH_SOURCES } from '@proton/activation/src/interface';
+import { useEasySwitchDispatch } from '@proton/activation/src/logic/store';
+import { changeCreateLoadingState } from '@proton/activation/src/logic/sync/sync.actions';
 import { Button } from '@proton/atoms/Button/Button';
 import { useModalState } from '@proton/components';
 import { hasPaidMail } from '@proton/shared/lib/user/helpers';
@@ -34,6 +36,8 @@ const ConnectGmailButton = ({
     buttonText = c('Action').t`Set up auto-forwarding from Gmail`,
     onComplete,
 }: Props) => {
+    const easySwitchDispatch = useEasySwitchDispatch();
+
     const [user, loadingUser] = useUser();
     const [addresses, loadingAddresses] = useAddresses();
 
@@ -41,12 +45,6 @@ const ConnectGmailButton = ({
 
     const [byoeSetupSuccessModal, setBYOESetupSuccessModal, renderBYOESetupSuccessModal] = useModalState();
 
-    const { hasAccessToBYOE, isInMaintenance, handleBYOEWithImportCallback } = useSetupGmailBYOEAddress({
-        showSuccessModal: (connectedAddress: string) => {
-            setConnectedAddress(connectedAddress);
-            setBYOESetupSuccessModal(true);
-        },
-    });
     const { activeBYOEAddresses, forwardingList, isLoadingAddressesCount } = useBYOEAddressesCounts();
 
     const [syncModalProps, setSyncModalOpen, renderSyncModal] = useModalState();
@@ -58,6 +56,18 @@ const ConnectGmailButton = ({
     const [removeForwardingModalProps, setRemoveForwardingModalOpen, renderRemoveForwardingModal] = useModalState();
 
     const [expectedEmailAddress, setExpectedEmailAddress] = useState<string | undefined>();
+
+    const { hasAccessToBYOE, isInMaintenance, handleBYOEWithImportCallback } = useSetupGmailBYOEAddress({
+        showSuccessModal: (connectedAddress: string) => {
+            setConnectedAddress(connectedAddress);
+            setBYOESetupSuccessModal(true);
+        },
+        onComplete: () => {
+            easySwitchDispatch(changeCreateLoadingState('idle'));
+            setSyncModalOpen(false);
+            setExpectedEmailAddress(undefined);
+        },
+    });
 
     const disabled = loadingUser || loadingAddresses || isInMaintenance || isLoadingAddressesCount;
 
