@@ -48,8 +48,8 @@ export const B2COnboarding = ({ flagValue }: Props) => {
                 className="m-4 h-auto p-4 bg-norm rounded-lg max-w-custom shrink-0 shadow-norm"
                 style={{ '--max-w-custom': '36.25rem' }}
             >
-                <h2 className="text-semibold text-rg mb-2">{c('Title').t`Introducing email categories`}</h2>
-                <p className="m-0 color-weak">{c('Label')
+                <h2 className="text-semibold text-sm mb-2">{c('Title').t`Introducing email categories`}</h2>
+                <p className="m-0 text-sm color-weak">{c('Label')
                     .t`No more missing important messages! These now show up under ${primaryCopy}. Everything else is sorted by category so they’re easy to find and don’t clutter your inbox.`}</p>
                 <div className="flex gap-2 my-3">
                     <Button
@@ -59,6 +59,7 @@ export const B2COnboarding = ({ flagValue }: Props) => {
                         }}
                         className="flex-1"
                         color="norm"
+                        size="small"
                     >{c('Action').t`Continue with categories`}</Button>
                     <Button
                         loading={loadingNoCategories}
@@ -66,6 +67,7 @@ export const B2COnboarding = ({ flagValue }: Props) => {
                             void withLoadingNoCategories(handleNoCategories);
                         }}
                         className="flex-1"
+                        size="small"
                     >{c('Action').t`Keep inbox as before`}</Button>
                 </div>
                 <ButtonOnboardingPrivate />
