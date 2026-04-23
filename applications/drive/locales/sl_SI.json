@@ -471,9 +471,6 @@
       "Get in touch": [
         "Oglasite se nam!"
       ],
-      "Get link": [
-        "Dobi povezavo"
-      ],
       "Get secure storage for ${ simplePriceString }": [
         "Pridobite varno shrambo za ${ simplePriceString }"
       ],
@@ -591,9 +588,6 @@
       "Load image": [
         "Naloži sliko"
       ],
-      "Loading link": [
-        "Nalaganje povezave"
-      ],
       "Make a copy": [
         "Naredi kopijo"
       ],
@@ -608,9 +602,6 @@
       ],
       "Manage labels": [
         "Upravljanje oznak"
-      ],
-      "Manage link": [
-        "Upravljanje povezav"
       ],
       "Manage share": [
         "Upravljanje skupne rabe"
@@ -5362,6 +5353,9 @@
       "End-to-end encrypted": [
         "Popolnoma šifrirano"
       ],
+      "Enter code": [
+        "Vnesi kodo"
+      ],
       "Enter password": [
         "Vnesite geslo"
       ],
@@ -5484,6 +5478,9 @@
       ],
       "If you have one of these, continue to ${ BRAND_NAME } Account setting to start the unblock process.": [
         "Če imate enega od teh, nadaljujte v nastavitve računa ${ BRAND_NAME }, da začnete postopek odblokiranja."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Če ste izgubili dostop do aplikacije za preverjanje pristnosti, lahko uporabite eno od 16. kod za obnovitev, ki ste jih prejeli ob nastavitvi dvojnega preverjanja pristnosti. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Če nadaljujete s podgradnjo, boste izgubili dostop do plačljivih funkcij ${ MAIL_APP_NAME } in ${ VPN_APP_NAME }."
@@ -6064,9 +6061,6 @@
       "Shared by ${ sharedBy }": [
         "Delil z ${ sharedBy }"
       ],
-      "Shared by you": [
-        "Kaj delim z drugimi"
-      ],
       "Shared link not found": [
         "Povezave v skupni rabi ni bilo mogoče najti"
       ],
@@ -6385,9 +6379,6 @@
       "Unsupported file type for Photos": [
         "Nepodprta vrsta datoteke za fotografije"
       ],
-      "Untitled": [
-        "Brez naslova"
-      ],
       "Updating drive search...": [
         "Posodabljanje pogona za iskanje ..."
       ],
@@ -6456,9 +6447,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Bravo, pravkar ste povečali prostor za shranjevanje na 5 GB!"
-      ],
-      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "Trenutno imamo tehnične težave. Vsa dejanja, povezana z albumi, so začasno onemogočena."
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "Nismo mogli preveriti, ali je ${ nameAuthor } naložil ${ node.name }. Naslednje je bilo morda spremenjeno: vrstni red podatkov v datoteki. Odprite samo, če ji zaupate."
@@ -9099,9 +9087,6 @@
       "Access updated": [
         "Dostop je posodobljen."
       ],
-      "Album failed to be renamed": [
-        "Albuma ni bilo mogoče preimenovati"
-      ],
       "An invitation has been sent": [
         "Vabilo je bilo odposlano."
       ],
@@ -9140,9 +9125,6 @@
       ],
       "Failed to download files: ${ err }": [
         "Prenos datotek ni uspel: ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "Podrobnosti o povabilu ni bilo mogoče naložiti"
       ],
       "Failed to move, please try again": [
         "Napaka pri premikanju, prosimo poskusite znova"
@@ -10041,11 +10023,6 @@
     "Placeholder for contact group name": {
       "Name": [
         "Ime"
-      ]
-    },
-    "plan customizer, users": {
-      "contact": [
-        "kontaktirajte"
       ]
     },
     "Plans": {

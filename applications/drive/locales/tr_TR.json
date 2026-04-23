@@ -88,9 +88,9 @@
       "Add photos": [
         "Fotoğraf ekle"
       ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "\"${ album.name }\" albümüne ekle (${ album.photoCount } fotoğraf)",
-        "\"${ album.name }\" albümüne ekle (${ album.photoCount } fotoğraf)"
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "\"${ name }\" albümüne ekle (${ photoCount } fotoğraf)",
+        "\"${ name }\" albümüne ekle (${ photoCount } fotoğraf)"
       ],
       "Add to album": [
         "Albüme ekle"
@@ -515,9 +515,6 @@
       "Get in touch": [
         "Bizimle görüşün"
       ],
-      "Get link": [
-        "Bağlantıyı al"
-      ],
       "Get mobile and desktop apps": [
         "Mobil ve bilgisayar uygulamalarını edinin"
       ],
@@ -644,9 +641,6 @@
       "Load image": [
         "Görsel yükle"
       ],
-      "Loading link": [
-        "Bağlantı yükleniyor"
-      ],
       "Make a copy": [
         "Kopya oluştur"
       ],
@@ -661,9 +655,6 @@
       ],
       "Manage labels": [
         "Etiket yönetimi"
-      ],
-      "Manage link": [
-        "Bağlantıyı yönet"
       ],
       "Manage share": [
         "Paylaşım yönetimi"
@@ -4910,6 +4901,10 @@
       "${ albumName } has been successfully deleted": [
         "${ albumName } albümü silindi"
       ],
+      "${ albums } album": [
+        "${ albums } albüm",
+        "${ albums } albüm"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName }, ${ enableDesktopNotifications } için izninizi istiyor."
       ],
@@ -4993,6 +4988,14 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: düşük çözünürlüklü ön izleme"
       ],
+      "${ files } file": [
+        "${ files } dosya",
+        "${ files } dosya"
+      ],
+      "${ folders } folder": [
+        "${ folders } klasör",
+        "${ folders } klasör"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } grup bulundu",
         "${ groupCounts } grup bulundu"
@@ -5026,6 +5029,10 @@
       "${ photoCount } item": [
         "${ photoCount } öge",
         "${ photoCount } öge"
+      ],
+      "${ photos } photo": [
+        "${ photos } fotoğraf",
+        "${ photos } fotoğraf"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } için size ayrılmış en az 1 sunucu gereklidir ${ serverPricePerMonth }"
@@ -5768,6 +5775,18 @@
       "Index is empty.": [
         "Dizin boş."
       ],
+      "Indexed ${ first }": [
+        "${ first } dizinlendi"
+      ],
+      "Indexed ${ first } and ${ second }": [
+        "${ first } ve ${ second } dizinlendi"
+      ],
+      "Indexed ${ first }, ${ second } and ${ third }": [
+        "${ first }, ${ second } ve ${ third } dizinlendi"
+      ],
+      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
+        "${ first }, ${ second }, ${ third } ve ${ fourth } dizinlendi"
+      ],
       "Indexing in progress": [
         "Dizine ekleme sürüyor"
       ],
@@ -6331,9 +6350,6 @@
       "Shared by ${ sharedBy }": [
         "${ sharedBy } tarafından paylaşıldı"
       ],
-      "Shared by you": [
-        "Paylaştıklarınız"
-      ],
       "Shared link not found": [
         "Paylaşılan bağlantı bulunamadı"
       ],
@@ -6660,9 +6676,6 @@
       "Unsupported file type for Photos": [
         "Fotoğraflar için dosya türü desteklenmiyor"
       ],
-      "Untitled": [
-        "Adlandırılmamış"
-      ],
       "Update required": [
         "Güncelleme gerekli"
       ],
@@ -6737,9 +6750,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Tebrikler, depolama alanınızı 5 GB boyutuna artırdınız!"
-      ],
-      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "Teknik sorunlar yaşıyoruz. Geçici olarak albümlerle ilgili işlemler yapılamıyor."
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "${ nameAuthor } tarafından yüklenen ${ node.name } dosyası doğrulanamadı. Şu ögeler üzerinde oynanmış olabilir: Dosya verileri sıralaması. Yalnızca güveniyorsanız açın."
@@ -9497,9 +9507,6 @@
       "Access updated": [
         "Erişim güncellendi"
       ],
-      "Album failed to be renamed": [
-        "Albüm yeniden adlandırılamadı"
-      ],
       "Album renamed successfully": [
         "Albüm yeniden adlandırıldı"
       ],
@@ -9550,9 +9557,6 @@
       ],
       "Failed to download files: ${ err }": [
         "Dosyalar indirilemedi: ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "Davet bilgileri yüklenemedi"
       ],
       "Failed to move, please try again": [
         "Taşınamadı. Lütfen yeniden deneyin"
@@ -9683,6 +9687,11 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Bazı görseller, geçerli seçimdeki yinelenen dosya adları nedeniyle yüklenmedi."
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "Albümün başarıyla yeniden adlandırıldı"
       ]
     },
     "Oauth instructions": {
@@ -10618,11 +10627,6 @@
     "Placeholder for contact group name": {
       "Name": [
         "Ad"
-      ]
-    },
-    "plan customizer, users": {
-      "contact": [
-        "görüşün"
       ]
     },
     "Plan description": {
@@ -11638,6 +11642,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe yazma asistanı"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "Ücretli özelliklerle birlikte ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } ve ${ LUMO_APP_NAME }"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "Ücretli özelliklerle ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } ve ${ VPN_SHORT_APP_NAME }"
       ],
@@ -11868,6 +11878,10 @@
       ],
       "Version history": [
         "Sürüm geçmişi"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Görüntülü toplantılar, ${ PAID_PREMIUM_MAX_PARTICIPANTS } katılımcıya kadar",
+        "Görüntülü toplantılar, ${ PAID_PREMIUM_MAX_PARTICIPANTS } katılımcıya kadar"
       ],
       "Watch the interview": [
         "Röportajı izleyin"

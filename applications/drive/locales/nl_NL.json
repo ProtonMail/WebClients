@@ -88,10 +88,6 @@
       "Add photos": [
         "Foto's toevoegen"
       ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "Toevoegen aan \"${ album.name }\" (${ album.photoCount } foto)",
-        "Toevoegen aan \"${ album.name }\" (${ album.photoCount } foto's)"
-      ],
       "Add to album": [
         "Voeg toe aan album"
       ],
@@ -515,9 +511,6 @@
       "Get in touch": [
         "Neem contact op"
       ],
-      "Get link": [
-        "Link krijgen"
-      ],
       "Get mobile and desktop apps": [
         "Download mobiele en desktop apps"
       ],
@@ -644,9 +637,6 @@
       "Load image": [
         "Afbeelding laden"
       ],
-      "Loading link": [
-        "Koppeling laden"
-      ],
       "Make a copy": [
         "Een kopie maken"
       ],
@@ -661,9 +651,6 @@
       ],
       "Manage labels": [
         "Labels beheeren"
-      ],
-      "Manage link": [
-        "Beheer link"
       ],
       "Manage share": [
         "Delen beheren"
@@ -6310,9 +6297,6 @@
       "Shared by ${ sharedBy }": [
         "Gedeeld door ${ sharedBy }"
       ],
-      "Shared by you": [
-        "Gedeeld door u"
-      ],
       "Shared link not found": [
         "Gedeelde link niet gevonden"
       ],
@@ -6639,9 +6623,6 @@
       "Unsupported file type for Photos": [
         "Bestandstype wordt niet ondersteund voor Foto's"
       ],
-      "Untitled": [
-        "Naamloos"
-      ],
       "Update required": [
         "Update vereist"
       ],
@@ -6716,9 +6697,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Hoera! U hebt zojuist uw opslagruimte verhoogd tot 5 GB!"
-      ],
-      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "We ondervinden technische problemen. Alle albumgerelateerde acties zijn tijdelijk uitgeschakeld."
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "We konden niet verifiëren dat ${ nameAuthor } ${ node.name } heeft geüpload. Het volgende kan onrechtmatig zijn bewerkt: volgorde van de bestandsgegevens. Open alleen als u het vertrouwt."
@@ -9473,9 +9451,6 @@
       "Access updated": [
         "Toegang bijgewerkt."
       ],
-      "Album failed to be renamed": [
-        "Album kon niet worden hernoemd"
-      ],
       "Album renamed successfully": [
         "Album is hernoemd"
       ],
@@ -9526,9 +9501,6 @@
       ],
       "Failed to download files: ${ err }": [
         "Bestanden downloaden mislukt: ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "Fout bij het laden van uitnodigingsdetails"
       ],
       "Failed to move, please try again": [
         "Verplaatsen mislukt, probeer het opnieuw"
@@ -10591,11 +10563,6 @@
     "Placeholder for contact group name": {
       "Name": [
         "Naam"
-      ]
-    },
-    "plan customizer, users": {
-      "contact": [
-        "neem contact op"
       ]
     },
     "Plan description": {

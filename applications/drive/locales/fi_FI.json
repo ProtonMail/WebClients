@@ -88,9 +88,9 @@
       "Add photos": [
         "Lisää kuvia"
       ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "Lisää albumiin \"${ album.name }\" (${ album.photoCount } kuva)",
-        "Lisää albumiin \"${ album.name }\" (${ album.photoCount } kuvaa)"
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "Lisää albumiin \"${ name }\" (${ photoCount } kuva)",
+        "Lisää albumiin \"${ name }\" (${ photoCount } kuvaa)"
       ],
       "Add to album": [
         "Lisää albumiin"
@@ -515,9 +515,6 @@
       "Get in touch": [
         "Ota yhteyttä"
       ],
-      "Get link": [
-        "Hanki linkki"
-      ],
       "Get mobile and desktop apps": [
         "Hanki mobiili- ja työpöytäsovellukset"
       ],
@@ -644,9 +641,6 @@
       "Load image": [
         "Lataa kuva"
       ],
-      "Loading link": [
-        "Ladataan linkkiä"
-      ],
       "Make a copy": [
         "Luo kopio"
       ],
@@ -661,9 +655,6 @@
       ],
       "Manage labels": [
         "Hallitse tunnisteita"
-      ],
-      "Manage link": [
-        "Hallitse linkkiä"
       ],
       "Manage share": [
         "Hallitse jakoa"
@@ -6463,9 +6454,6 @@
       "Unsupported file type for Photos": [
         "Tiedostotyyppiä ei tueta Photos-palvelussa"
       ],
-      "Untitled": [
-        "Nimetön"
-      ],
       "Update required": [
         "Päivitys vaaditaan"
       ],
@@ -6540,9 +6528,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Hienoa! Olet juuri kasvattanut tallennustilasi 5 gigatavuun."
-      ],
-      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "Meillä on teknisiä ongelmia. Albumeihin liittyvät toiminnot on tilapäisesti poistettu käytöstä."
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "Emme voineet varmistaa, että ${ nameAuthor } on ladannut ${ node.name }. Seuraavaa on mahdollisesti muutettu: tiedostojen tietojen järjestys. Avaa vain, jos luotat siihen."
@@ -9207,9 +9192,6 @@
       "Access updated": [
         "Käyttöoikeus päivitettiin"
       ],
-      "Album failed to be renamed": [
-        "Albumin uudelleennimeäminen epäonnistui"
-      ],
       "Album renamed successfully": [
         "Albumi nimettiin uudelleen"
       ],
@@ -9257,9 +9239,6 @@
       ],
       "Failed to download files: ${ err }": [
         "Tiedostojen lataus epäonnistui: ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "Kutsun tietojen lataaminen epäonnistui"
       ],
       "Failed to move, please try again": [
         "Siirto epäonnistui. Yritä uudelleen"
@@ -9387,6 +9366,11 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Joitain kuvia ei lähetetty, koska nykyinen valinta sisältää päällekkäisiä tiedostonimiä."
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "Albumi nimettiin uudelleen"
       ]
     },
     "Oauth instructions": {
@@ -10259,11 +10243,6 @@
     "Placeholder for contact group name": {
       "Name": [
         "Nimi"
-      ]
-    },
-    "plan customizer, users": {
-      "contact": [
-        "ole yhteydessä"
       ]
     },
     "Plans": {
@@ -11235,6 +11214,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe kirjoitusavustaja"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } ja ${ LUMO_APP_NAME } lisäominaisuuksilla"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ja ${ VPN_SHORT_APP_NAME } premium-ominaisuuksilla"
       ],
@@ -11462,6 +11447,10 @@
       ],
       "Version history": [
         "Versiohistoria"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Videokokoukset, enintään ${ PAID_PREMIUM_MAX_PARTICIPANTS } osallistuja",
+        "Videokokoukset, enintään ${ PAID_PREMIUM_MAX_PARTICIPANTS } osallistujaa"
       ],
       "Watch the interview": [
         "Katso haastattelu"
