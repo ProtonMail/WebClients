@@ -577,9 +577,6 @@
       "Set extra password": [
         "Установить дополнительный пароль"
       ],
-      "Settings": [
-        "Настройки"
-      ],
       "Setup 2FA": [
         "Настроить двухфакторную аутентификацию"
       ],
@@ -1922,6 +1919,9 @@
       "Loading...": [
         "Загрузка..."
       ],
+      "Logging you out...": [
+        "Выполняется выход из системы..."
+      ],
       "Low Priority": [
         "Низкий приоритет"
       ],
@@ -1951,6 +1951,12 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Перемещение всех элементов из \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки.",
+        "Перемещение элемента в другое хранилище удалит его защищенные ссылки."
       ],
       "Moving items": [
         "Перемещение элементов"
@@ -2395,12 +2401,6 @@
       ],
       "Unlimited hide-my-email aliases and advanced alias management": [
         "Неограниченное количество псевдонимов hide-my-email и расширенное управление псевдонимами"
-      ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
-        "Разблокируйте ${ PASS_APP_NAME } с вашим PIN-кодом для доступа к вашим passkey"
-      ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
-        "Разблокируйте ${ PASS_APP_NAME } с помощью своего PIN-кода, чтобы сохранить этот passkey."
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Разблокировать ${ PASS_SHORT_APP_NAME } с помощью биометрических данных"

@@ -628,9 +628,6 @@
       "Set extra password": [
         "Estableix una contrasenya addicional"
       ],
-      "Settings": [
-        "Preferències"
-      ],
       "Setup 2FA": [
         "Configura el 2FA"
       ],
@@ -945,6 +942,18 @@
       "Biometric authentication failed.": [
         "L'autenticació biomètrica ha fallat."
       ],
+      "Biometric lock credentials do not match.": [
+        "Les credencials del bloqueig biomètric no coincideixen."
+      ],
+      "Biometric lock credentials not found.": [
+        "No s'han trobat les credencials del bloqueig biomètric."
+      ],
+      "Biometric lock is not configured.": [
+        "El bloqueig biomètric no està configurat."
+      ],
+      "Biometric lock setup failed.": [
+        "Ha fallat la configuració del bloqueig biomètric."
+      ],
       "Cannot create alias (${ error }).": [
         "No es pot crear l'àlies (${ error })."
       ],
@@ -999,18 +1008,6 @@
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "No s'ha pogut eliminar la caixa forta \"${ payload.content.name }\""
-      ],
-      "Desktop lock is not configured.": [
-        "El bloqueig de l'escriptori no està configurat."
-      ],
-      "Desktop lock secret does not match.": [
-        "La contrasenya de bloqueig de l'escriptori no coincideix."
-      ],
-      "Desktop lock secret not found.": [
-        "No s'ha trobat la contrasenya de bloqueig de l'escriptori."
-      ],
-      "Desktop lock setup failed.": [
-        "La configuració del bloqueig d'escriptori ha fallat."
       ],
       "Detected ${ errors.length } corrupted csv row": [
         "S'ha detectat ${ errors.length } fila CSV corrupta",
@@ -1288,6 +1285,9 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
         "S'ha iniciat sessió a l'aplicació d'escriptori ${ PASS_APP_NAME }amb un compte diferent."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "L'aplicació d'escriptori ${ PASS_APP_NAME } hauria de tenir la sessió iniciada."
       ],
       "The URL is in the list": [
         "L'URL és a la llista."
@@ -2048,6 +2048,9 @@
       "Loading...": [
         "S'està carregant..."
       ],
+      "Logging you out...": [
+        "S'està tancant la sessió..."
+      ],
       "Low Priority": [
         "Prioritat baixa"
       ],
@@ -2077,7 +2080,8 @@
         "S'estan movent tots els elements de «${ payload.content.name }»"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs."
+        "Si moveu un element a una altra caixa forta, se n'esborrarà els enllaces segurs.",
+        "Si moveu els elements a una altra caixa forta, se n'esborrarà els enllaces segurs."
       ],
       "Moving items": [
         "S'estan movent elements"
@@ -2567,11 +2571,11 @@
       "Unlimited hide-my-email aliases and advanced alias management": [
         "Número il·limitat d'àlies hide-my-email i administració avançada d'àlies"
       ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
-        "Desbloquegeu ${ PASS_APP_NAME } amb el vostre codi PIN per accedir a les vostres claus d'accés"
+      "Unlock ${ PASS_APP_NAME } to access your passkeys": [
+        "Desbloquegeu ${ PASS_APP_NAME } per accedir a les vostres claus d'accés"
       ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
-        "Desbloquegeu ${ PASS_APP_NAME } amb el vostre codi PIN per desar aquesta clau d'accés"
+      "Unlock ${ PASS_APP_NAME } to save this passkey": [
+        "Desbloquegeu ${ PASS_APP_NAME } per desar aquesta clau d'accés"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Desbloqueja ${ PASS_SHORT_APP_NAME } amb dades biomètriques"

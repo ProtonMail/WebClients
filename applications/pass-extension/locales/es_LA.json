@@ -628,9 +628,6 @@
       "Set extra password": [
         "Configurar la contraseña adicional"
       ],
-      "Settings": [
-        "Ajustes"
-      ],
       "Setup 2FA": [
         "Configurar 2FA"
       ],
@@ -945,6 +942,18 @@
       "Biometric authentication failed.": [
         "Error en la autenticación biométrica."
       ],
+      "Biometric lock credentials do not match.": [
+        "Las credenciales de bloqueo de biometría no coinciden."
+      ],
+      "Biometric lock credentials not found.": [
+        "No se encontró el bloqueo por biometría."
+      ],
+      "Biometric lock is not configured.": [
+        "El bloqueo de biometría no está configurado."
+      ],
+      "Biometric lock setup failed.": [
+        "Error en la configuración de bloqueo de biometría."
+      ],
       "Cannot create alias (${ error }).": [
         "No se puede crear el alias (${ error })."
       ],
@@ -999,18 +1008,6 @@
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Error al eliminar la bóveda \"${ payload.content.name }\""
-      ],
-      "Desktop lock is not configured.": [
-        "El bloqueo de escritorio no está configurado."
-      ],
-      "Desktop lock secret does not match.": [
-        "El secreto de bloqueo de escritorio no coincide."
-      ],
-      "Desktop lock secret not found.": [
-        "Secreto de bloqueo de escritorio no encontrado."
-      ],
-      "Desktop lock setup failed.": [
-        "Error en la configuración de bloqueo de escritorio."
       ],
       "Detected ${ errors.length } corrupted csv row": [
         "Se detectó ${ errors.length } fila CSV dañada.",
@@ -1288,6 +1285,9 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
         "Se ha iniciado sesión en a aplicación de escritorio de ${ PASS_APP_NAME } con una cuenta diferente."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "Debe iniciar sesión en la aplicación de escritorio de ${ PASS_APP_NAME }"
       ],
       "The URL is in the list": [
         "La URL está en la lista."
@@ -2048,6 +2048,9 @@
       "Loading...": [
         "Cargando..."
       ],
+      "Logging you out...": [
+        "Cerrando la sesión..."
+      ],
       "Low Priority": [
         "Prioridad baja"
       ],
@@ -2077,7 +2080,8 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros."
+        "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
+        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo los elementos"
@@ -2567,11 +2571,11 @@
       "Unlimited hide-my-email aliases and advanced alias management": [
         "Número ilimitado de alias ​​hide-my-email y administración avanzada de alias"
       ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
-        "Desbloquee ${ PASS_APP_NAME } con el código PIN para acceder a las claves de acceso"
+      "Unlock ${ PASS_APP_NAME } to access your passkeys": [
+        "Desbloquee ${ PASS_APP_NAME } para acceder a sus claves de acceso"
       ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
-        "Desbloquee ${ PASS_APP_NAME } con el código PIN para guardar esta clave de acceso"
+      "Unlock ${ PASS_APP_NAME } to save this passkey": [
+        "Desbloquee ${ PASS_APP_NAME } para guardar esta clave de acceso"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Desbloquee ${ PASS_SHORT_APP_NAME } con datos biométricos"
