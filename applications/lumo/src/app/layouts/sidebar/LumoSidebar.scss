@@ -25,6 +25,16 @@ im.$media-expressions: $media-expressions;
 		stroke: currentcolor;
 	}
 
+	// `.lumo-plus-button` provides its own SVG styling, opt it out of the
+	// chunky-stroke treatment applied to the rest of the sidebar icons.
+	.lumo-plus-button {
+		svg,
+		svg * {
+			stroke-width: 0;
+			stroke: none;
+		}
+	}
+
 	@include im.media('<=small') {
 		background-color: var(--background-composer-mobile);
 		gap: 4px;
