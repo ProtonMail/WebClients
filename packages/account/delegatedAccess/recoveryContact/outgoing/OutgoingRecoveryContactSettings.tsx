@@ -174,8 +174,10 @@ const OutgoingTable = ({ controller }: { controller: OutgoingDelegatedAccessProv
 
 export const OutgoingRecoveryContactSettings = ({
     userHasNoAccountRecoveryMethodSet,
+    passwordResetOptionRequiredWarning,
 }: {
     userHasNoAccountRecoveryMethodSet: boolean;
+    passwordResetOptionRequiredWarning?: React.ReactNode;
 }) => {
     const isRecoverySettingsRedesignEnabled = useFlag('RecoverySettingsRedesign');
     const controller = useOutgoingController();
@@ -213,6 +215,7 @@ export const OutgoingRecoveryContactSettings = ({
 
                 {controller.items.recoveryContacts.length > 0 && (
                     <DashboardCard>
+                        {passwordResetOptionRequiredWarning}
                         <DashboardCardContent>
                             <h3 className="text-semibold text-rg mb-3">{c('emergency_access')
                                 .t`Your recovery contacts`}</h3>

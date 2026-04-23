@@ -38,7 +38,7 @@ const RecoveryPhraseSubpage = () => {
                         <>
                             <SettingsDescriptionItem>
                                 {c('Info')
-                                    .t`Your recovery phrase—contained in your Recovery Kit—will allow you to sign in and recover your data if you get locked out of your ${BRAND_NAME} Account. It’s is composed of 12 words and acts like a backup password.`}
+                                    .t`Your recovery phrase—contained in your Recovery Kit—will allow you to sign in and recover your data if you get locked out of your ${BRAND_NAME} Account. It is composed of 12 words and acts like a backup password.`}
                             </SettingsDescriptionItem>
                             <SettingsDescriptionItem>
                                 {c('Info')
