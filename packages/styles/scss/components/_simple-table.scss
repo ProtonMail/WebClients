@@ -33,8 +33,7 @@
 	}
 
 	&--no-inline-padding {
-		tr:first-child,
-		tr:last-child {
+		tr {
 			td:first-child,
 			th:first-child {
 				padding-inline-start: 0;

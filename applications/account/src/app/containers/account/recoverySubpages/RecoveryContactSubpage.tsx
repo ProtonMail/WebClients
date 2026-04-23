@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-
 import { c } from 'ttag';
 
 import { IncomingRecoveryContactParams } from '@proton/account/delegatedAccess/recoveryContact/incoming/IncomingRecoveryContactParams';
@@ -11,8 +9,6 @@ import { IncomingDelegatedAccessProvider } from '@proton/account/delegatedAccess
 import { OutgoingDelegatedAccessActions } from '@proton/account/delegatedAccess/shared/OutgoingDelegatedAccessActions';
 import { OutgoingDelegatedAccessProvider } from '@proton/account/delegatedAccess/shared/OutgoingDelegatedAccessProvider';
 import { selectAvailableRecoveryMethods } from '@proton/account/recovery/sessionRecoverySelectors';
-import { Banner } from '@proton/atoms/Banner/Banner';
-import { ButtonLike } from '@proton/atoms/Button/ButtonLike';
 import { DashboardGrid } from '@proton/atoms/DashboardGrid/DashboardGrid';
 import { Href } from '@proton/atoms/Href/Href';
 import SettingsDescription, {
@@ -23,6 +19,7 @@ import type { APP_NAMES } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import illustration from './assets/recovery-contacts.svg';
+import PasswordResetOptionRequiredWarning from './shared/PasswordResetOptionRequiredWarning';
 
 export const RecoveryContactSubpage = ({ app, emailSubpagePath }: { app: APP_NAMES; emailSubpagePath: string }) => {
     const { hasAccountRecoveryMethod } = useSelector(selectAvailableRecoveryMethods);
@@ -39,25 +36,15 @@ export const RecoveryContactSubpage = ({ app, emailSubpagePath }: { app: APP_NAM
                 }
                 right={<img src={illustration} alt="" className="shrink-0 hidden md:block" width={80} height={80} />}
             />
-            {!hasAccountRecoveryMethod && (
-                <div className="mb-4">
-                    <Banner
-                        variant="info-outline"
-                        action={
-                            <ButtonLike as={Link} to={emailSubpagePath}>{c('emergency_access')
-                                .t`Set account recovery`}</ButtonLike>
-                        }
-                    >
-                        {c('emergency_access')
-                            .t`To add and use recovery contact, you must have a password reset option.`}
-                    </Banner>
-                </div>
-            )}
-
             <OutgoingDelegatedAccessProvider>
                 <OutgoingDelegatedAccessActions />
                 <OutgoingRecoveryContactParams />
-                <OutgoingRecoveryContactSettings userHasNoAccountRecoveryMethodSet={!hasAccountRecoveryMethod} />
+                <OutgoingRecoveryContactSettings
+                    userHasNoAccountRecoveryMethodSet={!hasAccountRecoveryMethod}
+                    passwordResetOptionRequiredWarning={
+                        <PasswordResetOptionRequiredWarning emailSubpagePath={emailSubpagePath} />
+                    }
+                />
             </OutgoingDelegatedAccessProvider>
             <IncomingDelegatedAccessProvider>
                 <IncomingDelegatedAccessActions app={app} />
