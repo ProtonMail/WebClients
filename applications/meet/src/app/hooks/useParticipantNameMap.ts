@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef } from 'react';
+import { type RefObject, useCallback, useEffect, useRef } from 'react';
 
 import { useLocalParticipant, useRoomContext } from '@livekit/components-react';
 import type { Participant } from 'livekit-client';
@@ -25,7 +25,7 @@ const FETCH_TIME_CONSTRAINT_MS = 5000;
 const PARTICIPANT_COUNT_THRESHOLD = 10;
 const REFRESH_CHECK_INTERVAL_MS = 30000;
 
-export const useParticipantNameMap = (meetingLinkName: string, decryptionKey?: CryptoKey | null) => {
+export const useParticipantNameMap = (meetingLinkName: string, decryptionKeyRef?: RefObject<CryptoKey | null>) => {
     const room = useRoomContext();
     const { localParticipant } = useLocalParticipant();
 
@@ -55,6 +55,7 @@ export const useParticipantNameMap = (meetingLinkName: string, decryptionKey?: C
             const response = await api<{ Participants: ParticipantEntity[] }>(queryParticipants(meetingLinkName));
 
             const participants = response.Participants;
+            const currentDecryptionKey = decryptionKeyRef?.current;
 
             const resolvedNames = await Promise.all(
                 participants.map(async (participant) => {
@@ -66,9 +67,12 @@ export const useParticipantNameMap = (meetingLinkName: string, decryptionKey?: C
                     if (cached && cached !== displayName) {
                         return cached;
                     }
-                    if (decryptionKey && participant.EncryptedDisplayName) {
+                    if (currentDecryptionKey && participant.EncryptedDisplayName) {
                         try {
-                            return await decryptDisplayNameWithKey(decryptionKey, participant.EncryptedDisplayName);
+                            return await decryptDisplayNameWithKey(
+                                currentDecryptionKey,
+                                participant.EncryptedDisplayName
+                            );
                         } catch {
                             return displayName;
                         }
@@ -97,7 +101,7 @@ export const useParticipantNameMap = (meetingLinkName: string, decryptionKey?: C
 
             lastFetchTimestamp.current = Date.now();
         },
-        [api, dispatch, decryptionKey]
+        [api, dispatch, decryptionKeyRef]
     );
 
     const getParticipants = useCallback(

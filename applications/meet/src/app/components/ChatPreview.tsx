@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { useMeetSelector } from '@proton/meet/store/hooks';
-import { selectRoomName } from '@proton/meet/store/slices/meetingInfo';
+import { selectParticipantDecryptedNameMap, selectRoomName } from '@proton/meet/store/slices/meetingInfo';
 import { selectTotalParticipantCount } from '@proton/meet/store/slices/sortedParticipantsSlice';
 import { MeetingSideBars, selectSideBarState } from '@proton/meet/store/slices/uiStateSlice';
 
@@ -25,6 +25,8 @@ export const ChatPreview = () => {
 
     const sideBarState = useMeetSelector(selectSideBarState);
 
+    const participantDecryptedNameMap = useMeetSelector(selectParticipantDecryptedNameMap);
+
     const participantCountBiggerThanThreshold = totalParticipantCount > PARTICIPANT_COUNT_THRESHOLD;
 
     const now = Date.now();
@@ -32,7 +34,8 @@ export const ChatPreview = () => {
     const latestMeetingRoomUpdate = meetingRoomUpdates
         .filter(
             (item) =>
-                (item.type === 'message' || !participantCountBiggerThanThreshold) &&
+                (item.type === 'message' ||
+                    (!participantCountBiggerThanThreshold && participantDecryptedNameMap[item.identity])) &&
                 now - item.timestamp < CHAT_MESSAGE_TIMEOUT
         )
         .sort((a, b) => b.timestamp - a.timestamp)[0];
