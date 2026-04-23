@@ -1,6 +1,6 @@
 import { EditorController } from './EditorController'
 import type { Logger } from '@proton/utils/logs'
-import { DocumentRole } from '@proton/docs-shared'
+import { DocumentRole, DocUpdateOrigin } from '@proton/docs-shared'
 import type { ConnectionCloseReason } from '@proton/docs-proto'
 import { EventType, EventTypeEnum } from '@proton/docs-proto'
 import metrics from '@proton/metrics'
@@ -355,16 +355,17 @@ describe('EditorController', () => {
     it('should send base commit to editor when baseCommit changes', async () => {
       const mockContent = new Uint8Array([1, 2, 3])
       sharedState.setProperty('baseCommit', {
-        squashedRepresentation: () => mockContent,
+        messages: [{ content: mockContent }, { content: mockContent }],
       } as unknown as DecryptedCommit)
 
       // sendBaseCommitToEditor is an async method, so we need to wait for it to complete
       await new Promise(process.nextTick)
 
+      expect(editorInvoker.receiveMessage).toHaveBeenCalledTimes(2)
       expect(editorInvoker.receiveMessage).toHaveBeenCalledWith({
         type: { wrapper: 'du' },
         content: mockContent,
-        origin: 'InitialLoad',
+        origin: DocUpdateOrigin.BaseCommit,
       })
     })
 

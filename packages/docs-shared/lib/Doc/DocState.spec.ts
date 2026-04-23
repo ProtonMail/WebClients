@@ -76,7 +76,9 @@ describe('DocState', () => {
 
   describe('handleAwarenessUpdateOrChange', () => {
     it('should invoke removeDuplicateClients', () => {
-      state.awareness.getStates = jest.fn(() => new Map([[1, { name: 'user1', awarenessData: {} } as UnsafeDocsUserState]]))
+      state.awareness.getStates = jest.fn(
+        () => new Map([[1, { name: 'user1', awarenessData: {} } as UnsafeDocsUserState]]),
+      )
 
       const removeDuplicateClientsSpy = jest.spyOn(state.awareness, 'removeDuplicateClients')
 
@@ -86,7 +88,9 @@ describe('DocState', () => {
     })
 
     it('should notify callbacks about the change', () => {
-      state.awareness.getStates = jest.fn(() => new Map([[1, { name: 'user1', awarenessData: {} } as UnsafeDocsUserState]]))
+      state.awareness.getStates = jest.fn(
+        () => new Map([[1, { name: 'user1', awarenessData: {} } as UnsafeDocsUserState]]),
+      )
 
       const callbackSpy = jest.spyOn(state.callbacks, 'handleAwarenessStateUpdate')
 
@@ -103,7 +107,9 @@ describe('DocState', () => {
       const broadcastCurrentAwarenessStateSpy = jest.spyOn(state, 'broadcastCurrentAwarenessState')
 
       state.awareness.getClientIds = jest.fn(() => [1])
-      state.awareness.getStates = jest.fn(() => new Map([[1, { name: 'user1', awarenessData: {} } as UnsafeDocsUserState]]))
+      state.awareness.getStates = jest.fn(
+        () => new Map([[1, { name: 'user1', awarenessData: {} } as UnsafeDocsUserState]]),
+      )
       state.awareness.meta = new Map([[1, { lastUpdated: 0, clock: 0 }]])
 
       state.handleAwarenessUpdateOrChange(
@@ -206,7 +212,9 @@ describe('DocState', () => {
       const spy = jest.spyOn(state, 'setNeedsBroadcastCurrentAwarenessState')
 
       state.awareness.getClientIds = jest.fn(() => [1])
-      state.awareness.getStates = jest.fn(() => new Map([[1, { name: 'user1', awarenessData: {} } as UnsafeDocsUserState]]))
+      state.awareness.getStates = jest.fn(
+        () => new Map([[1, { name: 'user1', awarenessData: {} } as UnsafeDocsUserState]]),
+      )
       state.awareness.meta = new Map([[1, { lastUpdated: 0, clock: 0 }]])
 
       state.handleAwarenessUpdateOrChange(
@@ -250,11 +258,11 @@ describe('DocState', () => {
       expect(docStateRequestsPropagationOfUpdateSpy).not.toHaveBeenCalled()
     })
 
-    /** InitialLoad origin is when the document is initially populated; we don't want to trigger a broadcast event with this data */
-    it('should abort if origin is InitialLoad', () => {
+    /** BaseCommit origin is when the document is initially populated; we don't want to trigger a broadcast event with this data */
+    it('should abort if origin is BaseCommit', () => {
       const docStateRequestsPropagationOfUpdateSpy = jest.spyOn(state.callbacks, 'docStateRequestsPropagationOfUpdate')
 
-      state.handleDocBeingUpdatedByLexical(new Uint8Array(), DocUpdateOrigin.InitialLoad)
+      state.handleDocBeingUpdatedByLexical(new Uint8Array(), DocUpdateOrigin.BaseCommit)
 
       expect(docStateRequestsPropagationOfUpdateSpy).not.toHaveBeenCalled()
     })
