@@ -53,6 +53,9 @@
       "Continue without camera": [
         "Continuer sans caméra"
       ],
+      "Continue without mic and camera": [
+        "Continuer sans microphone ni caméra"
+      ],
       "Continue without microphone": [
         "Continuer sans microphone"
       ],
@@ -259,6 +262,9 @@
       ],
       "Request new code": [
         "Demander un nouveau code"
+      ],
+      "Request permissions": [
+        "Demander des autorisations"
       ],
       "Resend code": [
         "Renvoyer le code"
@@ -1160,6 +1166,9 @@
       "North Korea": [
         "Corée du Nord"
       ],
+      "North Macedonia": [
+        "Macédoine du Nord"
+      ],
       "Northern Mariana Islands": [
         "Îles Mariannes du Nord"
       ],
@@ -1616,7 +1625,15 @@
         "Aucune image n'est sélectionnée."
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Nous vous invitons à réessayer."
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Insérez une clé de sécurité associée à votre compte ${ BRAND_NAME }."
+      ],
       "Security key": [
         "Clé de sécurité"
       ]
@@ -1840,6 +1857,9 @@
       "Download current logs": [
         "Télécharger les journaux actuels"
       ],
+      "Each code can only be used once": [
+        "Chaque code ne peut être utilisé qu'une seule fois."
+      ],
       "Edit email address": [
         "Modifier l'adresse e-mail"
       ],
@@ -1866,6 +1886,9 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Saisissez le code de vérification qui a été envoyé à ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Saisissez le code de vérification. Entrez ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Entrez votre propre mot de passe (en tant qu'administrateur de l'organisation)."
@@ -1899,6 +1922,9 @@
       ],
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
         "Accédez à about:config, recherchez media.peerconnection.enabled, et définissez-le sur true."
+      ],
+      "Host": [
+        "Hôte"
       ],
       "Host your own secure meeting. Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
         "Hébergez votre propre réunion sécurisée. Lancez un appel dans ${ MEET_APP_NAME } et partagez le lien pour inviter n'importe qui à se joindre. Simple, sécurisé et gratuit."
@@ -2077,6 +2103,9 @@
       "Premium meeting": [
         "Réunion premium"
       ],
+      "Presenting": [
+        "Présente"
+      ],
       "privacy": [
         "confidentialité"
       ],
@@ -2197,6 +2226,9 @@
       "This will sign you out of all accounts currently logged in.": [
         "Ceci vous déconnectera de tous les comptes actuellement connectés."
       ],
+      "To be seen in the call, allow access to your camera.": [
+        "Pour être vu pendant l'appel, autorisez l'accès à votre caméra."
+      ],
       "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
         "Pour créer une salle, vous aurez besoin d'un **compte ${ BRAND_NAME } gratuit** pour que nous puissions enregistrer la salle. Cela ne prend que quelques secondes."
       ],
@@ -2205,6 +2237,12 @@
       ],
       "To schedule an event, you'll need **a free ${ BRAND_NAME } Account** so we can save the event. This only takes a few seconds.": [
         "Pour planifier un événement, vous aurez besoin d'un **compte ${ BRAND_NAME } gratuit** afin que nous puissions enregistrer l'événement. Cela ne prend que quelques secondes."
+      ],
+      "To speak and be seen in the call, allow access to your camera and microphone.": [
+        "Pour parler et être vu pendant l'appel, autorisez l'accès à votre caméra et au microphone."
+      ],
+      "To speak in the call, allow access to your microphone.": [
+        "Pour parler pendant l'appel, autorisez l'accès à votre microphone."
       ],
       "To use your personal meeting room, you'll need **a free ${ BRAND_NAME } Account**. This only takes a few seconds.": [
         "Pour utiliser votre salle de réunion personnelle, vous aurez besoin d'un **compte ${ BRAND_NAME } gratuit**. Cela ne prend que quelques secondes."
@@ -2295,6 +2333,18 @@
       ],
       "Your always available meeting room": [
         "Votre salle de réunion toujours disponible"
+      ],
+      "Your browser has blocked access to your camera and microphone. To enable them, update your browser settings and rejoin the call.": [
+        "Votre navigateur a bloqué l'accès à votre caméra et au microphone. Pour les activer, modifiez les paramètres du navigateur et rejoignez l'appel."
+      ],
+      "Your browser has blocked access to your camera. To enable it, update your browser settings and rejoin the call.": [
+        "Votre navigateur a bloqué l'accès à votre caméra. Pour l'activer, modifiez les paramètres du navigateur et rejoignez l'appel."
+      ],
+      "Your browser has blocked access to your microphone. To enable it, update your browser settings and rejoin the call.": [
+        "Votre navigateur a bloqué l'accès à votre microphone. Pour l'activer, modifiez les paramètres du navigateur et rejoignez l'appel."
+      ],
+      "Your browser has blocked access to your screen share. To enable it, update your browser settings and rejoin the call.": [
+        "Votre navigateur a bloqué l'accès à votre partage d'écran. Pour l'activer, modifiez les paramètres du navigateur et rejoignez l'appel."
       ],
       "Your browser or device isn’t supported": [
         "Votre navigateur ou appareil n'est pas pris en charge"
@@ -2802,6 +2852,18 @@
       "Available Speakers": [
         "Haut-parleurs disponibles"
       ],
+      "Camera access needed": [
+        "L'accès à la caméra est nécessaire"
+      ],
+      "Camera and microphone access needed": [
+        "L'accès à la caméra et au microphone est nécessaires"
+      ],
+      "Camera and microphone are blocked": [
+        "La caméra et le microphone sont bloqués."
+      ],
+      "Camera is blocked": [
+        "La caméra est bloquée."
+      ],
       "Chat": [
         "Discussion"
       ],
@@ -2881,6 +2943,12 @@
       "Messaging Layer Security": [
         "Messaging Layer Security"
       ],
+      "Microphone access needed": [
+        "L'accès au microphone est requis"
+      ],
+      "Microphone is blocked": [
+        "Le microphone est bloqué."
+      ],
       "Minicalendar": [
         "Mini calendrier"
       ],
@@ -2913,6 +2981,9 @@
       ],
       "Schedule a meeting": [
         "Planifier une réunion"
+      ],
+      "Screen share is blocked": [
+        "Le partage d'écran est bloqué."
       ],
       "Secure meeting": [
         "Réunion sécurisée"
