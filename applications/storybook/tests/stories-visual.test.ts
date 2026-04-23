@@ -20,6 +20,11 @@ test.describe('visual tests', () => {
                     body svg use {
                         animation: none !important;
                     }
+                    body table.docblock-argstable {
+                        display: none !important;
+                        overflow: hidden !important;
+                        visibility: hidden !important;
+                    }
                 `,
             });
 
@@ -34,10 +39,7 @@ test.describe('visual tests', () => {
             await expect(page).toHaveScreenshot({
                 animations: 'disabled',
                 fullPage: true,
-                mask: [
-                    page.locator('table.docblock-argstable'),
-                    page.locator('#anchor--components-promotion-button--responsive'),
-                ],
+                mask: [page.locator('#anchor--components-promotion-button--responsive')],
             });
         });
     }
