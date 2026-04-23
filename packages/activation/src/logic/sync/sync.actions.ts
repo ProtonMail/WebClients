@@ -87,6 +87,7 @@ export type CreateSyncProps = (CreateSyncNeedsToken | CreateSyncExistingToken) &
     errorNotification?: CreateNotificationOptions;
     expectedEmailAddress?: { address: string; type: 'reconnect' | 'convertToBYOE' };
     Source: EASY_SWITCH_SOURCES;
+    Features?: EASY_SWITCH_FEATURES[];
 };
 
 export const createSyncItem = createAsyncThunk<
@@ -103,7 +104,7 @@ export const createSyncItem = createAsyncThunk<
         let token: ImportToken;
 
         if (type === SyncTokenStrategy.create) {
-            const { Code, Provider, RedirectUri } = props;
+            const { Code, Provider, RedirectUri, Features } = props;
 
             const { Token }: { Token: ImportToken; DisplayName: string } = await thunkApi.extra.api(
                 createToken({
@@ -111,7 +112,7 @@ export const createSyncItem = createAsyncThunk<
                     Code,
                     RedirectUri,
                     Source,
-                    Features: getEasySwitchFeaturesFromProducts([ImportType.MAIL]),
+                    Features: Features ?? getEasySwitchFeaturesFromProducts([ImportType.MAIL]),
                     Account: expectedEmailAddress?.address,
                 })
             );
@@ -192,6 +193,7 @@ export type ResumeSyncProps = (ResumeSyncNeedsToken | ResumeSyncExistingToken) &
     successNotification?: CreateNotificationOptions;
     errorNotification?: CreateNotificationOptions;
     expectedEmailAddress?: { address: string; type: 'reconnect' | 'convertToBYOE' };
+    Features?: EASY_SWITCH_FEATURES[];
 };
 
 export const resumeSyncItem = createAsyncThunk<
@@ -206,7 +208,7 @@ export const resumeSyncItem = createAsyncThunk<
         let token: ImportToken;
 
         if (type === SyncTokenStrategy.create) {
-            const { Code, Provider, RedirectUri, Source } = props;
+            const { Code, Provider, RedirectUri, Source, Features } = props;
 
             const { Token }: { Token: ImportToken } = await thunkApi.extra.api(
                 createToken({
@@ -214,7 +216,7 @@ export const resumeSyncItem = createAsyncThunk<
                     Code,
                     RedirectUri,
                     Source,
-                    Features: getEasySwitchFeaturesFromProducts([ImportType.MAIL]),
+                    Features: Features ?? getEasySwitchFeaturesFromProducts([ImportType.MAIL]),
                 })
             );
 
@@ -243,6 +245,7 @@ export type CreateTokenProps = {
     Code: string;
     Provider: OAUTH_PROVIDER;
     RedirectUri: string;
+    Features?: EASY_SWITCH_FEATURES[];
 };
 
 export const createTokenItem = createAsyncThunk<
@@ -253,7 +256,7 @@ export const createTokenItem = createAsyncThunk<
         fulfillValue: ImportToken;
     }
 >('token/create', async (props, thunkApi) => {
-    const { Source, errorNotification, Code, Provider, RedirectUri } = props;
+    const { Source, errorNotification, Code, Provider, RedirectUri, Features } = props;
 
     try {
         const { Token }: { Token: ImportToken; DisplayName: string } = await thunkApi.extra.api(
@@ -262,7 +265,7 @@ export const createTokenItem = createAsyncThunk<
                 Code,
                 RedirectUri,
                 Source,
-                Features: getEasySwitchFeaturesFromProducts([ImportType.MAIL]),
+                Features: Features ?? getEasySwitchFeaturesFromProducts([ImportType.MAIL]),
             })
         );
 
