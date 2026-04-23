@@ -23,6 +23,8 @@ import onboardingImage from '../../components/categoryView/categoriesOnboarding/
 import { useMailGlobalModals } from './GlobalModalProvider';
 import { type CategoriesViewB2BOnboardingModalPayload, ModalType } from './inteface';
 
+import './GlobalCategoriesB2bOnboarding.scss';
+
 export const GlobalCategoriesB2bOnboarding = () => {
     const { subscribe } = useMailGlobalModals();
 
@@ -72,7 +74,9 @@ export const GlobalCategoriesB2bOnboarding = () => {
                         title={c('Title').t`Fewer distractions, more focus`}
                     />
                     <ModalTwoContent className="m-6 lg:m-8 b2b-modal-content">
-                        <img src={onboardingImage} className="categories-img" alt="" />
+                        <div className="h-custom" style={{ '--h-custom': '10rem' }}>
+                            <img src={onboardingImage} className="categories-img w-custom h-custom" alt="" />
+                        </div>
                         <p className="text-center color-weak mt-4 mb-12">
                             {c('Info')
                                 .t`With new email categories, only important messages land in your primary inbox. Everything else is organized into categories.`}
