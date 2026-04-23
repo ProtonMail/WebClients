@@ -8,6 +8,7 @@ import {
     isAccountSwitch,
     isAccoutLite,
     isBookingURL,
+    isBornPrivateURL,
     isCalendar,
     isCloseTicketURL,
     isGoogleOAuthAuthorizationURL,
@@ -202,6 +203,13 @@ export function handleWebContents(contents: WebContents) {
             return details.preventDefault();
         }
 
+        // Born private URLs open in the browser
+        if (isBornPrivateURL(details.url)) {
+            logger().info("opening born private URL in browser", details.url);
+            shell.openExternal(details.url);
+            return details.preventDefault();
+        }
+
         // Close ticket URLs use window.close() which doesn't work in Electron,
         // so open them in the browser where the close tab button works correctly
         if (isCloseTicketURL(details.url)) {
@@ -286,6 +294,9 @@ export function handleWebContents(contents: WebContents) {
 
         // We want to open booking URLs in the browser to avoid blocking the user
         if (isBookingURL(url)) return denyAndOpenExternal(`booking link in browser ${url}`);
+
+        // Born private URLs open in the browser
+        if (isBornPrivateURL(url)) return denyAndOpenExternal(`born private link in browser ${url}`);
 
         if (isCalendar(url)) return denyAndShowView(url, "calendar", `calendar link in calendar view ${url}`);
 
