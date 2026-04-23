@@ -149,8 +149,8 @@ describe('cancel subscription', () => {
                     RenewalState: Renew.Disabled,
                     CancellationFeedback: {
                         Reason: 'DIFFERENT_ACCOUNT',
-                        Feedback: '',
-                        ReasonDetails: '',
+                        Feedback: null,
+                        ReasonDetails: null,
                         Context: 'mail',
                     },
                 })
