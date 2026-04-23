@@ -16,7 +16,7 @@ import { selectUserKeys, userKeysReducer, userKeysThunk } from './index';
 import { userKeysListener } from './listener';
 
 const mockedUserKeysThunk = jest.spyOn(module, 'userKeysThunk');
-jest.mock('@proton/srp', () => {});
+jest.mock('@protontech/crypto/srp', () => {});
 jest.mock('@protontech/crypto', () => {
     return {
         CryptoProxy: {

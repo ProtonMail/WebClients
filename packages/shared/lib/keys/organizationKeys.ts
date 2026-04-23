@@ -4,7 +4,7 @@ import type { PrivateKeyReference, PublicKeyReference, SessionKey } from '@proto
 import { CryptoProxy, VERIFICATION_STATUS } from '@protontech/crypto';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import { getAndVerifyApiKeys } from '@proton/shared/lib/api/helpers/getAndVerifyApiKeys';
-import { computeKeyPassword, generateKeySalt } from '@proton/srp';
+import { computeKeyPassword, generateKeySalt } from '@protontech/crypto/srp';
 import isTruthy from '@proton/utils/isTruthy';
 
 import type { UpdateOrganizationKeysPayloadLegacy, UpdateOrganizationKeysPayloadV2 } from '../api/organization';

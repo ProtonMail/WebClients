@@ -1,6 +1,6 @@
 import { CryptoProxy } from '@protontech/crypto';
 import { LinkType } from '@proton/shared/lib/interfaces/drive/link';
-import { computeKeyPassword } from '@proton/srp/lib';
+import { computeKeyPassword } from '@protontech/crypto/srp';
 
 import { EnrichedError } from '../../utils/errorHandling/EnrichedError';
 import { useSharesStore } from '../../zustand/share/shares.store';

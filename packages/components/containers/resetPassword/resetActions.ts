@@ -26,7 +26,7 @@ import {
 import { mnemonicToBase64RandomBytes } from '@proton/shared/lib/mnemonic';
 import { deviceRecovery } from '@proton/shared/lib/recoveryFile/deviceRecoveryHelper';
 import { srpAuth, srpVerify } from '@proton/shared/lib/srp';
-import { computeKeyPassword, generateKeySalt } from '@proton/srp';
+import { computeKeyPassword, generateKeySalt } from '@protontech/crypto/srp';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 

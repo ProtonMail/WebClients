@@ -9,10 +9,10 @@ import {
     queryMeetAuth,
     queryMeetingInfo,
 } from '@proton/shared/lib/api/meet';
+import type { AuthVersion } from '@proton/shared/lib/authentication/interface';
 import { getUIDHeaders } from '@proton/shared/lib/fetch/headers';
 import type { AccessTokenResponse, MeetingInfoResponse } from '@proton/shared/lib/interfaces/Meet';
 import { srpAuth } from '@proton/shared/lib/srp';
-import type { AuthVersion } from '@proton/srp/lib/interface';
 
 import { INVALID_SRP_PARAMS_ERROR_CODE } from '../../constants';
 

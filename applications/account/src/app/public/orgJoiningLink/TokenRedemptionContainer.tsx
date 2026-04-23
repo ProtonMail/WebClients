@@ -2,6 +2,7 @@ import { type FC, type FormEvent, type ReactNode, useEffect, useMemo, useRef, us
 import { useHistory, useLocation } from 'react-router-dom';
 
 import type { PrivateKeyReference } from '@protontech/crypto';
+import { computeKeyPassword } from '@protontech/crypto/srp';
 import { c } from 'ttag';
 
 import { parseJoiningLinkConfig } from '@proton/account/orgJoiningLink/helpers';
@@ -53,7 +54,6 @@ import { getDecryptedUserKeysHelper } from '@proton/shared/lib/keys/getDecrypted
 import { generateKeySaltAndPassphrase } from '@proton/shared/lib/keys/keys';
 import { srpVerify } from '@proton/shared/lib/srp';
 import type { UnauthenticatedApi } from '@proton/shared/lib/unauthApi/unAuthenticatedApi';
-import { computeKeyPassword } from '@proton/srp/lib/keys';
 
 import type { LoginResult } from '../../content/actions/interface';
 import Header from '../../public/Header';
