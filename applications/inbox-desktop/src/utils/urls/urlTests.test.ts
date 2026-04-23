@@ -1,4 +1,10 @@
-import { trimLocalID, isGoogleOAuthAuthorizationURL, isBookingURL, isCloseTicketURL } from "./urlTests";
+import {
+    trimLocalID,
+    isGoogleOAuthAuthorizationURL,
+    isBookingURL,
+    isCloseTicketURL,
+    isBornPrivateURL,
+} from "./urlTests";
 import * as urlStore from "../../store/urlStore";
 import { GOOGLE_OAUTH_PATH } from "@proton/shared/lib/api/activation";
 
@@ -96,6 +102,40 @@ describe("urlTests", () => {
             // Invalid URLs
             expect(isBookingURL("invalid url")).toBe(false);
             expect(isBookingURL("not a url at all")).toBe(false);
+        });
+    });
+
+    describe("isBornPrivateURL", () => {
+        beforeAll(() => {
+            jest.spyOn(urlStore, "getAppURL").mockReturnValue({
+                account: "https://account.proton.me",
+                mail: "https://mail.proton.me",
+                calendar: "https://calendar.proton.me",
+            });
+        });
+
+        it("returns true for born private paths", () => {
+            expect(isBornPrivateURL("https://account.proton.me/born-private")).toBe(true);
+            expect(isBornPrivateURL("https://account.proton.me/born-private/")).toBe(true);
+        });
+
+        it("returns false for non born private paths", () => {
+            // Wrong app
+            expect(isBornPrivateURL("https://mail.proton.me/born-private")).toBe(false);
+            expect(isBornPrivateURL("https://calendar.proton.me/born-private")).toBe(false);
+            expect(isBornPrivateURL("https://calendar.proton.me/born-private/")).toBe(false);
+
+            // Not a born private url
+            expect(isBornPrivateURL("https://calendar.proton.me/settings")).toBe(false);
+            expect(isBornPrivateURL("https://calendar.proton.me/u/0/")).toBe(false);
+            expect(isBornPrivateURL("https://calendar.proton.me/u/0/week/2025/11/26")).toBe(false);
+
+            // Standard link
+            expect(isBornPrivateURL("https://example.com")).toBe(false);
+
+            // Invalid URLs
+            expect(isBornPrivateURL("invalid url")).toBe(false);
+            expect(isBornPrivateURL("not a url at all")).toBe(false);
         });
     });
 
