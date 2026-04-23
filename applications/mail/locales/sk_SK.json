@@ -324,6 +324,9 @@
       "Contract composer": [
         "Editor adresáta"
       ],
+      "Copy": [
+        "Kopírovať"
+      ],
       "Copy address": [
         "Kopírovať adresu"
       ],
@@ -7330,6 +7333,9 @@
       "Copy the link to clipboard": [
         "Skopírovať odkaz do schránky"
       ],
+      "Copy to clipboard": [
+        "Kopírovať do schránky"
+      ],
       "Copy your referral link": [
         "Kopírujte váš odporúčací odkaz"
       ],
@@ -11187,7 +11193,7 @@
     },
     "new_plans": {
       "Highest VPN speed": [
-        "Vysoká rýchlosť VPN"
+        "Najvyššia rýchlosť VPN"
       ],
       "Keep your inbox organized with folders": [
         "Udržujte svoju doručenú poštu organizovanú pomocou priečinkov"
@@ -13246,11 +13252,6 @@
         "Meno"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "kontaktujte"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "Všetky prémiové funkcie z ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ PASS_SHORT_APP_NAME }."
@@ -14513,6 +14514,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent písania ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } a ${ LUMO_APP_NAME } s prémiovými funkciami"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME } s prémiovými funkciami"
       ],
@@ -14755,6 +14762,12 @@
       ],
       "Version history": [
         "História verzií"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Videokonferencie, s ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníkom",
+        "Videokonferencie, s ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníkmi",
+        "Videokonferencie, až s ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníkmi",
+        "Videokonferencie, až s ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníkmi"
       ],
       "Watch the interview": [
         "Pozrite si rozhovor"

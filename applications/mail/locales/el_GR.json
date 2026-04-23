@@ -322,6 +322,9 @@
       "Contract composer": [
         "Σύμπτυξη συντάκτη"
       ],
+      "Copy": [
+        "Αντιγραφή"
+      ],
       "Copy address": [
         "Αντιγραφή διεύθυνσης"
       ],
@@ -7096,6 +7099,9 @@
       "Copy the link to clipboard": [
         "Αντιγραφή του συνδέσμου στο πρόχειρο"
       ],
+      "Copy to clipboard": [
+        "Αντιγραφή στο πρόχειρο"
+      ],
       "Copy your referral link": [
         "Αντιγράψτε τον σύνδεσμο παραπομπής σας"
       ],
@@ -12824,11 +12830,6 @@
         "Όνομα"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "επικοινωνήστε"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "Όλα τα premium χαρακτηριστικά από ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } και ${ PASS_SHORT_APP_NAME }."
@@ -14019,6 +14020,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe βοηθός γραφής"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } και ${ LUMO_APP_NAME } με premium χαρακτηριστικά"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, και ${ VPN_SHORT_APP_NAME } με premium δυνατότητες"
       ],
@@ -14249,6 +14256,10 @@
       ],
       "Version history": [
         "Ιστορικό εκδόσεων"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Βιντεοκλήσεις, μέχρι και ${ PAID_PREMIUM_MAX_PARTICIPANTS } συμμετέχων",
+        "Βιντεοκλήσεις, μέχρι και ${ PAID_PREMIUM_MAX_PARTICIPANTS } συμμετέχοντες"
       ],
       "Watch the interview": [
         "Δείτε τη συνέντευξη"
