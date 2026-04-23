@@ -613,9 +613,6 @@
       "Set extra password": [
         "Estableix una contrasenya addicional"
       ],
-      "Settings": [
-        "Preferències"
-      ],
       "Setup 2FA": [
         "Configura el 2FA"
       ],
@@ -918,6 +915,18 @@
       "Biometric authentication failed.": [
         "L'autenticació biomètrica ha fallat."
       ],
+      "Biometric lock credentials do not match.": [
+        "Les credencials del bloqueig biomètric no coincideixen."
+      ],
+      "Biometric lock credentials not found.": [
+        "No s'han trobat les credencials del bloqueig biomètric."
+      ],
+      "Biometric lock is not configured.": [
+        "El bloqueig biomètric no està configurat."
+      ],
+      "Biometric lock setup failed.": [
+        "Ha fallat la configuració del bloqueig biomètric."
+      ],
       "Cannot send invitation at the moment": [
         "Ara mateix no es pot enviar la invitació",
         "Ara mateix no es poden enviar invitacions"
@@ -969,18 +978,6 @@
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "No s'ha pogut eliminar la caixa forta \"${ payload.content.name }\""
-      ],
-      "Desktop lock is not configured.": [
-        "El bloqueig de l'escriptori no està configurat."
-      ],
-      "Desktop lock secret does not match.": [
-        "La contrasenya de bloqueig de l'escriptori no coincideix."
-      ],
-      "Desktop lock secret not found.": [
-        "No s'ha trobat la contrasenya de bloqueig de l'escriptori."
-      ],
-      "Desktop lock setup failed.": [
-        "La configuració del bloqueig d'escriptori ha fallat."
       ],
       "Detected ${ errors.length } corrupted csv row": [
         "S'ha detectat ${ errors.length } fila CSV corrupta",
@@ -1237,6 +1234,9 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
         "S'ha iniciat sessió a l'aplicació d'escriptori ${ PASS_APP_NAME }amb un compte diferent."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "L'aplicació d'escriptori ${ PASS_APP_NAME } hauria de tenir la sessió iniciada."
       ],
       "The session has expired. Please sign in again.": [
         "La sessió ha caducat. Torneu a accedir."
@@ -3059,12 +3059,6 @@
       "Generic CSV": [
         "CSV genèric"
       ],
-      "Get ${ PASS_SHORT_APP_NAME } Plus": [
-        "Obteniu ${ PASS_SHORT_APP_NAME } Plus"
-      ],
-      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
-        "Obteniu ${ PASS_SHORT_APP_NAME } Unlimited"
-      ],
       "Get Started": [
         "Comenceu"
       ],
@@ -4759,6 +4753,11 @@
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "A menys que es desxifrin, les contrasenyes xifrades romanen segures encara que estiguin exposades."
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "Obtingueu el pla ${ planName }"
       ]
     },
     "Validation": {

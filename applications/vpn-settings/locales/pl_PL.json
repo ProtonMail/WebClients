@@ -8188,6 +8188,9 @@
       "Folder location": [
         "Lokalizacja folderu"
       ],
+      "Free": [
+        "Za darmo"
+      ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
       ],
@@ -8518,6 +8521,9 @@
       "State": [
         "Stan"
       ],
+      "Storage": [
+        "Przestrzeń dyskowa"
+      ],
       "Street address": [
         "Ulica"
       ],
@@ -8550,6 +8556,9 @@
       ],
       "Type": [
         "Typ"
+      ],
+      "Unlimited": [
+        "Bez limitu"
       ],
       "Upload 1 or more encryption keys": [
         "Prześlij co najmniej 1 klucz szyfrowania"
@@ -8604,6 +8613,9 @@
       ],
       "Why would you like to cancel?": [
         "Dlaczego chcesz anulować plan?"
+      ],
+      "Yes": [
+        "Tak"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Tak, chcę trwale usunąć konto i wszystkie dane z nim powiązane."
@@ -11328,11 +11340,6 @@
         "Twoja brama do wolności w sieci"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "skontaktuj się"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "Wszystkie funkcje premium usług ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ PASS_SHORT_APP_NAME }."
@@ -11538,9 +11545,6 @@
       "Verify now": [
         "Zweryfikuj"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "Zweryfikuj adres pomocniczy: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "Zweryfikować adres pomocniczy?"
       ],
@@ -11580,9 +11584,6 @@
       ],
       "Verify recovery phone?": [
         "Zweryfikować numer pomocniczy?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "Zweryfikuj numer pomocniczy: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Weryfikacja numeru telefonu zwiększa bezpieczeństwo konta i umożliwia dodatkowe opcje odzyskiwania konta."
@@ -13982,6 +13983,9 @@
       ],
       "Account recovery": [
         "Odzyskiwanie konta"
+      ],
+      "Account restricted": [
+        "Konto zostało ograniczone"
       ],
       "Account suspended": [
         "Konto zostało zawieszone"

@@ -322,6 +322,9 @@
       "Contract composer": [
         "Contraure l'editor"
       ],
+      "Copy": [
+        "Copiar"
+      ],
       "Copy address": [
         "Copia l'adreça"
       ],
@@ -7096,6 +7099,9 @@
       "Copy the link to clipboard": [
         "Copia l'enllaç al porta-retalls"
       ],
+      "Copy to clipboard": [
+        "Copiar-ho al porta-retalls"
+      ],
       "Copy your referral link": [
         "Copieu el vostre enllaç de recomanació"
       ],
@@ -12824,11 +12830,6 @@
         "Nom"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "contacte"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "Totes les característiques prèmium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ PASS_SHORT_APP_NAME }."
@@ -14019,6 +14020,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistent d'escriptura ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } i ${ LUMO_APP_NAME } amb característiques prèmium"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } amb característiques prèmium"
       ],
@@ -14249,6 +14256,10 @@
       ],
       "Version history": [
         "Historial de versions"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Reunions de vídeo de fins a ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant",
+        "Reunions de vídeo de fins a ${ PAID_PREMIUM_MAX_PARTICIPANTS } participants"
       ],
       "Watch the interview": [
         "Mireu l'entrevista"

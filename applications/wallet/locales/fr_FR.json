@@ -1753,6 +1753,9 @@
       "North Korea": [
         "Corée du Nord"
       ],
+      "North Macedonia": [
+        "Macédoine du Nord"
+      ],
       "Northern Mariana Islands": [
         "Îles Mariannes du Nord"
       ],
@@ -2550,7 +2553,15 @@
         "Vitesses extrêmement élevées"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Nous vous invitons à réessayer."
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Insérez une clé de sécurité associée à votre compte ${ BRAND_NAME }."
+      ],
       "Security key": [
         "Clé de sécurité"
       ]
@@ -2841,6 +2852,9 @@
       "Download your favorite app today and take privacy with you everywhere you go.": [
         "Téléchargez votre application préférée et protégez votre vie privée partout où vous allez."
       ],
+      "Each code can only be used once": [
+        "Chaque code ne peut être utilisé qu'une seule fois."
+      ],
       "Edit email address": [
         "Modifier l'adresse e-mail"
       ],
@@ -2861,6 +2875,9 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Saisissez le code de vérification qui a été envoyé à ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Saisissez le code de vérification. Entrez ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Entrez votre propre mot de passe (en tant qu'administrateur de l'organisation)."
@@ -5009,11 +5026,6 @@
       ],
       "ZIP code": [
         "Code postal"
-      ]
-    },
-    "plan customizer, users": {
-      "contact": [
-        "contactez"
       ]
     },
     "Plan description": {

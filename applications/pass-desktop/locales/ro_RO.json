@@ -640,9 +640,6 @@
       "Set extra password": [
         "Setare parolă suplimentară"
       ],
-      "Settings": [
-        "Setări"
-      ],
       "Setup 2FA": [
         "Setare A2F"
       ],
@@ -968,6 +965,9 @@
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Autentificare eșuată. Confirmați parola secundară pentru continuare exportare."
       ],
+      "Biometric authentication failed.": [
+        "Autentificarea biometrică a eșuat."
+      ],
       "Cannot send invitation at the moment": [
         "Invitația nu poate fi trimisă momentan.",
         "Invitațiile nu se pot trimite momentan.",
@@ -1040,6 +1040,9 @@
       ],
       "Emptying trash failed": [
         "Golirea gunoiului a eșuat."
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Comunicarea criptată cu aplicația desktop ${ PASS_APP_NAME } a eșuat."
       ],
       "Encrypted JSON not supported": [
         "Fișierele JSON criptate nu sunt suportate."
@@ -1260,6 +1263,9 @@
       "Something went wrong. Please sign in again.": [
         "Ceva nu a funcționat bine. Reconectați-vă."
       ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "Aplicația desktop ${ PASS_APP_NAME } nu a răspuns la timp."
+      ],
       "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
         "Aplicația desktop ${ PASS_APP_NAME } este blocată, trebuie deblocată."
       ],
@@ -1268,6 +1274,9 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
         "Aplicația desktop ${ PASS_APP_NAME } nu răspunde, rulează?"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "Aplicația desktop ${ PASS_APP_NAME } este conectată cu un cont diferit."
       ],
       "The session has expired. Please sign in again.": [
         "Sesiunea a expirat. Reconectați-vă."
@@ -2046,6 +2055,11 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
       ],
       "Moving items": [
         "Se mută articolele."
@@ -3191,12 +3205,6 @@
       ],
       "Generic CSV": [
         "CSV generic"
-      ],
-      "Get ${ PASS_SHORT_APP_NAME } Plus": [
-        "Luați ${ PASS_SHORT_APP_NAME } Plus"
-      ],
-      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
-        "Obțineți ${ PASS_SHORT_APP_NAME } Unlimited"
       ],
       "Get Started": [
         "Începeți"
@@ -4953,6 +4961,11 @@
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Dacă nu sunt decriptate, parolele criptate rămân în siguranță chiar dacă au fost expuse."
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "Luați ${ planName }"
       ]
     },
     "Validation": {

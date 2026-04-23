@@ -88,10 +88,6 @@
       "Add photos": [
         "Legg til bilder"
       ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "Legg til i \"${ album.name }\" (${ album.photoCount } bilde)",
-        "Legg til i \"${ album.name }\" (${ album.photoCount } bilder)"
-      ],
       "Add to album": [
         "Legg til i album"
       ],
@@ -515,9 +511,6 @@
       "Get in touch": [
         "Ta kontakt"
       ],
-      "Get link": [
-        "Få kobling"
-      ],
       "Get mobile and desktop apps": [
         "Skaff deg mobil- og skrivebordsapper"
       ],
@@ -644,9 +637,6 @@
       "Load image": [
         "Last inn bilde"
       ],
-      "Loading link": [
-        "Laster kobling"
-      ],
       "Make a copy": [
         "Lag en kopi"
       ],
@@ -661,9 +651,6 @@
       ],
       "Manage labels": [
         "Behandle etiketter"
-      ],
-      "Manage link": [
-        "Administrer kobling"
       ],
       "Manage share": [
         "Administrer deling"
@@ -6331,9 +6318,6 @@
       "Shared by ${ sharedBy }": [
         "Delt av ${ sharedBy }"
       ],
-      "Shared by you": [
-        "Delt av deg"
-      ],
       "Shared link not found": [
         "Delt kobling ikke funnet"
       ],
@@ -6660,9 +6644,6 @@
       "Unsupported file type for Photos": [
         "Filtypen støttes ikke for bilder"
       ],
-      "Untitled": [
-        "Uten navn"
-      ],
       "Update required": [
         "Oppdatering kreves"
       ],
@@ -6737,9 +6718,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Flott levert, du har nettopp økt lagringsplassen til 5 GB!"
-      ],
-      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "Vi opplever tekniske problem. Alle albumrelaterte handlinger er midlertidig deaktivert."
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "Vi kunne ikke bekrefte at ${ nameAuthor } lastet opp ${ node.name }. Følgende kan ha blitt tuklet med: fildatarekkefølge. Åpne bare hvis du stoler på den."
@@ -9554,9 +9532,6 @@
       "Access updated": [
         "Tilgang oppdatert"
       ],
-      "Album failed to be renamed": [
-        "Album kunne ikke gis nytt navn"
-      ],
       "Album renamed successfully": [
         "Album har fått nytt navn"
       ],
@@ -9607,9 +9582,6 @@
       ],
       "Failed to download files: ${ err }": [
         "Kunne ikke laste ned filer: ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "Kunne ikke laste inn invitasjonsdetaljer"
       ],
       "Failed to move, please try again": [
         "Kunne ikke flytte. Prøv igjen."
@@ -10675,11 +10647,6 @@
     "Placeholder for contact group name": {
       "Name": [
         "Navn"
-      ]
-    },
-    "plan customizer, users": {
-      "contact": [
-        "kontakt"
       ]
     },
     "Plan description": {

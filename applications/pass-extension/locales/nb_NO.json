@@ -628,9 +628,6 @@
       "Set extra password": [
         "Angi ekstra passord"
       ],
-      "Settings": [
-        "Innstillinger"
-      ],
       "Setup 2FA": [
         "Sett opp 2FA"
       ],
@@ -2024,6 +2021,9 @@
       "Loading...": [
         "Laster..."
       ],
+      "Logging you out...": [
+        "Logger deg av..."
+      ],
       "Low Priority": [
         "Lav prioritet"
       ],
@@ -2051,6 +2051,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
+        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
       ],
       "Moving items": [
         "Flytter elementer"
@@ -2539,12 +2543,6 @@
       ],
       "Unlimited hide-my-email aliases and advanced alias management": [
         "Ubegrenset antall hide-my-email-aliaser og avansert aliasadministrasjon"
-      ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
-        "Lås opp ${ PASS_APP_NAME } med PIN-koden for å tilgang til dine tilgangsnøkler"
-      ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
-        "Lås opp ${ PASS_APP_NAME } med PIN-koden for å lagre denne tilgangsnøkkelen"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Lås opp ${ PASS_SHORT_APP_NAME } med biometri"

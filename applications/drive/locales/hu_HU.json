@@ -88,10 +88,6 @@
       "Add photos": [
         "Fényképek hozzáadása"
       ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "Hozzáadás a(z) „${ album.name }” mappához (${ album.photoCount } fénykép)",
-        "Hozzáadás a(z) „${ album.name }” mappához (${ album.photoCount } fénykép)"
-      ],
       "Add to album": [
         "Hozzáadás albumhoz"
       ],
@@ -473,9 +469,6 @@
       "Get in touch": [
         "Lépjen velünk kapcsolatba"
       ],
-      "Get link": [
-        "Hivatkozás készítése"
-      ],
       "Get secure storage for ${ simplePriceString }": [
         "Szerezzen biztonságos tárhelyet ${ simplePriceString }ért"
       ],
@@ -590,9 +583,6 @@
       "Load image": [
         "Kép betöltése"
       ],
-      "Loading link": [
-        "Link betöltése"
-      ],
       "Make a copy": [
         "Másolat létrehozása"
       ],
@@ -607,9 +597,6 @@
       ],
       "Manage labels": [
         "Címkék kezelése"
-      ],
-      "Manage link": [
-        "Hivatkozás kezelése"
       ],
       "Manage share": [
         "Megosztás kezelése"
@@ -5682,9 +5669,6 @@
       "Shared by ${ sharedBy }": [
         "Megosztotta: ${ sharedBy }"
       ],
-      "Shared by you": [
-        "Megosztotta: Ön"
-      ],
       "Shared link not found": [
         "A megosztott hivatkozás nem található"
       ],
@@ -5975,9 +5959,6 @@
       "Unsupported file": [
         "Ismeretlen file"
       ],
-      "Untitled": [
-        "Névtelen"
-      ],
       "Updating drive search...": [
         "Felhőtárban keresés frissítése..."
       ],
@@ -6043,9 +6024,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Így tovább, most 5 GB-ra növelte a tárhelyét!"
-      ],
-      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "Műszaki problémák merültek fel. Az albumokkal kapcsolatos műveletek átmenetileg nem érhetők el."
       ],
       "We couldn’t process your payment.": [
         "Nem tudjuk feldolgozni az Ön befizetését."
@@ -8480,9 +8458,6 @@
       "Access updated": [
         "Hozzáférés frissítve"
       ],
-      "Album failed to be renamed": [
-        "Album átnevezése sikertelen"
-      ],
       "Album renamed successfully": [
         "Album átnevezve"
       ],
@@ -8530,9 +8505,6 @@
       ],
       "Failed to download files: ${ err }": [
         "Fájlok letöltése nem sikerült: ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "Nem sikerült betölteni a meghívás részleteit"
       ],
       "Failed to move, please try again": [
         "Nem sikerült áthelyezni, próbálja meg újra"
@@ -9442,11 +9414,6 @@
     "Placeholder for contact group name": {
       "Name": [
         "Név"
-      ]
-    },
-    "plan customizer, users": {
-      "contact": [
-        "lépjen kapcsolatba"
       ]
     },
     "Plans": {

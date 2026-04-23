@@ -53,6 +53,9 @@
       "Continue without camera": [
         "Kamera olmadan ilerle"
       ],
+      "Continue without mic and camera": [
+        "Mikrofon ve kamera olmadan devam et"
+      ],
       "Continue without microphone": [
         "Mikrofon olmadan ilerle"
       ],
@@ -259,6 +262,9 @@
       ],
       "Request new code": [
         "Yeni kod iste"
+      ],
+      "Request permissions": [
+        "İzin iste"
       ],
       "Resend code": [
         "Kodu yeniden gönder"
@@ -1917,6 +1923,9 @@
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
         "about:config adresine gidin, media.peerconnection.enabled değerini bulun ve \"true\" olarak ayarlayın."
       ],
+      "Host": [
+        "Sunucu"
+      ],
       "Host your own secure meeting. Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
         "Kendi güvenli toplantınızı düzenleyin. ${ MEET_APP_NAME } uygulamasında bir görüşme başlatın ve bağlantıyı paylaşarak istediğiniz kişiyi davet edin. Basit, güvenli ve ücretsiz."
       ],
@@ -2094,6 +2103,9 @@
       "Premium meeting": [
         "Ücretli görüşme"
       ],
+      "Presenting": [
+        "Sunma"
+      ],
       "privacy": [
         "gizlilik"
       ],
@@ -2214,6 +2226,9 @@
       "This will sign you out of all accounts currently logged in.": [
         "Bu işlem, şu anda oturum açmış olduğunuz tüm hesap oturumlarını kapatır."
       ],
+      "To be seen in the call, allow access to your camera.": [
+        "Görüşmede görünmek için kameranıza erişim izni verin."
+      ],
       "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
         "Bir oda oluştururken oda bilgilerini kaydedebilmemiz için **bir ücretsiz ${ BRAND_NAME } hesabı** açmalısınız. Bu işlem yalnızca birkaç saniye sürer."
       ],
@@ -2222,6 +2237,12 @@
       ],
       "To schedule an event, you'll need **a free ${ BRAND_NAME } Account** so we can save the event. This only takes a few seconds.": [
         "Bir etkinlik zamanlarken, etkinlik bilgilerini kaydedebilmemiz için **bir ücretsiz ${ BRAND_NAME } hesabı** açmalısınız. Bu işlem yalnızca birkaç saniye sürer."
+      ],
+      "To speak and be seen in the call, allow access to your camera and microphone.": [
+        "Görüşmede konuşabilmek ve görünebilmek için kamera ve mikrofonunuza erişim izni verin."
+      ],
+      "To speak in the call, allow access to your microphone.": [
+        "Görüşmede konuşabilmek için mikrofonunuza erişim izni verin."
       ],
       "To use your personal meeting room, you'll need **a free ${ BRAND_NAME } Account**. This only takes a few seconds.": [
         "Kişisel toplantı odanızı kullanmak için **bir ücretsiz ${ BRAND_NAME } hesabı** açmalısınız. Bu işlem yalnızca birkaç saniye sürer."
@@ -2312,6 +2333,18 @@
       ],
       "Your always available meeting room": [
         "Her zaman kullanabileceğiniz görüşme odası"
+      ],
+      "Your browser has blocked access to your camera and microphone. To enable them, update your browser settings and rejoin the call.": [
+        "Tarayıcınız kamera ve mikrofona erişimi engelledi. Bunları açmak için tarayıcı ayarlarınızı güncelleyin ve görüşmeye yeniden katılın."
+      ],
+      "Your browser has blocked access to your camera. To enable it, update your browser settings and rejoin the call.": [
+        "Tarayıcınız kameranıza erişimi engelledi. Erişimi açmak için tarayıcı ayarlarınızı güncelleyin ve görüşmeye yeniden katılın."
+      ],
+      "Your browser has blocked access to your microphone. To enable it, update your browser settings and rejoin the call.": [
+        "Tarayıcınız mikrofonunuza erişimi engelledi. Erişimi açmak için tarayıcı ayarlarınızı güncelleyin ve görüşmeye yeniden katılın."
+      ],
+      "Your browser has blocked access to your screen share. To enable it, update your browser settings and rejoin the call.": [
+        "Tarayıcınız ekran paylaşımına erişimi engelledi. Bunu açmak için tarayıcı ayarlarınızı güncelleyin ve görüşmeye yeniden katılın."
       ],
       "Your browser or device isn’t supported": [
         "Tarayıcınız veya aygıtınız desteklenmiyor"
@@ -2819,6 +2852,18 @@
       "Available Speakers": [
         "Uygun konuşmacılar"
       ],
+      "Camera access needed": [
+        "Kamera erişimi gerekiyor"
+      ],
+      "Camera and microphone access needed": [
+        "Kamera ve mikrofon erişimi gerekiyor"
+      ],
+      "Camera and microphone are blocked": [
+        "Kamera ve mikrofon engellendi"
+      ],
+      "Camera is blocked": [
+        "Kamera engellendi"
+      ],
       "Chat": [
         "Sohbet"
       ],
@@ -2898,6 +2943,12 @@
       "Messaging Layer Security": [
         "İletişim katmanı güvenliği"
       ],
+      "Microphone access needed": [
+        "Mikrofon erişimi gerekiyor"
+      ],
+      "Microphone is blocked": [
+        "Mikrofon engellendi"
+      ],
       "Minicalendar": [
         "Mini takvim"
       ],
@@ -2930,6 +2981,9 @@
       ],
       "Schedule a meeting": [
         "Görüşme planlayın"
+      ],
+      "Screen share is blocked": [
+        "Ekran paylaşımı engellendi"
       ],
       "Secure meeting": [
         "Güvenli görüşme"

@@ -625,9 +625,6 @@
       "Set extra password": [
         "追加のパスワードを設定する"
       ],
-      "Settings": [
-        "設定"
-      ],
       "Setup 2FA": [
         "2要素認証を設定"
       ],
@@ -1965,6 +1962,9 @@
       "Loading...": [
         "読み込み中..."
       ],
+      "Logging you out...": [
+        "ログアウト中..."
+      ],
       "Low Priority": [
         "優先度：低"
       ],
@@ -1993,7 +1993,7 @@
         "「${ payload.content.name }」からすべてのアイテムを移動します"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "アイテムを別の保管庫に移動すると、そのアイテムのセキュアリンクはすべて消去されます。"
+        "アイテムを別の保管庫に移動すると、すべてのセキュアリンクが消去されます。"
       ],
       "Moving items": [
         "アイテムの移動"
@@ -2462,12 +2462,6 @@
       ],
       "Unlimited hide-my-email aliases and advanced alias management": [
         "無制限の非表示ide-my-emailエイリアスと高度なエイリアス管理"
-      ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
-        "PIN コードで ${ PASS_APP_NAME } のロックを解除し、パスキーにアクセスしてください"
-      ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
-        "PIN コードで ${ PASS_APP_NAME } のロックを解除し、このパスキーを保存してください"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "生体認証で ${ PASS_SHORT_APP_NAME } のロックを解除する"

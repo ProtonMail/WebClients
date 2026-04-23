@@ -6091,9 +6091,6 @@
       "Asking for help": [
         "Vraagt om hulp"
       ],
-      "By adding people you trust as recovery contacts, we'll be able to send them an email to help you if you're having trouble to recover your data after a password reset. You can also be a recovery contact for others.": [
-        "Door personen die u vertrouwt toe te voegen als herstelcontacten, kunnen we hen een e-mail sturen om u te helpen als u problemen ondervindt bij het herstellen van uw gegevens na een wachtwoord reset. U kunt ook een herstelcontact zijn voor anderen."
-      ],
       "Cancel request": [
         "Aanvraag annuleren"
       ],
@@ -6247,9 +6244,6 @@
       "Recovery contact removed": [
         "Herstelcontact verwijderd"
       ],
-      "Recovery contacts": [
-        "Herstelcontact toegevoegd"
-      ],
       "Recovery request sent": [
         "Verzoek tot herstel verzonden"
       ],
@@ -6344,9 +6338,6 @@
       "To disable this recovery method, remove all your recovery contacts.": [
         "Om deze herstelmethode uit te schakelen, verwijdert u al uw herstelcontacten."
       ],
-      "To use trusted contact recovery, you must have an account recovery method set.": [
-        "Om vertrouwde contactherstel te gebruiken, moet u een accountherstelmethode hebben ingesteld."
-      ],
       "Trusted contact": [
         "Vertrouwd contact"
       ],
@@ -6398,10 +6389,6 @@
       "You reached the maximum of ${ limit } emergency contact.": [
         "U heef het maximum van ${ limit } contactpersoon bereikt.",
         "U heef het maximum van ${ limit } contactpersonen bereikt."
-      ],
-      "You reached the maximum of ${ limit } recovery contact.": [
-        "U heeft het maximum van ${ limit } herstelcontact bereikt.",
-        "U heeft het maximum van ${ limit } herstelcontacten bereikt."
       ],
       "You will be notified when someone requests emergency access.": [
         "U wordt op de hoogte gesteld wanneer iemand noodtoegang aanvraagt."
@@ -13840,6 +13827,9 @@
       "for your first month": [
         "voor uw eerste maand"
       ],
+      "Free": [
+        "Gratis"
+      ],
       "From: ${ fromEmail }": [
         "Van: ${ fromEmail }"
       ],
@@ -14441,6 +14431,9 @@
       "Sticky labels": [
         "Sticky labels"
       ],
+      "Storage": [
+        "Opslag"
+      ],
       "Street address": [
         "Adres"
       ],
@@ -14509,6 +14502,9 @@
       ],
       "Undo send": [
         "Verzenden ongedaan maken"
+      ],
+      "Unlimited": [
+        "Onbeperkt"
       ],
       "Unlimited hide-my-email aliases": [
         "Onbeperkt aantal hide-my-email-aliassen"
@@ -18889,11 +18885,6 @@
         "Uw toegangspoort tot online vrijheid"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "neem contact op"
-      ]
-    },
     "Plan description": {
       "A VPN solution that provides secure, high-speed access to the internet.": [
         "Een VPN-oplossing die veilige, snelle toegang tot het internet biedt."
@@ -19236,9 +19227,6 @@
       "Verify now": [
         "Verifieer nu"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "Verifieer nu dit herstel-e-mailadres: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "Herstel-e-mailadres verifiëren?"
       ],
@@ -19281,9 +19269,6 @@
       ],
       "Verify recovery phone?": [
         "Hersteltelefoon verifiëren?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "Verifieer dit hersteltelefoonnummer nu: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Uw telefoonnummer verifiëren verhoogt uw accountbeveiliging en laat extra opties voor herstel toe."

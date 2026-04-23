@@ -8463,6 +8463,9 @@
       "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
         "Dành cho ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, và ${ SHEETS_SHORT_APP_NAME }."
       ],
+      "Free": [
+        "Miễn phí"
+      ],
       "From: ${ fromEmail }": [
         "Từ: ${ fromEmail }"
       ],
@@ -8802,6 +8805,9 @@
       "State": [
         "Bang"
       ],
+      "Storage": [
+        "Lưu trữ"
+      ],
       "Street address": [
         "Địa chỉ phố"
       ],
@@ -8834,6 +8840,9 @@
       ],
       "Type": [
         "Dạng"
+      ],
+      "Unlimited": [
+        "Không giới hạn"
       ],
       "Upload 1 or more encryption keys": [
         "Tải lên 1 hoặc nhiều khóa mã hóa"
@@ -8891,6 +8900,9 @@
       ],
       "Why would you like to cancel?": [
         "Tại sao bạn muốn hủy?"
+      ],
+      "Yes": [
+        "Có"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Có, tôi muốn xóa vĩnh viễn tài khoản này và tất cả dữ liệu của nó."
@@ -11739,11 +11751,6 @@
         "Cánh cổng dẫn đến tự do trực tuyến"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "liên hệ"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "Tất cả tính năng cao cấp từ ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } và ${ PASS_SHORT_APP_NAME }."
@@ -11845,9 +11852,6 @@
       "Verify now": [
         "Xác minh ngay"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "Xác minh ngay địa chỉ email khôi phục này: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "Xác minh email khôi phục?"
       ],
@@ -11887,9 +11891,6 @@
       ],
       "Verify recovery phone?": [
         "Xác minh số điện thoại khôi phục?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "Xác minh ngay số điện thoại khôi phục này: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Việc xác minh số điện thoại giúp tăng cường bảo mật tài khoản và cho phép thêm các tùy chọn khôi phục."
@@ -14261,8 +14262,14 @@
       "Account recovery": [
         "Khôi phục tài khoản"
       ],
+      "Account restricted": [
+        "Tài khoản bị hạn chế"
+      ],
       "Account suspended": [
         "Tài khoản bị treo"
+      ],
+      "Account temporarily locked": [
+        "Tài khoản tạm thời bị khóa"
       ],
       "Action": [
         "Thao tác"

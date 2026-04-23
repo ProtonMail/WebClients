@@ -322,6 +322,9 @@
       "Contract composer": [
         "Réduire l'éditeur"
       ],
+      "Copy": [
+        "Copier"
+      ],
       "Copy address": [
         "Copier l'adresse"
       ],
@@ -3628,6 +3631,9 @@
       "North Korea": [
         "Corée du Nord"
       ],
+      "North Macedonia": [
+        "Macédoine du Nord"
+      ],
       "Northern Mariana Islands": [
         "Îles Mariannes du Nord"
       ],
@@ -5681,7 +5687,15 @@
         "Vitesses extrêmement élevées"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Nous vous invitons à réessayer."
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Insérez une clé de sécurité associée à votre compte ${ BRAND_NAME }."
+      ],
       "Security key": [
         "Clé de sécurité"
       ]
@@ -7085,6 +7099,9 @@
       "Copy the link to clipboard": [
         "Copier le lien dans le presse-papiers"
       ],
+      "Copy to clipboard": [
+        "Copier dans le presse-papier"
+      ],
       "Copy your referral link": [
         "Copiez votre lien de parrainage."
       ],
@@ -7247,6 +7264,9 @@
       "Duplicate key updated": [
         "La clé dupliquée a été mise à jour."
       ],
+      "Each code can only be used once": [
+        "Chaque code ne peut être utilisé qu'une seule fois."
+      ],
       "Easily manage and unsubscribe from newsletters and mailing lists.": [
         "Gérez et désabonnez-vous facilement des newsletters et des listes de diffusion."
       ],
@@ -7316,6 +7336,9 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Saisissez le code de vérification qui a été envoyé à ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Saisissez le code de vérification. Entrez ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Entrez votre propre mot de passe (en tant qu'administrateur de l'organisation)."
@@ -12807,11 +12830,6 @@
         "Nom"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "contactez"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "Toutes les fonctionnalités de premier tiers ${ BRAND_NAME } : ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME }"
@@ -13398,6 +13416,18 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Vous disposez de ${ timeRemaining.inDays } jour pour réinitialiser votre mot de passe.",
         "Vous disposez de ${ timeRemaining.inDays } jours pour réinitialiser votre mot de passe."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Vous disposez de ${ timeRemaining.inHours } heure pour réinitialiser votre mot de passe.",
+        "Vous disposez de ${ timeRemaining.inHours } heures pour réinitialiser votre mot de passe."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Vous disposez de ${ timeRemaining.inMinutes } minute pour réinitialiser votre mot de passe.",
+        "Vous disposez de ${ timeRemaining.inMinutes } minutes pour réinitialiser votre mot de passe."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Vous disposez de ${ timeRemaining.inSeconds } seconde pour réinitialiser votre mot de passe.",
+        "Vous disposez de ${ timeRemaining.inSeconds } secondes pour réinitialiser votre mot de passe."
       ]
     },
     "session_recovery:available:link": {
@@ -14086,6 +14116,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistant d'écriture ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, et ${ LUMO_APP_NAME } avec les fonctionnalités premium"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } et ${ VPN_SHORT_APP_NAME } avec leurs fonctionnalités premium"
       ],
@@ -14316,6 +14352,10 @@
       ],
       "Version history": [
         "Historique des versions"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Vidéoconférences, jusqu'à ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant",
+        "Vidéoconférences, jusqu'à ${ PAID_PREMIUM_MAX_PARTICIPANTS } participants"
       ],
       "Watch the interview": [
         "Voir l'interview"

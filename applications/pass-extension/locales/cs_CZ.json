@@ -628,9 +628,6 @@
       "Set extra password": [
         "Nastavte dodatečné heslo"
       ],
-      "Settings": [
-        "Nastavení"
-      ],
       "Setup 2FA": [
         "Nastavit 2FA"
       ],
@@ -2076,6 +2073,9 @@
       "Loading...": [
         "Načítání..."
       ],
+      "Logging you out...": [
+        "Odhlašování..."
+      ],
       "Low Priority": [
         "Nízká priorita"
       ],
@@ -2107,7 +2107,10 @@
         "Přesouvání všech položek z \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy."
+        "Přesunutím položky do jiného trezoru se smažou její bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy.",
+        "Přesunutím položek do jiného trezoru se smažou jejich bezpečné odkazy."
       ],
       "Moving items": [
         "Přesouvání položek"
@@ -2600,12 +2603,6 @@
       ],
       "Unlimited hide-my-email aliases and advanced alias management": [
         "Neomezený počet aliasů hide-my-email a jejich pokročilá správa"
-      ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
-        "Odemkněte ${ PASS_APP_NAME } pomocí kódu PIN a získejte přístup ke svým přístupovým klíčům"
-      ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
-        "Pro uložení tohoto přístupového klíče odemkněte ${ PASS_APP_NAME } pomocí vašeho PIN kódu"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Odemkněte ${ PASS_SHORT_APP_NAME } pomocí biometrie"

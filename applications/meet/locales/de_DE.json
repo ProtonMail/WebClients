@@ -53,6 +53,9 @@
       "Continue without camera": [
         "Ohne Kamera fortfahren"
       ],
+      "Continue without mic and camera": [
+        "Ohne Mikrofon und Kamera fortsetzen"
+      ],
       "Continue without microphone": [
         "Ohne Mikrofon fortfahren"
       ],
@@ -259,6 +262,9 @@
       ],
       "Request new code": [
         "Neuen Code anfordern"
+      ],
+      "Request permissions": [
+        "Berechtigungen anfordern"
       ],
       "Resend code": [
         "Code erneut senden"
@@ -1917,6 +1923,9 @@
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
         "Gehe zu about:config, suche nach media.peerconnection.enabled, und setze es auf „true“."
       ],
+      "Host": [
+        "Organisator"
+      ],
       "Host your own secure meeting. Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
         "Halte dein eigenes sicheres Meeting ab. Starte einen Anruf in ${ MEET_APP_NAME } und teile den Link, um jeden zum Beitritt einzuladen. Einfach, sicher und kostenlos."
       ],
@@ -2214,6 +2223,9 @@
       "This will sign you out of all accounts currently logged in.": [
         "Dadurch wirst du auf allen derzeit angemeldeten Geräten abgemeldet."
       ],
+      "To be seen in the call, allow access to your camera.": [
+        "Erlaube den Zugriff auf deine Kamera um im Meeting gesehen zu werden."
+      ],
       "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
         "Um einen Raum zu erstellen, benötigst du **ein kostenloses ${ BRAND_NAME }-Konto**, damit wir den Raum speichern können. Das dauert nur wenige Sekunden."
       ],
@@ -2222,6 +2234,12 @@
       ],
       "To schedule an event, you'll need **a free ${ BRAND_NAME } Account** so we can save the event. This only takes a few seconds.": [
         "Um einen Termin zu planen, benötigst du **ein kostenloses ${ BRAND_NAME }-Konto**, damit wir den Termin speichern können. Das dauert nur wenige Sekunden."
+      ],
+      "To speak and be seen in the call, allow access to your camera and microphone.": [
+        "Erlaube den Zugriff auf deine Kamera und dein Mikrofon um im Meeting sprechen zu können und gesehen zu werden."
+      ],
+      "To speak in the call, allow access to your microphone.": [
+        "Erlaube den Zugriff auf dein Mikrofon um im Meeting sprechen zu können."
       ],
       "To use your personal meeting room, you'll need **a free ${ BRAND_NAME } Account**. This only takes a few seconds.": [
         "Um deinen persönlichen Besprechungsraum zu nutzen, benötigst du **ein kostenloses ${ BRAND_NAME }-Konto**. Das dauert nur wenige Sekunden."
@@ -2312,6 +2330,18 @@
       ],
       "Your always available meeting room": [
         "Dein jederzeit verfügbarer Meeting-Raum"
+      ],
+      "Your browser has blocked access to your camera and microphone. To enable them, update your browser settings and rejoin the call.": [
+        "Dein Browser hat den Zugriff auf deine Kamera und dein Mikrofon gesperrt. Aktualisiere deine Browser-Einstellungen, um ihn zu aktivieren und trete dem Meeting erneut bei."
+      ],
+      "Your browser has blocked access to your camera. To enable it, update your browser settings and rejoin the call.": [
+        "Dein Browser hat den Zugriff auf deine Kamera gesperrt. Aktualisiere deine Browser-Einstellungen, um ihn zu aktivieren und trete dem Meeting erneut bei."
+      ],
+      "Your browser has blocked access to your microphone. To enable it, update your browser settings and rejoin the call.": [
+        "Dein Browser hat den Zugriff auf dein Mikrofon gesperrt. Aktualisiere deine Browser-Einstellungen, um ihn zu aktivieren und trete dem Meeting erneut bei."
+      ],
+      "Your browser has blocked access to your screen share. To enable it, update your browser settings and rejoin the call.": [
+        "Dein Browser hat den Zugriff auf das Fensterteilen gesperrt. Aktualisiere deine Browser-Einstellungen, um ihn zu aktivieren und trete dem Meeting erneut bei."
       ],
       "Your browser or device isn’t supported": [
         "Dein Browser oder Gerät wird nicht unterstützt"
@@ -2819,6 +2849,18 @@
       "Available Speakers": [
         "Verfügbare Lautsprecher"
       ],
+      "Camera access needed": [
+        "Kamerazugriff erforderlich"
+      ],
+      "Camera and microphone access needed": [
+        "Kamera- und Mikrofonzugriff benötigt"
+      ],
+      "Camera and microphone are blocked": [
+        "Kamera und Mikrofon sind gesperrt"
+      ],
+      "Camera is blocked": [
+        "Kamera ist gesperrt"
+      ],
       "Chat": [
         "Chat"
       ],
@@ -2898,6 +2940,12 @@
       "Messaging Layer Security": [
         "Messaging Layer Security"
       ],
+      "Microphone access needed": [
+        "Mikrofonzugriff erforderlich"
+      ],
+      "Microphone is blocked": [
+        "Mikrofon ist gesperrt"
+      ],
       "Minicalendar": [
         "Minikalender"
       ],
@@ -2930,6 +2978,9 @@
       ],
       "Schedule a meeting": [
         "Meeting planen"
+      ],
+      "Screen share is blocked": [
+        "Bildschirmteilen ist gesperrt"
       ],
       "Secure meeting": [
         "Sicheres Meeting"

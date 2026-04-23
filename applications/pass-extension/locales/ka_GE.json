@@ -628,9 +628,6 @@
       "Set extra password": [
         "დამატებითი პაროლის დაყენება"
       ],
-      "Settings": [
-        "მორგება"
-      ],
       "Setup 2FA": [
         "2FA-ის მორგება"
       ],
@@ -1976,6 +1973,9 @@
       "Loading...": [
         "ჩატვირთვა..."
       ],
+      "Logging you out...": [
+        "მიმდინარეობს თქვენი სისტემიდან გაყვანა..."
+      ],
       "Low Priority": [
         "დაბალი პრიორიტეტი"
       ],
@@ -2003,6 +2003,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "ყველა ელემენტის გადატანა \"${ payload.content.name }\"-დან"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის.",
+        "ელემენტის გადატანა სხვა საცავში მის დაცულ ბმულებს წაშლის."
       ],
       "Moving items": [
         "მიმდინარეობს ელემენტების გადატანა"
@@ -2458,12 +2462,6 @@
       ],
       "Unlimited hide-my-email aliases and advanced alias management": [
         "შეუზღუდავი hide-my-email-ის ფსევდონიმები და მისი დამატებითი მართვა"
-      ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
-        "განბლოკეთ ${ PASS_APP_NAME } თქვენი PIN-კოდით თქვენს წვდომის გასაღებთან წვდომისთვის"
-      ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
-        "განბლოკეთ ${ PASS_APP_NAME } თქვენი PIN-კოდით, რომ შეინახოთ ეს წვდომის გასაღები"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "განბლოკეთ ${ PASS_SHORT_APP_NAME } თქვენი ბიომეტრიით"

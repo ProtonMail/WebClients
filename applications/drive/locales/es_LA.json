@@ -88,9 +88,9 @@
       "Add photos": [
         "Agregar fotos"
       ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "Añadir a \"${ album.name }\" (${ album.photoCount } foto)",
-        "Añadir a \"${ album.name }\" (${ album.photoCount } fotos)"
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "Añadir a «${ name }» (${ photoCount } foto)",
+        "Añadir a «${ name }» (${ photoCount } fotos)"
       ],
       "Add to album": [
         "Agregar al álbum"
@@ -515,9 +515,6 @@
       "Get in touch": [
         "Contáctenos"
       ],
-      "Get link": [
-        "Obtener enlace"
-      ],
       "Get mobile and desktop apps": [
         "Obtener aplicaciones móviles y de escritorio"
       ],
@@ -644,9 +641,6 @@
       "Load image": [
         "Cargar imagen"
       ],
-      "Loading link": [
-        "Cargando enlace"
-      ],
       "Make a copy": [
         "Hacer una copia"
       ],
@@ -661,9 +655,6 @@
       ],
       "Manage labels": [
         "Gestionar etiquetas"
-      ],
-      "Manage link": [
-        "Gestionar enlace"
       ],
       "Manage share": [
         "Gestionar enlaces compartidos"
@@ -4910,6 +4901,10 @@
       "${ albumName } has been successfully deleted": [
         "${ albumName } se eliminó."
       ],
+      "${ albums } album": [
+        "${ albums } álbum",
+        "${ albums } álbumes"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necesita permiso para ${ enableDesktopNotifications }."
       ],
@@ -4993,6 +4988,14 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: vista previa de baja resolución"
       ],
+      "${ files } file": [
+        "${ files } archivo",
+        "${ files } archivos"
+      ],
+      "${ folders } folder": [
+        "${ folders } carpeta",
+        "${ folders } carpetas"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } grupo encontrado",
         "${ groupCounts } grupo encontrado"
@@ -5026,6 +5029,10 @@
       "${ photoCount } item": [
         "${ photoCount } elemento",
         "${ photoCount } elementos"
+      ],
+      "${ photos } photo": [
+        "${ photos } foto",
+        "${ photos } fotos"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requiere al menos 1 servidor dedicado ${ serverPricePerMonth }"
@@ -5768,6 +5775,18 @@
       "Index is empty.": [
         "El índice está vacío."
       ],
+      "Indexed ${ first }": [
+        "Se indexó ${ first }"
+      ],
+      "Indexed ${ first } and ${ second }": [
+        "Se indexaron ${ first } y ${ second }"
+      ],
+      "Indexed ${ first }, ${ second } and ${ third }": [
+        "Se indexaron ${ first }, ${ second } y ${ third }"
+      ],
+      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
+        "Se indexaron ${ first }, ${ second }, ${ third } y ${ fourth }"
+      ],
       "Indexing in progress": [
         "Indexación en curso"
       ],
@@ -6331,9 +6350,6 @@
       "Shared by ${ sharedBy }": [
         "Compartido por ${ sharedBy }"
       ],
-      "Shared by you": [
-        "Compartido por usted"
-      ],
       "Shared link not found": [
         "No se encontró el enlace compartido"
       ],
@@ -6660,9 +6676,6 @@
       "Unsupported file type for Photos": [
         "Tipo de archivo no compatible para Fotos"
       ],
-      "Untitled": [
-        "Sin título"
-      ],
       "Update required": [
         "Actualización requerida"
       ],
@@ -6737,9 +6750,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "¡Bien hecho, ha incrementado el almacenamiento a 5 GB!"
-      ],
-      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "Estamos experimentando problemas técnicos. Todas las acciones relacionadas con los álbumes están desactivadas temporalmente."
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "No pudimos verificar que ${ nameAuthor } haya cargado ${ node.name }. Es posible que los elementos hayan sido manipulados. Abra el archivo solo si confía en él."
@@ -9557,9 +9567,6 @@
       "Access updated": [
         "Acceso actualizado"
       ],
-      "Album failed to be renamed": [
-        "Error al cambiar el nombre del álbum"
-      ],
       "Album renamed successfully": [
         "Se cambió el nombre del álbum."
       ],
@@ -9610,9 +9617,6 @@
       ],
       "Failed to download files: ${ err }": [
         "Error al descargar los archivos: ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "Error al cargar los detalles de la invitación"
       ],
       "Failed to move, please try again": [
         "Error al mover, inténtelo de nuevo"
@@ -9743,6 +9747,11 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Algunas imágenes no se cargaron debido a archivos duplicados en la selección actual."
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "Álbum renombrado con éxito"
       ]
     },
     "Oauth instructions": {
@@ -10678,11 +10687,6 @@
     "Placeholder for contact group name": {
       "Name": [
         "Nombre"
-      ]
-    },
-    "plan customizer, users": {
-      "contact": [
-        "contacte"
       ]
     },
     "Plan description": {
@@ -11698,6 +11702,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistente de escritura ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } y ${ LUMO_APP_NAME } con funciones premium"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } y ${ VPN_SHORT_APP_NAME } con funciones premium"
       ],
@@ -11928,6 +11938,10 @@
       ],
       "Version history": [
         "Historial de versiones"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Videollamadas, hasta ${ PAID_PREMIUM_MAX_PARTICIPANTS } participante",
+        "Videollamadas, hasta ${ PAID_PREMIUM_MAX_PARTICIPANTS } participantes"
       ],
       "Watch the interview": [
         "Vea la entrevista"
