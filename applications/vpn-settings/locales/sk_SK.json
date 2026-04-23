@@ -164,6 +164,9 @@
       "Claim ${ BRAND_NAME } address": [
         "Nárokovať si ${ BRAND_NAME } adresu"
       ],
+      "Claim offer": [
+        "Využiť ponuku"
+      ],
       "Claim this address": [
         "Nárokovať si túto adresu"
       ],
@@ -2496,6 +2499,11 @@
       ],
       "strawberry": [
         "jahoda"
+      ]
+    },
+    "Confirm cancellation": {
+      "Cancel subscription": [
+        "Zrušiť predplatné"
       ]
     },
     "Confirm modal title": {
@@ -5394,6 +5402,15 @@
         "${ MaxVPN } VPN pripojenia",
         "${ MaxVPN } VPN pripojení",
         "${ MaxVPN } VPN pripojení"
+      ],
+      "3 email domains": [
+        "3 emailové domény"
+      ],
+      "500 GB storage": [
+        "500 GB úložisko"
+      ],
+      "500 MB storage": [
+        "500 MB úložisko"
       ],
       "Access to all countries": [
         "Prístup ku všetkým krajinám"
@@ -9623,6 +9640,12 @@
       "Current email": [
         "Súčasný email"
       ],
+      "Custom email domain": [
+        "Vlastná emailová doména",
+        "Vlastné emailové domény",
+        "Vlastné emailové domény",
+        "Vlastné emailové domény"
+      ],
       "Date": [
         "Dátum"
       ],
@@ -9664,6 +9687,9 @@
       ],
       "Email address": [
         "Emailová adresa"
+      ],
+      "Email addresses per user": [
+        "emailových adries na používateľa"
       ],
       "Email or username": [
         "Email alebo používateľské meno"
@@ -9733,6 +9759,9 @@
       ],
       "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
         "Pre ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME } a ${ SHEETS_SHORT_APP_NAME }."
+      ],
+      "Free": [
+        "Free"
       ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
@@ -10091,6 +10120,9 @@
       "State": [
         "Štát"
       ],
+      "Storage": [
+        "Úložisko"
+      ],
       "Street address": [
         "Ulica a č."
       ],
@@ -10123,6 +10155,9 @@
       ],
       "Type": [
         "Typ"
+      ],
+      "Unlimited": [
+        "Bez obmedzenia"
       ],
       "Upload 1 or more encryption keys": [
         "Nahrať 1 alebo viac šifrovacích kľúčov"
@@ -10180,6 +10215,9 @@
       ],
       "Why would you like to cancel?": [
         "Prečo chcete zrušiť?"
+      ],
+      "Yes": [
+        "Áno"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Áno, chcem trvale zmazať tento účet a všetky údaje s ním spojené."
@@ -11046,7 +11084,7 @@
     },
     "new_plans": {
       "Highest VPN speed": [
-        "Vysoká rýchlosť VPN"
+        "Najvyššia rýchlosť VPN"
       ],
       "Keep your inbox organized with folders": [
         "Udržujte svoju doručenú poštu organizovanú pomocou priečinkov"
@@ -13436,11 +13474,6 @@
         "Vaša brána k online slobode"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "kontaktujte"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "Všetky prémiové funkcie z ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ PASS_SHORT_APP_NAME }."
@@ -13568,9 +13601,6 @@
       "Verify now": [
         "Overiť"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "Overiť túto emailovú adresu určenú pre obnovenie: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "Overiť email pre obnovenie?"
       ],
@@ -13610,9 +13640,6 @@
       ],
       "Verify recovery phone?": [
         "Overiť číslo na obnovenie?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "Overiť toto telefónne číslo určené pre obnovenie: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Overenie vášho telefónneho čísla zvyšuje bezpečnosť vášho účtu a umožňuje ďalšie možnosti obnovenia."
@@ -15361,6 +15388,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent písania ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } a ${ LUMO_APP_NAME } s prémiovými funkciami"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME } s prémiovými funkciami"
       ],
@@ -15631,6 +15664,12 @@
       "Version history": [
         "História verzií"
       ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Videokonferencie, s ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníkom",
+        "Videokonferencie, s ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníkmi",
+        "Videokonferencie, až s ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníkmi",
+        "Videokonferencie, až s ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníkmi"
+      ],
       "Watch the interview": [
         "Pozrite si rozhovor"
       ],
@@ -15746,6 +15785,9 @@
       ]
     },
     "Subtitle": {
+      "${ planTitle } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
+        "${ planTitle } vám pomôže zabezpečiť ochranu každého člena vašej rodiny a jeho údajov vždy, keď je online."
+      ],
       "View VPN session details for your organization.": [
         "Zobraziť podrobnosti o VPN relácii pre vašu organizáciu."
       ]
@@ -16210,8 +16252,14 @@
       "Account recovery": [
         "Obnovenie účtu"
       ],
+      "Account restricted": [
+        "Obmedzený účet"
+      ],
       "Account suspended": [
         "Účet pozastavený"
+      ],
+      "Account temporarily locked": [
+        "Účet dočasne zablokovaný"
       ],
       "Action": [
         "Akcia"

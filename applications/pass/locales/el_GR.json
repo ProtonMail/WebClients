@@ -613,9 +613,6 @@
       "Set extra password": [
         "Ορισμός επιπλέον κωδικού πρόσβασης"
       ],
-      "Settings": [
-        "Ρυθμίσεις"
-      ],
       "Setup 2FA": [
         "Ρύθμιση 2FA"
       ],
@@ -918,6 +915,18 @@
       "Biometric authentication failed.": [
         "Ο βιομετρικός έλεγχος ταυτότητας απέτυχε."
       ],
+      "Biometric lock credentials do not match.": [
+        "Τα διαπιστευτήρια βιομετρικού κλειδώματος δεν ταιριάζουν."
+      ],
+      "Biometric lock credentials not found.": [
+        "Τα διαπιστευτήρια βιομετρικού κλειδώματος δε βρέθηκαν."
+      ],
+      "Biometric lock is not configured.": [
+        "Το βιομετρικό κλείδωμα δεν έχει ρυθμιστεί."
+      ],
+      "Biometric lock setup failed.": [
+        "Η ρύθμιση του βιομετρικού κλειδώματος απέτυχε."
+      ],
       "Cannot send invitation at the moment": [
         "Δεν είναι δυνατή η αποστολή πρόσκλησης αυτήν τη στιγμή",
         "Δεν είναι δυνατή η αποστολή προσκλήσεων αυτήν τη στιγμή"
@@ -969,18 +978,6 @@
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Η διαγραφή της κρύπτης \"${ payload.content.name }\" απέτυχε"
-      ],
-      "Desktop lock is not configured.": [
-        "Το κλείδωμα της επιφάνειας εργασίας δεν έχει ρυθμιστεί."
-      ],
-      "Desktop lock secret does not match.": [
-        "Το μυστικό κλειδώματος επιφάνειας εργασίας δεν ταιριάζει."
-      ],
-      "Desktop lock secret not found.": [
-        "Το μυστικό κλειδώματος επιφάνειας εργασίας δε βρέθηκε."
-      ],
-      "Desktop lock setup failed.": [
-        "Το κλείδωμα της επιφάνειας εργασίας απέτυχε."
       ],
       "Detected ${ errors.length } corrupted csv row": [
         "Εντοπίστηκε ${ errors.length } αλλοιωμένη γραμμή csv",
@@ -1237,6 +1234,9 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
         "Η εφαρμογή επιφάνειας εργασίας ${ PASS_APP_NAME } είναι συνδεδεμένη με διαφορετικό λογαριασμό."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "Θα πρέπει να συνδεθείτε στην εφαρμογή ${ PASS_APP_NAME } για υπολογιστές."
       ],
       "The session has expired. Please sign in again.": [
         "Έχει λήξει η συνεδρία σας. Παρακαλώ συνδεθείτε ξανά."
@@ -3056,12 +3056,6 @@
       "Generic CSV": [
         "Γενικό CSV"
       ],
-      "Get ${ PASS_SHORT_APP_NAME } Plus": [
-        "Αποκτήστε το ${ PASS_SHORT_APP_NAME } Plus"
-      ],
-      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
-        "Αποκτήστε ${ PASS_SHORT_APP_NAME } Unlimited"
-      ],
       "Get Started": [
         "Ξεκινήστε"
       ],
@@ -4756,6 +4750,11 @@
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Εκτός αν αποκρυπτογραφηθούν, οι κρυπτογραφημένοι κωδικοί παραμένουν ασφαλείς ακόμα και αν εκτεθούν."
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "Αποκτήστε το ${ planName }"
       ]
     },
     "Validation": {

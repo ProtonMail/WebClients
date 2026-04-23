@@ -88,10 +88,6 @@
       "Add photos": [
         "Adicionar fotos"
       ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "Adicionar para \"${ album.name }\" (${ album.photoCount } foto)",
-        "Adicionar para \"${ album.name }\" (${ album.photoCount } fotos)"
-      ],
       "Add to album": [
         "Adicionar ao álbum"
       ],
@@ -515,9 +511,6 @@
       "Get in touch": [
         "Entre em contato"
       ],
-      "Get link": [
-        "Obter link"
-      ],
       "Get mobile and desktop apps": [
         "Obtenha aplicativos móveis e para computador"
       ],
@@ -644,9 +637,6 @@
       "Load image": [
         "Carregar imagem"
       ],
-      "Loading link": [
-        "Carregando link"
-      ],
       "Make a copy": [
         "Fazer uma cópia"
       ],
@@ -661,9 +651,6 @@
       ],
       "Manage labels": [
         "Gerenciar marcadores"
-      ],
-      "Manage link": [
-        "Gerenciar link"
       ],
       "Manage share": [
         "Gerenciar compartilhamentos"
@@ -4886,6 +4873,10 @@
       "${ albumName } has been successfully deleted": [
         "${ albumName } foi excluído com sucesso"
       ],
+      "${ albums } album": [
+        "${ albums } álbum",
+        "${ albums } álbuns"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } precisa da sua permissão para ${ enableDesktopNotifications }."
       ],
@@ -4969,6 +4960,14 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: pré-visualização em baixa resolução"
       ],
+      "${ files } file": [
+        "${ files } arquivo",
+        "${ files } arquivos"
+      ],
+      "${ folders } folder": [
+        "${ folders } pasta",
+        "${ folders } pastas"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } grupo(s) encontrado(s)",
         "${ groupCounts } grupo(s) encontrado(s)"
@@ -5002,6 +5001,10 @@
       "${ photoCount } item": [
         "${ photoCount } item",
         "${ photoCount } itens"
+      ],
+      "${ photos } photo": [
+        "${ photos } foto",
+        "${ photos } fotos"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requer pelo menos 1 servidor dedicado ${ serverPricePerMonth }"
@@ -6301,9 +6304,6 @@
       "Shared by ${ sharedBy }": [
         "Compartilhado por ${ sharedBy }"
       ],
-      "Shared by you": [
-        "Compartilhado por você"
-      ],
       "Shared link not found": [
         "Link compartilhado não encontrado"
       ],
@@ -6627,8 +6627,8 @@
       "Unsupported file": [
         "Arquivo não suportado"
       ],
-      "Untitled": [
-        "Sem título"
+      "Unsupported file type for Photos": [
+        "Tipo de arquivo não compatível para Fotos"
       ],
       "Update required": [
         "Atualização necessária"
@@ -6704,9 +6704,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Muito bom! Você acaba de aumentar seu armazenamento para 5 GB!"
-      ],
-      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "Estamos enfrentando problemas técnicos. Todas as ações relacionadas a álbuns estão temporariamente desativadas. Agradecemos a sua compreensão."
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "Não foi possível verificar se ${ nameAuthor } enviou ${ node.name }. Os seguintes dados podem ter sido adulterados: ordem dos dados do arquivo. Abra somente se confiar no conteúdo."
@@ -8673,6 +8670,9 @@
       "Data retention policies": [
         "Políticas de retenção de dados"
       ],
+      "Dedicated servers optimized for speed": [
+        "Servidores dedicados otimizados para velocidade"
+      ],
       "Desktop app": [
         "Aplicativo para computador"
       ],
@@ -9503,9 +9503,6 @@
       "Access updated": [
         "Acesso atualizado"
       ],
-      "Album failed to be renamed": [
-        "Não foi possível renomear o álbum"
-      ],
       "Album renamed successfully": [
         "O álbum foi renomeado com sucesso"
       ],
@@ -9556,9 +9553,6 @@
       ],
       "Failed to download files: ${ err }": [
         "Erro ao baixar arquivos: ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "Erro ao carregar os detalhes do convite"
       ],
       "Failed to move, please try again": [
         "Erro ao mover. Tente novamente"
@@ -9689,6 +9683,11 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Algumas imagens não foram enviadas devido a nomes de arquivo duplicados na seleção atual."
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "O álbum foi renomeado com sucesso"
       ]
     },
     "Oauth instructions": {
@@ -10629,11 +10628,6 @@
         "Nome"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "contato"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "Todos os recursos premium para ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, e ${ PASS_SHORT_APP_NAME }."
@@ -10696,7 +10690,7 @@
         "Fax"
       ],
       "Home": [
-        "Casa"
+        "Início"
       ],
       "Main": [
         "Principal"
@@ -11647,6 +11641,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistente de escrita da ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } e ${ LUMO_APP_NAME } com recursos premium"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME } com recursos premium"
       ],

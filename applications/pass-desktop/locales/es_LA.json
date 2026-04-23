@@ -640,9 +640,6 @@
       "Set extra password": [
         "Configurar la contraseña adicional"
       ],
-      "Settings": [
-        "Ajustes"
-      ],
       "Setup 2FA": [
         "Configurar 2FA"
       ],
@@ -968,6 +965,18 @@
       "Biometric authentication failed.": [
         "Error en la autenticación biométrica."
       ],
+      "Biometric lock credentials do not match.": [
+        "Las credenciales de bloqueo de biometría no coinciden."
+      ],
+      "Biometric lock credentials not found.": [
+        "No se encontró el bloqueo por biometría."
+      ],
+      "Biometric lock is not configured.": [
+        "El bloqueo de biometría no está configurado."
+      ],
+      "Biometric lock setup failed.": [
+        "Error en la configuración de bloqueo de biometría."
+      ],
       "Cannot send invitation at the moment": [
         "No se puede enviar la invitación por el momento",
         "No se pueden enviar las invitaciones por el momento"
@@ -1019,18 +1028,6 @@
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Error al eliminar la bóveda \"${ payload.content.name }\""
-      ],
-      "Desktop lock is not configured.": [
-        "El bloqueo de escritorio no está configurado."
-      ],
-      "Desktop lock secret does not match.": [
-        "El secreto de bloqueo de escritorio no coincide."
-      ],
-      "Desktop lock secret not found.": [
-        "Secreto de bloqueo de escritorio no encontrado."
-      ],
-      "Desktop lock setup failed.": [
-        "Error en la configuración de bloqueo de escritorio."
       ],
       "Detected ${ errors.length } corrupted csv row": [
         "Se detectó ${ errors.length } fila CSV dañada.",
@@ -1287,6 +1284,9 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
         "Se ha iniciado sesión en a aplicación de escritorio de ${ PASS_APP_NAME } con una cuenta diferente."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "Debe iniciar sesión en la aplicación de escritorio de ${ PASS_APP_NAME }"
       ],
       "The session has expired. Please sign in again.": [
         "La sesión ha expirado. Inicie sesión de nuevo."
@@ -2044,6 +2044,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Mover un elemento a otra bóveda eliminará sus enlaces seguros.",
+        "Mover elementos a otra bóveda eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo los elementos"
@@ -3169,12 +3173,6 @@
       ],
       "Generic CSV": [
         "CSV genérico"
-      ],
-      "Get ${ PASS_SHORT_APP_NAME } Plus": [
-        "Obtener ${ PASS_SHORT_APP_NAME } Plus"
-      ],
-      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
-        "Obtener ${ PASS_SHORT_APP_NAME } Unlimited"
       ],
       "Get Started": [
         "Comenzar"
@@ -4920,6 +4918,11 @@
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "A menos que se descifren, las contraseñas cifradas permanecen seguras incluso si están expuestas."
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "Obtener ${ planName }"
       ]
     },
     "Validation": {

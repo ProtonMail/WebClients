@@ -90,11 +90,11 @@
       "Add photos": [
         "Pridať fotografie"
       ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "Pridať do \"${ album.name }\" (${ album.photoCount } fotografiu)",
-        "Pridať do \"${ album.name }\" (${ album.photoCount } fotografie)",
-        "Pridať do \"${ album.name }\" (${ album.photoCount } fotografií)",
-        "Pridať do \"${ album.name }\" (${ album.photoCount } fotografií)"
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "Pridať do \"${ name }\" (${ photoCount } fotografiu)",
+        "Pridať do \"${ name }\" (${ photoCount } fotografie)",
+        "Pridať do \"${ name }\" (${ photoCount } fotografií)",
+        "Pridať do \"${ name }\" (${ photoCount } fotografií)"
       ],
       "Add to album": [
         "Pridať do albumu"
@@ -525,9 +525,6 @@
       "Get in touch": [
         "Skontaktovať sa"
       ],
-      "Get link": [
-        "Získať odkaz"
-      ],
       "Get mobile and desktop apps": [
         "Získať mobilné a desktopové aplikácie"
       ],
@@ -654,9 +651,6 @@
       "Load image": [
         "Načítať obrázok"
       ],
-      "Loading link": [
-        "Načítanie odkazu"
-      ],
       "Make a copy": [
         "Vytvoriť kópiu"
       ],
@@ -671,9 +665,6 @@
       ],
       "Manage labels": [
         "Spravovať štítky"
-      ],
-      "Manage link": [
-        "Spravovať odkaz"
       ],
       "Manage share": [
         "Spravovať zdieľanie"
@@ -5018,6 +5009,12 @@
       "${ albumName } has been successfully deleted": [
         "Album ${ albumName } bol úspešne vymazaný"
       ],
+      "${ albums } album": [
+        "${ albums } album",
+        "${ albums } albumy",
+        "${ albums } albumov",
+        "${ albums } albumov"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Aplikácia ${ appName } potrebuje Váš súhlas, aby mohla ${ enableDesktopNotifications }."
       ],
@@ -5123,6 +5120,18 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: náhľad v nízkom rozlíšení"
       ],
+      "${ files } file": [
+        "${ files } súbor",
+        "${ files } súbory",
+        "${ files } súborov",
+        "${ files } súborov"
+      ],
+      "${ folders } folder": [
+        "${ folders } priečinok",
+        "${ folders } priečinky",
+        "${ folders } priečinkov",
+        "${ folders } priečinkov"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } nájdená skupina",
         "${ groupCounts } nájdené skupiny",
@@ -5164,6 +5173,12 @@
         "${ photoCount } položky",
         "${ photoCount } položiek",
         "${ photoCount } položiek"
+      ],
+      "${ photos } photo": [
+        "${ photos } fotografia",
+        "${ photos } fotografie",
+        "${ photos } fotografií",
+        "${ photos } fotografií"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } vyžaduje aspoň 1 dedikovaný server ${ serverPricePerMonth }"
@@ -5948,6 +5963,18 @@
       "Index is empty.": [
         "Index je prázdny."
       ],
+      "Indexed ${ first }": [
+        "Indexované ${ first }"
+      ],
+      "Indexed ${ first } and ${ second }": [
+        "Indexované ${ first } a ${ second }"
+      ],
+      "Indexed ${ first }, ${ second } and ${ third }": [
+        "Indexované ${ first }, ${ second } a ${ third }"
+      ],
+      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
+        "Indexované ${ first }, ${ second }, ${ third } a ${ fourth }"
+      ],
       "Indexing in progress": [
         "Prebieha indexovanie"
       ],
@@ -6521,9 +6548,6 @@
       "Shared by ${ sharedBy }": [
         "Zdieľa ${ sharedBy }"
       ],
-      "Shared by you": [
-        "Vami zdieľané"
-      ],
       "Shared link not found": [
         "Zdieľaný odkaz sa nenašiel"
       ],
@@ -6854,9 +6878,6 @@
       "Unsupported file type for Photos": [
         "Nepodporovaný typ súboru pre Fotografie"
       ],
-      "Untitled": [
-        "Bez názvu"
-      ],
       "Update required": [
         "Je potrebná aktualizácia"
       ],
@@ -6931,9 +6952,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Výborne, práve ste zväčšili svoje úložisko na 5 GB!"
-      ],
-      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "Máme technické problémy. Všetky akcie súvisiace s albumami sú dočasne nedostupné."
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "Nepodarilo sa nám overiť, či ${ nameAuthor } nahral ${ node.name }. Mohlo dôjsť k manipulácii s nasledujúcimi údajmi: poradie údajov v súbore. Otvorte len v prípade, ak mu dôverujete."
@@ -8661,7 +8679,7 @@
     },
     "new_plans": {
       "Highest VPN speed": [
-        "Vysoká rýchlosť VPN"
+        "Najvyššia rýchlosť VPN"
       ],
       "Keep your inbox organized with folders": [
         "Udržujte svoju doručenú poštu organizovanú pomocou priečinkov"
@@ -9839,9 +9857,6 @@
       "Access updated": [
         "Prístup aktualizovaný"
       ],
-      "Album failed to be renamed": [
-        "Premenovanie albumu zlyhalo"
-      ],
       "Album renamed successfully": [
         "Album bol úspešne premenovaný"
       ],
@@ -9892,9 +9907,6 @@
       ],
       "Failed to download files: ${ err }": [
         "Nepodarilo sa stiahnuť súbory: ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "Nepodarilo sa načítať detaily pozvánky"
       ],
       "Failed to move, please try again": [
         "Presun zlyhal, skúste znovu, prosím"
@@ -10041,6 +10053,11 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Niektoré obrázky neboli nahrané kvôli duplicitným názvom súborov v aktuálnom výbere."
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "Album bol úspešne premenovaný"
       ]
     },
     "Oauth instructions": {
@@ -10990,11 +11007,6 @@
     "Placeholder for contact group name": {
       "Name": [
         "Meno"
-      ]
-    },
-    "plan customizer, users": {
-      "contact": [
-        "kontaktujte"
       ]
     },
     "Plan description": {
@@ -11974,6 +11986,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent písania ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } a ${ LUMO_APP_NAME } s prémiovými funkciami"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME } s prémiovými funkciami"
       ],
@@ -12216,6 +12234,12 @@
       ],
       "Version history": [
         "História verzií"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Videokonferencie, s ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníkom",
+        "Videokonferencie, s ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníkmi",
+        "Videokonferencie, až s ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníkmi",
+        "Videokonferencie, až s ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníkmi"
       ],
       "Watch the interview": [
         "Pozrite si rozhovor"

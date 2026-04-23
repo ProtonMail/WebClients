@@ -628,9 +628,6 @@
       "Set extra password": [
         "Stel uw extra wachtwoord in"
       ],
-      "Settings": [
-        "Instellingen"
-      ],
       "Setup 2FA": [
         "2FA Instellen"
       ],
@@ -2024,6 +2021,9 @@
       "Loading...": [
         "Laden..."
       ],
+      "Logging you out...": [
+        "Afmelden..."
+      ],
       "Low Priority": [
         "Lage Prioriteit"
       ],
@@ -2053,7 +2053,8 @@
         "Alle items uit \"${ payload.content.name }\" verplaatsen"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Het verplaatsen van een item naar een andere kluis verwijdert zijn beveiligde links."
+        "Het verplaatsen van een item naar een andere kluis verwijdert zijn geschiedenis.",
+        "Het verplaatsen van items naar een andere kluis verwijdert hun geschiedenis."
       ],
       "Moving items": [
         "Items verplaatsen"
@@ -2542,12 +2543,6 @@
       ],
       "Unlimited hide-my-email aliases and advanced alias management": [
         "Onbeperkt hide-my-email aliassen en geavanceerd alias beheer"
-      ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
-        "Ontgrendel ${ PASS_APP_NAME } met uw pincode om toegang te krijgen tot uw toegangssleutels"
-      ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
-        "Ontgrendel ${ PASS_APP_NAME } met uw pincode om deze toegangscode op te slaan"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Ontgrendel ${ PASS_SHORT_APP_NAME } met biometrische gegevens"

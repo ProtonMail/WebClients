@@ -628,9 +628,6 @@
       "Set extra password": [
         "Zusätzliches Passwort festlegen"
       ],
-      "Settings": [
-        "Einstellungen"
-      ],
       "Setup 2FA": [
         "2FA einrichten"
       ],
@@ -942,6 +939,21 @@
       "Authentication failure: ${ message }": [
         "Authentifizierung fehlgeschlagen: ${ message }"
       ],
+      "Biometric authentication failed.": [
+        "Biometrische Authentifizierung fehlgeschlagen."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Biometrische Anmeldedaten stimmen nicht überein."
+      ],
+      "Biometric lock credentials not found.": [
+        "Biometrischen Anmeldedaten nicht gefunden."
+      ],
+      "Biometric lock is not configured.": [
+        "Biometrische Sperre nicht konfiguriert."
+      ],
+      "Biometric lock setup failed.": [
+        "Einrichten der biometrischen Sperre fehlgeschlagen."
+      ],
       "Cannot create alias (${ error }).": [
         "Fehler beim Erstellen des Alias (${ error })."
       ],
@@ -1015,6 +1027,9 @@
       ],
       "Emptying trash failed": [
         "Fehler beim Leeren des Papierkorbs."
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Verschlüsselte Kommunikation mit der ${ PASS_APP_NAME }-Desktop-App fehlgeschlagen."
       ],
       "Encrypted JSON not supported": [
         "Verschlüsseltes JSON wird nicht unterstützt."
@@ -1256,6 +1271,9 @@
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
         "Etwas ist schief gelaufen. Bitte lade die Erweiterung ${ PASS_APP_NAME } neu. Dieses Problem wurde protokolliert."
       ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "Die ${ PASS_APP_NAME }-Desktop-App hat nicht zeitgerecht reagiert."
+      ],
       "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
         "Die ${ PASS_APP_NAME }-Desktop-App ist gesperrt, sie muss entsperrt werden."
       ],
@@ -1267,6 +1285,9 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
         "Die ${ PASS_APP_NAME }-Desktop-App ist mit einem anderen Konto angemeldet."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "Die ${ PASS_APP_NAME }-Desktop-App sollte angemeldet sein."
       ],
       "The URL is in the list": [
         "Die URL ist in der Liste."
@@ -2027,6 +2048,9 @@
       "Loading...": [
         "Wird geladen..."
       ],
+      "Logging you out...": [
+        "Du wirst abgemeldet..."
+      ],
       "Low Priority": [
         "Niedrige Priorität"
       ],
@@ -2054,6 +2078,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Verschiebe alle Einträge von \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Beim Verschieben eines Eintrags in einen anderen Tresor, werden seine sicheren Verknüpfungen gelöscht.",
+        "Beim Verschieben von Einträgen in einen anderen Tresor, werden ihre sicheren Verknüpfungen gelöscht."
       ],
       "Moving items": [
         "Einträge verschieben"
@@ -2543,11 +2571,11 @@
       "Unlimited hide-my-email aliases and advanced alias management": [
         "Unbegrenzte hide-my-email Aliase und erweiterte Alias-Verwaltung"
       ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
-        "Entsperre ${ PASS_APP_NAME } mit deinem PIN-Code für den Zugang zu deinen Passkeys"
+      "Unlock ${ PASS_APP_NAME } to access your passkeys": [
+        "${ PASS_APP_NAME } entsperren, um auf deine Passkeys zuzugreifen"
       ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
-        "Entsperre ${ PASS_APP_NAME } mit deinem PIN-Code, um diesen Passkey zu speichern."
+      "Unlock ${ PASS_APP_NAME } to save this passkey": [
+        "${ PASS_APP_NAME } entsperren, um diesen Passkey zu speichern"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "${ PASS_SHORT_APP_NAME } mit Biometrie entsperren"

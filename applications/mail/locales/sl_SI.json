@@ -7163,6 +7163,9 @@
       "Enjoy a faster, focused emailing experience with the desktop app.": [
         "Uživajte v hitrejši in bolj osredotočeni izkušnji e-pošte z namizno aplikacijo."
       ],
+      "Enter code": [
+        "Vnesi kodo"
+      ],
       "Enter the code from your authenticator app": [
         "Vnesite kodo iz aplikacije za preverjanje pristnosti"
       ],
@@ -7306,6 +7309,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Če sporočila ne najdete v nabiralniku, poglejte v mapo z neželeno pošto."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Če ste izgubili dostop do aplikacije za preverjanje pristnosti, lahko uporabite eno od 16. kod za obnovitev, ki ste jih prejeli ob nastavitvi dvojnega preverjanja pristnosti. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Če nadaljujete s podgradnjo, boste izgubili dostop do plačljivih funkcij ${ MAIL_APP_NAME } in ${ VPN_APP_NAME }."
@@ -12403,11 +12409,6 @@
     "Placeholder for contact group name": {
       "Name": [
         "Ime"
-      ]
-    },
-    "plan customizer, users": {
-      "contact": [
-        "kontaktirajte"
       ]
     },
     "Plans": {

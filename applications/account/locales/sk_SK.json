@@ -261,6 +261,9 @@
       "Claim it": [
         "Nárokovať si to"
       ],
+      "Claim offer": [
+        "Využiť ponuku"
+      ],
       "Claim this address": [
         "Nárokovať si túto adresu"
       ],
@@ -3778,6 +3781,11 @@
         "Ak"
       ]
     },
+    "Confirm cancellation": {
+      "Cancel subscription": [
+        "Zrušiť predplatné"
+      ]
+    },
     "Confirm modal title": {
       "Import is incomplete!": [
         "Import nie je dokončený!"
@@ -6324,9 +6332,6 @@
       "Asking for help": [
         "Žiadosť o pomoc"
       ],
-      "By adding people you trust as recovery contacts, we'll be able to send them an email to help you if you're having trouble to recover your data after a password reset. You can also be a recovery contact for others.": [
-        "Ak pridáte osoby, ktorým dôverujete, ako kontakty na obnovenie účtu, budeme im môcť poslať email, aby vám pomohli, ak budete mať problémy s obnovením prístupu po resetovaní hesla. Aj vy môžete byť kontaktom pre obnovenie pre iných."
-      ],
       "Cancel request": [
         "Zrušiť žiadosť"
       ],
@@ -6480,9 +6485,6 @@
       "Recovery contact removed": [
         "Kontaktná osoba na obnovenie účtu odobraná"
       ],
-      "Recovery contacts": [
-        "Kontaktné osoby na obnovenie účtu"
-      ],
       "Recovery request sent": [
         "Žiadosť o obnovenie účtu bola odoslaná"
       ],
@@ -6579,9 +6581,6 @@
       "To disable this recovery method, remove all your recovery contacts.": [
         "Ak chcete túto metódu obnovenia deaktivovať, odstráňte všetky svoje kontakty na obnovenie účtu."
       ],
-      "To use trusted contact recovery, you must have an account recovery method set.": [
-        "Ak chcete používať obnovenie prostredníctvom dôveryhodného kontaktu, musíte mať nastavenú metódu obnovenia účtu."
-      ],
       "Trusted contact": [
         "Dôveryhodný kontakt"
       ],
@@ -6635,12 +6634,6 @@
         "Dosiahli ste maximálny počet ${ limit } núdzových kontaktov.",
         "Dosiahli ste maximálny počet ${ limit } núdzových kontaktov.",
         "Dosiahli ste maximálny počet ${ limit } núdzových kontaktov."
-      ],
-      "You reached the maximum of ${ limit } recovery contact.": [
-        "Dosiahli ste maximálny počet ${ limit } kontaktu na obnovu účtu",
-        "Dosiahli ste maximálny počet ${ limit } kontaktov na obnovu účtu",
-        "Dosiahli ste maximálny počet ${ limit } kontaktov na obnovu účtu",
-        "Dosiahli ste maximálny počet ${ limit } kontaktov na obnovu účtu"
       ],
       "You will be notified when someone requests emergency access.": [
         "Dostanete upozornenie, keď niekto požiada o núdzový prístup."
@@ -8085,6 +8078,15 @@
         "${ MaxVPN } VPN pripojenia",
         "${ MaxVPN } VPN pripojení",
         "${ MaxVPN } VPN pripojení"
+      ],
+      "3 email domains": [
+        "3 emailové domény"
+      ],
+      "500 GB storage": [
+        "500 GB úložisko"
+      ],
+      "500 MB storage": [
+        "500 MB úložisko"
       ],
       "Access to all countries": [
         "Prístup ku všetkým krajinám"
@@ -14141,6 +14143,12 @@
       "Current email": [
         "Súčasný email"
       ],
+      "Custom email domain": [
+        "Vlastná emailová doména",
+        "Vlastné emailové domény",
+        "Vlastné emailové domény",
+        "Vlastné emailové domény"
+      ],
       "Daily email notifications": [
         "Denné emailové notifikácie"
       ],
@@ -14236,6 +14244,9 @@
       ],
       "Email address": [
         "Emailová adresa"
+      ],
+      "Email addresses per user": [
+        "emailových adries na používateľa"
       ],
       "Email or username": [
         "Email alebo používateľské meno"
@@ -14344,6 +14355,9 @@
       ],
       "for your first month": [
         "za váš prvý mesiac"
+      ],
+      "Free": [
+        "Free"
       ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
@@ -14951,6 +14965,9 @@
       "Sticky labels": [
         "Pripnuté štítky"
       ],
+      "Storage": [
+        "Úložisko"
+      ],
       "Street address": [
         "Ulica a č."
       ],
@@ -15019,6 +15036,9 @@
       ],
       "Undo send": [
         "Zrušiť odoslanie"
+      ],
+      "Unlimited": [
+        "Bez obmedzenia"
       ],
       "Unlimited hide-my-email aliases": [
         "Neobmedzený počet hide-my-email aliasov"
@@ -16460,7 +16480,7 @@
     },
     "new_plans": {
       "Highest VPN speed": [
-        "Vysoká rýchlosť VPN"
+        "Najvyššia rýchlosť VPN"
       ],
       "Keep your inbox organized with folders": [
         "Udržujte svoju doručenú poštu organizovanú pomocou priečinkov"
@@ -19539,11 +19559,6 @@
         "Vaša brána k online slobode"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "kontaktujte"
-      ]
-    },
     "Plan description": {
       "A VPN solution that provides secure, high-speed access to the internet.": [
         "VPN riešenie, ktoré poskytuje bezpečný vysokorýchlostný prístup k internetu."
@@ -19794,9 +19809,6 @@
       "Verify now": [
         "Overiť"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "Overiť túto emailovú adresu určenú pre obnovenie: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "Overiť email pre obnovenie?"
       ],
@@ -19840,11 +19852,13 @@
       "Verify recovery phone?": [
         "Overiť číslo na obnovenie?"
       ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "Overiť toto telefónne číslo určené pre obnovenie: ${ phone.Value }"
-      ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Overenie vášho telefónneho čísla zvyšuje bezpečnosť vášho účtu a umožňuje ďalšie možnosti obnovenia."
+      ]
+    },
+    "Recovery score item": {
+      "Verify password": [
+        "Potvrďte heslo"
       ]
     },
     "RecoveryPhrase: Action": {
@@ -22351,6 +22365,29 @@
         "Rušenie vášho predplatného, počkajte prosím"
       ]
     },
+    "Status": {
+      "${ count } person": [
+        "${ count } osoba",
+        "${ count } osoby",
+        "${ count } ľudí",
+        "${ count } ľudí"
+      ],
+      "Add an email address": [
+        "Pridajte emailovú adresu"
+      ],
+      "Last changed ${ formattedDate }": [
+        "Posledná zmena ${ formattedDate }"
+      ],
+      "No contact": [
+        "Žiadny kontakt"
+      ],
+      "Off": [
+        "Vyp."
+      ],
+      "On": [
+        "Zap."
+      ]
+    },
     "Step in filter modal": {
       "Actions": [
         "Akcie"
@@ -22686,6 +22723,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent písania ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } a ${ LUMO_APP_NAME } s prémiovými funkciami"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME } s prémiovými funkciami"
       ],
@@ -22956,6 +22999,12 @@
       "Version history": [
         "História verzií"
       ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Videokonferencie, s ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníkom",
+        "Videokonferencie, s ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníkmi",
+        "Videokonferencie, až s ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníkmi",
+        "Videokonferencie, až s ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníkmi"
+      ],
       "Watch the interview": [
         "Pozrite si rozhovor"
       ],
@@ -23071,6 +23120,9 @@
       ]
     },
     "Subtitle": {
+      "${ planTitle } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
+        "${ planTitle } vám pomôže zabezpečiť ochranu každého člena vašej rodiny a jeho údajov vždy, keď je online."
+      ],
       "Free forever": [
         "Navždy zadarmo"
       ],

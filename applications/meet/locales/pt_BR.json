@@ -53,6 +53,9 @@
       "Continue without camera": [
         "Continuar sem câmera"
       ],
+      "Continue without mic and camera": [
+        "Continuar sem microfone e câmera"
+      ],
       "Continue without microphone": [
         "Continuar sem microfone"
       ],
@@ -259,6 +262,9 @@
       ],
       "Request new code": [
         "Solicitar um novo código"
+      ],
+      "Request permissions": [
+        "Solicitar permissões"
       ],
       "Resend code": [
         "Reenviar código"
@@ -1917,6 +1923,9 @@
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
         "Vá para about:config, pesquise por media.peerconnection.enabled, e defina-o como true."
       ],
+      "Host": [
+        "Anfitrião"
+      ],
       "Host your own secure meeting. Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
         "Hospede sua própria reunião segura. Inicie uma chamada no ${ MEET_APP_NAME } e compartilhe o link para convidar qualquer pessoa para participar. Simples, seguro e gratuito."
       ],
@@ -2094,6 +2103,9 @@
       "Premium meeting": [
         "Reunião premium"
       ],
+      "Presenting": [
+        "Apresentando"
+      ],
       "privacy": [
         "privacidade"
       ],
@@ -2214,6 +2226,9 @@
       "This will sign you out of all accounts currently logged in.": [
         "Isto irá te desconectar de todas as contas atualmente conectadas."
       ],
+      "To be seen in the call, allow access to your camera.": [
+        "Para ser visto na chamada, permita o acesso à sua câmera."
+      ],
       "To create a room, you'll need **a free ${ BRAND_NAME } Account** so we can save the room. This only takes a few seconds.": [
         "Para criar uma sala, você precisará de **uma conta da ${ BRAND_NAME } gratuita** para que possamos salvar a sala. Isso leva apenas alguns segundos."
       ],
@@ -2222,6 +2237,12 @@
       ],
       "To schedule an event, you'll need **a free ${ BRAND_NAME } Account** so we can save the event. This only takes a few seconds.": [
         "Para agendar um evento, você precisará de **uma conta da ${ BRAND_NAME } gratuita** para que possamos salvar o evento. Isso leva apenas alguns segundos."
+      ],
+      "To speak and be seen in the call, allow access to your camera and microphone.": [
+        "Para falar e ser visto na chamada, permita o acesso à câmera e microfone."
+      ],
+      "To speak in the call, allow access to your microphone.": [
+        "Para falar na chamada, permita o acesso ao seu microfone."
       ],
       "To use your personal meeting room, you'll need **a free ${ BRAND_NAME } Account**. This only takes a few seconds.": [
         "Para usar sua sala de reunião pessoal, você precisará de **uma conta da ${ BRAND_NAME } gratuita**. Isso leva apenas alguns segundos."
@@ -2312,6 +2333,18 @@
       ],
       "Your always available meeting room": [
         "Sua sala de reunião sempre disponível"
+      ],
+      "Your browser has blocked access to your camera and microphone. To enable them, update your browser settings and rejoin the call.": [
+        "Seu navegador bloqueou o acesso ao seu microfone. Para ativar, atualize as configurações do navegador e retone na chamada."
+      ],
+      "Your browser has blocked access to your camera. To enable it, update your browser settings and rejoin the call.": [
+        "Seu navegador bloqueou o acesso à sua câmera. Para ativar, atualize as configurações do navegador e retone na chamada."
+      ],
+      "Your browser has blocked access to your microphone. To enable it, update your browser settings and rejoin the call.": [
+        "Seu navegador bloqueou o acesso ao seu microfone. Para ativar, atualize as configurações do navegador e retone na chamada."
+      ],
+      "Your browser has blocked access to your screen share. To enable it, update your browser settings and rejoin the call.": [
+        "Seu navegador bloqueou o acesso ao seu compartilhamento de tela. Para ativar, atualize as configurações do navegador e retone na chamada."
       ],
       "Your browser or device isn’t supported": [
         "Seu navegador ou dispositivo não é suportado"
@@ -2819,6 +2852,18 @@
       "Available Speakers": [
         "Alto-falantes disponíveis"
       ],
+      "Camera access needed": [
+        "Acesso à câmera necessário"
+      ],
+      "Camera and microphone access needed": [
+        "Acesso ao microfone e câmera necessário"
+      ],
+      "Camera and microphone are blocked": [
+        "A câmera e o microfone estão bloqueados"
+      ],
+      "Camera is blocked": [
+        "A câmera está bloqueada"
+      ],
       "Chat": [
         "Bate-papo"
       ],
@@ -2898,6 +2943,12 @@
       "Messaging Layer Security": [
         "Messaging Layer Security"
       ],
+      "Microphone access needed": [
+        "Acesso ao microfone necessário"
+      ],
+      "Microphone is blocked": [
+        "O microfone está bloqueado"
+      ],
       "Minicalendar": [
         "Mini calendário"
       ],
@@ -2930,6 +2981,9 @@
       ],
       "Schedule a meeting": [
         "Agendar uma reunião"
+      ],
+      "Screen share is blocked": [
+        "O compartilhamento de tela está bloqueada"
       ],
       "Secure meeting": [
         "Reunião segura"

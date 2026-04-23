@@ -7146,6 +7146,9 @@
       "Font size": [
         "Veličina fonta"
       ],
+      "Free": [
+        "Free"
+      ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
       ],
@@ -7473,6 +7476,9 @@
       "Statement": [
         "Izjava"
       ],
+      "Storage": [
+        "Prostor za pohranu"
+      ],
       "Street address": [
         "Adresa"
       ],
@@ -7517,6 +7523,9 @@
       ],
       "Undo send": [
         "Poništi slanje"
+      ],
+      "Unlimited": [
+        "Neograničeno"
       ],
       "Unlimited hide-my-email aliases": [
         "Neograničen broj hide-my-email pseudonima"
@@ -9714,11 +9723,6 @@
         "Vaš put do slobode na mreži"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "kontaktirajte"
-      ]
-    },
     "Plan description": {
       "Best if you need ${ maxSpace } of storage and for couples.": [
         "Najbolje ako trebate ${ maxSpace } pohrane i za parove."
@@ -9815,9 +9819,6 @@
       ],
       "Verify now": [
         "Potvrdi sada"
-      ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "Potvrdite sada ovu adresu e-pošte za oporavak: ${ email.Value }"
       ],
       "Verify recovery email?": [
         "Potvrditi adresu e-pošte za oporavak?"

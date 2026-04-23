@@ -628,9 +628,6 @@
       "Set extra password": [
         "Ställ in extralösenord"
       ],
-      "Settings": [
-        "Inställningar"
-      ],
       "Setup 2FA": [
         "Konfigurera 2FA"
       ],
@@ -944,6 +941,12 @@
       ],
       "Biometric authentication failed.": [
         "Biometrisk autentisering misslyckades."
+      ],
+      "Biometric lock is not configured.": [
+        "Biometriskt lås är inte konfigurerat."
+      ],
+      "Biometric lock setup failed.": [
+        "Biometrisk låsinställning misslyckades."
       ],
       "Cannot create alias (${ error }).": [
         "Kan inte skapa alias (${ error })."
@@ -2027,6 +2030,9 @@
       "Loading...": [
         "Laddar in …"
       ],
+      "Logging you out...": [
+        "Du loggas ut …"
+      ],
       "Low Priority": [
         "Låg prioritet"
       ],
@@ -2054,6 +2060,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Flyttar alla objekt från “${ payload.content.name }“"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Att flytta ett objekt till annat valv kommer radera dess säkra länkar.",
+        "Att flytta objekt till annat valv kommer radera deras säkra länkar."
       ],
       "Moving items": [
         "Flyttar objekt"
@@ -2533,12 +2543,6 @@
       ],
       "Unlimited hide-my-email aliases and advanced alias management": [
         "Obegränsade hide-my-email-alias och avancerad aliashantering"
-      ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
-        "Lås upp ${ PASS_APP_NAME } med din PIN-kod för att komma åt dina passkeys"
-      ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
-        "Lås upp ${ PASS_APP_NAME } med din PIN-kod för att spara denna passkey"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Lås upp ${ PASS_SHORT_APP_NAME } med biometri"

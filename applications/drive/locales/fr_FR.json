@@ -88,9 +88,9 @@
       "Add photos": [
         "Ajouter des photos"
       ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "Ajouter à « ${ album.name } » (${ album.photoCount } photo)",
-        "Ajouter à « ${ album.name } » (${ album.photoCount } photos)"
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "Ajouter à « ${ name } » (${ photoCount } photo)",
+        "Ajouter à « ${ name } » (${ photoCount } photos)"
       ],
       "Add to album": [
         "Ajouter à l'album"
@@ -515,9 +515,6 @@
       "Get in touch": [
         "Nous contacter"
       ],
-      "Get link": [
-        "Obtenir le lien"
-      ],
       "Get mobile and desktop apps": [
         "Obtenir les applications mobile et de bureau"
       ],
@@ -644,9 +641,6 @@
       "Load image": [
         "Charger l'image"
       ],
-      "Loading link": [
-        "Chargement du lien"
-      ],
       "Make a copy": [
         "Faire une copie"
       ],
@@ -661,9 +655,6 @@
       ],
       "Manage labels": [
         "Gérer les labels"
-      ],
-      "Manage link": [
-        "Gérer le lien"
       ],
       "Manage share": [
         "Gérer le partage"
@@ -2606,6 +2597,9 @@
       "North Korea": [
         "Corée du Nord"
       ],
+      "North Macedonia": [
+        "Macédoine du Nord"
+      ],
       "Northern Mariana Islands": [
         "Îles Mariannes du Nord"
       ],
@@ -4399,7 +4393,15 @@
         "Vitesses extrêmement élevées"
       ]
     },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Nous vous invitons à réessayer."
+      ]
+    },
     "fido2: Info": {
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Insérez une clé de sécurité associée à votre compte ${ BRAND_NAME }."
+      ],
       "Security key": [
         "Clé de sécurité"
       ]
@@ -4899,6 +4901,10 @@
       "${ albumName } has been successfully deleted": [
         "${ albumName } a été supprimé."
       ],
+      "${ albums } album": [
+        "${ albums } album",
+        "${ albums } albums"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } a besoin de votre autorisation pour ${ enableDesktopNotifications }."
       ],
@@ -4982,6 +4988,14 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName } : aperçu en basse résolution"
       ],
+      "${ files } file": [
+        "${ files } fichier",
+        "${ files } fichiers"
+      ],
+      "${ folders } folder": [
+        "${ folders } dossier",
+        "${ folders } dossiers"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } groupe trouvé",
         "${ groupCounts } groupes trouvés"
@@ -5015,6 +5029,10 @@
       "${ photoCount } item": [
         "${ photoCount } élément",
         "${ photoCount } éléments"
+      ],
+      "${ photos } photo": [
+        "${ photos } photo",
+        "${ photos } photos"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } nécessite au moins un serveur dédié ${ serverPricePerMonth }."
@@ -5524,6 +5542,9 @@
       "Duplicate key updated": [
         "La clé dupliquée a été mise à jour."
       ],
+      "Each code can only be used once": [
+        "Chaque code ne peut être utilisé qu'une seule fois."
+      ],
       "Edit email address": [
         "Modifier l'adresse e-mail"
       ],
@@ -5574,6 +5595,9 @@
       ],
       "Enter the verification code that was sent to ${ destinationText }.": [
         "Saisissez le code de vérification qui a été envoyé à ${ destinationText }."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Saisissez le code de vérification. Entrez ${ digit }."
       ],
       "Enter your own password (as organization admin).": [
         "Entrez votre propre mot de passe (en tant qu'administrateur de l'organisation)."
@@ -6314,9 +6338,6 @@
       "Shared by ${ sharedBy }": [
         "Partagé par ${ sharedBy }"
       ],
-      "Shared by you": [
-        "Partagé par vous"
-      ],
       "Shared link not found": [
         "Le lien partagé n'a pas été trouvé."
       ],
@@ -6643,9 +6664,6 @@
       "Unsupported file type for Photos": [
         "Type de fichier non pris en charge pour Photos"
       ],
-      "Untitled": [
-        "Sans titre"
-      ],
       "Update required": [
         "Une mise à jour est nécessaire"
       ],
@@ -6720,9 +6738,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Bien joué ! Vous venez d'augmenter votre espace de stockage à 5 Go."
-      ],
-      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "Nous rencontrons des problèmes techniques. Toutes les actions liées aux albums sont temporairement désactivées."
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "Nous n'avons pas pu vérifier que ${ nameAuthor } a importé ${ node.name }. Les éléments suivants pourraient avoir été falsifiés : ordre des données du fichier. Ouvrez uniquement si vous faites confiance à ce fichier."
@@ -9540,9 +9555,6 @@
       "Access updated": [
         "L'accès a été mis à jour."
       ],
-      "Album failed to be renamed": [
-        "Le nom de l'album n'a pas pu être modifié."
-      ],
       "Album renamed successfully": [
         "Le nom de l'album a été modifié."
       ],
@@ -9593,9 +9605,6 @@
       ],
       "Failed to download files: ${ err }": [
         "Les fichiers n'ont pas pu être téléchargés : ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "Le chargement des informations de l'invitation n'a pas abouti."
       ],
       "Failed to move, please try again": [
         "Le déplacement n'a pas abouti, réessayez."
@@ -9726,6 +9735,11 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Certaines images n'ont pas été importées car la sélection en cours contient des noms de fichier dupliqués."
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "Le nom de l'album a été modifié."
       ]
     },
     "Oauth instructions": {
@@ -10663,11 +10677,6 @@
         "Nom"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "contactez"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "Toutes les fonctionnalités de premier tiers ${ BRAND_NAME } : ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME } et ${ CALENDAR_SHORT_APP_NAME }"
@@ -11084,6 +11093,18 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Vous disposez de ${ timeRemaining.inDays } jour pour réinitialiser votre mot de passe.",
         "Vous disposez de ${ timeRemaining.inDays } jours pour réinitialiser votre mot de passe."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Vous disposez de ${ timeRemaining.inHours } heure pour réinitialiser votre mot de passe.",
+        "Vous disposez de ${ timeRemaining.inHours } heures pour réinitialiser votre mot de passe."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Vous disposez de ${ timeRemaining.inMinutes } minute pour réinitialiser votre mot de passe.",
+        "Vous disposez de ${ timeRemaining.inMinutes } minutes pour réinitialiser votre mot de passe."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Vous disposez de ${ timeRemaining.inSeconds } seconde pour réinitialiser votre mot de passe.",
+        "Vous disposez de ${ timeRemaining.inSeconds } secondes pour réinitialiser votre mot de passe."
       ]
     },
     "session_recovery:available:link": {
@@ -11669,6 +11690,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistant d'écriture ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, et ${ LUMO_APP_NAME } avec les fonctionnalités premium"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } et ${ VPN_SHORT_APP_NAME } avec leurs fonctionnalités premium"
       ],
@@ -11899,6 +11926,10 @@
       ],
       "Version history": [
         "Historique des versions"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Vidéoconférences, jusqu'à ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant",
+        "Vidéoconférences, jusqu'à ${ PAID_PREMIUM_MAX_PARTICIPANTS } participants"
       ],
       "Watch the interview": [
         "Voir l'interview"
