@@ -1,4 +1,5 @@
 import debounce from 'lodash/debounce';
+import { isSafariPopoverWindow } from 'proton-pass-extension/lib/utils/safari';
 import { isVivaldiBrowser } from 'proton-pass-extension/lib/utils/vivaldi';
 import type { Tabs } from 'webextension-polyfill';
 
@@ -69,12 +70,7 @@ export const isExpandedPopup = async (): Promise<boolean> => {
         let expanded: boolean;
 
         if (BUILD_TARGET === 'safari') {
-            /** In Safari, `browser.tabs.getCurrent()` called from the popover returns
-             * the tab behind it — so a URL check fails when the tab behind is itself
-             * the expanded popup.html. Ask the extension for its "popup" views: the
-             * popover window is listed there, the expanded tab is not. */
-            const popupViews = browser.extension.getViews({ type: 'popup' });
-            expanded = !popupViews.includes(window);
+            expanded = !isSafariPopoverWindow();
         } else {
             /** On chromium based browsers : the current tab will be `undefined`
              * when called from the extension popup frame */
