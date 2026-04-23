@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import { defineNavigation } from './api';
+import { defineNavigation } from './api/defineNavigation';
 import type { NavContext } from './types/models';
 import type { NavDefinition, NavItemResolver } from './types/nav';
 import type { TestUserModel } from './types/test.models';
