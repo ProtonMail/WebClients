@@ -9436,6 +9436,9 @@
       "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
         "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME } og ${ SHEETS_SHORT_APP_NAME }."
       ],
+      "Free": [
+        "Free"
+      ],
       "From: ${ fromEmail }": [
         "Fra: ${ fromEmail }"
       ],
@@ -9791,6 +9794,9 @@
       "State": [
         "Stat"
       ],
+      "Storage": [
+        "Lagringsplass"
+      ],
       "Street address": [
         "Gateadresse"
       ],
@@ -9823,6 +9829,9 @@
       ],
       "Type": [
         "Type"
+      ],
+      "Unlimited": [
+        "Ubegrenset"
       ],
       "Upload 1 or more encryption keys": [
         "Last opp 1 eller flere krypteringsnøkler"
@@ -9880,6 +9889,9 @@
       ],
       "Why would you like to cancel?": [
         "Hvorfor ønsker du å avbryte?"
+      ],
+      "Yes": [
+        "Ja"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Ja, jeg ønsker å slette denne kontoen og all dataen dens permanent."
@@ -13030,11 +13042,6 @@
         "Din inngangsport til frihet på nettet"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "kontakt"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "Alle premiumfunksjoner fra ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ PASS_SHORT_APP_NAME }."
@@ -13254,9 +13261,6 @@
       "Verify now": [
         "Verifiser nå"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "Verifiser nå denne gjenopprettings-epostadressen: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "Verifisere gjenopprettings-epost?"
       ],
@@ -13296,9 +13300,6 @@
       ],
       "Verify recovery phone?": [
         "Verifisere gjenopprettingstelefon?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "Verifiser dette gjenopprettingstelefonnummert nå: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Bekreftelse av telefonnummeret ditt øker kontosikkerheten og gir flere alternativer for gjenoppretting."
@@ -15774,8 +15775,14 @@
       "Account recovery": [
         "Kontogjenoppretting"
       ],
+      "Account restricted": [
+        "Konto begrenset"
+      ],
       "Account suspended": [
         "Kontoen er suspendert"
+      ],
+      "Account temporarily locked": [
+        "Konto midlertidig låst"
       ],
       "Action": [
         "Handling"

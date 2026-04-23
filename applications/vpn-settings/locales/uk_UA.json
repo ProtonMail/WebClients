@@ -7223,6 +7223,9 @@
       "Folder location": [
         "Розташування теки"
       ],
+      "Free": [
+        "Free"
+      ],
       "From: ${ fromEmail }": [
         "Від: ${ fromEmail }"
       ],
@@ -7517,6 +7520,9 @@
       "State": [
         "Стан"
       ],
+      "Storage": [
+        "Сховище"
+      ],
       "Street address": [
         "Вулиця"
       ],
@@ -7543,6 +7549,9 @@
       ],
       "Type": [
         "Тип"
+      ],
+      "Unlimited": [
+        "Необмежено"
       ],
       "Upload 1 or more encryption keys": [
         "Вивантажте 1 чи більше ключів шифрування"
@@ -9977,11 +9986,6 @@
         "Безпечна електронна пошта, що захищає вашу приватність"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "зверніться"
-      ]
-    },
     "Plans": {
       "${ cycle } month": [
         "${ cycle } місяць",
@@ -10063,9 +10067,6 @@
       "Verify now": [
         "Підтвердити"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "Тепер підтвердьте цю адресу електронної пошти для відновлення: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "Підтвердити резервну е-пошту?"
       ],
@@ -10105,9 +10106,6 @@
       ],
       "Verify recovery phone?": [
         "Перевірити резервний номер телефону?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "Тепер підтвердьте цей номер телефону для відновлення: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Підтвердження номера телефону посилює безпеку вашого облікового запису та розширює можливості відновлення."
@@ -12262,6 +12260,9 @@
       ],
       "Account recovery": [
         "Відновлення облікового запису"
+      ],
+      "Account restricted": [
+        "Обліковий запис обмежено"
       ],
       "Account suspended": [
         "Обліковий запис призупинено"
