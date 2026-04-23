@@ -88,9 +88,9 @@
       "Add photos": [
         "Lägg till foton"
       ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "Lägg till “${ album.name }” (${ album.photoCount } foto)",
-        "Lägg till “${ album.name }” (${ album.photoCount } foton)"
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "Lägg till i ”${ name }” (${ photoCount } foto)",
+        "Lägg till i ”${ name }” (${ photoCount } foton)"
       ],
       "Add to album": [
         "Lägg till i album"
@@ -515,9 +515,6 @@
       "Get in touch": [
         "Kontakta oss"
       ],
-      "Get link": [
-        "Få länk"
-      ],
       "Get mobile and desktop apps": [
         "Skaffa appar för mobil och stationär dator"
       ],
@@ -644,9 +641,6 @@
       "Load image": [
         "Ladda bild"
       ],
-      "Loading link": [
-        "Laddar länk"
-      ],
       "Make a copy": [
         "Göra en kopia"
       ],
@@ -661,9 +655,6 @@
       ],
       "Manage labels": [
         "Hantera etiketter"
-      ],
-      "Manage link": [
-        "Hantera länk"
       ],
       "Manage share": [
         "Hantera delning"
@@ -4877,6 +4868,10 @@
       "${ albumName } has been successfully deleted": [
         "${ albumName } har tagits bort"
       ],
+      "${ albums } album": [
+        "${ albums } album",
+        "${ albums } album"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } behöver din tillåtelse för att ${ enableDesktopNotifications }."
       ],
@@ -4960,6 +4955,14 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: lågupplöst förhandsgranskning"
       ],
+      "${ files } file": [
+        "${ files } fil",
+        "${ files } filer"
+      ],
+      "${ folders } folder": [
+        "${ folders } mapp",
+        "${ folders } mappar"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } grupp hittades",
         "${ groupCounts } grupper hittades"
@@ -4987,6 +4990,10 @@
       "${ photoCount } item": [
         "${ photoCount } objekt",
         "${ photoCount } objekt"
+      ],
+      "${ photos } photo": [
+        "${ photos } foto",
+        "${ photos } foton"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } kräver minst 1 dedikerad server ${ serverPricePerMonth }"
@@ -5717,6 +5724,18 @@
       "Index is empty.": [
         "Index är tom."
       ],
+      "Indexed ${ first }": [
+        "Indexerade ${ first }"
+      ],
+      "Indexed ${ first } and ${ second }": [
+        "Indexerade ${ first } och ${ second }"
+      ],
+      "Indexed ${ first }, ${ second } and ${ third }": [
+        "Indexerade ${ first }, ${ second } och ${ third }"
+      ],
+      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
+        "Indexerade ${ first }, ${ second }, ${ third } och ${ fourth }"
+      ],
       "Indexing in progress": [
         "Indexering pågår"
       ],
@@ -6277,9 +6296,6 @@
       "Shared by ${ sharedBy }": [
         "Delat av ${ sharedBy }"
       ],
-      "Shared by you": [
-        "Delat av dig"
-      ],
       "Shared link not found": [
         "Delad länk hittades inte"
       ],
@@ -6603,9 +6619,6 @@
       "Unsupported file type for Photos": [
         "Filtyp för foton stöds inte"
       ],
-      "Untitled": [
-        "Ingen rubrik"
-      ],
       "Update required": [
         "Uppgradering krävs"
       ],
@@ -6680,9 +6693,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Du har just ökat ditt lagringsutrymme till 5 GB!"
-      ],
-      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "Vi har tekniska problem. Alla albumrelaterade åtgärder är tillfälligt inaktiverade."
       ],
       "We couldn’t process your payment.": [
         "Vi kunde inte behandla din betalning."
@@ -8607,6 +8617,9 @@
       "Data breach monitoring": [
         "Dataintrångsövervakning"
       ],
+      "Dedicated servers optimized for speed": [
+        "Dedikerade servrar optimerade för hastighet"
+      ],
       "Desktop app": [
         "Skrivbordsapp"
       ],
@@ -9440,9 +9453,6 @@
       "Access updated": [
         "Åtkomst uppdaterad"
       ],
-      "Album failed to be renamed": [
-        "Album misslyckades att byta namn"
-      ],
       "Album renamed successfully": [
         "Album har bytt namn"
       ],
@@ -9493,9 +9503,6 @@
       ],
       "Failed to download files: ${ err }": [
         "Misslyckades att ladda ner filer: ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "Misslyckades att ladda inbjudningsdetaljer"
       ],
       "Failed to move, please try again": [
         "Misslyckades att flytta, försök igen"
@@ -9626,6 +9633,11 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Några bilder laddades inte upp på grund av dubbla filnamn i det nuvarande valet."
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "Album har bytt namn"
       ]
     },
     "Oauth instructions": {
@@ -10552,11 +10564,6 @@
     "Placeholder for contact group name": {
       "Name": [
         "Namn"
-      ]
-    },
-    "plan customizer, users": {
-      "contact": [
-        "kontakt"
       ]
     },
     "Plan description": {
@@ -11802,6 +11809,10 @@
       ],
       "Version history": [
         "Versionshistorik"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Videomöten, upp till ${ PAID_PREMIUM_MAX_PARTICIPANTS } deltagare",
+        "Videomöten, upp till ${ PAID_PREMIUM_MAX_PARTICIPANTS } deltagare"
       ],
       "Watch the interview": [
         "Se intervjun"
