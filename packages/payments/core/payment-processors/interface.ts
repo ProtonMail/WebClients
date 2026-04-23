@@ -46,6 +46,7 @@ export interface PaymentProcessorHook {
     processPaymentToken: () => Promise<unknown>;
     processingToken: boolean;
     reset: () => void;
+    userInitiatedProcessing: boolean;
     meta: {
         type: PaymentProcessorType;
         data?: any;

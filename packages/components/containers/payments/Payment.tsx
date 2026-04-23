@@ -22,6 +22,7 @@ import {
     PAYMENT_METHOD_TYPES,
     type PaymentMethodFlow,
     type PaymentMethodType,
+    type PaymentProcessorHook,
     type PlainPaymentMethodType,
     type SavedPaymentMethod,
     type SavedPaymentMethodExternal,
@@ -98,6 +99,8 @@ export interface Props {
     subscription?: Subscription | FreeSubscription;
     currencyOverride: ReturnType<typeof useSepaCurrencyOverride>;
     creditCardDetailsRef?: Ref<HTMLDivElement>;
+    selectedProcessor: PaymentProcessorHook | undefined;
+    processingPayment: boolean;
 }
 
 export const PaymentsNoApi = ({
@@ -135,6 +138,8 @@ export const PaymentsNoApi = ({
     startTrial,
     currencyOverride,
     creditCardDetailsRef,
+    selectedProcessor,
+    processingPayment,
 }: Props) => {
     const isBitcoinMethod = method === PAYMENT_METHOD_TYPES.CHARGEBEE_BITCOIN;
     const showBitcoinMethod = isBitcoinMethod && !isBilledUser(user);
@@ -271,6 +276,7 @@ export const PaymentsNoApi = ({
                             lastUsedMethod={lastUsedMethod}
                             narrow={isSingleSignup}
                             showCardIcons={showCardIcons}
+                            disabled={selectedProcessor?.userInitiatedProcessing || processingPayment}
                         />
                     </div>
                 )}

@@ -51,7 +51,7 @@ export interface Dependencies {
 type Overrides = {
     verifyPaymentToken: () => Promise<ChargeableV5PaymentParameters>;
     paymentProcessor?: ChargebeeCardPaymentProcessor;
-    processPaymentToken: () => Promise<ChargeableV5PaymentParameters>;
+    processPaymentToken: () => Promise<ChargeableV5PaymentParameters | void>;
 };
 
 export type ChargebeeCardProcessorHook = Omit<PaymentProcessorHook, keyof Overrides> & {
@@ -75,6 +75,7 @@ export const useChargebeeCard = (
 
     const [fetchingToken, withFetchingToken] = useLoading();
     const [verifyingToken, withVerifyingToken] = useLoading();
+    const [userInitiatedProcessing, withUserInitiatiatedProcessing] = useLoading();
     const processingToken = fetchingToken || verifyingToken;
 
     const paymentProcessor = usePaymentProcessor(
@@ -153,18 +154,19 @@ export const useChargebeeCard = (
         return tokenPromise;
     };
 
-    const processPaymentToken = async () => {
-        if (!paymentProcessor.fetchedPaymentToken) {
-            await fetchPaymentToken();
-        }
+    const processPaymentToken = () => {
+        return withUserInitiatiatedProcessing(async () => {
+            if (!paymentProcessor.fetchedPaymentToken) {
+                await fetchPaymentToken();
+            }
 
-        try {
-            const token = await verifyPaymentToken();
-            return token;
-        } catch (error) {
-            reset();
-            throw error;
-        }
+            try {
+                return await verifyPaymentToken();
+            } catch (error) {
+                reset();
+                throw error;
+            }
+        });
     };
 
     return {
@@ -182,6 +184,7 @@ export const useChargebeeCard = (
         processPaymentToken,
         processingToken,
         reset,
+        userInitiatedProcessing,
         meta: {
             type: 'chargebee-card',
         },
