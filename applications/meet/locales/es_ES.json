@@ -1814,6 +1814,9 @@
       "Default - ${ systemDefault.label }": [
         "Por defecto: ${ systemDefault.label }"
       ],
+      "Default - System Default": [
+        "Predeterminado — Predeterminado del sistema"
+      ],
       "Delete event": [
         "Eliminar evento"
       ],
@@ -1879,6 +1882,9 @@
       ],
       "Go to about:config, search for media.peerconnection.enabled, and set it to true.": [
         "Ve a about:config, busca media.peerconnection.enabled y establécelo en true."
+      ],
+      "Host": [
+        "Anfitrión"
       ],
       "Host your own secure meeting. Start a call in ${ MEET_APP_NAME } and share the link to invite anyone to join. Simple, secure, and free.": [
         "Organiza tus propias reuniones seguras. Inicia una llamada en ${ MEET_APP_NAME } y comparte el enlace para invitar a quien quieras. Fácil, seguro y gratuito."
@@ -2561,8 +2567,14 @@
       "Others couldn't hear me": [
         "No podían oírme"
       ],
+      "Others couldn't see my video": [
+        "Los demás no podían ver mi vídeo"
+      ],
       "The presentation was blurry": [
         "La presentación estaba borrosa"
+      ],
+      "Video quality was poor": [
+        "La calidad del vídeo era baja"
       ]
     },
     "Placeholder": {
