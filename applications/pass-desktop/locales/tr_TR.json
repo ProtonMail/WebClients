@@ -1377,6 +1377,21 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
         "${ PASS_APP_NAME } masaüstü uygulamasında farklı bir hesapla oturum açılmış."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Biyometrik kilit kimlik doğrulama bilgileri eşleşmiyor."
+      ],
+      "Biometric lock credentials not found.": [
+        "Biyometrik kilit kimlik doğrulama bilgileri bulunamadı."
+      ],
+      "Biometric lock is not configured.": [
+        "Biyometrik kilit yapılandırılmamış."
+      ],
+      "Biometric lock setup failed.": [
+        "Biyometrik kilit kurulumu başarısız oldu."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "${ PASS_APP_NAME } masaüstü uygulamasında oturum açılmış olmalıdır."
       ]
     },
     "Error message": {
@@ -2049,7 +2064,8 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
+        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
+        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -5258,7 +5274,7 @@
     },
     "Upsell": {
       "Get ${ planName }": [
-        "${ planName } tarifesini edinin"
+        "${ planName } edin"
       ]
     }
   }
