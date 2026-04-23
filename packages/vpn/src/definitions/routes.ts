@@ -1,6 +1,6 @@
 import { c } from 'ttag';
 
-import { defineNavigation } from '@proton/nav/api';
+import { defineNavigation } from '@proton/nav/api/defineNavigation';
 import type { NavContext } from '@proton/nav/types/models';
 import type { NavDefinition, NavItemDefinition } from '@proton/nav/types/nav';
 import type { MaybeFreeSubscription } from '@proton/payments/core/subscription/helpers';
@@ -28,7 +28,7 @@ type VpnNavContext = {
     flags: Partial<Record<FeatureFlag, boolean>>;
 } & NavContext;
 
-const routesDefinition: NavDefinition<VpnNavContext> = {
+const routesDefinition = {
     items: [
         {
             id: 'organization',
@@ -266,7 +266,7 @@ const routesDefinition: NavDefinition<VpnNavContext> = {
             ],
         },
     ],
-};
+} as const satisfies NavDefinition<VpnNavContext>;
 
 type Args = {
     prefix?: NavContext['prefix'];
