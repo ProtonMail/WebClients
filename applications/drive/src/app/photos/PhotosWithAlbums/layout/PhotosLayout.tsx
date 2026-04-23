@@ -8,7 +8,7 @@ import { Loader, useConfirmActionModal, useModalStateObject, useNotifications } 
 import { MemberRole, generateNodeUid, getDriveForPhotos, splitNodeUid } from '@proton/drive';
 import { BusDriverEventName, getBusDriver } from '@proton/drive/internal/BusDriver';
 import { useSharingModal } from '@proton/drive/modules/sharingModal';
-import { uploadManager } from '@proton/drive/modules/upload';
+import { UploadStatus, uploadManager, useUploadQueueStore } from '@proton/drive/modules/upload';
 import { API_CUSTOM_ERROR_CODES } from '@proton/shared/lib/errors';
 import { PhotoTag } from '@proton/shared/lib/interfaces/drive/file';
 import { useFlag } from '@proton/unleash/useFlag';
@@ -32,6 +32,7 @@ import { useDeleteAlbumModal } from '../../PhotosModals/DeleteAlbumModal';
 import { useRemoveAlbumPhotosModal } from '../../PhotosModals/RemoveAlbumPhotosModal';
 import { useAlbumPhotoUploadSDKStore } from '../../PhotosStore/useAlbumPhotoUploadSDK.store';
 import { usePhotosWithAlbumsView } from '../../PhotosStore/usePhotosWithAlbumView';
+import { loadCurrentAlbum } from '../../loaders/loadAlbum';
 import { type AlbumItem, useAlbumsStore } from '../../useAlbums.store';
 import { usePhotosStore } from '../../usePhotos.store';
 import PhotosRecoveryBanner from '../components/PhotosRecoveryBanner/PhotosRecoveryBanner';
@@ -130,7 +131,9 @@ export const PhotosLayout = () => {
         return typeof item !== 'string' ? (item as typeof item & { nodeUid: string }) : undefined;
     }, [currentPageType, photos, albumPhotos, previewNodeUid, albumPhotosNodeUidToIndexMap, photoNodeUidToIndexMap]);
 
-    const album = useAlbumsStore(useShallow((state) => state.currentAlbum));
+    const album = useAlbumsStore(
+        useShallow((state) => (state.currentAlbumNodeUid ? state.albums.get(state.currentAlbumNodeUid) : undefined))
+    );
 
     const albumName = album?.name;
 
@@ -388,14 +391,14 @@ export const PhotosLayout = () => {
     );
 
     const onRemoveAlbumPhotos = useCallback(async () => {
-        const photoNodeUidSet = new Set(photoNodeUids);
         const { missingPhotosIds, selectedPhotosIds } = selectedItemsNodeUids.reduce<{
             selectedPhotosIds: string[];
             missingPhotosIds: string[];
         }>(
             (acc, nodeUid) => {
                 const linkId = splitNodeUid(nodeUid).nodeId;
-                if (!photoNodeUidSet.has(nodeUid)) {
+                const photoItem = usePhotosStore.getState().getPhotoItem(nodeUid);
+                if (!photoItem?.additionalInfo?.parentNodeUid) {
                     acc.missingPhotosIds.push(linkId);
                 }
                 acc.selectedPhotosIds.push(linkId);
@@ -416,7 +419,7 @@ export const PhotosLayout = () => {
                     }),
             });
         }
-    }, [selectedItemsNodeUids, photoNodeUids, handleRemoveAlbumPhotos, showRemoveAlbumPhotosModal]);
+    }, [selectedItemsNodeUids, handleRemoveAlbumPhotos, showRemoveAlbumPhotosModal]);
 
     const onPhotoUploadedToAlbum = useCallback(
         async (album: AlbumItem | undefined, file: OnFileUploadSuccessCallbackData) => {
@@ -640,17 +643,9 @@ export const PhotosLayout = () => {
     useEffect(
         function initializePhotos() {
             const drive = getDriveForPhotos();
-
-            // Either we load album's photos or timeline
-            const getNodeUidOrMaybeNode = async () => {
-                return albumShareId && albumLinkId
-                    ? drive.getNodeUid(albumShareId, albumLinkId)
-                    : drive.getMyPhotosRootFolder();
-            };
-
-            void getNodeUidOrMaybeNode().then((nodeUidOrMaybeNode) => initializePhotosView(nodeUidOrMaybeNode));
+            void drive.getMyPhotosRootFolder().then((nodeUidOrMaybeNode) => initializePhotosView(nodeUidOrMaybeNode));
         },
-        [initializePhotosView, albumShareId, albumLinkId]
+        [initializePhotosView]
     );
 
     // Subscribe to upload events to automatically add uploaded photos to the current album.
@@ -663,9 +658,19 @@ export const PhotosLayout = () => {
         let needUnsubscribe = false;
         uploadManager.subscribeToEvents('photos-layout', async (event) => {
             if (event.type === 'file:queued' && event.isForPhotos) {
-                useAlbumPhotoUploadSDKStore
-                    .getState()
-                    .setContext(event.uploadId, { albumShareId, albumLinkId, isOwner: !!album?.isOwner });
+                const albumsState = useAlbumsStore.getState();
+                const currentAlbum =
+                    albumsState.getCurrentAlbum() ??
+                    [...albumsState.albums.values()].find((a) => splitNodeUid(a.nodeUid).nodeId === albumLinkId);
+                if (!currentAlbum) {
+                    return;
+                }
+                useAlbumPhotoUploadSDKStore.getState().setContext(event.uploadId, {
+                    albumNodeUid: currentAlbum.nodeUid,
+                    albumShareId,
+                    albumLinkId,
+                    isOwner: currentAlbum.isOwner,
+                });
             } else if ((event.type === 'file:complete' && event.isForPhotos) || event.type === 'photo:exist') {
                 const uploadContext = useAlbumPhotoUploadSDKStore.getState().getContext(event.uploadId);
                 if (uploadContext) {
@@ -689,6 +694,15 @@ export const PhotosLayout = () => {
                                 newNodeIds[0]
                             );
                         }
+                        if (useAlbumsStore.getState().currentAlbumNodeUid === uploadContext.albumNodeUid) {
+                            await loadCurrentAlbum(uploadContext.albumNodeUid);
+                        }
+                        // TODO: show a more specific label like "Added to album" instead of "Uploaded"
+                        if (event.type === 'photo:exist') {
+                            useUploadQueueStore.getState().updateQueueItems(event.uploadId, {
+                                status: UploadStatus.Finished,
+                            });
+                        }
                     } catch (e) {
                         if (e instanceof Error && e.message) {
                             createNotification({ text: e.message, type: 'error' });
@@ -711,15 +725,7 @@ export const PhotosLayout = () => {
                 needUnsubscribe = true;
             }
         };
-    }, [
-        currentPageType,
-        albumShareId,
-        albumLinkId,
-        album?.isOwner,
-        createNotification,
-        addAlbumPhotos,
-        addNewAlbumPhotoToCache,
-    ]);
+    }, [currentPageType, albumShareId, albumLinkId, createNotification, addAlbumPhotos, addNewAlbumPhotoToCache]);
 
     const isAlbumPhotosLoading = useAlbumsStore((state) => state.isLoading);
 
@@ -737,7 +743,7 @@ export const PhotosLayout = () => {
         const previewableNodeUids =
             currentPageType === AlbumsPageTypes.ALBUMSGALLERY
                 ? // TODO: Improve this condition
-                  albumStore.currentAlbum?.photoNodeUids
+                  albumStore.getCurrentAlbum()?.photoNodeUids
                 : photosStore.photoTimelineUids;
 
         showPreviewModal({
@@ -756,7 +762,7 @@ export const PhotosLayout = () => {
                 onSelectCover:
                     canChangeAlbumCoverInPreview &&
                     currentPageType === AlbumsPageTypes.ALBUMSGALLERY &&
-                    albumStore.currentAlbum?.coverNodeUid !== photoItem.nodeUid
+                    albumStore.getCurrentAlbum()?.coverNodeUid !== photoItem.nodeUid
                         ? () => {
                               void onSelectCoverPreview();
                           }

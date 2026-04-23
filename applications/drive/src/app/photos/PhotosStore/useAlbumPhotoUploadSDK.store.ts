@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 
 interface AlbumUploadContext {
+    albumNodeUid: string;
     albumShareId: string;
     albumLinkId: string;
     isOwner: boolean;

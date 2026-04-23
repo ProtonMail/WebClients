@@ -18,7 +18,8 @@ export const subscribeToPhotosEvents = () => {
 
         const photosStore = usePhotosStore.getState();
         const albumStore = useAlbumsStore.getState();
-        const currentAlbumNodeUid = albumStore.currentAlbum?.nodeUid;
+        const currentAlbumNodeUid = albumStore.currentAlbumNodeUid;
+        const currentAlbum = albumStore.getCurrentAlbum();
 
         const timelineNodeUids: string[] = [];
         const albumNodeUids: string[] = [];
@@ -28,7 +29,7 @@ export const subscribeToPhotosEvents = () => {
             const isNewAlbumPhoto =
                 currentAlbumNodeUid &&
                 item.parentUid === currentAlbumNodeUid &&
-                !albumStore.currentAlbum?.photoNodeUids?.has(item.uid);
+                !currentAlbum?.photoNodeUids?.has(item.uid);
 
             if (isNewTimelinePhoto) {
                 timelineNodeUids.push(item.uid);
@@ -70,22 +71,26 @@ export const subscribeToPhotosEvents = () => {
         const timelineUids: string[] = [];
         const albumOnlyUids: string[] = [];
         for (const item of event.items) {
-            const inAlbum = albumStore.currentAlbum?.photoNodeUids?.has(item.uid) ?? false;
-            const isAlbumNode = albumStore.currentAlbum?.nodeUid == item.uid;
+            const currentAlbum = albumStore.getCurrentAlbum();
+            const inAlbum = currentAlbum?.photoNodeUids?.has(item.uid) ?? false;
+            const isCurrentlyOpenAlbum = albumStore.currentAlbumNodeUid === item.uid;
             // TODO: Update that as we probably can do it differently instead of loading the root
             const getIsInTimeline = async () =>
                 photosStore.photoTimelineUids.has(item.uid) ||
                 getNodeEntity(await getDriveForPhotos().getMyPhotosRootFolder()).node.uid === item.parentUid;
-            if (!inAlbum && !isAlbumNode && !(await getIsInTimeline())) {
+            if (!inAlbum && !isCurrentlyOpenAlbum && !(await getIsInTimeline())) {
                 continue;
             }
             if (item.isTrashed) {
                 photosStore.removePhotoItem(item.uid);
+                if (inAlbum) {
+                    albumStore.removePhotoNodeUids([item.uid]);
+                }
                 continue;
             }
             if (inAlbum) {
                 albumOnlyUids.push(item.uid);
-            } else if (isAlbumNode) {
+            } else if (isCurrentlyOpenAlbum) {
                 void refreshAlbumMetadata(item.uid);
             } else {
                 timelineUids.push(item.uid);
@@ -103,8 +108,8 @@ export const subscribeToPhotosEvents = () => {
             for (const item of albumOnlyItems) {
                 photosStore.setPhotoItemWithoutTimeline(item);
             }
-            if (albumStore.currentAlbum) {
-                void refreshAlbumMetadata(albumStore.currentAlbum.nodeUid);
+            if (albumStore.currentAlbumNodeUid) {
+                void refreshAlbumMetadata(albumStore.currentAlbumNodeUid);
             }
         }
     });
