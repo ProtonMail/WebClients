@@ -163,17 +163,9 @@ export const PhotosTags = ({ selectedTags, tags, onTagSelect }: PhotosTagsProps)
         }
     };
 
-    return <Tags<PhotoTag> selectedTags={selectedTags} tags={filteredTags} onTagSelect={handleTagSelect} />;
+    return <Tags selectedTags={selectedTags} tags={filteredTags} onTagSelect={handleTagSelect} />;
 };
 
 export const AlbumsTags = ({ selectedTags, tags, onTagSelect, counts, loading }: AlbumsTagsProps) => {
-    return (
-        <Tags<AlbumTag>
-            selectedTags={selectedTags}
-            tags={tags}
-            onTagSelect={onTagSelect}
-            counts={counts}
-            loading={loading}
-        />
-    );
+    return <Tags selectedTags={selectedTags} tags={tags} onTagSelect={onTagSelect} counts={counts} loading={loading} />;
 };
