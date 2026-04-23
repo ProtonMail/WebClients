@@ -21,6 +21,7 @@ import { LoadLogger } from '../LoadLogger/LoadLogger'
 import { PostApplicationError } from '../Application/ApplicationEvent'
 import { c } from 'ttag'
 import { downloadExport } from '../UseCase/ExportAndDownload'
+import { decompressDocumentUpdate, isCompressedDocumentUpdate } from '../utils/document-update-compression'
 
 export interface EditorControllerInterface {
   getCurrentSelection(format: DataTypesThatDocumentCanBeExportedAs): Promise<string | null>
@@ -167,14 +168,19 @@ export class EditorController implements EditorControllerInterface {
       return
     }
 
+    this.logger.info('Sending base commit messages to editor')
     try {
-      const squashedContent = await baseCommit.squashedRepresentation()
-      this.logger.info('Sending base commit to editor')
-      void this.editorInvoker?.receiveMessage({
-        type: { wrapper: 'du' },
-        content: squashedContent,
-        origin: DocUpdateOrigin.InitialLoad,
-      })
+      for (const message of baseCommit.messages) {
+        let content = message.content
+        if (isCompressedDocumentUpdate(content)) {
+          content = decompressDocumentUpdate(content)
+        }
+        void this.editorInvoker?.receiveMessage({
+          type: { wrapper: 'du' },
+          content,
+          origin: DocUpdateOrigin.BaseCommit,
+        })
+      }
     } catch (error) {
       if (error instanceof Error) {
         this.logger.error(error)
