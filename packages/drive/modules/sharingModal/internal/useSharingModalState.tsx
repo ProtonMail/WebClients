@@ -367,6 +367,7 @@ export const useSharingModalState = ({
         onExit,
         onClose,
         sharingInfo,
+        drive,
         nodeUid,
         roleOnParentNode,
         fileName,
