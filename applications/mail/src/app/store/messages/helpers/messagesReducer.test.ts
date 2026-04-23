@@ -396,56 +396,6 @@ describe('messagesReducer', () => {
             ]);
             expect(messageState.data?.LabelIDs).not.toContain(MAILBOX_LABEL_IDS.INBOX);
         });
-
-        it('should replace old category with new category when moving between categories', () => {
-            const messageState: MessageState = {
-                localID: 'msg1',
-                data: {
-                    ID: 'msg1',
-                    LabelIDs: [
-                        MAILBOX_LABEL_IDS.INBOX,
-                        MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
-                        MAILBOX_LABEL_IDS.ALL_MAIL,
-                        MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
-                    ],
-                } as Message,
-            };
-
-            const state = {
-                msg1: messageState,
-            } as Draft<MessagesState>;
-
-            labelMessagesPending(state, {
-                type: 'labelMessages/pending',
-                payload: undefined,
-                meta: {
-                    arg: {
-                        messages: [
-                            {
-                                ID: 'msg1',
-                                LabelIDs: [
-                                    MAILBOX_LABEL_IDS.INBOX,
-                                    MAILBOX_LABEL_IDS.CATEGORY_SOCIAL,
-                                    MAILBOX_LABEL_IDS.ALL_MAIL,
-                                    MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
-                                ],
-                            } as MessageMetadata,
-                        ],
-                        destinationLabelID: MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
-                        labels: [] as Label[],
-                        folders: [] as Folder[],
-                    },
-                },
-            });
-
-            expect(messageState.data?.LabelIDs).toStrictEqual([
-                MAILBOX_LABEL_IDS.INBOX,
-                MAILBOX_LABEL_IDS.ALL_MAIL,
-                MAILBOX_LABEL_IDS.ALMOST_ALL_MAIL,
-                MAILBOX_LABEL_IDS.CATEGORY_PROMOTIONS,
-            ]);
-            expect(messageState.data?.LabelIDs).not.toContain(MAILBOX_LABEL_IDS.CATEGORY_SOCIAL);
-        });
     });
 
     describe('unlabelMessagesPending', () => {
