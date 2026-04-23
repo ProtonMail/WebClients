@@ -6069,9 +6069,6 @@
       "Recovery contact enabled": [
         "復旧用連絡先が有効になりました"
       ],
-      "Recovery contacts": [
-        "復旧用連絡先"
-      ],
       "Recovery request sent": [
         "復旧リクエストが送信されました"
       ],
@@ -6187,9 +6184,6 @@
         "まだ、どなたの緊急連絡先にも指定されていません。"
       ],
       "You reached the maximum of ${ limit } emergency contact.": [
-        "緊急連絡先の最大数${ limit }件に達しました。"
-      ],
-      "You reached the maximum of ${ limit } recovery contact.": [
         "緊急連絡先の最大数${ limit }件に達しました。"
       ],
       "You will be notified when someone requests emergency access.": [
@@ -13174,6 +13168,9 @@
       "for your first month": [
         "最初の1か月間"
       ],
+      "Free": [
+        "Free"
+      ],
       "From: ${ fromEmail }": [
         "送信者: ${ fromEmail }"
       ],
@@ -13771,6 +13768,9 @@
       "Sticky labels": [
         "スティッキーラベル"
       ],
+      "Storage": [
+        "容量"
+      ],
       "Street address": [
         "番地"
       ],
@@ -13839,6 +13839,9 @@
       ],
       "Undo send": [
         "送信取り消し"
+      ],
+      "Unlimited": [
+        "無制限"
       ],
       "Unlimited hide-my-email aliases": [
         "無制限の hide-my-email エイリアス"
@@ -18028,11 +18031,6 @@
         "オンラインの自由への入り口です"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "お問い合わせ"
-      ]
-    },
     "Plan description": {
       "All ${ BRAND_NAME } premium products included in Duo.": [
         "Duoにはすべての${ BRAND_NAME }プレアム製品が含まれています。"
@@ -18367,9 +18365,6 @@
       "Verify now": [
         "今すぐ検証"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "この復旧用のメールアドレスを確認してください: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "回復用メールアドレスを検証しますか？"
       ],
@@ -18412,9 +18407,6 @@
       ],
       "Verify recovery phone?": [
         "回復用電話を検証しますか?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "この復旧用の電話番号を確認してください: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "電話番号を確認することでアカウントのセキュリティを向上させ、回復の追加設定のために利用できます。"

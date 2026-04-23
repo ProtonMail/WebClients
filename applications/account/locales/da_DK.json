@@ -6200,9 +6200,6 @@
       "Asking for help": [
         "Anmoder om hjælp"
       ],
-      "By adding people you trust as recovery contacts, we'll be able to send them an email to help you if you're having trouble to recover your data after a password reset. You can also be a recovery contact for others.": [
-        "Ved at tilføje personer, du stoler på, som gendannelseskontakter, kan vi sende dem en e-mail for at hjælpe dig, hvis du har problemer med at gendanne dine data efter en nulstilling af adgangskoden. Du kan også være en gendannelseskontakt for andre."
-      ],
       "Cancel request": [
         "Annuller anmodning"
       ],
@@ -6356,9 +6353,6 @@
       "Recovery contact removed": [
         "Gendannelseskontakt fjernet"
       ],
-      "Recovery contacts": [
-        "Gendannelseskontakter"
-      ],
       "Recovery request sent": [
         "Anmodning om gendannelse sendt"
       ],
@@ -6453,9 +6447,6 @@
       "To disable this recovery method, remove all your recovery contacts.": [
         "For at deaktivere denne gendannelsesmetode, skal du fjerne alle dine gendannelseskontakter."
       ],
-      "To use trusted contact recovery, you must have an account recovery method set.": [
-        "For at bruge gendannelse via betroet kontakt skal du have en konto-gendannelsesmetode konfigureret."
-      ],
       "Trusted contact": [
         "Betroet kontakt"
       ],
@@ -6507,10 +6498,6 @@
       "You reached the maximum of ${ limit } emergency contact.": [
         "De har nået det maksimale antal på ${ limit } nødkontakt.",
         "Du har nået det maksimale antal på ${ limit } nødkontakter."
-      ],
-      "You reached the maximum of ${ limit } recovery contact.": [
-        "Du har nået det maksimale antal på ${ limit } gendannelseskontakt.",
-        "Du har nået det maksimale antal på ${ limit } gendannelseskontakter."
       ],
       "You will be notified when someone requests emergency access.": [
         "Du bliver adviseret, når nogen anmoder om nødadgang."
@@ -14012,6 +13999,9 @@
       "for your first month": [
         "i din første måned"
       ],
+      "Free": [
+        "Free"
+      ],
       "From: ${ fromEmail }": [
         "Fra: ${ fromEmail }"
       ],
@@ -14616,6 +14606,9 @@
       "Sticky labels": [
         "Klæbende etiketter"
       ],
+      "Storage": [
+        "Lagerplads"
+      ],
       "Street address": [
         "Adresse"
       ],
@@ -14684,6 +14677,9 @@
       ],
       "Undo send": [
         "Fortryd send"
+      ],
+      "Unlimited": [
+        "Ubegrænset"
       ],
       "Unlimited hide-my-email aliases": [
         "Ubegrænset antal hide-my-email-aliasser"
@@ -19073,11 +19069,6 @@
         "Din port til online frihed"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "kontakt"
-      ]
-    },
     "Plan description": {
       "A VPN solution that provides secure, high-speed access to the internet.": [
         "En VPN-løsning, der giver sikker, hurtig adgang til internettet."
@@ -19420,9 +19411,6 @@
       "Verify now": [
         "Bekræft nu"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "Bekræft denne e-mailadresse til gendannelse nu: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "Bekræft e-mail til gendannelse?"
       ],
@@ -19465,9 +19453,6 @@
       ],
       "Verify recovery phone?": [
         "Bekræft telefon til gendannelse?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "Bekræft dette telefonnummer til gendannelse nu: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Ved at Bekræfte dit telefonnummer øger du din kontos sikkerhed og giver flere muligheder for gendannelse."
@@ -22184,6 +22169,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-skriveassistent"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } med premium funktioner"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } og ${ VPN_SHORT_APP_NAME } med premium funktioner"
       ],
@@ -22441,6 +22432,10 @@
       ],
       "Version history": [
         "Versionshistorik"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Videomøder, max ${ PAID_PREMIUM_MAX_PARTICIPANTS } deltager",
+        "Videomøde, op til ${ PAID_PREMIUM_MAX_PARTICIPANTS } deltagere"
       ],
       "Watch the interview": [
         "Se interviewet"

@@ -438,6 +438,9 @@
       "Create organization": [
         "Organisation erstellen"
       ],
+      "Create recovery phrase": [
+        "Wiederherstellungsphrase erstellen"
+      ],
       "Create users": [
         "Benutzer erstellen"
       ],
@@ -1347,6 +1350,9 @@
       "Save and continue": [
         "Speichern und fortfahren"
       ],
+      "Save and verify": [
+        "Speichern und verifizieren"
+      ],
       "Save changes": [
         "Änderungen speichern"
       ],
@@ -1367,6 +1373,9 @@
       ],
       "Search settings": [
         "Sucheinstellungen"
+      ],
+      "Secure account": [
+        "Konto schützen"
       ],
       "See DNS TXT record": [
         "Siehe DNS TXT-Eintrag"
@@ -1590,6 +1599,9 @@
       "Switch or add account": [
         "Konto wechseln oder hinzufügen"
       ],
+      "Switch to free plan": [
+        "Zum kostenlosen Abonnement wechseln"
+      ],
       "Take a tour": [
         "Rundgang"
       ],
@@ -1763,6 +1775,9 @@
       ],
       "Void all recovery files?": [
         "Alle Wiederherstellungsdateien für ungültig erklären?"
+      ],
+      "Watch the interview": [
+        "Schau dir das Interview an"
       ],
       "Welcome": [
         "Willkommen"
@@ -2292,6 +2307,11 @@
     "b2b_trials_Title": {
       "Your free trial ends in ${ timeRemaining }": [
         "Deine kostenlose Testversion endet in ${ timeRemaining }"
+      ]
+    },
+    "Badge": {
+      "Save ${ discountRate }%": [
+        "Spare ${ discountRate } %"
       ]
     },
     "Badge for domain": {
@@ -3726,6 +3746,32 @@
     "Condition label": {
       "If": [
         "Wenn"
+      ]
+    },
+    "Confirm cancellation": {
+      "Back up photos from your devices": [
+        "Sichere Fotos von deinen Geräten"
+      ],
+      "Cancel subscription": [
+        "Abonnement kündigen"
+      ],
+      "Confirm cancellation": [
+        "Kündigung bestätigen"
+      ],
+      "Keep current plan": [
+        "Aktuelles Abonnement beibehalten"
+      ],
+      "Manage your calendar": [
+        "Deinen Kalender verwalten"
+      ],
+      "Receive new emails": [
+        "Neue E-Mails erhalten"
+      ],
+      "Send emails with attachments": [
+        "E-Mails mit Anhängen versenden"
+      ],
+      "Upload any new files": [
+        "Neue Dateien hochladen"
       ]
     },
     "Confirm modal title": {
@@ -6244,9 +6290,6 @@
       "Asking for help": [
         "Um Hilfe bitten"
       ],
-      "By adding people you trust as recovery contacts, we'll be able to send them an email to help you if you're having trouble to recover your data after a password reset. You can also be a recovery contact for others.": [
-        "Indem du Personen, denen du vertraust, als Wiederherstellungskontakte hinzufügst, können wir ihnen eine E-Mail senden, um dir zu helfen, falls du Probleme beim Wiederherstellen deiner Daten nach einem Passwort-Reset hast. Du kannst auch ein Wiederherstellungskontakt für andere sein."
-      ],
       "Cancel request": [
         "Anfrage abbrechen"
       ],
@@ -6400,9 +6443,6 @@
       "Recovery contact removed": [
         "Wiederherstellungskontakt entfernt"
       ],
-      "Recovery contacts": [
-        "Wiederherstellungskontakte"
-      ],
       "Recovery request sent": [
         "Wiederherstellungsanfrage gesendet"
       ],
@@ -6497,9 +6537,6 @@
       "To disable this recovery method, remove all your recovery contacts.": [
         "Um diese Wiederherstellungsmethode zu deaktivieren, entferne alle deine Wiederherstellungskontakte."
       ],
-      "To use trusted contact recovery, you must have an account recovery method set.": [
-        "Um die Wiederherstellung durch vertrauenswürdige Kontakte zu nutzen, musst du eine Methode zur Kontowiederherstellung eingerichtet haben."
-      ],
       "Trusted contact": [
         "Vertrauenswürdiger Kontakt"
       ],
@@ -6551,10 +6588,6 @@
       "You reached the maximum of ${ limit } emergency contact.": [
         "Du hast die maximale Anzahl von ${ limit } Notfallkontakt erreicht.",
         "Du hast das Maximum von ${ limit } Notfallkontakten erreicht."
-      ],
-      "You reached the maximum of ${ limit } recovery contact.": [
-        "Du hast die maximale Anzahl von ${ limit } Wiederherstellungskontakt erreicht.",
-        "Du hast das Maximum von ${ limit } Wiederherstellungskontakten erreicht."
       ],
       "You will be notified when someone requests emergency access.": [
         "Du wirst benachrichtigt, wenn jemand Notfallzugriff anfordert."
@@ -7968,9 +8001,33 @@
       ]
     },
     "Feature": {
+      "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } desktop app": [
+        "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } Desktop-App"
+      ],
       "${ MaxVPN } VPN connection": [
         "${ MaxVPN } VPN-Verbindung",
         "${ MaxVPN } VPN-Verbindungen"
+      ],
+      "${ PROTON_SENTINEL_NAME } account protection": [
+        "${ PROTON_SENTINEL_NAME } Kontoschutz"
+      ],
+      "15 GB storage": [
+        "15 GB Speicherplatz"
+      ],
+      "3 email domains": [
+        "3 E-Mail-Domains"
+      ],
+      "3 folders, labels and filters": [
+        "3 Ordner, Kategorien und Filter"
+      ],
+      "500 GB storage": [
+        "500 GB Speicherplatz"
+      ],
+      "500 MB Mail storage": [
+        "500 MB E-Mail-Speicherplatz"
+      ],
+      "500 MB storage": [
+        "500 MB Speicherplatz"
       ],
       "Access to all countries": [
         "Zugang zu allen Ländern"
@@ -7998,6 +8055,9 @@
       "More premium features": [
         "Weitere Premium-Funktionen"
       ],
+      "Priority support": [
+        "Vorrangiger Support"
+      ],
       "Remove": [
         "Entfernen"
       ],
@@ -8007,8 +8067,14 @@
       "Secure streaming support": [
         "Unterstützung für verschlüsseltes Streaming"
       ],
+      "Short domain @pm.me": [
+        "Kurzdomain @pm.me"
+      ],
       "Torrenting support (P2P)": [
         "Torrent-Unterstützung (P2P)"
+      ],
+      "Unlimited folders, labels and filters": [
+        "Unbeschränkte Ordner, Kategorien und Filter"
       ],
       "Unlimited hide-my-email aliases": [
         "Unbegrenzte hide-my-email-Aliasse"
@@ -13377,6 +13443,9 @@
       "${ Brand } ending with ${ Last4 }": [
         "${ Brand } endend auf ${ Last4 }"
       ],
+      "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } Desktop app": [
+        "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } Desktop-App"
+      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME }-Benutzername"
       ],
@@ -13407,6 +13476,9 @@
       ],
       "${ pricePerMonthWithCurrency } / month": [
         "${ pricePerMonthWithCurrency } / Monat"
+      ],
+      "${ PROTON_SENTINEL_NAME } protection": [
+        "${ PROTON_SENTINEL_NAME } Schutz"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Vorübergehend nicht verfügbar. Bitte schaue später wieder vorbei.)"
@@ -13639,6 +13711,9 @@
       "Automated confirmations and alerts": [
         "Automatische Bestätigungen und Benachrichtigungen"
       ],
+      "Automatic email forwarding": [
+        "Automatische E-Mail-Weiterleitung"
+      ],
       "Automatically save contacts": [
         "Kontakte automatisch speichern"
       ],
@@ -13677,6 +13752,9 @@
       ],
       "Block malware, ads and trackers": [
         "Malware, Werbung und Tracker blockieren"
+      ],
+      "Block trackers and marketers": [
+        "Tracker und Werbetreibende blockieren"
       ],
       "Bookings, billings, and orders": [
         "Buchungen, Abrechnungen und Bestellungen"
@@ -13945,6 +14023,12 @@
       "Email address": [
         "E-Mail-Adresse"
       ],
+      "Email addresses": [
+        "E‐Mail‐Adressen"
+      ],
+      "Email addresses per user": [
+        "E-Mail-Adressen pro Benutzer"
+      ],
       "Email or username": [
         "E‐Mail‐Adresse oder Benutzername"
       ],
@@ -13980,6 +14064,9 @@
       ],
       "End weekday": [
         "Ende der Woche"
+      ],
+      "End-to-end encryption": [
+        "Ende-zu-Ende-Verschlüsselung"
       ],
       "Enter code": [
         "Code eingeben"
@@ -14038,6 +14125,9 @@
       "Folder location": [
         "Pfad des Ordners"
       ],
+      "Folders, labels, and filters": [
+        "Ordner, Kategorien und Filter"
+      ],
       "Font family": [
         "Schriftart"
       ],
@@ -14052,6 +14142,12 @@
       ],
       "for your first month": [
         "im ersten Monat"
+      ],
+      "Free": [
+        "Kostenlos"
+      ],
+      "Free VPN included": [
+        "Kostenloses VPN inbegriffen"
       ],
       "From: ${ fromEmail }": [
         "Von: ${ fromEmail }"
@@ -14269,6 +14365,9 @@
       "Moderate NAT": [
         "Moderates NAT"
       ],
+      "Monthly": [
+        "Monatlich"
+      ],
       "More payment methods": [
         "Weitere Zahlungsmethoden"
       ],
@@ -14317,6 +14416,9 @@
       "Newsletters": [
         "Newsletter"
       ],
+      "No": [
+        "Nein"
+      ],
       "No (users cannot use the app until a vault is shared with them)": [
         "Nein (Benutzer können die App erst verwenden, wenn ein Tresor mit ihnen geteilt wird)"
       ],
@@ -14355,6 +14457,9 @@
       ],
       "Only available on ${ PASS_SHORT_APP_NAME } paid plans": [
         "Nur in kostenpflichtigen Abonnements von ${ PASS_SHORT_APP_NAME } verfügbar"
+      ],
+      "Open-source code": [
+        "Opern-Source-Code"
       ],
       "OpenVPN password": [
         "OpenVPN-Passwort"
@@ -14455,6 +14560,9 @@
       "Primary": [
         "Primäre"
       ],
+      "Priority support": [
+        "Vorrangiger Support"
+      ],
       "Promotions": [
         "Werbung"
       ],
@@ -14463,6 +14571,9 @@
       ],
       "Proration": [
         "Anteilsmäßige Verrechnung"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Geschützt durch Schweizer Datenschutzgesetze"
       ],
       "Protection mode": [
         "Schutzmodus"
@@ -14572,6 +14683,9 @@
       "Shared between ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ WALLET_SHORT_APP_NAME }.": [
         "Geteilt zwischen ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } und ${ WALLET_SHORT_APP_NAME }."
       ],
+      "Short domain @pm.me": [
+        "Kurzdomain @pm.me"
+      ],
       "Show ${ n } administrator": [
         "${ n } Administrator anzeigen",
         "${ n } Administratoren anzeigen"
@@ -14657,6 +14771,12 @@
       "Sticky labels": [
         "Angeheftete Kategorien"
       ],
+      "Storage": [
+        "Speicher"
+      ],
+      "Storage per user": [
+        "Speicherplatz pro Benutzer"
+      ],
       "Street address": [
         "Straße und Hausnummer"
       ],
@@ -14668,6 +14788,9 @@
       ],
       "Subscription options": [
         "Abonnement-Optionen"
+      ],
+      "Support for multiple users": [
+        "Unterstützung für mehrere Benutzer"
       ],
       "Swipe left action": [
         "Aktion beim Wischen nach links"
@@ -14686,6 +14809,9 @@
       ],
       "Then": [
         "Dann"
+      ],
+      "Third-party ads": [
+        "Drittanbieterwerbung"
       ],
       "Thomas": [
         "Max"
@@ -14726,6 +14852,9 @@
       "Undo send": [
         "Senden widerrufen"
       ],
+      "Unlimited": [
+        "Unbegrenzt"
+      ],
       "Unlimited hide-my-email aliases": [
         "Unbegrenzte Hide-my-email-Aliasse"
       ],
@@ -14759,6 +14888,9 @@
       "Use folder colors": [
         "Farben für Ordner verwenden"
       ],
+      "Use your own email domain": [
+        "Nutze deine eigene E-Mail-Domain"
+      ],
       "User": [
         "Benutzer"
       ],
@@ -14785,6 +14917,9 @@
       ],
       "Verify keys with Key Transparency": [
         "Schlüssel mit Key Transparency verifizieren"
+      ],
+      "Version history": [
+        "Versionsverlauf"
       ],
       "Video conferencing with Zoom": [
         "Videokonferenzen mit Zoom"
@@ -14825,6 +14960,9 @@
       "Without attachment": [
         "Ohne Anhang"
       ],
+      "Yearly": [
+        "Jährlich"
+      ],
       "Yes": [
         "Ja"
       ],
@@ -14851,6 +14989,9 @@
       ],
       "Your plan": [
         "Dein Abonnement"
+      ],
+      "Your recovery phone number": [
+        "Deine Wiederherstellungs-Telefonnummer"
       ],
       "Your voucher for your reserved ${ BRAND_NAME } email address:": [
         "Dein Gutschein für deine reservierte ${ BRAND_NAME }-E-Mail-Adresse:"
@@ -15250,6 +15391,9 @@
       ],
       "Upgrade your plan": [
         "Dein Abonnement upgraden"
+      ],
+      "use a data recovery method": [
+        "Wiederherstellungsmethode festlegen"
       ],
       "Vault": [
         "Tresor"
@@ -19117,11 +19261,6 @@
         "Dein Tor zur Online-Freiheit"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "kontaktiere"
-      ]
-    },
     "Plan description": {
       "A VPN solution that provides secure, high-speed access to the internet.": [
         "Eine VPN-Lösung, die einen sicheren Zugriff auf ein Hochgeschwindigkeitsinternet bietet."
@@ -19464,9 +19603,6 @@
       "Verify now": [
         "Jetzt verifizieren"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "Diese Wiederherstellungs-E-Mail-Adresse jetzt verifizieren: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "Wiederherstellungs-E-Mail-Adresse verifizieren?"
       ],
@@ -19510,11 +19646,60 @@
       "Verify recovery phone?": [
         "Wiederherstellungs-Telefonnummer verifizieren?"
       ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "Diese Wiederherstellungs-Telefonnummer jetzt verifizieren: ${ phone.Value }"
+      "Verify this recovery phone number now: ${ phoneData.value }": [
+        "Diese Wiederherstellungs-Telefonnummer jetzt verifizieren: ${ phoneData.value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Das Verifizieren deiner Telefonnummer erhöht die Sicherheit deines Kontos und bietet zusätzliche Möglichkeiten zur Wiederherstellung."
+      ]
+    },
+    "Recovery score": {
+      "${ score } / ${ maxScore } completed": [
+        "${ score }/${ maxScore } abgeschlossen"
+      ],
+      "Maximum": [
+        "Maximum"
+      ],
+      "Partial": [
+        "Teilweise"
+      ],
+      "Strong": [
+        "Stark"
+      ],
+      "Unprotected": [
+        "Ungeschützt"
+      ],
+      "Weak": [
+        "Schwach"
+      ]
+    },
+    "Recovery score item": {
+      "Add emergency contacts": [
+        "Notfallkontakte hinzufügen"
+      ],
+      "Add recovery contacts": [
+        "Wiederherstellungskontakte hinzufügen"
+      ],
+      "Allow scanning QR code to sign in": [
+        "Erlaube, dich mit dem Scannen eines QR-Codes anzumelden"
+      ],
+      "Download recovery file": [
+        "Wiederherstellungsdatei herunterladen"
+      ],
+      "Emergency contacts added": [
+        "Notfallkontakte hinzugefügt"
+      ],
+      "Enable recovery by email": [
+        "Wiederherstellung per E-Mail aktivieren"
+      ],
+      "Password verified": [
+        "Passwort verifiziert"
+      ],
+      "Recovery contacts added": [
+        "Wiederherstellungskontakte hinzugefügt"
+      ],
+      "Recovery file downloaded": [
+        "Wiederherstellungsdatei heruntergeladen"
       ]
     },
     "RecoveryPhrase: Action": {
@@ -21927,6 +22112,27 @@
         "Die Kündigung deines Abonnements wird bearbeitet. Bitte warten."
       ]
     },
+    "Status": {
+      "${ count } person": [
+        "${ count } Person",
+        "${ count } Personen"
+      ],
+      "No contact": [
+        "Kein Kontakt"
+      ],
+      "Not saved": [
+        "Nicht gespeichert"
+      ],
+      "Outdated": [
+        "Abgelaufen"
+      ],
+      "Saved": [
+        "Gespeichert"
+      ],
+      "Verify ${ value }": [
+        "${ value } verifizieren"
+      ]
+    },
     "Step in filter modal": {
       "Actions": [
         "Aktionen"
@@ -22228,6 +22434,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-Schreibassistent"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, und ${ LUMO_APP_NAME } mit Premium-Funktionen"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } und ${ VPN_SHORT_APP_NAME } mit Premiumfunktionen"
       ],
@@ -22485,6 +22697,10 @@
       ],
       "Version history": [
         "Versionsverlauf"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Video-Meetings, bis zu ${ PAID_PREMIUM_MAX_PARTICIPANTS } Teilnehmer",
+        "Video-Meetings, bis zu ${ PAID_PREMIUM_MAX_PARTICIPANTS } Teilnehmer"
       ],
       "Watch the interview": [
         "Schau dir das Interview an"
@@ -22930,6 +23146,9 @@
       ],
       "/user per month": [
         "/Benutzer pro Monat"
+      ],
+      "/year": [
+        "/Jahr"
       ]
     },
     "Suffix for price": {
@@ -23045,6 +23264,14 @@
     "TableRow": {
       "No SMTP tokens found": [
         "Keine SMTP-Token gefunden"
+      ]
+    },
+    "Temporary need": {
+      "Continue cancelling": [
+        "Kündigung fortsetzen"
+      ],
+      "Keep current plan": [
+        "Aktuelles Abonnement beibehalten"
       ]
     },
     "Theme": {
@@ -23935,6 +24162,9 @@
       "Free": [
         "Kostenlos"
       ],
+      "Free plan": [
+        "Kostenloses Abonnement"
+      ],
       "Gateway": [
         "Gateway"
       ],
@@ -24251,6 +24481,9 @@
       "Other sign-in issues": [
         "Andere Anmeldeprobleme"
       ],
+      "Our fight against censorship in Russia": [
+        "Unser Kampf gegen die Zensur in Russland"
+      ],
       "Password": [
         "Passwort"
       ],
@@ -24352,6 +24585,9 @@
       ],
       "Recovery file": [
         "Wiederherstellungsdatei"
+      ],
+      "Recovery phrase": [
+        "Wiederherstellungsphrase"
       ],
       "Refer a friend": [
         "Wirb einen Freund"
@@ -24568,6 +24804,9 @@
       ],
       "Single sign-on": [
         "Single Sign-on"
+      ],
+      "SMS verification": [
+        "SMS-Verifizierung"
       ],
       "SMTP submission": [
         "SMTP-Übermittlung"
@@ -24800,6 +25039,9 @@
       ],
       "Welcome to your new password manager!": [
         "Willkommen bei deinem neuen Passwort-Manager!"
+      ],
+      "What changes if you switch to the Free plan": [
+        "Was sich ändert, wenn du zum kostenlosen Abonnement wechselst"
       ],
       "What is an alias?": [
         "Was ist ein Alias?"

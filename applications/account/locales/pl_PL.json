@@ -10855,6 +10855,9 @@
       "Font size": [
         "Rozmiar czcionki"
       ],
+      "Free": [
+        "Za darmo"
+      ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
       ],
@@ -11308,6 +11311,9 @@
       "Statement": [
         "Kryterium"
       ],
+      "Storage": [
+        "Przestrzeń dyskowa"
+      ],
       "Street address": [
         "Ulica"
       ],
@@ -11370,6 +11376,9 @@
       ],
       "Undo send": [
         "Cofnij wysyłanie"
+      ],
+      "Unlimited": [
+        "Bez limitu"
       ],
       "Updates": [
         "Aktualizacje"
@@ -14941,11 +14950,6 @@
         "Twoja brama do wolności w sieci"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "skontaktuj się"
-      ]
-    },
     "Plan description": {
       "All ${ BRAND_NAME } premium products included in Duo.": [
         "Wszystkie usługi ${ BRAND_NAME } w wersji premium zawarte w planie Duo."
@@ -15184,9 +15188,6 @@
       "Verify now": [
         "Zweryfikuj"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "Zweryfikuj adres pomocniczy: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "Zweryfikować adres pomocniczy?"
       ],
@@ -15229,9 +15230,6 @@
       ],
       "Verify recovery phone?": [
         "Zweryfikować numer pomocniczy?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "Zweryfikuj numer pomocniczy: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Weryfikacja numeru telefonu zwiększa bezpieczeństwo konta i umożliwia dodatkowe opcje odzyskiwania konta."
