@@ -19,7 +19,7 @@
         "@proton/redux-utilities": "workspace:^",
         "@proton/shared": "workspace:^",
         "@proton/utils": "workspace:^",
-        "@protontech/crypto": "^2.0.1",
+        "@protontech/crypto": "*",
         "@reduxjs/toolkit": "^2.11.2",
         "date-fns": "^2.30.0",
         "deep-freeze": "^0.0.1",
