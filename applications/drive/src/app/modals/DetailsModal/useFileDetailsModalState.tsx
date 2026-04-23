@@ -53,18 +53,13 @@ export type UseFileDetailsModalProps = ModalStateProps & {
     nodeUid: string;
     revision?: Revision;
     drive?: Drive;
-    verifySignatures?: boolean;
     onClose?: () => void;
-    /** @deprecated This is temporay helper until we figure out on how to fix it on public page **/
-    showLocation?: boolean;
 };
 
 export function useFileDetailsModalState({
     nodeUid,
     revision,
     drive = getDrive(),
-    showLocation = true,
-    verifySignatures = true,
     open,
     onClose,
     onExit,
@@ -81,7 +76,7 @@ export function useFileDetailsModalState({
                 setTitle(getTitle(node));
 
                 const fileType = node.ok ? node.value.type : node.error.type;
-                const location = showLocation ? await getFormattedNodeLocation(drive, node) : '';
+                const location = await getFormattedNodeLocation(drive, node);
                 const nodeEntity = node.ok ? node.value : node.error;
                 let activeRevision;
 
@@ -102,7 +97,7 @@ export function useFileDetailsModalState({
                 setDetails({
                     uid: nodeEntity.uid,
                     hasDecryptionError: hasDecryptionError(node),
-                    authorshipStatus: verifySignatures ? getAuthorshipStatus(node) : null,
+                    authorshipStatus: getAuthorshipStatus(node),
                     name: getNodeName(node),
                     location,
                     safeEntityInJson: JSON.stringify({
@@ -150,7 +145,7 @@ export function useFileDetailsModalState({
             }
         };
         void withLoading(fetchFileDetails());
-    }, [nodeUid, drive, withLoading, verifySignatures, showLocation]);
+    }, [nodeUid, drive, withLoading, revision]);
 
     return {
         open,

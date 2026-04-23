@@ -1,6 +1,7 @@
 import { ContextSeparator } from '@proton/components/index';
 import type { OpenInDocsType } from '@proton/shared/lib/helpers/mimetype';
 
+import { DetailsButton } from '../../commonButtons/DetailsButton';
 import { DownloadButton } from '../../commonButtons/DownloadButton';
 import { OpenInDocsOrSheetsButton } from '../../commonButtons/OpenInDocsOrSheetsButton';
 import { PreviewButton } from '../../commonButtons/PreviewButton';
@@ -9,6 +10,7 @@ import type { PublicItemChecker } from './actionsItemsChecker';
 interface BaseViewActionsProps {
     itemChecker: PublicItemChecker;
     selectedUids: string[];
+    onDetails: (uid: string) => void;
     onPreview: (uid: string) => void;
     onDownload: (uids: string[], shouldScan?: boolean) => void;
     onOpenDocsOrSheets: (uid: string, openInDocs: OpenInDocsType) => void;
@@ -30,6 +32,7 @@ export function ViewActions({
     itemChecker,
     selectedUids,
     onPreview,
+    onDetails,
     onDownload,
     onOpenDocsOrSheets,
     close,
@@ -46,6 +49,12 @@ export function ViewActions({
                         onClick={() => onPreview(firstItemUid)}
                         {...(buttonType === 'contextMenu' ? { close, buttonType } : { buttonType })}
                     />
+                    {itemChecker.canOpenDetails && (
+                        <DetailsButton
+                            onClick={() => onDetails(firstItemUid)}
+                            {...(buttonType === 'contextMenu' ? { close, buttonType } : { buttonType })}
+                        />
+                    )}
                     <ContextSeparator />
                 </>
             )}

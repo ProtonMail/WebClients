@@ -11,6 +11,7 @@ import type { PublicFolderItem } from '../usePublicFolder.store';
 export interface PublicItemChecker {
     hasPreviewAvailable: boolean;
     canEdit: boolean;
+    canOpenDetails: boolean;
     canScanMalware: boolean;
     isSingleSelection: boolean;
     openInDocsInfo: OpenInDocsType | undefined;
@@ -34,7 +35,7 @@ const getIsOwnedByUser = (item: PublicFolderItem): boolean => {
 };
 
 export const createActionsItemChecker = (items: PublicFolderItem[]): PublicItemChecker => {
-    const { publicRole } = usePublicAuthStore.getState();
+    const { publicRole, isLoggedIn } = usePublicAuthStore.getState();
     const firstItem = items.at(0);
     const isSingleSelection = items.length === 1 && !!firstItem;
 
@@ -47,6 +48,7 @@ export const createActionsItemChecker = (items: PublicFolderItem[]): PublicItemC
     return {
         hasPreviewAvailable,
         canEdit,
+        canOpenDetails: isLoggedIn && publicRole === MemberRole.Editor,
         canScanMalware: !scanDisabled,
         isSingleSelection,
         // We can't convert docs/sheets on public page
