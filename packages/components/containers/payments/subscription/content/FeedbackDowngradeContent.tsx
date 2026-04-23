@@ -210,9 +210,10 @@ const FeedbackDowngradeContent = ({ onResolve, onClose, user }: FeedbackDowngrad
                     as={TextAreaTwo}
                     rows={2}
                     label={c('Label').t`Could you please specify?`}
+                    maxLength={200}
                     error={validator(
                         model.Reason === SUBSCRIPTION_CANCELLATION_REASONS.QUALITY_ISSUE
-                            ? [requiredValidator(model.ReasonDetails)]
+                            ? [requiredValidator(model.ReasonDetails), maxLengthValidator(model.ReasonDetails, 200)]
                             : []
                     )}
                     {...sharedReasonDetailsProps}
@@ -394,6 +395,8 @@ const FeedbackDowngradeContent = ({ onResolve, onClose, user }: FeedbackDowngrad
                             rows={10}
                             placeholder={c('Placeholder').t`Anything you'd like us to know`}
                             value={model.Feedback}
+                            maxLength={1000}
+                            error={validator([maxLengthValidator(model.Feedback, 1000)])}
                             onValue={(value: string) => setModel((old) => ({ ...old, Feedback: value }))}
                             className="border-weak rounded-lg"
                         />
