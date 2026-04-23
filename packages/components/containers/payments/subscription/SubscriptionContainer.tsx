@@ -440,6 +440,8 @@ const SubscriptionContainerInner = ({
         getFreeCheckResult(model.currency, model.cycle)
     );
 
+    const hideLumoAddonForVpn2024 = useFlag('HideLumoAddonForVpn2024');
+
     const couponConfig = useCouponConfig({ checkResult, planIDs: model.planIDs, plansMap: plansMapRef.current });
     const lumoAddonEnabled = showLumoAddonCustomizer({
         subscription,
@@ -447,6 +449,7 @@ const SubscriptionContainerInner = ({
         initialCoupon: maybeCoupon,
         planIDs: model.planIDs,
         cycle: model.cycle,
+        hideLumoAddonForVpn2024,
     });
 
     const [selectedProductPlans, setSelectedProductPlans] = useState(
