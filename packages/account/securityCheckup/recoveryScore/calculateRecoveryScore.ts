@@ -23,6 +23,8 @@ export type RecoveryScoreItem = {
     id: RecoveryScoreItemId;
     isAvailable: boolean;
     isEnabled: boolean;
+    /** Omitted or true: counts toward the score. False: gated until recovery email or SMS is configured. */
+    countsTowardScore?: boolean;
 };
 
 export type RecoveryScoreState = {
@@ -42,6 +44,7 @@ export const calculateRecoveryScore = (
 ): { score: number; maxScore: number; scoreItems: RecoveryScoreItem[] } => {
     const emailEnabled = getIsPerfectEmailState(state.securityState);
     const phoneEnabled = getIsPerfectPhoneState(state.securityState);
+    const hasPasswordResetOption = emailEnabled || phoneEnabled;
 
     const scoreItems: RecoveryScoreItem[] = [
         {
@@ -58,16 +61,19 @@ export const calculateRecoveryScore = (
             id: 'deviceRecovery',
             isAvailable: state.securityState.deviceRecovery.isAvailable,
             isEnabled: getIsPerfectDeviceRecoveryState(state.securityState),
+            countsTowardScore: hasPasswordResetOption,
         },
         {
             id: 'recoveryFile',
             isAvailable: state.recoveryFile.isAvailable,
             isEnabled: state.recoveryFile.isEnabled,
+            countsTowardScore: hasPasswordResetOption,
         },
         {
             id: 'recoveryContacts',
             isAvailable: state.recoveryContacts.isAvailable,
             isEnabled: state.recoveryContacts.isEnabled,
+            countsTowardScore: hasPasswordResetOption,
         },
         {
             id: 'recoveryPhrase',
@@ -97,8 +103,10 @@ export const calculateRecoveryScore = (
     ];
 
     const availableOptions = scoreItems.filter((item) => item.isAvailable);
-    const enabledOptions = availableOptions.filter((item) => item.isEnabled);
-    const score = clamp(enabledOptions.length, MIN_SCORE, MAX_SCORE);
+    const enabledAndActiveOptions = availableOptions.filter(
+        (item) => item.isEnabled && item.countsTowardScore !== false
+    );
+    const score = clamp(enabledAndActiveOptions.length, MIN_SCORE, MAX_SCORE);
 
     return { score, maxScore: MAX_SCORE, scoreItems };
 };
