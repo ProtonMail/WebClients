@@ -66,21 +66,21 @@ export const popupSizeSurgery = () => {
 
 export const isExpandedPopup = async (): Promise<boolean> => {
     try {
-        const currentTab = (await browser.tabs.getCurrent()) as Maybe<Tabs.Tab>;
+        let expanded: boolean;
 
-        const expanded = (() => {
-            if (BUILD_TARGET === 'safari') {
-                const url = currentTab?.url;
-                const popupPath = `${window.location.origin}/popup.html`;
-                /** In Safari, `currentTab` returns the tab behind the extension popup frame.
-                 * If it matches the current location, then we're expanded in a dedicated tab */
-                return Boolean(url?.toLowerCase().startsWith(popupPath));
-            }
-
+        if (BUILD_TARGET === 'safari') {
+            /** In Safari, `browser.tabs.getCurrent()` called from the popover returns
+             * the tab behind it — so a URL check fails when the tab behind is itself
+             * the expanded popup.html. Ask the extension for its "popup" views: the
+             * popover window is listed there, the expanded tab is not. */
+            const popupViews = browser.extension.getViews({ type: 'popup' });
+            expanded = !popupViews.includes(window);
+        } else {
             /** On chromium based browsers : the current tab will be `undefined`
              * when called from the extension popup frame */
-            return currentTab !== undefined;
-        })();
+            const currentTab = (await browser.tabs.getCurrent()) as Maybe<Tabs.Tab>;
+            expanded = currentTab !== undefined;
+        }
 
         if (expanded) {
             /* when pop-up is expanded: reset the dimension constraints */
