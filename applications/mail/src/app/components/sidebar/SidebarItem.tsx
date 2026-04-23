@@ -129,10 +129,16 @@ const SidebarItem = ({
     const needsTotalDisplay = shouldDisplayTotal(labelID);
 
     const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+        // Remove the category from search params during comparison
+        const linkPathname = link.split('#')[0];
+        const params = new URLSearchParams(history.location.hash.slice(1));
+        params.delete('category');
+        const strippedHash = params.toString() ? `#${params.toString()}` : '';
+
         if (
-            history.location.pathname.endsWith(link) &&
-            // No search, no paging, nothing
-            history.location.hash === '' &&
+            history.location.pathname.endsWith(linkPathname) &&
+            // No search, no paging, nothing (except #category)
+            strippedHash === '' &&
             // Not already refreshing
             !refreshing
         ) {
