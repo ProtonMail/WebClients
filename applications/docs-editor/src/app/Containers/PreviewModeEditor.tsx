@@ -8,7 +8,7 @@ import { DefaultFont } from '../Shared/Fonts'
 import type { EditorRequiresClientMethods } from '@proton/docs-shared'
 import { EditorSystemMode, type DocumentRole } from '@proton/docs-shared'
 import type { MouseEventHandler } from 'react'
-import { useCallback, useEffect } from 'react'
+import { useCallback, useEffect, useRef } from 'react'
 import Toolbar from '../Toolbar/Toolbar'
 import { EditorUserMode } from '../Lib/EditorUserMode'
 import type { EditorState } from 'lexical'
@@ -60,7 +60,6 @@ export function PreviewModeEditor({
           editor.setEditorState(clonedEditorState)
         },
       })}
-      key={Math.random()}
     >
       <Toolbar
         hasEditAccess={role.canEdit()}
@@ -100,9 +99,40 @@ export function PreviewModeEditor({
         placeholder={null}
         ErrorBoundary={LexicalErrorBoundary}
       />
+      <PreviewStateSyncPlugin clonedEditorState={clonedEditorState} />
       <PreviewCleanupPlugin />
     </SafeLexicalComposer>
   )
+}
+
+function PreviewStateSyncPlugin({ clonedEditorState }: { clonedEditorState: EditorState }) {
+  const [previewEditor] = useLexicalComposerContext()
+  const hasAppliedInitialState = useRef(false)
+
+  useEffect(() => {
+    // The initial clonedEditorState is applied once via the composer's
+    // initialConfig.editorState callback (so it runs before table nodes are
+    // created, for setScrollableTablesActive). Skip the first effect run to
+    // avoid redundantly replacing the state we just set.
+    if (!hasAppliedInitialState.current) {
+      hasAppliedInitialState.current = true
+      return
+    }
+    // setEditorState uses flushSync internally; defer to a microtask so we
+    // don't call it during React's render/commit phase.
+    let cancelled = false
+    queueMicrotask(() => {
+      if (cancelled) {
+        return
+      }
+      previewEditor.setEditorState(clonedEditorState)
+    })
+    return () => {
+      cancelled = true
+    }
+  }, [previewEditor, clonedEditorState])
+
+  return null
 }
 
 function PreviewCleanupPlugin() {
