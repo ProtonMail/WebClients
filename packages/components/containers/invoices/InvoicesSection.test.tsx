@@ -1,9 +1,10 @@
-import { render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 
 import useEventManager from '@proton/components/hooks/useEventManager';
 import { APPS } from '@proton/shared/lib/constants';
 import { applyHOCs, withConfig, withNotifications, withReduxStore } from '@proton/testing';
 
+import useApiResult from '../../hooks/useApiResult';
 import InvoicesSection from './InvoicesSection';
 
 jest.mock('../../hooks/useHandler', () => {
@@ -60,6 +61,9 @@ describe('InvoicesSection', () => {
 
     beforeEach(() => {
         jest.clearAllMocks();
+        (useApiResult as jest.Mock).mockReturnValue({
+            request: () => requestMock(),
+        });
         subscribeMock = jest.fn();
         (useEventManager as jest.Mock).mockReturnValue({
             subscribe: subscribeMock,
@@ -111,6 +115,53 @@ describe('InvoicesSection', () => {
         callback({});
 
         expect(requestMock).toHaveBeenCalledTimes(1);
+    });
+
+    it('should always show the "Edit billing address" button, even with no invoices', () => {
+        subscribeMock.mockImplementation(() => () => {});
+        const { getByTestId } = render(<InvoicesSectionContext app={APPS.PROTONMAIL} />);
+
+        expect(getByTestId('editBillingAddress')).toBeInTheDocument();
+    });
+
+    it('should not show the "Edit invoice note" entry when there are no invoices', () => {
+        subscribeMock.mockImplementation(() => () => {});
+        const { queryByTestId } = render(<InvoicesSectionContext app={APPS.PROTONMAIL} />);
+
+        // With a single action, DropdownActions renders as a plain button and no dropdown trigger
+        expect(queryByTestId('dropdownActions:dropdown')).not.toBeInTheDocument();
+        expect(queryByTestId('editInvoiceNote')).not.toBeInTheDocument();
+    });
+
+    it('should show the "Edit invoice note" entry when on the invoices tab and invoices exist', () => {
+        (useApiResult as jest.Mock).mockReturnValue({
+            result: { Invoices: [{ ID: '123' }], Transactions: [], Total: 1 },
+            request: () => requestMock(),
+        });
+        subscribeMock.mockImplementation(() => () => {});
+        const { getByTestId, getAllByTestId } = render(<InvoicesSectionContext app={APPS.PROTONMAIL} />);
+
+        expect(getByTestId('editBillingAddress')).toBeInTheDocument();
+        // Open the dropdown containing the additional "Edit invoice note" action (the first
+        // dropdown trigger in the DOM is the top-level one, rendered before invoice rows).
+        fireEvent.click(getAllByTestId('dropdownActions:dropdown')[0]);
+        expect(getByTestId('editInvoiceNote')).toBeInTheDocument();
+    });
+
+    it('should not show the "Edit invoice note" entry when switching to the credit note tab', () => {
+        (useApiResult as jest.Mock).mockReturnValue({
+            result: { Invoices: [{ ID: '123' }], Transactions: [], Total: 1 },
+            request: () => requestMock(),
+        });
+        subscribeMock.mockImplementation(() => () => {});
+        const { getByTestId, queryByTestId } = render(<InvoicesSectionContext app={APPS.PROTONMAIL} />);
+
+        fireEvent.click(getByTestId('credit-note-tab'));
+
+        // Billing address is still shown, but since the active hook is no longer 'invoices',
+        // the "Edit invoice note" action is filtered out, leaving just a single button.
+        expect(getByTestId('editBillingAddress')).toBeInTheDocument();
+        expect(queryByTestId('editInvoiceNote')).not.toBeInTheDocument();
     });
 
     it('should not request invoices if the callback does not have an argument', () => {
