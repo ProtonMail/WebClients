@@ -628,9 +628,6 @@
       "Set extra password": [
         "Задаць дадатковы пароль"
       ],
-      "Settings": [
-        "Налады"
-      ],
       "Setup 2FA": [
         "Наладжванне 2ФА"
       ],
@@ -948,6 +945,9 @@
       "Authentication failure: ${ message }": [
         "Збой аўтэнтыфікацыі: ${ message }"
       ],
+      "Biometric authentication failed.": [
+        "Збой аўтэнтыфікацыі біяметрыі."
+      ],
       "Cannot create alias (${ error }).": [
         "Немагчыма стварыць псеўданім (${ error })."
       ],
@@ -1025,6 +1025,9 @@
       ],
       "Emptying trash failed": [
         "Збой ачысткі сметніцы"
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Збой зашыфраваных зносін з праграмай для камп'ютара ${ PASS_APP_NAME }."
       ],
       "Encrypted JSON not supported": [
         "Зашыфраваны JSON не падтрымліваецца"
@@ -1266,6 +1269,9 @@
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
         "Нешта пайшло не так. Перазагрузіце пашырэнне ${ PASS_APP_NAME }. Гэта праблема была зарэгістравана"
       ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "Праграма для камп'ютара ${ PASS_APP_NAME } своечасова не адказвае."
+      ],
       "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
         "Праграма для камп'ютара для ${ PASS_APP_NAME } заблакіравана. Яе неабходна разблакіраваць."
       ],
@@ -1274,6 +1280,9 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
         "Праграма для камп'ютара ${ PASS_APP_NAME } не адказвае. Пераканайцеся, што яна запушчана."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "У праграме для камп'ютара ${ PASS_APP_NAME } уліковы запіс зменены на іншы."
       ],
       "The URL is in the list": [
         "URL-адрас знаходзіцца ў спісе"
@@ -2076,6 +2085,9 @@
       "Loading...": [
         "Загрузка..."
       ],
+      "Logging you out...": [
+        "Адбываецца выхад..."
+      ],
       "Low Priority": [
         "Нізкі прыярытэт"
       ],
@@ -2105,6 +2117,12 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Перамяшчэнне ўсіх элементаў з \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Перамяшчэнне элемента ў іншае сховішча прывядзе да сцірання яго бяспечных спасылак",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак.",
+        "Перамяшчэнне элементаў у іншае сховішча прывядзе да сцірання іх бяспечных спасылак."
       ],
       "Moving items": [
         "Перамяшчэнне элементаў"
@@ -2597,12 +2615,6 @@
       ],
       "Unlimited hide-my-email aliases and advanced alias management": [
         "Неабмежаваная колькасць псеўданімаў hide-my-email і пашыранае кіраванне псеўданімам"
-      ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
-        "Разблакіраваць ${ PASS_APP_NAME } з дапамогай PIN-кода, каб атрымаць доступ да сваіх ключоў"
-      ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
-        "Разблакіраваць ${ PASS_APP_NAME } з дапамогай PIN-кода, каб захаваць гэты ключ доступу"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Разблакіраваць ${ PASS_SHORT_APP_NAME } з дапамогай біяметрыі"

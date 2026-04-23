@@ -607,9 +607,6 @@
       "Set extra password": [
         "Aseta lisäsalasana"
       ],
-      "Settings": [
-        "Asetukset"
-      ],
       "Setup 2FA": [
         "Määritä 2FA"
       ],
@@ -1929,6 +1926,9 @@
       "Loading...": [
         "Ladataan..."
       ],
+      "Logging you out...": [
+        "Sinua kirjataan ulos..."
+      ],
       "Low Priority": [
         "Alhainen tärkeys"
       ],
@@ -1956,6 +1956,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Siirretään kohteen \"${ payload.content.name }\" kaikkia kohteita"
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Kohteen siirto toiseen holviin poistaa sen suojatut linkit.",
+        "Kohteiden siirto toiseen holviin poistaa niiden suojatut linkit."
       ],
       "Moving items": [
         "Siirretään kohteita"
@@ -2405,12 +2409,6 @@
       ],
       "Unlimited hide-my-email aliases and advanced alias management": [
         "Rajattomasti Hide-my-email-aliaksia ja edistynyt aliashallinta"
-      ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
-        "Käytä pääsyavaimiasi avaamalla ${ PASS_APP_NAME } PIN-koodillasi"
-      ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
-        "Tallenna pääsyavain avaamalla ${ PASS_APP_NAME } PIN-koodillasi"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Avaa ${ PASS_SHORT_APP_NAME } biometrisillä tiedoilla"

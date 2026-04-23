@@ -628,9 +628,6 @@
       "Set extra password": [
         "Setare parolă suplimentară"
       ],
-      "Settings": [
-        "Setări"
-      ],
       "Setup 2FA": [
         "Setare A2F"
       ],
@@ -945,6 +942,9 @@
       "Authentication failure: ${ message }": [
         "Eșuare autentificare: ${ message }"
       ],
+      "Biometric authentication failed.": [
+        "Autentificarea biometrică a eșuat."
+      ],
       "Cannot create alias (${ error }).": [
         "Aliasul nu se poate crea. (${ error })."
       ],
@@ -1020,6 +1020,9 @@
       ],
       "Emptying trash failed": [
         "Golirea gunoiului a eșuat."
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Comunicarea criptată cu aplicația desktop ${ PASS_APP_NAME } a eșuat."
       ],
       "Encrypted JSON not supported": [
         "Fișierele JSON criptate nu sunt suportate."
@@ -1261,6 +1264,9 @@
       "Something went wrong. Please reload the ${ PASS_APP_NAME } extension. This issue has been logged": [
         "Ceva nu a funcționat bine. Reîncărcați extensia ${ PASS_APP_NAME }. Această problemă a fost înregistrată."
       ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "Aplicația desktop ${ PASS_APP_NAME } nu a răspuns la timp."
+      ],
       "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
         "Aplicația desktop ${ PASS_APP_NAME } este blocată, trebuie deblocată."
       ],
@@ -1269,6 +1275,9 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
         "Aplicația desktop ${ PASS_APP_NAME } nu răspunde, rulează?"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "Aplicația desktop ${ PASS_APP_NAME } este conectată cu un cont diferit."
       ],
       "The URL is in the list": [
         "Adresa URL este deja în listă."
@@ -2050,6 +2059,9 @@
       "Loading...": [
         "Se încarcă…"
       ],
+      "Logging you out...": [
+        "Se deconectează…"
+      ],
       "Low Priority": [
         "Prioritate scăzută"
       ],
@@ -2078,6 +2090,11 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Se mută toate articolele din „${ payload.content.name }”."
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Mutarea unui articol într-un alt seif îi va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate.",
+        "Mutarea articolelor într-un alt seif le va șterge legăturile web securizate."
       ],
       "Moving items": [
         "Se mută articolele."
@@ -2568,12 +2585,6 @@
       ],
       "Unlimited hide-my-email aliases and advanced alias management": [
         "Aliasuri hide-my-email nelimitate și gestionare avansată aliasuri"
-      ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
-        "Deblocați ${ PASS_APP_NAME } cu codul PIN pentru a vă accesa parolele."
-      ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
-        "Deblocați ${ PASS_APP_NAME } cu codul PIN pentru a salva această cheie de acces."
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Deblocați ${ PASS_SHORT_APP_NAME } cu date biometrice"
