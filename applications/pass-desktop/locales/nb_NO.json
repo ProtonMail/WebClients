@@ -640,9 +640,6 @@
       "Set extra password": [
         "Angi ekstra passord"
       ],
-      "Settings": [
-        "Innstillinger"
-      ],
       "Setup 2FA": [
         "Sett opp 2FA"
       ],
@@ -2021,6 +2018,10 @@
       "Moving all items from \"${ payload.content.name }\"": [
         "Flytter alle elementer fra \"${ payload.content.name }\""
       ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Hvis du flytter et element til et annet hvelv, slettes de sikre koblingene.",
+        "Hvis du flytter elementer til et annet hvelv, slettes de sikre koblingene."
+      ],
       "Moving items": [
         "Flytter elementer"
       ],
@@ -3145,12 +3146,6 @@
       ],
       "Generic CSV": [
         "Generisk CSV"
-      ],
-      "Get ${ PASS_SHORT_APP_NAME } Plus": [
-        "Skaff deg ${ PASS_SHORT_APP_NAME } Plus"
-      ],
-      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
-        "Skaff deg ${ PASS_SHORT_APP_NAME } Ubegrenset"
       ],
       "Get Started": [
         "Kom i gang"

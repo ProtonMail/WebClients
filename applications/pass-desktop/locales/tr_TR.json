@@ -640,9 +640,6 @@
       "Set extra password": [
         "Ek parolayı ayarla"
       ],
-      "Settings": [
-        "Ayarlar"
-      ],
       "Setup 2FA": [
         "İki adımlı doğrulama kur"
       ],
@@ -968,6 +965,18 @@
       "Biometric authentication failed.": [
         "Biyometrik kimlik doğrulama başarısız oldu."
       ],
+      "Biometric lock credentials do not match.": [
+        "Biyometrik kilit kimlik doğrulama bilgileri eşleşmiyor."
+      ],
+      "Biometric lock credentials not found.": [
+        "Biyometrik kilit kimlik doğrulama bilgileri bulunamadı."
+      ],
+      "Biometric lock is not configured.": [
+        "Biyometrik kilit yapılandırılmamış."
+      ],
+      "Biometric lock setup failed.": [
+        "Biyometrik kilit kurulumu başarısız oldu."
+      ],
       "Cannot send invitation at the moment": [
         "Davetiye şu anda gönderilemiyor",
         "Davetiyeler şu anda gönderilemiyor"
@@ -1019,18 +1028,6 @@
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "\"${ payload.content.name }\" kasası silinemedi"
-      ],
-      "Desktop lock is not configured.": [
-        "Masaüstü kilidi yapılandırılmamış."
-      ],
-      "Desktop lock secret does not match.": [
-        "Masaüstü kilit parolası eşleşmiyor."
-      ],
-      "Desktop lock secret not found.": [
-        "Masaüstü kilidi şifresi bulunamadı."
-      ],
-      "Desktop lock setup failed.": [
-        "Masaüstü kilidi kurulumu başarısız oldu."
       ],
       "Detected ${ errors.length } corrupted csv row": [
         "${ errors.length } bozuk CSV satırı bulundu",
@@ -1287,6 +1284,9 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
         "${ PASS_APP_NAME } masaüstü uygulamasında farklı bir hesapla oturum açılmış."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "${ PASS_APP_NAME } masaüstü uygulamasında oturum açılmış olmalıdır."
       ],
       "The session has expired. Please sign in again.": [
         "Oturumun geçerlilik süresi dolmuş. Lütfen yeniden oturum açın."
@@ -2046,7 +2046,8 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
+        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
+        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -3172,12 +3173,6 @@
       ],
       "Generic CSV": [
         "CSV dosyası"
-      ],
-      "Get ${ PASS_SHORT_APP_NAME } Plus": [
-        "${ PASS_SHORT_APP_NAME } Plus edinin"
-      ],
-      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
-        "${ PASS_SHORT_APP_NAME } Unlimited edinin"
       ],
       "Get Started": [
         "Başlayalım"
@@ -4923,6 +4918,11 @@
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Şifrelenmiş parolalar, şifreleri çözülmediği sürece açığa çıksalar bile güvende kalırlar."
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "${ planName } edin"
       ]
     },
     "Validation": {

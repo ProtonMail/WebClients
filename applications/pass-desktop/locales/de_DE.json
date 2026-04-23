@@ -640,9 +640,6 @@
       "Set extra password": [
         "Zusätzliches Passwort festlegen"
       ],
-      "Settings": [
-        "Einstellungen"
-      ],
       "Setup 2FA": [
         "2FA einrichten"
       ],
@@ -965,6 +962,21 @@
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Authentifizierung fehlgeschlagen. Bestätige dein zweites Passwort, um mit dem Export fortzufahren"
       ],
+      "Biometric authentication failed.": [
+        "Biometrische Authentifizierung fehlgeschlagen."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Biometrische Anmeldedaten stimmen nicht überein."
+      ],
+      "Biometric lock credentials not found.": [
+        "Biometrischen Anmeldedaten nicht gefunden."
+      ],
+      "Biometric lock is not configured.": [
+        "Biometrische Sperre nicht konfiguriert."
+      ],
+      "Biometric lock setup failed.": [
+        "Einrichten der biometrischen Sperre fehlgeschlagen."
+      ],
       "Cannot send invitation at the moment": [
         "Einladung kann aktuell nicht versendet werden",
         "Einladungen können derzeit nicht versendet werden"
@@ -1035,6 +1047,9 @@
       ],
       "Emptying trash failed": [
         "Fehler beim Leeren des Papierkorbs."
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Verschlüsselte Kommunikation mit der ${ PASS_APP_NAME }-Desktop-App fehlgeschlagen."
       ],
       "Encrypted JSON not supported": [
         "Verschlüsseltes JSON wird nicht unterstützt."
@@ -1255,6 +1270,9 @@
       "Something went wrong. Please sign in again.": [
         "Es ist ein Fehler aufgetreten. Bitte melden Sie sich erneut an."
       ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "Die ${ PASS_APP_NAME }-Desktop-App hat nicht zeitgerecht reagiert."
+      ],
       "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
         "Die ${ PASS_APP_NAME }-Desktop-App ist gesperrt, sie muss entsperrt werden."
       ],
@@ -1266,6 +1284,9 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
         "Die ${ PASS_APP_NAME }-Desktop-App ist mit einem anderen Konto angemeldet."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "Die ${ PASS_APP_NAME }-Desktop-App sollte angemeldet sein."
       ],
       "The session has expired. Please sign in again.": [
         "Die Sitzung ist abgelaufen. Bitte melde dich erneut an."
@@ -2023,6 +2044,10 @@
       ],
       "Moving all items from \"${ payload.content.name }\"": [
         "Verschiebe alle Einträge von \"${ payload.content.name }\""
+      ],
+      "Moving an item to another vault will erase its secure links.": [
+        "Beim Verschieben eines Eintrags in einen anderen Tresor, werden seine sicheren Verknüpfungen gelöscht.",
+        "Beim Verschieben von Einträgen in einen anderen Tresor, werden ihre sicheren Verknüpfungen gelöscht."
       ],
       "Moving items": [
         "Einträge verschieben"
@@ -3148,12 +3173,6 @@
       ],
       "Generic CSV": [
         "Generische CSV"
-      ],
-      "Get ${ PASS_SHORT_APP_NAME } Plus": [
-        "Hol dir ${ PASS_SHORT_APP_NAME } Plus"
-      ],
-      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
-        "Hol dir ${ PASS_SHORT_APP_NAME } unbegrenzt"
       ],
       "Get Started": [
         "Erste Schritte"
@@ -4899,6 +4918,11 @@
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Solange sie nicht entschlüsselt werden, bleiben verschlüsselte Passwörter sicher, auch wenn sie offengelegt wurden."
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "${ planName } holen"
       ]
     },
     "Validation": {
