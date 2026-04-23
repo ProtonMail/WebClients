@@ -198,7 +198,7 @@ const getRecoverySettings = ({
             id: 'password-reset-options',
             title: c('Title').t`Password reset options`,
             description: c('Description')
-                .t`How you reset your ${BRAND_NAME} password. This will not recover your encrypted data.`,
+                .t`This allows you to regain access to your ${BRAND_NAME} account but does not recover your encrypted data.`,
             subroutes: {
                 email: {
                     id: 'email',

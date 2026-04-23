@@ -18,8 +18,9 @@ import { RECOVERY_FILE_FILE_NAME } from '@proton/shared/lib/constants';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import illustration from './assets/recovery-file.svg';
+import PasswordResetOptionRequiredWarning from './shared/PasswordResetOptionRequiredWarning';
 
-const RecoveryFileSubpage = () => {
+const RecoveryFileSubpage = ({ emailSubpagePath }: { emailSubpagePath: string }) => {
     const recoveryFileData = useSelector(selectRecoveryFileData);
     const updateRecoveryFile = useUpdateRecoveryFile(recoveryFileData);
 
@@ -52,6 +53,7 @@ const RecoveryFileSubpage = () => {
                     }
                 />
                 <DashboardCard>
+                    <PasswordResetOptionRequiredWarning emailSubpagePath={emailSubpagePath} />
                     <DashboardCardContent>
                         <h3 className="mb-0 text-rg text-semibold mb-2">{c('Title').t`Your recovery file`}</h3>
                         <span className="block mt-0 mb-2 text-ellipsis">{RECOVERY_FILE_FILE_NAME}</span>
