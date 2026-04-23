@@ -105,7 +105,7 @@ const InvoicesSection = ({ app }: { app: APP_NAMES }) => {
 
     const editBillingAddressLoadingKey = 'editBillingAddress';
 
-    const invoiceEditButtons = hook.type === 'invoices' && hook.invoices.length > 0 && (
+    const invoiceEditButtons = (
         <DropdownActions
             size="medium"
             list={[
@@ -117,13 +117,14 @@ const InvoicesSection = ({ app }: { app: APP_NAMES }) => {
                         openBillingAddressModal({ loadingKey: editBillingAddressLoadingKey, subscription }).catch(noop),
                     loading: loadingByKey[editBillingAddressLoadingKey],
                 },
-                {
-                    text: c('Action').t`Edit invoice note`,
-                    'data-testid': 'editInvoiceNote',
-                    key: 'editInvoiceNote',
-                    onClick: () => setInvoiceModalOpen(true),
-                    loading: loadingEditInvoiceModal,
-                },
+                hook.type === 'invoices' &&
+                    hook.invoices.length > 0 && {
+                        text: c('Action').t`Edit invoice note`,
+                        'data-testid': 'editInvoiceNote',
+                        key: 'editInvoiceNote',
+                        onClick: () => setInvoiceModalOpen(true),
+                        loading: loadingEditInvoiceModal,
+                    },
             ].filter(isTruthy)}
         />
     );
