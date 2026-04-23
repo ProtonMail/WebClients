@@ -75,7 +75,7 @@ export function Preview({
     const rootRef = useRef<HTMLDivElement>(null);
 
     const onDetails = () => {
-        showDetailsModal({ nodeUid: preview.node.nodeUid, drive, verifySignatures });
+        showDetailsModal({ nodeUid: preview.node.nodeUid, drive });
     };
     const sharingDrive = isDriveWithSharing(drive) ? drive : undefined;
     const onShare =

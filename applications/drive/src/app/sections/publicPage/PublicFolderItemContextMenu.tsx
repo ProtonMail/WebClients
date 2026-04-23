@@ -18,8 +18,8 @@ export function PublicFolderItemContextMenu({
             <ItemContextMenu isOpen={isOpen} open={open} close={close} position={position} anchorRef={anchorRef}>
                 <PublicFolderActions
                     onPreview={handlePreview}
-                    onDownload={handleDownload}
                     onDetails={handleDetails}
+                    onDownload={handleDownload}
                     onDelete={handleDelete}
                     onRename={handleRename}
                     onOpenDocsOrSheets={(uid, openInDocs) => handleOpenDocsOrSheets(uid, openInDocs, customPassword)}

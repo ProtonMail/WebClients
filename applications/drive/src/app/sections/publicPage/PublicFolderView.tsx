@@ -60,9 +60,8 @@ const usePublicBreadcrumb = (driveClient: ProtonDrivePublicLinkClient) => {
                     return {
                         uid: nodeEntity.uid,
                         name: nodeEntity.name,
-                        // Do not render signature issues for breadcrumb items on public page.
-                        haveSignatureIssues: false,
                         supportDropOperations: false,
+                        haveSignatureIssues: false,
                     };
                 });
                 setData(data);
@@ -107,7 +106,13 @@ export const PublicFolderView = ({ rootNode, customPassword, isPartialView }: Pu
         handleCreateDocsOrSheets,
     } = usePublicActions();
 
-    const isEditor = usePublicAuthStore((state) => state.publicRole === MemberRole.Editor);
+    const { isEditor, isLoggedIn } = usePublicAuthStore(
+        useShallow((state) => ({
+            isEditor: state.publicRole === MemberRole.Editor,
+            isLoggedIn: state.isLoggedIn,
+        }))
+    );
+    const canVerifySignature = isLoggedIn && isEditor;
 
     const { isLoading, hasEverLoaded, sortField, direction, itemUids, folder } = usePublicFolderStore(
         useShallow((state) => ({
@@ -278,7 +283,6 @@ export const PublicFolderView = ({ rootNode, customPassword, isPartialView }: Pu
     const cells = getPublicFolderCells({
         viewportWidth,
         onDownload: (uid: string) => handleDownload([uid]),
-        isEditor,
     });
 
     const handleHeaderDownload = (shouldScan?: boolean) => {
@@ -317,13 +321,14 @@ export const PublicFolderView = ({ rootNode, customPassword, isPartialView }: Pu
                     />
                 }
                 sharedBy={
-                    (isEditor &&
-                        (rootNode.keyAuthor.ok ? rootNode.keyAuthor.value : rootNode.keyAuthor.error.claimedAuthor)) ||
-                    undefined
+                    isEditor
+                        ? (rootNode.keyAuthor.ok ? rootNode.keyAuthor.value : rootNode.keyAuthor.error.claimedAuthor) ||
+                          undefined
+                        : undefined
                 }
                 onDownload={() => handleHeaderDownload()}
                 onScanAndDownload={() => handleHeaderDownload(true)}
-                onDetails={isEditor ? () => handleDetails(currentFolderUid) : undefined}
+                onDetails={canVerifySignature ? () => handleDetails(currentFolderUid) : undefined}
                 onCopyLink={handleCopyLink}
                 onUploadFile={isEditor ? handleClickFileUpload : undefined}
                 onUploadFolder={isEditor ? handleClickFolderUpload : undefined}

@@ -1,7 +1,7 @@
 import { useShallow } from 'zustand/react/shallow';
 
 import type { Breakpoints } from '@proton/components';
-import { NodeType } from '@proton/drive';
+import { MemberRole, NodeType } from '@proton/drive';
 import { useThumbnail } from '@proton/drive/modules/thumbnails';
 import { isProtonDocsDocument, isProtonDocsSpreadsheet } from '@proton/shared/lib/helpers/mimetype';
 
@@ -10,16 +10,15 @@ import { NameCell, defaultNameCellConfig } from '../commonDriveExplorerCells/Nam
 import { SizeCell, defaultSizeCellConfig } from '../commonDriveExplorerCells/SizeCell';
 import { DownloadCell, defaultDownloadCellConfig } from './driveExplorerCells/DownloadCell';
 import { UploadedByCell, defaultUploadedByCellConfig } from './driveExplorerCells/UploadedByCell';
+import { usePublicAuthStore } from './usePublicAuth.store';
 import { usePublicFolderStore } from './usePublicFolder.store';
 
 export const getPublicFolderCells = ({
     viewportWidth,
     onDownload,
-    isEditor,
 }: {
     viewportWidth: Breakpoints['viewportWidth'];
     onDownload: (uid: string) => void;
-    isEditor: boolean;
 }): CellDefinition[] => {
     const cells: CellDefinition[] = [
         {
@@ -49,23 +48,22 @@ export const getPublicFolderCells = ({
         },
     ];
 
-    if (isEditor) {
-        cells.push({
-            ...defaultUploadedByCellConfig,
-            disabled: !viewportWidth['>=large'],
-            render: (uid) => {
-                const UploadedByCellComponent = () => {
-                    const item = usePublicFolderStore(useShallow((state) => state.getFolderItem(uid)));
-                    if (!item) {
-                        return null;
-                    }
+    cells.push({
+        ...defaultUploadedByCellConfig,
+        disabled: !viewportWidth['>=large'],
+        render: (uid) => {
+            const UploadedByCellComponent = () => {
+                const item = usePublicFolderStore(useShallow((state) => state.getFolderItem(uid)));
+                const showEmail = usePublicAuthStore((state) => state.publicRole === MemberRole.Editor);
+                if (!item || !showEmail) {
+                    return null;
+                }
 
-                    return <UploadedByCell displayName={item.uploadedBy} />;
-                };
-                return <UploadedByCellComponent />;
-            },
-        });
-    }
+                return <UploadedByCell displayName={item.uploadedBy} />;
+            };
+            return <UploadedByCellComponent />;
+        },
+    });
 
     cells.push(
         {
