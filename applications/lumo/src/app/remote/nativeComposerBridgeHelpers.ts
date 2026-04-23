@@ -1,5 +1,12 @@
 import type { ModelTier } from '../providers/ModelTierProvider';
-import type { LumoFile, LumoMode, State } from './nativeComposerBridge';
+import {
+    type LimitReachedPayload,
+    type LimitReachedResource,
+    type LumoFile,
+    type LumoMode,
+    type State,
+    limitResourceToErrorType,
+} from './nativeComposerBridge';
 
 export const onComposerError = (error: string): void => {
     if (!isNativeComposerBridgeAvailable()) {
@@ -7,6 +14,27 @@ export const onComposerError = (error: string): void => {
         return;
     }
     (window as any).nativeComposerApiInstance.onComposerError(error);
+};
+
+/**
+ * Notifies native mobile clients that a backend-enforced resource limit has
+ * been reached (e.g. messages per conversation, files per project). Mobile
+ * wrappers listen on `webkit.messageHandlers.nativeComposerHandler` / the
+ * Android bridge for `callId === 'onLimitReachedError'` and render their
+ * own native banner/toast in response.
+ */
+export const onLimitReachedError = (
+    payload: Omit<LimitReachedPayload, 'errorType'> & { errorType?: LimitReachedPayload['errorType'] }
+): void => {
+    if (!isNativeComposerBridgeAvailable()) {
+        console.warn('Native Composer Bridge not available');
+        return;
+    }
+    const full: LimitReachedPayload = {
+        ...payload,
+        errorType: payload.errorType ?? limitResourceToErrorType(payload.resource),
+    };
+    (window as any).nativeComposerApiInstance.onLimitReachedError(full);
 };
 
 export const isNativeComposerBridgeAvailable = (): boolean => {
@@ -196,7 +224,7 @@ export const injectNativeImageGenerationHelper = (prompt: string): void => {
     (window as any).nativeComposerApiInstance.injectImageGenerationHelperPrompt(prompt);
 };
 
-export type { LumoFile, LumoMode, State };
+export type { LimitReachedPayload, LimitReachedResource, LumoFile, LumoMode, State };
 export { LumoFileType, getLumoFileType } from './nativeComposerBridge';
 
 export type FileUploadEventHandler = (

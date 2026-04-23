@@ -27,6 +27,7 @@ import GuestDisclaimer from '../Notifications/GuestDisclaimer';
 import { GuestNotificationCard } from '../Notifications/GuestNotificationCard';
 import TermsAndConditions from '../TermsAndConditions';
 import { ComposerAttachmentArea } from './ComposerAttachmentArea';
+import { ComposerLimitBanner } from './ComposerLimitBanner';
 import { ComposerEditorArea } from './ComposerEditorArea';
 import { ComposerToolbar } from './ComposerToolbar';
 import { useAllRelevantAttachments } from './hooks/useAllRelevantAttachments';
@@ -303,6 +304,12 @@ const ComposerComponentInner = ({
                     <h2 className="sr-only">{c('collider_2025: Info').t`Ask anything to ${LUMO_SHORT_APP_NAME}`}</h2>
 
                     {showLegalDisclaimer && <GuestDisclaimer />}
+
+                    <ComposerLimitBanner
+                        conversationId={messageChain?.[0]?.conversationId}
+                        spaceId={spaceId}
+                        onOpenFiles={handleOpenFiles}
+                    />
 
                     <div
                         className={clsx(

@@ -1005,6 +1005,11 @@ export enum LUMO_API_ERRORS {
     GENERATION_REJECTED = 'GenerationRejected',
     HARMFUL_CONTENT = 'HarmfulContent',
     STREAM_DISCONNECTED = 'StreamDisconnected', // When the server closes the stream prematurely after queuing
+    // Backend-enforced resource limits (HTTP 422)
+    MESSAGE_LIMIT_REACHED = 'MessageLimitReached',
+    ASSET_LIMIT_REACHED = 'AssetLimitReached',
+    CONVERSATION_LIMIT_REACHED = 'ConversationLimitReached',
+    SPACE_LIMIT_REACHED = 'SpaceLimitReached',
 }
 
 export type RetryStrategy = 'simple' | 'try_again' | 'add_details' | 'more_concise' | 'think_longer' | 'custom';

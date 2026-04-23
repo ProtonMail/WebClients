@@ -54,7 +54,16 @@ import {
 import { addIdMapEntry } from '../slices/core/idmap';
 import type { LumoState } from '../store';
 import { waitForMapping } from './idmap';
-import { ClientError, RETRY_PUSH_EVERY_MS, callWithRetry, isClientError, isConflictClientError } from './index';
+import { MAX_ASSETS_PER_SPACE } from '../../constants/limits';
+import { addResourceLimitError } from '../slices/meta/errors';
+import {
+    ClientError,
+    RETRY_PUSH_EVERY_MS,
+    callWithRetry,
+    isClientError,
+    isConflictClientError,
+    isLimitReachedError,
+} from './index';
 import { waitForSpace } from './spaces';
 
 /*** helpers ***/
@@ -414,6 +423,15 @@ export function* pushAttachment({ payload }: { payload: PushAttachmentRequest })
             if (isConflictClientError(e)) {
                 // 409: the asset already exists remotely, there is nothing left to sync
                 yield call(clearDirtyUnconditionally, localId);
+            }
+            if (isLimitReachedError(e)) {
+                yield put(
+                    addResourceLimitError({
+                        resource: 'assets',
+                        limit: MAX_ASSETS_PER_SPACE,
+                        serverMessage: e.serverMessage,
+                    })
+                );
             }
             yield put(pushAttachmentFailure({ ...payload, error: `${e}` }));
             yield put(setAttachmentError({ id: localId, error: `${e}` }));

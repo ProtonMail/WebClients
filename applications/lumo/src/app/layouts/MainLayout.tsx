@@ -3,6 +3,7 @@ import { type ReactNode, lazy } from 'react';
 import HighLoadWarning from '../components/Notifications/HighLoadWarning';
 import { useGuestMigrationNotification } from '../components/useGuestMigrationNotification';
 import { useKeyboardShortcuts } from '../hooks/useKeyboardShortcuts';
+import { useResourceLimitNotifications } from '../hooks/useResourceLimitNotifications';
 import { GhostChatProvider } from '../providers/GhostChatProvider';
 import { useIsGuest } from '../providers/IsGuestProvider';
 import { SearchModalProvider, useSearchModal } from '../providers/SearchModalProvider';
@@ -18,6 +19,7 @@ interface Props {
 const MainLayoutContent = ({ children }: Props) => {
     const { openSearchModal } = useSearchModal();
     useGuestMigrationNotification();
+    useResourceLimitNotifications();
 
     // Set up keyboard shortcuts
     useKeyboardShortcuts({ onOpenSearch: openSearchModal });

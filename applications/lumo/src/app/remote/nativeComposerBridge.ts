@@ -14,6 +14,7 @@ import {
 } from '@proton/shared/lib/helpers/mimetype';
 
 import type { ModelTier } from '../providers/ModelTierProvider';
+import { LUMO_API_ERRORS } from '../types';
 
 /**
  * Native Composer Bridge
@@ -81,6 +82,40 @@ export interface State {
     attachedFiles: LumoFile[];
     featureFlags: FeatureFlags;
 }
+
+/**
+ * Resource type tied to a backend-enforced usage limit. Mirrors the
+ * `ResourceLimitType` from the Redux error slice; duplicated here so the
+ * bridge remains free of Redux imports.
+ */
+export type LimitReachedResource = 'messages' | 'assets' | 'conversations' | 'spaces';
+
+export interface LimitReachedPayload {
+    /**
+     * Typed error identifier from `LUMO_API_ERRORS` so native clients can
+     * branch on a stable enum value (`MessageLimitReached`, `AssetLimitReached`,
+     * etc.) instead of parsing free-form resource strings.
+     */
+    errorType: LUMO_API_ERRORS;
+    resource: LimitReachedResource;
+    limit: number;
+    /** Optional raw server message for debugging / logging on the native side. */
+    message?: string;
+}
+
+/** Maps the internal resource string to the `LUMO_API_ERRORS` enum value. */
+export const limitResourceToErrorType = (resource: LimitReachedResource): LUMO_API_ERRORS => {
+    switch (resource) {
+        case 'messages':
+            return LUMO_API_ERRORS.MESSAGE_LIMIT_REACHED;
+        case 'assets':
+            return LUMO_API_ERRORS.ASSET_LIMIT_REACHED;
+        case 'conversations':
+            return LUMO_API_ERRORS.CONVERSATION_LIMIT_REACHED;
+        case 'spaces':
+            return LUMO_API_ERRORS.SPACE_LIMIT_REACHED;
+    }
+};
 
 /**
  * Sends the result/error of an API call back to the native side
@@ -453,6 +488,20 @@ class NativeComposerApi {
         console.log(`Native Composer Bridge: on composer error: ${error}`);
         sendResultToNative('', { status: 'error', error: error });
     }
+
+    /**
+     * Emitted when a backend-enforced resource limit has been hit (e.g. the
+     * user reached the maximum number of messages in a conversation, files in
+     * a project, etc). Mobile clients listen for `onLimitReachedError` on the
+     * `nativeComposerHandler` channel to render their own native UI.
+     */
+    public onLimitReachedError(payload: LimitReachedPayload): void {
+        console.log('Native Composer Bridge: on limit reached error', payload);
+        sendResultToNative('onLimitReachedError', {
+            status: 'limit-reached',
+            ...payload,
+        });
+    }
 }
 
 /**
@@ -564,6 +613,7 @@ try {
 
         // Error handling
         onComposerError: createNativeWrapper('onComposerError'),
+        onLimitReachedError: createNativeWrapper('onLimitReachedError'),
 
         // Image generation
         injectImageGenerationHelperPrompt: createNativeWrapper('injectImageGenerationHelperPrompt'),

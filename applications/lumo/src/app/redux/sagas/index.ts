@@ -206,12 +206,44 @@ export class ConflictClientError extends ClientError {
     }
 }
 
+/**
+ * Error thrown when the backend rejects a POST because the user hit a resource
+ * limit (messages per conversation, assets per space, conversations per space,
+ * spaces per user). The backend signals this via HTTP 422.
+ */
+export class LimitReachedError extends ClientError {
+    public readonly resource: 'messages' | 'assets' | 'conversations' | 'spaces';
+
+    public readonly serverMessage?: string;
+
+    public readonly code?: number;
+
+    constructor(
+        resource: LimitReachedError['resource'],
+        opts: { serverMessage?: string; code?: number } = {}
+    ) {
+        super(`Limit reached for ${resource}${opts.serverMessage ? `: ${opts.serverMessage}` : ''}`);
+        this.resource = resource;
+        this.serverMessage = opts.serverMessage;
+        this.code = opts.code;
+        Object.setPrototypeOf(this, LimitReachedError.prototype);
+        this.name = 'LimitReachedError';
+        if (Error.captureStackTrace) {
+            Error.captureStackTrace(this, LimitReachedError);
+        }
+    }
+}
+
 export function isClientError(err: unknown): err is ClientError {
     return err instanceof ClientError;
 }
 
 export function isConflictClientError(err: unknown): err is ConflictClientError {
     return err instanceof ConflictClientError;
+}
+
+export function isLimitReachedError(err: unknown): err is LimitReachedError {
+    return err instanceof LimitReachedError;
 }
 
 export function callWithRetry<R>(
@@ -611,7 +643,7 @@ export function* rootSaga(opts?: { crashIfErrors: boolean }) {
         function*() { yield takeEvery(addMasterKey, initAppSaga)},
         function*() { yield takeEvery(reloadReduxRequest, reloadRedux) },
         function*() { yield takeEvery(unloadReduxRequest, unloadRedux) },
-        
+
         // Guest migration saga
         guestMigrationSaga,
     ]);

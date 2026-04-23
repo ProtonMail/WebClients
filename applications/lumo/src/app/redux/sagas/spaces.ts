@@ -71,7 +71,9 @@ import {
     pushSpaceSuccess,
 } from '../slices/core/spaces';
 import type {LumoState} from '../store';
-import {callWithRetry, isClientError, RETRY_PUSH_EVERY_MS} from './index';
+import {MAX_SPACES_PER_USER} from '../../constants/limits';
+import {addResourceLimitError} from '../slices/meta/errors';
+import {callWithRetry, isClientError, isLimitReachedError, RETRY_PUSH_EVERY_MS} from './index';
 
 /*** helpers ***/
 export function* saveDirtySpace(serializedSpace: SerializedSpace): SagaIterator {
@@ -343,7 +345,16 @@ export function* pushSpace({ payload }: { payload: PushSpaceRequest }): SagaIter
     } catch (e) {
         // Retry unless it's a 4xx client error (in which case we expect retrying to fail again)
         console.error(e);
-        if (isClientError(e)) {
+        if (isLimitReachedError(e)) {
+            yield put(
+                addResourceLimitError({
+                    resource: 'spaces',
+                    limit: MAX_SPACES_PER_USER,
+                    serverMessage: e.serverMessage,
+                })
+            );
+            yield put(pushSpaceFailure({ ...payload, error: `${e}` }));
+        } else if (isClientError(e)) {
             yield put(pushSpaceFailure({ ...payload, error: `${e}` }));
         } else {
             yield put(pushSpaceNeedsRetry(payload));

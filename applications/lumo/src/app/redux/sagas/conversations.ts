@@ -48,7 +48,9 @@ import {addIdMapEntry} from '../slices/core/idmap';
 import {locallyRefreshMessageFromRemoteRequest} from '../slices/core/messages';
 import type {LumoState} from '../store';
 import {waitForMapping} from './idmap';
-import {callWithRetry, ClientError, isClientError, RETRY_PUSH_EVERY_MS} from './index';
+import {MAX_CONVERSATIONS_PER_SPACE} from '../../constants/limits';
+import {addResourceLimitError} from '../slices/meta/errors';
+import {callWithRetry, ClientError, isClientError, isLimitReachedError, RETRY_PUSH_EVERY_MS} from './index';
 import {considerRequestingFullMessage} from './messages';
 import {waitForSpace} from './spaces';
 
@@ -338,7 +340,16 @@ export function* pushConversation({ payload }: { payload: PushConversationReques
     } catch (e) {
         // Retry unless it's a 4xx client error (in which case we expect retrying to fail again)
         console.error(e);
-        if (isClientError(e)) {
+        if (isLimitReachedError(e)) {
+            yield put(
+                addResourceLimitError({
+                    resource: 'conversations',
+                    limit: MAX_CONVERSATIONS_PER_SPACE,
+                    serverMessage: e.serverMessage,
+                })
+            );
+            yield put(pushConversationFailure({ ...payload, error: `${e}` }));
+        } else if (isClientError(e)) {
             yield put(pushConversationFailure({ ...payload, error: `${e}` }));
         } else {
             yield put(pushConversationNeedsRetry(payload));
