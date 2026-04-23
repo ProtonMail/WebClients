@@ -23,7 +23,7 @@ import {
     reactivateKeysProcess,
 } from '@proton/shared/lib/keys';
 import { mnemonicToBase64RandomBytes } from '@proton/shared/lib/mnemonic/bip39Wrapper';
-import { computeKeyPassword } from '@proton/srp/lib';
+import { computeKeyPassword } from '@protontech/crypto/srp';
 import isTruthy from '@proton/utils/isTruthy';
 import noop from '@proton/utils/noop';
 

@@ -36,7 +36,7 @@ jest.mock('@protontech/crypto', () => {
         CryptoProxy: {},
     };
 });
-jest.mock('@proton/srp', () => {});
+jest.mock('@protontech/crypto/srp', () => {});
 
 const reducer = combineReducers({
     ...userReducer,

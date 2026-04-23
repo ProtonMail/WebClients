@@ -1,4 +1,4 @@
-import { getAuthVersionWithFallback } from '@proton/srp';
+import { getAuthVersionWithFallback } from '@protontech/crypto/srp';
 
 import { PASSWORD_WRONG_ERROR, auth, getInfo } from '../api/auth';
 import { endOfTrialIPCCall } from '../desktop/endOfTrialHelpers';

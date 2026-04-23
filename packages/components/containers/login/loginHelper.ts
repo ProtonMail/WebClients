@@ -8,7 +8,7 @@ import { type APP_NAMES, PASSWORD_MODE } from '@proton/shared/lib/constants';
 import type { KeySalt as tsKeySalt } from '@proton/shared/lib/interfaces/KeySalt';
 import type { User as tsUser } from '@proton/shared/lib/interfaces/User';
 import { getPrimaryKeyWithSalt } from '@proton/shared/lib/keys/keys';
-import { computeKeyPassword } from '@proton/srp';
+import { computeKeyPassword } from '@protontech/crypto/srp';
 
 /**
  * Get two factor types and password mode for a user signing in.

@@ -1921,7 +1921,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/register@npm:^7.24.6, @babel/register@npm:^7.28.5":
+"@babel/register@npm:^7.24.6":
   version: 7.28.6
   resolution: "@babel/register@npm:7.28.6"
   dependencies:
@@ -10722,7 +10722,6 @@ __metadata:
     "@proton/cross-storage": "*"
     "@proton/key-transparency": "*"
     "@proton/shared": "*"
-    "@proton/srp": "*"
     "@protontech/crypto": "*"
     date-fns: ^2.30.0
   languageName: unknown
@@ -10855,7 +10854,6 @@ __metadata:
     "@proton/redux-shared-store": "workspace:^"
     "@proton/redux-shared-store-types": "workspace:^"
     "@proton/shared": "workspace:^"
-    "@proton/srp": "workspace:^"
     "@proton/styles": "workspace:^"
     "@proton/testing": "workspace:^"
     "@proton/unleash": "workspace:^"
@@ -10918,7 +10916,6 @@ __metadata:
     "@proton/payments": "workspace:^"
     "@proton/raw-images": "workspace:^"
     "@proton/shared": "workspace:^"
-    "@proton/srp": "workspace:^"
     "@proton/styles": "workspace:^"
     "@proton/testing": "workspace:^"
     "@proton/unleash": "workspace:^"
@@ -11355,7 +11352,6 @@ __metadata:
     "@proton/key-transparency": "workspace:^"
     "@proton/polyfill": "workspace:^"
     "@proton/shared": "workspace:^"
-    "@proton/srp": "workspace:^"
     "@proton/styles": "workspace:^"
     "@proton/types": "workspace:^"
     "@protontech/crypto": "npm:*"
@@ -11585,7 +11581,6 @@ __metadata:
     "@proton/eslint-config-proton": "workspace:^"
     "@proton/i18n": "workspace:^"
     "@proton/sanitize": "workspace:^"
-    "@proton/srp": "workspace:^"
     "@proton/styles": "workspace:^"
     "@proton/types": "workspace:^"
     "@protontech/bip39": "npm:^1.1.0"
@@ -11643,25 +11638,6 @@ __metadata:
     eslint: "npm:^9.39.4"
     jest: "npm:^30.3.0"
     prettier: "npm:^3.8.1"
-    typescript: "npm:^6.0.2"
-  languageName: unknown
-  linkType: soft
-
-"@proton/srp@workspace:^, @proton/srp@workspace:packages/srp":
-  version: 0.0.0-use.local
-  resolution: "@proton/srp@workspace:packages/srp"
-  dependencies:
-    "@babel/preset-env": "npm:^7.28.5"
-    "@babel/preset-typescript": "npm:^7.28.5"
-    "@babel/register": "npm:^7.28.5"
-    "@proton/eslint-config-proton": "workspace:^"
-    "@protontech/crypto": "npm:*"
-    bcryptjs: "npm:^3.0.3"
-    core-js: "npm:^3.49.0"
-    eslint: "npm:^9.39.4"
-    jest: "npm:^30.3.0"
-    prettier: "npm:^3.8.1"
-    ts-jest: "npm:^29.4.9"
     typescript: "npm:^6.0.2"
   languageName: unknown
   linkType: soft
@@ -41392,7 +41368,6 @@ __metadata:
     "@proton/redux-shared-store-types": "workspace:^"
     "@proton/redux-utilities": "workspace:^"
     "@proton/shared": "workspace:^"
-    "@proton/srp": "workspace:^"
     "@proton/styles": "workspace:^"
     "@proton/testing": "workspace:^"
     "@proton/unleash": "workspace:^"
@@ -41570,7 +41545,6 @@ __metadata:
     "@proton/redux-shared-store-types": "workspace:^"
     "@proton/redux-utilities": "workspace:^"
     "@proton/shared": "workspace:^"
-    "@proton/srp": "workspace:^"
     "@proton/styles": "workspace:^"
     "@proton/testing": "workspace:^"
     "@proton/unleash": "workspace:^"
@@ -41799,7 +41773,6 @@ __metadata:
     "@proton/redux-shared-store-types": "workspace:^"
     "@proton/redux-utilities": "workspace:^"
     "@proton/shared": "workspace:^"
-    "@proton/srp": "workspace:^"
     "@proton/styles": "workspace:^"
     "@proton/testing": "workspace:^"
     "@proton/unleash": "workspace:^"
@@ -41869,7 +41842,6 @@ __metadata:
     "@proton/payments": "workspace:^"
     "@proton/prettier-config-proton": "workspace:^"
     "@proton/shared": "workspace:^"
-    "@proton/srp": "workspace:^"
     "@proton/utils": "workspace:^"
     "@protontech/crypto": "npm:*"
     "@tpe/loki-client": "npm:0.2.1"
@@ -42101,7 +42073,6 @@ __metadata:
     "@proton/redux-utilities": "workspace:^"
     "@proton/sanitize": "workspace:^"
     "@proton/shared": "workspace:^"
-    "@proton/srp": "workspace:^"
     "@proton/styles": "workspace:^"
     "@proton/testing": "workspace:^"
     "@proton/types": "workspace:^"

@@ -20,7 +20,7 @@ import { addressKeysListener } from './listener';
 
 const mockedAddressKeysThunk = jest.spyOn(addressKeysModule, 'addressKeysThunk');
 
-jest.mock('@proton/srp', () => {});
+jest.mock('@protontech/crypto/srp', () => {});
 jest.mock('@protontech/crypto', () => {
     return {
         CryptoProxy: {

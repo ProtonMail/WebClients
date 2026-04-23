@@ -1,6 +1,6 @@
 import type { PrivateKeyReference } from '@protontech/crypto';
 import { CryptoProxy } from '@protontech/crypto';
-import { computeKeyPassword, generateKeySalt } from '@proton/srp';
+import { computeKeyPassword, generateKeySalt } from '@protontech/crypto/srp';
 
 import type { UpgradeAddressKeyPayload } from '../api/keys';
 import { upgradeKeysRoute } from '../api/keys';
