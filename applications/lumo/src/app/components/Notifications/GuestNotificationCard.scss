@@ -1,0 +1,76 @@
+@use 'sass:math';
+@use '~@proton/styles/scss/lib/config' as *;
+@use '~@proton/styles/scss/lib/rem' as *;
+@use '~@proton/styles/scss/lib/include-media' as im with (
+	$breakpoints: $breakpoints-product,
+	$media-expressions: $media-expressions
+);
+
+@keyframes slideInUp {
+	0% {
+		opacity: 0;
+		transform: translateY(20px) scale(0.95);
+	}
+
+	50% {
+		opacity: 0.8;
+		transform: translateY(-5px) scale(1.02);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+	}
+}
+
+@keyframes slideOutDown {
+	0% {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+	}
+
+	100% {
+		opacity: 0;
+		transform: translateY(-15px) scale(0.95);
+	}
+}
+
+@keyframes pulse {
+	0%,
+	100% {
+		box-shadow: 0 0 0 0 rgb(139 92 246 / 0.4);
+	}
+
+	50% {
+		box-shadow: 0 0 0 8px rgb(139 92 246 / 0);
+	}
+}
+
+.guest-notification-card {
+	// Smooth entrance animation
+	animation: slideInUp 0.2s ease-out;
+
+	// Basic transitions for hover and state changes
+	transition: all 0.3s ease;
+
+	&:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+	}
+
+	// Hide state - applied when component should be hidden
+	&.hidden {
+		opacity: 0;
+		transform: translateY(-10px);
+		pointer-events: none;
+	}
+
+	&-dismiss-button {
+		transform: translate(35%, -35%);
+		transition: all 0.2s ease;
+
+		&:hover {
+			transform: translate(35%, -35%) scale(1.1);
+		}
+	}
+}

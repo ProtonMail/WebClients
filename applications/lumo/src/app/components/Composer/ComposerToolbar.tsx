@@ -13,6 +13,7 @@ import { isIos } from '@proton/shared/lib/helpers/browser';
 
 import { useLumoFlags } from '../../hooks/useLumoFlags';
 import { ComposerMode } from '../../types';
+import LumoComposerToggleUpsell from '../../upsells/composed/LumoComposerToggleUpsell';
 import { getAcceptAttributeString, getAcceptAttributeStringWithoutImages } from '../../util/filetypes';
 import { sendFileUploadEvent, sendVoiceEntryClickEvent } from '../../util/telemetry';
 import { ModelModeDropdown } from './ModelModeDropdown';
@@ -119,6 +120,8 @@ export interface ComposerToolbarProps {
     // From legacy composer component - can delete
     // hasAttachments: boolean;
     // canShowLumoUpsellToggle?: boolean;
+    // TODO: remove in later versions
+    canShowLumoUpsellToggle?: boolean;
 }
 
 export const ComposerToolbar = ({
@@ -127,6 +130,7 @@ export const ComposerToolbar = ({
     onBrowseDrive,
     onDrawSketch,
     fileUploadMode,
+    canShowLumoUpsellToggle,
 }: ComposerToolbarProps) => {
     const toolsButtonRef = useRef<HTMLButtonElement>(null);
     const [showToolsMenu, setShowToolsMenu] = useState(false);
@@ -192,7 +196,14 @@ export const ComposerToolbar = ({
                 )}
             </div>
             <div className="flex flex-row flex-nowrap items-center gap-2 mr-2">
+                {/* <LumoComposerToggleUpsell /> */}
+                {canShowLumoUpsellToggle && (
+                    <div className="flex flex-row">
+                        <LumoComposerToggleUpsell />
+                    </div>
+                )}
                 <div className={clsx('flex flex-row flex-nowrap gap-2 color-hint hidden')} id="voice-entry-mobile">
+                    {/* <LumoPlusToggle /> */}
                     <Button
                         icon
                         id="voice-entry-mobile-button"

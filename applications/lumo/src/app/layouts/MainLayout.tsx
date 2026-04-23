@@ -1,6 +1,5 @@
 import { type ReactNode, lazy } from 'react';
 
-import { PublicHeader } from '../components/Guest/PublicHeader';
 import HighLoadWarning from '../components/Notifications/HighLoadWarning';
 import { useGuestMigrationNotification } from '../components/useGuestMigrationNotification';
 import { useKeyboardShortcuts } from '../hooks/useKeyboardShortcuts';
@@ -17,11 +16,8 @@ interface Props {
 }
 
 const MainLayoutContent = ({ children }: Props) => {
-    // const { isSmallScreen } = useSidebar();
     const { openSearchModal } = useSearchModal();
-    const isGuest = useIsGuest();
     useGuestMigrationNotification();
-
 
     // Set up keyboard shortcuts
     useKeyboardShortcuts({ onOpenSearch: openSearchModal });
@@ -30,12 +26,10 @@ const MainLayoutContent = ({ children }: Props) => {
         <div className="relative reset4print flex flex-row h-full w-full overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-full no-print">
                 <div className="flex flex-column flex-nowrap h-full flex-1 reset4print">
-                    {/* {!isSmallScreen && <HeaderComponent />} */}
                     <div className="flex flex-row flex-nowrap flex-1 min-h-0 w-full reset4print relative">
                         <LumoSidebar />
                         <main className="flex-1 flex flex-column flex-nowrap border-top border-weak reset4print">
                             <HighLoadWarning />
-                            {isGuest && <PublicHeader />}
                             {children}
                         </main>
                     </div>

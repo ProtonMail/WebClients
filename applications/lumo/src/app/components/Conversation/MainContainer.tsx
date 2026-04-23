@@ -15,6 +15,7 @@ import LumoNavbarUpsell from '../../upsells/composed/LumoNavbarUpsell';
 import { NewGhostChatButton } from '../Buttons/GhostChatButton/NewGhostChatButton';
 import { ComposerComponent } from '../Composer/ComposerComponent';
 import { FilesManagementView } from '../Files';
+import { PublicHeader } from '../Guest/PublicHeader';
 import { LumoCat } from '../LumoAvatar';
 import WhatsNew from '../WhatsNew/WhatsNew';
 import LumoMainText from './MainContainer/LumoMainText';
@@ -87,6 +88,7 @@ const MainContainer = ({
                     <NewGhostChatButton />
                 </HeaderWrapper>
             )}
+            {isGuest && <PublicHeader />}
             {/* Lumo Plus upsell button in navbar - only show for medium and larger screens */}
             <div className="absolute top-custom w-full justify-center hidden md:flex" style={{ '--top-custom': '8px' }}>
                 <LumoNavbarUpsell feature={LUMO_UPSELL_PATHS.TOP_NAVIGATION_BAR} />

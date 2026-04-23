@@ -24,6 +24,7 @@ import { base64ToFile } from '../../util/imageHelpers';
 import { createAttachmentFromPastedContent, getPasteConversionMessage } from '../../util/pastedContentHelper';
 import { AttachmentArea } from '../Files';
 import GuestDisclaimer from '../Notifications/GuestDisclaimer';
+import { GuestNotificationCard } from '../Notifications/GuestNotificationCard';
 import TermsAndConditions from '../TermsAndConditions';
 import { ComposerAttachmentArea } from './ComposerAttachmentArea';
 import { ComposerEditorArea } from './ComposerEditorArea';
@@ -75,6 +76,7 @@ export type ComposerComponentProps = {
     spaceId?: string; // Optional space ID to include space-level attachments
     autoOpenSketch?: boolean; // Auto-open the sketch canvas on mount
     canShowLumoUpsellToggle?: boolean;
+    canShowGuestNotificationCard?: boolean;
     placeholder?: string;
 };
 
@@ -103,6 +105,8 @@ const ComposerComponentInner = ({
     spaceId,
     autoOpenSketch,
     placeholder,
+    canShowLumoUpsellToggle = false,
+    canShowGuestNotificationCard = false,
     driveContext,
 }: ComposerComponentInnerProps) => {
     const { isDragging: isDraggingOverScreen } = useDragArea();
@@ -278,6 +282,9 @@ const ComposerComponentInner = ({
 
     return (
         <>
+            {isGuest && canShowGuestNotificationCard && (
+                <GuestNotificationCard messageChain={messageChain} isGenerating={isGenerating} />
+            )}
             <div
                 style={{ visibility: nativeComposerVisibilityApi.showWebComposer() ? 'visible' : 'hidden' }}
                 className="w-full"
@@ -335,6 +342,7 @@ const ComposerComponentInner = ({
                             onBrowseDrive={handleBrowseDrive}
                             onDrawSketch={handleDrawSketch}
                             fileUploadMode={fileUploadMode}
+                            canShowLumoUpsellToggle={canShowLumoUpsellToggle}
                         />
                     </div>
                     {isGuest && <TermsAndConditions className="m-0 hidden md:block" />}

@@ -327,6 +327,7 @@ const ConversationComponent = ({
                                 initialQuery={initialQuery}
                                 prefillQuery={prefillQuery}
                                 spaceId={conversation?.spaceId}
+                                canShowGuestNotificationCard
                             />
                         </div>
                         <p className="text-center relative color-weak text-xs my-2 hidden md:block">
