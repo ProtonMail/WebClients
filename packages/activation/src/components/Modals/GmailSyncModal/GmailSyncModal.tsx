@@ -81,9 +81,8 @@ const GmailSyncModal = ({
                 const sync = payload?.sync as Sync;
 
                 const hasError = res.type.endsWith('rejected');
+
                 if (!hasError) {
-                    rest?.onClose?.();
-                    onCloseCallback?.();
                     void onComplete?.();
                 }
                 onSyncCallback?.(hasError, sync);
@@ -110,10 +109,6 @@ const GmailSyncModal = ({
                 const payload = res.type.endsWith('fulfilled') ? res?.payload : undefined;
 
                 const hasError = res.type.endsWith('rejected');
-                if (!hasError) {
-                    rest?.onClose?.();
-                    onCloseCallback?.();
-                }
                 onBYOECallback?.(hasError, payload);
             },
         });
