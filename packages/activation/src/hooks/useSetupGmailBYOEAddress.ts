@@ -20,9 +20,10 @@ import useBYOEFeatureStatus from './useBYOEFeatureStatus';
 
 interface Props {
     showSuccessModal: (connectedAddress: string) => void;
+    onComplete?: () => void;
 }
 
-const useSetupGmailBYOEAddress = ({ showSuccessModal }: Props) => {
+const useSetupGmailBYOEAddress = ({ showSuccessModal, onComplete }: Props) => {
     const api = useApi();
     const [addresses] = useAddresses();
     const hasAccessToBYOE = useBYOEFeatureStatus();
@@ -63,12 +64,15 @@ const useSetupGmailBYOEAddress = ({ showSuccessModal }: Props) => {
             } catch (e) {
                 handleError(e);
                 onError();
+                onComplete?.();
             }
         }
     };
 
     const handleBYOEWithImportCallback = async (hasError: boolean, token?: ImportToken) => {
-        if (!hasAccessToBYOE) {
+        // If setting up the token failed or user has no access to BYOE, close the modal
+        if (!hasAccessToBYOE || hasError) {
+            onComplete?.();
             return;
         }
 
@@ -79,6 +83,7 @@ const useSetupGmailBYOEAddress = ({ showSuccessModal }: Props) => {
                     type: 'error',
                     text: c('Error').t`Address is already added to your account`,
                 });
+                onComplete?.();
                 return;
             }
 
@@ -93,6 +98,7 @@ const useSetupGmailBYOEAddress = ({ showSuccessModal }: Props) => {
                 );
             } catch (e) {
                 handleError(e);
+                onComplete?.();
                 return;
             }
 
@@ -107,6 +113,7 @@ const useSetupGmailBYOEAddress = ({ showSuccessModal }: Props) => {
             });
 
             if (address) {
+                onComplete?.();
                 void easySwitchDispatch(loadSyncList());
                 void easySwitchDispatch(loadImporters());
                 showSuccessModal(address.Email);

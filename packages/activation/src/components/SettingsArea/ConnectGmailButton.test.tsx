@@ -28,6 +28,10 @@ const mockUseSetupGmailBYOEAddress = useSetupGmailBYOEAddress as jest.MockedFunc
 jest.mock('../../hooks/useBYOEAddressesCounts');
 const mockUseBYOEAddressesCount = useBYOEAddressesCounts as jest.MockedFunction<any>;
 
+jest.mock('@proton/activation/src/logic/store', () => ({
+    useEasySwitchDispatch: () => jest.fn(),
+}));
+
 // mocking modals because they contain too many hooks
 jest.mock('../Modals/GmailSyncModal/GmailSyncModal', () => ({
     __esModule: true,
