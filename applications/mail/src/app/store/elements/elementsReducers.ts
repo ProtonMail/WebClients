@@ -205,6 +205,11 @@ export const eventUpdatesPending = (
         state.elements[element.ID] = element;
     });
 
+    // We only update elements already in state, not blindly insert new ones.
+    // Inserting unknown elements would create phantom entries in views with page gaps,
+    // showing results before the relevant page has been loaded.
+    // The trade-off is potential context total drift: if an element moves out of the
+    // current context but isn't in state, updateContextTotals won't detect the change.
     toUpdate.forEach((element) => {
         const existingElement = state.elements[element.ID];
         if (existingElement) {
