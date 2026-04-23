@@ -483,7 +483,10 @@ export class AuthenticatedDocController implements AuthenticatedDocControllerInt
           payload: { enabled },
         })
       },
-      registerOverriddenNameListener: (listener: (name: string) => void) => OVERRIDDEN_NAME_LISTENERS.add(listener),
+      registerOverriddenNameListener: (listener: (name: string) => void) => {
+        OVERRIDDEN_NAME_LISTENERS.add(listener)
+        listener(this.documentState.getProperty('documentName'))
+      },
     })
   }
 
