@@ -637,9 +637,6 @@
       "Set extra password": [
         "Thiết lập mật khẩu bổ sung"
       ],
-      "Settings": [
-        "Cài đặt"
-      ],
       "Setup 2FA": [
         "Thiết lập 2FA"
       ],
@@ -1954,7 +1951,7 @@
         "Đang chuyển tất cả mục từ \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Việc chuyển một mục sang kho khác sẽ xóa các liên kết bảo mật của mục đó."
+        "Việc chuyển các mục sang kho khác sẽ xóa các liên kết bảo mật của chúng."
       ],
       "Moving items": [
         "Đang chuyển mục"
@@ -3015,12 +3012,6 @@
       ],
       "Generic CSV": [
         "CSV chung"
-      ],
-      "Get ${ PASS_SHORT_APP_NAME } Plus": [
-        "Nhận ${ PASS_SHORT_APP_NAME } Plus"
-      ],
-      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
-        "Nhận ${ PASS_SHORT_APP_NAME } không giới hạn"
       ],
       "Get Started": [
         "Bắt Đầu"
