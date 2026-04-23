@@ -10,6 +10,7 @@ import useLoading from '@proton/hooks/useLoading'
 import { CircleLoader } from '@proton/atoms/CircleLoader/CircleLoader'
 import { useApplication } from '../../../../ApplicationProvider'
 import { useUI } from '../../../ui-store'
+import { VersionNumber } from '@proton/docs-shared/components/ui/VersionNumber'
 
 const { s } = createStringifier(strings)
 
@@ -135,7 +136,15 @@ export function FileMenu({ renderMenuButton, clientInvoker, isPublicMode, ...pro
               type: 'help',
             })
           }}
-          hintSlot={showVersionNumber && <span className="ml-auto text-[--text-hint]">v{application.appVersion}</span>}
+          hintSlot={
+            showVersionNumber && (
+              <VersionNumber
+                className="ml-auto text-[--text-hint]"
+                version={application.appVersion}
+                environment={application.environment}
+              />
+            )
+          }
         >
           <span>{s('Help')}</span>
         </UI.MenuItem>
