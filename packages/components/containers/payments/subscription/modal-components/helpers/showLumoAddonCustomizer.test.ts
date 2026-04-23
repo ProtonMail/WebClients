@@ -1,198 +1,256 @@
-import { isBF2025Offer } from '@proton/payments/core/checkout';
-import { canAddLumoAddon, hasVPN2024 } from '@proton/payments/core/subscription/helpers';
 import {
+    ADDON_NAMES,
+    COUPON_CODES,
     CYCLE,
     FREE_SUBSCRIPTION,
-    type FreeSubscription,
-    type PlanIDs,
-    hasLumoAddonFromPlanIDs,
+    PLANS,
+    SubscriptionPlatform,
 } from '@proton/payments/index';
+import { buildSubscription } from '@proton/testing/builders';
 
-import type { CouponConfigRendered } from '../../coupon-config/useCouponConfig';
 import { showLumoAddonCustomizer } from './showLumoAddonCustomizer';
 
-jest.mock('@proton/payments/core/checkout');
-jest.mock('@proton/payments/core/subscription/helpers');
-jest.mock('@proton/payments/index', () => ({
-    ...jest.requireActual('@proton/payments/index'),
-    hasLumoAddonFromPlanIDs: jest.fn(),
-}));
-
-const mockCanAddLumoAddon = canAddLumoAddon as jest.MockedFunction<typeof canAddLumoAddon>;
-const mockHasVPN2024 = hasVPN2024 as jest.MockedFunction<typeof hasVPN2024>;
-const mockHasLumoAddonFromPlanIDs = hasLumoAddonFromPlanIDs as jest.MockedFunction<typeof hasLumoAddonFromPlanIDs>;
-const mockIsBF2025Offer = isBF2025Offer as jest.MockedFunction<typeof isBF2025Offer>;
-
-const baseInput = {
-    subscription: FREE_SUBSCRIPTION as FreeSubscription,
-    couponConfig: undefined as CouponConfigRendered | undefined,
-    initialCoupon: undefined as string | undefined | null,
-    planIDs: {} as PlanIDs,
-    cycle: CYCLE.YEARLY,
-};
-
 describe('showLumoAddonCustomizer', () => {
-    beforeEach(() => {
-        // Default: A=true, B=false, C=false, D=undefined, E=false → result=true
-        mockCanAddLumoAddon.mockReturnValue(true);
-        mockHasVPN2024.mockReturnValue(false);
-        mockHasLumoAddonFromPlanIDs.mockReturnValue(false);
-        mockIsBF2025Offer.mockReturnValue(false);
-    });
+    describe('externally managed lumo subscription', () => {
+        it('should return false if current subscription is an externally managed lumo subscription', () => {
+            const subscription = buildSubscription(PLANS.LUMO, {
+                External: SubscriptionPlatform.Android,
+            });
 
-    afterEach(() => {
-        jest.resetAllMocks();
-    });
-
-    describe('canAddLumoAddon(subscription)', () => {
-        it('returns false when canAddLumoAddon returns false', () => {
-            mockCanAddLumoAddon.mockReturnValue(false);
-            expect(showLumoAddonCustomizer(baseInput)).toBe(false);
+            expect(
+                showLumoAddonCustomizer({
+                    subscription,
+                    couponConfig: undefined,
+                    initialCoupon: undefined,
+                    planIDs: {
+                        [PLANS.MAIL]: 1,
+                    },
+                    cycle: CYCLE.YEARLY,
+                })
+            ).toBe(false);
         });
 
-        it('returns true when canAddLumoAddon returns true and other conditions are met', () => {
-            expect(showLumoAddonCustomizer(baseInput)).toBe(true);
-        });
-    });
+        it('should return false if any secondary subscription is an externally managed lumo subscription', () => {
+            const subscription = buildSubscription(PLANS.BUNDLE, {
+                SecondarySubscriptions: [buildSubscription(PLANS.LUMO, { External: SubscriptionPlatform.Android })],
+            });
 
-    describe('!hasVPN2024(subscription) || hasLumoAddonFromPlanIDs(planIDs)', () => {
-        it('returns false when hasVPN2024 is true and hasLumoAddonFromPlanIDs is false', () => {
-            mockHasVPN2024.mockReturnValue(true);
-            mockHasLumoAddonFromPlanIDs.mockReturnValue(false);
-            expect(showLumoAddonCustomizer(baseInput)).toBe(false);
-        });
-
-        it('returns true when hasVPN2024 is true but hasLumoAddonFromPlanIDs is true', () => {
-            mockHasVPN2024.mockReturnValue(true);
-            mockHasLumoAddonFromPlanIDs.mockReturnValue(true);
-            expect(showLumoAddonCustomizer(baseInput)).toBe(true);
-        });
-
-        it('returns true when hasVPN2024 is false and hasLumoAddonFromPlanIDs is false', () => {
-            expect(showLumoAddonCustomizer(baseInput)).toBe(true);
+            expect(
+                showLumoAddonCustomizer({
+                    subscription,
+                    couponConfig: undefined,
+                    initialCoupon: undefined,
+                    planIDs: {
+                        [PLANS.MAIL]: 1,
+                    },
+                    cycle: CYCLE.YEARLY,
+                })
+            ).toBe(false);
         });
 
-        it('returns true when hasVPN2024 is false and hasLumoAddonFromPlanIDs is true', () => {
-            mockHasLumoAddonFromPlanIDs.mockReturnValue(true);
-            expect(showLumoAddonCustomizer(baseInput)).toBe(true);
-        });
-    });
-
-    describe('(!hideLumoAddonBanner && !isBF2025Offer) || hasLumoAddonFromPlanIDs', () => {
-        describe('when hasLumoAddonFromPlanIDs is false', () => {
-            it('returns true when couponConfig is undefined and isBF2025Offer is false', () => {
-                expect(showLumoAddonCustomizer({ ...baseInput, couponConfig: undefined })).toBe(true);
+        it('should return true if current subscription is not an externally managed lumo subscription', () => {
+            const subscription = buildSubscription(PLANS.MAIL, {
+                External: SubscriptionPlatform.Default,
             });
 
-            it('returns true when hideLumoAddonBanner is false and isBF2025Offer is false', () => {
-                expect(
-                    showLumoAddonCustomizer({
-                        ...baseInput,
-                        couponConfig: { hideLumoAddonBanner: false } as CouponConfigRendered,
-                    })
-                ).toBe(true);
-            });
-
-            it('returns false when hideLumoAddonBanner is true', () => {
-                expect(
-                    showLumoAddonCustomizer({
-                        ...baseInput,
-                        couponConfig: { hideLumoAddonBanner: true } as CouponConfigRendered,
-                    })
-                ).toBe(false);
-            });
-
-            it('returns false when isBF2025Offer is true', () => {
-                mockIsBF2025Offer.mockReturnValue(true);
-                expect(showLumoAddonCustomizer(baseInput)).toBe(false);
-            });
-
-            it('returns false when both hideLumoAddonBanner is true and isBF2025Offer is true', () => {
-                mockIsBF2025Offer.mockReturnValue(true);
-                expect(
-                    showLumoAddonCustomizer({
-                        ...baseInput,
-                        couponConfig: { hideLumoAddonBanner: true } as CouponConfigRendered,
-                    })
-                ).toBe(false);
-            });
-        });
-
-        describe('when hasLumoAddonFromPlanIDs is true (Lumo addon already transferred to selected plan)', () => {
-            beforeEach(() => {
-                mockHasLumoAddonFromPlanIDs.mockReturnValue(true);
-            });
-
-            it('returns true even when hideLumoAddonBanner is true', () => {
-                expect(
-                    showLumoAddonCustomizer({
-                        ...baseInput,
-                        couponConfig: { hideLumoAddonBanner: true } as CouponConfigRendered,
-                    })
-                ).toBe(true);
-            });
-
-            it('returns true even when isBF2025Offer is true', () => {
-                mockIsBF2025Offer.mockReturnValue(true);
-                expect(showLumoAddonCustomizer(baseInput)).toBe(true);
-            });
-
-            it('returns true even when both hideLumoAddonBanner is true and isBF2025Offer is true', () => {
-                mockIsBF2025Offer.mockReturnValue(true);
-                expect(
-                    showLumoAddonCustomizer({
-                        ...baseInput,
-                        couponConfig: { hideLumoAddonBanner: true } as CouponConfigRendered,
-                    })
-                ).toBe(true);
-            });
+            expect(
+                showLumoAddonCustomizer({
+                    subscription,
+                    couponConfig: undefined,
+                    initialCoupon: undefined,
+                    planIDs: {
+                        [PLANS.BUNDLE]: 1,
+                    },
+                    cycle: CYCLE.YEARLY,
+                })
+            ).toBe(true);
         });
     });
 
-    describe('short-circuit behaviour', () => {
-        it('does not call hasVPN2024 when canAddLumoAddon returns false', () => {
-            mockCanAddLumoAddon.mockReturnValue(false);
-            showLumoAddonCustomizer(baseInput);
-            expect(mockHasVPN2024).not.toHaveBeenCalled();
+    describe('Experiment: Conditionally hide lumo addon customizer for those who subscribes to vpn2024', () => {
+        it('should return false if flag is enabled, user is free and selects vpn2024', () => {
+            expect(
+                showLumoAddonCustomizer({
+                    subscription: FREE_SUBSCRIPTION,
+                    couponConfig: undefined,
+                    initialCoupon: undefined,
+                    planIDs: {
+                        [PLANS.VPN2024]: 1,
+                    },
+                    cycle: CYCLE.YEARLY,
+                    hideLumoAddonForVpn2024: true,
+                })
+            ).toBe(false);
         });
 
-        it('does not call isBF2025Offer when canAddLumoAddon returns false', () => {
-            mockCanAddLumoAddon.mockReturnValue(false);
-            showLumoAddonCustomizer(baseInput);
-            expect(mockIsBF2025Offer).not.toHaveBeenCalled();
+        it('should return false if flag is enabled, user has vpn2024 subscription and selects vpn2024', () => {
+            const subscription = buildSubscription(PLANS.VPN2024);
+
+            expect(
+                showLumoAddonCustomizer({
+                    subscription,
+                    couponConfig: undefined,
+                    initialCoupon: undefined,
+                    planIDs: {
+                        [PLANS.VPN2024]: 1,
+                    },
+                    cycle: CYCLE.YEARLY,
+                    hideLumoAddonForVpn2024: true,
+                })
+            ).toBe(false);
         });
 
-        it('does not call isBF2025Offer when Clause 2 is false (hasVPN2024=true, hasLumoAddonFromPlanIDs=false)', () => {
-            mockHasVPN2024.mockReturnValue(true);
-            mockHasLumoAddonFromPlanIDs.mockReturnValue(false);
-            showLumoAddonCustomizer(baseInput);
-            expect(mockIsBF2025Offer).not.toHaveBeenCalled();
+        it('should return true if flag is enabled, user selects vpn2024 and already has the lumo addon in planIDs', () => {
+            expect(
+                showLumoAddonCustomizer({
+                    subscription: FREE_SUBSCRIPTION,
+                    couponConfig: undefined,
+                    initialCoupon: undefined,
+                    planIDs: {
+                        [PLANS.VPN2024]: 1,
+                        [ADDON_NAMES.LUMO_VPN2024]: 1,
+                    },
+                    cycle: CYCLE.YEARLY,
+                    hideLumoAddonForVpn2024: true,
+                })
+            ).toBe(true);
+        });
+
+        it('should return true if user has vpn2024 subscription and selects another plan', () => {
+            const subscription = buildSubscription(PLANS.VPN2024);
+
+            expect(
+                showLumoAddonCustomizer({
+                    subscription,
+                    couponConfig: undefined,
+                    initialCoupon: undefined,
+                    planIDs: {
+                        [PLANS.MAIL]: 1,
+                    },
+                    cycle: CYCLE.YEARLY,
+                    hideLumoAddonForVpn2024: true,
+                })
+            ).toBe(true);
+        });
+
+        it('should return true if flag is disabled and user selects vpn2024', () => {
+            expect(
+                showLumoAddonCustomizer({
+                    subscription: FREE_SUBSCRIPTION,
+                    couponConfig: undefined,
+                    initialCoupon: undefined,
+                    planIDs: {
+                        [PLANS.VPN2024]: 1,
+                    },
+                    cycle: CYCLE.YEARLY,
+                    hideLumoAddonForVpn2024: false,
+                })
+            ).toBe(true);
         });
     });
 
-    describe('isBF2025Offer argument forwarding', () => {
-        it('passes initialCoupon, planIDs, and cycle to isBF2025Offer', () => {
-            const testCoupon = 'SOMECOUPON';
-            const testPlanIDs = { mail2022: 1 } as unknown as PlanIDs;
-            const testCycle = CYCLE.MONTHLY;
-
-            showLumoAddonCustomizer({
-                ...baseInput,
-                initialCoupon: testCoupon,
-                planIDs: testPlanIDs,
-                cycle: testCycle,
-            });
-
-            expect(mockIsBF2025Offer).toHaveBeenCalledWith({
-                coupon: testCoupon,
-                planIDs: testPlanIDs,
-                cycle: testCycle,
-            });
+    describe('selected plan support for lumo addon', () => {
+        it('should return false if selected plan does not support lumo addon', () => {
+            expect(
+                showLumoAddonCustomizer({
+                    subscription: FREE_SUBSCRIPTION,
+                    couponConfig: undefined,
+                    initialCoupon: undefined,
+                    planIDs: {
+                        [PLANS.LUMO]: 1,
+                    },
+                    cycle: CYCLE.YEARLY,
+                })
+            ).toBe(false);
         });
 
-        it('forwards null initialCoupon to isBF2025Offer', () => {
-            showLumoAddonCustomizer({ ...baseInput, initialCoupon: null });
-            expect(mockIsBF2025Offer).toHaveBeenCalledWith(expect.objectContaining({ coupon: null }));
+        it('should return false if no plan is selected', () => {
+            expect(
+                showLumoAddonCustomizer({
+                    subscription: FREE_SUBSCRIPTION,
+                    couponConfig: undefined,
+                    initialCoupon: undefined,
+                    planIDs: {},
+                    cycle: CYCLE.YEARLY,
+                })
+            ).toBe(false);
+        });
+
+        it('should return true if a non-externally-managed lumo secondary subscription exists', () => {
+            const subscription = buildSubscription(PLANS.BUNDLE, {
+                SecondarySubscriptions: [buildSubscription(PLANS.LUMO, { External: SubscriptionPlatform.Default })],
+            });
+
+            expect(
+                showLumoAddonCustomizer({
+                    subscription,
+                    couponConfig: undefined,
+                    initialCoupon: undefined,
+                    planIDs: {
+                        [PLANS.MAIL]: 1,
+                    },
+                    cycle: CYCLE.YEARLY,
+                })
+            ).toBe(true);
+        });
+    });
+
+    describe('Custom overrides', () => {
+        it('should hide lumo addon customizer if hideLumoAddonBanner is true', () => {
+            expect(
+                showLumoAddonCustomizer({
+                    subscription: FREE_SUBSCRIPTION,
+                    couponConfig: { hideLumoAddonBanner: true, coupons: [], hidden: false },
+                    initialCoupon: undefined,
+                    planIDs: {
+                        [PLANS.MAIL]: 1,
+                    },
+                    cycle: CYCLE.YEARLY,
+                })
+            ).toBe(false);
+        });
+
+        it('should hide lumo addon banner if the initially selected coupon matches a BF2025 one', () => {
+            expect(
+                showLumoAddonCustomizer({
+                    subscription: FREE_SUBSCRIPTION,
+                    couponConfig: undefined,
+                    initialCoupon: COUPON_CODES.BLACK_FRIDAY_2025,
+                    planIDs: {
+                        [PLANS.MAIL]: 1,
+                    },
+                    cycle: CYCLE.YEARLY,
+                })
+            ).toBe(false);
+        });
+
+        it('should hide lumo addon banner if the condition matches the special VPN 15m offer for BF2025', () => {
+            expect(
+                showLumoAddonCustomizer({
+                    subscription: FREE_SUBSCRIPTION,
+                    couponConfig: undefined,
+                    initialCoupon: undefined,
+                    planIDs: {
+                        [PLANS.VPN2024]: 1,
+                    },
+                    cycle: CYCLE.FIFTEEN,
+                })
+            ).toBe(false);
+        });
+
+        it('should display lumo addon banner if it is already specified in planIDs', () => {
+            expect(
+                showLumoAddonCustomizer({
+                    subscription: FREE_SUBSCRIPTION,
+                    couponConfig: undefined,
+                    initialCoupon: undefined,
+                    planIDs: {
+                        [PLANS.MAIL]: 1,
+                        [ADDON_NAMES.LUMO_MAIL]: 1,
+                    },
+                    cycle: CYCLE.YEARLY,
+                })
+            ).toBe(true);
         });
     });
 });
