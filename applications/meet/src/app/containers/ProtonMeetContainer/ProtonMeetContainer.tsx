@@ -334,7 +334,7 @@ export const ProtonMeetContainer = ({
 
     const liveKitConnectionStateRef = useRef<ConnectionState | null>(null);
     const accessTokenRef = useRef<string | null>(null);
-    const [decryptionKey, setDecryptionKey] = useState<CryptoKey | null>(null);
+    const decryptionKeyRef = useRef<CryptoKey | null>(null);
 
     const {
         getParticipants,
@@ -343,7 +343,7 @@ export const ProtonMeetContainer = ({
         resetParticipantNameMap,
         updateAdminParticipant,
         getQueryParticipantsCount,
-    } = useParticipantNameMap(meetingDetails.meetingId as string, decryptionKey);
+    } = useParticipantNameMap(meetingDetails.meetingId as string, decryptionKeyRef);
 
     const {
         stopPiP,
@@ -725,7 +725,7 @@ export const ProtonMeetContainer = ({
                 salt: meetingInfo.MeetingInfo.Salt,
             });
             const decryptionKey = sessionKey ? await deriveEncryptionKeyFromSessionKey(sessionKey) : null;
-            setDecryptionKey(decryptionKey);
+            decryptionKeyRef.current = decryptionKey;
             const encryptedDisplayName = decryptionKey
                 ? await encryptDisplayNameWithKey(decryptionKey, sanitizedParticipantName)
                 : '';
@@ -1144,7 +1144,7 @@ export const ProtonMeetContainer = ({
         void room.disconnect();
         resetParticipantNameMap();
         meetingInfoRef.current = null;
-        setDecryptionKey(null);
+        decryptionKeyRef.current = null;
         void wasmApp?.leaveMeeting();
         void stopPiP();
         mlsSetupDone.current = false; // need to set mls again after leave meeting
@@ -1182,7 +1182,7 @@ export const ProtonMeetContainer = ({
         } finally {
             resetParticipantNameMap();
             meetingInfoRef.current = null;
-            setDecryptionKey(null);
+            decryptionKeyRef.current = null;
         }
 
         mlsSetupDone.current = false; // need to set mls again after leave meeting
@@ -1215,7 +1215,7 @@ export const ProtonMeetContainer = ({
         meetingLinkNameRef.current = '';
         resetParticipantNameMap();
         meetingInfoRef.current = null;
-        setDecryptionKey(null);
+        decryptionKeyRef.current = null;
         mlsSetupDone.current = false; // need to set mls again after leave meeting
 
         // Cleanup WASM polling interval to prevent MLS errors after leaving
