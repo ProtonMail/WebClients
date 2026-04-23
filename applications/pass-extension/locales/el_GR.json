@@ -1384,6 +1384,21 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
         "Η εφαρμογή επιφάνειας εργασίας ${ PASS_APP_NAME } είναι συνδεδεμένη με διαφορετικό λογαριασμό."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Τα διαπιστευτήρια βιομετρικού κλειδώματος δεν ταιριάζουν."
+      ],
+      "Biometric lock credentials not found.": [
+        "Τα διαπιστευτήρια βιομετρικού κλειδώματος δε βρέθηκαν."
+      ],
+      "Biometric lock is not configured.": [
+        "Το βιομετρικό κλείδωμα δεν έχει ρυθμιστεί."
+      ],
+      "Biometric lock setup failed.": [
+        "Η ρύθμιση του βιομετρικού κλειδώματος απέτυχε."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "Θα πρέπει να συνδεθείτε στην εφαρμογή ${ PASS_APP_NAME } για υπολογιστές."
       ]
     },
     "Error message": {
@@ -2796,6 +2811,12 @@
       ],
       "Logging you out...": [
         "Αποσύνδεση..."
+      ],
+      "Unlock ${ PASS_APP_NAME } to access your passkeys": [
+        "Ξεκλειδώστε το ${ PASS_APP_NAME } για να αποκτήσετε πρόσβαση στους κωδικούς πρόσβασής σας"
+      ],
+      "Unlock ${ PASS_APP_NAME } to save this passkey": [
+        "Ξεκλειδώστε το ${ PASS_APP_NAME } για να αποθηκεύσετε αυτόν τον κωδικό πρόσβασης"
       ]
     },
     "Keyboard key": {
