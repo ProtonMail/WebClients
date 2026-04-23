@@ -82,9 +82,9 @@ export const getFreePlan = ({ api, currency }: { api: Api; currency?: Currency }
         .catch(() => FREE_PLAN);
 
 export interface FeedbackDowngradeData {
-    Reason: string;
-    Feedback: string;
-    ReasonDetails: string;
+    Reason: string | null;
+    Feedback: string | null;
+    ReasonDetails: string | null;
     Context: 'vpn' | 'mail';
 }
 

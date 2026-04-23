@@ -17,7 +17,6 @@ import InputFieldTwo from '@proton/components/components/v2/field/InputField';
 import TextAreaTwo from '@proton/components/components/v2/input/TextArea';
 import useFormErrors from '@proton/components/components/v2/useFormErrors';
 import useConfig from '@proton/components/hooks/useConfig';
-import type { FeedbackDowngradeData } from '@proton/payments/core/api/api';
 import { useIsB2BTrial } from '@proton/payments/ui';
 import { getAppFromPathnameSafe } from '@proton/shared/lib/apps/slugHelper';
 import { APPS, BRAND_NAME } from '@proton/shared/lib/constants';
@@ -29,6 +28,7 @@ import shuffle from '@proton/utils/shuffle';
 
 import useCancellationTelemetry from '../cancellationFlow/useCancellationTelemetry';
 import { useFeedbackFirstEligibility } from '../cancellationFlowFeedbackFirst/hooks/useFeedbackFirstEligibility';
+import type { FeedbackDowngradeFormData, FeedbackDowngradeResult, KeepSubscription } from './interface';
 
 export enum SUBSCRIPTION_CANCELLATION_REASONS {
     DIFFERENT_ACCOUNT = 'DIFFERENT_ACCOUNT',
@@ -53,15 +53,9 @@ interface ReasonDetail {
     content: ReactNode;
 }
 
-export type KeepSubscription = {
-    status: 'kept';
-};
-
 export function isKeepSubscription(data: FeedbackDowngradeResult): data is KeepSubscription {
     return (data as KeepSubscription)?.status === 'kept';
 }
-
-export type FeedbackDowngradeResult = FeedbackDowngradeData | KeepSubscription;
 
 type FeedbackDowngradeContentProps = {
     user: UserModel;
@@ -84,7 +78,7 @@ const FeedbackDowngradeContent = ({ onResolve, onClose, user }: FeedbackDowngrad
     const isVpnApp =
         APP_NAME === APPS.PROTONVPN_SETTINGS || getAppFromPathnameSafe(location.pathname) === APPS.PROTONVPN_SETTINGS;
 
-    const [model, setModel] = useState<FeedbackDowngradeData>({
+    const [model, setModel] = useState<FeedbackDowngradeFormData>({
         Reason: '',
         Feedback: '',
         ReasonDetails: '',
@@ -308,7 +302,7 @@ const FeedbackDowngradeContent = ({ onResolve, onClose, user }: FeedbackDowngrad
 
         const shouldSendReasonDetails = reasonDetails.some(({ forReason }) => model.Reason === forReason);
 
-        const data: FeedbackDowngradeData = {
+        const data: FeedbackDowngradeFormData = {
             ...model,
             ReasonDetails: shouldSendReasonDetails ? model.ReasonDetails : '',
         };
