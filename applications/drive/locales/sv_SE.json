@@ -1262,6 +1262,10 @@
       ],
       "Re-index": [
         "Indexera igen"
+      ],
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "Lägg till i ”${ name }” (${ photoCount } foto)",
+        "Lägg till i ”${ name }” (${ photoCount } foton)"
       ]
     },
     "Action: Docs": {
@@ -7001,6 +7005,34 @@
       ],
       "Invitation confirmed": [
         "Inbjudan bekräftad"
+      ],
+      "${ albums } album": [
+        "${ albums } album",
+        "${ albums } album"
+      ],
+      "${ files } file": [
+        "${ files } fil",
+        "${ files } filer"
+      ],
+      "${ folders } folder": [
+        "${ folders } mapp",
+        "${ folders } mappar"
+      ],
+      "${ photos } photo": [
+        "${ photos } foto",
+        "${ photos } foton"
+      ],
+      "Indexed ${ first }": [
+        "Indexerade ${ first }"
+      ],
+      "Indexed ${ first } and ${ second }": [
+        "Indexerade ${ first } och ${ second }"
+      ],
+      "Indexed ${ first }, ${ second } and ${ third }": [
+        "Indexerade ${ first }, ${ second } och ${ third }"
+      ],
+      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
+        "Indexerade ${ first }, ${ second }, ${ third } och ${ fourth }"
       ]
     },
     "info": {
@@ -8898,6 +8930,9 @@
       ],
       "VPN with ad-blocker and malware protection": [
         "VPN med annonsblockerare och skydd mot skadlig kod"
+      ],
+      "Dedicated servers optimized for speed": [
+        "Dedikerade servrar optimerade för hastighet"
       ]
     },
     "new_plans: feature highlight": {
@@ -11908,6 +11943,10 @@
       ],
       "Your own short @pm.me email alias": [
         "Ditt egna korta @pm.me e-postalias"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Videomöten, upp till ${ PAID_PREMIUM_MAX_PARTICIPANTS } deltagare",
+        "Videomöten, upp till ${ PAID_PREMIUM_MAX_PARTICIPANTS } deltagare"
       ]
     },
     "subscription reminder": {
@@ -13665,6 +13704,11 @@
     "meet_2025: Addon": {
       "${ MEET_APP_NAME } license": [
         "${ MEET_APP_NAME }-licens"
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "Album har bytt namn"
       ]
     }
   }

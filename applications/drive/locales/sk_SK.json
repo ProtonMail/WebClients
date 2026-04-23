@@ -7294,6 +7294,42 @@
       ],
       "No populator states found.": [
         "Nenašli sa žiadne stavy pre populátor."
+      ],
+      "${ albums } album": [
+        "${ albums } album",
+        "${ albums } albumy",
+        "${ albums } albumov",
+        "${ albums } albumov"
+      ],
+      "${ files } file": [
+        "${ files } súbor",
+        "${ files } súbory",
+        "${ files } súborov",
+        "${ files } súborov"
+      ],
+      "${ folders } folder": [
+        "${ folders } priečinok",
+        "${ folders } priečinky",
+        "${ folders } priečinkov",
+        "${ folders } priečinkov"
+      ],
+      "${ photos } photo": [
+        "${ photos } fotografia",
+        "${ photos } fotografie",
+        "${ photos } fotografií",
+        "${ photos } fotografií"
+      ],
+      "Indexed ${ first }": [
+        "Indexované ${ first }"
+      ],
+      "Indexed ${ first } and ${ second }": [
+        "Indexované ${ first } a ${ second }"
+      ],
+      "Indexed ${ first }, ${ second } and ${ third }": [
+        "Indexované ${ first }, ${ second } a ${ third }"
+      ],
+      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
+        "Indexované ${ first }, ${ second }, ${ third } a ${ fourth }"
       ]
     },
     "info": {
@@ -8678,7 +8714,7 @@
     },
     "new_plans": {
       "Highest VPN speed": [
-        "Vysoká rýchlosť VPN"
+        "Najvyššia rýchlosť VPN"
       ],
       "Keep your inbox organized with folders": [
         "Udržujte svoju doručenú poštu organizovanú pomocou priečinkov"

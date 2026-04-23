@@ -3900,6 +3900,9 @@
       ],
       "Something went wrong with search: Not enough storage space.": [
         "Qualcosa è andato storto durante la ricerca: spazio di archiviazione insufficiente."
+      ],
+      "We were not able to load some search results": [
+        "Non siamo in grado di caricare alcuni risultati"
       ]
     },
     "error": {
@@ -6860,6 +6863,9 @@
       ],
       "No populator states found.": [
         "Nessuno stato di popolazione trovato."
+      ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
+        "Per aiutarti a proteggerti, ${ DRIVE_APP_NAME } può analizzare i tuoi file in modo da preservare la privacy e bloccare quelli dannosi. Tuttavia, è sempre meglio scaricare file solo da fonti affidabili. "
       ]
     },
     "info": {
@@ -13060,6 +13066,10 @@
       ],
       "Index populators": [
         "Indice di popolamento"
+      ],
+      "Found ${ resultCount } result": [
+        "Trovato ${ resultCount } risultato",
+        "Trovati ${ resultCount } risultati"
       ]
     },
     "Today icon tooltip in mini calendar": {

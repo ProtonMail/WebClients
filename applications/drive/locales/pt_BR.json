@@ -7038,6 +7038,25 @@
       ],
       "Invitation confirmed": [
         "Convite confirmado"
+      ],
+      "${ albums } album": [
+        "${ albums } álbum",
+        "${ albums } álbuns"
+      ],
+      "${ files } file": [
+        "${ files } arquivo",
+        "${ files } arquivos"
+      ],
+      "${ folders } folder": [
+        "${ folders } pasta",
+        "${ folders } pastas"
+      ],
+      "${ photos } photo": [
+        "${ photos } foto",
+        "${ photos } fotos"
+      ],
+      "Unsupported file type for Photos": [
+        "Tipo de arquivo não compatível para Fotos"
       ]
     },
     "info": {
@@ -8951,6 +8970,9 @@
       "Appointment scheduling with ${ n } booking page": [
         "Agendamento de compromissos com ${ n } página de agendamento",
         "Agendamento de compromissos com ${ n } página de agendamentos"
+      ],
+      "Dedicated servers optimized for speed": [
+        "Servidores dedicados otimizados para velocidade"
       ]
     },
     "new_plans: feature highlight": {
@@ -11970,6 +11992,12 @@
       ],
       "Your own short @pm.me email alias": [
         "Seu próprio alias de e-mail @pm.me"
+      ],
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistente de escrita da ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } e ${ LUMO_APP_NAME } com recursos premium"
       ]
     },
     "subscription reminder": {
@@ -13752,6 +13780,11 @@
       ],
       "You can have up to ${ TRIAL_MAX_MEET_SEATS } ${ MEET_SHORT_APP_NAME } seats during the trial period.": [
         "Você pode ter até ${ TRIAL_MAX_MEET_SEATS } licenças do ${ MEET_SHORT_APP_NAME } durante o período de avaliação."
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "O álbum foi renomeado com sucesso"
       ]
     }
   }

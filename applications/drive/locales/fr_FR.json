@@ -2885,6 +2885,9 @@
       ],
       "Åland Islands": [
         "Îles d'Åland"
+      ],
+      "North Macedonia": [
+        "Macédoine du Nord"
       ]
     },
     "customer_support.feature.all": {
@@ -4427,6 +4430,9 @@
     "fido2: Info": {
       "Security key": [
         "Clé de sécurité"
+      ],
+      "Insert a security key linked to your ${ BRAND_NAME } Account.": [
+        "Insérez une clé de sécurité associée à votre compte ${ BRAND_NAME }."
       ]
     },
     "fido2: Label": {
@@ -7070,6 +7076,28 @@
       ],
       "No populator states found.": [
         "Aucun processus d'indexation trouvé"
+      ],
+      "${ albums } album": [
+        "${ albums } album",
+        "${ albums } albums"
+      ],
+      "${ files } file": [
+        "${ files } fichier",
+        "${ files } fichiers"
+      ],
+      "${ folders } folder": [
+        "${ folders } dossier",
+        "${ folders } dossiers"
+      ],
+      "${ photos } photo": [
+        "${ photos } photo",
+        "${ photos } photos"
+      ],
+      "Each code can only be used once": [
+        "Chaque code ne peut être utilisé qu'une seule fois."
+      ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Saisissez le code de vérification. Entrez ${ digit }."
       ]
     },
     "info": {
@@ -11154,6 +11182,18 @@
       "You have ${ timeRemaining.inDays } day to reset your password.": [
         "Vous disposez de ${ timeRemaining.inDays } jour pour réinitialiser votre mot de passe.",
         "Vous disposez de ${ timeRemaining.inDays } jours pour réinitialiser votre mot de passe."
+      ],
+      "You have ${ timeRemaining.inHours } hour to reset your password.": [
+        "Vous disposez de ${ timeRemaining.inHours } heure pour réinitialiser votre mot de passe.",
+        "Vous disposez de ${ timeRemaining.inHours } heures pour réinitialiser votre mot de passe."
+      ],
+      "You have ${ timeRemaining.inMinutes } minute to reset your password.": [
+        "Vous disposez de ${ timeRemaining.inMinutes } minute pour réinitialiser votre mot de passe.",
+        "Vous disposez de ${ timeRemaining.inMinutes } minutes pour réinitialiser votre mot de passe."
+      ],
+      "You have ${ timeRemaining.inSeconds } second to reset your password.": [
+        "Vous disposez de ${ timeRemaining.inSeconds } seconde pour réinitialiser votre mot de passe.",
+        "Vous disposez de ${ timeRemaining.inSeconds } secondes pour réinitialiser votre mot de passe."
       ]
     },
     "session_recovery:available:link": {
@@ -13802,6 +13842,11 @@
     "Notitication": {
       "Album renamed successfully": [
         "Le nom de l'album a été modifié."
+      ]
+    },
+    "fido2: Error": {
+      "Something went wrong authenticating with your security key. Please try again.": [
+        "Une erreur s'est produite lors de l'authentification avec votre clé de sécurité. Nous vous invitons à réessayer."
       ]
     }
   }
