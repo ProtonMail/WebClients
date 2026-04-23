@@ -1,4 +1,4 @@
-import { Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch, useLocation } from 'react-router-dom';
 
 import { c } from 'ttag';
 
@@ -219,21 +219,65 @@ const RedesignRecoverySettingsRouter = ({ app, recovery, path }: Props) => {
 
 const RecoverySettingsRouter = ({ app, recovery, path }: Props) => {
     const isRecoverySettingsRedesignEnabled = useFlag('RecoverySettingsRedesign');
+    const recoveryPath = getSectionPath(path, recovery);
+    const location = useLocation();
+
+    const showRedesign = isRecoverySettingsRedesignEnabled && !!recovery.subrouteGroups;
+
+    if (showRedesign && location.pathname === recoveryPath) {
+        const params = new URLSearchParams(location.search);
+        const action = params.get('action');
+        const { dataRecovery, advancedRecovery } = recovery.subrouteGroups;
+
+        if (action === 'view') {
+            return (
+                <Redirect
+                    to={{
+                        pathname: getSubroutePath(recoveryPath, advancedRecovery.subroutes.emergencyContacts),
+                        search: location.search,
+                    }}
+                />
+            );
+        } else if (action === 'generate-recovery-phrase') {
+            return (
+                <Redirect
+                    to={{
+                        pathname: getSubroutePath(recoveryPath, advancedRecovery.subroutes.phrase),
+                        search: location.search,
+                    }}
+                />
+            );
+        } else if (action === 'help-recover' || action === 'recover-info' || action === 'recover-token') {
+            return (
+                <Redirect
+                    to={{
+                        pathname: getSubroutePath(recoveryPath, dataRecovery.subroutes.recoveryContacts),
+                        search: location.search,
+                    }}
+                />
+            );
+        }
+    }
 
     return (
         <>
             <RecoveryPageTelemetry />
-            {isRecoverySettingsRedesignEnabled && !!recovery.subrouteGroups ? (
+            {showRedesign ? (
                 <RedesignRecoverySettingsRouter app={app} recovery={recovery} path={path} />
             ) : (
-                <PrivateMainSettingsArea config={recovery}>
-                    <OverviewSection />
-                    <AccountRecoverySection />
-                    <DataRecoverySection />
-                    <EmergencyContactSection app={app} />
-                    <RecoveryContactSection app={app} />
-                    <SessionRecoverySection />
-                </PrivateMainSettingsArea>
+                <Switch>
+                    <Route exact path={recoveryPath}>
+                        <PrivateMainSettingsArea config={recovery}>
+                            <OverviewSection />
+                            <AccountRecoverySection />
+                            <DataRecoverySection />
+                            <EmergencyContactSection app={app} />
+                            <RecoveryContactSection app={app} />
+                            <SessionRecoverySection />
+                        </PrivateMainSettingsArea>
+                    </Route>
+                    <Redirect to={recoveryPath} />
+                </Switch>
             )}
         </>
     );
