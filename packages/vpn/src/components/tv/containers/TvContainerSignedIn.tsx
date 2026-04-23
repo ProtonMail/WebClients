@@ -1,12 +1,14 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useSubscription } from '@proton/account/subscription/hooks';
 import { useUser } from '@proton/account/user/hooks';
 import { Loader, useApi } from '@proton/components/index';
 import { getApiError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
+import { getItem, removeItem } from '@proton/shared/lib/helpers/storage';
 import { telemetry } from '@proton/shared/lib/telemetry';
 
+import { VPN_TV_USER_TIER } from '../../../../constants/tvUserTier';
 import { isB2BAdmin } from '../../../functions/isB2BAdmin';
 import { TvConfirmForkSession } from '../components/TvConfirmForkSession';
 import { TvSignInCompleted } from '../components/TvSignInCompleted';
@@ -15,6 +17,7 @@ import type { FetchErrors } from '../types';
 import { forkSession } from '../utils/forkSession';
 import { getChildClientId } from '../utils/getChildClientId';
 import { getUserTier } from '../utils/getUserTier';
+import type { UserTier } from '../utils/getUserTier';
 
 enum ForkSessionStep {
     CONFIRMATION,
@@ -32,8 +35,22 @@ export const TvContainerSignedIn = ({ code }: { code: string }) => {
     const [user] = useUser();
     const [organization] = useOrganization();
     const [subscription] = useSubscription();
+    const [tier, setTier] = useState(getUserTier(user));
 
     const isBusiness = isB2BAdmin({ subscription, user, organization });
+
+    useEffect(() => {
+        // If the tier is in the localStorage means it was sent already, but it is also need to
+        // be sent in the payload when forking the session.
+        const localStorageTier: UserTier | undefined = getItem(VPN_TV_USER_TIER);
+        if (localStorageTier) {
+            setTier(localStorageTier);
+            removeItem(VPN_TV_USER_TIER);
+            return;
+        }
+
+        telemetry.sendCustomEvent('tv_auth_initiated', { userTierAtInitiation: tier, flowType: 'web' });
+    }, []);
 
     const onConfirm = () => {
         setStep(ForkSessionStep.FETCHING_CODE);
@@ -43,9 +60,12 @@ export const TvContainerSignedIn = ({ code }: { code: string }) => {
             return;
         }
         if (code) {
-            const tier = getUserTier(user);
-            telemetry.sendCustomEvent('tv_auth_initiated', { userTierAtInitiation: tier });
-            forkSession({ api, childClientId, code, payload: JSON.stringify({ InitialUserTier: tier }) })
+            forkSession({
+                api,
+                childClientId,
+                code,
+                payload: JSON.stringify({ InitialUserTier: tier, FlowType: 'web' }),
+            })
                 .then(() => setStep(ForkSessionStep.DEVICE_CONNECTED))
                 .catch((error) => {
                     const { code } = getApiError(error);
