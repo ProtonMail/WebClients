@@ -105,7 +105,7 @@ const TwoFactorSection = () => {
                 <br />
                 <Href href={getKnowledgeBaseUrl('/two-factor-authentication-2fa')}>{c('Info').t`Learn more`}</Href>
             </SettingsParagraph>
-            {hasTOTPEnabled && hasRecoveryMethod && (
+            {(hasTOTPEnabled || hasFIDO2Enabled) && hasRecoveryMethod && (
                 <SettingsParagraph>
                     <InlineLinkButton onClick={() => setLostTwoFAModal(true)}>
                         {c('Action').t`Lost access to your 2FA device?`}
