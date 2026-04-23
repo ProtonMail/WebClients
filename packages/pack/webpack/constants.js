@@ -3,7 +3,6 @@ const BABEL_INCLUDE_NODE_MODULES = [
     'proton-mail',
     '@proton/pack',
     '@proton/shared',
-    '@proton/srp',
     '@proton/sieve',
     '@sentry/core',
     '@floating-ui/utils',
