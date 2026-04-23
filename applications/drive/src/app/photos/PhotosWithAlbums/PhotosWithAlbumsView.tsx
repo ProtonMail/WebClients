@@ -36,6 +36,7 @@ export const PhotosWithAlbumsView = () => {
         selectedTags,
         handleSelectTag,
         isPhotosEmpty,
+        photoTimelineUids,
         albumPhotosNodeUidToIndexMap,
         photoNodeUidToIndexMap,
     } = useOutletContext<PhotosLayoutOutletContext>();
@@ -72,7 +73,7 @@ export const PhotosWithAlbumsView = () => {
     );
 
     // We want to show the view in case they are more page to load, we can start to show what we already have
-    if (!volumeId || !shareId || !linkId || (isPhotosLoading && photos.length === 0)) {
+    if (!volumeId || !shareId || !linkId || (isPhotosLoading && photoTimelineUids.size === 0)) {
         return <Loader />;
     }
     const isSelectedTagEmtpy = !isPhotosEmpty && photos.length === 0;

@@ -55,7 +55,6 @@ export const refreshAlbumMetadata = async (albumNodeUid: string) => {
         members,
         deprecatedShareId: rootNodeSharedId,
     };
-
     albumsStore.upsertAlbum(album);
     return album;
 };
