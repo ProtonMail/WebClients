@@ -84,12 +84,38 @@ export const useChat = () => {
                     return;
                 }
 
+                const mlsSenderId = decryptedMessage.sender_participant_id;
+
+                if (participant.identity !== mlsSenderId) {
+                    reportMeetError('Chat message LiveKit identity does not match MLS sender', {
+                        level: 'error',
+                        context: {
+                            participantIdentity: participant.identity,
+                            senderParticipantId: mlsSenderId,
+                        },
+                    });
+                    return;
+                }
+
+                // Envelope id is `${senderIdentity}-${timestamp}` (see useChatMessage); must match MLS sender.
+                const expectedIdPrefix = `${mlsSenderId}-`;
+                if (typeof decodedMessage.id !== 'string' || !decodedMessage.id.startsWith(expectedIdPrefix)) {
+                    reportMeetError('Chat message id does not match MLS sender identity', {
+                        level: 'error',
+                        context: {
+                            messageId: decodedMessage.id,
+                            senderParticipantId: mlsSenderId,
+                        },
+                    });
+                    return;
+                }
+
                 const sanitizedMessage = sanitizeMessage(decryptedMessage.message);
 
                 const newMessage: MeetChatMessage = {
                     id: decodedMessage.id,
                     timestamp: decodedMessage.timestamp,
-                    identity: participant.identity,
+                    identity: mlsSenderId,
                     seen: isChatOpen,
                     message: sanitizedMessage,
                 };
