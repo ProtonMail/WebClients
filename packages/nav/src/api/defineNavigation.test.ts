@@ -1,10 +1,10 @@
 import { describe, expect, it, vi } from 'vitest';
 
-import { defineNavigation } from './api';
-import { DuplicateNavIdError, NavError } from './errors';
-import type { NavContext } from './types/models';
-import type { NavDefinition, NavItemResolver } from './types/nav';
-import type { TestUserModel } from './types/test.models';
+import { DuplicateNavIdError, NavError } from '../errors';
+import type { NavContext } from '../types/models';
+import type { NavDefinition, NavItemResolver } from '../types/nav';
+import type { TestUserModel } from '../types/test.models';
+import { defineNavigation } from './defineNavigation';
 
 const makeContext = (user: TestUserModel, prefix?: string): NavContext => ({ user, prefix }) as unknown as NavContext;
 
