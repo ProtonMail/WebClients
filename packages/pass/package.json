@@ -33,7 +33,7 @@
         "@proton/srp": "workspace:^",
         "@proton/styles": "workspace:^",
         "@proton/types": "workspace:^",
-        "@protontech/crypto": "^2.0.1",
+        "@protontech/crypto": "*",
         "@protontech/pass-rust-core": "0.28.8",
         "@reduxjs/toolkit": "^2.11.2",
         "@zip.js/zip.js": "^2.8.26",

@@ -32,7 +32,7 @@
         "@proton/styles": "workspace:^",
         "@proton/types": "workspace:^",
         "@protontech/authenticator-rust-core": "^0.28.8",
-        "@protontech/crypto": "^2.0.1",
+        "@protontech/crypto": "*",
         "@reduxjs/toolkit": "^2.11.2",
         "@tanstack/react-virtual": "^3.13.23",
         "@tauri-apps/api": "^2.10.1",

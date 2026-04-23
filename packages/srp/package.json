@@ -14,7 +14,7 @@
         "test:ci": "jest --runInBand --ci"
     },
     "dependencies": {
-        "@protontech/crypto": "^2.0.1",
+        "@protontech/crypto": "*",
         "bcryptjs": "^3.0.3"
     },
     "devDependencies": {
