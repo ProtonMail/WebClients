@@ -69,7 +69,6 @@ export const PasswordModal: FC<PasswordModalProps> = ({
         <ModalTwo
             as={Form}
             onClose={onClose}
-            onReset={onClose}
             onSubmit={onFormSubmit}
             open={open}
             size="small"
