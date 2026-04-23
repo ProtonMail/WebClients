@@ -18,9 +18,10 @@ import { useSelector } from '@proton/redux-shared-store/sharedProvider';
 import { getKnowledgeBaseUrl } from '@proton/shared/lib/helpers/url';
 
 import illustration from './assets/device-based-recovery.svg';
+import PasswordResetOptionRequiredWarning from './shared/PasswordResetOptionRequiredWarning';
 import RecoveryWarning from './shared/RecoveryWarning';
 
-const DeviceBasedRecoverySubpage = () => {
+const DeviceBasedRecoverySubpage = ({ emailSubpagePath }: { emailSubpagePath: string }) => {
     const recoveryFileData = useSelector(selectRecoveryFileData);
     const updateRecoveryFile = useUpdateRecoveryFile(recoveryFileData);
 
@@ -60,6 +61,7 @@ const DeviceBasedRecoverySubpage = () => {
                     }
                 />
                 <DashboardCard>
+                    <PasswordResetOptionRequiredWarning emailSubpagePath={emailSubpagePath} />
                     <DashboardCardContent>
                         <SettingsToggleRow
                             id="deviceRecoveryToggle"
