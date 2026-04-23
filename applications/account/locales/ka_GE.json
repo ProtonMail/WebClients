@@ -5934,9 +5934,6 @@
       "Recovery contact removed": [
         "აღდგენის კონტაქტი წაიშალა"
       ],
-      "Recovery contacts": [
-        "საკონტაქტო ინფორმაცია აღდგენისთვის"
-      ],
       "Recovery request sent": [
         "აღდგენის მოთხოვნა გაიგზავნა"
       ],
@@ -6066,10 +6063,6 @@
       "You reached the maximum of ${ limit } emergency contact.": [
         "მიაღწიეთ მაქსიმალურ ${ limit } სასწრაფო კონტაქტს.",
         "მიაღწიეთ მაქსიმალურ ${ limit } სასწრაფო კონტაქტს."
-      ],
-      "You reached the maximum of ${ limit } recovery contact.": [
-        "თქვენ მიაღწიეთ ${ limit } აღდგენის კონტაქტის მაქსიმალურ რაოდენობას.",
-        "თქვენ მიაღწიეთ მაქსიმალურ ${ limit } აღდგენის კონტაქტს."
       ],
       "You will be notified when someone requests emergency access.": [
         "გაგაფრთხილებთ, როცა ვინმე სასწრაფო წვდომას მოითხოვს."
@@ -12950,6 +12943,9 @@
       "for your first month": [
         "თქვენი პირველი თვისთვის"
       ],
+      "Free": [
+        "Free"
+      ],
       "From: ${ fromEmail }": [
         "გამომგზავნელი: ${ fromEmail }"
       ],
@@ -13539,6 +13535,9 @@
       "Sticky labels": [
         "წებოვანი ჭდეები"
       ],
+      "Storage": [
+        "საცავი"
+      ],
       "Street address": [
         "ქუჩის მისამართი"
       ],
@@ -13607,6 +13606,9 @@
       ],
       "Undo send": [
         "გაგზავნის გაუქმება"
+      ],
+      "Unlimited": [
+        "შეუზღუდავი"
       ],
       "Unlimited hide-my-email aliases": [
         "შეუზღუდავი hide-my-email-ის ფსევდონიმები"
@@ -17732,11 +17734,6 @@
         "თქვენი კარიბჭე ინტერნეტ-უსაფრთხოებისთვის"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "კონტაქტი"
-      ]
-    },
     "Plan description": {
       "All ${ BRAND_NAME } premium products included in Duo.": [
         "ყველა ${ BRAND_NAME }-ის ფასიანი ფუნქცია, რომელსაც Duo შეიცავს."
@@ -17952,9 +17949,6 @@
       "Verify now": [
         "ახლა გადამოწმება"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "გადაამოწმეთ თქვენი აღდგენის ელფოსტის მისამართი: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "შევამოწმო აღდგენის ელფოსტა?"
       ],
@@ -17997,9 +17991,6 @@
       ],
       "Verify recovery phone?": [
         "შევამოწმო აღდგენის ტელეფონი?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "გადაამოწმეთ თქვენი აღდგენის ტელეფონის ნომერი ახლა: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "ტელეფონის ნომრის შემოწმება ზრდის თქვენი ანგარიშის უსაფრთხოებას და აღდგენის დამატებით შესაძლებლობებს გაძლევთ."

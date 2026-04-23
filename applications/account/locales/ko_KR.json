@@ -6062,9 +6062,6 @@
       "Asking for help": [
         "도움 요청"
       ],
-      "By adding people you trust as recovery contacts, we'll be able to send them an email to help you if you're having trouble to recover your data after a password reset. You can also be a recovery contact for others.": [
-        "신뢰하는 사람을 복구 연락처에 추가함으로써, 비밀번호 재설정 이후 데이터를 복구할 때 그들에게 이메일을 보내 도움을 요청할 수 있습니다. 당신이 다른 사람의 복구 연락처가 되어 줄 수도 있습니다."
-      ],
       "Cancel request": [
         "요청 취소"
       ],
@@ -6218,9 +6215,6 @@
       "Recovery contact removed": [
         "복구 연락처가 삭제되었습니다"
       ],
-      "Recovery contacts": [
-        "복구 연락처"
-      ],
       "Recovery request sent": [
         "복구 요청 전송됨"
       ],
@@ -6314,9 +6308,6 @@
       "To disable this recovery method, remove all your recovery contacts.": [
         "해당 복구 방법을 비활성화하려면 모든 복구 연락처를 삭제하십시오."
       ],
-      "To use trusted contact recovery, you must have an account recovery method set.": [
-        "신뢰할 수 있는 연락처 복구를 사용하려면 계정 복구 방법이 설정되어 있어야 합니다."
-      ],
       "Trusted contact": [
         "신뢰하는 연락처"
       ],
@@ -6367,9 +6358,6 @@
       ],
       "You reached the maximum of ${ limit } emergency contact.": [
         "최대 ${ limit }개의 비상 연락처 개수에 도달했습니다."
-      ],
-      "You reached the maximum of ${ limit } recovery contact.": [
-        "복구 연락처의 최대치인 ${ limit }개에 도달했습니다."
       ],
       "You will be notified when someone requests emergency access.": [
         "누군가 긴급 접근을 요청하면 알림을 받게 됩니다."
@@ -13566,6 +13554,9 @@
       "for your first month": [
         "첫 한 달간"
       ],
+      "Free": [
+        "Free"
+      ],
       "From: ${ fromEmail }": [
         "보낸 사람: ${ fromEmail }"
       ],
@@ -14166,6 +14157,9 @@
       "Sticky labels": [
         "라벨"
       ],
+      "Storage": [
+        "저장 공간"
+      ],
       "Street address": [
         "도로명 주소"
       ],
@@ -14234,6 +14228,9 @@
       ],
       "Undo send": [
         "전송 취소"
+      ],
+      "Unlimited": [
+        "제한 없음"
       ],
       "Unlimited hide-my-email aliases": [
         "무제한 hide-my-email 별칭"
@@ -18494,11 +18491,6 @@
         "온라인 자유를 위한 안전한 길"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "연락"
-      ]
-    },
     "Plan description": {
       "A VPN solution that provides secure, high-speed access to the internet.": [
         "인터넷에 안전하고 빠른 속도로 접속할 수 있는 VPN 솔루션."
@@ -18839,9 +18831,6 @@
       "Verify now": [
         "지금 인증"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "이 복구 이메일 주소로 인증하세요: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "복구 이메일을 인증할까요?"
       ],
@@ -18884,9 +18873,6 @@
       ],
       "Verify recovery phone?": [
         "복구 휴대전화 인증?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "이 복구 전화번호로 인증하세요: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "휴대 전화 인증은 계정 보호성이 증가하고 추가적인 복구 옵션을 제공합니다."

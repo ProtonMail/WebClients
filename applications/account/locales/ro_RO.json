@@ -2034,6 +2034,50 @@
         "administrator"
       ]
     },
+    "Admin roles onboarding": {
+      "3 new admin roles": [
+        "3 roluri noi de administrator"
+      ],
+      "Admin roles": [
+        "Roluri de administrator"
+      ],
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configurați politicile de securitate, păstrarea datelor și infrastructura VPN și gestionați jurnalele de audit."
+      ],
+      "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
+        "Delegați gestionarea prin atribuirea unor roluri de administrator specifice. Acordați fiecărui administrator doar accesul de care are nevoie. Aceasta respectă principiul privilegiilor minime, protejându-vă organizația de conturi compromise și erori accidentale."
+      ],
+      "Delegate management with the appropriate admin role.": [
+        "Delegați gestionarea cu rolul de administrator corespunzător."
+      ],
+      "Manage all users, groups, storage, security, billing, audit logs, and system configurations.": [
+        "Gestionați toți utilizatorii, grupurile, spațiul de stocare, securitatea, facturarea, jurnalele de audit și configurațiile sistemului."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gestionați utilizatorii, grupurile și spațiul de stocare pentru toți membrii, atribuiți roluri și alocați licențe."
+      ],
+      "New: Control admin access for individual users": [
+        "Nou: control acces administrator pentru utilizatori individuali"
+      ],
+      "Organization admin": [
+        "Administrator organizație"
+      ],
+      "Organization admin:": [
+        "Administrator organizație:"
+      ],
+      "Security admin": [
+        "Administrator securitate"
+      ],
+      "Security admin:": [
+        "Administrator securitate:"
+      ],
+      "User admin": [
+        "Administrator utilizatori"
+      ],
+      "User admin:": [
+        "Administrator utilizatori:"
+      ]
+    },
     "AdminRole_Info": {
       "A role is a group of permissions that you can assign to the members of your organization.": [
         "Un rol este un grup de permisiuni pe care îl puteți atribui membrilor organizației."
@@ -6240,9 +6284,6 @@
       "Asking for help": [
         "Solicitare ajutor"
       ],
-      "By adding people you trust as recovery contacts, we'll be able to send them an email to help you if you're having trouble to recover your data after a password reset. You can also be a recovery contact for others.": [
-        "Prin adăugarea persoanelor de încredere ca și contacte de recuperare, le vom putea trimite un e-mail pentru a vă ajuta dacă întâmpinați probleme la recuperarea datelor după o resetare de parolă. Puteți fi, de asemenea, un contact de recuperare pentru alții."
-      ],
       "Cancel request": [
         "Anulare solicitare"
       ],
@@ -6396,9 +6437,6 @@
       "Recovery contact removed": [
         "Contact de recuperare eliminat"
       ],
-      "Recovery contacts": [
-        "Contacte de recuperare"
-      ],
       "Recovery request sent": [
         "Solicitare de recuperare trimisă"
       ],
@@ -6494,9 +6532,6 @@
       "To disable this recovery method, remove all your recovery contacts.": [
         "Pentru a dezactiva această metodă de recuperare, eliminați toate contactele de recuperare."
       ],
-      "To use trusted contact recovery, you must have an account recovery method set.": [
-        "Pentru a utiliza recuperarea prin contact de încredere, trebuie să aveți configurată o metodă de recuperare a contului."
-      ],
       "Trusted contact": [
         "Contact aprobat"
       ],
@@ -6549,11 +6584,6 @@
         "Ați atins maximul de contacte de urgență: ${ limit }.",
         "Ați atins maximul de contacte de urgență: ${ limit }.",
         "Ați atins maximul de contacte de urgență: ${ limit }."
-      ],
-      "You reached the maximum of ${ limit } recovery contact.": [
-        "Ați atins numărul maxim de contacte de recuperare: ${ limit }",
-        "Ați atins numărul maxim de contacte de recuperare: ${ limit }",
-        "Ați atins numărul maxim de contacte de recuperare: ${ limit }"
       ],
       "You will be notified when someone requests emergency access.": [
         "Veți primi o notificare când cineva vă solicită acces de urgență."
@@ -14155,6 +14185,9 @@
       "for your first month": [
         "pentru prima lună"
       ],
+      "Free": [
+        "Free"
+      ],
       "From: ${ fromEmail }": [
         "De la: ${ fromEmail }"
       ],
@@ -14760,6 +14793,9 @@
       "Sticky labels": [
         "Etichete adezive"
       ],
+      "Storage": [
+        "Spațiu de stocare"
+      ],
       "Street address": [
         "Strada"
       ],
@@ -14828,6 +14864,9 @@
       ],
       "Undo send": [
         "Anulare trimitere"
+      ],
+      "Unlimited": [
+        "Nelimitat"
       ],
       "Unlimited hide-my-email aliases": [
         "Aliasuri hide-my-email nelimitate"
@@ -19284,11 +19323,6 @@
         "Poarta dvs. către libertatea online"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "contactați"
-      ]
-    },
     "Plan description": {
       "A VPN solution that provides secure, high-speed access to the internet.": [
         "O soluție VPN care oferă acces securizat, de mare viteză, la internet."
@@ -19633,9 +19667,6 @@
       "Verify now": [
         "Verificare acum"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "Verificare acum această adresă de e-mail: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "Verificare e-mail de recuperare?"
       ],
@@ -19678,9 +19709,6 @@
       ],
       "Verify recovery phone?": [
         "Verificare număr de telefon de recuperare?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "Verificare acum acest număr de telefon: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Verificarea numărului de telefon vă mărește securitatea contului și permite opțiuni suplimentare de recuperare."
@@ -22461,6 +22489,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent de scriere ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } și ${ LUMO_APP_NAME } cu funcții premium"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } și ${ VPN_SHORT_APP_NAME } cu funcțiile premium"
       ],
@@ -22724,6 +22758,11 @@
       ],
       "Version history": [
         "Istoric versiuni"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Conferințe video, maxim ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant",
+        "Conferințe video, maxim ${ PAID_PREMIUM_MAX_PARTICIPANTS } participanți",
+        "Conferințe video, maxim ${ PAID_PREMIUM_MAX_PARTICIPANTS } de participanți"
       ],
       "Watch the interview": [
         "Priviți interviul"
