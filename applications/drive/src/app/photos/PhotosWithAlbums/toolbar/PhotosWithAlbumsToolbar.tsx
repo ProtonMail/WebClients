@@ -207,12 +207,10 @@ interface ToolbarLeftActionsAlbumsGalleryProps {
 }
 
 export const ToolbarLeftActionsAlbumsGallery = ({
-    isLoading,
     onAlbumsClick,
     //name, // not sure if we should keep it?
 }: ToolbarLeftActionsAlbumsGalleryProps) => {
     const getButtonStyles = () => ({
-        loading: isLoading,
         selected: false,
     });
 
