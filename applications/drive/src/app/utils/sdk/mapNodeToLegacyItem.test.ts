@@ -46,6 +46,7 @@ describe('mapNodeToLegacyItem', () => {
         claimedModificationTime: new Date(modifyTime),
         claimedDigests: {
             sha1: 'abc123',
+            sha1Verified: false,
         },
         claimedAdditionalMetadata: {},
     };
