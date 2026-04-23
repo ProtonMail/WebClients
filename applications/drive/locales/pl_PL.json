@@ -90,12 +90,6 @@
       "Add photos": [
         "Dodaj zdjęcia"
       ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "Dodaj do albumu \"${ album.name }\" (${ album.photoCount } zdjęcie)",
-        "Dodaj do albumu \"${ album.name }\" (${ album.photoCount } zdjęcia)",
-        "Dodaj do albumu \"${ album.name }\" (${ album.photoCount } zdjęć)",
-        "Dodaj do albumu \"${ album.name }\" (${ album.photoCount } zdjęcia)"
-      ],
       "Add to album": [
         "Dodaj do albumu"
       ],
@@ -489,9 +483,6 @@
       "Get in touch": [
         "Skontaktuj się z nami"
       ],
-      "Get link": [
-        "Uzyskaj link"
-      ],
       "Get secure storage for ${ simplePriceString }": [
         "Uzyskaj bezpieczną przestrzeń dyskową od ${ simplePriceString }"
       ],
@@ -606,9 +597,6 @@
       "Load image": [
         "Załaduj obraz"
       ],
-      "Loading link": [
-        "Ładowanie linku"
-      ],
       "Make a copy": [
         "Utwórz kopię"
       ],
@@ -623,9 +611,6 @@
       ],
       "Manage labels": [
         "Zarządzaj etykietami"
-      ],
-      "Manage link": [
-        "Zarządzaj linkiem"
       ],
       "Manage share": [
         "Zarządzaj udostępnianiem"
@@ -5830,9 +5815,6 @@
       "Shared by ${ sharedBy }": [
         "Udostępnione przez ${ sharedBy }"
       ],
-      "Shared by you": [
-        "Udostępnione przez Ciebie"
-      ],
       "Shared link not found": [
         "Udostępniony link nie został znaleziony"
       ],
@@ -6133,9 +6115,6 @@
       "Unsupported file": [
         "Plik jest nieobsługiwany"
       ],
-      "Untitled": [
-        "Bez nazwy"
-      ],
       "Updating drive search...": [
         "Aktualizacja wyszukiwania zawartości dysku..."
       ],
@@ -6201,9 +6180,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Przestrzeń dyskowa została zwiększona do 5 GB!"
-      ],
-      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "Mamy problemy techniczne. Akcje związane z albumami są tymczasowo wyłączone."
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "Nie udało się zweryfikować, czy ${ nameAuthor } przesłał ${ node.name }. Następujące elementy mogły zostać naruszone: kolejność danych w pliku. Otwórz tylko jeśli im ufasz."
@@ -8814,9 +8790,6 @@
       "Access updated": [
         "Dostęp został zaktualizowany"
       ],
-      "Album failed to be renamed": [
-        "Zmiana nazwy albumu nie powiodła się"
-      ],
       "Album renamed successfully": [
         "Nazwa albumu została zmieniona"
       ],
@@ -8864,9 +8837,6 @@
       ],
       "Failed to download files: ${ err }": [
         "Nie udało się pobrać plików: ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "Nie udało się załadować szczegółów zaproszenia"
       ],
       "Failed to move, please try again": [
         "Przenoszenie nie powiodło się. Spróbuj ponownie"
@@ -9761,11 +9731,6 @@
     "Placeholder for contact group name": {
       "Name": [
         "Nazwa"
-      ]
-    },
-    "plan customizer, users": {
-      "contact": [
-        "skontaktuj się"
       ]
     },
     "Plan description": {

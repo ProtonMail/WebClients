@@ -87,9 +87,6 @@
       "Add photos": [
         "写真を追加"
       ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "「${ album.name }」に追加（${ album.photoCount } 枚の写真）"
-      ],
       "Add to album": [
         "アルバムに追加"
       ],
@@ -510,9 +507,6 @@
       "Get in touch": [
         "連絡する"
       ],
-      "Get link": [
-        "リンクを作成"
-      ],
       "Get mobile and desktop apps": [
         "モバイルアプリとデスクトップアプリを入手する"
       ],
@@ -636,9 +630,6 @@
       "Load image": [
         "画像を読み込む"
       ],
-      "Loading link": [
-        "リンクを読み込み中"
-      ],
       "Make a copy": [
         "複製"
       ],
@@ -653,9 +644,6 @@
       ],
       "Manage labels": [
         "ラベルを管理"
-      ],
-      "Manage link": [
-        "リンクを管理"
       ],
       "Manage share": [
         "共有を管理"
@@ -6144,9 +6132,6 @@
       "Shared by ${ sharedBy }": [
         "${ sharedBy }が共有したもの"
       ],
-      "Shared by you": [
-        "あなたが共有したもの"
-      ],
       "Shared link not found": [
         "共有リンクが見つかりません"
       ],
@@ -6465,9 +6450,6 @@
       "Unsupported file": [
         "非対応のファイル"
       ],
-      "Untitled": [
-        "タイトルなし"
-      ],
       "Update required": [
         "更新が必要です"
       ],
@@ -6542,9 +6524,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "おめでとうございます、ストレージが 5 GBに増えました！"
-      ],
-      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "技術的な問題が発生しています。アルバムに関連する操作は一時的に無効になっています。"
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "${ nameAuthor }様が${ node.name }をアップロードしたことを確認できませんでした。ファイルデータの順序が改ざんされた可能性があります。信頼できる場合のみ開いてください。"
@@ -9141,9 +9120,6 @@
       "Access updated": [
         "アクセスが更新されました"
       ],
-      "Album failed to be renamed": [
-        "アルバムの名前を変更できませんでした"
-      ],
       "Album renamed successfully": [
         "アルバムの名前を正常に変更しました"
       ],
@@ -9191,9 +9167,6 @@
       ],
       "Failed to download files: ${ err }": [
         "ファイルのダウンロードに失敗しました: ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "招待の詳細の読み込みに失敗しました"
       ],
       "Failed to move, please try again": [
         "移動に失敗しました。再度お試しください。"
@@ -10235,11 +10208,6 @@
     "Placeholder for contact group name": {
       "Name": [
         "名前"
-      ]
-    },
-    "plan customizer, users": {
-      "contact": [
-        "お問い合わせ"
       ]
     },
     "Plan description": {

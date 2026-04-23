@@ -88,10 +88,6 @@
       "Add photos": [
         "Tilføj fotos"
       ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "Tilføj til \"${ album.name }\" (${ album.photoCount } billede)",
-        "Tilføj til \"${ album.name }\" (${ album.photoCount } billeder)"
-      ],
       "Add to album": [
         "Tilføj til album"
       ],
@@ -515,9 +511,6 @@
       "Get in touch": [
         "Kontakt os"
       ],
-      "Get link": [
-        "Få link"
-      ],
       "Get mobile and desktop apps": [
         "Få mobil- og desktop-apps"
       ],
@@ -644,9 +637,6 @@
       "Load image": [
         "Indlæs billede"
       ],
-      "Loading link": [
-        "Indlæser link"
-      ],
       "Make a copy": [
         "Lav en kopi"
       ],
@@ -661,9 +651,6 @@
       ],
       "Manage labels": [
         "Administrer etiketter"
-      ],
-      "Manage link": [
-        "Håndter link"
       ],
       "Manage share": [
         "Håndter deling"
@@ -6328,9 +6315,6 @@
       "Shared by ${ sharedBy }": [
         "Delt af ${ sharedBy }"
       ],
-      "Shared by you": [
-        "Delt af dig"
-      ],
       "Shared link not found": [
         "Delt link ikke fundet"
       ],
@@ -6657,9 +6641,6 @@
       "Unsupported file type for Photos": [
         "Filtypen for Fotos er ikke understøttet"
       ],
-      "Untitled": [
-        "Uden titel"
-      ],
       "Update required": [
         "Opdatering kræves"
       ],
@@ -6734,9 +6715,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Du har lige øget din lagringsplads til 5 GB!"
-      ],
-      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "Vi har tekniske problemer. Alle albumrelaterede handlinger er midlertidigt deaktiveret."
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "Vi kunne ikke verificere, at ${ nameAuthor } uploadede ${ node.name }. Der kan være blevet manipuleret med fildataenes rækkefølge. Åbn kun, hvis du stoler på den."
@@ -9494,9 +9472,6 @@
       "Access updated": [
         "Adgang opdateret"
       ],
-      "Album failed to be renamed": [
-        "Album kunne ikke omdøbes"
-      ],
       "Album renamed successfully": [
         "Album omdøbt"
       ],
@@ -9547,9 +9522,6 @@
       ],
       "Failed to download files: ${ err }": [
         "Kunne ikke downloade filer: ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "Kunne ikke indlæse invitationsdetaljer"
       ],
       "Failed to move, please try again": [
         "Flytning mislykkedes. Forsøg igen"
@@ -10617,11 +10589,6 @@
         "Navn"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "kontakt"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "Alle premium-funktioner fra ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ PASS_SHORT_APP_NAME }."
@@ -11635,6 +11602,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-skriveassistent"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } med premium funktioner"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } og ${ VPN_SHORT_APP_NAME } med premium funktioner"
       ],
@@ -11865,6 +11838,10 @@
       ],
       "Version history": [
         "Versionshistorik"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Videomøder, max ${ PAID_PREMIUM_MAX_PARTICIPANTS } deltager",
+        "Videomøde, op til ${ PAID_PREMIUM_MAX_PARTICIPANTS } deltagere"
       ],
       "Watch the interview": [
         "Se interviewet"

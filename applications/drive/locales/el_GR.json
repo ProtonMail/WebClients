@@ -88,9 +88,9 @@
       "Add photos": [
         "Προσθήκη φωτογραφιών"
       ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "Προσθήκη στο \"${ album.name }\" (${ album.photoCount } φωτογραφία)",
-        "Προσθήκη στο \"${ album.name }\" (${ album.photoCount } φωτογραφίες)"
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "Προσθήκη στο \"${ name }\" (${ photoCount } φωτογραφία)",
+        "Προσθήκη στο \"${ name }\" (${ photoCount } φωτογραφίες)"
       ],
       "Add to album": [
         "Προσθήκη στο άλμπουμ"
@@ -515,9 +515,6 @@
       "Get in touch": [
         "Επικοινωνήστε"
       ],
-      "Get link": [
-        "Λήψη συνδέσμου"
-      ],
       "Get mobile and desktop apps": [
         "Αποκτήστε τις εφαρμογές για κινητά και υπολογιστές"
       ],
@@ -644,9 +641,6 @@
       "Load image": [
         "Φόρτωση εικόνας"
       ],
-      "Loading link": [
-        "Φόρτωση συνδέσμου"
-      ],
       "Make a copy": [
         "Κάντε ένα αντίγραφο"
       ],
@@ -661,9 +655,6 @@
       ],
       "Manage labels": [
         "Διαχείριση ετικετών"
-      ],
-      "Manage link": [
-        "Διαχείριση συνδέσμου"
       ],
       "Manage share": [
         "Διαχείριση κοινοποίησης"
@@ -4910,6 +4901,10 @@
       "${ albumName } has been successfully deleted": [
         "${ albumName } διαγράφηκε με επιτυχία"
       ],
+      "${ albums } album": [
+        "${ albums } άλμπουμ",
+        "${ albums } άλμπουμ"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "Το ${ appName } χρειάζεται την άδειά σας για ${ enableDesktopNotifications }."
       ],
@@ -4993,6 +4988,14 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: προεπισκόπηση χαμηλής ανάλυσης"
       ],
+      "${ files } file": [
+        "${ files } αρχείο",
+        "${ files } αρχεία"
+      ],
+      "${ folders } folder": [
+        "${ folders } φάκελος",
+        "${ folders } φάκελοι"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } ομάδα βρέθηκε",
         "${ groupCounts } ομάδες βρέθηκαν"
@@ -5026,6 +5029,10 @@
       "${ photoCount } item": [
         "${ photoCount } στοιχείο",
         "${ photoCount } στοιχεία"
+      ],
+      "${ photos } photo": [
+        "${ photos } φωτογραφία",
+        "${ photos } φωτογραφίες"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } απαιτεί τουλάχιστον 1 αποκλειστικό διακομιστή ${ serverPricePerMonth }"
@@ -5768,6 +5775,18 @@
       "Index is empty.": [
         "Ο ευρετήριο είναι άδειο."
       ],
+      "Indexed ${ first }": [
+        "Ενημέρωση ευρετηρίου ${ first }"
+      ],
+      "Indexed ${ first } and ${ second }": [
+        "Ενημέρωση ευρετηρίου ${ first } και ${ second }"
+      ],
+      "Indexed ${ first }, ${ second } and ${ third }": [
+        "Ενημέρωση ευρετηρίου ${ first }, ${ second } και ${ third }"
+      ],
+      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
+        "Ενημέρωση ευρετηρίου ${ first }, ${ second }, ${ third } και ${ fourth }"
+      ],
       "Indexing in progress": [
         "Ευρετηρίαση σε εξέλιξη"
       ],
@@ -6331,9 +6350,6 @@
       "Shared by ${ sharedBy }": [
         "Κοινοποιήθηκε από τον/την ${ sharedBy }"
       ],
-      "Shared by you": [
-        "Κοινοποιημένο από εσάς"
-      ],
       "Shared link not found": [
         "Ο κοινόχρηστος σύνδεσμος δεν βρέθηκε"
       ],
@@ -6660,9 +6676,6 @@
       "Unsupported file type for Photos": [
         "Μη υποστηριζόμενος τύπος αρχείου για Φωτογραφίες"
       ],
-      "Untitled": [
-        "Χωρίς τίτλο"
-      ],
       "Update required": [
         "Απαιτείται ενημέρωση"
       ],
@@ -6737,9 +6750,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Συγχαρητήρια, μόλις αυξήσατε τον αποθηκευτικό σας χώρο στα 5 GB!"
-      ],
-      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "Αντιμετωπίζουμε τεχνικά προβλήματα. Οι ενέργειες που σχετίζονται με άλμπουμ είναι προσωρινά απενεργοποιημένες."
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "Δεν μπορέσαμε να επαληθεύσουμε ότι ο/η ${ nameAuthor } ανέβασε το ${ node.name }. Το ακόλουθο ενδέχεται να έχει παραποιηθεί: σειρά δεδομένων αρχείου. Ανοίξτε το μόνο αν το εμπιστεύεστε."
@@ -9497,9 +9507,6 @@
       "Access updated": [
         "Η πρόσβαση ενημερώθηκε"
       ],
-      "Album failed to be renamed": [
-        "Το άλμπουμ απέτυχε να μετονομαστεί"
-      ],
       "Album renamed successfully": [
         "Το άλμπουμ μετονομάστηκε με επιτυχία"
       ],
@@ -9550,9 +9557,6 @@
       ],
       "Failed to download files: ${ err }": [
         "Αποτυχία λήψης αρχείων: ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "Αποτυχία φόρτωσης λεπτομερειών πρόσκλησης"
       ],
       "Failed to move, please try again": [
         "Αποτυχία μετακίνησης, παρακαλούμε δοκιμάστε ξανά"
@@ -9683,6 +9687,11 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Ορισμένες εικόνες δε μεταφορτώθηκαν λόγω διπλότυπων ονομάτων αρχείων στην τρέχουσα επιλογή."
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "Το άλμπουμ μετονομάστηκε με επιτυχία"
       ]
     },
     "Oauth instructions": {
@@ -10620,11 +10629,6 @@
         "Όνομα"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "επικοινωνήστε"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "Όλα τα premium χαρακτηριστικά από ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } και ${ PASS_SHORT_APP_NAME }."
@@ -11542,6 +11546,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe βοηθός γραφής"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } και ${ LUMO_APP_NAME } με premium χαρακτηριστικά"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, και ${ VPN_SHORT_APP_NAME } με premium δυνατότητες"
       ],
@@ -11772,6 +11782,10 @@
       ],
       "Version history": [
         "Ιστορικό εκδόσεων"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Βιντεοκλήσεις, μέχρι και ${ PAID_PREMIUM_MAX_PARTICIPANTS } συμμετέχων",
+        "Βιντεοκλήσεις, μέχρι και ${ PAID_PREMIUM_MAX_PARTICIPANTS } συμμετέχοντες"
       ],
       "Watch the interview": [
         "Δείτε τη συνέντευξη"

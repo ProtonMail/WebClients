@@ -88,9 +88,9 @@
       "Add photos": [
         "Afegeix fotos"
       ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "Afegeix a «${ album.name }» (${ album.photoCount } foto)",
-        "Afegeix a «${ album.name }» (${ album.photoCount } fotos)"
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "Afegiu (${ photoCount } foto) a \"${ name }\"",
+        "Afegiu (${ photoCount } fotos) a \"${ name }\""
       ],
       "Add to album": [
         "Afegeix a l'àlbum"
@@ -515,9 +515,6 @@
       "Get in touch": [
         "Contacte"
       ],
-      "Get link": [
-        "Obtén l'enllaç"
-      ],
       "Get mobile and desktop apps": [
         "Obtingueu les aplicacions mòbils i d'escriptori"
       ],
@@ -644,9 +641,6 @@
       "Load image": [
         "Carrega la imatge"
       ],
-      "Loading link": [
-        "S'està carregant l'enllaç."
-      ],
       "Make a copy": [
         "Fes una còpia"
       ],
@@ -661,9 +655,6 @@
       ],
       "Manage labels": [
         "Gestiona les etiquetes"
-      ],
-      "Manage link": [
-        "Gestiona l'enllaç"
       ],
       "Manage share": [
         "Gestiona la compartició"
@@ -4910,6 +4901,10 @@
       "${ albumName } has been successfully deleted": [
         "S'ha eliminat ${ albumName }"
       ],
+      "${ albums } album": [
+        "${ albums } àlbum",
+        "${ albums } àlbums"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } necessita el vostre permís per ${ enableDesktopNotifications }."
       ],
@@ -4993,6 +4988,14 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: vista prèvia de baixa resolució"
       ],
+      "${ files } file": [
+        "${ files } fitxer",
+        "${ files } fitxers"
+      ],
+      "${ folders } folder": [
+        "${ folders } carpeta",
+        "${ folders } carpetes"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } grup trobat",
         "${ groupCounts } grups trobats"
@@ -5026,6 +5029,10 @@
       "${ photoCount } item": [
         "${ photoCount } element",
         "${ photoCount } elements"
+      ],
+      "${ photos } photo": [
+        "${ photos } foto",
+        "${ photos } fotos"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } requereix almenys un servidor dedicat ${ serverPricePerMonth }"
@@ -5768,6 +5775,18 @@
       "Index is empty.": [
         "L'índex és buit."
       ],
+      "Indexed ${ first }": [
+        "Indexat ${ first }"
+      ],
+      "Indexed ${ first } and ${ second }": [
+        "Indexat ${ first } i ${ second }"
+      ],
+      "Indexed ${ first }, ${ second } and ${ third }": [
+        "Indexat ${ first }, ${ second } i ${ third }"
+      ],
+      "Indexed ${ first }, ${ second }, ${ third } and ${ fourth }": [
+        "Indexat ${ first }, ${ second }, ${ third } i ${ fourth }"
+      ],
       "Indexing in progress": [
         "Indexació en curs"
       ],
@@ -6331,9 +6350,6 @@
       "Shared by ${ sharedBy }": [
         "Compartit per ${ sharedBy }"
       ],
-      "Shared by you": [
-        "Compartit per vós"
-      ],
       "Shared link not found": [
         "No s'ha trobat l'enllaç compartit."
       ],
@@ -6660,9 +6676,6 @@
       "Unsupported file type for Photos": [
         "Tipus de fitxer no admès per a Fotos"
       ],
-      "Untitled": [
-        "Sense títol"
-      ],
       "Update required": [
         "Es requereix una actualització"
       ],
@@ -6737,9 +6750,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Heu augmentat l'emmagatzematge a 5 GB!"
-      ],
-      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "Tenim problemes tècnics. Les accions relacionades amb els àlbums estan desactivades temporalment."
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "No hem pogut verificar que ${ nameAuthor } hagi pujat ${ node.name }. És possible que s'hagi manipulat el següent: l'ordre de les dades del fitxer. Obriu-lo només si hi confieu. "
@@ -9557,9 +9567,6 @@
       "Access updated": [
         "S'ha actualitzat l'accés."
       ],
-      "Album failed to be renamed": [
-        "No s'ha pogut canviar el nom de l'àlbum."
-      ],
       "Album renamed successfully": [
         "S'ha canviat el nom de l'àlbum."
       ],
@@ -9610,9 +9617,6 @@
       ],
       "Failed to download files: ${ err }": [
         "No s'han pogut descarregar els fitxers: ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "No s'han pogut carregar els detalls de l'invitació."
       ],
       "Failed to move, please try again": [
         "No s'ha pogut moure, torneu-ho a provar"
@@ -9743,6 +9747,11 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Algunes imatges no s'han carregat a causa dels noms de fitxer duplicats a la selecció actual."
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "S'ha canviat el nom de l'àlbum correctament"
       ]
     },
     "Oauth instructions": {
@@ -10680,11 +10689,6 @@
         "Nom"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "contacte"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "Totes les característiques prèmium de ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } i ${ PASS_SHORT_APP_NAME }."
@@ -11602,6 +11606,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistent d'escriptura ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } i ${ LUMO_APP_NAME } amb característiques prèmium"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } i ${ VPN_SHORT_APP_NAME } amb característiques prèmium"
       ],
@@ -11832,6 +11842,10 @@
       ],
       "Version history": [
         "Historial de versions"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Reunions de vídeo de fins a ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant",
+        "Reunions de vídeo de fins a ${ PAID_PREMIUM_MAX_PARTICIPANTS } participants"
       ],
       "Watch the interview": [
         "Mireu l'entrevista"

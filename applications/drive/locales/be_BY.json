@@ -90,11 +90,11 @@
       "Add photos": [
         "Дадаць фатаграфіі"
       ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "Дадаць у \"${ album.name }\" (${ album.photoCount } фатаграфія)",
-        "Дадаць у \"${ album.name }\" (${ album.photoCount } фатаграфіі)",
-        "Дадаць у \"${ album.name }\" (${ album.photoCount } фатаграфій)",
-        "Дадаць у \"${ album.name }\" (${ album.photoCount } фатаграфій)"
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "Дадаць у \"${ name }\" (${ photoCount } фатаграфія)",
+        "Дадаць у \"${ name }\" (${ photoCount } фатаграфіі)",
+        "Дадаць у \"${ name }\" (${ photoCount } фатаграфій)",
+        "Дадаць у \"${ name }\" (${ photoCount } фатаграфій)"
       ],
       "Add to album": [
         "Дадаць у альбом"
@@ -525,9 +525,6 @@
       "Get in touch": [
         "Звязацца з намі"
       ],
-      "Get link": [
-        "Атрымаць спасылку"
-      ],
       "Get mobile and desktop apps": [
         "Атрымаць мабільныя праграмы і праграмы для камп'ютара"
       ],
@@ -654,9 +651,6 @@
       "Load image": [
         "Загрузіць відарыс"
       ],
-      "Loading link": [
-        "Загрузка спасылкі"
-      ],
       "Make a copy": [
         "Зрабіць копію"
       ],
@@ -671,9 +665,6 @@
       ],
       "Manage labels": [
         "Кіраванне меткамі"
-      ],
-      "Manage link": [
-        "Кіраванне спасылкай"
       ],
       "Manage share": [
         "Кіраваць абагульваннем"
@@ -5018,6 +5009,12 @@
       "${ albumName } has been successfully deleted": [
         "${ albumName } быў паспяхова выдалены"
       ],
+      "${ albums } album": [
+        "${ albums } альбом",
+        "${ albums } альбомы",
+        "${ albums } альбомаў",
+        "${ albums } альбомаў"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } неабходны ваш дазвол на ${ enableDesktopNotifications }."
       ],
@@ -5123,6 +5120,12 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: папярэдні прагляд у нізкай раздзяляльнасці"
       ],
+      "${ files } file": [
+        "${ files } файл",
+        "${ files } файлы",
+        "${ files } файлаў",
+        "${ files } файлаў"
+      ],
       "${ groupCounts } group found": [
         "Знойдзена ${ groupCounts } група",
         "Знойдзена ${ groupCounts } групы",
@@ -5164,6 +5167,12 @@
         "${ photoCount } элементы",
         "${ photoCount } элементаў",
         "${ photoCount } элементаў"
+      ],
+      "${ photos } photo": [
+        "${ photos } фатаграфія",
+        "${ photos } фатаграфіі",
+        "${ photos } фатаграфій",
+        "${ photos } фатаграфій"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } патрабуе прынамсі 1 вылучаны сервер ${ serverPricePerMonth }"
@@ -6521,9 +6530,6 @@
       "Shared by ${ sharedBy }": [
         "Абагулена ${ sharedBy }"
       ],
-      "Shared by you": [
-        "Абагулена вамі"
-      ],
       "Shared link not found": [
         "Абагуленая спасылка не знойдзена"
       ],
@@ -6854,9 +6860,6 @@
       "Unsupported file type for Photos": [
         "Тып файла для фатаграфій не падтрымліваецца"
       ],
-      "Untitled": [
-        "Без назвы"
-      ],
       "Update required": [
         "Патрабуецца абнаўленне"
       ],
@@ -6931,9 +6934,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Так трымаць! Мы толькі што павялічылі ваша сховішча да 5 ГБ!"
-      ],
-      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "У нас узніклі тэхнічныя праблемы. Часова адключаны ўсе дзеянні, якія звязаны з альбомамі."
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "Немагчыма спраўдзіць, што ${ nameAuthor } запампаваў ${ node.name }. Наступныя элементы могуць быць падробленымі: парадак даных файла. Адкрывайце іх толькі тады, калі давяраеце гэтаму змесціву."
@@ -9890,9 +9890,6 @@
       "Access updated": [
         "Доступ абноўлены"
       ],
-      "Album failed to be renamed": [
-        "Не ўдалося перайменаваць альбом"
-      ],
       "Album renamed successfully": [
         "Альбом паспяхова перайменаваны"
       ],
@@ -9943,9 +9940,6 @@
       ],
       "Failed to download files: ${ err }": [
         "Не ўдалося спампаваць файлы: ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "Не ўдалося загрузіць падрабязнасці запрашэння"
       ],
       "Failed to move, please try again": [
         "Не ўдалося перамясціць. Паспрабуйце яшчэ раз"
@@ -10092,6 +10086,11 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Некаторыя відарысы не былі запампаваны з прычыны дубліравання імён файлаў у бягучым выбары."
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "Альбом паспяхова перайменаваны"
       ]
     },
     "Oauth instructions": {
@@ -11041,11 +11040,6 @@
     "Placeholder for contact group name": {
       "Name": [
         "Назва"
-      ]
-    },
-    "plan customizer, users": {
-      "contact": [
-        "звяжыцеся"
       ]
     },
     "Plan description": {
@@ -12025,6 +12019,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } і ${ LUMO_APP_NAME } з прэміяльнымі функцыямі"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } і ${ VPN_SHORT_APP_NAME } з прэміяльнымі функцыямі"
       ],
@@ -12267,6 +12267,12 @@
       ],
       "Version history": [
         "Гісторыя версій"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Відэасустрэчы. Да ${ PAID_PREMIUM_MAX_PARTICIPANTS } удзельніка",
+        "Відэасустрэчы. Да ${ PAID_PREMIUM_MAX_PARTICIPANTS } удзельнікаў",
+        "Відэасустрэчы. Да ${ PAID_PREMIUM_MAX_PARTICIPANTS } удзельнікаў",
+        "Відэасустрэчы. Да ${ PAID_PREMIUM_MAX_PARTICIPANTS } удзельнікаў"
       ],
       "Watch the interview": [
         "Глядзець інтэрв'ю"

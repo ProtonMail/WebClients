@@ -87,9 +87,6 @@
       "Add photos": [
         "添加照片"
       ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "添加到 \"${ album.name }\" (${ album.photoCount } 张照片)"
-      ],
       "Add to album": [
         "添加到相册"
       ],
@@ -510,9 +507,6 @@
       "Get in touch": [
         "保持联系"
       ],
-      "Get link": [
-        "生成共享链接"
-      ],
       "Get mobile and desktop apps": [
         "获取移动端和桌面端应用"
       ],
@@ -639,9 +633,6 @@
       "Load image": [
         "加载图片"
       ],
-      "Loading link": [
-        "链接加载中"
-      ],
       "Make a copy": [
         "创建副本"
       ],
@@ -656,9 +647,6 @@
       ],
       "Manage labels": [
         "管理标签"
-      ],
-      "Manage link": [
-        "管理链接"
       ],
       "Manage share": [
         "管理共享"
@@ -6236,9 +6224,6 @@
       "Shared by ${ sharedBy }": [
         "由 ${ sharedBy } 共享"
       ],
-      "Shared by you": [
-        "由您共享"
-      ],
       "Shared link not found": [
         "找不到共享链接"
       ],
@@ -6563,9 +6548,6 @@
       "Unsupported file type for Photos": [
         "照片文件类型不受支持"
       ],
-      "Untitled": [
-        "未命名"
-      ],
       "Update required": [
         "需要更新"
       ],
@@ -6640,9 +6622,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "太棒了，您刚刚将存储空间增加到 5 GB！"
-      ],
-      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "我们遇到了技术问题。任何与相册相关的操作都将暂时关闭。"
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "我们无法验证 ${ nameAuthor } 上传了 ${ node.name }。以下内容可能已被篡改：文件数据顺序。请仅在信任的情况下打开。"
@@ -9323,9 +9302,6 @@
       "Access updated": [
         "访问权限已更新"
       ],
-      "Album failed to be renamed": [
-        "相册重命名失败"
-      ],
       "Album renamed successfully": [
         "相册重命名成功"
       ],
@@ -9376,9 +9352,6 @@
       ],
       "Failed to download files: ${ err }": [
         "下载文件失败：${ err }"
-      ],
-      "Failed to load invitation details": [
-        "载入邀请信息失败"
       ],
       "Failed to move, please try again": [
         "无法移动，请重试"
@@ -10429,11 +10402,6 @@
     "Placeholder for contact group name": {
       "Name": [
         "名称"
-      ]
-    },
-    "plan customizer, users": {
-      "contact": [
-        "联系人"
       ]
     },
     "Plan description": {
