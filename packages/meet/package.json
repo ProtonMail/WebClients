@@ -16,7 +16,7 @@
     },
     "dependencies": {
         "@proton/shared": "workspace:packages/shared",
-        "@protontech/crypto": "^2.0.1",
+        "@protontech/crypto": "*",
         "@types/react": "^18.3.28",
         "cross-env": "^10.1.0",
         "livekit-client": "2.18.6",

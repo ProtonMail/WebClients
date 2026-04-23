@@ -55,7 +55,7 @@
         "@proton/styles": "workspace:^",
         "@proton/unleash": "workspace:^",
         "@proton/utils": "workspace:^",
-        "@protontech/crypto": "^2.0.1",
+        "@protontech/crypto": "*",
         "@redux-devtools/extension": "^3.3.0",
         "@reduxjs/toolkit": "^2.11.2",
         "@tanstack/react-virtual": "^3.13.23",

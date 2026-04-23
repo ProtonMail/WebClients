@@ -87,7 +87,7 @@
     },
     "dependencies": {
         "@proton/shared": "^6.0.0",
-        "@protontech/crypto": "^2.0.1",
+        "@protontech/crypto": "*",
         "uuid": "^9.0.1"
     },
     "peerDependencies": {
