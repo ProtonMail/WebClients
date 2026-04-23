@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useRoomContext } from '@livekit/components-react';
 import type { RemoteParticipant } from 'livekit-client';
 
+import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch } from '@proton/meet/store/hooks';
 import { stringToUint8Array } from '@proton/shared/lib/helpers/encoding';
 
@@ -15,6 +16,7 @@ export const useEmojiReactionReceiver = () => {
     const room = useRoomContext();
     const dispatch = useMeetDispatch();
     const mls = useMLSContext();
+    const { reportMeetError } = useMeetErrorReporting();
 
     useEffect(() => {
         if (!room || !mls) {
@@ -34,13 +36,43 @@ export const useEmojiReactionReceiver = () => {
             try {
                 const decoded = JSON.parse(new TextDecoder().decode(payload));
                 const decrypted = await mls.decryptMessage(stringToUint8Array(decoded.message));
-                const emoji = decrypted?.message;
+                if (!decrypted) {
+                    return;
+                }
+
+                const mlsSenderId = decrypted.sender_participant_id;
+
+                if (participant.identity !== mlsSenderId) {
+                    reportMeetError('Emoji reaction LiveKit identity does not match MLS sender', {
+                        level: 'error',
+                        context: {
+                            participantIdentity: participant.identity,
+                            senderParticipantId: mlsSenderId,
+                        },
+                    });
+                    return;
+                }
+
+                // Envelope id is `${senderIdentity}-${timestamp}` (see useEmojiReaction); must match MLS sender.
+                const expectedIdPrefix = `${mlsSenderId}-`;
+                if (typeof decoded.id !== 'string' || !decoded.id.startsWith(expectedIdPrefix)) {
+                    reportMeetError('Emoji reaction envelope id does not match MLS sender identity', {
+                        level: 'error',
+                        context: {
+                            envelopeId: decoded.id,
+                            senderParticipantId: mlsSenderId,
+                        },
+                    });
+                    return;
+                }
+
+                const emoji = decrypted.message;
 
                 if (!emoji || !(EMOJI_REACTIONS as readonly string[]).includes(emoji)) {
                     return;
                 }
 
-                dispatchTimedReaction(dispatch, participant.identity, emoji);
+                dispatchTimedReaction(dispatch, mlsSenderId, emoji);
             } catch {
                 // ignore malformed payloads
             }
@@ -64,5 +96,5 @@ export const useEmojiReactionReceiver = () => {
         return () => {
             room.off('dataReceived', handleDataReceived);
         };
-    }, [room, mls, dispatch]);
+    }, [room, mls, dispatch, reportMeetError]);
 };

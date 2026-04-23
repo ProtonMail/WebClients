@@ -5,6 +5,7 @@ import type { App } from '@proton-meet/proton-meet-core';
 import { RoomEvent } from 'livekit-client';
 import type { Participant, RemoteParticipant } from 'livekit-client';
 
+import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch, useMeetSelector, useMeetStore } from '@proton/meet/store/hooks';
 import { selectParticipantsMap } from '@proton/meet/store/slices/meetingInfo';
 import {
@@ -21,6 +22,7 @@ import { isValidMessageString } from '../../utils/isValidMessageString';
 
 export const useIsRecordingInProgressReceiver = (mls: App) => {
     const isMeetMultipleRecordingEnabled = useFlag('MeetMultipleRecording');
+    const { reportMeetError } = useMeetErrorReporting();
 
     const store = useMeetStore();
     const dispatch = useMeetDispatch();
@@ -108,7 +110,37 @@ export const useIsRecordingInProgressReceiver = (mls: App) => {
             try {
                 const decoded = JSON.parse(new TextDecoder().decode(payload));
                 const decrypted = await mls.decryptMessage(stringToUint8Array(decoded.message));
-                const decryptedMessage = decrypted?.message ?? '';
+                if (!decrypted) {
+                    return;
+                }
+
+                const mlsSenderId = decrypted.sender_participant_id;
+
+                if (participant.identity !== mlsSenderId) {
+                    reportMeetError('Recording status LiveKit identity does not match MLS sender', {
+                        level: 'error',
+                        context: {
+                            participantIdentity: participant.identity,
+                            senderParticipantId: mlsSenderId,
+                        },
+                    });
+                    return;
+                }
+
+                // Envelope id is `${senderIdentity}-${timestamp}` (see useRecordingStatusPublish); must match MLS sender.
+                const expectedIdPrefix = `${mlsSenderId}-`;
+                if (typeof decoded.id !== 'string' || !decoded.id.startsWith(expectedIdPrefix)) {
+                    reportMeetError('Recording status envelope id does not match MLS sender identity', {
+                        level: 'error',
+                        context: {
+                            envelopeId: decoded.id,
+                            senderParticipantId: mlsSenderId,
+                        },
+                    });
+                    return;
+                }
+
+                const decryptedMessage = decrypted.message ?? '';
 
                 if (
                     !isValidMessageString(decryptedMessage) ||
@@ -125,18 +157,18 @@ export const useIsRecordingInProgressReceiver = (mls: App) => {
                 }
 
                 if (parsed.status === RecordingStatus.Started) {
-                    dispatch(addParticipantRecording(participant.identity));
+                    dispatch(addParticipantRecording(mlsSenderId));
                 }
 
                 if (parsed.status === RecordingStatus.Stopped) {
-                    dispatch(removeParticipantRecording(participant.identity));
+                    dispatch(removeParticipantRecording(mlsSenderId));
                 }
             } catch (error) {
                 // eslint-disable-next-line no-console
                 console.error('Error handling recording status message', error);
             }
         },
-        []
+        [dispatch, isMeetMultipleRecordingEnabled, mls, reportMeetError, waitForParticipant]
     );
 
     const handleParticipantDisconnected = useCallback(
