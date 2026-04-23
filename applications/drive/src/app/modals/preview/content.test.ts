@@ -35,6 +35,7 @@ describe('getContentPreviewMethod', () => {
             claimedModificationTime: baseDate,
             claimedDigests: {
                 sha1: 'abc123',
+                sha1Verified: false,
             },
             claimedAdditionalMetadata: {},
             contentAuthor: { ok: true as const, value: 'content@proton.me' },

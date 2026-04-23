@@ -45,7 +45,7 @@ describe('legacyTime utilities', () => {
         storageSize: 1024,
         claimedSize: 1000,
         claimedModificationTime,
-        claimedDigests: { sha1: 'abc123' },
+        claimedDigests: { sha1: 'abc123', sha1Verified: false },
         claimedAdditionalMetadata: {},
         ...overrides,
     });
