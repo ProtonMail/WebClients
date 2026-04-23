@@ -14,6 +14,12 @@
 		border: 1px solid color-mix(in srgb, var(--background-invert) 4%, var(--banner-background-color));
 	}
 
+	&--transparent-border {
+		&#{&} {
+			border: 1px solid transparent;
+		}
+	}
+
 	&-inner {
 		display: grid;
 		grid-template-columns: auto max-content max-content;
@@ -91,6 +97,10 @@
 		--banner-background-color: var(--signal-success-minor-2);
 		--banner-accent-color: var(--signal-success-major-2);
 		--banner-text-color: var(--signal-success-major-2);
+
+		&.banner--opaque-variant {
+			--banner-background-color: color-mix(in srgb, var(--signal-success) 10%, transparent);
+		}
 	}
 
 	&--success-outline {
@@ -101,6 +111,10 @@
 		--banner-background-color: var(--signal-warning-minor-1);
 		--banner-accent-color: var(--signal-warning-major-2);
 		--banner-text-color: var(--signal-warning-major-2);
+
+		&.banner--opaque-variant {
+			--banner-background-color: color-mix(in srgb, var(--signal-warning) 10%, transparent);
+		}
 	}
 
 	&--warning-outline {
@@ -110,6 +124,11 @@
 	&--danger {
 		--banner-background-color: var(--signal-danger-minor-1);
 		--banner-accent-color: var(--signal-danger);
+
+		&.banner--opaque-variant {
+			--banner-background-color: color-mix(in srgb, var(--signal-danger) 10%, transparent);
+			--banner-text-color: var(--signal-danger-major-2);
+		}
 	}
 
 	&--danger-outline {
