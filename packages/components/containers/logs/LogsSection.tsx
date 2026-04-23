@@ -6,8 +6,6 @@ import { c } from 'ttag';
 import { useOrganization } from '@proton/account/organization/hooks';
 import { useUserSettings } from '@proton/account/userSettings/hooks';
 import { Button } from '@proton/atoms/Button/Button';
-import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
-import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight';
 import Info from '@proton/components/components/link/Info';
 import { useModalTwoPromise } from '@proton/components/components/modalTwo/useModalTwo';
 import Pagination from '@proton/components/components/pagination/Pagination';
@@ -20,6 +18,8 @@ import { escapeCsvValue } from '@proton/components/helpers/escapeCsvValue';
 import useApi from '@proton/components/hooks/useApi';
 import { useLoading } from '@proton/hooks';
 import useIsMounted from '@proton/hooks/useIsMounted';
+import { IcArrowDownLine } from '@proton/icons/icons/IcArrowDownLine';
+import { IcArrowRotateRight } from '@proton/icons/icons/IcArrowRotateRight';
 import { clearLogs, queryLogs } from '@proton/shared/lib/api/logs';
 import { updateLogAuth } from '@proton/shared/lib/api/settings';
 import type { AuthLog } from '@proton/shared/lib/authlog';
@@ -283,6 +283,7 @@ const LogsSection = () => {
                     protonSentinel={hasB2BLogs && false ? organization?.Settings.HighSecurity || 0 : protonSentinel}
                     loading={loading || loadingRefresh}
                     error={error}
+                    isB2B={hasB2BLogs}
                 />
             </SettingsSectionWide>
         </>
