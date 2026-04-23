@@ -51,7 +51,10 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
     const updateTitle = useAppTitleUpdate();
     const [searchParams, setSearchParams] = useSearchParams();
     const { albumShareId } = useParams<{ albumLinkId: string; albumShareId: string }>();
-    const photoCount = useAlbumsStore((state) => state.currentAlbum?.photoCount ?? 0);
+    const photoCount = useAlbumsStore((state) => {
+        const uid = state.currentAlbumNodeUid;
+        return (uid ? state.albums.get(uid)?.photoCount : undefined) ?? 0;
+    });
 
     const { setPreviewNodeUid, modals } = usePhotoLayoutStore(
         useShallow((state) => ({
@@ -98,7 +101,12 @@ export const PhotosWithAlbumsInsideAlbumView: FC = () => {
     );
 
     const { album, isLoading } = useAlbumsStore(
-        useShallow((state) => ({ isLoading: state.isLoading, album: state.currentAlbum }))
+        useShallow((state) => {
+            const album = state.currentAlbumNodeUid ? state.albums.get(state.currentAlbumNodeUid) : undefined;
+            // Skip the full-page loader if we already have cached photo uids for this album.
+            const isLoading = state.isLoading && album?.photoNodeUids === undefined;
+            return { isLoading, album };
+        })
     );
 
     const isAlbumPhotosEmpty = album?.photoCount === 0;

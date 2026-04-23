@@ -83,7 +83,10 @@ export const usePhotosWithAlbumsView = () => {
     } = usePhotosWithAlbums();
 
     const albumPhotoUids = useAlbumsStore(
-        useShallow((state): Set<string> => state.currentAlbum?.photoNodeUids ?? new Set<string>())
+        useShallow((state): Set<string> => {
+            const uid = state.currentAlbumNodeUid;
+            return (uid ? state.albums.get(uid)?.photoNodeUids : undefined) ?? new Set<string>();
+        })
     );
     const { albumsOrder, albumsMap, isAlbumsLoading } = useAlbumsStore(
         useShallow((state) => ({
@@ -250,7 +253,7 @@ export const usePhotosWithAlbumsView = () => {
     useEffect(() => {
         const abortController = new AbortController();
 
-        if (currentPageType && AlbumsPageTypes.ALBUMS === currentPageType) {
+        if (!albumShareId && !albumLinkId && currentPageType && AlbumsPageTypes.ALBUMS === currentPageType) {
             void loadAllAlbums(abortController.signal);
         } else if (albumShareId && albumLinkId && AlbumsPageTypes.ALBUMSGALLERY === currentPageType) {
             void getDriveForPhotos()
@@ -339,6 +342,7 @@ export const usePhotosWithAlbumsView = () => {
         photos: photosViewData,
         photoNodeUidToIndexMap,
         photoNodeUids,
+        photoTimelineUids,
         removePhotosFromCache,
         loadPhotoLink,
         requestDownload,

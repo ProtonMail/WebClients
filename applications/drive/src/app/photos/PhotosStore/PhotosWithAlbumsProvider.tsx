@@ -475,14 +475,14 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                         }
                     }
                     // Reload albums to reload cover of current album - first photo is automatically set as cover.
-                    if (albumStore.currentAlbum?.photoNodeUids?.size === 0) {
+                    if (albumStore.getCurrentAlbum()?.photoNodeUids?.size === 0) {
                         void loadAlbums(abortSignal);
                     }
                 }
             } else {
                 showNotifications(result, albumName, fromUpload, linkIds);
                 // Reload albums to reload cover of current album - first photo is automatically set as cover.
-                if (useAlbumsStore.getState().currentAlbum?.photoNodeUids?.size === 0) {
+                if (useAlbumsStore.getState().getCurrentAlbum()?.photoNodeUids?.size === 0) {
                     void loadAlbums(abortSignal);
                 }
             }
@@ -646,17 +646,13 @@ export const PhotosWithAlbumsProvider: FC<{ children: ReactNode }> = ({ children
                 });
             }
 
-            useAlbumsStore
-                .getState()
-                .removePhotoNodeUids(result.successes.map((linkId) => generateNodeUid(albumLink.volumeId, linkId)));
-            const albumEntry = [...useAlbumsStore.getState().albums.values()].find(
-                (a) => splitNodeUid(a.nodeUid).nodeId === albumLinkId
-            );
-            if (albumEntry) {
-                useAlbumsStore.getState().upsertAlbum({
-                    ...albumEntry,
-                    photoCount: Math.max(0, (albumEntry.photoCount ?? 0) - nbSuccesses),
-                });
+            const removedNodeUids = result.successes.map((linkId) => generateNodeUid(albumLink.volumeId, linkId));
+            useAlbumsStore.getState().removePhotoNodeUids(removedNodeUids);
+
+            // If the cover photo was removed, we force the loadAlbums to get fresh metadata (coverNodeUid/photoCount)
+            const currentAlbum = useAlbumsStore.getState().getCurrentAlbum();
+            if (currentAlbum?.coverNodeUid && removedNodeUids.includes(currentAlbum.coverNodeUid)) {
+                await loadAlbums();
             }
         },
         [getLink, batchAPIHelper, createNotification]
