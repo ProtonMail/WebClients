@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react';
 import { useRoomContext } from '@livekit/components-react';
 import type { Participant, RemoteParticipant } from 'livekit-client';
 
+import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
 import { useMeetDispatch, useMeetSelector } from '@proton/meet/store/hooks';
 import { lowerHand, raiseHand, selectRaisedHands } from '@proton/meet/store/slices/chatAndReactionsSlice';
 import { selectParticipantsMap } from '@proton/meet/store/slices/meetingInfo';
@@ -22,6 +23,7 @@ export const useRaiseHandReceiver = () => {
     const dispatch = useMeetDispatch();
     const { publish } = usePublishRaiseHand();
     const mls = useMLSContext();
+    const { reportMeetError } = useMeetErrorReporting();
     const raisedHands = useMeetSelector(selectRaisedHands);
     const isHandRaised = room ? raisedHands.includes(room.localParticipant.identity) : false;
     const participantsMap = useMeetSelector(selectParticipantsMap);
@@ -74,14 +76,59 @@ export const useRaiseHandReceiver = () => {
             try {
                 const decoded = JSON.parse(new TextDecoder().decode(payload));
                 const decrypted = await mls.decryptMessage(stringToUint8Array(decoded.message));
-                const parsed = JSON.parse(decrypted?.message ?? '');
+                if (!decrypted) {
+                    return;
+                }
+
+                const mlsSenderId = decrypted.sender_participant_id;
+
+                if (participant.identity !== mlsSenderId) {
+                    reportMeetError('Raise hand LiveKit identity does not match MLS sender', {
+                        level: 'error',
+                        context: {
+                            participantIdentity: participant.identity,
+                            senderParticipantId: mlsSenderId,
+                            topic,
+                        },
+                    });
+                    return;
+                }
+
+                const parsed = JSON.parse(decrypted.message ?? '');
 
                 if (topic === PublishableDataTypes.RaiseHand) {
-                    processRaiseHand(parsed.raised, participant.identity);
+                    // Envelope id is `${senderIdentity}-${timestamp}` (see usePublishRaiseHand); must match MLS sender.
+                    const expectedIdPrefix = `${mlsSenderId}-`;
+                    if (typeof decoded.id !== 'string' || !decoded.id.startsWith(expectedIdPrefix)) {
+                        reportMeetError('Raise hand envelope id does not match MLS sender identity', {
+                            level: 'error',
+                            context: {
+                                envelopeId: decoded.id,
+                                senderParticipantId: mlsSenderId,
+                            },
+                        });
+                        return;
+                    }
+                    processRaiseHand(parsed.raised, mlsSenderId);
                     return;
                 }
 
                 if (topic === PublishableDataTypes.LowerHandAdmin && isAdminLowerHandEnabled) {
+                    // Envelope id is `${targetIdentity}-${timestamp}` (see adminPublishLowerHand); must match inner target.
+                    if (typeof parsed.identity !== 'string' || !parsed.identity) {
+                        return;
+                    }
+                    const expectedLowerHandIdPrefix = `${parsed.identity}-`;
+                    if (typeof decoded.id !== 'string' || !decoded.id.startsWith(expectedLowerHandIdPrefix)) {
+                        reportMeetError('Lower hand admin envelope id does not match target identity', {
+                            level: 'error',
+                            context: {
+                                envelopeId: decoded.id,
+                                targetParticipantId: parsed.identity,
+                            },
+                        });
+                        return;
+                    }
                     processAdminLowerHand(participant, parsed.identity);
                     return;
                 }
@@ -117,5 +164,5 @@ export const useRaiseHandReceiver = () => {
             room.off('dataReceived', handleDataReceived);
             room.off('participantConnected', handleParticipantConnected);
         };
-    }, [room, mls, isHandRaised, dispatch, publish]);
+    }, [room, mls, isHandRaised, dispatch, publish, reportMeetError, isAdminLowerHandEnabled]);
 };
