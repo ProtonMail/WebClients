@@ -613,9 +613,6 @@
       "Set extra password": [
         "Configurar senha adicional"
       ],
-      "Settings": [
-        "Configurações"
-      ],
       "Setup 2FA": [
         "Configurar A2F"
       ],
@@ -2958,7 +2955,7 @@
         "Esvaziar lixeira"
       ],
       "Enable offline access": [
-        "Ativar acesso off-line"
+        "Ativar o acesso off-line"
       ],
       "Enter email or username": [
         "Digite o e-mail ou nome de usuário"
@@ -3034,12 +3031,6 @@
       ],
       "Generic CSV": [
         "CSV genérico"
-      ],
-      "Get ${ PASS_SHORT_APP_NAME } Plus": [
-        "Obtenha o ${ PASS_SHORT_APP_NAME } Plus"
-      ],
-      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
-        "Obtenha o ${ PASS_SHORT_APP_NAME } Unlimited"
       ],
       "Get Started": [
         "Começar"
@@ -3636,7 +3627,7 @@
         "Desconhecido"
       ],
       "Unlimited": [
-        "Ilimitado"
+        "Unlimited"
       ],
       "Unlock premium features": [
         "Desbloqueie recursos premium"
@@ -4735,6 +4726,11 @@
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "A menos que sejam decifradas, as senhas criptografadas permanecem seguras mesmo se forem expostas."
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "Obter ${ planName }"
       ]
     },
     "Validation": {

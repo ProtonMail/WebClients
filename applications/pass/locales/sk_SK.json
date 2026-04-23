@@ -613,9 +613,6 @@
       "Set extra password": [
         "Nastaviť dodatočné heslo"
       ],
-      "Settings": [
-        "Nastavenia"
-      ],
       "Setup 2FA": [
         "Nastaviť 2FA"
       ],
@@ -977,18 +974,6 @@
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "Odstránenie trezoru \"${ payload.content.name }\" zlyhalo"
-      ],
-      "Desktop lock is not configured.": [
-        "Zamknutie plochy nie je nakonfigurované."
-      ],
-      "Desktop lock secret does not match.": [
-        "Heslo na uzamknutie plochy sa nezhoduje."
-      ],
-      "Desktop lock secret not found.": [
-        "Nenašiel sa kód na uzamknutie plochy."
-      ],
-      "Desktop lock setup failed.": [
-        "Nastavenie uzamknutia pracovnej plochy sa nepodarilo."
       ],
       "Detected ${ errors.length } corrupted csv row": [
         "Zistený ${ errors.length } poškodený riadok csv",
@@ -3148,12 +3133,6 @@
       "Generic CSV": [
         "Všeobecné CSV"
       ],
-      "Get ${ PASS_SHORT_APP_NAME } Plus": [
-        "Získajte ${ PASS_SHORT_APP_NAME } Plus"
-      ],
-      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
-        "Získajte ${ PASS_SHORT_APP_NAME } Unlimited"
-      ],
       "Get Started": [
         "Začíname"
       ],
@@ -4870,6 +4849,11 @@
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Pokiaľ nie sú dešifrované, zašifrované heslá zostávajú v bezpečí, aj keď sú odhalené."
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "Získať ${ planName }"
       ]
     },
     "Validation": {

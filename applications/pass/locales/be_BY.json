@@ -613,9 +613,6 @@
       "Set extra password": [
         "Задаць дадатковы пароль"
       ],
-      "Settings": [
-        "Налады"
-      ],
       "Setup 2FA": [
         "Наладжванне 2ФА"
       ],
@@ -921,6 +918,9 @@
       "Authentication failed. Confirm your second password in order to proceed with the export": [
         "Збой аўтэнтыфікацыі. Пацвердзіце ваш другі пароль, каб працягнуць экспартаванне"
       ],
+      "Biometric authentication failed.": [
+        "Збой аўтэнтыфікацыі біяметрыі."
+      ],
       "Cannot send invitation at the moment": [
         "У дадзены момант не ўдаецца адправіць запрашэнне",
         "У дадзены момант не ўдаецца адправіць запрашэнні",
@@ -995,6 +995,9 @@
       ],
       "Emptying trash failed": [
         "Збой ачысткі сметніцы"
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "Збой зашыфраваных зносін з праграмай для камп'ютара ${ PASS_APP_NAME }."
       ],
       "Encrypted JSON not supported": [
         "Зашыфраваны JSON не падтрымліваецца"
@@ -1215,6 +1218,9 @@
       "Something went wrong. Please sign in again.": [
         "Нешта пайшло не так. Увайдзіце яшчэ раз."
       ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "Праграма для камп'ютара ${ PASS_APP_NAME } своечасова не адказвае."
+      ],
       "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
         "Праграма для камп'ютара для ${ PASS_APP_NAME } заблакіравана. Яе неабходна разблакіраваць."
       ],
@@ -1223,6 +1229,9 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is not responding, is it running?": [
         "Праграма для камп'ютара ${ PASS_APP_NAME } не адказвае. Пераканайцеся, што яна запушчана."
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "У праграме для камп'ютара ${ PASS_APP_NAME } уліковы запіс зменены на іншы."
       ],
       "The session has expired. Please sign in again.": [
         "Час сеансу пратэрмінаваны. Увайдзіце яшчэ раз."
@@ -3123,12 +3132,6 @@
       ],
       "Generic CSV": [
         "Агульны CSV"
-      ],
-      "Get ${ PASS_SHORT_APP_NAME } Plus": [
-        "Атрымаць ${ PASS_SHORT_APP_NAME } Plus"
-      ],
-      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
-        "Атрымаць ${ PASS_SHORT_APP_NAME } Unlimited"
       ],
       "Get Started": [
         "Пачаць працу"
