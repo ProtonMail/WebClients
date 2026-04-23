@@ -122,7 +122,7 @@ const PublicLinkSettingsModal = ({
                 open={open}
             >
                 <div
-                    className="flex items-center justify-space-between border-bottom border-weak modal-two-header px-8 py-3 m-0 mb-5"
+                    className="flex items-center justify-space-between flex-nowrap border-bottom border-weak px-8 py-3 mb-5"
                     data-testid="modal-two-header"
                 >
                     <div className="flex items-center flex-nowrap gap-2">
