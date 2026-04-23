@@ -27,7 +27,8 @@ interface AlbumsStore {
     isLoadingList: boolean;
     hasEverLoadedList: boolean;
 
-    currentAlbum: AlbumItem | undefined;
+    currentAlbumNodeUid: string | undefined;
+    getCurrentAlbum: () => AlbumItem | undefined;
     isLoading: boolean;
     hasEverLoaded: boolean;
 
@@ -65,7 +66,11 @@ export const useAlbumsStore = create<AlbumsStore>()(
         isLoadingList: false,
         hasEverLoadedList: false,
 
-        currentAlbum: undefined,
+        currentAlbumNodeUid: undefined,
+        getCurrentAlbum: () => {
+            const state = get();
+            return state.currentAlbumNodeUid ? state.albums.get(state.currentAlbumNodeUid) : undefined;
+        },
         isLoading: false,
         hasEverLoaded: false,
 
@@ -111,104 +116,122 @@ export const useAlbumsStore = create<AlbumsStore>()(
 
         setCurrentAlbum: (album) => {
             set((state) => {
-                const existingUids =
-                    state.currentAlbum?.nodeUid === album.nodeUid
-                        ? state.currentAlbum.photoNodeUids
-                        : new Set<string>();
-                return { currentAlbum: { ...album, photoNodeUids: existingUids } };
+                const existing = state.albums.get(album.nodeUid);
+                const newAlbums = new Map(state.albums);
+                newAlbums.set(album.nodeUid, {
+                    ...album,
+                    photoNodeUids:
+                        state.currentAlbumNodeUid === album.nodeUid ? existing?.photoNodeUids : new Set<string>(),
+                });
+                return { albums: newAlbums, currentAlbumNodeUid: album.nodeUid };
             });
         },
 
         setCoverNodeUid: (coverNodeUid: string) => {
             set((state) => {
-                if (!state.currentAlbum) {
+                if (!state.currentAlbumNodeUid) {
                     return state;
                 }
-                const updatedAlbum = { ...state.currentAlbum, coverNodeUid };
                 const albums = new Map(state.albums);
-                const existing = albums.get(updatedAlbum.nodeUid);
+                const existing = albums.get(state.currentAlbumNodeUid);
                 if (existing) {
-                    albums.set(updatedAlbum.nodeUid, { ...existing, coverNodeUid });
+                    albums.set(state.currentAlbumNodeUid, { ...existing, coverNodeUid });
                 }
-                return { currentAlbum: updatedAlbum, albums };
+                return { albums };
             });
         },
 
         clearCurrentAlbum: () => {
-            set({ currentAlbum: undefined, isLoading: false, hasEverLoaded: false });
+            set({ currentAlbumNodeUid: undefined, isLoading: false, hasEverLoaded: false });
         },
 
         setPhotoNodeUids: (uids: string[]) => {
             set((state) => {
-                if (!state.currentAlbum) {
+                if (!state.currentAlbumNodeUid) {
                     return state;
                 }
-                return {
-                    currentAlbum: {
-                        ...state.currentAlbum,
-                        photoNodeUids: new Set(uids),
-                        photoCount: uids.length,
-                    },
-                };
+                const albums = new Map(state.albums);
+                const existing = albums.get(state.currentAlbumNodeUid);
+                if (!existing) {
+                    return state;
+                }
+                albums.set(state.currentAlbumNodeUid, {
+                    ...existing,
+                    photoNodeUids: new Set(uids),
+                    photoCount: uids.length,
+                });
+                return { albums };
             });
         },
 
         addPhotoNodeUids: (uids: string[]) => {
             set((state) => {
-                if (!state.currentAlbum) {
+                if (!state.currentAlbumNodeUid) {
                     return state;
                 }
-                const newPhotoNodeUids = new Set(state.currentAlbum.photoNodeUids);
+                const albums = new Map(state.albums);
+                const existing = albums.get(state.currentAlbumNodeUid);
+                if (!existing) {
+                    return state;
+                }
+                const newPhotoNodeUids = new Set(existing.photoNodeUids);
                 const newUids = uids.filter((uid) => !newPhotoNodeUids.has(uid));
                 for (const uid of newUids) {
                     newPhotoNodeUids.add(uid);
                 }
-                return {
-                    currentAlbum: {
-                        ...state.currentAlbum,
-                        photoNodeUids: newPhotoNodeUids,
-                        photoCount: (state.currentAlbum.photoCount ?? 0) + newUids.length,
-                    },
-                };
+                albums.set(state.currentAlbumNodeUid, {
+                    ...existing,
+                    photoNodeUids: newPhotoNodeUids,
+                    photoCount: (existing.photoCount ?? 0) + newUids.length,
+                });
+                return { albums };
             });
         },
 
         addPhotoNodeUid: (uid: string) => {
             set((state) => {
-                if (!state.currentAlbum?.photoNodeUids) {
+                if (!state.currentAlbumNodeUid) {
                     return state;
                 }
-                if (state.currentAlbum.photoNodeUids.has(uid)) {
+                const albums = new Map(state.albums);
+                const existing = albums.get(state.currentAlbumNodeUid);
+                if (!existing) {
                     return state;
                 }
-                const newPhotoNodeUids = new Set(state.currentAlbum.photoNodeUids);
+                if (existing.photoNodeUids?.has(uid)) {
+                    return state;
+                }
+                const newPhotoNodeUids = new Set(existing.photoNodeUids);
                 newPhotoNodeUids.add(uid);
-                return {
-                    currentAlbum: {
-                        ...state.currentAlbum,
-                        photoNodeUids: newPhotoNodeUids,
-                        photoCount: (state.currentAlbum.photoCount ?? 0) + 1,
-                    },
-                };
+                albums.set(state.currentAlbumNodeUid, {
+                    ...existing,
+                    photoNodeUids: newPhotoNodeUids,
+                    photoCount: (existing.photoCount ?? 0) + 1,
+                });
+                return { albums };
             });
         },
 
         removePhotoNodeUids: (uids: string[]) => {
             set((state) => {
-                if (!state.currentAlbum) {
+                if (!state.currentAlbumNodeUid) {
                     return state;
                 }
-                const newPhotoNodeUids = new Set(state.currentAlbum.photoNodeUids);
+                const albums = new Map(state.albums);
+                const existing = albums.get(state.currentAlbumNodeUid);
+                if (!existing) {
+                    return state;
+                }
+                const newPhotoNodeUids = new Set(existing.photoNodeUids);
                 for (const uid of uids) {
                     newPhotoNodeUids.delete(uid);
                 }
-                return {
-                    currentAlbum: {
-                        ...state.currentAlbum,
-                        photoNodeUids: newPhotoNodeUids,
-                        photoCount: Math.max(0, (state.currentAlbum.photoCount ?? 0) - uids.length),
-                    },
-                };
+                albums.set(state.currentAlbumNodeUid, {
+                    ...existing,
+                    photoNodeUids: newPhotoNodeUids,
+                    photoCount: Math.max(0, (existing.photoCount ?? 0) - uids.length),
+                });
+                return { albums };
             });
         },
 
