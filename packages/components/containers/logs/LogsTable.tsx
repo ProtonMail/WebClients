@@ -30,13 +30,23 @@ interface Props {
     protonSentinel: SETTINGS_PROTON_SENTINEL_STATE;
     loading: boolean;
     error: boolean;
+    isB2B?: boolean;
 }
 
-const LogsTable = ({ logs = [], logAuth, protonSentinel, loading, error }: Props) => {
+const LogsTable = ({ logs = [], logAuth, protonSentinel, loading, error, isB2B }: Props) => {
     const isAuthLogAdvanced = logAuth === ADVANCED;
     const isProtonSentinelEnabled = protonSentinel === ENABLED;
 
     if (logAuth === DISABLE) {
+        if (!isB2B) {
+            return (
+                <GenericErrorDisplay title={c('Title').t`No events yet`} customImage={emptySearchSvg}>
+                    <div className="text-weak text-sm color-weak text-center">
+                        {c('Error message').t`Enable account monitor to start loading event.`}
+                    </div>
+                </GenericErrorDisplay>
+            );
+        }
         return (
             <GenericErrorDisplay
                 title={c('Title').t`There are no events for your account`}
