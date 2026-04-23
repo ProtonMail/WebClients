@@ -1324,6 +1324,21 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
         "Se ha iniciado sesión en a aplicación de escritorio de ${ PASS_APP_NAME } con una cuenta diferente."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Las credenciales de bloqueo de biometría no coinciden."
+      ],
+      "Biometric lock credentials not found.": [
+        "No se encontró el bloqueo por biometría."
+      ],
+      "Biometric lock is not configured.": [
+        "El bloqueo de biometría no está configurado."
+      ],
+      "Biometric lock setup failed.": [
+        "Error en la configuración de bloqueo de biometría."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "Debe iniciar sesión en la aplicación de escritorio de ${ PASS_APP_NAME }"
       ]
     },
     "Error message": {
@@ -5085,6 +5100,11 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "La suscripción no le permite crear varias bóvedas. Todos los elementos serán importados a la primera bóveda. Para importar a varias bóvedas mejore la suscripción."
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "Obtener ${ planName }"
       ]
     }
   }
