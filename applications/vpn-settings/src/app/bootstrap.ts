@@ -1,6 +1,8 @@
 import { initEvent, serverEvent, userSettingsThunk, userThunk, welcomeFlagsActions } from '@proton/account';
+import { addressesThunk } from '@proton/account/addresses';
 import * as bootstrap from '@proton/account/bootstrap';
 import { bootstrapEvent } from '@proton/account/bootstrap/action';
+import { userKeysThunk } from '@proton/account/userKeys';
 import { getSilentApi } from '@proton/shared/lib/api/helpers/customConfig';
 import type { TtagLocaleMap } from '@proton/shared/lib/interfaces';
 import { telemetry } from '@proton/shared/lib/telemetry';
@@ -84,6 +86,10 @@ export const bootstrapApp = async ({
 
         // Needs everything to be loaded.
         await bootstrap.postLoad({ appName, authentication, ...userData, history });
+
+        // VPN doesn't use addresses or keys directly but some functionality requires addresses to be loaded (e.g. session recovery).
+        // So we prefetch it here but don't care about the result to make sure they are loaded.
+        Promise.all([dispatch(addressesThunk()), dispatch(userKeysThunk())]).catch(noop);
 
         const eventManager = bootstrap.eventManager({ api: silentApi });
         extendStore({ eventManager });
