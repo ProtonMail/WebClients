@@ -379,6 +379,12 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
 
             const localParticipant = room.localParticipant;
 
+            // Snapshot track references before any async operations
+            // LiveKit may clear trackPublications during disconnect/unpublish
+            const tracks = [...localParticipant.trackPublications.values()]
+                .map((pub) => pub.track)
+                .filter((track): track is LocalTrack => !!track);
+
             try {
                 await Promise.allSettled([
                     localParticipant.setScreenShareEnabled(false),
@@ -390,10 +396,6 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
                 // eslint-disable-next-line no-console
                 console.error(error);
             }
-
-            const tracks = [...localParticipant.trackPublications.values()]
-                .map((pub) => pub.track)
-                .filter((track): track is LocalTrack => !!track);
 
             tracks.forEach((track) => {
                 try {
