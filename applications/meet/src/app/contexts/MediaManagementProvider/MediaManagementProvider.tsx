@@ -47,7 +47,13 @@ import { useDevicePermissionChangeListener } from './useDevicePermissionChangeLi
 import { useDynamicDeviceHandling } from './useDynamicDeviceHandling';
 import { useMicrophoneVolumeAnalysis } from './useMicrophoneVolumeAnalysis';
 
-export const MediaManagementProvider = ({ children }: { children: React.ReactNode }) => {
+export const MediaManagementProvider = ({
+    children,
+    krispAudioContext,
+}: {
+    children: React.ReactNode;
+    krispAudioContext: AudioContext | undefined;
+}) => {
     const room = useRoomContext();
     const { createNotification } = useNotifications();
     const { reportMeetError } = useMeetErrorReporting();
@@ -120,7 +126,10 @@ export const MediaManagementProvider = ({ children }: { children: React.ReactNod
         isBackgroundBlurSupported,
     } = useVideoToggle(switchActiveDevice);
 
-    const { toggleAudio, noiseFilter, toggleNoiseFilter, isAudioEnabled } = useAudioToggle(switchActiveDevice);
+    const { toggleAudio, noiseFilter, toggleNoiseFilter, isAudioEnabled } = useAudioToggle(
+        switchActiveDevice,
+        krispAudioContext
+    );
 
     const { handlePreviewCameraToggle, cleanupCameraPreview, cleanupPreviewTrack } = useCameraPreview({
         selectedCameraId: activeCameraDeviceId,

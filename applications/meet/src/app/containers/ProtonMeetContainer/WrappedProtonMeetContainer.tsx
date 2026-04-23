@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { RoomContext } from '@livekit/components-react';
+import { isKrispNoiseFilterSupported } from '@livekit/krisp-noise-filter';
 import { LogLevel, Room, setLogExtension, setLogLevel } from 'livekit-client';
 
 import { useMeetErrorReporting } from '@proton/meet/hooks/useMeetErrorReporting';
@@ -35,48 +36,62 @@ export const WrappedProtonMeetContainer = () => {
     const [keyProvider] = useState(() => new ProtonMeetKeyProvider());
     const [worker] = useState(() => new Worker(new URL('livekit-client/e2ee-worker', import.meta.url)));
     const [meetAudioContext] = useState(() => createMeetAudioContext());
-    const [room] = useState(
-        () =>
-            new Room({
-                e2ee: {
-                    keyProvider,
-                    worker,
+    // Isolated AudioContext for Krisp's AudioWorklet. LiveKit's acquireAudioContext() sets the
+    // same shared context on both remote tracks and localParticipant, which puts Krisp's processing
+    // graph in the same AudioContext as all remote audio nodes. Under reconnection this creates a
+    // loopback where remote audio leaks into Krisp's output and gets re-broadcast to everyone.
+    const [krispAudioContext] = useState(() => (isKrispNoiseFilterSupported() ? new AudioContext() : undefined));
+    const [room] = useState(() => {
+        const r = new Room({
+            e2ee: {
+                keyProvider,
+                worker,
+            },
+            webAudioMix: isAudioMixingEnabled ? { audioContext: meetAudioContext.audioContext } : false,
+            videoCaptureDefaults: {
+                resolution: isMeetHigherBitrate
+                    ? qualityConstants[QualityScenarios.PortraitView].resolution
+                    : legacyQualityConstants[QualityScenarios.PortraitView].resolution,
+            },
+            dynacast: true,
+            adaptiveStream: isMeetHigherBitrate,
+            publishDefaults: {
+                simulcast: true,
+                backupCodec: true,
+                degradationPreference: 'maintain-framerate',
+                videoEncoding: {
+                    ...(isMeetHigherBitrate
+                        ? qualityConstants[QualityScenarios.PortraitView].encoding
+                        : legacyQualityConstants[QualityScenarios.PortraitView].encoding),
+                    priority: 'medium',
                 },
-                webAudioMix: isAudioMixingEnabled ? { audioContext: meetAudioContext.audioContext } : false,
-                videoCaptureDefaults: {
-                    resolution: isMeetHigherBitrate
-                        ? qualityConstants[QualityScenarios.PortraitView].resolution
-                        : legacyQualityConstants[QualityScenarios.PortraitView].resolution,
-                },
-                dynacast: true,
-                adaptiveStream: isMeetHigherBitrate,
-                publishDefaults: {
-                    simulcast: true,
-                    backupCodec: true,
-                    degradationPreference: 'maintain-framerate',
-                    videoEncoding: {
-                        ...(isMeetHigherBitrate
-                            ? qualityConstants[QualityScenarios.PortraitView].encoding
-                            : legacyQualityConstants[QualityScenarios.PortraitView].encoding),
-                        priority: 'medium',
-                    },
-                    videoSimulcastLayers: [
-                        isMeetHigherBitrate
-                            ? qualityConstants[QualityScenarios.SmallView]
-                            : legacyQualityConstants[QualityScenarios.SmallView],
-                        isMeetHigherBitrate
-                            ? qualityConstants[QualityScenarios.MediumView]
-                            : legacyQualityConstants[QualityScenarios.MediumView],
-                    ],
-                    audioPreset: { maxBitrate: audioQuality, priority: 'high' },
-                    screenShareEncoding: screenShareQuality.encoding,
-                    screenShareSimulcastLayers: [],
-                    videoCodec: isMeetVp9Allowed ? 'vp9' : primaryCodec,
-                    dtx: false,
-                },
-                disconnectOnPageLeave: false,
-            })
-    );
+                videoSimulcastLayers: [
+                    isMeetHigherBitrate
+                        ? qualityConstants[QualityScenarios.SmallView]
+                        : legacyQualityConstants[QualityScenarios.SmallView],
+                    isMeetHigherBitrate
+                        ? qualityConstants[QualityScenarios.MediumView]
+                        : legacyQualityConstants[QualityScenarios.MediumView],
+                ],
+                audioPreset: { maxBitrate: audioQuality, priority: 'high' },
+                screenShareEncoding: screenShareQuality.encoding,
+                screenShareSimulcastLayers: [],
+                videoCodec: isMeetVp9Allowed ? 'vp9' : primaryCodec,
+                dtx: false,
+            },
+            disconnectOnPageLeave: false,
+        });
+
+        if (krispAudioContext) {
+            // Prevent LiveKit from assigning the shared remote-playback context to localParticipant.
+            // Without this, Krisp's AudioWorklet runs inside the same graph as all remote audio
+            // nodes, and under reconnection remote audio can leak into Krisp's processedTrack.
+            const origSetAudioContext = r.localParticipant.setAudioContext.bind(r.localParticipant);
+            r.localParticipant.setAudioContext = () => origSetAudioContext(krispAudioContext);
+        }
+
+        return r;
+    });
 
     useEffect(() => {
         if (isLiveKitDebugReportingAllowed) {
@@ -98,18 +113,33 @@ export const WrappedProtonMeetContainer = () => {
     }, []);
 
     useEffect(() => {
+        // Resume the Krisp context in the same user-gesture window as the main context.
+        // Defined here (not inside the useState factory) so it can be properly removed on unmount.
+        const onMeetContextStateChange = () => {
+            if (meetAudioContext.audioContext.state === 'running') {
+                krispAudioContext?.resume().catch(() => {});
+            }
+        };
+        if (krispAudioContext) {
+            meetAudioContext.audioContext.addEventListener('statechange', onMeetContextStateChange);
+        }
+
         return () => {
+            if (krispAudioContext) {
+                meetAudioContext.audioContext.removeEventListener('statechange', onMeetContextStateChange);
+            }
             if (worker) {
                 worker.terminate();
             }
             meetAudioContext?.cleanup();
+            krispAudioContext?.close().catch(() => {});
         };
     }, []);
 
     return (
         <RoomContext.Provider value={room}>
             <SubscriptionManagementProvider>
-                <MediaManagementProvider>
+                <MediaManagementProvider krispAudioContext={krispAudioContext}>
                     <SortedParticipantsProvider>
                         {isGuest ? (
                             <ProtonMeetContainer

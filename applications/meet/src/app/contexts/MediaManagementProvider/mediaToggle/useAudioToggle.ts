@@ -73,14 +73,15 @@ const withTimeout = async <T>(promise: Promise<T>, label: string, timeoutMs = TO
  * Manages microphone toggle (mute/unmute), device switching, and Krisp noise filter lifecycle.
  *
  * Noise filter architecture:
- * - The AudioContext is created once and reused across device switches (Krisp needs it for AudioWorkletNode).
+ * - The AudioContext is owned by WrappedProtonMeetContainer and passed in — it is isolated from the
+ *   shared remote-audio context to prevent loopback under reconnection.
  * - A new KrispNoiseFilter processor is created per track (processors can't be reused across tracks
  *   because LiveKit calls processor.destroy() when a track is stopped).
  * - On device change, LiveKit internally calls processor.restart() on the existing track — we do NOT
  *   destroy the processor/AudioContext during device switches to avoid breaking that restart.
  * - On track ended (device unplug), we abandon the processor refs and auto-recover to the system
  */
-export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
+export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice, krispAudioContext: AudioContext | undefined) => {
     const { reportMeetError: reportError } = useMeetErrorReporting();
     const activeMicrophoneDeviceId = useMeetSelector(selectActiveMicrophoneId);
     const initialAudioState = useMeetSelector(selectInitialAudioState);
@@ -90,8 +91,6 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
     const { isMicrophoneEnabled, localParticipant } = useLocalParticipant();
 
     const noiseFilterProcessor = useRef<KrispNoiseFilterProcessor | null>(null);
-    /** Persistent AudioContext reused across device switches — only closed on unmount */
-    const audioContext = useRef<AudioContext | null>(null);
     /** Track ID the processor is currently attached to, used to detect track replacement */
     const attachedTrackId = useRef<string | null>(null);
     /** Incremented on abandon to invalidate in-flight setProcessor calls */
@@ -123,18 +122,6 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
             pendingNoiseFilterTimer.current = null;
             debugLog('noiseFilter:pending-cancelled');
         }
-    };
-
-    /** Returns the persistent AudioContext, creating one if needed (e.g. first attach or after unmount cleanup). */
-    const getOrCreateAudioContext = () => {
-        if (audioContext.current && audioContext.current.state !== 'closed') {
-            return audioContext.current;
-        }
-        // @ts-ignore - webkitAudioContext is not available in all browsers
-        const ctx = new (window.AudioContext || window.webkitAudioContext)() as AudioContext;
-        audioContext.current = ctx;
-        debugLog('noiseFilter:audio-context-created');
-        return ctx;
     };
 
     /**
@@ -182,30 +169,22 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
         abandonNoiseFilter();
     };
 
-    /** Full cleanup: abandons processor refs AND closes the AudioContext. Only used on unmount. */
+    /** Full cleanup: abandons processor refs. AudioContext lifecycle is owned by the caller. */
     const destroyNoiseFilter = () => {
         abandonNoiseFilter();
-
-        const ctx = audioContext.current;
-        audioContext.current = null;
-
-        if (ctx && ctx.state !== 'closed') {
-            ctx.close().catch(() => {});
-            debugLog('noiseFilter:audio-context-closed');
-        }
     };
 
     /**
      * Creates a new KrispNoiseFilter processor and attaches it to the current audio track.
-     * Reuses the persistent AudioContext. Guards against stale attach via generation counter —
-     * if abandonNoiseFilter() is called while setProcessor is in flight, the result is discarded.
+     * Uses the shared krispAudioContext passed in from WrappedProtonMeetContainer.
+     * Guards against stale attach via generation counter — if abandonNoiseFilter() is called while setProcessor is in flight, the result is discarded.
      * On failure, detaches the AudioContext from the track so audio still flows directly.
      */
     const attachNoiseFilter = async () => {
         const publication = getCurrentPublication();
         const currentAudioTrack = publication?.audioTrack;
 
-        if (!currentAudioTrack || !isAdvancedNoiseFilterSupported) {
+        if (!currentAudioTrack || !isAdvancedNoiseFilterSupported || !krispAudioContext) {
             debugLog('noiseFilter:attach-skip', {
                 hasTrack: !!currentAudioTrack,
                 supported: isAdvancedNoiseFilterSupported,
@@ -236,14 +215,13 @@ export const useAudioToggle = (switchActiveDevice: SwitchActiveDevice) => {
         attachedTrackId.current = null;
 
         const gen = ++noiseFilterGeneration.current;
-        const ctx = getOrCreateAudioContext();
 
         debugLog('noiseFilter:attach-start', { trackId: currentAudioTrack.id, generation: gen });
 
         const processor = KrispNoiseFilter();
 
         try {
-            currentAudioTrack.setAudioContext(ctx);
+            currentAudioTrack.setAudioContext(krispAudioContext);
             await withTimeout(
                 currentAudioTrack.setProcessor(processor),
                 'setProcessor',
