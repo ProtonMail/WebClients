@@ -105,6 +105,9 @@
       "Add address or domain": [
         "Adicionar endereço ou domínio"
       ],
+      "Add and verify": [
+        "Adicionar e verificar"
+      ],
       "Add another account": [
         "Adicionar outra conta"
       ],
@@ -260,6 +263,9 @@
       ],
       "Claim it": [
         "Revindicar"
+      ],
+      "Claim offer": [
+        "Resgatar oferta"
       ],
       "Claim this address": [
         "Reivindicar este endereço"
@@ -437,6 +443,9 @@
       ],
       "Create organization": [
         "Criar organização"
+      ],
+      "Create recovery phrase": [
+        "Criar frase de recuperação"
       ],
       "Create users": [
         "Criar usuários"
@@ -627,6 +636,9 @@
       "Download the desktop app": [
         "Baixe o aplicativo para computador"
       ],
+      "Download updated file": [
+        "Baixar arquivo atualizado"
+      ],
       "Edit": [
         "Editar"
       ],
@@ -767,6 +779,9 @@
       ],
       "Generate key": [
         "Gerar chave"
+      ],
+      "Generate new phrase": [
+        "Gerar novo frase"
       ],
       "Generate new recovery phrase": [
         "Gerar nova frase de recuperação"
@@ -1185,6 +1200,9 @@
       "Reactivate keys": [
         "Reativar chaves"
       ],
+      "Read the story": [
+        "Leia a história"
+      ],
       "Reconnect": [
         "Reconectar"
       ],
@@ -1347,6 +1365,9 @@
       "Save and continue": [
         "Salvar e continuar"
       ],
+      "Save and verify": [
+        "Salvar e verificar"
+      ],
       "Save changes": [
         "Salvar alterações"
       ],
@@ -1367,6 +1388,9 @@
       ],
       "Search settings": [
         "Pesquisar configurações"
+      ],
+      "Secure account": [
+        "Segurança da conta"
       ],
       "See DNS TXT record": [
         "Ver registro TXT de DNS"
@@ -1590,6 +1614,9 @@
       "Switch or add account": [
         "Mudar ou adicionar conta"
       ],
+      "Switch to free plan": [
+        "Alterar para o plano gratuito"
+      ],
       "Take a tour": [
         "Faça um tour"
       ],
@@ -1763,6 +1790,9 @@
       ],
       "Void all recovery files?": [
         "Anular todos os arquivos de recuperação?"
+      ],
+      "Watch the interview": [
+        "Assista à entrevista"
       ],
       "Welcome": [
         "Boas-vindas"
@@ -2289,6 +2319,11 @@
     "b2b_trials_Title": {
       "Your free trial ends in ${ timeRemaining }": [
         "Sua avaliação gratuita termina em ${ timeRemaining }"
+      ]
+    },
+    "Badge": {
+      "Save ${ discountRate }%": [
+        "Economize ${ discountRate }%"
       ]
     },
     "Badge for domain": {
@@ -3722,6 +3757,32 @@
         "Se"
       ]
     },
+    "Confirm cancellation": {
+      "Back up photos from your devices": [
+        "Faça backup de fotos de seus dispositivos"
+      ],
+      "Cancel subscription": [
+        "Cancelar assinatura"
+      ],
+      "Confirm cancellation": [
+        "Confirmar cancelamento"
+      ],
+      "Keep current plan": [
+        "Manter plano atual"
+      ],
+      "Manage your calendar": [
+        "Gerencie seu calendário"
+      ],
+      "Receive new emails": [
+        "Receba novos e-mais"
+      ],
+      "Send emails with attachments": [
+        "Envie e-mails com anexos"
+      ],
+      "Upload any new files": [
+        "Enviar novos arquivos"
+      ]
+    },
     "Confirm modal title": {
       "Import is incomplete!": [
         "A importação está incompleta!"
@@ -4919,6 +4980,9 @@
       "Bring over email, calendar events, and contacts from another provider.": [
         "Traga e-mails, eventos do calendário e contatos de outro provedor."
       ],
+      "Build trust and brand recognition with professional email addresses at your own domain.": [
+        "Crie confiança e reconhecimento de marca com endereços de e-mail profissionais em seu próprio domínio."
+      ],
       "Configure this first to activate your organization and customize your email address.": [
         "Configure isso primeiro para ativar sua organização e personalizar seu endereço de e-mail."
       ],
@@ -4985,11 +5049,20 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Auxilie sua equipe a armazenar de forma segura as senhas relacionadas a informações sensíveis da empresa e dos clientes."
       ],
+      "How we fought back when ${ BRAND_NAME } was blocked in an aggressive campaign.": [
+        "Como reagimos quando a ${ BRAND_NAME } foi bloqueada em uma campanha agressiva."
+      ],
+      "How we supported local activists when privacy and free speech were threatened.": [
+        "Como apoiamos ativistas locais quando a privacidade e a liberdade de expressão foram ameaçadas."
+      ],
       "It looks like the contact list you are importing contains some groups. Please review how these groups should be imported.": [
         "Parece que a lista de contatos que você está importando contém alguns grupos. Verifique como esses grupos devem ser importados."
       ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Mantenha diferentes partes de sua vida separadas e sua caixa de entrada organizada com endereços adicionais."
+      ],
+      "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
+        "Mantenha sua equipe segura em qualquer lugar com nossos aplicativos para Web, iOS, Android, Windows, Mac e Linux."
       ],
       "Learn more about common problems": [
         "Saiba mais sobre problemas comuns"
@@ -6160,9 +6233,6 @@
       "Asking for help": [
         "Pedir ajuda"
       ],
-      "By adding people you trust as recovery contacts, we'll be able to send them an email to help you if you're having trouble to recover your data after a password reset. You can also be a recovery contact for others.": [
-        "Ao adicionar pessoas de confiança como contatos de recuperação, poderemos enviar um e-mail a elas para ajudar você se estiver com dificuldades para recuperar seus dados após uma redefinição de senha. Você também pode ser um contato de recuperação para outras pessoas."
-      ],
       "Cancel request": [
         "Cancelar solicitação"
       ],
@@ -6316,9 +6386,6 @@
       "Recovery contact removed": [
         "Contato de recuperação removido"
       ],
-      "Recovery contacts": [
-        "Contatos de recuperação"
-      ],
       "Recovery request sent": [
         "Solicitação de recuperação enviada"
       ],
@@ -6413,9 +6480,6 @@
       "To disable this recovery method, remove all your recovery contacts.": [
         "Para desativar este método de recuperação, remova todos os seus contatos de recuperação."
       ],
-      "To use trusted contact recovery, you must have an account recovery method set.": [
-        "Para usar a recuperação por contato de confiança, você precisa ter um método de recuperação de conta configurado."
-      ],
       "Trusted contact": [
         "Contato confiável"
       ],
@@ -6467,10 +6531,6 @@
       "You reached the maximum of ${ limit } emergency contact.": [
         "Você atingiu o máximo de ${ limit } contato de emergência",
         "Você atingiu o máximo de ${ limit } contatos de emergência."
-      ],
-      "You reached the maximum of ${ limit } recovery contact.": [
-        "Você atingiu o máximo de ${ limit } contato de recuperação",
-        "Você atingiu o máximo de ${ limit } contatos de recuperação."
       ],
       "You will be notified when someone requests emergency access.": [
         "Você será notificado quando alguém solicitar acesso de emergência."
@@ -7881,9 +7941,33 @@
       ]
     },
     "Feature": {
+      "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } desktop app": [
+        "Aplicativo para computador do ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }"
+      ],
       "${ MaxVPN } VPN connection": [
         "${ MaxVPN } conexão VPN",
         "${ MaxVPN } conexões VPN"
+      ],
+      "${ PROTON_SENTINEL_NAME } account protection": [
+        "Proteção de conta com ${ PROTON_SENTINEL_NAME }"
+      ],
+      "15 GB storage": [
+        "15 GB de armazenamento"
+      ],
+      "3 email domains": [
+        "3 domínios de e-mail"
+      ],
+      "3 folders, labels and filters": [
+        "3 pastas, marcadores e filtros"
+      ],
+      "500 GB storage": [
+        "500 GB de armazenamento"
+      ],
+      "500 MB Mail storage": [
+        "500 MB de armazenamento do Mail"
+      ],
+      "500 MB storage": [
+        "Cancelar assinatura"
       ],
       "Access to all countries": [
         "Acesso a todos os países"
@@ -7911,8 +7995,17 @@
       "More premium features": [
         "Recursos premium adicionais"
       ],
+      "Premium features in Mail, Calendar, Drive, Pass and VPN": [
+        "Recursos premium no Mail, Calendar, Drive, Pass e VPN"
+      ],
+      "Priority support": [
+        "Suporte prioritário"
+      ],
       "Remove": [
         "Remover"
+      ],
+      "Schedule and snooze emails": [
+        "Agende e pause e-mails"
       ],
       "Secure Core servers": [
         "Servidores do Secure Core"
@@ -7920,11 +8013,20 @@
       "Secure streaming support": [
         "Suporte seguro para streaming"
       ],
+      "Short domain @pm.me": [
+        "Domínio curto @pm.me"
+      ],
       "Torrenting support (P2P)": [
         "Suporte para torrents (P2P)"
       ],
+      "Unlimited folders, labels and filters": [
+        "Pastas, marcadores e filtros ilimitados"
+      ],
       "Unlimited hide-my-email aliases": [
         "Aliases do Hide-my-email ilimitados"
+      ],
+      "Use your own email domain": [
+        "Use o seu próprio domínio de e-mail"
       ]
     },
     "Features": {
@@ -9445,6 +9547,9 @@
       "add a recovery method": [
         "adicionar um método de recuperação"
       ],
+      "Add an email address in case we need to contact you": [
+        "Adicione um endereço de e-mail para entrar em contato com você"
+      ],
       "Add another layer of security to your account. You’ll need to verify yourself with 2FA every time you sign in.": [
         "Adicione outra camada de segurança na sua conta. Você pode verificar com A2F a cada vez que iniciar sessão."
       ],
@@ -9953,6 +10058,9 @@
       "Data recoverable on this device": [
         "Dados recuperáveis neste dispositivo"
       ],
+      "Data recoverable with recovery phrase": [
+        "Dados recuperáveis com a frase de recuperação"
+      ],
       "dedicated servers": [
         "servidores dedicados"
       ],
@@ -10308,6 +10416,9 @@
       ],
       "for ${ price }": [
         "por ${ price }"
+      ],
+      "For a 10-year version history, please contact our sales team.": [
+        "Para obter um histórico de versões de 10 anos, entre em contato com nossa equipe de vendas."
       ],
       "For anytime access to email and an optimized mobile experience, download our ${ androidAppLink } or ${ iosAppLink }.": [
         "Para ter acesso ao e-mail a qualquer momento e uma experiência otimizada em dispositivos móveis, baixe nosso app ${ androidAppLink } ou ${ iosAppLink }."
@@ -13178,6 +13289,15 @@
       "${ Brand } ending with ${ Last4 }": [
         "${ Brand } que termina em ${ Last4 }"
       ],
+      "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } Desktop app": [
+        "Aplicativo para computador do ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }"
+      ],
+      "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } desktop app": [
+        "Aplicativo para computador do ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }"
+      ],
+      "${ BRAND_NAME } for Business": [
+        "${ BRAND_NAME } for Business"
+      ],
       "${ BRAND_NAME } username": [
         "Nome de usuário da ${ BRAND_NAME }"
       ],
@@ -13208,6 +13328,12 @@
       ],
       "${ pricePerMonthWithCurrency } / month": [
         "${ pricePerMonthWithCurrency } / mês"
+      ],
+      "${ PROTON_SENTINEL_NAME } account protection": [
+        "Proteção de conta com ${ PROTON_SENTINEL_NAME }"
+      ],
+      "${ PROTON_SENTINEL_NAME } protection": [
+        "Proteção com ${ PROTON_SENTINEL_NAME }"
       ],
       "(Temporarily unavailable. Please check back later.)": [
         "(Temporariamente indisponível. Retorne mais tarde.)"
@@ -13335,6 +13461,9 @@
       "Allow notifications by email": [
         "Permitir notificações por e-mail"
       ],
+      "Allow QR code sign-in": [
+        "Permitir o início de sessão com o código QR"
+      ],
       "Allow random passwords": [
         "Permitir senhas aleatórias"
       ],
@@ -13440,6 +13569,9 @@
       "Automated confirmations and alerts": [
         "Confirmações e alertas automatizados"
       ],
+      "Automatic email forwarding": [
+        "Encaminhamento de e-mail automático"
+      ],
       "Automatically save contacts": [
         "Salvar contatos automaticamente"
       ],
@@ -13482,6 +13614,9 @@
       "Bookings, billings, and orders": [
         "Reservas, cobranças e pedidos"
       ],
+      "Brand your workspace": [
+        "Personalize seu espaço de trabalho"
+      ],
       "Browser": [
         "Navegador"
       ],
@@ -13514,6 +13649,9 @@
       ],
       "Cash": [
         "Dinheiro"
+      ],
+      "Catch-all email address": [
+        "Endereço de e-mail catch-all"
       ],
       "Categories": [
         "Categorias"
@@ -13650,8 +13788,18 @@
       "Current email": [
         "E-mail atual"
       ],
+      "Custom domain": [
+        "Domínio personalizado"
+      ],
+      "Custom email domain": [
+        "Domínio de e-mail personalizado",
+        "Domínios de e-mail personalizados"
+      ],
       "Daily email notifications": [
         "Notificações diárias por e-mail"
+      ],
+      "Data harvesting": [
+        "Coleta de dados"
       ],
       "Date": [
         "Data"
@@ -13740,14 +13888,26 @@
       "e.g. example.com": [
         "por exemplo exemplo.com"
       ],
+      "Early access": [
+        "Acesso antecipado"
+      ],
       "Email": [
         "E-mail"
       ],
       "Email address": [
         "Endereço de e-mail"
       ],
+      "Email addresses": [
+        "Endereços de e-mail"
+      ],
+      "Email addresses per user": [
+        "Endereços de e-mail por usuário"
+      ],
       "Email or username": [
         "E-mail ou nome de usuário"
+      ],
+      "Email with @yourcompany.com domain": [
+        "E-mail com domínio @yourcompany.com"
       ],
       "Emails (all messages)": [
         "E-mails (todas as mensagens)"
@@ -13781,6 +13941,9 @@
       ],
       "End weekday": [
         "Dia de término da semana"
+      ],
+      "End-to-end encryption": [
+        "Criptografia de ponta a ponta"
       ],
       "Enter code": [
         "Insira o código"
@@ -13839,6 +14002,9 @@
       "Folder location": [
         "Localização da pasta"
       ],
+      "Folders, labels, and filters": [
+        "Pastas, marcadores e filtros"
+      ],
       "Font family": [
         "Família de fontes"
       ],
@@ -13853,6 +14019,9 @@
       ],
       "for your first month": [
         "no seu primeiro mês"
+      ],
+      "Free": [
+        "Free"
       ],
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
@@ -13936,7 +14105,7 @@
         "Incluir os registros do aplicativo no relatório de erro"
       ],
       "Inherit color from parent folder": [
-        "Cor herdada da pasta pai"
+        "Cor herdada da pasta principal"
       ],
       "Integrated 2FA authenticator": [
         "Autenticador A2F integrado"
@@ -14070,6 +14239,9 @@
       "Moderate NAT": [
         "NAT moderado"
       ],
+      "Monthly": [
+        "Mensalmente"
+      ],
       "More payment methods": [
         "Mais métodos de pagamento"
       ],
@@ -14118,6 +14290,9 @@
       "Newsletters": [
         "Boletins informativos"
       ],
+      "No": [
+        "Não"
+      ],
       "No (users cannot use the app until a vault is shared with them)": [
         "Não (os usuários não podem usar o aplicativo até que um cofre seja compartilhado com eles)"
       ],
@@ -14150,6 +14325,9 @@
       ],
       "Online privacy for your whole family": [
         "Privacidade online para toda sua família"
+      ],
+      "Online productivity suite": [
+        "Pacote de produtividade on-line"
       ],
       "Only a single personal vault can be created": [
         "Somente leitura um cofre pessoal pode ser criado"
@@ -14250,11 +14428,17 @@
       "Postal code": [
         "Código postal"
       ],
+      "Premium features included": [
+        "Recursos premium incluído"
+      ],
       "Previous password": [
         "Senha anterior"
       ],
       "Primary": [
         "Primário"
+      ],
+      "Priority support": [
+        "Suporte prioritário"
       ],
       "Promotions": [
         "Promoções"
@@ -14264,6 +14448,9 @@
       ],
       "Proration": [
         "Cálculo proporcional"
+      ],
+      "Protected by Swiss privacy laws": [
+        "Protegido por leis de privacidade da Suíça"
       ],
       "Protection mode": [
         "Modo de proteção"
@@ -14340,6 +14527,9 @@
       "Secure password generator": [
         "Gerador de senhas seguro"
       ],
+      "See your team's availability": [
+        "Veja a sua disponibilidade da equipe"
+      ],
       "Select Linux package format": [
         "Selecione o formato do pacote Linux"
       ],
@@ -14372,6 +14562,9 @@
       ],
       "Shared between ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ WALLET_SHORT_APP_NAME }.": [
         "Compartilhado entre ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } e ${ WALLET_SHORT_APP_NAME }."
+      ],
+      "Short domain @pm.me": [
+        "Domínio curto @pm.me"
       ],
       "Show ${ n } administrator": [
         "Mostrar ${ n } administrador",
@@ -14458,6 +14651,12 @@
       "Sticky labels": [
         "Marcadores fixos"
       ],
+      "Storage": [
+        "Armazenamento"
+      ],
+      "Storage per user": [
+        "Armazenamento por usuário"
+      ],
       "Street address": [
         "Endereço"
       ],
@@ -14469,6 +14668,9 @@
       ],
       "Subscription options": [
         "Opções de assinatura"
+      ],
+      "Support for multiple users": [
+        "Suporte para até vários usuários"
       ],
       "Swipe left action": [
         "Ação de deslizar para a esquerda"
@@ -14487,6 +14689,9 @@
       ],
       "Then": [
         "Então"
+      ],
+      "Third-party ads": [
+        "Anúncios de terceiros"
       ],
       "Thomas": [
         "Andrea"
@@ -14527,6 +14732,9 @@
       "Undo send": [
         "Desfazer envio"
       ],
+      "Unlimited": [
+        "Unlimited"
+      ],
       "Unlimited hide-my-email aliases": [
         "Aliases ilimitados do hide-my-email"
       ],
@@ -14560,6 +14768,9 @@
       "Use folder colors": [
         "Usar cores da pasta"
       ],
+      "Use your own email domain": [
+        "Use o seu próprio domínio de e-mail"
+      ],
       "User": [
         "Usuário"
       ],
@@ -14586,6 +14797,9 @@
       ],
       "Verify keys with Key Transparency": [
         "Verificar as chaves com transparência de chave"
+      ],
+      "Version history": [
+        "Histórico da versão"
       ],
       "Video conferencing with Zoom": [
         "Videoconferência com o Zoom"
@@ -14626,6 +14840,12 @@
       "Without attachment": [
         "Sem anexo"
       ],
+      "Yearly": [
+        "Anualmente"
+      ],
+      "Yearly free storage bonus": [
+        "Bônus anuais de armazenamento gratuito"
+      ],
       "Yes": [
         "Sim"
       ],
@@ -14653,8 +14873,17 @@
       "Your plan": [
         "Seu plano"
       ],
+      "Your recovery email": [
+        "Seu e-mail de recuperação"
+      ],
+      "Your recovery phone number": [
+        "O seu número de telefone de recuperação"
+      ],
       "Your voucher for your reserved ${ BRAND_NAME } email address:": [
         "Voucher para o endereço de e-mail reservado do ${ BRAND_NAME }:"
+      ],
+      "Zero-access architecture": [
+        "Arquitetura de acesso zero"
       ],
       "ZIP code": [
         "CEP"
@@ -16199,6 +16428,9 @@
       ],
       "Dedicated servers and IP": [
         "Servidores e IPs dedicados"
+      ],
+      "Dedicated servers optimized for speed": [
+        "Servidores dedicados otimizados para velocidade"
       ],
       "Desktop app": [
         "Aplicativo para computador"
@@ -18918,11 +19150,6 @@
         "Sua porta de entrada para a liberdade on-line"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "contato"
-      ]
-    },
     "Plan description": {
       "A VPN solution that provides secure, high-speed access to the internet.": [
         "Uma solução de VPN que oferece acesso seguro e de alta velocidade à internet."
@@ -19086,7 +19313,7 @@
         "Fax"
       ],
       "Home": [
-        "Casa"
+        "Início"
       ],
       "Main": [
         "Principal"
@@ -19265,9 +19492,6 @@
       "Verify now": [
         "Verificar agora"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "Verifique agora esse endereço de e-mail de recuperação: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "Verificar e-mail de recuperação?"
       ],
@@ -19311,11 +19535,102 @@
       "Verify recovery phone?": [
         "Verificar telefone de recuperação?"
       ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "Verifique agora esse endereço de telefone de recuperação: ${ phone.Value }"
-      ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Verificar o seu número de telefone aumenta a segurança de sua conta e permite opções adicionais de recuperação."
+      ]
+    },
+    "Recovery score": {
+      "Account protection": [
+        "Proteção de conta"
+      ],
+      "Add more options for stronger protection": [
+        "Adicione mais opções para uma proteção mais eficaz"
+      ],
+      "Maximum": [
+        "Máximo"
+      ],
+      "Partial": [
+        "Parcial"
+      ],
+      "Score: ${ score } / ${ maxScore }": [
+        "Pontuação: ${ score } / ${ maxScore }"
+      ],
+      "Strong": [
+        "Forte"
+      ],
+      "Unprotected": [
+        "Desprotegido"
+      ],
+      "Weak": [
+        "Fraco"
+      ]
+    },
+    "Recovery score item": {
+      "Add emergency contacts": [
+        "Adicionar contatos de emergência"
+      ],
+      "Add recovery contacts": [
+        "Adicionar contatos de recuperação"
+      ],
+      "Add recovery email": [
+        "Adicionar e-mail de recuperação"
+      ],
+      "Add recovery phone": [
+        "Adicionar telefone de recuperação"
+      ],
+      "Allow data recovery on this device": [
+        "Permitir a recuperação de dados neste dispositivo"
+      ],
+      "Allow password reset from settings": [
+        "Permitir redefinição de senha através da configurações"
+      ],
+      "Allow scanning QR code to sign in": [
+        "Permitir a leitura de código QR para iniciar sessão"
+      ],
+      "Download recovery file": [
+        "Baixar o arquivo de recuperação"
+      ],
+      "Email verification enabled": [
+        "Verificação por e-mail ativada"
+      ],
+      "Emergency contacts added": [
+        "Contatos de emergência adicionados"
+      ],
+      "Enable recovery by email": [
+        "Ativar recuperação por e-mail"
+      ],
+      "Enable recovery by phone": [
+        "Ativar recuperação por telefone"
+      ],
+      "Password reset allowed from settings": [
+        "Redefinição de senha permitida a partir da configurações"
+      ],
+      "Password verified": [
+        "Senha verificada"
+      ],
+      "Recovery contacts added": [
+        "Contatos de recuperação adicionados"
+      ],
+      "Recovery file downloaded": [
+        "Arquivo de recuperação baixado"
+      ],
+      "Recovery phrase saved": [
+        "Frase de recuperação salva"
+      ],
+      "Save recovery phrase": [
+        "Salvar frase de recuperação"
+      ],
+      "SMS verification enabled": [
+        "Verificação por SMS ativada"
+      ],
+      "Verify password": [
+        "Verificar senha"
+      ],
+      "Verify recovery email": [
+        "Verificar e-mail de recuperação"
+      ],
+      "Verify recovery phone": [
+        "Verificar telefone de recuperação"
       ]
     },
     "RecoveryPhrase: Action": {
@@ -19352,7 +19667,7 @@
         "Ou ${ downloadRecoveryKitSwitchButton } em vez disso."
       ],
       "Your **Recovery Kit** lets you restore your ${ BRAND_NAME } Account if you’re locked out.": [
-        "Seu **Kit de Recuperação** permite que você restaure sua ${ BRAND_NAME } se o seu log-in for bloqueado."
+        "Seu **Kit de Recuperação** permite que você restaure sua conta da ${ BRAND_NAME } se o seu log-in for bloqueado."
       ]
     },
     "RecoveryPhrase: Title": {
@@ -21728,6 +22043,50 @@
         "Cancelando sua assinatura, aguarde"
       ]
     },
+    "Status": {
+      "Add a phone number": [
+        "Adicionar um número de telefone"
+      ],
+      "Add an email address": [
+        "Adicionar um endereço de e-mail"
+      ],
+      "Available on this device": [
+        "Disponível neste dispositivo"
+      ],
+      "Disable recovery by email": [
+        "Desativar recuperação por e-mail"
+      ],
+      "Disable recovery by phone": [
+        "Desativar recuperação por telefone"
+      ],
+      "Generate a recovery phrase": [
+        "Gerar uma frase de recuperação"
+      ],
+      "Last changed ${ formattedDate }": [
+        "Última alteração há ${ formattedDate } atrás"
+      ],
+      "No contact": [
+        "Nenhum contato"
+      ],
+      "Not saved": [
+        "Não salvo"
+      ],
+      "Outdated": [
+        "Desatualizado"
+      ],
+      "Saved": [
+        "Salvo"
+      ],
+      "Unverified": [
+        "Não verificado"
+      ],
+      "Verified": [
+        "Verificado"
+      ],
+      "Verify ${ value }": [
+        "Verificar ${ value }"
+      ]
+    },
     "Step in filter modal": {
       "Actions": [
         "Ações"
@@ -22029,6 +22388,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Assistente de escrita da ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } e ${ LUMO_APP_NAME } com recursos premium"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } e ${ VPN_SHORT_APP_NAME } com recursos premium"
       ],
@@ -22402,11 +22767,35 @@
       ]
     },
     "Subtitle": {
+      "${ DRIVE_PLUS_NAME } offers 1 TB storage for your files and photos. You are also eligible for yearly storage bonuses.": [
+        "${ DRIVE_PLUS_NAME } oferece 1 TB de armazenamento para os seus arquivos e fotos. Você também está elegível para bônus anuais de armazenamento."
+      ],
+      "${ DRIVE_PLUS_NAME } offers 200 GB storage for your files and photos. You are also eligible for yearly storage bonuses.": [
+        "${ DRIVE_PLUS_NAME } oferece 200 GB de armazenamento para os seus arquivos e fotos. Você também está elegível para bônus anuais de armazenamento."
+      ],
+      "${ planTitle } gives your team what they need to be more productive and organized in their work with access to all ${ BRAND_NAME } apps and their advanced features.": [
+        "${ planTitle } oferece à sua equipe o que ela necessita para ser mais produtiva e organizada no trabalho com acesso a todos os aplicativos da ${ BRAND_NAME } e seus recursos avançados."
+      ],
+      "${ planTitle } gives your team what they need to be more productive, organized, and in control of their inbox, schedule, and more.": [
+        "${ planTitle } oferece à sua equipe o que ela precisa para ser mais produtiva, organizada, e controle sobre sua caixa de entrada, agenda e muito mais."
+      ],
+      "${ planTitle } goes beyond the basics to help you be more productive, organized, and in control of your inbox, email identity, and more.": [
+        "${ planTitle } vai além do básico para ajudar você a ter mais produtividade, organização e controle sobre sua caixa de entrada, identidade de e-mail e mais."
+      ],
+      "${ planTitle } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
+        "${ planTitle } ajuda você a garantir que cada um dos membros da sua família, e os seus dados, estejam protegidos sempre que estiverem on-line."
+      ],
       "Free forever": [
         "Gratuito para sempre"
       ],
       "per month, billed annually": [
         "por mês, com cobrança anual"
+      ],
+      "Save 50% for 1 year, and keep full access": [
+        "Economize 50% em 1 ano e mantenha o acesso completo"
+      ],
+      "Save 50% for 6 months, and keep full access": [
+        "Economize 50% em 6 meses e mantenha o acesso completo"
       ],
       "View VPN session details for your organization.": [
         "Veja os detalhes da sessão VPN para sua organização."
@@ -22731,6 +23120,9 @@
       ],
       "/user per month": [
         "/usuário por mês"
+      ],
+      "/year": [
+        "/ano"
       ]
     },
     "Suffix for price": {
@@ -22846,6 +23238,14 @@
     "TableRow": {
       "No SMTP tokens found": [
         "Sem tokens de SMTP encontrados"
+      ]
+    },
+    "Temporary need": {
+      "Continue cancelling": [
+        "Continuar cancelamento"
+      ],
+      "Keep current plan": [
+        "Manter o plano atual"
       ]
     },
     "Theme": {
@@ -23046,6 +23446,9 @@
       "Add a custom logo": [
         "Adicionar um logotipo personalizado"
       ],
+      "Add a recovery contact": [
+        "Adicionar um contato de recuperação"
+      ],
       "Add address": [
         "Adicionar endereço"
       ],
@@ -23111,6 +23514,9 @@
       ],
       "Address and key verification": [
         "Verificação de endereço e chave"
+      ],
+      "Advanced recovery options": [
+        "Opções avançadas de recuperação"
       ],
       "Allocate storage": [
         "Alocar armazenamento"
@@ -23419,6 +23825,9 @@
       "Data recovery": [
         "Recuperação de dados"
       ],
+      "Data recovery options": [
+        "Opções de recuperação de dados"
+      ],
       "Data retention": [
         "Retenção de dados"
       ],
@@ -23506,6 +23915,9 @@
       ],
       "Disable categories?": [
         "Desativar categorias?"
+      ],
+      "Disable device data backup?": [
+        "Desativar o backup de dados do dispositivo?"
       ],
       "Disable two-factor authentication": [
         "Desativar autenticação de dois fatores"
@@ -23636,6 +24048,9 @@
       "Email privacy": [
         "Privacidade do e-mail"
       ],
+      "Email verification": [
+        "Verificação do e-mail"
+      ],
       "Emergency access": [
         "Acesso de emergência"
       ],
@@ -23730,6 +24145,9 @@
       "Free": [
         "Free"
       ],
+      "Free plan": [
+        "Plano gratuito"
+      ],
       "Gateway": [
         "Gateway"
       ],
@@ -23820,8 +24238,14 @@
       "Help center": [
         "Central de ajuda"
       ],
+      "Helping activists in Hong Kong": [
+        "Ajudando ativistas em Hong Kong"
+      ],
       "Home": [
-        "Casa"
+        "Início"
+      ],
+      "How ${ MAIL_APP_NAME } is different": [
+        "Como o ${ MAIL_APP_NAME } é diferente"
       ],
       "How did you find out about us?": [
         "Como você nos encontrou?"
@@ -23941,6 +24365,9 @@
       "Main password": [
         "Senha principal"
       ],
+      "Make your business stand out": [
+        "Faça sua empresa se destacar"
+      ],
       "Manage files across devices on Windows, Mac, Android, and iOS.": [
         "Gerencie arquivos em dispositivos Windows, Mac, Android e iOS."
       ],
@@ -24049,11 +24476,17 @@
       "Other sign-in issues": [
         "Outros problemas de acesso"
       ],
+      "Our fight against censorship in Russia": [
+        "Nossa luta contra a censura na Rússia"
+      ],
       "Password": [
         "Senha"
       ],
       "Password generator rules": [
         "Regras de gerador de senha"
+      ],
+      "Password reset options": [
+        "Opções de redefinição de senha"
       ],
       "Password reset settings": [
         "Configurações de redefinição de senha"
@@ -24150,6 +24583,9 @@
       ],
       "Recovery file": [
         "Arquivo de recuperação"
+      ],
+      "Recovery phrase": [
+        "Frase de recuperação"
       ],
       "Refer a friend": [
         "Indicar um amigo"
@@ -24364,6 +24800,9 @@
       "Single sign-on": [
         "Autenticação única"
       ],
+      "SMS verification": [
+        "Verificação de SMS"
+      ],
       "SMTP submission": [
         "Envio SMTP"
       ],
@@ -24397,6 +24836,9 @@
       "Status": [
         "Status"
       ],
+      "Stay secure and connected anywhere": [
+        "Fique seguro e conectado em qualquer lugar"
+      ],
       "Strengthen your security on all your devices with ${ passPlusPlanName }. ${ upgradeButton }": [
         "Fortaleça sua segurança em todos os seus dispositivos com ${ passPlusPlanName }. ${ upgradeButton }"
       ],
@@ -24418,6 +24860,9 @@
       ],
       "Support ticket closed": [
         "Ticket de suporte fechado"
+      ],
+      "Support your compliance objectives": [
+        "Apoie seus objetivos de conformidade"
       ],
       "Switch account": [
         "Alternar de conta"
@@ -24484,6 +24929,9 @@
       ],
       "Type": [
         "Tipo"
+      ],
+      "Unblocking internet access in Iran": [
+        "Desbloqueio de acesso à internet no Irã"
       ],
       "Unlock your data": [
         "Desbloqueie seus dados"
@@ -24637,6 +25085,15 @@
       ],
       "Your plan": [
         "O seu plano"
+      ],
+      "Your recovery file": [
+        "Seu arquivo de recuperação"
+      ],
+      "Your recovery phrase": [
+        "Sua frase de recuperação"
+      ],
+      "Your recovery setup": [
+        "Configuração da sua recuperação"
       ],
       "Your referrals": [
         "Suas indicações"

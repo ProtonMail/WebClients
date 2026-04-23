@@ -5226,9 +5226,6 @@
       "Asking for help": [
         "طلب المساعدة"
       ],
-      "By adding people you trust as recovery contacts, we'll be able to send them an email to help you if you're having trouble to recover your data after a password reset. You can also be a recovery contact for others.": [
-        "من خلال إضافة الأشخاص الذين تثق بهم كجهات اتصال للاسترداد، سنكون قادرين على إرسال بريد إلكتروني إليهم لمساعدتك إذا كنت تواجه مشكلة في استعادة بياناتك بعد إعادة تعيين كلمة المرور. يمكنك أيضا أن تكون جهة اتصال استرداد للآخرين."
-      ],
       "Cancel request": [
         "إلغاء الطلب"
       ],
@@ -5382,9 +5379,6 @@
       "Recovery contact removed": [
         "تمت إزالة جهة اتصال الاسترداد"
       ],
-      "Recovery contacts": [
-        "جهات اتصال الاسترداد"
-      ],
       "Recovery request sent": [
         "تم إرسال طلب الاسترداد"
       ],
@@ -5482,9 +5476,6 @@
       ],
       "To disable this recovery method, remove all your recovery contacts.": [
         "لتعطيل طريقة الاسترداد هذه، قم بإزالة جميع جهات اتصال الاسترداد الخاصة بك."
-      ],
-      "To use trusted contact recovery, you must have an account recovery method set.": [
-        "لاستخدام استرداد جهات الاتصال الموثوق بها، يجب أن يكون لديك طريقة استرداد الحساب المحددة."
       ],
       "Trusted contact": [
         "جهة اتصال موثوق بها"
@@ -12318,6 +12309,9 @@
       "for your first month": [
         "لشهرك الأول"
       ],
+      "Free": [
+        "مجاني"
+      ],
       "From: ${ fromEmail }": [
         "مِن: ${ fromEmail }"
       ],
@@ -12818,6 +12812,9 @@
       "Statement": [
         "بيان"
       ],
+      "Storage": [
+        "التخزين"
+      ],
       "Street address": [
         "عنوان الطريق"
       ],
@@ -12877,6 +12874,9 @@
       ],
       "Undo send": [
         "التراجع عن الإرسال"
+      ],
+      "Unlimited": [
+        "غير محدود"
       ],
       "Unlimited hide-my-email aliases": [
         "أسماء مستعارة غير محدودة لـ hide-my-email"
@@ -13115,6 +13115,9 @@
     "Link": {
       "${ BRAND_NAME } Foundation's": [
         "مؤسسة ${ BRAND_NAME }"
+      ],
+      "Account recovery explained": [
+        "شرح استرداد الحساب"
       ],
       "Activity log": [
         "سجل النشاط"
@@ -16957,11 +16960,6 @@
         "بوابتك إلى الحرية على الإنترنت"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "اتصل بـ"
-      ]
-    },
     "Plan description": {
       "A VPN solution that provides secure, high-speed access to the internet.": [
         "حل VPN يوفر وصولا آمنا وعالي السرعة إلى الإنترنت."
@@ -17135,9 +17133,6 @@
       "Verify now": [
         "تحقق الآن"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "تحقق الآن من عنوان البريد الإلكتروني للاسترداد هذا: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "التحقق من البريد الإلكتروني للاسترداد؟"
       ],
@@ -17180,9 +17175,6 @@
       ],
       "Verify recovery phone?": [
         "التحقق من هاتف الاسترداد؟"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "تحقق الآن من رقم هاتف الاسترداد هذا: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "يؤدي التحقق من رقم هاتفك إلى زيادة أمان حسابك ويسمح بخيارات إضافية للاسترداد."

@@ -10187,6 +10187,9 @@
       "Font size": [
         "Betűméret"
       ],
+      "Free": [
+        "Ingyenes"
+      ],
       "From: ${ fromEmail }": [
         "Feladó: ${ fromEmail }"
       ],
@@ -10632,6 +10635,9 @@
       "Statement": [
         "Feltétel"
       ],
+      "Storage": [
+        "Tároló"
+      ],
       "Street address": [
         "Utca, házszám"
       ],
@@ -10691,6 +10697,9 @@
       ],
       "Undo send": [
         "Küldés visszavonása"
+      ],
+      "Unlimited": [
+        "Korlátlan"
       ],
       "Updates": [
         "Frissítések"
@@ -14175,11 +14184,6 @@
         "Az Ön átjárója az online szabadsághoz"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "lépjen kapcsolatba"
-      ]
-    },
     "Plan description": {
       "All ${ BRAND_NAME } premium products included in Duo.": [
         "Az összes ${ BRAND_NAME } prémium termék benne van a Duo csomagban."
@@ -14295,9 +14299,6 @@
       "Verify now": [
         "Ellenőrzés most"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "Most erősítse meg ezt a helyreállítási e-mail címet: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "Helyreállító e-mail megerősítése?"
       ],
@@ -14340,9 +14341,6 @@
       ],
       "Verify recovery phone?": [
         "Helyreállító telefonszám ellenőrzése?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "Ellenőrizze ezt a helyreállító telefonszámot most: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "A telefonszámának megerősítése növeli a fiókja biztonságát, illetve több helyreállítási lehetőséget biztosít."

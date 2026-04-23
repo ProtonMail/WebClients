@@ -322,6 +322,9 @@
       "Continue anyway": [
         "Continuar de todas formas"
       ],
+      "Continue cancelling": [
+        "Continuar cancelando"
+      ],
       "Continue import": [
         "Continuar la importación"
       ],
@@ -870,6 +873,9 @@
       ],
       "Keep categories": [
         "Conservar categorías"
+      ],
+      "Keep current plan": [
+        "Mantener el plan actual"
       ],
       "Keep Editing": [
         "Seguir editando"
@@ -4617,6 +4623,9 @@
       "A checked box means the feature is disabled.": [
         "Una casilla marcada significa que la función está desactivada."
       ],
+      "Add extra addresses to your account or use Hide My Email aliases to keep your inbox private.": [
+        "Añade más direcciones a tu cuenta o utiliza alias de Ocultar mi correo para mantener la privacidad de tu bandeja de entrada."
+      ],
       "Add folders and files to ${ DRIVE_APP_NAME } and invite team members to view or edit.": [
         "Añade carpetas y archivos a ${ DRIVE_APP_NAME } e invita a los miembros del equipo a ver o editar."
       ],
@@ -4757,6 +4766,12 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Puedes importar eventos en formato iCal (archivos ICS). El archivo puede tener un tamaño máximo de ${ MAX_IMPORT_FILE_SIZE_STRING } y tener hasta ${ MAX_IMPORT_EVENTS_STRING } eventos. Si tu archivo es más grande, debes dividirlo en archivos más pequeños."
+      ],
+      "You can manage multiple ${ BRAND_NAME } addresses from a single account, without switching. Aliases and address management tools help keep everything in one inbox.": [
+        "Puedes gestionar varias direcciones de ${ BRAND_NAME } desde una sola cuenta, sin tener que cambiar de sesión. Los alias y las herramientas de gestión te ayudan a mantenerlo todo en una misma bandeja de entrada."
+      ],
+      "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
+        "Puedes unificar tus direcciones en una sola cuenta principal de ${ BRAND_NAME } siguiendo nuestra guía de ayuda."
       ]
     },
     "description": {
@@ -5748,9 +5763,6 @@
       "Asking for help": [
         "Pedir ayuda"
       ],
-      "By adding people you trust as recovery contacts, we'll be able to send them an email to help you if you're having trouble to recover your data after a password reset. You can also be a recovery contact for others.": [
-        "Si añades a personas de confianza como contactos de recuperación, podremos enviarles un correo para que te ayuden si tienes problemas para recuperar tus datos tras restablecer la contraseña. Tú también puedes ser contacto de recuperación de otras personas."
-      ],
       "Cancel request": [
         "Cancelar solicitud"
       ],
@@ -5904,9 +5916,6 @@
       "Recovery contact removed": [
         "Contacto de recuperación eliminado"
       ],
-      "Recovery contacts": [
-        "Contactos de recuperación"
-      ],
       "Recovery request sent": [
         "Solicitud de recuperación enviada"
       ],
@@ -6001,9 +6010,6 @@
       "To disable this recovery method, remove all your recovery contacts.": [
         "Para desactivar este método de recuperación, elimina todos tus contactos."
       ],
-      "To use trusted contact recovery, you must have an account recovery method set.": [
-        "Para usar la recuperación por contactos de confianza, debes tener configurado un método de recuperación de cuenta."
-      ],
       "Trusted contact": [
         "Contacto de confianza"
       ],
@@ -6055,10 +6061,6 @@
       "You reached the maximum of ${ limit } emergency contact.": [
         "Has llegado al máximo de ${ limit } contacto de emergencia.",
         "Has alcanzado el máximo de ${ limit } contactos de emergencia."
-      ],
-      "You reached the maximum of ${ limit } recovery contact.": [
-        "Has alcanzado el máximo de ${ limit } contactos de recuperación.",
-        "Has alcanzado el máximo de ${ limit } contactos de recuperación."
       ],
       "You will be notified when someone requests emergency access.": [
         "Se te notificará cuando alguien solicite acceso de emergencia."
@@ -13045,6 +13047,9 @@
       "for your first month": [
         "en tu primer mes"
       ],
+      "Free": [
+        "Gratuito"
+      ],
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
       ],
@@ -13613,6 +13618,9 @@
       "Sticky labels": [
         "Etiquetas fijas"
       ],
+      "Storage": [
+        "Almacenamiento"
+      ],
       "Street address": [
         "Nombre de la calle"
       ],
@@ -13678,6 +13686,9 @@
       ],
       "Undo send": [
         "Deshacer el envío"
+      ],
+      "Unlimited": [
+        "Sin límite"
       ],
       "Unlimited hide-my-email aliases": [
         "Alias hide-my-email ilimitados"
@@ -14111,11 +14122,17 @@
       "Import/export": [
         "Importar/exportar"
       ],
+      "Learn how": [
+        "Más información"
+      ],
       "Learn more": [
         "Más información"
       ],
       "Learn more about data recovery": [
         "Aprende más sobre recuperación de datos"
+      ],
+      "Manage addresses": [
+        "Gestiona tus direcciones"
       ],
       "Not activated": [
         "No activado"
@@ -17874,11 +17891,6 @@
         "La puerta a la libertad en línea"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "contactar"
-      ]
-    },
     "Plan description": {
       "A VPN solution that provides secure, high-speed access to the internet.": [
         "Una solución VPN que proporciona acceso seguro y de alta velocidad a internet."
@@ -18212,9 +18224,6 @@
       "Verify now": [
         "Verificar ahora"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "Verifica ahora este correo electrónico de recuperación: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "¿Verificar el correo electrónico de recuperación?"
       ],
@@ -18257,9 +18266,6 @@
       ],
       "Verify recovery phone?": [
         "¿Verificar el teléfono de recuperación?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "Verifica ahora este número telefónico de recuperación: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Verificar tu número de teléfono aumenta la seguridad de tu cuenta y permite opciones de recuperación adicionales."
@@ -21996,6 +22002,9 @@
       "Allocate storage": [
         "Asignar almacenamiento"
       ],
+      "Already have multiple accounts?": [
+        "¿Ya tienes varias cuentas?"
+      ],
       "Also in your plan": [
         "También en tu plan"
       ],
@@ -22194,6 +22203,9 @@
       ],
       "Create multiple user accounts": [
         "Crear varias cuentas de usuario"
+      ],
+      "Create new addresses easily": [
+        "Crea nuevas direcciones de forma sencilla"
       ],
       "Create new policy": [
         "Crear una política"
@@ -23317,6 +23329,9 @@
       ],
       "Use ${ VPN_SHORT_APP_NAME } for data privacy": [
         "Usa ${ VPN_SHORT_APP_NAME } para la privacidad de los datos"
+      ],
+      "Use one account for all your addresses": [
+        "Utiliza una sola cuenta para todas tus direcciones"
       ],
       "User": [
         "Usuario"

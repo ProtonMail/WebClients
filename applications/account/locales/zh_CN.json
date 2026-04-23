@@ -6154,9 +6154,6 @@
       "Asking for help": [
         "正在请求帮助"
       ],
-      "By adding people you trust as recovery contacts, we'll be able to send them an email to help you if you're having trouble to recover your data after a password reset. You can also be a recovery contact for others.": [
-        "通过添加您信任的人作为恢复联系人，当您在重置密码后恢复数据遇到困难时，我们就能向他们发送邮件以提供帮助。您也可以成为他人的恢复联系人。"
-      ],
       "Cancel request": [
         "取消请求"
       ],
@@ -6310,9 +6307,6 @@
       "Recovery contact removed": [
         "恢复联系人已移除"
       ],
-      "Recovery contacts": [
-        "恢复联系人"
-      ],
       "Recovery request sent": [
         "恢复请求已发送"
       ],
@@ -6406,9 +6400,6 @@
       "To disable this recovery method, remove all your recovery contacts.": [
         "要禁用此恢复方式，请移除您所有的恢复联系人！"
       ],
-      "To use trusted contact recovery, you must have an account recovery method set.": [
-        "要使用受信联系人恢复，您必须已设置账户恢复方法。"
-      ],
       "Trusted contact": [
         "已信任联系人"
       ],
@@ -6459,9 +6450,6 @@
       ],
       "You reached the maximum of ${ limit } emergency contact.": [
         "您已达到 ${ limit } 个紧急联系人的上限"
-      ],
-      "You reached the maximum of ${ limit } recovery contact.": [
-        "您已达到 ${ limit } 个恢复联系人的上限"
       ],
       "You will be notified when someone requests emergency access.": [
         "当有人请求紧急访问时，您将收到通知。"
@@ -13836,6 +13824,9 @@
       "for your first month": [
         "首月优惠"
       ],
+      "Free": [
+        "Free"
+      ],
       "From: ${ fromEmail }": [
         "发件人：${ fromEmail }"
       ],
@@ -14439,6 +14430,9 @@
       "Sticky labels": [
         "自动加标签"
       ],
+      "Storage": [
+        "存储"
+      ],
       "Street address": [
         "街道地址"
       ],
@@ -14507,6 +14501,9 @@
       ],
       "Undo send": [
         "撤消发送时限"
+      ],
+      "Unlimited": [
+        "无限制"
       ],
       "Unlimited hide-my-email aliases": [
         "无限 hide-my-email 别名"
@@ -18835,11 +18832,6 @@
         "您通往线上自由的大门"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "联系人"
-      ]
-    },
     "Plan description": {
       "A VPN solution that provides secure, high-speed access to the internet.": [
         "一种提供安全、高速互联网访问权限的 VPN 解决方案。"
@@ -19084,9 +19076,6 @@
       "Verify now": [
         "立即验证"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "立即验证此密保邮箱地址：${ email.Value }"
-      ],
       "Verify recovery email?": [
         "验证密保邮箱？"
       ],
@@ -19129,9 +19118,6 @@
       ],
       "Verify recovery phone?": [
         "验证密保手机？"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "立即验证此密保手机号码：${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "完成邮箱地址验证可以提升账户安全性，多一种账户恢复选项。"
