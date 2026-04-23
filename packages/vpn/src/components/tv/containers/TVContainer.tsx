@@ -57,7 +57,7 @@ export const TVContainer = () => {
         switch (step) {
             case STEP.ENTER_CODE:
                 return (
-                    <form onSubmit={(event) => withLoading(handleSubmit(event))}>
+                    <form onSubmit={(event) => withLoading(handleSubmit(event))} className="w-full">
                         <h3 className="font-bold text-center mb-3">
                             {c('Label').t`Enter the code displayed on your TV`}
                         </h3>
@@ -65,7 +65,7 @@ export const TVContainer = () => {
                             length={8}
                             onValue={(value) => setCode(value.toLocaleUpperCase())}
                             value={code}
-                            centerDivider
+                            centerDivider={false}
                             type="alphabet"
                             autoComplete="one-time-code"
                             id="tv-input"
@@ -99,18 +99,17 @@ export const TVContainer = () => {
     };
 
     return (
-        <div className="tv-container-bg h-full flex *:min-size-auto flex-column flex-nowrap items-center overflow-auto">
-            <div className="flex justify-center items-center pt-7">
-                <div className="w-custom" style={{ '--w-custom': '9.375rem' }}>
-                    <Href href="https://protonvpn.com" target="_self">
-                        <VpnLogo />
-                    </Href>
-                </div>
+        <div className="tv-container-bg h-full flex flex-column items-center">
+            <div className="flex justify-center items-center pt-7 w-custom" style={{ '--w-custom': '9.375rem' }}>
+                <Href href="https://protonvpn.com" target="_self">
+                    <VpnLogo />
+                </Href>
             </div>
-            <div className="flex flex-column flex-1 flex-nowrap shrink-0">
-                <div className="m-auto p-7 shrink-0 max-w-custom" style={{ '--max-w-custom': '30em' }}>
-                    {render()}
-                </div>
+            <div
+                className="flex flex-column flex-1 max-w-custom items-center justify-center w-full p-7"
+                style={{ '--max-w-custom': '30em' }}
+            >
+                {render()}
             </div>
         </div>
     );
