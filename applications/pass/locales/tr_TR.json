@@ -913,7 +913,7 @@
         "Kimlik doğrulanamadı. Dışa aktarma işlemini yapabilmek için ikinci parolanızı yazın"
       ],
       "Biometric authentication failed.": [
-        "Biyometrik kimlik doğrulama başarısız oldu."
+        "Biyometrik kimlik doğrulanamadı."
       ],
       "Biometric lock credentials do not match.": [
         "Biyometrik kilit kimlik doğrulama bilgileri eşleşmiyor."
@@ -925,7 +925,7 @@
         "Biyometrik kilit yapılandırılmamış."
       ],
       "Biometric lock setup failed.": [
-        "Biyometrik kilit kurulumu başarısız oldu."
+        "Biyometrik kilit kurulamadı."
       ],
       "Cannot send invitation at the moment": [
         "Davetiye şu anda gönderilemiyor",
@@ -999,7 +999,7 @@
         "Çöp kutusu boşaltılamadı"
       ],
       "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
-        "${ PASS_APP_NAME } masaüstü uygulamasıyla şifreli iletişim kurulamadı."
+        "${ PASS_APP_NAME } bilgisayar uygulamasıyla şifrelenmiş iletişim kurulamadı."
       ],
       "Encrypted JSON not supported": [
         "Şifrelenmiş JSON desteklenmiyor"
@@ -1221,7 +1221,7 @@
         "Bir sorun çıktı. Lütfen yeniden oturum açın."
       ],
       "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
-        "${ PASS_APP_NAME } masaüstü uygulaması zamanında yanıt vermedi."
+        "${ PASS_APP_NAME } bilgisayar uygulaması zamanında yanıt vermedi."
       ],
       "The ${ PASS_APP_NAME } desktop app is locked, it must be unlocked.": [
         "${ PASS_APP_NAME } bilgisayar uygulaması kilitli. Kilidin açılması gerekiyor."
@@ -1233,10 +1233,10 @@
         "${ PASS_APP_NAME } bilgisayar uygulaması yanıt vermiyor. Çalışıyor mu?"
       ],
       "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
-        "${ PASS_APP_NAME } masaüstü uygulamasında farklı bir hesapla oturum açılmış."
+        "${ PASS_APP_NAME } bilgisayar uygulamasında başka bir hesapla oturum açılmış."
       ],
       "The ${ PASS_APP_NAME } desktop app should be logged in.": [
-        "${ PASS_APP_NAME } masaüstü uygulamasında oturum açılmış olmalıdır."
+        "${ PASS_APP_NAME } bilgisayar uygulamasında oturum açılmış olmalıdır."
       ],
       "The session has expired. Please sign in again.": [
         "Oturumun geçerlilik süresi dolmuş. Lütfen yeniden oturum açın."
@@ -4757,7 +4757,7 @@
     },
     "Upsell": {
       "Get ${ planName }": [
-        "${ planName } edin"
+        "${ planName } tarifesini edinin"
       ]
     },
     "Validation": {

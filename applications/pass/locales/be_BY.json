@@ -1319,6 +1319,12 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "Ваш PIN-код быў выдалены ў іншым кліенце ${ PASS_APP_NAME }"
+      ],
+      "Biometric lock is not configured.": [
+        "Біяметрычная блакіроўка не сканфігурыравана."
+      ],
+      "Biometric lock setup failed.": [
+        "Збой наладкі біяметрычнай блакіроўкі"
       ]
     },
     "Error message": {
@@ -5182,6 +5188,11 @@
       ],
       "Your subscription does not allow you to create multiple vaults. All items will be imported to your first vault. To import into multiple vaults upgrade your subscription.": [
         "Ваша падпіска не дазваляе ствараць некалькі сховішчаў. Усе элементы будуць імпартаваны ў ваша першае сховішча. Палепшыце сваю падпіску, каб мець магчымасць імпартаваць у некалькі сховішчаў."
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "Атрымаць ${ planName }"
       ]
     }
   }
