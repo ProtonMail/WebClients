@@ -1140,7 +1140,7 @@ export function notHigherThanAvailableOnBackend(planIDs: PlanIDs, plansMap: Plan
     return Math.min(cycle, maxCycle);
 }
 
-export function canAddLumoAddon(subscription: Subscription | FreeSubscription): boolean {
+export function hasNoExternallyManagedLumoSubscription(subscription: Subscription | FreeSubscription): boolean {
     if (isFreeSubscription(subscription)) {
         return true;
     }

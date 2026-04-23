@@ -17,10 +17,18 @@ const SubscriptionCheckoutAddonSection = ({ initialCoupon }: Props) => {
     const { cycle, planIDs, currency } = checkoutUi;
     const scribeEnabled = useAssistantFeatureEnabled();
     const meetAddonFlag = useFlag('MeetAddonCustomizer');
+    const hideLumoAddonForVpn2024 = useFlag('HideLumoAddonForVpn2024');
 
     if (subscription && getHasPlanCustomizer(planIDs)) {
         const latestSubscription = subscription.UpcomingSubscription ?? subscription;
-        const lumoAddonEnabled = showLumoAddonCustomizer({ subscription, couponConfig, initialCoupon, planIDs, cycle });
+        const lumoAddonEnabled = showLumoAddonCustomizer({
+            subscription,
+            couponConfig,
+            initialCoupon,
+            planIDs,
+            cycle,
+            hideLumoAddonForVpn2024,
+        });
         return (
             <>
                 <h2 className="text-2xl text-bold mt-8 mb-4">{c('Label').t`Add extra services`}</h2>
