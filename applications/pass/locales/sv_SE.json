@@ -613,9 +613,6 @@
       "Set extra password": [
         "Ställ in extralösenord"
       ],
-      "Settings": [
-        "Inställningar"
-      ],
       "Setup 2FA": [
         "Konfigurera 2FA"
       ],
@@ -917,6 +914,12 @@
       ],
       "Biometric authentication failed.": [
         "Biometrisk autentisering misslyckades."
+      ],
+      "Biometric lock is not configured.": [
+        "Biometriskt lås är inte konfigurerat."
+      ],
+      "Biometric lock setup failed.": [
+        "Biometrisk låsinställning misslyckades."
       ],
       "Cannot send invitation at the moment": [
         "Kan inte skicka inbjudan just nu",
@@ -3035,12 +3038,6 @@
       "Generic CSV": [
         "Generisk CSV"
       ],
-      "Get ${ PASS_SHORT_APP_NAME } Plus": [
-        "Skaffa ${ PASS_SHORT_APP_NAME } Plus"
-      ],
-      "Get ${ PASS_SHORT_APP_NAME } Unlimited": [
-        "Skaffa ${ PASS_SHORT_APP_NAME } Unlimited"
-      ],
       "Get Started": [
         "Kom igång"
       ],
@@ -4732,6 +4729,11 @@
       ],
       "Unless they are deciphered, encrypted passwords remain secure even if they are exposed.": [
         "Om de inte avkodas förblir krypterade lösenord säkra även om de exponeras."
+      ]
+    },
+    "Upsell": {
+      "Get ${ planName }": [
+        "Skaffa ${ planName }"
       ]
     },
     "Validation": {
