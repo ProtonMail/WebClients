@@ -31,7 +31,7 @@ export const PayPalModal = ({ onClose, app, ...rest }: PayPalModalProps) => {
         currency: PAYMENT_AUTHORIZATION_CURRENCY,
         flow: 'add-paypal',
         onChargeable: ({ savePaymentMethod }) => {
-            withSavingPaypal(async () => {
+            return withSavingPaypal(async () => {
                 try {
                     const pollPaymentMethods = createPaymentMethodsPoller();
                     await savePaymentMethod();

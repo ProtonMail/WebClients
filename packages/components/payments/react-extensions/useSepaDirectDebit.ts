@@ -121,6 +121,7 @@ export const useSepaDirectDebit = (
 
     const [fetchingToken, withFetchingToken] = useLoading();
     const [verifyingToken, withVerifyingToken] = useLoading();
+    const [userInitiatedProcessing, withUserInitiatiatedProcessing] = useLoading();
 
     const processingToken = fetchingToken || verifyingToken;
 
@@ -267,12 +268,14 @@ export const useSepaDirectDebit = (
         });
     };
 
-    const processPaymentToken = async () => {
-        if (!fetchedPaymentTokenRef.current) {
-            await fetchPaymentToken();
-        }
+    const processPaymentToken = () => {
+        return withUserInitiatiatedProcessing(async () => {
+            if (!fetchedPaymentTokenRef.current) {
+                await fetchPaymentToken();
+            }
 
-        await verifyPaymentToken();
+            await verifyPaymentToken();
+        });
     };
 
     const setCustomerProperty = (property: keyof DirectDebitCustomer) => (value: string) => {
@@ -315,6 +318,7 @@ export const useSepaDirectDebit = (
         getFetchedPaymentToken,
         errors: getErrors(),
         ibanStatus,
+        userInitiatedProcessing,
         meta: {
             type: PAYMENT_METHOD_TYPES.CHARGEBEE_SEPA_DIRECT_DEBIT,
         },
