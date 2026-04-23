@@ -8670,6 +8670,9 @@
       "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
         "${ DRIVE_SHORT_APP_NAME } -ისთვის, ${ DOCS_SHORT_APP_NAME } -ისთვის და ${ SHEETS_SHORT_APP_NAME } -ისთვის."
       ],
+      "Free": [
+        "Free"
+      ],
       "From: ${ fromEmail }": [
         "გამომგზავნელი: ${ fromEmail }"
       ],
@@ -9010,6 +9013,9 @@
       "State": [
         "მდგომარეობა"
       ],
+      "Storage": [
+        "საცავი"
+      ],
       "Street address": [
         "ქუჩის მისამართი"
       ],
@@ -9042,6 +9048,9 @@
       ],
       "Type": [
         "ტიპი"
+      ],
+      "Unlimited": [
+        "შეუზღუდავი"
       ],
       "Upload 1 or more encryption keys": [
         "ატვირთეთ 1 ან მეტი დაშიფვრის გასაღები"
@@ -9099,6 +9108,9 @@
       ],
       "Why would you like to cancel?": [
         "რატომ აუქმებთ?"
+      ],
+      "Yes": [
+        "დიახ"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "დიახ, მე მინდა ამ ანგარიშის და მისი მონაცემების სამუდამოდ წაშლა."
@@ -12018,11 +12030,6 @@
         "თქვენი კარიბჭე ინტერნეტ-უსაფრთხოებისთვის"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "კონტაქტი"
-      ]
-    },
     "Plans": {
       "${ cycle } month": [
         "${ cycle } თვე",
@@ -12132,9 +12139,6 @@
       "Verify now": [
         "ახლა გადამოწმება"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "გადაამოწმეთ თქვენი აღდგენის ელფოსტის მისამართი: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "შევამოწმო აღდგენის ელფოსტა?"
       ],
@@ -12174,9 +12178,6 @@
       ],
       "Verify recovery phone?": [
         "შევამოწმო აღდგენის ტელეფონი?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "გადაამოწმეთ თქვენი აღდგენის ტელეფონის ნომერი ახლა: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "ტელეფონის ნომრის შემოწმება ზრდის თქვენი ანგარიშის უსაფრთხოებას და აღდგენის დამატებით შესაძლებლობებს გაძლევთ."
@@ -14590,8 +14591,14 @@
       "Account recovery": [
         "ანგარიშის აღდგენა"
       ],
+      "Account restricted": [
+        "ანგარიში შეზღუდულია"
+      ],
       "Account suspended": [
         "ანგარიში შეჩერებულია"
+      ],
+      "Account temporarily locked": [
+        "ანგარიში დროებით დაბლოკილია"
       ],
       "Action": [
         "ქმედება"

@@ -7871,6 +7871,9 @@
       "Folder location": [
         "Mappa helye"
       ],
+      "Free": [
+        "Ingyenes"
+      ],
       "From: ${ fromEmail }": [
         "Feladó: ${ fromEmail }"
       ],
@@ -8193,6 +8196,9 @@
       "State": [
         "Állam"
       ],
+      "Storage": [
+        "Tároló"
+      ],
       "Street address": [
         "Utca, házszám"
       ],
@@ -8225,6 +8231,9 @@
       ],
       "Type": [
         "Típus"
+      ],
+      "Unlimited": [
+        "Korlátlan"
       ],
       "Upload 1 or more encryption keys": [
         "Töltsön fel egy vagy több titkosítási kulcsot"
@@ -10945,11 +10954,6 @@
         "Az Ön átjárója az online szabadsághoz"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "lépjen kapcsolatba"
-      ]
-    },
     "Plans": {
       "${ cycle } month": [
         "${ cycle } hónap",
@@ -11033,9 +11037,6 @@
       "Verify now": [
         "Ellenőrzés most"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "Most erősítse meg ezt a helyreállítási e-mail címet: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "Helyreállító e-mail megerősítése?"
       ],
@@ -11075,9 +11076,6 @@
       ],
       "Verify recovery phone?": [
         "Helyreállító telefonszám ellenőrzése?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "Ellenőrizze ezt a helyreállító telefonszámot most: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "A telefonszámának megerősítése növeli a fiókja biztonságát, illetve több helyreállítási lehetőséget biztosít."
@@ -13249,8 +13247,14 @@
       "Account recovery": [
         "Fiók helyreállítás"
       ],
+      "Account restricted": [
+        "Fiók korlátozva"
+      ],
       "Account suspended": [
         "Fiók felfüggesztve"
+      ],
+      "Account temporarily locked": [
+        "Fiók ideiglenesen zárolva"
       ],
       "Action": [
         "Művelet"

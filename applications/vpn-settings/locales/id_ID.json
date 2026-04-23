@@ -8494,6 +8494,9 @@
       "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
         "Untuk ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, dan ${ SHEETS_SHORT_APP_NAME }."
       ],
+      "Free": [
+        "Gratis"
+      ],
       "From: ${ fromEmail }": [
         "Dari: ${ fromEmail }"
       ],
@@ -8833,6 +8836,9 @@
       "State": [
         "Negara bagian/provinsi"
       ],
+      "Storage": [
+        "Penyimpanan"
+      ],
       "Street address": [
         "Alamat jalan"
       ],
@@ -8865,6 +8871,9 @@
       ],
       "Type": [
         "Tipe"
+      ],
+      "Unlimited": [
+        "Tidak terbatas"
       ],
       "Upload 1 or more encryption keys": [
         "Unggah setidaknya 1 kunci enkripsi"
@@ -8922,6 +8931,9 @@
       ],
       "Why would you like to cancel?": [
         "Mengapa Anda ingin membatalkan?"
+      ],
+      "Yes": [
+        "Ya"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Ya, saya ingin menghapus akun ini beserta seluruh data yang terkandung di dalamnya secara permanen."
@@ -11785,11 +11797,6 @@
         "Pintu gerbang Anda menuju kebebasan daring"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "hubungi"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "Seluruh fitur premium ${ BRAND_NAME } dari ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, dan ${ PASS_SHORT_APP_NAME }."
@@ -11905,9 +11912,6 @@
       "Verify now": [
         "Verifikasi"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "Verifikasi alamat email pemulihan ini sekarang: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "Verifikasi email pemulihan?"
       ],
@@ -11947,9 +11951,6 @@
       ],
       "Verify recovery phone?": [
         "Verifikasi nomor telepon pemulihan?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "Verifikasi nomor telepon pemulihan ini sekarang: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Dengan memverifikasi nomor telepon, Anda akan meningkatkan keamanan akun serta menambah metode pemulihan bagi akun Anda."
@@ -14323,8 +14324,14 @@
       "Account recovery": [
         "Pemulihan akun"
       ],
+      "Account restricted": [
+        "Akun dibatasi"
+      ],
       "Account suspended": [
         "Akun ditangguhkan"
+      ],
+      "Account temporarily locked": [
+        "Akun sementara terkunci"
       ],
       "Action": [
         "Tindakan"

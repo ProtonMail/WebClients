@@ -164,6 +164,9 @@
       "Claim ${ BRAND_NAME } address": [
         "${ BRAND_NAME } adresini al"
       ],
+      "Claim offer": [
+        "Teklifi al"
+      ],
       "Claim this address": [
         "Bu adresi al"
       ],
@@ -755,6 +758,9 @@
       "Quit": [
         "Çıkış"
       ],
+      "Read the story": [
+        "Hikayeyi oku"
+      ],
       "Reconnect": [
         "Yeniden bağlan"
       ],
@@ -1066,6 +1072,9 @@
       ],
       "Switch or add account": [
         "Hesap değiştirin ya da ekleyin"
+      ],
+      "Switch to free plan": [
+        "Free tarifeye geç"
       ],
       "Take a tour": [
         "Keşfedin"
@@ -2454,6 +2463,17 @@
         "çilek"
       ]
     },
+    "Confirm cancellation": {
+      "Access is restored once usage is back within limits.": [
+        "Kullanım limitler dahiline tekrar girdiğinde erişim yeniden sağlanır."
+      ],
+      "Cancel subscription": [
+        "Aboneliği iptal et"
+      ],
+      "Upload any new files": [
+        "Yeni dosyaları yükle"
+      ]
+    },
     "Confirm modal title": {
       "Quit import customization?": [
         "İçe aktarma özelleştirmesinden çıkılsın mı?"
@@ -3606,6 +3626,9 @@
       "Help your team securely store passwords to sensitive business and client information.": [
         "Ekibinizin önemli kuruluş ve müşteri bilgilerine ait parolaları güvenli bir şekilde kaydetmesini sağlayın."
       ],
+      "How we supported local activists when privacy and free speech were threatened.": [
+        "Gizlilik ve ifade özgürlüğü tehdit altında olduğunda yerel aktivistlere nasıl destek olduk."
+      ],
       "If you haven’t already, enable some recovery methods to make sure you never lose access to ${ VPN_APP_NAME }.": [
         "Henüz yapmadıysanız ${ VPN_APP_NAME } erişiminizi asla kaybetmemek için bazı kurtarma yöntemlerini açın."
       ],
@@ -3614,6 +3637,9 @@
       ],
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Hayatınızın farklı bölümlerini ayrı tutun ve ek adreslerle gelen kutunuza düzen getirin."
+      ],
+      "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
+        "Web, iOS, Android, Windows, Mac ve Linux için geliştirdiğimiz uygulamalarla ekibinizin güvenliğini hareket halindeyken de sağlayın."
       ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Etkinlik davetlerinize anında görüşme bağlantıları ekleyin."
@@ -5313,6 +5339,15 @@
         "${ MaxVPN } VPN bağlantısı",
         "${ MaxVPN } VPN bağlantısı"
       ],
+      "3 email domains": [
+        "3 e-posta etki alanı"
+      ],
+      "500 GB storage": [
+        "500 GB depolama alanı"
+      ],
+      "500 MB storage": [
+        "500 MB depolama alanı"
+      ],
       "Access to all countries": [
         "Tüm ülkelere erişim"
       ],
@@ -5341,6 +5376,9 @@
       ],
       "Remove": [
         "Kaldır"
+      ],
+      "Schedule and snooze emails": [
+        "E-postaları planla ve ertele"
       ],
       "Secure Core servers": [
         "Secure Core sunucuları"
@@ -9123,6 +9161,9 @@
         "${ addressesAvailable } / ${ maxAddresses } e-posta adresi kullanılabilir",
         "${ addressesAvailable } / ${ maxAddresses } e-posta adresi kullanılabilir"
       ],
+      "${ BRAND_NAME } for Business": [
+        "İşletmeler İçin ${ BRAND_NAME }"
+      ],
       "${ BRAND_NAME } username": [
         "${ BRAND_NAME } kullanıcı adı"
       ],
@@ -9249,6 +9290,9 @@
       "Block malware, ads and trackers": [
         "Kötü amaçlı yazılımlar, reklamlar ve etkinlik izleyiciler engellensin"
       ],
+      "Brand your workspace": [
+        "Çalışma alanınızı kişiselleştirin"
+      ],
       "Browser": [
         "Tarayıcı"
       ],
@@ -9369,6 +9413,16 @@
       "Current email": [
         "Geçerli e-posta"
       ],
+      "Custom domain": [
+        "Özel etki alanı"
+      ],
+      "Custom email domain": [
+        "Özel e-posta etki alanı",
+        "Özel e-posta etki alanları"
+      ],
+      "Data harvesting": [
+        "Veri toplama"
+      ],
       "Date": [
         "Tarih"
       ],
@@ -9435,6 +9489,9 @@
       "Enabled": [
         "Kullanılıyor"
       ],
+      "End-to-end encryption": [
+        "Uçtan uca şifreleme"
+      ],
       "Enter code": [
         "Kodu yazın"
       ],
@@ -9474,11 +9531,20 @@
       "Folder location": [
         "Klasör konumu"
       ],
+      "Folders, labels, and filters": [
+        "Klasörler, etiketler ve filtreler"
+      ],
       "For ${ DRIVE_SHORT_APP_NAME } and ${ DOCS_SHORT_APP_NAME }.": [
         "${ DRIVE_SHORT_APP_NAME } ve ${ DOCS_SHORT_APP_NAME } için."
       ],
       "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
         "${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME } ve ${ SHEETS_SHORT_APP_NAME } için."
+      ],
+      "Free": [
+        "Free"
+      ],
+      "Free VPN included": [
+        "Free VPN dahil"
       ],
       "From: ${ fromEmail }": [
         "Kimden: ${ fromEmail }"
@@ -9609,6 +9675,9 @@
       "Moderate NAT": [
         "Ilımlı NAT"
       ],
+      "Monthly": [
+        "Aylık"
+      ],
       "Move to Archive": [
         "Arşivle"
       ],
@@ -9644,6 +9713,9 @@
       ],
       "New second password": [
         "Yeni ikinci parola"
+      ],
+      "No": [
+        "Hayır"
       ],
       "No filter": [
         "Süzgeç yok"
@@ -9741,6 +9813,9 @@
       "Proration": [
         "Hesap bakiyesi"
       ],
+      "Protected by Swiss privacy laws": [
+        "İsviçre gizlilik yasalarıyla korunmaktadır"
+      ],
       "Public certificate (X.509)": [
         "Herkese açık sertifika (X.509)"
       ],
@@ -9835,6 +9910,9 @@
       "State": [
         "İl"
       ],
+      "Storage": [
+        "Depolama alanı"
+      ],
       "Street address": [
         "Sokak adresi"
       ],
@@ -9867,6 +9945,9 @@
       ],
       "Type": [
         "Tür"
+      ],
+      "Unlimited": [
+        "Sınırsız"
       ],
       "Upload 1 or more encryption keys": [
         "1 ya da birkaç şifreleme anahtarı yükleyin"
@@ -9925,6 +10006,12 @@
       "Why would you like to cancel?": [
         "Neden iptal etmek istiyorsunuz?"
       ],
+      "Yearly": [
+        "Yıllık"
+      ],
+      "Yes": [
+        "Evet"
+      ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Evet, bu hesabı ve tüm verilerini kalıcı olarak silmek istiyorum."
       ],
@@ -9933,6 +10020,9 @@
       ],
       "Your password (trusted contact)": [
         "Parolanız (güvenilen kişi)"
+      ],
+      "Zero-access architecture": [
+        "Sıfır erişim mimarisi"
       ],
       "ZIP code": [
         "Posta kodu"
@@ -13074,11 +13164,6 @@
         "Çevrim içi özgürlüğe açılan kapınız"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "görüşün"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "Tüm ücretli ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } ve ${ PASS_SHORT_APP_NAME } özellikleri."
@@ -13298,8 +13383,8 @@
       "Verify now": [
         "Şimdi doğrula"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "Şu kurtarma e-posta adresini doğrulayın: ${ email.Value }"
+      "Verify now this recovery email address: ${ emailData.value }": [
+        "${ emailData.value } kurtarma e-posta adresini doğrulayın"
       ],
       "Verify recovery email?": [
         "Kurtarma e-postası doğrulansın mı?"
@@ -13340,9 +13425,6 @@
       ],
       "Verify recovery phone?": [
         "Kurtarma telefonu doğrulansın mı?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "Şu kurtarma telefon numarasını şimdi doğrulayın: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Telefon numaranızı doğrulamak hesabınızın güvenliğini arttırır ve yeni bir kurtarma seçeneği ekler."
@@ -14993,6 +15075,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe yazma asistanı"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "Ücretli özelliklerle birlikte ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } ve ${ LUMO_APP_NAME }"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "Ücretli özelliklerle ${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } ve ${ VPN_SHORT_APP_NAME }"
       ],
@@ -15251,6 +15339,10 @@
       "Version history": [
         "Sürüm geçmişi"
       ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Görüntülü toplantılar, ${ PAID_PREMIUM_MAX_PARTICIPANTS } katılımcıya kadar",
+        "Görüntülü toplantılar, ${ PAID_PREMIUM_MAX_PARTICIPANTS } katılımcıya kadar"
+      ],
       "Watch the interview": [
         "Röportajı izleyin"
       ],
@@ -15366,6 +15458,15 @@
       ]
     },
     "Subtitle": {
+      "${ DRIVE_PLUS_NAME } offers 200 GB storage for your files and photos. You are also eligible for yearly storage bonuses.": [
+        "${ DRIVE_PLUS_NAME } dosyalarınız ve fotoğraflarınız için 200 GB depolama alanı sunar. Ayrıca yıllık depolama alanı bonuslarından da yararlanabilirsiniz."
+      ],
+      "${ planTitle } helps you ensure that each of your family members — and their data — are protected whenever they’re online.": [
+        "${ planTitle } her bir aile üyenizin ve verilerinin internete girdikleri her an korunmasını sağlamanıza yardımcı olur."
+      ],
+      "See how ${ MAIL_APP_NAME } compares, and why our independence makes a difference.": [
+        "${ MAIL_APP_NAME } ile karşılaştırın ve bağımsızlığımızın neden fark yarattığını görün."
+      ],
       "View VPN session details for your organization.": [
         "Kuruluşunuzun VPN oturumu ayrıntılarını görüntüleyin."
       ]
@@ -15706,6 +15807,11 @@
         "vCard alanı"
       ]
     },
+    "Temporary need": {
+      "Keep current plan": [
+        "Mevcut tarifeyi sürdür"
+      ]
+    },
     "Theme": {
       "Auto": [
         "Otomatik"
@@ -15818,8 +15924,14 @@
       "Account recovery": [
         "Hesap kurtarma"
       ],
+      "Account restricted": [
+        "Hesap kısıtlandı"
+      ],
       "Account suspended": [
         "Hesap askıya alınmış"
+      ],
+      "Account temporarily locked": [
+        "Hesap geçici olarak kilitlendi"
       ],
       "Action": [
         "İşlem"
@@ -16323,6 +16435,9 @@
       "Forgot recovery method": [
         "Kurtarma yöntemini unut"
       ],
+      "Free plan": [
+        "Free plan"
+      ],
       "Gateway": [
         "Ağ geçidi"
       ],
@@ -16386,6 +16501,9 @@
       "Help us improve": [
         "Geliştirmemize yardımcı olun"
       ],
+      "Helping activists in Hong Kong": [
+        "Hong Kong'daki aktivistlere yardım etmek"
+      ],
       "Home": [
         "Giriş"
       ],
@@ -16444,8 +16562,14 @@
       "Limit reached": [
         "Sınıra ulaşıldı"
       ],
+      "Lower your cost without losing features": [
+        "Özelliklerden ödün vermeden maliyetinizi düşürün"
+      ],
       "Main password": [
         "Ana parola"
+      ],
+      "Make your business stand out": [
+        "İşletmenizi öne çıkarın"
       ],
       "Migration assistant": [
         "Aktarım yardımcısı"
@@ -16792,6 +16916,9 @@
       ],
       "Summary": [
         "Özet"
+      ],
+      "Support your compliance objectives": [
+        "Uyum hedeflerinizi destekleyin"
       ],
       "Switch to one-password mode": [
         "Tek parola kipine geç"

@@ -9042,6 +9042,9 @@
       "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
         "${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, 및 ${ SHEETS_SHORT_APP_NAME }용."
       ],
+      "Free": [
+        "Free"
+      ],
       "From: ${ fromEmail }": [
         "보낸 사람: ${ fromEmail }"
       ],
@@ -9393,6 +9396,9 @@
       "State": [
         "시/도"
       ],
+      "Storage": [
+        "저장 공간"
+      ],
       "Street address": [
         "도로명 주소"
       ],
@@ -9425,6 +9431,9 @@
       ],
       "Type": [
         "유형"
+      ],
+      "Unlimited": [
+        "제한 없음"
       ],
       "Upload 1 or more encryption keys": [
         "하나 및 하나 이상의 암호화 키를 업로드 하십시오"
@@ -9482,6 +9491,9 @@
       ],
       "Why would you like to cancel?": [
         "취소하려는 이유가 무엇인가요?"
+      ],
+      "Yes": [
+        "예"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "네, 저는 완전히 이 계정과 모든 데이터를 지우고 싶습니다."
@@ -12511,11 +12523,6 @@
         "온라인 자유를 위한 안전한 길"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "연락"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } 및 ${ PASS_SHORT_APP_NAME }의 모든 프리미엄 기능."
@@ -12733,9 +12740,6 @@
       "Verify now": [
         "지금 인증"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "이 복구 이메일 주소로 인증하세요: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "복구 이메일을 인증할까요?"
       ],
@@ -12775,9 +12779,6 @@
       ],
       "Verify recovery phone?": [
         "복구 휴대전화 인증?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "이 복구 전화번호로 인증하세요: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "휴대 전화 인증은 계정 보호성이 증가하고 추가적인 복구 옵션을 제공합니다."
@@ -15192,8 +15193,14 @@
       "Account recovery": [
         "계정 복구"
       ],
+      "Account restricted": [
+        "계정 제한됨"
+      ],
       "Account suspended": [
         "계정이 정지되었습니다."
+      ],
+      "Account temporarily locked": [
+        "계정 일시 잠김"
       ],
       "Action": [
         "동작"

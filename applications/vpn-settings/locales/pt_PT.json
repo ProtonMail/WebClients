@@ -7748,6 +7748,9 @@
       "Folder location": [
         "Localização da pasta"
       ],
+      "Free": [
+        "Free"
+      ],
       "From: ${ fromEmail }": [
         "De: ${ fromEmail }"
       ],
@@ -8070,6 +8073,9 @@
       "State": [
         "Estado"
       ],
+      "Storage": [
+        "Armazenamento"
+      ],
       "Street address": [
         "Endereço postal"
       ],
@@ -8102,6 +8108,9 @@
       ],
       "Type": [
         "Tipo"
+      ],
+      "Unlimited": [
+        "Ilimitado"
       ],
       "Upload 1 or more encryption keys": [
         "Envie 1 ou mais chaves de encriptação"
@@ -10750,11 +10759,6 @@
         "A sua porta de entrada para a liberdade online"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "contacto"
-      ]
-    },
     "Plans": {
       "${ cycle } month": [
         "${ cycle } mês",
@@ -10937,9 +10941,6 @@
       "Verify now": [
         "Verificar agora"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "Verifique agora este endereço de e-mail de recuperação: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "Verificar o e-mail de recuperação?"
       ],
@@ -10979,9 +10980,6 @@
       ],
       "Verify recovery phone?": [
         "Verificar o telefone de recuperação?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "Verifique este número de telefone de recuperação agora: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "A verificação do seu número de telefone aumenta a segurança da sua conta e permite opções de recuperação adicionais."
@@ -13218,6 +13216,9 @@
       ],
       "Account recovery": [
         "Recuperação de conta"
+      ],
+      "Account restricted": [
+        "Conta restrita"
       ],
       "Account suspended": [
         "Conta suspensa"

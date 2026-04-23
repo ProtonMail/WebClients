@@ -2259,6 +2259,11 @@
         "fragola"
       ]
     },
+    "Confirm cancellation": {
+      "Access is restored once usage is back within limits.": [
+        "L’accesso viene ripristinato una volta che l’utilizzo rientra nei limiti."
+      ]
+    },
     "Confirm modal title": {
       "Quit import customization?": [
         "Abbandona la personalizzazione dell'importazione?"
@@ -3405,6 +3410,9 @@
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Mantieni separate le diverse parti della tua vita e organizza la tua casella di posta con indirizzi aggiuntivi."
       ],
+      "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
+        "Mantieni il tuo team al sicuro anche in mobilità con le nostre app per web, iOS, Android, Windows, Mac e Linux."
+      ],
       "Let's you instantly add meeting links to your event invitations.": [
         "Ti consente di aggiungere immediatamente i link per le riunioni ai tuoi inviti a un evento."
       ],
@@ -3694,6 +3702,9 @@
       "macOS": [
         "macOS"
       ],
+      "macOS 14 (Sonoma) or newer": [
+        "macOS Sonoma (versione 14) o successiva."
+      ],
       "macOS Big Sur": [
         "macOS Big Sur"
       ],
@@ -3705,6 +3716,9 @@
       ],
       "macOS Monterey": [
         "macOS Monterey"
+      ],
+      "macOS Ventura": [
+        "macOS Ventura"
       ],
       "Mobile": [
         "Mobile"
@@ -3953,14 +3967,35 @@
       "Added on ${ formattedDate }": [
         "Aggiunto il ${ formattedDate }"
       ],
+      "Ask a recovery contact for help. They’ll get an email to verify your request and unlock your data.": [
+        "Chiedi a un contatto di recupero di aiutarti. Ti daranno una e-mail per verificare la tua richiesta e sbloccare i tuoi dati."
+      ],
+      "Contacts": [
+        "Contatti"
+      ],
       "Immediate": [
         "Immediato"
       ],
       "Less than a day": [
         "Meno di un giorno"
       ],
+      "Recovery request sent": [
+        "Richiesta di recupero inviata"
+      ],
+      "Remove your recovery contacts to continue": [
+        "Rimuovi i tuoi contatti di recupero per continuare"
+      ],
+      "Select recovery contact ${ name }": [
+        "Seleziona contatto di recupero: ${ name }"
+      ],
+      "To disable this recovery method, remove all your recovery contacts.": [
+        "Per disabilitare il metodo di recupero, rimuovi tutti i tuoi contatti di recupero."
+      ],
       "Trusted contact": [
         "Contatti sicuri"
+      ],
+      "Your recovery contact has helped you recover data.": [
+        "I tuoi contatti di recupero ti hanno aiutato a recuperare i tuoi dati."
       ]
     },
     "Empty group name": {
@@ -5005,6 +5040,12 @@
       "${ MaxVPN } VPN connection": [
         "${ MaxVPN } connessione VPN",
         "${ MaxVPN } connessioni VPN"
+      ],
+      "3 email domains": [
+        "3 domini e-mail"
+      ],
+      "500 GB storage": [
+        "500 GB di memoria"
       ],
       "Access to all countries": [
         "Accesso a tutti i paesi"
@@ -8772,6 +8813,9 @@
       "Block malware, ads and trackers": [
         "Blocca malware, annunci e tracker"
       ],
+      "Brand your workspace": [
+        "Personalizza il tuo spazio di lavoro con il tuo brand"
+      ],
       "Browser": [
         "Browser"
       ],
@@ -8889,6 +8933,13 @@
       "Current email": [
         "Email attuale"
       ],
+      "Custom email domain": [
+        "Dominio e-mail personalizzato",
+        "Domini e-mail personalizzati"
+      ],
+      "Data harvesting": [
+        "Raccolta dati"
+      ],
       "Date": [
         "Data"
       ],
@@ -8996,6 +9047,9 @@
       ],
       "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
         "Per ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME } e ${ SHEETS_SHORT_APP_NAME }."
+      ],
+      "Free": [
+        "Free"
       ],
       "From: ${ fromEmail }": [
         "Da: ${ fromEmail }"
@@ -9346,6 +9400,9 @@
       "State": [
         "Stato"
       ],
+      "Storage": [
+        "Archiviazione"
+      ],
       "Street address": [
         "Indirizzo"
       ],
@@ -9378,6 +9435,9 @@
       ],
       "Type": [
         "Tipo"
+      ],
+      "Unlimited": [
+        "Senza limiti"
       ],
       "Upload 1 or more encryption keys": [
         "Carica 1 o più chiavi di crittografia"
@@ -9435,6 +9495,9 @@
       ],
       "Why would you like to cancel?": [
         "Perché vorresti annullare?"
+      ],
+      "Yes": [
+        "Si"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Sì, voglio eliminare definitivamente questo account e tutti i suoi dati."
@@ -12437,11 +12500,6 @@
         "La tua porta di accesso alla libertà online"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "contatto"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "Tutte le funzionalità premium di ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } e ${ PASS_SHORT_APP_NAME }."
@@ -12641,9 +12699,6 @@
       "Verify now": [
         "Verifica ora"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "Verifica ora questo indirizzo email di recupero: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "Vuoi verificare l'indirizzo email di recupero?"
       ],
@@ -12683,9 +12738,6 @@
       ],
       "Verify recovery phone?": [
         "Vuoi verificare il numero di telefono di recupero?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "Verifica ora il numero di telefono di recupero: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Verificare il tuo numero di telefono migliora la sicurezza del tuo account e permette opzioni aggiuntive per il recupero."
@@ -14687,6 +14739,12 @@
       ]
     },
     "Subtitle": {
+      "${ DRIVE_PLUS_NAME } offers 200 GB storage for your files and photos. You are also eligible for yearly storage bonuses.": [
+        "${ DRIVE_PLUS_NAME } offre 200 GB di memoria per i tuoi file e le tue foto. Hai anche diritto a bonus annuali di spazio di archiviazione."
+      ],
+      "See how ${ MAIL_APP_NAME } compares, and why our independence makes a difference.": [
+        "Vedi come ${ MAIL_APP_NAME } come si mostra, e perché la nostra indipendenza fa la differenza."
+      ],
       "View VPN session details for your organization.": [
         "Visualizza i dettagli della sessione VPN per la tua organizzazione."
       ]
@@ -15125,8 +15183,14 @@
       "Account recovery": [
         "Recupero dell'account"
       ],
+      "Account restricted": [
+        "Account limitato"
+      ],
       "Account suspended": [
         "Account sospeso"
+      ],
+      "Account temporarily locked": [
+        "Account temporaneamente bloccato"
       ],
       "Action": [
         "Azione"
@@ -15726,6 +15790,9 @@
       ],
       "Limit reached": [
         "Limite raggiunto"
+      ],
+      "Lower your cost without losing features": [
+        "Riduci i costi senza perdere"
       ],
       "Main password": [
         "Password principale"
