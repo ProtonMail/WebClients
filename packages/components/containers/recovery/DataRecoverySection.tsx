@@ -157,21 +157,22 @@ export const DataRecoverySection = () => {
                                     </span>
                                 </SettingsLayoutLeft>
                                 <SettingsLayoutRight>
-                                    <ExportRecoveryFileButton className="block" color="norm">
-                                        {recoveryFileData.hasOutdatedRecoveryFile
-                                            ? c('Action').t`Update recovery file`
-                                            : c('Action').t`Download recovery file`}
-                                    </ExportRecoveryFileButton>
-                                    {recoveryFileData.canRevokeRecoveryFiles && (
-                                        <Button
-                                            className="mt-4"
-                                            color="danger"
-                                            shape="underline"
-                                            onClick={() => updateRecoveryFile.voidFiles()}
-                                        >
-                                            {c('Action').t`Void all recovery files`}
-                                        </Button>
-                                    )}
+                                    <div className="flex flex-column items-start gap-2">
+                                        <ExportRecoveryFileButton className="block" color="norm">
+                                            {recoveryFileData.hasOutdatedRecoveryFile
+                                                ? c('Action').t`Update recovery file`
+                                                : c('Action').t`Download recovery file`}
+                                        </ExportRecoveryFileButton>
+                                        {recoveryFileData.canRevokeRecoveryFiles && (
+                                            <Button
+                                                color="danger"
+                                                shape="underline"
+                                                onClick={() => updateRecoveryFile.voidFiles()}
+                                            >
+                                                {c('Action').t`Void all recovery files`}
+                                            </Button>
+                                        )}
+                                    </div>
                                 </SettingsLayoutRight>
                             </SettingsLayout>
                             {recoveryFileData.hasOutdatedRecoveryFile && (
