@@ -1324,6 +1324,21 @@
       ],
       "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
         "L'aplicació d'escriptori ${ PASS_APP_NAME } no ha respost a temps."
+      ],
+      "Biometric lock credentials do not match.": [
+        "Les credencials del bloqueig biomètric no coincideixen."
+      ],
+      "Biometric lock credentials not found.": [
+        "No s'han trobat les credencials del bloqueig biomètric."
+      ],
+      "Biometric lock is not configured.": [
+        "El bloqueig biomètric no està configurat."
+      ],
+      "Biometric lock setup failed.": [
+        "Ha fallat la configuració del bloqueig biomètric."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "L'aplicació d'escriptori ${ PASS_APP_NAME } hauria de tenir la sessió iniciada."
       ]
     },
     "Error message": {
