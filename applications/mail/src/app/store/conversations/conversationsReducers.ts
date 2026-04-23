@@ -5,11 +5,11 @@ import { isCategoryLabel } from '@proton/mail/helpers/location';
 import { safeDecreaseCount, safeIncreaseCount } from '@proton/redux-utilities/helpers/safeCount';
 import { isNotExistError } from '@proton/shared/lib/api/helpers/apiErrorHelper';
 import { MAILBOX_LABEL_IDS } from '@proton/shared/lib/constants';
+import { SentryMailInitiatives, traceInitiativeError } from '@proton/shared/lib/helpers/sentry';
 import type { Folder, Label } from '@proton/shared/lib/interfaces';
 import type { Message, MessageMetadata } from '@proton/shared/lib/interfaces/mail/Message';
 import { isDraft } from '@proton/shared/lib/mail/messages';
 import isTruthy from '@proton/utils/isTruthy';
-import uniqueBy from '@proton/utils/uniqueBy';
 
 import { mergeConversations } from '../../helpers/conversation';
 import { hasLabel, isElementConversation, parseLabelIDsInEvent } from '../../helpers/elements';
@@ -589,32 +589,12 @@ export const labelMessagesPending = (
 ) => {
     const { messages, sourceLabelID, destinationLabelID, folders, labels } = action.meta.arg;
 
-    // If the category is being updated, update the conversation and all conversation messages
+    // We do not label message when changing categories, instead we perform a conversation label
     if (isCategoryLabel(destinationLabelID)) {
-        const conversationIDs = uniqueBy(
-            messages.map(({ ConversationID }) => ConversationID),
-            (id) => id
+        traceInitiativeError(
+            SentryMailInitiatives.MOVE_ACTIONS,
+            'conversationsReducers: updating category label counts'
         );
-
-        conversationIDs.forEach((conversationID) => {
-            const conversationState = state[conversationID];
-
-            if (!conversationState) {
-                return;
-            }
-
-            applyLabelToConversation(
-                conversationState.Conversation,
-                sourceLabelID,
-                destinationLabelID,
-                labels,
-                folders
-            );
-
-            conversationState.Messages?.forEach((message) => {
-                applyLabelToMessage(message, destinationLabelID, folders, labels);
-            });
-        });
     } else {
         // Update conversation first so that message is not updated yet
         messages.forEach((message) => {
