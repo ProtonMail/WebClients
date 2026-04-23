@@ -2,18 +2,19 @@ import { useCallback } from 'react';
 
 import { c } from 'ttag';
 
-import { useAuthentication, useNotifications } from '@proton/components';
+import { useNotifications } from '@proton/components';
+import { MemberRole } from '@proton/drive';
 
 import { handleSdkError } from '../../utils/errorHandling/handleSdkError';
 import { getNodeDisplaySize } from '../../utils/sdk/getNodeDisplaySize';
 import { getNodeEntity } from '../../utils/sdk/getNodeEntity';
 import { getSignatureIssues } from '../../utils/sdk/getSignatureIssues';
 import { getPublicLinkClient } from './publicLinkClient';
+import { usePublicAuthStore } from './usePublicAuth.store';
 import { usePublicFolderStore } from './usePublicFolder.store';
 
 export const usePublicFolderLoader = () => {
     const { createNotification } = useNotifications();
-    const auth = useAuthentication();
 
     const loadPublicFolderChildren = useCallback(
         async (nodeUid: string, abortSignal: AbortSignal) => {
@@ -40,6 +41,8 @@ export const usePublicFolderLoader = () => {
                 for await (const maybeNode of driveClient.iterateFolderChildren(nodeUid, undefined, abortSignal)) {
                     try {
                         const { node } = getNodeEntity(maybeNode);
+                        const { isLoggedIn, publicRole } = usePublicAuthStore.getState();
+                        const canVerifySignature = isLoggedIn && publicRole === MemberRole.Editor;
                         const signatureResult = getSignatureIssues(maybeNode);
                         const modificationTime = node.activeRevision?.claimedModificationTime
                             ? node.activeRevision.claimedModificationTime
@@ -55,7 +58,7 @@ export const usePublicFolderLoader = () => {
                             parentUid: node.parentUid,
                             creationTime: node.creationTime,
                             modificationTime,
-                            haveSignatureIssues: !!auth.getUID() ? !signatureResult.ok : false,
+                            haveSignatureIssues: canVerifySignature ? !signatureResult.ok : false,
                             uploadedBy:
                                 (node.keyAuthor.ok ? node.keyAuthor.value : node.keyAuthor.error.claimedAuthor) ||
                                 undefined,
@@ -80,7 +83,7 @@ export const usePublicFolderLoader = () => {
                 setLoading(false);
             }
         },
-        [auth, createNotification]
+        [createNotification]
     );
 
     return {

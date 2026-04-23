@@ -74,7 +74,7 @@ export const useSearchActions = () => {
     };
 
     const handleDetails = (uid: string) => {
-        showDetailsModal({ nodeUid: uid, verifySignatures: false });
+        showDetailsModal({ nodeUid: uid });
     };
 
     const handleRename = (uid: string) => {

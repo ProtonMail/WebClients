@@ -25,7 +25,7 @@ import './PublicHeader.scss';
 
 export interface PublicHeaderProps {
     breadcrumbOrName: ReactNode;
-    sharedBy: string | undefined;
+    sharedBy?: string;
     onDownload: () => Promise<void>;
     onScanAndDownload: () => Promise<void>;
     onDetails?: () => void;

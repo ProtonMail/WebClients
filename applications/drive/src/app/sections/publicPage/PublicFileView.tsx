@@ -26,6 +26,8 @@ export const PublicFileView = ({ rootNode, customPassword, isPartialView }: Publ
     const { isLoggedIn, isEditor } = usePublicAuthStore(
         useShallow((state) => ({ isEditor: state.publicRole === MemberRole.Editor, isLoggedIn: state.isLoggedIn }))
     );
+    const canVerifySignature = isLoggedIn && isEditor;
+    const canSeeEmail = isEditor;
     useEffect(() => {
         const openInDocsInfo = rootNode.mediaType ? getOpenInDocsInfo(rootNode.mediaType) : undefined;
 
@@ -69,11 +71,12 @@ export const PublicFileView = ({ rootNode, customPassword, isPartialView }: Publ
                     />
                 }
                 sharedBy={
-                    (isEditor &&
-                        (rootNode.keyAuthor.ok ? rootNode.keyAuthor.value : rootNode.keyAuthor.error.claimedAuthor)) ||
-                    undefined
+                    canSeeEmail
+                        ? (rootNode.keyAuthor.ok ? rootNode.keyAuthor.value : rootNode.keyAuthor.error.claimedAuthor) ||
+                          undefined
+                        : undefined
                 }
-                onDetails={isEditor ? () => handleDetails(rootNode.uid) : undefined}
+                onDetails={canVerifySignature ? () => handleDetails(rootNode.uid) : undefined}
                 onDownload={handleDownload}
                 onScanAndDownload={() => handleDownload(true)}
                 onCopyLink={handleCopyLink}
@@ -84,7 +87,7 @@ export const PublicFileView = ({ rootNode, customPassword, isPartialView }: Publ
                 className="flex-1"
                 drive={getPublicLinkClient()}
                 nodeUid={rootNode.uid}
-                verifySignatures={isLoggedIn}
+                verifySignatures={canVerifySignature}
                 // We cannot convert a doc/sheets for single file view
                 canOpenInDocs={false}
                 onContentLoaded={handleContentLoaded}

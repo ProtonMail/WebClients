@@ -32,8 +32,8 @@ export function PublicFolderActions({
     close,
     buttonType,
     onPreview,
-    onDownload,
     onDetails,
+    onDownload,
     onRename,
     onDelete,
     onOpenDocsOrSheets,
@@ -63,6 +63,7 @@ export function PublicFolderActions({
                     itemChecker={itemChecker}
                     selectedUids={selectedUids}
                     onPreview={onPreview}
+                    onDetails={onDetails}
                     onDownload={onDownload}
                     onOpenDocsOrSheets={onOpenDocsOrSheets}
                     {...(buttonType === 'contextMenu' ? { close, buttonType } : { buttonType })}
