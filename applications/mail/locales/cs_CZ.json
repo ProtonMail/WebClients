@@ -292,7 +292,7 @@
         "Připojit aplikace a zařízení"
       ],
       "Connect to Gmail": [
-        "Připojit k Gmailu"
+        "Připojit ke Gmail"
       ],
       "Connect to video conferencing": [
         "Připojit se k videokonferenci"
@@ -323,6 +323,9 @@
       ],
       "Contract composer": [
         "Ukončit režim celé obrazovky"
+      ],
+      "Copy": [
+        "Kopírovat"
       ],
       "Copy address": [
         "Kopírovat adresu"
@@ -4142,7 +4145,7 @@
         "Snadno synchronizujte soubory do cloudu z počítače a přistupujte k nim z mobilního zařízení."
       ],
       "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
-        "E-maily zaslané na adresu ${ connectedAddressText } se nyní budou zobrazovat v aplikaci ${ MAIL_APP_NAME }."
+        "E-maily odeslané na ${ connectedAddressText } se nyní budou zobrazovat v ${ MAIL_APP_NAME }."
       ],
       "Encourage the use of two-factor authentication in your organization for extra security.": [
         "Podporujte používání dvoufázového ověření ve vaší organizaci pro zvýšení bezpečnosti."
@@ -12366,7 +12369,7 @@
         "Převeďte svůj stávající e-mail do ${ MAIL_APP_NAME }, abyste mohli spravovat vše z jednoho soukromého účtu."
       ],
       "Choose a provider": [
-        "Vybrat poskytovatele"
+        "Zvolte poskytovatele"
       ],
       "Maybe later": [
         "Možná později"
@@ -12381,7 +12384,7 @@
         "Některé oblíbené služby"
       ],
       "Switch the services you use every day to your ${ BRAND_NAME } address for better security and privacy.": [
-        "Převeďte služby, které denně využíváte, na svou adresu ${ BRAND_NAME } a zajistěte si tak lepší bezpečnost a ochranu soukromí."
+        "Převeďte služby, které denně používáte na svou adresu ${ BRAND_NAME } a zajistěte si tak lepší zabezpečení a ochranu soukromí."
       ]
     },
     "Onboarding modal": {
@@ -13240,11 +13243,6 @@
         "Jméno"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "kontaktujte"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "Všechny prémiové funkce z ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ PASS_SHORT_APP_NAME }."
@@ -13355,7 +13353,7 @@
         "Microsoft 365"
       ],
       "Other": [
-        "Ostatní"
+        "Další"
       ],
       "Outlook": [
         "Outlook"
@@ -14603,6 +14601,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent psaní ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, a ${ LUMO_APP_NAME } s prémiovými funkcemi"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME } s prémiovými funkcemi"
       ],
@@ -14845,6 +14849,12 @@
       ],
       "Version history": [
         "Historie verzí"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Videokonference, pro ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníka",
+        "Videokonference, až pro ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníky",
+        "Videokonference, až pro ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníků",
+        "Videokonference, až pro ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníků"
       ],
       "Watch the interview": [
         "Shlédněte rozhovor"
@@ -16032,7 +16042,7 @@
         "Importovat skupiny"
       ],
       "Import your data to ${ BRAND_NAME }": [
-        "Načtěte svá data do ${ BRAND_NAME }"
+        "Importujte svá data do ${ BRAND_NAME }"
       ],
       "Increase security with ${ VPN_APP_NAME }": [
         "Zvyšte zabezpečení s ${ VPN_APP_NAME }"

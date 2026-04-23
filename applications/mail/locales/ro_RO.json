@@ -323,6 +323,9 @@
       "Contract composer": [
         "Restrângere editor de mesaje"
       ],
+      "Copy": [
+        "Copiere"
+      ],
       "Copy address": [
         "Copiere adresă"
       ],
@@ -7210,6 +7213,9 @@
       "Copy the link to clipboard": [
         "Copiați legătura în memorie"
       ],
+      "Copy to clipboard": [
+        "Copiere în memorie"
+      ],
       "Copy your referral link": [
         "Copiere legătură web de recomandare"
       ],
@@ -13032,11 +13038,6 @@
         "Nume"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "contactați"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "Toate funcțiile premium de la ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } și ${ PASS_SHORT_APP_NAME }."
@@ -14359,6 +14360,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent de scriere ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } și ${ LUMO_APP_NAME } cu funcții premium"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } și ${ VPN_SHORT_APP_NAME } cu funcțiile premium"
       ],
@@ -14595,6 +14602,11 @@
       ],
       "Version history": [
         "Istoric versiuni"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Conferințe video, maxim ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant",
+        "Conferințe video, maxim ${ PAID_PREMIUM_MAX_PARTICIPANTS } participanți",
+        "Conferințe video, maxim ${ PAID_PREMIUM_MAX_PARTICIPANTS } de participanți"
       ],
       "Watch the interview": [
         "Priviți interviul"
