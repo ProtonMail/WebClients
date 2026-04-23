@@ -628,9 +628,6 @@
       "Set extra password": [
         "设置额外密码"
       ],
-      "Settings": [
-        "设置"
-      ],
       "Setup 2FA": [
         "设置 2FA"
       ],
@@ -1998,6 +1995,9 @@
       "Loading...": [
         "加载中..."
       ],
+      "Logging you out...": [
+        "正在退出账户..."
+      ],
       "Low Priority": [
         "较低优先顺序"
       ],
@@ -2026,7 +2026,7 @@
         "正在从 \"${ payload.content.name }\" 移动所有项目"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "将项目移至其他保险库会清除其安全链接。"
+        "将项目移动到另一个保险库会删除其安全链接。"
       ],
       "Moving items": [
         "正在移动"
@@ -2513,12 +2513,6 @@
       ],
       "Unlimited hide-my-email aliases and advanced alias management": [
         "无限制 hide-my-email 别名和高级别名管理"
-      ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
-        "使用您的 PIN 码解锁 ${ PASS_APP_NAME } 以访问您的密钥"
-      ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
-        "使用您的 PIN 码解锁 ${ PASS_APP_NAME } 以保存这些密钥"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "使用生物识别技术解 ${ PASS_SHORT_APP_NAME }"

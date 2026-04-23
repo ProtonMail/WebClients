@@ -628,9 +628,6 @@
       "Set extra password": [
         "Définir un mot de passe supplémentaire"
       ],
-      "Settings": [
-        "Paramètres"
-      ],
       "Setup 2FA": [
         "Configurer l'authentification A2F"
       ],
@@ -945,6 +942,18 @@
       "Biometric authentication failed.": [
         "L'authentification biométrique n'a pas abouti."
       ],
+      "Biometric lock credentials do not match.": [
+        "Les identifiants de verrouillage biométrique ne correspondent pas."
+      ],
+      "Biometric lock credentials not found.": [
+        "Les identifiants de verrouillage biométrique n'ont pas été trouvés."
+      ],
+      "Biometric lock is not configured.": [
+        "Le verrouillage biométrique n'est pas configuré."
+      ],
+      "Biometric lock setup failed.": [
+        "La configuration du verrouillage biométrique n'a pas abouti."
+      ],
       "Cannot create alias (${ error }).": [
         "La création de l'alias n'a pas abouti (${ error })."
       ],
@@ -999,18 +1008,6 @@
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "La suppression du coffre-fort « ${ payload.content.name } » n'a pas abouti."
-      ],
-      "Desktop lock is not configured.": [
-        "Le verrouillage du bureau n'est pas configuré."
-      ],
-      "Desktop lock secret does not match.": [
-        "Le mot de passe de verrouillage du bureau ne correspond pas."
-      ],
-      "Desktop lock secret not found.": [
-        "Le mot de passe de verrouillage du bureau est introuvable."
-      ],
-      "Desktop lock setup failed.": [
-        "La configuration du verrouillage du bureau n'a pas abouti."
       ],
       "Detected ${ errors.length } corrupted csv row": [
         "${ errors.length } ligne CSV corrompue a été détectée.",
@@ -1288,6 +1285,9 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
         "L'application de bureau ${ PASS_APP_NAME } est connectée avec un compte différent."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "L'application de bureau ${ PASS_APP_NAME } devrait être connectée."
       ],
       "The URL is in the list": [
         "L'URL est dans la liste."
@@ -1874,6 +1874,9 @@
       "Enter the address you want to email.": [
         "Saisissez l'adresse à laquelle vous souhaitez envoyer un e-mail."
       ],
+      "Enter verification code. Digit ${ digit }.": [
+        "Saisissez le code de vérification. Entrez ${ digit }."
+      ],
       "Enter your extra password": [
         "Saisissez votre mot de passe supplémentaire."
       ],
@@ -2045,6 +2048,9 @@
       "Loading...": [
         "Chargement en cours"
       ],
+      "Logging you out...": [
+        "Déconnexion…"
+      ],
       "Low Priority": [
         "Priorité basse"
       ],
@@ -2074,7 +2080,8 @@
         "Déplacement de tous les éléments depuis « ${ payload.content.name } »"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés."
+        "Déplacer un élément vers un autre coffre-fort effacera ses liens sécurisés.",
+        "Déplacer des éléments vers un autre coffre-fort effacera leurs liens sécurisés."
       ],
       "Moving items": [
         "Déplacement des éléments"
@@ -2564,11 +2571,11 @@
       "Unlimited hide-my-email aliases and advanced alias management": [
         "Nombre illimité d'alias ​​hide-my-emaill et gestion avancée des alias"
       ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
-        "Débloquez ${ PASS_APP_NAME } avec votre code PIN pour accéder à vos clés d'accès."
+      "Unlock ${ PASS_APP_NAME } to access your passkeys": [
+        "Débloquez ${ PASS_APP_NAME } pour accéder à vos clés d'accès."
       ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
-        "Débloquez ${ PASS_APP_NAME } avec votre code PIN pour enregistrer cette clé d'accès."
+      "Unlock ${ PASS_APP_NAME } to save this passkey": [
+        "Débloquez ${ PASS_APP_NAME } pour sauvegarder cette clé d'accès."
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Déverrouiller ${ PASS_SHORT_APP_NAME } avec les données biométriques"
