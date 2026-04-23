@@ -90,11 +90,11 @@
       "Add photos": [
         "Přidat fotky"
       ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "Přidat do \"${ album.name }\" (${ album.photoCount } fotka)",
-        "Přidat do \"${ album.name }\" (${ album.photoCount } fotky)",
-        "Přidat do \"${ album.name }\" (${ album.photoCount } fotek)",
-        "Přidat do \"${ album.name }\" (${ album.photoCount } fotek)"
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "Přidat do \"${ name }\" (${ photoCount } fotka)",
+        "Přidat do \"${ name }\" (${ photoCount } fotky)",
+        "Přidat do \"${ name }\" (${ photoCount } fotek)",
+        "Přidat do \"${ name }\" (${ photoCount } fotek)"
       ],
       "Add to album": [
         "Přidat do alba"
@@ -525,9 +525,6 @@
       "Get in touch": [
         "Kontaktujte nás"
       ],
-      "Get link": [
-        "Získat odkaz"
-      ],
       "Get mobile and desktop apps": [
         "Získat mobilní a desktopové aplikace"
       ],
@@ -654,9 +651,6 @@
       "Load image": [
         "Načíst obrázek"
       ],
-      "Loading link": [
-        "Načítání odkazu"
-      ],
       "Make a copy": [
         "Vytvořit kopii"
       ],
@@ -671,9 +665,6 @@
       ],
       "Manage labels": [
         "Spravovat štítky"
-      ],
-      "Manage link": [
-        "Správa odkazu"
       ],
       "Manage share": [
         "Spravovat sdílení"
@@ -3549,7 +3540,7 @@
         "Načtení členů skupiny selhalo"
       ],
       "Failed to change permissions settings": [
-        "Změna nastavení oprávnění se nezdařila"
+        "Změna nastavení oprávnění selhala"
       ],
       "Failed to copy photo to album": [
         "Kopírování fotky do alba selhalo"
@@ -5520,7 +5511,7 @@
         "Vyberte si službu, ke které se chcete připojit"
       ],
       "Clear all search data": [
-        "Vymazat všechny údaje o vyhledávání"
+        "Vyčistit všechny údaje o vyhledávání"
       ],
       "Clear data": [
         "Smazat data"
@@ -5535,7 +5526,7 @@
         "Vymaže data prohlížeče související se šifrovaným vyhledáváním."
       ],
       "Clears browser data related to the search.": [
-        "Vymaže data prohlížeče související s vyhledáváním."
+        "Vyčistí data prohlížeče související s vyhledáváním."
       ],
       "Click \"Request new code\" to have a new verification code sent to ${ strong }. If this phone number is incorrect, click \"Edit\" to correct it.": [
         "Klikněte na \"Požádat o nový kód\" pro zaslání nového ověřovacího kódu na ${ strong }. Pokud je toto telefonní číslo nesprávné, klepněte na tlačítko \"Upravit\" pro jeho opravu."
@@ -5907,7 +5898,7 @@
         "Pokud budete pokračovat ve snížení úrovně účtu, ztratíte přístup k placeným funkcím ${ VPN_APP_NAME }."
       ],
       "If you remove yourself, you’ll lose access to \"${ fileName }\" and won’t be able to open it again unless the owner shares it with you.": [
-        "Pokud se odeberete, ztratíte přístup k souboru „${ fileName }“ a nebudete jej moci znovu otevřít, dokud vám jej jeho vlastník nesdílí."
+        "Pokud se odeberete, ztratíte přístup k souboru \"${ fileName }\" a nebudete jej moci znovu otevřít, dokud vám jej jeho vlastník nenasdílí."
       ],
       "Import ${ calendarCount } of ${ totalCalendarsCount } calendar": [
         "Importovat ${ calendarCount } z ${ totalCalendarsCount } kalendáře",
@@ -5970,7 +5961,7 @@
         "Připojení k internetu obnoveno."
       ],
       "Invitation confirmed": [
-        "Pozvánka potvrzena"
+        "Pozvání potvrzeno"
       ],
       "Invite link copied": [
         "Odkaz na pozvánku zkopírován"
@@ -6512,9 +6503,6 @@
       "Shared by ${ sharedBy }": [
         "Sdílel(a) ${ sharedBy }"
       ],
-      "Shared by you": [
-        "Sdíleno vámi"
-      ],
       "Shared link not found": [
         "Sdílený odkaz nebyl nalezen"
       ],
@@ -6845,9 +6833,6 @@
       "Unsupported file type for Photos": [
         "Nepodporovaný typ souboru pro Fotky"
       ],
-      "Untitled": [
-        "Bez názvu"
-      ],
       "Update required": [
         "Vyžadována aktualizace"
       ],
@@ -6922,9 +6907,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Výborně, právě jste si navýšili úložný prostor na 5 GB!"
-      ],
-      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "Máme technické problémy. Veškeré akce související s alby jsou dočasně deaktivovány."
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "Nemohli jsme ověřit, zda ${ nameAuthor } nahrál(a) ${ node.name }. S následujícím mohlo být manipulováno: pořadí dat souboru. Otevřete pouze v případě, že souboru důvěřujete."
@@ -7699,10 +7681,10 @@
         "Zahrnout zprávu a název souboru v e-mailu s pozvánkou"
       ],
       "Index kinds": [
-        "Druhy indexů"
+        "Typy indexů"
       ],
       "Initial indexing": [
-        "Začínám indexovat"
+        "Počáteční indexace"
       ],
       "Integrated 2FA authenticator": [
         "Integrované ověřování 2FA"
@@ -9830,9 +9812,6 @@
       "Access updated": [
         "Přístup aktualizován"
       ],
-      "Album failed to be renamed": [
-        "Přejmenování alba selhalo"
-      ],
       "Album renamed successfully": [
         "Album úspěšně přejmenováno"
       ],
@@ -9883,9 +9862,6 @@
       ],
       "Failed to download files: ${ err }": [
         "Nepodařilo se stáhnout soubory: ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "Nepodařilo se načíst detaily pozvánky"
       ],
       "Failed to move, please try again": [
         "Přesun selhal, zkuste to prosím znovu"
@@ -10032,6 +10008,11 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Některé obrázky nebyly nahrány kvůli duplicitním názvům souborů v aktuálním výběru."
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "Album úspěšně přejmenováno"
       ]
     },
     "Oauth instructions": {
@@ -10983,11 +10964,6 @@
         "Jméno"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "kontaktujte"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "Všechny prémiové funkce z ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ PASS_SHORT_APP_NAME }."
@@ -11098,7 +11074,7 @@
         "Microsoft 365"
       ],
       "Other": [
-        "Ostatní"
+        "Další"
       ],
       "Outlook": [
         "Outlook"
@@ -12061,6 +12037,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent psaní ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, a ${ LUMO_APP_NAME } s prémiovými funkcemi"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME } s prémiovými funkcemi"
       ],
@@ -12303,6 +12285,12 @@
       ],
       "Version history": [
         "Historie verzí"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Videokonference, pro ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníka",
+        "Videokonference, až pro ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníky",
+        "Videokonference, až pro ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníků",
+        "Videokonference, až pro ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníků"
       ],
       "Watch the interview": [
         "Shlédněte rozhovor"
@@ -13224,7 +13212,7 @@
         "Importovat skupiny"
       ],
       "Import your data to ${ BRAND_NAME }": [
-        "Načtěte svá data do ${ BRAND_NAME }"
+        "Importujte svá data do ${ BRAND_NAME }"
       ],
       "Information exposed in breach": [
         "Informace odhalené při úniku"
@@ -13858,7 +13846,7 @@
         "Zpráva a název souboru jsou uloženy s šifrováním s nulovým přístupem, pokud jsou součástí e-mailu"
       ],
       "New!": [
-        "Nové!"
+        "Novinka!"
       ],
       "Not all information listed here was exposed for all users.": [
         "Ne všechny informace, které jsou zde uvedeny, byly zpřístupněny všem uživatelům."

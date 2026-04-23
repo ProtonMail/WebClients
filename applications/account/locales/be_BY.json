@@ -105,6 +105,9 @@
       "Add address or domain": [
         "Дадаць адрас або дамен"
       ],
+      "Add and verify": [
+        "Дадаць і спраўдзіць"
+      ],
       "Add another account": [
         "Дадаць іншы ўліковы запіс"
       ],
@@ -260,6 +263,9 @@
       ],
       "Claim it": [
         "Атрымаць яго"
+      ],
+      "Claim offer": [
+        "Скарыстацца прапановай"
       ],
       "Claim this address": [
         "Атрымаць гэты адрас"
@@ -1185,6 +1191,9 @@
       "Reactivate keys": [
         "Паўторна актываваць ключы"
       ],
+      "Read the story": [
+        "Прачытаць гісторыю"
+      ],
       "Reconnect": [
         "Перападключыцца"
       ],
@@ -1347,6 +1356,9 @@
       "Save and continue": [
         "Захаваць і працягнуць"
       ],
+      "Save and verify": [
+        "Захаваць і спраўдзіць"
+      ],
       "Save changes": [
         "Захаваць змены"
       ],
@@ -1367,6 +1379,9 @@
       ],
       "Search settings": [
         "Налады пошуку"
+      ],
+      "Secure account": [
+        "Абараніце ўліковы запіс"
       ],
       "See DNS TXT record": [
         "Паглядзець запіс DNS TXT"
@@ -2044,6 +2059,50 @@
         "адміністратар"
       ]
     },
+    "Admin roles onboarding": {
+      "3 new admin roles": [
+        "3 новыя ролі адміністратара"
+      ],
+      "Admin roles": [
+        "Ролі адміністратара"
+      ],
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Канфіграцыя палітык бяспекі, захоўванне даных, інфраструктура VPN і кіраванне журналамі аўдыта."
+      ],
+      "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
+        "Упаўнаважанае кіраванне з прызначэннем канкрэтных роляў адміністратару. Давайце кожнаму адміністратару толькі той доступ, які яму неабходны. Гэта адпавядае прынцыпу найменшых паўнамоцтваў, дазваляе абараніць вашу арганізацыю ад кампраметацыі ўліковых запісаў і выпадковых памылак."
+      ],
+      "Delegate management with the appropriate admin role.": [
+        "Упаўнаважанае кіраванне з адпаведнай роляй адміністратара"
+      ],
+      "Manage all users, groups, storage, security, billing, audit logs, and system configurations.": [
+        "Кіраванне ўсімі карыстальнікамі, групы, сховішча, бяспека, білінг, журналы аўдыту і сістэмныя канфігурацыі."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Кіраванне карыстальнікамі, групы, сховішча для ўсіх удзельнікаў, прызначэнне роляў і размеркаванне ліцэнзій."
+      ],
+      "New: Control admin access for individual users": [
+        "Новае: кантроль доступу адміністратара для індывідуальных карыстальнікаў"
+      ],
+      "Organization admin": [
+        "Адміністратар арганізацыі"
+      ],
+      "Organization admin:": [
+        "Адміністратар арганізацыі:"
+      ],
+      "Security admin": [
+        "Адміністратар бяспекі"
+      ],
+      "Security admin:": [
+        "Адміністратар бяспекі:"
+      ],
+      "User admin": [
+        "Адміністратар карыстальніка"
+      ],
+      "User admin:": [
+        "Адміністратар карыстальніка:"
+      ]
+    },
     "AdminRole_Info": {
       "A role is a group of permissions that you can assign to the members of your organization.": [
         "Роля - гэта група дазволаў, якія вы можаце прызначыць удзельнікам сваёй арганізацыі."
@@ -2270,6 +2329,11 @@
     "b2b_trials_Title": {
       "Your free trial ends in ${ timeRemaining }": [
         "Ваш бясплатны пробны перыяд завершыцца ${ timeRemaining }"
+      ]
+    },
+    "Badge": {
+      "Save ${ discountRate }%": [
+        "Эканомія ${ discountRate }%"
       ]
     },
     "Badge for domain": {
@@ -6280,9 +6344,6 @@
       "Asking for help": [
         "Запытаць дапамогу"
       ],
-      "By adding people you trust as recovery contacts, we'll be able to send them an email to help you if you're having trouble to recover your data after a password reset. You can also be a recovery contact for others.": [
-        "Дадайце людзей, якім вы давяраеце, у якасці кантактаў для аднаўлення. У выпадку ўзнікнення праблем са скіданнем пароля ім можна будзе адправіць ліст з просьбай дапамагчы аднавіць вашы даныя. Вы таксама можаце дапамагаць іншым аднаўляць іх даныя."
-      ],
       "Cancel request": [
         "Скасаваць запыт"
       ],
@@ -6436,9 +6497,6 @@
       "Recovery contact removed": [
         "Кантакт для аднаўлення выдалены"
       ],
-      "Recovery contacts": [
-        "Кантакты для аднаўлення"
-      ],
       "Recovery request sent": [
         "Запыт на аднаўленне адпраўлены"
       ],
@@ -6535,9 +6593,6 @@
       "To disable this recovery method, remove all your recovery contacts.": [
         "Выдаліце ўсе свае кантакты для аднаўлення, каб адключыць гэты спосаб аднаўлення."
       ],
-      "To use trusted contact recovery, you must have an account recovery method set.": [
-        "У вас павінен быць зададзены спосаб аднаўлення ўліковага запісу, каб выкарыстоўваць аднаўленне праз давераны кантакт."
-      ],
       "Trusted contact": [
         "Давераны кантакт"
       ],
@@ -6591,12 +6646,6 @@
         "Вы дасягнулі максімальнай колькасці ў ${ limit } экстранныя кантакты.",
         "Вы дасягнулі максімальнай колькасці ў ${ limit } экстранных кантактаў.",
         "Вы дасягнулі максімальнай колькасці ў ${ limit } экстранных кантактаў."
-      ],
-      "You reached the maximum of ${ limit } recovery contact.": [
-        "Вы дасягнулі максімальнай колькасці ў ${ limit } кантакт для аднаўлення.",
-        "Вы дасягнулі максімальнай колькасці ў ${ limit } кантакты для аднаўлення.",
-        "Вы дасягнулі максімальнай колькасці ў ${ limit } кантактаў для аднаўлення.",
-        "Вы дасягнулі максімальнай колькасці ў ${ limit } кантактаў для аднаўлення."
       ],
       "You will be notified when someone requests emergency access.": [
         "Вы атрымаеце апавяшчэнне, калі хто-небудзь запытае экстранны доступ."
@@ -8042,6 +8091,18 @@
         "${ MaxVPN } падключэнняў па VPN",
         "${ MaxVPN } падключэнняў па VPN"
       ],
+      "15 GB storage": [
+        "15 ГБ сховішча"
+      ],
+      "3 email domains": [
+        "3 дамены электроннай пошты"
+      ],
+      "500 GB storage": [
+        "500 ГБ сховішча"
+      ],
+      "500 MB storage": [
+        "500 МБ сховішча"
+      ],
       "Access to all countries": [
         "Доступ да ўсіх краін"
       ],
@@ -8071,6 +8132,9 @@
       ],
       "More premium features": [
         "Больш прэміяльных функцый"
+      ],
+      "Priority support": [
+        "Прыярытэтная падтрымка"
       ],
       "Remove": [
         "Выдаліць"
@@ -13962,6 +14026,9 @@
       "Cash": [
         "Наяўныя"
       ],
+      "Catch-all email address": [
+        "Адрас для ўсёй пошты дамена"
+      ],
       "Categories": [
         "Катэгорыі"
       ],
@@ -14097,8 +14164,14 @@
       "Current email": [
         "Бягучая электронная пошта"
       ],
+      "Custom domain": [
+        "Карыстальніцкі дамен"
+      ],
       "Daily email notifications": [
         "Штодзённыя апавяшчэнні па электроннай пошце"
+      ],
+      "Data harvesting": [
+        "Збор даных"
       ],
       "Date": [
         "Дата"
@@ -14187,11 +14260,17 @@
       "e.g. example.com": [
         "напрыклад, example.com"
       ],
+      "Early access": [
+        "Ранні доступ"
+      ],
       "Email": [
         "Электронная пошта"
       ],
       "Email address": [
         "Адрас электроннай пошты"
+      ],
+      "Email addresses": [
+        "Адрасы электроннай пошты"
       ],
       "Email or username": [
         "Электронная пошта або імя карыстальніка"
@@ -14300,6 +14379,9 @@
       ],
       "for your first month": [
         "за ваш першы месяц"
+      ],
+      "Free": [
+        "Бясплатна"
       ],
       "From: ${ fromEmail }": [
         "Ад: ${ fromEmail }"
@@ -14517,6 +14599,9 @@
       "Moderate NAT": [
         "Умераны NAT"
       ],
+      "Monthly": [
+        "Штомесяц"
+      ],
       "More payment methods": [
         "Іншыя спосабы аплаты"
       ],
@@ -14565,6 +14650,9 @@
       "Newsletters": [
         "Рассылкі"
       ],
+      "No": [
+        "Не"
+      ],
       "No (users cannot use the app until a vault is shared with them)": [
         "Не (карыстальнікі не змогуць выкарыстоўваць праграму, пакуль сховішча не будзе абагулена з імі)"
       ],
@@ -14603,6 +14691,9 @@
       ],
       "Only available on ${ PASS_SHORT_APP_NAME } paid plans": [
         "Даступна толькі на платных тарыфных планах ${ PASS_SHORT_APP_NAME }"
+      ],
+      "Open-source code": [
+        "Адкрыты зыходны код"
       ],
       "OpenVPN password": [
         "Пароль OpenVPN"
@@ -14702,6 +14793,9 @@
       ],
       "Primary": [
         "Асноўны"
+      ],
+      "Priority support": [
+        "Прыярытэтная падтрымка"
       ],
       "Promotions": [
         "Рэклама"
@@ -14907,6 +15001,12 @@
       "Sticky labels": [
         "Ліпучыя меткі"
       ],
+      "Storage": [
+        "Сховішча"
+      ],
+      "Storage per user": [
+        "Сховішча на карыстальніка"
+      ],
       "Street address": [
         "Вуліца"
       ],
@@ -14936,6 +15036,9 @@
       ],
       "Then": [
         "Потым"
+      ],
+      "Third-party ads": [
+        "Старонняя рэклама"
       ],
       "Thomas": [
         "Янка"
@@ -14975,6 +15078,9 @@
       ],
       "Undo send": [
         "Адрабіць адпраўку"
+      ],
+      "Unlimited": [
+        "Unlimited"
       ],
       "Unlimited hide-my-email aliases": [
         "Неабмежаваная колькасць псеўданімаў hide-my-email"
@@ -15036,6 +15142,9 @@
       "Verify keys with Key Transparency": [
         "Спраўджанне ключоў з дапамогай Key Transparency"
       ],
+      "Version history": [
+        "Гісторыя версій"
+      ],
       "Video conferencing with Zoom": [
         "Відэаканферэнцыя з Zoom"
       ],
@@ -15074,6 +15183,9 @@
       ],
       "Without attachment": [
         "Без далучэння"
+      ],
+      "Yearly": [
+        "Штогод"
       ],
       "Yes": [
         "Так"
@@ -19495,11 +19607,6 @@
         "Ваш шлюз у свабодную сетку"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "звяжыцеся"
-      ]
-    },
     "Plan description": {
       "A VPN solution that provides secure, high-speed access to the internet.": [
         "Рашэнне VPN, якое забяспечвае бяспечны, высакахуткасны доступ у інтэрнэт."
@@ -19750,9 +19857,6 @@
       "Verify now": [
         "Спраўдзіць"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "Спраўдзіце гэты адрас электроннай пошты для аднаўлення доступу: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "Спраўдзіць электронную пошту для аднаўлення доступу?"
       ],
@@ -19796,11 +19900,30 @@
       "Verify recovery phone?": [
         "Спраўдзіць нумар тэлефона для аднаўлення доступу?"
       ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "Спраўдзіць гэты нумар тэлефона для аднаўлення: ${ phone.Value }"
-      ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Спраўджанне вашага нумару тэлефона павялічыць бяспеку вашага ўліковага запісу і дазволіць пашырыць параметры для аднаўлення."
+      ]
+    },
+    "Recovery score": {
+      "Maximum": [
+        "Максімальны"
+      ],
+      "Partial": [
+        "Частковы"
+      ],
+      "Strong": [
+        "Надзейны"
+      ],
+      "Unprotected": [
+        "Не абаронена"
+      ],
+      "Weak": [
+        "Ненадзейны"
+      ]
+    },
+    "Recovery score item": {
+      "Verify password": [
+        "Спраўджанне пароля"
       ]
     },
     "RecoveryPhrase: Action": {
@@ -22307,6 +22430,41 @@
         "Скасаванне вашай падпіскі. Пачакайце..."
       ]
     },
+    "Status": {
+      "${ count } person": [
+        "${ count } асоба",
+        "${ count } асобы",
+        "${ count } асоб",
+        "${ count } асоб"
+      ],
+      "Disable QR code sign-in": [
+        "Адключыць уваход па QR-коду"
+      ],
+      "No contact": [
+        "Не кантакт"
+      ],
+      "Not saved": [
+        "Не захавана"
+      ],
+      "Off": [
+        "Выключана"
+      ],
+      "On": [
+        "Уключана"
+      ],
+      "Outdated": [
+        "Састарэлы"
+      ],
+      "Saved": [
+        "Захавана"
+      ],
+      "Unverified": [
+        "Неправераны"
+      ],
+      "Verified": [
+        "Правераны"
+      ]
+    },
     "Step in filter modal": {
       "Actions": [
         "Дзеянні"
@@ -22642,6 +22800,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Памочнік у напісанні ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } і ${ LUMO_APP_NAME } з прэміяльнымі функцыямі"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } і ${ VPN_SHORT_APP_NAME } з прэміяльнымі функцыямі"
       ],
@@ -22911,6 +23075,12 @@
       ],
       "Version history": [
         "Гісторыя версій"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Відэасустрэчы. Да ${ PAID_PREMIUM_MAX_PARTICIPANTS } удзельніка",
+        "Відэасустрэчы. Да ${ PAID_PREMIUM_MAX_PARTICIPANTS } удзельнікаў",
+        "Відэасустрэчы. Да ${ PAID_PREMIUM_MAX_PARTICIPANTS } удзельнікаў",
+        "Відэасустрэчы. Да ${ PAID_PREMIUM_MAX_PARTICIPANTS } удзельнікаў"
       ],
       "Watch the interview": [
         "Глядзець інтэрв'ю"
@@ -23356,6 +23526,9 @@
       ],
       "/user per month": [
         "/карыстальніка ў месяц"
+      ],
+      "/year": [
+        "/год"
       ]
     },
     "Suffix for price": {
@@ -23471,6 +23644,11 @@
     "TableRow": {
       "No SMTP tokens found": [
         "Токены SMTP не знойдзены"
+      ]
+    },
+    "Temporary need": {
+      "Keep current plan": [
+        "Пакінуць бягучы тарыфны план"
       ]
     },
     "Theme": {
@@ -24393,6 +24571,9 @@
       "Free": [
         "Бясплатна"
       ],
+      "Free plan": [
+        "Бясплатны тарыфны план"
+      ],
       "Gateway": [
         "Шлюз"
       ],
@@ -24789,6 +24970,9 @@
       "QR Code": [
         "QR-код"
       ],
+      "QR code sign-in": [
+        "Увайсці з QR-кодам"
+      ],
       "Ready, set, forward": [
         "На старт, увага, марш"
       ],
@@ -24812,6 +24996,9 @@
       ],
       "Recovery file": [
         "Файл аднаўлення"
+      ],
+      "Recovery phrase": [
+        "Фраза аднаўлення"
       ],
       "Refer a friend": [
         "Запрасіць сябра"
@@ -25028,6 +25215,9 @@
       ],
       "Single sign-on": [
         "Адзіны ўваход"
+      ],
+      "SMS verification": [
+        "Спраўджанне SMS"
       ],
       "SMTP submission": [
         "Адпраўка па SMTP"

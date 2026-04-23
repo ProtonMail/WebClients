@@ -90,6 +90,9 @@
       "Apply": [
         "Potrdi"
       ],
+      "Ask me next time": [
+        "Vprašaj me naslednjič"
+      ],
       "At most ${ maxContacts } contact is allowed per contact group": [
         "Največ ${ maxContacts } stik je dovoljen na skupino stikov.",
         "Največ ${ maxContacts } stika sta dovoljena na skupino stikov.",
@@ -659,6 +662,9 @@
       ],
       "Save changes": [
         "Shrani spremembe"
+      ],
+      "Save preferences": [
+        "Shrani nastavitve"
       ],
       "Search": [
         "Iskanje"
@@ -4295,6 +4301,9 @@
       "Continue": [
         "Nadaljuj"
       ],
+      "Converting document...": [
+        "Pretvarjanje dokumenta ..."
+      ],
       "Copied to clipboard": [
         "Kopirano v odložišče"
       ],
@@ -4346,11 +4355,17 @@
       "Creating link to folder": [
         "Ustvarjanje povezave do mape"
       ],
+      "Creating new document...": [
+        "Ustvarjanje novega dokumenta ..."
+      ],
       "Current plan": [
         "Trenutni paket"
       ],
       "Current version": [
         "Trenutna različica"
+      ],
+      "Decrypting your document": [
+        "Dešifriranje vašega dokumenta"
       ],
       "Digital signature verified. This file was securely uploaded by ${ emailAddress }.": [
         "Digitalni podpis preverjen. To datoteko je varno naložil ${ emailAddress }."
@@ -4412,6 +4427,9 @@
       "End-to-end encrypted.": [
         "Popolnoma šifrirano."
       ],
+      "Enter code": [
+        "Vnesi kodo"
+      ],
       "Enter password": [
         "Vnesite geslo"
       ],
@@ -4426,6 +4444,12 @@
       ],
       "Enter your own password (as organization admin).": [
         "Vpišite vaše lastno geslo (kot skrbnik organizacije)."
+      ],
+      "Error converting document: ${ errorMessage }": [
+        "Napaka pri pretvorbi dokumenta: ${ errorMessage }"
+      ],
+      "Error loading document: ${ errorDetail }": [
+        "Napaka pri nalaganju dokumenta: ${ errorDetail }"
       ],
       "Error Syncing": [
         "Napaka pri sinhronizaciji"
@@ -4487,6 +4511,12 @@
       "Geoblocking": [
         "Geoblokiranje"
       ],
+      "Get email updates for comments and suggestions added to your documents.": [
+        "Prejemajte e-poštna obvestila o komentarjih in predlogih, dodanih v vaše dokumente."
+      ],
+      "Get Notified About Comments": [
+        "Prejemajte obvestila o komentarjih"
+      ],
       "Governments and ISPs can monitor your online activity. By hiding your real IP and encrypting your activity your browsing becomes private.": [
         "Vlade in ponudniki internetnih storitev lahko spremljajo vašo spletno dejavnost. S skrivanjem vašega resničnega IP-ja in šifriranjem vaše dejavnosti postane vaše brskanje zasebno."
       ],
@@ -4507,6 +4537,9 @@
       ],
       "If you don't find the email in your inbox, please check your spam folder.": [
         "Če sporočila ne najdete v nabiralniku, poglejte v mapo z neželeno pošto."
+      ],
+      "If you lost access to your authenticator app, you can use 1 of the 16 backup recovery codes provided when your set up two-factor authentication. ${ learnMoreLink }": [
+        "Če ste izgubili dostop do aplikacije za preverjanje pristnosti, lahko uporabite eno od 16. kod za obnovitev, ki ste jih prejeli ob nastavitvi dvojnega preverjanja pristnosti. ${ learnMoreLink }"
       ],
       "If you proceed with the downgrade, you will lose access to ${ MAIL_APP_NAME } and ${ VPN_APP_NAME } paid features.": [
         "Če nadaljujete s podgradnjo, boste izgubili dostop do plačljivih funkcij ${ MAIL_APP_NAME } in ${ VPN_APP_NAME }."
@@ -4628,6 +4661,9 @@
       "Low Priority": [
         "Nizka pomembnost"
       ],
+      "Making a copy...": [
+        "Ustvarjanje kopije ..."
+      ],
       "Max ${ MAX_SHARED_URL_PASSWORD_LENGTH } character": [
         "Največ ${ MAX_SHARED_URL_PASSWORD_LENGTH } znak",
         "Največ ${ MAX_SHARED_URL_PASSWORD_LENGTH } znaka",
@@ -4660,6 +4696,9 @@
       ],
       "No contacts added yet": [
         "Ni stikov"
+      ],
+      "No document supplied in URL. Return to ${ DRIVE_APP_NAME } and select a document.": [
+        "V danem URL ni dokumenta. Vrnite se v ${ DRIVE_APP_NAME } in izberite dokument."
       ],
       "No email address": [
         "Ni e-poštnih naslovov"
@@ -4945,6 +4984,9 @@
       ],
       "The owner of this address has disabled end-to-end encryption. To be able to send encrypted emails to this address, the owner must re-enable end-to-end encryption.": [
         "Lastnik tega naslova je onemogočil šifriranje od konca do konca. Šifrirana sporočila boste na ta naslov lahko pošiljali, če bo lastnik znova omogočil šifriranje od konca do konca."
+      ],
+      "The URL you entered seems to have been copied from Slack incorrectly. When copying long links from Slack, right click the link, then choose \"Copy link\" rather than copying the truncated URL text directly.": [
+        "Vnešeni URL je skrajšan in nepravilno kopiran iz Slacka. Za kopiranje dolgih povezav iz Slacka klikni z desnim gumbom miške na povezavo in izberi možnost \"Kopiraj povezavo\"."
       ],
       "There are no documents in the trash.": [
         "V smeteh ni nobenih dokumentov."
@@ -5536,6 +5578,9 @@
       "Emails (last month)": [
         "E-pošto (zadnji mesec)"
       ],
+      "Enable email notifications": [
+        "Omogoči e-poštna obvestila"
+      ],
       "Encrypt emails": [
         "Šifriraj sporočila"
       ],
@@ -5580,6 +5625,9 @@
       ],
       "Import to:": [
         "Uvozi v:"
+      ],
+      "Include document name in notification": [
+        "Ime dokumenta vključi v obvestilo"
       ],
       "Include message and file name in invite email": [
         "Vključi sporočilo in ime datoteke v vabilo"
@@ -7399,6 +7447,9 @@
       "External invitation removed from the share": [
         "Zunanje povabilo je bilo odstranjeno iz skupne rabe."
       ],
+      "External invitation's email was sent again": [
+        "E-poštno sporočilo z zunanjim povabilom je bilo ponovno poslano"
+      ],
       "Failed to accept share invitation": [
         "Povabila k skupni rabi ni bilo mogoče sprejeti."
       ],
@@ -8370,6 +8421,9 @@
       ]
     },
     "sheets_2025:Info": {
+      "Creating new spreadsheet...": [
+        "Ustvarjanje nove preglednice..."
+      ],
       "Detect automatically": [
         "Samodejno zaznaj"
       ],

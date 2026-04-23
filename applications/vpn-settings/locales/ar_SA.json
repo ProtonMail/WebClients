@@ -9194,6 +9194,9 @@
       "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
         "لـ ${ DRIVE_SHORT_APP_NAME } و ${ DOCS_SHORT_APP_NAME } و ${ SHEETS_SHORT_APP_NAME }."
       ],
+      "Free": [
+        "مجاني"
+      ],
       "From: ${ fromEmail }": [
         "مِن: ${ fromEmail }"
       ],
@@ -9547,6 +9550,9 @@
       "State": [
         "الحالة"
       ],
+      "Storage": [
+        "التخزين"
+      ],
       "Street address": [
         "عنوان الطريق"
       ],
@@ -9579,6 +9585,9 @@
       ],
       "Type": [
         "النوع"
+      ],
+      "Unlimited": [
+        "غير محدود"
       ],
       "Upload 1 or more encryption keys": [
         "تحميل مفتاح تشفير واحد أو أكثر"
@@ -9767,6 +9776,9 @@
       ]
     },
     "Link": {
+      "Account recovery explained": [
+        "شرح استرداد الحساب"
+      ],
       "activity monitor": [
         "مراقب النشاط"
       ],
@@ -12836,11 +12848,6 @@
         "بوابتك إلى الحرية على الإنترنت"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "اتصل بـ"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "جميع الميزات المميزة من ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME } و ${ CALENDAR_SHORT_APP_NAME } و ${ DRIVE_SHORT_APP_NAME } و ${ VPN_SHORT_APP_NAME } و ${ PASS_SHORT_APP_NAME }."
@@ -12972,9 +12979,6 @@
       "Verify now": [
         "تحقق الآن"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "تحقق الآن من عنوان البريد الإلكتروني للاسترداد هذا: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "التحقق من البريد الإلكتروني للاسترداد؟"
       ],
@@ -13014,9 +13018,6 @@
       ],
       "Verify recovery phone?": [
         "التحقق من هاتف الاسترداد؟"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "تحقق الآن من رقم هاتف الاسترداد هذا: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "يؤدي التحقق من رقم هاتفك إلى زيادة أمان حسابك ويسمح بخيارات إضافية للاسترداد."
@@ -15665,8 +15666,14 @@
       "Account recovery": [
         "استرداد الحساب"
       ],
+      "Account restricted": [
+        "تم تقييد الحساب"
+      ],
       "Account suspended": [
         "تم تعليق الحساب"
+      ],
+      "Account temporarily locked": [
+        "الحساب مقفل مؤقتًا"
       ],
       "Action": [
         "الإجراء"

@@ -88,9 +88,9 @@
       "Add photos": [
         "Fotos hinzufügen"
       ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "Hinzufügen zu \"${ album.name }\" (${ album.photoCount } Foto)",
-        "Hinzufügen zu \"${ album.name }\" (${ album.photoCount } Fotos)"
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "Hinzufügen zu \"${ name }\" (${ photoCount } Foto)",
+        "Hinzufügen zu \"${ name }\" (${ photoCount } Fotos)"
       ],
       "Add to album": [
         "Zum Album hinzufügen"
@@ -515,9 +515,6 @@
       "Get in touch": [
         "Kontakt aufnehmen"
       ],
-      "Get link": [
-        "Link abrufen"
-      ],
       "Get mobile and desktop apps": [
         "Mobile und Desktop-Apps herunterladen"
       ],
@@ -644,9 +641,6 @@
       "Load image": [
         "Bild laden"
       ],
-      "Loading link": [
-        "Link wird geladen"
-      ],
       "Make a copy": [
         "Erstelle eine Kopie"
       ],
@@ -661,9 +655,6 @@
       ],
       "Manage labels": [
         "Kategorien verwalten"
-      ],
-      "Manage link": [
-        "Link verwalten"
       ],
       "Manage share": [
         "Freigabe verwalten"
@@ -4904,6 +4895,10 @@
       "${ albumName } has been successfully deleted": [
         "${ albumName } wurde erfolgreich gelöscht"
       ],
+      "${ albums } album": [
+        "${ albums } Album",
+        "${ albums } Alben"
+      ],
       "${ appName } needs your permission to ${ enableDesktopNotifications }.": [
         "${ appName } benötigt deine Erlaubnis, um ${ enableDesktopNotifications }."
       ],
@@ -4987,6 +4982,14 @@
       "${ fileName }: low-resolution preview": [
         "${ fileName }: Vorschau in niedriger Auflösung"
       ],
+      "${ files } file": [
+        "${ files } Datei",
+        "${ files } Dateien"
+      ],
+      "${ folders } folder": [
+        "${ folders } Ordner",
+        "${ folders } Ordner"
+      ],
       "${ groupCounts } group found": [
         "${ groupCounts } Gruppe gefunden",
         "${ groupCounts } Gruppen gefunden"
@@ -5020,6 +5023,10 @@
       "${ photoCount } item": [
         "${ photoCount } Eintrag",
         "${ photoCount } Einträge"
+      ],
+      "${ photos } photo": [
+        "${ photos } Foto",
+        "${ photos } Fotos"
       ],
       "${ plan.Title } requires at least 1 dedicated server ${ serverPricePerMonth }": [
         "${ plan.Title } erfordert mindestens einen dedizierten Server ${ serverPricePerMonth }"
@@ -6325,9 +6332,6 @@
       "Shared by ${ sharedBy }": [
         "Geteilt von ${ sharedBy }"
       ],
-      "Shared by you": [
-        "Geteilt von dir"
-      ],
       "Shared link not found": [
         "Geteilten Link nicht gefunden"
       ],
@@ -6654,9 +6658,6 @@
       "Unsupported file type for Photos": [
         "Für Fotos nicht unterstützter Dateityp"
       ],
-      "Untitled": [
-        "Ohne Titel"
-      ],
       "Update required": [
         "Aktualisierung erforderlich"
       ],
@@ -6731,9 +6732,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Gut gemacht, du hast deinen Speicherplatz um 5 GB erhöht!"
-      ],
-      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "Wir haben technische Probleme. Alle Aktionen im Zusammenhang mit Alben sind temporär deaktiviert."
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "Wir konnten nicht verifizieren, dass ${ nameAuthor } ${ node.name } hochgeladen hat. Möglicherweise wurden folgende Daten manipuliert: Reihenfolge der Dateidaten. Öffne die Datei nur, wenn du ihr vertraust."
@@ -9548,9 +9546,6 @@
       "Access updated": [
         "Zugriff aktualisiert"
       ],
-      "Album failed to be renamed": [
-        "Album konnte nicht umbenannt werden"
-      ],
       "Album renamed successfully": [
         "Album erfolgreich umbenannt"
       ],
@@ -9601,9 +9596,6 @@
       ],
       "Failed to download files: ${ err }": [
         "Download der Dateien fehlgeschlagen: ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "Einladungsdetails konnten nicht geladen werden"
       ],
       "Failed to move, please try again": [
         "Verschieben fehlgeschlagen, bitte versuche es erneut"
@@ -9734,6 +9726,11 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Einige Bilder wurden wegen doppelter Dateinamen in der aktuellen Auswahl nicht hochgeladen."
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "Album erfolgreich umbenannt"
       ]
     },
     "Oauth instructions": {
@@ -10669,11 +10666,6 @@
     "Placeholder for contact group name": {
       "Name": [
         "Name"
-      ]
-    },
-    "plan customizer, users": {
-      "contact": [
-        "kontaktiere"
       ]
     },
     "Plan description": {
@@ -11689,6 +11681,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-Schreibassistent"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, und ${ LUMO_APP_NAME } mit Premium-Funktionen"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } und ${ VPN_SHORT_APP_NAME } mit Premiumfunktionen"
       ],
@@ -11919,6 +11917,10 @@
       ],
       "Version history": [
         "Versionsverlauf"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Video-Meetings, bis zu ${ PAID_PREMIUM_MAX_PARTICIPANTS } Teilnehmer",
+        "Video-Meetings, bis zu ${ PAID_PREMIUM_MAX_PARTICIPANTS } Teilnehmer"
       ],
       "Watch the interview": [
         "Schau dir das Interview an"

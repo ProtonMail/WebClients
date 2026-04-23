@@ -9963,6 +9963,9 @@
       "for your first month": [
         "適用於您的首個月"
       ],
+      "Free": [
+        "免費"
+      ],
       "From: ${ fromEmail }": [
         "寄件者: ${ fromEmail }"
       ],
@@ -10419,6 +10422,9 @@
       "Statement": [
         "陳述式"
       ],
+      "Storage": [
+        "雲端儲存"
+      ],
       "Street address": [
         "街道位址"
       ],
@@ -10472,6 +10478,9 @@
       ],
       "Undo send": [
         "取消傳送"
+      ],
+      "Unlimited": [
+        "吃到飽"
       ],
       "Updates": [
         "更新"
@@ -13868,11 +13877,6 @@
         "安全防護的電子郵件保護隱私"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "業務聯繫"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, and ${ CALENDAR_SHORT_APP_NAME }": [
         "您的頂級質子版服務源自於 ${ BRAND_NAME } 、 ${ MAIL_SHORT_APP_NAME } 、 ${ PASS_SHORT_APP_NAME } 、 ${ VPN_SHORT_APP_NAME } 、 ${ DRIVE_SHORT_APP_NAME } 和 ${ CALENDAR_SHORT_APP_NAME }"
@@ -14081,9 +14085,6 @@
       "Verify now": [
         "立刻驗證"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "立即驗證此復原電子郵件位址：${ email.Value }"
-      ],
       "Verify recovery email?": [
         "驗證還原電郵？"
       ],
@@ -14126,9 +14127,6 @@
       ],
       "Verify recovery phone?": [
         "驗證用於帳戶救援的手機號碼？"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "立即驗證此復原電話號碼：${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "驗證您的手機號碼可以提高帳戶安全性，並在救援時提供另一個可用的選項。"

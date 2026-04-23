@@ -88,10 +88,6 @@
       "Add photos": [
         "Aggiungi foto"
       ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "Aggiungi a \"${ album.name }\" (${ album.photoCount } foto)",
-        "Aggiungi a \"${ album.name }\" (${ album.photoCount } foto)"
-      ],
       "Add to album": [
         "Aggiungi all'album"
       ],
@@ -506,9 +502,6 @@
       "Get in touch": [
         "Mettiti in contatto"
       ],
-      "Get link": [
-        "Ottieni link"
-      ],
       "Get mobile and desktop apps": [
         "Ottieni app mobili e per desktop"
       ],
@@ -629,9 +622,6 @@
       "Load image": [
         "Carica Immagine"
       ],
-      "Loading link": [
-        "Caricamento del link in corso"
-      ],
       "Make a copy": [
         "Fare una copia"
       ],
@@ -646,9 +636,6 @@
       ],
       "Manage labels": [
         "Gestisci etichette"
-      ],
-      "Manage link": [
-        "Gestisci link"
       ],
       "Manage share": [
         "Gestisci condivisione"
@@ -3855,6 +3842,9 @@
       "We were not able to load some of your shared items": [
         "Non siamo riusciti a caricare alcuni dei tuoi elementi condivisi"
       ],
+      "We were not able to load some search results": [
+        "Non siamo in grado di caricare alcuni risultati"
+      ],
       "We were not able to load the folder contents": [
         "Impossibile caricare il contenuto della cartella"
       ],
@@ -6141,9 +6131,6 @@
       "Shared by ${ sharedBy }": [
         "Condiviso da ${ sharedBy }"
       ],
-      "Shared by you": [
-        "Condivise da te"
-      ],
       "Shared link not found": [
         "Link condiviso non trovato"
       ],
@@ -6380,6 +6367,9 @@
       "To fight spam and abuse, please verify you are human.": [
         "Completa la verifica umana. Questa è necessaria per contrastare spam e abusi."
       ],
+      "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it's still best to download files only from trusted sources. ": [
+        "Per aiutarti a proteggerti, ${ DRIVE_APP_NAME } può analizzare i tuoi file in modo da preservare la privacy e bloccare quelli dannosi. Tuttavia, è sempre meglio scaricare file solo da fonti affidabili. "
+      ],
       "To help protect you, ${ DRIVE_APP_NAME } can scan your files in a privacy-preserving manner and block malicious files. However, it’s still best to download files only from trusted sources. ": [
         "Per proteggerti, ${ DRIVE_APP_NAME } può eseguire la scansione dei tuoi file nel rispetto della privacy e bloccare file dannosi. Tuttavia, è sempre meglio scaricare file solo da fonti attendibili."
       ],
@@ -6461,9 +6451,6 @@
       "Unsupported file type for Photos": [
         "Tipo di file non supportato per Foto"
       ],
-      "Untitled": [
-        "Senza titolo"
-      ],
       "Updating drive search...": [
         "Aggiornamento della ricerca di unità in corso..."
       ],
@@ -6535,9 +6522,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Ben fatto, hai appena aumentato lo spazio di archiviazione a 5 GB!"
-      ],
-      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "Stiamo riscontrando problemi tecnici. Tutte le azioni relative agli album sono temporaneamente disabilitate."
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "Non siamo riusciti a verificare che ${ nameAuthor } abbia caricato ${ node.name }. Potrebbero essere stati manomessi i seguenti elementi: ordine dei dati del file. Apri solo se ti fidi."
@@ -9256,9 +9240,6 @@
       "Access updated": [
         "Accesso aggiornato"
       ],
-      "Album failed to be renamed": [
-        "Impossibile rinominare l'album"
-      ],
       "Album renamed successfully": [
         "Album rinominato con successo"
       ],
@@ -9309,9 +9290,6 @@
       ],
       "Failed to download files: ${ err }": [
         "Scaricamento dei file non riuscito: ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "Impossibile caricare i dettagli dell'invito"
       ],
       "Failed to move, please try again": [
         "Spostamento non riuscito. Per favore riprova"
@@ -10326,11 +10304,6 @@
     "Placeholder for contact group name": {
       "Name": [
         "Nome"
-      ]
-    },
-    "plan customizer, users": {
-      "contact": [
-        "contatto"
       ]
     },
     "Plan description": {
@@ -12333,6 +12306,10 @@
       ],
       "Folder details": [
         "Dettagli cartella"
+      ],
+      "Found ${ resultCount } result": [
+        "Trovato ${ resultCount } risultato",
+        "Trovati ${ resultCount } risultati"
       ],
       "Get ${ DRIVE_SHORT_APP_NAME } on your phone": [
         "Scarica ${ DRIVE_SHORT_APP_NAME } sul tuo telefono"

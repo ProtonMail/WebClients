@@ -8393,6 +8393,9 @@
       "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
         "สำหรับ ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME } และ ${ SHEETS_SHORT_APP_NAME }"
       ],
+      "Free": [
+        "ฟรี"
+      ],
       "From: ${ fromEmail }": [
         "ตั้งแต่: ${ fromEmail }"
       ],
@@ -8732,6 +8735,9 @@
       "State": [
         "รัฐ/จังหวัด"
       ],
+      "Storage": [
+        "พื้นที่จัดเก็บ"
+      ],
       "Street address": [
         "ที่อยู่"
       ],
@@ -8764,6 +8770,9 @@
       ],
       "Type": [
         "รูปแบบ"
+      ],
+      "Unlimited": [
+        "ไม่จำกัด"
       ],
       "Upload 1 or more encryption keys": [
         "อัปโหลดคีย์การเข้ารหัสลับ 1 รายการขึ้นไป"
@@ -8821,6 +8830,9 @@
       ],
       "Why would you like to cancel?": [
         "ทำไมคุณถึงต้องการยกเลิก?"
+      ],
+      "Yes": [
+        "ใช่"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "ใช่ ฉันต้องการลบบัญชีนี้และข้อมูลที่เกี่ยวข้องทั้งหมดแบบถาวร"
@@ -11663,11 +11675,6 @@
         "ประตูสู่อิสรภาพทางออนไลน์ของคุณ"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "ติดต่อ"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "คุณสมบัติพรีเมียมทั้งหมดจาก ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } และ ${ PASS_SHORT_APP_NAME }"
@@ -11769,9 +11776,6 @@
       "Verify now": [
         "ยืนยันตอนนี้"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "ยืนยันที่อยู่อีเมลการกู้คืนนี้ทันที: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "ยืนยันอีเมลการกู้คืนหรือไม่?"
       ],
@@ -11811,9 +11815,6 @@
       ],
       "Verify recovery phone?": [
         "ยืนยันหมายเลขโทรศัพท์สำรองหรือไม่?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "ยืนยันหมายเลขโทรศัพท์กู้คืนนี้ทันที: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "การยืนยันหมายเลขโทรศัพท์ของคุณจะเพิ่มความปลอดภัยให้กับบัญชีและช่วยให้มีตัวเลือกเพิ่มเติมสำหรับการกู้คืน"
@@ -14173,8 +14174,14 @@
       "Account recovery": [
         "กู้บัญชี"
       ],
+      "Account restricted": [
+        "บัญชีถูกจำกัด"
+      ],
       "Account suspended": [
         "บัญชีถูกระงับแล้ว"
+      ],
+      "Account temporarily locked": [
+        "บัญชีถูกล็อกชั่วคราว"
       ],
       "Action": [
         "การดำเนินการ"

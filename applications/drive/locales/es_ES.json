@@ -88,10 +88,6 @@
       "Add photos": [
         "Añadir fotos"
       ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "Añadir a «${ album.name }» (${ album.photoCount } foto)",
-        "Añadir a «${ album.name }» (${ album.photoCount } fotos)"
-      ],
       "Add to album": [
         "Añadir al álbum"
       ],
@@ -515,9 +511,6 @@
       "Get in touch": [
         "Ponte en contacto"
       ],
-      "Get link": [
-        "Obtener enlace"
-      ],
       "Get mobile and desktop apps": [
         "Obtén aplicaciones móviles y de escritorio"
       ],
@@ -641,9 +634,6 @@
       "Load image": [
         "Cargar imagen"
       ],
-      "Loading link": [
-        "Cargando el enlace"
-      ],
       "Make a copy": [
         "Hacer una copia"
       ],
@@ -658,9 +648,6 @@
       ],
       "Manage labels": [
         "Administrar etiquetas"
-      ],
-      "Manage link": [
-        "Administrar enlace"
       ],
       "Manage share": [
         "Gestionar los enlaces compartidos"
@@ -6265,9 +6252,6 @@
       "Shared by ${ sharedBy }": [
         "Compartido por ${ sharedBy }"
       ],
-      "Shared by you": [
-        "Compartido por ti"
-      ],
       "Shared link not found": [
         "Enlace compartido no encontrado"
       ],
@@ -6594,9 +6578,6 @@
       "Unsupported file type for Photos": [
         "Formato de archivo no compatible con Fotos"
       ],
-      "Untitled": [
-        "Sin título"
-      ],
       "Update required": [
         "Actualización necesaria"
       ],
@@ -6671,9 +6652,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "¡Bien hecho! Has aumentado tu almacenamiento a 5 GB."
-      ],
-      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "Estamos experimentando problemas técnicos. Todas las acciones relacionadas con los álbumes están temporalmente desactivadas."
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "No se pudo verificar que ${ nameAuthor } subiera ${ node.name }. El orden de los datos del archivo podría haber sido manipulado. Ábrelo solo si confías en él."
@@ -9432,9 +9410,6 @@
       "Access updated": [
         "Se ha actualizado el acceso."
       ],
-      "Album failed to be renamed": [
-        "Error al cambiar el nombre del álbum"
-      ],
       "Album renamed successfully": [
         "Se ha cambiado el nombre del álbum."
       ],
@@ -9482,9 +9457,6 @@
       ],
       "Failed to download files: ${ err }": [
         "Error al descargar los archivos: ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "No se ha podido cargar los detalles de la invitación."
       ],
       "Failed to move, please try again": [
         "Error al mover. Inténtalo de nuevo."
@@ -10544,11 +10516,6 @@
     "Placeholder for contact group name": {
       "Name": [
         "Nombre"
-      ]
-    },
-    "plan customizer, users": {
-      "contact": [
-        "contactar"
       ]
     },
     "Plan description": {

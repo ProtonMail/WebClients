@@ -12632,6 +12632,9 @@
       "for your first month": [
         "สำหรับเดือนแรกของคุณ"
       ],
+      "Free": [
+        "ฟรี"
+      ],
       "From: ${ fromEmail }": [
         "ตั้งแต่: ${ fromEmail }"
       ],
@@ -13211,6 +13214,9 @@
       "Sticky labels": [
         "ป้ายกำกับแบบตรึง"
       ],
+      "Storage": [
+        "พื้นที่จัดเก็บ"
+      ],
       "Street address": [
         "ที่อยู่"
       ],
@@ -13276,6 +13282,9 @@
       ],
       "Undo send": [
         "ยกเลิกการส่ง"
+      ],
+      "Unlimited": [
+        "ไม่จำกัด"
       ],
       "Unlimited hide-my-email aliases": [
         "นามแฝง hide-my-email ไม่จำกัด"
@@ -17317,11 +17326,6 @@
         "ประตูสู่อิสรภาพทางออนไลน์ของคุณ"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "ติดต่อ"
-      ]
-    },
     "Plan description": {
       "All ${ BRAND_NAME } premium products included in Duo.": [
         "ผลิตภัณฑ์พรีเมียมทั้งหมดของ ${ BRAND_NAME } รวมอยู่ใน Duo"
@@ -17537,9 +17541,6 @@
       "Verify now": [
         "ยืนยันตอนนี้"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "ยืนยันที่อยู่อีเมลการกู้คืนนี้ทันที: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "ยืนยันอีเมลการกู้คืนหรือไม่?"
       ],
@@ -17582,9 +17583,6 @@
       ],
       "Verify recovery phone?": [
         "ยืนยันหมายเลขโทรศัพท์สำรองหรือไม่?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "ยืนยันหมายเลขโทรศัพท์กู้คืนนี้ทันที: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "การยืนยันหมายเลขโทรศัพท์ของคุณจะเพิ่มความปลอดภัยให้กับบัญชีและช่วยให้มีตัวเลือกเพิ่มเติมสำหรับการกู้คืน"

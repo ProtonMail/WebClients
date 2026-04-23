@@ -6194,9 +6194,6 @@
       "Asking for help": [
         "Ber om hjelp"
       ],
-      "By adding people you trust as recovery contacts, we'll be able to send them an email to help you if you're having trouble to recover your data after a password reset. You can also be a recovery contact for others.": [
-        "Ved å legge til personer du stoler på som gjenopprettingskontakter, kan vi sende dem en e-post for å hjelpe deg hvis du har problemer med å gjenopprette dataene dine etter en tilbakestilling av passordet. Du kan også være en gjenopprettingskontakt for andre."
-      ],
       "Cancel request": [
         "Avbryt forespørsel"
       ],
@@ -6350,9 +6347,6 @@
       "Recovery contact removed": [
         "Gjenopprettingskontakt fjernet"
       ],
-      "Recovery contacts": [
-        "Gjenopprettingskontakter"
-      ],
       "Recovery request sent": [
         "Gjenopprettingsforespørsel sendt"
       ],
@@ -6447,9 +6441,6 @@
       "To disable this recovery method, remove all your recovery contacts.": [
         "For å deaktivere denne gjenopprettingsmetoden, fjern alle gjenopprettingskontaktene dine."
       ],
-      "To use trusted contact recovery, you must have an account recovery method set.": [
-        "For å bruke gjenoppretting med klarerte kontakter, må du ha satt opp en gjenopprettingsmetode for kontoen."
-      ],
       "Trusted contact": [
         "Betrodd kontakt"
       ],
@@ -6501,10 +6492,6 @@
       "You reached the maximum of ${ limit } emergency contact.": [
         "Du har nådd maksimalt ${ limit } nødkontakt.",
         "Du har nådd maksimalt ${ limit } nødkontakter."
-      ],
-      "You reached the maximum of ${ limit } recovery contact.": [
-        "Du har nådd maksgrensen på ${ limit } gjenopprettingskontakt.",
-        "Du har nådd maksgrensen på ${ limit } gjenopprettingskontakter."
       ],
       "You will be notified when someone requests emergency access.": [
         "Du vil bli varslet når noen ber om nødtilgang."
@@ -13982,6 +13969,9 @@
       "for your first month": [
         "for første måneden din"
       ],
+      "Free": [
+        "Free"
+      ],
       "From: ${ fromEmail }": [
         "Fra: ${ fromEmail }"
       ],
@@ -14586,6 +14576,9 @@
       "Sticky labels": [
         "Prioriterte etiketter"
       ],
+      "Storage": [
+        "Lagringsplass"
+      ],
       "Street address": [
         "Gateadresse"
       ],
@@ -14654,6 +14647,9 @@
       ],
       "Undo send": [
         "Angre sending"
+      ],
+      "Unlimited": [
+        "Ubegrenset"
       ],
       "Unlimited hide-my-email aliases": [
         "Ubegrenset antall hide-my-email-aliaser"
@@ -19046,11 +19042,6 @@
         "Din inngangsport til frihet på nettet"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "kontakt"
-      ]
-    },
     "Plan description": {
       "A VPN solution that provides secure, high-speed access to the internet.": [
         "En VPN-løsning som gir sikker og rask internettilgang."
@@ -19393,9 +19384,6 @@
       "Verify now": [
         "Verifiser nå"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "Verifiser nå denne gjenopprettings-epostadressen: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "Verifisere gjenopprettings-epost?"
       ],
@@ -19438,9 +19426,6 @@
       ],
       "Verify recovery phone?": [
         "Verifisere gjenopprettingstelefon?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "Verifiser dette gjenopprettingstelefonnummert nå: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Bekreftelse av telefonnummeret ditt øker kontosikkerheten og gir flere alternativer for gjenoppretting."

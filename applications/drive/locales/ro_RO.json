@@ -89,10 +89,10 @@
       "Add photos": [
         "Adaugă fotografii"
       ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "Adăugare în „${ album.name }” (${ album.photoCount } fotografie)",
-        "Adăugare în „${ album.name }” (${ album.photoCount } fotografii)",
-        "Adăugare în „${ album.name }” (${ album.photoCount } de fotografii)"
+      "Add to \"${ name }\" (${ photoCount } photo)": [
+        "Adăugare în „${ name }” (${ photoCount } fotografie)",
+        "Adăugare în „${ name }” (${ photoCount } fotografii)",
+        "Adăugare în „${ name }” (${ photoCount } de fotografii)"
       ],
       "Add to album": [
         "Adăugare în album"
@@ -520,9 +520,6 @@
       "Get in touch": [
         "Contactați-ne"
       ],
-      "Get link": [
-        "Obținere legătură web"
-      ],
       "Get mobile and desktop apps": [
         "Aplicații mobile și desktop"
       ],
@@ -649,9 +646,6 @@
       "Load image": [
         "Încărcare imagine"
       ],
-      "Loading link": [
-        "Se încarcă legătura"
-      ],
       "Make a copy": [
         "Creare copie"
       ],
@@ -666,9 +660,6 @@
       ],
       "Manage labels": [
         "Gestionare etichete"
-      ],
-      "Manage link": [
-        "Gestionare legătură web"
       ],
       "Manage share": [
         "Gestionare partajări"
@@ -6426,9 +6417,6 @@
       "Shared by ${ sharedBy }": [
         "Partajat de ${ sharedBy }"
       ],
-      "Shared by you": [
-        "Partajate de mine"
-      ],
       "Shared link not found": [
         "legătură web partajată negăsită"
       ],
@@ -6757,9 +6745,6 @@
       "Unsupported file type for Photos": [
         "Tip de fișier nesuportat pentru „Fotografii”"
       ],
-      "Untitled": [
-        "Nedenumit"
-      ],
       "Update required": [
         "Actualizare necesară"
       ],
@@ -6834,9 +6819,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Bun, tocmai v-ați mărit spațiul de stocare la 5 GiB!"
-      ],
-      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "Avem probleme tehnice. Orice acțiuni legate de albume sunt dezactivate temporar."
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "Nu s-a putut verifica dacă ${ nameAuthor } a încărcat ${ node.name }. Următoarele ar fi putut fi falsificate: ordinea datelor fișierului. Deschideți doar dacă aveți încredere."
@@ -9668,9 +9650,6 @@
       "Access updated": [
         "Acces actualizat"
       ],
-      "Album failed to be renamed": [
-        "Albumul nu a putut fi redenumit."
-      ],
       "Album renamed successfully": [
         "Albumul a fost redenumit."
       ],
@@ -9721,9 +9700,6 @@
       ],
       "Failed to download files: ${ err }": [
         "Nu s-a reușit descărcarea fișierelor: ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "Încărcarea detaliilor invitației a eșuat."
       ],
       "Failed to move, please try again": [
         "Mutarea a eșuat. Reîncercați."
@@ -9862,6 +9838,11 @@
     "Notification for duplicate filenames in the current upload": {
       "Some images were not uploaded due to duplicate filenames in the current selection.": [
         "Unele imagini nu au fost încărcate din cauza numelor de fișiere duplicate în selecția curentă."
+      ]
+    },
+    "Notitication": {
+      "Album renamed successfully": [
+        "Albumul a fost redenumit."
       ]
     },
     "Oauth instructions": {
@@ -10804,11 +10785,6 @@
     "Placeholder for contact group name": {
       "Name": [
         "Nume"
-      ]
-    },
-    "plan customizer, users": {
-      "contact": [
-        "contactați"
       ]
     },
     "Plan description": {
@@ -11854,6 +11830,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent de scriere ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } și ${ LUMO_APP_NAME } cu funcții premium"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } și ${ VPN_SHORT_APP_NAME } cu funcțiile premium"
       ],
@@ -12090,6 +12072,11 @@
       ],
       "Version history": [
         "Istoric versiuni"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Conferințe video, maxim ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant",
+        "Conferințe video, maxim ${ PAID_PREMIUM_MAX_PARTICIPANTS } participanți",
+        "Conferințe video, maxim ${ PAID_PREMIUM_MAX_PARTICIPANTS } de participanți"
       ],
       "Watch the interview": [
         "Priviți interviul"

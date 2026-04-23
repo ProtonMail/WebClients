@@ -9436,6 +9436,9 @@
       "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
         "Til ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME } og ${ SHEETS_SHORT_APP_NAME }."
       ],
+      "Free": [
+        "Free"
+      ],
       "From: ${ fromEmail }": [
         "Fra: ${ fromEmail }"
       ],
@@ -9791,6 +9794,9 @@
       "State": [
         "Stat"
       ],
+      "Storage": [
+        "Lagerplads"
+      ],
       "Street address": [
         "Adresse"
       ],
@@ -9823,6 +9829,9 @@
       ],
       "Type": [
         "Type"
+      ],
+      "Unlimited": [
+        "Ubegrænset"
       ],
       "Upload 1 or more encryption keys": [
         "Upload 1 eller flere krypteringsnøgler"
@@ -9880,6 +9889,9 @@
       ],
       "Why would you like to cancel?": [
         "Hvorfor ønsker du at opsige?"
+      ],
+      "Yes": [
+        "Ja"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Ja, jeg ønsker at slette denne konto og alle dens data permanent."
@@ -13027,11 +13039,6 @@
         "Din port til online frihed"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "kontakt"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "Alle premium-funktioner fra ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } og ${ PASS_SHORT_APP_NAME }."
@@ -13251,9 +13258,6 @@
       "Verify now": [
         "Bekræft nu"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "Bekræft denne e-mailadresse til gendannelse nu: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "Bekræft e-mail til gendannelse?"
       ],
@@ -13293,9 +13297,6 @@
       ],
       "Verify recovery phone?": [
         "Bekræft telefon til gendannelse?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "Bekræft dette telefonnummer til gendannelse nu: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Ved at Bekræfte dit telefonnummer øger du din kontos sikkerhed og giver flere muligheder for gendannelse."
@@ -14946,6 +14947,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe-skriveassistent"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } med premium funktioner"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } og ${ VPN_SHORT_APP_NAME } med premium funktioner"
       ],
@@ -15203,6 +15210,10 @@
       ],
       "Version history": [
         "Versionshistorik"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Videomøder, max ${ PAID_PREMIUM_MAX_PARTICIPANTS } deltager",
+        "Videomøde, op til ${ PAID_PREMIUM_MAX_PARTICIPANTS } deltagere"
       ],
       "Watch the interview": [
         "Se interviewet"
@@ -15771,8 +15782,14 @@
       "Account recovery": [
         "Kontogendannelse"
       ],
+      "Account restricted": [
+        "Kontoen har begrænsninger"
+      ],
       "Account suspended": [
         "Konto suspenderet"
+      ],
+      "Account temporarily locked": [
+        "Konto midlertidigt låst"
       ],
       "Action": [
         "Handling"

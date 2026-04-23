@@ -1463,6 +1463,50 @@
         "administrator"
       ]
     },
+    "Admin roles onboarding": {
+      "3 new admin roles": [
+        "3 roluri noi de administrator"
+      ],
+      "Admin roles": [
+        "Roluri de administrator"
+      ],
+      "Configure security policies, data retention, and VPN infrastructure, and manage audit logs.": [
+        "Configurați politicile de securitate, păstrarea datelor și infrastructura VPN și gestionați jurnalele de audit."
+      ],
+      "Delegate management by assigning specific admin roles. Give each admin only the access they need. This follows the principle of least privilege, protecting your organization from compromised accounts and accidental errors.": [
+        "Delegați gestionarea prin atribuirea unor roluri de administrator specifice. Acordați fiecărui administrator doar accesul de care are nevoie. Aceasta respectă principiul privilegiilor minime, protejându-vă organizația de conturi compromise și erori accidentale."
+      ],
+      "Delegate management with the appropriate admin role.": [
+        "Delegați gestionarea cu rolul de administrator corespunzător."
+      ],
+      "Manage all users, groups, storage, security, billing, audit logs, and system configurations.": [
+        "Gestionați toți utilizatorii, grupurile, spațiul de stocare, securitatea, facturarea, jurnalele de audit și configurațiile sistemului."
+      ],
+      "Manage users, groups, and storage for all members, assign roles, and allocate licenses.": [
+        "Gestionați utilizatorii, grupurile și spațiul de stocare pentru toți membrii, atribuiți roluri și alocați licențe."
+      ],
+      "New: Control admin access for individual users": [
+        "Nou: control acces administrator pentru utilizatori individuali"
+      ],
+      "Organization admin": [
+        "Administrator organizație"
+      ],
+      "Organization admin:": [
+        "Administrator organizație:"
+      ],
+      "Security admin": [
+        "Administrator securitate"
+      ],
+      "Security admin:": [
+        "Administrator securitate:"
+      ],
+      "User admin": [
+        "Administrator utilizatori"
+      ],
+      "User admin:": [
+        "Administrator utilizatori:"
+      ]
+    },
     "AdminRole_Info": {
       "A role is a group of permissions that you can assign to the members of your organization.": [
         "Un rol este un grup de permisiuni pe care îl puteți atribui membrilor organizației."
@@ -9563,6 +9607,9 @@
       "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
         "Pentru ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME } și ${ SHEETS_SHORT_APP_NAME }."
       ],
+      "Free": [
+        "Free"
+      ],
       "From: ${ fromEmail }": [
         "De la: ${ fromEmail }"
       ],
@@ -9919,6 +9966,9 @@
       "State": [
         "Județ/Stat"
       ],
+      "Storage": [
+        "Spațiu de stocare"
+      ],
       "Street address": [
         "Strada"
       ],
@@ -9951,6 +10001,9 @@
       ],
       "Type": [
         "Tip"
+      ],
+      "Unlimited": [
+        "Nelimitat"
       ],
       "Upload 1 or more encryption keys": [
         "Încărcare una sau mai multe chei de criptare"
@@ -10008,6 +10061,9 @@
       ],
       "Why would you like to cancel?": [
         "De ce doriți să anulați?"
+      ],
+      "Yes": [
+        "Da"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Da, vreau să șterg definitiv acest cont și toate datele sale."
@@ -13211,11 +13267,6 @@
         "Poarta dvs. către libertatea online"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "contactați"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "Toate funcțiile premium de la ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } și ${ PASS_SHORT_APP_NAME }."
@@ -13437,9 +13488,6 @@
       "Verify now": [
         "Verificare acum"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "Verificare acum această adresă de e-mail: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "Verificare e-mail de recuperare?"
       ],
@@ -13479,9 +13527,6 @@
       ],
       "Verify recovery phone?": [
         "Verificare număr de telefon de recuperare?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "Verificare acum acest număr de telefon: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Verificarea numărului de telefon vă mărește securitatea contului și permite opțiuni suplimentare de recuperare."
@@ -15181,6 +15226,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent de scriere ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } și ${ LUMO_APP_NAME } cu funcții premium"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } și ${ VPN_SHORT_APP_NAME } cu funcțiile premium"
       ],
@@ -15444,6 +15495,11 @@
       ],
       "Version history": [
         "Istoric versiuni"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Conferințe video, maxim ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant",
+        "Conferințe video, maxim ${ PAID_PREMIUM_MAX_PARTICIPANTS } participanți",
+        "Conferințe video, maxim ${ PAID_PREMIUM_MAX_PARTICIPANTS } de participanți"
       ],
       "Watch the interview": [
         "Priviți interviul"
@@ -16018,8 +16074,14 @@
       "Account recovery": [
         "Recuperare cont"
       ],
+      "Account restricted": [
+        "Cont restricționat"
+      ],
       "Account suspended": [
         "Cont suspendat"
+      ],
+      "Account temporarily locked": [
+        "Cont blocat temporar"
       ],
       "Action": [
         "Acțiune"

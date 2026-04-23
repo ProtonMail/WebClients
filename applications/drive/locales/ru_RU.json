@@ -90,12 +90,6 @@
       "Add photos": [
         "Добавить фото"
       ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "Добавить в “${ album.name }” (${ album.photoCount } фото)",
-        "Добавить в “${ album.name }” (${ album.photoCount } фото)",
-        "Добавить в “${ album.name }” (${ album.photoCount } фото)",
-        "Добавить в “${ album.name }” (${ album.photoCount } фото)"
-      ],
       "Add to album": [
         "Добавить в альбом"
       ],
@@ -447,9 +441,6 @@
       "Get in touch": [
         "Связаться с нами"
       ],
-      "Get link": [
-        "Получить ссылку"
-      ],
       "Get Started": [
         "Начать"
       ],
@@ -558,9 +549,6 @@
       "Load image": [
         "Загрузить изображение"
       ],
-      "Loading link": [
-        "Ссылка на загрузку"
-      ],
       "Make a copy": [
         "Сделать копию"
       ],
@@ -575,9 +563,6 @@
       ],
       "Manage labels": [
         "Управление ярлыками"
-      ],
-      "Manage link": [
-        "Управлять ссылкой"
       ],
       "Manage share": [
         "Управление общим ресурсом"
@@ -5840,9 +5825,6 @@
       "Unsupported file": [
         "Неподдерживаемый файл"
       ],
-      "Untitled": [
-        "Без названия"
-      ],
       "Updating drive search...": [
         "Обновляем поиск по хранилищу..."
       ],
@@ -5905,9 +5887,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Так держать, вы только что увеличили свое хранилище до 5 ГБ!"
-      ],
-      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "У нас возникли технические проблемы. Все действия, связанные с альбомами, временно отключены."
       ],
       "We couldn’t process your payment.": [
         "Нам не удалось обработать ваш платёж."
@@ -8351,9 +8330,6 @@
       "Access updated": [
         "Доступ обновлен"
       ],
-      "Album failed to be renamed": [
-        "Не удалось переименовать альбом"
-      ],
       "Album renamed successfully": [
         "Альбом успешно переименован."
       ],
@@ -8395,9 +8371,6 @@
       ],
       "Failed to download files: ${ err }": [
         "Не удалось скачать файлы: ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "Не удалось загрузить информацию о приглашении"
       ],
       "Failed to move, please try again": [
         "Не удалось переместить, попробуйте еще раз"
@@ -9144,11 +9117,6 @@
     "Placeholder for contact group name": {
       "Name": [
         "Имя"
-      ]
-    },
-    "plan customizer, users": {
-      "contact": [
-        "свяжитесь"
       ]
     },
     "Plans": {

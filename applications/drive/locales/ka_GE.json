@@ -88,10 +88,6 @@
       "Add photos": [
         "დაამატეთ სურათები"
       ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "\"${ album.name }\"-ში ჩამატება. (${ album.photoCount } სურათი)",
-        "\"${ album.name }\"-ში ჩამატება. (${ album.photoCount } სურათი)"
-      ],
       "Add to album": [
         "ალბომში დამატება"
       ],
@@ -512,9 +508,6 @@
       "Get in touch": [
         "დაგვიკავშირდით"
       ],
-      "Get link": [
-        "ბმულის მიღება"
-      ],
       "Get mobile and desktop apps": [
         "მიიღეთ აპები მობილურისთვის და კომპიუტერისთვის"
       ],
@@ -638,9 +631,6 @@
       "Load image": [
         "გამოსახულების ჩატვირთვა"
       ],
-      "Loading link": [
-        "ბმულის ჩატვირთვა"
-      ],
       "Make a copy": [
         "ასლის შექმნა"
       ],
@@ -655,9 +645,6 @@
       ],
       "Manage labels": [
         "ჭდეების მართვა"
-      ],
-      "Manage link": [
-        "ბმულის მართვა"
       ],
       "Manage share": [
         "ზიარის მართვა"
@@ -6079,9 +6066,6 @@
       "Shared by ${ sharedBy }": [
         "გაზიარებულია ${ sharedBy }-ის მიერ"
       ],
-      "Shared by you": [
-        "გაზიარებული თქვენს მიერ"
-      ],
       "Shared link not found": [
         "გაზიარებული ბმული ვერ ვიპოვე"
       ],
@@ -6362,9 +6346,6 @@
       "Unsupported file": [
         "ფაილის მხარდაჭერა არ არსებობს"
       ],
-      "Untitled": [
-        "უსათაურო"
-      ],
       "Update required": [
         "საჭიროა განახლება"
       ],
@@ -6439,9 +6420,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "სწორად იქცევით. თქვენ ახლახან გაზარდეთ თქვენი საცავი 5 გბ-ით!"
-      ],
-      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "განვიცდით ტექნიკურ სიძნელეებს. ქმედებები, რომლებიც ალბომს ეხება, დროებით გამორთულია."
       ],
       "We couldn’t process your payment.": [
         "თქვენი გადახდა ვერ დავამუშავეთ."
@@ -9021,9 +8999,6 @@
       "Access updated": [
         "წვდომა განახლდა"
       ],
-      "Album failed to be renamed": [
-        "ალბომის სახელის გადარქმევა ჩავარდა"
-      ],
       "Album renamed successfully": [
         "ალბომის სახელი წარმატებით შეიცვალა"
       ],
@@ -9071,9 +9046,6 @@
       ],
       "Failed to download files: ${ err }": [
         "ფაილების გადმოწერის შეცდომა: ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "მოწვევის დეტალების ჩატვირთვა ჩავარდა"
       ],
       "Failed to move, please try again": [
         "გადატანის შეცდომა. თავიდან სცადეთ"
@@ -10062,11 +10034,6 @@
     "Placeholder for contact group name": {
       "Name": [
         "სახელი"
-      ]
-    },
-    "plan customizer, users": {
-      "contact": [
-        "კონტაქტი"
       ]
     },
     "Plans": {

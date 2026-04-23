@@ -3513,6 +3513,11 @@
         "Se"
       ]
     },
+    "Confirm cancellation": {
+      "Access is restored once usage is back within limits.": [
+        "L’accesso viene ripristinato una volta che l’utilizzo rientra nei limiti."
+      ]
+    },
     "Confirm modal title": {
       "Import is incomplete!": [
         "Importazione incompleta!"
@@ -4787,6 +4792,9 @@
       "Keep different parts of your life separate and your inbox organized with additional addresses.": [
         "Mantieni separate le diverse parti della tua vita e organizza la tua casella di posta con indirizzi aggiuntivi."
       ],
+      "Keep your team secure on the go with our apps for web, iOS, Android, Windows, Mac, and Linux.": [
+        "Mantieni il tuo team al sicuro anche in mobilità con le nostre app per web, iOS, Android, Windows, Mac e Linux."
+      ],
       "Learn more about common problems": [
         "Scopri di più sui problemi comuni"
       ],
@@ -5168,6 +5176,9 @@
       "macOS": [
         "macOS"
       ],
+      "macOS 14 (Sonoma) or newer": [
+        "macOS Sonoma (versione 14) o successiva."
+      ],
       "macOS Big Sur": [
         "macOS Big Sur"
       ],
@@ -5179,6 +5190,9 @@
       ],
       "macOS Monterey": [
         "macOS Monterey"
+      ],
+      "macOS Ventura": [
+        "macOS Ventura"
       ],
       "Mail": [
         "Email"
@@ -5932,6 +5946,15 @@
       "${ user } will not be able to access your account until the next emergency access.": [
         "${ user } non potrà accedere al tuo account fino al prossimo accesso d'emergenza."
       ],
+      "**${ contact }** is now your recovery contact. They can help you recover your data after a password reset.": [
+        "**${ contact }** è ora il tuo nuovo contatto di recupero. Possono aiutarti a recuperare i tuoi dati dopo il reset della password."
+      ],
+      "**If they confirm**, click **Approve recovery**. This will unlock their encrypted data.": [
+        "**se confermano**, clicca **Approva recupero**. Questo sbloccherà i loro dati criptati."
+      ],
+      "**If they didn’t request your help**, it is possible that someone else is trying to access their account. In that case, ignore this request.": [
+        "**Se non hanno richiesto il tuo aiuto**, è possibile che qualcun altro stia cercando di accedere al loro account. In tal caso, ignora questa richiesta."
+      ],
       "Access granted": [
         "Accesso consentito"
       ],
@@ -5962,6 +5985,12 @@
       "Approved request": [
         "Richiesta approvata"
       ],
+      "Ask a recovery contact for help. They’ll get an email to verify your request and unlock your data.": [
+        "Chiedi a un contatto di recupero di aiutarti. Ti daranno una e-mail per verificare la tua richiesta e sbloccare i tuoi dati."
+      ],
+      "Asking for help": [
+        "Chiedi aiuto"
+      ],
       "Cancel request": [
         "Annulla richiesta"
       ],
@@ -5979,6 +6008,9 @@
       ],
       "Choose someone you trust with your data. They must already have a ${ BRAND_NAME } Account.": [
         "Scegli qualcuno di cui ti fidi con i tuoi dati. Deve già avere un account ${ BRAND_NAME }."
+      ],
+      "Contacts": [
+        "Contatti"
       ],
       "Data successfully recovered. You can now decrypt your existing data and encrypted files.": [
         "Dati recuperati con successo. Ora puoi decriptare i tuoi dati esistenti e i file crittografati."
@@ -6013,17 +6045,29 @@
       "Emergency contact added": [
         "Contatto di emergenza aggiunto"
       ],
+      "Emergency contact enabled": [
+        "Abilitato contatto di emergenza"
+      ],
       "Emergency contact removed": [
         "Contatto di emergenza rimosso"
       ],
+      "Enable": [
+        "Abilita"
+      ],
       "Enable auto-renew": [
         "Abilita rinnovo automatico"
+      ],
+      "For ${ email }": [
+        "Per ${ email }"
       ],
       "Give access now": [
         "Fornisci accesso ora"
       ],
       "Give immediate access?": [
         "Dare accesso immediato?"
+      ],
+      "Got it": [
+        "Capito"
       ],
       "Immediate": [
         "Immediato"
@@ -6037,6 +6081,9 @@
       "Less than a minute left": [
         "Meno di un minuto rimanente"
       ],
+      "Let ${ user } know it’s really you trying to regain access.": [
+        "Fai sapere a ${ user } che sei davvero tu a cercare di riottenere l’accesso."
+      ],
       "None": [
         "Nessuna azione"
       ],
@@ -6046,14 +6093,41 @@
       "Only request emergency access when there's a **valid situation** requiring you to manage another user's account.": [
         "Richiedi l'accesso di emergenza solo quando c'è una **situazione valida** che ti richiede di gestire l'account di un altro utente."
       ],
+      "Pending request": [
+        "Richiesta in attesa"
+      ],
       "People I trust": [
         "Persone attendibili"
+      ],
+      "People who have you as a recovery contact": [
+        "Persone che ti hanno come contatto di recupero"
       ],
       "People who trust me": [
         "Persone che si fidano di me"
       ],
+      "Proceed anyway": [
+        "Procedi comunque"
+      ],
       "Protect your legacy with emergency access": [
         "Proteggi la tua eredità con l'accesso di emergenza"
+      ],
+      "Recover data": [
+        "Recupero dati"
+      ],
+      "Recovery approved": [
+        "Recupero approvato"
+      ],
+      "Recovery contact added": [
+        "Contatto di recupero aggiunto"
+      ],
+      "Recovery contact enabled": [
+        "Contatto di recupero abilitato"
+      ],
+      "Recovery contact removed": [
+        "Contatto di recupero rimosso"
+      ],
+      "Recovery request sent": [
+        "Richiesta di recupero inviata"
       ],
       "Refuse access": [
         "Nega accesso"
@@ -6061,11 +6135,20 @@
       "Refuse access?": [
         "Negare l'accesso?"
       ],
+      "Remove recovery contact": [
+        "Rimuovi contatto di recupero"
+      ],
       "Remove trusted contact": [
         "Rimuovi contatto attendibile"
       ],
+      "Remove your recovery contacts to continue": [
+        "Rimuovi i tuoi contatti di recupero per continuare"
+      ],
       "Renew to get emergency access again.": [
         "Rinnova per ottenere di nuovo l'accesso di emergenza."
+      ],
+      "Request access": [
+        "Richiesta d'accesso"
       ],
       "Request access?": [
         "Richiesta di accesso?"
@@ -6073,11 +6156,29 @@
       "Requesting access": [
         "Richiesta di accesso"
       ],
+      "Review recovery request": [
+        "Revisiona la richiesta di recupero"
+      ],
       "Revoke access": [
         "Revoca l'accesso"
       ],
       "Revoke access?": [
         "Revocare l'accesso?"
+      ],
+      "See request": [
+        "Vedi richiesta"
+      ],
+      "Select recovery contact ${ name }": [
+        "Seleziona contatto di recupero: ${ name }"
+      ],
+      "Set account recovery": [
+        "Imposta un account di recupero"
+      ],
+      "Stop being recovery contact?": [
+        "Vuoi smettere di essere il contatto di recupero?"
+      ],
+      "Stop being trusted contact": [
+        "Smetti di essere un account fidato"
       ],
       "Stop being trusted contact?": [
         "Smettere di essere contatto attendibile?"
@@ -6107,8 +6208,14 @@
       "Time required before automatically granting them access": [
         "Tempo richiesto prima di concedere loro automaticamente l'accesso"
       ],
+      "To disable this recovery method, remove all your recovery contacts.": [
+        "Per disabilitare il metodo di recupero, rimuovi tutti i tuoi contatti di recupero."
+      ],
       "Trusted contact": [
         "Contatti sicuri"
+      ],
+      "Unable to recover data": [
+        "Non in grado di recuperare i tuoi dati"
       ],
       "Upgrade": [
         "Aggiorna"
@@ -6128,6 +6235,9 @@
       "Wait time saved": [
         "Tempo di attesa salvato"
       ],
+      "We received a request to unlock the encrypted data of your contact **${ user }**.": [
+        "Abbiamo ricevuto la richiesta di sbloccare i dati criptati dei tuoi contatti **${ user }**."
+      ],
       "We’ll notify **${ user }** that you requested emergency access.": [
         "Avviseremo **${ user }** che hai richiesto accesso di emergenza."
       ],
@@ -6139,6 +6249,9 @@
       ],
       "You can remove their access at any time to regain exclusive control of your account.": [
         "Puoi rimuovere il loro accesso in qualsiasi momento per riottenere il controllo esclusivo del tuo account."
+      ],
+      "You have not been designated as a recovery contact for anyone yet.": [
+        "Ancora non sei stato assegnato come contatto di recupero."
       ],
       "You have not been designated as an emergency contact for anyone yet.": [
         "Non sei stato ancora designato come contatto di emergenza per nessuno."
@@ -6165,6 +6278,18 @@
       ],
       "Your emergency contact ${ name } is requesting access to your account.": [
         "Il tuo contatto di emergenza ${ name } sta richiedendo di accedere al tuo account."
+      ],
+      "Your recovery contact ${ name } is asking for help to recover their data.": [
+        "Il tuo contatto di recupero ${ name } sta chiedendo aiuto per recuperare i propri dati."
+      ],
+      "Your recovery contact has helped you recover data.": [
+        "I tuoi contatti di recupero ti hanno aiutato a recuperare i tuoi dati."
+      ],
+      "Your recovery contacts": [
+        "I tuoi contatti di recupero"
+      ],
+      "Your recovery contacts should be people you know and can contact easily.": [
+        "I tuoi contatti di recupero dovrebbero essere persone che conosci e che puoi contattare facilmente."
       ]
     },
     "Empty group name": {
@@ -7508,6 +7633,12 @@
       "${ MaxVPN } VPN connection": [
         "${ MaxVPN } connessione VPN",
         "${ MaxVPN } connessioni VPN"
+      ],
+      "3 email domains": [
+        "3 domini e-mail"
+      ],
+      "500 GB storage": [
+        "500 GB di memoria"
       ],
       "Access to all countries": [
         "Accesso a tutti i paesi"
@@ -12927,6 +13058,9 @@
       "Bookings, billings, and orders": [
         "Prenotazioni, fatturazioni e ordini"
       ],
+      "Brand your workspace": [
+        "Personalizza il tuo spazio di lavoro con il tuo brand"
+      ],
       "Browser": [
         "Browser"
       ],
@@ -13089,8 +13223,15 @@
       "Current email": [
         "Email attuale"
       ],
+      "Custom email domain": [
+        "Dominio e-mail personalizzato",
+        "Domini e-mail personalizzati"
+      ],
       "Daily email notifications": [
         "Notifiche email giornaliere"
+      ],
+      "Data harvesting": [
+        "Raccolta dati"
       ],
       "Date": [
         "Data"
@@ -13283,6 +13424,9 @@
       ],
       "for your first month": [
         "per il tuo primo mese"
+      ],
+      "Free": [
+        "Free"
       ],
       "From: ${ fromEmail }": [
         "Da: ${ fromEmail }"
@@ -13879,6 +14023,9 @@
       "Sticky labels": [
         "Etichette adesive"
       ],
+      "Storage": [
+        "Archiviazione"
+      ],
       "Street address": [
         "Indirizzo"
       ],
@@ -13944,6 +14091,9 @@
       ],
       "Undo send": [
         "Annullamento dell'invio"
+      ],
+      "Unlimited": [
+        "Senza limiti"
       ],
       "Unlimited hide-my-email aliases": [
         "Alias hide-my-email illimitati"
@@ -18162,11 +18312,6 @@
         "La tua porta di accesso alla libertà online"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "contatto"
-      ]
-    },
     "Plan description": {
       "All ${ BRAND_NAME } premium products included in Duo.": [
         "Tutti i prodotti premium di ${ BRAND_NAME } inclusi in Duo."
@@ -18480,9 +18625,6 @@
       "Verify now": [
         "Verifica ora"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "Verifica ora questo indirizzo email di recupero: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "Vuoi verificare l'indirizzo email di recupero?"
       ],
@@ -18525,9 +18667,6 @@
       ],
       "Verify recovery phone?": [
         "Vuoi verificare il numero di telefono di recupero?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "Verifica ora il numero di telefono di recupero: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Verificare il tuo numero di telefono migliora la sicurezza del tuo account e permette opzioni aggiuntive per il recupero."
@@ -21501,11 +21640,17 @@
       ]
     },
     "Subtitle": {
+      "${ DRIVE_PLUS_NAME } offers 200 GB storage for your files and photos. You are also eligible for yearly storage bonuses.": [
+        "${ DRIVE_PLUS_NAME } offre 200 GB di memoria per i tuoi file e le tue foto. Hai anche diritto a bonus annuali di spazio di archiviazione."
+      ],
       "Free forever": [
         "Gratis per sempre"
       ],
       "per month, billed annually": [
         "al mese, con fatturazione annuale"
+      ],
+      "See how ${ MAIL_APP_NAME } compares, and why our independence makes a difference.": [
+        "Vedi come ${ MAIL_APP_NAME } come si mostra, e perché la nostra indipendenza fa la differenza."
       ],
       "View VPN session details for your organization.": [
         "Visualizza i dettagli della sessione VPN per la tua organizzazione."
@@ -23003,6 +23148,9 @@
       ],
       "Link confirmation": [
         "Conferma il link"
+      ],
+      "Lower your cost without losing features": [
+        "Riduci i costi senza perdere"
       ],
       "Main password": [
         "Password principale"

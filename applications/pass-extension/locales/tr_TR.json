@@ -628,9 +628,6 @@
       "Set extra password": [
         "Ek parolayı ayarla"
       ],
-      "Settings": [
-        "Ayarlar"
-      ],
       "Setup 2FA": [
         "İki adımlı doğrulama kur"
       ],
@@ -945,6 +942,18 @@
       "Biometric authentication failed.": [
         "Biyometrik kimlik doğrulama başarısız oldu."
       ],
+      "Biometric lock credentials do not match.": [
+        "Biyometrik kilit kimlik doğrulama bilgileri eşleşmiyor."
+      ],
+      "Biometric lock credentials not found.": [
+        "Biyometrik kilit kimlik doğrulama bilgileri bulunamadı."
+      ],
+      "Biometric lock is not configured.": [
+        "Biyometrik kilit yapılandırılmamış."
+      ],
+      "Biometric lock setup failed.": [
+        "Biyometrik kilit kurulumu başarısız oldu."
+      ],
       "Cannot create alias (${ error }).": [
         "Takma ad oluşturulamadı (${ error })."
       ],
@@ -999,18 +1008,6 @@
       ],
       "Deleting vault \"${ payload.content.name }\" failed": [
         "\"${ payload.content.name }\" kasası silinemedi"
-      ],
-      "Desktop lock is not configured.": [
-        "Masaüstü kilidi yapılandırılmamış."
-      ],
-      "Desktop lock secret does not match.": [
-        "Masaüstü kilit parolası eşleşmiyor."
-      ],
-      "Desktop lock secret not found.": [
-        "Masaüstü kilidi şifresi bulunamadı."
-      ],
-      "Desktop lock setup failed.": [
-        "Masaüstü kilidi kurulumu başarısız oldu."
       ],
       "Detected ${ errors.length } corrupted csv row": [
         "${ errors.length } bozuk CSV satırı bulundu",
@@ -1288,6 +1285,9 @@
       ],
       "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
         "${ PASS_APP_NAME } masaüstü uygulamasında farklı bir hesapla oturum açılmış."
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "${ PASS_APP_NAME } masaüstü uygulamasında oturum açılmış olmalıdır."
       ],
       "The URL is in the list": [
         "Adres listede var"
@@ -2048,6 +2048,9 @@
       "Loading...": [
         "Yükleniyor..."
       ],
+      "Logging you out...": [
+        "Oturumunuz kapatılıyor..."
+      ],
       "Low Priority": [
         "Düşük Öncelik"
       ],
@@ -2077,7 +2080,8 @@
         "\"${ payload.content.name }\" içindeki tüm ögeler taşınıyor"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Başka bir kasaya taşınan ögenin güvenli bağlantıları silinir."
+        "Bir ögeyi başka bir kasaya taşımak onun güvenli bağlantılarını siler.",
+        "Ögeleri başka bir kasaya taşımak onların güvenli bağlantılarını siler."
       ],
       "Moving items": [
         "Ögeler taşınıyor"
@@ -2567,11 +2571,11 @@
       "Unlimited hide-my-email aliases and advanced alias management": [
         "Sınırsız hide-my-email takma adı ve gelişmiş takma ad yönetimi"
       ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
-        "Geçiş anahtarlarınıza erişmek için PIN kodunuzla ${ PASS_APP_NAME } kilidini açın"
+      "Unlock ${ PASS_APP_NAME } to access your passkeys": [
+        "Geçiş anahtarlarınıza erişmek için ${ PASS_APP_NAME } kilidini açın"
       ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
-        "Bu geçiş anahtarını kaydetmek için PIN kodunuzla ${ PASS_APP_NAME } kilidini açın"
+      "Unlock ${ PASS_APP_NAME } to save this passkey": [
+        "Bu geçiş anahtarını kaydetmek için ${ PASS_APP_NAME } kilidini açın"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "${ PASS_SHORT_APP_NAME } kilidini açmak için Biyometri kullanın"

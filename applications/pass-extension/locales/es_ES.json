@@ -628,9 +628,6 @@
       "Set extra password": [
         "Configurar la contraseña adicional"
       ],
-      "Settings": [
-        "Ajustes"
-      ],
       "Setup 2FA": [
         "Configurar 2FA"
       ],
@@ -2024,6 +2021,9 @@
       "Loading...": [
         "Cargando..."
       ],
+      "Logging you out...": [
+        "Cerrando la sesión..."
+      ],
       "Low Priority": [
         "Prioridad baja"
       ],
@@ -2053,7 +2053,8 @@
         "Moviendo todos los elementos desde \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros."
+        "Mover un elemento a otra caja fuerte eliminará sus enlaces seguros.",
+        "Mover elementos a otra caja fuerte eliminará sus enlaces seguros."
       ],
       "Moving items": [
         "Moviendo elementos"
@@ -2539,12 +2540,6 @@
       ],
       "Unlimited hide-my-email aliases and advanced alias management": [
         "Número ilimitado de alias ​​hide-my-email y administración avanzada de alias"
-      ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
-        "Desbloquea ${ PASS_APP_NAME } con tu código PIN para acceder a tus claves de acceso."
-      ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
-        "Desbloquea ${ PASS_APP_NAME } con tu código PIN para guardar esta clave de acceso."
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Desbloquea ${ PASS_SHORT_APP_NAME } con datos biométricos"

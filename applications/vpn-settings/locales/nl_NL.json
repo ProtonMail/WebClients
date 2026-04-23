@@ -9294,6 +9294,9 @@
       "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
         "Voor ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME } en ${ SHEETS_SHORT_APP_NAME }."
       ],
+      "Free": [
+        "Gratis"
+      ],
       "From: ${ fromEmail }": [
         "Van: ${ fromEmail }"
       ],
@@ -9646,6 +9649,9 @@
       "State": [
         "Staat"
       ],
+      "Storage": [
+        "Opslag"
+      ],
       "Street address": [
         "Adres"
       ],
@@ -9678,6 +9684,9 @@
       ],
       "Type": [
         "Soort"
+      ],
+      "Unlimited": [
+        "Onbeperkt"
       ],
       "Upload 1 or more encryption keys": [
         "Upload 1 of meer encryptiesleutels"
@@ -9735,6 +9744,9 @@
       ],
       "Why would you like to cancel?": [
         "Waarom wil u annuleren?"
+      ],
+      "Yes": [
+        "Ja"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Ja, ik wil permanent mijn account inclusief alle gegevens verwijderen."
@@ -12873,11 +12885,6 @@
         "Uw toegangspoort tot online vrijheid"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "neem contact op"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "Alle premium functies van ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } en ${ PASS_SHORT_APP_NAME }."
@@ -13097,9 +13104,6 @@
       "Verify now": [
         "Verifieer nu"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "Verifieer nu dit herstel-e-mailadres: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "Herstel-e-mailadres verifiëren?"
       ],
@@ -13139,9 +13143,6 @@
       ],
       "Verify recovery phone?": [
         "Hersteltelefoon verifiëren?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "Verifieer dit hersteltelefoonnummer nu: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Uw telefoonnummer verifiëren verhoogt uw accountbeveiliging en laat extra opties voor herstel toe."
@@ -15617,8 +15618,14 @@
       "Account recovery": [
         "Accountherstel"
       ],
+      "Account restricted": [
+        "Account beperkt"
+      ],
       "Account suspended": [
         "Account opgeschort"
+      ],
+      "Account temporarily locked": [
+        "Account tijdelijk geblokkeerd"
       ],
       "Action": [
         "Actie"

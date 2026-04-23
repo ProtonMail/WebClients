@@ -628,9 +628,6 @@
       "Set extra password": [
         "Configurar senha adicional"
       ],
-      "Settings": [
-        "Configurações"
-      ],
       "Setup 2FA": [
         "Configurar A2F"
       ],
@@ -2024,6 +2021,9 @@
       "Loading...": [
         "Carregando..."
       ],
+      "Logging you out...": [
+        "Desconectando você..."
+      ],
       "Low Priority": [
         "Baixa prioridade"
       ],
@@ -2053,7 +2053,8 @@
         "Movendo todos os itens de \"${ payload.content.name }\""
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "Movendo um item para outro cofre apagará seu link seguro."
+        "Movendo um item para outro cofre apagará seu link seguro.",
+        "Movendo item para outro cofre apagará seus links seguros."
       ],
       "Moving items": [
         "Movendo itens"
@@ -2543,11 +2544,11 @@
       "Unlimited hide-my-email aliases and advanced alias management": [
         "Aliases hide-my-email ilimitados e gerenciamento avançado de aliases"
       ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
-        "Desbloqueie o aplicativo ${ PASS_APP_NAME } com o código PIN para acessar as chaves de acesso"
+      "Unlock ${ PASS_APP_NAME } to access your passkeys": [
+        "Desbloqueie o ${ PASS_APP_NAME } para acessar sua chave de acesso"
       ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
-        "Desbloqueie o aplicativo ${ PASS_APP_NAME } com o código PIN para salvar esta chave de acesso"
+      "Unlock ${ PASS_APP_NAME } to save this passkey": [
+        "Desbloqueie o ${ PASS_APP_NAME } para salvar esta chave de acesso"
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "Desbloqueie o ${ PASS_SHORT_APP_NAME } com biometria"
@@ -3154,7 +3155,7 @@
         "Esvaziar lixeira"
       ],
       "Enable offline access": [
-        "Ativar acesso off-line"
+        "Ativar o acesso off-line"
       ],
       "Enter email or username": [
         "Digite o e-mail ou nome de usuário"

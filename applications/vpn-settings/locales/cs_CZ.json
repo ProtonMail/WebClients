@@ -200,8 +200,11 @@
       "Connect apps and devices": [
         "Připojit aplikace a zařízení"
       ],
+      "Connect Gmail address": [
+        "Připojte svou Gmail adresu"
+      ],
       "Connect to Gmail": [
-        "Připojit k Gmailu"
+        "Připojit ke Gmail"
       ],
       "Connect to video conferencing": [
         "Připojit se k videokonferenci"
@@ -226,6 +229,9 @@
       ],
       "Continue to ${ planOrAppName }": [
         "Pokračovat na ${ planOrAppName }"
+      ],
+      "Continue to sign in": [
+        "Pokračujte v přihlášení"
       ],
       "Continue with this password": [
         "Pokračovat s tímto heslem"
@@ -1440,6 +1446,14 @@
         "správce"
       ]
     },
+    "Admin roles onboarding": {
+      "Manage all users, groups, storage, security, billing, audit logs, and system configurations.": [
+        "Spravujte všechny uživatele, skupiny, úložiště, zabezpečení, fakturaci, auditované logy a systémové konfigurace."
+      ],
+      "New: Control admin access for individual users": [
+        "Novinka: Řízení přístupových práv správce pro jednotlivé uživatele"
+      ]
+    },
     "AdminRole_Info": {
       "A role is a group of permissions that you can assign to the members of your organization.": [
         "Role je skupina oprávnění, kterou můžete přiřadit členům vaší organizace."
@@ -1908,6 +1922,9 @@
       "${ BRAND_NAME } Migration Assistant": [
         "${ BRAND_NAME } Migration Assistant"
       ],
+      "App installed": [
+        "Aplikace nainstalována"
+      ],
       "Authenticate": [
         "Ověřit"
       ],
@@ -1943,6 +1960,9 @@
       ],
       "In progress": [
         "Probíhá"
+      ],
+      "Install app": [
+        "Nainstalujte aplikaci"
       ],
       "Install migration app": [
         "Nainstalujte migrační aplikaci"
@@ -2008,7 +2028,7 @@
         "Přihlaste se do Google Workspace"
       ],
       "Status": [
-        "Status"
+        "Stav"
       ],
       "Transfer errors": [
         "Chyby přenosu"
@@ -3459,6 +3479,9 @@
     "Delete group prompt": {
       "Are you sure you want to delete this group?": [
         "Opravdu chcete smazat tuto skupinu?"
+      ],
+      "Please note that if you delete the group ${ displayGroupName }, it will be permanently removed.": [
+        "Upozorňujeme, že pokud skupinu ${ displayGroupName } smažete, bude trvale odebrána."
       ]
     },
     "Delete group prompt with email": {
@@ -3521,7 +3544,7 @@
         "Snadno synchronizujte soubory do cloudu z počítače a přistupujte k nim z mobilního zařízení."
       ],
       "Emails sent to ${ connectedAddressText } will now show up in ${ MAIL_APP_NAME }.": [
-        "E-maily zaslané na adresu ${ connectedAddressText } se nyní budou zobrazovat v aplikaci ${ MAIL_APP_NAME }."
+        "E-maily odeslané na ${ connectedAddressText } se nyní budou zobrazovat v ${ MAIL_APP_NAME }."
       ],
       "Enable ${ PROTON_SENTINEL_NAME } to access these features": [
         "Pro přístup k těmto funkcím povolte ${ PROTON_SENTINEL_NAME }"
@@ -3648,6 +3671,9 @@
       ],
       "You can import events in iCal format (ICS file). The file should have a maximum size of ${ MAX_IMPORT_FILE_SIZE_STRING } and have up to ${ MAX_IMPORT_EVENTS_STRING } events. If your file is bigger, please split it into smaller files.": [
         "Můžete importovat události ve formátu iCal (ICS soubor). Tento soubor by měl mít maximální velikost ${ MAX_IMPORT_FILE_SIZE_STRING } a maximálně ${ MAX_IMPORT_EVENTS_STRING } událostí. Pokud je váš soubor větší, prosím rozdělte ho na menší soubory."
+      ],
+      "You can merge addresses into one main ${ BRAND_NAME } account using our support guide.": [
+        "Adresy můžete sloučit do jednoho hlavního účtu ${ BRAND_NAME } podle pokynů v našem návodu."
       ],
       "You can now send emails from ${ BRAND_NAME } using this address.": [
         "Nyní můžete odesílat e-maily z ${ BRAND_NAME } pomocí této adresy."
@@ -6720,6 +6746,9 @@
       "Before requesting a new verification code, check your spam folder and check that ${ strong } is the correct address.": [
         "Před vyžádáním nového ověřovacího kódu zkontrolujte složku spamu a zkontrolujte, zda je adresa ${ strong } správná."
       ],
+      "Before sending a new verification code, check your spam folder for ${ EmailOrPhoneNumber }.": [
+        "Než vám zašleme nový ověřovací kód, zkontrolujte prosím složku se spamem, zda se tam nenachází zpráva od ${ EmailOrPhoneNumber }."
+      ],
       "Before you can receive emails for your custom domain addresses at ${ MAIL_APP_NAME }, you need to add the following two MX records in your DNS console (located on the platform where you purchased the custom domain). You can find an example and some helpful tips ${ kbLink }.": [
         "Než budete moci přijímat e-maily na adresy své vlastní domény u služby ${ MAIL_APP_NAME }, je potřeba přidat následující dva záznamy MX do konzole DNS (nachází se na platformě, kde jste zakoupili vlastní doménu). Příklad a několik užitečných tipů naleznete ${ kbLink }."
       ],
@@ -7087,7 +7116,7 @@
         "Zadejte nové heslo pro uživatele ${ userName }."
       ],
       "Enter the 12-word recovery phrase associated with your account.": [
-        "Zadejte 12-slovnou frázi pro obnovení spojenou s vaším účtem."
+        "Zadejte 12slovnou frázi pro obnovení spojenou s vaším účtem."
       ],
       "Enter the code from your authenticator app": [
         "Zadejte kód z vaší ověřovací aplikace"
@@ -7152,6 +7181,9 @@
       "expires ${ expirationDate }": [
         "vyprší ${ expirationDate }"
       ],
+      "Facebook": [
+        "Facebook"
+      ],
       "Failed to fetch logs.": [
         "Stažení logů selhalo."
       ],
@@ -7178,6 +7210,9 @@
       ],
       "Gateway couldn't be deleted. Please try again": [
         "Bránu se nepodařilo odstranit. Zkuste to prosím znovu."
+      ],
+      "Gateway deleted": [
+        "Brána smazána"
       ],
       "Gateway monitor": [
         "Monitorování brány"
@@ -7226,6 +7261,9 @@
       ],
       "High Priority": [
         "Vysoká priorita"
+      ],
+      "How to perform a signed-in reset": [
+        "Jak provést reset po přihlášení"
       ],
       "How your emergency contact can change your password for you:": [
         "Jak může váš nouzový kontakt změnit vaše heslo za vás:"
@@ -8520,6 +8558,9 @@
       "We couldn’t process your payment.": [
         "Vaši platbu jsme nemohli zpracovat."
       ],
+      "We detected you are already signed in to a ${ BRAND_NAME } web app on **another browser**. You may be able to perform a password reset from your active session.": [
+        "Zjistili jsme, že jste již přihlášeni do webové aplikace ${ BRAND_NAME } v **jiném prohlížeči**. Obnovení hesla můžete provést z aktuální relace."
+      ],
       "We generated a strong password for you": [
         "Vygenerovali jsme vám silné heslo"
       ],
@@ -9513,6 +9554,9 @@
       "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
         "Pro ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME } a ${ SHEETS_SHORT_APP_NAME }."
       ],
+      "Free": [
+        "Free"
+      ],
       "From: ${ fromEmail }": [
         "Od: ${ fromEmail }"
       ],
@@ -9870,6 +9914,9 @@
       "State": [
         "Stát"
       ],
+      "Storage": [
+        "Úložiště"
+      ],
       "Street address": [
         "Ulice a č. p."
       ],
@@ -9902,6 +9949,9 @@
       ],
       "Type": [
         "Typ"
+      ],
+      "Unlimited": [
+        "Neomezeně"
       ],
       "Upload 1 or more encryption keys": [
         "Nahrát 1 nebo více dešifrovacích klíčů"
@@ -9959,6 +10009,9 @@
       ],
       "Why would you like to cancel?": [
         "Proč chcete zušit?"
+      ],
+      "Yes": [
+        "Ano"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "Ano, chci trvale smazat tento účet a všechna data s ním spojená."
@@ -10091,6 +10144,9 @@
       ]
     },
     "Link": {
+      "Account recovery explained": [
+        "Obnovení účtu vysvětleno"
+      ],
       "activity monitor": [
         "monitor aktivity"
       ],
@@ -10216,6 +10272,9 @@
       ],
       "if your data is leaked": [
         "když dojde k úniku vašich dat"
+      ],
+      "Learn how": [
+        "Zjistit více"
       ],
       "Learn more": [
         "Více informací"
@@ -10706,6 +10765,9 @@
       "Continue cancelling": [
         "Pokračovat v rušení"
       ],
+      "Explore the latest news": [
+        "Prozkoumejte nejnovější zprávy"
+      ],
       "Keep current plan": [
         "Zachovat aktuální tarif"
       ],
@@ -10716,7 +10778,7 @@
         "Požadavek na funkci"
       ],
       "See how ${ BRAND_NAME } apps are evolving with your feedback.": [
-        "Podívejte se, jak se ${ BRAND_NAME } aplikace vyvíjejí díky vaší zpětné vazbě."
+        "Podívejte se, jak se aplikace ${ BRAND_NAME } vyvíjejí díky vaší zpětné vazbě."
       ],
       "Submit your ideas": [
         "Zašlete nám své nápady"
@@ -11930,6 +11992,9 @@
       ],
       "Daily email notifications": [
         "Denní e-mailová upozornění"
+      ],
+      "Disabling this means you won't get in-app notifications about promotions, new features, new ${ BRAND_NAME } services, and reminders.": [
+        "Pokud tuto funkci deaktivujete, nebudete dostávat oznámení v aplikaci o akcích, nových funkcích, nových službách ${ BRAND_NAME } a připomenutích."
       ],
       "During your first month of using a ${ BRAND_NAME } product": [
         "Během prvního měsíce používání produktu ${ BRAND_NAME }"
@@ -13197,11 +13262,6 @@
         "Vaše brána ke svobodě na internetu"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "kontaktujte"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "Všechny prémiové funkce z ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME } a ${ PASS_SHORT_APP_NAME }."
@@ -13307,7 +13367,7 @@
         "Microsoft 365"
       ],
       "Other": [
-        "Ostatní"
+        "Další"
       ],
       "Outlook": [
         "Outlook"
@@ -13425,9 +13485,6 @@
       "Verify now": [
         "Ověřit nyní"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "Nyní ověřte tuto e-mailovou adresu určenou pro obnovení: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "Ověřit e-mail obnovení?"
       ],
@@ -13467,9 +13524,6 @@
       ],
       "Verify recovery phone?": [
         "Ověřit telefon pro obnovení?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "Ověřte nyní toto telefonní číslo určené pro obnovení: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Ověřením telefonního čísla zvyšujete bezpečnost účtu a umožňujete další možnosti obnovení."
@@ -15218,6 +15272,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "Asistent psaní ${ BRAND_NAME } Scribe"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, a ${ LUMO_APP_NAME } s prémiovými funkcemi"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME } a ${ VPN_SHORT_APP_NAME } s prémiovými funkcemi"
       ],
@@ -15487,6 +15547,12 @@
       ],
       "Version history": [
         "Historie verzí"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Videokonference, pro ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníka",
+        "Videokonference, až pro ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníky",
+        "Videokonference, až pro ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníků",
+        "Videokonference, až pro ${ PAID_PREMIUM_MAX_PARTICIPANTS } účastníků"
       ],
       "Watch the interview": [
         "Shlédněte rozhovor"
@@ -16067,8 +16133,14 @@
       "Account recovery": [
         "Obnovení účtu"
       ],
+      "Account restricted": [
+        "Účet omezen"
+      ],
       "Account suspended": [
         "Účet pozastaven"
+      ],
+      "Account temporarily locked": [
+        "Účet dočasně uzamčen"
       ],
       "Action": [
         "Akce"
@@ -16176,7 +16248,7 @@
         "Jste si jisti, že chcete náhled zavřít?"
       ],
       "Are you sure you want to disconnect this address?": [
-        "Opravdu chcete tuto adresu odpojit?"
+        "Opravdu chcete odpojit tuto adresu?"
       ],
       "Are you sure?": [
         "Jste si jisti?"
@@ -16656,7 +16728,7 @@
         "Importovat skupiny"
       ],
       "Import your data to ${ BRAND_NAME }": [
-        "Načtěte svá data do ${ BRAND_NAME }"
+        "Importujte svá data do ${ BRAND_NAME }"
       ],
       "Information exposed in breach": [
         "Informace odhalené při úniku"

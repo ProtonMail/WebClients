@@ -9309,6 +9309,9 @@
       "For ${ DRIVE_SHORT_APP_NAME }, ${ DOCS_SHORT_APP_NAME }, and ${ SHEETS_SHORT_APP_NAME }.": [
         "适用于 ${ DRIVE_SHORT_APP_NAME }、${ DOCS_SHORT_APP_NAME } 和 ${ SHEETS_SHORT_APP_NAME }"
       ],
+      "Free": [
+        "Free"
+      ],
       "From: ${ fromEmail }": [
         "发件人：${ fromEmail }"
       ],
@@ -9663,6 +9666,9 @@
       "State": [
         "省份/地区"
       ],
+      "Storage": [
+        "存储"
+      ],
       "Street address": [
         "街道地址"
       ],
@@ -9695,6 +9701,9 @@
       ],
       "Type": [
         "类型"
+      ],
+      "Unlimited": [
+        "无限制"
       ],
       "Upload 1 or more encryption keys": [
         "上传一个或多个加密密钥"
@@ -9752,6 +9761,9 @@
       ],
       "Why would you like to cancel?": [
         "您为什么想要取消？"
+      ],
+      "Yes": [
+        "确定"
       ],
       "Yes, I want to permanently delete this account and all its data.": [
         "我确定要永久删除此账户及其所有数据。"
@@ -12849,11 +12861,6 @@
         "您通往线上自由的大门"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "联系人"
-      ]
-    },
     "Plan description": {
       "All premium features from ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }, ${ CALENDAR_SHORT_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, and ${ PASS_SHORT_APP_NAME }.": [
         "包含 ${ BRAND_NAME } ${ MAIL_SHORT_APP_NAME }、${ CALENDAR_SHORT_APP_NAME }、${ DRIVE_SHORT_APP_NAME }、${ VPN_SHORT_APP_NAME } 和 ${ PASS_SHORT_APP_NAME } 的所有高级功能。"
@@ -12975,9 +12982,6 @@
       "Verify now": [
         "立即验证"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "立即验证此密保邮箱地址：${ email.Value }"
-      ],
       "Verify recovery email?": [
         "验证密保邮箱？"
       ],
@@ -13017,9 +13021,6 @@
       ],
       "Verify recovery phone?": [
         "验证密保手机？"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "立即验证此密保手机号码：${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "完成邮箱地址验证可以提升账户安全性，多一种账户恢复选项。"
@@ -15434,8 +15435,14 @@
       "Account recovery": [
         "账户恢复"
       ],
+      "Account restricted": [
+        "账户受限"
+      ],
       "Account suspended": [
         "账号已被停用"
+      ],
+      "Account temporarily locked": [
+        "账户暂时锁定"
       ],
       "Action": [
         "操作"

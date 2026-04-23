@@ -322,6 +322,9 @@
       "Contract composer": [
         "Supista viestin kirjoitus"
       ],
+      "Copy": [
+        "Kopioi"
+      ],
       "Copy address": [
         "Kopioi osoite"
       ],
@@ -6992,6 +6995,9 @@
       "Copy the link to clipboard": [
         "Kopioi linkki leikepöydälle"
       ],
+      "Copy to clipboard": [
+        "Kopioi leikepöydälle"
+      ],
       "Copy your referral link": [
         "Kopioi suosittelulinkkisi"
       ],
@@ -12556,11 +12562,6 @@
         "Nimi"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "ole yhteydessä"
-      ]
-    },
     "Plans": {
       "${ cycle } month": [
         "${ cycle } kuukausi",
@@ -13803,6 +13804,12 @@
       ]
     },
     "Subscription reminder": {
+      "${ BRAND_NAME } Scribe writing assistant": [
+        "${ BRAND_NAME } Scribe kirjoitusavustaja"
+      ],
+      "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME }, and ${ LUMO_APP_NAME } with premium features": [
+        "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ${ VPN_SHORT_APP_NAME }, ${ MEET_SHORT_APP_NAME } ja ${ LUMO_APP_NAME } lisäominaisuuksilla"
+      ],
       "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, and ${ VPN_SHORT_APP_NAME } with premium features": [
         "${ CALENDAR_APP_NAME }, ${ DRIVE_SHORT_APP_NAME }, ${ PASS_SHORT_APP_NAME }, ja ${ VPN_SHORT_APP_NAME } premium-ominaisuuksilla"
       ],
@@ -14030,6 +14037,10 @@
       ],
       "Version history": [
         "Versiohistoria"
+      ],
+      "Video meetings, up to ${ PAID_PREMIUM_MAX_PARTICIPANTS } participant": [
+        "Videokokoukset, enintään ${ PAID_PREMIUM_MAX_PARTICIPANTS } osallistuja",
+        "Videokokoukset, enintään ${ PAID_PREMIUM_MAX_PARTICIPANTS } osallistujaa"
       ],
       "Watch the interview": [
         "Katso haastattelu"

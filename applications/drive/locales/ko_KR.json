@@ -87,9 +87,6 @@
       "Add photos": [
         "사진 추가"
       ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "\"${ album.name }\"에 추가 (${ album.photoCount }개 사진)"
-      ],
       "Add to album": [
         "앨범에 추가하기"
       ],
@@ -510,9 +507,6 @@
       "Get in touch": [
         "연락하기"
       ],
-      "Get link": [
-        "링크 생성"
-      ],
       "Get mobile and desktop apps": [
         "모바일 및 데스크톱 앱 설치"
       ],
@@ -636,9 +630,6 @@
       "Load image": [
         "이미지 불러오기"
       ],
-      "Loading link": [
-        "링크를 불러오는 중"
-      ],
       "Make a copy": [
         "복사본 만들기"
       ],
@@ -653,9 +644,6 @@
       ],
       "Manage labels": [
         "라벨 관리"
-      ],
-      "Manage link": [
-        "링크 관리"
       ],
       "Manage share": [
         "공유 관리"
@@ -6212,9 +6200,6 @@
       "Shared by ${ sharedBy }": [
         "${ sharedBy }님이 공유함"
       ],
-      "Shared by you": [
-        "내가 공유함"
-      ],
       "Shared link not found": [
         "공유 링크 찾을 수 없음"
       ],
@@ -6539,9 +6524,6 @@
       "Unsupported file type for Photos": [
         "사진에서 사용할 수 없는 지원되지 않는 파일 형식"
       ],
-      "Untitled": [
-        "무제"
-      ],
       "Update required": [
         "업데이트 필요"
       ],
@@ -6616,9 +6598,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "잘 하셨습니다. 이제 저장공간이 5GB로 확장되었습니다!"
-      ],
-      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "현재 기술적인 문제가 발생했습니다. 앨범 관련 작업은 일시적으로 사용할 수 없습니다."
       ],
       "We couldn't verify ${ nameAuthor } uploaded ${ node.name }. The following may have been tampered with: file data order. Only open if you trust it.": [
         "${ nameAuthor }님이 ${ node.name } 파일을 업로드했는지 확인할 수 없습니다. 다음 항목이 손상되었을 수 있습니다: 파일 데이터 순서. 신뢰할 수 있는 경우에만 여세요."
@@ -9248,9 +9227,6 @@
       "Access updated": [
         "접근 권한이 업데이트되었습니다"
       ],
-      "Album failed to be renamed": [
-        "앨범 이름 변경에 실패했습니다"
-      ],
       "Album renamed successfully": [
         "앨범의 이름이 성공적으로 변경되었습니다"
       ],
@@ -9298,9 +9274,6 @@
       ],
       "Failed to download files: ${ err }": [
         "파일 다운로드 실패: ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "초대 상세 정보를 불러오지 못했습니다"
       ],
       "Failed to move, please try again": [
         "이동을 실패했습니다, 나중에 다시 시도해주세요."
@@ -10348,11 +10321,6 @@
     "Placeholder for contact group name": {
       "Name": [
         "이름"
-      ]
-    },
-    "plan customizer, users": {
-      "contact": [
-        "연락"
       ]
     },
     "Plan description": {

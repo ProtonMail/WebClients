@@ -628,9 +628,6 @@
       "Set extra password": [
         "추가 비밀번호 설정"
       ],
-      "Settings": [
-        "설정"
-      ],
       "Setup 2FA": [
         "2단계 인증 설정"
       ],
@@ -1998,6 +1995,9 @@
       "Loading...": [
         "불러오는 중..."
       ],
+      "Logging you out...": [
+        "사용자를 로그아웃하는 중..."
+      ],
       "Low Priority": [
         "중요도 낮음"
       ],
@@ -2026,7 +2026,7 @@
         "\"${ payload.content.name }\" 에서 모든 항목 이동 중"
       ],
       "Moving an item to another vault will erase its secure links.": [
-        "항목을 다른 금고로 이동시 안전한 링크가 삭제됩니다."
+        "항목을 다른 금고로 이동하면 이 항목의 모든 안전한 링크가 삭제됩니다."
       ],
       "Moving items": [
         "항목 이동 중"
@@ -2510,12 +2510,6 @@
       ],
       "Unlimited hide-my-email aliases and advanced alias management": [
         "무제한 hide-my-email 별칭 및 향상된 별칭 관리"
-      ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to access your passkeys": [
-        "이 패스키에 접근하려면 PIN 코드로 ${ PASS_APP_NAME }를 잠금 해제하세요."
-      ],
-      "Unlock ${ PASS_APP_NAME } with your PIN code to save this passkey": [
-        "이 패스키를 저장하려면 사용자의 PIN 코드로 ${ PASS_APP_NAME }를 잠금 해제하세요."
       ],
       "Unlock ${ PASS_SHORT_APP_NAME } with biometrics": [
         "생체인증으로 ${ PASS_SHORT_APP_NAME } 잠금해제"

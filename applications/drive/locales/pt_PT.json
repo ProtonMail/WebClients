@@ -88,10 +88,6 @@
       "Add photos": [
         "Adicionar fotos"
       ],
-      "Add to \"${ album.name }\" (${ album.photoCount } photo)": [
-        "Adicionar a «${ album.name }» ( ${ album.photoCount } foto)",
-        "Adicionar a «${ album.name }» ( ${ album.photoCount } fotos)"
-      ],
       "Add to album": [
         "Adicionar ao álbum"
       ],
@@ -449,9 +445,6 @@
       "Get in touch": [
         "Entrar em contacto"
       ],
-      "Get link": [
-        "Obter ligação"
-      ],
       "Get secure storage for ${ simplePriceString }": [
         "Obtenha armazenamento seguro por ${ simplePriceString }"
       ],
@@ -566,9 +559,6 @@
       "Load image": [
         "Carregar a imagem"
       ],
-      "Loading link": [
-        "A carregar ligação"
-      ],
       "Make a copy": [
         "realizar uma cópia"
       ],
@@ -583,9 +573,6 @@
       ],
       "Manage labels": [
         "Gerir etiquetas"
-      ],
-      "Manage link": [
-        "Gerir a ligação"
       ],
       "Manage share": [
         "Gerir a partilha"
@@ -5448,9 +5435,6 @@
       "Shared by ${ sharedBy }": [
         "Partilhado por ${ sharedBy }"
       ],
-      "Shared by you": [
-        "Partilhado por si"
-      ],
       "Shared link not found": [
         "A ligação partilhada não foi encontrada."
       ],
@@ -5735,9 +5719,6 @@
       "Unsupported file": [
         "Ficheiro não suportado"
       ],
-      "Untitled": [
-        "Sem título"
-      ],
       "Updating drive search...": [
         "Atualização da pesquisa na unidade..."
       ],
@@ -5800,9 +5781,6 @@
       ],
       "Way to go, you've just increased your storage to 5 GB!": [
         "Muito bem, acabou de aumentar o seu armazenamento para 5 GB!"
-      ],
-      "We are experiencing technical issues. Any albums related actions are temporarily disabled.": [
-        "Temos problemas técnicos. Todas as ações relacionadas com os álbuns estão temporariamente desativadas."
       ],
       "We couldn’t process your payment.": [
         "Não é possível realizar o pagamento."
@@ -8218,9 +8196,6 @@
       "Access updated": [
         "O acesso foi atualizado."
       ],
-      "Album failed to be renamed": [
-        "Erro ao alterar o nome do álbum"
-      ],
       "Album renamed successfully": [
         "O nome do álbum foi alterado."
       ],
@@ -8265,9 +8240,6 @@
       ],
       "Failed to download files: ${ err }": [
         "Erro ao transferir os ficheiros: ${ err }"
-      ],
-      "Failed to load invitation details": [
-        "Erro ao carregar os detalhes do convite"
       ],
       "Failed to move, please try again": [
         "Erro ao mover. Tente novamente."
@@ -9084,11 +9056,6 @@
     "Placeholder for contact group name": {
       "Name": [
         "Nome"
-      ]
-    },
-    "plan customizer, users": {
-      "contact": [
-        "contacto"
       ]
     },
     "Plans": {

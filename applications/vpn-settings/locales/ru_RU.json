@@ -7867,6 +7867,9 @@
       "Folder location": [
         "Размещение папки"
       ],
+      "Free": [
+        "Free"
+      ],
       "From: ${ fromEmail }": [
         "От: ${ fromEmail }"
       ],
@@ -8188,6 +8191,9 @@
       "State": [
         "Состояние"
       ],
+      "Storage": [
+        "Хранилище"
+      ],
       "Street address": [
         "Адрес"
       ],
@@ -8220,6 +8226,9 @@
       ],
       "Type": [
         "Тип"
+      ],
+      "Unlimited": [
+        "Без ограничений"
       ],
       "Upload 1 or more encryption keys": [
         "Загрузите 1 или несколько ключей шифрования"
@@ -10815,11 +10824,6 @@
         "Ваш путь к свободе в Интернете"
       ]
     },
-    "plan customizer, users": {
-      "contact": [
-        "свяжитесь"
-      ]
-    },
     "Plans": {
       "${ cycle } month": [
         "${ cycle } месяц",
@@ -10997,9 +11001,6 @@
       "Verify now": [
         "Подтвердить сейчас"
       ],
-      "Verify now this recovery email address: ${ email.Value }": [
-        "Подтвердите этот адрес электронной почты для восстановления: ${ email.Value }"
-      ],
       "Verify recovery email?": [
         "Подтвердить резервный адрес электронной почты?"
       ],
@@ -11039,9 +11040,6 @@
       ],
       "Verify recovery phone?": [
         "Подтвердить телефон для восстановления?"
-      ],
-      "Verify this recovery phone number now: ${ phone.Value }": [
-        "Подтвердите этот номер телефона для восстановления: ${ phone.Value }"
       ],
       "Verifying your phone number increases your account security and allows additional options for recovery.": [
         "Подтверждение номера телефона повышает безопасность вашего аккаунта и дает дополнительные возможности для восстановления."
@@ -13251,6 +13249,9 @@
       ],
       "Account recovery": [
         "Восстановление аккаунта"
+      ],
+      "Account restricted": [
+        "Аккаунт ограничен"
       ],
       "Account suspended": [
         "Аккаунт временно заблокирован"
