@@ -262,6 +262,7 @@ enum AdminFeatureFlag {
     UserSecurityModal = 'UserSecurityModal',
     MLInsiderThreatAPIReportOnly = 'MLInsiderThreatAPIReportOnly',
     SplitLookup = 'SplitLookup',
+    DriveAdminFileExplorer = 'DriveAdminFileExplorer',
 }
 
 enum WalletFlag {
