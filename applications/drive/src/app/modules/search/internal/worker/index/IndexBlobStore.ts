@@ -1,4 +1,4 @@
-import type { Cached, CleanupEvent, QueryEvent, WriteEvent } from '@proton/proton-foundation-search';
+import type { Cached, CleanupEvent, ExportEvent, QueryEvent, WriteEvent } from '@proton/proton-foundation-search';
 import { SerDes } from '@proton/proton-foundation-search';
 
 import { Logger } from '../../shared/Logger';
@@ -30,7 +30,7 @@ export class IndexBlobStore {
         return [this.indexKind, blobName];
     }
 
-    async loadEvent(event: QueryEvent | WriteEvent | CleanupEvent): Promise<void> {
+    async loadEvent(event: QueryEvent | WriteEvent | CleanupEvent | ExportEvent): Promise<void> {
         const blobName = event.id().toString();
         const cached = this.cache.get(blobName);
         if (cached) {

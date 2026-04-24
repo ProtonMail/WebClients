@@ -374,6 +374,106 @@ describe('SharedWorkerAPI integration', () => {
         }, 15_000);
     });
 
+    describe('Scenario: stale entry cleanup after tree_refresh', () => {
+        it('removes entries for nodes that disappear between indexing cycles', async () => {
+            await api.registerClient(USER_ID, CLIENT_A, bridge.asBridge());
+            await state.waitForSearchable();
+
+            // Before re-index, old-report.pdf is searchable and everything is at generation 1.
+            const before = (await search(api, 'old')).map((r) => r.nodeUid);
+            expect(before).toContain('old-report');
+            expect(await getAllIndexedItemsForGeneration(api, 1)).toHaveLength(9);
+
+            // Simulate that:
+            //   - the user was inactive for a long time, a tree_refresh is sent.
+            //   - the 'folder-archive' folder is now empty: old-report was deleted (maybe on another device)
+            bridge.setChildren('folder-archive', []);
+            bridge.emitEvent(SCOPE_ID, { type: 'tree_refresh', eventId: 'evt-refresh' } as any);
+
+            await state.waitForIndexingStart();
+            await state.waitForIndexingEnd();
+
+            // The cleanup task is enqueued after the re-index and runs afterwards,
+            // so we can't assume it finished the moment isIndexing flips to false. Poll
+            // generation-1 entries until the cleanup has removed them all.
+            let genOne: SearchResultItem[] = [];
+            for (let i = 0; i < 50; i++) {
+                genOne = await getAllIndexedItemsForGeneration(api, 1);
+                if (genOne.length === 0) {
+                    break;
+                }
+                await jest.advanceTimersByTimeAsync(100);
+            }
+            expect(genOne).toHaveLength(0);
+
+            // old-report is no longer searchable; the rest of the tree still is.
+            const afterSearch = (await search(api, 'old')).map((r) => r.nodeUid);
+            expect(afterSearch).not.toContain('old-report');
+            const reports = (await search(api, 'report')).map((r) => r.nodeUid).sort();
+            expect(reports).toEqual(['report-q1', 'report-q2']);
+        }, 15_000);
+    });
+
+    describe('Scenario: bootstrap cleans stale entries from inactive tree scope', () => {
+        it('removes entries whose tree scope is no longer active', async () => {
+            const SCOPE_OLD = 'scope-old' as TreeEventScopeId;
+            const SCOPE_NEW = 'scope-new' as TreeEventScopeId;
+
+            // Boot 1: small tree rooted at SCOPE_OLD.
+            const bridge1 = new FakeMainThreadBridge();
+            bridge1.setMyFilesRootNode(
+                makeMaybeNode({
+                    uid: 'root-1',
+                    name: 'Root 1',
+                    type: 'folder' as any,
+                    treeEventScopeId: SCOPE_OLD,
+                })
+            );
+            bridge1.setChildren('root-1', [file('old-a', 'alpha.txt'), file('old-b', 'bravo.txt')]);
+
+            await api.registerClient(USER_ID, CLIENT_A, bridge1.asBridge());
+            await state.waitForSearchable();
+            expect(await search(api, '', { treeEventScopeId: SCOPE_OLD })).toHaveLength(2);
+
+            // Simulate a page reload where the My Files scope has changed (e.g. the
+            // app reopens with a different root tree-event scope). Different node
+            // uids so session.insert doesn't replace the old entries.
+            api.disconnectClient(CLIENT_A);
+            state.checkpoint();
+            api = new SharedWorkerAPI();
+
+            const bridge2 = new FakeMainThreadBridge();
+            bridge2.setMyFilesRootNode(
+                makeMaybeNode({
+                    uid: 'root-2',
+                    name: 'Root 2',
+                    type: 'folder' as any,
+                    treeEventScopeId: SCOPE_NEW,
+                })
+            );
+            bridge2.setChildren('root-2', [file('new-c', 'charlie.txt'), file('new-d', 'delta.txt')]);
+
+            await api.registerClient(USER_ID, CLIENT_A, bridge2.asBridge());
+            await state.waitForSearchable();
+
+            // Post-bootstrap cleanup runs after waitForSearchable returns; poll the
+            // SCOPE_OLD entries until they're gone.
+            let oldScopeResults: SearchResultItem[] = [];
+            for (let i = 0; i < 50; i++) {
+                oldScopeResults = await search(api, '', { treeEventScopeId: SCOPE_OLD });
+                if (oldScopeResults.length === 0) {
+                    break;
+                }
+                await jest.advanceTimersByTimeAsync(100);
+            }
+            expect(oldScopeResults).toHaveLength(0);
+
+            // SCOPE_NEW entries remain searchable.
+            const newScopeResults = await search(api, '', { treeEventScopeId: SCOPE_NEW });
+            expect(newScopeResults.map((r) => r.nodeUid).sort()).toEqual(['new-c', 'new-d']);
+        }, 15_000);
+    });
+
     describe('Scenario: tab switching', () => {
         it('client B takes over when client A disconnects', async () => {
             const bridgeB = createBridge();
@@ -523,5 +623,4 @@ describe('SharedWorkerAPI integration', () => {
     // TODO: Add shared_with_me scenarios: tree removed, tree added
     // TODO: Add volume changed after password recovery
     // TODO: Add DB corrupted scenario
-    // TODO: every mainteance/cleanup/repair tasks
 });
