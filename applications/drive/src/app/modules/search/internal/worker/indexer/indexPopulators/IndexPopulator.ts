@@ -14,6 +14,7 @@ import type { IndexKind } from '../../index/IndexRegistry';
 import type { IndexEntry } from '../indexEntry';
 import { createIndexEntry, toCoreNodeFields } from '../indexEntry';
 import type { TaskContext } from '../tasks/BaseTask';
+import { CleanUpStaleIndexEntryTask } from '../tasks/CleanUpTasks/CleanUpStaleIndexEntryTask';
 import { IndexPopulatorTask } from '../tasks/CoreTasks/IndexPopulatorTask';
 import { RemoveTreeEventScopeIdTask } from '../tasks/CoreTasks/RemoveTreeEventScopeIdTask';
 
@@ -180,6 +181,9 @@ export abstract class IndexPopulator {
                     );
                     await this.markAsNotDone(ctx.db);
                     ctx.enqueueOnce(new IndexPopulatorTask(this, false /* isBootstrap */));
+                    // Re-index will bump the generation; entries from the previous
+                    // generation that aren't revisited become stale.
+                    ctx.enqueueOnce(new CleanUpStaleIndexEntryTask());
                     // Return early to give a chance to the above task to be processed first.
                     // Remaining events will be processed in next incremental update.
                     return processed + 1;

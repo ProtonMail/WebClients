@@ -27,6 +27,7 @@ export function makeTaskContext(overrides?: Partial<TaskContext>): TaskContext {
         enqueueOnce: jest.fn(),
         enqueueDelayed: jest.fn(),
         notifyIndexingProgress: jest.fn(),
+        activeIndexPopulators: [],
         ...overrides,
     };
 }
