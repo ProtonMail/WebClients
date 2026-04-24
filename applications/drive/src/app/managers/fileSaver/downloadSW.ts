@@ -334,8 +334,25 @@ class DownloadServiceWorker {
 
                         const result = await resultPromise;
 
+                        if (result.data.byteLength === 0) {
+                            const complete = result.claimedTotalSize != null ? result.claimedTotalSize : '*';
+                            return new Response(null, {
+                                status: 416,
+                                statusText: 'Range Not Satisfiable',
+                                headers: new Headers({
+                                    'Content-Range': `bytes */${complete}`,
+                                    ...SECURITY_HEADERS,
+                                }),
+                            });
+                        }
+
                         const actualEnd = start + result.data.byteLength - 1;
-                        const totalSize = result.claimedTotalSize ?? actualEnd + 1;
+                        const instanceMinTotal = actualEnd + 1;
+                        const totalSize =
+                            result.claimedTotalSize != null
+                                ? // Claimed size might be wrong. Use the bigger value if we know the actual size is bigger.
+                                  Math.max(result.claimedTotalSize, instanceMinTotal)
+                                : instanceMinTotal;
 
                         // Ensure it is own copy of data for reading by the consumer.
                         const data = new Uint8Array(result.data);
