@@ -344,7 +344,7 @@ const AutomaticSubscriptionModal = () => {
                 };
             }
 
-            openSubscriptionModal(openProps);
+            void openSubscriptionModal(openProps);
         }
     }, [loadingPlans, loadingSubscription, loadingPaymentStatus, paymentStatus, subscription, user, location.search]);
 
@@ -361,7 +361,7 @@ const AutomaticSubscriptionModal = () => {
                     {...upsellModalProps}
                     onConfirm={() => {
                         if (tmp.props) {
-                            openSubscriptionModal(tmp.props);
+                            void openSubscriptionModal(tmp.props);
                         }
                     }}
                 />

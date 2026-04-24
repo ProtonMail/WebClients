@@ -68,12 +68,13 @@ interface ModalActionProps extends Pick<ButtonProps, 'color' | 'shape'> {
 
 const ModalAction = ({ upsellRef, step, closeModal, disablePlanSelection, children, ...rest }: ModalActionProps) => {
     const [subscription] = useSubscription();
-    const [openSubscriptionModal] = useSubscriptionModal();
+    const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
 
     return (
         <Button
+            loading={loadingSubscriptionModal}
             onClick={() => {
-                openSubscriptionModal({
+                void openSubscriptionModal({
                     step,
                     disablePlanSelection,
                     planIDs: getPlanIDs(subscription),

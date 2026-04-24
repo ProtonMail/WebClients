@@ -12,10 +12,10 @@ interface Props {
     plan: PLANS;
 }
 const DashboardUpgradePlanButton = ({ app, plan }: Props) => {
-    const [openSubscriptionModal] = useSubscriptionModal();
+    const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const telemetryFlow = useDashboardPaymentFlow(app);
     const handleExplorePlans = () => {
-        openSubscriptionModal({
+        void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             plan: plan,
             metrics: { source: 'upsells' },
@@ -23,7 +23,14 @@ const DashboardUpgradePlanButton = ({ app, plan }: Props) => {
         });
     };
     return (
-        <Button size="small" shape="underline" color="norm" onClick={handleExplorePlans} data-testid="cta:upgrade-plan">
+        <Button
+            size="small"
+            shape="underline"
+            color="norm"
+            onClick={handleExplorePlans}
+            data-testid="cta:upgrade-plan"
+            loading={loadingSubscriptionModal}
+        >
             {c('specialoffer: Link').t`Upgrade`}
         </Button>
     );

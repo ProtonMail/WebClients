@@ -20,7 +20,7 @@ interface Props extends UpsellSectionBaseProps {
 }
 
 const UnlimitedBannerPlain = ({ app, subscription }: Props) => {
-    const [openSubscriptionModal] = useSubscriptionModal();
+    const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const telemetryFlow = useDashboardPaymentFlow(app);
 
     const plan = PLANS.BUNDLE;
@@ -31,7 +31,7 @@ const UnlimitedBannerPlain = ({ app, subscription }: Props) => {
     );
 
     const handleGetPlan = () => {
-        openSubscriptionModal({
+        void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             plan: plan,
             metrics: { source: 'upsells' },
@@ -63,7 +63,7 @@ const UnlimitedBannerPlain = ({ app, subscription }: Props) => {
                 />
             }
             headerActionArea={
-                <Button color="norm" shape="outline" onClick={handleGetPlan}>
+                <Button color="norm" shape="outline" loading={loadingSubscriptionModal} onClick={handleGetPlan}>
                     {c('Action').t`Discover ${planName}`}
                 </Button>
             }

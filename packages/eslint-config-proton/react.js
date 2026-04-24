@@ -70,6 +70,7 @@ export default defineConfig(
             'custom-rules/validate-ttag-key': 'error',
             'custom-rules/validate-ttag-key-autofix-warning': 'warn',
             'custom-rules/date-formatting-locale': 'warn',
+            'custom-rules/use-subscription-modal-loading': 'warn',
         },
         settings: {
             react: {

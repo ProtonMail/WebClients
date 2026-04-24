@@ -36,7 +36,7 @@ const AddMoreSeats = () => {
     const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
 
     const handleGetMoreLicense = () => {
-        openSubscriptionModal({
+        void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.CHECKOUT,
             disablePlanSelection: true,
             metrics: {
@@ -54,7 +54,7 @@ const AddMoreSeats = () => {
         <ButtonLike
             shape="underline"
             onClick={handleGetMoreLicense}
-            disabled={loadingSubscriptionModal}
+            loading={loadingSubscriptionModal}
             className="color-weak p-0"
         >
             {
