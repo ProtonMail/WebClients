@@ -5,6 +5,7 @@ import deprecateSizingClasses from './deprecate-sizing-classes.js';
 import deprecateSpacingUtilityClasses from './deprecate-spacing-utility-classes.js';
 import noPlaywrightStringTag from './no-playwright-string-tag.js';
 import noTemplateInTranslatorContext from './no-template-in-translator-context.js';
+import useSubscriptionModalLoading from './use-subscription-modal-loading.js';
 import validateTtagKeyAutofixWarning from './validate-ttag-key-autofix-warning.js';
 import validateTtagKey from './validate-ttag-key.js';
 import validateTtag from './validate-ttag.js';
@@ -21,6 +22,7 @@ export default {
         'deprecate-spacing-utility-classes': deprecateSpacingUtilityClasses,
         'no-playwright-string-tag': noPlaywrightStringTag,
         'no-template-in-translator-context': noTemplateInTranslatorContext,
+        'use-subscription-modal-loading': useSubscriptionModalLoading,
         'validate-ttag': validateTtag,
         'validate-ttag-key': validateTtagKey,
         'validate-ttag-key-autofix-warning': validateTtagKeyAutofixWarning,

@@ -15,11 +15,11 @@ interface Props {
 }
 const DashboardComparePlansCTA = ({ app }: Props) => {
     const [subscription] = useSubscription();
-    const [openSubscriptionModal] = useSubscriptionModal();
+    const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const telemetryFlow = useDashboardPaymentFlow(app);
 
     const handleExplorePlans = () => {
-        openSubscriptionModal({
+        void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             metrics: { source: 'upsells' },
             defaultAudience: getAudienceFromSubscription(subscription),
@@ -28,7 +28,7 @@ const DashboardComparePlansCTA = ({ app }: Props) => {
     };
 
     return (
-        <Button color="norm" size="small" shape="ghost" onClick={handleExplorePlans}>
+        <Button color="norm" size="small" shape="ghost" loading={loadingSubscriptionModal} onClick={handleExplorePlans}>
             {c('Action').t`Compare all plans`}
             <IcChevronRight className="shrink-0 ml-1 rtl:mirror" />
         </Button>

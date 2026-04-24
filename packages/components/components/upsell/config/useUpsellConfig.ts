@@ -18,7 +18,7 @@ const useUpsellConfig = ({
     plan,
     onSubscribed,
     preventInApp = false,
-}: GetUpsellConfigProps): { upgradePath: string; onUpgrade?: () => void } => {
+}: GetUpsellConfigProps): { upgradePath: string; onUpgrade?: () => Promise<void> } => {
     const [user] = useUser();
     const [subscription] = useSubscription();
     const [openSubscriptionModal] = useOptionalSubscriptionModal();

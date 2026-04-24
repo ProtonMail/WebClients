@@ -15,11 +15,11 @@ import UpsellMultiBox from './UpsellMultiBox';
 
 const VPNB2BBanner = ({ app }: UpsellSectionBaseProps) => {
     const plan = PLANS.VPN_BUSINESS;
-    const [openSubscriptionModal] = useSubscriptionModal();
+    const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const telemetryFlow = useDashboardPaymentFlow(app);
 
     const handleExplorePlans = () => {
-        openSubscriptionModal({
+        void openSubscriptionModal({
             step: SUBSCRIPTION_STEPS.PLAN_SELECTION,
             metrics: { source: 'plans' },
             defaultAudience: Audience.B2B,
@@ -39,7 +39,12 @@ const VPNB2BBanner = ({ app }: UpsellSectionBaseProps) => {
             }
             headerActionArea={
                 <>
-                    <Button color="norm" shape="outline" onClick={handleExplorePlans}>
+                    <Button
+                        color="norm"
+                        shape="outline"
+                        loading={loadingSubscriptionModal}
+                        onClick={handleExplorePlans}
+                    >
                         {c('Action').t`Explore business plans`}
                     </Button>
                 </>

@@ -81,7 +81,7 @@ const PlansSectionInner = ({ app }: Props) => {
     const searchParams = getSearchParams(location.search);
     const [audience, setAudience] = useState(searchParams.audience || Audience.B2C);
 
-    const [openSubscriptionModal] = useSubscriptionModal();
+    const [openSubscriptionModal, loadingSubscriptionModal] = useSubscriptionModal();
     const isLoading =
         loadingPlans ||
         loadingSubscription ||
@@ -189,6 +189,7 @@ const PlansSectionInner = ({ app }: Props) => {
                     color="norm"
                     shape="ghost"
                     className="flex mx-auto items-center mb-4"
+                    loading={loadingSubscriptionModal}
                     onClick={() => {
                         if (isElectronApp && !hasInboxDesktopInAppPayments) {
                             openLinkInBrowser(getAppHref(`mail/upgrade`, APPS.PROTONACCOUNT));
