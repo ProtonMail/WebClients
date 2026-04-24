@@ -1349,6 +1349,33 @@
       ],
       "Your PIN code was removed by another ${ PASS_APP_NAME } client": [
         "您的 PIN 码已被另一 ${ PASS_APP_NAME } 客户端删除"
+      ],
+      "Biometric authentication failed.": [
+        "生物识别认证失败！"
+      ],
+      "Biometric lock credentials do not match.": [
+        "生物识别锁凭据不匹配！"
+      ],
+      "Biometric lock credentials not found.": [
+        "未找到生物识别锁凭据！"
+      ],
+      "Biometric lock is not configured.": [
+        "生物识别锁未配置！"
+      ],
+      "Biometric lock setup failed.": [
+        "生物识别锁设置失败！"
+      ],
+      "Encrypted communication with ${ PASS_APP_NAME } desktop app failed.": [
+        "与 ${ PASS_APP_NAME } 电脑版的加密通信失败"
+      ],
+      "The ${ PASS_APP_NAME } desktop app did not respond in time.": [
+        "${ PASS_APP_NAME } 电脑版未及时响应！"
+      ],
+      "The ${ PASS_APP_NAME } desktop app is signed in with a different account.": [
+        "${ PASS_APP_NAME } 电脑版已登录了其他账户"
+      ],
+      "The ${ PASS_APP_NAME } desktop app should be logged in.": [
+        "${ PASS_APP_NAME } 电脑版应处于登录状态！"
       ]
     },
     "Error message": {
@@ -2726,6 +2753,12 @@
       ],
       "Your organization requires you to secure your access to ${ PASS_APP_NAME }": [
         "您的组织要求您确保您对 ${ PASS_APP_NAME }的访问"
+      ],
+      "Unlock ${ PASS_APP_NAME } to access your passkeys": [
+        "解锁 ${ PASS_APP_NAME } 以访问您的通行密钥"
+      ],
+      "Unlock ${ PASS_APP_NAME } to save this passkey": [
+        "解锁 ${ PASS_APP_NAME } 以保存此通行密钥"
       ]
     },
     "Keyboard key": {
