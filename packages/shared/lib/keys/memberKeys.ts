@@ -53,6 +53,7 @@ interface SetupMemberKeySharedArguments {
     organizationKey: PrivateKeyReference;
     keyGenConfig: KeyGenConfig; // pqc: TODO no v6 support
     keyTransparencyVerify: KeyTransparencyVerify;
+    skipSrp?: boolean;
 }
 
 export const setupMemberKeyV2 = async ({
@@ -63,6 +64,7 @@ export const setupMemberKeyV2 = async ({
     organizationKey,
     keyGenConfig,
     keyTransparencyVerify,
+    skipSrp = false,
 }: SetupMemberKeySharedArguments) => {
     const { salt: keySalt, passphrase: memberKeyPassword } = await generateKeySaltAndPassphrase(password);
 
@@ -118,20 +120,24 @@ export const setupMemberKeyV2 = async ({
     );
     const AddressKeys = AddressKeysWithOnSKLPublish.map(({ addressKey }) => addressKey);
 
-    const { Member } = await srpVerify<{ Member: tsMember }>({
-        api,
-        credentials: { password },
-        config: setupMemberKeyRoute({
-            MemberID: member.ID,
-            AddressKeys,
-            UserKey: {
-                PrivateKey: userPrivateKeyArmored,
-                OrgPrivateKey: privateKeyArmoredOrganization,
-                OrgToken: organizationToken,
-            },
-            KeySalt: keySalt,
-        }),
+    const setupMemberKeyConfig = setupMemberKeyRoute({
+        MemberID: member.ID,
+        AddressKeys,
+        UserKey: {
+            PrivateKey: userPrivateKeyArmored,
+            OrgPrivateKey: privateKeyArmoredOrganization,
+            OrgToken: organizationToken,
+        },
+        KeySalt: keySalt,
     });
+
+    const { Member } = skipSrp
+        ? await api<{ Member: tsMember }>(setupMemberKeyConfig)
+        : await srpVerify<{ Member: tsMember }>({
+              api,
+              credentials: { password },
+              config: setupMemberKeyConfig,
+          });
 
     await Promise.all(
         AddressKeysWithOnSKLPublish.map(({ onSKLPublishSuccess }) =>

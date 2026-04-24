@@ -44,6 +44,7 @@ export enum MemberUnprivatizationState {
 export enum CreateMemberMode {
     Password,
     Invitation,
+    LoginLink,
 }
 
 export interface PublicMemberUnprivatizationOutput {

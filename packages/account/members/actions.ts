@@ -635,6 +635,7 @@ export const createMember = ({
             MaxVPN: model.vpn ? VPN_CONNECTIONS : 0,
             MaxAI: model.numAI ? 1 : 0,
             MaxLumo: model.lumo ? 1 : 0,
+            TemporaryPassword: model.mode === CreateMemberMode.LoginLink,
         };
 
         if (model.mode === CreateMemberMode.Invitation) {
@@ -679,14 +680,18 @@ export const createMember = ({
             return updatedMember;
         }
 
-        const Member = await srpVerify<{ Member: Member }>({
-            api,
-            credentials: { password: model.password },
-            config: createMemberConfig({
-                ...payload,
-                Private: +(model.private === MEMBER_PRIVATE.UNREADABLE),
-            }),
-        }).then(({ Member }) => Member);
+        const memberConfig = createMemberConfig({
+            ...payload,
+            Private: +(model.private === MEMBER_PRIVATE.UNREADABLE),
+        });
+        const { Member } =
+            model.mode === CreateMemberMode.LoginLink
+                ? await api<{ Member: Member }>(memberConfig)
+                : await srpVerify<{ Member: Member }>({
+                      api,
+                      credentials: { password: model.password },
+                      config: memberConfig,
+                  });
 
         const memberAddresses = await createAddressesForMember({
             api,
@@ -711,6 +716,7 @@ export const createMember = ({
                 keyGenConfig: KEYGEN_CONFIGS[DEFAULT_KEYGEN_TYPE],
                 password: model.password,
                 keyTransparencyVerify,
+                skipSrp: model.mode === CreateMemberMode.LoginLink,
             });
             memberWithKeys = result.Member;
             await keyTransparencyCommit(user, userKeys);
